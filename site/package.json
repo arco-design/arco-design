@@ -4,7 +4,7 @@
   "dependencies": {
     "@antv/g2": "^4.1.12",
     "@arco-design/arco-site-footer": "^1.3.0",
-    "@arco-design/arco-site-navbar": "^1.9.0",
+    "@arco-design/arco-site-navbar": "^1.10.0",
     "@arco-design/chart-space": "^2.12.0",
     "@arco-design/mobile-react": "^0.6.2",
     "@babel/runtime": "^7.6.0",

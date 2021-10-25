@@ -51,6 +51,7 @@ export default function EcosystemBlockList({
           logoPlaceholder={item.logoPlaceholder || item.logo}
           desc={item.desc}
           image={item.image}
+          waiting={!href}
           onClick={() => {
             if (href) {
               window.open(href);

@@ -110,7 +110,7 @@ export default function Ecosystem() {
       name: 'MaterialMarket',
       alias: locale['ecosystem.item.MaterialMarket.alias'],
       slogan: locale['ecosystem.item.MaterialMarket.slogan'],
-      desc: locale['ecosystem.item.MaterialMarket.desc'],
+      desc: '',
       logo: <LogoArcoMaterial />,
       logoInActive: <LogoArcoMaterialGray />,
       logoPlaceholder: <LogoArcoMaterialBlue />,

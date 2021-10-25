@@ -14,7 +14,7 @@ export default function(props: { list: ShowCaseCardProps[] }) {
   };
 
   const addStyle = () => {
-    setAnchorStyle({ position: 'fixed', top: '140px' });
+    setAnchorStyle({ position: 'fixed', top: '140px', width: '160px' });
   };
 
   const handleScroll = () => {
@@ -38,7 +38,7 @@ export default function(props: { list: ShowCaseCardProps[] }) {
   return (
     <div className={styles['anchor-wrapper']}>
       <div style={anchorStyle}>
-        <Anchor lineless boundary={100} affix={false}>
+        <Anchor lineless boundary={100} affix={false} act>
           {list.map((item, index) => (
             <AnchorLink href={`#${item.title}`} title={item.title} key={index} />
           ))}

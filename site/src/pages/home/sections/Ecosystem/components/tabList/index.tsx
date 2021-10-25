@@ -3,6 +3,7 @@ import { Button } from '@arco-design/web-react';
 import styles from './index.module.less';
 import cs from '../../../../utils/classNames';
 import { TabItem } from '../../interface';
+import { useInterval } from '../../../../hooks/useInterval';
 
 function ContentHeader({
   name,
@@ -37,7 +38,19 @@ export default function EcosystemTabList(props: { list: TabItem[] }) {
   const { list } = props;
   const tabRenderRecord = useRef(list.map((item) => item.name));
   const [activeTab, setActiveTab] = useState(list[0].name);
+
+  const slideToNext = () => {
+    const nameList = list.map((item) => item.name);
+    const currentIndex = nameList.indexOf(activeTab);
+    const nextIndex = currentIndex + 1 >= nameList.length ? 0 : currentIndex + 1;
+    setActiveTab(nameList[nextIndex]);
+  };
+
   const activePlatform = list.find((item) => item.name === activeTab);
+
+  const resetInterval = useInterval(() => {
+    slideToNext();
+  }, 10000);
 
   return (
     <>
@@ -53,6 +66,7 @@ export default function EcosystemTabList(props: { list: TabItem[] }) {
               onClick={() => {
                 if (platform.name !== activeTab) {
                   setActiveTab(platform.name);
+                  resetInterval();
                 }
               }}
             >

@@ -30,9 +30,11 @@
 .content-left-background {
   position: absolute;
   height: 100%;
-  width: 200%;
+  width: calc(100% + 60px);
+  border-radius: 8px;
   top: 0;
   right: @content-size-right;
+  left: -60px;
   background: var(--color-neutral-1);
 }
 
@@ -46,7 +48,6 @@
 }
 
 .split-trigger {
-
   position: relative;
   height: 100%;
   width: 10px;
@@ -102,7 +103,8 @@
     transition: var(--home-transition-1);
   }
 
-  &-hover, &:hover {
+  &-hover,
+  &:hover {
     .split-trigger-line {
       opacity: 1;
     }
@@ -148,7 +150,7 @@
   padding: 51px 61px 51px 0;
 }
 
-body[arco-theme="dark"] {
+body[arco-theme='dark'] {
   .content-left::after {
     box-shadow: none;
   }

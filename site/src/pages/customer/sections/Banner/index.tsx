@@ -1,27 +1,28 @@
 import React from 'react';
 import BannerText from './text';
 import IconWall from './iconWall';
-import Circle from '../../assets/banner/circle.svg';
-import DongCheDi from '../../assets/banner/dongchedi.svg';
-import FanQie from '../../assets/banner/fanqie.svg';
-import FanQieSmall from '../../assets/banner/fanqie-small.svg';
-import Vcloud from '../../assets/banner/vcloud.svg';
-import XiGua from '../../assets/banner/xigua.svg';
-import YinQin from '../../assets/banner/yinqin.svg';
 import styles from './style/index.module.less';
+import ShowCaseLogo1 from '../../assets/banner/showcase_logo1.svg';
+import ShowCaseLogo2 from '../../assets/banner/showcase_logo2.svg';
+import ShowCaseLogo3 from '../../assets/banner/showcase_logo3.svg';
+import ShowCaseLogo4 from '../../assets/banner/showcase_logo4.svg';
+import ShowCaseLogo5 from '../../assets/banner/showcase_logo5.svg';
+import ShowCaseLogo6 from '../../assets/banner/showcase_logo6.svg';
+import ShowCaseLogo7 from '../../assets/banner/showcase_logo7.svg';
+import ShowCaseLogo8 from '../../assets/banner/showcase_logo8.svg';
 
 const GroupList = {
   left: [
-    <Vcloud key="vcloud" />,
-    <FanQie key="fanqie" />,
-    <Circle key="circle" />,
-    <YinQin key="yinqin" />,
+    <ShowCaseLogo6 key={1} />,
+    <ShowCaseLogo2 key={2} />,
+    <ShowCaseLogo3 key={3} />,
+    <ShowCaseLogo7 key={4} />,
   ],
   right: [
-    <FanQieSmall key="fanqiesmall" />,
-    <XiGua key="xigua" />,
-    <Vcloud key="vcloud" />,
-    <DongCheDi key="dongchedi" />,
+    <ShowCaseLogo5 key={1} />,
+    <ShowCaseLogo1 key={2} />,
+    <ShowCaseLogo4 key={3} />,
+    <ShowCaseLogo8 key={4} />,
   ],
 };
 

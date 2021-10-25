@@ -3,11 +3,11 @@
 .conic-gradient(@nums) {
   .loop(@nums) when (@nums > 0) {
     .loop(@nums - 1);
-    background-image+: hsl(@nums*36, 100%, 50%)
+    background-image+: hsl(@nums*36, 100%, 50%);
   }
-  background-image+: ~"conic-gradient(hsl(0, 100%, 50%)";
+  background-image+: ~'conic-gradient(hsl(0, 100%, 50%)';
   .loop(@nums);
-  background-image+_: ~")";
+  background-image+_: ~')';
 }
 
 .color-body {
@@ -26,6 +26,7 @@
     width: 500px;
     display: flex;
     align-content: center;
+    margin-right: 60px;
   }
 }
 
@@ -99,7 +100,6 @@
   right: 0;
   left: 0;
   padding-left: calc((100% - @home-max-width) / 2 + 400px);
-  border: 1px solid var(--color-border);
   border-left: 0;
   border-right: 0;
   background: var(--color-bg-1);
@@ -109,17 +109,23 @@
     width: 20%;
     height: 500px;
   }
+
+  &-item:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
 }
 
 .color-body {
   transition: opacity 300ms;
+  position: relative;
 }
 
 .color-card {
   transition: opacity 200ms;
 }
 
-body[arco-theme="dark"] {
+body[arco-theme='dark'] {
   .color-body {
     border-color: rgba(255, 255, 255, 0.12);
   }
