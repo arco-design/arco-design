@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Empty/demo/basic.md correctly 1`] = `
+<div
+  class="arco-empty"
+>
+  <div
+    class="arco-empty-wrapper"
+  >
+    <div
+      class="arco-empty-image"
+    >
+      <svg
+        class="arco-icon arco-icon-empty"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-empty-description"
+    >
+      暂无数据
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Empty/demo/custom_icon.md correctly 1`] = `
+<div
+  class="arco-empty"
+>
+  <div
+    class="arco-empty-wrapper"
+  >
+    <div
+      class="arco-empty-image"
+    >
+      <div
+        style="background:#f2994b;display:inline-flex;border-radius:50%;width:50px;height:50px;font-size:30px;align-items:center;color:white;justify-content:center"
+      >
+        <svg
+          class="arco-icon arco-icon-exclamation"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M23 9H25V30H23z"
+          />
+          <path
+            d="M23 9H25V30H23z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M23 37H25V39H23z"
+          />
+          <path
+            d="M23 37H25V39H23z"
+            fill="currentColor"
+            stroke="none"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="arco-empty-description"
+    >
+      No data, please reload!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Empty/demo/image.md correctly 1`] = `
+<div
+  class="arco-empty"
+>
+  <div
+    class="arco-empty-wrapper"
+  >
+    <div
+      class="arco-empty-image"
+    >
+      <img
+        alt="empty"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/82c448a5415844c881e2a1ff4ed8c42d~tplv-uwbnlip3yd-image.image"
+      />
+    </div>
+    <div
+      class="arco-empty-description"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Refresh
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

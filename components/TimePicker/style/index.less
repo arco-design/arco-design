@@ -1,0 +1,95 @@
+@import './token.less';
+
+@time-picker-prefix-cls: ~'@{prefix}-timepicker';
+
+.@{time-picker-prefix-cls} {
+  position: relative;
+  display: flex;
+  padding: 0;
+  box-sizing: border-box;
+
+  &-container {
+    border-radius: @timepicker-wrapper-border-radius;
+    border: 1px solid @timepicker-color-border;
+    background-color: var(--color-bg-popup);
+    box-shadow: @popup-box-shadow-base;
+    overflow: hidden;
+  }
+
+  &-list {
+    width: @timepicker-column-width;
+    height: @timepicker-column-height;
+    overflow: hidden;
+    box-sizing: border-box;
+    scrollbar-width: none; // firefox
+
+    // safari & chrome
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid @timepicker-color-cell-border;
+    }
+
+    &:hover {
+      overflow-y: auto;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: @timepicker-column-height - @timepicker-cell-height - @timepicker-cell-spacing;
+      }
+    }
+  }
+
+  &-cell {
+    padding: @timepicker-cell-spacing / 2 0;
+    text-align: center;
+    color: @timepicker-color-text-cell;
+    font-weight: @timepicker-font-weight-cell;
+    cursor: pointer;
+
+    &-inner {
+      height: @timepicker-cell-height;
+      line-height: @timepicker-cell-height;
+      font-size: @timepicker-cell-font-size;
+    }
+
+    &:not(&-selected):not(&-disabled):hover &-inner {
+      background-color: @timepicker-color-bg-cell_hover;
+    }
+  }
+
+  &-cell-selected &-cell-inner {
+    background-color: @timepicker-color-bg-cell_active;
+    font-weight: @timepicker-font-weight-cell_active;
+  }
+
+  &-cell-disabled {
+    color: @timepicker-color-text-cell_disabled;
+    cursor: not-allowed;
+  }
+
+  &-footer-extra-wrapper {
+    border-top: 1px solid @timepicker-color-cell-border;
+    padding: @timepicker-extra-padding-vertical @timepicker-extra-padding-horizontal;
+    color: @timepicker-color-extra-text;
+    font-size: @timepicker-font-extra-size;
+  }
+
+  &-footer-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid @timepicker-color-cell-border;
+    padding: @timepicker-footer-padding-vertical @timepicker-footer-padding-horizontal;
+  }
+}

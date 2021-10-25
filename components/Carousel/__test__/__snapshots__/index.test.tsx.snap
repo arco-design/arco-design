@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Carousel default 1`] = `
+<div
+  class="arco-carousel arco-carousel-indicator-position-bottom"
+>
+  <div
+    class="arco-carousel-slide arco-carousel-horizontal"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Carousel set className globally 1`] = `
+<div
+  class="arco-carousel arco-carousel-indicator-position-bottom global-default-class"
+>
+  <div
+    class="arco-carousel-slide arco-carousel-horizontal"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Carousel set className globally and component set className itself. 1`] = `
+<div
+  class="arco-carousel arco-carousel-indicator-position-bottom component-class"
+>
+  <div
+    class="arco-carousel-slide arco-carousel-horizontal"
+  />
+</div>
+`;

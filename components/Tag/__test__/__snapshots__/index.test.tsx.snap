@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Tag default 1`] = `
+<div
+  class="arco-tag arco-tag-checked arco-tag-size-default"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Tag set className globally 1`] = `
+<div
+  class="arco-tag arco-tag-checked arco-tag-size-default global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Tag set className globally and component set className itself. 1`] = `
+<div
+  class="arco-tag arco-tag-checked arco-tag-size-default component-class"
+/>
+`;

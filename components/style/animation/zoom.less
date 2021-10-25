@@ -1,0 +1,169 @@
+// modal use
+.zoomIn-enter,
+.zoomIn-appear {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.zoomIn-enter-active,
+.zoomIn-appear-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity @transition-duration-3 @transition-timing-function-standard,
+    transform @transition-duration-3 @transition-timing-function-standard;
+}
+
+.zoomIn-exit {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.zoomIn-exit-active {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+  transition: opacity @transition-duration-3 @transition-timing-function-overshoot,
+    transform @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+// used by tooltip。缩放出现，渐隐退出
+.zoomInFadeOut-enter,
+.zoomInFadeOut-appear {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.zoomInFadeOut-enter-active,
+.zoomInFadeOut-appear-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity @transition-duration-3 @transition-timing-function-overshoot,
+    transform @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+.zoomInFadeOut-exit {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.zoomInFadeOut-exit-active {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+  transition: opacity @transition-duration-3 @transition-timing-function-overshoot,
+    transform @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+// used by slide, table filter
+.zoomInBig-enter,
+.zoomInBig-appear {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.zoomInBig-enter-active,
+.zoomInBig-appear-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity @transition-duration-2 @transition-timing-function-linear,
+    transform @transition-duration-2 @transition-timing-function-linear;
+}
+
+.zoomInBig-exit {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.zoomInBig-exit-active {
+  opacity: 0;
+  transform: scale(0.2, 0.2);
+  transition: opacity @transition-duration-2 @transition-timing-function-linear,
+    transform @transition-duration-2 @transition-timing-function-linear;
+}
+
+.zoomInLeft-enter,
+.zoomInLeft-appear {
+  opacity: 0.1;
+  transform-origin: 0 50%;
+  transform: scale(0.1, 0.1);
+}
+
+.zoomInLeft-enter-active,
+.zoomInLeft-appear-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity @transition-duration-3 @transition-timing-function-linear,
+    transform @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+.zoomInLeft-exit {
+  opacity: 1;
+  transform-origin: 0 50%;
+  transform: scale(1, 1);
+}
+
+.zoomInLeft-exit-active {
+  opacity: 0.1;
+  transform: scale(0.1, 0.1);
+  transition: opacity @transition-duration-3 @transition-timing-function-linear,
+    transform @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+// used by alert form
+.zoomInTop-enter,
+.zoomInTop-appear {
+  opacity: 0;
+  transform-origin: 0% 0%;
+  transform: scaleY(0.8) translateZ(0);
+}
+
+.zoomInTop-enter-active,
+.zoomInTop-appear-active {
+  opacity: 1;
+  transform-origin: 0% 0%;
+  transform: scaleY(1) translateZ(0);
+  transition: transform @transition-duration-3 @transition-timing-function-overshoot,
+    opacity @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+.zoomInTop-exit {
+  opacity: 1;
+  transform-origin: 0% 0%;
+  transform: scaleY(1) translateZ(0);
+}
+
+.zoomInTop-exit-active {
+  opacity: 0;
+  transform-origin: 0% 0%;
+  transform: scaleY(0.8) translateZ(0);
+  transition: transform @transition-duration-3 @transition-timing-function-overshoot,
+    opacity @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+.zoomInBottom-enter,
+.zoomInBottom-appear {
+  opacity: 0;
+  transform-origin: 100% 100%;
+  transform: scaleY(0.8) translateZ(0);
+}
+
+.zoomInBottom-enter-active,
+.zoomInBottom-appear-active {
+  opacity: 1;
+  transform-origin: 100% 100%;
+  transform: scaleY(1) translateZ(0);
+  transition: transform @transition-duration-3 @transition-timing-function-overshoot,
+    opacity @transition-duration-3 @transition-timing-function-overshoot;
+}
+
+.zoomInBottom-exit {
+  opacity: 1;
+  transform-origin: 100% 100%;
+  transform: scaleY(1) translateZ(0);
+}
+
+.zoomInBottom-exit-active {
+  opacity: 0;
+  transform-origin: 100% 100%;
+  transform: scaleY(0.8) translateZ(0);
+  transition: transform @transition-duration-3 @transition-timing-function-overshoot,
+    opacity @transition-duration-3 @transition-timing-function-overshoot;
+}

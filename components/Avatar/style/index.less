@@ -1,0 +1,131 @@
+@import './token.less';
+
+@avatar-prefix-cls: ~'@{prefix}-avatar';
+
+.@{avatar-prefix-cls} {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background-color: @avatar-color-bg;
+  white-space: nowrap;
+  color: @avatar-color-text;
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: @avatar-size-default;
+  height: @avatar-size-default;
+  font-size: @avatar-font-size-text;
+
+  &-circle {
+    border-radius: @avatar-circle-border-radius;
+  }
+
+  &-circle &-image {
+    border-radius: @avatar-circle-border-radius;
+    overflow: hidden;
+  }
+
+  &-square {
+    border-radius: @avatar-square-border-radius;
+  }
+
+  &-square &-image {
+    border-radius: @avatar-square-border-radius;
+    overflow: hidden;
+  }
+
+  &-text {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 center;
+    transform: translateX(-50%);
+    font-weight: @avatar-font-weight-text;
+    // 避免继承行高导致的文字不居中
+    line-height: 1;
+  }
+
+  &-image {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    img,
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-trigger-icon-button {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -@avatar-spacing-trigger-button-bottom;
+    right: -@avatar-spacing-trigger-button-right;
+    color: @avatar-color-trigger-icon-button;
+    font-size: @avatar-size-trigger-icon;
+    border-radius: @avatar-border-trigger-button-radius;
+    width: @avatar-size-trigger-button;
+    height: @avatar-size-trigger-button;
+    line-height: @avatar-size-trigger-button;
+    background-color: @avatar-color-trigger-button-bg;
+    transition: background-color @transition-duration-1 @transition-timing-function-linear;
+    z-index: 1;
+  }
+
+  &-trigger-icon-mask {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    transition: all @transition-duration-1 @transition-timing-function-linear;
+    border-radius: @avatar-square-border-radius;
+    background-color: fade(@gray-10, @avatar-opacity-trigger-mask-bg);
+    color: @avatar-color-trigger-mask-icon;
+  }
+
+  &-circle &-trigger-icon-mask {
+    border-radius: @avatar-circle-border-radius;
+  }
+
+  &-with-trigger-icon {
+    cursor: pointer;
+  }
+
+  &-with-trigger-icon:hover &-trigger-icon-mask {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  &-with-trigger-icon:hover &-trigger-icon-button {
+    background-color: @avatar-color-trigger-button-bg_hover;
+  }
+}
+
+.@{avatar-prefix-cls} {
+  &-group {
+    display: inline-block;
+    line-height: 0;
+
+    &-max-count-avatar {
+      cursor: default;
+      color: @avatar-color-max-count-text;
+      font-size: @avatar-font-size-max-count;
+    }
+  }
+
+  &-group & {
+    border: @avatar-group-item-border-width solid @avatar-color-group-item-border;
+  }
+
+  &-group-popover &:not(:first-child) {
+    margin-left: @avatar-group-popover-item-spacing;
+  }
+}

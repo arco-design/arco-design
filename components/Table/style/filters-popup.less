@@ -1,0 +1,45 @@
+@table-prefix-cls: ~'@{prefix}-table';
+
+.@{table-prefix-cls} {
+  &-filters-popup {
+    min-width: @table-popup-min-width;
+    background: @table-color-bg-filters-popup;
+    box-shadow: @shadow1-down;
+    border: 1px solid @table-color-border-filters-popup;
+    border-radius: @table-popup-border-radius;
+    box-sizing: border-box;
+  }
+
+  &-filters-list {
+    max-height: @table-popup-max-height;
+    overflow-y: auto;
+    padding: 4px 0;
+  }
+
+  &-filters-item {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    overflow: hidden;
+
+    .@{prefix}-checkbox,
+    .@{prefix}-radio {
+      width: 100%;
+      padding: 0 12px;
+      white-space: nowrap;
+    }
+  }
+
+  &-filters-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid @table-color-border;
+    padding: 0 12px;
+    height: 38px;
+    line-height: 38px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}

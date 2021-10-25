@@ -1,0 +1,360 @@
+@import '../../style/theme/default.less';
+@import './token.less';
+
+@progress-prefix-cls: ~'@{prefix}-progress';
+
+.@{progress-prefix-cls} {
+  position: relative;
+  line-height: 1;
+  font-size: @progress-line-size-default-font-size;
+
+  &-line,
+  &-steps {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    &-text {
+      font-size: @progress-line-size-default-font-size;
+      margin-left: @progress-line-margin-text-left;
+      color: @progress-line-color-text;
+      white-space: nowrap;
+      text-align: right;
+      flex-grow: 1;
+      flex-shrink: 0;
+      min-width: 32px;
+
+      .@{prefix}-icon {
+        font-size: @progress-line-size-default-icon-size;
+        margin-left: @progress-line-margin-icon-left;
+      }
+    }
+  }
+  // type = line
+  &-line {
+    &-outer {
+      background-color: @progress-line-color-line-bg;
+      border-radius: 100px;
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    &-inner {
+      height: 100%;
+      border-radius: 100px;
+      background-color: @progress-line-color-inner-bg;
+      position: relative;
+      transition: width 0.6s @transition-timing-function-standard,
+        background 0.3s @transition-timing-function-standard;
+      max-width: 100%;
+
+      &-buffer {
+        position: absolute;
+        background-color: @progress-line-color-buffer-bg;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0 100px 100px 0;
+        max-width: 100%;
+        transition: all 0.6s @transition-timing-function-standard;
+      }
+
+      &-animate::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(
+          90deg,
+          transparent 25%,
+          rgba(255, 255, 255, 0.5) 50%,
+          transparent 75%
+        );
+        background-size: 400% 100%;
+        animation: ~'@{prefix}-progress-loading' 1.5s @transition-timing-function-standard infinite;
+      }
+    }
+
+    &-text {
+      .@{prefix}-icon {
+        color: @progress-line-color-icon_normal;
+      }
+    }
+  }
+
+  &-steps {
+    &-outer {
+      display: flex;
+      width: 100%;
+    }
+
+    &-text {
+      margin-left: @progress-steps-margin-text-left;
+      min-width: unset;
+
+      .@{prefix}-icon {
+        color: @progress-line-color-icon_normal;
+      }
+    }
+
+    &-item {
+      height: 100%;
+      flex: 1;
+      background-color: @progress-steps-color-item-bg;
+      position: relative;
+      display: inline-block;
+
+      &:not(:last-of-type) {
+        margin-right: @progress-steps-margin-steps-item-right;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+
+      &:first-of-type {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+
+      &-active {
+        background-color: @progress-steps-color-item-bg_normal;
+      }
+    }
+
+    // size small
+    &.@{progress-prefix-cls}-small {
+      width: auto;
+    }
+
+    &.@{progress-prefix-cls}-small &-item {
+      width: @progress-steps-size-small-steps-item-width;
+      flex: unset;
+      border-radius: @progress-steps-size-small-steps-item-width;
+
+      &:not(:last-of-type) {
+        margin-right: @progress-steps-margin-steps-item-right_small;
+      }
+    }
+  }
+  &-is-warning {
+    .@{progress-prefix-cls}-line-inner,
+    .@{progress-prefix-cls}-steps-item-active {
+      background-color: @progress-line-color-inner-bg_warning;
+    }
+
+    .@{progress-prefix-cls}-line-text .@{prefix}-icon,
+    .@{progress-prefix-cls}-steps-text .@{prefix}-icon {
+      color: @progress-line-color-icon_warning;
+    }
+  }
+
+  &-is-success {
+    .@{progress-prefix-cls}-line-inner,
+    .@{progress-prefix-cls}-steps-item-active {
+      background-color: @progress-line-color-inner-bg_success;
+    }
+
+    .@{progress-prefix-cls}-line-text .@{prefix}-icon,
+    .@{progress-prefix-cls}-steps-text .@{prefix}-icon {
+      color: @progress-line-color-icon_success;
+    }
+  }
+
+  &-is-error {
+    .@{progress-prefix-cls}-line-inner,
+    .@{progress-prefix-cls}-steps-item-active {
+      background-color: @progress-line-color-inner-bg_error;
+    }
+
+    .@{progress-prefix-cls}-line-text .@{prefix}-icon,
+    .@{progress-prefix-cls}-steps-text .@{prefix}-icon {
+      color: @progress-line-color-icon_error;
+    }
+  }
+
+  // size
+  &-small {
+    .@{progress-prefix-cls}-line-text {
+      font-size: @progress-line-size-small-font-size;
+      margin-left: @progress-line-size-small-margin-text-left;
+    }
+
+    .@{progress-prefix-cls}-line-text .@{prefix}-icon {
+      font-size: @progress-line-size-small-icon-size;
+    }
+  }
+
+  &-large {
+    .@{progress-prefix-cls}-line-text {
+      font-size: @progress-line-size-large-font-size;
+      margin-left: @progress-line-size-large-margin-text-left;
+    }
+
+    .@{progress-prefix-cls}-line-text .@{prefix}-icon {
+      font-size: @progress-line-size-large-icon-size;
+    }
+  }
+}
+
+// type = circle
+.@{progress-prefix-cls} {
+  &-circle {
+    display: inline-block;
+
+    &-wrapper {
+      position: relative;
+      text-align: center;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+
+    &-svg {
+      transform: rotate(-90deg);
+    }
+
+    &-text {
+      font-size: @progress-circle-size-default-font-size;
+
+      .@{prefix}-icon {
+        font-size: @progress-circle-size-default-icon-size;
+        color: @progress-line-color-icon_normal;
+      }
+    }
+
+    .@{progress-prefix-cls}-circle-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: @progress-circle-color-text;
+      transform: translate(-50%, -50%);
+    }
+
+    &-mask {
+      stroke: @progress-circle-color-mask-stroke;
+    }
+
+    &-path {
+      stroke: @progress-circle-color-path-stroke;
+      transition: stroke-dashoffset 0.6s @transition-timing-function-linear 0s,
+        stroke 0.6s @transition-timing-function-linear;
+    }
+  }
+
+  &-mini {
+    .@{progress-prefix-cls}-circle-mask {
+      stroke: @progress-circle-size-mini-color-mask-stroke;
+    }
+
+    .@{progress-prefix-cls}-circle-path {
+      stroke: @progress-circle-color-path-stroke;
+    }
+
+    &.@{progress-prefix-cls}-is-warning {
+      .@{progress-prefix-cls}-circle-mask {
+        stroke: @progress-circle-size-mini-color-mask-stroke_warning;
+      }
+    }
+
+    &.@{progress-prefix-cls}-is-error {
+      .@{progress-prefix-cls}-circle-mask {
+        stroke: @progress-circle-size-mini-color-mask-stroke_error;
+      }
+    }
+
+    &.@{progress-prefix-cls}-is-success {
+      .@{progress-prefix-cls}-circle-mask {
+        stroke: @progress-circle-size-mini-color-mask-stroke_success;
+      }
+
+      .@{progress-prefix-cls}-circle-wrapper .@{prefix}-icon-check {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    .@{progress-prefix-cls}-circle-text {
+      position: static;
+      top: unset;
+      left: unset;
+      transform: unset;
+    }
+  }
+
+  &-small {
+    .@{progress-prefix-cls}-circle-text {
+      font-size: @progress-circle-size-small-font-size;
+
+      .@{prefix}-icon {
+        font-size: @progress-circle-size-small-icon-size;
+      }
+    }
+  }
+
+  &-large {
+    .@{progress-prefix-cls}-circle-text {
+      font-size: @progress-circle-size-large-font-size;
+
+      .@{prefix}-icon {
+        font-size: @progress-circle-size-large-icon-size;
+      }
+    }
+  }
+
+  &-is-warning {
+    .@{progress-prefix-cls}-circle-path {
+      stroke: @progress-circle-color-path-stroke_warning;
+    }
+
+    .@{prefix}-icon {
+      color: @progress-circle-color-icon_warning;
+    }
+  }
+
+  &-is-success {
+    .@{progress-prefix-cls}-circle-path {
+      stroke: @progress-circle-color-path-stroke_success;
+    }
+
+    .@{prefix}-icon {
+      color: @progress-circle-color-icon_success;
+    }
+  }
+
+  &-is-error {
+    .@{progress-prefix-cls}-circle-path {
+      stroke: @progress-circle-color-path-stroke_error;
+    }
+
+    .@{prefix}-icon {
+      color: @progress-circle-color-icon_error;
+    }
+  }
+}
+
+@keyframes ~'@{prefix}-progress-loading' {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}

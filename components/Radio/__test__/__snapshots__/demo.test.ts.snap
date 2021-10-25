@@ -1,0 +1,808 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Radio/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value=""
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        Radio
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <label
+      class="arco-radio arco-radio-checked arco-radio-disabled"
+    >
+      <input
+        checked=""
+        disabled=""
+        type="radio"
+        value=""
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        Disabled Radio
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders Radio/demo/direction.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline arco-radio-group-direction-vertical"
+  >
+    <label
+      class="arco-radio arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="a"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        A
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="b"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        B
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="c"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        C
+      </span>
+    </label>
+    <label
+      class="arco-radio arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="d"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        D
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders Radio/demo/icon.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+  >
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="BCY"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        <img
+          src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c621ef94232e4b91917c7d2e5d9eae00~tplv-uwbnlip3yd-image.image"
+          style="width:30px;height:30px;margin-right:8px;vertical-align:middle"
+        />
+        BCY
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="pipidance"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        <img
+          src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/cb76fb049c3c44128b26f02902a0373b~tplv-uwbnlip3yd-image.image"
+          style="width:30px;height:30px;margin-right:8px;vertical-align:middle"
+        />
+        Pipidance
+      </span>
+    </label>
+    <label
+      class="arco-radio arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="xigua"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        <img
+          src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/74fb860e37aa4840a8eb235e6df6e6e0~tplv-uwbnlip3yd-image.image"
+          style="width:30px;height:30px;margin-right:8px;vertical-align:middle"
+        />
+        Xigua Video
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders Radio/demo/radio_button.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-right:20px;margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="lang"
+        type="radio"
+        value="Beijing"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Beijing
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="lang"
+        type="radio"
+        value="Shanghai"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shanghai
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked arco-radio-disabled"
+    >
+      <input
+        checked=""
+        disabled=""
+        name="lang"
+        type="radio"
+        value="Guangzhou"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Guangzhou
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="lang"
+        type="radio"
+        value="Shenzhen"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shenzhen
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders Radio/demo/radio_group.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="a"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        A
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="b"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        B
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="c"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        C
+      </span>
+    </label>
+    <label
+      class="arco-radio arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="d"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        D
+      </span>
+    </label>
+  </div>
+  <br />
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="A"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        A
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="B"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        B
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="C"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        C
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="D"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        D
+      </span>
+    </label>
+  </div>
+  <br />
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+  >
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="a"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        A
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="b"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        B
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="c"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        C
+      </span>
+    </label>
+    <label
+      class="arco-radio arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="d"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        D
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders Radio/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-mini arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="Beijing"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Beijing
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shanghai"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shanghai
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="Guangzhou"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Guangzhou
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shenzhen"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shenzhen
+      </span>
+    </label>
+  </div>
+  <br />
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="Beijing"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Beijing
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shanghai"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shanghai
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="Guangzhou"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Guangzhou
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shenzhen"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shenzhen
+      </span>
+    </label>
+  </div>
+  <br />
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="Beijing"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Beijing
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shanghai"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shanghai
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="Guangzhou"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Guangzhou
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shenzhen"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shenzhen
+      </span>
+    </label>
+  </div>
+  <br />
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-large arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="Beijing"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Beijing
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shanghai"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shanghai
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-disabled"
+    >
+      <input
+        disabled=""
+        type="radio"
+        value="Guangzhou"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Guangzhou
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="Shenzhen"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        Shenzhen
+      </span>
+    </label>
+  </div>
+</div>
+`;

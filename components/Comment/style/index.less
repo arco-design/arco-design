@@ -1,0 +1,66 @@
+@import './token.less';
+
+@comment-prefix-cls: ~'@{prefix}-comment';
+
+.@{comment-prefix-cls} {
+  display: flex;
+  flex-wrap: nowrap;
+  line-height: @line-height-base;
+
+  &:not(:first-of-type),
+  &-inner-comment {
+    margin-top: @comment-margin-bottom;
+  }
+
+  &-inner {
+    flex: 1;
+  }
+
+  &-avatar {
+    flex-shrink: 0;
+    margin-right: @comment-margin-avatar-right;
+    cursor: pointer;
+
+    > img {
+      width: @comment-size-avatar-width;
+      height: @comment-size-avatar-width;
+      border-radius: @radius-circle;
+    }
+  }
+
+  &-author {
+    color: @comment-color-author-text;
+    font-size: @comment-font-author-size;
+    margin-right: @comment-margin-author-right;
+  }
+
+  &-datetime {
+    color: @comment-color-datetime-text;
+    font-size: @comment-font-datetime-size;
+  }
+
+  &-content {
+    font-size: @comment-font-size;
+    color: @comment-color-content-text;
+  }
+
+  &-title-align-right {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-actions {
+    margin-top: @comment-margin-actions-top;
+    color: @comment-color-actions-text;
+    font-size: @comment-font-action-size;
+
+    > *:not(:last-child) {
+      margin-right: @comment-margin-actions-right;
+    }
+  }
+
+  &-actions-align-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

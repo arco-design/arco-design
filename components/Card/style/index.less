@@ -1,0 +1,216 @@
+@import './token.less';
+@import '../../style/mixin.less';
+
+@card-prefix-cls: ~'@{prefix}-card';
+
+.@{card-prefix-cls} {
+  position: relative;
+  background: @card-color-bg;
+  transition: box-shadow @transition-duration-2 @transition-timing-function-linear;
+  border-radius: @card-border-radius-no-border;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: @card-border-width-title-bottom solid @card-color-border;
+    overflow: hidden;
+
+    &-no-title::before {
+      content: ' ';
+      display: block;
+    }
+
+    &-title {
+      flex: 1;
+      font-weight: @card-font-weight-title;
+      color: @card-color-title;
+      .text-ellipsis();
+    }
+
+    &-extra {
+      color: @card-color-title-extra;
+      .text-ellipsis();
+    }
+  }
+
+  &-body {
+    color: @card-color-body;
+  }
+
+  &-cover {
+    overflow: hidden;
+
+    > * {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: @card-margin-top-meta-footer;
+
+    &::before {
+      content: '';
+      visibility: hidden;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: @card-color-action;
+      cursor: pointer;
+      .text-ellipsis();
+      transition: color @transition-duration-2 @transition-timing-function-linear;
+
+      &:hover {
+        color: @card-color-action_hover;
+      }
+
+      &:not(:last-child) {
+        margin-right: @card-margin-right-action-item;
+      }
+    }
+  }
+
+  &-meta {
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:last-child {
+        margin-top: @card-margin-top-meta-footer;
+      }
+
+      &-only-actions::before {
+        content: '';
+        visibility: hidden;
+      }
+
+      .@{card-prefix-cls}-actions {
+        margin-top: 0;
+      }
+    }
+
+    &-title {
+      font-weight: @card-font-weight-title;
+      color: @card-color-title;
+      .text-ellipsis();
+    }
+
+    &-description:not(:first-child) {
+      margin-top: @card-margin-top-meta-description;
+    }
+  }
+
+  &-grid {
+    position: relative;
+    box-sizing: border-box;
+    width: 33.33%;
+    box-shadow: @card-border-width 0 0 0 @card-color-border,
+      0 @card-border-width 0 0 @card-color-border,
+      @card-border-width @card-border-width 0 0 @card-color-border,
+      @card-border-width 0 0 0 @card-color-border inset,
+      0 @card-border-width 0 0 @card-color-border inset;
+
+    &::before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: box-shadow @transition-duration-2 @transition-timing-function-linear;
+    }
+
+    &-hoverable:hover {
+      z-index: 1;
+
+      &::before {
+        box-shadow: 0 4px 10px rgb(var(--gray-2));
+      }
+    }
+
+    // 避免 Card 的背景色遮住由 box-shadow 实现的 Grid 的边框
+    .@{card-prefix-cls} {
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  // 以下为特殊状态的补充
+  &-contain-grid:not(&-loading) > &-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -@card-border-width;
+    padding: 0;
+  }
+
+  &-hoverable:hover {
+    box-shadow: 0 4px 10px rgb(var(--gray-2));
+  }
+
+  &-bordered {
+    border: @card-border-width solid @card-color-border;
+    border-radius: @card-border-radius;
+
+    .@{card-prefix-cls}-cover {
+      border-radius: @card-border-radius @card-border-radius 0 0;
+    }
+  }
+
+  &-loading &-body {
+    overflow: hidden;
+    text-align: center;
+  }
+
+  // 不同尺寸
+  .size(@size) {
+    &-size-@{size} {
+      font-size: ~'@{card-size-@{size}-font-size}';
+
+      .@{card-prefix-cls}-header {
+        height: ~'@{card-size-@{size}-height-title}';
+        padding-left: ~'@{card-size-@{size}-padding-horizontal-title}';
+        padding-right: ~'@{card-size-@{size}-padding-horizontal-title}';
+      }
+
+      .@{card-prefix-cls}-header-title,
+      .@{card-prefix-cls}-meta-title {
+        font-size: ~'@{card-size-@{size}-font-size-title}';
+      }
+
+      .@{card-prefix-cls}-header-extra {
+        font-size: ~'@{card-size-@{size}-font-size-title-extra}';
+      }
+
+      .@{card-prefix-cls}-body {
+        padding: ~'@{card-size-@{size}-padding-vertical-body}' ~'@{card-size-@{size}-padding-horizontal-body}';
+      }
+    }
+  }
+
+  .size(default);
+  .size(small);
+}
+
+// dark mode
+@{arco-theme-tag}[arco-theme='dark'] {
+  .@{card-prefix-cls}-grid-hoverable:hover::before,
+  .@{card-prefix-cls}-hoverable:hover {
+    box-shadow: 0 4px 10px rgba(var(--gray-1), 0.4);
+  }
+}

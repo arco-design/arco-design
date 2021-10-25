@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Message/demo/basic.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Open Message
+  </span>
+</button>
+`;
+
+exports[`renders Message/demo/closable.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Open Message
+  </span>
+</button>
+`;
+
+exports[`renders Message/demo/hide.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Close after 2 seconds
+  </span>
+</button>
+`;
+
+exports[`renders Message/demo/icon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Info (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
+      type="button"
+    >
+      <span>
+        Success (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
+      type="button"
+    >
+      <span>
+        Warning (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
+      type="button"
+    >
+      <span>
+        Error (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Smile
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Message/demo/position.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Top
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Bottom
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Message/demo/type.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Info
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
+      type="button"
+    >
+      <span>
+        Success
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
+      type="button"
+    >
+      <span>
+        Warning
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
+      type="button"
+    >
+      <span>
+        Error
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Normal
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Message/demo/update_duration.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Update message
+  </span>
+</button>
+`;
+
+exports[`renders Message/demo/update_message.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Update message
+  </span>
+</button>
+`;

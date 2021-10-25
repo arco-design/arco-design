@@ -1,0 +1,65 @@
+@import '~@arco-design/web-react/es/Button/style/token.less';
+
+@icon-width: 14px;
+@icon-height: 13px;
+
+.start-btn {
+  &-icon {
+    position: relative;
+    width: @icon-width;
+    height: @icon-height;
+    margin-right: 8px;
+
+    &:after,
+    &:before {
+      position: absolute;
+      transition: var(--home-transition-base);
+    }
+
+    &:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid @btn-primary-color-text;
+      border-left: 2px solid @btn-primary-color-text;
+      box-sizing: border-box;
+      transform: rotate(135deg);
+      left: -2px;
+      top: 50%;
+      margin-top: -4px;
+    }
+
+    &:after {
+      content: "";
+      width: 6px;
+      height: 2px;
+      background-color: @btn-primary-color-text;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &:hover {
+
+    .start-btn-icon {
+  
+      &:before {
+        left: 6px;
+        border-color: #A6D8FF;
+      }
+  
+      &:after {
+        background-color: #A6D8FF;
+        right: 1px;
+        width: 7px;
+        bottom: (@icon-height / 2) - 1;
+      }
+    }
+  }
+}
+
+body:not([arco-theme="dark"]) {
+  .start-btn:hover {
+    background: #1d2129 !important;
+  }
+}

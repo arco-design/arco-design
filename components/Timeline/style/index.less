@@ -1,0 +1,254 @@
+@import './token.less';
+
+@timeline-prefix-cls: ~'@{prefix}-timeline';
+@timeline-item-prefix-cls: ~'@{prefix}-timeline-item';
+
+.@{timeline-prefix-cls} {
+  &-item {
+    position: relative;
+    color: @timeline-color-content-text;
+    font-size: @timeline-font-content-size;
+    min-height: @timeline-item-min-height;
+    padding-left: @timeline-dot-size-width;
+
+    &-label {
+      color: @timeline-color-label-text;
+      font-size: @timeline-font-label-size;
+      line-height: 1.667;
+    }
+
+    &-content {
+      line-height: 1.5715;
+      font-size: @timeline-font-content-size;
+      color: @timeline-color-content-text;
+      margin-bottom: @timeline-vertical-margin-content-bottom;
+
+      &-wrapper {
+        margin-left: @timeline-vertical-margin-content-left;
+        position: relative;
+      }
+    }
+  }
+}
+
+// 节点的样式
+.@{timeline-prefix-cls}-item {
+  &&-last {
+    > .@{timeline-prefix-cls}-item-dot-wrapper .@{timeline-prefix-cls}-item-dot-line {
+      display: none;
+    }
+  }
+
+  &-dot-wrapper {
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    left: 0;
+
+    .@{timeline-prefix-cls}-item-dot-content {
+      width: @timeline-dot-size-width;
+      height: 1.5715 * @timeline-font-content-size;
+      line-height: $height;
+      position: relative;
+    }
+  }
+
+  &-dot {
+    width: @timeline-dot-size-width;
+    height: @timeline-dot-size-width;
+    border-radius: @timeline-dot-border-radius;
+    box-sizing: border-box;
+    color: @timeline-color-dot-bg;
+    margin-top: -50%;
+    position: relative;
+    top: 50%;
+
+    &-solid {
+      background-color: @timeline-color-dot-bg;
+    }
+
+    &-hollow {
+      border: @timeline-dot-border-width_hollow solid @timeline-color-dot-bg;
+      background-color: @timeline-color-dot-bg_hollow;
+    }
+
+    &-custom {
+      display: inline-flex;
+      transform-origin: center;
+      color: @timeline-color-dot-bg;
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: var(--color-bg-2);
+      transform: translateX(-50%) translateY(-50%);
+
+      svg {
+        color: inherit;
+      }
+    }
+  }
+
+  &-dot-line {
+    width: @timeline-size-line-width;
+    border-left-width: @timeline-size-line-width;
+    border-color: @timeline-color-line-bg;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.5715 * (@timeline-font-content-size / 2) + (@timeline-dot-size-width / 2) +
+      @timeline-vertical-margin-line-top;
+    bottom: -(
+1.5715 * (@timeline-font-content-size / 2) - (@timeline-dot-size-width / 2) -
+          @timeline-vertical-margin-line-bottom
+);
+    // bottom: -7px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+}
+
+/* mode  */
+.@{timeline-prefix-cls} {
+  &-alternate {
+    overflow: hidden;
+
+    .@{timeline-item-prefix-cls}-vertical-left {
+      padding-left: 0;
+
+      > .@{timeline-item-prefix-cls}-dot-wrapper {
+        left: 50%;
+      }
+
+      > .@{timeline-item-prefix-cls}-content-wrapper {
+        left: 50%;
+        width: 50%;
+        margin-left: @timeline-vertical-margin-content-left + @timeline-dot-size-width;
+        padding-right: @timeline-vertical-margin-content-left + @timeline-dot-size-width;
+      }
+    }
+
+    .@{timeline-item-prefix-cls}-vertical-right {
+      padding-right: 0;
+
+      > .@{timeline-item-prefix-cls}-dot-wrapper {
+        left: 50%;
+      }
+
+      > .@{timeline-item-prefix-cls}-content-wrapper {
+        left: 0;
+        margin-left: -@timeline-vertical-margin-content-left;
+        margin-right: 0;
+        text-align: right;
+        width: 50%;
+        padding-right: @timeline-vertical-margin-content-left;
+      }
+    }
+  }
+
+  &-right {
+    .@{timeline-item-prefix-cls}-vertical-right {
+      padding-right: @timeline-dot-size-width;
+
+      > .@{timeline-item-prefix-cls}-dot-wrapper {
+        right: 0;
+        left: unset;
+      }
+
+      > .@{timeline-item-prefix-cls}-content-wrapper {
+        text-align: right;
+        margin-left: 0;
+        margin-right: @timeline-vertical-margin-content-left;
+      }
+    }
+  }
+}
+
+/* label position */
+.@{timeline-prefix-cls}-item {
+  &-label-relative {
+    > .@{timeline-prefix-cls}-item-label {
+      position: absolute;
+      top: 0;
+      max-width: 100px;
+      box-sizing: border-box;
+    }
+  }
+
+  &-vertical-left&-label-relative {
+    margin-left: 100px;
+
+    > .@{timeline-prefix-cls}-item-label {
+      text-align: right;
+      padding-right: @timeline-vertical-margin-content-left;
+      transform: translateX(-100%);
+      left: 0;
+    }
+  }
+
+  &-vertical-right&-label-relative {
+    margin-right: 100px;
+
+    > .@{timeline-prefix-cls}-item-label {
+      text-align: left;
+      padding-left: @timeline-vertical-margin-content-left;
+      transform: translateX(100%);
+      right: 0;
+    }
+  }
+
+  &-horizontal-top&-label-relative {
+    margin-top: 50px;
+
+    > .@{timeline-prefix-cls}-item-label {
+      padding-bottom: @timeline-horizontal-margin-content-spacing;
+      transform: translateY(-100%);
+    }
+
+    > .@{timeline-prefix-cls}-item-content {
+      margin-bottom: 0;
+    }
+  }
+
+  &-horizontal-bottom&-label-relative {
+    margin-bottom: 50px;
+
+    > .@{timeline-prefix-cls}-item-content {
+      margin-bottom: 0;
+    }
+
+    > .@{timeline-prefix-cls}-item-label {
+      top: unset;
+      bottom: 0;
+      text-align: left;
+      padding-top: @timeline-horizontal-margin-content-spacing;
+      transform: translateY(100%);
+    }
+  }
+}
+
+.@{timeline-prefix-cls}-alternate {
+  .@{timeline-prefix-cls}-item-vertical-left.@{timeline-prefix-cls}-item-label-relative {
+    margin-left: 0;
+
+    > .@{timeline-prefix-cls}-item-label {
+      width: 50%;
+      max-width: unset;
+      transform: none;
+      left: 0;
+    }
+  }
+
+  .@{timeline-prefix-cls}-item-vertical-right.@{timeline-prefix-cls}-item-label-relative {
+    margin-right: 0;
+  }
+
+  .@{timeline-prefix-cls}-item-horizontal-top.@{timeline-prefix-cls}-item-label-relative {
+    margin-top: 0;
+  }
+
+  .@{timeline-prefix-cls}-item-horizontal-bottom.@{timeline-prefix-cls}-item-label-relative {
+    margin-bottom: 0;
+  }
+}
+
+@import './horizontal.less';

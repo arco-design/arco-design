@@ -1,0 +1,1727 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Pagination/demo/all-options.md correctly 1`] = `
+<div>
+  <div
+    class="arco-pagination arco-pagination-size-default"
+    style="width:800px;margin-bottom:20px"
+  >
+    <div
+      class="arco-pagination-total-text"
+    >
+      共 200 条
+    </div>
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-jumper"
+      >
+        <svg
+          class="arco-icon arco-icon-more"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        20
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+    <div
+      class="arco-pagination-option"
+    >
+      <div
+        class="arco-select arco-select-single arco-select-size-default"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title="10 条/页"
+        >
+          <input
+            class="arco-select-view-input arco-select-hidden"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="10 条/页"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            10 条/页
+          </span>
+          <div
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-pagination-jumper"
+    >
+      <span
+        class="arco-pagination-jumper-text-goto"
+      >
+        前往
+      </span>
+      <input
+        class="arco-input arco-input-size-default arco-pagination-jumper-input"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="arco-pagination arco-pagination-size-default arco-pagination-disabled"
+    style="width:800px"
+  >
+    <div
+      class="arco-pagination-total-text"
+    >
+      共 200 条
+    </div>
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-jumper"
+      >
+        <svg
+          class="arco-icon arco-icon-more"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        20
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+    <div
+      class="arco-pagination-option"
+    >
+      <div
+        class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title="10 条/页"
+        >
+          <input
+            class="arco-select-view-input arco-select-hidden"
+            disabled=""
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="10 条/页"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            10 条/页
+          </span>
+          <div
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-pagination-jumper"
+    >
+      <span
+        class="arco-pagination-jumper-text-goto"
+      >
+        前往
+      </span>
+      <input
+        class="arco-input arco-input-size-default arco-input-disabled arco-pagination-jumper-input"
+        disabled=""
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Pagination/demo/basic.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-default"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+    >
+      <svg
+        class="arco-icon arco-icon-left"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-active"
+      data-active="true"
+    >
+      1
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      2
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      3
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      4
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      5
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      20
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <svg
+        class="arco-icon arco-icon-right"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m16 39.513 15.556-15.557L16 8.4"
+        />
+      </svg>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders Pagination/demo/change-size.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-default"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+    >
+      <svg
+        class="arco-icon arco-icon-left"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-active"
+      data-active="true"
+    >
+      1
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      2
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      3
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      4
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      5
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      20
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <svg
+        class="arco-icon arco-icon-right"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m16 39.513 15.556-15.557L16 8.4"
+        />
+      </svg>
+    </li>
+  </ul>
+  <div
+    class="arco-pagination-option"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title="10 条/页"
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="10 条/页"
+        />
+        <span
+          class="arco-select-view-value"
+        >
+          10 条/页
+        </span>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Pagination/demo/count-more.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-default"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev"
+    >
+      <svg
+        class="arco-icon arco-icon-left"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      1
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      3
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      4
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-active"
+      data-active="true"
+    >
+      5
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      6
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      7
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      20
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <svg
+        class="arco-icon arco-icon-right"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m16 39.513 15.556-15.557L16 8.4"
+        />
+      </svg>
+    </li>
+  </ul>
+  <div
+    class="arco-pagination-option"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title="10 条/页"
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="10 条/页"
+        />
+        <span
+          class="arco-select-view-value"
+        >
+          10 条/页
+        </span>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Pagination/demo/itemRender.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-default"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+    >
+      <a
+        style="font-size:14px;margin:0 8px"
+      >
+        Prev
+      </a>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-active"
+      data-active="true"
+    >
+      1
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      2
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      3
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      4
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      5
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      20
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <a
+        style="font-size:14px;margin:0 8px"
+      >
+        Next
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders Pagination/demo/jumper.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-default"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+    >
+      <svg
+        class="arco-icon arco-icon-left"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-active"
+      data-active="true"
+    >
+      1
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      2
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      3
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      4
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      5
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      20
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <svg
+        class="arco-icon arco-icon-right"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m16 39.513 15.556-15.557L16 8.4"
+        />
+      </svg>
+    </li>
+  </ul>
+  <div
+    class="arco-pagination-jumper"
+  >
+    <span
+      class="arco-pagination-jumper-text-goto"
+    >
+      前往
+    </span>
+    <input
+      class="arco-input arco-input-size-default arco-pagination-jumper-input"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Pagination/demo/show-more.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-default"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+    >
+      <svg
+        class="arco-icon arco-icon-left"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-active"
+      data-active="true"
+    >
+      1
+    </li>
+    <li
+      class="arco-pagination-item"
+      data-active="false"
+    >
+      2
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-jumper"
+    >
+      <svg
+        class="arco-icon arco-icon-more"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          fill="currentColor"
+          stroke="none"
+        />
+        <path
+          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <svg
+        class="arco-icon arco-icon-right"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m16 39.513 15.556-15.557L16 8.4"
+        />
+      </svg>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders Pagination/demo/show-total.md correctly 1`] = `
+<div>
+  <div
+    class="arco-pagination arco-pagination-size-default"
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-pagination-total-text"
+    >
+      共 50 条
+    </div>
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="arco-pagination arco-pagination-size-default"
+  >
+    <div
+      class="arco-pagination-total-text"
+    >
+      <span>
+        1 - 10 of 200 items
+      </span>
+    </div>
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-jumper"
+      >
+        <svg
+          class="arco-icon arco-icon-more"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        20
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`renders Pagination/demo/simple.md correctly 1`] = `
+<div
+  class="arco-pagination arco-pagination-size-small arco-pagination-simple"
+>
+  <ul
+    class="arco-pagination-list"
+  >
+    <li
+      class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+    >
+      <svg
+        class="arco-icon arco-icon-left"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </li>
+    <li
+      class="arco-pagination-item-simple-pager"
+    >
+      <div
+        class="arco-pagination-jumper"
+      >
+        <input
+          class="arco-input arco-input-size-small arco-pagination-jumper-input"
+          value="1"
+        />
+        <span
+          class="arco-pagination-jumper-separator"
+        >
+          /
+        </span>
+        <span>
+          5
+        </span>
+      </div>
+    </li>
+    <li
+      class="arco-pagination-item arco-pagination-item-next"
+    >
+      <svg
+        class="arco-icon arco-icon-right"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m16 39.513 15.556-15.557L16 8.4"
+        />
+      </svg>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders Pagination/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="large"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        large
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="default"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        default
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="small"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        small
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        type="radio"
+        value="mini"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        mini
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-pagination arco-pagination-size-default"
+  >
+    <div
+      class="arco-pagination-total-text"
+    >
+      共 50 条
+    </div>
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+    <div
+      class="arco-pagination-option"
+    >
+      <div
+        class="arco-select arco-select-single arco-select-size-default"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title="10 条/页"
+        >
+          <input
+            class="arco-select-view-input arco-select-hidden"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="10 条/页"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            10 条/页
+          </span>
+          <div
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-pagination-jumper"
+    >
+      <span
+        class="arco-pagination-jumper-text-goto"
+      >
+        前往
+      </span>
+      <input
+        class="arco-input arco-input-size-default arco-pagination-jumper-input"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Pagination/demo/style.md correctly 1`] = `
+<div>
+  <div
+    class="arco-pagination arco-pagination-size-default"
+    style="margin-bottom:20px"
+  >
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+        style="background:var(--color-fill-2);margin-right:0"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-jumper"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        <svg
+          class="arco-icon arco-icon-more"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        20
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next"
+        style="background:var(--color-bg-2);margin-right:0"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="arco-pagination arco-pagination-size-default"
+  >
+    <ul
+      class="arco-pagination-list"
+    >
+      <li
+        class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        style="background:var(--color-bg-2)"
+      >
+        <svg
+          class="arco-icon arco-icon-left"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M32 8.4 16.444 23.956 32 39.513"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-active"
+        data-active="true"
+        style="background:var(--color-fill-2)"
+      >
+        1
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2)"
+      >
+        2
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2)"
+      >
+        3
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2)"
+      >
+        4
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2)"
+      >
+        5
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-jumper"
+        style="background:var(--color-bg-2)"
+      >
+        <svg
+          class="arco-icon arco-icon-more"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+          />
+        </svg>
+      </li>
+      <li
+        class="arco-pagination-item"
+        data-active="false"
+        style="background:var(--color-bg-2)"
+      >
+        20
+      </li>
+      <li
+        class="arco-pagination-item arco-pagination-item-next"
+        style="background:var(--color-bg-2)"
+      >
+        <svg
+          class="arco-icon arco-icon-right"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m16 39.513 15.556-15.557L16 8.4"
+          />
+        </svg>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

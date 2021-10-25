@@ -1,0 +1,10 @@
+import '../../style/index.less';
+import '../../Checkbox/style';
+import '../../Button/style';
+import '../../Empty/style';
+import '../../Pagination/style';
+import '../../Radio/style';
+import '../../Spin/style';
+import '../../Trigger/style';
+import '../../Tooltip/style';
+import './index.less';

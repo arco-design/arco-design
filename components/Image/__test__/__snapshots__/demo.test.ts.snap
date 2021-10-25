@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Image/demo/basic.md correctly 1`] = `
+<div
+  class="arco-image"
+  style="width:200px"
+>
+  <img
+    class="arco-image-img"
+  />
+  <div
+    class="arco-image-overlay"
+  />
+</div>
+`;
+
+exports[`renders Image/demo/caption.md correctly 1`] = `
+<div>
+  <div
+    class="arco-image"
+    style="width:200px"
+  >
+    <img
+      class="arco-image-img"
+      title="A user’s avatar"
+    />
+    <div
+      class="arco-image-overlay"
+    />
+  </div>
+  <div
+    class="arco-image"
+    style="width:200px;margin-left:67px;vertical-align:top"
+  >
+    <img
+      class="arco-image-img"
+      title="A user’s avatar"
+    />
+    <div
+      class="arco-image-overlay"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Image/demo/component-preview.md correctly 1`] = `
+<div>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  >
+    <span>
+      Click me to preview image
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Image/demo/component-preview-group.md correctly 1`] = `
+<div>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  >
+    <span>
+      Click me to preview multiple image
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Image/demo/custom-preview-actions.md correctly 1`] = `
+<div
+  class="arco-image"
+  style="width:200px"
+>
+  <img
+    class="arco-image-img"
+  />
+  <div
+    class="arco-image-overlay"
+  />
+</div>
+`;
+
+exports[`renders Image/demo/error.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:20px"
+  >
+    <div
+      class="arco-image"
+      style="width:400px"
+    >
+      <img
+        class="arco-image-img"
+        style="height:300px"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-image"
+      style="width:400px"
+    >
+      <img
+        class="arco-image-img"
+        style="height:300px"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Image/demo/extra-actions.md correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="arco-image"
+      style="width:300px"
+    >
+      <img
+        class="arco-image-img"
+        title="A user’s avatar"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+    <div
+      class="arco-image arco-image-simple"
+      style="width:200px;margin-left:67px;vertical-align:top"
+    >
+      <img
+        class="arco-image-img"
+        title="A user’s avatar"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+  <div
+    style="margin-top:67px"
+  >
+    <div
+      class="arco-image"
+      style="width:300px"
+    >
+      <img
+        class="arco-image-img"
+        title="A user’s avatar"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+    <div
+      class="arco-image arco-image-simple"
+      style="width:200px;margin-left:67px;vertical-align:top"
+    >
+      <img
+        class="arco-image-img"
+        title="A user’s avatar"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Image/demo/loader.md correctly 1`] = `
+<div>
+  <div>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="margin-bottom:20px"
+      type="button"
+    >
+      <span>
+        reload
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-image"
+    style="width:200px"
+  >
+    <img
+      class="arco-image-img"
+      style="height:200px"
+    />
+    <div
+      class="arco-image-overlay"
+    />
+  </div>
+  <div
+    class="arco-image"
+    style="width:200px;margin-left:67px"
+  >
+    <img
+      class="arco-image-img"
+      style="height:200px"
+    />
+    <div
+      class="arco-image-overlay"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Image/demo/preview-get-popup-container.md correctly 1`] = `
+<div
+  style="width:100%;height:400px;background-color:var(--color-fill-2);position:relative;overflow:hidden;line-height:400px;text-align:center"
+>
+  <div
+    class="arco-image"
+    style="width:200px"
+  >
+    <img
+      class="arco-image-img"
+    />
+    <div
+      class="arco-image-overlay"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Image/demo/preview-group.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-vertical"
+  >
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-center"
+      >
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="arco-image"
+            style="width:200px"
+          >
+            <img
+              class="arco-image-img"
+            />
+            <div
+              class="arco-image-overlay"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="arco-image"
+            style="width:200px"
+          >
+            <img
+              class="arco-image-img"
+            />
+            <div
+              class="arco-image-overlay"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="arco-image"
+            style="width:200px"
+          >
+            <img
+              class="arco-image-img"
+            />
+            <div
+              class="arco-image-overlay"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <div
+            class="arco-image"
+            style="width:200px"
+          >
+            <img
+              class="arco-image-img"
+            />
+            <div
+              class="arco-image-overlay"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Image/demo/progressive-loader.md correctly 1`] = `
+<div>
+  <div>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="margin-bottom:20px"
+      type="button"
+    >
+      <span>
+        reload
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-image"
+    style="width:200px"
+  >
+    <img
+      class="arco-image-img"
+    />
+    <div
+      class="arco-image-overlay"
+    />
+  </div>
+</div>
+`;

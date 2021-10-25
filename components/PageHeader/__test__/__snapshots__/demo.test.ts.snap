@@ -1,0 +1,510 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PageHeader/demo/background.md correctly 1`] = `
+<div
+  style="background-image:radial-gradient(var(--color-fill-3) 1px, rgba(0, 0, 0, 0) 1px);background-size:16px 16px;padding:20px"
+>
+  <div
+    class="arco-page-header"
+  >
+    <div
+      class="arco-page-header-head-wrapper"
+    >
+      <div
+        class="arco-page-header-head"
+      >
+        <div
+          class="arco-page-header-head-main arco-page-header-head-main-with-back"
+        >
+          <span
+            class="arco-icon-hover arco-page-header-icon-hover arco-page-header-back"
+          >
+            <span
+              class="arco-page-header-back-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-left"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M32 8.4 16.444 23.956 32 39.513"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="arco-page-header-title"
+          >
+            ArcoDesign
+          </div>
+          <div
+            class="arco-page-header-divider"
+          />
+          <div
+            class="arco-page-header-sub-title"
+          >
+            This is a description
+          </div>
+        </div>
+        <div
+          class="arco-page-header-head-extra"
+        >
+          <div>
+            <div
+              class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+            >
+              <label
+                class="arco-radio-button"
+              >
+                <input
+                  type="radio"
+                  value="large"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Large
+                </span>
+              </label>
+              <label
+                class="arco-radio-button"
+              >
+                <input
+                  type="radio"
+                  value="medium"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Medium
+                </span>
+              </label>
+              <label
+                class="arco-radio-button arco-radio-checked"
+              >
+                <input
+                  checked=""
+                  type="radio"
+                  value="small"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Small
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders PageHeader/demo/basic.md correctly 1`] = `
+<div
+  style="background:var(--color-fill-2);padding:40px"
+>
+  <div
+    class="arco-page-header"
+    style="background:var(--color-bg-2)"
+  >
+    <div
+      class="arco-page-header-head-wrapper"
+    >
+      <div
+        class="arco-page-header-head"
+      >
+        <div
+          class="arco-page-header-head-main"
+        >
+          <div
+            class="arco-page-header-title"
+          >
+            ArcoDesign
+          </div>
+          <div
+            class="arco-page-header-divider"
+          />
+          <div
+            class="arco-page-header-sub-title"
+          >
+            This is a description
+          </div>
+        </div>
+        <div
+          class="arco-page-header-head-extra"
+        >
+          <div>
+            <div
+              class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+            >
+              <label
+                class="arco-radio-button"
+              >
+                <input
+                  type="radio"
+                  value="large"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Large
+                </span>
+              </label>
+              <label
+                class="arco-radio-button"
+              >
+                <input
+                  type="radio"
+                  value="medium"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Medium
+                </span>
+              </label>
+              <label
+                class="arco-radio-button arco-radio-checked"
+              >
+                <input
+                  checked=""
+                  type="radio"
+                  value="small"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Small
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
+<div
+  style="background:var(--color-fill-2);padding:40px"
+>
+  <div
+    class="arco-page-header arco-page-header-with-breadcrumb"
+    style="background:var(--color-bg-2)"
+  >
+    <div
+      class="arco-page-header-head-wrapper"
+    >
+      <div
+        class="arco-breadcrumb"
+      >
+        <div
+          class="arco-breadcrumb-item"
+        >
+          <a
+            href="#/"
+          >
+            Home
+          </a>
+        </div>
+        <span
+          class="arco-breadcrumb-item-separator"
+        >
+          <svg
+            class="arco-icon arco-icon-oblique-line"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M29.506 6.502 18.493 41.498"
+            />
+          </svg>
+        </span>
+        <div
+          class="arco-breadcrumb-item"
+        >
+          <a
+            href="#/channel"
+          >
+            Channel
+          </a>
+        </div>
+        <span
+          class="arco-breadcrumb-item-separator"
+        >
+          <svg
+            class="arco-icon arco-icon-oblique-line"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M29.506 6.502 18.493 41.498"
+            />
+          </svg>
+        </span>
+        <div
+          class="arco-breadcrumb-item"
+        >
+          <span>
+            News
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-page-header-head"
+      >
+        <div
+          class="arco-page-header-head-main"
+        >
+          <div
+            class="arco-page-header-title"
+          >
+            ArcoDesign
+          </div>
+          <div
+            class="arco-page-header-divider"
+          />
+          <div
+            class="arco-page-header-sub-title"
+          >
+            This is a description
+          </div>
+        </div>
+        <div
+          class="arco-page-header-head-extra"
+        >
+          <div>
+            <div
+              class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+            >
+              <label
+                class="arco-radio-button"
+              >
+                <input
+                  type="radio"
+                  value="large"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Large
+                </span>
+              </label>
+              <label
+                class="arco-radio-button"
+              >
+                <input
+                  type="radio"
+                  value="medium"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Medium
+                </span>
+              </label>
+              <label
+                class="arco-radio-button arco-radio-checked"
+              >
+                <input
+                  checked=""
+                  type="radio"
+                  value="small"
+                />
+                <span
+                  class="arco-radio-button-inner"
+                >
+                  Small
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
+<div
+  style="background:var(--color-fill-2);padding:40px"
+>
+  <div
+    class="arco-page-header arco-page-header-with-breadcrumb arco-page-header-with-content"
+    style="background:var(--color-bg-2)"
+  >
+    <div
+      class="arco-page-header-head-wrapper"
+    >
+      <div
+        class="arco-breadcrumb"
+      >
+        <div
+          class="arco-breadcrumb-item"
+        >
+          <a
+            href="#/"
+          >
+            Home
+          </a>
+        </div>
+        <span
+          class="arco-breadcrumb-item-separator"
+        >
+          <svg
+            class="arco-icon arco-icon-oblique-line"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M29.506 6.502 18.493 41.498"
+            />
+          </svg>
+        </span>
+        <div
+          class="arco-breadcrumb-item"
+        >
+          <a
+            href="#/channel"
+          >
+            Channel
+          </a>
+        </div>
+        <span
+          class="arco-breadcrumb-item-separator"
+        >
+          <svg
+            class="arco-icon arco-icon-oblique-line"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M29.506 6.502 18.493 41.498"
+            />
+          </svg>
+        </span>
+        <div
+          class="arco-breadcrumb-item"
+        >
+          <span>
+            News
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-page-header-head"
+      >
+        <div
+          class="arco-page-header-head-main arco-page-header-head-main-with-back"
+        >
+          <span
+            class="arco-icon-hover arco-page-header-icon-hover arco-page-header-back"
+          >
+            <span
+              class="arco-page-header-back-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-left"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M32 8.4 16.444 23.956 32 39.513"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="arco-page-header-title"
+          >
+            ArcoDesign
+          </div>
+          <div
+            class="arco-page-header-divider"
+          />
+          <div
+            class="arco-page-header-sub-title"
+          >
+            This is a description
+            <div
+              class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-small"
+              style="margin-left:8px"
+            >
+              Default
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-page-header-head-extra"
+        >
+          <div>
+            <button
+              class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+              style="margin-right:12px"
+              type="button"
+            >
+              <span>
+                Cancel
+              </span>
+            </button>
+            <button
+              class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+              type="button"
+            >
+              <span>
+                Save
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-page-header-content"
+    >
+      <div
+        class="arco-typography"
+        style="font-size:16px;font-weight:600;margin-top:0;margin-bottom:20px"
+      >
+        For other uses, see Design
+      </div>
+      <div
+        class="arco-typography"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered to be a design activity. The design usually has to satisfy certain goals and constraints, may take into account aesthetic, functional, economic, or socio-political considerations, and is expected to interact with a certain environment. Major examples of designs include architectural blueprints,engineering drawings, business processes, circuit diagrams, and sewing patterns.Major examples of designs include architectural blueprints,engineering drawings, business processes, circuit diagrams, and sewing patterns.
+      </div>
+    </div>
+  </div>
+</div>
+`;

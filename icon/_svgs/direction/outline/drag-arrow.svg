@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4">
+<path d="M7 24L41 24" stroke-linecap="butt"></path>
+<path d="M24 7L24 41" stroke-linecap="butt"></path>
+<path d="M30 12L24 6L18 12" stroke-linecap="butt"></path>
+<path d="M36 30L42 24L36 18" stroke-linecap="butt"></path>
+<path d="M12 30L6 24L12 18" stroke-linecap="butt"></path>
+<path d="M18 36L24 42L30 36" stroke-linecap="butt"></path>
+</svg>

@@ -1,0 +1,558 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Avatar/demo/autoFixFontSize.md correctly 1`] = `
+<div>
+  <div
+    class="arco-avatar arco-avatar-circle"
+    style="font-size:;margin-right:24px;vertical-align:middle;background-color:#14a9f8"
+  >
+    <span
+      class="arco-avatar-text"
+    >
+      B
+    </span>
+  </div>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="vertical-align:middle"
+    type="button"
+  >
+    <span>
+      Change
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Avatar/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        A
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:;background-color:#3370ff"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        <svg
+          class="arco-icon arco-icon-user"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+          />
+          <circle
+            cx="24"
+            cy="15"
+            r="8"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:;background-color:#14a9f8"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        Arco
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:;background-color:#00d0b6"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        Design
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:"
+    >
+      <span
+        class="arco-avatar-image"
+      >
+        <img
+          alt="avatar"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Avatar/demo/group.md correctly 1`] = `
+<div>
+  <div
+    class="arco-avatar-group"
+    style="margin:10px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:32px;height:32px;font-size:16px;z-index:5;margin-left:0;background-color:#7BC616"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        A
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:32px;height:32px;font-size:16px;z-index:4;margin-left:-8px;background-color:#14C9C9"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        B
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:32px;height:32px;font-size:16px;z-index:3;margin-left:-8px;background-color:#168CFF"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        C
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:32px;height:32px;font-size:16px;z-index:2;margin-left:-8px;background-color:#FF7D00"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        Arco
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:32px;height:32px;font-size:16px;z-index:1;margin-left:-8px;background-color:#FFC72E"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        Design
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-avatar-group"
+    style="margin:10px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:24px;height:24px;font-size:12px;z-index:5;margin-left:0;background-color:#7BC616"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        A
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:24px;height:24px;font-size:12px;z-index:4;margin-left:-6px;background-color:#14C9C9"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        B
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:24px;height:24px;font-size:12px;z-index:3;margin-left:-6px;background-color:#168CFF"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        C
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:24px;height:24px;font-size:12px;z-index:2;margin-left:-6px;background-color:#FF7D00"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        Arco
+      </span>
+    </div>
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="width:24px;height:24px;font-size:12px;z-index:1;margin-left:-6px;background-color:#FFC72E"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        Design
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Avatar/demo/size.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:24px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <div
+          class="arco-avatar arco-avatar-circle"
+          style="width:64px;height:64px;font-size:32px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <div
+          class="arco-avatar arco-avatar-circle"
+          style="width:40px;height:40px;font-size:20px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <div
+          class="arco-avatar arco-avatar-circle"
+          style="width:32px;height:32px;font-size:16px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-avatar arco-avatar-circle"
+          style="width:24px;height:24px;font-size:12px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <div
+          class="arco-avatar arco-avatar-square"
+          style="width:64px;height:64px;font-size:32px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <div
+          class="arco-avatar arco-avatar-square"
+          style="width:40px;height:40px;font-size:20px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <div
+          class="arco-avatar arco-avatar-square"
+          style="width:32px;height:32px;font-size:16px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-avatar arco-avatar-square"
+          style="width:24px;height:24px;font-size:12px"
+        >
+          <span
+            class="arco-avatar-text"
+          >
+            Arco
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle arco-avatar-with-trigger-icon"
+      style="font-size:;background-color:#168CFF"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        A
+      </span>
+      <div
+        class="arco-avatar-trigger-icon-button"
+        style="color:#3491FA"
+      >
+        <svg
+          class="arco-icon arco-icon-camera"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m33 12-1.862-3.724A.5.5 0 0 0 30.691 8H17.309a.5.5 0 0 0-.447.276L15 12m16 14a7 7 0 1 1-14 0 7 7 0 0 1 14 0ZM7 40h34a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle arco-avatar-with-trigger-icon"
+      style="font-size:;background-color:#14C9C9"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        <svg
+          class="arco-icon arco-icon-user"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+          />
+          <circle
+            cx="24"
+            cy="15"
+            r="8"
+          />
+        </svg>
+      </span>
+      <div
+        class="arco-avatar-trigger-icon-button"
+        style="color:#14C9C9"
+      >
+        <svg
+          class="arco-icon arco-icon-edit"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-avatar arco-avatar-square arco-avatar-with-trigger-icon"
+      style="font-size:;background-color:#FFC72E"
+    >
+      <span
+        class="arco-avatar-text"
+      >
+        <svg
+          class="arco-icon arco-icon-user"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+          />
+          <circle
+            cx="24"
+            cy="15"
+            r="8"
+          />
+        </svg>
+      </span>
+      <div
+        class="arco-avatar-trigger-icon-button"
+        style="color:#FFC72E"
+      >
+        <svg
+          class="arco-icon arco-icon-edit"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle arco-avatar-with-trigger-icon"
+      style="font-size:"
+    >
+      <span
+        class="arco-avatar-image"
+      >
+        <img
+          alt="avatar"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+        />
+      </span>
+      <div
+        class="arco-avatar-trigger-icon-mask"
+      >
+        <svg
+          class="arco-icon arco-icon-camera"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m33 12-1.862-3.724A.5.5 0 0 0 30.691 8H17.309a.5.5 0 0 0-.447.276L15 12m16 14a7 7 0 1 1-14 0 7 7 0 0 1 14 0ZM7 40h34a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

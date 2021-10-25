@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Dropdown.Button default 1`] = `
+<div
+  class="arco-btn-group"
+>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  />
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    type="button"
+  >
+    <svg
+      class="arco-icon arco-icon-more"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        fill="currentColor"
+        stroke="none"
+      />
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Dropdown.Button set className globally 1`] = `
+<div
+  class="arco-btn-group global-default-class"
+>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  />
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    type="button"
+  >
+    <svg
+      class="arco-icon arco-icon-more"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        fill="currentColor"
+        stroke="none"
+      />
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Dropdown.Button set className globally and component set className itself. 1`] = `
+<div
+  class="arco-btn-group component-class"
+>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  />
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    type="button"
+  >
+    <svg
+      class="arco-icon arco-icon-more"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        fill="currentColor"
+        stroke="none"
+      />
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+      />
+    </svg>
+  </button>
+</div>
+`;

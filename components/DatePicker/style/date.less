@@ -1,0 +1,102 @@
+@import '../../TimePicker/style/token.less';
+
+@date-panel-prefix-cls: ~'@{prefix}-panel-date';
+@time-picker-prefix-cls: ~'@{prefix}-timepicker';
+
+@datepicker-timepicker-height: 276px;
+
+.@{date-panel-prefix-cls} {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  &-inner {
+    width: @picker-panel-date-width;
+  }
+
+  &-inner .@{prefix}-picker-body {
+    padding-top: 0;
+  }
+
+  &-timepicker {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      width: 100%;
+      text-align: center;
+      font-weight: 400;
+      font-size: 14px;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: @picker-panel-border-width solid @picker-panel-color-border;
+      color: var(--color-text-1);
+    }
+
+    .@{time-picker-prefix-cls} {
+      width: @picker-panel-date-width;
+      height: @datepicker-timepicker-height;
+      padding: 0 6px;
+      overflow: hidden;
+
+      &-list {
+        width: 100%;
+        height: 100%;
+        padding: 0 4px;
+        box-sizing: border-box;
+      }
+
+      &-list:not(:last-child) {
+        border-right: 0;
+      }
+
+      ul::after {
+        height: @datepicker-timepicker-height - @timepicker-cell-height - @timepicker-cell-spacing *
+          2;
+      }
+
+      &-cell {
+        width: 100%;
+      }
+    }
+  }
+
+  // TODO: remove
+  &-holder {
+    display: flex;
+    width: 100%;
+    border-top: @picker-panel-border-width solid @picker-panel-color-border;
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      height: 50px;
+      box-sizing: border-box;
+      cursor: pointer;
+      color: @picker-panel-color-text-holder;
+      font-size: 16px;
+      transition: color 0.2s;
+
+      &:first-child {
+        border-right: @picker-panel-border-width solid @picker-panel-color-border;
+      }
+
+      &:hover,
+      &:active,
+      &-active {
+        color: @picker-panel-color-text-holder_active;
+      }
+
+      &-value {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &:first-child &-holder {
+    border-right: @picker-panel-border-width solid @picker-panel-color-border;
+  }
+}

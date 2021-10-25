@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4">
+<path d="M41 26V9C41 7.89543 40.1046 7 39 7H9C7.89543 7 7 7.89543 7 9V39C7 40.1046 7.89543 41 9 41H26" stroke-linecap="butt"></path>
+<path d="M24 33L33 24.5V27C33 27 31 28 29.5 29.5C27.841 31.159 27 33 27 33H24ZM24 33L20.5 28.5L17 33H24Z" stroke-linecap="butt"></path>
+<path d="M20.5 28.5L17 33H24L20.5 28.5Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M33 24.5L24 33H27C27 33 27.841 31.159 29.5 29.5C31 28 33 27 33 27V24.5Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46 38C46 42.4183 42.4183 46 38 46C33.5817 46 30 42.4183 30 38C30 33.5817 33.5817 30 38 30C42.4183 30 46 33.5817 46 38ZM41.0502 33.2177L42.7908 34.9582L39.7447 38.0042L42.7908 41.0503L41.0502 42.7908L38.0042 39.7448L34.9582 42.7908L33.2176 41.0503L36.2636 38.0042L33.2176 34.9582L34.9582 33.2177L38.0042 36.2637L41.0502 33.2177Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M17 15H15V17H17V15Z" stroke-linecap="butt"></path>
+</svg>

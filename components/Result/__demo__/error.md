@@ -1,0 +1,33 @@
+---
+order: 3
+title:
+  zh-CN: Error
+  en-US: Error
+---
+
+## zh-CN
+
+错误状态。
+## en-US
+
+Show failed results.
+
+```js
+import { Result, Button } from '@arco-design/web-react';
+
+ReactDOM.render(
+  <div >
+    <Result
+      status="error"
+      title="Error message"
+      subTitle="Something went wrong. Please try again. "
+      extra={[
+        <Button key="again"  style={{marginRight: 16}}>Again</Button>,
+        <Button key="back"  type="primary">Back</Button>,
+      ]}
+    >
+    </Result>
+  </div>,
+  CONTAINER
+);
+```

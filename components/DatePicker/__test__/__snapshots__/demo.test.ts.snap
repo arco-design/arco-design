@@ -1,0 +1,4168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders DatePicker/demo/basic.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  style="width:200px"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/control.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <div
+      class="arco-picker arco-picker-size-default"
+      style="width:200px"
+    >
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          class="arco-picker-start-time"
+          placeholder="请选择日期"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-calendar-clock"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-picker arco-picker-range arco-picker-size-default"
+      style="width:380px"
+    >
+      <div
+        class="arco-picker-input arco-picker-input-active"
+      >
+        <input
+          placeholder="开始日期"
+          value=""
+        />
+      </div>
+      <span
+        class="arco-picker-separator"
+      >
+        -
+      </span>
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          placeholder="结束日期"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-calendar-clock"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/dateRender.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  style="width:200px"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value="2019-06-03"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:240px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        readonly=""
+        value="custom format: 2019-06-03"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value="2019-06-03 08:00:00"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择年份"
+        value="2019"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择月份"
+        value="2019-06"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择周"
+        value="2019-31周"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:360px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value="2019-08-08 00:00:00"
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value="2019-08-18 09:09:06"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:300px;margin-bottom:24px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始月份"
+        value="2019-08"
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束月份"
+        value="2020-06"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default arco-picker-disabled"
+    style="width:200px;margin-bottom:20px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        disabled=""
+        placeholder="请选择日期"
+        value="2020-08-08"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default arco-picker-disabled"
+    style="width:300px;margin-bottom:20px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        disabled=""
+        placeholder="开始日期"
+        value="2020-08-08"
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        disabled=""
+        placeholder="结束日期"
+        value="2020-08-18"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:300px;margin-bottom:20px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        disabled=""
+        placeholder="结束日期"
+        value="2020-08-08"
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:380px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        disabled=""
+        placeholder="开始日期"
+        value="2020-08-08 02:02:02"
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:200px;margin-right:24px;margin-bottom:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:300px;margin-right:24px;margin-bottom:24px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:200px;margin-right:24px;margin-bottom:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:380px;margin-bottom:24px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/disabled-date-advance.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-range arco-picker-size-default"
+  style="width:300px"
+>
+  <div
+    class="arco-picker-input arco-picker-input-active"
+  >
+    <input
+      placeholder="开始日期"
+      value=""
+    />
+  </div>
+  <span
+    class="arco-picker-separator"
+  >
+    -
+  </span>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      placeholder="结束日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/extra.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:200px;margin-bottom:20px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:380px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/month.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  style="width:200px"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择月份"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/panel.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker-container arco-picker-panel-only"
+    style="width:268px"
+  >
+    <div
+      class="arco-panel-date"
+    >
+      <div
+        class="arco-panel-date-inner"
+      >
+        <div
+          class="arco-picker-header"
+        >
+          <div
+            class="arco-picker-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-double-left"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
+              />
+            </svg>
+          </div>
+          <div
+            class="arco-picker-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-left"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M32 8.4 16.444 23.956 32 39.513"
+              />
+            </svg>
+          </div>
+          <div
+            class="arco-picker-header-value"
+          >
+            <span
+              class="arco-picker-header-label"
+            >
+              2020
+            </span>
+            -
+            <span
+              class="arco-picker-header-label"
+            >
+              04
+            </span>
+          </div>
+          <div
+            class="arco-picker-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-right"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="m16 39.513 15.556-15.557L16 8.4"
+              />
+            </svg>
+          </div>
+          <div
+            class="arco-picker-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-double-right"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="arco-picker-week-list"
+        >
+          <div
+            class="arco-picker-week-list-item"
+          >
+            日
+          </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            一
+          </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            二
+          </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            三
+          </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            四
+          </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            五
+          </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            六
+          </div>
+        </div>
+        <div
+          class="arco-picker-body"
+        >
+          <div
+            class="arco-picker-row"
+          >
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  29
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  30
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  31
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  1
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  2
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  3
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  4
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  5
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  6
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  7
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  8
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  9
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view arco-picker-cell-today"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  10
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  11
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  12
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  13
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  14
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  15
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  16
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  17
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  18
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  19
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  20
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  21
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  22
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  23
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  24
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  25
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  26
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  27
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  28
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  29
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell arco-picker-cell-in-view"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  30
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  1
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  3
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  4
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  5
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  6
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  7
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  8
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  9
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-picker-footer"
+    >
+      <div
+        class="arco-picker-footer-now-wrapper"
+      >
+        <span
+          class="arco-link"
+        >
+          今天
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-picker-range-container arco-picker-range-panel-only"
+    style="width:560px;margin-top:20px"
+  >
+    <div
+      class="arco-picker-range"
+    >
+      <div
+        class="arco-picker-range-wrapper"
+      >
+        <div
+          class="arco-panel-date"
+        >
+          <div
+            class="arco-panel-date-inner"
+          >
+            <div
+              class="arco-picker-header"
+            >
+              <div
+                class="arco-picker-header-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-double-left"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-picker-header-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-left"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M32 8.4 16.444 23.956 32 39.513"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-picker-header-value"
+              >
+                <span
+                  class="arco-picker-header-label"
+                >
+                  2020
+                </span>
+                -
+                <span
+                  class="arco-picker-header-label"
+                >
+                  04
+                </span>
+              </div>
+              <div
+                class="arco-picker-header-icon arco-picker-header-icon-hidden"
+              />
+              <div
+                class="arco-picker-header-icon arco-picker-header-icon-hidden"
+              />
+            </div>
+            <div
+              class="arco-picker-week-list"
+            >
+              <div
+                class="arco-picker-week-list-item"
+              >
+                日
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                一
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                二
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                三
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                四
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                五
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                六
+              </div>
+            </div>
+            <div
+              class="arco-picker-body"
+            >
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      29
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      30
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      31
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      1
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      2
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      3
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      4
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      5
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      6
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      7
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      8
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      9
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view arco-picker-cell-today"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      10
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      11
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      12
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      13
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      14
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      15
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      16
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      17
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      18
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      19
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      20
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      21
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      22
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      23
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      24
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      25
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      26
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      27
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      28
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      29
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      30
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      1
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      2
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      3
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      4
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      5
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      6
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      7
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      8
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      9
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-panel-date"
+        >
+          <div
+            class="arco-panel-date-inner"
+          >
+            <div
+              class="arco-picker-header"
+            >
+              <div
+                class="arco-picker-header-icon arco-picker-header-icon-hidden"
+              />
+              <div
+                class="arco-picker-header-icon arco-picker-header-icon-hidden"
+              />
+              <div
+                class="arco-picker-header-value"
+              >
+                <span
+                  class="arco-picker-header-label"
+                >
+                  2020
+                </span>
+                -
+                <span
+                  class="arco-picker-header-label"
+                >
+                  05
+                </span>
+              </div>
+              <div
+                class="arco-picker-header-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-right"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="m16 39.513 15.556-15.557L16 8.4"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-picker-header-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-double-right"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="arco-picker-week-list"
+            >
+              <div
+                class="arco-picker-week-list-item"
+              >
+                日
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                一
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                二
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                三
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                四
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                五
+              </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                六
+              </div>
+            </div>
+            <div
+              class="arco-picker-body"
+            >
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      26
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      27
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      28
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      29
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      30
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      1
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      2
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      3
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      4
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      5
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      6
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      7
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      8
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      9
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      10
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      11
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      12
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      13
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      14
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      15
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      16
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      17
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      18
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      19
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      20
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      21
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      22
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      23
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      24
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      25
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      26
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      27
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      28
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      29
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      30
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
+                <div
+                  class="arco-picker-cell arco-picker-cell-in-view"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      31
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      1
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      2
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      3
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      4
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      5
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      6
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/quarter.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  style="width:200px"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择季度"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/range.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio-button arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="date"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          date
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="week"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          week
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="month"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          month
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="year"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          year
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="quarter"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          quarter
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="date time"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          date time
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-picker arco-picker-range arco-picker-size-default"
+      style="width:254px;margin-bottom:20px"
+    >
+      <div
+        class="arco-picker-input arco-picker-input-active"
+      >
+        <input
+          placeholder="开始日期"
+          value=""
+        />
+      </div>
+      <span
+        class="arco-picker-separator"
+      >
+        -
+      </span>
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          placeholder="结束日期"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-calendar"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:200px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:200px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择月份"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:280px;margin-bottom:24px;margin-right:24px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:240px;margin-bottom:24px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始月份"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束月份"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/shortcuts-placement-left.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:254px;margin-bottom:20px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:300px"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
+<div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin:0 24px 24px 0"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:220px;margin:0 24px 24px 0"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-picker arco-picker-range arco-picker-size-default"
+    style="width:360px;margin:0 24px 24px 0"
+  >
+    <div
+      class="arco-picker-input arco-picker-input-active"
+    >
+      <input
+        placeholder="开始日期"
+        value=""
+      />
+    </div>
+    <span
+      class="arco-picker-separator"
+    >
+      -
+    </span>
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        placeholder="结束日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar-clock"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="mini"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        mini
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="small"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        small
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="size"
+        type="radio"
+        value="default"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        default
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="large"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        large
+      </span>
+    </label>
+  </div>
+  <br />
+  <div
+    class="arco-picker arco-picker-size-default"
+    style="width:254px"
+  >
+    <div
+      class="arco-picker-input"
+    >
+      <input
+        class="arco-picker-start-time"
+        placeholder="请选择日期"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-picker-suffix"
+    >
+      <span
+        class="arco-picker-suffix-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-calendar"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/triggerElement.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        请选择日期
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        请选择日期范围
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/week.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  style="width:200px"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择周"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/year.md correctly 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  style="width:200px"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择年份"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

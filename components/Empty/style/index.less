@@ -1,0 +1,32 @@
+@import '../../style/theme/default.less';
+@import './token.less';
+
+@empty-prefix-cls: ~'@{prefix}-empty';
+
+.@{empty-prefix-cls} {
+  width: 100%;
+  padding: @empty-spacing-padding 0;
+  box-sizing: border-box;
+
+  & &-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: @empty-color-icon;
+
+    .@{empty-prefix-cls}-image {
+      font-size: @empty-font-size-image;
+      line-height: 1;
+      margin-bottom: @empty-spacing-image-margin-bottom;
+    }
+
+    img {
+      height: @empty-size-img-height;
+    }
+  }
+
+  & &-description {
+    color: @empty-color-text;
+    font-size: @empty-font-size-text;
+  }
+}

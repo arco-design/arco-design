@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Divider/demo/basic.md correctly 1`] = `
+Array [
+  <div
+    class="divider-demo"
+  >
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal"
+    />
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal"
+      style="border-bottom-style:dashed"
+    />
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal"
+      style="border-bottom-width:2px;border-bottom-style:dotted"
+    />
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object.
+    </div>
+  </div>,
+  <div
+    class="divider-demo"
+    style="margin-top:48px"
+  >
+    <div
+      class="divider-demo-flex-content"
+    >
+      <span
+        class="avatar"
+      >
+        <svg
+          class="arco-icon arco-icon-file-image"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+          />
+        </svg>
+      </span>
+      <div
+        class="content"
+      >
+        <h6
+          class="arco-typography"
+        >
+          Image
+        </h6>
+        May 4, 2010
+      </div>
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal half-divider"
+    />
+    <div
+      class="divider-demo-flex-content"
+    >
+      <span
+        class="avatar"
+      >
+        <svg
+          class="arco-icon arco-icon-user"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+          />
+          <circle
+            cx="24"
+            cy="15"
+            r="8"
+          />
+        </svg>
+      </span>
+      <div
+        class="content"
+      >
+        <h6
+          class="arco-typography"
+        >
+          Avatar
+        </h6>
+        May 4, 2010
+      </div>
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal half-divider"
+    />
+    <div
+      class="divider-demo-flex-content"
+    >
+      <span
+        class="avatar"
+      >
+        <svg
+          class="arco-icon arco-icon-pen"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="m28.364 11.565 7.07 7.071M7.15 32.778 33.313 6.615l7.071 7.071L14.221 39.85h-7.07v-7.07Z"
+          />
+        </svg>
+      </span>
+      <div
+        class="content"
+      >
+        <h6
+          class="arco-typography"
+        >
+          Icon
+        </h6>
+        May 4, 2010
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders Divider/demo/vertical.md correctly 1`] = `
+<div
+  class="divider-demo"
+>
+  <span
+    class="arco-typography"
+  >
+    Item 1
+  </span>
+  <div
+    class="arco-divider arco-divider-vertical"
+  />
+  <span
+    class="arco-typography"
+  >
+    Item 2
+  </span>
+  <div
+    class="arco-divider arco-divider-vertical"
+  />
+  <span
+    class="arco-typography"
+  >
+    Item 3
+  </span>
+</div>
+`;
+
+exports[`renders Divider/demo/with-text.md correctly 1`] = `
+<div
+  class="divider-demo"
+>
+  <div
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object.
+  </div>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-left"
+    >
+      Text
+    </span>
+  </div>
+  <div
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object.
+  </div>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-center"
+    >
+      Text
+    </span>
+  </div>
+  <div
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object.
+  </div>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-right"
+    >
+      Text
+    </span>
+  </div>
+</div>
+`;

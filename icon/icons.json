@@ -1,0 +1,895 @@
+{
+  "icons": {
+    "direction": {
+      "outline": [
+        {
+          "componentName": "IconArrowDown"
+        },
+        {
+          "componentName": "IconArrowFall"
+        },
+        {
+          "componentName": "IconArrowLeft"
+        },
+        {
+          "componentName": "IconArrowRight"
+        },
+        {
+          "componentName": "IconArrowRise"
+        },
+        {
+          "componentName": "IconArrowUp"
+        },
+        {
+          "componentName": "IconCaretDown"
+        },
+        {
+          "componentName": "IconCaretLeft"
+        },
+        {
+          "componentName": "IconCaretRight"
+        },
+        {
+          "componentName": "IconCaretUp"
+        },
+        {
+          "componentName": "IconDoubleDown"
+        },
+        {
+          "componentName": "IconDoubleLeft"
+        },
+        {
+          "componentName": "IconDoubleRight"
+        },
+        {
+          "componentName": "IconDoubleUp"
+        },
+        {
+          "componentName": "IconDownCircle"
+        },
+        {
+          "componentName": "IconDown"
+        },
+        {
+          "componentName": "IconDragArrow"
+        },
+        {
+          "componentName": "IconExpand"
+        },
+        {
+          "componentName": "IconLeftCircle"
+        },
+        {
+          "componentName": "IconLeft"
+        },
+        {
+          "componentName": "IconMenuFold"
+        },
+        {
+          "componentName": "IconMenuUnfold"
+        },
+        {
+          "componentName": "IconRightCircle"
+        },
+        {
+          "componentName": "IconRight"
+        },
+        {
+          "componentName": "IconRotateLeft"
+        },
+        {
+          "componentName": "IconRotateRight"
+        },
+        {
+          "componentName": "IconShrink"
+        },
+        {
+          "componentName": "IconSwap"
+        },
+        {
+          "componentName": "IconToBottom"
+        },
+        {
+          "componentName": "IconToLeft"
+        },
+        {
+          "componentName": "IconToRight"
+        },
+        {
+          "componentName": "IconToTop"
+        },
+        {
+          "componentName": "IconUpCircle"
+        },
+        {
+          "componentName": "IconUp"
+        }
+      ]
+    },
+    "tips": {
+      "fill": [
+        {
+          "componentName": "IconCheckCircleFill"
+        },
+        {
+          "componentName": "IconCloseCircleFill"
+        },
+        {
+          "componentName": "IconExclamationCircleFill"
+        },
+        {
+          "componentName": "IconExclamationPolygonFill"
+        },
+        {
+          "componentName": "IconInfoCircleFill"
+        },
+        {
+          "componentName": "IconMinusCircleFill"
+        },
+        {
+          "componentName": "IconPlusCircleFill"
+        },
+        {
+          "componentName": "IconQuestionCircleFill"
+        }
+      ],
+      "outline": [
+        {
+          "componentName": "IconCheckCircle"
+        },
+        {
+          "componentName": "IconCheckSquare"
+        },
+        {
+          "componentName": "IconCheck"
+        },
+        {
+          "componentName": "IconClockCircle"
+        },
+        {
+          "componentName": "IconCloseCircle"
+        },
+        {
+          "componentName": "IconClose"
+        },
+        {
+          "componentName": "IconExclamationCircle"
+        },
+        {
+          "componentName": "IconExclamation"
+        },
+        {
+          "componentName": "IconInfoCircle"
+        },
+        {
+          "componentName": "IconInfo"
+        },
+        {
+          "componentName": "IconMinusCircle"
+        },
+        {
+          "componentName": "IconMinus"
+        },
+        {
+          "componentName": "IconPlusCircle"
+        },
+        {
+          "componentName": "IconPlus"
+        },
+        {
+          "componentName": "IconQuestionCircle"
+        },
+        {
+          "componentName": "IconQuestion"
+        },
+        {
+          "componentName": "IconStop"
+        }
+      ]
+    },
+    "interactive-button": {
+      "fill": [
+        {
+          "componentName": "IconHeartFill"
+        },
+        {
+          "componentName": "IconStarFill"
+        },
+        {
+          "componentName": "IconThumbDownFill"
+        },
+        {
+          "componentName": "IconThumbUpFill"
+        }
+      ],
+      "outline": [
+        {
+          "componentName": "IconAt"
+        },
+        {
+          "componentName": "IconCloudDownload"
+        },
+        {
+          "componentName": "IconCodeBlock"
+        },
+        {
+          "componentName": "IconCodeSquare"
+        },
+        {
+          "componentName": "IconCode"
+        },
+        {
+          "componentName": "IconCustomerService"
+        },
+        {
+          "componentName": "IconDownload"
+        },
+        {
+          "componentName": "IconExport"
+        },
+        {
+          "componentName": "IconEyeInvisible"
+        },
+        {
+          "componentName": "IconEye"
+        },
+        {
+          "componentName": "IconHeart"
+        },
+        {
+          "componentName": "IconHistory"
+        },
+        {
+          "componentName": "IconHome"
+        },
+        {
+          "componentName": "IconImport"
+        },
+        {
+          "componentName": "IconList"
+        },
+        {
+          "componentName": "IconMessageBanned"
+        },
+        {
+          "componentName": "IconMessage"
+        },
+        {
+          "componentName": "IconMoreVertical"
+        },
+        {
+          "componentName": "IconMore"
+        },
+        {
+          "componentName": "IconPoweroff"
+        },
+        {
+          "componentName": "IconRefresh"
+        },
+        {
+          "componentName": "IconReply"
+        },
+        {
+          "componentName": "IconSave"
+        },
+        {
+          "componentName": "IconScan"
+        },
+        {
+          "componentName": "IconSearch"
+        },
+        {
+          "componentName": "IconSelectAll"
+        },
+        {
+          "componentName": "IconSend"
+        },
+        {
+          "componentName": "IconSettings"
+        },
+        {
+          "componentName": "IconShareAlt"
+        },
+        {
+          "componentName": "IconShareExternal"
+        },
+        {
+          "componentName": "IconShareInternal"
+        },
+        {
+          "componentName": "IconStar"
+        },
+        {
+          "componentName": "IconSync"
+        },
+        {
+          "componentName": "IconThumbDown"
+        },
+        {
+          "componentName": "IconThumbUp"
+        },
+        {
+          "componentName": "IconTranslate"
+        },
+        {
+          "componentName": "IconUpload"
+        },
+        {
+          "componentName": "IconVoice"
+        }
+      ]
+    },
+    "edit": {
+      "outline": [
+        {
+          "componentName": "IconAlignCenter"
+        },
+        {
+          "componentName": "IconAlignLeft"
+        },
+        {
+          "componentName": "IconAlignRight"
+        },
+        {
+          "componentName": "IconBgColors"
+        },
+        {
+          "componentName": "IconBold"
+        },
+        {
+          "componentName": "IconBrush"
+        },
+        {
+          "componentName": "IconCopy"
+        },
+        {
+          "componentName": "IconDelete"
+        },
+        {
+          "componentName": "IconEdit"
+        },
+        {
+          "componentName": "IconEraser"
+        },
+        {
+          "componentName": "IconFilter"
+        },
+        {
+          "componentName": "IconFindReplace"
+        },
+        {
+          "componentName": "IconFontColors"
+        },
+        {
+          "componentName": "IconFormula"
+        },
+        {
+          "componentName": "IconH1"
+        },
+        {
+          "componentName": "IconH2"
+        },
+        {
+          "componentName": "IconH3"
+        },
+        {
+          "componentName": "IconH4"
+        },
+        {
+          "componentName": "IconH5"
+        },
+        {
+          "componentName": "IconH6"
+        },
+        {
+          "componentName": "IconH7"
+        },
+        {
+          "componentName": "IconHighlight"
+        },
+        {
+          "componentName": "IconItalic"
+        },
+        {
+          "componentName": "IconLineHeight"
+        },
+        {
+          "componentName": "IconLink"
+        },
+        {
+          "componentName": "IconObliqueLine"
+        },
+        {
+          "componentName": "IconOrderedList"
+        },
+        {
+          "componentName": "IconOriginalSize"
+        },
+        {
+          "componentName": "IconPaste"
+        },
+        {
+          "componentName": "IconQuote"
+        },
+        {
+          "componentName": "IconRedo"
+        },
+        {
+          "componentName": "IconScissor"
+        },
+        {
+          "componentName": "IconSortAscending"
+        },
+        {
+          "componentName": "IconSortDescending"
+        },
+        {
+          "componentName": "IconSort"
+        },
+        {
+          "componentName": "IconStrikethrough"
+        },
+        {
+          "componentName": "IconUnderline"
+        },
+        {
+          "componentName": "IconUndo"
+        },
+        {
+          "componentName": "IconUnorderedList"
+        },
+        {
+          "componentName": "IconZoomIn"
+        },
+        {
+          "componentName": "IconZoomOut"
+        }
+      ]
+    },
+    "media": {
+      "fill": [
+        {
+          "componentName": "IconMuteFill"
+        },
+        {
+          "componentName": "IconPauseCircleFill"
+        },
+        {
+          "componentName": "IconPlayArrowFill"
+        },
+        {
+          "componentName": "IconPlayCircleFill"
+        },
+        {
+          "componentName": "IconSkipNextFill"
+        },
+        {
+          "componentName": "IconSkipPreviousFill"
+        },
+        {
+          "componentName": "IconSoundFill"
+        }
+      ],
+      "outline": [
+        {
+          "componentName": "IconBackward"
+        },
+        {
+          "componentName": "IconForward"
+        },
+        {
+          "componentName": "IconFullscreenExit"
+        },
+        {
+          "componentName": "IconFullscreen"
+        },
+        {
+          "componentName": "IconLiveBroadcast"
+        },
+        {
+          "componentName": "IconMusic"
+        },
+        {
+          "componentName": "IconMute"
+        },
+        {
+          "componentName": "IconPauseCircle"
+        },
+        {
+          "componentName": "IconPause"
+        },
+        {
+          "componentName": "IconPlayArrow"
+        },
+        {
+          "componentName": "IconPlayCircle"
+        },
+        {
+          "componentName": "IconRecordStop"
+        },
+        {
+          "componentName": "IconRecord"
+        },
+        {
+          "componentName": "IconSkipNext"
+        },
+        {
+          "componentName": "IconSkipPrevious"
+        },
+        {
+          "componentName": "IconSound"
+        }
+      ]
+    },
+    "logo": {
+      "color": [
+        {
+          "componentName": "IconBytedanceColor"
+        },
+        {
+          "componentName": "IconLarkColor"
+        },
+        {
+          "componentName": "IconTiktokColor"
+        },
+        {
+          "componentName": "IconXiguaColor"
+        }
+      ],
+      "fill": [
+        {
+          "componentName": "IconFaceBookCircleFill"
+        },
+        {
+          "componentName": "IconFacebookSquareFill"
+        },
+        {
+          "componentName": "IconGoogleCircleFill"
+        },
+        {
+          "componentName": "IconQqCircleFill"
+        },
+        {
+          "componentName": "IconTwitterCircleFill"
+        },
+        {
+          "componentName": "IconWeiboCircleFill"
+        }
+      ],
+      "outline": [
+        {
+          "componentName": "IconAlipayCircle"
+        },
+        {
+          "componentName": "IconCodeSandbox"
+        },
+        {
+          "componentName": "IconCodepen"
+        },
+        {
+          "componentName": "IconFacebook"
+        },
+        {
+          "componentName": "IconGithub"
+        },
+        {
+          "componentName": "IconGitlab"
+        },
+        {
+          "componentName": "IconGoogle"
+        },
+        {
+          "componentName": "IconQqZone"
+        },
+        {
+          "componentName": "IconQq"
+        },
+        {
+          "componentName": "IconTwitter"
+        },
+        {
+          "componentName": "IconWechat"
+        },
+        {
+          "componentName": "IconWechatpay"
+        },
+        {
+          "componentName": "IconWeibo"
+        }
+      ]
+    },
+    "general": {
+      "fill": [
+        {
+          "componentName": "IconChineseFill"
+        },
+        {
+          "componentName": "IconEnglishFill"
+        },
+        {
+          "componentName": "IconFaceFrownFill"
+        },
+        {
+          "componentName": "IconFaceMehFill"
+        },
+        {
+          "componentName": "IconFaceSmileFill"
+        },
+        {
+          "componentName": "IconMoonFill"
+        },
+        {
+          "componentName": "IconPenFill"
+        },
+        {
+          "componentName": "IconSunFill"
+        }
+      ],
+      "outline": [
+        {
+          "componentName": "IconApps"
+        },
+        {
+          "componentName": "IconBook"
+        },
+        {
+          "componentName": "IconBranch"
+        },
+        {
+          "componentName": "IconBug"
+        },
+        {
+          "componentName": "IconBulb"
+        },
+        {
+          "componentName": "IconCalendar"
+        },
+        {
+          "componentName": "IconCamera"
+        },
+        {
+          "componentName": "IconCloud"
+        },
+        {
+          "componentName": "IconCommand"
+        },
+        {
+          "componentName": "IconCommon"
+        },
+        {
+          "componentName": "IconCompass"
+        },
+        {
+          "componentName": "IconCopyright"
+        },
+        {
+          "componentName": "IconDashboard"
+        },
+        {
+          "componentName": "IconDesktop"
+        },
+        {
+          "componentName": "IconDice"
+        },
+        {
+          "componentName": "IconDragDotVertical"
+        },
+        {
+          "componentName": "IconDragDot"
+        },
+        {
+          "componentName": "IconDriveFile"
+        },
+        {
+          "componentName": "IconEar"
+        },
+        {
+          "componentName": "IconEmail"
+        },
+        {
+          "componentName": "IconEmpty"
+        },
+        {
+          "componentName": "IconExperiment"
+        },
+        {
+          "componentName": "IconFileAudio"
+        },
+        {
+          "componentName": "IconFileImage"
+        },
+        {
+          "componentName": "IconFilePdf"
+        },
+        {
+          "componentName": "IconFileVideo"
+        },
+        {
+          "componentName": "IconFile"
+        },
+        {
+          "componentName": "IconFire"
+        },
+        {
+          "componentName": "IconFolderAdd"
+        },
+        {
+          "componentName": "IconFolderDelete"
+        },
+        {
+          "componentName": "IconFolder"
+        },
+        {
+          "componentName": "IconGift"
+        },
+        {
+          "componentName": "IconIdcard"
+        },
+        {
+          "componentName": "IconImageClose"
+        },
+        {
+          "componentName": "IconImage"
+        },
+        {
+          "componentName": "IconInteraction"
+        },
+        {
+          "componentName": "IconLanguage"
+        },
+        {
+          "componentName": "IconLayout"
+        },
+        {
+          "componentName": "IconLoading"
+        },
+        {
+          "componentName": "IconLocation"
+        },
+        {
+          "componentName": "IconLock"
+        },
+        {
+          "componentName": "IconLoop"
+        },
+        {
+          "componentName": "IconMan"
+        },
+        {
+          "componentName": "IconMenu"
+        },
+        {
+          "componentName": "IconMindMapping"
+        },
+        {
+          "componentName": "IconMobile"
+        },
+        {
+          "componentName": "IconMoon"
+        },
+        {
+          "componentName": "IconMosaic"
+        },
+        {
+          "componentName": "IconNav"
+        },
+        {
+          "componentName": "IconNotificationClose"
+        },
+        {
+          "componentName": "IconNotification"
+        },
+        {
+          "componentName": "IconPen"
+        },
+        {
+          "componentName": "IconPhone"
+        },
+        {
+          "componentName": "IconPrinter"
+        },
+        {
+          "componentName": "IconPublic"
+        },
+        {
+          "componentName": "IconPushpin"
+        },
+        {
+          "componentName": "IconQrcode"
+        },
+        {
+          "componentName": "IconRobotAdd"
+        },
+        {
+          "componentName": "IconRobot"
+        },
+        {
+          "componentName": "IconSafe"
+        },
+        {
+          "componentName": "IconSchedule"
+        },
+        {
+          "componentName": "IconShake"
+        },
+        {
+          "componentName": "IconSkin"
+        },
+        {
+          "componentName": "IconStamp"
+        },
+        {
+          "componentName": "IconStorage"
+        },
+        {
+          "componentName": "IconSubscribeAdd"
+        },
+        {
+          "componentName": "IconSubscribe"
+        },
+        {
+          "componentName": "IconSubscribed"
+        },
+        {
+          "componentName": "IconSun"
+        },
+        {
+          "componentName": "IconTag"
+        },
+        {
+          "componentName": "IconTags"
+        },
+        {
+          "componentName": "IconThunderbolt"
+        },
+        {
+          "componentName": "IconTool"
+        },
+        {
+          "componentName": "IconTrophy"
+        },
+        {
+          "componentName": "IconUnlock"
+        },
+        {
+          "componentName": "IconUserAdd"
+        },
+        {
+          "componentName": "IconUserGroup"
+        },
+        {
+          "componentName": "IconUser"
+        },
+        {
+          "componentName": "IconVideoCamera"
+        },
+        {
+          "componentName": "IconWifi"
+        },
+        {
+          "componentName": "IconWoman"
+        }
+      ]
+    }
+  },
+  "i18n": {
+    "zh-CN": {
+      "direction": "方向指示类图标",
+      "tips": "提示建议类图标",
+      "interactive-button": "交互按钮类图标",
+      "edit": "编辑类图标",
+      "media": "影音类图标",
+      "logo": "商标类图标",
+      "general": "通用类图标"
+    },
+    "en-US": {
+      "direction": "Direction indicator",
+      "tips": "Prompt suggestion",
+      "interactive-button": "Interactive button",
+      "edit": "Editable",
+      "media": "Media",
+      "logo": "Logo",
+      "general": "General"
+    }
+  }
+}

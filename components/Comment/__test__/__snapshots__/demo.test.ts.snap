@@ -1,0 +1,852 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Comment/demo/align.md correctly 1`] = `
+<div
+  class="arco-comment"
+>
+  <div
+    class="arco-comment-avatar"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:"
+    >
+      <span
+        class="arco-avatar-image"
+      >
+        <img
+          alt="avatar"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+        />
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    >
+      <div
+        class="arco-comment-title arco-comment-title-align-right"
+      >
+        <span
+          class="arco-comment-author"
+        >
+          Balzac
+        </span>
+        <span
+          class="arco-comment-datetime"
+        >
+          1 hour
+        </span>
+      </div>
+      <div
+        class="arco-comment-content"
+      >
+        <div>
+          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process.
+        </div>
+      </div>
+      <div
+        class="arco-comment-actions arco-comment-actions-align-right"
+      >
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-heart-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="color:#f53f3f"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M24 10.541c4.35-4.522 11.405-4.814 15.756-.292 4.35 4.522 4.15 11.365.448 17.135C36.153 33.7 28 41.5 24 42c-4-.5-12.152-8.3-16.204-14.616-3.702-5.77-3.902-12.613.448-17.135C12.595 5.727 19.65 6.019 24 10.54Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+           84
+        </span>
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-star-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="color:#ffb400"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M22.683 5.415c.568-1.043 2.065-1.043 2.634 0l5.507 10.098a1.5 1.5 0 0 0 1.04.756l11.306 2.117c1.168.219 1.63 1.642.814 2.505l-7.902 8.359a1.5 1.5 0 0 0-.397 1.223l1.48 11.407c.153 1.177-1.058 2.057-2.131 1.548l-10.391-4.933a1.5 1.5 0 0 0-1.287 0l-10.39 4.933c-1.073.51-2.284-.37-2.131-1.548l1.48-11.407a1.5 1.5 0 0 0-.398-1.223L4.015 20.89c-.816-.863-.353-2.286.814-2.505l11.306-2.117a1.5 1.5 0 0 0 1.04-.756l5.508-10.098Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+           4
+        </span>
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-message"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+            />
+          </svg>
+           Reply
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Comment/demo/basic.md correctly 1`] = `
+<div
+  class="arco-comment"
+>
+  <div
+    class="arco-comment-avatar"
+  >
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:"
+    >
+      <span
+        class="arco-avatar-image"
+      >
+        <img
+          alt="avatar"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+        />
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    >
+      <div
+        class="arco-comment-title arco-comment-title-align-left"
+      >
+        <span
+          class="arco-comment-author"
+        >
+          Socrates
+        </span>
+        <span
+          class="arco-comment-datetime"
+        >
+          1 hour
+        </span>
+      </div>
+      <div
+        class="arco-comment-content"
+      >
+        <div>
+          Comment body content.
+        </div>
+      </div>
+      <div
+        class="arco-comment-actions arco-comment-actions-align-left"
+      >
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-heart"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M38.083 12.912a9.929 9.929 0 0 1 .177 13.878l-.177.18L25.76 39.273c-.972.97-2.548.97-3.52 0L9.917 26.971l-.177-.181a9.929 9.929 0 0 1 .177-13.878c3.889-3.883 10.194-3.883 14.083 0 3.889-3.883 10.194-3.883 14.083 0Z"
+            />
+          </svg>
+           83
+        </span>
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-star"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+            />
+          </svg>
+           3
+        </span>
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-message"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+            />
+          </svg>
+           Reply
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Comment/demo/editor.md correctly 1`] = `
+<div
+  class="arco-comment"
+>
+  <div
+    class="arco-comment-avatar"
+  >
+    <img
+      alt="comment-avatar"
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+    />
+  </div>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    >
+      <div
+        class="arco-comment-title arco-comment-title-align-right"
+      >
+        <span
+          class="arco-comment-author"
+        >
+          Balzac
+        </span>
+        <span
+          class="arco-comment-datetime"
+        >
+          1 hour
+        </span>
+      </div>
+      <div
+        class="arco-comment-content"
+      >
+        <div>
+          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process.
+        </div>
+      </div>
+      <div
+        class="arco-comment-actions arco-comment-actions-align-right"
+      >
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-message"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+            />
+          </svg>
+           Reply
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-comment-inner-comment"
+    >
+      <div
+        class="arco-comment"
+      >
+        <div
+          class="arco-comment-avatar"
+        >
+          <img
+            alt="comment-avatar"
+            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+          />
+        </div>
+        <div
+          class="arco-comment-inner"
+        >
+          <div
+            class="arco-comment-inner-content"
+          >
+            <div
+              class="arco-comment-content"
+            >
+              <div>
+                <textarea
+                  class="arco-textarea"
+                  placeholder="Here is you content."
+                />
+              </div>
+            </div>
+            <div
+              class="arco-comment-actions arco-comment-actions-align-right"
+            >
+              <button
+                class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+                type="button"
+              >
+                <span>
+                  Cancel
+                </span>
+              </button>
+              <button
+                class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+                type="button"
+              >
+                <span>
+                  Reply
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Comment/demo/inline.md correctly 1`] = `
+<div
+  class="arco-comment"
+>
+  <div
+    class="arco-comment-avatar"
+  >
+    <img
+      alt="comment-avatar"
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+    />
+  </div>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    >
+      <div
+        class="arco-comment-title arco-comment-title-align-left"
+      >
+        <span
+          class="arco-comment-author"
+        >
+          Socrates
+        </span>
+        <span
+          class="arco-comment-datetime"
+        >
+          1 hour
+        </span>
+      </div>
+      <div
+        class="arco-comment-content"
+      >
+        <div>
+          Comment body content.
+        </div>
+      </div>
+      <div
+        class="arco-comment-actions arco-comment-actions-align-left"
+      >
+        <span
+          class="custom-comment-action"
+        >
+          <svg
+            class="arco-icon arco-icon-message"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+            />
+          </svg>
+           Reply
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-comment-inner-comment"
+    >
+      <div
+        class="arco-comment"
+      >
+        <div
+          class="arco-comment-avatar"
+        >
+          <img
+            alt="comment-avatar"
+            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+          />
+        </div>
+        <div
+          class="arco-comment-inner"
+        >
+          <div
+            class="arco-comment-inner-content"
+          >
+            <div
+              class="arco-comment-title arco-comment-title-align-left"
+            >
+              <span
+                class="arco-comment-author"
+              >
+                Balzac
+              </span>
+              <span
+                class="arco-comment-datetime"
+              >
+                1 hour
+              </span>
+            </div>
+            <div
+              class="arco-comment-content"
+            >
+              <div>
+                Comment body content.
+              </div>
+            </div>
+            <div
+              class="arco-comment-actions arco-comment-actions-align-left"
+            >
+              <span
+                class="custom-comment-action"
+              >
+                <svg
+                  class="arco-icon arco-icon-message"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+                  />
+                </svg>
+                 Reply
+              </span>
+            </div>
+          </div>
+          <div
+            class="arco-comment-inner-comment"
+          >
+            <div
+              class="arco-comment"
+            >
+              <div
+                class="arco-comment-avatar"
+              >
+                <img
+                  alt="comment-avatar"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a83a4f9b13464f609922b2c41eca552b~tplv-uwbnlip3yd-image.image"
+                />
+              </div>
+              <div
+                class="arco-comment-inner"
+              >
+                <div
+                  class="arco-comment-inner-content"
+                >
+                  <div
+                    class="arco-comment-title arco-comment-title-align-left"
+                  >
+                    <span
+                      class="arco-comment-author"
+                    >
+                      Austen
+                    </span>
+                    <span
+                      class="arco-comment-datetime"
+                    >
+                      1 hour
+                    </span>
+                  </div>
+                  <div
+                    class="arco-comment-content"
+                  >
+                    <div>
+                       Reply content
+                    </div>
+                  </div>
+                  <div
+                    class="arco-comment-actions arco-comment-actions-align-left"
+                  >
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-message"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+                        />
+                      </svg>
+                       Reply
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-comment"
+            >
+              <div
+                class="arco-comment-avatar"
+              >
+                <img
+                  alt="comment-avatar"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d25cec706293400989fde1eddfeb9cf0~tplv-uwbnlip3yd-image.image"
+                />
+              </div>
+              <div
+                class="arco-comment-inner"
+              >
+                <div
+                  class="arco-comment-inner-content"
+                >
+                  <div
+                    class="arco-comment-title arco-comment-title-align-left"
+                  >
+                    <span
+                      class="arco-comment-author"
+                    >
+                      Plato
+                    </span>
+                    <span
+                      class="arco-comment-datetime"
+                    >
+                      1 hour
+                    </span>
+                  </div>
+                  <div
+                    class="arco-comment-content"
+                  >
+                    <div>
+                       Reply content
+                    </div>
+                  </div>
+                  <div
+                    class="arco-comment-actions arco-comment-actions-align-left"
+                  >
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-message"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+                        />
+                      </svg>
+                       Reply
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Comment/demo/list.md correctly 1`] = `
+<div
+  class="arco-list-wrapper"
+>
+  <div
+    class="arco-list arco-list-default arco-list-no-border"
+  >
+    <div
+      class="arco-list-header"
+    >
+      <span>
+        2 comments
+      </span>
+    </div>
+    <div
+      class="arco-list-content"
+    >
+      <div
+        class="arco-list-item"
+      >
+        <div
+          class="arco-list-item-main"
+        >
+          <div
+            class="arco-list-item-content"
+          >
+            <div
+              class="arco-comment"
+            >
+              <div
+                class="arco-comment-avatar"
+              >
+                <img
+                  alt="comment-avatar"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+                />
+              </div>
+              <div
+                class="arco-comment-inner"
+              >
+                <div
+                  class="arco-comment-inner-content"
+                >
+                  <div
+                    class="arco-comment-title arco-comment-title-align-left"
+                  >
+                    <span
+                      class="arco-comment-author"
+                    >
+                      Socrates
+                    </span>
+                    <span
+                      class="arco-comment-datetime"
+                    >
+                      1 hour
+                    </span>
+                  </div>
+                  <div
+                    class="arco-comment-content"
+                  >
+                    Comment body content.
+                  </div>
+                  <div
+                    class="arco-comment-actions arco-comment-actions-align-left"
+                  >
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-heart"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M38.083 12.912a9.929 9.929 0 0 1 .177 13.878l-.177.18L25.76 39.273c-.972.97-2.548.97-3.52 0L9.917 26.971l-.177-.181a9.929 9.929 0 0 1 .177-13.878c3.889-3.883 10.194-3.883 14.083 0 3.889-3.883 10.194-3.883 14.083 0Z"
+                        />
+                      </svg>
+                       13
+                    </span>
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-star"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+                        />
+                      </svg>
+                       3
+                    </span>
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-message"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+                        />
+                      </svg>
+                       Reply
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-list-item"
+      >
+        <div
+          class="arco-list-item-main"
+        >
+          <div
+            class="arco-list-item-content"
+          >
+            <div
+              class="arco-comment"
+            >
+              <div
+                class="arco-comment-avatar"
+              >
+                <img
+                  alt="comment-avatar"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+                />
+              </div>
+              <div
+                class="arco-comment-inner"
+              >
+                <div
+                  class="arco-comment-inner-content"
+                >
+                  <div
+                    class="arco-comment-title arco-comment-title-align-left"
+                  >
+                    <span
+                      class="arco-comment-author"
+                    >
+                      Balzac
+                    </span>
+                    <span
+                      class="arco-comment-datetime"
+                    >
+                      2 hour
+                    </span>
+                  </div>
+                  <div
+                    class="arco-comment-content"
+                  >
+                    Comment body content.
+                  </div>
+                  <div
+                    class="arco-comment-actions arco-comment-actions-align-left"
+                  >
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-heart"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M38.083 12.912a9.929 9.929 0 0 1 .177 13.878l-.177.18L25.76 39.273c-.972.97-2.548.97-3.52 0L9.917 26.971l-.177-.181a9.929 9.929 0 0 1 .177-13.878c3.889-3.883 10.194-3.883 14.083 0 3.889-3.883 10.194-3.883 14.083 0Z"
+                        />
+                      </svg>
+                       12
+                    </span>
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-star"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+                        />
+                      </svg>
+                       1
+                    </span>
+                    <span
+                      class="custom-comment-action"
+                    >
+                      <svg
+                        class="arco-icon arco-icon-message"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+                        />
+                      </svg>
+                       Reply
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

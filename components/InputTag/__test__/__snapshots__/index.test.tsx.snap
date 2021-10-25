@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.InputTag default 1`] = `
+<div
+  class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+>
+  <div
+    class="arco-input-tag-view"
+  >
+    <div
+      class="arco-input-tag-inner"
+    >
+      <input
+        class="arco-input-tag-input arco-input-tag-input-size-default"
+        value=""
+      />
+      <span
+        class="arco-input-tag-input-mirror"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.InputTag set className globally 1`] = `
+<div
+  class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder global-default-class"
+>
+  <div
+    class="arco-input-tag-view"
+  >
+    <div
+      class="arco-input-tag-inner"
+    >
+      <input
+        class="arco-input-tag-input arco-input-tag-input-size-default"
+        value=""
+      />
+      <span
+        class="arco-input-tag-input-mirror"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.InputTag set className globally and component set className itself. 1`] = `
+<div
+  class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder component-class"
+>
+  <div
+    class="arco-input-tag-view"
+  >
+    <div
+      class="arco-input-tag-inner"
+    >
+      <input
+        class="arco-input-tag-input arco-input-tag-input-size-default"
+        value=""
+      />
+      <span
+        class="arco-input-tag-input-mirror"
+      />
+    </div>
+  </div>
+</div>
+`;

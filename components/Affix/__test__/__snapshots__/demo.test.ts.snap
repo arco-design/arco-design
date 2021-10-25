@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Affix/demo/basic.md correctly 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Affix Top
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Affix/demo/bottom.md correctly 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        120px to affix bottom
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Affix/demo/container.md correctly 1`] = `
+<div
+  id="container"
+  style="height:200px;overflow:auto"
+>
+  <div
+    style="height:400px;background-color:var(--color-fill-2);background-image:linear-gradient(45deg, var(--color-bg-2) 25%, transparent 0, transparent 75%, var(--color-bg-2) 0),
+            linear-gradient(45deg, var(--color-bg-2) 25%, transparent 0, transparent 75%, var(--color-bg-2) 0);background-position:0 0, 15px 15px;background-size:30px 30px;overflow:hidden"
+  >
+    <div
+      class=""
+      style="margin:40px"
+    >
+      <div
+        class=""
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+          type="button"
+        >
+          <span>
+            Affix in scrolling container
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Affix/demo/fixChange.md correctly 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        80px to affix bottom
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Affix/demo/top.md correctly 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        80px to affix top
+      </span>
+    </button>
+  </div>
+</div>
+`;

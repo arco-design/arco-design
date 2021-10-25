@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Notification/demo/basic.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Open Notification
+  </span>
+</button>
+`;
+
+exports[`renders Notification/demo/btn.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Open Notification
+  </span>
+</button>
+`;
+
+exports[`renders Notification/demo/icon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="margin-bottom:20px"
+      type="button"
+    >
+      <span>
+        Info (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
+      style="margin-bottom:24px"
+      type="button"
+    >
+      <span>
+        Success (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
+      style="margin-bottom:24px"
+      type="button"
+    >
+      <span>
+        Warning (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
+      style="margin-bottom:24px"
+      type="button"
+    >
+      <span>
+        Error (Light)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      style="margin-bottom:24px"
+      type="button"
+    >
+      <span>
+        Smile
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Notification/demo/position.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Top Left
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Top Right
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Bottom Left
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Bottom Right
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Notification/demo/style.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Open Notification
+  </span>
+</button>
+`;
+
+exports[`renders Notification/demo/type.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Info
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
+      type="button"
+    >
+      <span>
+        Success
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
+      type="button"
+    >
+      <span>
+        Warning
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
+      type="button"
+    >
+      <span>
+        Error
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Normal
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Notification/demo/update_duration.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Update Notification
+  </span>
+</button>
+`;
+
+exports[`renders Notification/demo/update_notification.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Update Notification
+  </span>
+</button>
+`;

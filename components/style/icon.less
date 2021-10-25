@@ -1,0 +1,94 @@
+.@{prefix}-icon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  width: 1em;
+  height: 1em;
+  vertical-align: -2px;
+  stroke: currentColor;
+}
+
+.@{prefix}-icon[fill='currentColor'] {
+  fill: currentColor;
+  stroke: none;
+}
+
+.@{prefix}-icon[stroke='currentColor'] {
+  stroke: currentColor;
+  fill: none;
+}
+
+.@{prefix}-icon[fill='currentColor'][stroke='currentColor'] {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.@{prefix}-icon-loading {
+  animation: ~'@{prefix}-loading-circle' @transition-duration-loading infinite @transition-timing-function-linear;
+}
+
+@keyframes ~'@{prefix}-loading-circle' {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.@{prefix}-icon-hover {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 0;
+
+  .@{prefix}-icon {
+    position: relative;
+    vertical-align: -0.09em;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: @icon-hover-border-radius;
+    background-color: @color-transparent;
+    box-sizing: border-box;
+    transition: background-color @transition-duration-1 @transition-timing-function-linear;
+  }
+
+  &:hover::before {
+    background-color: @icon-hover-color-bg;
+  }
+
+  &.@{prefix}-icon-hover-disabled::before {
+    opacity: 0;
+  }
+
+  .size(@icon-size, @icon-bg-height) {
+    // line-height: @icon-size;
+
+    &::before {
+      top: 50%;
+      left: 50%;
+      height: @icon-bg-height;
+      width: @icon-bg-height;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .size(@icon-hover-size-default-icon, @icon-hover-size-default-height);
+
+  &-size-mini {
+    .size(@icon-hover-size-mini-icon, @icon-hover-size-mini-height);
+  }
+
+  &-size-small {
+    .size(@icon-hover-size-small-icon, @icon-hover-size-small-height);
+  }
+
+  &-size-large {
+    .size(@icon-hover-size-large-icon, @icon-hover-size-large-height);
+  }
+
+  &-size-huge {
+    .size(@icon-hover-size-huge-icon, @icon-hover-size-huge-height);
+  }
+}

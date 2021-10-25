@@ -1,0 +1,45 @@
+.@{input-prefix-cls}-search.@{input-prefix-cls}-group-wrapper {
+  .@{input-prefix-cls}-group-addbefore {
+    transition: all @transition-duration-1 @transition-timing-function-linear;
+  }
+
+  .@{input-prefix-cls}-group-addafter {
+    padding: 0;
+    border: none;
+  }
+
+  .@{input-prefix-cls}-group-suffix {
+    color: @search-color-icon;
+    font-size: @search-size-icon;
+  }
+
+  &:not(.@{input-prefix-cls}-disabled) {
+    .@{input-prefix-cls}-group-addbefore {
+      cursor: pointer;
+      color: @search-color-icon;
+      font-size: @search-size-icon;
+    }
+  }
+
+  .@{input-prefix-cls}-search-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: auto;
+    height: 100%;
+    font-size: @search-size-icon;
+    color: @search-button-color-text;
+
+    &.@{prefix}-btn-icon-only {
+      padding-left: @search-button-padding-horizontal;
+      padding-right: @search-button-padding-horizontal;
+    }
+  }
+}
+
+.@{input-prefix-cls}-search-button {
+  .@{input-prefix-cls}-inner-wrapper {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

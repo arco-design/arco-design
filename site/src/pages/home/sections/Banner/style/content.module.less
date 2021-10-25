@@ -1,0 +1,170 @@
+.slogan {
+  font-size: 54px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--color-text-1);
+  white-space: nowrap;
+
+  &-color-line {
+    background: linear-gradient(92.06deg, #33c2ff -17.9%, #257cff 43.39%, #165dff 99.4%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.description {
+  margin-top: 24px;
+  color: #4e5969;
+  height: 28px;
+  line-height: 28px;
+  display: flex;
+
+  &-prefix,
+  &-content {
+    display: inline-block;
+    height: 100%;
+    line-height: inherit;
+  }
+
+  &-prefix {
+    width: 28px;
+    text-align: center;
+    position: relative;
+    margin-right: 8px;
+    z-index: 0;
+
+    &-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+.operations {
+  margin-top: 72px;
+  width: 130%;
+
+  &-item {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.links {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  width: 130%;
+
+  &-item {
+    padding-right: 8px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.link {
+  height: 22px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    margin-right: 4px;
+    line-height: 1;
+
+    svg {
+      vertical-align: top;
+    }
+  }
+
+  &-text {
+    color: var(--color-text-1);
+  }
+}
+
+// for dark
+body[arco-theme='dark'] {
+  .slogan:not(.slogan-line-color) {
+    color: #ffffff;
+  }
+
+  .link-text,
+  .description {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .description-prefix-icon path {
+    fill: #17171a;
+  }
+}
+
+// for i18n
+:global(.home-arco-lang) {
+  .slogan {
+    font-size: 42px;
+    width: 120%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .slogan {
+    font-size: 24px;
+    line-height: 1.5;
+    min-height: unset;
+  }
+
+  // for i18n
+  :global(.home-arco-lang) {
+    .slogan {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slogan,
+  .operations,
+  .links {
+    width: 100%;
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .operations {
+    margin-top: 32px;
+    min-height: 40px;
+
+    &-item {
+      &:first-child {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .links {
+    margin-top: 16px;
+    justify-content: center;
+  }
+
+  // for i18n
+  :global(.home-arco-lang) {
+    .slogan {
+      width: 100%;
+      line-height: 1.25;
+    }
+
+    .description {
+      display: none;
+    }
+  }
+}

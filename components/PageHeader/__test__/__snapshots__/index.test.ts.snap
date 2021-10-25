@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.PageHeader default 1`] = `
+<div
+  class="arco-page-header"
+>
+  <div
+    class="arco-page-header-head-wrapper"
+  >
+    <div
+      class="arco-page-header-head"
+    >
+      <div
+        class="arco-page-header-head-main"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.PageHeader set className globally 1`] = `
+<div
+  class="arco-page-header global-default-class"
+>
+  <div
+    class="arco-page-header-head-wrapper"
+  >
+    <div
+      class="arco-page-header-head"
+    >
+      <div
+        class="arco-page-header-head-main"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.PageHeader set className globally and component set className itself. 1`] = `
+<div
+  class="arco-page-header component-class"
+>
+  <div
+    class="arco-page-header-head-wrapper"
+  >
+    <div
+      class="arco-page-header-head"
+    >
+      <div
+        class="arco-page-header-head-main"
+      />
+    </div>
+  </div>
+</div>
+`;

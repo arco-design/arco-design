@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Avatar default 1`] = `
+<div
+  class="arco-avatar arco-avatar-circle"
+  style="font-size:"
+>
+  <span
+    class="arco-avatar-text"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Avatar set className globally 1`] = `
+<div
+  class="arco-avatar arco-avatar-circle global-default-class"
+  style="font-size:"
+>
+  <span
+    class="arco-avatar-text"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Avatar set className globally and component set className itself. 1`] = `
+<div
+  class="arco-avatar arco-avatar-circle component-class"
+  style="font-size:"
+>
+  <span
+    class="arco-avatar-text"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Avatar.Group default 1`] = `
+<div
+  class="arco-avatar-group"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Avatar.Group set className globally 1`] = `
+<div
+  class="arco-avatar-group global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Avatar.Group set className globally and component set className itself. 1`] = `
+<div
+  class="arco-avatar-group component-class"
+/>
+`;

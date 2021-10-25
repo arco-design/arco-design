@@ -1,0 +1,44 @@
+@import './token.less';
+
+@auto-complete-prefix-cls: ~'@{prefix}-autocomplete';
+@select-prefix-cls: ~'@{prefix}-select';
+
+.@{auto-complete-prefix-cls} {
+  &-popup .@{select-prefix-cls}-popup {
+    border: 1px solid @auto-complete-popup-color-border;
+    border-radius: @auto-complete-popup-border-radius;
+    background-color: var(--color-bg-popup);
+    box-shadow: @auto-complete-popup-box-shadow;
+
+    .@{select-prefix-cls}-popup-inner {
+      padding: @auto-complete-popup-padding-vertical 0;
+      max-height: @auto-complete-popup-max-height;
+    }
+
+    .@{select-prefix-cls}-option {
+      height: @auto-complete-option-height;
+      padding: 0 @auto-complete-option-padding-horizontal;
+      font-size: @auto-complete-popup-font-size;
+      line-height: $height;
+
+      .option-color(@status) {
+        @class-suffix: if(@status = default, ~'', ~'-@{status}');
+
+        &@{class-suffix} {
+          color: ~'@{auto-complete-option-color-text_@{status}}';
+          background-color: ~'@{auto-complete-option-color-bg_@{status}}';
+        }
+      }
+
+      .option-color(default);
+      .option-color(selected);
+      .option-color(hover);
+      // disabled 优先级最高，放在最后
+      .option-color(disabled);
+
+      &-selected {
+        font-weight: @auto-complete-option-font-weight_selected;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Button default 1`] = `
+<button
+  class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Button set className globally 1`] = `
+<button
+  class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square global-default-class"
+  type="button"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Button set className globally and component set className itself. 1`] = `
+<button
+  class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square component-class"
+  type="button"
+/>
+`;

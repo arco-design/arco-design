@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Card default 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered"
+>
+  <div
+    class="arco-card-body"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Card set className globally 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered global-default-class"
+>
+  <div
+    class="arco-card-body"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Card set className globally and component set className itself. 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered component-class"
+>
+  <div
+    class="arco-card-body"
+  />
+</div>
+`;

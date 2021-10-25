@@ -1,0 +1,272 @@
+@import './token.less';
+
+.page-item(@size) {
+  font-size: ~'@{pagination-size-@{size}-font-size}';
+  min-width: ~'@{pagination-size-@{size}}';
+  height: ~'@{pagination-size-@{size}}';
+  line-height: ~'@{pagination-size-@{size}}';
+
+  &-prev,
+  &-next {
+    font-size: ~'@{pagination-size-icon-arrow_@{size}}';
+  }
+}
+
+.option(@size) {
+  font-size: ~'@{pagination-size-@{size}-font-size}';
+  height: ~'@{pagination-size-@{size}}';
+  line-height: 0;
+}
+
+.total(@size) {
+  font-size: ~'@{pagination-size-@{size}-font-size}';
+  line-height: ~'@{pagination-size-@{size}}';
+}
+
+.@{pagination-prefix-cls} {
+  display: flex;
+  align-items: center;
+  font-size: @pagination-size-default-font-size;
+
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+  }
+
+  &-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: 0;
+    user-select: none;
+    border-radius: @pagination-item-border-radius;
+    color: @pagination-color-item-text;
+    border: @pagination-border-width solid @pagination-color-item-border;
+    background-color: @pagination-color-bg-item;
+
+    .page-item(default);
+
+    &-disabled {
+      cursor: not-allowed;
+      background-color: @pagination-color-bg-item_disabled;
+      color: @pagination-color-item-text_disabled;
+      border-color: @pagination-color-item-border_disabled;
+    }
+
+    &:not(&-disabled):not(&-active):hover {
+      background-color: @pagination-color-bg-item_hover;
+      border-color: @pagination-color-item-border_hover;
+      color: @pagination-color-item-text_hover;
+    }
+
+    &-active {
+      transition: color @transition-duration-2 @transition-timing-function-linear,
+        background-color @transition-duration-2 @transition-timing-function-linear;
+      color: @pagination-color-item-text_active;
+      background-color: @pagination-color-bg-item_active;
+      border-color: @pagination-color-item-border_active;
+    }
+
+    &:not(:last-child) {
+      margin-right: @pagination-item-spacing;
+    }
+  }
+
+  &-item-prev,
+  &-item-next {
+    font-size: @pagination-size-icon-arrow_default;
+    color: @pagination-color-icon-arrow;
+    background-color: @pagination-color-icon-arrow-bg;
+
+    &:not(.@{pagination-prefix-cls}-item-disabled):hover {
+      background-color: @pagination-color-icon-arrow-bg_hover;
+      color: @pagination-color-icon-arrow-text_hover;
+    }
+
+    // 解决少数情况下出现的图标不垂直水平剧中的 bug
+    &::after {
+      display: inline-block;
+      content: '.';
+      font-size: 0;
+      vertical-align: middle;
+    }
+  }
+
+  & &-item-prev&-item-disabled,
+  & &-item-next&-item-disabled {
+    color: @pagination-color-icon-arrow-text_disabled;
+    background-color: @pagination-color-icon-arrow-bg_disabled;
+  }
+
+  &-item-jumper {
+    font-size: @pagination-size-icon-ellipsis;
+  }
+
+  /*** 快速跳转 ***/
+  &-jumper {
+    margin-left: @pagination-margin-jumper-left;
+
+    > span {
+      font-size: @pagination-size-default-font-size;
+    }
+
+    &-text-goto {
+      color: @pagination-color-jumper-goto;
+    }
+  }
+
+  & &-jumper-input {
+    width: @patination-jumper-input-width;
+    text-align: center;
+    margin-left: @pagination-item-spacing;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  &-option {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 0;
+    position: relative;
+    margin-left: @pagination-margin-option-left;
+
+    .@{prefix}-select {
+      width: auto;
+
+      &-view-value {
+        overflow: inherit;
+        padding-right: 6px;
+      }
+    }
+
+    .option(default);
+  }
+
+  &-total-text {
+    display: inline-block;
+    height: 100%;
+    color: @pagination-color-text-total;
+    margin-right: @pagination-margin-total-spacing;
+    font-size: @pagination-size-default-font-size;
+    .total(default);
+  }
+
+  // simple
+  &-item-simple-pager {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 @pagination-simple-margin-next-left 0 @pagination-simple-margin-prev-right;
+  }
+
+  &-item-simple-pager &-jumper-separator {
+    padding: 0 @pagination-simple-margin-separator-right 0 @pagination-simple-margin-separator-left;
+  }
+
+  &-simple &-item {
+    margin-right: 0;
+  }
+
+  &-simple &-jumper {
+    color: var(--color-text-1);
+  }
+
+  &-simple &-jumper {
+    margin-left: 0;
+  }
+
+  &-simple &-jumper &-jumper-input {
+    width: @pagination-simple-input-width;
+    margin-left: 0;
+  }
+
+  &-simple &-item-prev,
+  &-simple &-item-next {
+    color: @pagination-simple-color-icon-arrow;
+    background-color: @pagination-simple-color-icon-arrow-bg;
+
+    &:not(.@{pagination-prefix-cls}-item-disabled):hover {
+      background-color: @pagination-simple-color-icon-arrow-bg_hover;
+      color: @pagination-simple-color-icon-arrow-text_hover;
+    }
+  }
+
+  &-simple &-item-prev&-item-disabled,
+  &-simple &-item-next&-item-disabled {
+    color: @pagination-simple-color-icon-arrow-text_disabled;
+    background-color: @pagination-simple-color-icon-arrow-bg_disabled;
+  }
+
+  // Disabled
+  &-disabled {
+    cursor: not-allowed;
+  }
+
+  &-disabled &-item,
+  &-disabled &-item:not(&-item-disabled):not(&-item-active):hover {
+    cursor: not-allowed;
+    background-color: @pagination-color-bg-item_disabled;
+    border-color: @pagination-color-item-border_disabled;
+    color: @pagination-color-item-text_disabled;
+  }
+
+  &&-disabled &-item-active {
+    background-color: @pagination-color-bg-item_active_disabled;
+    border-color: @pagination-color-item-border_active_disabled;
+    color: @pagination-color-item-text_active_disabled;
+  }
+
+  // size
+  &-size-mini &-item {
+    .page-item(mini);
+  }
+
+  &-size-mini &-total-text {
+    .total(mini);
+  }
+
+  &-size-mini &-option {
+    .option(mini);
+  }
+
+  &-size-mini &-jumper > span {
+    font-size: @pagination-size-mini-font-size;
+  }
+
+  &-size-small &-item {
+    .page-item(small);
+  }
+
+  &-size-small &-total-text {
+    .total(small);
+  }
+
+  &-size-small &-option {
+    .option(small);
+  }
+
+  &-size-small &-jumper > span {
+    font-size: @pagination-size-small-font-size;
+  }
+
+  &-size-large &-item {
+    .page-item(large);
+  }
+
+  &-size-large &-total-text {
+    .total(large);
+  }
+
+  &-size-large &-option {
+    .option(large);
+  }
+
+  &-size-large &-jumper > span {
+    font-size: @pagination-size-large-font-size;
+  }
+}

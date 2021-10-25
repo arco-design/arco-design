@@ -1,0 +1,95 @@
+@import '../../style/theme/default.less';
+@import './token.less';
+
+@resizebox-prefix-cls: ~'@{prefix}-resizebox';
+@resizebox-trigger-prefix-cls: ~'@{resizebox-prefix-cls}-trigger';
+
+.@{resizebox-prefix-cls} {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &-direction-left,
+  &-direction-right,
+  &-direction-top,
+  &-direction-bottom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    user-select: none;
+    box-sizing: border-box;
+  }
+
+  &-direction-right {
+    left: unset;
+    right: 0;
+  }
+
+  &-direction-bottom {
+    top: unset;
+    bottom: 0;
+  }
+
+  &-split {
+    display: flex;
+
+    .@{resizebox-prefix-cls}-slit-trigger {
+      flex: 0;
+    }
+
+    &-pane {
+      overflow: auto;
+    }
+
+    .second-pane {
+      flex: 1;
+    }
+
+    &-horizontal {
+      flex-direction: row;
+    }
+
+    &-vertical {
+      flex-direction: column;
+    }
+  }
+}
+
+// 伸缩触发杆
+.@{resizebox-trigger-prefix-cls} {
+  &-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: @resizeBox-trigger-color-background;
+  }
+
+  &-icon {
+    display: inline-block;
+    color: @resizeBox-trigger-color-icon;
+    font-size: @resizeBox-trigger-font-size-icon;
+  }
+
+  &-vertical {
+    height: 100%;
+    cursor: col-resize;
+
+    .@{resizebox-trigger-prefix-cls}-icon-wrapper {
+      width: @resizeBox-trigger-size-icon-wrapper;
+    }
+  }
+
+  &-horizontal {
+    width: 100%;
+    cursor: row-resize;
+
+    .@{resizebox-trigger-prefix-cls}-icon-wrapper {
+      height: @resizeBox-trigger-size-icon-wrapper;
+
+      .@{prefix}-icon {
+        vertical-align: -1px;
+      }
+    }
+  }
+}

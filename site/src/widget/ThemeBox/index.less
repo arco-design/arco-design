@@ -1,0 +1,28 @@
+.tb {
+  &-badge {
+    position: fixed !important;
+    right: 70px;
+    bottom: 124px;
+  }
+
+  &-link {
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+
+  &-card:hover &-link {
+    opacity: 1;
+  }
+
+  &-pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  &-theme-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,142 @@
+@import '../../style/theme/default.less';
+
+@col-prefix-cls: ~'@{prefix}-col';
+
+.@{col-prefix-cls} {
+  position: relative;
+  box-sizing: border-box;
+
+  .span(@span, @adaptation) when (@span > 0) and (@adaptation = '') {
+    .span((@span - 1), @adaptation);
+
+    &-@{span} {
+      width: (100% / 24) * @span;
+      flex: 0 0 (100% / 24) * @span;
+    }
+  }
+  .span(@span, @adaptation) when (@span > 0) and (not(@adaptation = '')) {
+    .span((@span - 1), @adaptation);
+
+    &-@{adaptation}-@{span} {
+      width: (100% / 24) * @span;
+      flex: 0 0 (100% / 24) * @span;
+    }
+  }
+
+  .span(24, '');
+
+  .offset(@offset, @adaptation) when (@offset > 0) and (@adaptation = '') {
+    .offset((@offset - 1), @adaptation);
+
+    &-offset-@{offset} {
+      margin-left: (100% / 24) * @offset;
+    }
+  }
+  .offset(@offset, @adaptation) when (@offset > 0) and (not(@adaptation = '')) {
+    .offset((@offset - 1), @adaptation);
+
+    &-@{adaptation}-offset-@{offset} {
+      margin-left: (100% / 24) * @offset;
+    }
+  }
+
+  .offset(23, '');
+
+  .order(@order, @adaptation) when (@order > 0) and (@adaptation = '') {
+    .order((@order - 1), @adaptation);
+
+    &-order-@{order} {
+      order: @order;
+    }
+  }
+  .order(@order, @adaptation) when (@order > 0) and (not(@adaptation = '')) {
+    .order((@order - 1), @adaptation);
+
+    &-@{adaptation}-order-@{order} {
+      order: @order;
+    }
+  }
+
+  .order(24, '');
+
+  .pull(@count, @adaptation) when (@count > 0) and (@adaptation = '') {
+    .pull((@count - 1), @adaptation);
+
+    &-pull-@{count} {
+      right: (100% / 24) * @count;
+    }
+  }
+  .pull(@count, @adaptation) when (@count > 0) and (not(@adaptation = '')) {
+    .pull((@count - 1), @adaptation);
+
+    &-@{adaptation}-pull-@{count} {
+      right: (100% / 24) * @count;
+    }
+  }
+
+  .pull(24, '');
+
+  .push(@count, @adaptation) when (@count > 0) and (@adaptation = '') {
+    .push((@count - 1), @adaptation);
+
+    &-push-@{count} {
+      left: (100% / 24) * @count;
+    }
+  }
+  .push(@count, @adaptation) when (@count > 0) and (not(@adaptation = '')) {
+    .push((@count - 1), @adaptation);
+
+    &-@{adaptation}-push-@{count} {
+      left: (100% / 24) * @count;
+    }
+  }
+
+  .push(24, '');
+
+  // adaptation
+  .span(24, xs);
+  .offset(23, xs);
+  .order(24, xs);
+  .pull(24, xs);
+  .push(24, xs);
+
+  @media (min-width: 576px) {
+    .span(24, sm);
+    .offset(23, sm);
+    .order(24, sm);
+    .pull(24, sm);
+    .push(24, sm);
+  }
+
+  @media (min-width: 768px) {
+    .span(24, md);
+    .offset(23, md);
+    .order(24, md);
+    .pull(24, md);
+    .push(24, md);
+  }
+
+  @media (min-width: 992px) {
+    .span(24, lg);
+    .offset(23, lg);
+    .order(24, lg);
+    .pull(24, lg);
+    .push(24, lg);
+  }
+
+  @media (min-width: 1200px) {
+    .span(24, xl);
+    .offset(23, xl);
+    .order(24, xl);
+    .pull(24, xl);
+    .push(24, xl);
+  }
+
+  @media (min-width: 1600px) {
+    .span(24, xxl);
+    .offset(23, xxl);
+    .order(24, xxl);
+    .pull(24, xxl);
+    .push(24, xxl);
+  }
+}

@@ -1,0 +1,1140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Tag/demo/active.md correctly 1`] = `
+<div
+  style="display:flex;align-items:flex-start"
+>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default"
+    style="margin-right:24px"
+  >
+    Tag 1
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default"
+    style="margin-right:24px"
+  >
+    Tag 2
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default"
+    style="margin-right:24px"
+  >
+    Tag 3
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default"
+    style="width:84px;background-color:var(--color-fill-2);border:1px dashed var(--color-fill-3);cursor:pointer"
+  >
+    <span
+      class="arco-tag-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-plus"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M5 24h38M24 5v38"
+        />
+      </svg>
+    </span>
+    Add Tag
+  </div>
+</div>
+`;
+
+exports[`renders Tag/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      Default
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      Tag 1
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      Tag 2
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      <span
+        class="arco-tag-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-check-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      Complete
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tag/demo/check.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checkable arco-tag-size-default"
+    >
+      Awesome
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-red arco-tag-checkable arco-tag-checked arco-tag-size-default"
+    >
+      Toutiao
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tag arco-tag-arcoblue arco-tag-checkable arco-tag-checked arco-tag-size-default"
+    >
+      Lark
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tag/demo/close.md correctly 1`] = `
+<div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default"
+    style="margin-right:24px"
+  >
+    Tag
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default"
+  >
+    <span
+      class="arco-tag-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-star"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+        />
+      </svg>
+    </span>
+    Tag
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    style="margin-top:24px"
+  >
+    <button
+      class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+      style="margin-right:8px"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+    <span
+      class="arco-typography"
+    >
+      Toggle
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Tag/demo/close-async.md correctly 1`] = `
+<div
+  class="arco-tag arco-tag-checked arco-tag-size-default"
+>
+  Tag 1
+  <span
+    class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+  >
+    <svg
+      class="arco-icon arco-icon-close"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+      />
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`renders Tag/demo/color.md correctly 1`] = `
+<div>
+  <div
+    class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    red
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    orangered
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    orange
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-gold arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    gold
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    lime
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    green
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-cyan arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    cyan
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    blue
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    arcoblue
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-purple arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    purple
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-pinkpurple arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    pinkpurple
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-magenta arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    magenta
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default"
+    style="margin:0 16px 16px 0"
+  >
+    gray
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <h3
+    style="color:var(--color-text-2)"
+  >
+    Custom Color
+  </h3>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#f53f3f;border-color:#f53f3f"
+  >
+    #f53f3f
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#7816ff;border-color:#7816ff"
+  >
+    #7816ff
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#00b42a;border-color:#00b42a"
+  >
+    #00b42a
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#165dff;border-color:#165dff"
+  >
+    #165dff
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#ff7d00;border-color:#ff7d00"
+  >
+    #ff7d00
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#eb0aa4;border-color:#eb0aa4"
+  >
+    #eb0aa4
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#7bc616;border-color:#7bc616"
+  >
+    #7bc616
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#86909c;border-color:#86909c"
+  >
+    #86909c
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#b71de8;border-color:#b71de8"
+  >
+    #b71de8
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#0fc6c2;border-color:#0fc6c2"
+  >
+    #0fc6c2
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#ffb400;border-color:#ffb400"
+  >
+    #ffb400
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#168cff;border-color:#168cff"
+  >
+    #168cff
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
+    style="margin:0 16px 16px 0;background-color:#ff5722;border-color:#ff5722"
+  >
+    #ff5722
+    <span
+      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Tag/demo/icon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default"
+    >
+      <span
+        class="arco-tag-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-github"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M.056 24.618c0 10.454 6.7 19.344 16.038 22.608 1.259.32 1.067-.582 1.067-1.19v-4.148c-7.265.853-7.553-3.957-8.043-4.758-.987-1.686-3.312-2.112-2.62-2.912 1.654-.853 3.34.213 5.291 3.1 1.413 2.09 4.166 1.738 5.562 1.385a6.777 6.777 0 0 1 1.856-3.253C11.687 34.112 8.55 29.519 8.55 24.057c0-2.646.874-5.082 2.586-7.045-1.088-3.243.102-6.01.26-6.422 3.11-.282 6.337 2.225 6.587 2.421 1.766-.474 3.782-.73 6.038-.73 2.266 0 4.293.26 6.069.74.603-.458 3.6-2.608 6.49-2.345.155.41 1.317 3.12.294 6.315 1.734 1.968 2.62 4.422 2.62 7.077 0 5.472-3.158 10.07-10.699 11.397a6.82 6.82 0 0 1 2.037 4.875v6.02c.042.48 0 .96.806.96 9.477-3.194 16.299-12.15 16.299-22.697C47.938 11.396 37.218.68 23.996.68 10.77.675.055 11.391.055 24.617l.001.001Z"
+            fill="currentColor"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      Github
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
+    >
+      <span
+        class="arco-tag-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-gitlab"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M45.53 26.154 39.694 6.289v-.005c-.407-1.227-1.377-1.955-2.587-1.955-1.254 0-2.277.723-2.663 1.885L30.62 17.625H17.4l-3.825-11.41c-.386-1.163-1.41-1.886-2.663-1.886-1.237 0-2.276.792-2.592 1.96l-5.83 19.865a2.047 2.047 0 0 0 .724 2.18l19.741 14.807c.14.193.332.338.557.418l.461.343.455-.343c.263-.091.483-.252.638-.477L44.8 28.33a2.03 2.03 0 0 0 .728-2.175ZM36.84 6.932c.053-.096.155-.102.187-.102.06 0 .134.016.182.161l3.183 10.704H33.24l3.6-10.763Zm-26.11.054c.047-.14.122-.156.181-.156.145 0 .156.006.183.091L14.699 17.7H7.633l3.096-10.714ZM5.076 26.502l1.511-5.213 10.843 14.475-12.354-9.262Zm3.96-6.236h6.54l4.865 15.23-11.406-15.23Zm15.01 17.877-5.743-17.877h11.48l-5.737 17.877Zm8.459-17.877h6.402L27.642 35.31l4.864-15.043Zm-2.18 15.745L41.43 21.187l1.58 5.315-12.685 9.509Z"
+            fill="currentColor"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      Gitlab
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default"
+    >
+      <span
+        class="arco-tag-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-twitter"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M43.277 13.575c0 16.613-10.912 28.575-26.962 29.1-6.788.525-11.438-1.537-15.6-4.65 4.65.525 10.912-1.012 13.987-4.163-4.65 0-7.275-2.625-8.812-6.187h4.162C5.89 26.1 2.74 22.987 2.74 17.812c1.012.525 2.062 1.013 4.162 1.013-3.637-2.063-5.7-8.813-3.112-12.975 4.65 5.175 10.35 9.863 19.762 10.35C20.927 5.85 34.465.6 40.165 7.388c2.625-.525 4.162-1.538 6.187-2.625-.525 2.625-2.062 4.162-4.162 5.175 2.062 0 3.637-.525 5.175-1.538-.488 2.063-2.55 4.162-4.088 5.175Z"
+            fill="currentColor"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      Twitter
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
+    >
+      <span
+        class="arco-tag-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-facebook"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M35.184 15.727 34.312 24h-6.613v24h-9.933V24h-4.95v-8.273h4.95v-4.98C17.766 4.016 20.564 0 28.518 0h6.61v8.273H30.99c-3.086 0-3.292 1.166-3.292 3.32v4.134h7.485Z"
+            fill="currentColor"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      Facebook
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tag/demo/size.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-large"
+    >
+      Large
+      <span
+        class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-medium"
+    >
+      Medium
+      <span
+        class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      default
+      <span
+        class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-small"
+    >
+      small
+      <span
+        class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;

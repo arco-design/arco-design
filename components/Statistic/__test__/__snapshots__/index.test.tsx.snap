@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Statistic default 1`] = `
+<div
+  class="arco-statistic"
+>
+  <div
+    class="arco-statistic-content"
+  >
+    <div
+      class="arco-statistic-value"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Statistic set className globally 1`] = `
+<div
+  class="arco-statistic global-default-class"
+>
+  <div
+    class="arco-statistic-content"
+  >
+    <div
+      class="arco-statistic-value"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Statistic set className globally and component set className itself. 1`] = `
+<div
+  class="arco-statistic component-class"
+>
+  <div
+    class="arco-statistic-content"
+  >
+    <div
+      class="arco-statistic-value"
+    />
+  </div>
+</div>
+`;

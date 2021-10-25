@@ -1,0 +1,425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Typography/demo/basic.md correctly 1`] = `
+<article
+  class="arco-typography"
+  style="margin-top:-40px"
+>
+  <h1
+    class="arco-typography"
+  >
+    Design system
+  </h1>
+  <div
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design.
+  </div>
+  <div
+    class="arco-typography"
+  >
+    In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered 
+    <span
+      class="arco-typography"
+    >
+      <b>
+        to be a design activity.
+      </b>
+    </span>
+  </div>
+  <h2
+    class="arco-typography"
+  >
+    ArcoDesign
+  </h2>
+  <div
+    class="arco-typography"
+  >
+    The ArcoDesign component library defines a set of default particle variables, and a custom theme is to 
+    <span
+      class="arco-typography"
+    >
+      <mark>
+        customize
+      </mark>
+    </span>
+     and 
+    <span
+      class="arco-typography"
+    >
+      <u>
+        overwrite
+      </u>
+    </span>
+     this variable list.
+  </div>
+  <blockquote
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a 
+    <span
+      class="arco-typography"
+    >
+      <code>
+        prototype
+      </code>
+    </span>
+    , 
+    <span
+      class="arco-typography"
+    >
+      <code>
+        product
+      </code>
+    </span>
+     or 
+    <span
+      class="arco-typography"
+    >
+      <code>
+        process
+      </code>
+    </span>
+    . The verb to design expresses the process of developing a design.
+  </blockquote>
+  <div
+    class="arco-typography"
+  >
+    <mark>
+      <del>
+        <u>
+          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.
+        </u>
+      </del>
+    </mark>
+  </div>
+  <div
+    class="arco-typography"
+  >
+    <ul>
+      <li>
+        Architectural blueprints
+        <ul>
+          <li>
+            Architectural blueprints
+          </li>
+        </ul>
+      </li>
+      <li>
+        Engineering drawings
+      </li>
+      <li>
+        Business processes
+      </li>
+    </ul>
+  </div>
+  <div
+    class="arco-typography"
+  >
+    <ol>
+      <li>
+        Architectural blueprints
+      </li>
+      <li>
+        Engineering drawings
+      </li>
+      <li>
+        Business processes
+      </li>
+    </ol>
+  </div>
+</article>
+`;
+
+exports[`renders Typography/demo/ellipsis.md correctly 1`] = `
+Array [
+  <button
+    class="arco-switch arco-switch-type-circle arco-switch-checked"
+    type="button"
+  >
+    <div
+      class="arco-switch-dot"
+    />
+  </button>,
+  <div>
+    <h4
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.
+    </h4>
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+    </div>
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.(Arco Design)
+    </div>
+    <div
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.(Arco Design)
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders Typography/demo/operations.md correctly 1`] = `
+<article
+  class="arco-typography"
+>
+  <div
+    class="arco-typography"
+  >
+    Click the icon to copy this text.
+    <span
+      class="arco-typography-operation-copy"
+    >
+      <svg
+        class="arco-icon arco-icon-copy"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M20 6h18a2 2 0 0 1 2 2v22M8 16v24c0 1.105.891 2 1.996 2h20.007A1.99 1.99 0 0 0 32 40.008V15.997A1.997 1.997 0 0 0 30 14H10a2 2 0 0 0-2 2Z"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-typography"
+  >
+    Click the icon to edit this text.
+    <span
+      class="arco-typography-operation-edit"
+    >
+      <svg
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </div>
+</article>
+`;
+
+exports[`renders Typography/demo/paragraph.md correctly 1`] = `
+<article
+  class="arco-typography"
+>
+  <h5
+    class="arco-typography"
+  >
+    Default
+  </h5>
+  <div
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered to be a design activity.
+  </div>
+  <h5
+    class="arco-typography"
+  >
+    Secondary
+  </h5>
+  <div
+    class="arco-typography arco-typography-secondary"
+  >
+    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered to be a design activity.
+  </div>
+  <h5
+    class="arco-typography"
+  >
+    Spacing default
+  </h5>
+  <div
+    class="arco-typography"
+  >
+    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered to be a design activity.
+  </div>
+  <h5
+    class="arco-typography"
+  >
+    Spacing close
+  </h5>
+  <div
+    class="arco-typography arco-typography-secondary arco-typography-spacing-close"
+  >
+    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design.
+  </div>
+</article>
+`;
+
+exports[`renders Typography/demo/text.md correctly 1`] = `
+Array [
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography"
+    >
+      Arco Design
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography arco-typography-secondary"
+    >
+      Secondary
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography arco-typography-primary"
+    >
+      Primary
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography arco-typography-success"
+    >
+      Success
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography arco-typography-warning"
+    >
+      Warning
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography arco-typography-error"
+    >
+      Error
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography"
+    >
+      <b>
+        Bold
+      </b>
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography arco-typography-disabled"
+    >
+      Disabled
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography"
+    >
+      <mark>
+        Mark
+      </mark>
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography"
+    >
+      <u>
+        Underline
+      </u>
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography"
+    >
+      <del>
+        Line through
+      </del>
+    </span>
+  </div>,
+  <div
+    style="margin-bottom:10px"
+  >
+    <span
+      class="arco-typography"
+    >
+      <code>
+        Code snippet
+      </code>
+    </span>
+  </div>,
+]
+`;
+
+exports[`renders Typography/demo/title.md correctly 1`] = `
+<article
+  class="arco-typography"
+>
+  <h1
+    class="arco-typography"
+  >
+    H1. The Pragmatic Romanticism
+  </h1>
+  <h2
+    class="arco-typography"
+  >
+    H2. The Pragmatic Romanticism
+  </h2>
+  <h3
+    class="arco-typography"
+  >
+    H3. The Pragmatic Romanticism
+  </h3>
+  <h4
+    class="arco-typography"
+  >
+    H4. The Pragmatic Romanticism
+  </h4>
+  <h5
+    class="arco-typography"
+  >
+    H5. The Pragmatic Romanticism
+  </h5>
+  <h6
+    class="arco-typography"
+  >
+    H6. The Pragmatic Romanticism
+  </h6>
+</article>
+`;

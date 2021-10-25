@@ -1,0 +1,39 @@
+@import './token.less';
+
+@popconfirm-prefix-cls: ~'@{prefix}-popconfirm';
+
+.@{popconfirm-prefix-cls} {
+  &-content {
+    padding: @popconfirm-padding-vertical @popconfirm-padding-horizontal;
+    box-sizing: border-box;
+  }
+
+  &-title {
+    position: relative;
+    margin-bottom: @popconfirm-margin-title-bottom;
+    font-size: @popconfirm-font-title-size;
+    color: @popconfirm-color-title-text;
+    display: flex;
+    align-items: flex-start;
+
+    &-icon {
+      font-size: @popconfirm-size-title-icon;
+      margin-right: @popconfirm-margin-icon-right;
+      display: inline-flex;
+      align-items: center;
+      height: @line-height-base * @popconfirm-font-title-size;
+
+      .@{prefix}-icon-exclamation-circle-fill {
+        color: @color-warning-6;
+      }
+    }
+  }
+
+  .@{popconfirm-prefix-cls}-btn {
+    text-align: right;
+
+    > button {
+      margin-left: @popconfirm-margin-button-left;
+    }
+  }
+}

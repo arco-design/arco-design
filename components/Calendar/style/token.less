@@ -1,0 +1,39 @@
+@import '../../style/theme/default.less';
+
+@calendar-color-border: var(--color-neutral-3);
+
+@calendar-header-padding-horizontal: 24px;
+@calendar-header-padding-vertical: 24px;
+
+@calendar-panel-date-cell-padding-vertical: 4px;
+@calendar-panel-date-cell-circle-height: 24px;
+@calendar-panel-year-cell-padding-vertical: 4px;
+@calendar-panel-year-cell-circle-height: 24px;
+
+@calendar-color-switch-icon: var(--color-text-2);
+@calendar-color-bg-switch-icon: var(--color-bg-5);
+@calendar-color-bg-switch-icon_hover: var(--color-fill-3);
+
+@calendar-color-text-title: var(--color-text-1);
+@calendar-color-cell-text-in-view: var(--color-text-1);
+@calendar-color-cell-text-not-in-view: var(--color-text-4);
+@calendar-color-bg-circle_selected: @color-primary-6;
+@calendar-color-bg-circle_selected: @color-primary-6;
+@calendar-color-bg-cell-in-range: var(--color-primary-light-1);
+@calendar-color-bg-cell-disabled: var(--color-fill-1);
+@calendar-color-text-cell-range-boundary: var(--color-white);
+@calendar-color-bg-cell-range-boundary: @color-primary-6;
+@calendar-color-bg-cell-hover-in-range: var(--color-primary-light-1);
+@calendar-color-text-cell-hover-range-boundary: var(--color-text-1);
+@calendar-color-bg-cell-hover-range-boundary: var(--color-primary-light-2);
+
+@calendar-panel-color-text-cell_hover: @color-primary-6;
+@calendar-panel-color-bg-cell_hover: var(--color-primary-light-1);
+@calendar-panel-color-text-cell_selected: var(--color-white);
+@calendar-panel-color-bg-cell_selected: @color-primary-6;
+@calendar-panel-color-current-time-dot: @color-primary-6;
+
+// 不放到风格配置平台
+@calendar-panel-cell-boundary-border-radius: ((
+    @calendar-panel-date-cell-circle-height + @calendar-panel-date-cell-padding-vertical * 2
+  ) / 2);

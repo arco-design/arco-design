@@ -1,0 +1,2179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Select/demo/allow-create.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Create an item"
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="a10"
+                >
+                  a10
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="b11"
+                >
+                  b11
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <span
+            class="arco-icon-hover arco-select-clear-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-close"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+              />
+            </svg>
+          </span>
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/async-data.md correctly 1`] = `
+<div
+  class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+  style="width:345px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <div
+      class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+    >
+      <div
+        class="arco-input-tag-view"
+      >
+        <div
+          class="arco-input-tag-inner"
+        >
+          <input
+            class="arco-input-tag-input arco-input-tag-input-size-default"
+            placeholder="Search by name"
+            value=""
+          />
+          <span
+            class="arco-input-tag-input-mirror"
+          >
+            Search by name
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Please select"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title="Beijing"
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          disabled=""
+          placeholder="Select city"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="Beijing"
+        />
+        <span
+          class="arco-select-view-value"
+        >
+          Beijing
+        </span>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/clear.md correctly 1`] = `
+<div
+  class="arco-select arco-select-single arco-select-size-default"
+  style="width:154px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <input
+      class="arco-select-view-input"
+      placeholder="Please select"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-select-view-value arco-select-hidden"
+    />
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Please select"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Please select"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/dropdown-render.md correctly 1`] = `
+<div
+  class="arco-select arco-select-single arco-select-size-default"
+  style="width:240px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <input
+      class="arco-select-view-input"
+      placeholder="Select city"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-select-view-value arco-select-hidden"
+    />
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/group.md correctly 1`] = `
+<div>
+  <div
+    class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+    style="width:154px"
+    tabindex="0"
+  >
+    <div
+      class="arco-select-view"
+      title=""
+    >
+      <input
+        class="arco-select-view-input"
+        placeholder="Select drink"
+        style="width:100%"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-hidden"
+      />
+      <div
+        class="arco-select-suffix"
+      >
+        <div
+          class="arco-select-expand-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-expand"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="transform:rotate(-45deg)"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
+<div
+  class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+  style="width:345px;margin-right:20px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <div
+      class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+    >
+      <div
+        class="arco-input-tag-view"
+      >
+        <div
+          class="arco-input-tag-inner"
+        >
+          <input
+            class="arco-input-tag-input arco-input-tag-input-size-default"
+            placeholder="Please select"
+            value=""
+          />
+          <span
+            class="arco-input-tag-input-mirror"
+          >
+            Please select
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/multiple.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:24px"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Beijing"
+                >
+                  Beijing
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Shenzhen"
+                >
+                  Shenzhen
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <span
+            class="arco-icon-hover arco-select-clear-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-close"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+              />
+            </svg>
+          </span>
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:24px"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Beijing"
+                >
+                  Beijing
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Shenzhen"
+                >
+                  Shenzhen
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="+1..."
+                >
+                  +1...
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <span
+            class="arco-icon-hover arco-select-clear-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-close"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+              />
+            </svg>
+          </span>
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <span
+                style="margin-left:8px"
+              >
+                3 cities selected
+              </span>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <span
+            class="arco-icon-hover arco-select-clear-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-close"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+              />
+            </svg>
+          </span>
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/no-border.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default arco-select-no-border"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Please select"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default arco-select-disabled arco-select-no-border"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title="Beijing"
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          disabled=""
+          placeholder="Please select"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="Beijing"
+        />
+        <span
+          class="arco-select-view-value"
+        >
+          Beijing
+        </span>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
+<div
+  class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+  style="width:345px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <div
+      class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+    >
+      <div
+        class="arco-input-tag-view"
+      >
+        <div
+          class="arco-input-tag-inner"
+        >
+          <input
+            class="arco-input-tag-input arco-input-tag-input-size-default"
+            placeholder="Search by name"
+            value=""
+          />
+          <span
+            class="arco-input-tag-input-mirror"
+          >
+            Search by name
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/options.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title="Beijing"
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          placeholder="Select city"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="Beijing"
+        />
+        <span
+          class="arco-select-view-value"
+        >
+          Beijing
+        </span>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Beijing"
+                >
+                  Beijing
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Shanghai"
+                >
+                  Shanghai
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/relative.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title="Beijing"
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          placeholder="Select Province"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="Beijing"
+        />
+        <span
+          class="arco-select-view-value"
+        >
+          Beijing
+        </span>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input arco-select-hidden"
+          placeholder="Select city"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-select-view-value"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/render-format.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Select city"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                >
+                  <span>
+                    <svg
+                      class="arco-icon arco-icon-star"
+                      fill="none"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      style="color:#f7ba1e"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                    >
+                      <path
+                        d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+                      />
+                    </svg>
+                     Beijing City 
+                  </span>
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-delete"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                >
+                  <span>
+                    <svg
+                      class="arco-icon arco-icon-star"
+                      fill="none"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      style="color:#f7ba1e"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                    >
+                      <path
+                        d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+                      />
+                    </svg>
+                     Shenzhen City 
+                  </span>
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-delete"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/render-tag.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="max-width:350px;margin-right:20px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default"
+                style="margin:2px 6px 2px 0"
+              >
+                red
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
+                style="margin:2px 6px 2px 0"
+              >
+                orangered
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <span
+            class="arco-icon-hover arco-select-clear-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-close"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+              />
+            </svg>
+          </span>
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/self-input.md correctly 1`] = `
+<div>
+  <div
+    class="arco-typography"
+    style="width:345px"
+  >
+    Favorite Cities：
+    <a
+      href="javascript: void(0)"
+    >
+      None
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/show-search.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Select city"
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Filter option"
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+      style="width:154px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Retain input value"
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px;border-radius:4px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="mini"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        mini
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="small"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        small
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="size"
+        type="radio"
+        value="default"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        default
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="large"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        large
+      </span>
+    </label>
+  </div>
+  <div>
+    <div
+      class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+      style="width:345px;margin-bottom:20px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <input
+          class="arco-select-view-input"
+          placeholder="Please select"
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-hidden"
+        />
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:345px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Please select"
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Please select
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/token-separators.md correctly 1`] = `
+<div
+  class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+  style="width:345px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <div
+      class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+    >
+      <div
+        class="arco-input-tag-view"
+      >
+        <div
+          class="arco-input-tag-inner"
+        >
+          <input
+            class="arco-input-tag-input arco-input-tag-input-size-default"
+            placeholder="Please select"
+            value=""
+          />
+          <span
+            class="arco-input-tag-input-mirror"
+          >
+            Please select
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/virtual-list.md correctly 1`] = `
+Array [
+  <h6
+    class="arco-typography"
+  >
+    10000 items
+  </h6>,
+  <div
+    class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+    style="width:345px"
+    tabindex="0"
+  >
+    <div
+      class="arco-select-view"
+      title=""
+    >
+      <div
+        class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <input
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              placeholder="Select a tag"
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            >
+              Select a tag
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-select-suffix"
+      >
+        <div
+          class="arco-select-expand-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-expand"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="transform:rotate(-45deg)"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

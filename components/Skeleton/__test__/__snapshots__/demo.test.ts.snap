@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Skeleton/demo/animate.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:40px"
+  >
+    <span
+      class="arco-typography"
+      style="margin-right:8px"
+    >
+      Animation
+    </span>
+    <button
+      class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+      style="vertical-align:middle"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-skeleton arco-skeleton-animate"
+  >
+    <div
+      class="arco-skeleton-header"
+    >
+      <div
+        class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
+      />
+    </div>
+    <div
+      class="arco-skeleton-content"
+    >
+      <ul
+        class="arco-skeleton-text"
+      >
+        <li
+          class="arco-skeleton-text-row"
+        />
+        <li
+          class="arco-skeleton-text-row"
+        />
+        <li
+          class="arco-skeleton-text-row"
+          style="width:90%"
+        />
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Skeleton/demo/basic.md correctly 1`] = `
+<div
+  class="arco-skeleton"
+>
+  <div
+    class="arco-skeleton-content"
+  >
+    <ul
+      class="arco-skeleton-text"
+    >
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+        style="width:60%"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`renders Skeleton/demo/rows.md correctly 1`] = `
+<div
+  class="arco-skeleton"
+>
+  <div
+    class="arco-skeleton-header"
+  >
+    <div
+      class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-square"
+    />
+  </div>
+  <div
+    class="arco-skeleton-content"
+  >
+    <ul
+      class="arco-skeleton-text"
+    >
+      <li
+        class="arco-skeleton-text-row"
+        style="width:100%"
+      />
+      <li
+        class="arco-skeleton-text-row"
+        style="width:600px"
+      />
+      <li
+        class="arco-skeleton-text-row"
+        style="width:400px"
+      />
+    </ul>
+  </div>
+</div>
+`;

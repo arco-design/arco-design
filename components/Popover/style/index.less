@@ -1,0 +1,47 @@
+@import './token.less';
+
+@popover-prefix-cls: ~'@{prefix}-popover';
+@popconfirm-prefix-cls: ~'@{prefix}-popconfirm';
+
+.@{popover-prefix-cls} {
+  &-content {
+    padding: @popup-padding-vertical @popup-padding-horizontal;
+  }
+
+  &-title {
+    font-size: @popup-font-title-size;
+    color: @popup-color-title-text;
+    font-weight: @font-weight-500;
+  }
+
+  &-title + &-inner-content {
+    margin-top: @popup-margin-content-top;
+  }
+}
+
+.@{popover-prefix-cls},
+.@{popconfirm-prefix-cls} {
+  &-content {
+    color: @popup-color-content-text;
+    background-color: @popup-color-content-bg;
+    box-shadow: @popup-shadow;
+    max-width: none;
+    width: 100%;
+    font-size: @popup-font-size;
+    border-radius: @popup-border-radius;
+    line-height: @line-height-base;
+    box-sizing: border-box;
+    border: @border-1 solid @popup-color-border;
+
+    &-inner {
+      word-wrap: break-word;
+      text-align: left;
+    }
+  }
+
+  &-arrow.@{prefix}-trigger-arrow {
+    background-color: @popup-color-content-bg;
+    border: @border-1 solid @popup-color-border;
+    z-index: 1;
+  }
+}

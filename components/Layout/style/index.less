@@ -1,0 +1,101 @@
+@import './token.less';
+
+@layout-prefix-cls: ~'@{prefix}-layout';
+
+.@{layout-prefix-cls} {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+
+  &-sider {
+    position: relative;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    flex: none; // flex: 0 0 auto; 当右侧文字过长的时候不会被压缩。
+    background: @layout-sider-background;
+    transition: width @transition-duration-2 @transition-timing-function-standard;
+
+    &-children {
+      height: 100%;
+      overflow: auto;
+    }
+
+    &-collapsed &-children {
+      /* width */
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      // /* Track */
+      // &::-webkit-scrollbar-track {
+      //   background: #f1f1f1;
+      // }
+
+      // /* Handle */
+      // &::-webkit-scrollbar-thumb {
+      //   background: #888;
+      // }
+
+      // /* Handle on hover */
+      // &::-webkit-scrollbar-thumb:hover {
+      //   background: #555;
+      // }
+    }
+
+    &-has-trigger {
+      padding-bottom: @layout-trigger-height;
+      box-sizing: border-box;
+    }
+
+    &-trigger {
+      box-sizing: border-box;
+      width: 100%;
+      height: @layout-trigger-height;
+      line-height: @layout-trigger-height;
+      text-align: center;
+      background: @layout-trigger-dark-color;
+      color: var(--color-white);
+      cursor: pointer;
+      transition: width @transition-duration-2 @transition-timing-function-standard;
+      z-index: 1;
+
+      &-light {
+        background: @layout-sider-background-light;
+        border-top: 1px solid @layout-trigger-light-color-border;
+        color: @layout-font-color;
+      }
+    }
+  }
+
+  &-sider-light {
+    background: @layout-sider-background-light;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &-header {
+    margin: 0;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-footer {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
+.@{layout-prefix-cls}-has-sider {
+  flex-direction: row;
+
+  > .@{layout-prefix-cls},
+  > .@{layout-prefix-cls}-content {
+    overflow-x: hidden;
+  }
+}

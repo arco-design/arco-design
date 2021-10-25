@@ -1,0 +1,117 @@
+@import './color/css-variables.less';
+
+@{arco-theme-tag} {
+  --color-white: @color-white;
+  --color-black: @color-black;
+  --color-border: @color-border;
+  --color-bg-popup: @color-bg-popup;
+  --color-bg-1: @color-bg-1;
+  --color-bg-2: @color-bg-2;
+  --color-bg-3: @color-bg-3;
+  --color-bg-4: @color-bg-4;
+  --color-bg-5: @color-bg-5;
+  --color-bg-white: @color-bg-white;
+  --color-neutral-1: rgb(var(--gray-1));
+  --color-neutral-2: rgb(var(--gray-2));
+  --color-neutral-3: rgb(var(--gray-3));
+  --color-neutral-4: rgb(var(--gray-4));
+  --color-neutral-5: rgb(var(--gray-5));
+  --color-neutral-6: rgb(var(--gray-6));
+  --color-neutral-7: rgb(var(--gray-7));
+  --color-neutral-8: rgb(var(--gray-8));
+  --color-neutral-9: rgb(var(--gray-9));
+  --color-neutral-10: rgb(var(--gray-10));
+  --color-text-1: @color-text-1;
+  --color-text-2: @color-text-2;
+  --color-text-3: @color-text-3;
+  --color-text-4: @color-text-4;
+  --color-border-1: @color-border-1;
+  --color-border-2: @color-border-2;
+  --color-border-3: @color-border-3;
+  --color-border-4: @color-border-4;
+  --color-fill-1: @color-fill-1;
+  --color-fill-2: @color-fill-2;
+  --color-fill-3: @color-fill-3;
+  --color-fill-4: @color-fill-4;
+  --color-primary-light-1: @color-primary-light-1;
+  --color-primary-light-2: @color-primary-light-2;
+  --color-primary-light-3: @color-primary-light-3;
+  --color-primary-light-4: @color-primary-light-4;
+  --color-secondary: @color-secondary;
+  --color-secondary-hover: @color-secondary-hover;
+  --color-secondary-active: @color-secondary-active;
+  --color-secondary-disabled: @color-secondary-disabled;
+  --color-danger-light-1: @color-danger-light-1;
+  --color-danger-light-2: @color-danger-light-2;
+  --color-danger-light-3: @color-danger-light-3;
+  --color-danger-light-4: @color-danger-light-4;
+  --color-success-light-1: @color-success-light-1;
+  --color-success-light-2: @color-success-light-2;
+  --color-success-light-3: @color-success-light-3;
+  --color-success-light-4: @color-success-light-4;
+  --color-warning-light-1: @color-warning-light-1;
+  --color-warning-light-2: @color-warning-light-2;
+  --color-warning-light-3: @color-warning-light-3;
+  --color-warning-light-4: @color-warning-light-4;
+
+  // radius
+  --border-radius-none: @border-radius-none;
+  --border-radius-small: @border-radius-small;
+  --border-radius-medium: @border-radius-medium;
+  --border-radius-large: @border-radius-large;
+  --border-radius-circle: @border-radius-circle;
+  // component
+  --color-tooltip-bg: @color-tooltip-bg;
+  --color-spin-layer-bg: @color-spin-layer-bg;
+  --color-menu-dark-bg: @color-menu-dark-bg;
+  --color-menu-light-bg: @color-menu-light-bg;
+  --color-menu-dark-hover: @color-menu-dark-hover;
+  --color-mask-bg: @mask-color-bg;
+}
+
+@{arco-theme-tag}[arco-theme='dark'] {
+  --color-white: @dark-color-white; // 在亮色模式下所有白色文字对应。对应 @color-white;
+  --color-black: @dark-color-black;
+  --color-border: @dark-color-border;
+  --color-bg-1: @dark-color-bg-1; // 整体背景，就是 @dark-gray-1
+  --color-bg-2: @dark-color-bg-2; // 一级容器背景 (“白色”)
+  --color-bg-3: @dark-color-bg-3; // 二级容器背景
+  --color-bg-4: @dark-color-bg-4; // 三级容器背景
+  --color-bg-5: @dark-color-bg-5; // 下拉框、Tooltips 背景
+  --color-bg-white: @dark-color-bg-white; // 在亮色模式下 radio，switch 白色背景
+  --color-text-1: @dark-color-text-1; // 标题，正文
+  --color-text-2: @dark-color-text-2; // 语句
+  --color-text-3: @dark-color-text-3; // 次要信息
+  --color-text-4: @dark-color-text-4; // 禁用态
+  --color-fill-1: @dark-color-fill-1;
+  --color-fill-2: @dark-color-fill-2;
+  --color-fill-3: @dark-color-fill-3;
+  --color-fill-4: @dark-color-fill-4;
+  --color-primary-light-1: @dark-color-primary-light-1;
+  --color-primary-light-2: @dark-color-primary-light-2;
+  --color-primary-light-3: @dark-color-primary-light-3;
+  --color-primary-light-4: @dark-color-primary-light-4;
+  --color-secondary: @dark-color-secondary;
+  --color-secondary-hover: @dark-color-secondary-hover;
+  --color-secondary-active: @dark-color-secondary-active;
+  --color-secondary-disabled: @dark-color-secondary-disabled;
+  --color-danger-light-1: @dark-color-danger-light-1;
+  --color-danger-light-2: @dark-color-danger-light-2;
+  --color-danger-light-3: @dark-color-danger-light-3;
+  --color-danger-light-4: @dark-color-danger-light-4;
+  --color-success-light-1: @dark-color-success-light-1;
+  --color-success-light-2: @dark-color-success-light-2;
+  --color-success-light-3: @dark-color-success-light-3;
+  --color-success-light-4: @dark-color-success-light-4;
+  --color-warning-light-1: @dark-color-warning-light-1;
+  --color-warning-light-2: @dark-color-warning-light-2;
+  --color-warning-light-3: @dark-color-warning-light-3;
+  --color-warning-light-4: @dark-color-warning-light-4;
+  // component
+  --color-tooltip-bg: @dark-color-tooltip-bg;
+  --color-spin-layer-bg: @dark-color-spin-layer-bg;
+  --color-menu-dark-bg: @color-menu-dark-bg;
+  --color-menu-light-bg: @color-menu-dark-bg;
+  --color-menu-dark-hover: @dark-color-menu-dark-hover;
+  --color-mask-bg: @dark-mask-color-bg;
+}

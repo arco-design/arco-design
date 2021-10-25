@@ -1,0 +1,364 @@
+@import './color/colors.less';
+
+/******** borderSize *******/
+
+@border-none: 0;
+@border-1: 1px;
+@border-2: 2px;
+@border-3: 3px;
+@border-4: 4px;
+@border-5: 5px;
+
+/******** borderStyle *******/
+
+@border-solid: solid;
+@border-dashed: dashed;
+@border-dotted: dotted;
+
+/******** radius *******/
+
+@border-radius-none: 0;
+@border-radius-small: 2px;
+@border-radius-medium: 4px;
+@border-radius-large: 8px;
+@border-radius-circle: 50%;
+
+/******** shadow distance *******/
+
+@shadow-distance-none: 0;
+@shadow-distance-1: 1px;
+@shadow-distance-2: 2px;
+@shadow-distance-3: 3px;
+@shadow-distance-4: 4px;
+
+/******** size *******/
+
+@size-none: 0;
+@size-1: 4px;
+@size-2: 8px;
+@size-3: 12px;
+@size-4: 16px;
+@size-5: 20px;
+@size-6: 24px;
+@size-7: 28px;
+@size-8: 32px;
+@size-9: 36px;
+@size-10: 40px;
+@size-11: 44px;
+@size-12: 48px;
+@size-13: 52px;
+@size-14: 56px;
+@size-15: 60px;
+@size-16: 64px;
+@size-17: 68px;
+@size-18: 72px;
+@size-19: 76px;
+@size-20: 80px;
+@size-21: 84px;
+@size-22: 88px;
+@size-23: 92px;
+@size-24: 96px;
+@size-25: 100px;
+@size-26: 104px;
+@size-27: 108px;
+@size-28: 112px;
+@size-29: 116px;
+@size-30: 120px;
+@size-31: 124px;
+@size-32: 128px;
+@size-33: 132px;
+@size-34: 136px;
+@size-35: 140px;
+@size-36: 144px;
+@size-37: 148px;
+@size-38: 152px;
+@size-39: 156px;
+@size-40: 160px;
+@size-41: 164px;
+@size-42: 168px;
+@size-43: 172px;
+@size-44: 176px;
+@size-45: 180px;
+@size-46: 184px;
+@size-47: 188px;
+@size-48: 192px;
+@size-49: 196px;
+@size-50: 200px;
+
+@size-mini: @size-6;
+@size-small: @size-7;
+@size-default: @size-8;
+@size-large: @size-9;
+
+/******** spacing *******/
+
+@spacing-none: 0;
+@spacing-1: 2px;
+@spacing-2: 4px;
+@spacing-3: 6px;
+@spacing-4: 8px;
+@spacing-5: 10px;
+@spacing-6: 12px;
+@spacing-7: 16px;
+@spacing-8: 20px;
+@spacing-9: 24px;
+@spacing-10: 32px;
+@spacing-11: 36px;
+@spacing-12: 40px;
+@spacing-13: 48px;
+@spacing-14: 56px;
+@spacing-15: 60px;
+@spacing-16: 64px;
+@spacing-17: 72px;
+@spacing-18: 80px;
+@spacing-19: 84px;
+@spacing-20: 96px;
+@spacing-21: 100px;
+@spacing-22: 120px;
+
+@color-transparent: transparent;
+
+/******** shadow *******/
+
+@shadow-none: none;
+@shadow-special: 0 0 1px rgba(0, 0, 0, 0.3);
+@shadow1-center: 0 0 5px rgba(0, 0, 0, 0.1);
+@shadow1-up: 0 -2px 5px rgba(0, 0, 0, 0.1);
+@shadow1-down: 0 2px 5px rgba(0, 0, 0, 0.1);
+@shadow1-left: -2px 0 5px rgba(0, 0, 0, 0.1);
+@shadow1-right: 2px 0 5px rgba(0, 0, 0, 0.1);
+@shadow1-left-up: -2px -2px 5px rgba(0, 0, 0, 0.1);
+@shadow1-left-down: -2px 2px 5px rgba(0, 0, 0, 0.1);
+@shadow1-right-up: 2px -2px 5px rgba(0, 0, 0, 0.1);
+@shadow1-right-down: 2px 2px 5px rgba(0, 0, 0, 0.1);
+@shadow2-center: 0 0 10px rgba(0, 0, 0, 0.1);
+@shadow2-up: 0 -4px 10px rgba(0, 0, 0, 0.1);
+@shadow2-down: 0 4px 10px rgba(0, 0, 0, 0.1);
+@shadow2-left: -4px 0 10px rgba(0, 0, 0, 0.1);
+@shadow2-right: 4px 0 10px rgba(0, 0, 0, 0.1);
+@shadow2-left-up: -4px -4px 10px rgba(0, 0, 0, 0.1);
+@shadow2-left-down: -4px 4px 10px rgba(0, 0, 0, 0.1);
+@shadow2-right-up: 4px -4px 10px rgba(0, 0, 0, 0.1);
+@shadow2-right-down: 4px 4px 10px rgba(0, 0, 0, 0.1);
+@shadow3-center: 0 0 20px rgba(0, 0, 0, 0.1);
+@shadow3-up: 0 -8px 20px rgba(0, 0, 0, 0.1);
+@shadow3-down: 0 8px 20px rgba(0, 0, 0, 0.1);
+@shadow3-left: -8px 0 20px rgba(0, 0, 0, 0.1);
+@shadow3-right: 8px 0 20px rgba(0, 0, 0, 0.1);
+@shadow3-left-up: -8px -8px 20px rgba(0, 0, 0, 0.1);
+@shadow3-left-down: -8px 8px 20px rgba(0, 0, 0, 0.1);
+@shadow3-right-up: 8px -8px 20px rgba(0, 0, 0, 0.1);
+@shadow3-right-down: 8px 8px 20px rgba(0, 0, 0, 0.1);
+
+/******** opacity *******/
+
+@opacity-none: 0;
+@opacity-1: 10%;
+@opacity-2: 20%;
+@opacity-3: 30%;
+@opacity-4: 40%;
+@opacity-5: 50%;
+@opacity-6: 60%;
+@opacity-7: 70%;
+@opacity-8: 80%;
+@opacity-9: 90%;
+@opacity-10: 100%;
+
+/******** fontSize *******/
+
+@font-size-display-3: 56px;
+@font-size-display-2: 48px;
+@font-size-display-1: 36px;
+@font-size-title-3: 24px;
+@font-size-title-2: 20px;
+@font-size-title-1: 16px;
+@font-size-body-3: 14px;
+@font-size-body-2: 13px;
+@font-size-body-1: 12px;
+@font-size-caption: 12px;
+
+/******** fontWeight ********/
+@font-weight-100: 100;
+@font-weight-200: 200;
+@font-weight-300: 300;
+@font-weight-400: 400;
+@font-weight-500: 500;
+@font-weight-600: 600;
+@font-weight-700: 700;
+@font-weight-800: 800;
+@font-weight-900: 900;
+
+/******** Primary *******/
+
+@color-primary-1: rgb(var(--primary-1));
+@color-primary-2: rgb(var(--primary-2));
+@color-primary-3: rgb(var(--primary-3));
+@color-primary-4: rgb(var(--primary-4));
+@color-primary-5: rgb(var(--primary-5));
+@color-primary-6: rgb(var(--primary-6));
+@color-primary-7: rgb(var(--primary-7));
+@color-primary-8: rgb(var(--primary-8));
+@color-primary-9: rgb(var(--primary-9));
+@color-primary-10: rgb(var(--primary-10));
+
+/******** success *******/
+
+@color-success-1: rgb(var(--success-1));
+@color-success-2: rgb(var(--success-2));
+@color-success-3: rgb(var(--success-3));
+@color-success-4: rgb(var(--success-4));
+@color-success-5: rgb(var(--success-5));
+@color-success-6: rgb(var(--success-6));
+@color-success-7: rgb(var(--success-7));
+@color-success-8: rgb(var(--success-8));
+@color-success-9: rgb(var(--success-9));
+@color-success-10: rgb(var(--success-10));
+
+/******** warning *******/
+
+@color-warning-1: rgb(var(--warning-1));
+@color-warning-2: rgb(var(--warning-2));
+@color-warning-3: rgb(var(--warning-3));
+@color-warning-4: rgb(var(--warning-4));
+@color-warning-5: rgb(var(--warning-5));
+@color-warning-6: rgb(var(--warning-6));
+@color-warning-7: rgb(var(--warning-7));
+@color-warning-8: rgb(var(--warning-8));
+@color-warning-9: rgb(var(--warning-9));
+@color-warning-10: rgb(var(--warning-10));
+
+/******** danger *******/
+
+@color-danger-1: rgb(var(--danger-1));
+@color-danger-2: rgb(var(--danger-2));
+@color-danger-3: rgb(var(--danger-3));
+@color-danger-4: rgb(var(--danger-4));
+@color-danger-5: rgb(var(--danger-5));
+@color-danger-6: rgb(var(--danger-6));
+@color-danger-7: rgb(var(--danger-7));
+@color-danger-8: rgb(var(--danger-8));
+@color-danger-9: rgb(var(--danger-9));
+@color-danger-10: rgb(var(--danger-10));
+
+/******** link *******/
+
+@color-link-1: rgb(var(--primary-1));
+@color-link-2: rgb(var(--primary-2));
+@color-link-3: rgb(var(--primary-3));
+@color-link-4: rgb(var(--primary-4));
+@color-link-5: rgb(var(--primary-5));
+@color-link-6: rgb(var(--primary-6));
+@color-link-7: rgb(var(--primary-7));
+@color-link-8: rgb(var(--primary-8));
+@color-link-9: rgb(var(--primary-9));
+@color-link-10: rgb(var(--primary-10));
+
+/******** radius *******/
+
+@radius-none: var(--border-radius-none);
+@radius-small: var(--border-radius-small);
+@radius-medium: var(--border-radius-medium);
+@radius-large: var(--border-radius-large);
+@radius-circle: var(--border-radius-circle);
+
+// Other
+@color-white: #ffffff;
+@dark-color-white: fade(#fff, 90%); // 在亮色模式下所有白色文字对应。对应 @color-white;
+
+@color-black: #000000;
+@dark-color-black: #000000;
+
+@mask-bg-opacity: @opacity-6;
+@mask-color-bg: rgba(@gray-10, @mask-bg-opacity);
+
+@dark-mask-color-bg: rgba(@dark-gray-1, @mask-bg-opacity);
+
+// 暗黑主题的导航组件背景色，需要在主题商店可配置
+@color-menu-dark-bg: #232324;
+@color-menu-light-bg: #ffffff;
+@color-spin-layer-bg: rgba(255, 255, 255, 0.6);
+@color-menu-dark-hover: fade(#fff, 4%);
+@color-tooltip-bg: rgb(var(--gray-10));
+
+// component
+@dark-color-tooltip-bg: #373739;
+@dark-color-spin-layer-bg: rgba(51, 51, 51, 0.6);
+@dark-color-menu-dark-hover: var(--color-fill-2);
+
+// variables
+@color-border: rgb(var(--gray-3));
+@color-bg-popup: var(--color-bg-5);
+@color-bg-1: #fff;
+@color-bg-2: #fff;
+@color-bg-3: #fff;
+@color-bg-4: #fff;
+@color-bg-5: #fff;
+@color-bg-white: #fff;
+@color-text-1: var(--color-neutral-10); // 标题，正文
+@color-text-2: var(--color-neutral-8); // 语句
+@color-text-3: var(--color-neutral-6); // 次要信息
+@color-text-4: var(--color-neutral-4); // 次要信息
+@color-fill-1: var(--color-neutral-1);
+@color-fill-2: var(--color-neutral-2);
+@color-fill-3: var(--color-neutral-3);
+@color-fill-4: var(--color-neutral-4);
+@color-border-1: var(--color-neutral-2);
+@color-border-2: var(--color-neutral-3);
+@color-border-3: var(--color-neutral-4);
+@color-border-4: var(--color-neutral-6);
+@color-primary-light-1: rgb(var(--primary-1));
+@color-primary-light-2: rgb(var(--primary-2));
+@color-primary-light-3: rgb(var(--primary-3));
+@color-primary-light-4: rgb(var(--primary-4));
+@color-secondary: var(--color-neutral-2);
+@color-secondary-hover: var(--color-neutral-3);
+@color-secondary-active: var(--color-neutral-4);
+@color-secondary-disabled: var(--color-neutral-1);
+@color-danger-light-1: rgb(var(--danger-1));
+@color-danger-light-2: rgb(var(--danger-2));
+@color-danger-light-3: rgb(var(--danger-3));
+@color-danger-light-4: rgb(var(--danger-4));
+@color-success-light-1: rgb(var(--success-1));
+@color-success-light-2: rgb(var(--success-2));
+@color-success-light-3: rgb(var(--success-3));
+@color-success-light-4: rgb(var(--success-4));
+@color-warning-light-1: rgb(var(--warning-1));
+@color-warning-light-2: rgb(var(--warning-2));
+@color-warning-light-3: rgb(var(--warning-3));
+@color-warning-light-4: rgb(var(--warning-4));
+
+@dark-color-border: #333335;
+@dark-color-bg-1: #17171a; // 整体背景，就是 @dark-gray-1
+@dark-color-bg-2: #232324; // 一级容器背景 (“白色”)
+@dark-color-bg-3: #2a2a2b; // 二级容器背景
+@dark-color-bg-4: #313132; // 三级容器背景
+@dark-color-bg-5: #373739; // 下拉框、Tooltips 背景
+@dark-color-bg-white: #f6f6f6; // 在亮色模式下 radio，switch 白色背景
+@dark-color-text-1: fade(#fff, 90%); // 标题，正文
+@dark-color-text-2: fade(#fff, 70%); // 语句
+@dark-color-text-3: fade(#fff, 50%); // 次要信息
+@dark-color-text-4: fade(#fff, 30%); // 禁用态
+@dark-color-fill-1: fade(#fff, 4%);
+@dark-color-fill-2: fade(#fff, 8%);
+@dark-color-fill-3: fade(#fff, 12%);
+@dark-color-fill-4: fade(#fff, 16%);
+@dark-color-primary-light-1: rgba(var(--primary-6), 0.2);
+@dark-color-primary-light-2: rgba(var(--primary-6), 0.35);
+@dark-color-primary-light-3: rgba(var(--primary-6), 0.5);
+@dark-color-primary-light-4: rgba(var(--primary-6), 0.65);
+@dark-color-secondary: rgba(var(--gray-9), 0.08);
+@dark-color-secondary-hover: rgba(var(--gray-8), 0.16);
+@dark-color-secondary-active: rgba(var(--gray-7), 0.24);
+@dark-color-secondary-disabled: rgba(var(--gray-9), 0.08);
+@dark-color-danger-light-1: rgba(var(--danger-6), 0.2);
+@dark-color-danger-light-2: rgba(var(--danger-6), 0.35);
+@dark-color-danger-light-3: rgba(var(--danger-6), 0.5);
+@dark-color-danger-light-4: rgba(var(--danger-6), 0.65);
+@dark-color-success-light-1: rgb(var(--success-6), 0.2);
+@dark-color-success-light-2: rgb(var(--success-6), 0.35);
+@dark-color-success-light-3: rgb(var(--success-6), 0.5);
+@dark-color-success-light-4: rgb(var(--success-6), 0.65);
+@dark-color-warning-light-1: rgb(var(--warning-6), 0.2);
+@dark-color-warning-light-2: rgb(var(--warning-6), 0.35);
+@dark-color-warning-light-3: rgb(var(--warning-6), 0.5);
+@dark-color-warning-light-4: rgb(var(--warning-6), 0.65);

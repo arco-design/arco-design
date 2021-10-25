@@ -1,0 +1,170 @@
+@import '../../../style/mixin.less';
+@import './token.less';
+
+.@{prefix}-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px 4px 4px;
+  line-height: @line-height-base;
+  border-radius: @picker-input-border-radius;
+  background-color: @picker-color-bg;
+  border: 1px solid @picker-color-border;
+  box-sizing: border-box;
+  transition: all @transition-duration-1 @transition-timing-function-linear;
+
+  &-input {
+    display: inline-flex;
+    flex: 1;
+  }
+
+  input {
+    text-align: left;
+    padding: 0;
+    padding-left: 8px;
+    border: none;
+    width: 100%;
+    color: @picker-color-text;
+    background-color: @color-transparent;
+    line-height: @line-height-base;
+    transition: all @transition-duration-1 @transition-timing-function-linear;
+
+    &::placeholder {
+      color: @picker-color-placeholder;
+    }
+  }
+
+  &-input-placeholder input {
+    color: @picker-color-placeholder;
+  }
+
+  &-suffix {
+    width: 14px;
+    margin-left: 4px;
+    text-align: center;
+  }
+
+  &-suffix-icon {
+    color: @picker-color-icon;
+  }
+
+  & &-clear-icon {
+    display: none;
+    font-size: 12px;
+    color: var(--color-text-2);
+  }
+
+  &:hover {
+    background-color: @picker-color-bg_hover;
+    border-color: @picker-color-border_hover;
+  }
+
+  &:not(&-disabled):hover &-clear-icon {
+    display: inline-block;
+  }
+
+  &:not(&-disabled):hover &-suffix &-clear-icon + span {
+    display: none;
+  }
+
+  &-error {
+    background-color: @picker-color-bg_error;
+    border-color: @picker-color-border_error;
+
+    &:hover {
+      background-color: @picker-color-bg_error_hover;
+      border-color: @picker-color-border_error_hover;
+    }
+  }
+
+  &-focused {
+    box-shadow: 0 0 0 @picker-size-shadow_focus @picker-color-shadow_focus;
+  }
+
+  &-focused,
+  &-focused:hover {
+    background-color: @picker-color-bg_focus;
+    border-color: @picker-color-border_focus;
+  }
+
+  &-focused&-error {
+    border-color: @picker-color-border_error_focus;
+    box-shadow: 0 0 0 @picker-size-shadow_error_focus @picker-color-shadow_error_focus;
+  }
+
+  &-focused &-input-active input,
+  &-focused:hover &-input-active input {
+    background: @picker-range-color-bg-input_focus;
+  }
+
+  .disabledInput() {
+    input[disabled] {
+      cursor: not-allowed;
+      color: @picker-color-text_disabled;
+      -webkit-text-fill-color: @picker-color-text_disabled;
+
+      &::placeholder {
+        color: @picker-color-placeholder_disabled;
+      }
+    }
+  }
+
+  .disabledInput();
+
+  &-disabled,
+  &-disabled:hover {
+    color: @picker-color-text_disabled;
+    border-color: @picker-color-border_disabled;
+    background-color: @picker-color-bg_disabled;
+    cursor: not-allowed;
+
+    .disabledInput();
+  }
+
+  &-separator {
+    min-width: 10px;
+    padding: 0 8px;
+    color: @picker-color-separator;
+  }
+
+  &-disabled &-separator {
+    color: @picker-color-separator_disabled;
+  }
+
+  &-disabled &-suffix-icon {
+    color: @picker-color-icon_disabled;
+  }
+
+  // Size
+  &-size-mini {
+    height: @picker-size-mini;
+
+    input {
+      font-size: @picker-size-mini-font-size-text;
+    }
+  }
+
+  &-size-small {
+    height: @picker-size-small;
+
+    input {
+      font-size: @picker-size-small-font-size-text;
+    }
+  }
+
+  &-size-default {
+    height: @picker-size-default;
+
+    input {
+      font-size: @picker-size-default-font-size-text;
+    }
+  }
+
+  &-size-large {
+    height: @picker-size-large;
+
+    input {
+      font-size: @picker-size-large-font-size-text;
+    }
+  }
+}

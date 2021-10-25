@@ -1,0 +1,46 @@
+@import './token.less';
+
+@statistic-prefix-cls: ~'@{prefix}-statistic';
+
+.@{statistic-prefix-cls} {
+  display: inline-block;
+  line-height: @line-height-base;
+  color: @statistic-color-text;
+
+  &-title {
+    font-size: @statistic-font-title-size;
+    margin-bottom: @statistic-margin-title-bottom;
+    color: @statistic-color-title-text;
+  }
+
+  &-content {
+    .@{statistic-prefix-cls}-value {
+      white-space: nowrap;
+      font-size: @statistic-font-int-size;
+      font-weight: @statistic-font-value-weight;
+      color: @statistic-color-value-text;
+
+      &-int {
+        white-space: nowrap;
+      }
+
+      &-decimal {
+        font-size: @statistic-font-decimal-size;
+        display: inline-block;
+      }
+
+      &-suffix {
+        font-size: @statistic-font-suffix-size;
+      }
+
+      &-prefix {
+        font-size: @statistic-size-value-icon;
+      }
+    }
+  }
+
+  &-extra {
+    margin-top: @statistic-margin-extra-top;
+    color: @statistic-color-extra-text;
+  }
+}

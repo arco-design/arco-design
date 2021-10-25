@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Progress default 1`] = `
+<div
+  class="arco-progress arco-progress-line arco-progress-default"
+>
+  <div
+    class="arco-progress-line-wrapper"
+  >
+    <div
+      class="arco-progress-line-outer"
+      style="height:4px"
+    >
+      <div
+        class="arco-progress-line-inner"
+        style="width:0%"
+      />
+    </div>
+    <div
+      class="arco-progress-line-text arco-progress-line-text-with-icon"
+    >
+      0%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Progress set className globally 1`] = `
+<div
+  class="arco-progress arco-progress-line arco-progress-default global-default-class"
+>
+  <div
+    class="arco-progress-line-wrapper"
+  >
+    <div
+      class="arco-progress-line-outer"
+      style="height:4px"
+    >
+      <div
+        class="arco-progress-line-inner"
+        style="width:0%"
+      />
+    </div>
+    <div
+      class="arco-progress-line-text arco-progress-line-text-with-icon"
+    >
+      0%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Progress set className globally and component set className itself. 1`] = `
+<div
+  class="arco-progress arco-progress-line arco-progress-default component-class"
+>
+  <div
+    class="arco-progress-line-wrapper"
+  >
+    <div
+      class="arco-progress-line-outer"
+      style="height:4px"
+    >
+      <div
+        class="arco-progress-line-inner"
+        style="width:0%"
+      />
+    </div>
+    <div
+      class="arco-progress-line-text arco-progress-line-text-with-icon"
+    >
+      0%
+    </div>
+  </div>
+</div>
+`;

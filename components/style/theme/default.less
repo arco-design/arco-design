@@ -1,0 +1,46 @@
+@import './global.less';
+@import './component.less';
+
+@prefix: arco;
+@arco-theme-tag: body; // css 变量定义的选择器
+
+@font-family: 'nunito_for_arco', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+// @font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+//   '微软雅黑', Arial, sans-serif;
+
+@code-family: Consolas, Menlo;
+
+// global font size
+@font-size-body: 14px;
+
+@transition-duration-1: 0.1s;
+@transition-duration-2: 0.2s;
+@transition-duration-3: 0.3s;
+@transition-duration-4: 0.4s;
+@transition-duration-5: 0.5s;
+@transition-duration-loading: 1s;
+
+// 线性
+@transition-timing-function-linear: cubic-bezier(0, 0, 1, 1);
+// 标准
+@transition-timing-function-standard: cubic-bezier(0.34, 0.69, 0.1, 1);
+// 过冲
+@transition-timing-function-overshoot: cubic-bezier(0.3, 1.3, 0.3, 1);
+// 减速
+@transition-timing-function-decelerate: cubic-bezier(0.4, 0.8, 0.74, 1);
+// 加速
+@transition-timing-function-accelerate: cubic-bezier(0.26, 0, 0.6, 0.2);
+
+@z-index-popup-base: 1000;
+@z-index-affix: @z-index-popup-base - 1; // 999
+@z-index-popup: @z-index-popup-base; // 1000
+@z-index-drawer: @z-index-popup-base + 1; // 1001
+@z-index-modal: @z-index-drawer; // 1001
+@z-index-message: @z-index-popup-base + 3; // 1003
+@z-index-notification: @z-index-popup-base + 3; // 1003
+@z-index-image-preview: @z-index-modal; // 1001
+
+@line-height-base: 1.5715;
+
+@popup-box-shadow-base: @shadow1-down;

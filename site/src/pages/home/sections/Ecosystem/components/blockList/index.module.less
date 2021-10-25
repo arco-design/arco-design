@@ -1,0 +1,29 @@
+.block {    
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+
+  &-item {
+    flex: none;
+    margin: 10px;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .block {
+    &-list {
+      flex-direction: column;
+      margin: 0;
+    }
+    &-item {
+      margin: 0;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Grid.Col default 1`] = `
+<div
+  class="arco-col arco-col-24"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Grid.Col set className globally 1`] = `
+<div
+  class="arco-col arco-col-24 global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Grid.Col set className globally and component set className itself. 1`] = `
+<div
+  class="arco-col arco-col-24 component-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Grid.Row default 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Grid.Row set className globally 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Grid.Row set className globally and component set className itself. 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start component-class"
+/>
+`;

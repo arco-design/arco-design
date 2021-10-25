@@ -1,0 +1,2107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Tabs/demo/basic.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 1
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-disabled"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 2
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 3
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-horizontal"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-0%"
+    >
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          <div
+            class="arco-typography"
+            style="text-align:center;margin-top:20px"
+          >
+            Content of Tab Panel 1
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/controled.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 1
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 2
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 3
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-horizontal"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-0%"
+    >
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          <div
+            class="arco-typography"
+            style="text-align:center;margin-top:20px"
+          >
+            Content of Tab Panel 1
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/delete.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-card-gutter arco-tabs-top arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-card-gutter"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-editable"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 1
+            </span>
+            <span
+              class="arco-tabs-close-icon"
+            >
+              <span
+                class="arco-icon-hover arco-tabs-icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active arco-tabs-header-title-editable"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 2
+            </span>
+            <span
+              class="arco-tabs-close-icon"
+            >
+              <span
+                class="arco-icon-hover arco-tabs-icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-editable"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 3
+            </span>
+            <span
+              class="arco-tabs-close-icon"
+            >
+              <span
+                class="arco-icon-hover arco-tabs-icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-editable"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 4
+            </span>
+            <span
+              class="arco-tabs-close-icon"
+            >
+              <span
+                class="arco-icon-hover arco-tabs-icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-editable"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 5
+            </span>
+            <span
+              class="arco-tabs-close-icon"
+            >
+              <span
+                class="arco-icon-hover arco-tabs-icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-tabs-add-icon"
+        >
+          <span
+            class="arco-icon-hover arco-tabs-add-icon-hover"
+          >
+            <span
+              class="arco-tabs-add"
+            >
+              <svg
+                class="arco-icon arco-icon-plus"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M5 24h38M24 5v38"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-horizontal"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-100%"
+    >
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          <div
+            class="arco-typography"
+            style="text-align:center;margin-top:20px"
+          >
+            Content of Tab Panel 2
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/drag.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              tab 1
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              tab 2
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              tab 3
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-horizontal"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-0%"
+    >
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          Content of Tab Pane 1
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/extra.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 1
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-disabled"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 2
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 3
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-tabs-header-extra"
+      >
+        <button
+          class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
+          type="button"
+        >
+          <span>
+            Action
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-horizontal"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-0%"
+    >
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          <div
+            class="arco-typography"
+            style="text-align:center;margin-top:20px"
+          >
+            Content of Tab Panel  1
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/icon.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              <span>
+                <svg
+                  class="arco-icon arco-icon-calendar"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  style="margin-right:6px"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+                  />
+                </svg>
+                 Tab 1
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-disabled"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              <span>
+                <svg
+                  class="arco-icon arco-icon-clock-circle"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  style="margin-right:6px"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+                  />
+                </svg>
+                 Tab 2
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              <span>
+                <svg
+                  class="arco-icon arco-icon-user"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  style="margin-right:6px"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+                  />
+                  <circle
+                    cx="24"
+                    cy="15"
+                    r="8"
+                  />
+                </svg>
+                 Tab 3
+              </span>
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-horizontal"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-0%"
+    >
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          <div
+            class="arco-typography"
+            style="text-align:center;margin-top:20px"
+          >
+            Content of Tab Panel 1
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/inline.md correctly 1`] = `
+<div
+  class="arco-tabs arco-tabs-vertical arco-tabs-line arco-tabs-left arco-tabs-size-default"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-vertical arco-tabs-header-nav-left arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateY(0px);-webkit-transform:translateY(0px);-ms-transform:translateY(0px);-moz-transform:translateY(0px);-o-transform:translateY(0px)"
+        >
+          <div
+            class="arco-tabs-header-title arco-tabs-header-title-active"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 1
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 2
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-title"
+          >
+            <span
+              class="arco-tabs-header-title-text"
+            >
+              Tab 3
+            </span>
+          </div>
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs-content arco-tabs-content-vertical"
+  >
+    <div
+      class="arco-tabs-content-inner"
+      style="margin-left:-0%"
+    >
+      <div
+        class="arco-tabs-content-item arco-tabs-content-item-active"
+      >
+        <div
+          class="arco-tabs-pane"
+        >
+          <div>
+            <div
+              class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+            >
+              <div
+                class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+              >
+                <div
+                  class="arco-tabs-header-scroll"
+                >
+                  <div
+                    class="arco-tabs-header-wrapper"
+                  >
+                    <div
+                      class="arco-tabs-header"
+                      style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+                    >
+                      <div
+                        class="arco-tabs-header-title arco-tabs-header-title-active"
+                      >
+                        <span
+                          class="arco-tabs-header-title-text"
+                        >
+                          Tab 1
+                        </span>
+                      </div>
+                      <div
+                        class="arco-tabs-header-title"
+                      >
+                        <span
+                          class="arco-tabs-header-title-text"
+                        >
+                          Tab 2
+                        </span>
+                      </div>
+                      <div
+                        class="arco-tabs-header-title"
+                      >
+                        <span
+                          class="arco-tabs-header-title-text"
+                        >
+                          Tab 3
+                        </span>
+                      </div>
+                      <div
+                        class="arco-tabs-header-ink"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-tabs-content arco-tabs-content-horizontal"
+              >
+                <div
+                  class="arco-tabs-content-inner"
+                  style="margin-left:-0%"
+                >
+                  <div
+                    class="arco-tabs-content-item arco-tabs-content-item-active"
+                  >
+                    <div
+                      class="arco-tabs-pane"
+                    >
+                      <div
+                        class="arco-typography"
+                        style="text-align:center;margin-top:20px"
+                      >
+                        Content of Tab Panel 1
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-tabs-content-item"
+                  />
+                  <div
+                    class="arco-tabs-content-item"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content-item"
+      />
+      <div
+        class="arco-tabs-content-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/position.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:40px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="position"
+        type="radio"
+        value="left"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        left
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="position"
+        type="radio"
+        value="top"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        top
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="position"
+        type="radio"
+        value="bottom"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        bottom
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="position"
+        type="radio"
+        value="right"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        right
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  >
+    <div
+      class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+    >
+      <div
+        class="arco-tabs-header-scroll"
+      >
+        <div
+          class="arco-tabs-header-wrapper"
+        >
+          <div
+            class="arco-tabs-header"
+            style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          >
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-active"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 1
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 2
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 3
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-ink"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-tabs-content arco-tabs-content-horizontal"
+    >
+      <div
+        class="arco-tabs-content-inner"
+        style="margin-left:-0%"
+      >
+        <div
+          class="arco-tabs-content-item arco-tabs-content-item-active"
+        >
+          <div
+            class="arco-tabs-pane"
+          >
+            <div
+              class="arco-typography"
+              style="text-align:center;margin-top:20px"
+            >
+              Content of Tab Panel  1
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
+<div>
+  <div
+    class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  >
+    <div>
+      <div />
+      <div
+        class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+        style="top:0;background:var(--color-bg-2)"
+      >
+        <div
+          class="arco-tabs-header-scroll"
+        >
+          <div
+            class="arco-tabs-header-wrapper"
+          >
+            <div
+              class="arco-tabs-header"
+              style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+            >
+              <div
+                class="arco-tabs-header-title"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 1
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-title"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 2
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-title arco-tabs-header-title-active"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 3
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-ink"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-tabs-content arco-tabs-content-horizontal"
+    >
+      <div
+        class="arco-tabs-content-inner"
+        style="margin-left:-200%"
+      >
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item arco-tabs-content-item-active"
+        >
+          <div
+            class="arco-tabs-pane"
+          >
+            <div
+              class="arco-typography"
+              style="text-align:center;margin-top:20px"
+            >
+              Content of Tab Panel  3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/scroll.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:40px"
+  >
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="direction"
+        type="radio"
+        value="horizontal"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        horizontal
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="direction"
+        type="radio"
+        value="vertical"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        vertical
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    style="height:200px"
+  >
+    <div
+      class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+    >
+      <div
+        class="arco-tabs-header-scroll"
+      >
+        <div
+          class="arco-tabs-header-wrapper"
+        >
+          <div
+            class="arco-tabs-header"
+            style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          >
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-active"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签1
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签2
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签3
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签4
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签5
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签6
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签7
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签8
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签9
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签10
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签11
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签12
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签13
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签14
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签15
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签16
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签17
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签18
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签19
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签20
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签21
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签22
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签23
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签24
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签25
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签26
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签27
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签28
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签29
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签30
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-ink"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-tabs-content arco-tabs-content-horizontal"
+    >
+      <div
+        class="arco-tabs-content-inner"
+        style="margin-left:-0%"
+      >
+        <div
+          class="arco-tabs-content-item arco-tabs-content-item-active"
+        >
+          <div
+            class="arco-tabs-pane"
+          >
+            <div
+              style="width:100%;height:50px;padding:24px 0;color:#939aa3"
+            >
+              这里是标签1内容
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/size.md correctly 1`] = `
+<div>
+  <span
+    style="margin-right:20px"
+  >
+    Size:
+  </span>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:24px"
+  >
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="mini"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        mini
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="small"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        small
+      </span>
+    </label>
+    <label
+      class="arco-radio arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="size"
+        type="radio"
+        value="default"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        default
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="large"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        large
+      </span>
+    </label>
+  </div>
+  <br />
+  <span
+    style="margin-right:20px"
+  >
+    Type:
+  </span>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:40px"
+  >
+    <label
+      class="arco-radio arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="type"
+        type="radio"
+        value="line"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        line
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="card"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        card
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="card-gutter"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        card-gutter
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="text"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        text
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="rounded"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        rounded
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="capsule"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        capsule
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  >
+    <div
+      class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+    >
+      <div
+        class="arco-tabs-header-scroll"
+      >
+        <div
+          class="arco-tabs-header-wrapper"
+        >
+          <div
+            class="arco-tabs-header"
+            style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          >
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-active"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 1
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-disabled"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 2
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 3
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 4
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-ink"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-tabs-content arco-tabs-content-horizontal"
+    >
+      <div
+        class="arco-tabs-content-inner"
+        style="margin-left:-0%"
+      >
+        <div
+          class="arco-tabs-content-item arco-tabs-content-item-active"
+        >
+          <div
+            class="arco-tabs-pane"
+          >
+            <div
+              class="arco-typography"
+              style="text-align:center;margin-top:20px"
+            >
+              Content of Tab Panel 1
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/type.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:40px"
+  >
+    <label
+      class="arco-radio arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="type"
+        type="radio"
+        value="line"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        line
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="card"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        card
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="card-gutter"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        card-gutter
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="text"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        text
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="rounded"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        rounded
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="type"
+        type="radio"
+        value="capsule"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        capsule
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  >
+    <div
+      class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+    >
+      <div
+        class="arco-tabs-header-scroll"
+      >
+        <div
+          class="arco-tabs-header-wrapper"
+        >
+          <div
+            class="arco-tabs-header"
+            style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          >
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-active"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 1
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-disabled"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 2
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 3
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                Tab 4
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-ink"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-tabs-content arco-tabs-content-horizontal"
+    >
+      <div
+        class="arco-tabs-content-inner"
+        style="margin-left:-0%"
+      >
+        <div
+          class="arco-tabs-content-item arco-tabs-content-item-active"
+        >
+          <div
+            class="arco-tabs-pane"
+          >
+            <div
+              class="arco-typography"
+              style="text-align:center;margin-top:20px"
+            >
+              Content of Tab Panel 1
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

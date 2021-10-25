@@ -1,0 +1,1141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title="Trunk"
+  >
+    <input
+      class="arco-tree-select-view-input arco-tree-select-hidden"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value="Trunk"
+    />
+    <span
+      class="arco-tree-select-view-value"
+    >
+      Trunk
+    </span>
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-tree-select-clear-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <div
+        class="arco-tree-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+      >
+        <div
+          class="arco-checkbox-mask"
+        >
+          <svg
+            class="arco-checkbox-mask-icon"
+            fill="currentColor"
+            height="200"
+            viewBox="0 0 1024 1024"
+            width="200"
+          >
+            <path
+              d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+              p-id="840"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-checkbox-text"
+      >
+        treeCheckStrictly
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+    style="width:300px"
+    tabindex="0"
+  >
+    <div
+      class="arco-tree-select-view"
+      title=""
+    >
+      <div
+        class="arco-input-tag arco-input-tag-size-default"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-tree-select-tag"
+            >
+              <span
+                class="arco-input-tag-tag-content"
+                title="Leaf 0-1-2"
+              >
+                Leaf 0-1-2
+              </span>
+              <span
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <input
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              placeholder=""
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tree-select-suffix"
+      >
+        <span
+          class="arco-icon-hover arco-tree-select-clear-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-close"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </span>
+        <div
+          class="arco-tree-select-expand-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-expand"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="transform:rotate(-45deg)"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="all"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          show all
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="parent"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          show parent
+        </span>
+      </label>
+      <label
+        class="arco-radio-button arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="child"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          show child
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+    style="width:300px"
+    tabindex="0"
+  >
+    <div
+      class="arco-tree-select-view"
+      title=""
+    >
+      <div
+        class="arco-input-tag arco-input-tag-size-default"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-tree-select-tag"
+            >
+              <span
+                class="arco-input-tag-tag-content"
+                title="Leaf 0-0-1"
+              >
+                Leaf 0-0-1
+              </span>
+              <span
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-tree-select-tag"
+            >
+              <span
+                class="arco-input-tag-tag-content"
+                title="Leaf 0-0-2-1"
+              >
+                Leaf 0-0-2-1
+              </span>
+              <span
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              >
+                <svg
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <input
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              placeholder=""
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tree-select-suffix"
+      >
+        <span
+          class="arco-icon-hover arco-tree-select-clear-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-close"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </span>
+        <div
+          class="arco-tree-select-expand-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-expand"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="transform:rotate(-45deg)"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title="Leaf"
+  >
+    <input
+      class="arco-tree-select-view-input arco-tree-select-hidden"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value="Leaf"
+    />
+    <span
+      class="arco-tree-select-view-value"
+    >
+      Leaf
+    </span>
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title=""
+  >
+    <input
+      class="arco-tree-select-view-input"
+      placeholder="Please select ..."
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-tree-select-view-value arco-tree-select-hidden"
+    />
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
+<div>
+  <div
+    class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+    style="width:300px"
+    tabindex="0"
+  >
+    <div
+      class="arco-tree-select-view"
+      title=""
+    >
+      <input
+        class="arco-tree-select-view-input"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-tree-select-view-value arco-tree-select-hidden"
+      />
+      <div
+        class="arco-tree-select-suffix"
+      >
+        <div
+          class="arco-tree-select-arrow-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-down"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M39.6 17.443 24.043 33 8.487 17.443"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title="Leaf"
+  >
+    <input
+      class="arco-tree-select-view-input arco-tree-select-hidden"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value="Leaf"
+    />
+    <span
+      class="arco-tree-select-view-value"
+    >
+      Leaf
+    </span>
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title="node2"
+  >
+    <input
+      class="arco-tree-select-view-input arco-tree-select-hidden"
+      placeholder="node2"
+      style="width:100%"
+      value="node2"
+    />
+    <span
+      class="arco-tree-select-view-value"
+    >
+      node2
+    </span>
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+      style="width:300px"
+      tabindex="0"
+    >
+      <div
+        class="arco-tree-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Please select ..."
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Please select ...
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tree-select-suffix"
+        >
+          <div
+            class="arco-tree-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+      style="width:300px"
+      tabindex="0"
+    >
+      <div
+        class="arco-tree-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Max display 2 tags"
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Max display 2 tags
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tree-select-suffix"
+        >
+          <div
+            class="arco-tree-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title=""
+  >
+    <input
+      class="arco-tree-select-view-input"
+      placeholder="please select..."
+      style="width:100%"
+      value=""
+    />
+    <span
+      class="arco-tree-select-view-value arco-tree-select-hidden"
+    />
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/popupVisible.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title=""
+  >
+    <input
+      class="arco-tree-select-view-input"
+      placeholder="hover to show options"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-tree-select-view-value arco-tree-select-hidden"
+    />
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/search.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+      style="width:300px"
+      tabindex="0"
+    >
+      <div
+        class="arco-tree-select-view"
+        title=""
+      >
+        <input
+          class="arco-tree-select-view-input"
+          placeholder="Please select ..."
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-tree-select-view-value arco-tree-select-hidden"
+        />
+        <div
+          class="arco-tree-select-suffix"
+        >
+          <div
+            class="arco-tree-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+      style="width:300px"
+      tabindex="0"
+    >
+      <div
+        class="arco-tree-select-view"
+        title=""
+      >
+        <input
+          class="arco-tree-select-view-input"
+          placeholder="Please select ..."
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-tree-select-view-value arco-tree-select-hidden"
+        />
+        <div
+          class="arco-tree-select-suffix"
+        >
+          <div
+            class="arco-tree-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/self-input.md correctly 1`] = `
+<div
+  class="arco-typography"
+  style="width:300px"
+>
+  You selected: 
+  <a
+    href="javascript: void(0)"
+  >
+    node1
+  </a>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="mini"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        mini
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="small"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        small
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="size"
+        type="radio"
+        value="default"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        default
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="large"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        large
+      </span>
+    </label>
+  </div>
+  <div>
+    <div
+      class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+      style="width:300px"
+      tabindex="0"
+    >
+      <div
+        class="arco-tree-select-view"
+        title="Trunk"
+      >
+        <input
+          class="arco-tree-select-view-input arco-tree-select-hidden"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value="Trunk"
+        />
+        <span
+          class="arco-tree-select-view-value"
+        >
+          Trunk
+        </span>
+        <div
+          class="arco-tree-select-suffix"
+        >
+          <div
+            class="arco-tree-select-arrow-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
+<div
+  class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  style="width:300px"
+  tabindex="0"
+>
+  <div
+    class="arco-tree-select-view"
+    title=""
+  >
+    <input
+      class="arco-tree-select-view-input"
+      placeholder="请选择..."
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-tree-select-view-value arco-tree-select-hidden"
+    />
+    <div
+      class="arco-tree-select-suffix"
+    >
+      <div
+        class="arco-tree-select-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders TreeSelect/demo/virtual.md correctly 1`] = `
+<div>
+  <div
+    class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+    tabindex="0"
+  >
+    <div
+      class="arco-tree-select-view"
+      title=""
+    >
+      <input
+        class="arco-tree-select-view-input"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-tree-select-view-value arco-tree-select-hidden"
+      />
+      <div
+        class="arco-tree-select-suffix"
+      >
+        <div
+          class="arco-tree-select-arrow-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-down"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M39.6 17.443 24.043 33 8.487 17.443"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

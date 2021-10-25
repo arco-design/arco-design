@@ -1,0 +1,32 @@
+@import './token.less';
+
+.@{prefix}-tooltip {
+  &-content {
+    padding: @tooltip-padding-vertical @tooltip-padding-horizontal;
+    background-color: @tooltip-color-bg;
+    font-size: @tooltip-font-size;
+    border-radius: @tooltip-border-radius;
+    color: @tooltip-color-text;
+    line-height: @line-height-base;
+
+    &-inner {
+      word-wrap: break-word;
+      text-align: left;
+    }
+  }
+
+  &-mini {
+    font-size: @tooltip-mini-font-size;
+    padding: @tooltip-mini-padding-vertical @tooltip-mini-padding-horizontal;
+  }
+
+  &-arrow {
+    background-color: @tooltip-color-bg;
+  }
+}
+
+.@{prefix}-tooltip {
+  .@{prefix}-trigger-arrow&-arrow {
+    background-color: @tooltip-color-bg;
+  }
+}

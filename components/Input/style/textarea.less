@@ -1,0 +1,42 @@
+@textarea-prefix-cls: ~'@{prefix}-textarea';
+
+.@{textarea-prefix-cls}-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.@{textarea-prefix-cls}-clear-wrapper {
+  &:hover {
+    .@{textarea-prefix-cls}-clear-icon {
+      display: inline-block;
+    }
+  }
+  .@{textarea-prefix-cls} {
+    padding-right: @icon-hover-size-default-height;
+  }
+}
+
+.@{textarea-prefix-cls} {
+
+  &-word-limit {
+    position: absolute;
+    font-size: @textarea-font-tip-size;
+    bottom: @textarea-layout-tip-bottom;
+    right: @textarea-layout-tip-right;
+    color: @textarea-color-tip-text;
+    user-select: none;
+
+    &-error {
+      color: @input-color-border_error_focus;
+    }
+  }
+
+  &-clear-icon {
+    display: none;
+    position: absolute;
+    right: @textarea-layout-tip-right;
+    top: @textarea-layout-top-icon-clear;
+    font-size: @textarea-size-icon-clear;
+  }
+}

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Image default 1`] = `
+<div
+  class="arco-image"
+>
+  <img
+    class="arco-image-img"
+  />
+  <div
+    class="arco-image-overlay"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
+<div
+  class="arco-image global-default-class"
+>
+  <img
+    class="arco-image-img"
+  />
+  <div
+    class="arco-image-overlay"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Image set className globally and component set className itself. 1`] = `
+<div
+  class="arco-image component-class"
+>
+  <img
+    class="arco-image-img"
+  />
+  <div
+    class="arco-image-overlay"
+  />
+</div>
+`;

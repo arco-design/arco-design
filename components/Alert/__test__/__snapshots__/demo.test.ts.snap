@@ -1,0 +1,1183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Alert/demo/action.md correctly 1`] = `
+<div>
+  <div
+    class="arco-alert arco-alert-info"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-info-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-content"
+      >
+        Here is an example text
+      </div>
+    </div>
+    <div
+      class="arco-alert-action"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-mini arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Detail
+        </span>
+      </button>
+    </div>
+    <button
+      class="arco-alert-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    class="arco-alert arco-alert-info arco-alert-with-title"
+    style="margin-top:10px"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-info-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-title"
+      >
+        Example
+      </div>
+      <div
+        class="arco-alert-content"
+      >
+        Here is an example text
+      </div>
+    </div>
+    <div
+      class="arco-alert-action"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-mini arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Detail
+        </span>
+      </button>
+    </div>
+    <button
+      class="arco-alert-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    class="arco-alert arco-alert-info arco-alert-with-title"
+    style="margin-top:10px"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-info-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-title"
+      >
+        Example
+      </div>
+      <div
+        class="arco-alert-content"
+      >
+        Here is an example text
+      </div>
+    </div>
+    <div
+      class="arco-alert-action"
+    >
+      <div
+        class="arco-space arco-space-vertical"
+      >
+        <div
+          class="arco-space-item"
+          style="margin-bottom:8px"
+        >
+          <button
+            class="arco-btn arco-btn-primary arco-btn-size-mini arco-btn-shape-square"
+            type="button"
+          >
+            <span>
+              Detail
+            </span>
+          </button>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <button
+            class="arco-btn arco-btn-primary arco-btn-size-mini arco-btn-shape-square arco-btn-status-danger"
+            type="button"
+          >
+            <span>
+              Close
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/banner.md correctly 1`] = `
+<div>
+  <div
+    class="arco-alert arco-alert-info arco-alert-banner"
+    style="margin-top:4px;margin-bottom:20px"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-info-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-content"
+      >
+        General text
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-alert arco-alert-info arco-alert-banner"
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-info-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-content"
+      >
+        General text
+      </div>
+    </div>
+    <button
+      class="arco-alert-close-btn"
+    >
+      <svg
+        class="arco-icon arco-icon-close"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    class="arco-alert arco-alert-info arco-alert-with-title arco-alert-banner"
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-info-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-title"
+      >
+        General text
+      </div>
+      <div
+        class="arco-alert-content"
+      >
+        Here is an example text
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-alert arco-alert-success arco-alert-with-title arco-alert-banner"
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-alert-icon-wrapper"
+    >
+      <svg
+        class="arco-icon arco-icon-check-circle-fill"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          stroke="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-alert-content-wrapper"
+    >
+      <div
+        class="arco-alert-title"
+      >
+        Success text
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/basic.md correctly 1`] = `
+<div
+  class="arco-alert arco-alert-info"
+>
+  <div
+    class="arco-alert-icon-wrapper"
+  >
+    <svg
+      class="arco-icon arco-icon-info-circle-fill"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+        fill="currentColor"
+        fill-rule="evenodd"
+        stroke="none"
+      />
+    </svg>
+  </div>
+  <div
+    class="arco-alert-content-wrapper"
+  >
+    <div
+      class="arco-alert-content"
+    >
+      Here is an example text
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/closable.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start"
+    style="margin-left:-20px;margin-right:-20px"
+  >
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:20px;padding-right:20px"
+    >
+      <div
+        class="arco-alert arco-alert-info"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-info-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-content"
+          >
+            Here is an info text
+          </div>
+        </div>
+        <button
+          class="arco-alert-close-btn"
+        >
+          <svg
+            class="arco-icon arco-icon-close"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="arco-alert arco-alert-warning arco-alert-with-title"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-exclamation-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-title"
+          >
+            Warning
+          </div>
+          <div
+            class="arco-alert-content"
+          >
+            Here is a warning text
+          </div>
+        </div>
+        <button
+          class="arco-alert-close-btn"
+        >
+          <svg
+            class="arco-icon arco-icon-close"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:20px;padding-right:20px"
+    >
+      <div
+        class="arco-alert arco-alert-success"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-check-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-content"
+          >
+            Here is a success text
+          </div>
+        </div>
+        <button
+          class="arco-alert-close-btn"
+        >
+          <svg
+            class="arco-icon arco-icon-close"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="arco-alert arco-alert-error arco-alert-with-title"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-close-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-title"
+          >
+            Error
+          </div>
+          <div
+            class="arco-alert-content"
+          >
+            Here is an error text
+          </div>
+        </div>
+        <button
+          class="arco-alert-close-btn"
+        >
+          <svg
+            class="arco-icon arco-icon-close"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/closeElement.md correctly 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start"
+  style="margin-left:-20px;margin-right:-20px"
+>
+  <div
+    class="arco-col arco-col-12"
+    style="padding-left:20px;padding-right:20px"
+  >
+    <div
+      class="arco-alert arco-alert-success"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-alert-icon-wrapper"
+      >
+        <svg
+          class="arco-icon arco-icon-check-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </div>
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          Here is a success text
+        </div>
+      </div>
+      <button
+        class="arco-alert-close-btn"
+      >
+        <svg
+          class="arco-icon arco-icon-check"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M41.678 11.05 19.05 33.678 6.322 20.95"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-col arco-col-12"
+    style="padding-left:20px;padding-right:20px"
+  >
+    <div
+      class="arco-alert arco-alert-success"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-alert-icon-wrapper"
+      >
+        <svg
+          class="arco-icon arco-icon-check-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </div>
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          Here is a success text
+        </div>
+      </div>
+      <button
+        class="arco-alert-close-btn"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/type.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start"
+    style="margin-left:-20px;margin-right:-20px"
+  >
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:20px;padding-right:20px"
+    >
+      <div
+        class="arco-alert arco-alert-info"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-info-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-content"
+          >
+            Here is an info text
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-alert arco-alert-warning"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-exclamation-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-content"
+          >
+            Here is a warning text
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:20px;padding-right:20px"
+    >
+      <div
+        class="arco-alert arco-alert-success"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-check-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-content"
+          >
+            Here is a success text
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-alert arco-alert-error"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-close-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-content"
+          >
+            Here is an error text
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/with-title.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start"
+    style="margin-left:-20px;margin-right:-20px"
+  >
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:20px;padding-right:20px"
+    >
+      <div
+        class="arco-alert arco-alert-info arco-alert-with-title"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-info-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-title"
+          >
+            Info
+          </div>
+          <div
+            class="arco-alert-content"
+          >
+            Here is an info text
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-alert arco-alert-warning arco-alert-with-title"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-exclamation-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-title"
+          >
+            Warning
+          </div>
+          <div
+            class="arco-alert-content"
+          >
+            Here is a warning text
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:20px;padding-right:20px"
+    >
+      <div
+        class="arco-alert arco-alert-success arco-alert-with-title"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-check-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-title"
+          >
+            Success
+          </div>
+          <div
+            class="arco-alert-content"
+          >
+            Here is a success text
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-alert arco-alert-error arco-alert-with-title"
+      >
+        <div
+          class="arco-alert-icon-wrapper"
+        >
+          <svg
+            class="arco-icon arco-icon-close-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-alert-content-wrapper"
+        >
+          <div
+            class="arco-alert-title"
+          >
+            Error
+          </div>
+          <div
+            class="arco-alert-content"
+          >
+            Here is an error text
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Alert/demo/without-icon.md correctly 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start"
+  style="margin-left:-20px;margin-right:-20px"
+>
+  <div
+    class="arco-col arco-col-12"
+    style="padding-left:20px;padding-right:20px"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          Here is an info text
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-alert arco-alert-warning arco-alert-with-title"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-title"
+        >
+          Warning
+        </div>
+        <div
+          class="arco-alert-content"
+        >
+          Here is a warning text
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-col arco-col-12"
+    style="padding-left:20px;padding-right:20px"
+  >
+    <div
+      class="arco-alert arco-alert-success"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          Here is a success text
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-alert arco-alert-error arco-alert-with-title"
+      style="margin-bottom:20px;color:red"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-title"
+        >
+          Error
+        </div>
+        <div
+          class="arco-alert-content"
+        >
+          Here is an error text
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

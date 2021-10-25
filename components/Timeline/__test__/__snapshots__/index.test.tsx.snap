@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Timeline default 1`] = `
+<div
+  class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Timeline set className globally 1`] = `
+<div
+  class="arco-timeline arco-timeline-left arco-timeline-direction-vertical global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Timeline set className globally and component set className itself. 1`] = `
+<div
+  class="arco-timeline arco-timeline-left arco-timeline-direction-vertical component-class"
+/>
+`;

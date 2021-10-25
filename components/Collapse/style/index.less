@@ -1,0 +1,165 @@
+@import './token.less';
+@import '../../style/mixin.less';
+
+@collapse-prefix-cls: ~'@{prefix}-collapse';
+
+.icon-hover(
+  ~'@{collapse-prefix-cls}-item',
+  @collapse-expand-icon-size,
+  @collapse-expand-icon-size-bg
+);
+
+.icon-hover-bg(~'@{collapse-prefix-cls}-item', @collapse-expand-icon-color-bg);
+
+.@{collapse-prefix-cls} {
+  overflow: hidden;
+  border-radius: @collapse-border-radius;
+  border: @collapse-border-width solid @collapse-color-border;
+  line-height: @collapse-line-height;
+
+  &-item {
+    border-bottom: @collapse-item-border-width solid @collapse-item-color-border;
+    box-sizing: border-box;
+
+    &-active {
+      > .@{collapse-prefix-cls}-item-header {
+        background-color: @collapse-title-color-bg_active;
+        border-color: @collapse-title-color-border;
+
+        transition: border-color 0s ease 0s;
+
+        .@{collapse-prefix-cls}-item-header-title {
+          font-weight: @collapse-title-font-weight_active;
+        }
+      }
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      box-sizing: border-box;
+      padding-top: @collapse-title-padding-vertical;
+      padding-bottom: $padding-top;
+      background-color: @collapse-title-color-bg;
+      border-bottom: @collapse-title-border-width solid @color-transparent;
+      color: @collapse-title-color-text;
+      cursor: pointer;
+      font-size: @collapse-title-font-size;
+      overflow: hidden;
+      line-height: @collapse-title-line-height;
+      // 保证在收起动画完成时才隐藏边框
+      transition: border-color 0s ease 0.19s;
+
+      &-left {
+        padding-left: @collapse-title-padding-horizontal + @collapse-expand-icon-size +
+          @collapse-expand-icon-spacing-text;
+        padding-right: @collapse-title-padding-horizontal;
+      }
+
+      &-right {
+        padding-left: @collapse-title-padding-horizontal;
+        padding-right: @collapse-title-padding-horizontal + @collapse-expand-icon-size +
+          @collapse-expand-icon-spacing-text;
+      }
+
+      &-disabled {
+        cursor: not-allowed;
+        color: @collapse-title-color-text_disabled;
+        background-color: @collapse-title-color-bg_disabled;
+
+        .@{collapse-prefix-cls}-item-header-icon {
+          color: @collapse-title-color-text_disabled;
+        }
+      }
+
+      &-title {
+        display: inline;
+      }
+
+      &-extra {
+        float: right;
+      }
+    }
+
+    // expand icon style
+    & &-icon-hover {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: @collapse-title-padding-horizontal;
+      text-align: center;
+
+      &-right {
+        right: @collapse-title-padding-horizontal;
+        left: unset;
+
+        > .@{collapse-prefix-cls}-item-header-icon-down {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &-header-icon {
+      color: @collapse-color-expand-icon;
+      font-size: @collapse-expand-icon-size;
+      transition: transform @transition-duration-2 @transition-timing-function-standard;
+      vertical-align: middle;
+      position: relative;
+      display: block;
+
+      &-down {
+        transform: rotate(90deg);
+      }
+    }
+
+    &-content {
+      display: none;
+      overflow: hidden;
+      position: relative;
+      color: @collapse-content-color-text;
+      background-color: @collapse-content-color-bg;
+      font-size: @collapse-content-font-size;
+      // 展开动画时间使用 0.2s
+      transition: height @transition-duration-2 @transition-timing-function-standard;
+
+      &-expanded {
+        display: block;
+        height: auto;
+      }
+
+      &-box {
+        padding: @collapse-content-padding-vertical @collapse-title-padding-horizontal
+          @collapse-content-padding-vertical
+          (
+            @collapse-title-padding-horizontal + @collapse-expand-icon-size-bg +
+              @collapse-expand-icon-spacing-text
+          );
+      }
+    }
+
+    &&-disabled > &-content {
+      color: @collapse-content-color-text_disabled;
+    }
+
+    &-no-icon > &-header {
+      padding-left: @collapse-title-padding-horizontal;
+      padding-right: @collapse-title-padding-horizontal;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &.@{collapse-prefix-cls}-borderless {
+    border: none;
+  }
+
+  &::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}

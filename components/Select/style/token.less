@@ -1,0 +1,112 @@
+@import '../../style/theme/default.less';
+
+/**********************************************
+ * type: single / multi
+ * size: mini / small / default / large
+ **********************************************/
+@select-size-mini-height: @size-mini;
+@select-size-small-height: @size-small;
+@select-size-default-height: @size-default;
+@select-size-large-height: @size-large;
+
+@select-size-mini-font-size: @font-size-body-1;
+@select-size-small-font-size: @font-size-body-3;
+@select-size-default-font-size: @font-size-body-3;
+@select-size-large-font-size: @font-size-title-1;
+
+@select-signal-size-mini-padding: @spacing-4;
+@select-signal-size-small-padding: @spacing-6;
+@select-signal-size-default-padding: @spacing-6;
+@select-signal-size-large-padding: @spacing-7;
+
+@select-multi-padding: @spacing-2;
+@select-size-icon: @size-3;
+@select-size-icon-bg: @size-4;
+
+/**********************************************
+ * border
+ **********************************************/
+@select-border-width: @border-1;
+@select-border-radius: @radius-small;
+
+/************************************************
+ * status: default / disabled _ (hover / focus)
+ ************************************************/
+// text color
+@select-color-text_default: var(--color-text-1);
+@select-color-text_disabled: var(--color-text-4);
+@select-color-text_focused: var(--color-text-1);
+@select-color-placeholder_default: var(--color-text-3);
+@select-color-placeholder_disabled: var(--color-text-4);
+@select-color-placeholder_focused: var(--color-text-3);
+
+// icon color
+@select-color-icon_default: var(--color-text-2);
+@select-color-icon_disabled: var(--color-text-4);
+@select-color-icon_focused: var(--color-text-2);
+@select-color-icon-bg_hover: var(--color-fill-4);
+
+// bg color with hover & focus
+@select-color-bg_default: var(--color-fill-2);
+@select-color-bg_default_hover: var(--color-fill-3);
+@select-color-bg_default_focus: var(--color-bg-2);
+@select-color-bg_error_focus: var(--color-bg-2);
+@select-color-bg_error: var(--color-danger-light-1);
+@select-color-bg_error_hover: var(--color-danger-light-2);
+@select-color-bg_disabled: var(--color-fill-2);
+@select-color-bg_disabled_hover: @select-color-bg_disabled;
+
+// border color with hover & focus
+@select-color-border_default: @color-transparent;
+@select-color-border_default_hover: @color-transparent;
+@select-color-border_default_focus: @color-primary-6;
+@select-color-border_error: @color-transparent;
+@select-color-border_error_hover: @color-transparent;
+@select-color-border_error_focus: @color-danger-6;
+@select-color-border_disabled: @color-transparent;
+@select-color-border_disabled_hover: @select-color-border_disabled;
+// shadow
+@select-shadow-distance_default_focus: @shadow-distance-none;
+@select-shadow-distance_error_focus: @shadow-distance-none;
+@select-color-shadow_default_focus: var(--color-primary-light-2);
+@select-color-shadow_error_focus: var(--color-danger-light-2);
+
+/**********************************************
+ * Popup Box
+ **********************************************/
+@select-popup-max-height: @size-50;
+@select-popup-border-radius: @radius-medium;
+@select-popup-padding-vertical: @spacing-2;
+@select-popup-font-size: @font-size-body-3;
+@select-popup-color-bg: var(--color-bg-popup);
+@select-popup-color-border: var(--color-fill-3);
+@select-popup-box-shadow: @shadow2-down;
+
+/**********************************************
+ * Popup Options
+ * status: default / disabled / selected / hover
+ **********************************************/
+@select-popup-option-height: @size-9;
+@select-popup-option-font-weight_selected: @font-weight-500;
+@select-signal-popup-option-padding-horizontal: @spacing-6;
+@select-multi-popup-option-padding-horizontal: @spacing-2;
+
+@select-popup-option-color-bg_default: var(--color-bg-popup);
+@select-popup-option-color-bg_hover: var(--color-fill-2);
+@select-popup-option-color-bg_selected: var(--color-bg-popup);
+@select-popup-option-color-bg_disabled: var(--color-bg-popup);
+
+@select-popup-option-color-text_default: var(--color-text-1);
+@select-popup-option-color-text_hover: var(--color-text-1);
+@select-popup-option-color-text_selected: var(--color-text-1);
+@select-popup-option-color-text_disabled: var(--color-text-4);
+
+@select-popup-option-color-hightlight-text: var(--color-text-1);
+@select-popup-option-font-hightlight-weight: @font-weight-500;
+
+// option group title
+@select-popup-group-title-height: @size-5;
+@select-popup-group-title-padding-horizontal: @spacing-6;
+@select-popup-group-title-padding-top: @spacing-4;
+@select-popup-group-title-font-size: @font-size-body-1;
+@select-popup-group-title-color-text: var(--color-text-3);

@@ -1,0 +1,2144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Upload/demo/avatar.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="arco-upload-list-item"
+        >
+          <div
+            class="arco-upload-trigger-picture"
+          >
+            <div
+              class="arco-upload-trigger-picture-text"
+            >
+              <svg
+                class="arco-icon arco-icon-plus"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M5 24h38M24 5v38"
+                />
+              </svg>
+              <div
+                style="margin-top:10px;font-weight:600"
+              >
+                Upload
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/basic.md correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="arco-upload arco-upload-type-text"
+    >
+      <input
+        style="display:none"
+        type="file"
+      />
+      <div
+        class="arco-upload-trigger"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+          type="button"
+        >
+          <svg
+            class="arco-icon arco-icon-upload"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+            />
+          </svg>
+          <span>
+            点击上传
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list arco-upload-list-type-text"
+    />
+  </div>
+  <div>
+    <div
+      class="arco-upload arco-upload-type-text arco-upload-disabled"
+      style="margin-top:40px"
+    >
+      <input
+        style="display:none"
+        type="file"
+      />
+      <div
+        class="arco-upload-trigger"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-disabled arco-upload-trigger-with-icon"
+          disabled=""
+          type="button"
+        >
+          <svg
+            class="arco-icon arco-icon-upload"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+            />
+          </svg>
+          <span>
+            点击上传
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list arco-upload-list-type-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/beforeUpload.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />
+</div>
+`;
+
+exports[`renders Upload/demo/crop.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload-list arco-upload-list-type-picture-card"
+  />
+  <div
+    class="arco-upload arco-upload-type-picture-card"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <div
+        class="arco-upload-trigger-picture-wrapper"
+      >
+        <div
+          class="arco-upload-trigger-picture"
+        >
+          <div
+            class="arco-upload-trigger-picture-text"
+          >
+            <svg
+              class="arco-icon arco-icon-plus"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 24h38M24 5v38"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/customRequest.md correctly 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;
+
+exports[`renders Upload/demo/directory.md correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="arco-upload arco-upload-type-text"
+    >
+      <input
+        directory="directory"
+        style="display:none"
+        type="file"
+        webkitdirectory="webkitdirectory"
+      />
+      <div
+        class="arco-upload-trigger"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+          type="button"
+        >
+          <svg
+            class="arco-icon arco-icon-upload"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+            />
+          </svg>
+          <span>
+            点击上传
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list arco-upload-list-type-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/drag.md correctly 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text arco-upload-drag"
+  >
+    <input
+      accept="image/*"
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <div
+        class="arco-upload-trigger-drag"
+        draggable="false"
+      >
+        <svg
+          class="arco-icon arco-icon-plus"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M5 24h38M24 5v38"
+          />
+        </svg>
+        <p
+          class="arco-upload-trigger-drag-text"
+        >
+          点击或拖拽文件到此处上传
+        </p>
+        <div
+          class="arco-upload-trigger-tip"
+        >
+          Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;
+
+exports[`renders Upload/demo/icon.md correctly 1`] = `
+<div>
+  <span
+    class="arco-typography"
+  >
+    Type:
+  </span>
+
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    style="margin-left:20px;margin-bottom:20px"
+  >
+    <label
+      class="arco-radio arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="listType"
+        type="radio"
+        value="text"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        text
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="listType"
+        type="radio"
+        value="picture-list"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        picture-list
+      </span>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        name="listType"
+        type="radio"
+        value="picture-card"
+      />
+      <span
+        class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+      >
+        <div
+          class="arco-radio-mask"
+        />
+      </span>
+      <span
+        class="arco-radio-text"
+      >
+        picture-card
+      </span>
+    </label>
+  </div>
+  <div>
+    <div
+      class="arco-upload arco-upload-type-text"
+    >
+      <input
+        multiple=""
+        style="display:none"
+        type="file"
+      />
+      <div
+        class="arco-upload-trigger"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+          type="button"
+        >
+          <svg
+            class="arco-icon arco-icon-upload"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+            />
+          </svg>
+          <span>
+            点击上传
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list arco-upload-list-type-text"
+    >
+      <div
+        class="arco-upload-list-item arco-upload-list-item-done"
+      >
+        <div
+          class="arco-upload-list-item-text"
+        >
+          <div
+            class="arco-upload-list-item-text-content"
+          >
+            <div
+              class="arco-upload-list-item-text-name"
+            >
+              <span
+                class="arco-upload-list-file-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-file-audio"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M37 42H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
+                  />
+                  <path
+                    d="M25 30a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                  <path
+                    d="M25 30a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm0 0-.951-12.363a.5.5 0 0 1 .58-.532L30 18"
+                  />
+                </svg>
+              </span>
+              <span
+                class="arco-upload-list-item-text-name-text"
+              >
+                <a>
+                  light.png
+                </a>
+              </span>
+            </div>
+            <span
+              class="arco-upload-list-success-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-check"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M41.678 11.05 19.05 33.678 6.322 20.95"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-upload-list-item-operation"
+        >
+          <span
+            class="arco-icon-hover"
+          >
+            <span
+              class="arco-upload-list-remove-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-close"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item arco-upload-list-item-done"
+      >
+        <div
+          class="arco-upload-list-item-text"
+        >
+          <div
+            class="arco-upload-list-item-text-content"
+          >
+            <div
+              class="arco-upload-list-item-text-name"
+            >
+              <span
+                class="arco-upload-list-file-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-file-audio"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M37 42H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
+                  />
+                  <path
+                    d="M25 30a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                  <path
+                    d="M25 30a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm0 0-.951-12.363a.5.5 0 0 1 .58-.532L30 18"
+                  />
+                </svg>
+              </span>
+              <span
+                class="arco-upload-list-item-text-name-text"
+              >
+                <a>
+                  ice.png
+                </a>
+              </span>
+            </div>
+            <span
+              class="arco-upload-list-success-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-check"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M41.678 11.05 19.05 33.678 6.322 20.95"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-upload-list-item-operation"
+        >
+          <span
+            class="arco-icon-hover"
+          >
+            <span
+              class="arco-upload-list-remove-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-close"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/limit.md correctly 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;
+
+exports[`renders Upload/demo/manully.md correctly 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="arco-space arco-space-horizontal arco-space-align-center"
+        >
+          <div
+            class="arco-space-item"
+            style="margin-right:24px"
+          >
+            <button
+              class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+              type="button"
+            >
+              <span>
+                Select file
+              </span>
+            </button>
+          </div>
+          <div
+            class="arco-space-item"
+            style="margin-right:24px"
+          >
+            <button
+              class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+              type="button"
+            >
+              <span>
+                Start upload
+              </span>
+            </button>
+          </div>
+          <div
+            class="arco-space-item"
+          >
+            <button
+              class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+              type="button"
+            >
+              <span>
+                Only upload one
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;
+
+exports[`renders Upload/demo/onRemove.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  >
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="http:https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              light.png
+            </a>
+          </div>
+          <span
+            class="arco-upload-list-success-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="http:https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/ff86e73c735540a88a8780d1db64b204~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              ice.png
+            </a>
+          </div>
+          <span
+            class="arco-upload-list-success-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/pictureList.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload arco-upload-type-picture-list"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list arco-upload-list-type-picture-list"
+  >
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-thumbnail"
+        >
+          <img
+            src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+          />
+        </div>
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              light.png
+            </a>
+          </div>
+          <span
+            class="arco-upload-list-success-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/preview.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload-list arco-upload-list-type-picture-card"
+  >
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-picture"
+      >
+        <img
+          src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+        />
+        <div
+          class="arco-upload-list-item-picture-mask"
+        >
+          <div
+            class="arco-upload-list-item-picture-operation"
+          >
+            <span
+              class="arco-upload-list-preview-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-eye"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M24 37c6.627 0 12.627-4.333 18-13-5.373-8.667-11.373-13-18-13-6.627 0-12.627 4.333-18 13 5.373 8.667 11.373 13 18 13Z"
+                />
+                <path
+                  d="M29 24a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-upload-list-remove-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-delete"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-picture"
+      >
+        <img
+          src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/52f4a7d98ce8411c9a347cfc98d93bfb~tplv-uwbnlip3yd-image.image"
+        />
+        <div
+          class="arco-upload-list-item-picture-mask"
+        >
+          <div
+            class="arco-upload-list-item-picture-operation"
+          >
+            <span
+              class="arco-upload-list-preview-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-eye"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M24 37c6.627 0 12.627-4.333 18-13-5.373-8.667-11.373-13-18-13-6.627 0-12.627 4.333-18 13 5.373 8.667 11.373 13 18 13Z"
+                />
+                <path
+                  d="M29 24a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-upload-list-remove-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-delete"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-upload arco-upload-type-picture-card"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <div
+        class="arco-upload-trigger-picture-wrapper"
+      >
+        <div
+          class="arco-upload-trigger-picture"
+        >
+          <div
+            class="arco-upload-trigger-picture-text"
+          >
+            <svg
+              class="arco-icon arco-icon-plus"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 24h38M24 5v38"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/progress.md correctly 1`] = `
+<div
+  class="custom-upload-progress"
+>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  >
+    <div
+      class="arco-upload-list-item arco-upload-list-item-init"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              light.png
+            </a>
+          </div>
+          <div
+            class="arco-upload-list-status"
+            style="width:100%"
+          >
+            <div
+              class="arco-progress arco-progress-line arco-progress-small arco-upload-list-progress"
+              style="width:100%"
+            >
+              <div
+                class="arco-progress-line-wrapper"
+              >
+                <div
+                  class="arco-progress-line-outer"
+                  style="height:3px"
+                >
+                  <div
+                    class="arco-progress-line-inner"
+                    style="width:0%"
+                  />
+                </div>
+                <div
+                  class="arco-progress-line-text arco-progress-line-text-with-icon"
+                >
+                  0%
+                </div>
+              </div>
+            </div>
+            <span
+              class="arco-upload-list-start-icon"
+            >
+              <button
+                class="arco-btn arco-btn-text arco-btn-size-mini arco-btn-shape-square"
+                type="button"
+              >
+                <span>
+                  开始上传
+                </span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list-item arco-upload-list-item-error"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              cat.png
+            </a>
+            <span
+              class="arco-upload-list-error-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-exclamation-circle-fill"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+          <span
+            class="arco-upload-list-reupload-icon"
+          >
+            <button
+              class="arco-btn arco-btn-text arco-btn-size-mini arco-btn-shape-square"
+              type="button"
+            >
+              <span>
+                点击重试
+              </span>
+            </button>
+          </span>
+          <div
+            class="arco-upload-list-status"
+            style="width:100%"
+          >
+            <div
+              class="arco-progress arco-progress-line arco-progress-small arco-progress-is-error arco-upload-list-progress"
+              style="width:100%"
+            >
+              <div
+                class="arco-progress-line-wrapper"
+              >
+                <div
+                  class="arco-progress-line-outer"
+                  style="height:3px"
+                >
+                  <div
+                    class="arco-progress-line-inner"
+                    style="width:0%"
+                  />
+                </div>
+                <div
+                  class="arco-progress-line-text arco-progress-line-text-with-icon"
+                >
+                  <span>
+                    0%
+                    <svg
+                      class="arco-icon arco-icon-exclamation-circle-fill"
+                      fill="none"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+                        fill="currentColor"
+                        fill-rule="evenodd"
+                        stroke="none"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list"
+  >
+    <div
+      style="display:flex;margin-top:20px"
+    >
+      <div
+        class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
+        style="width:140px;margin-right:10px"
+      >
+        <div
+          class="arco-card-cover"
+        >
+          <img
+            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/bb4d85edbb3a40b2b9540f7aec6cac17~tplv-uwbnlip3yd-image.image"
+            style="width:100%"
+          />
+        </div>
+        <div
+          class="arco-card-body"
+          style="padding:4px 8px"
+        >
+          <div
+            class="arco-card-meta"
+          >
+            <div
+              class="arco-card-meta-content"
+            >
+              <div
+                class="arco-card-meta-description"
+              >
+                light
+              </div>
+            </div>
+            <div
+              class="arco-card-meta-footer  arco-card-meta-footer-only-actions"
+            >
+              <div
+                class="arco-card-actions"
+              >
+                <div
+                  class="arco-card-actions-right"
+                >
+                  <span
+                    class="arco-card-actions-item"
+                  >
+                    <div>
+                      <svg
+                        class="arco-icon arco-icon-eye"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        style="font-size:12px"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M24 37c6.627 0 12.627-4.333 18-13-5.373-8.667-11.373-13-18-13-6.627 0-12.627 4.333-18 13 5.373 8.667 11.373 13 18 13Z"
+                        />
+                        <path
+                          d="M29 24a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"
+                        />
+                      </svg>
+                    </div>
+                  </span>
+                  <span
+                    class="arco-card-actions-item"
+                  >
+                    <div>
+                      <svg
+                        class="arco-icon arco-icon-delete"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        style="font-size:12px"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+                        />
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
+        style="width:140px;margin-right:10px"
+      >
+        <div
+          class="arco-card-cover"
+        >
+          <img
+            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c2758ce949df4472bd57d3e6c50eefec~tplv-uwbnlip3yd-image.image"
+            style="width:100%"
+          />
+        </div>
+        <div
+          class="arco-card-body"
+          style="padding:4px 8px"
+        >
+          <div
+            class="arco-card-meta"
+          >
+            <div
+              class="arco-card-meta-content"
+            >
+              <div
+                class="arco-card-meta-description"
+              >
+                ice
+              </div>
+            </div>
+            <div
+              class="arco-card-meta-footer  arco-card-meta-footer-only-actions"
+            >
+              <div
+                class="arco-card-actions"
+              >
+                <div
+                  class="arco-card-actions-right"
+                >
+                  <span
+                    class="arco-card-actions-item"
+                  >
+                    <div>
+                      <svg
+                        class="arco-icon arco-icon-eye"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        style="font-size:12px"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M24 37c6.627 0 12.627-4.333 18-13-5.373-8.667-11.373-13-18-13-6.627 0-12.627 4.333-18 13 5.373 8.667 11.373 13 18 13Z"
+                        />
+                        <path
+                          d="M29 24a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"
+                        />
+                      </svg>
+                    </div>
+                  </span>
+                  <span
+                    class="arco-card-actions-item"
+                  >
+                    <div>
+                      <svg
+                        class="arco-icon arco-icon-delete"
+                        fill="none"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        style="font-size:12px"
+                        viewBox="0 0 48 48"
+                        width="1em"
+                      >
+                        <path
+                          d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+                        />
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Upload/demo/trigger.md correctly 1`] = `
+<div
+  class="upload-demo-trigger"
+>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="trigger"
+        >
+          <div>
+            Drag the file here or
+            <span
+              style="color:#3370FF"
+            >
+               Click to upload
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />
+</div>
+`;
+
+exports[`renders Upload/demo/uploadList.md correctly 1`] = `
+<div>
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      multiple=""
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  >
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/ff86e73c735540a88a8780d1db64b204~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              ice.png
+            </a>
+          </div>
+          <span
+            class="arco-upload-list-success-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list-item arco-upload-list-item-error"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5zm0 0-3-4-4 4h7zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2zM17 19h1v1h-1v-1z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              20200717-103937.png
+            </a>
+            <span
+              class="arco-upload-list-error-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-exclamation-circle-fill"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+          <span
+            class="arco-upload-list-reupload-icon"
+          >
+            点击重试
+          </span>
+          <div
+            class="arco-upload-list-status"
+          >
+            <div
+              class="arco-progress arco-progress-circle arco-progress-mini arco-progress-is-error arco-upload-list-progress"
+            >
+              <div
+                class="arco-progress-circle-wrapper"
+                style="width:16px;height:16px"
+              >
+                <svg
+                  class="arco-progress-circle-svg"
+                  viewBox="0 0 16 16"
+                >
+                  <circle
+                    class="arco-progress-circle-mask"
+                    cx="8"
+                    cy="8"
+                    fill="none"
+                    r="4"
+                    stroke-width="8"
+                  />
+                  <circle
+                    class="arco-progress-circle-path"
+                    cx="8"
+                    cy="8"
+                    fill="none"
+                    r="4"
+                    stroke-width="8"
+                    style="stroke-dasharray:25.132741228718345;stroke-dashoffset:25.132741228718345"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-upload-list-item arco-upload-list-item-done"
+    >
+      <div
+        class="arco-upload-list-item-text"
+      >
+        <div
+          class="arco-upload-list-item-text-content"
+        >
+          <div
+            class="arco-upload-list-item-text-name"
+          >
+            <span
+              class="arco-upload-list-file-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-file-image"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m26 33 5-6v6h-5Zm0 0-3-4-4 4h7Zm11 9H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2ZM17 19h1v1h-1v-1Z"
+                />
+              </svg>
+            </span>
+            <a
+              class="arco-upload-list-item-text-name-link"
+              href="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+              rel="noreferrer"
+              target="_blank"
+            >
+              light.png
+            </a>
+          </div>
+          <span
+            class="arco-upload-list-success-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-upload-list-item-operation"
+      >
+        <span
+          class="arco-icon-hover"
+        >
+          <span
+            class="arco-upload-list-remove-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-delete"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

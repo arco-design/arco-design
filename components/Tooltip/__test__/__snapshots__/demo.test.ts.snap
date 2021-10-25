@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Tooltip/demo/basic.md correctly 1`] = `
+<div>
+  <span
+    class="arco-typography"
+    style="margin-right:20px"
+  >
+    Mouse over to display tooltip
+  </span>
+  <span
+    class="arco-typography"
+  >
+    Mouse over to display multiple lines tooltip
+  </span>
+</div>
+`;
+
+exports[`renders Tooltip/demo/color.md correctly 1`] = `
+<div>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:20px;background:#3491FA;color:#fff"
+    type="button"
+  >
+    <span>
+      #3491FA
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:20px;background:#165DFF;color:#fff"
+    type="button"
+  >
+    <span>
+      #165DFF
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:20px;background:#722ED1;color:#fff"
+    type="button"
+  >
+    <span>
+      #722ED1
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Tooltip/demo/control.md correctly 1`] = `
+<div>
+  <span
+    class="arco-typography"
+    style="margin-right:10px"
+  >
+    Show Tooltip
+  </span>
+  <button
+    class="arco-switch arco-switch-type-circle"
+    type="button"
+  >
+    <div
+      class="arco-switch-dot"
+    />
+  </button>
+  <br />
+  <br />
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  >
+    <span>
+      Be Controled
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Tooltip/demo/mini.md correctly 1`] = `
+<span
+  class="arco-typography"
+>
+  Mouse over to display tooltip
+</span>
+`;
+
+exports[`renders Tooltip/demo/position.md correctly 1`] = `
+<div
+  style="position:relative;width:440px;height:280px"
+>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:0;left:70px"
+    type="button"
+  >
+    <span>
+      TL
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:0;left:180px"
+    type="button"
+  >
+    <span>
+      Top
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:0;left:290px"
+    type="button"
+  >
+    <span>
+      TR
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:60px;left:10px"
+    type="button"
+  >
+    <span>
+      LT
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:120px;left:10px"
+    type="button"
+  >
+    <span>
+      Left
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:180px;left:10px"
+    type="button"
+  >
+    <span>
+      LB
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:60px;left:350px"
+    type="button"
+  >
+    <span>
+      RT
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:120px;left:350px"
+    type="button"
+  >
+    <span>
+      Right
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:180px;left:350px"
+    type="button"
+  >
+    <span>
+      RB
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:240px;left:70px"
+    type="button"
+  >
+    <span>
+      BL
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:240px;left:180px"
+    type="button"
+  >
+    <span>
+      Bottom
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="position:absolute;width:80px;top:240px;left:290px"
+    type="button"
+  >
+    <span>
+      BR
+    </span>
+  </button>
+</div>
+`;

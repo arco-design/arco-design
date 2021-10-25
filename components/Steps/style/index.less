@@ -1,0 +1,75 @@
+@import '../../style/theme/default.less';
+@import './token.less';
+@import './circle.less';
+@import './dot.less';
+@import './arrow.less';
+@import './navigation.less';
+
+@steps-prefix-cls: ~'@{prefix}-steps';
+
+.@{steps-prefix-cls} {
+  display: flex;
+
+  &-change-onclick {
+    .@{steps-prefix-cls}-item-title,
+    .@{steps-prefix-cls}-item-description {
+      transition: all @transition-duration-1 @transition-timing-function-linear;
+    }
+  }
+
+  &-change-onclick &-item:not(&-item-active):not(&-item-disabled) {
+    cursor: pointer;
+
+    &:hover {
+      .@{steps-prefix-cls}-item-content {
+        .@{steps-prefix-cls}-item-title,
+        .@{steps-prefix-cls}-item-description {
+          color: @color-primary-6;
+        }
+      }
+    }
+  }
+}
+
+// Lineless
+.@{steps-prefix-cls} {
+  &-lineless &-item-title::after {
+    display: none !important;
+  }
+}
+
+// Direction
+.@{steps-prefix-cls} {
+  &-vertical {
+    flex-direction: column;
+  }
+
+  &-vertical &-item {
+    &:not(:last-child) {
+      min-height: 90px;
+    }
+
+    &-title::after {
+      display: none !important;
+    }
+
+    &-description {
+      max-width: none;
+    }
+  }
+}
+
+// Label vertical
+.@{steps-prefix-cls} {
+  &-label-vertical &-item {
+    &-content {
+      display: block;
+      text-align: center;
+      width: @steps-label-vertical-content-width;
+    }
+
+    &-description {
+      max-width: none;
+    }
+  }
+}

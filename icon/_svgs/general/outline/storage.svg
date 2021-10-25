@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4">
+<path d="M7 18H41V30H7V18Z" stroke-linecap="butt"></path>
+<path d="M40 6H8C7.44772 6 7 6.44772 7 7V18H41V7C41 6.44772 40.5523 6 40 6Z" stroke-linecap="butt"></path>
+<path d="M7 30H41V41C41 41.5523 40.5523 42 40 42H8C7.44772 42 7 41.5523 7 41V30Z" stroke-linecap="butt"></path>
+<path d="M13.02 36H13V36.02H13.02V36Z" stroke-linecap="butt"></path>
+<path d="M13 12V10H11V12H13ZM13.02 12H15.02V10H13.02V12ZM13.02 12.02V14.02H15.02V12.02H13.02ZM13 12.02H11V14.02H13V12.02ZM13 14H13.02V10H13V14ZM11.02 12V12.02H15.02V12H11.02ZM13.02 10.02H13V14.02H13.02V10.02ZM15 12.02V12H11V12.02H15Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M13.02 24H13V24.02H13.02V24Z" stroke-linecap="butt"></path>
+</svg>

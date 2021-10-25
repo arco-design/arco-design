@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin-bottom:20px"
+  >
+    <span
+      class="arco-typography"
+    >
+      Trigger
+    </span>
+    <div
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      style="width:300px;margin-left:20px"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="click"
+                >
+                  click
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-expand-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="demo-trigger-manual"
+  >
+    <span
+      class="arco-typography"
+    >
+      Click
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Trigger/demo/arrow.md correctly 1`] = `
+<div
+  style="background:var(--color-fill-2);padding:40px"
+>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Click Me
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  >
+    <span>
+      Click Me（arrowProps）
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Trigger/demo/auto.md correctly 1`] = `
+<div
+  class="popup-container"
+  directions="right,bottom"
+  style="width:300px;height:300px;overflow:auto"
+>
+  <div
+    style="width:450px;height:300px;position:relative"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      style="margin-left:300px"
+      type="button"
+    >
+      <span>
+        popover
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Trigger/demo/basic.md correctly 1`] = `
+<div
+  style="width:1000px;overflow:auto"
+>
+  <span
+    class="arco-typography"
+    style="margin-right:20px"
+  >
+    Hover me
+  </span>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Click me
+    </span>
+  </button>
+  <input
+    class="arco-input arco-input-size-default"
+    placeholder="Focus on me"
+    style="width:200px"
+    tabindex="0"
+    value=""
+  />
+</div>
+`;
+
+exports[`renders Trigger/demo/control.md correctly 1`] = `
+<div>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Click Me (controlled)
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      no onVisibleChange (controlled)
+    </span>
+  </button>
+  <input
+    class="arco-input arco-input-size-default"
+    placeholder="Focus Me (controlled)"
+    style="width:200px"
+    tabindex="0"
+    value=""
+  />
+</div>
+`;
+
+exports[`renders Trigger/demo/mouse.md correctly 1`] = `
+<div
+  class="demo-trigger-manual"
+>
+  <span
+    class="arco-typography"
+  >
+    Click
+  </span>
+</div>
+`;
+
+exports[`renders Trigger/demo/nest.md correctly 1`] = `
+<button
+  class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+  type="button"
+>
+  <span>
+    Hover Me
+  </span>
+</button>
+`;
+
+exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
+<div
+  style="background:var(--color-fill-2);padding:40px"
+>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Top
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Top offset [100, 20]
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Top offset [-100, 20]
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Right
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Right offset [30, 50]
+    </span>
+  </button>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Right offset [30, -50]
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders Trigger/demo/triggers.md correctly 1`] = `
+<div>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    style="margin-right:40px"
+    type="button"
+  >
+    <span>
+      Click/Hover Me
+    </span>
+  </button>
+  <input
+    class="arco-input arco-input-size-default"
+    placeholder="Click/Hover/Focus Me"
+    style="width:200px;margin-right:40px"
+    tabindex="0"
+    value=""
+  />
+  <input
+    class="arco-input arco-input-size-default"
+    placeholder="Hover/Focus Me"
+    style="width:200px"
+    tabindex="0"
+    value=""
+  />
+</div>
+`;

@@ -1,0 +1,124 @@
+@import './token.less';
+
+@spin-prefix-cls: ~'@{prefix}-spin';
+
+.@{spin-prefix-cls} {
+  display: inline-block;
+
+  &-with-tip {
+    text-align: center;
+  }
+
+  &-icon {
+    color: @spin-color-icon;
+    font-size: @spin-font-size-icon;
+  }
+
+  &-tip {
+    margin-top: @spin-margin-top-tip;
+    font-size: @spin-font-size-text;
+    font-weight: @spin-font-weight;
+    color: @spin-color-text;
+  }
+
+  &-loading-layer {
+    text-align: center;
+    user-select: none;
+  }
+
+  &-children {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-spin-layer-bg);
+      opacity: 0;
+      transition: opacity @transition-duration-1 @transition-timing-function-linear;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &-loading {
+    position: relative;
+    user-select: none;
+  }
+
+  &-loading &-loading-layer-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &-loading &-children::after {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: @spin-dot-size-width;
+    height: @spin-dot-size-width;
+    background-color: @spin-dot-color-icon_default;
+    border-radius: @radius-circle;
+    animation: ~'@{prefix}-dot-loading' 2s @transition-timing-function-linear infinite forwards;
+
+    &:nth-child(2) {
+      background-color: @spin-dot-color-icon_second;
+      animation-delay: 400ms;
+    }
+
+    &:nth-child(3) {
+      background-color: @spin-dot-color-icon_third;
+      animation-delay: 800ms;
+    }
+
+    &:nth-child(4) {
+      background-color: @spin-dot-color-icon_forth;
+      animation-delay: 1200ms;
+    }
+
+    &:nth-child(5) {
+      background-color: @spin-dot-color-icon_last;
+      animation-delay: 1600ms;
+    }
+  }
+
+  &-dot-list {
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 200px;
+    width: @spin-dot-size-width * 7;
+    position: relative;
+    height: @spin-dot-size-width;
+  }
+}
+
+@keyframes ~'@{prefix}-dot-loading' {
+  each(range(36), {
+    @percent: round(percentage(((@value - 1) / 36)), 3);
+
+    // 半径
+    @radius: 280%;
+    @xOffset: round((sin((pi() / 180 * @value * 10)) * @radius), 3) * -1;
+    @zOffset: round(cos((pi() / 180 * @value * 10)), 3) * -1px;
+
+    @scaleOffset: round((1 - cos((pi() / 180) * @value * 10)) * 0.75 + 0.5, 3 );
+
+    @{percent} {
+      transform: ~'translate3D(@{xOffset}, 0, @{zOffset}) scale(@{scaleOffset})'
+    }
+  })
+}

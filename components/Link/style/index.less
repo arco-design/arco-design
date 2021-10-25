@@ -1,0 +1,102 @@
+@import './token.less';
+
+@link-prefix-cls: ~'@{prefix}-link';
+
+.@{link-prefix-cls} {
+  color: @link-color-text;
+  font-size: @link-font-size;
+  line-height: @link-line-height;
+  display: inline-block;
+  padding: @link-padding-vertical @link-padding-horizontal;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: @link-border-radius;
+  background-color: @color-transparent;
+  transition: all @transition-duration-1 @transition-timing-function-linear;
+
+  &:hover {
+    color: @link-color-text_hover;
+    background-color: @link-color-bg_hover;
+  }
+
+  &:active {
+    transition: none;
+    color: @link-color-text_active;
+    background-color: @link-color-bg_active;
+  }
+
+  &&-hoverless {
+    background-color: unset;
+    padding: 0;
+    display: inline;
+
+    &:active,
+    &:hover {
+      background-color: unset;
+    }
+  }
+
+  &&-disabled {
+    color: @link-color-text_disabled;
+    background: none;
+    cursor: not-allowed;
+  }
+
+  // 不同状态
+  &-is-success {
+    color: @link-color-text_success;
+
+    &:hover {
+      color: @link-color-text_success_hover;
+    }
+
+    &:active {
+      color: @link-color-text_success_active;
+    }
+  }
+
+  &-is-success&-disabled {
+    color: @link-color-text_success_disabled;
+  }
+
+  &-is-error {
+    color: @link-color-text_error;
+
+    &:hover {
+      color: @link-color-text_error_hover;
+    }
+
+    &:active {
+      color: @link-color-text_error_active;
+    }
+  }
+
+  &-is-error&-disabled {
+    color: @link-color-text_error_disabled;
+  }
+
+  &-is-warning {
+    color: @link-color-text_warning;
+
+    &:hover {
+      color: @link-color-text_warning_hover;
+    }
+
+    &:active {
+      color: @link-color-text_warning_active;
+    }
+  }
+
+  &-is-warning&-disabled {
+    color: @link-color-text_warning_disabled;
+  }
+
+  &-icon {
+    margin-right: @link-margin-icon-right;
+    font-size: @link-size-icon;
+  }
+
+  .@{prefix}-icon {
+    font-size: @link-size-icon;
+  }
+}

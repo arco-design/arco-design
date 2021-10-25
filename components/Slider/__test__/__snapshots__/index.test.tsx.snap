@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Slider default 1`] = `
+<div
+  class="arco-slider"
+>
+  <div
+    class="arco-slider-wrapper"
+  >
+    <div
+      class="arco-slider-road"
+    >
+      <div
+        class="arco-slider-bar"
+        style="left:0%;right:100%"
+      />
+      <div
+        class="arco-slider-button"
+        style="left:0%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Slider set className globally 1`] = `
+<div
+  class="arco-slider global-default-class"
+>
+  <div
+    class="arco-slider-wrapper"
+  >
+    <div
+      class="arco-slider-road"
+    >
+      <div
+        class="arco-slider-bar"
+        style="left:0%;right:100%"
+      />
+      <div
+        class="arco-slider-button"
+        style="left:0%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Slider set className globally and component set className itself. 1`] = `
+<div
+  class="arco-slider component-class"
+>
+  <div
+    class="arco-slider-wrapper"
+  >
+    <div
+      class="arco-slider-road"
+    >
+      <div
+        class="arco-slider-bar"
+        style="left:0%;right:100%"
+      />
+      <div
+        class="arco-slider-button"
+        style="left:0%"
+      />
+    </div>
+  </div>
+</div>
+`;

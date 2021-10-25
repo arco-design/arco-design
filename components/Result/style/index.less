@@ -1,0 +1,96 @@
+@import './token.less';
+
+@result-prefix-cls: ~'@{prefix}-result';
+
+.icon-status (@status) {
+  @color: ~'result-color-icon_@{status}';
+  @bg: ~'result-color-icon-bg_@{status}';
+
+  color: @@color;
+  background-color: @@bg;
+}
+
+.@{result-prefix-cls} {
+  width: 100%;
+  box-sizing: border-box;
+  padding: @result-padding-top_icon @result-padding-horizontal @result-padding-bottom;
+
+  &-is-404,
+  &-is-403,
+  &-is-500 {
+    padding-top: @result-padding-top;
+
+    .@{result-prefix-cls}-icon-tip {
+      height: @result-size-image-width;
+      width: @result-size-image-width;
+      line-height: @result-size-image-width;
+    }
+  }
+
+  &-icon {
+    margin-bottom: @result-margin-icon-bottom;
+    text-align: center;
+    font-size: @result-size-icon;
+
+    &-tip {
+      display: inline-block;
+      height: @result-size-icon-wrapper;
+      width: @result-size-icon-wrapper;
+      text-align: center;
+      border-radius: 50%;
+      line-height: @result-size-icon-wrapper;
+    }
+
+    // status = null
+    &-custom {
+      width: unset;
+      height: unset;
+      line-height: inherit;
+
+      > .@{prefix}-icon {
+        font-size: @result-size-icon_custom;
+        color: @result-color-icon_default;
+      }
+    }
+
+    &-success {
+      .icon-status(success);
+    }
+
+    &-error {
+      .icon-status(error);
+    }
+
+    &-info {
+      .icon-status(info);
+    }
+
+    &-warning {
+      .icon-status(warning);
+    }
+  }
+
+  &-title {
+    text-align: center;
+    line-height: 1.5715;
+    font-size: @result-font-title-size;
+    font-weight: @result-font-title-weight;
+    color: @result-color-title-text;
+  }
+
+  &-subtitle {
+    text-align: center;
+    line-height: 1.5715;
+    font-size: @result-font-subtitle-size;
+    color: @result-color-subtitle-text;
+  }
+
+  &-extra {
+    margin-top: @result-margin-extra-top;
+    text-align: center;
+  }
+
+  &-content {
+    margin-top: @result-margin-content-top;
+  }
+}

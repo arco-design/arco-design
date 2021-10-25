@@ -1,0 +1,102 @@
+@menu-width: 260px;
+
+.ac-menu-wrapper {
+  position: relative;
+  width: @menu-width;
+  min-width: @menu-width;
+  max-width: @menu-width;
+  min-height: 1000px;
+  box-sizing: border-box;
+  border-right: 1px solid var(--color-border);
+  transition: all 0.15s;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 7px;
+    background-color: var(--color-text-4);
+  }
+
+  .ac-menu {
+    position: fixed;
+    top: 60px;
+    left: -1px;
+    transition: left 0.15s;
+
+    .ac-menu-inner {
+      width: 260px;
+      height: calc(100vh - 136px);
+      overflow-y: hidden;
+      overflow-x: hidden;
+      background-color: var(--color-menu-light-bg);
+
+      &:hover {
+        overflow-y: auto;
+      }
+
+      .arco-menu-light.arco-menu-vertical {
+        box-shadow: none;
+      }
+
+      .arco-menu {
+        padding-bottom: 30px;
+      }
+    }
+
+    .arco-menu-inner {
+      padding: 4px 12px;
+    }
+
+    .arco-menu-item {
+      color: var(--color-text-1);
+
+      a::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .arco-menu-item:hover,
+    .arco-menu-inline-header:hover {
+      background-color: var(--color-fill-1);
+    }
+
+    .arco-menu-light .arco-menu-item.arco-menu-selected {
+      background-color: var(--color-fill-2);
+    }
+
+    .arco-menu-selected {
+      color: rgb(var(--arcoblue-6));
+    }
+
+    .arco-menu-item .arco-badge-dot {
+      right: -4px;
+    }
+  }
+
+  .title-1 > .arco-menu-inline-header {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .arco-menu-group > .arco-menu-group-title > span {
+    padding-left: 0 !important;
+  }
+}
+
+#nprogress .bar {
+  background: rgb(var(--arcoblue-6));
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px rgb(var(--arcoblue-6)), 0 0 5px rgb(var(--arcoblue-6));
+}

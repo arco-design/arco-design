@@ -1,0 +1,652 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Space/demo/align.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="start"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          start
+        </span>
+      </label>
+      <label
+        class="arco-radio-button arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="center"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          center
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="end"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          end
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="baseline"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          baseline
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+    style="background-color:var(--color-fill-2);padding:10px"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <span
+        class="arco-typography"
+      >
+        Space:
+      </span>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Item2
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-card arco-card-size-default arco-card-bordered"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Card
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          Card content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Space/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <span
+      class="arco-typography"
+    >
+      Space:
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <div
+      class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
+    >
+      Tag
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item1
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item2
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Space/demo/size.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="mini"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          mini
+        </span>
+      </label>
+      <label
+        class="arco-radio-button arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="small"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          small
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="medium"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          medium
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="large"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          large
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Item1
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Item2
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Item3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Space/demo/split.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <span
+      class="arco-link"
+    >
+      Link 1
+    </span>
+  </div>
+  <div
+    class="arco-space-item-split"
+  >
+    <div
+      class="arco-divider arco-divider-vertical"
+    />
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <span
+      class="arco-link"
+    >
+      Link 2
+    </span>
+  </div>
+  <div
+    class="arco-space-item-split"
+  >
+    <div
+      class="arco-divider arco-divider-vertical"
+    />
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-link"
+    >
+      Link 3
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Space/demo/vertical.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item1
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item2
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item3
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Space/demo/wrap.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item1
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item2
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item3
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item4
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item5
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item6
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item7
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item8
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item9
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item10
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item11
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item12
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item13
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item14
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item15
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item16
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item17
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item18
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:12px;margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item19
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:18px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Item20
+      </span>
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly 1`] = `
+<div>
+  <div
+    style="text-align: center;"
+  >
+    <div
+      class="arco-message arco-message-info"
+    >
+      <span
+        class="arco-message-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-info-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2Zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v11Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-message-content"
+      >
+        Info type
+      </span>
+    </div>
+  </div>
+  <div
+    style="text-align: center;"
+  >
+    <div
+      class="arco-message arco-message-success"
+    >
+      <span
+        class="arco-message-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-check-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm10.207-24.379a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0L22 26.172l-4.878-4.88a1 1 0 0 0-1.415 0l-1.414 1.415a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414 0l11.5-11.5Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-message-content"
+      >
+        Success type
+      </span>
+    </div>
+  </div>
+  <div
+    style="text-align: center;"
+  >
+    <div
+      class="arco-message arco-message-warning"
+    >
+      <span
+        class="arco-message-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-exclamation-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-message-content"
+      >
+        Warning type
+      </span>
+    </div>
+  </div>
+  <div
+    style="text-align: center;"
+  >
+    <div
+      class="arco-message arco-message-error"
+    >
+      <span
+        class="arco-message-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-close-circle-fill"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            stroke="none"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-message-content"
+      >
+        Error type
+      </span>
+    </div>
+  </div>
+  <div
+    style="text-align: center;"
+  >
+    <div
+      class="arco-message arco-message-normal"
+    >
+      <span
+        class="arco-message-content"
+      >
+        Normal type
+      </span>
+    </div>
+  </div>
+  <div
+    style="text-align: center;"
+  >
+    <div
+      class="arco-message arco-message-normal"
+    >
+      <span
+        class="arco-message-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-message"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
+          />
+        </svg>
+      </span>
+      <span
+        class="arco-message-content"
+      >
+        Custom icon
+      </span>
+    </div>
+  </div>
+</div>
+`;

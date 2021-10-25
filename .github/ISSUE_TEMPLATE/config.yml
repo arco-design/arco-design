@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Create new issue
+    url: https://arco.design/issue-helper?repo=arco-design
+    about: Please use the following link to create a new issue.

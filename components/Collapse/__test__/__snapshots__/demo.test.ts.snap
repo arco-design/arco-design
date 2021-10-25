@@ -1,0 +1,1460 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Collapse/demo/accordion.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/basic.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item arco-collapse-item-active arco-collapse-item-disabled"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left arco-collapse-item-header-disabled"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover arco-icon-hover-disabled"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Introduce
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around the world. Toutiao started out as a news recommendation engine and gradually evolved into a platform delivering content in various formats, such as texts, images, question-and-answer posts, microblogs, and videos.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        The Underlying AI Technology
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/borderless.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-borderless"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Introduce
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        The Underlying AI Technology
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-borderless"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+    style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+    style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Introduce
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around the world. Toutiao started out as a news recommendation engine and gradually evolved into a platform delivering content in various formats, such as texts, images, question-and-answer posts, microblogs, and videos.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+    style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        The Underlying AI Technology
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Introduce
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around the world. Toutiao started out as a news recommendation engine and gradually evolved into a platform delivering content in various formats, such as texts, images, question-and-answer posts, microblogs, and videos.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        The Underlying AI Technology
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/extra.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+      <div
+        class="arco-collapse-item-header-extra"
+      >
+        <svg
+          class="arco-icon arco-icon-more-vertical"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+      <div
+        class="arco-collapse-item-header-extra"
+      >
+        <svg
+          class="arco-icon arco-icon-more-vertical"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around the world. Toutiao started out as a news recommendation engine and gradually evolved into a platform delivering content in various formats, such as texts, images, question-and-answer posts, microblogs, and videos.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+      <div
+        class="arco-collapse-item-header-extra"
+      >
+        <svg
+          class="arco-icon arco-icon-more-vertical"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin-bottom:24px"
+  >
+    <span
+      class="arco-typography"
+    >
+      Position:
+    </span>
+    <div
+      class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      style="margin-left:20px"
+    >
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value=""
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          hide
+        </span>
+      </label>
+      <label
+        class="arco-radio arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="left"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          left
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="right"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          right
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-collapse arco-collapse-border"
+    style="max-width:1180px"
+  >
+    <div
+      class="arco-collapse-item"
+    >
+      <div
+        class="arco-collapse-item-header arco-collapse-item-header-left"
+      >
+        <span
+          class="arco-icon-hover arco-collapse-item-icon-hover"
+        >
+          <span
+            class="arco-collapse-item-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-caret-right"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="arco-collapse-item-header-title"
+        >
+          Beijing Toutiao Technology Co., Ltd.
+        </div>
+        <div
+          class="arco-collapse-item-header-extra"
+        >
+          <svg
+            class="arco-icon arco-icon-info-circle"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M24 20v14m0-16v-4m18 10c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item"
+    >
+      <div
+        class="arco-collapse-item-header arco-collapse-item-header-left"
+      >
+        <span
+          class="arco-icon-hover arco-collapse-item-icon-hover"
+        >
+          <span
+            class="arco-collapse-item-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-caret-right"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="arco-collapse-item-header-title"
+        >
+          Introduce
+        </div>
+        <div
+          class="arco-collapse-item-header-extra"
+        >
+          <svg
+            class="arco-icon arco-icon-settings"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M18.797 6.732A1 1 0 0 1 19.76 6h8.48a1 1 0 0 1 .964.732l1.285 4.628a1 1 0 0 0 1.213.7l4.651-1.2a1 1 0 0 1 1.116.468l4.24 7.344a1 1 0 0 1-.153 1.2L38.193 23.3a1 1 0 0 0 0 1.402l3.364 3.427a1 1 0 0 1 .153 1.2l-4.24 7.344a1 1 0 0 1-1.116.468l-4.65-1.2a1 1 0 0 0-1.214.7l-1.285 4.628a1 1 0 0 1-.964.732h-8.48a1 1 0 0 1-.963-.732L17.51 36.64a1 1 0 0 0-1.213-.7l-4.65 1.2a1 1 0 0 1-1.116-.468l-4.24-7.344a1 1 0 0 1 .153-1.2L9.809 24.7a1 1 0 0 0 0-1.402l-3.364-3.427a1 1 0 0 1-.153-1.2l4.24-7.344a1 1 0 0 1 1.116-.468l4.65 1.2a1 1 0 0 0 1.213-.7l1.286-4.628Z"
+            />
+            <path
+              d="M30 24a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item"
+    >
+      <div
+        class="arco-collapse-item-header arco-collapse-item-header-left"
+      >
+        <span
+          class="arco-icon-hover arco-collapse-item-icon-hover"
+        >
+          <span
+            class="arco-collapse-item-header-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-caret-right"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="arco-collapse-item-header-title"
+        >
+          The Underlying AI Technology
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/inline.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        <div
+          class="arco-collapse arco-collapse-border"
+        >
+          <div
+            class="arco-collapse-item arco-collapse-item-active"
+          >
+            <div
+              class="arco-collapse-item-header arco-collapse-item-header-left"
+            >
+              <span
+                class="arco-icon-hover arco-collapse-item-icon-hover"
+              >
+                <span
+                  class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+                >
+                  <svg
+                    class="arco-icon arco-icon-caret-right"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="arco-collapse-item-header-title"
+              >
+                Beijing Toutiao Technology Co., Ltd.
+              </div>
+            </div>
+            <div
+              class="arco-collapse-item-content arco-collapse-item-content-expanded"
+            >
+              <div
+                class="arco-collapse-item-content-box"
+              >
+                Beijing Toutiao Technology Co., Ltd.
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-collapse-item"
+          >
+            <div
+              class="arco-collapse-item-header arco-collapse-item-header-left"
+            >
+              <span
+                class="arco-icon-hover arco-collapse-item-icon-hover"
+              >
+                <span
+                  class="arco-collapse-item-header-icon"
+                >
+                  <svg
+                    class="arco-icon arco-icon-caret-right"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="arco-collapse-item-header-title"
+              >
+                Beijing Toutiao Technology Co., Ltd.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Introduce
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around the world. Toutiao started out as a news recommendation engine and gradually evolved into a platform delivering content in various formats, such as texts, images, question-and-answer posts, microblogs, and videos.
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-collapse-item"
+  >
+    <div
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        The Underlying AI Technology
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,848 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders InputNumber/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default"
+          placeholder="Please enter"
+          value=""
+        />
+        <span
+          class="arco-input-group-suffix"
+        >
+          <div
+            class="arco-input-number-step-layer"
+          >
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-up"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 30.557 24.043 15 8.487 30.557"
+                />
+              </svg>
+            </div>
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-group-wrapper-disabled arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-disabled arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default arco-input-disabled"
+          disabled=""
+          value="500"
+        />
+        <span
+          class="arco-input-group-suffix"
+        >
+          <div
+            class="arco-input-number-step-layer"
+          >
+            <div
+              class="arco-input-number-step-button arco-input-number-step-button-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-up"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 30.557 24.043 15 8.487 30.557"
+                />
+              </svg>
+            </div>
+            <div
+              class="arco-input-number-step-button arco-input-number-step-button-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders InputNumber/demo/format.md correctly 1`] = `
+<div
+  class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+  style="width:160px;margin:10px 24px 10px 0"
+>
+  <span
+    class="arco-input-group"
+  >
+    <span
+      class="arco-input-inner-wrapper arco-input-inner-wrapper-has-prefix arco-input-inner-wrapper-default"
+    >
+      <span
+        class="arco-input-group-prefix"
+      >
+        <div
+          class="arco-input-number-prefix"
+        >
+          ¥
+        </div>
+      </span>
+      <input
+        class="arco-input arco-input-size-default"
+        value="12,000"
+      />
+      <span
+        class="arco-input-group-suffix"
+      >
+        <div
+          class="arco-input-number-step-layer"
+        >
+          <div
+            class="arco-input-number-step-button"
+          >
+            <svg
+              class="arco-icon arco-icon-up"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 30.557 24.043 15 8.487 30.557"
+              />
+            </svg>
+          </div>
+          <div
+            class="arco-input-number-step-button"
+          >
+            <svg
+              class="arco-icon arco-icon-down"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`renders InputNumber/demo/mode.md correctly 1`] = `
+<div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-group-addbefore"
+      >
+        <div
+          class="arco-input-number-step-button"
+        >
+          <svg
+            class="arco-icon arco-icon-minus"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M5 24h38"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default"
+          value="500"
+        />
+        <span
+          class="arco-input-group-suffix"
+        />
+      </span>
+      <span
+        class="arco-input-group-addafter"
+      >
+        <div
+          class="arco-input-number-step-button"
+        >
+          <svg
+            class="arco-icon arco-icon-plus"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M5 24h38M24 5v38"
+            />
+          </svg>
+        </div>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-group-wrapper-disabled arco-input-number arco-input-number-mode-button arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-group-addbefore"
+      >
+        <div
+          class="arco-input-number-step-button arco-input-number-step-button-disabled"
+        >
+          <svg
+            class="arco-icon arco-icon-minus"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M5 24h38"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-disabled arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default arco-input-disabled"
+          disabled=""
+          value="500"
+        />
+        <span
+          class="arco-input-group-suffix"
+        />
+      </span>
+      <span
+        class="arco-input-group-addafter"
+      >
+        <div
+          class="arco-input-number-step-button arco-input-number-step-button-disabled"
+        >
+          <svg
+            class="arco-icon arco-icon-plus"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M5 24h38M24 5v38"
+            />
+          </svg>
+        </div>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders InputNumber/demo/precision.md correctly 1`] = `
+<div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default"
+          value="3.5"
+        />
+        <span
+          class="arco-input-group-suffix"
+        >
+          <div
+            class="arco-input-number-step-layer"
+          >
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-up"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 30.557 24.043 15 8.487 30.557"
+                />
+              </svg>
+            </div>
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default"
+          value="1.11"
+        />
+        <span
+          class="arco-input-group-suffix"
+        >
+          <div
+            class="arco-input-number-step-layer"
+          >
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-up"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 30.557 24.043 15 8.487 30.557"
+                />
+              </svg>
+            </div>
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders InputNumber/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    style="margin-bottom:20px;border-radius:4px"
+  >
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="mini"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        mini
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="small"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        small
+      </span>
+    </label>
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="size"
+        type="radio"
+        value="default"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        default
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="large"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        large
+      </span>
+    </label>
+  </div>
+  <div>
+    <div
+      class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+      style="width:160px;margin:10px 24px 10px 0"
+    >
+      <span
+        class="arco-input-group"
+      >
+        <span
+          class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+        >
+          <input
+            class="arco-input arco-input-size-default"
+            value="2"
+          />
+          <span
+            class="arco-input-group-suffix"
+          >
+            <div
+              class="arco-input-number-step-layer"
+            >
+              <div
+                class="arco-input-number-step-button"
+              >
+                <svg
+                  class="arco-icon arco-icon-up"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M39.6 30.557 24.043 15 8.487 30.557"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-input-number-step-button"
+              >
+                <svg
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </div>
+            </div>
+          </span>
+        </span>
+      </span>
+    </div>
+    <div
+      class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
+      style="width:160px;margin:10px 24px 10px 0"
+    >
+      <span
+        class="arco-input-group"
+      >
+        <span
+          class="arco-input-group-addbefore"
+        >
+          <div
+            class="arco-input-number-step-button"
+          >
+            <svg
+              class="arco-icon arco-icon-minus"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 24h38"
+              />
+            </svg>
+          </div>
+        </span>
+        <span
+          class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+        >
+          <input
+            class="arco-input arco-input-size-default"
+            value="2"
+          />
+          <span
+            class="arco-input-group-suffix"
+          />
+        </span>
+        <span
+          class="arco-input-group-addafter"
+        >
+          <div
+            class="arco-input-number-step-button"
+          >
+            <svg
+              class="arco-icon arco-icon-plus"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M5 24h38M24 5v38"
+              />
+            </svg>
+          </div>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
+<div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+      >
+        <input
+          class="arco-input arco-input-size-default"
+          value="50"
+        />
+        <span
+          class="arco-input-group-suffix"
+        >
+          <div
+            class="arco-input-number-step-layer"
+          >
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-up"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 30.557 24.043 15 8.487 30.557"
+                />
+              </svg>
+            </div>
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="arco-input-number-suffix"
+          >
+            %
+          </div>
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-has-prefix arco-input-inner-wrapper-default"
+      >
+        <span
+          class="arco-input-group-prefix"
+        >
+          <div
+            class="arco-input-number-prefix"
+          >
+            ¥
+          </div>
+        </span>
+        <input
+          class="arco-input arco-input-size-default"
+          value="500"
+        />
+        <span
+          class="arco-input-group-suffix"
+        >
+          <div
+            class="arco-input-number-step-layer"
+          >
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-up"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 30.557 24.043 15 8.487 30.557"
+                />
+              </svg>
+            </div>
+            <div
+              class="arco-input-number-step-button"
+            >
+              <svg
+                class="arco-icon arco-icon-down"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
+    style="width:160px;margin:10px 24px 10px 0"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-group-addbefore"
+      >
+        <div
+          class="arco-input-number-step-button"
+        >
+          <svg
+            class="arco-icon arco-icon-minus"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M5 24h38"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-has-prefix arco-input-inner-wrapper-default"
+      >
+        <span
+          class="arco-input-group-prefix"
+        >
+          <div
+            class="arco-input-number-prefix"
+          >
+            ¥
+          </div>
+        </span>
+        <input
+          class="arco-input arco-input-size-default"
+          value="500"
+        />
+        <span
+          class="arco-input-group-suffix"
+        />
+      </span>
+      <span
+        class="arco-input-group-addafter"
+      >
+        <div
+          class="arco-input-number-step-button"
+        >
+          <svg
+            class="arco-icon arco-icon-plus"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M5 24h38M24 5v38"
+            />
+          </svg>
+        </div>
+      </span>
+    </span>
+  </div>
+</div>
+`;

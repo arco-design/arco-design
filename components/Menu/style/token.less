@@ -1,0 +1,99 @@
+@import '../../style/theme/default.less';
+
+@menu-font-size: 14px;
+@menu-line-height: @line-height-base;
+@menu-border-radius: @radius-small;
+@menu-font-weight-item-selected: @font-weight-500;
+@menu-color-label-item-selected: @color-primary-6;
+@menu-height-label-item-selected: 3px;
+@menu-margin-left-item-suffix-icon: @spacing-3;
+@menu-margin-right-item-prefix-icon: @spacing-7;
+@menu-horizontal-margin-right-item-prefix-icon: @spacing-7;
+
+// vertical 模式下 item 之间的间隙
+@menu-item-gap: @spacing-2;
+// vertical 下嵌套子菜单的层级缩进
+@menu-item-indent-spacing: @spacing-8;
+
+// 折叠按钮
+@menu-width-collapse-button: @size-6;
+@menu-height-collapse-button: @size-6;
+@menu-border-radius-collapse-button: @radius-small;
+
+/**********************************************
+ * theme: light / dark
+ * status: default / disabled / selected / hover
+ **********************************************/
+@menu-light-color-bg: var(--color-menu-light-bg);
+@menu-light-color-bg-item_default: @menu-light-color-bg;
+@menu-light-color-bg-item_hover: var(--color-fill-2);
+@menu-light-color-bg-item_selected: var(--color-fill-2);
+@menu-light-color-bg-item_disabled: @menu-light-color-bg;
+@menu-light-color-item_default: var(--color-text-2);
+@menu-light-color-item_hover: var(--color-text-2);
+@menu-light-color-item_selected: @color-primary-6;
+@menu-light-color-submenu_selected: @color-primary-6;
+@menu-light-color-bg-submenu_selected_hover: var(--color-fill-2);
+@menu-light-color-item_disabled: var(--color-text-4);
+@menu-light-color-icon_default: var(--color-text-3);
+@menu-light-color-icon_hover: var(--color-text-3);
+@menu-light-color-icon_selected: @color-primary-6;
+@menu-light-color-icon_disabled: var(--color-text-4);
+@menu-light-color-group-title: var(--color-text-3);
+
+@menu-dark-color-bg: var(--color-menu-dark-bg);
+@menu-dark-color-bg-item_default: @menu-dark-color-bg;
+@menu-dark-color-bg-item_hover: var(--color-menu-dark-hover);
+@menu-dark-color-bg-item_selected: var(--color-menu-dark-hover);
+@menu-dark-color-bg-item_disabled: @menu-dark-color-bg;
+@menu-dark-color-submenu_selected: @color-primary-6;
+@menu-dark-color-bg-submenu_selected_hover: var(--color-menu-dark-hover);
+@menu-dark-color-item_default: var(--color-text-4);
+@menu-dark-color-item_hover: var(--color-text-4);
+@menu-dark-color-item_selected: var(--color-white);
+@menu-dark-color-item_disabled: var(--color-text-2);
+@menu-dark-color-icon_default: var(--color-text-3);
+@menu-dark-color-icon_hover: var(--color-text-3);
+@menu-dark-color-icon_selected: var(--color-white);
+@menu-dark-color-icon_disabled: var(--color-text-2);
+@menu-dark-color-group-title: var(--color-text-3);
+
+// popup sub-menu
+@menu-color-border-popup: var(--color-neutral-3);
+
+// collapse button style
+@menu-light-color-bg-button: var(--color-fill-1);
+@menu-light-color-bg-button_hover: var(--color-fill-3);
+@menu-light-color-button: var(--color-text-3);
+@menu-dark-color-bg-button: @color-primary-6;
+@menu-dark-color-bg-button_hover: @color-primary-7;
+@menu-dark-color-button: var(--color-white);
+
+/**********************************************
+ * horizontal / vertical
+ **********************************************/
+@menu-horizontal-padding-vertical: 14px;
+@menu-horizontal-padding-horizontal: @spacing-8;
+@menu-horizontal-item-gap: @spacing-6;
+@menu-horizontal-item-height: 30px;
+@menu-horizontal-item-padding-horizontal: @spacing-6;
+
+@menu-vertical-padding-vertical: @spacing-2;
+@menu-vertical-padding-horizontal: @spacing-4;
+@menu-vertical-item-height: 40px;
+@menu-vertical-item-padding-horizontal: @spacing-6;
+
+/************************************************
+ * collapse
+ ***********************************************/
+@menu-collapse-width: @size-12;
+@menu-collapse-padding-vertical: @spacing-2;
+@menu-collapse-padding-horizontal: @spacing-2;
+
+/************************************************
+ * popButton
+ ***********************************************/
+@menu-pop-button-size: @size-10;
+@menu-pop-button-margin-bottom: @spacing-7;
+@menu-pop-button-box-shadow: @shadow2-down;
+@menu-pop-button-border-color: @color-transparent;

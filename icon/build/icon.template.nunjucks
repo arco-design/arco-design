@@ -1,0 +1,29 @@
+import React, { useContext } from 'react';
+import { IconContext } from '../context';
+
+function {{ iconName }}Component (iconProps, ref) {
+  const { prefixCls } = useContext(IconContext);
+  const { spin, className } = iconProps;
+  const props = {
+    ref,
+    ...iconProps,
+    className: `${className ? className + ' ' : ''}${prefixCls}-icon ${prefixCls}-icon-{{iconClassName}}`,
+  };
+
+  if (spin) {
+    props.className = `${props.className} ${prefixCls}-icon-loading`;
+  }
+  delete props.spin;
+  delete props.isIcon;
+
+  return {{ svg }};
+}
+
+const {{ iconName }} = React.forwardRef({{ iconName }}Component);
+
+{{ iconName }}.defaultProps = {
+  isIcon: true,
+}
+{{ iconName }}.displayName = '{{ iconName }}';
+
+export default {{ iconName }};

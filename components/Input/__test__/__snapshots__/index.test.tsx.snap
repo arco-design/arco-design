@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Input default 1`] = `
+<input
+  class="arco-input arco-input-size-default"
+  value=""
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Input set className globally 1`] = `
+<input
+  class="arco-input arco-input-size-default global-default-class"
+  value=""
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Input set className globally and component set className itself. 1`] = `
+<input
+  class="arco-input arco-input-size-default component-class"
+  value=""
+/>
+`;

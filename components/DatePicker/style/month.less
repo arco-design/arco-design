@@ -1,0 +1,26 @@
+@import './token.less';
+
+@month-panel-prefix-cls: ~'@{prefix}-panel-month';
+@quarter-panel-prefix-cls: ~'@{prefix}-panel-quarter';
+@year-panel-prefix-cls: ~'@{prefix}-panel-year';
+
+.@{month-panel-prefix-cls},
+.@{quarter-panel-prefix-cls},
+.@{year-panel-prefix-cls} {
+  box-sizing: border-box;
+  width: @picker-panel-month-width;
+
+  .@{prefix}-picker-date {
+    padding: 4px;
+  }
+
+  .@{prefix}-picker-date-value {
+    border-radius: @picker-panel-cell-boundary-border-radius;
+    width: 100%;
+  }
+
+  .@{prefix}-picker-cell:not(.@{prefix}-picker-cell-selected):not(.@{prefix}-picker-cell-range-start):not(.@{prefix}-picker-cell-range-end):not(.@{prefix}-picker-cell-disabled):not(.@{prefix}-picker-cell-week)
+    .@{prefix}-picker-date-value:hover {
+    border-radius: @picker-panel-cell-boundary-border-radius;
+  }
+}

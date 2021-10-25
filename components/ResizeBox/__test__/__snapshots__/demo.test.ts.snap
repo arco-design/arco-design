@@ -1,0 +1,493 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    class="arco-resizebox"
+    style="width:500px;min-width:100px;max-width:100%;height:200px;text-align:center"
+  >
+    <div
+      class="arco-typography"
+    >
+      We are building the future of content discovery and creation.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal"
+    />
+    <div
+      class="arco-typography"
+    >
+      ByteDance's content platforms enable people to enjoy content powered by AI technology. We inform, entertain, and inspire people across language, culture and geography.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    >
+      <span
+        class="arco-divider-text arco-divider-text-center"
+      >
+        ByteDance
+      </span>
+    </div>
+    <div
+      class="arco-typography"
+    >
+      Yiming Zhang is the founder and CEO of ByteDance.
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-direction-right"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-drag-dot-vertical"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-horizontal arco-resizebox-direction-bottom"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-drag-dot"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders ResizeBox/demo/control.md correctly 1`] = `
+<div>
+  <div
+    class="arco-resizebox"
+    style="min-width:100px;max-width:100%;text-align:center;width:500px;height:200px"
+  >
+    <div
+      class="arco-typography"
+    >
+      We are building the future of content discovery and creation.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal"
+    />
+    <div
+      class="arco-typography"
+    >
+      ByteDance's content platforms enable people to enjoy content powered by AI technology. We inform, entertain, and inspire people across language, culture and geography.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    >
+      <span
+        class="arco-divider-text arco-divider-text-center"
+      >
+        ByteDance
+      </span>
+    </div>
+    <div
+      class="arco-typography"
+    >
+      Yiming Zhang is the founder and CEO of ByteDance.
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-direction-right"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-drag-dot-vertical"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-horizontal arco-resizebox-direction-bottom"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-drag-dot"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders ResizeBox/demo/custom-triggers.md correctly 1`] = `
+<div>
+  <div
+    class="arco-resizebox"
+    style="width:500px;min-width:100px;max-width:100%;height:200px;text-align:center"
+  >
+    <div
+      class="arco-typography"
+    >
+      We are building the future of content discovery and creation.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal"
+    />
+    <div
+      class="arco-typography"
+    >
+      ByteDance's content platforms enable people to enjoy content powered by AI technology. We inform, entertain, and inspire people across language, culture and geography.
+    </div>
+    <div
+      class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    >
+      <span
+        class="arco-divider-text arco-divider-text-center"
+      >
+        ByteDance
+      </span>
+    </div>
+    <div
+      class="arco-typography"
+    >
+      Yiming Zhang is the founder and CEO of ByteDance.
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-direction-right"
+    >
+      <div
+        class="resizebox-demo-custom-trigger resizebox-demo-custom-trigger-vertical"
+      >
+        <div
+          class="resizebox-demo-custom-trigger-line"
+        />
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-horizontal arco-resizebox-direction-bottom"
+    >
+      <div
+        class="resizebox-demo-custom-trigger resizebox-demo-custom-trigger-horizontal"
+      >
+        <div
+          class="resizebox-demo-custom-trigger-line"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders ResizeBox/demo/layout.md correctly 1`] = `
+<div
+  class="layout-basic-demo"
+>
+  <section
+    class="arco-layout"
+  >
+    <header
+      class="arco-layout-header"
+    >
+      Header
+    </header>
+    <section
+      class="arco-layout"
+    >
+      <aside
+        class="arco-resizebox arco-layout-sider arco-layout-sider-light"
+        style="width:200px;min-width:150px;max-width:500px;height:200px"
+      >
+        <div
+          class="arco-layout-sider-children"
+        >
+          Sider
+        </div>
+        <div
+          class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-direction-right"
+        >
+          <div
+            class="arco-resizebox-trigger-icon-wrapper"
+          >
+            <span
+              class="arco-resizebox-trigger-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-drag-dot-vertical"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <path
+                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </aside>
+      <main
+        class="arco-layout-content"
+      >
+        Content
+      </main>
+    </section>
+    <footer
+      class="arco-layout-footer"
+    >
+      Footer
+    </footer>
+  </section>
+</div>
+`;
+
+exports[`renders ResizeBox/demo/nested_split.md correctly 1`] = `
+<div>
+  <div
+    class="arco-resizebox-split arco-resizebox-split-horizontal"
+    style="height:200px;width:500px;border:1px solid var(--color-border)"
+  >
+    <div
+      class="arco-resizebox-split-pane first-pane"
+      style="flex-basis:calc(50% - 0px)"
+    >
+      <div
+        class="arco-typography"
+      >
+        Right
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-split-trigger"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-drag-dot-vertical"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-split-pane second-pane"
+    >
+      <div>
+        <div
+          class="arco-resizebox-split arco-resizebox-split-vertical"
+          style="height:200px"
+        >
+          <div
+            class="arco-resizebox-split-pane first-pane"
+            style="flex-basis:calc(50% - 0px)"
+          >
+            <div
+              class="arco-typography"
+            >
+              Top
+            </div>
+          </div>
+          <div
+            class="arco-resizebox-trigger arco-resizebox-trigger-horizontal arco-resizebox-split-trigger"
+          >
+            <div
+              class="arco-resizebox-trigger-icon-wrapper"
+            >
+              <span
+                class="arco-resizebox-trigger-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-drag-dot"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                  <path
+                    d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="arco-resizebox-split-pane second-pane"
+          >
+            <div
+              class="arco-typography"
+            >
+              Bottom
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders ResizeBox/demo/split.md correctly 1`] = `
+<div>
+  <div
+    class="arco-resizebox-split arco-resizebox-split-horizontal"
+    style="height:200px;width:500px;border:1px solid var(--color-border)"
+  >
+    <div
+      class="arco-resizebox-split-pane first-pane"
+      style="flex-basis:calc(50% - 0px)"
+    >
+      <div
+        class="arco-typography"
+      >
+        Right
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-split-trigger"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-drag-dot-vertical"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-split-pane second-pane"
+    >
+      <div
+        class="arco-typography"
+      >
+        Left
+      </div>
+    </div>
+  </div>
+</div>
+`;

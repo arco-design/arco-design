@@ -1,0 +1,174 @@
+@import './token.less';
+
+@list-prefix-cls: ~'@{prefix}-list';
+
+.@{list-prefix-cls} {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: @list-border-radius;
+  font-size: @list-font-size;
+  line-height: @list-line-height;
+  color: @list-color-text;
+  overflow-y: auto;
+
+  &-wrapper {
+    overflow: hidden;
+  }
+
+  .size(@size) {
+    &-@{size} {
+      @ref-padding-vertical-header: ~'list-size-@{size}-padding-vertical-header';
+      @ref-padding-horizontal-header: ~'list-size-@{size}-padding-horizontal-header';
+      @ref-padding-vertical-item: ~'list-size-@{size}-padding-vertical-item';
+      @ref-padding-horizontal-item: ~'list-size-@{size}-padding-horizontal-item';
+
+      > .@{list-prefix-cls}-header {
+        padding: @@ref-padding-vertical-header @@ref-padding-horizontal-header;
+      }
+
+      // 在存在列表嵌套的时候，通过 > 限定 size 仅对其直接子元素生效，避免影响被嵌套的列表的样式
+      // when there is nested list, use > to limit the size to only its direct child elements, so as not to affect
+      // the style of the nested list
+      > .@{list-prefix-cls}-footer,
+      > .@{list-prefix-cls}-content > .@{list-prefix-cls}-item,
+      > .@{list-prefix-cls}-content .@{list-prefix-cls}-row-col > .@{list-prefix-cls}-item,
+      > .@{list-prefix-cls}-content.@{list-prefix-cls}-virtual .@{list-prefix-cls}-item {
+        padding: @@ref-padding-vertical-item @@ref-padding-horizontal-item;
+      }
+    }
+  }
+
+  .border() {
+    border: @list-border-width solid @list-border-color;
+
+    &-header,
+    &-item:not(:last-child) {
+      border-bottom: @list-border-width solid @list-border-color;
+    }
+
+    &-footer {
+      border-top: @list-border-width solid @list-border-color;
+    }
+
+    &-no-border {
+      border: none;
+    }
+
+    &-no-split {
+      .@{list-prefix-cls}-header,
+      .@{list-prefix-cls}-footer,
+      .@{list-prefix-cls}-item {
+        border: none;
+      }
+    }
+  }
+
+  .size(small);
+  .size(default);
+  .size(large);
+  .border();
+
+  &-header {
+    font-size: @list-font-size-header;
+    font-weight: @list-font-weight-header;
+    line-height: @list-line-height-header;
+    color: @list-color-text-header;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+
+    &-main {
+      flex: 1;
+      overflow: hidden;
+
+      .@{list-prefix-cls}-item-action:not(:first-child) {
+        margin-top: @list-action-margin-top;
+      }
+    }
+
+    &-meta {
+      display: flex;
+      align-items: center;
+      padding: @list-meta-padding-vertical @list-meta-padding-horizontal;
+
+      &-avatar {
+        display: flex;
+
+        &:not(:last-child) {
+          margin-right: @list-meta-margin-right-avatar;
+        }
+      }
+
+      &-title {
+        font-weight: @list-meta-font-weight-title;
+        color: @list-meta-color-title;
+
+        &:not(:last-child) {
+          margin-bottom: @list-meta-margin-bottom-title;
+        }
+      }
+
+      &-description {
+        color: @list-mete-color-description;
+      }
+    }
+
+    &-action {
+      display: flex;
+      flex-wrap: nowrap;
+      align-self: center;
+      list-style: none;
+
+      > li {
+        display: inline-block;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: @list-action-gap;
+        }
+      }
+    }
+  }
+
+  &-hoverable &-item:hover {
+    background-color: @list-color-bg-item-hover;
+  }
+
+  &-pagination {
+    float: right;
+    margin-top: @list-pagination-margin-top;
+
+    &::after {
+      display: block;
+      clear: both;
+      height: 0;
+      content: '';
+      visibility: hidden;
+      overflow: hidden;
+    }
+  }
+
+  &-scroll-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-content {
+    flex: 1;
+
+    .@{prefix}-empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+}

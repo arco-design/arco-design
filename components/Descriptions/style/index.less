@@ -1,0 +1,145 @@
+@import './token.less';
+
+@descriptions-prefix-cls: ~'@{prefix}-descriptions';
+
+.descriptions-size(@size) {
+  &-size-@{size} &-title {
+    margin-bottom: ~'@{descriptions-size-@{size}-title-margin-bottom}';
+  }
+
+  &-size-@{size} &-item-label,
+  &-size-@{size} &-item-value {
+    padding-bottom: ~'@{descriptions-item-size-@{size}-spacing-bottom}';
+    padding-right: ~'@{descriptions-border-item-size-@{size}-padding-horizontal}';
+    font-size: ~'@{descriptions-size-@{size}-font-size-text}';
+  }
+
+  &-size-@{size}&-border &-item-label,
+  &-size-@{size}&-border &-item-value {
+    padding: ~'@{descriptions-border-item-size-@{size}-padding-vertical}' ~'@{descriptions-border-item-size-@{size}-padding-horizontal}';
+  }
+
+  &-size-@{size}&-border&-layout-inline-vertical &-item {
+    @_descriptions-padding-vertical: ~'descriptions-border-item-size-@{size}-padding-vertical';
+
+    padding: @@_descriptions-padding-vertical + 5px ~'@{descriptions-border-item-size-@{size}-padding-horizontal}';
+  }
+}
+
+.@{descriptions-prefix-cls} {
+  &-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &-title {
+    font-size: @descriptions-font-size-title;
+    color: @descriptions-color-title;
+    font-weight: @descriptions-font-weight-title;
+    line-height: @line-height-base;
+    margin-bottom: @descriptions-size-default-title-margin-bottom;
+  }
+
+  &-item,
+  &-item-label,
+  &-item-value {
+    padding: 0 4px @descriptions-item-size-default-spacing-bottom 0;
+    text-align: left;
+    box-sizing: border-box;
+    font-size: @descriptions-size-default-font-size-text;
+    line-height: @line-height-base;
+  }
+
+  &-item-label {
+    color: @descriptions-color-text-label;
+    font-weight: @descriptions-font-weight-text-label;
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  &-item-value {
+    color: @descriptions-color-text-value;
+    font-weight: @descriptions-font-weight-text-value;
+  }
+
+  &-item-label-inline,
+  &-item-value-inline {
+    text-align: left;
+    box-sizing: border-box;
+    font-size: @descriptions-size-default-font-size-text;
+    line-height: @line-height-base;
+  }
+
+  &-item-label-inline {
+    color: @descriptions-color-text-label;
+    font-weight: @descriptions-font-weight-text-label;
+    margin-bottom: 2px;
+  }
+
+  &-item-value-inline {
+    color: @descriptions-color-text-value;
+    font-weight: @descriptions-font-weight-text-value;
+  }
+
+  &-layout-inline-horizontal &-item-label-inline {
+    margin-right: 4px;
+  }
+
+  &-layout-inline-horizontal &-item-label-inline,
+  &-layout-inline-horizontal &-item-value-inline {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  &-border&-layout-inline-vertical &-item {
+    padding: @descriptions-border-item-size-default-padding-vertical + 5px
+      @descriptions-border-item-size-default-padding-horizontal;
+  }
+
+  &-border &-body {
+    border: @descriptions-border-width @descriptions-border-style @descriptions-color-border;
+    border-radius: @descriptions-border-radius;
+    overflow: hidden;
+  }
+
+  &-border &-row:not(:last-child) {
+    border-bottom: @descriptions-border-width @descriptions-border-style @descriptions-color-border;
+  }
+
+  &-border &-item,
+  &-border &-item-label,
+  &-border &-item-value {
+    border-right: @descriptions-border-width @descriptions-border-style @descriptions-color-border;
+    padding: @descriptions-border-item-size-default-padding-vertical
+      @descriptions-border-item-size-default-padding-horizontal;
+  }
+
+  &-border &-item-label {
+    background-color: @descriptions-border-color-bg-label;
+  }
+
+  &-border &-item-value:last-child {
+    border-right: none;
+  }
+
+  &-border &-item:last-child {
+    border-right: none;
+  }
+
+  &-border&-layout-vertical &-item-label:last-child {
+    border-right: none;
+  }
+
+  &-layout-vertical:not(&-border) &-item-value:first-child {
+    padding-left: 0;
+  }
+
+  // Size
+  .descriptions-size(mini);
+
+  .descriptions-size(small);
+
+  .descriptions-size(medium);
+
+  .descriptions-size(large);
+}

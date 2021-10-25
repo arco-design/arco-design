@@ -1,0 +1,19 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4">
+<circle cx="24" cy="24" r="7" stroke-linecap="butt"></circle>
+<rect x="23" y="7" width="2" height="2" stroke-linecap="butt"></rect>
+<rect x="23" y="39" width="2" height="2" stroke-linecap="butt"></rect>
+<rect x="41" y="23" width="2" height="2" transform="rotate(90 41 23)" stroke-linecap="butt"></rect>
+<rect x="9" y="23" width="2" height="2" transform="rotate(90 9 23)" stroke-linecap="butt"></rect>
+<rect x="36.7285" y="35.3135" width="2" height="2" transform="rotate(135 36.7285 35.3135)" stroke-linecap="butt"></rect>
+<rect x="14.0996" y="12.6865" width="2" height="2" transform="rotate(135 14.0996 12.6865)" stroke-linecap="butt"></rect>
+<rect x="12.6875" y="36.728" width="2" height="2" transform="rotate(-135 12.6875 36.728)" stroke-linecap="butt"></rect>
+<rect x="35.3145" y="14.1006" width="2" height="2" transform="rotate(-135 35.3145 14.1006)" stroke-linecap="butt"></rect>
+<rect x="23" y="7" width="2" height="2" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="23" y="39" width="2" height="2" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="41" y="23" width="2" height="2" transform="rotate(90 41 23)" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="9" y="23" width="2" height="2" transform="rotate(90 9 23)" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="36.7285" y="35.3135" width="2" height="2" transform="rotate(135 36.7285 35.3135)" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="14.0996" y="12.6865" width="2" height="2" transform="rotate(135 14.0996 12.6865)" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="12.6875" y="36.728" width="2" height="2" transform="rotate(-135 12.6875 36.728)" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+<rect x="35.3145" y="14.1006" width="2" height="2" transform="rotate(-135 35.3145 14.1006)" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></rect>
+</svg>

@@ -1,0 +1,13 @@
+@image-trigger-prefix-cls: ~'@{prefix}-image-trigger';
+
+.@{image-trigger-prefix-cls} {
+  padding: @image-trigger-spacing-padding-vertical @image-trigger-spacing-padding-horizontal;
+  background: @image-trigger-color-bg;
+  border: @image-trigger-size-border solid @image-trigger-color-border;
+  border-radius: @image-trigger-radius;
+
+  .@{prefix}-trigger-arrow {
+    border: @image-trigger-size-border solid @image-trigger-color-border;
+    background-color: @image-trigger-color-bg;
+  }
+}

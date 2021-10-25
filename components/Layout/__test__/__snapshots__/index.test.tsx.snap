@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Layout default 1`] = `
+<section
+  class="arco-layout"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Layout set className globally 1`] = `
+<section
+  class="arco-layout global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Layout set className globally and component set className itself. 1`] = `
+<section
+  class="arco-layout component-class"
+/>
+`;

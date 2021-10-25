@@ -1,0 +1,2102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Timeline/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:40px"
+  >
+    <span
+      class="arco-typography"
+      style="vertical-align:middle;margin-right:8px"
+    >
+      Reverse
+    </span>
+    <button
+      class="arco-switch arco-switch-small arco-switch-type-circle"
+      style="vertical-align:middle"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/direction.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin-bottom:24px"
+  >
+    <span
+      class="arco-typography"
+    >
+      mode:    
+    </span>
+    <div
+      class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="top"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          top
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="bottom"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          bottom
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="alternate"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          alternate
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-top arco-timeline-direction-horizontal"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
+          style="border-top-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          <div
+            class="arco-row arco-row-align-center arco-row-justify-start"
+          >
+            <img
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
+              style="margin-right:16px;margin-bottom:12px"
+              width="40"
+            />
+            <div
+              style="margin-bottom:12px"
+            >
+              Toutiao
+              <div
+                style="font-size:12px;color:#4E5969"
+              >
+                Founded in 2012
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
+          style="border-top-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          <div
+            class="arco-row arco-row-align-center arco-row-justify-start"
+          >
+            <img
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
+              style="margin-right:16px;margin-bottom:12px"
+              width="40"
+            />
+            <div
+              style="margin-bottom:12px"
+            >
+              Xigua Video
+              <div
+                style="font-size:12px;color:#4E5969"
+              >
+                Founded in 2017
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
+          style="border-top-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          <div
+            class="arco-row arco-row-align-center arco-row-justify-start"
+          >
+            <img
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
+              style="margin-right:16px;margin-bottom:12px"
+              width="40"
+            />
+            <div
+              style="margin-bottom:12px"
+            >
+              Pipidance
+              <div
+                style="font-size:12px;color:#4E5969"
+              >
+                Founded in 2018
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
+          style="border-top-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot-custom"
+          >
+            <div
+              class="arco-spin"
+            >
+              <span
+                class="arco-spin-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-loading"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  style="font-size:12px"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/dot.md correctly 1`] = `
+<div
+  style="display:flex"
+>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    style="margin-right:40px"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#00B42A"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-04-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-05-17
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot-custom"
+          >
+            <svg
+              class="arco-icon arco-icon-clock-circle"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="font-size:12px;color:#F53F3F"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-06-22
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:var(--color-fill-4)"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-06-22
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    style="margin-right:40px"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot-custom"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-04-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot-custom"
+          >
+            <svg
+              class="arco-icon arco-icon-check"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M41.678 11.05 19.05 33.678 6.322 20.95"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-05-17
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-06-22
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:var(--color-fill-4)"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-06-22
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-04-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:var(--color-fill-4)"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-05-17
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:var(--color-fill-4)"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-06-22
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/icon.md correctly 1`] = `
+<div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#00B42A"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-22
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#F53F3F"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+          <svg
+            class="arco-icon arco-icon-exclamation-circle-fill"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="color:F53F3F;font-size:12px;margin-left:4px"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-06-22
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#C9CDD4"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The fourth milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+  >
+    <span
+      class="arco-typography"
+    >
+      labelPosition:    
+    </span>
+    <div
+      class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="same"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          same
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="relative"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          relative
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin:20px 0 24px"
+  >
+    <span
+      class="arco-typography"
+    >
+      mode:    
+    </span>
+    <div
+      class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="left"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          left
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="right"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          right
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="alternate"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          alternate
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#52C419"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#F5222D"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/mode.md correctly 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-space-between"
+>
+  <div
+    class="arco-timeline arco-timeline-alternate arco-timeline-direction-vertical"
+    style="flex:1"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-right arco-timeline-direction-vertical"
+    style="flex:1"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/pending.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin-bottom:24px"
+  >
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+      >
+        <div
+          class="arco-checkbox-mask"
+        >
+          <svg
+            class="arco-checkbox-mask-icon"
+            fill="currentColor"
+            height="200"
+            viewBox="0 0 1024 1024"
+            width="200"
+          >
+            <path
+              d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+              p-id="840"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-checkbox-text"
+      >
+        horizontal    
+      </span>
+    </label>
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+      >
+        <div
+          class="arco-checkbox-mask"
+        >
+          <svg
+            class="arco-checkbox-mask-icon"
+            fill="currentColor"
+            height="200"
+            viewBox="0 0 1024 1024"
+            width="200"
+          >
+            <path
+              d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+              p-id="840"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-checkbox-text"
+      >
+        reverse    
+      </span>
+    </label>
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+      >
+        <div
+          class="arco-checkbox-mask"
+        >
+          <svg
+            class="arco-checkbox-mask-icon"
+            fill="currentColor"
+            height="200"
+            viewBox="0 0 1024 1024"
+            width="200"
+          >
+            <path
+              d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+              p-id="840"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-checkbox-text"
+      >
+        pending    
+      </span>
+    </label>
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+      >
+        <div
+          class="arco-checkbox-mask"
+        >
+          <svg
+            class="arco-checkbox-mask-icon"
+            fill="currentColor"
+            height="200"
+            viewBox="0 0 1024 1024"
+            width="200"
+          >
+            <path
+              d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+              p-id="840"
+            />
+          </svg>
+        </div>
+      </span>
+      <span
+        class="arco-checkbox-text"
+      >
+        custom pendingDot
+      </span>
+    </label>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#52C419"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            style="background-color:#F5222D"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot-custom"
+          >
+            <div
+              class="arco-spin"
+            >
+              <span
+                class="arco-spin-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-loading"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  style="font-size:12px"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/type.md correctly 1`] = `
+<div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The first milestone
+          <br />
+          <span
+            class="arco-typography arco-typography-secondary"
+            style="font-size:12px;margin-top:4px"
+          >
+            This is a descriptive message
+          </span>
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2017-03-10
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The second milestone
+          <br />
+          <span
+            class="arco-typography arco-typography-secondary"
+            style="font-size:12px;margin-top:4px"
+          >
+            This is a descriptive message
+          </span>
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2018-05-12
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:dashed"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          The third milestone
+          <br />
+          <span
+            class="arco-typography arco-typography-secondary"
+            style="font-size:12px;margin-top:4px"
+          >
+            This is a descriptive message
+          </span>
+        </div>
+        <div
+          class="arco-timeline-item-label"
+        >
+          2020-09-30
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Timeline/demo/vertical.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin-bottom:24px"
+  >
+    <span
+      class="arco-typography"
+    >
+      mode:     
+    </span>
+    <div
+      class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="left"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          left
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="right"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          right
+        </span>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="alternate"
+        />
+        <span
+          class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+        >
+          <div
+            class="arco-radio-mask"
+          />
+        </span>
+        <span
+          class="arco-radio-text"
+        >
+          alternate
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  >
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-relative"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          <div
+            class="arco-row arco-row-align-start arco-row-justify-start"
+            style="display:inline-flex;align-items:center"
+          >
+            <img
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
+              style="margin-right:16px;margin-bottom:12px"
+              width="40"
+            />
+            <div
+              style="margin-bottom:12px"
+            >
+              Toutiao
+              <div
+                style="font-size:12px;color:#4E5969"
+              >
+                Founded in 2012
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-label"
+      >
+        2012-08
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-relative"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          <div
+            class="arco-row arco-row-align-start arco-row-justify-start"
+            style="display:inline-flex;align-items:center"
+          >
+            <img
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
+              style="margin-right:16px;margin-bottom:12px"
+              width="40"
+            />
+            <div
+              style="margin-bottom:12px"
+            >
+              Xigua Video
+              <div
+                style="font-size:12px;color:#4E5969"
+              >
+                Founded in 2017
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-label"
+      >
+        2017-05
+      </div>
+    </div>
+    <div
+      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-relative arco-timeline-item-last"
+    >
+      <div
+        class="arco-timeline-item-dot-wrapper"
+      >
+        <div
+          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+          style="border-left-style:solid"
+        />
+        <div
+          class="arco-timeline-item-dot-content"
+        >
+          <div
+            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-content-wrapper"
+      >
+        <div
+          class="arco-timeline-item-content"
+        >
+          <div
+            class="arco-row arco-row-align-start arco-row-justify-start"
+            style="display:inline-flex;align-items:center"
+          >
+            <img
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
+              style="margin-right:16px;margin-bottom:12px"
+              width="40"
+            />
+            <div
+              style="margin-bottom:12px"
+            >
+              Pipidance
+              <div
+                style="font-size:12px;color:#4E5969"
+              >
+                Founded in 2018
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item-label"
+      >
+        2018-07
+      </div>
+    </div>
+  </div>
+</div>
+`;

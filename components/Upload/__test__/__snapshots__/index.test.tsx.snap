@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Upload default 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;
+
+exports[`ConfigProvider componentConfig.Upload set className globally 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text global-default-class"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;
+
+exports[`ConfigProvider componentConfig.Upload set className globally and component set className itself. 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text component-class"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;

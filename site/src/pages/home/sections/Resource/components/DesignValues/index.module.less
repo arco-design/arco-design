@@ -1,0 +1,35 @@
+.wrapper {
+  padding: 40px;
+  border: 1px solid #E5E8EF;
+  border-radius: 8px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--color-text-1);
+
+  &::first-letter {
+    color: rgba(var(--arcoblue-6));
+  }
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text-2);
+  margin-top: 6px;
+}
+
+body[arco-theme="dark"] {
+  .wrapper {
+    border-color: #2F2F31;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}

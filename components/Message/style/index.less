@@ -1,0 +1,182 @@
+@import './token.less';
+@import '../../style/mixin.less';
+
+@message-prefix-cls: ~'@{prefix}-message';
+
+.@{message-prefix-cls}-wrapper {
+  width: 100%;
+  position: fixed;
+  z-index: @z-index-message;
+  padding: 0 10px;
+  text-align: center;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  &-top {
+    top: @message-wrapper-margin-top;
+  }
+
+  &-bottom {
+    bottom: @message-wrapper-margin-bottom;
+  }
+}
+
+.@{message-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  padding: @message-padding-top @message-padding-right @message-padding-bottom @message-padding-left;
+  line-height: 1;
+  border-radius: @message-border-radius;
+  border: @message-border-width @message-border-style @message-normal-color-border;
+  margin-bottom: @message-margin-bottom;
+  background-color: @message-normal-color-bg;
+  text-align: center;
+  box-shadow: @message-box-shadow;
+  overflow: hidden;
+  pointer-events: auto;
+  transition: opacity @transition-duration-1 @transition-timing-function-linear;
+
+  &-closable {
+    padding-right: @message-close-icon-left + @message-close-icon-font-size + @message-close-icon-right;
+  }
+
+  &-icon {
+    font-size: @message-font-size-icon;
+    color: @message-normal-color-icon;
+    margin-right: @message-icon-margin-right;
+    vertical-align: middle;
+    display: inline-block;
+    animation: ~'@{prefix}-msg-fade' @transition-duration-1 @transition-timing-function-linear,
+      ~'@{prefix}-msg-fade' @transition-duration-4 @transition-timing-function-overshoot;
+  }
+
+  &-content {
+    vertical-align: middle;
+    color: @message-normal-color-content;
+    font-size: @message-font-size-content;
+  }
+
+  &-info {
+    background-color: @message-info-color-bg;
+    border-color: @message-info-color-border;
+  }
+
+  &-info &-icon {
+    color: @message-info-color-icon;
+  }
+
+  &-info &-content {
+    color: @message-info-color-content;
+  }
+
+  &-success {
+    background-color: @message-success-color-bg;
+    border-color: @message-success-color-border;
+  }
+
+  &-success &-icon {
+    color: @message-success-color-icon;
+  }
+
+  &-success &-content {
+    color: @message-success-color-content;
+  }
+
+  &-warning {
+    background-color: @message-warning-color-bg;
+    border-color: @message-warning-color-border;
+  }
+
+  &-warning &-icon {
+    color: @message-warning-color-icon;
+  }
+
+  &-warning &-content {
+    color: @message-warning-color-content;
+  }
+
+  &-error {
+    background-color: @message-error-color-bg;
+    border-color: @message-error-color-border;
+  }
+
+  &-error &-icon {
+    color: @message-error-color-icon;
+  }
+
+  &-error &-content {
+    color: @message-error-color-content;
+  }
+
+  &-loading {
+    background-color: @message-loading-color-bg;
+    border-color: @message-loading-color-border;
+  }
+
+  &-loading &-icon {
+    color: @message-loading-color-icon;
+  }
+
+  &-loading &-content {
+    color: @message-loading-color-content;
+  }
+
+  &-close-btn {
+    position: absolute;
+    top: @message-close-icon-top;
+    right: @message-close-icon-right;
+    color: @message-color-close-icon;
+    font-size: @message-close-icon-font-size;
+
+    > svg {
+      position: relative;
+    }
+  }
+
+  .icon-hover(
+    @message-prefix-cls,
+    @message-close-icon-font-size,
+    @message-close-icon-font-size + 8px
+  );
+}
+
+.fadeMessage-enter,
+.fadeMessage-appear {
+  opacity: 0;
+}
+.fadeMessage-enter-active,
+.fadeMessage-appear-active {
+  opacity: 1;
+  transition: opacity @transition-duration-1 @transition-timing-function-linear;
+}
+
+.fadeMessage-exit {
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fadeMessage-exit-active {
+  opacity: 0;
+  height: 0;
+  transition: all @transition-duration-3 @transition-timing-function-standard;
+}
+
+@keyframes ~'@{prefix}-msg-fade' {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ~'@{prefix}-msg-scale' {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

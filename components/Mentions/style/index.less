@@ -1,0 +1,35 @@
+@import './token.less';
+@mentions-prefix-cls: ~'@{prefix}-mentions';
+
+.@{mentions-prefix-cls} {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  vertical-align: middle;
+  white-space: pre-wrap;
+
+  &-textarea,
+  &-measure {
+    padding: @mentions-padding-vertical @mentions-padding-horizontal;
+    font-size: @mentions-font-size;
+    line-height: @mentions-line-height;
+    white-space: inherit;
+  }
+
+  &-textarea {
+    resize: none;
+  }
+
+  &-measure,
+  &-align-textarea &-measure-trigger {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

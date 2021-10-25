@@ -1,0 +1,13 @@
+{
+  "name": "@arco-design/web-react-icon",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./index.js",
+  "module": "./index.es.js",
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "devDependencies": {},
+  "sideEffects": false
+}

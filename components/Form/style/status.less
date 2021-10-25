@@ -1,0 +1,184 @@
+// copy from select
+.select-color (@prefixCls, @status) {
+  .@{prefixCls}:not(.@{prefixCls}-disabled) {
+    .@{prefixCls}-view {
+      background-color: ~'@{form-color-bg_@{status}}';
+      border-color: ~'@{form-color-border_@{status}}';
+    }
+
+    &:hover {
+      .@{prefixCls}-view {
+        background-color: ~'@{form-color-bg_@{status}_hover}';
+        border-color: ~'@{form-color-border_@{status}_hover}';
+      }
+    }
+  }
+
+  .@{prefixCls}:not(.@{prefixCls}-disabled).@{prefixCls}-focused {
+    .@{prefixCls}-view {
+      background-color: ~'@{form-color-bg_@{status}_focus}';
+      border-color: ~'@{form-color-border_@{status}_focus}';
+      box-shadow: 0 0 0 ~'@{form-size-shadow_@{status}_focus}' ~'@{form-color-shadow_@{status}_focus}';
+    }
+  }
+}
+
+.picker(@status) {
+  .@{prefix}-picker:not(.@{prefix}-picker-disabled) {
+    border-color: ~'@{form-color-border_@{status}}';
+    background-color: ~'@{form-color-bg_@{status}}';
+
+    &:hover {
+      border-color: ~'@{form-color-border_@{status}_hover}';
+      background-color: ~'@{form-color-bg_@{status}_hover}';
+    }
+  }
+
+  .@{prefix}-picker-focused:not(.@{prefix}-picker-disabled) {
+    &,
+    &:hover {
+      border-color: ~'@{form-color-border_@{status}_focus}';
+      background-color: ~'@{form-color-bg_@{status}_focus}';
+      box-shadow: 0 0 0 ~'@{form-size-shadow_@{status}_focus}' ~'@{form-color-shadow_@{status}_focus}';
+    }
+  }
+}
+
+.validate-status (@status) {
+  /** input， input number **/
+  // copy from input
+
+  & {
+    // 禁用优先级u高于status
+    .@{prefix}-input:not(.@{prefix}-input-disabled),
+    .@{prefix}-input-inner-wrapper:not(.@{prefix}-input-inner-wrapper-disabled),
+    .@{prefix}-textarea:not(.@{prefix}-textarea-disabled) {
+      .@{prefix}-form-item-status-@{status} & {
+        border-color: ~'@{form-color-border_@{status}}';
+        background-color: ~'@{form-color-bg_@{status}}';
+
+        &:hover {
+          border-color: ~'@{form-color-border_@{status}_hover}';
+          background-color: ~'@{form-color-bg_@{status}_hover}';
+        }
+      }
+    }
+
+    .@{prefix}-input-inner-wrapper,
+    .@{prefix}-textarea {
+      .@{prefix}-form-item-status-@{status} &&-focus,
+      .@{prefix}-form-item-status-@{status} &&-focus:hover {
+        border-color: ~'@{form-color-border_@{status}_focus}';
+        background-color: ~'@{form-color-bg_@{status}_focus}';
+        box-shadow: 0 0 0 ~'@{form-size-shadow_@{status}_focus}' ~'@{form-color-shadow_@{status}_focus}';
+      }
+    }
+
+    // 单独input ，没有前后缀
+    .@{prefix}-input {
+      .@{prefix}-form-item-status-@{status} &:focus,
+      .@{prefix}-form-item-status-@{status} &:focus:hover {
+        border-color: ~'@{form-color-border_@{status}_focus}';
+        background-color: ~'@{form-color-bg_@{status}_focus}';
+        box-shadow: 0 0 0 ~'@{form-size-shadow_@{status}_focus}' ~'@{form-color-shadow_@{status}_focus}';
+      }
+    }
+
+    // 前后缀 或者清楚图标时，input不设置背景色
+    .@{prefix}-form-item-status-@{status} .@{prefix}-input-inner-wrapper .@{prefix}-input {
+      background: none;
+      box-shadow: none;
+
+      &:hover {
+        background: none;
+        box-shadow: none;
+      }
+    }
+
+    .@{prefix}-form-item-status-@{status} {
+      /** select **/
+      .select-color(~'@{prefix}-select', @status);
+
+      /** cascader **/
+      .select-color(~'@{prefix}-cascader', @status);
+
+      /** treeselect **/
+      .select-color(~'@{prefix}-tree-select', @status);
+
+      /** Datepicker **/
+      .picker(@status);
+    }
+  }
+
+  .@{prefix}-form-item-status-@{status} {
+    .@{form-prefix-cls}-message-help {
+      color: ~'@{form-color-tip-text_@{status}}';
+    }
+    .@{form-prefix-cls}-item-feedback {
+      color: ~'@{form-color-tip-icon-text_@{status}}';
+    }
+  }
+}
+.validate-status(validating);
+
+.validate-status(success);
+
+.validate-status(warning);
+
+.validate-status(error);
+
+.@{form-prefix-cls}-item-control-children {
+  position: relative;
+}
+
+.@{form-prefix-cls}-item-feedback {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  font-size: 14px;
+  transform: translateY(-50%);
+
+  .@{prefix}-icon-loading {
+    font-size: 12px;
+  }
+}
+
+.@{form-prefix-cls}-item-has-feedback {
+  .select-view(@prefix) {
+    .@{prefix}.@{prefix}-multiple .@{prefix}-view,
+    .@{prefix}.@{prefix}-single .@{prefix}-view {
+      padding-right: 28px;
+    }
+
+    .@{prefix}.@{prefix}-multiple .@{prefix}-suffix {
+      padding-right: 0;
+    }
+  }
+
+  .@{prefix}-input,
+  .@{prefix}-input-inner-wrapper,
+  .@{prefix}-textarea {
+    padding-right: 28px;
+  }
+
+  .@{prefix}-input-number-mode-embed .@{prefix}-input-number-step-layer {
+    right: 24px;
+  }
+
+  .select-view(~'@{prefix}-select');
+  .select-view(~'@{prefix}-cascader');
+  .select-view(~'@{prefix}-tree-select');
+
+  // datepicker timepicker
+  .@{prefix}-picker {
+    padding-right: 28px;
+  }
+
+  .@{prefix}-picker-suffix {
+    .@{prefix}-picker-suffix-icon,
+    .@{prefix}-picker-clear-icon {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}

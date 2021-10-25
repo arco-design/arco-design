@@ -1,0 +1,824 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Grid/demo/adaptation.md correctly 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+>
+  <div
+    class="arco-col arco-col-xs-2 arco-col-sm-4 arco-col-md-6 arco-col-lg-8 arco-col-xl-10 arco-col-xxl-8"
+  >
+    Col
+  </div>
+  <div
+    class="arco-col arco-col-xs-20 arco-col-sm-16 arco-col-md-12 arco-col-lg-8 arco-col-xl-4 arco-col-xxl-8"
+  >
+    Col
+  </div>
+  <div
+    class="arco-col arco-col-xs-2 arco-col-sm-4 arco-col-md-6 arco-col-lg-8 arco-col-xl-10 arco-col-xxl-8"
+  >
+    Col
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/adaptation_object.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+  >
+    <div
+      class="arco-col arco-col-xs-5 arco-col-xs-offset-1 arco-col-lg-6 arco-col-lg-offset-2"
+    >
+      Col
+    </div>
+    <div
+      class="arco-col arco-col-xs-11 arco-col-xs-offset-1 arco-col-lg-6 arco-col-lg-offset-2"
+    >
+      Col
+    </div>
+    <div
+      class="arco-col arco-col-xs-5 arco-col-xs-offset-1 arco-col-lg-6 arco-col-lg-offset-2"
+    >
+      Col
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/basic.md correctly 1`] = `
+<div
+  class="grid-demo-background"
+  style="width:100%"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col arco-col-24"
+    >
+      <div>
+        24 - 100%
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col arco-col-12"
+    >
+      <div>
+        12 - 50%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-12"
+    >
+      <div>
+        12 - 50%
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col arco-col-8"
+    >
+      <div>
+        8 - 33.33%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-8"
+    >
+      <div>
+        8 - 33.33%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-8"
+    >
+      <div>
+        8 - 33.33%
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col arco-col-6"
+    >
+      <div>
+        6 - 25%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+    >
+      <div>
+        6 - 25%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+    >
+      <div>
+        6 - 25%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+    >
+      <div>
+        6 - 25%
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+  >
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        4 - 16.66%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        4 - 16.66%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        4 - 16.66%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        4 - 16.66%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        4 - 16.66%
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        4 - 16.66%
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/flex-align.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      垂直顶部对齐
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:40px;background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-6"
+      style="height:90px;line-height:90px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:48px;line-height:48px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:120px;line-height:120px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:60px;line-height:60px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+  </div>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      垂直居中对齐
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start grid-demo"
+    style="margin-bottom:40px;background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-6"
+      style="height:90px;line-height:90px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:48px;line-height:48px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:120px;line-height:120px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:60px;line-height:60px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+  </div>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      垂直底部对齐
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-end arco-row-justify-start grid-demo"
+    style="margin-bottom:40px;background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-6"
+      style="height:90px;line-height:90px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:48px;line-height:48px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:120px;line-height:120px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="height:60px;line-height:60px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      容器左排列
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:40px;background:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+  </div>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      容器居中排列
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-center grid-demo"
+    style="margin-bottom:40px;background:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+  </div>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      容器右排列
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-end grid-demo"
+    style="margin-bottom:40px;background:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+  </div>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      容器分散排列
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-space-around grid-demo"
+    style="margin-bottom:40px;background:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+  </div>
+  <p
+    style="font-size:12px;color:#141f33"
+  >
+    <span
+      class="arco-typography"
+    >
+      容器等距排列
+    </span>
+  </p>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-space-between grid-demo"
+    style="margin-bottom:40px;background:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-4"
+    >
+      <div>
+        col - 4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/gutter.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-left"
+    >
+      Horizontal
+    </span>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-gutter-demo"
+    style="margin-left:-12px;margin-right:-12px"
+  >
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:12px;padding-right:12px"
+    >
+      <div>
+        col - 12
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-12"
+      style="padding-left:12px;padding-right:12px"
+    >
+      <div>
+        col - 12
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-left"
+    >
+      Responsive
+    </span>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-gutter-demo"
+    style="margin-left:-16px;margin-right:-16px"
+  >
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:16px;padding-right:16px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:16px;padding-right:16px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:16px;padding-right:16px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:16px;padding-right:16px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-left"
+    >
+      Horizontal and Vertical
+    </span>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-gutter-demo"
+    style="margin-left:-12px;margin-right:-12px;margin-top:-6px;margin-bottom:-6px"
+  >
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-6"
+      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+    >
+      <div>
+        col - 6
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/offset.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px;background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-8"
+    >
+      col - 8
+    </div>
+    <div
+      class="arco-col arco-col-8 arco-col-offset-8"
+    >
+      col - 8 | offset - 8
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px;background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-6 arco-col-offset-8"
+    >
+      col - 6 | offset - 8
+    </div>
+    <div
+      class="arco-col arco-col-6 arco-col-offset-4"
+    >
+      col - 6 | offset - 4
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-12 arco-col-offset-8"
+    >
+      col - 12 | offset - 8
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/order.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+  >
+    <div
+      class="arco-col arco-col-order-4 arco-col-6"
+    >
+      <div>
+        1 col-order-4
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-order-3 arco-col-6"
+    >
+      <div>
+        2 col-order-3
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-order-2 arco-col-6"
+    >
+      <div>
+        3 col-order-2
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-order-1 arco-col-6"
+    >
+      <div>
+        4 col-order-1
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Grid/demo/push_pull.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px;background-color:var(--color-fill-2)"
+  >
+    <div
+      class="arco-col arco-col-8 arco-col-push-16"
+    >
+      col - 8 | push - 16
+    </div>
+    <div
+      class="arco-col arco-col-16 arco-col-pull-8"
+    >
+      col - 16 | pull - 8
+    </div>
+  </div>
+</div>
+`;

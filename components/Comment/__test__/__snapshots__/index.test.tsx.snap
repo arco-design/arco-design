@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Comment default 1`] = `
+<div
+  class="arco-comment"
+>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Comment set className globally 1`] = `
+<div
+  class="arco-comment global-default-class"
+>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Comment set className globally and component set className itself. 1`] = `
+<div
+  class="arco-comment component-class"
+>
+  <div
+    class="arco-comment-inner"
+  >
+    <div
+      class="arco-comment-inner-content"
+    />
+  </div>
+</div>
+`;

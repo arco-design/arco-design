@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Link default 1`] = `
+<span
+  class="arco-link"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Link set className globally 1`] = `
+<span
+  class="arco-link global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Link set className globally and component set className itself. 1`] = `
+<span
+  class="arco-link component-class"
+/>
+`;

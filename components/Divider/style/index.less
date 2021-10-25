@@ -1,0 +1,56 @@
+@import './token.less';
+
+@divider-prefix-cls: ~'@{prefix}-divider';
+
+.@{divider-prefix-cls} {
+  &-horizontal {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin: @divider-margin-vertical 0;
+    border-bottom: @divider-size @divider-line-style @divider-color-bg;
+    clear: both;
+
+    &.@{divider-prefix-cls}-with-text {
+      margin: @divider-margin-vertical_text 0;
+    }
+  }
+
+  &-vertical {
+    display: inline-block;
+    min-width: 1px;
+    max-width: 1px;
+    height: 1em;
+    margin: 0 @divider-margin-horizontal;
+    border-left: @divider-size @divider-line-style @divider-color-bg;
+    vertical-align: middle;
+  }
+
+  // 仅水平分割线才支持文字，只考虑水平情况
+  &-text {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    padding: 0 @divider-margin-text;
+    font-size: @divider-font-size;
+    font-weight: @divider-font-weight;
+    line-height: 2;
+    background: var(--color-bg-2);
+    color: @divider-color-text;
+    transform: translateY(-50%);
+
+    &-center {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-left {
+      left: @divider-position-text-left;
+    }
+
+    &-right {
+      right: @divider-position-text-right;
+    }
+  }
+}

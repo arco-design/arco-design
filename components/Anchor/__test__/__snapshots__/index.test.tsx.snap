@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Anchor default 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <div
+      class="arco-anchor"
+    >
+      <div
+        class="arco-anchor-list"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Anchor set className globally 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <div
+      class="arco-anchor global-default-class"
+    >
+      <div
+        class="arco-anchor-list"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Anchor set className globally and component set className itself. 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <div
+      class="arco-anchor component-class"
+    >
+      <div
+        class="arco-anchor-list"
+      />
+    </div>
+  </div>
+</div>
+`;

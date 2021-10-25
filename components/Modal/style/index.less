@@ -1,0 +1,219 @@
+@import './token.less';
+
+@modal-prefix-cls: ~'@{prefix}-modal';
+
+.@{modal-prefix-cls}-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: @z-index-modal;
+  display: none;
+  background-color: var(--color-mask-bg);
+}
+
+.@{modal-prefix-cls}-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: @z-index-modal;
+  overflow: auto;
+
+  &-no-mask {
+    pointer-events: none;
+
+    .@{modal-prefix-cls} {
+      pointer-events: auto;
+    }
+  }
+
+  &&-align-center {
+    text-align: center;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      height: 100%;
+      width: 0;
+    }
+
+    .@{modal-prefix-cls} {
+      top: 0;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+}
+
+.@{modal-prefix-cls} {
+  position: relative;
+  margin: 0 auto;
+  top: @modal-margin-top;
+  width: @modal-default-size-width;
+  border-radius: @modal-border-radius;
+  border: @modal-border-width solid @modal-color-border;
+  background-color: var(--color-bg-3);
+  line-height: @line-height-base;
+  text-align: left;
+  white-space: initial;
+  box-shadow: @modal-box-shadow;
+  box-sizing: border-box;
+
+  &-header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 @modal-default-padding-horizontal;
+    border-bottom: @border-1 solid @modal-color-border;
+    height: @modal-default-size-header-height;
+    display: flex;
+    align-items: center;
+
+    .@{modal-prefix-cls}-title {
+      flex: 1;
+      text-align: @modal-default-align-header;
+    }
+  }
+
+  &-content {
+    position: relative;
+    padding: @modal-default-padding-content-vertical @modal-default-padding-horizontal;
+    color: @modal-color-content-text;
+    font-size: @modal-font-content-size;
+  }
+
+  &-footer {
+    border-top: @border-1 solid @modal-color-border;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    padding: @modal-default-padding-footer-vertical @modal-default-padding-horizontal;
+
+    > .@{prefix}-btn {
+      margin-left: @modal-margin-footer-button-left;
+
+      &:only-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  & &-close-icon {
+    position: absolute;
+    right: @modal-position-close-icon-right +
+      ((@icon-hover-size-default-height - @modal-font-size-close-icon) / 2);
+    top: ((@modal-default-size-header-height - @modal-font-size-close-icon) / 2);
+    font-size: @modal-font-size-close-icon;
+    cursor: pointer;
+    color: @modal-color-close-icon;
+  }
+
+  &-title {
+    color: @modal-color-header-text;
+    font-size: @modal-font-header-size;
+    font-weight: @modal-font-header-weight;
+
+    .@{prefix}-icon {
+      font-size: @modal-size-tip-icon;
+      margin-right: @modal-margin-tip-icon-right;
+      // round是因为带有小数的时候会抖动一下。 这么计算是为了在修改@modal-font-header-size这个token时，vertical-align跟着调整，保证对齐
+      vertical-align: round(-(@modal-size-tip-icon * 0.2)) + ((@modal-font-header-size - 14px) / 2);
+
+      &-info-circle-fill {
+        color: @color-primary-6;
+      }
+
+      &-check-circle-fill {
+        color: @color-success-6;
+      }
+
+      &-exclamation-circle-fill {
+        color: @color-warning-6;
+      }
+
+      &-close-circle-fill {
+        color: @color-danger-6;
+      }
+    }
+  }
+}
+
+// 简洁模式
+.@{modal-prefix-cls}-simple {
+  padding: @modal-simple-padding-top @modal-simple-padding-horizontal @modal-simple-padding-bottom;
+  width: @modal-simple-size-width;
+
+  .@{modal-prefix-cls}-header,
+  .@{modal-prefix-cls}-footer {
+    border: none;
+    padding: 0;
+    height: unset;
+  }
+
+  .@{modal-prefix-cls}-header {
+    margin-bottom: @modal-simple-margin-content-top;
+  }
+
+  .@{modal-prefix-cls}-title {
+    text-align: @modal-simple-align-header;
+  }
+
+  .@{modal-prefix-cls}-footer {
+    text-align: center;
+    margin-top: @modal-simple-margin-footer-top;
+  }
+
+  .@{modal-prefix-cls}-content {
+    padding: 0;
+  }
+}
+
+.zoomModal-enter,
+.zoomModal-appear {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.zoomModal-enter-active,
+.zoomModal-appear-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity @transition-duration-4 @transition-timing-function-overshoot,
+    transform @transition-duration-4 @transition-timing-function-overshoot;
+}
+
+.zoomModal-exit {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.zoomModal-exit-active {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+  transition: opacity @transition-duration-4 @transition-timing-function-overshoot,
+    transform @transition-duration-4 @transition-timing-function-overshoot;
+}
+
+.fadeModal-enter,
+.fadeModal-appear {
+  opacity: 0;
+}
+
+.fadeModal-enter-active,
+.fadeModal-appear-active {
+  opacity: 1;
+  transition: opacity @transition-duration-4 @transition-timing-function-overshoot;
+}
+
+.fadeModal-exit {
+  opacity: 1;
+}
+
+.fadeModal-exit-active {
+  opacity: 0;
+  transition: opacity @transition-duration-4 @transition-timing-function-overshoot;
+}

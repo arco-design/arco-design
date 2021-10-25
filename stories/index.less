@@ -1,0 +1,29 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@dark: #00a0e9;
+@light: rgba(0,160,233,0.7);
+.story-grid-wrapper {
+  .dark,
+  .light {
+    height: 120px;
+    line-height: 120px;
+    color: #fff;
+    text-align: center;
+    // overflow: hidden;
+  }
+  .dark {
+    background-color: @dark;
+  }
+  .light {
+    background-color: @light;
+  }
+}

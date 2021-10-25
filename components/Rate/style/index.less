@@ -1,0 +1,91 @@
+@import './token.less';
+
+@prefixCls: ~'@{prefix}-rate';
+
+.@{prefixCls} {
+  display: inline-block;
+  user-select: none;
+
+  &-disabled {
+    cursor: not-allowed;
+  }
+
+  &-inner {
+    // flex 消除 inline-block 导致的父元素被多撑开几个像素
+    display: flex;
+    align-items: center;
+    min-height: @rate-min-height;
+    font-size: @rate-font-size;
+    line-height: 1;
+  }
+
+  &-character {
+    position: relative;
+    color: @rate-color-bg_default;
+    transition: transform @transition-duration-2 @transition-timing-function-standard;
+
+    &:not(:last-child) {
+      margin-right: @rate-gap-size;
+    }
+
+    &-left,
+    &-right {
+      transition: inherit;
+
+      // float 消除 inline-block 导致的父元素被多撑开几个像素
+      > * {
+        float: left;
+      }
+    }
+
+    &-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      white-space: nowrap;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    &-scale {
+      animation: ~'@{prefix}-rate-scale' @transition-duration-4 @transition-timing-function-standard;
+    }
+
+    &-full &-right {
+      color: @rate-color-bg_active;
+    }
+
+    &-half &-left {
+      color: @rate-color-bg_active;
+      opacity: 1;
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &:not(&-readonly):not(&-disabled) &-character {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      transform: scale(@rate-scale_active);
+    }
+  }
+}
+
+@keyframes ~'@{prefix}-rate-scale' {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(@rate-scale_active);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

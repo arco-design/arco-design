@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Steps default 1`] = `
+<div
+  class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Steps set className globally 1`] = `
+<div
+  class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Steps set className globally and component set className itself. 1`] = `
+<div
+  class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default component-class"
+/>
+`;

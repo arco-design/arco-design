@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Collapse default 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Collapse set className globally 1`] = `
+<div
+  class="arco-collapse arco-collapse-border global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Collapse set className globally and component set className itself. 1`] = `
+<div
+  class="arco-collapse arco-collapse-border component-class"
+/>
+`;

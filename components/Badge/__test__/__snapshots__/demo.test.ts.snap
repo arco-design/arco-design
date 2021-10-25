@@ -1,0 +1,1243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Badge/demo/animate.md correctly 1`] = `
+<div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+    style="margin-bottom:20px"
+  >
+    <span
+      class="arco-badge"
+      style="margin-right:50px"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+           
+        </span>
+      </div>
+      <span
+        class="arco-badge-dot"
+      />
+    </span>
+    <button
+      class="arco-switch arco-switch-type-circle arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-row arco-row-align-center arco-row-justify-start"
+  >
+    <span
+      class="arco-badge"
+      style="margin-right:50px"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+           
+        </span>
+      </div>
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          12
+        </span>
+      </span>
+    </span>
+    <div
+      class="arco-btn-group"
+    >
+      <button
+        class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-plus"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M5 24h38M24 5v38"
+          />
+        </svg>
+      </button>
+      <button
+        class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+        type="button"
+      >
+        <svg
+          class="arco-icon arco-icon-minus"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M5 24h38"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        />
+      </div>
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          9
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        />
+      </div>
+      <span
+        class="arco-badge-dot"
+        style="width:10px;height:10px"
+      />
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        />
+      </div>
+      <span
+        class="arco-badge-custom-dot"
+        style="height:16px;width:16px;font-size:14px"
+      >
+        <svg
+          class="arco-icon arco-icon-clock-circle"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="vertical-align:middle;color:var(--color-text-2)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/color.md correctly 1`] = `
+<div>
+  <div>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-red"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          red
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-orangered"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          orangered
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-orange"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          orange
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-gold"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          gold
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-lime"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          lime
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-green"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          green
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-cyan"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          cyan
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-arcoblue"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          arcoblue
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-purple"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          purple
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-pinkpurple"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          pinkpurple
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-magenta"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          magenta
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-gray"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          gray
+        </span>
+      </span>
+    </span>
+  </div>
+  <br />
+  <div>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#F53F3F"
+          style="background-color:#F53F3F"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #F53F3F
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#7816FF"
+          style="background-color:#7816FF"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #7816FF
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#00B42A"
+          style="background-color:#00B42A"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #00B42A
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#165DFF"
+          style="background-color:#165DFF"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #165DFF
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#FF7D00"
+          style="background-color:#FF7D00"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #FF7D00
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#EB0AA4"
+          style="background-color:#EB0AA4"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #EB0AA4
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#7BC616"
+          style="background-color:#7BC616"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #7BC616
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#86909C"
+          style="background-color:#86909C"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #86909C
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#B71DE8"
+          style="background-color:#B71DE8"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #B71DE8
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#0FC6C2"
+          style="background-color:#0FC6C2"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #0FC6C2
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#FFB400"
+          style="background-color:#FFB400"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #FFB400
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#168CFF"
+          style="background-color:#168CFF"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #168CFF
+        </span>
+      </span>
+    </span>
+    <span
+      class="arco-badge"
+      style="margin-right:24px"
+    >
+       
+      <span
+        class="arco-badge-status-wrapper"
+      >
+        <span
+          class="arco-badge-status-dot arco-badge-color-#FF5722"
+          style="background-color:#FF5722"
+        />
+        <span
+          class="arco-badge-status-text"
+        >
+          #FF5722
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/dot.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge"
+    >
+      <a
+        href="#"
+      >
+        Link
+      </a>
+      <span
+        class="arco-badge-dot"
+        style="margin-right:-6px;margin-top:-2px"
+      />
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-badge"
+    >
+      <svg
+        class="arco-icon arco-icon-notification"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        style="color:#888;font-size:18px;vertical-align:-3px"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M24 9c7.18 0 13 5.82 13 13v13H11V22c0-7.18 5.82-13 13-13Zm0 0V4M6 35h36m-25 7h14"
+        />
+      </svg>
+      <span
+        class="arco-badge-dot"
+        style="margin-right:-2px;margin-top:-2px"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/max_count.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+          <span>
+            <svg
+              class="arco-icon arco-icon-user"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+              />
+              <circle
+                cx="24"
+                cy="15"
+                r="8"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          10+
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+          <span>
+            <svg
+              class="arco-icon arco-icon-user"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+              />
+              <circle
+                cx="24"
+                cy="15"
+                r="8"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          99+
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+          <span>
+            <svg
+              class="arco-icon arco-icon-user"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+              />
+              <circle
+                cx="24"
+                cy="15"
+                r="8"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          999+
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/no-children.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge arco-badge-no-children"
+    >
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          2
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge arco-badge-no-children"
+    >
+      <span
+        class="arco-badge-number"
+        style="background:#E5E6EB;color:#86909C"
+      >
+        <span
+          class=""
+        >
+          2
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge arco-badge-no-children"
+    >
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          16
+        </span>
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-badge arco-badge-no-children"
+    >
+      <span
+        class="arco-badge-number"
+      >
+        <span
+          class=""
+        >
+          99+
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/status.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:24px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-default"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-processing"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-success"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-warning"
+            />
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-error"
+            />
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-default"
+            />
+            <span
+              class="arco-badge-status-text"
+            >
+              Default
+            </span>
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-processing"
+            />
+            <span
+              class="arco-badge-status-text"
+            >
+              Processing
+            </span>
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-success"
+            />
+            <span
+              class="arco-badge-status-text"
+            >
+              Success
+            </span>
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-warning"
+            />
+            <span
+              class="arco-badge-status-text"
+            >
+              Warning
+            </span>
+          </span>
+        </span>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <span
+          class="arco-badge arco-badge-status arco-badge-no-children"
+        >
+          <span
+            class="arco-badge-status-wrapper"
+          >
+            <span
+              class="arco-badge-status-dot arco-badge-status-error"
+            />
+            <span
+              class="arco-badge-status-text"
+            >
+              Error
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Badge/demo/text.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+          <span>
+            <svg
+              class="arco-icon arco-icon-user"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+              />
+              <circle
+                cx="24"
+                cy="15"
+                r="8"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <span
+        class="arco-badge-text"
+      >
+        NEW
+      </span>
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-badge"
+    >
+      <div
+        class="arco-avatar arco-avatar-square"
+        style="font-size:"
+      >
+        <span
+          class="arco-avatar-text"
+        >
+          <span>
+            <svg
+              class="arco-icon arco-icon-user"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
+              />
+              <circle
+                cx="24"
+                cy="15"
+                r="8"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <span
+        class="arco-badge-text"
+      >
+        HOT
+      </span>
+    </span>
+  </div>
+</div>
+`;

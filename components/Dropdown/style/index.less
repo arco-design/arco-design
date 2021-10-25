@@ -1,0 +1,144 @@
+@import '../../style/mixin.less';
+@import './token.less';
+
+@dropdown-prefix-cls: ~'@{prefix}-dropdown';
+
+.@{dropdown-prefix-cls} {
+  &-menu {
+    position: relative;
+    box-sizing: border-box;
+    max-height: @dropdown-max-height;
+    padding: @dropdown-padding-vertical 0;
+    border: 1px solid @dropdown-color-border;
+    border-radius: @dropdown-border-radius;
+    background-color: @dropdown-color-bg;
+    box-shadow: @dropdown-box-shadow;
+    overflow: auto;
+
+    &-hidden {
+      display: none;
+    }
+
+    &-item,
+    &-pop-header {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      height: @dropdown-option-height;
+      padding: 0 @dropdown-option-padding-horizontal;
+      font-size: @dropdown-font-size;
+      line-height: $height;
+      text-align: left;
+      cursor: pointer;
+      // 避免 Trigger 的小箭头位于其上方
+      z-index: 1;
+      .text-ellipsis();
+
+      // default
+      color: @dropdown-option-color-text_default;
+      background-color: @dropdown-option-color-bg_default;
+
+      // selected
+      &.@{dropdown-prefix-cls}-menu-selected {
+        color: @dropdown-option-color-text_selected;
+        background-color: @dropdown-option-color-bg_selected;
+        font-weight: @dropdown-option-font-weight_selected;
+        transition: all @transition-duration-1 @transition-timing-function-linear;
+      }
+
+      // hover
+      &:hover {
+        color: @dropdown-option-color-text_hover;
+        background-color: @dropdown-option-color-bg_hover;
+      }
+
+      // hotkey active
+      &.@{dropdown-prefix-cls}-menu-active {
+        box-shadow: 0 0 0 1px @color-primary-6 inset;
+      }
+
+      // disabled
+      &.@{dropdown-prefix-cls}-menu-disabled {
+        color: @dropdown-option-color-text_disabled;
+        background-color: @dropdown-option-color-bg_disabled;
+        cursor: not-allowed;
+      }
+    }
+
+    &-pop-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .@{dropdown-prefix-cls}-menu-icon-suffix {
+        margin-left: @dropdown-margin-left-suffix-icon;
+      }
+    }
+
+    &-group {
+      &:first-child &-title {
+        margin-top: @dropdown-group-title-margin-top - @dropdown-padding-vertical;
+      }
+    }
+
+    &-group-title {
+      margin-top: @dropdown-group-title-margin-top;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 @dropdown-group-title-padding-horizontal;
+      line-height: @dropdown-group-title-height;
+      font-size: @dropdown-group-title-font-size;
+      color: @dropdown-group-title-color-text;
+      .text-ellipsis();
+    }
+  }
+
+  &-menu-dark {
+    border-color: @dropdown-dark-color-border;
+    background-color: @dropdown-dark-color-bg;
+
+    .@{dropdown-prefix-cls}-menu-item,
+    .@{dropdown-prefix-cls}-menu-pop-header {
+      // default
+      color: @dropdown-dark-option-color-text_default;
+      background-color: @dropdown-dark-option-color-bg_default;
+
+      // selected
+      &.@{dropdown-prefix-cls}-menu-selected {
+        color: @dropdown-dark-option-color-text_selected;
+        background-color: @dropdown-dark-option-color-bg_selected;
+
+        &:hover {
+          color: @dropdown-dark-option-color-text_selected;
+        }
+      }
+
+      // hover
+      &:hover {
+        color: @dropdown-dark-option-color-text_hover;
+        background-color: @dropdown-dark-option-color-bg_hover;
+      }
+
+      // disabled
+      &.@{dropdown-prefix-cls}-menu-disabled {
+        color: @dropdown-dark-option-color-text_disabled;
+        background-color: @dropdown-dark-option-color-bg_disabled;
+      }
+    }
+
+    .@{dropdown-prefix-cls}-menu-group-title {
+      color: @dropdown-dark-group-title-color-text;
+    }
+  }
+
+  &-menu-pop-trigger {
+    // 下拉框的 menu 弹出不需要小箭头
+    .@{prefix}-trigger-arrow {
+      display: none;
+    }
+  }
+
+  &-menu + .@{prefix}-trigger-arrow {
+    background-color: @dropdown-color-bg;
+  }
+}

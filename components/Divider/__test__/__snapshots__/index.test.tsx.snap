@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Divider default 1`] = `
+<div
+  class="arco-divider arco-divider-horizontal"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Divider set className globally 1`] = `
+<div
+  class="arco-divider arco-divider-horizontal global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Divider set className globally and component set className itself. 1`] = `
+<div
+  class="arco-divider arco-divider-horizontal component-class"
+/>
+`;

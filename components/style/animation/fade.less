@@ -1,0 +1,42 @@
+@import '../theme/default.less';
+
+// used by drawer mask
+.fadeInStandard-enter,
+.fadeInStandard-appear {
+  opacity: 0;
+}
+
+.fadeInStandard-enter-active,
+.fadeInStandard-appear-active {
+  opacity: 1;
+  transition: opacity @transition-duration-3 @transition-timing-function-standard;
+}
+
+.fadeInStandard-exit {
+  opacity: 1;
+}
+
+.fadeInStandard-exit-active {
+  opacity: 0;
+  transition: opacity @transition-duration-3 @transition-timing-function-standard;
+}
+
+.fadeIn-enter,
+.fadeIn-appear {
+  opacity: 0;
+}
+
+.fadeIn-enter-active,
+.fadeIn-appear-active {
+  opacity: 1;
+  transition: opacity @transition-duration-1 @transition-timing-function-linear;
+}
+
+.fadeIn-exit {
+  opacity: 1;
+}
+
+.fadeIn-exit-active {
+  opacity: 0;
+  transition: opacity @transition-duration-1 @transition-timing-function-linear;
+}

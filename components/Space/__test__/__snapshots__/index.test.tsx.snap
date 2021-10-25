@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Space default 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Space set className globally 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Space set className globally and component set className itself. 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center component-class"
+/>
+`;

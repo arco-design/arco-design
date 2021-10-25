@@ -1,0 +1,44 @@
+@import '../../../../home/style/token.less';
+.customer-color-handler {
+  width: 100%;
+  height: 664px;
+  background: linear-gradient(180deg, #f6f9fb 0%, rgba(246, 249, 251, 0) 100%);
+  position: absolute;
+
+  &-dark {
+    background: linear-gradient(180deg, #17171a 0%, rgba(23, 23, 26, 0) 100%);
+  }
+}
+
+.customer-case {
+  max-width: @home-max-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+
+  &-sider {
+    margin-top: 80px;
+  }
+
+  &-content {
+    margin-left: 140px;
+    padding-top: 8px;
+  }
+}
+
+.customer-dark {
+  background: linear-gradient(180deg, #17171a 0%, rgba(23, 23, 26, 0) 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .customer-case {
+    &-sider {
+      display: none;
+    }
+
+    &-content {
+      margin-left: 0px;
+    }
+  }
+}

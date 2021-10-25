@@ -1,0 +1,596 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Statistic/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    class="arco-statistic"
+    style="margin-right:60px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      Downloads
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        <span
+          class="arco-statistic-value-int"
+        >
+          <span
+            class="arco-statistic-value-prefix"
+          />
+           125,670
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-statistic"
+  >
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        <span
+          class="arco-statistic-value-int"
+        >
+          <span
+            class="arco-statistic-value-prefix"
+          />
+           40,509
+        </span>
+        <span
+          class="arco-statistic-value-decimal"
+        >
+          .00 
+        </span>
+      </div>
+      <div
+        class="arco-statistic-extra"
+      >
+        Comments
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Statistic/demo/countUp.md correctly 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start"
+>
+  <div
+    class="arco-col arco-col-4"
+  >
+    <div
+      class="arco-statistic"
+    >
+      <div
+        class="arco-statistic-title"
+      >
+        User Growth Rate
+      </div>
+      <div
+        class="arco-statistic-content"
+      >
+        <div
+          class="arco-statistic-value"
+          style="color:#0fbf60"
+        >
+          <span
+            class="arco-statistic-value-int"
+          >
+            <span
+              class="arco-statistic-value-prefix"
+            >
+              <svg
+                class="arco-icon arco-icon-arrow-rise"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
+                />
+                <path
+                  d="m24 6 10 12H14L24 6Z"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <path
+                  d="M26 42H30V68H26z"
+                  transform="rotate(-180 26 42)"
+                />
+                <path
+                  d="M26 42H30V68H26z"
+                  fill="currentColor"
+                  stroke="none"
+                  transform="rotate(-180 26 42)"
+                />
+              </svg>
+            </span>
+             50
+          </span>
+          <span
+            class="arco-statistic-value-decimal"
+          >
+            .32 
+            <span
+              class="arco-statistic-value-suffix"
+            >
+              %
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="display:block;margin-top:10px"
+      type="button"
+    >
+      <span>
+        Start
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-col arco-col-4"
+  >
+    <div
+      class="arco-statistic"
+    >
+      <div
+        class="arco-statistic-title"
+      >
+        Population Growth Rate
+      </div>
+      <div
+        class="arco-statistic-content"
+      >
+        <div
+          class="arco-statistic-value"
+          style="color:#ee4d38"
+        >
+          <span
+            class="arco-statistic-value-int"
+          >
+            <span
+              class="arco-statistic-value-prefix"
+            >
+              <svg
+                class="arco-icon arco-icon-arrow-fall"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M24.008 41.99a.01.01 0 0 1-.016 0l-9.978-11.974A.01.01 0 0 1 14.02 30H33.98a.01.01 0 0 1 .007.016l-9.978 11.975Z"
+                />
+                <path
+                  d="M24 42 14 30h20L24 42Z"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <path
+                  d="M22 6H26V32H22z"
+                />
+                <path
+                  d="M22 6H26V32H22z"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+             2
+          </span>
+          <span
+            class="arco-statistic-value-decimal"
+          >
+            .59 
+            <span
+              class="arco-statistic-value-suffix"
+            >
+              %
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="display:block;margin-top:10px"
+      type="button"
+    >
+      <span>
+        Start
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Statistic/demo/countdown.md correctly 1`] = `
+<div
+  style="display:flex;flex-wrap:wrap"
+>
+  <div
+    class="arco-statistic arco-statistic-countdown"
+    style="margin-right:60px;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      Countdown
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        02:00:00
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-statistic arco-statistic-countdown"
+    style="margin-right:60px;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      Milliseconds
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        02:00:00.000
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-statistic arco-statistic-countdown"
+    style="margin-right:60px;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      Days
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        4 天 0 时 0 分 0 秒
+      </div>
+    </div>
+  </div>
+  <div
+    style="display:inline-block;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic arco-statistic-countdown"
+    >
+      <div
+        class="arco-statistic-title"
+      >
+        Trigger on finish
+      </div>
+      <div
+        class="arco-statistic-content"
+      >
+        <div
+          class="arco-statistic-value"
+        >
+          00:00:05.000
+        </div>
+      </div>
+    </div>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="display:block;margin-top:10px"
+      type="button"
+    >
+      <span>
+        Start
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Statistic/demo/loading.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+     
+    <span
+      class="arco-typography"
+    >
+      Loading
+    </span>
+  </div>
+  <div
+    class="arco-statistic"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      Downloads
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-skeleton arco-skeleton-animate"
+      >
+        <div
+          class="arco-skeleton-content"
+        >
+          <ul
+            class="arco-skeleton-text"
+          >
+            <li
+              class="arco-skeleton-text-row"
+              style="width:100%"
+            />
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
+<div>
+  <div
+    class="arco-statistic"
+    style="margin-right:60px;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      New Users
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        <span
+          class="arco-statistic-value-int"
+        >
+          <span
+            class="arco-statistic-value-prefix"
+          />
+           192393
+        </span>
+        <span
+          class="arco-statistic-value-decimal"
+        >
+           
+          <span
+            class="arco-statistic-value-suffix"
+          >
+            <svg
+              class="arco-icon arco-icon-arrow-rise"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="color:#ee4d38"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
+              />
+              <path
+                d="m24 6 10 12H14L24 6Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M26 42H30V68H26z"
+                transform="rotate(-180 26 42)"
+              />
+              <path
+                d="M26 42H30V68H26z"
+                fill="currentColor"
+                stroke="none"
+                transform="rotate(-180 26 42)"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-statistic"
+    style="margin-right:60px;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      Active Users
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+      >
+        <span
+          class="arco-statistic-value-int"
+        >
+          <span
+            class="arco-statistic-value-prefix"
+          />
+           934230
+        </span>
+        <span
+          class="arco-statistic-value-decimal"
+        >
+           
+          <span
+            class="arco-statistic-value-suffix"
+          >
+            <svg
+              class="arco-icon arco-icon-arrow-fall"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="color:#0fbf60"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M24.008 41.99a.01.01 0 0 1-.016 0l-9.978-11.974A.01.01 0 0 1 14.02 30H33.98a.01.01 0 0 1 .007.016l-9.978 11.975Z"
+              />
+              <path
+                d="M24 42 14 30h20L24 42Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M22 6H26V32H22z"
+              />
+              <path
+                d="M22 6H26V32H22z"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-statistic"
+    style="margin-right:60px;margin-bottom:20px"
+  >
+    <div
+      class="arco-statistic-title"
+    >
+      User Growth Rate
+    </div>
+    <div
+      class="arco-statistic-content"
+    >
+      <div
+        class="arco-statistic-value"
+        style="color:#ee4d38"
+      >
+        <span
+          class="arco-statistic-value-int"
+        >
+          <span
+            class="arco-statistic-value-prefix"
+          >
+            <svg
+              class="arco-icon arco-icon-arrow-rise"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              style="color:#ee4d38"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
+              />
+              <path
+                d="m24 6 10 12H14L24 6Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M26 42H30V68H26z"
+                transform="rotate(-180 26 42)"
+              />
+              <path
+                d="M26 42H30V68H26z"
+                fill="currentColor"
+                stroke="none"
+                transform="rotate(-180 26 42)"
+              />
+            </svg>
+          </span>
+           50
+        </span>
+        <span
+          class="arco-statistic-value-decimal"
+        >
+          .32 
+          <span
+            class="arco-statistic-value-suffix"
+          >
+            %
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Statistic/demo/time.md correctly 1`] = `
+<div
+  class="arco-statistic"
+>
+  <div
+    class="arco-statistic-title"
+  >
+    CreatedTime
+  </div>
+  <div
+    class="arco-statistic-content"
+  >
+    <div
+      class="arco-statistic-value"
+    >
+      <span
+        class="arco-statistic-value-int"
+      >
+        <span
+          class="arco-statistic-value-prefix"
+        />
+         2019/04/10 12:16:53
+      </span>
+    </div>
+  </div>
+</div>
+`;

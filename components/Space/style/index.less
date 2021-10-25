@@ -1,0 +1,31 @@
+@import '../../style/theme/default.less';
+
+@space-prefix-cls: ~'@{prefix}-space';
+
+.@{space-prefix-cls} {
+  display: inline-flex;
+
+  &-vertical {
+    flex-direction: column;
+  }
+
+  &-align-baseline {
+    align-items: baseline;
+  }
+
+  &-align-start {
+    align-items: flex-start;
+  }
+
+  &-align-end {
+    align-items: flex-end;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}

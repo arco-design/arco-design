@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4">
+<rect x="8" y="14" width="24" height="28" rx="1" stroke-linecap="butt"></rect>
+<path d="M24 6H24.01V6.01H24V6Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M32 6H32.01V6.01H32V6Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M40 6H40.01V6.01H40V6Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M40 13H40.01V13.01H40V13Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M40 21H40.01V21.01H40V21Z" fill="currentColor" stroke="none" stroke-width="none" stroke-linecap="butt"></path>
+<path d="M24 6H24.01V6.01H24V6Z" stroke-linecap="butt"></path>
+<path d="M32 6H32.01V6.01H32V6Z" stroke-linecap="butt"></path>
+<path d="M40 6H40.01V6.01H40V6Z" stroke-linecap="butt"></path>
+<path d="M40 13H40.01V13.01H40V13Z" stroke-linecap="butt"></path>
+<path d="M40 21H40.01V21.01H40V21Z" stroke-linecap="butt"></path>
+</svg>

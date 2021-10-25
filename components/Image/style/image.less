@@ -1,0 +1,207 @@
+@image-prefix-cls: ~'@{prefix}-image';
+
+.@{image-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  border-radius: @image-radius;
+  vertical-align: middle;
+
+  &-img {
+    vertical-align: middle;
+    border-radius: inherit;
+    width: 100%;
+    height: auto;
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-footer {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+
+    &-block {
+      flex: auto;
+    }
+  }
+
+  &-caption {
+
+    &-title {
+      font-size: @image-font-size-title;
+      font-weight: @image-font-weight-title;
+    }
+
+    &-description {
+      font-size: @image-font-size-description;
+    }
+  }
+
+  &-actions {
+    padding-left: @image-spacing-actions-left;
+
+    &-list {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &-item {
+      font-size: @image-font-size-actions-item;
+      line-height: 1;
+      margin-left: @image-spacing-actions-item-left;
+      border-radius: @image-radius-actions-item;
+      padding: @image-padding-actions-item-vertical @image-padding-actions-item-horizontal;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &-trigger {
+        padding: @image-spacing-actions-trigger-item-vertical @image-spacing-actions-trigger-item-horizontal;
+        display: inline-block;
+      }
+    }
+  }
+
+  &-with-footer-inner {
+    .@{image-prefix-cls}-footer {
+      background: @image-color-footer_inner-bg;
+      color: @image-color-footer_inner-text;
+      box-sizing: border-box;
+      padding: @image-padding-footer_inner_vertical @image-padding-footer_inner_horizontal;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .@{image-prefix-cls}-caption {
+      &-title {
+        color: @image-color-title_footer_inner-text;
+      }
+
+      &-description {
+        color: @image-color-description_footer_inner-text;
+      }
+    }
+
+    .@{image-prefix-cls}-actions {
+      &-item {
+        &:hover {
+          background: @image-color-actions-item_footer_inner_hover-bg;
+        }
+      }
+    }
+  }
+
+  &-with-footer-outer {
+    .@{image-prefix-cls}-footer {
+      color: @image-color-footer_outer-text;
+      margin-top: @image-spacing-footer-top;
+    }
+
+    .@{image-prefix-cls}-caption {
+      &-title {
+        color: @image-color-title_footer_outer-text;
+      }
+
+      &-description {
+        color: @image-color-description_footer_outer-text;
+      }
+    }
+
+    .@{image-prefix-cls}-actions {
+      &-item {
+        &:hover {
+          background: @image-color-actions-item_footer_outer_hover-bg;
+        }
+      }
+    }
+  }
+
+  &-error {
+    width: 100%;
+    height: 100%;
+    background-color: @image-color-error-bg;
+    color: @image-color-error-text;
+    min-height: @image-size-error-min-height;
+    padding: @image-spacing-error-padding;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-icon {
+      font-size: @image-font-size-error-icon;
+      line-height: @image-font-size-error-icon;
+    }
+
+    &-alt {
+      font-size: @image-font-size-error-text;
+      line-height: @image-line-height-error-text;
+      text-align: center;
+    }
+  }
+
+  &-loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: @image-size-loader-min-height;
+    background-color: @image-color-loader-bg;
+
+    &-spin {
+      font-size: @image-font-size-loader-spin;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      color: @image-color-loader-spin-text;
+      left: 50%;
+      top: 50%;
+      text-align: center;
+      &-text {
+        color: @image-color-loader-spin-text-text;
+        font-size: @image-font-size-loader-spin-text;
+      }
+    }
+  }
+
+  &-simple {
+    &.@{image-prefix-cls}-with-footer-inner {
+      .@{image-prefix-cls}-footer {
+        padding: @image-spacing-footer_inner_simple-vertical @image-spacing-footer_inner_simple-horizontal;
+      }
+    }
+  }
+
+  &-loading {
+    .@{image-prefix-cls}-img {
+      visibility: hidden;
+    }
+  }
+
+  &-trigger {
+    .@{image-prefix-cls}-actions {
+      &-list {
+        flex-direction: column;
+      }
+      &-item {
+        color: @image-color-actions-item_trigger-text;
+        margin-left: 0;
+        &:hover {
+          background: @image-color-actions-item_trigger_hover-bg;
+        }
+      }
+    }
+  }
+}

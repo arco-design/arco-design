@@ -1,0 +1,246 @@
+@preview-prefix-cls: ~'@{prefix}-image-preview';
+
+.center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.@{preview-prefix-cls} {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: @z-index-image-preview;
+
+  &-hide {
+    display: none;
+  }
+
+  &-mask,
+  &-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &-mask {
+    background-color: @image-preview-color-mask-bg;
+  }
+
+  &-img-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    &:before {
+      content: '';
+      width: 0;
+      height: 100%;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .@{preview-prefix-cls}-img {
+      max-width: 100%;
+      max-height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      user-select: none;
+      cursor: grab;
+
+      &.@{image-prefix-cls}-preview-img-moving {
+        cursor: grabbing;
+      }
+    }
+  }
+
+  &-scale-value {
+    padding: @image-preview-spacing-scale-value-vertical
+      @image-preview-spacing-scale-value-horizontal;
+    box-sizing: border-box;
+    font-size: @image-preview-font-size-scale-value;
+    color: @image-preview-color-scale-value-text;
+    background-color: @image-preview-color-scale-value-bg;
+    line-height: initial;
+    .center();
+  }
+
+  &-toolbar {
+    background-color: @image-preview-color-toolbar-bg;
+    border-radius: @image-preview-radius-toolbar;
+    display: flex;
+    align-items: flex-start;
+    padding: @image-preview-spacing-toolbar-vertical @image-preview-spacing-toolbar-horizontal;
+    position: absolute;
+    bottom: @image-preview-position-toolbar-bottom;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &-action {
+      font-size: @image-preview-font-size-action;
+      color: @image-preview-color-action-text;
+      border-radius: @image-preview-radius-action;
+      background-color: @image-preview-color-action-bg;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:not(:last-of-type) {
+        margin-right: @image-preview-margin-action-right;
+      }
+
+      &:hover {
+        background-color: @image-preview-color-action_hover-bg;
+        color: @image-preview-color-action_hover-text;
+      }
+
+      &-disabled,
+      &-disabled:hover {
+        color: @image-preview-color-action_disabled-text;
+        background-color: @image-preview-color-action_disabled-bg;
+        cursor: not-allowed;
+      }
+
+      &-name {
+        font-size: @image-preview-font-size-action-name;
+        padding-right: @image-preview-spacing-action-name-right;
+      }
+
+      &-content {
+        padding: @image-preview-padding-action-content;
+        line-height: 1;
+      }
+    }
+
+    &-simple {
+      padding: @image-preview-spacing-toolbar-vertical_simple
+        @image-preview-spacing-toolbar-horizontal_simple;
+    }
+
+    &-simple &-action {
+      margin-right: 0;
+    }
+  }
+
+  &-trigger.@{image-prefix-cls}-trigger {
+    padding: @image-preview-spacing-trigger-padding-vertical
+      @image-preview-spacing-trigger-padding-horizontal;
+
+    .@{preview-prefix-cls}-toolbar {
+      &-action {
+        text-align: left;
+        margin-right: 0;
+
+        &:not(:last-of-type) {
+          margin-bottom: @image-preview-margin-action-bottom;
+        }
+      }
+    }
+  }
+
+  &-loading {
+    color: @image-preview-color-loading-text;
+    background-color: @image-preview-color-loading-bg;
+    font-size: @image-preview-font-size-loading;
+    padding: @image-preview-spacing-loading-padding;
+    width: @image-preview-size-loading-width;
+    height: @image-preview-size-loading-height;
+    border-radius: @image-preview-radius-loading;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .center();
+  }
+
+  &-close-btn {
+    width: @image-preview-size-close-btn-width;
+    height: @image-preview-size-close-btn-width;
+    line-height: @image-preview-size-close-btn-width;
+    background: @image-preview-color-close-btn-bg;
+    color: @image-preview-color-close-btn-text;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: @image-preview-position-close-btn-right;
+    top: @image-preview-position-close-btn-top;
+    cursor: pointer;
+    font-size: @image-preview-size-close-icon;
+  }
+
+  &-arrow {
+    &-left,
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: @image-preview-arrow-size;
+      height: @image-preview-arrow-size;
+      border-radius: 50%;
+      color: @image-preview-arrow-color-icon;
+      background-color: @image-preview-arrow-color-bg;
+      cursor: pointer;
+      z-index: 2;
+
+      > svg {
+        color: @image-preview-arrow-color-icon;
+        font-size: @image-preview-arrow-font-size;
+      }
+
+      &:hover {
+        background-color: @image-preview-arrow-color-bg_hover;
+      }
+    }
+
+    &-left {
+      left: @image-preview-arrow-position;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-right {
+      top: 50%;
+      transform: translateY(-50%);
+      right: @image-preview-arrow-position;
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      background-color: @image-preview-arrow-color-bg_disabled;
+      color: @image-preview-arrow-color-icon_disabled;
+      > svg {
+        color: @image-preview-arrow-color-icon_disabled;
+      }
+
+      &:hover {
+        background-color: @image-preview-arrow-color-bg_disabled;
+      }
+    }
+  }
+}
+
+/** mask 动效 */
+.fadeImage-enter,
+.fadeImage-appear {
+  opacity: 0;
+}
+
+.fadeImage-enter-active,
+.fadeImage-appear-active {
+  opacity: 1;
+  transition: opacity @transition-duration-4 @transition-timing-function-overshoot;
+}
+
+.fadeImage-exit {
+  opacity: 1;
+}
+
+.fadeImage-exit-active {
+  opacity: 0;
+  transition: opacity @transition-duration-4 @transition-timing-function-overshoot;
+}

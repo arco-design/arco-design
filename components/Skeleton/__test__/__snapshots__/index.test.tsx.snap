@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Skeleton default 1`] = `
+<div
+  class="arco-skeleton"
+>
+  <div
+    class="arco-skeleton-content"
+  >
+    <ul
+      class="arco-skeleton-text"
+    >
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+        style="width:60%"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Skeleton set className globally 1`] = `
+<div
+  class="arco-skeleton global-default-class"
+>
+  <div
+    class="arco-skeleton-content"
+  >
+    <ul
+      class="arco-skeleton-text"
+    >
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+        style="width:60%"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Skeleton set className globally and component set className itself. 1`] = `
+<div
+  class="arco-skeleton component-class"
+>
+  <div
+    class="arco-skeleton-content"
+  >
+    <ul
+      class="arco-skeleton-text"
+    >
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+      />
+      <li
+        class="arco-skeleton-text-row"
+        style="width:60%"
+      />
+    </ul>
+  </div>
+</div>
+`;

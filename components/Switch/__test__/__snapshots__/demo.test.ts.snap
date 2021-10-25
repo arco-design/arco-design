@@ -1,0 +1,823 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Switch/demo/basic.md correctly 1`] = `
+<button
+  class="arco-switch arco-switch-type-circle"
+  type="button"
+>
+  <div
+    class="arco-switch-dot"
+  />
+</button>
+`;
+
+exports[`renders Switch/demo/checked_text.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+      <div
+        class="arco-switch-text-holder"
+      >
+        OFF
+      </div>
+      <div
+        class="arco-switch-text"
+      >
+        OFF
+      </div>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-round arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+      <div
+        class="arco-switch-text-holder"
+      >
+        1
+      </div>
+      <div
+        class="arco-switch-text"
+      >
+        1
+      </div>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+      <div
+        class="arco-switch-text-holder"
+      >
+        <svg
+          class="arco-icon arco-icon-check"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M41.678 11.05 19.05 33.678 6.322 20.95"
+          />
+        </svg>
+      </div>
+      <div
+        class="arco-switch-text"
+      >
+        <svg
+          class="arco-icon arco-icon-check"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M41.678 11.05 19.05 33.678 6.322 20.95"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Switch/demo/disabled.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle arco-switch-checked"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-round"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-round arco-switch-checked"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-line"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-switch arco-switch-type-line arco-switch-checked"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Switch/demo/icon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      >
+        <span
+          class="arco-switch-dot-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-check"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M41.678 11.05 19.05 33.678 6.322 20.95"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-round arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      >
+        <span
+          class="arco-switch-dot-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-check"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M41.678 11.05 19.05 33.678 6.322 20.95"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-switch arco-switch-type-line arco-switch-checked"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      >
+        <span
+          class="arco-switch-dot-icon"
+        >
+          <svg
+            class="arco-icon arco-icon-check"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="M41.678 11.05 19.05 33.678 6.322 20.95"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Switch/demo/loading.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:24px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-type-circle arco-switch-checked arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-type-circle arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-type-round arco-switch-checked arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-type-round arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-type-line arco-switch-checked arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <button
+          class="arco-switch arco-switch-type-line arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-small arco-switch-type-round arco-switch-checked arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-small arco-switch-type-round arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <button
+          class="arco-switch arco-switch-small arco-switch-type-line arco-switch-checked arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <button
+          class="arco-switch arco-switch-small arco-switch-type-line arco-switch-loading"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          >
+            <span
+              class="arco-switch-dot-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Switch/demo/size.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-small arco-switch-type-circle"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-round"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-small arco-switch-type-round"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-line"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-switch arco-switch-small arco-switch-type-line"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders Switch/demo/type.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-circle"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <button
+      class="arco-switch arco-switch-type-round"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <button
+      class="arco-switch arco-switch-type-line"
+      type="button"
+    >
+      <div
+        class="arco-switch-dot"
+      />
+    </button>
+  </div>
+</div>
+`;

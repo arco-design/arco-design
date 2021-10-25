@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Radio.Group default 1`] = `
+<div
+  class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Radio.Group set className globally 1`] = `
+<div
+  class="arco-radio-group arco-radio-size-default arco-radio-mode-outline global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Radio.Group set className globally and component set className itself. 1`] = `
+<div
+  class="arco-radio-group arco-radio-size-default arco-radio-mode-outline component-class"
+/>
+`;

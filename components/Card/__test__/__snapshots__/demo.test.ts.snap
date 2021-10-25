@@ -1,0 +1,1390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Card/demo/basic.md correctly 1`] = `
+<div
+  style="display:flex"
+>
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered"
+    style="width:360px"
+  >
+    <div
+      class="arco-card-header"
+    >
+      <div
+        class="arco-card-header-title"
+      >
+        Arco Card
+      </div>
+      <div
+        class="arco-card-header-extra"
+      >
+        <span
+          class="arco-link"
+        >
+          More
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around the world. Toutiao started out as a news recommendation engine and gradually evolved into a platform delivering content in various formats.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/card-grid.md correctly 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-contain-grid"
+  style="width:100%"
+>
+  <div
+    class="arco-card-body"
+  >
+    <div
+      class="arco-card-grid arco-card-grid-hoverable"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card content
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card content
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid arco-card-grid-hoverable"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card content
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card content
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid arco-card-grid-hoverable"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card content
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card content
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid arco-card-grid-hoverable"
+      style="width:25%"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+          <p
+            style="margin:0"
+          >
+            Card allow to hover
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/hoverable.md correctly 1`] = `
+<div
+  style="display:flex"
+>
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
+    style="width:360px"
+  >
+    <div
+      class="arco-card-header"
+    >
+      <div
+        class="arco-card-header-title"
+      >
+        Arco Card
+      </div>
+      <div
+        class="arco-card-header-extra"
+      >
+        <span
+          class="arco-link"
+        >
+          More
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      Card content
+      <br />
+      Card content
+    </div>
+  </div>
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable card-custom-hover-style"
+    style="width:360px;margin-left:24px"
+  >
+    <div
+      class="arco-card-header"
+    >
+      <div
+        class="arco-card-header-title"
+      >
+        Custom hover style
+      </div>
+      <div
+        class="arco-card-header-extra"
+      >
+        <span
+          class="arco-link"
+        >
+          More
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      Card content
+      <br />
+       Card content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/inner-card.md correctly 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered"
+>
+  <div
+    class="arco-card-header"
+  >
+    <div
+      class="arco-card-header-title"
+    >
+      Arco Card
+    </div>
+  </div>
+  <div
+    class="arco-card-body"
+  >
+    <div
+      class="arco-card arco-card-size-default arco-card-bordered"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-card-header"
+      >
+        <div
+          class="arco-card-header-title"
+        >
+          Inner Card Title
+        </div>
+        <div
+          class="arco-card-header-extra"
+        >
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-card-body"
+      >
+        Inner Card Content
+      </div>
+    </div>
+    <div
+      class="arco-card arco-card-size-default arco-card-bordered"
+    >
+      <div
+        class="arco-card-header"
+      >
+        <div
+          class="arco-card-header-title"
+        >
+          Inner Card Title
+        </div>
+        <div
+          class="arco-card-header-extra"
+        >
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-card-body"
+      >
+        Inner Card Content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/meta.md correctly 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
+  style="width:360px"
+>
+  <div
+    class="arco-card-cover"
+  >
+    <div
+      style="height:204px;overflow:hidden"
+    >
+      <img
+        alt="dessert"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/bb4d85edbb3a40b2b9540f7aec6cac17~tplv-uwbnlip3yd-image.image"
+        style="width:100%;transform:translateY(-20px)"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-card-body"
+  >
+    <div
+      class="arco-card-meta"
+    >
+      <div
+        class="arco-card-meta-content"
+      >
+        <div
+          class="arco-card-meta-title"
+        >
+          Card Title
+        </div>
+        <div
+          class="arco-card-meta-description"
+        >
+          Card content
+          <br />
+           Card content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/no-border.md correctly 1`] = `
+<div
+  style="display:flex;width:100%;box-sizing:border-box;padding:40px;background-color:var(--color-fill-2)"
+>
+  <div
+    class="arco-card arco-card-size-default"
+    style="width:360px"
+  >
+    <div
+      class="arco-card-header"
+    >
+      <div
+        class="arco-card-header-title"
+      >
+        Arco Card
+      </div>
+      <div
+        class="arco-card-header-extra"
+      >
+        <span
+          class="arco-link"
+        >
+          More
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      Card content
+      <br />
+      Card content
+    </div>
+  </div>
+  <div
+    class="arco-card arco-card-size-default arco-card-hoverable"
+    style="width:360px;margin-left:24px"
+  >
+    <div
+      class="arco-card-header"
+    >
+      <div
+        class="arco-card-header-title"
+      >
+        Hover me
+      </div>
+      <div
+        class="arco-card-header-extra"
+      >
+        <span
+          class="arco-link"
+        >
+          More
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      Card content
+      <br />
+      Card content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/only-content.md correctly 1`] = `
+Array [
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
+    style="width:360px;margin-bottom:20px"
+  >
+    <div
+      class="arco-card-body"
+    >
+      <div
+        style="display:flex;align-items:center;justify-content:space-between"
+      >
+        <span
+          style="display:flex;align-items:center;color:#1D2129"
+        >
+          <div
+            class="arco-avatar arco-avatar-circle"
+            style="width:28px;height:28px;font-size:14px;margin-right:8px;background-color:#165DFF"
+          >
+            <span
+              class="arco-avatar-text"
+            >
+              <img
+                alt="avatar"
+                src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+              />
+            </span>
+          </div>
+          <span
+            class="arco-typography"
+          >
+            Username
+          </span>
+        </span>
+        <span
+          class="arco-link"
+        >
+          More
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable card-with-icon-hover"
+    style="width:360px"
+  >
+    <div
+      class="arco-card-body"
+    >
+      <div
+        style="display:flex;align-items:center;justify-content:space-between"
+      >
+        <span
+          style="display:flex;align-items:center;color:#1D2129"
+        >
+          <div
+            class="arco-avatar arco-avatar-circle"
+            style="width:28px;height:28px;font-size:14px;margin-right:8px;background-color:#165DFF"
+          >
+            <span
+              class="arco-avatar-text"
+            >
+              <img
+                alt="avatar"
+                src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+              />
+            </span>
+          </div>
+          <span
+            class="arco-typography"
+          >
+            Username
+          </span>
+        </span>
+        <span
+          class="icon-hover"
+        >
+          <svg
+            class="arco-icon arco-icon-arrow-right"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="4"
+            style="cursor:pointer"
+            viewBox="0 0 48 48"
+            width="1em"
+          >
+            <path
+              d="m27.728 11.27 12.728 12.728-12.728 12.728M5 24h34.295"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders Card/demo/with-actions.md correctly 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered card-with-icon-hover"
+  style="width:360px"
+>
+  <div
+    class="arco-card-cover"
+  >
+    <div
+      style="height:204px;overflow:hidden"
+    >
+      <img
+        alt="dessert"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/bb4d85edbb3a40b2b9540f7aec6cac17~tplv-uwbnlip3yd-image.image"
+        style="width:100%;transform:translateY(-20px)"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-card-body"
+  >
+    <div
+      class="arco-card-meta"
+    >
+      <div
+        class="arco-card-meta-content"
+      >
+        <div
+          class="arco-card-meta-title"
+        >
+          Card Title
+        </div>
+        <div
+          class="arco-card-meta-description"
+        >
+          This is the description
+        </div>
+      </div>
+      <div
+        class="arco-card-meta-footer "
+      >
+        <div
+          class="arco-card-meta-avatar"
+        >
+          <div
+            style="display:flex;align-items:center;color:#1D2129"
+          >
+            <div
+              class="arco-avatar arco-avatar-circle"
+              style="width:24px;height:24px;font-size:12px;margin-right:8px"
+            >
+              <span
+                class="arco-avatar-text"
+              >
+                <img
+                  alt="avatar"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+                />
+              </span>
+            </div>
+            <span
+              class="arco-typography"
+            >
+              Username
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-actions"
+        >
+          <div
+            class="arco-card-actions-right"
+          >
+            <span
+              class="arco-card-actions-item"
+            >
+              <span
+                class="icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-thumb-up"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M7 17v26m35.17-21.394-5.948 18.697a1 1 0 0 1-.953.697H14V19h3l9.403-12.223a1 1 0 0 1 1.386-.196l2.535 1.87a6 6 0 0 1 2.044 6.974L31 19h9.265a2 2 0 0 1 1.906 2.606Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class="arco-card-actions-item"
+            >
+              <span
+                class="icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-share-internal"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M40 35v6H8v-6m1.108-4c1.29-8.868 13.917-15.85 29.392-15.998M30 6l9 9-9 9"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class="arco-card-actions-item"
+            >
+              <span
+                class="icon-hover"
+              >
+                <svg
+                  class="arco-icon arco-icon-more"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                  <path
+                    d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/with-row.md correctly 1`] = `
+<div
+  style="box-sizing:border-box;width:100%;padding:40px;background-color:var(--color-fill-2)"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start"
+    style="margin-bottom:20px;margin-left:-10px;margin-right:-10px"
+  >
+    <div
+      class="arco-col arco-col-8"
+      style="padding-left:10px;padding-right:10px"
+    >
+      <div
+        class="arco-card arco-card-size-default"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          Card content
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-8"
+      style="padding-left:10px;padding-right:10px"
+    >
+      <div
+        class="arco-card arco-card-size-default"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          Card content
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-8"
+      style="padding-left:10px;padding-right:10px"
+    >
+      <div
+        class="arco-card arco-card-size-default"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          Card content
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start"
+    style="margin-left:-10px;margin-right:-10px"
+  >
+    <div
+      class="arco-col arco-col-16"
+      style="padding-left:10px;padding-right:10px"
+    >
+      <div
+        class="arco-card arco-card-size-default"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          Card content
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-col arco-col-8"
+      style="padding-left:10px;padding-right:10px"
+    >
+      <div
+        class="arco-card arco-card-size-default"
+        style="width:100%"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          Card content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Card/demo/with-skeleton.md correctly 1`] = `
+Array [
+  <button
+    class="arco-switch arco-switch-type-circle"
+    style="display:block;margin-left:20px"
+    type="button"
+  >
+    <div
+      class="arco-switch-dot"
+    />
+  </button>,
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered"
+    style="display:inline-block;vertical-align:top;width:384px;margin:20px"
+  >
+    <div
+      class="arco-card-cover"
+    >
+      <div
+        class="arco-skeleton"
+      >
+        <div
+          class="arco-skeleton-header"
+        >
+          <div
+            class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-square"
+            style="width:352px;height:188px;margin:16px 16px 0 16px"
+          />
+        </div>
+        <div
+          class="arco-skeleton-content"
+        >
+          <ul
+            class="arco-skeleton-text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      <div
+        class="arco-card-meta"
+      >
+        <div
+          class="arco-card-meta-content"
+        >
+          <div
+            class="arco-card-meta-title"
+          >
+            <div
+              class="arco-skeleton"
+              style="margin-top:0"
+            >
+              <div
+                class="arco-skeleton-content"
+              >
+                <ul
+                  class="arco-skeleton-text"
+                >
+                  <li
+                    class="arco-skeleton-text-row"
+                    style="width:72px"
+                  />
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-card-meta-description"
+          >
+            <div
+              class="arco-skeleton"
+            >
+              <div
+                class="arco-skeleton-content"
+              >
+                <ul
+                  class="arco-skeleton-text"
+                >
+                  <li
+                    class="arco-skeleton-text-row"
+                    style="width:150px"
+                  />
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-card-meta-footer "
+        >
+          <div
+            class="arco-card-meta-avatar"
+          >
+            <div
+              class="arco-skeleton"
+              style="display:flex;align-items:center;margin-top:4px"
+            >
+              <div
+                class="arco-skeleton-header"
+              >
+                <div
+                  class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
+                  style="width:24px;height:24px"
+                />
+              </div>
+              <div
+                class="arco-skeleton-content"
+              >
+                <ul
+                  class="arco-skeleton-text"
+                >
+                  <li
+                    class="arco-skeleton-text-row"
+                    style="width:64px"
+                  />
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    class="arco-card arco-card-size-default arco-card-bordered"
+    style="display:inline-block;vertical-align:top;width:384px;margin:20px"
+  >
+    <div
+      class="arco-card-header"
+    >
+      <div
+        class="arco-card-header-title"
+      >
+        <div
+          class="arco-skeleton"
+        >
+          <div
+            class="arco-skeleton-content"
+          >
+            <ul
+              class="arco-skeleton-text"
+            >
+              <li
+                class="arco-skeleton-text-row"
+                style="width:72px"
+              />
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-card-header-extra"
+      >
+        <div
+          class="arco-skeleton"
+        >
+          <div
+            class="arco-skeleton-content"
+          >
+            <ul
+              class="arco-skeleton-text"
+              style="width:30px;float:right"
+            >
+              <li
+                class="arco-skeleton-text-row"
+                style="width:100%"
+              />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-body"
+    >
+      <div
+        class="arco-skeleton"
+      >
+        <div
+          class="arco-skeleton-content"
+        >
+          <ul
+            class="arco-skeleton-text"
+          >
+            <li
+              class="arco-skeleton-text-row"
+              style="width:100%"
+            />
+            <li
+              class="arco-skeleton-text-row"
+              style="width:80%"
+            />
+          </ul>
+        </div>
+      </div>
+      <div
+        class="arco-card-meta"
+      >
+        <div
+          class="arco-card-meta-footer "
+        >
+          <div
+            class="arco-card-meta-avatar"
+          >
+            <div
+              class="arco-skeleton"
+              style="display:flex;align-items:center;margin-top:4px"
+            >
+              <div
+                class="arco-skeleton-header"
+              >
+                <div
+                  class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
+                  style="width:24px;height:24px"
+                />
+              </div>
+              <div
+                class="arco-skeleton-content"
+              >
+                <ul
+                  class="arco-skeleton-text"
+                >
+                  <li
+                    class="arco-skeleton-text-row"
+                    style="width:64px"
+                  />
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders Card/demo/with-tab.md correctly 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered"
+  style="width:100%"
+>
+  <div
+    class="arco-card-header"
+  >
+    <div
+      class="arco-card-header-title"
+    >
+      Card with Tab
+    </div>
+    <div
+      class="arco-card-header-extra"
+    >
+      <span
+        class="arco-link"
+      >
+        More
+      </span>
+    </div>
+  </div>
+  <div
+    class="arco-card-body"
+  >
+    <div
+      class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+      style="max-width:350px;margin:-15px"
+    >
+      <div
+        class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+      >
+        <div
+          class="arco-tabs-header-scroll"
+        >
+          <div
+            class="arco-tabs-header-wrapper"
+          >
+            <div
+              class="arco-tabs-header"
+              style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+            >
+              <div
+                class="arco-tabs-header-title arco-tabs-header-title-active"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 0
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-title"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 1
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-title"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 2
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-title"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 3
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-ink"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-tabs-content arco-tabs-content-horizontal"
+      >
+        <div
+          class="arco-tabs-content-inner"
+          style="margin-left:-0%"
+        >
+          <div
+            class="arco-tabs-content-item arco-tabs-content-item-active"
+          >
+            <div
+              class="arco-tabs-pane"
+            >
+              <div
+                style="margin:0px 16px 16px 16px"
+              >
+                Content 0
+                <br />
+                Content 0
+                <br />
+                Content 0
+              </div>
+            </div>
+          </div>
+          <div
+            class="arco-tabs-content-item"
+          />
+          <div
+            class="arco-tabs-content-item"
+          />
+          <div
+            class="arco-tabs-content-item"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

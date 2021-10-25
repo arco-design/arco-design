@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Cascader default 1`] = `
+<div
+  class="arco-cascader arco-cascader-single arco-cascader-size-default"
+  tabindex="0"
+>
+  <div
+    class="arco-cascader-view"
+    title=""
+  >
+    <input
+      class="arco-cascader-view-input"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-cascader-view-value arco-cascader-hidden"
+    />
+    <div
+      class="arco-cascader-suffix"
+    >
+      <div
+        class="arco-cascader-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
+<div
+  class="arco-cascader arco-cascader-single arco-cascader-size-default global-default-class"
+  tabindex="0"
+>
+  <div
+    class="arco-cascader-view"
+    title=""
+  >
+    <input
+      class="arco-cascader-view-input"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-cascader-view-value arco-cascader-hidden"
+    />
+    <div
+      class="arco-cascader-suffix"
+    >
+      <div
+        class="arco-cascader-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Cascader set className globally and component set className itself. 1`] = `
+<div
+  class="arco-cascader arco-cascader-single arco-cascader-size-default component-class"
+  tabindex="0"
+>
+  <div
+    class="arco-cascader-view"
+    title=""
+  >
+    <input
+      class="arco-cascader-view-input"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      class="arco-cascader-view-value arco-cascader-hidden"
+    />
+    <div
+      class="arco-cascader-suffix"
+    >
+      <div
+        class="arco-cascader-arrow-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-down"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

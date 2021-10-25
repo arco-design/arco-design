@@ -1,0 +1,164 @@
+@import './token.less';
+
+@input-number-prefix-cls: ~'@{prefix}-input-number';
+@input-prefix-cls: ~'@{prefix}-input';
+
+.@{input-number-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: @input-number-border-radius;
+
+  .transition() {
+    transition: all @transition-duration-1 @transition-timing-function-linear;
+  }
+
+  &-step-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-color: @input-number-step-button-color-border;
+    background-color: @input-number-step-button-color-bg_default;
+    color: @input-number-step-button-color;
+    cursor: pointer;
+    user-select: none;
+    .transition();
+
+    &:hover {
+      border-color: $background-color;
+      background-color: @input-number-step-button-color-bg_default_hover;
+    }
+
+    &:active {
+      border-color: $background-color;
+      background-color: @input-number-step-button-color-bg_default_active;
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      background-color: @input-number-step-button-color-bg_disabled;
+      color: @input-number-step-button-color_disabled;
+
+      &:hover,
+      &:active {
+        border-color: @input-number-step-button-color-border;
+        background-color: @input-number-step-button-color-bg_disabled_hover;
+      }
+    }
+  }
+
+  &-prefix,
+  &-suffix {
+    .transition();
+  }
+
+  // embed mode
+  &-mode-embed {
+    .@{input-number-prefix-cls}-step-layer {
+      opacity: 0;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      bottom: 4px;
+      width: 18px;
+      border-radius: @input-number-step-layer-border-radius;
+      overflow: hidden;
+      .transition();
+
+      .@{input-number-prefix-cls}-step-button {
+        width: 100%;
+        height: 50%;
+        font-size: 10px;
+      }
+    }
+
+    &:not(.@{input-prefix-cls}-group-wrapper-disabled):hover
+      .@{input-number-prefix-cls}-step-layer {
+      opacity: 1;
+
+      & ~ .@{input-number-prefix-cls}-suffix {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    // 修正 InputNumber hover 时 StepButton 的 hover 背景色
+    .@{input-prefix-cls}-inner-wrapper:not(.@{input-prefix-cls}-inner-wrapper-is-focus) {
+      .@{input-number-prefix-cls}-step-button:not(.@{input-number-prefix-cls}-step-button-disabled):hover {
+        background-color: @input-number-step-button-color-bg_default_active;
+      }
+    }
+  }
+
+  // button mode
+  &-mode-button {
+    .@{input-prefix-cls} {
+      text-align: center;
+
+      &-group {
+        position: relative;
+
+        &-addbefore,
+        &-addafter {
+          padding: 0;
+        }
+
+        .@{input-number-prefix-cls}-step-button {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          border: inherit;
+
+          &:active {
+            border-color: @input-number-step-button-color-bg_default_active;
+          }
+        }
+
+        &-addbefore .@{input-number-prefix-cls}-step-button {
+          left: 0;
+          border-right-color: @input-number-step-button-color-border;
+        }
+
+        &-addafter .@{input-number-prefix-cls}-step-button {
+          right: 0;
+          border-left-color: @input-number-step-button-color-border;
+        }
+      }
+    }
+
+    .size(@size) {
+      &.@{input-number-prefix-cls}-size-@{size} {
+        @width: ~'@{input-number-size-@{size}-step-button-width}';
+
+        .@{input-prefix-cls}-group-addbefore,
+        .@{input-prefix-cls}-group-addafter {
+          width: @width;
+
+          .@{input-number-prefix-cls}-step-button {
+            width: @width;
+          }
+        }
+      }
+    }
+
+    .size(mini);
+    .size(small);
+    .size(default);
+    .size(large);
+  }
+
+  &-readonly {
+    .@{input-number-prefix-cls}-step-button {
+      pointer-events: none;
+      color: @input-number-step-button-color_disabled;
+    }
+  }
+
+  &-illegal-value {
+    input {
+      color: @input-number-color-illegal_value;
+    }
+  }
+}

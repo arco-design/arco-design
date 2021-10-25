@@ -1,0 +1,200 @@
+// 前置后置标签
+.addon(@position, @size-height, @size-font-size) {
+  .item-style {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    width: auto;
+    height: 100%;
+
+    & when (@position = before) {
+      margin-left: -@input-padding-horizontal - 1px;
+      margin-right: -@input-padding-horizontal;
+    }
+
+    & when (@position = after) {
+      margin-left: -@input-padding-horizontal;
+      margin-right: -@input-padding-horizontal - 1px;
+    }
+  }
+
+  // select,input 的边角和边框
+  .border-radius() {
+    & when (@position = before) {
+      border-color: transparent;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    & when (@position = after) {
+      border-color: transparent;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .@{prefix}-input {
+    .item-style();
+    .border-radius();
+  }
+
+  // 作为前置/后置标签时，重写一些select的样式
+  .@{prefix}-select {
+    .item-style();
+
+    .@{prefix}-select-view {
+      border-radius: 0;
+      background-color: inherit;
+      border-color: transparent;
+    }
+
+    &.@{prefix}-select-single {
+      .@{prefix}-select-view {
+        height: 100%;
+      }
+    }
+  }
+}
+
+// 不同尺寸的高度
+.size-height {
+  .height (@size-height, @size-font-size) {
+    .get-padding(@size-height, @size-font-size);
+
+    font-size: @size-font-size;
+  }
+
+  .padding-horizontal(@size) {
+    @padding: ~'input-size-@{size}-padding-horizontal';
+
+    &-group-wrapper-@{size} {
+      .@{input-prefix-cls}-group-addbefore,
+      .@{input-prefix-cls}-group-addafter {
+        padding-left: @@padding;
+        padding-right: @@padding;
+      }
+    }
+
+    &-inner-wrapper&-inner-wrapper-@{size} {
+      padding-left: @@padding;
+      padding-right: @@padding;
+    }
+
+    &-size-@{size} {
+      padding-left: @@padding;
+      padding-right: @@padding;
+    }
+  }
+
+  &-size-mini {
+    line-height: 1.667;
+    font-size: @input-size-mini-font-size;
+    padding-top: (
+      round(@input-size-mini-height - @input-border-width * 2 - $line-height * $font-size) / 2
+    );
+    padding-bottom: (
+      round(@input-size-mini-height - @input-border-width * 2 - $line-height * $font-size) / 2
+    );
+  }
+
+  &-size-small {
+    .height(@input-size-small-height, @input-size-small-font-size);
+  }
+
+  &-size-large {
+    .height(@input-size-large-height, @input-size-large-font-size);
+  }
+
+  .padding-horizontal(mini);
+  .padding-horizontal(small);
+  .padding-horizontal(large);
+}
+
+// 不同尺寸的带有前置后置标签的高度
+.group-size {
+  .size-font-size (@size-input-height, @size-font-size, @suffix-icon-size, @addon-icon-size) {
+    .@{input-prefix-cls}-group {
+      font-size: @size-font-size;
+    }
+
+    .@{input-prefix-cls}-inner-wrapper {
+      .@{input-prefix-cls}-group-prefix,
+      .@{input-prefix-cls}-group-suffix {
+        font-size: @size-font-size;
+
+        > svg {
+          font-size: @suffix-icon-size;
+        }
+      }
+    }
+
+    .@{input-prefix-cls}-group-addbefore,
+    .@{input-prefix-cls}-group-addafter {
+      font-size: @size-font-size;
+      height: @size-input-height - 2;
+
+      > svg {
+        font-size: @addon-icon-size;
+      }
+    }
+
+    .@{input-prefix-cls}-group-addafter {
+      .addon(after, @size-input-height, @size-font-size);
+    }
+
+    .@{input-prefix-cls}-group-addbefore {
+      .addon(before, @size-input-height, @size-font-size);
+    }
+  }
+
+  &&-mini {
+    .size-font-size(
+      @input-size-mini-height,
+      @input-size-mini-font-size,
+      @input-size-mini-icon-suffix-size,
+      @input-size-mini-icon-addon-size
+    );
+  }
+
+  &&-small {
+    .size-font-size(
+      @input-size-small-height,
+      @input-size-small-font-size,
+      @input-size-small-icon-suffix-size,
+      @input-size-small-icon-addon-size
+    );
+  }
+
+  &&-large {
+    .size-font-size(
+      @input-size-large-height,
+      @input-size-large-font-size,
+      @input-size-large-icon-suffix-size,
+      @input-size-large-icon-addon-size
+    );
+  }
+
+  &.@{input-prefix-cls}-custom-height {
+    .size-font-size(
+      @input-size-mini-height,
+      @input-size-default-font-size,
+      @input-size-default-icon-suffix-size,
+      @input-size-default-icon-addon-size
+    );
+
+    .@{input-prefix-cls}-inner-wrapper {
+      height: 100%;
+
+      .@{input-prefix-cls} {
+        height: 100%;
+      }
+
+      .@{input-prefix-cls}-clear-wrapper {
+        height: 100%;
+
+        .@{input-prefix-cls} {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

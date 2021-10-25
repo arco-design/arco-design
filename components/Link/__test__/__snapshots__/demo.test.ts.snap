@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Link/demo/basic.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <a
+      class="arco-link"
+      href="#"
+    >
+       Link 
+    </a>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <a
+      class="arco-link arco-link-disabled"
+      href="#"
+    >
+       Link 
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders Link/demo/dropdown.md correctly 1`] = `
+<div>
+  <span
+    class="arco-link"
+    style="margin-right:40px"
+  >
+    City
+    <svg
+      class="arco-icon arco-icon-down"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      style="font-size:12px;margin-left:6px"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        d="M39.6 17.443 24.043 33 8.487 17.443"
+      />
+    </svg>
+  </span>
+  <span
+    class="arco-link"
+  >
+    City
+    <svg
+      class="arco-icon arco-icon-down"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="4"
+      style="font-size:12px;margin-left:6px"
+      viewBox="0 0 48 48"
+      width="1em"
+    >
+      <path
+        d="M39.6 17.443 24.043 33 8.487 17.443"
+      />
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`renders Link/demo/hoverable.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <span
+      class="arco-link arco-link-hoverless"
+    >
+       Link 
+    </span>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <span
+      class="arco-link arco-link-is-error arco-link-hoverless"
+    >
+       Link 
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders Link/demo/icon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:0"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <a
+          class="arco-link arco-link-with-icon"
+          href="#"
+        >
+          <span
+            class="arco-link-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-link"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="m14.1 25.414-4.95 4.95a6 6 0 0 0 8.486 8.485l8.485-8.485a6 6 0 0 0 0-8.485m7.779.707 4.95-4.95a6 6 0 1 0-8.486-8.485l-8.485 8.485a6 6 0 0 0 0 8.485"
+              />
+            </svg>
+          </span>
+          Hyperlinks
+        </a>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <a
+          class="arco-link arco-link-disabled arco-link-with-icon"
+          href="#"
+        >
+          <span
+            class="arco-link-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-link"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="m14.1 25.414-4.95 4.95a6 6 0 0 0 8.486 8.485l8.485-8.485a6 6 0 0 0 0-8.485m7.779.707 4.95-4.95a6 6 0 1 0-8.486-8.485l-8.485 8.485a6 6 0 0 0 0 8.485"
+              />
+            </svg>
+          </span>
+          Hyperlinks
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:24px"
+      >
+        <a
+          class="arco-link arco-link-with-icon"
+          href="#"
+        >
+          <span
+            class="arco-link-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-edit"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+              />
+            </svg>
+          </span>
+          Hyperlinks
+        </a>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <a
+          class="arco-link arco-link-disabled arco-link-with-icon"
+          href="#"
+        >
+          <span
+            class="arco-link-icon"
+          >
+            <svg
+              class="arco-icon arco-icon-edit"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+              width="1em"
+            >
+              <path
+                d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+              />
+            </svg>
+          </span>
+          Hyperlinks
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Link/demo/status.md correctly 1`] = `
+<div
+  style="display:grid;grid-template-columns:repeat(2, 100px);grid-column-gap:24px"
+>
+  <a
+    class="arco-link arco-link-is-error"
+    href="#"
+  >
+    Error Link
+  </a>
+  <a
+    class="arco-link arco-link-disabled arco-link-is-error"
+    href="#"
+  >
+    Error Link
+  </a>
+  <a
+    class="arco-link arco-link-is-success"
+    href="#"
+  >
+    Success Link
+  </a>
+  <a
+    class="arco-link arco-link-disabled arco-link-is-success"
+    href="#"
+  >
+    Success Link
+  </a>
+  <a
+    class="arco-link arco-link-is-warning"
+    href="#"
+  >
+    Warning Link
+  </a>
+  <a
+    class="arco-link arco-link-disabled arco-link-is-warning"
+    href="#"
+  >
+    Warning Link
+  </a>
+</div>
+`;

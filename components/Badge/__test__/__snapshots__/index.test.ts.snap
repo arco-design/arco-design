@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Badge default 1`] = `
+<span
+  class="arco-badge arco-badge-no-children"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Badge set className globally 1`] = `
+<span
+  class="arco-badge arco-badge-no-children global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Badge set className globally and component set className itself. 1`] = `
+<span
+  class="arco-badge arco-badge-no-children component-class"
+/>
+`;

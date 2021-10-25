@@ -1,0 +1,115 @@
+## 2.21.1
+
+2021-08-27
+
+### 💎 Optimization
+
+- Optimize the critical performance of the horizontal menu adaptive width hidden menu items
+
+### 🆕 Feature
+
+- The `Menu` component supports keyboard shortcut operations.
+
+### 💅 Style
+
+- Optimize the pop-up menu to be dark when the `Menu` component has a dark theme.
+
+## 2.19.3
+
+2021-07-23
+
+### 🐛 Bugfix
+
+- Fixed a bug where the `Menu` component `theme` in the `Dropdown` component was set to `dark` not to take effect.
+
+
+
+## 2.19.1
+
+2021-07-18
+
+### 🐛 Bugfix
+
+- Fix the bug that caused the page to report an error when the `children` of the `Menu` component passed a false value.
+
+## 2.19.0
+
+2021-07-16
+
+### 💎 Optimization
+
+- Optimize the problem that the pop-up layer of the horizontal menu of the `Menu` component cannot be clicked when the mouse moves slowly.
+
+### 🆕 Feature
+
+- The `Menu` component `onClickMenuItem` and `onClickSubMenu` callbacks support the `keyPath` parameter.
+- The `Menu` component `Menu.SubMenu` adds the `triggerProps` property to customize the pop-up behavior.
+
+## 2.16.1
+
+2021-06-04
+
+### 🐛 Bugfix
+
+- Fix the HTML attribute warning of the `Menu` component development environment console.
+
+
+
+## 2.16.0
+
+2021-05-28
+
+### 🆕 Feature
+
+- Added the `wrapper` property to the `Menu.Item` component to support custom outer HTML tags.
+
+### 🐛 Bugfix
+
+- Fix the issue that `useLayoutEffect` reports warning when `Menu` component is rendered on the server side.
+
+## 2.15.0
+
+2021-04-30
+
+### 🆕 Feature
+
+- Added the `event` parameter to the `onClickMenuItem` callback of the `Menu` component.
+
+## 2.14.0
+
+2021-04-09
+
+### 💅 Style
+
+- Fix the problem that the menu item text of the `Menu` component in the `SubMenu` is not displayed as an ellipsis when the text length is too long.
+
+
+
+## 2.8.1
+
+2021-01-28
+
+### 🐛 Bugfix
+
+- Set the scroll boundary of the `Menu` component `autoScrollIntoView` to avoid abnormal scrolling of the `body`.
+
+## 2.8.0
+
+2021-01-22
+
+### 🆕 Feature
+
+- `Menu.SubMenu` added `popup` property to force the use of popup mode.
+
+### 🐛 Bugfix
+
+- Fixed an error when setting `icons.collapseActive` in `Menu` component `hasCollapseButton`.
+
+## 2.7.0
+
+2021-01-15
+
+### 🐛 Bugfix
+
+- Fix the problem that the `Menu` component `autoOpen` does not take effect for multiple nested `SubMenu`.
+

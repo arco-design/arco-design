@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Table default 1`] = `
+<div
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover"
+>
+  <div
+    class="arco-spin"
+  >
+    <div
+      class="arco-spin-children"
+    >
+      <div
+        class="arco-table-container"
+      >
+        <div
+          class="arco-table-content-scroll"
+        >
+          <div
+            class="arco-table-content-inner"
+          >
+            <table>
+              <colgroup>
+                <col />
+              </colgroup>
+              <thead>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="arco-table-tr arco-table-empty-row"
+                >
+                  <td
+                    class="arco-table-td"
+                    colspan="1"
+                  >
+                    <div
+                      class="arco-table-no-data"
+                    >
+                      <div
+                        class="arco-empty"
+                      >
+                        <div
+                          class="arco-empty-wrapper"
+                        >
+                          <div
+                            class="arco-empty-image"
+                          >
+                            <svg
+                              class="arco-icon arco-icon-empty"
+                              fill="none"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                              width="1em"
+                            >
+                              <path
+                                d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-empty-description"
+                          >
+                            暂无数据
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-table-pagination"
+      >
+        <div
+          class="arco-pagination arco-pagination-size-default"
+        >
+          <ul
+            class="arco-pagination-list"
+          >
+            <li
+              class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-left"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M32 8.4 16.444 23.956 32 39.513"
+                />
+              </svg>
+            </li>
+            <li
+              class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-right"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m16 39.513 15.556-15.557L16 8.4"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Table set className globally 1`] = `
+<div
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover global-default-class"
+>
+  <div
+    class="arco-spin"
+  >
+    <div
+      class="arco-spin-children"
+    >
+      <div
+        class="arco-table-container"
+      >
+        <div
+          class="arco-table-content-scroll"
+        >
+          <div
+            class="arco-table-content-inner"
+          >
+            <table>
+              <colgroup>
+                <col />
+              </colgroup>
+              <thead>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="arco-table-tr arco-table-empty-row"
+                >
+                  <td
+                    class="arco-table-td"
+                    colspan="1"
+                  >
+                    <div
+                      class="arco-table-no-data"
+                    >
+                      <div
+                        class="arco-empty"
+                      >
+                        <div
+                          class="arco-empty-wrapper"
+                        >
+                          <div
+                            class="arco-empty-image"
+                          >
+                            <svg
+                              class="arco-icon arco-icon-empty"
+                              fill="none"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                              width="1em"
+                            >
+                              <path
+                                d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-empty-description"
+                          >
+                            暂无数据
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-table-pagination"
+      >
+        <div
+          class="arco-pagination arco-pagination-size-default"
+        >
+          <ul
+            class="arco-pagination-list"
+          >
+            <li
+              class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-left"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M32 8.4 16.444 23.956 32 39.513"
+                />
+              </svg>
+            </li>
+            <li
+              class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-right"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m16 39.513 15.556-15.557L16 8.4"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Table set className globally and component set className itself. 1`] = `
+<div
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover component-class"
+>
+  <div
+    class="arco-spin"
+  >
+    <div
+      class="arco-spin-children"
+    >
+      <div
+        class="arco-table-container"
+      >
+        <div
+          class="arco-table-content-scroll"
+        >
+          <div
+            class="arco-table-content-inner"
+          >
+            <table>
+              <colgroup>
+                <col />
+              </colgroup>
+              <thead>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="arco-table-tr arco-table-empty-row"
+                >
+                  <td
+                    class="arco-table-td"
+                    colspan="1"
+                  >
+                    <div
+                      class="arco-table-no-data"
+                    >
+                      <div
+                        class="arco-empty"
+                      >
+                        <div
+                          class="arco-empty-wrapper"
+                        >
+                          <div
+                            class="arco-empty-image"
+                          >
+                            <svg
+                              class="arco-icon arco-icon-empty"
+                              fill="none"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                              width="1em"
+                            >
+                              <path
+                                d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-empty-description"
+                          >
+                            暂无数据
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-table-pagination"
+      >
+        <div
+          class="arco-pagination arco-pagination-size-default"
+        >
+          <ul
+            class="arco-pagination-list"
+          >
+            <li
+              class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-left"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M32 8.4 16.444 23.956 32 39.513"
+                />
+              </svg>
+            </li>
+            <li
+              class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+            >
+              <svg
+                class="arco-icon arco-icon-right"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="m16 39.513 15.556-15.557L16 8.4"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

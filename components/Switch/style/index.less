@@ -1,0 +1,306 @@
+@import '../../style/theme/default.less';
+@import './token.less';
+
+@switch-prefix-cls: ~'@{prefix}-switch';
+
+@switch-size-default-gap: ((@switch-size-default - @switch-size-dot-default) / 2);
+@switch-size-small-gap: ((@switch-size-small - @switch-size-dot-small) / 2);
+
+@switch-size-default-line-gap: ((@switch-size-default - @switch-line-size-dot-default) / 2);
+@switch-size-small-line-gap: ((@switch-size-small - @switch-line-size-dot-small) / 2);
+
+.switchSlideText-enter,
+.switchSlideText-appear {
+  left: -100% !important;
+}
+
+.switchSlideText-enter-active,
+.switchSlideText-appear-active {
+  left: 8px !important;
+  transition: left @transition-duration-2 @transition-timing-function-standard;
+}
+
+.switchSlideText-exit {
+  left: 100% !important;
+}
+
+.switchSlideText-exit-active {
+  left: @switch-size-dot-default + @switch-size-default-gap + 6px !important;
+  transition: left @transition-duration-2 @transition-timing-function-standard;
+}
+
+.@{switch-prefix-cls} {
+  position: relative;
+  outline: none;
+  height: @switch-size-default;
+  line-height: @switch-size-default;
+  min-width: @switch-circle-default-width;
+  background-color: @switch-color-bg_off;
+  border-radius: (@switch-size-default / 2);
+  border: none;
+  cursor: pointer;
+  transition: background-color @transition-duration-2 @transition-timing-function-standard;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  overflow: hidden;
+
+  &-dot {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: @switch-size-default-gap;
+    left: @switch-size-default-gap;
+    width: @switch-size-dot-default;
+    height: @switch-size-dot-default;
+    border-radius: 50%;
+    background-color: @switch-color-dot-bg;
+    color: @switch-color-dot-icon_off;
+    font-size: 12px;
+    transition: all @transition-duration-2 @transition-timing-function-standard;
+  }
+
+  &-checked {
+    background-color: @switch-color-bg_on;
+  }
+
+  &-checked &-dot {
+    color: @switch-color-dot-icon_on;
+    left: 100%;
+    transform: translateX(-100%);
+    margin-left: -@switch-size-default-gap;
+  }
+
+  &[disabled] &-dot {
+    color: @switch-color-dot-icon_off_disabled;
+  }
+
+  &[disabled]&-checked &-dot {
+    color: @switch-color-dot-icon_on_disabled
+  }
+    &[disabled] &-dot {
+   color: @switch-color-dot-icon_off_disabled;
+  }
+
+  &[disabled]&-checked &-dot {
+    color: @switch-color-dot-icon_on_disabled
+  }
+
+  &-text-holder {
+    opacity: 0;
+    font-size: @switch-font-size-text;
+    margin: 0 8px 0 @switch-size-dot-default + @switch-size-default-gap + 6px;
+  }
+
+  &-text {
+    position: absolute;
+    color: @switch-color-text_off;
+    font-size: @switch-font-size-text;
+    top: 0;
+    left: @switch-size-dot-default + @switch-size-default-gap + 6px;
+  }
+
+  &-checked &-text-holder {
+    margin: 0 @switch-size-dot-default + @switch-size-default-gap + 6px 0 8px;
+  }
+
+  &-checked &-text {
+    left: 8px;
+    color: @switch-color-text_on;
+  }
+
+  // Disabled
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: @switch-color-bg_off_disabled;
+  }
+
+  &[disabled] &-text {
+    color: @switch-color-text_off_disabled;
+  }
+
+  &[disabled]&-checked {
+    background-color: @switch-color-bg_on_disabled;
+  }
+
+  &[disabled]&-checked &-text {
+    color: @switch-color-text_on_disabled;
+  }
+
+  // Loading
+  &-loading {
+    background-color: @switch-color-bg_off_loading;
+  }
+
+  &-loading &-dot {
+    color: @switch-color-dot-icon_off_loading;
+  }
+
+  &-loading &-text {
+    color: @switch-color-text_off_loading;
+  }
+
+  &-loading&-checked {
+    background-color: @switch-color-bg_on_loading;
+  }
+
+  &-loading&-checked &-dot {
+    color: @switch-color-dot-icon_on_loading;
+  }
+
+  &-loading&-checked &-text {
+    color: @switch-color-text_on_loading;
+  }
+
+  &-small {
+    height: @switch-size-small;
+    line-height: @switch-size-small;
+    min-width: @switch-circle-small-width;
+  }
+
+  &-small&-checked {
+    padding-left: -@switch-size-small-gap;
+  }
+
+  &-small &-dot {
+    top: @switch-size-small-gap;
+    left: @switch-size-small-gap;
+    width: @switch-size-dot-small;
+    height: @switch-size-dot-small;
+    border-radius: (@switch-size-small / 2);
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.66667);
+    }
+  }
+
+  &-small&-checked &-dot {
+    left: 100%;
+    margin-left: -@switch-size-small-gap;
+  }
+}
+
+// Round
+.@{switch-prefix-cls} {
+  &-type-round {
+    border-radius: @radius-small;
+    min-width: @switch-round-default-width;
+  }
+
+  &-type-round &-dot {
+    border-radius: 2px;
+  }
+
+  &-type-round&-small {
+    border-radius: 2px;
+    height: @switch-size-small;
+    line-height: @switch-size-small;
+    min-width: @switch-round-small-width;
+  }
+
+  &-type-round&-small &-dot {
+    border-radius: 1px;
+  }
+}
+
+// Line
+.@{switch-prefix-cls} {
+  &-type-line {
+    min-width: @switch-line-default-width;
+    background-color: transparent;
+    overflow: unset;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      border-radius: (@switch-line-height-bg-line / 2);
+      height: @switch-line-height-bg-line;
+      background-color: @switch-color-bg_off;
+      transition: background-color @transition-duration-2 @transition-timing-function-standard;
+    }
+  }
+
+  &-type-line &-dot {
+    top: @switch-size-default-line-gap;
+    left: 0;
+    border-radius: (@switch-line-size-dot-default / 2);
+    width: @switch-line-size-dot-default;
+    height: @switch-line-size-dot-default;
+    background-color: @switch-color-dot-bg;
+    box-shadow: 0 1px 3px @switch-line-color-dot-shadow;
+  }
+
+  &-type-line&-checked {
+    background-color: transparent;
+
+    &::after {
+      background-color: @switch-color-bg_on;
+    }
+  }
+
+  &-type-line&-checked &-dot {
+    left: 100%;
+    margin-left: 0;
+  }
+
+  // Disabled
+  &-type-line[disabled] {
+    cursor: not-allowed;
+    background-color: transparent;
+
+    &::after {
+      background-color: @switch-color-bg_off_disabled;
+    }
+  }
+
+  &-type-line[disabled]&-checked {
+    background-color: transparent;
+
+    &::after {
+      background-color: @switch-color-bg_on_disabled;
+    }
+  }
+
+  // Loading
+  &-type-line&-loading {
+    background-color: transparent;
+
+    &::after {
+      background-color: @switch-color-bg_off_loading;
+    }
+  }
+
+  &-type-line&-loading&-checked {
+    background-color: transparent;
+
+    &::after {
+      background-color: @switch-color-bg_on_loading;
+    }
+  }
+
+  &-type-line&-small {
+    height: @switch-size-small;
+    line-height: @switch-size-small;
+    min-width: @switch-line-small-width;
+  }
+
+  &-type-line&-small&-checked {
+    padding-left: -@switch-size-small-line-gap;
+  }
+
+  &-type-line&-small &-dot {
+    top: @switch-size-small-line-gap;
+    width: @switch-line-size-dot-small;
+    height: @switch-line-size-dot-small;
+    border-radius: (@switch-size-small / 2);
+
+    &-icon {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}

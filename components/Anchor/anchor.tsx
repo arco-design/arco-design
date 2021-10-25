@@ -1,0 +1,266 @@
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react';
+import throttle from 'lodash/throttle';
+import compute from 'compute-scroll-into-view';
+import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed';
+import { isFunction, isNumber, isWindow } from '../_util/is';
+import { on, off } from '../_util/dom';
+import cs from '../_util/classNames';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
+import Affix from '../Affix';
+import { ConfigContext } from '../ConfigProvider';
+import { AnchorProps } from './interface';
+import AnchorContext from './context';
+import { findNode, slide, getContainer, getContainerElement } from './utils';
+import useStateWithPromise from '../_util/hooks/useStateWithPromise';
+import Link from './link';
+import useMergeProps from '../_util/hooks/useMergeProps';
+
+type AnchorPropsWithChildren = React.PropsWithChildren<AnchorProps>;
+
+const defaultProps: AnchorProps = {
+  animation: true,
+  affix: true,
+  hash: true,
+  boundary: 'start',
+};
+
+function Anchor(baseProps: AnchorPropsWithChildren, ref) {
+  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const props = useMergeProps<AnchorPropsWithChildren>(
+    baseProps,
+    defaultProps,
+    componentConfig?.Anchor
+  );
+  const {
+    className,
+    style,
+    scrollContainer: propScrollContainer,
+    animation = true,
+    lineless,
+    affix = true,
+    affixStyle,
+    offsetBottom,
+    offsetTop,
+    hash: willChangeHash = true,
+    boundary = 'start',
+    targetOffset,
+    children,
+    onSelect,
+    onChange,
+  } = props;
+  const prefixCls = getPrefixCls('anchor');
+  const classNames = cs(prefixCls, className, {
+    [`${prefixCls}-lineless`]: lineless,
+  });
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const sliderLineRef = useRef<HTMLDivElement>(null);
+  const linkMap = useRef<Map<string, HTMLElement>>(new Map());
+  const isScrolling = useRef(false);
+  const [currentLink, setCurrentLink] = useStateWithPromise('');
+  const isFirstRender = useIsFirstRender();
+
+  const scrollContainer = useRef<HTMLElement | Window>(null);
+  useEffect(() => {
+    const container = getContainer(propScrollContainer);
+    scrollContainer.current = container;
+  }, [propScrollContainer]);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      dom: wrapperRef.current,
+    }),
+    []
+  );
+
+  function addLink(hash: string, element: HTMLElement) {
+    if (hash) {
+      linkMap.current.set(hash, element);
+    }
+  }
+
+  function removeLink(hash: string) {
+    linkMap.current.delete(hash);
+  }
+
+  const setActiveLink = useCallback(
+    (hash: string) => {
+      if (!hash || !wrapperRef.current) return;
+      // Try to add when there is no corresponding link
+      if (!linkMap.current.has(hash)) {
+        const node = findNode(wrapperRef.current, `a[data-href='${hash}']`);
+        node && addLink(hash, node);
+      }
+
+      const node = linkMap.current.get(hash);
+
+      if (node && hash !== currentLink) {
+        scrollIntoViewIfNeeded(node, {
+          behavior: 'instant',
+          block: 'nearest',
+          scrollMode: 'if-needed',
+          boundary: wrapperRef.current,
+        });
+
+        setCurrentLink(hash).then(() => {
+          isFunction(onChange) && onChange(hash, currentLink);
+        });
+      }
+    },
+    [currentLink, onChange]
+  );
+
+  const getEleInViewport = useCallback(() => {
+    let result;
+    const startTop = isNumber(boundary) ? boundary : 0;
+    const container = scrollContainer.current;
+    const containerElement = getContainerElement(container);
+    const containerRect = containerElement.getBoundingClientRect();
+    const documentHeight = document.documentElement.clientHeight;
+    [...linkMap.current.keys()].some((hash) => {
+      const element = findNode(document, hash);
+      let inView = false;
+      if (element) {
+        const { top } = element.getBoundingClientRect();
+        if (isWindow(container)) {
+          inView = top >= startTop && top <= (targetOffset ?? documentHeight / 2);
+        } else {
+          const offsetTop = top - containerRect.top - startTop;
+          inView = offsetTop >= 0 && offsetTop <= (targetOffset ?? containerRect.height / 2);
+        }
+        if (inView) {
+          result = element;
+        }
+      }
+      return inView;
+    });
+    return result;
+  }, [boundary, targetOffset]);
+
+  const onScroll = useCallback(
+    throttle(
+      () => {
+        if (isScrolling.current) return;
+        const element = getEleInViewport();
+
+        if (element && element.id) {
+          const hash = `#${element.id}`;
+          setActiveLink(hash);
+        }
+      },
+      30,
+      { trailing: true }
+    ),
+    [getEleInViewport, setActiveLink]
+  );
+
+  function scrollIntoView(hash: string) {
+    if (!hash) return;
+    try {
+      const element = findNode(document, hash);
+      if (!element) return;
+      const block = isNumber(boundary) ? 'start' : boundary;
+      const offset = isNumber(boundary) ? boundary : 0;
+      const actions = compute(element, { block });
+      if (!actions.length) return;
+      const { el, top } = actions[0];
+      const targetTop = top - offset;
+      if (!animation) {
+        // Manually trigger scrolling as browser's default action is prevented when `props.hash` is false
+        if (!willChangeHash) {
+          el.scrollTop = targetTop;
+        }
+        return;
+      }
+      slide(el as HTMLElement, targetTop, () => {
+        isScrolling.current = false;
+      });
+      isScrolling.current = true;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function onLinkClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, hash: string) {
+    if (!willChangeHash) {
+      e.preventDefault();
+    }
+    setActiveLink(hash);
+    scrollIntoView(hash);
+    isFunction(onSelect) && onSelect(hash, currentLink);
+  }
+
+  useEffect(() => {
+    const hash = decodeURIComponent(location.hash);
+    if (hash) {
+      setActiveLink(hash);
+      scrollIntoView(hash);
+    } else {
+      // compute current active anchor
+      onScroll();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isFirstRender) {
+      onScroll();
+    }
+
+    on(scrollContainer.current, 'scroll', onScroll);
+    return () => {
+      off(scrollContainer.current, 'scroll', onScroll);
+    };
+  }, [propScrollContainer, onScroll]);
+
+  useEffect(() => {
+    const link = linkMap.current.get(currentLink);
+    if (link && !lineless && sliderLineRef.current) {
+      sliderLineRef.current.style.top = `${link.offsetTop}px`;
+    }
+  }, [currentLink, lineless]);
+
+  const content = (
+    <div className={classNames} style={style} ref={wrapperRef}>
+      {!lineless && currentLink && (
+        <div className={`${prefixCls}-line-slider`} ref={sliderLineRef} />
+      )}
+      <AnchorContext.Provider
+        value={{
+          currentLink,
+          addLink,
+          removeLink,
+          onLinkClick,
+        }}
+      >
+        <div className={`${prefixCls}-list`}>{children}</div>
+      </AnchorContext.Provider>
+    </div>
+  );
+
+  return affix ? (
+    <Affix offsetTop={offsetTop} offsetBottom={offsetBottom} style={affixStyle}>
+      {content}
+    </Affix>
+  ) : (
+    content
+  );
+}
+
+const ForwardRefAnchor = forwardRef<unknown, AnchorPropsWithChildren>(Anchor);
+
+const AnchorComponent = ForwardRefAnchor as typeof ForwardRefAnchor & {
+  Link: typeof Link;
+};
+
+AnchorComponent.displayName = 'Anchor';
+
+AnchorComponent.Link = Link;
+
+export default AnchorComponent;

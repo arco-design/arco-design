@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.BackTop default 1`] = `
+<div
+  class="arco-backtop"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.BackTop set className globally 1`] = `
+<div
+  class="arco-backtop global-default-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.BackTop set className globally and component set className itself. 1`] = `
+<div
+  class="arco-backtop component-class"
+/>
+`;

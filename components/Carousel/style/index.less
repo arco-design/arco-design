@@ -1,0 +1,399 @@
+@import './token.less';
+@import './slide.less';
+
+@carousel-prefix-cls: ~'@{prefix}-carousel';
+
+.@{carousel-prefix-cls} {
+  position: relative;
+
+  &-indicator-position-outer {
+    margin-bottom: @carousel-indicator-position * 2 + @carousel-indicator-dot-size;
+  }
+
+  &-slide,
+  &-card,
+  &-fade {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    > * {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &-item-current {
+    z-index: 1;
+  }
+
+  &-slide {
+    > *:not(.@{carousel-prefix-cls}-item-current) {
+      visibility: hidden;
+    }
+
+    .item-position(@direction) {
+      .@{carousel-prefix-cls}-item-slide-out {
+        display: block;
+        animation: ~'@{prefix}-carousel-slide-@{direction}-out';
+      }
+
+      .@{carousel-prefix-cls}-item-slide-in {
+        display: block;
+        animation: ~'@{prefix}-carousel-slide-@{direction}-in';
+      }
+
+      &.@{carousel-prefix-cls}-negative {
+        .@{carousel-prefix-cls}-item-slide-out {
+          animation: ~'@{prefix}-carousel-slide-@{direction}-out-reverse';
+        }
+
+        .@{carousel-prefix-cls}-item-slide-in {
+          animation: ~'@{prefix}-carousel-slide-@{direction}-in-reverse';
+        }
+      }
+    }
+
+    &.@{carousel-prefix-cls}-horizontal {
+      .item-position(x);
+    }
+
+    &.@{carousel-prefix-cls}-vertical {
+      .item-position(y);
+    }
+  }
+
+  &-card {
+    // 通过改变 perspective 来取得不同景深关系
+    perspective: 800px;
+
+    > * {
+      left: 50%;
+      opacity: 0;
+      transform: translateX(-50%) translateZ(-400px);
+      animation: ~'@{prefix}-carousel-card-middle-to-bottom';
+    }
+
+    // prev 右边对齐容器中线
+    .@{carousel-prefix-cls}-item-prev {
+      opacity: 0.4;
+      transform: translateX(-100%) translateZ(-200px);
+      animation: ~'@{prefix}-carousel-card-top-to-middle';
+    }
+
+    // next 左边对齐容器中线
+    .@{carousel-prefix-cls}-item-next {
+      opacity: 0.4;
+      transform: translateX(0%) translateZ(-200px);
+      animation: ~'@{prefix}-carousel-card-bottom-to-middle';
+    }
+
+    // current 居中
+    .@{carousel-prefix-cls}-item-current {
+      opacity: 1;
+      transform: translateX(-50%) translateZ(0);
+      animation: ~'@{prefix}-carousel-card-middle-to-top';
+    }
+
+    &.@{carousel-prefix-cls}-negative {
+      > * {
+        animation: ~'@{prefix}-carousel-card-middle-to-bottom-reverse';
+      }
+
+      // prev 右边对齐容器中线
+      .@{carousel-prefix-cls}-item-prev {
+        animation: ~'@{prefix}-carousel-card-bottom-to-middle-reverse';
+      }
+
+      // next 左边对齐容器中线
+      .@{carousel-prefix-cls}-item-next {
+        animation: ~'@{prefix}-carousel-card-top-to-middle-reverse';
+      }
+
+      // current 居中
+      .@{carousel-prefix-cls}-item-current {
+        animation: ~'@{prefix}-carousel-card-middle-to-top-reverse';
+      }
+    }
+  }
+
+  &-fade {
+    > * {
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+
+    .@{carousel-prefix-cls}-item-current {
+      opacity: 1;
+    }
+  }
+
+  // 指示器样式
+  &-indicator {
+    display: flex;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    &-wrapper {
+      position: absolute;
+      z-index: 2;
+
+      &-top {
+        left: 0;
+        right: 0;
+        top: 0;
+        height: @carousel-indicator-size-wrapper;
+        background: linear-gradient(
+          180deg,
+          @carousel-indicator-color-bg-wrapper 0%,
+          rgba(0, 0, 0, 0) 87%
+        );
+      }
+
+      &-bottom {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: @carousel-indicator-size-wrapper;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 13%,
+          @carousel-indicator-color-bg-wrapper 100%
+        );
+      }
+
+      &-left {
+        left: 0;
+        top: 0;
+        width: @carousel-indicator-size-wrapper;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          @carousel-indicator-color-bg-wrapper 0%,
+          rgba(0, 0, 0, 0) 87%
+        );
+      }
+
+      &-right {
+        right: 0;
+        top: 0;
+        width: @carousel-indicator-size-wrapper;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0) 13%,
+          @carousel-indicator-color-bg-wrapper 100%
+        );
+      }
+
+      &-outer {
+        left: 0;
+        right: 0;
+        background: none;
+      }
+    }
+
+    &-bottom {
+      bottom: @carousel-indicator-position;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-top {
+      top: @carousel-indicator-position;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-left {
+      left: @carousel-indicator-position;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &-right {
+      right: @carousel-indicator-position;
+      top: 50%;
+      transform: translate(50%, -50%) rotate(90deg);
+    }
+
+    // 位于外部的指示器样式
+    &-outer {
+      left: 50%;
+      transform: translateX(-50%);
+      padding: @carousel-indicator-outer-padding;
+      border-radius: @carousel-indicator-outer-border-radius;
+      background-color: @carousel-indicator-outer-color-bg;
+
+      &.@{carousel-prefix-cls}-indicator-dot {
+        bottom: -(@carousel-indicator-position + @carousel-indicator-dot-size + $padding);
+      }
+
+      &.@{carousel-prefix-cls}-indicator-line {
+        bottom: -(@carousel-indicator-position + @carousel-indicator-line-size-height + $padding);
+      }
+
+      &.@{carousel-prefix-cls}-indicator-slider {
+        padding: 0;
+        bottom: -(@carousel-indicator-position + @carousel-indicator-slider-size-height + $padding);
+        background-color: @carousel-indicator-outer-color_default;
+      }
+
+      .@{carousel-prefix-cls}-indicator-item {
+        background-color: @carousel-indicator-outer-color_default;
+
+        &:hover,
+        &-active {
+          background-color: @carousel-indicator-outer-color_active;
+        }
+      }
+    }
+
+    // 图标样式
+    &-item {
+      display: inline-block;
+      border-radius: @carousel-indicator-border-radius;
+      background-color: @carousel-indicator-color_default;
+      cursor: pointer;
+
+      &:hover,
+      &-active {
+        background-color: @carousel-indicator-color_active;
+      }
+    }
+
+    &-dot {
+      .@{carousel-prefix-cls}-indicator-item {
+        width: @carousel-indicator-dot-size;
+        height: $width;
+        border-radius: 50%;
+
+        &:not(:last-child) {
+          margin-right: @carousel-indicator-gap;
+        }
+      }
+    }
+
+    &-line {
+      .@{carousel-prefix-cls}-indicator-item {
+        width: @carousel-indicator-line-size-width;
+        height: @carousel-indicator-line-size-height;
+
+        &:not(:last-child) {
+          margin-right: @carousel-indicator-gap;
+        }
+      }
+    }
+
+    &-slider {
+      width: @carousel-indicator-slider-size-width;
+      height: @carousel-indicator-slider-size-height;
+      border-radius: @carousel-indicator-border-radius;
+      background-color: @carousel-indicator-color_default;
+      cursor: pointer;
+
+      .@{carousel-prefix-cls}-indicator-item {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: left 0.3s;
+      }
+    }
+  }
+
+  &-arrow {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: @carousel-arrow-size;
+      height: @carousel-arrow-size;
+      border-radius: 50%;
+      color: @carousel-arrow-color-icon;
+      background-color: @carousel-arrow-color-bg;
+      cursor: pointer;
+      z-index: 2;
+
+      > svg {
+        color: @carousel-arrow-color-icon;
+        font-size: @carousel-arrow-font-size;
+      }
+
+      &:hover {
+        background-color: @carousel-arrow-color-bg_hover;
+      }
+    }
+
+    &-left {
+      left: @carousel-arrow-position;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-right {
+      top: 50%;
+      transform: translateY(-50%);
+      right: @carousel-arrow-position;
+    }
+
+    &-top {
+      left: 50%;
+      transform: translateX(-50%);
+      top: @carousel-arrow-position;
+    }
+
+    &-bottom {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: @carousel-arrow-position;
+    }
+  }
+
+  &-arrow-hover div {
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    .@{carousel-prefix-cls}-arrow-hover div {
+      opacity: 1;
+    }
+  }
+}
+
+@{arco-theme-tag}[arco-theme='dark'] {
+  .@{carousel-prefix-cls}-arrow > div {
+    background-color: rgba(@dark-gray-1, 0.3);
+
+    &:hover {
+      background-color: rgba(@dark-gray-1, 0.5);
+    }
+  }
+
+  .@{carousel-prefix-cls}-indicator-item,
+  .@{carousel-prefix-cls}-indicator-slider {
+    background-color: rgba(@dark-gray-1, 0.3);
+  }
+
+  .@{carousel-prefix-cls}-indicator-item-active,
+  .@{carousel-prefix-cls}-indicator-item:hover {
+    background-color: @carousel-indicator-color_active;
+  }
+
+  .@{carousel-prefix-cls}-indicator-outer.@{carousel-prefix-cls}-indicator-slider {
+    background-color: @carousel-indicator-outer-color_default;
+  }
+
+  .@{carousel-prefix-cls}-indicator-outer .@{carousel-prefix-cls}-indicator-item:hover,
+  .@{carousel-prefix-cls}-indicator-outer .@{carousel-prefix-cls}-indicator-item-active {
+    background-color: @carousel-indicator-outer-color_active;
+  }
+}

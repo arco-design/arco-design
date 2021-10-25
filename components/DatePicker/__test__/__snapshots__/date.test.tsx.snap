@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.DatePicker default 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.DatePicker set className globally 1`] = `
+<div
+  class="arco-picker arco-picker-size-default global-default-class"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.DatePicker set className globally and component set className itself. 1`] = `
+<div
+  class="arco-picker arco-picker-size-default component-class"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        width="1em"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
