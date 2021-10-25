@@ -20,11 +20,11 @@ Every significant change is documented in the changelog file.
 
 ## Reporting Issues
 
-We use [Github issues](https://github.com/arco-design/arco-design/issues) for bug reports and feature requests. Before reporting an issue, please make sure you have searched for similar [issues](https://github.com/arco-design/arco-design/issues) as they may have been already answered or being fixed. A new issue should be submitted via [issue helper](https://arco-design/issue-helper?repo=arco-design). For bug reporting, please include the minimum code that can be used to reproduce the problem. For feature request, please specify what changes you want and what behavior you expect.
+We use [Github issues](https://github.com/arco-design/arco-design/issues) for bug reports and feature requests. Before reporting an issue, please make sure you have searched for similar [issues](https://github.com/arco-design/arco-design/issues) as they may have been already answered or being fixed. A new issue should be submitted via [issue helper](https://arco.design/issue-helper?repo=arco-design). For bug reporting, please include the minimum code that can be used to reproduce the problem. For feature request, please specify what changes you want and what behavior you expect.
 
 ## Sending a pull request
 
-1. Fork [the repository](https://github.com/arco-design/arco-design) and create your branch from `master`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `master` branch.
+1. Fork [the repository](https://github.com/arco-design/arco-design) and create your branch from `main`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `main` branch.
 1. Run `npm run init` in the repository root.
 1. Run `npm run start` to start and preview site.
 1. Make changes to the codebase. Please add tests if applicable.
