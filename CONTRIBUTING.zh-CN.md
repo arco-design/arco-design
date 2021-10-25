@@ -21,11 +21,11 @@
 
 ## 报告 Issues
 
-我们使用 [Github issues](https://github.com/arco-design/arco-design/issues) 进行 bug 报告和新 feature 建议。在报告 bug 之前，请确保已经搜索过类似的 [问题](https://github.com/arco-design/arco-design/issues)，因为它们可能已经得到解答或正在被修复。新问题应通过 [问题助手](https://arco-design/issue-helper?repo=arco-design) 提交。对于 bug 报告，请包含可用于重现问题的代码。对于新 feature 建议，请指出你想要的更改以及期望的行为。
+我们使用 [Github issues](https://github.com/arco-design/arco-design/issues) 进行 bug 报告和新 feature 建议。在报告 bug 之前，请确保已经搜索过类似的 [问题](https://github.com/arco-design/arco-design/issues)，因为它们可能已经得到解答或正在被修复。新问题应通过 [问题助手](https://arco.design/issue-helper?repo=arco-design) 提交。对于 bug 报告，请包含可用于重现问题的代码。对于新 feature 建议，请指出你想要的更改以及期望的行为。
 
 ## 提交 Pull Request
 
-1. Fork [此仓库](https://github.com/arco-design/arco-design)，从 `master` 创建分支。新功能实现请发 pull request 到 `feature` 分支。其他更改发到 `master` 分支。
+1. Fork [此仓库](https://github.com/arco-design/arco-design)，从 `main` 创建分支。新功能实现请发 pull request 到 `feature` 分支。其他更改发到 `main` 分支。
 1. 在仓库根目录下执行 `npm run init`。
 1. 执行 `npm run start` 启动和预览站点.
 1. 对代码库进行更改。如果适用的话，请确保写了相应的测试。

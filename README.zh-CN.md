@@ -12,7 +12,7 @@
 
 基于 [Arco Design](https://arco.design/) 的 React UI 组件库。
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arco-design/arco-design/blob/master/LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arco-design/arco-design/blob/main/LICENSE)
 
 </div>
 
