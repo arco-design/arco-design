@@ -22,7 +22,7 @@
 | 4.评论内容（必有） | 用户发表的评论内容文本，文本通常可包含文字与表情符号。 |
 | 5.操作（可选）   | 可包含点赞、收藏、回复。                |
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/03ecfabb9c6946f683c2078a35687784~tplv-uwbnlip3yd-image.image)
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/81b448d1761e7ac20dd5631a2f1a1480.png~tplv-uwbnlip3yd-webp.webp)
 
 ### 组件类型
 
@@ -33,7 +33,7 @@
 | 3.配合列表使用  | 配合列表组件展现评论列表            |
 | 4.配合回复框使用 | 配合回复框提高互动性              |
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e5a38a6e1e86472cafbcc70f6ea6be05~tplv-uwbnlip3yd-image.image)
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3381eca24f3d449b132b58c96e6021f8.png~tplv-uwbnlip3yd-webp.webp)
 
 ### 交互行为
 
@@ -41,7 +41,7 @@
 
 **点击触发：** 点击喜欢和收藏按钮，线性icon变为面性icon；点击回复按钮，该评论出现内嵌输入框；
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b753b2904ea94780bb613b7730c5f9f8~tplv-uwbnlip3yd-image.image)
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/838fbf17a57a4f4b8e30c7255a51301c.png~tplv-uwbnlip3yd-webp.webp)
 
 ## 何时使用
 

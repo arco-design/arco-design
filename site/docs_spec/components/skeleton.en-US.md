@@ -48,11 +48,11 @@ The skeleton screen is generally composed of a combination of 3 types of space-o
 
     1. Colored text and icons
 
-    ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/20402c8575c8c12f9266a9ae8a3e961c.png~tplv-uwbnlip3yd-webp.webp)
+   ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/8cce11a5b02f949815582cb15b7cad0a.png~tplv-uwbnlip3yd-webp.webp)
 
     2. For pages with pictures as the main content, the colors have been preset or calculated by algorithms.
 
-    ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b663e42f7d9344b895845bd6610620ee~tplv-uwbnlip3yd-image.image)
+   ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/20402c8575c8c12f9266a9ae8a3e961c.png~tplv-uwbnlip3yd-webp.webp)
 
     3. **With animation** **skeleton screen**
 

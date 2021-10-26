@@ -136,7 +136,7 @@ yarn preview
 
 **路径支持直接填写站点（非物料包）所对应的 NPM 包名。**
 
-TODO 截图
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d14e7b6b380cee60d66e7180d05420d5.png~tplv-uwbnlip3yd-webp.webp)
 
 ## 国际化
 
@@ -262,13 +262,11 @@ export default function beforeAll({ language }: Params) {
 
 默认情况下，我们在站点构建时已经将 `@arco-design/web-react` 进行了 external，所以打包产物中不包含 Arco 组件库代码和样式，它们将由站点页面进行全局注入。你可以在 [物料平台 - 团队页面 - 团队站点] 配置其使用的 Arco 组件库版本。
 
-TODO 截图
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/cc7585da8cb507694e28f1d30d7d557a.png~tplv-uwbnlip3yd-webp.webp)
 
 > 使用 `arco preview` 命令在本地预览站点时，可通过为 URL 新增 `arcoVersion=2.12.0` 的 Query 参数来指定 Arco 组件库版本。
 
-通过修改 webpack 配置，可以避免对 `@arco-design/web-react` 进行 external，但我们一般不推荐这种做法（物料应尽量保证在所有 Arco 版本下都可用）。如果你不需要使用全局注入的 Arco 组件库，可以进行如下配置：
-
-TODO 截图
+通过修改 webpack 配置，可以避免对 `@arco-design/web-react` 进行 external，但我们一般不推荐这种做法（物料应尽量保证在所有 Arco 版本下都可用）。如果你不需要使用全局注入的 Arco 组件库，可以选择 "不注入 Arco"。
 
 ## 改造自有项目
 
