@@ -8,7 +8,7 @@ import LogoSketchBlue from '../../assets/logo_Sketch_blue.svg';
 import LogoAxureBlue from '../../assets/logo_Axure_blue.svg';
 import LogoIconBoxBlue from '../../assets/logo_IconBox_blue.svg';
 import LogoArcoProBlue from '../../assets/logo_ArcoPro_blue.svg';
-import LogoGitlabWhite from '../../assets/logo_Gitlab_white.svg';
+import LogoGitHubWhite from '../../assets/logo_Github_white.svg';
 import LogoArcoCliWhite from '../../assets/logo_ArcoCli_white.svg';
 import LogoArcoWebpackPluginWhite from '../../assets/logo_ArcoWebpackPlugin_white.svg';
 import LogoReact from '../../assets/logo_react.svg';
@@ -22,10 +22,12 @@ import {
   linkFigmaArcoPro,
   linkFigmaArcoIcons,
   linkDocksArcoVueComponent,
-  linkRepositoryArcoComponent,
-  linkRepositoryArcoWebpackPlugin,
-  linkRepositoryArcoCli,
+  linkGithubCodeRepository,
+  linkGithubRepositoryArcoWebpackPlugin,
+  linkGithubRepositoryArcoCli,
   linkDocsDesignStyleGuideline,
+  linkSketchResource,
+  linkAxureResource,
 } from '../../constant/links';
 import DesignValues from './components/DesignValues';
 import useLocale from '../../hooks/useLocale';
@@ -50,7 +52,7 @@ export default function SectionResource() {
             {
               name: locale['resource.design.axure'],
               logo: <LogoAxureBlue />,
-              href: '',
+              href: linkAxureResource,
             },
             {
               name: locale['resource.design.arcoPro'],
@@ -60,7 +62,7 @@ export default function SectionResource() {
             {
               name: locale['resource.design.sketch'],
               logo: <LogoSketchBlue />,
-              href: '',
+              href: linkSketchResource,
             },
             {
               name: locale['resource.design.iconBox'],
@@ -98,17 +100,17 @@ export default function SectionResource() {
             {
               name: locale['resource.develop.arcoCli'],
               logo: <LogoArcoCliWhite />,
-              href: linkRepositoryArcoCli,
+              href: linkGithubRepositoryArcoCli,
             },
             {
               name: 'Arco Webpack Plugin',
               logo: <LogoArcoWebpackPluginWhite />,
-              href: linkRepositoryArcoWebpackPlugin,
+              href: linkGithubRepositoryArcoWebpackPlugin,
             },
             {
-              name: locale['resource.develop.gitlab'],
-              logo: <LogoGitlabWhite />,
-              href: linkRepositoryArcoComponent,
+              name: locale['resource.develop.github'],
+              logo: <LogoGitHubWhite />,
+              href: linkGithubCodeRepository,
             },
           ]}
           footerResourceList={[

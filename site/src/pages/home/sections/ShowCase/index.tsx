@@ -26,7 +26,6 @@ export default function ShowCase() {
           animation="card"
           indicatorPosition="outer"
           style={{
-            width: '100%',
             height: 440,
           }}
         >

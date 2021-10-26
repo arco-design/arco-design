@@ -14,7 +14,7 @@ export default {
   'resource.develop.title': '开发资源',
   'resource.develop.desc': '组件用于更快速、更简便的 Web 开发',
   'resource.develop.arcoCli': 'Arco Cli 脚手架',
-  'resource.develop.gitlab': 'GitLab 代码仓库',
+  'resource.develop.github': 'GitHub 代码仓库',
   'resource.designValue.title.a': 'agreement 一致',
   'resource.designValue.title.r': 'rhythm 韵律',
   'resource.designValue.title.c': 'clear 清晰',

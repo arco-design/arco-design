@@ -14,7 +14,7 @@ export default {
   'resource.develop.title': 'Development Resources',
   'resource.develop.desc': 'Components for faster and easier web development',
   'resource.develop.arcoCli': 'Arco Cli',
-  'resource.develop.gitlab': 'GitLab',
+  'resource.develop.github': 'GitHub',
   'resource.designValue.title.a': 'agreement',
   'resource.designValue.title.r': 'rhythm',
   'resource.designValue.title.c': 'clear',
