@@ -77,13 +77,13 @@ Regarding the selection of project types, we have the following suggestions:
 
 Here we choose the "Lerna Monorepo" type to create a project and wait for the completion of the project initialization.
 
-TODO screenshot
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d1da4e1f19ba518ce731d532a8e89406.png~tplv-uwbnlip3yd-webp.webp)
 
 ## Add material
 
 According to the instructions of Arco CLI, run `yarn add:package myFirstMaterial` to add our first material. Here we need to answer a few questions about material information.
 
-TODO screenshot
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d5c36e42dd2b9b60cee09efc4bf775d6.png~tplv-uwbnlip3yd-webp.webp)
 
 ## Development materials
 

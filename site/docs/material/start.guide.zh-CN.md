@@ -75,13 +75,13 @@
 
 这里我们选择「Lerna Monorepo」类型创建一个项目，等待项目初始化完成。
 
-TODO 截图
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d1da4e1f19ba518ce731d532a8e89406.png~tplv-uwbnlip3yd-webp.webp)
 
 ## 添加物料
 
 依据 Arco CLI 的指引，运行 `yarn add:package myFirstMaterial` 添加我们的第一个物料，这里需要回答几个关于物料信息的问题。
 
-TODO 截图
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d5c36e42dd2b9b60cee09efc4bf775d6.png~tplv-uwbnlip3yd-webp.webp)
 
 ## 开发物料
 

@@ -24,7 +24,7 @@ Feedback, evaluation and discussion of content.
 | 4. Comment content (required) | The text of the comment content posted by the user. The text usually contains text and emoticons. |
 | 5. Operation (optional) | It can include likes, favorites, and replies. |
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/03ecfabb9c6946f683c2078a35687784~tplv-uwbnlip3yd-image.image)
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/81b448d1761e7ac20dd5631a2f1a1480.png~tplv-uwbnlip3yd-webp.webp)
 
 ### Component type
 
@@ -35,7 +35,7 @@ Feedback, evaluation and discussion of content.
 | 3. Use with the list | Display the comment list with the list component |
 | 4. Use with the reply box | Improve the interactivity with the reply box |
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e5a38a6e1e86472cafbcc70f6ea6be05~tplv-uwbnlip3yd-image.image)
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3381eca24f3d449b132b58c96e6021f8.png~tplv-uwbnlip3yd-webp.webp)
 
 ### Interactive behavior
 
@@ -43,7 +43,7 @@ Feedback, evaluation and discussion of content.
 
 **Click to trigger:** Click the like and favorite buttons, the linear icon becomes a face icon; click the reply button, the comment appears in the embedded input box;
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b753b2904ea94780bb613b7730c5f9f8~tplv-uwbnlip3yd-image.image)
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/838fbf17a57a4f4b8e30c7255a51301c.png~tplv-uwbnlip3yd-webp.webp)
 
 ## When to use
 

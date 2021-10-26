@@ -46,11 +46,11 @@
 
     1. 有颜色的文字、图标
 
-    ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/20402c8575c8c12f9266a9ae8a3e961c.png~tplv-uwbnlip3yd-webp.webp)
+    ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/8cce11a5b02f949815582cb15b7cad0a.png~tplv-uwbnlip3yd-webp.webp)
 
     2. 以图片为主要内容的页面，颜色已预设好或由图片进行算法计算。
 
-    ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b663e42f7d9344b895845bd6610620ee~tplv-uwbnlip3yd-image.image)
+    ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/20402c8575c8c12f9266a9ae8a3e961c.png~tplv-uwbnlip3yd-webp.webp)
 
     3. **带动画的** **骨架屏**
 
