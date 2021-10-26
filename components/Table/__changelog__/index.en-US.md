@@ -1,3 +1,11 @@
+## 2.23.4
+
+2021-10-26
+
+### 🐛 BugFix
+
+- Set the `type` of the expand button of the `Table` component to `button` to avoid clicking to trigger Form submit.([#23](https://github.com/arco-design/arco-design/pull/23))
+
 ## 2.23.2
 
 2021-10-22
