@@ -1,3 +1,11 @@
+## 2.23.4
+
+2021-10-26
+
+### 🐛 BugFix
+
+- Fix the problem that the popup layer will respond to keyboard events and pop up when the `Cascader` component is disabled.([#21](https://github.com/arco-design/arco-design/pull/21))
+
 ## 2.22.0
 
 2021-09-10

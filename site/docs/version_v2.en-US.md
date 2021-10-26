@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.23.4
+
+2021-10-26
+
+### 🐛 BugFix
+
+- Set the `type` of the expand button of the `Table` component to `button` to avoid clicking to trigger Form submit.([#23](https://github.com/arco-design/arco-design/pull/23))
+- Fix the problem that the popup layer will respond to keyboard events and pop up when the `Cascader` component is disabled.([#21](https://github.com/arco-design/arco-design/pull/21))
+
 ## 2.23.2
 
 2021-10-22
