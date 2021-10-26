@@ -359,6 +359,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
             props.onClear && props.onClear(!!popupVisible);
           }}
           onKeyDown={(e) => {
+            if (disabled) {
+              return;
+            }
             e.stopPropagation();
             const keyCode = e.keyCode || e.which;
             if (keyCode === Enter.code && !popupVisible) {
