@@ -1,7 +1,7 @@
 <!--
   Thanks so much for your PR and contribution.
 
-  Before submitting, please make sure to follow the Pull Request Guidelines: https://github.com/arco-design/arco-design/blob/master/CONTRIBUTING.md
+  Before submitting, please make sure to follow the Pull Request Guidelines: https://github.com/arco-design/arco-design/blob/main/CONTRIBUTING.md
 -->
 
 <!-- Put an `x` in "[ ]" to check a box) -->
@@ -45,7 +45,7 @@
 
 - [ ] Test suite passes (`npm run test`)
 - [ ] Provide changelog for relevant changes (e.g. bug fixes and new features) if applicable.
-- [ ] Changes are submitted to the appropriate branch (e.g. features should be submitted to `feature` branch and others should be submitted to `master` branch)
+- [ ] Changes are submitted to the appropriate branch (e.g. features should be submitted to `feature` branch and others should be submitted to `main` branch)
 
 ## Other information
 
