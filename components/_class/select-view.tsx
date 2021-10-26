@@ -451,7 +451,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     <div
       {...include(rest, ['onClick', 'onMouseEnter', 'onMouseLeave'])}
       ref={refWrapper}
-      tabIndex={0}
+      tabIndex={disabled ? -1 : 0}
       style={style}
       className={classNames}
       // When there is an input box, the keyboard events are handled inside the input box to avoid triggering redundant events in the Chinese input method
