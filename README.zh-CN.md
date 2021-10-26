@@ -30,18 +30,19 @@
 
 ## 主题配置
 
-海量的样式 tokens, 支持全局以及组件级别的主题配置。有以下2种方式可以定制主题：
+海量的设计 tokens, 支持全局以及组件级别的主题配置。有以下2种方式可以定制主题：
 
 * [Less-loader](https://arco.design/react/docs/theme)
 * [风格配置平台](https://arco.design/themes) - 推荐!
+
+## 可复用的定制化物料 
+
+[物料平台](https://arco.design/material/) 提供了一站式的物料管理方案。 沉淀可复用的定制化业务模块, 让效率突破猛进。
 
 ## TypeScript 友好
 
 所有组件都是用 TypeScript 编写的，所以天然的类型友好。
 
-## 广泛的浏览器支持
-
-支持所有现代浏览器，包括 IE11 (需要[polyfills](https://stackoverflow.com/questions/57020976/polyfills-in-2019-for-ie11))。
 
 # 安装
 
@@ -79,7 +80,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 * [组件文档](https://arco.design/react/components/overview)
 * [暗黑模式](https://arco.design/react/docs/dark)
 * [主题配置](https://arco.design/react/docs/theme)
-* [Figma 设计资源](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=8253%3A44145)
+* [Figma 设计资源](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
 
 # 生态
 
@@ -87,15 +88,21 @@ ReactDOM.render(<App />, document.getElementById('app'));
 | --------------------- | ------------------------------------------------------- |
 | [Vue 组件库] | 基于 [Arco Design](https://arco.design/) 的 Vue UI 组件库。 |
 | [风格配置平台] | 精确到组件级的主题视觉配置平台 |
-| [物料市场] | 丰富可共享的业务定制物料，让效率突破猛进 |
+| [物料平台] | 丰富可共享的业务定制物料，让效率突破猛进 |
 | [图标平台] | 一站式图标管理平台 |
 | [Arco Pro] | 快速构建中后台的前端解决方案 |
 
 [Vue 组件库]: https://arco.design/vue/docs/start
 [风格配置平台]: https://arco.design/themes
-[物料市场]: https://arco.design/material
+[物料平台]: https://arco.design/material
 [图标平台]: https://arco.design/iconbox
 [Arco Pro]: https://arco.design/pro/
+
+# 浏览器兼容性
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Electron |
+| --------- | --------- | --------- | --------- | --------- | --------- |
+| Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 # 参与贡献
 
