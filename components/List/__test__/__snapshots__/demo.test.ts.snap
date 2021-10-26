@@ -33,7 +33,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
                 >
                   <img
                     alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
                   />
                 </span>
               </div>
@@ -120,7 +120,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
           >
             <img
               alt="arcodesign"
-              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/dae45672685c4be6a297acc7848eab56~tplv-uwbnlip3yd-image.image"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/29c1f9d7d17c503c5d7bf4e538cb7c4f.png~tplv-uwbnlip3yd-webp.webp"
             />
           </div>
         </div>
@@ -147,7 +147,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
                 >
                   <img
                     alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
                   />
                 </span>
               </div>
@@ -234,7 +234,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
           >
             <img
               alt="arcodesign"
-              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a5eb077f42834139ad7ac17563056664~tplv-uwbnlip3yd-image.image"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/04d7bc31dd67dcdf380bc3f6aa07599f.png~tplv-uwbnlip3yd-webp.webp"
             />
           </div>
         </div>
@@ -261,7 +261,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
                 >
                   <img
                     alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a83a4f9b13464f609922b2c41eca552b~tplv-uwbnlip3yd-image.image"
+                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/9eeb1800d9b78349b24682c3518ac4a3.png~tplv-uwbnlip3yd-webp.webp"
                   />
                 </span>
               </div>
@@ -348,7 +348,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
           >
             <img
               alt="arcodesign"
-              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5c030fe27c0e467a9a7d62c36ae4805b~tplv-uwbnlip3yd-image.image"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/1f61854a849a076318ed527c8fca1bbf.png~tplv-uwbnlip3yd-webp.webp"
             />
           </div>
         </div>
@@ -461,10 +461,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -546,10 +543,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -631,10 +625,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -716,10 +707,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -792,7 +780,7 @@ Array [
           <span
             class="list-demo-actions-button"
           >
-            More
+            More 
             <svg
               class="arco-icon arco-icon-down"
               fill="none"
@@ -841,10 +829,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -902,10 +887,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -963,10 +945,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -1024,10 +1003,7 @@ Array [
                   <span
                     class="arco-avatar-text"
                   >
-                    <img
-                      alt="avatar"
-                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                    />
+                    A
                   </span>
                 </div>
               </div>
@@ -1495,10 +1471,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
                 <span
                   class="arco-avatar-text"
                 >
-                  <img
-                    alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                  />
+                  A
                 </span>
               </div>
             </div>
@@ -1538,10 +1511,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
                 <span
                   class="arco-avatar-text"
                 >
-                  <img
-                    alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                  />
+                  A
                 </span>
               </div>
             </div>
@@ -1581,10 +1551,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
                 <span
                   class="arco-avatar-text"
                 >
-                  <img
-                    alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                  />
+                  A
                 </span>
               </div>
             </div>
@@ -1624,10 +1591,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
                 <span
                   class="arco-avatar-text"
                 >
-                  <img
-                    alt="avatar"
-                    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                  />
+                  A
                 </span>
               </div>
             </div>
@@ -2540,10 +2504,7 @@ Array [
                       <span
                         class="arco-avatar-text"
                       >
-                        <img
-                          alt="avatar"
-                          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                        />
+                        A
                       </span>
                     </div>
                   </div>

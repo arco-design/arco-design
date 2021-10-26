@@ -1,0 +1,49 @@
+name: pr_check
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: init package-lock.json
+        run: npm i --package-lock-only
+
+      - name: install
+        run: npm ci
+
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: prePublish
+        run: npm run prepublishOnly
+
+      - name: report-compressed-size
+        uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          build-script: 'build'
+          pattern: './{dist,es,lib,icon}/**/*.{js,css}'
+
+      - name: mock-time
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Singapore'
+          timezoneMacos: 'Asia/Singapore'
+          timezoneWindows: 'Singapore Standard Time'
+
+      - name: test
+        run: npm run test:ci
+
+      - name: report coverage
+        uses: mattallty/jest-github-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          test-command: echo "done"

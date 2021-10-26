@@ -246,6 +246,11 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
         General text
       </div>
     </div>
+    <div
+      class="arco-alert-action"
+    >
+      1212
+    </div>
   </div>
   <div
     class="arco-alert arco-alert-info arco-alert-banner"
@@ -280,6 +285,11 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       >
         General text
       </div>
+    </div>
+    <div
+      class="arco-alert-action"
+    >
+      1212
     </div>
     <button
       class="arco-alert-close-btn"
@@ -338,6 +348,11 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
         Here is an example text
       </div>
     </div>
+    <div
+      class="arco-alert-action"
+    >
+      1212
+    </div>
   </div>
   <div
     class="arco-alert arco-alert-success arco-alert-with-title arco-alert-banner"
@@ -372,6 +387,11 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       >
         Success text
       </div>
+    </div>
+    <div
+      class="arco-alert-action"
+    >
+      1212
     </div>
   </div>
 </div>
@@ -410,6 +430,11 @@ exports[`renders Alert/demo/basic.md correctly 1`] = `
     >
       Here is an example text
     </div>
+  </div>
+  <div
+    class="arco-alert-action"
+  >
+    1212
   </div>
 </div>
 `;
@@ -457,6 +482,11 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           >
             Here is an info text
           </div>
+        </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
         </div>
         <button
           class="arco-alert-close-btn"
@@ -515,6 +545,11 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
             Here is a warning text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
         <button
           class="arco-alert-close-btn"
         >
@@ -572,6 +607,11 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
             Here is a success text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
         <button
           class="arco-alert-close-btn"
         >
@@ -628,6 +668,11 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           >
             Here is an error text
           </div>
+        </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
         </div>
         <button
           class="arco-alert-close-btn"
@@ -695,6 +740,11 @@ exports[`renders Alert/demo/closeElement.md correctly 1`] = `
           Here is a success text
         </div>
       </div>
+      <div
+        class="arco-alert-action"
+      >
+        1212
+      </div>
       <button
         class="arco-alert-close-btn"
       >
@@ -752,6 +802,11 @@ exports[`renders Alert/demo/closeElement.md correctly 1`] = `
           Here is a success text
         </div>
       </div>
+      <div
+        class="arco-alert-action"
+      >
+        1212
+      </div>
       <button
         class="arco-alert-close-btn"
       >
@@ -806,6 +861,11 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
             Here is an info text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
       </div>
       <div
         class="arco-alert arco-alert-warning"
@@ -839,6 +899,11 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
           >
             Here is a warning text
           </div>
+        </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
         </div>
       </div>
     </div>
@@ -880,6 +945,11 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
             Here is a success text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
       </div>
       <div
         class="arco-alert arco-alert-error"
@@ -913,6 +983,11 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
           >
             Here is an error text
           </div>
+        </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
         </div>
       </div>
     </div>
@@ -969,6 +1044,11 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
             Here is an info text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
       </div>
       <div
         class="arco-alert arco-alert-warning arco-alert-with-title"
@@ -1007,6 +1087,11 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
           >
             Here is a warning text
           </div>
+        </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
         </div>
       </div>
     </div>
@@ -1053,6 +1138,11 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
             Here is a success text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
       </div>
       <div
         class="arco-alert arco-alert-error arco-alert-with-title"
@@ -1092,6 +1182,11 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
             Here is an error text
           </div>
         </div>
+        <div
+          class="arco-alert-action"
+        >
+          1212
+        </div>
       </div>
     </div>
   </div>
@@ -1120,6 +1215,11 @@ exports[`renders Alert/demo/without-icon.md correctly 1`] = `
           Here is an info text
         </div>
       </div>
+      <div
+        class="arco-alert-action"
+      >
+        1212
+      </div>
     </div>
     <div
       class="arco-alert arco-alert-warning arco-alert-with-title"
@@ -1138,6 +1238,11 @@ exports[`renders Alert/demo/without-icon.md correctly 1`] = `
         >
           Here is a warning text
         </div>
+      </div>
+      <div
+        class="arco-alert-action"
+      >
+        1212
       </div>
     </div>
   </div>
@@ -1158,6 +1263,11 @@ exports[`renders Alert/demo/without-icon.md correctly 1`] = `
           Here is a success text
         </div>
       </div>
+      <div
+        class="arco-alert-action"
+      >
+        1212
+      </div>
     </div>
     <div
       class="arco-alert arco-alert-error arco-alert-with-title"
@@ -1176,6 +1286,11 @@ exports[`renders Alert/demo/without-icon.md correctly 1`] = `
         >
           Here is an error text
         </div>
+      </div>
+      <div
+        class="arco-alert-action"
+      >
+        1212
       </div>
     </div>
   </div>

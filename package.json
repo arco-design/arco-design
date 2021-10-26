@@ -27,11 +27,12 @@
     "test:client": "arco-scripts test:client",
     "test:node": "arco-scripts test:node",
     "test": "NODE_ENV=test npm-run-all build:cjs test:client test:node",
-    "test:ci": "npm run test && uploadcoverage -d .coverage/ -f 1",
+    "test:ci": "./scripts/test_ci.sh",
     "color": "node ./scripts/compileColors.js",
     "icon": "cd icon && rm -rf react-icon/ && rm -rf react-icon-cjs && cd build/ && node generate.js && node genDemo.js",
     "format": "prettier --config .prettierrc --write \"{stories,tests,components}/**/*.{js,jsx,ts,tsx}\"",
-    "docgen": "arco-scripts docgen"
+    "docgen": "arco-scripts docgen",
+    "precommit": "./scripts/pre_commit.sh"
   },
   "keywords": [
     "arco",
@@ -81,7 +82,7 @@
     "eslint-plugin-tsdoc": "^0.2.14",
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",
-    "husky": "^3.0.9",
+    "husky": "^3.1.0",
     "less": "^3.12.2",
     "lint-staged": "^9.4.2",
     "moment": "^2.26.0",
@@ -126,8 +127,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "npm run eslint",
-      "arco-scripts test:client --bail --findRelatedTests --passWithNoTests --coverage",
-      "arco-scripts test:node --bail --findRelatedTests --passWithNoTests",
+      "npm run precommit",
       "git add"
     ],
     "*.{css, less}": [
