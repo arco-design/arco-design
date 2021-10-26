@@ -117,6 +117,7 @@ function Tr<T>(props: TrType<T>, ref) {
           e.stopPropagation();
           onClickExpandBtn(rowK);
         }}
+        type="button"
       >
         {expanded ? <IconMinus /> : <IconPlus />}
       </button>
