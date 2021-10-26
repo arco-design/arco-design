@@ -15,9 +15,11 @@
 
 在完成物料的开发、测试之后，你就可以将其发布至 NPM 了，你可以选择手动使用 `npm publish` 来发包，或者使用 arco-scripts 提供的 `arco publish` 命令，此命令将发包流程大大简化。
 
-```bash
+```
+
 arco publish
 ```
+
 
 `arco publish` 会弹出下拉选项选择需要发布的版本（严格按照 Semver 规范生成的版本选择）。
 
