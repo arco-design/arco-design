@@ -16,7 +16,7 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
       >
         <img
           alt="avatar"
-          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/9eeb1800d9b78349b24682c3518ac4a3.png~tplv-uwbnlip3yd-webp.webp"
         />
       </span>
     </div>
@@ -133,7 +133,7 @@ exports[`renders Comment/demo/basic.md correctly 1`] = `
       >
         <img
           alt="avatar"
-          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
         />
       </span>
     </div>
@@ -237,7 +237,7 @@ exports[`renders Comment/demo/editor.md correctly 1`] = `
   >
     <img
       alt="comment-avatar"
-      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/9eeb1800d9b78349b24682c3518ac4a3.png~tplv-uwbnlip3yd-webp.webp"
     />
   </div>
   <div
@@ -301,7 +301,7 @@ exports[`renders Comment/demo/editor.md correctly 1`] = `
         >
           <img
             alt="comment-avatar"
-            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
           />
         </div>
         <div
@@ -357,7 +357,7 @@ exports[`renders Comment/demo/inline.md correctly 1`] = `
   >
     <img
       alt="comment-avatar"
-      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
     />
   </div>
   <div
@@ -421,7 +421,7 @@ exports[`renders Comment/demo/inline.md correctly 1`] = `
         >
           <img
             alt="comment-avatar"
-            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+            src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/9eeb1800d9b78349b24682c3518ac4a3.png~tplv-uwbnlip3yd-webp.webp"
           />
         </div>
         <div
@@ -485,7 +485,7 @@ exports[`renders Comment/demo/inline.md correctly 1`] = `
               >
                 <img
                   alt="comment-avatar"
-                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a83a4f9b13464f609922b2c41eca552b~tplv-uwbnlip3yd-image.image"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/8361eeb82904210b4f55fab888fe8416.png~tplv-uwbnlip3yd-webp.webp"
                 />
               </div>
               <div
@@ -512,7 +512,7 @@ exports[`renders Comment/demo/inline.md correctly 1`] = `
                     class="arco-comment-content"
                   >
                     <div>
-                       Reply content
+                       Reply content 
                     </div>
                   </div>
                   <div
@@ -548,7 +548,7 @@ exports[`renders Comment/demo/inline.md correctly 1`] = `
               >
                 <img
                   alt="comment-avatar"
-                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d25cec706293400989fde1eddfeb9cf0~tplv-uwbnlip3yd-image.image"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp"
                 />
               </div>
               <div
@@ -575,7 +575,7 @@ exports[`renders Comment/demo/inline.md correctly 1`] = `
                     class="arco-comment-content"
                   >
                     <div>
-                       Reply content
+                       Reply content 
                     </div>
                   </div>
                   <div
@@ -645,7 +645,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
               >
                 <img
                   alt="comment-avatar"
-                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b8659bfc202d44c49aad938b95884e7a~tplv-uwbnlip3yd-image.image"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
                 />
               </div>
               <div
@@ -754,7 +754,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
               >
                 <img
                   alt="comment-avatar"
-                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
+                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/9eeb1800d9b78349b24682c3518ac4a3.png~tplv-uwbnlip3yd-webp.webp"
                 />
               </div>
               <div

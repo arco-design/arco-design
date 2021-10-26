@@ -1334,7 +1334,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   <span
                     class="arco-radio-text"
                   >
-                     D
+                     D 
                   </span>
                 </label>
               </div>
@@ -1428,7 +1428,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-upload-list-item-picture"
                   >
                     <img
-                      src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
                     />
                     <div
                       class="arco-upload-list-item-picture-mask"
@@ -3009,7 +3009,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   <span
                     class="arco-radio-text"
                   >
-                     D
+                     D 
                   </span>
                 </label>
               </div>
@@ -3103,7 +3103,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-upload-list-item-picture"
                   >
                     <img
-                      src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/701131f3576449d483d0650a525b57ee~tplv-uwbnlip3yd-image.image"
+                      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
                     />
                     <div
                       class="arco-upload-list-item-picture-mask"
@@ -5034,7 +5034,7 @@ exports[`renders Form/demo/shouldUpdate.md correctly 1`] = `
         class="arco-col arco-col-5 arco-form-label-item"
       >
         <label>
-
+            
         </label>
       </div>
       <div

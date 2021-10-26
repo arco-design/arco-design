@@ -400,7 +400,7 @@ exports[`renders Card/demo/hoverable.md correctly 1`] = `
     <div
       class="arco-card-body"
     >
-      Card content
+      Card content 
       <br />
        Card content
     </div>
@@ -496,7 +496,7 @@ exports[`renders Card/demo/meta.md correctly 1`] = `
     >
       <img
         alt="dessert"
-        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/bb4d85edbb3a40b2b9540f7aec6cac17~tplv-uwbnlip3yd-image.image"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp"
         style="width:100%;transform:translateY(-20px)"
       />
     </div>
@@ -518,7 +518,7 @@ exports[`renders Card/demo/meta.md correctly 1`] = `
         <div
           class="arco-card-meta-description"
         >
-          Card content
+          Card content 
           <br />
            Card content
         </div>
@@ -617,10 +617,7 @@ Array [
             <span
               class="arco-avatar-text"
             >
-              <img
-                alt="avatar"
-                src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-              />
+              A
             </span>
           </div>
           <span
@@ -657,10 +654,7 @@ Array [
             <span
               class="arco-avatar-text"
             >
-              <img
-                alt="avatar"
-                src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-              />
+              A
             </span>
           </div>
           <span
@@ -706,7 +700,7 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
     >
       <img
         alt="dessert"
-        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/bb4d85edbb3a40b2b9540f7aec6cac17~tplv-uwbnlip3yd-image.image"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
         style="width:100%;transform:translateY(-20px)"
       />
     </div>
@@ -747,10 +741,7 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
               <span
                 class="arco-avatar-text"
               >
-                <img
-                  alt="avatar"
-                  src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/5ee428f1389b4291b1f9bbd82b24105d~tplv-uwbnlip3yd-image.image"
-                />
+                A
               </span>
             </div>
             <span
