@@ -121,12 +121,6 @@ export default function useShowcaseData() {
           ，火山翻译在短时间内完成了官网落地页的设计工作，多样的视觉内容帮助聚焦用户关注，引流平台提供的多语言翻译服务。
         </div>
       ),
-      data: [
-        {
-          label: '服务用户数',
-          text: '13k+',
-        },
-      ],
       image: imageList.volc_translate,
       homePage: true,
     },
