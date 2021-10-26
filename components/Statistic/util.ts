@@ -1,6 +1,5 @@
 import { padStart } from '../_util/pad';
 
-// https://github.com/ant-design/ant-design/blob/master/components/statistic/utils.tsx
 const units: [string, number][] = [
   ['Y', 1000 * 60 * 60 * 24 * 365], // years
   ['M', 1000 * 60 * 60 * 24 * 30], // months

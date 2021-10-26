@@ -1,5 +1,3 @@
-// https://github.com/ant-design/ant-design/blob/master/components/_util/responsiveObserve.ts
-
 export type Breakpoint = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 export type BreakpointMap = Partial<Record<Breakpoint, string>>;
 export type ScreenMap = Partial<Record<Breakpoint, boolean>>;
