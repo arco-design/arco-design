@@ -136,11 +136,11 @@ export default (lang) => {
       name: t['routes.data-input'],
       list: [
         {
-          name: t['routes.datePicker'],
+          name: t['routes.date-picker'],
           key: 'DatePicker',
         },
         {
-          name: t['routes.timePicker'],
+          name: t['routes.time-picker'],
           key: 'TimePicker',
         },
         {

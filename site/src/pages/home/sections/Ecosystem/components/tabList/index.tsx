@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@arco-design/web-react';
 import styles from './index.module.less';
 import cs from '../../../../utils/classNames';
 import { TabItem } from '../../interface';
 import { useInterval } from '../../../../hooks/useInterval';
+import useHomeContext from '../../../../hooks/useHomeContext';
 
 function ContentHeader({
   name,
@@ -16,6 +17,7 @@ function ContentHeader({
   href?: string;
   desc?: string;
 }) {
+  const { lang } = useHomeContext();
   return (
     <div className={styles['content-header']}>
       <div className={styles['content-header-left']}>
@@ -26,7 +28,7 @@ function ContentHeader({
       <div className={styles['content-header-right']}>
         {href && (
           <Button type="primary" href={href} target="_blank" className="home-btn">
-            立即使用
+            {lang === 'zh-CN' ? '立即使用' : 'Goto'}
           </Button>
         )}
       </div>
@@ -38,6 +40,8 @@ export default function EcosystemTabList(props: { list: TabItem[] }) {
   const { list } = props;
   const tabRenderRecord = useRef(list.map((item) => item.name));
   const [activeTab, setActiveTab] = useState(list[0].name);
+  const [parse, setParse] = useState(false);
+  const contentRef = useRef<HTMLDivElement>();
 
   const slideToNext = () => {
     const nameList = list.map((item) => item.name);
@@ -48,10 +52,29 @@ export default function EcosystemTabList(props: { list: TabItem[] }) {
 
   const activePlatform = list.find((item) => item.name === activeTab);
 
-  const resetInterval = useInterval(() => {
-    slideToNext();
-  }, 10000);
+  const resetInterval = useInterval(
+    () => {
+      slideToNext();
+    },
+    !parse ? 10000 : null
+  );
 
+  const changeParse = (newValue) => {
+    if (parse !== newValue) {
+      setParse(newValue);
+    }
+  };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.addEventListener('mouseenter', () => changeParse(true));
+      contentRef.current.addEventListener('mouseleave', () => changeParse(false));
+    }
+    return () => {
+      contentRef.current.removeEventListener('mouseenter', () => changeParse(true));
+      contentRef.current.removeEventListener('mouseleave', () => changeParse(false));
+    };
+  });
   return (
     <>
       <div className={styles.tabs}>
@@ -88,12 +111,14 @@ export default function EcosystemTabList(props: { list: TabItem[] }) {
             href={activePlatform.href}
           />
         )}
-        {React.cloneElement(activePlatform.content as JSX.Element, {
-          isFirstRender: tabRenderRecord.current.indexOf(activeTab) > -1,
-          onMounted: () => {
-            tabRenderRecord.current = tabRenderRecord.current.filter((key) => key !== activeTab);
-          },
-        })}
+        <div ref={contentRef}>
+          {React.cloneElement(activePlatform.content as JSX.Element, {
+            isFirstRender: tabRenderRecord.current.indexOf(activeTab) > -1,
+            onMounted: () => {
+              tabRenderRecord.current = tabRenderRecord.current.filter((key) => key !== activeTab);
+            },
+          })}
+        </div>
       </div>
     </>
   );

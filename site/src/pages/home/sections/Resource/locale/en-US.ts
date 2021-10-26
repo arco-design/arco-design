@@ -13,7 +13,7 @@ export default {
   'resource.design.arcoComponentUsage': 'Component usage',
   'resource.develop.title': 'Development Resources',
   'resource.develop.desc': 'Components for faster and easier web development',
-  'resource.develop.arcoCli': 'Arco Cli',
+  'resource.develop.arcoCli': 'Arco CLI',
   'resource.develop.github': 'GitHub',
   'resource.designValue.title.a': 'agreement',
   'resource.designValue.title.r': 'rhythm',

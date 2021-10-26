@@ -49,7 +49,7 @@ function Overview({ lang = 'zh-CN' }) {
           <div
             className={`${prefixCls}-list-item-inner`}
             onClick={() => {
-              history.push(`/components/${underscored(l.key)}`);
+              history.push(`/react/components/${underscored(l.key)}`);
             }}
           >
             <div className={`${prefixCls}-list-item-logo`}>
