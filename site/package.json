@@ -9,7 +9,7 @@
     "@arco-design/mobile-react": "^0.6.2",
     "@babel/runtime": "^7.6.0",
     "@loadable/component": "^5.14.1",
-    "axios": "^0.20.0",
+    "axios": "^0.24.0",
     "classnames": "^2.2.6",
     "clipboard": "^2.0.6",
     "gsap": "^3.6.0",
