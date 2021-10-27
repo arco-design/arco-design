@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.23.4
+
+2021-10-26
+
+### 🐛 问题修复
+
+- `Table` 组件展开按钮的 `type` 设置为 `button`，避免点击触发 Form submit。([#23](https://github.com/arco-design/arco-design/pull/23))
+- 修复 `Cascader` 组件在禁用时，弹出层会响应键盘事件并弹出的问题。([#21](https://github.com/arco-design/arco-design/pull/21))
+
 ## 2.23.2
 
 2021-10-22

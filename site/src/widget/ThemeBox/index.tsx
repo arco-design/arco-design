@@ -10,6 +10,7 @@ import {
   Skeleton,
   Notification,
   Message,
+  Tag,
   Typography,
 } from '@arco-design/web-react';
 import { IconSkin, IconLink, IconClose } from '@arco-design/web-react/icon';
@@ -215,9 +216,20 @@ function ThemeBox({ lang = 'zh-CN' }) {
                     >
                       {t.openInDesignLab}
                     </Button>,
-                    <Button key="2" type="primary" size="mini" onClick={() => onUseTheme(l)}>
-                      {t.install}
-                    </Button>,
+                    ...(() => {
+                      if (themeObj.packageName === l.packageName) {
+                        return [
+                          <Tag color="arcoblue" key="2">
+                            当前使用
+                          </Tag>,
+                        ];
+                      }
+                      return [
+                        <Button key="2" type="primary" size="mini" onClick={() => onUseTheme(l)}>
+                          {t.install}
+                        </Button>,
+                      ];
+                    })(),
                   ]}
                 >
                   <Meta title={l.themeName} />

@@ -1,6 +1,6 @@
 module.exports = function StyleConfig(config) {
   config.less.cssJsEntry = ['components/**/style/index.ts'];
-  config.less.output.dist.cssFileName = 'arco.css';
+  config.less.output.dist.cssFileName = 'arco.min.css';
   config.less.watch = [
     'components/**/*.{less,woff,woff2,png,jpg}',
     'components/style/theme/color/*.js',

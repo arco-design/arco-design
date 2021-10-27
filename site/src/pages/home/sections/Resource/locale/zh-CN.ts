@@ -13,7 +13,7 @@ export default {
   'resource.design.arcoComponentUsage': '组件用法',
   'resource.develop.title': '开发资源',
   'resource.develop.desc': '组件用于更快速、更简便的 Web 开发',
-  'resource.develop.arcoCli': 'Arco Cli 脚手架',
+  'resource.develop.arcoCli': 'Arco CLI 脚手架',
   'resource.develop.github': 'GitHub 代码仓库',
   'resource.designValue.title.a': 'agreement 一致',
   'resource.designValue.title.r': 'rhythm 韵律',
