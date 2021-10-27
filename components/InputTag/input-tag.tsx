@@ -68,7 +68,7 @@ const useComputeAutoWidthDelay = (value: InputTagProps<any>['value']) => {
 
 const defaultProps: InputTagProps = {
   animation: true,
-  validate: (inputValue, values) => inputValue && values.every((item) => item !== inputValue),
+  validate: (inputValue, values) => inputValue && values.every((item) => item.value !== inputValue),
 };
 
 function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
