@@ -277,7 +277,7 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
     >
       <div
         class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           class="arco-select-view"

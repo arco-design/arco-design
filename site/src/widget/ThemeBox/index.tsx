@@ -217,7 +217,7 @@ function ThemeBox({ lang = 'zh-CN' }) {
                       {t.openInDesignLab}
                     </Button>,
                     ...(() => {
-                      if (themeObj.packageName === l.packageName) {
+                      if (themeObj && themeObj.packageName === l.packageName) {
                         return [
                           <Tag color="arcoblue" key="2">
                             当前使用
