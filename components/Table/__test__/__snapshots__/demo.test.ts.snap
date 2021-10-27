@@ -1774,7 +1774,9 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                       <span
                         class="arco-table-cell-expand-icon"
                       >
-                        <button>
+                        <button
+                          type="button"
+                        >
                           <svg
                             class="arco-icon arco-icon-plus"
                             fill="none"
@@ -1881,7 +1883,9 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                       <span
                         class="arco-table-cell-expand-icon"
                       >
-                        <button>
+                        <button
+                          type="button"
+                        >
                           <svg
                             class="arco-icon arco-icon-plus"
                             fill="none"
@@ -3398,7 +3402,9 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -3473,7 +3479,9 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -3548,7 +3556,9 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -3623,7 +3633,9 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -3698,7 +3710,9 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -3926,7 +3940,9 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -4001,7 +4017,9 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -4076,7 +4094,9 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -4210,7 +4230,9 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -5529,7 +5551,9 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                       style="left:0"
                     >
-                      <button>
+                      <button
+                        type="button"
+                      >
                         <svg
                           class="arco-icon arco-icon-plus"
                           fill="none"
@@ -5679,7 +5703,9 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                       style="left:0"
                     >
-                      <button>
+                      <button
+                        type="button"
+                      >
                         <svg
                           class="arco-icon arco-icon-plus"
                           fill="none"
@@ -5829,7 +5855,9 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                       style="left:0"
                     >
-                      <button>
+                      <button
+                        type="button"
+                      >
                         <svg
                           class="arco-icon arco-icon-plus"
                           fill="none"
@@ -5979,7 +6007,9 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                       style="left:0"
                     >
-                      <button>
+                      <button
+                        type="button"
+                      >
                         <svg
                           class="arco-icon arco-icon-plus"
                           fill="none"
@@ -6129,7 +6159,9 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                       style="left:0"
                     >
-                      <button>
+                      <button
+                        type="button"
+                      >
                         <svg
                           class="arco-icon arco-icon-plus"
                           fill="none"
@@ -7794,7 +7826,9 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                     style="left:80px"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -7910,7 +7944,9 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                     style="left:80px"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -8026,7 +8062,9 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                     style="left:80px"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"
@@ -8244,7 +8282,9 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
                     style="left:80px"
                   >
-                    <button>
+                    <button
+                      type="button"
+                    >
                       <svg
                         class="arco-icon arco-icon-plus"
                         fill="none"

@@ -2205,7 +2205,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default arco-cascader-disabled"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   class="arco-cascader-view"
@@ -2359,7 +2359,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   class="arco-select-view"
@@ -2445,7 +2445,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default arco-select-disabled"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   class="arco-select-view"
