@@ -267,6 +267,8 @@ export default (
 
   const horizontalOffset = popupAlign.horizontalOffset || 0;
   const verticalOffset = popupAlign.verticalOffset || 0;
+  let arrowLeft;
+  let arrowTop;
   switch (props.position) {
     case 'top': {
       style.top = top - content.clientHeight - alignTop;
@@ -283,7 +285,7 @@ export default (
       style.left = left;
       autoPosition('top') && (realPosition = 'bl');
       style.left += horizontalOffset;
-      let arrowLeft = left - Number(style.left) + Math.min(width / 2, 50);
+      arrowLeft = left - Number(style.left) + Math.min(width / 2, 50);
       arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
       break;
     case 'tr':
@@ -335,7 +337,7 @@ export default (
       style.left = left - content.clientWidth - alignLeft;
       autoPosition('left') && (realPosition = 'rt');
       style.top += verticalOffset;
-      let arrowTop = top - Number(style.top) + Math.min(height / 2, 50);
+      arrowTop = top - Number(style.top) + Math.min(height / 2, 50);
       arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
       break;
     case 'lb':
