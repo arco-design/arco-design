@@ -24,4 +24,5 @@ exports.client = (config) => {
     '^@arco-design/web-react/(.+)$': '<rootDir>/$1',
     '^@arco-design/web-react$': '<rootDir>',
   };
+  config.transform['^.+\\.tsx?$'] = '@swc-node/jest';
 };
