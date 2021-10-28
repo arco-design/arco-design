@@ -175,7 +175,6 @@ function Base(props: BaseProps) {
     if (editing) {
       return;
     }
-    // Called in onResize, props and state will not be updated, so use ref to record variables.
     if (ellipsisConfig.rows) {
       // In ellipsis mode, if the user manually expands, there is no need to calculate ellipsis and ellipsisText;
       if (expanding) {
