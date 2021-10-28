@@ -7,15 +7,15 @@ title:
 
 ## zh-CN
 
-使用 `react-sticky` 实现选项卡头部吸顶效果。
+使用 `react-stickynode` 实现选项卡头部吸顶效果。
 
 ## en-US
 
-Use `react-sticky` to fix the tab head to the top.
+Cooperate with `react-stickynode` to achieve the effect of header sticky.
 
 ```js
 import { Tabs, Typography } from '@arco-design/web-react';
-import { StickyContainer, Sticky } from 'react-sticky';
+import Sticky from 'react-stickynode';
 
 const TabPane = Tabs.TabPane;
 
@@ -23,25 +23,21 @@ const style = { textAlign: 'center', marginTop: 20 };
 
 
 ReactDOM.render(
-  <StickyContainer>
-    <Tabs defaultActiveTab="3" renderTabHeader={(props, DefaultTabHeader) => {
-      return <Sticky topOffset={-52}>
-        {({ style, isSticky }) => (
-          <DefaultTabHeader {...props}  style={{...style, top: isSticky ? 52 : 0, background: 'var(--color-bg-2)' }} />
-        )}
+  <Tabs className="bottomBoundary" defaultActiveTab="3" renderTabHeader={(props, DefaultTabHeader) => {
+    return <Sticky innerZ={3} top="#navbar" bottomBoundary=".bottomBoundary" >
+          <DefaultTabHeader {...props} />
       </Sticky>
     }}>
-      <TabPane key="1" title="Tab 1" style={{height: 300}}>
-        <Typography.Paragraph style={style}>Content of Tab Panel  1</Typography.Paragraph>
-      </TabPane>
-      <TabPane key="2" title="Tab 2">
-        <Typography.Paragraph style={style}>Content of Tab Panel  2</Typography.Paragraph>
-      </TabPane>
-      <TabPane key="3" title="Tab 3">
-        <Typography.Paragraph style={style}>Content of Tab Panel  3</Typography.Paragraph>
-      </TabPane>
-    </Tabs>
-  </StickyContainer>,
+    <TabPane key="1" title="Tab 1" style={{height: 300}}>
+      <Typography.Paragraph style={style}>Content of Tab Panel  1</Typography.Paragraph>
+    </TabPane>
+    <TabPane key="2" title="Tab 2">
+      <Typography.Paragraph style={style}>Content of Tab Panel  2</Typography.Paragraph>
+    </TabPane>
+    <TabPane key="3" title="Tab 3">
+      <Typography.Paragraph style={style}>Content of Tab Panel  3</Typography.Paragraph>
+    </TabPane>
+  </Tabs>,
   CONTAINER
 );
 ```

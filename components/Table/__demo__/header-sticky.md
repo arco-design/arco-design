@@ -7,15 +7,15 @@ title:
 
 ## zh-CN
 
-配合 `react-sticky` 可以实现表头吸顶的效果。
+配合 `react-stickynode` 可以实现表头吸顶的效果。
 
 ## en-US
 
-Cooperate with `react-sticky` to achieve the effect of header sticky.
+Cooperate with `react-stickynode` to achieve the effect of header sticky.
 
 ```js
 import { Table } from '@arco-design/web-react';
-import { StickyContainer, Sticky } from 'react-sticky';
+import Sticky from 'react-stickynode';
 
 const columns = [
   {
@@ -76,12 +76,8 @@ const data = [
 
 function Wrapper(props) {
   return (
-    <Sticky topOffset={-60}>
-      {({ style, isSticky }) => (
-        <div style={{ ...style, top: isSticky ? 60 : 0, zIndex: 3, overflow: 'auto' }}>
+    <Sticky innerZ={3} top="#navbar" bottomBoundary=".bottomBoundary" >
           {props.children}
-        </div>
-      )}
     </Sticky>
   );
 }
@@ -94,15 +90,14 @@ const components = {
 
 function Demo() {
   return (
-    <StickyContainer>
       <Table
+        className="bottomBoundary"
         components={components}
         scroll={{ y: true }}
         border={{ wrapper: true, cell: true }}
         columns={columns}
         data={data}
       />
-    </StickyContainer>
   );
 }
 
