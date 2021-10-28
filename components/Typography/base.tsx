@@ -1,4 +1,5 @@
-import React, { useState, useContext, useRef, useLayoutEffect, PropsWithChildren } from 'react';
+import React, { useState, useContext, useRef, PropsWithChildren } from 'react';
+import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 import { ConfigContext } from '../ConfigProvider';
 import {
   TypographyParagraphProps,
@@ -10,7 +11,7 @@ import Operations from './operations';
 import cs from '../_util/classNames';
 import EditContent from './edit-content';
 import { isObject } from '../_util/is';
-import ResizeObserver from '../_util/resizeObserver';
+import useResizeObserver from '../_util/hooks/useResizeObserver';
 import { measure } from './utils';
 import Tooltip from '../Tooltip';
 import Popover from '../Popover';
@@ -23,13 +24,6 @@ type BaseProps = PropsWithChildren<
   TypographyParagraphProps & TypographyTitleProps & TypographyTextProps
 > & {
   componentType: 'Title' | 'Paragraph' | 'Text';
-};
-
-type CalcEllipsisRef = {
-  ellipsisConfig?: EllipsisConfig;
-  expanding?: boolean;
-  ellipsis?: boolean;
-  editing?: boolean;
 };
 
 function getClassNameAndComponentName(props: BaseProps, prefixCls: string) {
@@ -112,23 +106,10 @@ function Base(props: BaseProps) {
 
   const editableConfig = isObject(editable) ? editable : {};
   const mergedEditing = 'editing' in editableConfig ? editableConfig.editing : editing;
-  const calcEllipsisRef = useRef<CalcEllipsisRef>({
-    expanding,
-    ellipsis: isEllipsis,
-    editing: mergedEditing,
-  });
 
   const ellipsisConfig: EllipsisConfig = ellipsis
     ? { rows: 1, ellipsisStr: '...', ...(isObject(ellipsis) ? ellipsis : {}) }
     : {};
-  updateCalcRef({ ellipsisConfig });
-
-  function updateCalcRef(updater: Partial<CalcEllipsisRef>) {
-    calcEllipsisRef.current = {
-      ...calcEllipsisRef.current,
-      ...updater,
-    };
-  }
 
   function renderOperations(forceShowExpand?: boolean) {
     return (
@@ -147,48 +128,57 @@ function Base(props: BaseProps) {
 
   function onClickExpand() {
     setExpanding(!expanding);
-    updateCalcRef({ expanding: !expanding });
     ellipsisConfig.onExpand && ellipsisConfig.onExpand(!expanding);
   }
 
-  useLayoutEffect(() => {
-    if (mergedEditing !== calcEllipsisRef.current.editing) {
-      calcEllipsisRef.current.editing = mergedEditing;
-    }
-    resizeOnNextFrame();
-    return () => {
-      caf(rafId.current);
-    };
-  }, [children, ellipsisConfig.rows, mergedEditing]);
-
-  useUpdateEffect(() => {
-    ellipsisConfig.onEllipsis && ellipsisConfig.onEllipsis(isEllipsis);
-    updateCalcRef({ ellipsis: isEllipsis });
-  }, [isEllipsis]);
-
-  function resizeOnNextFrame() {
+  const resizeOnNextFrame = () => {
     caf(rafId.current);
     rafId.current = raf(() => {
       calcEllipsis();
     });
-  }
+  };
+
+  const { cor, dor, currentOr } = useResizeObserver(resizeOnNextFrame);
+
+  useIsomorphicLayoutEffect(() => {
+    if (!currentOr) {
+      resizeOnNextFrame();
+    }
+  }, [currentOr]);
+
+  useUpdateEffect(() => {
+    ellipsisConfig.onEllipsis && ellipsisConfig.onEllipsis(isEllipsis);
+  }, [isEllipsis]);
+
+  useIsomorphicLayoutEffect(() => {
+    if (componentRef.current) {
+      cor(componentRef.current);
+    }
+    return () => {
+      dor();
+      caf(rafId.current);
+    };
+  }, [
+    children,
+    expanding,
+    isEllipsis,
+    editing,
+    ellipsisConfig.suffix,
+    ellipsisConfig.ellipsisStr,
+    ellipsisConfig.expandable,
+    ellipsisConfig.expandNodes,
+    ellipsisConfig.rows,
+  ]);
 
   function calcEllipsis() {
-    const calcConfig = calcEllipsisRef.current;
-    const {
-      ellipsis: currentEllipsis,
-      expanding: currentExpanding,
-      ellipsisConfig,
-      editing,
-    } = calcConfig;
-
+    const currentEllipsis = isEllipsis;
     if (editing) {
       return;
     }
     // Called in onResize, props and state will not be updated, so use ref to record variables.
     if (ellipsisConfig.rows) {
       // In ellipsis mode, if the user manually expands, there is no need to calculate ellipsis and ellipsisText;
-      if (currentExpanding) {
+      if (expanding) {
         return;
       }
       setMeasuring(true);
@@ -292,19 +282,15 @@ function Base(props: BaseProps) {
     );
   }
 
-  return (
-    <ResizeObserver onResize={resizeOnNextFrame}>
-      {mergedEditing ? (
-        <EditContent
-          {...props}
-          prefixCls={prefixCls}
-          setEditing={setEditing}
-          editableConfig={editableConfig}
-        />
-      ) : (
-        renderContent()
-      )}
-    </ResizeObserver>
+  return mergedEditing ? (
+    <EditContent
+      {...props}
+      prefixCls={prefixCls}
+      setEditing={setEditing}
+      editableConfig={editableConfig}
+    />
+  ) : (
+    renderContent()
   );
 }
 
