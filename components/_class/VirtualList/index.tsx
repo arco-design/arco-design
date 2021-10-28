@@ -577,14 +577,16 @@ const VirtualList: React.ForwardRefExoticComponent<VirtualListProps<any> &
           ref: (ele: HTMLElement) => {
             const { current: heightMap } = refItemHeightMap;
             // Minimize the measurement of element height as much as possible to avoid frequent triggering of browser reflow
+            // Method getNodeHeight get the clientHeight from the DOM referred by React ref. If result is wrong, check the ref of this element
             if (
               ele &&
               state.status === 'MEASURE_START' &&
               (!isStaticItemHeight || heightMap[key] === undefined)
             ) {
               if (isStaticItemHeight) {
-                heightMap[KEY_VIRTUAL_ITEM_HEIGHT] =
-                  heightMap[KEY_VIRTUAL_ITEM_HEIGHT] || getNodeHeight(ele);
+                if (!heightMap[KEY_VIRTUAL_ITEM_HEIGHT]) {
+                  heightMap[KEY_VIRTUAL_ITEM_HEIGHT] = getNodeHeight(ele);
+                }
                 heightMap[key] = heightMap[KEY_VIRTUAL_ITEM_HEIGHT];
               } else {
                 heightMap[key] = getNodeHeight(ele);

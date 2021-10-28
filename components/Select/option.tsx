@@ -27,8 +27,7 @@ function Option(props: OptionProps, ref) {
     ? (valueSelect as any[]).indexOf(value) !== -1
     : valueSelect === value;
 
-  const optionProps = {
-    ref,
+  const optionLabelProps = {
     style,
     className: cs(
       `${prefixCls}-option`,
@@ -52,6 +51,7 @@ function Option(props: OptionProps, ref) {
   if (isMultipleMode) {
     return (
       <li
+        ref={ref}
         className={cs(
           `${prefixCls}-option-wrapper`,
           {
@@ -65,14 +65,14 @@ function Option(props: OptionProps, ref) {
           className={`${prefixCls}-checkbox`}
           checked={isChecked}
           disabled={disabled}
-          onChange={optionProps.onClick}
+          onChange={optionLabelProps.onClick}
         />
-        <span {...optionProps}>{children}</span>
+        <span {...optionLabelProps}>{children}</span>
       </li>
     );
   }
 
-  return <li {...optionProps}>{children}</li>;
+  return <li {...optionLabelProps}>{children}</li>;
 }
 
 const OptionComponent = React.forwardRef<unknown, OptionProps>(Option);
