@@ -53,6 +53,7 @@
   "devDependencies": {
     "@arco-design/arco-components": "^1.13.0",
     "@arco-design/arco-scripts": "^1.25.0",
+    "@arco-design/web-react": "^2.23.3",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
