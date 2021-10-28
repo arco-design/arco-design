@@ -109,6 +109,9 @@ function Base(props: BaseProps) {
   const [measuring, setMeasuring] = useState(false);
 
   const componentRef = useRef(null);
+  // Use the current attribute of useRef to obtain the latest children
+  const childrenRef = useRef(null);
+  childrenRef.current = children;
 
   const editableConfig = isObject(editable) ? editable : {};
   const mergedEditing = 'editing' in editableConfig ? editableConfig.editing : editing;
@@ -196,7 +199,7 @@ function Base(props: BaseProps) {
         componentRef.current,
         ellipsisConfig,
         renderOperations(!!ellipsisConfig.expandable),
-        children
+        childrenRef.current
       );
       setMeasuring(false);
       if (ellipsis && text) {
