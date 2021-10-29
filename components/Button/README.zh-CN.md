@@ -14,6 +14,7 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
+|htmlType|按钮原生的 html type 类型|`'button' \| 'submit' \| 'reset'`|`button`|
 |style|节点样式|`CSSProperties`|`-`|
 |className|节点类名|`string \| string[]`|`-`|
 |type|按钮主要分为六种按钮类型：主要按钮、次级按钮、虚框按钮、文字按钮、线性按钮，`default` 为次级按钮。|`'default' \| 'primary' \| 'secondary' \| 'dashed' \| 'text' \| 'outline'`|`default`|
