@@ -268,13 +268,16 @@ export default (
   const horizontalOffset = popupAlign.horizontalOffset || 0;
   const verticalOffset = popupAlign.verticalOffset || 0;
   switch (props.position) {
-    case 'top':
+    case 'top': {
       style.top = top - content.clientHeight - alignTop;
       style.left = left + width / 2 - content.clientWidth / 2;
       autoPosition('top') && (realPosition = 'bottom');
       style.left += horizontalOffset;
-      arrowStyle.left = left - Number(style.left) + width / 2;
+
+      const arrowLeft = left - Number(style.left) + width / 2;
+      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
       break;
+    }
     case 'tl':
       style.top = top - content.clientHeight - alignTop;
       style.left = left;
@@ -291,13 +294,16 @@ export default (
       arrowLeft = left - Number(style.left) + Math.max(width / 2, width - 50);
       arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
       break;
-    case 'bottom':
+    case 'bottom': {
       style.top = height + top + alignBottom;
       style.left = left + width / 2 - content.clientWidth / 2;
       autoPosition('bottom') && (realPosition = 'top');
       style.left += horizontalOffset;
-      arrowStyle.left = left - Number(style.left) + width / 2;
+
+      const arrowLeft = left - Number(style.left) + width / 2;
+      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
       break;
+    }
     case 'bl':
       style.top = height + top + alignBottom;
       style.left = left;
@@ -314,13 +320,16 @@ export default (
       arrowLeft = left - Number(style.left) + Math.max(width / 2, width - 50);
       arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
       break;
-    case 'left':
+    case 'left': {
       style.top = top + height / 2 - content.clientHeight / 2;
       style.left = left - content.clientWidth - alignLeft;
       autoPosition('left') && (realPosition = 'right');
       style.top += verticalOffset;
-      arrowStyle.top = top - Number(style.top) + height / 2;
+      const arrowTop = top - Number(style.top) + height / 2;
+      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
       break;
+    }
+
     case 'lt':
       style.top = top;
       style.left = left - content.clientWidth - alignLeft;
@@ -338,14 +347,16 @@ export default (
       arrowTop = top - Number(style.top) + Math.max(height / 2, height - 50);
       arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
       break;
-    case 'right':
+    case 'right': {
       style.top = top + height / 2 - content.clientHeight / 2;
       style.left = width + left + alignRight;
       autoPosition('right') && (realPosition = 'left');
       style.top += verticalOffset;
 
-      arrowStyle.top = top - Number(style.top) + height / 2;
+      const arrowTop = top - Number(style.top) + height / 2;
+      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
       break;
+    }
     case 'rt':
       style.top = top;
       style.left = width + left + alignRight;
