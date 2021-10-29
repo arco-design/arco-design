@@ -112,4 +112,4 @@ Developers interested in contributing should read the [Code of Conduct](./CODE_O
 
 # License
 
-Ths project is [MIT licensed](./LICENSE).
+This project is [MIT licensed](./LICENSE).
