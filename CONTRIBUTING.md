@@ -29,7 +29,7 @@ We use [Github issues](https://github.com/arco-design/arco-design/issues) for bu
 1. Run `npm run start` to start and preview site.
 1. Make changes to the codebase. Please add tests if applicable.
 1. Make sure the test suite passes with `npm run test`. To watch for specific changes in development, use `npm run test --watch TestName`.
-1. If you made any `props` changes (i.e. `interface.ts` file), DON'T manually update `README` file under the component. Instead, run `yarn run docgen` to generate the `README` file automatically.
+1. If you made any `props` changes (i.e. `interface.ts` file), DON'T manually update `README` file under the component. Instead, run `npm run docgen` to generate the `README` file automatically.
 1. Commit your changes, adhering to the [Commit Guidelines](#commit-guidelines)
 1. Open a new pull request, [referencing corresponding issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) if available.
 
