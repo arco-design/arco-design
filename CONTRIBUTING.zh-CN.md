@@ -30,7 +30,7 @@
 1. 执行 `npm run start` 启动和预览站点.
 1. 对代码库进行更改。如果适用的话，请确保写了相应的测试。
 1. 确认执行 `npm run test` 后所有的测试都是通过的。开发过程中可以用 `npm run test --watch TestName` 来运行指定的测试。
-1. 如果进行了任何 `props` 更改（即 `interface.ts` 文件），请不要手动更新组件下的 `README` 文件。运行 `yarn run docgen` 会自动生成 `README` 文件。
+1. 如果进行了任何 `props` 更改（即 `interface.ts` 文件），请不要手动更新组件下的 `README` 文件。运行 `npm run docgen` 会自动生成 `README` 文件。
 1. 提交 git commit, 请同时遵守 [Commit 规范](#commit-guidelines)。
 1. 提交 pull request, 如果有对应的 issue，请进行[关联](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)。
 
