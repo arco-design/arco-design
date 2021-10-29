@@ -158,19 +158,19 @@ const TreeSelect: ForwardRefRenderFunction<
   }, [inputValue]);
 
   const searchKeys = useMemo<string[]>(() => {
-    const newKeys = new Set(hitKeys);
+    let newKeys: string[] = [];
     if (inputValue) {
       for (const key in key2nodeProps) {
         const item = key2nodeProps[key];
 
-        if (newKeys.has(key)) {
-          item.pathParentKeys.forEach((_key) => newKeys.add(_key));
-        } else if (newKeys.has(item.parentKey)) {
-          newKeys.add(key);
+        const pathKeys = [...item.pathParentKeys, key];
+
+        if (pathKeys.some((_key) => hitKeys && hitKeys.has(_key))) {
+          newKeys = newKeys.concat(pathKeys);
         }
       }
     }
-    return Array.from(newKeys);
+    return Array.from(new Set(newKeys));
   }, [inputValue, key2nodeProps, hitKeys]);
 
   useEffect(() => {
