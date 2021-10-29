@@ -1,3 +1,11 @@
+## 2.23.5
+
+2021-10-29
+
+### 🐛 BugFix
+
+- Fix the bug that the search node of the `TreeSelect` component is not displayed correctly.([#74](https://github.com/arco-design/arco-design/pull/74))
+
 ## 2.22.0
 
 2021-09-10

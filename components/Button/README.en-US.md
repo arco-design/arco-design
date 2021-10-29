@@ -14,6 +14,7 @@ A button is a command component to trigger an operation.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
+|htmlType|html button type|`'button' \| 'submit' \| 'reset'`|`button`|
 |style|Additional style|`CSSProperties`|`-`|
 |className|Additional css class|`string \| string[]`|`-`|
 |type|A variety of button types are available: `primary`, `secondary`, `dashed`,`text`, `linear` and `default` which is the secondary.|`'default' \| 'primary' \| 'secondary' \| 'dashed' \| 'text' \| 'outline'`|`default`|

@@ -349,7 +349,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                                 })
                               }
                               onClickOption={() => {
-                                if (option.isLeaf && multiple) {
+                                if (option.isLeaf && multiple && !option.disableCheckbox) {
                                   onMultipleChecked(option, !option._checked);
                                 } else {
                                   onClickOption(option);

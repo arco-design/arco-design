@@ -166,6 +166,330 @@ Array [
 ]
 `;
 
+exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
+Array [
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-start"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:120px"
+    >
+      <form
+        class="arco-form arco-form-horizontal arco-form-size-small"
+        style="width:400px"
+      >
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="ellipsis_input"
+            >
+               超出省略
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="ellipsis"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    class="arco-switch arco-switch-small arco-switch-type-circle"
+                    id="ellipsis_input"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="expandable_input"
+            >
+               展开/折叠
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="expandable"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    class="arco-switch arco-switch-small arco-switch-type-circle"
+                    id="expandable_input"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="ellipsisStr_input"
+            >
+               省略号
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="ellipsisStr"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <input
+                    class="arco-input arco-input-size-small"
+                    id="ellipsisStr_input"
+                    value="..."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="suffix_input"
+            >
+               suffix
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="suffix"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <input
+                    class="arco-input arco-input-size-small"
+                    id="suffix_input"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label>
+               省略展示
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <div
+                    class="arco-space arco-space-horizontal arco-space-align-center"
+                  >
+                    <div
+                      class="arco-space-item"
+                      style="margin-right:8px"
+                    >
+                      <button
+                        class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
+                        type="button"
+                      >
+                        <span>
+                           row- 
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="arco-space-item"
+                    >
+                      <button
+                        class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
+                        type="button"
+                      >
+                        <span>
+                           row+ 
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label>
+               文字操作
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    class="arco-btn arco-btn-primary arco-btn-size-small arco-btn-shape-square"
+                    type="button"
+                  >
+                    <span>
+                      addText
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-descriptions arco-descriptions-layout-horizontal"
+        style="margin-bottom:20px"
+      >
+        <div
+          class="arco-descriptions-title"
+        >
+          当前配置
+        </div>
+        <div
+          class="arco-descriptions-body"
+        >
+          <table
+            cellpadding="0"
+            cellspacing="0"
+            class="arco-descriptions-table"
+            style="table-layout:auto"
+          >
+            <tbody>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  ellipsisStr
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  ...
+                </td>
+              </tr>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  rows
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  1
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <span
+      class="arco-typography"
+    >
+      A design is a plan or specification for the construction of an object or system or for the
+implementation of an activity or process. A design is a plan or specification for the
+construction of an object or system or for the implementation of an activity or process. 
+    </span>
+  </div>,
+]
+`;
+
 exports[`renders Typography/demo/operations.md correctly 1`] = `
 <article
   class="arco-typography"

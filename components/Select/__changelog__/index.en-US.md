@@ -1,3 +1,11 @@
+## 2.23.5
+
+2021-10-29
+
+### 🐛 BugFix
+
+- Fix `Select` virtual list abnormal positioning that may be caused by setting custom height of  `Select.Option` .([#55](https://github.com/arco-design/arco-design/pull/55))
+
 ## 2.23.2
 
 2021-10-22
