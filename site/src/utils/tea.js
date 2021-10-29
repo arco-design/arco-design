@@ -1,8 +1,9 @@
 import { isProduction } from './env';
+import { isExternal } from './config';
 
 export default function tea({ name }) {
   window.collectEvent('init', {
-    app_id: 4374,
+    app_id: isExternal ? 4374 : 263440,
     channel: 'cn',
     auto_profile: true,
     log: true,
