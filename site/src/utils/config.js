@@ -5,4 +5,6 @@ export const hostname =
   location.hostname !== arcoConfig.internalHostName
     ? arcoConfig.externalHostName
     : location.hostname;
+
+export const isExternal = location.hostname === arcoConfig.externalHostName;
 export const apiBasename = `https://${hostname || 'arco.design'}`;
