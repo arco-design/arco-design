@@ -1,3 +1,11 @@
+## 2.23.5
+
+2021-10-29
+
+### 🐛 问题修复
+
+- 修复InputTag组件默认的validate函数永远返回false的bug([#43](https://github.com/arco-design/arco-design/pull/43))
+
 ## 2.23.1
 
 2021-10-15

@@ -1,3 +1,11 @@
+## 2.23.5
+
+2021-10-29
+
+### 🐛 BugFix
+
+- Trigger's popup can not get correct width when first render([#69](https://github.com/arco-design/arco-design/pull/69))
+
 ## 2.23.1
 
 2021-10-15

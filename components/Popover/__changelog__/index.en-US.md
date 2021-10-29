@@ -1,3 +1,11 @@
+## 2.23.5
+
+2021-10-29
+
+### 🐛 BugFix
+
+- Fix the problem that the pop-up layer of the `Popver` component has a very small width of the parent node, and the arrow element is incorrectly positioned.([#69](https://github.com/arco-design/arco-design/pull/69))
+
 ## 2.23.0
 
 2021-09-27
