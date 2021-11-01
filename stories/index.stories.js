@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import './index.less';
-import '../dist/css/arco.css';
+import '../dist/css/index.less';
 
 import DemoTypography from './components/Typography';
 import DemoAlert from './components/Alert';
