@@ -6,7 +6,7 @@
   "main": "./lib/index.js",
   "types": "./es/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm run icon && npm run build",
+    "prepublishOnly": "yarn icon && yarn build",
     "init": "./scripts/init.sh",
     "git": "git add .",
     "start": "concurrently npm:dev npm:dev:site",
@@ -18,7 +18,7 @@
     "build:css": "arco-scripts build:component:css",
     "build:css:dev": "cross-env BUILD_ENV_MODE=development BUILD_ENV_DIST_FILENAME_CSS=arco.css arco-scripts build:component:css",
     "build:css:vars": "node ./scripts/css-variables.js",
-    "build": "arco-scripts build:component && npm run build:dist:dev && npm run build:css:dev",
+    "build": "arco-scripts build:component && yarn build:dist:dev && yarn build:css:dev",
     "dev": "arco-scripts dev:component",
     "dev:site": "arco-scripts dev:site --port 9000",
     "build:site": "arco-scripts build:site",
@@ -122,12 +122,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run eslint",
-      "npm run precommit",
+      "yarn eslint",
+      "yarn precommit",
       "git add"
     ],
     "*.{css, less}": [
-      "npm run stylelint",
+      "yarn stylelint",
       "git add"
     ]
   },
