@@ -24,12 +24,14 @@ We use [Github issues](https://github.com/arco-design/arco-design/issues) for bu
 
 ## Sending a pull request
 
+**This project uses [Yarn](https://yarnpkg.com/) for package management. Please install Yarn before development.**
+
 1. Fork [the repository](https://github.com/arco-design/arco-design) and create your branch from `main`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `main` branch.
-1. Run `npm run init` in the repository root.
-1. Run `npm run start` to start and preview site.
+1. Run `yarn run init` in the repository root.
+1. Run `yarn start` to start and preview site.
 1. Make changes to the codebase. Please add tests if applicable.
-1. Make sure the test suite passes with `npm run test`. To watch for specific changes in development, use `npm run test --watch TestName`.
-1. If you made any `props` changes (i.e. `interface.ts` file), DON'T manually update `README` file under the component. Instead, run `npm run docgen` to generate the `README` file automatically.
+1. Make sure the test suite passes with `yarn test`. To watch for specific changes in development, use `yarn test --watch TestName`.
+1. If you made any `props` changes (i.e. `interface.ts` file), DON'T manually update `README` file under the component. Instead, run `yarn docgen` to generate the `README` file automatically.
 1. Commit your changes, adhering to the [Commit Guidelines](#commit-guidelines)
 1. Open a new pull request, [referencing corresponding issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) if available.
 
@@ -37,25 +39,25 @@ We use [Github issues](https://github.com/arco-design/arco-design/issues) for bu
 
 ```bash
 # start and preview site locally
-$ npm run site
+$ yarn dev:site
 
 # checks the javascript code style.
-$ npm run eslint
+$ yarn eslint
 
 # checks the css code style
-$ npm run stylelint
+$ yarn stylelint
 
 # automatically generate docs
-$ npm run docgen
+$ yarn docgen
 
 # format code with prettier
-$ npm run format
+$ yarn format
 
 # create a build of the components
-$ npm run build
+$ yarn build
 
 # run the complete test suite
-$ npm run test
+$ yarn test
 ```
 
 ## Commit Guidelines
@@ -112,7 +114,7 @@ The following is a list of commit types:
 
 ### Template
 
-Template in `__template__` directory is used to generate component's README with `npm run docgen` command. It should follow the structure below:
+Template in `__template__` directory is used to generate component's README with `yarn docgen` command. It should follow the structure below:
 
 ~~~markdown
 ---
@@ -134,7 +136,7 @@ Used to display warning information in a way that attracts attention.
 %%Props%% (Placeholder for props)
 ~~~
 
-Please note that if you make changes that will affect README (e.g. `props` changes), make sure to run `npm run docgen` to update README of the component.
+Please note that if you make changes that will affect README (e.g. `props` changes), make sure to run `yarn docgen` to update README of the component.
 
 ## License
 

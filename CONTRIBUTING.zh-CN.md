@@ -25,12 +25,14 @@
 
 ## 提交 Pull Request
 
+**本项目使用 [Yarn](https://yarnpkg.com/) 进行包管理，请在开发前准备你的 Yarn 环境。**
+
 1. Fork [此仓库](https://github.com/arco-design/arco-design)，从 `main` 创建分支。新功能实现请发 pull request 到 `feature` 分支。其他更改发到 `main` 分支。
-1. 在仓库根目录下执行 `npm run init`。
-1. 执行 `npm run start` 启动和预览站点.
+1. 在仓库根目录下执行 `yarn run init`。
+1. 执行 `yarn start` 启动和预览站点.
 1. 对代码库进行更改。如果适用的话，请确保写了相应的测试。
-1. 确认执行 `npm run test` 后所有的测试都是通过的。开发过程中可以用 `npm run test --watch TestName` 来运行指定的测试。
-1. 如果进行了任何 `props` 更改（即 `interface.ts` 文件），请不要手动更新组件下的 `README` 文件。运行 `npm run docgen` 会自动生成 `README` 文件。
+1. 确认执行 `yarn test` 后所有的测试都是通过的。开发过程中可以用 `yarn test --watch TestName` 来运行指定的测试。
+1. 如果进行了任何 `props` 更改（即 `interface.ts` 文件），请不要手动更新组件下的 `README` 文件。运行 `yarn docgen` 会自动生成 `README` 文件。
 1. 提交 git commit, 请同时遵守 [Commit 规范](#commit-指南)。
 1. 提交 pull request, 如果有对应的 issue，请进行[关联](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)。
 
@@ -38,25 +40,25 @@
 
 ```bash
 # 本地启动和预览站点
-$ npm run site
+$ yarn dev:site
 
 # 检查 javascript 代码规范
-$ npm run eslint
+$ yarn eslint
 
 # 检查 样式 代码规范
-$ npm run stylelint
+$ yarn stylelint
 
 # 自动化生成文档
-$ npm run docgen
+$ yarn docgen
 
 # 格式化代码
-$ npm run format
+$ yarn format
 
 # 组件构建
-$ npm run build
+$ yarn build
 
 # 运行完整的单元测试
-$ npm run test
+$ yarn test
 ```
 
 ## Commit 指南
@@ -113,7 +115,7 @@ Commit messages 请遵循[conventional-changelog 标准](https://www.conventiona
 
 ### 模版
 
-`__template__` 目录中的模板用于通过 `npm run docgen` 命令生成组件的 README。它遵循以下结构：
+`__template__` 目录中的模板用于通过 `yarn docgen` 命令生成组件的 README。它遵循以下结构：
 
 ~~~markdown
 ---
@@ -135,7 +137,7 @@ file: interface (指定查找 interface 信息的位置，用于生成 props)
 %%Props%% (Props 占位符)
 ~~~
 
-请注意: 如果进行了会影响 README 的变更（例如 `props` 变更），请确保运行 `npm run docgen` 来更新组件的 README。
+请注意: 如果进行了会影响 README 的变更（例如 `props` 变更），请确保运行 `yarn docgen` 来更新组件的 README。
 
 ## License
 
