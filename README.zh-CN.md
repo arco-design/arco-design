@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://arco.design" target="_blank">
-    <img alt="Arco Design Logo" width="100" src="https://avatars.githubusercontent.com/u/64576149?s=200&v=4"/>
+    <img alt="Arco Design Logo" width="200" src="https://avatars.githubusercontent.com/u/64576149?s=200&v=4"/>
   </a>
 </div>
 
@@ -21,6 +21,8 @@
 [English](./README.md) | 简体中文
 
 </div>
+
+![arco_readme_gif](https://user-images.githubusercontent.com/19399269/139827723-6337ea54-e696-4ef5-902c-edca9c815f7c.gif)
 
 # 特性
 

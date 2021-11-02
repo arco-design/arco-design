@@ -21,6 +21,7 @@ English | [简体中文](./README.zh-CN.md)
 
 </div>
 
+![arco_readme_gif](https://user-images.githubusercontent.com/19399269/139827723-6337ea54-e696-4ef5-902c-edca9c815f7c.gif)
 
 # Features
 
