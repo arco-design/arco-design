@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { on, off, contains } from '../_util/dom';
 import { isFunction } from '../_util/is';
+import { Esc } from '../_util/keycode';
 import Portal from './portal';
 import ResizeObserver from '../_util/resizeObserver';
 import cs from '../_util/classNames';
@@ -78,6 +79,7 @@ const defaultProps = {
   popupAlign: {},
   popupHoverStay: true,
   clickOutsideToClose: true,
+  escToClose: false,
   mouseLeaveToClose: true,
   getDocument: () => window.document as any,
   autoFixPosition: true,
@@ -128,6 +130,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   // handle click outside document
   handleClickOutside: boolean;
+
+  // handle press Esc
+  handlePressEsc: boolean;
 
   // 是否监听了window 的resize
   handleWindowResize: boolean;
@@ -203,6 +208,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const { getDocument } = currentProps;
     if (!popupVisible) {
       this.offClickOutside();
+      this.offPressESC();
       this.offContainerResize();
       this.offWindowResize();
       return;
@@ -231,11 +237,20 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         this.handleClickOutside = true;
       }
     }
+
+    if (!this.handlePressEsc) {
+      const root = isFunction(getDocument) && (getDocument as Function)();
+      if (root) {
+        on(root, 'keydown', this.onPressEsc);
+        this.handlePressEsc = true;
+      }
+    }
   }
 
   componentWillUnmount() {
     this.unmount = true;
     this.offClickOutside();
+    this.offPressESC();
     this.clearTimer();
     this.offWindowResize();
     this.offContainerResize();
@@ -335,6 +350,15 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
       off(root, 'mousedown', this.onClickOutside);
       this.handleClickOutside = false;
+    }
+  };
+
+  offPressESC = () => {
+    if (this.handlePressEsc) {
+      const { getDocument } = this.getMergedProps();
+      const root = isFunction(getDocument) && (getDocument as Function)();
+      off(root, 'keydown', this.onPressEsc);
+      this.handlePressEsc = false;
     }
   };
 
@@ -549,6 +573,14 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
           this.setPopupVisible(false);
         }
       }
+    }
+  };
+
+  onPressEsc = (e) => {
+    const { escToClose } = this.getMergedProps();
+
+    if (escToClose && e && e.key === Esc.key) {
+      this.setPopupVisible(false);
     }
   };
 

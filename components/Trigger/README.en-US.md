@@ -39,6 +39,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |mouseLeaveToClose|Whether to allow close the popup by clicking the child node.|`boolean`|`true`|2.22.0|
 |clickToClose|Whether to allow close the popup by clicking the child node.|`boolean`|`true`|-|
 |clickOutsideToClose|Whether to allow close the popup by clicking the area outside the child node and the popup box.|`boolean`|`true`|-|
+|escToClose|Whether to allow close the popup by pressing `ESC`.|`boolean`|`false`|-|
 |onClick|Callback when click the child node. (Only work when `trigger` contains `click`)|`(popupVisible: boolean) => void`|`-`|-|
 |onClickOutside|Callback when click the area outside the child and the popup|`Function`|`-`|-|
 |popupAlign|Adjust the position of the popup. Indicates moving a few pixels in one direction. [example](/react/en-US/components/trigger#popupAlign)|`{left?: number \| [number, number];right?: number \| [number, number];top?: number \| [number, number];bottom?: number \| [number, number];}`|`{}`|-|
