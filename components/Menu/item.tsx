@@ -121,8 +121,11 @@ function Item(props: MenuItemProps, ref) {
       trigger="hover"
       content={<span>{children}</span>}
       position="right"
-      triggerProps={{ className: `${prefixCls}-item-tooltip` }}
-      {...tooltipProps}
+      triggerProps={{
+        className: `${prefixCls}-item-tooltip`,
+        ...(tooltipProps?.triggerProps || {}),
+      }}
+      {...omit(tooltipProps, ['triggerProps'])}
     >
       {itemElement}
     </Tooltip>
