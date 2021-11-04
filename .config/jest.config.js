@@ -1,16 +1,27 @@
-// 自定义 Jest 配置
-exports.node = (config) => {
-  config.moduleNameMapper = {
+// Custom Jest config
+
+const BASE_JEST_CONFIG = {
+  // Find component demos' dependencies from /site/node_modules
+  modulePaths: ['<rootDir>/site/node_modules'],
+  moduleNameMapper: {
     '^@arco-design/web-react/(.+)$': '<rootDir>/$1',
     '^@arco-design/web-react$': '<rootDir>',
-  };
+  },
 };
+
+exports.node = (config) => {
+  Object.assign(config, BASE_JEST_CONFIG);
+};
+
 exports.client = (config) => {
+  Object.assign(config, BASE_JEST_CONFIG);
+
   config.collectCoverageFrom = [
     'components/**/*.{ts,tsx}',
     '!components/**/style/*',
     '!components/**/api/*',
   ];
+
   config.coveragePathIgnorePatterns = [
     '/node_modules/',
     '/lib/',
@@ -20,8 +31,4 @@ exports.client = (config) => {
     '/components/index.tsx',
     '/components/locale/',
   ];
-  config.moduleNameMapper = {
-    '^@arco-design/web-react/(.+)$': '<rootDir>/$1',
-    '^@arco-design/web-react$': '<rootDir>',
-  };
 };
