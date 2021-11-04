@@ -17,7 +17,7 @@ const defaultProps: ProgressProps = {
 function Progress(baseProps: ProgressProps, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<ProgressProps>(baseProps, defaultProps, componentConfig?.Progress);
-  const { className, style, size, width, strokeWidth, steps, percent } = props;
+  const { className, style, size, width, strokeWidth, steps, percent, trailColor } = props;
 
   const type = steps && props.type !== 'circle' ? 'steps' : props.type;
 
@@ -60,6 +60,7 @@ function Progress(baseProps: ProgressProps, ref) {
       {type === 'line' &&
         (size === 'mini' ? (
           <CircleProgress
+            pathStrokeColor={props.trailColor}
             {...props}
             pathStrokeWidth={strokeWidth || 4}
             width={(width as number) || 16}
