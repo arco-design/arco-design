@@ -1,4 +1,5 @@
 import React, { useContext, forwardRef, PropsWithChildren } from 'react';
+import { isNumber } from '../_util/is';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import Avatar from './avatar';
@@ -40,7 +41,7 @@ function Group(baseProps: PropsWithChildren<AvatarGroupProps>, ref) {
   const avatarCount = childrenArr.length;
   let avatarsToRender = childrenArr;
 
-  if (maxCount && avatarCount > maxCount) {
+  if (isNumber(maxCount) && maxCount >= 0 && avatarCount > maxCount) {
     const avatarsInPopover = childrenArr.slice(maxCount);
     avatarsToRender = childrenArr.slice(0, maxCount);
     avatarsToRender.push(
