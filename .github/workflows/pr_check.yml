@@ -10,11 +10,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: init package-lock.json
-        run: npm i --package-lock-only
-
       - name: install
-        run: npm ci
+        run: yarn && cd site && yarn && cd ..
 
       - name: setup node
         uses: actions/setup-node@v2
