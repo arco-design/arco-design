@@ -9,13 +9,22 @@ title:
 
 在空间不足时省略多行文本内容。
 
+**注意**：父元素 `flex` 模式下， 省略的 `Typography` 的 `resize` 场景会收到影响，可以添加 `width: 100%` 使 `Typography` 充满整个父元素。
+
 ## en-US
 
 Omit multiple lines of text when there is insufficient space.
 
+**Note**: In the parent element `flex` mode, the omitted `Typography`'s `resize` scene will be affected. You can add `width: 100%` to make the `Typography` fill the entire parent element.
+
+
 ```js
 import { useState } from 'react';
-import { Typography, Switch } from '@arco-design/web-react';
+import { Typography, Switch, Tag } from '@arco-design/web-react';
+
+const mockText = 'A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.'
+
+const mockTitle = ' A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.'
 
 const Demo = () => {
   const [ellipsis, setEllipsis] = useState(true);
@@ -26,69 +35,30 @@ const Demo = () => {
         onChange={() => {
           setEllipsis(!ellipsis);
         }}
-      ></Switch>
+      />
       <div>
         <Typography.Title heading={4} ellipsis={ellipsis}>
-          A design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process.
+          {mockTitle}
         </Typography.Title>
-        <Typography.Paragraph ellipsis={ellipsis ? { rows: 2, showTooltip: true } : undefined}>
-          A design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process, or the result of that plan or specification in
-          the form of a prototype, product or process. The verb to design expresses the process of
-          developing a design. The verb to design expresses the process of developing a design.A
-          design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process, or the result of that plan or specification in
-          the form of a prototype, product or process. The verb to design expresses the process of
-          developing a design. The verb to design expresses the process of developing a design.
+        <Typography.Paragraph ellipsis={ellipsis ? { rows: 2, showTooltip: true, expandable: true } : undefined}>
+          {mockText}
         </Typography.Paragraph>
-        <Typography.Paragraph
-          ellipsis={
-            ellipsis
-              ? {
-                  suffix: '(Arco Design)',
-                  rows: 2,
-                  expandable: true,
-                  expandNodes: ['Less', 'More'],
-                  showTooltip: {
-                    type: 'popover',
-                    props: {
-                      style: { maxWidth: 500 },
-                    },
-                  },
-                }
-              : undefined
-          }
-        >
-          A design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process, or the result of that plan or specification in
-          the form of a prototype, product or process. The verb to design expresses the process of
-          developing a design. The verb to design expresses the process of developing a design. A
-          design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process, or the result of that plan or specification in
-          the form of a prototype, product or process. The verb to design expresses the process of
-          developing a design. The verb to design expresses the process of developing a design. 
-        </Typography.Paragraph>
-        <Typography.Paragraph
-          ellipsis={
-            ellipsis
-              ? {
-                  suffix: '(Arco Design)',
-                  rows: 2,
-                  expandable: true,
-                }
-              : undefined
-          }
-        >
-          A design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process, or the result of that plan or specification in
-          the form of a prototype, product or process. The verb to design expresses the process of
-          developing a design. The verb to design expresses the process of developing a design. A
-          design is a plan or specification for the construction of an object or system or for the
-          implementation of an activity or process, or the result of that plan or specification in
-          the form of a prototype, product or process. The verb to design expresses the process of
-          developing a design. The verb to design expresses the process of developing a design. 
-        </Typography.Paragraph>
+      </div>
+
+      <div>
+        <Typography.Title style={{ width: '240px' }} heading={4}>
+          Ellipsis in flex scene
+        </Typography.Title>
+        <div style={{ display: 'flex' }}>
+          <Typography.Paragraph ellipsis={ellipsis} style={{ width: '100%' }}>
+            (width: 100%) {mockTitle}
+          </Typography.Paragraph>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <Typography.Paragraph ellipsis={ellipsis}>
+            (width: normal) {mockTitle}
+          </Typography.Paragraph>
+        </div>
       </div>
     </>
   );
