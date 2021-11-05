@@ -138,6 +138,13 @@ export interface ImagePreviewProps {
    * @version 2.16.0
    */
   getPopupContainer?: () => HTMLElement;
+  /**
+   * @zh  按 `ESC` 键关闭预览
+   * @en Whether to enable pressing `ESC` to close the preview.
+   * @defaultValue true
+   * @version 2.24.0
+   */
+  escToExit?: boolean;
 }
 
 export type PartialImagePreviewProps = Partial<ImagePreviewProps>;
