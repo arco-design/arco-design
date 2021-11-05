@@ -60,6 +60,7 @@ function Progress(baseProps: ProgressProps, ref) {
       {type === 'line' &&
         (size === 'mini' ? (
           <CircleProgress
+            pathStrokeColor={props.trailColor}
             {...props}
             pathStrokeWidth={strokeWidth || 4}
             width={(width as number) || 16}

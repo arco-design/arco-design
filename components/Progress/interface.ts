@@ -36,6 +36,11 @@ export interface ProgressProps {
    */
   color?: string | { [key: string]: string };
   /**
+ * @zh 剩余进度条颜色。
+ * @en The rest of progress bar color.
+ */
+  trailColor?: string;
+  /**
    * @zh 是否展示文本
    * @en Whether display text
    * @defaultValue true
