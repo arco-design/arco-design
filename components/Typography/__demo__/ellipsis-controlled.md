@@ -39,10 +39,10 @@ const Demo = () => {
           wrapperCol={{ span: 18 }}
           size="small"
         >
-          <Form.Item label="超出省略" field="ellipsis">
+          <Form.Item label="超出省略" field="ellipsis" triggerPropName="checked">
             <Switch />
           </Form.Item>
-          <Form.Item label="展开/折叠" field="expandable">
+          <Form.Item label="展开/折叠" field="expandable" triggerPropName="checked">
             <Switch />
           </Form.Item>
           <Form.Item label="省略号" field="ellipsisStr" initialValue={defaultConfig.ellipsisStr}>
@@ -79,11 +79,11 @@ const Demo = () => {
       </Space>
 
       <div>
-        <Typography.Text
+        <Typography.Paragraph
           ellipsis={ellipsis ? { rows: rows, expandable, suffix, ellipsisStr } : undefined}
         >
           {text}
-        </Typography.Text>
+        </Typography.Paragraph>
       </div>
     </>
   );
