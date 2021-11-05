@@ -1,6 +1,6 @@
 ---
 order: 9
-title: 
+title:
   zh-CN: 可拖拽页签
   en-US: Draggable
 ---
@@ -14,8 +14,9 @@ title:
 Use `react-dnd` to realize the drag and drop of tabs.
 
 ```js
+import { useState, useRef } from 'react';
 import { Tabs } from '@arco-design/web-react';
-import { DndProvider, DragSource, DropTarget } from 'react-dnd';
+import { DndProvider, DragSource, DropTarget, createDndContext } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const { TabPane } = Tabs;
@@ -58,7 +59,8 @@ const WrapTabNode = DropTarget('DND_NODE', cardTarget, connect => ({
 );
 
 function DraggableTabs(props) {
-  const [tabs, setTabs] = React.useState(props.children || []);
+  const [tabs, setTabs] = useState(props.children || []);
+  const manager = useRef(createDndContext(HTML5Backend))
 
   const moveTabNode = (dragKey, hoverKey) => {
     const newTabs = [...tabs];
@@ -90,7 +92,7 @@ function DraggableTabs(props) {
 
 
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider manager={manager.current.dragDropManager}>
       <Tabs renderTabHeader={renderTabHeader}>
         {tabs}
       </Tabs>
