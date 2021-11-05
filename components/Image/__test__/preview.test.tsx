@@ -115,7 +115,7 @@ describe('Image', () => {
       changeVisible(wrapper, true);
     });
 
-    expect(add.mock.calls).toHaveLength(0);
+    expect(add.mock.calls).toHaveLength(1);
     // moving true
     act(() => {
       updateImg(wrapper, 'mousedown');
