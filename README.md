@@ -111,6 +111,10 @@ ReactDOM.render(<App />, document.getElementById('app'));
 
 Developers interested in contributing should read the [Code of Conduct](./CODE_OF_CONDUCT.md) and the [Contributing Guide](./CONTRIBUTING.md).
 
+Thank you to all the people who already contributed to ArcoDesign!
+
+<a href="https://github.com/arco-design/arco-design/graphs/contributors"><img src="https://contrib.rocks/image?repo=arco-design/arco-design" /></a>
+
 # License
 
 This project is [MIT licensed](./LICENSE).
