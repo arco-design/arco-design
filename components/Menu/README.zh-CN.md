@@ -24,6 +24,7 @@
 |collapse|是否水平折叠收起菜单|`boolean`|`-`|-|
 |accordion|开启手风琴效果|`boolean`|`-`|-|
 |selectable|菜单选项是否可选|`boolean`|`true`|-|
+|ellipsis|水平菜单是否自动溢出省略|`boolean`|`true`|2.24.0|
 |autoScrollIntoView|是否自动滚动选中项目到可见区域|`boolean`|`-`|-|
 |hasCollapseButton|是否内置折叠按钮|`boolean`|`-`|-|
 |defaultSelectedKeys|初始选中的菜单项 key 数组|`string[]`|`-`|-|

@@ -62,6 +62,13 @@ export interface MenuProps {
    */
   selectable?: boolean;
   /**
+   * @zh 水平菜单是否自动溢出省略
+   * @en Whether the horizontal menu automatically collapses when it overflows
+   * @defaultValue true
+   * @version 2.24.0
+   */
+  ellipsis?: boolean;
+  /**
    * @zh 是否自动滚动选中项目到可见区域
    * @en Whether to automatically scroll the selected item to the visible area
    */

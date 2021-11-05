@@ -22,6 +22,7 @@ const DEFAULT_THEME: MenuProps['theme'] = 'light';
 const defaultProps: MenuProps = {
   mode: 'vertical',
   selectable: true,
+  ellipsis: true,
 };
 
 function Menu(baseProps: MenuProps, ref) {
@@ -41,6 +42,7 @@ function Menu(baseProps: MenuProps, ref) {
     selectable,
     triggerProps,
     tooltipProps,
+    ellipsis,
     accordion,
     autoOpen,
     autoScrollIntoView,
@@ -115,7 +117,11 @@ function Menu(baseProps: MenuProps, ref) {
     return (
       <>
         <div className={`${prefixCls}-inner`}>
-          {mode === 'horizontal' ? <OverflowWrap>{childrenList}</OverflowWrap> : childrenList}
+          {mode === 'horizontal' && ellipsis !== false ? (
+            <OverflowWrap>{childrenList}</OverflowWrap>
+          ) : (
+            childrenList
+          )}
         </div>
 
         {mergedHasCollapseButton && (
