@@ -1,8 +1,8 @@
 ---
-order: 3
+order: 5
 title:
-  zh-CN: 嵌套数据
-  en-US: Nest
+  zh-CN: 复杂类型的数据
+  en-US: Object value
 ---
 
 ## zh-CN
@@ -30,17 +30,17 @@ function Demo() {
           setValues(values);
         }}
       >
-        <Form.Item label="Username" field="user[0]" rules={[{ required: true }]}>
+        <Form.Item label="Username" field="user.username" rules={[{ required: true }]}>
           <Input placeholder="please enter your username" />
         </Form.Item>
-        <Form.Item label="Post" field="user[1]" rules={[{ required: true }]}>
+        <Form.Item label="Post" field="user.post" rules={[{ required: true }]}>
           <Input placeholder="please enter your post" />
         </Form.Item>
 
         <Form.Item label="Volunteers">
           <Form.Item
             label="Volunteer1"
-            field="user[2].volunteer1"
+            field="user.volunteers[0]"
             rules={[{ required: true }]}
           >
             <Input placeholder="please enter your post" />
@@ -48,7 +48,7 @@ function Demo() {
 
           <Form.Item
             label="Volunteer2"
-            field="user[2].volunteer2"
+            field="user.volunteers[1]"
             rules={[{ required: true }]}
           >
             <Input placeholder="please enter your post" />

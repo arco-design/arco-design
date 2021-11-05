@@ -1,7 +1,7 @@
 ---
 order: 6
 title:
-  zh-CN: 嵌套控件
+  zh-CN: 表单控件嵌套
   en-US: Nest Form.Item
 ---
 

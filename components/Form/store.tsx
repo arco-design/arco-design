@@ -146,6 +146,9 @@ class Store<
   public innerSetInitialValue = (field: FieldKey, value: FieldValue) => {
     if (!field) return;
     this.initialValues[field as string] = value;
+    if (get(this.store, field) !== undefined) {
+      return;
+    }
     // 组件在创建的时候，需要判断store里存的对应field的值是否生效。只要没有被操作过（touchedFields里不存在），就生效
     if (!this._inTouchFields(field)) {
       set(this.store, field, get(this.initialValues, field));
