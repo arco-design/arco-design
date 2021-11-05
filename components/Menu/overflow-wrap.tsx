@@ -49,6 +49,10 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   }, [children]);
 
   function computeLastVisibleIndex() {
+    if (!refUl.current) {
+      return;
+    }
+
     const ulElement = refUl.current;
     const maxWidth = getNodeWidth(ulElement) - OVERFLOW_THRESHOLD;
     const childNodeList = [].slice.call(ulElement.children);
