@@ -39,17 +39,21 @@ function Demo() {
           console.log(values);
         }}
       >
-        <Form.Item label="User" required>
-          <Grid.Row style={{flexWrap: 'nowrap'}}>
-            <Form.Item field="name" noStyle={{showErrorTip: true}} rules={[{ required: true, message: 'name is required' }]}>
-              <Input placeholder="please enter you username" />
-            </Form.Item>
-            <Form.Item field="age" noStyle={{showErrorTip: true}} rules={[{ required: true, message: 'age is required' }]}>
-              <Input placeholder="please enter your age" style={{marginLeft: 8}} />
-            </Form.Item>
+        <Form.Item label='User' required style={{ marginBottom: 0 }}>
+          <Grid.Row gutter={8}>
+            <Grid.Col span={12}>
+              <Form.Item field='name' rules={[{ required: true, message: 'name is required' }]}>
+                <Input placeholder='please enter you username' />
+              </Form.Item>
+            </Grid.Col>
+            <Grid.Col span={12}>
+              <Form.Item field='age' rules={[{ required: true, message: 'age is required' }]}>
+                <Input placeholder='please enter your age' />
+              </Form.Item>
+            </Grid.Col>
           </Grid.Row>
         </Form.Item>
-       <Form.Item label="Gender" required>
+        <Form.Item label="Gender" required>
           <Grid.Row align="center">
             <Form.Item field="gender" noStyle={{showErrorTip: true}} rules={[{ required: true, message: 'name is required' }]}>
               <Select options={['male', 'female', 'other']} placeholder="please enter you gender" style={{ flex: 1 }}/>
