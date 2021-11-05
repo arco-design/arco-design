@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 8
 title:
   zh-CN: 动态增减表单项
   en-US: List
@@ -17,41 +17,20 @@ Provides array management for fields.
 
 import { useRef, useState } from 'react';
 import { Form, Input, Button, Grid } from '@arco-design/web-react';
-import { IconArrowRise, IconArrowFall } from '@arco-design/web-react/icon';
+import { IconArrowRise, IconArrowFall, IconDelete } from '@arco-design/web-react/icon';
 
 function Demo () {
   const formRef = useRef();
 
   return (
   <div>
-    <Button
-      type="primary"
-      style={{ marginBottom: 20, marginRight: 20 }}
-      onClick={() => {
-        const posts = formRef.current.getFieldValue('posts') || [];
-        formRef.current.setFieldValue('posts', posts.concat('new'))
-      }}>
-      setFieldValue
-    </Button>
-    <Button
-      style={{ marginBottom: 20 }}
-      onClick={() => {
-        formRef.current.setFields({
-          'posts[0]': {
-            error: {
-              message: 'error'
-            }
-          }
-        })
-      }}>
-      Set `Post-0` to error state
-    </Button>
 
     <Form
       ref={formRef}
       style={{ width: 600 }}
       initialValues={{
         users: ['Username'],
+        posts: ['post1']
       }}
       onSubmit={(v) => {
         console.log(v);
@@ -60,7 +39,7 @@ function Demo () {
         console.log(_, v);
       }}
     >
-      <Form.Item label="Username" field="username" style={{width: 330}}>
+      <Form.Item label="Username" field="username" style={{width: 370}} >
         <Input />
       </Form.Item>
       <Form.List field="posts">
@@ -79,47 +58,61 @@ function Demo () {
                       <Input />
                     </Form.Item>
 
-                    <Button status="danger" style={{ margin: '0 20px' }} onClick={() => remove(index)}>
-                      Delete
+                    <Button icon={<IconDelete />} shape="circle" status="danger" style={{ margin: '0 20px' }} onClick={() => remove(index)}>
                     </Button>
-                    <Button status={index > 0 ? 'danger' : 'success'} onClick={() => move(index, index > 0 ?  index - 1 : index + 1)}>
+                    <Button shape="circle" onClick={() => move(index, index > 0 ?  index - 1 : index + 1)}>
                       {index > 0 ? <IconArrowRise/> : <IconArrowFall />}
                     </Button>
                   </Grid.Row>
                 );
               })}
-              <Grid.Row justify="space-between">
+              <div>
                 <Button
+                  style={{ marginRight: 20 }}
                   onClick={() => {
                     add();
                   }}
                 >
-                  Add user
+                  Add post
                 </Button>
                 <Button
                   onClick={() => {
                     add('new 2', 1);
                   }}
                 >
-                  Add user to the second slot
+                  Add post to the second slot
                 </Button>
-                <div>
-                  <Button
-                    onClick={() => {
-                      formRef.current.resetFields();
-                    }}
-                  >
-                    Reset
-                  </Button>
-                  <Button type="primary" htmlType="submit" style={{ marginLeft: 20 }}>
-                    Submit
-                  </Button>
-                </div>
-              </Grid.Row>
+              </div>
             </div>
           );
         }}
       </Form.List>
+      <Form.Item style={{marginTop: 20}}>
+        <Button type="primary" htmlType="submit" style={{ marginRight: 20 }}>
+          Submit
+        </Button>
+        <Button
+          style={{ marginRight: 20 }}
+          onClick={() => {
+            formRef.current.resetFields();
+          }}
+        >
+          Reset
+        </Button>
+        <Button
+          status="danger"
+          onClick={() => {
+            formRef.current.setFields({
+              'posts[0]': {
+                error: {
+                  message: 'error'
+                }
+              }
+            })
+          }}>
+          Set `Post-0` to error state
+        </Button>
+      </Form.Item>
     </Form>
   </div>
   )

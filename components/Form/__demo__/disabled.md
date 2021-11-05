@@ -1,5 +1,5 @@
 ---
-order: 9
+order: 14
 title:
   zh-CN: 全局禁用
   en-US: Disabled

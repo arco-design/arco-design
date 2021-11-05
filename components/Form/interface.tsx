@@ -324,6 +324,11 @@ export interface FormItemProps<
           isInner?: boolean;
         }
       ) => boolean);
+  /**
+   * @zh 标签的文本对齐方式，优先级高于 `Form`
+   * @en Text alignment of `label`
+   * @defaultValue right
+   */
   labelAlign?: 'left' | 'right';
   layout?: 'horizontal' | 'vertical' | 'inline';
   requiredSymbol?: boolean | { position: 'start' | 'end' };
