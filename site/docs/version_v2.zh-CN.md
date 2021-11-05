@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.24.0
+
+2021-11-05
+
+### 💎 性能优化
+
+- `DatePicker` 组件如果值是 `string` 类型，且跟 format 不一致导致解析为 Invalid Date 时，会兜底尝试 format="YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
+
+### 🆕 功能升级
+
+- `Image.Preview` 组件支持按 `ESC` 关闭([#121](https://github.com/arco-design/arco-design/pull/121))
+- `Menu` 新增 `ellipsis` 属性以支持禁用水平菜单的菜单项自动折叠功能([#115](https://github.com/arco-design/arco-design/pull/115))
+- 添加trailColor改变Progress剩余颜色([#107](https://github.com/arco-design/arco-design/pull/107))
+
+### 🐛 问题修复
+
+- 修复 `Avatar` 组件设置 `maxCount = 0` 时头像全部展示的问题。([#89](https://github.com/arco-design/arco-design/pull/89))
+- fix: 修复 `Pagination` 组件在 `pageSize` 和 `current` 都受控时，`pageSize` 的计算结果会覆盖 `props.current`导致 `current` 受控失效([#119](https://github.com/arco-design/arco-design/pull/119))
+- 调整 `Form` 组件的 TS 定义为 `FormHTMLAttributes`([#118](https://github.com/arco-design/arco-design/pull/118))
+- 修复 `Form.List` 组件通过 `add()` 方法创建表单项，传入的默认值在该表单项带有 `initialValue` 时候未生效的 `bug` 。([#118](https://github.com/arco-design/arco-design/pull/118))
+- 修复 `InputNumber` 在传入与 `precision` 精度不一致的 `value` 时展示了错误状态的 bug。([#116](https://github.com/arco-design/arco-design/pull/116))
+- 修复 `Menu` 传入的 `tooltipProps` 包含 `triggerProps` 时，会覆盖原有的类名 `menu-item-tooltip`([#99](https://github.com/arco-design/arco-design/pull/99))
+- 修复 `Menu` 因为读取 `null` 的属性导致报错的 bug([#115](https://github.com/arco-design/arco-design/pull/115))
+- 修复 `Menu` 组件使用深色模式时点击更多菜单按钮弹出的气泡箭头颜色错误问题([#84](https://github.com/arco-design/arco-design/pull/84))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件在表头分组时，`border={{ border: true, headerCell: true }}` 时，表头边框线断裂的问题。([#120](https://github.com/arco-design/arco-design/pull/120))
+
 ## 2.23.5
 
 2021-10-29

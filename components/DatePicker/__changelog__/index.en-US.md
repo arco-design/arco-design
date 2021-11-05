@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 💎 Performance
+
+- If the value of the `DatePicker` component is `string` and it's dayjs value parsed as Invalid Date, will fallback format to "YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
+
 ## 2.23.1
 
 2021-10-15

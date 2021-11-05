@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.24.0
+
+2021-11-05
+
+### 💎 Performance
+
+- If the value of the `DatePicker` component is `string` and it's dayjs value parsed as Invalid Date, will fallback format to "YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
+
+### 🆕 Feature
+
+- Component `Image.Preview` support pressing `ESC` to close([#121](https://github.com/arco-design/arco-design/pull/121))
+- `Menu` adds property `ellipsis` to forbid the automatic folding of menu items([#115](https://github.com/arco-design/arco-design/pull/115))
+- add trailColor to change the rest of progress bar([#107](https://github.com/arco-design/arco-design/pull/107))
+
+### 🐛 BugFix
+
+- Fix the bug that the `Avatar` component still show all avatars when set `maxCount = 0`.([#89](https://github.com/arco-design/arco-design/pull/89))
+- fix: When the `Pagination` component is under control of both `pageSize` and `current`, the calculation result of `pageSize` will overwrite `props.current`, causing the control of `current` to fail([#119](https://github.com/arco-design/arco-design/pull/119))
+- Adjust the TS definition of the `Form` component as `FormHTMLAttributes`([#118](https://github.com/arco-design/arco-design/pull/118))
+- Fix the `bug` that the `Form.List` component creates form items through the `add()` method, and the default value passed in does not take effect when the form item has an `initialValue`.([#118](https://github.com/arco-design/arco-design/pull/118))
+- Fix the bug that `InputNumber` showed an error status when passing in `value` that is inconsistent with `precision`.([#116](https://github.com/arco-design/arco-design/pull/116))
+- When the `tooltipProps` passed by `Menu` contains `triggerProps`, the original class name `menu-item-tooltip` will be overwrite([#99](https://github.com/arco-design/arco-design/pull/99))
+- Fix the bug that `Menu` caused an error because of reading an property of `null`([#115](https://github.com/arco-design/arco-design/pull/115))
+- fix the problem that the style of the trigger-arrow does not work under the black theme of the menu component([#84](https://github.com/arco-design/arco-design/pull/84))
+
+### 💅 Style
+
+- Fix the problem that the border line of the header is broken when `border={{ border: true, headerCell: true }}` when the `Table` component is grouped columns in the header.([#120](https://github.com/arco-design/arco-design/pull/120))
+
 ## 2.23.5
 
 2021-10-29

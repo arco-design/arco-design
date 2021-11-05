@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 🐛 BugFix
+
+- Fix the bug that the `Avatar` component still show all avatars when set `maxCount = 0`.([#89](https://github.com/arco-design/arco-design/pull/89))
+
 ## 2.15.3
 
 2021-05-21
