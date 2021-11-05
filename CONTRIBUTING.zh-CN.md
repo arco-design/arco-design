@@ -99,6 +99,8 @@ Commit messages 请遵循[conventional-changelog 标准](https://www.conventiona
 │   ├── index.en-US.md (英文模版)
 │   └── index.zh-CN.md （中文模版）
 ├── __changelog__
+│   ├── index.en-US.md (注意：不要手动编辑这个文件，它是在发版时由脚本自动生成的)
+│   └── index.zh-CN.md (注意：不要手动编辑这个文件，它是在发版时由脚本自动生成的)
 ├── __test__
 │   ├── __snapshots__
 │   │   └── demo.test.js.snap
@@ -138,6 +140,10 @@ file: interface (指定查找 interface 信息的位置，用于生成 props)
 ~~~
 
 请注意: 如果进行了会影响 README 的变更（例如 `props` 变更），请确保运行 `yarn docgen` 来更新组件的 README。
+
+### Changelog
+
+`__changelog__` 目录中的更新日志文件是在发版时由脚本自动生成的。 请勿手动编辑这些文件。
 
 ## License
 
