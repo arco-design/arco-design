@@ -114,7 +114,9 @@ export function getDayjsValue(time, format: string) {
       return dayjs(value.valueOf());
     }
     if (typeof value === 'string') {
-      return dayjs(value, format);
+      const dv = dayjs(value, format);
+
+      return dv.isValid() ? dv : dayjs(value, 'YYYY-MM-DD');
     }
     return dayjs(value);
   };
