@@ -48,6 +48,7 @@
 |actionsLayout|控制条的布局|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |onVisibleChange|切换可见状态触发的事件|`(visible: boolean, preVisible: boolean) => void`|`-`|-|
 |getPopupContainer|弹出层挂载的节点|`() => HTMLElement`|`() => document.body`|2.16.0|
+|escToExit|按 `ESC` 键关闭预览|`boolean`|`true`|2.24.0|
 
 ### Image.PreviewGroup
 
@@ -71,6 +72,7 @@
 |closable|是否显示关闭按钮|`boolean`|`true`|2.16.0|
 |actions|额外操作，[ImagePreviewActionProps](#imagepreviewactionprops)|`ImagePreviewActionProps[]`|`-`|-|
 |actionsLayout|控制条的布局|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
+|escToExit|按 `ESC` 键关闭预览|`boolean`|`true`|2.24.0|
 
 ### ImagePreviewActionProps
 

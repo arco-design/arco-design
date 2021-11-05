@@ -4,7 +4,7 @@ import { isFunction } from '../_util/is';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 
 export const StepsProgress = (props) => {
-  const { size, prefixCls, percent, status, color, type, showText, formatText } = props;
+  const { size, prefixCls, percent, status, color, type, showText, formatText, trailColor } = props;
 
   const strokeWidth = props.strokeWidth || (size === 'small' ? 8 : 4);
   const cls = `${prefixCls}-${type}`;
@@ -28,7 +28,7 @@ export const StepsProgress = (props) => {
 
   return (
     <div className={`${cls}-wrapper`}>
-      <div className={`${cls}-outer`} style={{ height }}>
+      <div className={`${cls}-outer`} style={{ height, backgroundColor: trailColor }}>
         {[...new Array(props.steps)].map((_, index) => {
           const isActive = percent >= (100 / props.steps) * index;
           return (
