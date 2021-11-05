@@ -1,18 +1,17 @@
 ---
-order: 3
+order: 4
 title:
-  zh-CN: 表单方法调用
-  en-US: Methods
+  zh-CN: 控制表单项错误状态
+  en-US: Set Error status
 ---
 
 ## zh-CN
 
-在函数式组件里可以使用`Form.useForm`获取表单实例。通过该实例调用表单方法，例如设置表单字段值，重置表单等。
-在类组件里可以使用`ref` 获取表单实例。
+通过 `setFields` 方法的 `error` 参数，可以在外部控制表单项的错误状态。
 
 ## en-US
 
-In functional components, you can use `Form.useForm` to get a form instance, You can call all form methods through this instance, such as setting form value, reset form, etc. If you are using class component, you can get it by `ref`.
+You can externally control the error status of form entries by using the `error` parameter of the `setFields` method.
 
 ```js
 import { Form, Input, Button, InputNumber } from '@arco-design/web-react';
@@ -63,10 +62,17 @@ function Demo() {
         <Button
           type="text"
           onClick={() => {
-            form.setFieldsValue({ name: 'admin', age: 11 });
+            form.setFields({
+                age: {
+                  value: 200,
+                  error: {
+                    message: 'Maximum is 200',
+                  },
+                },
+              });
           }}
         >
-          Fill Form
+          Set Error Age
         </Button>
       </FormItem>
     </Form>

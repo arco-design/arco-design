@@ -1,5 +1,5 @@
 ---
-order: 8
+order: 2
 title:
   zh-CN: 受控表单
   en-US: Controlled
@@ -7,22 +7,29 @@ title:
 
 ## zh-CN
 
-可以在`Form.Item`传入`field`属性，即可使控件变为受控组件。
+可以在`Form.Item`传入`field`属性，即可使控件变为受控组件，表单项的值都将会被 `Form` 收集。
 
-**注意：**：
-
-1. 受控模式下`Form.Item`会接管控件，自动给表单控件添加相应的 `value`（或 `triggerPropName` 指定的其他属性）和`onChange`（或 `trigger` 指定的其他属性)，所有的数据收集都由 `Form` 内部完成。
-2. 受控下不要为表单控件添加 `defaultValue`。默认值可以通过 `Form` 的 `initialValues` 或 `Form.Item` 的 `initialValue` 来设置。
+<ol>
+  <li>
+  受控模式下`Form.Item`会接管控件，自动给表单控件添加相应的 `value`（或 `triggerPropName` 指定的其他属性）和`onChange`（或 `trigger` 指定的其他属性)，所有的数据收集都由 `Form` 内部完成。
+  </li>
+  <li>
+  受控下不要为表单控件添加 `defaultValue`。默认值可以通过 `Form` 的 `initialValues` 或 `Form.Item` 的 `initialValue` 来设置。
+  </li>
+</ol>
 
 ## en-US
 
 You can set the `field` property in `Form.Item` to control the field.
 
-**Notice:**
-
-1. In the controlled mode, `Form.Item` will automatically set `value` (or other attribute set by `triggerPropName`) and `onChange` (or other attribute set by `trigger`) properties for Form.Item's children. All data will be processed by `Form`.
-2. 2. You cannot set `defaultValue` for Form.Item's children.  The default value can be set by the `initialValues` of `Form` or the `initialValue` of `Form.Item`.
-
+<ol>
+  <li>
+    In the controlled mode, `Form.Item` will automatically set `value` (or other attribute set by `triggerPropName`) and `onChange` (or other attribute set by `trigger`) properties for Form.Item's children. All data will be processed by `Form`.
+  </li>
+  <li>
+    You cannot set `defaultValue` for Form.Item's children.  The default value can be set by the `initialValues` of `Form` or the `initialValue` of `Form.Item`.
+  </li>
+</ol>
 
 ```js
 import { useRef, useEffect, useState } from 'react';

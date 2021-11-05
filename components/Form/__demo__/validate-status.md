@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 16
 title:
   zh-CN: 自定义表单校验状态
   en-US: Validate status

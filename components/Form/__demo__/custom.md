@@ -1,17 +1,18 @@
 ---
 order: 10
-title: 
+title:
   zh-CN: 自定义表单控件
   en-US: Custom Form
 ---
 
 ## zh-CN
 
-可以自定义表单控件。当使用自定义表单控件时，如果校验规则未通过，会给自定义组件传入 `error` 属性，需要用户自定义控件错误状态的样式。
+`Form.Item` 会给自己的直接子节点（必须是唯一子节点）传递 `onChange` 和 `value` 属性，自定义控件只有在调用这个`onChange` 之后，自己的值才能被 `Form.Item` 收集到 。
 
 ## en-US
 
-You can customize FormItem. When using a custom FormItem, if the verification rule fails, the `error` attribute will be passed to the custom component, and the user needs to customize the style of the control error state.
+`Form.Item` will pass the `onChange` and `value` properties to its direct child nodes. Only after calling this `onChange`, can its own value be collected by `Form.Item`.
+
 
 ```js
 import { useRef, useState, useEffect } from 'react';

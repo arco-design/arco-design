@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 title:
   zh-CN: 表单布局
   en-US: Layout
@@ -46,10 +46,10 @@ function Demo() {
       <FormItem label="Post">
         <Input style={{ width: 270 }} placeholder="please enter your post" />
       </FormItem>
-      <FormItem wrapperCol={{ offset: 5 }} >
+      <FormItem wrapperCol={layout === 'horizontal' ? { offset: 5 } : {}} >
         <Checkbox>I have read the manual</Checkbox>
       </FormItem>
-      <FormItem wrapperCol={{ offset: 5, }} >
+      <FormItem wrapperCol={layout === 'horizontal' ? { offset: 5 } : {}} >
         <Button type="primary" htmlType="submit">Submit</Button>
       </FormItem>
     </Form>

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // TS泛型默认值需要，忽略显式`any`定义
 
-import { ReactNode, CSSProperties, HTMLAttributes } from 'react';
+import { ReactNode, CSSProperties, HTMLAttributes, FormHTMLAttributes } from 'react';
 import { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
 import { ColProps } from '../Grid/col';
 import Store from './store';
@@ -29,7 +29,7 @@ export interface FormProps<
   FormData = any,
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
-> extends Omit<HTMLAttributes<any>, 'className' | 'onChange' | 'onSubmit'> {
+> extends Omit<FormHTMLAttributes<any>, 'className' | 'onChange' | 'onSubmit'> {
   style?: CSSProperties;
   className?: string | string[];
   prefixCls?: string;
@@ -323,6 +323,11 @@ export interface FormItemProps<
           isInner?: boolean;
         }
       ) => boolean);
+  /**
+   * @zh 标签的文本对齐方式，优先级高于 `Form`
+   * @en Text alignment of `label`
+   * @defaultValue right
+   */
   labelAlign?: 'left' | 'right';
   layout?: 'horizontal' | 'vertical' | 'inline';
   requiredSymbol?: boolean;

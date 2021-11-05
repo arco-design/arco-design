@@ -1,6 +1,6 @@
 ---
-order: 4
-title: 
+order: 13
+title:
   zh-CN: 注册表单
   en-US: Register
 ---
