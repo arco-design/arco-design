@@ -84,6 +84,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 * [Dark mode](https://arco.design/react/docs/dark)
 * [Theme customization](https://arco.design/react/docs/theme)
 * [Figma component library](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
+* [Awesome Arco](https://github.com/arco-design/awesome-arco)
 
 # Ecosystems
 

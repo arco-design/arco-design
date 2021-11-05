@@ -84,6 +84,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 * [暗黑模式](https://arco.design/react/docs/dark)
 * [主题配置](https://arco.design/react/docs/theme)
 * [Figma 设计资源](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
+* [Awesome Arco](https://github.com/arco-design/awesome-arco)
 
 # 生态
 
