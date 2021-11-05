@@ -22,7 +22,7 @@ A form with data collection, verification and submission functions, including ch
 |size|size of form|`'mini' \| 'small' \| 'default' \| 'large'`|`-`|-|
 |labelCol|Global `<label>` label layout. Same as the props received by the `<Grid.Col>`,the values of `span` and `offset` can be configured,which will be overwritten by the `labelCol` set by `Form.Item`|`ColProps`|`{ span: 5, offset: 0 }`|-|
 |wrapperCol|The global control layout, which is the same as the setting method of `labelCol`,will be overwritten by the `wrapperCol` set by `Form.Item`|`ColProps`|`{ span: 19, offset: 0 }`|-|
-|requiredSymbol|Whether show red symbol when item is required|`boolean`|`true`|-|
+|requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|`boolean \| { position: 'start' \| 'end' }`|`true`|`position` in 2.24.0|
 |labelAlign|Text alignment of `label`|`'left' \| 'right'`|`right`|-|
 |initialValues|Default value of form data|`Partial<FormData>`|`-`|-|
 |onValuesChange|Callback when any form item value changes.The first is the changed value, and the second is the value of all items|`(value: Partial<FormData>, values: Partial<FormData>) => void`|`-`|-|

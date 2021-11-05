@@ -22,7 +22,7 @@
 |size|不同尺寸。|`'mini' \| 'small' \| 'default' \| 'large'`|`-`|-|
 |labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|`ColProps`|`{ span: 5, offset: 0 }`|-|
 |wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|`ColProps`|`{ span: 19, offset: 0 }`|-|
-|requiredSymbol|是否在 required 的时候显示加重的红色星号|`boolean`|`true`|-|
+|requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|`boolean \| { position: 'start' \| 'end' }`|`true`|`position` in 2.24.0|
 |labelAlign|标签的文本对齐方式|`'left' \| 'right'`|`right`|-|
 |initialValues|设置表单初始值|`Partial<FormData>`|`-`|-|
 |onValuesChange|任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值|`(value: Partial<FormData>, values: Partial<FormData>) => void`|`-`|-|

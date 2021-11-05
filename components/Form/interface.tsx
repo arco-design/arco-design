@@ -75,11 +75,12 @@ export interface FormProps<
    */
   wrapperCol?: ColProps;
   /**
-   * @zh 是否在 required 的时候显示加重的红色星号
-   * @en Whether show red symbol when item is required
+   * @zh 是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后
+   * @en Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label
    * @defaultValue true
+   * @version `position` in 2.24.0
    */
-  requiredSymbol?: boolean;
+  requiredSymbol?: boolean | { position: 'start' | 'end' };
   /**
    * @zh 标签的文本对齐方式
    * @en Text alignment of `label`
@@ -325,7 +326,7 @@ export interface FormItemProps<
       ) => boolean);
   labelAlign?: 'left' | 'right';
   layout?: 'horizontal' | 'vertical' | 'inline';
-  requiredSymbol?: boolean;
+  requiredSymbol?: boolean | { position: 'start' | 'end' };
   isFormList?: boolean;
 }
 
