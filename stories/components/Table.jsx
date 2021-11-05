@@ -1,116 +1,89 @@
-import React, { useState } from 'react';
-import { Table, Button } from '@self';
+import { useState } from 'react';
+import { Table, Space, Button } from '@self';
 
-const data = [
+const columns = [
   {
-    key: '1',
-    name: 'Jim Redddddd',
-    age: 32,
-    address: 'London No. 2 Lake Park',
+    title: 'Name',
+    dataIndex: 'name',
   },
   {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
+    title: 'Salary',
+    dataIndex: 'salary',
   },
   {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
+    title: 'Address',
+    dataIndex: 'address',
   },
   {
-    key: '4',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
+    title: 'Email',
+    dataIndex: 'email',
   },
 ];
 
-class App extends React.Component {
-  state = {
-    filteredInfo: null,
-    sortedInfo: null,
-  };
+const allData = Array(200)
+  .fill('')
+  .map((_, index) => ({
+    key: `${index}`,
+    name: `Kevin Sandra ${index}`,
+    salary: 22000,
+    address: `${index} Park Road, London`,
+    email: `kevin.sandra_${index}@example.com`,
+  }));
 
-  handleChange = (pagination, sorter, filters) => {
-    console.log('Various parameters', sorter, filters);
-    this.setState({
-      sortedInfo: sorter,
-      filteredInfo: filters,
-    });
-  };
+function Demo() {
+  const [data, setData] = useState(allData);
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [pagination, setPagination] = useState({
+    sizeCanChange: true,
+    showTotal: true,
+    total: 96,
+    pageSize: 10,
+    current: 1,
+    pageSizeChangeResetCurrent: false,
+  });
+  const [loading, setLoading] = useState(false);
 
-  clearFilters = () => {
-    this.setState({ filteredInfo: null });
-  };
-
-  clearAll = () => {
-    this.setState({
-      sortedInfo: null,
-      filteredInfo: null,
-    });
-  };
-
-  setAgeSort = () => {
-    this.setState({
-      sortedInfo: {
-        field: 'name',
-        direction: 'ascend',
-      },
-    });
-  };
-
-  render() {
-    let { sortedInfo, filteredInfo } = this.state;
-    sortedInfo = sortedInfo || {};
-    filteredInfo = filteredInfo || {};
-    const columns = [
-      {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        filters: [
-          { text: 'Joe', value: 'Joe' },
-          { text: 'Jim', value: 'Jim' },
-        ],
-        onFilter: (value, record) => record.name.includes(value),
-        sorter: (a, b) => a.name.length - b.name.length,
-        filteredValue: filteredInfo.name || null,
-        sortOrder: sortedInfo.field === 'name' ? sortedInfo.direction : null,
-      },
-      {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-        sorter: (a, b) => a.age - b.age,
-        sortOrder: sortedInfo.field === 'age' ? sortedInfo.direction : null,
-      },
-      {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-        filters: [
-          { text: 'London', value: 'London' },
-          { text: 'New York', value: 'New York' },
-        ],
-        onFilter: (value, record) => record.address.includes(value),
-        sorter: (a, b) => a.address.length - b.address.length,
-        filterMultiple: false,
-        // filteredValue: filteredInfo.address || null,
-        // sortOrder: sortedInfo.field === 'address' ? sortedInfo.direction : null,
-      },
-    ];
-    return (
-      <>
-        <Button onClick={this.setAgeSort}>Sort name</Button>
-        <Button onClick={this.clearFilters}>Clear filters</Button>
-        <Button onClick={this.clearAll}>Clear filters and sorters</Button>
-        <Table columns={columns} data={data} onChange={this.handleChange} />
-      </>
-    );
+  function onChangeTable(pagination) {
+    const { current, pageSize } = pagination;
+    setLoading(true);
+    setTimeout(() => {
+      setData(allData.slice((current - 1) * pageSize, current * pageSize));
+      setPagination((pagination) => ({
+        ...pagination,
+        current,
+        pageSize,
+      }));
+      setLoading(false);
+    }, 1000);
   }
+
+  return (
+    <Table
+      loading={loading}
+      columns={columns}
+      data={data}
+      pagination={pagination}
+      onChange={onChangeTable}
+      rowSelection={{
+        selectedRowKeys,
+        onChange: (selectedRowKeys, selectedRows) => {
+          console.log('selectedRowKeys', selectedRowKeys);
+          console.log('selectedRows', selectedRows);
+          setSelectedRowKeys(selectedRowKeys);
+        },
+      }}
+      renderPagination={(paginationNode) => (
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10 }}>
+          <Space>
+            <span>Selected {selectedRowKeys.length}</span>
+            <Button size="mini">Save</Button>
+            <Button size="mini">Delete</Button>
+          </Space>
+          {paginationNode}
+        </div>
+      )}
+    />
+  );
 }
 
-export default App;
+export default Demo;
