@@ -1,3 +1,12 @@
+## 2.24.0
+
+2021-11-05
+
+### 🐛 BugFix
+
+- Adjust the TS definition of the `Form` component as `FormHTMLAttributes`([#118](https://github.com/arco-design/arco-design/pull/118))
+- Fix the `bug` that the `Form.List` component creates form items through the `add()` method, and the default value passed in does not take effect when the form item has an `initialValue`.([#118](https://github.com/arco-design/arco-design/pull/118))
+
 ## 2.23.0
 
 2021-09-27

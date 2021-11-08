@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 🐛 问题修复
+
+- fix: 修复 `Pagination` 组件在 `pageSize` 和 `current` 都受控时，`pageSize` 的计算结果会覆盖 `props.current`导致 `current` 受控失效([#119](https://github.com/arco-design/arco-design/pull/119))
+
 ## 2.14.2
 
 2021-04-23

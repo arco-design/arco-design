@@ -1,3 +1,17 @@
+## 2.24.0
+
+2021-11-05
+
+### 🆕 功能升级
+
+- `Menu` 新增 `ellipsis` 属性以支持禁用水平菜单的菜单项自动折叠功能([#115](https://github.com/arco-design/arco-design/pull/115))
+
+### 🐛 问题修复
+
+- `Menu` 传入的 `tooltipProps` 包含 `triggerProps` 时，会覆盖原有的类名 `menu-item-tooltip`([#99](https://github.com/arco-design/arco-design/pull/99))
+- 修复 `Menu` 组件使用深色模式时点击更多菜单按钮弹出的气泡箭头颜色错误问题([#84](https://github.com/arco-design/arco-design/pull/84))
+- 修复 `Menu` 因为读取 `null` 的属性导致报错的 bug([#115](https://github.com/arco-design/arco-design/pull/115))
+
 ## 2.21.1
 
 2021-08-27

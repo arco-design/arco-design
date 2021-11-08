@@ -64,9 +64,6 @@ function Pagination(baseProps: PaginationProps, ref) {
     if (!!propShowMore !== showMore) {
       setShowMore(!!propShowMore);
     }
-    if (propCurrent && propCurrent !== current) {
-      setCurrent(propCurrent);
-    }
 
     if (propPageSize && propPageSize !== pageSize) {
       setPageSize(propPageSize);
@@ -75,6 +72,10 @@ function Pagination(baseProps: PaginationProps, ref) {
       if (nextCurrent !== current) {
         setCurrent(nextCurrent);
       }
+    }
+
+    if (propCurrent && propCurrent !== current) {
+      setCurrent(propCurrent);
     }
   }, [propPageSize, propTotal, propShowMore, propCurrent]);
 

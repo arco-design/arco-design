@@ -115,12 +115,12 @@ describe('Image', () => {
       changeVisible(wrapper, true);
     });
 
-    expect(add.mock.calls).toHaveLength(0);
+    expect(add.mock.calls).toHaveLength(1);
     // moving true
     act(() => {
       updateImg(wrapper, 'mousedown');
     });
-    expect(add.mock.calls).toHaveLength(2);
+    expect(add.mock.calls).toHaveLength(3);
     wrapper.unmount();
 
     // TODO: 实际remove listener上被调了6次

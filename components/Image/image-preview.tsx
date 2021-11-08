@@ -33,6 +33,7 @@ import Portal from '../Portal';
 import { PreviewGroupContext } from './previewGroupContext';
 import ImagePreviewArrow from './image-preview-arrow';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
+import { Esc } from '../_util/keycode';
 
 const ROTATE_STEP = 90;
 
@@ -61,6 +62,7 @@ function Preview(props: ImagePreviewProps, ref) {
     ],
     getPopupContainer = () => document.body,
     onVisibleChange,
+    escToExit = true,
   } = props;
 
   const { previewGroup, previewUrlMap, currentId, setCurrentId, infinite } = useContext(
@@ -89,6 +91,7 @@ function Preview(props: ImagePreviewProps, ref) {
   const refImage = useRef<HTMLImageElement>();
   const refImageContainer = useRef<HTMLDivElement>();
   const refWrapper = useRef<HTMLDivElement>();
+  const keyboardEventOn = useRef<boolean>(false);
 
   const refMoveData = useRef({
     pageX: 0,
@@ -305,6 +308,25 @@ function Preview(props: ImagePreviewProps, ref) {
     setStatus('loading');
     reset();
   }, [mergedSrc]);
+
+  // Close when pressing esc
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (escToExit && e && e.key === Esc.key) {
+        close();
+      }
+    };
+
+    if (visible && !moving && !keyboardEventOn.current) {
+      keyboardEventOn.current = true;
+      on(document, 'keydown', onKeyDown);
+    }
+
+    return () => {
+      keyboardEventOn.current = false;
+      off(document, 'keydown', onKeyDown);
+    };
+  }, [visible, escToExit, moving]);
 
   const defaultActions = [
     {

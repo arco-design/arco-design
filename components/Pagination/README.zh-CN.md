@@ -32,7 +32,7 @@
 |sizeOptions|每页可以显示数据条数|`number[]`|`-`|-|
 |onChange|变化时的回调|`(pageNumber: number, pageSize: number) => void`|`-`|-|
 |onPageSizeChange|pageSize 变化时的回调|`(size: number, current: number) => void`|`-`|-|
-|pageSizeChangeResetCurrent|`pageSize` 改变的时候重置当前页码为 `1`|`boolean`|`-`|-|
+|pageSizeChangeResetCurrent|`pageSize` 改变的时候重置当前页码为 `1`|`boolean`|`true`|-|
 |simple|是否应用精简分页模式|`boolean`|`-`|-|
 |showJumper|是否显示快速跳转到某页|`boolean`|`-`|-|
 |showMore|是否显示更多页码提示（当尚无法计算数据总数时可以使用）|`boolean`|`-`|-|

@@ -1,3 +1,12 @@
+## 2.24.0
+
+2021-11-05
+
+### 🐛 问题修复
+
+- 调整 `Form` 组件的 TS 定义为 `FormHTMLAttributes`([#118](https://github.com/arco-design/arco-design/pull/118))
+- 修复 `Form.List` 组件通过 `add()` 方法创建表单项，传入的默认值在该表单项带有 `initialValue` 时候未生效的 `bug` 。([#118](https://github.com/arco-design/arco-design/pull/118))
+
 ## 2.23.0
 
 2021-09-27

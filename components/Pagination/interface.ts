@@ -96,6 +96,7 @@ export interface PaginationProps {
   /**
    * @zh `pageSize` 改变的时候重置当前页码为 `1`
    * @en When pageSize changes, resets the current page number to `1`
+   * @defaultValue true
    */
   pageSizeChangeResetCurrent?: boolean;
   /**

@@ -84,6 +84,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 * [Dark mode](https://arco.design/react/docs/dark)
 * [Theme customization](https://arco.design/react/docs/theme)
 * [Figma component library](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
+* [Awesome Arco](https://github.com/arco-design/awesome-arco)
 
 # Ecosystems
 
@@ -110,6 +111,10 @@ ReactDOM.render(<App />, document.getElementById('app'));
 # Contributing
 
 Developers interested in contributing should read the [Code of Conduct](./CODE_OF_CONDUCT.md) and the [Contributing Guide](./CONTRIBUTING.md).
+
+Thank you to all the people who already contributed to ArcoDesign!
+
+<a href="https://github.com/arco-design/arco-design/graphs/contributors"><img src="https://contrib.rocks/image?repo=arco-design/arco-design" /></a>
 
 # License
 

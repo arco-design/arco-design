@@ -91,7 +91,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   })();
 
   const [inputValue, setInputValue] = useState<string>('');
-  const [isLegalValue, setIsLegalValue] = useState(true);
+  const [isOutOfRange, setIsOutOfRange] = useState(false);
   const [isUserInputting, setIsUserInputting] = useState(false);
 
   // Value is not set
@@ -154,16 +154,15 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   }, [props.value]);
 
   useEffect(() => {
-    const legalValue = getLegalValue(value);
-    const _isLegalValue = value === legalValue;
+    const _isOutOfRange = (isNumber(min) && value < min) || (isNumber(max) && value > max);
 
     // Don't correct the illegal value caused by prop value. Wait for user to take actions.
-    if (!_isLegalValue && refHasOperateSincePropValueChanged.current) {
-      setValue(legalValue);
+    if (_isOutOfRange && refHasOperateSincePropValueChanged.current) {
+      setValue(getLegalValue(value));
     }
 
-    setIsLegalValue(_isLegalValue);
-  }, [value, getLegalValue]);
+    setIsOutOfRange(_isOutOfRange);
+  }, [min, max, value, getLegalValue]);
 
   const handleArrowKey = (event, method: StepMethods, needRepeat = false) => {
     event.persist();
@@ -287,7 +286,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
         `${prefixCls}-size-${mergedSize}`,
         {
           [`${prefixCls}-readonly`]: readOnly,
-          [`${prefixCls}-illegal-value`]: !isEmptyValue && !isLegalValue,
+          [`${prefixCls}-illegal-value`]: !isEmptyValue && isOutOfRange,
         },
         className
       )}
