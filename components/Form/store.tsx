@@ -1,4 +1,7 @@
 import get from 'lodash/get';
+import setWith from 'lodash/setWith';
+import has from 'lodash/has';
+import omit from 'lodash/omit';
 import { cloneDeep, set, iterativelyGetKeys } from './utils';
 import { isArray, isObject, isString } from '../_util/is';
 import Control from './control';
@@ -55,7 +58,7 @@ class Store<
 
   // 和formControl 的 touched属性不一样。 只要被改过的字段，这里就会存储。并且不会跟随formControl被卸载而清除。
   // reset 的时候清除
-  private touchedFields: FieldKey[] = [];
+  private touchedFields: { [key: string]: unknown } = {};
 
   private store: Partial<FormData> = {};
 
@@ -146,9 +149,6 @@ class Store<
   public innerSetInitialValue = (field: FieldKey, value: FieldValue) => {
     if (!field) return;
     this.initialValues[field as string] = value;
-    if (get(this.store, field) !== undefined) {
-      return;
-    }
     // 组件在创建的时候，需要判断store里存的对应field的值是否生效。只要没有被操作过（touchedFields里不存在），就生效
     if (!this._inTouchFields(field)) {
       set(this.store, field, get(this.initialValues, field));
@@ -171,23 +171,23 @@ class Store<
   private _inTouchFields(field?: FieldKey) {
     const keys = this._getIterativelyKeysByField(field);
 
-    return this.touchedFields.some((key) => {
-      return keys.indexOf(key) > -1;
-    });
+    // return fields.some((item) => has(fieldObj, item));
+
+    return keys.some((item) => has(this.touchedFields, item));
   }
 
   private _popTouchField(field?: FieldKey | FieldKey[]) {
     if (field === undefined) {
-      this.touchedFields = [];
+      this.touchedFields = {};
     }
     const keys = this._getIterativelyKeysByField(field);
-    this.touchedFields = this.touchedFields.filter((key) => {
-      return keys.indexOf(key) === -1;
-    });
+    this.touchedFields = omit(this.touchedFields, keys);
   }
 
   private _pushTouchField(field: FieldKey | FieldKey[]) {
-    this.touchedFields = [...new Set(this.touchedFields.concat(field))];
+    [].concat(field).forEach((key) => {
+      setWith(this.touchedFields, key, undefined, Object);
+    });
   }
 
   /**
