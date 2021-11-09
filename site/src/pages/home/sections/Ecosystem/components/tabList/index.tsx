@@ -34,7 +34,7 @@ function ContentHeader({
             href={href}
             target="_blank"
             className="home-btn"
-            onClick={handleClick()}
+            onClick={() => handleClick()}
           >
             {lang === 'zh-CN' ? '立即使用' : 'Goto'}
           </Button>
