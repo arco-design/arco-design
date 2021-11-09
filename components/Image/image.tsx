@@ -78,6 +78,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     {
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-loading`]: isLoading,
+      [`${prefixCls}-loading-error`]: isError,
       [`${prefixCls}-with-footer-inner`]: isLoaded && showFooter && footerPosition === 'inner',
       [`${prefixCls}-with-footer-outer`]: isLoaded && showFooter && footerPosition === 'outer',
     },
