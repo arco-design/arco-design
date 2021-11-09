@@ -85,6 +85,7 @@ function Demo() {
   const formRef = useRef();
   const [size, setSize] = useState('default');
   const [layout, setLayout] = useState('horizontal');
+  const [position, setPosition] = useState('start');
 
   useEffect(() => {
     formRef.current.setFieldsValue({ rate: 5 });
@@ -121,10 +122,22 @@ function Demo() {
           </Radio.Group>
         </Grid.Col>
       </Grid.Row>
+      <Grid.Row style={{ marginBottom: 20, lineHeight: '40px' }}>
+        <Grid.Col span={3} style={{ textAlign: 'right' }}>
+          必填标实位置：
+        </Grid.Col>
+        <Grid.Col span={17}>
+          <Radio.Group value={position} onChange={setPosition} type="button">
+            <Radio value="start">start</Radio>
+            <Radio value="end">end</Radio>
+          </Radio.Group>
+        </Grid.Col>
+      </Grid.Row>
       <ConfigProvider size={size}>
         <Form
           layout={layout}
           ref={formRef}
+          requiredSymbol={{position}}
           {...formItemLayout}
           initialValues={{
             name: '名字',

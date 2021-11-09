@@ -156,7 +156,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   childrenDom = null;
 
   // 保存children节点的尺寸。 主要用于在弹出层动画前和动画完成后比较尺寸是否有变化。
-  childrenDomSize = {};
+  childrenDomSize: ReturnType<typeof getDOMPos> = {};
 
   getMergedProps = (baseProps?): PropsWithChildren<TriggerProps> => {
     const { componentConfig } = this.context;
@@ -824,6 +824,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       duration,
       unmountOnExit,
       alignPoint,
+      autoAlignPopupWidth,
       position,
       childrenPrefix,
       showArrow,
@@ -956,6 +957,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             trigger-placement={this.realPosition}
             style={
               {
+                width:
+                  autoAlignPopupWidth && style?.width === undefined
+                    ? this.childrenDomSize?.width
+                    : '',
                 ...popupStyle,
                 position: 'absolute',
                 zIndex: zIndex || '',

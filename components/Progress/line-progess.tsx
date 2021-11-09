@@ -39,6 +39,7 @@ function LineProgress(props) {
     showText,
     bufferColor,
     formatText,
+    trailColor
   } = props;
 
   const strokeWidth = props.strokeWidth || defaultStrokeWidth[size];
@@ -64,7 +65,7 @@ function LineProgress(props) {
 
   return (
     <div className={`${cls}-wrapper`}>
-      <div className={`${cls}-outer`} style={{ height }}>
+      <div className={`${cls}-outer`} style={{ height, backgroundColor: trailColor }}>
         {buffer && !isFinish && (
           <div
             className={`${cls}-inner-buffer`}

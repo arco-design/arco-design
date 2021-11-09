@@ -1,3 +1,11 @@
+## 2.23.5
+
+2021-10-29
+
+### 🐛 BugFix
+
+- Fix  the InputTag component default validate function  always returns false([#43](https://github.com/arco-design/arco-design/pull/43))
+
 ## 2.23.1
 
 2021-10-15

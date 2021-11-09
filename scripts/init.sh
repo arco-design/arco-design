@@ -1,7 +1,6 @@
-npm install
-npm run icon
-npm run build
+yarn
+yarn icon
+yarn build
 
 cd site
-
-npm install
+yarn

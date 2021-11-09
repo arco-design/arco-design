@@ -48,6 +48,7 @@ Show and preview pictures.
 |actionsLayout|The layout of the control bar|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |onVisibleChange|Callback when visibility changes|`(visible: boolean, preVisible: boolean) => void`|`-`|-|
 |getPopupContainer|Get popup's parent node|`() => HTMLElement`|`() => document.body`|2.16.0|
+|escToExit|Whether to enable pressing `ESC` to close the preview.|`boolean`|`true`|2.24.0|
 
 ### Image.PreviewGroup
 
@@ -71,6 +72,7 @@ Start from `v2.14.0`
 |closable|Whether display close button|`boolean`|`true`|2.16.0|
 |actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|`ImagePreviewActionProps[]`|`-`|-|
 |actionsLayout|The layout of the control bar|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
+|escToExit|Whether to enable pressing `ESC` to close the preview.|`boolean`|`true`|2.24.0|
 
 ### ImagePreviewActionProps
 

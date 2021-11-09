@@ -18,6 +18,22 @@ jest.mock('../../_util/clipboard', () => {
   };
 });
 
+jest.mock('resize-observer-polyfill', () => ({
+  __esModule: true,
+  default: jest.fn().mockImplementation((cb) => {
+    try {
+      // in jest, dom has no size, so cb will not trigger on observer is created, just mock;
+      typeof cb === 'function' && cb();
+    } catch (e) {}
+
+    return {
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    };
+  }),
+}));
+
 // 1行20个字符。
 const LINE_STR_COUNT = 20;
 
@@ -221,5 +237,26 @@ describe('Typography', () => {
     const showText = wrapper.text();
     expect(showText.endsWith(suffix)).toBeTruthy();
     expect(wrapper.find('Tooltip')).toHaveLength(1);
+  });
+
+  it('ellipsis correctly when children is controlled', async () => {
+    const wrapper = mount(<Paragraph ellipsis>{mockText}</Paragraph>);
+    await sleep(200);
+    wrapper.update();
+    expect(wrapper.text().length).toEqual(LINE_STR_COUNT);
+
+    const resetText = `new children`;
+
+    act(() => {
+      wrapper.setProps({
+        children: resetText + mockText,
+      });
+      wrapper.update();
+    });
+
+    await sleep(200);
+
+    expect(wrapper.text().length).toEqual(LINE_STR_COUNT);
+    expect(wrapper.text().startsWith(resetText)).toBe(true);
   });
 });

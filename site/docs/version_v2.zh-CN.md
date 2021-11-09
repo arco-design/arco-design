@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.23.5
+
+2021-10-29
+
+### 🐛 问题修复
+
+- 修复 `TreeSelect` 组件搜索节点展示不正确的问题。([#74](https://github.com/arco-design/arco-design/pull/74))
+- 修复 `Trigger` 组件弹出层第一次渲染时未获取到子元素宽度导致虚拟列表失效的问题([#69](https://github.com/arco-design/arco-design/pull/69))
+- 修复 `Popver` 组件弹出层在挂载父节点宽度特别小时，箭头元素定位有误的问题。([#69](https://github.com/arco-design/arco-design/pull/69))
+- 修复 `Typography` 组件在折叠状态时，使用未更新的变量进行计算的bug([#57](https://github.com/arco-design/arco-design/pull/57))
+- 修复 `Select` 组件设置选项高度可能导致的虚拟列表定位异常。([#55](https://github.com/arco-design/arco-design/pull/55))
+- 修复InputTag组件默认的validate函数永远返回false的bug([#43](https://github.com/arco-design/arco-design/pull/43))
+
 ## 2.23.4
 
 2021-10-26

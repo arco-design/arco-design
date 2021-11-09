@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.23.5
+
+2021-10-29
+
+### 🐛 BugFix
+
+- Fix the bug that the search node of the `TreeSelect` component is not displayed correctly.([#74](https://github.com/arco-design/arco-design/pull/74))
+- Trigger's popup can not get correct width when first render([#69](https://github.com/arco-design/arco-design/pull/69))
+- Fix the problem that the pop-up layer of the `Popver` component has a very small width of the parent node, and the arrow element is incorrectly positioned.([#69](https://github.com/arco-design/arco-design/pull/69))
+- Fix the bug of using unupdated variables for calculation when the `Typography` component is in the collapsed state.([#57](https://github.com/arco-design/arco-design/pull/57))
+- Fix `Select` virtual list abnormal positioning that may be caused by setting custom height of  `Select.Option` .([#55](https://github.com/arco-design/arco-design/pull/55))
+- Fix  the InputTag component default validate function  always returns false([#43](https://github.com/arco-design/arco-design/pull/43))
+
 ## 2.23.4
 
 2021-10-26

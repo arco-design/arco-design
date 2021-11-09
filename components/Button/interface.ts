@@ -91,6 +91,11 @@ export type AnchorButtonProps = {
   Omit<React.AnchorHTMLAttributes<any>, 'type' | 'onClick' | 'className'>;
 
 export type FinalButtonProps = {
+  /**
+   * @zh 按钮原生的 html type 类型
+   * @en html button type
+   * @defaultValue button
+   */
   htmlType?: 'button' | 'submit' | 'reset';
 } & BaseButtonProps &
   Omit<React.ButtonHTMLAttributes<any>, 'type' | 'onClick' | 'className'>;

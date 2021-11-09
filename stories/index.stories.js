@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import './index.less';
-import '../dist/css/arco.css';
+import '../dist/css/index.less';
 
+import DemoTypography from './components/Typography';
 import DemoAlert from './components/Alert';
 import DemoAvatar from './components/Avatar';
 import DemoModal from './components/Modal';
@@ -62,6 +63,7 @@ import DemoSpace from './components/Space';
 
 const components = storiesOf('Components', module);
 const componentsMap = {
+  Typography: () => <DemoTypography />,
   Layout: () => <DemoLayout />,
   DropDown: () => <DemoDropdown />,
   Menu: () => <DemoMenu />,

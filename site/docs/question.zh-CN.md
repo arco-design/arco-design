@@ -57,7 +57,7 @@ moment.tz.setDefault('America/Los_Angeles');
 
 ## `Tooltip` 等弹出组件包裹组件时，弹出不生效？
 
-因为组件需要接收 Tooltip 等弹出组件需要把事件偷传到包裹元素的 dom 上，所以自定义组件需要对上层传下来的参数做处理，有两种解决方案：
+因为组件需要接收 Tooltip 等弹出组件需要把事件透传到包裹元素的 dom 上，所以自定义组件需要对上层传下来的参数做处理，有两种解决方案：
 
 1. 组件外层包裹一层 div。
 
@@ -82,7 +82,7 @@ function MyComponent(props) {
 }
 ```
 
-## `Popconfirm`、 `Tooltip` 、`Popover` 嵌套使用的时，只生效了一个 ?
+## `Popconfirm`、 `Tooltip` 、`Popover` 嵌套使用的时候，只生效了一个 ?
 
 例如：
 ```js

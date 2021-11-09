@@ -256,6 +256,7 @@
     .@{menu-prefix-cls}-pop {
       display: inline-block;
       vertical-align: middle;
+      flex-shrink: 0;
 
       &:not(:first-child) {
         margin-left: @menu-horizontal-item-gap;
@@ -391,9 +392,11 @@
       }
     }
 
-    .@{prefix}-dropdown-menu-dark ~ .@{prefix}-trigger-arrow {
-      background-color: @menu-dark-color-bg;
-      border-color: @menu-dark-color-bg;
+    .@{prefix}-dropdown-menu-dark ~ .@{prefix}-trigger-arrow-container {
+      .@{prefix}-trigger-arrow {
+        background-color: @menu-dark-color-bg;
+        border-color: @menu-dark-color-bg;
+      }
     }
   }
 }

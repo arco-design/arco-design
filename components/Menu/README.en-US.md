@@ -24,6 +24,7 @@ A component to organize, arrange, and display a list of options.
 |collapse|Whether to collapse the menu horizontally|`boolean`|`-`|-|
 |accordion|Whether to render as Accordion|`boolean`|`-`|-|
 |selectable|Whether is the menu item selectable|`boolean`|`true`|-|
+|ellipsis|Whether the horizontal menu automatically collapses when it overflows|`boolean`|`true`|2.24.0|
 |autoScrollIntoView|Whether to automatically scroll the selected item to the visible area|`boolean`|`-`|-|
 |hasCollapseButton|Whether built-in folding button|`boolean`|`-`|-|
 |defaultSelectedKeys|The initially selected menu item's key array|`string[]`|`-`|-|

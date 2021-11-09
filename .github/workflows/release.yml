@@ -1,0 +1,20 @@
+name: auto-release
+on: create
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: create-release
+        if: github.event.ref_type == 'tag'
+        uses: arco-design/arco-auto-release@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          changelogPaths: 'site/docs/version_v2.en-US.md,site/docs/version_v2.zh-CN.md'
+          tagName: ${{ steps.get_version.outputs.VERSION }}
