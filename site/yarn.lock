@@ -209,17 +209,26 @@
   dependencies:
     classnames "^2.2.6"
 
-"@arco-design/arco-site-navbar@^1.10.4":
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/@arco-design/arco-site-navbar/-/arco-site-navbar-1.10.4.tgz#acf1026e659a9f340358cf4aaa73ca8ff002ffe8"
-  integrity sha512-K+tYp32Qq4B2JiyPGZ/V5eY726mNyrSKMoSyoYthMEgwgLkxJ2EyyH6AG/K27l1d/e3KKI/eGGDaeCUt2qAYSw==
+"@arco-design/arco-site-navbar@^1.10.5":
+  version "1.10.5"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-navbar/-/arco-site-navbar-1.10.5.tgz#b38843a248f7683b618cf2dd1ea6ec94d28c86b1"
+  integrity sha512-MhYd4/NqEIq+nLC3J+tDKt+CixJFgtk20slhkFAfds+j6DE7thc7OJ2TjJbb9Fwr8bEmZir0dTDFHMkcJj+TrA==
   dependencies:
     "@antv/g2" "^4.1.12"
+    "@arco-design/arco-site-utils" "^1.0.0"
     axios "^0.21.1"
     classnames "^2.2.6"
     dayjs "^1.10.4"
     gsap "^3.6.0"
     lodash.debounce "^4.0.8"
+
+"@arco-design/arco-site-utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.0.tgz#8b216ed88137240cba5b9300718dc69783b0ff6d"
+  integrity sha512-fCNRi7TSfGcFIsAI9RlV9z5NMLUpGMPwthT3dRduqF00qVkmF6oUvOd2WTQ2/Z66QhqiycnBB+pyTRaPILMGdA==
+  dependencies:
+    axios "^0.24.0"
+    lodash.throttle "^4.1.1"
 
 "@arco-design/color@^0.4.0":
   version "0.4.0"
@@ -1732,6 +1741,11 @@ lodash.shuffle@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.shuffle/-/lodash.shuffle-4.2.0.tgz#145b5053cf875f6f5c2a33f48b6e9948c6ec7b4b"
   integrity sha1-FFtQU8+HX29cKjP0i26ZSMbse0s=
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash@^4.0.1, lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.5:
   version "4.17.21"
