@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@arco-design/web-react';
 import styles from './index.module.less';
 import cs from '../../../../utils/classNames';
-import { TabItem } from '../../interface';
+import { EcosystemItem, TabItem } from '../../interface';
 import { useInterval } from '../../../../hooks/useInterval';
 import useHomeContext from '../../../../hooks/useHomeContext';
 
@@ -11,11 +11,13 @@ function ContentHeader({
   title,
   desc,
   href,
+  handleClick,
 }: {
   name: string;
   title: string;
   href?: string;
   desc?: string;
+  handleClick?: () => void;
 }) {
   const { lang } = useHomeContext();
   return (
@@ -27,7 +29,13 @@ function ContentHeader({
       </div>
       <div className={styles['content-header-right']}>
         {href && (
-          <Button type="primary" href={href} target="_blank" className="home-btn">
+          <Button
+            type="primary"
+            href={href}
+            target="_blank"
+            className="home-btn"
+            onClick={handleClick()}
+          >
             {lang === 'zh-CN' ? '立即使用' : 'Goto'}
           </Button>
         )}
@@ -36,8 +44,11 @@ function ContentHeader({
   );
 }
 
-export default function EcosystemTabList(props: { list: TabItem[] }) {
-  const { list } = props;
+export default function EcosystemTabList(props: {
+  list: TabItem[];
+  reportTea?: (params: EcosystemItem) => void;
+}) {
+  const { list, reportTea } = props;
   const tabRenderRecord = useRef(list.map((item) => item.name));
   const [activeTab, setActiveTab] = useState(list[0].name);
   const [parse, setParse] = useState(false);
@@ -109,6 +120,13 @@ export default function EcosystemTabList(props: { list: TabItem[] }) {
             title={activePlatform.slogan}
             desc={activePlatform.desc}
             href={activePlatform.href}
+            handleClick={() => {
+              reportTea({
+                name: activePlatform.name,
+                href: activePlatform.href,
+                logo: undefined,
+              });
+            }}
           />
         )}
         <div ref={contentRef}>

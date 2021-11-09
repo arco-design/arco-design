@@ -13,9 +13,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default function EcosystemBlockList({
   list,
   animation,
+  reportTea,
 }: {
   list: EcosystemItem[];
   animation?: boolean;
+  reportTea?: (item: EcosystemItem) => void;
 }) {
   const locale = useLocale();
   const blockListRef = useRef<HTMLDivElement>();
@@ -53,6 +55,7 @@ export default function EcosystemBlockList({
           image={item.image}
           waiting={!href}
           onClick={() => {
+            reportTea && reportTea({ href, ...item });
             if (href) {
               window.open(href);
             } else {

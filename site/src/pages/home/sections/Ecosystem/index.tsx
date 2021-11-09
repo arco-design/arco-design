@@ -1,4 +1,5 @@
 import React from 'react';
+import { teaLog } from '@arco-design/arco-site-utils';
 import LogoDesignLab from '../../assets/logo_DesignLab.svg';
 import LogoDesignLabBlue from '../../assets/logo_DesignLab_blue.svg';
 import LogoDesignGray from '../../assets/logo_DesignLab_gray.svg';
@@ -41,6 +42,7 @@ import ContentDesignLab from '../../content/Token';
 import ContentIconBox from '../../content/Icons';
 import ContentPalette from '../../content/Palette';
 import ContentMaterial from '../../content/Material';
+import { EventMap } from '../../utils/eventMap';
 
 export default function Ecosystem() {
   const isMobile = useIsMobile();
@@ -127,6 +129,15 @@ export default function Ecosystem() {
     headerLess: true,
   };
 
+  const reportTea = (ecosystem: EcosystemItem) => {
+    teaLog(ecosystem.href ? EventMap.clickEcosystemBtn : EventMap.clickMoreEcosystem, {
+      menu: ecosystem.name,
+      link: ecosystem.href,
+      target: '_blank',
+      name: ecosystem.name,
+    });
+  };
+
   return (
     <>
       <Section
@@ -136,9 +147,9 @@ export default function Ecosystem() {
         }}
       >
         {isMobile ? (
-          <EcosystemBlockList list={[...tabList, ...restList]} animation />
+          <EcosystemBlockList list={[...tabList, ...restList]} animation reportTea={reportTea} />
         ) : (
-          <EcosystemTabList list={[...tabList, tabMore]} />
+          <EcosystemTabList list={[...tabList, tabMore]} reportTea={reportTea} />
         )}
       </Section>
     </>
