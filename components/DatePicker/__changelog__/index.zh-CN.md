@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 💎 性能优化
+
+- `DatePicker` 组件如果值是 `string` 类型，且跟 format 不一致导致解析为 Invalid Date 时，会兜底尝试 format="YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
+
 ## 2.23.1
 
 2021-10-15

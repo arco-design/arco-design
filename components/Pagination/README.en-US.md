@@ -32,7 +32,7 @@ Use pagination to control the amount of information in a single page.
 |sizeOptions|The number of data items that can be displayed per page|`number[]`|`-`|-|
 |onChange|Callback when page changes|`(pageNumber: number, pageSize: number) => void`|`-`|-|
 |onPageSizeChange|Callback when pageSize changes|`(size: number, current: number) => void`|`-`|-|
-|pageSizeChangeResetCurrent|When pageSize changes, resets the current page number to `1`|`boolean`|`-`|-|
+|pageSizeChangeResetCurrent|When pageSize changes, resets the current page number to `1`|`boolean`|`true`|-|
 |simple|Whether to use simplified pagination mode|`boolean`|`-`|-|
 |showJumper|Whether to display quick jump|`boolean`|`-`|-|
 |showMore|Whether to show more page number tips (can be used when the total number of data cannot be calculated yet)|`boolean`|`-`|-|

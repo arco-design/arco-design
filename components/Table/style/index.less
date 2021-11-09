@@ -522,6 +522,15 @@
       border-right: @table-border-width @table-border-style @table-color-border;
       border-top: @table-border-width @table-border-style @table-color-border;
 
+      .@{table-cls-th}:first-child,
+      .@{table-cls-td}:first-child {
+        border-left: @table-border-width @table-border-style @table-color-border;
+      }
+
+      .@{table-prefix-cls}-expand-fixed-row {
+        border-left: @table-border-width @table-border-style @table-color-border;
+      }
+
       &::before {
         content: '';
         position: absolute;
@@ -540,15 +549,9 @@
     }
   }
 
-  &-border:not(&-border-cell) {
-    .@{table-prefix-cls}-container {
-      border-left: @table-border-width @table-border-style @table-color-border;
-    }
-  }
-
   &-border-cell {
     .@{table-cls-th},
-    .@{table-cls-td}:not(.@{table-prefix-cls}-expand-content) {
+    .@{table-cls-td} {
       border-left: @table-border-width @table-border-style @table-color-border;
     }
 
@@ -560,19 +563,23 @@
   &-border-header-cell {
     .@{table-cls-th} {
       border-left: @table-border-width @table-border-style @table-color-border;
+    }
+
+    thead > .@{table-cls-tr}:not(:last-child) > .@{table-cls-th}[colspan] {
       border-bottom: @table-border-width @table-border-style @table-color-border;
     }
   }
 
-  &-border-header-cell&-border {
-    .@{table-cls-th}:first-child {
-      border-left: 0;
+  &-border-body-cell {
+    .@{table-cls-td} {
+      border-left: @table-border-width @table-border-style @table-color-border;
     }
   }
 
-  &-border-body-cell {
-    .@{table-cls-td}:not(:first-child):not(.@{table-prefix-cls}-expand-content) {
-      border-left: @table-border-width @table-border-style @table-color-border;
+  &-border-cell:not(&-border) {
+    .@{table-cls-th}:first-child,
+    .@{table-cls-td}:first-child {
+      border-left: 0;
     }
   }
 

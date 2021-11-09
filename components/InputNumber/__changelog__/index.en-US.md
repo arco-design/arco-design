@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 🐛 BugFix
+
+- Fix the bug that `InputNumber` showed an error status when passing in `value` that is inconsistent with `precision`.([#116](https://github.com/arco-design/arco-design/pull/116))
+
 ## 2.21.0
 
 2021-08-20

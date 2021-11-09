@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 💅 Style
+
+- Fix the problem that the border line of the header is broken when `border={{ border: true, headerCell: true }}` when the `Table` component is grouped columns in the header.([#120](https://github.com/arco-design/arco-design/pull/120))
+
 ## 2.23.4
 
 2021-10-26

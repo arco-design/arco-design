@@ -1,72 +1,104 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Tabs } from '@self';
+import { DndProvider, DragSource, DropTarget ,createDndContext} from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
-const TabPane = Tabs.TabPane;
 
-let count = 5;
+const { TabPane } = Tabs;
+class TabNode extends React.Component {
+  render() {
+    const { connectDragSource, connectDropTarget, children } = this.props;
 
-const paneStyle = {
-  width: '100%',
-  height: 50,
-  padding: '24px 0',
-  color: '#939aa3',
+    return connectDragSource(connectDropTarget(children));
+  }
+}
+
+const cardTarget = {
+  drop(props, monitor) {
+    const dragKey = monitor.getItem().index;
+    const hoverKey = props.index;
+
+    if (dragKey === hoverKey) {
+      return;
+    }
+    props.moveTabNode(dragKey, hoverKey);
+    monitor.getItem().index = hoverKey;
+  },
 };
 
-const initTabs = [...new Array(20)].map((x, i) => ({
-  title: `标签${i + 1}`,
-  key: `key${i + 1}`,
-  content: `标签${i + 1}内容`,
-}));
+const WrapTabNode = DropTarget('DND_NODE', cardTarget, connect => ({
+  connectDropTarget: connect.dropTarget(),
+}))(
+  DragSource('DND_NODE', {
+    beginDrag(props) {
+      return {
+        id: props.id,
+        index: props.index,
+      };
+    },
+  }, (connect, monitor) => ({
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging(),
+  }))(TabNode),
+);
 
-function Demo() {
-  const [tabs, setTabs] = useState(initTabs);
-  const [activeTab, setActiveTab] = useState('key2');
+function DraggableTabs(props) {
+  const [tabs, setTabs] = useState(props.children || []);
+  const manager = useRef(createDndContext(HTML5Backend))
 
-  const handleAddTab = () => {
-    const newTab = {
-      title: `新标签${++count}`,
-      key: `new key${count}`,
-      content: `新标签${count}内容`,
-    };
-    setTabs([...tabs, newTab]);
-    setActiveTab(newTab.key);
+  const moveTabNode = (dragKey, hoverKey) => {
+    const newTabs = [...tabs];
+
+    let dragTab = null;
+
+    const dragIndex = newTabs.findIndex(item => item.key === dragKey)
+    const hoverIndex = newTabs.findIndex(item => item.key === hoverKey)
+
+    newTabs.splice(dragIndex, 1)
+    newTabs.splice(hoverIndex, 0, tabs[dragIndex])
+
+    setTabs(newTabs)
   };
 
-  const handleDeleteTab = (key) => {
-    const index = tabs.findIndex((x) => x.key === key);
+  const renderTabHeader = (props, DefaultTabBar) => {
+    return (
+      <DefaultTabBar {...props}>
+        {node => {
+          return (
+          <WrapTabNode key={node.key} index={node.key} moveTabNode={moveTabNode}>
+            {node}
+          </WrapTabNode>
+        )
+        }}
+      </DefaultTabBar>
+    )
+  }
 
-    if (index > -1) {
-      const newTabs = tabs.map((item, i) => {
-        if (i == index - 1) {
-          return {
-            ...item,
-            title: `${item.title}yyy`,
-          };
-        }
-        return item;
-      });
-      setTabs(newTabs.slice(0, index).concat(newTabs.slice(index + 1)));
-    }
-  };
 
   return (
-    <div>
-      <Tabs
-        editable
-        type="card-gutter"
-        activeTab={activeTab}
-        onAddTab={handleAddTab}
-        onDeleteTab={handleDeleteTab}
-        onChange={setActiveTab}
-      >
-        {tabs.map((x, i) => (
-          <TabPane destroyOnHide key={x.key} title={x.title}>
-            <div style={paneStyle}>{`这里是${x.content}`}</div>
-          </TabPane>
-        ))}
+    <DndProvider manager={manager.current.dragDropManager}>
+      <Tabs renderTabHeader={renderTabHeader}>
+        {tabs}
       </Tabs>
-    </div>
+    </DndProvider>
   );
 }
 
-export default Demo;
+
+const App = ()=>{
+  return (
+    <DraggableTabs>
+      <TabPane title="tab 1" key="1">
+        Content of Tab Pane 1
+      </TabPane>
+      <TabPane title="tab 2" key="2">
+        Content of Tab Pane 2
+      </TabPane>
+      <TabPane title="tab 3" key="3">
+        Content of Tab Pane 3
+      </TabPane>
+    </DraggableTabs>
+  )
+}
+
+export default App;

@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 🆕 Feature
+
+- Component `Image.Preview` support pressing `ESC` to close([#121](https://github.com/arco-design/arco-design/pull/121))
+
 ## 2.23.0
 
 2021-09-27

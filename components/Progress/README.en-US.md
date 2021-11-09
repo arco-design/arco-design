@@ -21,6 +21,7 @@ Give users feedback on the current running tasks, which is mostly used in scenes
 |animation|Whether show animation, Only available when `type="line"`|`boolean`|`-`|-|
 |status|Progress status.|`'success' \| 'error' \| 'normal' \| 'warning'`|`-`|2.16.0|
 |color|Progress color, priority is higher than `status`|`string \| { [key: string]: string }`|`-`|2.10.0|
+|trailColor|The rest of progress bar color.|`string`|`-`|-|
 |showText|Whether display text|`boolean`|`true`|-|
 |formatText|Progress text function|`(percent: number) => ReactNode`|`-`|-|
 |percent|percent|`number` **(Required)**|`0`|-|

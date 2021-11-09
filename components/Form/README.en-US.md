@@ -62,6 +62,7 @@ A form with data collection, verification and submission functions, including ch
 |normalize|Convert the `value` to the FormItem|`(value: FieldValue \| undefined,prevValue: FieldValue \| undefined,allValues: Partial<FormData>) => any`|`-`|-|
 |formatter|Convert the `value` of the FormItem to children;|`(value: FieldValue \| undefined) => any`|`-`|2.23.0|
 |shouldUpdate|Whether to re-render when other FormItem value change. When set to true, any changes to the Form will re-render.|`\| boolean\| ((prevValues: Partial<FormData>,currentValues: Partial<FormData>,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) => boolean)`|`-`|-|
+|labelAlign|Text alignment of `label`|`'left' \| 'right'`|`right`|-|
 
 ### Form.List
 

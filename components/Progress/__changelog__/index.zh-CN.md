@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 🆕 功能升级
+
+- 添加trailColor改变Progress剩余颜色([#107](https://github.com/arco-design/arco-design/pull/107))
+
 ## 2.16.0
 
 2021-05-28

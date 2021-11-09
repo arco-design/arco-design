@@ -161,4 +161,14 @@ describe('Picker Format', () => {
         .prop('value')
     ).toBe('2020/10周');
   });
+
+  it('fallback format', () => {
+    const component = mount(<DatePicker format="YYYY-MM-DD HH:mm:ss" defaultValue="2020-02-01" />);
+    expect(
+      component
+        .find('input')
+        .at(0)
+        .prop('value')
+    ).toBe('2020-02-01 00:00:00');
+  });
 });

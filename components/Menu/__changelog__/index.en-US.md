@@ -1,3 +1,17 @@
+## 2.24.0
+
+2021-11-05
+
+### 🆕 Feature
+
+- `Menu` adds property `ellipsis` to forbid the automatic folding of menu items([#115](https://github.com/arco-design/arco-design/pull/115))
+
+### 🐛 BugFix
+
+- When the `tooltipProps` passed by `Menu` contains `triggerProps`, the original class name `menu-item-tooltip` will be overwrite([#99](https://github.com/arco-design/arco-design/pull/99))
+- Fix the problem that the style of the trigger-arrow does not work under the black theme of the `Menu` component([#84](https://github.com/arco-design/arco-design/pull/84))
+- Fix the bug that `Menu` caused an error because of reading an property of `null`([#115](https://github.com/arco-design/arco-design/pull/115))
+
 ## 2.21.1
 
 2021-08-27

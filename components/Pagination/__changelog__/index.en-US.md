@@ -1,3 +1,11 @@
+## 2.24.0
+
+2021-11-05
+
+### 🐛 BugFix
+
+- fix: When the `Pagination` component is under control of both `pageSize` and `current`, the calculation result of `pageSize` will overwrite `props.current`, causing the control of `current` to fail([#119](https://github.com/arco-design/arco-design/pull/119))
+
 ## 2.14.2
 
 2021-04-23

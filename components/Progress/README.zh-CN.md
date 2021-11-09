@@ -21,6 +21,7 @@
 |animation|动画效果，仅在 `type=line` 时可用|`boolean`|`-`|-|
 |status|进度条状态|`'success' \| 'error' \| 'normal' \| 'warning'`|`-`|2.16.0|
 |color|进度条颜色，优先级高于 `status`。传入对象时，会显示渐变色进度条。|`string \| { [key: string]: string }`|`-`|2.10.0|
+|trailColor|剩余进度条颜色。|`string`|`-`|-|
 |showText|是否展示文本|`boolean`|`true`|-|
 |formatText|进度条文本函数|`(percent: number) => ReactNode`|`-`|-|
 |percent|百分比|`number` **(必填)**|`0`|-|
