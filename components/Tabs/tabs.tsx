@@ -141,6 +141,12 @@ function Tabs(baseProps: TabsProps, ref) {
         'overflow',
         'editable',
         'renderTabTitle',
+        'addButton',
+        'deleteButton',
+        'icons',
+        'children',
+        'size',
+        'type',
       ])}
       style={style}
       className={cs(
