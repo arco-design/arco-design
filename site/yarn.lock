@@ -230,6 +230,14 @@
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
 
+"@arco-design/arco-site-utils@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.2.tgz#8e8e2a4ba9c480951afe68ae5b44e149f5ebe52b"
+  integrity sha512-Cta5QmYLW4+//hQG6SheGQLpagbCfwwW/niolKrhqIy0Vq1gVJJxtBQdWv3hV8WcNrPott9jpcZdHhcTRymLDQ==
+  dependencies:
+    axios "^0.24.0"
+    lodash.throttle "^4.1.1"
+
 "@arco-design/color@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@arco-design/color/-/color-0.4.0.tgz#52ddb40d318ee6df1057ca8c653cc1675023928f"

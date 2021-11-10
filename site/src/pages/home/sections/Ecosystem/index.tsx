@@ -145,6 +145,7 @@ export default function Ecosystem() {
           title: locale['ecosystem.title'],
           subTitle: locale['ecosystem.subTitle'],
         }}
+        addTracker
       >
         {isMobile ? (
           <EcosystemBlockList list={[...tabList, ...restList]} animation reportTea={reportTea} />

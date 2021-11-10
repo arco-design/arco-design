@@ -42,6 +42,7 @@ export default function SectionResource() {
         title: locale['resource.title'],
         subTitle: locale['resource.subTitle'],
       }}
+      addTracker
     >
       <Space size={20} direction={isMobile ? 'vertical' : 'horizontal'}>
         <ResourceCard

@@ -91,6 +91,7 @@ export default function QuickStart() {
         title: locale['quickStart.title'],
         subTitle: 'Arco Design',
       }}
+      addTracker
     >
       <div className={styles.wrapper}>
         {data.map(({ title, description, icon, content, isCardDark }) => (

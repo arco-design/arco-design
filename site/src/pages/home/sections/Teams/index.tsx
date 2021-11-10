@@ -161,7 +161,7 @@ export default function Teams() {
   };
 
   return (
-    <div className={styles['section-wrapper']}>
+    <div className={styles['section-wrapper']} data-tracker-name={locale['teams.slogan']}>
       <div className={styles['section-content']}>
         <div className={styles['teams-body-left']}>
           <div className={styles['teams-logo']}>
