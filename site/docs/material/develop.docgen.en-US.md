@@ -93,10 +93,12 @@ In the project created by the Arco official material template, you don't have to
 
 Write the comment in the following way, all interface or type declarations with `@title` will be extracted. The following tags are available for attribute annotations:
 
-- Chinese description of `@zh` attribute
-- English description of the `@en` attribute (optional)
-- The default value of the `@default` attribute (optional)
-- `@version` From which version the attribute was added (optional)
+- `@zh` Chinese description of this property
+- `@en` English description of this property (optional)
+- `@defaultValue` The default value of this property (optional)
+- `@version` From which version this property was added (optional)
+
+When `@zh` or `@en` is missing, the content in `/** Some comment */` will be extracted as the property description.
 
 ``` typescript
 /**
@@ -107,7 +109,7 @@ interface ButtonProps {
    * @zh button size (Chinese description of the attribute)
    * @en Size of Button (optional, English description of the attribute)
    * @version 1.2.0 (optional, in which version the new attributes are supported)
-   * @default'default' (optional, the default value of the attribute)
+   * @defaultValue'default' (optional, the default value of the attribute)
    */
   size?:'mini' |'small' |'default' |'large';
 

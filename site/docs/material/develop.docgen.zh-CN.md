@@ -93,8 +93,10 @@ module.exports = (config) => {
 
 - `@zh` 属性的中文描述
 - `@en` 属性的英文描述 （可选）
-- `@default` 属性的默认值 （可选）
+- `@defaultValue` 属性的默认值 （可选）
 - `@version` 该属性是从哪个版本新增的 （可选）
+
+当 `@zh` 或者 `@en` 缺失时，`/** Some comment */` 中的内容会被提取作为属性的描述。
 
 ``` typescript
 /**
@@ -105,7 +107,7 @@ interface ButtonProps {
    * @zh 按钮尺寸 (属性的中文描述)
    * @en Size of Button (可选，属性的英文描述)
    * @version 1.2.0 (可选，新增的属性在哪个版本开始支持)
-   * @default 'default' (可选，属性的默认值)
+   * @defaultValue 'default' (可选，属性的默认值)
    */
   size?: 'mini' | 'small' | 'default' | 'large';
 
