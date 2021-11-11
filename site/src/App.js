@@ -20,15 +20,19 @@ export default function App() {
   const { lang, theme, toggleTheme, user } = useContext(GlobalContext);
   const history = useHistory();
   const isHome = history.location.pathname === '/';
+  const pathRef = useRef(history.location.pathname);
   const navbarBorderStyle = UserNavbarBorderStyle();
 
   const TrackerRef = useRef();
 
   const moduleTrackerRef = useRef();
 
-  history.listen(() => {
-    if (TrackerRef.current) {
-      TrackerRef.current.handleReport();
+  history.listen((location) => {
+    if (location.pathname !== pathRef.current) {
+      if (TrackerRef.current) {
+        TrackerRef.current.handleReport();
+      }
+      pathRef.current = location.pathname;
     }
   });
 
@@ -47,9 +51,10 @@ export default function App() {
   };
 
   useEffect(() => {
-    TrackerRef.current = new PageDurationTracker((params) => teaLog(EventMap.pageView, params));
+    TrackerRef.current = new PageDurationTracker((params) => {
+      teaLog(EventMap.pageView, { ...params, url_path: pathRef.current });
+    });
     TrackerRef.current.init();
-
     moduleTrackerRef.current = new ModuleDurationTracker((params) => {
       teaLog(EventMap.moduleShow, params);
     });
