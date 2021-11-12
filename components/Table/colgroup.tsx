@@ -6,7 +6,6 @@ function fixedWidth(width?: number | string) {
   return typeof width === 'number' || typeof width === 'string'
     ? {
         width,
-        minWidth: width,
       }
     : {};
 }
