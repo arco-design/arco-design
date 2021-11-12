@@ -21,6 +21,7 @@ export default function ShowCase() {
           inDark: true,
         }}
         className={styles['section-wrapper']}
+        addTracker
       >
         <Carousel
           animation="card"

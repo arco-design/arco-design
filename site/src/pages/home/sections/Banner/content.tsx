@@ -1,16 +1,20 @@
 import React from 'react';
 import { Button } from '@arco-design/web-react';
-
+import { teaLog } from '@arco-design/arco-site-utils';
 import styles from './style/content.module.less';
 import useLocale from '../../hooks/useLocale';
 import { linkShowCase } from '../../constant/links';
 import cs from '../../utils/classNames';
 import IconMessage from '../../assets/banner/ic_message.svg';
 import StartBtn from '../../components/StartBtn';
+import { EventMap } from '../../utils/eventMap';
 
 export default function BannerContent() {
   const locale = useLocale();
 
+  const reportTea = (params) => {
+    teaLog(EventMap.clickBannerBtn, params);
+  };
   return (
     <>
       <div className={styles.slogan}>
@@ -26,8 +30,14 @@ export default function BannerContent() {
       </div>
 
       <div className={styles.operations}>
-        <StartBtn className={styles['operations-item']} />
-        <Button className={cs(styles['operations-item'], 'home-btn')} href={linkShowCase}>
+        <StartBtn className={styles['operations-item']} reportTea={reportTea} />
+        <Button
+          className={cs(styles['operations-item'], 'home-btn')}
+          href={linkShowCase}
+          onClick={() => {
+            reportTea({ name: locale['banner.showcase'], link: linkShowCase, target: '_self' });
+          }}
+        >
           {locale['banner.showcase']}
         </Button>
       </div>

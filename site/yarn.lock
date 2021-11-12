@@ -209,17 +209,34 @@
   dependencies:
     classnames "^2.2.6"
 
-"@arco-design/arco-site-navbar@^1.10.4":
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/@arco-design/arco-site-navbar/-/arco-site-navbar-1.10.4.tgz#acf1026e659a9f340358cf4aaa73ca8ff002ffe8"
-  integrity sha512-K+tYp32Qq4B2JiyPGZ/V5eY726mNyrSKMoSyoYthMEgwgLkxJ2EyyH6AG/K27l1d/e3KKI/eGGDaeCUt2qAYSw==
+"@arco-design/arco-site-navbar@^1.10.6":
+  version "1.10.6"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-navbar/-/arco-site-navbar-1.10.6.tgz#4141d36386c350570dcbd9fec2865dac76944e0c"
+  integrity sha512-xCkFC0UyLq73QHYGKm1g75G0BoLnoANg2gPr0uNssdwbjcmpuRPmc1LJhKIHLPcoV8VluM58Jdqx9KIcCblgqw==
   dependencies:
     "@antv/g2" "^4.1.12"
+    "@arco-design/arco-site-utils" "^1.0.1"
     axios "^0.21.1"
     classnames "^2.2.6"
     dayjs "^1.10.4"
     gsap "^3.6.0"
     lodash.debounce "^4.0.8"
+
+"@arco-design/arco-site-utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.1.tgz#5613db248de3c178f2fb7c84516ecd13aac80386"
+  integrity sha512-7F+IgbkLaHEPqE6sH1gCx0lHd4HLY+gc2O/9KFiHM9gRgIi9G2c7706mP4i0iY2EPvV3NeICo80ZWcIGSHPTJw==
+  dependencies:
+    axios "^0.24.0"
+    lodash.throttle "^4.1.1"
+
+"@arco-design/arco-site-utils@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.2.tgz#8e8e2a4ba9c480951afe68ae5b44e149f5ebe52b"
+  integrity sha512-Cta5QmYLW4+//hQG6SheGQLpagbCfwwW/niolKrhqIy0Vq1gVJJxtBQdWv3hV8WcNrPott9jpcZdHhcTRymLDQ==
+  dependencies:
+    axios "^0.24.0"
+    lodash.throttle "^4.1.1"
 
 "@arco-design/color@^0.4.0":
   version "0.4.0"
@@ -1732,6 +1749,11 @@ lodash.shuffle@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.shuffle/-/lodash.shuffle-4.2.0.tgz#145b5053cf875f6f5c2a33f48b6e9948c6ec7b4b"
   integrity sha1-FFtQU8+HX29cKjP0i26ZSMbse0s=
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash@^4.0.1, lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.5:
   version "4.17.21"
