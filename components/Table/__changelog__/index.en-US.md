@@ -1,3 +1,11 @@
+## 2.24.1
+
+2021-11-12
+
+### 💅 Style
+
+- Fix the style problem that the cell align ='right' will overlap when the `Table` component has filter in the column.([#140](https://github.com/arco-design/arco-design/pull/140))
+
 ## 2.24.0
 
 2021-11-05

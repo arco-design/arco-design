@@ -1,3 +1,11 @@
+## 2.24.1
+
+2021-11-12
+
+### 💅 样式更新
+
+- 修复 `Descriptions` 组件在 `tableLayout=fixed` 且为非 inline 布局时错位的问题。([#153](https://github.com/arco-design/arco-design/pull/153))
+
 ## 2.6.0
 
 2021-01-08

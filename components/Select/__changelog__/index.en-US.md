@@ -1,3 +1,12 @@
+## 2.24.1
+
+2021-11-12
+
+### 🐛 BugFix
+
+- `Select` fixes the problem that users cannot cover the height of the pop-up window in the CSS file.([#148](https://github.com/arco-design/arco-design/pull/148))
+- `Select` Fix the problem of abnormal positioning of virtual list in single mode.([#148](https://github.com/arco-design/arco-design/pull/148))
+
 ## 2.23.5
 
 2021-10-29

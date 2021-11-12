@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.24.1
+
+2021-11-12
+
+### 🐛 BugFix
+
+- Fixed a bug where the 'Trigger' component incorrectly triggered the pop-up mouse event before the animation ended.([#149](https://github.com/arco-design/arco-design/pull/149))
+- `Select` fixes the problem that users cannot cover the height of the pop-up window in the CSS file.([#148](https://github.com/arco-design/arco-design/pull/148))
+- `Select` Fix the problem of abnormal positioning of virtual list in single mode.([#148](https://github.com/arco-design/arco-design/pull/148))
+- `Menu.SubMenu` component fixes the bug that the inner `SubMenu` property is overridden by the parent `SubMenu` when used in nesting.([#145](https://github.com/arco-design/arco-design/pull/145))
+
+### 💅 Style
+
+- Fix the problem that the `Descriptions` component is misplaced when `tableLayout=fixed` and non-inline layout.([#153](https://github.com/arco-design/arco-design/pull/153))
+- Hide the text behind the menu item icon when the `Menu` component is collapsed to avoid display `...`.([#151](https://github.com/arco-design/arco-design/pull/151))
+- `Tooltip` component add a border in dark mode to avoid overlapping with the background color in the popup box.([#150](https://github.com/arco-design/arco-design/pull/150))
+- Fix the style problem that the cell align ='right' will overlap when the `Table` component has filter in the column.([#140](https://github.com/arco-design/arco-design/pull/140))
+
 ## 2.24.0
 
 2021-11-05
