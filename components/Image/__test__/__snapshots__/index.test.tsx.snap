@@ -9,7 +9,9 @@ exports[`ConfigProvider componentConfig.Image default 1`] = `
   />
   <div
     class="arco-image-overlay"
-  />
+  >
+    <div />
+  </div>
 </div>
 `;
 
@@ -22,7 +24,9 @@ exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
   />
   <div
     class="arco-image-overlay"
-  />
+  >
+    <div />
+  </div>
 </div>
 `;
 
@@ -35,6 +39,8 @@ exports[`ConfigProvider componentConfig.Image set className globally and compone
   />
   <div
     class="arco-image-overlay"
-  />
+  >
+    <div />
+  </div>
 </div>
 `;

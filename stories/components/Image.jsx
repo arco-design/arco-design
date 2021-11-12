@@ -48,6 +48,9 @@ function Demo() {
         visible={visible}
         onVisibleChange={setVisible}
       />
+      <div style={{ marginTop: '100px' }}>
+        <Image width={30} height={30} src="" />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,12 @@
-import React, { useContext, ImgHTMLAttributes, useEffect, useMemo, LegacyRef, useRef } from 'react';
+import React, {
+  useContext,
+  ImgHTMLAttributes,
+  useEffect,
+  useMemo,
+  LegacyRef,
+  useRef,
+  useState,
+} from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLoading from '../../icon/react-icon/IconLoading';
@@ -16,6 +24,12 @@ import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 type ImagePropsType = ImageProps & Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'>;
+
+type OverlayStyle = {
+  transform: string;
+  width: number;
+  height: number;
+};
 
 let uuid = 0;
 
@@ -58,11 +72,12 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   const id = useMemo(() => uuid++, []);
 
   const [showFooter] = useShowFooter({ title, description, actions });
-  const { isLoading, isError, isLoaded, setStatus } = useImageStatus('beforeLoad');
+  const { isLoading, isError, isLoaded, setStatus, status } = useImageStatus('beforeLoad');
   const [previewVisible, setPreviewVisible] = useMergeValue(false, {
     defaultValue: previewProps.defaultVisible,
     value: previewProps.visible,
   });
+  const [overlayStyle, setOverlayStyle] = useState<OverlayStyle | undefined>();
 
   // Props passed directly into Preivew component
   const availablePreviewProps = omit(previewProps, [
@@ -85,6 +100,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   );
 
   const refImg = useRef<HTMLImageElement>();
+  const refOverlay = useRef<HTMLDivElement>();
 
   function onImgLoaded() {
     setStatus('loaded');
@@ -132,6 +148,33 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     registerPreviewUrl(id, previewSrc, preview);
   }, [previewSrc, preview, previewGroup]);
 
+  const getOverlayStyle = () => {
+    if (!refImg.current || !refOverlay.current) {
+      return;
+    }
+    const imgWidth = refImg.current.clientWidth;
+    const imgHeight = refImg.current.clientHeight;
+
+    const overLayWidth = refOverlay.current.clientWidth;
+    const overLayHeight = refOverlay.current.clientHeight;
+
+    const scale = Math.min(imgWidth / overLayWidth, imgHeight / overLayHeight);
+    if (scale < 1 && scale > 0) {
+      return {
+        transform: `scale(${scale.toFixed(2)})`,
+        height: overLayHeight * scale,
+        width: overLayWidth * scale,
+      };
+    }
+  };
+
+  useEffect(() => {
+    const style = getOverlayStyle();
+    if (style) {
+      setOverlayStyle(style);
+    }
+  }, [status]);
+
   const defaultError = (
     <div className={`${prefixCls}-error`}>
       <div className={`${prefixCls}-error-icon`}>
@@ -170,8 +213,10 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       />
       {!isLoaded && (
         <div className={`${prefixCls}-overlay`}>
-          {isError && (error || defaultError)}
-          {isLoading && renderLoader()}
+          <div ref={refOverlay} style={overlayStyle}>
+            {isError && (error || defaultError)}
+            {isLoading && renderLoader()}
+          </div>
         </div>
       )}
       {isLoaded && showFooter && (
