@@ -9,7 +9,9 @@ export type MenuInfo = {
   disabled?: boolean;
 };
 
-// 将 MenuGroup 展开，得到仅含 MenuItem 和 SubMenu 的数组
+export const PROPS_NEED_TO_BE_PASSED_IN_SUBMENU = ['popup', 'triggerProps', 'selectable'];
+
+// Expand MenuGroup to get an array only contains MenuItem and SubMenu
 const flatMenuGroup = (children): ReactElement[] => {
   let validMenuItems = [];
 
@@ -105,6 +107,8 @@ export const processChildren = (
       ? item
       : React.cloneElement(item, {
           ...props,
+          // Properties of the component itself have higher priority
+          ...item.props,
           _key: item.key || `$menu-${index}`,
         });
   });
