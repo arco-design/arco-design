@@ -890,7 +890,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         mountOnEnter
         onEnter={(e) => {
           e.style.display = 'initial';
-          e.style.pointerEvents = 'auto';
+          e.style.pointerEvents = 'none';
           if (classNames === 'slideDynamicOrigin') {
             // 下拉菜单
             e.style.transform = this.getTransformTranslate();
@@ -902,7 +902,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             e.style.transform = '';
           }
         }}
-        onEntered={() => {
+        onEntered={(e) => {
+          e.style.pointerEvents = 'auto';
           this.forceUpdate();
         }}
         onExit={(e) => {
