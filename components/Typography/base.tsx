@@ -111,6 +111,15 @@ function Base(props: BaseProps) {
     ? { rows: 1, ellipsisStr: '...', ...(isObject(ellipsis) ? ellipsis : {}) }
     : {};
 
+  function canSimpleEllipsis() {
+    const { rows, ellipsisStr, suffix, onEllipsis, expandable, showTooltip } = ellipsisConfig;
+    if (suffix || ellipsisStr !== '...') return;
+    if (onEllipsis || expandable || onEllipsis || showTooltip) return;
+    return rows === 1;
+  }
+
+  const simpleEllipsis = canSimpleEllipsis();
+
   function renderOperations(forceShowExpand?: boolean) {
     return (
       <>
@@ -168,11 +177,12 @@ function Base(props: BaseProps) {
     ellipsisConfig.expandable,
     ellipsisConfig.expandNodes,
     ellipsisConfig.rows,
+    ellipsisConfig.showTooltip,
   ]);
 
   function calcEllipsis() {
     const currentEllipsis = isEllipsis;
-    if (editing) {
+    if (editing || simpleEllipsis) {
       return;
     }
     if (ellipsisConfig.rows) {
@@ -254,9 +264,16 @@ function Base(props: BaseProps) {
       TextComponent = ellipsis ? 'div' : 'span';
     }
 
+    const singleRowsClassName = ellipsisConfig.rows === 1;
     return (
       <TextComponent
-        className={cs(prefixCls, componentClassName, className)}
+        className={cs(
+          prefixCls,
+          { [`${prefixCls}-single-rows`]: singleRowsClassName },
+          { [`${prefixCls}-simple-ellipsis`]: simpleEllipsis },
+          componentClassName,
+          className
+        )}
         {...baseProps}
         {...omit(rest, [
           'spacing',
