@@ -35,7 +35,7 @@ function Demo() {
         field="name"
         required
         rules={[{
-          validator: async (value, cb) => {
+          validator: async (value, callback) => {
             return new Promise((resolve) => {
               if (value !== "admin") {
                 setTimeout(() => {
