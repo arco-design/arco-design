@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Menu, Badge } from '@arco-design/web-react';
 import { useHistory } from 'react-router-dom';
 import NProgress from 'nprogress';
@@ -50,6 +50,12 @@ function ACMenu(props) {
   }, []);
 
   const history = useHistory();
+
+  useEffect(() => {
+    history.listen(({ pathname }) => {
+      setSelectedKeys([pathname]);
+    });
+  }, []);
 
   function onClickMenuItem(path) {
     const pathArr = path.split('/');
