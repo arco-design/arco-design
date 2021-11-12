@@ -39,6 +39,19 @@
     padding: ~'@{table-size-@{size}-padding-vertical}' ~'@{table-size-@{size}-padding-horizontal}';
   }
 
+  // https://github.com/arco-design/arco-design/issues/132
+  .@{table-prefix-cls}-th-item.@{table-prefix-cls}-col-has-filter {
+    padding-right: 28px;
+  }
+
+  .@{table-prefix-cls}-col-has-sorter.@{table-prefix-cls}-col-has-filter {
+    padding-right: 0;
+  }
+
+  .@{table-prefix-cls}-col-has-sorter.@{table-prefix-cls}-col-has-filter .@{table-prefix-cls}-cell-with-sorter {
+    padding-right: 28px;
+  }
+
   .@{table-prefix-cls}-col-has-sorter {
     padding: 0;
   }
