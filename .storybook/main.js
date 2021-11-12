@@ -27,6 +27,7 @@ module.exports = {
     config.resolve.alias['@self/icon'] = path.resolve(__dirname, '../icon');
     config.resolve.alias['@self'] = path.resolve(__dirname, '../es');
 
+    config.resolve.modules = ['node_modules', path.resolve(__dirname, '../site/node_modules')];
     // 解决 webpack 编译警告
     config.module.rules[0].use[0].options.plugins.push([
       '@babel/plugin-proposal-private-property-in-object',
