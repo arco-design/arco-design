@@ -22,7 +22,7 @@
 
 </div>
 
-![arco_readme_gif](https://user-images.githubusercontent.com/19399269/139827723-6337ea54-e696-4ef5-902c-edca9c815f7c.gif)
+https://user-images.githubusercontent.com/19399269/141435899-e453cf75-d50f-4549-b8d0-37daebe46c36.mp4
 
 # 特性
 
