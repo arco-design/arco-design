@@ -335,4 +335,28 @@ describe('Menu', () => {
     component.update();
     expect(component.find('.arco-menu-item.arco-menu-active')).toHaveLength(0);
   });
+
+  it('SubMenu properties are passed in correctly', () => {
+    const component = mount(
+      <Menu
+        mode="vertical"
+        theme="dark"
+        style={{ width: 200 }}
+        defaultOpenKeys={['submenu', 'sub_submenu_1', 'sub_submenu_2']}
+      >
+        <SubMenu title="submenu" key="submenu" popup={false}>
+          <Menu.Item key="1">1</Menu.Item>
+          <SubMenu title="sub_submenu_1" key="sub_submenu_1">
+            <Menu.Item key="2">2</Menu.Item>
+          </SubMenu>
+          <SubMenu title="sub_submenu_2" key="sub_submenu_2" popup>
+            <Menu.Item key="3">3</Menu.Item>
+          </SubMenu>
+        </SubMenu>
+      </Menu>
+    );
+
+    expect(component.find('.arco-menu-item-inner')).toHaveLength(2);
+    expect(component.find('.arco-menu-pop-header').text()).toBe('sub_submenu_2');
+  });
 });

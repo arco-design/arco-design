@@ -8,6 +8,7 @@ import MenuContext from './context';
 import MenuIndent from './indent';
 import omit from '../_util/omit';
 import { useHotkeyHandler } from './hotkey';
+import { PROPS_NEED_TO_BE_PASSED_IN_SUBMENU } from './util';
 
 function Item(props: MenuItemProps, ref) {
   const {
@@ -92,7 +93,7 @@ function Item(props: MenuItemProps, ref) {
           clearHotkeyInfo();
         }
       }}
-      {...omit(rest, ['key', '_key', 'selectable', 'popup'])}
+      {...omit(rest, ['key', '_key'].concat(PROPS_NEED_TO_BE_PASSED_IN_SUBMENU))}
     >
       {needTextIndent && !collapse ? (
         <>
