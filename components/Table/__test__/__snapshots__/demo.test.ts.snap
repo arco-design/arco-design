@@ -2555,7 +2555,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
             <table>
               <colgroup>
                 <col
-                  style="width:40px;min-width:40px"
+                  style="width:40px"
                 />
                 <col
                   class="arco-table-selection-col"
@@ -4386,7 +4386,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
               <colgroup>
                 <col
                   class="arco-table-expand-icon-col"
-                  style="width:60px;min-width:60px"
+                  style="width:60px"
                 />
                 <col />
                 <col />
@@ -5365,7 +5365,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-selection-col"
                   />
                   <col
-                    style="width:140px;min-width:140px"
+                    style="width:140px"
                   />
                   <col />
                   <col />
@@ -5373,7 +5373,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   <col />
                   <col />
                   <col
-                    style="width:120px;min-width:120px"
+                    style="width:120px"
                   />
                 </colgroup>
                 <thead>
@@ -5532,7 +5532,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-selection-col"
                   />
                   <col
-                    style="width:140px;min-width:140px"
+                    style="width:140px"
                   />
                   <col />
                   <col />
@@ -5540,7 +5540,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   <col />
                   <col />
                   <col
-                    style="width:120px;min-width:120px"
+                    style="width:120px"
                   />
                 </colgroup>
                 <tbody>
@@ -6391,7 +6391,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
             >
               <colgroup>
                 <col
-                  style="width:140px;min-width:140px"
+                  style="width:140px"
                 />
                 <col />
                 <col />
@@ -6400,7 +6400,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 <col />
                 <col />
                 <col
-                  style="width:120px;min-width:120px"
+                  style="width:120px"
                 />
               </colgroup>
               <thead>
@@ -7655,7 +7655,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
             >
               <colgroup>
                 <col
-                  style="width:40px;min-width:40px"
+                  style="width:40px"
                 />
                 <col
                   class="arco-table-selection-col"
@@ -7664,7 +7664,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-expand-icon-col"
                 />
                 <col
-                  style="width:120px;min-width:120px"
+                  style="width:120px"
                 />
                 <col />
                 <col />
@@ -10105,13 +10105,13 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
             <table>
               <colgroup>
                 <col
-                  style="width:120px;min-width:120px"
+                  style="width:120px"
                 />
                 <col
-                  style="width:100px;min-width:100px"
+                  style="width:100px"
                 />
                 <col
-                  style="width:180px;min-width:180px"
+                  style="width:180px"
                 />
                 <col />
               </colgroup>
@@ -12543,7 +12543,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
               <table>
                 <colgroup>
                   <col
-                    style="width:200px;min-width:200px"
+                    style="width:200px"
                   />
                   <col />
                   <col />
@@ -13012,13 +13012,13 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
               >
                 <colgroup>
                   <col
-                    style="width:200px;min-width:200px"
+                    style="width:200px"
                   />
                   <col />
                   <col />
                   <col />
                   <col
-                    style="width:100px;min-width:100px"
+                    style="width:100px"
                   />
                 </colgroup>
                 <thead>
@@ -13629,7 +13629,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                 >
                   <colgroup>
                     <col
-                      style="width:200px;min-width:200px"
+                      style="width:200px"
                     />
                     <col />
                     <col />
@@ -13705,7 +13705,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                 >
                   <colgroup>
                     <col
-                      style="width:200px;min-width:200px"
+                      style="width:200px"
                     />
                     <col />
                     <col />
@@ -14008,7 +14008,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                 >
                   <colgroup>
                     <col
-                      style="width:200px;min-width:200px"
+                      style="width:200px"
                     />
                     <col />
                     <col />
@@ -14701,10 +14701,10 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                     class="arco-table-selection-col"
                   />
                   <col
-                    style="width:140px;min-width:140px"
+                    style="width:140px"
                   />
                   <col
-                    style="width:100px;min-width:100px"
+                    style="width:100px"
                   />
                   <col />
                   <col />
