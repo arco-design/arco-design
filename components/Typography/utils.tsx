@@ -2,9 +2,15 @@ import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import mergedToString from '../_util/mergedToString';
 
-function styleToString(style: CSSStyleDeclaration) {
+function styleToString(style: CSSStyleDeclaration, extraStyle: { [key: string]: string } = {}) {
   const styleNames: string[] = Array.prototype.slice.apply(style);
-  return styleNames.map((name) => `${name}: ${style.getPropertyValue(name)};`).join('');
+  const styleString = styleNames
+    .map((name) => `${name}: ${style.getPropertyValue(name)};`)
+    .join('');
+  const extraStyleString = Object.entries(extraStyle)
+    .map(([key, value]) => `${key}: ${value};`)
+    .join('');
+  return styleString + extraStyleString;
 }
 
 function pxToNumber(value: string | null): number {
@@ -27,19 +33,21 @@ export function measure(originElement: HTMLElement, ellipsisConfig, operations, 
     document.body.appendChild(mirrorElement);
   }
   const originStyle = window.getComputedStyle(originElement);
-  const styleString = styleToString(originStyle);
+
+  const extraStyle = {
+    height: 'auto',
+    minHeight: 'auto',
+    maxHeight: 'auto',
+    left: '0',
+    top: '-99999999px',
+    // top:'100px',
+    zIndex: '-200',
+    whiteSpace: 'normal',
+    overflow: 'auto',
+  };
+  const styleString = styleToString(originStyle, extraStyle);
   mirrorElement.setAttribute('style', styleString);
   mirrorElement.setAttribute('aria-hidden', 'true');
-
-  mirrorElement.style.height = 'auto';
-  mirrorElement.style.minHeight = 'auto';
-  mirrorElement.style.maxHeight = 'auto';
-  mirrorElement.style.position = 'fixed';
-  mirrorElement.style.left = '0';
-  mirrorElement.style.top = '-99999999px';
-  // mirrorElement.style.top = '200px';
-  mirrorElement.style.zIndex = '-200';
-
   render(<span>{operations}</span>, mirrorElement);
 
   const operationsChildNodes = Array.prototype.slice.apply(
@@ -64,12 +72,17 @@ export function measure(originElement: HTMLElement, ellipsisConfig, operations, 
     lineHeight * rows + pxToNumber(originStyle.paddingTop) + pxToNumber(originStyle.paddingBottom)
   );
 
+  function clearMirrorStyle() {
+    mirrorElement.setAttribute('style', 'display: none');
+  }
+
   function inRange() {
     return mirrorElement.offsetHeight <= maxHeight;
   }
 
   if (inRange()) {
     unmountComponentAtNode(mirrorElement);
+    clearMirrorStyle();
     return { ellipsisText: fullText, ellipsis: false };
   }
 
@@ -97,6 +110,7 @@ export function measure(originElement: HTMLElement, ellipsisConfig, operations, 
 
   measureText(textNode);
 
+  clearMirrorStyle();
   return {
     text: textNode.textContent,
     ellipsis: true,
