@@ -7,6 +7,7 @@ exports[`renders Image/demo/basic.md correctly 1`] = `
 >
   <img
     class="arco-image-img"
+    width="200"
   />
   <div
     class="arco-image-overlay"
@@ -23,6 +24,7 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
     <img
       class="arco-image-img"
       title="A user’s avatar"
+      width="200"
     />
     <div
       class="arco-image-overlay"
@@ -35,6 +37,7 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
     <img
       class="arco-image-img"
       title="A user’s avatar"
+      width="200"
     />
     <div
       class="arco-image-overlay"
@@ -76,6 +79,7 @@ exports[`renders Image/demo/custom-preview-actions.md correctly 1`] = `
 >
   <img
     class="arco-image-img"
+    width="200"
   />
   <div
     class="arco-image-overlay"
@@ -93,11 +97,12 @@ exports[`renders Image/demo/error.md correctly 1`] = `
   >
     <div
       class="arco-image"
-      style="width:400px"
+      style="width:400px;height:300px"
     >
       <img
         class="arco-image-img"
-        style="height:300px"
+        height="300"
+        width="400"
       />
       <div
         class="arco-image-overlay"
@@ -109,11 +114,12 @@ exports[`renders Image/demo/error.md correctly 1`] = `
   >
     <div
       class="arco-image"
-      style="width:400px"
+      style="width:400px;height:300px"
     >
       <img
         class="arco-image-img"
-        style="height:300px"
+        height="300"
+        width="400"
       />
       <div
         class="arco-image-overlay"
@@ -133,6 +139,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       <img
         class="arco-image-img"
         title="A user’s avatar"
+        width="300"
       />
       <div
         class="arco-image-overlay"
@@ -145,6 +152,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       <img
         class="arco-image-img"
         title="A user’s avatar"
+        width="200"
       />
       <div
         class="arco-image-overlay"
@@ -161,6 +169,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       <img
         class="arco-image-img"
         title="A user’s avatar"
+        width="300"
       />
       <div
         class="arco-image-overlay"
@@ -173,6 +182,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       <img
         class="arco-image-img"
         title="A user’s avatar"
+        width="200"
       />
       <div
         class="arco-image-overlay"
@@ -197,11 +207,12 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
   </div>
   <div
     class="arco-image"
-    style="width:200px"
+    style="width:200px;height:200px"
   >
     <img
       class="arco-image-img"
-      style="height:200px"
+      height="200"
+      width="200"
     />
     <div
       class="arco-image-overlay"
@@ -209,11 +220,12 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
   </div>
   <div
     class="arco-image"
-    style="width:200px;margin-left:67px"
+    style="width:200px;height:200px;margin-left:67px"
   >
     <img
       class="arco-image-img"
-      style="height:200px"
+      height="200"
+      width="200"
     />
     <div
       class="arco-image-overlay"
@@ -232,6 +244,7 @@ exports[`renders Image/demo/preview-get-popup-container.md correctly 1`] = `
   >
     <img
       class="arco-image-img"
+      width="200"
     />
     <div
       class="arco-image-overlay"
@@ -261,6 +274,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           >
             <img
               class="arco-image-img"
+              width="200"
             />
             <div
               class="arco-image-overlay"
@@ -277,6 +291,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           >
             <img
               class="arco-image-img"
+              width="200"
             />
             <div
               class="arco-image-overlay"
@@ -293,6 +308,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           >
             <img
               class="arco-image-img"
+              width="200"
             />
             <div
               class="arco-image-overlay"
@@ -308,6 +324,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           >
             <img
               class="arco-image-img"
+              width="200"
             />
             <div
               class="arco-image-overlay"
@@ -339,6 +356,7 @@ exports[`renders Image/demo/progressive-loader.md correctly 1`] = `
   >
     <img
       class="arco-image-img"
+      width="200"
     />
     <div
       class="arco-image-overlay"
