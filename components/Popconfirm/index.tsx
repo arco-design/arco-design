@@ -15,6 +15,7 @@ const defaultProps: PopconfirmProps = {
   blurToHide: true,
   unmountOnExit: true,
   trigger: 'click',
+  escToClose: true,
 };
 
 function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
@@ -33,6 +34,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
     blurToHide,
     unmountOnExit,
     trigger,
+    escToClose,
     onVisibleChange,
     triggerProps,
     title,
@@ -155,6 +157,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
       getPopupContainer={getPopupContainer}
       position={position}
       trigger={trigger}
+      escToClose={escToClose}
       popupVisible={popupVisible}
       content={renderPopconfirmContent()}
       unmountOnExit={unmountOnExit}
