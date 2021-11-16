@@ -13,6 +13,7 @@ export interface TooltipProps {
    * @defaultValue hover
    */
   trigger?: TriggerProps['trigger'];
+  escToClose?: TriggerProps['escToClose'];
   /**
    * @zh 弹出的内容
    * @en The content shown in popup

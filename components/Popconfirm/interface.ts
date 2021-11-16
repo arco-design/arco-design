@@ -114,6 +114,7 @@ export interface PopconfirmProps {
    * @defaultValue click
    */
   trigger?: TriggerProps['trigger'];
+  escToClose?: TriggerProps['escToClose'];
   /**
    * @zh 可以接受所有 Trigger 的参数
    * @en The Props of the `Trigger` component

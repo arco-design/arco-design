@@ -158,6 +158,12 @@ export interface TriggerProps {
    */
   clickOutsideToClose?: boolean;
   /**
+   * @zh 是否允许按 `ESC` 键关闭弹出框。
+   * @en Whether to allow close the popup by pressing `ESC`.
+   * @defaultValue false
+   */
+  escToClose?: boolean;
+  /**
    * @zh 按钮点击事件（`trigger` 包含 `click` 时生效）
    * @en Callback when click the child node. (Only work when `trigger` contains `click`)
    */
