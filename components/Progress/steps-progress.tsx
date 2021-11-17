@@ -30,7 +30,7 @@ export const StepsProgress = (props) => {
     <div className={`${cls}-wrapper`}>
       <div className={`${cls}-outer`} style={{ height, backgroundColor: trailColor }}>
         {[...new Array(props.steps)].map((_, index) => {
-          const isActive = percent >= (100 / props.steps) * index;
+          const isActive = percent > (100 / props.steps) * index;
           return (
             <div
               key={index}
