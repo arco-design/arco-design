@@ -1418,3 +1418,106 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders Progress/demo/trailColor.md correctly 1`] = `
+<div>
+  <div
+    style="width:40%;margin-bottom:20px"
+  >
+    <div
+      class="arco-progress arco-progress-line arco-progress-default"
+    >
+      <div
+        class="arco-progress-line-wrapper"
+      >
+        <div
+          class="arco-progress-line-outer"
+          style="height:4px"
+        >
+          <div
+            class="arco-progress-line-inner"
+            style="width:30%"
+          />
+        </div>
+        <div
+          class="arco-progress-line-text arco-progress-line-text-with-icon"
+        >
+          30%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="width:40%;margin-bottom:20px"
+  >
+    <div
+      class="arco-progress arco-progress-steps arco-progress-default"
+    >
+      <div
+        class="arco-progress-steps-wrapper"
+      >
+        <div
+          class="arco-progress-steps-outer"
+          style="height:4px"
+        >
+          <div
+            class="arco-progress-steps-item arco-progress-steps-item-active"
+          />
+          <div
+            class="arco-progress-steps-item arco-progress-steps-item-active"
+          />
+          <div
+            class="arco-progress-steps-item"
+            style="background-color:"
+          />
+          <div
+            class="arco-progress-steps-item"
+            style="background-color:"
+          />
+        </div>
+        <div
+          class="arco-progress-steps-text arco-progress-steps-text-with-icon"
+        >
+          30%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-progress arco-progress-circle arco-progress-default"
+  >
+    <div
+      class="arco-progress-circle-wrapper"
+      style="width:64px;height:64px"
+    >
+      <svg
+        class="arco-progress-circle-svg"
+        viewBox="0 0 64 64"
+      >
+        <circle
+          class="arco-progress-circle-mask"
+          cx="32"
+          cy="32"
+          fill="none"
+          r="30"
+          stroke-width="2"
+        />
+        <circle
+          class="arco-progress-circle-path"
+          cx="32"
+          cy="32"
+          fill="none"
+          r="30"
+          stroke-width="4"
+          style="stroke-dasharray:188.49555921538757;stroke-dashoffset:131.9468914507713"
+        />
+      </svg>
+      <div
+        class="arco-progress-circle-text"
+      >
+        30%
+      </div>
+    </div>
+  </div>
+</div>
+`;
