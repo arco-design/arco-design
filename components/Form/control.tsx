@@ -7,7 +7,7 @@ import get from 'lodash/get';
 import setWith from 'lodash/setWith';
 import { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
 import { FormItemContext } from './context';
-import { isArray, isString, isFunction } from '../_util/is';
+import { isArray, isFunction } from '../_util/is';
 import warn from '../_util/warning';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
@@ -174,7 +174,7 @@ export default class Control<
 
   handleTrigger = (_value, ...args) => {
     const { store } = this.context;
-    const { field, trigger, validateTrigger, normalize, getValueFromEvent } = this.props;
+    const { field, trigger, normalize, getValueFromEvent } = this.props;
     const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
     const children = this.props.children as ReactElement;
     let normalizeValue = value;
@@ -196,35 +196,38 @@ export default class Control<
     this.touched = true;
     this.innerSetFieldValue(field, normalizeValue);
 
-    if (isArray(validateTrigger)) {
-      (validateTrigger as string[]).forEach((vt) => {
-        if (vt === trigger) {
-          this.validateField();
-        }
-      });
-    } else if (isString(validateTrigger)) {
-      if (validateTrigger === trigger) {
-        this.validateField();
-      }
-    }
+    this.validateField(trigger);
 
     if (children && children.props && children.props[trigger as string]) {
       children.props[trigger as string](normalizeValue, ...args);
     }
   };
 
-  validateField = (): Promise<{
+  /**
+   *
+   * @param triggerType the value of validateTrigger.
+   * @returns
+   */
+  validateField = (
+    triggerType?: string
+  ): Promise<{
     error: FieldError<FieldValue> | null;
     value: FieldValue;
     field: FieldKey;
   }> => {
     const { store } = this.context;
-    const { field, rules } = this.props;
+    const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
     if (rules && field) {
+      const _rules =!triggerType ?  rules: rules.filter((rule) => {
+        const triggers = isArray(rule.validateTrigger)
+          ? rule.validateTrigger
+          : [rule.validateTrigger || validateTrigger];
+        return triggers.indexOf(triggerType) > -1;
+      });
       const schema = new Schema(
         {
-          [field]: rules.map((rule) => {
+          [field]: _rules.map((rule) => {
             if (!rule.type && !rule.validator) {
               rule.type = 'string';
             }
@@ -256,12 +259,25 @@ export default class Control<
     return Promise.resolve({ error: null, value, field });
   };
 
+  /**
+   * 收集rules里的validateTrigger字段
+   */
+  getValidateTrigger(): string[] {
+    const _validateTrigger = this.props.validateTrigger || 'onChange';
+    const rules = this.props.rules || [];
+
+    let result: string[] = [];
+    rules.map((item) => {
+      result = result.concat(item.validateTrigger || _validateTrigger);
+    });
+    return Array.from(new Set(result));
+  }
+
   renderControl(children: React.ReactNode, id) {
     const {
       field,
       trigger = 'onChange',
       triggerPropName = 'value',
-      validateTrigger = 'onChange',
       validateStatus,
       formatter,
     } = this.props;
@@ -269,27 +285,19 @@ export default class Control<
     const disabled = 'disabled' in this.props ? this.props.disabled : ctxDisabled;
     const child = React.Children.only(children) as ReactElement;
     const childProps: any = {
-      [trigger]: this.handleTrigger,
       // used by label
       id: classNames(child.props?.id, { [`${id}_input`]: id }),
     };
-    if (isArray(validateTrigger)) {
-      (validateTrigger as string[]).forEach((vt) => {
-        if (vt !== trigger) {
-          childProps[vt] = (e) => {
-            this.validateField();
-            child.props[vt] && child.props[vt](e);
-          };
-        }
-      });
-    } else if (isString(validateTrigger)) {
-      if (validateTrigger !== trigger) {
-        childProps[validateTrigger as string] = (e) => {
-          this.validateField();
-          child.props[validateTrigger] && child.props[validateTrigger](e);
-        };
-      }
-    }
+
+    this.getValidateTrigger().forEach((vt) => {
+      childProps[vt] = (e) => {
+        this.validateField(vt);
+        child.props[vt] && child.props[vt](e);
+      };
+    });
+
+    childProps[trigger] = this.handleTrigger;
+
     if (disabled !== undefined) {
       childProps.disabled = disabled;
     }
