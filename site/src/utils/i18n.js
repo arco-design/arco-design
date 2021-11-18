@@ -7,7 +7,10 @@ export function goPath(language, setLocal) {
       localStorage.setItem('arco-lang', 'en-US');
     }
     newPath = path.replace(/(\/([^/]*))/, (str, $1, $2) => {
-      return `${$1}${$2 && '/'}en-US`;
+      if (!path.includes('/en-US')) {
+        return `${$1}${$2 && '/'}en-US`;
+      }
+      return str;
     });
   } else {
     if (setLocal) {

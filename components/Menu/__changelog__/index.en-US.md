@@ -1,3 +1,15 @@
+## 2.24.1
+
+2021-11-12
+
+### 🐛 BugFix
+
+- `Menu.SubMenu` component fixes the bug that the inner `SubMenu` property is overridden by the parent `SubMenu` when used in nesting.([#145](https://github.com/arco-design/arco-design/pull/145))
+
+### 💅 Style
+
+- Hide the text behind the menu item icon when the `Menu` component is collapsed to avoid display `...`.([#151](https://github.com/arco-design/arco-design/pull/151))
+
 ## 2.24.0
 
 2021-11-05

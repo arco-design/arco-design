@@ -1,3 +1,11 @@
+## 2.24.1
+
+2021-11-12
+
+### 🐛 BugFix
+
+- `Typography` folding calculation optimization, fix display error in extreme cases of single-line folding.([#152](https://github.com/arco-design/arco-design/pull/152))
+
 ## 2.23.5
 
 2021-10-29

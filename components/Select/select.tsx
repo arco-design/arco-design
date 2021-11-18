@@ -438,7 +438,7 @@ function Select(baseProps: SelectProps, ref) {
         className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
         ref={refWrapper}
         data={childrenList}
-        height={200}
+        height={null}
         isStaticItemHeight={!hasOptGroup}
         measureLongestItem={needMeasureLongestItem}
         itemKey={(child) => child.props._key}

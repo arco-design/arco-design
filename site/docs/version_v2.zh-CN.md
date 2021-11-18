@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.24.1
+
+2021-11-12
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件在弹出层出现动画结束前错误触发弹出层鼠标事件的 bug。([#149](https://github.com/arco-design/arco-design/pull/149))
+- `Select` 修复用户无法在 CSS 文件中覆盖弹窗高度的问题。([#148](https://github.com/arco-design/arco-design/pull/148))
+- `Select` 修复单选时虚拟列表定位异常的 bug。([#148](https://github.com/arco-design/arco-design/pull/148))
+- `Menu.SubMenu` 组件修复嵌套使用时，内层 `SubMenu` 属性被父 `SubMenu` 覆盖的 bug。([#145](https://github.com/arco-design/arco-design/pull/145))
+- `Typography` 折叠计算优化，修复单行折叠极端情况下的显示错误。([#152](https://github.com/arco-design/arco-design/pull/152))
+
+### 💅 样式更新
+
+- 修复 `Descriptions` 组件在 `tableLayout=fixed` 且为非 inline 布局时错位的问题。([#153](https://github.com/arco-design/arco-design/pull/153))
+- `Menu` 组件折叠时隐藏菜单项图标后的文字，避免出现 `...` 。([#151](https://github.com/arco-design/arco-design/pull/151))
+- `Tooltip` 组件在暗黑模式下添加边框，避免在弹出框内跟底色重合。([#150](https://github.com/arco-design/arco-design/pull/150))
+- 修复 `Table` 组件在列存在筛选时，单元格 align = 'right' 时会重叠的样式问题。([#140](https://github.com/arco-design/arco-design/pull/140))
+
 ## 2.24.0
 
 2021-11-05

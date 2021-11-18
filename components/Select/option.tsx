@@ -72,7 +72,11 @@ function Option(props: OptionProps, ref) {
     );
   }
 
-  return <li {...optionLabelProps}>{children}</li>;
+  return (
+    <li ref={ref} {...optionLabelProps}>
+      {children}
+    </li>
+  );
 }
 
 const OptionComponent = React.forwardRef<unknown, OptionProps>(Option);

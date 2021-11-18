@@ -11,13 +11,17 @@ interface SectionProps {
     style?: CSSProperties;
     className?: string | string[];
   };
+  addTracker?: boolean;
 }
 
 export default function Section(props: PropsWithChildren<SectionProps>) {
-  const { style, className, headerProps, contentProps, children } = props;
+  const { style, className, headerProps, contentProps, children, addTracker } = props;
+
+  const trackerProps =
+    addTracker && headerProps.title ? { 'data-tracker-name': headerProps.title } : {};
 
   return (
-    <div className={cs(styles['section-wrapper'], className)} style={style}>
+    <div className={cs(styles['section-wrapper'], className)} style={style} {...trackerProps}>
       <SectionHeader {...headerProps} />
       <div
         className={cs(styles['section-content'], contentProps?.className)}

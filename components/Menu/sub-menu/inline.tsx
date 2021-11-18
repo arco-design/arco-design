@@ -4,10 +4,11 @@ import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
 import { MenuSubMenuProps } from '../interface';
 import IconDown from '../../../icon/react-icon/IconDown';
-import { processChildren, isChildrenSelected } from '../util';
+import { processChildren, isChildrenSelected, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU } from '../util';
 import MenuContext from '../context';
 import MenuIndent from '../indent';
 import { useHotkeyHandler } from '../hotkey';
+import pick from '../../_util/pick';
 
 const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   const { _key, children, style, className, title, level, forwardedRef, ...rest } = props;
@@ -38,14 +39,12 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     };
   }, []);
 
-  // 注意：此处 rest 中的属性会被 cloneElement 传递给 Menu.Item
-  // 当 SubMenuInline 增加了新的属性时，需要将其从 Menu.item 传递给 div 的属性中 omit
+  // Should omit these properties in Menu.Item
   const childrenList = processChildren(children, {
-    ...rest,
+    ...pick(rest, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU),
     level: level + 1,
   });
 
-  // 根据level偏移
   const header = (
     <div
       className={cs(`${baseClassName}-header`, {

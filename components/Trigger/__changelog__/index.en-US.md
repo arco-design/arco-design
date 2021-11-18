@@ -1,3 +1,11 @@
+## 2.24.1
+
+2021-11-12
+
+### 🐛 BugFix
+
+- Fixed a bug where the 'Trigger' component incorrectly triggered the pop-up mouse event before the animation ended.([#149](https://github.com/arco-design/arco-design/pull/149))
+
 ## 2.23.5
 
 2021-10-29

@@ -8,6 +8,7 @@
     border-radius: @tooltip-border-radius;
     color: @tooltip-color-text;
     line-height: @line-height-base;
+    box-shadow: @shadow2-down;
 
     &-inner {
       word-wrap: break-word;
@@ -20,13 +21,20 @@
     padding: @tooltip-mini-padding-vertical @tooltip-mini-padding-horizontal;
   }
 
-  &-arrow {
+  .@{prefix}-trigger-arrow&-arrow {
     background-color: @tooltip-color-bg;
   }
 }
 
-.@{prefix}-tooltip {
-  .@{prefix}-trigger-arrow&-arrow {
-    background-color: @tooltip-color-bg;
+@{arco-theme-tag}[arco-theme='dark'] {
+  .@{prefix}-tooltip-content {
+    border: @border-1 solid var(--color-neutral-3);
+  }
+
+  .@{prefix}-tooltip .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+    border: @border-1 solid var(--color-neutral-3);
+    border-top: none;
+    border-left: none;
+    z-index: 1;
   }
 }

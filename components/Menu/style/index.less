@@ -331,6 +331,15 @@
     .@{menu-prefix-cls}-icon-suffix {
       display: none;
     }
+
+    // Hide text after icon when menu is collapsed
+    @style-item-text: {
+      .@{prefix}-icon {
+        margin-right: 100%;
+      }
+    };
+
+    .applyStyleToItem(@style-item-text);
   }
 
   // 折叠按钮

@@ -32,6 +32,10 @@
     border-collapse: collapse;
   }
 
+  &-table-layout-fixed table {
+    table-layout: fixed;
+  }
+
   &-title {
     font-size: @descriptions-font-size-title;
     color: @descriptions-color-title;
@@ -55,6 +59,10 @@
     font-weight: @descriptions-font-weight-text-label;
     width: 1px;
     white-space: nowrap;
+  }
+
+  &-table-layout-fixed &-item-label {
+    width: auto;
   }
 
   &-item-value {

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { teaLog } from '@arco-design/arco-site-utils';
 import cs from '../../utils/classNames';
 import CodeCopy from '../../components/CodeCopy';
 import LogoWrapper from '../../components/LogoWrapper';
@@ -14,6 +15,7 @@ import useLocale from '../../hooks/useLocale';
 import { linkFigmaArcoComponent } from '../../constant/links';
 import { createScrollTrigger, scaleFadeIn, scaleFadeHide } from '../../utils/animation';
 import Section from '../../components/Section';
+import { EventMap } from '../../utils/eventMap';
 
 export default function QuickStart() {
   const { realTheme } = useTheme();
@@ -40,6 +42,11 @@ export default function QuickStart() {
         className={styles['design-terminal']}
         onClick={() => {
           window.open(linkFigmaArcoComponent);
+          teaLog(EventMap.clickQuickStartBtn, {
+            link: linkFigmaArcoComponent,
+            name: `Figma ${locale['quickStart.block.design.componentResource.title']}`,
+            target: '_blank',
+          });
         }}
       >
         <div className={styles['design-figma-logo']}>
@@ -84,6 +91,7 @@ export default function QuickStart() {
         title: locale['quickStart.title'],
         subTitle: 'Arco Design',
       }}
+      addTracker
     >
       <div className={styles.wrapper}>
         {data.map(({ title, description, icon, content, isCardDark }) => (

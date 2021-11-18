@@ -1,3 +1,11 @@
+## 2.24.1
+
+2021-11-12
+
+### 💅 Style
+
+- `Tooltip` component add a border in dark mode to avoid overlapping with the background color in the popup box.([#150](https://github.com/arco-design/arco-design/pull/150))
+
 ## 2.23.0
 
 2021-09-27

@@ -24,7 +24,7 @@ describe('Table columns usage test', () => {
         .find('colgroup col')
         .at(0)
         .prop('style')
-    ).toEqual({ width: 200, minWidth: 200 });
+    ).toEqual({ width: 200 });
 
     component.setProps({
       columns: columns.map((col) => {
@@ -40,7 +40,7 @@ describe('Table columns usage test', () => {
         .find('colgroup col')
         .at(0)
         .prop('style')
-    ).toEqual({ width: '200px', minWidth: '200px' });
+    ).toEqual({ width: '200px' });
   });
 
   it('rowSelection change to undefined', () => {

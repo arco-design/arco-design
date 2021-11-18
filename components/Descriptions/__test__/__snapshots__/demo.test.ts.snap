@@ -18,7 +18,6 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -104,7 +103,6 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -209,7 +207,6 @@ exports[`renders Descriptions/demo/basic.md correctly 1`] = `
       cellpadding="0"
       cellspacing="0"
       class="arco-descriptions-table"
-      style="table-layout:auto"
     >
       <tbody>
         <tr
@@ -308,7 +305,6 @@ exports[`renders Descriptions/demo/border.md correctly 1`] = `
       cellpadding="0"
       cellspacing="0"
       class="arco-descriptions-table"
-      style="table-layout:auto"
     >
       <tbody>
         <tr
@@ -409,7 +405,6 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -511,7 +506,6 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -608,7 +602,6 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -728,7 +721,6 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -875,7 +867,6 @@ exports[`renders Descriptions/demo/responsive.md correctly 1`] = `
       cellpadding="0"
       cellspacing="0"
       class="arco-descriptions-table"
-      style="table-layout:auto"
     >
       <tbody>
         <tr
@@ -976,7 +967,6 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -1073,7 +1063,6 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -1247,7 +1236,6 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr
@@ -1343,7 +1331,6 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
         cellpadding="0"
         cellspacing="0"
         class="arco-descriptions-table"
-        style="table-layout:auto"
       >
         <tbody>
           <tr

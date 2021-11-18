@@ -1,6 +1,7 @@
 import React, { useEffect, useState, CSSProperties } from 'react';
 import { Divider, Button, Carousel } from '@arco-design/web-react';
 import { IconClose } from '@arco-design/web-react/icon';
+import { teaLog } from '@arco-design/arco-site-utils';
 import LogoArco from '../../assets/logo_ArcoDesign.svg';
 import LogoDarkArco from '../../assets/logo_dark_ArcoDesign.svg';
 import logoList from '../../assets/products';
@@ -10,6 +11,7 @@ import useLocale from '../../hooks/useLocale';
 import useIsMobile from '../../utils/useIsMobile';
 import StartBtn from '../../components/StartBtn';
 import { linkShowCase } from '../../constant/links';
+import { EventMap } from '../../utils/eventMap';
 
 const reviews = [
   {
@@ -106,6 +108,10 @@ export default function Teams() {
     }
   };
 
+  const reportTea = (params) => {
+    teaLog(EventMap.clickTeamsBtn, params);
+  };
+
   const renderReviewBox = (data, key?, style?: CSSProperties) => {
     return (
       <div className={styles['teams-review-box']} key={key} style={style}>
@@ -155,7 +161,7 @@ export default function Teams() {
   };
 
   return (
-    <div className={styles['section-wrapper']}>
+    <div className={styles['section-wrapper']} data-tracker-name={locale['teams.slogan']}>
       <div className={styles['section-content']}>
         <div className={styles['teams-body-left']}>
           <div className={styles['teams-logo']}>
@@ -191,11 +197,14 @@ export default function Teams() {
             </div>
           </div>
           <div className={styles['teams-bottom']}>
-            <StartBtn className={styles['teams-bottom-btn']} />
+            <StartBtn className={styles['teams-bottom-btn']} reportTea={reportTea} />
             <Button
               className={`home-btn ${styles['teams-bottom-btn']}`}
               type="secondary"
               href={linkShowCase}
+              onClick={() => {
+                reportTea({ name: locale['banner.showcase'], link: linkShowCase, target: '_self' });
+              }}
             >
               {locale['teams.showcase']}
             </Button>

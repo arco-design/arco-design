@@ -194,3 +194,16 @@ describe('form item children funtion', () => {
     expect(formRef.getFields()).toEqual({ type: '类型A', nameA: '123', nameB: 'B2' });
   });
 });
+
+describe('form initialvalue', () => {
+  let form;
+  mount(
+    <Form initialValues={{ name: '123' }} ref={(node) => (form = node)}>
+      <Form.Item label="name" field="name" initialValue="456">
+        <Input />
+      </Form.Item>
+    </Form>
+  );
+
+  expect(form.getFieldValue('name')).toBe('456');
+});

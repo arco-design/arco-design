@@ -6,14 +6,11 @@ import MenuContext from './context';
 import MenuIndent from './indent';
 
 function ItemGroup(props: MenuItemGroupProps, ref) {
-  const { children, title, level, className, style, _key } = props;
+  const { children, title, level, className, style } = props;
   const { prefixCls, levelIndent } = useContext(MenuContext);
 
   const childrenLevel = level === 1 ? level + 1 : level;
-  const childrenList = processChildren(children, {
-    _key,
-    level: childrenLevel,
-  });
+  const childrenList = processChildren(children, { level: childrenLevel });
 
   return (
     <div ref={ref} className={cs(`${prefixCls}-group`, className)} style={style}>

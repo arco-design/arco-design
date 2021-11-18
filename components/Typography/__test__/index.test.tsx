@@ -240,10 +240,10 @@ describe('Typography', () => {
   });
 
   it('ellipsis correctly when children is controlled', async () => {
-    const wrapper = mount(<Paragraph ellipsis>{mockText}</Paragraph>);
+    const wrapper = mount(<Paragraph ellipsis={{ rows: 2 }}>{mockText}</Paragraph>);
     await sleep(200);
     wrapper.update();
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT);
+    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
 
     const resetText = `new children`;
 
@@ -256,7 +256,14 @@ describe('Typography', () => {
 
     await sleep(200);
 
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT);
+    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
     expect(wrapper.text().startsWith(resetText)).toBe(true);
+  });
+
+  it('support simple ellipsis when just set rows toBe 1', async () => {
+    const wrapper = mount(<Paragraph ellipsis>{mockText}</Paragraph>);
+    await sleep(200);
+    wrapper.update();
+    expect(wrapper.find('.arco-typography').hasClass('arco-typography-simple-ellipsis')).toBe(true);
   });
 });

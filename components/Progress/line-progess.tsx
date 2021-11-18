@@ -39,7 +39,7 @@ function LineProgress(props) {
     showText,
     bufferColor,
     formatText,
-    trailColor
+    trailColor,
   } = props;
 
   const strokeWidth = props.strokeWidth || defaultStrokeWidth[size];

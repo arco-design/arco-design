@@ -12,7 +12,7 @@ export default function Banner() {
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles['banner-wrapper']}>
+    <div className={styles['banner-wrapper']} data-tracker-name="home-banner">
       <div className={styles['banner-content']}>
         <div className={styles['banner-content-left']}>
           <Content />

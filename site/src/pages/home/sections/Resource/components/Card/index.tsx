@@ -1,8 +1,10 @@
 import React, { ReactNode, CSSProperties } from 'react';
+import { teaLog } from '@arco-design/arco-site-utils';
 import styles from './index.module.less';
 import IconRoundArrow from '../../../../assets/ic_round_arrow.svg';
 import IconCommonArrow from '../../../../assets/ic_common_arrow.svg';
 import cs from '../../../../utils/classNames';
+import { EventMap } from '../../../../utils/eventMap';
 
 interface ResourceItem {
   logo?: ReactNode;
@@ -30,10 +32,20 @@ export default function ResourceCard(props: ResourceCardProps) {
     footerResourceList,
     bodyStyle,
   } = props;
+
   const openLink = (link: string) => {
     if (link) {
       window.open(link);
     }
+  };
+
+  const reportTea = (resource: ResourceItem) => {
+    teaLog(EventMap.clickResourceBtn, {
+      menu: title,
+      name: resource.name,
+      link: resource.href,
+      target: '_blank',
+    });
   };
 
   return (
@@ -59,7 +71,10 @@ export default function ResourceCard(props: ResourceCardProps) {
             <div
               className={styles['card-body-resource-item']}
               key={name}
-              onClick={() => openLink(href)}
+              onClick={() => {
+                openLink(href);
+                reportTea({ name, href, logo });
+              }}
             >
               <div className={styles['card-body-resource-item-logo']}>{logo}</div>
               <div className={styles['card-body-resource-item-name']}>{name}</div>
@@ -72,7 +87,10 @@ export default function ResourceCard(props: ResourceCardProps) {
           <div
             className={styles['card-footer-resource-item']}
             key={name}
-            onClick={() => openLink(href)}
+            onClick={() => {
+              openLink(href);
+              reportTea({ name, href, logo });
+            }}
           >
             {logo && <div className={styles['card-footer-resource-item-logo']}>{logo}</div>}
             <div className={styles['card-footer-resource-item-name']}>{name}</div>
