@@ -142,6 +142,7 @@ export interface FormProps<
 }
 
 export interface RulesProps<FieldValue = any> {
+  validateTrigger?: string | string[];
   required?: boolean;
   type?: string;
   length?: number;
