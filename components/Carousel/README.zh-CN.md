@@ -25,6 +25,7 @@
 |direction|幻灯片移动方向|`'horizontal' \| 'vertical'`|`horizontal`|-|
 |showArrow|切换箭头显示时机|`'always' \| 'hover' \| 'never'`|`always`|-|
 |arrowClassName|切换箭头样式|`string \| string[]`|`-`|-|
+|icons|自定义图标|`{prev?: ReactNode;next?: ReactNode;}`|`-`|2.25.0|
 |indicatorType|指示器类型，可为小方块和小圆点或不显示|`'line' \| 'dot' \| 'slider' \| 'never'`|`dot`|-|
 |indicatorPosition|指示器位置|`'bottom' \| 'top' \| 'left' \| 'right' \| 'outer'`|`bottom`|-|
 |indicatorClassName|指示器的样式|`string \| string[]`|`-`|-|
