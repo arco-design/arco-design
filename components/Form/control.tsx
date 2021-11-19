@@ -1,6 +1,5 @@
 import React, { Component, ReactElement } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
-import { Schema } from 'b-validate';
 import has from 'lodash/has';
 import set from 'lodash/set';
 import get from 'lodash/get';
@@ -15,7 +14,7 @@ import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import { NotifyType, StoreChangeInfo } from './store';
 import classNames from '../_util/classNames';
-import { isSyntheticEvent } from './utils';
+import { isSyntheticEvent, schemaValidate } from './utils';
 
 function isFieldMath(field, fields) {
   const fieldObj = setWith({}, field, undefined, Object);
@@ -41,6 +40,8 @@ export default class Control<
   context: FormItemContextProps<FormData, FieldValue, FieldKey>;
 
   private errors: FieldError<FieldValue> = null;
+
+  private warnings: React.ReactNode[] = [];
 
   private isDestroyed = false;
 
@@ -74,7 +75,7 @@ export default class Control<
 
     // destroy errors
     const { updateFormItem } = this.context;
-    updateFormItem && updateFormItem(this.props.field as string, null);
+    updateFormItem && updateFormItem(this.props.field as string, { errors: null, warnings: [] });
     this.isDestroyed = true;
   }
 
@@ -94,7 +95,11 @@ export default class Control<
     if (this.isDestroyed) return;
     this.forceUpdate();
     const { updateFormItem } = this.context;
-    updateFormItem && updateFormItem(this.props.field as string, this.errors);
+    updateFormItem &&
+      updateFormItem(this.props.field as string, {
+        errors: this.errors,
+        warnings: this.warnings,
+      });
   };
 
   public onStoreChange = (type: NotifyType, info: StoreChangeInfo<FieldKey> & { current: any }) => {
@@ -123,6 +128,7 @@ export default class Control<
       case 'reset':
         this.touched = false;
         this.errors = null;
+        this.warnings = null;
         this.updateFormItem();
         break;
       case 'innerSetValue':
@@ -141,6 +147,9 @@ export default class Control<
           this.touched = true;
           if (info.data && 'touched' in info.data) {
             this.touched = info.data.touched;
+          }
+          if (info.data && 'warnings' in info.data) {
+            this.warnings = [].concat(info.data.warnings);
           }
           if (info.data && 'errors' in info.data) {
             this.errors = info.data.errors;
@@ -218,42 +227,23 @@ export default class Control<
     const { store } = this.context;
     const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
-    if (rules && field) {
-      const _rules =!triggerType ?  rules: rules.filter((rule) => {
-        const triggers = isArray(rule.validateTrigger)
-          ? rule.validateTrigger
-          : [rule.validateTrigger || validateTrigger];
-        return triggers.indexOf(triggerType) > -1;
-      });
-      const schema = new Schema(
-        {
-          [field]: _rules.map((rule) => {
-            if (!rule.type && !rule.validator) {
-              rule.type = 'string';
-            }
-            return rule;
-          }),
-        },
-        { ignoreEmptyString: true }
-      );
-      return new Promise((resolve) => {
-        schema.validate({ [field]: value }, (err) => {
-          if (err) {
-            this.errors = err[field];
-          } else {
-            this.errors = null;
-          }
-          this.updateFormItem();
-          resolve({
-            error: err,
-            value,
-            field,
-          });
+    const _rules = !triggerType
+      ? rules
+      : (rules || []).filter((rule) => {
+          const triggers = [].concat(rule.validateTrigger || validateTrigger);
+          return triggers.indexOf(triggerType) > -1;
         });
+    if (_rules && _rules.length && field) {
+      return schemaValidate(field, value, _rules).then(({ error, warning }) => {
+        this.errors = error ? error[field] : null;
+        this.warnings = warning || [];
+        this.updateFormItem();
+        return Promise.resolve({ error, value, field });
       });
     }
     if (this.errors) {
       this.errors = null;
+      this.warnings = [];
       this.updateFormItem();
     }
     return Promise.resolve({ error: null, value, field });

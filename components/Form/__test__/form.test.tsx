@@ -1,6 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import { mount } from 'enzyme';
+import { act } from 'react-test-renderer';
 import {
   Form,
   AutoComplete,
@@ -18,6 +19,7 @@ import {
   DatePicker,
 } from '../..';
 import omit from '../../_util/omit';
+import { sleep } from '../../../tests/util';
 
 const FormItem = Form.Item;
 const FormControl = Form.Control;
@@ -421,27 +423,36 @@ describe('ControlForm', () => {
     expect(wrapper.state().formValues).toEqual({ ...formValues, number: 10 });
   });
 
-  it('array validateTrigger', () => {
+  it('array validateTrigger', async () => {
     const InputNumber = wrapper.find('InputNumber');
 
     formRef.setFieldValue('number', 120);
-    InputNumber.find('input').simulate('focus');
-    InputNumber.find('input').simulate('blur');
+    act(() => {
+      InputNumber.find('input').simulate('focus');
+      InputNumber.find('input').simulate('blur');
+    });
+
+    await sleep(10);
+
     expect(formRef.getFieldsError().number.message).toBe('`120` is not less than `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '12' } });
+
+    await sleep(10);
     expect(formRef.getFieldsError().number.message).toBe('`12` is not less than `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '' } });
+    await sleep(10);
     expect(formRef.getFieldsError().number.message).toBe('number is required');
 
     InputNumber.find('input').simulate('change', { target: { value: '1' } });
 
     // TODO: 是否被setField过的也是属于touche字段
     expect(formRef.getTouchedFields()).toEqual(['number']);
-
+    await sleep(10);
     expect(formRef.getFieldsError().number.message).toBe('`1` is not greater than `5`');
     InputNumber.find('input').simulate('change', { target: { value: '9' } });
+    await sleep(10);
     expect(formRef.getFieldsError()).toEqual({});
   });
 
@@ -449,8 +460,11 @@ describe('ControlForm', () => {
     const Input = wrapper.find('Input').at(0);
 
     formRef.setFieldValue('name', '');
-    Input.find('input').simulate('focus');
-    Input.find('input').simulate('blur');
+    act(() => {
+      Input.find('input').simulate('focus');
+      Input.find('input').simulate('blur');
+    });
+    await sleep(10);
     expect(formRef.getFieldsError().name.message).toBe('string is required');
     expect(onBlurMock.mock.calls.length).toBe(1);
   });
@@ -524,7 +538,7 @@ describe('ControlForm', () => {
     });
   });
 
-  it('submit', (done) => {
+  it('submit', async (done) => {
     formRef.setFieldsValue({
       ...fieldInitvalues,
       name: 'test',
@@ -538,6 +552,8 @@ describe('ControlForm', () => {
       date: [dayjs(), dayjs()],
     });
     wrapper.find('form').simulate('submit');
+
+    await sleep(10);
 
     expect(formRef.getFieldsError()).toEqual({
       readme: {
@@ -555,7 +571,7 @@ describe('ControlForm', () => {
       expect(formRef.getFieldsError()).toEqual({});
       expect(submitMock).toHaveBeenCalled();
       done();
-    }, 0);
+    }, 10);
   });
 
   it('onValidateFail', (done) => {
@@ -564,7 +580,7 @@ describe('ControlForm', () => {
     setTimeout(() => {
       expect(submitFailMock).toHaveBeenCalled();
       done();
-    }, 0);
+    }, 10);
   });
 
   it('label for', async () => {
