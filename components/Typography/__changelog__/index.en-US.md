@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- The `Ellipsis` of `Typography` supports the `cssEllipsis` property. In simple scenarios, css is used by default.([#191](https://github.com/arco-design/arco-design/pull/191))
+
 ## 2.24.1
 
 2021-11-12

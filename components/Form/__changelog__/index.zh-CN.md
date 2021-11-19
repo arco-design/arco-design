@@ -1,3 +1,13 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 功能升级
+
+- `Form` 支持在 `rules` 中设置 `validateTrigger` 属性指定规则在特定事件触发时候执行。([#190](https://github.com/arco-design/arco-design/pull/190))
+- `Form` 支持在 `rules` 中设置 `validateLevel` 属性指定规则校验失败时仅显示 `warning` 状态，不阻塞表单提交。([#190](https://github.com/arco-design/arco-design/pull/190))
+- `Form` 组件 `rule.message` 支持使用 `ReactNode`。([#185](https://github.com/arco-design/arco-design/pull/185))
+
 ## 2.24.0
 
 2021-11-05

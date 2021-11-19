@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 功能升级
+
+- `Tooltip` 组件添加 `escToClose`，默认为 `false`。([#167](https://github.com/arco-design/arco-design/pull/167))
+
 ## 2.24.1
 
 2021-11-12

@@ -1,3 +1,15 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- add property `onPaneResize` to `ResizeBox.Split`([#169](https://github.com/arco-design/arco-design/pull/169))
+
+### 🐛 BugFix
+
+- Fix the bug that the ratio of the panels changes when the `ResizeBox.Split` component switches the `direction`.([#188](https://github.com/arco-design/arco-design/pull/188))
+
 ## 2.14.0
 
 2021-04-09

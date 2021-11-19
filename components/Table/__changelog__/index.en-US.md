@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 💅 Style
+
+- Fix the style problem that the header of the `Table` component is misplaced when the scroll bar is always displayed after the `virtualized` is turned on.([#182](https://github.com/arco-design/arco-design/pull/182))
+
 ## 2.24.1
 
 2021-11-12

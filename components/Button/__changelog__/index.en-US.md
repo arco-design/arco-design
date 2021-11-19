@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 💅 Style
+
+- The padding + border of the `Button` component is 16px.([#186](https://github.com/arco-design/arco-design/pull/186))
+
 ## 2.23.1
 
 2021-10-15

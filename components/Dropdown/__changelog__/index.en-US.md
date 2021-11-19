@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- When `Dropdown` is used with `Menu`, user can control whether the menu will be hidden after clicking by the return value of `onClickMenuItem` .([#180](https://github.com/arco-design/arco-design/pull/180))
+
 ## 2.23.0
 
 2021-09-27

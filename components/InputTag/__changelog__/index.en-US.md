@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- `InputTag` adds `saveOnBlur` property to support automatically saving what the user is typing when blur it.([#183](https://github.com/arco-design/arco-design/pull/183))
+
 ## 2.23.5
 
 2021-10-29
