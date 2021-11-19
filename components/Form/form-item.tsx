@@ -182,7 +182,8 @@ const Item = <
   const classNames = cs(
     `${prefixCls}-item`,
     {
-      [`${prefixCls}-item-error`]: hasHelp || itemStatus === VALIDATE_STATUS.error,
+      [`${prefixCls}-item-error`]:
+        hasHelp || (!validateStatus && itemStatus === VALIDATE_STATUS.error),
       [`${prefixCls}-item-status-${itemStatus}`]: itemStatus,
       [`${prefixCls}-item-has-help`]: hasHelp,
       [`${prefixCls}-item-has-feedback`]: itemStatus && props.hasFeedback,
