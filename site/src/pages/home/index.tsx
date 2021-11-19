@@ -26,7 +26,7 @@ export default function App() {
       <ShowCase />
       <Teams />
       <QuickStart />
-      <Footer lang={lang} />
+      <Footer lang={lang} larkGroup />
     </div>
   );
 }
