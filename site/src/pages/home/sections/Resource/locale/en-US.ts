@@ -8,6 +8,7 @@ export default {
   'resource.design.sketch': 'Sketch',
   'resource.design.iconBox': 'Official icon library',
   'resource.design.arcoComponent': 'Figma',
+  'resource.design.jishi': 'JiShi Design',
   'resource.design.designPrinciples': 'Design Principles',
   'resource.design.styleGuide': 'Style guide',
   'resource.design.arcoComponentUsage': 'Component usage',

@@ -644,6 +644,7 @@ export interface TbodyProps<T = any> {
   stickyClassNames?: string[];
   getRowKey?: GetRowKeyType<T>;
   placeholder?: ReactNode;
+  saveVirtualWrapperRef?: (ref: HTMLDivElement) => void;
 }
 
 export interface TfootProps<T = any> {

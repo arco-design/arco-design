@@ -138,7 +138,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       <div className={`${prefixCls}-error-icon`}>
         <IconImageClose />
       </div>
-      <div className={`${prefixCls}-error-alt`}>{alt}</div>
+      {alt && <div className={`${prefixCls}-error-alt`}>{alt}</div>}
     </div>
   );
 
@@ -158,13 +158,14 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   };
 
   return (
-    <div className={classNames} style={Object.assign({ width }, style)} ref={ref}>
+    <div className={classNames} style={Object.assign({ width, height }, style)} ref={ref}>
       <img
         ref={refImg}
         className={`${prefixCls}-img`}
         {...restProps}
         title={title}
-        style={{ height }}
+        width={width}
+        height={height}
         onLoad={onImgLoaded}
         onError={onImgLoadError}
         onClick={onImgClick}
