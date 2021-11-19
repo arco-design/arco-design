@@ -82,6 +82,23 @@ describe('InputTag', () => {
     expect(mockOnRemove.mock.calls.length).toBe(1);
   });
 
+  it('saveOnBlur works', async () => {
+    const inputValue = 'bbb';
+    const mockOnChange = jest.fn();
+    const wrapper = mount(<InputTag saveOnBlur onChange={mockOnChange} />);
+    act(() => {
+      wrapper.find('input').simulate('change', {
+        currentTarget: { value: inputValue },
+        target: { value: inputValue },
+      });
+    });
+    act(() => {
+      wrapper.find('input').simulate('blur');
+    });
+    await sleep(10);
+    expect(JSON.stringify(mockOnChange.mock.calls[0][0])).toBe(JSON.stringify([inputValue]));
+  });
+
   it('onClick called correctly', async () => {
     const mockOnClick = jest.fn();
     const wrapper = mount(<InputTag onClick={mockOnClick} />);
