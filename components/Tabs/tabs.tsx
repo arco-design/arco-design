@@ -47,6 +47,7 @@ const defaultProps: TabsProps = {
   showAddButton: true,
   lazyload: true,
   headerPadding: true,
+  scrollPosition: 'auto',
 };
 
 export const TabsContext = React.createContext<
