@@ -8,7 +8,7 @@ import { ConfigContext } from '../ConfigProvider';
 import { CarouselArrowProps } from './interface';
 
 function CarouselArrow(props: CarouselArrowProps, ref) {
-  const { className, direction, showArrow, prev, next } = props;
+  const { className, direction, showArrow, prev, next, icons } = props;
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('carousel');
   const arrowClass = cs(
@@ -18,6 +18,22 @@ function CarouselArrow(props: CarouselArrowProps, ref) {
     },
     className
   );
+  const iconPrev =
+    icons && icons.hasOwnProperty('prev') ? (
+      icons.prev
+    ) : direction === 'horizontal' ? (
+      <IconLeft />
+    ) : (
+      <IconUp />
+    );
+  const iconNext =
+    icons && icons.hasOwnProperty('next') ? (
+      icons.next
+    ) : direction === 'horizontal' ? (
+      <IconRight />
+    ) : (
+      <IconDown />
+    );
 
   return (
     <div ref={ref} className={arrowClass}>
@@ -25,13 +41,13 @@ function CarouselArrow(props: CarouselArrowProps, ref) {
         className={`${prefixCls}-arrow-${direction === 'vertical' ? 'top' : 'left'}`}
         onClick={prev}
       >
-        {direction === 'horizontal' ? <IconLeft /> : <IconUp />}
+        {iconPrev}
       </div>
       <div
         className={`${prefixCls}-arrow-${direction === 'vertical' ? 'bottom' : 'right'}`}
         onClick={next}
       >
-        {direction === 'horizontal' ? <IconRight /> : <IconDown />}
+        {iconNext}
       </div>
     </div>
   );

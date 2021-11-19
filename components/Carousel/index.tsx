@@ -51,6 +51,7 @@ function Carousel(baseProps: CarouselProps, ref) {
     miniRender,
     arrowClassName,
     carousel,
+    icons,
     onChange,
     ...rest
   } = props;
@@ -319,6 +320,7 @@ function Carousel(baseProps: CarouselProps, ref) {
             className={arrowClassName}
             direction={direction}
             showArrow={showArrow}
+            icons={icons}
             prev={() =>
               slideTo({
                 targetIndex: prevIndex,
