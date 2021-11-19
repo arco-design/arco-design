@@ -1,8 +1,10 @@
 import cloneDeepWith from 'lodash/cloneDeepWith';
 import lodashSet from 'lodash/set';
 import { PropertyPath } from 'lodash';
+import { Schema } from 'b-validate';
 import { isArray, isObject } from '../_util/is';
 import { IndexedObject } from './interface';
+import { RulesProps } from '..';
 
 export function cloneDeep(value) {
   // 只有对象才执行拷贝，否则直接返回。 如果是 File，MouseEvent对象，都可以直接返回
@@ -37,4 +39,47 @@ export function iterativelyGetKeys(obj, prefix = '') {
 // 判断是否是个事件对象 e?.constructor?.name 可能不是 SyntheticEvent，跟业务项目的打包方式有关系
 export function isSyntheticEvent(e: any): boolean {
   return e?.constructor?.name === 'SyntheticEvent' || e?.nativeEvent instanceof Event;
+}
+
+export async function schemaValidate(field, value, _rules: RulesProps[]) {
+  const rules: RulesProps[] = [..._rules];
+  let current = 0;
+
+  return new Promise(async (resolve) => {
+    const warning = [];
+    const validate = async (rule: RulesProps) => {
+      const next = () => {
+        if (current < rules.length - 1) {
+          current++;
+          return validate(rules[current]);
+        }
+
+        return resolve({ error: null, warning });
+      };
+
+      if (!rule) {
+        return next();
+      }
+
+      const _rule = { ...rule };
+      if (!_rule.type && !_rule.validator) {
+        _rule.type = 'string';
+      }
+      const schema = new Schema({ [field]: [_rule] }, { ignoreEmptyString: true });
+      schema.validate({ [field]: value }, (error) => {
+        if (error) {
+          if (rule.validateLevel === 'warning') {
+            warning.push(error[field].message);
+          } else {
+            return resolve({
+              error,
+              warning,
+            });
+          }
+        }
+        return next();
+      });
+    };
+    validate(rules[current]);
+  });
 }

@@ -2,9 +2,10 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-test-renderer';
 import { Form, Input } from '../..';
+import { sleep } from '../../../tests/util';
 
 describe('validate form', () => {
-  it('validate trigger in rules', () => {
+  it('validate trigger in rules', async () => {
     let form;
 
     const mockClickFn = jest.fn();
@@ -40,6 +41,7 @@ describe('validate form', () => {
     act(() => {
       input.simulate('click');
     });
+    await sleep(10);
     expect(mockClickFn).toHaveBeenCalledTimes(1);
     expect(mockChangeFn).toHaveBeenCalledTimes(0);
     expect(mockBlurFn).toHaveBeenCalledTimes(0);
@@ -47,10 +49,12 @@ describe('validate form', () => {
     act(() => {
       input.simulate('focus');
     });
+    await sleep(10);
     expect(mockBlurFn).toHaveBeenCalledTimes(1);
     act(() => {
       input.simulate('blur');
     });
+    await sleep(10);
     expect(mockBlurFn).toHaveBeenCalledTimes(2);
     expect(mockChangeFn).toHaveBeenCalledTimes(0);
 
@@ -61,12 +65,13 @@ describe('validate form', () => {
         },
       });
     });
-
+    await sleep(10);
     expect(mockChangeFn).toHaveBeenCalledTimes(1);
     expect(mockBlurFn).toHaveBeenCalledTimes(2);
     expect(mockClickFn).toHaveBeenCalledTimes(1);
 
     form.submit();
+    await sleep(10);
     // 全部执行
     expect(mockChangeFn).toHaveBeenCalledTimes(2);
     expect(mockBlurFn).toHaveBeenCalledTimes(3);
