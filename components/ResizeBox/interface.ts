@@ -140,4 +140,10 @@ export interface SplitProps {
    * @en Callback when the end of resize
    */
   onMovingEnd?: () => void;
+  /**
+   * @zh 面板大小变化的回调
+   * @en Callback when pane resized
+   * @version 2.25.0
+   */
+  onPaneResize?: (paneContainers: HTMLElement[]) => void;
 }
