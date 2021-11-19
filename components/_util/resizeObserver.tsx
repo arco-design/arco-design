@@ -26,8 +26,8 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   };
 
   createResizeObserver = () => {
-    const { onResize } = this.props;
     this.resizeObserver = new ResizeObserver((entry) => {
+      const { onResize } = this.props;
       onResize && onResize(entry);
     });
     this.resizeObserver.observe(findDOMNode(this) as Element);
