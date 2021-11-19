@@ -86,6 +86,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     labelInValue,
     disableInput,
     animation,
+    saveOnBlur,
     icon,
     suffix,
     validate,
@@ -175,6 +176,18 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       ],
     ])
   );
+
+  const tryAddInputValueToTag = async () => {
+    try {
+      const isLegal = typeof validate === 'function' ? await validate(inputValue, value) : true;
+      if (isLegal) {
+        valueChangeHandler(value.concat({ value: inputValue, label: inputValue }));
+        setInputValue('');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const mergedRenderTag = (item: ObjectValueType, index: number) => {
     const { value: itemValue, label } = item;
@@ -295,14 +308,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
               }}
               onPressEnter={async (e) => {
                 onPressEnter && onPressEnter(e);
-
-                if (validate) {
-                  const isPass = await validate(inputValue, value);
-                  if (isPass) {
-                    valueChangeHandler(value.concat({ value: inputValue, label: inputValue }));
-                    setInputValue('');
-                  }
-                }
+                await tryAddInputValueToTag();
               }}
               onFocus={(e) => {
                 if (!disabled && !readOnly) {
@@ -310,10 +316,13 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
                   onFocus && onFocus(e);
                 }
               }}
-              onBlur={(e) => {
+              onBlur={async (e) => {
                 setFocused(false);
-                setInputValue('');
                 onBlur && onBlur(e);
+                if (saveOnBlur) {
+                  await tryAddInputValueToTag();
+                }
+                setInputValue('');
               }}
               value={inputValue}
               onValueChange={(v, e) => {
