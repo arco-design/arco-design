@@ -47,23 +47,57 @@ describe('Dropdown', () => {
 
   it('click menu item', () => {
     const wrapper = mountDropdown(
-      <Dropdown droplist={Droplist} trigger="click">
+      <Dropdown
+        trigger="click"
+        droplist={
+          <Menu
+            onClickMenuItem={(key) => {
+              if (key === '2') {
+                return false;
+              }
+
+              if (key === '3') {
+                return new Promise((resolve) => {
+                  setTimeout(() => resolve(null), 100);
+                });
+              }
+            }}
+          >
+            <Menu.Item key="1">Menu Item 1</Menu.Item>
+            <Menu.Item key="2">Menu Item 2</Menu.Item>
+            <Menu.Item key="3">Menu Item 3</Menu.Item>
+          </Menu>
+        }
+      >
         <Button>Click Me</Button>
       </Dropdown>
     );
-    expect(wrapper.find('Trigger').state().popupVisible).toBe(false);
+
+    const simulateMenuItemClick = (index: number) => {
+      wrapper
+        .find('Menu')
+        .find('MenuItem')
+        .at(index)
+        .simulate('click');
+    };
+
+    const getIsTriggerVisible = () => {
+      return wrapper.find('Trigger').state().popupVisible;
+    };
+
+    expect(getIsTriggerVisible()).toBe(false);
     wrapper.find(Button).simulate('click');
-    jest.runAllTimers();
-    expect(wrapper.find('Trigger').state().popupVisible).toBe(true);
-    jest.useFakeTimers();
-    wrapper
-      .find('Menu')
-      .find('MenuItem')
-      .at(0)
-      .simulate('click');
-    jest.runAllTimers();
-    expect(wrapper.find('Trigger').state().popupVisible).toBe(false);
-    expect(mockFn.mock.calls.length).toBe(1);
+    expect(getIsTriggerVisible()).toBe(true);
+
+    simulateMenuItemClick(0);
+    expect(getIsTriggerVisible()).toBe(false);
+
+    wrapper.find(Button).simulate('click');
+    simulateMenuItemClick(1);
+    expect(getIsTriggerVisible()).toBe(true);
+
+    simulateMenuItemClick(2);
+    expect(getIsTriggerVisible()).toBe(true);
   });
 
   it('Dropdown.Button mount correctly', () => {
