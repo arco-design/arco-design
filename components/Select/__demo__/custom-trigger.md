@@ -28,7 +28,7 @@ const DemoSelect = () => {
         mode="multiple"
         onChange={(_, option) => {
           const array = option.map((item) => item.children);
-          setText(array.join('，'));
+          setText(array.join('，') || 'None');
         }}
         triggerElement={
           <Typography.Paragraph style={{ width: 345 }}>
