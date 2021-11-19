@@ -1432,7 +1432,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
       >
         <div
           class="arco-progress-line-outer"
-          style="height:4px"
+          style="height:4px;background-color:var(--color-primary-light-1)"
         >
           <div
             class="arco-progress-line-inner"
@@ -1468,11 +1468,11 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           />
           <div
             class="arco-progress-steps-item"
-            style="background-color:"
+            style="background-color:var(--color-primary-light-1)"
           />
           <div
             class="arco-progress-steps-item"
-            style="background-color:"
+            style="background-color:var(--color-primary-light-1)"
           />
         </div>
         <div
@@ -1501,6 +1501,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="2"
+          style="stroke:var(--color-primary-light-1)"
         />
         <circle
           class="arco-progress-circle-path"

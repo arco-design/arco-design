@@ -44,3 +44,4 @@ ResizeBox components.
 |onMovingStart|Callback when the start of resize|`() => void`|`-`|-|
 |onMoving|Callback when moving|`(e: MouseEvent, size: number \| string) => void`|`-`|`size` in `2.14.0`|
 |onMovingEnd|Callback when the end of resize|`() => void`|`-`|-|
+|onPaneResize|Callback when pane resized|`(paneContainers: HTMLElement[]) => void`|`-`|2.25.0|
