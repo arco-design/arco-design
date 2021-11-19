@@ -3,6 +3,7 @@
 exports[`renders Tabs/demo/basic.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -86,6 +87,7 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
 exports[`renders Tabs/demo/controled.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -169,6 +171,7 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
 exports[`renders Tabs/demo/delete.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-card-gutter arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-card-gutter"
@@ -403,6 +406,7 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
 exports[`renders Tabs/demo/drag.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -481,6 +485,7 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
 exports[`renders Tabs/demo/extra.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -576,6 +581,7 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
 exports[`renders Tabs/demo/icon.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -712,6 +718,7 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
 exports[`renders Tabs/demo/inline.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-vertical arco-tabs-line arco-tabs-left arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-vertical arco-tabs-header-nav-left arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -776,6 +783,7 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
           <div>
             <div
               class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+              scrollposition="auto"
             >
               <div
                 class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -934,6 +942,7 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    scrollposition="auto"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -1019,6 +1028,7 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
 <div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    scrollposition="auto"
   >
     <div>
       <div />
@@ -1142,6 +1152,525 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    scrollposition="auto"
+    style="height:200px"
+  >
+    <div
+      class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+    >
+      <div
+        class="arco-tabs-header-scroll"
+      >
+        <div
+          class="arco-tabs-header-wrapper"
+        >
+          <div
+            class="arco-tabs-header"
+            style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          >
+            <div
+              class="arco-tabs-header-title arco-tabs-header-title-active"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签1
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签2
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签3
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签4
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签5
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签6
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签7
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签8
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签9
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签10
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签11
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签12
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签13
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签14
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签15
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签16
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签17
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签18
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签19
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签20
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签21
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签22
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签23
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签24
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签25
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签26
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签27
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签28
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签29
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-title"
+            >
+              <span
+                class="arco-tabs-header-title-text"
+              >
+                标签30
+              </span>
+            </div>
+            <div
+              class="arco-tabs-header-ink"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-tabs-content arco-tabs-content-horizontal"
+    >
+      <div
+        class="arco-tabs-content-inner"
+        style="margin-left:-0%"
+      >
+        <div
+          class="arco-tabs-content-item arco-tabs-content-item-active"
+        >
+          <div
+            class="arco-tabs-pane"
+          >
+            <div
+              style="width:100%;height:50px;padding:24px 0;color:#939aa3"
+            >
+              这里是标签1内容
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+        <div
+          class="arco-tabs-content-item"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-vertical"
+    style="margin-bottom:40px"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-bottom:8px"
+    >
+      <div
+        class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+      >
+        <label
+          class="arco-radio-button arco-radio-checked"
+        >
+          <input
+            checked=""
+            name="direction"
+            type="radio"
+            value="horizontal"
+          />
+          <span
+            class="arco-radio-button-inner"
+          >
+            horizontal
+          </span>
+        </label>
+        <label
+          class="arco-radio-button"
+        >
+          <input
+            name="direction"
+            type="radio"
+            value="vertical"
+          />
+          <span
+            class="arco-radio-button-inner"
+          >
+            vertical
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+      >
+        <label
+          class="arco-radio-button arco-radio-checked"
+        >
+          <input
+            checked=""
+            name="direction"
+            type="radio"
+            value="auto"
+          />
+          <span
+            class="arco-radio-button-inner"
+          >
+            auto
+          </span>
+        </label>
+        <label
+          class="arco-radio-button"
+        >
+          <input
+            name="direction"
+            type="radio"
+            value="start"
+          />
+          <span
+            class="arco-radio-button-inner"
+          >
+            start
+          </span>
+        </label>
+        <label
+          class="arco-radio-button"
+        >
+          <input
+            name="direction"
+            type="radio"
+            value="end"
+          />
+          <span
+            class="arco-radio-button-inner"
+          >
+            end
+          </span>
+        </label>
+        <label
+          class="arco-radio-button"
+        >
+          <input
+            name="direction"
+            type="radio"
+            value="center"
+          />
+          <span
+            class="arco-radio-button-inner"
+          >
+            center
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    scrollposition="auto"
     style="height:200px"
   >
     <div
@@ -1784,6 +2313,7 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    scrollposition="auto"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -2013,6 +2543,7 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+    scrollposition="auto"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"

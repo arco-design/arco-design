@@ -28,12 +28,14 @@ Organize content in the same view, and view content one view at a time. You can 
 |editable|Whether to allow adding or subtracting tabs. It only effect when `type` is `card` or `card-gutter`.|`boolean`|`-`|-|
 |showAddButton|Whether to show the new button(Only effect when `editable` is `true`)|`boolean`|`true`|-|
 |icons|Icon configuration|`{add?: ReactNode;delete?: ReactNode;}`|`-`|2.15.0|
+|scrollAfterEdit|Whether to automatically scroll to the selected label after the label is dynamically increased or decreased (only effective when `editable` is `true`)|`{delete?: boolean;add?: boolean;}`|`{ add: true, delete: true }`|2.25.0|
 |extra|Additional on the right side of the tab|`ReactNode`|`-`|-|
 |destroyOnHide|Whether to destroy the DOM structure in the TabPane when the tab is hidden. This attribute of `TabPane` has higher priority than `Tabs`.|`boolean`|`-`|-|
 |lazyload|When set to `true`, hidden tabs will not be rendered when the component is mounted.|`boolean`|`true`|-|
 |justify|Height to fill the container, Only effective in horizontal mode.|`boolean`|`-`|-|
 |deleteButton|Custom delete button|`ReactNode`|`-`|2.16.0|
 |addButton|Custom add button|`ReactNode`|`-`|2.16.0|
+|scrollPosition|The scroll position of the selected tab, the default auto will scroll the activeTab to the visible area, but will not adjust the position intentionally|`'start' \| 'end' \| 'center' \| 'auto' \| number`|`auto`|2.25.0|
 |onChange|Callback when `activeTab` changed|`(key: string) => void`|`-`|-|
 |onClickTab|Callback when click Tab|`(key: string) => void`|`-`|-|
 |onAddTab|Callback when click Add Button|`() => void`|`-`|-|
