@@ -84,6 +84,7 @@ function Base(props: BaseProps) {
     ellipsis,
     heading,
     blockquote,
+    copyable,
     ...rest
   } = props;
   const { getPrefixCls } = useContext(ConfigContext);
@@ -108,13 +109,17 @@ function Base(props: BaseProps) {
   const mergedEditing = 'editing' in editableConfig ? editableConfig.editing : editing;
 
   const ellipsisConfig: EllipsisConfig = ellipsis
-    ? { rows: 1, ellipsisStr: '...', ...(isObject(ellipsis) ? ellipsis : {}) }
+    ? { rows: 1, ellipsisStr: '...', cssEllipsis: true, ...(isObject(ellipsis) ? ellipsis : {}) }
     : {};
 
   function canSimpleEllipsis() {
-    const { rows, ellipsisStr, suffix, onEllipsis, expandable, showTooltip } = ellipsisConfig;
+    const { rows, ellipsisStr, suffix, onEllipsis, expandable, cssEllipsis } = ellipsisConfig;
+    if (!cssEllipsis) {
+      return;
+    }
     if (suffix || ellipsisStr !== '...') return;
-    if (onEllipsis || expandable || onEllipsis || showTooltip) return;
+    if (onEllipsis || expandable || onEllipsis) return;
+    if (editable || copyable) return;
     return rows === 1;
   }
 
@@ -177,12 +182,12 @@ function Base(props: BaseProps) {
     ellipsisConfig.expandable,
     ellipsisConfig.expandNodes,
     ellipsisConfig.rows,
-    ellipsisConfig.showTooltip,
+    ellipsisConfig.cssEllipsis,
   ]);
 
   function calcEllipsis() {
     const currentEllipsis = isEllipsis;
-    if (editing || simpleEllipsis) {
+    if (editing) {
       return;
     }
     if (ellipsisConfig.rows) {
@@ -195,7 +200,8 @@ function Base(props: BaseProps) {
         componentRef.current,
         ellipsisConfig,
         renderOperations(!!ellipsisConfig.expandable),
-        children
+        children,
+        simpleEllipsis
       );
       setMeasuring(false);
       if (ellipsis && text) {
@@ -236,19 +242,16 @@ function Base(props: BaseProps) {
       ...titleProps,
     };
 
+    const addTooltip = isEllipsis && showTooltip && !expanding;
+
     function renderInnerContent() {
       const text = isEllipsis && !expanding ? ellipsisText : children;
       const innerText = component.length ? wrap(text, component, props) : text;
+
       return (
         <>
-          {isEllipsis && showTooltip && !expanding ? (
-            <TooltipComponent content={fullText} {...tooltipProps}>
-              {innerText}
-            </TooltipComponent>
-          ) : (
-            innerText
-          )}
-          {measuring || (isEllipsis && !expanding) ? ellipsisStr : null}
+          {addTooltip ? <span>{innerText}</span> : innerText}
+          {measuring || (isEllipsis && !expanding && !simpleEllipsis) ? ellipsisStr : null}
           {suffix}
           {renderOperations(measuring ? !!ellipsisConfig.expandable : undefined)}
         </>
@@ -264,12 +267,10 @@ function Base(props: BaseProps) {
       TextComponent = ellipsis ? 'div' : 'span';
     }
 
-    const singleRowsClassName = ellipsisConfig.rows === 1;
-    return (
+    const node = (
       <TextComponent
         className={cs(
           prefixCls,
-          { [`${prefixCls}-single-rows`]: singleRowsClassName },
           { [`${prefixCls}-simple-ellipsis`]: simpleEllipsis },
           componentClassName,
           className
@@ -296,6 +297,16 @@ function Base(props: BaseProps) {
         {renderInnerContent()}
       </TextComponent>
     );
+
+    if (addTooltip) {
+      return (
+        <TooltipComponent content={fullText} {...tooltipProps}>
+          {node}
+        </TooltipComponent>
+      );
+    }
+
+    return node;
   }
 
   return mergedEditing ? (

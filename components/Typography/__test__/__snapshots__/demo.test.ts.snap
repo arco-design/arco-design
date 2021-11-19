@@ -143,7 +143,7 @@ Array [
   </button>,
   <div>
     <h4
-      class="arco-typography arco-typography-single-rows arco-typography-simple-ellipsis"
+      class="arco-typography arco-typography-simple-ellipsis"
     >
        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.
     </h4>
@@ -164,7 +164,7 @@ Array [
       style="display:flex"
     >
       <div
-        class="arco-typography arco-typography-single-rows"
+        class="arco-typography"
         style="width:100%"
       >
          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.----width: 100%
@@ -174,7 +174,7 @@ Array [
       style="display:flex"
     >
       <div
-        class="arco-typography arco-typography-single-rows"
+        class="arco-typography"
       >
          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.----width: normal
       </div>

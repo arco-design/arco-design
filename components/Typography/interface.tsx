@@ -141,6 +141,12 @@ export type TypographyTextProps = CommonProps;
  */
 export type EllipsisConfig = {
   /**
+   * @zh 自动溢出省略（只支持字符串），在简单的单行省略情况下，会默认使用 css 处理省略，避免复杂计算。
+   * @en Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.
+   * @defaultValue true
+   */
+  cssEllipsis?: boolean;
+  /**
    * @zh 显示省略的行数
    * @en The number of omitted rows
    * @defaultValue 1
