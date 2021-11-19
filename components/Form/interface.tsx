@@ -12,7 +12,7 @@ export type ComponentType = keyof JSX.IntrinsicElements | React.ComponentType<an
 
 export type FieldError<FieldValue = any> = {
   value?: FieldValue;
-  message?: string;
+  message?: ReactNode;
   type?: string;
   requiredError?: boolean;
 };
@@ -168,7 +168,7 @@ export interface RulesProps<FieldValue = any> {
   false?: boolean;
   // custom
   validator?: (value: FieldValue | undefined, callback: (error?: string) => void) => void;
-  message?: string;
+  message?: ReactNode;
 }
 
 /**

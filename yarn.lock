@@ -3942,10 +3942,10 @@ b-tween@^0.3.3:
   resolved "https://registry.yarnpkg.com/b-tween/-/b-tween-0.3.3.tgz#7a93ed199c98cd41a33ba4c711a0fa7e86db3fa2"
   integrity sha512-oEHegcRpA7fAuc9KC4nktucuZn2aS8htymCPcP3qkEGPqiBH+GfqtqoG2l7LxHngg6O0HFM7hOeOYExl1Oz4ZA==
 
-b-validate@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/b-validate/-/b-validate-1.2.5.tgz#9f521958df4a9607fc117b88a08fcebb53177850"
-  integrity sha512-1O7CPZcLbU+gP84qpmJ+mtHfaJf7p9um8uQnZU4UJXZF60tW50z+FUx8VdFZmZXGhJvjT0v7dMyW4HD9/hX4WA==
+b-validate@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/b-validate/-/b-validate-1.3.0.tgz#236041ccd61f217e68107cca9cc7e8aa69cabb46"
+  integrity sha512-1nNlVSyIAHbHN6pZhStbGwCfxAasYUDIgMW+BuUcML2T5lT1IoKVeax1jV0c/lHDiMy3FHkuKOzdBNA7eGKnWQ==
   dependencies:
     lodash.isequal "^4.5.0"
 
