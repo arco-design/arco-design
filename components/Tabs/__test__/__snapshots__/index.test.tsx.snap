@@ -3,6 +3,7 @@
 exports[`ConfigProvider componentConfig.Tabs default 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -30,6 +31,7 @@ exports[`ConfigProvider componentConfig.Tabs default 1`] = `
 exports[`ConfigProvider componentConfig.Tabs set className globally 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default global-default-class"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -57,6 +59,7 @@ exports[`ConfigProvider componentConfig.Tabs set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Tabs set className globally and component set className itself. 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default component-class"
+  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"

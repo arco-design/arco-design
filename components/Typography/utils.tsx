@@ -23,7 +23,13 @@ function pxToNumber(value: string | null): number {
 
 let mirrorElement: HTMLElement;
 
-export function measure(originElement: HTMLElement, ellipsisConfig, operations, children) {
+export function measure(
+  originElement: HTMLElement,
+  ellipsisConfig,
+  operations,
+  children,
+  simple?: boolean
+) {
   const rows = ellipsisConfig.rows || 1;
   const ellipsisStr = ellipsisConfig.ellipsisStr !== undefined ? ellipsisConfig.ellipsisStr : '...';
   const suffix = ellipsisConfig.suffix !== undefined ? ellipsisConfig.suffix : '';
@@ -83,7 +89,12 @@ export function measure(originElement: HTMLElement, ellipsisConfig, operations, 
   if (inRange()) {
     unmountComponentAtNode(mirrorElement);
     clearMirrorStyle();
-    return { ellipsisText: fullText, ellipsis: false };
+    return { text: fullText, ellipsis: false };
+  }
+
+  if (simple) {
+    clearMirrorStyle();
+    return { ellipsis: true, text: fullText };
   }
 
   function measureText(textNode: Text, startLoc = 0, endLoc = fullText.length, lastSuccessLoc = 0) {

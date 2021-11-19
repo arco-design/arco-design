@@ -75,6 +75,7 @@ Used to display titles, paragraphs, and text content.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
+|cssEllipsis|Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.|`boolean`|`true`|
 |rows|The number of omitted rows|`number`|`1`|
 |expandable|Whether to support expand|`boolean`|`-`|
 |ellipsisStr|ellipsis string|`string`|`...`|

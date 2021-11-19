@@ -79,6 +79,16 @@ export interface TabsProps {
     delete?: ReactNode;
   };
   /**
+   * @zh 是否在标签增减后，自动进行滚动调整(`editable`为`true`时生效）
+   * @en Whether to automatically scroll to the selected label after the label is dynamically increased or decreased (only effective when `editable` is `true`)
+   * @defaultValue { add: true, delete: true }
+   * @version 2.25.0
+   */
+  scrollAfterEdit?: {
+    delete?: boolean;
+    add?: boolean;
+  };
+  /**
    * @zh 显示在标签页右侧的附加
    * @en Additional on the right side of the tab
    */
@@ -111,6 +121,13 @@ export interface TabsProps {
    * @version 2.16.0
    */
   addButton?: ReactNode;
+  /**
+   * @zh 被选中 tab 的滚动位置，默认 auto 即会将 activeTab 滚动到可见区域，但不会特意做位置调整
+   * @en The scroll position of the selected tab, the default auto will scroll the activeTab to the visible area, but will not adjust the position intentionally
+   * @version 2.25.0
+   * @defaultValue auto
+   */
+  scrollPosition?: 'start' | 'end' | 'center' | 'auto' | number;
   /**
    * @zh `activeTab` 改变的回调
    * @en Callback when `activeTab` changed

@@ -34,3 +34,5 @@ export const linkSketchResource =
 
 export const linkAxureResource =
   'https://unpkg.byted-static.com/byted/arco-config/1.0.8/axure/ArcoDesign_Axure_Component.rp';
+
+export const linkJiShiResource = 'https://js.design/resourceDetails?id=6194e775c530ee24f130e742';

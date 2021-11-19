@@ -28,12 +28,14 @@
 |editable|是否允许增减标签。只在 `type` 为 `card` 或 `card-gutter` 时候生效。|`boolean`|`-`|-|
 |showAddButton|是否显示新增按钮（仅在`editable`为`true`时生效）|`boolean`|`true`|-|
 |icons|图标配置|`{add?: ReactNode;delete?: ReactNode;}`|`-`|2.15.0|
+|scrollAfterEdit|是否在标签增减后，自动进行滚动调整(`editable`为`true`时生效）|`{delete?: boolean;add?: boolean;}`|`{ add: true, delete: true }`|2.25.0|
 |extra|显示在标签页右侧的附加|`ReactNode`|`-`|-|
 |destroyOnHide|是否销毁隐藏标签页的节点, `TabPane` 的该属性优先级高于 `Tabs`。|`boolean`|`-`|-|
 |lazyload|设置为 `true` 时，将不会在组件挂载的时候渲染被隐藏的标签页。|`boolean`|`true`|-|
 |justify|高度撑满容器，只在水平模式下生效。（默认的高度是又撑起的。）|`boolean`|`-`|-|
 |deleteButton|自定义删除按钮|`ReactNode`|`-`|2.16.0|
 |addButton|自定义新增按钮|`ReactNode`|`-`|2.16.0|
+|scrollPosition|被选中 tab 的滚动位置，默认 auto 即会将 activeTab 滚动到可见区域，但不会特意做位置调整|`'start' \| 'end' \| 'center' \| 'auto' \| number`|`auto`|2.25.0|
 |onChange|`activeTab` 改变的回调|`(key: string) => void`|`-`|-|
 |onClickTab|点击选项卡的回调|`(key: string) => void`|`-`|-|
 |onAddTab|点击新增 tab 按钮的回调|`() => void`|`-`|-|

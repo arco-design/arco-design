@@ -20,6 +20,7 @@ type TooltipHandle = {
 const defaultProps: TooltipProps = {
   position: 'top',
   trigger: 'hover',
+  escToClose: false,
   unmountOnExit: true,
   blurToHide: true,
   popupHoverStay: true,
@@ -37,6 +38,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
     className,
     children,
     trigger,
+    escToClose,
     defaultPopupVisible,
     position,
     unmountOnExit,
@@ -134,6 +136,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
       position={position}
       disabled={disabled}
       trigger={trigger}
+      escToClose={escToClose}
       showArrow
       popupAlign={{
         left: 12,

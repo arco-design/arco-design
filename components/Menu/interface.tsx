@@ -104,7 +104,8 @@ export interface MenuProps {
    * @en Click menu item callback
    * @version `event` in 2.15.0, `keyPath` in 2.19.0
    */
-  onClickMenuItem?: (key: string, event, keyPath: string[]) => void;
+  // Do NOT change 'any' to 'void'. Allow to customize the behavior by the return value of `onClickMenuItem` in Dropdown
+  onClickMenuItem?: (key: string, event, keyPath: string[]) => any;
   /**
    * @zh 点击子菜单标题的回调
    * @en Callback when click sub menu

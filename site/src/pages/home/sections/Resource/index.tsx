@@ -13,6 +13,7 @@ import LogoArcoCliWhite from '../../assets/logo_ArcoCli_white.svg';
 import LogoArcoWebpackPluginWhite from '../../assets/logo_ArcoWebpackPlugin_white.svg';
 import LogoReact from '../../assets/logo_react.svg';
 import LogoVue from '../../assets/logo_vue.svg';
+import LogoJiShiBlue from '../../assets/logo_JiShi_blue.svg';
 import {
   linkDocsArcoComponent,
   linkDocsComponentUsage,
@@ -28,6 +29,7 @@ import {
   linkDocsDesignStyleGuideline,
   linkSketchResource,
   linkAxureResource,
+  linkJiShiResource,
 } from '../../constant/links';
 import DesignValues from './components/DesignValues';
 import useLocale from '../../hooks/useLocale';
@@ -56,9 +58,9 @@ export default function SectionResource() {
               href: linkAxureResource,
             },
             {
-              name: locale['resource.design.arcoPro'],
-              logo: <LogoArcoProBlue />,
-              href: linkFigmaArcoPro,
+              name: locale['resource.design.jishi'],
+              logo: <LogoJiShiBlue />,
+              href: linkJiShiResource,
             },
             {
               name: locale['resource.design.sketch'],
@@ -74,6 +76,11 @@ export default function SectionResource() {
               name: locale['resource.design.arcoComponent'],
               logo: <LogoFigmaBlue />,
               href: linkFigmaArcoComponent,
+            },
+            {
+              name: locale['resource.design.arcoPro'],
+              logo: <LogoArcoProBlue />,
+              href: linkFigmaArcoPro,
             },
           ]}
           footerResourceList={[

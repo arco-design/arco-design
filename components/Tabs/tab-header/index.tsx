@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import { isNumber, isObject } from 'lodash';
 import ResizeObserver from '../../_util/resizeObserver';
 import DropdownIcon from './dropdown-icon';
 import TabNavIcon from './tab-nav-icon';
@@ -18,6 +19,11 @@ import useHeaderScroll from '../hook/useHeaderScroll';
 const DIRECTION_VERTICAL = 'vertical';
 const ALIGN_RIGHT = 'right';
 const ALIGN_LEFT = 'left';
+
+const SCROLL_MAP = {
+  delete: true,
+  add: true,
+};
 
 const getHeaderStyle = ({
   direction,
@@ -65,6 +71,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
+  const [shouldScroll, setShouldScroll] = useState(true);
 
   const {
     paneChildren,
@@ -86,7 +93,13 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     deleteButton,
     addButton,
     renderTabTitle,
+    scrollAfterEdit,
+    scrollPosition = 'auto',
   } = mergeProps;
+
+  const scrollConfig = isObject(scrollAfterEdit)
+    ? { ...SCROLL_MAP, ...scrollAfterEdit }
+    : SCROLL_MAP;
 
   const align = type === 'capsule' ? ALIGN_RIGHT : ALIGN_LEFT;
 
@@ -150,13 +163,16 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   // 根据激活的 tab 更新 headerOffset，所以依赖里面不能加 headerOffset
   useEffect(() => {
+    if (!shouldScroll) {
+      setShouldScroll(true);
+      return;
+    }
+
     const getActiveTabOffset = () => {
       const currentTitleNode = titleRef.current[activeTab];
-
       if (!currentTitleNode || !isScrollable) {
         return 0;
       }
-
       const diffStyle = getRectDiff(currentTitleNode, headerWrapperRef.current);
       const currentOffset = getCurrentHeaderOffset({
         direction,
@@ -168,43 +184,69 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       // 垂直方向的 offset 计算，不分type
       if (direction === 'vertical') {
         let nextOffset = currentOffset;
-        if (diffStyle.top < 0) {
-          // 不完全在可见区
-          nextOffset = currentOffset + diffStyle.top;
-        } else if (diffStyle.bottom > 0) {
-          // 不完全在可见区
-          nextOffset = currentOffset + diffStyle.bottom;
+        let scrollAlign = scrollPosition;
+        const topOffset = currentOffset + diffStyle.top;
+        const bottomOffset = currentOffset + diffStyle.bottom;
+        if (scrollAlign === 'auto') {
+          scrollAlign = diffStyle.top < 0 ? 'start' : diffStyle.bottom > 0 ? 'end' : scrollPosition;
+        }
+        if (scrollAlign === 'start') {
+          nextOffset = topOffset;
+        } else if (scrollAlign === 'end') {
+          nextOffset = bottomOffset;
+        } else if (scrollAlign === 'center') {
+          nextOffset = topOffset - (diffStyle.top - diffStyle.bottom) / 2;
+        } else if (isNumber(scrollAlign)) {
+          nextOffset = Math.max(topOffset - scrollAlign, bottomOffset);
         }
         return nextOffset;
       }
 
       // 水平方向的 offset 计算，分为 capsule 和其他，因为 capsule 是右对齐
       if (align === 'right') {
+        const startOffset = currentOffset - diffStyle.left;
+        const endOffset = currentOffset - diffStyle.right;
+        let scrollAlign = scrollPosition;
         let nextOffset = currentOffset;
-        if (diffStyle.left < 0) {
-          // 不完全在可见区
-          nextOffset = currentOffset - diffStyle.left;
-        } else if (diffStyle.right > 0) {
-          // 不完全在可见区
-          nextOffset = currentOffset - diffStyle.right;
+
+        if (scrollPosition === 'auto') {
+          scrollAlign = diffStyle.left < 0 ? 'start' : diffStyle.right > 0 ? 'end' : scrollPosition;
         }
+        if (scrollAlign === 'start') {
+          nextOffset = startOffset;
+        } else if (scrollAlign === 'end') {
+          nextOffset = endOffset;
+        } else if (scrollAlign === 'center') {
+          nextOffset = startOffset + (diffStyle.left - diffStyle.right) / 2;
+        } else if (isNumber(scrollAlign)) {
+          nextOffset = Math.min(startOffset + scrollAlign, endOffset);
+        }
+
         return nextOffset;
       }
 
       let nextOffset = currentOffset;
-      if (diffStyle.left < 0) {
-        // 不完全在可见区
-        nextOffset = currentOffset + diffStyle.left;
-      } else if (diffStyle.right > 0) {
-        // 不完全在可见区
-        nextOffset = currentOffset + diffStyle.right;
+      let scrollAlign = scrollPosition;
+      const startOffset = currentOffset + diffStyle.left;
+      const endOffset = currentOffset + diffStyle.right;
+      if (scrollPosition === 'auto') {
+        scrollAlign = diffStyle.left < 0 ? 'start' : diffStyle.right > 0 ? 'end' : scrollPosition;
+      }
+      if (scrollAlign === 'start') {
+        nextOffset = startOffset;
+      } else if (scrollAlign === 'end') {
+        nextOffset = endOffset;
+      } else if (scrollAlign === 'center') {
+        nextOffset = startOffset - (diffStyle.left - diffStyle.right) / 2;
+      } else if (isNumber(scrollAlign)) {
+        nextOffset = Math.max(startOffset - scrollAlign, endOffset);
       }
       return nextOffset;
     };
     let offset = getActiveTabOffset();
     offset = getValidOffset(offset);
     setHeaderOffset(offset);
-  }, [activeTab, direction, overflow, isScrollable, type, getValidOffset]);
+  }, [activeTab, direction, overflow, isScrollable, type, getValidOffset, scrollPosition]);
 
   const headerStyle = getHeaderStyle({
     direction,
@@ -215,11 +257,21 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const isScroll = isScrollable && !isDropdown;
   const isEditable = editable && (type === 'card' || type === 'card-gutter' || type === 'line');
 
+  const handleDelete = (child) => {
+    mergeProps.onDeleteTab && mergeProps.onDeleteTab(child.key as string);
+    setShouldScroll(scrollConfig.delete);
+  };
+
+  const handleAdd = () => {
+    onAddTab && onAddTab();
+    setShouldScroll(scrollConfig.add);
+  };
+
   const renderAddIcon = (isEditable) => {
     return (
       isEditable &&
       showAddButton && (
-        <div className={`${prefixCls}-add-icon`} onClick={onAddTab}>
+        <div className={`${prefixCls}-add-icon`} onClick={handleAdd}>
           {addButton || (
             <IconHover prefix={`${prefixCls}-add`}>
               <span className={`${prefixCls}-add`}>{icons?.add || <IconPlus />}</span>
@@ -296,9 +348,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
                     tabKey={child.key}
                     {...child.props}
                     prefixCls={prefixCls}
-                    onDeleteTab={() => {
-                      mergeProps.onDeleteTab && mergeProps.onDeleteTab(child.key as string);
-                    }}
+                    onDeleteTab={() => handleDelete(child)}
                     renderTitle={props.children || renderTabTitle}
                     onClickTab={() => {
                       mergeProps.onClickTab && mergeProps.onClickTab(child.key as string);

@@ -75,6 +75,7 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
+|cssEllipsis|自动溢出省略（只支持字符串），在简单的单行省略情况下，会默认使用 css 处理省略，避免复杂计算。|`boolean`|`true`|
 |rows|显示省略的行数|`number`|`1`|
 |expandable|是否支持展开/折叠|`boolean`|`-`|
 |ellipsisStr|省略号|`string`|`...`|

@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { on, off, contains } from '../_util/dom';
 import { isFunction } from '../_util/is';
+import { Esc } from '../_util/keycode';
 import Portal from './portal';
 import ResizeObserver from '../_util/resizeObserver';
 import cs from '../_util/classNames';
@@ -41,6 +42,7 @@ export const EventsByTriggerNeed = [
   'onFocus',
   'onBlur',
   'onContextMenu',
+  'onKeyDown',
 ];
 
 export type EventsByTriggerNeedType =
@@ -50,7 +52,8 @@ export type EventsByTriggerNeedType =
   | 'onMouseMove'
   | 'onFocus'
   | 'onBlur'
-  | 'onContextMenu';
+  | 'onContextMenu'
+  | 'onKeyDown';
 
 function splitChildrenStyle(
   obj: CSSProperties,
@@ -78,6 +81,7 @@ const defaultProps = {
   popupAlign: {},
   popupHoverStay: true,
   clickOutsideToClose: true,
+  escToClose: false,
   mouseLeaveToClose: true,
   getDocument: () => window.document as any,
   autoFixPosition: true,
@@ -552,6 +556,21 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
   };
 
+  onKeyDown = (e) => {
+    const keyCode = e.keyCode || e.which;
+    this.triggerPropsEvent('onKeyDown', e);
+    if (keyCode === Esc.code) {
+      this.onPressEsc(e);
+    }
+  };
+
+  onPressEsc = (e) => {
+    const { escToClose } = this.getMergedProps();
+    if (escToClose && e && e.key === Esc.key && this.state.popupVisible) {
+      this.setPopupVisible(false);
+    }
+  };
+
   onMouseEnter = (e) => {
     const { mouseEnterDelay } = this.getMergedProps();
     this.triggerPropsEvent('onMouseEnter', e);
@@ -845,6 +864,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     } else {
       mergeProps.onFocus = this.triggerOriginEvent('onFocus');
       mergeProps.onBlur = this.triggerOriginEvent('onBlur');
+    }
+
+    if (!disabled) {
+      mergeProps.onKeyDown = this.onKeyDown;
+    } else {
+      mergeProps.onKeyDown = this.triggerOriginEvent('onKeyDown');
     }
 
     const child: any = this.getChild();

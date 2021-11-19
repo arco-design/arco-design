@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-使用 `dropdownRender` 对下拉菜单进行自由扩展。
+使用 `Select.Group` 对下拉菜单选项进行编组。
 
 ## en-US
 
-Use `dropdownRender` to freely customize the drop-down menu.
+Use `Select.Group` to group the drop-down menu options.
 
 ```js
 import { Select } from '@arco-design/web-react';

@@ -471,6 +471,22 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
+<div>
+  <div
+    class="arco-typography"
+    style="width:345px"
+  >
+    Favorite Cities：
+    <a
+      href="javascript: void(0)"
+    >
+      None
+    </a>
+  </div>
+</div>
+`;
+
 exports[`renders Select/demo/dropdown-render.md correctly 1`] = `
 <div
   class="arco-select arco-select-single arco-select-size-default"
@@ -1721,22 +1737,6 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
         </div>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`renders Select/demo/self-input.md correctly 1`] = `
-<div>
-  <div
-    class="arco-typography"
-    style="width:345px"
-  >
-    Favorite Cities：
-    <a
-      href="javascript: void(0)"
-    >
-      None
-    </a>
   </div>
 </div>
 `;

@@ -81,6 +81,15 @@ export interface CarouselProps {
    */
   arrowClassName?: string | string[];
   /**
+   * @zh 自定义图标
+   * @en Customize icons
+   * @version 2.25.0
+   */
+  icons?: {
+    prev?: ReactNode;
+    next?: ReactNode;
+  };
+  /**
    * @zh 指示器类型，可为小方块和小圆点或不显示
    * @en Type of indicator
    * @defaultValue dot
@@ -120,12 +129,11 @@ export interface CarouselProps {
   carousel?: MutableRefObject<CarouselHandle>;
 }
 
-export interface CarouselArrowProps {
+export interface CarouselArrowProps
+  extends Pick<CarouselProps, 'direction' | 'showArrow' | 'icons'> {
+  className?: string | string[];
   prev?: (e: any) => any;
   next?: (e: any) => any;
-  direction?: 'horizontal' | 'vertical';
-  showArrow?: 'always' | 'hover' | 'never';
-  className?: string | string[];
 }
 
 export interface CarouselIndicatorProps {

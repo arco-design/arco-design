@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { mount } from 'enzyme';
+import { act } from 'react-test-renderer';
 import {
   Form,
   AutoComplete,
@@ -19,6 +20,7 @@ import {
 } from '../..';
 import { FormProps, FormInstance } from '../interface';
 import { UploadItem } from '../../Upload';
+import { sleep } from '../../../tests/util';
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
@@ -389,18 +391,24 @@ describe('UseForm', () => {
     expect(formValues).toEqual({ ...formValues, number: 10 });
   });
 
-  it('array validateTrigger', () => {
+  it('array validateTrigger', async () => {
     const InputNumber = wrapper.find('InputNumber');
 
     form.setFieldValue('number', 120);
-    InputNumber.find('input').simulate('focus');
-    InputNumber.find('input').simulate('blur');
+    act(() => {
+      InputNumber.find('input').simulate('focus');
+      InputNumber.find('input').simulate('blur');
+    });
+
+    await sleep(10);
     expect(form.getFieldsError().number.message).toBe('`120` is not less than `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '12' } });
+    await sleep(10);
     expect(form.getFieldsError().number.message).toBe('`12` is not less than `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '' } });
+    await sleep(10);
     expect(form.getFieldsError().number.message).toBe('number is required');
 
     InputNumber.find('input').simulate('change', { target: { value: '1' } });
@@ -408,8 +416,10 @@ describe('UseForm', () => {
     // TODO: 是否被setField过的也是属于touche字段
     expect(form.getTouchedFields()).toEqual(['number']);
 
+    await sleep(10);
     expect(form.getFieldsError().number.message).toBe('`1` is not greater than `5`');
     InputNumber.find('input').simulate('change', { target: { value: '9' } });
+    await sleep(10);
     expect(form.getFieldsError()).toEqual({});
   });
 
@@ -419,6 +429,7 @@ describe('UseForm', () => {
     form.setFieldValue('name', '');
     Input.find('input').simulate('focus');
     Input.find('input').simulate('blur');
+    await sleep(20);
     expect(form.getFieldsError().name.message).toBe('string is required');
   });
 
@@ -491,7 +502,7 @@ describe('UseForm', () => {
     });
   });
 
-  it('submit', (done) => {
+  it('submit', async (done) => {
     form.setFieldsValue({
       ...fieldInitvalues,
       name: 'test',
@@ -506,6 +517,7 @@ describe('UseForm', () => {
     });
     wrapper.find('form').simulate('submit');
 
+    await sleep(10);
     expect(form.getFieldsError()).toEqual({
       readme: {
         value: undefined,
@@ -522,7 +534,7 @@ describe('UseForm', () => {
       expect(form.getFieldsError()).toEqual({});
       expect(submitMock).toHaveBeenCalled();
       done();
-    }, 0);
+    }, 10);
   });
 
   it('scrollToField', () => {

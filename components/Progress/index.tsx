@@ -53,6 +53,7 @@ function Progress(baseProps: ProgressProps, ref) {
         <CircleProgress
           width={props.width as any}
           {...props}
+          pathStrokeColor={props.trailColor}
           status={status}
           prefixCls={prefixCls}
         />

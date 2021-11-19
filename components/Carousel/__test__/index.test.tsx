@@ -336,4 +336,15 @@ describe('Carousel', () => {
       left: `${100 / 4}%`,
     });
   });
+
+  it('customize icon in arrows', () => {
+    const wrapper = render(
+      <Carousel style={wrapperStyle} icons={{ prev: null, next: '>' }}>
+        <li style={itemStyle1} />
+        <li style={itemStyle2} />
+      </Carousel>
+    );
+    expect(wrapper.find(`${prefixCls}-arrow-left`).text()).toBe('');
+    expect(wrapper.find(`${prefixCls}-arrow-right`).text()).toBe('>');
+  });
 });
