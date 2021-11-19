@@ -74,6 +74,16 @@ export interface TabsProps {
    * @en Icon configuration
    * @version 2.15.0
    */
+  /**
+   * @zh 是否在标签增减后，自动进行滚动调整(`editable`为`true`时生效）
+   * @en Whether to automatically scroll to the selected label after the label is dynamically increased or decreased (only effective when `editable` is `true`)
+   * @defaultValue { add: true, delete: true }
+   * @version 2.25.0
+   */
+  scrollAfterEdit?: {
+    delete?: boolean;
+    add?: boolean;
+  };
   icons?: {
     add?: ReactNode;
     delete?: ReactNode;
