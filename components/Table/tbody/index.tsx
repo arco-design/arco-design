@@ -24,6 +24,7 @@ function TBody<T>(props: TbodyProps<T>) {
     tableViewWidth,
     virtualized,
     getRowKey,
+    saveVirtualWrapperRef,
   } = props;
 
   const { ComponentTbody } = useComponent(components);
@@ -117,12 +118,12 @@ function TBody<T>(props: TbodyProps<T>) {
   );
 
   if (virtualized) {
-    if (data.length > 0) {
-      return (
-        <div className={`${prefixCls}-body`}>
+    return (
+      <div className={`${prefixCls}-body`} ref={(ref) => saveVirtualWrapperRef(ref)}>
+        {data.length > 0 ? (
           <VirtualList
             data={data}
-            height={scrollStyleY.maxHeight as number}
+            height={scrollStyleY.maxHeight}
             isStaticItemHeight={false}
             style={{ ...scrollStyleX, minWidth: '100%' }}
           >
@@ -130,14 +131,11 @@ function TBody<T>(props: TbodyProps<T>) {
               <Tr<T> {...trProps} key={getRowKey(child)} record={child} index={index} level={0} />
             )}
           </VirtualList>
-        </div>
-      );
-    }
-    return (
-      <div className={`${prefixCls}-body`}>
-        <table>
-          <tbody>{noDataTr}</tbody>
-        </table>
+        ) : (
+          <table>
+            <tbody>{noDataTr}</tbody>
+          </table>
+        )}
       </div>
     );
   }

@@ -456,8 +456,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     setFixedColumnClassNames();
     const root = getRootDomElement();
     if (root && (hasFixedColumn || (scroll && scroll.x))) {
-      const tableViewWidth = (root.querySelector(`.${prefixCls}-content-inner`) as HTMLElement)
-        .clientWidth;
+      const ele =
+        root.querySelector(`.${prefixCls}-body`) ||
+        root.querySelector(`.${prefixCls}-content-inner`);
+      const tableViewWidth = ele.clientWidth;
       setTableViewWidth(tableViewWidth);
     }
   }
@@ -646,7 +648,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     // 根据 Tbody 决定 Thead 是否显示纵向滚动条
     // TODO: Remove
     setTimeout(() => {
-      const scrollBarWidth = getScrollBarWidth(refTableBody.current);
+      const scrollWrapper = virtualized
+        ? (refTableBody.current.children[0] as HTMLDivElement)
+        : refTableBody.current;
+      const scrollBarWidth = getScrollBarWidth(scrollWrapper);
       if (scrollBarWidth) {
         scrollbarChanged.current = true;
         wrapper.style.overflowY = 'scroll';
@@ -728,6 +733,11 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}
       getRowKey={getRowKey}
+      saveVirtualWrapperRef={(ref: HTMLDivElement) => {
+        if (virtualized) {
+          refTableBody.current = ref;
+        }
+      }}
     />
   );
 
