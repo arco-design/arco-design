@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
-import cs from '../_util/classNames';
+import React, { memo, useEffect, useState } from 'react';
 import InputNumber from '../InputNumber';
+import cs from '../_util/classNames';
 
 interface InputProps {
   min?: number;
@@ -10,7 +10,7 @@ interface InputProps {
   range?: boolean;
   disabled?: boolean;
   prefixCls?: string;
-  onChange: (val: number[]) => void;
+  onChange?: (val: number[]) => void;
 }
 
 const Input = function(props: InputProps) {
@@ -22,21 +22,31 @@ const Input = function(props: InputProps) {
     disabled,
     hideControl: true,
   };
-  const sortValue = [...value].sort((a, b) => a - b);
+  const [innerValue, setInnerValue] = useState(value);
+  useEffect(() => {
+    setInnerValue(value);
+  }, [value]);
 
-  function handleChange(val) {
-    onChange(val);
-  }
+  const handleChange = (val: number[]) => {
+    onChange?.(val);
+  };
+
+  const handleBlur = () => {
+    setInnerValue([...value].sort((a, b) => a - b));
+  };
 
   return (
-    <div className={cs(`${prefixCls}-input`, { [`${prefixCls}-input-group`]: range })}>
+    <div
+      className={cs(`${prefixCls}-input`, { [`${prefixCls}-input-group`]: range })}
+      onBlur={handleBlur}
+    >
       {range && [
         <InputNumber
-          value={sortValue[0]}
+          value={innerValue[0]}
           key={0}
           {...inputProps}
           onChange={(val) => {
-            handleChange([val, sortValue[1]]);
+            handleChange([val, innerValue[1]]);
           }}
         />,
         <div key={1} className={`${prefixCls}-input-range`}>
@@ -45,10 +55,10 @@ const Input = function(props: InputProps) {
       ]}
       <InputNumber
         key={2}
-        value={sortValue[1]}
+        value={innerValue[1]}
         {...inputProps}
         onChange={(val) => {
-          handleChange([sortValue[0], val]);
+          handleChange([innerValue[0], val]);
         }}
       />
     </div>

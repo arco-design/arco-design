@@ -103,7 +103,7 @@ function Slider(baseProps: SliderProps, ref) {
     return range ? [beginVal, endVal] : endVal;
   }
 
-  function onChange(val) {
+  function updateValue(val) {
     let [newBeginVal, newEndVal] = val;
     newBeginVal = getLegalValue(newBeginVal);
     newEndVal = getLegalValue(newEndVal);
@@ -111,6 +111,11 @@ function Slider(baseProps: SliderProps, ref) {
     lastVal.current = [newBeginVal, newEndVal];
     const emitParams = getEmitParams([newBeginVal, newEndVal]);
     setValue(emitParams);
+    return emitParams;
+  }
+
+  function onChange(val) {
+    const emitParams = updateValue(val);
     if (isFunction(props.onChange)) {
       props.onChange(emitParams);
     }
