@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 💅 Style
+
+- The `Image` component sets the maximum size of the error state to the size of the parent element.([#161](https://github.com/arco-design/arco-design/pull/161))
+
 ## 2.24.0
 
 2021-11-05

@@ -2,6 +2,36 @@
 changelog: true
 ---
 
+## 2.25.0
+
+2021-11-19
+
+### 🆕 功能升级
+
+- `Typography` 的 `Ellipsis` 支持 `cssEllipsis`属性，在简单场景下，默认使用 css 进行省略。([#191](https://github.com/arco-design/arco-design/pull/191))
+- `Form` 支持在 `rules` 中设置 `validateTrigger` 属性指定规则在特定事件触发时候执行。([#190](https://github.com/arco-design/arco-design/pull/190))
+- `Form` 支持在 `rules` 中设置 `validateLevel` 属性指定规则校验失败时仅显示 `warning` 状态，不阻塞表单提交。([#190](https://github.com/arco-design/arco-design/pull/190))
+- `Form` 组件 `rule.message` 支持使用 `ReactNode`。([#185](https://github.com/arco-design/arco-design/pull/185))
+- `InputTag` 新增 `saveOnBlur` 属性以支持在失焦时自动保存用户正在输入的内容。([#183](https://github.com/arco-design/arco-design/pull/183))
+- `Carousel` 新增 `icons` 属性以支持自定义箭头图标。([#181](https://github.com/arco-design/arco-design/pull/181))
+- `Dropdown` 配合 `Menu` 使用时，允许通过 `onClickMenuItem` 的返回值控制菜单点击后是否自动隐藏。([#180](https://github.com/arco-design/arco-design/pull/180))
+- `ResizeBox.Split` 增加 `onPaneResize` 属性([#169](https://github.com/arco-design/arco-design/pull/169))
+- `Trigger` 组件添加 `escToClose` 设置是否允许按 `ESC` 关闭，默认为 `false`。([#167](https://github.com/arco-design/arco-design/pull/167))
+- `Tooltip` 组件添加 `escToClose`，默认为 `false`。([#167](https://github.com/arco-design/arco-design/pull/167))
+- `Popconfirm` 组件添加按 `ESC` 关闭弹出框功能。([#167](https://github.com/arco-design/arco-design/pull/167))
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox.Split` 组件切换 `direction` 时，两侧面板比例发生改变的 bug。([#188](https://github.com/arco-design/arco-design/pull/188))
+- `Progress` 修复 `trailColor` 属性在环形进度条和步骤进度条不生效的 bug。([#175](https://github.com/arco-design/arco-design/pull/175))
+- 修复 `Progress` 组件步骤显示计算错误的 bug。([#170](https://github.com/arco-design/arco-design/pull/170))
+
+### 💅 样式更新
+
+- `Button` 组件左右边距 + 边框为 16px。([#186](https://github.com/arco-design/arco-design/pull/186))
+- 修复 `Table` 组件在开启 `virtualized` 之后，当滚动条始终显示时表头出现错位的样式问题。([#182](https://github.com/arco-design/arco-design/pull/182))
+- `Image` 组件将错误状态的最大尺寸设置为父元素的大小。([#161](https://github.com/arco-design/arco-design/pull/161))
+
 ## 2.24.1
 
 2021-11-12
