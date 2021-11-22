@@ -1,0 +1,52 @@
+@import '../../../style/theme/default.less';
+
+@arco-draggable-prefix-cls: ~'arco-draggable';
+
+.@{arco-draggable-prefix-cls} {
+  @keyframes ~'@{prefix}-draggable-item-blink' {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &-item {
+    box-sizing: border-box;
+    list-style: none;
+    user-select: none;
+
+    &-dragging {
+      opacity: 0.3;
+    }
+
+    &-dragover {
+      &.@{arco-draggable-prefix-cls}-item-gap-left {
+        box-shadow: -1px 0 rgb(var(--primary-6));
+      }
+
+      &.@{arco-draggable-prefix-cls}-item-gap-right {
+        box-shadow: 1px 0 rgb(var(--primary-6));
+      }
+
+      &.@{arco-draggable-prefix-cls}-item-gap-top {
+        box-shadow: 0 -1px rgb(var(--primary-6));
+      }
+
+      &.@{arco-draggable-prefix-cls}-item-gap-bottom {
+        box-shadow: 0 1px rgb(var(--primary-6));
+      }
+    }
+
+    &-dragged {
+      animation: ~'@{prefix}-draggable-item-blink' 0.8s;
+      animation-timing-function: @transition-timing-function-linear;
+    }
+  }
+}

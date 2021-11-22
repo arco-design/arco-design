@@ -25,7 +25,7 @@ import IconHover from './icon-hover';
 import { Enter } from '../_util/keycode';
 
 export interface SelectViewCommonProps
-  extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag'> {
+  extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
   style?: CSSProperties;
   className?: string | string[];
   children?: ReactNode;
@@ -129,6 +129,7 @@ export interface SelectViewProps extends SelectViewCommonProps {
   isMultiple?: boolean;
   prefixCls: string;
   renderText: (value) => { text; disabled };
+  onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
   onChangeInputValue?: InputComponentProps['onValueChange'];
   onKeyDown?: (e) => void;
@@ -178,6 +179,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     isEmptyValue,
     prefix,
     renderTag,
+    dragToSort,
     onKeyDown,
     onChangeInputValue,
     onPaste,
@@ -185,6 +187,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     onFocus,
     onBlur,
     onRemoveCheckedItem,
+    onSort,
     ...rest
   } = props;
 
@@ -412,6 +415,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
         className={mergedFocused ? `${getPrefixCls('input-tag')}-focus` : ''}
         ref={refInput}
         disabled={disabled}
+        dragToSort={dragToSort}
         disableInput={!showSearch}
         animation={animation}
         placeholder={placeholder}
@@ -421,6 +425,11 @@ export const SelectView = (props: SelectViewProps, ref) => {
         tagClassName={`${prefixCls}-tag`}
         renderTag={renderTag}
         icon={{ removeIcon }}
+        onChange={(value, reason) => {
+          if (onSort && reason === 'sort') {
+            onSort(value);
+          }
+        }}
         {...eventHandlers}
       />
     );
@@ -464,7 +473,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       // When there is an input box, the keyboard events are handled inside the input box to avoid triggering redundant events in the Chinese input method
       onKeyDown={tryTriggerKeyDown}
       onFocus={(event) => {
-        if (!disabled) {
+        if (!disabled && !dragToSort) {
           // Focus on the input, otherwise you need to press the Tab key twice to focus on the input box
           if (canFocusInput) {
             refInput.current && refInput.current.focus();

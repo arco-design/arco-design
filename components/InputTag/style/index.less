@@ -1,5 +1,6 @@
 @import '../../style/mixin.less';
 @import './token.less';
+@import '../../_class/Draggable/style/index.less';
 
 @input-tag-prefix-cls: ~'@{prefix}-input-tag';
 
@@ -68,8 +69,14 @@
     }
   }
 
-  &:not(&-focus) &-clear-icon:hover::before {
-    background-color: @input-tag-color-icon-clear-bg_hover;
+  &:not(&-focus) {
+    &-clear-icon:hover::before {
+      background-color: @input-tag-color-icon-clear-bg_hover;
+    }
+
+    .@{prefix}-draggable-item {
+      cursor: move;
+    }
   }
 
   &-input {
