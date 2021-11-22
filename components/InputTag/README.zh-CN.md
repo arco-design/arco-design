@@ -29,12 +29,13 @@
 |value|控件值|`T[]`|`-`|-|
 |inputValue|控件的输入框内的值|`string`|`-`|-|
 |labelInValue|设置传入和回调出的值均为 `{ label: '', value: ''}` 格式。|`boolean`|`-`|-|
+|dragToSort|是否可以通过拖拽为 Tag 排序|`boolean`|`-`|2.27.0|
 |suffix|后缀|`React.ReactNode`|`-`|-|
 |icon|自定义图标|`{ removeIcon?: ReactNode; clearIcon?: ReactNode }`|`-`|-|
 |validate|校验函数，默认在 按下enter时候触发。|`(inputValue: string, values: T[]) => boolean \| Promise<boolean>`|`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|-|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
 |onRemove|移除某一个标签时改变时触发|`(value: T, index: number, event) => void`|`-`|-|
-|onChange|控件值改变时触发|`(value: T[]) => void`|`-`|-|
+|onChange|控件值改变时触发|`(value: T[], reason: ValueChangeReason) => void`|`-`|`reason` in 2.27.0|
 |onBlur|失去焦点时候触发|`(e) => void`|`-`|-|
 |onFocus|聚焦时触发|`(e) => void`|`-`|-|
 |onPressEnter|按 enter 键触发|`(e) => void`|`-`|-|

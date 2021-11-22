@@ -101,6 +101,7 @@ export default function() {
         onInputValueChange={(value) => setInputValue(value.slice(0, 10))}
       />
       <Select
+        dragToSort
         style={{ maxWidth: 350, marginRight: 20 }}
         allowClear
         placeholder="Please Select"
