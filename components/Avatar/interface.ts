@@ -54,20 +54,20 @@ export interface AvatarGroupProps {
   style?: CSSProperties;
   className?: string | string[];
   /**
-   * @zh 头像的形状，(优先级高于 Avatar 组件本身)
-   * @en The shape of the avatar, (priority is higher than the Avatar component itself)
+   * @zh 头像的形状，(优先级低于 Avatar 组件本身)
+   * @en The shape of the avatar, (priority is lower than the Avatar component itself)
    * @defaultValue circle
    */
   shape?: 'circle' | 'square';
   /**
-   * @zh 头像的尺寸大小，单位是 `px`，(优先级高于 Avatar 组件本身)
-   * @en The size of the avatar in `px`, (the priority is higher than the Avatar component itself)
+   * @zh 头像的尺寸大小，单位是 `px`，(优先级低于 Avatar 组件本身)
+   * @en The size of the avatar in `px`, (the priority is lower than the Avatar component itself)
    */
   size?: number;
   /**
-   * @zh 是否自动根据头像尺寸调整字体大小，(优先级高于 Avatar 组件本身)
-   * @en Whether to automatically adjust the font size according to the size of the avatar (the priority is higher than the Avatar component itself)
-   * @defaultValue autoFixFontSize
+   * @zh 是否自动根据头像尺寸调整字体大小，(优先级低于 Avatar 组件本身)
+   * @en Whether to automatically adjust the font size according to the size of the avatar (the priority is lower than the Avatar component itself)
+   * @defaultValue true
    */
   autoFixFontSize?: boolean;
   /**
