@@ -64,7 +64,7 @@ function Components() {
         />
         <div className="content-wrapper">
           <WidgetBody lang={lang} routes={routes} />
-          <Footer style={{ marginTop: 100 }} lang={lang} />
+          <Footer style={{ marginTop: 100 }} lang={lang} larkGroup />
         </div>
         {!noAnchor && (
           <div
