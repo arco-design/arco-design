@@ -125,6 +125,10 @@
     border: @avatar-group-item-border-width solid @avatar-color-group-item-border;
   }
 
+  &-group &:not(:first-child) {
+    margin-left: @avatar-group-item-margin-left;
+  }
+
   &-group-popover &:not(:first-child) {
     margin-left: @avatar-group-popover-item-spacing;
   }

@@ -69,7 +69,7 @@ function Group(baseProps: PropsWithChildren<AvatarGroupProps>, ref) {
       {avatarsToRender.map((item, index) => {
         const stackedStyle = {
           zIndex: zIndexAscend ? index + 1 : avatarCount - index,
-          marginLeft: index !== 0 ? -size / 4 : 0,
+          marginLeft: size ? (index !== 0 ? -size / 4 : 0) : '',
         };
         return (
           <AvatarContext.Provider
