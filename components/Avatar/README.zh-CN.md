@@ -30,9 +30,9 @@
 |---|---|---|---|---|
 |style|节点样式|`CSSProperties`|`-`|-|
 |className|节点类名|`string \| string[]`|`-`|-|
-|shape|头像的形状，(优先级高于 Avatar 组件本身)|`'circle' \| 'square'`|`circle`|-|
-|size|头像的尺寸大小，单位是 `px`，(优先级高于 Avatar 组件本身)|`number`|`-`|-|
-|autoFixFontSize|是否自动根据头像尺寸调整字体大小，(优先级高于 Avatar 组件本身)|`boolean`|`autoFixFontSize`|-|
+|shape|头像的形状，(优先级低于 Avatar 组件本身)|`'circle' \| 'square'`|`circle`|-|
+|size|头像的尺寸大小，单位是 `px`，(优先级低于 Avatar 组件本身)|`number`|`-`|-|
+|autoFixFontSize|是否自动根据头像尺寸调整字体大小，(优先级低于 Avatar 组件本身)|`boolean`|`true`|-|
 |zIndexAscend|头像组内的头像 `z-index` 递增，默认是递减。|`boolean`|`-`|2.3.0|
 |maxCount|头像组最多显示的头像数量，多余头像将以 `+x` 的形式展示。|`number`|`-`|2.4.0|
 |maxStyle|多余头像样式。|`CSSProperties`|`-`|2.4.0|
