@@ -12,7 +12,7 @@ export default function() {
     <div id="customer">
       <Banner />
       <Customers />
-      <Footer lang={lang} />
+      <Footer lang={lang} larkGroup />
     </div>
   );
 }
