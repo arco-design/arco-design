@@ -148,6 +148,8 @@ function Tabs(baseProps: TabsProps, ref) {
         'children',
         'size',
         'type',
+        'scrollPosition',
+        'offsetAlign',
       ])}
       style={style}
       className={cs(

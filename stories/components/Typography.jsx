@@ -65,7 +65,7 @@ const data = [
 
 function App() {
   return (
-    <>
+    <div>
       <Typography.Paragraph
         style={{ fontSize: 10, width: 90, fontWeight: 500, backgroundColor: 'red' }}
         ellipsis={{ showTooltip: true }}
@@ -85,15 +85,15 @@ function App() {
         style={{ fontSize: 10, width: 90, fontWeight: 500, backgroundColor: 'red' }}
         ellipsis={{ showTooltip: true }}
       >
+        <div style={{ marginTop: '20px' }}>
+          <h3>use tableLayoutFixed</h3>
+          <Table columns={columns} data={data} style={{ width: 900 }} tableLayoutFixed />
 
-      <div style={{ marginTop: '20px' }}>
-        <h3>use tableLayoutFixed</h3>
-        <Table columns={columns} data={data} style={{ width: 900 }} tableLayoutFixed />
-
-        <h3>not use use tableLayoutFixed</h3>
-        <Table columns={columns} data={data} style={{ width: 900 }} />
-      </div>
-    </>
+          <h3>not use use tableLayoutFixed</h3>
+          <Table columns={columns} data={data} style={{ width: 900 }} />
+        </div>
+      </Typography.Paragraph>
+    </div>
   );
 }
 
