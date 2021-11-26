@@ -4,6 +4,7 @@ import { isNumber, isObject } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import { ColProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { RowContext } from './context';
 
 const defaultProps: ColProps = {
   span: 24,
@@ -12,6 +13,7 @@ const defaultProps: ColProps = {
 function Col(baseProps: ColProps, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<ColProps>(baseProps, defaultProps, componentConfig?.['Grid.Col']);
+  const { gutter, div } = useContext(RowContext);
 
   const {
     className,
@@ -19,8 +21,6 @@ function Col(baseProps: ColProps, ref) {
     children,
     span,
     offset,
-    gutter,
-    div,
     order,
     pull,
     push,

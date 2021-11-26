@@ -9,6 +9,7 @@ import ResponsiveObserve, {
 } from '../_util/responsiveObserve';
 import { GridRowGutter, RowProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { RowContext } from './context';
 
 const defaultProps: RowProps = {
   gutter: 0,
@@ -106,13 +107,9 @@ function Row(baseProps: RowProps, ref) {
       }}
       className={classNames}
     >
-      {React.Children.map(children, (child: React.ReactElement<any>) => {
-        return child
-          ? child.type && (child.type as { displayName? }).displayName === 'Col'
-            ? React.cloneElement(child, { gutter: [gutterHorizontal, gutterVertical], div })
-            : child
-          : null;
-      })}
+      <RowContext.Provider value={{ gutter: [gutterHorizontal, gutterVertical], div }}>
+        {children}
+      </RowContext.Provider>
     </div>
   );
 }

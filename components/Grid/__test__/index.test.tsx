@@ -30,3 +30,31 @@ it('render text and gutter correctly', () => {
 
   expect(grid.prop('gutter')).toBe(12);
 });
+
+it('gutter correct when row children is custom component', () => {
+  function CustomCol(props) {
+    const { children, ...rest } = props;
+    return (
+      <Col {...rest}>
+        <div>{children}</div>
+      </Col>
+    );
+  }
+
+  const grid = mount(
+    <Row gutter={12}>
+      <CustomCol span={12}>
+        <div>Col-span-12 gutter-12</div>
+      </CustomCol>
+      <CustomCol span={12}>
+        <div>Col-span-12 gutter-12</div>
+      </CustomCol>
+    </Row>
+  );
+
+  grid.find('.arco-col > div').forEach((node) => {
+    expect(node.text()).toBe('Col-span-12 gutter-12');
+  });
+
+  expect(grid.prop('gutter')).toBe(12);
+});
