@@ -67,9 +67,14 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   const isFirstRender = useIsFirstRender();
 
   const scrollContainer = useRef<HTMLElement | Window>(null);
+
   useEffect(() => {
     const container = getContainer(propScrollContainer);
     scrollContainer.current = container;
+  }, [propScrollContainer]);
+
+  const getAffixTarget = useCallback(() => {
+    return getContainer(propScrollContainer);
   }, [propScrollContainer]);
 
   useImperativeHandle(
@@ -245,7 +250,12 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   );
 
   return affix ? (
-    <Affix offsetTop={offsetTop} offsetBottom={offsetBottom} style={affixStyle}>
+    <Affix
+      offsetTop={offsetTop}
+      offsetBottom={offsetBottom}
+      style={affixStyle}
+      target={getAffixTarget}
+    >
       {content}
     </Affix>
   ) : (
