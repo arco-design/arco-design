@@ -29,7 +29,7 @@ function Demo() {
       <Space direction="vertical">
         <Image.PreviewGroup infinite>
           <Space>
-            {srcList.map((src) => <Image src={src} width={200} />)}
+            {srcList.map((src, index) => <Image key={index} src={src} width={200} />)}
           </Space>
         </Image.PreviewGroup>
       </Space>

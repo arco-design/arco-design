@@ -1,12 +1,4 @@
-import React, {
-  useEffect,
-  useImperativeHandle,
-  useLayoutEffect,
-  useRef,
-  useMemo,
-  useState,
-  ReactNode,
-} from 'react';
+import React, { useEffect, useImperativeHandle, useRef, useMemo, useState, ReactNode } from 'react';
 import {
   Key,
   getValidScrollTop,
@@ -29,6 +21,7 @@ import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
 import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
 import useForceUpdate from '../../_util/hooks/useForceUpdate';
 import ResizeObserver from '../../_util/resizeObserver';
+import useIsomorphicLayoutEffect from '../../_util/hooks/useIsomorphicLayoutEffect';
 
 export type RenderFunc<T> = (
   item: T,
@@ -434,7 +427,7 @@ const VirtualList: React.ForwardRefExoticComponent<VirtualListProps<any> &
       }
     }, [data, isVirtual]);
 
-    useLayoutEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       if (state.status === 'MEASURE_START') {
         const { scrollTop, scrollHeight, clientHeight } = refList.current;
         const scrollPtg = getScrollPercentage({

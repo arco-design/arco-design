@@ -2,7 +2,6 @@ import React, {
   useContext,
   useRef,
   useState,
-  useLayoutEffect,
   useImperativeHandle,
   CSSProperties,
   useMemo,
@@ -18,6 +17,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
+import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 
 const TextArea = (props: TextAreaProps, ref) => {
   const {
@@ -102,7 +102,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     onClear && onClear();
   };
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     resizeTextAreaHeight();
   }, [value]);
 

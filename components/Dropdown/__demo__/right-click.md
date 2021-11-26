@@ -31,7 +31,6 @@ function Demo() {
       }
     >
       <Grid.Row
-        flex
         align="center"
         justify="center"
         style={{

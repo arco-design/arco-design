@@ -27,7 +27,7 @@
     "eslint": "eslint tests/ components/ --fix --cache --quiet --ext .js,.jsx,.ts,.tsx",
     "stylelint": "stylelint 'components/**/*.less' --fix --cache",
     "test:client": "arco-scripts test:client",
-    "test:node": "arco-scripts test:node",
+    "test:node": "arco-scripts test:node --silent=false",
     "test": "cross-env NODE_ENV=test npm-run-all build:cjs test:client test:node",
     "color": "node ./scripts/compileColors.js",
     "icon": "cd icon && rimraf react-icon/ && rimraf react-icon-cjs && cd build/ && node generate.js && node genDemo.js",

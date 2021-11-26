@@ -15,7 +15,7 @@ Set `triggerElement` to customize the node that triggers the drop-down box.
 
 ```js
 import { useState } from 'react';
-import { Select, Typography } from '@arco-design/web-react';
+import { Select, Typography, Link } from '@arco-design/web-react';
 
 const Option = Select.Option;
 
@@ -32,7 +32,7 @@ const DemoSelect = () => {
         }}
         triggerElement={
           <Typography.Paragraph style={{ width: 345 }}>
-            Favorite Cities：<a href="javascript: void(0)">{text}</a>
+            Favorite Cities：<Link>{text}</Link>
           </Typography.Paragraph>
         }
       >

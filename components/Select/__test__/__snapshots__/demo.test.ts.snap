@@ -478,11 +478,11 @@ exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
     style="width:345px"
   >
     Favorite Cities：
-    <a
-      href="javascript: void(0)"
+    <span
+      class="arco-link"
     >
       None
-    </a>
+    </span>
   </div>
 </div>
 `;

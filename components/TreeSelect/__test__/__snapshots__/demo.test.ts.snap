@@ -930,11 +930,11 @@ exports[`renders TreeSelect/demo/self-input.md correctly 1`] = `
   style="width:300px"
 >
   You selected: 
-  <a
-    href="javascript: void(0)"
+  <span
+    class="arco-link"
   >
     node1
-  </a>
+  </span>
 </div>
 `;
 
