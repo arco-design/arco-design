@@ -368,7 +368,7 @@ export interface BaseQuarterPickerProps {
 export type QuarterPickerProps = BaseQuarterPickerProps & PickerProps;
 
 export type TimePickerRangeProps = Omit<TimePickerProps, 'defaultValue'> & {
-  defaultValue?: Dayjs[];
+  defaultValue?: CalendarValue[];
 };
 
 /**
