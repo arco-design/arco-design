@@ -30,7 +30,7 @@
 |onSearch|搜索补全时的回调|`(value: string) => void`|`-`|-|
 |onSelect|点击补全项时的回调|`(value: string, option: OptionInfo) => void`|`-`|-|
 |onChange|输入或者点击补全项，value 改变时的回调（仅在点击补全项时存在第二个参数）|`(value: string, option?: OptionInfo) => void`|`-`|-|
-|onPressEnter|按下回车键的回调|`(event) => void`|`-`|-|
+|onPressEnter|按下回车键的回调|`(event, activeOption?: OptionInfo) => void`|`-`|`activeOption` in 2.25.1|
 |onFocus|聚焦时的回调|`(event) => void`|`-`|-|
 |onBlur|失去焦点的回调|`(event) => void`|`-`|-|
 |virtualListProps|传递虚拟滚动属性。|`AvailableVirtualListProps`|`-`|2.2.0|

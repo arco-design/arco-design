@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 💎 Optimization
+
+- `AutoComplete`'s property `onPressEnter` adds the `activeOption` parameter to distinguish whether there is an active option in the drop-down list when the Enter key is pressed.([#223](https://github.com/arco-design/arco-design/pull/223))
+
 ## 2.15.3
 
 2021-05-21

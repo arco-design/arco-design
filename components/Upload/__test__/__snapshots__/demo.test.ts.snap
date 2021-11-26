@@ -323,7 +323,6 @@ Array [
     >
       <div
         class="arco-upload-trigger-drag"
-        draggable="false"
       >
         <svg
           class="arco-icon arco-icon-plus"

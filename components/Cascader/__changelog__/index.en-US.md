@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 BugFix
+
+- Fix the problem that the value of the `cascader` component in the controlled mode is not changed, and the selected state of the option is still changed.([#234](https://github.com/arco-design/arco-design/pull/234))
+
 ## 2.23.4
 
 2021-10-26

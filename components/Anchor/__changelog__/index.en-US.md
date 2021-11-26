@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 BugFix
+
+- Fix the bug that the scroll container is not passed to the `Affix` component when the `Anchor` component is set to `affix`.([#235](https://github.com/arco-design/arco-design/pull/235))
+
 ## 2.22.0
 
 2021-09-10

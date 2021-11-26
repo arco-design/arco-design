@@ -1,8 +1,16 @@
+## 2.25.1
+
+2021-11-26
+
+### 💎 Optimization
+
+- The `DatePicker.RangePicker` component `showTime.defaultValue` supports passing in `number[], string[], Date[]` to avoid errors caused by inconsistent dayjs instances.([#226](https://github.com/arco-design/arco-design/pull/226))
+
 ## 2.24.0
 
 2021-11-05
 
-### 💎 Performance
+### 💎 Optimization
 
 - If the value of the `DatePicker` component is `string` and it's dayjs value parsed as Invalid Date, will fallback format to "YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
 

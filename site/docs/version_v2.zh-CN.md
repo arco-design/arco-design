@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.25.1
+
+2021-11-26
+
+### 💎 优化
+
+- `DatePicker.RangePicker` 组件 `showTime.defaultValue` 支持传入 `number[], string[], Date[]`，避免出现 dayjs 实例不一致引发的报错。([#226](https://github.com/arco-design/arco-design/pull/226))
+- `Grid.Row` 使用 context 传递 `gutter`，避免自定义 `Grid.Col` 时不能正确接收参数。([#224](https://github.com/arco-design/arco-design/pull/224))
+- `AutoComplete` 组件 `onPressEnter` 回调新增 `activeOption` 参数以区分回车键按下时下拉列表是否存在激活的选项。([#223](https://github.com/arco-design/arco-design/pull/223))
+
+### 🐛 问题修复
+
+- 修复 `Anchor` 组件设置 `affix`时，滚动容器未传递到 `Affix` 组件上的 bug。([#235](https://github.com/arco-design/arco-design/pull/235))
+- 修复受控模式下 `cascader` 组件的 `value` 未改变，选项的选中状态仍然改变了的问题 。([#234](https://github.com/arco-design/arco-design/pull/234))
+- 修复 `Upload` 组件在拖拽移出时，上传节点仍然显示高亮样式的 bug。([#234](https://github.com/arco-design/arco-design/pull/234))
+- 修复 `Tree` 组件在展开后没有子节点场景下，无法再收起的 bug。([#230](https://github.com/arco-design/arco-design/pull/230))
+- 修复 `Tabs` 组件透传 `scrollPosition` 到 dom 的 warning。([#225](https://github.com/arco-design/arco-design/pull/225))
+- 修复 `Avatar.Group` 未设置 `size` 属性时，头像间距未设置的样式问题。([#220](https://github.com/arco-design/arco-design/pull/220))
+- 修复 `Tabs` 组件 的 `card` 类型头部高度不对的问题。([#220](https://github.com/arco-design/arco-design/pull/220))
+
 ## 2.25.0
 
 2021-11-19
@@ -55,7 +75,7 @@ changelog: true
 
 2021-11-05
 
-### 💎 性能优化
+### 💎 优化
 
 - `DatePicker` 组件如果值是 `string` 类型，且跟 format 不一致导致解析为 Invalid Date 时，会兜底尝试 format="YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
 

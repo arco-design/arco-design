@@ -1,3 +1,12 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 BugFix
+
+- Fix the warning of `Tabs` component pass `scrollPosition` to dom.([#225](https://github.com/arco-design/arco-design/pull/225))
+- Fix the problem that the head height of the `Tabs` component of the `card` type is incorrect.([#220](https://github.com/arco-design/arco-design/pull/220))
+
 ## 2.23.0
 
 2021-09-27

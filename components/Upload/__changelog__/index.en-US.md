@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 BugFix
+
+- Fix the bug that the upload node still shows the highlighted style when the `Upload` component is dragged out.([#234](https://github.com/arco-design/arco-design/pull/234))
+
 ## 2.23.0
 
 2021-09-27

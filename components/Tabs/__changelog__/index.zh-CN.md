@@ -1,3 +1,12 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 问题修复
+
+- 修复 `Tabs` 组件透传 `scrollPosition` 到 dom 的 warning。([#225](https://github.com/arco-design/arco-design/pull/225))
+- 修复 `Tabs` 组件 的 `card` 类型头部高度不对的问题。([#220](https://github.com/arco-design/arco-design/pull/220))
+
 ## 2.23.0
 
 2021-09-27

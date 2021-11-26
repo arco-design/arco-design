@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 BugFix
+
+- Fix the style problem that the spacing between avatars is not set when the `size` property is not set for the avatar group.([#220](https://github.com/arco-design/arco-design/pull/220))
+
 ## 2.24.0
 
 2021-11-05

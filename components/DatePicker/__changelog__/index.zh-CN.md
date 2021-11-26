@@ -1,8 +1,16 @@
+## 2.25.1
+
+2021-11-26
+
+### 💎 优化
+
+- `DatePicker.RangePicker` 组件 `showTime.defaultValue` 支持传入 `number[], string[], Date[]`，避免出现 dayjs 实例不一致引发的报错。([#226](https://github.com/arco-design/arco-design/pull/226))
+
 ## 2.24.0
 
 2021-11-05
 
-### 💎 性能优化
+### 💎 优化
 
 - `DatePicker` 组件如果值是 `string` 类型，且跟 format 不一致导致解析为 Invalid Date 时，会兜底尝试 format="YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
 

@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 🐛 BugFix
+
+- Fix the bug that the `Tree` component can no longer be collapsed when there is no child node after expansion.([#230](https://github.com/arco-design/arco-design/pull/230))
+
 ## 2.23.1
 
 2021-10-15

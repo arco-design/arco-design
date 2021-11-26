@@ -30,7 +30,7 @@ An input box or custom input control, with enhanced automatic completion functio
 |onSearch|Callback when searching items|`(value: string) => void`|`-`|-|
 |onSelect|Callback when an option is selected.|`(value: string, option: OptionInfo) => void`|`-`|-|
 |onChange|Callback when an option is selected or input value changes|`(value: string, option?: OptionInfo) => void`|`-`|-|
-|onPressEnter|Callback when Enter is pressed|`(event) => void`|`-`|-|
+|onPressEnter|Callback when Enter is pressed|`(event, activeOption?: OptionInfo) => void`|`-`|`activeOption` in 2.25.1|
 |onFocus|Callback when component gets focus|`(event) => void`|`-`|-|
 |onBlur|Callback when component is blurred|`(event) => void`|`-`|-|
 |virtualListProps|Virtual scroll properties.|`AvailableVirtualListProps`|`-`|2.2.0|

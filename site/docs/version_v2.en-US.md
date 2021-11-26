@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.25.1
+
+2021-11-26
+
+### 💎 Optimization
+
+- The `DatePicker.RangePicker` component `showTime.defaultValue` supports passing in `number[], string[], Date[]` to avoid errors caused by inconsistent dayjs instances.([#226](https://github.com/arco-design/arco-design/pull/226))
+- `Grid.Row` uses context to pass `gutter` to `Grid.Col` to avoid incorrectly receiving parameters when customizing `Grid.Col`.([#224](https://github.com/arco-design/arco-design/pull/224))
+- `AutoComplete`'s property `onPressEnter` adds the `activeOption` parameter to distinguish whether there is an active option in the drop-down list when the Enter key is pressed.([#223](https://github.com/arco-design/arco-design/pull/223))
+
+### 🐛 BugFix
+
+- Fix the bug that the scroll container is not passed to the `Affix` component when the `Anchor` component is set to `affix`.([#235](https://github.com/arco-design/arco-design/pull/235))
+- Fix the problem that the value of the `cascader` component in the controlled mode is not changed, and the selected state of the option is still changed.([#234](https://github.com/arco-design/arco-design/pull/234))
+- Fix the bug that the upload node still shows the highlighted style when the `Upload` component is dragged out.([#234](https://github.com/arco-design/arco-design/pull/234))
+- Fix the bug that the `Tree` component can no longer be collapsed when there is no child node after expansion.([#230](https://github.com/arco-design/arco-design/pull/230))
+- Fix the warning of `Tabs` component pass `scrollPosition` to dom.([#225](https://github.com/arco-design/arco-design/pull/225))
+- Fix the style problem that the spacing between avatars is not set when the `size` property is not set for the avatar group.([#220](https://github.com/arco-design/arco-design/pull/220))
+- Fix the problem that the head height of the `Tabs` component of the `card` type is incorrect.([#220](https://github.com/arco-design/arco-design/pull/220))
+
 ## 2.25.0
 
 2021-11-19
@@ -55,7 +75,7 @@ changelog: true
 
 2021-11-05
 
-### 💎 Performance
+### 💎 Optimization
 
 - If the value of the `DatePicker` component is `string` and it's dayjs value parsed as Invalid Date, will fallback format to "YYYY-MM-DD"([#113](https://github.com/arco-design/arco-design/pull/113))
 

@@ -1,3 +1,11 @@
+## 2.25.1
+
+2021-11-26
+
+### 💎 Optimization
+
+- `Grid.Row` uses context to pass `gutter` to `Grid.Col` to avoid incorrectly receiving parameters when customizing `Grid.Col`.([#224](https://github.com/arco-design/arco-design/pull/224))
+
 ## 2.20.0
 
 2021-07-30
