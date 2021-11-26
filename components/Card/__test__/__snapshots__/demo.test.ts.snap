@@ -1282,7 +1282,6 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
   >
     <div
       class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-      scrollposition="auto"
       style="max-width:350px;margin:-15px"
     >
       <div

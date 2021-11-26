@@ -3,7 +3,6 @@
 exports[`renders Tabs/demo/basic.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -87,7 +86,6 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
 exports[`renders Tabs/demo/controled.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -171,7 +169,6 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
 exports[`renders Tabs/demo/delete.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-card-gutter arco-tabs-top arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-card-gutter"
@@ -406,7 +403,6 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
 exports[`renders Tabs/demo/drag.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -485,7 +481,6 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
 exports[`renders Tabs/demo/extra.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -581,7 +576,6 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
 exports[`renders Tabs/demo/icon.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -718,7 +712,6 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
 exports[`renders Tabs/demo/inline.md correctly 1`] = `
 <div
   class="arco-tabs arco-tabs-vertical arco-tabs-line arco-tabs-left arco-tabs-size-default"
-  scrollposition="auto"
 >
   <div
     class="arco-tabs-header-nav arco-tabs-header-nav-vertical arco-tabs-header-nav-left arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -783,7 +776,6 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
           <div>
             <div
               class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-              scrollposition="auto"
             >
               <div
                 class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -942,7 +934,6 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-    scrollposition="auto"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -1028,7 +1019,6 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
 <div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-    scrollposition="auto"
   >
     <div>
       <div />
@@ -1152,7 +1142,6 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-    scrollposition="auto"
     style="height:200px"
   >
     <div
@@ -1670,7 +1659,6 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-    scrollposition="auto"
     style="height:200px"
   >
     <div
@@ -2313,7 +2301,6 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-    scrollposition="auto"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -2543,7 +2530,6 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-    scrollposition="auto"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
