@@ -126,15 +126,14 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   }, [popupVisible]);
 
   useUpdate(() => {
-    setValue((stateValue) => {
+    if ('value' in props) {
       const newValue = formatValue(props.value, isMultiple);
       if (!isEqualWith(stateValue, newValue)) {
         store.setNodeCheckedByValue(newValue);
-        return newValue;
+        setValue(newValue);
       }
-      return stateValue;
-    });
-  }, [props.value, isMultiple]);
+    }
+  }, [props.value, stateValue, isMultiple]);
 
   useImperativeHandle(ref, () => selectRef.current, []);
 
