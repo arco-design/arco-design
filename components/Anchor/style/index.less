@@ -25,7 +25,7 @@
     margin-left: @anchor-line-margin-right - @anchor-title-padding-horizontal;
     position: relative;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       height: 100%;
@@ -61,7 +61,6 @@
 
     &-active > &-title {
       transition: all @transition-duration-1 @transition-timing-function-linear;
-
       color: @anchor-color-title_active;
       font-weight: @anchor-font-weight-title_active;
     }
@@ -74,6 +73,7 @@
   // Lineless
   &-lineless &-list {
     margin-left: 0;
+
     &::before {
       display: none;
     }

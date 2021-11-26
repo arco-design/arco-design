@@ -472,14 +472,14 @@
       }
     }
 
-    &.@{tabs-prefix-cls}-header-nav-horizontal .@{tabs-prefix-cls}-header-title:not(:first-of-type) {
+    &.@{tabs-prefix-cls}-header-nav-horizontal
+      .@{tabs-prefix-cls}-header-title:not(:first-of-type) {
       margin-left: @tabs-capsule-margin-title-horizontal;
 
       &::before {
         position: absolute;
         top: 50%;
-        left: -(@tabs-capsule-margin-title-horizontal / 2) - (@tabs-capsule-size-separator-width /
-                2);
+        left: -(@tabs-capsule-margin-title-horizontal / 2) - (@tabs-capsule-size-separator-width / 2);
         transform: translateY(-50%);
         display: block;
         height: @tabs-capsule-size-separator-height;
@@ -618,6 +618,7 @@
           [];
         padding-bottom: $padding-top;
       }
+
       .@{tabs-prefix-cls}-header-extra {
         line-height: @@card-height;
         font-size: @@card-font-size;

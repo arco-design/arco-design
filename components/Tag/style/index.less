@@ -3,7 +3,8 @@
 
 @tag-prefix-cls: ~'@{prefix}-tag';
 
-@colors: red, orangered, orange, gold, lime, green, cyan, blue, arcoblue, purple, pinkpurple, magenta, gray;
+@colors: red, orangered, orange, gold, lime, green, cyan, blue, arcoblue, purple, pinkpurple,
+  magenta, gray;
 
 .@{tag-prefix-cls} {
   display: inline-flex;
@@ -123,7 +124,7 @@
 
 @{arco-theme-tag}[arco-theme='dark'] {
   .@{tag-prefix-cls}-checked {
-    color: rgba(255, 255, 255, 0.9)
+    color: rgba(255, 255, 255, 0.9);
   }
 
   each(@colors, {

@@ -27,6 +27,7 @@
     top: 0;
     left: 0;
   }
+
   &-mask {
     background-color: @image-preview-color-mask-bg;
   }
@@ -36,7 +37,7 @@
     height: 100%;
     text-align: center;
 
-    &:before {
+    &::before {
       content: '';
       width: 0;
       height: 100%;
@@ -213,6 +214,7 @@
       cursor: not-allowed;
       background-color: @image-preview-arrow-color-bg_disabled;
       color: @image-preview-arrow-color-icon_disabled;
+
       > svg {
         color: @image-preview-arrow-color-icon_disabled;
       }

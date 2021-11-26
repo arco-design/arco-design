@@ -33,7 +33,8 @@
     "icon": "cd icon && rimraf react-icon/ && rimraf react-icon-cjs && cd build/ && node generate.js && node genDemo.js",
     "format": "prettier --config .prettierrc --write \"{stories,tests,components}/**/*.{js,jsx,ts,tsx}\"",
     "docgen": "arco-scripts docgen",
-    "precommit": "./scripts/pre_commit.sh"
+    "prepare": "husky install",
+    "pre-commit": "pretty-quick --staged && npm run eslint && npm run stylelint"
   },
   "keywords": [
     "arco",
@@ -83,21 +84,22 @@
     "eslint-plugin-tsdoc": "^0.2.14",
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",
-    "husky": "^3.1.0",
+    "husky": "^7.0.4",
     "less": "^3.12.2",
-    "lint-staged": "^9.4.2",
     "moment": "^2.26.0",
     "moment-timezone": "^0.5.31",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.2",
-    "prettier": "^1.18.2",
+    "prettier": "^2.5.0",
+    "pretty-quick": "^3.1.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-test-renderer": "^16.7.0",
     "rimraf": "^3.0.2",
     "sinon": "^9.0.1",
-    "stylelint": "^9.9.0",
-    "stylelint-config-standard": "^18.2.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
     "svgo": "^2.3.0",
     "typescript": "^4.4.3"
   },
@@ -114,22 +116,6 @@
     "resize-observer-polyfill": "^1.5.1",
     "scroll-into-view-if-needed": "2.2.20",
     "shallowequal": "^1.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn eslint",
-      "yarn precommit",
-      "git add"
-    ],
-    "*.{css, less}": [
-      "yarn stylelint",
-      "git add"
-    ]
   },
   "sideEffects": [
     "dist/**/*",

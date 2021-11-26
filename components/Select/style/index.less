@@ -183,7 +183,7 @@
         .text-ellipsis();
 
         // 修复当value为空字符串时，造成select外层div的高度多余了4px的样式问题。
-        &:after {
+        &::after {
           content: '.';
           font-size: 0;
           line-height: 0;
@@ -203,6 +203,7 @@
         padding: 0 @select-multi-padding;
         line-height: 0;
       }
+
       .@{prefixCls}-view-with-prefix {
         padding-left: @select-signal-size-default-padding;
       }

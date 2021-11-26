@@ -57,10 +57,10 @@ function Transfer(baseProps: TransferProps, ref) {
   });
 
   // 严格控制 TransferList 的 dataSource 的引用地址改变
-  const [sourceListDataSource, targetListDataSource] = useMemo(() => [[], []], [
-    dataSource,
-    targetKeys,
-  ]);
+  const [sourceListDataSource, targetListDataSource] = useMemo(
+    () => [[], []],
+    [dataSource, targetKeys]
+  );
 
   const [sourceInfo, targetInfo] = useMemo(() => {
     type ListInfo = { selectedValidKeys: TransferItem['key'][] } & Pick<

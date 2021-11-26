@@ -65,9 +65,8 @@ function Preview(props: ImagePreviewProps, ref) {
     escToExit = true,
   } = props;
 
-  const { previewGroup, previewUrlMap, currentId, setCurrentId, infinite } = useContext(
-    PreviewGroupContext
-  );
+  const { previewGroup, previewUrlMap, currentId, setCurrentId, infinite } =
+    useContext(PreviewGroupContext);
   const mergedSrc = previewGroup ? previewUrlMap.get(currentId) : src;
   const previewUrlIdList = Array.from(previewUrlMap.keys());
   const currentIndex = previewUrlIdList.indexOf(currentId);

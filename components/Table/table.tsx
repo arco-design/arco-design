@@ -467,9 +467,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const setPositionClassNames = useCallback(
     throttle(() => {
       const table = refTable.current as HTMLElement;
-      const tbody = (fixedHeader
-        ? refTableBody.current
-        : refTableNF.current && refTableNF.current.parentNode) as HTMLElement;
+      const tbody = (
+        fixedHeader ? refTableBody.current : refTableNF.current && refTableNF.current.parentNode
+      ) as HTMLElement;
       if (tbody) {
         const alignLeft = tbody.scrollLeft === 0;
         // const alignRight = tbody.scrollLeft + tbody.clientWidth >= tbody.scrollWidth;
