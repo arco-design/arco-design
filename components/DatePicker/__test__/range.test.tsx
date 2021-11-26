@@ -28,11 +28,7 @@ function checkTime(component, dateIndex, hour, minute, second) {
 
 describe('RangePicker', () => {
   it('control mode', () => {
-    const component = mount(
-      <RangePicker
-        showTime={{ defaultValue: [dayjs('00:00:00', 'HH:mm:ss'), dayjs('01:02:03', 'HH:mm:ss')] }}
-      />
-    );
+    const component = mount(<RangePicker showTime={{ defaultValue: ['00:00:00', '01:02:03'] }} />);
 
     component.simulate('click');
 

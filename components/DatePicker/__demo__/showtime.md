@@ -15,7 +15,6 @@ Use `showTime` to select a date with time.
 
 ```js
 import { DatePicker } from '@arco-design/web-react';
-import dayjs from 'dayjs';
 
 const { RangePicker } = DatePicker;
 const style = { width: 220, margin: '0 24px 24px 0' };
@@ -36,7 +35,7 @@ ReactDOM.render(
   <div>
     <DatePicker
       style={style}
-      showTime={{ defaultValue: dayjs('09:09:06', 'HH:mm:ss') }}
+      showTime={{ defaultValue: '04:05:06'}}
       format="YYYY-MM-DD HH:mm:ss"
       onChange={onChange}
       onSelect={onSelect}
@@ -52,7 +51,7 @@ ReactDOM.render(
     />
     <RangePicker
       style={{ ...style, width: 360 }}
-      showTime={{ defaultValue: [dayjs('00:00:00', 'HH:mm:ss'), dayjs('09:09:06', 'HH:mm:ss')] }}
+      showTime={{ defaultValue: ['00:00', '04:05'], format: 'HH:mm' }}
       format="YYYY-MM-DD HH:mm"
       onChange={onChange}
       onSelect={onSelect}
