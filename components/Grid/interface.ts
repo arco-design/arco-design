@@ -56,8 +56,6 @@ export interface ColProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNam
    * @en The number of cells to offset Col from the left
    */
   offset?: number;
-  gutter?: [number, number];
-  div?: boolean;
   /**
    * @zh 对元素进行排序
    * @en Raster order
