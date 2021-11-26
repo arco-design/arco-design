@@ -89,3 +89,9 @@ type FieldNamesType = {
   checkable?: string;
 };
 ```
+
+## 常见问题
+
+1. `Tree` 设置了`autoExpandParent=true`，但没有默认展开全部节点？
+
+  `autoExpandParent` 仅在 `Tree` 第一次挂载的时候生效。如果数据是从远程获取，可以在数据获取完成后，再去渲染 `Tree` 组件。
