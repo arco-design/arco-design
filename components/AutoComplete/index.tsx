@@ -3,7 +3,7 @@ import cs from '../_util/classNames';
 import Input from '../Input';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
-import Select from '../Select/select';
+import Select, { SelectHandle } from '../Select/select';
 import { OptionInfo, SelectProps } from '../Select/interface';
 import { isSelectOption, isSelectOptGroup } from '../Select/utils';
 import { Enter, Esc } from '../_util/keycode';
@@ -63,7 +63,7 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
   const [isFocused, setIsFocused] = useState(false);
 
   const refInput = useRef(null);
-  const refSelect = useRef(null);
+  const refSelect = useRef<SelectHandle>(null);
 
   const prefixCls = getPrefixCls('autocomplete');
   const filterOption =
@@ -139,9 +139,17 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
     onKeyDown: (event) => {
       const keyCode = event.keyCode || event.which;
       refSelect.current && refSelect.current.hotkeyHandler(event);
-      if (keyCode === Enter.code) {
-        onPressEnter && onPressEnter(event);
+
+      if (keyCode === Enter.code && onPressEnter) {
+        let activeOption;
+        if (refSelect.current) {
+          activeOption = refSelect.current.getOptionInfoByValue(
+            refSelect.current.activeOptionValue
+          );
+        }
+        onPressEnter(event, activeOption);
       }
+
       if (keyCode === Esc.code) {
         refInput.current && refInput.current.blur && refInput.current.blur();
       }

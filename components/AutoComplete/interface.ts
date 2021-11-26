@@ -94,8 +94,9 @@ export interface AutoCompleteProps extends PartialSelectProps {
   /**
    * @zh 按下回车键的回调
    * @en Callback when Enter is pressed
+   * @version `activeOption` in 2.25.1
    */
-  onPressEnter?: (event) => void;
+  onPressEnter?: (event, activeOption?: OptionInfo) => void;
   /**
    * @zh 聚焦时的回调
    * @en Callback when component gets focus
