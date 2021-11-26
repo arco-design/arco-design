@@ -84,6 +84,14 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
   let realHeight = treeContext.virtualListProps?.height;
   realHeight = isNumber(realHeight) ? realHeight : 0;
 
+  useEffect(() => {
+    // node set loadingMore but has no child nodes.
+    // Animation will not be triggered and needs to be removed manually
+    if (currentExpandKeys.indexOf(props._key) > -1 && filtedData.length === 0) {
+      treeContext.onExpandEnd(props._key);
+    }
+  }, [filtedData, currentExpandKeys]);
+
   return (
     <CSSTransition
       in={currentExpandKeys.indexOf(props._key) > -1 && filtedData.length > 0}
@@ -99,7 +107,6 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
       }}
       onEntering={(e) => {
         const scrollHeight = e.scrollHeight;
-
         e.style.height = expanded ? `${Math.min(realHeight || scrollHeight, scrollHeight)}px` : 0;
       }}
       onEntered={(e) => {
