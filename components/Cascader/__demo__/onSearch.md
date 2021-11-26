@@ -14,10 +14,10 @@ title:
 Customize the search logic by `onSearch`
 
 ```js
-import { Cascader, Divider, Space } from '@arco-design/web-react';
+import { Cascader, Divider, Spin, Space } from '@arco-design/web-react';
 
 const genOptions = (keyword) => {
-  return [
+  return !keyword ? [] : [
     {
       label: keyword,
       value: keyword + '-value',
@@ -37,10 +37,13 @@ const genOptions = (keyword) => {
 
 function Demo() {
   const [options, setOptions] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   const handleSearch = (inputValue) => {
+    setLoading(true)
     setTimeout(() => {
       setOptions(genOptions(inputValue));
+      setLoading(false)
     }, 200);
   };
 
@@ -54,6 +57,10 @@ function Demo() {
         onSearch={handleSearch}
         onChange={(_, a) => {
           console.log(a);
+        }}
+        loading={loading}
+        dropdownRender={(menu) => {
+          return loading ? <div style={{height: 100, width: 300, textAlign: 'center', lineHeight: '100px'}}><Spin /></div> : menu
         }}
       />
     </Space>
