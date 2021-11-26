@@ -366,7 +366,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (typeof shortcut.value === 'function' && isDayjs(shortcut.value())) {
-      const time = shortcut.value() as Dayjs;
+      const time = getDayjsValue(shortcut.value(), format) as Dayjs;
       setValue(time);
       onHandleChange(time);
       setOpen(false);
