@@ -1,4 +1,4 @@
-import React, { useState, useContext, PropsWithChildren, useRef } from 'react';
+import React, { useState, useContext, PropsWithChildren, useEffect } from 'react';
 import cs from '../_util/classNames';
 import Button from '../Button';
 import IconUpload from '../../icon/react-icon/IconUpload';
@@ -6,7 +6,6 @@ import IconPlus from '../../icon/react-icon/IconPlus';
 import { TriggerProps } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import { isArray } from '../_util/is';
-import { contains } from '../_util/dom';
 
 const isAcceptFile = (file, accept?: string | string[]): boolean => {
   if (accept && file) {
@@ -80,36 +79,47 @@ const loopDirectory = (items: DataTransferItemList, accept, callback) => {
       (item: DataTransferItem) => item.webkitGetAsEntry && _loopDirectory(item.webkitGetAsEntry())
     );
 };
+
 const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
   const { locale } = useContext(ConfigContext);
-  const [isDraging, setIsDraging] = useState(false);
-  const nodeRef = useRef();
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragEnterCount, setDragEnterCount] = useState(0); // the number of times ondragenter was triggered
+
   const { tip, children, disabled, drag, listType, prefixCls, accept, multiple } = props;
 
   const nodeProps = {
     disabled,
   };
 
-  const onDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    if (!disabled && !isDraging) {
-      setIsDraging(true);
-    }
-  };
+  useEffect(() => {
+    setDragEnterCount(0);
+  }, [isDragging]);
 
-  if (children === null) {
-    return null;
-  }
-
-  return (
+  return children === null ? null : (
     <div
-      ref={nodeRef}
       className={`${prefixCls}-trigger`}
       onClick={disabled ? undefined : props.onClick}
+      onDragEnter={() => {
+        setDragEnterCount(dragEnterCount + 1);
+      }}
+      onDragLeave={(e: React.DragEvent) => {
+        e.preventDefault();
+        /**  When dragging into a child element, it will trigger the dragleave and dragenter of the parent node.
+         * Record the number of triggers of dragenter, and subtract 1 each time dragleave.
+         * When dragEnterCount is equal to 0,  it means that the mouse has left the current node, then the drag state is cancelled.
+         * https://github.com/arco-design/arco-design/issues/210
+         */
+
+        if (dragEnterCount === 0) {
+          setIsDragging(false);
+        } else {
+          setDragEnterCount(dragEnterCount - 1);
+        }
+      }}
       onDrop={(e: React.DragEvent) => {
         e.preventDefault();
         if (!disabled) {
-          setIsDraging(false);
+          setIsDragging(false);
           if (props.directory) {
             loopDirectory(e.dataTransfer.items, accept, (file) => {
               props.onDragFiles && props.onDragFiles([file]);
@@ -120,17 +130,15 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
           }
         }
       }}
-      onDragLeave={(e: React.DragEvent) => {
+      onDragOver={(e: React.DragEvent) => {
         e.preventDefault();
-
-        if (!nodeRef.current || !contains(nodeRef.current, e.target)) {
-          setIsDraging(false);
+        if (!disabled && !isDragging) {
+          setIsDragging(true);
         }
       }}
-      onDragOver={onDragOver}
     >
       {React.isValidElement(children) ? (
-        <div className={cs({ [`${prefixCls}-trigger-custom-active`]: isDraging })}>
+        <div className={cs({ [`${prefixCls}-trigger-custom-active`]: isDragging })}>
           {React.cloneElement(children, nodeProps)}
         </div>
       ) : listType === 'picture-card' ? (
@@ -144,14 +152,13 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
         </div>
       ) : drag ? (
         <div
-          draggable={false}
           className={cs(`${prefixCls}-trigger-drag`, {
-            [`${prefixCls}-trigger-drag-active`]: isDraging,
+            [`${prefixCls}-trigger-drag-active`]: isDragging,
           })}
         >
           <IconPlus />
           <p className={`${prefixCls}-trigger-drag-text`}>
-            {isDraging ? locale.Upload.dragHover : locale.Upload.drag}
+            {isDragging ? locale.Upload.dragHover : locale.Upload.drag}
           </p>
           {tip && <div className={`${prefixCls}-trigger-tip`}>{tip}</div>}
         </div>
