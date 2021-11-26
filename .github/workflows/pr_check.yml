@@ -25,6 +25,9 @@ jobs:
           build-script: 'prepublishOnly'
           pattern: './{dist,es,lib,icon}/**/*.{js,css}'
 
+      - name: build:cjs
+        run: yarn run build:cjs
+
       - name: mock-time
         uses: szenius/set-timezone@v1.0
         with:
@@ -33,7 +36,7 @@ jobs:
           timezoneWindows: 'Singapore Standard Time'
 
       - name: test
-        run: npm run test
+        run: yarn run test
       # - name: report coverage
       #   uses: mattallty/jest-github-action@v1
       #   env:
