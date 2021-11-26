@@ -44,3 +44,4 @@
 |onMovingStart|开始拖拽之前的回调|`() => void`|`-`|-|
 |onMoving|拖拽中的回调|`(e: MouseEvent, size: number \| string) => void`|`-`|`size` in `2.14.0`|
 |onMovingEnd|拖拽结束之后的回调|`() => void`|`-`|-|
+|onPaneResize|面板大小变化的回调|`(paneContainers: HTMLElement[]) => void`|`-`|2.25.0|

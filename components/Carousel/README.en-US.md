@@ -25,6 +25,7 @@ Carousel is used to display multiple contents such as pictures, videos, or embed
 |direction|The direction of the slide movement|`'horizontal' \| 'vertical'`|`horizontal`|-|
 |showArrow|When to show the switch trigger|`'always' \| 'hover' \| 'never'`|`always`|-|
 |arrowClassName|The additional css class for switch trigger|`string \| string[]`|`-`|-|
+|icons|Customize icons|`{prev?: ReactNode;next?: ReactNode;}`|`-`|2.25.0|
 |indicatorType|Type of indicator|`'line' \| 'dot' \| 'slider' \| 'never'`|`dot`|-|
 |indicatorPosition|Position of indication|`'bottom' \| 'top' \| 'left' \| 'right' \| 'outer'`|`bottom`|-|
 |indicatorClassName|The additional css class for indicator|`string \| string[]`|`-`|-|

@@ -24,13 +24,14 @@ An input box which will display your input as tags.
 |readOnly|Whether the input is read only|`boolean`|`-`|-|
 |allowClear|Whether to allow clear input value|`boolean`|`-`|-|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
+|saveOnBlur|Whether to automatically store the text entering when blur InputTag|`boolean`|`-`|2.25.0|
 |defaultValue|To set default value|`T[]`|`-`|-|
 |value|To set value|`T[]`|`-`|-|
 |inputValue|To set input value|`string`|`-`|-|
 |labelInValue|If true, the incoming and callback values will be `{label: '', value: '')` format|`boolean`|`-`|-|
 |suffix|The suffix for the InputTag|`React.ReactNode`|`-`|-|
 |icon|Custom icons|`{ removeIcon?: ReactNode; clearIcon?: ReactNode }`|`-`|-|
-|validate|Function to check user's input, which is triggered when `Enter` is pressed|`(inputValue: string, values: T[]) => boolean`|`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|-|
+|validate|Function to check user's input, which is triggered when `Enter` is pressed|`(inputValue: string, values: T[]) => boolean \| Promise<boolean>`|`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
 |onRemove|Callback when a tag is removed|`(value: T, index: number, event) => void`|`-`|-|
 |onChange|Callback when value changes|`(value: T[]) => void`|`-`|-|

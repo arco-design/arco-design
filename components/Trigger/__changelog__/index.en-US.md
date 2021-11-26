@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- `Trigger` add `escToClose` to set whether to allow close the popup by pressing `ESC`, default value is `false`.([#167](https://github.com/arco-design/arco-design/pull/167))
+
 ## 2.24.1
 
 2021-11-12

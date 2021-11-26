@@ -1,3 +1,12 @@
+## 2.25.0
+
+2021-11-19
+
+### 🐛 BugFix
+
+- `Progress`  gix the bug that the'trailColor 'attribute does not take effect on the circular progress bar and the step progress bar.([#175](https://github.com/arco-design/arco-design/pull/175))
+- Fix the bug that the steps of the `Progress` component are displayed incorrectly.([#170](https://github.com/arco-design/arco-design/pull/170))
+
 ## 2.24.0
 
 2021-11-05

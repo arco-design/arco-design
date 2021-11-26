@@ -1,3 +1,11 @@
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- `Popconfirm` allow close confirmation box by pressing `ESC`.([#167](https://github.com/arco-design/arco-design/pull/167))
+
 ## 2.20.0
 
 2021-07-30

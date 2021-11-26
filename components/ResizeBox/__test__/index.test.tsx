@@ -220,4 +220,36 @@ describe('ResizeBox', () => {
     );
     expect(wrapper.find('.arco-resizebox').hasClass('arco-layout-sider')).toBeTruthy();
   });
+
+  it('trigger onPaneResize when pane resized', () => {
+    const mockPaneResize = jest.fn();
+
+    const wrapper = mount(
+      <ResizeBox.Split
+        style={{ height: 200, width: 500 }}
+        panes={[
+          <Typography.Paragraph key="1">Right</Typography.Paragraph>,
+          <Typography.Paragraph key="2">Left</Typography.Paragraph>,
+        ]}
+        onPaneResize={mockPaneResize}
+      />
+    );
+
+    expect(mockPaneResize).toHaveBeenCalledTimes(1);
+
+    const map: any = {};
+    window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+      map[event] = cb;
+    });
+
+    act(() => {
+      wrapper.find('ResizeTrigger').simulate('mousedown', { pageX: 100, pageY: 300 });
+      map.mousemove({
+        pageX: 200,
+        pageY: 300,
+      });
+    });
+
+    expect(mockPaneResize).toHaveBeenCalledTimes(2);
+  });
 });

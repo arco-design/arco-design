@@ -31,7 +31,7 @@ A component to organize, arrange, and display a list of options.
 |defaultOpenKeys|The initially opened menu item's key array|`string[]`|`-`|-|
 |selectedKeys|Selected menu item's key array|`string[]`|`-`|-|
 |openKeys|Opened menu item's key array|`string[]`|`-`|-|
-|onClickMenuItem|Click menu item callback|`(key: string, event, keyPath: string[]) => void`|`-`|`event` in 2.15.0, `keyPath` in 2.19.0|
+|onClickMenuItem|Click menu item callback|`(key: string, event, keyPath: string[]) => any`|`-`|`event` in 2.15.0, `keyPath` in 2.19.0|
 |onClickSubMenu|Callback when click sub menu|`(key: string, openKeys: string[], keyPath: string[]) => void`|`-`|`keyPath` in 2.19.0|
 |onCollapseChange|Callback when menu collapse status changed|`(collapse: boolean) => void`|`-`|-|
 |scrollConfig|Scroll to the configuration item in the visible area and receive all the parameters of[scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)|`{ [key: string]: any }`|`-`|-|

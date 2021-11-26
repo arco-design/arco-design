@@ -1,6 +1,6 @@
 ---
-order: 4
-title: 
+order: 5
+title:
   zh-CN: 自定义标签节点
   en-US: Render tag
 ---
@@ -35,17 +35,13 @@ function tagRender(props) {
 }
 
 ReactDOM.render(
-  <div>
-    <div style={{ marginBottom: 20 }}>
-      <InputTag
-        allowClear
-        placeholder="Please input"
-        defaultValue={options}
-        renderTag={tagRender}
-        style={{ maxWidth: 350, marginRight: 20 }}
-      />
-    </div>
-  </div>,
+  <InputTag
+    allowClear
+    placeholder="Please input"
+    defaultValue={options}
+    renderTag={tagRender}
+    style={{ maxWidth: 350 }}
+  />,
   CONTAINER
 );
 ```

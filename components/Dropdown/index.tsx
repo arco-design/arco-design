@@ -63,16 +63,24 @@ function Dropdown(baseProps: DropdownProps, _) {
           inDropdown: true,
           selectable: false,
           onClickMenuItem: (key, event) => {
+            let returnValueOfOnClickMenuItem = null;
+
             // Trigger onClickMenuItem first
             const content = getPopupContent();
-            content.props.onClickMenuItem && content.props.onClickMenuItem(key, event);
+            if (content.props.onClickMenuItem) {
+              returnValueOfOnClickMenuItem = content.props.onClickMenuItem(key, event);
+            }
 
             // Set focus to avoid onblur
             const child = triggerRef.current && triggerRef.current.getRootElement();
             child && child.focus && child.focus();
 
             // Trigger onVisibleChange. Outer component can determine whether to change the state based on the current visibility value.
-            changePopupVisible(false);
+            if (returnValueOfOnClickMenuItem instanceof Promise) {
+              returnValueOfOnClickMenuItem.finally(() => changePopupVisible(false));
+            } else if (returnValueOfOnClickMenuItem !== false) {
+              changePopupVisible(false);
+            }
           },
         })
       : content;

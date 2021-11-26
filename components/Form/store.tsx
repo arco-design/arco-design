@@ -45,6 +45,7 @@ export type StoreChangeInfo<T> = {
   };
   data?: {
     errors?: FieldError;
+    warnings?: string;
     touched?: boolean;
   };
 };
@@ -257,6 +258,7 @@ class Store<
         value?: FieldValue;
         error?: FieldError<FieldValue>;
         touched?: boolean;
+        warning?: string; // TODO
       };
     }
   ) => {
@@ -266,9 +268,12 @@ class Store<
       const item = obj[field];
       const prev = cloneDeep(this.store);
       if (item) {
-        const info: { errors?: FieldError; touched?: boolean } = {};
+        const info: StoreChangeInfo<FieldValue>['data'] = {};
         if ('error' in item) {
           info.errors = item.error;
+        }
+        if ('warning' in item) {
+          info.warnings = item.warning;
         }
         if ('touched' in item) {
           info.touched = item.touched;

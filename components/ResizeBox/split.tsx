@@ -4,13 +4,14 @@ import React, {
   useImperativeHandle,
   useState,
   useRef,
-  useLayoutEffect,
+  useEffect,
 } from 'react';
 import cs from '../_util/classNames';
 import ResizeTrigger from './resize-trigger';
 import { ConfigContext } from '../ConfigProvider';
 import { on, off } from '../_util/dom';
 import { SplitProps } from './interface';
+import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 
 const DIRECTION_HORIZONTAL = 'horizontal';
 const DIRECTION_VERTICAL = 'vertical';
@@ -58,6 +59,7 @@ function Split(props: SplitProps, ref) {
     moving: false,
   });
   const wrapperRef = useRef<HTMLElement>();
+  const paneContainers = useRef<HTMLElement[]>([]);
 
   useImperativeHandle(ref, () => wrapperRef.current, []);
 
@@ -148,7 +150,11 @@ function Split(props: SplitProps, ref) {
     return `calc(${baseVal}${unit} - ${triggerSize / 2}px)`;
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    props.onPaneResize && props.onPaneResize(paneContainers.current);
+  }, [offset, triggerSize]);
+
+  useIsomorphicLayoutEffect(() => {
     const newOffset = parseFloat(size as string);
     if (offset !== newOffset) {
       setOffset(newOffset);
@@ -161,6 +167,9 @@ function Split(props: SplitProps, ref) {
       <div
         className={cs(`${prefixCls}-pane`, 'first-pane')}
         style={{ flexBasis: getFirstPaneSize() }}
+        ref={(el) => {
+          paneContainers.current[0] = el;
+        }}
       >
         {firstPane}
       </div>
@@ -175,7 +184,13 @@ function Split(props: SplitProps, ref) {
           {trigger}
         </ResizeTrigger>
       )}
-      <div className={cs(`${prefixCls}-pane`, 'second-pane')}>{secondPane}</div>
+      <div
+        className={cs(`${prefixCls}-pane`, 'second-pane')}
+        ref={(el) => {
+          paneContainers.current[1] = el;
+        }}>
+        {secondPane}
+      </div>
     </Tag>
   );
 }

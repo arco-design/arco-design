@@ -12,7 +12,7 @@ export type ComponentType = keyof JSX.IntrinsicElements | React.ComponentType<an
 
 export type FieldError<FieldValue = any> = {
   value?: FieldValue;
-  message?: string;
+  message?: ReactNode;
   type?: string;
   requiredError?: boolean;
 };
@@ -142,6 +142,9 @@ export interface FormProps<
 }
 
 export interface RulesProps<FieldValue = any> {
+  validateTrigger?: string | string[];
+  // 校验失败时候以 `error` 或 `warning` 形式展示错误信息。当设置为 `warning` 时不会阻塞表单提交
+  validateLevel?: 'error' | 'warning';
   required?: boolean;
   type?: string;
   length?: number;
@@ -168,7 +171,7 @@ export interface RulesProps<FieldValue = any> {
   false?: boolean;
   // custom
   validator?: (value: FieldValue | undefined, callback: (error?: string) => void) => void;
-  message?: string;
+  message?: ReactNode;
 }
 
 /**
@@ -425,7 +428,10 @@ export type FormItemContextProps<
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
 > = FormContextProps<FormData, FieldValue, FieldKey> & {
-  updateFormItem?: (field: string, errors?: FieldError<FieldValue>) => void;
+  updateFormItem?: (
+    field: string,
+    params: { errors?: FieldError<FieldValue>; warnings?: ReactNode[] }
+  ) => void;
 };
 
 export type FormInstance<
@@ -502,3 +508,10 @@ export interface FormValidateFn<
     ) => void
   ): void;
 }
+
+export const VALIDATE_STATUS = {
+  error: 'error',
+  success: 'success',
+  warning: 'warning',
+  validating: 'validating',
+};

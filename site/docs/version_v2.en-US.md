@@ -2,6 +2,36 @@
 changelog: true
 ---
 
+## 2.25.0
+
+2021-11-19
+
+### 🆕 Feature
+
+- The `Ellipsis` of `Typography` supports the `cssEllipsis` property. In simple scenarios, css is used by default.([#191](https://github.com/arco-design/arco-design/pull/191))
+- `Form` support to set the `validateTrigger` property in `rules` to specify that the rule will be executed when a specific event is triggered.([#190](https://github.com/arco-design/arco-design/pull/190))
+- `Form` support setting the `validateLevel` property in `rules` to specify that only the `warning` status is displayed when the rule validation fails, and the form submission is not blocked.([#190](https://github.com/arco-design/arco-design/pull/190))
+- The `Form` component `rule.message` supports the use of `ReactNode`.([#185](https://github.com/arco-design/arco-design/pull/185))
+- `InputTag` adds `saveOnBlur` property to support automatically saving what the user is typing when blur it.([#183](https://github.com/arco-design/arco-design/pull/183))
+- `Carousel` adds `icons` property to support custom arrow icons.([#181](https://github.com/arco-design/arco-design/pull/181))
+- When `Dropdown` is used with `Menu`, user can control whether the menu will be hidden after clicking by the return value of `onClickMenuItem` .([#180](https://github.com/arco-design/arco-design/pull/180))
+- add property `onPaneResize` to `ResizeBox.Split`([#169](https://github.com/arco-design/arco-design/pull/169))
+- `Trigger` add `escToClose` to set whether to allow close the popup by pressing `ESC`, default value is `false`.([#167](https://github.com/arco-design/arco-design/pull/167))
+- `Trigger` add `escToClose`, default value is `false`.([#167](https://github.com/arco-design/arco-design/pull/167))
+- `Popconfirm` allow close confirmation box by pressing `ESC`.([#167](https://github.com/arco-design/arco-design/pull/167))
+
+### 🐛 BugFix
+
+- Fix the bug that the ratio of the panels changes when the `ResizeBox.Split` component switches the `direction`.([#188](https://github.com/arco-design/arco-design/pull/188))
+- `Progress`  gix the bug that the'trailColor 'attribute does not take effect on the circular progress bar and the step progress bar.([#175](https://github.com/arco-design/arco-design/pull/175))
+- Fix the bug that the steps of the `Progress` component are displayed incorrectly.([#170](https://github.com/arco-design/arco-design/pull/170))
+
+### 💅 Style
+
+- The padding + border of the `Button` component is 16px.([#186](https://github.com/arco-design/arco-design/pull/186))
+- Fix the style problem that the header of the `Table` component is misplaced when the scroll bar is always displayed after the `virtualized` is turned on.([#182](https://github.com/arco-design/arco-design/pull/182))
+- The `Image` component sets the maximum size of the error state to the size of the parent element.([#161](https://github.com/arco-design/arco-design/pull/161))
+
 ## 2.24.1
 
 2021-11-12

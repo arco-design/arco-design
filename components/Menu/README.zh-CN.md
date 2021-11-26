@@ -31,7 +31,7 @@
 |defaultOpenKeys|初始展开的子菜单 key 数组|`string[]`|`-`|-|
 |selectedKeys|选中的菜单项 key 数组（受控模式）|`string[]`|`-`|-|
 |openKeys|展开的子菜单 key 数组（受控模式）|`string[]`|`-`|-|
-|onClickMenuItem|点击菜单项的回调|`(key: string, event, keyPath: string[]) => void`|`-`|`event` in 2.15.0, `keyPath` in 2.19.0|
+|onClickMenuItem|点击菜单项的回调|`(key: string, event, keyPath: string[]) => any`|`-`|`event` in 2.15.0, `keyPath` in 2.19.0|
 |onClickSubMenu|点击子菜单标题的回调|`(key: string, openKeys: string[], keyPath: string[]) => void`|`-`|`keyPath` in 2.19.0|
 |onCollapseChange|折叠状态改变时的回调|`(collapse: boolean) => void`|`-`|-|
 |scrollConfig|滚动到可见区域的配置项，接收所有[scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)的参数|`{ [key: string]: any }`|`-`|-|

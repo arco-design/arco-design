@@ -55,6 +55,12 @@ export interface InputTagProps<T = any> {
    */
   animation?: boolean;
   /**
+   * @zh 是否在失焦时自动存储正在输入的文本
+   * @en Whether to automatically store the text entering when blur InputTag
+   * @version 2.25.0
+   */
+  saveOnBlur?: boolean;
+  /**
    * @zh 默认值
    * @en To set default value
    */
@@ -89,7 +95,7 @@ export interface InputTagProps<T = any> {
    * @en Function to check user's input, which is triggered when `Enter` is pressed
    * @defaultValue (inputValue, values) => inputValue && values.every((item) => item !== inputValue)
    */
-  validate?: (inputValue: string, values: T[]) => boolean;
+  validate?: (inputValue: string, values: T[]) => boolean | Promise<boolean>;
   /**
    * @zh 自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.
    * @en Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags
@@ -151,11 +157,11 @@ export interface InputTagProps<T = any> {
    * @version 2.20.0
    */
   onClear?: () => void;
-  tagClassName?: string;
-  disableInput?: boolean;
   /**
    * @zh 单击组件的回调。
    * @en Callback when the component is clicked
    */
   onClick?: (e) => void;
+  tagClassName?: string;
+  disableInput?: boolean;
 }

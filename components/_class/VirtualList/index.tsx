@@ -627,7 +627,7 @@ const VirtualList: React.ForwardRefExoticComponent<VirtualListProps<any> &
     return (
       <ResizeObserver
         onResize={() => {
-          if (!isNumber(styleListMaxHeight)) {
+          if (refList.current && !isNumber(styleListMaxHeight)) {
             const { clientHeight } = refList.current;
             setStateHeight(clientHeight);
           }
