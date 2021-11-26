@@ -273,7 +273,8 @@ describe('Anchor', () => {
 
     // 去除原来监听1次。
     // 监听新的scrollContainer1次。
-    expect(containerMock).toHaveBeenCalledTimes(2);
+    // 透传到affix=>useCallback 再调用getContainer
+    expect(containerMock).toHaveBeenCalledTimes(4);
   });
 
   it('should call utils function correctly', () => {
