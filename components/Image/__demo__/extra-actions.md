@@ -25,9 +25,9 @@ function DemoImage(props) {
     title='A user’s avatar'
     description='Present by Arco Design'
     actions={[
-      <span className="image-demo-action-item" onClick={(e) => { setVisible(true); }} style={{ padding: "" }}><IconEye /></span>,
-      <span className="image-demo-action-item" onClick={(e) => { console.log('download'); }}><IconDownload /></span>,
-      <Tooltip content="A user’s avatar">
+      <span key="1" className="image-demo-action-item" onClick={(e) => { setVisible(true); }} style={{ padding: "" }}><IconEye /></span>,
+      <span key="2" className="image-demo-action-item" onClick={(e) => { console.log('download'); }}><IconDownload /></span>,
+      <Tooltip key="3" content="A user’s avatar">
         <span className="image-demo-action-item"><IconInfoCircle /></span>
       </Tooltip>,
     ]}

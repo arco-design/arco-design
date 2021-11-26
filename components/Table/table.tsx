@@ -2,7 +2,6 @@ import React, {
   useState,
   useRef,
   useContext,
-  useLayoutEffect,
   useImperativeHandle,
   forwardRef,
   useMemo,
@@ -34,6 +33,7 @@ import useColumns from './hooks/useColumns';
 import useUpdate from '../_util/hooks/useUpdate';
 import ResizeObserver from '../_util/resizeObserver';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 
 export interface TableInstance {
   getRootDomElement: () => HTMLDivElement;
@@ -395,7 +395,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   const fixedFooter = fixedHeader && fixedFooterPosition;
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     resizeHandler();
     on(window, 'resize', throttleResizeHandler);
 

@@ -60,7 +60,7 @@ function Demo () {
         </div>
       </Col>
     </Row>
-    <Row flex>
+    <Row>
       <Progress
         type="circle"
         size={size}

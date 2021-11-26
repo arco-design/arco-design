@@ -26,7 +26,7 @@ const options = new Array(10000).fill(null).map((value, index) => `Item ${index}
 ReactDOM.render(
   <>
     <Typography.Title heading={6}>10000 items</Typography.Title>
-    <Select mode="tags" placeholder="Select a tag" allowClear style={{ width: 345 }}>
+    <Select mode="multiple" allowCreate placeholder="Select a tag" allowClear style={{ width: 345 }}>
       {options.map((option) => (
         <Option key={option} value={option}>
           {option}
