@@ -1,17 +1,18 @@
 import React, {
+  CSSProperties,
+  forwardRef,
+  PropsWithChildren,
+  useContext,
+  useEffect,
   useImperativeHandle,
   useRef,
-  useEffect,
-  useContext,
-  CSSProperties,
-  PropsWithChildren,
-  forwardRef,
 } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import AvatarContext from './context';
 import { AvatarProps } from './interface';
 import { isNumber } from '../_util/is';
+import useImage, { IMG_LOAD_STATUS } from '../_util/hooks/useImage';
 
 const defaultProps: AvatarProps = {
   shape: 'circle',
@@ -21,8 +22,8 @@ const defaultProps: AvatarProps = {
 
 const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
   (props: PropsWithChildren<AvatarProps>, ref) => {
+    const { status, setImageRul } = useImage('');
     const { getPrefixCls, componentConfig } = useContext(ConfigContext);
-
     const prefixCls = getPrefixCls('avatar');
     const contextProps = useContext(AvatarContext);
     const mergedProps = { ...defaultProps, ...componentConfig?.Avatar, ...contextProps, ...props };
@@ -48,7 +49,7 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
       if (autoFixFontSize) {
         autoFixFontSizeHandler();
       }
-    }, [size, children]);
+    }, [size, children, status]);
 
     useImperativeHandle(ref, () => avatarRef.current);
 
@@ -79,6 +80,10 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
       React.isValidElement(children) &&
       (children.type === 'img' || children.type === 'picture');
 
+    useEffect(() => {
+      isImage && setImageRul(children?.props?.src);
+    }, [isImage]);
+
     const _triggerIconStyle: CSSProperties = triggerIconStyle || {};
     if (
       triggerType === 'button' &&
@@ -88,6 +93,18 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
     ) {
       _triggerIconStyle.color = style.backgroundColor;
     }
+
+    const renderText = (children: React.ReactNode) => (
+      <span ref={textRef} className={`${prefixCls}-text`}>
+        {children}
+      </span>
+    );
+
+    const renderImage = (status: IMG_LOAD_STATUS, children: React.ReactElement) => {
+      if (status === IMG_LOAD_STATUS.SUCCESS)
+        return <span className={`${prefixCls}-image`}>{children}</span>;
+      if (status === IMG_LOAD_STATUS.FAILED) return renderText(children?.props?.alt);
+    };
 
     return (
       <div
@@ -102,12 +119,8 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
         }}
         className={classNames}
       >
-        {isImage ? <span className={`${prefixCls}-image`}>{children}</span> : null}
-        {!isImage && (
-          <span ref={textRef} className={`${prefixCls}-text`}>
-            {children}
-          </span>
-        )}
+        {isImage && renderImage(status, children)}
+        {!isImage && renderText(children)}
         {triggerIcon && (
           <div className={`${prefixCls}-trigger-icon-${triggerType}`} style={_triggerIconStyle}>
             {triggerIcon}
