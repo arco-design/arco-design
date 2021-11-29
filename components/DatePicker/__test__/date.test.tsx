@@ -29,34 +29,19 @@ describe('DatePicker', () => {
     const component = mount(<DatePicker />);
     component.simulate('click');
 
-    expect(
-      component
-        .find('.arco-picker-week-list-item')
-        .at(0)
-        .text()
-    ).toBe('日');
+    expect(component.find('.arco-picker-week-list-item').at(0).text()).toBe('日');
 
     component.setProps({
       dayStartOfWeek: 1,
     });
 
-    expect(
-      component
-        .find('.arco-picker-week-list-item')
-        .at(0)
-        .text()
-    ).toBe('一');
+    expect(component.find('.arco-picker-week-list-item').at(0).text()).toBe('一');
 
     component.setProps({
       dayStartOfWeek: 6,
     });
 
-    expect(
-      component
-        .find('.arco-picker-week-list-item')
-        .at(0)
-        .text()
-    ).toBe('六');
+    expect(component.find('.arco-picker-week-list-item').at(0).text()).toBe('六');
   });
 
   it('defaultValue', () => {
@@ -198,11 +183,9 @@ describe('DatePicker', () => {
     const component = mount(<DatePicker popupVisible />);
 
     function checkPlaceholder(isPlaceholder: boolean) {
-      expect(
-        getInput(component, 0)
-          .parent()
-          .hasClass('arco-picker-input-placeholder')
-      ).toBe(isPlaceholder);
+      expect(getInput(component, 0).parent().hasClass('arco-picker-input-placeholder')).toBe(
+        isPlaceholder
+      );
     }
 
     expect(component.find('input').prop('value')).toBe('');
@@ -221,9 +204,7 @@ describe('DatePicker', () => {
 
     // 2020-04-05: re mouseenter and click
     getDateCell(component, 0, 7).simulate('mouseenter');
-    getDateCell(component, 0, 7)
-      .find('.arco-picker-date')
-      .simulate('click');
+    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
 
     expect(getInput(component, 0).prop('value')).toBe('2020-04-05');
     checkPlaceholder(false);
@@ -258,10 +239,7 @@ describe('DatePicker', () => {
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(0);
 
     // 2020-04-11: shortcuts mouseenter
-    component
-      .find('.arco-picker-shortcuts')
-      .childAt(0)
-      .simulate('mouseenter');
+    component.find('.arco-picker-shortcuts').childAt(0).simulate('mouseenter');
 
     expect(getInput(component, 0).prop('value')).toBe('');
 
@@ -270,19 +248,13 @@ describe('DatePicker', () => {
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(1);
 
     // 2020-04-11: shortcuts mouseleave
-    component
-      .find('.arco-picker-shortcuts')
-      .childAt(0)
-      .simulate('mouseleave');
+    component.find('.arco-picker-shortcuts').childAt(0).simulate('mouseleave');
 
     expect(getDateCell(component, 0, 13).hasClass('arco-picker-cell-selected')).toBeFalsy();
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(0);
 
     // 2020-04-11: shortcuts click
-    component
-      .find('.arco-picker-shortcuts')
-      .childAt(0)
-      .simulate('click');
+    component.find('.arco-picker-shortcuts').childAt(0).simulate('click');
 
     expect(getInput(component, 0).prop('value')).toBe('2020-04-11');
     expect(getDateCell(component, 0, 13).hasClass('arco-picker-cell-selected')).toBeTruthy();
@@ -295,9 +267,7 @@ describe('DatePicker', () => {
     const component = mount(<DatePicker onSelect={onSelect} onChange={onChange} popupVisible />);
 
     // 2020-04-05
-    getDateCell(component, 0, 7)
-      .find('.arco-picker-date')
-      .simulate('click');
+    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
 
     expect(onSelect.mock.calls.length).toBe(1);
     expect(onSelect.mock.calls[0][0]).toBe('2020-04-05');
@@ -319,9 +289,7 @@ describe('DatePicker', () => {
     );
 
     // 2020-04-05
-    getDateCell(component, 0, 7)
-      .find('.arco-picker-date')
-      .simulate('click');
+    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
 
     expect(onSelect.mock.calls.length).toBe(1);
     expect(onSelect.mock.calls[0][0]).toBe('2020-04-05 20:32:59');

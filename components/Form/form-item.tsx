@@ -241,7 +241,7 @@ const Item = <
     return children;
   };
 
-  const FormItemContext = (RawFormItemContext as unknown) as RawFormItemContextType<
+  const FormItemContext = RawFormItemContext as unknown as RawFormItemContextType<
     FormData,
     FieldValue,
     FieldKey

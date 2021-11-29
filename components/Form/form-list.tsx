@@ -50,7 +50,7 @@ const List = <
         const { innerSetFieldValue } = getInnerMethods(true);
         const values = getFieldValue(field) || [];
 
-        const add = function(defaultValue?: any, index?: number) {
+        const add = function (defaultValue?: any, index?: number) {
           if (isSyntheticEvent(defaultValue)) {
             warning(
               true,
@@ -78,14 +78,14 @@ const List = <
           });
         };
 
-        const remove = function(index: number) {
+        const remove = function (index: number) {
           const value = getFieldValue(field) || [];
           const newValue = value.filter((_, i) => i !== index);
           currentKeys.splice(index, 1);
           innerSetFieldValue(field, [...newValue], { isFormList: true });
         };
 
-        const move = function(fromIndex: number, toIndex: number) {
+        const move = function (fromIndex: number, toIndex: number) {
           const value = getFieldValue(field) || [];
           if (
             fromIndex === toIndex ||

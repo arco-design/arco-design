@@ -4,9 +4,7 @@ import HookModal, { HookModalRef } from './hookModal';
 import { normalizeConfig, ConfirmProps } from '../confirm';
 import { destroyList } from '../config';
 
-type hookNodalFunction = (
-  config: ConfirmProps
-) => {
+type hookNodalFunction = (config: ConfirmProps) => {
   close: () => void;
   update: (config: ConfirmProps) => void;
 };

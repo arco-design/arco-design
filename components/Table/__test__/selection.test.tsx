@@ -61,12 +61,7 @@ describe('Table selection', () => {
 
     expect(onChange.mock.calls.length).toBe(3);
     expect(component.find('.arco-checkbox-checked')).toHaveLength(1);
-    expect(
-      component
-        .find('tbody tr')
-        .first()
-        .find('.arco-checkbox-checked')
-    ).toHaveLength(1);
+    expect(component.find('tbody tr').first().find('.arco-checkbox-checked')).toHaveLength(1);
   });
 
   it('radio', () => {
@@ -93,33 +88,19 @@ describe('Table selection', () => {
     expect(component.find('.arco-radio').find('.arco-radio-disabled')).toHaveLength(1);
     expect(component.find('table thead th.arco-table-radio').text()).toBe('columnTitle');
 
-    component
-      .find('.arco-radio input')
-      .first()
-      .simulate('change');
+    component.find('.arco-radio input').first().simulate('change');
 
     expect(onChange.mock.calls.length).toBe(1);
     expect(component.find('.arco-radio.arco-radio-checked')).toHaveLength(1);
-    expect(
-      component
-        .find('tbody tr')
-        .first()
-        .find('.arco-radio.arco-radio-checked')
-    ).toHaveLength(1);
+    expect(component.find('tbody tr').first().find('.arco-radio.arco-radio-checked')).toHaveLength(
+      1
+    );
 
-    component
-      .find('.arco-radio input')
-      .at(2)
-      .simulate('change');
+    component.find('.arco-radio input').at(2).simulate('change');
 
     expect(onChange.mock.calls.length).toBe(2);
     expect(component.find('.arco-radio.arco-radio-checked')).toHaveLength(1);
-    expect(
-      component
-        .find('tbody tr')
-        .at(2)
-        .find('.arco-radio.arco-radio-checked')
-    ).toHaveLength(1);
+    expect(component.find('tbody tr').at(2).find('.arco-radio.arco-radio-checked')).toHaveLength(1);
   });
 
   it('rowSelection.checkCrossPage', () => {
@@ -149,10 +130,7 @@ describe('Table selection', () => {
 
     expect(onChange.mock.calls[0][0]).toEqual(['Name1', 'Name2']);
 
-    component
-      .find('.arco-pagination-item')
-      .at(2)
-      .simulate('click');
+    component.find('.arco-pagination-item').at(2).simulate('click');
 
     expect(onChange.mock.calls[1][0]).toEqual([]);
 
@@ -169,10 +147,7 @@ describe('Table selection', () => {
 
     component.setProps({ rowSelection: { checkCrossPage: true, onChange } });
 
-    component
-      .find('.arco-pagination-item')
-      .at(1)
-      .simulate('click');
+    component.find('.arco-pagination-item').at(1).simulate('click');
 
     component
       .find('.arco-checkbox > input')
@@ -265,12 +240,7 @@ describe('Table selection', () => {
       />
     );
 
-    expect(
-      component
-        .find('tbody .arco-table-checkbox')
-        .at(0)
-        .text()
-    ).toBe('Name1');
+    expect(component.find('tbody .arco-table-checkbox').at(0).text()).toBe('Name1');
   });
 
   it('rowSelection.renderCell type = radio', () => {
@@ -285,12 +255,7 @@ describe('Table selection', () => {
       />
     );
 
-    expect(
-      component
-        .find('tbody .arco-table-radio')
-        .at(0)
-        .text()
-    ).toBe('Name1');
+    expect(component.find('tbody .arco-table-radio').at(0).text()).toBe('Name1');
   });
 
   it('rowSelection.onSelect, rowSelection.onSelectAll', () => {

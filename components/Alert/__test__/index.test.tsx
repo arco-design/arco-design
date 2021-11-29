@@ -29,10 +29,7 @@ describe('Alert', () => {
     );
 
     jest.useFakeTimers();
-    alert
-      .find('.arco-alert-close-btn')
-      .at(0)
-      .simulate('click');
+    alert.find('.arco-alert-close-btn').at(0).simulate('click');
 
     expect(closeFn.mock.calls.length).toBe(1);
     jest.runAllTimers();

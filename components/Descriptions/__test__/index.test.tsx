@@ -79,11 +79,6 @@ describe('Descriptions', () => {
     const row = Math.ceil(dataWithSpan.length / columns);
 
     expect(wrapper.find('tr')).toHaveLength(row);
-    expect(
-      wrapper
-        .find('tr')
-        .at(0)
-        .children()
-    ).toHaveLength(columns);
+    expect(wrapper.find('tr').at(0).children()).toHaveLength(columns);
   });
 });

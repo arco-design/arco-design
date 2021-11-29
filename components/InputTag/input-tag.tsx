@@ -119,15 +119,16 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
   const refDelay = useComputeAutoWidthDelay(value);
 
   const UsedTransitionGroup = useMemo(
-    () => ({ children }) => {
-      return animation ? (
-        <TransitionGroup component="div" className={`${prefixCls}-inner`}>
-          {children}
-        </TransitionGroup>
-      ) : (
-        <div className={`${prefixCls}-inner`}>{children}</div>
-      );
-    },
+    () =>
+      ({ children }) => {
+        return animation ? (
+          <TransitionGroup component="div" className={`${prefixCls}-inner`}>
+            {children}
+          </TransitionGroup>
+        ) : (
+          <div className={`${prefixCls}-inner`}>{children}</div>
+        );
+      },
     [prefixCls, animation]
   );
 

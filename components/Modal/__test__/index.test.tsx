@@ -86,10 +86,7 @@ describe('Modal', () => {
     expect(wrapper.find(Modal).props().visible).toBe(true);
     expect($('.arco-modal-mask').length).toBe(1);
 
-    wrapper
-      .find('.arco-modal-close-icon')
-      .last()
-      .simulate('click');
+    wrapper.find('.arco-modal-close-icon').last().simulate('click');
     expect($('.arco-modal-mask').length).toBe(1);
   });
 

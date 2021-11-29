@@ -132,19 +132,11 @@ describe('Table fixed columns', () => {
     );
 
     function getHeadCell(component, i) {
-      return component
-        .find('thead tr')
-        .at(0)
-        .find('th')
-        .at(i);
+      return component.find('thead tr').at(0).find('th').at(i);
     }
 
     function getBodyCell(component, i) {
-      return component
-        .find('tbody tr')
-        .at(0)
-        .find('td')
-        .at(i);
+      return component.find('tbody tr').at(0).find('td').at(i);
     }
 
     expect(getHeadCell(component, 0).prop('className')).toBe('arco-table-th');

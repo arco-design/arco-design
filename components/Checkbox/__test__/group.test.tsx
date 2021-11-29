@@ -67,12 +67,7 @@ describe('Checkbox group', () => {
 
     expect(mockFn.call.length).toBe(1);
 
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(0)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(true);
+    expect(wrapper.find('.arco-checkbox').at(0).hasClass('arco-checkbox-checked')).toBe(true);
   });
 });
 
@@ -85,12 +80,7 @@ describe('checkbox group controled', () => {
         Checkbox
       </Checkbox.Group>
     );
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(1)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(true);
+    expect(wrapper.find('.arco-checkbox').at(1).hasClass('arco-checkbox-checked')).toBe(true);
     wrapper
       .find('.arco-checkbox > input')
       .at(0)
@@ -101,19 +91,9 @@ describe('checkbox group controled', () => {
       });
     expect(mockFn.call.length).toBe(1);
 
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(0)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(true);
+    expect(wrapper.find('.arco-checkbox').at(0).hasClass('arco-checkbox-checked')).toBe(true);
 
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(1)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(true);
+    expect(wrapper.find('.arco-checkbox').at(1).hasClass('arco-checkbox-checked')).toBe(true);
   });
 
   it('value', () => {
@@ -132,12 +112,7 @@ describe('checkbox group controled', () => {
 
     expect(checked).toEqual(options.slice(0, 2));
     wrapper.setProps({ value: checked });
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(1)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(true);
+    expect(wrapper.find('.arco-checkbox').at(1).hasClass('arco-checkbox-checked')).toBe(true);
 
     wrapper
       .find('.arco-checkbox > input')
@@ -149,18 +124,8 @@ describe('checkbox group controled', () => {
       });
     expect(checked).toEqual([options[1]]);
     wrapper.setProps({ value: checked });
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(0)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(false);
-    expect(
-      wrapper
-        .find('.arco-checkbox')
-        .at(1)
-        .hasClass('arco-checkbox-checked')
-    ).toBe(true);
+    expect(wrapper.find('.arco-checkbox').at(0).hasClass('arco-checkbox-checked')).toBe(false);
+    expect(wrapper.find('.arco-checkbox').at(1).hasClass('arco-checkbox-checked')).toBe(true);
   });
 
   it('value is undefined', () => {
@@ -211,12 +176,7 @@ describe('checkbox group children', () => {
     </Checkbox.Group>
   );
 
-  expect(
-    wrapper
-      .find('.arco-checkbox')
-      .at(0)
-      .hasClass('arco-checkbox-checked')
-  ).toBe(true);
+  expect(wrapper.find('.arco-checkbox').at(0).hasClass('arco-checkbox-checked')).toBe(true);
 
   wrapper
     .find('.arco-checkbox > input')
@@ -229,12 +189,7 @@ describe('checkbox group children', () => {
 
   expect(checked).toEqual(['Option 1', 'Option 2']);
   wrapper.setProps({ value: checked });
-  expect(
-    wrapper
-      .find('.arco-checkbox')
-      .at(1)
-      .hasClass('arco-checkbox-checked')
-  ).toBe(true);
+  expect(wrapper.find('.arco-checkbox').at(1).hasClass('arco-checkbox-checked')).toBe(true);
 
   wrapper
     .find('.arco-checkbox > input')
@@ -247,18 +202,8 @@ describe('checkbox group children', () => {
   expect(checked).toEqual(['Option 2']);
   wrapper.setProps({ value: checked });
 
-  expect(
-    wrapper
-      .find('.arco-checkbox')
-      .at(0)
-      .hasClass('arco-checkbox-checked')
-  ).toBe(false);
-  expect(
-    wrapper
-      .find('.arco-checkbox')
-      .at(1)
-      .hasClass('arco-checkbox-checked')
-  ).toBe(true);
+  expect(wrapper.find('.arco-checkbox').at(0).hasClass('arco-checkbox-checked')).toBe(false);
+  expect(wrapper.find('.arco-checkbox').at(1).hasClass('arco-checkbox-checked')).toBe(true);
 
   expect(wrapper.find('.arco-checkbox-checked')).toHaveLength(1);
 });

@@ -21,10 +21,7 @@ describe('form validate status', () => {
     );
 
     expect(
-      wrapper
-        .find('.arco-form-item')
-        .hostNodes()
-        .hasClass('arco-form-item-status-success')
+      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-success')
     ).toBe(true);
   });
   it('error', async () => {
@@ -37,10 +34,7 @@ describe('form validate status', () => {
     );
 
     expect(
-      wrapper
-        .find('.arco-form-item')
-        .hostNodes()
-        .hasClass('arco-form-item-status-error')
+      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-error')
     ).toBe(true);
   });
   it('warning', async () => {
@@ -53,10 +47,7 @@ describe('form validate status', () => {
     );
 
     expect(
-      wrapper
-        .find('.arco-form-item')
-        .hostNodes()
-        .hasClass('arco-form-item-status-warning')
+      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-warning')
     ).toBe(true);
   });
 
@@ -69,12 +60,9 @@ describe('form validate status', () => {
       </Form>
     );
 
-    expect(
-      wrapper
-        .find('.arco-form-message')
-        .hostNodes()
-        .hasClass('arco-form-message-help')
-    ).toBe(true);
+    expect(wrapper.find('.arco-form-message').hostNodes().hasClass('arco-form-message-help')).toBe(
+      true
+    );
   });
 
   it('dont under Form', async () => {
@@ -86,17 +74,11 @@ describe('form validate status', () => {
       </div>
     );
     expect(
-      wrapper
-        .find('.arco-form-item')
-        .hostNodes()
-        .hasClass('arco-form-item-status-error')
+      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-error')
     ).toBe(true);
 
-    expect(
-      wrapper
-        .find('.arco-form-message')
-        .hostNodes()
-        .hasClass('arco-form-message-help')
-    ).toBe(true);
+    expect(wrapper.find('.arco-form-message').hostNodes().hasClass('arco-form-message-help')).toBe(
+      true
+    );
   });
 });

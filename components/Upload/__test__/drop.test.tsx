@@ -44,22 +44,22 @@ const mockDirectoryItems = () => {
 
 mountTest(Upload);
 
-describe('Upload drop', function() {
+describe('Upload drop', function () {
   const requests = [];
   let xhr;
-  beforeEach(function() {
+  beforeEach(function () {
     xhr = useFakeXMLHttpRequest();
 
-    xhr.onCreate = function(xhr) {
+    xhr.onCreate = function (xhr) {
       requests.push(xhr);
     };
   });
 
-  afterEach(function() {
+  afterEach(function () {
     xhr.restore();
   });
 
-  it('drop upload', async function() {
+  it('drop upload', async function () {
     let fileList: UploadItem[] = [];
     const wrapper = mount<UploadProps>(
       <Upload action="/sss" onChange={(files) => (fileList = files)} />
@@ -86,7 +86,7 @@ describe('Upload drop', function() {
     expect(fileList.every((x) => x.status === 'done')).toBe(true);
   });
 
-  it('accept .*', async function() {
+  it('accept .*', async function () {
     const mockFn = jest.fn();
     const wrapper = mount<UploadProps>(<Upload accept=".png" action="/sss" onChange={mockFn} />);
     const triggerNode = wrapper.find('Button');
@@ -113,7 +113,7 @@ describe('Upload drop', function() {
     expect(mockFn.mock.calls.length).toBe(1);
   });
 
-  it('accept excel', async function() {
+  it('accept excel', async function () {
     const mockFn = jest.fn();
     const wrapper = mount<UploadProps>(
       <Upload accept="application/vnd.ms-excel" action="/sss" onChange={mockFn} />
@@ -137,7 +137,7 @@ describe('Upload drop', function() {
     expect(mockFn.mock.calls.length).toBe(1);
   });
 
-  it('accept xxx/*', async function() {
+  it('accept xxx/*', async function () {
     const mockFn = jest.fn();
     const wrapper = mount<UploadProps>(
       <Upload multiple accept="image/*" action="/sss" onChange={mockFn} />
@@ -166,7 +166,7 @@ describe('Upload drop', function() {
     expect(wrapper.find('.arco-upload-list-item')).toHaveLength(2);
   });
 
-  it('directory ', async function() {
+  it('directory ', async function () {
     const wrapper = mount<UploadProps>(<Upload directory action="/sss" />);
     const triggerNode = wrapper.find('Button');
     expect(triggerNode).toHaveLength(1);

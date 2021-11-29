@@ -9,18 +9,11 @@ mountTest(TimePicker);
 componentConfigTest(TimePicker, 'TimePicker');
 
 function getCells(component, listIndex) {
-  return component
-    .find('.arco-timepicker-list')
-    .at(listIndex)
-    .find('li.arco-timepicker-cell');
+  return component.find('.arco-timepicker-list').at(listIndex).find('li.arco-timepicker-cell');
 }
 
 function getInputValue(component, index) {
-  return component
-    .find('.arco-picker-input input')
-    .at(index)
-    .getDOMNode()
-    .getAttribute('value');
+  return component.find('.arco-picker-input input').at(index).getDOMNode().getAttribute('value');
 }
 
 describe('TimePicker', () => {
@@ -42,13 +35,8 @@ describe('TimePicker', () => {
     const onChange = jest.fn();
     const component = mount(<TimePicker onChange={onChange} />);
     component.find('.arco-picker').simulate('click');
-    getCells(component, 0)
-      .at(1)
-      .simulate('click');
-    component
-      .find('.arco-timepicker-footer-btn-wrapper button')
-      .at(1)
-      .simulate('click');
+    getCells(component, 0).at(1).simulate('click');
+    component.find('.arco-timepicker-footer-btn-wrapper button').at(1).simulate('click');
     expect(onChange.mock.calls).toHaveLength(1);
   });
 
@@ -138,24 +126,15 @@ describe('TimePicker', () => {
     component.find('.arco-picker').simulate('click');
 
     expect(
-      component
-        .find('.arco-timepicker-list')
-        .at(0)
-        .find('.arco-timepicker-cell-disabled')
+      component.find('.arco-timepicker-list').at(0).find('.arco-timepicker-cell-disabled')
     ).toHaveLength(4);
 
     expect(
-      component
-        .find('.arco-timepicker-list')
-        .at(1)
-        .find('.arco-timepicker-cell-disabled')
+      component.find('.arco-timepicker-list').at(1).find('.arco-timepicker-cell-disabled')
     ).toHaveLength(9);
 
     expect(
-      component
-        .find('.arco-timepicker-list')
-        .at(2)
-        .find('.arco-timepicker-cell-disabled')
+      component.find('.arco-timepicker-list').at(2).find('.arco-timepicker-cell-disabled')
     ).toHaveLength(9);
   });
 
@@ -193,10 +172,7 @@ describe('TimePicker', () => {
 
     const component = mount(<TimePicker onChange={onChange} defaultValue="18:24:23" />);
 
-    component
-      .find('.arco-picker-clear-icon')
-      .at(0)
-      .simulate('click');
+    component.find('.arco-picker-clear-icon').at(0).simulate('click');
 
     expect(onChange.mock.calls).toHaveLength(1);
     expect(component.find('.arco-timepicker-container').exists()).toBeFalsy();
@@ -208,9 +184,7 @@ describe('TimePicker', () => {
 
     component.find('.arco-picker').simulate('click');
 
-    getCells(component, 0)
-      .at(1)
-      .simulate('click');
+    getCells(component, 0).at(1).simulate('click');
     expect(getInputValue(component, 0)).toBe('01:00:00');
     expect(onChange.mock.calls).toHaveLength(1);
   });

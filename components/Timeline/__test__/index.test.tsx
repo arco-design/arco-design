@@ -33,12 +33,7 @@ describe('Timeline', () => {
         .indexOf('arco-timeline-direction-horizontal') > -1
     ).toBe(true);
 
-    expect(
-      wrapper
-        .find('.arco-timeline-item-content')
-        .at(0)
-        .text()
-    ).toBe('The third milestone');
+    expect(wrapper.find('.arco-timeline-item-content').at(0).text()).toBe('The third milestone');
   });
 
   it('Ignore invalid child', () => {
@@ -64,10 +59,8 @@ describe('Timeline', () => {
     );
 
     expect(
-      wrapper
-        .find('.arco-timeline-item .arco-timeline-item-dot-line')
-        .at(2)
-        .prop('style').borderLeftStyle
+      wrapper.find('.arco-timeline-item .arco-timeline-item-dot-line').at(2).prop('style')
+        .borderLeftStyle
     ).toBe('dashed');
   });
 });

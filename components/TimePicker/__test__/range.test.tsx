@@ -9,18 +9,11 @@ const RangePicker = TimePicker.RangePicker;
 mountTest(RangePicker);
 
 function getCells(component, listIndex) {
-  return component
-    .find('.arco-timepicker-list')
-    .at(listIndex)
-    .find('li.arco-timepicker-cell');
+  return component.find('.arco-timepicker-list').at(listIndex).find('li.arco-timepicker-cell');
 }
 
 function getInputValue(component, index) {
-  return component
-    .find('.arco-picker-input input')
-    .at(index)
-    .getDOMNode()
-    .getAttribute('value');
+  return component.find('.arco-picker-input input').at(index).getDOMNode().getAttribute('value');
 }
 
 describe('TimePicker.RangePicker', () => {

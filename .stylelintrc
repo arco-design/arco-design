@@ -13,6 +13,7 @@
     "selector-class-pattern": null,
     "keyframes-name-pattern": null,
     "no-invalid-position-at-import-rule": null,
-    "number-max-precision": 6
+    "number-max-precision": 6,
+    "color-function-notation": null
   }
 }

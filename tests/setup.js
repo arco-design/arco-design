@@ -2,7 +2,7 @@ const Enzyme = require('enzyme');
 const Adapter = require('enzyme-adapter-react-16');
 
 jest.mock('lodash.debounce', () =>
-  jest.fn(function(fn, time) {
+  jest.fn(function (fn, time) {
     let timeoutId;
     function cancel() {
       if (timeoutId) {

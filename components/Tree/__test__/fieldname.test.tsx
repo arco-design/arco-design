@@ -60,12 +60,7 @@ describe('Tree fieldNames', () => {
     );
 
     expect(wrapper.find('.arco-tree-node')).toHaveLength(6);
-    expect(
-      wrapper
-        .find('.arco-tree-node-title-text')
-        .at(0)
-        .text()
-    ).toBe('Trunk 0-0');
+    expect(wrapper.find('.arco-tree-node-title-text').at(0).text()).toBe('Trunk 0-0');
   });
 
   it('fieldNames checkedStrategy=parent  correctly', async () => {

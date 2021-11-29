@@ -24,7 +24,7 @@ if (isMoment) {
 // });
 
 const overwriteIsDayjs = (_, Dayjs, dayjs) => {
-  dayjs = function(date, c) {
+  dayjs = function (date, c) {
     if (isDayjs(date)) {
       return date.clone();
     }
@@ -36,7 +36,7 @@ const overwriteIsDayjs = (_, Dayjs, dayjs) => {
 
   const proto = Dayjs.prototype;
   const old$Utils = proto.$utils;
-  proto.$utils = function() {
+  proto.$utils = function () {
     const newUtils = old$Utils();
     newUtils.i = isDayjs;
     return newUtils;

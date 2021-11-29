@@ -30,7 +30,7 @@ function getElementPosition(element: HTMLElement, elementRect: ChildRect, root?:
   };
 }
 
-const getInsideValue = function(min, max, value) {
+const getInsideValue = function (min, max, value) {
   if (value < min) {
     return min;
   }

@@ -1,6 +1,6 @@
 import { NOOP } from './constant';
 
-export const isServerRendering = (function() {
+export const isServerRendering = (function () {
   try {
     return !(typeof window !== 'undefined' && document !== undefined);
   } catch (e) {
@@ -8,11 +8,11 @@ export const isServerRendering = (function() {
   }
 })();
 
-export const on = (function() {
+export const on = (function () {
   if (isServerRendering) {
     return NOOP;
   }
-  return function(
+  return function (
     element: any,
     event: string,
     handler: EventListener | EventListenerObject | Function,
@@ -22,11 +22,11 @@ export const on = (function() {
   };
 })();
 
-export const off = (function() {
+export const off = (function () {
   if (isServerRendering) {
     return NOOP;
   }
-  return function(
+  return function (
     element: any,
     event: string,
     handler: EventListener | EventListenerObject | Function,
@@ -36,7 +36,7 @@ export const off = (function() {
   };
 })();
 
-export const contains = function(root, ele) {
+export const contains = function (root, ele) {
   let node = ele;
   while (node) {
     if (node === root) {

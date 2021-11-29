@@ -18,7 +18,7 @@ class ValidateError<FieldValue = any, FieldKey extends KeyType = string> extends
 
 function promisify<T = any>(fn: (...args: any[]) => any): () => Promise<T> {
   return Object.defineProperty(
-    function(...args: any[]) {
+    function (...args: any[]) {
       if (typeof args[args.length - 1] === 'function') fn.apply(this, args);
       else {
         return new Promise((resolve, reject) => {

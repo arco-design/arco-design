@@ -559,10 +559,7 @@ export interface ColumnComponentProps<T = any> extends ColumnProps<T> {
 export type ComponentsProps = {
   table?: any;
   header?: {
-    operations?: (nodes: {
-      selectionNode?: ReactNode;
-      expandNode?: ReactNode;
-    }) => {
+    operations?: (nodes: { selectionNode?: ReactNode; expandNode?: ReactNode }) => {
       name?: string;
       node?: ReactNode;
       width?: number;
@@ -574,10 +571,7 @@ export type ComponentsProps = {
     cell?: any;
   };
   body?: {
-    operations?: (nodes: {
-      selectionNode?: ReactNode;
-      expandNode?: ReactNode;
-    }) => {
+    operations?: (nodes: { selectionNode?: ReactNode; expandNode?: ReactNode }) => {
       name?: string;
       node?: ReactNode | ((record) => ReactNode); // 2.17.0
       width?: number;

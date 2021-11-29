@@ -18,28 +18,15 @@ describe('Radio', () => {
     const wrapper = mountRadio(<Radio>周</Radio>);
     expect(wrapper.find('.arco-radio')).toHaveLength(1);
 
-    wrapper
-      .find('.arco-radio input')
-      .at(0)
-      .simulate('change');
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(0)
-        .hasClass('arco-radio-checked')
-    ).toBeTruthy();
+    wrapper.find('.arco-radio input').at(0).simulate('change');
+    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
   });
 
   it('radio defaultChecked correctly', () => {
     const wrapper = mountRadio(<Radio defaultChecked>周</Radio>);
     expect(wrapper.find('.arco-radio')).toHaveLength(1);
 
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(0)
-        .hasClass('arco-radio-checked')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
   });
 
   it('radio onChange correctly', () => {
@@ -52,17 +39,9 @@ describe('Radio', () => {
     );
     expect(wrapper.find('.arco-radio')).toHaveLength(1);
 
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(0)
-        .hasClass('arco-radio-checked')
-    ).toBeFalsy();
+    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeFalsy();
 
-    wrapper
-      .find('.arco-radio input')
-      .at(0)
-      .simulate('change');
+    wrapper.find('.arco-radio input').at(0).simulate('change');
 
     expect(mockFn).toBeCalledTimes(1);
   });

@@ -119,7 +119,7 @@ const Form = <
     getFormElementId: (field: FieldKey) => getFormElementId(id, field),
   };
 
-  const FormContext = (RawFormContext as unknown) as RawFormContextType<
+  const FormContext = RawFormContext as unknown as RawFormContextType<
     FormData,
     FieldValue,
     FieldKey

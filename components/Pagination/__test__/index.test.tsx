@@ -25,12 +25,7 @@ describe('Pagination', () => {
       });
       wrapper.update();
     });
-    expect(
-      wrapper
-        .find('.arco-pagination-list')
-        .childAt(0)
-        .prop('allPages')
-    ).toBe(10);
+    expect(wrapper.find('.arco-pagination-list').childAt(0).prop('allPages')).toBe(10);
   });
 
   it('pagination should be unmount correctly', () => {
@@ -47,10 +42,7 @@ describe('Pagination', () => {
       .find('PageJumper')
       .find('Input')
       .simulate('change', { target: { value: 30 } });
-    wrapper
-      .find('PageJumper')
-      .find('Input')
-      .simulate('keyDown', { keyCode: Enter.code });
+    wrapper.find('PageJumper').find('Input').simulate('keyDown', { keyCode: Enter.code });
     expect(wrapper.find('.arco-pagination-item-active').text()).toBe('20');
   });
 
@@ -80,21 +72,11 @@ describe('Pagination', () => {
         pageSizeChangeResetCurrent={false}
       />
     );
-    wrapper
-      .find('Pager')
-      .last()
-      .simulate('click');
+    wrapper.find('Pager').last().simulate('click');
     expect(mockChange.mock.calls[0]).toEqual([200 / 10, 10]);
 
-    wrapper
-      .find('PageOption')
-      .find('Select')
-      .simulate('click');
-    wrapper
-      .find('PageOption')
-      .find('.arco-select-option')
-      .last()
-      .simulate('click');
+    wrapper.find('PageOption').find('Select').simulate('click');
+    wrapper.find('PageOption').find('.arco-select-option').last().simulate('click');
     expect(mockChange.mock.calls[1]).toEqual([200 / 50, 50]);
     expect(mockPageSizeChange.mock.calls[0]).toEqual([50, 200 / 50]);
 
@@ -102,15 +84,8 @@ describe('Pagination', () => {
       pageSizeChangeResetCurrent: true,
     });
 
-    wrapper
-      .find('PageOption')
-      .find('Select')
-      .simulate('click');
-    wrapper
-      .find('PageOption')
-      .find('.arco-select-option')
-      .first()
-      .simulate('click');
+    wrapper.find('PageOption').find('Select').simulate('click');
+    wrapper.find('PageOption').find('.arco-select-option').first().simulate('click');
     expect(mockChange.mock.calls[2]).toEqual([1, 10]);
     expect(mockPageSizeChange.mock.calls[1]).toEqual([10, 1]);
   });

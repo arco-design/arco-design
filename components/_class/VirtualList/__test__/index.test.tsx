@@ -75,12 +75,7 @@ describe('VirtualList', () => {
       requestAnimationFrameMock.triggerAllAnimationFrames();
     });
     wrapper.update();
-    expect(
-      wrapper
-        .find('.list-item')
-        .at(0)
-        .text()
-    ).toBe('Content 102');
+    expect(wrapper.find('.list-item').at(0).text()).toBe('Content 102');
 
     // scroll to 50th item when list is virtual
     act(() => {
@@ -88,12 +83,7 @@ describe('VirtualList', () => {
       requestAnimationFrameMock.triggerAllAnimationFrames();
     });
     wrapper.update();
-    expect(
-      wrapper
-        .find('.list-item')
-        .at(0)
-        .text()
-    ).toBe('Content 42');
+    expect(wrapper.find('.list-item').at(0).text()).toBe('Content 42');
 
     // switch to real list when items are removed
     act(() => {

@@ -1,4 +1,4 @@
-export const $ = function(classNames) {
+export const $ = function (classNames) {
   return document.querySelectorAll(classNames);
 };
 

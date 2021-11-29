@@ -93,10 +93,7 @@ describe('AutoComplete', () => {
     });
     expect(onPressEnter).toBeCalled();
 
-    wrapper
-      .find('.arco-select-option')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select-option').at(0).simulate('click');
     expect(onSelect).toBeCalled();
   });
 

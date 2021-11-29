@@ -22,27 +22,11 @@ describe('Table', () => {
   it('render table correctly', () => {
     const component = mountTable<TestData>(<Table columns={columns} data={data} />);
     expect(component.find('tr')).toHaveLength(6);
-    const th = component
-      .find('tr')
-      .first()
-      .find('th');
-    const td = component
-      .find('tr')
-      .at(1)
-      .find('td');
+    const th = component.find('tr').first().find('th');
+    const td = component.find('tr').at(1).find('td');
     expect(th).toHaveLength(5);
-    expect(
-      th
-        .at(0)
-        .find('.arco-table-th-item-title')
-        .text()
-    ).toBe('Name');
-    expect(
-      td
-        .at(0)
-        .find('.arco-table-cell')
-        .text()
-    ).toBe('Name1');
+    expect(th.at(0).find('.arco-table-th-item-title').text()).toBe('Name');
+    expect(td.at(0).find('.arco-table-cell').text()).toBe('Name1');
   });
 
   it('table no data', () => {
@@ -94,25 +78,13 @@ describe('Table', () => {
     expect(component.find('tr th.red')).toHaveLength(1);
     expect(component.find('tr td.red')).toHaveLength(5);
     expect(component.find('tbody tr.green')).toHaveLength(1);
-    expect(
-      component
-        .find('tbody tr')
-        .at(1)
-        .hasClass('green')
-    ).toBe(true);
+    expect(component.find('tbody tr').at(1).hasClass('green')).toBe(true);
 
-    const domTh = component
-      .find('thead th')
-      .at(0)
-      .getDOMNode();
+    const domTh = component.find('thead th').at(0).getDOMNode();
     expect(getComputedStyle(domTh).getPropertyValue('background-color')).toBe('rgb(0, 0, 0)');
     expect(getComputedStyle(domTh).getPropertyValue('color')).toBe('rgb(255, 255, 255)');
 
-    const domTd = component
-      .find('tbody td')
-      .at(0)
-      .at(0)
-      .getDOMNode();
+    const domTd = component.find('tbody td').at(0).at(0).getDOMNode();
     expect(getComputedStyle(domTd).getPropertyValue('color')).toBe('rgb(255, 255, 255)');
   });
 });

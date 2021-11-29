@@ -261,10 +261,7 @@ describe('support multiple correctly', () => {
       );
       wrapper.find(prefixCls).simulate('click');
       const list = wrapper.find(`${prefixCls}-list`).first();
-      list
-        .find(`${prefixCls}-list-item ${prefixCls}-list-item-label`)
-        .at(0)
-        .simulate('click');
+      list.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).at(0).simulate('click');
       expect(mockfn.mock.calls).toHaveLength(1);
     });
 
@@ -423,10 +420,7 @@ describe('fieldNames Cascader', () => {
       );
       wrapper.find(prefixCls).simulate('click');
       const list = wrapper.find(`${prefixCls}-list`).first();
-      list
-        .find(`${prefixCls}-list-item ${prefixCls}-list-item-label`)
-        .at(0)
-        .simulate('click');
+      list.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).at(0).simulate('click');
       expect(mockfn.mock.calls).toHaveLength(1);
     });
   });

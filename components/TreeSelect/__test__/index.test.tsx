@@ -85,11 +85,7 @@ describe('TreeSelect', () => {
 
     // 第二次点击
     wrapper.simulate('click');
-    Tree.find(`${prefixCls}-node`)
-      .at(1)
-      .find(`${prefixCls}-node-title`)
-      .last()
-      .simulate('click');
+    Tree.find(`${prefixCls}-node`).at(1).find(`${prefixCls}-node-title`).last().simulate('click');
     expect(mockChange).toHaveBeenCalledTimes(2);
     expect(wrapper.find('.arco-tree-select-view-value').text()).toBe('小恶魔');
     expect(mockChange.mock.calls[1]).toEqual(['node1-1']);
@@ -118,11 +114,7 @@ describe('TreeSelect', () => {
     const Tree = wrapper.find('Tree');
     const treeNode = Tree.find(`${prefixCls}-node`);
     expect(wrapper.find(`${prefixCls}-node-switcher-icon`)).toHaveLength(treeNode.length);
-    treeNode
-      .last()
-      .find(`${prefixCls}-node-switcher-icon`)
-      .first()
-      .simulate('click');
+    treeNode.last().find(`${prefixCls}-node-switcher-icon`).first().simulate('click');
     expect(mockHandleLoadMore).toHaveBeenCalledTimes(1);
   });
 
@@ -132,11 +124,7 @@ describe('TreeSelect', () => {
     wrapper.simulate('click');
     const Tree = wrapper.find('Tree');
     const treeNode = Tree.find(`${prefixCls}-node`);
-    treeNode
-      .last()
-      .find(`${prefixCls}-node-switcher-icon`)
-      .first()
-      .simulate('click');
+    treeNode.last().find(`${prefixCls}-node-switcher-icon`).first().simulate('click');
     expect(mockLoad).toHaveBeenCalledTimes(1);
   });
 
@@ -169,12 +157,7 @@ describe('TreeSelect', () => {
       .simulate('change', { target: { value: '小' } });
     jest.runAllTimers();
     jest.advanceTimersByTime(200);
-    expect(
-      wrapper
-        .find(`${prefixCls}-select-view`)
-        .find('input')
-        .text()
-    ).toBe('');
+    expect(wrapper.find(`${prefixCls}-select-view`).find('input').text()).toBe('');
   });
 
   it('define onSearch props', () => {
@@ -209,22 +192,14 @@ describe('TreeSelect', () => {
     expect(choice.at(0).text()).toBe('ceshi');
     expect(choice.at(1).text()).toBe('ceshi2');
 
-    choice
-      .at(1)
-      .find('svg')
-      .simulate('click');
+    choice.at(1).find('svg').simulate('click');
 
     expect(values).toEqual([{ label: 'ceshi', value: '1111' }]);
 
     wrapper.setProps({ value: values });
 
     expect(wrapper.find('.arco-tag')).toHaveLength(2);
-    expect(
-      wrapper
-        .find('.arco-tag')
-        .at(0)
-        .text()
-    ).toBe('ceshi');
+    expect(wrapper.find('.arco-tag').at(0).text()).toBe('ceshi');
   });
 
   it('allowClear props', () => {
@@ -236,9 +211,7 @@ describe('TreeSelect', () => {
     wrapper.simulate('click');
     const Tree = wrapper.find('Tree');
     // 第一次点击
-    Tree.find(`${prefixCls}-node-title`)
-      .first()
-      .simulate('click');
+    Tree.find(`${prefixCls}-node-title`).first().simulate('click');
     expect(value).toBe('node1');
 
     wrapper.find('IconClose').simulate('click');
@@ -341,22 +314,13 @@ describe('TreeSelect', () => {
         />
       );
       expect(wrapper.find('.arco-tag')).toHaveLength(1);
-      expect(
-        wrapper
-          .find('.arco-tag')
-          .at(0)
-          .text()
-      ).toEqual('拉尼斯特家族');
+      expect(wrapper.find('.arco-tag').at(0).text()).toEqual('拉尼斯特家族');
 
       wrapper.simulate('click');
       const tree = wrapper.find('Tree');
 
       act(() => {
-        tree
-          .find(`${prefixCls}-node`)
-          .last()
-          .find(`${prefixCls}-node-title`)
-          .simulate('click');
+        tree.find(`${prefixCls}-node`).last().find(`${prefixCls}-node-title`).simulate('click');
       });
       expect(value).toEqual(['node1', 'node2-2']);
 
@@ -382,12 +346,7 @@ describe('TreeSelect', () => {
       wrapper.setProps({ value });
 
       expect(wrapper.find('.arco-tag')).toHaveLength(2);
-      expect(
-        wrapper
-          .find('.arco-tag')
-          .at(1)
-          .text()
-      ).toBe('史塔克家族');
+      expect(wrapper.find('.arco-tag').at(1).text()).toBe('史塔克家族');
     });
 
     // it('checkable correctly when checkStrategy is child', () => {
@@ -512,24 +471,15 @@ describe('TreeSelect', () => {
         value: [],
       });
 
-      tree
-        .find(`${prefixCls}-node-title`)
-        .first()
-        .simulate('click');
+      tree.find(`${prefixCls}-node-title`).first().simulate('click');
       expect(value).toEqual(['node3-2']);
       wrapper.setProps({ value });
 
-      tree
-        .find(`${prefixCls}-node-title`)
-        .at(1)
-        .simulate('click');
+      tree.find(`${prefixCls}-node-title`).at(1).simulate('click');
       expect(value).toEqual(['node3-2']);
       wrapper.setProps({ value });
 
-      tree
-        .find(`${prefixCls}-node-title`)
-        .at(2)
-        .simulate('click');
+      tree.find(`${prefixCls}-node-title`).at(2).simulate('click');
       expect(value).toEqual(['node3-2', 'node1-1']);
     };
     // @ts-ignore

@@ -20,20 +20,13 @@ describe('Table test', () => {
       />
     );
     const getFirstName = () => {
-      return component
-        .find('tbody td')
-        .at(0)
-        .find('.arco-table-cell')
-        .text();
+      return component.find('tbody td').at(0).find('.arco-table-cell').text();
     };
 
     expect(component.find('.arco-pagination-list').children()).toHaveLength(5);
     expect(getFirstName()).toBe('Name1');
 
-    component
-      .find('.arco-pagination-list .arco-pagination-item')
-      .at(2)
-      .simulate('click');
+    component.find('.arco-pagination-list .arco-pagination-item').at(2).simulate('click');
 
     expect(getFirstName()).toBe('Name3');
     expect(onChange.mock.calls[0][3].action).toBe('paginate');

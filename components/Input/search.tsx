@@ -18,16 +18,8 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
     value: 'value' in props ? formatValue(props.value, props.maxLength) : undefined,
   });
 
-  const {
-    className,
-    style,
-    placeholder,
-    disabled,
-    searchButton,
-    loading,
-    defaultValue,
-    ...rest
-  } = props;
+  const { className, style, placeholder, disabled, searchButton, loading, defaultValue, ...rest } =
+    props;
   const prefixCls = getPrefixCls('input-search');
   const classNames = cs(
     prefixCls,

@@ -11,10 +11,7 @@ mountTest(InputTag);
 componentConfigTest(InputTag, 'InputTag');
 
 const getInputAttr = (wrapper, name) => {
-  return wrapper
-    .find('input')
-    .getDOMNode()
-    .getAttribute(name);
+  return wrapper.find('input').getDOMNode().getAttribute(name);
 };
 
 describe('InputTag', () => {

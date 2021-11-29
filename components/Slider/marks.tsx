@@ -17,7 +17,7 @@ interface MaskProps {
   reverse?: boolean;
 }
 
-const Marks = function(props: MaskProps) {
+const Marks = function (props: MaskProps) {
   const { data = [], min, max, vertical, prefixCls, reverse } = props;
 
   if (!data.length) return null;

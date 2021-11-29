@@ -148,17 +148,16 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
     ]
   );
 
-  const flattenColumns = useMemo(() => getInternalColumns(rows, bodyOperations), [
-    rows,
-    getInternalColumns,
-    bodyOperations,
-  ]);
+  const flattenColumns = useMemo(
+    () => getInternalColumns(rows, bodyOperations),
+    [rows, getInternalColumns, bodyOperations]
+  );
 
   // 把表头分组的 columns 分成 n 行，并且加上 colSpan 和 rowSpan，没有表头分组的话是 1 行。
-  const rowCount = useMemo(() => getAllHeaderRowsCount(columns, childrenColumnName), [
-    columns,
-    childrenColumnName,
-  ]);
+  const rowCount = useMemo(
+    () => getAllHeaderRowsCount(columns, childrenColumnName),
+    [columns, childrenColumnName]
+  );
 
   // 分行之后的rows
   const groupColumns = useMemo(() => {

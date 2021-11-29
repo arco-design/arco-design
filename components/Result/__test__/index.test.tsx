@@ -21,11 +21,8 @@ describe('Result', () => {
 
   it('render custom icon correctly', () => {
     const wrapper = mount(<Result icon={<span>custom icon</span>} />);
-    expect(
-      wrapper
-        .find(`.arco-result-icon-info`)
-        .children()
-        .html()
-    ).toEqual('<span>custom icon</span>');
+    expect(wrapper.find(`.arco-result-icon-info`).children().html()).toEqual(
+      '<span>custom icon</span>'
+    );
   });
 });

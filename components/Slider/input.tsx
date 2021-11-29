@@ -13,7 +13,7 @@ interface InputProps {
   onChange?: (val: number[]) => void;
 }
 
-const Input = function(props: InputProps) {
+const Input = function (props: InputProps) {
   const { value, range, min, max, step, disabled, prefixCls, onChange } = props;
   const inputProps = {
     min,

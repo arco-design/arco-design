@@ -22,10 +22,7 @@ describe('Image', () => {
   };
 
   const handleAction = (wrapper, index) => {
-    wrapper
-      .find('.arco-image-preview-toolbar-action')
-      .at(index)
-      .simulate('click');
+    wrapper.find('.arco-image-preview-toolbar-action').at(index).simulate('click');
     jest.runAllTimers();
     wrapper.update();
   };

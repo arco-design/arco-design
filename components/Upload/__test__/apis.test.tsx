@@ -29,22 +29,22 @@ const getWrapper = async (props: UploadProps) => {
   return wrapper;
 };
 
-describe('Upload api callbacks', function() {
+describe('Upload api callbacks', function () {
   const requests = [];
   let xhr;
-  beforeEach(function() {
+  beforeEach(function () {
     xhr = useFakeXMLHttpRequest();
 
-    xhr.onCreate = function(xhr) {
+    xhr.onCreate = function (xhr) {
       requests.push(xhr);
     };
   });
 
-  afterEach(function() {
+  afterEach(function () {
     xhr.restore();
   });
 
-  it('onChange and onProgress should be fired', async function() {
+  it('onChange and onProgress should be fired', async function () {
     const mockFn = jest.fn();
     const progressFn = jest.fn();
 
@@ -64,7 +64,7 @@ describe('Upload api callbacks', function() {
     expect(progressFn.mock.calls.length).toBe(1);
   });
 
-  it('onPreview should be fired', async function() {
+  it('onPreview should be fired', async function () {
     const mockFn = jest.fn();
     const wrapper = mount<UploadProps>(
       <Upload
@@ -83,10 +83,7 @@ describe('Upload api callbacks', function() {
 
     expect(wrapper.find('.arco-upload-list-preview-icon')).toHaveLength(1);
     await act(() => {
-      wrapper
-        .find('.arco-upload-list-preview-icon')
-        .at(0)
-        .simulate('click');
+      wrapper.find('.arco-upload-list-preview-icon').at(0).simulate('click');
     });
 
     expect(mockFn.mock.calls.length).toBe(1);
@@ -124,10 +121,7 @@ describe('Upload api callbacks', function() {
       expect(items).toHaveLength(2);
 
       await act(() => {
-        wrapper
-          .find('.arco-upload-list-remove-icon')
-          .at(0)
-          .simulate('click');
+        wrapper.find('.arco-upload-list-remove-icon').at(0).simulate('click');
       });
       expect(fileList).toEqual([{ ...defaultFileList[1], percent: 100 }]);
       expect(fileList).toHaveLength(1);
@@ -145,10 +139,7 @@ describe('Upload api callbacks', function() {
         />
       );
       await act(() => {
-        wrapper
-          .find('.arco-upload-list-remove-icon')
-          .at(0)
-          .simulate('click');
+        wrapper.find('.arco-upload-list-remove-icon').at(0).simulate('click');
       });
 
       expect(fileList).toEqual(defaultFileList);
@@ -174,16 +165,13 @@ describe('Upload api callbacks', function() {
       );
 
       await act(() => {
-        wrapper
-          .find('.arco-upload-list-remove-icon')
-          .at(0)
-          .simulate('click');
+        wrapper.find('.arco-upload-list-remove-icon').at(0).simulate('click');
       });
       await sleep(20);
       expect(fileList).toEqual(defaultFileList);
       expect(fileList).toHaveLength(2);
     });
-    it('onRemove return resolve promise', async function() {
+    it('onRemove return resolve promise', async function () {
       // onRemove 返回resolve promise，执行删除操作
       let fileList;
       const wrapper = mount<UploadProps>(
@@ -204,11 +192,7 @@ describe('Upload api callbacks', function() {
       );
 
       await act(() => {
-        wrapper
-          .find('FileList')
-          .find('.arco-upload-list-remove-icon')
-          .at(0)
-          .simulate('click');
+        wrapper.find('FileList').find('.arco-upload-list-remove-icon').at(0).simulate('click');
       });
 
       await sleep(20);

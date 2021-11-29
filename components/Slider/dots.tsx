@@ -19,7 +19,7 @@ interface MaskProps {
   onMouseDown?: (val: number) => void;
 }
 
-const Dots = function(props: MaskProps) {
+const Dots = function (props: MaskProps) {
   const { data = [], min, max, value = [], vertical, prefixCls, reverse } = props;
 
   if (!data.length) return null;

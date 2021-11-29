@@ -14,23 +14,13 @@ describe('WeekPicker', () => {
     const component = mount(<WeekPicker />);
     component.simulate('click');
 
-    expect(
-      component
-        .find('.arco-picker-week-list-item')
-        .at(1)
-        .text()
-    ).toBe('日');
+    expect(component.find('.arco-picker-week-list-item').at(1).text()).toBe('日');
 
     component.setProps({
       dayStartOfWeek: 1,
     });
 
-    expect(
-      component
-        .find('.arco-picker-week-list-item')
-        .at(1)
-        .text()
-    ).toBe('一');
+    expect(component.find('.arco-picker-week-list-item').at(1).text()).toBe('一');
   });
 
   it('defaultValue', () => {

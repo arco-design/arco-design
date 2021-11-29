@@ -85,10 +85,7 @@ describe('List', () => {
         render={(item, index) => <List.Item key={index}>{item.title}</List.Item>}
       />
     );
-    const next = wrapper
-      .find(Pagination)
-      .find('.arco-pagination-item')
-      .last();
+    const next = wrapper.find(Pagination).find('.arco-pagination-item').last();
     next.simulate('click');
     expect(handlePaginationChange).toBeCalledWith(2, 1);
   });
@@ -107,12 +104,7 @@ describe('List', () => {
       />
     );
     expect(wrapper.find('.arco-list-item-meta-avatar')).toHaveLength(3);
-    expect(
-      wrapper
-        .find('.arco-list-item-action')
-        .at(0)
-        .find('li')
-    ).toHaveLength(2);
+    expect(wrapper.find('.arco-list-item-action').at(0).find('li')).toHaveLength(2);
   });
 
   it('render List with grid', () => {
@@ -186,12 +178,7 @@ describe('List', () => {
       requestAnimationFrameMock.triggerAllAnimationFrames();
     });
     wrapper.update();
-    expect(
-      wrapper
-        .find('.arco-list-item')
-        .at(0)
-        .text()
-    ).toBe('Content 89');
+    expect(wrapper.find('.arco-list-item').at(0).text()).toBe('Content 89');
   });
 
   it(`List pagination property works`, () => {
@@ -208,11 +195,6 @@ describe('List', () => {
       />
     );
     expect(wrapper.find('.arco-pagination .arco-select')).toHaveLength(1);
-    expect(
-      wrapper
-        .find('.arco-list-item-content')
-        .at(0)
-        .text()
-    ).toBe('60');
+    expect(wrapper.find('.arco-list-item-content').at(0).text()).toBe('60');
   });
 });

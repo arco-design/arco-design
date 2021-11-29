@@ -1,2 +1,3 @@
 components/style/theme/color
 *.tsx
+*.ts

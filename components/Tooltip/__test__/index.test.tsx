@@ -35,18 +35,12 @@ describe('Tooltip', () => {
         <Button>Top</Button>
       </Tooltip>
     );
-    expect(
-      wrapper
-        .find('.arco-tooltip-content')
-        .getDOMNode()
-        .getAttribute('style')
-    ).toBe('background-color: rgb(51, 51, 51);');
-    expect(
-      wrapper
-        .find('.arco-trigger-arrow')
-        .getDOMNode()
-        .getAttribute('style')
-    ).toBe('background-color: rgb(51, 51, 51);');
+    expect(wrapper.find('.arco-tooltip-content').getDOMNode().getAttribute('style')).toBe(
+      'background-color: rgb(51, 51, 51);'
+    );
+    expect(wrapper.find('.arco-trigger-arrow').getDOMNode().getAttribute('style')).toBe(
+      'background-color: rgb(51, 51, 51);'
+    );
   });
   it('showArrow property', () => {
     const wrapper = mountTooltip(
@@ -84,12 +78,9 @@ describe('Tooltip', () => {
         <Button>Top</Button>
       </Tooltip>
     );
-    expect(
-      wrapper
-        .find('.arco-trigger-arrow')
-        .getDOMNode()
-        .getAttribute('style')
-    ).toBe('background-color: rgb(255, 255, 255);');
+    expect(wrapper.find('.arco-trigger-arrow').getDOMNode().getAttribute('style')).toBe(
+      'background-color: rgb(255, 255, 255);'
+    );
   });
 
   it('position', () => {

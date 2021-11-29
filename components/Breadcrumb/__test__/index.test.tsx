@@ -19,12 +19,7 @@ describe('Breadcrumb', () => {
         <BreadcrumbItem>Technology</BreadcrumbItem>
       </Breadcrumb>
     );
-    expect(
-      wrapper
-        .find('.arco-breadcrumb-item-separator')
-        .at(0)
-        .text()
-    ).toBe('=>');
+    expect(wrapper.find('.arco-breadcrumb-item-separator').at(0).text()).toBe('=>');
   });
 
   it('breadcrumb render empty children correctly', () => {
@@ -82,19 +77,9 @@ describe('Breadcrumb', () => {
 
     const wrapper = mount(<Breadcrumb routes={routes} />);
     expect(wrapper.find('Dropdown')).toHaveLength(3);
-    expect(
-      wrapper
-        .find('.arco-breadcrumb-item a')
-        .at(2)
-        .text()
-    ).toEqual(`name-2`);
+    expect(wrapper.find('.arco-breadcrumb-item a').at(2).text()).toEqual(`name-2`);
 
-    expect(
-      wrapper
-        .find('.arco-breadcrumb-item a')
-        .at(2)
-        .prop('href')
-    ).toEqual('#/0/1/2');
+    expect(wrapper.find('.arco-breadcrumb-item a').at(2).prop('href')).toEqual('#/0/1/2');
   });
 
   it('support itemrender correctly', () => {
@@ -136,11 +121,6 @@ describe('Breadcrumb', () => {
     const delta = routes.length - maxCount;
     wrapper.setProps({ maxCount });
     expect(wrapper.find('.arco-breadcrumb-item')).toHaveLength(5);
-    expect(
-      wrapper
-        .find('.arco-breadcrumb-item')
-        .at(3)
-        .text()
-    ).toEqual(`name-${delta + 3}`);
+    expect(wrapper.find('.arco-breadcrumb-item').at(3).text()).toEqual(`name-${delta + 3}`);
   });
 });

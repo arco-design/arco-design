@@ -6,14 +6,11 @@ import { data, TestData } from './common/data';
 import { ColumnProps } from '../interface';
 
 function simulateFilterCheckbox(filterItem, index: number, checked: boolean) {
-  return filterItem
-    .at(index)
-    .find('.arco-checkbox > input')
-    .simulate('change', {
-      target: {
-        checked,
-      },
-    });
+  return filterItem.at(index).find('.arco-checkbox > input').simulate('change', {
+    target: {
+      checked,
+    },
+  });
 }
 
 describe('Table Filter', () => {
@@ -76,14 +73,8 @@ describe('Table Filter', () => {
     component.update();
 
     const customFilterPopup = component.find('.arco-table-custom-filter');
-    customFilterPopup
-      .find('.arco-btn')
-      .at(0)
-      .simulate('click');
-    customFilterPopup
-      .find('.arco-btn')
-      .at(1)
-      .simulate('click');
+    customFilterPopup.find('.arco-btn').at(0).simulate('click');
+    customFilterPopup.find('.arco-btn').at(1).simulate('click');
 
     expect(component.find('tbody tr')).toHaveLength(3);
   });
@@ -100,10 +91,7 @@ describe('Table Filter', () => {
     expect(component.find('.arco-pagination-item')).toHaveLength(5);
     expect(component.find('.arco-pagination-item-active').text()).toBe('1');
 
-    component
-      .find('.arco-pagination-item')
-      .at(3)
-      .simulate('click');
+    component.find('.arco-pagination-item').at(3).simulate('click');
 
     expect(component.find('.arco-pagination-item-active').text()).toBe('3');
     expect(onChange.mock.calls[0][0].current).toBe(3);

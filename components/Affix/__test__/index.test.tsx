@@ -56,14 +56,8 @@ describe('Affix', () => {
 
     const componentWrapper = mountTestComp(<Test offsetTop={0} onChange={onChange} />);
 
-    const containerElement = componentWrapper
-      .find('.container')
-      .first()
-      .getDOMNode();
-    const wrapperElement = componentWrapper
-      .find('.affix')
-      .first()
-      .getDOMNode();
+    const containerElement = componentWrapper.find('.container').first().getDOMNode();
+    const wrapperElement = componentWrapper.find('.affix').first().getDOMNode();
 
     let wrapperRect = {
       top: 0,

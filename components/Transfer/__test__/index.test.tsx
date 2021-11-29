@@ -77,20 +77,14 @@ describe('Transfer', () => {
   it('should move selected keys to corresponding list', () => {
     const handleChange = jest.fn();
     const wrapper = mountTransfer(<Transfer {...listCommonProps} onChange={handleChange} />);
-    wrapper
-      .find('.arco-transfer-operations button')
-      .at(0)
-      .simulate('click'); // move selected keys to target list
+    wrapper.find('.arco-transfer-operations button').at(0).simulate('click'); // move selected keys to target list
     expect(handleChange).toHaveBeenCalledWith(['b', 'a'], 'target', ['a']);
   });
 
   it('should move selected keys expected disabled to corresponding list', () => {
     const handleChange = jest.fn();
     const wrapper = mountTransfer(<Transfer {...listDisabledProps} onChange={handleChange} />);
-    wrapper
-      .find('.arco-transfer-operations button')
-      .at(0)
-      .simulate('click'); // move selected keys to target list
+    wrapper.find('.arco-transfer-operations button').at(0).simulate('click'); // move selected keys to target list
     expect(handleChange).toHaveBeenCalledWith(['b'], 'target', ['b']);
   });
 
@@ -179,12 +173,7 @@ describe('Transfer', () => {
       .find('.arco-transfer-view-search input')
       .at(0)
       .simulate('change', { target: { value: 'a' } });
-    expect(
-      wrapper
-        .find(TransferList)
-        .at(0)
-        .find('.arco-transfer-view-item')
-    ).toHaveLength(1);
+    expect(wrapper.find(TransferList).at(0).find('.arco-transfer-view-item')).toHaveLength(1);
   });
 
   it('should check correctly when there is a search text', () => {
@@ -225,17 +214,8 @@ describe('Transfer', () => {
     const wrapper = mountTransfer(
       <Transfer {...sortedTargetKeyProps} render={(item) => item.value} />
     );
-    wrapper
-      .find('.arco-transfer-operations button')
-      .at(1)
-      .simulate('click');
-    expect(
-      wrapper
-        .find('.arco-transfer-view-header-unit')
-        .at(0)
-        .first()
-        .text()
-    ).toEqual('0 / 3');
+    wrapper.find('.arco-transfer-operations button').at(1).simulate('click');
+    expect(wrapper.find('.arco-transfer-view-header-unit').at(0).first().text()).toEqual('0 / 3');
   });
 
   it('should add custom styles when their props are provided', () => {
@@ -279,18 +259,8 @@ describe('Transfer', () => {
         ]}
       />
     );
-    expect(
-      component
-        .find('.arco-transfer-view-header')
-        .at(0)
-        .text()
-    ).toBe('LEFT1 / 2');
-    expect(
-      component
-        .find('.arco-transfer-view-header')
-        .at(1)
-        .text()
-    ).toBe('RIGHT 0-1');
+    expect(component.find('.arco-transfer-view-header').at(0).text()).toBe('LEFT1 / 2');
+    expect(component.find('.arco-transfer-view-header').at(1).text()).toBe('RIGHT 0-1');
   });
 
   it('simple retainSelectedItems works', () => {
@@ -348,10 +318,7 @@ describe('Transfer', () => {
     item.simulate('dragleave');
     expect(onDragLeave).toBeCalled();
 
-    component
-      .find(itemClassName)
-      .at(1)
-      .simulate('drop');
+    component.find(itemClassName).at(1).simulate('drop');
     expect(onDrop).toBeCalled();
 
     item.simulate('dragend');

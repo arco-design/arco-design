@@ -70,10 +70,7 @@ describe('Modal api test', () => {
     );
 
     jest.useFakeTimers();
-    wrapper
-      .find('.arco-modal-wrapper')
-      .simulate('mousedown')
-      .simulate('click');
+    wrapper.find('.arco-modal-wrapper').simulate('mousedown').simulate('click');
 
     jest.runAllTimers();
 
@@ -100,11 +97,6 @@ describe('Modal api test', () => {
     // 作为modal的兄弟节点
     expect(document.querySelectorAll('.arco-modal+.test-content')).toHaveLength(1);
 
-    expect(
-      wrapper
-        .find('.arco-modal-footer')
-        .childAt(0)
-        .html()
-    ).toBe('<div>1234</div>');
+    expect(wrapper.find('.arco-modal-footer').childAt(0).html()).toBe('<div>1234</div>');
   });
 });

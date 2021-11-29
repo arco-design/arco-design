@@ -17,10 +17,7 @@ const mapSize = {
 };
 
 function getItemStyle(component, index) {
-  return component
-    .find('.arco-space-item')
-    .at(index)
-    .prop('style');
+  return component.find('.arco-space-item').at(index).prop('style');
 }
 
 function getSizeValue(size) {

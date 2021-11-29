@@ -141,9 +141,7 @@ describe('FormList test', () => {
         ],
       });
 
-      const removeBtn = getItems()
-        .at(0)
-        .find('Button');
+      const removeBtn = getItems().at(0).find('Button');
       removeBtn.simulate('click');
 
       act(() => {});
@@ -202,9 +200,7 @@ describe('FormList test', () => {
       });
 
       let curValues = formRef.getFieldsValue().users;
-      const removeBtn = getItems()
-        .at(0)
-        .find('Button');
+      const removeBtn = getItems().at(0).find('Button');
       removeBtn.simulate('click');
 
       act(() => {});
@@ -291,9 +287,7 @@ describe('FormList test', () => {
     act(() => {});
 
     expect(getItems()).toHaveLength(2);
-    const removeBtn = getItems()
-      .at(0)
-      .find('Button');
+    const removeBtn = getItems().at(0).find('Button');
     removeBtn.simulate('click');
 
     act(() => {});
@@ -411,17 +405,11 @@ describe('FormList test', () => {
 
     wrapper.find('Select').simulate('click');
 
-    wrapper
-      .find('.arco-select-option')
-      .at(1)
-      .simulate('click');
+    wrapper.find('.arco-select-option').at(1).simulate('click');
 
     expect(formRef.getFieldsValue()).toEqual({ posts: [{ type: undefined, b: 'B2' }] });
 
-    wrapper
-      .find('.arco-radio input')
-      .at(0)
-      .simulate('change');
+    wrapper.find('.arco-radio input').at(0).simulate('change');
 
     expect(formRef.getFields()).toEqual({ posts: [{ type: 'A', b: 'B2' }] });
     expect(formRef.getFieldsValue()).toEqual({ posts: [{ type: 'A', a: undefined }] });

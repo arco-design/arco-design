@@ -53,10 +53,7 @@ describe('InputNumber ', () => {
     };
     const wrapper = mountInputNumber(<Demo />);
     expect(+wrapper.find('.arco-input').prop('value')).toBe(0);
-    wrapper
-      .find('#clear')
-      .at(0)
-      .simulate('click');
+    wrapper.find('#clear').at(0).simulate('click');
     expect(wrapper.find('.arco-input').prop('value')).toBe('');
   });
 

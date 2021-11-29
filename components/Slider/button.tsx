@@ -32,7 +32,7 @@ interface SliderButtonProps {
   onMoveBegin?: () => void;
 }
 
-const SliderButton = function(props: SliderButtonProps) {
+const SliderButton = function (props: SliderButtonProps) {
   // props
   const {
     style,
@@ -54,10 +54,10 @@ const SliderButton = function(props: SliderButtonProps) {
   const [popupVisible, setPopupVisible] = useMergeValue(false, { value: tooltipVisible });
 
   const { getPrefixCls } = useContext(ConfigContext);
-  const position = useMemo(() => tooltipPosition || (vertical ? 'right' : 'top'), [
-    tooltipPosition,
-    vertical,
-  ]);
+  const position = useMemo(
+    () => tooltipPosition || (vertical ? 'right' : 'top'),
+    [tooltipPosition, vertical]
+  );
   const delayTimer = useRef(null as any);
   const inButtonOrPopup = useRef(false);
   const isDragging = useRef(false);

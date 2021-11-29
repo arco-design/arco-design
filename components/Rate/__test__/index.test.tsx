@@ -28,10 +28,7 @@ describe('Rate', () => {
   it('Click Rate not allow half', () => {
     const component = mount(<Rate />);
     expect(checkRateValue(component, 0)).toBe(true);
-    component
-      .find('.arco-rate-character-left')
-      .at(3)
-      .simulate('click');
+    component.find('.arco-rate-character-left').at(3).simulate('click');
     expect(checkRateValue(component, 4)).toBe(true);
   });
 

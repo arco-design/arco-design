@@ -43,10 +43,7 @@ describe('Tabs', () => {
     expect(tabBars.at(0).hasClass('arco-tabs-header-title-active')).toBe(true);
     tabBars.at(1).simulate('click');
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(1)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(1).hasClass('arco-tabs-header-title-active')
     ).toBe(true);
     expect(mockFn.mock.calls.length).toBe(1);
   });
@@ -61,10 +58,7 @@ describe('Tabs', () => {
     expect(tabBars.at(0).hasClass('arco-tabs-header-title-active')).toBe(true);
     tabBars.at(1).simulate('click');
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(1)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(1).hasClass('arco-tabs-header-title-active')
     ).toBe(true);
     expect(mockFn.mock.calls.length).toBe(1);
     tabBars.at(1).simulate('click');
@@ -104,10 +98,7 @@ describe('Tabs', () => {
     wrapper.setProps({ children: getChildren() });
     expect(wrapper.prop('children').length).toBe(6);
 
-    wrapper
-      .find('.arco-tabs-close-icon')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-tabs-close-icon').at(0).simulate('click');
     expect(tabs.length).toBe(5);
 
     expect(tabs.findIndex((x) => x.key === 'key1')).toBe(-1);
@@ -119,10 +110,7 @@ describe('Tabs', () => {
     });
 
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(1)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(1).hasClass('arco-tabs-header-title-active')
     ).toBe(true);
 
     wrapper.setProps({
@@ -130,10 +118,7 @@ describe('Tabs', () => {
     });
 
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(2)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(2).hasClass('arco-tabs-header-title-active')
     ).toBe(false);
 
     wrapper.setProps({
@@ -145,19 +130,13 @@ describe('Tabs', () => {
 
     expect(wrapper.prop('activeTab')).toBe('key2');
 
-    wrapper
-      .find('.arco-tabs-close-icon')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-tabs-close-icon').at(0).simulate('click');
     wrapper.setProps({ children: getChildren() });
 
     expect(wrapper.find('.arco-tabs-content-item').length).toBe(getChildren().length);
 
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(0)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(0).hasClass('arco-tabs-header-title-active')
     ).toBe(false);
   });
 });

@@ -3,10 +3,13 @@
 .conic-gradient(@nums) {
   .loop(@nums) when (@nums > 0) {
     .loop(@nums - 1);
+
     background-image+: hsl(@nums*36, 100%, 50%);
   }
+
   background-image+: ~'conic-gradient(hsl(0, 100%, 50%)';
   .loop(@nums);
+
   background-image+_: ~')';
 }
 
@@ -46,11 +49,11 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(78, 89, 105, 0.4);
+    box-shadow: 0 4px 6px rgba(78, 89, 105, 40%);
     transition: box-shadow, transform 0.3s ease;
 
     &:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 0 3px #ffffff40;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 10%), 0 0 0 3px #ffffff40;
       transform: scale(1.04) translate(-50%, -50%);
     }
   }
@@ -85,7 +88,7 @@
   transition: var(--home-transition-1);
 
   &:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 10%);
     transform: scale(1.02) translate(-50%, -50%);
   }
 
@@ -127,11 +130,11 @@
 
 body[arco-theme='dark'] {
   .color-body {
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 12%);
   }
 
   .theme-btn {
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 12%);
     box-shadow: none;
 
     &:hover {

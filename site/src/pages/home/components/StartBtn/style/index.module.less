@@ -10,13 +10,13 @@
     height: @icon-height;
     margin-right: 8px;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
       position: absolute;
       transition: var(--home-transition-base);
     }
 
-    &:before {
+    &::before {
       content: "";
       width: 8px;
       height: 8px;
@@ -29,7 +29,7 @@
       margin-top: -4px;
     }
 
-    &:after {
+    &::after {
       content: "";
       width: 6px;
       height: 2px;
@@ -40,15 +40,13 @@
   }
 
   &:hover {
-
     .start-btn-icon {
-  
-      &:before {
+      &::before {
         left: 6px;
         border-color: #A6D8FF;
       }
   
-      &:after {
+      &::after {
         background-color: #A6D8FF;
         right: 1px;
         width: 7px;

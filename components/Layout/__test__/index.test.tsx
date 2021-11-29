@@ -41,11 +41,6 @@ describe('Layout', () => {
         <Footer>Footer</Footer>
       </Layout>
     );
-    expect(
-      wrapper
-        .find('.arco-layout-sider')
-        .at(0)
-        .prop('style').width
-    ).toBe('50%');
+    expect(wrapper.find('.arco-layout-sider').at(0).prop('style').width).toBe('50%');
   });
 });

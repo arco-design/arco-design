@@ -32,9 +32,7 @@ export type ModeType = 'date' | 'month' | 'week' | 'year' | 'quarter';
 
 export type PrivateCType = {
   setPageShowDate?: (d: Dayjs) => void;
-  getHeaderOperations?: (
-    mode?: ModeType
-  ) => {
+  getHeaderOperations?: (mode?: ModeType) => {
     onPrev?: () => void;
     onNext?: () => void;
     onSuperPrev?: () => void;

@@ -143,10 +143,7 @@ describe('Tree', () => {
     );
     // 子节点展开，子节点的父节点也需要都展开
     expect(wrapper.state('expandedKeys')).toEqual(['node1-1-1', 'node1', 'node1-1']);
-    wrapper
-      .find(`${prefixCls}-node-switcher-icon`)
-      .at(1)
-      .simulate('click');
+    wrapper.find(`${prefixCls}-node-switcher-icon`).at(1).simulate('click');
     // 父节点关闭，子节点保持展开
     expect(keys).toEqual(['node1-1-1', 'node1']);
     wrapper.setProps({
@@ -295,10 +292,7 @@ describe('Tree', () => {
 
     const disabledItem = wrapper.find(`${prefixCls}-node-disabled`);
     expect(disabledItem).toHaveLength(1);
-    disabledItem
-      .find(`${prefixCls}-node-title`)
-      .first()
-      .simulate('click');
+    disabledItem.find(`${prefixCls}-node-title`).first().simulate('click');
     expect(mockSelected.mock.calls).toHaveLength(0);
   });
 

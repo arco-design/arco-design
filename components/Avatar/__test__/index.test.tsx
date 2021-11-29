@@ -56,8 +56,9 @@ describe('Avatar', () => {
     avatars.forEach((avatar, index) => {
       expect(avatar.classList.contains('arco-avatar-square')).toBe(true);
       expect(avatar.getAttribute('style')).toBe(
-        `width: 60px; height: 60px; font-size: 30px; z-index: ${avatars.length -
-          index}; margin-left: ${index === 0 ? 0 : -15}px;`
+        `width: 60px; height: 60px; font-size: 30px; z-index: ${
+          avatars.length - index
+        }; margin-left: ${index === 0 ? 0 : -15}px;`
       );
       expect(avatar.querySelector('.arco-avatar-text').innerHTML).toBe(texts[index]);
     });
