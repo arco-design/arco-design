@@ -37,11 +37,6 @@ describe('Steps', () => {
 
     component.setProps({ current: 3 });
 
-    expect(
-      component
-        .find('.arco-steps-item')
-        .at(2)
-        .hasClass('arco-steps-item-process')
-    ).toBe(true);
+    expect(component.find('.arco-steps-item').at(2).hasClass('arco-steps-item-process')).toBe(true);
   });
 });

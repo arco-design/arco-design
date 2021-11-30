@@ -31,12 +31,7 @@ describe('Mentions', () => {
 
     wrapper.find('textarea').simulate('keyup', { key: '@bei', target: { value: '@bei' } });
     expect(wrapper.find('.arco-select-option')).toHaveLength(1);
-    expect(
-      wrapper
-        .find('.arco-select-option .arco-select-highlight')
-        .at(0)
-        .text()
-    ).toBe('bei');
+    expect(wrapper.find('.arco-select-option .arco-select-highlight').at(0).text()).toBe('bei');
   });
 
   it('onChange triggered by user input', () => {
@@ -73,10 +68,7 @@ describe('Mentions', () => {
     );
 
     wrapper.find('textarea').simulate('keyup', { key: '@', target: { value: '@' } });
-    wrapper
-      .find('.arco-select-option')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select-option').at(0).simulate('click');
 
     expect(onChange.mock.calls[0][0]).toBe('@beijing');
   });

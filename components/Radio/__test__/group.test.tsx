@@ -26,12 +26,7 @@ describe('Radio.Group', () => {
       );
       expect(radioGroup.find('.arco-radio').length).toBe(3);
 
-      expect(
-        radioGroup
-          .find('.arco-radio')
-          .at(0)
-          .hasClass('arco-radio-checked')
-      ).toBeTruthy();
+      expect(radioGroup.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
     });
     it('expect onChange correctly', () => {
       const mockFn = jest.fn();
@@ -41,17 +36,9 @@ describe('Radio.Group', () => {
         </RadioGroup>
       );
 
-      expect(
-        radioGroup
-          .find('.arco-radio')
-          .at(0)
-          .hasClass('arco-radio-checked')
-      ).toBeTruthy();
+      expect(radioGroup.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
 
-      radioGroup
-        .find('.arco-radio input')
-        .at(2)
-        .simulate('change');
+      radioGroup.find('.arco-radio input').at(2).simulate('change');
 
       expect(mockFn).toBeCalledTimes(1);
     });
@@ -63,36 +50,18 @@ describe('Radio.Group', () => {
           {children}
         </RadioGroup>
       );
-      expect(
-        radioGroup
-          .find('.arco-radio')
-          .at(0)
-          .hasClass('arco-radio-checked')
-      ).toBeTruthy();
+      expect(radioGroup.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
 
-      radioGroup
-        .find('.arco-radio input')
-        .at(1)
-        .simulate('change');
+      radioGroup.find('.arco-radio input').at(1).simulate('change');
 
       expect(value).toBe('jie');
       radioGroup.setProps({ value });
 
-      expect(
-        radioGroup
-          .find('.arco-radio')
-          .at(1)
-          .hasClass('arco-radio-checked')
-      ).toBeTruthy();
+      expect(radioGroup.find('.arco-radio').at(1).hasClass('arco-radio-checked')).toBeTruthy();
 
       radioGroup.setProps({ value: 'lun' });
 
-      expect(
-        radioGroup
-          .find('.arco-radio')
-          .at(2)
-          .hasClass('arco-radio-checked')
-      ).toBeTruthy();
+      expect(radioGroup.find('.arco-radio').at(2).hasClass('arco-radio-checked')).toBeTruthy();
     });
   }
 
@@ -123,42 +92,16 @@ describe('Radio.Group', () => {
       />
     );
 
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(2)
-        .hasClass('arco-radio-disabled')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-radio').at(2).hasClass('arco-radio-disabled')).toBeTruthy();
 
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(1)
-        .hasClass('arco-radio-checked')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-radio').at(1).hasClass('arco-radio-checked')).toBeTruthy();
 
-    wrapper
-      .find('.arco-radio input')
-      .at(0)
-      .simulate('change');
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(0)
-        .hasClass('arco-radio-checked')
-    ).toBeTruthy();
+    wrapper.find('.arco-radio input').at(0).simulate('change');
+    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
     expect(mockFn).toBeCalledTimes(1);
 
-    wrapper
-      .find('.arco-radio input')
-      .at(2)
-      .simulate('change');
-    expect(
-      wrapper
-        .find('.arco-radio')
-        .at(0)
-        .hasClass('arco-radio-checked')
-    ).toBeTruthy();
+    wrapper.find('.arco-radio input').at(2).simulate('change');
+    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
 
     expect(mockFn).toBeCalledTimes(1);
   });

@@ -15,7 +15,7 @@ import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
-const processFile = function(fileList?: UploadItem[]): { [key: string]: UploadItem } {
+const processFile = function (fileList?: UploadItem[]): { [key: string]: UploadItem } {
   const res = {};
   if (!isArray(fileList)) {
     return res;

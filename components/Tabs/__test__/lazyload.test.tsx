@@ -36,10 +36,7 @@ describe('Tabs lazyload', () => {
 
     tabBars.at(2).simulate('click');
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(2)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(2).hasClass('arco-tabs-header-title-active')
     ).toBe(true);
     expect(wrapper.find('.content')).toHaveLength(2);
   });
@@ -55,10 +52,7 @@ describe('Tabs lazyload', () => {
 
     tabBars.at(2).simulate('click');
     expect(
-      wrapper
-        .find('.arco-tabs-header-title')
-        .at(2)
-        .hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title').at(2).hasClass('arco-tabs-header-title-active')
     ).toBe(true);
     expect(wrapper.find('.content')).toHaveLength(1);
 

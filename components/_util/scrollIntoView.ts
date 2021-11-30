@@ -1,7 +1,7 @@
 import scrollIntoView, { Options } from 'scroll-into-view-if-needed';
 import { isFunction } from './is';
 
-export default function(node: HTMLElement, options?: Options) {
+export default function (node: HTMLElement, options?: Options) {
   if (node) {
     scrollIntoView(node, {
       block: 'start',
@@ -15,9 +15,9 @@ export default function(node: HTMLElement, options?: Options) {
     // 所以需要额外滚动一点距离。
     if (options && options.boundary && height !== scaleHeight) {
       // scrollIntoView 的 boundary是函数或者Element类型
-      const parentNode = (isFunction(options.boundary)
-        ? options.boundary(node)
-        : options.boundary) as HTMLElement;
+      const parentNode = (
+        isFunction(options.boundary) ? options.boundary(node) : options.boundary
+      ) as HTMLElement;
       parentNode.scrollTop = Math.round(parentNode.scrollTop * (height / scaleHeight));
     }
   }

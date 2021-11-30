@@ -29,7 +29,7 @@ export const columns: ColumnProps<TestData>[] = [
   },
 ];
 
-export const columnsSorter: ColumnProps<TestData>[] = (function() {
+export const columnsSorter: ColumnProps<TestData>[] = (function () {
   return columns.map((d) => {
     if (d.title === 'Age') {
       return {
@@ -42,7 +42,7 @@ export const columnsSorter: ColumnProps<TestData>[] = (function() {
   });
 })();
 
-export const columnsFilter: ColumnProps<TestData>[] = (function() {
+export const columnsFilter: ColumnProps<TestData>[] = (function () {
   return columns.map((d) => {
     if (d.title === 'Sex') {
       return {
@@ -65,7 +65,7 @@ export const columnsFilter: ColumnProps<TestData>[] = (function() {
   });
 })();
 
-export const columnsFilterCustom: ColumnProps<TestData>[] = (function() {
+export const columnsFilterCustom: ColumnProps<TestData>[] = (function () {
   return columns.map((d) => {
     if (d.title === 'Sex') {
       return {
@@ -98,7 +98,7 @@ export const columnsFilterCustom: ColumnProps<TestData>[] = (function() {
   });
 })();
 
-export const columnsCustomRender: ColumnProps<TestData>[] = (function() {
+export const columnsCustomRender: ColumnProps<TestData>[] = (function () {
   return columns.map((d) => {
     if (d.title === 'Sex') {
       return {
@@ -112,7 +112,7 @@ export const columnsCustomRender: ColumnProps<TestData>[] = (function() {
   });
 })();
 
-export const columnsFixedColumns: ColumnProps<TestData>[] = (function() {
+export const columnsFixedColumns: ColumnProps<TestData>[] = (function () {
   return columns.map((d) => {
     if (d.title === 'Name') {
       return {
@@ -132,7 +132,7 @@ export const columnsFixedColumns: ColumnProps<TestData>[] = (function() {
   });
 })();
 
-export const columnsCustomStyle: ColumnProps<TestData>[] = (function() {
+export const columnsCustomStyle: ColumnProps<TestData>[] = (function () {
   return columns.map((d) => {
     if (d.title === 'Name') {
       return {

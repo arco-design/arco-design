@@ -105,9 +105,7 @@ function flatChildren(
     if (filterOption === true) {
       isValidOption =
         optionValue !== undefined &&
-        String(optionValue)
-          .toLowerCase()
-          .indexOf(inputValue.toLowerCase()) !== -1;
+        String(optionValue).toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
     } else if (typeof filterOption === 'function') {
       isValidOption = !inputValue || filterOption(inputValue, child);
     }

@@ -98,43 +98,19 @@ describe('Form test', () => {
     );
 
     expect(formRef.getFieldValue('date')).toEqual(initDate);
-    expect(
-      wrapper
-        .find('input')
-        .at(0)
-        .getDOMNode()
-        .getAttribute('value')
-    ).toBe(initDate.begin);
-    expect(
-      wrapper
-        .find('input')
-        .at(1)
-        .getDOMNode()
-        .getAttribute('value')
-    ).toBe(initDate.end);
+    expect(wrapper.find('input').at(0).getDOMNode().getAttribute('value')).toBe(initDate.begin);
+    expect(wrapper.find('input').at(1).getDOMNode().getAttribute('value')).toBe(initDate.end);
 
     act(() => {
-      wrapper
-        .find('input')
-        .at(0)
-        .simulate('click');
+      wrapper.find('input').at(0).simulate('click');
 
       // 选中起始月份的第一天
-      wrapper
-        .find('.arco-picker-cell-in-view')
-        .first()
-        .simulate('click');
+      wrapper.find('.arco-picker-cell-in-view').first().simulate('click');
 
-      wrapper
-        .find('input')
-        .at(1)
-        .simulate('click');
+      wrapper.find('input').at(1).simulate('click');
 
       // 选中结束月份最后一天
-      wrapper
-        .find('.arco-picker-cell-in-view')
-        .last()
-        .simulate('click');
+      wrapper.find('.arco-picker-cell-in-view').last().simulate('click');
     });
 
     expect(formRef.getFieldValue('date')).toEqual({

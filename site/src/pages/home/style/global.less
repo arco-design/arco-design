@@ -8,22 +8,23 @@
   --home-transition-1: all 0.3s ease;
   --home-transition-2: all 0.3s ease-out;
   --home-box-shadow:
-    0px 10px 11px rgba(78, 89, 105, 0.06),
-    0px 6px 4px rgba(78, 89, 105, 0.03),
-    0px 0px 0px 1px rgba(78, 89, 105, 0.06),
-    0px 2.89797px 2.12518px rgba(78, 89, 105, 0.0342537),
-    0px 1.87823px 1.37737px rgba(78, 89, 105, 0.03),
-    0px 1.18233px 0.867039px rgba(78, 89, 105, 0.0257463),
-    0px 0.67932px 0.498168px rgba(78, 89, 105, 0.0209047),
-    0px 0.298986px 0.219257px rgba(78, 89, 105, 0.01438);
+    0 10px 11px rgba(78, 89, 105, 6%),
+    0 6px 4px rgba(78, 89, 105, 3%),
+    0 0 0 1px rgba(78, 89, 105, 6%),
+    0 2.89797px 2.12518px rgba(78, 89, 105, 3.43%),
+    0 1.87823px 1.37737px rgba(78, 89, 105, 3%),
+    0 1.18233px 0.867039px rgba(78, 89, 105, 2.57%),
+    0 0.67932px 0.498168px rgba(78, 89, 105, 2.09%),
+    0 0.298986px 0.219257px rgba(78, 89, 105, 1.44%);
 }
+
 body[arco-theme="dark"] #home {
   --home-color-bg-1: #202022;
-  --home-color-border: rgba(255, 255, 255, 0.08);
-  --home-box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
-  --home-color-border-1: rgba(255, 255, 255, 0.4);
+  --home-color-border: rgba(255, 255, 255, 8%);
+  --home-box-shadow: 0 10px 40px rgba(0, 0, 0, 40%);
+  --home-color-border-1: rgba(255, 255, 255, 40%);
   --home-lattice-color: #8b8b8c;
-  --home-color-banner-chart-bar-after: rgba(255, 255, 255, 0.4);
+  --home-color-banner-chart-bar-after: rgba(255, 255, 255, 40%);
 }
 
 .home-btn.arco-btn-size-default {
@@ -38,9 +39,10 @@ body[arco-theme="dark"] #home {
 .home-tabs {
   .arco-tabs-header-nav-rounded .arco-tabs-header-title-active,
   .arco-tabs-header-nav-rounded .arco-tabs-header-title-active:hover {
-    background: rgba(64, 128, 255, 0.1);
+    background: rgba(64, 128, 255, 10%);
     border-radius: 100px;
   }
+
   .arco-tabs-header-title-active,
   .arco-tabs-header-title-active:hover {
     color: #165DFF;
@@ -61,6 +63,7 @@ body[arco-theme="dark"] {
     .arco-tabs-header-nav-rounded .arco-tabs-header-title-active:hover {
       background: #165DFF;
     }
+
     .arco-tabs-header-title-active,
     .arco-tabs-header-title-active:hover {
       color: var(--color-text-1);

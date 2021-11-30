@@ -2,7 +2,6 @@
   "arrowParens": "always",
   "semi": true,
   "singleQuote": true,
-  "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "printWidth": 100,
   "useTabs": false,

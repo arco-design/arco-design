@@ -73,12 +73,8 @@ function Sider(props: SiderProps, ref) {
     if (collapsible && breakpoint in responsiveMap) {
       refResponsiveHandlerToken.current = ResponsiveObserve.subscribe(
         (screens, breakpointChecked) => {
-          const {
-            breakpoint,
-            collapsed,
-            onCollapse,
-            onBreakpoint,
-          } = refStateForResponsiveHandler.current;
+          const { breakpoint, collapsed, onCollapse, onBreakpoint } =
+            refStateForResponsiveHandler.current;
 
           if (!breakpointChecked || breakpointChecked === breakpoint) {
             const nextCollapsed = !screens[breakpoint];

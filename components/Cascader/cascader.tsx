@@ -72,14 +72,8 @@ const defaultProps: CascaderProps = {
 function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<CascaderProps>(baseProps, defaultProps, componentConfig?.Cascader);
-  const {
-    disabled,
-    renderFormat,
-    getPopupContainer,
-    children,
-    triggerProps,
-    expandTrigger,
-  } = props;
+  const { disabled, renderFormat, getPopupContainer, children, triggerProps, expandTrigger } =
+    props;
 
   const prefixCls = getPrefixCls('cascader');
   const isMultiple = props.mode === 'multiple';
@@ -101,10 +95,10 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     defaultValue: props.defaultPopupVisible,
   });
   const selectRef = useRef(null);
-  const store = useCurrentRef<Store<T>>(() => getStore(props, mergeValue), [
-    JSON.stringify(getConfig(props)),
-    props.options,
-  ]);
+  const store = useCurrentRef<Store<T>>(
+    () => getStore(props, mergeValue),
+    [JSON.stringify(getConfig(props)), props.options]
+  );
 
   useEffect(() => {
     const clearTimer = () => {

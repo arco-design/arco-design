@@ -1,9 +1,9 @@
 import { raf, caf } from './raf';
 
-export default function(cb: (...args: any[]) => void) {
+export default function (cb: (...args: any[]) => void) {
   let timer: null | number = null;
 
-  const throttle = function(...args: any[]) {
+  const throttle = function (...args: any[]) {
     timer && caf(timer);
     timer = raf(() => {
       cb(...args);

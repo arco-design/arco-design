@@ -26,12 +26,7 @@ describe('Calendar', () => {
 
     // Week title
     expect(component.find('.arco-calendar-week-list div')).toHaveLength(7);
-    expect(
-      component
-        .find('.arco-calendar-week-list div')
-        .first()
-        .text()
-    ).toBe('周日');
+    expect(component.find('.arco-calendar-week-list div').first().text()).toBe('周日');
 
     // All cells
     expect(component.find('.arco-calendar-cell')).toHaveLength(6 * 7);
@@ -44,11 +39,7 @@ describe('Calendar', () => {
 
     // Change mode
     const radio = component.find('.arco-calendar-header-right .arco-radio-group');
-    radio
-      .find('label')
-      .at(1)
-      .find('input')
-      .simulate('change');
+    radio.find('label').at(1).find('input').simulate('change');
 
     expect(component.find('.arco-calendar-mode-month')).toHaveLength(0);
     expect(component.find('.arco-calendar-mode-year')).toHaveLength(1);
@@ -73,22 +64,14 @@ describe('Calendar', () => {
 
     // Week title
     expect(component.find('.arco-calendar-week-list div')).toHaveLength(7);
-    expect(
-      component
-        .find('.arco-calendar-week-list div')
-        .first()
-        .text()
-    ).toBe('周一');
+    expect(component.find('.arco-calendar-week-list div').first().text()).toBe('周一');
 
     expect(component.find('.arco-calendar-cell-selected .arco-calendar-date-circle').text()).toBe(
       String(dayjs('2020-04-01').date())
     );
 
     // Click next month icon
-    component
-      .find('.arco-calendar-header-icon')
-      .at(1)
-      .simulate('click');
+    component.find('.arco-calendar-header-icon').at(1).simulate('click');
 
     expect(onPanelChange.mock.calls[0][0].isSame(dayjs('2020-04-01').add(1, 'month'))).toBe(true);
     expect(component.find('.arco-calendar-header .arco-calendar-header-value').text()).toBe(
@@ -134,10 +117,7 @@ describe('Calendar', () => {
     ).toBe('1');
 
     // Click next prev icon
-    component
-      .find('.arco-calendar-header-icon')
-      .at(0)
-      .simulate('click');
+    component.find('.arco-calendar-header-icon').at(0).simulate('click');
 
     expect(onPanelChange.mock.calls[0][0].isSame(dayjs('2020-04-01').subtract(1, 'year'))).toBe(
       true
@@ -166,17 +146,11 @@ describe('Calendar', () => {
     );
 
     // click 2020-04-04
-    component
-      .find('.arco-calendar-cell > div')
-      .at(7)
-      .simulate('click');
+    component.find('.arco-calendar-cell > div').at(7).simulate('click');
 
     // expect(onChange.mock.calls[0][0].isSame(dayjs('2020-04-04'), 'date')).toBe(true);
     expect(
-      component
-        .find('.arco-calendar-cell')
-        .at(7)
-        .hasClass('arco-calendar-cell-selected')
+      component.find('.arco-calendar-cell').at(7).hasClass('arco-calendar-cell-selected')
     ).toBe(true);
   });
 
@@ -192,10 +166,7 @@ describe('Calendar', () => {
     );
 
     // click June
-    component
-      .find('.arco-calendar-cell > div')
-      .at(5)
-      .simulate('click');
+    component.find('.arco-calendar-cell > div').at(5).simulate('click');
 
     expect(onChange.mock.calls[0][0].isSame(dayjs('2020-06-01'))).toBe(true);
     expect(component.find('.arco-calendar-cell-selected .arco-calendar-date-value').text()).toBe(

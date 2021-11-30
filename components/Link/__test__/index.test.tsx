@@ -16,12 +16,7 @@ describe('Link', () => {
   it('render span  tag correctly', () => {
     const wrapper = mount(<Link />);
     expect(wrapper.find('.arco-link')).toHaveLength(1);
-    expect(
-      wrapper
-        .find('span')
-        .at(0)
-        .hasClass('arco-link')
-    ).toBe(true);
+    expect(wrapper.find('span').at(0).hasClass('arco-link')).toBe(true);
   });
 
   it('render icon correctly', () => {
@@ -31,12 +26,7 @@ describe('Link', () => {
 
   it('render icon correctly', () => {
     const wrapper = mount(<Link icon={<span>hahaha</span>} />);
-    expect(
-      wrapper
-        .find('.arco-link-icon')
-        .children()
-        .html()
-    ).toEqual('<span>hahaha</span>');
+    expect(wrapper.find('.arco-link-icon').children().html()).toEqual('<span>hahaha</span>');
   });
 
   it('render hoverable correctly', () => {

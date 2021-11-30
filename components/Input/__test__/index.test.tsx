@@ -127,40 +127,20 @@ describe('Test Textarea', () => {
   it('test onClear', () => {
     const onClear = jest.fn();
     const component = mountInput(<Input allowClear defaultValue="123" onClear={onClear} />);
-    expect(
-      component
-        .find('input')
-        .getDOMNode()
-        .getAttribute('value')
-    ).toBe('123');
+    expect(component.find('input').getDOMNode().getAttribute('value')).toBe('123');
     component.find('.arco-input-clear-icon svg').simulate('click');
     expect(onClear.mock.calls.length).toBe(1);
-    expect(
-      component
-        .find('input')
-        .getDOMNode()
-        .getAttribute('value')
-    ).toBe('');
+    expect(component.find('input').getDOMNode().getAttribute('value')).toBe('');
   });
 
   it('test password', () => {
     const component = mountInputPassword(<Input.Password visibilityToggle />);
 
     expect(component.find('svg').hasClass('arco-icon-eye-invisible')).toBe(true);
-    expect(
-      component
-        .find('input')
-        .getDOMNode()
-        .getAttribute('type')
-    ).toBe('password');
+    expect(component.find('input').getDOMNode().getAttribute('type')).toBe('password');
     component.find('svg').simulate('click');
     expect(component.find('svg').hasClass('arco-icon-eye')).toBe(true);
-    expect(
-      component
-        .find('input')
-        .getDOMNode()
-        .getAttribute('type')
-    ).toBe('text');
+    expect(component.find('input').getDOMNode().getAttribute('type')).toBe('text');
 
     component.setProps({ visibilityToggle: false });
     expect(component.find('svg')).toHaveLength(0);

@@ -15,9 +15,7 @@ describe('RangePicker hover', () => {
     expect(component.find('.arco-picker').hasClass('arco-picker-focused')).toBeTruthy();
 
     // 2020-04-05
-    getDateCell(component, 0, 7)
-      .find('.arco-picker-date')
-      .simulate('click');
+    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
 
     expect(getDateCell(component, 0, 7).prop('className')).toBe(
       'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-range-start'
@@ -36,15 +34,9 @@ describe('RangePicker hover', () => {
 
     expect(getInput(component, 0).prop('value')).toBe('2020-04-05');
     expect(getInput(component, 1).prop('value')).toBe('2020-04-07');
-    expect(
-      getInput(component, 1)
-        .parent()
-        .hasClass('arco-picker-input-placeholder')
-    ).toBeTruthy();
+    expect(getInput(component, 1).parent().hasClass('arco-picker-input-placeholder')).toBeTruthy();
 
-    getDateCell(component, 0, 9)
-      .find('.arco-picker-date')
-      .simulate('click');
+    getDateCell(component, 0, 9).find('.arco-picker-date').simulate('click');
 
     expect(getInput(component, 0).prop('value')).toBe('2020-04-05');
     expect(getInput(component, 1).prop('value')).toBe('2020-04-07');

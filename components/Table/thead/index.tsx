@@ -28,9 +28,8 @@ function THead<T>(props: TheadProps<T>) {
     showSorterTooltip,
   } = props;
 
-  const { ComponentThead, ComponentHeaderRow, getHeaderComponentOperations } = useComponent(
-    components
-  );
+  const { ComponentThead, ComponentHeaderRow, getHeaderComponentOperations } =
+    useComponent(components);
 
   const _checkbox = rowSelection && (rowSelection.type === 'checkbox' || !('type' in rowSelection));
   const _checkAll = rowSelection && 'checkAll' in rowSelection ? rowSelection.checkAll : true;

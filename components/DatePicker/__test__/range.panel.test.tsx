@@ -20,18 +20,8 @@ describe('RangePicker (date)', () => {
       expect(component.find('.arco-picker-cell-today').text()).toBe('10');
 
       function checkHeaderLabel(labels: string[]) {
-        expect(
-          component
-            .find('.arco-picker-header-value')
-            .at(0)
-            .text()
-        ).toBe(labels[0]);
-        expect(
-          component
-            .find('.arco-picker-header-value')
-            .at(1)
-            .text()
-        ).toBe(labels[1]);
+        expect(component.find('.arco-picker-header-value').at(0).text()).toBe(labels[0]);
+        expect(component.find('.arco-picker-header-value').at(1).text()).toBe(labels[1]);
       }
 
       checkHeaderLabel(['2020-04', '2020-05']);
@@ -71,18 +61,8 @@ describe('RangePicker (date)', () => {
     expect(component.find('.arco-picker-cell-today').text()).toBe('四月');
 
     function checkHeaderLabel(labels: string[]) {
-      expect(
-        component
-          .find('.arco-picker-header-value')
-          .at(0)
-          .text()
-      ).toBe(labels[0]);
-      expect(
-        component
-          .find('.arco-picker-header-value')
-          .at(1)
-          .text()
-      ).toBe(labels[1]);
+      expect(component.find('.arco-picker-header-value').at(0).text()).toBe(labels[0]);
+      expect(component.find('.arco-picker-header-value').at(1).text()).toBe(labels[1]);
     }
 
     checkHeaderLabel(['2020', '2021']);
@@ -113,18 +93,8 @@ describe('RangePicker (date)', () => {
     expect(component.find('.arco-picker-cell-today').text()).toBe('2020');
 
     function checkHeaderLabel(labels: string[]) {
-      expect(
-        component
-          .find('.arco-picker-header-value')
-          .at(0)
-          .text()
-      ).toBe(labels[0]);
-      expect(
-        component
-          .find('.arco-picker-header-value')
-          .at(1)
-          .text()
-      ).toBe(labels[1]);
+      expect(component.find('.arco-picker-header-value').at(0).text()).toBe(labels[0]);
+      expect(component.find('.arco-picker-header-value').at(1).text()).toBe(labels[1]);
     }
 
     checkHeaderLabel(['2020 - 2030', '2030 - 2040']);
@@ -155,18 +125,8 @@ describe('RangePicker (date)', () => {
     expect(component.find('.arco-picker-cell-today').text()).toBe('Q2');
 
     function checkHeaderLabel(labels: string[]) {
-      expect(
-        component
-          .find('.arco-picker-header-value')
-          .at(0)
-          .text()
-      ).toBe(labels[0]);
-      expect(
-        component
-          .find('.arco-picker-header-value')
-          .at(1)
-          .text()
-      ).toBe(labels[1]);
+      expect(component.find('.arco-picker-header-value').at(0).text()).toBe(labels[0]);
+      expect(component.find('.arco-picker-header-value').at(1).text()).toBe(labels[1]);
     }
 
     checkHeaderLabel(['2020', '2021']);

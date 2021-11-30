@@ -19,12 +19,7 @@ function renderSkeleton(props: SkeletonProps) {
 describe('Skeleton', () => {
   it('basic skeleton', () => {
     const wrapper = renderSkeleton({ className: 'ceshi' });
-    expect(
-      wrapper
-        .find('.arco-skeleton')
-        .at(0)
-        .hasClass('ceshi')
-    ).toBe(true);
+    expect(wrapper.find('.arco-skeleton').at(0).hasClass('ceshi')).toBe(true);
   });
 
   describe('image', () => {
@@ -41,10 +36,7 @@ describe('Skeleton', () => {
       const wrapper = renderSkeleton({ image: { shape: 'circle', position: 'right' } });
       ['circle', 'right'].forEach((prop) => {
         expect(
-          wrapper
-            .find('.arco-skeleton-image')
-            .at(0)
-            .hasClass(`arco-skeleton-image-${prop}`)
+          wrapper.find('.arco-skeleton-image').at(0).hasClass(`arco-skeleton-image-${prop}`)
         ).toBe(true);
       });
     });

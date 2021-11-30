@@ -24,8 +24,9 @@ export default function useOverflowHidden(getContainer: () => HTMLElement, { hid
       const containerScrollBarWidth = getScrollBarWidth(container);
       if (containerScrollBarWidth) {
         originContainerStyle.current.width = originStyle.width;
-        container.style.width = `calc(${container.style.width ||
-          '100%'} - ${containerScrollBarWidth}px)`;
+        container.style.width = `calc(${
+          container.style.width || '100%'
+        } - ${containerScrollBarWidth}px)`;
       }
 
       // 记录并设置overflow

@@ -154,9 +154,7 @@ export interface TreeProps {
    * @version 2.9.0
    */
   icons?:
-    | ((
-        nodeProps: NodeProps
-      ) => {
+    | ((nodeProps: NodeProps) => {
         dragIcon?: ReactNode;
         switcherIcon?: ReactNode;
         loadingIcon?: ReactNode;

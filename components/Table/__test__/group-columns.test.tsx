@@ -15,11 +15,7 @@ describe('Table group columns', () => {
     const component = mountTable<TestData>(<Table columns={columnsGroupColumns} data={data} />);
 
     function getRowCell(rowIndex, colIndex) {
-      return component
-        .find('tr')
-        .at(rowIndex)
-        .find('th')
-        .at(colIndex);
+      return component.find('tr').at(rowIndex).find('th').at(colIndex);
     }
 
     expect(getRowCell(0, 0).prop('rowSpan')).toBe(2);
@@ -60,11 +56,7 @@ describe('Table group columns', () => {
     );
 
     function getRowCell(rowIndex, colIndex) {
-      return component
-        .find('tr')
-        .at(rowIndex)
-        .find('th')
-        .at(colIndex);
+      return component.find('tr').at(rowIndex).find('th').at(colIndex);
     }
 
     expect(getRowCell(0, 0).prop('className')).toBe(

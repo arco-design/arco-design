@@ -15,22 +15,22 @@ function getFile(name = 'file1') {
   });
 }
 
-describe('Upload Methods', function() {
+describe('Upload Methods', function () {
   let requests = [];
   let xhr;
-  beforeEach(function() {
+  beforeEach(function () {
     requests = [];
     xhr = useFakeXMLHttpRequest();
-    xhr.onCreate = function(xhr) {
+    xhr.onCreate = function (xhr) {
       requests.push(xhr);
     };
   });
 
-  afterEach(function() {
+  afterEach(function () {
     xhr.restore();
   });
 
-  it('submit method', async function() {
+  it('submit method', async function () {
     let fileList: UploadItem[] = [];
     let uploadRef: UploadInstance;
     const wrapper = mount<UploadProps>(
@@ -73,7 +73,7 @@ describe('Upload Methods', function() {
     expect(fileList[1].status).toBe(STATUS.success);
   });
 
-  it('submit all ', async function() {
+  it('submit all ', async function () {
     let fileList: UploadItem[] = [];
     let uploadRef: UploadInstance;
     const wrapper = mount<UploadProps>(

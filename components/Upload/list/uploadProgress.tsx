@@ -9,15 +9,17 @@ import IconPlayArrowFill from '../../../icon/react-icon/IconPlayArrowFill';
 import IconPause from '../../../icon/react-icon/IconPause';
 import Tooltip from '../../Tooltip';
 
-const UploadProgress: FC<{
-  listType?: UploadListProps['listType'];
-  file: UploadItem;
-  prefixCls: string;
-  progressProps?: Partial<ProgressProps>;
-  onReupload?: UploadListProps['onReupload'];
-  onUpload?: UploadListProps['onUpload'];
-  onAbort?: UploadListProps['onAbort'];
-} & CustomIconType> = (props) => {
+const UploadProgress: FC<
+  {
+    listType?: UploadListProps['listType'];
+    file: UploadItem;
+    prefixCls: string;
+    progressProps?: Partial<ProgressProps>;
+    onReupload?: UploadListProps['onReupload'];
+    onUpload?: UploadListProps['onUpload'];
+    onAbort?: UploadListProps['onAbort'];
+  } & CustomIconType
+> = (props) => {
   const { file, prefixCls, progressProps } = props;
   const { locale } = useContext(ConfigContext);
   const { status, percent = 0 } = file;

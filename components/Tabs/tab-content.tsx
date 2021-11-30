@@ -10,15 +10,8 @@ interface TabContentProps
 }
 
 export default function TabContent(props: TabContentProps) {
-  const {
-    animation,
-    activeTab,
-    prefixCls,
-    paneChildren,
-    direction,
-    lazyload,
-    destroyOnHide,
-  } = props;
+  const { animation, activeTab, prefixCls, paneChildren, direction, lazyload, destroyOnHide } =
+    props;
   const activeIndex = paneChildren.findIndex((p) => p.key === activeTab);
 
   if (

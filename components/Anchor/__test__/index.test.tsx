@@ -178,10 +178,7 @@ describe('Anchor', () => {
         </Anchor>
       </div>
     );
-    wrapper
-      .find('Anchor')
-      .find("a[href='#anchor4']")
-      .simulate('click');
+    wrapper.find('Anchor').find("a[href='#anchor4']").simulate('click');
     await new Promise((resolve) => setTimeout(resolve, 500));
     expect(handleClick.mock.calls.length).toBe(1);
   });
@@ -298,10 +295,7 @@ describe('Anchor', () => {
     expect(currentCount > 0 && currentCount <= 20).toBeTruthy();
 
     act(() => {
-      wrapper
-        .find('Anchor')
-        .find(`a[href='#${anchorId}']`)
-        .simulate('click');
+      wrapper.find('Anchor').find(`a[href='#${anchorId}']`).simulate('click');
     });
 
     expect(mockFindNode).toHaveBeenCalledTimes(currentCount + 1);

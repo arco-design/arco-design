@@ -14,7 +14,7 @@ function getBody(xhr: XMLHttpRequest) {
   }
 }
 
-const uploadRequest: UploadRequest = function(options: RequestOptions) {
+const uploadRequest: UploadRequest = function (options: RequestOptions) {
   const {
     onProgress = NOOP,
     onError = NOOP,
@@ -36,7 +36,7 @@ const uploadRequest: UploadRequest = function(options: RequestOptions) {
   const data = getValue(originData) as object;
   const xhr = new XMLHttpRequest();
   if (onProgress && xhr.upload) {
-    xhr.upload.onprogress = function(event: ProgressEvent) {
+    xhr.upload.onprogress = function (event: ProgressEvent) {
       let percent;
       if (event.total > 0) {
         percent = (event.loaded / event.total) * 100;

@@ -595,11 +595,6 @@ describe('ControlForm', () => {
     const label = wrapper.find('label');
 
     expect(label.getDOMNode().getAttribute('for')).toBe('a_input');
-    expect(
-      wrapper
-        .find('Input')
-        .getDOMNode()
-        .getAttribute('id')
-    ).toBe('input a_input');
+    expect(wrapper.find('Input').getDOMNode().getAttribute('id')).toBe('input a_input');
   });
 });

@@ -33,9 +33,7 @@ const mirrorTextAreaSizing = [
 
 let mirrorTextArea: HTMLTextAreaElement;
 
-function setMirrorTextArea(
-  originTextArea: HTMLTextAreaElement
-): {
+function setMirrorTextArea(originTextArea: HTMLTextAreaElement): {
   paddingSize: number;
   boxSizing: string;
   borderSize: number;

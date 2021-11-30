@@ -34,9 +34,12 @@ const defaultProps: ButtonProps = {
 };
 
 function Button(baseProps: ButtonProps, ref) {
-  const { getPrefixCls, size: ctxSize, autoInsertSpaceInButton, componentConfig } = useContext(
-    ConfigContext
-  );
+  const {
+    getPrefixCls,
+    size: ctxSize,
+    autoInsertSpaceInButton,
+    componentConfig,
+  } = useContext(ConfigContext);
   const props = useMergeProps<ButtonProps>(baseProps, defaultProps, componentConfig?.Button);
   const {
     style,

@@ -193,7 +193,7 @@
   }
 
   // 按钮下层的背景色
-  &:after {
+  &::after {
     content: ' ';
     display: block;
     position: absolute;
@@ -226,6 +226,7 @@
     color: @radio-button-color-text_active;
     font-weight: @radio-button-font-text-weight_active;
   }
+
   &.@{radio-prefix-cls}-disabled {
     cursor: not-allowed;
     background-color: @radio-button-color-bg_disabled;

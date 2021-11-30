@@ -14,15 +14,8 @@ function getDateValue(date?: Dayjs[], index?: number) {
 }
 
 export default function useClassName(props) {
-  const {
-    prefixCls,
-    value,
-    rangeValues,
-    valueShowHover,
-    isSameTime,
-    mode,
-    hideNotInViewDates,
-  } = props;
+  const { prefixCls, value, rangeValues, valueShowHover, isSameTime, mode, hideNotInViewDates } =
+    props;
 
   const selectedLength = getAvailableDayjsLength(rangeValues);
   const hoverLength = getAvailableDayjsLength(valueShowHover);

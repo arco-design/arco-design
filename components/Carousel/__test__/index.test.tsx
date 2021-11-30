@@ -125,19 +125,13 @@ describe('Carousel', () => {
       </Carousel>
     );
 
-    wrapper
-      .find('.arco-carousel-arrow-right')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-carousel-arrow-right').at(0).simulate('click');
     expect(isActiveIndex(wrapper, 1)).toBe(true);
 
     // 等待向右的动画结束，否则下次点击会被忽略
     jest.advanceTimersByTime(1000);
 
-    wrapper
-      .find('.arco-carousel-arrow-left')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-carousel-arrow-left').at(0).simulate('click');
     expect(isActiveIndex(wrapper, 0)).toBe(true);
   });
 
@@ -149,10 +143,7 @@ describe('Carousel', () => {
         <div style={itemStyle1} />
       </Carousel>
     );
-    wrapper
-      .find('.arco-carousel-indicator-item')
-      .at(2)
-      .simulate('click');
+    wrapper.find('.arco-carousel-indicator-item').at(2).simulate('click');
     expect(isActiveIndex(wrapper, 2)).toBe(true);
   });
 
@@ -276,22 +267,14 @@ describe('Carousel', () => {
     );
 
     act(() => {
-      wrapper
-        .find('li')
-        .at(2)
-        .simulate('click');
+      wrapper.find('li').at(2).simulate('click');
 
       wrapper.update();
     });
     expect(handleClick).toHaveBeenCalled();
     expect(isActiveIndex(wrapper, 2)).toBeTruthy();
 
-    expect(
-      wrapper
-        .find('li')
-        .at(1)
-        .hasClass('carousel-child')
-    ).toBeTruthy();
+    expect(wrapper.find('li').at(1).hasClass('carousel-child')).toBeTruthy();
   });
 
   it('support card animation scene', async () => {

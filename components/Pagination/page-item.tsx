@@ -112,16 +112,8 @@ function getIcon(name: string, icons) {
  * @param props
  */
 export const JumpPager = (props: JumpPagerProps) => {
-  const {
-    rootPrefixCls,
-    current,
-    allPages,
-    jumpPage,
-    icons,
-    disabled,
-    pageItemStyle,
-    itemRender,
-  } = props;
+  const { rootPrefixCls, current, allPages, jumpPage, icons, disabled, pageItemStyle, itemRender } =
+    props;
 
   const minCurrent = allPages > 0 ? 1 : 0;
   const nextPage = Math.min(allPages, Math.max(minCurrent, current + jumpPage));
@@ -146,16 +138,8 @@ export const JumpPager = (props: JumpPagerProps) => {
  * @param props
  */
 export const StepPager = (props: StepPagerProps) => {
-  const {
-    rootPrefixCls,
-    current,
-    allPages,
-    type,
-    icons,
-    disabled,
-    pageItemStyle,
-    itemRender,
-  } = props;
+  const { rootPrefixCls, current, allPages, type, icons, disabled, pageItemStyle, itemRender } =
+    props;
   const prefixCls = `${rootPrefixCls}-item`;
   const StepIcon = type === StepType.previous ? getIcon('prev', icons) : getIcon('next', icons);
   let _disabled = false;

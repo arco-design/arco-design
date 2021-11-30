@@ -17,12 +17,7 @@ describe('Table sorter', () => {
       const component = mountTable(<Table columns={columns} data={data} onChange={onChange} />);
       const sorter = component.find('.arco-table-cell-with-sorter');
       const getFirstTdText = () => {
-        return component
-          .find('tbody tr')
-          .at(0)
-          .find('td .arco-table-cell')
-          .at(3)
-          .text();
+        return component.find('tbody tr').at(0).find('td .arco-table-cell').at(3).text();
       };
 
       expect(sorter).toHaveLength(1);
@@ -98,12 +93,7 @@ describe('Table sorter', () => {
     );
     const sorter = component.find('.arco-table-cell-with-sorter');
     const getFirstTdText = () => {
-      return component
-        .find('tbody tr')
-        .at(0)
-        .find('td .arco-table-cell')
-        .at(3)
-        .text();
+      return component.find('tbody tr').at(0).find('td .arco-table-cell').at(3).text();
     };
 
     // default

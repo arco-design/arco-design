@@ -80,12 +80,7 @@ describe('Select', () => {
       </Select>
     );
 
-    expect(
-      wrapper
-        .find('.arco-select-group-title')
-        .at(0)
-        .text()
-    ).toBe('GroupOne');
+    expect(wrapper.find('.arco-select-group-title').at(0).text()).toBe('GroupOne');
     expect(wrapper.find('.arco-select-option')).toHaveLength(5);
   });
 
@@ -113,10 +108,7 @@ describe('Select', () => {
     jest.runAllTimers();
     expect($('.arco-select-popup').length).toBe(1);
 
-    wrapper
-      .find('.arco-select-option')
-      .at(2)
-      .simulate('click');
+    wrapper.find('.arco-select-option').at(2).simulate('click');
     expect(wrapper.find('input').props().value).toBe('海鲜烩意面');
     expect(mockFn.mock.calls.length).toBe(1);
   });
@@ -141,16 +133,10 @@ describe('Select', () => {
     );
     expect(wrapper.find('.arco-tag')).toHaveLength(3);
 
-    wrapper
-      .find('.arco-select')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select').at(0).simulate('click');
     expect($('.arco-select-popup-inner .arco-select-option-disabled').length).toBe(1);
 
-    wrapper
-      .find('IconClose')
-      .last()
-      .simulate('click');
+    wrapper.find('IconClose').last().simulate('click');
     expect(onChange.mock.calls[0][0]).toHaveLength(1);
   });
 
@@ -166,10 +152,7 @@ describe('Select', () => {
     );
     const input = wrapper.find('input');
 
-    wrapper
-      .find('.arco-select')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select').at(0).simulate('click');
     expect(
       wrapper
         .find('.arco-select-popup .arco-select-option')
@@ -180,12 +163,9 @@ describe('Select', () => {
     input.simulate('change', { target: { value: '海鲜' } });
 
     expect(wrapper.find('.arco-select-popup .arco-select-option')).toHaveLength(1);
-    expect(
-      wrapper
-        .find('.arco-select-popup .arco-select-option')
-        .at(0)
-        .text()
-    ).toEqual('海鲜烩意面');
+    expect(wrapper.find('.arco-select-popup .arco-select-option').at(0).text()).toEqual(
+      '海鲜烩意面'
+    );
 
     wrapper
       .find('input')
@@ -213,10 +193,7 @@ describe('Select', () => {
         ))}
       </Select>
     );
-    wrapper
-      .find('.arco-select')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select').at(0).simulate('click');
     wrapper
       .find('input')
       .at(0)
@@ -242,10 +219,7 @@ describe('Select', () => {
         ))}
       </Select>
     );
-    wrapper
-      .find('.arco-select')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select').at(0).simulate('click');
     expect(wrapper.find('.arco-trigger').hasClass('arco-trigger-position-left')).toBeTruthy();
   });
 
@@ -260,12 +234,7 @@ describe('Select', () => {
       </Select>
     );
     expect(wrapper.find('.arco-tag')).toHaveLength(1);
-    expect(
-      wrapper
-        .find('.arco-tag')
-        .at(0)
-        .text()
-    ).toBe('1');
+    expect(wrapper.find('.arco-tag').at(0).text()).toBe('1');
 
     const singleWrapper = mountSelect(
       <Select defaultValue={1}>
@@ -313,10 +282,7 @@ describe('Select', () => {
         options={options}
       />
     );
-    wrapper
-      .find('.arco-select')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select').at(0).simulate('click');
     expect(wrapper.find('.arco-select-popup .arco-btn').text()).toBe('Add');
   });
 
@@ -324,10 +290,7 @@ describe('Select', () => {
     wrapper = mountSelect(
       <Select options={options} dropdownMenuStyle={{ fontSize: 20 }} dropdownMenuClassName="xxx" />
     );
-    wrapper
-      .find('.arco-select')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.arco-select').at(0).simulate('click');
 
     const menu = wrapper.find('.arco-select-popup .arco-select-popup-inner').at(0);
     expect(menu.hasClass('xxx')).toBeTruthy();

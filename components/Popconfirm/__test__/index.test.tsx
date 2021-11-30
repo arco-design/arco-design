@@ -44,10 +44,7 @@ describe('Popconfirm', () => {
     expect($('.arco-popconfirm').length).toBe(1);
 
     // onCancel
-    component
-      .find('Button')
-      .at(0)
-      .simulate('click');
+    component.find('Button').at(0).simulate('click');
 
     expect(onCancel).toBeCalled();
 
@@ -60,10 +57,7 @@ describe('Popconfirm', () => {
     expect($('.arco-popconfirm').length).toBe(1);
 
     // onOk
-    component
-      .find('Button')
-      .at(1)
-      .simulate('click');
+    component.find('Button').at(1).simulate('click');
 
     expect(onOk).toBeCalled();
 
@@ -88,10 +82,7 @@ describe('Popconfirm', () => {
 
     triggerEle.simulate('click');
 
-    component
-      .find('Button')
-      .at(1)
-      .simulate('click');
+    component.find('Button').at(1).simulate('click');
 
     expect($('.arco-popconfirm').length).toBe(1);
     expect(onOk).not.toBeCalled();

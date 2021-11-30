@@ -21,10 +21,7 @@ describe('mount and unmount', () => {
   });
 
   const updateImg = (wrapper, method = 'load', index = 0) => {
-    wrapper
-      .find('img')
-      .at(index)
-      .simulate(method);
+    wrapper.find('img').at(index).simulate(method);
     jest.runAllTimers();
     wrapper.update();
   };
@@ -81,10 +78,7 @@ describe('mount and unmount', () => {
       </Image.PreviewGroup>
     );
 
-    wrapper
-      .find('.arco-image-img')
-      .at(1)
-      .simulate('click');
+    wrapper.find('.arco-image-img').at(1).simulate('click');
 
     wrapper.find('.arco-image-preview-arrow-right').simulate('click');
     wrapper.find('.arco-image-preview-arrow-left').simulate('click');

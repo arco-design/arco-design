@@ -125,8 +125,9 @@ function Dropdown(baseProps: DropdownProps, _) {
   );
 }
 
-const ForwardRefDropdown: React.ForwardRefExoticComponent<DropdownProps &
-  React.RefAttributes<unknown>> = React.forwardRef<unknown, DropdownProps>(Dropdown);
+const ForwardRefDropdown: React.ForwardRefExoticComponent<
+  DropdownProps & React.RefAttributes<unknown>
+> = React.forwardRef<unknown, DropdownProps>(Dropdown);
 
 const DropdownComponent = ForwardRefDropdown as typeof ForwardRefDropdown & {
   Button: typeof Button;

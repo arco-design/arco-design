@@ -74,11 +74,7 @@ describe('Dropdown', () => {
     );
 
     const simulateMenuItemClick = (index: number) => {
-      wrapper
-        .find('Menu')
-        .find('MenuItem')
-        .at(index)
-        .simulate('click');
+      wrapper.find('Menu').find('MenuItem').at(index).simulate('click');
     };
 
     const getIsTriggerVisible = () => {

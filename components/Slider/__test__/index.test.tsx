@@ -90,10 +90,7 @@ describe('Slider ', () => {
   it('render range slider correctly', () => {
     const component = mountSlider(<Slider range defaultValue={[10, 20]} />);
     expect(component.find('.arco-slider-button').length).toBe(2);
-    const style = component
-      .find('.arco-slider-bar')
-      .at(0)
-      .props().style;
+    const style = component.find('.arco-slider-bar').at(0).props().style;
     expect(style.left).toBe('10%');
     expect(style.right).toBe('80%');
   });
@@ -113,27 +110,13 @@ describe('Slider ', () => {
     expect(component.find('.arco-slider').hasClass('arco-slider-with-marks')).toBe(true);
     expect(component.find('.arco-slider-dot').length).toBe(5);
     expect(component.find('.arco-slider-marks-text').length).toBe(5);
-    component
-      .find('.arco-slider-dot')
-      .at(2)
-      .simulate('mousedown');
+    component.find('.arco-slider-dot').at(2).simulate('mousedown');
     expect(
-      component
-        .find('.arco-slider-button')
-        .last()
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
     ).toContain('left: 30%');
-    component
-      .find('.arco-slider-marks-text')
-      .at(4)
-      .simulate('mousedown');
+    component.find('.arco-slider-marks-text').at(4).simulate('mousedown');
     expect(
-      component
-        .find('.arco-slider-button')
-        .last()
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
     ).toContain('left: 100%');
   });
 
@@ -153,11 +136,7 @@ describe('Slider ', () => {
     );
 
     expect(
-      component
-        .find('.arco-slider-button')
-        .at(0)
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').at(0).getDOMNode().getAttribute('style')
     ).toContain('left: 10%');
   });
 
@@ -174,16 +153,9 @@ describe('Slider ', () => {
         step={3}
       />
     );
-    component
-      .find('.arco-slider-dot')
-      .at(1)
-      .simulate('mousedown');
+    component.find('.arco-slider-dot').at(1).simulate('mousedown');
     expect(
-      component
-        .find('.arco-slider-button')
-        .last()
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
     ).toContain('left: 9%');
   });
 
@@ -201,36 +173,20 @@ describe('Slider ', () => {
         disabled
       />
     );
-    component
-      .find('.arco-slider-dot')
-      .at(1)
-      .simulate('mousedown');
+    component.find('.arco-slider-dot').at(1).simulate('mousedown');
     expect(
-      component
-        .find('.arco-slider-button')
-        .last()
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
     ).toContain('left: 0%');
   });
 
   it('input slider', () => {
     const component = mountSlider(<Slider showInput defaultValue={20} />);
     expect(component.find('.arco-slider-input').length).toBe(1);
-    expect(
-      component
-        .find('input')
-        .at(0)
-        .props().value
-    ).toBe('20');
+    expect(component.find('input').at(0).props().value).toBe('20');
 
     component.find('input').simulate('change', { target: { value: '30' } });
     expect(
-      component
-        .find('.arco-slider-button')
-        .last()
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
     ).toContain('left: 30%');
   });
 
@@ -243,29 +199,19 @@ describe('Slider ', () => {
     const component = mountSlider(<TestRange />);
     component.setState({ value: [60, 20] });
     expect(
-      component
-        .find('.arco-slider-button')
-        .at(0)
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').at(0).getDOMNode().getAttribute('style')
     ).toContain('left: 20%');
   });
 
   it('should show tooltip when hovering slider button', (done) => {
     const component = mountTestComp(<Test />);
 
-    component
-      .find('.arco-slider-button')
-      .at(0)
-      .simulate('mouseEnter');
+    component.find('.arco-slider-button').at(0).simulate('mouseEnter');
 
     setTimeout(() => {
       expect(document.querySelectorAll('.arco-tooltip').length).toBe(1);
 
-      component
-        .find('.arco-slider-button')
-        .at(0)
-        .simulate('mouseLeave');
+      component.find('.arco-slider-button').at(0).simulate('mouseLeave');
 
       setTimeout(() => {
         expect(document.querySelectorAll('.arco-tooltip').length).toBe(0);
@@ -283,38 +229,22 @@ describe('Slider ', () => {
     });
     const component = mountSlider(<Slider defaultValue={20} />);
 
-    component
-      .find('.arco-slider-button')
-      .at(0)
-      .simulate('mouseDown');
-    expect(
-      component
-        .find('.arco-slider-button')
-        .at(0)
-        .hasClass('arco-slider-button-active')
-    ).toBe(true);
+    component.find('.arco-slider-button').at(0).simulate('mouseDown');
+    expect(component.find('.arco-slider-button').at(0).hasClass('arco-slider-button-active')).toBe(
+      true
+    );
 
     map.mousemove({ clientX: 0 });
 
     expect(
-      component
-        .find('.arco-slider-button')
-        .at(0)
-        .getDOMNode()
-        .getAttribute('style')
+      component.find('.arco-slider-button').at(0).getDOMNode().getAttribute('style')
     ).toContain('left: 0%');
 
     map.mouseup();
-    component
-      .find('.arco-slider-button')
-      .at(0)
-      .simulate('mouseLeave');
+    component.find('.arco-slider-button').at(0).simulate('mouseLeave');
     setTimeout(() => {
       expect(
-        component
-          .find('.arco-slider-button')
-          .at(0)
-          .hasClass('arco-slider-button-active')
+        component.find('.arco-slider-button').at(0).hasClass('arco-slider-button-active')
       ).toBe(false);
       done();
     }, 0);
@@ -322,14 +252,8 @@ describe('Slider ', () => {
 
   it('should render reverse correctly', () => {
     const component = mountSlider(<Slider defaultValue={20} reverse />);
-    const barStyle = component
-      .find('.arco-slider-bar')
-      .at(0)
-      .props().style;
-    const buttonStyle = component
-      .find('.arco-slider-button')
-      .at(0)
-      .props().style;
+    const barStyle = component.find('.arco-slider-bar').at(0).props().style;
+    const buttonStyle = component.find('.arco-slider-button').at(0).props().style;
     expect(barStyle.left).toBe('80%');
     expect(barStyle.right).toBe('0%');
     expect(buttonStyle.right).toBe('20%');

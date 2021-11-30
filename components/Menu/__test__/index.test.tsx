@@ -73,10 +73,7 @@ describe('Menu', () => {
   it('click items should change active and call the right callback', () => {
     const component = mount(generateMenu(testProps));
     expect(component.find('.arco-menu-selected').text()).toBe('设计指南');
-    component
-      .find('.arco-menu-item')
-      .at(2)
-      .simulate('click');
+    component.find('.arco-menu-item').at(2).simulate('click');
     expect(testProps.onClickMenuItem).toBeCalled();
     expect(component.find('.arco-menu-selected').text()).toBe('模块');
   });
@@ -135,32 +132,14 @@ describe('Menu', () => {
         </SubMenu>
       </Menu>
     );
-    expect(
-      component
-        .find('.arco-menu-inline-content')
-        .at(0)
-        .props().style.height
-    ).toBe('auto');
-    expect(
-      component
-        .find('.arco-menu-inline-content')
-        .at(1)
-        .props().style.height
-    ).toBe(0);
+    expect(component.find('.arco-menu-inline-content').at(0).props().style.height).toBe('auto');
+    expect(component.find('.arco-menu-inline-content').at(1).props().style.height).toBe(0);
 
-    component
-      .find('.arco-menu-inline-header')
-      .at(1)
-      .simulate('click');
+    component.find('.arco-menu-inline-header').at(1).simulate('click');
     jest.runAllTimers();
 
     expect(testProps.onClickSubMenu).toBeCalled();
-    expect(
-      component
-        .find('.arco-menu-inline-content')
-        .at(0)
-        .props().style.height
-    ).toBe(0);
+    expect(component.find('.arco-menu-inline-content').at(0).props().style.height).toBe(0);
   });
 
   it('ItemGroup', () => {
@@ -185,21 +164,12 @@ describe('Menu', () => {
       </Menu>
     );
     expect($('.arco-menu-pop-trigger').length).toBe(0);
-    component
-      .find('.arco-menu-pop')
-      .at(0)
-      .simulate('mouseenter');
+    component.find('.arco-menu-pop').at(0).simulate('mouseenter');
     jest.runAllTimers();
-    component
-      .find('.arco-menu-pop-header')
-      .at(0)
-      .simulate('click');
+    component.find('.arco-menu-pop-header').at(0).simulate('click');
     expect(testProps.onClickSubMenu).toBeCalled();
     expect($('.arco-menu-pop-trigger').length).toBe(1);
-    component
-      .find('.arco-menu-pop')
-      .at(0)
-      .simulate('mouseleave');
+    component.find('.arco-menu-pop').at(0).simulate('mouseleave');
     jest.runAllTimers();
     expect($('.arco-menu-pop-trigger').length).toBe(0);
   });
@@ -214,18 +184,12 @@ describe('Menu', () => {
       </Menu>
     );
     expect($('.arco-menu-pop-trigger').length).toBe(0);
-    component
-      .find('.arco-menu-pop')
-      .at(1)
-      .simulate('mouseenter');
+    component.find('.arco-menu-pop').at(1).simulate('mouseenter');
     jest.runAllTimers();
     expect($('.arco-menu-pop-trigger').length).toBe(1);
     component.find('.arco-menu-pop-header').simulate('click');
     expect(testProps.onClickSubMenu).toBeCalled();
-    component
-      .find('.arco-menu-pop')
-      .at(1)
-      .simulate('mouseleave');
+    component.find('.arco-menu-pop').at(1).simulate('mouseleave');
     jest.runAllTimers();
     expect($('.arco-menu-pop-trigger').length).toBe(0);
   });
@@ -241,13 +205,7 @@ describe('Menu', () => {
         </SubMenu>
       </Menu>
     );
-    expect(
-      component
-        .find(Menu.Item)
-        .at(0)
-        .find(Tooltip)
-        .exists()
-    ).toBe(true);
+    expect(component.find(Menu.Item).at(0).find(Tooltip).exists()).toBe(true);
   });
 
   it('overflowItems should be pack up', () => {

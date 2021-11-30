@@ -87,18 +87,8 @@ describe('Picker Format', () => {
       <RangePicker format="YYYY/MM/DD" defaultValue={['2020/02/01', '2020/03/01']} />
     );
 
-    expect(
-      component
-        .find('input')
-        .at(0)
-        .prop('value')
-    ).toBe('2020/02/01');
-    expect(
-      component
-        .find('input')
-        .at(1)
-        .prop('value')
-    ).toBe('2020/03/01');
+    expect(component.find('input').at(0).prop('value')).toBe('2020/02/01');
+    expect(component.find('input').at(1).prop('value')).toBe('2020/03/01');
   });
 
   it('RangePicker (month)', () => {
@@ -106,18 +96,8 @@ describe('Picker Format', () => {
       <RangePicker mode="month" format="YYYY/MM" defaultValue={['2020/02', '2020/03']} />
     );
 
-    expect(
-      component
-        .find('input')
-        .at(0)
-        .prop('value')
-    ).toBe('2020/02');
-    expect(
-      component
-        .find('input')
-        .at(1)
-        .prop('value')
-    ).toBe('2020/03');
+    expect(component.find('input').at(0).prop('value')).toBe('2020/02');
+    expect(component.find('input').at(1).prop('value')).toBe('2020/03');
   });
 
   it('RangePicker (year)', () => {
@@ -125,18 +105,8 @@ describe('Picker Format', () => {
       <RangePicker mode="year" format="YYYY [year]" defaultValue={['2020', '2031']} />
     );
 
-    expect(
-      component
-        .find('input')
-        .at(0)
-        .prop('value')
-    ).toBe('2020 year');
-    expect(
-      component
-        .find('input')
-        .at(1)
-        .prop('value')
-    ).toBe('2031 year');
+    expect(component.find('input').at(0).prop('value')).toBe('2020 year');
+    expect(component.find('input').at(1).prop('value')).toBe('2031 year');
   });
 
   it('RangePicker (week)', () => {
@@ -148,27 +118,12 @@ describe('Picker Format', () => {
       />
     );
 
-    expect(
-      component
-        .find('input')
-        .at(0)
-        .prop('value')
-    ).toBe('2020/5周');
-    expect(
-      component
-        .find('input')
-        .at(1)
-        .prop('value')
-    ).toBe('2020/10周');
+    expect(component.find('input').at(0).prop('value')).toBe('2020/5周');
+    expect(component.find('input').at(1).prop('value')).toBe('2020/10周');
   });
 
   it('fallback format', () => {
     const component = mount(<DatePicker format="YYYY-MM-DD HH:mm:ss" defaultValue="2020-02-01" />);
-    expect(
-      component
-        .find('input')
-        .at(0)
-        .prop('value')
-    ).toBe('2020-02-01 00:00:00');
+    expect(component.find('input').at(0).prop('value')).toBe('2020-02-01 00:00:00');
   });
 });

@@ -58,12 +58,9 @@ describe('Collapse', () => {
     );
 
     expect(wrapper.find(`${prefixCls}-item`)).toHaveLength(data.length);
-    expect(
-      wrapper
-        .find(`${prefixCls}-item`)
-        .at(1)
-        .hasClass(`arco-collapse-item-active`)
-    ).toBe(true);
+    expect(wrapper.find(`${prefixCls}-item`).at(1).hasClass(`arco-collapse-item-active`)).toBe(
+      true
+    );
   });
 
   it('collapse expandIcon', () => {
@@ -79,24 +76,11 @@ describe('Collapse', () => {
     );
 
     expect(wrapper.find(`${prefixCls}-item`)).toHaveLength(2);
-    expect(
-      wrapper
-        .find(`${prefixCls}-item`)
-        .at(0)
-        .find('IconPlus')
-    ).toHaveLength(1);
-    expect(
-      wrapper
-        .find(`${prefixCls}-item`)
-        .at(1)
-        .find('IconPlus')
-    ).toHaveLength(0);
-    expect(
-      wrapper
-        .find(`${prefixCls}-item`)
-        .at(1)
-        .hasClass('arco-collapse-item-no-icon')
-    ).toBe(true);
+    expect(wrapper.find(`${prefixCls}-item`).at(0).find('IconPlus')).toHaveLength(1);
+    expect(wrapper.find(`${prefixCls}-item`).at(1).find('IconPlus')).toHaveLength(0);
+    expect(wrapper.find(`${prefixCls}-item`).at(1).hasClass('arco-collapse-item-no-icon')).toBe(
+      true
+    );
   });
 
   it('could be expand and collapse', () => {
@@ -123,10 +107,7 @@ describe('Collapse', () => {
     expect(changeCollapse.mock.calls).toHaveLength(1);
 
     for (let i = 0; i < data.length; i++) {
-      wrapper
-        .find(`${prefixCls}-item-header`)
-        .at(i)
-        .simulate('click');
+      wrapper.find(`${prefixCls}-item-header`).at(i).simulate('click');
     }
 
     expect(wrapper.find(`${prefixCls}-item-active`)).toHaveLength(data.length);
@@ -186,10 +167,7 @@ describe('Collapse', () => {
     );
 
     for (let i = 0; i < data.length; i++) {
-      wrapper
-        .find(`${prefixCls}-item-header`)
-        .at(i)
-        .simulate('click');
+      wrapper.find(`${prefixCls}-item-header`).at(i).simulate('click');
     }
 
     expect(activeKey).toHaveLength(1);
@@ -218,10 +196,7 @@ describe('Collapse', () => {
       </Collapse>
     );
     for (let i = 0; i < data.length; i++) {
-      wrapper
-        .find(`${prefixCls}-item-header`)
-        .at(i)
-        .simulate('click');
+      wrapper.find(`${prefixCls}-item-header`).at(i).simulate('click');
     }
 
     expect(activeKey).toHaveLength(data.length - 1);
@@ -252,10 +227,7 @@ describe('Collapse', () => {
     expect(wrapper.find('IconInfoCircle')).toHaveLength(data.length);
     expect(wrapper.find('IconPlus')).toHaveLength(data.length);
     expect(
-      wrapper
-        .find('.arco-collapse-item-header')
-        .at(0)
-        .hasClass('arco-collapse-item-header-right')
+      wrapper.find('.arco-collapse-item-header').at(0).hasClass('arco-collapse-item-header-right')
     );
   });
 
@@ -275,10 +247,7 @@ describe('Collapse', () => {
       </Collapse>
     );
     expect(wrapper.find('.arco-collapse-item-content')).toHaveLength(1);
-    wrapper
-      .find(`${prefixCls}-item-header`)
-      .at(1)
-      .simulate('click');
+    wrapper.find(`${prefixCls}-item-header`).at(1).simulate('click');
     expect(wrapper.find('.arco-collapse-item-content')).toHaveLength(2);
   });
 });

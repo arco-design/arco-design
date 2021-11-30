@@ -18,21 +18,21 @@ function getFile(name = 'file1') {
   });
 }
 
-describe('Upload', function() {
+describe('Upload', function () {
   const requests = [];
   let xhr;
-  beforeEach(function() {
+  beforeEach(function () {
     xhr = useFakeXMLHttpRequest();
-    xhr.onCreate = function(xhr) {
+    xhr.onCreate = function (xhr) {
       requests.push(xhr);
     };
   });
 
-  afterEach(function() {
+  afterEach(function () {
     xhr.restore();
   });
 
-  it('basic upload', async function() {
+  it('basic upload', async function () {
     let fileList: UploadItem[] = [];
     const wrapper = mount<UploadProps>(
       <Upload
@@ -64,7 +64,7 @@ describe('Upload', function() {
     expect(fileList.every((x) => x.status === 'done')).toBe(true);
   });
 
-  it('upload error', async function() {
+  it('upload error', async function () {
     let fileList: UploadItem[] = [];
     const wrapper = mount<UploadProps>(
       <Upload action="/sss" onChange={(files) => (fileList = files)} />
@@ -85,7 +85,7 @@ describe('Upload', function() {
     requests[1].respond(400, {}, JSON.stringify(files.map(() => 'error: upload error')));
     expect(fileList.every((x) => x.status === 'error')).toBe(true);
   });
-  it('initial fileList', async function() {
+  it('initial fileList', async function () {
     const fileList: UploadItem[] = [
       {
         name: '1',
@@ -104,7 +104,7 @@ describe('Upload', function() {
     ]);
   });
 
-  it('initial fileList', async function() {
+  it('initial fileList', async function () {
     let fileList: UploadItem[] = [
       {
         status: 'done',
@@ -150,11 +150,7 @@ describe('Upload', function() {
     expect(items).toHaveLength(3);
 
     await act(() => {
-      items
-        .at(2)
-        .find('.arco-upload-list-reupload-icon')
-        .at(0)
-        .simulate('click');
+      items.at(2).find('.arco-upload-list-reupload-icon').at(0).simulate('click');
     });
 
     expect(fileList[2].status).toBe(STATUS.uploading);

@@ -85,7 +85,11 @@ function Menu(baseProps: MenuProps, ref) {
     return generateInfoMap(children);
   }, [children]);
 
-  const { hotkeyInfo, listener: hotkeyListener, clear: clearHotkeyInfo } = useHotkeyListener({
+  const {
+    hotkeyInfo,
+    listener: hotkeyListener,
+    clear: clearHotkeyInfo,
+  } = useHotkeyListener({
     openKeys,
     selectedKeys,
     menuInfoMap,

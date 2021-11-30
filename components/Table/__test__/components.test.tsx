@@ -97,22 +97,10 @@ describe('Table components', () => {
       />
     );
 
-    expect(
-      component
-        .find('thead th')
-        .at(0)
-        .text()
-    ).toBe('Index');
+    expect(component.find('thead th').at(0).text()).toBe('Index');
 
     for (let i = 0; i < 5; i++) {
-      expect(
-        component
-          .find('tbody tr')
-          .at(i)
-          .find('td')
-          .at(0)
-          .text()
-      ).toBe(`${i + 1}`);
+      expect(component.find('tbody tr').at(i).find('td').at(0).text()).toBe(`${i + 1}`);
     }
   });
 
@@ -156,20 +144,14 @@ describe('Table components', () => {
       'arco-table-th arco-table-operation arco-table-checkbox arco-tooltip-open'
     );
 
-    component
-      .find('tbody .arco-table-checkbox')
-      .first()
-      .simulate('mouseenter');
+    component.find('tbody .arco-table-checkbox').first().simulate('mouseenter');
 
     jest.runAllTimers();
 
     component.update();
 
-    expect(
-      component
-        .find('tbody .arco-table-checkbox')
-        .first()
-        .prop('className')
-    ).toBe('arco-table-td arco-table-operation arco-table-checkbox arco-tooltip-open');
+    expect(component.find('tbody .arco-table-checkbox').first().prop('className')).toBe(
+      'arco-table-td arco-table-operation arco-table-checkbox arco-tooltip-open'
+    );
   });
 });

@@ -31,18 +31,8 @@ describe('Table summary', () => {
     const tr = tfoot.find('tr').at(0);
 
     expect(tfoot.find('td')).toHaveLength(2);
-    expect(
-      tr
-        .find('td')
-        .at(0)
-        .text()
-    ).toBe('Total Age');
-    expect(
-      tr
-        .find('td')
-        .at(1)
-        .text()
-    ).toBe('119');
+    expect(tr.find('td').at(0).text()).toBe('Total Age');
+    expect(tr.find('td').at(1).text()).toBe('119');
   });
 
   it('fixed header & fixed summary', () => {

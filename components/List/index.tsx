@@ -27,9 +27,13 @@ const defaultProps: ListProps = {
 };
 
 function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
-  const { getPrefixCls, loadingElement, size: ctxSize, renderEmpty, componentConfig } = useContext(
-    ConfigContext
-  );
+  const {
+    getPrefixCls,
+    loadingElement,
+    size: ctxSize,
+    renderEmpty,
+    componentConfig,
+  } = useContext(ConfigContext);
   const props = useMergeProps<ListProps>(baseProps, defaultProps, componentConfig?.List);
   const {
     style,

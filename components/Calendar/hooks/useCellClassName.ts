@@ -13,15 +13,8 @@ function getDateValue(date?: Dayjs[], index?: number) {
 }
 
 export default function useClassName(props) {
-  const {
-    prefixCls,
-    mergedValue,
-    rangeValues,
-    hoverRangeValues,
-    panel,
-    isSameTime,
-    innerMode,
-  } = props;
+  const { prefixCls, mergedValue, rangeValues, hoverRangeValues, panel, isSameTime, innerMode } =
+    props;
 
   function isInRange(current, startDate, endDate) {
     if (!startDate || !endDate) {

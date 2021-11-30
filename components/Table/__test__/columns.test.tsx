@@ -19,12 +19,7 @@ describe('Table columns usage test', () => {
       />
     );
 
-    expect(
-      component
-        .find('colgroup col')
-        .at(0)
-        .prop('style')
-    ).toEqual({ width: 200 });
+    expect(component.find('colgroup col').at(0).prop('style')).toEqual({ width: 200 });
 
     component.setProps({
       columns: columns.map((col) => {
@@ -35,12 +30,7 @@ describe('Table columns usage test', () => {
       }),
     });
 
-    expect(
-      component
-        .find('colgroup col')
-        .at(0)
-        .prop('style')
-    ).toEqual({ width: '200px' });
+    expect(component.find('colgroup col').at(0).prop('style')).toEqual({ width: '200px' });
   });
 
   it('rowSelection change to undefined', () => {
@@ -81,12 +71,7 @@ describe('Table columns usage test', () => {
 
     function checkExpandIcon() {
       expect(component.find('IconPlus')).toHaveLength(1);
-      expect(
-        component
-          .find('td')
-          .at(0)
-          .find('IconPlus')
-      ).toHaveLength(1);
+      expect(component.find('td').at(0).find('IconPlus')).toHaveLength(1);
     }
 
     checkExpandIcon();
@@ -121,12 +106,7 @@ describe('Table columns usage test', () => {
       />
     );
 
-    expect(
-      component
-        .find('tbody td')
-        .at(0)
-        .text()
-    ).toBe('');
+    expect(component.find('tbody td').at(0).text()).toBe('');
 
     component.setProps({
       columns: columns.map((col) => {
@@ -138,20 +118,10 @@ describe('Table columns usage test', () => {
       placeholder: 'x',
     });
 
-    expect(
-      component
-        .find('tbody td')
-        .at(0)
-        .text()
-    ).toBe('-');
+    expect(component.find('tbody td').at(0).text()).toBe('-');
 
     component.setProps({ columns, placeholder: 'x' });
 
-    expect(
-      component
-        .find('tbody td')
-        .at(0)
-        .text()
-    ).toBe('x');
+    expect(component.find('tbody td').at(0).text()).toBe('x');
   });
 });

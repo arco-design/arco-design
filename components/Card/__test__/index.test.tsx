@@ -48,11 +48,6 @@ describe('Card', () => {
 
   it('Meta display correctly', () => {
     const wrapper = mountCard(createMeta());
-    expect(
-      wrapper
-        .find('.arco-card-meta-title')
-        .at(0)
-        .text()
-    ).toBe('Docor');
+    expect(wrapper.find('.arco-card-meta-title').at(0).text()).toBe('Docor');
   });
 });
