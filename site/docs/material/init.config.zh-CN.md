@@ -59,6 +59,24 @@ Arco 官方模板所创建的项目使用 `@arco-design/arco-scripts` 来进行�
 
 **以下所有的配置函数遵循相同的形式：既可以直接修改** `config` **对象，又可以返回一个新对象作为** `config` **。**
 
+### 配置智能提示
+
+
+**版本要求 `@arco-design/arco-scripts >= 1.25.7`**
+
+`@arco-design/arco-scripts` 的配置项由 TypeScript 书写，你可以通过 IDE 和 JsDoc 的配合来实现智能提示：
+
+```js
+// docgen.config.js
+
+/**
+ * @param config {import('@arco-design/arco-scripts').DocgenConfig}
+ */
+module.exports = (config) => {};
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/0cecc7d5998e81f8841460f205dffd5c.png~tplv-uwbnlip3yd-webp.webp)
+
 ### **配置 Babel**
 
 Webpack 和 Jest 共用了相同的 Babel 配置，因此当你遇到了 Webpack 打包或者 Jest 相关的 Babel 问题时，可以考虑修改此配置。
