@@ -59,7 +59,26 @@ Before learning how to extend the configuration, we explain the specific divisio
 - Props documentation and Demo usage documentation of the `/docs` component, built with the `arco-scripts docgen` command;
 - All css files and static resource files are constructed by gulp and less, and Webpack is not responsible for this part;
 
-**All the following configuration functions follow the same form: you can directly modify the ** `config` ** object, or return a new object as ** `config` **. **
+**All the following configuration functions follow the same form: you can directly modify the `config` object, or return a new object as `config`.**
+
+
+
+### Config Intellisense
+
+**Version requirement `@arco-design/arco-scripts >= 1.25.7`**
+
+Since `@arco-design/arco-scripts` ships with TypeScript typings, you can leverage your IDE's intellisense with jsdoc type hints:
+
+```js
+// docgen.config.js
+
+/**
+  * @param config {import('@arco-design/arco-scripts').DocgenConfig}
+  */
+module.exports = (config) => {};
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/0cecc7d5998e81f8841460f205dffd5c.png~tplv-uwbnlip3yd-webp.webp)
 
 ### **Configure Babel**
 
@@ -157,7 +176,7 @@ exports.client = (config) => {
 
 ### **Configuration document generation**
 
-The documentation of the configuration project is generated. **Do not modify** the `output` ** field, it will cause the material website to be unable to find your material document and cause the material preview to fail. **
+The documentation of the configuration project is generated. **Do not modify** the `output` ** field, it will cause the material website to be unable to find your material document and cause the material preview to fail.
 
 ```javascript
 // docgen.config.js

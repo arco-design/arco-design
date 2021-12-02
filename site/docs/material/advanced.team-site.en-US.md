@@ -43,6 +43,32 @@ The initialized directory structure of the site only needs to pay attention to t
 │ └── zh-CN // Store documents in corresponding languages
 ```
 
+### Config Intellisense
+
+**Version requirement `@arco-design/arco-doc-site >= 1.4.0`**
+
+Since `@arco-design/arco-doc-site` ships with TypeScript typings, you can leverage your IDE's intellisense with jsdoc type hints:
+
+```js
+// .config/main.js
+
+/**
+ * @type {import('@arco-design/arco-doc-site').MainConfig}
+ */
+module.exports = {... };
+```
+
+```js
+// .config/webpack.config.js
+
+/**
+ * @param config {import('@arco-design/arco-doc-site').WebpackConfig}
+ */
+module.exports = (config) => {};
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/da38d96ab9856876f34f90e0fa05f514.png~tplv-uwbnlip3yd-webp.webp)
+
 ### Material entry configuration
 
 In order to ensure that the site construction can process the correct material content, it is necessary to configure the material entry information in `.config/main.js`.
@@ -110,9 +136,36 @@ module.exports = (config) => {
 };
 ```
 
+## Development Mode
+
+**Version requirement `@arco-design/arco-doc-site >= 1.4.0`**
+
+The site dependency package `@arco-desgin/arco-doc-site` provides the `arco-doc-site dev` command to start the development mode of the team site locally as an alternate option for Storybook. In this way, even if you do not create a project using the official material template provided by Arco, you can easily develop materials.
+
+**Note: You can speed up the Dev mode through Webpack `resolve.alias` configuration.**
+
+For example, use the NPM package name to introduce the module in your material Demo:
+
+```jsx
+import {Button} from'@arco-design/my-material';
+
+export default () => <Button/>;
+```
+
+You can use the `resolve.alias` configuration to specify the path for Webpack to find this module.
+
+```js
+// .config/webpack.config.js
+module.exports = (config) => {
+   config.resolve.alias['@arco-design/my-material'] ='/project-root/packages/my-material/src';
+};
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c6001648f6b03f932f8b99e5505dbc1e.png~tplv-uwbnlip3yd-webp.webp)
+
 ## Effect preview
 
-**Note: The following commands all need to be operated under the site directory. **
+**Note: The following commands all need to be operated under the site directory.**
 
 ```
 # Try to build the site project
@@ -134,9 +187,9 @@ The preview content should include both custom documents and material documents.
 
 After the preview confirms that the content is correct, you need to publish the site as an NPM package, and then configure the path of the module file in [Material Platform-Team Page-Team Site]. Teams with high requirements for access speed can also upload the build product directly to the CDN, and then configure the resource CDN address.
 
-**Only the team owner has the right to edit the site configuration. **
+**Only the team owner has the right to edit the site configuration.**
 
-**The path supports directly filling in the NPM package name corresponding to the site (not the material package). **
+**The path supports directly filling in the NPM package name corresponding to the site (not the material package).**
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d14e7b6b380cee60d66e7180d05420d5.png~tplv-uwbnlip3yd-webp.webp)
 
