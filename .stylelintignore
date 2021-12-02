@@ -1,3 +1,4 @@
 components/style/theme/color
 *.tsx
 *.ts
+*.md
