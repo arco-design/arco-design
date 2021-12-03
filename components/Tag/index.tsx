@@ -45,6 +45,7 @@ function Tag(baseProps: TagProps, ref) {
     onCheck,
     icon,
     closeIcon,
+    bordered,
     ...rest
   } = props;
 
@@ -98,6 +99,7 @@ function Tag(baseProps: TagProps, ref) {
       [`${prefixCls}-checkable`]: checkable,
       [`${prefixCls}-checked`]: _checked,
       [`${prefixCls}-size-${size}`]: size,
+      [`${prefixCls}-bordered`]: bordered,
       [`${prefixCls}-custom-color`]: _checked && color && !_color,
     },
     className
