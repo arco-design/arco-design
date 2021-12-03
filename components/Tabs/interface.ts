@@ -35,7 +35,7 @@ export interface TabsProps {
    */
   direction?: 'horizontal' | 'vertical';
   /**
-   * @zh 有三个尺寸供选择，分别为`small`, `default`, `large`
+   * @zh 有四个尺寸供选择，分别为`mini`, `small`, `default`, `large`
    * @en Size of tabs
    */
   size?: 'mini' | 'small' | 'default' | 'large';

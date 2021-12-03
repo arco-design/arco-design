@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState, useMemo, useCallback } from 'react';
-import { isNumber, isObject } from 'lodash';
+import { isNumber, isObject } from '../../_util/is';
 import ResizeObserver from '../../_util/resizeObserver';
 import DropdownIcon from './dropdown-icon';
 import TabNavIcon from './tab-nav-icon';
