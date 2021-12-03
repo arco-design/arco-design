@@ -38,3 +38,8 @@ Grid can effectively ensure the consistency and logic of the page, strengthen te
 |lg|`screen >= 992px`|`number \| { [key: string]: any }`|`-`|-|
 |xl|`screen >= 1200px`|`number \| { [key: string]: any }`|`-`|-|
 |xxl|`screen >= 1600px`|`number \| { [key: string]: any }`|`-`|-|
+|flex|Set flex layout properties|`FlexType`|`-`|2.26.0|
+
+```ts
+type FlexType = number | string | 'auto' | 'none';
+```

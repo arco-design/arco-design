@@ -15,3 +15,7 @@ file: interface
 ## API
 
 %%Props%%
+
+```ts
+type FlexType = number | string | 'auto' | 'none';
+```
