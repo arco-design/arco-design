@@ -54,3 +54,17 @@ it('gutter correct when row children is custom component', () => {
     expect(node.prop('style')).toEqual({ paddingLeft: 6, paddingRight: 6 });
   });
 });
+
+it('flex', () => {
+  const grid = mount(
+    <Row>
+      <Col flex="100px">100px</Col>
+      <Col flex="auto">auto</Col>
+      <Col flex="1 1 auto">1 1 auto</Col>
+    </Row>
+  );
+
+  expect(grid.find('.arco-col').at(0).prop('style')).toEqual({ flex: '0 0 100px' });
+  expect(grid.find('.arco-col').at(1).prop('style')).toEqual({ flex: 'auto' });
+  expect(grid.find('.arco-col').at(2).prop('style')).toEqual({ flex: '1 1 auto' });
+});

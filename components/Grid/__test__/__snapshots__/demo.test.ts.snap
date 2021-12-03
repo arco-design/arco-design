@@ -192,6 +192,92 @@ exports[`renders Grid/demo/basic.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Grid/demo/flex.md correctly 1`] = `
+<div
+  style="width:100%"
+>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col"
+      style="flex:0 0 100px"
+    >
+      <div>
+        100px
+      </div>
+    </div>
+    <div
+      class="arco-col"
+      style="flex:auto"
+    >
+      <div>
+        auto
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col"
+      style="flex:0 0 100px"
+    >
+      <div>
+        100px
+      </div>
+    </div>
+    <div
+      class="arco-col"
+      style="flex:auto"
+    >
+      <div>
+        auto
+      </div>
+    </div>
+    <div
+      class="arco-col"
+      style="flex:0 0 100px"
+    >
+      <div>
+        100px
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
+    style="margin-bottom:16px"
+  >
+    <div
+      class="arco-col"
+      style="flex:3"
+    >
+      <div>
+        3 / 12
+      </div>
+    </div>
+    <div
+      class="arco-col"
+      style="flex:4"
+    >
+      <div>
+        4 / 12
+      </div>
+    </div>
+    <div
+      class="arco-col"
+      style="flex:5"
+    >
+      <div>
+        5 / 12
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Grid/demo/flex-align.md correctly 1`] = `
 <div
   style="width:100%"

@@ -1,14 +1,21 @@
-import React, { useContext, forwardRef } from 'react';
+import React, { useContext, useMemo, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import { isNumber, isObject } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
-import { ColProps } from './interface';
+import { ColProps, FlexType } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { RowContext } from './context';
 
 const defaultProps: ColProps = {
   span: 24,
 };
+
+function getFlexString(flex: FlexType) {
+  if (typeof flex === 'string' && /\d+[px|%|em|rem|]{1}/.test(flex)) {
+    return `0 0 ${flex}`;
+  }
+  return flex;
+}
 
 function Col(baseProps: ColProps, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
@@ -30,6 +37,7 @@ function Col(baseProps: ColProps, ref) {
     lg,
     xl,
     xxl,
+    flex,
     ...rest
   } = props;
 
@@ -60,7 +68,7 @@ function Col(baseProps: ColProps, ref) {
     [`${prefixCls}-push-${push}`]: push,
   };
   mergeClassName = adaptationGrid(prefixCls, mergeClassName);
-  const classNames = cs(mergeClassName, className);
+  const classNames = cs(flex ? prefixCls : mergeClassName, className);
 
   const paddingStyle: {
     paddingLeft?: number;
@@ -81,6 +89,11 @@ function Col(baseProps: ColProps, ref) {
     }
   }
 
+  const flexStyle = useMemo(
+    () => (getFlexString(flex) ? { flex: getFlexString(flex) } : {}),
+    [flex]
+  );
+
   return (
     <div
       ref={ref}
@@ -88,6 +101,7 @@ function Col(baseProps: ColProps, ref) {
       style={{
         ...style,
         ...paddingStyle,
+        ...flexStyle,
       }}
       className={classNames}
     >
