@@ -152,22 +152,21 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
           <>
             <input ref={refInput} {...inputProps} />
             {!disabled && allowClear && value ? (
-              <IconHover
-                className={`${prefixCls}-clear-icon`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (refInput.current && refInput.current.focus) {
-                    refInput.current.focus();
-                  }
-                  onValueChange && onValueChange('', e);
-                  onClear && onClear();
-                }}
-                // keep focus status
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                }}
-              >
-                <IconClose />
+              <IconHover className={`${prefixCls}-clear-icon`}>
+                <IconClose
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (refInput.current && refInput.current.focus) {
+                      refInput.current.focus();
+                    }
+                    onValueChange && onValueChange('', e);
+                    onClear && onClear();
+                  }}
+                  // keep focus status
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                  }}
+                />
               </IconHover>
             ) : null}
           </>
