@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 💅 Style
+
+- Fix the problem that the title and icon of the `Steps` component are not aligned in the vertical mode([#267](https://github.com/arco-design/arco-design/pull/267))
+
 ## 2.17.3
 
 2021-06-24

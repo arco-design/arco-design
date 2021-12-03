@@ -1,3 +1,12 @@
+## 2.26.0
+
+2021-12-03
+
+### 🐛 问题修复
+
+- `List` 组件修复使用虚拟列表时 `scrollLoading` 失效的问题。([#270](https://github.com/arco-design/arco-design/pull/270))
+- `List` 组件修复在虚拟滚动时 `onListScroll` 和 `onReachBottom` 无法触发的 bug。([#259](https://github.com/arco-design/arco-design/pull/259))
+
 ## 2.23.1
 
 2021-10-15

@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 🆕 Feature
+
+- `Tag` supports `bordered` property.([#264](https://github.com/arco-design/arco-design/pull/264))
+
 ## 2.14.1
 
 2021-04-16

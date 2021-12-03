@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 💅 Style
+
+- Fix the problem that the color change of Icon in the selected menu item of the `Menu` component has no transition effect.([#263](https://github.com/arco-design/arco-design/pull/263))
+
 ## 2.24.1
 
 2021-11-12

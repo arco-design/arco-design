@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 🆕 Feature
+
+- The `Grid.Col` component adds the `flex` property.([#268](https://github.com/arco-design/arco-design/pull/268))
+
 ## 2.25.1
 
 2021-11-26

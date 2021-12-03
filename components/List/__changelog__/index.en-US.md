@@ -1,3 +1,12 @@
+## 2.26.0
+
+2021-12-03
+
+### 🐛 BugFix
+
+- `List` fixes the issue that `scrollLoading` fails when using virtual lists.([#270](https://github.com/arco-design/arco-design/pull/270))
+- `List` fixes the bug that `onListScroll` and `onReachBottom` cannot be triggered when using virtual scrolling.([#259](https://github.com/arco-design/arco-design/pull/259))
+
 ## 2.23.1
 
 2021-10-15

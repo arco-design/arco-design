@@ -1,3 +1,15 @@
+## 2.26.0
+
+2021-12-03
+
+### 🆕 Feature
+
+- `Select` adds the `clearIcon` property to customize the clear button icon.([#256](https://github.com/arco-design/arco-design/pull/256))
+
+### 🐛 BugFix
+
+- `Select` fixes the bug that the parameter of the `renderFormat` callback does not return an object when the `labelInValue` is `true`.([#257](https://github.com/arco-design/arco-design/pull/257))
+
 ## 2.24.1
 
 2021-11-12

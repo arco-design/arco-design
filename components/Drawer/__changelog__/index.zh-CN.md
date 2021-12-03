@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 🆕 功能升级
+
+- `Drawer` 组件支持 `okButtonProps` 和 `cancelButtonProps` 属性。([#260](https://github.com/arco-design/arco-design/pull/260))
+
 ## 2.23.0
 
 2021-09-27
