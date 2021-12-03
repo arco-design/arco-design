@@ -68,7 +68,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
 
   const refDom = useRef(null);
   const refVirtualList = useRef<VirtualListHandle>(null);
-  const refScrollList = useRef<HTMLDivElement>(null);
+  const refScrollElement = useRef<HTMLDivElement>(null);
   const refItemListWrapper = useRef<HTMLDivElement>(null);
   const refCanTriggerReachBottom = useRef(true);
 
@@ -95,7 +95,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
           const node = refItemListWrapper.current.children[index];
           node &&
             scrollIntoView(node as HTMLElement, {
-              boundary: refScrollList.current,
+              boundary: refScrollElement.current,
             });
         }
       },
@@ -139,11 +139,11 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
   const throttledScrollHandler = useCallback(
     throttle(() => {
       if (onListScroll) {
-        onListScroll(refScrollList.current);
+        onListScroll(refScrollElement.current);
         return;
       }
 
-      const { scrollTop, scrollHeight, clientHeight } = refScrollList.current;
+      const { scrollTop, scrollHeight, clientHeight } = refScrollElement.current;
       const scrollBottom = scrollHeight - (scrollTop + clientHeight);
 
       if (scrollBottom <= offsetBottom) {
@@ -242,6 +242,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
 
   const renderList = () => {
     const listItems = renderListItems();
+    const isVirtual = virtualListProps && Array.isArray(listItems);
     const paginationElement = pagination ? (
       <Pagination
         {...paginationProps}
@@ -261,7 +262,6 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
         className={cs(`${prefixCls}-wrapper`, wrapperClassName)}
       >
         <div
-          ref={refScrollList}
           style={style}
           className={cs(
             prefixCls,
@@ -273,16 +273,27 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
             },
             className
           )}
-          onScroll={needHandleScroll ? throttledScrollHandler : undefined}
+          ref={(ref) => {
+            if (!isVirtual) {
+              refScrollElement.current = ref;
+            }
+          }}
+          onScroll={!isVirtual && needHandleScroll ? throttledScrollHandler : undefined}
         >
           {header ? <div className={`${prefixCls}-header`}>{header}</div> : null}
 
-          {virtualListProps && Array.isArray(listItems) ? (
+          {isVirtual ? (
             <VirtualList
-              ref={refVirtualList}
+              ref={(ref) => {
+                if (ref) {
+                  refVirtualList.current = ref;
+                  refScrollElement.current = ref.dom as HTMLDivElement;
+                }
+              }}
               className={`${prefixCls}-content ${prefixCls}-virtual`}
               data={listItems}
               isStaticItemHeight={false}
+              onScroll={needHandleScroll ? throttledScrollHandler : undefined}
               {...virtualListProps}
             >
               {(child) => child}
