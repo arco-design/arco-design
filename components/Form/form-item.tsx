@@ -30,7 +30,7 @@ const Col = Grid.Col;
 
 interface FormItemTipProps extends Pick<FormItemProps, 'prefixCls' | 'help'> {
   errors: FieldError[];
-  warnings: ReactNode[][];
+  warnings: ReactNode[];
 }
 
 // 错误提示文字
@@ -46,15 +46,13 @@ const FormItemTip: React.FC<FormItemTipProps> = ({
     }
   });
   const warningTip = [];
-  warnings.map((items, i) => {
-    if (items && items.length) {
-      items.forEach((item) => {
-        warningTip.push(
-          <div key={i} className={`${prefixCls}-message-help_warning`}>
-            {item}
-          </div>
-        );
-      });
+  warnings.map((item, i) => {
+    if (item) {
+      warningTip.push(
+        <div key={i} className={`${prefixCls}-message-help_warning`}>
+          {item}
+        </div>
+      );
     }
   });
   const isHelpTip = !isUndefined(help) || !!warningTip.length;
@@ -96,7 +94,7 @@ const Item = <
     [key: string]: FieldError<FieldValue>;
   }>(null);
   const [warnings, setWarnings] = useState<{
-    [key: string]: ReactNode[];
+    [key: string]: ReactNode;
   }>(null);
   const formContext = useContext(FormContext);
   const prefixCls = formContext.prefixCls || getPrefixCls('form');
@@ -109,7 +107,7 @@ const Item = <
     field: string,
     params: {
       errors?: FieldError<FieldValue>;
-      warnings?: ReactNode[];
+      warnings?: ReactNode;
     } = {}
   ) => {
     if (isDestroyed.current) {
@@ -128,7 +126,7 @@ const Item = <
     });
     setWarnings((current) => {
       const newVal = { ...(current || {}) };
-      if (warnings && warnings.length) {
+      if (warnings) {
         newVal[field] = warnings;
       } else {
         delete newVal[field];
@@ -241,7 +239,7 @@ const Item = <
     return children;
   };
 
-  const FormItemContext = RawFormItemContext as unknown as RawFormItemContextType<
+  const FormItemContext = (RawFormItemContext as unknown) as RawFormItemContextType<
     FormData,
     FieldValue,
     FieldKey

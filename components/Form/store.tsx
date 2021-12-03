@@ -45,7 +45,7 @@ export type StoreChangeInfo<T> = {
   };
   data?: {
     errors?: FieldError;
-    warnings?: string;
+    warnings?: React.ReactNode;
     touched?: boolean;
   };
 };
@@ -204,8 +204,8 @@ class Store<
     if (!field) return;
     const prev = cloneDeep(this.store);
     set(this.store, field, value);
-    this.triggerValuesChange({ [field]: value } as unknown as Partial<FormData>);
-    this.triggerTouchChange({ [field]: value } as unknown as Partial<FormData>);
+    this.triggerValuesChange(({ [field]: value } as unknown) as Partial<FormData>);
+    this.triggerTouchChange(({ [field]: value } as unknown) as Partial<FormData>);
 
     this.notify('innerSetValue', { prev, field, ...options, changeValues: { [field]: value } });
   };
@@ -252,14 +252,16 @@ class Store<
   };
 
   // 外部调用，设置多个表单控件的值，以及 error，touch 信息。
-  public setFields = (obj: {
-    [field in FieldKey]?: {
-      value?: FieldValue;
-      error?: FieldError<FieldValue>;
-      touched?: boolean;
-      warning?: string; // TODO
-    };
-  }) => {
+  public setFields = (
+    obj: {
+      [field in FieldKey]?: {
+        value?: FieldValue;
+        error?: FieldError<FieldValue>;
+        touched?: boolean;
+        warning?: React.ReactNode;
+      };
+    }
+  ) => {
     const fields = Object.keys(obj) as FieldKey[];
     const changeValues = {} as any;
     fields.forEach((field) => {
@@ -350,7 +352,7 @@ class Store<
     if (fields && isArray(fields)) {
       const changeValues = {} as any;
       fields.forEach((field) => {
-        set(this.store, field, this.initialValues[field as unknown as keyof FormData]);
+        set(this.store, field, this.initialValues[(field as unknown) as keyof FormData]);
         changeValues[field] = get(this.store, field);
       });
 
