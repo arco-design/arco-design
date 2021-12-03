@@ -54,6 +54,8 @@ const getFiles = (fileList, accept) => {
 };
 
 const loopDirectory = (items: DataTransferItemList, accept, callback) => {
+  const files = [];
+
   const _loopDirectory = (item) => {
     if (item.isFile) {
       item.file((file) => {
@@ -61,7 +63,7 @@ const loopDirectory = (items: DataTransferItemList, accept, callback) => {
           Object.defineProperty(file, 'webkitRelativePath', {
             value: item.fullPath.replace(/^\//, ''),
           });
-          callback(file);
+          files.push(file);
         }
       });
     } else if (item.isDirectory) {
@@ -78,6 +80,8 @@ const loopDirectory = (items: DataTransferItemList, accept, callback) => {
     .forEach(
       (item: DataTransferItem) => item.webkitGetAsEntry && _loopDirectory(item.webkitGetAsEntry())
     );
+  // https://github.com/arco-design/arco-design/issues/242
+  callback(files);
 };
 
 const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
