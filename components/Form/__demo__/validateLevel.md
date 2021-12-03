@@ -28,28 +28,22 @@ function Demo() {
       form={form}
       style={{ width: 600 }}
     >
-
       <Form.Item
-        label="URL"
+        field="email"
+        label="Email"
+        rules={[
+          {
+            type: 'email',
+            validateLevel: 'warning',
+          },
+          {
+            required: true,
+            type: 'string',
+            minLength: 6,
+          },
+        ]}
       >
-        <Form.Item
-          field="url"
-          help="sd"
-          noStyle={{showErrorTip: true}}
-          rules={[
-            {
-              type: 'url',
-              validateLevel: 'warning',
-            },
-            {
-              required: true,
-              type: 'string',
-              minLength: 6,
-            },
-          ]}
-        >
         <Input placeholder="input placeholder" />
-        </Form.Item>
       </Form.Item>
       <FormItem
         label='Age'
@@ -75,13 +69,13 @@ function Demo() {
         </Button>
         <Button type="primary" onClick={async () => {
           try {
-            await form.validate(['name']);
-            Message.success('Username 校验通过')
+            await form.validate(['email']);
+            Message.success('Email 校验通过')
           } catch (e) {
-            Message.error('Username 校验失败')
+            Message.error('Email 校验失败')
           }
         }} style={{ marginRight: 24 }}>
-          Validate Username
+          Validate Email
         </Button>
         <Button
           style={{ marginRight: 24 }}
