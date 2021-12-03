@@ -149,6 +149,153 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Tag/demo/bordered.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      Default
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default"
+    >
+      red
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
+    >
+      orangered
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default"
+    >
+      orange
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-gold arco-tag-checked arco-tag-size-default"
+    >
+      gold
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default"
+    >
+      lime
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default"
+    >
+      green
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-cyan arco-tag-checked arco-tag-size-default"
+    >
+      cyan
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default"
+    >
+      blue
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
+    >
+      arcoblue
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-purple arco-tag-checked arco-tag-size-default"
+    >
+      purple
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-pinkpurple arco-tag-checked arco-tag-size-default"
+    >
+      pinkpurple
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-magenta arco-tag-checked arco-tag-size-default"
+    >
+      magenta
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default"
+    >
+      gray
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Tag/demo/check.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"

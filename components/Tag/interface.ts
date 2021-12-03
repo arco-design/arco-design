@@ -12,6 +12,12 @@ export interface TagProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'cl
    */
   color?: string;
   /**
+   * @zh 是否显示边框
+   * @en Whether the tag is bordered
+   * @version 2.26.0
+   */
+  bordered?: Boolean;
+  /**
    * @zh 标签尺寸
    * @en The size of Tag
    * @defaultValue default

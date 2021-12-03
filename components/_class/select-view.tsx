@@ -108,6 +108,12 @@ export interface SelectViewCommonProps
    */
   removeIcon?: ReactNode | null;
   /**
+   * @zh `allowClear` 时配置清除按钮的图标。
+   * @en Configure the icon of the clear button when `allowClear`.
+   * @version 2.26.0
+   */
+  clearIcon?: ReactNode;
+  /**
    * @zh 鼠标点击下拉框时的回调
    * @en Callback when the mouse clicks on the drop-down box
    */
@@ -161,6 +167,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     suffixIcon,
     arrowIcon,
     removeIcon,
+    clearIcon,
     placeholder,
     renderText,
     value,
@@ -434,7 +441,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     className
   );
 
-  const clearIcon =
+  const mergedClearIcon =
     !disabled && !isEmptyValue && allowClear ? (
       <IconHover
         size={mergedSize}
@@ -443,7 +450,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
         onClick={onClear}
         onMouseDown={keepFocus}
       >
-        <IconClose />
+        {clearIcon !== undefined && clearIcon !== null ? clearIcon : <IconClose />}
       </IconHover>
     ) : null;
 
@@ -487,7 +494,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
         {isMultiple ? renderMultiple() : renderSingle()}
 
         <div className={`${prefixCls}-suffix`} onMouseDown={(event) => focused && keepFocus(event)}>
-          {clearIcon}
+          {mergedClearIcon}
           {mergedSuffixIcon}
         </div>
       </div>
