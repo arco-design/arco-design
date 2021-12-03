@@ -24,6 +24,8 @@ A floating layer that slides in from the edge of the screen.
 |maskStyle|Style of the drawer mask|`CSSProperties`|`-`|-|
 |okText|Text of the OK button|`string`|`-`|-|
 |cancelText|Text of the Cancel button|`string`|`-`|-|
+|okButtonProps|The props of `ok` button|`ButtonProps`|`-`|2.26.0|
+|cancelButtonProps|The props of `cancel` button|`ButtonProps`|`-`|2.26.0|
 |placement|The placement of the drawer: `top` `right` `bottom` `left`|`string`|`right`|-|
 |width|The width of the drawer dialog. Only works when `placement` is `left` or `right`|`string \| number`|`250`|-|
 |height|The height of the drawer dialog. Only works when `placement` is `top` or `bottom`|`string \| number`|`250`|-|
