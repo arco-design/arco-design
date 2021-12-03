@@ -4,7 +4,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  run-test:
+  jest-test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -13,13 +13,19 @@ jobs:
       - name: install
         run: yarn && cd site && yarn && cd ..
 
-      - name: run-icon
-        run: yarn run icon
-
       - name: setup node
         uses: actions/setup-node@v2
         with:
           node-version: 14
+
+      - name: run-icon
+        run: yarn icon
+
+      - name: build:cjs
+        run: yarn build:cjs
+
+      - name: build:es
+        run: yarn build:es
 
       - name: mock-time
         uses: szenius/set-timezone@v1.0
@@ -28,5 +34,8 @@ jobs:
           timezoneMacos: 'Asia/Singapore'
           timezoneWindows: 'Singapore Standard Time'
 
-      - name: test
-        run: yarn run test
+      - name: test:client
+        run: yarn test:client
+
+      - name: test:node
+        run: yarn test:node
