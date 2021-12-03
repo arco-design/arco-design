@@ -62,6 +62,7 @@ When users need to select one or more from a group of similar data, they can use
 |suffixIcon|Customize select suffix icon|`ReactNode`|`-`|-|
 |arrowIcon|Customize select arrow icon.|`ReactNode \| null`|`-`|-|
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|`ReactNode \| null`|`-`|-|
+|clearIcon|Configure the icon of the clear button when `allowClear`.|`ReactNode`|`-`|2.26.0|
 |onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
