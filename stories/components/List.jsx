@@ -113,6 +113,7 @@ function Demo() {
             </List.Item>
           );
         }}
+        onReachBottom={() => console.log('list reach bottom')}
       />
     </div>
   );
