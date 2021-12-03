@@ -153,9 +153,12 @@
   }
 
   &-is-warning {
-    .@{progress-prefix-cls}-line-inner,
-    .@{progress-prefix-cls}-steps-item-active {
+    .@{progress-prefix-cls}-line-inner {
       background-color: @progress-line-color-inner-bg_warning;
+    }
+
+    .@{progress-prefix-cls}-steps-item-active {
+      background-color: @progress-steps-color-item-bg_warning;
     }
 
     .@{progress-prefix-cls}-line-text .@{prefix}-icon,
@@ -165,9 +168,12 @@
   }
 
   &-is-success {
-    .@{progress-prefix-cls}-line-inner,
-    .@{progress-prefix-cls}-steps-item-active {
+    .@{progress-prefix-cls}-line-inne {
       background-color: @progress-line-color-inner-bg_success;
+    }
+
+    .@{progress-prefix-cls}-steps-item-active {
+      background-color: @progress-steps-color-item-bg_success;
     }
 
     .@{progress-prefix-cls}-line-text .@{prefix}-icon,
@@ -177,9 +183,13 @@
   }
 
   &-is-error {
-    .@{progress-prefix-cls}-line-inner,
-    .@{progress-prefix-cls}-steps-item-active {
+    .@{progress-prefix-cls}-line-inner {
       background-color: @progress-line-color-inner-bg_error;
+    }
+
+
+    .@{progress-prefix-cls}-steps-item-active {
+      background-color: @progress-steps-color-item-bg_error;
     }
 
     .@{progress-prefix-cls}-line-text .@{prefix}-icon,
