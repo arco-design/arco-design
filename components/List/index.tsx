@@ -251,6 +251,10 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
     ) : null;
     const paginationElementInsideFooter = paginationInFooter ? paginationElement : null;
     const paginationElementOutsideFooter = paginationInFooter ? null : paginationElement;
+    const scrollLoadingEle =
+      scrollLoading !== undefined && scrollLoading !== null ? (
+        <div className={`${prefixCls}-item ${prefixCls}-scroll-loading`}>{scrollLoading}</div>
+      ) : null;
 
     return (
       <div
@@ -283,29 +287,28 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
           {header ? <div className={`${prefixCls}-header`}>{header}</div> : null}
 
           {isVirtual ? (
-            <VirtualList
-              ref={(ref) => {
-                if (ref) {
-                  refVirtualList.current = ref;
-                  refScrollElement.current = ref.dom as HTMLDivElement;
-                }
-              }}
-              className={`${prefixCls}-content ${prefixCls}-virtual`}
-              data={listItems}
-              isStaticItemHeight={false}
-              onScroll={needHandleScroll ? throttledScrollHandler : undefined}
-              {...virtualListProps}
-            >
-              {(child) => child}
-            </VirtualList>
+            <>
+              <VirtualList
+                ref={(ref) => {
+                  if (ref) {
+                    refVirtualList.current = ref;
+                    refScrollElement.current = ref.dom as HTMLDivElement;
+                  }
+                }}
+                className={`${prefixCls}-content ${prefixCls}-virtual`}
+                data={listItems}
+                isStaticItemHeight={false}
+                onScroll={needHandleScroll ? throttledScrollHandler : undefined}
+                {...virtualListProps}
+              >
+                {(child) => child}
+              </VirtualList>
+              {scrollLoadingEle}
+            </>
           ) : (
             <div className={`${prefixCls}-content`} ref={refItemListWrapper}>
               {listItems}
-              {onReachBottom && scrollLoading && (
-                <div className={`${prefixCls}-item ${prefixCls}-scroll-loading`}>
-                  {scrollLoading}
-                </div>
-              )}
+              {scrollLoadingEle}
             </div>
           )}
 
