@@ -125,8 +125,8 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
         if (!disabled) {
           setIsDragging(false);
           if (props.directory) {
-            loopDirectory(e.dataTransfer.items, accept, (file) => {
-              props.onDragFiles && props.onDragFiles([file]);
+            loopDirectory(e.dataTransfer.items, accept, (files) => {
+              props.onDragFiles && props.onDragFiles(files);
             });
           } else {
             const files = getFiles(e.dataTransfer.files, accept);
