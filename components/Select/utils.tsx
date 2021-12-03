@@ -1,7 +1,13 @@
 import React, { ReactElement } from 'react';
 import get from 'lodash/get';
 import Option from './option';
-import { OptionInfo, OptionProps, OptionsType, SelectProps } from './interface';
+import {
+  SelectInnerStateValue,
+  OptionInfo,
+  OptionProps,
+  OptionsType,
+  SelectProps,
+} from './interface';
 import { isArray, isString, isNumber, isObject } from '../_util/is';
 import getHighlightText from '../_util/getHighlightText';
 
@@ -16,7 +22,7 @@ function isEmptyValue(value, isMultiple: boolean) {
   return isMultiple ? !isArray(value) || !value.length : value === undefined;
 }
 
-function getValidValue(value, isMultiple: boolean, labelInValue: boolean): SelectProps['value'] {
+function getValidValue(value, isMultiple: boolean, labelInValue: boolean): SelectInnerStateValue {
   // Compatible when labelInValue is set, value is passed in the object
   if (labelInValue) {
     if (isMultiple) {

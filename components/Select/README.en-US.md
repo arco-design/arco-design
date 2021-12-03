@@ -14,14 +14,14 @@ When users need to select one or more from a group of similar data, they can use
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|defaultValue|To set default value|`string \| string[] \| number \| number[]`|`-`|-|
-|value|To set value|`string \| string[] \| number \| number[]`|`-`|-|
+|defaultValue|To set default value|`string \| string[] \| number \| number[] \| LabeledValue \| LabeledValue[]`|`-`|-|
+|value|To set value|`string \| string[] \| number \| number[] \| LabeledValue \| LabeledValue[]`|`-`|-|
 |inputValue|To set input value|`string`|`-`|-|
 |mode|Set mode of Select(**`tags` recommends using `mode: multiple; allowCreate: true` instead, this mode will be removed in the next major version**)|`'multiple' \| 'tags'`|`-`|-|
 |options|Select options|`(\| string\| number\| { label: ReactNode \| string; value: string \| number; disabled?: boolean; extra?: any })[]`|`-`|`extra` in 2.2.0|
 |labelInValue|Whether to embed label in value, turn the format of value from string to `{ value: string, label: ReactNode }`|`boolean`|`-`|-|
 |filterOption|If it's true, filter options by input value. If it's a function, filter options base on the function.|`boolean \| ((inputValue: string, option: ReactElement) => boolean)`|`true`|-|
-|renderFormat|Customize the content that will be displayed in the Select.If the `Option` corresponding to `value` does not exist, the first parameter will be `null`|`(option: OptionInfo \| null, value: string \| number) => ReactNode`|`-`|-|
+|renderFormat|Customize the content that will be displayed in the Select.If the `Option` corresponding to `value` does not exist, the first parameter will be `null`|`(option: OptionInfo \| null, value: string \| number \| LabeledValue) => ReactNode`|`-`|-|
 |defaultActiveFirstOption|Whether to highlight the first option by default|`boolean`|`true`|-|
 |unmountOnExit|Whether to destroy the DOM when hiding|`boolean`|`true`|-|
 |defaultPopupVisible|Whether to show dropdown by default.|`boolean`|`-`|2.14.0|
@@ -37,7 +37,7 @@ When users need to select one or more from a group of similar data, they can use
 |dropdownMenuClassName|The className of dropdown menu.|`string \| string[]`|`-`|-|
 |virtualListProps|Pass properties used by VirtualList.|`AvailableVirtualListProps`|`-`|2.1.0|
 |onChange|Callback when select an option or input value change.|`(value, option: OptionInfo \| OptionInfo[]) => void`|`-`|-|
-|onDeselect|Called when a option is deselected.Only called for `multiple` mode.|`(value: OptionProps['value'], option: OptionInfo) => void`|`-`|-|
+|onDeselect|Called when a option is deselected.Only called for `multiple` mode.|`(value: string \| number \| LabeledValue, option: OptionInfo) => void`|`-`|-|
 |onClear|Called when clear|`(visible: boolean) => void`|`-`|-|
 |onSearch|Callback when input changed|`(value: string, reason: InputValueChangeReason) => void`|`-`|-|
 |onFocus|Callback when get focus|`(e) => void`|`-`|-|
