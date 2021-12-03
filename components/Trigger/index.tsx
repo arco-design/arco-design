@@ -19,7 +19,7 @@ export { TriggerProps };
 
 function getDOMPos(dom: HTMLElement) {
   if (!dom) {
-    return null;
+    return {};
   }
   const { width, height, left, right } = dom.getBoundingClientRect();
   return {
@@ -155,33 +155,22 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   childrenDom = null;
 
   // 保存children节点的尺寸。 主要用于在弹出层动画前和动画完成后比较尺寸是否有变化。
+  childrenDomSize: ReturnType<typeof getDOMPos> = {};
 
-  childrenDomSize: ReturnType<typeof getDOMPos> = null;
-
-  // childrenAnimationOver 表示childrne节点动画结束
-  childrenAnimationOver: boolean = false;
-
-  mergedProps: PropsWithChildren<TriggerProps> = {};
-
-  setMergedProps = (baseProps?): PropsWithChildren<TriggerProps> => {
+  getMergedProps = (baseProps?): PropsWithChildren<TriggerProps> => {
     const { componentConfig } = this.context;
     const props = mergeProps<PropsWithChildren<TriggerProps>>(
       baseProps || this.props,
       defaultProps,
       componentConfig?.Trigger
     );
-    this.mergedProps = props;
-    return this.mergedProps;
-  };
-
-  getMergedProps = (): PropsWithChildren<TriggerProps> => {
-    return this.mergedProps;
+    return props;
   };
 
   constructor(props, context) {
     super(props, context);
 
-    const mergedProps = this.setMergedProps(props);
+    const mergedProps = this.getMergedProps(props);
 
     const popupVisible =
       'popupVisible' in mergedProps ? mergedProps.popupVisible : mergedProps.defaultPopupVisible;
@@ -208,8 +197,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   }
 
   componentDidUpdate(_prevProps) {
-    const prevProps = this.getMergedProps();
-    const currentProps = this.setMergedProps();
+    const prevProps = this.getMergedProps(_prevProps);
+    const currentProps = this.getMergedProps();
     if (!prevProps.popupVisible && currentProps.popupVisible) {
       this.update();
     }
@@ -223,18 +212,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       return;
     }
 
-    if (!this.childrenAnimationOver) {
-      const rect = getDOMPos(this.childrenDom);
-      // children 节点的尺寸改变，主要是处理 children 存在scale等动画属性导致弹出层定位出错的问题。
-      // 当比较相等时，标示动画结束，不再执行此次逻辑
-      if (JSON.stringify(rect) !== JSON.stringify(this.childrenDomSize)) {
-        this.updatePopupPosition();
-        this.childrenDomSize = rect;
-      } else if (rect && this.childrenDomSize) {
-        this.childrenAnimationOver = true;
-      }
+    const rect = getDOMPos(this.childrenDom);
+    // children节点的尺寸改变，主要是处理children 存在scale等动画属性，或者移动位置的时候，popup 的位置有问题
+    if (JSON.stringify(rect) !== JSON.stringify(this.childrenDomSize)) {
+      this.updatePopupPosition();
+      this.childrenDomSize = rect;
     }
-
     // popupVisible为true
     this.onContainerResize();
     if (!this.handleWindowResize) {
@@ -687,11 +670,6 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
   };
 
-  onChildrenResize = () => {
-    this.childrenAnimationOver = false;
-    this.onResize();
-  };
-
   onPopupMouseDown = () => {
     this.hasPopupMouseDown = true;
 
@@ -920,7 +898,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     );
 
     const childrenComponent = isExistChildren && (
-      <ResizeObserver onResize={this.onChildrenResize}>
+      <ResizeObserver onResize={this.onResize}>
         {React.cloneElement(child, {
           ...mergeProps,
         })}
