@@ -1,10 +1,10 @@
-name: pr_check
+name: build_size
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  run-test:
+  report-size:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -13,20 +13,17 @@ jobs:
       - name: install
         run: yarn && cd site && yarn && cd ..
 
-      - name: run-icon
-        run: yarn run icon
-
       - name: setup node
         uses: actions/setup-node@v2
         with:
           node-version: 14
 
-      - name: mock-time
-        uses: szenius/set-timezone@v1.0
+      - name: report-compressed-size
+        uses: preactjs/compressed-size-action@v2
         with:
-          timezoneLinux: 'Asia/Singapore'
-          timezoneMacos: 'Asia/Singapore'
-          timezoneWindows: 'Singapore Standard Time'
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          build-script: 'prepublishOnly'
+          pattern: './{dist,es,lib,icon}/**/*.{js,css}'
 
-      - name: test
-        run: yarn run test
+      - name: build:cjs
+        run: yarn run build:cjs
