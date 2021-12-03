@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Select, Spin, Tag } from '@self';
+import { IconBug } from '@self/icon';
 
 const generateOptions = (size) => {
   return new Array(size).fill(1).map((_, index) => {
@@ -10,7 +11,7 @@ const generateOptions = (size) => {
   });
 };
 
-export default function() {
+export default function () {
   const [options, setOptions] = useState(generateOptions(50));
   const [loading, setLoading] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -99,6 +100,7 @@ export default function() {
         onBlur={() => console.log('onBlur 3')}
         inputValue={inputValue}
         onInputValueChange={(value) => setInputValue(value.slice(0, 10))}
+        clearIcon={<IconBug />}
       />
       <Select
         style={{ maxWidth: 350, marginRight: 20 }}

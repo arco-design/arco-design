@@ -108,6 +108,11 @@ export interface SelectViewCommonProps
    */
   removeIcon?: ReactNode | null;
   /**
+   * @zh 自定义的多选框清空图标，设置为 `null` 不显示清空图标。
+   * @en Customize the clear icon
+   */
+  clearIcon?: ReactNode | null;
+  /**
    * @zh 鼠标点击下拉框时的回调
    * @en Callback when the mouse clicks on the drop-down box
    */
@@ -161,6 +166,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     suffixIcon,
     arrowIcon,
     removeIcon,
+    clearIcon,
     placeholder,
     renderText,
     value,
@@ -433,19 +439,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     },
     className
   );
-
-  const clearIcon =
-    !disabled && !isEmptyValue && allowClear ? (
-      <IconHover
-        size={mergedSize}
-        key="clearIcon"
-        className={`${prefixCls}-clear-icon`}
-        onClick={onClear}
-        onMouseDown={keepFocus}
-      >
-        <IconClose />
-      </IconHover>
-    ) : null;
+  const showClearIcon = !disabled && !isEmptyValue && allowClear;
 
   return (
     <div
@@ -487,7 +481,17 @@ export const SelectView = (props: SelectViewProps, ref) => {
         {isMultiple ? renderMultiple() : renderSingle()}
 
         <div className={`${prefixCls}-suffix`} onMouseDown={(event) => focused && keepFocus(event)}>
-          {clearIcon}
+          {showClearIcon && (
+            <IconHover
+              size={mergedSize}
+              key="clearIcon"
+              className={`${prefixCls}-clear-icon`}
+              onClick={onClear}
+              onMouseDown={keepFocus}
+            >
+              {clearIcon || <IconClose />}
+            </IconHover>
+          )}
           {mergedSuffixIcon}
         </div>
       </div>

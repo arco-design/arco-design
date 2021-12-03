@@ -54,6 +54,7 @@ Display options in a multi-level cascading dropdown component.
 |suffixIcon|Customize select suffix icon|`ReactNode`|`-`|-|
 |arrowIcon|Customize select arrow icon.|`ReactNode \| null`|`-`|-|
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|`ReactNode \| null`|`-`|-|
+|clearIcon|Customize the clear icon|`ReactNode \| null`|`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
