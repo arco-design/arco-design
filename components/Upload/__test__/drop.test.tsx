@@ -20,12 +20,16 @@ const mockDirectoryItems = () => {
       isDirectory,
       isFile: !isDirectory,
       file: (callback) => {
-        callback({ name });
+        setTimeout(() => {
+          callback({ name });
+        }, 10);
       },
       createReader: () => {
         return {
           readEntries(callback) {
-            return callback((children || []).map((x) => getItem(x)));
+            setTimeout(() => {
+              callback((children || []).map((x) => getItem(x)));
+            }, 10);
           },
         };
       },
