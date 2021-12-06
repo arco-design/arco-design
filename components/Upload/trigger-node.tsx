@@ -56,23 +56,42 @@ const getFiles = (fileList, accept) => {
 const loopDirectory = (items: DataTransferItemList, accept, callback) => {
   const files = [];
 
+  let restFileCount = 0; // 剩余上传文件的数量
+  const onFinish = () => {
+    !restFileCount && callback(files);
+  };
+
   const _loopDirectory = (item) => {
+    restFileCount += 1;
+
     if (item.isFile) {
       item.file((file) => {
+        restFileCount -= 1;
         if (isAcceptFile(file, accept)) {
           Object.defineProperty(file, 'webkitRelativePath', {
             value: item.fullPath.replace(/^\//, ''),
           });
           files.push(file);
         }
+        onFinish();
       });
-    } else if (item.isDirectory) {
+      return;
+    }
+    if (item.isDirectory) {
       // item 是个文件夹
       const reader = item.createReader();
       reader.readEntries((entries) => {
+        restFileCount -= 1;
+        if (entries.length === 0) {
+          onFinish();
+        }
         entries.forEach(_loopDirectory);
       });
+      return;
     }
+
+    restFileCount -= 1;
+    onFinish();
   };
 
   [].slice
@@ -80,8 +99,6 @@ const loopDirectory = (items: DataTransferItemList, accept, callback) => {
     .forEach(
       (item: DataTransferItem) => item.webkitGetAsEntry && _loopDirectory(item.webkitGetAsEntry())
     );
-  // https://github.com/arco-design/arco-design/issues/242
-  callback(files);
 };
 
 const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
