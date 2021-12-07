@@ -306,7 +306,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   isClickToHide = () => {
-    return this.isClickTrigger() && this.getMergedProps().clickToClose;
+    return (
+      (this.isClickTrigger() || this.isContextMenuTrigger()) && this.getMergedProps().clickToClose
+    );
   };
 
   isBlurToHide = () => {
@@ -628,6 +630,18 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
   };
 
+  hideContextMenu = (e) => {
+    const { popupVisible } = this.state;
+    if (popupVisible) {
+      this.mousedownToHide = true;
+    }
+    this.triggerPropsEvent('onClick', e);
+
+    if (this.isClickToHide() && popupVisible) {
+      this.setPopupVisible(!popupVisible, 0);
+    }
+  };
+
   onClick = (e) => {
     const { popupVisible } = this.state;
     if (popupVisible) {
@@ -848,13 +862,14 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
     if (this.isContextMenuTrigger() && !disabled) {
       mergeProps.onContextMenu = this.onContextMenu;
+      mergeProps.onClick = this.hideContextMenu;
     } else {
       mergeProps.onContextMenu = this.triggerOriginEvent('onContextMenu');
     }
     if (this.isClickTrigger() && !disabled) {
       mergeProps.onClick = this.onClick;
     } else {
-      mergeProps.onClick = this.triggerOriginEvent('onClick');
+      mergeProps.onClick = mergeProps.onClick || this.triggerOriginEvent('onClick');
     }
     if (this.isFocusTrigger() && !disabled) {
       mergeProps.onFocus = this.onFocus;
