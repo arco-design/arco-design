@@ -1,6 +1,6 @@
 {
   "name": "@arco-design/web-react",
-  "version": "2.26.0",
+  "version": "2.26.1",
   "description": "Arco Design React UI Library.",
   "module": "./es/index.js",
   "main": "./lib/index.js",

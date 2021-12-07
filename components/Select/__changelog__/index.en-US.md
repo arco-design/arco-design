@@ -1,3 +1,11 @@
+## 2.26.1
+
+2021-12-07
+
+### 🐛 BugFix
+
+- Fix the bug that the `prefix` node loses the style of `font-size` when the `Select` component is multi-selected.([#284](https://github.com/arco-design/arco-design/pull/284))
+
 ## 2.26.0
 
 2021-12-03

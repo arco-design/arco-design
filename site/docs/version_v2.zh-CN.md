@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.26.1
+
+2021-12-07
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件触发方式为 `contextMenu` 时，点击触发节点，弹出层未隐藏的 bug。([#284](https://github.com/arco-design/arco-design/pull/284))
+- 修复 `Select` 组件多选时，`prefix` 节点丢失 `font-size` 样式的 bug。([#284](https://github.com/arco-design/arco-design/pull/284))
+- 修复 `Form` 组件教验通过时表现出 `warning` 样式的 bug。([#282](https://github.com/arco-design/arco-design/pull/282))
+- 修复 `Upload` 组件拖拽上传文件夹不生效的 bug。([#275](https://github.com/arco-design/arco-design/pull/275))
+
 ## 2.26.0
 
 2021-12-03

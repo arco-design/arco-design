@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.26.1
+
+2021-12-07
+
+### 🐛 BugFix
+
+- Fix the bug that when the trigger mode of the `Trigger` component is `contextMenu`, the pop-up layer is not hidden when the trigger node is clicked.([#284](https://github.com/arco-design/arco-design/pull/284))
+- Fix the bug that the `prefix` node loses the style of `font-size` when the `Select` component is multi-selected.([#284](https://github.com/arco-design/arco-design/pull/284))
+- Fix the bug that the `warning` style of the `Form` component is shown when the teaching experience is passed.([#282](https://github.com/arco-design/arco-design/pull/282))
+- Fix the bug that the upload folder does not take effect when dragging and dropping the upload component.([#275](https://github.com/arco-design/arco-design/pull/275))
+
 ## 2.26.0
 
 2021-12-03

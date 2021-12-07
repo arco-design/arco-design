@@ -1,3 +1,11 @@
+## 2.26.1
+
+2021-12-07
+
+### 🐛 BugFix
+
+- Fix the bug that when the trigger mode of the `Trigger` component is `contextMenu`, the pop-up layer is not hidden when the trigger node is clicked.([#284](https://github.com/arco-design/arco-design/pull/284))
+
 ## 2.26.0
 
 2021-12-03
