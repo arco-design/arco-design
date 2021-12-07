@@ -47,13 +47,11 @@ const FormItemTip: React.FC<FormItemTipProps> = ({
   });
   const warningTip = [];
   warnings.map((item, i) => {
-    if (item) {
-      warningTip.push(
-        <div key={i} className={`${prefixCls}-message-help_warning`}>
-          {item}
-        </div>
-      );
-    }
+    warningTip.push(
+      <div key={i} className={`${prefixCls}-message-help-warning`}>
+        {item}
+      </div>
+    );
   });
   const isHelpTip = !isUndefined(help) || !!warningTip.length;
   const visible = isHelpTip || !!errorTip.length;
@@ -94,7 +92,7 @@ const Item = <
     [key: string]: FieldError<FieldValue>;
   }>(null);
   const [warnings, setWarnings] = useState<{
-    [key: string]: ReactNode;
+    [key: string]: ReactNode[];
   }>(null);
   const formContext = useContext(FormContext);
   const prefixCls = formContext.prefixCls || getPrefixCls('form');
@@ -107,7 +105,7 @@ const Item = <
     field: string,
     params: {
       errors?: FieldError<FieldValue>;
-      warnings?: ReactNode;
+      warnings?: ReactNode[];
     } = {}
   ) => {
     if (isDestroyed.current) {
@@ -126,7 +124,7 @@ const Item = <
     });
     setWarnings((current) => {
       const newVal = { ...(current || {}) };
-      if (warnings) {
+      if (warnings && warnings.length) {
         newVal[field] = warnings;
       } else {
         delete newVal[field];
@@ -160,21 +158,26 @@ const Item = <
     [`${prefixCls}-label-item-left`]: labelAlign === 'left',
   });
 
+  const errorInfo = errors ? Object.values(errors) : [];
+  const warningInfo = warnings
+    ? Object.values(warnings).reduce((total, next) => total.concat(next), [])
+    : [];
+
   const itemStatus = useMemo(() => {
     if (validateStatus) {
       return validateStatus;
     }
-    if (errors && Object.values(errors).length) {
+    if (errorInfo.length) {
       return VALIDATE_STATUS.error;
     }
-    if (warnings && Object.values(warnings).length) {
+    if (warningInfo.length) {
       return VALIDATE_STATUS.warning;
     }
     return undefined;
   }, [errors, warnings, validateStatus]);
 
   const hasHelp = useMemo(() => {
-    return !isUndefined(props.help) || (warnings && Object.values(warnings).length > 0);
+    return !isUndefined(props.help) || warningInfo.length > 0;
   }, [props.help, warnings]);
 
   const classNames = cs(
@@ -329,8 +332,8 @@ const Item = <
               <FormItemTip
                 prefixCls={prefixCls}
                 help={props.help}
-                errors={(errors && Object.values(errors)) || []}
-                warnings={(warnings && Object.values(warnings)) || []}
+                errors={errorInfo}
+                warnings={warningInfo}
               />
               {extra && <div className={`${prefixCls}-extra`}>{extra}</div>}
             </Col>

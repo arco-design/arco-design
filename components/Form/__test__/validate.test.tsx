@@ -77,4 +77,69 @@ describe('validate form', () => {
     expect(mockBlurFn).toHaveBeenCalledTimes(3);
     expect(mockClickFn).toHaveBeenCalledTimes(2);
   });
+
+  it('validateLevel in rules', async () => {
+    let form;
+    const wrapper = mount(
+      <Form ref={(node) => (form = node)} style={{ width: 600 }}>
+        <Form.Item
+          label="url"
+          field="url"
+          required
+          rules={[
+            {
+              type: 'email',
+              validateLevel: 'warning',
+            },
+            {
+              required: true,
+              type: 'string',
+              minLength: 6,
+            },
+          ]}
+        >
+          <Input placeholder="please enter your username" />
+        </Form.Item>
+      </Form>
+    );
+
+    const input = wrapper.find('input');
+    await act(() => {
+      input.simulate('change', {
+        target: {
+          value: 'Hello',
+        },
+      });
+    });
+
+    await sleep(100);
+    wrapper.update();
+
+    expect(wrapper.find('.arco-form-message').at(0).html()).toBe(
+      '<div class="arco-form-message arco-form-message-help"><div>Expect min length 6 but got 5</div><div class="arco-form-message-help-warning">Expect type email but got `Hello`</div></div>'
+    );
+    expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1); // warning 信息
+
+    await act(() => {
+      input.simulate('change', {
+        target: {
+          value: 'Helloo',
+        },
+      });
+    });
+    await sleep(10);
+    wrapper.update();
+
+    expect(wrapper.find('.arco-form-item-status-error')).toHaveLength(0);
+    expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1);
+
+    form.setFields({
+      url: {
+        warning: 'hahahaha',
+      },
+    });
+    wrapper.update();
+
+    expect(wrapper.find('.arco-form-message-help-warning').at(0).text()).toBe('hahahaha');
+  });
 });

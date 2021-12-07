@@ -41,7 +41,7 @@ export default class Control<
 
   private errors: FieldError<FieldValue> = null;
 
-  private warnings: React.ReactNode = null;
+  private warnings: React.ReactNode[] = null;
 
   private isDestroyed = false;
 
@@ -149,7 +149,7 @@ export default class Control<
             this.touched = info.data.touched;
           }
           if (info.data && 'warnings' in info.data) {
-            this.warnings = info.data.warnings;
+            this.warnings = [].concat(info.data.warnings);
           }
           if (info.data && 'errors' in info.data) {
             this.errors = info.data.errors;

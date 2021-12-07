@@ -430,7 +430,7 @@ export type FormItemContextProps<
 > = FormContextProps<FormData, FieldValue, FieldKey> & {
   updateFormItem?: (
     field: string,
-    params: { errors?: FieldError<FieldValue>; warnings?: ReactNode }
+    params: { errors?: FieldError<FieldValue>; warnings?: ReactNode[] }
   ) => void;
 };
 
