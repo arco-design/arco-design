@@ -52,7 +52,7 @@
     "react-dom": ">=16"
   },
   "devDependencies": {
-    "@arco-design/arco-scripts": "^1.25.2",
+    "@arco-design/arco-scripts": "^1.25.9",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
