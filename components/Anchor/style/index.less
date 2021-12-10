@@ -12,7 +12,7 @@
       position: absolute;
       height: @anchor-line-slider-height;
       width: @anchor-line-width;
-      margin-top: 4px + @anchor-title-padding-vertical;
+      margin-top: ((@anchor-font-size-title * @line-height-base) / 2 + @anchor-title-padding-vertical - @anchor-line-slider-height / 2);
       background-color: @anchor-color-bg-line_active;
       left: 0;
       top: 0;
@@ -22,7 +22,7 @@
   }
 
   &-list {
-    margin-left: @anchor-line-margin-right - @anchor-title-padding-horizontal;
+    margin-left: @anchor-line-margin-right - @anchor-title-padding-horizontal + @anchor-line-width;
     position: relative;
 
     &::before {
@@ -31,7 +31,7 @@
       height: 100%;
       background-color: @anchor-color-bg-line;
       width: @anchor-line-width;
-      left: -(@anchor-line-margin-right - @anchor-title-padding-horizontal);
+      left: @anchor-title-padding-horizontal - @anchor-line-margin-right - @anchor-line-width;
     }
   }
 
