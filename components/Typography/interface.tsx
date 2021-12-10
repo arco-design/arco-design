@@ -47,7 +47,7 @@ export interface OperationsProps extends Omit<React.HTMLAttributes<HTMLElement>,
   currentContext: Record<string, any>;
 }
 
-export interface CommonProps extends OperationsProps {
+export interface CommonProps extends Omit<OperationsProps, 'currentContext'> {
   style?: CSSProperties;
   className?: string | string[];
   children?: ReactNode;
