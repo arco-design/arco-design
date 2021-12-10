@@ -1,16 +1,14 @@
-import React, { useState, useRef, useEffect, useContext, PropsWithChildren } from 'react';
+import React, { useState, useRef, useEffect, PropsWithChildren } from 'react';
 import Tooltip from '../Tooltip';
-import { ConfigContext } from '../ConfigProvider';
 import { isObject, isArray } from '../_util/is';
 import copy from '../_util/clipboard';
 import IconCopy from '../../icon/react-icon/IconCopy';
 import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconEdit from '../../icon/react-icon/IconEdit';
 import { OperationsProps } from './interface';
+import mergedToString from '../_util/mergedToString';
 
 export default function Operations(props: PropsWithChildren<OperationsProps>) {
-  const { getPrefixCls, locale } = useContext(ConfigContext);
-  const prefixCls = getPrefixCls('typography');
   const {
     children,
     copyable,
@@ -21,7 +19,12 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
     setEditing,
     onClickExpand,
     forceShowExpand,
+    currentContext = {},
   } = props;
+
+  const { getPrefixCls, locale } = currentContext;
+
+  const prefixCls = getPrefixCls('typography');
 
   const [isCopied, setCopied] = useState(false);
   const copyTimer = useRef(null);
@@ -43,7 +46,7 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
 
   function onClickCopy() {
     if (isCopied) return;
-    const text = copyConfig.text !== undefined ? copyConfig.text : String(children);
+    const text = copyConfig.text !== undefined ? copyConfig.text : mergedToString(children);
     copy(text);
     setCopied(true);
     copyConfig.onCopy && copyConfig.onCopy(text);
