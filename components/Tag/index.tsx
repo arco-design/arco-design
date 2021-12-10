@@ -70,9 +70,8 @@ function Tag(baseProps: TagProps, ref) {
           setLoading(false);
           setVisible(false);
         })
-        .catch((err) => {
+        .catch(() => {
           setLoading(false);
-          throw err;
         });
     } else {
       setVisible(false);

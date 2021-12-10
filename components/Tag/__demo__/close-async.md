@@ -14,7 +14,7 @@ title:
 If `onClose` returns a `Promise`, the tag can be closed asynchronously and the loading effect will be displayed when it is not closed.
 
 ```js
-import { Tag } from '@arco-design/web-react';
+import { Tag, Message } from '@arco-design/web-react';
 
 ReactDOM.render(
   <Tag
@@ -22,7 +22,12 @@ ReactDOM.render(
     onClose={() => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          resolve();
+          if (Math.random() >= 0.5) {
+            resolve();
+          } else {
+            Message.error('Close filed');
+            reject();
+          }
         }, 3000);
       });
     }}

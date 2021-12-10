@@ -280,6 +280,11 @@
 
   &-cell {
     word-break: break-all;
+
+    &-indent {
+      height: 1px;
+      float: left;
+    }
   }
 
   // Expand
@@ -290,6 +295,9 @@
   }
 
   &-cell-expand-icon {
+    // https://github.com/arco-design/arco-design/issues/298
+    float: left;
+
     button {
       .expandBtn();
 

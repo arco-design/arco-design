@@ -184,7 +184,9 @@ function Td(props: TdType) {
         style={column.cellStyle}
         {...titleProps}
       >
-        {paddingLeft ? <span style={{ paddingLeft, height: 1 }} /> : null}
+        {paddingLeft ? (
+          <span className={`${prefixCls}-cell-indent`} style={{ paddingLeft }} />
+        ) : null}
         {content}
       </div>
     </InnerComponentTd>

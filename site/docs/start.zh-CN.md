@@ -22,8 +22,6 @@ import ACCard from '../src/widget/Card';
 
 **需要同时安装 react >= 16.8 和 react-dom >= 16.8。**
 
-### 安装
-
 ```bash
 // npm
 npm i @arco-design/web-react

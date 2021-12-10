@@ -18,11 +18,9 @@ import ACCard from '../src/widget/Card';
 />
 ```
 
-## React Version
+## Install
 
 **You need to install react >= 16.8 and react-dom >= 16.8 at the same time.**
-
-## Install
 
 ```bash
 // npm
