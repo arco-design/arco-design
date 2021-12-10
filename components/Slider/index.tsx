@@ -14,6 +14,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import { off, on } from '../_util/dom';
 import useLegalValue from './hooks/useLegalValue';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useUpdate from '../_util/hooks/useUpdate';
 
 function isSameOrder(firstNums: number[], secondNums) {
   const diff1 = firstNums[0] - firstNums[1];
@@ -65,10 +66,17 @@ function Slider(baseProps: SliderProps, ref) {
     defaultValue: props.defaultValue,
     value: props.value,
   });
+
   // 计算合法值
   const curVal = getLegalRangeValue(value);
   const lastVal = useRef<number[]>(curVal);
   let [beginVal, endVal] = curVal;
+
+  // value变化后 更新lastVal
+  useUpdate(() => {
+    lastVal.current = getLegalRangeValue(value);
+  }, [value, getLegalRangeValue]);
+
   if (!isSameOrder(curVal, lastVal.current)) {
     // 保持顺序
     [beginVal, endVal] = [endVal, beginVal];
