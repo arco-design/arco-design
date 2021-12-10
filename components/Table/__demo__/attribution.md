@@ -208,7 +208,7 @@ class Demo extends React.Component {
               type: 'checkbox',
               checkAll: checkAll
             }}
-            scroll={fixedHeader ? { y: 240 } : {}}
+            scroll={fixedHeader ? { y: 120 } : {}}
             style={{ marginTop: 10 }}
             pagination={{ pageSize: 5 }}
           />
