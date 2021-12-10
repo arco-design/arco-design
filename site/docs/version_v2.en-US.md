@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.26.2
+
+2021-12-10
+
+### 💎 Optimization
+
+- `DatePicker.RangePicker` component selected interactive optimization.([#312](https://github.com/arco-design/arco-design/pull/312))
+
+### 🐛 BugFix
+
+- Fix the bug that the `DatePicker` component does not trigger `onVisibleChange` in the controlled mode.([#314](https://github.com/arco-design/arco-design/pull/314))
+- Fix the bug that `loadMore` is triggered by selecting the parent node when `Cascader` is multiple-selected and the `changeOnSelect` is true.([#309](https://github.com/arco-design/arco-design/pull/309))
+- Fix the bug that the request cannot be terminated when the `CustomRequest` setting of the `Upload` component is an asynchronous function.([#306](https://github.com/arco-design/arco-design/pull/306))
+- Fix the bug that the `onAfterChange` parameter of the `Slider` component is not updated.([#305](https://github.com/arco-design/arco-design/pull/305))
+- Fix the bug that the calculation result of `Typography` is incorrectly when ellipsised in the international scene([#301](https://github.com/arco-design/arco-design/pull/301))
+- Fix the bug that the copy result is wrong when `Typography` wraps multiple dynamic strings and `copyable`([#301](https://github.com/arco-design/arco-design/pull/301))
+
+### 💅 Style
+
+- Fix the problem that table cell will break line when `Table` component is tree data and `column.render` returns `div`.([#302](https://github.com/arco-design/arco-design/pull/302))
+
 ## 2.26.1
 
 2021-12-07

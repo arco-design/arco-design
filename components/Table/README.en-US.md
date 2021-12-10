@@ -97,7 +97,6 @@ The column describes the data object and is an item in `columns`.
 |ellipsis|If the cell content exceeds the length, whether it is automatically omitted and displays `...`.After setting this property, the `table-layout` of the table will automatically become `fixed`.|`boolean`|`-`|-|
 |headerCellStyle|Table header cell style|`CSSProperties`|`-`|-|
 |bodyCellStyle|Table body cell style|`CSSProperties`|`-`|-|
-|cellStyle|Table cell style|`CSSProperties`|`-`|-|
 |title|Column title|`React.ReactNode` **(Required)**|`-`|-|
 |width|Column width|`number \| string`|`-`|-|
 |dataIndex|The `key` corresponding to the column data in the data item is used to display the value.It supports the nested writing of `a[0].bc[1]`, see [lodash.get](https:// www.npmjs.com/package/lodash.get).|`string`|`-`|-|

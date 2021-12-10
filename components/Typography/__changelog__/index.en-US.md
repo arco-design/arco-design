@@ -1,3 +1,12 @@
+## 2.26.2
+
+2021-12-10
+
+### 🐛 BugFix
+
+- Fix the bug that the calculation result of `Typography` is incorrectly when ellipsised in the international scene([#301](https://github.com/arco-design/arco-design/pull/301))
+- Fix the bug that the copy result is wrong when `Typography` wraps multiple dynamic strings and `copyable`([#301](https://github.com/arco-design/arco-design/pull/301))
+
 ## 2.26.0
 
 2021-12-03

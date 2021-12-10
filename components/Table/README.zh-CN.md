@@ -97,7 +97,6 @@
 |ellipsis|单元格内容超出长度后，是否自动省略，显示 `...`。设置这个属性后，table 的 `table-layout` 将自动变成 `fixed`。|`boolean`|`-`|-|
 |headerCellStyle|表头单元格自定义样式|`CSSProperties`|`-`|-|
 |bodyCellStyle|表身单元格自定义样式|`CSSProperties`|`-`|-|
-|cellStyle|表格单元格自定义样式|`CSSProperties`|`-`|-|
 |title|列标题|`React.ReactNode` **(必填)**|`-`|-|
 |width|列宽度|`number \| string`|`-`|-|
 |dataIndex|列数据在数据项中对应的 `key`，用于取值显示，支持 `a[0].b.c[1]` 的嵌套写法，详情看 [lodash.get](https://www.npmjs.com/package/lodash.get)。|`string`|`-`|-|

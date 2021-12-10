@@ -1,3 +1,12 @@
+## 2.26.2
+
+2021-12-10
+
+### 🐛 问题修复
+
+- 修复 `Typography` 在国际化场景下折叠计算结果出错的 bug。([#301](https://github.com/arco-design/arco-design/pull/301))
+- 修复 `Typography` 对包裹多个动态字符串并 `copyable` 时，复制结果出错的 bug。([#301](https://github.com/arco-design/arco-design/pull/301))
+
 ## 2.26.0
 
 2021-12-03

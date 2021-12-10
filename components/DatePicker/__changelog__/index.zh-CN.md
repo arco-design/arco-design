@@ -1,3 +1,15 @@
+## 2.26.2
+
+2021-12-10
+
+### 💎 优化
+
+- `DatePicker.RangePicker` 组件选中交互优化。([#312](https://github.com/arco-design/arco-design/pull/312))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件在受控模式下不触发 `onVisibleChange` 的 bug。([#314](https://github.com/arco-design/arco-design/pull/314))
+
 ## 2.25.1
 
 2021-11-26

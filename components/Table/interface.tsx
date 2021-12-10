@@ -395,10 +395,6 @@ export interface ColumnProps<T = any> {
    * @en Table body cell style
    */
   bodyCellStyle?: CSSProperties;
-  /**
-   * @zh 表格单元格自定义样式
-   * @en Table cell style
-   */
   cellStyle?: CSSProperties;
   /**
    * @zh 列标题

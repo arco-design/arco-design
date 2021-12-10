@@ -1,3 +1,11 @@
+## 2.26.2
+
+2021-12-10
+
+### 🐛 BugFix
+
+- Fix the bug that the request cannot be terminated when the `CustomRequest` setting of the `Upload` component is an asynchronous function.([#306](https://github.com/arco-design/arco-design/pull/306))
+
 ## 2.26.1
 
 2021-12-07

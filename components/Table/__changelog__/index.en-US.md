@@ -1,3 +1,11 @@
+## 2.26.2
+
+2021-12-10
+
+### 💅 Style
+
+- Fix the problem that table cell will break line when `Table` component is tree data and `column.render` returns `div`.([#302](https://github.com/arco-design/arco-design/pull/302))
+
 ## 2.26.0
 
 2021-12-03

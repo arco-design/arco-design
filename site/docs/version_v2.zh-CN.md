@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.26.2
+
+2021-12-10
+
+### 💎 优化
+
+- `DatePicker.RangePicker` 组件选中交互优化。([#312](https://github.com/arco-design/arco-design/pull/312))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件在受控模式下不触发 `onVisibleChange` 的 bug。([#314](https://github.com/arco-design/arco-design/pull/314))
+- 修复 `Cascader` 在多选且父子节点不关联时，选中父节点触发了 `loadMore` 的 bug。([#309](https://github.com/arco-design/arco-design/pull/309))
+- 修复 `Upload` 组件设置 `customRequest` 是一个异步函数时，请求无法被终止的 bug 。([#306](https://github.com/arco-design/arco-design/pull/306))
+- 修复 `Slider` 组件的 `onAfterChange` 参数没有被更新的 bug。([#305](https://github.com/arco-design/arco-design/pull/305))
+- 修复 `Typography` 在国际化场景下折叠计算结果出错的 bug。([#301](https://github.com/arco-design/arco-design/pull/301))
+- 修复 `Typography` 对包裹多个动态字符串并 `copyable` 时，复制结果出错的 bug。([#301](https://github.com/arco-design/arco-design/pull/301))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件树形数据时，`column.render` 返回 `div` 会导致折行的问题。([#302](https://github.com/arco-design/arco-design/pull/302))
+
 ## 2.26.1
 
 2021-12-07

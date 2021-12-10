@@ -1,3 +1,11 @@
+## 2.26.2
+
+2021-12-10
+
+### 🐛 BugFix
+
+- Fix the bug that the `onAfterChange` parameter of the `Slider` component is not updated.([#305](https://github.com/arco-design/arco-design/pull/305))
+
 ## 2.20.0
 
 2021-07-30
