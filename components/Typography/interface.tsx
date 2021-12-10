@@ -44,6 +44,7 @@ export interface OperationsProps extends Omit<React.HTMLAttributes<HTMLElement>,
   onClickExpand?: () => void;
   setEditing?: (editing: boolean) => void;
   forceShowExpand?: boolean;
+  currentContext: Record<string, any>;
 }
 
 export interface CommonProps extends OperationsProps {

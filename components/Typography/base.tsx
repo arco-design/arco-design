@@ -87,7 +87,8 @@ function Base(props: BaseProps) {
     copyable,
     ...rest
   } = props;
-  const { getPrefixCls } = useContext(ConfigContext);
+  const configContext = useContext(ConfigContext);
+  const { getPrefixCls } = configContext;
   const prefixCls = getPrefixCls('typography');
 
   const rafId = useRef();
@@ -135,6 +136,8 @@ function Base(props: BaseProps) {
           expanding={expanding}
           isEllipsis={isEllipsis}
           forceShowExpand={forceShowExpand}
+          // 如果是镜像dom的话，渲染在最外层，无法从context中拿到最新config
+          currentContext={configContext}
         />
       </>
     );

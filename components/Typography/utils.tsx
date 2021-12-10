@@ -47,6 +47,7 @@ export function measure(
     left: '0',
     top: '-99999999px',
     // top:'100px',
+    position: 'fixed',
     'z-index': '-200',
     'white-space': 'normal',
     'text-overflow': 'clip',
