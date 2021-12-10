@@ -6,7 +6,7 @@ Developer Guild
 The component library has a built-in dark theme. You can easily switch to dark or simply adjust the color palette to automatically generate a new dark theme based on the color palette. (You can click the icon in the upper right corner to switch the dark mode to preview)
 `````
 
-## How to switch theme
+## Switch to dark mode
 
 The component library uses `arco-theme`of `body` tag to indicate the current theme, so you only need to modify this property to switch the theme.
 
@@ -20,12 +20,26 @@ document.body.setAttribute('arco-theme', 'dark')
 document.body.removeAttribute('arco-theme');
 ```
 
-### Adjust the overall background and font
+**Automatically switch following the system theme**
+
+```js
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+
+darkThemeMq.addListener(e => {
+ if (e.matches) {
+   document.body.setAttribute('arco-theme', 'dark');
+ } else {
+    document.body.removeAttribute('arco-theme');
+  }
+});
+```
+
+**Adjust background and font**
 
 ```css
 body {
-   background-color: var(--color-bg-1);
-   color: var(--color-text-1);
+  background-color: var(--color-bg-1);
+  color: var(--color-text-1);
 }
 ```
 

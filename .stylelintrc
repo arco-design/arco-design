@@ -14,6 +14,12 @@
     "keyframes-name-pattern": null,
     "no-invalid-position-at-import-rule": null,
     "number-max-precision": 6,
-    "color-function-notation": null
+    "color-function-notation": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
   }
 }

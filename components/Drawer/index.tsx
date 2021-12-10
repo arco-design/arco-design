@@ -68,6 +68,8 @@ function Drawer(baseProps: DrawerProps, ref) {
     getChildrenPopupContainer: propGetChildrenPopupContainer,
     focusLock,
     autoFocus,
+    okButtonProps,
+    cancelButtonProps,
   } = props;
 
   const drawerWrapperRef = useRef(null);
@@ -167,8 +169,10 @@ function Drawer(baseProps: DrawerProps, ref) {
           <div className={`${prefixCls}-footer`}>{footer}</div>
         ) : (
           <div className={`${prefixCls}-footer`}>
-            <Button onClick={props.onCancel}>{cancelText || locale.Drawer.cancelText}</Button>
-            <Button type="primary" loading={confirmLoading} onClick={props.onOk}>
+            <Button onClick={props.onCancel} {...cancelButtonProps}>
+              {cancelText || locale.Drawer.cancelText}
+            </Button>
+            <Button type="primary" loading={confirmLoading} onClick={props.onOk} {...okButtonProps}>
               {okText || locale.Drawer.okText}
             </Button>
           </div>

@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
 
-  ul, li {
+  ul,
+  li {
     margin: 0;
   }
 
@@ -18,7 +19,6 @@
     line-height: 40px;
     align-items: center;
     background-color: #21252b;
-
 
     &-btn-group {
       margin: 0 10px;
@@ -51,9 +51,9 @@
     &-name {
       padding-left: 16px;
       padding-right: 32px;
-      color: #8E9093;
-      border-left: 1px solid #181A1F;
-      border-right: 1px solid #181A1F;
+      color: #8e9093;
+      border-left: 1px solid #181a1f;
+      border-right: 1px solid #181a1f;
       cursor: pointer;
       transition: var(--home-transition-base);
 
@@ -82,7 +82,7 @@
 
   &-line-number {
     padding: 0 20px;
-    color: #717C94;
+    color: #717c94;
     text-align: right;
   }
 
@@ -90,7 +90,7 @@
     padding-left: 5px;
     padding-top: 16px;
     color: #98c379;
-    font-family: Fira Mono;
+    font-family: 'Fira Mono';
 
     :global(.editor-skin-typing) {
       position: relative;
@@ -99,7 +99,7 @@
     :global(.editor-skin-typing::before) {
       position: absolute;
       top: 0;
-      right: -.8em;
+      right: -0.8em;
       bottom: 0;
       display: block;
       height: 100%;
@@ -108,19 +108,24 @@
       font-size: 1em;
       line-height: 1em;
       color: hsla(0deg, 0%, 100%, 60%);
-      content: "▊";
-      animation: BlinkingCursor .75s infinite;
+      content: '▊';
+      animation: BlinkingCursor 0.75s infinite;
     }
   }
 }
 
 :global {
-  .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
     color: #b882ff !important;
   }
 }
 
-body[arco-theme="dark"] {
+body[arco-theme='dark'] {
   .editor-skin {
     &-header {
       background: var(--home-color-bg-1);
@@ -148,11 +153,13 @@ body[arco-theme="dark"] {
 }
 
 @keyframes BlinkingCursor {
-  0%, 45% {
-    opacity: 1
+  0%,
+  45% {
+    opacity: 1;
   }
 
-  55%, to {
-    opacity: 0
+  55%,
+  to {
+    opacity: 0;
   }
 }

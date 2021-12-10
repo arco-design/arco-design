@@ -1,3 +1,11 @@
+## 2.26.1
+
+2021-12-07
+
+### 🐛 BugFix
+
+- Fix the bug that the `warning` style of the `Form` component is shown when the teaching experience is passed.([#282](https://github.com/arco-design/arco-design/pull/282))
+
 ## 2.25.0
 
 2021-11-19

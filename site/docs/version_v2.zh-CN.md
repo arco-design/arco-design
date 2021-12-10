@@ -2,6 +2,46 @@
 changelog: true
 ---
 
+## 2.26.1
+
+2021-12-07
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件触发方式为 `contextMenu` 时，点击触发节点，弹出层未隐藏的 bug。([#284](https://github.com/arco-design/arco-design/pull/284))
+- 修复 `Select` 组件多选时，`prefix` 节点丢失 `font-size` 样式的 bug。([#284](https://github.com/arco-design/arco-design/pull/284))
+- 修复 `Form` 组件教验通过时表现出 `warning` 样式的 bug。([#282](https://github.com/arco-design/arco-design/pull/282))
+- 修复 `Upload` 组件拖拽上传文件夹不生效的 bug。([#275](https://github.com/arco-design/arco-design/pull/275))
+
+## 2.26.0
+
+2021-12-03
+
+### 💎 性能优化
+
+- 优化 `Trigger` 组件计算子节点尺寸和位置的逻辑，避免重复计算。([#258](https://github.com/arco-design/arco-design/pull/258))
+
+### 🆕 功能升级
+
+- `Grid.Col` 组件增加 `flex` 属性。([#268](https://github.com/arco-design/arco-design/pull/268))
+- `Tag` 组件支持 `bordered` 属性([#264](https://github.com/arco-design/arco-design/pull/264))
+- `Drawer` 组件支持 `okButtonProps` 和 `cancelButtonProps` 属性。([#260](https://github.com/arco-design/arco-design/pull/260))
+- `Select` 组件新增 `clearIcon` 属性用于自定义清除按钮图标。([#256](https://github.com/arco-design/arco-design/pull/256))
+
+### 🐛 问题修复
+
+- `List` 组件修复使用虚拟列表时 `scrollLoading` 失效的问题。([#270](https://github.com/arco-design/arco-design/pull/270))
+- 修复 `Typography`组件设置`showTooltip`后不生效的bug。([#266](https://github.com/arco-design/arco-design/pull/266))
+- `List` 组件修复在虚拟滚动时 `onListScroll` 和 `onReachBottom` 无法触发的 bug。([#259](https://github.com/arco-design/arco-design/pull/259))
+- `Select` 组件修复 `renderFormat` 回调在设置 `labelInValue` 时，其参数未返回对象的 bug。([#257](https://github.com/arco-design/arco-design/pull/257))
+- 修复 `Upload` 组件上传文件夹时，`beforeUpload` 的第二个参数未获取到本次上传的全部文件的 bug。([#252](https://github.com/arco-design/arco-design/pull/252))
+
+### 💅 样式更新
+
+- 修复 `Steps` 组件的标题和图标在垂直模式下没有对齐的问题([#267](https://github.com/arco-design/arco-design/pull/267))
+- 修复 `Menu` 组件已选中菜单项中的 Icon 颜色变化没有过渡效果的问题。([#263](https://github.com/arco-design/arco-design/pull/263))
+- 修复 `Table` 组件复选框列在固定表头时没有对齐的样式问题。([#261](https://github.com/arco-design/arco-design/pull/261))
+
 ## 2.25.1
 
 2021-11-26

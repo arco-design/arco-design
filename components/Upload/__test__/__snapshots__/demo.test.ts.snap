@@ -269,7 +269,6 @@ exports[`renders Upload/demo/directory.md correctly 1`] = `
       class="arco-upload arco-upload-type-text"
     >
       <input
-        directory="directory"
         style="display:none"
         type="file"
         webkitdirectory="webkitdirectory"

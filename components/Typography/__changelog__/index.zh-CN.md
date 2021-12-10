@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 🐛 问题修复
+
+- 修复 `Typography`组件设置`showTooltip`后不生效的bug。([#266](https://github.com/arco-design/arco-design/pull/266))
+
 ## 2.25.0
 
 2021-11-19

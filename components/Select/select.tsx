@@ -1,4 +1,5 @@
 import React, {
+  ReactText,
   useContext,
   useEffect,
   useImperativeHandle,
@@ -21,6 +22,8 @@ import {
   OptionInfo,
   InputValueChangeReason,
   SelectHandle,
+  SelectInnerStateValue,
+  LabeledValue,
 } from './interface';
 import SelectView, { SelectViewHandle } from '../_class/select-view';
 import VirtualList from '../_class/VirtualList';
@@ -101,7 +104,6 @@ function Select(baseProps: SelectProps, ref) {
   const prefixCls = getPrefixCls('select');
   const isMultipleMode = mode === 'multiple';
 
-  // state
   // TODO: 统一 useMergeValue 函数的表现
   const [stateValue, setValue] = useState(
     getValidValue(props.defaultValue, isMultipleMode, labelInValue)
@@ -267,29 +269,6 @@ function Select(baseProps: SelectProps, ref) {
     }
   }, [inputValue]);
 
-  const triggerOnChangeCallback = (
-    value: SelectProps['value'],
-    option: OptionInfo | Array<OptionInfo>
-  ) => {
-    if (onChange) {
-      if (labelInValue && !isEmptyValue(value, isMultipleMode)) {
-        if (Array.isArray(value)) {
-          onChange(
-            (value as any).map((v, index) => ({
-              value: v,
-              label: (option as Array<OptionInfo>)[index]?.children,
-            })),
-            option
-          );
-        } else {
-          onChange({ value, label: (option as OptionInfo)?.children }, option);
-        }
-      } else {
-        onChange(value, option);
-      }
-    }
-  };
-
   const getOptionInfoByValue = (value: OptionProps['value']): OptionInfo => {
     const option = optionInfoMap.get(value);
     if (option) {
@@ -328,16 +307,43 @@ function Select(baseProps: SelectProps, ref) {
     ];
   };
 
+  // Object should be returned when labelInValue is true
+  const getValueForCallbackParameter = (
+    value: SelectInnerStateValue,
+    option: OptionInfo | Array<OptionInfo>,
+    isEmpty = isEmptyValue(value, isMultipleMode)
+  ): SelectProps['value'] => {
+    if (labelInValue && !isEmpty) {
+      if (Array.isArray(value)) {
+        return value.map((optionValue, index) => ({
+          value: optionValue,
+          label: (option as OptionInfo[])[index]?.children,
+        }));
+      }
+      return { value, label: (option as OptionInfo)?.children };
+    }
+    return value;
+  };
+
+  const tryUpdateSelectValue = (value: SelectInnerStateValue) => {
+    setValue(value);
+    if (onChange) {
+      const option =
+        value === undefined
+          ? undefined
+          : Array.isArray(value)
+          ? value.map(getOptionInfoByValue)
+          : getOptionInfoByValue(value);
+      onChange(getValueForCallbackParameter(value, option), option);
+    }
+  };
+
   // 多选时，选择一个选项
   const checkOption = (valueToAdd) => {
     const option = optionInfoMap.get(valueToAdd);
     if (option) {
       const newValue = (value as string[]).concat(valueToAdd);
-      setValue(newValue);
-      triggerOnChangeCallback(
-        newValue,
-        newValue.map((item) => getOptionInfoByValue(item))
-      );
+      tryUpdateSelectValue(newValue);
     }
   };
 
@@ -346,12 +352,14 @@ function Select(baseProps: SelectProps, ref) {
     // 取消选中时不需要检查option是否存在，因为可能已被外部剔除了此选项
     const option = getOptionInfoByValue(valueToRemove);
     const newValue = (value as string[]).filter((v) => v !== valueToRemove);
-    setValue(newValue);
-    triggerOnChangeCallback(
-      newValue,
-      newValue.map((item) => getOptionInfoByValue(item))
-    );
-    onDeselect && onDeselect(valueToRemove, option);
+    tryUpdateSelectValue(newValue);
+
+    if (onDeselect) {
+      onDeselect(
+        getValueForCallbackParameter(valueToRemove, option, false) as ReactText | LabeledValue,
+        option
+      );
+    }
   };
 
   const handleOptionClick = (optionValue: OptionProps['value'], disabled: boolean) => {
@@ -370,8 +378,7 @@ function Select(baseProps: SelectProps, ref) {
       }
     } else {
       if (optionValue !== value) {
-        setValue(optionValue);
-        triggerOnChangeCallback(optionValue, getOptionInfoByValue(optionValue));
+        tryUpdateSelectValue(optionValue);
       }
       setTimeout(() => {
         tryUpdatePopupVisible(false);
@@ -527,11 +534,7 @@ function Select(baseProps: SelectProps, ref) {
         });
 
         if (needUpdate) {
-          setValue(newValue);
-          triggerOnChangeCallback(
-            newValue,
-            newValue.map((item) => getOptionInfoByValue(item))
-          );
+          tryUpdateSelectValue(newValue);
         }
 
         hasSeparator = true;
@@ -601,14 +604,9 @@ function Select(baseProps: SelectProps, ref) {
           const item = optionInfoMap.get(v);
           return item && item.disabled;
         });
-        setValue(newValue);
-        triggerOnChangeCallback(
-          newValue,
-          newValue.map((v) => getOptionInfoByValue(v))
-        );
+        tryUpdateSelectValue(newValue);
       } else {
-        setValue(undefined);
-        triggerOnChangeCallback(undefined, undefined);
+        tryUpdateSelectValue(undefined);
       }
       tryUpdateInputValue('', 'manual');
       onClear && onClear(popupVisible);
@@ -666,7 +664,10 @@ function Select(baseProps: SelectProps, ref) {
               const option = getOptionInfoByValue(value);
               let text = value;
               if (isFunction(renderFormat)) {
-                text = (renderFormat as Function)(option || null, value);
+                text = renderFormat(
+                  option || null,
+                  getValueForCallbackParameter(value, option) as ReactText | LabeledValue
+                );
               } else if (option) {
                 text = option.children;
               } else if (labelInValue && typeof props.value === 'object') {

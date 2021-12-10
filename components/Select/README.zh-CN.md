@@ -14,14 +14,14 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|defaultValue|选择框的默认值|`string \| string[] \| number \| number[]`|`-`|-|
-|value|选择器的值（受控模式）|`string \| string[] \| number \| number[]`|`-`|-|
+|defaultValue|选择框的默认值|`string \| string[] \| number \| number[] \| LabeledValue \| LabeledValue[]`|`-`|-|
+|value|选择器的值（受控模式）|`string \| string[] \| number \| number[] \| LabeledValue \| LabeledValue[]`|`-`|-|
 |inputValue|输入框的值（受控模式）|`string`|`-`|-|
 |mode|是否开启多选模式或标签模式 (**`tags` 推荐使用 `mode: multiple; allowCreate: true` 替代，下一大版本将移除此模式**)|`'multiple' \| 'tags'`|`-`|-|
 |options|指定可选项|`(\| string\| number\| { label: ReactNode \| string; value: string \| number; disabled?: boolean; extra?: any })[]`|`-`|`extra` in 2.2.0|
 |labelInValue|设置 `onChange` 回调中 `value` 的格式。默认是string，设置为true时候，value格式为： { label: string, value: string }|`boolean`|`-`|-|
 |filterOption|是否根据输入的值筛选数据。如果传入函数的话，接收 `inputValue` 和 `option` 两个参数，当option符合筛选条件时，返回 `true`，反之返回 `false`。|`boolean \| ((inputValue: string, option: ReactElement) => boolean)`|`true`|-|
-|renderFormat|定制回显内容。返回值将会显示在下拉框内。若 `value` 对应的 `Option` 不存在，则第一个参数是 null|`(option: OptionInfo \| null, value: string \| number) => ReactNode`|`-`|-|
+|renderFormat|定制回显内容。返回值将会显示在下拉框内。若 `value` 对应的 `Option` 不存在，则第一个参数是 null|`(option: OptionInfo \| null, value: string \| number \| LabeledValue) => ReactNode`|`-`|-|
 |defaultActiveFirstOption|是否默认高亮第一个选项|`boolean`|`true`|-|
 |unmountOnExit|是否在隐藏的时候销毁 DOM 结构|`boolean`|`true`|-|
 |defaultPopupVisible|下拉框是否默认打开。|`boolean`|`-`|2.14.0|
@@ -37,7 +37,7 @@
 |dropdownMenuClassName|下拉列表的类。|`string \| string[]`|`-`|-|
 |virtualListProps|传递虚拟滚动属性。|`AvailableVirtualListProps`|`-`|2.1.0|
 |onChange|点击选择框的回调|`(value, option: OptionInfo \| OptionInfo[]) => void`|`-`|-|
-|onDeselect|取消选中的时候触发的回调，(只在 `multiple` 模式下触发)。|`(value: OptionProps['value'], option: OptionInfo) => void`|`-`|-|
+|onDeselect|取消选中的时候触发的回调，(只在 `multiple` 模式下触发)。|`(value: string \| number \| LabeledValue, option: OptionInfo) => void`|`-`|-|
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|`(visible: boolean) => void`|`-`|-|
 |onSearch|搜索时的回调|`(value: string, reason: InputValueChangeReason) => void`|`-`|-|
 |onFocus|获得焦点时的回调|`(e) => void`|`-`|-|

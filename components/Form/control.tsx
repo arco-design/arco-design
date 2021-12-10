@@ -41,7 +41,7 @@ export default class Control<
 
   private errors: FieldError<FieldValue> = null;
 
-  private warnings: React.ReactNode[] = [];
+  private warnings: React.ReactNode[] = null;
 
   private isDestroyed = false;
 
@@ -75,7 +75,7 @@ export default class Control<
 
     // destroy errors
     const { updateFormItem } = this.context;
-    updateFormItem && updateFormItem(this.props.field as string, { errors: null, warnings: [] });
+    updateFormItem && updateFormItem(this.props.field as string, { errors: null, warnings: null });
     this.isDestroyed = true;
   }
 
@@ -236,14 +236,14 @@ export default class Control<
     if (_rules && _rules.length && field) {
       return schemaValidate(field, value, _rules).then(({ error, warning }) => {
         this.errors = error ? error[field] : null;
-        this.warnings = warning || [];
+        this.warnings = warning || null;
         this.updateFormItem();
         return Promise.resolve({ error, value, field });
       });
     }
     if (this.errors) {
       this.errors = null;
-      this.warnings = [];
+      this.warnings = null;
       this.updateFormItem();
     }
     return Promise.resolve({ error: null, value, field });

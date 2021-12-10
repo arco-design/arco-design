@@ -1,3 +1,23 @@
+## 2.26.1
+
+2021-12-07
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件多选时，`prefix` 节点丢失 `font-size` 样式的 bug。([#284](https://github.com/arco-design/arco-design/pull/284))
+
+## 2.26.0
+
+2021-12-03
+
+### 🆕 功能升级
+
+- `Select` 组件新增 `clearIcon` 属性用于自定义清除按钮图标。([#256](https://github.com/arco-design/arco-design/pull/256))
+
+### 🐛 问题修复
+
+- `Select` 组件修复 `renderFormat` 回调在设置 `labelInValue` 时，其参数未返回对象的 bug。([#257](https://github.com/arco-design/arco-design/pull/257))
+
 ## 2.24.1
 
 2021-11-12

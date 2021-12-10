@@ -42,13 +42,14 @@ export function measure(
 
   const extraStyle = {
     height: 'auto',
-    minHeight: 'auto',
-    maxHeight: 'auto',
+    'min-height': 'auto',
+    'max-height': 'auto',
     left: '0',
     top: '-99999999px',
     // top:'100px',
-    zIndex: '-200',
-    whiteSpace: 'normal',
+    'z-index': '-200',
+    'white-space': 'normal',
+    'text-overflow': 'clip',
     overflow: 'auto',
   };
   const styleString = styleToString(originStyle, extraStyle);

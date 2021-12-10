@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 🐛 BugFix
+
+- Fix the bug that the `Typography` component does not take effect after setting `showTooltip`.([#266](https://github.com/arco-design/arco-design/pull/266))
+
 ## 2.25.0
 
 2021-11-19

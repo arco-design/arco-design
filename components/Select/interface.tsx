@@ -19,6 +19,13 @@ export interface OptionInfo extends PropsWithChildren<OptionProps> {
   _origin: 'children' | 'options' | 'userCreatedOptions' | 'userCreatingOption';
 }
 
+export type LabeledValue = {
+  value: string | number;
+  label: ReactNode;
+};
+
+export type SelectInnerStateValue = string | number | string[] | number[];
+
 /**
  * @title Select
  */
@@ -27,12 +34,12 @@ export interface SelectProps extends SelectViewCommonProps {
    * @zh 选择框的默认值
    * @en To set default value
    */
-  defaultValue?: string | string[] | number | number[];
+  defaultValue?: string | string[] | number | number[] | LabeledValue | LabeledValue[];
   /**
    * @zh 选择器的值（受控模式）
    * @en To set value
    */
-  value?: string | string[] | number | number[];
+  value?: string | string[] | number | number[] | LabeledValue | LabeledValue[];
   /**
    * @zh 输入框的值（受控模式）
    * @en To set input value
@@ -71,7 +78,7 @@ export interface SelectProps extends SelectViewCommonProps {
    * Customize the content that will be displayed in the Select.
    * If the `Option` corresponding to `value` does not exist, the first parameter will be `null`
    */
-  renderFormat?: (option: OptionInfo | null, value: string | number) => ReactNode;
+  renderFormat?: (option: OptionInfo | null, value: string | number | LabeledValue) => ReactNode;
   /**
    * @zh 是否默认高亮第一个选项
    * @en Whether to highlight the first option by default
@@ -157,7 +164,7 @@ export interface SelectProps extends SelectViewCommonProps {
    * @zh 取消选中的时候触发的回调，(只在 `multiple` 模式下触发)。
    * @en Called when a option is deselected.Only called for `multiple` mode.
    */
-  onDeselect?: (value: OptionProps['value'], option: OptionInfo) => void;
+  onDeselect?: (value: string | number | LabeledValue, option: OptionInfo) => void;
   /**
    * @zh 点击清除时触发，参数是当前下拉框的展开状态。
    * @en Called when clear

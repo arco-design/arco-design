@@ -80,7 +80,7 @@ Component templates are very suitable for quickly familiarizing themselves with 
 
 ### Monorepo template [recommended]
 
-**Monorepo template depends on Lerna and Yarn, please make sure you have installed these two NPM packages globally. **
+**Monorepo template depends on Lerna and Yarn, please make sure you have installed these two NPM packages globally.**
 
 Using the Monorepo template to manage all the materials of the team is the best practice recommended by Arco. Below we will introduce this template in detail. The Monorepo project created by `arco init` is a skeleton project without any Package. The directory structure and detailed description are as follows:
 

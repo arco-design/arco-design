@@ -45,7 +45,7 @@ export type StoreChangeInfo<T> = {
   };
   data?: {
     errors?: FieldError;
-    warnings?: string;
+    warnings?: React.ReactNode;
     touched?: boolean;
   };
 };
@@ -257,7 +257,7 @@ class Store<
       value?: FieldValue;
       error?: FieldError<FieldValue>;
       touched?: boolean;
-      warning?: string; // TODO
+      warning?: React.ReactNode;
     };
   }) => {
     const fields = Object.keys(obj) as FieldKey[];

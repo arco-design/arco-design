@@ -23,6 +23,8 @@
 |maskStyle|设置遮罩层的样式|`CSSProperties`|`-`|-|
 |okText|确认按钮文案|`string`|`-`|-|
 |cancelText|取消按钮文案|`string`|`-`|-|
+|okButtonProps|确认按钮的 props|`ButtonProps`|`-`|2.26.0|
+|cancelButtonProps|取消按钮的 props|`ButtonProps`|`-`|2.26.0|
 |placement|抽屉的方向 `top` `right` `bottom` `left`|`string`|`right`|-|
 |width|抽屉的宽度，`placement`为 `left` `right` 时生效|`string \| number`|`250`|-|
 |height|抽屉的高度，`placement`为 `top` `bottom` 时生效|`string \| number`|`250`|-|

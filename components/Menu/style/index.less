@@ -12,6 +12,16 @@
   }
 }
 
+@keyframes ~'@{prefix}-menu-selected-item-label-enter' {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .@{menu-prefix-cls} {
   position: relative;
   box-sizing: border-box;
@@ -30,6 +40,10 @@
     width: @menu-item-indent-spacing;
   }
 
+  .text-color-transition() {
+    transition: color @transition-duration-2 @transition-timing-function-linear;
+  }
+
   // menu-item 一些与 theme 和 mode 无关的样式
   .item-base() {
     @style: {
@@ -43,8 +57,12 @@
       }
 
       &.@{menu-prefix-cls}-selected {
-        transition: color @transition-duration-2 @transition-timing-function-linear;
         font-weight: @menu-font-weight-item-selected;
+        .text-color-transition();
+
+        svg {
+          .text-color-transition();
+        }
       }
 
       .@{prefix}-icon {
@@ -164,7 +182,7 @@
         @item-selected-style: {
           &.@{menu-prefix-cls}-selected {
             background: none;
-            transition: color @transition-duration-2 @transition-timing-function-linear;
+            .text-color-transition();
 
             &:hover {
               background-color: ~'@{menu-@{theme}-color-bg-item_hover}';
@@ -297,6 +315,7 @@
     bottom: -@menu-horizontal-padding-vertical;
     height: @menu-height-label-item-selected;
     background-color: @menu-color-label-item-selected;
+    animation: ~'@{prefix}-menu-selected-item-label-enter' @transition-duration-2 @transition-timing-function-linear;
   }
 
   &-pop-button {

@@ -2,6 +2,46 @@
 changelog: true
 ---
 
+## 2.26.1
+
+2021-12-07
+
+### 🐛 BugFix
+
+- Fix the bug that when the trigger mode of the `Trigger` component is `contextMenu`, the pop-up layer is not hidden when the trigger node is clicked.([#284](https://github.com/arco-design/arco-design/pull/284))
+- Fix the bug that the `prefix` node loses the style of `font-size` when the `Select` component is multi-selected.([#284](https://github.com/arco-design/arco-design/pull/284))
+- Fix the bug that the `warning` style of the `Form` component is shown when the teaching experience is passed.([#282](https://github.com/arco-design/arco-design/pull/282))
+- Fix the bug that the upload folder does not take effect when dragging and dropping the upload component.([#275](https://github.com/arco-design/arco-design/pull/275))
+
+## 2.26.0
+
+2021-12-03
+
+### 💎 Performance
+
+- Optimize the logic used by the `Trigger` component to calculate the size and position of child nodes to avoid double-counting([#258](https://github.com/arco-design/arco-design/pull/258))
+
+### 🆕 Feature
+
+- The `Grid.Col` component adds the `flex` property.([#268](https://github.com/arco-design/arco-design/pull/268))
+- `Tag` supports `bordered` property.([#264](https://github.com/arco-design/arco-design/pull/264))
+- The `Drawer` component supports the `okButtonProps` and `cancelButtonProps` properties.([#260](https://github.com/arco-design/arco-design/pull/260))
+- `Select` adds the `clearIcon` property to customize the clear button icon.([#256](https://github.com/arco-design/arco-design/pull/256))
+
+### 🐛 BugFix
+
+- `List` fixes the issue that `scrollLoading` fails when using virtual lists.([#270](https://github.com/arco-design/arco-design/pull/270))
+- Fix the bug that the `Typography` component does not take effect after setting `showTooltip`.([#266](https://github.com/arco-design/arco-design/pull/266))
+- `List` fixes the bug that `onListScroll` and `onReachBottom` cannot be triggered when using virtual scrolling.([#259](https://github.com/arco-design/arco-design/pull/259))
+- `Select` fixes the bug that the parameter of the `renderFormat` callback does not return an object when the `labelInValue` is `true`.([#257](https://github.com/arco-design/arco-design/pull/257))
+- Fix the bug that when the `Upload` component uploads a folder, the second parameter of `beforeUpload` does not get all the files uploaded this time.([#252](https://github.com/arco-design/arco-design/pull/252))
+
+### 💅 Style
+
+- Fix the problem that the title and icon of the `Steps` component are not aligned in the vertical mode([#267](https://github.com/arco-design/arco-design/pull/267))
+- Fix the problem that the color change of Icon in the selected menu item of the `Menu` component has no transition effect.([#263](https://github.com/arco-design/arco-design/pull/263))
+- Fix the style problem that the checkbox column of the `Table` component is not aligned when the table header is fixed.([#261](https://github.com/arco-design/arco-design/pull/261))
+
 ## 2.25.1
 
 2021-11-26

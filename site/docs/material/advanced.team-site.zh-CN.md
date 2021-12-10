@@ -41,6 +41,32 @@ Arco 提供的所有物料模板的开发预览使用 Storybook 的方式，我�
 │   └── zh-CN // 存放对应语言的文档
 ```
 
+### 配置智能提示
+
+**版本要求 `@arco-design/arco-doc-site >= 1.4.0`**
+
+`@arco-design/arco-doc-site` 的配置项由 TypeScript 书写，你可以通过 IDE 和 JsDoc 的配合来实现智能提示：
+
+```js
+// .config/main.js
+
+/**
+ * @type {import('@arco-design/arco-doc-site').MainConfig}
+ */
+module.exports = { ... };
+```
+
+```js
+// .config/webpack.config.js
+
+/**
+ * @param config {import('@arco-design/arco-doc-site').WebpackConfig}
+ */
+module.exports = (config) => {};
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/da38d96ab9856876f34f90e0fa05f514.png~tplv-uwbnlip3yd-webp.webp)
+
 ### 物料入口配置
 
 为了保证站点构建可以处理到正确的物料内容，需要在 `.config/main.js` 中配置物料入口的信息。
@@ -107,6 +133,33 @@ module.exports = (config) => {
   };
 };
 ```
+
+## 开发模式
+
+**版本要求 `@arco-design/arco-doc-site >= 1.4.0`**
+
+站点依赖包 `@arco-desgin/arco-doc-site` 提供了 `arco-doc-site dev` 的命令，用于在本地启动团队站点的开发模式，以作为 Storybook 备用选项。通过这种方式，即使你没有使用 Arco 提供的官方物料模板创建项目，也可以轻松开发物料。
+
+**注意：可以通过 Webpack `resolve.alias` 配置来为 Dev 模式提速。**
+
+例如，在你的物料 Demo 中通过 NPM 包名来引入模块：
+
+```jsx
+import { Button } from '@arco-design/my-material';
+
+export default () => <Button/>;
+```
+
+可通过 `resolve.alias` 配置，指定 Webpack 查找此模块的路径。
+
+```js
+// .config/webpack.config.js
+module.exports = (config) => {
+  config.resolve.alias['@arco-design/my-material'] = '/project-root/packages/my-material/src';
+};
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c6001648f6b03f932f8b99e5505dbc1e.png~tplv-uwbnlip3yd-webp.webp)
 
 ## 效果预览
 

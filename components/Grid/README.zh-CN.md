@@ -38,3 +38,8 @@
 |lg|>= 992px 响应式栅格|`number \| { [key: string]: any }`|`-`|-|
 |xl|>= 1200px 响应式栅格|`number \| { [key: string]: any }`|`-`|-|
 |xxl|>= 1600px 响应式栅格|`number \| { [key: string]: any }`|`-`|-|
+|flex|设置 flex 布局属性|`FlexType`|`-`|2.26.0|
+
+```ts
+type FlexType = number | string | 'auto' | 'none';
+```

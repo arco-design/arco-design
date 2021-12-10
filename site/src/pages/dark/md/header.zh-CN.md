@@ -6,7 +6,7 @@
 组件库内置暗色的主题，你可以轻易的切换到暗色，也可以简单的通过调整色板来自动生成基于色板的新暗色主题。（点击官网右上角图标可进行暗黑模式预览。）
 `````
 
-## 如何切换主题
+## 如何切换暗黑模式
 
 组件库通过 `body` 标签上的 `arco-theme` 属性来标明当前的主题，所以你只要修改这个属性，即可完成主题的切换。
 
@@ -14,13 +14,27 @@
 
 ```js
 // 设置为暗黑主题
-document.body.setAttribute('arco-theme', 'dark')
+document.body.setAttribute('arco-theme', 'dark');
 
 // 恢复亮色主题
 document.body.removeAttribute('arco-theme');
 ```
 
-### 调整整体背景和字体
+**跟随系统主题自动切换**
+
+```js
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+
+darkThemeMq.addListener(e => {
+ if (e.matches) {
+   document.body.setAttribute('arco-theme', 'dark');
+ } else {
+    document.body.removeAttribute('arco-theme');
+  }
+});
+```
+
+**调整整体背景和字体**
 
 ```css
 body {

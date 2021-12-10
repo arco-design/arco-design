@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 💅 Style
+
+- Fix the style problem that the checkbox column of the `Table` component is not aligned when the table header is fixed.([#261](https://github.com/arco-design/arco-design/pull/261))
+
 ## 2.25.0
 
 2021-11-19

@@ -21,7 +21,7 @@
 |animation|是否开启过渡效果|`boolean \| { tabPane?: boolean; inkBar?: boolean }`|`-`|-|
 |tabPosition|选项卡位置|`'left' \| 'right' \| 'top' \| 'bottom'`|`top`|-|
 |direction|标签选项卡的方向是水平还是竖直，分别对应 `horizontal `和 `vertical`。** 注意： 已废弃，使用 tabPosition 替代。**|`'horizontal' \| 'vertical'`|`-`|-|
-|size|有三个尺寸供选择，分别为`small`, `default`, `large`|`'mini' \| 'small' \| 'default' \| 'large'`|`-`|-|
+|size|有四个尺寸供选择，分别为`mini`, `small`, `default`, `large`|`'mini' \| 'small' \| 'default' \| 'large'`|`-`|-|
 |type|标签选项卡的类型|`'line' \| 'card' \| 'card-gutter' \| 'text' \| 'rounded' \| 'capsule'`|`line`|-|
 |headerPadding|选项卡头部是否存在水平边距。仅对 `type`等于 `line`、`text`类型的选项卡生效|`boolean`|`true`|2.6.0|
 |overflow|标签页较多时候，选择滚动/下拉菜单形式展示 tab|`'scroll' \| 'dropdown'`|`scroll`|-|

@@ -1,5 +1,5 @@
 import { ReactNode, CSSProperties } from 'react';
-
+import { ButtonProps } from '../Button';
 /**
  * @title Drawer
  */
@@ -49,6 +49,18 @@ export interface DrawerProps {
    * @en Text of the Cancel button
    */
   cancelText?: string;
+  /**
+   * @zh 确认按钮的 props
+   * @en The props of `ok` button
+   * @version 2.26.0
+   */
+  okButtonProps?: ButtonProps;
+  /**
+   * @zh 取消按钮的 props
+   * @en The props of `cancel` button
+   * @version 2.26.0
+   */
+  cancelButtonProps?: ButtonProps;
   /**
    * @zh 抽屉的方向 `top` `right` `bottom` `left`
    * @en The placement of the drawer: `top` `right` `bottom` `left`

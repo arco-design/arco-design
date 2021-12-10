@@ -103,4 +103,12 @@ export interface ColProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNam
    * @en `screen >= 1600px`
    */
   xxl?: number | { [key: string]: any };
+  /**
+   * @zh 设置 flex 布局属性
+   * @en Set flex layout properties
+   * @version 2.26.0
+   */
+  flex?: FlexType;
 }
+
+export type FlexType = string | number | 'auto' | 'none';

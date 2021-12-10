@@ -1,3 +1,11 @@
+## 2.26.0
+
+2021-12-03
+
+### 🆕 Feature
+
+- The `Drawer` component supports the `okButtonProps` and `cancelButtonProps` properties.([#260](https://github.com/arco-design/arco-design/pull/260))
+
 ## 2.23.0
 
 2021-09-27

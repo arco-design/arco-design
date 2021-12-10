@@ -54,23 +54,44 @@ const getFiles = (fileList, accept) => {
 };
 
 const loopDirectory = (items: DataTransferItemList, accept, callback) => {
+  const files = [];
+
+  let restFileCount = 0; // 剩余上传文件的数量
+  const onFinish = () => {
+    !restFileCount && callback(files);
+  };
+
   const _loopDirectory = (item) => {
+    restFileCount += 1;
+
     if (item.isFile) {
       item.file((file) => {
+        restFileCount -= 1;
         if (isAcceptFile(file, accept)) {
           Object.defineProperty(file, 'webkitRelativePath', {
             value: item.fullPath.replace(/^\//, ''),
           });
-          callback(file);
+          files.push(file);
         }
+        onFinish();
       });
-    } else if (item.isDirectory) {
+      return;
+    }
+    if (item.isDirectory) {
       // item 是个文件夹
       const reader = item.createReader();
       reader.readEntries((entries) => {
+        restFileCount -= 1;
+        if (entries.length === 0) {
+          onFinish();
+        }
         entries.forEach(_loopDirectory);
       });
+      return;
     }
+
+    restFileCount -= 1;
+    onFinish();
   };
 
   [].slice
@@ -121,8 +142,8 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
         if (!disabled) {
           setIsDragging(false);
           if (props.directory) {
-            loopDirectory(e.dataTransfer.items, accept, (file) => {
-              props.onDragFiles && props.onDragFiles([file]);
+            loopDirectory(e.dataTransfer.items, accept, (files) => {
+              props.onDragFiles && props.onDragFiles(files);
             });
           } else {
             const files = getFiles(e.dataTransfer.files, accept);

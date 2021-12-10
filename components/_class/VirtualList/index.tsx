@@ -72,6 +72,7 @@ interface VirtualListState {
 }
 
 export type VirtualListHandle = {
+  dom: HTMLElement;
   scrollTo: (
     arg:
       | number
@@ -459,6 +460,7 @@ const VirtualList: React.ForwardRefExoticComponent<
   useImperativeHandle<any, VirtualListHandle>(
     ref,
     () => ({
+      dom: refList.current,
       // Scroll to a certain height or an element
       scrollTo: (arg) => {
         refRafId.current && caf(refRafId.current);
