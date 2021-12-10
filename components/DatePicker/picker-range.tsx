@@ -245,6 +245,7 @@ const Picker = (baseProps: RangePickerProps) => {
       setValueShowHover(undefined);
       setShortcutsValue(undefined);
       resetSelectedDisabledDate();
+      blurInput();
     }
     firstRange.current = mergedPopupVisible;
   }, [mergedPopupVisible]);
@@ -342,14 +343,16 @@ const Picker = (baseProps: RangePickerProps) => {
       refInput.current.focus(isHalfAvailable ? availableInputIndex : index);
   }
 
+  function blurInput() {
+    refInput.current && refInput.current.blur && refInput.current.blur();
+  }
+
   function visibleChange(visible) {
-    if (!('popupVisible' in props)) {
-      if (visible) {
-        setTimeout(() => focusInput());
-        setOpen(visible);
-      } else {
-        setOpen(false);
-      }
+    if (visible) {
+      setTimeout(() => focusInput());
+      setOpen(visible);
+    } else {
+      setOpen(false);
     }
   }
 
@@ -445,7 +448,7 @@ const Picker = (baseProps: RangePickerProps) => {
       } else if (selectedLength === 2) {
         onConfirmValue(valueShow);
       }
-    } else {
+    } else if (mergedPopupVisible) {
       setOpen(false);
     }
   }
