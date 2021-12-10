@@ -28,7 +28,12 @@ function Demo() {
 
   return (
     <Space>
-      <DatePicker showTime value={value} onChange={(v) => setValue(v)} style={{ width: 200 }} />
+      <DatePicker
+        showTime
+        value={value}
+        onChange={(v) => setValue(v)}
+        style={{ width: 200 }}
+      />
       <DatePicker.RangePicker
         showTime
         value={valueRange}
