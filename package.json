@@ -45,6 +45,14 @@
     "bytedesign",
     "component"
   ],
+  "homepage": "https://arco.design",
+  "bugs": {
+    "url": "https://github.com/arco-design/arco-design/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arco-design"
+  },
   "author": "ArcoDesign Team",
   "license": "MIT",
   "peerDependencies": {
