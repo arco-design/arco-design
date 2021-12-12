@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
-import { MessageProps } from './interface';
+import type { MessageProps } from './interface';
 
 const messageTypes = ['info', 'success', 'error', 'warning', 'loading', 'normal'];
 let messageInstance: object = {};

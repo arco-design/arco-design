@@ -3,7 +3,7 @@ import IconLoading from '../../icon/react-icon/IconLoading';
 import Group from './group';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { ButtonProps } from './interface';
+import type { ButtonProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const regexTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;

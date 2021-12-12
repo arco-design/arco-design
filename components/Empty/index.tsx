@@ -2,7 +2,7 @@ import React, { memo, useContext, forwardRef } from 'react';
 import IconEmpty from '../../icon/react-icon/IconEmpty';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { EmptyProps } from './interface';
+import type { EmptyProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function Empty(baseProps: EmptyProps, ref) {

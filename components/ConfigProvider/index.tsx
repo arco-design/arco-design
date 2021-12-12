@@ -7,7 +7,7 @@ import Notification from '../Notification';
 import Empty from '../Empty';
 import { setModalLocale } from '../Modal/locale';
 import { IconContext } from '../../icon/react-icon/context';
-import { ConfigProviderProps } from './interface';
+import type { ConfigProviderProps } from './interface';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
 

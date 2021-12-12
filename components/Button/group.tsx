@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { ButtonGroupProps } from './interface';
+import type { ButtonGroupProps } from './interface';
 
 function Group(props: ButtonGroupProps, ref) {
   const { className, style, children } = props;

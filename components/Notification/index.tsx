@@ -5,7 +5,7 @@ import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
 import { isNumber } from '../_util/is';
-import { NotificationProps } from './interface';
+import type { NotificationProps } from './interface';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
 let notificationInstance: object = {};
