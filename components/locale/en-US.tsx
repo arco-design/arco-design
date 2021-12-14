@@ -134,7 +134,7 @@ export default {
     preview: 'Preview',
     drag: 'Click or drag file to this area to upload',
     dragHover: 'Release to upload',
-    error: 'Uplaod Error',
+    error: 'Upload Error',
   },
   Typography: {
     copy: 'Copy',
