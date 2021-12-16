@@ -147,6 +147,14 @@ export const columnsCustomStyle: ColumnProps<TestData>[] = (function () {
         },
       };
     }
+    if (d.title === 'Address') {
+      return {
+        ...d,
+        cellStyle: {
+          color: 'rgb(1, 1, 1)',
+        },
+      };
+    }
     return d;
   });
 })();
