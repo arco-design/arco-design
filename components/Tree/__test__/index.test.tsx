@@ -417,4 +417,19 @@ describe('Tree', () => {
     wrapper.update();
     expect(wrapper.find('.arco-checkbox.arco-checkbox-checked')).toHaveLength(2);
   });
+
+  it('should halfchecked correctly', () => {
+    const defaultCheckedKeys = ['node1'];
+    const wrapper = mount(
+      <Tree checkStrictly checkable halfCheckedKeys={defaultCheckedKeys}>
+        {generatorTreeNodes(data)}
+      </Tree>
+    );
+
+    wrapper
+      .find(`${prefixCls}-node`)
+      .at(1)
+      .find(`.arco-checkbox`)
+      .hasClass('arco-checkbox-indeterminate');
+  });
 });
