@@ -439,6 +439,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   >
                     <input
                       class="arco-input arco-input-size-default"
+                      id="age_input"
                       placeholder="please enter"
                       value=""
                     />
@@ -1828,6 +1829,7 @@ exports[`renders Form/demo/control-below.md correctly 1`] = `
                 >
                   <input
                     class="arco-input arco-input-size-default"
+                    id="number_input"
                     placeholder="请输入数字"
                     value=""
                   />
@@ -2207,6 +2209,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     <input
                       class="arco-input arco-input-size-default arco-input-disabled"
                       disabled=""
+                      id="age_input"
                       placeholder="please enter"
                       value=""
                     />
@@ -4068,6 +4071,7 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
                 >
                   <input
                     class="arco-input arco-input-size-default"
+                    id="age_input"
                     placeholder="please enter your age"
                     value=""
                   />
@@ -5548,6 +5552,7 @@ exports[`renders Form/demo/setFields.md correctly 1`] = `
                 >
                   <input
                     class="arco-input arco-input-size-default"
+                    id="age_input"
                     placeholder="please enter your age"
                     value=""
                   />
@@ -6483,6 +6488,7 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
                 >
                   <input
                     class="arco-input arco-input-size-default"
+                    id="age_input"
                     placeholder="please enter your age"
                     value=""
                   />
@@ -7581,6 +7587,7 @@ exports[`renders Form/demo/validateLevel.md correctly 1`] = `
                 >
                   <input
                     class="arco-input arco-input-size-default"
+                    id="age_input"
                     placeholder="please enter your age"
                     value=""
                   />

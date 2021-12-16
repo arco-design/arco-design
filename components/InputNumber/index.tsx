@@ -17,7 +17,6 @@ import { ArrowUp, ArrowDown } from '../_util/keycode';
 import { ConfigContext } from '../ConfigProvider';
 import Input from '../Input';
 import { RefInputType } from '../Input/interface';
-import { pickTriggerPropsFromRest } from '../_util/constant';
 import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
@@ -49,6 +48,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   const {
     className,
     style,
+    defaultValue,
     disabled,
     error,
     readOnly,
@@ -69,6 +69,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     onFocus,
     onChange,
     onKeyDown,
+    ...rest
   } = props;
 
   const prefixCls = getPrefixCls('input-number');
@@ -83,7 +84,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   })();
 
   const [innerValue, setInnerValue] = useState<InputNumberProps['value']>(
-    'defaultValue' in props ? props.defaultValue : undefined
+    'defaultValue' in props ? defaultValue : undefined
   );
   const value = (() => {
     const mergedValue = 'value' in props ? props.value : innerValue;
@@ -277,7 +278,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   return (
     <Input
-      {...pickTriggerPropsFromRest(props)}
+      {...rest}
       {...inputEventHandlers}
       style={style}
       className={cs(
