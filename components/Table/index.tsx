@@ -7,4 +7,4 @@ TableComponent.Summary = Summary;
 
 export default TableComponent;
 
-export { TableProps, ColumnProps, RowSelectionProps, ExpandProps } from './interface';
+export type { TableProps, ColumnProps, RowSelectionProps, ExpandProps } from './interface';

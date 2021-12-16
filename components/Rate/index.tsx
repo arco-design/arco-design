@@ -8,7 +8,7 @@ import IconFaceFrownFill from '../../icon/react-icon/IconFaceFrownFill';
 import { ConfigContext } from '../ConfigProvider';
 import Tooltip from '../Tooltip';
 import omit from '../_util/omit';
-import { RateProps } from './interface';
+import type { RateProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 NP.enableBoundaryChecking(false);

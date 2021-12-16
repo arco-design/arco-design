@@ -15,7 +15,7 @@ import IconLoading from '../../icon/react-icon/IconLoading';
 import IconFile from '../../icon/react-icon/IconFile';
 import { ConfigContext } from '../ConfigProvider';
 import IconHover from '../_class/icon-hover';
-import { NodeProps } from './interface';
+import type { NodeProps } from './interface';
 import { TreeContext } from './context';
 import AnimationNode from './animation';
 import throttleByRaf from '../_util/throttleByRaf';

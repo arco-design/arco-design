@@ -23,7 +23,7 @@ import IconRotateRight from '../../icon/react-icon/IconRotateRight';
 import IconOriginalSize from '../../icon/react-icon/IconOriginalSize';
 
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
-import { ImagePreviewProps } from './interface';
+import type { ImagePreviewProps } from './interface';
 import useImageStatus from './utils/hooks/useImageStatus';
 import getScale, { minScale, maxScale } from './utils/getScale';
 import getFixTranslate from './utils/getFixTranslate';

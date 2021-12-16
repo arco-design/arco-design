@@ -5,7 +5,7 @@ import Header from './header';
 import Footer from './footer';
 import Content from './content';
 import { ConfigContext } from '../ConfigProvider';
-import { LayoutProps } from './interface';
+import type { LayoutProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 export interface LayoutState {

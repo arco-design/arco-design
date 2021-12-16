@@ -7,7 +7,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import Hover from '../_class/icon-hover';
 import IconCheck from './icon-check';
-import { CheckboxProps } from './interface';
+import type { CheckboxProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {

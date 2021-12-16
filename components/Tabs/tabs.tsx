@@ -13,7 +13,7 @@ import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
 import { isFunction, isObject } from '../_util/is';
 import useMergeValue from '../_util/hooks/useMergeValue';
-import { TabsProps } from './interface';
+import type { TabsProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const sizeList = ['mini', 'small', 'default', 'large'];

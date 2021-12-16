@@ -1,7 +1,7 @@
 import React, { useContext, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { HeaderProps } from './interface';
+import type { HeaderProps } from './interface';
 
 function Header(props: HeaderProps, ref) {
   const { getPrefixCls } = useContext(ConfigContext);

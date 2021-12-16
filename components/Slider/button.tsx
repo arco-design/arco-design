@@ -12,7 +12,7 @@ import cs from '../_util/classNames';
 import { on, off } from '../_util/dom';
 import { isFunction } from '../_util/is';
 import Trigger from '../Trigger';
-import { TooltipPosition } from './interface';
+import type { TooltipPosition } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 

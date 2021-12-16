@@ -2,7 +2,7 @@ import Image from './image';
 
 export default Image;
 
-export {
+export type {
   ImageProps,
   ImagePreviewProps,
   ImagePreviewGroupProps,

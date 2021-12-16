@@ -1,4 +1,4 @@
-import { RequestOptions, UploadRequest } from './interface';
+import type { RequestOptions, UploadRequest } from './interface';
 import { NOOP } from '../_util/constant';
 
 function getBody(xhr: XMLHttpRequest) {

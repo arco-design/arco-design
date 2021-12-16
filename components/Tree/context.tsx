@@ -1,7 +1,7 @@
 import { createContext, DragEvent } from 'react';
 
 import { AvailableVirtualListProps } from '../_class/VirtualList';
-import { NodeProps, TreeDataType, TreeState } from './interface';
+import type { NodeProps, TreeDataType, TreeState } from './interface';
 
 export const TreeContext = createContext<{
   icons?: NodeProps['icons'];

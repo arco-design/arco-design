@@ -4,7 +4,7 @@ import { isArray, isObject } from '../_util/is';
 import Radio from './radio';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
-import { RadioGroupProps } from './interface';
+import type { RadioGroupProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 export interface RadioGroupContextProps {

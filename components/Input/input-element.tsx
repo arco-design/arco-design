@@ -1,5 +1,5 @@
 import React, { useState, useRef, useImperativeHandle, useEffect } from 'react';
-import { InputComponentProps, RefInputType } from './interface';
+import type { InputComponentProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
 import { Enter } from '../_util/keycode';

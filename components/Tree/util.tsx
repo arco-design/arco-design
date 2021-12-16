@@ -1,5 +1,5 @@
 import React, { ReactNode, ReactChild } from 'react';
-import { TreeDataType } from './interface';
+import type { TreeDataType } from './interface';
 import { key2nodePropsType } from '.';
 
 export const getTreeDataFromTreeChildren = (treeChildren: ReactNode) => {

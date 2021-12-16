@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import get from 'lodash/get';
 import Option from './option';
-import {
+import type {
   SelectInnerStateValue,
   OptionInfo,
   OptionProps,

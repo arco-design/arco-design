@@ -7,7 +7,7 @@ import OverflowWrap from './overflow-wrap';
 import omit from '../_util/omit';
 import { generateInfoMap, processChildren } from './util';
 import { ConfigContext } from '../ConfigProvider';
-import { MenuProps } from './interface';
+import type { MenuProps } from './interface';
 import { SiderContext } from '../Layout';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import IconMenuFold from '../../icon/react-icon/IconMenuFold';
@@ -248,4 +248,4 @@ MenuComponent.defaultProps = {
 
 export default MenuComponent;
 
-export { MenuProps, MenuSubMenuProps, MenuItemGroupProps, MenuItemProps } from './interface';
+export type { MenuProps, MenuSubMenuProps, MenuItemGroupProps, MenuItemProps } from './interface';

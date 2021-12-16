@@ -2,7 +2,7 @@ import React, { useContext, ReactElement, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import Step from './step';
 import { ConfigContext } from '../ConfigProvider';
-import { StepsProps } from './interface';
+import type { StepsProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: StepsProps = {

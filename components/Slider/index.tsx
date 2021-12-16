@@ -9,7 +9,7 @@ import { isFunction, isObject } from '../_util/is';
 import { formatPercent, getOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { TooltipPosition, SliderProps } from './interface';
+import type { TooltipPosition, SliderProps } from './interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { off, on } from '../_util/dom';
 import useLegalValue from './hooks/useLegalValue';

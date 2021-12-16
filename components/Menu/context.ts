@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { MenuProps } from './interface';
+import type { MenuProps } from './interface';
 
 export type HotkeyInfo = {
   update: boolean;

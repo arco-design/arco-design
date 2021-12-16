@@ -9,7 +9,7 @@ import React, {
 import scrollIntoView, { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
 import cs from '../_util/classNames';
 import useForm from './useForm';
-import { FormProps, FormInstance, FieldError, KeyType } from './interface';
+import type { FormProps, FormInstance, FieldError, KeyType } from './interface';
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
 import { FormContext as RawFormContext, FormContextType as RawFormContextType } from './context';
 import { isObject } from '../_util/is';

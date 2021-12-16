@@ -6,4 +6,4 @@ export default {
   Row,
 };
 
-export { RowProps, ColProps } from './interface';
+export type { RowProps, ColProps } from './interface';

@@ -7,7 +7,7 @@ import ResponsiveObserve, {
   ScreenMap,
   responsiveArray,
 } from '../_util/responsiveObserve';
-import { GridRowGutter, RowProps } from './interface';
+import type { GridRowGutter, RowProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { RowContext } from './context';
 

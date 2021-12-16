@@ -16,7 +16,7 @@ import ResizeObserver from '../_util/resizeObserver';
 import { isArray, isFunction, isObject } from '../_util/is';
 import getHotkeyHandler from '../_util/getHotkeyHandler';
 import warning from '../_util/warning';
-import {
+import type {
   OptionProps,
   SelectProps,
   OptionInfo,

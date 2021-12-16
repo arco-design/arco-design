@@ -6,7 +6,7 @@ import React, {
   CSSProperties,
   useMemo,
 } from 'react';
-import { TextAreaProps } from './interface';
+import type { TextAreaProps } from './interface';
 import cs from '../_util/classNames';
 import { Enter } from '../_util/keycode';
 import autoSizeTextAreaHeight from './autoSizeTextAreaHeight';

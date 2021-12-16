@@ -8,7 +8,7 @@ import IconClose from '../../icon/react-icon/IconClose';
 import Image404 from './404';
 import Image403 from './403';
 import Image500 from './500';
-import { ResultProps } from './interface';
+import type { ResultProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultIcons = {

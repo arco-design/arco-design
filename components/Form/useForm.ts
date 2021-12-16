@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Store from './store';
-import { FormInstance, InnerMethodsReturnType, KeyType } from './interface';
+import type { FormInstance, InnerMethodsReturnType, KeyType } from './interface';
 
 export function getFormInstance<
   FormData = any,

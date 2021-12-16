@@ -2,7 +2,7 @@ import React, { CSSProperties, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import IconMore from '../../icon/react-icon/IconMore';
 import Tooltip from '../Tooltip';
-import { ImagePreviewActionProps } from './interface';
+import type { ImagePreviewActionProps } from './interface';
 import { TriggerForToolbar } from './trigger-for-toolbar';
 
 interface ImagePreviewToolbarProps {

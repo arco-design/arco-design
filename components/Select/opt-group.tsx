@@ -1,5 +1,5 @@
 import React from 'react';
-import { OptGroupProps } from './interface';
+import type { OptGroupProps } from './interface';
 import omit from '../_util/omit';
 
 function OptGroup(props: OptGroupProps, ref) {

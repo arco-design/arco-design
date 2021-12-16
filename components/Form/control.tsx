@@ -4,7 +4,7 @@ import has from 'lodash/has';
 import set from 'lodash/set';
 import get from 'lodash/get';
 import setWith from 'lodash/setWith';
-import { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
+import type { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
 import { FormItemContext } from './context';
 import { isArray, isFunction } from '../_util/is';
 import warn from '../_util/warning';

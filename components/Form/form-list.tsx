@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import get from 'lodash/get';
 import FormItem from './form-item';
-import { FormListProps, KeyType } from './interface';
+import type { FormListProps, KeyType } from './interface';
 import { isFunction, isUndefined } from '../_util/is';
 import { FormInstance } from '.';
 import { isSyntheticEvent } from './utils';

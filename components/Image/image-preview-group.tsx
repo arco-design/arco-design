@@ -11,7 +11,7 @@ import React, {
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import ImagePreview, { ImagePreviewHandle } from './image-preview';
-import { ImagePreviewGroupProps } from './interface';
+import type { ImagePreviewGroupProps } from './interface';
 import { PreviewGroupContext, PreviewUrlMap } from './previewGroupContext';
 
 export { ImagePreviewGroupProps };

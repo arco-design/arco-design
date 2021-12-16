@@ -3,7 +3,7 @@ import lodashSet from 'lodash/set';
 import { PropertyPath } from 'lodash';
 import { Schema } from 'b-validate';
 import { isArray, isObject } from '../_util/is';
-import { IndexedObject } from './interface';
+import type { IndexedObject } from './interface';
 import { RulesProps } from '..';
 
 export function cloneDeep(value) {

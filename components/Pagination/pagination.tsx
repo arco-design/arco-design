@@ -4,7 +4,7 @@ import PageOption from './page-options';
 import PageJumper from './page-jumper';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { PaginationProps } from './interface';
+import type { PaginationProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 export interface PaginationState {

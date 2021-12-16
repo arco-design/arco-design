@@ -3,7 +3,7 @@ import cs from '../_util/classNames';
 import Button from '../Button';
 import IconUpload from '../../icon/react-icon/IconUpload';
 import IconPlus from '../../icon/react-icon/IconPlus';
-import { TriggerProps } from './interface';
+import type { TriggerProps } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import { isArray } from '../_util/is';
 

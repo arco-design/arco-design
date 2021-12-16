@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import cs from '../_util/classNames';
 import IconCheck from '../../icon/react-icon/IconCheck';
 import IconClose from '../../icon/react-icon/IconClose';
-import { StepProps } from './interface';
+import type { StepProps } from './interface';
 
 function Step(props: StepProps, ref) {
   const {

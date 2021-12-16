@@ -1,7 +1,7 @@
 import React, { useContext, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { FooterProps } from './interface';
+import type { FooterProps } from './interface';
 
 function Footer(props: FooterProps, ref) {
   const { className, children, ...rest } = props;

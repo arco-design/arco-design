@@ -2,7 +2,7 @@ import React, { useContext, useMemo, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import { isNumber, isObject } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
-import { ColProps, FlexType } from './interface';
+import type { ColProps, FlexType } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { RowContext } from './context';
 

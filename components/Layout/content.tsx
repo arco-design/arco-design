@@ -1,7 +1,7 @@
 import React, { useContext, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { ContentProps } from './interface';
+import type { ContentProps } from './interface';
 
 function Content(props: ContentProps, ref) {
   const { className, children, ...rest } = props;

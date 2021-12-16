@@ -1,6 +1,6 @@
 import { createContext, Context } from 'react';
 import { NOOP } from '../_util/constant';
-import { FormItemContextProps, FormContextProps, KeyType } from './interface';
+import type { FormItemContextProps, FormContextProps, KeyType } from './interface';
 
 export type FormContextType<
   FormData = any,

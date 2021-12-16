@@ -1,5 +1,5 @@
 import React from 'react';
-import { InternalColumnProps } from './interface';
+import type { InternalColumnProps } from './interface';
 import { INTERNAL_EXPAND_KEY, INTERNAL_SELECTION_KEY } from './constant';
 
 function fixedWidth(width?: number | string) {

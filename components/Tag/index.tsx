@@ -5,7 +5,7 @@ import IconLoading from '../../icon/react-icon/IconLoading';
 import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
 import IconHover from '../_class/icon-hover';
-import { TagProps } from './interface';
+import type { TagProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 // 色板里的 12 个颜色

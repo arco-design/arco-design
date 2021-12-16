@@ -11,7 +11,7 @@ import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { isArray, isObject } from '../_util/is';
-import { CheckboxGroupProps } from './interface';
+import type { CheckboxGroupProps } from './interface';
 
 export const CheckboxGroupContext = createContext<{
   disabled?: boolean;

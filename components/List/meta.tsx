@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { ListItemMetaProps } from './interface';
+import type { ListItemMetaProps } from './interface';
 
 function Meta(props: ListItemMetaProps, ref) {
   const { getPrefixCls } = useContext(ConfigContext);

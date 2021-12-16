@@ -10,7 +10,7 @@ import {
   getCheckedKeysByInitKeys,
   getTreeDataFromTreeChildren,
 } from './util';
-import { TreeProps, NodeProps, TreeDataType, NodeInstance, TreeState } from './interface';
+import type { TreeProps, NodeProps, TreeDataType, NodeInstance, TreeState } from './interface';
 import { TreeContext } from './context';
 import mergeProps from '../_util/mergeProps';
 

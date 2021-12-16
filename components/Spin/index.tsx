@@ -4,7 +4,7 @@ import IconLoading from '../../icon/react-icon/IconLoading';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import DotLoading from './dot-loading';
-import { SpinProps } from './interface';
+import type { SpinProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function Spin(baseProps: SpinProps, ref) {

@@ -19,7 +19,7 @@ import { isObject, isArray } from '../_util/is';
 import getHotkeyHandler from '../_util/getHotkeyHandler';
 import { Backspace } from '../_util/keycode';
 import { pickTriggerPropsFromRest } from '../_util/constant';
-import { ObjectValueType, InputTagProps } from './interface';
+import type { ObjectValueType, InputTagProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const CSS_TRANSITION_DURATION = 300;

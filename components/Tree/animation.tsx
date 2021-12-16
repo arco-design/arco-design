@@ -6,7 +6,7 @@ import React, { PropsWithChildren, useMemo, useContext, useEffect } from 'react'
 
 import { CSSTransition } from 'react-transition-group';
 import { TreeContext } from './context';
-import { NodeProps } from './interface';
+import type { NodeProps } from './interface';
 import VirtualList from '../_class/VirtualList';
 import { ConfigContext } from '../ConfigProvider';
 import Node from './node';

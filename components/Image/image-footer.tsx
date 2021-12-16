@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import cs from '../_util/classNames';
-import { ImageProps } from './interface';
+import type { ImageProps } from './interface';
 import useShowFooter from './utils/hooks/useShowFooter';
 import IconMore from '../../icon/react-icon/IconMore';
 import { TriggerForToolbar } from './trigger-for-toolbar';

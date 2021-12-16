@@ -5,7 +5,7 @@ import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import IconHover from '../_class/icon-hover';
-import { RadioProps } from './interface';
+import type { RadioProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function Radio(baseProps: PropsWithChildren<RadioProps>) {

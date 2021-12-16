@@ -5,7 +5,7 @@ import { isArray, isObject } from '../_util/is';
 import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
 import IconLoading from '../../icon/react-icon/IconLoading';
-import { SwitchProps } from './interface';
+import type { SwitchProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 export interface SwitchState {

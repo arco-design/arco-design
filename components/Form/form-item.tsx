@@ -14,7 +14,8 @@ import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { isArray, isFunction, isUndefined, isObject } from '../_util/is';
 import Grid from '../Grid';
-import { FormItemProps, FieldError, KeyType, FormContextProps, VALIDATE_STATUS } from './interface';
+import type { FormItemProps, FieldError, KeyType, FormContextProps } from './interface';
+import { VALIDATE_STATUS } from './interface';
 import Control from './control';
 import {
   FormItemContext as RawFormItemContext,

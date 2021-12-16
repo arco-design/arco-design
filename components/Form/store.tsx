@@ -5,7 +5,13 @@ import omit from 'lodash/omit';
 import { cloneDeep, set, iterativelyGetKeys } from './utils';
 import { isArray, isObject, isString } from '../_util/is';
 import Control from './control';
-import { FieldError, FormProps, ValidateFieldsErrors, KeyType, FormValidateFn } from './interface';
+import type {
+  FieldError,
+  FormProps,
+  ValidateFieldsErrors,
+  KeyType,
+  FormValidateFn,
+} from './interface';
 import promisify from './promisify';
 
 type DeepPartial<T> = T extends

@@ -3,7 +3,7 @@ import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import IconImageClose from '../../icon/react-icon/IconImageClose';
-import { ImageProps, ImagePreviewProps } from './interface';
+import type { ImageProps, ImagePreviewProps } from './interface';
 import { ImageFooter } from './image-footer';
 import ImagePreview from './image-preview';
 import ImagePreviewGroup from './image-preview-group';

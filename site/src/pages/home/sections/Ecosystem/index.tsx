@@ -32,7 +32,7 @@ import {
   linkArcoIconBox,
   linkPalette,
 } from '../../constant/links';
-import { TabItem, EcosystemItem } from './interface';
+import type { TabItem, EcosystemItem } from './interface';
 import Section from '../../components/Section';
 import EcosystemTabList from './components/tabList';
 import EcosystemBlockList from './components/blockList';

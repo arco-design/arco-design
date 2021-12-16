@@ -1,7 +1,8 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import uploadRequest from './request';
-import { UploaderProps, STATUS, UploadItem, UploadRequestReturn } from './interface';
+import type { UploaderProps, UploadItem, UploadRequestReturn } from './interface';
+import { STATUS } from './interface';
 import { isNumber, isFunction, isFile } from '../_util/is';
 import TriggerNode from './trigger-node';
 

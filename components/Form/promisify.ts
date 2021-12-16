@@ -1,6 +1,6 @@
 // https://github.com/RyanZim/universalify/blob/master/index.js
 
-import { KeyType, ValidateFieldsErrors } from './interface';
+import type { KeyType, ValidateFieldsErrors } from './interface';
 
 // form validate error
 class ValidateError<FieldValue = any, FieldKey extends KeyType = string> extends Error {

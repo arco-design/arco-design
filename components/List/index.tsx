@@ -9,7 +9,7 @@ import Col from '../Grid/col';
 import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
 import VirtualList, { VirtualListHandle } from '../_class/VirtualList';
-import { ListProps } from './interface';
+import type { ListProps } from './interface';
 import scrollIntoView from '../_util/scrollIntoView';
 import useMergeProps from '../_util/hooks/useMergeProps';
 

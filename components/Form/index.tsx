@@ -1,5 +1,5 @@
 import Form from './form';
-import { FormInstance, FormProps, FormItemProps } from './interface';
+import type { FormInstance, FormProps, FormItemProps } from './interface';
 
 import FormItem from './form-item';
 import FormControl from './control';

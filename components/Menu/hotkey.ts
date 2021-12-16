@@ -3,7 +3,7 @@ import MenuContext, { HotkeyInfo } from './context';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Enter, Esc } from '../_util/keycode';
 import { MenuInfo } from './util';
-import { MenuProps } from './interface';
+import type { MenuProps } from './interface';
 
 const INITIAL_HOTKEY_INFO: HotkeyInfo = {
   type: null,

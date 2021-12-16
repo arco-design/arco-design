@@ -20,7 +20,7 @@ import IconHover from '../_class/icon-hover';
 import { Esc } from '../_util/keycode';
 import { isObject } from '../_util/is';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
-import { DrawerProps } from './interface';
+import type { DrawerProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: DrawerProps = {

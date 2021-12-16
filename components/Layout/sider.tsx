@@ -7,7 +7,7 @@ import ResizeBox from '../ResizeBox';
 import { isArray } from '../_util/is';
 import ResponsiveObserve, { responsiveMap } from '../_util/responsiveObserve';
 import useMergeValue from '../_util/hooks/useMergeValue';
-import { SiderProps } from './interface';
+import type { SiderProps } from './interface';
 
 const isNumber = (n) => {
   return !isNaN(parseFloat(n)) && isFinite(n);

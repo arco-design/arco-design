@@ -2,7 +2,7 @@ import React, { useContext, Fragment, forwardRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { isArray, isNumber } from '../_util/is';
-import { SpaceSize, SpaceProps } from './interface';
+import type { SpaceSize, SpaceProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: SpaceProps = {

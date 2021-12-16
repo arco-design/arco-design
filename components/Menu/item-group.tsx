@@ -1,7 +1,7 @@
 import React, { forwardRef, useContext } from 'react';
 import cs from '../_util/classNames';
 import { processChildren } from './util';
-import { MenuItemGroupProps } from './interface';
+import type { MenuItemGroupProps } from './interface';
 import MenuContext from './context';
 import MenuIndent from './indent';
 

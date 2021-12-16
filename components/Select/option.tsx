@@ -1,7 +1,7 @@
 import React from 'react';
 import cs from '../_util/classNames';
 import Checkbox from '../Checkbox';
-import { OptionProps } from './interface';
+import type { OptionProps } from './interface';
 import omit from '../_util/omit';
 
 function Option(props: OptionProps, ref) {

@@ -2,7 +2,7 @@ import React, { useRef, useContext, PropsWithChildren, ForwardRefExoticComponent
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
-import { TabPaneProps } from './interface';
+import type { TabPaneProps } from './interface';
 
 function TabPane(props: PropsWithChildren<TabPaneProps>, ref) {
   const shouldRender = useRef<boolean>(false);

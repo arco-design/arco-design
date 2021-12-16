@@ -3,7 +3,7 @@ import Meta from './meta';
 import { ConfigContext } from '../ConfigProvider';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import { ListItemProps } from './interface';
+import type { ListItemProps } from './interface';
 
 const defaultProps: Partial<ListItemProps> = {
   actionLayout: 'horizontal',

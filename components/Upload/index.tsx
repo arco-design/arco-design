@@ -2,7 +2,7 @@ import Upload from './upload';
 
 export default Upload;
 
-export {
+export type {
   UploadProps,
   UploadListProps,
   UploadItem,

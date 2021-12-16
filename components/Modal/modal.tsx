@@ -27,7 +27,7 @@ import { isFunction, isObject } from '../_util/is';
 import omit from '../_util/omit';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import useModal from './useModal';
-import { ModalProps, ModalReturnProps } from './interface';
+import type { ModalProps, ModalReturnProps } from './interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import useMergeProps from '../_util/hooks/useMergeProps';
 

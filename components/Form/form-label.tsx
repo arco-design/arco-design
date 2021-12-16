@@ -1,7 +1,7 @@
 import React from 'react';
 import { isArray, isObject } from '../_util/is';
 
-import { FormItemProps } from './interface';
+import type { FormItemProps } from './interface';
 
 interface FormItemLabelProps
   extends Pick<FormItemProps, 'label' | 'requiredSymbol' | 'required' | 'rules'> {
