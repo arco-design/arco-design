@@ -228,7 +228,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
 >
   <div
     class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px"
+    style="margin-right:60px;margin-bottom:20px;min-width:80px"
   >
     <div
       class="arco-statistic-title"
@@ -247,7 +247,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
   </div>
   <div
     class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px"
+    style="margin-right:60px;margin-bottom:20px;min-width:180px"
   >
     <div
       class="arco-statistic-title"
@@ -266,7 +266,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
   </div>
   <div
     class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px"
+    style="margin-right:60px;margin-bottom:20px;min-width:200px"
   >
     <div
       class="arco-statistic-title"
