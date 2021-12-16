@@ -247,6 +247,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       ...newFilters,
       ...controlledFilter,
     };
+
     if (isArray(filter) && filter.length) {
       setFilters(mergedFilters);
       const newProcessedData = getProcessedData(innerSorter, newFilters);
@@ -270,7 +271,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const newProcessedData = getProcessedData(innerSorter, newFilters);
     const currentData = getPageData(newProcessedData);
     onChange &&
-      onChange(getPaginationProps(currentData), innerSorter, newFilters, {
+      onChange(getPaginationProps(newProcessedData), innerSorter, newFilters, {
         currentData,
         action: 'filter',
       });
@@ -366,7 +367,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       };
     }
 
-    return paginationProps;
+    const effectedPaginationProps = { total, current };
+    return { ...paginationProps, ...effectedPaginationProps };
   }
 
   const paginationProps = getPaginationProps();
