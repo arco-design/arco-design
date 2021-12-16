@@ -357,6 +357,13 @@ export interface ExpandProps<T = any> {
    * @version 2.19.0
    */
   expandRowByClick?: boolean;
+  /**
+   * @zh 树形数据时，只有 `children` 是数组且长度大于 1 才显示展开图标。
+   * @en For tree data, only when `children` is an array and the length is greater than 1, the expand icon will be displayed.
+   * @defaultValue true
+   * @version 2.27.0
+   */
+  strictTreeData?: boolean;
 }
 
 /**
