@@ -172,4 +172,14 @@ describe('Table expand', () => {
     // should call onRow.onClick
     expect(onRowClick.mock.calls).toHaveLength(2);
   });
+
+  it('expandProps.strictTreeData', () => {
+    const component = mountTable<TestTreeData>(<Table columns={columns} data={treeData} />);
+
+    expect(component.find('IconPlus')).toHaveLength(1);
+
+    component.setProps({ expandProps: { strictTreeData: false } });
+
+    expect(component.find('IconPlus')).toHaveLength(2);
+  });
 });

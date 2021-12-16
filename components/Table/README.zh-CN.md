@@ -85,6 +85,7 @@
 |columnTitle|展开按钮列的表头标题|`ReactNode`|`-`|-|
 |rowExpandable|是否允许行展开。如果不指定该参数，会以 expandedRowRender 是否有返回值决定。当出现性能问题时，建议使用 rowExpandable。|`(record: T) => boolean`|`-`|2.16.0|
 |expandRowByClick|支持通过点击行来展开|`boolean`|`-`|2.19.0|
+|strictTreeData|树形数据时，只有 `children` 是数组且长度大于 1 才显示展开图标。|`boolean`|`true`|2.27.0|
 
 ### Column
 
