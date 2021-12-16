@@ -84,7 +84,13 @@ describe('Table', () => {
     expect(getComputedStyle(domTh).getPropertyValue('background-color')).toBe('rgb(0, 0, 0)');
     expect(getComputedStyle(domTh).getPropertyValue('color')).toBe('rgb(255, 255, 255)');
 
-    const domTd = component.find('tbody td').at(0).at(0).getDOMNode();
+    const domTd = component.find('tbody td').at(0).getDOMNode();
     expect(getComputedStyle(domTd).getPropertyValue('color')).toBe('rgb(255, 255, 255)');
+
+    const domTh2 = component.find('thead th').at(1).getDOMNode();
+    expect(getComputedStyle(domTh2).getPropertyValue('color')).toBe('rgb(1, 1, 1)');
+
+    const domTd2 = component.find('tbody td').at(1).getDOMNode();
+    expect(getComputedStyle(domTd2).getPropertyValue('color')).toBe('rgb(1, 1, 1)');
   });
 });
