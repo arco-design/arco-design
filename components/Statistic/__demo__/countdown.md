@@ -29,7 +29,7 @@ function Demo () {
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <Countdown
         title="Countdown"
-        style={{ marginRight: 60, marginBottom: 20 }}
+        style={{ marginRight: 60, marginBottom: 20, minWidth: 80 }}
         value={now + 1000 * 60 * 60 * 2}
         now={now}
       />
@@ -37,7 +37,7 @@ function Demo () {
         title="Milliseconds"
         value={now + 1000 * 60 * 60 * 2}
         format="HH:mm:ss.SSS"
-        style={{ marginRight: 60, marginBottom: 20 }}
+        style={{ marginRight: 60, marginBottom: 20, minWidth: 180 }}
         now={now}
       />
       <Countdown
@@ -45,7 +45,7 @@ function Demo () {
         value={now + 1000 * 60 * 60 * 24 * 4}
         format="D 天 H 时 m 分 s 秒"
         now={now}
-        style={{ marginRight: 60, marginBottom: 20 }}
+        style={{ marginRight: 60, marginBottom: 20, minWidth: 200}}
       />
       <div style={{ display: 'inline-block', marginBottom: 20 }}>
         <Countdown
