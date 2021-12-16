@@ -199,7 +199,7 @@ describe('Typography', () => {
 
     const showText = wrapper.text();
     expect(showText).toEqual(`${mockText}Less`);
-    expect(onExpand).toHaveBeenCalledWith(true);
+    expect(onExpand.mock.calls[0][0]).toBe(true);
 
     onExpand.mockReset();
     act(() => {
@@ -207,7 +207,7 @@ describe('Typography', () => {
     });
 
     expect(wrapper.text().length < mockText.length).toEqual(true);
-    expect(onExpand).toHaveBeenCalledWith(false);
+    expect(onExpand.mock.calls[0][0]).toBe(false);
 
     act(() => {
       wrapper.setProps({ ellipsis: { expandable: false } });

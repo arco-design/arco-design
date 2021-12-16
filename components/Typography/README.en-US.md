@@ -73,14 +73,14 @@ Used to display titles, paragraphs, and text content.
 
 ### EllipsisConfig
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|cssEllipsis|Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.|`boolean`|`true`|
-|rows|The number of omitted rows|`number`|`1`|
-|expandable|Whether to support expand|`boolean`|`-`|
-|ellipsisStr|ellipsis string|`string`|`...`|
-|suffix|Suffix|`string`|`-`|
-|expandNodes|Configure expand elements|`ReactNode[]`|`-`|
-|onEllipsis|Callback when the ellipsis state changes, usually triggered by window resize。|`(isEllipsis: boolean) => void`|`-`|
-|onExpand|Callback when the expand state changes, usually triggered by clicking the button|`(isExpand: boolean) => void`|`-`|
-|showTooltip|Show Tooltip when configure ellipsis|`boolean \| { type?: 'tooltip' \| 'popover'; props?: Record<string, any> }`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|cssEllipsis|Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.|`boolean`|`true`|-|
+|rows|The number of omitted rows|`number`|`1`|-|
+|expandable|Whether to support expand|`boolean`|`-`|-|
+|ellipsisStr|ellipsis string|`string`|`...`|-|
+|suffix|Suffix|`string`|`-`|-|
+|expandNodes|Configure expand elements|`ReactNode[]`|`-`|-|
+|onEllipsis|Callback when the ellipsis state changes, usually triggered by window resize。|`(isEllipsis: boolean) => void`|`-`|-|
+|onExpand|Callback when the expand state changes, usually triggered by clicking the button|`(isExpand: boolean, e) => void`|`-`|e in `2.27.0`|
+|showTooltip|Show Tooltip when configure ellipsis|`boolean \| { type?: 'tooltip' \| 'popover'; props?: Record<string, any> }`|`-`|-|
