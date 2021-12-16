@@ -147,3 +147,121 @@ export interface SplitProps {
    */
   onPaneResize?: (paneContainers: HTMLElement[]) => void;
 }
+
+/**
+ * @title ResizeBox.SplitGroup in `2.27.0`
+ */
+export interface SplitGroupProps {
+  style?: CSSProperties;
+  className?: string | string[];
+  /**
+   * @zh 分割框的 html 标签
+   * @en The html tag of SplitGroup
+   * @defaultValue div
+   */
+  component?: string;
+  /**
+   * @zh 分割方向分为水平 `horizontal` 和垂直 `vertical`，默认是水平分割
+   * @en The direction of Split. It can be `horizontal` and `vertical`
+   * @defaultValue horizontal
+   */
+  direction?: 'horizontal' | 'vertical';
+  /**
+   * @zh 定制伸缩杆的图标
+   * @en Custom the icon of Split
+   */
+  icon?: ReactNode;
+  /**
+   * @zh 面板
+   * @en panes
+   */
+  panes: SplitGroupPane[];
+  /**
+   * @zh 开始拖拽之前的回调
+   * @en Callback when the start of resize
+   */
+  onMovingStart?: (activeIndex: number) => void;
+  /**
+   * @zh 拖拽中的回调, `size` 参数是各个面板占的像素值
+   * @en Callback when moving
+   */
+  onMoving?: (e: MouseEvent, size: string[], activeIndex: number) => void;
+  /**
+   * @zh 拖拽结束之后的回调
+   * @en Callback when the end of resize
+   */
+  onMovingEnd?: (activeIndex: number) => void;
+  /**
+   * @zh 面板大小变化的回调
+   * @en Callback when pane resized
+   */
+  onPaneResize?: (paneContainers: HTMLElement[]) => void;
+}
+
+/**
+ * @title ResizeBox.SplitGroup.CollapsedConfig
+ */
+export interface CollapsedConfig {
+  /**
+   * @zh 快速折叠按钮的icon
+   * @en Quick collapse button icon
+   */
+  icon?: ReactNode;
+  /**
+   * @zh 点击快速折叠的回调
+   * @en Click the callback for quick folding
+   */
+  onClick?: (e, collapsed, activeIndex, direction: 'prev' | 'next') => void;
+}
+
+/**
+ * @title ResizeBox.SplitGroup.Pane
+ */
+export interface SplitGroupPane {
+  /**
+   * @zh 当前面板的内容
+   * @en The contents of the current panel
+   */
+  content: ReactNode;
+  /**
+   * @zh 分割的大小，可以是 0~1 代表百分比，或具体数值的像素，如 300px
+   * @en The size of the segmentation can be 0~1 representing a percentage, or a pixel with a specific value, such as 300px
+   */
+  size?: number | string;
+  /**
+   * @zh 最小阈值，优先级比 `max`高，并且会影响相邻面板的阈值。
+   * @en Maximum threshold, The priority is higher than `max` and will affect the threshold of adjacent panels.
+   */
+  min?: number | string;
+  /**
+   * @zh 最大阈值
+   * @en Minimum threshold
+   */
+  max?: number | string;
+  /**
+   * @zh 禁用，将不会展示伸缩杆。
+   * @en disabled, the split bar will not be displayed
+   */
+  disabled?: boolean;
+  /**
+   * @zh 是否支持快速折叠;
+   * @en Whether to support fast collapsed
+   */
+  collapsible?:
+    | boolean
+    | {
+        prev?: boolean | CollapsedConfig;
+        next?: boolean | CollapsedConfig;
+      };
+  /**
+   * @zh 是否支持拖拽伸缩
+   * @en Whether to support drag and drop
+   * @defaultValue true
+   */
+  resizable?: boolean;
+  /**
+   * @zh 定制伸缩杆内容, 参数分别表示向前快速收缩、拖拽伸缩触发器、向后快速收缩的触发器
+   * @en Customize the content of the Split
+   */
+  trigger?: (prevNode: ReactNode, resizeNode: ReactNode, nextNode: ReactNode) => ReactNode;
+}

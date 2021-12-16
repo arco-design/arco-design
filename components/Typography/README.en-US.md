@@ -31,8 +31,8 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|`boolean`|`-`|
 |delete|Strikethrough style|`boolean`|`-`|
 |code|Code block style|`boolean`|`-`|
-|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
+|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
 
 ### Typography.Paragraph
@@ -50,8 +50,8 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|`boolean`|`-`|
 |delete|Strikethrough style|`boolean`|`-`|
 |code|Code block style|`boolean`|`-`|
-|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
+|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
 
 ### Typography.Text
@@ -67,8 +67,8 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|`boolean`|`-`|
 |delete|Strikethrough style|`boolean`|`-`|
 |code|Code block style|`boolean`|`-`|
-|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
+|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
 
 ### EllipsisConfig

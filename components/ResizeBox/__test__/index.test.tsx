@@ -42,10 +42,10 @@ describe('ResizeBox', () => {
       value: HTMLElement.prototype.clientHeight,
     });
     Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
-      value: HTMLElement.prototype.clientWidth,
+      value: HTMLElement.prototype.offsetWidth,
     });
     Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
-      value: HTMLElement.prototype.clientHeight,
+      value: HTMLElement.prototype.offsetHeight,
     });
   });
 
