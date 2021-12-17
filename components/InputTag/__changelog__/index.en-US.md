@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `InputTag` adds `dragToSort` property to support sorting the entered value by dragging.([#325](https://github.com/arco-design/arco-design/pull/325))
+
 ## 2.25.0
 
 2021-11-19

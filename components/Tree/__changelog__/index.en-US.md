@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `Tree` supports `halfChecked` property([#331](https://github.com/arco-design/arco-design/pull/331))
+
 ## 2.25.1
 
 2021-11-26

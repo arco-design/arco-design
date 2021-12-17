@@ -2,6 +2,33 @@
 changelog: true
 ---
 
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `Table` add prop `expandProps.strictTreeData`.([#334](https://github.com/arco-design/arco-design/pull/334))
+- `Tree` supports `halfChecked` property([#331](https://github.com/arco-design/arco-design/pull/331))
+- The `event` parameter has been added to the `onExpand` callback parameter of the Typography` component.([#328](https://github.com/arco-design/arco-design/pull/328))
+- `ResizeBox` adds `SplitGroup` sub-component, supports splitting multiple panels and quick folding function([#327](https://github.com/arco-design/arco-design/pull/327))
+- `InputTag` adds `dragToSort` property to support sorting the entered value by dragging.([#325](https://github.com/arco-design/arco-design/pull/325))
+- `Select` adds `dragToSort` property to support sorting the entered value by dragging.([#325](https://github.com/arco-design/arco-design/pull/325))
+
+### 🐛 BugFix
+
+- Fix the bug that `column.cellStyle` of the `Table` component works abnormally.([#332](https://github.com/arco-design/arco-design/pull/332))
+- Fix the bug that the current page calculation error occurs when the amount of data in `Table` changes.([#329](https://github.com/arco-design/arco-design/pull/329))
+
+### 💅 Style
+
+- Fix the style problem of the margin when the upload file list is empty in the `Upload` component([#336](https://github.com/arco-design/arco-design/pull/336))
+- Fix the problem that there is no validated style when `InputTag` is used in `Form.Item` with `validateStatus`.([#330](https://github.com/arco-design/arco-design/pull/330))
+
+### 🆎 TypeScript
+
+- `InputNumber` allows all `InputHTMLAttributes` to be passed through properties.([#326](https://github.com/arco-design/arco-design/pull/326))
+
 ## 2.26.2
 
 2021-12-10

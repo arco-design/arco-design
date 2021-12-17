@@ -1,3 +1,16 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `Table` add prop `expandProps.strictTreeData`.([#334](https://github.com/arco-design/arco-design/pull/334))
+
+### 🐛 BugFix
+
+- Fix the bug that `column.cellStyle` of the `Table` component works abnormally.([#332](https://github.com/arco-design/arco-design/pull/332))
+- Fix the bug that the current page calculation error occurs when the amount of data in `Table` changes.([#329](https://github.com/arco-design/arco-design/pull/329))
+
 ## 2.26.2
 
 2021-12-10

@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 💅 Style
+
+- Fix the style problem of the margin when the upload file list is empty in the `Upload` component([#336](https://github.com/arco-design/arco-design/pull/336))
+
 ## 2.26.2
 
 2021-12-10
