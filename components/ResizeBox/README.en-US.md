@@ -48,18 +48,18 @@ ResizeBox components.
 
 ### ResizeBox.SplitGroup in `2.27.0`
 
-|Property|Description|Type|DefaultValue|Version|
-|---|---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|-|
-|className|Additional css class|`string \| string[]`|`-`|-|
-|component|The html tag of Split|`string`|`div`|-|
-|direction|The direction of Split. It can be `horizontal` and `vertical`|`'horizontal' \| 'vertical'`|`horizontal`|-|
-|icon|Custom the icon of Split|`ReactNode`|`-`|-|
-|panes|panes|`SplitGroupPane[]` **(Required)**|`-`|-|
-|onMovingStart|Callback when the start of resize|`(activeIndex: number) => void`|`-`|-|
-|onMoving|Callback when moving|`(e: MouseEvent, size: string[], activeIndex: number) => void`|`-`|-|
-|onMovingEnd|Callback when the end of resize|`(activeIndex: number) => void`|`-`|-|
-|onPaneResize|Callback when pane resized|`(paneContainers: HTMLElement[]) => void`|`-`|2.25.0|
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|style|Additional style|`CSSProperties`|`-`|
+|className|Additional css class|`string \| string[]`|`-`|
+|component|The html tag of SplitGroup|`string`|`div`|
+|direction|The direction of Split. It can be `horizontal` and `vertical`|`'horizontal' \| 'vertical'`|`horizontal`|
+|icon|Custom the icon of Split|`ReactNode`|`-`|
+|panes|panes|`SplitGroupPane[]` **(Required)**|`-`|
+|onMovingStart|Callback when the start of resize|`(activeIndex: number) => void`|`-`|
+|onMoving|Callback when moving|`(e: MouseEvent, size: string[], activeIndex: number) => void`|`-`|
+|onMovingEnd|Callback when the end of resize|`(activeIndex: number) => void`|`-`|
+|onPaneResize|Callback when pane resized|`(paneContainers: HTMLElement[]) => void`|`-`|
 
 ### ResizeBox.SplitGroup.CollapsedConfig
 
@@ -70,13 +70,13 @@ ResizeBox components.
 
 ### ResizeBox.SplitGroup.Pane
 
-|Property|Description|Type|DefaultValue|Version|
-|---|---|---|---|---|
-|content|The contents of the current panel|`ReactNode` **(Required)**|`-`|2.27.0|
-|size|The size of the segmentation can be 0~1 representing a percentage, or a pixel with a specific value, such as 300px|`number \| string`|`-`|2.27.0|
-|min|Maximum threshold, The priority is higher than `max` and will affect the threshold of adjacent panels.|`number \| string`|`-`|2.27.0|
-|max|Minimum threshold|`number \| string`|`-`|2.25.0|
-|disabled|Disabled, the Split will not be displayed|`boolean`|`-`|-|
-|collapsible|Whether to support fast collapsed|`\| boolean\| {prev?: boolean \| CollapsedConfig;next?: boolean \| CollapsedConfig;}`|`-`|-|
-|resizable|Whether to support drag and drop|`boolean`|`true`|-|
-|trigger|Customize the content of the Split|`(prevNode: ReactNode, resizeNode: ReactNode, nextNode: ReactNode) => ReactNode`|`-`|-|
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|content|The contents of the current panel|`ReactNode` **(Required)**|`-`|
+|size|The size of the segmentation can be 0~1 representing a percentage, or a pixel with a specific value, such as 300px|`number \| string`|`-`|
+|min|Maximum threshold, The priority is higher than `max` and will affect the threshold of adjacent panels.|`number \| string`|`-`|
+|max|Minimum threshold|`number \| string`|`-`|
+|disabled|disabled, the split bar will not be displayed|`boolean`|`-`|
+|collapsible|Whether to support fast collapsed|`\| boolean\| {prev?: boolean \| CollapsedConfig;next?: boolean \| CollapsedConfig;}`|`-`|
+|resizable|Whether to support drag and drop|`boolean`|`true`|
+|trigger|Customize the content of the Split|`(prevNode: ReactNode, resizeNode: ReactNode, nextNode: ReactNode) => ReactNode`|`-`|

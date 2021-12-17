@@ -33,6 +33,7 @@
   &-split,
   &-split-group {
     display: flex;
+    user-select: auto;
 
     .@{resizebox-prefix-cls}-slit-trigger {
       flex: 0;
@@ -52,6 +53,10 @@
 
     &-vertical {
       flex-direction: column;
+    }
+
+    &-moving {
+      user-select: none;
     }
   }
 }
@@ -87,8 +92,10 @@
       cursor: default;
     }
 
-    .@{resizebox-trigger-prefix-cls}-icon {
-      margin: 4px 0;
+    .@{resizebox-trigger-prefix-cls}-prev,
+    .@{resizebox-trigger-prefix-cls}-next {
+      height: @resizeBox-trigger-icon-empty;
+      line-height: @resizeBox-trigger-icon-empty;
     }
 
     .@{resizebox-trigger-prefix-cls}-icon-wrapper {
@@ -110,8 +117,10 @@
       cursor: default;
     }
 
-    .@{resizebox-trigger-prefix-cls}-icon {
-      margin: 0 4px;
+    .@{resizebox-trigger-prefix-cls}-prev,
+    .@{resizebox-trigger-prefix-cls}-next {
+      width: @resizeBox-trigger-icon-empty;
+      text-align: center;
     }
 
     .@{resizebox-trigger-prefix-cls}-icon-wrapper {

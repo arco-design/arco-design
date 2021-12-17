@@ -5,13 +5,13 @@ import { IconDoubleLeft, IconDoubleRight } from '@self/icon';
 const { Paragraph, Text } = Typography;
 
 const panes = [
-  { size: 0.2, collapsible: true },
-  { size: 0.1, min: '50px' },
+  { size: 0.2, collapsible: { prev: true } },
+  { size: 0.4, min: '50px' },
   {
-    size: 0.1,
     resizable: false,
     collapsible: {
       prev: {
+        // 自定义伸缩杆向前快速收缩触发器
         icon: <IconDoubleLeft />,
         onClick: (_, collapsed, status, activeIndex) => {
           console.log('快速收缩：', collapsed, status, activeIndex);
@@ -24,18 +24,10 @@ const panes = [
         },
       },
     },
+    // 自定义伸缩杆
     trigger: (prev, resize, next) => {
       return (
-        <div
-          style={{
-            width: '12px',
-            height: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            border: '1px solid #000000',
-          }}
-        >
+        <div className="resizebox-split-group-demo-trigger">
           {prev}
           {resize}
           {next}
@@ -43,17 +35,18 @@ const panes = [
       );
     },
   },
-  {
-    min: 0.2,
-  },
+  {},
 ];
-function Demo() {
+
+const verticalPanes = [{ collapsible: true }, { size: 0.2, collapsible: { next: true } }, {}];
+
+const HorizontalSplitGroup = () => {
   const [offsets, setOffsets] = useState([]);
   return (
     <ResizeBox.SplitGroup
       onMoving={(_, sizes) => setOffsets(sizes)}
-      className="resizebox-split-group-demo"
-      style={{ height: 300, border: '1px solid #000000' }}
+      className="resizebox-split-group-horizontal"
+      style={{ height: '100%' }}
       panes={panes.map((obj, index) => ({
         content: (
           <div className="resizebox-split-group-demo-content">
@@ -72,7 +65,35 @@ function Demo() {
         ),
         ...obj,
       }))}
-    ></ResizeBox.SplitGroup>
+    />
+  );
+};
+
+const VerticalSplitGroup = () => {
+  return (
+    <ResizeBox.SplitGroup
+      className="resizebox-split-group-vertical"
+      direction="vertical"
+      style={{ height: '200px' }}
+      panes={verticalPanes.map((obj, index) => ({
+        content: (
+          <div className="resizebox-split-group-demo-content">
+            <Text mark>pane {index}</Text>
+          </div>
+        ),
+        ...obj,
+      }))}
+    />
+  );
+};
+
+function Demo() {
+  return (
+    <ResizeBox.SplitGroup
+      style={{ height: 400, border: '1px solid #000000' }}
+      direction="vertical"
+      panes={[{ content: <HorizontalSplitGroup /> }, { content: <VerticalSplitGroup /> }]}
+    />
   );
 }
 

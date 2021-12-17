@@ -34,6 +34,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
   const prevOffsets = useRef<number[]>([]);
 
   const [offsets, setOffsets] = useState<number[]>(new Array(panes.length).fill(defaultOffset));
+  const [isMoving, setIsMoving] = useState(false);
   const [triggerSize, setTriggerSize] = useState<number[]>(new Array(panes.length).fill(0));
   const [collapsedStatus, setCollapsedStatus] = useState<{ prev: boolean; next: boolean }[]>(
     new Array(Math.max(panes.length - 1, 0)).fill({ prev: false, next: false })
@@ -46,6 +47,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
   const classNames = cs(
     prefixCls,
     `${prefixCls}-${isHorizontal ? DIRECTION_HORIZONTAL : DIRECTION_VERTICAL}`,
+    { [`${prefixCls}-moving`]: isMoving },
     className
   );
   const Tag = component as any;
@@ -183,6 +185,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
     currentRecord.moving = true;
     currentRecord.startOffset = offsets[index];
     currentRecord.startPosition = isHorizontal ? e.pageX : e.pageY;
+    setIsMoving(true);
     on(window, 'mousemove', moving);
     on(window, 'touchmove', moving);
     on(window, 'mouseup', moveEnd);
@@ -218,6 +221,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
   function moveEnd() {
     const index = movingIndex.current;
     recordRef.current[index].moving = false;
+    setIsMoving(false);
     off(window, 'mousemove', moving);
     off(window, 'touchmove', moving);
     off(window, 'mouseup', moveEnd);
