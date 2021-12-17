@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Alert } from '@self';
 import { IconBug } from '@self/icon';
 
-export class Demo extends Component {
+class Demo extends Component {
   constructor(props) {
     super(props);
 
@@ -52,6 +52,4 @@ export class Demo extends Component {
   }
 }
 
-export default {
-  title: 'Alert',
-};
+export default Demo;
