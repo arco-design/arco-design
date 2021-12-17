@@ -5,7 +5,7 @@ import React, {
   useImperativeHandle,
   ElementRef,
   useEffect,
-  useMemo,
+  PropsWithChildren,
 } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ConfigContext } from '../ConfigProvider';
@@ -19,8 +19,10 @@ import { isObject, isArray } from '../_util/is';
 import getHotkeyHandler from '../_util/getHotkeyHandler';
 import { Backspace } from '../_util/keycode';
 import { pickTriggerPropsFromRest } from '../_util/constant';
-import { ObjectValueType, InputTagProps } from './interface';
+import { ObjectValueType, InputTagProps, ValueChangeReason } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import Draggable from '../_class/Draggable';
+import { DraggableProps } from '../_class/Draggable/interface';
 
 const CSS_TRANSITION_DURATION = 300;
 
@@ -66,6 +68,38 @@ const useComputeAutoWidthDelay = (value: InputTagProps<any>['value']) => {
   return refDelay;
 };
 
+const UsedDraggableGroup = ({
+  children,
+  draggable,
+  onIndexChange,
+}: PropsWithChildren<{ draggable: boolean; onIndexChange: DraggableProps['onIndexChange'] }>) => {
+  return draggable ? (
+    <Draggable
+      itemWrapperStyle={{ display: 'inline-block' }}
+      direction="horizontal"
+      onIndexChange={onIndexChange}
+    >
+      {children}
+    </Draggable>
+  ) : (
+    <>{children}</>
+  );
+};
+
+const UsedTransitionGroup = ({
+  prefixCls,
+  children,
+  animation,
+}: PropsWithChildren<{ prefixCls: string; animation: boolean }>) => {
+  return animation ? (
+    <TransitionGroup component="div" className={`${prefixCls}-inner`}>
+      {children}
+    </TransitionGroup>
+  ) : (
+    <div className={`${prefixCls}-inner`}>{children}</div>
+  );
+};
+
 const defaultProps: InputTagProps = {
   animation: true,
   validate: (inputValue, values) => inputValue && values.every((item) => item.value !== inputValue),
@@ -87,6 +121,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     disableInput,
     animation,
     saveOnBlur,
+    dragToSort,
     icon,
     suffix,
     validate,
@@ -117,20 +152,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     value: props.inputValue,
   });
   const refDelay = useComputeAutoWidthDelay(value);
-
-  const UsedTransitionGroup = useMemo(
-    () =>
-      ({ children }) => {
-        return animation ? (
-          <TransitionGroup component="div" className={`${prefixCls}-inner`}>
-            {children}
-          </TransitionGroup>
-        ) : (
-          <div className={`${prefixCls}-inner`}>{children}</div>
-        );
-      },
-    [prefixCls, animation]
-  );
+  const draggable = !!(dragToSort && !readOnly && !disabled);
 
   useImperativeHandle<any, InputTagHandle>(
     ref,
@@ -143,7 +165,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     []
   );
 
-  const valueChangeHandler = (value: ObjectValueType[]) => {
+  const valueChangeHandler = (value: ObjectValueType[], reason: ValueChangeReason) => {
     if (disabled || readOnly) {
       return;
     }
@@ -151,12 +173,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       setValue(value);
     }
 
-    onChange && onChange(labelInValue ? value : value.map((x) => x.value));
+    onChange && onChange(labelInValue ? value : value.map((x) => x.value), reason);
   };
 
   const tagCloseHandler = (itemValue: ObjectValueType, index: number, event) => {
     onRemove && onRemove(itemValue, index, event);
-    valueChangeHandler([...value.slice(0, index), ...value.slice(index + 1)]);
+    valueChangeHandler([...value.slice(0, index), ...value.slice(index + 1)], 'remove');
   };
 
   const hotkeyHandler = getHotkeyHandler(
@@ -182,7 +204,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     try {
       const isLegal = typeof validate === 'function' ? await validate(inputValue, value) : true;
       if (isLegal) {
-        valueChangeHandler(value.concat({ value: inputValue, label: inputValue }));
+        valueChangeHandler(value.concat({ value: inputValue, label: inputValue }), 'add');
         setInputValue('');
       }
     } catch (error) {
@@ -238,7 +260,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         className={`${prefixCls}-clear-icon`}
         onClick={(e) => {
           e.stopPropagation();
-          valueChangeHandler([]);
+          valueChangeHandler([], 'clear');
           if (!focused) {
             inputRef.current && inputRef.current.focus();
           }
@@ -269,7 +291,9 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         },
         className
       )}
-      onMouseDown={keepFocus}
+      onMouseDown={(event) => {
+        focused && keepFocus(event);
+      }}
       onClick={(e) => {
         !focused && inputRef.current && inputRef.current.focus();
         if (onClick) {
@@ -278,66 +302,80 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       }}
     >
       <div className={`${prefixCls}-view`}>
-        <UsedTransitionGroup>
-          {value.map((x, i) => {
-            // Check whether two tags have same value. If so, set different key for them to avoid only rendering one tag.
-            const isRepeat = value.findIndex((item) => item.value === x.value) !== i;
-            const eleTag = mergedRenderTag(x, i);
-            return React.isValidElement(eleTag) ? (
-              <CSSTransition
-                key={typeof x.value === 'object' ? i : isRepeat ? `${x.value}-${i}` : x.value}
-                timeout={CSS_TRANSITION_DURATION}
-                classNames="zoomIn"
-              >
-                {eleTag}
-              </CSSTransition>
-            ) : (
-              eleTag
-            );
-          })}
-          <CSSTransition key="input" timeout={CSS_TRANSITION_DURATION} classNames="zoomIn">
-            <InputComponent
-              size={size}
-              disabled={disabled || disableInput}
-              readOnly={readOnly}
-              ref={inputRef}
-              autoFocus={autoFocus}
-              placeholder={!value.length ? placeholder : ''}
-              prefixCls={`${prefixCls}-input`}
-              autoFitWidth={{
-                delay: () => refDelay.current,
-              }}
-              onPressEnter={async (e) => {
-                onPressEnter && onPressEnter(e);
-                await tryAddInputValueToTag();
-              }}
-              onFocus={(e) => {
-                if (!disabled && !readOnly) {
-                  setFocused(true);
-                  onFocus && onFocus(e);
-                }
-              }}
-              onBlur={async (e) => {
-                setFocused(false);
-                onBlur && onBlur(e);
-                if (saveOnBlur) {
+        <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
+          <UsedDraggableGroup
+            draggable={draggable}
+            onIndexChange={(index, prevIndex) => {
+              const moveItem = function (arr, fromIndex, toIndex) {
+                arr = arr.slice();
+                const isMoveLeft = fromIndex > toIndex;
+                const [item] = arr.splice(fromIndex, 1);
+                arr.splice(isMoveLeft ? toIndex : toIndex - 1, 0, item);
+                return arr;
+              };
+              valueChangeHandler(moveItem(value, prevIndex, index), 'sort');
+            }}
+          >
+            {value.map((x, i) => {
+              // Check whether two tags have same value. If so, set different key for them to avoid only rendering one tag.
+              const isRepeat = value.findIndex((item) => item.value === x.value) !== i;
+              const eleTag = mergedRenderTag(x, i);
+              return React.isValidElement(eleTag) ? (
+                <CSSTransition
+                  key={typeof x.value === 'object' ? i : isRepeat ? `${x.value}-${i}` : x.value}
+                  timeout={CSS_TRANSITION_DURATION}
+                  classNames="zoomIn"
+                >
+                  {eleTag}
+                </CSSTransition>
+              ) : (
+                eleTag
+              );
+            })}
+            <CSSTransition key="input" timeout={CSS_TRANSITION_DURATION} classNames="zoomIn">
+              <InputComponent
+                size={size}
+                disabled={disabled || disableInput}
+                readOnly={readOnly}
+                ref={inputRef}
+                autoFocus={autoFocus}
+                placeholder={!value.length ? placeholder : ''}
+                prefixCls={`${prefixCls}-input`}
+                autoFitWidth={{
+                  delay: () => refDelay.current,
+                }}
+                onPressEnter={async (e) => {
+                  onPressEnter && onPressEnter(e);
                   await tryAddInputValueToTag();
-                }
-                setInputValue('');
-              }}
-              value={inputValue}
-              onValueChange={(v, e) => {
-                setInputValue(v);
-                // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
-                onInputChange && onInputChange(v, e);
-              }}
-              onKeyDown={(event) => {
-                hotkeyHandler(event as any);
-                onKeyDown && onKeyDown(event);
-              }}
-              onPaste={onPaste}
-            />
-          </CSSTransition>
+                }}
+                onFocus={(e) => {
+                  if (!disabled && !readOnly) {
+                    setFocused(true);
+                    onFocus && onFocus(e);
+                  }
+                }}
+                onBlur={async (e) => {
+                  setFocused(false);
+                  onBlur && onBlur(e);
+                  if (saveOnBlur) {
+                    await tryAddInputValueToTag();
+                  }
+                  setInputValue('');
+                }}
+                value={inputValue}
+                onValueChange={(v, e) => {
+                  setInputValue(v);
+                  // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
+                  onInputChange && onInputChange(v, e);
+                }}
+                onKeyDown={(event) => {
+                  hotkeyHandler(event as any);
+                  onKeyDown && onKeyDown(event);
+                }}
+                onPaste={onPaste}
+              />
+            </CSSTransition>
+          </UsedDraggableGroup>
         </UsedTransitionGroup>
 
         {hasSuffix && (

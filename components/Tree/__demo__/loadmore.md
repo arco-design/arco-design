@@ -1,6 +1,6 @@
 ---
 order: 6
-title: 
+title:
   zh-CN: 动态加载
   en-US: Dynamic Loading
 ---
@@ -18,17 +18,6 @@ import { Tree } from '@arco-design/web-react';
 
 const TreeNode = Tree.Node;
 
-// 从treedata 生成 treenode
-const generatorTreeNodes = (treeData) => {
-  return treeData.map((item) => {
-    const { children, key, ...rest } = item;
-    return (
-      <Tree.Node key={key} {...rest} dataRef={item}>
-        {children ? generatorTreeNodes(item.children) : null}
-      </Tree.Node>
-    );
-  });
-};
 
 const defaultTreeData = [
   {
@@ -63,8 +52,8 @@ function Demo() {
   };
 
   return (
-    <Tree defaultSelectedKeys={['node1']} loadMore={loadMore}>
-      {generatorTreeNodes(treeData)}
+    <Tree defaultSelectedKeys={['node1']} loadMore={loadMore} treeData={treeData}>
+
     </Tree>
   );
 }

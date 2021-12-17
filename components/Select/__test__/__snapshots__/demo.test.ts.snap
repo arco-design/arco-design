@@ -487,6 +487,171 @@ exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Select/demo/darggable.md correctly 1`] = `
+<div
+  class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+  style="width:345px"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <div
+      class="arco-input-tag arco-input-tag-size-default"
+    >
+      <div
+        class="arco-input-tag-view"
+      >
+        <div
+          class="arco-input-tag-inner"
+        >
+          <div
+            class="arco-draggable"
+          >
+            <li
+              class="arco-draggable-item"
+              draggable="true"
+              style="display:inline-block"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Beijing"
+                >
+                  Beijing
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </li>
+            <li
+              class="arco-draggable-item"
+              draggable="true"
+              style="display:inline-block"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Shanghai"
+                >
+                  Shanghai
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </li>
+            <li
+              class="arco-draggable-item"
+              draggable="true"
+              style="display:inline-block"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Guangzhou"
+                >
+                  Guangzhou
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </li>
+            <li
+              class="arco-draggable-item"
+              draggable="true"
+              style="display:inline-block"
+            >
+              <input
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-expand-icon"
+      >
+        <svg
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+          width="1em"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Select/demo/dropdown-render.md correctly 1`] = `
 <div
   class="arco-select arco-select-single arco-select-size-default"

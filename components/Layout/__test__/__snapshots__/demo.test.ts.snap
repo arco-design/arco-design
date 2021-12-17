@@ -1868,6 +1868,9 @@ exports[`renders Layout/demo/resize.md correctly 1`] = `
             class="arco-resizebox-trigger-icon-wrapper"
           >
             <span
+              class="arco-resizebox-trigger-icon-empty"
+            />
+            <span
               class="arco-resizebox-trigger-icon"
             >
               <svg
@@ -1889,6 +1892,9 @@ exports[`renders Layout/demo/resize.md correctly 1`] = `
                 />
               </svg>
             </span>
+            <span
+              class="arco-resizebox-trigger-icon-empty"
+            />
           </div>
         </div>
       </aside>

@@ -143,9 +143,9 @@ function Base(props: BaseProps) {
     );
   }
 
-  function onClickExpand() {
+  function onClickExpand(e) {
     setExpanding(!expanding);
-    ellipsisConfig.onExpand && ellipsisConfig.onExpand(!expanding);
+    ellipsisConfig.onExpand && ellipsisConfig.onExpand(!expanding, e);
   }
 
   const resizeOnNextFrame = () => {

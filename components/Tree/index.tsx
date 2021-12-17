@@ -3,7 +3,7 @@ import isEqualWith from 'lodash/isEqualWith';
 import cs from '../_util/classNames';
 import Node from './node';
 import NodeList from './node-list';
-import { isFunction } from '../_util/is';
+import { isEmptyObject, isFunction } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import {
   getAllCheckedKeysByCheck,
@@ -89,8 +89,6 @@ class Tree extends Component<TreeProps, TreeState> {
 
   key2nodeProps: key2nodePropsType = {};
 
-  indeterminateKeys: string[] = [];
-
   dragNode: null | NodeInstance;
 
   nodeListRef;
@@ -118,10 +116,14 @@ class Tree extends Component<TreeProps, TreeState> {
     this.state = {};
     const treeData = this.getTreeData();
     const nodeList = this.getNodeList(treeData, context.getPrefixCls('tree'));
+    const { checkedKeys, halfCheckedKeys } = this.getInitCheckedKeys(
+      props.checkedKeys || props.defaultCheckedKeys || []
+    );
 
     this.state = {
       selectedKeys: props.selectedKeys || props.defaultSelectedKeys || [],
-      checkedKeys: this.getInitCheckedKeys(props.checkedKeys || props.defaultCheckedKeys || []),
+      checkedKeys,
+      halfCheckedKeys,
       expandedKeys: this.getInitExpandedKeys(props.expandedKeys || props.defaultExpandedKeys),
       loadedKeys: [],
       loadingKeys: [],
@@ -163,17 +165,29 @@ class Tree extends Component<TreeProps, TreeState> {
         newState.treeData = treeData;
         newState.nodeList = nodeList;
       }
-      // 说明treeData变了，需要比较下内部checkedKeys
+
       if (
         newState.treeData ||
         ('checkedKeys' in this.props && !isEqualWith(prevProps.checkedKeys, this.props.checkedKeys))
       ) {
+        // 说明treeData变了，需要比较下内部checkedKeys
         const currentCheckedKeys =
           'checkedKeys' in this.props ? this.props.checkedKeys : this.state.checkedKeys;
-        const keys = this.getInitCheckedKeys(currentCheckedKeys || []);
-        if (!isEqualWith(keys, this.state.checkedKeys)) {
-          newState.checkedKeys = keys;
+        const { halfCheckedKeys, checkedKeys } = this.getInitCheckedKeys(currentCheckedKeys || []);
+        if (!isEqualWith(checkedKeys, this.state.checkedKeys)) {
+          newState.checkedKeys = checkedKeys;
         }
+        if (!isEqualWith(halfCheckedKeys, this.state.halfCheckedKeys)) {
+          newState.halfCheckedKeys = halfCheckedKeys;
+        }
+      }
+
+      if (
+        this.props.checkStrictly &&
+        'halfCheckedKeys' in this.props &&
+        !isEqualWith(prevProps.halfCheckedKeys, this.props.halfCheckedKeys)
+      ) {
+        newState.halfCheckedKeys = this.props.halfCheckedKeys;
       }
 
       if (
@@ -237,7 +251,11 @@ class Tree extends Component<TreeProps, TreeState> {
       'children',
     ];
 
-    return keys.some((key) => isEqualWith(prevProps[key], props[key]));
+    return (
+      prevProps.treeData !== props.treeData ||
+      prevProps.children !== props.children ||
+      keys.some((key) => isEqualWith(prevProps[key], props[key]))
+    );
   };
 
   // 根据 fieldNames 获取节点数据
@@ -360,12 +378,16 @@ class Tree extends Component<TreeProps, TreeState> {
   getInitCheckedKeys = (keys) => {
     if (!this.props.checkStrictly) {
       const { checkedKeys, indeterminateKeys } = getCheckedKeysByInitKeys(keys, this.key2nodeProps);
-      this.indeterminateKeys = indeterminateKeys;
-      return checkedKeys;
+      return {
+        checkedKeys,
+        halfCheckedKeys: indeterminateKeys,
+      };
     }
 
-    this.indeterminateKeys = [];
-    return keys;
+    return {
+      checkedKeys: keys,
+      halfCheckedKeys: this.props.halfCheckedKeys || [],
+    };
   };
 
   handleSelect = (key, e) => {
@@ -404,14 +426,23 @@ class Tree extends Component<TreeProps, TreeState> {
     const extra = { e, node: this.cacheNodes[key] };
 
     let checkedKeys = this.state.checkedKeys;
+    let halfCheckedKeys = this.state.halfCheckedKeys;
     if (checkStrictly) {
       if (checked) {
         checkedKeys = checkedKeys.concat(key);
       } else {
         checkedKeys = checkedKeys.filter((item) => item !== key);
       }
+
+      const newState: Pick<TreeState, 'checkedKeys' | 'halfCheckedKeys'> = {};
       if (!('checkedKeys' in this.props)) {
-        this.setState({ checkedKeys });
+        newState.checkedKeys = checkedKeys;
+      }
+      if (!('halfCheckedKeys' in this.props)) {
+        newState.halfCheckedKeys = halfCheckedKeys;
+      }
+      if (!isEmptyObject(newState)) {
+        this.setState({ ...newState });
       }
     } else {
       // 找到所有允许勾选的子节点
@@ -420,12 +451,15 @@ class Tree extends Component<TreeProps, TreeState> {
         checked,
         checkedKeys,
         this.key2nodeProps,
-        this.indeterminateKeys
+        halfCheckedKeys
       );
       checkedKeys = newCheckedKeys;
-      this.indeterminateKeys = indeterminateKeys;
+      halfCheckedKeys = indeterminateKeys;
+
       if (!('checkedKeys' in this.props)) {
-        this.setState({ checkedKeys });
+        this.setState({ checkedKeys, halfCheckedKeys });
+      } else {
+        this.setState({ halfCheckedKeys });
       }
       if (checkedStrategy === Tree.SHOW_PARENT) {
         checkedKeys = checkedKeys.filter((x) => {
@@ -448,6 +482,8 @@ class Tree extends Component<TreeProps, TreeState> {
       onCheck(checkedKeys, {
         checkedNodes: checkedKeys.map((x) => this.cacheNodes[x]).filter((x) => x),
         checked,
+        halfCheckedKeys,
+        halfCheckedNodes: halfCheckedKeys.map((x) => this.cacheNodes[x]).filter((x) => x),
         ...extra,
       });
   };
@@ -603,6 +639,7 @@ class Tree extends Component<TreeProps, TreeState> {
       selectedKeys,
       expandedKeys,
       checkedKeys,
+      halfCheckedKeys,
       loadingKeys = [],
       loadedKeys = [],
     } = this.state;
@@ -626,7 +663,7 @@ class Tree extends Component<TreeProps, TreeState> {
       ...nodeProps,
       ...otherProps,
       selected: selectedKeys && selectedKeys.indexOf(nodeProps._key) > -1,
-      indeterminated: this.indeterminateKeys.indexOf(nodeProps._key) > -1,
+      indeterminated: halfCheckedKeys?.indexOf(nodeProps._key) > -1,
       loading: loadingKeys.indexOf(nodeProps._key) > -1,
       checked: checkedKeys && checkedKeys.indexOf(nodeProps._key) > -1,
       selectedKeys,

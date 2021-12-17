@@ -30,6 +30,7 @@
 |selectedKeys|选中的树节点。（受控）|`string[]`|`-`|-|
 |defaultCheckedKeys|默认选中复选框的树节点|`string[]`|`-`|-|
 |checkedKeys|选中复选框的树节点。（受控）|`string[]`|`-`|-|
+|halfCheckedKeys|半选状态的节点.仅在 checkable 且 checkStrictly 时生效|`string[]`|`-`|2.27.0|
 |defaultExpandedKeys|默认展开的节点。|`string[]`|`-`|-|
 |expandedKeys|展开的节点，(受控)。|`string[]`|`-`|-|
 |treeData|可以通过传入`treeData`,生成对应的树结构|`TreeDataType[]`|`-`|-|
@@ -41,7 +42,7 @@
 |showLine|是否展示连接线|`boolean`|`-`|-|
 |loadMore|异步加载数据的回调，返回一个 `Promise`。|`(node: NodeInstance) => Promise<void>`|`-`|-|
 |onSelect|点击树节点的回调|`(selectedKeys: string[],extra: {selected: boolean;selectedNodes: NodeInstance[];node: NodeInstance;e: Event;}) => void`|`-`|-|
-|onCheck|点击树节点复选框的回调|`(checkedKeys: string[],exra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;e: Event;}) => void`|`-`|-|
+|onCheck|点击树节点复选框的回调|`(checkedKeys: string[],extra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;halfCheckedKeys: string[]; // version 2.27.0halfCheckedNodes: NodeInstance[]; // version 2.27.0e: Event;}) => void`|`-`|-|
 |onExpand|点击展开/关闭的回调|`(expandedKeys: string[],exra?: { expanded: boolean; node: NodeInstance; expandedNodes: NodeInstance[] }) => void`|`-`|-|
 |onDragStart|节点开始拖拽的回调|`(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void`|`-`|-|
 |onDragEnd|节点结束拖拽的回调|`(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void`|`-`|-|
