@@ -270,7 +270,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const newProcessedData = getProcessedData(innerSorter, newFilters);
     const currentData = getPageData(newProcessedData);
     onChange &&
-      onChange(getPaginationProps(currentData), innerSorter, newFilters, {
+      onChange(getPaginationProps(newProcessedData), innerSorter, newFilters, {
         currentData,
         action: 'filter',
       });
@@ -437,8 +437,12 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   }, [hasFixedColumnLeft, hasFixedColumnLeft, scroll?.x, flattenColumns.length]);
 
   useUpdate(() => {
-    setCurrentPage(1);
-  }, [data]);
+    const { total, pageSize } = getPaginationProps(data);
+    const maxPageNum = Math.ceil(total / pageSize);
+    if (maxPageNum < currentPage) {
+      setCurrentPage(1);
+    }
+  }, [data.length]);
 
   useUpdate(() => {
     setFixedColumnClassNames();
