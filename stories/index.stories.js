@@ -61,6 +61,7 @@ import DemoMentions from './components/Mentions';
 import DemoImage from './components/Image';
 import DemoSpace from './components/Space';
 import DemoDraggable from './components/Draggable';
+import DemoResizeBox from './components/Resizebox';
 
 const components = storiesOf('Components', module);
 const componentsMap = {
@@ -120,6 +121,7 @@ const componentsMap = {
   Image: () => <DemoImage />,
   Space: () => <DemoSpace />,
   Draggable: () => <DemoDraggable />,
+  ResizeBox: () => <DemoResizeBox />,
 };
 
 Object.keys(componentsMap)

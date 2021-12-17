@@ -31,8 +31,8 @@
 |underline|下划线样式|`boolean`|`-`|
 |delete|删除线样式|`boolean`|`-`|
 |code|代码块样式|`boolean`|`-`|
-|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
+|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
 
 ### Typography.Paragraph
@@ -50,8 +50,8 @@
 |underline|下划线样式|`boolean`|`-`|
 |delete|删除线样式|`boolean`|`-`|
 |code|代码块样式|`boolean`|`-`|
-|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
+|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
 
 ### Typography.Text
@@ -67,8 +67,8 @@
 |underline|下划线样式|`boolean`|`-`|
 |delete|删除线样式|`boolean`|`-`|
 |code|代码块样式|`boolean`|`-`|
-|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
+|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
 
 ### EllipsisConfig
