@@ -1,7 +1,7 @@
 import React, { forwardRef, PropsWithChildren, useContext } from 'react';
 import Tooltip from '../Tooltip';
 import { ConfigContext } from '../ConfigProvider';
-import { PopoverProps } from './interface';
+import type { PopoverProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: PopoverProps = {
