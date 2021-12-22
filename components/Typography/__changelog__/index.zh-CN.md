@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆕 功能升级
+
+- `Typography` 组件的 `onExpand` 回调参数新增 `event` 参数。([#328](https://github.com/arco-design/arco-design/pull/328))
+
 ## 2.26.2
 
 2021-12-10

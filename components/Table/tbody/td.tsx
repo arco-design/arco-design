@@ -79,6 +79,13 @@ function Td(props: TdType) {
     styleTd.right = stickyOffset;
   }
 
+  if (isObject(column.cellStyle)) {
+    styleTd = {
+      ...styleTd,
+      ...column.cellStyle,
+    };
+  }
+
   if (isObject(column.bodyCellStyle)) {
     styleTd = {
       ...styleTd,
@@ -181,7 +188,6 @@ function Td(props: TdType) {
         className={cs(`${prefixCls}-cell`, {
           [`${prefixCls}-cell-text-ellipsis`]: column.ellipsis,
         })}
-        style={column.cellStyle}
         {...titleProps}
       >
         {paddingLeft ? (

@@ -2,6 +2,33 @@
 changelog: true
 ---
 
+## 2.27.0
+
+2021-12-17
+
+### 🆕 功能升级
+
+- `Table` 组件新增参数 `expandProps.strictTreeData`。([#334](https://github.com/arco-design/arco-design/pull/334))
+- `Tree` 组件支持 `halfChecked` 属性([#331](https://github.com/arco-design/arco-design/pull/331))
+- `Typography` 组件的 `onExpand` 回调参数新增 `event` 参数。([#328](https://github.com/arco-design/arco-design/pull/328))
+- `ResizeBox` 新增 `SplitGroup` 子组件，支持分割多个面板及快速折叠功能([#327](https://github.com/arco-design/arco-design/pull/327))
+- `InputTag` 新增 `dragToSort` 属性以支持通过拖拽为已输入的值排序 。([#325](https://github.com/arco-design/arco-design/pull/325))
+- `Select` 新增 `dragToSort` 属性以支持通过拖拽为已输入的值排序 。([#325](https://github.com/arco-design/arco-design/pull/325))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `column.cellStyle` 生效位置不正确的 bug。([#332](https://github.com/arco-design/arco-design/pull/332))
+- 修复 `Table` 当数据量变化时，当前页计算出错的 bug。([#329](https://github.com/arco-design/arco-design/pull/329))
+
+### 💅 样式更新
+
+- 修复 `Upload` 组件在上传文件列表为空时存在外边距的样式问题([#336](https://github.com/arco-design/arco-design/pull/336))
+- 修复在带有 `validateStatus` 的 `Form.Item` 中，`InputTag` 没有校验样式的问题。([#330](https://github.com/arco-design/arco-design/pull/330))
+
+### 🆎 类型修正
+
+- `InputNumber` 允许通过属性传递所有的 `InputHTMLAttributes`。([#326](https://github.com/arco-design/arco-design/pull/326))
+
 ## 2.26.2
 
 2021-12-10

@@ -66,6 +66,7 @@
 |onClick|鼠标点击下拉框时的回调|`(e) => void`|`-`|-|
 |animation|是否为内部标签变化添加动画。|`boolean`|`true`|2.15.0|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
+|dragToSort|是否可以通过拖拽为 Tag 排序|`boolean`|`-`|2.27.0|
 
 ### Select.Option
 

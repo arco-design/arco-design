@@ -1,9 +1,13 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, InputHTMLAttributes, ReactNode } from 'react';
 
 /**
  * @title InputNumber
  */
-export interface InputNumberProps {
+export interface InputNumberProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'prefix' | 'className' | 'size' | 'onChange' | 'onKeyDown'
+  > {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -127,5 +131,4 @@ export interface InputNumberProps {
     plus?: ReactNode;
     minus?: ReactNode;
   };
-  width?: number | string;
 }

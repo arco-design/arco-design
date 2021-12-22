@@ -15,6 +15,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import { isNumber } from '../_util/is';
 import { ResizeBoxProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import SplitGroup from './split-group';
 
 const DIRECTION_LEFT = 'left';
 const DIRECTION_RIGHT = 'right';
@@ -231,9 +232,11 @@ const ForwardRefResizeBox = forwardRef<unknown, PropsWithChildren<ResizeBoxProps
 
 const ResizeBoxComponent = ForwardRefResizeBox as typeof ForwardRefResizeBox & {
   Split: typeof Split;
+  SplitGroup: typeof SplitGroup;
 };
 
 ResizeBoxComponent.Split = Split;
+ResizeBoxComponent.SplitGroup = SplitGroup;
 
 ResizeBoxComponent.displayName = 'ResizeBox';
 

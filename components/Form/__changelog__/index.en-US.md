@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 💅 Style
+
+- Fix the problem that there is no validated style when `InputTag` is used in `Form.Item` with `validateStatus`.([#330](https://github.com/arco-design/arco-design/pull/330))
+
 ## 2.26.1
 
 2021-12-07

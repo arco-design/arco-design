@@ -38,7 +38,7 @@ function Tr<T>(props: TrType<T>, ref) {
     stickyClassNames,
     getRowKey,
     placeholder,
-    expandProps = {},
+    expandProps = { strictTreeData: true },
     data,
     expandedRowKeys,
     childrenColumnName,
@@ -73,7 +73,9 @@ function Tr<T>(props: TrType<T>, ref) {
   };
 
   function isChildrenNotEmpty(record) {
-    return isArray(record[childrenColumnName]) && record[childrenColumnName].length;
+    return expandProps.strictTreeData
+      ? isArray(record[childrenColumnName]) && record[childrenColumnName].length
+      : record[childrenColumnName] !== undefined;
   }
 
   // tree data

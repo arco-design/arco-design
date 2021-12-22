@@ -660,6 +660,7 @@ function Select(baseProps: SelectProps, ref) {
             prefixCls={prefixCls}
             isEmptyValue={isNoOptionSelected}
             isMultiple={isMultipleMode}
+            onSort={tryUpdateSelectValue}
             renderText={(value) => {
               const option = getOptionInfoByValue(value);
               let text = value;

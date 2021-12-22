@@ -30,8 +30,10 @@
     bottom: 0;
   }
 
-  &-split {
+  &-split,
+  &-split-group {
     display: flex;
+    user-select: auto;
 
     .@{resizebox-prefix-cls}-slit-trigger {
       flex: 0;
@@ -52,6 +54,10 @@
     &-vertical {
       flex-direction: column;
     }
+
+    &-moving {
+      user-select: none;
+    }
   }
 }
 
@@ -71,12 +77,35 @@
     font-size: @resizeBox-trigger-font-size-icon;
   }
 
+  &-prev,
+  &-next {
+    > svg {
+      cursor: pointer;
+    }
+  }
+
   &-vertical {
     height: 100%;
     cursor: col-resize;
 
+    &.@{resizebox-trigger-prefix-cls}-not-resizable {
+      cursor: default;
+    }
+
+    .@{resizebox-trigger-prefix-cls}-prev,
+    .@{resizebox-trigger-prefix-cls}-next {
+      height: @resizeBox-trigger-icon-empty;
+      line-height: @resizeBox-trigger-icon-empty;
+    }
+
     .@{resizebox-trigger-prefix-cls}-icon-wrapper {
       width: @resizeBox-trigger-size-icon-wrapper;
+      flex-direction: column;
+    }
+
+    .@{resizebox-trigger-prefix-cls}-icon-empty {
+      height: @resizeBox-trigger-icon-empty;
+      width: 100%;
     }
   }
 
@@ -84,12 +113,27 @@
     width: 100%;
     cursor: row-resize;
 
+    &.@{resizebox-trigger-prefix-cls}-not-resizable {
+      cursor: default;
+    }
+
+    .@{resizebox-trigger-prefix-cls}-prev,
+    .@{resizebox-trigger-prefix-cls}-next {
+      width: @resizeBox-trigger-icon-empty;
+      text-align: center;
+    }
+
     .@{resizebox-trigger-prefix-cls}-icon-wrapper {
       height: @resizeBox-trigger-size-icon-wrapper;
 
       .@{prefix}-icon {
         vertical-align: -1px;
       }
+    }
+
+    .@{resizebox-trigger-prefix-cls}-icon-empty {
+      width: @resizeBox-trigger-icon-empty;
+      height: 100%;
     }
   }
 }

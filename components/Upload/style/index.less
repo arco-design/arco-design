@@ -141,18 +141,18 @@
 }
 
 .@{upload-prefix-cls}-hide + .@{upload-prefix-cls}-list {
-  margin-top: 0;
+  .@{upload-prefix-cls}-list-item:first-of-type {
+    margin-top: 0;
+  }
 }
 
 .@{upload-prefix-cls}-list {
   width: 100%;
 
   &-type-text,
-  &-type--picture-list {
-    margin-top: @upload-list-margin-top;
-
+  &-type-picture-list {
     .@{upload-prefix-cls}-list-item:first-of-type {
-      margin-top: 0;
+      margin-top: @upload-list-margin-top;
     }
   }
 

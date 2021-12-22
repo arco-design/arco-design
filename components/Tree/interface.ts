@@ -17,6 +17,7 @@ export interface TreeState {
   expandedKeys?: string[];
   loadedKeys?: string[];
   loadingKeys?: string[];
+  halfCheckedKeys?: string[];
   // 当前正在展开/收起的key，是判定哪些节点需要执行动画的依据。
   currentExpandKeys?: string[];
 }
@@ -127,6 +128,12 @@ export interface TreeProps {
    */
   checkedKeys?: string[];
   /**
+   * @zh 半选状态的节点.仅在 checkable 且 checkStrictly 时生效
+   * @en the keys of half checked
+   * @version 2.27.0
+   */
+  halfCheckedKeys?: string[];
+  /**
    * @zh 默认展开的节点。
    * @en The key of node expanded by default
    */
@@ -209,10 +216,12 @@ export interface TreeProps {
    */
   onCheck?: (
     checkedKeys: string[],
-    exra: {
+    extra: {
       node: NodeInstance;
       checkedNodes: NodeInstance[];
       checked: boolean;
+      halfCheckedKeys: string[];
+      halfCheckedNodes: NodeInstance[];
       e: Event;
     }
   ) => void;
@@ -329,5 +338,6 @@ export interface NodeProps {
   autoExpandParent?: boolean;
   expanded?: boolean;
   childrenData?: NodeProps[];
+  dataRef?: TreeDataType;
   loadMore?: (node: NodeProps) => void;
 }

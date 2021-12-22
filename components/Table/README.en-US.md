@@ -85,6 +85,7 @@ The detailed parameters of `expandProps`.
 |columnTitle|The table header title of expand icon column|`ReactNode`|`-`|-|
 |rowExpandable|Whether to allow row expansion. If this parameter is not specified,it will be determined by whether expandedRowRender has a return value. When performance problems occur, rowExpandable is recommended.|`(record: T) => boolean`|`-`|2.16.0|
 |expandRowByClick|Clicking on the row to expand|`boolean`|`-`|2.19.0|
+|strictTreeData|For tree data, only when `children` is an array and the length is greater than 1, the expand icon will be displayed.|`boolean`|`true`|2.27.0|
 
 ### Column
 

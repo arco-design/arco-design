@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆎 TypeScript
+
+- `InputNumber` allows all `InputHTMLAttributes` to be passed through properties.([#326](https://github.com/arco-design/arco-design/pull/326))
+
 ## 2.24.0
 
 2021-11-05

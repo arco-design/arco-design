@@ -6,6 +6,8 @@ export type ObjectValueType = {
   closable?: boolean;
 };
 
+export type ValueChangeReason = 'add' | 'remove' | 'clear' | 'sort';
+
 /**
  * @title InputTag
  */
@@ -81,6 +83,12 @@ export interface InputTagProps<T = any> {
    */
   labelInValue?: boolean;
   /**
+   * @zh 是否可以通过拖拽为 Tag 排序
+   * @en Weather it is possible to sort tags by drag
+   * @version 2.27.0
+   */
+  dragToSort?: boolean;
+  /**
    * @zh 后缀
    * @en The suffix for the InputTag
    */
@@ -119,8 +127,9 @@ export interface InputTagProps<T = any> {
   /**
    * @zh 控件值改变时触发
    * @en Callback when value changes
+   * @version `reason` in 2.27.0
    */
-  onChange?: (value: T[]) => void;
+  onChange?: (value: T[], reason: ValueChangeReason) => void;
   /**
    * @zh 失去焦点时候触发
    * @en Callback when input is blurred

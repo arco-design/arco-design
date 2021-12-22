@@ -41,7 +41,7 @@ export interface OperationsProps extends Omit<React.HTMLAttributes<HTMLElement>,
   ellipsis?: boolean | EllipsisConfig;
   isEllipsis?: boolean;
   expanding?: boolean;
-  onClickExpand?: () => void;
+  onClickExpand?: (e) => void;
   setEditing?: (editing: boolean) => void;
   forceShowExpand?: boolean;
   currentContext: Record<string, any>;
@@ -182,8 +182,9 @@ export type EllipsisConfig = {
   /**
    * @zh 在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。
    * @en Callback when the expand state changes, usually triggered by clicking the button
+   * @version e in `2.27.0`
    */
-  onExpand?: (isExpand: boolean) => void;
+  onExpand?: (isExpand: boolean, e) => void;
   /**
    * @zh 配置省略时的弹出框
    * @en Show Tooltip when configure ellipsis
