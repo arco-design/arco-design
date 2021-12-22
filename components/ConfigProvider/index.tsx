@@ -5,7 +5,7 @@ import { lighten } from './util';
 import Message from '../Message';
 import Notification from '../Notification';
 import Empty from '../Empty';
-import { setModalLocale } from '../Modal/locale';
+import { setModalLocale, setConfigProviderProps } from '../Modal/locale';
 import { IconContext } from '../../icon/react-icon/context';
 import { ConfigProviderProps } from './interface';
 import omit from '../_util/omit';
@@ -110,6 +110,9 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
     ...omit(props, ['children']),
     getPrefixCls,
   };
+  useEffect(() => {
+    setConfigProviderProps(config);
+  }, []);
 
   let child = children;
 
