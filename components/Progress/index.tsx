@@ -4,7 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import LineProgress from './line-progess';
 import CircleProgress from './circle-progress';
 import StepsProgress from './steps-progress';
-import { ProgressProps } from './interface';
+import type { ProgressProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: ProgressProps = {

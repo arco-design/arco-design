@@ -1,7 +1,7 @@
 import React, { useContext, PropsWithChildren } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { InputGroupProps } from './interface';
+import type { InputGroupProps } from './interface';
 
 const Group = React.forwardRef<HTMLDivElement, PropsWithChildren<InputGroupProps>>(
   (props: PropsWithChildren<InputGroupProps>, ref) => {

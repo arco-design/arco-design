@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { RefInputType, InputSearchProps } from './interface';
+import type { RefInputType, InputSearchProps } from './interface';
 import cs from '../_util/classNames';
 import Input, { formatValue } from './input';
 import Button from '../Button';

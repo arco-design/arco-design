@@ -1,8 +1,8 @@
 import Input from './input';
 
-import { InputProps, TextAreaProps } from './interface';
-import { InputPasswordProps } from './password';
-import { InputSearchProps } from './search';
+import type { InputProps, TextAreaProps } from './interface';
+import type { InputPasswordProps } from './password';
+import type { InputSearchProps } from './search';
 
 export { InputProps, TextAreaProps, InputPasswordProps, InputSearchProps };
 

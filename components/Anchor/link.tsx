@@ -7,7 +7,7 @@ import React, {
   isValidElement,
 } from 'react';
 import AnchorContext from './context';
-import { AnchorLinkProps } from './interface';
+import type { AnchorLinkProps } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import cs from '../_util/classNames';
 import { isString, isObject } from '../_util/is';

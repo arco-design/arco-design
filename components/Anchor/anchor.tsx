@@ -15,7 +15,7 @@ import cs from '../_util/classNames';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import Affix from '../Affix';
 import { ConfigContext } from '../ConfigProvider';
-import { AnchorProps } from './interface';
+import type { AnchorProps } from './interface';
 import AnchorContext from './context';
 import { findNode, slide, getContainer, getContainerElement } from './utils';
 import useStateWithPromise from '../_util/hooks/useStateWithPromise';

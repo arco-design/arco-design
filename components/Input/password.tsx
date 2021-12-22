@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { InputPasswordProps, RefInputType } from './interface';
+import type { InputPasswordProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import Input from './input';
 import IconEye from '../../icon/react-icon/IconEye';

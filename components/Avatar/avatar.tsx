@@ -10,7 +10,7 @@ import React, {
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import AvatarContext from './context';
-import { AvatarProps } from './interface';
+import type { AvatarProps } from './interface';
 import { isNumber } from '../_util/is';
 
 const defaultProps: AvatarProps = {

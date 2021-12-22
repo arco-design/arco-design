@@ -2,7 +2,7 @@ import React, { PropsWithChildren, forwardRef, useContext } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { isString, isObject } from '../_util/is';
-import { CommentProps } from './interface';
+import type { CommentProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultAlign = {

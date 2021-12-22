@@ -4,7 +4,7 @@ import Meta from './meta';
 import Grid from './grid';
 import { ConfigContext } from '../ConfigProvider';
 import Spin from '../Spin';
-import { CardProps } from './interface';
+import type { CardProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: CardProps = {

@@ -7,7 +7,7 @@ import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCirc
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { AlertProps } from './interface';
+import type { AlertProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: AlertProps = {

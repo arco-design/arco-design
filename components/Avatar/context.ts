@@ -1,4 +1,4 @@
 import { createContext } from 'react';
-import { AvatarProps } from './interface';
+import type { AvatarProps } from './interface';
 
 export default createContext<AvatarProps>({});

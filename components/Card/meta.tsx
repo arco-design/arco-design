@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { CardMetaProps } from './interface';
+import type { CardMetaProps } from './interface';
 
 function Meta(props: CardMetaProps, ref) {
   const { className, title, avatar, description, actionList, ...others } = props;

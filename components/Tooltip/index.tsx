@@ -10,7 +10,7 @@ import cs from '../_util/classNames';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import { ConfigContext } from '../ConfigProvider';
 import pick from '../_util/pick';
-import { TooltipProps } from './interface';
+import type { TooltipProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 type TooltipHandle = {

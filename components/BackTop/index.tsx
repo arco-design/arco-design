@@ -6,7 +6,7 @@ import IconToTop from '../../icon/react-icon/IconToTop';
 import { ConfigContext } from '../ConfigProvider';
 import { on, off } from '../_util/dom';
 import throttleByRaf from '../_util/throttleByRaf';
-import { BackTopProps } from './interface';
+import type { BackTopProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: BackTopProps = {

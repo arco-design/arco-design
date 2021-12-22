@@ -11,7 +11,7 @@ import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import getStyle from './getPopupStyle';
 import throttleByRaf from '../_util/throttleByRaf';
-import { TriggerProps, MouseLocationType } from './interface';
+import type { TriggerProps, MouseLocationType } from './interface';
 import { raf, caf } from '../_util/raf';
 import mergeProps from '../_util/mergeProps';
 

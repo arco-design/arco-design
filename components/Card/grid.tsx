@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { CardGridProps } from './interface';
+import type { CardGridProps } from './interface';
 
 function Grid(props: CardGridProps, ref) {
   const { children, style, className, hoverable } = props;

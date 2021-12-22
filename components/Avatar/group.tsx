@@ -5,7 +5,7 @@ import { ConfigContext } from '../ConfigProvider';
 import Avatar from './avatar';
 import Popover from '../Popover';
 import AvatarContext from './context';
-import { AvatarGroupProps } from './interface';
+import type { AvatarGroupProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: AvatarGroupProps = {

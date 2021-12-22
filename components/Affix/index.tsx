@@ -16,7 +16,7 @@ import { on, off } from '../_util/dom';
 import ResizeObserver from '../_util/resizeObserver';
 import { isWindow, isUndefined, isFunction, isObject } from '../_util/is';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
-import { AffixProps } from './interface';
+import type { AffixProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function getTargetRect(target: HTMLElement | Window) {

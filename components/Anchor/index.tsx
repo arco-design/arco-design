@@ -1,5 +1,5 @@
 import Anchor from './anchor';
-import { AnchorProps } from './interface';
+import type { AnchorProps } from './interface';
 
 export default Anchor;
 

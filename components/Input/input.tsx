@@ -6,7 +6,7 @@ import React, {
   ForwardRefExoticComponent,
   useMemo,
 } from 'react';
-import { InputProps, RefInputType } from './interface';
+import type { InputProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import Search from './search';
 import TextArea from './textarea';
