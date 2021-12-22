@@ -25,7 +25,7 @@ export function getModalLocale() {
   return modalLocale;
 }
 
-export function setConfigProviderProps(configProviderProps?: ConfigProviderProps) {
+export function setConfigProviderProps(configProviderProps: ConfigProviderProps) {
   configProvider = {
     ...configProviderProps,
   };
