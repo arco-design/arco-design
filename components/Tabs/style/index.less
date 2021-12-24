@@ -652,7 +652,9 @@
 
 @import './vertical.less';
 
-@{arco-theme-tag}[arco-theme='dark'] {
+
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
   .@{tabs-prefix-cls}-header-nav-capsule {
     .@{tabs-prefix-cls}-header-title {
       &-active {
@@ -664,4 +666,5 @@
       }
     }
   }
+}
 }
