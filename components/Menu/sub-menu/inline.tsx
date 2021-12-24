@@ -11,7 +11,8 @@ import { useHotkeyHandler } from '../hotkey';
 import pick from '../../_util/pick';
 
 const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
-  const { _key, children, style, className, title, level, forwardedRef, ...rest } = props;
+  const { _key, children, style, className, title, level, forwardedRef, selectable, ...rest } =
+    props;
   const {
     prefixCls,
     levelIndent,
@@ -19,17 +20,25 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     selectedKeys = [],
     icons,
     onClickSubMenu,
+    onClickMenuItem,
     collectInlineMenuKeys,
   } = useContext(MenuContext);
 
   const baseClassName = `${prefixCls}-inline`;
   const isOpen = openKeys?.indexOf(_key) > -1;
+  const isSelected =
+    (selectable && selectedKeys.indexOf(props._key as string) > -1) ||
+    isChildrenSelected(children, selectedKeys);
+
   const [height, setHeight] = useStateWithPromise(isOpen ? 'auto' : 0);
 
-  const subMenuClickHandler = () => onClickSubMenu(_key, level, 'inline');
+  const subMenuClickHandler = (event) => {
+    onClickSubMenu(_key, level, 'inline');
+    selectable && onClickMenuItem(_key, event);
+  };
   const isActive = useHotkeyHandler(
     _key,
-    (isActive, type) => isActive && type === 'enter' && subMenuClickHandler()
+    (isActive, type) => isActive && type === 'enter' && subMenuClickHandler(null)
   );
 
   useEffect(() => {
@@ -43,15 +52,16 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   const childrenList = processChildren(children, {
     ...pick(rest, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU),
     level: level + 1,
+    selectable,
   });
 
   const header = (
     <div
       className={cs(`${baseClassName}-header`, {
         [`${prefixCls}-active`]: isActive,
-        [`${prefixCls}-selected`]: isChildrenSelected(children, selectedKeys),
+        [`${prefixCls}-selected`]: isSelected,
       })}
-      onClick={() => subMenuClickHandler()}
+      onClick={subMenuClickHandler}
     >
       <MenuIndent level={level} prefixCls={prefixCls} levelIndent={levelIndent} />
       <span>{title}</span>
