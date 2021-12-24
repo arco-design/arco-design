@@ -1,3 +1,11 @@
+## 2.27.1
+
+2021-12-24
+
+### 🐛 BugFix
+
+- fix when `Modal` component  the visible is true, the locale does not work([#339](https://github.com/arco-design/arco-design/pull/339))
+
 ## 2.23.0
 
 2021-09-27

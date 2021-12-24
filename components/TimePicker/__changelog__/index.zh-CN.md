@@ -1,3 +1,11 @@
+## 2.27.1
+
+2021-12-24
+
+### 🐛 问题修复
+
+- 修复 `TimePicker` 组件在受控设置为 `undefined` 时，下次 onChange 回调不正确的 bug。([#361](https://github.com/arco-design/arco-design/pull/361))
+
 ## 2.23.0-beta.0
 
 2021-09-17

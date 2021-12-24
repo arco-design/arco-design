@@ -1,3 +1,11 @@
+## 2.27.1
+
+2021-12-24
+
+### 🐛 BugFix
+
+- Fix the bug that only 100 files will be uploaded when the upload component is dragged to upload a folder.([#357](https://github.com/arco-design/arco-design/pull/357))
+
 ## 2.27.0
 
 2021-12-17

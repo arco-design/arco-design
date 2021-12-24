@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.27.1
+
+2021-12-24
+
+### 💎 性能优化
+
+- `Menu.SubMenu` 在非弹出模式下同样支持 `selectable` 属性。([#355](https://github.com/arco-design/arco-design/pull/355))
+
+### 🐛 问题修复
+
+- 修复 `TimePicker` 组件在受控设置为 `undefined` 时，下次 onChange 回调不正确的 bug。([#361](https://github.com/arco-design/arco-design/pull/361))
+- 修复 `Select` 组件 `popupVisible` 为 `false` 时，失焦后输入框的文本未被清空的 bug。([#359](https://github.com/arco-design/arco-design/pull/359))
+- 修复 `Upload` 组件拖拽上传文件夹的时最多只会上传 100 个文件的 bug 。([#357](https://github.com/arco-design/arco-design/pull/357))
+- 修复 `Modal`  组件在默认打开状态时国际化不起作用的问题([#339](https://github.com/arco-design/arco-design/pull/339))
+
 ## 2.27.0
 
 2021-12-17

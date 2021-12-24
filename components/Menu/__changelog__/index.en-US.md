@@ -1,3 +1,11 @@
+## 2.27.1
+
+2021-12-24
+
+### 💎 Performance
+
+- `Menu.SubMenu` also supports `selectable` property in non-popup mode.([#355](https://github.com/arco-design/arco-design/pull/355))
+
 ## 2.26.0
 
 2021-12-03

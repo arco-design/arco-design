@@ -1,3 +1,11 @@
+## 2.27.1
+
+2021-12-24
+
+### 🐛 BugFix
+
+- Fix the bug that the next time the onChange callback is incorrect when the `TimePicker` component is set to `undefined` under the control mode.([#361](https://github.com/arco-design/arco-design/pull/361))
+
 ## 2.23.0-beta.0
 
 2021-09-17

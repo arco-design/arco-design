@@ -1,3 +1,11 @@
+## 2.27.1
+
+2021-12-24
+
+### 🐛 BugFix
+
+- Fix the bug that the text in the input box is not cleared after blur when the `popupVisible` of the `Select` is `false`.([#359](https://github.com/arco-design/arco-design/pull/359))
+
 ## 2.27.0
 
 2021-12-17

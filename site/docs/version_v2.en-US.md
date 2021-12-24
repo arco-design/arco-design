@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.27.1
+
+2021-12-24
+
+### 💎 Performance
+
+- `Menu.SubMenu` also supports `selectable` property in non-popup mode.([#355](https://github.com/arco-design/arco-design/pull/355))
+
+### 🐛 BugFix
+
+- Fix the bug that the next time the onChange callback is incorrect when the `TimePicker` component is set to `undefined` under the control mode.([#361](https://github.com/arco-design/arco-design/pull/361))
+- Fix the bug that the text in the input box is not cleared after blur when the `popupVisible` of the `Select` is `false`.([#359](https://github.com/arco-design/arco-design/pull/359))
+- Fix the bug that only 100 files will be uploaded when the upload component is dragged to upload a folder.([#357](https://github.com/arco-design/arco-design/pull/357))
+- fix when `Modal` component  the visible is true, the locale does not work([#339](https://github.com/arco-design/arco-design/pull/339))
+
 ## 2.27.0
 
 2021-12-17
