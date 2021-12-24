@@ -157,7 +157,9 @@ function Select(baseProps: SelectProps, ref) {
   const refValueMap = useRef<Array<{ value: OptionProps['value']; option: OptionInfo }>>([]);
   // 用 none 表示目前处于键盘操作中，忽略鼠标的 onMouseEnter 和 onMouseLeave 事件
   const refKeyboardArrowDirection = useRef<'up' | 'down' | 'none'>(null);
-  // 触发 onInputChange 回调的原因
+  // 触发 onInputValueChange 回调的值
+  const refOnInputChangeCallbackValue = useRef(inputValue);
+  // 触发 onInputValueChange 回调的原因
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
@@ -176,10 +178,11 @@ function Select(baseProps: SelectProps, ref) {
 
   // 尝试更新 inputValue，触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
-    if (inputValue !== value) {
+    if (value !== refOnInputChangeCallbackValue.current) {
       setInputValue(value);
-      onInputValueChange && onInputValueChange(value, reason);
+      refOnInputChangeCallbackValue.current = value;
       refOnInputChangeCallbackReason.current = reason;
+      onInputValueChange && onInputValueChange(value, reason);
     }
   };
 
@@ -546,7 +549,11 @@ function Select(baseProps: SelectProps, ref) {
   // SelectView组件事件处理
   const selectViewEventHandlers = {
     onFocus,
-    onBlur,
+    onBlur: (event) => {
+      onBlur && onBlur(event);
+      // 兼容：下拉列表隐藏时，失焦需要清空已输入内容
+      !popupVisible && tryUpdateInputValue('', 'optionListHide');
+    },
     onKeyDown: (event) => {
       // 处理特殊功能键的自动分词
       if (event.target.tagName === 'INPUT' && event.target.value) {
