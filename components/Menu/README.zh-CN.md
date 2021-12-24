@@ -46,7 +46,7 @@
 |className|节点类名|`string \| string[]`|`-`|-|
 |title|子菜单的标题|`string \| ReactNode`|`-`|-|
 |key|唯一标志|`string` **(必填)**|`-`|-|
-|selectable|弹出模式下，是否将多级菜单头也作为一个菜单项，支持点击选中等状态。|`boolean`|`-`|-|
+|selectable|是否将多级菜单头也作为一个菜单项，支持点击选中等状态。|`boolean`|`-`|-|
 |popup|是否强制使用弹出模式，`level` 表示当前子菜单的层级|`boolean \| ((level: number) => boolean)`|`-`|2.8.0|
 |triggerProps|弹出模式下可接受所有 `Trigger` 的 `Props`|`Partial<TriggerProps>`|`-`|2.19.0|
 

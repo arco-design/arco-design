@@ -317,4 +317,16 @@ describe('Menu', () => {
     expect(component.find('.arco-menu-item-inner')).toHaveLength(2);
     expect(component.find('.arco-menu-pop-header').text()).toBe('sub_submenu_2');
   });
+
+  it('SubMenu selectable', () => {
+    const component = mount(
+      <Menu mode="vertical" defaultSelectedKeys={['submenu']}>
+        <SubMenu selectable title="submenu" key="submenu">
+          <Menu.Item key="1">1</Menu.Item>
+        </SubMenu>
+      </Menu>
+    );
+
+    expect(component.find('.arco-menu-selected')).toHaveLength(1);
+  });
 });
