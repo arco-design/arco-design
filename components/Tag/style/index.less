@@ -132,7 +132,9 @@
   }
 }
 
-@{arco-theme-tag}[arco-theme='dark'] {
+
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
   .@{tag-prefix-cls}-checked {
     color: rgba(255, 255, 255, 90%);
   }
@@ -148,4 +150,5 @@
       background-color: ~'rgba(var(--@{value}-6), 0.35)';
     }
   });
+}
 }

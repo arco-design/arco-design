@@ -201,7 +201,9 @@
 }
 
 
-@{arco-theme-tag}[arco-theme='dark'] {
+
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
   --red-1: getRgbStr(@dark-red-1);
   --red-2: getRgbStr(@dark-red-2);
   --red-3: getRgbStr(@dark-red-3);
@@ -393,4 +395,5 @@
   --link-8: getVarStr(~'@{dark-link-8}');
   --link-9: getVarStr(~'@{dark-link-9}');
   --link-10: getVarStr(~'@{dark-link-10}');
+}
 }

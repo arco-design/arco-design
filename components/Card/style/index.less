@@ -209,9 +209,12 @@
 }
 
 // dark mode
-@{arco-theme-tag}[arco-theme='dark'] {
-  .@{card-prefix-cls}-grid-hoverable:hover::before,
-  .@{card-prefix-cls}-hoverable:hover {
-    box-shadow: 0 4px 10px rgba(var(--gray-1), 40%);
+
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
+    .@{card-prefix-cls}-grid-hoverable:hover::before,
+    .@{card-prefix-cls}-hoverable:hover {
+      box-shadow: 0 4px 10px rgba(var(--gray-1), 40%);
+    }
   }
 }

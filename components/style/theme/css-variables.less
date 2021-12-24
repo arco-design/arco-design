@@ -73,7 +73,9 @@
   --color-mask-bg: @mask-color-bg;
 }
 
-@{arco-theme-tag}[arco-theme='dark'] {
+
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
   --color-white: @dark-color-white; // 在亮色模式下所有白色文字对应。对应 @color-white;
   --color-black: @dark-color-black;
   --color-border: @dark-color-border;
@@ -122,4 +124,5 @@
   --color-menu-light-bg: @color-menu-dark-bg;
   --color-menu-dark-hover: @dark-color-menu-dark-hover;
   --color-mask-bg: @dark-mask-color-bg;
+  }
 }
