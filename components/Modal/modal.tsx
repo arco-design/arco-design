@@ -272,6 +272,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         className
       )}
       style={style}
+      onClick={(e) => e.stopPropagation()}
     >
       {innerFocusLock ? (
         <FocusLock disabled={!visible} autoFocus={innerAutoFocus}>
