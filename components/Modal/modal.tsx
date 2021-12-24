@@ -378,29 +378,17 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               inExit.current = false;
             }}
           >
-            <ConfigProvider
-              {...context}
-              prefixCls={props.prefixCls || context.prefixCls}
-              locale={locale}
-              zIndex={popupZIndex || 1050}
-              getPopupContainer={(node) => {
-                return typeof getChildrenPopupContainer === 'function'
-                  ? getChildrenPopupContainer(node)
-                  : document.body;
-              }}
-            >
-              {React.cloneElement(
-                (isFunction(modalRender) ? modalRender(modalDom) : modalDom) as ReactElement,
-                {
-                  onMouseDown: () => {
-                    maskClickRef.current = false;
-                  },
-                  onMouseUp: () => {
-                    maskClickRef.current = false;
-                  },
-                }
-              )}
-            </ConfigProvider>
+            {React.cloneElement(
+              (isFunction(modalRender) ? modalRender(modalDom) : modalDom) as ReactElement,
+              {
+                onMouseDown: () => {
+                  maskClickRef.current = false;
+                },
+                onMouseUp: () => {
+                  maskClickRef.current = false;
+                },
+              }
+            )}
           </CSSTransition>
         </div>
       </div>

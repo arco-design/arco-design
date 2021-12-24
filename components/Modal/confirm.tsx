@@ -5,9 +5,8 @@ import IconInfoCircleFill from '../../icon/react-icon/IconInfoCircleFill';
 import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
-import { getModalConfig, destroyList } from './config';
+import { getModalConfig, destroyList, getConfigProviderProps } from './config';
 import ConfigProvider from '../ConfigProvider';
-import { getConfigProviderProps } from './locale';
 
 export interface ConfirmProps extends ModalProps {
   content?: ReactNode;
