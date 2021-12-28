@@ -6,7 +6,7 @@ import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
 import { isFunction, isObject } from '../_util/is';
-import { formatPercent, getOffset } from './utils';
+import { formatPercent, getOffset, formatMarks } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { TooltipPosition, SliderProps } from './interface';
@@ -85,10 +85,7 @@ function Slider(baseProps: SliderProps, ref) {
   const beginOffset = getOffset(beginVal, [min, max]);
   const endOffset = getOffset(endVal, [min, max]);
   // 标签数组
-  const markList = useMemo(
-    () => Object.keys(marks || {}).map((key) => ({ key, content: marks[key] })),
-    [marks]
-  );
+  const markList = useMemo(() => formatMarks(marks), [marks]);
   // 是否显示输入框
   const isShowInput = showInput && !onlyMarkValue;
   // 样式前缀

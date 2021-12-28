@@ -1,75 +1,62 @@
-import React, { Component } from 'react';
-import { Slider, Switch } from '@self';
-import { IconCheck } from '@self/icon';
+import React from 'react';
+import { Slider } from '@self';
 
-class Demo extends Component {
-  state = {
-    value: 10,
-    range: [],
-    onlyMarkValue: false,
-  };
+function Demo() {
+  const minRadius = 0.1;
+  const maxRadius = 3;
+  const minRadius1 = 1;
+  const maxRadius1 = 3;
+  return (
+    <div style={{ width: 400 }}>
+      <div>marks dom排列顺序为： 3，0.1</div>
+      <Slider
+        min={minRadius}
+        max={maxRadius}
+        step={0.1}
+        marks={{
+          [minRadius]: `${minRadius}km`,
+          [maxRadius]: `${maxRadius}km`,
+        }}
+        tooltipVisible={false}
+      />
+      <div>marks dom排列顺序为： 1，3</div>
+      <Slider
+        min={minRadius1}
+        max={maxRadius1}
+        step={0.1}
+        marks={{
+          [minRadius1]: `${minRadius1}km`,
+          [maxRadius1]: `${maxRadius1}km`,
+        }}
+        tooltipVisible={false}
+      />
 
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
-
-  render() {
-    const { value, range, onlyMarkValue } = this.state;
-    return (
-      <div style={{ maxWidth: 800 }}>
-        <Slider value={value} onChange={this.onChange} vertical showInput />
-        <Slider value={value} onChange={this.onChange} disabled showInput />
-        <Slider value={value} onChange={this.onChange} showInput step={3} />
-        <div style={{ display: 'flex', width: '100%' }}>
-          <IconCheck />
-          <Slider step={3} defaultValue={[10, 80]} showInput />
-          <IconCheck />
-        </div>
-        <br />
-        只能选择标签值:
-        <Switch
-          onChange={(val) => {
-            this.setState({ onlyMarkValue: val });
+      <div style={{ width: 240 }}>
+        <Slider
+          defaultValue={5}
+          max={15}
+          marks={{
+            0: '0km',
+            5: '5km',
+            10: '10km',
+            15: '15km',
           }}
+          style={{ marginBottom: 80 }}
         />
         <Slider
-          value={range}
-          formatTooltip={(val) => `tip: 值为${val}`}
-          onlyMarkValue={onlyMarkValue}
+          onlyMarkValue
+          defaultValue={10}
+          max={15}
           marks={{
-            0: 0,
-            5: '',
-            10: 10,
-            20: 20,
-            30: '',
-            40: 40,
-            50: '',
-            60: 60,
-            70: '',
-            80: 80,
-            90: '',
-            100: {
-              text: <span style={{ color: '#5babf3' }}>100</span>,
-              dot: (
-                <IconCheck
-                  style={{ border: '1px solid #5babf3', borderRadius: '50%', color: '#5babf3' }}
-                />
-              ),
-            },
+            0: '0km',
+            5: '5km',
+            10: '10km',
+            15: '15km',
           }}
-          onChange={(va) => {
-            this.setState({ range: va });
-          }}
-          min={0}
-          max={100}
-          range
-          showInput
         />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Demo;

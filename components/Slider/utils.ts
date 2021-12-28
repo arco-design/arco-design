@@ -25,3 +25,20 @@ export function valueInRange(val: number | string, range: number[]) {
 export function isNotEmpty(val) {
   return val || val === 0;
 }
+
+export function formatMarks(params = {}) {
+  const keys = Object.keys(params);
+
+  keys.sort((a, b) => {
+    const formatA = !isNaN(Number(a)) ? Number(a) : a;
+    const formatB = !isNaN(Number(b)) ? Number(b) : a;
+    if (formatA > formatB) {
+      return 1;
+    }
+    if (formatA < formatB) {
+      return -1;
+    }
+    return 0;
+  });
+  return keys.map((key) => ({ key, content: params[key] }));
+}
