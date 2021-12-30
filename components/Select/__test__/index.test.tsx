@@ -325,4 +325,19 @@ describe('Select', () => {
 
     expect(wrapper.find('.arco-tag')).toHaveLength(2);
   });
+
+  it('User creating option will not affect original options', () => {
+    const value = 'Hello';
+    wrapper = mountSelect(
+      <Select
+        allowCreate
+        popupVisible
+        mode="multiple"
+        inputValue={value}
+        defaultValue={[value]}
+        options={[{ value, label: value, disabled: true }]}
+      />
+    );
+    expect(wrapper.find('.arco-select-option-disabled')).toHaveLength(1);
+  });
 });
