@@ -122,7 +122,9 @@ function Select(baseProps: SelectProps, ref) {
         ? triggerProps.popupVisible
         : undefined,
   });
-  // tag模式下，由用户输入而扩展到Options中的值
+  // allowCreate 时，用户正在创建的选项值
+  const [userCreatingOption, setUserCreatingOption] = useState<string>(null);
+  // allowCreate 时，由用户输入而扩展到选项中的值
   const [userCreatedOptions, setUserCreatedOptions] = useState<string[]>([]);
   // 具有选中态或者 hover 态的 option 的 value
   const [valueActive, setValueActive] = useState<OptionProps['value']>(
@@ -144,10 +146,10 @@ function Select(baseProps: SelectProps, ref) {
         prefixCls,
         inputValue,
         userCreatedOptions,
-        userCreatingOption: allowCreate ? inputValue : '',
+        userCreatingOption,
       }
     );
-  }, [children, options, filterOption, inputValue, userCreatedOptions]);
+  }, [children, options, filterOption, inputValue, userCreatingOption, userCreatedOptions]);
 
   // ref
   const refWrapper = useRef(null);
@@ -263,6 +265,14 @@ function Select(baseProps: SelectProps, ref) {
       }
     }
   }, [value]);
+
+  // allowCreate 时，根据输入内容动态修改下拉框选项
+  useEffect(() => {
+    if (allowCreate) {
+      // 避免正在输入的内容覆盖已有的选项
+      setUserCreatingOption(optionInfoMap.has(inputValue) ? null : inputValue);
+    }
+  }, [inputValue]);
 
   // 在 inputValue 变化时，适时触发 onSearch
   useEffect(() => {
