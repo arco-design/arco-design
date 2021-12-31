@@ -11,12 +11,13 @@ const regexTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 function processChildren(children?: ReactNode) {
   let lastChild = null;
   const childrenList = [];
+  const length = React.Children.count(children)
   React.Children.forEach(children, (child,index) => {
     const isCurrentChildPure = typeof child === 'string' || typeof child === 'number';
     if (isCurrentChildPure) {
       lastChild = `${lastChild||''}${child}`;
       //兼容最后一个
-      if(children.length == index + 1){
+      if(length == index + 1){
         childrenList.push(<span>{lastChild}</span>)
       }
     } else {
