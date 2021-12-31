@@ -6,15 +6,16 @@
   opacity: 0;
   transform-origin: 0 0;
   transform: scaleY(0.9) translateZ(0);
-  transition: transform @transition-duration-2 @transition-timing-function-standard,
-    opacity @transition-duration-2 @transition-timing-function-standard;
 }
+
 
 .slideDynamicOrigin-enter-active,
 .slideDynamicOrigin-appear-active {
   opacity: 1;
   transform-origin: 0 0;
   transform: scaleY(1) translateZ(0);
+  transition: transform @transition-duration-2 @transition-timing-function-standard,
+    opacity @transition-duration-2 @transition-timing-function-standard;
 }
 
 .slideDynamicOrigin-exit {
