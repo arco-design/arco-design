@@ -9,22 +9,26 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 const regexTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 
 function processChildren(children?: ReactNode) {
+  let lastChild = null;
   const childrenList = [];
-  let isPrevChildPure = false;
-  React.Children.forEach(children, (child) => {
+  React.Children.forEach(children, (child,index) => {
     const isCurrentChildPure = typeof child === 'string' || typeof child === 'number';
-    if (isCurrentChildPure && isPrevChildPure) {
-      const lastIndex = childrenList.length - 1;
-      const lastChild = childrenList[lastIndex];
-      childrenList[lastIndex] = `${lastChild}${child}`;
+    if (isCurrentChildPure) {
+      lastChild = `${lastChild||''}${child}`;
+      //兼容最后一个
+      if(children.length == index + 1){
+        childrenList.push(<span>{lastChild}</span>)
+      }
     } else {
+      if(lastChild!=null){
+        const newLastChild = lastChild;
+        lastChild = null;
+        return childrenList.push(<span>{newLastChild}</span>)
+      }
       childrenList.push(child);
     }
-    isPrevChildPure = isCurrentChildPure;
-  });
-  return React.Children.map(childrenList, (child) =>
-    typeof child === 'string' ? <span>{child}</span> : child
-  );
+  })
+  return childrenList
 }
 
 const defaultProps: ButtonProps = {
