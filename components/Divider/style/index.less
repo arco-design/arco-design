@@ -14,6 +14,29 @@
 
     &.@{divider-prefix-cls}-with-text {
       margin: @divider-margin-vertical_text 0;
+      display: flex;
+      align-items: center;
+      border-bottom-width: 0;
+
+      &::before,
+      &::after {
+        content: '';
+        height: 0;
+        border-bottom-width: @divider-size;
+        border-bottom-style: @divider-line-style;
+        border-bottom-color: inherit;
+        flex: 1;
+      }
+    }
+
+    &.@{divider-prefix-cls}-with-text-left:before {
+      flex-basis: @divider-position-text-left;
+      flex-grow: 0;
+    }
+
+    &.@{divider-prefix-cls}-with-text-right:after {
+      flex-basis: @divider-position-text-right;
+      flex-grow: 0;
     }
   }
 
@@ -29,28 +52,12 @@
 
   // 仅水平分割线才支持文字，只考虑水平情况
   &-text {
-    position: absolute;
     box-sizing: border-box;
-    top: 50%;
     padding: 0 @divider-margin-text;
     font-size: @divider-font-size;
     font-weight: @divider-font-weight;
     line-height: 2;
-    background: var(--color-bg-2);
     color: @divider-color-text;
-    transform: translateY(-50%);
-
-    &-center {
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    &-left {
-      left: @divider-position-text-left;
-    }
-
-    &-right {
-      right: @divider-position-text-right;
-    }
+    flex: 0;
   }
 }

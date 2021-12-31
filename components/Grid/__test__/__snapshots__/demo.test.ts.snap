@@ -645,7 +645,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
   style="width:100%"
 >
   <div
-    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
   >
     <span
       class="arco-divider-text arco-divider-text-left"
@@ -675,7 +675,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
   >
     <span
       class="arco-divider-text arco-divider-text-left"
@@ -721,7 +721,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
   >
     <span
       class="arco-divider-text arco-divider-text-left"

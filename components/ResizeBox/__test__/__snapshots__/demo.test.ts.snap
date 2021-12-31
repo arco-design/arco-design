@@ -20,7 +20,7 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
       ByteDance's content platforms enable people to enjoy content powered by AI technology. We inform, entertain, and inspire people across language, culture and geography.
     </div>
     <div
-      class="arco-divider arco-divider-horizontal arco-divider-with-text"
+      class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -129,7 +129,7 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
       ByteDance's content platforms enable people to enjoy content powered by AI technology. We inform, entertain, and inspire people across language, culture and geography.
     </div>
     <div
-      class="arco-divider arco-divider-horizontal arco-divider-with-text"
+      class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -238,7 +238,7 @@ exports[`renders ResizeBox/demo/custom-triggers.md correctly 1`] = `
       ByteDance's content platforms enable people to enjoy content powered by AI technology. We inform, entertain, and inspire people across language, culture and geography.
     </div>
     <div
-      class="arco-divider arco-divider-horizontal arco-divider-with-text"
+      class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
     >
       <span
         class="arco-divider-text arco-divider-text-center"

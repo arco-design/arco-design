@@ -187,7 +187,7 @@ exports[`renders Divider/demo/with-text.md correctly 1`] = `
     A design is a plan or specification for the construction of an object.
   </div>
   <div
-    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
   >
     <span
       class="arco-divider-text arco-divider-text-left"
@@ -201,7 +201,7 @@ exports[`renders Divider/demo/with-text.md correctly 1`] = `
     A design is a plan or specification for the construction of an object.
   </div>
   <div
-    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
   >
     <span
       class="arco-divider-text arco-divider-text-center"
@@ -215,7 +215,7 @@ exports[`renders Divider/demo/with-text.md correctly 1`] = `
     A design is a plan or specification for the construction of an object.
   </div>
   <div
-    class="arco-divider arco-divider-horizontal arco-divider-with-text"
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-right"
   >
     <span
       class="arco-divider-text arco-divider-text-right"
