@@ -166,7 +166,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   }
 
   const controlledFilter = useMemo(() => {
-    // 允许 filteredValue 设置为 null，表示不筛选
+    // 允许 filteredValue 设置为 undefined 表示不筛选
     const flattenFilteredValueColumns = flattenColumns.filter(
       (column) => 'filteredValue' in column
     );
@@ -175,10 +175,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     if (flattenFilteredValueColumns.length) {
       flattenFilteredValueColumns.forEach((column, index) => {
         const innerDataIndex = column.dataIndex === undefined ? index : column.dataIndex;
-        if (
-          (column.filteredValue || column.filteredValue === null) &&
-          innerDataIndex !== undefined
-        ) {
+        if (innerDataIndex !== undefined) {
           newFilters[innerDataIndex] = column.filteredValue;
         }
       });
@@ -202,10 +199,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   const innerSorter = controlledSorter || sorter || {};
   const innerFilters = useMemo<FilterType<T>>(() => {
-    return {
-      ...filters,
-      ...controlledFilter,
-    };
+    return Object.keys(controlledFilter).length ? controlledFilter : filters;
   }, [filters, controlledFilter]);
 
   /** ----------- Sorter ----------- */
