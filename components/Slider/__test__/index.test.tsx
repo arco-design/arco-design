@@ -100,20 +100,24 @@ describe('Slider ', () => {
       <Slider
         marks={{
           0: '0',
-          10: '10',
+          0.5: '0.5',
           30: '30',
           60: '60',
           100: '100',
+          ['a' as any]: 'a',
         }}
       />
     );
     expect(component.find('.arco-slider').hasClass('arco-slider-with-marks')).toBe(true);
     expect(component.find('.arco-slider-dot').length).toBe(5);
     expect(component.find('.arco-slider-marks-text').length).toBe(5);
+    expect(component.find('.arco-slider-marks-text').at(1).text()).toBe('0.5');
+
     component.find('.arco-slider-dot').at(2).simulate('mousedown');
     expect(
       component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
     ).toContain('left: 30%');
+
     component.find('.arco-slider-marks-text').at(4).simulate('mousedown');
     expect(
       component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')

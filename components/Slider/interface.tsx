@@ -80,7 +80,7 @@ export interface SliderProps {
    * @zh 标签。是一个对象。key 为在[min, max]内的整数。
    * @en The labels on the render ruler. `marks` is an Object, it's `key` is an integer within [min, max].
    */
-  marks?: object;
+  marks?: Record<number, ReactNode>;
   /**
    * @zh 只能选择标签值，此时step将会被忽略
    * @en Whether only the mark value can be selected

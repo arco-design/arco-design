@@ -24,7 +24,7 @@ A Slider component for displaying current value and intervals in range.
 |range|Whether to allow range selection|`boolean \| { draggableBar: boolean }`|`-`|2.14.0|
 |step|Slide the value of one step|`number`|`1`|-|
 |showTicks|Whether to display step tick marks|`boolean`|`-`|-|
-|marks|The labels on the render ruler. `marks` is an Object, it's `key` is an integer within [min, max].|`object`|`-`|-|
+|marks|The labels on the render ruler. `marks` is an Object, it's `key` is an integer within [min, max].|`Record<number, ReactNode>`|`-`|-|
 |onlyMarkValue|Whether only the mark value can be selected|`boolean`|`-`|-|
 |defaultValue|To set default value|`number \| number[]`|`-`|-|
 |value|To set value|`number \| number[]`|`-`|-|
