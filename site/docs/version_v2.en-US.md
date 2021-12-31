@@ -2,11 +2,26 @@
 changelog: true
 ---
 
+## 2.27.2
+
+2021-12-31
+
+### 💎 Optimization
+
+- Optimize the style implementation of the `Divider` component with text([#379](https://github.com/arco-design/arco-design/pull/379))
+
+### 🐛 BugFix
+
+- Fix the bug that the filter of the `Table` component cannot be reset when the `filteredValue` is set to `undefined` in the controlled mode.([#382](https://github.com/arco-design/arco-design/pull/382))
+- Fix the problem that the DOM rendering order of the Mark node of `Slider` may be inconsistent with the UI.([#380](https://github.com/arco-design/arco-design/pull/380))
+- Fix the problem that the icon color style of the `Tag` component of the `pinkpurple` color is incorrect.([#378](https://github.com/arco-design/arco-design/pull/378))
+- `Select` fixes the bug that disabled options can be selected by user input when `allowCreate = true`.([#373](https://github.com/arco-design/arco-design/pull/373))
+
 ## 2.27.1
 
 2021-12-24
 
-### 💎 Performance
+### 💎 Optimization
 
 - `Menu.SubMenu` also supports `selectable` property in non-popup mode.([#355](https://github.com/arco-design/arco-design/pull/355))
 

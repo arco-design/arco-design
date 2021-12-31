@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.27.2
+
+2021-12-31
+
+### 💎 优化
+
+- 优化带有文字的 `Divider` 组件的样式实现([#379](https://github.com/arco-design/arco-design/pull/379))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件筛选在受控模式下，`filteredValue` 设置为 `undefined` 不能重置的 bug。([#382](https://github.com/arco-design/arco-design/pull/382))
+- 修复 `Slider` 的 Mark 节点在 DOM 中的渲染顺序可能与 UI 不一致的问题。([#380](https://github.com/arco-design/arco-design/pull/380))
+- 修复 `pinkpurple` 颜色 的 `Tag` 组件图标色样式不对的问题。([#378](https://github.com/arco-design/arco-design/pull/378))
+- `Select` 修复允许创建选项时，被禁用的选项可以被通过用户输入的方式被选中的 bug。([#373](https://github.com/arco-design/arco-design/pull/373))
+
 ## 2.27.1
 
 2021-12-24

@@ -1,3 +1,11 @@
+## 2.27.2
+
+2021-12-31
+
+### 🐛 BugFix
+
+- `Select` fixes the bug that disabled options can be selected by user input when `allowCreate = true`.([#373](https://github.com/arco-design/arco-design/pull/373))
+
 ## 2.27.1
 
 2021-12-24

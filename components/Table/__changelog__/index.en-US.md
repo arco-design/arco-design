@@ -1,3 +1,11 @@
+## 2.27.2
+
+2021-12-31
+
+### 🐛 BugFix
+
+- Fix the bug that the filter of the `Table` component cannot be reset when the `filteredValue` is set to `undefined` in the controlled mode.([#382](https://github.com/arco-design/arco-design/pull/382))
+
 ## 2.27.0
 
 2021-12-17

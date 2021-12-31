@@ -10,7 +10,7 @@
 
 2021-12-03
 
-### 💎 Performance
+### 💎 Optimization
 
 - Optimize the logic used by the `Trigger` component to calculate the size and position of child nodes to avoid double-counting([#258](https://github.com/arco-design/arco-design/pull/258))
 

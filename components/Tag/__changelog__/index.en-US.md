@@ -1,3 +1,11 @@
+## 2.27.2
+
+2021-12-31
+
+### 🐛 BugFix
+
+- Fix the problem that the icon color style of the `Tag` component of the `pinkpurple` color is incorrect.([#378](https://github.com/arco-design/arco-design/pull/378))
+
 ## 2.26.0
 
 2021-12-03
