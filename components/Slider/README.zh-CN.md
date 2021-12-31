@@ -24,7 +24,7 @@
 |range|是否是范围选择|`boolean \| { draggableBar: boolean }`|`-`|2.14.0|
 |step|步长|`number`|`1`|-|
 |showTicks|是否显示步长刻度线|`boolean`|`-`|-|
-|marks|标签。是一个对象。key 为在[min, max]内的整数。|`object`|`-`|-|
+|marks|标签。是一个对象。key 为在[min, max]内的整数。|`Record<number, ReactNode>`|`-`|-|
 |onlyMarkValue|只能选择标签值，此时step将会被忽略|`boolean`|`-`|-|
 |defaultValue|默认值|`number \| number[]`|`-`|-|
 |value|值|`number \| number[]`|`-`|-|

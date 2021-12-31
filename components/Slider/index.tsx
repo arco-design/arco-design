@@ -5,7 +5,7 @@ import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
-import { isFunction, isObject } from '../_util/is';
+import { isFunction, isNumber, isObject } from '../_util/is';
 import { formatPercent, getOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -86,7 +86,11 @@ function Slider(baseProps: SliderProps, ref) {
   const endOffset = getOffset(endVal, [min, max]);
   // 标签数组
   const markList = useMemo(
-    () => Object.keys(marks || {}).map((key) => ({ key, content: marks[key] })),
+    () =>
+      Object.keys(marks || {})
+        .filter((key) => isNumber(+key))
+        .sort((a, b) => (+a > +b ? 1 : -1))
+        .map((key) => ({ key, content: marks[key] })),
     [marks]
   );
   // 是否显示输入框
