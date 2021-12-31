@@ -125,4 +125,35 @@ describe('Table Filter', () => {
     expect(component.find('.arco-pagination-item')).toHaveLength(4);
     expect(component.find('.arco-pagination-item-active').text()).toBe('1');
   });
+
+  it('filter in control mode', async () => {
+    const component = mount(
+      <Table
+        columns={columnsFilter.map((col) => {
+          const newCol = { ...col };
+          if (newCol.dataIndex === 'sex') {
+            delete newCol.defaultFilters;
+            newCol.filteredValue = ['male'];
+          }
+          return newCol;
+        })}
+        data={data}
+      />
+    );
+
+    expect(component.find('tbody tr')).toHaveLength(3);
+
+    component.setProps({
+      columns: columnsFilter.map((col) => {
+        const newCol = { ...col };
+        if (newCol.dataIndex === 'sex') {
+          delete newCol.defaultFilters;
+          newCol.filteredValue = undefined;
+        }
+        return newCol;
+      }),
+    });
+
+    expect(component.find('tbody tr')).toHaveLength(5);
+  });
 });
