@@ -26,7 +26,7 @@ Confirm whether the project needs to use **load on demand** for the style
 
 #### Need to load styles on demand
 
-Introduce the theme package through the ArcoWebpack plugin (recommended `1.5.0` version and above)
+Introduce the theme package through the [ArcoWebpack plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) or [Arco Vite plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md) (recommended `1.5.0` version and above)
 
 Introduce the `@arco-design/webpack-plugin` plugin in the webpack configuration. Specify the theme package name through the `theme` field.
 
@@ -37,7 +37,7 @@ const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
 {
   plugins: [
     new ArcoWebpackPlugin({
-        theme:'@arco-design/theme-first'
+        theme:'@arco-design/theme-line'
     })
   ]
 }
@@ -47,11 +47,11 @@ const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
 
 1. Introduce the less file directly into the project
 
-`import'@arco-design/theme-first/index.less';`
+`import'@arco-design/theme-line/index.less';`
 
 2. Import css files directly into the project
 
-`import'@arco-design/theme-first/css/arco.css';`
+`import'@arco-design/theme-line/css/arco.css';`
 
 When directly importing the css file, you need to check whether it is consistent with the component library version used in the business project. Mainly because the css is packaged according to the specified version of the component library when the theme is released.
 
