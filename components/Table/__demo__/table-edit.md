@@ -17,7 +17,6 @@ Editable cell.
 import React, { useState, useRef, useEffect, useContext, useCallback } from 'react';
 import { Button, Table, Input, Select, Form } from '@arco-design/web-react';
 
-const Option = Select.Option;
 const FormItem = Form.Item;
 
 const EditableContext = React.createContext({});
