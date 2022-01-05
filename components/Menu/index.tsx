@@ -145,7 +145,7 @@ function Menu(baseProps: MenuProps, ref) {
   };
 
   const usedStyle = { ...style };
-  if (mergedCollapse) {
+  if (mergedCollapse && !inDropdown) {
     delete usedStyle.width;
   }
 
