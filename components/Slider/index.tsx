@@ -5,7 +5,7 @@ import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
-import { isFunction, isObject } from '../_util/is';
+import { isFunction, isNumber, isObject } from '../_util/is';
 import { formatPercent, getOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -14,6 +14,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import { off, on } from '../_util/dom';
 import useLegalValue from './hooks/useLegalValue';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useUpdate from '../_util/hooks/useUpdate';
 
 function isSameOrder(firstNums: number[], secondNums) {
   const diff1 = firstNums[0] - firstNums[1];
@@ -65,10 +66,17 @@ function Slider(baseProps: SliderProps, ref) {
     defaultValue: props.defaultValue,
     value: props.value,
   });
+
   // 计算合法值
   const curVal = getLegalRangeValue(value);
   const lastVal = useRef<number[]>(curVal);
   let [beginVal, endVal] = curVal;
+
+  // value变化后 更新lastVal
+  useUpdate(() => {
+    lastVal.current = getLegalRangeValue(value);
+  }, [value, getLegalRangeValue]);
+
   if (!isSameOrder(curVal, lastVal.current)) {
     // 保持顺序
     [beginVal, endVal] = [endVal, beginVal];
@@ -78,7 +86,11 @@ function Slider(baseProps: SliderProps, ref) {
   const endOffset = getOffset(endVal, [min, max]);
   // 标签数组
   const markList = useMemo(
-    () => Object.keys(marks || {}).map((key) => ({ key, content: marks[key] })),
+    () =>
+      Object.keys(marks || {})
+        .filter((key) => isNumber(+key))
+        .sort((a, b) => (+a > +b ? 1 : -1))
+        .map((key) => ({ key, content: marks[key] })),
     [marks]
   );
   // 是否显示输入框

@@ -159,8 +159,8 @@ export interface MenuSubMenuProps {
    */
   key: string;
   /**
-   * @zh 弹出模式下，是否将多级菜单头也作为一个菜单项，支持点击选中等状态。
-   * @en Whether to use the subMenu header as a menu item which can be selected if the subMenu is popup mode
+   * @zh 是否将多级菜单头也作为一个菜单项，支持点击选中等状态。
+   * @en Whether to use the subMenu header as a menu item which can be selected
    */
   selectable?: boolean;
   /**

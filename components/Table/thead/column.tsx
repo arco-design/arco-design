@@ -40,6 +40,7 @@ function Column<T>({
   filters = [],
   columnFixedStyle,
   className,
+  cellStyle,
   headerCellStyle,
   rowSpan,
   colSpan,
@@ -208,6 +209,12 @@ function Column<T>({
   let styleTh: CSSProperties = {
     ...columnFixedStyle,
   };
+  if (isObject(cellStyle)) {
+    styleTh = {
+      ...styleTh,
+      ...cellStyle,
+    };
+  }
   if (isObject(headerCellStyle)) {
     styleTh = {
       ...styleTh,

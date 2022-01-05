@@ -1,4 +1,4 @@
-// copy from select
+// Copied from Select
 .select-color (@prefixCls, @status) {
   .@{prefixCls}:not(.@{prefixCls}-disabled) {
     .@{prefixCls}-view {
@@ -37,6 +37,25 @@
   .@{prefix}-picker-focused:not(.@{prefix}-picker-disabled) {
     &,
     &:hover {
+      border-color: ~'@{form-color-border_@{status}_focus}';
+      background-color: ~'@{form-color-bg_@{status}_focus}';
+      box-shadow: 0 0 0 ~'@{form-size-shadow_@{status}_focus}' ~'@{form-color-shadow_@{status}_focus}';
+    }
+  }
+}
+
+// Copied from InputTag
+.input-tag-color(@status) {
+  .@{prefix}-input-tag {
+    background-color: ~'@{form-color-bg_@{status}}';
+    border-color: ~'@{form-color-border_@{status}}';
+
+    &:hover {
+      border-color: ~'@{form-color-border_@{status}_hover}';
+      background-color: ~'@{form-color-bg_@{status}_hover}';
+    }
+
+    &.@{prefix}-input-tag-focus when not (@status = disabled) {
       border-color: ~'@{form-color-border_@{status}_focus}';
       background-color: ~'@{form-color-bg_@{status}_focus}';
       box-shadow: 0 0 0 ~'@{form-size-shadow_@{status}_focus}' ~'@{form-color-shadow_@{status}_focus}';
@@ -107,6 +126,9 @@
 
       /** Datepicker **/
       .picker(@status);
+
+      /** InputTag **/
+      .input-tag-color(@status);
     }
   }
 
@@ -184,6 +206,15 @@
     .@{prefix}-picker-clear-icon {
       margin-right: 0;
       margin-left: 0;
+    }
+  }
+
+  // InputTag
+  .@{prefix}-input-tag {
+    padding-right: 23px;
+
+    &-suffix {
+      padding-right: 0;
     }
   }
 }

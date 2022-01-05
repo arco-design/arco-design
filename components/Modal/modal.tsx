@@ -20,7 +20,6 @@ import Button from '../Button';
 import Portal from '../Portal';
 import confirm, { ConfirmProps } from './confirm';
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
-import { getModalLocale } from './locale';
 import IconHover from '../_class/icon-hover';
 import { setModalConfig, ModalConfigType, destroyList } from './config';
 import { isFunction, isObject } from '../_util/is';
@@ -116,7 +115,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   });
 
   const prefixCls = context.getPrefixCls('modal', props.prefixCls);
-  const locale = getModalLocale();
+  const { locale } = context;
 
   // 简洁模式下默认不显示关闭按钮
   const defaultClosable = !simple;
@@ -379,29 +378,17 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               inExit.current = false;
             }}
           >
-            <ConfigProvider
-              {...context}
-              prefixCls={props.prefixCls || context.prefixCls}
-              locale={locale}
-              zIndex={popupZIndex || 1050}
-              getPopupContainer={(node) => {
-                return typeof getChildrenPopupContainer === 'function'
-                  ? getChildrenPopupContainer(node)
-                  : document.body;
-              }}
-            >
-              {React.cloneElement(
-                (isFunction(modalRender) ? modalRender(modalDom) : modalDom) as ReactElement,
-                {
-                  onMouseDown: () => {
-                    maskClickRef.current = false;
-                  },
-                  onMouseUp: () => {
-                    maskClickRef.current = false;
-                  },
-                }
-              )}
-            </ConfigProvider>
+            {React.cloneElement(
+              (isFunction(modalRender) ? modalRender(modalDom) : modalDom) as ReactElement,
+              {
+                onMouseDown: () => {
+                  maskClickRef.current = false;
+                },
+                onMouseUp: () => {
+                  maskClickRef.current = false;
+                },
+              }
+            )}
           </CSSTransition>
         </div>
       </div>

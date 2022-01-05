@@ -141,14 +141,14 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onHandleChange(vs: Dayjs | Dayjs[]) {
-    if (isArray(vs) && isDayjsArrayChange(value as Dayjs[], vs)) {
+    if (isArray(vs) && isDayjsArrayChange(mergedValue as Dayjs[], vs)) {
       onChange &&
         onChange(
           vs.map((t) => t.format(format)),
           vs
         );
     }
-    if (isDayjs(vs) && isDayjsChange(value as Dayjs, vs)) {
+    if (isDayjs(vs) && isDayjsChange(mergedValue as Dayjs, vs)) {
       onChange && onChange(vs.format(format), vs);
     }
   }

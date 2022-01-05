@@ -1,3 +1,32 @@
+## 2.27.2
+
+2021-12-31
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件筛选在受控模式下，`filteredValue` 设置为 `undefined` 不能重置的 bug。([#382](https://github.com/arco-design/arco-design/pull/382))
+
+## 2.27.0
+
+2021-12-17
+
+### 🆕 功能升级
+
+- `Table` 组件新增参数 `expandProps.strictTreeData`。([#334](https://github.com/arco-design/arco-design/pull/334))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `column.cellStyle` 生效位置不正确的 bug。([#332](https://github.com/arco-design/arco-design/pull/332))
+- 修复 `Table` 当数据量变化时，当前页计算出错的 bug。([#329](https://github.com/arco-design/arco-design/pull/329))
+
+## 2.26.2
+
+2021-12-10
+
+### 💅 样式更新
+
+- 修复 `Table` 组件树形数据时，`column.render` 返回 `div` 会导致折行的问题。([#302](https://github.com/arco-design/arco-design/pull/302))
+
 ## 2.26.0
 
 2021-12-03

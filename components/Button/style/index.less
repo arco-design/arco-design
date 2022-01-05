@@ -263,8 +263,10 @@
   }
 }
 
-@{arco-theme-tag}[arco-theme='dark'] {
-  .@{btn-prefix-cls}-primary.@{btn-prefix-cls}-disabled {
-    color: rgba(255, 255, 255, 30%);
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
+    .@{btn-prefix-cls}-primary.@{btn-prefix-cls}-disabled {
+      color: rgba(255, 255, 255, 30%);
+    }
   }
 }

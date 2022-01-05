@@ -2,6 +2,84 @@
 changelog: true
 ---
 
+## 2.27.2
+
+2021-12-31
+
+### 💎 Optimization
+
+- Optimize the style implementation of the `Divider` component with text([#379](https://github.com/arco-design/arco-design/pull/379))
+
+### 🐛 BugFix
+
+- Fix the bug that the filter of the `Table` component cannot be reset when the `filteredValue` is set to `undefined` in the controlled mode.([#382](https://github.com/arco-design/arco-design/pull/382))
+- Fix the problem that the DOM rendering order of the Mark node of `Slider` may be inconsistent with the UI.([#380](https://github.com/arco-design/arco-design/pull/380))
+- Fix the problem that the icon color style of the `Tag` component of the `pinkpurple` color is incorrect.([#378](https://github.com/arco-design/arco-design/pull/378))
+- `Select` fixes the bug that disabled options can be selected by user input when `allowCreate = true`.([#373](https://github.com/arco-design/arco-design/pull/373))
+
+## 2.27.1
+
+2021-12-24
+
+### 💎 Optimization
+
+- `Menu.SubMenu` also supports `selectable` property in non-popup mode.([#355](https://github.com/arco-design/arco-design/pull/355))
+
+### 🐛 BugFix
+
+- Fix the bug that the next time the onChange callback is incorrect when the `TimePicker` component is set to `undefined` under the control mode.([#361](https://github.com/arco-design/arco-design/pull/361))
+- Fix the bug that the text in the input box is not cleared after blur when the `popupVisible` of the `Select` is `false`.([#359](https://github.com/arco-design/arco-design/pull/359))
+- Fix the bug that only 100 files will be uploaded when the upload component is dragged to upload a folder.([#357](https://github.com/arco-design/arco-design/pull/357))
+- fix when `Modal` component  the visible is true, the locale does not work([#339](https://github.com/arco-design/arco-design/pull/339))
+
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `Table` add prop `expandProps.strictTreeData`.([#334](https://github.com/arco-design/arco-design/pull/334))
+- `Tree` supports `halfChecked` property([#331](https://github.com/arco-design/arco-design/pull/331))
+- The `event` parameter has been added to the `onExpand` callback parameter of the Typography` component.([#328](https://github.com/arco-design/arco-design/pull/328))
+- `ResizeBox` adds `SplitGroup` sub-component, supports splitting multiple panels and quick folding function([#327](https://github.com/arco-design/arco-design/pull/327))
+- `InputTag` adds `dragToSort` property to support sorting the entered value by dragging.([#325](https://github.com/arco-design/arco-design/pull/325))
+- `Select` adds `dragToSort` property to support sorting the entered value by dragging.([#325](https://github.com/arco-design/arco-design/pull/325))
+
+### 🐛 BugFix
+
+- Fix the bug that `column.cellStyle` of the `Table` component works abnormally.([#332](https://github.com/arco-design/arco-design/pull/332))
+- Fix the bug that the current page calculation error occurs when the amount of data in `Table` changes.([#329](https://github.com/arco-design/arco-design/pull/329))
+
+### 💅 Style
+
+- Fix the style problem of the margin when the upload file list is empty in the `Upload` component([#336](https://github.com/arco-design/arco-design/pull/336))
+- Fix the problem that there is no validated style when `InputTag` is used in `Form.Item` with `validateStatus`.([#330](https://github.com/arco-design/arco-design/pull/330))
+
+### 🆎 TypeScript
+
+- `InputNumber` allows all `InputHTMLAttributes` to be passed through properties.([#326](https://github.com/arco-design/arco-design/pull/326))
+
+## 2.26.2
+
+2021-12-10
+
+### 💎 Optimization
+
+- `DatePicker.RangePicker` component selected interactive optimization.([#312](https://github.com/arco-design/arco-design/pull/312))
+
+### 🐛 BugFix
+
+- Fix the bug that the `DatePicker` component does not trigger `onVisibleChange` in the controlled mode.([#314](https://github.com/arco-design/arco-design/pull/314))
+- Fix the bug that `loadMore` is triggered by selecting the parent node when `Cascader` is multiple-selected and the `changeOnSelect` is true.([#309](https://github.com/arco-design/arco-design/pull/309))
+- Fix the bug that the request cannot be terminated when the `CustomRequest` setting of the `Upload` component is an asynchronous function.([#306](https://github.com/arco-design/arco-design/pull/306))
+- Fix the bug that the `onAfterChange` parameter of the `Slider` component is not updated.([#305](https://github.com/arco-design/arco-design/pull/305))
+- Fix the bug that the calculation result of `Typography` is incorrectly when ellipsised in the international scene([#301](https://github.com/arco-design/arco-design/pull/301))
+- Fix the bug that the copy result is wrong when `Typography` wraps multiple dynamic strings and `copyable`([#301](https://github.com/arco-design/arco-design/pull/301))
+
+### 💅 Style
+
+- Fix the problem that table cell will break line when `Table` component is tree data and `column.render` returns `div`.([#302](https://github.com/arco-design/arco-design/pull/302))
+
 ## 2.26.1
 
 2021-12-07

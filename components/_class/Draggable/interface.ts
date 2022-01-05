@@ -1,4 +1,4 @@
-import {CSSProperties, ReactNode} from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 export type DragStatus = 'none' | 'dragged' | 'dragging';
 

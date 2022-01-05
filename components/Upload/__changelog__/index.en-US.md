@@ -1,3 +1,27 @@
+## 2.27.1
+
+2021-12-24
+
+### 🐛 BugFix
+
+- Fix the bug that only 100 files will be uploaded when the upload component is dragged to upload a folder.([#357](https://github.com/arco-design/arco-design/pull/357))
+
+## 2.27.0
+
+2021-12-17
+
+### 💅 Style
+
+- Fix the style problem of the margin when the upload file list is empty in the `Upload` component([#336](https://github.com/arco-design/arco-design/pull/336))
+
+## 2.26.2
+
+2021-12-10
+
+### 🐛 BugFix
+
+- Fix the bug that the request cannot be terminated when the `CustomRequest` setting of the `Upload` component is an asynchronous function.([#306](https://github.com/arco-design/arco-design/pull/306))
+
 ## 2.26.1
 
 2021-12-07

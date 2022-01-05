@@ -173,6 +173,14 @@ const Picker = (baseProps: InnerPickerProps) => {
     : getNow();
   const timeValue = panelValue || defaultTimeValue;
 
+  function focusInput() {
+    refInput.current && refInput.current.blur && refInput.current.focus();
+  }
+
+  function blurInput() {
+    refInput.current && refInput.current.blur && refInput.current.blur();
+  }
+
   useEffect(() => {
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
@@ -188,20 +196,18 @@ const Picker = (baseProps: InnerPickerProps) => {
       setTimeout(() => {
         setIsTimePanel(false);
         setPanelMode(mode);
-        refInput.current && refInput.current.blur && refInput.current.blur();
+        blurInput();
       }, 100);
     }
   }, [mergedPopupVisible]);
 
   function visibleChange(visible) {
-    if (!('popupVisible' in props)) {
-      if (visible) {
-        setOpen(visible, () => {
-          refInput.current && refInput.current.focus && refInput.current.focus();
-        });
-      } else {
-        setOpen(false);
-      }
+    if (visible) {
+      setOpen(visible, () => {
+        focusInput();
+      });
+    } else {
+      setOpen(false);
     }
   }
 
@@ -288,8 +294,10 @@ const Picker = (baseProps: InnerPickerProps) => {
   function onPressEnter() {
     if (panelValue) {
       onConfirmValue();
+      blurInput();
+    } else if (mergedPopupVisible) {
+      setOpen(false);
     }
-    setOpen(false);
   }
 
   function changePageShowDate(type: 'prev' | 'next', unit: UnitType, num = 1) {

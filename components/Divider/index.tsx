@@ -20,6 +20,7 @@ function Divider(baseProps: DividerProps, ref) {
     `${prefixCls}-${type}`,
     {
       [`${prefixCls}-with-text`]: children,
+      [`${prefixCls}-with-text-${orientation}`]: children && orientation,
     },
     className
   );

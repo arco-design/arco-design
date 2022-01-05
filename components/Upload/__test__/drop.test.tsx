@@ -14,6 +14,7 @@ function getFile(name, type = 'txt') {
 }
 
 const mockDirectoryItems = () => {
+  let flag = false;
   const getItem = ({ isDirectory, name, children }) => {
     return {
       fullPath: name,
@@ -28,7 +29,12 @@ const mockDirectoryItems = () => {
         return {
           readEntries(callback) {
             setTimeout(() => {
-              callback((children || []).map((x) => getItem(x)));
+              let items = [];
+              if (!flag) {
+                items = (children || []).map((x) => getItem(x));
+                flag = true;
+              }
+              callback(items);
             }, 10);
           },
         };

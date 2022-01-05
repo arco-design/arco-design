@@ -46,7 +46,7 @@ A component to organize, arrange, and display a list of options.
 |className|Additional css class|`string \| string[]`|`-`|-|
 |title|Title of the subMenu|`string \| ReactNode`|`-`|-|
 |key|Unique ID of the subMenu|`string` **(Required)**|`-`|-|
-|selectable|Whether to use the subMenu header as a menu item which can be selected if the subMenu is popup mode|`boolean`|`-`|-|
+|selectable|Whether to use the subMenu header as a menu item which can be selected|`boolean`|`-`|-|
 |popup|Whether to force the use of popup mode, parameter `level` indicates the level of current subMenu.|`boolean \| ((level: number) => boolean)`|`-`|2.8.0|
 |triggerProps|Pass all `Trigger` component properties|`Partial<TriggerProps>`|`-`|2.19.0|
 

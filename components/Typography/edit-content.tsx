@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import cs from '../_util/classNames';
 import { EditContentProps } from './interface';
 import Input from '../Input';
+import mergedToString from '../_util/mergedToString';
 
 export default function EditContent(props: EditContentProps) {
   const { prefixCls, children, setEditing, editableConfig } = props;
   const className = cs(`${prefixCls}-typography`, `${prefixCls}-edit-content`);
 
-  const str = String(children);
+  const str = mergedToString(children);
 
   const input = useRef(null);
 

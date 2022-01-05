@@ -1,3 +1,11 @@
+## 2.26.2
+
+2021-12-10
+
+### 🐛 BugFix
+
+- Fix the bug that `loadMore` is triggered by selecting the parent node when `Cascader` is multiple-selected and the `changeOnSelect` is true.([#309](https://github.com/arco-design/arco-design/pull/309))
+
 ## 2.25.1
 
 2021-11-26

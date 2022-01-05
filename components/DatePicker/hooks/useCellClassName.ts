@@ -21,7 +21,7 @@ export default function useClassName(props) {
   const hoverLength = getAvailableDayjsLength(valueShowHover);
 
   const sortedRangeValues =
-    selectedLength !== 2 && hoverLength > 0 ? getSortedDayjsArray(valueShowHover) : rangeValues;
+    selectedLength !== 2 && hoverLength === 2 ? getSortedDayjsArray(valueShowHover) : rangeValues;
   const sortedHoverRangeValues = selectedLength === 2 ? getSortedDayjsArray(valueShowHover) : [];
 
   function isInRange(current: Dayjs, startDate, endDate): boolean {

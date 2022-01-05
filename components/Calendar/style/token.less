@@ -18,7 +18,6 @@
 @calendar-color-cell-text-in-view: var(--color-text-1);
 @calendar-color-cell-text-not-in-view: var(--color-text-4);
 @calendar-color-bg-circle_selected: @color-primary-6;
-@calendar-color-bg-circle_selected: @color-primary-6;
 @calendar-color-bg-cell-in-range: var(--color-primary-light-1);
 @calendar-color-bg-cell-disabled: var(--color-fill-1);
 @calendar-color-text-cell-range-boundary: var(--color-white);
@@ -34,6 +33,6 @@
 @calendar-panel-color-current-time-dot: @color-primary-6;
 
 // 不放到风格配置平台
-@calendar-panel-cell-boundary-border-radius: ((
-    @calendar-panel-date-cell-circle-height + @calendar-panel-date-cell-padding-vertical * 2
-  ) / 2);
+@calendar-panel-cell-boundary-border-radius: (
+  (@calendar-panel-date-cell-circle-height + @calendar-panel-date-cell-padding-vertical * 2) / 2
+);

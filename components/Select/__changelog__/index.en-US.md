@@ -1,3 +1,27 @@
+## 2.27.2
+
+2021-12-31
+
+### 🐛 BugFix
+
+- `Select` fixes the bug that disabled options can be selected by user input when `allowCreate = true`.([#373](https://github.com/arco-design/arco-design/pull/373))
+
+## 2.27.1
+
+2021-12-24
+
+### 🐛 BugFix
+
+- Fix the bug that the text in the input box is not cleared after blur when the `popupVisible` of the `Select` is `false`.([#359](https://github.com/arco-design/arco-design/pull/359))
+
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `Select` adds `dragToSort` property to support sorting the entered value by dragging.([#325](https://github.com/arco-design/arco-design/pull/325))
+
 ## 2.26.1
 
 2021-12-07

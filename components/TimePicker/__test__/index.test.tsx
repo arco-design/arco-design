@@ -188,4 +188,25 @@ describe('TimePicker', () => {
     expect(getInputValue(component, 0)).toBe('01:00:00');
     expect(onChange.mock.calls).toHaveLength(1);
   });
+
+  // https://github.com/arco-design/arco-design/issues/358
+  it('set to undefined and onChange correctly', () => {
+    const onChange = jest.fn();
+    const component = mount(
+      <TimePicker value={dayjs('00:00:00', 'HH:mm:ss')} disableConfirm onChange={onChange} />
+    );
+
+    expect(getInputValue(component, 0)).toBe('00:00:00');
+
+    component.setProps({ value: undefined });
+
+    expect(getInputValue(component, 0)).toBe('');
+
+    component.find('.arco-picker').simulate('click');
+
+    getCells(component, 0).at(0).simulate('click');
+
+    expect(onChange.mock.calls).toHaveLength(1);
+    expect(onChange.mock.calls[0][0]).toBe('00:00:00');
+  });
 });

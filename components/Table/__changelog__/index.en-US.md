@@ -1,3 +1,32 @@
+## 2.27.2
+
+2021-12-31
+
+### 🐛 BugFix
+
+- Fix the bug that the filter of the `Table` component cannot be reset when the `filteredValue` is set to `undefined` in the controlled mode.([#382](https://github.com/arco-design/arco-design/pull/382))
+
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `Table` add prop `expandProps.strictTreeData`.([#334](https://github.com/arco-design/arco-design/pull/334))
+
+### 🐛 BugFix
+
+- Fix the bug that `column.cellStyle` of the `Table` component works abnormally.([#332](https://github.com/arco-design/arco-design/pull/332))
+- Fix the bug that the current page calculation error occurs when the amount of data in `Table` changes.([#329](https://github.com/arco-design/arco-design/pull/329))
+
+## 2.26.2
+
+2021-12-10
+
+### 💅 Style
+
+- Fix the problem that table cell will break line when `Table` component is tree data and `column.render` returns `div`.([#302](https://github.com/arco-design/arco-design/pull/302))
+
 ## 2.26.0
 
 2021-12-03

@@ -5,7 +5,7 @@ import { lighten } from './util';
 import Message from '../Message';
 import Notification from '../Notification';
 import Empty from '../Empty';
-import { setModalLocale } from '../Modal/locale';
+import { setConfigProviderProps } from '../Modal/config';
 import { IconContext } from '../../icon/react-icon/context';
 import { ConfigProviderProps } from './interface';
 import omit from '../_util/omit';
@@ -87,15 +87,11 @@ export const ConfigContext = createContext<ConfigProviderProps>({
 
 function ConfigProvider(baseProps: ConfigProviderProps) {
   const props = useMergeProps<ConfigProviderProps>(baseProps, defaultProps, componentConfig);
-  const { theme, prefixCls, locale, children } = props;
+  const { theme, prefixCls, children, locale } = props;
 
   useEffect(() => {
     setTheme(theme);
   }, [theme]);
-
-  useEffect(() => {
-    setModalLocale(locale);
-  }, [locale]);
 
   useEffect(() => {
     Message.config({ prefixCls });
@@ -110,6 +106,10 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
     ...omit(props, ['children']),
     getPrefixCls,
   };
+
+  useEffect(() => {
+    setConfigProviderProps({ locale, prefixCls });
+  }, [locale, prefixCls]);
 
   let child = children;
 

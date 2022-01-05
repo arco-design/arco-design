@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆕 Feature
+
+- `ResizeBox` adds `SplitGroup` sub-component, supports splitting multiple panels and quick folding function([#327](https://github.com/arco-design/arco-design/pull/327))
+
 ## 2.25.0
 
 2021-11-19

@@ -98,5 +98,6 @@ export const treeData: TestTreeData[] = [
     sex: 'male',
     age: 30,
     email: 'email2@123.com',
+    children: [],
   },
 ];

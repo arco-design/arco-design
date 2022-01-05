@@ -132,7 +132,10 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     }
 
     setActiveNode(option);
-    loadData(option);
+    if (!props.changeOnSelect) {
+      // 父子节点关联，选中复选框时执行loadMore，否则直接选中父节点
+      loadData(option);
+    }
     triggerChange(newValue);
   };
 

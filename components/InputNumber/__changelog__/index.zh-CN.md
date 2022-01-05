@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 🆎 类型修正
+
+- `InputNumber` 允许通过属性传递所有的 `InputHTMLAttributes`。([#326](https://github.com/arco-design/arco-design/pull/326))
+
 ## 2.24.0
 
 2021-11-05

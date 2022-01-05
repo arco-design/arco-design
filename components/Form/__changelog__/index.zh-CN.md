@@ -1,3 +1,11 @@
+## 2.27.0
+
+2021-12-17
+
+### 💅 样式更新
+
+- 修复在带有 `validateStatus` 的 `Form.Item` 中，`InputTag` 没有校验样式的问题。([#330](https://github.com/arco-design/arco-design/pull/330))
+
 ## 2.26.1
 
 2021-12-07

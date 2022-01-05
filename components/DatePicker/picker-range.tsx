@@ -119,7 +119,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   const format = getFormat(props);
 
-  // 获取半禁用时的序号
+  // get input index when half disabled
   function getAvailableInputIndex() {
     if (isArray(disabled)) {
       if (disabled[0] && !disabled[1]) {
@@ -136,7 +136,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   const disabledTimePickerIndex = isHalfAvailable ? 1 ^ availableInputIndex : undefined;
 
-  // 当前聚焦的输入框
+  // current focus index
   const [focusedInputIndex, setFocusedInputIndex] = useState<number>(
     isHalfAvailable ? availableInputIndex : 0
   );
@@ -216,7 +216,7 @@ const Picker = (baseProps: RangePickerProps) => {
   const defaultPageShowDates = mergedValue ||
     (getDayjsValue(defaultPickerValue, format) as Dayjs[]) || [getNow(), getNow()];
 
-  // 控制两个日期选择器面板显示的日期
+  // show date at two panels
   const [pageShowDates, setPageShowDates] = useState<Dayjs[]>(
     getShowDatesFromFocused(defaultPageShowDates)
   );
@@ -245,6 +245,7 @@ const Picker = (baseProps: RangePickerProps) => {
       setValueShowHover(undefined);
       setShortcutsValue(undefined);
       resetSelectedDisabledDate();
+      blurInput();
     }
     firstRange.current = mergedPopupVisible;
   }, [mergedPopupVisible]);
@@ -309,7 +310,7 @@ const Picker = (baseProps: RangePickerProps) => {
     }
   }
 
-  // 获取默认的面板显示日期
+  // get page show date by specify value
   function getPageShowDatesByValue(
     value = getNow(),
     pickerMode = mode,
@@ -342,18 +343,20 @@ const Picker = (baseProps: RangePickerProps) => {
       refInput.current.focus(isHalfAvailable ? availableInputIndex : index);
   }
 
+  function blurInput() {
+    refInput.current && refInput.current.blur && refInput.current.blur();
+  }
+
   function visibleChange(visible) {
-    if (!('popupVisible' in props)) {
-      if (visible) {
-        setTimeout(() => focusInput());
-        setOpen(visible);
-      } else {
-        setOpen(false);
-      }
+    if (visible) {
+      setTimeout(() => focusInput());
+      setOpen(visible);
+    } else {
+      setOpen(false);
     }
   }
 
-  // 弹出框打开关闭的回调
+  // open or close popup
   function setOpen(visible: boolean) {
     onVisibleChange && onVisibleChange(visible);
     setPopupVisible(visible);
@@ -392,7 +395,7 @@ const Picker = (baseProps: RangePickerProps) => {
     return originDisabledDate || selectedDisabled;
   }
 
-  // 判断输入日期是否格式正确
+  // Determine whether the input date is in the correct format
   function isValid(time): boolean {
     return (
       typeof time === 'string' &&
@@ -425,7 +428,7 @@ const Picker = (baseProps: RangePickerProps) => {
     }
   }
 
-  // 跟上次的值进行对比，如果值改变了才触发 onChange
+  // Compare with the last value, trigger onChange only if the value changes
   function onHandleChange(newValue: Dayjs[] | undefined) {
     if (isDayjsArrayChange(mergedValue, newValue)) {
       onChange &&
@@ -445,7 +448,7 @@ const Picker = (baseProps: RangePickerProps) => {
       } else if (selectedLength === 2) {
         onConfirmValue(valueShow);
       }
-    } else {
+    } else if (mergedPopupVisible) {
       setOpen(false);
     }
   }
@@ -454,7 +457,7 @@ const Picker = (baseProps: RangePickerProps) => {
     e.preventDefault();
   }
 
-  // 确认更新组件值
+  // Confirm and update component value
   function onConfirmValue(date?: Dayjs[], keepOpen?: boolean) {
     const confirmValue = date || panelValue;
     if (!confirmValue || !confirmValue[0] || !confirmValue[1]) {
@@ -469,7 +472,7 @@ const Picker = (baseProps: RangePickerProps) => {
     }
   }
 
-  // 点击确认按钮的回调
+  // Callback when click the confirm button
   function onClickConfirmBtn() {
     onConfirmValue();
     onOk &&
@@ -479,8 +482,23 @@ const Picker = (baseProps: RangePickerProps) => {
       );
   }
 
-  // 点击面板日期的回调
+  function outOfRange(date: Dayjs): boolean {
+    if (selectedLength !== 2) {
+      return false;
+    }
+    const v = valueShow || mergedValue;
+    if (focusedInputIndex === 0 && date.valueOf() > v[1].valueOf()) {
+      return true;
+    }
+    if (focusedInputIndex === 1 && date.valueOf() < v[0].valueOf()) {
+      return true;
+    }
+    return false;
+  }
+
+  // Callback when click the panel date cell
   function onSelectPanel(_: string, date: Dayjs) {
+    const isOutOfRange = outOfRange(date);
     const newValueShow =
       resetRange && selectedLength === 2 && !isHalfAvailable ? [] : [...panelValue];
     // if custom triggerElement, focused input index always 0 -> 1
@@ -490,13 +508,21 @@ const Picker = (baseProps: RangePickerProps) => {
         : 1
       : focusedInputIndex;
     const newDate = showTime ? getValueWithTime(date, timeValues[focusedIndex]) : date;
-    newValueShow[focusedIndex] = newDate;
+
+    if (isOutOfRange) {
+      newValueShow[focusedIndex] = newDate;
+      newValueShow[1 ^ focusedIndex] = undefined;
+    } else {
+      newValueShow[focusedIndex] = newDate;
+    }
 
     const sortedValueShow = getSortedDayjsArray(newValueShow);
 
     onSelectValueShow(sortedValueShow);
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
+
+    const newSelectedLength = getAvailableDayjsLength(newValueShow);
 
     if (resetRange) {
       if (selectedLength === 0 || (selectedLength === 2 && !isHalfAvailable)) {
@@ -506,24 +532,24 @@ const Picker = (baseProps: RangePickerProps) => {
       }
     } else {
       setFixedPageShowDates(sortedValueShow);
-      if (selectedLength === 0) {
+      if (newSelectedLength <= 1) {
         switchFocusedInput(true);
       } else if (selectedLength === 2 && firstRange.current && !isHalfAvailable) {
         firstRange.current = false;
         switchFocusedInput(true);
-        if (!showTime) {
+        if (!showTime && !isOutOfRange) {
           onConfirmValue(newValueShow, true);
         }
       } else {
         firstRange.current = false;
-        if (!showTime) {
+        if (!showTime && !isOutOfRange) {
           onConfirmValue(newValueShow);
         }
       }
     }
   }
 
-  // 点击时间的回调
+  // Callback when click TimePicker
   function onTimePickerSelect(index: number, _: string, time: Dayjs) {
     const newValueShow = isArray(panelValue) ? [...panelValue] : [];
     const newTimeValue = getValueWithTime(newValueShow[index], time);
@@ -543,17 +569,17 @@ const Picker = (baseProps: RangePickerProps) => {
       );
   }
 
-  // 切换到另一个输入框
+  // Switch to next focused input
   function switchFocusedInput(silent?: boolean) {
     changeFocusedInputIndex(nextFocusedInputIndex, silent);
     setTimeout(() => focusInput(nextFocusedInputIndex));
   }
 
-  // 鼠标移入单元格的回调
+  // Callback when mouse entered the date cell
   function onMouseEnterCell(date: Dayjs, disabled: boolean) {
     const newValueShowHover = [...(panelValue || [])];
     const needShowHover = resetRange ? selectedLength === 1 : selectedLength !== 0;
-    if (!disabled && needShowHover) {
+    if (!disabled && needShowHover && !outOfRange(date)) {
       newValueShowHover[focusedInputIndex] = getValueWithTime(date, timeValues[focusedInputIndex]);
       setValueShowHover(newValueShowHover);
       setInputValue(undefined);
@@ -575,7 +601,7 @@ const Picker = (baseProps: RangePickerProps) => {
     return sv && isArray(sv) && sv.length === 2 && isDayjs(sv[0]) && isDayjs(sv[1]);
   }
 
-  // 判断快捷输入的值是否格式正确
+  // Determine whether the value entered in the shortcut is in the correct format
   function isValidShortcut(shortcut) {
     const sv = typeof shortcut.value === 'function' && shortcut.value();
 
@@ -589,7 +615,7 @@ const Picker = (baseProps: RangePickerProps) => {
     shortcutLeaveTimer.current = null;
   }
 
-  // 鼠标移入快捷输入按钮
+  // Callback when mouse entered the shortcuts
   function onMouseEnterShortcut(shortcut) {
     clearShortcutsTimer();
     shortcutEnterTimer.current = setTimeout(() => {
@@ -601,7 +627,7 @@ const Picker = (baseProps: RangePickerProps) => {
     }, 50);
   }
 
-  // 鼠标移出快捷输入按钮
+  // Callback when mouse leaved the shortcuts
   function onMouseLeaveShortcut() {
     clearShortcutsTimer();
     shortcutLeaveTimer.current = setTimeout(() => {
@@ -610,7 +636,7 @@ const Picker = (baseProps: RangePickerProps) => {
     }, 50);
   }
 
-  // 点击选择快捷输入按钮
+  // Callback when click the shortcuts button
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (isValidShortcut(shortcut)) {
@@ -619,7 +645,7 @@ const Picker = (baseProps: RangePickerProps) => {
     }
   }
 
-  // 修改面板日期（面板自身的值，并非选中的值）
+  // Modify panel date (the value of the panel itself, not the component value)
   function changePageShowDates(type: 'prev' | 'next', unit: UnitType, num = 1) {
     const index = type === 'prev' ? 0 : 1;
     let newPageShowDates = [...mergedPageShowDate];
@@ -634,7 +660,7 @@ const Picker = (baseProps: RangePickerProps) => {
     setFixedPageShowDates(newPageShowDates);
   }
 
-  // 点击翻页按钮的回调
+  // Callback when click the prev or next button
   function getHeaderOperations(pickerMode: ModeType = mode) {
     if (pickerMode === 'date' || pickerMode === 'week') {
       return {
@@ -662,7 +688,6 @@ const Picker = (baseProps: RangePickerProps) => {
     setIsTimePanel(!isTimePanel);
   }
 
-  // 实际渲染的弹出框的内容
   function renderPopup(panelOnly?: boolean) {
     const classNames = cs(
       `${prefixCls}-container`,

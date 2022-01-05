@@ -1990,7 +1990,8 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                       class="arco-table-cell"
                     >
                       <span
-                        style="padding-left:20px;height:1px"
+                        class="arco-table-cell-indent"
+                        style="padding-left:20px"
                       />
                       <span
                         class="arco-table-cell-wrap-value"
