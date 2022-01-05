@@ -63,6 +63,7 @@ function Td(props: TdType) {
     },
     column.className
   );
+
   let tdProps: {
     rowSpan?: number;
     colSpan?: number;
