@@ -29,7 +29,7 @@ A two-column multi-select component that moves elements from one column to anoth
 |oneWay|Whether to allow only one-way movement|`boolean`|`-`|-|
 |simple|Whether to automatically move an item when it is selected|`\| boolean\| {retainSelectedItems?: boolean;}`|`-`|`retainSelectedItems` in '2.21.0'|
 |draggable|Whether the items in the list can be dragged|`boolean`|`-`|-|
-|showSearch|Whether to display the search box in columns|`boolean`|`-`|-|
+|showSearch|Whether to display the search box in columns|`boolean \| InputProps`|`-`|-|
 |showFooter|Whether to display the reset-button in columns|`boolean \| ReactNode`|`-`|ReactNode in `2.11.0`|
 |pagination|Whether to divide into pages, you can also pass in the configuration of `Pagination`|`boolean \| PaginationProps`|`-`|-|
 |listStyle|The additional css style of columns|`CSSProperties`|`-`|-|

@@ -10,6 +10,7 @@ import IconSearch from '../../icon/react-icon/IconSearch';
 import IconDelete from '../../icon/react-icon/IconDelete';
 import IconHover from '../_class/icon-hover';
 import { ConfigContext } from '../ConfigProvider';
+import { isObject } from '../_util/is';
 
 export const TransferList = (props: TransferListProps, ref) => {
   const {
@@ -65,6 +66,21 @@ export const TransferList = (props: TransferListProps, ref) => {
     handleSelect(checked ? keys.concat(selectedDisabledKeys) : [...selectedDisabledKeys]);
   const clearItems = () => handleRemove(validKeys);
 
+  const searchInput = (
+    <Input
+      size="small"
+      disabled={disabled}
+      placeholder={searchPlaceholder}
+      suffix={<IconSearch />}
+      {...(isObject(showSearch) ? showSearch : {})}
+      onChange={(value, event) => {
+        setFilterText(value);
+        onSearch && onSearch(value);
+        isObject(showSearch) && showSearch.onChange && showSearch.onChange(value, event);
+      }}
+    />
+  );
+
   const renderHeader = () => {
     const checkboxProps: Partial<CheckboxProps<any>> = {
       disabled,
@@ -79,6 +95,7 @@ export const TransferList = (props: TransferListProps, ref) => {
         countSelected: selectedKeys.length,
         clear: clearItems,
         checkbox: <Checkbox {...checkboxProps} />,
+        searchInput,
       });
     }
 
@@ -187,20 +204,7 @@ export const TransferList = (props: TransferListProps, ref) => {
     <div ref={ref} className={cs(baseClassName, className)} style={style}>
       <div className={`${baseClassName}-header`}>{renderHeader()}</div>
 
-      {showSearch && (
-        <div className={`${baseClassName}-search`}>
-          <Input
-            size="small"
-            disabled={disabled}
-            placeholder={searchPlaceholder}
-            suffix={<IconSearch />}
-            onChange={(value) => {
-              setFilterText(value);
-              onSearch && onSearch(value);
-            }}
-          />
-        </div>
-      )}
+      {showSearch && <div className={`${baseClassName}-search`}>{searchInput}</div>}
 
       {renderListBody()}
     </div>
