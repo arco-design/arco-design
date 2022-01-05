@@ -82,7 +82,7 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
 
     useEffect(() => {
       isImage && setImageRul(children?.props?.src);
-    }, [isImage]);
+    }, [isImage, isImage ? children?.props?.src : '']);
 
     const _triggerIconStyle: CSSProperties = triggerIconStyle || {};
     if (
