@@ -349,7 +349,6 @@ const ItemComponent = forwardRef(Item);
 ItemComponent.defaultProps = {
   trigger: 'onChange',
   triggerPropName: 'value',
-  validateTrigger: 'onChange',
 };
 
 ItemComponent.displayName = 'FormItem';
