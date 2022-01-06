@@ -89,6 +89,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     const onChange: React.ChangeEventHandler<HTMLInputElement> = (e: any) => {
       const newValue = e.target.value;
       if (!isComposition.current) {
+        compositionValue && setCompositionValue(undefined);
         if (!onValueChange) {
           return;
         }
@@ -101,6 +102,9 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
           onValueChange(newValue, e);
         }
       } else {
+        // https://github.com/arco-design/arco-design/issues/397
+        // compositionupdate => onchange
+        isComposition.current = false;
         setCompositionValue(newValue);
       }
     };
