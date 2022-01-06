@@ -12,19 +12,16 @@ function useStickyClassNames(
   const colFixed = columns.map((c) => c.fixed);
 
   function getClassNameFromColumn(column, index) {
-    return cs(
-      {
-        [`${prefixCls}-col-fixed-left`]: column.fixed === 'left',
-        [`${prefixCls}-col-fixed-right`]: column.fixed === 'right',
-        [`${prefixCls}-col-fixed-left-last`]:
-          column.fixed === 'left' &&
-          (isObject(columns[index + 1]) ? columns[index + 1].fixed !== 'left' : true),
-        [`${prefixCls}-col-fixed-right-first`]:
-          column.fixed === 'right' &&
-          (isObject(columns[index - 1]) ? columns[index - 1].fixed !== 'right' : true),
-      },
-      column.className
-    );
+    return cs({
+      [`${prefixCls}-col-fixed-left`]: column.fixed === 'left',
+      [`${prefixCls}-col-fixed-right`]: column.fixed === 'right',
+      [`${prefixCls}-col-fixed-left-last`]:
+        column.fixed === 'left' &&
+        (isObject(columns[index + 1]) ? columns[index + 1].fixed !== 'left' : true),
+      [`${prefixCls}-col-fixed-right-first`]:
+        column.fixed === 'right' &&
+        (isObject(columns[index - 1]) ? columns[index - 1].fixed !== 'right' : true),
+    });
   }
 
   const stickyClassNames = useMemo(() => {
