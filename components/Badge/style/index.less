@@ -24,7 +24,7 @@
   }
 
   &-custom-dot {
-    background-color: var(--color-bg-2);
+    background-color: var(~'@{arco-cssvars-prefix}-color-bg-2');
   }
 
   &-number,
@@ -37,7 +37,7 @@
     font-size: @badge-font-count-size;
     color: @badge-color-count-text;
     background-color: @badge-color-count-bg;
-    box-shadow: 0 0 0 2px var(--color-bg-2);
+    box-shadow: 0 0 0 2px var(~'@{arco-cssvars-prefix}-color-bg-2');
   }
 
   &-dot {
@@ -45,7 +45,7 @@
     height: @badge-size-dot-width;
     background-color: @badge-color-count-bg;
     border-radius: @radius-circle;
-    box-shadow: 0 0 0 2px var(--color-bg-2);
+    box-shadow: 0 0 0 2px var(~'@{arco-cssvars-prefix}-color-bg-2');
   }
 
   &-no-children &-dot,

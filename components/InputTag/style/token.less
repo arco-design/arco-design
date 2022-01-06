@@ -27,14 +27,14 @@
  * status: default / error / disabled _ (hover / focus)
  ****************************************************/
 // text color
-@input-tag-color-text_default: var(--color-text-1);
-@input-tag-color-text_error: var(--color-text-1);
-@input-tag-color-text_disabled: var(--color-text-4);
+@input-tag-color-text_default: var(~'@{arco-cssvars-prefix}-color-text-1');
+@input-tag-color-text_error: var(~'@{arco-cssvars-prefix}-color-text-1');
+@input-tag-color-text_disabled: var(~'@{arco-cssvars-prefix}-color-text-4');
 
 // icon color
-@input-tag-color-placeholder: var(--color-text-3);
-@input-tag-color-icon-clear: var(--color-text-2);
-@input-tag-color-icon-clear-bg_hover: var(--color-fill-4);
+@input-tag-color-placeholder: var(~'@{arco-cssvars-prefix}-color-text-3');
+@input-tag-color-icon-clear: var(~'@{arco-cssvars-prefix}-color-text-2');
+@input-tag-color-icon-clear-bg_hover: var(~'@{arco-cssvars-prefix}-color-fill-4');
 
 // border color with focus & hover
 @input-tag-color-border_default: @color-transparent;
@@ -48,13 +48,13 @@
 @input-tag-color-border_disabled_focus: @input-tag-color-border_disabled;
 
 // bg color with focus & hover
-@input-tag-color-bg_default: var(--color-fill-2);
-@input-tag-color-bg_default_hover: var(--color-fill-3);
-@input-tag-color-bg_default_focus: var(--color-bg-2);
+@input-tag-color-bg_default: var(~'@{arco-cssvars-prefix}-color-fill-2');
+@input-tag-color-bg_default_hover: var(~'@{arco-cssvars-prefix}-color-fill-3');
+@input-tag-color-bg_default_focus: var(~'@{arco-cssvars-prefix}-color-bg-2');
 @input-tag-color-bg_error: @color-danger-1;
 @input-tag-color-bg_error_hover: @color-danger-2;
-@input-tag-color-bg_error_focus: var(--color-bg-2);
-@input-tag-color-bg_disabled: var(--color-fill-2);
+@input-tag-color-bg_error_focus: var(~'@{arco-cssvars-prefix}-color-bg-2');
+@input-tag-color-bg_disabled: var(~'@{arco-cssvars-prefix}-color-fill-2');
 @input-tag-color-bg_disabled_hover: @input-tag-color-bg_disabled;
 
 @input-tag-color-shadow_default_focus: @color-primary-2;
@@ -73,11 +73,11 @@
 
 // tags
 @input-tag-tag-font-size: @font-size-body-1;
-@input-tag-tag-color-bg: var(--color-bg-2);
-@input-tag-tag-color-bg_focus: var(--color-fill-2);
-@input-tag-tag-color-bg_disabled: var(--color-fill-2);
-@input-tag-tag-color-border: var(--color-fill-3);
-@input-tag-tag-color-border_disabled: var(--color-fill-3);
-@input-tag-tag-color-border_focus: var(--color-fill-2);
-@input-tag-tag-remove-icon-color-bg: var(--color-fill-2);
-@input-tag-tag-remove-icon-color-bg_focus: var(--color-fill-3);
+@input-tag-tag-color-bg: var(~'@{arco-cssvars-prefix}-color-bg-2');
+@input-tag-tag-color-bg_focus: var(~'@{arco-cssvars-prefix}-color-fill-2');
+@input-tag-tag-color-bg_disabled: var(~'@{arco-cssvars-prefix}-color-fill-2');
+@input-tag-tag-color-border: var(~'@{arco-cssvars-prefix}-color-fill-3');
+@input-tag-tag-color-border_disabled: var(~'@{arco-cssvars-prefix}-color-fill-3');
+@input-tag-tag-color-border_focus: var(~'@{arco-cssvars-prefix}-color-fill-2');
+@input-tag-tag-remove-icon-color-bg: var(~'@{arco-cssvars-prefix}-color-fill-2');
+@input-tag-tag-remove-icon-color-bg_focus: var(~'@{arco-cssvars-prefix}-color-fill-3');

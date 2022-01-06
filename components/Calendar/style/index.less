@@ -27,7 +27,7 @@
     &-value {
       font-size: 20px;
       font-weight: @font-weight-500;
-      color: var(--color-text-1);
+      color: var(~'@{arco-cssvars-prefix}-color-text-1');
     }
 
     &-icon {
@@ -244,7 +244,7 @@
 .@{calendar-prefix-cls} {
   &-panel {
     border: 1px solid @calendar-color-border;
-    background-color: var(--color-bg-5);
+    background-color: var(~'@{arco-cssvars-prefix}-color-bg-5');
   }
 
   &-panel &-header {
@@ -430,6 +430,6 @@
     text-align: center;
     border-top: 1px solid @calendar-color-border;
     cursor: pointer;
-    color: var(--color-text-1);
+    color: var(~'@{arco-cssvars-prefix}-color-text-1');
   }
 }

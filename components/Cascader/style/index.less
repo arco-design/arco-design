@@ -11,7 +11,7 @@
     box-sizing: border-box;
     border: 1px solid @select-popup-color-border;
     border-radius: @select-popup-border-radius;
-    background-color: var(--color-bg-popup);
+    background-color: var(~'@{arco-cssvars-prefix}-color-bg-popup');
     box-shadow: @select-popup-box-shadow;
     overflow: hidden;
   }
@@ -37,7 +37,7 @@
     position: relative;
     vertical-align: top;
     display: inline-block;
-    background-color: var(--color-bg-popup);
+    background-color: var(~'@{arco-cssvars-prefix}-color-bg-popup');
     height: 100%;
 
     &:not(:last-of-type) {
@@ -141,7 +141,7 @@
         }
 
         .@{prefix}-icon-check {
-          color: var(--color-primary-light-3);
+          color: var(~'@{arco-cssvars-prefix}-color-primary-light-3');
         }
       }
     }

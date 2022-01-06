@@ -3,6 +3,10 @@
 
 @prefix: arco;
 @arco-theme-tag: body; // css 变量定义的选择器
+@arco-vars-prefix: ~''; // css 变量的前缀
+
+// --arco-color-white or --color-white
+@arco-cssvars-prefix: if(@arco-vars-prefix = ~'', -, ~'--@{arco-vars-prefix}');
 
 // @font-family: 'nunito_for_arco', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
 //   'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
