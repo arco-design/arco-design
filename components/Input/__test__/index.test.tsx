@@ -45,6 +45,29 @@ describe('Input', () => {
     // expect(component.state().value).toBe('Hello');
   });
 
+  it('composition input', () => {
+    const onChange = jest.fn();
+    const component = mountInput(<Input onChange={onChange} />);
+    const input = component.find('input');
+    input.simulate('compositionupdate', {
+      target: {
+        value: 'aa',
+      },
+    });
+    input.simulate('change', {
+      target: {
+        value: 'bb',
+      },
+    });
+    expect(onChange.mock.calls.length).toBe(0);
+    input.simulate('change', {
+      target: {
+        value: 'bb',
+      },
+    });
+    expect(onChange.mock.calls.length).toBe(1);
+  });
+
   it('prefix, suffix, addBefore, addAfter correctly', () => {
     const component = mountInput(
       <Input
