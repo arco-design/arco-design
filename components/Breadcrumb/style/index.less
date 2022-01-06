@@ -5,10 +5,10 @@
 .@{breadcrumb-prefix-cls} {
   display: inline-block;
   font-size: @breadcrumb-size-font-size;
-  color: var(--color-text-2);
+  color: var(~'@{arco-cssvars-prefix}-color-text-2');
 
   &-icon {
-    color: var(--color-text-2);
+    color: var(~'@{arco-cssvars-prefix}-color-text-2');
   }
 
   &-item {
@@ -48,7 +48,7 @@
       position: relative;
       top: -3px;
       padding: 0 @breadcrumb-padding-text-horizontal;
-      color: var(--color-text-2);
+      color: var(~'@{arco-cssvars-prefix}-color-text-2');
     }
 
     &-separator {

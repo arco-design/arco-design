@@ -3,41 +3,41 @@
 /******** 基础配置项 end *******/
 
 // 背景色
-@input-color-bg: var(--color-fill-2);
-@input-color-bg_hover: var(--color-fill-3);
-@input-color-bg_focus: var(--color-bg-2);
-@input-color-bg_disabled: var(--color-fill-2);
+@input-color-bg: var(~'@{arco-cssvars-prefix}-color-fill-2');
+@input-color-bg_hover: var(~'@{arco-cssvars-prefix}-color-fill-3');
+@input-color-bg_focus: var(~'@{arco-cssvars-prefix}-color-bg-2');
+@input-color-bg_disabled: var(~'@{arco-cssvars-prefix}-color-fill-2');
 @input-color-addon-bg: @input-color-bg;
 
 // 边框色
-@input-color-addon-border: var(--color-neutral-3);
+@input-color-addon-border: var(~'@{arco-cssvars-prefix}-color-neutral-3');
 @input-border-addon-separator-width: @border-1;
 @input-color-border_focus: @color-primary-6;
-@input-color-shadow_focus: var(--color-primary-light-2);
+@input-color-shadow_focus: var(~'@{arco-cssvars-prefix}-color-primary-light-2');
 @input-size-shadow_focus: @shadow-distance-none;
 @input-color-addon-border_default: @color-transparent;
 
 // 文本色
-@input-color-text: var(--color-text-1);
-@input-color-placeholder-text: var(--color-text-3);
-@input-color-text_disabled: var(--color-text-4);
+@input-color-text: var(~'@{arco-cssvars-prefix}-color-text-1');
+@input-color-placeholder-text: var(~'@{arco-cssvars-prefix}-color-text-3');
+@input-color-text_disabled: var(~'@{arco-cssvars-prefix}-color-text-4');
 
 // 默认前后标签文本色
-@input-color-addon-text: var(--color-text-1);
+@input-color-addon-text: var(~'@{arco-cssvars-prefix}-color-text-1');
 
 // textarea  color
-@textarea-color-tip-text: var(--color-text-3);
+@textarea-color-tip-text: var(~'@{arco-cssvars-prefix}-color-text-3');
 
 /******** 基础配置项 end *******/
 
 /******** 高级配置项 *******/
 
 // 错误状态
-@input-color-bg_error: var(--color-danger-light-1);
-@input-color-bg_error_hover: var(--color-danger-light-2);
+@input-color-bg_error: var(~'@{arco-cssvars-prefix}-color-danger-light-1');
+@input-color-bg_error_hover: var(~'@{arco-cssvars-prefix}-color-danger-light-2');
 @input-color-bg_error_focus: @input-color-bg_focus;
 @input-color-border_error_focus: @color-danger-6;
-@input-color-shadow_error_focus: var(--color-danger-light-2);
+@input-color-shadow_error_focus: var(~'@{arco-cssvars-prefix}-color-danger-light-2');
 @input-size-shadow_error_focus: @shadow-distance-none;
 
 // 圆角
@@ -76,15 +76,15 @@
 @input-size-large-icon-addon-size: 14px;
 
 @input-size-icon-clear: @size-3;
-@input-color-prefix-text: var(--color-text-2);
-@input-color-suffix-text: var(--color-text-2);
-@input-color-tip-text: var(--color-text-3);
-@input-color-icon-clear: var(--color-text-2);
-@input-color-icon-clear-bg_hover: var(--color-fill-4);
+@input-color-prefix-text: var(~'@{arco-cssvars-prefix}-color-text-2');
+@input-color-suffix-text: var(~'@{arco-cssvars-prefix}-color-text-2');
+@input-color-tip-text: var(~'@{arco-cssvars-prefix}-color-text-3');
+@input-color-icon-clear: var(~'@{arco-cssvars-prefix}-color-text-2');
+@input-color-icon-clear-bg_hover: var(~'@{arco-cssvars-prefix}-color-fill-4');
 
 // input search
-@search-color-icon: var(--color-text-2);
-@search-button-color-text: var(--color-white);
+@search-color-icon: var(~'@{arco-cssvars-prefix}-color-text-2');
+@search-button-color-text: var(~'@{arco-cssvars-prefix}-color-white');
 @search-size-icon: 14px;
 @search-button-padding-horizontal: @spacing-4;
 
@@ -108,12 +108,12 @@
 @textarea-layout-top-icon-clear: @spacing-5;
 
 // password
-@password-color-eye-icon: var(--color-text-2);
+@password-color-eye-icon: var(~'@{arco-cssvars-prefix}-color-text-2');
 @password-size-eye-icon: @size-3;
 
 // input.group
 @input-group-border-radius_compact: @radius-small;
 @input-group-border-separator-width: @border-1;
-@input-group-color-separator-border: var(--color-neutral-3);
+@input-group-color-separator-border: var(~'@{arco-cssvars-prefix}-color-neutral-3');
 
 /******** 高级配置项 end *******/

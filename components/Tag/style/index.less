@@ -141,13 +141,13 @@
 
   each(@colors, {
     .@{tag-prefix-cls}-checked.@{tag-prefix-cls}-@{value} {
-      background-color: ~'rgba(var(--@{value}-6), 0.2)';
+      background-color: ~'rgba(var(@{arco-cssvars-prefix}-@{value}-6), 0.2)';
 
-      .icon-hover-bg(@tag-prefix-cls, ~'rgba(var(--@{value}-6), 0.35)');
+      .icon-hover-bg(@tag-prefix-cls, ~'rgba(var(@{arco-cssvars-prefix}-@{value}-6), 0.35)');
     }
 
     .@{tag-prefix-cls}-checkable.@{tag-prefix-cls}-checked.@{tag-prefix-cls}-@{value}:hover {
-      background-color: ~'rgba(var(--@{value}-6), 0.35)';
+      background-color: ~'rgba(var(@{arco-cssvars-prefix}-@{value}-6), 0.35)';
     }
   });
 }

@@ -1,128 +1,127 @@
 @import './color/css-variables.less';
 
 @{arco-theme-tag} {
-  --color-white: @color-white;
-  --color-black: @color-black;
-  --color-border: @color-border;
-  --color-bg-popup: @color-bg-popup;
-  --color-bg-1: @color-bg-1;
-  --color-bg-2: @color-bg-2;
-  --color-bg-3: @color-bg-3;
-  --color-bg-4: @color-bg-4;
-  --color-bg-5: @color-bg-5;
-  --color-bg-white: @color-bg-white;
-  --color-neutral-1: rgb(var(--gray-1));
-  --color-neutral-2: rgb(var(--gray-2));
-  --color-neutral-3: rgb(var(--gray-3));
-  --color-neutral-4: rgb(var(--gray-4));
-  --color-neutral-5: rgb(var(--gray-5));
-  --color-neutral-6: rgb(var(--gray-6));
-  --color-neutral-7: rgb(var(--gray-7));
-  --color-neutral-8: rgb(var(--gray-8));
-  --color-neutral-9: rgb(var(--gray-9));
-  --color-neutral-10: rgb(var(--gray-10));
-  --color-text-1: @color-text-1;
-  --color-text-2: @color-text-2;
-  --color-text-3: @color-text-3;
-  --color-text-4: @color-text-4;
-  --color-border-1: @color-border-1;
-  --color-border-2: @color-border-2;
-  --color-border-3: @color-border-3;
-  --color-border-4: @color-border-4;
-  --color-fill-1: @color-fill-1;
-  --color-fill-2: @color-fill-2;
-  --color-fill-3: @color-fill-3;
-  --color-fill-4: @color-fill-4;
-  --color-primary-light-1: @color-primary-light-1;
-  --color-primary-light-2: @color-primary-light-2;
-  --color-primary-light-3: @color-primary-light-3;
-  --color-primary-light-4: @color-primary-light-4;
-  --color-secondary: @color-secondary;
-  --color-secondary-hover: @color-secondary-hover;
-  --color-secondary-active: @color-secondary-active;
-  --color-secondary-disabled: @color-secondary-disabled;
-  --color-danger-light-1: @color-danger-light-1;
-  --color-danger-light-2: @color-danger-light-2;
-  --color-danger-light-3: @color-danger-light-3;
-  --color-danger-light-4: @color-danger-light-4;
-  --color-success-light-1: @color-success-light-1;
-  --color-success-light-2: @color-success-light-2;
-  --color-success-light-3: @color-success-light-3;
-  --color-success-light-4: @color-success-light-4;
-  --color-warning-light-1: @color-warning-light-1;
-  --color-warning-light-2: @color-warning-light-2;
-  --color-warning-light-3: @color-warning-light-3;
-  --color-warning-light-4: @color-warning-light-4;
-  --color-link-light-1: @color-link-light-1;
-  --color-link-light-2: @color-link-light-2;
-  --color-link-light-3: @color-link-light-3;
-  --color-link-light-4: @color-link-light-4;
+  @{arco-cssvars-prefix}-color-white: @color-white;
+  @{arco-cssvars-prefix}-color-black: @color-black;
+  @{arco-cssvars-prefix}-color-border: @color-border;
+  @{arco-cssvars-prefix}-color-bg-popup: @color-bg-popup;
+  @{arco-cssvars-prefix}-color-bg-1: @color-bg-1;
+  @{arco-cssvars-prefix}-color-bg-2: @color-bg-2;
+  @{arco-cssvars-prefix}-color-bg-3: @color-bg-3;
+  @{arco-cssvars-prefix}-color-bg-4: @color-bg-4;
+  @{arco-cssvars-prefix}-color-bg-5: @color-bg-5;
+  @{arco-cssvars-prefix}-color-bg-white: @color-bg-white;
+  @{arco-cssvars-prefix}-color-neutral-1: rgb(var(~'@{arco-cssvars-prefix}-gray-1'));
+  @{arco-cssvars-prefix}-color-neutral-2: rgb(var(~'@{arco-cssvars-prefix}-gray-2'));
+  @{arco-cssvars-prefix}-color-neutral-3: rgb(var(~'@{arco-cssvars-prefix}-gray-3'));
+  @{arco-cssvars-prefix}-color-neutral-4: rgb(var(~'@{arco-cssvars-prefix}-gray-4'));
+  @{arco-cssvars-prefix}-color-neutral-5: rgb(var(~'@{arco-cssvars-prefix}-gray-5'));
+  @{arco-cssvars-prefix}-color-neutral-6: rgb(var(~'@{arco-cssvars-prefix}-gray-6'));
+  @{arco-cssvars-prefix}-color-neutral-7: rgb(var(~'@{arco-cssvars-prefix}-gray-7'));
+  @{arco-cssvars-prefix}-color-neutral-8: rgb(var(~'@{arco-cssvars-prefix}-gray-8'));
+  @{arco-cssvars-prefix}-color-neutral-9: rgb(var(~'@{arco-cssvars-prefix}-gray-9'));
+  @{arco-cssvars-prefix}-color-neutral-10: rgb(var(~'@{arco-cssvars-prefix}-gray-10'));
+  @{arco-cssvars-prefix}-color-text-1: @color-text-1;
+  @{arco-cssvars-prefix}-color-text-2: @color-text-2;
+  @{arco-cssvars-prefix}-color-text-3: @color-text-3;
+  @{arco-cssvars-prefix}-color-text-4: @color-text-4;
+  @{arco-cssvars-prefix}-color-border-1: @color-border-1;
+  @{arco-cssvars-prefix}-color-border-2: @color-border-2;
+  @{arco-cssvars-prefix}-color-border-3: @color-border-3;
+  @{arco-cssvars-prefix}-color-border-4: @color-border-4;
+  @{arco-cssvars-prefix}-color-fill-1: @color-fill-1;
+  @{arco-cssvars-prefix}-color-fill-2: @color-fill-2;
+  @{arco-cssvars-prefix}-color-fill-3: @color-fill-3;
+  @{arco-cssvars-prefix}-color-fill-4: @color-fill-4;
+  @{arco-cssvars-prefix}-color-primary-light-1: @color-primary-light-1;
+  @{arco-cssvars-prefix}-color-primary-light-2: @color-primary-light-2;
+  @{arco-cssvars-prefix}-color-primary-light-3: @color-primary-light-3;
+  @{arco-cssvars-prefix}-color-primary-light-4: @color-primary-light-4;
+  @{arco-cssvars-prefix}-color-secondary: @color-secondary;
+  @{arco-cssvars-prefix}-color-secondary-hover: @color-secondary-hover;
+  @{arco-cssvars-prefix}-color-secondary-active: @color-secondary-active;
+  @{arco-cssvars-prefix}-color-secondary-disabled: @color-secondary-disabled;
+  @{arco-cssvars-prefix}-color-danger-light-1: @color-danger-light-1;
+  @{arco-cssvars-prefix}-color-danger-light-2: @color-danger-light-2;
+  @{arco-cssvars-prefix}-color-danger-light-3: @color-danger-light-3;
+  @{arco-cssvars-prefix}-color-danger-light-4: @color-danger-light-4;
+  @{arco-cssvars-prefix}-color-success-light-1: @color-success-light-1;
+  @{arco-cssvars-prefix}-color-success-light-2: @color-success-light-2;
+  @{arco-cssvars-prefix}-color-success-light-3: @color-success-light-3;
+  @{arco-cssvars-prefix}-color-success-light-4: @color-success-light-4;
+  @{arco-cssvars-prefix}-color-warning-light-1: @color-warning-light-1;
+  @{arco-cssvars-prefix}-color-warning-light-2: @color-warning-light-2;
+  @{arco-cssvars-prefix}-color-warning-light-3: @color-warning-light-3;
+  @{arco-cssvars-prefix}-color-warning-light-4: @color-warning-light-4;
+  @{arco-cssvars-prefix}-color-link-light-1: @color-link-light-1;
+  @{arco-cssvars-prefix}-color-link-light-2: @color-link-light-2;
+  @{arco-cssvars-prefix}-color-link-light-3: @color-link-light-3;
+  @{arco-cssvars-prefix}-color-link-light-4: @color-link-light-4;
 
   // radius
-  --border-radius-none: @border-radius-none;
-  --border-radius-small: @border-radius-small;
-  --border-radius-medium: @border-radius-medium;
-  --border-radius-large: @border-radius-large;
-  --border-radius-circle: @border-radius-circle;
+  @{arco-cssvars-prefix}-border-radius-none: @border-radius-none;
+  @{arco-cssvars-prefix}-border-radius-small: @border-radius-small;
+  @{arco-cssvars-prefix}-border-radius-medium: @border-radius-medium;
+  @{arco-cssvars-prefix}-border-radius-large: @border-radius-large;
+  @{arco-cssvars-prefix}-border-radius-circle: @border-radius-circle;
   // component
-  --color-tooltip-bg: @color-tooltip-bg;
-  --color-spin-layer-bg: @color-spin-layer-bg;
-  --color-menu-dark-bg: @color-menu-dark-bg;
-  --color-menu-light-bg: @color-menu-light-bg;
-  --color-menu-dark-hover: @color-menu-dark-hover;
-  --color-mask-bg: @mask-color-bg;
+  @{arco-cssvars-prefix}-color-tooltip-bg: @color-tooltip-bg;
+  @{arco-cssvars-prefix}-color-spin-layer-bg: @color-spin-layer-bg;
+  @{arco-cssvars-prefix}-color-menu-dark-bg: @color-menu-dark-bg;
+  @{arco-cssvars-prefix}-color-menu-light-bg: @color-menu-light-bg;
+  @{arco-cssvars-prefix}-color-menu-dark-hover: @color-menu-dark-hover;
+  @{arco-cssvars-prefix}-color-mask-bg: @mask-color-bg;
 }
-
 
 @{arco-theme-tag} {
   &[arco-theme='dark'] {
-  --color-white: @dark-color-white; // 在亮色模式下所有白色文字对应。对应 @color-white;
-  --color-black: @dark-color-black;
-  --color-border: @dark-color-border;
-  --color-bg-1: @dark-color-bg-1; // 整体背景，就是 @dark-gray-1
-  --color-bg-2: @dark-color-bg-2; // 一级容器背景 (“白色”)
-  --color-bg-3: @dark-color-bg-3; // 二级容器背景
-  --color-bg-4: @dark-color-bg-4; // 三级容器背景
-  --color-bg-5: @dark-color-bg-5; // 下拉框、Tooltips 背景
-  --color-bg-white: @dark-color-bg-white; // 在亮色模式下 radio，switch 白色背景
-  --color-text-1: @dark-color-text-1; // 标题，正文
-  --color-text-2: @dark-color-text-2; // 语句
-  --color-text-3: @dark-color-text-3; // 次要信息
-  --color-text-4: @dark-color-text-4; // 禁用态
-  --color-fill-1: @dark-color-fill-1;
-  --color-fill-2: @dark-color-fill-2;
-  --color-fill-3: @dark-color-fill-3;
-  --color-fill-4: @dark-color-fill-4;
-  --color-primary-light-1: @dark-color-primary-light-1;
-  --color-primary-light-2: @dark-color-primary-light-2;
-  --color-primary-light-3: @dark-color-primary-light-3;
-  --color-primary-light-4: @dark-color-primary-light-4;
-  --color-secondary: @dark-color-secondary;
-  --color-secondary-hover: @dark-color-secondary-hover;
-  --color-secondary-active: @dark-color-secondary-active;
-  --color-secondary-disabled: @dark-color-secondary-disabled;
-  --color-danger-light-1: @dark-color-danger-light-1;
-  --color-danger-light-2: @dark-color-danger-light-2;
-  --color-danger-light-3: @dark-color-danger-light-3;
-  --color-danger-light-4: @dark-color-danger-light-4;
-  --color-success-light-1: @dark-color-success-light-1;
-  --color-success-light-2: @dark-color-success-light-2;
-  --color-success-light-3: @dark-color-success-light-3;
-  --color-success-light-4: @dark-color-success-light-4;
-  --color-warning-light-1: @dark-color-warning-light-1;
-  --color-warning-light-2: @dark-color-warning-light-2;
-  --color-warning-light-3: @dark-color-warning-light-3;
-  --color-warning-light-4: @dark-color-warning-light-4;
-  --color-link-light-1: @dark-color-link-light-1;
-  --color-link-light-2: @dark-color-link-light-2;
-  --color-link-light-3: @dark-color-link-light-3;
-  --color-link-light-4: @dark-color-link-light-4;
-  // component
-  --color-tooltip-bg: @dark-color-tooltip-bg;
-  --color-spin-layer-bg: @dark-color-spin-layer-bg;
-  --color-menu-dark-bg: @color-menu-dark-bg;
-  --color-menu-light-bg: @color-menu-dark-bg;
-  --color-menu-dark-hover: @dark-color-menu-dark-hover;
-  --color-mask-bg: @dark-mask-color-bg;
+    @{arco-cssvars-prefix}-color-white: @dark-color-white; // 在亮色模式下所有白色文字对应。对应 @color-white;
+    @{arco-cssvars-prefix}-color-black: @dark-color-black;
+    @{arco-cssvars-prefix}-color-border: @dark-color-border;
+    @{arco-cssvars-prefix}-color-bg-1: @dark-color-bg-1; // 整体背景，就是 @dark-gray-1
+    @{arco-cssvars-prefix}-color-bg-2: @dark-color-bg-2; // 一级容器背景 (“白色”)
+    @{arco-cssvars-prefix}-color-bg-3: @dark-color-bg-3; // 二级容器背景
+    @{arco-cssvars-prefix}-color-bg-4: @dark-color-bg-4; // 三级容器背景
+    @{arco-cssvars-prefix}-color-bg-5: @dark-color-bg-5; // 下拉框、Tooltips 背景
+    @{arco-cssvars-prefix}-color-bg-white: @dark-color-bg-white; // 在亮色模式下 radio，switch 白色背景
+    @{arco-cssvars-prefix}-color-text-1: @dark-color-text-1; // 标题，正文
+    @{arco-cssvars-prefix}-color-text-2: @dark-color-text-2; // 语句
+    @{arco-cssvars-prefix}-color-text-3: @dark-color-text-3; // 次要信息
+    @{arco-cssvars-prefix}-color-text-4: @dark-color-text-4; // 禁用态
+    @{arco-cssvars-prefix}-color-fill-1: @dark-color-fill-1;
+    @{arco-cssvars-prefix}-color-fill-2: @dark-color-fill-2;
+    @{arco-cssvars-prefix}-color-fill-3: @dark-color-fill-3;
+    @{arco-cssvars-prefix}-color-fill-4: @dark-color-fill-4;
+    @{arco-cssvars-prefix}-color-primary-light-1: @dark-color-primary-light-1;
+    @{arco-cssvars-prefix}-color-primary-light-2: @dark-color-primary-light-2;
+    @{arco-cssvars-prefix}-color-primary-light-3: @dark-color-primary-light-3;
+    @{arco-cssvars-prefix}-color-primary-light-4: @dark-color-primary-light-4;
+    @{arco-cssvars-prefix}-color-secondary: @dark-color-secondary;
+    @{arco-cssvars-prefix}-color-secondary-hover: @dark-color-secondary-hover;
+    @{arco-cssvars-prefix}-color-secondary-active: @dark-color-secondary-active;
+    @{arco-cssvars-prefix}-color-secondary-disabled: @dark-color-secondary-disabled;
+    @{arco-cssvars-prefix}-color-danger-light-1: @dark-color-danger-light-1;
+    @{arco-cssvars-prefix}-color-danger-light-2: @dark-color-danger-light-2;
+    @{arco-cssvars-prefix}-color-danger-light-3: @dark-color-danger-light-3;
+    @{arco-cssvars-prefix}-color-danger-light-4: @dark-color-danger-light-4;
+    @{arco-cssvars-prefix}-color-success-light-1: @dark-color-success-light-1;
+    @{arco-cssvars-prefix}-color-success-light-2: @dark-color-success-light-2;
+    @{arco-cssvars-prefix}-color-success-light-3: @dark-color-success-light-3;
+    @{arco-cssvars-prefix}-color-success-light-4: @dark-color-success-light-4;
+    @{arco-cssvars-prefix}-color-warning-light-1: @dark-color-warning-light-1;
+    @{arco-cssvars-prefix}-color-warning-light-2: @dark-color-warning-light-2;
+    @{arco-cssvars-prefix}-color-warning-light-3: @dark-color-warning-light-3;
+    @{arco-cssvars-prefix}-color-warning-light-4: @dark-color-warning-light-4;
+    @{arco-cssvars-prefix}-color-link-light-1: @dark-color-link-light-1;
+    @{arco-cssvars-prefix}-color-link-light-2: @dark-color-link-light-2;
+    @{arco-cssvars-prefix}-color-link-light-3: @dark-color-link-light-3;
+    @{arco-cssvars-prefix}-color-link-light-4: @dark-color-link-light-4;
+    // component
+    @{arco-cssvars-prefix}-color-tooltip-bg: @dark-color-tooltip-bg;
+    @{arco-cssvars-prefix}-color-spin-layer-bg: @dark-color-spin-layer-bg;
+    @{arco-cssvars-prefix}-color-menu-dark-bg: @color-menu-dark-bg;
+    @{arco-cssvars-prefix}-color-menu-light-bg: @color-menu-dark-bg;
+    @{arco-cssvars-prefix}-color-menu-dark-hover: @dark-color-menu-dark-hover;
+    @{arco-cssvars-prefix}-color-mask-bg: @dark-mask-color-bg;
   }
 }

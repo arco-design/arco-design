@@ -300,7 +300,7 @@
 
     &-active,
     &-active:hover {
-      border-bottom-color: var(--color-bg-2);
+      border-bottom-color: var(~'@{arco-cssvars-prefix}-color-bg-2');
       background-color: @tabs-card-color-title-bg_active;
     }
   }
@@ -322,7 +322,7 @@
 
     &-active,
     &-active:hover {
-      border-bottom-color: var(--color-bg-2);
+      border-bottom-color: var(~'@{arco-cssvars-prefix}-color-bg-2');
       background-color: @tabs-card-gutter-color-title-bg_active;
     }
 
@@ -658,11 +658,11 @@
   .@{tabs-prefix-cls}-header-nav-capsule {
     .@{tabs-prefix-cls}-header-title {
       &-active {
-        background-color: var(--color-fill-3);
+        background-color: var(~'@{arco-cssvars-prefix}-color-fill-3');
       }
 
       &:hover {
-        background-color: var(--color-fill-3);
+        background-color: var(~'@{arco-cssvars-prefix}-color-fill-3');
       }
     }
   }

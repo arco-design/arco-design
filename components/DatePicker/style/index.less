@@ -8,7 +8,7 @@
   border: @picker-panel-border-width solid @picker-panel-color-border;
   box-shadow: @popup-box-shadow-base;
   border-radius: @picker-container-border-radius;
-  background-color: var(--color-bg-popup);
+  background-color: var(~'@{arco-cssvars-prefix}-color-bg-popup');
   box-sizing: border-box;
   min-height: 60px;
   overflow: hidden;
@@ -263,7 +263,7 @@
 
     &-extra-wrapper {
       padding: 8px 24px;
-      color: var(--color-text-1);
+      color: var(~'@{arco-cssvars-prefix}-color-text-1');
       border-top: @picker-panel-border-width solid @picker-panel-color-border;
       box-sizing: border-box;
       font-size: 12px;

@@ -10,7 +10,7 @@
   height: 100%;
   z-index: @z-index-modal;
   display: none;
-  background-color: var(--color-mask-bg);
+  background-color: var(~'@{arco-cssvars-prefix}-color-mask-bg');
 }
 
 .@{modal-prefix-cls}-wrapper {
@@ -57,7 +57,7 @@
   width: @modal-default-size-width;
   border-radius: @modal-border-radius;
   border: @modal-border-width solid @modal-color-border;
-  background-color: var(--color-bg-3);
+  background-color: var(~'@{arco-cssvars-prefix}-color-bg-3');
   line-height: @line-height-base;
   text-align: left;
   white-space: initial;
