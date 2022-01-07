@@ -24,7 +24,6 @@ export const routes = [
       {
         name:'menu.dashboard.workplace', // Menu name, locale['menu.dashboard.workplace']
         key:'dashboard/workplace', // menu item key, also menu path
-        componentPath:'workplace', // The path of the routing component of the menu in the pages directory
       },
     ],
   },
@@ -33,10 +32,10 @@ export const routes = [
 
 Explain some of the variables:
 
--`name` The name of the menu item, which is the key value in the language pack
--The key of the `key` menu item, which is also used as a path
--`children` sub-menu array, each field is the same as the parent menu
--The path of the routing component corresponding to the `componentPath` menu item. The routing component is in the pages directory by default, so you only need to write the path under pages, and the component will be rendered in the content area
+- `name` The name of the menu item, which is the key value in the language pack
+- `key` The key of the menu item, also used as path, here will use `pages/${route.key}` as the component path
+- `children` sub-menu array, each field is the same as the parent menu
+- `breadcrumb` whether to display breadcrumbs on the current page
 
 The routing configuration is very intuitive. The configured variables are used to generate the menu and process the routing jump. Next, let's look at how the menu and the routing are connected in series.
 
@@ -47,6 +46,26 @@ The menu bar is part of the layout, so the menu generation process can be found 
 1. Obtain a flat array of routes with routing components `flattenRoutes` through `getFlattenRoutes`, which is used to generate routes
 
 ```js
+function getFlattenRoutes() {
+  const res = [];
+  function travel(_routes) {
+    _routes.forEach((route) => {
+      if (route.key && !route.children) {
+        route.component = lazyload(() => import(`./pages/${route.key}`));
+        res.push(route);
+      } else if (isArray(route.children) && route.children.length) {
+        travel(route.children);
+      }
+    });
+  }
+  travel(routes);
+  return res;
+}
+```
+
+2. Generate menu items by traversing the routing table through `flattenRoutes`
+
+```js
 <Switch>
   {flattenRoutes.map((route) => {
     return <Route key={route.key} path={`/${route.key}`} component={route.component} />;
@@ -54,8 +73,6 @@ The menu bar is part of the layout, so the menu generation process can be found 
   <Redirect push to={`/${defaultRoute}`} />
 </Switch>
 ```
-
-2. Generate menu items by traversing the routing table through `renderRoutes`
 
 ## Steps to add a menu item
 
@@ -84,13 +101,11 @@ export const routes = [
       {
         name:'menu.dashboard.workplace',
         key:'dashboard/workplace',
-        componentPath:'workPlace',
       },
-+ {
-+ name:'menu.dashboard.monitor',
-+ key:'dashboard/monitor',
-+ componentPath:'monitor',
-+ },
++     {
++       name:'menu.dashboard.monitor',
++       key:'dashboard/monitor',
++     },
     ],
   },
 ];
@@ -105,7 +120,7 @@ The following is the Chinese language pack, other language packs will not be rep
 export default {
   'menu.dashboard':'Dashboard',
   'menu.dashboard.workplace':'Workbench',
-+'menu.dashboard.monitor':'Real-time monitoring',
++ 'menu.dashboard.monitor':'Real-time monitoring',
 }
 ```
 

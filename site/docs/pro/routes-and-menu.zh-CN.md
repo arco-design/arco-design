@@ -18,11 +18,10 @@ export const routes = [
   {
     name: 'menu.dashboard',                 // 菜单名，locale['menu.dashboard']
     key: 'dashboard',                       // 菜单项 key，也是菜单 path
-    children: [                              
+    children: [
       {
         name: 'menu.dashboard.workplace',   // 菜单名，locale['menu.dashboard.workplace']
         key: 'dashboard/workplace',         // 菜单项 key，也是菜单 path
-        componentPath: 'workplace',         // 菜单的路由组件在 pages 目录下的路径
       },
     ],
   },
@@ -32,9 +31,10 @@ export const routes = [
 解释一下其中的几个变量：
 
 - `name` 菜单项的名字，写的是语言包中的 key 值
-- `key` 菜单项的 key，同时也作为 path 使用
+- `key` 菜单项的 key，同时也作为 path 使用, 这里会将 `pages/${route.key}` 作为组件路径
 - `children` 子菜单数组，各个字段同父菜单一致
-- `componentPath` 菜单项对应的路由组件的路径，路由组件默认在 pages 目录下，所以只需要写 pages 下的路径就行，该组件将渲染在内容区域
+- `breadcrumb` 是否展示在当前页面展示面包屑
+
 
 路由配置很直观，所配置的这几个变量都是为了生成菜单以及处理路由跳转使用的，接下来看一下菜单和路由是如何串联起来的。
 
@@ -45,6 +45,27 @@ export const routes = [
 1. 通过 `getFlattenRoutes` 得到带有路由组件的路由的扁平数组 `flattenRoutes`，用于生成路由
 
 ```js
+function getFlattenRoutes() {
+  const res = [];
+  function travel(_routes) {
+    _routes.forEach((route) => {
+      if (route.key && !route.children) {
+        route.component = lazyload(() => import(`./pages/${route.key}`));
+        res.push(route);
+      } else if (isArray(route.children) && route.children.length) {
+        travel(route.children);
+      }
+    });
+  }
+  travel(routes);
+  return res;
+}
+
+```
+
+2. 通过 `flattenRoutes` 遍历路由表生成菜单项
+
+```js
 <Switch>
   {flattenRoutes.map((route) => {
     return <Route key={route.key} path={`/${route.key}`} component={route.component} />;
@@ -52,8 +73,6 @@ export const routes = [
   <Redirect push to={`/${defaultRoute}`} />
 </Switch>
 ```
-
-2. 通过 `renderRoutes` 遍历路由表生成菜单项
 
 ## 新增一个菜单项的步骤
 
@@ -78,7 +97,7 @@ export const routes = [
   {
     name: 'menu.dashboard',
     key: 'dashboard',
-    children: [                              
+    children: [
       {
         name: 'menu.dashboard.workplace',
         key: 'dashboard/workplace',
@@ -87,7 +106,6 @@ export const routes = [
 +     {
 +       name: 'menu.dashboard.monitor',
 +       key: 'dashboard/monitor',
-+       componentPath: 'monitor',
 +     },
     ],
   },
