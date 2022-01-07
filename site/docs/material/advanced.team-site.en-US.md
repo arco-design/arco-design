@@ -261,6 +261,23 @@ table {
 }
 ```
 
+## Using the Arco Design Lab theme
+
+**Version requirement `@arco-design/arco-doc-site >= 1.8.0`**
+
+By extending the configuration items, you can quickly use any theme from the Arco theme store on your team site.
+
+````javascript
+module.exports = {
+  // ...
+  // site configuration
+  site: {
+    // Configure the Arco Design Lab theme that needs to be used
+    arcoDesignLabTheme: '@arco-design/theme-package-name',
+  },
+};
+````
+
 ## Site configuration
 
 Through the open configuration field, we allow some simple configuration of the site, currently supported configurations include:
@@ -435,40 +452,148 @@ Complete site preview and deployment.
 
 All available configurations of `.config/main.js` are as follows:
 
-```javascript
-module.exports = {
-  // Build configuration
+```typescript
+interface MainConfig {
+  /**
+   * Build config for site
+   * @zh 站点构建配置
+   */
   build: {
-    // Global Patterns matching material and document path
+    /**
+     * Rules to match the path of document and demos
+     * @zh 配置文档和 Demo 的路径
+     */
     globs: {
-      // Path to general documents, for example: quick guide, version record
-      doc:'./docs/**/*.md',
-      // The path of the material itself
+      /**
+       * Glob pattern of pure document
+       * @zh 纯文档的 Glob 匹配符
+       */
+      doc: string;
+      /**
+       * Glob patterns of component
+       * @zh 组件相关的 Glob 匹配规则
+       */
       component: {
-        // The directory where the material is located
-        base:'../components/*',
-        // The path of the material help document relative to base
-        doc:'docs/README.md',
-        // The path of the demo entry relative to the base
-        demo:'src/demo/index.js',
-        // The path of the material style entry relative to the base (optional)
-        style:'src/style/index.ts',
-      },
-      // Configure the hook function path when the site is running
-      hook: {
-        // The function path to run when the site is initialized
-        beforeAll:'./beforeAll.ts',
-      }
-    },
-    // Whether to introduce the style of the material during construction
-    withMaterialStyle: true,
-  },
-  // Site configuration
+        /**
+         * Glob pattern to math the path of component
+         * @zh 组件目录的 Glob 匹配符
+         * @e.g ../components/*
+         */
+        base: string;
+        /**
+         * Glob pattern of component demos
+         * @zh 组件 Demo 的 Glob 匹配符
+         * @e.g demo/index.js
+         */
+        demo: string;
+        /**
+         * Glob pattern of component document
+         * @zh 组件文档的 Glob 匹配符
+         * @e.g README.md
+         */
+        doc?: string;
+        /**
+         * Path of component style
+         * @zh 组件样式路径
+         * @e.g style/index.less
+         */
+        style?: string;
+      };
+      /**
+       * Hooks to execute when demos are rendered
+       * @zh Demo 渲染时执行的钩子函数
+       */
+      hook?: {
+        /**
+         * Callback function executed before all demos are rendered
+         * @zh 在所有 Demo 渲染之前执行的回调函数
+         */
+        beforeAll?: string;
+        /**
+         * Callback function executed before each demo is rendered
+         * @zh 在每个 Demo 渲染之前执行的回调函数
+         */
+        beforeEach?: string;
+      };
+    };
+    /**
+     * Whether to import material style file
+     * @zh 是否将组件的样式一同打包
+     */
+    withMaterialStyle?: boolean;
+    /**
+     * Options for development mode
+     * @zh 站点 Dev 模式时的配置
+     */
+    devOptions?: {
+      /**
+       * Whether to auto import Arco library style
+       * @zh 是否自动注入 Arco 组件库的样式
+       * @default true
+       */
+      withArcoStyle?: boolean;
+    };
+  };
+  /**
+   * Runtime config for site
+   * @zh 站点运行时配置
+   */
   site: {
-    // Languages ​​supported by the site
-    languages: ['zh-CN'],
-    // Allow to switch site theme
-    allowThemeToggle: false,
-  },
-};
+    /**
+     * Languages allowed to switch
+     * @zh 可切换的语言类型
+     * @e.g ['zh-CN', 'en-US']
+     */
+    languages: string[];
+    /**
+     * Lark group id for on call
+     * @zh 飞书 onCall 群的 ID
+     */
+    larkGroupID?: string;
+    /**
+     * Theme package name of Arco Design Lab
+     * @zh 关联使用的 Arco 主题商店主题包名
+     */
+    arcoDesignLabTheme?: string;
+    /**
+     * Whether switching themes is allowed
+     * @zh 是否允许切换主题
+     */
+    allowThemeToggle?: boolean;
+    /**
+     * Config of material demos
+     * @zh 页面 Demo 的配置
+     */
+    demo?: {
+      /**
+       * Whether demos are editable
+       * @zh Demo 是否允许编辑调试
+       */
+      editable?: boolean;
+      /**
+       * Default external info of code editor
+       * @zh Demo 编辑器默认的 External 资源配置
+       */
+      defaultExternalList?: ExternalSourceInfo[];
+    };
+    /**
+     * Config menu items
+     * @zh 配置菜单栏
+     */
+    menu?: {
+      /**
+       * The maximum allowed sub-menu level, the excess levels will be displayed in groups
+       * @zh 允许的最大菜单层级，超出的层级将以分组的形式展示
+       * @default 1
+       */
+      maxSubMenuLevel?: number;
+      /**
+       * Sort rule of menu items. The higher the menu item, the higher the priority
+       * @zh 菜单排序规则，越靠前的菜单项优先级越高
+       * @e.g { guide: ['document2', 'document1'] }
+       */
+      sortRule?: Record<string, String[]>;
+    };
+  };
+}
 ```
