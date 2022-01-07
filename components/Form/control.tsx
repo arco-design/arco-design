@@ -30,7 +30,6 @@ export default class Control<
   static defaultProps = {
     trigger: 'onChange',
     triggerPropName: 'value',
-    validateTrigger: 'onChange',
   };
 
   static isFormControl = true;
@@ -224,13 +223,13 @@ export default class Control<
     value: FieldValue;
     field: FieldKey;
   }> => {
-    const { store } = this.context;
+    const { store, validateTrigger: ctxValidateTrigger } = this.context;
     const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
     const _rules = !triggerType
       ? rules
       : (rules || []).filter((rule) => {
-          const triggers = [].concat(rule.validateTrigger || validateTrigger);
+          const triggers = [].concat(rule.validateTrigger || validateTrigger || ctxValidateTrigger);
           return triggers.indexOf(triggerType) > -1;
         });
     if (_rules && _rules.length && field) {
@@ -253,7 +252,8 @@ export default class Control<
    * 收集rules里的validateTrigger字段
    */
   getValidateTrigger(): string[] {
-    const _validateTrigger = this.props.validateTrigger || 'onChange';
+    const _validateTrigger =
+      this.props.validateTrigger || this.context.validateTrigger || 'onChange';
     const rules = this.props.rules || [];
 
     let result: string[] = [];
