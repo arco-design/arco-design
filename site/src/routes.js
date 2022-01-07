@@ -730,34 +730,14 @@ export default function getRoutes(lang = 'zh', t) {
           component: lazyLoad(() => import(`../docs/pro/start${suffix}.md`)),
         },
         {
-          name: t['routes.npm-scripts'],
-          path: 'pro/npm-scripts',
-          component: lazyLoad(() => import(`../docs/pro/npm-scripts${suffix}.md`)),
-        },
-        {
-          name: t['routes.webpack-configuration'],
-          path: 'pro/webpack-configuration',
-          component: lazyLoad(() => import(`../docs/pro/webpack-configuration${suffix}.md`)),
-        },
-        {
           name: t['routes.directory'],
           path: 'pro/directory',
           component: lazyLoad(() => import(`../docs/pro/directory${suffix}.md`)),
         },
         {
-          name: t['routes._layout'],
-          path: 'pro/layout',
-          component: lazyLoad(() => import(`../docs/pro/layout${suffix}.md`)),
-        },
-        {
           name: t['routes.routes-and-menu'],
           path: 'pro/routes-and-menu',
           component: lazyLoad(() => import(`../docs/pro/routes-and-menu${suffix}.md`)),
-        },
-        {
-          name: t['routes.state-management'],
-          path: 'pro/state-management',
-          component: lazyLoad(() => import(`../docs/pro/state-management${suffix}.md`)),
         },
         {
           name: t['routes.i18n'],
@@ -768,11 +748,6 @@ export default function getRoutes(lang = 'zh', t) {
           name: t['routes.mock'],
           path: 'pro/mock',
           component: lazyLoad(() => import(`../docs/pro/mock${suffix}.md`)),
-        },
-        {
-          name: t['routes.build'],
-          path: 'pro/build',
-          component: lazyLoad(() => import(`../docs/pro/build${suffix}.md`)),
         },
       ],
     },
