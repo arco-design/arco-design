@@ -25,7 +25,6 @@
 |requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|`boolean \| { position: 'start' \| 'end' }`|`true`|`position` in 2.24.0|
 |labelAlign|标签的文本对齐方式|`'left' \| 'right'`|`right`|-|
 |initialValues|设置表单初始值|`Partial<FormData>`|`-`|-|
-|validateTrigger|触发验证的时机。|`string \| string[]`|`onChange`|2.28.0|
 |onValuesChange|任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值|`(value: Partial<FormData>, values: Partial<FormData>) => void`|`-`|-|
 |onChange|表单项值改变时候触发。和 onValuesChange 不同的是只会在用户操作表单项时触发|`(value: Partial<FormData>, values: Partial<FormData>) => void`|`-`|-|
 |wrapper|配置最外层标签，可以是 html 标签或是组件|`ComponentType`|`form`|-|
@@ -79,10 +78,6 @@
 
 ```js
 export interface RulesProps {
-  // 触发校验的时机
-  validateTrigger?: string | string[];
-  // 校验失败时候以 `error` 或 `warning` 形式展示错误信息。当设置为 `warning` 时不会阻塞表单提交
-  validateLevel?: 'error' | 'warning';
   required?: boolean;
   type?: string;
   length?: number;

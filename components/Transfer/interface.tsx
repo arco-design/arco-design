@@ -1,6 +1,5 @@
 import { CSSProperties, DragEvent, ReactNode } from 'react';
 import { PaginationProps } from '../Pagination/pagination';
-import { InputProps } from '../Input';
 
 export type TransferItem = {
   key: string;
@@ -17,7 +16,6 @@ type TransferListTitle =
       countSelected: number;
       clear: () => void;
       checkbox: ReactNode;
-      searchInput: ReactNode;
     }) => ReactNode);
 
 /**
@@ -104,7 +102,7 @@ export interface TransferProps {
    * @zh 左右两栏是否显示搜索框
    * @en Whether to display the search box in columns
    */
-  showSearch?: boolean | InputProps;
+  showSearch?: boolean;
   /**
    * @zh 左右两栏是否显示底部重置按钮
    * @en Whether to display the reset-button in columns

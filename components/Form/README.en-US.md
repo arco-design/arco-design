@@ -25,7 +25,6 @@ A form with data collection, verification and submission functions, including ch
 |requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|`boolean \| { position: 'start' \| 'end' }`|`true`|`position` in 2.24.0|
 |labelAlign|Text alignment of `label`|`'left' \| 'right'`|`right`|-|
 |initialValues|Default value of form data|`Partial<FormData>`|`-`|-|
-|validateTrigger|When to trigger verification.|`string \| string[]`|`onChange`|2.28.0|
 |onValuesChange|Callback when any form item value changes.The first is the changed value, and the second is the value of all items|`(value: Partial<FormData>, values: Partial<FormData>) => void`|`-`|-|
 |onChange|Callback when the form item value changes. Unlike `onValuesChange`, it will only be called when the user manipulates the form item|`(value: Partial<FormData>, values: Partial<FormData>) => void`|`-`|-|
 |wrapper|Custom outer tag. Can be html tags or React components|`ComponentType`|`form`|-|
@@ -79,10 +78,6 @@ Low-level use [b-validate](https://github.com/PengJiyuan/b-validate).
 
 ```js
 export interface RulesProps {
-  // when to validate
-  validateTrigger?: string | string[];
-  // When the verification fails, the error message will be displayed in the form of `error` or `warning`. Will not block form submission when set to `warning`
-  validateLevel?: 'error' | 'warning';
   required?: boolean;
   type?: string;
   length?: number;

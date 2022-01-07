@@ -14,10 +14,8 @@ const defaultProps: TransferProps = {
   titleTexts: ['Source', 'Target'],
   defaultSelectedKeys: [],
   defaultTargetKeys: [],
+  filterOption: (inputValue, item) => item.value.indexOf(inputValue) !== -1,
   dataSource: [],
-  filterOption: (inputValue, item) => {
-    return typeof item?.value === 'string' && item.value.indexOf(inputValue) !== -1;
-  },
 };
 
 function Transfer(baseProps: TransferProps, ref) {

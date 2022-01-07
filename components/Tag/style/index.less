@@ -132,14 +132,13 @@
   }
 }
 
-
 @{arco-theme-tag} {
   &[arco-theme='dark'] {
-  .@{tag-prefix-cls}-checked {
-    color: rgba(255, 255, 255, 90%);
-  }
+    .@{tag-prefix-cls}-checked {
+      color: rgba(255, 255, 255, 90%);
+    }
 
-  each(@colors, {
+    each(@colors, {
     .@{tag-prefix-cls}-checked.@{tag-prefix-cls}-@{value} {
       background-color: ~'rgba(var(--@{value}-6), 0.2)';
 
@@ -150,5 +149,5 @@
       background-color: ~'rgba(var(--@{value}-6), 0.35)';
     }
   });
-}
+  }
 }

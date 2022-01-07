@@ -156,7 +156,6 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
   });
 
   const {
-    disabled,
     listType,
     className,
     style,
@@ -168,10 +167,18 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
   } = props;
 
   const fileList = getFileList(uploadState.current);
+  const limit = isNumber(props.limit)
+    ? { hideOnExceedLimit: true, maxCount: props.limit }
+    : { hideOnExceedLimit: true, ...props.limit };
+
+  const exceedLimit = limit.maxCount && limit.maxCount <= fileList.length;
+  const disabledUploadDom =
+    'disabled' in props ? props.disabled : !limit.hideOnExceedLimit && exceedLimit;
 
   const uploadDom = (
     <div
       {...omit(rest, [
+        'disabled',
         'directory',
         'onReupload',
         'defaultFileList',
@@ -203,8 +210,8 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         {
           [`${prefixCls}-type-${listType}`]: listType,
           [`${prefixCls}-drag`]: props.drag,
-          [`${prefixCls}-disabled`]: props.disabled,
-          [`${prefixCls}-hide`]: isNumber(props.limit) && props.limit <= fileList.length,
+          [`${prefixCls}-disabled`]: disabledUploadDom,
+          [`${prefixCls}-hide`]: limit.hideOnExceedLimit && exceedLimit,
         },
         className
       )}
@@ -213,6 +220,9 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
       <Uploader
         ref={uploaderRef}
         {...props}
+        limit={limit.maxCount}
+        hide={limit.hideOnExceedLimit && exceedLimit}
+        disabled={disabledUploadDom}
         prefixCls={prefixCls}
         fileList={fileList}
         onProgress={(file: UploadItem, e: ProgressEvent) => {
@@ -251,7 +261,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         <UploadList
           progressProps={progressProps}
           showUploadList={showUploadList}
-          disabled={disabled}
+          disabled={props.disabled}
           listType={listType}
           fileList={fileList}
           renderUploadItem={renderUploadItem}

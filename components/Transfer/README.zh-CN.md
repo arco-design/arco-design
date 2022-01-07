@@ -29,7 +29,7 @@
 |oneWay|单向|`boolean`|`-`|-|
 |simple|简单模式|`\| boolean\| {retainSelectedItems?: boolean;}`|`-`|`retainSelectedItems` in '2.21.0'|
 |draggable|列表内条目是否可拖拽|`boolean`|`-`|-|
-|showSearch|左右两栏是否显示搜索框|`boolean \| InputProps`|`-`|-|
+|showSearch|左右两栏是否显示搜索框|`boolean`|`-`|-|
 |showFooter|左右两栏是否显示底部重置按钮|`boolean \| ReactNode`|`-`|ReactNode in `2.11.0`|
 |pagination|是否使用翻页，也可传入 `Pagination` 的配置|`boolean \| PaginationProps`|`-`|-|
 |listStyle|左右两栏框的样式|`CSSProperties`|`-`|-|

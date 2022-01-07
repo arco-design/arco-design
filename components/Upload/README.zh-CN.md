@@ -25,7 +25,7 @@
 |showUploadList|是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。|`boolean \| CustomIconType`|`true`|-|
 |autoUpload|是否选中文件后自动上传|`boolean`|`true`|-|
 |action|action|`string`|`-`|-|
-|limit|限制上传数量。超出后会隐藏|`number`|`-`|-|
+|limit|限制上传数量。默认超出后会隐藏上传节点。对象类型在 `2.28.0` 支持|`number \| { maxCount: number; hideOnExceedLimit?: boolean }`|`-`|-|
 |disabled|禁用|`boolean`|`-`|-|
 |drag|是否拖拽上传|`boolean`|`-`|-|
 |multiple|文件多选|`boolean`|`-`|-|
