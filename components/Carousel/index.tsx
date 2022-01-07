@@ -77,8 +77,10 @@ function Carousel(baseProps: CarouselProps, ref) {
   const refSliderWrapper = useRef(null);
   const refAnimationTimer = useRef(null);
 
-  const [index, setIndex] = useState(0);
-  const [previousIndex, setPreviousIndex] = useState<number>(null);
+  const [index, setIndex] = useState(
+    typeof currentIndex === 'number' ? getValidIndex(currentIndex) : 0
+  );
+  const [previousIndex, setPreviousIndex] = useState<number>(index);
   const [isPause, setIsPause] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'positive' | 'negative'>(null);
