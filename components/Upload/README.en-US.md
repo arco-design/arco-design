@@ -25,7 +25,7 @@ Upload file by selecting or dragging.
 |showUploadList|Whether to show upload list.It can be an object to customize the `previewIcon`, `removeIcon`,`fileIcon`, `reuploadIcon`, `cancelIcon`, `startIcon`, `errorIcon` and `fileName`|`boolean \| CustomIconType`|`true`|-|
 |autoUpload|Whether to automatically upload files after selecting them|`boolean`|`true`|-|
 |action|Uploading URL|`string`|`-`|-|
-|limit|maximum number of uploads allowed|`number`|`-`|-|
+|limit|maximum number of uploads allowed. Object type is supported in `2.28.0`|`number \| { maxCount: number; hideOnExceedLimit?: boolean }`|`-`|-|
 |disabled|Whether to disable|`boolean`|`-`|-|
 |drag|Whether to enable drag and drop upload|`boolean`|`-`|-|
 |multiple|Whether to allow multiple files to be selected|`boolean`|`-`|-|

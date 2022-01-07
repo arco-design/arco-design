@@ -106,10 +106,10 @@ export interface UploadProps {
    */
   action?: string;
   /**
-   * @zh 限制上传数量。超出后会隐藏
-   * @en maximum number of uploads allowed
+   * @zh 限制上传数量。默认超出后会隐藏上传节点。对象类型在 `2.28.0` 支持
+   * @en maximum number of uploads allowed. Object type is supported in `2.28.0`
    */
-  limit?: number;
+  limit?: number | { maxCount: number; hideOnExceedLimit?: boolean };
   /**
    * @zh 禁用
    * @en Whether to disable
@@ -290,6 +290,8 @@ export type UploadItem = {
 
 export interface UploaderProps extends UploadProps {
   prefixCls?: string;
+  limit?: number;
+  hide?: boolean;
   onFileStatusChange?: (file: UploadItem) => void;
 }
 

@@ -141,7 +141,7 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
 
   handleFiles = (files: File[]) => {
     const { limit, fileList, onExceedLimit, autoUpload } = this.props;
-    if (isNumber(limit) && (limit as number) < fileList.length + files.length) {
+    if (isNumber(limit) && limit < fileList.length + files.length) {
       return onExceedLimit && onExceedLimit(files, fileList);
     }
     const asyncUpload = (file: File, index: number) => {
@@ -199,9 +199,8 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
       disabled,
       drag,
       listType,
-      fileList,
+      hide,
       directory,
-      limit,
     } = this.props;
 
     return (
@@ -225,7 +224,7 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
         />
         <CSSTransition
           key="trigger-node"
-          in={!(isNumber(limit) && limit <= fileList.length)}
+          in={!hide}
           timeout={100}
           unmountOnExit
           classNames="fadeIn"

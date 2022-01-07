@@ -200,4 +200,43 @@ describe('Upload api callbacks', function () {
       expect(fileList).toEqual([{ ...defaultFileList[1], percent: 100 }]);
     });
   });
+
+  it('onExceedLimit should be fired', async function () {
+    const mockFn = jest.fn();
+    await getWrapper({
+      onExceedLimit: mockFn,
+      limit: 1,
+      defaultFileList: [
+        {
+          name: '2',
+          uid: '2',
+          status: 'done',
+        },
+      ],
+    });
+
+    expect(mockFn.mock.calls.length).toBe(1);
+  });
+
+  it('limit hide ', async function () {
+    const wrapper = await getWrapper({
+      limit: 1,
+    });
+
+    await sleep(200);
+    wrapper.update();
+
+    expect(wrapper.find('.arco-upload-trigger')).toHaveLength(0);
+  });
+
+  it('limit disabled ', async function () {
+    const wrapper = await getWrapper({
+      limit: { maxCount: 1, hideOnExceedLimit: false },
+    });
+
+    await sleep(200);
+    wrapper.update();
+    expect(wrapper.find('.arco-upload-trigger')).toHaveLength(1);
+    expect(wrapper.find('TriggerNode').props().disabled).toBe(true);
+  });
 });
