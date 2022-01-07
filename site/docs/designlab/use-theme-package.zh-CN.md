@@ -24,9 +24,9 @@ npm i @arco-design/theme-line
 
 #### 需要按需加载样式
 
-通过 ArcoWebpack 插件引入主题包（推荐 `1.5.0` 版本及以上）
+通过 [Arco Webpack 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) 或 [Arco Vite 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md) 引入主题包（推荐 `1.5.0` 版本及以上）
 
-在webpack配置中引入 `@arco-design/webpack-plugin` 插件。通过 `theme` 字段指定主题包名。
+以 webpack 配置为例，引入 `@arco-design/webpack-plugin` 插件。通过 `theme` 字段指定主题包名。
 
 ```js
 const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
@@ -35,7 +35,7 @@ const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
 {
   plugins: [
     new ArcoWebpackPlugin({
-        theme: '@arco-design/theme-first'
+        theme: '@arco-design/theme-line'
     })
   ]
 }
@@ -45,11 +45,11 @@ const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
 
 1.  在项目中直接引入less文件
 
-`import '@arco-design/theme-first/index.less';`
+`import '@arco-design/theme-line/index.less';`
 
 2.  在项目中直接引入css文件
 
-`import '@arco-design/theme-first/css/arco.css';`
+`import '@arco-design/theme-line/css/arco.css';`
 
 直接引入css文件时，需要核对和业务项目中使用的组件库版本是否一致。 主要是因为css是在主题发布时候根据指定版本的组件库打包的。
 
