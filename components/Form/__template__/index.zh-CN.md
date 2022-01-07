@@ -22,6 +22,10 @@ file: interface
 
 ```js
 export interface RulesProps {
+  // 触发校验的时机
+  validateTrigger?: string | string[];
+  // 校验失败时候以 `error` 或 `warning` 形式展示错误信息。当设置为 `warning` 时不会阻塞表单提交
+  validateLevel?: 'error' | 'warning';
   required?: boolean;
   type?: string;
   length?: number;
