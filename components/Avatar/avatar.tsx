@@ -119,8 +119,8 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
         }}
         className={classNames}
       >
-        {isImage && renderImage(status, children)}
-        {!isImage && renderText(children)}
+        {status !== IMG_LOAD_STATUS.LOADING && isImage && renderImage(status, children)}
+        {status !== IMG_LOAD_STATUS.LOADING && !isImage && renderText(children)}
         {triggerIcon && (
           <div className={`${prefixCls}-trigger-icon-${triggerType}`} style={_triggerIconStyle}>
             {triggerIcon}
