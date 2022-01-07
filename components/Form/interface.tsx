@@ -93,6 +93,15 @@ export interface FormProps<
    */
   initialValues?: Partial<FormData>;
   /**
+   * @zh
+   * 触发验证的时机。
+   * @en
+   * When to trigger verification.
+   * @defaultValue onChange
+   * @version 2.28.0
+   */
+  validateTrigger?: string | string[];
+  /**
    * @zh 任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值
    * @en Callback when any form item value changes.The first is the changed value, and the second is the value of all items
    */
@@ -418,6 +427,7 @@ export type FormContextProps<
   | 'disabled'
   | 'colon'
   | 'layout'
+  | 'validateTrigger'
 > & {
   getFormElementId?: (field: FieldKey) => string;
   store?: FormInstance<FormData, FieldValue, FieldKey>;

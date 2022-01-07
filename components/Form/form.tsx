@@ -31,6 +31,7 @@ const defaultProps = {
   wrapperCol: { span: 19, offset: 0 },
   requiredSymbol: true,
   wrapper: 'form' as FormProps['wrapper'],
+  validateTrigger: 'onChange',
 };
 
 const Form = <
@@ -59,6 +60,7 @@ const Form = <
     disabled,
     colon,
     className,
+    validateTrigger,
     prefixCls: formPrefixCls,
     ...rest
   } = props;
@@ -116,6 +118,7 @@ const Form = <
     layout,
     store: formInstance,
     prefixCls,
+    validateTrigger,
     getFormElementId: (field: FieldKey) => getFormElementId(id, field),
   };
 

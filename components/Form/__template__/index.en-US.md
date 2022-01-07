@@ -22,6 +22,10 @@ Low-level use [b-validate](https://github.com/PengJiyuan/b-validate).
 
 ```js
 export interface RulesProps {
+  // when to validate
+  validateTrigger?: string | string[];
+  // When the verification fails, the error message will be displayed in the form of `error` or `warning`. Will not block form submission when set to `warning`
+  validateLevel?: 'error' | 'warning';
   required?: boolean;
   type?: string;
   length?: number;
