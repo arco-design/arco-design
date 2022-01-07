@@ -105,6 +105,62 @@ Array [
         th-TH
       </span>
     </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="locale"
+        type="radio"
+        value="fr-FR"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        fr-FR
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="locale"
+        type="radio"
+        value="es-ES"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        es-ES
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="locale"
+        type="radio"
+        value="de-DE"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        de-DE
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="locale"
+        type="radio"
+        value="it-IT"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        it-IT
+      </span>
+    </label>
   </div>,
   <br />,
   <div

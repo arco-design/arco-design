@@ -32,6 +32,10 @@ import koKR from '@arco-design/web-react/es/locale/ko-KR';
 import idID from '@arco-design/web-react/es/locale/id-ID';
 import thTH from '@arco-design/web-react/es/locale/th-TH';
 import zhHK from '@arco-design/web-react/es/locale/zh-HK';
+import frFR from '@arco-design/web-react/es/locale/fr-FR';
+import esES from '@arco-design/web-react/es/locale/es-ES';
+import deDE from '@arco-design/web-react/es/locale/de-DE';
+import itIT from '@arco-design/web-react/es/locale/it-IT';
 
 function Demo() {
   const [locale, setLocale] = useState('zh-CN');
@@ -52,6 +56,14 @@ function Demo() {
         return thTH;
       case 'zh-HK':
         return zhHK;
+      case 'fr-FR':
+        return frFR;
+      case 'es-ES':
+        return esES;
+      case 'de-DE':
+        return deDE;
+      case 'it-IT':
+        return itIT;
       default:
         return zhCN;
     }
@@ -61,7 +73,7 @@ function Demo() {
     <ConfigProvider locale={getLocale()}>
       <Radio.Group
         value={locale}
-        options={['zh-CN', 'en-US', 'zh-HK', 'ja-JP', 'ko-KR', 'id-ID', 'th-TH']}
+        options={['zh-CN', 'en-US', 'zh-HK', 'ja-JP', 'ko-KR', 'id-ID', 'th-TH', 'fr-FR', 'es-ES', 'de-DE', 'it-IT']}
         name="locale"
         type="button"
         mode="fill"
