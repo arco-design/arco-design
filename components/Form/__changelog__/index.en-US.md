@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🆕 Feature
+
+- The `Form` component supports the global setting of the triggering timing of the verification rule through the `validateTrigger` property([#400](https://github.com/arco-design/arco-design/pull/400))
+
 ## 2.27.0
 
 2021-12-17

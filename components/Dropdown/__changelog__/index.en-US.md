@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🐛 BugFix
+
+- Fix the bug that the width of `Menu` in `Dropdown` cannot be set by `style`.([#399](https://github.com/arco-design/arco-design/pull/399))
+
 ## 2.25.0
 
 2021-11-19

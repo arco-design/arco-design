@@ -2,6 +2,31 @@
 changelog: true
 ---
 
+## 2.28.0
+
+2022-01-07
+
+### 🆕 Feature
+
+- The limit parameter of the `Upload` component supports specifying that the upload node is disabled after the limit number is exceeded([#416](https://github.com/arco-design/arco-design/pull/416))
+- Support setting French, Italian, German, Spanish([#413](https://github.com/arco-design/arco-design/pull/413))
+- Support to modify css variable prefix through `arco-vars-prefix` less variable([#403](https://github.com/arco-design/arco-design/pull/403))
+- `Transfer` supports passing `InputProps` to `showSearch`.([#401](https://github.com/arco-design/arco-design/pull/401))
+- The `Form` component supports the global setting of the triggering timing of the verification rule through the `validateTrigger` property([#400](https://github.com/arco-design/arco-design/pull/400))
+
+### 🐛 BugFix
+
+- Fixed `Button` component icon not fully vertically centered at `mini` size.([#411](https://github.com/arco-design/arco-design/pull/411))
+- Fix the bug that some global configuration were lost in the preview mode of the `Image` component([#410](https://github.com/arco-design/arco-design/pull/410))
+- Fix the bug that Carousel's first page switch animation is abnormal when `currentIndex` is set to non-zero.([#409](https://github.com/arco-design/arco-design/pull/409))
+- Fix the bug that the `onChange` is not triggered when the `Input` component enters Chinese and selects the auto-completion option directly.([#407](https://github.com/arco-design/arco-design/pull/407))
+- Fix the bug that the width of `Menu` in `Dropdown` cannot be set by `style`.([#399](https://github.com/arco-design/arco-design/pull/399))
+- Fix the bug that the className is incorrect when the `Table` component updates the `column.className` asynchronously.([#398](https://github.com/arco-design/arco-design/pull/398))
+
+### 💅 Style
+
+- Fix `Divider` component text wrapping style error([#402](https://github.com/arco-design/arco-design/pull/402))
+
 ## 2.27.2
 
 2021-12-31

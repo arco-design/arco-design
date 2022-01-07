@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🐛 BugFix
+
+- Fix the bug that the `onChange` is not triggered when the `Input` component enters Chinese and selects the auto-completion option directly.([#407](https://github.com/arco-design/arco-design/pull/407))
+
 ## 2.23.0
 
 2021-09-27

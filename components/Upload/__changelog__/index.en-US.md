@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🆕 Feature
+
+- The limit parameter of the `Upload` component supports specifying that the upload node is disabled after the limit number is exceeded([#416](https://github.com/arco-design/arco-design/pull/416))
+
 ## 2.27.1
 
 2021-12-24

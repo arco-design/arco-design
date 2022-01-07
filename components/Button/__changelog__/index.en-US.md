@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🐛 BugFix
+
+- Fixed `Button` component icon not fully vertically centered at `mini` size.([#411](https://github.com/arco-design/arco-design/pull/411))
+
 ## 2.25.0
 
 2021-11-19

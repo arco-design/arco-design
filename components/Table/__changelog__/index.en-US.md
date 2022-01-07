@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🐛 BugFix
+
+- Fix the bug that the className is incorrect when the `Table` component updates the `column.className` asynchronously.([#398](https://github.com/arco-design/arco-design/pull/398))
+
 ## 2.27.2
 
 2021-12-31

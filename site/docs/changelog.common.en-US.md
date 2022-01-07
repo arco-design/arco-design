@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🆕 Feature
+
+- Support to modify css variable prefix through `arco-vars-prefix` less variable([#403](https://github.com/arco-design/arco-design/pull/403))
+
 ## 2.23.0
 
 2021-09-27

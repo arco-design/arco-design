@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🆕 Feature
+
+- `Transfer` supports passing `InputProps` to `showSearch`.([#401](https://github.com/arco-design/arco-design/pull/401))
+
 ## 2.21.0
 
 2021-08-20

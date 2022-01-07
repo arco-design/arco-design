@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🆕 Feature
+
+- Support setting French, Italian, German, Spanish([#413](https://github.com/arco-design/arco-design/pull/413))
+
 ## 2.23.0
 
 2021-09-27

@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🐛 BugFix
+
+- Fix the bug that some global configuration were lost in the preview mode of the `Image` component([#410](https://github.com/arco-design/arco-design/pull/410))
+
 ## 2.25.0
 
 2021-11-19

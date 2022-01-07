@@ -1,3 +1,11 @@
+## 2.28.0
+
+2022-01-07
+
+### 🐛 BugFix
+
+- Fix the bug that Carousel's first page switch animation is abnormal when `currentIndex` is set to non-zero.([#409](https://github.com/arco-design/arco-design/pull/409))
+
 ## 2.25.0
 
 2021-11-19
