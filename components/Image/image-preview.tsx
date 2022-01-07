@@ -76,7 +76,8 @@ function Preview(props: ImagePreviewProps, ref) {
     value: props.visible,
   });
 
-  const { getPrefixCls, locale } = useContext(ConfigContext);
+  const globalContext = useContext(ConfigContext);
+  const { getPrefixCls, locale } = globalContext;
   const prefixCls = getPrefixCls('image');
   const previewPrefixCls = `${prefixCls}-preview`;
   const classNames = cs(
@@ -370,7 +371,9 @@ function Preview(props: ImagePreviewProps, ref) {
 
   return (
     <Portal visible={visible} forceRender={false} getContainer={getContainer}>
-      <ConfigProvider getPopupContainer={() => refWrapper.current}>
+      {/* ConfigProvider need to inherit the outermost Context.
+      https://github.com/arco-design/arco-design/issues/387 */}
+      <ConfigProvider {...globalContext} getPopupContainer={() => refWrapper.current}>
         <div
           className={classNames}
           style={{
