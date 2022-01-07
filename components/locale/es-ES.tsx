@@ -10,6 +10,7 @@ const Calendar = {
   },
   month: {
     long: {
+      January: 'Enero',
       February: 'Febrero',
       March: 'Marzo',
       April: 'Abril',
@@ -39,7 +40,7 @@ const Calendar = {
   },
   week: {
     long: {
-      self: 'Week',
+      self: 'Semana',
       monday: 'Lunes',
       tuesday: 'Martes',
       wednesday: 'Miércoles',
@@ -49,7 +50,7 @@ const Calendar = {
       sunday: 'Domingo',
     },
     short: {
-      self: 'Week',
+      self: 'Semana',
       monday: 'Lun',
       tuesday: 'Mar',
       wednesday: 'Mié',
@@ -101,7 +102,7 @@ export default {
     goto: 'Ir a',
     page: 'Página',
     countPerPage: '/ página',
-    total: 'Total {0} ',
+    total: '{0} en total',
   },
   Popconfirm: {
     okText: 'Aceptar',
@@ -121,8 +122,8 @@ export default {
     now: 'Ahora',
   },
   Progress: {
-    success: 'Terminar',
-    error: 'Fallar',
+    success: 'Completado',
+    error: 'Fallido',
   },
   Upload: {
     start: 'Comienzo',
@@ -149,8 +150,8 @@ export default {
     fullScreen: 'Pantalla completa',
     rotateRight: 'Gira a la derecha',
     rotateLeft: 'Girar a la izquierda',
-    zoomIn: 'Agrandar',
-    zoomOut: 'Disminuir el zoom',
+    zoomIn: 'Acercar',
+    zoomOut: 'Alejar',
     originalSize: 'Tamaño original',
   },
 };
