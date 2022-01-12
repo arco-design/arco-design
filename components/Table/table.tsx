@@ -881,9 +881,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   return (
     <div ref={refTable} style={style} className={classNames}>
       <Spin element={loadingElement || <Spin />} {...loading}>
-        {pagination !== false && isPaginationTop && paginationEle}
+        {pagination !== false && pageData.length !== 0 && isPaginationTop && paginationEle}
         {renderTable()}
-        {pagination !== false && !isPaginationTop && paginationEle}
+        {pagination !== false && pageData.length !== 0 && !isPaginationTop && paginationEle}
       </Spin>
     </div>
   );
