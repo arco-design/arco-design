@@ -978,52 +978,6 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="arco-table-pagination"
-          >
-            <div
-              class="arco-pagination arco-pagination-size-default"
-            >
-              <ul
-                class="arco-pagination-list"
-              >
-                <li
-                  class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
-                >
-                  <svg
-                    class="arco-icon arco-icon-left"
-                    fill="none"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="4"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                  >
-                    <path
-                      d="M32 8.4 16.444 23.956 32 39.513"
-                    />
-                  </svg>
-                </li>
-                <li
-                  class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
-                >
-                  <svg
-                    class="arco-icon arco-icon-right"
-                    fill="none"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="4"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                  >
-                    <path
-                      d="m16 39.513 15.556-15.557L16 8.4"
-                    />
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1328,52 +1282,6 @@ Array [
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-        <div
-          class="arco-table-pagination"
-        >
-          <div
-            class="arco-pagination arco-pagination-size-default"
-          >
-            <ul
-              class="arco-pagination-list"
-            >
-              <li
-                class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
-              >
-                <svg
-                  class="arco-icon arco-icon-left"
-                  fill="none"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="4"
-                  viewBox="0 0 48 48"
-                  width="1em"
-                >
-                  <path
-                    d="M32 8.4 16.444 23.956 32 39.513"
-                  />
-                </svg>
-              </li>
-              <li
-                class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
-              >
-                <svg
-                  class="arco-icon arco-icon-right"
-                  fill="none"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="4"
-                  viewBox="0 0 48 48"
-                  width="1em"
-                >
-                  <path
-                    d="m16 39.513 15.556-15.557L16 8.4"
-                  />
-                </svg>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
