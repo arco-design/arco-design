@@ -38,13 +38,10 @@ jest.mock('resize-observer-polyfill', () => ({
 const LINE_STR_COUNT = 20;
 
 const _getComputedStyle = window.getComputedStyle;
-const _getHtmlOffsetHeight = Object.getOwnPropertyDescriptor(
-  HTMLElement.prototype,
-  'offsetHeight'
-).get;
+const _getHtmlScrollHeight = Object.getOwnPropertyDescriptor(Element.prototype, 'scrollHeight').get;
 describe('Typography', () => {
   beforeAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+    Object.defineProperty(Element.prototype, 'scrollHeight', {
       get() {
         const html = this.innerHTML;
         const text = html.replace(/<[^>]*>/g, '');
@@ -61,8 +58,8 @@ describe('Typography', () => {
   });
 
   afterAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
-      get: _getHtmlOffsetHeight,
+    Object.defineProperty(Element.prototype, 'scrollHeight', {
+      get: _getHtmlScrollHeight,
     });
     window.getComputedStyle = _getComputedStyle;
   });

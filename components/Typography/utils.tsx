@@ -85,7 +85,7 @@ export function measure(
   }
 
   function inRange() {
-    return mirrorElement.offsetHeight <= maxHeight;
+    return mirrorElement.scrollHeight <= maxHeight;
   }
 
   if (inRange()) {
