@@ -90,6 +90,7 @@ function Dropdown(baseProps: DropdownProps, _) {
     <Trigger
       ref={(ref) => (triggerRef.current = ref)}
       classNames="slideDynamicOrigin"
+      childrenPrefix={prefixCls}
       trigger={trigger}
       popup={renderPopup}
       mouseEnterDelay={400}
