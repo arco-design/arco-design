@@ -280,6 +280,7 @@ Array [
           title="10 条/页"
         >
           <input
+            autocomplete="off"
             class="arco-select-view-input arco-select-hidden"
             style="width:100%;pointer-events:none"
             tabindex="-1"
@@ -1050,6 +1051,7 @@ Array [
           title=""
         >
           <input
+            autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Cascader"
             style="width:100%;pointer-events:none"
@@ -1097,6 +1099,7 @@ Array [
           title=""
         >
           <input
+            autocomplete="off"
             class="arco-select-view-input"
             placeholder="Select"
             style="width:100%;pointer-events:none"
@@ -1143,6 +1146,7 @@ Array [
           title=""
         >
           <input
+            autocomplete="off"
             class="arco-tree-select-view-input"
             placeholder="TreeSelect"
             style="width:100%;pointer-events:none"

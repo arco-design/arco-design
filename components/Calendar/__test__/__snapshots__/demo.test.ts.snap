@@ -3154,6 +3154,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
             class="arco-select-view"
           >
             <input
+              autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               style="width:100%;pointer-events:none"
               tabindex="-1"
@@ -3195,6 +3196,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
             class="arco-select-view"
           >
             <input
+              autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               style="width:100%;pointer-events:none"
               tabindex="-1"

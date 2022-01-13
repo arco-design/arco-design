@@ -16,6 +16,7 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
           class="arco-input-tag-inner"
         >
           <input
+            autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default"
             placeholder="Input and press Enter"
             value=""
@@ -39,6 +40,7 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
           class="arco-input-tag-inner"
         >
           <input
+            autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled"
             disabled=""
             placeholder="Disabled"
@@ -65,6 +67,7 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
           class="arco-input-tag-inner"
         >
           <input
+            autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default"
             placeholder="Readonly"
             readonly=""
@@ -89,6 +92,7 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
           class="arco-input-tag-inner"
         >
           <input
+            autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default"
             placeholder="Error"
             value=""
@@ -257,6 +261,7 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
           style="display:inline-block"
         >
           <input
+            autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default"
             placeholder=""
             value=""
@@ -331,6 +336,7 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
         </span>
       </div>
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         placeholder=""
         value=""
@@ -445,6 +451,7 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
         </span>
       </div>
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         placeholder=""
         value=""
@@ -490,6 +497,7 @@ exports[`renders InputTag/demo/save-on-blur.md correctly 1`] = `
       class="arco-input-tag-inner"
     >
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         placeholder="Input and blur directly"
         value=""
@@ -634,6 +642,7 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
           </span>
         </div>
         <input
+          autocomplete="off"
           class="arco-input-tag-input arco-input-tag-input-size-default"
           placeholder=""
           value=""
@@ -680,6 +689,7 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
       class="arco-input-tag-inner"
     >
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         placeholder="Please input"
         value=""

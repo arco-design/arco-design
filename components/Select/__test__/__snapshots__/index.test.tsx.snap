@@ -10,6 +10,7 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-select-view-input"
       style="width:100%;pointer-events:none"
       tabindex="-1"
@@ -53,6 +54,7 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-select-view-input"
       style="width:100%;pointer-events:none"
       tabindex="-1"
@@ -96,6 +98,7 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-select-view-input"
       style="width:100%;pointer-events:none"
       tabindex="-1"

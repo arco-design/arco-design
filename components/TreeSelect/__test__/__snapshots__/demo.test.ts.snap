@@ -11,6 +11,7 @@ exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
     title="Trunk"
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       style="width:100%;pointer-events:none"
       tabindex="-1"
@@ -147,6 +148,7 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
               </span>
             </div>
             <input
+              autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default"
               placeholder=""
               value=""
@@ -324,6 +326,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
               </span>
             </div>
             <input
+              autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default"
               placeholder=""
               value=""
@@ -389,6 +392,7 @@ exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
     title="Leaf"
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       style="width:100%;pointer-events:none"
       tabindex="-1"
@@ -435,6 +439,7 @@ exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input"
       placeholder="Please select ..."
       style="width:100%;pointer-events:none"
@@ -481,6 +486,7 @@ exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
       title=""
     >
       <input
+        autocomplete="off"
         class="arco-tree-select-view-input"
         style="width:100%;pointer-events:none"
         tabindex="-1"
@@ -526,6 +532,7 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
     title="Leaf"
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       style="width:100%;pointer-events:none"
       tabindex="-1"
@@ -572,6 +579,7 @@ exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
     title="node2"
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       placeholder="node2"
       style="width:100%"
@@ -635,6 +643,7 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
               class="arco-input-tag-inner"
             >
               <input
+                autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default"
                 placeholder="Please select ..."
                 value=""
@@ -694,6 +703,7 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
               class="arco-input-tag-inner"
             >
               <input
+                autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default"
                 placeholder="Max display 2 tags"
                 value=""
@@ -745,6 +755,7 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input"
       placeholder="please select..."
       style="width:100%"
@@ -790,6 +801,7 @@ exports[`renders TreeSelect/demo/popupVisible.md correctly 1`] = `
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input"
       placeholder="hover to show options"
       style="width:100%;pointer-events:none"
@@ -842,6 +854,7 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
         title=""
       >
         <input
+          autocomplete="off"
           class="arco-tree-select-view-input"
           placeholder="Please select ..."
           style="width:100%"
@@ -888,6 +901,7 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
         title=""
       >
         <input
+          autocomplete="off"
           class="arco-tree-select-view-input"
           placeholder="Please select ..."
           style="width:100%"
@@ -1013,6 +1027,7 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
         title="Trunk"
       >
         <input
+          autocomplete="off"
           class="arco-tree-select-view-input arco-tree-select-hidden"
           style="width:100%;pointer-events:none"
           tabindex="-1"
@@ -1061,6 +1076,7 @@ exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
     title=""
   >
     <input
+      autocomplete="off"
       class="arco-tree-select-view-input"
       placeholder="请选择..."
       style="width:100%;pointer-events:none"
@@ -1106,6 +1122,7 @@ exports[`renders TreeSelect/demo/virtual.md correctly 1`] = `
       title=""
     >
       <input
+        autocomplete="off"
         class="arco-tree-select-view-input"
         style="width:100%;pointer-events:none"
         tabindex="-1"

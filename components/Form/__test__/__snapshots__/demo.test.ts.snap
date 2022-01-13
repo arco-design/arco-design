@@ -541,6 +541,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-cascader-view-input"
                     placeholder="please select"
                     style="width:100%"
@@ -693,6 +694,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-select-view-input"
                     placeholder="please select"
                     style="width:100%;pointer-events:none"
@@ -814,6 +816,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                           </span>
                         </div>
                         <input
+                          autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default"
                           placeholder=""
                           value=""
@@ -901,6 +904,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-tree-select-view-input"
                     placeholder="please select"
                     style="width:100%;pointer-events:none"
@@ -1950,6 +1954,7 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                         title=""
                       >
                         <input
+                          autocomplete="off"
                           class="arco-select-view-input"
                           placeholder="Please select ..."
                           style="width:100%;pointer-events:none"
@@ -2311,6 +2316,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-cascader-view-input"
                     disabled=""
                     placeholder="please select"
@@ -2465,6 +2471,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-select-view-input"
                     disabled=""
                     placeholder="please select"
@@ -2570,6 +2577,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                           </span>
                         </div>
                         <input
+                          autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled"
                           disabled=""
                           placeholder=""
@@ -4585,6 +4593,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                     title=""
                   >
                     <input
+                      autocomplete="off"
                       class="arco-select-view-input"
                       placeholder="please enter you gender"
                       style="width:100%;pointer-events:none"
@@ -4685,6 +4694,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-select-view-input"
                     placeholder="please select"
                     style="width:100%;pointer-events:none"
@@ -5895,6 +5905,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-cascader-view-input"
                     placeholder="please select"
                     style="width:100%"
@@ -6013,6 +6024,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-select-view-input"
                     placeholder="please select"
                     style="width:100%;pointer-events:none"
@@ -6090,6 +6102,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                         class="arco-input-tag-inner"
                       >
                         <input
+                          autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default"
                           placeholder="please select"
                           value=""
@@ -6162,6 +6175,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-tree-select-view-input"
                     placeholder="please select"
                     style="width:100%;pointer-events:none"
@@ -7128,6 +7142,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-cascader-view-input"
                     placeholder="Cascader..."
                     style="width:100%;pointer-events:none"
@@ -7224,6 +7239,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                         class="arco-input-tag-inner"
                       >
                         <input
+                          autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default"
                           placeholder="Select..."
                           value=""
@@ -7415,6 +7431,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                   title=""
                 >
                   <input
+                    autocomplete="off"
                     class="arco-tree-select-view-input"
                     placeholder="TreeSelect..."
                     style="width:100%;pointer-events:none"
