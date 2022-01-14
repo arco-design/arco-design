@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Typography` component was folded incorrectly in the browser zoom scene.([#441](https://github.com/arco-design/arco-design/pull/441))
+
 ## 2.27.0
 
 2021-12-17

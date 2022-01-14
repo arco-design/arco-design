@@ -1,3 +1,12 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 问题修复
+
+- 修复 `Form` 组件的 `scrollToFirstError` 属性在设置了 `noStyle` 的表单项上失效的 bug。([#444](https://github.com/arco-design/arco-design/pull/444))
+- 修复 `Form` 组件 `mini` 尺寸时，校验失败时，表单项出现抖动的样式问题。([#438](https://github.com/arco-design/arco-design/pull/438))
+
 ## 2.28.0
 
 2022-01-07

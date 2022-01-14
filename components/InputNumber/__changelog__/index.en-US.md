@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 💅 Style
+
+- Fix the problem that the button color is wrong when `InputNumber` is clicked([#443](https://github.com/arco-design/arco-design/pull/443))
+
 ## 2.27.0
 
 2021-12-17

@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fix the bug that the scroll position of the clicked anchor element is wrong when the `Anchor` component is set with a `scrollContainer`.([#446](https://github.com/arco-design/arco-design/pull/446))
+
 ## 2.25.1
 
 2021-11-26

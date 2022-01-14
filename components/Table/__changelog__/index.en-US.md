@@ -1,3 +1,15 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Pagination should not be displayed if the table has no data.([#435](https://github.com/arco-design/arco-design/pull/435))
+
+### 💅 Style
+
+- Fixed the style issue of the `Table` component when the size is `mini` when there is only one data.([#449](https://github.com/arco-design/arco-design/pull/449))
+
 ## 2.28.0
 
 2022-01-07

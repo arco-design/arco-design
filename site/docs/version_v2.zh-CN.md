@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.28.1
+
+2022-01-14
+
+### 💎 优化
+
+- `Select` 组件优化 `labelInValue` 时通过对象形式指定了初始值时的渲染表现。([#448](https://github.com/arco-design/arco-design/pull/448))
+- 禁用浏览器对于 `Select` 输入框的自动填充。([#439](https://github.com/arco-design/arco-design/pull/439))
+- `Dropdown` 为下拉框节点补充 `arco-dropdown` 的类名。([#437](https://github.com/arco-design/arco-design/pull/437))
+- `Select.Option` 允许不传入子节点。([#419](https://github.com/arco-design/arco-design/pull/419))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件 `disabledDate` 在父面板不准确的 bug。([#447](https://github.com/arco-design/arco-design/pull/447))
+- 修复 `Anchor` 组件在设置了 `scrollContainer` 时，点击锚点元素滚动位置不对的 bug。([#446](https://github.com/arco-design/arco-design/pull/446))
+- 修复 `Image.PreviewGroup` 在子节点的 `src` 更新后预览顺序出错的bug。([#445](https://github.com/arco-design/arco-design/pull/445))
+- 修复 `Form` 组件的 `scrollToFirstError` 属性在设置了 `noStyle` 的表单项上失效的 bug。([#444](https://github.com/arco-design/arco-design/pull/444))
+- 修复 `Typography` 组件在浏览器缩放场景下折叠出错的bug([#441](https://github.com/arco-design/arco-design/pull/441))
+- 修复`Tabs` 组件在子元素 `autofocus`情况下滚动出错的问题([#440](https://github.com/arco-design/arco-design/pull/440))
+- 修复 `Form` 组件 `mini` 尺寸时，校验失败时，表单项出现抖动的样式问题。([#438](https://github.com/arco-design/arco-design/pull/438))
+- 修复 `Input` 组件点击清除图标边缘区域未清除文本的 `bug`。([#438](https://github.com/arco-design/arco-design/pull/438))
+- 修复 `Input.Search` 在不同尺寸下，`searchButton` 尺寸未调整的问题。([#438](https://github.com/arco-design/arco-design/pull/438))
+- 如果表格没有数据，分页不应该展示 。([#435](https://github.com/arco-design/arco-design/pull/435))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件在尺寸为 `mini` 时，在数据只有一条时的样式问题。([#449](https://github.com/arco-design/arco-design/pull/449))
+- 修复 `InputNumber` 点击时按钮颜色错误的问题([#443](https://github.com/arco-design/arco-design/pull/443))
+
 ## 2.28.0
 
 2022-01-07

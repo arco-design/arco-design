@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件 `disabledDate` 在父面板不准确的 bug。([#447](https://github.com/arco-design/arco-design/pull/447))
+
 ## 2.26.2
 
 2021-12-10

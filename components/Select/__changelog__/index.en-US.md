@@ -1,3 +1,13 @@
+## 2.28.1
+
+2022-01-14
+
+### 💎 Optimization
+
+- `Select` optimizes the rendering behavior of `labelInValue` when the initial value is specified as an object.([#448](https://github.com/arco-design/arco-design/pull/448))
+- Disable browser autocomplete for `Select`.([#439](https://github.com/arco-design/arco-design/pull/439))
+- `Select.Option` allows no child nodes to be passed in.([#419](https://github.com/arco-design/arco-design/pull/419))
+
 ## 2.27.2
 
 2021-12-31

@@ -1,3 +1,12 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fixed a `bug` in the `Input` component where clicking the clear icon edge area did not clear the text.([#438](https://github.com/arco-design/arco-design/pull/438))
+- Fixed the problem that the size of `searchButton` was not adjusted under different sizes of `Input.Search`.([#438](https://github.com/arco-design/arco-design/pull/438))
+
 ## 2.28.0
 
 2022-01-07

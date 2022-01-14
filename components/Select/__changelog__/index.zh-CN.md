@@ -1,3 +1,13 @@
+## 2.28.1
+
+2022-01-14
+
+### 💎 性能优化
+
+- `Select` 组件优化 `labelInValue` 时通过对象形式指定了初始值时的渲染表现。([#448](https://github.com/arco-design/arco-design/pull/448))
+- 禁用浏览器对于 `Select` 输入框的自动填充。([#439](https://github.com/arco-design/arco-design/pull/439))
+- `Select.Option` 允许不传入子节点。([#419](https://github.com/arco-design/arco-design/pull/419))
+
 ## 2.27.2
 
 2021-12-31

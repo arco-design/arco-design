@@ -1,3 +1,12 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fixed the bug where the `scrollToFirstError` property of the `Form` component did not work on form items with `noStyle` set.([#444](https://github.com/arco-design/arco-design/pull/444))
+- Fixed a style issue where the form item jittered when the validation failed when the `Form` component had a `mini` size.([#438](https://github.com/arco-design/arco-design/pull/438))
+
 ## 2.28.0
 
 2022-01-07

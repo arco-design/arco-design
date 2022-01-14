@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fix the bug that the preview order of Image.PreviewGroup is wrong after the src of the child node is updated.([#445](https://github.com/arco-design/arco-design/pull/445))
+
 ## 2.28.0
 
 2022-01-07

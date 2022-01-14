@@ -1,3 +1,12 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 问题修复
+
+- 修复 `Input` 组件点击清除图标边缘区域未清除文本的 `bug`。([#438](https://github.com/arco-design/arco-design/pull/438))
+- 修复 `Input.Search` 在不同尺寸下，`searchButton` 尺寸未调整的问题。([#438](https://github.com/arco-design/arco-design/pull/438))
+
 ## 2.28.0
 
 2022-01-07

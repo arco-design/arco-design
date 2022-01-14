@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fixed a bug where the `disabledDate` of the `DatePicker` component was inaccurate in the parent panel.([#447](https://github.com/arco-design/arco-design/pull/447))
+
 ## 2.26.2
 
 2021-12-10

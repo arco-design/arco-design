@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 💎 Optimization
+
+- `Dropdown` supplements the class name of `arco-dropdown` for dropdown box nodes.([#437](https://github.com/arco-design/arco-design/pull/437))
+
 ## 2.28.0
 
 2022-01-07

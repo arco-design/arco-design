@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.28.1
+
+2022-01-14
+
+### 💎 Optimization
+
+- `Select` optimizes the rendering behavior of `labelInValue` when the initial value is specified as an object.([#448](https://github.com/arco-design/arco-design/pull/448))
+- Disable browser autocomplete for `Select`.([#439](https://github.com/arco-design/arco-design/pull/439))
+- `Dropdown` supplements the class name of `arco-dropdown` for dropdown box nodes.([#437](https://github.com/arco-design/arco-design/pull/437))
+- `Select.Option` allows no child nodes to be passed in.([#419](https://github.com/arco-design/arco-design/pull/419))
+
+### 🐛 BugFix
+
+- Fixed a bug where the `disabledDate` of the `DatePicker` component was inaccurate in the parent panel.([#447](https://github.com/arco-design/arco-design/pull/447))
+- Fix the bug that the scroll position of the clicked anchor element is wrong when the `Anchor` component is set with a `scrollContainer`.([#446](https://github.com/arco-design/arco-design/pull/446))
+- Fix the bug that the preview order of Image.PreviewGroup is wrong after the src of the child node is updated.([#445](https://github.com/arco-design/arco-design/pull/445))
+- Fixed the bug where the `scrollToFirstError` property of the `Form` component did not work on form items with `noStyle` set.([#444](https://github.com/arco-design/arco-design/pull/444))
+- Fixed the bug that the `Typography` component was folded incorrectly in the browser zoom scene.([#441](https://github.com/arco-design/arco-design/pull/441))
+- Fix the bug that the Tabs component scrolled incorrectly in the sub-element `autofocus` scene([#440](https://github.com/arco-design/arco-design/pull/440))
+- Fixed a style issue where the form item jittered when the validation failed when the `Form` component had a `mini` size.([#438](https://github.com/arco-design/arco-design/pull/438))
+- Fixed a `bug` in the `Input` component where clicking the clear icon edge area did not clear the text.([#438](https://github.com/arco-design/arco-design/pull/438))
+- Fixed the problem that the size of `searchButton` was not adjusted under different sizes of `Input.Search`.([#438](https://github.com/arco-design/arco-design/pull/438))
+- Pagination should not be displayed if the table has no data.([#435](https://github.com/arco-design/arco-design/pull/435))
+
+### 💅 Style
+
+- Fixed the style issue of the `Table` component when the size is `mini` when there is only one data.([#449](https://github.com/arco-design/arco-design/pull/449))
+- Fix the problem that the button color is wrong when `InputNumber` is clicked([#443](https://github.com/arco-design/arco-design/pull/443))
+
 ## 2.28.0
 
 2022-01-07

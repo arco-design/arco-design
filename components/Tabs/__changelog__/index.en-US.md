@@ -1,3 +1,11 @@
+## 2.28.1
+
+2022-01-14
+
+### 🐛 BugFix
+
+- Fix the bug that the Tabs component scrolled incorrectly in the sub-element `autofocus` scene([#440](https://github.com/arco-design/arco-design/pull/440))
+
 ## 2.25.1
 
 2021-11-26
