@@ -712,7 +712,9 @@ function Select(baseProps: SelectProps, ref) {
                   getValueForCallbackParameter(value, option, false) as ReactText | LabeledValue
                 );
               } else if (option) {
-                text = option.children;
+                if ('children' in option) {
+                  text = option.children;
+                }
               } else if (labelInValue && isObject(props.value)) {
                 text = (props.value as any).label;
               }

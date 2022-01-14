@@ -9,11 +9,11 @@ function Option(props: OptionProps, ref) {
     style,
     className,
     wrapperClassName,
-    children,
     disabled,
     prefixCls,
     isMultipleMode,
     value: propValue,
+    children: propChildren,
     valueActive,
     valueSelect,
     onMouseEnter,
@@ -22,7 +22,9 @@ function Option(props: OptionProps, ref) {
     ...rest
   } = props;
 
-  const value = 'value' in props ? propValue : children.toString();
+  const value = 'value' in props ? propValue : `${propChildren}`;
+  const childNode = 'children' in props ? propChildren : `${propValue}`;
+
   const isChecked = isMultipleMode
     ? (valueSelect as any[]).indexOf(value) !== -1
     : valueSelect === value;
@@ -35,7 +37,7 @@ function Option(props: OptionProps, ref) {
         [`${prefixCls}-option-selected`]: isChecked,
         [`${prefixCls}-option-disabled`]: disabled,
         [`${prefixCls}-option-hover`]: value === valueActive,
-        [`${prefixCls}-option-empty`]: !children,
+        [`${prefixCls}-option-empty`]: !childNode && childNode !== 0,
       },
       className
     ),
@@ -67,14 +69,14 @@ function Option(props: OptionProps, ref) {
           disabled={disabled}
           onChange={optionLabelProps.onClick}
         />
-        <span {...optionLabelProps}>{children??value}</span>
+        <span {...optionLabelProps}>{childNode}</span>
       </li>
     );
   }
 
   return (
     <li ref={ref} {...optionLabelProps}>
-      {children??value}
+      {childNode}
     </li>
   );
 }
