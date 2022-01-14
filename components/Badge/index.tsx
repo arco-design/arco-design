@@ -97,7 +97,7 @@ function Badge(baseProps: BadgeProps, ref) {
       return (
         <CSSTransition
           classNames="badge-zoom"
-          in={dot || color}
+          in={dot || !!color}
           timeout={200}
           appear
           mountOnEnter
