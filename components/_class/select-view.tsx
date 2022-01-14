@@ -364,6 +364,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
           className={cs(`${prefixCls}-view-input`, {
             [`${prefixCls}-hidden`]: !needShowInput,
           })}
+          autoComplete="off"
           {...inputProps}
         />
         <span className={cs(`${prefixCls}-view-value`, { [`${prefixCls}-hidden`]: needShowInput })}>

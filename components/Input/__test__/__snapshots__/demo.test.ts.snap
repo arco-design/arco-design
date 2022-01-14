@@ -113,6 +113,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                   title=".com"
                 >
                   <input
+                    autocomplete="off"
                     class="arco-select-view-input arco-select-hidden"
                     placeholder=".com"
                     style="width:100%"
@@ -223,6 +224,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             title="Beijing"
           >
             <input
+              autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
               style="width:100%"
@@ -281,6 +283,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             title="Beijing"
           >
             <input
+              autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
               style="width:100%"
@@ -368,6 +371,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             title="Beijing"
           >
             <input
+              autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
               style="width:100%"
@@ -1569,6 +1573,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
               title=""
             >
               <input
+                autocomplete="off"
                 class="arco-select-view-input"
                 placeholder="Please select"
                 style="width:100%;pointer-events:none"

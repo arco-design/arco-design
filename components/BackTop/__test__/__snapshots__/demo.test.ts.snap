@@ -268,6 +268,7 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
         title="linear"
       >
         <input
+          autocomplete="off"
           class="arco-select-view-input arco-select-hidden"
           style="width:100%;pointer-events:none"
           tabindex="-1"

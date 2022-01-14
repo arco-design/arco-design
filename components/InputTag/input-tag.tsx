@@ -334,6 +334,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             })}
             <CSSTransition key="input" timeout={CSS_TRANSITION_DURATION} classNames="zoomIn">
               <InputComponent
+                autoComplete="off"
                 size={size}
                 disabled={disabled || disableInput}
                 readOnly={readOnly}

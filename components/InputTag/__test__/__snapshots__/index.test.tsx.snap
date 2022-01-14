@@ -11,6 +11,7 @@ exports[`ConfigProvider componentConfig.InputTag default 1`] = `
       class="arco-input-tag-inner"
     >
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         value=""
       />
@@ -33,6 +34,7 @@ exports[`ConfigProvider componentConfig.InputTag set className globally 1`] = `
       class="arco-input-tag-inner"
     >
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         value=""
       />
@@ -55,6 +57,7 @@ exports[`ConfigProvider componentConfig.InputTag set className globally and comp
       class="arco-input-tag-inner"
     >
       <input
+        autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default"
         value=""
       />
