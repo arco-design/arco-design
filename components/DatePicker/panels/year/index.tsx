@@ -60,7 +60,7 @@ function YearPicker(props: InnerYearPickerProps) {
       return arr.map((_, j) => {
         return {
           name: startYear + i * 3 + j,
-          time: dayjs(`${startYear + i * 3 + j}`, 'YYYY'),
+          time: dayjs(`${startYear + i * 3 + j}`, 'YYYY').endOf('year'),
           isPrev: i === 0 && j === 0,
           isNext: i === 3 && j === 2,
         };
