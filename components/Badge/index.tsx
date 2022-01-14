@@ -93,7 +93,7 @@ function Badge(baseProps: BadgeProps, ref) {
         </span>
       );
     }
-    if ((dot || color) && count > 0) {
+    if (dot && count > 0) {
       return (
         <CSSTransition
           classNames="badge-zoom"
@@ -119,7 +119,13 @@ function Badge(baseProps: BadgeProps, ref) {
     return (
       <Count
         prefixCls={prefixCls}
-        className={cs(`${prefixCls}-number`, dotClassName)}
+        className={cs(
+          `${prefixCls}-number`,
+          {
+            [`${prefixCls}-color-${color}`]: color,
+          },
+          dotClassName
+        )}
         style={{ ...colorStyle, ...dotStyle }}
         maxCount={maxCount}
         count={count}
