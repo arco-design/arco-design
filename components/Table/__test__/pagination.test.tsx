@@ -36,4 +36,9 @@ describe('Table test', () => {
 
     expect(component.find('.arco-pagination')).toHaveLength(0);
   });
+
+  it('table has no data, the pagination should disappear', () => {
+    const component = mount(<Table data={[]} columns={columnsFilterCustom} />);
+    expect(component.find('.arco-pagination').exists()).toBeFalsy();
+  });
 });
