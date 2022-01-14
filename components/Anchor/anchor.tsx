@@ -175,19 +175,34 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       const offset = isNumber(boundary) ? boundary : 0;
       const actions = compute(element, { block });
       if (!actions.length) return;
-      const { el, top } = actions[0];
-      const targetTop = top - offset;
-      if (!animation) {
-        // Manually trigger scrolling as browser's default action is prevented when `props.hash` is false
-        if (!willChangeHash) {
-          el.scrollTop = targetTop;
-        }
-        return;
-      }
-      slide(el as HTMLElement, targetTop, () => {
+
+      let stopScroll = false;
+
+      const promises = actions.map(({ el, top }) => {
+        return new Promise((resolve) => {
+          if (!stopScroll) {
+            const targetTop = top - offset;
+            if (!animation) {
+              // Manually trigger scrolling as browser's default action is prevented when `props.hash` is false
+              if (!willChangeHash) {
+                el.scrollTop = targetTop;
+              }
+              return resolve(null);
+            }
+            slide(el as HTMLElement, targetTop, resolve);
+          }
+          if (!stopScroll && el === scrollContainer.current) {
+            stopScroll = true;
+          }
+
+          resolve(null);
+        });
+      });
+
+      isScrolling.current = true;
+      Promise.all(promises).then(() => {
         isScrolling.current = false;
       });
-      isScrolling.current = true;
     } catch (e) {
       console.error(e);
     }
