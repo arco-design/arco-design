@@ -11,11 +11,13 @@ import useShowFooter from './utils/hooks/useShowFooter';
 import useImageStatus from './utils/hooks/useImageStatus';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
+import { isNumber } from '../_util/is';
 import { PreviewGroupContext } from './previewGroupContext';
 import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
-type ImagePropsType = ImageProps & Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'>;
+type ImagePropsType = ImageProps &
+  Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'> & { _index?: number };
 
 let uuid = 0;
 
@@ -45,6 +47,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     previewProps = {} as ImagePreviewProps,
     alt,
     onClick,
+    _index,
     ...restProps
   } = props;
 
@@ -52,10 +55,15 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     previewGroup,
     setVisible: setGroupPreviewVisible,
     registerPreviewUrl,
-    setCurrentId,
+    setCurrentIndex,
   } = useContext(PreviewGroupContext);
   const previewSrc = previewProps.src || src;
-  const id = useMemo(() => uuid++, []);
+  const id = useMemo(() => {
+    if (isNumber(_index)) {
+      uuid = _index;
+    }
+    return uuid;
+  }, []);
 
   const [showFooter] = useShowFooter({ title, description, actions });
   const { isLoading, isError, isLoaded, setStatus } = useImageStatus('beforeLoad');
@@ -97,7 +105,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   function onImgClick(e) {
     if (preview && previewGroup) {
-      setCurrentId(id);
+      setCurrentIndex(id);
       setGroupPreviewVisible(true);
     } else if (preview) {
       togglePreviewVisible(true);

@@ -65,11 +65,9 @@ function Preview(props: ImagePreviewProps, ref) {
     escToExit = true,
   } = props;
 
-  const { previewGroup, previewUrlMap, currentId, setCurrentId, infinite } =
+  const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite } =
     useContext(PreviewGroupContext);
-  const mergedSrc = previewGroup ? previewUrlMap.get(currentId) : src;
-  const previewUrlIdList = Array.from(previewUrlMap.keys());
-  const currentIndex = previewUrlIdList.indexOf(currentId);
+  const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
 
   const [visible, setVisible] = useMergeValue(false, {
     defaultValue: defaultVisible,
@@ -133,14 +131,13 @@ function Preview(props: ImagePreviewProps, ref) {
 
   // Jump to image at the specified index
   function jumpTo(index: number) {
-    const previewListLen = previewUrlIdList.length;
+    const previewListLen = previewUrlMap.size;
     if (infinite) {
       index %= previewListLen;
       if (index < 0) index = previewListLen - Math.abs(index);
     }
     if (index !== currentIndex && index >= 0 && index <= previewListLen - 1) {
-      const nextId = previewUrlIdList[index];
-      setCurrentId(nextId);
+      setCurrentIndex(index);
     }
   }
 
@@ -464,7 +461,7 @@ function Preview(props: ImagePreviewProps, ref) {
                 )}
                 {previewGroup && (
                   <ImagePreviewArrow
-                    previewCount={previewUrlIdList.length}
+                    previewCount={previewUrlMap.size}
                     current={currentIndex}
                     infinite={infinite}
                     onPrev={onPrev}
