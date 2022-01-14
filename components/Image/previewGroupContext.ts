@@ -19,8 +19,8 @@ export interface PreviewGroupContextProps {
   previewGroup: boolean;
   previewUrlMap: Map<number, string>;
   infinite?: boolean;
-  currentId: number;
-  setCurrentId: (current: number) => void;
+  currentIndex: number;
+  setCurrentIndex: (current: number) => void;
   setPreviewUrlMap: (map: PreviewUrlMap) => void;
   registerPreviewUrl: RegisterPreviewUrl;
   visible: boolean;
@@ -31,8 +31,8 @@ export const PreviewGroupContext = createContext<PreviewGroupContextProps>({
   previewGroup: false,
   previewUrlMap: new Map(),
   infinite: true,
-  currentId: 0,
-  setCurrentId: () => null,
+  currentIndex: 0,
+  setCurrentIndex: () => null,
   setPreviewUrlMap: () => null,
   registerPreviewUrl: () => null,
   visible: false,

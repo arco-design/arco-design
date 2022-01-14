@@ -1,7 +1,6 @@
 import React, {
   forwardRef,
   PropsWithChildren,
-  useCallback,
   useEffect,
   useImperativeHandle,
   useMemo,
@@ -52,7 +51,6 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     setPreviewUrlMap(getPreviewUrlMap());
   }, [propPreviewUrlMap]);
 
-  const previewIdList = Array.from(previewUrlMap.keys());
   const canPreviewUrlMap = new Map(
     Array.from(previewUrlMap)
       .filter(([, { preview }]) => preview)
@@ -64,17 +62,10 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     defaultValue: defaultCurrent,
   });
 
-  const currentId = useMemo(() => previewIdList[currentIndex], [previewIdList, currentIndex]);
-  const setCurrentId = useCallback(
-    (nextId: number) => {
-      const nextIndex = previewIdList.indexOf(nextId);
-      if (nextIndex !== currentIndex) {
-        setCurrentIndex(nextIndex);
-        onChange && onChange(nextIndex);
-      }
-    },
-    [previewIdList, currentIndex]
-  );
+  useEffect(() => {
+    if (isFirstRender) return;
+    onChange && onChange(currentIndex);
+  }, [currentIndex]);
 
   function registerPreviewUrl(id: number, url: string, preview: boolean) {
     if (!propPreviewUrlMap) {
@@ -109,21 +100,46 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     onVisibleChange && onVisibleChange(visible, preVisible);
   };
 
+  const loopImageIndex = (children) => {
+    let index = 0;
+
+    const loop = (children) => {
+      return React.Children.map(children, (child) => {
+        if (child && child.props && child.type) {
+          const displayName = child.type.displayName;
+          if (displayName === 'Image') {
+            return React.cloneElement(child, { _index: index++ });
+          }
+        }
+
+        if (child && child.props && child.props.children) {
+          return React.cloneElement(child, {
+            children: loop(child.props.children),
+          });
+        }
+
+        return child;
+      });
+    };
+
+    return loop(children);
+  };
+
   return (
     <PreviewGroupContext.Provider
       value={{
         previewGroup: true,
         previewUrlMap: canPreviewUrlMap,
         infinite,
-        currentId,
-        setCurrentId,
+        currentIndex,
+        setCurrentIndex,
         setPreviewUrlMap,
         registerPreviewUrl,
         visible,
         setVisible,
       }}
     >
-      {children}
+      {loopImageIndex(children)}
       <ImagePreview
         ref={refPreview}
         src=""
