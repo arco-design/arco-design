@@ -76,7 +76,7 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
     ].map((month, index) => {
       return {
         name: CALENDAR_LOCALE.month.short[month],
-        time: dayjs(`${showYear}-${padStart(index + 1, 2, '0')}-01`),
+        time: dayjs(`${showYear}-${padStart(index + 1, 2, '0')}`, 'YYYY-MM').endOf('month'),
       };
     });
 
