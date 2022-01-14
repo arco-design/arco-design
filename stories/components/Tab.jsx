@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Tabs, Typography, Space } from '@self';
+import { Tabs, Typography, Input } from '@self';
+import { IconEdit } from '@self/icon';
 
-const { TabPane } = Tabs;
-let count = 20;
+const TabPane = Tabs.TabPane;
+
+let count = 10;
 
 const style = { textAlign: 'center', marginTop: 20 };
 
@@ -12,7 +14,29 @@ const initTabs = [...new Array(count)].map((x, i) => ({
   content: `${i + 1}`,
 }));
 
-function App() {
+const TabTitle = (props) => {
+  const { title } = props;
+  const [editing, setEditing] = React.useState(true);
+  return (
+    <div style={{ display: 'inline-flex', alignItems: 'center', height: 40 }}>
+      {editing ? (
+        <Input
+          autoFocus
+          style={{ width: 200, margin: '10px' }}
+          value={title}
+          onBlur={() => setEditing(false)}
+        />
+      ) : (
+        <div style={{ width: 200 }}>
+          {title}
+          <IconEdit style={{ marginLeft: 10 }} onClick={() => setEditing(true)} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+function Demo() {
   const [tabs, setTabs] = useState(initTabs);
   const [activeTab, setActiveTab] = useState('key2');
 
@@ -40,7 +64,7 @@ function App() {
   };
 
   return (
-    <Space direction="vertical" size={30}>
+    <div style={{ width: '600px' }}>
       <Tabs
         editable
         type="card-gutter"
@@ -48,59 +72,17 @@ function App() {
         onAddTab={handleAddTab}
         onDeleteTab={handleDeleteTab}
         onChange={setActiveTab}
-        type="capsule"
-        offsetAlign={1000}
-        style={{ width: '500px' }}
       >
         {tabs.map((x, i) => (
-          <TabPane destroyOnHide key={x.key} title={x.title}>
+          <TabPane destroyOnHide key={x.key} title={<TabTitle title={x.title} />}>
             <Typography.Paragraph
               style={style}
             >{`Content of Tab Panel ${x.content}`}</Typography.Paragraph>
           </TabPane>
         ))}
       </Tabs>
-
-      <Tabs
-        editable
-        type="card-gutter"
-        activeTab={activeTab}
-        onAddTab={handleAddTab}
-        onDeleteTab={handleDeleteTab}
-        onChange={setActiveTab}
-        offsetAlign={1000}
-        style={{ width: '500px' }}
-      >
-        {tabs.map((x, i) => (
-          <TabPane destroyOnHide key={x.key} title={x.title}>
-            <Typography.Paragraph
-              style={style}
-            >{`Content of Tab Panel ${x.content}`}</Typography.Paragraph>
-          </TabPane>
-        ))}
-      </Tabs>
-
-      <Tabs
-        editable
-        type="card-gutter"
-        activeTab={activeTab}
-        onAddTab={handleAddTab}
-        onDeleteTab={handleDeleteTab}
-        onChange={setActiveTab}
-        tabPosition="left"
-        offsetAlign={54}
-        style={{ height: '300px' }}
-      >
-        {tabs.map((x, i) => (
-          <TabPane destroyOnHide key={x.key} title={x.title}>
-            <Typography.Paragraph
-              style={style}
-            >{`Content of Tab Panel ${x.content}`}</Typography.Paragraph>
-          </TabPane>
-        ))}
-      </Tabs>
-    </Space>
+    </div>
   );
 }
 
-export default App;
+export default Demo;

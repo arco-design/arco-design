@@ -7,7 +7,7 @@ import TabHeaderTitle from './tab-title';
 import IconPlus from '../../../icon/react-icon/IconPlus';
 import cs from '../../_util/classNames';
 import { setTransformStyle } from '../../_util/style';
-import { getRectDiff } from '../utils';
+import { getRectDiff, updateScrollOffset } from '../utils';
 import { TabsContext } from '../tabs';
 import { TabsProps } from '..';
 import TabInk from './tab-ink';
@@ -180,7 +180,6 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
         headerDom: headerRef.current,
         headerWrapperDom: headerWrapperRef.current,
       });
-
       // 垂直方向的 offset 计算，不分type
       if (direction === 'vertical') {
         let nextOffset = currentOffset;
@@ -243,6 +242,8 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       }
       return nextOffset;
     };
+
+    updateScrollOffset(headerWrapperRef.current, direction);
     let offset = getActiveTabOffset();
     offset = getValidOffset(offset);
     setHeaderOffset(offset);
