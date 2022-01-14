@@ -12,8 +12,8 @@ export default {
     },
   ],
   versions: [
-    { version: '1.x', link: '#' },
-    { version, link: '#' },
+    { version: '1.x', link: 'https://arco.bytedance.net/react/1.x/docs/start' },
+    { version, link: 'https://arco.design' },
   ],
   defaultVersion: version,
   loginHref: `/login?redirectUrl=${location.href}`,

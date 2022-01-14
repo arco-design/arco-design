@@ -8,7 +8,7 @@ import WidgetMenu from './widget/Menu';
 import WidgetBody from './widget/Body';
 import DocAnchor from './widget/Anchor';
 import ThemeBox from './widget/ThemeBox';
-import { GlobalContext } from './context';
+import { GlobalContext, GlobalNoticeContext } from './context';
 
 const noAnchorPaths = [
   '/react',
@@ -29,6 +29,7 @@ function Components() {
 
   const { lang, locale } = useContext(GlobalContext);
   const routes = useMemo(() => getRoutes(lang, locale), [lang, locale]);
+  const { noticeHeight } = useContext(GlobalNoticeContext);
 
   const onResize = useCallback(() => {
     const windowWidth = window.innerWidth;
@@ -62,7 +63,7 @@ function Components() {
             setMenuCollapse(!menuCollapse);
           }}
         />
-        <div className="content-wrapper">
+        <div className="content-wrapper" style={{ marginTop: `${noticeHeight}px` }}>
           <WidgetBody lang={lang} routes={routes} />
           <Footer style={{ marginTop: 100 }} lang={lang} larkGroup />
         </div>

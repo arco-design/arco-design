@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { Menu, Badge } from '@arco-design/web-react';
 import { useHistory } from 'react-router-dom';
 import NProgress from 'nprogress';
+import { GlobalNoticeContext } from '../../context';
 import MenuHeader from '../MenuHeader';
 import { getPath } from '../../utils/i18n';
 
@@ -37,6 +38,7 @@ function getFlattenRoutes(routes) {
 
 function ACMenu(props) {
   const { routes, style, menuCollapse, lang } = props;
+  const { noticeHeight } = useContext(GlobalNoticeContext);
   const flattenRoutes = getFlattenRoutes(routes);
   const pathname = location.pathname;
   const defaultSelectedKeys = [pathname];
@@ -86,7 +88,11 @@ function ACMenu(props) {
       className="ac-menu-wrapper"
       style={{ ...style, width, minWidth: width, maxWidth: width, opacity: width === 0 ? 0 : 1 }}
     >
-      <div id="menu" className="ac-menu" style={{ left: menuCollapse ? -261 : -1 }}>
+      <div
+        id="menu"
+        className="ac-menu"
+        style={{ left: menuCollapse ? -261 : -1, paddingTop: `${noticeHeight}px` }}
+      >
         <MenuHeader />
         <div id="menu-inner" className="ac-menu-inner">
           <Menu

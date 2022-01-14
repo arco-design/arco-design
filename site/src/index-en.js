@@ -7,7 +7,7 @@ import { ConfigProvider } from '@arco-design/web-react';
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import App from './App';
 import ScrollToTop from './widget/scrollTop';
-import { GlobalContext } from './context';
+import { GlobalContext, GlobalNoticeContext } from './context';
 import locale from './locale/en';
 import tea from './utils/tea';
 import './style/index.less';
@@ -18,6 +18,7 @@ const requestDomain = isProduction ? `//${location.hostname}/` : '//localhost:30
 
 function Index() {
   const [user, setUser] = useState();
+  const [noticeHeight, setNoticeHeight] = useState(0);
 
   async function getUser() {
     try {
@@ -38,7 +39,14 @@ function Index() {
         <GlobalContext.Provider value={{ lang: 'en-US', locale, user }}>
           <ScrollToTop />
           <ConfigProvider locale={enUS}>
-            <App />
+            <GlobalNoticeContext.Provider
+              value={{
+                noticeHeight,
+                setNoticeHeight,
+              }}
+            >
+              <App />
+            </GlobalNoticeContext.Provider>
           </ConfigProvider>
         </GlobalContext.Provider>
       </Navbar.NavbarThemeProvider>
