@@ -6,6 +6,7 @@ import componentConfigTest from '../../../tests/componentConfigTest';
 import Button from '../../Button';
 import Select from '../select';
 import { Enter } from '../../_util/keycode';
+import { LabeledValue } from '../interface';
 
 mountTest(Select);
 componentConfigTest(Select, 'Select');
@@ -324,6 +325,35 @@ describe('Select', () => {
     );
 
     expect(wrapper.find('.arco-tag')).toHaveLength(2);
+
+    wrapper = mountSelect(
+      <Select
+        placeholder="Please select"
+        labelInValue
+        value={{ value: 1, label: 'One' }}
+        renderFormat={(_, labeledValue) => {
+          const { label, value } = labeledValue as LabeledValue;
+          return label || value;
+        }}
+      />
+    );
+
+    expect(wrapper.find('.arco-select-view-value').at(0).text()).toBe('One');
+
+    wrapper = mountSelect(
+      <Select
+        placeholder="Please select"
+        labelInValue
+        mode="multiple"
+        defaultValue={[{ value: 1, label: 'One' }]}
+        renderFormat={(_, labeledValue) => {
+          const { label, value } = labeledValue as LabeledValue;
+          return label || value;
+        }}
+      />
+    );
+
+    expect(wrapper.find('.arco-input-tag-tag-content').at(0).text()).toBe('One');
   });
 
   it('User creating option will not affect original options', () => {

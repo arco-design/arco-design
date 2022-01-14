@@ -327,13 +327,38 @@ function Select(baseProps: SelectProps, ref) {
     isEmpty = isEmptyValue(value, isMultipleMode)
   ): SelectProps['value'] => {
     if (labelInValue && !isEmpty) {
+      const getOptionLabel = (optionValue: OptionProps['value'], optionInfo: OptionInfo) => {
+        if (optionInfo) {
+          return optionInfo.children;
+        }
+
+        // https://github.com/arco-design/arco-design/issues/442
+        // Make sure parameter value has valid label if props.value is already set
+        const propValue =
+          'value' in props ? props.value : 'defaultValue' in props ? props.defaultValue : null;
+
+        // Multiple mode
+        if (Array.isArray(propValue)) {
+          for (const item of propValue) {
+            if (isObject(item) && item.value === optionValue) {
+              return item.label;
+            }
+          }
+        }
+        // Single mode
+        else if (isObject(propValue) && propValue.value === optionValue) {
+          return propValue.label;
+        }
+      };
+
       if (Array.isArray(value)) {
         return value.map((optionValue, index) => ({
           value: optionValue,
-          label: (option as OptionInfo[])[index]?.children,
+          label: getOptionLabel(optionValue, (option as OptionInfo[])[index]),
         }));
       }
-      return { value, label: (option as OptionInfo)?.children };
+
+      return { value, label: getOptionLabel(value, option as OptionInfo) };
     }
     return value;
   };
@@ -684,11 +709,11 @@ function Select(baseProps: SelectProps, ref) {
               if (isFunction(renderFormat)) {
                 text = renderFormat(
                   option || null,
-                  getValueForCallbackParameter(value, option) as ReactText | LabeledValue
+                  getValueForCallbackParameter(value, option, false) as ReactText | LabeledValue
                 );
               } else if (option) {
                 text = option.children;
-              } else if (labelInValue && typeof props.value === 'object') {
+              } else if (labelInValue && isObject(props.value)) {
                 text = (props.value as any).label;
               }
               return {
