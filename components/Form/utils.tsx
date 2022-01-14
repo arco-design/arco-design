@@ -83,3 +83,5 @@ export async function schemaValidate(field, value, _rules: RulesProps[]) {
     validate(rules[current]);
   });
 }
+
+export const ID_SUFFIX = '_input';

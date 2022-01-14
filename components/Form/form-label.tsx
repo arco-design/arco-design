@@ -1,5 +1,6 @@
 import React from 'react';
 import { isArray, isObject } from '../_util/is';
+import { ID_SUFFIX } from './utils';
 
 import { FormItemProps } from './interface';
 
@@ -32,7 +33,7 @@ const FormItemLabel: React.FC<FormItemLabelProps> = ({
   );
 
   return label ? (
-    <label htmlFor={htmlFor && `${htmlFor}_input`}>
+    <label htmlFor={htmlFor && `${htmlFor}${ID_SUFFIX}`}>
       {symbolPosition !== 'end' && symbolNode} {label}
       {symbolPosition === 'end' && <> {symbolNode}</>}
       {showColon ? ':' : ''}

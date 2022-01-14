@@ -14,7 +14,7 @@ import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import { NotifyType, StoreChangeInfo } from './store';
 import classNames from '../_util/classNames';
-import { isSyntheticEvent, schemaValidate } from './utils';
+import { isSyntheticEvent, schemaValidate, ID_SUFFIX } from './utils';
 
 function isFieldMath(field, fields) {
   const fieldObj = setWith({}, field, undefined, Object);
@@ -276,7 +276,7 @@ export default class Control<
     const child = React.Children.only(children) as ReactElement;
     const childProps: any = {
       // used by label
-      id: classNames(child.props?.id, { [`${id}_input`]: id }),
+      id: classNames(child.props?.id || { [`${id}${ID_SUFFIX}`]: id }),
     };
 
     this.getValidateTrigger().forEach((vt) => {
