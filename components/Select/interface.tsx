@@ -13,7 +13,7 @@ export type InputValueChangeReason =
   | 'tokenSeparator';
 
 export interface OptionInfo extends PropsWithChildren<OptionProps> {
-  child: ReactElement;
+  child?: ReactElement;
   _valid: boolean;
   _index: number;
   _origin: 'children' | 'options' | 'userCreatedOptions' | 'userCreatingOption';
@@ -216,7 +216,7 @@ export interface OptionProps
   extends Omit<HTMLAttributes<HTMLLIElement>, 'className' | 'onMouseEnter' | 'onMouseLeave'> {
   _key?: any;
   style?: CSSProperties;
-  children: ReactNode;
+  children?: ReactNode;
   prefixCls?: string;
   className?: string | string[];
   wrapperClassName?: string | string[];

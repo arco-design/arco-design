@@ -67,14 +67,14 @@ function Option(props: OptionProps, ref) {
           disabled={disabled}
           onChange={optionLabelProps.onClick}
         />
-        <span {...optionLabelProps}>{children}</span>
+        <span {...optionLabelProps}>{children??value}</span>
       </li>
     );
   }
 
   return (
     <li ref={ref} {...optionLabelProps}>
-      {children}
+      {children??value}
     </li>
   );
 }
