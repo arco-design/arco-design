@@ -12,7 +12,7 @@ import ACCard from '../src/widget/Card';
 <ACCard
   title="ArcoPro 最佳实践"
   description="使用 ArcoPro，快速构建现代网页。"
-  link="/pro"
+  link="https://pro.arco.design"
   icon="ArcoPro"
   buttonText="立即使用"
 />
