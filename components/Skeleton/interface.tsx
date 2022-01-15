@@ -48,6 +48,6 @@ export interface SkeletonTextProps {
   /** 文本行数 */
   rows?: number;
   /** 文本行宽度 */
-  width?: number | number[] | string | string[];
+  width?: number | string | (string | number)[];
   prefixCls?: string;
 }
