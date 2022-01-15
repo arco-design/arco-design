@@ -130,13 +130,12 @@ const TextItem = (
       </div>
       <div className={`${prefixCls}-list-item-operation`}>
         {!disabled && actionIcons.removeIcon !== null && (
-          <IconHover>
-            <span
-              className={`${prefixCls}-list-remove-icon`}
-              onClick={() => {
-                props.onRemove && props.onRemove(file);
-              }}
-            >
+          <IconHover
+            onClick={() => {
+              props.onRemove && props.onRemove(file);
+            }}
+          >
+            <span className={`${prefixCls}-list-remove-icon`}>
               {actionIcons.removeIcon || <IconDelete />}
             </span>
           </IconHover>
