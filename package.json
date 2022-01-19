@@ -142,7 +142,8 @@
     "icon/index.js",
     "icon/index.es.js",
     "icon/index.d.ts",
-    "icon/icons.json"
+    "icon/icons.json",
+    "icon/package.json"
   ],
   "_unpkg": true
 }
