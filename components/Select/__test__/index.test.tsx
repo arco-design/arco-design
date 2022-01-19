@@ -91,8 +91,6 @@ describe('Select', () => {
         key: Enter.key,
       });
 
-    wrapper.update();
-
     expect(wrapper.find('.arco-tag').exists()).toBeFalsy();
 
     await sleep(100);
