@@ -552,7 +552,7 @@ function Select(baseProps: SelectProps, ref) {
 
   const handleTokenSeparators = (str): boolean => {
     let hasSeparator = false;
-    if (isMultipleMode && isArray(tokenSeparators) && tokenSeparators.length) {
+    if (isMultipleMode && isArray(tokenSeparators) && tokenSeparators.length && allowCreate) {
       const rawValues = str.split(new RegExp(`[${tokenSeparators.join('')}]`));
       // 输入了分隔符的情况
       if (rawValues.length > 1) {
