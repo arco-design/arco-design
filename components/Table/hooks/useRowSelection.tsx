@@ -88,10 +88,10 @@ export default function useRowSelection<T>(
 
   const mergedSelectedRowKeys = getSet(controlledSelectedRowKeys || selectedRowKeys);
 
+  const flattenKeys = new Set<Key>(flattenData.map((d) => getRowKey(d)));
+
   function deleteUnExistKeys(keys: Key[]) {
-    return preserveSelectedRowKeys
-      ? keys
-      : keys.filter((k) => flattenData.findIndex((d) => getRowKey(d) === k) > -1);
+    return preserveSelectedRowKeys ? keys : keys.filter((k) => flattenKeys.has(k));
   }
 
   function onCheckAll(checked) {
@@ -103,8 +103,9 @@ export default function useRowSelection<T>(
         getSet(mergedSelectedRowKeys.concat(allSelectedRowKeys))
       );
     } else {
+      const tempSet = new Set(allSelectedRowKeys);
       newSelectedRowKeys = deleteUnExistKeys(
-        mergedSelectedRowKeys.filter((key) => allSelectedRowKeys.indexOf(key) === -1)
+        mergedSelectedRowKeys.filter((key) => !tempSet.has(key))
       );
     }
     if (!pureKeys) {

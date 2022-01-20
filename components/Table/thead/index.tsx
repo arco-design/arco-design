@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { useMemo, CSSProperties, ReactElement } from 'react';
 import { TheadProps } from '../interface';
 import Checkbox from '../../Checkbox';
 import Column from './column';
@@ -37,9 +37,10 @@ function THead<T>(props: TheadProps<T>) {
 
   const { columnTitle: expandColumnTitle } = expandProps;
 
-  const currentSelectedRowKeys = selectedRowKeys.filter(
-    (v) => allSelectedRowKeys.indexOf(v) !== -1
-  );
+  const currentSelectedRowKeys = useMemo(() => {
+    const tempSet = new Set(allSelectedRowKeys);
+    return selectedRowKeys.filter((v) => tempSet.has(v));
+  }, [selectedRowKeys, allSelectedRowKeys]);
 
   const selectionRowSpanProps = groupColumns.length > 1 ? { rowSpan: groupColumns.length } : {};
 
