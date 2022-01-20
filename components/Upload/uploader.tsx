@@ -212,7 +212,7 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
           type="file"
           accept={accept}
           multiple={multiple}
-          {...(directory ? { webkitdirectory: true } : {})}
+          {...(directory ? { webkitdirectory: 'true' } : {})}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const files = e.target.files;
             if (files) {
