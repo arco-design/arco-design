@@ -14,6 +14,7 @@ export default function useExpand<T>(
     onExpand,
     onExpandedRowsChange,
     childrenColumnName = 'children',
+    expandProps,
   } = props;
   const [expandedRowKeys, setExpandedRowKeys] = useState<Key[]>(getDefaultExpandedRowKeys());
   const mergedExpandedRowKeys = props.expandedRowKeys || expandedRowKeys;
@@ -27,6 +28,13 @@ export default function useExpand<T>(
     } else if (defaultExpandAllRows) {
       rows = flattenData
         .map((item, index) => {
+          if (
+            expandProps &&
+            'rowExpandable' in expandProps &&
+            typeof expandProps.rowExpandable === 'function'
+          ) {
+            return expandProps.rowExpandable(item);
+          }
           if (typeof expandedRowRender === 'function') {
             return expandedRowRender(item, index) && getRowKey(item);
           }

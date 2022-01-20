@@ -78,10 +78,7 @@ ReactDOM.render(
     columns={columns}
     data={data}
     expandedRowRender={(record) => {
-      if (record.key !== '4') {
-        return `This is No.${record.key} description.`;
-      }
-      return null;
+      return `This is No.${record.key} description.`;
     }}
     onExpand={(detail, expanded) => {
       console.log(detail, expanded);
@@ -89,7 +86,7 @@ ReactDOM.render(
     onExpandedRowsChange={(expandedRows) => {
       console.log(expandedRows);
     }}
-    expandProps={{ expandRowByClick: true }}
+    expandProps={{ expandRowByClick: true, rowExpandable: (record) => record.key !== '4' }}
   />,
   CONTAINER
 );
