@@ -565,7 +565,7 @@ function Select(baseProps: SelectProps, ref) {
           if (!optionInfoMap.get(v) || v === inputValue) {
             needUpdate = true;
           }
-          if (newValue.indexOf(v) === -1) {
+          if (newValue.indexOf(v) === -1 && (allowCreate || optionInfoMap.get(v))) {
             newValue.push(v);
             needUpdate = true;
           }

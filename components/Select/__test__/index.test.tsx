@@ -5,7 +5,7 @@ import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Button from '../../Button';
 import Select from '../select';
-import { Enter } from '../../_util/keycode';
+import { Enter, Tab } from '../../_util/keycode';
 import { LabeledValue } from '../interface';
 
 mountTest(Select);
@@ -69,6 +69,41 @@ describe('Select', () => {
       .simulate('change', { target: { value: 'c,' } });
 
     expect(wrapper.find('.arco-select-option')).toHaveLength(3);
+  });
+
+  it('tokenSeparators with allowCreate is false', async () => {
+    wrapper = mountSelect(
+      <Select
+        mode="multiple"
+        placeholder="Please select"
+        tokenSeparators={[',', '|', '/', '\n']}
+        allowCreate={false}
+        allowClear
+        style={{ width: 345 }}
+      />
+    );
+
+    wrapper
+      .find('input')
+      .at(0)
+      .simulate('change', { target: { value: 'a,b' } })
+      .simulate('keydown', {
+        key: Enter.key,
+      });
+
+    expect(wrapper.find('.arco-tag').exists()).toBeFalsy();
+
+    await sleep(100);
+
+    wrapper
+      .find('input')
+      .at(0)
+      .simulate('change', { target: { value: 'c' } })
+      .simulate('keydown', {
+        key: Tab.key,
+      });
+
+    expect(wrapper.find('.arco-tag').exists()).toBeFalsy();
   });
 
   it('OptGroup works', () => {
