@@ -749,6 +749,11 @@ export default function getRoutes(lang = 'zh', t) {
           path: 'pro/mock',
           component: lazyLoad(() => import(`../docs/pro/mock${suffix}.md`)),
         },
+        {
+          name: t['routes.permission'],
+          path: 'pro/permission',
+          component: lazyLoad(() => import(`../docs/pro/permission${suffix}.md`)),
+        },
       ],
     },
     {

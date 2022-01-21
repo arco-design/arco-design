@@ -124,6 +124,7 @@ export default {
   'routes.material.api': '开放接口',
   'routes.material.api-material': '物料查询',
   'routes.material.api-group': '团队查询',
+  'routes.permission': '权限控制',
   ...homeLocale,
   ...customerLocale,
 };
