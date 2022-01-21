@@ -103,11 +103,21 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
   eventProxy.current = { onWheel, onTouchStart };
 
   useEffect(() => {
-    on(headerWrapperRef.current, 'wheel', (e: WheelEvent) => {
-      eventProxy.current.onWheel(e);
-    });
-    on(headerWrapperRef.current, 'touchstart', (e: TouchEvent) => {
-      eventProxy.current.onTouchStart(e);
-    });
+    on(
+      headerWrapperRef.current,
+      'wheel',
+      (e: WheelEvent) => {
+        eventProxy.current.onWheel(e);
+      },
+      { passive: false }
+    );
+    on(
+      headerWrapperRef.current,
+      'touchstart',
+      (e: TouchEvent) => {
+        eventProxy.current.onTouchStart(e);
+      },
+      { passive: true }
+    );
   }, [headerWrapperRef.current]);
 }
