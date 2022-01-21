@@ -14813,7 +14813,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                 style="overflow-y:auto;overflow-anchor:none;min-width:100%;max-height:500px"
               >
                 <div
-                  style="height:160000px;position:relative;overflow:hidden;z-index:0"
+                  style="height:3200000px;position:relative;overflow:hidden;z-index:0"
                 >
                   <div
                     style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"

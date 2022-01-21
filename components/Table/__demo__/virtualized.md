@@ -45,7 +45,7 @@ const columns = [
   },
 ];
 
-const data = Array(5000)
+const data = Array(100000)
   .fill('')
   .map((_, index) => ({
     key: `${index}`,
