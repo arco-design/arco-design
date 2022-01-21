@@ -24,8 +24,9 @@ export const linkGithubRepositoryArcoCli = 'https://github.com/arco-design/arco-
 
 export const linkFigmaArcoComponent =
   'https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=8253%3A44145';
-export const linkFigmaArcoPro =
-  'https://www.figma.com/file/dp8okiO9c6tKdBmqv1m1R2/Arco-Design-Pro?node-id=515%3A5594';
+
+export const linkFigmaArcoPro = 'https://www.figma.com/community/file/1065157704393387989';
+
 export const linkFigmaArcoIcons =
   'https://www.figma.com/file/1ohmb16op4ogbI09ojLR5W/Arco-Design-Icons?node-id=0%3A1';
 
