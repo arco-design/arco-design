@@ -52,7 +52,7 @@ function ThemeBox({ lang = 'zh-CN' }) {
   async function fetchThemeList(current = currentPage) {
     setLoading(true);
     const data = await axios.get(
-      `${apiBasename}/themes/api/open/themes/list?pageSize=6&currentPage=${current}`
+      `${apiBasename}/themes/api/open/themes/list?pageSize=6&currentPage=${current}&depLibrary=@arco-design/web-react`
     );
     setLoading(false);
     setList(data.data.list);
@@ -211,7 +211,7 @@ function ThemeBox({ lang = 'zh-CN' }) {
                       type="text"
                       icon={<IconLink />}
                       size="mini"
-                      href={`https://arco.design/themes/design/${l.themeId}`}
+                      href={`${apiBasename}/themes/design/${l.themeId}`}
                       target="_blank"
                     >
                       {t.openInDesignLab}
