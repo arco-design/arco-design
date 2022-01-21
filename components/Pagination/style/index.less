@@ -1,10 +1,12 @@
 @import './token.less';
 
 .page-item(@size) {
+  @height: ~'pagination-size-@{size}';
+
   font-size: ~'@{pagination-size-@{size}-font-size}';
-  min-width: ~'@{pagination-size-@{size}}';
-  height: ~'@{pagination-size-@{size}}';
-  line-height: ~'@{pagination-size-@{size}}';
+  min-width: @@height;
+  height: @@height;
+  line-height: @@height - (@pagination-border-width * 2);
 
   &-prev,
   &-next {
