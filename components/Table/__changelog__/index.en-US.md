@@ -1,3 +1,16 @@
+## 2.28.2
+
+2022-01-21
+
+### 💎 Optimization
+
+- Optimize the `Table` component `expandedRowRender` to cause the problem of freezing.([#473](https://github.com/arco-design/arco-design/pull/473))
+- Optimized `Table` performance problem when selecting all data is larger than 10000 after enabling `virtualized`.([#472](https://github.com/arco-design/arco-design/pull/472))
+
+### 🐛 BugFix
+
+- Fixed the bug that `Table` component `size` did not work on `Pagination`.([#475](https://github.com/arco-design/arco-design/pull/475))
+
 ## 2.28.1
 
 2022-01-14

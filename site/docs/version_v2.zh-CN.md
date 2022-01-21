@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.28.2
+
+2022-01-21
+
+### 💎 优化
+
+- `InputTag` 阻止回车时提交表单。([#482](https://github.com/arco-design/arco-design/pull/482))
+- `Grid` 支持设置 `span` 为 0。([#480](https://github.com/arco-design/arco-design/pull/480))
+- 优化 `Table` 组件 `expandedRowRender` 会执行多次导致卡顿的问题。([#473](https://github.com/arco-design/arco-design/pull/473))
+- 优化 `Table` 在开启 `virtualized` 之后，大于 10000 条数据时全选会卡的性能问题。([#472](https://github.com/arco-design/arco-design/pull/472))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `size` 没有作用到分页的 bug。([#475](https://github.com/arco-design/arco-design/pull/475))
+- 修复 `Button` 内容为空时垂直方向无法对齐的问题。([#471](https://github.com/arco-design/arco-design/pull/471))
+- 修正 `Upload` 组件的 `webkitdirectory` 属性的类型。([#470](https://github.com/arco-design/arco-design/pull/470))
+- `Select` 修复 `allowCreate` 为 `false` 时，自动分词引入了新选项的问题。([#466](https://github.com/arco-design/arco-design/pull/466))
+- 修复上传组件文件列表项移除按钮的边缘点击不可用的问题([#457](https://github.com/arco-design/arco-design/pull/457))
+- 修复`Badge`组件里`CssTransition`传入`string`类型的`color`属性导致控制台waring的bug([#455](https://github.com/arco-design/arco-design/pull/455))
+
 ## 2.28.1
 
 2022-01-14

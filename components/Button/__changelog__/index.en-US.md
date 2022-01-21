@@ -1,3 +1,11 @@
+## 2.28.2
+
+2022-01-21
+
+### 🐛 BugFix
+
+- Fix the incorrectly style when  `Button` content is empty.([#471](https://github.com/arco-design/arco-design/pull/471))
+
 ## 2.28.0
 
 2022-01-07

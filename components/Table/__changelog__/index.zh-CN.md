@@ -1,3 +1,16 @@
+## 2.28.2
+
+2022-01-21
+
+### 💎 性能优化
+
+- 优化 `Table` 组件 `expandedRowRender` 会执行多次导致卡顿的问题。([#473](https://github.com/arco-design/arco-design/pull/473))
+- 优化 `Table` 在开启 `virtualized` 之后，大于 10000 条数据时全选会卡的性能问题。([#472](https://github.com/arco-design/arco-design/pull/472))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `size` 没有作用到分页的 bug。([#475](https://github.com/arco-design/arco-design/pull/475))
+
 ## 2.28.1
 
 2022-01-14

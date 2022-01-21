@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.28.2
+
+2022-01-21
+
+### 💎 Optimization
+
+- `InputTag` prevents form submission on `Enter` pressed.([#482](https://github.com/arco-design/arco-design/pull/482))
+- `Grid` supports setting `span` to 0.([#480](https://github.com/arco-design/arco-design/pull/480))
+- Optimize the `Table` component `expandedRowRender` to cause the problem of freezing.([#473](https://github.com/arco-design/arco-design/pull/473))
+- Optimized `Table` performance problem when selecting all data is larger than 10000 after enabling `virtualized`.([#472](https://github.com/arco-design/arco-design/pull/472))
+
+### 🐛 BugFix
+
+- Fixed the bug that `Table` component `size` did not work on `Pagination`.([#475](https://github.com/arco-design/arco-design/pull/475))
+- Fix the incorrectly style when  `Button` content is empty.([#471](https://github.com/arco-design/arco-design/pull/471))
+- Fix the type of the `webkitdirectory` attribute of the `Upload` component.([#470](https://github.com/arco-design/arco-design/pull/470))
+- `Select` fixes an issue where automatic word segmentation introduced new options when `allowCreate` was `false`.([#466](https://github.com/arco-design/arco-design/pull/466))
+- Fixed the edge click of the remove button not working in the Upload component upload list([#457](https://github.com/arco-design/arco-design/pull/457))
+- Fixed the bug of console waring caused by passing the `color` property of `string` type to `CssTransition` in the `Badge` component([#455](https://github.com/arco-design/arco-design/pull/455))
+
 ## 2.28.1
 
 2022-01-14

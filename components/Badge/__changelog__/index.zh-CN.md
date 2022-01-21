@@ -1,3 +1,11 @@
+## 2.28.2
+
+2022-01-21
+
+### 🐛 问题修复
+
+- 修复`Badge`组件里`CssTransition`传入`string`类型的`color`属性导致控制台waring的bug([#455](https://github.com/arco-design/arco-design/pull/455))
+
 ## 2.16.0
 
 2021-05-28

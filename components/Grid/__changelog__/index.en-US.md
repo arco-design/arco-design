@@ -1,3 +1,11 @@
+## 2.28.2
+
+2022-01-21
+
+### 💎 Optimization
+
+- `Grid` supports setting `span` to 0.([#480](https://github.com/arco-design/arco-design/pull/480))
+
 ## 2.26.0
 
 2021-12-03

@@ -1,3 +1,12 @@
+## 2.28.2
+
+2022-01-21
+
+### 🐛 BugFix
+
+- Fix the type of the `webkitdirectory` attribute of the `Upload` component.([#470](https://github.com/arco-design/arco-design/pull/470))
+- Fixed the edge click of the remove button not working in the Upload component upload list([#457](https://github.com/arco-design/arco-design/pull/457))
+
 ## 2.28.0
 
 2022-01-07

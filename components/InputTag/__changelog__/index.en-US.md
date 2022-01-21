@@ -1,3 +1,11 @@
+## 2.28.2
+
+2022-01-21
+
+### 💎 Optimization
+
+- `InputTag` prevents form submission on `Enter` pressed.([#482](https://github.com/arco-design/arco-design/pull/482))
+
 ## 2.27.0
 
 2021-12-17

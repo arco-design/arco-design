@@ -1,3 +1,11 @@
+## 2.28.2
+
+2022-01-21
+
+### 🐛 BugFix
+
+- `Select` fixes an issue where automatic word segmentation introduced new options when `allowCreate` was `false`.([#466](https://github.com/arco-design/arco-design/pull/466))
+
 ## 2.28.1
 
 2022-01-14
