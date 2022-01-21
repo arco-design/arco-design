@@ -561,10 +561,6 @@ function Select(baseProps: SelectProps, ref) {
         let needUpdate = false;
 
         splitValues.forEach((v) => {
-          // inputValue 会被临时扩展到 children 之中，如果此时输入分隔符需要将它固化到 userCreatedOptions 中
-          if (!optionInfoMap.get(v) || v === inputValue) {
-            needUpdate = true;
-          }
           if (newValue.indexOf(v) === -1 && (allowCreate || optionInfoMap.get(v))) {
             newValue.push(v);
             needUpdate = true;
