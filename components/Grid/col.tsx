@@ -45,9 +45,11 @@ function Col(baseProps: ColProps, ref) {
     const screenList = { xs, sm, md, lg, xl, xxl };
     Object.keys(screenList).forEach((screen) => {
       const screenValue = screenList[screen];
-      if (screenValue && isNumber(screenValue)) {
-        mergeClassName[`${prefixCls}-${screen}-${screenValue}`] = true;
-      } else if (screenValue && isObject(screenValue)) {
+      if (isNumber(screenValue)) {
+        if (screenValue >= 0) {
+          mergeClassName[`${prefixCls}-${screen}-${screenValue}`] = true;
+        }
+      } else if (isObject(screenValue)) {
         mergeClassName[`${prefixCls}-${screen}-${screenValue.span}`] = screenValue.span;
         mergeClassName[`${prefixCls}-${screen}-offset-${screenValue.offset}`] = screenValue.offset;
         mergeClassName[`${prefixCls}-${screen}-order-${screenValue.order}`] = screenValue.order;

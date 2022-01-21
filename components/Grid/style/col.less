@@ -6,91 +6,69 @@
   position: relative;
   box-sizing: border-box;
 
-  .span(@span, @adaptation) when (@span > 0) and (@adaptation = '') {
+  .span(@span, @adaptation) when (@span >= 0) {
     .span((@span - 1), @adaptation);
 
-    &-@{span} {
-      width: (100% / 24) * @span;
-      flex: 0 0 (100% / 24) * @span;
+    @usedAdaptation: if(@adaptation = '', ~'', ~'-@{adaptation}');
+
+    &@{usedAdaptation}-@{span} {
+      .col-style(@span) when (@span > 0) {
+        width: (100% / 24) * @span;
+        flex: 0 0 (100% / 24) * @span;
+      }
+
+      .col-style(@span) when (@span = 0) {
+        display: none;
+      }
+
+      .col-style(@span);
     }
   }
-  .span(@span, @adaptation) when (@span > 0) and (not(@adaptation = '')) {
-    .span((@span - 1), @adaptation);
 
-    &-@{adaptation}-@{span} {
-      width: (100% / 24) * @span;
-      flex: 0 0 (100% / 24) * @span;
+  .offset(@offset, @adaptation) when (@offset >= 0) {
+    .offset((@offset - 1), @adaptation);
+
+    @usedAdaptation: if(@adaptation = '', ~'', ~'-@{adaptation}');
+
+    &@{usedAdaptation}-offset-@{offset} {
+      margin-left: (100% / 24) * @offset;
+    }
+  }
+
+  .order(@order, @adaptation) when (@order >= 0) {
+    .order((@order - 1), @adaptation);
+
+    @usedAdaptation: if(@adaptation = '', ~'', ~'-@{adaptation}');
+
+    &@{usedAdaptation}-order-@{order} {
+      order: @order;
+    }
+  }
+
+  .pull(@count, @adaptation) when (@count >= 0) {
+    .pull((@count - 1), @adaptation);
+
+    @usedAdaptation: if(@adaptation = '', ~'', ~'-@{adaptation}');
+
+    &@{usedAdaptation}-pull-@{count} {
+      right: (100% / 24) * @count;
+    }
+  }
+
+  .push(@count, @adaptation) when (@count >= 0) {
+    .push((@count - 1), @adaptation);
+
+    @usedAdaptation: if(@adaptation = '', ~'', ~'-@{adaptation}');
+
+    &@{usedAdaptation}-push-@{count} {
+      left: (100% / 24) * @count;
     }
   }
 
   .span(24, '');
-
-  .offset(@offset, @adaptation) when (@offset > 0) and (@adaptation = '') {
-    .offset((@offset - 1), @adaptation);
-
-    &-offset-@{offset} {
-      margin-left: (100% / 24) * @offset;
-    }
-  }
-  .offset(@offset, @adaptation) when (@offset > 0) and (not(@adaptation = '')) {
-    .offset((@offset - 1), @adaptation);
-
-    &-@{adaptation}-offset-@{offset} {
-      margin-left: (100% / 24) * @offset;
-    }
-  }
-
   .offset(23, '');
-
-  .order(@order, @adaptation) when (@order > 0) and (@adaptation = '') {
-    .order((@order - 1), @adaptation);
-
-    &-order-@{order} {
-      order: @order;
-    }
-  }
-  .order(@order, @adaptation) when (@order > 0) and (not(@adaptation = '')) {
-    .order((@order - 1), @adaptation);
-
-    &-@{adaptation}-order-@{order} {
-      order: @order;
-    }
-  }
-
   .order(24, '');
-
-  .pull(@count, @adaptation) when (@count > 0) and (@adaptation = '') {
-    .pull((@count - 1), @adaptation);
-
-    &-pull-@{count} {
-      right: (100% / 24) * @count;
-    }
-  }
-  .pull(@count, @adaptation) when (@count > 0) and (not(@adaptation = '')) {
-    .pull((@count - 1), @adaptation);
-
-    &-@{adaptation}-pull-@{count} {
-      right: (100% / 24) * @count;
-    }
-  }
-
   .pull(24, '');
-
-  .push(@count, @adaptation) when (@count > 0) and (@adaptation = '') {
-    .push((@count - 1), @adaptation);
-
-    &-push-@{count} {
-      left: (100% / 24) * @count;
-    }
-  }
-  .push(@count, @adaptation) when (@count > 0) and (not(@adaptation = '')) {
-    .push((@count - 1), @adaptation);
-
-    &-@{adaptation}-push-@{count} {
-      left: (100% / 24) * @count;
-    }
-  }
-
   .push(24, '');
 
   // adaptation
