@@ -346,6 +346,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
                   delay: () => refDelay.current,
                 }}
                 onPressEnter={async (e) => {
+                  inputValue && e.preventDefault();
                   onPressEnter && onPressEnter(e);
                   await tryAddInputValueToTag();
                 }}
