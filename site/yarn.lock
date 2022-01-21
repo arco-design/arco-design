@@ -2,6 +2,129 @@
 # yarn lockfile v1
 
 
+"@algolia/autocomplete-core@1.5.0":
+  version "1.5.0"
+  resolved "http://bnpm.byted.org/@algolia/autocomplete-core/-/autocomplete-core-1.5.0.tgz#6c91c9de7748e9c103846828a58dfe92bd4d6689"
+  integrity sha512-E7+VJwcvwMM8vPeaVn7fNUgix8WHV8A1WUeHDi2KHemCaaGc8lvUnP3QnvhMxiDhTe7OpMEv4o2TBUMyDgThaw==
+  dependencies:
+    "@algolia/autocomplete-shared" "1.5.0"
+
+"@algolia/autocomplete-preset-algolia@1.5.0":
+  version "1.5.0"
+  resolved "http://bnpm.byted.org/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.5.0.tgz#61671f09c0c77133d9baf1356719f8378c48437a"
+  integrity sha512-iiFxKERGHkvkiupmrFJbvESpP/zv5jSgH714XRiP5LDvUHaYOo4GLAwZCFf2ef/L5tdtPBARvekn6k1Xf33gjA==
+  dependencies:
+    "@algolia/autocomplete-shared" "1.5.0"
+
+"@algolia/autocomplete-shared@1.5.0":
+  version "1.5.0"
+  resolved "http://bnpm.byted.org/@algolia/autocomplete-shared/-/autocomplete-shared-1.5.0.tgz#09580bc89408a2ab5f29e312120dad68f58019bd"
+  integrity sha512-bRSkqHHHSwZYbFY3w9hgMyQRm86Wz27bRaGCbNldLfbk0zUjApmE4ajx+ZCVSLqxvcUEjMqZFJzDsder12eKsg==
+
+"@algolia/cache-browser-local-storage@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/cache-browser-local-storage/-/cache-browser-local-storage-4.12.0.tgz#1f873e4f28a39d25b0a589ebe8f826509458e1fb"
+  integrity sha512-l+G560B6N1k0rIcOjTO1yCzFUbg2Zy2HCii9s03e13jGgqduVQmk79UUCYszjsJ5GPJpUEKcVEtAIpP7tjsXVA==
+  dependencies:
+    "@algolia/cache-common" "4.12.0"
+
+"@algolia/cache-common@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/cache-common/-/cache-common-4.12.0.tgz#c1111a4d3e9ba2d52cadb4523152580db0887293"
+  integrity sha512-2Z8BV+NX7oN7RmmQbLqmW8lfN9aAjOexX1FJjzB0YfKC9ifpi9Jl4nSxlnbU+iLR6QhHo0IfuyQ7wcnucCGCGQ==
+
+"@algolia/cache-in-memory@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/cache-in-memory/-/cache-in-memory-4.12.0.tgz#f4bdcbf8a6419f0166cfc7ef5594af871741e29e"
+  integrity sha512-b6ANkZF6vGAo+sYv6g25W5a0u3o6F549gEAgtTDTVA1aHcdWwe/HG/dTJ7NsnHbuR+A831tIwnNYQjRp3/V/Jw==
+  dependencies:
+    "@algolia/cache-common" "4.12.0"
+
+"@algolia/client-account@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/client-account/-/client-account-4.12.0.tgz#b28445b47e2abf81dc76982d16ba8458f5c99521"
+  integrity sha512-gzXN75ZydNheNXUN3epS+aLsKnB/PHFVlGUUjXL8WHs4lJP3B5FtHvaA/NCN5DsM3aamhuY5p0ff1XIA+Lbcrw==
+  dependencies:
+    "@algolia/client-common" "4.12.0"
+    "@algolia/client-search" "4.12.0"
+    "@algolia/transporter" "4.12.0"
+
+"@algolia/client-analytics@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/client-analytics/-/client-analytics-4.12.0.tgz#470f115517256c92a5605ae95762531c7906ec74"
+  integrity sha512-rO2cZCt00Opk66QBZb7IBGfCq4ZE3EiuGkXssf2Monb5urujy0r8CknK2i7bzaKtPbd2vlvhmLP4CEHQqF6SLQ==
+  dependencies:
+    "@algolia/client-common" "4.12.0"
+    "@algolia/client-search" "4.12.0"
+    "@algolia/requester-common" "4.12.0"
+    "@algolia/transporter" "4.12.0"
+
+"@algolia/client-common@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/client-common/-/client-common-4.12.0.tgz#402395e2cffad89188d76b83615acffb3e45e658"
+  integrity sha512-fcrFN7FBmxiSyjeu3sF4OnPkC1l7/8oyQ8RMM8CHpVY8cad6/ay35MrfRfgfqdzdFA8LzcBYO7fykuJv0eOqxw==
+  dependencies:
+    "@algolia/requester-common" "4.12.0"
+    "@algolia/transporter" "4.12.0"
+
+"@algolia/client-personalization@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/client-personalization/-/client-personalization-4.12.0.tgz#09c89c1558a91db3bfa60d17f7258ae63861352b"
+  integrity sha512-wCJfSQEmX6ZOuJBJGjy+sbXiW0iy7tMNAhsVMV9RRaJE4727e5WAqwFWZssD877WQ74+/nF/VyTaB1+wejo33Q==
+  dependencies:
+    "@algolia/client-common" "4.12.0"
+    "@algolia/requester-common" "4.12.0"
+    "@algolia/transporter" "4.12.0"
+
+"@algolia/client-search@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/client-search/-/client-search-4.12.0.tgz#ac099ee9f8de85ec204d840bcac734224c7d150c"
+  integrity sha512-ik6dswcTQtOdZN+8aKntI9X2E6Qpqjtyda/+VANiHThY9GD2PBXuNuuC2HvlF26AbBYp5xaSE/EKxn1DIiIJ4Q==
+  dependencies:
+    "@algolia/client-common" "4.12.0"
+    "@algolia/requester-common" "4.12.0"
+    "@algolia/transporter" "4.12.0"
+
+"@algolia/logger-common@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/logger-common/-/logger-common-4.12.0.tgz#0f9dbe7ace88194b395a2cb958490eb47ac91f8e"
+  integrity sha512-V//9rzLdJujA3iZ/tPhmKR/m2kjSZrymxOfUiF3024u2/7UyOpH92OOCrHUf023uMGYHRzyhBz5ESfL1oCdh7g==
+
+"@algolia/logger-console@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/logger-console/-/logger-console-4.12.0.tgz#a40edeb989bf0d7ff79d989171dad64cd0f01225"
+  integrity sha512-pHvoGv53KXRIJHLk9uxBwKirwEo12G9+uo0sJLWESThAN3v5M+ycliU1AkUXQN8+9rds2KxfULAb+vfyfBKf8A==
+  dependencies:
+    "@algolia/logger-common" "4.12.0"
+
+"@algolia/requester-browser-xhr@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/requester-browser-xhr/-/requester-browser-xhr-4.12.0.tgz#64e8e4d4f0724e477421454215195400351cfe61"
+  integrity sha512-rGlHNMM3jIZBwSpz33CVkeXHilzuzHuFXEEW1icP/k3KW7kwBrKFJwBy42RzAJa5BYlLsTCFTS3xkPhYwTQKLg==
+  dependencies:
+    "@algolia/requester-common" "4.12.0"
+
+"@algolia/requester-common@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/requester-common/-/requester-common-4.12.0.tgz#b4d96f3cbd73206b6042e523d414a34cc005c2e2"
+  integrity sha512-qgfdc73nXqpVyOMr6CMTx3nXvud9dP6GcMGDqPct+fnxogGcJsp24cY2nMqUrAfgmTJe9Nmy7Lddv0FyHjONMg==
+
+"@algolia/requester-node-http@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/requester-node-http/-/requester-node-http-4.12.0.tgz#8d8e1b67edbaec8e8e8b8c7c606945b969667267"
+  integrity sha512-mOTRGf/v/dXshBoZKNhMG00ZGxoUH9QdSpuMKYnuWwIgstN24uj3DQx+Ho3c+uq0TYfq7n2v71uoJWuiW32NMQ==
+  dependencies:
+    "@algolia/requester-common" "4.12.0"
+
+"@algolia/transporter@4.12.0":
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/@algolia/transporter/-/transporter-4.12.0.tgz#e375e10731df95f1be3593b32e86b5c6452cc213"
+  integrity sha512-MOQVHZ4BcBpf3LtOY/3fqXHAcvI8MahrXDHk9QrBE/iGensQhDiZby5Dn3o2JN/zd9FMnVbdPQ8gnkiMwZiakQ==
+  dependencies:
+    "@algolia/cache-common" "4.12.0"
+    "@algolia/logger-common" "4.12.0"
+    "@algolia/requester-common" "4.12.0"
+
 "@antv/adjust@^0.2.1":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@antv/adjust/-/adjust-0.2.3.tgz#c3884a680c3264cc125d7f2ab5398e8a1c0b9401"
@@ -225,13 +348,14 @@
   dependencies:
     classnames "^2.2.6"
 
-"@arco-design/arco-site-navbar@^1.12.3":
-  version "1.12.3"
-  resolved "https://registry.npmjs.org/@arco-design/arco-site-navbar/-/arco-site-navbar-1.12.3.tgz#de937824b8cd0f756b75eacb561e861daed933c8"
-  integrity sha512-t9Gp9W1k7C/7zwhC/2BL5gjk7VxzXtpr9Kl4Dju0F87JTA4CnvNR7+vXjyyDgK1dC2mBeu2FAz+hB02VOj7Acw==
+"@arco-design/arco-site-navbar@^1.13.2":
+  version "1.13.2"
+  resolved "http://bnpm.byted.org/@arco-design/arco-site-navbar/-/arco-site-navbar-1.13.2.tgz#4a8e1552fdf54bfa5d039ea7c2217f690b345876"
+  integrity sha512-MJO7iDtQ5wwWPuS2RcgntHnsVwAaeVMadogf4XlouizsVPsFau9GoauqgtOJ52991v1OZgUpG/jwD3nypXDOUQ==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-design/arco-site-utils" "^1.0.1"
+    "@docsearch/react" "^3.0.0-alpha.42"
     axios "^0.21.1"
     classnames "^2.2.6"
     dayjs "^1.10.4"
@@ -500,6 +624,21 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
+"@docsearch/css@3.0.0-alpha.42":
+  version "3.0.0-alpha.42"
+  resolved "http://bnpm.byted.org/@docsearch/css/-/css-3.0.0-alpha.42.tgz#deb6049e999d6ca9451eba4793cb5b6da28c8773"
+  integrity sha512-AGwI2AXUacYhVOHmYnsXoYDJKO6Ued2W+QO80GERbMLhC7GH5tfvtW5REs/s7jSdcU3vzFoxT8iPDBCh/PkrlQ==
+
+"@docsearch/react@^3.0.0-alpha.42":
+  version "3.0.0-alpha.42"
+  resolved "http://bnpm.byted.org/@docsearch/react/-/react-3.0.0-alpha.42.tgz#1d22a2b05779f24d090ff8d7ff2699e4d50dff5c"
+  integrity sha512-1aOslZJDxwUUcm2QRNmlEePUgL8P5fOAeFdOLDMctHQkV2iTja9/rKVbkP8FZbIUnZxuuCCn8ErLrjD/oXWOag==
+  dependencies:
+    "@algolia/autocomplete-core" "1.5.0"
+    "@algolia/autocomplete-preset-algolia" "1.5.0"
+    "@docsearch/css" "3.0.0-alpha.42"
+    algoliasearch "^4.0.0"
+
 "@icons/material@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
@@ -602,6 +741,26 @@ agentkeepalive@^3.3.0:
   integrity sha512-e0L/HNe6qkQ7H19kTlRRqUibEAwDK5AFk6y3PtMsuut2VAH6+Q4xZml1tNDJD7kSAyqmbG/K08K5WEJYtUrSlQ==
   dependencies:
     humanize-ms "^1.2.1"
+
+algoliasearch@^4.0.0:
+  version "4.12.0"
+  resolved "http://bnpm.byted.org/algoliasearch/-/algoliasearch-4.12.0.tgz#30f2619b6e3a5b79b6aa0f18ab66fbce88240aba"
+  integrity sha512-fZOMMm+F3Bi5M/MoFIz7hiuyCitJza0Hu+r8Wzz4LIQClC6YGMRq7kT6NNU1fSSoFDSeJIwMfedbbi5G9dJoVQ==
+  dependencies:
+    "@algolia/cache-browser-local-storage" "4.12.0"
+    "@algolia/cache-common" "4.12.0"
+    "@algolia/cache-in-memory" "4.12.0"
+    "@algolia/client-account" "4.12.0"
+    "@algolia/client-analytics" "4.12.0"
+    "@algolia/client-common" "4.12.0"
+    "@algolia/client-personalization" "4.12.0"
+    "@algolia/client-search" "4.12.0"
+    "@algolia/logger-common" "4.12.0"
+    "@algolia/logger-console" "4.12.0"
+    "@algolia/requester-browser-xhr" "4.12.0"
+    "@algolia/requester-common" "4.12.0"
+    "@algolia/requester-node-http" "4.12.0"
+    "@algolia/transporter" "4.12.0"
 
 ansi-align@^2.0.0:
   version "2.0.0"
