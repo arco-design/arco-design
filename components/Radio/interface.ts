@@ -85,3 +85,15 @@ export interface RadioGroupProps {
    */
   options?: (string | number | { label: ReactNode; value: any; disabled?: boolean })[];
 }
+
+/**
+ * @title RadioGroupContext
+ */
+export interface RadioGroupContextProps {
+  type: 'radio' | 'button';
+  value?: any;
+  disabled?: boolean;
+  group?: boolean;
+  name?: RadioGroupProps['name'];
+  onChangeValue?: (value: any, event: ChangeEvent) => void;
+}

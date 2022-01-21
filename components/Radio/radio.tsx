@@ -91,6 +91,8 @@ Radio.displayName = 'Radio';
 
 Radio.Group = Group;
 
+Radio.GroupContext = RadioGroupContext;
+
 export default Radio;
 
 export { RadioProps };
