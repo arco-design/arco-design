@@ -25,7 +25,7 @@ ReactDOM.render(
       shortcuts={[
         {
           text: 'yesterday',
-          value: () => dayjs().add(1, 'day')
+          value: () => dayjs().subtract(1, 'day')
         },
         {
           text: 'today',
