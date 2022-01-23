@@ -18,11 +18,11 @@ export interface TimelineProps {
    */
   direction?: 'horizontal' | 'vertical';
   /**
-   * @zh 时间轴的展示类型：时间轴在左侧，时间轴在右侧, 交替出现。
+   * @zh 时间轴的展示类型：时间轴在左侧/右侧(垂直方向)、上方/下方（水平方向），或交替出现。
    * @en The display mode of Timeline
-   * @defaultValue left
+   * @defaultValue left(vertical) | top(horizontal)
    */
-  mode?: 'left' | 'right' | 'alternate';
+  mode?: 'left' | 'right' | 'top' | 'bottom' | 'alternate' ;
   /**
    * @zh 是否展示幽灵节点，设置为 true 时候只展示幽灵节点。传入ReactNode时，会作为节点内容展示。
    * @en Whether to display ghost nodes. When set to true, only ghost nodes are displayed. When passed to ReactNode, it will be displayed as node content
