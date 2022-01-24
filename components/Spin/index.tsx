@@ -9,7 +9,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 
 function Spin(baseProps: SpinProps, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
-  const props = useMergeProps<SpinProps>(baseProps, {}, componentConfig?.Spin);
+  const props = useMergeProps<SpinProps>(baseProps, { loading: true }, componentConfig?.Spin);
   const {
     style,
     className,
@@ -75,12 +75,12 @@ function Spin(baseProps: SpinProps, ref) {
             </div>
           )}
         </>
-      ) : (
+      ) : _usedLoading ? (
         <>
           {loadingIcon}
           {tip ? <div className={`${prefixCls}-tip`}>{tip}</div> : null}
         </>
-      )}
+      ) : null}
     </div>
   );
 }
