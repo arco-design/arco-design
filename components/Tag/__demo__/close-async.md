@@ -25,7 +25,7 @@ ReactDOM.render(
           if (Math.random() >= 0.5) {
             resolve();
           } else {
-            Message.error('Close filed');
+            Message.error('Close failed');
             reject();
           }
         }, 3000);
