@@ -271,7 +271,7 @@ exports[`renders Upload/demo/directory.md correctly 1`] = `
       <input
         style="display:none"
         type="file"
-        webkitdirectory="true"
+        webkitdirectory="webkitdirectory"
       />
       <div
         class="arco-upload-trigger"
