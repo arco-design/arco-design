@@ -2,7 +2,7 @@
 
 exports[`renders Spin/demo/basic.md correctly 1`] = `
 <div
-  class="arco-spin"
+  class="arco-spin arco-spin-inline-block"
 >
   <span
     class="arco-spin-icon"
@@ -26,7 +26,7 @@ exports[`renders Spin/demo/basic.md correctly 1`] = `
 
 exports[`renders Spin/demo/custom-icon.md correctly 1`] = `
 <div
-  class="arco-spin arco-spin-loading"
+  class="arco-spin arco-spin-inline-block arco-spin-loading"
 >
   <div
     class="arco-spin-children"
@@ -102,7 +102,7 @@ Array [
     </span>
   </button>,
   <div
-    class="arco-spin"
+    class="arco-spin arco-spin-inline-block"
   >
     <div
       class="arco-spin-children"
@@ -143,7 +143,7 @@ Array [
 
 exports[`renders Spin/demo/dot.md correctly 1`] = `
 <div
-  class="arco-spin"
+  class="arco-spin arco-spin-inline-block"
 >
   <span
     class="arco-spin-icon"
@@ -181,7 +181,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
     style="margin-right:40px"
   >
     <div
-      class="arco-spin"
+      class="arco-spin arco-spin-inline-block"
     >
       <span
         class="arco-spin-icon"
@@ -208,7 +208,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
     style="margin-right:40px"
   >
     <div
-      class="arco-spin"
+      class="arco-spin arco-spin-inline-block"
     >
       <span
         class="arco-spin-icon"
@@ -234,7 +234,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-spin"
+      class="arco-spin arco-spin-inline-block"
     >
       <span
         class="arco-spin-icon"
@@ -278,7 +278,7 @@ Array [
       style="margin-right:8px"
     >
       <div
-        class="arco-spin arco-spin-loading"
+        class="arco-spin arco-spin-inline-block arco-spin-loading"
       >
         <div
           class="arco-spin-children"
@@ -343,7 +343,7 @@ Array [
       class="arco-space-item"
     >
       <div
-        class="arco-spin arco-spin-loading"
+        class="arco-spin arco-spin-inline-block arco-spin-loading"
       >
         <div
           class="arco-spin-children"
@@ -406,7 +406,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-spin arco-spin-loading"
+    class="arco-spin arco-spin-inline-block arco-spin-loading"
     style="display:block;margin-top:8px"
   >
     <div
@@ -471,7 +471,7 @@ Array [
 
 exports[`renders Spin/demo/tip.md correctly 1`] = `
 <div
-  class="arco-spin arco-spin-loading"
+  class="arco-spin arco-spin-inline-block arco-spin-loading"
 >
   <div
     class="arco-spin-children"

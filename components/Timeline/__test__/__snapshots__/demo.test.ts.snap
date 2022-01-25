@@ -362,7 +362,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
             class="arco-timeline-item-dot-custom"
           >
             <div
-              class="arco-spin"
+              class="arco-spin arco-spin-inline-block"
             >
               <span
                 class="arco-spin-icon"
@@ -1700,7 +1700,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
             class="arco-timeline-item-dot-custom"
           >
             <div
-              class="arco-spin"
+              class="arco-spin arco-spin-inline-block"
             >
               <span
                 class="arco-spin-icon"

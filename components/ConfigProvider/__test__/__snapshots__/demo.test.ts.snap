@@ -880,7 +880,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       class="arco-table arco-table-size-default arco-table-hover"
     >
       <div
-        class="arco-spin"
+        class="arco-spin arco-spin-inline-block"
       >
         <div
           class="arco-spin-children"
@@ -1188,7 +1188,7 @@ Array [
     style="margin-top:20px"
   >
     <div
-      class="arco-spin"
+      class="arco-spin arco-spin-inline-block"
     >
       <div
         class="arco-spin-children"
@@ -1327,7 +1327,7 @@ Array [
     class="arco-table arco-table-size-default arco-table-border arco-table-hover"
   >
     <div
-      class="arco-spin"
+      class="arco-spin arco-spin-inline-block"
     >
       <div
         class="arco-spin-children"

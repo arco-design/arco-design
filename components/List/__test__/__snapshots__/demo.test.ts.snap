@@ -2299,7 +2299,7 @@ exports[`renders List/demo/scrollLoad.md correctly 1`] = `
         class="arco-list-item arco-list-scroll-loading"
       >
         <div
-          class="arco-spin arco-spin-loading"
+          class="arco-spin arco-spin-inline-block arco-spin-loading"
         >
           <span
             class="arco-spin-icon"

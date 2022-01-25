@@ -4752,7 +4752,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
         style="border-radius:0"
       >
         <div
-          class="arco-spin"
+          class="arco-spin arco-spin-inline-block"
         >
           <div
             class="arco-spin-children"
@@ -5357,7 +5357,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
         style="border-radius:0"
       >
         <div
-          class="arco-spin"
+          class="arco-spin arco-spin-inline-block"
         >
           <div
             class="arco-spin-children"
