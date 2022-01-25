@@ -42,4 +42,10 @@ export interface SpinProps {
    * @en Whether to use dot type animation
    */
   dot?: boolean;
+
+  /**
+   * @zh 是否为块级元素
+   * @en Whether it is a block-level element
+   */
+  block?: boolean;
 }

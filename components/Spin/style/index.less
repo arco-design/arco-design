@@ -3,7 +3,13 @@
 @spin-prefix-cls: ~'@{prefix}-spin';
 
 .@{spin-prefix-cls} {
-  display: inline-block;
+  &-inline-block {
+    display: inline-block;
+  }
+
+  &-block {
+    display: block;
+  }
 
   &-with-tip {
     text-align: center;
