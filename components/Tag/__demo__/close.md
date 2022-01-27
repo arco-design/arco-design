@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 可关闭标签
   en-US: Close
 ---

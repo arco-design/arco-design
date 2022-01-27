@@ -73,9 +73,11 @@ function Tag(baseProps: TagProps, ref) {
         .catch(() => {
           setLoading(false);
         });
-    } else {
-      setVisible(false);
     }
+    if (e.defaultPrevented) {
+      return;
+    }
+    setVisible(false);
   }
 
   function onHandleCheck() {

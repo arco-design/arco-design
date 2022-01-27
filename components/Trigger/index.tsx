@@ -643,6 +643,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   onClick = (e) => {
+    const { trigger } = this.props;
     const { popupVisible } = this.state;
     if (popupVisible) {
       this.mousedownToHide = true;
@@ -652,6 +653,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
     if (!this.isClickToHide() && popupVisible) {
       return;
+    }
+
+    if (trigger.includes('click') && e && e.preventDefault) {
+      e.preventDefault();
     }
 
     this.setPopupVisible(!popupVisible, 0);
