@@ -70,17 +70,17 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
     handleVisibleChange(false);
   };
 
-  const onCancelPopconfirm = () => {
+  const onCancelPopconfirm = (e) => {
     closePopconfirm();
-    props.onCancel && props.onCancel();
+    props.onCancel && props.onCancel(e);
   };
 
-  const onConfirmPopconfirm = () => {
+  const onConfirmPopconfirm = (e) => {
     const _onConfirm = props.onOk || props.onConfirm;
 
     let ret;
     if (_onConfirm) {
-      ret = _onConfirm();
+      ret = _onConfirm(e);
     }
     if (ret && ret.then) {
       setLoading(true);

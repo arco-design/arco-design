@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import { TriggerProps } from '../Trigger';
 import { ButtonProps } from '../Button';
 
@@ -74,12 +74,12 @@ export interface PopconfirmProps {
    */
   onOk?: () => void;
   // 统一为 onOk, onConfirm 保留，不建议使用
-  onConfirm?: () => void;
+  onConfirm?: (e: React.MouseEvent) => void;
   /**
    * @zh 点击取消按钮的回调函数
    * @en Callback when click the cancel button
    */
-  onCancel?: () => void;
+  onCancel?: (e: React.MouseEvent) => void;
   /**
    * @zh 默认弹出框是打开还是关闭
    * @en Whether the confirmation box is visible by default
