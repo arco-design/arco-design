@@ -73,6 +73,7 @@ function Tag(baseProps: TagProps, ref) {
         .catch(() => {
           setLoading(false);
         });
+      return;
     }
     if (e.defaultPrevented) {
       return;
