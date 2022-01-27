@@ -72,7 +72,7 @@ export interface PopconfirmProps {
    * @zh 点击确认按钮的回调函数
    * @en Callback when click the ok button
    */
-  onOk?: () => void;
+  onOk?: (e: React.MouseEvent) => void;
   // 统一为 onOk, onConfirm 保留，不建议使用
   onConfirm?: (e: React.MouseEvent) => void;
   /**
