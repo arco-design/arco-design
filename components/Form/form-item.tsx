@@ -153,7 +153,7 @@ const Item = <
     disabled: 'disabled' in props ? props.disabled : formContext.disabled,
   };
 
-  const { label, extra, className, style, validateStatus, ...rest } = props;
+  const { label, extra, className, style, validateStatus, hidden, ...rest } = props;
   const labelClassNames = cs(`${prefixCls}-label-item`, {
     [`${prefixCls}-label-item-left`]: labelAlign === 'left',
   });
@@ -187,6 +187,7 @@ const Item = <
         hasHelp || (!validateStatus && itemStatus === VALIDATE_STATUS.error),
       [`${prefixCls}-item-status-${itemStatus}`]: itemStatus,
       [`${prefixCls}-item-has-help`]: hasHelp,
+      [`${prefixCls}-item-hidden`]: hidden,
       [`${prefixCls}-item-has-feedback`]: itemStatus && props.hasFeedback,
     },
     `${prefixCls}-layout-${formLayout}`,
