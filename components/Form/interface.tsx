@@ -287,6 +287,12 @@ export interface FormItemProps<
    */
   required?: boolean;
   /**
+   * @zh 隐藏表单项. 表单字段值仍然会被获取
+   * @en hide the form item
+   * @version 2.29.0
+   */
+  hidden?: boolean;
+  /**
    * @zh 额外的提示内容。
    * @en Additional hint content.
    */
