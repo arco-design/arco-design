@@ -702,7 +702,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const elementType = (element && typeof element !== 'string' && element.type) as any;
     let child = children;
 
-    if (['string', 'number'].indexOf(typeof children) > -1 || React.Children.count(children) > 1) {
+    if (
+      ['string', 'number'].indexOf(typeof children) > -1 ||
+      React.Children.count(children) > 1 ||
+      React.isValidElement(children)
+    ) {
       child = <span>{children}</span>;
     } else if (
       element &&
