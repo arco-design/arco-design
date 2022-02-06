@@ -155,11 +155,13 @@ exports[`renders Trigger/demo/basic.md correctly 1`] = `
 <div
   style="width:1000px;overflow:auto"
 >
-  <span
-    class="arco-typography"
-    style="margin-right:20px"
-  >
-    Hover me
+  <span>
+    <span
+      class="arco-typography"
+      style="margin-right:20px"
+    >
+      Hover me
+    </span>
   </span>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"

@@ -2,16 +2,20 @@
 
 exports[`renders Tooltip/demo/basic.md correctly 1`] = `
 <div>
-  <span
-    class="arco-typography"
-    style="margin-right:20px"
-  >
-    Mouse over to display tooltip
+  <span>
+    <span
+      class="arco-typography"
+      style="margin-right:20px"
+    >
+      Mouse over to display tooltip
+    </span>
   </span>
-  <span
-    class="arco-typography"
-  >
-    Mouse over to display multiple lines tooltip
+  <span>
+    <span
+      class="arco-typography"
+    >
+      Mouse over to display multiple lines tooltip
+    </span>
   </span>
 </div>
 `;
@@ -78,10 +82,12 @@ exports[`renders Tooltip/demo/control.md correctly 1`] = `
 `;
 
 exports[`renders Tooltip/demo/mini.md correctly 1`] = `
-<span
-  class="arco-typography"
->
-  Mouse over to display tooltip
+<span>
+  <span
+    class="arco-typography"
+  >
+    Mouse over to display tooltip
+  </span>
 </span>
 `;
 

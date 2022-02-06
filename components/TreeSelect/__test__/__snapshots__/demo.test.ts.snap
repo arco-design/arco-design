@@ -939,17 +939,19 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
 `;
 
 exports[`renders TreeSelect/demo/self-input.md correctly 1`] = `
-<div
-  class="arco-typography"
-  style="width:300px"
->
-  You selected: 
-  <span
-    class="arco-link"
+<span>
+  <div
+    class="arco-typography"
+    style="width:300px"
   >
-    node1
-  </span>
-</div>
+    You selected: 
+    <span
+      class="arco-link"
+    >
+      node1
+    </span>
+  </div>
+</span>
 `;
 
 exports[`renders TreeSelect/demo/size.md correctly 1`] = `

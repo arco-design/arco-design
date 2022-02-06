@@ -481,17 +481,19 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
 
 exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
 <div>
-  <div
-    class="arco-typography"
-    style="width:345px"
-  >
-    Favorite Cities：
-    <span
-      class="arco-link"
+  <span>
+    <div
+      class="arco-typography"
+      style="width:345px"
     >
-      None
-    </span>
-  </div>
+      Favorite Cities：
+      <span
+        class="arco-link"
+      >
+        None
+      </span>
+    </div>
+  </span>
 </div>
 `;
 

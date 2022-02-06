@@ -123,6 +123,54 @@ describe('Trigger', () => {
     expect(wrapper.find('#test')).toHaveLength(0);
   });
 
+  it('trigger hover with custom component as children', async () => {
+    const Children = () => {
+      return <div>children</div>;
+    };
+
+    const createTrigger = () => {
+      return (
+        <Trigger
+          popup={() => {
+            return <div id="test">123123</div>;
+          }}
+        >
+          <Children />
+        </Trigger>
+      );
+    };
+
+    const wrapper = mount(createTrigger());
+
+    expect(wrapper.find('span')).toHaveLength(1);
+    expect(wrapper.find('#test')).toHaveLength(0);
+    await act(() => {
+      wrapper.find('span').simulate('mouseenter');
+    });
+    jest.runAllTimers();
+    wrapper.update();
+    expect(wrapper.find('#test')).toHaveLength(1);
+
+    await act(async () => {
+      wrapper.find('span').at(0).simulate('mouseleave');
+    });
+
+    await act(async () => {
+      wrapper.find('#test').simulate('mouseenter');
+    });
+
+    wrapper.update();
+    expect(wrapper.find('#test')).toHaveLength(1);
+
+    await act(() => {
+      wrapper.find('#test').simulate('mouseleave');
+    });
+
+    jest.runAllTimers();
+    wrapper.update();
+    expect(wrapper.find('#test')).toHaveLength(0);
+  });
+
   it('trigger hover & mouseLeaveToClose=false', async () => {
     const wrapper = mount(
       <Trigger
