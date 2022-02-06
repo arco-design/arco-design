@@ -739,8 +739,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
           })}
         </span>
       );
-    }
-    if (isFunction((children as ReactElement).type)) {
+    } else if (
+      children &&
+      (children as ReactElement).type &&
+      isFunction((children as ReactElement).type)
+    ) {
+      // 判断 children 是不是自定义组件
       child = <div>{children}</div>;
     }
     // 防止为空报错
