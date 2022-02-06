@@ -702,11 +702,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const elementType = (element && typeof element !== 'string' && element.type) as any;
     let child = children;
 
-    if (
-      ['string', 'number'].indexOf(typeof children) > -1 ||
-      React.Children.count(children) > 1 ||
-      React.isValidElement(children)
-    ) {
+    if (['string', 'number'].indexOf(typeof children) > -1 || React.Children.count(children) > 1) {
       child = <span>{children}</span>;
     } else if (
       element &&
@@ -744,7 +740,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         </span>
       );
     }
-
+    if (isFunction((children as ReactElement).type)) {
+      child = <div>{children}</div>;
+    }
     // 防止为空报错
     return child || <span />;
   };
