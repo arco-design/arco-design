@@ -19,6 +19,7 @@ export function getFormInstance<
     setFieldsValue: store.setFieldsValue,
     setFields: store.setFields,
     resetFields: store.resetFields,
+    clearFields: store.clearFields,
     submit: store.submit,
     validate: store.validate,
     scrollToField: () => {},

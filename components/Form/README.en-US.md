@@ -56,6 +56,7 @@ A form with data collection, verification and submission functions, including ch
 |validateTrigger|When to trigger verification. The value is related to the wrapped item, and all events supported.For example, `onFocus`, `onBlur`, and `onChange` supported by `Input` can be used as the value of `validateTrigger`.When passed as `[]`, the validation rules will only be executed when the form `validate` method is called|`string \| string[]`|`onChange`|-|
 |noStyle|No external tags/styles are rendered, only binding field. **Notice**: When set to true, if the field verification failed,the error message will not be displayed. You can pass in an object and set showErrorTip to true(Support at `2.5.0`),The error message will be displayed under the upper formItem node|`boolean \| { showErrorTip: boolean }`|`-`|-|
 |required|Whether The FormItem is Required, Will display an red symbol in front of the `label` label.If it is not set here, it will look for `required` from the rules|`boolean`|`-`|-|
+|hidden|hide the form item|`boolean`|`-`|2.29.0|
 |extra|Additional hint content.|`ReactNode`|`-`|-|
 |validateStatus|Validate status|`'success' \| 'warning' \| 'error' \| 'validating'`|`-`|-|
 |hasFeedback|Whether to show the verification icon, configure `validateStatus` to use.|`boolean`|`-`|-|
@@ -109,7 +110,7 @@ export interface RulesProps {
   true?: boolean;
   false?: boolean;
   // custom
-  validator?: (value, callback: (error: string) => void) => void;
+  validator?: (value, callback: (error?: ReactNode) => void) => void;
   message?: string;
 }
 ```
@@ -124,8 +125,8 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 </Form>
 ```
 
-|Property|Description|Type|Default|
-| --- | ---- | ---- | ----- |
+|Property|Description|Type|Default|Version|
+| --- | ---- | ---- | ----- | --- |
 | validate | Verified and Get the Form values and Errors, If fields are not set, all fields will be verified. Support callback and promise | `Function(fields?: string[], callback(errors, values) => void)` |
 | setFieldValue  |Set the value of a form field|`Function(field: string, value)` |
 | setFields  |Set the value of a group of form fields and errors.|`Function({ [field]: string: { value: any, error: FieldError } })` |
@@ -138,6 +139,8 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 | scrollToField |Scroll to the specified form field position. [ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |Get the touched field|`() => string[]` |
 | resetFields|Reset the value of the Form to the initial value|`Function(field?: string[])` |
+| clearFields|Clear the value of the Form.Item|`Function(field?: string[])` | `2.29.0`
+
 
 ### `validate` Usage
 

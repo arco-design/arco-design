@@ -432,6 +432,35 @@ class Store<
       }
     });
   };
+
+  public clearFields = (fieldKeys?: FieldKey | FieldKey[]) => {
+    const prev = cloneDeep(this.store);
+    const fields = isString(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
+    if (fields && isArray(fields)) {
+      const changeValues = {} as any;
+      fields.forEach((field) => {
+        set(this.store, field, undefined);
+        changeValues[field] = get(this.store, field);
+      });
+
+      this.triggerValuesChange(changeValues);
+
+      this.notify('setFieldValue', { prev, field: fields });
+      this._popTouchField(fields);
+    } else {
+      const changeValues = {};
+      this.store = {};
+      this.getRegistedFields(true).forEach((item) => {
+        const key = item.props.field;
+        set(changeValues, key, undefined);
+      });
+
+      this.triggerValuesChange(changeValues);
+      this._popTouchField();
+
+      this.notify('setFieldValue', { prev, field: Object.keys(changeValues) as FieldKey[] });
+    }
+  };
 }
 
 export default Store;

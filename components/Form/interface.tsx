@@ -179,7 +179,7 @@ export interface RulesProps<FieldValue = any> {
   true?: boolean;
   false?: boolean;
   // custom
-  validator?: (value: FieldValue | undefined, callback: (error?: string) => void) => void;
+  validator?: (value: FieldValue | undefined, callback: (error?: ReactNode) => void) => void;
   message?: ReactNode;
 }
 
@@ -472,6 +472,7 @@ export type FormInstance<
   | 'setFieldsValue'
   | 'setFields'
   | 'resetFields'
+  | 'clearFields'
   | 'submit'
   | 'validate'
 > & {
