@@ -558,7 +558,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
       style="margin-top:10px"
     >
       <div
-        class="arco-spin arco-spin-inline-block"
+        class="arco-spin"
       >
         <div
           class="arco-spin-children"
@@ -1185,7 +1185,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -1612,7 +1612,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -2107,7 +2107,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-drag-table-container"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -2539,7 +2539,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-drag-table-container-2"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -3311,7 +3311,7 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -3849,7 +3849,7 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -4369,7 +4369,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -4894,7 +4894,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -5338,7 +5338,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -6373,7 +6373,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -7190,7 +7190,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
     class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed"
   >
     <div
-      class="arco-spin arco-spin-inline-block"
+      class="arco-spin"
     >
       <div
         class="arco-spin-children"
@@ -7637,7 +7637,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -8422,7 +8422,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -9628,7 +9628,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -10090,7 +10090,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover table-demo-resizable-column"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -10532,7 +10532,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -10943,7 +10943,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
     class="arco-table arco-table-size-default arco-table-border arco-table-hover"
   >
     <div
-      class="arco-spin arco-spin-inline-block"
+      class="arco-spin"
     >
       <div
         class="arco-spin-children"
@@ -11572,7 +11572,7 @@ exports[`renders Table/demo/sorter.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -12096,7 +12096,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-border-header-cell arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -12528,7 +12528,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover"
   >
     <div
-      class="arco-spin arco-spin-inline-block"
+      class="arco-spin"
     >
       <div
         class="arco-spin-children"
@@ -12995,7 +12995,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     style="margin-top:20px"
   >
     <div
-      class="arco-spin arco-spin-inline-block"
+      class="arco-spin"
     >
       <div
         class="arco-spin-children"
@@ -13609,7 +13609,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     style="margin-top:20px"
   >
     <div
-      class="arco-spin arco-spin-inline-block"
+      class="arco-spin"
     >
       <div
         class="arco-spin-children"
@@ -14128,7 +14128,7 @@ Array [
     class="arco-table arco-table-size-default arco-table-border arco-table-hover table-demo-editable-cell"
   >
     <div
-      class="arco-spin arco-spin-inline-block"
+      class="arco-spin"
     >
       <div
         class="arco-spin-children"
@@ -14680,7 +14680,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-virtualized"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"

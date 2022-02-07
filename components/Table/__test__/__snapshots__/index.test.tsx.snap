@@ -5,7 +5,7 @@ exports[`ConfigProvider componentConfig.Table default 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -99,7 +99,7 @@ exports[`ConfigProvider componentConfig.Table set className globally 1`] = `
   class="arco-table arco-table-size-default arco-table-border arco-table-hover global-default-class"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"
@@ -193,7 +193,7 @@ exports[`ConfigProvider componentConfig.Table set className globally and compone
   class="arco-table arco-table-size-default arco-table-border arco-table-hover component-class"
 >
   <div
-    class="arco-spin arco-spin-inline-block"
+    class="arco-spin"
   >
     <div
       class="arco-spin-children"

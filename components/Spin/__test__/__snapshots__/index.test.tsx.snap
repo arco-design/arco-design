@@ -2,7 +2,7 @@
 
 exports[`ConfigProvider componentConfig.Spin default 1`] = `
 <div
-  class="arco-spin arco-spin-inline-block"
+  class="arco-spin"
 >
   <span
     class="arco-spin-icon"
@@ -26,7 +26,7 @@ exports[`ConfigProvider componentConfig.Spin default 1`] = `
 
 exports[`ConfigProvider componentConfig.Spin set className globally 1`] = `
 <div
-  class="arco-spin arco-spin-inline-block global-default-class"
+  class="arco-spin global-default-class"
 >
   <span
     class="arco-spin-icon"
@@ -50,7 +50,7 @@ exports[`ConfigProvider componentConfig.Spin set className globally 1`] = `
 
 exports[`ConfigProvider componentConfig.Spin set className globally and component set className itself. 1`] = `
 <div
-  class="arco-spin arco-spin-inline-block component-class"
+  class="arco-spin component-class"
 >
   <span
     class="arco-spin-icon"

@@ -58,7 +58,6 @@ function Spin(baseProps: SpinProps, ref) {
         prefixCls,
         {
           [`${prefixCls}-block`]: block,
-          [`${prefixCls}-inline-block`]: !block,
           [`${prefixCls}-loading`]: _usedLoading,
           [`${prefixCls}-with-tip`]: tip && !children,
         },

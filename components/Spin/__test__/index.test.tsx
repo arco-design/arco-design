@@ -61,14 +61,4 @@ describe('Spin', () => {
 
     expect(wrapper.find('.arco-spin-block').length).toBe(1);
   });
-
-  it('spin with display:inline-block', () => {
-    const wrapper = mount(
-      <Spin loading>
-        <Alert type="info" content="Content" />
-      </Spin>
-    );
-
-    expect(wrapper.find('.arco-spin-inline-block').length).toBe(1);
-  });
 });
