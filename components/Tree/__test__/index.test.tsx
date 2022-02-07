@@ -432,4 +432,57 @@ describe('Tree', () => {
       .find(`.arco-checkbox`)
       .hasClass('arco-checkbox-indeterminate');
   });
+
+  it('should be expanded when click node', () => {
+    const mockExpand = jest.fn();
+    const mockSelected = jest.fn();
+    const wrapper = mount(
+      <Tree
+        defaultExpandedKeys={[]}
+        actionOnClick="expand"
+        onSelect={mockSelected}
+        onExpand={mockExpand}
+      >
+        {generatorTreeNodes(data)}
+      </Tree>
+    );
+
+    expect(wrapper.find('.arco-tree-node-title-text').at(1).text()).toBe('史塔克家族');
+
+    wrapper
+      .find(`${prefixCls}-node`)
+      .first()
+      .find(`${prefixCls}-node-title`)
+      .first()
+      .simulate('click');
+    expect(mockExpand.mock.calls).toHaveLength(1);
+    expect(mockSelected.mock.calls).toHaveLength(0);
+    expect(wrapper.find('.arco-tree-node-title-text').at(1).text()).toBe('小恶魔');
+  });
+
+  it('should be checked and expand when click node', () => {
+    let checkedKeys;
+    const wrapper = mount(
+      <Tree
+        defaultExpandedKeys={[]}
+        checkable
+        onCheck={(keys) => (checkedKeys = keys)}
+        actionOnClick={['check', 'expand']}
+      >
+        {generatorTreeNodes(data)}
+      </Tree>
+    );
+
+    expect(wrapper.find('.arco-tree-node-title-text').at(1).text()).toBe('史塔克家族');
+    wrapper
+      .find(`${prefixCls}-node`)
+      .first()
+      .find(`${prefixCls}-node-title`)
+      .first()
+      .simulate('click');
+    expect(wrapper.find('.arco-tree-node-title-text').at(1).text()).toBe('小恶魔');
+    expect(wrapper.find('.arco-checkbox-checked')).toHaveLength(2);
+
+    expect(checkedKeys).toEqual(['node1', 'node1-1', 'node1-1-1']);
+  });
 });
