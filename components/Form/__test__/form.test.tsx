@@ -597,4 +597,40 @@ describe('ControlForm', () => {
     expect(label.getDOMNode().getAttribute('for')).toBe('a_input');
     expect(wrapper.find('Input').getDOMNode().getAttribute('id')).toBe('input');
   });
+
+  it('clearFields', async () => {
+    let form;
+    let changeValues;
+    mount(
+      <Form
+        ref={(node) => (form = node)}
+        onValuesChange={(v) => {
+          changeValues = v;
+        }}
+      >
+        <Form.Item field="a" label="label">
+          <Input />
+        </Form.Item>
+        <Form.Item field="b" label="label">
+          <Input />
+        </Form.Item>
+      </Form>
+    );
+
+    form.setFieldsValue({ a: 1, b: 2 });
+    expect(changeValues).toEqual({ a: 1, b: 2 });
+
+    form.clearFields('a');
+    expect(changeValues).toEqual({ a: undefined });
+
+    form.clearFields(['a', 'b']);
+
+    expect(changeValues).toEqual({ a: undefined, b: undefined });
+
+    form.setFieldsValue({ a: 1, b: 2 });
+    form.clearFields();
+
+    expect(changeValues).toEqual({ a: undefined, b: undefined });
+    expect(form.getFieldsValue()).toEqual({ a: undefined, b: undefined });
+  });
 });

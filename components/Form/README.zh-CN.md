@@ -56,6 +56,7 @@
 |validateTrigger|触发验证的时机。取值和跟包裹的控件有关系，控件支持的触发事件，都可以作为值。例如`Input`支持的 `onFocus`、 `onBlur`、 `onChange` 都可以作为 `validateTrigger` 的值。传递为 `[]` 时，仅会在调用表单 `validate` 方法时执行校验规则。|`string \| string[]`|`onChange`|-|
 |noStyle|不渲染任何外部标签/样式，只进行字段绑定。**注意**: 设置该属性为true时，该字段若未通过校验，错误信息将不会显示出来。可以传入对象，并设置 showErrorTip（ `2.5.0` 开始支持） 为true，错误信息将会展示在上层 formItem 节点下。|`boolean \| { showErrorTip: boolean }`|`-`|-|
 |required|是否必选，会在 `label` 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required|`boolean`|`-`|-|
+|hidden|隐藏表单项. 表单字段值仍然会被获取|`boolean`|`-`|2.29.0|
 |extra|额外的提示内容。|`ReactNode`|`-`|-|
 |validateStatus|校验状态|`'success' \| 'warning' \| 'error' \| 'validating'`|`-`|-|
 |hasFeedback|是否显示校验图标，配置 validateStatus 使用。|`boolean`|`-`|-|
@@ -108,7 +109,7 @@ export interface RulesProps {
   true?: boolean;
   false?: boolean;
   // custom
-  validator?: (value, callback: (error: string) => void) => void;
+  validator?: (value, callback: (error?: ReactNode) => void) => void;
   message?: string;
 }
 ```
@@ -123,8 +124,8 @@ export interface RulesProps {
 </Form>
 ```
 
-| 方法           |                                      描述                                      |                                                            类型 |
-| -------------- | :----------------------------------------------------------------------------: | --------------------------------------------------------------: |
+| 方法           |                                      描述                                      |                                                            类型 |版本|
+| -------------- | :----------------------------------------------------------------------------: | --------------------------------------------------------------: | ---:|
 | validate | 校验并获取表单输入域的值与 Errors，如果不设置 fields 的话，会验证所有的 fields。支持 callback 和 promise 两种使用方法。 | `Function(fields?: string[], callback(errors, values) => void)` |
 | setFieldValue  |设置一个表单控件的值|`Function(field: string, value)` |
 | setFields  |设置一组表单控件的值和报错。|`Function({ [field]: string: { value: any, error: FieldError } })` |
@@ -137,6 +138,7 @@ export interface RulesProps {
 | scrollToField |滚动到指定表单字段位置。[ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |获取被操作过的字段|`() => string[]` |
 | resetFields|重置表单控件的值变为初始值|`Function(field?: string[])` |
+| clearFields|清除表单控件的值|`Function(field?: string[])` |`2.29.0`
 
 ### `validate` 用法
 

@@ -51,7 +51,7 @@ export interface RulesProps {
   true?: boolean;
   false?: boolean;
   // custom
-  validator?: (value, callback: (error: string) => void) => void;
+  validator?: (value, callback: (error?: ReactNode) => void) => void;
   message?: string;
 }
 ```
@@ -66,8 +66,8 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 </Form>
 ```
 
-|Property|Description|Type|Default|
-| --- | ---- | ---- | ----- |
+|Property|Description|Type|Default|Version|
+| --- | ---- | ---- | ----- | --- |
 | validate | Verified and Get the Form values and Errors, If fields are not set, all fields will be verified. Support callback and promise | `Function(fields?: string[], callback(errors, values) => void)` |
 | setFieldValue  |Set the value of a form field|`Function(field: string, value)` |
 | setFields  |Set the value of a group of form fields and errors.|`Function({ [field]: string: { value: any, error: FieldError } })` |
@@ -80,6 +80,8 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 | scrollToField |Scroll to the specified form field position. [ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |Get the touched field|`() => string[]` |
 | resetFields|Reset the value of the Form to the initial value|`Function(field?: string[])` |
+| clearFields|Clear the value of the Form.Item|`Function(field?: string[])` | `2.29.0`
+
 
 ### `validate` Usage
 
