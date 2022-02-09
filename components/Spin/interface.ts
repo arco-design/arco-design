@@ -46,7 +46,7 @@ export interface SpinProps {
   /**
    * @zh 是否为块级元素
    * @en Whether it is a block-level element
-   * @Version 2.29.0
+   * @version 2.29.0
    */
   block?: boolean;
 }

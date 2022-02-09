@@ -12,15 +12,15 @@ Used for the loading state of pages. When part of the page is waiting for asynch
 
 ### Spin
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|loading|Whether is loading status|`boolean`|`-`|
-|size|The size of loading icon|`number`|`-`|
-|icon|Customize icon which will be rotated automatically.|`ReactNode`|`-`|
-|element|Customize element which won't be rotated automatically, such as image/gif.|`ReactNode`|`-`|
-|tip|Customize description content when Spin has children|`string \| ReactNode`|`-`|
-|delay|Specifies a delay(ms) for loading state|`number`|`-`|
-|dot|Whether to use dot type animation|`boolean`|`-`|
-|block|Whether it is a block-level element, `block` attribute is supported in `2.29.0`|`boolean`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|style|Additional style|`CSSProperties`|`-`|-|
+|className|Additional css class|`string \| string[]`|`-`|-|
+|loading|Whether is loading status|`boolean`|`-`|-|
+|size|The size of loading icon|`number`|`-`|-|
+|icon|Customize icon which will be rotated automatically.|`ReactNode`|`-`|-|
+|element|Customize element which won't be rotated automatically, such as image/gif.|`ReactNode`|`-`|-|
+|tip|Customize description content when Spin has children|`string \| ReactNode`|`-`|-|
+|delay|Specifies a delay(ms) for loading state|`number`|`-`|-|
+|dot|Whether to use dot type animation|`boolean`|`-`|-|
+|block|Whether it is a block-level element|`boolean`|`-`|2.29.0|
