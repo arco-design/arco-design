@@ -268,6 +268,144 @@ exports[`renders Checkbox/demo/control.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <span
+      class="arco-checkbox-group arco-checkbox-group-direction-horizontal"
+    >
+      <label
+        checked=""
+        class="arco-checkbox arco-checkbox-checked"
+      >
+        <input
+          checked=""
+          type="checkbox"
+          value="Beijing"
+        />
+        <div
+          class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
+        >
+          Beijing
+        </div>
+      </label>
+      <label
+        class="arco-checkbox"
+      >
+        <input
+          type="checkbox"
+          value="Shanghai"
+        />
+        <div
+          class="arco-tag arco-tag-checked arco-tag-size-default"
+        >
+          Shanghai
+        </div>
+      </label>
+      <label
+        class="arco-checkbox"
+      >
+        <input
+          type="checkbox"
+          value="Guangzhou"
+        />
+        <div
+          class="arco-tag arco-tag-checked arco-tag-size-default"
+        >
+          Guangzhou
+        </div>
+      </label>
+    </span>
+  </div>
+  <span
+    class="arco-checkbox-group arco-checkbox-group-direction-horizontal"
+  >
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+        value="1"
+      />
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-start custom-checkbox-card "
+      >
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="custom-checkbox-card-mask"
+          >
+            <div
+              class="custom-checkbox-card-mask-dot"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <div>
+            <div
+              class="custom-checkbox-card-title"
+            >
+              Checkbox Card 1
+            </div>
+            <span
+              class="arco-typography arco-typography-secondary"
+            >
+              this is a text
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+    <label
+      class="arco-checkbox"
+    >
+      <input
+        type="checkbox"
+        value="2"
+      />
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-start custom-checkbox-card "
+      >
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="custom-checkbox-card-mask"
+          >
+            <div
+              class="custom-checkbox-card-mask-dot"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <div>
+            <div
+              class="custom-checkbox-card-title"
+            >
+              Checkbox Card 2
+            </div>
+            <span
+              class="arco-typography arco-typography-secondary"
+            >
+              this is a text
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+  </span>
+</div>
+`;
+
 exports[`renders Checkbox/demo/disabled.md correctly 1`] = `
 <div>
   <label

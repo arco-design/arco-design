@@ -1,4 +1,4 @@
-import React, { useContext, PropsWithChildren } from 'react';
+import React, { useContext, PropsWithChildren, useRef } from 'react';
 import cs from '../_util/classNames';
 import Group, { RadioGroupContext } from './group';
 import { ConfigContext } from '../ConfigProvider';
@@ -7,8 +7,10 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import IconHover from '../_class/icon-hover';
 import { RadioProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { isFunction } from '../_util/is';
 
 function Radio(baseProps: PropsWithChildren<RadioProps>) {
+  const inputRef = useRef<HTMLInputElement>(null);
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<RadioProps>>(baseProps, {}, componentConfig?.Radio);
 
@@ -52,9 +54,27 @@ function Radio(baseProps: PropsWithChildren<RadioProps>) {
     !checked && onChange && onChange(true, event);
   };
 
+  const onLabelClick = React.useCallback(
+    (e) => {
+      if (isFunction(props.children)) {
+        // 避免children中含有表单元素造成label无法触发input的onchange的情况
+        e.preventDefault();
+        inputRef.current && inputRef.current.click();
+      }
+      rest.onClick && rest.onClick(e);
+    },
+    [props.children, rest.onClick]
+  );
+
   return (
-    <label {...omit(rest, ['checked', 'onChange'])} style={style} className={classNames}>
+    <label
+      {...omit(rest, ['checked', 'onChange'])}
+      onClick={onLabelClick}
+      style={style}
+      className={classNames}
+    >
       <input
+        ref={inputRef}
         disabled={disabled}
         value={value || ''}
         type="radio"
@@ -68,7 +88,9 @@ function Radio(baseProps: PropsWithChildren<RadioProps>) {
           e.stopPropagation();
         }}
       />
-      {context.type === 'radio' && (
+      {isFunction(children) ? (
+        children({ checked })
+      ) : context.type === 'radio' ? (
         <>
           <IconHover
             prefix={prefixCls}
@@ -79,8 +101,9 @@ function Radio(baseProps: PropsWithChildren<RadioProps>) {
           </IconHover>
           {children && <span className={`${prefixCls}-text`}>{children}</span>}
         </>
+      ) : (
+        context.type === 'button' && <span className={`${prefixCls}-button-inner`}>{children}</span>
       )}
-      {context.type === 'button' && <span className={`${prefixCls}-button-inner`}>{children}</span>}
     </label>
   );
 }
