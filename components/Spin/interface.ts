@@ -44,8 +44,9 @@ export interface SpinProps {
   dot?: boolean;
 
   /**
-   * @zh 是否为块级元素, `block` 属性在 `2.29.0` 支持
-   * @en Whether it is a block-level element, `block` attribute is supported in `2.29.0`
+   * @zh 是否为块级元素
+   * @en Whether it is a block-level element
+   * @Version 2.29.0
    */
   block?: boolean;
 }
