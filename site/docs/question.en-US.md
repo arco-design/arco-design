@@ -136,7 +136,7 @@ module.exports = {
 }
 ```
 
-3. Configure the `prefixCls` prefix of the dialog created by the static method through `Modal.config`: 
+3. Configure the `prefixCls` prefix of the dialog created by the static method through `Modal.config`:
 
 ```js
 Modal.config({
@@ -150,3 +150,22 @@ After the above three steps, the component css class name prefix and style prefi
 
 Because the `Modal` and `Drawer` components enable `focusLock` by default, it will cause the focus to be locked in the `Modal` and `Drawer`, causing the external input component to fail to obtain the focus.
 You can set `focusLock={false}` to `Drawer` and `Modal`, or use the `ConfigProvider` component global configuration `componentConfig={{ Modal: {focusLock: false} }}`.
+
+## Popover, Tooltip, Popconfirm, Trigger Can't show popover when wrapping custom components?
+
+Custom components need to receive attributes from Trigger/Popover/Tooltip/Popconfirm
+
+For example:
+
+````
+   function Demo(props) {
+     // Receive the properties passed in by Popover
+     return <div {...props}>
+
+     </div>
+   }
+
+   <Popover>
+     <Demo />
+   </Popover>
+````

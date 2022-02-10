@@ -154,3 +154,23 @@ Modal.config({
 
 因为 `Modal` 和 `Drawer` 组件默认会开启 `focusLock`，所以会导致焦点被锁定在 `Modal` 和 `Drawer` 中，导致外部输入控件无法获取焦点。
 可以给组件设置 `focusLock={false}`，或者通过 `ConfigProvider` 组件全局配置 `componentConfig={{ Modal: { focusLock: false } }}`。
+
+
+## Popover, Tooltip, Popconfirm, Trigger 在包裹自定义组件时无法显示弹出层？
+
+自定义组件需要接收 Trigger/Popover/Tooltip/Popconfirm 传入的属性
+
+例如：
+
+```
+  function Demo(props) {
+    // 接收 Popover 传入的属性
+    return <div {...props}>
+      ...
+    </div>
+  }
+
+  <Popover>
+    <Demo />
+  </Popover>
+```
