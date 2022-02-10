@@ -25,7 +25,7 @@
 |popupVisible|弹出框是打开还是关闭状态|`boolean`|`-`|-|
 |unmountOnExit|是否在隐藏的时候销毁 DOM 结构|`boolean`|`true`|-|
 |onVisibleChange|显示或隐藏时触发的回调|`(visible: boolean) => void`|`-`|-|
-|trigger|触发方式，目前仅支持 `hover`|`TriggerProps['trigger']`|`hover`|-|
+|trigger|触发方式，目前支持 `'hover' \| 'click' \| 'focus'` |`TriggerProps['trigger']`|`hover`|-|
 |content|弹出的内容|`ReactNode`|`-`|-|
 |defaultPopupVisible|默认的弹出框状态|`boolean`|`-`|-|
 |popupHoverStay|鼠标移入弹出框的话，弹出框会保留而不销毁|`boolean`|`true`|-|
