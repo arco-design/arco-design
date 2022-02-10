@@ -221,6 +221,9 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
               this.inputRef.value = '';
             }
           }}
+          onClick={e => {
+            e.stopPropagation()
+          }}
         />
         <CSSTransition
           key="trigger-node"
