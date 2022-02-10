@@ -64,6 +64,7 @@
 |formatter|将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。|`(value: FieldValue \| undefined) => any`|`-`|2.23.0|
 |shouldUpdate|是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。|`\| boolean\| ((prevValues: Partial<FormData>,currentValues: Partial<FormData>,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) => boolean)`|`-`|-|
 |labelAlign|标签的文本对齐方式，优先级高于 `Form`|`'left' \| 'right'`|`right`|-|
+|requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|`boolean \| { position: 'start' \| 'end' }`|`true`|`position` in 2.24.0|
 
 ### Form.List
 
