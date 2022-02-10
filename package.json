@@ -116,7 +116,7 @@
     "@arco-design/color": "^0.4.0",
     "@babel/runtime": "^7.5.5",
     "b-tween": "^0.3.3",
-    "b-validate": "^1.3.0",
+    "b-validate": "^1.3.4",
     "compute-scroll-into-view": "^1.0.17",
     "dayjs": "^1.10.5",
     "lodash": "^4.17.21",
