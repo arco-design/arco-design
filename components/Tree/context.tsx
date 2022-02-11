@@ -1,7 +1,7 @@
 import { createContext, DragEvent } from 'react';
 
 import { AvailableVirtualListProps } from '../_class/VirtualList';
-import { NodeProps, TreeDataType, TreeState } from './interface';
+import { NodeProps, TreeDataType, TreeProps, TreeState } from './interface';
 
 export const TreeContext = createContext<{
   icons?: NodeProps['icons'];
@@ -18,6 +18,7 @@ export const TreeContext = createContext<{
     dragPosition: 0 | 1 | -1
   ) => void;
   key2nodeProps?: { [key: string]: NodeProps };
+  actionOnClick?: TreeProps['actionOnClick'];
   getNodeProps?: (node: NodeProps, expandedKeysSet: Set<string>) => NodeProps;
   getTreeState?: () => TreeState;
   onExpandEnd?: (key: string) => void;

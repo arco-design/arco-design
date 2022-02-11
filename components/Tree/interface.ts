@@ -8,6 +8,8 @@ export type SHOW_ALL = 'all';
 export type SHOW_PARENT = 'parent';
 export type SHOW_CHILD = 'child';
 
+export type ActionOnClick = 'select' | 'check' | 'expand';
+
 export interface TreeState {
   treeData?: TreeProps['treeData'];
   nodeList?: NodeProps[];
@@ -192,6 +194,12 @@ export interface TreeProps {
    * @en Whether to display the connection line
    */
   showLine?: boolean;
+  /**
+   * @zh 点击节点时对应的操作，可以是选中，复选选中，展开/收起
+   * @en The action when click node
+   * @version select
+   */
+  actionOnClick?: ActionOnClick | ActionOnClick[];
   /**
    * @zh 异步加载数据的回调，返回一个 `Promise`。
    * @en Callback when loaded data asynchronously, returning a `Promise`.

@@ -154,6 +154,14 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
     [treeContext.onNodeDragOver]
   );
 
+  const handleCheck = (checked, e) => {
+    const { disableCheckbox, disabled } = props;
+    if (disableCheckbox || disabled) {
+      return;
+    }
+    treeContext.onCheck && treeContext.onCheck(checked, _key, e);
+  };
+
   return (
     <>
       <div style={props.style} className={classNames} ref={ref}>
@@ -180,13 +188,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
             value={_key}
             indeterminate={props.indeterminated}
             checked={props.checked}
-            onChange={(checked, e) => {
-              const { disableCheckbox, disabled } = props;
-              if (disableCheckbox || disabled) {
-                return;
-              }
-              treeContext.onCheck && treeContext.onCheck(checked, _key, e);
-            }}
+            onChange={handleCheck}
           />
         ) : null}
         <span
@@ -206,8 +208,19 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
             [`${prefixCls}-title-block`]: props.blockNode,
           })}
           onClick={(e) => {
-            const { onSelect } = treeContext;
-            !props.disabled && selectable && onSelect && onSelect(_key, e);
+            const { onSelect, actionOnClick } = treeContext;
+            if (!props.disabled) {
+              const actions = [].concat(actionOnClick);
+              if (selectable && actions.indexOf('select') > -1) {
+                onSelect && onSelect(_key, e);
+              }
+              if (actions.indexOf('expand') > -1) {
+                switchExpandStatus();
+              }
+              if (checkable && actions.indexOf('check') > -1) {
+                handleCheck(!props.checked, e);
+              }
+            }
           }}
           draggable={draggable}
           onDrop={(e) => {

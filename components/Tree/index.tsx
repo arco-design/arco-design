@@ -12,7 +12,6 @@ import {
 } from './util';
 import { TreeProps, NodeProps, TreeDataType, NodeInstance, TreeState } from './interface';
 import { TreeContext } from './context';
-import mergeProps from '../_util/mergeProps';
 
 const DefaultFieldNames = {
   key: 'key',
@@ -33,6 +32,7 @@ const defaultProps = {
   selectable: true,
   autoExpandParent: true,
   checkedStrategy: 'all' as const,
+  actionOnClick: 'select',
   allowDrop: () => true,
   fieldNames: DefaultFieldNames,
 };
@@ -51,6 +51,7 @@ const needMergeKeys = [
   'showLine',
   'selectable',
   'allowDrop',
+  'actionOnClick',
 ] as const;
 
 type MergedPropsType = {
@@ -97,16 +98,16 @@ class Tree extends Component<TreeProps, TreeState> {
 
   getMergedProps = (baseProps?): MergedPropsType => {
     const { componentConfig } = this.context;
-    const props = mergeProps<TreeProps>(
-      baseProps || this.props,
-      defaultProps,
-      componentConfig?.Tree
-    );
-    return Object.keys(props).reduce((total, key) => {
-      if (needMergeKeys.indexOf(key as any) > -1) {
-        total[key] = props[key];
+    const props = baseProps || this.props;
+    return needMergeKeys.reduce((_props, key) => {
+      if (props[key] !== undefined) {
+        _props[key] = props[key];
+      } else if (componentConfig?.Tree && componentConfig?.Tree[key] !== undefined) {
+        _props[key] = componentConfig?.Tree[key];
+      } else if (defaultProps[key] !== undefined) {
+        _props[key] = defaultProps[key];
       }
-      return total;
+      return _props;
     }, {});
   };
 
@@ -701,6 +702,7 @@ class Tree extends Component<TreeProps, TreeState> {
       height,
       style,
       icons,
+      actionOnClick,
     } = this.getMergedProps();
     const { loadMore, checkable } = this.props;
     // 兼容旧 APi : height
@@ -739,6 +741,7 @@ class Tree extends Component<TreeProps, TreeState> {
           renderTitle: this.props.renderTitle,
           loadMore: loadMore && this.handleLoadMore,
           allowDrop: this.handleAllowDrop,
+          actionOnClick,
           virtualListProps,
         }}
       >
