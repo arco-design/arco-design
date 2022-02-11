@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import { ReactNode, CSSProperties, MouseEvent } from 'react';
 import { ButtonProps } from '../Button';
 /**
  * @title Drawer
@@ -129,12 +129,12 @@ export interface DrawerProps {
    * @zh 点击确认按钮的回调
    * @en Callback when the OK button is clicked
    */
-  onOk?: () => void;
+  onOk?: (e: Event) => void;
   /**
    * @zh 关闭弹出框的回调
    * @en Callback when the Cancel button is clicked
    */
-  onCancel?: () => void;
+  onCancel?: (e: MouseEvent | Event) => void;
   /**
    * @zh 抽屉打开之后的回调
    * @en Callback when drawer is opened

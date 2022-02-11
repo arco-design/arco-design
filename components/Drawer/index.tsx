@@ -118,7 +118,7 @@ function Drawer(baseProps: DrawerProps, ref) {
   useEffect(() => {
     const onKeyDown = (e) => {
       if (escToExit && e && e.key === Esc.key && props.onCancel) {
-        props.onCancel();
+        props.onCancel(e);
       }
     };
 
@@ -221,9 +221,9 @@ function Drawer(baseProps: DrawerProps, ref) {
             <div
               className={`${prefixCls}-mask`}
               style={maskStyle}
-              onClick={() => {
+              onClick={(e) => {
                 if (!inExit.current && maskClosable) {
-                  props.onCancel && props.onCancel();
+                  props.onCancel && props.onCancel(e);
                 }
               }}
             />

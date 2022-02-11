@@ -37,8 +37,8 @@ A floating layer that slides in from the edge of the screen.
 |confirmLoading|Whether the OK button is in loading state|`boolean`|`-`|-|
 |mountOnEnter|Whether to render the drawer component only when it is opened initially.|`boolean`|`true`|-|
 |unmountOnExit|Whether to unmount component when hidden|`boolean`|`-`|-|
-|onOk|Callback when the OK button is clicked|`() => void`|`-`|-|
-|onCancel|Callback when the Cancel button is clicked|`() => void`|`-`|-|
+|onOk|Callback when the OK button is clicked|`(e: Event) => void`|`-`|-|
+|onCancel|Callback when the Cancel button is clicked|`(e: MouseEvent \| Event) => void`|`-`|-|
 |afterOpen|Callback when drawer is opened|`() => void`|`-`|-|
 |afterClose|Callback when drawer is closed|`() => void`|`-`|-|
 |getPopupContainer|Parent node which the drawer should be rendered to.|`() => Element`|`() => document.body`|-|

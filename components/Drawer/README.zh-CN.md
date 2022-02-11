@@ -36,8 +36,8 @@
 |confirmLoading|确认按钮是否为加载中状态|`boolean`|`-`|-|
 |mountOnEnter|是否在初次打开对话框时才渲染 dom。|`boolean`|`true`|-|
 |unmountOnExit|是否在隐藏的时候销毁 DOM 结构|`boolean`|`-`|-|
-|onOk|点击确认按钮的回调|`() => void`|`-`|-|
-|onCancel|关闭弹出框的回调|`() => void`|`-`|-|
+|onOk|点击确认按钮的回调|`(e: Event) => void`|`-`|-|
+|onCancel|关闭弹出框的回调|`(e: MouseEvent \| Event) => void`|`-`|-|
 |afterOpen|抽屉打开之后的回调|`() => void`|`-`|-|
 |afterClose|抽屉关闭之后的回调|`() => void`|`-`|-|
 |getPopupContainer|指定弹出框挂载的父节点|`() => Element`|`() => document.body`|-|
