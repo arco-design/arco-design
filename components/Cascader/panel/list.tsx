@@ -112,15 +112,20 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     const value = checkedNodes.map((node) => node.pathValue);
     const newValue = [...inexistenceValue, ...value];
 
+    const indexMap = props.value.reduce((map, next, index) => {
+      map.set(next, index);
+      return map;
+    }, new Map());
+
     // 按照当前props.value的顺序排序
     newValue.sort((a, b) => {
-      const aIndex = props.value.findIndex((item) => isEqualWith(item, a));
-      const bIndex = props.value.findIndex((item) => isEqualWith(item, b));
+      const aIndex = indexMap.get(a);
+      const bIndex = indexMap.get(b);
 
-      if (aIndex === -1) {
+      if (aIndex === undefined) {
         return 1;
       }
-      if (bIndex === -1) {
+      if (bIndex === undefined) {
         return -1;
       }
       return aIndex - bIndex;

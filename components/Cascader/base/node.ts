@@ -202,7 +202,7 @@ class Node<T> {
 
   // 忽略禁用设置选中状态
   public setCheckedStateIgnoreDisabled = (checked: boolean) => {
-    if (checked === this._checked) {
+    if (checked === Boolean(this._checked)) {
       return;
     }
     this.setCheckedProperty(checked);

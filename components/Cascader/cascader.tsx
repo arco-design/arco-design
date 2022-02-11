@@ -1,4 +1,3 @@
-import isEqualWith from 'lodash/isEqualWith';
 import React, {
   CSSProperties,
   forwardRef,
@@ -23,10 +22,14 @@ import useUpdate from '../_util/hooks/useUpdate';
 import { Enter, Tab } from '../_util/keycode';
 import useCurrentRef from './hook/useRefCurrent';
 import useMergeProps from '../_util/hooks/useMergeProps';
-
-function isEmptyValue(value) {
-  return !value || (isArray(value) && value.length === 0);
-}
+import {
+  valueInSet,
+  transformValuesToSet,
+  isEmptyValue,
+  getConfig,
+  getStore,
+  formatValue,
+} from './util';
 
 export const DefaultFieldNames = {
   label: 'label',
@@ -34,31 +37,6 @@ export const DefaultFieldNames = {
   isLeaf: 'isLeaf',
   children: 'children',
   disabled: 'disabled',
-};
-
-function getConfig(props) {
-  return {
-    showEmptyChildren: props.showEmptyChildren,
-    changeOnSelect: props.changeOnSelect,
-    lazyload: !!props.loadMore,
-    fieldNames: props.fieldNames,
-    filterOption: props.filterOption,
-  };
-}
-
-function getStore(props, value) {
-  const tmp = value ? (Array.isArray(value[0]) ? value : [value]) : [];
-  return new Store(props.options || [], tmp, getConfig(props));
-}
-
-const formatValue = (value, isMultiple): string[][] | undefined => {
-  if (value === undefined) {
-    return [];
-  }
-  if (isMultiple) {
-    return value;
-  }
-  return [value];
 };
 
 const defaultProps: CascaderProps = {
@@ -83,12 +61,10 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   // 暂存被选中的值对应的节点。仅在onSearch的时候用到
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>([]);
-  const propsValue = 'value' in props ? formatValue(props.value, isMultiple) : undefined;
-  // 为什么不用useMergeValue呢？ 因为在props.value改变时，需要进行一些选中状态的处理，见以下 useUpdate
-  const [stateValue, setValue] = useState<string[][] | undefined>(
-    propsValue || ('defaultValue' in props ? formatValue(props.defaultValue, isMultiple) : [])
-  );
-  const mergeValue = 'value' in props ? propsValue : stateValue;
+  const [mergeValue, setValue, stateValue] = useMergeValue([], {
+    value: 'value' in props ? formatValue(props.value, isMultiple) : undefined,
+    defaultValue: 'defaultValue' in props ? formatValue(props.defaultValue, isMultiple) : undefined,
+  });
 
   const [popupVisible, setPopupVisible] = useMergeValue(false, {
     value: props.popupVisible,
@@ -122,29 +98,40 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   useUpdate(() => {
     if ('value' in props) {
       const newValue = formatValue(props.value, isMultiple);
-      if (!isEqualWith(stateValue, newValue)) {
-        store.setNodeCheckedByValue(newValue);
-        setValue(newValue);
-      }
+      store.setNodeCheckedByValue(newValue);
+      // useMergeProps do this
+      // setValue(newValue);
     }
   }, [props.value, stateValue, isMultiple]);
 
   useImperativeHandle(ref, () => selectRef.current, []);
 
   const updateStashNodes = (nodes) => {
-    stashNodes.current = [].concat(nodes, stashNodes.current);
+    stashNodes.current = Array.from(new Set([].concat(nodes, stashNodes.current)));
   };
 
   const getSelectedOptionsByValue = (values: string[][]): OptionProps[][] => {
-    const nodes = store.getCheckedNodes().concat(stashNodes.current);
     const result = [];
+    const valuesSet = transformValuesToSet(values);
 
-    values.map((value) => {
-      const node = nodes.find((item) => isEqualWith(item.pathValue, value));
-      if (node) {
-        result.push(node.getPathNodes().map((x) => x._data));
-      }
-    });
+    const findValue = (nodes) => {
+      nodes.some((node) => {
+        if (valueInSet(valuesSet, node.pathValue)) {
+          result.push(node.getPathNodes().map((x) => x._data));
+          valuesSet.delete(node.pathValue);
+        }
+        if (!valuesSet.size) {
+          return true;
+        }
+      });
+    };
+
+    findValue(store.getCheckedNodes());
+
+    if (valuesSet.size) {
+      findValue(stashNodes.current);
+    }
+
     return result;
   };
 
@@ -195,7 +182,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     }
     setValue((mergeValue) => {
       const { onChange, changeOnSelect, expandTrigger } = props;
-      const isSame = isEqualWith(mergeValue, newValue);
+      const isSame = mergeValue === newValue;
 
       if (!isSame) {
         if (isTouch || !isMultiple) {

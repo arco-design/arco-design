@@ -1,81 +1,40 @@
 import React from 'react';
-import { Cascader, Divider, Space } from '@self';
+import {Cascader} from '@self'
 
-const options = [
-  {
-    value: 'beijing',
-    label: 'Beijing',
-    children: [
-      {
-        value: 'Beijing',
-        label: 'Beijing',
-        children: [
-          {
-            value: 'chaoyang',
-            label: 'Chaoyang',
-            children: [
-              {
-                value: 'datunli',
-                label: 'Datunli',
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'shanghai',
-    label: 'Shanghai',
-    children: [
-      {
-        value: 'shanghaishi',
-        label: 'Shanghai',
-        children: [
-          {
-            value: 'huangpu',
-            label: 'Huangpu',
-          },
-        ],
-      },
-    ],
-  },
-];
+const getOptionList = (labelPrefix: string, valuePrefix: string, len: number) => {
+    return Array(len)
+      .fill(0)
+      .map((_, index) => {
+        return {
+          label: `${labelPrefix}${index}`,
+          value: `${valuePrefix}${index}`,
+        };
+      });
+  };
+  const options = getOptionList('选项', 'value', 10).map(item => {
+    return {
+      ...item,
+      children: getOptionList(`${item.label}-`, `${item.value}-`, 10).map(item2 => {
+        return {
+          ...item2,
+          children: getOptionList(`${item2.label}-`, `${item2.value}-`, 30),
+        };
+      }),
+    };
+  });
 
-class Demo extends React.Component {
-  render() {
-    return (
-      <Space size="large">
-        <Cascader
-          placeholder="Please select ..."
-          style={{ width: 300 }}
-          options={options}
-          dropdownRender={(menu) => {
-            return (
-              <div>
-                {menu}
-                <Divider style={{ margin: 0 }} />
-                <div style={{ margin: 4 }}> The footer content</div>
-              </div>
-            );
-          }}
-        />
-        <Cascader
-          style={{ width: 300 }}
-          dropdownColumnRender={(menu, level) => {
-            return (
-              <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ flex: 1 }}>{menu}</div>
-                <Divider style={{ margin: 0 }} />
-                <div style={{ margin: 4 }}> The footer content {level}</div>
-              </div>
-            );
-          }}
-          options={options}
-        />
-      </Space>
-    );
-  }
+export default () => {
+  const [value, setValue] = React.useState([]);
+  return (
+    <Cascader
+      placeholder="Please select ..."
+      style={{ width: 300 }}
+      options={options}
+      mode="multiple"
+      allowClear
+      maxTagCount={20}
+      onChange={setValue}
+      value={value}
+    />
+  );
 }
-
-export default Demo;
