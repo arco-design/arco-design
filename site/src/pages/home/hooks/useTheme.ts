@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Navbar from '@arco-design/arco-site-navbar';
+import Navbar from '@arco-materials/site-navbar';
 
 const { NavbarThemeContext } = Navbar;
 

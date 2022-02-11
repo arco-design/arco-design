@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import Navbar from '@arco-design/arco-site-navbar';
+import Navbar from '@arco-materials/site-navbar';
 import {
   PageDurationTracker,
   teaLog,
@@ -87,12 +87,7 @@ export default function App() {
         user={user}
         {...navbarProps}
       />
-      <Navbar.GlobalNotice
-        onHeightChange={setNoticeHeight}
-        title="Arco Design Pro"
-        desc="Arco Pro v2.0 全新上线 🎉"
-        link="https://bytedance.feishu.cn/docx/doxcneH4MAnUxcBvnLMuoywOp2f#doxcnaE2iEwuGmKcYVTvugYHveS"
-      />
+      <Navbar.GlobalNotice onHeightChange={setNoticeHeight} lang={lang} />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/en-US" exact component={Home} />
