@@ -21,6 +21,7 @@ function Spin(baseProps: SpinProps, ref) {
     tip,
     dot,
     delay,
+    block = false,
   } = props;
 
   const [loading, setLoading] = useState<boolean>(delay ? false : propLoading);
@@ -56,6 +57,7 @@ function Spin(baseProps: SpinProps, ref) {
       className={cs(
         prefixCls,
         {
+          [`${prefixCls}-block`]: block,
           [`${prefixCls}-loading`]: _usedLoading,
           [`${prefixCls}-with-tip`]: tip && !children,
         },
