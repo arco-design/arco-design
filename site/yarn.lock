@@ -348,13 +348,21 @@
   dependencies:
     classnames "^2.2.6"
 
-"@arco-design/arco-site-navbar@^1.13.2":
-  version "1.13.2"
-  resolved "https://registry.npmjs.org/@arco-design/arco-site-navbar/-/arco-site-navbar-1.13.2.tgz#4a8e1552fdf54bfa5d039ea7c2217f690b345876"
-  integrity sha512-MJO7iDtQ5wwWPuS2RcgntHnsVwAaeVMadogf4XlouizsVPsFau9GoauqgtOJ52991v1OZgUpG/jwD3nypXDOUQ==
+"@arco-design/arco-site-utils@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.2.tgz#8e8e2a4ba9c480951afe68ae5b44e149f5ebe52b"
+  integrity sha512-Cta5QmYLW4+//hQG6SheGQLpagbCfwwW/niolKrhqIy0Vq1gVJJxtBQdWv3hV8WcNrPott9jpcZdHhcTRymLDQ==
+  dependencies:
+    axios "^0.24.0"
+    lodash.throttle "^4.1.1"
+
+"@arco-materials/site-navbar@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.1.0.tgz#2cbc232e50ea58e7db8a9adceade0891ca50d223"
+  integrity sha512-laAVS07MXaeY8Ve9AJy7f1Y1pnLa1TCAy321fu/HEDlJbQSEUfBx1P9Mm5JJMmid4vaX5lMZeeGQpH2C6vDj7g==
   dependencies:
     "@antv/g2" "^4.1.12"
-    "@arco-design/arco-site-utils" "^1.0.1"
+    "@arco-materials/site-utils" "^1.0.1"
     "@docsearch/react" "^3.0.0-alpha.42"
     axios "^0.21.1"
     classnames "^2.2.6"
@@ -362,18 +370,10 @@
     gsap "^3.6.0"
     lodash.debounce "^4.0.8"
 
-"@arco-design/arco-site-utils@^1.0.1":
+"@arco-materials/site-utils@^1.0.1":
   version "1.0.1"
-  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.1.tgz#5613db248de3c178f2fb7c84516ecd13aac80386"
-  integrity sha512-7F+IgbkLaHEPqE6sH1gCx0lHd4HLY+gc2O/9KFiHM9gRgIi9G2c7706mP4i0iY2EPvV3NeICo80ZWcIGSHPTJw==
-  dependencies:
-    axios "^0.24.0"
-    lodash.throttle "^4.1.1"
-
-"@arco-design/arco-site-utils@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.2.tgz#8e8e2a4ba9c480951afe68ae5b44e149f5ebe52b"
-  integrity sha512-Cta5QmYLW4+//hQG6SheGQLpagbCfwwW/niolKrhqIy0Vq1gVJJxtBQdWv3hV8WcNrPott9jpcZdHhcTRymLDQ==
+  resolved "https://registry.npmjs.org/@arco-materials/site-utils/-/site-utils-1.0.1.tgz#f64337f34a209cb2bac320256d81965bcba65fa5"
+  integrity sha512-ZZAquWfqs53DOyEBO54TJ8trSNTpdNgxejHeZcY5Z+HSQOIMmZs6ChrRQoJOJz8INmoYmU43+Z6v4SXKt8fl7g==
   dependencies:
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
