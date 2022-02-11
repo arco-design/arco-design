@@ -25,8 +25,8 @@ A simple confirmation box of an action.
 |okType|The type of the ok button|`ButtonProps['type']`|`primary`|-|
 |okButtonProps|The props of the ok button|`ButtonProps`|`-`|-|
 |cancelButtonProps|The props of the cancel button|`ButtonProps`|`-`|-|
-|onOk|Callback when click the ok button|`() => void`|`-`|-|
-|onCancel|Callback when click the cancel button|`() => void`|`-`|-|
+|onOk|Callback when click the ok button|`(e: React.MouseEvent) => void`|`-`|-|
+|onCancel|Callback when click the cancel button|`(e: React.MouseEvent) => void`|`-`|-|
 |defaultPopupVisible|Whether the confirmation box is visible by default|`boolean`|`-`|-|
 |popupVisible|Whether the confirmation box is visible|`boolean`|`-`|-|
 |onVisibleChange|Callback when the visibility of the confirmation box is changed|`(visible: boolean) => void`|`-`|-|

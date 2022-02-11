@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import { TriggerProps } from '../Trigger';
 import { ButtonProps } from '../Button';
 
@@ -69,17 +69,19 @@ export interface PopconfirmProps {
    */
   cancelButtonProps?: ButtonProps;
   /**
-   * @zh 点击确认按钮的回调函数
-   * @en Callback when click the ok button
+   * @zh 点击确认按钮的回调函数。回调函数 `event` 参数在 `2.29.0` 支持
+   * @en Callback when click the ok button. Callback `event` params is supported in `2.29.0`
    */
-  onOk?: () => void;
-  // 统一为 onOk, onConfirm 保留，不建议使用
-  onConfirm?: () => void;
+  onOk?: (e: React.MouseEvent) => void;
   /**
-   * @zh 点击取消按钮的回调函数
-   * @en Callback when click the cancel button
+   * @deprecated 统一为 onOk, onConfirm 保留，不建议使用
    */
-  onCancel?: () => void;
+  onConfirm?: (e: React.MouseEvent) => void;
+  /**
+   * @zh 点击取消按钮的回调函数。 回调函数 `event` 参数在 `2.29.0` 支持
+   * @en Callback when click the cancel button. Callback `event` params is supported in `2.29.0`
+   */
+  onCancel?: (e: React.MouseEvent) => void;
   /**
    * @zh 默认弹出框是打开还是关闭
    * @en Whether the confirmation box is visible by default

@@ -25,8 +25,8 @@
 |okType|确认按钮的类型|`ButtonProps['type']`|`primary`|-|
 |okButtonProps|确定按钮的参数，可接受 `Button` 组件的所有参数|`ButtonProps`|`-`|-|
 |cancelButtonProps|取消按钮的参数，可接受 `Button` 组件的所有参数|`ButtonProps`|`-`|-|
-|onOk|点击确认按钮的回调函数|`() => void`|`-`|-|
-|onCancel|点击取消按钮的回调函数|`() => void`|`-`|-|
+|onOk|点击确认按钮的回调函数|`(e: React.MouseEvent) => void`|`-`|-|
+|onCancel|点击取消按钮的回调函数|`(e: React.MouseEvent) => void`|`-`|-|
 |defaultPopupVisible|默认弹出框是打开还是关闭|`boolean`|`-`|-|
 |popupVisible|弹出框是打开还是关闭。(受控)|`boolean`|`-`|-|
 |onVisibleChange|弹出打开和关闭触发的回调|`(visible: boolean) => void`|`-`|-|
