@@ -193,7 +193,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     this.isDidMount = true;
 
     this.childrenDom = findDOMNode(this);
-    this.childrenDomSize = getDOMPos(this.childrenDom);
+    if (this.state.popupVisible) {
+      this.childrenDomSize = getDOMPos(this.childrenDom);
+    }
   }
 
   componentDidUpdate(_prevProps) {
