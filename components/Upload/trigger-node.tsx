@@ -12,7 +12,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragEnterCount, setDragEnterCount] = useState(0); // the number of times ondragenter was triggered
 
-  const { tip, children, disabled, drag, listType, prefixCls, accept, multiple } = props;
+  const { children, disabled, drag, listType, prefixCls, accept, multiple } = props;
 
   const nodeProps = {
     disabled,
@@ -75,7 +75,6 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
               <IconPlus />
             </div>
           </div>
-          {tip && <div className={`${prefixCls}-trigger-tip`}>{tip}</div>}
         </div>
       ) : drag ? (
         <div
@@ -87,7 +86,6 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
           <p className={`${prefixCls}-trigger-drag-text`}>
             {isDragging ? locale.Upload.dragHover : locale.Upload.drag}
           </p>
-          {tip && <div className={`${prefixCls}-trigger-tip`}>{tip}</div>}
         </div>
       ) : (
         <Button {...nodeProps} type="primary" className={`${prefixCls}-trigger-with-icon`}>

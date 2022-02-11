@@ -341,13 +341,13 @@ Array [
         >
           点击或拖拽文件到此处上传
         </p>
-        <div
-          class="arco-upload-trigger-tip"
-        >
-          Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB
-        </div>
       </div>
     </div>
+  </div>,
+  <div
+    class="arco-upload-tip"
+  >
+    Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB
   </div>,
   <div
     class="arco-upload-list arco-upload-list-type-text"

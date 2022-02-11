@@ -39,9 +39,19 @@
       }
     }
 
-    .@{upload-prefix-cls}-trigger-tip {
+    .@{upload-prefix-cls}-tip {
       color: @upload-drag-color-text_disabled;
     }
+  }
+
+  &-tip {
+    color: @upload-tip-color-text;
+    margin-top: @upload-tip-margin-top;
+    font-size: @upload-tip-font-size;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &-trigger {
@@ -49,16 +59,6 @@
     display: inline-block;
     vertical-align: top;
     width: 100%;
-
-    &-tip {
-      color: @upload-tip-color-text;
-      margin-top: @upload-tip-margin-top;
-      font-size: @upload-tip-font-size;
-      line-height: 1.5;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
 
     &-picture {
       min-width: @upload-picture-item-width;
@@ -127,7 +127,7 @@
         }
       }
 
-      .@{upload-prefix-cls}-trigger-tip {
+      .@{upload-prefix-cls}-tip {
         margin-top: 0;
       }
     }

@@ -51,7 +51,7 @@ import DemoCarousel from './components/Carousel';
 import DemoSlider from './components/Slider';
 import DemoTimeline from './components/Timeline';
 import DemoDropdown from './components/Dropdown';
-// import DemoUpload from './components/Upload';
+import DemoUpload from './components/Upload';
 import DemoAnchor from './components/Anchor';
 import DemoLayout from './components/Layout';
 import DemoRate from './components/Rate';
@@ -122,6 +122,7 @@ const componentsMap = {
   Space: () => <DemoSpace />,
   Draggable: () => <DemoDraggable />,
   ResizeBox: () => <DemoResizeBox />,
+  Upload: () => <DemoUpload />,
 };
 
 Object.keys(componentsMap)

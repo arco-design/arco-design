@@ -159,6 +159,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
     listType,
     className,
     style,
+    tip,
     renderUploadItem,
     showUploadList,
     renderUploadList,
@@ -194,7 +195,6 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         'autoUpload',
         'limit',
         'drag',
-        'tip',
         'headers',
         'data',
         'withCredentials',
@@ -254,27 +254,38 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
     </div>
   );
 
-  return (
+  const uploadTipDom =
+    tip !== undefined && tip !== null ? <div className={`${prefixCls}-tip`}>{tip}</div> : null;
+
+  const uploadListDom = showUploadList ? (
+    <UploadList
+      progressProps={progressProps}
+      showUploadList={showUploadList}
+      disabled={props.disabled}
+      listType={listType}
+      fileList={fileList}
+      renderUploadItem={renderUploadItem}
+      renderUploadList={renderUploadList}
+      onUpload={uploadFile}
+      onAbort={abortFile}
+      onRemove={removeFile}
+      onReupload={reuploadFile}
+      onPreview={props.onPreview}
+      prefixCls={prefixCls}
+    />
+  ) : null;
+
+  return listType === 'picture-card' ? (
     <>
-      {listType !== 'picture-card' && uploadDom}
-      {showUploadList && (
-        <UploadList
-          progressProps={progressProps}
-          showUploadList={showUploadList}
-          disabled={props.disabled}
-          listType={listType}
-          fileList={fileList}
-          renderUploadItem={renderUploadItem}
-          renderUploadList={renderUploadList}
-          onUpload={uploadFile}
-          onAbort={abortFile}
-          onRemove={removeFile}
-          onReupload={reuploadFile}
-          onPreview={props.onPreview}
-          prefixCls={prefixCls}
-        />
-      )}
-      {listType === 'picture-card' && uploadDom}
+      {uploadListDom}
+      {uploadDom}
+      {uploadTipDom}
+    </>
+  ) : (
+    <>
+      {uploadDom}
+      {uploadTipDom}
+      {uploadListDom}
     </>
   );
 };

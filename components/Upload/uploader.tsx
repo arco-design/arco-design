@@ -190,18 +190,8 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
   };
 
   render() {
-    const {
-      accept,
-      multiple,
-      children,
-      prefixCls,
-      tip,
-      disabled,
-      drag,
-      listType,
-      hide,
-      directory,
-    } = this.props;
+    const { accept, multiple, children, prefixCls, disabled, drag, listType, hide, directory } =
+      this.props;
 
     return (
       <>
@@ -221,8 +211,8 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
               this.inputRef.value = '';
             }
           }}
-          onClick={e => {
-            e.stopPropagation()
+          onClick={(e) => {
+            e.stopPropagation();
           }}
         />
         <CSSTransition
@@ -234,7 +224,6 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
         >
           <TriggerNode
             directory={directory}
-            tip={tip}
             multiple={multiple}
             accept={accept}
             disabled={disabled}
@@ -249,11 +238,6 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
             {children}
           </TriggerNode>
         </CSSTransition>
-        {tip && listType !== 'picture-card' && !drag ? (
-          <div key="trigger-tip" className={`${prefixCls}-trigger-tip`}>
-            {tip}
-          </div>
-        ) : null}
       </>
     );
   }
