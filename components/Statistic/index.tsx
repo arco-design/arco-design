@@ -102,7 +102,7 @@ function Statistic(baseProps: StatisticProps, ref) {
     if (format) {
       _value = dayjs(value).format(format);
     }
-    if (precision) {
+    if (isNumber(precision) && precision >= 0) {
       _value = Number(value).toFixed(precision);
     }
     let int = String(_value).split('.')[0];
