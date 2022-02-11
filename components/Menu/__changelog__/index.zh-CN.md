@@ -2,7 +2,7 @@
 
 2021-12-24
 
-### 💎 性能优化
+### 💎 优化
 
 - `Menu.SubMenu` 在非弹出模式下同样支持 `selectable` 属性。([#355](https://github.com/arco-design/arco-design/pull/355))
 

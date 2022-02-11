@@ -2,7 +2,7 @@
 
 2022-01-21
 
-### 💎 性能优化
+### 💎 优化
 
 - `InputTag` 阻止回车时提交表单。([#482](https://github.com/arco-design/arco-design/pull/482))
 

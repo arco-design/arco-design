@@ -1,3 +1,15 @@
+## 2.29.0
+
+2022-02-11
+
+### 💎 Optimization
+
+- Optimized the problem of stuck operation when selecting multiple selections under the big data of the `Cascader` component.([#523](https://github.com/arco-design/arco-design/pull/523))
+
+### 🐛 BugFix
+
+- Fix the bug of `Cascader` component `showSearch.retainInputValueWhileSelect` not taking effect([#524](https://github.com/arco-design/arco-design/pull/524))
+
 ## 2.26.2
 
 2021-12-10

@@ -2,6 +2,43 @@
 changelog: true
 ---
 
+## 2.29.0
+
+2022-02-11
+
+### 🚨 重点注意
+
+- **优化照片墙类型的 `Upload` 组件 tip 文本的渲染位置。Dom 层级发生变动，进行样式覆盖的请重点注意一下。**
+
+### 💎 优化
+
+- 优化 `Cascader` 组件大数据下多选时候选中操作卡顿的问题。([#523](https://github.com/arco-design/arco-design/pull/523))
+
+### 🆕 功能升级
+
+- `TreeSelect` 的 `onChange` 函数新增节点信息参数([#526](https://github.com/arco-design/arco-design/pull/526))
+- 升级 `b-validate` 版本以支持 `Form` 在 `validator` 中传入 `ReactNode`([#518](https://github.com/arco-design/arco-design/pull/518))
+- 支持通过传入函数类型的 `children` 自定义节点内容。([#513](https://github.com/arco-design/arco-design/pull/513))
+- 支持通过传入函数类型的 `children` 自定义节点内容。([#513](https://github.com/arco-design/arco-design/pull/513))
+- 完善组件 TS 类型定义继承原生 `label` 标签属性([#513](https://github.com/arco-design/arco-design/pull/513))
+- `Tree` 组件支持通过 `expandOnClick` 属性设置点击节点时展开子节点([#511](https://github.com/arco-design/arco-design/pull/511))
+- `Form.Item` 支持通过 `hidden` 属性隐藏表单项([#509](https://github.com/arco-design/arco-design/pull/509))
+- 支持通过 `clearFields` 方法清除表单项的值([#509](https://github.com/arco-design/arco-design/pull/509))
+- `Popconfirm` 组件 `onOk`,`onCancel` 回调方法暴露 `event` 参数([#501](https://github.com/arco-design/arco-design/pull/501))
+- 支持作为块级元素展示([#493](https://github.com/arco-design/arco-design/pull/493))
+
+### 🐛 问题修复
+
+- 修复 `Statistic` 组件 `precision=0` 不生效的 问题([#531](https://github.com/arco-design/arco-design/pull/531))
+- 修复 `Cascader` 组件 `showSearch.retainInputValueWhileSelect` 不生效的 bug([#524](https://github.com/arco-design/arco-design/pull/524))
+- 修复 `Input` 组件在 Firefox 中输入中文会连续触发两次 `onChange` 的 bug。([#522](https://github.com/arco-design/arco-design/pull/522))
+- 修复 `Table` 组件 `onDropdownVisibleChange` 在点击确定按钮时不触发的 bug。([#521](https://github.com/arco-design/arco-design/pull/521))
+- 修复 `Upload` 组件触发两次 `onClick` 的问题([#519](https://github.com/arco-design/arco-design/pull/519))
+
+### 🆎 类型修正
+
+- 修复了 Timeline 组件 mode 类型定义缺少 "top" 和 "bottom" 值的问题([#488](https://github.com/arco-design/arco-design/pull/488))
+
 ## 2.28.2
 
 2022-01-21
@@ -95,7 +132,7 @@ changelog: true
 
 2021-12-24
 
-### 💎 性能优化
+### 💎 优化
 
 - `Menu.SubMenu` 在非弹出模式下同样支持 `selectable` 属性。([#355](https://github.com/arco-design/arco-design/pull/355))
 
@@ -169,7 +206,7 @@ changelog: true
 
 2021-12-03
 
-### 💎 性能优化
+### 💎 优化
 
 - 优化 `Trigger` 组件计算子节点尺寸和位置的逻辑，避免重复计算。([#258](https://github.com/arco-design/arco-design/pull/258))
 

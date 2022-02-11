@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🐛 BugFix
+
+- Fix `Statistic` component `precision=0` does not take effect([#531](https://github.com/arco-design/arco-design/pull/531))
+
 ## 2.23.0
 
 2021-09-27

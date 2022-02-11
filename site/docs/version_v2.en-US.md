@@ -2,6 +2,43 @@
 changelog: true
 ---
 
+## 2.29.0
+
+2022-02-11
+
+### 🚨 Important attention
+
+- **Optimized the rendering position of the tip text of the `Upload` component of the photo wall type. The Dom level has changed, please pay attention to the style override.**
+
+### 💎 Optimization
+
+- Optimized the problem of stuck operation when selecting multiple selections under the big data of the `Cascader` component.([#523](https://github.com/arco-design/arco-design/pull/523))
+
+### 🆕 Feature
+
+- Added node information parameter to `onChange` function of `TreeSelect`([#526](https://github.com/arco-design/arco-design/pull/526))
+- Upgrade `b-validate` version to support `Form` passing `ReactNode` in `validator`([#518](https://github.com/arco-design/arco-design/pull/518))
+- Supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
+- Supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
+- Improve component TS type definition to inherit native `label` label attribute([#513](https://github.com/arco-design/arco-design/pull/513))
+- The `Tree` component supports expanding child nodes when a node is clicked via the `expandOnClick` property([#511](https://github.com/arco-design/arco-design/pull/511))
+- `Form.Item` supports hiding form items via the `hidden` property([#509](https://github.com/arco-design/arco-design/pull/509))
+- Support for clearing field values via the `clearFields` method([#509](https://github.com/arco-design/arco-design/pull/509))
+- `Popconfirm` component `onOk`, `onCancel` callback methods expose `event` parameter([#501](https://github.com/arco-design/arco-design/pull/501))
+- support as block-level element  display([#493](https://github.com/arco-design/arco-design/pull/493))
+
+### 🐛 BugFix
+
+- Fix `Statistic` component `precision=0` does not take effect([#531](https://github.com/arco-design/arco-design/pull/531))
+- Fix the bug of `Cascader` component `showSearch.retainInputValueWhileSelect` not taking effect([#524](https://github.com/arco-design/arco-design/pull/524))
+- Fixed the bug that the `Input` component would trigger `onChange` twice in a row when entering Chinese in Firefox.([#522](https://github.com/arco-design/arco-design/pull/522))
+- Fix the bug that `Table` component `onDropdownVisibleChange` does not trigger when the OK button is clicked.([#521](https://github.com/arco-design/arco-design/pull/521))
+- Fixed `Upload` component triggering `onClick` twice([#519](https://github.com/arco-design/arco-design/pull/519))
+
+### 🆎 TypeScript
+
+- fix type definition of Timeline, where mode lacks "top" and "bottom" as possible values([#488](https://github.com/arco-design/arco-design/pull/488))
+
 ## 2.28.2
 
 2022-01-21
@@ -169,7 +206,7 @@ changelog: true
 
 2021-12-03
 
-### 💎 Performance
+### 💎 Optimization
 
 - Optimize the logic used by the `Trigger` component to calculate the size and position of child nodes to avoid double-counting([#258](https://github.com/arco-design/arco-design/pull/258))
 

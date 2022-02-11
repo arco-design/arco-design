@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 Feature
+
+- `Popconfirm` component `onOk`, `onCancel` callback methods expose `event` parameter([#501](https://github.com/arco-design/arco-design/pull/501))
+
 ## 2.25.0
 
 2021-11-19

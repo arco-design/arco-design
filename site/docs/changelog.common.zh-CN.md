@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 功能升级
+
+- 升级 `b-validate` 版本以支持 `Form` 在 `validator` 中传入 `ReactNode`([#518](https://github.com/arco-design/arco-design/pull/518))
+
 ## 2.28.0
 
 2022-01-07

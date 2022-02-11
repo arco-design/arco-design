@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 Feature
+
+- Upgrade `b-validate` version to support `Form` passing `ReactNode` in `validator`([#518](https://github.com/arco-design/arco-design/pull/518))
+
 ## 2.28.0
 
 2022-01-07

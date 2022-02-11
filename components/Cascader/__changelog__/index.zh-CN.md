@@ -1,3 +1,15 @@
+## 2.29.0
+
+2022-02-11
+
+### 💎 优化
+
+- 优化 `Cascader` 组件大数据下多选时候选中操作卡顿的问题。([#523](https://github.com/arco-design/arco-design/pull/523))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件 `showSearch.retainInputValueWhileSelect` 不生效的 bug([#524](https://github.com/arco-design/arco-design/pull/524))
+
 ## 2.26.2
 
 2021-12-10

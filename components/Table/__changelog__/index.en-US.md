@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🐛 BugFix
+
+- Fix the bug that `Table` component `onDropdownVisibleChange` does not trigger when the OK button is clicked.([#521](https://github.com/arco-design/arco-design/pull/521))
+
 ## 2.28.2
 
 2022-01-21

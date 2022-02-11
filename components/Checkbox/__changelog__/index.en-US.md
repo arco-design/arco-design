@@ -1,3 +1,12 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 Feature
+
+- Supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
+- Improve component TS type definition to inherit native `label` label attribute([#513](https://github.com/arco-design/arco-design/pull/513))
+
 ## 2.10.0 🏮
 
 2020-02-26

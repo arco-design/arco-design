@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 Feature
+
+- Added node information parameter to `onChange` function of `TreeSelect`([#526](https://github.com/arco-design/arco-design/pull/526))
+
 ## 2.23.5
 
 2021-10-29

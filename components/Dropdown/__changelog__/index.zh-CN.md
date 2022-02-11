@@ -2,7 +2,7 @@
 
 2022-01-14
 
-### 💎 性能优化
+### 💎 优化
 
 - `Dropdown` 为下拉框节点补充 `arco-dropdown` 的类名。([#437](https://github.com/arco-design/arco-design/pull/437))
 

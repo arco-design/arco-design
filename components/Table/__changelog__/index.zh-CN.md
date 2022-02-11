@@ -1,8 +1,16 @@
+## 2.29.0
+
+2022-02-11
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `onDropdownVisibleChange` 在点击确定按钮时不触发的 bug。([#521](https://github.com/arco-design/arco-design/pull/521))
+
 ## 2.28.2
 
 2022-01-21
 
-### 💎 性能优化
+### 💎 优化
 
 - 优化 `Table` 组件 `expandedRowRender` 会执行多次导致卡顿的问题。([#473](https://github.com/arco-design/arco-design/pull/473))
 - 优化 `Table` 在开启 `virtualized` 之后，大于 10000 条数据时全选会卡的性能问题。([#472](https://github.com/arco-design/arco-design/pull/472))

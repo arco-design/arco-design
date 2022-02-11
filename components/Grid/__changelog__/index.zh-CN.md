@@ -2,7 +2,7 @@
 
 2022-01-21
 
-### 💎 性能优化
+### 💎 优化
 
 - `Grid` 支持设置 `span` 为 0。([#480](https://github.com/arco-design/arco-design/pull/480))
 

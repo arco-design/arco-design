@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🐛 BugFix
+
+- Fixed `Upload` component triggering `onClick` twice([#519](https://github.com/arco-design/arco-design/pull/519))
+
 ## 2.28.2
 
 2022-01-21

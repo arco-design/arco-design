@@ -1,3 +1,12 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 功能升级
+
+- `Form.Item` 支持通过 `hidden` 属性隐藏表单项([#509](https://github.com/arco-design/arco-design/pull/509))
+- 支持通过 `clearFields` 方法清除表单项的值([#509](https://github.com/arco-design/arco-design/pull/509))
+
 ## 2.28.1
 
 2022-01-14

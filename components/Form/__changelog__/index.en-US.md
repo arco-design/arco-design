@@ -1,3 +1,12 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 Feature
+
+- `Form.Item` supports hiding form items via the `hidden` property([#509](https://github.com/arco-design/arco-design/pull/509))
+- Support for clearing field values via the `clearFields` method([#509](https://github.com/arco-design/arco-design/pull/509))
+
 ## 2.28.1
 
 2022-01-14

@@ -22,7 +22,7 @@ export interface TimelineProps {
    * @en The display mode of Timeline
    * @defaultValue left(vertical) | top(horizontal)
    */
-  mode?: 'left' | 'right' | 'top' | 'bottom' | 'alternate' ;
+  mode?: 'left' | 'right' | 'top' | 'bottom' | 'alternate';
   /**
    * @zh 是否展示幽灵节点，设置为 true 时候只展示幽灵节点。传入ReactNode时，会作为节点内容展示。
    * @en Whether to display ghost nodes. When set to true, only ghost nodes are displayed. When passed to ReactNode, it will be displayed as node content

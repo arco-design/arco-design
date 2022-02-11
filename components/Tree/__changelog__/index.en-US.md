@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🆕 Feature
+
+- The `Tree` component supports expanding child nodes when a node is clicked via the `expandOnClick` property([#511](https://github.com/arco-design/arco-design/pull/511))
+
 ## 2.27.0
 
 2021-12-17

@@ -1,3 +1,11 @@
+## 2.29.0
+
+2022-02-11
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Input` component would trigger `onChange` twice in a row when entering Chinese in Firefox.([#522](https://github.com/arco-design/arco-design/pull/522))
+
 ## 2.28.1
 
 2022-01-14
