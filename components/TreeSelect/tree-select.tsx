@@ -121,9 +121,9 @@ const TreeSelect: ForwardRefRenderFunction<
     }
   };
 
-  const triggerChange = useCallback(
-    (newValue: LabelValue[]) => {
-      setValue(newValue);
+  const triggerChange = useCallback<typeof setValue>(
+    (newValue: LabelValue[], extra) => {
+      setValue(newValue, extra);
       resetInputValue();
       if (!multiple) {
         setPopupVisible(false);
@@ -139,7 +139,11 @@ const TreeSelect: ForwardRefRenderFunction<
     }
     if (!props.treeCheckable || props.treeCheckStrictly || !key2nodeProps[item.value]) {
       const newValue = value.filter((_, i) => i !== index);
-      triggerChange(newValue);
+      triggerChange(newValue, {
+        trigger: key2nodeProps[item.value] || item,
+        checked: false,
+        selected: false,
+      });
       return;
     }
     const result = getAllCheckedKeysByCheck(
@@ -150,7 +154,11 @@ const TreeSelect: ForwardRefRenderFunction<
       indeterminateKeys.current
     );
     indeterminateKeys.current = result.indeterminateKeys;
-    triggerChange(parseValue(result.checkedKeys, key2nodeProps, value));
+    triggerChange(parseValue(result.checkedKeys, key2nodeProps, value), {
+      trigger: key2nodeProps[item.value],
+      checked: false,
+      selected: false,
+    });
   };
 
   useEffect(() => {
@@ -275,7 +283,7 @@ const TreeSelect: ForwardRefRenderFunction<
           onRemoveCheckedItem={handleRemoveCheckedItem}
           onClear={(e) => {
             e.stopPropagation();
-            triggerChange([]);
+            triggerChange([], {});
             props.onClear && props.onClear(!!popupVisible);
           }}
           onKeyDown={(e) => {
