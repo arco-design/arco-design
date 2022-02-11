@@ -308,10 +308,12 @@ module.exports = {
 // .config/main.js
 module.exports = {
   build: {
-    hook: {
-      // 站点初始化时执行函数的路径
-      beforeAll: 'hooks/beforeAll.ts',
-    },
+    globs: {
+      hook: {
+        // 站点初始化时执行函数的路径
+        beforeAll: 'hooks/beforeAll.ts',
+      },
+    }
   },
 };
 ```

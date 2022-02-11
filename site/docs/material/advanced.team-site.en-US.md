@@ -310,10 +310,12 @@ We exposed the Hook of the site Demo runtime, and you can specify the function t
 // .config/main.js
 module.exports = {
   build: {
-    hook: {
-      // The path to execute the function when the site is initialized
-      beforeAll:'hooks/beforeAll.ts',
-    },
+    globs: {
+      hook: {
+        // The path to execute the function when the site is initialized
+        beforeAll:'hooks/beforeAll.ts',
+      },
+    }
   },
 };
 ```
