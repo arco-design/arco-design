@@ -1,4 +1,5 @@
 import isEqualWith from 'lodash/isEqualWith';
+import { valueInSet, transformValuesToSet } from '../util';
 import { isArray, isFunction, isString } from '../../_util/is';
 import { FieldNamesType, CascaderProps } from '../interface';
 import Node, { NodeProps } from './node';
@@ -74,11 +75,11 @@ class Store<T> {
    * @memberof Store
    */
   public setNodeCheckedByValue = (initValues: string[][]) => {
-    const values = initValues || [];
+    const valuesSet = transformValuesToSet(initValues);
 
     // 根据value设置节点初始选中状态
     this.flatNodes.forEach((node) => {
-      if (values.some((item) => isEqualWith(node.pathValue, item))) {
+      if (valueInSet(valuesSet, node.pathValue)) {
         node.setCheckedStateIgnoreDisabled(true);
       } else {
         node.setCheckedStateIgnoreDisabled(false);

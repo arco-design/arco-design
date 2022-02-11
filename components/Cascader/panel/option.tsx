@@ -24,17 +24,6 @@ const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
 
   const checkboxDisabled = option.disabled || (multiple && option.disableCheckbox);
 
-  const dom = (
-    <div
-      className={`${prefixCls}-list-item-label`}
-      onClick={option.disabled ? undefined : props.onClickOption}
-      onMouseEnter={option.isLeaf || option.disabled ? undefined : props.onMouseEnter}
-      onDoubleClick={checkboxDisabled ? undefined : props.onDoubleClickOption}
-    >
-      {renderOption ? renderOption() : option.label}
-      {option.isLeaf ? selected && <IconCheck /> : option.loading ? <IconLoading /> : <IconRight />}
-    </div>
-  );
   return (
     <>
       {multiple ? (
@@ -48,7 +37,21 @@ const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
       ) : (
         ''
       )}
-      {dom}
+      <div
+        className={`${prefixCls}-list-item-label`}
+        onClick={option.disabled ? undefined : props.onClickOption}
+        onMouseEnter={option.isLeaf || option.disabled ? undefined : props.onMouseEnter}
+        onDoubleClick={checkboxDisabled ? undefined : props.onDoubleClickOption}
+      >
+        {renderOption ? renderOption() : option.label}
+        {option.isLeaf ? (
+          selected && <IconCheck />
+        ) : option.loading ? (
+          <IconLoading />
+        ) : (
+          <IconRight />
+        )}
+      </div>
     </>
   );
 };
