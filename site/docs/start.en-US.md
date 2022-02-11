@@ -73,27 +73,21 @@ ReactDOM.render(
 
 `@arco-design/web-react` supports `tree shaking` by default. You can load on demand through importing `import { Button } from '@arco-design/web-react';`.
 
-### ArcoWebpackPlugin
+### Arco plugins
 
-If the project uses Webpack as the build tool，you can load components and styles on demand with `@arco-design/webpack-plugin`。
+#### Feature
 
-**Install plugin**
+- Style lazy load
+- Theme import
+- Icon replacement
 
-```
-npm i @arco-design/webpack-plugin -D
-```
+#### Usage
 
-**Webpack configuration**
+[Webpack plugin](https://github.com/arco-design/arco-plugins/tree/main/packages/plugin-webpack-react)
 
-```js
-var ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
+[Vite plugin](https://github.com/arco-design/arco-plugins/tree/main/packages/plugin-vite-react)
 
-module.exports = {
-  plugins: [
-    new ArcoWebpackPlugin();
-  ],
-};
-```
+
 
 ### babel-plugin-import
 

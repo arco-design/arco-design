@@ -73,27 +73,19 @@ ReactDOM.render(
 
 `@arco-design/web-react` 默认支持 `tree shaking`。直接引入 `import { Button } from '@arco-design/web-react';` 即可按需加载。
 
-### ArcoWebpackPlugin
+### Arco 插件
 
-如果项目是以 Webpack 为构建工具的，使用 `@arco-design/webpack-plugin` 插件可以实现组件和样式的按需加载。
+#### 功能
 
-**安装插件**
+- 样式按需加载
+- 主题引入
+- 图标替换
 
-```bash
-npm i @arco-design/webpack-plugin -D
-```
+#### 使用
 
-**配置 webpack**
+[Webpack 插件](https://github.com/arco-design/arco-plugins/tree/main/packages/plugin-webpack-react)
 
-```js
-const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
-
-module.exports = {
-  plugins: [
-    new ArcoWebpackPlugin(),
-  ],
-};
-``` 
+[Vite 插件](https://github.com/arco-design/arco-plugins/tree/main/packages/plugin-vite-react)
 
 ### babel-plugin-import
 
