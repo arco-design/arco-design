@@ -58,6 +58,152 @@ exports[`renders Radio/demo/basic.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Radio/demo/custom_render.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    >
+      <label
+        class="arco-radio arco-radio-checked"
+      >
+        <input
+          checked=""
+          type="radio"
+          value="Beijing"
+        />
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
+          type="button"
+        >
+          <span>
+            Beijing
+          </span>
+        </button>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="Shanghai"
+        />
+        <button
+          class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-round"
+          type="button"
+        >
+          <span>
+            Shanghai
+          </span>
+        </button>
+      </label>
+      <label
+        class="arco-radio"
+      >
+        <input
+          type="radio"
+          value="Guangzhou"
+        />
+        <button
+          class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-round"
+          type="button"
+        >
+          <span>
+            Guangzhou
+          </span>
+        </button>
+      </label>
+    </div>
+  </div>
+  <div
+    class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+  >
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="1"
+      />
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-start custom-radio-card "
+      >
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="custom-radio-card-mask"
+          >
+            <div
+              class="custom-radio-card-mask-dot"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <div>
+            <div
+              class="custom-radio-card-title"
+            >
+              Radio Card 1
+            </div>
+            <span
+              class="arco-typography arco-typography-secondary"
+            >
+              this is a text
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+    <label
+      class="arco-radio"
+    >
+      <input
+        type="radio"
+        value="2"
+      />
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-start custom-radio-card "
+      >
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <div
+            class="custom-radio-card-mask"
+          >
+            <div
+              class="custom-radio-card-mask-dot"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <div>
+            <div
+              class="custom-radio-card-title"
+            >
+              Radio Card 2
+            </div>
+            <span
+              class="arco-typography arco-typography-secondary"
+            >
+              this is a text
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
 exports[`renders Radio/demo/direction.md correctly 1`] = `
 <div>
   <div
