@@ -1,20 +1,11 @@
-import React, { createContext, useContext, PropsWithChildren, ChangeEvent } from 'react';
+import React, { createContext, useContext, PropsWithChildren } from 'react';
 import cs from '../_util/classNames';
 import { isArray, isObject } from '../_util/is';
 import Radio from './radio';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
-import { RadioGroupProps } from './interface';
+import { RadioGroupProps, RadioGroupContextProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
-
-export interface RadioGroupContextProps {
-  type: 'radio' | 'button';
-  value?: any;
-  onChangeValue?: (value: any, event: ChangeEvent) => void;
-  disabled?: boolean;
-  group?: boolean;
-  name?: RadioGroupProps['name'];
-}
 
 export const RadioGroupContext = createContext<RadioGroupContextProps>({
   type: 'radio',
@@ -103,4 +94,4 @@ Group.displayName = 'RadioGroup';
 
 export default Group;
 
-export { RadioGroupProps };
+export { RadioGroupProps, RadioGroupContextProps };
