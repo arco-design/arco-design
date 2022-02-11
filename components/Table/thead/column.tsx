@@ -98,12 +98,12 @@ function Column<T>({
     if (!currentFilter) return;
     onHandleFilter &&
       onHandleFilter({ onFilter, filters, dataIndex: innerDataIndex }, stateCurrentFilter);
-    setFilterVisible(false);
+    onVisibleChange(false);
   }
 
   function handleFilterReset() {
     onHandleFilterReset({ dataIndex: innerDataIndex });
-    setFilterVisible(false);
+    onVisibleChange(false);
   }
 
   function onVisibleChange(filterVisible: boolean) {
