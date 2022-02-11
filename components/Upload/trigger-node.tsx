@@ -75,7 +75,6 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
               <IconPlus />
             </div>
           </div>
-          {tip && <div className={`${prefixCls}-trigger-tip`}>{tip}</div>}
         </div>
       ) : drag ? (
         <div

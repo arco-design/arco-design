@@ -275,6 +275,9 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         />
       )}
       {listType === 'picture-card' && uploadDom}
+      {props.tip && listType === 'picture-card' && (
+        <div className={`${prefixCls}-trigger-tip`}>{props.tip}</div>
+      )}
     </>
   );
 };
