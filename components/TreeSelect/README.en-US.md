@@ -32,7 +32,7 @@ Can choose tree structure data.Only Single choice is supports.
 |popupVisible|Whether the popup is visible or not|`boolean`|`-`|-|
 |dropdownMenuStyle|The additional css style for dropdown menu|`CSSProperties`|`-`|2.3.0|
 |dropdownRender|Customize dropdown rendering|`(dom: ReactNode) => ReactNode`|`-`|2.3.0|
-|onChange|Callback when the selection changed|`(value: any) => void`|`-`|-|
+|onChange|Callback when the selection changed|`(value: any,extra: {trigger?: NodeProps;checked?: boolean;selected?: boolean;}) => void`|`-`|`extra` in `2.29.0`|
 |getPopupContainer|The parent node of the popup|`(node: HTMLElement) => Element`|`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|`(visible: boolean) => void`|`-`|-|
 |filterTreeNode|Filter data based on entered value. Accepted two parameters, inputText and treeNode.When the option matches the filter conditions, it returns true, otherwise it returns false. treeNode is the tree node.|`(inputText, treeNode: any) => boolean \| void`|`-`|-|
@@ -58,3 +58,4 @@ Can choose tree structure data.Only Single choice is supports.
 |onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
+|dragToSort|Weather it is possible to sort tags by drag|`boolean`|`-`|2.27.0|

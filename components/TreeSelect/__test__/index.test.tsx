@@ -81,14 +81,14 @@ describe('TreeSelect', () => {
       .first()
       .simulate('click');
     expect(mockChange).toHaveBeenCalledTimes(1);
-    expect(mockChange.mock.calls[0]).toEqual(['node1']);
+    expect(mockChange.mock.calls[0][0]).toEqual('node1');
 
     // 第二次点击
     wrapper.simulate('click');
     Tree.find(`${prefixCls}-node`).at(1).find(`${prefixCls}-node-title`).last().simulate('click');
     expect(mockChange).toHaveBeenCalledTimes(2);
     expect(wrapper.find('.arco-tree-select-view-value').text()).toBe('小恶魔');
-    expect(mockChange.mock.calls[1]).toEqual(['node1-1']);
+    expect(mockChange.mock.calls[1][0]).toEqual('node1-1');
   });
 
   it('be controlled', () => {

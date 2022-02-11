@@ -32,7 +32,7 @@
 |popupVisible|控制下拉框的展开收起|`boolean`|`-`|-|
 |dropdownMenuStyle|设置下拉框样式|`CSSProperties`|`-`|2.3.0|
 |dropdownRender|自定义下拉框展示|`(dom: ReactNode) => ReactNode`|`-`|2.3.0|
-|onChange|选中值改变的回调|`(value: any) => void`|`-`|-|
+|onChange|选中值改变的回调|`(value: any,extra: {trigger?: NodeProps;checked?: boolean;selected?: boolean;}) => void`|`-`|`extra` in `2.29.0`|
 |getPopupContainer|弹出框挂载的父节点|`(node: HTMLElement) => Element`|`-`|-|
 |onVisibleChange|下拉框收起展开时触发|`(visible: boolean) => void`|`-`|-|
 |filterTreeNode|根据输入的值筛选数据。接收 `inputText` 和 `treeNode` 两个参数，当 `option` 符合筛选条件时，返回 `true`，反之返回 `false`。treeNode 是树节点。|`(inputText, treeNode: any) => boolean \| void`|`-`|-|
@@ -58,3 +58,4 @@
 |onClick|鼠标点击下拉框时的回调|`(e) => void`|`-`|-|
 |animation|是否为内部标签变化添加动画。|`boolean`|`true`|2.15.0|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
+|dragToSort|是否可以通过拖拽为 Tag 排序|`boolean`|`-`|2.27.0|

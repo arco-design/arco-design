@@ -117,8 +117,16 @@ export interface TreeSelectProps extends SelectViewCommonProps {
   /**
    * @zh 选中值改变的回调
    * @en Callback when the selection changed
+   * @version `extra` in `2.29.0`
    */
-  onChange?: (value: any) => void;
+  onChange?: (
+    value: any,
+    extra: {
+      trigger?: NodeProps;
+      checked?: boolean;
+      selected?: boolean;
+    }
+  ) => void;
   /**
    * @zh 弹出框挂载的父节点
    * @en The parent node of the popup
