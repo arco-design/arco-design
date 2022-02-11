@@ -10,12 +10,6 @@ import { isObject } from '../_util/is';
 
 const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
-    const isComposition = useRef(false);
-    const [compositionValue, setCompositionValue] = useState('');
-    const refInput = useRef<HTMLInputElement>();
-    const refInputMirror = useRef<HTMLSpanElement>();
-    const refPrevInputWidth = useRef<number>(null);
-
     const {
       allowClear,
       error,
@@ -31,9 +25,10 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       autoFitWidth,
       onClear,
       onValueChange,
-      maxLength,
+      maxLength: propMaxLength,
       ...rest
     } = props;
+
     const otherProps = omit(rest, [
       'showWordLimit',
       'className',
@@ -47,6 +42,19 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       'prefix',
       'suffix',
     ]);
+
+    const [compositionValue, setCompositionValue] = useState('');
+
+    const refIsComposition = useRef(false);
+    const refInput = useRef<HTMLInputElement>();
+    const refInputMirror = useRef<HTMLSpanElement>();
+    const refPrevInputWidth = useRef<number>(null);
+    const refPrevValueChangeCallbackParameter = useRef<string>(null);
+
+    const maxLength = isObject(propMaxLength) ? propMaxLength.length : propMaxLength;
+    const mergedMaxLength =
+      isObject(propMaxLength) && propMaxLength.errorOnly ? undefined : maxLength;
+
     const inputClassNames = cs(
       prefixCls,
       prefixCls && {
@@ -83,40 +91,38 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     // 设定 <input> 初始宽度，之后的更新交由 ResizeObserver 触发
     useEffect(() => autoFitWidth && updateInputWidth(), []);
 
-    const trueMaxLength = isObject(maxLength) ? maxLength.length : maxLength;
-    const mergedMaxLength = isObject(maxLength) && maxLength.errorOnly ? undefined : trueMaxLength;
+    const tryTriggerValueChangeCallback: typeof onValueChange = (value, e) => {
+      if (
+        onValueChange &&
+        // https://github.com/arco-design/arco-design/issues/520
+        // Avoid triggering onChange repeatedly for the same value
+        // Compositionend is earlier than onchange in Firefox, different with chrome
+        value !== refPrevValueChangeCallbackParameter.current &&
+        (mergedMaxLength === undefined || value.length <= mergedMaxLength)
+      ) {
+        onValueChange(value, e);
+        refPrevValueChangeCallbackParameter.current = value;
+      }
+    };
 
     const onChange: React.ChangeEventHandler<HTMLInputElement> = (e: any) => {
       const newValue = e.target.value;
-      if (!isComposition.current) {
+      if (!refIsComposition.current) {
         compositionValue && setCompositionValue(undefined);
-        if (!onValueChange) {
-          return;
-        }
-
-        if (mergedMaxLength) {
-          if (newValue.length <= trueMaxLength) {
-            onValueChange(newValue, e);
-          }
-        } else {
-          onValueChange(newValue, e);
-        }
+        tryTriggerValueChangeCallback(newValue, e);
       } else {
         // https://github.com/arco-design/arco-design/issues/397
         // compositionupdate => onchange
-        isComposition.current = false;
+        refIsComposition.current = false;
         setCompositionValue(newValue);
       }
     };
 
-    // 处理中文输入
     const onComposition = (e) => {
-      if (e.type === 'compositionend') {
-        isComposition.current = false;
+      refIsComposition.current = e.type !== 'compositionend';
+      if (!refIsComposition.current) {
         setCompositionValue(undefined);
-        onValueChange && onValueChange(e.target.value, e);
-      } else {
-        isComposition.current = true;
+        tryTriggerValueChangeCallback(e.target.value, e);
       }
     };
 
@@ -124,7 +130,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       const { onKeyDown, onPressEnter } = props;
       const keyCode = e.keyCode || e.which;
 
-      if (isComposition.current) {
+      if (refIsComposition.current) {
         return;
       }
 
