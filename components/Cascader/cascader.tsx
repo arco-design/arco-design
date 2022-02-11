@@ -9,7 +9,7 @@ import React, {
   useContext,
   useCallback,
 } from 'react';
-import { isArray, isFunction, isString } from '../_util/is';
+import { isArray, isFunction, isObject, isString } from '../_util/is';
 import Trigger from '../Trigger';
 import CascaderPanel from './panel/list';
 import SearchPanel from './panel/search-panel';
@@ -190,6 +190,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
   // isTouch: 是否是通过点击remove图标或者清除图标改变的值
   const handleChange = (newValue: string[][], isTouch?: boolean) => {
+    if (isObject(props.showSearch) && !props.showSearch.retainInputValueWhileSelect && isMultiple) {
+      setInputValue('');
+    }
     setValue((mergeValue) => {
       const { onChange, changeOnSelect, expandTrigger } = props;
       const isSame = isEqualWith(mergeValue, newValue);
