@@ -40,9 +40,10 @@ For content with many levels, such as folders, catalogs, and organizational stru
 |renderExtra|Render additional node|`(props: NodeProps) => ReactNode`|`-`|-|
 |renderTitle|Customize title rendering|`(props: NodeProps) => ReactNode`|`-`|-|
 |showLine|Whether to display the connection line|`boolean`|`-`|-|
+|actionOnClick|The action when click node|`ActionOnClick \| ActionOnClick[]`|`-`|select|
 |loadMore|Callback when loaded data asynchronously, returning a `Promise`.|`(node: NodeInstance) => Promise<void>`|`-`|-|
 |onSelect|Callback when selected node|`(selectedKeys: string[],extra: {selected: boolean;selectedNodes: NodeInstance[];node: NodeInstance;e: Event;}) => void`|`-`|-|
-|onCheck|Callback when checked node|`(checkedKeys: string[],extra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;halfCheckedKeys: string[]; // version 2.27.0halfCheckedNodes: NodeInstance[]; // version 2.27.0e: Event;}) => void`|`-`|-|
+|onCheck|Callback when checked node|`(checkedKeys: string[],extra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;halfCheckedKeys: string[];halfCheckedNodes: NodeInstance[];e: Event;}) => void`|`-`|-|
 |onExpand|Callback when expanded or collapsed node|`(expandedKeys: string[],exra?: { expanded: boolean; node: NodeInstance; expandedNodes: NodeInstance[] }) => void`|`-`|-|
 |onDragStart|Callback when the node starts dragging|`(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void`|`-`|-|
 |onDragEnd|Callback when the node ends drag|`(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void`|`-`|-|
