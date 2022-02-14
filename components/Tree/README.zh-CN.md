@@ -40,9 +40,10 @@
 |renderExtra|渲染额外节点|`(props: NodeProps) => ReactNode`|`-`|-|
 |renderTitle|自定义 title 的渲染|`(props: NodeProps) => ReactNode`|`-`|-|
 |showLine|是否展示连接线|`boolean`|`-`|-|
+|actionOnClick|点击节点时对应的操作，可以是选中，复选选中，展开/收起|`ActionOnClick \| ActionOnClick[]`|`-`|select|
 |loadMore|异步加载数据的回调，返回一个 `Promise`。|`(node: NodeInstance) => Promise<void>`|`-`|-|
 |onSelect|点击树节点的回调|`(selectedKeys: string[],extra: {selected: boolean;selectedNodes: NodeInstance[];node: NodeInstance;e: Event;}) => void`|`-`|-|
-|onCheck|点击树节点复选框的回调|`(checkedKeys: string[],extra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;halfCheckedKeys: string[]; // version 2.27.0halfCheckedNodes: NodeInstance[]; // version 2.27.0e: Event;}) => void`|`-`|-|
+|onCheck|点击树节点复选框的回调|`(checkedKeys: string[],extra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;halfCheckedKeys: string[];halfCheckedNodes: NodeInstance[];e: Event;}) => void`|`-`|-|
 |onExpand|点击展开/关闭的回调|`(expandedKeys: string[],exra?: { expanded: boolean; node: NodeInstance; expandedNodes: NodeInstance[] }) => void`|`-`|-|
 |onDragStart|节点开始拖拽的回调|`(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void`|`-`|-|
 |onDragEnd|节点结束拖拽的回调|`(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void`|`-`|-|
