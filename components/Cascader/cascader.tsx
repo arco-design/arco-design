@@ -61,7 +61,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   // 暂存被选中的值对应的节点。仅在onSearch的时候用到
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>([]);
-  const [mergeValue, setValue, stateValue] = useMergeValue([], {
+  const [mergeValue, setValue] = useMergeValue([], {
     value: 'value' in props ? formatValue(props.value, isMultiple) : undefined,
     defaultValue: 'defaultValue' in props ? formatValue(props.defaultValue, isMultiple) : undefined,
   });
@@ -102,7 +102,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
       // useMergeProps do this
       // setValue(newValue);
     }
-  }, [props.value, stateValue, isMultiple]);
+  }, [props.value, isMultiple]);
 
   useImperativeHandle(ref, () => selectRef.current, []);
 
