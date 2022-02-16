@@ -18,14 +18,14 @@ changelog: true
 
 - Added node information parameter to `onChange` function of `TreeSelect`([#526](https://github.com/arco-design/arco-design/pull/526))
 - Upgrade `b-validate` version to support `Form` passing `ReactNode` in `validator`([#518](https://github.com/arco-design/arco-design/pull/518))
-- Supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
-- Supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
-- Improve component TS type definition to inherit native `label` label attribute([#513](https://github.com/arco-design/arco-design/pull/513))
-- The `Tree` component supports expanding child nodes when a node is clicked via the `expandOnClick` property([#511](https://github.com/arco-design/arco-design/pull/511))
+- The `Checkbox` component supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
+- The `Radio` component supports custom node content by passing `children` of function type.([#513](https://github.com/arco-design/arco-design/pull/513))
+- Improve `Checkbox` component's TS type definition to inherit native `label` label attribute([#513](https://github.com/arco-design/arco-design/pull/513))
+- The `Tree` component supports setting the component behavior when a node is clicked through the `actionOnClick` property([#511](https://github.com/arco-design/arco-design/pull/511))
 - `Form.Item` supports hiding form items via the `hidden` property([#509](https://github.com/arco-design/arco-design/pull/509))
 - Support for clearing field values via the `clearFields` method([#509](https://github.com/arco-design/arco-design/pull/509))
 - `Popconfirm` component `onOk`, `onCancel` callback methods expose `event` parameter([#501](https://github.com/arco-design/arco-design/pull/501))
-- support as block-level element  display([#493](https://github.com/arco-design/arco-design/pull/493))
+- The `Spin` component supports as block-level element  display([#493](https://github.com/arco-design/arco-design/pull/493))
 
 ### 🐛 BugFix
 

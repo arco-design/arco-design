@@ -18,14 +18,14 @@ changelog: true
 
 - `TreeSelect` 的 `onChange` 函数新增节点信息参数([#526](https://github.com/arco-design/arco-design/pull/526))
 - 升级 `b-validate` 版本以支持 `Form` 在 `validator` 中传入 `ReactNode`([#518](https://github.com/arco-design/arco-design/pull/518))
-- 支持通过传入函数类型的 `children` 自定义节点内容。([#513](https://github.com/arco-design/arco-design/pull/513))
-- 支持通过传入函数类型的 `children` 自定义节点内容。([#513](https://github.com/arco-design/arco-design/pull/513))
-- 完善组件 TS 类型定义继承原生 `label` 标签属性([#513](https://github.com/arco-design/arco-design/pull/513))
-- `Tree` 组件支持通过 `expandOnClick` 属性设置点击节点时展开子节点([#511](https://github.com/arco-design/arco-design/pull/511))
+- `Checkbox` 支持通过传入函数类型的 `children` 自定义节点内容。([#513](https://github.com/arco-design/arco-design/pull/513))
+- `Radio` 支持通过传入函数类型的 `children` 自定义节点内容。([#513](https://github.com/arco-design/arco-design/pull/513))
+- `CheckBox` 完善组件 TS 类型定义继承原生 `label` 标签属性([#513](https://github.com/arco-design/arco-design/pull/513))
+- `Tree` 组件支持通过 `actionOnClick` 属性设置点击节点时组件行为([#511](https://github.com/arco-design/arco-design/pull/511))
 - `Form.Item` 支持通过 `hidden` 属性隐藏表单项([#509](https://github.com/arco-design/arco-design/pull/509))
 - 支持通过 `clearFields` 方法清除表单项的值([#509](https://github.com/arco-design/arco-design/pull/509))
 - `Popconfirm` 组件 `onOk`,`onCancel` 回调方法暴露 `event` 参数([#501](https://github.com/arco-design/arco-design/pull/501))
-- 支持作为块级元素展示([#493](https://github.com/arco-design/arco-design/pull/493))
+- `Spin` 支持作为块级元素展示([#493](https://github.com/arco-design/arco-design/pull/493))
 
 ### 🐛 问题修复
 
