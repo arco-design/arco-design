@@ -52,9 +52,6 @@ export default function useForm<
   const formRef = useRef<FormInstance<FormData, FieldValue, FieldKey>>(form);
 
   if (!formRef.current) {
-    if (form) {
-      formRef.current = form;
-    }
     formRef.current = getFormInstance<FormData, FieldValue, FieldKey>();
   }
   return [formRef.current];
