@@ -19,6 +19,7 @@ import Input from '../Input';
 import { RefInputType } from '../Input/interface';
 import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import omit from '../_util/omit';
 
 NP.enableBoundaryChecking(false);
 
@@ -278,7 +279,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   return (
     <Input
-      {...rest}
+      {...omit(rest, ['allowClear'])}
       {...inputEventHandlers}
       style={style}
       className={cs(
