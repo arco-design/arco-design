@@ -104,7 +104,7 @@ export default () => {
 };
 ```
 
-3.  确保 @arco-design/arco-scripts 版本 >= 1.17.1，并且 Webpack 构建的配置中包含了 arcoDemoVendor 入口。
+3.  确保 arco-scripts 版本 >= 1.17.1，并且 Webpack 构建的配置中包含了 arcoDemoVendor 入口。
 
 ```javascript
 // Lerna Monorepo 模板中的物料构建配置

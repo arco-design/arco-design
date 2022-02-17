@@ -32,7 +32,7 @@ According to your different needs, there are the following recommended templates
 
 ## Can I use TS to write material Demo?
 
-It can be used, but you need to ensure that @arco-design/arco-scripts >= 1.20.5.
+It can be used, but you need to ensure that arco-scripts >= 1.20.5.
 
 ## After the material development is completed, how to preview its display effect on the material platform?
 

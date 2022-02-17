@@ -13,17 +13,6 @@
 ```javascript
 // arco.config.js
 module.exports = {
-  // default template for 'arco init'
-  defaultTemplate: {
-    component: '@arco-design/arco-template-react-component',
-    block: '@arco-design/arco-template-react-block',
-    library: '@arco-design/arco-template-react-monorepo',
-    pro: '@arco-design/arco-template-arco-design-pro',
-  },
-  // npm config
-  npm: {
-    registry: 'https://registry.npmjs.org/',
-  },
   // globs to your packages
   // e.g. [ 'packages/*' ]
   packages: [],
@@ -32,12 +21,18 @@ module.exports = {
   alias: {
     publish: '',
   },
+  // initial meta for 'arco generate'
+  initialMeta: {
+    group: 0,
+  },
+  // path of arco block insertion, relative to /src ('myPath' will be resolved as '/src/myPath')
+  // pathBlockInsert: 'pathRelativeToSrc',
 };
 ```
 
 ## **构建配置**
 
-Arco 官方模板所创建的项目使用 `@arco-design/arco-scripts` 来进行项目的测试和打包，你可以通过配置文件修改其默认配置。在项目根目录的 `.config` 文件夹内，我们提供了扩展配置的入口：
+Arco 官方模板所创建的项目使用 `arco-scripts` 来进行项目的测试和打包，你可以通过配置文件修改其默认配置。在项目根目录的 `.config` 文件夹内，我们提供了扩展配置的入口：
 
 ```
 .config
@@ -62,15 +57,15 @@ Arco 官方模板所创建的项目使用 `@arco-design/arco-scripts` 来进行�
 ### 配置智能提示
 
 
-**版本要求 `@arco-design/arco-scripts >= 1.25.7`**
+**版本要求 `arco-scripts >= 1.25.7`**
 
-`@arco-design/arco-scripts` 的配置项由 TypeScript 书写，你可以通过 IDE 和 JsDoc 的配合来实现智能提示：
+`arco-scripts` 的配置项由 TypeScript 书写，你可以通过 IDE 和 JsDoc 的配合来实现智能提示：
 
 ```js
 // docgen.config.js
 
 /**
- * @param config {import('@arco-design/arco-scripts').DocgenConfig}
+ * @param config {import('arco-scripts').DocgenConfig}
  */
 module.exports = (config) => {};
 ```
@@ -108,7 +103,7 @@ module.exports = (config) => {
 
 ### 配置 TSC
 
-**需要 @arco-design/arco-scripts >= 1.19.0**
+**需要 arco-scripts >= 1.19.0**
 
 物料产物的 ESM 和 CommonJS 产物默认由 `tsc` 命令直接编译，通过配置 `tsc.config.js` 可以配置此命令的[所有参数](https://www.typescriptlang.org/docs/handbook/compiler-options.html) 。
 
@@ -138,7 +133,7 @@ module.exports = (config) => {
 ```javascript
 // webpack.config.js
 const path = require('path');
-// webpack-merge 已经被 @arco-design/arco-scripts 依赖，你无需手动安装它
+// webpack-merge 已经被 arco-scripts 依赖，你无需手动安装它
 const merge = require('webpack-merge');
 
 module.exports = (config) => {

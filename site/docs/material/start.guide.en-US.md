@@ -40,13 +40,13 @@ The page is its literal meaning, and its usage is similar to the block. A typica
 
 ## Arco CLI
 
-In order to facilitate developers to quickly build material projects and manage materials. Arco provides a Node-based scaffolding tool @arco-design/arco-cli, which roughly includes the following functions:
+In order to facilitate developers to quickly build material projects and manage materials. Arco provides a Node-based scaffolding tool arco-cli, which roughly includes the following functions:
 
 - Create an ArcoDesign-based material project based on the template;
 - Publish, manage and use materials;
 - Use material blocks or pages in the project;
 
-Before starting further process experience, you need to install Arco CLI globally via `npm i @arco-design/arco-cli -g`.
+Before starting further process experience, you need to install Arco CLI globally via `npm i arco-cli -g`.
 
 ## New Project
 
@@ -227,7 +227,7 @@ Compared with components, you need to pay attention to the following differences
 If you need to write a preview of the block displayed on the material platform, refer to the following steps:
 
 - Modify the `docgen` command in the block package.json to `arco-scripts docgen`;
-- Make sure @arco-design/arco-scripts >= 1.20.4;
+- Make sure arco-scripts >= 1.20.4;
 - Make sure that `config.template ='README.md'` is configured in `/.config/docgen.config.js`;
 - Add the following content to `/src/README.md`:
 

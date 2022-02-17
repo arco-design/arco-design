@@ -3,17 +3,17 @@ Material Market
 
 # All Commands
 
-Get a quick overview of all available commands contained in @arco-design/arco-cli and @arco-design/arco-scripts.
+Get a quick overview of all available commands contained in arco-cli and arco-scripts.
 `````
 
 *Auto translate by google.*
 
-Arco provides the two commands `arco` and `arco-scripts` through `@arco-design/arco-cli` and `@arco-design/arco-scripts`. Before use, please install the following two NPM packages:
+Arco provides the two commands `arco` and `arco-scripts` through `arco-cli` and `arco-scripts`. Before use, please install the following two NPM packages:
 
 ```
-npm install @arco-design/arco-cli -g
+npm install arco-cli -g
 
-npm install @arco-design/arco-scripts -g
+npm install arco-scripts -g
 ```
 
 You can execute `arco --help` and `arco-scripts --help` to quickly see the command usage:

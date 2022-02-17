@@ -15,7 +15,7 @@ Before starting development, please make sure that `node`, `git` and `arco cli >
 Among them, `arco cli` is a tool for installing project templates, please run the following command to install
 
 ```
-npm i -g @arco-design/arco-cli
+npm i -g arco-cli
 ```
 
 ## Technology Stack

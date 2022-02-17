@@ -10,13 +10,13 @@
 
 目前，Arco 提供了以下模板：
 
-- @arco-design/arco-template-react-component —— 用于创建单个物料；
-- @arco-design/arco-template-react-block —— 用于创建物料区块；
-- @arco-design/arco-template-react-library —— 用于创建类似于 `@arco-design/web-react` 的业务组件库项目 **（推荐）** ；
-- @arco-design/arco-template-react-monorepo —— 用于创建基于 Lerna 管理的 Monorepo 项目 **（推荐）** ；
-- @arco-design/arco-template-arco-design-pro —— 用于创建 ArcoPro 项目。
+- 组件模板 —— 用于创建组件物料；
+- 区块模板 —— 用于创建区块物料；
+- 页面模板 —— 用于创建页面物料；
+- 组件库模板 —— 用于创建结构类似于 [Arco 组件库](https://github.com/arco-design/arco-design) 的业务组件库项目 **（推荐）** ；
+- Monorepo 模板 —— 用于创建基于 Lerna 管理的 Monorepo 项目 **（推荐）** ；
 
-使用上述模板只需在 arco init 时选择对应的仓库分类即可。
+使用上述模板只需在 `arco init` 时选择对应的分类即可。
 
 ### 技术栈
 
@@ -33,7 +33,7 @@ Arco 官方模板创建的项目中，使用到了以下技术栈：
 我们用组件模板创建一个物料项目并且进行一次构建，目录结构和详细说明如下：
 
 ```
-├── .config // @arco-design/arco-scripts 配置项，包括构建、测试、文档生成，详情可见下一章节 [自定义配置]
+├── .config // arco-scripts 配置项，包括构建、测试、文档生成，详情可见下一章节 [自定义配置]
 │   ├── babel.config.js
 │   ├── docgen.config.js
 │   ├── jest.config.js
@@ -44,7 +44,7 @@ Arco 官方模板创建的项目中，使用到了以下技术栈：
 │   ├── main.js
 │   └── preview.js
 │
-├── arco.config.js // @arco-design/arco-cli 配置项
+├── arco.config.js // arco-cli 配置项
 │
 ├── dist // 构建产物（UMD 版本）
 ├── docs // 构建产物（Prop 和 Demo 文档）
@@ -95,8 +95,8 @@ Arco 官方模板创建的项目中，使用到了以下技术栈：
 │
 ├── packages // lerna workspace
 │
-├── arco.config.js // @arco-design/arco-cli 配置项
-├── arco.scripts.config.js // 所有 package 公用的 @arco-design/arco-scripts 配置项
+├── arco.config.js // arco-cli 配置项
+├── arco.scripts.config.js // 所有 package 公用的 arco-scripts 配置项
 ├── lerna.json
 ├── package.json
 └── tsconfig.json // 所有 package 公用的 ts 配置
@@ -105,7 +105,7 @@ Arco 官方模板创建的项目中，使用到了以下技术栈：
 初始化项目骨架之后，你可以通过 `yarn run add:package -- yourPackageName` 来添加第一个物料，创建出来的物料与组件模板大致相同，但其所有的依赖项都已经被提至最外层。一个创建好的 Package 的目录结构和详细说明如下：
 
 ```
-├── .config // 扩展 @arco-design/arco-scripts 配置项，包括构建、测试、文档生成，详情可见下一章节 [自定义配置]
+├── .config // 扩展 arco-scripts 配置项，包括构建、测试、文档生成，详情可见下一章节 [自定义配置]
 │   ├── babel.config.js
 │   ├── docgen.config.js
 │   ├── jest.config.js
@@ -153,7 +153,7 @@ arco-cli 允许通过指定模板（本地/线上）来创建项目，通过 `--
 arco init <projectName> --template [templatePackageName|file:templatePath]
 
 # e.g.
-arco init my-site --template @arco-design/arco-template-react-library
+arco init my-site --template @arco-materials/template-core
 
 arco init my-site --template file:../path/to/your/template/acro-template-site
 ```

@@ -6,6 +6,8 @@
 了解物料平台的团队文档站点方案。
 `````
 
+**团队站点暂不支持在 Vue 项目中使用，请关注后续升级通知。**
+
 Arco 物料平台上，某个团队所属的物料以列表的形式展示，并且仅支持预览【一个组件独占一个 NPM 包】的物料，如果团队采用了【多组件对应一个 NPM 包】的物料库形式，将无法在物料平台进行预览。 这些限制使此页面无法满足团队成员快速查看物料用法文档的需求。我们收到了多个团队的反馈，希望物料平台可以提供类似于 [Arco 组件库文档站](https://arco.design/react/docs/start) 的团队站点，以方便团队内共享使用物料。
 
 Arco 提供的所有物料模板的开发预览使用 Storybook 的方式，我们不希望用户自行开发部署文档站点，其成本过高且将会与物料平台完全脱节。为了实现低成本搭建团队站点的目标，我们设计了一种折中的方案：
@@ -22,7 +24,7 @@ Arco 提供的所有物料模板的开发预览使用 Storybook 的方式，我�
 
 命令需要填写两个参数：
 
-- 模板的包名：@arco-design/arco-template-team-site
+- 模板的包名：@arco-materials/template-team-site
 - 站点项目的包名：由你决定。
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/94a1d3c76247c37f82fb4f5d52933740.png~tplv-uwbnlip3yd-webp.webp)
@@ -43,15 +45,15 @@ Arco 提供的所有物料模板的开发预览使用 Storybook 的方式，我�
 
 ### 配置智能提示
 
-**版本要求 `@arco-design/arco-doc-site >= 1.4.0`**
+**版本要求 `arco-material-doc-site >= 1.4.0`**
 
-`@arco-design/arco-doc-site` 的配置项由 TypeScript 书写，你可以通过 IDE 和 JsDoc 的配合来实现智能提示：
+`arco-material-doc-site` 的配置项由 TypeScript 书写，你可以通过 IDE 和 JsDoc 的配合来实现智能提示：
 
 ```js
 // .config/main.js
 
 /**
- * @type {import('@arco-design/arco-doc-site').MainConfig}
+ * @type {import('arco-material-doc-site').MainConfig}
  */
 module.exports = { ... };
 ```
@@ -60,7 +62,7 @@ module.exports = { ... };
 // .config/webpack.config.js
 
 /**
- * @param config {import('@arco-design/arco-doc-site').WebpackConfig}
+ * @param config {import('arco-material-doc-site').WebpackConfig}
  */
 module.exports = (config) => {};
 ```
@@ -136,7 +138,7 @@ module.exports = (config) => {
 
 ## 开发模式
 
-**版本要求 `@arco-design/arco-doc-site >= 1.4.0`**
+**版本要求 `arco-material-doc-site >= 1.4.0`**
 
 站点依赖包 `@arco-desgin/arco-doc-site` 提供了 `arco-doc-site dev` 的命令，用于在本地启动团队站点的开发模式，以作为 Storybook 备用选项。通过这种方式，即使你没有使用 Arco 提供的官方物料模板创建项目，也可以轻松开发物料。
 
@@ -261,7 +263,7 @@ table {
 
 ## 使用 Arco 主题商店主题
 
-**版本要求 `@arco-design/arco-doc-site >= 1.8.0`**
+**版本要求 `arco-material-doc-site >= 1.8.0`**
 
 通过拓展配置项，你可以快速在团队站点上使用 Arco 主题商店上的任意主题。
 

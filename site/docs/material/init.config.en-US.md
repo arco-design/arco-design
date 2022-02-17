@@ -15,31 +15,26 @@ When executing `arco init`, `arco.config.js` will be created in the Git root dir
 ```javascript
 // arco.config.js
 module.exports = {
-  // default template for'arco init'
-  defaultTemplate: {
-    component:'@arco-design/arco-template-react-component',
-    block:'@arco-design/arco-template-react-block',
-    library:'@arco-design/arco-template-react-monorepo',
-    pro:'@arco-design/arco-template-arco-design-pro',
-  },
-  // npm config
-  npm: {
-    registry:'https://registry.npmjs.org/',
-  },
   // globs to your packages
-  // e.g. ['packages/*']
+  // e.g. [ 'packages/*' ]
   packages: [],
-  // command you want to replace'arco subCommand'
-  // e.g. publish:'lerna publish'
+  // command you want to replace 'arco subCommand'
+  // e.g. publish: 'lerna publish'
   alias: {
-    publish:'',
+    publish: '',
   },
+  // initial meta for 'arco generate'
+  initialMeta: {
+    group: 0,
+  },
+  // path of arco block insertion, relative to /src ('myPath' will be resolved as '/src/myPath')
+  // pathBlockInsert: 'pathRelativeToSrc',
 };
 ```
 
 ## **Build Configuration**
 
-The project created by the official Arco template uses `@arco-design/arco-scripts` to test and package the project, and you can modify its default configuration through the configuration file. In the `.config` folder of the project root directory, we provide an entry for the extended configuration:
+The project created by the official Arco template uses `arco-scripts` to test and package the project, and you can modify its default configuration through the configuration file. In the `.config` folder of the project root directory, we provide an entry for the extended configuration:
 
 ```
 .config
@@ -65,15 +60,15 @@ Before learning how to extend the configuration, we explain the specific divisio
 
 ### Config Intellisense
 
-**Version requirement `@arco-design/arco-scripts >= 1.25.7`**
+**Version requirement `arco-scripts >= 1.25.7`**
 
-Since `@arco-design/arco-scripts` ships with TypeScript typings, you can leverage your IDE's intellisense with jsdoc type hints:
+Since `arco-scripts` ships with TypeScript typings, you can leverage your IDE's intellisense with jsdoc type hints:
 
 ```js
 // docgen.config.js
 
 /**
-  * @param config {import('@arco-design/arco-scripts').DocgenConfig}
+  * @param config {import('arco-scripts').DocgenConfig}
   */
 module.exports = (config) => {};
 ```
@@ -111,7 +106,7 @@ module.exports = (config) => {
 
 ### Configure TSC
 
-**Requires @arco-design/arco-scripts >= 1.19.0**
+**Requires arco-scripts >= 1.19.0**
 
 The ESM and CommonJS products of the material product are directly compiled by the `tsc` command by default, and the [all parameters] of this command can be configured by configuring `tsc.config.js` (https://www.typescriptlang.org/docs/handbook/compiler -options.html).
 
@@ -141,7 +136,7 @@ Because the configuration items of Webpack are more complicated, it is inconveni
 ```javascript
 // webpack.config.js
 const path = require('path');
-// webpack-merge is already dependent on @arco-design/arco-scripts, you don’t need to install it manually
+// webpack-merge is already dependent on arco-scripts, you don’t need to install it manually
 const merge = require('webpack-merge');
 
 module.exports = (config) => {

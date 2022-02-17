@@ -38,13 +38,13 @@
 
 ## Arco CLI
 
-为了方便开发者快速搭建物料项目、管理使用物料。Arco 提供了基于 Node 的脚手架工具 @arco-design/arco-cli，它大致包含了以下的功能：
+为了方便开发者快速搭建物料项目、管理使用物料。Arco 提供了基于 Node 的脚手架工具 arco-cli，它大致包含了以下的功能：
 
 - 根据模板创建基于 ArcoDesign 的物料项目；
 - 发布、管理、使用物料；
 - 在项目中使用物料区块或者页面；
 
-在开始进一步的流程体验之前，你需要通过 ` npm i @arco-design/arco-cli -g` 全局安装 Arco CLI。
+在开始进一步的流程体验之前，你需要通过 ` npm i arco-cli -g` 全局安装 Arco CLI。
 
 ## 新建项目
 
@@ -225,7 +225,7 @@ src
 如果你需要自行书写物料平台所展示的区块预览，参考以下步骤：
 
 - 修改区块 package.json 中的 `docgen` 命令为 `arco-scripts docgen`；
-- 确保 @arco-design/arco-scripts >= 1.20.4；
+- 确保 arco-scripts >= 1.20.4；
 - 确保 `/.config/docgen.config.js` 中配置了 `config.template = 'README.md'`；
 - 为 `/src/README.md` 添加以下内容：
 
