@@ -5,6 +5,8 @@ import weekOfYear from 'dayjs/plugin/weekOfYear';
 import AdvancedFormat from 'dayjs/plugin/advancedFormat';
 import weekYear from 'dayjs/plugin/weekYear';
 import QuarterOfYear from 'dayjs/plugin/quarterOfYear';
+import UTC from 'dayjs/plugin/utc';
+import Timezone from 'dayjs/plugin/timezone';
 import 'dayjs/locale/zh-cn';
 import { isDayjs, isArray } from '../_util/is';
 
@@ -53,6 +55,10 @@ originDayjs.extend(weekOfYear);
 originDayjs.extend(AdvancedFormat);
 originDayjs.extend(weekYear);
 originDayjs.extend(QuarterOfYear);
+originDayjs.extend(UTC);
+originDayjs.extend(Timezone);
+
+originDayjs.tz.setDefault('America/New_York');
 
 export const dayjs = originDayjs;
 
@@ -81,7 +87,7 @@ export const methods = {
 };
 
 export function getNow() {
-  return dayjs();
+  return dayjs().tz();
 }
 
 export function initializeDateLocale(localeName: string, weekStart: number) {

@@ -132,7 +132,8 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls, utcOffset } = useContext(ConfigContext);
+
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
 
   const prefixCls = getPrefixCls(isWeek ? 'panel-week' : 'panel-date');

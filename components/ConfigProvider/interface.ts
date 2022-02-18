@@ -223,4 +223,6 @@ export interface ConfigProviderProps {
   };
   zIndex?: number;
   children?: ReactNode;
+  /** UTC Offset */
+  utcOffset?: number;
 }
