@@ -73,7 +73,7 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
       <span
         className={`${prefixCls}-operation-edit`}
         onClick={() => {
-          editableConfig.onStart && editableConfig.onStart(String(children));
+          editableConfig.onStart && editableConfig.onStart(mergedToString(children));
           setEditing(true);
         }}
       >
