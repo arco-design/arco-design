@@ -80,8 +80,9 @@ export function measure(
     lineHeight * rows + pxToNumber(originStyle.paddingTop) + pxToNumber(originStyle.paddingBottom)
   );
 
-  function clearMirrorStyle() {
+  function emptyMirrorElem() {
     mirrorElement.setAttribute('style', 'display: none');
+    mirrorElement.innerHTML = '';
   }
 
   function inRange() {
@@ -90,12 +91,12 @@ export function measure(
 
   if (inRange()) {
     unmountComponentAtNode(mirrorElement);
-    clearMirrorStyle();
+    emptyMirrorElem();
     return { text: fullText, ellipsis: false };
   }
 
   if (simple) {
-    clearMirrorStyle();
+    emptyMirrorElem();
     return { ellipsis: true, text: fullText };
   }
 
@@ -122,10 +123,11 @@ export function measure(
   }
 
   measureText(textNode);
+  const ellipsisText = textNode.textContent;
 
-  clearMirrorStyle();
+  emptyMirrorElem();
   return {
-    text: textNode.textContent,
+    text: ellipsisText,
     ellipsis: true,
   };
 }
