@@ -65,6 +65,8 @@ function renderEmpty(componentName?: string) {
   }
 }
 
+const defaultOffset = new Date().getTimezoneOffset() / 60;
+
 const defaultProps: ConfigProviderProps = {
   locale: defaultLocale,
   prefixCls: 'arco',
@@ -75,6 +77,7 @@ const defaultProps: ConfigProviderProps = {
     modal: { autoFocus: true },
     drawer: { autoFocus: true },
   },
+  utcOffset: -defaultOffset,
 };
 
 const componentConfig = {};

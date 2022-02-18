@@ -6,7 +6,6 @@ import { isArray, isDayjs } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import {
   getDayjsValue,
-  dayjs,
   getSortedDayjsArray,
   isDayjsArrayChange,
   isDayjsChange,
@@ -124,7 +123,9 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function isValidTime(time): boolean {
-    return typeof time === 'string' && dayjs(time, format).format(format) === time;
+    return (
+      typeof time === 'string' && (getDayjsValue(time, format) as Dayjs).format(format) === time
+    );
   }
 
   function onConfirmValue(vs: Dayjs | Dayjs[]) {
