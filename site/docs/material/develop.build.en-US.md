@@ -106,7 +106,7 @@ export default () => {
 };
 ```
 
-3. Make sure that @arco-design/arco-scripts version >= 1.17.1, and the arcoDemoVendor entry is included in the configuration built by Webpack.
+3. Make sure that arco-scripts version >= 1.17.1, and the arcoDemoVendor entry is included in the configuration built by Webpack.
 
 ```javascript
 // Material construction configuration in Lerna Monorepo template

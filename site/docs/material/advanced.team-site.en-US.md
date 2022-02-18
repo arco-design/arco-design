@@ -8,6 +8,8 @@ Understand the team document site plan of the material platform.
 
 *Auto translate by google.*
 
+**The team site is NOT currently supported in Vue projects, please pay attention to the follow-up upgrade notice.**
+
 On the Arco material platform, the materials belonging to a team are displayed in the form of a list, and only the materials of [one component occupies one NPM package] are previewed. If the team adopts the material library form of [multiple components corresponds to one NPM package], it will Cannot preview on the material platform. These restrictions make this page unable to meet the needs of team members to quickly view material usage documents. We have received feedback from multiple teams. We hope that the material platform can provide a team site similar to [Arco Component Library Documentation Station](https://arco.design/react/docs/start) to facilitate the sharing of materials within the team.
 
 The development preview of all material templates provided by Arco uses the Storybook method. We don't want users to develop and deploy document sites on their own. The cost is too high and it will be completely out of touch with the material platform. In order to achieve the goal of building a team site at low cost, we designed a compromise solution:
@@ -24,7 +26,7 @@ Use the `arco init arco-team-site --pure` command to initialize the site directo
 
 The command needs to fill in two parameters:
 
-- The package name of the template: @arco-design/arco-template-team-site
+- The package name of the template: @arco-materials/template-team-site
 - The package name of the site project: it's up to you.
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/94a1d3c76247c37f82fb4f5d52933740.png~tplv-uwbnlip3yd-webp.webp)
@@ -45,15 +47,15 @@ The initialized directory structure of the site only needs to pay attention to t
 
 ### Config Intellisense
 
-**Version requirement `@arco-design/arco-doc-site >= 1.4.0`**
+**Version requirement `arco-material-doc-site >= 1.4.0`**
 
-Since `@arco-design/arco-doc-site` ships with TypeScript typings, you can leverage your IDE's intellisense with jsdoc type hints:
+Since `arco-material-doc-site` ships with TypeScript typings, you can leverage your IDE's intellisense with jsdoc type hints:
 
 ```js
 // .config/main.js
 
 /**
- * @type {import('@arco-design/arco-doc-site').MainConfig}
+ * @type {import('arco-material-doc-site').MainConfig}
  */
 module.exports = {... };
 ```
@@ -62,7 +64,7 @@ module.exports = {... };
 // .config/webpack.config.js
 
 /**
- * @param config {import('@arco-design/arco-doc-site').WebpackConfig}
+ * @param config {import('arco-material-doc-site').WebpackConfig}
  */
 module.exports = (config) => {};
 ```
@@ -138,7 +140,7 @@ module.exports = (config) => {
 
 ## Development Mode
 
-**Version requirement `@arco-design/arco-doc-site >= 1.4.0`**
+**Version requirement `arco-material-doc-site >= 1.4.0`**
 
 The site dependency package `@arco-desgin/arco-doc-site` provides the `arco-doc-site dev` command to start the development mode of the team site locally as an alternate option for Storybook. In this way, even if you do not create a project using the official material template provided by Arco, you can easily develop materials.
 
@@ -263,7 +265,7 @@ table {
 
 ## Using the Arco Design Lab theme
 
-**Version requirement `@arco-design/arco-doc-site >= 1.8.0`**
+**Version requirement `arco-material-doc-site >= 1.8.0`**
 
 By extending the configuration items, you can quickly use any theme from the Arco theme store on your team site.
 

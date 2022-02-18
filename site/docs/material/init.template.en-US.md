@@ -12,13 +12,13 @@ Learn about various material project templates officially provided by Arco.
 
 Currently, Arco provides the following templates:
 
-- @arco-design/arco-template-react-component —— used to create a single material;
-- @arco-design/arco-template-react-block —— used to create material blocks;
-- @arco-design/arco-template-react-library —— used to create a business component library project similar to `@arco-design/web-react` **(recommended)**;
-- @arco-design/arco-template-react-monorepo —— used to create a Monorepo project based on Lerna management **(recommended)**;
-- @arco-design/arco-template-arco-design-pro-used to create ArcoPro projects.
+- Component - used to create component materials;
+- Block - used to create block materials;
+- Page - used to create page materials;
+- Component library - used to create a business component library project with a structure similar to [Arco Component Library](https://github.com/arco-design/arco-design) **(recommended)**;
+- Monorepo - used to create Lerna-managed Monorepo projects **(recommended)**;
 
-To use the above template, you only need to select the corresponding warehouse category in arco init.
+To use the above template, just select the corresponding category during `arco init`.
 
 ### Technology Stack
 
@@ -35,7 +35,7 @@ In the project created by the official Arco template, the following technology s
 We use the component template to create a material project and build it once. The directory structure and detailed description are as follows:
 
 ```
-├── .config // @arco-design/arco-scripts configuration items, including build, test, and document generation. For details, see the next chapter [Custom Configuration]
+├── .config // arco-scripts configuration items, including build, test, and document generation. For details, see the next chapter [Custom Configuration]
 │ ├── babel.config.js
 │ ├── docgen.config.js
 │ ├── jest.config.js
@@ -46,7 +46,7 @@ We use the component template to create a material project and build it once. Th
 │ ├── main.js
 │ └── preview.js
 │
-├── arco.config.js // @arco-design/arco-cli configuration item
+├── arco.config.js // arco-cli configuration item
 │
 ├── dist // Build product (UMD version)
 ├── docs // Build product (Prop and Demo documents)
@@ -97,8 +97,8 @@ Using the Monorepo template to manage all the materials of the team is the best 
 │
 ├── packages // lerna workspace
 │
-├── arco.config.js // @arco-design/arco-cli configuration item
-├── arco.scripts.config.js // @arco-design/arco-scripts configuration items common to all packages
+├── arco.config.js // arco-cli configuration item
+├── arco.scripts.config.js // arco-scripts configuration items common to all packages
 ├── lerna.json
 ├── package.json
 └── tsconfig.json // ts configuration common to all packages
@@ -107,7 +107,7 @@ Using the Monorepo template to manage all the materials of the team is the best 
 After initializing the project skeleton, you can add the first material through `yarn run add:package - yourPackageName`. The created material is roughly the same as the component template, but all its dependencies have been added to the outermost layer. The directory structure and detailed description of a created Package are as follows:
 
 ```
-├── .config // Expand @arco-design/arco-scripts configuration items, including build, test, and document generation. For details, see the next chapter [Custom Configuration]
+├── .config // Expand arco-scripts configuration items, including build, test, and document generation. For details, see the next chapter [Custom Configuration]
 │ ├── babel.config.js
 │ ├── docgen.config.js
 │ ├── jest.config.js
@@ -155,7 +155,7 @@ arco-cli allows you to create a project by specifying a template (local/online),
 arco init <projectName> --template [templatePackageName|file:templatePath]
 
 # e.g.
-arco init my-site --template @arco-design/arco-template-react-library
+arco init my-site --template @arco-materials/template-core
 
 arco init my-site --template file:../path/to/your/template/acro-template-site
 ```

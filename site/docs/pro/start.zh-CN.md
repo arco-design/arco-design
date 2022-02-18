@@ -13,7 +13,7 @@ Arco Pro
 其中 `arco cli` 是安装项目模版的工具，请运行以下命令安装：
 
 ```
-npm i -g @arco-design/arco-cli
+npm i -g arco-cli
 ```
 
 ## 技术栈

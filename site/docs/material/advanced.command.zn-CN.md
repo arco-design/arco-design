@@ -3,15 +3,15 @@
 
 # 命令集合
 
-速览 @arco-design/arco-cli 和 @arco-design/arco-scripts 包含的所有可用命令。
+速览 arco-cli 和 arco-scripts 包含的所有可用命令。
 `````
 
-Arco 通过 `@arco-design/arco-cli` 和 `@arco-design/arco-scripts` 提供了 `arco` 和 `arco-scripts` 两个命令。使用前，请分别安装以下两个 NPM 包：
+Arco 通过 `arco-cli` 和 `arco-scripts` 提供了 `arco` 和 `arco-scripts` 两个命令。使用前，请分别安装以下两个 NPM 包：
 
 ```
-npm install @arco-design/arco-cli -g
+npm install arco-cli -g
 
-npm install @arco-design/arco-scripts -g
+npm install arco-scripts -g
 ```
 
 你可以执行 `arco --help` 和 `arco-scripts --help` 快速查看指令用法：
