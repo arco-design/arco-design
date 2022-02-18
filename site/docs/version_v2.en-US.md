@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.29.1
+
+2022-02-18
+
+### 💎 Optimization
+
+- Reduce the impact of the mirror `dom` on automated tests after `Typography` folding calculation([#554](https://github.com/arco-design/arco-design/pull/554))
+
+### 🐛 BugFix
+
+- `InputNumber`  Omit the unnecessary `allowClear`([#549](https://github.com/arco-design/arco-design/pull/549))
+- Fixed the issue that the selected state rendering error occurs when the `Cascader` component is multi-selected.([#544](https://github.com/arco-design/arco-design/pull/544))
+- Fixed `Image.Preview` component `onload` not triggering when loading images from cache([#539](https://github.com/arco-design/arco-design/pull/539))
+
 ## 2.29.0
 
 2022-02-11

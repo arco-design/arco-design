@@ -1,3 +1,11 @@
+## 2.29.1
+
+2022-02-18
+
+### 🐛 BugFix
+
+- Fixed the issue that the selected state rendering error occurs when the `Cascader` component is multi-selected.([#544](https://github.com/arco-design/arco-design/pull/544))
+
 ## 2.29.0
 
 2022-02-11

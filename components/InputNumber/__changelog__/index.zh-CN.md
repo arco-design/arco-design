@@ -1,3 +1,11 @@
+## 2.29.1
+
+2022-02-18
+
+### 🐛 问题修复
+
+- `InputNumber`过滤掉多余的`allowClear` props([#549](https://github.com/arco-design/arco-design/pull/549))
+
 ## 2.28.1
 
 2022-01-14

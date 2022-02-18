@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.29.1
+
+2022-02-18
+
+### 💎 优化
+
+- 降低 `Typography` 组件折叠计算后，镜像 `dom` 对自动化测试的影响。([#554](https://github.com/arco-design/arco-design/pull/554))
+
+### 🐛 问题修复
+
+- `InputNumber`过滤掉多余的`allowClear` props([#549](https://github.com/arco-design/arco-design/pull/549))
+- 修复 `Cascader` 组件多选情况下出现选中状态渲染出错的问题。([#544](https://github.com/arco-design/arco-design/pull/544))
+- 修复 `Image.Preview` 组件在从缓存中加载图片的时候 `onload` 没有触发的问题([#539](https://github.com/arco-design/arco-design/pull/539))
+
 ## 2.29.0
 
 2022-02-11

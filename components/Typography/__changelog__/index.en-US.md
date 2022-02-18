@@ -1,3 +1,11 @@
+## 2.29.1
+
+2022-02-18
+
+### 💎 Optimization
+
+- Reduce the impact of the mirror `dom` on automated tests after `Typography` folding calculation([#554](https://github.com/arco-design/arco-design/pull/554))
+
 ## 2.28.1
 
 2022-01-14

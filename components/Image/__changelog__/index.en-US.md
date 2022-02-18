@@ -1,3 +1,11 @@
+## 2.29.1
+
+2022-02-18
+
+### 🐛 BugFix
+
+- Fixed `Image.Preview` component `onload` not triggering when loading images from cache([#539](https://github.com/arco-design/arco-design/pull/539))
+
 ## 2.28.1
 
 2022-01-14
