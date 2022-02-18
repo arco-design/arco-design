@@ -68,6 +68,7 @@ function Preview(props: ImagePreviewProps, ref) {
   const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite } =
     useContext(PreviewGroupContext);
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
+  const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
 
   const [visible, setVisible] = useMergeValue(false, {
     defaultValue: defaultVisible,
@@ -302,7 +303,8 @@ function Preview(props: ImagePreviewProps, ref) {
 
   // Reset on first mount or image switches
   useEffect(() => {
-    setStatus('loading');
+    setPreviewImgSrc(mergedSrc);
+    setStatus(mergedSrc ? 'loading' : 'loaded');
     reset();
   }, [mergedSrc]);
 
@@ -414,8 +416,6 @@ function Preview(props: ImagePreviewProps, ref) {
                     className={cs(`${previewPrefixCls}-img`, {
                       [`${previewPrefixCls}-img-moving`]: moving,
                     })}
-                    key={mergedSrc}
-                    src={mergedSrc}
                     style={{
                       transform: `translate(${translate.x}px, ${translate.y}px) rotate(${rotate}deg)`,
                     }}
@@ -426,6 +426,8 @@ function Preview(props: ImagePreviewProps, ref) {
                       setStatus('error');
                     }}
                     onMouseDown={onMoveStart}
+                    key={previewImgSrc}
+                    src={previewImgSrc}
                   />
                   {isLoading && (
                     <div className={`${previewPrefixCls}-loading`}>
