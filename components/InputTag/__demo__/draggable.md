@@ -1,7 +1,7 @@
 ---
 order: 6
 title:
-  zh-CN: 拖拽排除
+  zh-CN: 拖拽排序
   en-US: Draggable
 ---
 
