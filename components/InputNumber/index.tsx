@@ -217,7 +217,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       let targetValue = value.trim().replace(/。/g, '.');
       targetValue = parser ? parser(targetValue) : targetValue;
 
-      if (isNumber(+targetValue) || targetValue === '-' || !targetValue) {
+      if (isNumber(+targetValue) || targetValue === '-' || !targetValue || targetValue === '.') {
         const formatValue = getLegalValue(targetValue);
 
         setInputValue(targetValue);
