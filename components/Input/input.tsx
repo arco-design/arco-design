@@ -50,7 +50,7 @@ function Input(baseProps: InputProps, ref) {
   const props = useMergeProps<InputProps>(baseProps, {}, componentConfig?.Input);
   const {
     className,
-    style,
+    style = {},
     addBefore,
     addAfter,
     suffix,
@@ -87,7 +87,8 @@ function Input(baseProps: InputProps, ref) {
 
   const prefixCls = getPrefixCls('input');
   const size = props.size || ctxSize;
-  const isCustomHeight = 'height' in props;
+  const isCustomHeight = 'height' in props || 'height' in style;
+  const customHeight = height || style.height;
   let suffixElement = suffix;
   const valueLength = value ? value.length : 0;
 
@@ -152,12 +153,16 @@ function Input(baseProps: InputProps, ref) {
   });
 
   return needWrapper ? (
-    <div className={classnames} style={{ ...style, ...(isCustomHeight ? { height } : {}) }}>
+    <div
+      className={classnames}
+      style={{ ...style, ...(isCustomHeight ? { height: customHeight } : {}) }}
+    >
       <span className={`${prefixCls}-group`}>
         {inputAddon(`${prefixCls}-group-addbefore`, addBefore, beforeStyle)}
         <span
           className={innerWrapperClassnames}
           ref={inputWrapperRef}
+          style={{ ...(isCustomHeight ? { height: customHeight } : {}) }}
           onMouseDown={(e) => {
             // 直接的点击input的时候，不阻止默认行为，避免无法选中输入框里的输入文本
             if ((e.target as HTMLElement).tagName !== 'INPUT') {
@@ -185,7 +190,7 @@ function Input(baseProps: InputProps, ref) {
   ) : allowClear ? (
     <span
       className={cs(className, innerWrapperClassnames)}
-      style={{ ...style, ...(isCustomHeight ? { height } : {}) }}
+      style={{ ...style, ...(isCustomHeight ? { height: customHeight } : {}) }}
       onMouseDown={keepFocus}
       onClick={() => {
         inputRef.current && inputRef.current.focus();
