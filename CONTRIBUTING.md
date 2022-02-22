@@ -58,6 +58,9 @@ $ yarn build
 
 # run the complete test suite
 $ yarn test
+
+# start Storybook (no hot reload. To reflect changes, do `yarn build` first)
+$ yarn demo
 ```
 
 ## Commit Guidelines

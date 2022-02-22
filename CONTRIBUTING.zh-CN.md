@@ -59,6 +59,9 @@ $ yarn build
 
 # 运行完整的单元测试
 $ yarn test
+
+# 启动 Storybook 以预览或调试组件 （无热加载，需要先 `yarn build` 才能使用变更后代码）
+$ yarn demo
 ```
 
 ## Commit 指南
