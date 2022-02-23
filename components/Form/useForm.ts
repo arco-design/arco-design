@@ -54,8 +54,9 @@ export default function useForm<
   if (!formRef.current) {
     if (form) {
       formRef.current = form;
+    } else {
+      formRef.current = getFormInstance<FormData, FieldValue, FieldKey>();
     }
-    formRef.current = getFormInstance<FormData, FieldValue, FieldKey>();
   }
   return [formRef.current];
 }
