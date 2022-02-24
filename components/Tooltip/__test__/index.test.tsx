@@ -56,7 +56,7 @@ describe('Tooltip', () => {
       expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
     });
   });
-  it('does not show tooltip when content is 0', () => {
+  it('should show tooltip when content is 0', () => {
     const wrapper = mountTooltip(
       <Tooltip position="top" color="#333333" trigger="hover" content={0}>
         <Button>Top</Button>
