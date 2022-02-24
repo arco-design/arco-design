@@ -101,7 +101,7 @@ class Store<
   };
 
   // hasField为true时，只返回传入field属性的control实例
-  private getRegistedFields = (hasField?: boolean): Control<FormData, FieldValue, FieldKey>[] => {
+  private getRegisteredFields = (hasField?: boolean): Control<FormData, FieldValue, FieldKey>[] => {
     if (hasField) {
       return this.registerFields.filter(
         (control) => control.hasFieldProps() && !control.props?.isFormList
@@ -111,7 +111,7 @@ class Store<
   };
 
   // 获取props.field === field 的contorl组件。
-  public getRegistedField = (field?: FieldKey) => {
+  public getRegisteredField = (field?: FieldKey) => {
     return this.registerFields.filter((x) => x.props.field === field)[0];
   };
 
@@ -217,7 +217,7 @@ class Store<
 
   // 获取所有被操作过的字段
   public getTouchedFields = (): FieldKey[] => {
-    return this.getRegistedFields(true)
+    return this.getRegisteredFields(true)
       .filter((item) => {
         return item.isTouched();
       })
@@ -298,7 +298,7 @@ class Store<
 
   // 获取单个字段的错误信息。
   public getFieldError = (field: FieldKey): FieldError<FieldValue> | null => {
-    const item = this.getRegistedField(field);
+    const item = this.getRegisteredField(field);
     return item ? item.getErrors() : null;
   };
 
@@ -313,7 +313,7 @@ class Store<
         }
       });
     } else {
-      this.getRegistedFields(true).forEach((item) => {
+      this.getRegisteredFields(true).forEach((item) => {
         if (item.getErrors()) {
           errors[item.props.field] = item.getErrors();
         }
@@ -337,7 +337,7 @@ class Store<
       });
       return values;
     }
-    this.getRegistedFields(true).forEach(({ props: { field } }) => {
+    this.getRegisteredFields(true).forEach(({ props: { field } }) => {
       const value = get(this.store, field);
       set(values, field, value);
     });
@@ -366,7 +366,7 @@ class Store<
         set(newValues, field, this.initialValues[field]);
       });
       this.store = newValues;
-      this.getRegistedFields(true).forEach((item) => {
+      this.getRegisteredFields(true).forEach((item) => {
         const key = item.props.field;
         set(changeValues, key, get(this.store, key));
       });
@@ -389,7 +389,7 @@ class Store<
         errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
         values?: Partial<FormData>
       ) => void = () => {};
-      let controlItems = this.getRegistedFields(true);
+      let controlItems = this.getRegisteredFields(true);
 
       if (isArray(fieldsOrCallback) && fieldsOrCallback.length > 0) {
         controlItems = controlItems.filter((x) => fieldsOrCallback.indexOf(x.props.field) > -1);
@@ -450,7 +450,7 @@ class Store<
     } else {
       const changeValues = {};
       this.store = {};
-      this.getRegistedFields(true).forEach((item) => {
+      this.getRegisteredFields(true).forEach((item) => {
         const key = item.props.field;
         set(changeValues, key, undefined);
       });
