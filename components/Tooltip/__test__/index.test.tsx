@@ -42,6 +42,17 @@ describe('Tooltip', () => {
       'background-color: rgb(51, 51, 51);'
     );
   });
+  it('does not show tooltip when content is false', () => {
+    const wrapper = mountTooltip(
+      <Tooltip position="top" color="#333333" trigger="hover" content={false}>
+        <Button>Top</Button>
+      </Tooltip>
+    );
+    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+    wrapper.find('Button').simulate('mouseenter');
+    jest.runAllTimers();
+    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+  });
   it('showArrow property', () => {
     const wrapper = mountTooltip(
       <Tooltip
