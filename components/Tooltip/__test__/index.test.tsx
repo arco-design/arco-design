@@ -42,17 +42,32 @@ describe('Tooltip', () => {
       'background-color: rgb(51, 51, 51);'
     );
   });
-  it('does not show tooltip when content is false', () => {
+  it('does not show tooltip when content is null or undefined or false or "  "', () => {
+    [false, undefined, null, '  '].forEach((item) => {
+      const wrapper = mountTooltip(
+        <Tooltip position="top" color="#333333" trigger="hover" content={item}>
+          <Button>Top</Button>
+        </Tooltip>
+      );
+      expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+      wrapper.update();
+      wrapper.find('Button').simulate('mouseenter');
+      jest.runAllTimers();
+      expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+    });
+  });
+  it('does not show tooltip when content is 0', () => {
     const wrapper = mountTooltip(
-      <Tooltip position="top" color="#333333" trigger="hover" content={false}>
+      <Tooltip position="top" color="#333333" trigger="hover" content={0}>
         <Button>Top</Button>
       </Tooltip>
     );
     expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
     wrapper.find('Button').simulate('mouseenter');
     jest.runAllTimers();
-    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(true);
   });
+
   it('showArrow property', () => {
     const wrapper = mountTooltip(
       <Tooltip
