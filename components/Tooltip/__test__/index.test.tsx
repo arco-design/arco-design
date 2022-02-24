@@ -44,28 +44,27 @@ describe('Tooltip', () => {
   });
   it('does not show tooltip when content is null or undefined or false or "  "', () => {
     [false, undefined, null, '  '].forEach((item) => {
-      const wrapper = mountTooltip(
+      const wrapper = mount(
         <Tooltip position="top" color="#333333" trigger="hover" content={item}>
           <Button>Top</Button>
         </Tooltip>
       );
-      expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+      wrapper.find(Button).simulate('mouseenter');
       wrapper.update();
-      wrapper.find('Button').simulate('mouseenter');
       jest.runAllTimers();
-      expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+      expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeFalsy();
     });
   });
   it('should show tooltip when content is 0', () => {
-    const wrapper = mountTooltip(
+    const wrapper = mount(
       <Tooltip position="top" color="#333333" trigger="hover" content={0}>
         <Button>Top</Button>
       </Tooltip>
     );
-    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
     wrapper.find('Button').simulate('mouseenter');
     jest.runAllTimers();
-    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(true);
+    wrapper.update();
+    expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeTruthy();
   });
 
   it('showArrow property', () => {
