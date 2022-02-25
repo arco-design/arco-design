@@ -11,6 +11,7 @@ import useForceUpdate from '../../_util/hooks/useForceUpdate';
 import { ArrowDown, Esc, Enter, ArrowUp, ArrowRight, ArrowLeft } from '../../_util/keycode';
 import useUpdate from '../../_util/hooks/useUpdate';
 import Node from '../base/node';
+import { valueInSet, transformValuesToSet, ValueSeparator } from '../util';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -100,36 +101,30 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
   };
 
   const onMultipleChecked = (option, checked: boolean) => {
-    // props.value 可能包含不存在对应option的选中值，不应该被清除掉。
-    const beforeCheckedNodes = store
-      .getCheckedNodes()
-      .map((node) => JSON.stringify(node.pathValue));
-    const inexistenceValue = (props.value || []).filter(
-      (x) => beforeCheckedNodes.indexOf(JSON.stringify(x)) === -1
-    );
+    const beforeValueSet = store.getCheckedNodes().reduce((set, node) => {
+      set.add(node.pathValue.join(ValueSeparator));
+      return set;
+    }, new Set());
+
     option.setCheckedState(checked);
     const checkedNodes = store.getCheckedNodes();
-    const value = checkedNodes.map((node) => node.pathValue);
-    const newValue = [...inexistenceValue, ...value];
+    const currentValue = checkedNodes.map((node) => node.pathValue);
+    const currentValueSet = transformValuesToSet(currentValue);
 
-    const indexMap = props.value.reduce((map, next, index) => {
-      map.set(next, index);
-      return map;
-    }, new Map());
-
-    // 按照当前props.value的顺序排序
-    newValue.sort((a, b) => {
-      const aIndex = indexMap.get(a);
-      const bIndex = indexMap.get(b);
-
-      if (aIndex === undefined) {
-        return 1;
-      }
-      if (bIndex === undefined) {
-        return -1;
-      }
-      return aIndex - bIndex;
-    });
+    const newValueSet = new Set();
+    const newValue = props.value
+      .filter((v) => {
+        // v 不在 beforeValueSet 中，说明 v 不包含对应的option。直接返回true，不应该清除掉。
+        if (!valueInSet(beforeValueSet, v) || valueInSet(currentValueSet, v)) {
+          newValueSet.add(v.join(ValueSeparator));
+          return true;
+        }
+      })
+      .concat(
+        currentValue.filter((v) => {
+          return !valueInSet(newValueSet, v);
+        })
+      );
 
     if (option === activeNode) {
       // setActiveNode 不会执行rerender，需要forceupdate

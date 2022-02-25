@@ -30,7 +30,7 @@ export const formatValue = (value, isMultiple): string[][] | undefined => {
   return [value];
 };
 
-const ValueSeparator = '__arco_cascader__';
+export const ValueSeparator = '__arco_cascader__';
 
 export const transformValuesToSet = (values: string[][]) => {
   const _values = values || [];
