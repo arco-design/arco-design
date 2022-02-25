@@ -8,6 +8,29 @@ Common questions and answers in material development.
 
 *Auto translate by google.*
 
+## CLI version upgrade
+
+As of version `1.26.0`, `@arco-design/arco-cli` has been renamed to `arco-cli`. We apologize for the inconvenience caused by the package name change, please use the following commands to uninstall the old package and install the latest package:
+
+```bash
+# Uninstall old version CLI
+npm uninstall @arco-design/arco-cli -g
+
+# Install the latest version of the CLI
+npm install arco-cli -g
+````
+
+After that, you can update the CLI version with the following command:
+
+```bash
+npm install arco-cli@latest -g
+````
+
+In addition, the name of the dependency package of the material project has also changed. When upgrading the Dev dependency of the project, you may need to change the package name:
+
+* As of `1.25.15`, `@arco-design/arco-scripts` has been changed to `arco-scripts`.
+* As of `1.9.3`, `@arco-design/arco-doc-site` has been changed to `arco-material-doc-site`.
+
 ## How to create a material team?
 
 The material platform does not allow users to create teams by themselves, please go to [this page](https://arco.design/material/createGroup/) to apply. After the creation is complete, the team owner can manage the team members and information by themselves.
