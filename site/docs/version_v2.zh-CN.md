@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 的 `clear-icon` 样式未生效的bug([#589](https://github.com/arco-design/arco-design/pull/589))
+- 修复 `Cascader` 组件在受控时偶发复选框选中状态和传入 `value` 不一致的bug。([#587](https://github.com/arco-design/arco-design/pull/587))
+- 修复 `Input` 组件粘贴文本并清空之后，无法再次粘贴同样文本的 bug。([#584](https://github.com/arco-design/arco-design/pull/584))
+- `Tooltip` content 值是 false 时不显示弹窗([#579](https://github.com/arco-design/arco-design/pull/579))
+- 修复 `Form.useForm` 方法传入 `form` 参数不生效的 bug。([#577](https://github.com/arco-design/arco-design/pull/577))
+- 修复 `InputNumber` 组件小数点特定情况下无法删除的 bug。([#568](https://github.com/arco-design/arco-design/pull/568))
+- 修复 `Typography` 组件在编辑状态时， `onStart` 入参错误的bug([#555](https://github.com/arco-design/arco-design/pull/555))
+
 ## 2.29.1
 
 2022-02-18

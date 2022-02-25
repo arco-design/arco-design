@@ -1,3 +1,11 @@
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- `Tooltip` content 值是 false 时不显示弹窗([#579](https://github.com/arco-design/arco-design/pull/579))
+
 ## 2.25.0
 
 2021-11-19

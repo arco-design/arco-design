@@ -1,3 +1,11 @@
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fix the bug in `InputNumber` where decimal point is handled incorrectly([#568](https://github.com/arco-design/arco-design/pull/568))
+
 ## 2.29.1
 
 2022-02-18

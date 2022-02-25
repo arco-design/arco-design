@@ -1,3 +1,11 @@
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fixed a bug where the checked state of the `Cascader` component was occasionally inconsistent with the incoming `value` when it was controlled.([#587](https://github.com/arco-design/arco-design/pull/587))
+
 ## 2.29.1
 
 2022-02-18
