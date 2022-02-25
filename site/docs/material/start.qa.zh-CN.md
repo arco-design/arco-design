@@ -6,6 +6,29 @@
 物料开发中的常见问题及其解答。
 `````
 
+## CLI 版本升级
+
+从 `1.26.0` 的版本起，`@arco-design/arco-cli` 更名为 `arco-cli`。对包名变动引起的不便我们深表歉意，请使用以下命令卸载旧有包并安装最新包：
+
+```bash
+# 卸载旧版本 CLI
+npm uninstall @arco-design/arco-cli -g
+
+# 安装最新版 CLI
+npm install arco-cli -g
+```
+
+之后，你可采用以下命令更新 CLI 版本：
+
+```bash
+npm install arco-cli@latest -g
+```
+
+此外，物料项目依赖包名也发生了变动，在升级项目 Dev 依赖时，你可能需要更换包名：
+
+* 自 `1.25.15` 起，`@arco-design/arco-scripts` 变更为 `arco-scripts`。
+* 自 `1.9.3` 起，`@arco-design/arco-doc-site` 变更为 `arco-material-doc-site`。
+
 ## 如何创建物料团队？
 
 物料平台不允许用户自行创建团队，请至 [此页面](https://arco.design/material/createGroup/) 提出申请。创建完成后，团队 Owner 可以自行管理团队成员和信息。
