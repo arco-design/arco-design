@@ -84,6 +84,8 @@
     display: block;
     width: @tree-showline-size-switcher-icon;
     height: @tree-showline-size-switcher-icon;
+    box-sizing: border-box;
+    border: @tree-showline-plus-icon-border-width solid @tree-showline-color-plus-icon-border;
 
     &::after {
       content: '';
@@ -165,6 +167,7 @@
     .@{tree-node-prefix-cls}-drag-icon {
       position: absolute;
       right: @tree-spacing-drag-icon-right;
+      margin-left: unset;
     }
   }
 
