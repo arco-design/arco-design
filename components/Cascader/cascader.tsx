@@ -30,6 +30,7 @@ import {
   getStore,
   formatValue,
 } from './util';
+import useForceUpdate from '../_util/hooks/useForceUpdate';
 
 export const DefaultFieldNames = {
   label: 'label',
@@ -56,15 +57,24 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const prefixCls = getPrefixCls('cascader');
   const isMultiple = props.mode === 'multiple';
   const timerRef = useRef(null);
+  const forceUpdate = useForceUpdate();
 
   const [inputValue, setInputValue] = useState('');
   // 暂存被选中的值对应的节点。仅在onSearch的时候用到
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>([]);
-  const [mergeValue, setValue] = useMergeValue([], {
-    value: 'value' in props ? formatValue(props.value, isMultiple) : undefined,
-    defaultValue: 'defaultValue' in props ? formatValue(props.defaultValue, isMultiple) : undefined,
+  // const [mergeValue, setValue] = useMergeValue([], {
+  //   value: 'value' in props ? formatValue(props.value, isMultiple) : undefined,
+  //   defaultValue: 'defaultValue' in props ? formatValue(props.defaultValue, isMultiple) : undefined,
+  // });
+  const [stateValue, setValue] = useState(() => {
+    return 'value' in props
+      ? formatValue(props.value, isMultiple)
+      : 'defaultValue' in props
+      ? formatValue(props.defaultValue, isMultiple)
+      : [];
   });
+  const mergeValue = 'value' in props ? formatValue(props.value, isMultiple) : stateValue;
 
   const [popupVisible, setPopupVisible] = useMergeValue(false, {
     value: props.popupVisible,
@@ -96,11 +106,10 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   }, [popupVisible]);
 
   useUpdate(() => {
-    if ('value' in props) {
+    if ('value' in props && props.value !== stateValue) {
       const newValue = formatValue(props.value, isMultiple);
       store.setNodeCheckedByValue(newValue);
-      // useMergeProps do this
-      // setValue(newValue);
+      setValue(newValue);
     }
   }, [props.value, isMultiple]);
 
@@ -175,50 +184,48 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     [store, renderFormat]
   );
 
-  // isTouch: 是否是通过点击remove图标或者清除图标改变的值
-  const handleChange = (newValue: string[][], isTouch?: boolean) => {
+  const handleChange = (newValue: string[][]) => {
     if (isObject(props.showSearch) && !props.showSearch.retainInputValueWhileSelect && isMultiple) {
       setInputValue('');
     }
-    setValue((mergeValue) => {
-      const { onChange, changeOnSelect, expandTrigger } = props;
-      const isSame = mergeValue === newValue;
+    const { onChange, changeOnSelect, expandTrigger } = props;
+    const isSame = mergeValue === newValue;
+    if (isSame) {
+      return;
+    }
 
-      if (!isSame) {
-        if (isTouch || !isMultiple) {
-          store.setNodeCheckedByValue(newValue);
-        }
+    if (!('value' in props)) {
+      store.setNodeCheckedByValue(newValue);
+    }
+
+    updateStashNodes(store.getCheckedNodes());
+    const selectedOptions = getSelectedOptionsByValue(newValue);
+    const _value = isMultiple ? newValue : newValue[0];
+    const _selectedOptions = isMultiple ? selectedOptions : selectedOptions[0];
+
+    if (!isMultiple) {
+      if (inputValue) {
+        // 单选时选择搜索项，直接关闭面板
+        handleVisibleChange(false);
+      } else if (
+        (selectedOptions[0] && selectedOptions[0][selectedOptions[0].length - 1]?.isLeaf) ||
+        (changeOnSelect && expandTrigger === 'hover')
+      ) {
+        handleVisibleChange(false);
       }
+    }
 
-      const nodes = store.getCheckedNodes();
-      !isSame && updateStashNodes(nodes);
-
-      const selectedOptions = getSelectedOptionsByValue(newValue);
-
-      if (!isSame) {
-        const _value = isMultiple ? newValue : newValue[0];
-        const _selectedOptions = isMultiple ? selectedOptions : selectedOptions[0];
-        onChange &&
-          onChange(_value, _selectedOptions, {
-            dropdownVisible: popupVisible,
-          });
-      }
-
-      if (!isMultiple) {
-        if (inputValue) {
-          // 单选时选择搜索项，直接关闭面板
-          handleVisibleChange(false);
-        } else if (
-          (selectedOptions[0] && selectedOptions[0][selectedOptions[0].length - 1]?.isLeaf) ||
-          (changeOnSelect && expandTrigger === 'hover')
-        ) {
-          handleVisibleChange(false);
-        }
-      }
-      // 这里直接通过setValue修改stateValue是为了节省受控模式下，不断通过外部value查找节点，计算选中状态的操作。
-      // 和useUpdate配合，在statevalue和外部传入的value不相等的时候才进行计算。
-      return isSame ? mergeValue : newValue;
-    });
+    if ('value' in props) {
+      store.setNodeCheckedByValue(mergeValue);
+      // 受控触发更新，回到选中前的状态。
+      forceUpdate();
+    } else {
+      setValue(newValue);
+    }
+    onChange &&
+      onChange(_value, _selectedOptions, {
+        dropdownVisible: popupVisible,
+      });
   };
 
   const onRemoveCheckedItem = (item, index, e) => {
@@ -228,7 +235,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     }
 
     const newValue = mergeValue.filter((_, i) => i !== index);
-    handleChange(newValue, true);
+    handleChange(newValue);
   };
 
   const renderEmptyEle = (width?: number): React.ReactNode => {
@@ -336,7 +343,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
               const newValue = nodes.filter((x) => x.disabled).map((x) => x.pathValue);
               store.setNodeCheckedByValue(newValue);
 
-              handleChange(newValue, true);
+              handleChange(newValue);
             }
 
             props.onClear && props.onClear(!!popupVisible);
