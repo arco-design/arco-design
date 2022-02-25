@@ -356,10 +356,10 @@
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
 
-"@arco-materials/site-navbar@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.1.0.tgz#2cbc232e50ea58e7db8a9adceade0891ca50d223"
-  integrity sha512-laAVS07MXaeY8Ve9AJy7f1Y1pnLa1TCAy321fu/HEDlJbQSEUfBx1P9Mm5JJMmid4vaX5lMZeeGQpH2C6vDj7g==
+"@arco-materials/site-navbar@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.1.3.tgz#3496eeb3fb37db829c833cb99f338bec7f6623b2"
+  integrity sha512-FiOu7Xha9k28V9drDTjSbuNT3P/HAfIfb3rdqT/UNeQ9hB7/nTs3X8MyZN9oGR8cInWda587AXBw7MsUp5N0ug==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.0.1"
