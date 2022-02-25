@@ -42,6 +42,31 @@ describe('Tooltip', () => {
       'background-color: rgb(51, 51, 51);'
     );
   });
+  it('does not show tooltip when content is null or undefined or false or "  "', () => {
+    [false, undefined, null, '  '].forEach((item) => {
+      const wrapper = mount(
+        <Tooltip position="top" color="#333333" trigger="hover" content={item}>
+          <Button>Top</Button>
+        </Tooltip>
+      );
+      wrapper.find(Button).simulate('mouseenter');
+      wrapper.update();
+      jest.runAllTimers();
+      expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeFalsy();
+    });
+  });
+  it('should show tooltip when content is 0', () => {
+    const wrapper = mount(
+      <Tooltip position="top" color="#333333" trigger="hover" content={0}>
+        <Button>Top</Button>
+      </Tooltip>
+    );
+    wrapper.find('Button').simulate('mouseenter');
+    jest.runAllTimers();
+    wrapper.update();
+    expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeTruthy();
+  });
+
   it('showArrow property', () => {
     const wrapper = mountTooltip(
       <Tooltip
