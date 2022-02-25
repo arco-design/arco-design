@@ -49,7 +49,6 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     const refInput = useRef<HTMLInputElement>();
     const refInputMirror = useRef<HTMLSpanElement>();
     const refPrevInputWidth = useRef<number>(null);
-    const refPrevValueChangeCallbackParameter = useRef<string>(null);
 
     const maxLength = isObject(propMaxLength) ? propMaxLength.length : propMaxLength;
     const mergedMaxLength =
@@ -91,17 +90,16 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     // 设定 <input> 初始宽度，之后的更新交由 ResizeObserver 触发
     useEffect(() => autoFitWidth && updateInputWidth(), []);
 
-    const tryTriggerValueChangeCallback: typeof onValueChange = (value, e) => {
+    const tryTriggerValueChangeCallback: typeof onValueChange = (newValue, e) => {
       if (
         onValueChange &&
         // https://github.com/arco-design/arco-design/issues/520
         // Avoid triggering onChange repeatedly for the same value
         // Compositionend is earlier than onchange in Firefox, different with chrome
-        value !== refPrevValueChangeCallbackParameter.current &&
-        (mergedMaxLength === undefined || value.length <= mergedMaxLength)
+        newValue !== value &&
+        (mergedMaxLength === undefined || newValue.length <= mergedMaxLength)
       ) {
-        onValueChange(value, e);
-        refPrevValueChangeCallbackParameter.current = value;
+        onValueChange(newValue, e);
       }
     };
 
@@ -169,7 +167,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
                   if (refInput.current && refInput.current.focus) {
                     refInput.current.focus();
                   }
-                  onValueChange && onValueChange('', e);
+                  tryTriggerValueChangeCallback('', e);
                   onClear && onClear();
                 }}
               >
