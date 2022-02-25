@@ -133,6 +133,13 @@ export interface ImagePreviewProps {
    */
   actionsLayout?: string[];
   /**
+   * @zh 在预览缩放时会使用当前数组中的缩放百分比。若不包含 `100%`，则会自动添加在最相邻的位置。
+   * @en The zoom percentage in the current array is used when previewing zooms. If `100%` is not included, the `100%` scale will be automatically added in the most adjacent position.
+   * @defaultValue [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];
+   * @version 2.30.0
+   */
+  scales?: number[];
+  /**
    * @zh 切换可见状态触发的事件
    * @en Callback when visibility changes
    */

@@ -17,7 +17,7 @@ function Demo() {
   return (
     <div>
       <Space direction="vertical">
-        <Image.PreviewGroup infinite>
+        <Image.PreviewGroup infinite scales={[50, 150]}>
           <Image src={newSrc} width={230} />
           <div>
             <Space>
