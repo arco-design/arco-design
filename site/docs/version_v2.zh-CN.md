@@ -77,6 +77,10 @@ changelog: true
 
 2022-01-14
 
+### 🚨 重点注意
+
+- **修复了 `Select` 组件在设置 `labelInValue` 时，`renderFormat` 方法的第二个参数返回类型非对象的bug。可能会对直接使用该参数作为函数返回值的场景造成影响。**
+
 ### 💎 优化
 
 - `Select` 组件优化 `labelInValue` 时通过对象形式指定了初始值时的渲染表现。([#448](https://github.com/arco-design/arco-design/pull/448))
