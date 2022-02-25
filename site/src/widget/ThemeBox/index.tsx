@@ -12,8 +12,12 @@ import {
   Message,
   Tag,
   Typography,
+  Input,
+  Empty,
+  Link,
 } from '@arco-design/web-react';
 import { IconSkin, IconLink, IconClose } from '@arco-design/web-react/icon';
+import debounce from 'lodash.debounce';
 import locale from './locale';
 import { apiBasename } from '../../utils/config';
 
@@ -29,11 +33,11 @@ function ThemeBox({ lang = 'zh-CN' }) {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(false);
   const [hover, setHover] = useState(false);
+  const [keyword, setKeyWord] = useState('');
 
   const t = locale[lang];
 
   const themeObj = JSON.parse(localStorage.getItem('arco-components-theme'));
-
   const hasCustomTheme = themeObj && themeObj.packageName;
 
   useEffect(() => {
@@ -49,15 +53,21 @@ function ThemeBox({ lang = 'zh-CN' }) {
     }
   }, []);
 
-  async function fetchThemeList(current = currentPage) {
+  async function fetchThemeList(current = currentPage, searchValue = keyword) {
     setLoading(true);
     const data = await axios.get(
-      `${apiBasename}/themes/api/open/themes/list?pageSize=6&currentPage=${current}&depLibrary=@arco-design/web-react`
+      `${apiBasename}/themes/api/open/themes/list?pageSize=6&currentPage=${current}&depLibrary=@arco-design/web-react&keyword=${searchValue}`
     );
     setLoading(false);
     setList(data.data.list);
     setTotal(data.data.total);
   }
+
+  const searchFetch = debounce((inputValue) => {
+    setCurrentPage(1);
+    setKeyWord(inputValue);
+    fetchThemeList(1, inputValue);
+  }, 200);
 
   function onOk() {
     setVisible(false);
@@ -168,7 +178,22 @@ function ThemeBox({ lang = 'zh-CN' }) {
     <div>
       <Modal
         style={{ width: 900 }}
-        title={t.installTheme}
+        title={
+          <div className="tb-header">
+            <span>{t.installTheme}</span>
+            <div style={{ marginRight: '30px' }}>
+              <Input.Search
+                placeholder={t.search}
+                style={{ width: 300 }}
+                loading={loading}
+                allowClear
+                onChange={(value) => {
+                  searchFetch(value.trim());
+                }}
+              />
+            </div>
+          </div>
+        }
         focusLock={false}
         visible={visible}
         onOk={onOk}
@@ -199,43 +224,55 @@ function ThemeBox({ lang = 'zh-CN' }) {
           renderLoading()
         ) : (
           <Row gutter={[20, 20]}>
-            {list.map((l) => (
-              <Col span={8} key={l.themeId}>
-                <Card
-                  className="tb-card"
-                  cover={<img src={l.cover} style={{ height: 160 }} />}
-                  actions={[
-                    <Button
-                      key="1"
-                      className="tb-link"
-                      type="text"
-                      icon={<IconLink />}
-                      size="mini"
-                      href={`${apiBasename}/themes/design/${l.themeId}`}
-                      target="_blank"
-                    >
-                      {t.openInDesignLab}
-                    </Button>,
-                    ...(() => {
-                      if (themeObj && themeObj.packageName === l.packageName) {
+            {list.length ? (
+              list.map((l) => (
+                <Col span={8} key={l.themeId}>
+                  <Card
+                    className="tb-card"
+                    cover={<img src={l.cover} style={{ height: 160 }} />}
+                    actions={[
+                      <Button
+                        key="1"
+                        className="tb-link"
+                        type="text"
+                        icon={<IconLink />}
+                        size="mini"
+                        href={`${apiBasename}/themes/design/${l.themeId}`}
+                        target="_blank"
+                      >
+                        {t.openInDesignLab}
+                      </Button>,
+                      ...(() => {
+                        if (themeObj && themeObj.packageName === l.packageName) {
+                          return [
+                            <Tag color="arcoblue" key="2">
+                              当前使用
+                            </Tag>,
+                          ];
+                        }
                         return [
-                          <Tag color="arcoblue" key="2">
-                            当前使用
-                          </Tag>,
+                          <Button key="2" type="primary" size="mini" onClick={() => onUseTheme(l)}>
+                            {t.install}
+                          </Button>,
                         ];
-                      }
-                      return [
-                        <Button key="2" type="primary" size="mini" onClick={() => onUseTheme(l)}>
-                          {t.install}
-                        </Button>,
-                      ];
-                    })(),
-                  ]}
-                >
-                  <Meta title={l.themeName} />
-                </Card>
-              </Col>
-            ))}
+                      })(),
+                    ]}
+                  >
+                    <Meta title={l.themeName} />
+                  </Card>
+                </Col>
+              ))
+            ) : (
+              <Empty
+                style={{ margin: '200px 0' }}
+                description={
+                  <span>
+                    {t.noResult}
+                    <Link href={`${apiBasename}/themes`}>{t.createTheme}</Link>
+                  </span>
+                }
+              />
+            )}
           </Row>
         )}
         <div className="tb-pagination">
