@@ -55,6 +55,7 @@ function Demo() {
         removeIcon={<IconDelete />}
         defaultValue={['Beijing', 'Shenzhen']}
         renderFormat={(option, value) => {
+          // When labelInValue is true, the value is an object
           return option ? (
             <span>
               <IconStar style={{ color: '#f7ba1e' }} />
