@@ -1,3 +1,11 @@
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fix the bug that the `onStart` input parameter was wrong when the `Typography` component was editing the state([#555](https://github.com/arco-design/arco-design/pull/555))
+
 ## 2.29.1
 
 2022-02-18

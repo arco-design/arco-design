@@ -1,3 +1,11 @@
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 的 `clear-icon` 样式未生效的bug([#589](https://github.com/arco-design/arco-design/pull/589))
+
 ## 2.28.2
 
 2022-01-21

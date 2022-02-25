@@ -1,3 +1,11 @@
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fixed the bug that the `clear-icon` style of `InputTag` did not take effect([#589](https://github.com/arco-design/arco-design/pull/589))
+
 ## 2.28.2
 
 2022-01-21
