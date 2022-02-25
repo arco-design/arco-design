@@ -82,7 +82,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
   // it is important to note that this method has its limitations
   // it fails in cases such as content = <>&nbsp;&nbsp;</>
   const isEmpty = (content: ReactNode): boolean => {
-    if (content === null || content === undefined) {
+    if (content === null || content === undefined || content === false) {
       return true;
     }
     if (typeof content === 'string' && content.trim() === '') {

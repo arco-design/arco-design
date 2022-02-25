@@ -76,6 +76,9 @@ changelog: true
 ## 2.28.1
 
 2022-01-14
+### 🚨 Important attention
+
+- **Fixed a bug where the second parameter of the `renderFormat` method returned a non-object type when `labelInValue` was set in the `Select` component. It may have an impact on scenarios where the parameter is used directly as the return value of the function. **
 
 ### 💎 Optimization
 
