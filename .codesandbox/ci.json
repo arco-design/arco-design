@@ -1,0 +1,6 @@
+{
+  "installCommand": "init",
+  "buildCommand": "build",
+  "sandboxes": ["/.codesandbox/template/pr-preview"],
+  "node": "16"
+}
