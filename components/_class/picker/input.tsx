@@ -7,7 +7,6 @@ import React, {
   ReactNode,
 } from 'react';
 import { Dayjs } from 'dayjs';
-import { getResolvedDayjsLocaleName } from '../../_util/dayjs';
 import omit from '../../_util/omit';
 import { Enter } from '../../_util/keycode';
 import { ConfigContext } from '../../ConfigProvider';
@@ -66,11 +65,9 @@ function DateInput(
   }: DateInputProps,
   ref
 ) {
-  const { getPrefixCls, size: ctxSize, locale } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize } = useContext(ConfigContext);
   const input = useRef<HTMLInputElement>(null);
   const size = propSize || ctxSize;
-
-  const localeName = getResolvedDayjsLocaleName(locale.locale);
 
   useImperativeHandle<any, DateInputHandle>(ref, () => ({
     focus() {
@@ -92,8 +89,7 @@ function DateInput(
   if (inputValue !== undefined) {
     showValue = inputValue;
   } else if (value && !isArray(value)) {
-    showValue =
-      typeof format === 'function' ? format(value) : value.locale(localeName).format(format);
+    showValue = typeof format === 'function' ? format(value) : value.format(format);
   }
 
   const readOnlyProps = editable ? {} : { readOnly: true };

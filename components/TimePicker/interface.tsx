@@ -134,6 +134,11 @@ export interface PickerProps {
    * @en Whether to destroy popup when hidden
    */
   unmountOnExit?: boolean;
+  /**
+   * @zh 设置时区
+   * @en timezone
+   */
+  utcOffset?: number;
 }
 
 /**

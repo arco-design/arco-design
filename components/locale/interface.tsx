@@ -13,6 +13,7 @@ type CalendarType = {
 
 export interface Locale {
   locale: string;
+  dayjsLocale?: string;
   Calendar: CalendarType;
   DatePicker: {
     Calendar: CalendarType;

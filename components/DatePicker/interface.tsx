@@ -220,6 +220,11 @@ export interface PickerProps {
    * @version 2.20.0
    */
   hideNotInViewDates?: boolean;
+  /**
+   * @zh 设置时区
+   * @en timezone
+   */
+  timezone?: string;
 }
 
 /**

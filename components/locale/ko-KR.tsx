@@ -1,3 +1,5 @@
+import 'dayjs/locale/ko';
+
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
@@ -64,6 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'ko-KR',
+  dayjsLocale: 'ko',
   Calendar,
   DatePicker: {
     Calendar,

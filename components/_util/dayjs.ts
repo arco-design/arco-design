@@ -5,25 +5,13 @@ import weekOfYear from 'dayjs/plugin/weekOfYear';
 import AdvancedFormat from 'dayjs/plugin/advancedFormat';
 import weekYear from 'dayjs/plugin/weekYear';
 import QuarterOfYear from 'dayjs/plugin/quarterOfYear';
-import UTC from 'dayjs/plugin/utc';
-import Timezone from 'dayjs/plugin/timezone';
-import 'dayjs/locale/zh-cn';
-import { isDayjs, isArray } from '../_util/is';
+import { isDayjs, isArray, isUndefined } from '../_util/is';
 
 const isMoment = (originDayjs() as any)._isAMomentObject;
 
 if (isMoment) {
   (originDayjs as any).extend = () => {};
 }
-
-// const methods = ['add', 'subtract', 'startOf', 'endOf', 'set'];
-
-// methods.forEach((method) => {
-//   const old = originDayjs.prototype[method];
-//   originDayjs.prototype[`_${method}`] = function(...args) {
-//     return isMoment ? old.call(this.clone(), ...args) : old(...args);
-//   };
-// });
 
 const overwriteIsDayjs = (_, Dayjs, dayjs) => {
   dayjs = function (date, c) {
@@ -55,10 +43,6 @@ originDayjs.extend(weekOfYear);
 originDayjs.extend(AdvancedFormat);
 originDayjs.extend(weekYear);
 originDayjs.extend(QuarterOfYear);
-originDayjs.extend(UTC);
-originDayjs.extend(Timezone);
-
-originDayjs.tz.setDefault('America/New_York');
 
 export const dayjs = originDayjs;
 
@@ -86,8 +70,24 @@ export const methods = {
   },
 };
 
+const localOffset = -new Date().getTimezoneOffset();
+
 export function getNow() {
-  return dayjs().tz();
+  return dayjs();
+}
+
+export function toTimezone(
+  time: Dayjs | undefined,
+  utcOffset: number = localOffset,
+  local?: boolean
+): Dayjs {
+  const timezoneOffset = Math.abs(utcOffset) <= 16 ? utcOffset * 60 : utcOffset;
+  const diffOffset = local ? localOffset - timezoneOffset : timezoneOffset - localOffset;
+  return isUndefined(time) ? time : dayjs(dayjs(time).valueOf() + diffOffset * 60 * 1000);
+}
+
+export function toLocal(time: Dayjs, utcOffset: number): Dayjs {
+  return toTimezone(time, utcOffset, true);
 }
 
 export function initializeDateLocale(localeName: string, weekStart: number) {
@@ -111,7 +111,7 @@ export function getTimeFormat(format) {
   return timeFormat || 'HH:mm:ss';
 }
 
-export function getDayjsValue(time, format: string) {
+export function getDayjsValue(time, format: string, utcOffset?: number) {
   if (!time) {
     return undefined;
   }
@@ -127,14 +127,17 @@ export function getDayjsValue(time, format: string) {
     return dayjs(value);
   };
 
+  const getRealTime = (t) =>
+    utcOffset !== undefined ? toTimezone(formatValue(t), utcOffset) : formatValue(t);
+
   if (isArray(time)) {
-    return time.map((t) => (t ? formatValue(t) : undefined));
+    return time.map((t) => (t ? getRealTime(t) : undefined));
   }
 
-  return formatValue(time);
+  return getRealTime(time);
 }
 
-export function getValueWithTime(date: Dayjs = getNow(), time?: Dayjs): Dayjs {
+export function getValueWithTime(date: Dayjs, time?: Dayjs): Dayjs {
   const y = date.year();
   const m = date.month();
   const d = date.date();
@@ -188,7 +191,6 @@ export function isDayjsArrayChange(
   );
 }
 
-export function getResolvedDayjsLocaleName(localeName: string): string {
-  const locale = localeName.toLocaleLowerCase();
-  return locale === 'en-us' ? 'en' : locale;
+export function isValidTimeString(str: string, format) {
+  return typeof str === 'string' && dayjs(str, format).format(format) === str;
 }

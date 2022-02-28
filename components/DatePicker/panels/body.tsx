@@ -1,9 +1,10 @@
-import React, { ReactNode } from 'react';
+import React, { useContext, ReactNode } from 'react';
 import { Dayjs } from 'dayjs';
 import cs from '../../_util/classNames';
 import WeekList from './week-list';
 import useCellClassName from '../hooks/useCellClassName';
 import { CalendarValue } from '../interface';
+import PickerContext from '../context';
 
 type RowType = {
   time?: Dayjs;
@@ -50,6 +51,8 @@ function Body(props: PanelBodyProps) {
     format,
   } = props;
 
+  const { timezone } = useContext(PickerContext);
+
   const getCellClassName = useCellClassName({
     ...props,
     isSameTime,
@@ -64,7 +67,7 @@ function Body(props: PanelBodyProps) {
         return (
           <div
             key={index}
-            className={getCellClassName(col, disabled)}
+            className={getCellClassName(col, disabled, timezone)}
             onMouseEnter={() => onMouseEnterCell && onMouseEnterCell(col.time, disabled)}
             onMouseLeave={() => onMouseLeaveCell && onMouseLeaveCell(col.time, disabled)}
             onClick={onClickHandler}
