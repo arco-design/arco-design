@@ -5,9 +5,10 @@ import { padStart } from '../_util/pad';
 import { getColumnsFromFormat } from './util';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { dayjs, getNow, getDayjsValue } from '../_util/dayjs';
+import { dayjs, getNow, getDayjsValue, toTimezone, toLocal } from '../_util/dayjs';
 import Button from '../Button';
 import TimeColumn from './time-column';
+import PickerContext from './context';
 
 interface InnerTimePickerProps extends TimePickerProps {
   confirmBtnDisabled?: boolean;
@@ -55,6 +56,8 @@ function TimePicker(props: InnerTimePickerProps) {
 
   const { getPrefixCls, locale } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('timepicker');
+
+  const { utcOffset } = useContext(PickerContext);
 
   const valueShow = getDayjsValue(propsValueShow, format) as Dayjs;
   const ampm = valueShow && valueShow.hour() >= 12 ? 'pm' : 'am';
@@ -142,7 +145,7 @@ function TimePicker(props: InnerTimePickerProps) {
 
     newValue = dayjs(newValue, valueFormat).locale(dayjs.locale());
 
-    onSelect && onSelect(newValue.format(format), newValue);
+    onSelect && onSelect(toLocal(newValue, utcOffset).format(format), toLocal(newValue, utcOffset));
 
     if (!isRangePicker) {
       setValueShow && setValueShow(newValue);
@@ -161,11 +164,12 @@ function TimePicker(props: InnerTimePickerProps) {
 
   function onSelectNow() {
     const now = getNow();
+    const zoneNow = toTimezone(now, utcOffset);
     onSelect && onSelect(now.format(format), now);
     if (disableConfirm) {
-      onConfirmValue(now);
+      onConfirmValue(zoneNow);
     } else {
-      setValueShow && setValueShow(now);
+      setValueShow && setValueShow(zoneNow);
     }
   }
 

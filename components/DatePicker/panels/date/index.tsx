@@ -12,6 +12,7 @@ import Body from '../body';
 import MonthPanel from '../month';
 import YearPanel from '../year';
 import { newArray } from '../../../_util/constant';
+import PickerContext from '../../context';
 
 interface InnerDatePickerProps extends DatePickerProps {
   onTimePickerSelect?: (timeString: string, time: Dayjs) => void;
@@ -54,6 +55,12 @@ const getTimeObj = (time: Dayjs) => {
 };
 
 function getAllDaysByTime(props: InnerDatePickerProps, time: Dayjs) {
+  console.log(
+    'getAllDaysByTime',
+    time.startOf('month'),
+    time.startOf('month').$d.getDate(),
+    time.startOf('month').$d.getUTCDate()
+  );
   const { dayStartOfWeek = 0, isWeek } = props;
   const current = getTimeObj(time);
 
@@ -132,7 +139,9 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls, utcOffset } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+
+  const { timezone } = useContext(PickerContext);
 
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
 
@@ -199,9 +208,10 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
           {...disabledTimeProps}
           hideFooter
           format={timeFormat}
-          valueShow={timeValue}
+          valueShow={timeValue.format('HH:mm:ss')}
           onSelect={onTimePickerSelect}
           popupVisible={popupVisible}
+          timezone={timezone}
         />
       </div>
     );

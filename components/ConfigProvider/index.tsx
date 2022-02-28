@@ -10,6 +10,7 @@ import { IconContext } from '../../icon/react-icon/context';
 import { ConfigProviderProps } from './interface';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { dayjs } from '../_util/dayjs';
 
 const colorList = {
   primaryColor: {
@@ -65,8 +66,6 @@ function renderEmpty(componentName?: string) {
   }
 }
 
-const defaultOffset = new Date().getTimezoneOffset() / 60;
-
 const defaultProps: ConfigProviderProps = {
   locale: defaultLocale,
   prefixCls: 'arco',
@@ -77,7 +76,6 @@ const defaultProps: ConfigProviderProps = {
     modal: { autoFocus: true },
     drawer: { autoFocus: true },
   },
-  utcOffset: -defaultOffset,
 };
 
 const componentConfig = {};
@@ -112,6 +110,7 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
 
   useEffect(() => {
     setConfigProviderProps({ locale, prefixCls });
+    dayjs.locale(locale.dayjsLocale);
   }, [locale, prefixCls]);
 
   let child = children;

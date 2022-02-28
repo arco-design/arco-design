@@ -1,3 +1,5 @@
+import 'dayjs/locale/th';
+
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
@@ -64,6 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'th-TH',
+  dayjsLocale: 'th',
   Calendar,
   DatePicker: {
     Calendar,

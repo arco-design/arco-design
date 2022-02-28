@@ -9,13 +9,11 @@ import { ConfigContext } from '../ConfigProvider';
 import {
   getDayjsValue,
   getValueWithTime,
-  dayjs,
   getNow,
   methods,
   getSortedDayjsArray,
   isDayjsArrayChange,
   initializeDateLocale,
-  getResolvedDayjsLocaleName,
 } from '../_util/dayjs';
 import IconCalendar from '../../icon/react-icon/IconCalendar';
 import IconCalendarClock from '../../icon/react-icon/IconCalendarClock';
@@ -24,6 +22,7 @@ import Footer from './panels/footer';
 import Shortcuts from './panels/shortcuts';
 import { getAvailableDayjsLength } from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import PickerContext from './context';
 
 // get default format by mode
 function getFormat(props) {
@@ -102,13 +101,12 @@ const Picker = (baseProps: RangePickerProps) => {
     onPickerValueChange,
     triggerElement,
     clearRangeOnReselect,
+    timezone,
   } = props;
 
   const prefixCls = getPrefixCls('picker-range');
 
-  const localeName = getResolvedDayjsLocaleName(locale.locale);
-
-  initializeDateLocale(localeName, dayStartOfWeek);
+  initializeDateLocale(locale.dayjsLocale, dayStartOfWeek);
 
   const refInput = useRef(null);
   const refPanel = useRef(null);
@@ -118,6 +116,10 @@ const Picker = (baseProps: RangePickerProps) => {
   const shortcutLeaveTimer = useRef(null);
 
   const format = getFormat(props);
+
+  function getDayjs(v, f = format) {
+    return getDayjsValue(v, f);
+  }
 
   // get input index when half disabled
   function getAvailableInputIndex() {
@@ -157,7 +159,7 @@ const Picker = (baseProps: RangePickerProps) => {
   const [isTimePanel, setIsTimePanel] = useState<boolean>(false);
 
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
-  const propsValueDayjs = getDayjsValue(propsValue, format) as Dayjs[];
+  const propsValueDayjs = getDayjs(propsValue) as Dayjs[];
   const mergedValue = 'value' in props ? propsValueDayjs : value;
 
   const panelValue = shortcutsValue || valueShow || mergedValue || [];
@@ -167,13 +169,13 @@ const Picker = (baseProps: RangePickerProps) => {
   // the first time we select a range after open
   const firstRange = useRef<boolean>(true);
 
-  const now = getNow();
+  const now = getNow(timezone);
 
   function getTimeValues(): Dayjs[] {
     const timeValues: Dayjs[] = [];
     const defaultTimeValue =
       isObject(showTime) && showTime.defaultValue
-        ? getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss')
+        ? getDayjs(showTime.defaultValue, showTime.format || 'HH:mm:ss')
         : [];
     timeValues[0] = panelValue[0] || defaultTimeValue[0] || now;
     timeValues[1] = panelValue[1] || defaultTimeValue[1] || now;
@@ -199,14 +201,14 @@ const Picker = (baseProps: RangePickerProps) => {
     let value;
 
     if (props.value) {
-      value = getDayjsValue(props.value, format);
+      value = getDayjs(props.value);
     } else {
-      value = getDayjsValue(props.defaultValue, format);
+      value = getDayjs(props.defaultValue);
     }
 
     if (isHalfAvailable && (!value || (value && !value[nextFocusedInputIndex]))) {
       const nv = [];
-      nv[nextFocusedInputIndex] = getNow();
+      nv[nextFocusedInputIndex] = getNow(timezone);
       return nv;
     }
 
@@ -214,7 +216,7 @@ const Picker = (baseProps: RangePickerProps) => {
   }
 
   const defaultPageShowDates = mergedValue ||
-    (getDayjsValue(defaultPickerValue, format) as Dayjs[]) || [getNow(), getNow()];
+    (getDayjs(defaultPickerValue) as Dayjs[]) || [getNow(timezone), getNow(timezone)];
 
   // show date at two panels
   const [pageShowDates, setPageShowDates] = useState<Dayjs[]>(
@@ -222,7 +224,7 @@ const Picker = (baseProps: RangePickerProps) => {
   );
 
   const mergedPageShowDate =
-    getShowDatesFromFocused(getDayjsValue(pickerValue, format) as Dayjs[]) || pageShowDates;
+    getShowDatesFromFocused(getDayjs(pickerValue) as Dayjs[]) || pageShowDates;
 
   useEffect(() => {
     setPanelModes([mode, mode]);
@@ -274,14 +276,14 @@ const Picker = (baseProps: RangePickerProps) => {
   function getShowDatesFromFocused(dates?: Dayjs[], index = focusedInputIndex) {
     const prev = index === 0 || isSamePanel(dates, mode);
     if (isArray(dates) && dates.length < 2) {
-      return getPageShowDatesByValue(dates[0] || getNow(), mode, 'prev');
+      return getPageShowDatesByValue(dates[0] || getNow(timezone), mode, 'prev');
     }
     if (isArray(dates) && dates.length === 2) {
       if (dates[index]) {
         return getPageShowDatesByValue(dates[index], mode, prev ? 'prev' : 'next');
       }
       return getPageShowDatesByValue(
-        dates[index === 0 ? 1 : 0] || getNow(),
+        dates[index === 0 ? 1 : 0] || getNow(timezone),
         mode,
         prev && !dates[index === 0 ? 1 : 0] ? 'prev' : 'next'
       );
@@ -312,7 +314,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   // get page show date by specify value
   function getPageShowDatesByValue(
-    value = getNow(),
+    value = getNow(timezone),
     pickerMode = mode,
     type: 'prev' | 'next' = 'prev'
   ) {
@@ -399,8 +401,8 @@ const Picker = (baseProps: RangePickerProps) => {
   function isValid(time): boolean {
     return (
       typeof time === 'string' &&
-      dayjs(time, format).format(format) === time &&
-      !isDisabledDate(dayjs(time, format))
+      (getDayjs(time, format) as Dayjs).format(format) === time &&
+      !isDisabledDate(getDayjs(time, format) as Dayjs)
       // (panelValue[nextFocusedInputIndex]
       //   ? nextFocusedInputIndex === 0
       //     ? panelValue[nextFocusedInputIndex].isBefore(dayjs(time, format))
@@ -421,7 +423,7 @@ const Picker = (baseProps: RangePickerProps) => {
       setOpen(true);
     }
     if (isValid(niv)) {
-      newValueShow[focusedInputIndex] = getDayjsValue(niv, format) as Dayjs;
+      newValueShow[focusedInputIndex] = getDayjs(niv) as Dayjs;
       setValueShow(newValueShow);
       setFixedPageShowDates(newValueShow);
       setInputValue(undefined);
@@ -620,7 +622,7 @@ const Picker = (baseProps: RangePickerProps) => {
     clearShortcutsTimer();
     shortcutEnterTimer.current = setTimeout(() => {
       if (isValidShortcut(shortcut)) {
-        const nv = getDayjsValue(shortcut.value(), format) as Dayjs[];
+        const nv = getDayjs(shortcut.value()) as Dayjs[];
         setShortcutsValue(nv);
         setFixedPageShowDates(nv);
       }
@@ -632,7 +634,7 @@ const Picker = (baseProps: RangePickerProps) => {
     clearShortcutsTimer();
     shortcutLeaveTimer.current = setTimeout(() => {
       setShortcutsValue(undefined);
-      setFixedPageShowDates(valueShow || mergedValue || [getNow(), getNow()]);
+      setFixedPageShowDates(valueShow || mergedValue || [getNow(timezone), getNow(timezone)]);
     }, 50);
   }
 
@@ -640,7 +642,7 @@ const Picker = (baseProps: RangePickerProps) => {
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (isValidShortcut(shortcut)) {
-      const time = getDayjsValue(shortcut.value(), format) as Dayjs[];
+      const time = getDayjs(shortcut.value()) as Dayjs[];
       onConfirmValue(time);
     }
   }
@@ -729,7 +731,7 @@ const Picker = (baseProps: RangePickerProps) => {
           disabledDate={(current) => isDisabledDate(current)}
           disabledTime={disabledTime}
           mode={mode}
-          localeName={localeName}
+          localeName={locale.dayjsLocale}
           showTime={showTime}
           timeValues={shortcutsValue || timeValues}
           onTimePickerSelect={onTimePickerSelect}
@@ -803,34 +805,36 @@ const Picker = (baseProps: RangePickerProps) => {
   }
 
   return (
-    <Trigger
-      popup={renderPopup}
-      trigger="click"
-      clickToClose={false}
-      position={position}
-      disabled={triggerDisabled}
-      popupAlign={{ bottom: 4 }}
-      getPopupContainer={getPopupContainer}
-      onVisibleChange={visibleChange}
-      popupVisible={mergedPopupVisible}
-      classNames="slideDynamicOrigin"
-      unmountOnExit={unmountOnExit}
-      {...triggerProps}
-    >
-      {triggerElement || (
-        <DateInputRange
-          {...baseInputProps}
-          ref={refInput}
-          placeholder={placeholders}
-          value={valueShow || mergedValue}
-          onChange={onChangeInput}
-          inputValue={hoverPlaceholderValue || inputValue}
-          changeFocusedInputIndex={changeFocusedInputIndex}
-          focusedInputIndex={focusedInputIndex}
-          isPlaceholder={!!hoverPlaceholderValue}
-        />
-      )}
-    </Trigger>
+    <PickerContext.Provider value={{ timezone }}>
+      <Trigger
+        popup={renderPopup}
+        trigger="click"
+        clickToClose={false}
+        position={position}
+        disabled={triggerDisabled}
+        popupAlign={{ bottom: 4 }}
+        getPopupContainer={getPopupContainer}
+        onVisibleChange={visibleChange}
+        popupVisible={mergedPopupVisible}
+        classNames="slideDynamicOrigin"
+        unmountOnExit={unmountOnExit}
+        {...triggerProps}
+      >
+        {triggerElement || (
+          <DateInputRange
+            {...baseInputProps}
+            ref={refInput}
+            placeholder={placeholders}
+            value={valueShow || mergedValue}
+            onChange={onChangeInput}
+            inputValue={hoverPlaceholderValue || inputValue}
+            changeFocusedInputIndex={changeFocusedInputIndex}
+            focusedInputIndex={focusedInputIndex}
+            isPlaceholder={!!hoverPlaceholderValue}
+          />
+        )}
+      </Trigger>
+    </PickerContext.Provider>
   );
 };
 
