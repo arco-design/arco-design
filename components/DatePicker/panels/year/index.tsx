@@ -8,6 +8,7 @@ import { ConfigContext } from '../../../ConfigProvider';
 import Header from '../header';
 import Body from '../body';
 import { newArray } from '../../../_util/constant';
+import PickerContext from '../../context';
 
 interface InnerYearPickerProps extends YearPickerProps {
   dateRender?: (currentDate: Dayjs) => ReactNode;
@@ -45,13 +46,15 @@ function YearPicker(props: InnerYearPickerProps) {
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
   const CALENDAR_LOCALE = DATEPICKER_LOCALE.Calendar;
 
+  const { timezone } = useContext(PickerContext);
+
   const prefixCls = getPrefixCls('panel-year');
 
   const classNames = cs(prefixCls);
 
   const bodyProps = isRangePicker ? { rangeValues } : { value };
 
-  const showYear = pageShowDate ? pageShowDate.year() : getNow().year();
+  const showYear = pageShowDate ? pageShowDate.year() : getNow(timezone).year();
   const startYear = Math.floor(showYear / 10) * 10 - 1;
   const groupRow = newArray(3).map((_) => '');
   const rows = newArray(4)

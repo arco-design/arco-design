@@ -17,6 +17,7 @@ import { ConfigContext } from '../../../ConfigProvider';
 import { getNow, getDayjsValue } from '../../../_util/dayjs';
 import { TimePickerProps } from '../../../TimePicker/interface';
 import { isObject } from '../../../_util/is';
+import PickerContext from '../../context';
 
 interface InnerRangePickerProps extends RangePickerProps {
   disabledDate?: (current?: Dayjs) => boolean;
@@ -89,8 +90,10 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 
   const prefixCls = getPrefixCls('picker-range');
 
-  const startShowDate = pageShowDates[0] || getNow();
-  const endShowDate = pageShowDates[1] || getNow();
+  const { timezone } = useContext(PickerContext);
+
+  const startShowDate = pageShowDates[0] || getNow(timezone);
+  const endShowDate = pageShowDates[1] || getNow(timezone);
 
   const value = getDayjsValue(propsValue, format) as Dayjs[];
 

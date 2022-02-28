@@ -1,3 +1,5 @@
+import 'dayjs/locale/zh-cn';
+
 const Calendar = {
   formatYear: 'YYYY 年',
   formatMonth: 'YYYY 年 MM 月',
@@ -64,6 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'zh-CN',
+  dayjsLocale: 'zh-cn',
   Calendar,
   DatePicker: {
     Calendar,
