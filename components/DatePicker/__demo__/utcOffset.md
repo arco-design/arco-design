@@ -7,11 +7,15 @@ title:
 
 ## zh-CN
 
-通过 `utcOffset` 字段设置 UTC 时间。
+通过 `timezone` 字段设置时区，如果设置了 `utcOffset`，以 `utcOffset` 为准。
+
+**注意：使用 UTC 或者时区时间，传值的时候要用 timestamp 或者 Date 对象，使用字符串不能表示唯一时间，会造成困扰。**
 
 ## en-US
 
-Use `utcOffset` to set the UTC time.
+Use `timezone` to set timezone, if set the `utcOffset`, `utcOffset` takes effect.
+
+**Note: When using UTC or time zonetime, use timestamp or Date object when passing value. Strings cannot represent unique time, which will cause trouble.**
 
 ```js
 import { useState } from 'react';
