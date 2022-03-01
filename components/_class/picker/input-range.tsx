@@ -71,7 +71,7 @@ function DateInput(
   }: DateInputRangeProps,
   ref
 ) {
-  const { getPrefixCls, size: ctxSize } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, locale } = useContext(ConfigContext);
   const input0 = useRef<HTMLInputElement>(null);
   const input1 = useRef<HTMLInputElement>(null);
 
@@ -132,7 +132,7 @@ function DateInput(
     className
   );
   const getInputValue = (index: number) => {
-    const valueText = value[index] ? value[index].format(format) : '';
+    const valueText = value[index] ? value[index].locale(locale.dayjsLocale).format(format) : '';
     if (inputValue) {
       return index === focusedInputIndex ? inputValue : valueText;
     }

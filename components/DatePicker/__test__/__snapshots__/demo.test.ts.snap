@@ -4059,6 +4059,196 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:8px"
+      >
+        <div
+          class="arco-select arco-select-single arco-select-size-default"
+          tabindex="0"
+        >
+          <div
+            class="arco-select-view"
+            title="Asia/Shanghai"
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="Asia/Shanghai"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              Asia/Shanghai
+            </span>
+            <div
+              class="arco-select-suffix"
+            >
+              <div
+                class="arco-select-arrow-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-picker arco-picker-size-default"
+        >
+          <div
+            class="arco-picker-input"
+          >
+            <input
+              class="arco-picker-start-time"
+              placeholder="请选择日期"
+              value="2022-02-22 08:00:00"
+            />
+          </div>
+          <div
+            class="arco-picker-suffix"
+          >
+            <span
+              class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-close"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-picker-suffix-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-calendar-clock"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          <div
+            class="arco-space arco-space-vertical"
+          >
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Locale String:
+                  </b>
+                </span>
+                 2022/2/22 上午8:00:00
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    ISO String:
+                  </b>
+                </span>
+                 2022-02-22T00:00:00.000Z
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Timestamp:
+                  </b>
+                </span>
+                 1645488000000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders DatePicker/demo/triggerElement.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"
@@ -4087,6 +4277,196 @@ exports[`renders DatePicker/demo/triggerElement.md correctly 1`] = `
         请选择日期范围
       </span>
     </button>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:8px"
+      >
+        <div
+          class="arco-select arco-select-single arco-select-size-default"
+          tabindex="0"
+        >
+          <div
+            class="arco-select-view"
+            title="UTC "
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="UTC "
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              UTC 
+            </span>
+            <div
+              class="arco-select-suffix"
+            >
+              <div
+                class="arco-select-arrow-icon"
+              >
+                <svg
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-picker arco-picker-size-default"
+        >
+          <div
+            class="arco-picker-input"
+          >
+            <input
+              class="arco-picker-start-time"
+              placeholder="请选择日期"
+              value="2022-02-22 00:00:00"
+            />
+          </div>
+          <div
+            class="arco-picker-suffix"
+          >
+            <span
+              class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-close"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-picker-suffix-icon"
+            >
+              <svg
+                class="arco-icon arco-icon-calendar-clock"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+                width="1em"
+              >
+                <path
+                  d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          <div
+            class="arco-space arco-space-vertical"
+          >
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Locale String:
+                  </b>
+                </span>
+                 2022/2/22 上午8:00:00
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    ISO String:
+                  </b>
+                </span>
+                 2022-02-22T00:00:00.000Z
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Timestamp:
+                  </b>
+                </span>
+                 1645488000000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
