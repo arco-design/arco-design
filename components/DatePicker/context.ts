@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 type TimezoneContext = {
-  timezone?: string;
+  utcOffset?: number;
 };
 
 export default createContext<TimezoneContext>({});

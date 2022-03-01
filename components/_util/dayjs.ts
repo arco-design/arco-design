@@ -72,10 +72,12 @@ export const methods = {
 
 const localOffset = -new Date().getTimezoneOffset();
 
-export function getNow() {
-  return dayjs();
+// get local now time
+export function getNow(utcOffset?: number) {
+  return isUndefined(utcOffset) ? dayjs() : toTimezone(dayjs(), utcOffset);
 }
 
+// convert local date to specify timezone date
 export function toTimezone(
   time: Dayjs | undefined,
   utcOffset: number = localOffset,
@@ -86,6 +88,7 @@ export function toTimezone(
   return isUndefined(time) ? time : dayjs(dayjs(time).valueOf() + diffOffset * 60 * 1000);
 }
 
+// convert specify timezone date to local date
 export function toLocal(time: Dayjs, utcOffset: number): Dayjs {
   return toTimezone(time, utcOffset, true);
 }
@@ -127,6 +130,7 @@ export function getDayjsValue(time, format: string, utcOffset?: number) {
     return dayjs(value);
   };
 
+  // if set a timezone, convert to timezone date
   const getRealTime = (t) =>
     utcOffset !== undefined ? toTimezone(formatValue(t), utcOffset) : formatValue(t);
 

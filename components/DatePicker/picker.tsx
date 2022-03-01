@@ -16,6 +16,8 @@ import {
   methods,
   isDayjsChange,
   initializeDateLocale,
+  toLocal,
+  toTimezone,
 } from '../_util/dayjs';
 import IconCalendar from '../../icon/react-icon/IconCalendar';
 import IconCalendarClock from '../../icon/react-icon/IconCalendarClock';
@@ -23,6 +25,7 @@ import Footer from './panels/footer';
 import Shortcuts from './panels/shortcuts';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import PickerContext from './context';
+import usePrevious from '../_util/hooks/usePrevious';
 
 function getFormat(props) {
   const { format, picker, showTime } = props;
@@ -110,7 +113,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     pickerValue,
     onPickerValueChange,
     triggerElement,
-    timezone,
+    utcOffset,
   } = props;
 
   const prefixCls = getPrefixCls('picker');
@@ -130,17 +133,13 @@ const Picker = (baseProps: InnerPickerProps) => {
     format = showTime ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';
   }
 
-  function getDayjs(v, f = format) {
-    return getDayjsValue(v, f, true);
-  }
-
   function getDefaultValue() {
     let value;
 
     if (props.value) {
-      value = getDayjs(props.value);
+      value = getDayjsValue(props.value, format, utcOffset);
     } else {
-      value = getDayjs(props.defaultValue);
+      value = getDayjsValue(props.defaultValue, format, utcOffset);
     }
     return value;
   }
@@ -152,9 +151,11 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
 
-  const mergedValue = 'value' in props ? (getDayjs(propsValue) as Dayjs) : value;
+  const mergedValue =
+    'value' in props ? (getDayjsValue(propsValue, format, utcOffset) as Dayjs) : value;
 
-  const defaultPageShowDate = mergedValue || (getDayjs(defaultPickerValue) as Dayjs) || getNow();
+  const defaultPageShowDate =
+    mergedValue || (getDayjsValue(defaultPickerValue, format) as Dayjs) || getNow();
 
   const [inputValue, setInputValue] = useState<string | undefined>();
 
@@ -164,15 +165,15 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   const [pageShowDate, setPageShowDate] = useState<Dayjs>(defaultPageShowDate);
 
-  const mergedPageShowDate = getDayjs(pickerValue) || pageShowDate;
+  const mergedPageShowDate = getDayjsValue(pickerValue, format) || pageShowDate;
 
   const panelValue = shortcutValue || valueShow || mergedValue;
 
   const [panelMode, setPanelMode] = useState<ModeType>(mode);
 
   const defaultTimeValue = isObject(showTime)
-    ? (getDayjs(showTime.defaultValue, showTime.format || 'HH:mm:ss') as Dayjs)
-    : getNow(timezone);
+    ? (getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss', utcOffset) as Dayjs)
+    : getNow(utcOffset);
   const timeValue = panelValue || defaultTimeValue;
 
   function focusInput() {
@@ -182,6 +183,16 @@ const Picker = (baseProps: InnerPickerProps) => {
   function blurInput() {
     refInput.current && refInput.current.blur && refInput.current.blur();
   }
+
+  const previousUtcOffset = usePrevious(utcOffset);
+
+  // when utcOffset changed
+  useEffect(() => {
+    if (value && previousUtcOffset !== utcOffset) {
+      const localValue = toLocal(value, previousUtcOffset);
+      setValue(toTimezone(localValue, utcOffset));
+    }
+  }, [utcOffset, previousUtcOffset]);
 
   useEffect(() => {
     setInputValue(undefined);
@@ -249,9 +260,12 @@ const Picker = (baseProps: InnerPickerProps) => {
       const newTime = now ? date : getValueWithTime(date, timeValue);
       setValueShow(newTime);
       setPageShowDate(newTime);
-      onSelect && onSelect(newTime.format(format), newTime);
+
+      const localTime = toLocal(newTime, utcOffset);
+      onSelect && onSelect(localTime.format(format), localTime);
     } else {
-      onSelect && onSelect(date ? date.format(format) : undefined, date);
+      const localTime = toLocal(date, utcOffset);
+      onSelect && onSelect(localTime ? localTime.format(format) : undefined, localTime);
       setValue(date);
       onHandleChange(date);
       setOpen(false);
@@ -260,15 +274,18 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   function onHandleChange(newValue: Dayjs | undefined) {
     if (isDayjsChange(newValue, mergedValue)) {
-      onChange && onChange(newValue ? newValue.format(format) : undefined, newValue);
+      const localValue = toLocal(newValue, utcOffset);
+      onChange && onChange(localValue ? localValue.format(format) : undefined, localValue);
     }
   }
 
   function onTimePickerSelect(_: string, time: Dayjs) {
-    const _valueShow = panelValue || getNow(timezone);
+    const _valueShow = panelValue || getNow(utcOffset);
     const newValueShow = getValueWithTime(_valueShow, time);
     setValueShow(newValueShow);
-    onSelect && onSelect(newValueShow.format(format), newValueShow);
+
+    const localNewValueShow = toLocal(newValueShow, utcOffset);
+    onSelect && onSelect(localNewValueShow.format(format), localNewValueShow);
   }
 
   function isValid(time): boolean {
@@ -286,7 +303,7 @@ const Picker = (baseProps: InnerPickerProps) => {
       setOpen(true);
     }
     if (isValid(niv)) {
-      const newValue = getDayjs(niv) as Dayjs;
+      const newValue = getDayjsValue(niv, format, utcOffset) as Dayjs;
       setValueShow(newValue);
       setPageShowDate(newValue);
       setInputValue(undefined);
@@ -339,9 +356,9 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onSelectNow() {
-    const time = getNow(timezone);
-    handlePickerValueChange(time);
-    onHandleSelect(time.format(format), time, true);
+    const now = getNow(utcOffset);
+    handlePickerValueChange(now);
+    onHandleSelect(now.format(format), now, true);
   }
 
   function onMouseEnterCell(value: Dayjs, disabled: boolean) {
@@ -359,7 +376,7 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   function onMouseEnterShortcut(shortcut) {
     if (typeof shortcut.value === 'function' && isDayjs(shortcut.value())) {
-      const sv = getDayjs(shortcut.value()) as Dayjs;
+      const sv = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs;
       setPageShowDate(sv);
       handlePickerValueChange(sv);
       setShortcutValue(sv);
@@ -367,7 +384,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onMouseLeaveShortcut() {
-    const newValue = valueShow || mergedValue || getNow();
+    const newValue = valueShow || mergedValue || getNow(utcOffset);
     setShortcutValue(undefined);
     setPageShowDate(newValue);
     handlePickerValueChange(newValue);
@@ -376,7 +393,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (typeof shortcut.value === 'function' && isDayjs(shortcut.value())) {
-      const time = getDayjs(shortcut.value()) as Dayjs;
+      const time = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs;
       setValue(time);
       onHandleChange(time);
       setOpen(false);
@@ -505,7 +522,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   return (
-    <PickerContext.Provider value={{ timezone }}>
+    <PickerContext.Provider value={{ utcOffset }}>
       <Trigger
         popup={renderPopup}
         trigger="click"
