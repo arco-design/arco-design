@@ -5,7 +5,7 @@ import { padStart } from '../_util/pad';
 import { getColumnsFromFormat } from './util';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { dayjs, getNow, getDayjsValue, toTimezone, toLocal } from '../_util/dayjs';
+import { dayjs, getNow, getDayjsValue, toLocal } from '../_util/dayjs';
 import Button from '../Button';
 import TimeColumn from './time-column';
 import PickerContext from './context';
@@ -164,7 +164,7 @@ function TimePicker(props: InnerTimePickerProps) {
 
   function onSelectNow() {
     const now = getNow();
-    const zoneNow = toTimezone(now, utcOffset);
+    const zoneNow = getNow(utcOffset);
     onSelect && onSelect(now.format(format), now);
     if (disableConfirm) {
       onConfirmValue(zoneNow);

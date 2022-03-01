@@ -14,6 +14,9 @@ import {
   getSortedDayjsArray,
   isDayjsArrayChange,
   initializeDateLocale,
+  toTimezone,
+  toLocal,
+  isValidTimeString,
 } from '../_util/dayjs';
 import IconCalendar from '../../icon/react-icon/IconCalendar';
 import IconCalendarClock from '../../icon/react-icon/IconCalendarClock';
@@ -22,6 +25,7 @@ import Footer from './panels/footer';
 import Shortcuts from './panels/shortcuts';
 import { getAvailableDayjsLength } from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import usePrevious from '../_util/hooks/usePrevious';
 import PickerContext from './context';
 
 // get default format by mode
@@ -101,7 +105,7 @@ const Picker = (baseProps: RangePickerProps) => {
     onPickerValueChange,
     triggerElement,
     clearRangeOnReselect,
-    timezone,
+    utcOffset,
   } = props;
 
   const prefixCls = getPrefixCls('picker-range');
@@ -116,10 +120,6 @@ const Picker = (baseProps: RangePickerProps) => {
   const shortcutLeaveTimer = useRef(null);
 
   const format = getFormat(props);
-
-  function getDayjs(v, f = format) {
-    return getDayjsValue(v, f);
-  }
 
   // get input index when half disabled
   function getAvailableInputIndex() {
@@ -159,7 +159,7 @@ const Picker = (baseProps: RangePickerProps) => {
   const [isTimePanel, setIsTimePanel] = useState<boolean>(false);
 
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
-  const propsValueDayjs = getDayjs(propsValue) as Dayjs[];
+  const propsValueDayjs = getDayjsValue(propsValue, format, utcOffset) as Dayjs[];
   const mergedValue = 'value' in props ? propsValueDayjs : value;
 
   const panelValue = shortcutsValue || valueShow || mergedValue || [];
@@ -169,16 +169,17 @@ const Picker = (baseProps: RangePickerProps) => {
   // the first time we select a range after open
   const firstRange = useRef<boolean>(true);
 
-  const now = getNow(timezone);
+  const now = getNow();
+  const zoneNow = toTimezone(now);
 
   function getTimeValues(): Dayjs[] {
     const timeValues: Dayjs[] = [];
     const defaultTimeValue =
       isObject(showTime) && showTime.defaultValue
-        ? getDayjs(showTime.defaultValue, showTime.format || 'HH:mm:ss')
+        ? getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss', utcOffset)
         : [];
-    timeValues[0] = panelValue[0] || defaultTimeValue[0] || now;
-    timeValues[1] = panelValue[1] || defaultTimeValue[1] || now;
+    timeValues[0] = panelValue[0] || defaultTimeValue[0] || zoneNow;
+    timeValues[1] = panelValue[1] || defaultTimeValue[1] || zoneNow;
     return timeValues;
   }
 
@@ -201,14 +202,14 @@ const Picker = (baseProps: RangePickerProps) => {
     let value;
 
     if (props.value) {
-      value = getDayjs(props.value);
+      value = getDayjsValue(props.value, format, utcOffset);
     } else {
-      value = getDayjs(props.defaultValue);
+      value = getDayjsValue(props.defaultValue, format, utcOffset);
     }
 
     if (isHalfAvailable && (!value || (value && !value[nextFocusedInputIndex]))) {
       const nv = [];
-      nv[nextFocusedInputIndex] = getNow(timezone);
+      nv[nextFocusedInputIndex] = getNow(utcOffset);
       return nv;
     }
 
@@ -216,7 +217,7 @@ const Picker = (baseProps: RangePickerProps) => {
   }
 
   const defaultPageShowDates = mergedValue ||
-    (getDayjs(defaultPickerValue) as Dayjs[]) || [getNow(timezone), getNow(timezone)];
+    (getDayjsValue(defaultPickerValue, format) as Dayjs[]) || [now, now];
 
   // show date at two panels
   const [pageShowDates, setPageShowDates] = useState<Dayjs[]>(
@@ -224,7 +225,18 @@ const Picker = (baseProps: RangePickerProps) => {
   );
 
   const mergedPageShowDate =
-    getShowDatesFromFocused(getDayjs(pickerValue) as Dayjs[]) || pageShowDates;
+    getShowDatesFromFocused(getDayjsValue(pickerValue, format, utcOffset) as Dayjs[]) ||
+    pageShowDates;
+
+  const previousUtcOffset = usePrevious(utcOffset);
+
+  // when utcOffset changed
+  useEffect(() => {
+    if (value && previousUtcOffset !== utcOffset) {
+      const localValue = value.map((v) => toLocal(v, previousUtcOffset));
+      setValue(localValue.map((v) => toTimezone(v, utcOffset)));
+    }
+  }, [utcOffset, previousUtcOffset]);
 
   useEffect(() => {
     setPanelModes([mode, mode]);
@@ -276,14 +288,14 @@ const Picker = (baseProps: RangePickerProps) => {
   function getShowDatesFromFocused(dates?: Dayjs[], index = focusedInputIndex) {
     const prev = index === 0 || isSamePanel(dates, mode);
     if (isArray(dates) && dates.length < 2) {
-      return getPageShowDatesByValue(dates[0] || getNow(timezone), mode, 'prev');
+      return getPageShowDatesByValue(dates[0] || getNow(utcOffset), mode, 'prev');
     }
     if (isArray(dates) && dates.length === 2) {
       if (dates[index]) {
         return getPageShowDatesByValue(dates[index], mode, prev ? 'prev' : 'next');
       }
       return getPageShowDatesByValue(
-        dates[index === 0 ? 1 : 0] || getNow(timezone),
+        dates[index === 0 ? 1 : 0] || getNow(utcOffset),
         mode,
         prev && !dates[index === 0 ? 1 : 0] ? 'prev' : 'next'
       );
@@ -314,7 +326,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   // get page show date by specify value
   function getPageShowDatesByValue(
-    value = getNow(timezone),
+    value = getNow(utcOffset),
     pickerMode = mode,
     type: 'prev' | 'next' = 'prev'
   ) {
@@ -400,9 +412,7 @@ const Picker = (baseProps: RangePickerProps) => {
   // Determine whether the input date is in the correct format
   function isValid(time): boolean {
     return (
-      typeof time === 'string' &&
-      (getDayjs(time, format) as Dayjs).format(format) === time &&
-      !isDisabledDate(getDayjs(time, format) as Dayjs)
+      isValidTimeString(time, format) && !isDisabledDate(getDayjsValue(time, format) as Dayjs)
       // (panelValue[nextFocusedInputIndex]
       //   ? nextFocusedInputIndex === 0
       //     ? panelValue[nextFocusedInputIndex].isBefore(dayjs(time, format))
@@ -423,7 +433,7 @@ const Picker = (baseProps: RangePickerProps) => {
       setOpen(true);
     }
     if (isValid(niv)) {
-      newValueShow[focusedInputIndex] = getDayjs(niv) as Dayjs;
+      newValueShow[focusedInputIndex] = getDayjsValue(niv, format) as Dayjs;
       setValueShow(newValueShow);
       setFixedPageShowDates(newValueShow);
       setInputValue(undefined);
@@ -433,10 +443,11 @@ const Picker = (baseProps: RangePickerProps) => {
   // Compare with the last value, trigger onChange only if the value changes
   function onHandleChange(newValue: Dayjs[] | undefined) {
     if (isDayjsArrayChange(mergedValue, newValue)) {
+      const localValue = isArray(newValue) ? newValue.map((v) => toLocal(v, utcOffset)) : undefined;
       onChange &&
         onChange(
-          isArray(newValue) ? newValue.map((v) => v && v.format(format)) : undefined,
-          newValue
+          isArray(localValue) ? localValue.map((v) => v && v.format(format)) : undefined,
+          localValue
         );
     }
   }
@@ -563,10 +574,11 @@ const Picker = (baseProps: RangePickerProps) => {
     setValueShow(newValueShow);
     setValueShowHover(undefined);
     const sortedValues = getSortedDayjsArray(newValueShow);
+    const zoneValues = sortedValues.map((v) => toLocal(v, utcOffset));
     onSelect &&
       onSelect(
-        sortedValues.map((v) => v && v.format(format)),
-        sortedValues,
+        zoneValues.map((v) => v && v.format(format)),
+        zoneValues,
         { type: focusedInputIndex === 1 ? 'end' : 'start' }
       );
   }
@@ -622,7 +634,7 @@ const Picker = (baseProps: RangePickerProps) => {
     clearShortcutsTimer();
     shortcutEnterTimer.current = setTimeout(() => {
       if (isValidShortcut(shortcut)) {
-        const nv = getDayjs(shortcut.value()) as Dayjs[];
+        const nv = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs[];
         setShortcutsValue(nv);
         setFixedPageShowDates(nv);
       }
@@ -634,7 +646,7 @@ const Picker = (baseProps: RangePickerProps) => {
     clearShortcutsTimer();
     shortcutLeaveTimer.current = setTimeout(() => {
       setShortcutsValue(undefined);
-      setFixedPageShowDates(valueShow || mergedValue || [getNow(timezone), getNow(timezone)]);
+      setFixedPageShowDates(valueShow || mergedValue || [getNow(utcOffset), getNow(utcOffset)]);
     }, 50);
   }
 
@@ -642,7 +654,7 @@ const Picker = (baseProps: RangePickerProps) => {
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (isValidShortcut(shortcut)) {
-      const time = getDayjs(shortcut.value()) as Dayjs[];
+      const time = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs[];
       onConfirmValue(time);
     }
   }
@@ -805,7 +817,7 @@ const Picker = (baseProps: RangePickerProps) => {
   }
 
   return (
-    <PickerContext.Provider value={{ timezone }}>
+    <PickerContext.Provider value={{ utcOffset }}>
       <Trigger
         popup={renderPopup}
         trigger="click"

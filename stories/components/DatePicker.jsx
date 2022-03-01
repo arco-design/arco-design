@@ -15,27 +15,54 @@ function Demo() {
       <Typography.Title>Asia/Shanghai</Typography.Title>
       <DatePicker timezone="Asia/Shanghai" showTime onChange={(v, dv) => console.log(v, dv)} />
       <br />
-      <TimePicker timezone="Asia/Shanghai" onSelect={(v, dv) => console.log(v, dv)} style={{ marginTop: 20 }} />
+      <TimePicker
+        timezone="Asia/Shanghai"
+        onSelect={(v, dv) => console.log(v, dv)}
+        style={{ marginTop: 20 }}
+      />
 
       <Typography.Title>America/New_York</Typography.Title>
       <DatePicker timezone="America/New_York" showTime onChange={(v, dv) => console.log(v, dv)} />
       <br />
-      <TimePicker timezone="America/New_York" onSelect={(v, dv) => console.log(v, dv)} style={{ marginTop: 20 }} />
+      <TimePicker
+        timezone="America/New_York"
+        onSelect={(v, dv) => console.log(v, dv)}
+        style={{ marginTop: 20 }}
+      />
 
       <Typography.Title>Europe/London</Typography.Title>
-      <DatePicker timezone="Europe/London" showTime onChange={(v, dv) => console.log(v, dv)} />
+      <DatePicker
+        utcOffset={0}
+        showTime
+        onSelect={(v, dv) => console.log('onSelect', v, dv)}
+        onChange={(v, dv) => console.log('onChange', v, dv)}
+      />
+      <br />
+      <DatePicker.RangePicker
+        utcOffset={0}
+        showTime
+        onSelect={(v, dv) => console.log('onSelect', v, dv)}
+        onChange={(v, dv) => console.log('onChange', v, dv)}
+        style={{ marginTop: 20 }}
+      />
       <br />
       <TimePicker.RangePicker
-        timezone="Europe/London"
+        utcOffset={0}
         // format="hh:mm:ss A"
-        onSelect={(v, dv) => console.log(v, dv)} style={{ marginTop: 20 }}
+        onSelect={(v, dv) => console.log('onSelect', v, dv)}
+        onChange={(v, dv) => console.log('onChange', v, dv)}
         defaultValue={['09:24:53', '18:44:33']}
+        style={{ marginTop: 20 }}
       />
       <br />
       <TimePicker
-        timezone="Europe/London"
+        // timezone="Europe/London"
+        utcOffset={0}
         // format="hh:mm:ss A"
-        onSelect={(v, dv) => console.log(v, dv)} style={{ marginTop: 20 }}
+        defaultValue={new Date().getTime()}
+        onSelect={(v, dv) => console.log('onSelect', v, dv.toDate())}
+        onChange={(v, dv) => console.log('onChange', v, dv.toDate())}
+        style={{ marginTop: 20 }}
       />
     </ConfigProvider>
   );
