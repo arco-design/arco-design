@@ -135,7 +135,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
 
   const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
 
-  const { utcOffset } = useContext(PickerContext);
+  const { utcOffset, timezone } = useContext(PickerContext);
 
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
 
@@ -206,6 +206,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
           onSelect={onTimePickerSelect}
           popupVisible={popupVisible}
           utcOffset={utcOffset}
+          timezone={timezone}
         />
       </div>
     );

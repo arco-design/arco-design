@@ -26,6 +26,7 @@ import Shortcuts from './panels/shortcuts';
 import { getAvailableDayjsLength } from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
+import useUpdate from '../_util/hooks/useUpdate';
 import PickerContext from './context';
 
 // get default format by mode
@@ -106,6 +107,7 @@ const Picker = (baseProps: RangePickerProps) => {
     triggerElement,
     clearRangeOnReselect,
     utcOffset,
+    timezone,
   } = props;
 
   const prefixCls = getPrefixCls('picker-range');
@@ -159,7 +161,7 @@ const Picker = (baseProps: RangePickerProps) => {
   const [isTimePanel, setIsTimePanel] = useState<boolean>(false);
 
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
-  const propsValueDayjs = getDayjsValue(propsValue, format, utcOffset) as Dayjs[];
+  const propsValueDayjs = getDayjsValue(propsValue, format, utcOffset, timezone) as Dayjs[];
   const mergedValue = 'value' in props ? propsValueDayjs : value;
 
   const panelValue = shortcutsValue || valueShow || mergedValue || [];
@@ -176,7 +178,7 @@ const Picker = (baseProps: RangePickerProps) => {
     const timeValues: Dayjs[] = [];
     const defaultTimeValue =
       isObject(showTime) && showTime.defaultValue
-        ? getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss', utcOffset)
+        ? getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss', utcOffset, timezone)
         : [];
     timeValues[0] = panelValue[0] || defaultTimeValue[0] || zoneNow;
     timeValues[1] = panelValue[1] || defaultTimeValue[1] || zoneNow;
@@ -202,14 +204,14 @@ const Picker = (baseProps: RangePickerProps) => {
     let value;
 
     if (props.value) {
-      value = getDayjsValue(props.value, format, utcOffset);
+      value = getDayjsValue(props.value, format, utcOffset, timezone);
     } else {
-      value = getDayjsValue(props.defaultValue, format, utcOffset);
+      value = getDayjsValue(props.defaultValue, format, utcOffset, timezone);
     }
 
     if (isHalfAvailable && (!value || (value && !value[nextFocusedInputIndex]))) {
       const nv = [];
-      nv[nextFocusedInputIndex] = getNow(utcOffset);
+      nv[nextFocusedInputIndex] = getNow(utcOffset, timezone);
       return nv;
     }
 
@@ -225,18 +227,20 @@ const Picker = (baseProps: RangePickerProps) => {
   );
 
   const mergedPageShowDate =
-    getShowDatesFromFocused(getDayjsValue(pickerValue, format, utcOffset) as Dayjs[]) ||
+    getShowDatesFromFocused(getDayjsValue(pickerValue, format, utcOffset, timezone) as Dayjs[]) ||
     pageShowDates;
 
   const previousUtcOffset = usePrevious(utcOffset);
+  const previousTimezone = usePrevious(timezone);
 
-  // when utcOffset changed
-  useEffect(() => {
-    if (value && previousUtcOffset !== utcOffset) {
-      const localValue = value.map((v) => toLocal(v, previousUtcOffset));
-      setValue(localValue.map((v) => toTimezone(v, utcOffset)));
+  // when timezone or utcOffset change changed
+  useUpdate(() => {
+    if (isArray(value) && (previousUtcOffset !== utcOffset || timezone !== previousTimezone)) {
+      const localValue = value.map((v) => toLocal(v, previousUtcOffset, previousTimezone));
+      const zoneValue = localValue.map((v) => toTimezone(v, utcOffset, timezone));
+      setValue(zoneValue);
     }
-  }, [utcOffset, previousUtcOffset]);
+  }, [utcOffset, previousUtcOffset, timezone, previousTimezone]);
 
   useEffect(() => {
     setPanelModes([mode, mode]);
@@ -288,14 +292,14 @@ const Picker = (baseProps: RangePickerProps) => {
   function getShowDatesFromFocused(dates?: Dayjs[], index = focusedInputIndex) {
     const prev = index === 0 || isSamePanel(dates, mode);
     if (isArray(dates) && dates.length < 2) {
-      return getPageShowDatesByValue(dates[0] || getNow(utcOffset), mode, 'prev');
+      return getPageShowDatesByValue(dates[0] || getNow(utcOffset, timezone), mode, 'prev');
     }
     if (isArray(dates) && dates.length === 2) {
       if (dates[index]) {
         return getPageShowDatesByValue(dates[index], mode, prev ? 'prev' : 'next');
       }
       return getPageShowDatesByValue(
-        dates[index === 0 ? 1 : 0] || getNow(utcOffset),
+        dates[index === 0 ? 1 : 0] || getNow(utcOffset, timezone),
         mode,
         prev && !dates[index === 0 ? 1 : 0] ? 'prev' : 'next'
       );
@@ -326,7 +330,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   // get page show date by specify value
   function getPageShowDatesByValue(
-    value = getNow(utcOffset),
+    value = getNow(utcOffset, timezone),
     pickerMode = mode,
     type: 'prev' | 'next' = 'prev'
   ) {
@@ -443,7 +447,9 @@ const Picker = (baseProps: RangePickerProps) => {
   // Compare with the last value, trigger onChange only if the value changes
   function onHandleChange(newValue: Dayjs[] | undefined) {
     if (isDayjsArrayChange(mergedValue, newValue)) {
-      const localValue = isArray(newValue) ? newValue.map((v) => toLocal(v, utcOffset)) : undefined;
+      const localValue = isArray(newValue)
+        ? newValue.map((v) => toLocal(v, utcOffset, timezone))
+        : undefined;
       onChange &&
         onChange(
           isArray(localValue) ? localValue.map((v) => v && v.format(format)) : undefined,
@@ -574,7 +580,7 @@ const Picker = (baseProps: RangePickerProps) => {
     setValueShow(newValueShow);
     setValueShowHover(undefined);
     const sortedValues = getSortedDayjsArray(newValueShow);
-    const zoneValues = sortedValues.map((v) => toLocal(v, utcOffset));
+    const zoneValues = sortedValues.map((v) => toLocal(v, utcOffset, timezone));
     onSelect &&
       onSelect(
         zoneValues.map((v) => v && v.format(format)),
@@ -634,7 +640,7 @@ const Picker = (baseProps: RangePickerProps) => {
     clearShortcutsTimer();
     shortcutEnterTimer.current = setTimeout(() => {
       if (isValidShortcut(shortcut)) {
-        const nv = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs[];
+        const nv = getDayjsValue(shortcut.value(), format, utcOffset, timezone) as Dayjs[];
         setShortcutsValue(nv);
         setFixedPageShowDates(nv);
       }
@@ -646,7 +652,9 @@ const Picker = (baseProps: RangePickerProps) => {
     clearShortcutsTimer();
     shortcutLeaveTimer.current = setTimeout(() => {
       setShortcutsValue(undefined);
-      setFixedPageShowDates(valueShow || mergedValue || [getNow(utcOffset), getNow(utcOffset)]);
+      setFixedPageShowDates(
+        valueShow || mergedValue || [getNow(utcOffset, timezone), getNow(utcOffset, timezone)]
+      );
     }, 50);
   }
 
@@ -654,7 +662,7 @@ const Picker = (baseProps: RangePickerProps) => {
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (isValidShortcut(shortcut)) {
-      const time = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs[];
+      const time = getDayjsValue(shortcut.value(), format, utcOffset, timezone) as Dayjs[];
       onConfirmValue(time);
     }
   }
@@ -817,7 +825,7 @@ const Picker = (baseProps: RangePickerProps) => {
   }
 
   return (
-    <PickerContext.Provider value={{ utcOffset }}>
+    <PickerContext.Provider value={{ utcOffset, timezone }}>
       <Trigger
         popup={renderPopup}
         trigger="click"

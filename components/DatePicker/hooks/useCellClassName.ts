@@ -44,7 +44,7 @@ export default function useClassName(props) {
     }
   }
 
-  return function getCellClassName(cellDateObj, disabled, utcOffset) {
+  return function getCellClassName(cellDateObj, disabled, utcOffset, timezone) {
     const rangeStart = getDateValue(sortedRangeValues, 0);
     const rangeEnd = getDateValue(sortedRangeValues, 1);
     const hoverRangeStart = getDateValue(sortedHoverRangeValues, 0);
@@ -54,16 +54,16 @@ export default function useClassName(props) {
 
     const selected = value && isSameTime(cellDateObj.time, value);
 
-    let isToday = isSameTime(cellDateObj.time, getNow(utcOffset));
+    let isToday = isSameTime(cellDateObj.time, getNow(utcOffset, timezone));
 
     const checkIsInView = mode !== 'week' ? isInView : true;
 
     if (mode === 'week') {
-      isToday = getNow(utcOffset).isSame(cellDateObj.time, 'date');
+      isToday = getNow(utcOffset, timezone).isSame(cellDateObj.time, 'date');
     }
 
     if (mode === 'quarter') {
-      isToday = getNow(utcOffset).isSame(cellDateObj.time, 'quarter');
+      isToday = getNow(utcOffset, timezone).isSame(cellDateObj.time, 'quarter');
     }
 
     function getIsRangeStartOrEnd(v) {
