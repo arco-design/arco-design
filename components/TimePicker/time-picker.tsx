@@ -57,7 +57,7 @@ function TimePicker(props: InnerTimePickerProps) {
   const { getPrefixCls, locale } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('timepicker');
 
-  const { utcOffset } = useContext(PickerContext);
+  const { utcOffset, timezone } = useContext(PickerContext);
 
   const valueShow = getDayjsValue(propsValueShow, format) as Dayjs;
   const ampm = valueShow && valueShow.hour() >= 12 ? 'pm' : 'am';
@@ -145,7 +145,11 @@ function TimePicker(props: InnerTimePickerProps) {
 
     newValue = dayjs(newValue, valueFormat).locale(dayjs.locale());
 
-    onSelect && onSelect(toLocal(newValue, utcOffset).format(format), toLocal(newValue, utcOffset));
+    onSelect &&
+      onSelect(
+        toLocal(newValue, utcOffset, timezone).format(format),
+        toLocal(newValue, utcOffset, timezone)
+      );
 
     if (!isRangePicker) {
       setValueShow && setValueShow(newValue);
@@ -164,7 +168,7 @@ function TimePicker(props: InnerTimePickerProps) {
 
   function onSelectNow() {
     const now = getNow();
-    const zoneNow = getNow(utcOffset);
+    const zoneNow = getNow(utcOffset, timezone);
     onSelect && onSelect(now.format(format), now);
     if (disableConfirm) {
       onConfirmValue(zoneNow);
