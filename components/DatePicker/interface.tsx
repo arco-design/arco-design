@@ -224,7 +224,7 @@ export interface PickerProps {
    * @zh 设置时区
    * @en timezone
    */
-  timezone?: string;
+  utcOffset?: number;
 }
 
 /**

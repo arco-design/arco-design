@@ -55,12 +55,6 @@ const getTimeObj = (time: Dayjs) => {
 };
 
 function getAllDaysByTime(props: InnerDatePickerProps, time: Dayjs) {
-  console.log(
-    'getAllDaysByTime',
-    time.startOf('month'),
-    time.startOf('month').$d.getDate(),
-    time.startOf('month').$d.getUTCDate()
-  );
   const { dayStartOfWeek = 0, isWeek } = props;
   const current = getTimeObj(time);
 
@@ -141,7 +135,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
 
   const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
 
-  const { timezone } = useContext(PickerContext);
+  const { utcOffset } = useContext(PickerContext);
 
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
 
@@ -211,7 +205,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
           valueShow={timeValue.format('HH:mm:ss')}
           onSelect={onTimePickerSelect}
           popupVisible={popupVisible}
-          timezone={timezone}
+          utcOffset={utcOffset}
         />
       </div>
     );
