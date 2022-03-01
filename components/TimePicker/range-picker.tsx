@@ -30,13 +30,13 @@ function RangePicker(props: InnerRangePickerProps) {
     ...rest
   } = props;
 
-  const { utcOffset } = useContext(PickerContext);
+  const { utcOffset, timezone } = useContext(PickerContext);
 
   function onSelectTime(_: string, time: Dayjs) {
     const zoneValue = valueShow.slice();
-    const v = valueShow.map((a) => toLocal(a, utcOffset));
+    const v = valueShow.map((a) => toLocal(a, utcOffset, timezone));
 
-    zoneValue[focusedInputIndex] = toTimezone(time, utcOffset);
+    zoneValue[focusedInputIndex] = toTimezone(time, utcOffset, timezone);
     v[focusedInputIndex] = time;
 
     onSelect &&
