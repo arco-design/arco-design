@@ -11,11 +11,14 @@ import {
   isDayjsChange,
   isValidTimeString,
   toLocal,
+  toTimezone,
 } from '../_util/dayjs';
 import IconClockCircle from '../../icon/react-icon/IconClockCircle';
 import Input from '../_class/picker/input';
 import InputRange from '../_class/picker/input-range';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import usePrevious from '../_util/hooks/usePrevious';
+import useUpdate from '../_util/hooks/useUpdate';
 import PickerContext from './context';
 
 function getFormat(props) {
@@ -70,6 +73,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     unmountOnExit,
     order,
     utcOffset,
+    timezone,
   } = props;
 
   const format = getFormat(props);
@@ -79,9 +83,9 @@ const Picker = (baseProps: InnerPickerProps) => {
   function getDefaultValue() {
     let value;
     if (props.value) {
-      value = getDayjsValue(props.value, format, utcOffset);
+      value = getDayjsValue(props.value, format, utcOffset, timezone);
     } else if (props.defaultValue) {
-      value = getDayjsValue(props.defaultValue, format, utcOffset);
+      value = getDayjsValue(props.defaultValue, format, utcOffset, timezone);
     }
     return value;
   }
@@ -93,8 +97,25 @@ const Picker = (baseProps: InnerPickerProps) => {
   const [focusedInputIndex, setFocusedInputIndex] = useState<number>(0);
 
   // controlled mode / uncontrolled mode
-  const mergedValue = 'value' in props ? getDayjsValue(propsValue, format, utcOffset) : value;
+  const mergedValue =
+    'value' in props ? getDayjsValue(propsValue, format, utcOffset, timezone) : value;
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+
+  const previousUtcOffset = usePrevious(utcOffset);
+  const previousTimezone = usePrevious(timezone);
+
+  // when timezone or utcOffset change changed
+  useUpdate(() => {
+    if (value && (previousUtcOffset !== utcOffset || timezone !== previousTimezone)) {
+      const localValue = isArray(value)
+        ? value.map((v) => toLocal(v, previousUtcOffset, previousTimezone))
+        : toLocal(value, previousUtcOffset, previousTimezone);
+      const zoneValue = isArray(localValue)
+        ? localValue.map((v) => toTimezone(v, utcOffset, timezone))
+        : toTimezone(localValue, utcOffset, timezone);
+      setValue(zoneValue);
+    }
+  }, [utcOffset, previousUtcOffset, timezone, previousTimezone]);
 
   const refInput = useRef(null);
 
@@ -143,12 +164,13 @@ const Picker = (baseProps: InnerPickerProps) => {
     if (isArray(vs) && isDayjsArrayChange(mergedValue as Dayjs[], vs)) {
       onChange &&
         onChange(
-          vs.map((t) => toLocal(t, utcOffset).format(format)),
-          vs.map((t) => toLocal(t, utcOffset))
+          vs.map((t) => toLocal(t, utcOffset, timezone).format(format)),
+          vs.map((t) => toLocal(t, utcOffset, timezone))
         );
     }
     if (isDayjs(vs) && isDayjsChange(mergedValue as Dayjs, vs)) {
-      onChange && onChange(toLocal(vs, utcOffset).format(format), toLocal(vs, utcOffset));
+      onChange &&
+        onChange(toLocal(vs, utcOffset, timezone).format(format), toLocal(vs, utcOffset, timezone));
     }
   }
 
@@ -253,7 +275,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   };
 
   return (
-    <PickerContext.Provider value={{ utcOffset }}>
+    <PickerContext.Provider value={{ utcOffset, timezone }}>
       <Trigger
         popup={() => renderPopup()}
         trigger="click"

@@ -135,10 +135,15 @@ export interface PickerProps {
    */
   unmountOnExit?: boolean;
   /**
-   * @zh 设置时区
-   * @en timezone
+   * @zh 设置时区偏移，如果需要 utc 时间则设置为 0。
+   * @en Set the timezone offset, set to 0 if utc time is required.
    */
   utcOffset?: number;
+  /**
+   * @zh 设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。
+   * @en timezone name, if `utcOffset` is set, `utcOffset` takes effect.
+   */
+  timezone?: string;
 }
 
 /**

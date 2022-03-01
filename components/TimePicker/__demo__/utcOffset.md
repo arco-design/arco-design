@@ -1,36 +1,45 @@
 ---
-order: 13
+order: 12
 title:
-  zh-CN: 时区
-  en-US: Timezone
+  zh-CN: UTC 时间
+  en-US: UTC
 ---
 
 ## zh-CN
 
-通过 `timezone` 字段设置时区，如果设置了 `utcOffset`，以 `utcOffset` 为准。
+通过 `utcOffset` 字段设置 UTC 时间。
 
 ## en-US
 
-Use `timezone` to set timezone, if set the `utcOffset`, `utcOffset` takes effect.
+Use `utcOffset` to set the UTC time.
 
 ```js
 import { useState } from 'react';
 import { TimePicker, Space, Select, Typography, Alert } from '@arco-design/web-react';
 
-const zoneList = ['America/Los_Angeles', 'Europe/London', 'Africa/Cairo', 'Asia/Shanghai'];
+
+const utcList = [];
+const utcLength = 25;
+let uo = -12;
+for (let i = 0; i < 25; i++) {
+  utcList[i] = {
+    label: `UTC ${uo ? (uo > 0 ? `+${uo}` : uo): ''}`,
+    value: uo++
+  };
+}
 
 const defaultValue = new Date('2022-02-22');
 
 function Demo() {
-  const [timezone, setTimezone] = useState('Asia/Shanghai');
+  const [utcOffset, setUtcOffset] = useState(0);
   const [value, setValue] = useState(defaultValue);
 
   return <Space direction="vertical">
     <Space>
       <Select
-        defaultValue={timezone}
-        options={zoneList}
-        onChange={(tz) => setTimezone(tz)}
+        defaultValue={utcOffset}
+        options={utcList}
+        onChange={(offset) => setUtcOffset(offset)}
         triggerProps={{
           autoAlignPopupWidth: false,
           position: 'bl',
@@ -38,7 +47,7 @@ function Demo() {
       />
       <TimePicker
         showTime
-        timezone={timezone}
+        utcOffset={utcOffset}
         defaultValue={defaultValue}
         onChange={(v, vd) => setValue(vd && vd.toDate())}
       />
