@@ -26,6 +26,7 @@ import Shortcuts from './panels/shortcuts';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import PickerContext from './context';
 import usePrevious from '../_util/hooks/usePrevious';
+import useUpdate from '../_util/hooks/useUpdate';
 
 function getFormat(props) {
   const { format, picker, showTime } = props;
@@ -114,6 +115,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     onPickerValueChange,
     triggerElement,
     utcOffset,
+    timezone,
   } = props;
 
   const prefixCls = getPrefixCls('picker');
@@ -137,9 +139,9 @@ const Picker = (baseProps: InnerPickerProps) => {
     let value;
 
     if (props.value) {
-      value = getDayjsValue(props.value, format, utcOffset);
+      value = getDayjsValue(props.value, format, utcOffset, timezone);
     } else {
-      value = getDayjsValue(props.defaultValue, format, utcOffset);
+      value = getDayjsValue(props.defaultValue, format, utcOffset, timezone);
     }
     return value;
   }
@@ -172,8 +174,13 @@ const Picker = (baseProps: InnerPickerProps) => {
   const [panelMode, setPanelMode] = useState<ModeType>(mode);
 
   const defaultTimeValue = isObject(showTime)
-    ? (getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss', utcOffset) as Dayjs)
-    : getNow(utcOffset);
+    ? (getDayjsValue(
+        showTime.defaultValue,
+        showTime.format || 'HH:mm:ss',
+        utcOffset,
+        timezone
+      ) as Dayjs)
+    : getNow(utcOffset, timezone);
   const timeValue = panelValue || defaultTimeValue;
 
   function focusInput() {
@@ -185,14 +192,15 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   const previousUtcOffset = usePrevious(utcOffset);
+  const previousTimezone = usePrevious(timezone);
 
-  // when utcOffset changed
-  useEffect(() => {
-    if (value && previousUtcOffset !== utcOffset) {
-      const localValue = toLocal(value, previousUtcOffset);
-      setValue(toTimezone(localValue, utcOffset));
+  // when timezone or utcOffset change changed
+  useUpdate(() => {
+    if (value && (previousUtcOffset !== utcOffset || timezone !== previousTimezone)) {
+      const localValue = toLocal(value, previousUtcOffset, previousTimezone);
+      setValue(toTimezone(localValue, utcOffset, timezone));
     }
-  }, [utcOffset, previousUtcOffset]);
+  }, [utcOffset, previousUtcOffset, timezone, previousTimezone]);
 
   useEffect(() => {
     setInputValue(undefined);
@@ -261,10 +269,10 @@ const Picker = (baseProps: InnerPickerProps) => {
       setValueShow(newTime);
       setPageShowDate(newTime);
 
-      const localTime = toLocal(newTime, utcOffset);
+      const localTime = toLocal(newTime, utcOffset, timezone);
       onSelect && onSelect(localTime.format(format), localTime);
     } else {
-      const localTime = toLocal(date, utcOffset);
+      const localTime = toLocal(date, utcOffset, timezone);
       onSelect && onSelect(localTime ? localTime.format(format) : undefined, localTime);
       setValue(date);
       onHandleChange(date);
@@ -274,17 +282,17 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   function onHandleChange(newValue: Dayjs | undefined) {
     if (isDayjsChange(newValue, mergedValue)) {
-      const localValue = toLocal(newValue, utcOffset);
+      const localValue = toLocal(newValue, utcOffset, timezone);
       onChange && onChange(localValue ? localValue.format(format) : undefined, localValue);
     }
   }
 
   function onTimePickerSelect(_: string, time: Dayjs) {
-    const _valueShow = panelValue || getNow(utcOffset);
+    const _valueShow = panelValue || getNow(utcOffset, timezone);
     const newValueShow = getValueWithTime(_valueShow, time);
     setValueShow(newValueShow);
 
-    const localNewValueShow = toLocal(newValueShow, utcOffset);
+    const localNewValueShow = toLocal(newValueShow, utcOffset, timezone);
     onSelect && onSelect(localNewValueShow.format(format), localNewValueShow);
   }
 
@@ -303,7 +311,7 @@ const Picker = (baseProps: InnerPickerProps) => {
       setOpen(true);
     }
     if (isValid(niv)) {
-      const newValue = getDayjsValue(niv, format, utcOffset) as Dayjs;
+      const newValue = getDayjsValue(niv, format, utcOffset, timezone) as Dayjs;
       setValueShow(newValue);
       setPageShowDate(newValue);
       setInputValue(undefined);
@@ -356,7 +364,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onSelectNow() {
-    const now = getNow(utcOffset);
+    const now = getNow(utcOffset, timezone);
     handlePickerValueChange(now);
     onHandleSelect(now.format(format), now, true);
   }
@@ -376,7 +384,7 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   function onMouseEnterShortcut(shortcut) {
     if (typeof shortcut.value === 'function' && isDayjs(shortcut.value())) {
-      const sv = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs;
+      const sv = getDayjsValue(shortcut.value(), format, utcOffset, timezone) as Dayjs;
       setPageShowDate(sv);
       handlePickerValueChange(sv);
       setShortcutValue(sv);
@@ -384,7 +392,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onMouseLeaveShortcut() {
-    const newValue = valueShow || mergedValue || getNow(utcOffset);
+    const newValue = valueShow || mergedValue || getNow(utcOffset, timezone);
     setShortcutValue(undefined);
     setPageShowDate(newValue);
     handlePickerValueChange(newValue);
@@ -393,7 +401,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   function onHandleSelectShortcut(shortcut: ShortcutType) {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (typeof shortcut.value === 'function' && isDayjs(shortcut.value())) {
-      const time = getDayjsValue(shortcut.value(), format, utcOffset) as Dayjs;
+      const time = getDayjsValue(shortcut.value(), format, utcOffset, timezone) as Dayjs;
       setValue(time);
       onHandleChange(time);
       setOpen(false);
@@ -522,7 +530,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   return (
-    <PickerContext.Provider value={{ utcOffset }}>
+    <PickerContext.Provider value={{ utcOffset, timezone }}>
       <Trigger
         popup={renderPopup}
         trigger="click"

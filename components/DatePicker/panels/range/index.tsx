@@ -90,10 +90,10 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 
   const prefixCls = getPrefixCls('picker-range');
 
-  const { utcOffset } = useContext(PickerContext);
+  const { utcOffset, timezone } = useContext(PickerContext);
 
-  const startShowDate = pageShowDates[0] || getNow(utcOffset);
-  const endShowDate = pageShowDates[1] || getNow(utcOffset);
+  const startShowDate = pageShowDates[0] || getNow(utcOffset, timezone);
+  const endShowDate = pageShowDates[1] || getNow(utcOffset, timezone);
 
   const value = getDayjsValue(propsValue, format) as Dayjs[];
 
