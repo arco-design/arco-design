@@ -51,7 +51,7 @@ function Body(props: PanelBodyProps) {
     format,
   } = props;
 
-  const { utcOffset } = useContext(PickerContext);
+  const { utcOffset, timezone } = useContext(PickerContext);
 
   const getCellClassName = useCellClassName({
     ...props,
@@ -67,7 +67,7 @@ function Body(props: PanelBodyProps) {
         return (
           <div
             key={index}
-            className={getCellClassName(col, disabled, utcOffset)}
+            className={getCellClassName(col, disabled, utcOffset, timezone)}
             onMouseEnter={() => onMouseEnterCell && onMouseEnterCell(col.time, disabled)}
             onMouseLeave={() => onMouseLeaveCell && onMouseLeaveCell(col.time, disabled)}
             onClick={onClickHandler}

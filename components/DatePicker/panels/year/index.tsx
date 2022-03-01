@@ -46,7 +46,7 @@ function YearPicker(props: InnerYearPickerProps) {
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
   const CALENDAR_LOCALE = DATEPICKER_LOCALE.Calendar;
 
-  const { utcOffset } = useContext(PickerContext);
+  const { utcOffset, timezone } = useContext(PickerContext);
 
   const prefixCls = getPrefixCls('panel-year');
 
@@ -54,7 +54,7 @@ function YearPicker(props: InnerYearPickerProps) {
 
   const bodyProps = isRangePicker ? { rangeValues } : { value };
 
-  const showYear = pageShowDate ? pageShowDate.year() : getNow(utcOffset).year();
+  const showYear = pageShowDate ? pageShowDate.year() : getNow(utcOffset, timezone).year();
   const startYear = Math.floor(showYear / 10) * 10 - 1;
   const groupRow = newArray(3).map((_) => '');
   const rows = newArray(4)
