@@ -65,7 +65,7 @@ function DateInput(
   }: DateInputProps,
   ref
 ) {
-  const { getPrefixCls, size: ctxSize } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, locale } = useContext(ConfigContext);
   const input = useRef<HTMLInputElement>(null);
   const size = propSize || ctxSize;
 
@@ -89,7 +89,10 @@ function DateInput(
   if (inputValue !== undefined) {
     showValue = inputValue;
   } else if (value && !isArray(value)) {
-    showValue = typeof format === 'function' ? format(value) : value.format(format);
+    showValue =
+      typeof format === 'function'
+        ? format(value)
+        : value.locale(locale.dayjsLocale).format(format);
   }
 
   const readOnlyProps = editable ? {} : { readOnly: true };
