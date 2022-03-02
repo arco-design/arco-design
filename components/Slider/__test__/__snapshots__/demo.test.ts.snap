@@ -447,6 +447,388 @@ Array [
 ]
 `;
 
+exports[`renders Slider/demo/interval.md correctly 1`] = `
+<div
+  style="width:600px"
+>
+  <form
+    class="arco-form arco-form-inline arco-form-size-default"
+    style="margin:20px"
+  >
+    <div
+      class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-inline"
+    >
+      <div
+        class="arco-form-label-item"
+      >
+        <label
+          for="showTicks_input"
+        >
+           showTicks
+        </label>
+      </div>
+      <div
+        class="arco-form-item-wrapper"
+      >
+        <div
+          class="arco-form-item-control-wrapper"
+        >
+          <div
+            class="arco-form-item-control"
+            id="showTicks"
+          >
+            <div
+              class="arco-form-item-control-children"
+            >
+              <button
+                class="arco-switch arco-switch-type-circle"
+                id="showTicks_input"
+                type="button"
+              >
+                <div
+                  class="arco-switch-dot"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-inline"
+    >
+      <div
+        class="arco-form-label-item"
+      >
+        <label
+          for="showInput_input"
+        >
+           showInput
+        </label>
+      </div>
+      <div
+        class="arco-form-item-wrapper"
+      >
+        <div
+          class="arco-form-item-control-wrapper"
+        >
+          <div
+            class="arco-form-item-control"
+            id="showInput"
+          >
+            <div
+              class="arco-form-item-control-children"
+            >
+              <button
+                class="arco-switch arco-switch-type-circle"
+                id="showInput_input"
+                type="button"
+              >
+                <div
+                  class="arco-switch-dot"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-inline"
+    >
+      <div
+        class="arco-form-label-item"
+      >
+        <label
+          for="onlyMarkValue_input"
+        >
+           onlyMarkValue
+        </label>
+      </div>
+      <div
+        class="arco-form-item-wrapper"
+      >
+        <div
+          class="arco-form-item-control-wrapper"
+        >
+          <div
+            class="arco-form-item-control"
+            id="onlyMarkValue"
+          >
+            <div
+              class="arco-form-item-control-children"
+            >
+              <button
+                class="arco-switch arco-switch-type-circle"
+                id="onlyMarkValue_input"
+                type="button"
+              >
+                <div
+                  class="arco-switch-dot"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-inline"
+    >
+      <div
+        class="arco-form-label-item"
+      >
+        <label
+          for="reverse_input"
+        >
+           reverse
+        </label>
+      </div>
+      <div
+        class="arco-form-item-wrapper"
+      >
+        <div
+          class="arco-form-item-control-wrapper"
+        >
+          <div
+            class="arco-form-item-control"
+            id="reverse"
+          >
+            <div
+              class="arco-form-item-control-children"
+            >
+              <button
+                class="arco-switch arco-switch-type-circle"
+                id="reverse_input"
+                type="button"
+              >
+                <div
+                  class="arco-switch-dot"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    style="margin-bottom:20px"
+  >
+    <span
+      class="arco-typography"
+    >
+      <b>
+        分段区间-滑动输入条
+      </b>
+    </span>
+    <div
+      class="arco-slider arco-slider-with-marks"
+    >
+      <div
+        class="arco-slider-wrapper"
+      >
+        <div
+          class="arco-slider-road"
+        >
+          <div
+            class="arco-slider-bar"
+            style="left:0%;right:50%"
+          />
+          <div
+            class="arco-slider-dots"
+          >
+            <div
+              class="arco-slider-dot-wrapper"
+              style="left:0%;visibility:hidden"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="left:50%"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="left:62.5%"
+            >
+              <div
+                class="arco-slider-dot"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="left:75%"
+            >
+              <div
+                class="arco-slider-dot"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="left:100%;visibility:hidden"
+            >
+              <div
+                class="arco-slider-dot"
+              />
+            </div>
+          </div>
+          <div
+            class="arco-slider-marks"
+          >
+            <div
+              class="arco-slider-marks-text"
+              style="left:0%"
+            >
+              0km
+            </div>
+            <div
+              class="arco-slider-marks-text"
+              style="left:50%"
+            >
+              10km
+            </div>
+            <div
+              class="arco-slider-marks-text"
+              style="left:62.5%"
+            >
+              20km
+            </div>
+            <div
+              class="arco-slider-marks-text"
+              style="left:75%"
+            >
+              30km
+            </div>
+            <div
+              class="arco-slider-marks-text"
+              style="left:100%"
+            >
+              50km
+            </div>
+          </div>
+          <div
+            class="arco-slider-button"
+            style="left:50%"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <span
+    class="arco-typography"
+  >
+    <b>
+      未分段-滑动输入条
+    </b>
+  </span>
+  <div
+    class="arco-slider arco-slider-with-marks"
+  >
+    <div
+      class="arco-slider-wrapper"
+    >
+      <div
+        class="arco-slider-road"
+      >
+        <div
+          class="arco-slider-bar"
+          style="left:0%;right:80%"
+        />
+        <div
+          class="arco-slider-dots"
+        >
+          <div
+            class="arco-slider-dot-wrapper"
+            style="left:0%;visibility:hidden"
+          >
+            <div
+              class="arco-slider-dot arco-slider-dot-active"
+            />
+          </div>
+          <div
+            class="arco-slider-dot-wrapper"
+            style="left:20%"
+          >
+            <div
+              class="arco-slider-dot arco-slider-dot-active"
+            />
+          </div>
+          <div
+            class="arco-slider-dot-wrapper"
+            style="left:40%"
+          >
+            <div
+              class="arco-slider-dot"
+            />
+          </div>
+          <div
+            class="arco-slider-dot-wrapper"
+            style="left:60.00000000000001%"
+          >
+            <div
+              class="arco-slider-dot"
+            />
+          </div>
+          <div
+            class="arco-slider-dot-wrapper"
+            style="left:100%;visibility:hidden"
+          >
+            <div
+              class="arco-slider-dot"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-slider-marks"
+        >
+          <div
+            class="arco-slider-marks-text"
+            style="left:0%"
+          >
+            0km
+          </div>
+          <div
+            class="arco-slider-marks-text"
+            style="left:20%"
+          >
+            10km
+          </div>
+          <div
+            class="arco-slider-marks-text"
+            style="left:40%"
+          >
+            20km
+          </div>
+          <div
+            class="arco-slider-marks-text"
+            style="left:60.00000000000001%"
+          >
+            30km
+          </div>
+          <div
+            class="arco-slider-marks-text"
+            style="left:100%"
+          >
+            50km
+          </div>
+        </div>
+        <div
+          class="arco-slider-button"
+          style="left:20%"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Slider/demo/marks.md correctly 1`] = `
 <div
   style="width:240px"
@@ -713,11 +1095,11 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
-            style="right:40%"
+            style="right:39.99999999999999%"
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
-            style="right:46.666666666666664%"
+            style="right:46.66666666666666%"
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
@@ -725,7 +1107,7 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
-            style="right:60%"
+            style="right:59.999999999999986%"
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
@@ -741,7 +1123,7 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           />
           <div
             class="arco-slider-tick"
-            style="right:86.66666666666667%"
+            style="right:86.66666666666666%"
           />
           <div
             class="arco-slider-tick"

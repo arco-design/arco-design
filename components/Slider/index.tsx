@@ -1,18 +1,19 @@
-import React, { forwardRef, memo, useContext, CSSProperties, useMemo, useRef } from 'react';
+import React, { forwardRef, memo, useContext, CSSProperties, useRef } from 'react';
 import { plus } from 'number-precision';
 import SliderButton from './button';
 import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
-import { isFunction, isNumber, isObject } from '../_util/is';
-import { formatPercent, getOffset } from './utils';
+import { isFunction, isObject } from '../_util/is';
+import { formatPercent, getIntervalOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { TooltipPosition, SliderProps } from './interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { off, on } from '../_util/dom';
 import useLegalValue from './hooks/useLegalValue';
+import useInterval from './hooks/useInterval';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useUpdate from '../_util/hooks/useUpdate';
 
@@ -47,6 +48,7 @@ function Slider(baseProps: SliderProps, ref) {
     vertical,
     showInput,
     reverse,
+    getIntervalConfig,
   } = props;
 
   const range = !!propRange;
@@ -59,6 +61,15 @@ function Slider(baseProps: SliderProps, ref) {
     onlyMarkValue,
     step,
     marks,
+  });
+
+  const { intervalConfigs, markList } = useInterval({
+    min,
+    max,
+    onlyMarkValue,
+    step,
+    marks,
+    getIntervalConfig,
   });
 
   // 受控与非受控值处理
@@ -82,17 +93,9 @@ function Slider(baseProps: SliderProps, ref) {
     [beginVal, endVal] = [endVal, beginVal];
   }
   // 偏移比例
-  const beginOffset = getOffset(beginVal, [min, max]);
-  const endOffset = getOffset(endVal, [min, max]);
-  // 标签数组
-  const markList = useMemo(
-    () =>
-      Object.keys(marks || {})
-        .filter((key) => isNumber(+key))
-        .sort((a, b) => (+a > +b ? 1 : -1))
-        .map((key) => ({ key, content: marks[key] })),
-    [marks]
-  );
+  const beginOffset = getIntervalOffset(beginVal, intervalConfigs);
+  const endOffset = getIntervalOffset(endVal, intervalConfigs);
+
   // 是否显示输入框
   const isShowInput = showInput && !onlyMarkValue;
   // 样式前缀
@@ -157,11 +160,28 @@ function Slider(baseProps: SliderProps, ref) {
       roadLength = height;
       diff = reverse ? y - top : top + height - y;
     }
-    diff = diff < 0 ? 0 : diff > roadLength ? roadLength : diff;
-    const stepLen = (roadLength * step) / (max - min);
-    const steps = Math.round(diff / stepLen);
-
-    return plus(min, steps * step);
+    if (roadLength <= 0) {
+      return 0;
+    }
+    // 通过坐标点偏移算出当前值相对于整个滑动轴的比例位置
+    const offset = diff / roadLength;
+    // 通过偏移值算出当前值在哪个区间
+    const currentInterval = intervalConfigs.find((config) => {
+      return offset >= config.beginOffset && offset <= config.endOffset;
+    });
+    const { begin, beginOffset, step, endOffset, end } = currentInterval;
+    // 当前值对整体来说，多出这个区间的比例
+    const currentValueOffset = offset - beginOffset;
+    // 这个区间整体的比例
+    const currentIntervalOffset = endOffset - beginOffset;
+    // 当前在这个区间的值 = （在这个区间的比例（相对于整体） / 这个区间相对于整体的比例）* 这个区间的总值
+    const valueInInterval = Math.round(
+      (currentValueOffset / currentIntervalOffset) * (end - begin)
+    );
+    // 算出当前值在这个区间的步数
+    const stepNum = Math.round(valueInInterval / step);
+    // 当前值 = 区间起始值 + 区间步数 * 步长
+    return plus(begin, stepNum * step);
   }
 
   function getBarStyle(offsets: number[]): CSSProperties {
@@ -303,7 +323,7 @@ function Slider(baseProps: SliderProps, ref) {
           <div className={`${prefixCls}-bar`} style={getBarStyle([beginOffset, endOffset])} />
           {showTicks && (
             <Ticks
-              step={step}
+              intervalConfigs={intervalConfigs}
               min={min}
               max={max}
               value={[beginVal, endVal]}
@@ -314,6 +334,7 @@ function Slider(baseProps: SliderProps, ref) {
           )}
           <Dots
             data={markList}
+            intervalConfigs={intervalConfigs}
             min={min}
             max={max}
             value={[beginVal, endVal]}
@@ -324,8 +345,7 @@ function Slider(baseProps: SliderProps, ref) {
           />
           <Marks
             data={markList}
-            min={min}
-            max={max}
+            intervalConfigs={intervalConfigs}
             vertical={vertical}
             prefixCls={prefixCls}
             reverse={reverse}

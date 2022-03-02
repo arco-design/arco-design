@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { isObject, isFunction } from '../_util/is';
-import { formatPercent, getOffset, valueInRange } from './utils';
+import { formatPercent, valueInRange, getIntervalOffset } from './utils';
 import cs from '../_util/classNames';
+import { IntervalConfig } from './hooks/useInterval';
 
 type MaskType = {
   key: number | string;
@@ -17,17 +18,17 @@ interface MaskProps {
   prefixCls?: string;
   reverse?: boolean;
   onMouseDown?: (val: number) => void;
+  intervalConfigs?: IntervalConfig[];
 }
 
 const Dots = function (props: MaskProps) {
-  const { data = [], min, max, value = [], vertical, prefixCls, reverse } = props;
-
+  const { data = [], min, max, value = [], vertical, prefixCls, reverse, intervalConfigs } = props;
   if (!data.length) return null;
 
   return (
     <div className={`${prefixCls}-dots`}>
       {data.map(({ key, content }) => {
-        const offset = formatPercent(getOffset(key, [min, max]));
+        const offset = formatPercent(getIntervalOffset(+key, intervalConfigs));
         return (
           <div
             className={`${prefixCls}-dot-wrapper`}
