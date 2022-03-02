@@ -29,6 +29,7 @@ import {
   getConfig,
   getStore,
   formatValue,
+  removeValueFromSet,
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 
@@ -127,8 +128,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
       nodes.some((node) => {
         if (valueInSet(valuesSet, node.pathValue)) {
           result.push(node.getPathNodes().map((x) => x._data));
-          valuesSet.delete(node.pathValue);
+          removeValueFromSet(valuesSet, node.pathValue);
         }
+
         if (!valuesSet.size) {
           return true;
         }
@@ -194,7 +196,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
       return;
     }
 
-    if (!('value' in props)) {
+    if (!isMultiple) {
       store.setNodeCheckedByValue(newValue);
     }
 

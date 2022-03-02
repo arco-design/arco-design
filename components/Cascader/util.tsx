@@ -46,3 +46,8 @@ export const valueInSet = (set, value: string[]) => {
   const _value = value || [];
   return set.has(_value.join(ValueSeparator));
 };
+
+export const removeValueFromSet = (set, value: string[]) => {
+  const _value = value || [];
+  return set.delete(_value.join(ValueSeparator));
+};
