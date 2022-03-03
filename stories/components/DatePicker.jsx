@@ -7,11 +7,33 @@ import { ConfigProvider, DatePicker, TimePicker, Typography } from '@self';
 // import koKR from '@self/locale/ko-KR';
 // import thTH from '@self/locale/th-TH';
 import jaJP from '@self/locale/ja-JP';
-// import { dayjs } from '@self/_util/dayjs';
+import { dayjs } from '@self/_util/dayjs';
 
 function Demo() {
   return (
     <ConfigProvider locale={jaJP}>
+      <Typography.Title>Shortcuts</Typography.Title>
+      <DatePicker
+        utcOffset={0}
+        style={{ width: 200, marginBottom: 24, marginRight: 24 }}
+        shortcuts={[
+          {
+            text: '1 hour later',
+            value: () => dayjs().add(1, 'hour'),
+          },
+        ]}
+        showTime
+      />
+      <Typography.Title>disabledDate</Typography.Title>
+      <DatePicker
+        utcOffset={2}
+        style={{ width: 200, marginBottom: 24, marginRight: 24 }}
+        disabledDate={(current) => {
+          console.log(current)
+          return current.isBefore(dayjs());
+        }}
+        showTime
+      />
       <Typography.Title>Asia/Shanghai</Typography.Title>
       <DatePicker timezone="Asia/Shanghai" showTime onChange={(v, dv) => console.log(v, dv)} />
       <br />
