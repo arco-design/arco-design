@@ -3,28 +3,12 @@ import { mount } from 'enzyme';
 import dayjs from 'dayjs';
 import mountTest from '../../../tests/mountTest';
 import DatePicker from '..';
-import { getDateCell, getInput } from './utils';
+import { getDateCell, getInput, checkRangeTime } from './utils';
 import '../../../tests/mockDate';
 
 const { RangePicker } = DatePicker;
 
 mountTest(RangePicker);
-
-function getSelectedTime(component, dateIndex, index) {
-  return component
-    .find('.arco-panel-date')
-    .at(dateIndex)
-    .find('.arco-timepicker-list')
-    .at(index)
-    .find('.arco-timepicker-cell-selected')
-    .text();
-}
-
-function checkTime(component, dateIndex, hour, minute, second) {
-  expect(getSelectedTime(component, dateIndex, 0)).toBe(hour);
-  expect(getSelectedTime(component, dateIndex, 1)).toBe(minute);
-  expect(getSelectedTime(component, dateIndex, 2)).toBe(second);
-}
 
 describe('RangePicker', () => {
   it('control mode', () => {
@@ -34,8 +18,8 @@ describe('RangePicker', () => {
 
     component.find('button.arco-picker-btn-select-time').simulate('click');
 
-    checkTime(component, 0, '00', '00', '00');
-    checkTime(component, 1, '01', '02', '03');
+    checkRangeTime(component, 0, '00', '00', '00');
+    checkRangeTime(component, 1, '01', '02', '03');
 
     component.setProps({ value: ['2021-06-10 02:02:02', '2021-06-11 06:06:06'] });
 
@@ -43,13 +27,13 @@ describe('RangePicker', () => {
 
     expect(component.find('input').at(1).prop('value')).toBe('2021-06-11 06:06:06');
 
-    checkTime(component, 0, '02', '02', '02');
-    checkTime(component, 1, '06', '06', '06');
+    checkRangeTime(component, 0, '02', '02', '02');
+    checkRangeTime(component, 1, '06', '06', '06');
 
     component.setProps({ value: undefined });
 
-    checkTime(component, 0, '00', '00', '00');
-    checkTime(component, 1, '01', '02', '03');
+    checkRangeTime(component, 0, '00', '00', '00');
+    checkRangeTime(component, 1, '01', '02', '03');
   });
 
   it('hideNotInViewDates', () => {
