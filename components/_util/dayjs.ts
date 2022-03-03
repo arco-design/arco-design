@@ -166,8 +166,6 @@ export function getNow(utcOffset?: number, timezone?: string) {
   return isUndefined(utcOffset) && !timezone ? dayjs() : toTimezone(dayjs(), utcOffset, timezone);
 }
 
-const localOffset = -new Date().getTimezoneOffset();
-
 // convert local date to specify timezone date
 export function toTimezone(
   time: Dayjs,
@@ -178,6 +176,7 @@ export function toTimezone(
   if (!time || (isUndefined(utcOffset) && !timezone)) {
     return time;
   }
+  const localOffset = -time.toDate().getTimezoneOffset();
   const uOffset = isUndefined(utcOffset)
     ? !timezone
       ? localOffset
