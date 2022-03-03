@@ -41,6 +41,8 @@
 |icons|用于配置图标|`{ inputSuffix?: ReactNode }`|`-`|-|
 |extra|底部附加内容|`ReactNode`|`-`|-|
 |unmountOnExit|是否在关闭后销毁 dom 结构|`boolean`|`-`|-|
+|utcOffset|设置时区偏移，如果需要 utc 时间则设置为 0。|`number`|`-`|-|
+|timezone|设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。|`string`|`-`|-|
 
 ### TimePicker
 

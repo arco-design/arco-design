@@ -49,6 +49,8 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |pickerValue|Displayed date of panel.|`CalendarValue`|`-`|2.9.0|
 |onPickerValueChange|Callback when date of panel changes.|`(dateString: string, value: Dayjs) => void`|`-`|2.9.0|
 |hideNotInViewDates|The panel hides gray dates that are not in the current time range|`boolean`|`-`|2.20.0|
+|utcOffset|Set the timezone offset, set to 0 if utc time is required.|`number`|`-`|-|
+|timezone|timezone name, if `utcOffset` is set, `utcOffset` takes effect.|`string`|`-`|-|
 
 ### DatePicker
 

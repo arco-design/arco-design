@@ -154,7 +154,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
 
   const mergedValue =
-    'value' in props ? (getDayjsValue(propsValue, format, utcOffset) as Dayjs) : value;
+    'value' in props ? (getDayjsValue(propsValue, format, utcOffset, timezone) as Dayjs) : value;
 
   const defaultPageShowDate =
     mergedValue || (getDayjsValue(defaultPickerValue, format) as Dayjs) || getNow();
