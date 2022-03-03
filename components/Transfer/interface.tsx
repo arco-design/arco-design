@@ -15,6 +15,7 @@ type TransferListTitle =
   | ((params: {
       countTotal: number;
       countSelected: number;
+      countFilteredShown: number;
       clear: () => void;
       checkbox: ReactNode;
       searchInput: ReactNode;
@@ -214,6 +215,8 @@ export interface TransferListProps
   > {
   title: TransferListTitle;
   allowClear: boolean;
+  filteredShownKeys: string[];
+  filteredHiddenKeys: string[];
   selectedKeys: string[];
   validKeys: string[];
   selectedDisabledKeys: string[];

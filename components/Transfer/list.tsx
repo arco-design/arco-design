@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import intersection from 'lodash/intersection';
 import cs from '../_util/classNames';
 import Checkbox, { CheckboxProps } from '../Checkbox';
 import Button from '../Button';
@@ -19,6 +20,8 @@ export const TransferList = (props: TransferListProps, ref) => {
     className,
     listType,
     dataSource,
+    filteredShownKeys,
+    filteredHiddenKeys,
     selectedKeys = [],
     validKeys,
     selectedDisabledKeys,
@@ -53,17 +56,35 @@ export const TransferList = (props: TransferListProps, ref) => {
   const [itemsToRender, setItemsToRender] = useState(dataSource);
 
   useEffect(() => {
+    if (filteredShownKeys) {
+      filteredShownKeys.length = 0;
+    }
+    if (filteredHiddenKeys) {
+      filteredHiddenKeys.length = 0;
+    }
     setItemsToRender(
-      filterText ? dataSource.filter((item) => filterOption(filterText, item)) : dataSource
+      filterText
+        ? dataSource.filter((item) => {
+            const shouldRender = filterOption(filterText, item);
+            if (shouldRender) {
+              filteredShownKeys.push(item.key);
+            } else {
+              filteredHiddenKeys.push(item.key);
+            }
+            return shouldRender;
+          })
+        : dataSource
     );
-  }, [dataSource, filterText, filterOption]);
+  }, [dataSource, filterText, filterOption, filteredShownKeys, filteredHiddenKeys]);
 
   // 处理单个条目复选框改变
   const handleItemChecked = (key, checked) =>
     handleSelect(checked ? selectedKeys.concat(key) : selectedKeys.filter((_key) => _key !== key));
   // 处理全选复选框改变，始终避免操作已禁用的选项
   const handleItemAllChecked = (keys, checked) =>
-    handleSelect(checked ? keys.concat(selectedDisabledKeys) : [...selectedDisabledKeys]);
+    handleSelect(
+      checked ? keys.concat(selectedDisabledKeys) : [...selectedDisabledKeys, ...filteredHiddenKeys]
+    );
   const clearItems = () => handleRemove(validKeys);
 
   const searchInput = (
@@ -86,13 +107,19 @@ export const TransferList = (props: TransferListProps, ref) => {
       disabled,
       checked: selectedStatus === 'all',
       indeterminate: selectedStatus === 'part',
-      onChange: (checked) => handleItemAllChecked(validKeys, checked),
+      onChange: (checked) => {
+        handleItemAllChecked(
+          filterText ? intersection(validKeys, filteredShownKeys) : validKeys,
+          checked
+        );
+      },
     };
 
     if (typeof title === 'function') {
       return title({
         countTotal: dataSource.length,
         countSelected: selectedKeys.length,
+        countFilteredShown: itemsToRender.length,
         clear: clearItems,
         checkbox: <Checkbox {...checkboxProps} />,
         searchInput,
@@ -114,7 +141,7 @@ export const TransferList = (props: TransferListProps, ref) => {
           <Checkbox {...checkboxProps}>{title}</Checkbox>
         </span>
         <span className={`${baseClassName}-header-unit`}>
-          {`${selectedKeys.length} / ${dataSource.length}`}
+          {`${selectedKeys.length} / ${itemsToRender.length}`}
         </span>
       </>
     );

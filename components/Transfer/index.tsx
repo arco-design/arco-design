@@ -67,7 +67,13 @@ function Transfer(baseProps: TransferProps, ref) {
   const [sourceInfo, targetInfo] = useMemo(() => {
     type ListInfo = { selectedValidKeys: TransferItem['key'][] } & Pick<
       TransferListProps,
-      'dataSource' | 'selectedKeys' | 'validKeys' | 'selectedDisabledKeys' | 'selectedStatus'
+      | 'dataSource'
+      | 'filteredShownKeys'
+      | 'filteredHiddenKeys'
+      | 'selectedKeys'
+      | 'validKeys'
+      | 'selectedDisabledKeys'
+      | 'selectedStatus'
     >;
     // 每次重新计算时，清空数组
     sourceListDataSource.length = 0;
@@ -76,6 +82,8 @@ function Transfer(baseProps: TransferProps, ref) {
     // 空间换取时间，尽量减少数组遍历的次数
     const sourceInfo: ListInfo = {
       dataSource: sourceListDataSource,
+      filteredShownKeys: [],
+      filteredHiddenKeys: [],
       selectedKeys: [],
       validKeys: [],
       selectedValidKeys: [],
@@ -84,6 +92,8 @@ function Transfer(baseProps: TransferProps, ref) {
     };
     const targetInfo: ListInfo = {
       dataSource: targetListDataSource,
+      filteredShownKeys: [],
+      filteredHiddenKeys: [],
       selectedKeys: [],
       validKeys: [],
       selectedValidKeys: [],
