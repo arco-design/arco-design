@@ -4,25 +4,11 @@ import dayjs from 'dayjs';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import DatePicker from '..';
-import { getDateCell, getInput } from './utils';
+import { getDateCell, getInput, checkTime } from './utils';
 import '../../../tests/mockDate';
 
 mountTest(DatePicker);
 componentConfigTest(DatePicker, 'DatePicker');
-
-function getSelectedTime(component, index) {
-  return component
-    .find('.arco-timepicker-list')
-    .at(index)
-    .find('.arco-timepicker-cell-selected')
-    .text();
-}
-
-function checkTime(component, hour, minute, second) {
-  expect(getSelectedTime(component, 0)).toBe(hour);
-  expect(getSelectedTime(component, 1)).toBe(minute);
-  expect(getSelectedTime(component, 2)).toBe(second);
-}
 
 describe('DatePicker', () => {
   it('dayStartOfWeek', () => {
