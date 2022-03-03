@@ -75,6 +75,13 @@
 |initialValue|初始值|`SubFieldValue[]`|`-`|2.22.0|
 |children|函数类型的 children|`(fields: { key: number; field: SubFieldKey }[],operation: {add: (defaultValue?: SubFieldValue, index?: number) => void;remove: (index: number) => void;move: (fromIndex: number, toIndex: number) => void;}) => React.ReactNode`|`-`|-|
 
+### Form.Provider(`2.30.0`)
+
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|onFormValuesChange|包裹的任意 `Form` 组件的值改变时，该方法会被调用|`(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: FormInstance;};}) => void`|`-`|
+|onFormSubmit|包裹的任意 `Form` 组件触发提交时，该方法会被调用|`(id: string \| undefined,values,{forms,}: {forms: {[key: string]: FormInstance;};}) => void`|`-`|
+
 ### Rules
 
 底层使用 [b-validate](https://github.com/PengJiyuan/b-validate)。

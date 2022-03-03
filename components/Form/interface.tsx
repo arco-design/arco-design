@@ -538,3 +538,39 @@ export const VALIDATE_STATUS = {
   warning: 'warning',
   validating: 'validating',
 };
+
+/**
+ * @title Form.Provider(`2.30.0`)
+ */
+export interface FormProviderProps {
+  /**
+   * @zh 包裹的任意 `Form` 组件的值改变时，该方法会被调用
+   * @en This method is called when the value of any wrapped `Form` component changes
+   */
+  onFormValuesChange?: (
+    id: string | undefined,
+    changedValues,
+    {
+      forms,
+    }: {
+      forms: {
+        [key: string]: FormInstance;
+      };
+    }
+  ) => void;
+  /**
+   * @zh 包裹的任意 `Form` 组件触发提交时，该方法会被调用
+   * @en This method will be called when any wrapped `Form` component triggers a submit
+   */
+  onFormSubmit?: (
+    id: string | undefined,
+    values,
+    {
+      forms,
+    }: {
+      forms: {
+        [key: string]: FormInstance;
+      };
+    }
+  ) => void;
+}
