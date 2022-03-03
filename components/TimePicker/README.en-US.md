@@ -41,6 +41,8 @@ Common properties of `TimePicker` and `RangePicker`
 |icons|Used to configure icons|`{ inputSuffix?: ReactNode }`|`-`|-|
 |extra|Additional content at the bottom|`ReactNode`|`-`|-|
 |unmountOnExit|Whether to destroy popup when hidden|`boolean`|`-`|-|
+|utcOffset|Set the timezone offset, set to 0 if utc time is required.|`number`|`-`|-|
+|timezone|timezone name, if `utcOffset` is set, `utcOffset` takes effect.|`string`|`-`|-|
 
 ### TimePicker
 

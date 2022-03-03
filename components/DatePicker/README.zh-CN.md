@@ -49,6 +49,8 @@
 |pickerValue|面板显示的日期。|`CalendarValue`|`-`|2.9.0|
 |onPickerValueChange|面板日期改变的回调。|`(dateString: string, value: Dayjs) => void`|`-`|2.9.0|
 |hideNotInViewDates|面板隐藏不在当前时间范围的灰色日期|`boolean`|`-`|2.20.0|
+|utcOffset|设置时区偏移，如果需要 utc 时间则设置为 0。|`number`|`-`|-|
+|timezone|设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。|`string`|`-`|-|
 
 ### DatePicker
 
