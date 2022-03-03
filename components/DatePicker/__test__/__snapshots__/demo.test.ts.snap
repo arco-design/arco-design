@@ -4209,7 +4209,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
                     Locale String:
                   </b>
                 </span>
-                 2022/2/22 上午8:00:00
+                 2/22/2022, 8:00:00 AM
               </div>
             </div>
             <div
@@ -4431,7 +4431,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
                     Locale String:
                   </b>
                 </span>
-                 2022/2/22 上午8:00:00
+                 2/22/2022, 8:00:00 AM
               </div>
             </div>
             <div
