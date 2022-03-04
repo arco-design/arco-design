@@ -100,6 +100,15 @@ describe('Table columns usage test', () => {
           if (col.key === '1') {
             return { ...col, name: undefined };
           }
+          if (col.key === '2') {
+            return { ...col, name: null };
+          }
+          if (col.key === '3') {
+            return { ...col, name: '' };
+          }
+          if (col.key === '4') {
+            return { ...col, name: ' ' };
+          }
           return col;
         })}
         columns={columns}
@@ -118,10 +127,14 @@ describe('Table columns usage test', () => {
       placeholder: 'x',
     });
 
-    expect(component.find('tbody td').at(0).text()).toBe('-');
+    [0, 1, 2, 3].forEach((item) => {
+      expect(component.find('tbody tr').at(item).find('td').at(0).text()).toBe('-');
+    });
 
-    component.setProps({ columns, placeholder: 'x' });
-
-    expect(component.find('tbody td').at(0).text()).toBe('x');
+    [0, 1, 2, 3].forEach((item) => {
+      component.setProps({ columns, placeholder: 'x' });
+      component.update();
+      expect(component.find('tbody tr').at(item).find('td').at(0).text()).toBe('x');
+    });
   });
 });
