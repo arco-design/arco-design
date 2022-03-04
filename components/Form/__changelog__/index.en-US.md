@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- The `Form` component supports multiple form data management through the `Form.Provider` component.([#607](https://github.com/arco-design/arco-design/pull/607))
+
 ## 2.29.2
 
 2022-02-25

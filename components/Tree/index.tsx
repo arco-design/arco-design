@@ -605,8 +605,8 @@ class Tree extends Component<TreeProps, TreeState> {
       isAllowDrop = allowDrop({
         dropNode: this.cacheNodes[node._key],
         dragNode: this.dragNode,
-        dropPosition
-     });
+        dropPosition,
+      });
     }
     return isAllowDrop;
   };

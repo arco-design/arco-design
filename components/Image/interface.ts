@@ -74,7 +74,7 @@ export interface ImageProps {
    */
   previewProps?: PartialImagePreviewProps;
   /**
-   * @zh 使用 `Image.PreviewGroup`包裹是的预览索引，一般不用指定，当多图预览顺序出现问题时，可手动指定当前 `image` 的预览顺序
+   * @zh 使用 `Image.PreviewGroup`包裹时的预览索引，一般不用指定，当多图预览顺序出现问题时，可手动指定当前 `image` 的预览顺序
    * @en Use `Image.PreviewGroup` to wrap the preview index. Generally, you don't need to specify it. When there is a problem with the preview order of multiple images, you can manually specify the preview order of the current `image`
    * @version 2.23.0
    */

@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 💎 Optimization
+
+- When the `Transfer` component selects/unselects all, it only operates on the filtered items.([#613](https://github.com/arco-design/arco-design/pull/613))
+
 ## 2.28.0
 
 2022-01-07

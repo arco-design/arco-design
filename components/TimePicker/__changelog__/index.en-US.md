@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- The `TimePicker` component supports `utcOffset` and `timezone` to set the UTC time and timezone.([#604](https://github.com/arco-design/arco-design/pull/604))
+
 ## 2.27.1
 
 2021-12-24

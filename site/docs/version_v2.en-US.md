@@ -2,6 +2,31 @@
 changelog: true
 ---
 
+## 2.30.0
+
+2022-03-04
+
+### 💎 Optimization
+
+- When the `Transfer` component selects/unselects all, it only operates on the filtered items.([#613](https://github.com/arco-design/arco-design/pull/613))
+
+### 🆕 Feature
+
+- `Tree` component's `allowDrop` callback parameter supports `dragNode`([#614](https://github.com/arco-design/arco-design/pull/614))
+- The `Form` component supports multiple form data management through the `Form.Provider` component.([#607](https://github.com/arco-design/arco-design/pull/607))
+- The `DatePicker` component supports `utcOffset` and `timezone` to set the UTC time and timezone.([#604](https://github.com/arco-design/arco-design/pull/604))
+- The `TimePicker` component supports `utcOffset` and `timezone` to set the UTC time and timezone.([#604](https://github.com/arco-design/arco-design/pull/604))
+- `Slider` supports setting width and step size by interval segment([#600](https://github.com/arco-design/arco-design/pull/600))
+- Image component Added `index` parameter, which indicates the index during preview, which can be specified in complex multi-image preview scenarios to ensure consistent preview order([#588](https://github.com/arco-design/arco-design/pull/588))
+- `Image.Preview` component Added `scales` parameter to support custom image preview zoom percentage([#588](https://github.com/arco-design/arco-design/pull/588))
+
+### 🐛 BugFix
+
+- `placeholder`   attributes take effect when `Table` data is an empty string or null([#609](https://github.com/arco-design/arco-design/pull/609))
+- Fixed the problem that the input box of the `TreeSelect` component in the extension drop-down menu could not be focused.([#608](https://github.com/arco-design/arco-design/pull/608))
+- Fixed the bug that the second parameter of `onChange` was not passed the information of the currently selected node when the `Cascader` component was single-selected for the first time.([#599](https://github.com/arco-design/arco-design/pull/599))
+- Fix the style issue that the width of the month block becomes larger when the year mode of the `Calendar` component is selected([#560](https://github.com/arco-design/arco-design/pull/560))
+
 ## 2.29.2
 
 2022-02-25

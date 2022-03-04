@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🐛 BugFix
+
+- `placeholder`   attributes take effect when `Table` data is an empty string or null([#609](https://github.com/arco-design/arco-design/pull/609))
+
 ## 2.29.0
 
 2022-02-11

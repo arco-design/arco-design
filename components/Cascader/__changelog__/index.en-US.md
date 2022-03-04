@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🐛 BugFix
+
+- Fixed the bug that the second parameter of `onChange` was not passed the information of the currently selected node when the `Cascader` component was single-selected for the first time.([#599](https://github.com/arco-design/arco-design/pull/599))
+
 ## 2.29.2
 
 2022-02-25

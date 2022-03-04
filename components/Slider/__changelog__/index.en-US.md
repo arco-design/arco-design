@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- `Slider` supports setting width and step size by interval segment([#600](https://github.com/arco-design/arco-design/pull/600))
+
 ## 2.27.2
 
 2021-12-31

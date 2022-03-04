@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🐛 BugFix
+
+- Fixed the problem that the input box of the `TreeSelect` component in the extension drop-down menu could not be focused.([#608](https://github.com/arco-design/arco-design/pull/608))
+
 ## 2.29.0
 
 2022-02-11
