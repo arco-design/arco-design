@@ -76,6 +76,12 @@ describe('Cascader basic test', () => {
     });
     // onChange事件触发
     expect(mockChange).toBeCalledTimes(1); // 得到mock函数被触发的次数
+    expect(mockChange.mock.calls[0][0]).toEqual(['shanghai', 'shanghaishi']);
+    expect(mockChange.mock.calls[0][1].map((item) => item.value)).toEqual([
+      'shanghai',
+      'shanghaishi',
+    ]);
+
     expect(wrapper.find('input').prop('value')).toBe('上海 / 上海市');
     // 消失有动画的延时
     jest.runAllTimers();
@@ -169,13 +175,15 @@ describe('support multiple correctly', () => {
 
   it('multiply select correctly', () => {
     let value = [['beijing', 'beijingshi', 'chaoyang', 'datunli']];
+    let option;
     const wrapper = mountCascader(
       <Cascader
         placeholder="请选择一个地点"
         style={{ maxWidth: 300 }}
         options={options}
-        onChange={(v) => {
+        onChange={(v, o) => {
           value = v as string[][];
+          option = o;
         }}
         mode="multiple"
         defaultValue={value}
@@ -215,6 +223,7 @@ describe('support multiple correctly', () => {
         },
       });
     expect(value.length).toEqual(2);
+    expect(option.length).toEqual(2);
   });
 
   it('support multiply search correctly', () => {
