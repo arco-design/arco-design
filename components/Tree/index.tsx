@@ -582,7 +582,10 @@ class Tree extends Component<TreeProps, TreeState> {
         !this.isChildOfNode(node, this.dragNode) &&
         !this.isSameNode(this.dragNode, nodeInstance)
       ) {
-        if (allowDrop && !allowDrop({ dropNode: nodeInstance, dropPosition })) {
+        if (
+          allowDrop &&
+          !allowDrop({ dropNode: nodeInstance, dragNode: this.dragNode, dropPosition })
+        ) {
           return;
         }
         onDrop({
@@ -599,7 +602,11 @@ class Tree extends Component<TreeProps, TreeState> {
     const { allowDrop } = this.getMergedProps();
     let isAllowDrop = true;
     if (typeof allowDrop === 'function') {
-      isAllowDrop = allowDrop({ dropNode: this.cacheNodes[node._key], dropPosition });
+      isAllowDrop = allowDrop({
+        dropNode: this.cacheNodes[node._key],
+        dragNode: this.dragNode,
+        dropPosition
+     });
     }
     return isAllowDrop;
   };

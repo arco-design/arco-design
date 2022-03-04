@@ -22,7 +22,7 @@
 |multiple|是否支持多选|`boolean`|`-`|-|
 |checkable|是否在节点前添加选框|`boolean`|`-`|-|
 |draggable|是否可拖拽|`boolean`|`-`|-|
-|allowDrop|是否允许拖拽时放置在该节点|`AllowDrop`|`() => true`|2.7.0|
+|allowDrop|是否允许拖拽时放置在该节点.(`dragNode` in `2.23.0`)|`AllowDrop`|`() => true`|2.7.0|
 |selectable|是否可以选择|`boolean`|`true`|-|
 |checkStrictly|是否取消父子节点关联|`boolean`|`-`|-|
 |checkedStrategy|定制回填方式 <br/> all: 返回所有选中的节点<br/> parent: 父子节点都选中时只返回父节点 <br/> child: 只返回子节点|`SHOW_ALL \| SHOW_PARENT \| SHOW_CHILD`|`all`|-|

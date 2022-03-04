@@ -22,7 +22,7 @@ For content with many levels, such as folders, catalogs, and organizational stru
 |multiple|Whether to support multiple selection|`boolean`|`-`|-|
 |checkable|Whether to add a checkbox before the node|`boolean`|`-`|-|
 |draggable|Whether the node can be dragged|`boolean`|`-`|-|
-|allowDrop|Whether to allow dropping on node|`AllowDrop`|`() => true`|2.7.0|
+|allowDrop|Whether to allow dropping on node. (`dragNode` in `2.23.0`)|`AllowDrop`|`() => true`|2.7.0|
 |selectable|Whether can be selected|`boolean`|`true`|-|
 |checkStrictly|Whether to cancel the parent-child association|`boolean`|`-`|-|
 |checkedStrategy|Customize the return value <br/> all: Return all selected nodes<br/> parent:Only return the parent node when both parent and child nodes are selected <br/> child: Return only child nodes|`SHOW_ALL \| SHOW_PARENT \| SHOW_CHILD`|`all`|-|
