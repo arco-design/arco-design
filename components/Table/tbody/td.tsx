@@ -126,7 +126,7 @@ function Td(props: TdType) {
 
   const cellChildren = column.render
     ? renderElement
-    : v === undefined
+    : v === undefined || (typeof v === 'string' && v.trim() === '') || v === null
     ? column.placeholder === undefined
       ? placeholder
       : column.placeholder
