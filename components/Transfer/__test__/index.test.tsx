@@ -166,6 +166,54 @@ describe('Transfer', () => {
     expect(handleSelectChange).toHaveBeenCalledWith([], []);
   });
 
+  it('should only check all filtered items when click on check all and there is a search text', () => {
+    const handleSelectChange = jest.fn();
+    const wrapper = mountTransfer(
+      <Transfer {...sortedTargetKeyProps} showSearch onSelectChange={handleSelectChange} />
+    );
+    wrapper
+      .find('.arco-transfer-view-search input')
+      .at(0)
+      .simulate('change', { target: { value: 'a' } });
+    wrapper
+      .find('.arco-transfer-view-header input[type="checkbox"]')
+      .filterWhere((n) => !n.prop('checked'))
+      .simulate('change', {
+        target: {
+          checked: true,
+        },
+      });
+    expect(handleSelectChange).toHaveBeenCalledWith(['a'], ['c']);
+  });
+
+  it('should only uncheck all filtered items when click on uncheck all and there is a search text', () => {
+    const handleSelectChange = jest.fn();
+    const wrapper = mountTransfer(
+      <Transfer {...sortedTargetKeyProps} showSearch onSelectChange={handleSelectChange} />
+    );
+    wrapper
+      .find('.arco-transfer-view-header input[type="checkbox"]')
+      .filterWhere((n) => !n.prop('checked'))
+      .simulate('change', {
+        target: {
+          checked: true,
+        },
+      });
+    wrapper
+      .find('.arco-transfer-view-search input')
+      .at(0)
+      .simulate('change', { target: { value: 'a' } });
+    wrapper
+      .find('.arco-transfer-view-header input[type="checkbox"]')
+      .at(0)
+      .simulate('change', {
+        target: {
+          checked: false,
+        },
+      });
+    expect(handleSelectChange).toHaveBeenCalledWith(['b'], ['c']);
+  });
+
   it('should call `onSearch` when use input in search box', () => {
     const onSearch = () => {};
     const wrapper = mountTransfer(<Transfer {...listCommonProps} showSearch onSearch={onSearch} />);

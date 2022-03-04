@@ -22,7 +22,6 @@ export const TransferList = (props: TransferListProps, ref) => {
     selectedKeys = [],
     validKeys,
     selectedDisabledKeys,
-    selectedStatus,
     title = '',
     disabled,
     draggable,
@@ -59,11 +58,15 @@ export const TransferList = (props: TransferListProps, ref) => {
   }, [dataSource, filterText, filterOption]);
 
   // 处理单个条目复选框改变
-  const handleItemChecked = (key, checked) =>
+  const handleItemChecked = (key: string, checked: boolean) =>
     handleSelect(checked ? selectedKeys.concat(key) : selectedKeys.filter((_key) => _key !== key));
   // 处理全选复选框改变，始终避免操作已禁用的选项
-  const handleItemAllChecked = (keys, checked) =>
-    handleSelect(checked ? keys.concat(selectedDisabledKeys) : [...selectedDisabledKeys]);
+  const handleItemAllChecked = (keys: string[], checked: boolean) =>
+    handleSelect(
+      checked
+        ? [...new Set(selectedKeys.concat(keys))]
+        : selectedKeys.filter((selectedKey) => keys.indexOf(selectedKey) === -1)
+    );
   const clearItems = () => handleRemove(validKeys);
 
   const searchInput = (
@@ -82,17 +85,28 @@ export const TransferList = (props: TransferListProps, ref) => {
   );
 
   const renderHeader = () => {
+    const countSelected = selectedKeys.length;
+    const countRendered = itemsToRender.length;
+    const keysCanBeChecked = filterText
+      ? validKeys.filter((validKey) => itemsToRender.find(({ key }) => key === validKey))
+      : validKeys;
+    const countCheckedOfRenderedItems = keysCanBeChecked.filter(
+      (key) => selectedKeys.indexOf(key) > -1
+    ).length;
+
     const checkboxProps: Partial<CheckboxProps<any>> = {
       disabled,
-      checked: selectedStatus === 'all',
-      indeterminate: selectedStatus === 'part',
-      onChange: (checked) => handleItemAllChecked(validKeys, checked),
+      checked:
+        countCheckedOfRenderedItems > 0 && countCheckedOfRenderedItems === keysCanBeChecked.length,
+      indeterminate:
+        countCheckedOfRenderedItems > 0 && countCheckedOfRenderedItems < keysCanBeChecked.length,
+      onChange: (checked) => handleItemAllChecked(keysCanBeChecked, checked),
     };
 
     if (typeof title === 'function') {
       return title({
-        countTotal: dataSource.length,
-        countSelected: selectedKeys.length,
+        countTotal: countRendered,
+        countSelected,
         clear: clearItems,
         checkbox: <Checkbox {...checkboxProps} />,
         searchInput,
@@ -113,9 +127,9 @@ export const TransferList = (props: TransferListProps, ref) => {
         <span className={`${baseClassName}-header-title`}>
           <Checkbox {...checkboxProps}>{title}</Checkbox>
         </span>
-        <span className={`${baseClassName}-header-unit`}>
-          {`${selectedKeys.length} / ${dataSource.length}`}
-        </span>
+        <span
+          className={`${baseClassName}-header-unit`}
+        >{`${countSelected} / ${countRendered}`}</span>
       </>
     );
   };
