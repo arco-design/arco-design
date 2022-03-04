@@ -25,6 +25,7 @@ A Slider component for displaying current value and intervals in range.
 |step|Slide the value of one step|`number`|`1`|-|
 |showTicks|Whether to display step tick marks|`boolean`|`-`|-|
 |marks|The labels on the render ruler. `marks` is an Object, it's `key` is an integer within [min, max].|`Record<number, ReactNode>`|`-`|-|
+|getIntervalConfig|For interval configuration, returns the interval step size and the ratio of the width relative to the entire sliding axis (e.g. 0.5 or "50%"). **Only valid in `marks` scene**|`(range: number[],index: number) => { step?: number; width?: number \| string }`|`-`|2.30.0|
 |onlyMarkValue|Whether only the mark value can be selected|`boolean`|`-`|-|
 |defaultValue|To set default value|`number \| number[]`|`-`|-|
 |value|To set value|`number \| number[]`|`-`|-|

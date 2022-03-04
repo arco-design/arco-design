@@ -1,5 +1,27 @@
-import React, { useState } from 'react';
-import { Slider, Switch, Form, Typography } from '@self';
+---
+order: 13
+title:
+  zh-CN: 分段输入条
+  en-US: Segmented Slider
+---
+
+## zh-CN
+
+在设置了 `marks` 后，实际上将 `Slider` 分成了多个区间，可以传入 `getIntervalConfig` 对每个区间的宽度和步长进行设置。
+
+** 注意：会优先将空间分配给传入了 `width`的区间, 剩下的将会按照区间长度分配剩余的空间。 **
+
+## en-US
+
+After setting `marks`, the `Slider` is actually divided into multiple intervals, and you can pass in `getIntervalConfig` to set the width and step size of each interval.
+
+** Note: The space will be allocated first to the interval passed in `width`, and the rest will be allocated the remaining space according to the length of the interval. **
+
+
+
+```js
+import { useState } from 'react';
+import { Slider, Switch, Form, Typography } from '@arco-design/web-react';
 
 const defaultConfig = {
   showTicks: false,
@@ -65,4 +87,6 @@ function Demo() {
     </div>
   );
 }
-export default Demo;
+
+ReactDOM.render(<Demo />, CONTAINER);
+```

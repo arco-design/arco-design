@@ -82,10 +82,20 @@ export interface SliderProps {
    */
   marks?: Record<number, ReactNode>;
   /**
+   * @zh 针对区间配置，返回区间步长和相对于整个滑动轴的宽度比例(如 0.5 或 "50%")。**只在`marks`场景下生效**
+   * @en For interval configuration, returns the interval step size and the ratio of the width relative to the entire sliding axis (e.g. 0.5 or "50%"). **Only valid in `marks` scene**
+   * @version 2.30.0
+   */
+  getIntervalConfig?: (
+    range: number[],
+    index: number
+  ) => { step?: number; width?: number | string };
+  /**
    * @zh 只能选择标签值，此时step将会被忽略
    * @en Whether only the mark value can be selected
    */
   onlyMarkValue?: boolean;
+
   /**
    * @zh 默认值
    * @en To set default value
