@@ -25,7 +25,7 @@ import IconOriginalSize from '../../icon/react-icon/IconOriginalSize';
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
 import { ImagePreviewProps } from './interface';
 import useImageStatus from './utils/hooks/useImageStatus';
-import getScale, { minScale, maxScale } from './utils/getScale';
+import PreviewScales, { defaultScales } from './utils/getScale';
 import getFixTranslate from './utils/getFixTranslate';
 import ImagePreviewToolbar from './image-preview-toolbar';
 import useMergeValue from '../_util/hooks/useMergeValue';
@@ -34,6 +34,7 @@ import { PreviewGroupContext } from './previewGroupContext';
 import ImagePreviewArrow from './image-preview-arrow';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import { Esc } from '../_util/keycode';
+import useUpdate from '../_util/hooks/useUpdate';
 
 const ROTATE_STEP = 90;
 
@@ -62,6 +63,7 @@ function Preview(props: ImagePreviewProps, ref) {
     ],
     getPopupContainer = () => document.body,
     onVisibleChange,
+    scales = defaultScales,
     escToExit = true,
   } = props;
 
@@ -106,6 +108,10 @@ function Preview(props: ImagePreviewProps, ref) {
   const [scaleValueVisible, setScaleValueVisible] = useState(false);
   const [rotate, setRotate] = useState(0);
   const [moving, setMoving] = useState(false);
+
+  const previewScales = useMemo(() => {
+    return new PreviewScales(scales);
+  }, []);
 
   // Reset image params
   function reset() {
@@ -177,12 +183,12 @@ function Preview(props: ImagePreviewProps, ref) {
   };
 
   function onZoomIn() {
-    const newScale = getScale(scale, 'zoomIn');
+    const newScale = previewScales.getNextScale(scale, 'zoomIn');
     onScaleChange(newScale);
   }
 
   function onZoomOut() {
-    const newScale = getScale(scale, 'zoomOut');
+    const newScale = previewScales.getNextScale(scale, 'zoomOut');
     onScaleChange(newScale);
   }
 
@@ -308,6 +314,11 @@ function Preview(props: ImagePreviewProps, ref) {
     reset();
   }, [mergedSrc]);
 
+  useUpdate(() => {
+    previewScales.updateScale(scales);
+    setScale(1);
+  }, [scales]);
+
   // Close when pressing esc
   useEffect(() => {
     const onKeyDown = (e) => {
@@ -351,14 +362,14 @@ function Preview(props: ImagePreviewProps, ref) {
       name: locale.ImagePreview.zoomIn,
       content: <IconZoomIn />,
       onClick: onZoomIn,
-      disabled: scale === maxScale,
+      disabled: scale === previewScales.maxScale,
     },
     {
       key: 'zoomOut',
       name: locale.ImagePreview.zoomOut,
       content: <IconZoomOut />,
       onClick: onZoomOut,
-      disabled: scale === minScale,
+      disabled: scale === previewScales.minScale,
     },
     {
       key: 'originalSize',

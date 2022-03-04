@@ -233,5 +233,64 @@ describe('Image', () => {
     expect(wrapper.find('.arco-image-preview-img-moving').get(0)).toBeUndefined();
   });
 
+  it('handle zoom event correctly when set custom scales', () => {
+    const customsScale = [-90, 20, 120];
+
+    const wrapper = mount(<Image.Preview src={imgSrc} visible scales={customsScale} />);
+    jest.runAllTimers();
+    wrapper.update();
+    expect(wrapper.find('.arco-image-preview-img-container').prop('style').transform).toEqual(
+      `scale(1, 1)`
+    );
+
+    // 放大
+    act(() => {
+      updateImg(wrapper);
+      handleAction(wrapper, 3);
+    });
+
+    expect(wrapper.find('.arco-image-preview-img-container').prop('style').transform).toEqual(
+      `scale(1.2, 1.2)`
+    );
+
+    // 1:1
+    act(() => {
+      updateImg(wrapper);
+      handleAction(wrapper, 5);
+    });
+
+    expect(wrapper.find('.arco-image-preview-img-container').prop('style').transform).toEqual(
+      `scale(1, 1)`
+    );
+
+    // 缩小两次
+    act(() => {
+      updateImg(wrapper);
+      handleAction(wrapper, 4);
+    });
+
+    act(() => {
+      updateImg(wrapper);
+      handleAction(wrapper, 4);
+    });
+
+    expect(wrapper.find('.arco-image-preview-img-container').prop('style').transform).toEqual(
+      `scale(0.2, 0.2)`
+    );
+
+    act(() => {
+      wrapper.setProps({
+        scales: [50, 150],
+      });
+      jest.runAllTimers();
+      wrapper.update();
+      updateImg(wrapper);
+    });
+
+    expect(wrapper.find('.arco-image-preview-img-container').prop('style').transform).toEqual(
+      `scale(1, 1)`
+    );
+  });
+
   // TODO: 拖拽 计算偏移量
 });

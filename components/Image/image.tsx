@@ -47,6 +47,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     previewProps = {} as ImagePreviewProps,
     alt,
     onClick,
+    index,
     _index,
     ...restProps
   } = props;
@@ -58,11 +59,13 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
   const previewSrc = previewProps.src || src;
+
   const id = useMemo(() => {
-    if (isNumber(_index)) {
-      uuid = _index;
+    if (isNumber(index) || isNumber(_index)) {
+      uuid = isNumber(index) ? index : _index;
+      return uuid;
     }
-    return uuid;
+    return uuid++;
   }, []);
 
   const [showFooter] = useShowFooter({ title, description, actions });
