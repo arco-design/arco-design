@@ -93,4 +93,33 @@ describe('Table', () => {
     const domTd2 = component.find('tbody td').at(1).getDOMNode();
     expect(getComputedStyle(domTd2).getPropertyValue('color')).toBe('rgb(1, 1, 1)');
   });
+
+  it('table data is true or false', () => {
+    const component = mountTable<TestData>(
+      <Table
+        size="small"
+        columns={columns as any}
+        data={[
+          {
+            key: '1',
+            name: 'Jane Doe',
+            salary: 23000,
+            address: '32 Park Road, London',
+            email: false,
+          },
+          {
+            key: '2',
+            name: 'Alisa Ross',
+            salary: 25000,
+            address: '35 Park Road, London',
+            email: true,
+          },
+        ]}
+      />
+    );
+
+    expect(component.find('tbody tr').at(0).find('td').at(4).text()).toBe('false');
+
+    expect(component.find('tbody tr').at(1).find('td').at(4).text()).toBe('true');
+  });
 });

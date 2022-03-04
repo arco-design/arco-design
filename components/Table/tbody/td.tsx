@@ -151,7 +151,7 @@ function Td(props: TdType) {
       ) : null}
       {(isString(ComponentBodyCell) as JSX.IntrinsicAttributes) ? (
         <ComponentBodyCell className={`${prefixCls}-cell-wrap-value`}>
-          {cellChildren}
+          {typeof cellChildren === 'boolean' ? cellChildren.toString() : cellChildren}
         </ComponentBodyCell>
       ) : (
         <ComponentBodyCell
@@ -161,7 +161,7 @@ function Td(props: TdType) {
           onHandleSave={onHandleSave}
           {...cellProps}
         >
-          {cellChildren}
+          {typeof cellChildren === 'boolean' ? cellChildren.toString() : cellChildren}
         </ComponentBodyCell>
       )}
     </>
