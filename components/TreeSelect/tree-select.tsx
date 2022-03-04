@@ -248,9 +248,6 @@ const TreeSelect: ForwardRefRenderFunction<
         return (
           <div
             className={`${prefixCls}-popup`}
-            onMouseDown={(e) => {
-              e.preventDefault();
-            }}
             style={{
               maxHeight:
                 props.treeProps?.height || props.treeProps?.virtualListProps?.height ? 'unset' : '',

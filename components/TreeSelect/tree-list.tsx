@@ -169,6 +169,9 @@ function TreeList(props: TreeListProps, ref) {
       loadMore={props.loadMore ? handleLoadMore : undefined}
       checkedStrategy={treeCheckedStrategy}
       checkStrictly={treeCheckStrictly}
+      onMouseDown={(e) => {
+        e.preventDefault();
+      }}
       {...extraProps}
       treeData={treeData}
       fieldNames={props.fieldNames}

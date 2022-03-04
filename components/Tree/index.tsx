@@ -765,6 +765,7 @@ class Tree extends Component<TreeProps, TreeState> {
           currentExpandKeys={this.state.currentExpandKeys}
           getNodeProps={this.getNodeProps}
           nodeList={this.state.nodeList}
+          onMouseDown={this.props.onMouseDown}
           saveCacheNode={(node) => {
             this.cacheNodes[node.key] = node;
           }}

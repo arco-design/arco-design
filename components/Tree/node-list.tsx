@@ -111,6 +111,7 @@ function NodeList(props, ref) {
       data={childrenList}
       isStaticItemHeight={false}
       itemKey={getKey}
+      onMouseDown={props.onMouseDown}
       {...virtualListProps}
     >
       {(item) => {
@@ -120,7 +121,7 @@ function NodeList(props, ref) {
       }}
     </VirtualList>
   ) : (
-    <div className={className} style={style} ref={treeWrapperRef}>
+    <div className={className} style={style} ref={treeWrapperRef} onMouseDown={props.onMouseDown}>
       {childrenList.map((item) => {
         const node = <Node {...item} {...getNodeProps(item, expandedKeysSet)} key={item.key} />;
         saveCacheNode(node);

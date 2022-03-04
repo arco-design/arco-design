@@ -273,6 +273,7 @@ export interface TreeProps {
   }) => void;
   filterNode?: (node: NodeProps) => boolean; // 仅提供给tree-select使用
   children?: ReactNode;
+  onMouseDown?: (e) => void;
 }
 
 /**
