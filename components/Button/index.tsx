@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, createRef, ReactNode, forwardRef } from 'react';
+import React, { useState, useContext, useEffect, useRef, ReactNode, forwardRef } from 'react';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import Group from './group';
 import cs from '../_util/classNames';
@@ -65,7 +65,8 @@ function Button(baseProps: ButtonProps, ref) {
   const iconNode = loading ? <IconLoading /> : icon;
 
   const [isTwoCNChar, setIsTwoCNChar] = useState(false);
-  const buttonRef = ref || createRef();
+  const innerButtomRef = useRef();
+  const buttonRef = ref || innerButtomRef;
 
   useEffect(() => {
     if (autoInsertSpaceInButton && buttonRef && buttonRef.current) {
@@ -78,7 +79,7 @@ function Button(baseProps: ButtonProps, ref) {
         setIsTwoCNChar(false);
       }
     }
-  }, [buttonRef, autoInsertSpaceInButton]);
+  }, [buttonRef.current, autoInsertSpaceInButton]);
 
   const prefixCls = getPrefixCls('btn');
   const _type = type === 'default' ? 'secondary' : type;
