@@ -67,7 +67,7 @@ function Transfer(baseProps: TransferProps, ref) {
   const [sourceInfo, targetInfo] = useMemo(() => {
     type ListInfo = { selectedValidKeys: TransferItem['key'][] } & Pick<
       TransferListProps,
-      'dataSource' | 'selectedKeys' | 'validKeys' | 'selectedDisabledKeys' | 'selectedStatus'
+      'dataSource' | 'selectedKeys' | 'validKeys' | 'selectedDisabledKeys'
     >;
     // 每次重新计算时，清空数组
     sourceListDataSource.length = 0;
@@ -80,7 +80,6 @@ function Transfer(baseProps: TransferProps, ref) {
       validKeys: [],
       selectedValidKeys: [],
       selectedDisabledKeys: [],
-      selectedStatus: 'none',
     };
     const targetInfo: ListInfo = {
       dataSource: targetListDataSource,
@@ -88,7 +87,6 @@ function Transfer(baseProps: TransferProps, ref) {
       validKeys: [],
       selectedValidKeys: [],
       selectedDisabledKeys: [],
-      selectedStatus: 'none',
     };
 
     dataSource.forEach((item) => {
@@ -120,15 +118,6 @@ function Transfer(baseProps: TransferProps, ref) {
       sourceInfo.dataSource = dataSource.slice();
       sourceInfo.selectedKeys = targetKeys.slice();
     }
-
-    const computeSelectedStatus = (info: ListInfo): TransferListProps['selectedStatus'] => {
-      const validCount = info.validKeys.length;
-      const validSelectedCount = info.selectedKeys.length - info.selectedDisabledKeys.length;
-      return validSelectedCount === 0 ? 'none' : validSelectedCount === validCount ? 'all' : 'part';
-    };
-
-    sourceInfo.selectedStatus = computeSelectedStatus(sourceInfo);
-    targetInfo.selectedStatus = computeSelectedStatus(targetInfo);
 
     return [sourceInfo, targetInfo];
   }, [dataSource, targetKeys, selectedKeys, simple]);
