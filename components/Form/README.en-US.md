@@ -75,6 +75,13 @@ A form with data collection, verification and submission functions, including ch
 |initialValue|Default value|`SubFieldValue[]`|`-`|2.22.0|
 |children|Function type children|`(fields: { key: number; field: SubFieldKey }[],operation: {add: (defaultValue?: SubFieldValue, index?: number) => void;remove: (index: number) => void;move: (fromIndex: number, toIndex: number) => void;}) => React.ReactNode`|`-`|-|
 
+### Form.Provider(`2.30.0`)
+
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|onFormValuesChange|This method is called when the value of any wrapped `Form` component changes|`(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: FormInstance;};}) => void`|`-`|
+|onFormSubmit|This method will be called when any wrapped `Form` component triggers a submit|`(id: string \| undefined,values,{forms,}: {forms: {[key: string]: FormInstance;};}) => void`|`-`|
+
 ### Rules
 
 Low-level use [b-validate](https://github.com/PengJiyuan/b-validate).
