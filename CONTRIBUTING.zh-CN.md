@@ -31,7 +31,7 @@
 1. 在仓库根目录下执行 `yarn run init`。
 1. 执行 `yarn start` 启动和预览站点.
 1. 对代码库进行更改。如果适用的话，请确保写了相应的测试。
-1. 确认执行 `yarn test` 后所有的测试都是通过的。开发过程中可以用 `yarn test --watch TestName` 来运行指定的测试。
+1. 确认执行 `yarn test` 后所有的测试都是通过的。开发过程中可以用 `yarn test:watch TestName` (例如 `yarn test:watch Alert`) 来运行指定的测试以节省时间。
 
     注意: 在个人电脑运行 `yarn test` 可能导致资源高占用、甚至系统卡死。另一种测试方法是：
     1. 在你的 fork 中启用 Github Action
