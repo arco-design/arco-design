@@ -557,7 +557,7 @@ const VirtualList: React.ForwardRefExoticComponent<
         });
       },
     }),
-    [data, itemHeight]
+    [data, itemHeight, state]
   );
 
   const renderChildren = (list, startIndex: number) => {
