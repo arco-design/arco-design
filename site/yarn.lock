@@ -341,13 +341,6 @@
     prismjs "^1.23.0"
     react-helmet "^6.1.0"
 
-"@arco-design/arco-site-footer@^1.3.7":
-  version "1.3.7"
-  resolved "https://registry.npmjs.org/@arco-design/arco-site-footer/-/arco-site-footer-1.3.7.tgz#0c20c9bc078321c3896b0cd368d791db08a29ce9"
-  integrity sha512-13hFPOBLaZRwjhPAnTQtXImw+PvJPBmFWXNsQwP7gdGLq63cGUnlbAiNUzV/RfuEw1d47jfOTKrCS5lA7HQliQ==
-  dependencies:
-    classnames "^2.2.6"
-
 "@arco-design/arco-site-utils@^1.0.2":
   version "1.0.2"
   resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.2.tgz#8e8e2a4ba9c480951afe68ae5b44e149f5ebe52b"
@@ -356,10 +349,17 @@
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
 
-"@arco-materials/site-navbar@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.1.0.tgz#2cbc232e50ea58e7db8a9adceade0891ca50d223"
-  integrity sha512-laAVS07MXaeY8Ve9AJy7f1Y1pnLa1TCAy321fu/HEDlJbQSEUfBx1P9Mm5JJMmid4vaX5lMZeeGQpH2C6vDj7g==
+"@arco-materials/site-footer@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.0.2.tgz#2dd94d59e036d5d513edb105afe4168c6e7cbde7"
+  integrity sha512-36MWGLpAUFjjrA7w4kDk/I1Fk5L117GB0rXtKYBF/UCt/suNXvXy8o0adygebiW3GPrv4VkT4i690sgbEOj8dg==
+  dependencies:
+    classnames "^2.2.6"
+
+"@arco-materials/site-navbar@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.1.5.tgz#8dd1129c4263add9cb06c8cd6c1e5722588c9b1b"
+  integrity sha512-uteyho5Zs/ByollzhwJ02TivAlQbGtvytgXM01iT4El17VuUtcdItFtsVMGSug2iboFfRXOgQb6F2SYadALuag==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.0.1"
