@@ -549,21 +549,18 @@ const Picker = (baseProps: RangePickerProps) => {
       } else if (!showTime) {
         onConfirmValue(newValueShow);
       }
+    } else if (newSelectedLength <= 1) {
+      switchFocusedInput(true);
+    } else if (selectedLength === 2 && firstRange.current && !isHalfAvailable) {
+      firstRange.current = false;
+      switchFocusedInput(true);
+      if (!showTime && !isOutOfRange) {
+        onConfirmValue(newValueShow, true);
+      }
     } else {
-      setFixedPageShowDates(sortedValueShow);
-      if (newSelectedLength <= 1) {
-        switchFocusedInput(true);
-      } else if (selectedLength === 2 && firstRange.current && !isHalfAvailable) {
-        firstRange.current = false;
-        switchFocusedInput(true);
-        if (!showTime && !isOutOfRange) {
-          onConfirmValue(newValueShow, true);
-        }
-      } else {
-        firstRange.current = false;
-        if (!showTime && !isOutOfRange) {
-          onConfirmValue(newValueShow);
-        }
+      firstRange.current = false;
+      if (!showTime && !isOutOfRange) {
+        onConfirmValue(newValueShow);
       }
     }
   }
