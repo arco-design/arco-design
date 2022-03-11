@@ -1,3 +1,11 @@
+## 2.30.1
+
+2022-03-11
+
+### 💎 Performance
+
+- The `DatePicker` component no longer jumps the panel when picking a date.([#627](https://github.com/arco-design/arco-design/pull/627))
+
 ## 2.30.0
 
 2022-03-04

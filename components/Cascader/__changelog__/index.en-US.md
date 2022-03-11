@@ -1,3 +1,11 @@
+## 2.30.1
+
+2022-03-11
+
+### 🐛 BugFix
+
+- Fix the problem that the label text corresponding to the default value of the component is lost when the Cascader component is directly input text for remote search.([#632](https://github.com/arco-design/arco-design/pull/632))
+
 ## 2.30.0
 
 2022-03-04

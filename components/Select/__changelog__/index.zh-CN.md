@@ -1,3 +1,12 @@
+## 2.30.1
+
+2022-03-11
+
+### 🐛 问题修复
+
+- 修复 `Select` 多选时 Tag 动画失效的 bug。([#630](https://github.com/arco-design/arco-design/pull/630))
+- 修复 `Select` 设置 `maxTagCount` 时按下 `Backspace` 键时未按正确顺序删除选项的 bug。([#630](https://github.com/arco-design/arco-design/pull/630))
+
 ## 2.28.2
 
 2022-01-21

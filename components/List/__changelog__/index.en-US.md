@@ -1,3 +1,11 @@
+## 2.30.1
+
+2022-03-11
+
+### 🐛 BugFix
+
+- Fix the bug that the `scrollIntoView` method did not work for elements rendered on the first screen when `List` is a virtual list.([#628](https://github.com/arco-design/arco-design/pull/628))
+
 ## 2.26.0
 
 2021-12-03

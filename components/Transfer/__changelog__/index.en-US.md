@@ -1,3 +1,11 @@
+## 2.30.1
+
+2022-03-11
+
+### 💎 Performance
+
+- When the `Transfer` component clears all, it only operates on the filtered items.([#621](https://github.com/arco-design/arco-design/pull/621))
+
 ## 2.30.0
 
 2022-03-04
