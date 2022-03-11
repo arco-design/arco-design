@@ -69,43 +69,40 @@ ReactDOM.render(
 
 ## Load on Demand
 
-### tree shaking
+The components of `@arco-design/web-react` support `tree shaking` by default, and can be loaded on demand by importing them using `import { Button } from '@arco-design/web-react';`.
 
-`@arco-design/web-react` supports `tree shaking` by default. You can load on demand through importing `import { Button } from '@arco-design/web-react';`.
+If `tree-shaking` fails, or if `load style on demand` and `load icon on demand` are required, the following two methods can be used:
 
-### ArcoWebpackPlugin
+### Using the official Arco plugin
 
-If the project uses Webpack as the build tool，you can load components and styles on demand with `@arco-design/webpack-plugin`。
+The plugin functions provided by `Arco`'s [official plugin library](https://github.com/arco-design/arco-plugins) are as follows:
 
-**Install plugin**
+- Component library styles are loaded on demand
+- Component library icons are loaded on demand
+- Imported theme exported by [Design Lab](https://arco.design/themes)
+- Icon library replacement for component library
 
-```
-npm i @arco-design/webpack-plugin -D
-```
+#### Plugin list
 
-**Webpack configuration**
+> For specific usage, please click the plugin link to view the details page
 
-```js
-var ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
+  - [@arco-plugins/webpack-react](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) webpack plugin for Arco react components
+  - [@arco-plugins/vite-react](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md) vite plugin for Arco react component library
+  - [@arco-plugins/vite-vue](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-vue/README.md) vite plugin for Arco vue component library
 
-module.exports = {
-  plugins: [
-    new ArcoWebpackPlugin();
-  ],
-};
-```
+### Using [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import)
 
-### babel-plugin-import
-
-If `tree-shaking` fails and the webpack plugin is not used, you can load on demand through [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import).
+1. Installation
 
 ```bash
 npm i babel-plugin-import -D
 ```
 
-#### Load component on demand
+2. Add configuration
 
-Add in babel configuration:
+#### Load Component or Style on demand
+
+Add to the babel configuration:
 
 ```js
 plugins: [
@@ -121,9 +118,9 @@ plugins: [
 ];
 ```
 
-### Load Icon on demand
+#### Load Icon on demand
 
-Add in babel configuration:
+Add to the babel configuration:
 
 ```js
 plugins: [
