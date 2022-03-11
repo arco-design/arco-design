@@ -65,8 +65,8 @@ function Button(baseProps: ButtonProps, ref) {
   const iconNode = loading ? <IconLoading /> : icon;
 
   const [isTwoCNChar, setIsTwoCNChar] = useState(false);
-  const innerButtomRef = useRef();
-  const buttonRef = ref || innerButtomRef;
+  const innerButtonRef = useRef();
+  const buttonRef = ref || innerButtonRef;
 
   useEffect(() => {
     if (autoInsertSpaceInButton && buttonRef && buttonRef.current) {
