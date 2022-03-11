@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useContext, useMemo } from 'react';
 import { BackTop, Button } from '@arco-design/web-react';
 import { IconUp, IconLeft } from '@arco-design/web-react/icon';
-import Footer from '@arco-design/arco-site-footer';
+import Footer from '@arco-materials/site-footer';
 import { useHistory } from 'react-router-dom';
 import getRoutes from './routes';
 import WidgetMenu from './widget/Menu';
