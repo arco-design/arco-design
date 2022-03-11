@@ -28,6 +28,7 @@
     "stylelint": "stylelint '{components,site}/**/*.less'",
     "test:client": "arco-scripts test:client",
     "test:node": "arco-scripts test:node --silent=false",
+    "test:watch": "arco-scripts test:client --silent=false --collectCoverage=false --watch",
     "test": "cross-env NODE_ENV=test npm-run-all build:cjs test:client test:node",
     "color": "node ./scripts/compileColors.js",
     "icon": "cd icon && rimraf react-icon/ && rimraf react-icon-cjs && cd build/ && node generate.js && node genDemo.js",

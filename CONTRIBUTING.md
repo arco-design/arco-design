@@ -30,7 +30,7 @@ We use [Github issues](https://github.com/arco-design/arco-design/issues) for bu
 1. Run `yarn run init` in the repository root.
 1. Run `yarn start` to start and preview site.
 1. Make changes to the codebase. Please add tests if applicable.
-1. Make sure the test suite passes with `yarn test`. To watch for specific changes in development, use `yarn test --watch TestName`.
+1. Make sure the test suite passes with `yarn test`. To watch for specific changes in development, use `yarn test:watch TestName` (e.g. `yarn test:watch Alert`).
 
     Note: Running `yarn test` on your personal computer may be CPU-burning and even system-crashing. An alternative approach is:
     1. Enable Github Action in your fork
