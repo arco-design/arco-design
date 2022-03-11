@@ -14,7 +14,7 @@ import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
-import { on, off, isServerRendering } from '../_util/dom';
+import { isServerRendering } from '../_util/dom';
 import { Esc } from '../_util/keycode';
 import Button from '../Button';
 import Portal from '../Portal';
@@ -102,7 +102,6 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
 
   const modalWrapperRef = useRef<HTMLDivElement>(null);
   const contentWrapper = useRef<HTMLDivElement>(null);
-  const keyboardEventOn = useRef<boolean>(false);
   const [wrapperVisible, setWrapperVisible] = useState(visible);
   const [popupZIndex, setPopupZIndex] = useState<number>();
   const cursorPositionRef = useRef<CursorPositionType>(null);
@@ -165,21 +164,11 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   };
 
   useEffect(() => {
-    const onKeyDown = (e) => {
-      if (escToExit && e && e.key === Esc.key) {
-        onCancel();
-      }
-    };
-
-    if (visible && !keyboardEventOn.current) {
-      keyboardEventOn.current = true;
-      on(document, 'keydown', onKeyDown);
+    if (visible) {
+      setTimeout(() => {
+        modalWrapperRef.current?.focus();
+      });
     }
-
-    return () => {
-      keyboardEventOn.current = false;
-      off(document, 'keydown', onKeyDown);
-    };
   }, [visible, escToExit]);
 
   useEffect(() => {
@@ -316,6 +305,13 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
           </CSSTransition>
         ) : null}
         <div
+          tabIndex={-1}
+          onKeyDown={(e) => {
+            if (visible && e.key === Esc.key) {
+              e.stopPropagation();
+              onCancel();
+            }
+          }}
           role="dialog"
           aria-hidden="true"
           {...omit(rest, [
