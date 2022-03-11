@@ -164,11 +164,15 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   };
 
   useEffect(() => {
+    let timer = null;
     if (visible) {
-      setTimeout(() => {
+      timer = setTimeout(() => {
         modalWrapperRef.current?.focus();
       });
     }
+    return () => {
+      timer && clearTimeout(timer);
+    };
   }, [visible, escToExit]);
 
   useEffect(() => {
