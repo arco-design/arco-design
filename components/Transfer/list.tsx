@@ -67,7 +67,7 @@ export const TransferList = (props: TransferListProps, ref) => {
         ? [...new Set(selectedKeys.concat(keys))]
         : selectedKeys.filter((selectedKey) => keys.indexOf(selectedKey) === -1)
     );
-  const clearItems = () => handleRemove(validKeys);
+  const clearItems = (keys: string[]) => () => handleRemove(keys);
 
   const searchInput = (
     <Input
@@ -107,7 +107,7 @@ export const TransferList = (props: TransferListProps, ref) => {
       return title({
         countTotal: countRendered,
         countSelected,
-        clear: clearItems,
+        clear: clearItems(keysCanBeChecked),
         checkbox: <Checkbox {...checkboxProps} />,
         searchInput,
       });
@@ -117,7 +117,10 @@ export const TransferList = (props: TransferListProps, ref) => {
       <>
         <span className={`${baseClassName}-header-title`}>{title}</span>
         {!disabled && validKeys.length ? (
-          <IconHover className={`${baseClassName}-icon-clear`} onClick={clearItems}>
+          <IconHover
+            className={`${baseClassName}-icon-clear`}
+            onClick={clearItems(keysCanBeChecked)}
+          >
             <IconDelete />
           </IconHover>
         ) : null}
