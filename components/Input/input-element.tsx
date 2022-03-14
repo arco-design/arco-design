@@ -24,6 +24,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       value,
       autoFitWidth,
       onClear,
+      readOnly,
       onValueChange,
       maxLength: propMaxLength,
       ...rest
@@ -156,7 +157,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     return (
       <>
-        {allowClear ? (
+        {!readOnly && allowClear ? (
           <>
             <input ref={refInput} {...inputProps} />
             {!disabled && allowClear && value ? (

@@ -62,6 +62,7 @@ function Input(baseProps: InputProps, ref) {
     maxLength,
     showWordLimit,
     allowClear,
+    readOnly,
   } = props;
 
   const trueMaxLength = isObject(maxLength) ? maxLength.length : maxLength;
@@ -182,7 +183,7 @@ function Input(baseProps: InputProps, ref) {
         {inputAddon(`${prefixCls}-group-addafter`, addAfter, afterStyle)}
       </span>
     </div>
-  ) : allowClear ? (
+  ) : !readOnly && allowClear ? (
     <span
       className={cs(className, innerWrapperClassnames)}
       style={{ ...style, ...(isCustomHeight ? { height } : {}) }}

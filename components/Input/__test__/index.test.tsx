@@ -156,6 +156,11 @@ describe('Test Textarea', () => {
     expect(component.find('input').getDOMNode().getAttribute('value')).toBe('');
   });
 
+  it('test contains together allowClear and readOnly and do not show the clear button', () => {
+    const component = mountInput(<Input allowClear readOnly defaultValue="123" />);
+    expect(component.find('.arco-input-clear-icon svg').exists()).toBeFalsy();
+  });
+
   it('test password', () => {
     const component = mountInputPassword(<Input.Password visibilityToggle />);
 
