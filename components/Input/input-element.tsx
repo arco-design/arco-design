@@ -157,10 +157,10 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     return (
       <>
-        {!readOnly && allowClear ? (
+        {allowClear ? (
           <>
             <input ref={refInput} {...inputProps} />
-            {!disabled && allowClear && value ? (
+            {!readOnly && !disabled && allowClear && value ? (
               <IconHover
                 className={`${prefixCls}-clear-icon`}
                 onClick={(e) => {
