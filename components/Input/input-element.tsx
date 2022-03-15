@@ -141,6 +141,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     const inputProps = {
       ...otherProps,
+      readOnly,
       maxLength: mergedMaxLength,
       value: compositionValue || value || '',
       disabled,
