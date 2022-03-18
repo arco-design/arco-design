@@ -106,4 +106,9 @@ describe('InputTag', () => {
     });
     expect(mockOnClick).toBeCalled();
   });
+
+  it('test contains together allowClear and readOnly and do not show the clear button', () => {
+    const component = mount(<InputTag allowClear readOnly defaultValue={['123']} />);
+    expect(component.find('.arco-input-tag-clear-icon svg').exists()).toBeFalsy();
+  });
 });

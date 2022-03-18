@@ -235,7 +235,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
   };
 
   const clearIcon =
-    allowClear && !disabled && value.length ? (
+    allowClear && !disabled && !readOnly && value.length ? (
       <IconHover
         size={size}
         key="clearIcon"
