@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.30.2
+
+2022-03-18
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件同时设置 `allowClear` 和 `readOnly` 时， 依然展示清除按钮的 bug。([#651](https://github.com/arco-design/arco-design/pull/651))
+- 修复 `Table` 组件开启 `virtualized` 之后 `column.align` 不生效的 bug。([#650](https://github.com/arco-design/arco-design/pull/650))
+- 修复 `DatePicker` 组件  `separator` 参数不生效的问题。([#647](https://github.com/arco-design/arco-design/pull/647))
+- 修复 `Form.Provider` 导致控制台 warning 的 bug。([#646](https://github.com/arco-design/arco-design/pull/646))
+- 修复 `Input` 同时设置  `allowClear` 和 `readOnly` 属性时， 依然展示清除按钮的问题。([#640](https://github.com/arco-design/arco-design/pull/640))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件 `expandProps.width` 设置小于 40 不生效的问题。([#656](https://github.com/arco-design/arco-design/pull/656))
+
 ## 2.30.1
 
 2022-03-11

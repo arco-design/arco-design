@@ -1,3 +1,11 @@
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fixed the issue that the `separator` parameter of the `DatePicker` component did not take effect.([#647](https://github.com/arco-design/arco-design/pull/647))
+
 ## 2.30.1
 
 2022-03-11

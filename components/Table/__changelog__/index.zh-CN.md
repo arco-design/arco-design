@@ -1,3 +1,15 @@
+## 2.30.2
+
+2022-03-18
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件开启 `virtualized` 之后 `column.align` 不生效的 bug。([#650](https://github.com/arco-design/arco-design/pull/650))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件 `expandProps.width` 设置小于 40 不生效的问题。([#656](https://github.com/arco-design/arco-design/pull/656))
+
 ## 2.30.0
 
 2022-03-04

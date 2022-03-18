@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fixed `InputTag` display cleat button when set `allowClear` and `readOnly` together.([#651](https://github.com/arco-design/arco-design/pull/651))
+- Fix the bug that `column.align` does not take effect when `virtualized` is enabled in `Table` component.([#650](https://github.com/arco-design/arco-design/pull/650))
+- Fixed the issue that the `separator` parameter of the `DatePicker` component did not take effect.([#647](https://github.com/arco-design/arco-design/pull/647))
+- Fix a bug where `Form.provider` causes console warning.([#646](https://github.com/arco-design/arco-design/pull/646))
+- Fixed display of clear button when `Input` set `allowClear` and `readOnly` at same time.([#640](https://github.com/arco-design/arco-design/pull/640))
+
+### 💅 Style
+
+- Fix `Table` component set `expandProps.width` is not work when less than 40.([#656](https://github.com/arco-design/arco-design/pull/656))
+
 ## 2.30.1
 
 2022-03-11

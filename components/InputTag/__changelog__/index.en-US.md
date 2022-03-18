@@ -1,3 +1,11 @@
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fixed `InputTag` display cleat button when set `allowClear` and `readOnly` together.([#651](https://github.com/arco-design/arco-design/pull/651))
+
 ## 2.29.2
 
 2022-02-25

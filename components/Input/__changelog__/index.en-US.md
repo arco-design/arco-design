@@ -1,3 +1,11 @@
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fixed display of clear button when `Input` set `allowClear` and `readOnly` at same time.([#640](https://github.com/arco-design/arco-design/pull/640))
+
 ## 2.29.2
 
 2022-02-25

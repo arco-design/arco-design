@@ -1,3 +1,15 @@
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fix the bug that `column.align` does not take effect when `virtualized` is enabled in `Table` component.([#650](https://github.com/arco-design/arco-design/pull/650))
+
+### 💅 Style
+
+- Fix `Table` component set `expandProps.width` is not work when less than 40.([#656](https://github.com/arco-design/arco-design/pull/656))
+
 ## 2.30.0
 
 2022-03-04

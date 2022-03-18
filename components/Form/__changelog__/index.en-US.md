@@ -1,3 +1,11 @@
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fix a bug where `Form.provider` causes console warning.([#646](https://github.com/arco-design/arco-design/pull/646))
+
 ## 2.30.0
 
 2022-03-04
