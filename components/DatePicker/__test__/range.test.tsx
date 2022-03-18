@@ -267,4 +267,10 @@ describe('RangePicker', () => {
     expect(getFirstPickerHeaderValue(component)).toBe('2020-04');
     expect(component.find('.arco-picker-cell-week')).toHaveLength(12);
   });
+
+  it('separator', () => {
+    const component = mount(<RangePicker separator="to" popupVisible />);
+
+    expect(component.find('.arco-picker-separator').text()).toBe('to');
+  });
 });

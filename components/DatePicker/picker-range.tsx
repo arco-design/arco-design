@@ -106,6 +106,7 @@ const Picker = (baseProps: RangePickerProps) => {
     onPickerValueChange,
     triggerElement,
     clearRangeOnReselect,
+    separator,
     utcOffset,
     timezone,
   } = props;
@@ -848,6 +849,7 @@ const Picker = (baseProps: RangePickerProps) => {
             changeFocusedInputIndex={changeFocusedInputIndex}
             focusedInputIndex={focusedInputIndex}
             isPlaceholder={!!hoverPlaceholderValue}
+            separator={separator}
           />
         )}
       </Trigger>
