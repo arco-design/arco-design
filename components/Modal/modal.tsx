@@ -11,7 +11,7 @@ import React, {
   ReactElement,
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import FocusLock from 'react-focus-lock';
+import { FocusOn as FocusLock } from 'react-focus-on';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
 import { isServerRendering } from '../_util/dom';
@@ -266,7 +266,16 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
       style={style}
     >
       {innerFocusLock ? (
-        <FocusLock disabled={!visible} autoFocus={innerAutoFocus}>
+        <FocusLock
+          enabled={visible}
+          onEscapeKey={(event) => {
+            if (visible) {
+              event && event.stopPropagation();
+              onCancel();
+            }
+          }}
+          autoFocus={innerAutoFocus}
+        >
           {element}
         </FocusLock>
       ) : (
@@ -309,7 +318,6 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
           </CSSTransition>
         ) : null}
         <div
-          tabIndex={-1}
           onKeyDown={(e) => {
             if (visible && e.key === Esc.key) {
               e.stopPropagation();
