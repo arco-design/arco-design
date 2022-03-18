@@ -69,41 +69,37 @@ ReactDOM.render(
 
 ## 按需加载
 
-### tree shaking
+`@arco-design/web-react` 的组件默认支持 `tree shaking`, 使用 `import { Button } from '@arco-design/web-react';` 方式引入即可按需加载。
 
-`@arco-design/web-react` 默认支持 `tree shaking`。直接引入 `import { Button } from '@arco-design/web-react';` 即可按需加载。
+如果`按需加载失效`，或者需要`样式按需加载`以及`图标按需加载`的可使用以下两种方式处理：
 
-### ArcoWebpackPlugin
+### 使用 Arco 官方插件
 
-如果项目是以 Webpack 为构建工具的，使用 `@arco-design/webpack-plugin` 插件可以实现组件和样式的按需加载。
+`Arco` 的 [官方插件库](https://github.com/arco-design/arco-plugins) 提供的插件功能如下：
 
-**安装插件**
+- 组件库样式按需加载
+- 组件库图标按需加载
+- 风格配置平台导出的主题引入
+- 组件库的图标库替换
 
-```bash
-npm i @arco-design/webpack-plugin -D
-```
+#### 插件列表
 
-**配置 webpack**
+> 具体使用方式请点击插件链接到详情页中查看
 
-```js
-const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
+  - [@arco-plugins/webpack-react](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.zh-CN.md) 适用于 Arco react 组件的 webpack 插件
+  - [@arco-plugins/vite-react](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.zh-CN.md) 适用于 Arco react 组件库的 vite 插件
+  - [@arco-plugins/vite-vue](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-vue/README.zh-CN.md) 适用于 Arco vue 组件库的 vite 插件
 
-module.exports = {
-  plugins: [
-    new ArcoWebpackPlugin(),
-  ],
-};
-``` 
+### 使用 [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import)
 
-### babel-plugin-import
-
-如果 `tree-shaking` 失效且不使用 webpack 插件的情况下，可以通过 [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import) 进行按需加载。
+1. 安装
 
 ```bash
 npm i babel-plugin-import -D
 ```
+2. 添加配置
 
-### 组件按需加载
+#### 组件和样式的按需加载
 
 在 babel 配置中加入：
 
@@ -121,7 +117,7 @@ plugins: [
 ];
 ```
 
-### Icon 按需加载
+#### Icon 按需加载
 
 在 babel 配置中加入：
 
