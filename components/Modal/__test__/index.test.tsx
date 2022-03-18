@@ -143,4 +143,24 @@ describe('Modal', () => {
     expect(onCancel).toHaveBeenCalledTimes(1);
     jest.useRealTimers();
   });
+
+  it('close Modal with escToExit is false', () => {
+    jest.useFakeTimers();
+    const onCancel = jest.fn();
+    Modal.confirm({
+      title: 'title',
+      escToExit: false,
+      content: 'content',
+      onCancel,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+    TestUtils.Simulate.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
+      key: Esc.key,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+    expect(onCancel).toHaveBeenCalledTimes(0);
+    jest.useRealTimers();
+  });
 });

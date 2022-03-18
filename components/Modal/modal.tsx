@@ -165,7 +165,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
 
   useEffect(() => {
     let timer = null;
-    if (visible) {
+    if (escToExit) {
       timer = setTimeout(() => {
         modalWrapperRef.current?.focus();
       });
@@ -269,7 +269,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         <FocusLock
           enabled={visible}
           onEscapeKey={(event) => {
-            if (visible) {
+            if (escToExit) {
               event && event.stopPropagation();
               onCancel();
             }
@@ -319,7 +319,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         ) : null}
         <div
           onKeyDown={(e) => {
-            if (visible && e.key === Esc.key) {
+            if (escToExit && e.key === Esc.key) {
               e.stopPropagation();
               onCancel();
             }
