@@ -9,7 +9,7 @@ import { FormInstance } from '.';
 import { FormProviderContext } from './context';
 import { FormProviderProps } from './interface';
 
-const FormProviderComponent = (props: PropsWithChildren<FormProviderProps>) => {
+const FormProviderComponent = (props: PropsWithChildren<FormProviderProps>, _) => {
   const formsRef = useRef<{ [key: string]: FormInstance }>({});
   const register = useCallback((name: string, form: FormInstance) => {
     if (name) {
