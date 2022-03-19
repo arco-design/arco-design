@@ -146,4 +146,25 @@ describe('Trigger case', () => {
     expect(wrapper.find('#popup1')).toHaveLength(1);
     expect(wrapper.find('#popup2')).toHaveLength(1);
   });
+
+  it('children is disabled button, pass-through classname', async () => {
+    const c = 'my-custom-button-class';
+    const wrapper = mount(
+      <div id="test">
+        <Trigger
+          unmountOnExit={false}
+          trigger="click"
+          popup={() => {
+            return <div id="popup1"> 123123 </div>;
+          }}
+        >
+          <button id="btn" className={c} disabled>
+            Test
+          </button>
+        </Trigger>
+      </div>
+    );
+
+    expect(wrapper.find('#btn').hasClass(c)).toBeTruthy();
+  });
 });

@@ -728,16 +728,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         'zIndex',
       ]);
       child = (
-        <span
-          className={element.props.className}
-          style={{ display: 'inline-block', ...picked, cursor: 'not-allowed' }}
-        >
+        <span style={{ display: 'inline-block', ...picked, cursor: 'not-allowed' }}>
           {React.cloneElement(element, {
             style: {
               ...omitted,
               pointerEvents: 'none',
             },
-            className: undefined,
+            className: element.props.className,
           })}
         </span>
       );
