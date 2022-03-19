@@ -34,7 +34,6 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
     class="arco-space-item"
   >
     <span
-      class=""
       style="display:inline-block;cursor:not-allowed"
     >
       <button
