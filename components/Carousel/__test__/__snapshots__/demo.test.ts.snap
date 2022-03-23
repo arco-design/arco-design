@@ -223,13 +223,13 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
       class="arco-carousel-arrow-left"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -240,13 +240,13 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
       class="arco-carousel-arrow-right"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -333,13 +333,13 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
       class="arco-carousel-arrow-left"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -350,13 +350,13 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
       class="arco-carousel-arrow-right"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -643,13 +643,13 @@ exports[`renders Carousel/demo/selfComponent.md correctly 1`] = `
         class="arco-carousel-arrow-left"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -660,13 +660,13 @@ exports[`renders Carousel/demo/selfComponent.md correctly 1`] = `
         class="arco-carousel-arrow-right"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"

@@ -90,13 +90,13 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
               class="arco-statistic-value-prefix"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-arrow-rise"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
@@ -168,13 +168,13 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
               class="arco-statistic-value-prefix"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-arrow-fall"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M24.008 41.99a.01.01 0 0 1-.016 0l-9.978-11.974A.01.01 0 0 1 14.02 30H33.98a.01.01 0 0 1 .007.016l-9.978 11.975Z"
@@ -402,14 +402,14 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
             class="arco-statistic-value-suffix"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-arrow-rise"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="color:#ee4d38"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
@@ -466,14 +466,14 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
             class="arco-statistic-value-suffix"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-arrow-fall"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="color:#0fbf60"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.008 41.99a.01.01 0 0 1-.016 0l-9.978-11.974A.01.01 0 0 1 14.02 30H33.98a.01.01 0 0 1 .007.016l-9.978 11.975Z"
@@ -520,14 +520,14 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
             class="arco-statistic-value-prefix"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-arrow-rise"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="color:#ee4d38"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"

@@ -14,13 +14,13 @@ exports[`ConfigProvider componentConfig.Calendar default 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -36,13 +36,13 @@ exports[`ConfigProvider componentConfig.Calendar default 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -1026,13 +1026,13 @@ exports[`ConfigProvider componentConfig.Calendar set className globally 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1048,13 +1048,13 @@ exports[`ConfigProvider componentConfig.Calendar set className globally 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -2038,13 +2038,13 @@ exports[`ConfigProvider componentConfig.Calendar set className globally and comp
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -2060,13 +2060,13 @@ exports[`ConfigProvider componentConfig.Calendar set className globally and comp
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"

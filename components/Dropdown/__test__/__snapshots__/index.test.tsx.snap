@@ -13,13 +13,13 @@ exports[`ConfigProvider componentConfig.Dropdown.Button default 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-more"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -47,13 +47,13 @@ exports[`ConfigProvider componentConfig.Dropdown.Button set className globally 1
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-more"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -81,13 +81,13 @@ exports[`ConfigProvider componentConfig.Dropdown.Button set className globally a
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-more"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"

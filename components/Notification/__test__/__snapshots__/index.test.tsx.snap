@@ -12,13 +12,13 @@ exports[`render correctly 1`] = `
         class="arco-notification-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-info-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -46,13 +46,13 @@ exports[`render correctly 1`] = `
         class="arco-notification-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -80,13 +80,13 @@ exports[`render correctly 1`] = `
         class="arco-notification-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-exclamation-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -114,13 +114,13 @@ exports[`render correctly 1`] = `
         class="arco-notification-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -164,13 +164,13 @@ exports[`render correctly 1`] = `
         class="arco-notification-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-message"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"

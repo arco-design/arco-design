@@ -21,13 +21,13 @@ exports[`renders TimePicker/demo/basic.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-clock-circle"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -59,13 +59,13 @@ exports[`renders TimePicker/demo/control.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-clock-circle"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -98,13 +98,13 @@ exports[`renders TimePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -115,13 +115,13 @@ exports[`renders TimePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -162,13 +162,13 @@ exports[`renders TimePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -179,13 +179,13 @@ exports[`renders TimePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -219,13 +219,13 @@ exports[`renders TimePicker/demo/disableConfirm.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -266,13 +266,13 @@ exports[`renders TimePicker/demo/disableConfirm.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -307,13 +307,13 @@ exports[`renders TimePicker/demo/disabled.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -356,13 +356,13 @@ exports[`renders TimePicker/demo/disabled.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -396,13 +396,13 @@ exports[`renders TimePicker/demo/disabledTime.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -443,13 +443,13 @@ exports[`renders TimePicker/demo/disabledTime.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -482,13 +482,13 @@ exports[`renders TimePicker/demo/extra.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-clock-circle"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -520,13 +520,13 @@ exports[`renders TimePicker/demo/format.md correctly 1`] = `
       class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -537,13 +537,13 @@ exports[`renders TimePicker/demo/format.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-clock-circle"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -587,13 +587,13 @@ exports[`renders TimePicker/demo/rangepicker.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-clock-circle"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -685,13 +685,13 @@ exports[`renders TimePicker/demo/size.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -724,13 +724,13 @@ exports[`renders TimePicker/demo/step.md correctly 1`] = `
       class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -741,13 +741,13 @@ exports[`renders TimePicker/demo/step.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-clock-circle"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -800,13 +800,13 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
                 class="arco-select-arrow-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -839,13 +839,13 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
               class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -856,13 +856,13 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
               class="arco-picker-suffix-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-clock-circle"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -963,13 +963,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -980,13 +980,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -1015,13 +1015,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1032,13 +1032,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -1067,13 +1067,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1084,13 +1084,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -1131,13 +1131,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1148,13 +1148,13 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -1208,13 +1208,13 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
                 class="arco-select-arrow-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1247,13 +1247,13 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
               class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1264,13 +1264,13 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
               class="arco-picker-suffix-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-clock-circle"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"

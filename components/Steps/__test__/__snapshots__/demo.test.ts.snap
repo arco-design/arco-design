@@ -171,13 +171,13 @@ exports[`renders Steps/demo/basic.md correctly 1`] = `
           class="arco-steps-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -341,13 +341,13 @@ exports[`renders Steps/demo/change_step.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -366,13 +366,13 @@ exports[`renders Steps/demo/change_step.md correctly 1`] = `
           Next
         </span>
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -474,13 +474,13 @@ exports[`renders Steps/demo/customDot.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -499,13 +499,13 @@ exports[`renders Steps/demo/customDot.md correctly 1`] = `
         Next
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -531,13 +531,13 @@ exports[`renders Steps/demo/description.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -791,13 +791,13 @@ exports[`renders Steps/demo/error.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -830,13 +830,13 @@ exports[`renders Steps/demo/error.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -903,13 +903,13 @@ exports[`renders Steps/demo/icon.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-home"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 17 24 7l17 10v24H7V17Z"
@@ -945,13 +945,13 @@ exports[`renders Steps/demo/icon.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-loading"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -984,13 +984,13 @@ exports[`renders Steps/demo/icon.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-thumb-up"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 17v26m35.17-21.394-5.948 18.697a1 1 0 0 1-.953.697H14V19h3l9.403-12.223a1 1 0 0 1 1.386-.196l2.535 1.87a6 6 0 0 1 2.044 6.974L31 19h9.265a2 2 0 0 1 1.906 2.606Z"
@@ -1035,13 +1035,13 @@ exports[`renders Steps/demo/label-placement.md correctly 1`] = `
           class="arco-steps-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -1151,13 +1151,13 @@ exports[`renders Steps/demo/lineless.md correctly 1`] = `
         class="arco-steps-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -1253,13 +1253,13 @@ exports[`renders Steps/demo/mini.md correctly 1`] = `
           class="arco-steps-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -1861,13 +1861,13 @@ exports[`renders Steps/demo/vertical.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1886,13 +1886,13 @@ exports[`renders Steps/demo/vertical.md correctly 1`] = `
           Next
         </span>
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"

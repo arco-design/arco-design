@@ -75,13 +75,13 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
         class="arco-switch-text-holder"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -92,13 +92,13 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
         class="arco-switch-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -219,13 +219,13 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
           class="arco-switch-dot-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -250,13 +250,13 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
           class="arco-switch-dot-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -280,13 +280,13 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
           class="arco-switch-dot-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -325,13 +325,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -356,13 +356,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -387,13 +387,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -418,13 +418,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -449,13 +449,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -479,13 +479,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -518,13 +518,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -549,13 +549,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -580,13 +580,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -611,13 +611,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -642,13 +642,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -672,13 +672,13 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
               class="arco-switch-dot-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-loading"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"

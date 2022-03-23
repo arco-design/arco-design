@@ -46,12 +46,6 @@ const config = {
       params: {
         attributes: [
           {
-            width: '1em',
-          },
-          {
-            height: '1em',
-          },
-          {
             fill: 'none',
           },
           {

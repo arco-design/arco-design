@@ -18,13 +18,13 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -54,13 +54,13 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -90,13 +90,13 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -134,13 +134,13 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -189,13 +189,13 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -234,13 +234,13 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -278,13 +278,13 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -333,13 +333,13 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -369,13 +369,13 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -414,13 +414,13 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -470,13 +470,13 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -516,13 +516,13 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -560,13 +560,13 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -605,13 +605,13 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -650,13 +650,13 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -694,13 +694,13 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -719,13 +719,13 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
         class="arco-collapse-item-header-extra"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more-vertical"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
@@ -761,13 +761,13 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -786,13 +786,13 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
         class="arco-collapse-item-header-extra"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more-vertical"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
@@ -828,13 +828,13 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -853,13 +853,13 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
         class="arco-collapse-item-header-extra"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more-vertical"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M25 10h-2V8h2v2ZM25 25h-2v-2h2v2ZM25 40h-2v-2h2v2Z"
@@ -971,13 +971,13 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
             class="arco-collapse-item-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -996,13 +996,13 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
           class="arco-collapse-item-header-extra"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-info-circle"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24 20v14m0-16v-4m18 10c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -1024,13 +1024,13 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
             class="arco-collapse-item-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1049,13 +1049,13 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
           class="arco-collapse-item-header-extra"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-settings"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M18.797 6.732A1 1 0 0 1 19.76 6h8.48a1 1 0 0 1 .964.732l1.285 4.628a1 1 0 0 0 1.213.7l4.651-1.2a1 1 0 0 1 1.116.468l4.24 7.344a1 1 0 0 1-.153 1.2L38.193 23.3a1 1 0 0 0 0 1.402l3.364 3.427a1 1 0 0 1 .153 1.2l-4.24 7.344a1 1 0 0 1-1.116.468l-4.65-1.2a1 1 0 0 0-1.214.7l-1.285 4.628a1 1 0 0 1-.964.732h-8.48a1 1 0 0 1-.963-.732L17.51 36.64a1 1 0 0 0-1.213-.7l-4.65 1.2a1 1 0 0 1-1.116-.468l-4.24-7.344a1 1 0 0 1 .153-1.2L9.809 24.7a1 1 0 0 0 0-1.402l-3.364-3.427a1 1 0 0 1-.153-1.2l4.24-7.344a1 1 0 0 1 1.116-.468l4.65 1.2a1 1 0 0 0 1.213-.7l1.286-4.628Z"
@@ -1080,13 +1080,13 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
             class="arco-collapse-item-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1125,13 +1125,13 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1169,13 +1169,13 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
                   class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-caret-right"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1214,13 +1214,13 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
                   class="arco-collapse-item-header-icon"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-caret-right"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1254,13 +1254,13 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1299,13 +1299,13 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1343,13 +1343,13 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1388,13 +1388,13 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
           class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
@@ -1433,13 +1433,13 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
           class="arco-collapse-item-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"

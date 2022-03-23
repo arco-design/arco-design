@@ -141,13 +141,13 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -174,13 +174,13 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -207,13 +207,13 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -240,13 +240,13 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -279,13 +279,13 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
         class="arco-icon-hover arco-input-tag-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -321,13 +321,13 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -352,13 +352,13 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
         class="arco-icon-hover arco-input-tag-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -390,13 +390,13 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -413,13 +413,13 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -436,13 +436,13 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -467,13 +467,13 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
         class="arco-icon-hover arco-input-tag-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -600,13 +600,13 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -627,13 +627,13 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -658,13 +658,13 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
           class="arco-icon-hover arco-input-tag-clear-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"

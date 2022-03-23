@@ -9,13 +9,13 @@ exports[`renders Alert/demo/action.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -51,13 +51,13 @@ exports[`renders Alert/demo/action.md correctly 1`] = `
       class="arco-alert-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -73,13 +73,13 @@ exports[`renders Alert/demo/action.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -120,13 +120,13 @@ exports[`renders Alert/demo/action.md correctly 1`] = `
       class="arco-alert-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -142,13 +142,13 @@ exports[`renders Alert/demo/action.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -220,13 +220,13 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -255,13 +255,13 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -285,13 +285,13 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       class="arco-alert-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -307,13 +307,13 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -347,13 +347,13 @@ exports[`renders Alert/demo/banner.md correctly 1`] = `
       class="arco-alert-icon-wrapper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-check-circle-fill"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           clip-rule="evenodd"
@@ -385,13 +385,13 @@ exports[`renders Alert/demo/basic.md correctly 1`] = `
     class="arco-alert-icon-wrapper"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-info-circle-fill"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         clip-rule="evenodd"
@@ -432,13 +432,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-info-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -462,13 +462,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -484,13 +484,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-exclamation-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -519,13 +519,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -546,13 +546,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -576,13 +576,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -598,13 +598,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -633,13 +633,13 @@ exports[`renders Alert/demo/closable.md correctly 1`] = `
           class="arco-alert-close-btn"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -669,13 +669,13 @@ exports[`renders Alert/demo/closeElement.md correctly 1`] = `
         class="arco-alert-icon-wrapper"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -699,13 +699,13 @@ exports[`renders Alert/demo/closeElement.md correctly 1`] = `
         class="arco-alert-close-btn"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -726,13 +726,13 @@ exports[`renders Alert/demo/closeElement.md correctly 1`] = `
         class="arco-alert-icon-wrapper"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -780,13 +780,13 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-info-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -814,13 +814,13 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-exclamation-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -854,13 +854,13 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -888,13 +888,13 @@ exports[`renders Alert/demo/type.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -938,13 +938,13 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-info-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -977,13 +977,13 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-exclamation-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -1022,13 +1022,13 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -1061,13 +1061,13 @@ exports[`renders Alert/demo/with-title.md correctly 1`] = `
           class="arco-alert-icon-wrapper"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"

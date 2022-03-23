@@ -35,13 +35,13 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
             class="arco-cascader-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -82,13 +82,13 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
             class="arco-cascader-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -136,14 +136,14 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -196,14 +196,14 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -247,13 +247,13 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
         class="arco-icon-hover arco-cascader-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -264,13 +264,13 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
         class="arco-cascader-arrow-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -316,14 +316,14 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -376,14 +376,14 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -448,13 +448,13 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -465,14 +465,14 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -543,13 +543,13 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -560,14 +560,14 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -616,13 +616,13 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
             class="arco-cascader-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -662,13 +662,13 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
             class="arco-cascader-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -715,13 +715,13 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-close"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -748,13 +748,13 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
           class="arco-icon-hover arco-cascader-clear-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-close"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -765,14 +765,14 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
           class="arco-cascader-expand-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-expand"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -821,13 +821,13 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -838,14 +838,14 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -890,13 +890,13 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-close"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -923,13 +923,13 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -940,14 +940,14 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -997,13 +997,13 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1014,14 +1014,14 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1066,13 +1066,13 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-close"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1099,13 +1099,13 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1116,14 +1116,14 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1167,13 +1167,13 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
         class="arco-icon-hover arco-cascader-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1184,13 +1184,13 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
         class="arco-cascader-arrow-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1236,14 +1236,14 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1296,14 +1296,14 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1349,13 +1349,13 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1382,14 +1382,14 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
         class="arco-cascader-expand-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-expand"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1447,14 +1447,14 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1504,14 +1504,14 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1556,13 +1556,13 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-close"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1589,14 +1589,14 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1646,13 +1646,13 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1663,14 +1663,14 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1715,13 +1715,13 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-close"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1748,13 +1748,13 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             class="arco-icon-hover arco-cascader-clear-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-close"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1765,14 +1765,14 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1850,14 +1850,14 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
           class="arco-cascader-expand-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-expand"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -1962,13 +1962,13 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
             class="arco-cascader-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -2018,14 +2018,14 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
             class="arco-cascader-expand-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-expand"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
@@ -2079,13 +2079,13 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
           class="arco-cascader-arrow-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M39.6 17.443 24.043 33 8.487 17.443"

@@ -55,13 +55,13 @@ exports[`renders Avatar/demo/basic.md correctly 1`] = `
         class="arco-avatar-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-user"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -405,13 +405,13 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
         style="color:#3491FA"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-camera"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m33 12-1.862-3.724A.5.5 0 0 0 30.691 8H17.309a.5.5 0 0 0-.447.276L15 12m16 14a7 7 0 1 1-14 0 7 7 0 0 1 14 0ZM7 40h34a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1Z"
@@ -432,13 +432,13 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
         class="arco-avatar-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-user"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -455,13 +455,13 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
         style="color:#14C9C9"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-edit"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
@@ -482,13 +482,13 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
         class="arco-avatar-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-user"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -505,13 +505,13 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
         style="color:#FFC72E"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-edit"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
@@ -539,13 +539,13 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
         class="arco-avatar-trigger-icon-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-camera"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m33 12-1.862-3.724A.5.5 0 0 0 30.691 8H17.309a.5.5 0 0 0-.447.276L15 12m16 14a7 7 0 1 1-14 0 7 7 0 0 1 14 0ZM7 40h34a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1Z"

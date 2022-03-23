@@ -168,13 +168,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             class="arco-menu-item arco-menu-disabled"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-home"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 17 24 7l17 10v24H7V17Z"
@@ -189,13 +189,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             class="arco-menu-item arco-menu-selected"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -212,13 +212,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -231,13 +231,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix is-open"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -297,13 +297,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -371,13 +371,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -456,13 +456,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -475,13 +475,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix "
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -548,13 +548,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
       style="width:220px"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -588,13 +588,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -606,13 +606,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               class="arco-menu-item arco-menu-disabled"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-home"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M7 17 24 7l17 10v24H7V17Z"
@@ -627,13 +627,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               class="arco-menu-item arco-menu-selected"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-calendar"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -649,13 +649,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             >
               <span>
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-calendar"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -667,13 +667,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -686,13 +686,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             >
               <span>
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-calendar"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -704,13 +704,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -739,13 +739,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -761,13 +761,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -821,13 +821,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             class="arco-menu-item arco-menu-disabled"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-home"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 17 24 7l17 10v24H7V17Z"
@@ -842,13 +842,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             class="arco-menu-item"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -860,13 +860,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             class="arco-menu-item arco-menu-selected"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -883,13 +883,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -902,13 +902,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 class="arco-menu-icon-suffix is-open"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -968,13 +968,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1042,13 +1042,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1127,13 +1127,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1146,13 +1146,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 class="arco-menu-icon-suffix "
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1226,13 +1226,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-caret-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M13.171 24.937a1.2 1.2 0 0 1 0-1.874L30.051 9.56c.785-.629 1.949-.07 1.949.937v27.006c0 1.006-1.164 1.566-1.95.937L13.171 24.937Z"
@@ -1259,13 +1259,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1281,13 +1281,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1341,13 +1341,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             class="arco-menu-item arco-menu-disabled"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-home"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 17 24 7l17 10v24H7V17Z"
@@ -1362,13 +1362,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             class="arco-menu-item"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1380,13 +1380,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             class="arco-menu-item arco-menu-selected"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1403,13 +1403,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1422,13 +1422,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 class="arco-menu-icon-suffix is-open"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1488,13 +1488,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1562,13 +1562,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1647,13 +1647,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1666,13 +1666,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 class="arco-menu-icon-suffix "
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1739,13 +1739,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
       style="width:200px"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-caret-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M13.171 24.937a1.2 1.2 0 0 1 0-1.874L30.051 9.56c.785-.629 1.949-.07 1.949.937v27.006c0 1.006-1.164 1.566-1.95.937L13.171 24.937Z"
@@ -1781,13 +1781,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1803,13 +1803,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1874,13 +1874,13 @@ exports[`renders Layout/demo/resize.md correctly 1`] = `
               class="arco-resizebox-trigger-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"

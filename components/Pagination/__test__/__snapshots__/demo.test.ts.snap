@@ -18,13 +18,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -65,13 +65,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-jumper"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -93,13 +93,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-next"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -137,13 +137,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
               class="arco-select-arrow-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -184,13 +184,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -231,13 +231,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-jumper"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -259,13 +259,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -304,13 +304,13 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
               class="arco-select-arrow-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -350,13 +350,13 @@ exports[`renders Pagination/demo/basic.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -397,13 +397,13 @@ exports[`renders Pagination/demo/basic.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -425,13 +425,13 @@ exports[`renders Pagination/demo/basic.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-next"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -453,13 +453,13 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -500,13 +500,13 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -528,13 +528,13 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-next"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -572,13 +572,13 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
             class="arco-select-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -603,13 +603,13 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-prev"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -626,13 +626,13 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -678,13 +678,13 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -706,13 +706,13 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-next"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -750,13 +750,13 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
             class="arco-select-arrow-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -820,13 +820,13 @@ exports[`renders Pagination/demo/itemRender.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -868,13 +868,13 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -915,13 +915,13 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -943,13 +943,13 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-next"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -984,13 +984,13 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -1013,13 +1013,13 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-more"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -1035,13 +1035,13 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-next"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -1070,13 +1070,13 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1117,13 +1117,13 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-next"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -1149,13 +1149,13 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1196,13 +1196,13 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-jumper"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -1224,13 +1224,13 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-next"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -1253,13 +1253,13 @@ exports[`renders Pagination/demo/simple.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -1290,13 +1290,13 @@ exports[`renders Pagination/demo/simple.md correctly 1`] = `
       class="arco-pagination-item arco-pagination-item-next"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -1382,13 +1382,13 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1429,13 +1429,13 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
         class="arco-pagination-item arco-pagination-item-next"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -1473,13 +1473,13 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
               class="arco-select-arrow-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1521,13 +1521,13 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         style="background:var(--color-bg-2);margin-right:0"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1574,13 +1574,13 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         style="background:var(--color-bg-2);margin-right:0"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -1604,13 +1604,13 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         style="background:var(--color-bg-2);margin-right:0"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -1630,13 +1630,13 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         style="background:var(--color-bg-2)"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -1683,13 +1683,13 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         style="background:var(--color-bg-2)"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -1713,13 +1713,13 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         style="background:var(--color-bg-2)"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
