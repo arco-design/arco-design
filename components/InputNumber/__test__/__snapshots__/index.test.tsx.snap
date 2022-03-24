@@ -11,7 +11,10 @@ exports[`ConfigProvider componentConfig.InputNumber default 1`] = `
       class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
     >
       <input
+        aria-valuemax="Infinity"
+        aria-valuemin="-Infinity"
         class="arco-input arco-input-size-default"
+        role="spinbutton"
         value=""
       />
       <span
@@ -72,7 +75,10 @@ exports[`ConfigProvider componentConfig.InputNumber set className globally 1`] =
       class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
     >
       <input
+        aria-valuemax="Infinity"
+        aria-valuemin="-Infinity"
         class="arco-input arco-input-size-default"
+        role="spinbutton"
         value=""
       />
       <span
@@ -133,7 +139,10 @@ exports[`ConfigProvider componentConfig.InputNumber set className globally and c
       class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
     >
       <input
+        aria-valuemax="Infinity"
+        aria-valuemin="-Infinity"
         class="arco-input arco-input-size-default"
+        role="spinbutton"
         value=""
       />
       <span
