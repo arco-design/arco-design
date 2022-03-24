@@ -27,6 +27,7 @@ function Demo() {
       src={src}
       title={title}
       description={description}
+      alt="lamp"
     />
     <Image
       width={200}
@@ -35,6 +36,7 @@ function Demo() {
       description={description}
       footerPosition="outer"
       style={{ marginLeft: 67, verticalAlign: 'top' }}
+      alt="lamp"
     />
   </div>
 }

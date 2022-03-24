@@ -40,6 +40,7 @@ function Demo() {
         ],
         actionsLayout: ['info', 'rotateRight', 'zoomIn', 'zoomOut', 'extra'],
       }}
+      alt="lamp"
     />
   );
 }

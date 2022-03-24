@@ -1,4 +1,4 @@
-import React, { useContext, ImgHTMLAttributes, useEffect, useMemo, LegacyRef, useRef } from 'react';
+import React, { useContext, useEffect, useMemo, LegacyRef, useRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLoading from '../../icon/react-icon/IconLoading';
@@ -16,8 +16,7 @@ import { PreviewGroupContext } from './previewGroupContext';
 import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
-type ImagePropsType = ImageProps &
-  Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'> & { _index?: number };
+type ImagePropsType = ImageProps & { _index?: number };
 
 let uuid = 0;
 
@@ -180,6 +179,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
         onLoad={onImgLoaded}
         onError={onImgLoadError}
         onClick={onImgClick}
+        alt={alt}
       />
       {!isLoaded && (
         <div className={`${prefixCls}-overlay`}>
