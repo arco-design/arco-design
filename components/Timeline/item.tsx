@@ -45,6 +45,7 @@ function Item(props: TimelineItemProps, ref: RefObject<HTMLDivElement>) {
   return (
     <div
       ref={ref}
+      role={direction === 'vertical' ? 'listitem' : undefined}
       {...rest}
       className={cs(
         `${prefixCls}-item`,
