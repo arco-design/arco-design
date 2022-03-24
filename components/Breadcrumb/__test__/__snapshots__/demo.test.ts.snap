@@ -14,13 +14,13 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -40,13 +40,13 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -76,13 +76,13 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -98,13 +98,13 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -120,13 +120,13 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -162,13 +162,13 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -184,13 +184,13 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -220,13 +220,13 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -242,13 +242,13 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -322,13 +322,13 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -344,13 +344,13 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -380,13 +380,13 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -402,13 +402,13 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -439,13 +439,13 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -460,13 +460,13 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
         class="arco-breadcrumb-item-dropdown-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -478,13 +478,13 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -515,13 +515,13 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -540,13 +540,13 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
         class="arco-breadcrumb-item-dropdown-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -558,13 +558,13 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       class="arco-breadcrumb-item-separator"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-oblique-line"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M29.506 6.502 18.493 41.498"
@@ -597,13 +597,13 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         class="arco-breadcrumb-item"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-home"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 17 24 7l17 10v24H7V17Z"
@@ -617,13 +617,13 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -639,13 +639,13 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -670,13 +670,13 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         class="arco-breadcrumb-item"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-home"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 17 24 7l17 10v24H7V17Z"
@@ -690,13 +690,13 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"
@@ -712,13 +712,13 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         class="arco-breadcrumb-item-separator"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-oblique-line"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M29.506 6.502 18.493 41.498"

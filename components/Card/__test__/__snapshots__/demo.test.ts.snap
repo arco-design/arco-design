@@ -667,14 +667,14 @@ Array [
           class="icon-hover"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-arrow-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             style="cursor:pointer"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="m27.728 11.27 12.728 12.728-12.728 12.728M5 24h34.295"
@@ -764,13 +764,13 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
                 class="icon-hover"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-thumb-up"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M7 17v26m35.17-21.394-5.948 18.697a1 1 0 0 1-.953.697H14V19h3l9.403-12.223a1 1 0 0 1 1.386-.196l2.535 1.87a6 6 0 0 1 2.044 6.974L31 19h9.265a2 2 0 0 1 1.906 2.606Z"
@@ -785,13 +785,13 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
                 class="icon-hover"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-share-internal"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M40 35v6H8v-6m1.108-4c1.29-8.868 13.917-15.85 29.392-15.998M30 6l9 9-9 9"
@@ -806,13 +806,13 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
                 class="icon-hover"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-more"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"

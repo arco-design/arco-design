@@ -259,13 +259,13 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -278,13 +278,13 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -714,13 +714,13 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -733,13 +733,13 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -758,14 +758,14 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       >
         RIGHT 0-3
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-delete"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           style="cursor:pointer"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
@@ -966,13 +966,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1027,13 +1027,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1086,13 +1086,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1147,13 +1147,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1208,13 +1208,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1271,13 +1271,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -1290,13 +1290,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -1369,13 +1369,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1428,13 +1428,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1487,13 +1487,13 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-drag"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1889,13 +1889,13 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -1911,13 +1911,13 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -2372,13 +2372,13 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -2401,13 +2401,13 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
         class="arco-icon-hover arco-transfer-view-icon-clear"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-delete"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
@@ -2436,13 +2436,13 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-remove"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -2462,13 +2462,13 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-remove"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -2488,13 +2488,13 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-remove"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -2950,13 +2950,13 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-left"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M32 8.4 16.444 23.956 32 39.513"
@@ -2987,13 +2987,13 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
                 class="arco-pagination-item arco-pagination-item-next"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-right"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="m16 39.513 15.556-15.557L16 8.4"
@@ -3014,13 +3014,13 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -3033,13 +3033,13 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -3226,13 +3226,13 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-left"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M32 8.4 16.444 23.956 32 39.513"
@@ -3263,13 +3263,13 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
                 class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-right"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="m16 39.513 15.556-15.557L16 8.4"
@@ -3503,14 +3503,14 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
                 <span>
                   Option 7
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-star"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     style="margin-left:4px;color:rgb(var(--gold-6))"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -3570,13 +3570,13 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -3589,13 +3589,13 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -3856,13 +3856,13 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
               class="arco-input-group-suffix"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-search"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M33.072 33.071c6.248-6.248 6.248-16.379 0-22.627-6.249-6.249-16.38-6.249-22.628 0-6.248 6.248-6.248 16.379 0 22.627 6.248 6.248 16.38 6.248 22.628 0Zm0 0 8.485 8.485"
@@ -4080,13 +4080,13 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -4099,13 +4099,13 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -4182,13 +4182,13 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
               class="arco-input-group-suffix"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-search"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M33.072 33.071c6.248-6.248 6.248-16.379 0-22.627-6.249-6.249-16.38-6.249-22.628 0-6.248 6.248-6.248 16.379 0 22.627 6.248 6.248 16.38 6.248 22.628 0Zm0 0 8.485 8.485"
@@ -4583,13 +4583,13 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
         class="arco-icon-hover arco-transfer-view-icon-clear"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-delete"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
@@ -4618,13 +4618,13 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-remove"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -4644,13 +4644,13 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-remove"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -4670,13 +4670,13 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
               class="arco-icon-hover arco-transfer-view-item-icon-remove"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-close"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -4848,13 +4848,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-up"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
@@ -4867,13 +4867,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-down"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4907,13 +4907,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-up"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
@@ -4926,13 +4926,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-down"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5267,13 +5267,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -5286,13 +5286,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -5454,13 +5454,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-up"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
@@ -5473,13 +5473,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-down"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5513,13 +5513,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-up"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
@@ -5532,13 +5532,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-table-sorter-icon"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-caret-down"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5574,13 +5574,13 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                                   class="arco-empty-image"
                                 >
                                   <svg
+                                    aria-hidden="true"
                                     class="arco-icon arco-icon-empty"
                                     fill="none"
-                                    height="1em"
+                                    focusable="false"
                                     stroke="currentColor"
                                     stroke-width="4"
                                     viewBox="0 0 48 48"
-                                    width="1em"
                                   >
                                     <path
                                       d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -5685,13 +5685,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
                 class="arco-tree-node-switcher-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-caret-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5760,13 +5760,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
                 class="arco-tree-node-switcher-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-caret-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5941,13 +5941,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
                 class="arco-tree-node-switcher-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-caret-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6266,13 +6266,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -6285,13 +6285,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"

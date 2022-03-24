@@ -5,6 +5,8 @@ function {{ iconName }}Component (iconProps, ref) {
   const { prefixCls } = useContext(IconContext);
   const { spin, className } = iconProps;
   const props = {
+    "aria-hidden": true,
+    focusable: false,
     ref,
     ...iconProps,
     className: `${className ? className + ' ' : ''}${prefixCls}-icon ${prefixCls}-icon-{{iconClassName}}`,

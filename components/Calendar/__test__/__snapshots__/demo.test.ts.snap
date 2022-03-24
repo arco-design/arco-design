@@ -17,13 +17,13 @@ exports[`renders Calendar/demo/basic.md correctly 1`] = `
           class="arco-calendar-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-left"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M32 8.4 16.444 23.956 32 39.513"
@@ -39,13 +39,13 @@ exports[`renders Calendar/demo/basic.md correctly 1`] = `
           class="arco-calendar-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="m16 39.513 15.556-15.557L16 8.4"
@@ -1033,13 +1033,13 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
           class="arco-calendar-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-left"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M32 8.4 16.444 23.956 32 39.513"
@@ -1055,13 +1055,13 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
           class="arco-calendar-header-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-right"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="m16 39.513 15.556-15.557L16 8.4"
@@ -2199,13 +2199,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-double-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
@@ -2216,13 +2216,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M32 8.4 16.444 23.956 32 39.513"
@@ -2238,13 +2238,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m16 39.513 15.556-15.557L16 8.4"
@@ -2255,13 +2255,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-double-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
@@ -2907,13 +2907,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-double-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
@@ -2935,13 +2935,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
         class="arco-calendar-header-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-double-right"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
@@ -3172,13 +3172,13 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
                 class="arco-select-arrow-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -3214,13 +3214,13 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
                 class="arco-select-arrow-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"

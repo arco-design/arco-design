@@ -191,13 +191,13 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
         class="arco-progress-circle-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-exclamation"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M23 9H25V30H23z"
@@ -253,13 +253,13 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
         class="arco-progress-circle-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -453,13 +453,13 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
         class="arco-progress-circle-text"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -711,14 +711,14 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         style="width:16px;height:16px"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           style="font-size:14px"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -862,13 +862,13 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
               <span>
                 90% 
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-exclamation-circle-fill"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     clip-rule="evenodd"
@@ -1013,13 +1013,13 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
           class="arco-progress-circle-text"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-exclamation"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M23 9H25V30H23z"
@@ -1074,13 +1074,13 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
           class="arco-progress-circle-text"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-check"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -1222,13 +1222,13 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
           <span>
             30% 
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-exclamation-circle-fill"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 clip-rule="evenodd"

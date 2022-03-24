@@ -19,13 +19,13 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -42,13 +42,13 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -64,13 +64,13 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
       class="arco-tag-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -126,13 +126,13 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
         class="arco-tag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check-circle-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -343,13 +343,13 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -364,13 +364,13 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
       class="arco-tag-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-star"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -382,13 +382,13 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -426,13 +426,13 @@ exports[`renders Tag/demo/close-async.md correctly 1`] = `
     class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-close"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -453,13 +453,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -476,13 +476,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -499,13 +499,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -522,13 +522,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -545,13 +545,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -568,13 +568,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -591,13 +591,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -614,13 +614,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -637,13 +637,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -660,13 +660,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -683,13 +683,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -706,13 +706,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -729,13 +729,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -757,13 +757,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -780,13 +780,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -803,13 +803,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -826,13 +826,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -849,13 +849,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -872,13 +872,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -895,13 +895,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -918,13 +918,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -941,13 +941,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -964,13 +964,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -987,13 +987,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1010,13 +1010,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1033,13 +1033,13 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-close"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1065,13 +1065,13 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
         class="arco-tag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-github"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M.056 24.618c0 10.454 6.7 19.344 16.038 22.608 1.259.32 1.067-.582 1.067-1.19v-4.148c-7.265.853-7.553-3.957-8.043-4.758-.987-1.686-3.312-2.112-2.62-2.912 1.654-.853 3.34.213 5.291 3.1 1.413 2.09 4.166 1.738 5.562 1.385a6.777 6.777 0 0 1 1.856-3.253C11.687 34.112 8.55 29.519 8.55 24.057c0-2.646.874-5.082 2.586-7.045-1.088-3.243.102-6.01.26-6.422 3.11-.282 6.337 2.225 6.587 2.421 1.766-.474 3.782-.73 6.038-.73 2.266 0 4.293.26 6.069.74.603-.458 3.6-2.608 6.49-2.345.155.41 1.317 3.12.294 6.315 1.734 1.968 2.62 4.422 2.62 7.077 0 5.472-3.158 10.07-10.699 11.397a6.82 6.82 0 0 1 2.037 4.875v6.02c.042.48 0 .96.806.96 9.477-3.194 16.299-12.15 16.299-22.697C47.938 11.396 37.218.68 23.996.68 10.77.675.055 11.391.055 24.617l.001.001Z"
@@ -1094,13 +1094,13 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
         class="arco-tag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-gitlab"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M45.53 26.154 39.694 6.289v-.005c-.407-1.227-1.377-1.955-2.587-1.955-1.254 0-2.277.723-2.663 1.885L30.62 17.625H17.4l-3.825-11.41c-.386-1.163-1.41-1.886-2.663-1.886-1.237 0-2.276.792-2.592 1.96l-5.83 19.865a2.047 2.047 0 0 0 .724 2.18l19.741 14.807c.14.193.332.338.557.418l.461.343.455-.343c.263-.091.483-.252.638-.477L44.8 28.33a2.03 2.03 0 0 0 .728-2.175ZM36.84 6.932c.053-.096.155-.102.187-.102.06 0 .134.016.182.161l3.183 10.704H33.24l3.6-10.763Zm-26.11.054c.047-.14.122-.156.181-.156.145 0 .156.006.183.091L14.699 17.7H7.633l3.096-10.714ZM5.076 26.502l1.511-5.213 10.843 14.475-12.354-9.262Zm3.96-6.236h6.54l4.865 15.23-11.406-15.23Zm15.01 17.877-5.743-17.877h11.48l-5.737 17.877Zm8.459-17.877h6.402L27.642 35.31l4.864-15.043Zm-2.18 15.745L41.43 21.187l1.58 5.315-12.685 9.509Z"
@@ -1123,13 +1123,13 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
         class="arco-tag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-twitter"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M43.277 13.575c0 16.613-10.912 28.575-26.962 29.1-6.788.525-11.438-1.537-15.6-4.65 4.65.525 10.912-1.012 13.987-4.163-4.65 0-7.275-2.625-8.812-6.187h4.162C5.89 26.1 2.74 22.987 2.74 17.812c1.012.525 2.062 1.013 4.162 1.013-3.637-2.063-5.7-8.813-3.112-12.975 4.65 5.175 10.35 9.863 19.762 10.35C20.927 5.85 34.465.6 40.165 7.388c2.625-.525 4.162-1.538 6.187-2.625-.525 2.625-2.062 4.162-4.162 5.175 2.062 0 3.637-.525 5.175-1.538-.488 2.063-2.55 4.162-4.088 5.175Z"
@@ -1151,13 +1151,13 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
         class="arco-tag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-facebook"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M35.184 15.727 34.312 24h-6.613v24h-9.933V24h-4.95v-8.273h4.95v-4.98C17.766 4.016 20.564 0 28.518 0h6.61v8.273H30.99c-3.086 0-3.292 1.166-3.292 3.32v4.134h7.485Z"
@@ -1188,13 +1188,13 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1215,13 +1215,13 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1242,13 +1242,13 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -1268,13 +1268,13 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"

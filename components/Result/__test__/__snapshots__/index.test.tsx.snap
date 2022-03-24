@@ -11,13 +11,13 @@ exports[`ConfigProvider componentConfig.Result default 1`] = `
       class="arco-result-icon-tip arco-result-icon-info"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M25 39H27V60H25z"
@@ -56,13 +56,13 @@ exports[`ConfigProvider componentConfig.Result set className globally 1`] = `
       class="arco-result-icon-tip arco-result-icon-info"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M25 39H27V60H25z"
@@ -101,13 +101,13 @@ exports[`ConfigProvider componentConfig.Result set className globally and compon
       class="arco-result-icon-tip arco-result-icon-info"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-info"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M25 39H27V60H25z"

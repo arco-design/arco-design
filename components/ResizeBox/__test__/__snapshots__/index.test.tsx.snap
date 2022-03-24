@@ -17,13 +17,13 @@ exports[`ConfigProvider componentConfig.ResizeBox default 1`] = `
         class="arco-resizebox-trigger-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-dot-vertical"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -60,13 +60,13 @@ exports[`ConfigProvider componentConfig.ResizeBox set className globally 1`] = `
         class="arco-resizebox-trigger-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-dot-vertical"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -103,13 +103,13 @@ exports[`ConfigProvider componentConfig.ResizeBox set className globally and com
         class="arco-resizebox-trigger-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-dot-vertical"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"

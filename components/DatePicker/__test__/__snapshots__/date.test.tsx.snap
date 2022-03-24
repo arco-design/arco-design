@@ -20,13 +20,13 @@ exports[`ConfigProvider componentConfig.DatePicker default 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -57,13 +57,13 @@ exports[`ConfigProvider componentConfig.DatePicker set className globally 1`] = 
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -94,13 +94,13 @@ exports[`ConfigProvider componentConfig.DatePicker set className globally and co
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"

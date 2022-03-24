@@ -27,13 +27,13 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-up"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -44,13 +44,13 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -87,13 +87,13 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
               class="arco-input-number-step-button arco-input-number-step-button-disabled"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-up"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -104,13 +104,13 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
               class="arco-input-number-step-button arco-input-number-step-button-disabled"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -159,13 +159,13 @@ exports[`renders InputNumber/demo/format.md correctly 1`] = `
             class="arco-input-number-step-button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-up"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -176,13 +176,13 @@ exports[`renders InputNumber/demo/format.md correctly 1`] = `
             class="arco-input-number-step-button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -212,13 +212,13 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
           class="arco-input-number-step-button"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-minus"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M5 24h38"
@@ -244,13 +244,13 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
           class="arco-input-number-step-button"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-plus"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M5 24h38M24 5v38"
@@ -274,13 +274,13 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
           class="arco-input-number-step-button arco-input-number-step-button-disabled"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-minus"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M5 24h38"
@@ -307,13 +307,13 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
           class="arco-input-number-step-button arco-input-number-step-button-disabled"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-plus"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M5 24h38M24 5v38"
@@ -352,13 +352,13 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-up"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -369,13 +369,13 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -411,13 +411,13 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-up"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -428,13 +428,13 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -538,13 +538,13 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
                 class="arco-input-number-step-button"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-up"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -555,13 +555,13 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
                 class="arco-input-number-step-button"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -587,13 +587,13 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
             class="arco-input-number-step-button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-minus"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M5 24h38"
@@ -619,13 +619,13 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
             class="arco-input-number-step-button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-plus"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M5 24h38M24 5v38"
@@ -665,13 +665,13 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-up"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -682,13 +682,13 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -738,13 +738,13 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-up"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 30.557 24.043 15 8.487 30.557"
@@ -755,13 +755,13 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
               class="arco-input-number-step-button"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-down"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -787,13 +787,13 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
           class="arco-input-number-step-button"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-minus"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M5 24h38"
@@ -828,13 +828,13 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
           class="arco-input-number-step-button"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-plus"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M5 24h38M24 5v38"

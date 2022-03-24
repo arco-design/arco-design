@@ -368,14 +368,14 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
                 class="arco-spin-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-loading"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   style="font-size:12px"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -486,14 +486,14 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
             class="arco-timeline-item-dot-custom"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-clock-circle"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="font-size:12px;color:#F53F3F"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -573,14 +573,14 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
             class="arco-timeline-item-dot-custom"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-check"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -621,14 +621,14 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
             class="arco-timeline-item-dot-custom"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-check"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -927,14 +927,14 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
         >
           The third milestone
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-exclamation-circle-fill"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             style="color:F53F3F;font-size:12px;margin-left:4px"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               clip-rule="evenodd"
@@ -1706,14 +1706,14 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
                 class="arco-spin-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-loading"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   style="font-size:12px"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
