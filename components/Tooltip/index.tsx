@@ -128,6 +128,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
             className={cs(`${prefixCls}-content`, `${prefixCls}-content-${position}`, {
               [`${prefixCls}-mini`]: mini,
             })}
+            role="tooltip"
           >
             <div className={`${prefixCls}-content-inner`}>{renderedContent}</div>
           </div>
