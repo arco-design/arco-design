@@ -45,23 +45,21 @@ function Demo() {
 
   return <div>
     <div>
-      <DemoImage
-        width={300}/>
+      <DemoImage width={300} alt="lamp1" />
       <DemoImage
         width={200}
         simple={true}
+        alt="lamp2"
         style={{ marginLeft: 67, verticalAlign: 'top' }}
       />
     </div>
     <div style={{ marginTop: 67 }}>
-      <DemoImage
-        width={300}
-        footerPosition="outer"
-      />
+      <DemoImage width={300} footerPosition="outer" alt="lamp3" />
       <DemoImage
         width={200}
         simple={true}
         footerPosition="outer"
+        alt="lamp4"
         style={{ marginLeft: 67, verticalAlign: 'top' }}
       />
     </div>

@@ -1,9 +1,9 @@
-import { CSSProperties, ReactNode, HTMLAttributes } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes } from 'react';
 
 /**
  * @title Image
  */
-export interface ImageProps {
+export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'> {
   style?: CSSProperties;
   className?: string | string[];
   /**

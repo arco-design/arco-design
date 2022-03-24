@@ -22,6 +22,7 @@ function Demo() {
       width={400}
       height={300}
       src="some-error.png"
+      alt="some-error"
     />
     <Image 
       width={400}
