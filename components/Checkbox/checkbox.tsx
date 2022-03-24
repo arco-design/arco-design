@@ -81,6 +81,8 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
   return (
     <label
       ref={ref}
+      aria-disabled={disabled}
+      {...(disabled ? { tabIndex: -1, focusable: false } : {})}
       {...omit(rest, ['onChange'])}
       onClick={onLabelClick}
       className={classNames}
@@ -95,6 +97,7 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
         // To avoid triggering onChange twice in Select if it's used in Select option.
         onClick={(e) => e.stopPropagation()}
         type="checkbox"
+        data-indeterminate={indeterminate}
       />
 
       {isFunction(children) ? (
