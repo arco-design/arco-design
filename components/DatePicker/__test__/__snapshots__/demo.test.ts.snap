@@ -4187,6 +4187,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
   >
     <div
       class="arco-alert arco-alert-info"
+      role="alert"
     >
       <div
         class="arco-alert-content-wrapper"
@@ -4409,6 +4410,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
   >
     <div
       class="arco-alert arco-alert-info"
+      role="alert"
     >
       <div
         class="arco-alert-content-wrapper"
