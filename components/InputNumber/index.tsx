@@ -279,6 +279,10 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   return (
     <Input
+      role="spinbutton"
+      aria-valuemax={max}
+      aria-valuemin={min}
+      aria-valuenow={value as number}
       {...omit(rest, ['allowClear'])}
       {...inputEventHandlers}
       style={style}
