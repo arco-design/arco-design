@@ -82,7 +82,7 @@ function Alert(baseProps: AlertProps, ref) {
         afterClose && afterClose();
       }}
     >
-      <div ref={ref} style={style} className={classNames}>
+      <div ref={ref} style={style} className={classNames} role="alert">
         {showIcon && <div className={`${prefixCls}-icon-wrapper`}>{renderIcon(type)}</div>}
         <div className={`${prefixCls}-content-wrapper`}>
           {title && <div className={`${prefixCls}-title`}>{title}</div>}
