@@ -124,6 +124,15 @@ function Rate(baseProps: RateProps, ref) {
     const CharacterWrapper = tooltip ? Tooltip : React.Fragment;
     const tooltipProps = tooltip ? { content: tooltip } : {};
 
+    function getAriaProps(isHalf?: boolean) {
+      return {
+        role: 'radio',
+        'aria-checked': index + (isHalf ? 0.5 : 1) <= _usedIndex,
+        'aria-setsize': count,
+        'aria-posinset': index + (isHalf ? 0.5 : 1),
+      };
+    }
+
     return (
       <CharacterWrapper key={index} {...tooltipProps}>
         <div
@@ -134,11 +143,20 @@ function Rate(baseProps: RateProps, ref) {
               setAnimation(false);
             }
           }}
+          {...(!allowHalf ? getAriaProps() : {})}
         >
-          <div className={`${prefixCls}-character-left`} {...leftProps}>
+          <div
+            className={`${prefixCls}-character-left`}
+            {...leftProps}
+            {...(allowHalf ? getAriaProps(true) : {})}
+          >
             {_usedCharacter}
           </div>
-          <div className={`${prefixCls}-character-right`} {...rightProps}>
+          <div
+            className={`${prefixCls}-character-right`}
+            {...rightProps}
+            {...(allowHalf ? getAriaProps() : {})}
+          >
             {_usedCharacter}
           </div>
         </div>

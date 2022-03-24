@@ -12,7 +12,11 @@ Array [
         class="arco-rate-inner"
       >
         <div
+          aria-checked="true"
+          aria-posinset="1"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -54,7 +58,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="2"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -96,7 +104,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="3"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -138,7 +150,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="4"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -180,7 +196,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="5"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -240,7 +260,11 @@ Array [
         class="arco-rate-inner"
       >
         <div
+          aria-checked="true"
+          aria-posinset="1"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -282,7 +306,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="2"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -324,7 +352,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="3"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -366,7 +398,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="4"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -408,7 +444,11 @@ Array [
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="5"
+          aria-setsize="5"
           class="arco-rate-character arco-rate-character-full"
+          role="radio"
         >
           <div
             class="arco-rate-character-left"
@@ -472,7 +512,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-full"
     >
       <div
+        aria-checked="true"
+        aria-posinset="0.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -491,7 +535,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -514,7 +562,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-full"
     >
       <div
+        aria-checked="true"
+        aria-posinset="1.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -533,7 +585,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -556,7 +612,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-half"
     >
       <div
+        aria-checked="true"
+        aria-posinset="2.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -575,7 +635,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -598,7 +662,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="3.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -617,7 +685,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -640,7 +712,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="4.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -659,7 +735,11 @@ exports[`renders Rate/demo/allowHalf.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -690,7 +770,11 @@ exports[`renders Rate/demo/basic.md correctly 1`] = `
     class="arco-rate-inner"
   >
     <div
+      aria-checked="false"
+      aria-posinset="1"
+      aria-setsize="5"
       class="arco-rate-character"
+      role="radio"
     >
       <div
         class="arco-rate-character-left"
@@ -732,7 +816,11 @@ exports[`renders Rate/demo/basic.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-checked="false"
+      aria-posinset="2"
+      aria-setsize="5"
       class="arco-rate-character"
+      role="radio"
     >
       <div
         class="arco-rate-character-left"
@@ -774,7 +862,11 @@ exports[`renders Rate/demo/basic.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-checked="false"
+      aria-posinset="3"
+      aria-setsize="5"
       class="arco-rate-character"
+      role="radio"
     >
       <div
         class="arco-rate-character-left"
@@ -816,7 +908,11 @@ exports[`renders Rate/demo/basic.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-checked="false"
+      aria-posinset="4"
+      aria-setsize="5"
       class="arco-rate-character"
+      role="radio"
     >
       <div
         class="arco-rate-character-left"
@@ -858,7 +954,11 @@ exports[`renders Rate/demo/basic.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-checked="false"
+      aria-posinset="5"
+      aria-setsize="5"
       class="arco-rate-character"
+      role="radio"
     >
       <div
         class="arco-rate-character-left"
@@ -913,7 +1013,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
       class="arco-rate-inner"
     >
       <div
+        aria-checked="true"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -935,7 +1039,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -957,7 +1065,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -979,7 +1091,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1001,7 +1117,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1032,7 +1152,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
       class="arco-rate-inner"
     >
       <div
+        aria-checked="true"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1054,7 +1178,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1076,7 +1204,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1098,7 +1230,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1120,7 +1256,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -1154,7 +1294,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character arco-rate-character-full"
       >
         <div
+          aria-checked="true"
+          aria-posinset="0.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1163,7 +1307,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="1"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1176,7 +1324,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character arco-rate-character-full"
       >
         <div
+          aria-checked="true"
+          aria-posinset="1.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1185,7 +1337,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="2"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1198,7 +1354,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character arco-rate-character-half"
       >
         <div
+          aria-checked="true"
+          aria-posinset="2.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1207,7 +1367,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="false"
+          aria-posinset="3"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1220,7 +1384,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character"
       >
         <div
+          aria-checked="false"
+          aria-posinset="3.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1229,7 +1397,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="false"
+          aria-posinset="4"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1242,7 +1414,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character"
       >
         <div
+          aria-checked="false"
+          aria-posinset="4.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1251,7 +1427,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="false"
+          aria-posinset="5"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1273,7 +1453,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character arco-rate-character-full"
       >
         <div
+          aria-checked="true"
+          aria-posinset="0.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1297,7 +1481,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="1"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1325,7 +1513,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character arco-rate-character-full"
       >
         <div
+          aria-checked="true"
+          aria-posinset="1.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1349,7 +1541,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="true"
+          aria-posinset="2"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1377,7 +1573,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character arco-rate-character-half"
       >
         <div
+          aria-checked="true"
+          aria-posinset="2.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1401,7 +1601,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="false"
+          aria-posinset="3"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1429,7 +1633,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character"
       >
         <div
+          aria-checked="false"
+          aria-posinset="3.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1453,7 +1661,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="false"
+          aria-posinset="4"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1481,7 +1693,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
         class="arco-rate-character"
       >
         <div
+          aria-checked="false"
+          aria-posinset="4.5"
+          aria-setsize="5"
           class="arco-rate-character-left"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1505,7 +1721,11 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-checked="false"
+          aria-posinset="5"
+          aria-setsize="5"
           class="arco-rate-character-right"
+          role="radio"
         >
           <div
             style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
@@ -1545,7 +1765,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="0.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1564,7 +1788,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="1"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1587,7 +1815,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="1.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1606,7 +1838,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="2"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1629,7 +1865,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="2.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1648,7 +1888,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="3"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1671,7 +1915,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="3.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1690,7 +1938,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1713,7 +1965,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="4.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1732,7 +1988,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1755,7 +2015,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="5.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1774,7 +2038,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="6"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1797,7 +2065,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="6.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1816,7 +2088,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="7"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1839,7 +2115,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="7.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1858,7 +2138,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="8"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1881,7 +2165,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="8.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1900,7 +2188,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="9"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1923,7 +2215,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="9.5"
+        aria-setsize="10"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1942,7 +2238,11 @@ exports[`renders Rate/demo/count.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="10"
+        aria-setsize="10"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -1974,7 +2274,11 @@ exports[`renders Rate/demo/grading.md correctly 1`] = `
       class="arco-rate-inner"
     >
       <div
+        aria-checked="false"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2020,7 +2324,11 @@ exports[`renders Rate/demo/grading.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2066,7 +2374,11 @@ exports[`renders Rate/demo/grading.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2112,7 +2424,11 @@ exports[`renders Rate/demo/grading.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2158,7 +2474,11 @@ exports[`renders Rate/demo/grading.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2219,7 +2539,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-full"
     >
       <div
+        aria-checked="true"
+        aria-posinset="0.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2238,7 +2562,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2261,7 +2589,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-full"
     >
       <div
+        aria-checked="true"
+        aria-posinset="1.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2280,7 +2612,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2303,7 +2639,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-full"
     >
       <div
+        aria-checked="true"
+        aria-posinset="2.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2322,7 +2662,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2345,7 +2689,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
       class="arco-rate-character arco-rate-character-half"
     >
       <div
+        aria-checked="true"
+        aria-posinset="3.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2364,7 +2712,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2387,7 +2739,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
       class="arco-rate-character"
     >
       <div
+        aria-checked="false"
+        aria-posinset="4.5"
+        aria-setsize="5"
         class="arco-rate-character-left"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2406,7 +2762,11 @@ exports[`renders Rate/demo/readonly.md correctly 1`] = `
         </svg>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character-right"
+        role="radio"
       >
         <svg
           aria-hidden="true"
@@ -2438,7 +2798,11 @@ exports[`renders Rate/demo/tooltips.md correctly 1`] = `
       class="arco-rate-inner"
     >
       <div
+        aria-checked="false"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2480,7 +2844,11 @@ exports[`renders Rate/demo/tooltips.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2522,7 +2890,11 @@ exports[`renders Rate/demo/tooltips.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2564,7 +2936,11 @@ exports[`renders Rate/demo/tooltips.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2606,7 +2982,11 @@ exports[`renders Rate/demo/tooltips.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="false"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2663,7 +3043,11 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
       class="arco-rate-inner"
     >
       <div
+        aria-checked="true"
+        aria-posinset="1"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2705,7 +3089,11 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="2"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2747,7 +3135,11 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="3"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2789,7 +3181,11 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="4"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"
@@ -2831,7 +3227,11 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-checked="true"
+        aria-posinset="5"
+        aria-setsize="5"
         class="arco-rate-character arco-rate-character-full"
+        role="radio"
       >
         <div
           class="arco-rate-character-left"

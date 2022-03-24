@@ -989,7 +989,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   class="arco-rate-inner"
                 >
                   <div
+                    aria-checked="false"
+                    aria-posinset="1"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -1031,7 +1035,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="2"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -1073,7 +1081,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="3"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -1115,7 +1127,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="4"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -1157,7 +1173,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="5"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -2665,7 +2685,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   class="arco-rate-inner"
                 >
                   <div
+                    aria-checked="false"
+                    aria-posinset="1"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -2707,7 +2731,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="2"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -2749,7 +2777,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="3"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -2791,7 +2823,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="4"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
@@ -2833,7 +2869,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-checked="false"
+                    aria-posinset="5"
+                    aria-setsize="5"
                     class="arco-rate-character"
+                    role="radio"
                   >
                     <div
                       class="arco-rate-character-left"
