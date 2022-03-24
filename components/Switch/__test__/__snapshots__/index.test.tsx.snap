@@ -2,7 +2,9 @@
 
 exports[`ConfigProvider componentConfig.Switch default 1`] = `
 <button
+  aria-checked="false"
   class="arco-switch arco-switch-type-circle"
+  role="switch"
   type="button"
 >
   <div
@@ -13,7 +15,9 @@ exports[`ConfigProvider componentConfig.Switch default 1`] = `
 
 exports[`ConfigProvider componentConfig.Switch set className globally 1`] = `
 <button
+  aria-checked="false"
   class="arco-switch arco-switch-type-circle global-default-class"
+  role="switch"
   type="button"
 >
   <div
@@ -24,7 +28,9 @@ exports[`ConfigProvider componentConfig.Switch set className globally 1`] = `
 
 exports[`ConfigProvider componentConfig.Switch set className globally and component set className itself. 1`] = `
 <button
+  aria-checked="false"
   class="arco-switch arco-switch-type-circle component-class"
+  role="switch"
   type="button"
 >
   <div

@@ -134,7 +134,9 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
 exports[`renders Typography/demo/ellipsis.md correctly 1`] = `
 Array [
   <button
+    aria-checked="true"
     class="arco-switch arco-switch-type-circle arco-switch-checked"
+    role="switch"
     type="button"
   >
     <div
@@ -222,8 +224,10 @@ Array [
                   class="arco-form-item-control-children"
                 >
                   <button
+                    aria-checked="false"
                     class="arco-switch arco-switch-small arco-switch-type-circle"
                     id="ellipsis_input"
+                    role="switch"
                     type="button"
                   >
                     <div
@@ -261,8 +265,10 @@ Array [
                   class="arco-form-item-control-children"
                 >
                   <button
+                    aria-checked="false"
                     class="arco-switch arco-switch-small arco-switch-type-circle"
                     id="expandable_input"
+                    role="switch"
                     type="button"
                   >
                     <div

@@ -481,8 +481,10 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <button
+                aria-checked="false"
                 class="arco-switch arco-switch-type-circle"
                 id="showTicks_input"
+                role="switch"
                 type="button"
               >
                 <div
@@ -520,8 +522,10 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <button
+                aria-checked="false"
                 class="arco-switch arco-switch-type-circle"
                 id="showInput_input"
+                role="switch"
                 type="button"
               >
                 <div
@@ -559,8 +563,10 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <button
+                aria-checked="false"
                 class="arco-switch arco-switch-type-circle"
                 id="onlyMarkValue_input"
+                role="switch"
                 type="button"
               >
                 <div
@@ -598,8 +604,10 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <button
+                aria-checked="false"
                 class="arco-switch arco-switch-type-circle"
                 id="reverse_input"
+                role="switch"
                 type="button"
               >
                 <div
@@ -1042,7 +1050,9 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
     style="margin-bottom:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
@@ -1476,7 +1486,9 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
       showTicks
     </span>
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div

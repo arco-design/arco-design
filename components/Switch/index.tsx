@@ -81,6 +81,8 @@ function Switch(baseProps: SwitchProps, ref) {
   return (
     <button
       ref={ref}
+      role="switch"
+      aria-checked={!!mergedChecked}
       {...extraProps}
       style={style}
       className={classNames}

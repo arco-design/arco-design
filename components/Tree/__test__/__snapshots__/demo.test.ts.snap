@@ -3619,7 +3619,9 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       showLine
     </span>
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       style="margin-left:12px"
       type="button"
     >

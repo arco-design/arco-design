@@ -29,7 +29,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="true"
                   class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -64,7 +66,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="false"
                   class="arco-switch arco-switch-small arco-switch-type-circle"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -99,7 +103,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="true"
                   class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -134,7 +140,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="false"
                   class="arco-switch arco-switch-small arco-switch-type-circle"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -169,7 +177,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="true"
                   class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -204,7 +214,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="true"
                   class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -239,7 +251,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="false"
                   class="arco-switch arco-switch-small arco-switch-type-circle"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -274,7 +288,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="true"
                   class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -309,7 +325,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="false"
                   class="arco-switch arco-switch-small arco-switch-type-circle"
+                  role="switch"
                   type="button"
                 >
                   <div
@@ -344,7 +362,9 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                 class="arco-form-item-control-children"
               >
                 <button
+                  aria-checked="false"
                   class="arco-switch arco-switch-small arco-switch-type-circle"
+                  role="switch"
                   type="button"
                 >
                   <div
