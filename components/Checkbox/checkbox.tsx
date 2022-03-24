@@ -81,6 +81,7 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
   return (
     <label
       ref={ref}
+      aria-disabled={disabled}
       {...omit(rest, ['onChange'])}
       onClick={onLabelClick}
       className={classNames}

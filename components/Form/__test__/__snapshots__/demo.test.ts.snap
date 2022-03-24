@@ -193,8 +193,10 @@ exports[`renders Form/demo/basic.md correctly 1`] = `
                   class="arco-checkbox-mask"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-checkbox-mask-icon"
                     fill="currentColor"
+                    focusable="false"
                     height="200"
                     viewBox="0 0 1024 1024"
                     width="200"
@@ -1654,8 +1656,10 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-checkbox-mask"
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-checkbox-mask-icon"
                       fill="currentColor"
+                      focusable="false"
                       height="200"
                       viewBox="0 0 1024 1024"
                       width="200"
@@ -3305,6 +3309,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <label
+                aria-disabled="true"
                 class="arco-checkbox arco-checkbox-disabled"
                 id="readme_input"
               >
@@ -3319,8 +3324,10 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-checkbox-mask"
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-checkbox-mask-icon"
                       fill="currentColor"
+                      focusable="false"
                       height="200"
                       viewBox="0 0 1024 1024"
                       width="200"
@@ -4442,8 +4449,10 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
                   class="arco-checkbox-mask"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-checkbox-mask-icon"
                     fill="currentColor"
+                    focusable="false"
                     height="200"
                     viewBox="0 0 1024 1024"
                     width="200"

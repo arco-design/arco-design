@@ -1463,8 +1463,10 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
           class="arco-checkbox-mask"
         >
           <svg
+            aria-hidden="true"
             class="arco-checkbox-mask-icon"
             fill="currentColor"
+            focusable="false"
             height="200"
             viewBox="0 0 1024 1024"
             width="200"
@@ -1495,8 +1497,10 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
           class="arco-checkbox-mask"
         >
           <svg
+            aria-hidden="true"
             class="arco-checkbox-mask-icon"
             fill="currentColor"
+            focusable="false"
             height="200"
             viewBox="0 0 1024 1024"
             width="200"
@@ -1527,8 +1531,10 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
           class="arco-checkbox-mask"
         >
           <svg
+            aria-hidden="true"
             class="arco-checkbox-mask-icon"
             fill="currentColor"
+            focusable="false"
             height="200"
             viewBox="0 0 1024 1024"
             width="200"
@@ -1559,8 +1565,10 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
           class="arco-checkbox-mask"
         >
           <svg
+            aria-hidden="true"
             class="arco-checkbox-mask-icon"
             fill="currentColor"
+            focusable="false"
             height="200"
             viewBox="0 0 1024 1024"
             width="200"
