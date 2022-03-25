@@ -8,8 +8,8 @@ export interface SpinProps {
   className?: string | string[];
   children?: ReactNode;
   /**
-   * @zh 是否为加载状态
-   * @en Whether is loading status
+   * @zh 是否为加载状态（仅在 `Spin` 有子节点时生效）
+   * @en Whether is loading status (Only works when `Spin` has children))
    */
   loading?: boolean;
   /**

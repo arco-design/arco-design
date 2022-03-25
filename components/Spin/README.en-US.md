@@ -16,7 +16,7 @@ Used for the loading state of pages. When part of the page is waiting for asynch
 |---|---|---|---|---|
 |style|Additional style|`CSSProperties`|`-`|-|
 |className|Additional css class|`string \| string[]`|`-`|-|
-|loading|Whether is loading status|`boolean`|`-`|-|
+|loading|Whether is loading status (Only works when `Spin` has children))|`boolean`|`-`|-|
 |size|The size of loading icon|`number`|`-`|-|
 |icon|Customize icon which will be rotated automatically.|`ReactNode`|`-`|-|
 |element|Customize element which won't be rotated automatically, such as image/gif.|`ReactNode`|`-`|-|

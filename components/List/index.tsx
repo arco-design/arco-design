@@ -205,7 +205,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
                   {...colProps}
                   span={span}
                 >
-                  {render ? render(item, index) : item}
+                  {render ? render(item, startNum + index) : item}
                 </Col>
               ))}
             </Row>
