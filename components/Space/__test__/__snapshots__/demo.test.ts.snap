@@ -308,6 +308,7 @@ exports[`renders Space/demo/split.md correctly 1`] = `
   >
     <div
       class="arco-divider arco-divider-vertical"
+      role="separator"
     />
   </div>
   <div
@@ -325,6 +326,7 @@ exports[`renders Space/demo/split.md correctly 1`] = `
   >
     <div
       class="arco-divider arco-divider-vertical"
+      role="separator"
     />
   </div>
   <div

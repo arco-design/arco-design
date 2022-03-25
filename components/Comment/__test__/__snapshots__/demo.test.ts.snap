@@ -627,9 +627,11 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
     </div>
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -739,6 +741,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"

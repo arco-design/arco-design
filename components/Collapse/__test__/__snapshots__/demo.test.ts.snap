@@ -9,7 +9,10 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -45,7 +48,10 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -81,7 +87,10 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -125,7 +134,10 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -158,6 +170,7 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -165,11 +178,13 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
+          role="separator"
           style="margin:8px 0"
         />
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
+          role="separator"
           style="margin:8px 0"
         />
         Beijing Toutiao Technology Co., Ltd.
@@ -180,7 +195,11 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active arco-collapse-item-disabled"
   >
     <div
+      aria-disabled="true"
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left arco-collapse-item-header-disabled"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover arco-icon-hover-disabled"
@@ -213,6 +232,7 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -225,7 +245,10 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -269,7 +292,10 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -302,6 +328,7 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -309,11 +336,13 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
+          role="separator"
           style="margin:8px 0"
         />
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
+          role="separator"
           style="margin:8px 0"
         />
         Beijing Toutiao Technology Co., Ltd.
@@ -324,7 +353,10 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -360,7 +392,10 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -405,7 +440,10 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
     style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -438,6 +476,7 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -445,11 +484,13 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
+          role="separator"
           style="margin:8px 0"
         />
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
+          role="separator"
           style="margin:8px 0"
         />
         Beijing Toutiao Technology Co., Ltd.
@@ -461,7 +502,10 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
     style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -494,6 +538,7 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -507,7 +552,10 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
     style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -551,7 +599,10 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -584,6 +635,7 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -596,7 +648,10 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -629,6 +684,7 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -641,7 +697,10 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -685,7 +744,10 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -740,6 +802,7 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -752,7 +815,10 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -807,6 +873,7 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -819,7 +886,10 @@ exports[`renders Collapse/demo/extra.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -962,7 +1032,10 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
       class="arco-collapse-item"
     >
       <div
+        aria-expanded="false"
         class="arco-collapse-item-header arco-collapse-item-header-left"
+        role="button"
+        tabindex="0"
       >
         <span
           class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1015,7 +1088,10 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
       class="arco-collapse-item"
     >
       <div
+        aria-expanded="false"
         class="arco-collapse-item-header arco-collapse-item-header-left"
+        role="button"
+        tabindex="0"
       >
         <span
           class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1071,7 +1147,10 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
       class="arco-collapse-item"
     >
       <div
+        aria-expanded="false"
         class="arco-collapse-item-header arco-collapse-item-header-left"
+        role="button"
+        tabindex="0"
       >
         <span
           class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1116,7 +1195,10 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1149,6 +1231,7 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -1160,7 +1243,10 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
             class="arco-collapse-item arco-collapse-item-active"
           >
             <div
+              aria-expanded="true"
               class="arco-collapse-item-header arco-collapse-item-header-left"
+              role="button"
+              tabindex="0"
             >
               <span
                 class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1193,6 +1279,7 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
             </div>
             <div
               class="arco-collapse-item-content arco-collapse-item-content-expanded"
+              role="region"
             >
               <div
                 class="arco-collapse-item-content-box"
@@ -1205,7 +1292,10 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
             class="arco-collapse-item"
           >
             <div
+              aria-expanded="false"
               class="arco-collapse-item-header arco-collapse-item-header-left"
+              role="button"
+              tabindex="0"
             >
               <span
                 class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1245,7 +1335,10 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1278,6 +1371,7 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -1290,7 +1384,10 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1334,7 +1431,10 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1367,6 +1467,7 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -1379,7 +1480,10 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
     class="arco-collapse-item arco-collapse-item-active"
   >
     <div
+      aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"
@@ -1412,6 +1516,7 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
     </div>
     <div
       class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
     >
       <div
         class="arco-collapse-item-content-box"
@@ -1424,7 +1529,10 @@ exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
     class="arco-collapse-item"
   >
     <div
+      aria-expanded="false"
       class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover"

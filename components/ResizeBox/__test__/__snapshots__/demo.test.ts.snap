@@ -13,6 +13,7 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -21,6 +22,7 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -122,6 +124,7 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -130,6 +133,7 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -231,6 +235,7 @@ exports[`renders ResizeBox/demo/custom-triggers.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -239,6 +244,7 @@ exports[`renders ResizeBox/demo/custom-triggers.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
     >
       <span
         class="arco-divider-text arco-divider-text-center"

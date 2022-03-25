@@ -9,6 +9,7 @@ exports[`ConfigProvider componentConfig.List default 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-empty"
@@ -54,6 +55,7 @@ exports[`ConfigProvider componentConfig.List set className globally 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-empty"
@@ -99,6 +101,7 @@ exports[`ConfigProvider componentConfig.List set className globally and componen
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-empty"
@@ -138,6 +141,7 @@ exports[`ConfigProvider componentConfig.List set className globally and componen
 exports[`ConfigProvider componentConfig.List.Item default 1`] = `
 <div
   class="arco-list-item"
+  role="listitem"
 >
   <div
     class="arco-list-item-main"
@@ -148,6 +152,7 @@ exports[`ConfigProvider componentConfig.List.Item default 1`] = `
 exports[`ConfigProvider componentConfig.List.Item set className globally 1`] = `
 <div
   class="arco-list-item global-default-class"
+  role="listitem"
 >
   <div
     class="arco-list-item-main"
@@ -158,6 +163,7 @@ exports[`ConfigProvider componentConfig.List.Item set className globally 1`] = `
 exports[`ConfigProvider componentConfig.List.Item set className globally and component set className itself. 1`] = `
 <div
   class="arco-list-item component-class"
+  role="listitem"
 >
   <div
     class="arco-list-item-main"
@@ -174,6 +180,7 @@ exports[`List renders empty list 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-empty"

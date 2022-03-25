@@ -60,6 +60,7 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -193,6 +194,7 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -291,6 +293,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -424,6 +427,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -522,6 +526,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -655,6 +660,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -755,6 +761,7 @@ exports[`Transfer should render correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -932,6 +939,7 @@ exports[`Transfer should render correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"

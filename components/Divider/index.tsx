@@ -26,7 +26,7 @@ function Divider(baseProps: DividerProps, ref) {
   );
 
   return (
-    <div ref={ref} className={classNames} style={style}>
+    <div role="separator" ref={ref} className={classNames} style={style}>
       {children && type === 'horizontal' ? (
         <span className={`${prefixCls}-text ${prefixCls}-text-${orientation}`}>{children}</span>
       ) : null}

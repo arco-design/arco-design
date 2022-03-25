@@ -242,6 +242,7 @@ exports[`renders Steps/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal"
+    role="separator"
   />
   <div
     style="line-height:140px;text-align:center;color:#C9CDD4"
@@ -1127,6 +1128,7 @@ exports[`renders Steps/demo/label-placement.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal"
+    role="separator"
   />
   <div
     style="line-height:140px;text-align:center;color:#C9CDD4"
@@ -1324,6 +1326,7 @@ exports[`renders Steps/demo/mini.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal"
+    role="separator"
   />
   <div
     style="line-height:140px;text-align:center;color:#C9CDD4"

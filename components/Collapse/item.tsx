@@ -45,6 +45,10 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
       style={style}
     >
       <div
+        role="button"
+        aria-disabled={disabled}
+        aria-expanded={isExpanded}
+        tabIndex={0}
         className={cs(`${prefixCls}-header`, `${prefixCls}-header-${ctx.expandIconPosition}`, {
           [`${prefixCls}-header-disabled`]: disabled,
         })}
@@ -114,6 +118,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
         }}
       >
         <div
+          role="region"
           className={cs(`${prefixCls}-content`, {
             [`${prefixCls}-content-expanded`]: isExpanded,
           })}

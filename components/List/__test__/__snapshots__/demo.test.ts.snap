@@ -10,9 +10,11 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-list-item"
+        role="listitem"
         style="padding:20px 0;border-bottom:1px solid var(--color-fill-3)"
       >
         <div
@@ -127,6 +129,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
         style="padding:20px 0;border-bottom:1px solid var(--color-fill-3)"
       >
         <div
@@ -241,6 +244,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
         style="padding:20px 0;border-bottom:1px solid var(--color-fill-3)"
       >
         <div
@@ -441,9 +445,11 @@ Array [
     >
       <div
         class="arco-list-content"
+        role="list"
       >
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -526,6 +532,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -608,6 +615,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -690,6 +698,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -809,9 +818,11 @@ Array [
     >
       <div
         class="arco-list-content"
+        role="list"
       >
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -870,6 +881,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -928,6 +940,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -986,6 +999,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -1063,9 +1077,11 @@ exports[`renders List/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1079,6 +1095,7 @@ exports[`renders List/demo/basic.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1092,6 +1109,7 @@ exports[`renders List/demo/basic.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1105,6 +1123,7 @@ exports[`renders List/demo/basic.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1118,6 +1137,7 @@ exports[`renders List/demo/basic.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1143,6 +1163,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-row arco-row-align-start arco-row-justify-start arco-list-row"
@@ -1152,6 +1173,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1172,9 +1194,11 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1188,6 +1212,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1201,6 +1226,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1224,6 +1250,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1244,9 +1271,11 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1260,6 +1289,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1273,6 +1303,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1296,6 +1327,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1316,9 +1348,11 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1332,6 +1366,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1345,6 +1380,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1368,6 +1404,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1388,9 +1425,11 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1404,6 +1443,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1417,6 +1457,7 @@ exports[`renders List/demo/grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1451,9 +1492,11 @@ exports[`renders List/demo/meta.md correctly 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1494,6 +1537,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1534,6 +1578,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1574,6 +1619,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
       </div>
       <div
         class="arco-list-item"
+        role="listitem"
       >
         <div
           class="arco-list-item-main"
@@ -1626,6 +1672,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-row arco-row-align-start arco-row-justify-start arco-list-row"
@@ -1635,6 +1682,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1655,9 +1703,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1671,6 +1721,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1684,6 +1735,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1707,6 +1759,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1727,9 +1780,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1743,6 +1798,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1756,6 +1812,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1779,6 +1836,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1799,9 +1857,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1815,6 +1875,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1828,6 +1889,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1851,6 +1913,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1871,9 +1934,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1887,6 +1952,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1900,6 +1966,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1923,6 +1990,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -1943,9 +2011,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1959,6 +2029,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1972,6 +2043,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -1995,6 +2067,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -2015,9 +2088,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2031,6 +2106,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2044,6 +2120,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2067,6 +2144,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -2087,9 +2165,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2103,6 +2183,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2116,6 +2197,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2139,6 +2221,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -2159,9 +2242,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2175,6 +2260,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2188,6 +2274,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2211,6 +2298,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
         >
           <div
             class="arco-list-item"
+            role="listitem"
           >
             <div
               class="arco-list-item-main"
@@ -2231,9 +2319,11 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-list-content"
+                      role="list"
                     >
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2247,6 +2337,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2260,6 +2351,7 @@ exports[`renders List/demo/responsive-grid.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-list-item"
+                        role="listitem"
                       >
                         <div
                           class="arco-list-item-main"
@@ -2294,6 +2386,7 @@ exports[`renders List/demo/scrollLoad.md correctly 1`] = `
   >
     <div
       class="arco-list-content"
+      role="list"
     >
       <div
         class="arco-list-item arco-list-scroll-loading"
@@ -2389,9 +2482,11 @@ Array [
       </div>
       <div
         class="arco-list-content"
+        role="list"
       >
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -2405,6 +2500,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -2418,6 +2514,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -2431,6 +2528,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -2444,6 +2542,7 @@ Array [
         </div>
         <div
           class="arco-list-item"
+          role="listitem"
         >
           <div
             class="arco-list-item-main"
@@ -2477,6 +2576,7 @@ Array [
     >
       <div
         class="arco-list-content arco-list-virtual"
+        role="list"
         style="overflow-y:auto;overflow-anchor:none;max-height:560px"
       >
         <div
@@ -2487,6 +2587,7 @@ Array [
           >
             <div
               class="arco-list-item"
+              role="listitem"
             >
               <div
                 class="arco-list-item-main"

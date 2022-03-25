@@ -10,6 +10,7 @@ exports[`renders Carousel/demo/animation-card.md correctly 1`] = `
     class="arco-carousel-card arco-carousel-horizontal"
   >
     <div
+      aria-hidden="false"
       class="arco-carousel-item-current"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:60%"
     >
@@ -19,6 +20,7 @@ exports[`renders Carousel/demo/animation-card.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-next"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:60%"
     >
@@ -28,6 +30,7 @@ exports[`renders Carousel/demo/animation-card.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class=""
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:60%"
     >
@@ -37,6 +40,7 @@ exports[`renders Carousel/demo/animation-card.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-prev"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:60%"
     >
@@ -83,6 +87,7 @@ exports[`renders Carousel/demo/animation-fade.md correctly 1`] = `
     class="arco-carousel-fade arco-carousel-horizontal"
   >
     <div
+      aria-hidden="false"
       class="arco-carousel-item-current"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:100%"
     >
@@ -92,6 +97,7 @@ exports[`renders Carousel/demo/animation-fade.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-next"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:100%"
     >
@@ -101,6 +107,7 @@ exports[`renders Carousel/demo/animation-fade.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class=""
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:100%"
     >
@@ -110,6 +117,7 @@ exports[`renders Carousel/demo/animation-fade.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-prev"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;width:100%"
     >
@@ -156,6 +164,7 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
     class="arco-carousel-slide arco-carousel-horizontal"
   >
     <div
+      aria-hidden="false"
       class="arco-carousel-item-current"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -165,6 +174,7 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-next"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -174,6 +184,7 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class=""
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -183,6 +194,7 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-prev"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -266,6 +278,7 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
     class="arco-carousel-slide arco-carousel-horizontal"
   >
     <div
+      aria-hidden="false"
       class="arco-carousel-item-current"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -275,6 +288,7 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-next"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -284,6 +298,7 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class=""
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -293,6 +308,7 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-prev"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -502,6 +518,7 @@ Array [
       class="arco-carousel-slide arco-carousel-horizontal"
     >
       <div
+        aria-hidden="false"
         class="arco-carousel-item-current"
         style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
       >
@@ -511,6 +528,7 @@ Array [
         />
       </div>
       <div
+        aria-hidden="true"
         class="arco-carousel-item-next"
         style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
       >
@@ -520,6 +538,7 @@ Array [
         />
       </div>
       <div
+        aria-hidden="true"
         class=""
         style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
       >
@@ -529,6 +548,7 @@ Array [
         />
       </div>
       <div
+        aria-hidden="true"
         class="arco-carousel-item-prev"
         style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
       >
@@ -687,6 +707,7 @@ exports[`renders Carousel/demo/vertical.md correctly 1`] = `
     class="arco-carousel-slide arco-carousel-vertical"
   >
     <div
+      aria-hidden="false"
       class="arco-carousel-item-current"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -696,6 +717,7 @@ exports[`renders Carousel/demo/vertical.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-next"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -705,6 +727,7 @@ exports[`renders Carousel/demo/vertical.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class=""
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
@@ -714,6 +737,7 @@ exports[`renders Carousel/demo/vertical.md correctly 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="arco-carousel-item-prev"
       style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms"
     >
