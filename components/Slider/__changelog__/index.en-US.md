@@ -1,3 +1,16 @@
+## 2.31.0
+
+2022-03-25
+
+### 🐛 BugFix
+
+- Fix the bug of calculation error when the step size of `Slider` is set to decimal([#655](https://github.com/arco-design/arco-design/pull/655))
+- Fix the bug of `Slider` clicking on the non-sliding axis area console to report an error([#655](https://github.com/arco-design/arco-design/pull/655))
+
+### 💅 Style
+
+- `Slider` always displays the first and last endpoints in the scene of adding labels by passing in `marks`([#683](https://github.com/arco-design/arco-design/pull/683))
+
 ## 2.30.0
 
 2022-03-04

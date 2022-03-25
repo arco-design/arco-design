@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- The `Table` component supports sorting tree data.([#678](https://github.com/arco-design/arco-design/pull/678))
+
 ## 2.30.2
 
 2022-03-18

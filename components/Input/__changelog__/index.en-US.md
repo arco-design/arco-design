@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 💅 Style
+
+- Fixed the bug that the clear button of `Input` could not be hidden in certain scenarios([#685](https://github.com/arco-design/arco-design/pull/685))
+
 ## 2.30.2
 
 2022-03-18

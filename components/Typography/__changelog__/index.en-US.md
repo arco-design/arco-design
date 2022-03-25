@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- `Typography`'s `copyable` and `editable` expose the `event` parameter corresponding to the click callback.([#684](https://github.com/arco-design/arco-design/pull/684))
+
 ## 2.29.2
 
 2022-02-25

@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- `AutoComplete` component's `triggerElement` property allows passing in a function to customize the component trigger node.([#686](https://github.com/arco-design/arco-design/pull/686))
+
 ## 2.25.1
 
 2021-11-26

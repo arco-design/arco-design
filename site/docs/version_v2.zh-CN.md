@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.31.0
+
+2022-03-25
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过  `checkedStrategy` 属性设置多选时数据的回显方式([#692](https://github.com/arco-design/arco-design/pull/692))
+- `Select` 组件 `triggerElement` 属性允许传入函数以自定义组件触发节点。([#686](https://github.com/arco-design/arco-design/pull/686))
+- `TreeSelect` 组件 `triggerElement` 属性允许传入函数以自定义组件触发节点。([#686](https://github.com/arco-design/arco-design/pull/686))
+- `AutoComplete` 组件 `triggerElement` 属性允许传入函数以自定义组件触发节点。([#686](https://github.com/arco-design/arco-design/pull/686))
+- `Typography` 的 `copyable` 和 `editable` 对应点击回调暴露 `event` 参数。([#684](https://github.com/arco-design/arco-design/pull/684))
+- `Table` 组件支持排序树形数据。([#678](https://github.com/arco-design/arco-design/pull/678))
+
+### 🐛 问题修复
+
+- 修复 `List` 组件栅格布局下 `render` 方法的 `index` 参数错误的 bug。([#688](https://github.com/arco-design/arco-design/pull/688))
+- 修复 `DatePicker` 组件 `disabledDate` 在快捷选择面板边界不正确的问题。([#687](https://github.com/arco-design/arco-design/pull/687))
+- 修复 `Slider` 的步长设置为小数时计算出错的 bug([#655](https://github.com/arco-design/arco-design/pull/655))
+- 修复 `Slider` 点击非滑动轴区域控制台报错的 bug([#655](https://github.com/arco-design/arco-design/pull/655))
+
+### 💅 样式更新
+
+- 修复在特定场景下 `Input` 的清除按钮无法隐藏的bug([#685](https://github.com/arco-design/arco-design/pull/685))
+- `Slider` 在传入 `marks` 添加标签的场景下始终展示首尾端点([#683](https://github.com/arco-design/arco-design/pull/683))
+
+### 🆎 类型修正
+
+- 修改 `Popconfirm` 组件的 `onOk` 参数的 TS 定义支持返回 `Promise<void>`([#689](https://github.com/arco-design/arco-design/pull/689))
+
 ## 2.30.2
 
 2022-03-18

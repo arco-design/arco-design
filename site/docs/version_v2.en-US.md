@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- The `Cascader` component supports setting the echo mode of data when multiple selections are set through the `checkedStrategy` property([#692](https://github.com/arco-design/arco-design/pull/692))
+- `Select` component's `triggerElement` property allows passing in a function to customize the component trigger node.([#686](https://github.com/arco-design/arco-design/pull/686))
+- `TreeSelect` component's `triggerElement` property allows passing in a function to customize the component trigger node.([#686](https://github.com/arco-design/arco-design/pull/686))
+- `AutoComplete` component's `triggerElement` property allows passing in a function to customize the component trigger node.([#686](https://github.com/arco-design/arco-design/pull/686))
+- `Typography`'s `copyable` and `editable` expose the `event` parameter corresponding to the click callback.([#684](https://github.com/arco-design/arco-design/pull/684))
+- The `Table` component supports sorting tree data.([#678](https://github.com/arco-design/arco-design/pull/678))
+
+### 🐛 BugFix
+
+- Fixed the bug that the `index` parameter of the `render` method under the grid layout of the `List` component was incorrect.([#688](https://github.com/arco-design/arco-design/pull/688))
+- Fixed the `disabledDate` of the `DatePicker` component being incorrect at the border of the quick selection panel.([#687](https://github.com/arco-design/arco-design/pull/687))
+- Fix the bug of calculation error when the step size of `Slider` is set to decimal([#655](https://github.com/arco-design/arco-design/pull/655))
+- Fix the bug of `Slider` clicking on the non-sliding axis area console to report an error([#655](https://github.com/arco-design/arco-design/pull/655))
+
+### 💅 Style
+
+- Fixed the bug that the clear button of `Input` could not be hidden in certain scenarios([#685](https://github.com/arco-design/arco-design/pull/685))
+- `Slider` always displays the first and last endpoints in the scene of adding labels by passing in `marks`([#683](https://github.com/arco-design/arco-design/pull/683))
+
+### 🆎 TypeScript
+
+- Modify the TS definition of the `onOk` parameter of the `Popconfirm` component to support returning `Promise<void>`([#689](https://github.com/arco-design/arco-design/pull/689))
+
 ## 2.30.2
 
 2022-03-18

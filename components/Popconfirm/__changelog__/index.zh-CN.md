@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🆎 类型修正
+
+- 修改 `Popconfirm` 组件的 `onOk` 参数的 TS 定义支持返回 `Promise<void>`([#689](https://github.com/arco-design/arco-design/pull/689))
+
 ## 2.29.0
 
 2022-02-11

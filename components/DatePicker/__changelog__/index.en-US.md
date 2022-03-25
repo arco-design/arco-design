@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🐛 BugFix
+
+- Fixed the `disabledDate` of the `DatePicker` component being incorrect at the border of the quick selection panel.([#687](https://github.com/arco-design/arco-design/pull/687))
+
 ## 2.30.2
 
 2022-03-18

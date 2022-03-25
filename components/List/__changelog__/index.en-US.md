@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🐛 BugFix
+
+- Fixed the bug that the `index` parameter of the `render` method under the grid layout of the `List` component was incorrect.([#688](https://github.com/arco-design/arco-design/pull/688))
+
 ## 2.30.1
 
 2022-03-11

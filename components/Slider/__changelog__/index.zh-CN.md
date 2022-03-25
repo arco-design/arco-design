@@ -1,3 +1,16 @@
+## 2.31.0
+
+2022-03-25
+
+### 🐛 问题修复
+
+- 修复 `Slider` 的步长设置为小数时计算出错的 bug([#655](https://github.com/arco-design/arco-design/pull/655))
+- 修复 `Slider` 点击非滑动轴区域控制台报错的 bug([#655](https://github.com/arco-design/arco-design/pull/655))
+
+### 💅 样式更新
+
+- `Slider` 在传入 `marks` 添加标签的场景下始终展示首尾端点([#683](https://github.com/arco-design/arco-design/pull/683))
+
 ## 2.30.0
 
 2022-03-04

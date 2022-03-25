@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- The `Cascader` component supports setting the echo mode of data when multiple selections are set through the `checkedStrategy` property([#692](https://github.com/arco-design/arco-design/pull/692))
+
 ## 2.30.1
 
 2022-03-11
