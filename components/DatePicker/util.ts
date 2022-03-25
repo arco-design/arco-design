@@ -27,3 +27,13 @@ export function getAvailableDayjsLength(value) {
   }
   return 0;
 }
+
+export function isDisabledDate(date, disabledDate, mode, originMode): boolean {
+  if (typeof disabledDate !== 'function') {
+    return false;
+  }
+  if (!originMode || originMode === mode) {
+    return disabledDate(date);
+  }
+  return disabledDate(date.startOf(mode)) && disabledDate(date.endOf(mode));
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import dayjs from 'dayjs';
 import DatePicker from '..';
 import '../../../tests/mockDate';
 
@@ -191,5 +192,64 @@ describe('Panel show date', () => {
       .simulate('click');
 
     expect(component.find('input').prop('value')).toBe('2025-Q1');
+  });
+
+  it('disabledDate', () => {
+    const component = mount(
+      <DatePicker disabledDate={(current) => current.isAfter(dayjs().endOf('day'))} />
+    );
+
+    component.simulate('click');
+
+    const labelYear = component.find('.arco-picker-header-label').at(0);
+
+    expect(
+      component
+        .find('.arco-picker-cell')
+        .findWhere((n) => n.text() === '10')
+        .at(0)
+        .hasClass('arco-picker-cell-disabled')
+    ).toBeFalsy();
+
+    expect(
+      component
+        .find('.arco-picker-cell')
+        .findWhere((n) => n.text() === '11')
+        .at(0)
+        .hasClass('arco-picker-cell-disabled')
+    ).toBeTruthy();
+
+    // quick selection year
+    labelYear.simulate('click');
+
+    expect(
+      component
+        .find('.arco-picker-cell')
+        .findWhere((n) => n.text() === '2020')
+        .at(0)
+        .hasClass('arco-picker-cell-disabled')
+    ).toBeFalsy();
+
+    expect(
+      component
+        .find('.arco-picker-cell')
+        .findWhere((n) => n.text() === '2021')
+        .at(0)
+        .hasClass('arco-picker-cell-disabled')
+    ).toBeTruthy();
+
+    // quick selection month
+    component
+      .find('.arco-picker-date')
+      .at(1) // 2020
+      .simulate('click');
+
+    expect(
+      component.find('.arco-picker-cell').at(3).hasClass('arco-picker-cell-disabled')
+    ).toBeFalsy();
+
+    expect(
+      component.find('.arco-picker-cell').at(5).hasClass('arco-picker-cell-disabled')
+    ).toBeTruthy();
   });
 });
