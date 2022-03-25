@@ -1319,82 +1319,151 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
 
 exports[`renders Cascader/demo/multiple.md correctly 1`] = `
 <div
-  class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
-  style="width:300px"
-  tabindex="0"
+  class="arco-space arco-space-horizontal arco-space-align-center"
 >
   <div
-    class="arco-cascader-view"
-    title=""
+    class="arco-space-item"
+    style="margin-right:8px"
   >
     <div
-      class="arco-input-tag arco-input-tag-size-default"
+      class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      style="width:300px"
+      tabindex="0"
     >
       <div
-        class="arco-input-tag-view"
+        class="arco-cascader-view"
+        title=""
       >
         <div
-          class="arco-input-tag-inner"
+          class="arco-input-tag arco-input-tag-size-default"
         >
           <div
-            class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+            class="arco-input-tag-view"
           >
-            <span
-              class="arco-input-tag-tag-content"
-              title="Beijing / Beijing / Chaoyang / Datunli"
+            <div
+              class="arco-input-tag-inner"
             >
-              Beijing / Beijing / Chaoyang / Datunli
-            </span>
-            <span
-              class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-close"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
               >
-                <path
-                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
-                />
-              </svg>
-            </span>
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Beijing / Beijing / Chaoyang / Datunli"
+                >
+                  Beijing / Beijing / Chaoyang / Datunli
+                </span>
+                <span
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    focusable="false"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </div>
           </div>
-          <input
-            autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
-            placeholder=""
-            value=""
-          />
-          <span
-            class="arco-input-tag-input-mirror"
-          />
+        </div>
+        <div
+          class="arco-cascader-suffix"
+        >
+          <div
+            class="arco-cascader-expand-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
     <div
-      class="arco-cascader-suffix"
+      class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      style="width:300px"
+      tabindex="0"
     >
       <div
-        class="arco-cascader-expand-icon"
+        class="arco-cascader-view"
+        title=""
       >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-expand"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          style="transform:rotate(-45deg)"
-          viewBox="0 0 48 48"
+        <div
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
         >
-          <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
-          />
-        </svg>
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Please select ..."
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Please select ...
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-cascader-suffix"
+        >
+          <div
+            class="arco-cascader-expand-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-expand"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              style="transform:rotate(-45deg)"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </div>

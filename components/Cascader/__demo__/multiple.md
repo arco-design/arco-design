@@ -7,14 +7,14 @@ title:
 
 ## zh-CN
 
-指定`mode=multiple`，即可使用多选。
+指定`mode=multiple`，即可使用多选。设置 `checkedStrategy` 属性设置数据回显方式（`2.31.0`）。
 
 ## en-US
 
-Allow multiple selection.
+Allow multiple selection. Set the 'checkedStrategy' property to set the data echo mode(`2.31.0`).
 
 ```js
-import { Cascader } from '@arco-design/web-react';
+import { Cascader, Space } from '@arco-design/web-react';
 
 const options = [
   {
@@ -71,13 +71,22 @@ const options = [
 ];
 
 ReactDOM.render(
+  <Space>
   <Cascader
     placeholder="Please select ..."
     style={{ width: 300 }}
     options={options}
     mode="multiple"
     defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-  />,
+  />
+  <Cascader
+    placeholder="Please select ..."
+    style={{ width: 300 }}
+    options={options}
+    mode="multiple"
+    checkedStrategy="parent"
+  />
+  </Space>,
   CONTAINER
 );
 ```

@@ -226,6 +226,40 @@ describe('support multiple correctly', () => {
     expect(option.length).toEqual(2);
   });
 
+  it('multiply select checkedStrategy correctly', () => {
+    let value = [['beijing', 'beijingshi', 'chaoyang', 'datunli']];
+    const wrapper = mountCascader(
+      <Cascader
+        renderFormat={(values) => values.join('-')}
+        placeholder="请选择一个地点"
+        style={{ maxWidth: 300 }}
+        options={options}
+        onChange={(v) => {
+          value = v as string[][];
+        }}
+        checkedStrategy="parent"
+        mode="multiple"
+        defaultValue={value}
+      />
+    );
+    expect(wrapper.find('.arco-tag > span').at(0).text()).toBe(`北京-北京市-朝阳区`);
+
+    wrapper.find(prefixCls).simulate('click');
+    const list = wrapper.find(`${prefixCls}-list`).at(0);
+    list
+      .find(`${prefixCls}-list-item`)
+      .at(0)
+      .find('.arco-checkbox > input')
+      .simulate('change', {
+        target: {
+          checked: true,
+        },
+      });
+
+    jest.runAllTimers();
+    expect(value).toEqual([['beijing']]);
+  });
+
   it('support multiply search correctly', () => {
     // const wrapper = mountCascader(<Cascader  options={options} showSearch mode="multiple" />);
     // wrapper.find(prefixCls).simulate('click');

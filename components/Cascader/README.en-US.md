@@ -26,6 +26,7 @@ Display options in a multi-level cascading dropdown component.
 |fieldNames|Custom field name for label, value, isLeaf, disabled and children|`FieldNamesType`|`DefaultFieldNames`|-|
 |popupVisible|Whether the popup is visible|`boolean`|`-`|-|
 |defaultPopupVisible|Whether the popup is visible by default|`boolean`|`-`|-|
+|checkedStrategy|Customize the return value<br/> parent:Only return the parent node when all child nodes are selected <br/> child: Return child nodes|`'parent' \| 'child'`|`child`|2.31.0|
 |dropdownRender|Customize the popup menu.|`(menu: ReactNode) => ReactNode`|`-`|2.15.0|
 |dropdownColumnRender|Customize columns of the menu.|`(menu: ReactNode, level: number) => ReactNode`|`-`|2.15.0, `level` in 2.17.0|
 |filterOption|Customize the search logic.|`(inputValue: string, option: NodeProps<T>) => boolean`|`-`|-|
@@ -38,6 +39,8 @@ Display options in a multi-level cascading dropdown component.
 |loadMore|To load option lazily|`(pathValue: string[], level: number) => Promise<T[]>`|`-`|-|
 |onVisibleChange|Callback when popup shown or hidden.|`(visible: boolean) => void`|`-`|-|
 |onClear|Callback when click clear icon.|`(visible: boolean) => void`|`-`|-|
+|animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
+|renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
 |style|Additional style|`CSSProperties`|`-`|-|
 |className|Additional css class|`string \| string[]`|`-`|-|
 |placeholder|Placeholder of element|`string`|`-`|-|
@@ -48,7 +51,6 @@ Display options in a multi-level cascading dropdown component.
 |error|Error Style|`boolean`|`-`|-|
 |loading|Whether is in loading|`boolean`|`-`|-|
 |allowClear|Whether allow to clear selected options|`boolean`|`-`|-|
-|allowCreate|Whether to allow new options to be created by input.|`boolean`|`-`|2.13.0|
 |maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.|`number`|`-`|-|
 |prefix|Customize select suffix|`ReactNode`|`-`|2.11.0|
 |suffixIcon|Customize select suffix icon|`ReactNode`|`-`|-|
@@ -56,8 +58,6 @@ Display options in a multi-level cascading dropdown component.
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|`ReactNode \| null`|`-`|-|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|`ReactNode`|`-`|2.26.0|
 |onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
-|animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
-|renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
 
 ## Methods
 
