@@ -197,4 +197,17 @@ describe('List', () => {
     expect(wrapper.find('.arco-pagination .arco-select')).toHaveLength(1);
     expect(wrapper.find('.arco-list-item-content').at(0).text()).toBe('60');
   });
+
+  it('List render callback has correct parameter:index', () => {
+    const itemCount = 10;
+    const wrapper = mountList(
+      <List
+        grid={{ span: 8 }}
+        dataSource={new Array(itemCount).fill(null)}
+        bordered={false}
+        render={(_, index) => <List.Item>{index + 1}</List.Item>}
+      />
+    );
+    expect(wrapper.find('.arco-list-item-content').last().text()).toBe(`${itemCount}`);
+  });
 });

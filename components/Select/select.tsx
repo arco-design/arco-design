@@ -321,11 +321,18 @@ function Select(baseProps: SelectProps, ref) {
   };
 
   // Object should be returned when labelInValue is true
-  const getValueForCallbackParameter = (
-    value: SelectInnerStateValue,
-    option: OptionInfo | Array<OptionInfo>,
-    isEmpty = isEmptyValue(value, isMultipleMode)
-  ): SelectProps['value'] => {
+  const getValueAndOptionForCallback = (
+    stateValue: SelectInnerStateValue,
+    isEmpty = isEmptyValue(stateValue, isMultipleMode)
+  ): { value: SelectProps['value']; option: OptionInfo | OptionInfo[] } => {
+    let value: SelectProps['value'] = stateValue;
+    const option =
+      stateValue === undefined
+        ? undefined
+        : Array.isArray(stateValue)
+        ? stateValue.map(getOptionInfoByValue)
+        : getOptionInfoByValue(stateValue);
+
     if (labelInValue && !isEmpty) {
       const getOptionLabel = (optionValue: OptionProps['value'], optionInfo: OptionInfo) => {
         if (optionInfo) {
@@ -351,28 +358,24 @@ function Select(baseProps: SelectProps, ref) {
         }
       };
 
-      if (Array.isArray(value)) {
-        return value.map((optionValue, index) => ({
+      if (Array.isArray(stateValue)) {
+        value = stateValue.map((optionValue, index) => ({
           value: optionValue,
           label: getOptionLabel(optionValue, (option as OptionInfo[])[index]),
         }));
+      } else {
+        value = { value: stateValue, label: getOptionLabel(stateValue, option as OptionInfo) };
       }
-
-      return { value, label: getOptionLabel(value, option as OptionInfo) };
     }
-    return value;
+
+    return { option, value };
   };
 
   const tryUpdateSelectValue = (value: SelectInnerStateValue) => {
     setValue(value);
     if (onChange) {
-      const option =
-        value === undefined
-          ? undefined
-          : Array.isArray(value)
-          ? value.map(getOptionInfoByValue)
-          : getOptionInfoByValue(value);
-      onChange(getValueForCallbackParameter(value, option), option);
+      const paramsForCallback = getValueAndOptionForCallback(value);
+      onChange(paramsForCallback.value, paramsForCallback.option);
     }
   };
 
@@ -388,14 +391,14 @@ function Select(baseProps: SelectProps, ref) {
   // 多选时，取消一个选项
   const uncheckOption = (valueToRemove) => {
     // 取消选中时不需要检查option是否存在，因为可能已被外部剔除了此选项
-    const option = getOptionInfoByValue(valueToRemove);
     const newValue = (value as string[]).filter((v) => v !== valueToRemove);
     tryUpdateSelectValue(newValue);
 
     if (onDeselect) {
+      const paramsForCallback = getValueAndOptionForCallback(valueToRemove, false);
       onDeselect(
-        getValueForCallbackParameter(valueToRemove, option, false) as ReactText | LabeledValue,
-        option
+        paramsForCallback.value as ReactText | LabeledValue,
+        paramsForCallback.option as OptionInfo
       );
     }
   };
@@ -685,42 +688,45 @@ function Select(baseProps: SelectProps, ref) {
         onVisibleChange={tryUpdatePopupVisible}
         {...omit(triggerProps, ['popupVisible', 'onVisibleChange'])}
       >
-        {triggerElement || (
-          <SelectView
-            {...props}
-            {...selectViewEventHandlers}
-            ref={refSelectView}
-            // state
-            value={value}
-            inputValue={inputValue}
-            popupVisible={popupVisible}
-            // other
-            prefixCls={prefixCls}
-            isEmptyValue={isNoOptionSelected}
-            isMultiple={isMultipleMode}
-            onSort={tryUpdateSelectValue}
-            renderText={(value) => {
-              const option = getOptionInfoByValue(value);
-              let text = value;
-              if (isFunction(renderFormat)) {
-                text = renderFormat(
-                  option || null,
-                  getValueForCallbackParameter(value, option, false) as ReactText | LabeledValue
-                );
-              } else if (option) {
-                if ('children' in option) {
-                  text = option.children;
-                }
-              } else if (labelInValue && isObject(props.value)) {
-                text = (props.value as any).label;
-              }
-              return {
-                text,
-                disabled: option && option.disabled,
-              };
-            }}
-          />
-        )}
+        {typeof triggerElement === 'function'
+          ? (() => triggerElement(getValueAndOptionForCallback(value)))()
+          : triggerElement || (
+              <SelectView
+                {...props}
+                {...selectViewEventHandlers}
+                ref={refSelectView}
+                // state
+                value={value}
+                inputValue={inputValue}
+                popupVisible={popupVisible}
+                // other
+                prefixCls={prefixCls}
+                isEmptyValue={isNoOptionSelected}
+                isMultiple={isMultipleMode}
+                onSort={tryUpdateSelectValue}
+                renderText={(value) => {
+                  const option = getOptionInfoByValue(value);
+                  let text = value;
+                  if (isFunction(renderFormat)) {
+                    const paramsForCallback = getValueAndOptionForCallback(value, false);
+                    text = renderFormat(
+                      (paramsForCallback.option as OptionInfo) || null,
+                      paramsForCallback.value as ReactText | LabeledValue
+                    );
+                  } else if (option) {
+                    if ('children' in option) {
+                      text = option.children;
+                    }
+                  } else if (labelInValue && isObject(props.value)) {
+                    text = (props.value as any).label;
+                  }
+                  return {
+                    text,
+                    disabled: option && option.disabled,
+                  };
+                }}
+              />
+            )}
       </Trigger>
     </ResizeObserver>
   );

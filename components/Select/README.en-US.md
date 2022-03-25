@@ -30,7 +30,7 @@ When users need to select one or more from a group of similar data, they can use
 |tokenSeparators|Separator used to tokenize on `multiple` mode.|`string[]`|`-`|-|
 |getPopupContainer|To set the container of the dropdown.|`(node: HTMLElement) => Element`|`-`|-|
 |trigger|The trigger mode which executes the dropdown action.|`TriggerProps['trigger']`|`click`|-|
-|triggerElement|The trigger element which executes the dropdown action.|`ReactNode`|`-`|-|
+|triggerElement|The trigger element which executes the dropdown action.|`\| ReactNode\| ((params: { value: any; option: OptionInfo \| OptionInfo[] }) => ReactNode)`|`-`|`() => ReactNode` in 2.31.0|
 |triggerProps|Pass all `Trigger` component properties|`Partial<TriggerProps>`|`-`|-|
 |dropdownRender|Customize dropdown content|`(menu: ReactNode) => ReactNode`|`-`|-|
 |dropdownMenuStyle|The style of dropdown menu.|`CSSProperties`|`-`|-|

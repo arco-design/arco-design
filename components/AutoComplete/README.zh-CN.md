@@ -26,7 +26,7 @@
 |error|报错状态|`boolean`|`-`|-|
 |strict|`strict: true` 的时候大小写敏感|`boolean`|`-`|-|
 |loading|是否处于加载状态。|`boolean`|`-`|2.10.0|
-|triggerElement|自定义触发元素|`ReactElement`|`<Input />`|-|
+|triggerElement|自定义触发元素|`ReactElement \| (({ value }) => ReactElement)`|`<Input />`|`() => ReactElement` in 2.31.0|
 |onSearch|搜索补全时的回调|`(value: string) => void`|`-`|-|
 |onSelect|点击补全项时的回调|`(value: string, option: OptionInfo) => void`|`-`|-|
 |onChange|输入或者点击补全项，value 改变时的回调（仅在点击补全项时存在第二个参数）|`(value: string, option?: OptionInfo) => void`|`-`|-|

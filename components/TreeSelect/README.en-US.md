@@ -26,7 +26,7 @@ Can choose tree structure data.Only Single choice is supports.
 |treeCheckedStrategy|Customize the return value|`TreeProps['checkedStrategy']`|`all`|-|
 |treeProps|The props of the [Tree](/react/components/tree) component|`Partial<TreeProps>`|`-`|-|
 |triggerProps|The props of the `Trigger` component|`Partial<TriggerProps>`|`-`|-|
-|triggerElement|Customize the trigger element|`ReactNode`|`-`|-|
+|triggerElement|Customize the trigger element|`ReactNode \| ((params: { value: any }) => ReactNode)`|`-`|`() => ReactNode` in 2.31.0|
 |bordered|Whether show border|`boolean`|`true`|-|
 |notFoundContent|The content display when no data|`ReactNode`|`-`|-|
 |popupVisible|Whether the popup is visible or not|`boolean`|`-`|-|

@@ -84,8 +84,9 @@ export interface TreeSelectProps extends SelectViewCommonProps {
   /**
    * @zh 自定义上方显示元素
    * @en Customize the trigger element
+   * @version `() => ReactNode` in 2.31.0
    */
-  triggerElement?: ReactNode;
+  triggerElement?: ReactNode | ((params: { value: any }) => ReactNode);
   /**
    * @zh 是否显示边框
    * @en Whether show border
