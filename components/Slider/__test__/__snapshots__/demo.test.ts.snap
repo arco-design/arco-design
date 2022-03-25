@@ -770,7 +770,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:60.00000000000001%"
+            style="left:60%"
           >
             <div
               class="arco-slider-dot"
@@ -808,7 +808,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-marks-text"
-            style="left:60.00000000000001%"
+            style="left:60%"
           >
             30km
           </div>
@@ -1095,11 +1095,11 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
-            style="right:39.99999999999999%"
+            style="right:40%"
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
-            style="right:46.66666666666666%"
+            style="right:46.666666666666664%"
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
@@ -1107,7 +1107,7 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
-            style="right:59.999999999999986%"
+            style="right:60%"
           />
           <div
             class="arco-slider-tick arco-slider-tick-active"
@@ -1123,7 +1123,7 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           />
           <div
             class="arco-slider-tick"
-            style="right:86.66666666666666%"
+            style="right:86.66666666666667%"
           />
           <div
             class="arco-slider-tick"
