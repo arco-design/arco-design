@@ -62,7 +62,6 @@
     "react-dom": ">=16"
   },
   "devDependencies": {
-    "@arco-design/arco-scripts": "^1.25.9",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
@@ -76,6 +75,7 @@
     "@types/shallowequal": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
+    "arco-scripts": "^1.25.17",
     "chalk": "^2.4.2",
     "concurrently": "^5.2.0",
     "cross-env": "^7.0.3",
