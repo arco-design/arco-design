@@ -5,6 +5,7 @@ import WeekList from './week-list';
 import useCellClassName from '../hooks/useCellClassName';
 import { CalendarValue } from '../interface';
 import PickerContext from '../context';
+import { isDisabledDate } from '../util';
 
 type RowType = {
   time?: Dayjs;
@@ -29,6 +30,7 @@ export interface PanelBodyProps {
   value?: CalendarValue;
   isSameTime?: (current: Dayjs, target: Dayjs) => boolean;
   mode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
+  originMode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
   format?: string;
   hideNotInViewDates?: boolean;
   valueShowHover?: Dayjs[];
@@ -49,6 +51,8 @@ function Body(props: PanelBodyProps) {
     showWeekList,
     isSameTime,
     format,
+    mode,
+    originMode,
   } = props;
 
   const { utcOffset, timezone } = useContext(PickerContext);
@@ -61,7 +65,7 @@ function Body(props: PanelBodyProps) {
   function renderRow(row: RowType[]) {
     return row.map((col, index) => {
       if (col.time) {
-        const disabled = typeof disabledDate === 'function' && disabledDate(col.time);
+        const disabled = isDisabledDate(col.time, disabledDate, mode, originMode);
         const onClickHandler = () => !disabled && onSelectDate(col.time.format(format), col.time);
 
         return (

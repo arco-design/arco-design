@@ -20,6 +20,7 @@ interface InnerYearPickerProps extends YearPickerProps {
   rangeValues?: Dayjs[];
   onSuperPrev?: () => void;
   onSuperNext?: () => void;
+  originMode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
 }
 
 function YearPicker(props: InnerYearPickerProps) {
@@ -39,6 +40,7 @@ function YearPicker(props: InnerYearPickerProps) {
     onSuperNext,
     format,
     icons,
+    originMode,
     ...rest
   } = props;
 
@@ -85,6 +87,7 @@ function YearPicker(props: InnerYearPickerProps) {
         disabledDate={disabledDate}
         CALENDAR_LOCALE={CALENDAR_LOCALE}
         mode="year"
+        originMode={originMode}
         format={format}
       />
     );

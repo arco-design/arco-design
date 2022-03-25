@@ -47,22 +47,22 @@ ReactDOM.render(
   <div>
     <DatePicker
       style={{ width: 200, marginRight: 24, marginBottom: 24 }}
-      disabledDate={(current) => dayjs(current).isBefore(dayjs())}
+      disabledDate={(current) => current.isBefore(dayjs())}
     />
     <RangePicker
       style={{ width: 300, marginRight: 24, marginBottom: 24 }}
-      disabledDate={(current) => dayjs(current).isBefore(dayjs())}
+      disabledDate={(current) => current.isBefore(dayjs())}
     />
     <DatePicker
       style={{ width: 200, marginRight: 24, marginBottom: 24 }}
       showTime
-      disabledDate={(current) => dayjs(current).isBefore(dayjs())}
+      disabledDate={(current) => current.isBefore(dayjs())}
       disabledTime={getDisabledTime}
     />
     <RangePicker
       style={{ width: 380, marginBottom: 24 }}
       showTime={{ hideDisabledOptions: true }}
-      disabledDate={(current) => dayjs(current).isBefore(dayjs())}
+      disabledDate={(current) => current.isBefore(dayjs())}
       disabledTime={getDisabledRangeTime}
     />
   </div>,
