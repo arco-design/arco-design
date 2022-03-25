@@ -44,12 +44,12 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
     };
   }, []);
 
-  function onClickCopy() {
+  function onClickCopy(e) {
     if (isCopied) return;
     const text = copyConfig.text !== undefined ? copyConfig.text : mergedToString(children);
     copy(text);
     setCopied(true);
-    copyConfig.onCopy && copyConfig.onCopy(text);
+    copyConfig.onCopy && copyConfig.onCopy(text, e);
 
     copyTimer.current = setTimeout(() => {
       setCopied(false);
@@ -72,8 +72,8 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
     <Tooltip content={locale.Typography.edit}>
       <span
         className={`${prefixCls}-operation-edit`}
-        onClick={() => {
-          editableConfig.onStart && editableConfig.onStart(mergedToString(children));
+        onClick={(e) => {
+          editableConfig.onStart && editableConfig.onStart(mergedToString(children), e);
           setEditing(true);
         }}
       >
