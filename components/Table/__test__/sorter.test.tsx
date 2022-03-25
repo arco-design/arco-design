@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Table, { ColumnProps } from '..';
 import { columnsSorter } from './common/columns';
-import { data, TestData } from './common/data';
+import { data, treeData, TestData } from './common/data';
 import { TableProps } from '../interface';
 import { sleep } from '../../../tests/util';
 
@@ -143,5 +143,37 @@ describe('Table sorter', () => {
       expect(document.querySelector('.arco-tooltip-content')).toHaveLength(0);
       done();
     }, 200);
+  });
+
+  it('sort tree data', () => {
+    const component = mount(<Table data={treeData} columns={columnsSorter} defaultExpandAllRows />);
+
+    const sorter = component.find('.arco-table-cell-with-sorter');
+
+    const getAge = (index) => {
+      return component.find('tbody tr').at(index).find('td .arco-table-cell').at(3).text();
+    };
+
+    expect(getAge(0)).toBe('20');
+    expect(getAge(1)).toBe('30');
+    expect(getAge(2)).toBe('25');
+    expect(getAge(3)).toBe('19');
+    expect(getAge(4)).toBe('29');
+
+    sorter.simulate('click');
+
+    expect(getAge(0)).toBe('30');
+    expect(getAge(1)).toBe('29');
+    expect(getAge(2)).toBe('25');
+    expect(getAge(3)).toBe('19');
+    expect(getAge(4)).toBe('20');
+
+    sorter.simulate('click');
+
+    expect(getAge(0)).toBe('30');
+    expect(getAge(1)).toBe('25');
+    expect(getAge(2)).toBe('19');
+    expect(getAge(3)).toBe('29');
+    expect(getAge(4)).toBe('20');
   });
 });

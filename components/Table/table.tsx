@@ -293,11 +293,23 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       }
     });
 
-    if (sorter.direction) {
-      const column = getColumnByDataIndex(sorter.field) as ColumnProps<T>;
-      if (column && typeof column.sorter === 'function') {
-        _data.sort(sorterFn(column.sorter, sorter.direction));
-      }
+    const column = getColumnByDataIndex(sorter.field) as ColumnProps<T>;
+
+    const getSortData = (data) => {
+      const cloneData = data.slice();
+      return cloneData.sort(sorterFn(column.sorter, sorter.direction)).map((item) => {
+        if (isArray(item[childrenColumnName])) {
+          return {
+            ...item,
+            [childrenColumnName]: getSortData(item[childrenColumnName]),
+          };
+        }
+        return item;
+      });
+    };
+
+    if (sorter.direction && column && typeof column.sorter === 'function') {
+      return getSortData(_data);
     }
 
     return _data;
