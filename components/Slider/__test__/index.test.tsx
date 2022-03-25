@@ -262,4 +262,51 @@ describe('Slider ', () => {
     expect(barStyle.right).toBe('0%');
     expect(buttonStyle.right).toBe('20%');
   });
+
+  it('support intervalConfig correctly', () => {
+    const component = mountSlider(
+      <Slider
+        marks={{ '0': '0KM', '10': '10KM', '20': '20KM', '30': '30KM' }}
+        min={0}
+        max={30}
+        getIntervalConfig={([begin, end]) => {
+          const range = `${begin}~${end}`;
+          switch (range) {
+            case '0~10':
+              return { width: '50%' };
+            default: {
+              return { step: 3 };
+            }
+          }
+        }}
+      />
+    );
+    component.find('.arco-slider-dot').at(1).simulate('mousedown');
+    expect(
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
+    ).toContain('left: 50%');
+
+    component.find('.arco-slider-dot').at(2).simulate('mousedown');
+    expect(
+      component.find('.arco-slider-button').last().getDOMNode().getAttribute('style')
+    ).toContain(`left: ${0.9 * 25 + 50}%`);
+  });
+
+  it('render interval width correctly when set intervalConfig', () => {
+    const component = mountSlider(
+      <Slider
+        marks={{ '0': '0KM', '10': '10KM', '20': '20KM', '30': '30KM' }}
+        min={0}
+        max={30}
+        getIntervalConfig={() => {
+          // 3 intervals, totally 90%, need to adjust
+          return { width: 0.3 };
+        }}
+      />
+    );
+    const dots = component.find('.arco-slider-dot-wrapper');
+    expect(dots.at(1).getDOMNode().getAttribute('style')).toContain(`left: 30%`);
+    expect(dots.at(2).getDOMNode().getAttribute('style')).toContain(`left: 60%`);
+    expect(dots.at(3).getDOMNode().getAttribute('style')).toContain(`left: 100%`);
+  });
 });
