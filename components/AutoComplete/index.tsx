@@ -107,11 +107,13 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
 
   useImperativeHandle(ref, () => refInput.current);
 
-  const TriggerElement = React.cloneElement(triggerElement, {
+  const usedTriggerElement =
+    typeof triggerElement === 'function' ? triggerElement({ value }) : triggerElement;
+  const TriggerElement = React.cloneElement(usedTriggerElement, {
     ref: (node) => {
       refInput.current = node;
 
-      const { ref: originRef } = triggerElement as any;
+      const { ref: originRef } = usedTriggerElement as any;
       if (typeof originRef === 'function') {
         originRef(node);
       }

@@ -26,7 +26,7 @@
 |treeCheckedStrategy|定制回显方式|`TreeProps['checkedStrategy']`|`all`|-|
 |treeProps|可以接受所有 [Tree](/react/components/tree) 组件的参数|`Partial<TreeProps>`|`-`|-|
 |triggerProps|可以接受所有 Trigger 组件的参数|`Partial<TriggerProps>`|`-`|-|
-|triggerElement|自定义上方显示元素|`ReactNode`|`-`|-|
+|triggerElement|自定义上方显示元素|`ReactNode \| ((params: { value: any }) => ReactNode)`|`-`|`() => ReactNode` in 2.31.0|
 |bordered|是否显示边框|`boolean`|`true`|-|
 |notFoundContent|没有数据时显示的内容|`ReactNode`|`-`|-|
 |popupVisible|控制下拉框的展开收起|`boolean`|`-`|-|

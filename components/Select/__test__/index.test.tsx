@@ -405,4 +405,20 @@ describe('Select', () => {
     );
     expect(wrapper.find('.arco-select-option-disabled')).toHaveLength(1);
   });
+
+  it('Render triggerElement correctly', () => {
+    wrapper = mountSelect(
+      <Select
+        value="hello"
+        labelInValue
+        options={[{ value: 'hello', label: 'HELLO' }]}
+        triggerElement={({ value: { value, label } }) => (
+          <span className="custom-trigger-element">
+            {label}-{value}
+          </span>
+        )}
+      />
+    );
+    expect(wrapper.find('.custom-trigger-element').at(0).text()).toBe('HELLO-hello');
+  });
 });

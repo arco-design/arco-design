@@ -74,8 +74,9 @@ export interface AutoCompleteProps extends PartialSelectProps {
    * @zh 自定义触发元素
    * @en Custom trigger element
    * @defaultValue <Input />
+   * @version `() => ReactElement` in 2.31.0
    */
-  triggerElement?: ReactElement;
+  triggerElement?: ReactElement | (({ value }) => ReactElement);
   /**
    * @zh 搜索补全时的回调
    * @en Callback when searching items

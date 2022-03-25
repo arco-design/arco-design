@@ -26,7 +26,7 @@ An input box or custom input control, with enhanced automatic completion functio
 |error|Error style|`boolean`|`-`|-|
 |strict|Case sensitive when set `strict: true`|`boolean`|`-`|-|
 |loading|Whether the component is loading data.|`boolean`|`-`|2.10.0|
-|triggerElement|Custom trigger element|`ReactElement`|`<Input />`|-|
+|triggerElement|Custom trigger element|`ReactElement \| (({ value }) => ReactElement)`|`<Input />`|`() => ReactElement` in 2.31.0|
 |onSearch|Callback when searching items|`(value: string) => void`|`-`|-|
 |onSelect|Callback when an option is selected.|`(value: string, option: OptionInfo) => void`|`-`|-|
 |onChange|Callback when an option is selected or input value changes|`(value: string, option?: OptionInfo) => void`|`-`|-|

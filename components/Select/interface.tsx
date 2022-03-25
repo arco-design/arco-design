@@ -127,8 +127,11 @@ export interface SelectProps extends SelectViewCommonProps {
   /**
    * @zh 自定义触发元素。
    * @en The trigger element which executes the dropdown action.
+   * @version `() => ReactNode` in 2.31.0
    */
-  triggerElement?: ReactNode;
+  triggerElement?:
+    | ReactNode
+    | ((params: { value: any; option: OptionInfo | OptionInfo[] }) => ReactNode);
   /**
    * @zh 可以接受所有 `Trigger` 的 `Props`
    * @en Pass all `Trigger` component properties
