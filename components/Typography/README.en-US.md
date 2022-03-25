@@ -19,57 +19,57 @@ Used to display titles, paragraphs, and text content.
 
 ### Typography.Title
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|heading|Heading level, equivalent to `h1` `h2` `h3` `h4` `h5` `h6`|`1 \| 2 \| 3 \| 4 \| 5 \| 6`|`1`|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|type|Text type|`'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning'`|`-`|
-|bold|Bold style|`boolean`|`-`|
-|disabled|Disabled style|`boolean`|`-`|
-|mark|Mark style|`boolean \| { color: string }`|`-`|
-|underline|Underline style|`boolean`|`-`|
-|delete|Strikethrough style|`boolean`|`-`|
-|code|Code block style|`boolean`|`-`|
-|editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
-|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|heading|Heading level, equivalent to `h1` `h2` `h3` `h4` `h5` `h6`|`1 \| 2 \| 3 \| 4 \| 5 \| 6`|`1`|-|
+|style|Additional style|`CSSProperties`|`-`|-|
+|className|Additional css class|`string \| string[]`|`-`|-|
+|type|Text type|`'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning'`|`-`|-|
+|bold|Bold style|`boolean`|`-`|-|
+|disabled|Disabled style|`boolean`|`-`|-|
+|mark|Mark style|`boolean \| { color: string }`|`-`|-|
+|underline|Underline style|`boolean`|`-`|-|
+|delete|Strikethrough style|`boolean`|`-`|-|
+|code|Code block style|`boolean`|`-`|-|
+|editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### Typography.Paragraph
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|blockquote|Blockquote style|`boolean`|`-`|
-|spacing|The line height of the paragraph. The default line height is recommended for long text (more than 5 lines),and the close line height of `close` is recommended for short text (less than or equal to 3 lines).|`'default' \| 'close'`|`default`|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|type|Text type|`'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning'`|`-`|
-|bold|Bold style|`boolean`|`-`|
-|disabled|Disabled style|`boolean`|`-`|
-|mark|Mark style|`boolean \| { color: string }`|`-`|
-|underline|Underline style|`boolean`|`-`|
-|delete|Strikethrough style|`boolean`|`-`|
-|code|Code block style|`boolean`|`-`|
-|editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
-|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|blockquote|Blockquote style|`boolean`|`-`|-|
+|spacing|The line height of the paragraph. The default line height is recommended for long text (more than 5 lines),and the close line height of `close` is recommended for short text (less than or equal to 3 lines).|`'default' \| 'close'`|`default`|-|
+|style|Additional style|`CSSProperties`|`-`|-|
+|className|Additional css class|`string \| string[]`|`-`|-|
+|type|Text type|`'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning'`|`-`|-|
+|bold|Bold style|`boolean`|`-`|-|
+|disabled|Disabled style|`boolean`|`-`|-|
+|mark|Mark style|`boolean \| { color: string }`|`-`|-|
+|underline|Underline style|`boolean`|`-`|-|
+|delete|Strikethrough style|`boolean`|`-`|-|
+|code|Code block style|`boolean`|`-`|-|
+|editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### Typography.Text
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|type|Text type|`'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning'`|`-`|
-|bold|Bold style|`boolean`|`-`|
-|disabled|Disabled style|`boolean`|`-`|
-|mark|Mark style|`boolean \| { color: string }`|`-`|
-|underline|Underline style|`boolean`|`-`|
-|delete|Strikethrough style|`boolean`|`-`|
-|code|Code block style|`boolean`|`-`|
-|editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|
-|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|style|Additional style|`CSSProperties`|`-`|-|
+|className|Additional css class|`string \| string[]`|`-`|-|
+|type|Text type|`'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning'`|`-`|-|
+|bold|Bold style|`boolean`|`-`|-|
+|disabled|Disabled style|`boolean`|`-`|-|
+|mark|Mark style|`boolean \| { color: string }`|`-`|-|
+|underline|Underline style|`boolean`|`-`|-|
+|delete|Strikethrough style|`boolean`|`-`|-|
+|code|Code block style|`boolean`|`-`|-|
+|editable|If editable. Can control edit state when is object|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### EllipsisConfig
 

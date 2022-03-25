@@ -145,6 +145,7 @@ function Base(props: BaseProps) {
 
   function onClickExpand(e) {
     setExpanding(!expanding);
+    props.onClickExpand && props.onClickExpand(e);
     ellipsisConfig.onExpand && ellipsisConfig.onExpand(!expanding, e);
   }
 
