@@ -167,6 +167,21 @@ class Node<T> {
     }
   };
 
+  public getSelfChildrenValue = () => {
+    const result = [];
+    const join = (pathValue, nodes) => {
+      if (!nodes || !nodes.length) {
+        result.push(pathValue);
+        return;
+      }
+      (nodes || []).forEach((node) => {
+        join(node.pathValue, node.children);
+      });
+    };
+    join(this.pathValue, this.children);
+    return result;
+  };
+
   public updateHalfState = (checked: boolean) => {
     this._halfChecked = this._isHalfChecked();
     this._checked = this._halfChecked ? false : checked;

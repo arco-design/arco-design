@@ -7,7 +7,8 @@ import { NodeProps } from './base/node';
 /**
  * @title Cascader
  */
-export interface CascaderProps<T = any> extends SelectViewCommonProps {
+export interface CascaderProps<T = any>
+  extends Omit<SelectViewCommonProps, 'allowCreate' | 'dragToSort'> {
   /**
    * @zh 选择框的默认值
    * @en Initial value
@@ -73,6 +74,16 @@ export interface CascaderProps<T = any> extends SelectViewCommonProps {
    * @en Whether the popup is visible by default
    */
   defaultPopupVisible?: boolean;
+  /**
+   * @zh
+   * 定制回填方式 <br/> parent: 子节点都被选中时候返回父节点 <br/> child: 返回子节点
+   * @en
+   * Customize the return value  <br/> parent:
+   * Only return the parent node when all child nodes are selected <br/> child: Return child nodes
+   * @defaultValue child
+   * @version 2.31.0
+   */
+  checkedStrategy?: 'parent' | 'child';
   /**
    * @zh 自定义下拉菜单的展示。
    * @en Customize the popup menu.
