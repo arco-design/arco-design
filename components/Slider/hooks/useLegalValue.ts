@@ -1,6 +1,7 @@
-import { useMemo } from 'react';
+import { plus, times } from 'number-precision';
 import { isArray, isNumber, isUndefined, isObject, isEmptyObject } from '../../_util/is';
 import { getPrecision } from '../utils';
+import { IntervalConfig } from './useInterval';
 
 export default function useLegalValue(props: {
   isRange: boolean;
@@ -8,10 +9,21 @@ export default function useLegalValue(props: {
   max: number;
   onlyMarkValue: boolean;
   step: number;
+  intervalConfigs: IntervalConfig[];
   marks: object;
 }) {
-  const { isRange, min, max, onlyMarkValue, step, marks } = props;
-  const precision = useMemo(() => getPrecision(step), [step]);
+  const { isRange, min, max, onlyMarkValue, intervalConfigs, marks } = props;
+  function getPrecisionValue(val: number): number {
+    const { begin, step } = intervalConfigs.find((config) => {
+      return val >= config.begin && val <= config.end;
+    });
+
+    const offsetVal = val - begin;
+    const stepNum = Math.round(offsetVal / step);
+    const precision = getPrecision(step);
+    const currentIntervalPrecision = parseFloat(times(step, stepNum).toFixed(precision));
+    return plus(begin, currentIntervalPrecision);
+  }
 
   // 在只允许选择 marks 中的值的时候，找到离value最接近的值
   function getMarkValue(val: number): number {
@@ -34,9 +46,7 @@ export default function useLegalValue(props: {
     if (val <= min) return min;
     if (val >= max) return max;
     if (onlyMarkValue) return getMarkValue(val);
-
-    const steps = Math.round(val / step);
-    return parseFloat(Number(steps * step).toFixed(precision));
+    return getPrecisionValue(val);
   }
 
   function isLegalValue(val) {

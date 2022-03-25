@@ -60,20 +60,27 @@ function useInterval(props: {
     return { markIntervals, markList };
   }, [marks, min, max]);
 
+  if (!isFunction(getIntervalConfig)) {
+    return {
+      intervalConfigs: [
+        { begin: min, end: max, step: props.step, beginOffset: 0, endOffset: 1, width: 1 },
+      ],
+      markList,
+    };
+  }
+
   const getStepAndWidth = ([begin, end], index) => {
     const config = { step: props.step, width: 0 };
-    if (isFunction(getIntervalConfig)) {
-      const customConfig = getIntervalConfig([begin, end], index) || {};
-      const step = customConfig.step;
-      const width = rateToFloat(customConfig.width);
-      // 如果用户传入了step
-      if (isNumber(step) && step) {
-        config.step = step;
-      }
-      // 用户传入了width
-      if (isNumber(width) && width) {
-        config.width = width;
-      }
+    const customConfig = getIntervalConfig([begin, end], index) || {};
+    const step = customConfig.step;
+    const width = rateToFloat(customConfig.width);
+    // 如果用户传入了step
+    if (isNumber(step) && step) {
+      config.step = step;
+    }
+    // 用户传入了width
+    if (isNumber(width) && width) {
+      config.width = width;
     }
 
     return config;
@@ -95,6 +102,12 @@ function useInterval(props: {
       }
       return { width, step: stepAndWidth.step };
     });
+
+    // 所有区间都有自定义宽度但仍有剩余的时候，最后一个区间的宽度需要校准
+    if (stepAndWidthConfig.every(({ width }) => width) && remainWidth) {
+      const lastIntervalConfig = stepAndWidthConfig[markIntervals.length - 1];
+      lastIntervalConfig.width += remainWidth;
+    }
 
     const allConfigs: IntervalConfig[] = [];
     markIntervals.forEach(([begin, end], index) => {

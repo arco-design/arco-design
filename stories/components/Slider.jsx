@@ -10,10 +10,8 @@ const defaultConfig = {
 
 const marks = {
   0: '0km',
-  10: '10km',
-  20: '20km',
-  30: '30km',
-  50: '50km',
+  0.3: '0.3',
+  0.8: '0.8',
 };
 
 function Demo() {
@@ -45,9 +43,10 @@ function Demo() {
         <Typography.Text bold>分段区间-滑动输入条</Typography.Text>
         <Slider
           {...config}
-          max={50}
-          defaultValue={10}
+          max={1}
+          defaultValue={0}
           marks={marks}
+          range
           getIntervalConfig={([begin, end]) => {
             const interval = `${begin}~${end}`;
             switch (interval) {
@@ -60,8 +59,8 @@ function Demo() {
           }}
         />
       </div>
-      <Typography.Text bold>未分段-滑动输入条</Typography.Text>
-      <Slider {...config} max={50} defaultValue={10} marks={marks} />
+      <Slider max={1} min={0} step={0.1} range marks={marks} showTicks />
+      <Slider max={6} min={0} range marks={{ 0: '0', 1.5: '1.5', 3: '3' }} showTicks />
     </div>
   );
 }
