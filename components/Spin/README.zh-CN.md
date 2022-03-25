@@ -15,7 +15,7 @@
 |---|---|---|---|---|
 |style|节点样式|`CSSProperties`|`-`|-|
 |className|节点类名|`string \| string[]`|`-`|-|
-|loading|是否为加载状态|`boolean`|`-`|-|
+|loading|是否为加载状态（仅在 `Spin` 有子节点时生效）|`boolean`|`-`|-|
 |size|加载动画的尺寸|`number`|`-`|-|
 |icon|自定义图标，会自动旋转。|`ReactNode`|`-`|-|
 |element|自定义元素，非图标，不附带旋转效果。可用于设置为 gif 图片等。|`ReactNode`|`-`|-|
