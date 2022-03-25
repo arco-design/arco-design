@@ -11,8 +11,6 @@ type MaskType = {
 
 interface MaskProps {
   data: MaskType[];
-  min?: number;
-  max?: number;
   value?: number[];
   vertical?: boolean;
   prefixCls?: string;
@@ -22,7 +20,7 @@ interface MaskProps {
 }
 
 const Dots = function (props: MaskProps) {
-  const { data = [], min, max, value = [], vertical, prefixCls, reverse, intervalConfigs } = props;
+  const { data = [], value = [], vertical, prefixCls, reverse, intervalConfigs } = props;
   if (!data.length) return null;
 
   return (
@@ -37,7 +35,6 @@ const Dots = function (props: MaskProps) {
               ...(vertical
                 ? { [reverse ? 'top' : 'bottom']: offset }
                 : { [reverse ? 'right' : 'left']: offset }),
-              ...(+key === min || +key === max ? { visibility: 'hidden' } : {}), // 边界点不显示
             }}
             onMouseDown={(e) => {
               e.stopPropagation();

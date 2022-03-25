@@ -48,10 +48,12 @@ function useInterval(props: {
     } else {
       if (markValues[0] > min) {
         markValues.unshift(min);
+        // 传入了 marks 需要显示首尾断点
+        markList.unshift({ key: `${min}`, content: '' });
       }
-
       if (markValues.slice(-1)[0] < max) {
         markValues.push(max);
+        markList.push({ key: `${max}`, content: '' });
       }
     }
     const markIntervals = getIntervals(markValues);

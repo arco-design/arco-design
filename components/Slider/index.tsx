@@ -335,8 +335,6 @@ function Slider(baseProps: SliderProps, ref) {
           <Dots
             data={markList}
             intervalConfigs={intervalConfigs}
-            min={min}
-            max={max}
             value={[beginVal, endVal]}
             vertical={vertical}
             prefixCls={prefixCls}
