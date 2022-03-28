@@ -691,6 +691,15 @@
     flex: 1;
   }
 
+  // https://github.com/arco-design/arco-design/issues/695
+  &-virtualized &-selection-col {
+    max-width: @table-size-selection-col-width;
+  }
+
+  &-virtualized &-expand-icon-col {
+    max-width: @table-size-expand-icon-col-width;
+  }
+
   // summary
   div&-tfoot {
     width: 100%;
