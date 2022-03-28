@@ -1,3 +1,11 @@
+## 2.31.1
+
+2022-03-28
+
+### 💅 Style
+
+- Fix the problem that the checkbox column width is abnormal when the `Table` component enable `virtualized`.([#696](https://github.com/arco-design/arco-design/pull/696))
+
 ## 2.31.0
 
 2022-03-25
