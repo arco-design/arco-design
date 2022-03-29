@@ -62,6 +62,7 @@ function Components() {
           onClick={() => {
             setMenuCollapse(!menuCollapse);
           }}
+          aria-label="menu collapse button"
         />
         <div className="content-wrapper" style={{ marginTop: `${noticeHeight}px` }}>
           <WidgetBody lang={lang} routes={routes} />
@@ -87,6 +88,7 @@ function Components() {
             onClick={() => {
               setAnchorCollapse(!anchorCollapse);
             }}
+            aria-label="anchor collapse button"
           />
         )}
       </div>

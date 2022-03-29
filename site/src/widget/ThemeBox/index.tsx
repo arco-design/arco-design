@@ -292,6 +292,7 @@ function ThemeBox({ lang = 'zh-CN' }) {
           onClick={() => setVisible(true)}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
+          aria-label="button to open theme box"
         >
           <IconSkin />
           {hover && t.installTheme}
