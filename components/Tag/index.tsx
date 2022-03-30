@@ -124,7 +124,13 @@ function Tag(baseProps: TagProps, ref) {
       {icon && <span className={`${prefixCls}-icon`}>{icon}</span>}
       {children}
       {closable && !loading && closeIcon !== null && (
-        <IconHover prefix={prefixCls} className={`${prefixCls}-close-btn`} onClick={onHandleClose}>
+        <IconHover
+          prefix={prefixCls}
+          className={`${prefixCls}-close-btn`}
+          onClick={onHandleClose}
+          role="button"
+          aria-label="Close"
+        >
           {closeIcon !== undefined ? closeIcon : <IconClose />}
         </IconHover>
       )}

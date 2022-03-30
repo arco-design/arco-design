@@ -254,7 +254,13 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             {closeIcon}
           </span>
         ) : (
-          <IconHover tabIndex={-1} onClick={onCancel} className={`${prefixCls}-close-icon`}>
+          <IconHover
+            tabIndex={-1}
+            onClick={onCancel}
+            className={`${prefixCls}-close-icon`}
+            role="button"
+            aria-label="Close"
+          >
             <IconClose />
           </IconHover>
         ))}

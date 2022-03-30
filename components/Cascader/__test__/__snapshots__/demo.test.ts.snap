@@ -712,7 +712,9 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
                 Beijing / Beijing / Chaoyang / Datunli
               </span>
               <span
+                aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
               >
                 <svg
                   aria-hidden="true"
@@ -887,7 +889,9 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1063,7 +1067,9 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1353,7 +1359,9 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1622,7 +1630,9 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1781,7 +1791,9 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
