@@ -151,7 +151,7 @@ class Notice extends Component<NoticeProps, {}> {
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
         >
-          <div className={classNames} style={style}>
+          <div className={classNames} style={style} role="alert">
             {shouldRenderIcon && this.renderIcon()}
             <span className={`${prefixCls}-content`}>{content}</span>
             {_closable && (
@@ -171,7 +171,7 @@ class Notice extends Component<NoticeProps, {}> {
     if (noticeType === 'notification') {
       return (
         <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-          <div className={classNames} style={style}>
+          <div className={classNames} style={style} role="alert">
             {shouldRenderIcon && <div className={`${prefixCls}-left`}>{this.renderIcon()}</div>}
             <div className={`${prefixCls}-right`}>
               {title && <div className={`${prefixCls}-title`}>{title}</div>}

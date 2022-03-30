@@ -7,6 +7,7 @@ exports[`render correctly 1`] = `
   >
     <div
       class="arco-notification arco-notification-info"
+      role="alert"
     >
       <span
         class="arco-notification-icon"
@@ -41,6 +42,7 @@ exports[`render correctly 1`] = `
   >
     <div
       class="arco-notification arco-notification-success"
+      role="alert"
     >
       <span
         class="arco-notification-icon"
@@ -75,6 +77,7 @@ exports[`render correctly 1`] = `
   >
     <div
       class="arco-notification arco-notification-warning"
+      role="alert"
     >
       <span
         class="arco-notification-icon"
@@ -109,6 +112,7 @@ exports[`render correctly 1`] = `
   >
     <div
       class="arco-notification arco-notification-error"
+      role="alert"
     >
       <span
         class="arco-notification-icon"
@@ -143,6 +147,7 @@ exports[`render correctly 1`] = `
   >
     <div
       class="arco-notification arco-notification-Normal"
+      role="alert"
     >
       <span
         class="arco-notification-icon"
@@ -159,6 +164,7 @@ exports[`render correctly 1`] = `
   >
     <div
       class="arco-notification arco-notification-Normal"
+      role="alert"
     >
       <span
         class="arco-notification-icon"
