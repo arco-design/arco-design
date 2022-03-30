@@ -32,6 +32,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 
 type CursorPositionType = { left: number; top: number } | null;
 let cursorPosition: CursorPositionType | null = null;
+let globalDialogIndex = 0;
 
 if (!isServerRendering) {
   document.documentElement.addEventListener(
@@ -108,6 +109,12 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   const cursorPositionRef = useRef<CursorPositionType>(null);
   const haveOriginTransformOrigin = useRef<boolean>(false);
   const maskClickRef = useRef(false);
+
+  const dialogIndex = useRef<number>();
+
+  if (!dialogIndex.current) {
+    dialogIndex.current = globalDialogIndex++;
+  }
 
   const [loading, setLoading] = useMergeValue(false, {
     defaultValue: false,
@@ -240,7 +247,9 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     >
       {title && (
         <div className={`${prefixCls}-header`}>
-          <div className={`${prefixCls}-title`}>{title}</div>
+          <div className={`${prefixCls}-title`} id={`arco-dialog-${dialogIndex.current}`}>
+            {title}
+          </div>
         </div>
       )}
       <div ref={contentWrapper} className={`${prefixCls}-content`}>
@@ -261,8 +270,12 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     </ConfigProvider>
   );
 
+  const ariaProps = title ? { 'aria-labelledby': `arco-dialog-${dialogIndex.current}` } : {};
+
   const modalDom = (
     <div
+      role="dialog"
+      {...ariaProps}
       className={cs(
         prefixCls,
         {
@@ -312,12 +325,10 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               e.style.display = 'none';
             }}
           >
-            <div className={`${prefixCls}-mask`} style={maskStyle} />
+            <div aria-hidden className={`${prefixCls}-mask`} style={maskStyle} />
           </CSSTransition>
         ) : null}
         <div
-          role="dialog"
-          aria-hidden="true"
           {...omit(rest, [
             'content',
             'icon',
