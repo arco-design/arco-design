@@ -14,8 +14,10 @@ exports[`ConfigProvider componentConfig.Checkbox default 1`] = `
       class="arco-checkbox-mask"
     >
       <svg
+        aria-hidden="true"
         class="arco-checkbox-mask-icon"
         fill="currentColor"
+        focusable="false"
         height="200"
         viewBox="0 0 1024 1024"
         width="200"
@@ -44,8 +46,10 @@ exports[`ConfigProvider componentConfig.Checkbox set className globally 1`] = `
       class="arco-checkbox-mask"
     >
       <svg
+        aria-hidden="true"
         class="arco-checkbox-mask-icon"
         fill="currentColor"
+        focusable="false"
         height="200"
         viewBox="0 0 1024 1024"
         width="200"
@@ -74,8 +78,10 @@ exports[`ConfigProvider componentConfig.Checkbox set className globally and comp
       class="arco-checkbox-mask"
     >
       <svg
+        aria-hidden="true"
         class="arco-checkbox-mask-icon"
         fill="currentColor"
+        focusable="false"
         height="200"
         viewBox="0 0 1024 1024"
         width="200"

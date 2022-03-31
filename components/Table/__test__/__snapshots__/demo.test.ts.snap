@@ -593,6 +593,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                           class="arco-table-th-item"
                         >
                           <label
+                            aria-disabled="false"
                             class="arco-checkbox"
                           >
                             <input
@@ -605,8 +606,10 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                                 class="arco-checkbox-mask"
                               >
                                 <svg
+                                  aria-hidden="true"
                                   class="arco-checkbox-mask-icon"
                                   fill="currentColor"
+                                  focusable="false"
                                   height="200"
                                   viewBox="0 0 1024 1024"
                                   width="200"
@@ -696,8 +699,10 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -784,8 +789,10 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -872,8 +879,10 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -960,8 +969,10 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -1048,8 +1059,10 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -1647,6 +1660,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                       class="arco-table-th-item"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -1659,8 +1673,10 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -1750,8 +1766,10 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -1859,8 +1877,10 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -1968,8 +1988,10 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -2581,6 +2603,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                       class="arco-table-th-item"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -2593,8 +2616,10 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -2712,8 +2737,10 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -2828,8 +2855,10 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -2944,8 +2973,10 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -3060,8 +3091,10 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -3176,8 +3209,10 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -5393,6 +5428,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                         class="arco-table-th-item"
                       >
                         <label
+                          aria-disabled="false"
                           class="arco-checkbox"
                         >
                           <input
@@ -5405,8 +5441,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -5588,8 +5626,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -5740,8 +5780,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -5892,8 +5934,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -6044,8 +6088,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -6196,8 +6242,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -7693,6 +7741,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                       class="arco-table-th-item"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox arco-checkbox-indeterminate"
                       >
                         <input
@@ -7705,8 +7754,10 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -7795,6 +7846,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     style="left:40px"
                   >
                     <label
+                      aria-disabled="false"
                       class="arco-checkbox"
                     >
                       <input
@@ -7808,8 +7860,10 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -7913,6 +7967,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     style="left:40px"
                   >
                     <label
+                      aria-disabled="false"
                       class="arco-checkbox"
                     >
                       <input
@@ -7926,8 +7981,10 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8031,6 +8088,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     style="left:40px"
                   >
                     <label
+                      aria-disabled="false"
                       class="arco-checkbox"
                     >
                       <input
@@ -8044,8 +8102,10 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8149,6 +8209,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     style="left:40px"
                   >
                     <label
+                      aria-disabled="false"
                       checked=""
                       class="arco-checkbox arco-checkbox-checked"
                     >
@@ -8164,8 +8225,10 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8251,6 +8314,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     style="left:40px"
                   >
                     <label
+                      aria-disabled="false"
                       class="arco-checkbox"
                     >
                       <input
@@ -8264,8 +8328,10 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8457,6 +8523,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                       class="arco-table-th-item"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -8469,8 +8536,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -8560,8 +8629,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8648,8 +8719,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8736,8 +8809,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8824,8 +8899,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -8912,8 +8989,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -9000,8 +9079,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -9088,8 +9169,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -9176,8 +9259,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -9264,8 +9349,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -9352,8 +9439,10 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                           class="arco-checkbox-mask"
                         >
                           <svg
+                            aria-hidden="true"
                             class="arco-checkbox-mask-icon"
                             fill="currentColor"
+                            focusable="false"
                             height="200"
                             viewBox="0 0 1024 1024"
                             width="200"
@@ -10978,6 +11067,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                         class="arco-table-th-item"
                       >
                         <label
+                          aria-disabled="false"
                           class="arco-checkbox"
                         >
                           <input
@@ -10990,8 +11080,10 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -11068,6 +11160,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-checkbox"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -11081,8 +11174,10 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -11156,6 +11251,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-checkbox"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -11169,8 +11265,10 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -11244,6 +11342,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-checkbox"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -11257,8 +11356,10 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -11332,6 +11433,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-checkbox"
                     >
                       <label
+                        aria-disabled="true"
                         checked=""
                         class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
                       >
@@ -11348,8 +11450,10 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -11423,6 +11527,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                       class="arco-table-td arco-table-operation arco-table-checkbox"
                     >
                       <label
+                        aria-disabled="false"
                         class="arco-checkbox"
                       >
                         <input
@@ -11436,8 +11541,10 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                             class="arco-checkbox-mask"
                           >
                             <svg
+                              aria-hidden="true"
                               class="arco-checkbox-mask-icon"
                               fill="currentColor"
+                              focusable="false"
                               height="200"
                               viewBox="0 0 1024 1024"
                               width="200"
@@ -14722,6 +14829,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                         class="arco-table-th-item"
                       >
                         <label
+                          aria-disabled="false"
                           class="arco-checkbox"
                         >
                           <input
@@ -14734,8 +14842,10 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"
@@ -14838,8 +14948,10 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                               class="arco-checkbox-mask"
                             >
                               <svg
+                                aria-hidden="true"
                                 class="arco-checkbox-mask-icon"
                                 fill="currentColor"
+                                focusable="false"
                                 height="200"
                                 viewBox="0 0 1024 1024"
                                 width="200"

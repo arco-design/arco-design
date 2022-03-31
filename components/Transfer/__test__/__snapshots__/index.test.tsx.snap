@@ -26,8 +26,10 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -159,8 +161,10 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -257,8 +261,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -390,8 +396,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -488,8 +496,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -621,8 +631,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -721,8 +733,10 @@ exports[`Transfer should render correctly 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -774,8 +788,10 @@ exports[`Transfer should render correctly 1`] = `
                   class="arco-checkbox-mask"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-checkbox-mask-icon"
                     fill="currentColor"
+                    focusable="false"
                     height="200"
                     viewBox="0 0 1024 1024"
                     width="200"
@@ -798,6 +814,7 @@ exports[`Transfer should render correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-disabled"
           >
             <label
+              aria-disabled="true"
               class="arco-checkbox arco-checkbox-disabled arco-transfer-view-item-content"
             >
               <input
@@ -811,8 +828,10 @@ exports[`Transfer should render correctly 1`] = `
                   class="arco-checkbox-mask"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-checkbox-mask-icon"
                     fill="currentColor"
+                    focusable="false"
                     height="200"
                     viewBox="0 0 1024 1024"
                     width="200"
@@ -898,8 +917,10 @@ exports[`Transfer should render correctly 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -949,8 +970,10 @@ exports[`Transfer should render correctly 1`] = `
                   class="arco-checkbox-mask"
                 >
                   <svg
+                    aria-hidden="true"
                     class="arco-checkbox-mask-icon"
                     fill="currentColor"
+                    focusable="false"
                     height="200"
                     viewBox="0 0 1024 1024"
                     width="200"

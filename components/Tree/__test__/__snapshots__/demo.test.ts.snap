@@ -434,8 +434,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-checkbox-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-checkbox-mask-icon"
           fill="currentColor"
+          focusable="false"
           height="200"
           viewBox="0 0 1024 1024"
           width="200"
@@ -505,8 +507,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -558,8 +562,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -620,6 +626,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </span>
       <label
+        aria-disabled="true"
         class="arco-checkbox arco-checkbox-disabled"
       >
         <input
@@ -634,8 +641,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -688,8 +697,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -729,6 +740,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
+        aria-disabled="true"
         class="arco-checkbox arco-checkbox-disabled"
       >
         <input
@@ -743,8 +755,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -816,8 +830,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -893,8 +909,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -949,8 +967,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1005,8 +1025,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1058,8 +1080,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1193,8 +1217,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1246,8 +1272,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1323,8 +1351,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1379,8 +1409,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1452,8 +1484,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1529,8 +1563,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1585,8 +1621,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1641,8 +1679,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1694,8 +1734,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1795,8 +1837,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1846,8 +1890,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1921,8 +1967,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1975,8 +2023,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2046,8 +2096,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2097,8 +2149,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2148,8 +2202,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2192,8 +2248,10 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-checkbox-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-checkbox-mask-icon"
           fill="currentColor"
+          focusable="false"
           height="200"
           viewBox="0 0 1024 1024"
           width="200"
@@ -4399,8 +4457,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-checkbox-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-checkbox-mask-icon"
           fill="currentColor"
+          focusable="false"
           height="200"
           viewBox="0 0 1024 1024"
           width="200"
@@ -4790,8 +4850,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -4855,8 +4917,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -4944,8 +5008,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5012,8 +5078,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5097,8 +5165,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5186,8 +5256,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5254,8 +5326,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5322,8 +5396,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5387,8 +5463,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5914,8 +5992,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5976,6 +6056,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </span>
       <label
+        aria-disabled="true"
         class="arco-checkbox arco-checkbox-disabled"
       >
         <input
@@ -5990,8 +6071,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6044,8 +6127,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6098,8 +6183,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6173,8 +6260,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6227,8 +6316,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6673,8 +6764,10 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
                 class="arco-checkbox-mask"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-checkbox-mask-icon"
                   fill="currentColor"
+                  focusable="false"
                   height="200"
                   viewBox="0 0 1024 1024"
                   width="200"
