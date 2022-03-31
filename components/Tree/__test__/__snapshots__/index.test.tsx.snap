@@ -3,17 +3,23 @@
 exports[`ConfigProvider componentConfig.Tree default 1`] = `
 <div
   class="arco-tree"
+  role="tree"
+  tabindex="0"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Tree set className globally 1`] = `
 <div
   class="arco-tree global-default-class"
+  role="tree"
+  tabindex="0"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Tree set className globally and component set className itself. 1`] = `
 <div
   class="arco-tree component-class"
+  role="tree"
+  tabindex="0"
 />
 `;

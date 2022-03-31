@@ -123,7 +123,13 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
 
     if (icon) {
       icon = (
-        <span className={`${prefixCls}-switcher-icon`} onClick={switchExpandStatus}>
+        <span
+          className={`${prefixCls}-switcher-icon`}
+          aria-label={expanded ? 'fold button' : 'expand button'}
+          role="button"
+          tabIndex={0}
+          onClick={switchExpandStatus}
+        >
           {icon}
         </span>
       );
@@ -164,8 +170,15 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
 
   return (
     <>
-      <div style={props.style} className={classNames} ref={ref}>
-        <span className={`${prefixCls}-indent`}>
+      <div
+        style={props.style}
+        className={classNames}
+        ref={ref}
+        role="treeitem"
+        aria-disabled={disabled}
+        aria-expanded={expanded}
+      >
+        <span className={`${prefixCls}-indent`} aria-hidden>
           {[...Array(props._level)].map((_, i) => (
             <span
               className={cs(`${prefixCls}-indent-block`, {
@@ -192,6 +205,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
           />
         ) : null}
         <span
+          aria-grabbed={state.isDragging}
           ref={nodeTitleRef}
           className={cs(`${prefixCls}-title`, {
             [`${prefixCls}-title-draggable`]: draggable,

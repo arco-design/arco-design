@@ -776,6 +776,11 @@ class Tree extends Component<TreeProps, TreeState> {
           saveCacheNode={(node) => {
             this.cacheNodes[node.key] = node;
           }}
+          ariaProps={{
+            role: 'tree',
+            'aria-multiselectable': this.props.multiple,
+            tabIndex: 0,
+          }}
         />
       </TreeContext.Provider>
     );
