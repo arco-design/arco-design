@@ -3,17 +3,20 @@
 exports[`ConfigProvider componentConfig.Timeline default 1`] = `
 <div
   class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  role="list"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Timeline set className globally 1`] = `
 <div
   class="arco-timeline arco-timeline-left arco-timeline-direction-vertical global-default-class"
+  role="list"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Timeline set className globally and component set className itself. 1`] = `
 <div
   class="arco-timeline arco-timeline-left arco-timeline-direction-vertical component-class"
+  role="list"
 />
 `;

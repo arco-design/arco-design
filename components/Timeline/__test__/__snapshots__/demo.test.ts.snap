@@ -23,9 +23,11 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -59,6 +61,7 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -92,6 +95,7 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -206,9 +210,11 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-top arco-timeline-direction-horizontal"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -255,6 +261,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -301,6 +308,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -347,6 +355,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-horizontal-top arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -400,10 +409,12 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
 >
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
     style="margin-right:40px"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -438,6 +449,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -471,6 +483,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -519,6 +532,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -554,10 +568,12 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
     style="margin-right:40px"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -606,6 +622,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -654,6 +671,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -687,6 +705,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -722,9 +741,11 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -758,6 +779,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -792,6 +814,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -832,9 +855,11 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
 <div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -869,6 +894,7 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -902,6 +928,7 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -954,6 +981,7 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1123,9 +1151,11 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1160,6 +1190,7 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1194,6 +1225,7 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1235,10 +1267,12 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
 >
   <div
     class="arco-timeline arco-timeline-alternate arco-timeline-direction-vertical"
+    role="list"
     style="flex:1"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1272,6 +1306,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1305,6 +1340,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1339,10 +1375,12 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-right arco-timeline-direction-vertical"
+    role="list"
     style="flex:1"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1376,6 +1414,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1409,6 +1448,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1581,9 +1621,11 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1618,6 +1660,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1652,6 +1695,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1685,6 +1729,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1736,9 +1781,11 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
 <div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1779,6 +1826,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1819,6 +1867,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1940,9 +1989,11 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
   </div>
   <div
     class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+    role="list"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-relative"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -1995,6 +2046,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-relative"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
@@ -2047,6 +2099,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
     </div>
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-relative arco-timeline-item-last"
+      role="listitem"
     >
       <div
         class="arco-timeline-item-dot-wrapper"
