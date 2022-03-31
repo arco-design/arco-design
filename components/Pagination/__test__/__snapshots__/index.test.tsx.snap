@@ -8,6 +8,7 @@ exports[`ConfigProvider componentConfig.Pagination default 1`] = `
     class="arco-pagination-list"
   >
     <li
+      aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
@@ -25,6 +26,7 @@ exports[`ConfigProvider componentConfig.Pagination default 1`] = `
       </svg>
     </li>
     <li
+      aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
     >
       <svg
@@ -53,6 +55,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally 1`] = 
     class="arco-pagination-list"
   >
     <li
+      aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
@@ -70,6 +73,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally 1`] = 
       </svg>
     </li>
     <li
+      aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
     >
       <svg
@@ -98,6 +102,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally and co
     class="arco-pagination-list"
   >
     <li
+      aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
     >
       <svg
@@ -115,6 +120,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally and co
       </svg>
     </li>
     <li
+      aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
     >
       <svg

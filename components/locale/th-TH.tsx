@@ -106,6 +106,12 @@ export default {
     page: 'หน้า',
     countPerPage: ' / หน้า',
     total: 'รวม: {0}',
+    prev: 'หน้าที่แล้ว',
+    next: 'เซียหนึ่งหน้า',
+    currentPage: 'หน้า {0}',
+    prevSomePages: 'ย้อนกลับ {0} หน้า',
+    nextSomePages: 'ส่งต่อ {0} หน้า',
+    pageSize: 'เลขหน้า',
   },
   Popconfirm: {
     okText: 'ตกลง',

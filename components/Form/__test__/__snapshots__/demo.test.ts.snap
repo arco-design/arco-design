@@ -4252,6 +4252,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
               class="arco-pagination-list"
             >
               <li
+                aria-label="上一页"
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
               >
                 <svg
@@ -4269,12 +4270,14 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                 </svg>
               </li>
               <li
+                aria-current="true"
+                aria-label="第 1 页"
                 class="arco-pagination-item arco-pagination-item-active"
-                data-active="true"
               >
                 1
               </li>
               <li
+                aria-label="下一页"
                 class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
               >
                 <svg

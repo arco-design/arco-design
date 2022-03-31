@@ -362,6 +362,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
       class="arco-pagination-list"
     >
       <li
+        aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
       >
         <svg
@@ -379,36 +380,38 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
         </svg>
       </li>
       <li
+        aria-current="true"
+        aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
-        data-active="true"
       >
         1
       </li>
       <li
+        aria-label="第 2 页"
         class="arco-pagination-item"
-        data-active="false"
       >
         2
       </li>
       <li
+        aria-label="第 3 页"
         class="arco-pagination-item"
-        data-active="false"
       >
         3
       </li>
       <li
+        aria-label="第 4 页"
         class="arco-pagination-item"
-        data-active="false"
       >
         4
       </li>
       <li
+        aria-label="第 5 页"
         class="arco-pagination-item"
-        data-active="false"
       >
         5
       </li>
       <li
+        aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
       >
         <svg
