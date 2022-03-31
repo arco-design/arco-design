@@ -83,7 +83,9 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
                   a10
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -532,7 +534,9 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
                   Beijing
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -565,7 +569,9 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
                   Shanghai
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -598,7 +604,9 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
                   Guangzhou
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -850,7 +858,9 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
                   Beijing
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -877,7 +887,9 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
                   Shenzhen
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -980,7 +992,9 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
                   Beijing
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1007,7 +1021,9 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
                   Shenzhen
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1420,7 +1436,9 @@ exports[`renders Select/demo/options.md correctly 1`] = `
                   Beijing
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1447,7 +1465,9 @@ exports[`renders Select/demo/options.md correctly 1`] = `
                   Shanghai
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1706,7 +1726,9 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
                   </span>
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1748,7 +1770,9 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
                   </span>
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1834,7 +1858,9 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
               >
                 red
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"
@@ -1857,7 +1883,9 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
               >
                 orangered
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"

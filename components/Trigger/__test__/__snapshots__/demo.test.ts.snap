@@ -39,7 +39,9 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
                   click
                 </span>
                 <span
+                  aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
                 >
                   <svg
                     aria-hidden="true"

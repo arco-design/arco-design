@@ -132,7 +132,9 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
                 Leaf 0-1-2
               </span>
               <span
+                aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
               >
                 <svg
                   aria-hidden="true"
@@ -283,7 +285,9 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
                 Leaf 0-0-1
               </span>
               <span
+                aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
               >
                 <svg
                   aria-hidden="true"
@@ -310,7 +314,9 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
                 Leaf 0-0-2-1
               </span>
               <span
+                aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
               >
                 <svg
                   aria-hidden="true"

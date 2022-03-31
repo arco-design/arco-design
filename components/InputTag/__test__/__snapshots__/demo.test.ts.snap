@@ -138,7 +138,9 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               a
             </span>
             <span
+              aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              role="button"
             >
               <svg
                 aria-hidden="true"
@@ -171,7 +173,9 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               b
             </span>
             <span
+              aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              role="button"
             >
               <svg
                 aria-hidden="true"
@@ -204,7 +208,9 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               c
             </span>
             <span
+              aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              role="button"
             >
               <svg
                 aria-hidden="true"
@@ -237,7 +243,9 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               d
             </span>
             <span
+              aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+              role="button"
             >
               <svg
                 aria-hidden="true"
@@ -318,7 +326,9 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
           a
         </span>
         <span
+          aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+          role="button"
         >
           <svg
             aria-hidden="true"
@@ -387,7 +397,9 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
       >
         arcoblue
         <span
+          aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+          role="button"
         >
           <svg
             aria-hidden="true"
@@ -410,7 +422,9 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
       >
         orange
         <span
+          aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+          role="button"
         >
           <svg
             aria-hidden="true"
@@ -433,7 +447,9 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
       >
         lime
         <span
+          aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+          role="button"
         >
           <svg
             aria-hidden="true"
@@ -597,7 +613,9 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
             Beijing
           </span>
           <span
+            aria-label="Close"
             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+            role="button"
           >
             <svg
               aria-hidden="true"
@@ -624,7 +642,9 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
             Shanghai
           </span>
           <span
+            aria-label="Close"
             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+            role="button"
           >
             <svg
               aria-hidden="true"
