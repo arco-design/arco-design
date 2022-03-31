@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import cs from '../_util/classNames';
 import { on, off } from '../_util/dom';
-import { isFunction } from '../_util/is';
+import { isFunction, isNumber, isString } from '../_util/is';
 import Trigger from '../Trigger';
 import { TooltipPosition } from './interface';
 import { ConfigContext } from '../ConfigProvider';
@@ -21,6 +21,8 @@ interface SliderButtonProps {
   disabled?: boolean;
   prefixCls: string;
   value: number;
+  maxValue?: number;
+  minValue?: number;
   vertical?: boolean;
   tooltipVisible?: boolean;
   tooltipPosition?: TooltipPosition;
@@ -155,6 +157,10 @@ const SliderButton = function (props: SliderButtonProps) {
     clearDelayTimer();
   }
 
+  const tooltipText = useMemo(() => {
+    return isFunction(formatTooltip) ? formatTooltip(value) : value;
+  }, [formatTooltip, value]);
+
   function renderTooltipContent(position: TooltipPosition) {
     const tooltipPrefixCls = getPrefixCls('tooltip');
     return (
@@ -166,9 +172,7 @@ const SliderButton = function (props: SliderButtonProps) {
           e.stopPropagation();
         }}
       >
-        <div className={`${tooltipPrefixCls}-content-inner`}>
-          {isFunction(formatTooltip) ? formatTooltip(value) : value}
-        </div>
+        <div className={`${tooltipPrefixCls}-content-inner`}>{tooltipText}</div>
       </div>
     );
   }
@@ -206,6 +210,15 @@ const SliderButton = function (props: SliderButtonProps) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={style}
+        role="slider"
+        aria-valuemax={props.maxValue}
+        aria-valuemin={props.minValue}
+        aria-valuenow={value}
+        aria-disabled={!!disabled}
+        tabIndex={0}
+        aria-valuetext={
+          isString(tooltipText) || isNumber(tooltipText) ? String(tooltipText) : undefined
+        }
       />
     </Trigger>
   );

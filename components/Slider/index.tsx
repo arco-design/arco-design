@@ -355,6 +355,8 @@ function Slider(baseProps: SliderProps, ref) {
               disabled={disabled}
               prefixCls={prefixCls}
               value={beginVal}
+              maxValue={max}
+              minValue={min}
               vertical={vertical}
               {...getTooltipProps()}
               onMoveBegin={getPosition}
@@ -367,6 +369,8 @@ function Slider(baseProps: SliderProps, ref) {
             disabled={disabled}
             prefixCls={prefixCls}
             value={endVal}
+            maxValue={max}
+            minValue={min}
             vertical={vertical}
             {...getTooltipProps()}
             onMoveBegin={getPosition}

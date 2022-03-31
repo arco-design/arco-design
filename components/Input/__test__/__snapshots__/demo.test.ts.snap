@@ -1310,8 +1310,15 @@ exports[`renders Input/demo/size.md correctly 1`] = `
           style="left:0%;right:100%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="60"
+          aria-valuemin="24"
+          aria-valuenow="24"
+          aria-valuetext="24"
           class="arco-slider-button"
+          role="slider"
           style="left:0%"
+          tabindex="0"
         />
       </div>
     </div>

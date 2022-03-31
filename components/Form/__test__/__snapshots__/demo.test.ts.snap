@@ -1503,8 +1503,15 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       style="left:0%;right:80%"
                     />
                     <div
+                      aria-disabled="false"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="20"
+                      aria-valuetext="20"
                       class="arco-slider-button"
+                      role="slider"
                       style="left:20%"
+                      tabindex="0"
                     />
                   </div>
                 </div>
@@ -3204,8 +3211,15 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       style="left:0%;right:80%"
                     />
                     <div
+                      aria-disabled="true"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="20"
+                      aria-valuetext="20"
                       class="arco-slider-button"
+                      role="slider"
                       style="left:20%"
+                      tabindex="0"
                     />
                   </div>
                 </div>
