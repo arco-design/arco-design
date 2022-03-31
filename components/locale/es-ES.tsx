@@ -106,6 +106,12 @@ export default {
     page: 'Página',
     countPerPage: '/ página',
     total: '{0} en total',
+    prev: 'pagina anterior',
+    next: 'siguiente página',
+    currentPage: 'página {0}',
+    prevSomePages: 'Retroceder {0} páginas',
+    nextSomePages: 'Avanzar {0} páginas',
+    pageSize: 'número de página',
   },
   Popconfirm: {
     okText: 'Aceptar',

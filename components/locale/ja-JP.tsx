@@ -106,6 +106,12 @@ export default {
     page: 'ページ',
     countPerPage: '記事/ページ',
     total: '合計 {0}',
+    prev: '前のページ',
+    next: '次のページ',
+    currentPage: 'ページ{0}',
+    prevSomePages: '前の{0}ページ',
+    nextSomePages: '次の{0}ページ',
+    pageSize: 'ページ番号',
   },
   Popconfirm: {
     okText: '確認',

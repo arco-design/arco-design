@@ -106,6 +106,12 @@ export default {
     page: '页',
     countPerPage: '条/页',
     total: '共 {0} 条',
+    prev: '上一页',
+    next: '下一页',
+    currentPage: '第 {0} 页',
+    prevSomePages: '向前 {0} 页',
+    nextSomePages: '向后 {0} 页',
+    pageSize: '页码',
   },
   Popconfirm: {
     okText: '确定',

@@ -1,8 +1,9 @@
-import React, { ReactNode, CSSProperties } from 'react';
+import React, { useContext, ReactNode, CSSProperties } from 'react';
 import cs from '../_util/classNames';
 import IconLeft from '../../icon/react-icon/IconLeft';
 import IconRight from '../../icon/react-icon/IconRight';
 import IconMore from '../../icon/react-icon/IconMore';
+import { ConfigContext } from '../ConfigProvider';
 
 type itemRenderType = (
   page: number,
@@ -63,6 +64,8 @@ export interface StepPagerProps {
  */
 
 function Pager(props: PagerProps) {
+  const { locale } = useContext(ConfigContext);
+
   const onClick = (e) => {
     const { pageNum, onClick, disabled } = props;
     if (e.currentTarget.dataset.active === 'true') {
@@ -87,8 +90,16 @@ function Pager(props: PagerProps) {
     style = { ...style, ...activePageItemStyle };
   }
 
+  const ariaCurrentProps = isActive ? { 'aria-current': true } : {};
+
   return (
-    <li style={style} className={classnames} data-active={isActive} onClick={onClick}>
+    <li
+      style={style}
+      className={classnames}
+      onClick={onClick}
+      aria-label={locale.Pagination.currentPage.replace('{0}', pageNum)}
+      {...ariaCurrentProps}
+    >
       {itemRender ? itemRender(pageNum, 'page', pageNum) : pageNum}
     </li>
   );
@@ -112,6 +123,8 @@ function getIcon(name: string, icons) {
  * @param props
  */
 export const JumpPager = (props: JumpPagerProps) => {
+  const { locale } = useContext(ConfigContext);
+
   const { rootPrefixCls, current, allPages, jumpPage, icons, disabled, pageItemStyle, itemRender } =
     props;
 
@@ -126,8 +139,13 @@ export const JumpPager = (props: JumpPagerProps) => {
 
   const originElement = getIcon('more', icons);
 
+  const ariaLabel =
+    jumpPage > 0
+      ? locale.Pagination.nextSomePages.replace('{0}', jumpPage)
+      : locale.Pagination.prevSomePages.replace('{0}', -jumpPage);
+
   return (
-    <li style={pageItemStyle} className={cls} onClick={onClick}>
+    <li style={pageItemStyle} className={cls} onClick={onClick} aria-label={ariaLabel}>
       {itemRender ? itemRender(undefined, 'more', originElement) : originElement}
     </li>
   );
@@ -138,6 +156,7 @@ export const JumpPager = (props: JumpPagerProps) => {
  * @param props
  */
 export const StepPager = (props: StepPagerProps) => {
+  const { locale } = useContext(ConfigContext);
   const { rootPrefixCls, current, allPages, type, icons, disabled, pageItemStyle, itemRender } =
     props;
   const prefixCls = `${rootPrefixCls}-item`;
@@ -171,7 +190,12 @@ export const StepPager = (props: StepPagerProps) => {
   };
 
   return (
-    <li style={pageItemStyle} className={cls} onClick={onClick}>
+    <li
+      style={pageItemStyle}
+      className={cls}
+      onClick={onClick}
+      aria-label={locale.Pagination[pageType]}
+    >
       {itemRender ? itemRender(undefined, pageType, StepIcon) : StepIcon}
     </li>
   );

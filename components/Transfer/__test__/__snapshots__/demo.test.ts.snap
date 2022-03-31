@@ -2947,6 +2947,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
               class="arco-pagination-list"
             >
               <li
+                aria-label="上一页"
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
               >
                 <svg
@@ -2984,6 +2985,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
                 </div>
               </li>
               <li
+                aria-label="下一页"
                 class="arco-pagination-item arco-pagination-item-next"
               >
                 <svg
@@ -3223,6 +3225,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
               class="arco-pagination-list"
             >
               <li
+                aria-label="上一页"
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
               >
                 <svg
@@ -3260,6 +3263,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
                 </div>
               </li>
               <li
+                aria-label="下一页"
                 class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
               >
                 <svg

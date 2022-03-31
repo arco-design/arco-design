@@ -34,7 +34,11 @@ function PageOption(props: PageOptionProps) {
 
   return (
     sizeCanChange && (
-      <div ref={selectRef} className={`${rootPrefixCls}-option`}>
+      <div
+        ref={selectRef}
+        className={`${rootPrefixCls}-option`}
+        aria-label={locale.Pagination.pageSize}
+      >
         <Select
           value={sizeOptions.indexOf(pageSize) !== -1 ? pageSize : sizeOptions[0]}
           onChange={(value) => {
