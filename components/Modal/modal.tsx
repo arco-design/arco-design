@@ -130,6 +130,13 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     props.onCancel && props.onCancel();
   };
 
+  const onEscExit = (event: React.KeyboardEvent) => {
+    if (escToExit && visible && event.key === Esc.key) {
+      event.stopPropagation();
+      onCancel();
+    }
+  };
+
   const inExit = useRef(false);
   const onClickMask = (e) => {
     if (!maskClickRef.current) return;
@@ -271,12 +278,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
           autoFocus={innerAutoFocus}
           lockProps={{
             tabIndex: -1,
-            onKeyDown: (event) => {
-              if (escToExit) {
-                event && event.stopPropagation();
-                onCancel();
-              }
-            },
+            onKeyDown: onEscExit,
           }}
         >
           {element}
@@ -335,6 +337,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             'closable',
             'prefixCls',
           ])}
+          tabIndex={!innerFocusLock || !innerAutoFocus ? -1 : null}
           ref={modalWrapperRef}
           className={cs(
             `${prefixCls}-wrapper`,
@@ -350,16 +353,11 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             display: visible || wrapperVisible ? 'block' : 'none',
             overflow: !visible && wrapperVisible ? 'hidden' : '',
           }}
+          onKeyDown={!innerFocusLock || !innerAutoFocus ? onEscExit : null}
           onMouseDown={(e) => {
             maskClickRef.current = e.target === e.currentTarget;
           }}
           onClick={onClickMask}
-          onKeyDown={(e) => {
-            if (escToExit && e.key === Esc.key) {
-              e.stopPropagation();
-              onCancel();
-            }
-          }}
         >
           <CSSTransition
             in={visible}
