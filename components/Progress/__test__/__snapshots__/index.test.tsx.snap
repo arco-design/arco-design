@@ -8,7 +8,11 @@ exports[`ConfigProvider componentConfig.Progress default 1`] = `
     class="arco-progress-line-wrapper"
   >
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="0"
       class="arco-progress-line-outer"
+      role="progressbar"
       style="height:4px"
     >
       <div
@@ -33,7 +37,11 @@ exports[`ConfigProvider componentConfig.Progress set className globally 1`] = `
     class="arco-progress-line-wrapper"
   >
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="0"
       class="arco-progress-line-outer"
+      role="progressbar"
       style="height:4px"
     >
       <div
@@ -58,7 +66,11 @@ exports[`ConfigProvider componentConfig.Progress set className globally and comp
     class="arco-progress-line-wrapper"
   >
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="0"
       class="arco-progress-line-outer"
+      role="progressbar"
       style="height:4px"
     >
       <div

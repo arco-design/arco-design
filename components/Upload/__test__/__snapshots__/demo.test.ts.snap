@@ -1341,7 +1341,11 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
                 class="arco-progress-line-wrapper"
               >
                 <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
                   class="arco-progress-line-outer"
+                  role="progressbar"
                   style="height:3px"
                 >
                   <div
@@ -1480,7 +1484,11 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
                 class="arco-progress-line-wrapper"
               >
                 <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
                   class="arco-progress-line-outer"
+                  role="progressbar"
                   style="height:3px"
                 >
                   <div
