@@ -67,6 +67,7 @@ function Timeline(baseProps: PropsWithChildren<TimelineProps>, ref: RefObject<HT
 
   return (
     <div
+      role="list"
       {...rest}
       ref={ref}
       className={cs(
