@@ -168,6 +168,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   return options.length ? (
     <div className={`${prefixCls}-list-wrapper`}>
       <ul
+        role="menu"
         onMouseMove={() => {
           isKeyboardHover.current = false;
         }}
@@ -190,6 +191,9 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
 
           return (
             <li
+              role="menuitem"
+              aria-current="false"
+              aria-disabled={item.disabled}
               ref={(node) => {
                 if (i === currentHoverIndex) {
                   refActiveItem.current = node;
