@@ -2,7 +2,12 @@
 
 exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-0"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -11,6 +16,7 @@ exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
     title="Trunk"
   >
     <input
+      aria-hidden="true"
       autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       style="width:100%;pointer-events:none"
@@ -23,6 +29,7 @@ exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
       Trunk
     </span>
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <span
@@ -105,7 +112,12 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
     </label>
   </div>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-tree-select-popup-1"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+    role="combobox"
     style="width:300px"
     tabindex="0"
   >
@@ -164,6 +176,7 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-hidden="true"
         class="arco-tree-select-suffix"
       >
         <span
@@ -258,7 +271,12 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
     </div>
   </div>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-tree-select-popup-2"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+    role="combobox"
     style="width:300px"
     tabindex="0"
   >
@@ -346,6 +364,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-hidden="true"
         class="arco-tree-select-suffix"
       >
         <span
@@ -391,7 +410,12 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-3"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -400,6 +424,7 @@ exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
     title="Leaf"
   >
     <input
+      aria-hidden="true"
       autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       style="width:100%;pointer-events:none"
@@ -412,6 +437,7 @@ exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
       Leaf
     </span>
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -438,7 +464,12 @@ exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-4"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -455,9 +486,11 @@ exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-tree-select-view-value arco-tree-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -485,7 +518,12 @@ exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
 exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
 <div>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-tree-select-popup-5"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+    role="combobox"
     style="width:300px"
     tabindex="0"
   >
@@ -501,9 +539,11 @@ exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
         value=""
       />
       <span
+        aria-hidden="true"
         class="arco-tree-select-view-value arco-tree-select-hidden"
       />
       <div
+        aria-hidden="true"
         class="arco-tree-select-suffix"
       >
         <div
@@ -531,7 +571,12 @@ exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-6"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -540,6 +585,7 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
     title="Leaf"
   >
     <input
+      aria-hidden="true"
       autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       style="width:100%;pointer-events:none"
@@ -552,6 +598,7 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
       Leaf
     </span>
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -578,7 +625,12 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-7"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -587,6 +639,7 @@ exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
     title="node2"
   >
     <input
+      aria-hidden="true"
       autocomplete="off"
       class="arco-tree-select-view-input arco-tree-select-hidden"
       placeholder="node2"
@@ -599,6 +652,7 @@ exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
       node2
     </span>
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -633,7 +687,12 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-tree-select-popup-8"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -665,6 +724,7 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-tree-select-suffix"
         >
           <div
@@ -693,7 +753,12 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-tree-select-popup-9"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -725,6 +790,7 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-tree-select-suffix"
         >
           <div
@@ -754,7 +820,12 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-10"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -770,9 +841,11 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-tree-select-view-value arco-tree-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -800,7 +873,12 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/popupVisible.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-11"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -817,9 +895,11 @@ exports[`renders TreeSelect/demo/popupVisible.md correctly 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-tree-select-view-value arco-tree-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -853,7 +933,12 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-tree-select-popup-12"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -869,9 +954,11 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-tree-select-view-value arco-tree-select-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-tree-select-suffix"
         >
           <div
@@ -900,7 +987,12 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-tree-select-popup-13"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-tree-select arco-tree-select-single arco-tree-select-show-search arco-tree-select-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -916,9 +1008,11 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-tree-select-view-value arco-tree-select-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-tree-select-suffix"
         >
           <div
@@ -1026,7 +1120,12 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
   </div>
   <div>
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-tree-select-popup-15"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -1035,6 +1134,7 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
         title="Trunk"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
           class="arco-tree-select-view-input arco-tree-select-hidden"
           style="width:100%;pointer-events:none"
@@ -1047,6 +1147,7 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
           Trunk
         </span>
         <div
+          aria-hidden="true"
           class="arco-tree-select-suffix"
         >
           <div
@@ -1075,7 +1176,12 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
 
 exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-tree-select-popup-16"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -1092,9 +1198,11 @@ exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-tree-select-view-value arco-tree-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-tree-select-suffix"
     >
       <div
@@ -1122,7 +1230,12 @@ exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
 exports[`renders TreeSelect/demo/virtual.md correctly 1`] = `
 <div>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-tree-select-popup-17"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+    role="combobox"
     tabindex="0"
   >
     <div
@@ -1137,9 +1250,11 @@ exports[`renders TreeSelect/demo/virtual.md correctly 1`] = `
         value=""
       />
       <span
+        aria-hidden="true"
         class="arco-tree-select-view-value arco-tree-select-hidden"
       />
       <div
+        aria-hidden="true"
         class="arco-tree-select-suffix"
       >
         <div

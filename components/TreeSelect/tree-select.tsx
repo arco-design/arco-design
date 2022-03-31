@@ -36,6 +36,9 @@ function isEmptyValue(value) {
   );
 }
 
+// Generate DOM id for instance
+let globalTreeSelectIndex = 0;
+
 const defaultProps: TreeSelectProps = {
   bordered: true,
   treeCheckedStrategy: Tree.SHOW_CHILD,
@@ -71,6 +74,13 @@ const TreeSelect: ForwardRefRenderFunction<
 
   const prefixCls = getPrefixCls('tree-select');
   const isFilterNode = inputValue && !isFunction(props.onSearch);
+
+  // Unique ID of this select instance
+  const instancePopupID = useMemo<string>(() => {
+    const id = `${prefixCls}-popup-${globalTreeSelectIndex}`;
+    globalTreeSelectIndex++;
+    return id;
+  }, []);
 
   const handleSearch = useCallback(
     (inputText) => {
@@ -247,6 +257,7 @@ const TreeSelect: ForwardRefRenderFunction<
 
         return (
           <div
+            id={instancePopupID}
             className={`${prefixCls}-popup`}
             style={{
               maxHeight:
@@ -280,6 +291,7 @@ const TreeSelect: ForwardRefRenderFunction<
         : props.triggerElement || (
             <SelectView
               ref={refSelectView}
+              ariaControls={instancePopupID}
               {...props}
               popupVisible={popupVisible}
               value={!multiple && isArray(value) ? value[0] : value}

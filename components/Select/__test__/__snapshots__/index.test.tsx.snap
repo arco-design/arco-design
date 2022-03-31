@@ -2,7 +2,12 @@
 
 exports[`ConfigProvider componentConfig.Select default 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-select-popup-1"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"
+  role="combobox"
   tabindex="0"
 >
   <div
@@ -17,9 +22,11 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-select-view-value arco-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-select-suffix"
     >
       <div
@@ -46,7 +53,12 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
 
 exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-select-popup-2"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default global-default-class"
+  role="combobox"
   tabindex="0"
 >
   <div
@@ -61,9 +73,11 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-select-view-value arco-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-select-suffix"
     >
       <div
@@ -90,7 +104,12 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
 
 exports[`ConfigProvider componentConfig.Select set className globally and component set className itself. 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-select-popup-3"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default component-class"
+  role="combobox"
   tabindex="0"
 >
   <div
@@ -105,9 +124,11 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-select-view-value arco-select-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-select-suffix"
     >
       <div

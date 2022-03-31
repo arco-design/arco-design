@@ -104,7 +104,12 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
               class="arco-input-group-addafter"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-0"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+                role="combobox"
                 style="width:80px"
                 tabindex="0"
               >
@@ -113,6 +118,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                   title=".com"
                 >
                   <input
+                    aria-hidden="true"
                     autocomplete="off"
                     class="arco-select-view-input arco-select-hidden"
                     placeholder=".com"
@@ -125,6 +131,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                     .com
                   </span>
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -215,7 +222,12 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         class="arco-input-group arco-input-group-compact"
       >
         <div
+          aria-autocomplete="list"
+          aria-controls="arco-select-popup-1"
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+          role="combobox"
           style="width:25%"
           tabindex="0"
         >
@@ -224,6 +236,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             title="Beijing"
           >
             <input
+              aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
@@ -236,6 +249,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
               Beijing
             </span>
             <div
+              aria-hidden="true"
               class="arco-select-suffix"
             >
               <div
@@ -274,7 +288,12 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         class="arco-input-group arco-input-group-compact"
       >
         <div
+          aria-autocomplete="list"
+          aria-controls="arco-select-popup-2"
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+          role="combobox"
           style="width:25%"
           tabindex="0"
         >
@@ -283,6 +302,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             title="Beijing"
           >
             <input
+              aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
@@ -295,6 +315,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
               Beijing
             </span>
             <div
+              aria-hidden="true"
               class="arco-select-suffix"
             >
               <div
@@ -362,7 +383,12 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         class="arco-input-group arco-input-group-compact"
       >
         <div
+          aria-autocomplete="list"
+          aria-controls="arco-select-popup-3"
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+          role="combobox"
           style="width:25%"
           tabindex="0"
         >
@@ -371,6 +397,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             title="Beijing"
           >
             <input
+              aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
@@ -383,6 +410,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
               Beijing
             </span>
             <div
+              aria-hidden="true"
               class="arco-select-suffix"
             >
               <div
@@ -1571,7 +1599,12 @@ exports[`renders Input/demo/size.md correctly 1`] = `
           class="arco-input-group-addbefore"
         >
           <div
+            aria-autocomplete="list"
+            aria-controls="arco-select-popup-4"
+            aria-expanded="false"
+            aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default"
+            role="combobox"
             style="width:100px"
             tabindex="0"
           >
@@ -1588,9 +1621,11 @@ exports[`renders Input/demo/size.md correctly 1`] = `
                 value=""
               />
               <span
+                aria-hidden="true"
                 class="arco-select-view-value arco-select-hidden"
               />
               <div
+                aria-hidden="true"
                 class="arco-select-suffix"
               >
                 <div
