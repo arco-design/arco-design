@@ -11,7 +11,7 @@ import React, {
   ReactElement,
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { FocusOn as FocusLock } from 'react-focus-on';
+import FocusLock from 'react-focus-lock';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
 import { isServerRendering } from '../_util/dom';
@@ -267,14 +267,17 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     >
       {innerFocusLock ? (
         <FocusLock
-          enabled={visible}
-          onEscapeKey={(event) => {
-            if (escToExit) {
-              event && event.stopPropagation();
-              onCancel();
-            }
-          }}
+          disabled={!visible}
           autoFocus={innerAutoFocus}
+          lockProps={{
+            tabIndex: -1,
+            onKeyDown: (event) => {
+              if (escToExit) {
+                event && event.stopPropagation();
+                onCancel();
+              }
+            },
+          }}
         >
           {element}
         </FocusLock>
@@ -318,12 +321,6 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
           </CSSTransition>
         ) : null}
         <div
-          onKeyDown={(e) => {
-            if (escToExit && e.key === Esc.key) {
-              e.stopPropagation();
-              onCancel();
-            }
-          }}
           role="dialog"
           aria-hidden="true"
           {...omit(rest, [
@@ -357,6 +354,12 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             maskClickRef.current = e.target === e.currentTarget;
           }}
           onClick={onClickMask}
+          onKeyDown={(e) => {
+            if (escToExit && e.key === Esc.key) {
+              e.stopPropagation();
+              onCancel();
+            }
+          }}
         >
           <CSSTransition
             in={visible}
