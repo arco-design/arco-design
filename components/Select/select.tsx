@@ -44,6 +44,9 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
 const THRESHOLD_TOKEN_SEPARATOR_TRIGGER = 100;
 
+// Generate DOM id for instance
+let globalSelectIndex = 0;
+
 const defaultProps: SelectProps = {
   trigger: 'click',
   bordered: true,
@@ -165,6 +168,12 @@ function Select(baseProps: SelectProps, ref) {
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
+  // Unique ID of this select instance
+  const instancePopupID = useMemo<string>(() => {
+    const id = `${prefixCls}-popup-${globalSelectIndex}`;
+    globalSelectIndex++;
+    return id;
+  }, []);
 
   const isNoOptionSelected = isEmptyValue(value, isMultipleMode);
   const valueActiveDefault = defaultActiveFirstOption
@@ -482,6 +491,8 @@ function Select(baseProps: SelectProps, ref) {
     // 选项列表元素
     const eleOptionList = childrenList.length ? (
       <VirtualList
+        id={instancePopupID}
+        role="listbox"
         style={dropdownMenuStyle}
         className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
         ref={refWrapper}
@@ -701,6 +712,7 @@ function Select(baseProps: SelectProps, ref) {
                 popupVisible={popupVisible}
                 // other
                 prefixCls={prefixCls}
+                ariaControls={instancePopupID}
                 isEmptyValue={isNoOptionSelected}
                 isMultiple={isMultipleMode}
                 onSort={tryUpdateSelectValue}

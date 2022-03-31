@@ -7,6 +7,7 @@ import React, {
   useRef,
   useContext,
   useCallback,
+  useMemo,
 } from 'react';
 import { isArray, isFunction, isObject, isString } from '../_util/is';
 import Trigger from '../Trigger';
@@ -33,6 +34,9 @@ import {
   SHOW_CHILD,
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
+
+// Generate DOM id for instance
+let globalCascaderIndex = 0;
 
 export const DefaultFieldNames = {
   label: 'label',
@@ -89,6 +93,13 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   // 暂存被选中的值对应的节点。仅在onSearch的时候用到
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>(store?.getCheckedNodes() || []);
+
+  // Unique ID of this select instance
+  const instancePopupID = useMemo<string>(() => {
+    const id = `${prefixCls}-popup-${globalCascaderIndex}`;
+    globalCascaderIndex++;
+    return id;
+  }, []);
 
   useEffect(() => {
     const clearTimer = () => {
@@ -260,6 +271,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
     return (
       <div
+        id={instancePopupID}
         className={cs(`${prefixCls}-popup`, {
           [`${prefixCls}-popup-trigger-hover`]: props.expandTrigger === 'hover',
         })}
@@ -331,6 +343,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
         <SelectView
           {...props}
           ref={selectRef}
+          ariaControls={instancePopupID}
           popupVisible={popupVisible}
           value={isMultiple ? mergeValue : mergeValue && mergeValue[0]}
           inputValue={inputValue}

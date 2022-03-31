@@ -9,7 +9,12 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-0"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -26,9 +31,11 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -56,7 +63,12 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -73,9 +85,11 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -111,7 +125,12 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-2"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -127,9 +146,11 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -158,7 +179,12 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-3"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -190,6 +216,7 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -219,7 +246,12 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
 
 exports[`renders Cascader/demo/clear.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-4"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -228,6 +260,7 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
     title="Shanghai / Shanghai / Huangpu"
   >
     <input
+      aria-hidden="true"
       autocomplete="off"
       class="arco-cascader-view-input arco-cascader-hidden"
       placeholder="Please select ..."
@@ -241,6 +274,7 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
       Shanghai / Shanghai / Huangpu
     </span>
     <div
+      aria-hidden="true"
       class="arco-cascader-suffix"
     >
       <span
@@ -291,7 +325,12 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-5"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -307,9 +346,11 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -338,7 +379,12 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-6"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -370,6 +416,7 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -421,7 +468,12 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-8"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -430,6 +482,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
         title="Beijing / Beijing / Dongcheng / Chaoyangmen"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
           class="arco-cascader-view-input arco-cascader-hidden"
           placeholder="Beijing / Beijing / Dongcheng / Chaoyangmen"
@@ -442,6 +495,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
           Beijing / Beijing / Dongcheng / Chaoyangmen
         </span>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -487,7 +541,12 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-9"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -537,6 +596,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -590,7 +650,12 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-10"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -607,9 +672,11 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -637,7 +704,12 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-11"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -653,9 +725,11 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -685,7 +759,12 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
 exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
 <div>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-cascader-popup-12"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+    role="combobox"
     style="width:300px"
     tabindex="0"
   >
@@ -744,6 +823,7 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
         </div>
       </div>
       <div
+        aria-hidden="true"
         class="arco-cascader-suffix"
       >
         <span
@@ -796,7 +876,12 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-13"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -805,6 +890,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
         title="Shanghai / Shanghai / Huangpu"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
           class="arco-cascader-view-input arco-cascader-hidden"
           placeholder="Shanghai / Shanghai / Huangpu"
@@ -817,6 +903,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
           Shanghai / Shanghai / Huangpu
         </span>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -862,7 +949,12 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-14"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -921,6 +1013,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -974,7 +1067,12 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-15"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="max-width:300px"
       tabindex="0"
     >
@@ -983,6 +1081,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
         title="Shanghai / Shanghai / Huangpu"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
           class="arco-cascader-view-input arco-cascader-hidden"
           placeholder="Shanghai / Shanghai / Huangpu"
@@ -995,6 +1094,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
           Shanghai / Shanghai / Huangpu
         </span>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -1040,7 +1140,12 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-16"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="max-width:300px"
       tabindex="0"
     >
@@ -1099,6 +1204,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -1145,7 +1251,12 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
 
 exports[`renders Cascader/demo/format.md correctly 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-17"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
+  role="combobox"
   style="width:300px"
   tabindex="0"
 >
@@ -1154,6 +1265,7 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
     title="Shanghai > Shanghai > Huangpu"
   >
     <input
+      aria-hidden="true"
       autocomplete="off"
       class="arco-cascader-view-input arco-cascader-hidden"
       placeholder="Please select ..."
@@ -1167,6 +1279,7 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
       Shanghai &gt; Shanghai &gt; Huangpu
     </span>
     <div
+      aria-hidden="true"
       class="arco-cascader-suffix"
     >
       <span
@@ -1217,7 +1330,12 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-18"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -1233,9 +1351,11 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1264,7 +1384,12 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-19"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -1296,6 +1421,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1332,7 +1458,12 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
     style="margin-right:8px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-20"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -1391,6 +1522,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1419,7 +1551,12 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-21"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -1451,6 +1588,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1486,7 +1624,12 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-22"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -1518,6 +1661,7 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1554,7 +1698,12 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-23"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -1563,6 +1712,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
         title="Shanghai / Shanghai / Huangpu"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
           class="arco-cascader-view-input arco-cascader-hidden"
           placeholder="Shanghai / Shanghai / Huangpu"
@@ -1575,6 +1725,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
           Shanghai / Shanghai / Huangpu
         </span>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1603,7 +1754,12 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-24"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -1662,6 +1818,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -1698,7 +1855,12 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
     style="margin-right:24px"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-25"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -1707,6 +1869,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
         title="Shanghai / Shanghai / Huangpu"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
           class="arco-cascader-view-input arco-cascader-hidden"
           placeholder="Shanghai / Shanghai / Huangpu"
@@ -1719,6 +1882,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
           Shanghai / Shanghai / Huangpu
         </span>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -1764,7 +1928,12 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-26"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -1823,6 +1992,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <span
@@ -1908,7 +2078,12 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
     </label>
   </div>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-cascader-popup-27"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+    role="combobox"
     style="width:300px"
     tabindex="0"
   >
@@ -1924,9 +2099,11 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
         value=""
       />
       <span
+        aria-hidden="true"
         class="arco-cascader-view-value arco-cascader-hidden"
       />
       <div
+        aria-hidden="true"
         class="arco-cascader-suffix"
       >
         <div
@@ -2019,7 +2196,12 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
   </div>
   <div>
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-28"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
+      role="combobox"
       style="width:300px;margin-bottom:20px"
       tabindex="0"
     >
@@ -2036,9 +2218,11 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
           value=""
         />
         <span
+          aria-hidden="true"
           class="arco-cascader-view-value arco-cascader-hidden"
         />
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -2063,7 +2247,12 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
     </div>
     <br />
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-29"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+      role="combobox"
       style="width:300px"
       tabindex="0"
     >
@@ -2095,6 +2284,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-cascader-suffix"
         >
           <div
@@ -2136,7 +2326,12 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
     </button>
   </p>
   <div
+    aria-autocomplete="list"
+    aria-controls="arco-cascader-popup-30"
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-size-default"
+    role="combobox"
     style="width:300px"
     tabindex="0"
   >
@@ -2153,9 +2348,11 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
         value=""
       />
       <span
+        aria-hidden="true"
         class="arco-cascader-view-value arco-cascader-hidden"
       />
       <div
+        aria-hidden="true"
         class="arco-cascader-suffix"
       >
         <div

@@ -12,7 +12,12 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
       Trigger
     </span>
     <div
+      aria-autocomplete="list"
+      aria-controls="arco-select-popup-0"
+      aria-expanded="false"
+      aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      role="combobox"
       style="width:300px;margin-left:20px"
       tabindex="0"
     >
@@ -71,6 +76,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-hidden="true"
           class="arco-select-suffix"
         >
           <div

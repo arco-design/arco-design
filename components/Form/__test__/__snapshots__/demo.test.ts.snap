@@ -538,7 +538,12 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-0"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -553,9 +558,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-cascader-view-value arco-cascader-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-cascader-suffix"
                   >
                     <div
@@ -691,7 +698,12 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-1"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -707,9 +719,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-select-view-value arco-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -777,7 +791,12 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -835,6 +854,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -903,7 +923,12 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-tree-select-popup-0"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -919,9 +944,11 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-tree-select-view-value arco-tree-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-tree-select-suffix"
                   >
                     <div
@@ -1986,7 +2013,12 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                     class="arco-input-group-addbefore"
                   >
                     <div
+                      aria-autocomplete="list"
+                      aria-controls="arco-select-popup-3"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
                       class="arco-select arco-select-single arco-select-size-default"
+                      role="combobox"
                       style="width:100px"
                       tabindex="0"
                     >
@@ -2003,9 +2035,11 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                           value=""
                         />
                         <span
+                          aria-hidden="true"
                           class="arco-select-view-value arco-select-hidden"
                         />
                         <div
+                          aria-hidden="true"
                           class="arco-select-suffix"
                         >
                           <div
@@ -2352,7 +2386,13 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-1"
+                aria-disabled="true"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default arco-cascader-disabled"
+                role="combobox"
                 tabindex="-1"
               >
                 <div
@@ -2368,9 +2408,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-cascader-view-value arco-cascader-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-cascader-suffix"
                   >
                     <div
@@ -2507,7 +2549,13 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-5"
+                aria-disabled="true"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
+                role="combobox"
                 tabindex="-1"
               >
                 <div
@@ -2524,9 +2572,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-select-view-value arco-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -2594,7 +2644,13 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-6"
+                aria-disabled="true"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default arco-select-disabled"
+                role="combobox"
                 tabindex="-1"
               >
                 <div
@@ -2634,6 +2690,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -3552,7 +3609,12 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                   class="arco-form-item-control-children"
                 >
                   <div
+                    aria-autocomplete="list"
+                    aria-controls="arco-select-popup-7"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
                     class="arco-select arco-select-single arco-select-size-default"
+                    role="combobox"
                     tabindex="0"
                   >
                     <div
@@ -3568,9 +3630,11 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                         value=""
                       />
                       <span
+                        aria-hidden="true"
                         class="arco-select-view-value arco-select-hidden"
                       />
                       <div
+                        aria-hidden="true"
                         class="arco-select-suffix"
                       >
                         <div
@@ -5527,7 +5591,12 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                 class="arco-row arco-row-align-center arco-row-justify-start"
               >
                 <div
+                  aria-autocomplete="list"
+                  aria-controls="arco-select-popup-8"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
                   class="arco-select arco-select-single arco-select-size-default"
+                  role="combobox"
                   style="flex:1"
                   tabindex="0"
                 >
@@ -5544,9 +5613,11 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                       value=""
                     />
                     <span
+                      aria-hidden="true"
                       class="arco-select-view-value arco-select-hidden"
                     />
                     <div
+                      aria-hidden="true"
                       class="arco-select-suffix"
                     >
                       <div
@@ -5629,7 +5700,12 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-9"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -5645,9 +5721,11 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-select-view-value arco-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -6846,7 +6924,12 @@ exports[`renders Form/demo/size.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -6861,9 +6944,11 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-cascader-view-value arco-cascader-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-cascader-suffix"
                   >
                     <div
@@ -6965,7 +7050,12 @@ exports[`renders Form/demo/size.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-11"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -6981,9 +7071,11 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-select-view-value arco-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -7034,7 +7126,12 @@ exports[`renders Form/demo/size.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-12"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -7065,6 +7162,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -7116,7 +7214,12 @@ exports[`renders Form/demo/size.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-tree-select-popup-1"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -7132,9 +7235,11 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-tree-select-view-value arco-tree-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-tree-select-suffix"
                   >
                     <div
@@ -8086,7 +8191,12 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-3"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -8102,9 +8212,11 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-cascader-view-value arco-cascader-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-cascader-suffix"
                   >
                     <div
@@ -8174,7 +8286,12 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-select-popup-14"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -8205,6 +8322,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     </div>
                   </div>
                   <div
+                    aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
@@ -8378,7 +8496,12 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
+                aria-autocomplete="list"
+                aria-controls="arco-tree-select-popup-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+                role="combobox"
                 tabindex="0"
               >
                 <div
@@ -8394,9 +8517,11 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     value=""
                   />
                   <span
+                    aria-hidden="true"
                     class="arco-tree-select-view-value arco-tree-select-hidden"
                   />
                   <div
+                    aria-hidden="true"
                     class="arco-tree-select-suffix"
                   >
                     <div
