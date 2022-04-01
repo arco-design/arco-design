@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import isEqualWith from 'lodash/isEqualWith';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -260,14 +260,14 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     };
   }, [props.popupVisible, handleKeyDown]);
 
-  const menus = useMemo(() => {
-    const list = [store.getOptions()];
+  const menus = (() => {
+    const list = [options];
     const pathNodes = activeNode ? activeNode.getPathNodes() : [];
     pathNodes.forEach((option) => {
       option && option.children && list.push(option.children);
     });
     return list;
-  }, [activeNode, store]);
+  })();
 
   const dropdownColumnRender = isFunction(props.dropdownColumnRender)
     ? props.dropdownColumnRender
