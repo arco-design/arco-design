@@ -110,16 +110,12 @@ function TimePicker(props: InnerTimePickerProps) {
       switch (type) {
         case 'hour':
           return typeof disabledHours === 'function'
-            ? padStart(
-                HOURS.find((h) => disabledHours().indexOf(h) === -1),
-                2,
-                '0'
-              )
+            ? padStart(HOURS.find((h) => disabledHours().indexOf(h) === -1) || 0, 2, '0')
             : padStart(HOURS[0], 2, '0');
         case 'minute':
           return typeof disabledMinutes === 'function'
             ? padStart(
-                MINUTES.find((m) => disabledMinutes(selectedHour).indexOf(m) === -1),
+                MINUTES.find((m) => disabledMinutes(selectedHour).indexOf(m) === -1) || 0,
                 2,
                 '0'
               )
@@ -129,7 +125,7 @@ function TimePicker(props: InnerTimePickerProps) {
             ? padStart(
                 SECONDS.find(
                   (s) => disabledSeconds(selectedHour, selectedMinute).indexOf(s) === -1
-                ),
+                ) || 0,
                 2,
                 '0'
               )
