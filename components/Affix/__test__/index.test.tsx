@@ -97,4 +97,24 @@ describe('Affix', () => {
     await movePlaceholder(-200);
     expect(onChange).toBeCalledTimes(1);
   });
+
+  it('It should not be error when children is invalid', () => {
+    const originError = console.error;
+    const originWarn = console.warn;
+
+    console.error = jest.fn();
+    console.warn = jest.fn();
+    mount(
+      <Affix offsetBottom={120}>
+        {null}
+        {null}
+      </Affix>
+    );
+
+    expect(console.error).toHaveBeenCalledTimes(0);
+    expect(console.warn).toHaveBeenCalledTimes(1);
+
+    console.error = originError;
+    console.warn = originWarn;
+  });
 });

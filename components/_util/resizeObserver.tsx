@@ -10,7 +10,11 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   resizeObserver: any;
 
   componentDidMount() {
-    this.createResizeObserver();
+    if (!React.isValidElement(this.props.children)) {
+      console.warn('The children of ResizeObserver is invalid.');
+    } else {
+      this.createResizeObserver();
+    }
   }
 
   componentDidUpdate() {
