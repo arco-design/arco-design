@@ -9,7 +9,11 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
     style="margin-right:8px"
   >
     <button
+      aria-controls="arco-dropdown-popup-0"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -38,8 +42,12 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
       style="display:inline-block;cursor:not-allowed"
     >
       <button
+        aria-controls="arco-dropdown-popup-1"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
         disabled=""
+        role="combobox"
         style="pointer-events:none"
         type="button"
       >
@@ -70,7 +78,11 @@ exports[`renders Dropdown/demo/callback.md correctly 1`] = `
   class="dropdown-demo"
 >
   <button
+    aria-controls="arco-dropdown-popup-2"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+    role="combobox"
     type="button"
   >
     <span>
@@ -102,7 +114,11 @@ exports[`renders Dropdown/demo/control.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-3"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -127,7 +143,11 @@ exports[`renders Dropdown/demo/control.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-controls="arco-dropdown-popup-4"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -171,7 +191,11 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         </span>
       </button>
       <button
+        aria-controls="arco-dropdown-popup-5"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+        role="combobox"
         type="button"
       >
         <svg
@@ -212,7 +236,11 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         </span>
       </button>
       <button
+        aria-controls="arco-dropdown-popup-6"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+        role="combobox"
         type="button"
       >
         <svg
@@ -252,7 +280,11 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         </span>
       </button>
       <button
+        aria-controls="arco-dropdown-popup-7"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+        role="combobox"
         type="button"
       >
         <svg
@@ -286,7 +318,11 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         </span>
       </button>
       <button
+        aria-controls="arco-dropdown-popup-8"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-loading arco-btn-icon-only"
+        role="combobox"
         type="button"
       >
         <svg
@@ -313,7 +349,11 @@ exports[`renders Dropdown/demo/extra-element.md correctly 1`] = `
   class="dropdown-demo"
 >
   <button
+    aria-controls="arco-dropdown-popup-9"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+    role="combobox"
     type="button"
   >
     <span>
@@ -341,7 +381,11 @@ exports[`renders Dropdown/demo/group.md correctly 1`] = `
   class="dropdown-demo"
 >
   <button
+    aria-controls="arco-dropdown-popup-10"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+    role="combobox"
     type="button"
   >
     <span>
@@ -369,7 +413,11 @@ exports[`renders Dropdown/demo/item-icon.md correctly 1`] = `
   class="dropdown-demo"
 >
   <button
+    aria-controls="arco-dropdown-popup-11"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+    role="combobox"
     type="button"
   >
     <span>
@@ -401,7 +449,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-12"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -414,7 +466,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-13"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -427,7 +483,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-14"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -440,7 +500,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-15"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -453,7 +517,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-16"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -465,7 +533,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-controls="arco-dropdown-popup-17"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -478,7 +550,11 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
 
 exports[`renders Dropdown/demo/right-click.md correctly 1`] = `
 <div
+  aria-controls="arco-dropdown-popup-18"
+  aria-expanded="false"
+  aria-haspopup="true"
   class="arco-row arco-row-align-center arco-row-justify-center"
+  role="combobox"
   style="width:320px;height:160px;background-color:var(--color-fill-2);color:var(--color-text-1)"
 >
   <span>
@@ -492,7 +568,11 @@ exports[`renders Dropdown/demo/sub-menu.md correctly 1`] = `
   class="dropdown-demo"
 >
   <button
+    aria-controls="arco-dropdown-popup-19"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+    role="combobox"
     type="button"
   >
     <span>
@@ -524,7 +604,11 @@ exports[`renders Dropdown/demo/trigger.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-controls="arco-dropdown-popup-20"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>
@@ -549,7 +633,11 @@ exports[`renders Dropdown/demo/trigger.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-controls="arco-dropdown-popup-21"
+      aria-expanded="false"
+      aria-haspopup="true"
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+      role="combobox"
       type="button"
     >
       <span>

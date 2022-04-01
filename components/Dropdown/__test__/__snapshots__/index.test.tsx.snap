@@ -9,7 +9,11 @@ exports[`ConfigProvider componentConfig.Dropdown.Button default 1`] = `
     type="button"
   />
   <button
+    aria-controls="arco-dropdown-popup-1"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    role="combobox"
     type="button"
   >
     <svg
@@ -43,7 +47,11 @@ exports[`ConfigProvider componentConfig.Dropdown.Button set className globally 1
     type="button"
   />
   <button
+    aria-controls="arco-dropdown-popup-2"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    role="combobox"
     type="button"
   >
     <svg
@@ -77,7 +85,11 @@ exports[`ConfigProvider componentConfig.Dropdown.Button set className globally a
     type="button"
   />
   <button
+    aria-controls="arco-dropdown-popup-3"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    role="combobox"
     type="button"
   >
     <svg

@@ -58,7 +58,12 @@ function Button(baseProps: DropdownButtonProps, ref) {
     ((rightButton as ReactElement).props && (rightButton as ReactElement).props.loading);
 
   return (
-    <ArcoButton.Group className={className} style={style} ref={ref}>
+    <ArcoButton.Group
+      aria-label="button with dropdown list"
+      className={className}
+      style={style}
+      ref={ref}
+    >
       {leftButton}
       <Dropdown
         droplist={droplist}

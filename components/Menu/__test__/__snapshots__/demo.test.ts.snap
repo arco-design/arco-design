@@ -403,6 +403,7 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
           aria-expanded="false"
           aria-haspopup="true"
           class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
+          role="combobox"
         >
           <span>
             ···
@@ -487,6 +488,7 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
           aria-expanded="false"
           aria-haspopup="true"
           class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
+          role="combobox"
         >
           <span>
             ···
@@ -603,6 +605,7 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
         aria-expanded="false"
         aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header"
+        role="combobox"
       >
         <svg
           aria-hidden="true"
@@ -646,6 +649,7 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
         aria-expanded="false"
         aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header"
+        role="combobox"
       >
         <svg
           aria-hidden="true"

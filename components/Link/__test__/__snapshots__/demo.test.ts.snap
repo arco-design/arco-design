@@ -31,7 +31,11 @@ exports[`renders Link/demo/basic.md correctly 1`] = `
 exports[`renders Link/demo/dropdown.md correctly 1`] = `
 <div>
   <span
+    aria-controls="arco-dropdown-popup-0"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-link"
+    role="combobox"
     style="margin-right:40px"
   >
     City
@@ -51,7 +55,11 @@ exports[`renders Link/demo/dropdown.md correctly 1`] = `
     </svg>
   </span>
   <span
+    aria-controls="arco-dropdown-popup-1"
+    aria-expanded="false"
+    aria-haspopup="true"
     class="arco-link"
+    role="combobox"
   >
     City
     <svg

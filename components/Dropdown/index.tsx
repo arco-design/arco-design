@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useRef } from 'react';
+import React, { ReactElement, useContext, useMemo, useRef } from 'react';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import Button from './button';
 import { ConfigContext } from '../ConfigProvider';
@@ -8,6 +8,9 @@ import omit from '../_util/omit';
 import pick from '../_util/pick';
 import { DropdownProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+
+// Generate DOM id for instance
+let globalDropdownIndex = 0;
 
 const defaultProps: DropdownProps = {
   position: 'bl',
@@ -32,6 +35,7 @@ function Dropdown(baseProps: DropdownProps, _) {
   } = props;
 
   const prefixCls = getPrefixCls('dropdown');
+  const popupContent = React.Children.only(droplist || <span />) as React.ReactElement;
 
   const triggerRef = useRef(null);
   const [popupVisible, setPopupVisible] = useMergeValue(false, {
@@ -39,9 +43,16 @@ function Dropdown(baseProps: DropdownProps, _) {
     value: props.popupVisible,
   });
 
-  const getPopupContent = () => {
-    return React.Children.only(droplist || <span />) as React.ReactElement;
-  };
+  // Unique ID of this instance
+  const instancePopupID = useMemo<string>(() => {
+    if (popupContent.props?.id) {
+      return popupContent.props.id;
+    }
+
+    const id = `${prefixCls}-popup-${globalDropdownIndex}`;
+    globalDropdownIndex++;
+    return id;
+  }, []);
 
   const changePopupVisible = (visible: boolean) => {
     setPopupVisible(visible);
@@ -56,9 +67,9 @@ function Dropdown(baseProps: DropdownProps, _) {
   };
 
   const renderPopup = () => {
-    const content = getPopupContent();
-    return content && content.props.isMenu
-      ? React.cloneElement(content as ReactElement, {
+    return popupContent && popupContent.props.isMenu
+      ? React.cloneElement(popupContent as ReactElement, {
+          id: instancePopupID,
           prefixCls: `${prefixCls}-menu`,
           inDropdown: true,
           selectable: false,
@@ -66,9 +77,8 @@ function Dropdown(baseProps: DropdownProps, _) {
             let returnValueOfOnClickMenuItem = null;
 
             // Trigger onClickMenuItem first
-            const content = getPopupContent();
-            if (content.props.onClickMenuItem) {
-              returnValueOfOnClickMenuItem = content.props.onClickMenuItem(key, event);
+            if (popupContent.props.onClickMenuItem) {
+              returnValueOfOnClickMenuItem = popupContent.props.onClickMenuItem(key, event);
             }
 
             // Set focus to avoid onblur
@@ -83,7 +93,7 @@ function Dropdown(baseProps: DropdownProps, _) {
             }
           },
         })
-      : content;
+      : popupContent;
   };
 
   return (
@@ -120,6 +130,10 @@ function Dropdown(baseProps: DropdownProps, _) {
               },
               children.props.className
             ),
+            role: 'combobox',
+            'aria-haspopup': true,
+            'aria-controls': instancePopupID,
+            'aria-expanded': popupVisible,
           })
         : children}
     </Trigger>
