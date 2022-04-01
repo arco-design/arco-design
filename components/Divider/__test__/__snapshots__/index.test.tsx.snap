@@ -3,17 +3,20 @@
 exports[`ConfigProvider componentConfig.Divider default 1`] = `
 <div
   class="arco-divider arco-divider-horizontal"
+  role="separator"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Divider set className globally 1`] = `
 <div
   class="arco-divider arco-divider-horizontal global-default-class"
+  role="separator"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Divider set className globally and component set className itself. 1`] = `
 <div
   class="arco-divider arco-divider-horizontal component-class"
+  role="separator"
 />
 `;

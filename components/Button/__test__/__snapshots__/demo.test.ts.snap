@@ -905,6 +905,7 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
   </button>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+    role="separator"
     style="width:440px;min-width:440px"
   >
     <span

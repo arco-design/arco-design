@@ -646,6 +646,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
 >
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
+    role="separator"
   >
     <span
       class="arco-divider-text arco-divider-text-left"
@@ -676,6 +677,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
+    role="separator"
   >
     <span
       class="arco-divider-text arco-divider-text-left"
@@ -722,6 +724,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
+    role="separator"
   >
     <span
       class="arco-divider-text arco-divider-text-left"

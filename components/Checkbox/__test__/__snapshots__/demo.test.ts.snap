@@ -1335,6 +1335,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal"
+    role="separator"
   />
   <div
     class="arco-typography"
@@ -1613,6 +1614,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal"
+    role="separator"
   />
   <div
     class="arco-typography"

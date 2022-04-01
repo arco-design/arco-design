@@ -289,6 +289,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
           {isVirtual ? (
             <>
               <VirtualList
+                role="list"
                 ref={(ref) => {
                   if (ref) {
                     refVirtualList.current = ref;
@@ -306,7 +307,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
               {scrollLoadingEle}
             </>
           ) : (
-            <div className={`${prefixCls}-content`} ref={refItemListWrapper}>
+            <div role="list" className={`${prefixCls}-content`} ref={refItemListWrapper}>
               {listItems}
               {scrollLoadingEle}
             </div>

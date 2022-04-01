@@ -12,6 +12,7 @@ Array [
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -20,6 +21,7 @@ Array [
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
       style="border-bottom-style:dashed"
     />
     <div
@@ -29,6 +31,7 @@ Array [
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
       style="border-bottom-width:2px;border-bottom-style:dotted"
     />
     <div
@@ -74,6 +77,7 @@ Array [
     </div>
     <div
       class="arco-divider arco-divider-horizontal half-divider"
+      role="separator"
     />
     <div
       class="divider-demo-flex-content"
@@ -113,6 +117,7 @@ Array [
     </div>
     <div
       class="arco-divider arco-divider-horizontal half-divider"
+      role="separator"
     />
     <div
       class="divider-demo-flex-content"
@@ -160,6 +165,7 @@ exports[`renders Divider/demo/vertical.md correctly 1`] = `
   </span>
   <div
     class="arco-divider arco-divider-vertical"
+    role="separator"
   />
   <span
     class="arco-typography"
@@ -168,6 +174,7 @@ exports[`renders Divider/demo/vertical.md correctly 1`] = `
   </span>
   <div
     class="arco-divider arco-divider-vertical"
+    role="separator"
   />
   <span
     class="arco-typography"
@@ -188,6 +195,7 @@ exports[`renders Divider/demo/with-text.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
+    role="separator"
   >
     <span
       class="arco-divider-text arco-divider-text-left"
@@ -202,6 +210,7 @@ exports[`renders Divider/demo/with-text.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+    role="separator"
   >
     <span
       class="arco-divider-text arco-divider-text-center"
@@ -216,6 +225,7 @@ exports[`renders Divider/demo/with-text.md correctly 1`] = `
   </div>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-right"
+    role="separator"
   >
     <span
       class="arco-divider-text arco-divider-text-right"

@@ -49,7 +49,7 @@ function Item(baseProps: ListItemProps, ref) {
     ) : null;
 
   return (
-    <div ref={ref} className={cs(baseClassName, className)} {...rest}>
+    <div role="listitem" ref={ref} className={cs(baseClassName, className)} {...rest}>
       <div className={`${baseClassName}-main`}>
         {metaContent}
         {content}

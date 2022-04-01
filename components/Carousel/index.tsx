@@ -261,6 +261,7 @@ function Carousel(baseProps: CarouselProps, ref) {
             } = child.props;
 
             return React.cloneElement(child, {
+              'aria-hidden': !isCurrent,
               style: Object.assign(
                 {
                   transitionTimingFunction: timingFunc,

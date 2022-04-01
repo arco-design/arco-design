@@ -62,6 +62,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -366,6 +367,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -541,6 +543,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -821,6 +824,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -1005,6 +1009,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
@@ -1424,6 +1429,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
@@ -1678,6 +1684,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -2077,6 +2084,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -2273,6 +2281,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -2535,6 +2544,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -2683,6 +2693,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -3245,6 +3256,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -3497,6 +3509,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -3827,6 +3840,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -4057,6 +4071,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -4399,6 +4414,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -4583,6 +4599,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -4815,6 +4832,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
@@ -6686,6 +6704,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <li
             class="arco-transfer-view-item"
