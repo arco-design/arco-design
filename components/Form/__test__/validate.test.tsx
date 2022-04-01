@@ -189,7 +189,7 @@ describe('validate form', () => {
     wrapper.update();
 
     expect(wrapper.find('.arco-form-message').at(0).html()).toBe(
-      '<div class="arco-form-message arco-form-message-help"><div>Expect min length 6 but got 5</div><div class="arco-form-message-help-warning">Expect type email but got `Hello`</div></div>'
+      '<div class="arco-form-message arco-form-message-help"><div role="alert">Expect min length 6 but got 5</div><div role="alert" class="arco-form-message-help-warning">Expect type email but got `Hello`</div></div>'
     );
     expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1); // warning 信息
 
