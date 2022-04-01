@@ -267,7 +267,9 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -285,8 +287,10 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -742,7 +746,9 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -760,8 +766,10 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -1317,7 +1325,9 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -1335,8 +1345,10 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -1959,7 +1971,9 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
     class="arco-transfer-operations arco-transfer-operations-words"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -1980,8 +1994,10 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
       </span>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -2462,7 +2478,9 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -3128,7 +3146,9 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -3146,8 +3166,10 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -3706,7 +3728,9 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -3724,8 +3748,10 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -4236,7 +4262,9 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -4254,8 +4282,10 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -5455,8 +5485,10 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -5474,8 +5506,10 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -6492,7 +6526,9 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -6510,8 +6546,10 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
