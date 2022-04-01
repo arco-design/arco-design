@@ -5901,12 +5901,18 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
     >
       <div
         class="arco-tree arco-tree-checkable"
+        role="tree"
         style="padding:0 14px"
+        tabindex="0"
       >
         <div
+          aria-disabled="false"
+          aria-expanded="true"
           class="arco-tree-node arco-tree-node-expanded"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           />
           <span
@@ -5916,7 +5922,10 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
               class="arco-icon-hover arco-tree-node-icon-hover"
             >
               <span
+                aria-label="fold button"
                 class="arco-tree-node-switcher-icon"
+                role="button"
+                tabindex="0"
               >
                 <svg
                   aria-hidden="true"
@@ -5968,6 +5977,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -5978,9 +5988,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="false"
+          aria-expanded="true"
           class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           >
             <span
@@ -5994,7 +6008,10 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
               class="arco-icon-hover arco-tree-node-icon-hover"
             >
               <span
+                aria-label="fold button"
                 class="arco-tree-node-switcher-icon"
+                role="button"
+                tabindex="0"
               >
                 <svg
                   aria-hidden="true"
@@ -6046,6 +6063,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6056,9 +6074,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="false"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           >
             <span
@@ -6105,6 +6127,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6115,9 +6138,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="false"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           >
             <span
@@ -6162,6 +6189,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6172,9 +6200,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="false"
+          aria-expanded="true"
           class="arco-tree-node arco-tree-node-expanded"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           />
           <span
@@ -6184,7 +6216,10 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
               class="arco-icon-hover arco-tree-node-icon-hover"
             >
               <span
+                aria-label="fold button"
                 class="arco-tree-node-switcher-icon"
+                role="button"
+                tabindex="0"
               >
                 <svg
                   aria-hidden="true"
@@ -6236,6 +6271,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6246,9 +6282,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="true"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           >
             <span
@@ -6293,6 +6333,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6303,9 +6344,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="true"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           >
             <span
@@ -6350,6 +6395,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6360,9 +6406,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="true"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled arco-tree-node-is-tail"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           >
             <span
@@ -6407,6 +6457,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6417,9 +6468,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="false"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           />
           <span
@@ -6457,6 +6512,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span
@@ -6467,9 +6523,13 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           </span>
         </div>
         <div
+          aria-disabled="true"
+          aria-expanded="false"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled arco-tree-node-is-tail"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           />
           <span
@@ -6510,6 +6570,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span

@@ -123,6 +123,7 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
         isStaticItemHeight={false}
         {...treeContext.virtualListProps}
         data={filtedData}
+        aria-hidden
         style={{ overflow: 'hidden' }}
       >
         {(child) => {
