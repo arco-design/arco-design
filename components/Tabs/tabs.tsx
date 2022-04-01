@@ -4,6 +4,7 @@ import React, {
   useImperativeHandle,
   useContext,
   PropsWithChildren,
+  useMemo,
 } from 'react';
 import cs from '../_util/classNames';
 import TabPane, { TabPaneType, TabPaneProps } from './tab-pane';
@@ -17,6 +18,8 @@ import { TabsProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 const sizeList = ['mini', 'small', 'default', 'large'];
+
+let __ARCO_TABS_SEED_INDEX = 0;
 
 const getPaneChildren = (props: TabsProps) => {
   const { children } = props;
@@ -52,6 +55,7 @@ const defaultProps: TabsProps = {
 
 export const TabsContext = React.createContext<
   TabsProps & {
+    getIdPrefix?: (suffix?: number | string) => { tab: string; tabpane: string };
     paneChildren?: ReactElement<TabPaneProps, TabPaneType>[];
     prefixCls?: string;
   }
@@ -92,6 +96,10 @@ function Tabs(baseProps: TabsProps, ref) {
     renderTabHeader,
     ...rest
   } = props;
+
+  const idPrefix = useMemo(() => {
+    return `${prefixCls}-${__ARCO_TABS_SEED_INDEX++}-`;
+  }, []);
 
   const tabPosition = direction === 'vertical' ? 'left' : props.tabPosition;
 
@@ -165,7 +173,17 @@ function Tabs(baseProps: TabsProps, ref) {
       )}
       ref={tabsRef}
     >
-      <TabsContext.Provider value={tabHeaderProps}>
+      <TabsContext.Provider
+        value={{
+          ...tabHeaderProps,
+          getIdPrefix: (suffix: string | number) => {
+            return {
+              tab: `${idPrefix}tab-${suffix}`,
+              tabpane: `${idPrefix}panel-${suffix}`,
+            };
+          },
+        }}
+      >
         {tabPosition === 'bottom' && TabContentDom}
         {isFunction(renderTabHeader) ? (
           renderTabHeader(

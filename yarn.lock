@@ -3925,12 +3925,10 @@ b-tween@^0.3.3:
   resolved "https://registry.npmjs.org/b-tween/-/b-tween-0.3.3.tgz"
   integrity sha512-oEHegcRpA7fAuc9KC4nktucuZn2aS8htymCPcP3qkEGPqiBH+GfqtqoG2l7LxHngg6O0HFM7hOeOYExl1Oz4ZA==
 
-b-validate@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/b-validate/-/b-validate-1.3.4.tgz#b51791be9176743463261c65bb89b4af84061f32"
-  integrity sha512-7Bj+KFUcxk6c+qc3HiCR20qMOlHJmb7NSrVAS1amryVUT+7GTNqCp2Qk4XZP8XD3MBfZSqon/XlxNhHnxyB8ng==
-  dependencies:
-    lodash.isequal "^4.5.0"
+b-validate@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/b-validate/-/b-validate-1.4.0.tgz#3214c8c21a04724fcca328dcdd7f0f32d61a29b5"
+  integrity sha512-oSXHKWXisRFuHnmNr5QXsg9JoyUTRCfBbM4hAcAqDjAO1jeV7aQXTkzS7O2WVDDHlnGeqH7v5Im4Z+eKU1x5Mw==
 
 babel-jest@^26.0.1, babel-jest@^26.6.3:
   version "26.6.3"

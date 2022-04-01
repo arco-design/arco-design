@@ -73,7 +73,12 @@ export default function DropdownIcon(props) {
         </Menu>
       }
     >
-      <IconHover prefix={`${prefixCls}-dropdown`} className={`${prefixCls}-dropdown-icon`}>
+      <IconHover
+        role="button"
+        aria-label="expand tabs"
+        prefix={`${prefixCls}-dropdown`}
+        className={`${prefixCls}-dropdown-icon`}
+      >
         <IconDown />
       </IconHover>
     </Dropdown>

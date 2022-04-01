@@ -17,6 +17,8 @@ const TabHeaderTitle = (
     renderTitle,
     deleteIcon,
     deleteButton,
+    getIdPrefix,
+    index,
   },
   ref
 ) => {
@@ -39,9 +41,22 @@ const TabHeaderTitle = (
         onClickTab(e);
       }}
     >
-      <span className={`${prefixCls}-header-title-text`}>{title}</span>
+      <span
+        className={`${prefixCls}-header-title-text`}
+        role="tab"
+        aria-selected={isActive}
+        aria-disabled={disabled || undefined}
+        id={getIdPrefix(index).tab}
+        aria-controls={getIdPrefix(index).tabpane}
+      >
+        {title}
+      </span>
       {editable && (
         <span
+          role="button"
+          aria-label="remove tab"
+          aria-disabled={disabled || undefined}
+          tabIndex={disabled ? -1 : 0}
           className={`${prefixCls}-close-icon`}
           onClick={(e) => {
             e.stopPropagation();
