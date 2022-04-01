@@ -13,8 +13,11 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="15"
+          aria-valuemin="0"
           class="arco-input arco-input-size-default"
           placeholder="Please enter"
+          role="spinbutton"
           value=""
         />
         <span
@@ -73,8 +76,12 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-disabled arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="-Infinity"
+          aria-valuenow="500"
           class="arco-input arco-input-size-default arco-input-disabled"
           disabled=""
+          role="spinbutton"
           value="500"
         />
         <span
@@ -146,7 +153,11 @@ exports[`renders InputNumber/demo/format.md correctly 1`] = `
         </div>
       </span>
       <input
+        aria-valuemax="1000000000"
+        aria-valuemin="0"
+        aria-valuenow="12000"
         class="arco-input arco-input-size-default"
+        role="spinbutton"
         value="12,000"
       />
       <span
@@ -230,7 +241,11 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="-Infinity"
+          aria-valuenow="500"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="500"
         />
         <span
@@ -292,8 +307,12 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-disabled arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="-Infinity"
+          aria-valuenow="500"
           class="arco-input arco-input-size-default arco-input-disabled"
           disabled=""
+          role="spinbutton"
           value="500"
         />
         <span
@@ -339,7 +358,11 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="40"
+          aria-valuemin="0"
+          aria-valuenow="3.5"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="3.5"
         />
         <span
@@ -398,7 +421,11 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="40"
+          aria-valuemin="0"
+          aria-valuenow="1.11"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="1.11"
         />
         <span
@@ -525,7 +552,11 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
           class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
         >
           <input
+            aria-valuemax="20"
+            aria-valuemin="-Infinity"
+            aria-valuenow="2"
             class="arco-input arco-input-size-default"
+            role="spinbutton"
             value="2"
           />
           <span
@@ -605,7 +636,11 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
           class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
         >
           <input
+            aria-valuemax="20"
+            aria-valuemin="-Infinity"
+            aria-valuenow="2"
             class="arco-input arco-input-size-default"
+            role="spinbutton"
             value="2"
           />
           <span
@@ -652,7 +687,11 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="0"
+          aria-valuenow="50"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="50"
         />
         <span
@@ -725,7 +764,11 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
           </div>
         </span>
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="0"
+          aria-valuenow="500"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="500"
         />
         <span
@@ -814,7 +857,11 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
           </div>
         </span>
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="0"
+          aria-valuenow="500"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="500"
         />
         <span

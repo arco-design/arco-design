@@ -1641,6 +1641,7 @@ exports[`renders Input/demo/status.md correctly 1`] = `
     style="margin-right:8px;margin-bottom:8px"
   >
     <input
+      aria-invalid="true"
       class="arco-input arco-input-size-default arco-input-error"
       placeholder="error status"
       style="width:350px"

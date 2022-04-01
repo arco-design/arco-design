@@ -732,7 +732,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
               class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
             >
               <input
+                aria-valuemax="Infinity"
+                aria-valuemin="-Infinity"
+                aria-valuenow="2"
                 class="arco-input arco-input-size-default"
+                role="spinbutton"
                 value="2"
               />
               <span
@@ -797,7 +801,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
               class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
             >
               <input
+                aria-valuemax="Infinity"
+                aria-valuemin="-Infinity"
+                aria-valuenow="3"
                 class="arco-input arco-input-size-default"
+                role="spinbutton"
                 value="3"
               />
               <span

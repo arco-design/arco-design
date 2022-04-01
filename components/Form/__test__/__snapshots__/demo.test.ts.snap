@@ -440,9 +440,12 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                   >
                     <input
+                      aria-valuemax="Infinity"
+                      aria-valuemin="-Infinity"
                       class="arco-input arco-input-size-default"
                       id="age_input"
                       placeholder="please enter"
+                      role="spinbutton"
                       value=""
                     />
                     <span
@@ -1860,9 +1863,12 @@ exports[`renders Form/demo/control-below.md correctly 1`] = `
                   class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                 >
                   <input
+                    aria-valuemax="Infinity"
+                    aria-valuemin="-Infinity"
                     class="arco-input arco-input-size-default"
                     id="number_input"
                     placeholder="请输入数字"
+                    role="spinbutton"
                     value=""
                   />
                   <span
@@ -2240,10 +2246,13 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-input-inner-wrapper arco-input-inner-wrapper-disabled arco-input-inner-wrapper-default"
                   >
                     <input
+                      aria-valuemax="Infinity"
+                      aria-valuemin="-Infinity"
                       class="arco-input arco-input-size-default arco-input-disabled"
                       disabled=""
                       id="age_input"
                       placeholder="please enter"
+                      role="spinbutton"
                       value=""
                     />
                     <span
@@ -3615,9 +3624,12 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                       >
                         <input
+                          aria-valuemax="Infinity"
+                          aria-valuemin="-Infinity"
                           class="arco-input arco-input-size-default"
                           id="searchForm-age_input"
                           placeholder="enter age"
+                          role="spinbutton"
                           value=""
                         />
                         <span
@@ -4992,9 +5004,12 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
                   class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                 >
                   <input
+                    aria-valuemax="Infinity"
+                    aria-valuemin="-Infinity"
                     class="arco-input arco-input-size-default"
                     id="age_input"
                     placeholder="please enter your age"
+                    role="spinbutton"
                     value=""
                   />
                   <span
@@ -6475,9 +6490,12 @@ exports[`renders Form/demo/setFields.md correctly 1`] = `
                   class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                 >
                   <input
+                    aria-valuemax="Infinity"
+                    aria-valuemin="-Infinity"
                     class="arco-input arco-input-size-default"
                     id="age_input"
                     placeholder="please enter your age"
+                    role="spinbutton"
                     value=""
                   />
                   <span
@@ -6734,8 +6752,11 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                   >
                     <input
+                      aria-valuemax="Infinity"
+                      aria-valuemin="-Infinity"
                       class="arco-input arco-input-size-default"
                       placeholder="please enter"
+                      role="spinbutton"
                       value=""
                     />
                     <span
@@ -7415,9 +7436,12 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
                   class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                 >
                   <input
+                    aria-valuemax="Infinity"
+                    aria-valuemin="-Infinity"
                     class="arco-input arco-input-size-default"
                     id="age_input"
                     placeholder="please enter your age"
+                    role="spinbutton"
                     value=""
                   />
                   <span
@@ -8241,8 +8265,11 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                   >
                     <input
+                      aria-valuemax="Infinity"
+                      aria-valuemin="-Infinity"
                       class="arco-input arco-input-size-default"
                       placeholder="InputNumber..."
+                      role="spinbutton"
                       value=""
                     />
                     <span
@@ -8517,9 +8544,12 @@ exports[`renders Form/demo/validateLevel.md correctly 1`] = `
                   class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                 >
                   <input
+                    aria-valuemax="Infinity"
+                    aria-valuemin="-Infinity"
                     class="arco-input arco-input-size-default"
                     id="age_input"
                     placeholder="please enter your age"
+                    role="spinbutton"
                     value=""
                   />
                   <span

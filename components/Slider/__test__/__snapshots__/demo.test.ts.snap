@@ -374,7 +374,11 @@ Array [
               class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
             >
               <input
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="80"
                 class="arco-input arco-input-size-default"
+                role="spinbutton"
                 value="80"
               />
               <span
@@ -422,7 +426,11 @@ Array [
               class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
             >
               <input
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="10"
                 class="arco-input arco-input-size-default"
+                role="spinbutton"
                 value="10"
               />
               <span
@@ -448,7 +456,11 @@ Array [
               class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
             >
               <input
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="80"
                 class="arco-input arco-input-size-default"
+                role="spinbutton"
                 value="80"
               />
               <span
@@ -1245,7 +1257,11 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="-Infinity"
+          aria-valuenow="0"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="0"
         />
         <span
@@ -1325,7 +1341,11 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
         class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
       >
         <input
+          aria-valuemax="Infinity"
+          aria-valuemin="-Infinity"
+          aria-valuenow="100"
           class="arco-input arco-input-size-default"
+          role="spinbutton"
           value="100"
         />
         <span
@@ -1447,7 +1467,11 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
           class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
         >
           <input
+            aria-valuemax="10"
+            aria-valuemin="1"
+            aria-valuenow="1"
             class="arco-input arco-input-size-default"
+            role="spinbutton"
             value="1"
           />
           <span

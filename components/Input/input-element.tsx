@@ -140,6 +140,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     };
 
     const inputProps = {
+      'aria-invalid': error,
       ...otherProps,
       readOnly,
       maxLength: mergedMaxLength,
