@@ -209,4 +209,19 @@ describe('TimePicker', () => {
     expect(onChange.mock.calls).toHaveLength(1);
     expect(onChange.mock.calls[0][0]).toBe('00:00:00');
   });
+
+  // https://github.com/arco-design/arco-design/issues/494
+  it('should get non-disabled value as default', () => {
+    const component = mount(
+      <TimePicker
+        disabledHours={() => [0, 1, 2]}
+        disabledMinutes={() => [1, 2]}
+        disabledSeconds={() => [0]}
+      />
+    );
+    component.find('.arco-picker').simulate('click');
+    getCells(component, 1).at(0).simulate('click');
+    component.find('.arco-timepicker-footer-btn-wrapper button').at(1).simulate('click');
+    expect(getInputValue(component, 0)).toBe('03:00:01');
+  });
 });

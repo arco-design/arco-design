@@ -105,9 +105,60 @@ function TimePicker(props: InnerTimePickerProps) {
   const selectedMinute = valueShow && valueShow.minute();
   const selectedSecond = valueShow && valueShow.second();
 
+  const getDefaultStr = useCallback(
+    (type: 'hour' | 'minute' | 'second') => {
+      switch (type) {
+        case 'hour':
+          return typeof disabledHours === 'function'
+            ? padStart(
+                HOURS.find((h) => disabledHours().indexOf(h) === -1),
+                2,
+                '0'
+              )
+            : padStart(HOURS[0], 2, '0');
+        case 'minute':
+          return typeof disabledMinutes === 'function'
+            ? padStart(
+                MINUTES.find((m) => disabledMinutes(selectedHour).indexOf(m) === -1),
+                2,
+                '0'
+              )
+            : padStart(MINUTES[0], 2, '0');
+        case 'second':
+          return typeof disabledSeconds === 'function'
+            ? padStart(
+                SECONDS.find(
+                  (s) => disabledSeconds(selectedHour, selectedMinute).indexOf(s) === -1
+                ),
+                2,
+                '0'
+              )
+            : padStart(SECONDS[0], 2, '0');
+
+        default:
+          return '00';
+      }
+    },
+    [
+      HOURS,
+      MINUTES,
+      SECONDS,
+      disabledHours,
+      disabledMinutes,
+      disabledSeconds,
+      selectedHour,
+      selectedMinute,
+    ]
+  );
+
   function onHandleSelect(selectedValue: number | string, unit: string) {
     const isUpperCase = getColumnsFromFormat(format).list.indexOf('A') !== -1;
-    const _valueShow = valueShow || dayjs('00:00:00', 'HH:mm:ss');
+    const _valueShow =
+      valueShow ||
+      dayjs(
+        `${getDefaultStr('hour')}:${getDefaultStr('minute')}:${getDefaultStr('second')}`,
+        'HH:mm:ss'
+      );
     let hour = _valueShow.hour();
     const minute = _valueShow.minute();
     const second = _valueShow.second();
