@@ -40,7 +40,7 @@ const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
       <div
         className={`${prefixCls}-list-item-label`}
         onClick={option.disabled ? undefined : props.onClickOption}
-        onMouseEnter={option.isLeaf || option.disabled ? undefined : props.onMouseEnter}
+        onMouseEnter={props.onMouseEnter}
         onDoubleClick={checkboxDisabled ? undefined : props.onDoubleClickOption}
       >
         {renderOption ? renderOption() : option.label}
