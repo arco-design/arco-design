@@ -17,6 +17,9 @@ import MenuContext from './context';
 import { useHotkeyListener } from './hotkey';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
+// Generate DOM id for instance
+let globalMenuIndex = 0;
+
 const DEFAULT_THEME: MenuProps['theme'] = 'light';
 
 const defaultProps: MenuProps = {
@@ -85,6 +88,17 @@ function Menu(baseProps: MenuProps, ref) {
     return generateInfoMap(children);
   }, [children]);
 
+  // Unique ID of this select instance
+  const instanceId = useMemo<string>(() => {
+    if (rest.id) {
+      return rest.id;
+    }
+
+    const id = `${prefixCls}-${globalMenuIndex}`;
+    globalMenuIndex++;
+    return id;
+  }, [rest.id]);
+
   const {
     hotkeyInfo,
     listener: hotkeyListener,
@@ -110,10 +124,11 @@ function Menu(baseProps: MenuProps, ref) {
     refPrevSubMenuKeys.current = refInlineMenuKeys.current.slice();
   }, [refInlineMenuKeys.current.toString()]);
 
+  const mergedHasCollapseButton =
+    mode !== 'horizontal' && mode !== 'popButton' && !inDropdown && hasCollapseButton;
+
   const renderChildren = () => {
     const childrenList = processChildren(children, { level: 1 });
-    const mergedHasCollapseButton =
-      mode !== 'horizontal' && mode !== 'popButton' && !inDropdown && hasCollapseButton;
     const collapseIcon = collapse
       ? (icons && icons.collapseActive) || <IconMenuUnfold />
       : (icons && icons.collapseDefault) || <IconMenuFold />;
@@ -130,6 +145,10 @@ function Menu(baseProps: MenuProps, ref) {
 
         {mergedHasCollapseButton && (
           <div
+            tabIndex={0}
+            role="button"
+            aria-controls={instanceId}
+            aria-expanded={!collapse}
             className={`${prefixCls}-collapse-button`}
             onClick={() => {
               const newCollapse = !collapse;
@@ -151,6 +170,8 @@ function Menu(baseProps: MenuProps, ref) {
 
   return (
     <div
+      id={mergedHasCollapseButton ? instanceId : undefined}
+      role="menu"
       tabIndex={1}
       {...omit(rest, ['isMenu'])}
       ref={ref}
@@ -184,6 +205,7 @@ function Menu(baseProps: MenuProps, ref) {
           autoScrollIntoView,
           scrollConfig,
           // pass props directly
+          id: instanceId,
           prefixCls,
           hotkeyInfo: 'hotkeyInfo' in menuContext ? menuContext.hotkeyInfo : hotkeyInfo,
           clearHotkeyInfo,

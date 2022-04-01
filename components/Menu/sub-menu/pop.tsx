@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import cs from '../../_util/classNames';
 import { MenuSubMenuProps } from '../interface';
 import IconRight from '../../../icon/react-icon/IconRight';
@@ -10,6 +10,8 @@ import Menu from '../index';
 import MenuIndent from '../indent';
 import MenuContext from '../context';
 import { useHotkeyHandler } from '../hotkey';
+
+let globalPopSubMenuIndex = 0;
 
 const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   const {
@@ -24,6 +26,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     triggerProps: propTriggerProps,
   } = props;
   const {
+    id: menuId,
     prefixCls,
     mode,
     inDropdown,
@@ -47,6 +50,13 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     setPopupVisible(hotkeyInfo.activeKeyPath.indexOf(_key) > 0);
   });
 
+  // Unique ID of this instance
+  const instanceId = useMemo<string>(() => {
+    const id = `${menuId}-submenu-pop-${globalPopSubMenuIndex}`;
+    globalPopSubMenuIndex++;
+    return id;
+  }, []);
+
   const renderSuffix = () => {
     const MergedIconRight = icons && icons.popArrowRight ? icons.popArrowRight : <IconRight />;
     const MergedIconDown =
@@ -66,6 +76,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
       onVisibleChange={(visible) => setPopupVisible(visible)}
       droplist={
         <Menu
+          id={instanceId}
           selectedKeys={selectedKeys}
           onClickMenuItem={(key, event) => {
             onClickMenuItem(key, event);
@@ -89,6 +100,9 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
       }}
     >
       <div
+        aria-haspopup
+        aria-expanded={popupVisible}
+        aria-controls={instanceId}
         ref={forwardedRef}
         style={style}
         className={cs(

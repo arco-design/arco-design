@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
@@ -10,10 +10,13 @@ import MenuIndent from '../indent';
 import { useHotkeyHandler } from '../hotkey';
 import pick from '../../_util/pick';
 
+let globalInlineSubMenuIndex = 0;
+
 const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   const { _key, children, style, className, title, level, forwardedRef, selectable, ...rest } =
     props;
   const {
+    id: menuId,
     prefixCls,
     levelIndent,
     openKeys = [],
@@ -41,6 +44,13 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     (isActive, type) => isActive && type === 'enter' && subMenuClickHandler(null)
   );
 
+  // Unique ID of this instance
+  const instanceId = useMemo<string>(() => {
+    const id = `${menuId}-submenu-inline-${globalInlineSubMenuIndex}`;
+    globalInlineSubMenuIndex++;
+    return id;
+  }, []);
+
   useEffect(() => {
     collectInlineMenuKeys(props._key);
     return () => {
@@ -57,6 +67,8 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
 
   const header = (
     <div
+      aria-expanded={isOpen}
+      aria-controls={instanceId}
       className={cs(`${baseClassName}-header`, {
         [`${prefixCls}-active`]: isActive,
         [`${prefixCls}-selected`]: isSelected,
@@ -72,7 +84,7 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   );
 
   const content = (
-    <div className={cs(`${baseClassName}-content`)} style={{ height }}>
+    <div id={instanceId} className={cs(`${baseClassName}-content`)} style={{ height }}>
       {childrenList}
     </div>
   );
