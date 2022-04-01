@@ -1,3 +1,11 @@
+## 2.31.2
+
+2022-04-01
+
+### 🐛 问题修复
+
+- 修复 `Affix` 子元素不合法时 `ResizeObserver`会报错的bug([#726](https://github.com/arco-design/arco-design/pull/726))
+
 ## 2.20.2
 
 2021-08-09

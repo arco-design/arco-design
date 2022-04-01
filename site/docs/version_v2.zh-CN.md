@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.31.2
+
+2022-04-01
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件在`expandTrigger=hover`，鼠标从路径节点移到叶子节点时，选项面板未更新的 bug。([#727](https://github.com/arco-design/arco-design/pull/727))
+- 修复 `Affix` 子元素不合法时 `ResizeObserver`会报错的bug([#726](https://github.com/arco-design/arco-design/pull/726))
+
 ## 2.31.1
 
 2022-03-28
