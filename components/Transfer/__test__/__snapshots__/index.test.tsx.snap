@@ -101,8 +101,10 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -120,8 +122,10 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -336,8 +340,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -355,8 +361,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -571,8 +579,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -590,8 +600,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -858,7 +870,9 @@ exports[`Transfer should render correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      tabindex="-1"
       type="button"
     >
       <svg
@@ -876,8 +890,10 @@ exports[`Transfer should render correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
