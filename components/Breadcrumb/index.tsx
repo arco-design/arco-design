@@ -31,8 +31,16 @@ function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
   const prefixCls = getPrefixCls('breadcrumb');
   const itemRender = 'itemRender' in props ? props.itemRender : defaultItemRender;
 
-  const Ellipses = <span className={`${prefixCls}-item-ellipses`}>...</span>;
-  const Separator = <span className={`${prefixCls}-item-separator`}>{separator}</span>;
+  const Ellipses = (
+    <span aria-label="ellipses of breadcrumb items" className={`${prefixCls}-item-ellipses`}>
+      ...
+    </span>
+  );
+  const Separator = (
+    <span aria-hidden className={`${prefixCls}-item-separator`}>
+      {separator}
+    </span>
+  );
 
   const getValidChild = (itemToRender: ReactNode, delta: number, index: number) => {
     const SeparatorWithKey = React.cloneElement(Separator, { key: `${index}_separator` });
@@ -100,6 +108,7 @@ function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
 
   return (
     <div
+      role="list"
       ref={ref}
       style={style}
       className={cs(prefixCls, className)}

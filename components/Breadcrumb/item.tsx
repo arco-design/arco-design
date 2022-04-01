@@ -11,6 +11,7 @@ function Item(props: PropsWithChildren<BreadCrumbItemProps>) {
 
   const dom = (
     <div
+      role="listitem"
       style={style}
       className={cs(
         `${prefixCls}-item`,
@@ -23,6 +24,7 @@ function Item(props: PropsWithChildren<BreadCrumbItemProps>) {
       {children}
       {droplist && (
         <span
+          aria-hidden
           className={cs(`${prefixCls}-item-dropdown-icon`, {
             [`${prefixCls}-item-dropdown-icon-active`]: dropdownVisible,
           })}
