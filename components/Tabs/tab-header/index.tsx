@@ -272,7 +272,13 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     return (
       isEditable &&
       showAddButton && (
-        <div className={`${prefixCls}-add-icon`} onClick={handleAdd}>
+        <div
+          className={`${prefixCls}-add-icon`}
+          aria-label="add tab"
+          tabIndex={0}
+          role="button"
+          onClick={handleAdd}
+        >
           {addButton || (
             <IconHover prefix={`${prefixCls}-add`}>
               <span className={`${prefixCls}-add`}>{icons?.add || <IconPlus />}</span>
@@ -358,6 +364,8 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
                     editable={isEditable && child.props.closable !== false}
                     deleteIcon={icons?.delete}
                     deleteButton={deleteButton}
+                    getIdPrefix={ctxProps.getIdPrefix}
+                    index={index}
                   />
                 ))}
                 {type === 'line' && (
