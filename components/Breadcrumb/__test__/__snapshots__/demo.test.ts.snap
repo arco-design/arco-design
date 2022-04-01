@@ -4,13 +4,16 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
 <div>
   <div
     class="arco-breadcrumb"
+    role="list"
   >
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       Home
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -29,6 +32,7 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       <a
         href="#"
@@ -37,6 +41,7 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
       </a>
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -55,6 +60,7 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       News
     </div>
@@ -66,13 +72,16 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
 <div>
   <div
     class="arco-breadcrumb"
+    role="list"
   >
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       Home
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -90,11 +99,13 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
       </svg>
     </span>
     <span
+      aria-label="ellipses of breadcrumb items"
       class="arco-breadcrumb-item-ellipses"
     >
       ...
     </span>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -113,10 +124,12 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       Channel
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -135,6 +148,7 @@ exports[`renders Breadcrumb/demo/max-count.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       News
     </div>
@@ -152,13 +166,16 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Home
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -177,10 +194,12 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -199,6 +218,7 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>
@@ -210,13 +230,16 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Home
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -235,10 +258,12 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -257,6 +282,7 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>
@@ -267,13 +293,16 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Home
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <span>
@@ -282,10 +311,12 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <span>
@@ -294,6 +325,7 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>
@@ -312,13 +344,16 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Home
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -337,10 +372,12 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -359,6 +396,7 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>
@@ -369,14 +407,17 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
       style="font-size:12px"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Home
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -395,10 +436,12 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -417,6 +460,7 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>
@@ -429,13 +473,16 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
 <div>
   <div
     class="arco-breadcrumb"
+    role="list"
   >
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       Home
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -454,9 +501,11 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item arco-breadcrumb-item-with-dropdown"
+      role="listitem"
     >
       Channel
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-dropdown-icon"
       >
         <svg
@@ -475,6 +524,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       </span>
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -493,6 +543,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       News
     </div>
@@ -500,10 +551,12 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
   <br />
   <div
     class="arco-breadcrumb"
+    role="list"
     style="margin-top:20px"
   >
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       <a
         href="#/"
@@ -512,6 +565,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       </a>
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -530,6 +584,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item arco-breadcrumb-item-with-dropdown"
+      role="listitem"
     >
       <a
         href="#/Channel"
@@ -537,6 +592,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
         Channel
       </a>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-dropdown-icon"
       >
         <svg
@@ -555,6 +611,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
       </span>
     </div>
     <span
+      aria-hidden="true"
       class="arco-breadcrumb-item-separator"
     >
       <svg
@@ -573,6 +630,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
     </span>
     <div
       class="arco-breadcrumb-item"
+      role="listitem"
     >
       <span>
         News
@@ -592,9 +650,11 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         <svg
           aria-hidden="true"
@@ -614,6 +674,7 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         </svg>
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -632,10 +693,12 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -654,6 +717,7 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>
@@ -664,10 +728,12 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
   >
     <div
       class="arco-breadcrumb"
+      role="list"
       style="font-size:12px"
     >
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         <svg
           aria-hidden="true"
@@ -687,6 +753,7 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
         </svg>
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -705,10 +772,12 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         Channel
       </div>
       <span
+        aria-hidden="true"
         class="arco-breadcrumb-item-separator"
       >
         <svg
@@ -727,6 +796,7 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
       </span>
       <div
         class="arco-breadcrumb-item"
+        role="listitem"
       >
         News
       </div>

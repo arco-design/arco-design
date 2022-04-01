@@ -3,17 +3,20 @@
 exports[`ConfigProvider componentConfig.Breadcrumb default 1`] = `
 <div
   class="arco-breadcrumb"
+  role="list"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Breadcrumb set className globally 1`] = `
 <div
   class="arco-breadcrumb global-default-class"
+  role="list"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Breadcrumb set className globally and component set className itself. 1`] = `
 <div
   class="arco-breadcrumb component-class"
+  role="list"
 />
 `;

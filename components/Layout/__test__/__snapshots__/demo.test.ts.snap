@@ -728,14 +728,17 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
         style="margin:16px 0"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           Home
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -754,10 +757,12 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           List
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -776,6 +781,7 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           App
         </div>
@@ -1248,14 +1254,17 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
         style="margin:16px 0"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           Home
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -1274,10 +1283,12 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           List
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -1296,6 +1307,7 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           App
         </div>
@@ -1770,14 +1782,17 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
         style="margin:16px 0"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           Home
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -1796,10 +1811,12 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           List
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -1818,6 +1835,7 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           App
         </div>

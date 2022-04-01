@@ -207,9 +207,11 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/"
@@ -218,6 +220,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -236,6 +239,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/channel"
@@ -244,6 +248,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -262,6 +267,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <span>
             News
@@ -357,9 +363,11 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/"
@@ -368,6 +376,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -386,6 +395,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/channel"
@@ -394,6 +404,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
@@ -412,6 +423,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <span>
             News
