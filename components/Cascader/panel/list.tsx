@@ -306,6 +306,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                     renderEmpty && renderEmpty(120)
                   ) : (
                     <ul
+                      role="menu"
                       ref={(node) => setRefWrapper(node, level)}
                       className={cs(`${prefixCls}-list`, `${prefixCls}-list-select`, {
                         [`${prefixCls}-list-multiple`]: multiple,
@@ -318,7 +319,13 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                         }
                         return (
                           <li
+                            tabIndex={0}
+                            role="menuitem"
+                            aria-haspopup={!option.isLeaf}
+                            aria-expanded={isActive && !option.isLeaf}
+                            aria-disabled={option.disabled}
                             key={option.value}
+                            title={option.label}
                             className={cs(`${prefixCls}-list-item`, {
                               [`${prefixCls}-list-item-active`]: isActive,
                               [`${prefixCls}-list-item-disabled`]: option.disabled,
