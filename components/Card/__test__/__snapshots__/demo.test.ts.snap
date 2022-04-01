@@ -1018,7 +1018,9 @@ exports[`renders Card/demo/with-row.md correctly 1`] = `
 exports[`renders Card/demo/with-skeleton.md correctly 1`] = `
 Array [
   <button
+    aria-checked="false"
     class="arco-switch arco-switch-type-circle"
+    role="switch"
     style="display:block;margin-left:20px"
     type="button"
   >

@@ -25,7 +25,9 @@ exports[`renders Badge/demo/animate.md correctly 1`] = `
       />
     </span>
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div

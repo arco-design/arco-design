@@ -12,7 +12,9 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
       Reverse
     </span>
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-small arco-switch-type-circle"
+      role="switch"
       style="vertical-align:middle"
       type="button"
     >

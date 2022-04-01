@@ -170,7 +170,9 @@ exports[`renders Space/demo/basic.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div

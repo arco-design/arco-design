@@ -12,7 +12,9 @@ exports[`renders Skeleton/demo/animate.md correctly 1`] = `
       Animation
     </span>
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+      role="switch"
       style="vertical-align:middle"
       type="button"
     >

@@ -408,7 +408,9 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
     style="margin-top:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+      role="switch"
       style="margin-right:8px"
       type="button"
     >

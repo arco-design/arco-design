@@ -57,7 +57,9 @@ exports[`renders Tooltip/demo/control.md correctly 1`] = `
     Show Tooltip
   </span>
   <button
+    aria-checked="false"
     class="arco-switch arco-switch-type-circle"
+    role="switch"
     type="button"
   >
     <div

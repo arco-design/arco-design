@@ -323,7 +323,9 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
     style="margin-bottom:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div

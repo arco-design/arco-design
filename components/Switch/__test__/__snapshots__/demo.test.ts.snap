@@ -2,7 +2,9 @@
 
 exports[`renders Switch/demo/basic.md correctly 1`] = `
 <button
+  aria-checked="false"
   class="arco-switch arco-switch-type-circle"
+  role="switch"
   type="button"
 >
   <div
@@ -20,7 +22,9 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-circle"
+      role="switch"
       type="button"
     >
       <div
@@ -43,7 +47,9 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-round arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
@@ -65,7 +71,9 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
@@ -119,8 +127,10 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-circle"
       disabled=""
+      role="switch"
       type="button"
     >
       <div
@@ -133,8 +143,10 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
       disabled=""
+      role="switch"
       type="button"
     >
       <div
@@ -147,8 +159,10 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-round"
       disabled=""
+      role="switch"
       type="button"
     >
       <div
@@ -161,8 +175,10 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-round arco-switch-checked"
       disabled=""
+      role="switch"
       type="button"
     >
       <div
@@ -175,8 +191,10 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-line"
       disabled=""
+      role="switch"
       type="button"
     >
       <div
@@ -188,8 +206,10 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-line arco-switch-checked"
       disabled=""
+      role="switch"
       type="button"
     >
       <div
@@ -209,7 +229,9 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
@@ -240,7 +262,9 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-round arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
@@ -270,7 +294,9 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-line arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
@@ -315,7 +341,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="true"
           class="arco-switch arco-switch-type-circle arco-switch-checked arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -346,7 +374,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="false"
           class="arco-switch arco-switch-type-circle arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -377,7 +407,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="true"
           class="arco-switch arco-switch-type-round arco-switch-checked arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -408,7 +440,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="false"
           class="arco-switch arco-switch-type-round arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -439,7 +473,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="true"
           class="arco-switch arco-switch-type-line arco-switch-checked arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -469,7 +505,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         class="arco-space-item"
       >
         <button
+          aria-checked="false"
           class="arco-switch arco-switch-type-line arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -508,7 +546,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="true"
           class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -539,7 +579,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="false"
           class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -570,7 +612,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="true"
           class="arco-switch arco-switch-small arco-switch-type-round arco-switch-checked arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -601,7 +645,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="false"
           class="arco-switch arco-switch-small arco-switch-type-round arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -632,7 +678,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         style="margin-right:24px"
       >
         <button
+          aria-checked="true"
           class="arco-switch arco-switch-small arco-switch-type-line arco-switch-checked arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -662,7 +710,9 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
         class="arco-space-item"
       >
         <button
+          aria-checked="false"
           class="arco-switch arco-switch-small arco-switch-type-line arco-switch-loading"
+          role="switch"
           type="button"
         >
           <div
@@ -702,7 +752,9 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-circle"
+      role="switch"
       type="button"
     >
       <div
@@ -715,7 +767,9 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-small arco-switch-type-circle"
+      role="switch"
       type="button"
     >
       <div
@@ -728,7 +782,9 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-round"
+      role="switch"
       type="button"
     >
       <div
@@ -741,7 +797,9 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-small arco-switch-type-round"
+      role="switch"
       type="button"
     >
       <div
@@ -754,7 +812,9 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-line"
+      role="switch"
       type="button"
     >
       <div
@@ -766,7 +826,9 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-small arco-switch-type-line"
+      role="switch"
       type="button"
     >
       <div
@@ -786,7 +848,9 @@ exports[`renders Switch/demo/type.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-circle"
+      role="switch"
       type="button"
     >
       <div
@@ -799,7 +863,9 @@ exports[`renders Switch/demo/type.md correctly 1`] = `
     style="margin-right:24px"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-round"
+      role="switch"
       type="button"
     >
       <div
@@ -811,7 +877,9 @@ exports[`renders Switch/demo/type.md correctly 1`] = `
     class="arco-space-item"
   >
     <button
+      aria-checked="false"
       class="arco-switch arco-switch-type-line"
+      role="switch"
       type="button"
     >
       <div

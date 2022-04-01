@@ -1340,8 +1340,10 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <button
+                aria-checked="false"
                 class="arco-switch arco-switch-type-circle"
                 id="switch_input"
+                role="switch"
                 type="button"
               >
                 <div
@@ -3039,9 +3041,11 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <button
+                aria-checked="false"
                 class="arco-switch arco-switch-type-circle"
                 disabled=""
                 id="switch_input"
+                role="switch"
                 type="button"
               >
                 <div
