@@ -16,8 +16,15 @@ exports[`renders Slider/demo/basic.md correctly 1`] = `
         style="left:0%;right:70%"
       />
       <div
+        aria-disabled="false"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        aria-valuetext="30"
         class="arco-slider-button"
+        role="slider"
         style="left:30%"
+        tabindex="0"
       />
     </div>
   </div>
@@ -45,8 +52,15 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             style="bottom:0%;top:90%"
           />
           <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            aria-valuetext="10"
             class="arco-slider-button"
+            role="slider"
             style="bottom:10%"
+            tabindex="0"
           />
         </div>
       </div>
@@ -124,12 +138,14 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
           class="arco-slider-marks"
         >
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="bottom:25%"
           >
             5km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="bottom:50%"
           >
@@ -137,12 +153,26 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-disabled="false"
+          aria-valuemax="20"
+          aria-valuemin="0"
+          aria-valuenow="5"
+          aria-valuetext="5"
           class="arco-slider-button"
+          role="slider"
           style="bottom:25%"
+          tabindex="0"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="20"
+          aria-valuemin="0"
+          aria-valuenow="10"
+          aria-valuetext="10"
           class="arco-slider-button"
+          role="slider"
           style="bottom:50%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -166,12 +196,26 @@ exports[`renders Slider/demo/fixed.md correctly 1`] = `
         style="left:30%;right:40%"
       />
       <div
+        aria-disabled="false"
+        aria-valuemax="10"
+        aria-valuemin="0"
+        aria-valuenow="3"
+        aria-valuetext="3"
         class="arco-slider-button"
+        role="slider"
         style="left:30%"
+        tabindex="0"
       />
       <div
+        aria-disabled="false"
+        aria-valuemax="10"
+        aria-valuemin="0"
+        aria-valuenow="6"
+        aria-valuetext="6"
         class="arco-slider-button"
+        role="slider"
         style="left:60%"
+        tabindex="0"
       />
     </div>
   </div>
@@ -196,8 +240,14 @@ exports[`renders Slider/demo/format-tooltip.md correctly 1`] = `
           style="left:0%;right:80%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
           class="arco-slider-button"
+          role="slider"
           style="left:20%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -245,8 +295,15 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
                 style="left:0%;right:50%"
               />
               <div
+                aria-disabled="false"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="50"
+                aria-valuetext="50"
                 class="arco-slider-button"
+                role="slider"
                 style="left:50%"
+                tabindex="0"
               />
             </div>
           </div>
@@ -306,8 +363,15 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
                 style="left:0%;right:90%"
               />
               <div
+                aria-disabled="false"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="10"
+                aria-valuetext="10"
                 class="arco-slider-button"
+                role="slider"
                 style="left:10%"
+                tabindex="0"
               />
             </div>
           </div>
@@ -357,8 +421,15 @@ Array [
           style="left:0%;right:19.999999999999996%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="80"
+          aria-valuetext="80"
           class="arco-slider-button"
+          role="slider"
           style="left:80%"
+          tabindex="0"
         />
       </div>
       <div
@@ -405,12 +476,26 @@ Array [
           style="left:10%;right:19.999999999999996%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="10"
+          aria-valuetext="10"
           class="arco-slider-button"
+          role="slider"
           style="left:10%"
+          tabindex="0"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="80"
+          aria-valuetext="80"
           class="arco-slider-button"
+          role="slider"
           style="left:80%"
+          tabindex="0"
         />
       </div>
       <div
@@ -719,30 +804,35 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             class="arco-slider-marks"
           >
             <div
+              aria-hidden="true"
               class="arco-slider-marks-text"
               style="left:0%"
             >
               0km
             </div>
             <div
+              aria-hidden="true"
               class="arco-slider-marks-text"
               style="left:50%"
             >
               10km
             </div>
             <div
+              aria-hidden="true"
               class="arco-slider-marks-text"
               style="left:62.5%"
             >
               20km
             </div>
             <div
+              aria-hidden="true"
               class="arco-slider-marks-text"
               style="left:75%"
             >
               30km
             </div>
             <div
+              aria-hidden="true"
               class="arco-slider-marks-text"
               style="left:100%"
             >
@@ -750,8 +840,15 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             </div>
           </div>
           <div
+            aria-disabled="false"
+            aria-valuemax="50"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            aria-valuetext="10"
             class="arco-slider-button"
+            role="slider"
             style="left:50%"
+            tabindex="0"
           />
         </div>
       </div>
@@ -825,30 +922,35 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           class="arco-slider-marks"
         >
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:0%"
           >
             0km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:20%"
           >
             10km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:40%"
           >
             20km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:60%"
           >
             30km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:100%"
           >
@@ -856,8 +958,15 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-disabled="false"
+          aria-valuemax="50"
+          aria-valuemin="0"
+          aria-valuenow="10"
+          aria-valuetext="10"
           class="arco-slider-button"
+          role="slider"
           style="left:20%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -923,24 +1032,28 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           class="arco-slider-marks"
         >
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:0%"
           >
             0km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:33.33333333333333%"
           >
             5km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:66.66666666666666%"
           >
             10km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:100%"
           >
@@ -948,8 +1061,15 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-disabled="false"
+          aria-valuemax="15"
+          aria-valuemin="0"
+          aria-valuenow="5"
+          aria-valuetext="5"
           class="arco-slider-button"
+          role="slider"
           style="left:33.33333333333333%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1007,24 +1127,28 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           class="arco-slider-marks"
         >
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:0%"
           >
             0km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:33.33333333333333%"
           >
             5km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:66.66666666666666%"
           >
             10km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="left:100%"
           >
@@ -1032,8 +1156,15 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-disabled="false"
+          aria-valuemax="15"
+          aria-valuemin="0"
+          aria-valuenow="10"
+          aria-valuetext="10"
           class="arco-slider-button"
+          role="slider"
           style="left:66.66666666666666%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1059,12 +1190,26 @@ exports[`renders Slider/demo/range.md correctly 1`] = `
           style="left:0%;right:50%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
+          aria-valuetext="0"
           class="arco-slider-button"
+          role="slider"
           style="left:0%"
+          tabindex="0"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="50"
+          aria-valuetext="50"
           class="arco-slider-button"
+          role="slider"
           style="left:50%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1208,24 +1353,28 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           class="arco-slider-marks"
         >
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="right:0%"
           >
             0km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="right:33.33333333333333%"
           >
             5km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="right:66.66666666666666%"
           >
             10km
           </div>
           <div
+            aria-hidden="true"
             class="arco-slider-marks-text"
             style="right:100%"
           >
@@ -1233,8 +1382,15 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
           </div>
         </div>
         <div
+          aria-disabled="false"
+          aria-valuemax="15"
+          aria-valuemin="0"
+          aria-valuenow="10"
+          aria-valuetext="10"
           class="arco-slider-button"
+          role="slider"
           style="right:66.66666666666666%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1324,8 +1480,15 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
           style="left:0%;right:70%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
+          aria-valuetext="30"
           class="arco-slider-button"
+          role="slider"
           style="left:30%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1413,8 +1576,15 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
           style="left:0%;right:70%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
+          aria-valuetext="30"
           class="arco-slider-button"
+          role="slider"
           style="left:30%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1434,8 +1604,15 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
           style="left:0%;right:70%"
         />
         <div
+          aria-disabled="true"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
+          aria-valuetext="30"
           class="arco-slider-button"
+          role="slider"
           style="left:30%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1597,8 +1774,15 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
             />
           </div>
           <div
+            aria-disabled="false"
+            aria-valuemax="10"
+            aria-valuemin="0"
+            aria-valuenow="5"
+            aria-valuetext="5"
             class="arco-slider-button"
+            role="slider"
             style="left:50%"
+            tabindex="0"
           />
         </div>
       </div>
@@ -1629,8 +1813,15 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
           style="left:0%;right:80%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
+          aria-valuetext="20"
           class="arco-slider-button arco-tooltip-open"
+          role="slider"
           style="left:20%"
+          tabindex="0"
         />
       </div>
     </div>
@@ -1650,12 +1841,26 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
           style="left:0%;right:50%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
+          aria-valuetext="0"
           class="arco-slider-button arco-tooltip-open"
+          role="slider"
           style="left:0%"
+          tabindex="0"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="50"
+          aria-valuetext="50"
           class="arco-slider-button arco-tooltip-open"
+          role="slider"
           style="left:50%"
+          tabindex="0"
         />
       </div>
     </div>

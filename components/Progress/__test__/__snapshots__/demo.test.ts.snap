@@ -314,8 +314,15 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
             style="left:0%;right:80%"
           />
           <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="20"
+            aria-valuetext="20"
             class="arco-slider-button"
+            role="slider"
             style="left:20%"
+            tabindex="0"
           />
         </div>
       </div>
@@ -1207,8 +1214,15 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
             style="left:0%;right:9.999999999999998%"
           />
           <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="90"
+            aria-valuetext="90"
             class="arco-slider-button"
+            role="slider"
             style="left:90%"
+            tabindex="0"
           />
         </div>
       </div>
@@ -1427,8 +1441,15 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
             style="left:0%;right:70%"
           />
           <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="30"
+            aria-valuetext="30"
             class="arco-slider-button"
+            role="slider"
             style="left:30%"
+            tabindex="0"
           />
         </div>
       </div>

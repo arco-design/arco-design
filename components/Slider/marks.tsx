@@ -36,6 +36,7 @@ const Marks = function (props: MaskProps) {
           isNotEmpty(dom) && (
             <div
               className={`${prefixCls}-marks-text`}
+              aria-hidden
               key={key}
               style={
                 vertical

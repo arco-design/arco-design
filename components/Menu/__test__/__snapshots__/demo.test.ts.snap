@@ -711,8 +711,15 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           style="left:0%;right:66.66666666666667%"
         />
         <div
+          aria-disabled="false"
+          aria-valuemax="400"
+          aria-valuemin="160"
+          aria-valuenow="240"
+          aria-valuetext="240"
           class="arco-slider-button"
+          role="slider"
           style="left:33.33333333333333%"
+          tabindex="0"
         />
       </div>
     </div>

@@ -15,8 +15,15 @@ exports[`ConfigProvider componentConfig.Slider default 1`] = `
         style="left:0%;right:100%"
       />
       <div
+        aria-disabled="false"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        aria-valuetext="0"
         class="arco-slider-button"
+        role="slider"
         style="left:0%"
+        tabindex="0"
       />
     </div>
   </div>
@@ -38,8 +45,15 @@ exports[`ConfigProvider componentConfig.Slider set className globally 1`] = `
         style="left:0%;right:100%"
       />
       <div
+        aria-disabled="false"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        aria-valuetext="0"
         class="arco-slider-button"
+        role="slider"
         style="left:0%"
+        tabindex="0"
       />
     </div>
   </div>
@@ -61,8 +75,15 @@ exports[`ConfigProvider componentConfig.Slider set className globally and compon
         style="left:0%;right:100%"
       />
       <div
+        aria-disabled="false"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        aria-valuetext="0"
         class="arco-slider-button"
+        role="slider"
         style="left:0%"
+        tabindex="0"
       />
     </div>
   </div>
