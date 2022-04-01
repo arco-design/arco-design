@@ -297,14 +297,13 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
                   }
                 }}
                 className={`${prefixCls}-content ${prefixCls}-virtual`}
-                data={listItems}
+                data={scrollLoadingEle ? listItems.concat(scrollLoadingEle) : listItems}
                 isStaticItemHeight={false}
                 onScroll={needHandleScroll ? throttledScrollHandler : undefined}
                 {...virtualListProps}
               >
                 {(child) => child}
               </VirtualList>
-              {scrollLoadingEle}
             </>
           ) : (
             <div role="list" className={`${prefixCls}-content`} ref={refItemListWrapper}>
