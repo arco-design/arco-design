@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import isEqualWith from 'lodash/isEqualWith';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -259,11 +259,15 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [props.popupVisible, handleKeyDown]);
-  const pathNodes = activeNode ? activeNode.getPathNodes() : [];
-  const menus = [options];
-  pathNodes.forEach((option) => {
-    option && option.children && menus.push(option.children);
-  });
+
+  const menus = useMemo(() => {
+    const list = [store.getOptions()];
+    const pathNodes = activeNode ? activeNode.getPathNodes() : [];
+    pathNodes.forEach((option) => {
+      option && option.children && list.push(option.children);
+    });
+    return list;
+  }, [activeNode, store]);
 
   const dropdownColumnRender = isFunction(props.dropdownColumnRender)
     ? props.dropdownColumnRender
@@ -347,9 +351,12 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                                 isEqualWith(props.value, option.pathValue)
                               }
                               onMouseEnter={() => {
+                                if (option.disabled) {
+                                  return;
+                                }
                                 if (props.expandTrigger === 'hover') {
                                   setActiveNode(option);
-                                  loadData(option);
+                                  !option.isLeaf && loadData(option);
                                 }
                               }}
                               renderOption={
