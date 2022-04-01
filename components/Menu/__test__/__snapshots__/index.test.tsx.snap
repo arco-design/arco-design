@@ -3,6 +3,7 @@
 exports[`ConfigProvider componentConfig.Menu default 1`] = `
 <div
   class="arco-menu arco-menu-light arco-menu-vertical"
+  role="menu"
   tabindex="1"
 >
   <div
@@ -14,6 +15,7 @@ exports[`ConfigProvider componentConfig.Menu default 1`] = `
 exports[`ConfigProvider componentConfig.Menu set className globally 1`] = `
 <div
   class="arco-menu arco-menu-light arco-menu-vertical global-default-class"
+  role="menu"
   tabindex="1"
 >
   <div
@@ -25,6 +27,7 @@ exports[`ConfigProvider componentConfig.Menu set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Menu set className globally and component set className itself. 1`] = `
 <div
   class="arco-menu arco-menu-light arco-menu-vertical component-class"
+  role="menu"
   tabindex="1"
 >
   <div
@@ -36,6 +39,7 @@ exports[`ConfigProvider componentConfig.Menu set className globally and componen
 exports[`Menu overflowItems should be pack up 1`] = `
 <div
   class="arco-menu arco-menu-light arco-menu-horizontal"
+  role="menu"
   style="width: 600px;"
   tabindex="1"
 >
@@ -46,6 +50,9 @@ exports[`Menu overflowItems should be pack up 1`] = `
       class="arco-menu-overflow-wrap"
     >
       <div
+        aria-controls="arco-menu-15-submenu-pop-6"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
       >
         <span>
@@ -71,20 +78,26 @@ exports[`Menu overflowItems should be pack up 1`] = `
       </div>
       <div
         class="arco-menu-item arco-menu-overflow-hidden-menu-item"
+        role="menuitem"
       >
         设计指南
       </div>
       <div
         class="arco-menu-item arco-menu-overflow-hidden-menu-item"
+        role="menuitem"
       >
         区块
       </div>
       <div
         class="arco-menu-item arco-menu-overflow-hidden-menu-item"
+        role="menuitem"
       >
         模块
       </div>
       <div
+        aria-controls="arco-menu-15-submenu-pop-7"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header arco-menu-selected arco-menu-overflow-hidden-menu-item"
       >
         <span>
@@ -112,6 +125,9 @@ exports[`Menu overflowItems should be pack up 1`] = `
         />
       </div>
       <div
+        aria-controls="arco-menu-15-submenu-pop-8"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-hidden-menu-item"
       >
         <span>
@@ -137,11 +153,13 @@ exports[`Menu overflowItems should be pack up 1`] = `
       </div>
       <div
         class="arco-menu-item arco-menu-overflow-hidden-menu-item"
+        role="menuitem"
       >
         工具
       </div>
       <div
         class="arco-menu-item arco-menu-overflow-hidden-menu-item"
+        role="menuitem"
       >
         主题实验室
       </div>

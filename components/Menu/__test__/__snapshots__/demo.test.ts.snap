@@ -66,6 +66,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
   </button>
   <div
     class="arco-menu arco-menu-dark arco-menu-vertical"
+    role="menu"
     style="width:200px;border-radius:4px"
     tabindex="1"
   >
@@ -76,6 +77,8 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-0-submenu-inline-0"
+          aria-expanded="true"
           class="arco-menu-inline-header arco-menu-selected"
         >
           <span>
@@ -127,10 +130,12 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-0-submenu-inline-0"
           style="height:auto"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -146,6 +151,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -161,6 +167,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-selected arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -176,6 +183,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -195,6 +203,8 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-0-submenu-inline-1"
+          aria-expanded="false"
           class="arco-menu-inline-header"
         >
           <span>
@@ -234,10 +244,12 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-0-submenu-inline-1"
           style="height:0"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -253,6 +265,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -268,6 +281,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -287,6 +301,8 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-0-submenu-inline-2"
+          aria-expanded="false"
           class="arco-menu-inline-header"
         >
           <span>
@@ -325,10 +341,12 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-0-submenu-inline-2"
           style="height:0"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -344,6 +362,7 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -370,6 +389,7 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
 >
   <div
     class="arco-menu arco-menu-dark arco-menu-horizontal"
+    role="menu"
     tabindex="1"
   >
     <div
@@ -379,6 +399,9 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
         class="arco-menu-overflow-wrap"
       >
         <div
+          aria-controls="arco-menu-1-submenu-pop-0"
+          aria-expanded="false"
+          aria-haspopup="true"
           class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
         >
           <span>
@@ -404,6 +427,7 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-item arco-menu-disabled"
+          role="menuitem"
           style="padding:0;margin-right:38px"
         >
           <div
@@ -412,6 +436,7 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-item arco-menu-selected"
+          role="menuitem"
         >
           Home
           <div
@@ -420,16 +445,19 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-item"
+          role="menuitem"
         >
           Solution
         </div>
         <div
           class="arco-menu-item"
+          role="menuitem"
         >
           Cloud Service
         </div>
         <div
           class="arco-menu-item"
+          role="menuitem"
         >
           Cooperation
         </div>
@@ -445,6 +473,7 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
 >
   <div
     class="arco-menu arco-menu-light arco-menu-horizontal"
+    role="menu"
     tabindex="1"
   >
     <div
@@ -454,6 +483,9 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
         class="arco-menu-overflow-wrap"
       >
         <div
+          aria-controls="arco-menu-2-submenu-pop-1"
+          aria-expanded="false"
+          aria-haspopup="true"
           class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
         >
           <span>
@@ -479,6 +511,7 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-item arco-menu-disabled"
+          role="menuitem"
           style="padding:0;margin-right:38px"
         >
           <div
@@ -487,6 +520,7 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-item arco-menu-selected"
+          role="menuitem"
         >
           Home
           <div
@@ -495,16 +529,19 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-item"
+          role="menuitem"
         >
           Solution
         </div>
         <div
           class="arco-menu-item"
+          role="menuitem"
         >
           Cloud Service
         </div>
         <div
           class="arco-menu-item"
+          role="menuitem"
         >
           Cooperation
         </div>
@@ -521,6 +558,8 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
 >
   <div
     class="arco-menu arco-menu-light arco-menu-vertical arco-menu-pop"
+    id="arco-menu-3"
+    role="menu"
     style="width:200px"
     tabindex="1"
   >
@@ -529,6 +568,7 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
     >
       <div
         class="arco-menu-item"
+        role="menuitem"
       >
         <svg
           aria-hidden="true"
@@ -559,6 +599,9 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
         Navigation 1
       </div>
       <div
+        aria-controls="arco-menu-3-submenu-pop-2"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header"
       >
         <svg
@@ -599,6 +642,9 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
         </span>
       </div>
       <div
+        aria-controls="arco-menu-3-submenu-pop-3"
+        aria-expanded="false"
+        aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header"
       >
         <svg
@@ -635,6 +681,7 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
       </div>
       <div
         class="arco-menu-item"
+        role="menuitem"
       >
         <svg
           aria-hidden="true"
@@ -653,6 +700,7 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
       </div>
       <div
         class="arco-menu-item"
+        role="menuitem"
       >
         <svg
           aria-hidden="true"
@@ -671,7 +719,11 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-controls="arco-menu-3"
+      aria-expanded="true"
       class="arco-menu-collapse-button"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -726,6 +778,8 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-menu arco-menu-light arco-menu-vertical"
+    id="arco-menu-4"
+    role="menu"
     style="width:240px;height:calc(100% - 28px)"
     tabindex="1"
   >
@@ -736,6 +790,8 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-4-submenu-inline-3"
+          aria-expanded="true"
           class="arco-menu-inline-header arco-menu-selected"
         >
           <span>
@@ -787,10 +843,12 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-4-submenu-inline-3"
           style="height:auto"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -806,6 +864,7 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-selected arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -821,6 +880,7 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-disabled arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -840,6 +900,8 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-4-submenu-inline-4"
+          aria-expanded="false"
           class="arco-menu-inline-header"
         >
           <span>
@@ -879,10 +941,12 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-4-submenu-inline-4"
           style="height:0"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -898,6 +962,7 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -913,6 +978,7 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -932,6 +998,8 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-4-submenu-inline-5"
+          aria-expanded="false"
           class="arco-menu-inline-header"
         >
           <span>
@@ -970,10 +1038,12 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-4-submenu-inline-5"
           style="height:0"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -989,6 +1059,7 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1004,6 +1075,7 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1021,7 +1093,11 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-controls="arco-menu-4"
+      aria-expanded="true"
       class="arco-menu-collapse-button"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1048,6 +1124,8 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
 >
   <div
     class="arco-menu arco-menu-light arco-menu-vertical"
+    id="arco-menu-5"
+    role="menu"
     style="width:200px;height:100%"
     tabindex="1"
   >
@@ -1058,6 +1136,8 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-5-submenu-inline-6"
+          aria-expanded="true"
           class="arco-menu-inline-header arco-menu-selected"
         >
           <span>
@@ -1109,10 +1189,12 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-5-submenu-inline-6"
           style="height:auto"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1128,6 +1210,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-selected arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1143,6 +1226,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-disabled arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1162,6 +1246,8 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-5-submenu-inline-7"
+          aria-expanded="false"
           class="arco-menu-inline-header"
         >
           <span>
@@ -1201,10 +1287,12 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-5-submenu-inline-7"
           style="height:0"
         >
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1220,6 +1308,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1235,6 +1324,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-item-indented"
+            role="menuitem"
           >
             <span>
               <span
@@ -1254,6 +1344,8 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
+          aria-controls="arco-menu-5-submenu-inline-8"
+          aria-expanded="false"
           class="arco-menu-inline-header"
         >
           <span>
@@ -1292,6 +1384,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
+          id="arco-menu-5-submenu-inline-8"
           style="height:0"
         >
           <div
@@ -1311,6 +1404,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-item arco-menu-item-indented"
+              role="menuitem"
             >
               <span>
                 <span
@@ -1326,6 +1420,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-item arco-menu-item-indented"
+              role="menuitem"
             >
               <span>
                 <span
@@ -1357,6 +1452,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-item arco-menu-item-indented"
+              role="menuitem"
             >
               <span>
                 <span
@@ -1372,6 +1468,7 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-item arco-menu-item-indented"
+              role="menuitem"
             >
               <span>
                 <span
@@ -1390,7 +1487,11 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
       </div>
     </div>
     <div
+      aria-controls="arco-menu-5"
+      aria-expanded="true"
       class="arco-menu-collapse-button"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"

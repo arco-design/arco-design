@@ -5,7 +5,7 @@ import { TooltipProps } from '../Tooltip';
 /**
  * @title Menu
  */
-export interface MenuProps {
+export interface MenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   children?: ReactNode;
   style?: CSSProperties;
   prefixCls?: string;

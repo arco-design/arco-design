@@ -25,6 +25,7 @@ const MenuContext = createContext<
     | 'autoScrollIntoView'
     | 'scrollConfig'
   > & {
+    id?: string;
     prefixCls?: string;
     hotkeyInfo?: HotkeyInfo;
     clearHotkeyInfo?: ClearHotkeyInfo;

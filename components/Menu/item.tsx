@@ -70,6 +70,7 @@ function Item(props: MenuItemProps, ref) {
 
   const itemElement = (
     <WrapperTagName
+      role="menuitem"
       ref={(_ref) => {
         ref = _ref;
         refElement.current = ref;
