@@ -421,4 +421,29 @@ describe('Select', () => {
     );
     expect(wrapper.find('.custom-trigger-element').at(0).text()).toBe('HELLO-hello');
   });
+
+  it('Mouse event callback of Select.Option', () => {
+    const onMouseEnter = jest.fn();
+    const onMouseLeave = jest.fn();
+    const onClick = jest.fn();
+    wrapper = mountSelect(
+      <Select popupVisible>
+        <Select.Option
+          value={1}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onClick={onClick}
+        />
+      </Select>
+    );
+    wrapper
+      .find('.arco-select-option')
+      .at(0)
+      .simulate('click')
+      .simulate('mouseenter')
+      .simulate('mouseleave');
+    expect(onMouseEnter).toBeCalled();
+    expect(onMouseLeave).toBeCalled();
+    expect(onClick).toBeCalled();
+  });
 });

@@ -215,8 +215,7 @@ export interface SelectProps extends SelectViewCommonProps {
 /**
  * @title Select.Option
  */
-export interface OptionProps
-  extends Omit<HTMLAttributes<HTMLLIElement>, 'className' | 'onMouseEnter' | 'onMouseLeave'> {
+export interface OptionProps extends Omit<HTMLAttributes<HTMLLIElement>, 'className'> {
   _key?: any;
   style?: CSSProperties;
   children?: ReactNode;
@@ -239,13 +238,14 @@ export interface OptionProps
    * @version 2.2.0
    */
   extra?: any;
-  valueActive?: string;
-  valueSelect?: string | string[] | number | number[];
-  isMultipleMode?: boolean;
+  // Some user may use isSelectOption to hack, Do NOT change it to _isSelectOption
   isSelectOption?: boolean;
-  onMouseEnter?: (value: OptionProps['value']) => void;
-  onMouseLeave?: () => void;
-  onClickOption?: (value: OptionProps['value'], disabled: boolean) => void;
+  _isMultipleMode?: boolean;
+  _valueActive?: OptionProps['value'];
+  _valueSelect?: SelectInnerStateValue;
+  _onClick?: (value: OptionProps['value'], disabled: boolean) => void;
+  _onMouseEnter?: (value: OptionProps['value']) => void;
+  _onMouseLeave?: () => void;
 }
 
 /**
@@ -255,12 +255,13 @@ export interface OptGroupProps extends HTMLAttributes<HTMLLIElement> {
   _key?: any;
   children?: ReactNode;
   prefixCls?: string;
-  isSelectOptGroup?: boolean;
   /**
    * @zh 组名
    * @en Name of Group
    */
   label?: ReactNode;
+  // Some user may use isSelectOptGroup to hack, Do NOT change it to _isSelectOptGroup
+  isSelectOptGroup?: boolean;
 }
 
 /**
