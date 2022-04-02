@@ -39,6 +39,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { SelectOptionProps } from '../index';
 
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
@@ -504,24 +505,21 @@ function Select(baseProps: SelectProps, ref) {
           }
 
           if (isSelectOption(child)) {
-            return (
-              child && (
-                <child.type
-                  {...child.props}
-                  prefixCls={prefixCls}
-                  valueSelect={value}
-                  valueActive={valueActive}
-                  isMultipleMode={isMultipleMode}
-                  onClickOption={handleOptionClick}
-                  onMouseEnter={(value) => {
-                    refKeyboardArrowDirection.current === null && setValueActive(value);
-                  }}
-                  onMouseLeave={() => {
-                    refKeyboardArrowDirection.current === null && setValueActive(undefined);
-                  }}
-                />
-              )
-            );
+            const optionProps: Partial<SelectOptionProps> = {
+              prefixCls,
+              _valueActive: valueActive,
+              _valueSelect: value,
+              _isMultipleMode: isMultipleMode,
+              _onClick: handleOptionClick,
+              _onMouseEnter: (value) => {
+                refKeyboardArrowDirection.current === null && setValueActive(value);
+              },
+              _onMouseLeave: () => {
+                refKeyboardArrowDirection.current === null && setValueActive(undefined);
+              },
+            };
+
+            return child && <child.type {...child.props} {...optionProps} />;
           }
 
           return child;
