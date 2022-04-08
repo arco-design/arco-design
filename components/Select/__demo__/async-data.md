@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `filterOption` 和 `onSearch` 结合，可以使用远程搜索功能。
+指定 `showSearch`，并且结合 `filterOption` 和 `onSearch`，可以使用远程搜索功能。
 
 ## en-US
 
-Through the combination of `filterOption` and `onSearch`, you can search user from origin and select them.
+Through the combination of `showSearch`, `filterOption` and `onSearch`, you can search user from origin and select them.
 
 ```js
 import { useState, useRef, useCallback } from 'react';
@@ -59,6 +59,7 @@ function Demo() {
   return (
     <Select
       style={{ width: 345 }}
+      showSearch
       mode="multiple"
       options={options}
       placeholder="Search by name"

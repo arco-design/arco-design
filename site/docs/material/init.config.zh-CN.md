@@ -30,7 +30,9 @@ module.exports = {
 };
 ```
 
-## **构建配置**
+## 构建配置
+
+详细配置参数类型和默认配置可参考 [arco-scripts 源码](https://github.com/arco-design/arco-cli/tree/main/packages/arco-scripts/src/config) 。
 
 Arco 官方模板所创建的项目使用 `arco-scripts` 来进行项目的测试和打包，你可以通过配置文件修改其默认配置。在项目根目录的 `.config` 文件夹内，我们提供了扩展配置的入口：
 

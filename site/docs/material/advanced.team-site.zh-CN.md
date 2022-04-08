@@ -149,7 +149,7 @@ module.exports = (config) => {
 ```jsx
 import { Button } from '@arco-design/my-material';
 
-export default () => <Button/>;
+export default () => <Button />;
 ```
 
 可通过 `resolve.alias` 配置，指定 Webpack 查找此模块的路径。
@@ -263,20 +263,7 @@ table {
 
 ## 使用 Arco 主题商店主题
 
-**版本要求 `arco-material-doc-site >= 1.8.0`**
-
-通过拓展配置项，你可以快速在团队站点上使用 Arco 主题商店上的任意主题。
-
-```javascript
-module.exports = {
-  // ...
-  // 站点配置
-  site: {
-    // 配置所需要使用的 Arco 主题商店主题
-    arcoDesignLabTheme: '@arco-design/theme-package-name',
-  },
-};
-```
+参考 [「常见问题 - 关联主题」](/docs/material/qa#如何关联主题？)。
 
 ## 站点配置
 
