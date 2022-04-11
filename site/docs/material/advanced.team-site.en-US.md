@@ -265,20 +265,7 @@ table {
 
 ## Using the Arco Design Lab theme
 
-**Version requirement `arco-material-doc-site >= 1.8.0`**
-
-By extending the configuration items, you can quickly use any theme from the Arco theme store on your team site.
-
-````javascript
-module.exports = {
-  // ...
-  // site configuration
-  site: {
-    // Configure the Arco Design Lab theme that needs to be used
-    arcoDesignLabTheme: '@arco-design/theme-package-name',
-  },
-};
-````
+See ["FAQ - Associated Topics"](/docs/en-US/material/qa#how-to-associate-design-lab-theme).
 
 ## Site configuration
 

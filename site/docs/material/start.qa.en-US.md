@@ -99,6 +99,65 @@ plugins: [
 ]
 ```
 
+## How to associate Design Lab theme?
+
+The first thing to be clear is: **Theme package should be imported by the project itself, not the material**. The theme association provided by the material market is only used to show the effect when the material is used with a theme.
+
+### Via group settings (recommended)
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20220408-145533.png~tplv-uwbnlip3yd-webp.webp)
+
+On the group page, click the "⚙" button to configure the team settings (only available for team administrators), search for the desired related theme and submit it. After completing the configuration, the platform will preferentially load the associated theme package instead of Arco's default style when previewing the material.
+
+If you are not using the "Team Site" feature, you can skip the content below.
+
+---
+
+This configuration item is valid for both "Material List" and "Team Site" material preview. It is important to note that since the local preview and Dev mode of the "team site" is not associated with a specific team, you need to configure the fields in the `.config/main.js` of the local site project to associate it with a specific team.
+
+**Note: `arco-material-doc-site >= 1.10.0` is required and the NPM package corresponding to the theme needs to be installed locally, otherwise an error will be reported due to missing modules in Dev mode.**
+
+````js
+//.config/main.js
+/**
+ * @type {import('arco-material-doc-site').MainConfig}
+ */
+module.exports = {
+  // ... Other settings...
+  // Configure the associated team configuration when configuring local preview or Dev through the group field
+  group: {
+    id: 1,
+    // Whether it is an intranet team
+    private: false,
+  },
+};
+````
+
+After completing the above configuration, the "team site" local Dev will try to use the theme configuration information of the corresponding team:
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20220408-153706.png~tplv-uwbnlip3yd-webp.webp)
+
+### Used for team site only
+
+If you only need to use the theme on the "team site", you can also configure the fields in the `.config/main.js` of the local site project directly. This field takes precedence over the team-level configuration in the previous section.
+
+**Note: The NPM package corresponding to the theme needs to be installed locally, otherwise an error will be reported due to missing modules in Dev mode. **
+
+````js
+//.config/main.js
+/**
+ * @type {import('arco-material-doc-site').MainConfig}
+ */
+module.exports = {
+  // ... Other settings...
+  site: {
+    // ... Other settings...
+    // NPM package name corresponding to the theme
+    arcoDesignLabTheme: '@arco-design/theme-volcengine-ui'
+  },
+};
+````
+
 ## Material unit test error
 
 The unit test of the material item uses [Jest](https://jestjs.io/), which does not support ES Module syntax (import / export) by default. Reference [this document](https://jestjs.io/docs/ecmascript-modules)
