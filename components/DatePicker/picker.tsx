@@ -57,7 +57,7 @@ function getFormat(props) {
 }
 
 interface InnerPickerProps extends PickerProps {
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   picker?: ReactElement;
   format?: string;
   defaultValue?: CalendarValue | CalendarValue[];

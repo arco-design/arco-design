@@ -20,7 +20,7 @@ import { isObject } from '../../../_util/is';
 import PickerContext from '../../context';
 
 interface InnerRangePickerProps extends RangePickerProps {
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   dateRender?: (currentDate: Dayjs) => ReactNode;
   icons?: IconsType;
   locale?: Record<string, any>;

@@ -66,7 +66,7 @@ export interface CalendarProps {
    * @zh 不可选取的时间
    * @en Function that specifies the dates that cannot be selected
    */
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   /**
    * @zh 日期变化触发的回调。
    * @en Callback when date change.

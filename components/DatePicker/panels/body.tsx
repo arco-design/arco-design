@@ -22,7 +22,7 @@ export interface PanelBodyProps {
   prefixCls?: string;
   onSelectDate?: (timeString: string, time: Dayjs) => void;
   CALENDAR_LOCALE?: Record<string, any>;
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   onMouseEnterCell?: (date: Dayjs, disabled: boolean) => void;
   onMouseLeaveCell?: (date: Dayjs, disabled: boolean) => void;
   dateRender?: (date?: Dayjs) => ReactNode;
