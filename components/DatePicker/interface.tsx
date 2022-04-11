@@ -180,7 +180,7 @@ export interface PickerProps {
    * @zh 不可选取的日期
    * @en Specify the date that cannot be selected
    */
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   /**
    * @zh 额外的页脚
    * @en Extra footer
