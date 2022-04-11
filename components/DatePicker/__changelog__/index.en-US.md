@@ -1,3 +1,12 @@
+## 2.31.3
+
+2022-04-11
+
+### 🐛 BugFix
+
+- Fixed ts type of `disabledDate` for `DatePicker` component.([#750](https://github.com/arco-design/arco-design/pull/750))
+- Fixed the bug that the `DatePicker.RangePicker` component would report an error when selecting the time directly.([#749](https://github.com/arco-design/arco-design/pull/749))
+
 ## 2.31.0
 
 2022-03-25

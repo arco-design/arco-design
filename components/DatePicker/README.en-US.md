@@ -41,7 +41,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |icons|Icon configuration of panel.|`{prev?: ReactNode;prevDouble?: ReactNode;next?: ReactNode;nextDouble?: ReactNode;inputSuffix?: ReactNode;}`|`-`|2.20.0|
 |locale|Internationalization configuration.|`Record<string, any>`|`-`|-|
 |separator|Separator symbol in the range selector input box|`ReactNode`|`-`|-|
-|disabledDate|Specify the date that cannot be selected|`(current?: Dayjs) => boolean`|`-`|-|
+|disabledDate|Specify the date that cannot be selected|`(current: Dayjs) => boolean`|`-`|-|
 |extra|Extra footer|`ReactNode`|`-`|-|
 |onOk|Callback when click confirm button|`(dateString: string, date: Dayjs) => void`|`-`|-|
 |triggerElement|Trigger element.|`ReactNode`|`-`|2.9.0|

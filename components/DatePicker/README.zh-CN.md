@@ -41,7 +41,7 @@
 |icons|日历翻页的图标配置。|`{prev?: ReactNode;prevDouble?: ReactNode;next?: ReactNode;nextDouble?: ReactNode;inputSuffix?: ReactNode;}`|`-`|2.20.0|
 |locale|国际化配置|`Record<string, any>`|`-`|-|
 |separator|范围选择器输入框内的分割符号|`ReactNode`|`-`|-|
-|disabledDate|不可选取的日期|`(current?: Dayjs) => boolean`|`-`|-|
+|disabledDate|不可选取的日期|`(current: Dayjs) => boolean`|`-`|-|
 |extra|额外的页脚|`ReactNode`|`-`|-|
 |onOk|点击确认按钮的回调|`(dateString: string, date: Dayjs) => void`|`-`|-|
 |triggerElement|触发元素。|`ReactNode`|`-`|2.9.0|

@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.31.3
+
+2022-04-11
+
+### 🐛 问题修复
+
+- 修正 `DatePicker` 组件的 `disabledDate` 的 ts 定义。([#750](https://github.com/arco-design/arco-design/pull/750))
+- 修复 `DatePicker.RangePicker` 组件直接选择时间会报错的 bug。([#749](https://github.com/arco-design/arco-design/pull/749))
+
 ## 2.31.2
 
 2022-04-01
