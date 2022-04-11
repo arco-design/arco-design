@@ -202,7 +202,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
           {...disabledTimeProps}
           hideFooter
           format={timeFormat}
-          valueShow={timeValue.format('HH:mm:ss')}
+          valueShow={timeValue.format(timeFormat)}
           onSelect={onTimePickerSelect}
           popupVisible={popupVisible}
           utcOffset={utcOffset}

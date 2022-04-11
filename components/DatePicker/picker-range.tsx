@@ -569,7 +569,7 @@ const Picker = (baseProps: RangePickerProps) => {
   // Callback when click TimePicker
   function onTimePickerSelect(index: number, _: string, time: Dayjs) {
     const newValueShow = isArray(panelValue) ? [...panelValue] : [];
-    const newTimeValue = getValueWithTime(newValueShow[index], time);
+    const newTimeValue = getValueWithTime(newValueShow[index] || getNow(utcOffset, timezone), time);
     newValueShow[index] = newTimeValue;
     onSelectValueShow(newValueShow);
   }
