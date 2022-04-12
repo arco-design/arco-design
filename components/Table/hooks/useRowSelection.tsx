@@ -82,8 +82,9 @@ export default function useRowSelection<T>(
   );
 
   function getRowsFromKeys(keys: Key[], plus?: boolean): T[] {
-    const all = plus ? flattenData.concat(selectedRows) : flattenData;
-    return keys.map((r) => all.find((f) => f && getRowKey(f) === r)).filter((a) => a);
+    const all: T[] = plus ? flattenData.concat(selectedRows) : flattenData;
+    const keyMap: Map<Key, T> = new Map(all.map((v) => [getRowKey(v), v]));
+    return keys.map((r) => keyMap.get(r)).filter((a) => a);
   }
 
   const mergedSelectedRowKeys = getSet(controlledSelectedRowKeys || selectedRowKeys);
