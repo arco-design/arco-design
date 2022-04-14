@@ -14,7 +14,6 @@ import EditorSkin, { EditorPanel } from '../../components/EditorSkin';
 import CardIntroduce from '../../components/CardIntroduce';
 import ColorPicker from '../../components/ColorPicker';
 import useLocale from '../../hooks/useLocale';
-import { createScrollTrigger, scaleFadeIn, scaleFadeHide } from '../../utils/animation';
 
 enum FontWeight {
   UltraLight = 100,
@@ -59,12 +58,11 @@ const sizeMap = {
 };
 
 interface TokenProps {
-  isFirstRender?: boolean;
   onMounted?: () => void;
 }
 
 export default function Token(props: TokenProps) {
-  const { isFirstRender = true, onMounted } = props;
+  const { onMounted } = props;
   const locale = useLocale();
   const [themeColor, setThemeColor] = useState('#165dff');
   const [fontWeight, setFontWeight] = useState(400);
@@ -73,7 +71,6 @@ export default function Token(props: TokenProps) {
   const [size, setSize] = useState(2);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
@@ -98,18 +95,6 @@ export default function Token(props: TokenProps) {
 
   useEffect(() => {
     onMounted && onMounted();
-    if (!isFirstRender) return;
-    const show = () => {
-      scaleFadeIn(rightRef.current);
-    };
-    const hide = () => {
-      scaleFadeHide(rightRef.current);
-    };
-    hide();
-    createScrollTrigger(bodyRef.current, {
-      onEnter: show,
-      once: true,
-    });
   }, []);
 
   return (
@@ -220,7 +205,7 @@ export default function Token(props: TokenProps) {
           </div>
         </div>
       </div>
-      <div className={styles['token-body-right']} ref={rightRef}>
+      <div className={styles['token-body-right']} data-aos="scale-fade-in">
         <CardIntroduce
           style={{ height: '100%' }}
           code={

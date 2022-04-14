@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap/all';
 import IconDrag from './iconDrag';
 import { on, off } from '../../utils/dom';
 import cs from '../../utils/classNames';
@@ -7,7 +6,6 @@ import Demo1 from './demo1';
 import Demo2 from './demo2';
 import EditorCard from './editorCard';
 import styles from './style/index.module.less';
-import { createScrollTrigger, scaleFadeIn, scaleFadeHide } from '../../utils/animation';
 
 type DemoType = 'demo1' | 'demo2';
 
@@ -17,7 +15,7 @@ interface ComponentProps {
 }
 
 export default function Component(props: ComponentProps) {
-  const { isFirstRender = true, onMounted } = props;
+  const { isFirstRender, onMounted } = props;
   const [leftSize, setLeftSize] = useState(53);
   const rightSize = 100 - leftSize;
   const [curDemo, setCurDemo] = useState<DemoType>('demo1');
@@ -31,9 +29,9 @@ export default function Component(props: ComponentProps) {
   }>({});
   const wrapperRef = useRef<HTMLDivElement>();
   const leftRef = useRef<HTMLDivElement>();
-  const leftBackgroundRef = useRef<HTMLDivElement>();
   const rightRef = useRef<HTMLDivElement>();
-  const splitTriggerRef = useRef<HTMLDivElement>();
+
+  const [animating, setAnimating] = useState(true);
 
   function px2percent(numerator, denominator) {
     return parseFloat(numerator) / parseFloat(denominator);
@@ -89,71 +87,34 @@ export default function Component(props: ComponentProps) {
     recordRef.current.maxSize = leftSize;
   }, []);
 
+  const duration = 700;
+
   useEffect(() => {
     onMounted && onMounted();
     if (!isFirstRender) {
-      setTimeout(() => {
-        wrapperRef.current.style.opacity = '1';
-      });
+      animating && setAnimating(false);
       return;
     }
-    const duration = 0.7;
-    const show = (tl?: any) => {
-      scaleFadeIn(rightRef.current, tl, `-=${duration * 0.6}`);
-    };
-    const hide = () => {
-      scaleFadeHide(rightRef.current);
-    };
-    const slide = (tl: any) => {
-      return tl
-        .to([wrapperRef.current], {
-          duration,
-          opacity: 1,
-        })
-        .from(
-          [leftBackgroundRef.current],
-          {
-            duration,
-            right: `70%`,
-          },
-          '-=0.5'
-        )
-        .from(
-          [leftRef.current],
-          {
-            duration,
-            width: `30%`,
-          },
-          '<'
-        )
-        .from(
-          [splitTriggerRef.current],
-          {
-            duration,
-            left: `30%`,
-          },
-          '<'
-        );
-    };
-    hide();
-    createScrollTrigger(wrapperRef.current, {
-      once: true,
-      onEnter() {
-        const tl = gsap.timeline();
-        slide(tl);
-        show(tl);
-      },
-    });
+    setTimeout(() => {
+      animating && setAnimating(false);
+    }, duration);
   }, []);
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef} style={{ opacity: 0 }}>
+    <div className={styles.wrapper} ref={wrapperRef} data-aos="fade">
       <div
         className={styles['content-left-background']}
-        style={{ right: `${rightSize}%` }}
-        ref={leftBackgroundRef}
+        style={animating ? {} : { right: `${rightSize}%` }}
+        data-aos={animating ? 'content-left-background-init' : undefined}
+        data-aos-delay={duration - 500}
       />
-      <div className={styles['content-left']} style={{ width: `${leftSize}%` }} ref={leftRef}>
+      <div
+        className={styles['content-left']}
+        data-aos={animating ? 'content-left-init' : undefined}
+        data-aos-delay={duration - 500}
+        style={animating ? {} : { width: `${leftSize}%` }}
+        ref={leftRef}
+      >
         {curDemo === 'demo1' && <Demo1 />}
         {curDemo === 'demo2' && <Demo2 />}
       </div>
@@ -162,8 +123,9 @@ export default function Component(props: ComponentProps) {
       </div>
       <div
         className={styles['split-trigger-wrapper']}
-        style={{ left: `${leftSize}%` }}
-        ref={splitTriggerRef}
+        style={animating ? {} : { left: `${leftSize}%` }}
+        data-aos={animating ? 'split-trigger-init' : undefined}
+        data-aos-delay={duration - 500}
       >
         <div className={cs(styles['split-trigger'], { [styles['split-trigger-hover']]: dragging })}>
           <div
