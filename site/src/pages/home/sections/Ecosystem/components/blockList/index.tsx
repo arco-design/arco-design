@@ -1,14 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Message } from '@arco-design/web-react';
-import { gsap, ScrollTrigger } from 'gsap/all';
 import Block from '../block';
 import styles from './index.module.less';
 import useLocale from '../../../../hooks/useLocale';
 import cs from '../../../../utils/classNames';
-import { createScrollTrigger, scaleFadeHide, scaleFadeIn } from '../../../../utils/animation';
 import { EcosystemItem } from '../../interface';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function EcosystemBlockList({
   list,
@@ -22,26 +18,6 @@ export default function EcosystemBlockList({
   const locale = useLocale();
   const blockListRef = useRef<HTMLDivElement>();
 
-  useEffect(() => {
-    if (!animation) return;
-    const _target =
-      blockListRef.current && blockListRef.current.querySelectorAll('.js-ecosystem-block-item');
-    if (!_target || !_target.length) return;
-
-    const show = () => {
-      scaleFadeIn(_target as any);
-    };
-    const hide = () => {
-      scaleFadeHide(_target as any);
-    };
-
-    hide();
-    createScrollTrigger(blockListRef.current, {
-      onEnter: show,
-      once: true,
-    });
-  }, [animation]);
-
   return (
     <div className={styles['block-list']} ref={blockListRef}>
       {list.map(({ href, ...item }) => (
@@ -54,6 +30,7 @@ export default function EcosystemBlockList({
           desc={item.desc}
           image={item.image}
           waiting={!href}
+          data-aos={animation ? 'scale-fade-in' : undefined}
           onClick={() => {
             reportTea && reportTea({ href, ...item });
             if (href) {

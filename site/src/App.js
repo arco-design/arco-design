@@ -7,6 +7,7 @@ import {
   ModuleDurationTracker,
   Module,
 } from '@arco-design/arco-site-utils';
+import AOS from 'aos';
 import Home from './pages/home';
 import Customer from './pages/customer';
 import page from './page';
@@ -60,6 +61,11 @@ export default function App() {
       teaLog(EventMap.moduleShow, params);
     });
     addTrackerModule();
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out-custom',
+      duration: 700,
+    });
 
     return () => {
       if (TrackerRef.current) {
