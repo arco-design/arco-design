@@ -180,35 +180,35 @@ export default class Control<
       });
   };
 
-  handleTrigger = (_value, ...args) => {
-    const { store } = this.context;
-    const { field, trigger, normalize, getValueFromEvent } = this.props;
-    const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
-    const children = this.props.children as ReactElement;
-    let normalizeValue = value;
-    // break if value is instance of SyntheticEvent, 'cos value is missing
-    if (isSyntheticEvent(value)) {
-      warn(
-        true,
-        'changed value missed, please check whether extra elements is outta input/select controled by Form.Item'
-      );
-      value.stopPropagation();
-      return;
-    }
+  getTriggerHandler = (children) => {
+    return (_value, ...args) => {
+      const { store } = this.context;
+      const { field, trigger, normalize, getValueFromEvent } = this.props;
 
-    if (typeof normalize === 'function') {
-      normalizeValue = normalize(value, store.getFieldValue(field), {
-        ...store.getFieldsValue(),
-      });
-    }
-    this.touched = true;
-    this.innerSetFieldValue(field, normalizeValue);
+      const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
+      let normalizeValue = value;
+      // break if value is instance of SyntheticEvent, 'cos value is missing
+      if (isSyntheticEvent(value)) {
+        warn(
+          true,
+          'changed value missed, please check whether extra elements is outta input/select controled by Form.Item'
+        );
+        value.stopPropagation();
+        return;
+      }
+      if (typeof normalize === 'function') {
+        normalizeValue = normalize(value, store.getFieldValue(field), {
+          ...store.getFieldsValue(),
+        });
+      }
+      this.touched = true;
+      this.innerSetFieldValue(field, normalizeValue);
 
-    this.validateField(trigger);
-
-    if (children && children.props && children.props[trigger as string]) {
-      children.props[trigger as string](normalizeValue, ...args);
-    }
+      this.validateField(trigger);
+      if (children && children.props && children.props[trigger as string]) {
+        children.props[trigger as string](normalizeValue, ...args);
+      }
+    };
   };
 
   /**
@@ -286,7 +286,7 @@ export default class Control<
       };
     });
 
-    childProps[trigger] = this.handleTrigger;
+    childProps[trigger] = this.getTriggerHandler(child);
 
     if (disabled !== undefined) {
       childProps.disabled = disabled;
