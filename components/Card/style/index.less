@@ -141,7 +141,7 @@
       z-index: 1;
 
       &::before {
-        box-shadow: 0 4px 10px  rgb(var(~'@{arco-cssvars-prefix}-gray-2'));;
+        box-shadow: 0 4px 10px @card-color-box-shadow;
       }
     }
 
@@ -161,7 +161,7 @@
   }
 
   &-hoverable:hover {
-    box-shadow: 0 4px 10px  rgb(var(~'@{arco-cssvars-prefix}-gray-2'));;
+    box-shadow: 0 4px 10px @card-color-box-shadow;
   }
 
   &-bordered {
@@ -214,7 +214,7 @@
   &[arco-theme='dark'] {
     .@{card-prefix-cls}-grid-hoverable:hover::before,
     .@{card-prefix-cls}-hoverable:hover {
-      box-shadow: 0 4px 10px rgba(var(~'@{arco-cssvars-prefix}-gray-1'), 40%);
+      box-shadow: 0 4px 10px @card-color-box-shadow_dark;
     }
   }
 }
