@@ -7,6 +7,7 @@ import React, {
   useRef,
 } from 'react';
 import scrollIntoView, { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
+import merge from 'lodash/merge';
 import cs from '../_util/classNames';
 import useForm from './useForm';
 import { FormProps, FormInstance, FieldError, KeyType } from './interface';
@@ -68,6 +69,7 @@ const Form = <
     className,
     validateTrigger,
     prefixCls: formPrefixCls,
+    validateMessages,
     ...rest
   } = props;
   const prefixCls = formPrefixCls || ctx.getPrefixCls('form');
@@ -143,6 +145,7 @@ const Form = <
     store: formInstance,
     prefixCls,
     validateTrigger,
+    validateMessages: merge({}, ctx.locale.Form?.validateMessages, validateMessages),
     getFormElementId: (field: FieldKey) => getFormElementId(id, field),
   };
 

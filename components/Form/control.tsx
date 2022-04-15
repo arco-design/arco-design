@@ -223,7 +223,7 @@ export default class Control<
     value: FieldValue;
     field: FieldKey;
   }> => {
-    const { store, validateTrigger: ctxValidateTrigger } = this.context;
+    const { store, validateTrigger: ctxValidateTrigger, validateMessages } = this.context;
     const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
     const _rules = !triggerType
@@ -233,7 +233,7 @@ export default class Control<
           return triggers.indexOf(triggerType) > -1;
         });
     if (_rules && _rules.length && field) {
-      return schemaValidate(field, value, _rules).then(({ error, warning }) => {
+      return schemaValidate(field, value, _rules, validateMessages).then(({ error, warning }) => {
         this.errors = error ? error[field] : null;
         this.warnings = warning || null;
         this.updateFormItem();

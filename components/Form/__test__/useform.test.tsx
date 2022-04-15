@@ -401,15 +401,15 @@ describe('UseForm', () => {
     });
 
     await sleep(10);
-    expect(form.getFieldsError().number.message).toBe('`120` is not less than `10`');
+    expect(form.getFieldsError().number.message).toBe('`120` 大于最大值 `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '12' } });
     await sleep(10);
-    expect(form.getFieldsError().number.message).toBe('`12` is not less than `10`');
+    expect(form.getFieldsError().number.message).toBe('`12` 大于最大值 `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '' } });
     await sleep(10);
-    expect(form.getFieldsError().number.message).toBe('number is required');
+    expect(form.getFieldsError().number.message).toBe('number 是必填项');
 
     InputNumber.find('input').simulate('change', { target: { value: '1' } });
 
@@ -417,7 +417,7 @@ describe('UseForm', () => {
     expect(form.getTouchedFields()).toEqual(['number']);
 
     await sleep(10);
-    expect(form.getFieldsError().number.message).toBe('`1` is not greater than `5`');
+    expect(form.getFieldsError().number.message).toBe('`1` 小于最小值 `5`');
     InputNumber.find('input').simulate('change', { target: { value: '9' } });
     await sleep(10);
     expect(form.getFieldsError()).toEqual({});
@@ -430,7 +430,7 @@ describe('UseForm', () => {
     Input.find('input').simulate('focus');
     Input.find('input').simulate('blur');
     await sleep(20);
-    expect(form.getFieldsError().name.message).toBe('string is required');
+    expect(form.getFieldsError().name.message).toBe('name 是必填项');
   });
 
   describe('validate', () => {
@@ -550,7 +550,7 @@ describe('UseForm', () => {
     }
 
     expect(form.getFieldsError().name).toEqual({
-      message: 'string is required',
+      message: 'name 是必填项',
       requiredError: true,
       type: 'string',
       value: undefined,
@@ -558,7 +558,7 @@ describe('UseForm', () => {
 
     expect(form.getFieldsError(['name'])).toEqual({
       name: {
-        message: 'string is required',
+        message: 'name 是必填项',
         requiredError: true,
         type: 'string',
         value: undefined,
@@ -568,13 +568,13 @@ describe('UseForm', () => {
     expect(form.getFieldsError()).toEqual(e.errors);
     expect(form.getFieldsError()).toEqual({
       name: {
-        message: 'string is required',
+        message: 'name 是必填项',
         requiredError: true,
         type: 'string',
         value: undefined,
       },
       number: {
-        message: 'number is required',
+        message: 'number 是必填项',
         requiredError: true,
         type: 'number',
         value: undefined,
