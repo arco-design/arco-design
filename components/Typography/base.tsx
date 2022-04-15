@@ -61,19 +61,6 @@ function getClassNameAndComponentName(props: BaseProps, prefixCls: string) {
   };
 }
 
-function wrap(content, component, props) {
-  let currentContent = content;
-
-  component.forEach((c) => {
-    const _props =
-      isObject(props.mark) && props.mark.color
-        ? { style: { backgroundColor: props.mark.color } }
-        : {};
-    currentContent = React.createElement(c, _props, currentContent);
-  });
-  return currentContent;
-}
-
 function Base(props: BaseProps) {
   const {
     componentType,
@@ -105,6 +92,7 @@ function Base(props: BaseProps) {
   const [measuring, setMeasuring] = useState(false);
 
   const componentRef = useRef(null);
+  const textWrapperRef = useRef(null);
 
   const editableConfig = isObject(editable) ? editable : {};
   const mergedEditing = 'editing' in editableConfig ? editableConfig.editing : editing;
@@ -201,7 +189,7 @@ function Base(props: BaseProps) {
       }
       setMeasuring(true);
       const { ellipsis, text } = measure(
-        componentRef.current,
+        textWrapperRef.current || componentRef.current,
         ellipsisConfig,
         renderOperations(!!ellipsisConfig.expandable),
         children,
@@ -220,6 +208,20 @@ function Base(props: BaseProps) {
         setEllipsis(isEllipsis);
       }
     }
+  }
+
+  function wrap(content, component, props) {
+    let currentContent = content;
+    component.forEach((c, index) => {
+      const _props =
+        isObject(props.mark) && props.mark.color
+          ? { style: { backgroundColor: props.mark.color } }
+          : {};
+      // The parent node of the text will affect the style of the mirror dom
+      const _ref = index === 0 ? { ref: textWrapperRef } : {};
+      currentContent = React.createElement(c, { ..._props, ..._ref }, currentContent);
+    });
+    return currentContent;
   }
 
   function renderContent() {
