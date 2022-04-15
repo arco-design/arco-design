@@ -215,10 +215,18 @@ const Picker = (baseProps: InnerPickerProps) => {
       const newValueShow = [...(isArray(valueShow) ? valueShow : (value as Dayjs[]) || [])];
       if (isValidTimeString(newInputValue, format)) {
         newValueShow[focusedInputIndex] = newInputDayjs;
+        const localDayjsArray = newValueShow.map((nv) => toLocal(nv, utcOffset, timezone));
+        props.onSelect &&
+          props.onSelect(
+            localDayjsArray.map((la) => la && la.format(format)),
+            localDayjsArray
+          );
         setValueShow(newValueShow);
         setInputValue(undefined);
       }
     } else if (isValidTimeString(newInputValue, format)) {
+      const localDayjs = toLocal(newInputDayjs, utcOffset, timezone);
+      props.onSelect && props.onSelect(localDayjs.format(format), localDayjs);
       setValueShow(newInputDayjs);
       setInputValue(undefined);
     }
