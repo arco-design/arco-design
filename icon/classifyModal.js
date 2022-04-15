@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Upload, Modal, Progress, Empty, Typography, Spin } from '@arco-design/web-react';
 import Axios from 'axios';
 import * as icons from '@arco-design/web-react/icon/index.es.js';
+import { teaLog } from '@arco-design/arco-site-utils';
+import { EventMap } from '../site/src/pages/home/utils/eventMap';
 
 const locale = {
   'zh-CN': {
@@ -71,6 +73,7 @@ export function IconClassifyModal(props) {
         }}
         customRequest={(option) => {
           const url = URL.createObjectURL(option.file);
+          teaLog(EventMap.searchIconByImg, { type: 'search' });
           setLoading(true);
           getImageBase64(url)
             .then((imageBase64) => {

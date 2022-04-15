@@ -7,4 +7,5 @@ export const EventMap = {
   clickTeamsBtn: 'click_teams_btn',
   moduleShow: 'module_show',
   pageView: 'page_view',
+  searchIconByImg: 'search_icon_by_img'
 };
