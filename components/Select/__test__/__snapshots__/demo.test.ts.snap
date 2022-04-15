@@ -486,6 +486,7 @@ exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
   <div
     class="arco-typography"
     style="width:345px"
+    tabindex="0"
   >
     Favorite Cities：
     <span

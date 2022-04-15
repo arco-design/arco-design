@@ -88,14 +88,15 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
   useImperativeHandle(listRef, () => {
     return {
       dom: refDom.current,
-      scrollIntoView: (index) => {
+      scrollIntoView: (index, options?: ScrollIntoViewOptions) => {
         if (refVirtualList.current) {
-          refVirtualList.current.scrollTo({ index });
+          refVirtualList.current.scrollTo({ index, options });
         } else if (refItemListWrapper.current) {
           const node = refItemListWrapper.current.children[index];
           node &&
             scrollIntoView(node as HTMLElement, {
               boundary: refScrollElement.current,
+              ...options,
             });
         }
       },
