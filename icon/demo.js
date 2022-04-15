@@ -16,6 +16,8 @@ import { IconCamera } from '@arco-design/web-react/icon';
 import * as icons from '@arco-design/web-react/icon/index.es.js';
 import { IconClassifyModal } from './classifyModal';
 import { Tooltip } from '@arco-design/web-react';
+import { teaLog } from '@arco-design/arco-site-utils';
+import { EventMap } from '../site/src/pages/home/utils/eventMap';
 
 const RadioGroup = Radio.Group;
 const { Paragraph } = Typography;
@@ -116,6 +118,7 @@ export default function ({ lang = 'zh-CN' }) {
             icon={<IconCamera />}
             style={{ marginLeft: 8 }}
             onClick={() => {
+              teaLog(EventMap.searchIconByImg, { type: 'open' });
               setIconClassifyModalVisible(true);
             }}
           />
