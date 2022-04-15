@@ -353,6 +353,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             display: visible || wrapperVisible ? 'block' : 'none',
             overflow: !visible && wrapperVisible ? 'hidden' : '',
           }}
+          // 如果 autoFocus 是 false 需要在 modal 外层绑定 onKeyDown, 因为此时 FocusLock 绑定的 onKeyDown 不起作用
           onKeyDown={!innerFocusLock || !innerAutoFocus ? onEscExit : null}
           onMouseDown={(e) => {
             maskClickRef.current = e.target === e.currentTarget;
