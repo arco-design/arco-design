@@ -49,7 +49,6 @@ export function measure(
     // top:'100px',
     position: 'fixed',
     'z-index': '-200',
-    'white-space': 'normal',
     'text-overflow': 'clip',
     overflow: 'auto',
   };
