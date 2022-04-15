@@ -34,26 +34,28 @@ type Status = 'NONE' | 'MEASURE_START' | 'MEASURE_DONE';
 export interface VirtualListProps<T> extends React.HTMLAttributes<any> {
   children: RenderFunc<T>;
   data: T[];
-  /* viewable area height (`2.11.0` starts support `string` type such as `80%`) */
+  /* Viewable area height (`2.11.0` starts support `string` type such as `80%`) */
   height?: number | string;
+  /* The element height used to calculate how many elements are actually rendered */
+  itemHeight?: number;
   /* HTML tags for wrapping */
   wrapper?: string | React.FC<any> | React.ComponentClass<any>;
-  /** threshold of the number of elements that auto enable virtual scrolling, use `null` to disable virtual scrolling */
+  /* Threshold of the number of elements that auto enable virtual scrolling, use `null` to disable virtual scrolling */
   threshold?: number | null;
-  /* whether it's static elements of the same height */
+  /* Whether it's static elements of the same height */
   isStaticItemHeight?: boolean;
-  /* key of the specified element, or function to get the key */
+  /* Key of the specified element, or function to get the key */
   itemKey?: Key | ((item: T, index: number) => Key);
-  /* whether need to measure longest child element */
+  /* Whether need to measure longest child element */
   measureLongestItem?: boolean;
-  /* configure the default behavior related to scrolling */
+  /* Configure the default behavior related to scrolling */
   scrollOptions?: ScrollIntoViewOptions;
   onScroll?: React.UIEventHandler<HTMLElement>;
 }
 
 export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
-  'height' | 'threshold' | 'isStaticItemHeight' | 'scrollOptions'
+  'height' | 'itemHeight' | 'threshold' | 'isStaticItemHeight' | 'scrollOptions'
 >;
 
 interface RelativeScroll {
@@ -92,7 +94,7 @@ type ItemHeightMap = { [p: string]: number };
 
 // height of the virtual element, used to calculate total height of the virtual list
 const DEFAULT_VIRTUAL_ITEM_HEIGHT = 32;
-const KEY_VIRTUAL_ITEM_HEIGHT = `__fake_item_height_${Math.random()}`;
+const KEY_VIRTUAL_ITEM_HEIGHT = `__virtual_item_height_${Math.random().toFixed(5).slice(2)}`;
 
 // after collecting the real height of the first screen element, calculate the virtual ItemHeight to trigger list re-rendering
 const useComputeVirtualItemHeight = (refItemHeightMap: React.MutableRefObject<ItemHeightMap>) => {
@@ -100,6 +102,7 @@ const useComputeVirtualItemHeight = (refItemHeightMap: React.MutableRefObject<It
   const { current: heightMap } = refItemHeightMap;
 
   useEffect(() => {
+    // virtual item height should be static as possible, otherwise it is easy to cause jitter
     if (Object.keys(heightMap).length && !heightMap[KEY_VIRTUAL_ITEM_HEIGHT]) {
       heightMap[KEY_VIRTUAL_ITEM_HEIGHT] = Object.entries(heightMap).reduce(
         (sum, [, currentHeight], currentIndex, array) => {
@@ -143,14 +146,15 @@ const VirtualList: React.ForwardRefExoticComponent<
     className,
     children,
     data = [],
-    wrapper: WrapperTagName = 'div',
+    itemKey,
     threshold = 100,
+    wrapper: WrapperTagName = 'div',
     height: propHeight = '100%',
     isStaticItemHeight = true,
-    itemKey,
-    onScroll,
+    itemHeight: propItemHeight,
     measureLongestItem,
     scrollOptions,
+    onScroll,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
@@ -164,9 +168,11 @@ const VirtualList: React.ForwardRefExoticComponent<
 
   // Elements with the same height, the height of the item is based on the first rendering
   const itemCount = data.length;
-  const viewportHeight = isNumber(styleListMaxHeight) ? styleListMaxHeight : stateHeight;
   const itemHeight =
-    refItemHeightMap.current[KEY_VIRTUAL_ITEM_HEIGHT] || DEFAULT_VIRTUAL_ITEM_HEIGHT;
+    propItemHeight ||
+    refItemHeightMap.current[KEY_VIRTUAL_ITEM_HEIGHT] ||
+    DEFAULT_VIRTUAL_ITEM_HEIGHT;
+  const viewportHeight = isNumber(styleListMaxHeight) ? styleListMaxHeight : stateHeight;
   const itemCountVisible = Math.ceil(viewportHeight / itemHeight);
   const itemTotalHeight = itemHeight * itemCount;
   const isVirtual =
