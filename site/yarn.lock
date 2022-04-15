@@ -317,22 +317,6 @@
     csstype "^3.0.8"
     tslib "^2.0.3"
 
-"@arco-design/arco-markdown-loader@^1.15.3":
-  version "1.15.3"
-  resolved "https://registry.npmjs.org/@arco-design/arco-markdown-loader/-/arco-markdown-loader-1.15.3.tgz#704f05ca0d1ebc3bd66386940718e4a289941535"
-  integrity sha512-2avbgNZVPDM3ZFAKVnGw34SUuGGGzXbEayhM+tdPU78i6FMTjxlLmc2pXIErXB87fGpc7LF7SmuRGRCbMXYtmw==
-  dependencies:
-    "@babel/core" "^7.5.5"
-    "@babel/plugin-transform-typescript" "^7.9.6"
-    front-matter "^3.0.1"
-    fs-extra "^7.0.1"
-    loader-utils "^1.2.3"
-    lru-cache "^6.0.0"
-    marked "^2.0.1"
-    nanoid "^3.1.22"
-    prismjs "^1.23.0"
-    react-helmet "^6.1.0"
-
 "@arco-design/arco-site-utils@^1.0.2":
   version "1.0.2"
   resolved "https://registry.npmjs.org/@arco-design/arco-site-utils/-/arco-site-utils-1.0.2.tgz#8e8e2a4ba9c480951afe68ae5b44e149f5ebe52b"
@@ -812,13 +796,29 @@ aproba@^1.1.1:
   resolved "https://registry.npmjs.org/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
   integrity sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==
 
-arco-doc-site-components@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/arco-doc-site-components/-/arco-doc-site-components-1.0.0.tgz#c1abed39872eba8c27bfb175a61e4cd8f1aeb479"
-  integrity sha512-nPZCxUvF5d4iLqShviy1AGnLSJuvnEig6kBTi9pOUsgbWtyO3jBRBTVUqiSVtsDiqy13iWgcwLidkJPOcRI21Q==
+arco-doc-site-components@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/arco-doc-site-components/-/arco-doc-site-components-1.0.1.tgz#b4af0f98ed4c4cb6d978a399146fdcff33556ce8"
+  integrity sha512-5/Le/Ol5XtYa8pIrOd4bCv505/Zmx6151UZsqTuG8f81GCecBcEGafuI8L6GD2omtXNgswPT0Bs9XrmZdTZTjg==
   dependencies:
     clipboard "^2.0.4"
     codesandbox "^2.2.3"
+
+arco-markdown-loader@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/arco-markdown-loader/-/arco-markdown-loader-1.0.2.tgz#42073c78036c8de7e0aa82eb0568c760f73fbdce"
+  integrity sha512-ojRPH1Jq1YHq0cBDqq/iTPrr14bPn+ko3Xls5mtBTvMslSDjq0S4VmnlCviobLvlIK1hPW+90vNl53HcC8hZQA==
+  dependencies:
+    "@babel/core" "^7.5.5"
+    "@babel/plugin-transform-typescript" "^7.9.6"
+    front-matter "^3.0.1"
+    fs-extra "^7.0.1"
+    loader-utils "^1.2.3"
+    lru-cache "^6.0.0"
+    marked "^2.0.1"
+    nanoid "^3.1.22"
+    prismjs "^1.23.0"
+    react-helmet "^6.1.0"
 
 argparse@^1.0.7:
   version "1.0.10"
