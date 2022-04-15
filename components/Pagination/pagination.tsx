@@ -21,6 +21,13 @@ function getAllPages(pageSize, total) {
   return Math.ceil(total / pageSize);
 }
 
+function getBufferSize(bufferSize, allPages) {
+  const min = 0;
+  const max = Math.floor(allPages / 2) - 1;
+  const newBufferSize = Math.max(bufferSize, min);
+  return Math.min(newBufferSize, max);
+}
+
 const defaultProps: PaginationProps = {
   total: 0,
   pageSizeChangeResetCurrent: true,
@@ -38,12 +45,12 @@ function Pagination(baseProps: PaginationProps, ref) {
     total: propTotal,
     pageSize: propPageSize,
     current: propCurrent,
-    bufferSize,
     showMore: propShowMore,
     pageSizeChangeResetCurrent,
     defaultCurrent,
     defaultPageSize,
   } = props;
+
   const [current, setCurrent] = useState(propCurrent || defaultCurrent || _defaultCurrent);
   const [pageSize, setPageSize] = useState(propPageSize || defaultPageSize || _defaultPageSize);
   const [total, setTotal] = useState(propTotal);
@@ -150,6 +157,8 @@ function Pagination(baseProps: PaginationProps, ref) {
   const pageList: ReactElement[] = [];
   const allPages = getAllPages(pageSize, total);
 
+  const bufferSize = getBufferSize(props.bufferSize, allPages);
+
   if (hideOnSinglePage && allPages <= 1) {
     return null;
   }
@@ -188,8 +197,14 @@ function Pagination(baseProps: PaginationProps, ref) {
       </ul>
     );
   } else {
-    // only show page number when total number is smaller than 5 + bufferSize * 2;
-    if (allPages < 6 + bufferSize * 2) {
+    // fold = ... >= 2pages;
+    const beginFoldPage = 1 + 2 + bufferSize;
+    const endFoldPage = allPages - 2 - bufferSize;
+    if (
+      // beginPage(1 page) + bufferSize * 2 + endPage(1 page) + ...(2 pages)
+      allPages <= 4 + bufferSize * 2 ||
+      (current === beginFoldPage && current === endFoldPage)
+    ) {
       for (let i = 1; i <= allPages; i++) {
         pageList.push(<PageItem {...pagerProps} key={i} pageNum={i} />);
       }
@@ -198,17 +213,21 @@ function Pagination(baseProps: PaginationProps, ref) {
       let right = allPages;
       let hasJumpPre = true;
       let hasJumpNext = true;
-      if (current <= 2 * bufferSize) {
+
+      // fold front and back
+      if (current > beginFoldPage && current < endFoldPage) {
+        right = current + bufferSize;
+        left = current - bufferSize;
+        // fold back
+      } else if (current <= beginFoldPage) {
         hasJumpPre = false;
         left = 1;
-        right = Math.max(2 * bufferSize + 1, 2 + current);
-      } else if (allPages - current <= 3) {
+        right = Math.max(beginFoldPage, bufferSize + current);
+        // fold begin
+      } else if (current >= endFoldPage) {
         hasJumpNext = false;
         right = allPages;
-        left = Math.min(allPages - 2 * bufferSize, current - 2);
-      } else {
-        right = current + 2;
-        left = current - 2;
+        left = Math.min(endFoldPage, current - bufferSize);
       }
 
       for (let i = left; i <= right; i++) {

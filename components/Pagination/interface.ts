@@ -84,6 +84,13 @@ export interface PaginationProps {
    */
   sizeOptions?: number[];
   /**
+   * @zh `current` 页与 `...` 之间的页码个数
+   * @en the number of pages between the `current` page and `...`
+   * @defaultValue 2
+   * @version 2.32.0
+   */
+  bufferSize?: number;
+  /**
    * @zh 变化时的回调
    * @en Callback when page changes
    */
@@ -128,6 +135,5 @@ export interface PaginationProps {
     next?: ReactNode;
     more?: ReactNode;
   };
-  bufferSize?: number;
   mini?: boolean; // 1.0
 }

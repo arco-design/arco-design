@@ -30,6 +30,7 @@ Use pagination to control the amount of information in a single page.
 |showTotal|Whether to display the total number of data|`boolean \| ((total: number, range: number[]) => ReactNode)`|`-`|-|
 |sizeCanChange|Is it possible to change page size|`boolean`|`true`|-|
 |sizeOptions|The number of data items that can be displayed per page|`number[]`|`-`|-|
+|bufferSize|the number of pages between the `current` page and `...`|`number`|`2`|2.32.0|
 |onChange|Callback when page changes|`(pageNumber: number, pageSize: number) => void`|`-`|-|
 |onPageSizeChange|Callback when pageSize changes|`(size: number, current: number) => void`|`-`|-|
 |pageSizeChangeResetCurrent|When pageSize changes, resets the current page number to `1`|`boolean`|`true`|-|

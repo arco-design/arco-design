@@ -89,4 +89,15 @@ describe('Pagination', () => {
     expect(mockChange.mock.calls[2]).toEqual([1, 10]);
     expect(mockPageSizeChange.mock.calls[1]).toEqual([10, 1]);
   });
+
+  it('fold page correctly when set bufferSize', () => {
+    const wrapper = mountPagination(<Pagination total={100} current={5} bufferSize={1} />);
+    expect(wrapper.find('.arco-pagination-item-jumper')).toHaveLength(2);
+    // < + begin + ...  + bufferSize + current + bufferSize + ... + end + > = 9
+    expect(wrapper.find('.arco-pagination-item')).toHaveLength(9);
+
+    wrapper.setProps({ current: 2 });
+    wrapper.update();
+    expect(wrapper.find('.arco-pagination-item-jumper')).toHaveLength(1);
+  });
 });
