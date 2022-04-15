@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 异步关闭
   en-US: Async Close
 ---
@@ -59,8 +59,8 @@ function Demo() {
         <Form
           {...formItemLayout}
           form={form}
-          labelCol={{ style: { flexBasis: 80 } }}
-          wrapperCol={{ style: { flexBasis: 'calc(100% - 80px)' } }}
+          labelCol={{ style: { flexBasis: 90 } }}
+          wrapperCol={{ style: { flexBasis: 'calc(100% - 90px)' } }}
         >
           <FormItem label="Name" field="name" rules={[{ required: true }]}>
             <Input placeholder="" />

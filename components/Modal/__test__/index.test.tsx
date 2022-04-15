@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { mount } from 'enzyme';
+import TestUtils from 'react-dom/test-utils';
 import mountTest from '../../../tests/mountTest';
 import Modal from '..';
 import Button from '../../Button';
 import { $ } from '../../../tests/util';
+import { Esc } from '../../_util/keycode';
 
 mountTest(Modal);
 
@@ -116,5 +118,75 @@ describe('Modal', () => {
       .simulate('click');
     jest.runAllTimers();
     expect($('.arco-modal-wrapper')[0].style.display).toBe('none');
+  });
+
+  it('close Modal with esc keydown event and focusLock is false', () => {
+    jest.useFakeTimers();
+    const onCancel = jest.fn();
+    Modal.confirm({
+      title: 'title',
+      content: 'content',
+      focusLock: false,
+      onCancel,
+    });
+    Modal.error({
+      title: 'title',
+      content: 'content',
+      focusLock: false,
+      onCancel,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(2);
+    TestUtils.Simulate.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
+      key: Esc.key,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+    expect(onCancel).toHaveBeenCalledTimes(1);
+    jest.useRealTimers();
+  });
+
+  it('close Modal with esc keydown event and focusLock and autoFocus is true', () => {
+    jest.useFakeTimers();
+    const onCancel = jest.fn();
+    Modal.confirm({
+      title: 'title',
+      content: 'content',
+      onCancel,
+    });
+    Modal.error({
+      title: 'title',
+      content: 'content',
+      onCancel,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(2);
+    TestUtils.Simulate.keyDown(document.querySelectorAll('[data-focus-lock-disabled]')[0], {
+      key: Esc.key,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+    expect(onCancel).toHaveBeenCalledTimes(1);
+    jest.useRealTimers();
+  });
+
+  it('close Modal with escToExit is false', () => {
+    jest.useFakeTimers();
+    const onCancel = jest.fn();
+    Modal.confirm({
+      title: 'title',
+      escToExit: false,
+      content: 'content',
+      onCancel,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+    TestUtils.Simulate.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
+      key: Esc.key,
+    });
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+    expect(onCancel).toHaveBeenCalledTimes(0);
+    jest.useRealTimers();
   });
 });
