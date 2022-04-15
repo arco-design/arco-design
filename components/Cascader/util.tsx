@@ -79,3 +79,30 @@ export const formatValue = (value, isMultiple, store?): string[][] | undefined =
   }
   return _value;
 };
+
+export const getMultipleCheckValue = (propsValue, store: Store<any>, option, checked) => {
+  const beforeValueSet = store.getCheckedNodes().reduce((set, node) => {
+    set.add(node.pathValue.join(ValueSeparator));
+    return set;
+  }, new Set());
+
+  option.setCheckedState(checked);
+  const checkedNodes = store.getCheckedNodes();
+  const currentValue = checkedNodes.map((node) => node.pathValue);
+  const currentValueSet = transformValuesToSet(currentValue);
+
+  const newValueSet = new Set();
+  return propsValue
+    .filter((v) => {
+      // v 不在 beforeValueSet 中，说明 v 不包含对应的option。直接返回true，不应该清除掉。
+      if (!valueInSet(beforeValueSet, v) || valueInSet(currentValueSet, v)) {
+        newValueSet.add(v.join(ValueSeparator));
+        return true;
+      }
+    })
+    .concat(
+      currentValue.filter((v) => {
+        return !valueInSet(newValueSet, v);
+      })
+    );
+};

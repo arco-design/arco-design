@@ -11,7 +11,7 @@ import useForceUpdate from '../../_util/hooks/useForceUpdate';
 import { ArrowDown, Esc, Enter, ArrowUp, ArrowRight, ArrowLeft } from '../../_util/keycode';
 import useUpdate from '../../_util/hooks/useUpdate';
 import Node from '../base/node';
-import { valueInSet, transformValuesToSet, ValueSeparator } from '../util';
+import { getMultipleCheckValue } from '../util';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -101,30 +101,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
   };
 
   const onMultipleChecked = (option, checked: boolean) => {
-    const beforeValueSet = store.getCheckedNodes().reduce((set, node) => {
-      set.add(node.pathValue.join(ValueSeparator));
-      return set;
-    }, new Set());
-
-    option.setCheckedState(checked);
-    const checkedNodes = store.getCheckedNodes();
-    const currentValue = checkedNodes.map((node) => node.pathValue);
-    const currentValueSet = transformValuesToSet(currentValue);
-
-    const newValueSet = new Set();
-    const newValue = props.value
-      .filter((v) => {
-        // v 不在 beforeValueSet 中，说明 v 不包含对应的option。直接返回true，不应该清除掉。
-        if (!valueInSet(beforeValueSet, v) || valueInSet(currentValueSet, v)) {
-          newValueSet.add(v.join(ValueSeparator));
-          return true;
-        }
-      })
-      .concat(
-        currentValue.filter((v) => {
-          return !valueInSet(newValueSet, v);
-        })
-      );
+    const newValue = getMultipleCheckValue(props.value, store, option, checked);
 
     if (option === activeNode) {
       // setActiveNode 不会执行rerender，需要forceupdate
