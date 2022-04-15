@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- Fixed the bug that `onMouseEnter` and `onMouseLeave` of `Select.Option` not works.([#729](https://github.com/arco-design/arco-design/pull/729))
+
 ## 2.31.0
 
 2022-03-25

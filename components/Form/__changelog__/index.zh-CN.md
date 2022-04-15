@@ -1,3 +1,15 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 功能升级
+
+- `Form`  组件支持通过 `validateMessages` 属性设置校验提示信息模板([#773](https://github.com/arco-design/arco-design/pull/773))
+
+### 🐛 问题修复
+
+- 修复 `Form.Item` 包裹的表单控件是由函数类型的 `children` 返回时，`onChange` 未被调用的 bug。([#760](https://github.com/arco-design/arco-design/pull/760))
+
 ## 2.30.2
 
 2022-03-18

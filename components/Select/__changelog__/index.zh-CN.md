@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 问题修复
+
+- 修复 `Select.Option` 传入 `onMouseEnter` 和 `onMouseLeave` 未生效的 bug。([#729](https://github.com/arco-design/arco-design/pull/729))
+
 ## 2.31.0
 
 2022-03-25

@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `Pagination` component adds a `bufferSize` prop, which supports setting the display area when the page number is collapsed.([#767](https://github.com/arco-design/arco-design/pull/767))
+
 ## 2.24.0
 
 2021-11-05

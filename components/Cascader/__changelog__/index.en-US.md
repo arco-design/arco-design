@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- Fixed a bug where the selected option echoed the wrong value in the search panel when `checkedstrategy=parenet` in the `Cascader` component.([#763](https://github.com/arco-design/arco-design/pull/763))
+
 ## 2.31.2
 
 2022-04-01

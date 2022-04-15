@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- Optimize 'Modal' closing all popover when closing with ESC([#629](https://github.com/arco-design/arco-design/pull/629))
+
 ## 2.27.1
 
 2021-12-24

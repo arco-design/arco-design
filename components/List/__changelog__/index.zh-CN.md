@@ -1,3 +1,12 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 功能升级
+
+- `List` 组件 `scrollIntoView` 方法允许指定列表滚动的具体行为。([#768](https://github.com/arco-design/arco-design/pull/768))
+- `List` 组件 `virtualListProps` 允许指定虚拟列表元素高度以改善滚动效果。([#768](https://github.com/arco-design/arco-design/pull/768))
+
 ## 2.31.0
 
 2022-03-25

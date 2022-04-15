@@ -1,3 +1,15 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `Form` component supports setting the validation message template through the `validateMessages` property([#773](https://github.com/arco-design/arco-design/pull/773))
+
+### 🐛 BugFix
+
+- Fix the bug that `onChange` is not called when the form control wrapped by `Form.Item` is returned by the function type `children`.([#760](https://github.com/arco-design/arco-design/pull/760))
+
 ## 2.30.2
 
 2022-03-18

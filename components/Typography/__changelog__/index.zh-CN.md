@@ -1,3 +1,12 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 问题修复
+
+- `Typography` 组件多行省略支持不同样式的文本。([#776](https://github.com/arco-design/arco-design/pull/776))
+- 修复 `Typography` 设置 `white-space` 后无法折叠的bug([#772](https://github.com/arco-design/arco-design/pull/772))
+
 ## 2.31.0
 
 2022-03-25

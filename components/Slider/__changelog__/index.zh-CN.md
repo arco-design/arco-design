@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 功能升级
+
+- `Slider` 组件的 `showInput` 支持传入`InputNumberProps`([#762](https://github.com/arco-design/arco-design/pull/762))
+
 ## 2.31.0
 
 2022-03-25

@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `Trigger` component supports the `updateOnScroll` property to update the position of the popover when the container is scrolled.([#770](https://github.com/arco-design/arco-design/pull/770))
+
 ## 2.26.1
 
 2021-12-07

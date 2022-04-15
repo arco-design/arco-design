@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- Fixed the bug where `utcOffset` and `timezone` of `DatePicker.RangePicker` component did not work.([#765](https://github.com/arco-design/arco-design/pull/765))
+
 ## 2.31.3
 
 2022-04-11

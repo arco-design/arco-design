@@ -1,3 +1,12 @@
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- `Typography` component multi-line omit folding supports different styles of text。([#776](https://github.com/arco-design/arco-design/pull/776))
+- Fix the bug of folding error after `Typography` sets `white-space`([#772](https://github.com/arco-design/arco-design/pull/772))
+
 ## 2.31.0
 
 2022-03-25

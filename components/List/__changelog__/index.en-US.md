@@ -1,3 +1,12 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `List` component's `scrollIntoView` method allows specifying the specific behavior of list scrolling.([#768](https://github.com/arco-design/arco-design/pull/768))
+- The `List` component `virtualListProps` allows specifying virtual list item height to improve scrolling.([#768](https://github.com/arco-design/arco-design/pull/768))
+
 ## 2.31.0
 
 2022-03-25
