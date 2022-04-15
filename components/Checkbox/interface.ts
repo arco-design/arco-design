@@ -47,7 +47,7 @@ export interface CheckboxProps<T extends React.ReactText = any>
   checkboxGroupValue?: T[];
   onGroupChange?: (value: T, checked: boolean) => void;
   isCheckboxGroup?: boolean;
-  children?: ReactNode | ((value: {checked: boolean, indeterminate: boolean}) => ReactNode);
+  children?: ReactNode | ((value: { checked: boolean; indeterminate: boolean }) => ReactNode);
 }
 
 /**
