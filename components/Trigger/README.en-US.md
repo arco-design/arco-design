@@ -49,6 +49,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |autoFixPosition|Whether to automatically reposition when the popup's size changes.|`boolean`|`true`|-|
 |showArrow|Whether to display arrow node|`boolean`|`-`|-|
 |arrowProps|The html attributes of the arrow node|`HTMLAttributes<HTMLDivElement>`|`-`|-|
+|updateOnScroll|Whether to update the popover's position when the container is scrolled|`boolean`|`-`|2.32.0|
 
 ### When to fired `onVisibleChange`
 
@@ -71,6 +72,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 - When `trigger` contains `focus`
   1. The popup will be hidden when the child node losing focus. This behavior can be prevented if you set `blurToHide=false`.
   2. Click on the area outside the child node and the popup will hide the popup if you set `blurToHide=false`.
+
 
 
 ## Q&A

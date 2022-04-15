@@ -49,6 +49,7 @@
 |autoFixPosition|当内容发生变化导致内容区域尺寸发生变化，自动进行重新定位。|`boolean`|`true`|-|
 |showArrow|是否展示箭头元素|`boolean`|`-`|-|
 |arrowProps|箭头元素的所有 html 参数|`HTMLAttributes<HTMLDivElement>`|`-`|-|
+|updateOnScroll|是否在容器滚动时更新弹出框的位置|`boolean`|`-`|2.32.0|
 
 ### `onVisibleChange`的触发时机说明
 
@@ -78,9 +79,7 @@
 ## 常见问题
 
 1. 设置了 `getPopupContainer` 后，弹出层位置不对？
-
    组件默认 `autoFitPosition` 属性为 `true`，也就是说组件会根据弹出层的尺寸，在视口中的位置以及所挂载的父元素来自动调整弹出层的位置。
    例如设置 `position=top` ，但是上方空间不足，弹出层会被遮住，组件就会根据情况来判断是否将弹出层展示在触发元素的下方。
    如果设置了 `getPopupContainer`，弹出层的样式属性`left`最小为0，也就是最小距离父元素的左边界为0，避免超出父元素，导致被遮挡。
-   可以通过设置 `autoFitPosition=false` 来避免自动调整位置。
 
