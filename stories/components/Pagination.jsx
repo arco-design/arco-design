@@ -34,50 +34,19 @@ class Demo extends Component {
           flexDirection: 'column',
         }}
       >
-        <ConfigProvider
-          componentConfig={{
-            Pagination: {
-              size: 'mini',
-              showTotal: true,
-              icons: { prev: <IconCaretLeft />, next: <IconCaretRight /> },
-            },
-          }}
-        >
-          <div style={{ marginBottom: '15px' }}>
-            <Pagination
-              current={this.state.current}
-              onChange={this.handeChange}
-              total={200}
-              small
-            />
-          </div>
-          <div style={{ marginBottom: '15px' }}>
-            <Pagination
-              showJumper
-              total={600}
-              sizeCanChange
-              pageSizeChangeResetCurrent={false}
-              onChange={(pageNumber, pageSize) => {
-                console.log('onChange', pageNumber, pageSize);
-              }}
-              onPageSizeChange={(size, current) => {
-                console.log('onPageSizeChange', size, current);
-              }}
-            />
-          </div>
-          <div style={{ marginBottom: '15px' }}>
-            <Pagination
-              total={0}
-              onPageSizeChange={this.changePageSize}
-              showTotal
-              sizeCanChange
-              pageSize={this.state.pageSize}
-            />
-          </div>
-          <div style={{ marginBottom: '15px' }}>
-            <Pagination simple total={0} />
-          </div>
-        </ConfigProvider>
+        <h2>70</h2>
+        <Pagination sizeCanChange total={70} bufferSize={1} defaultCurrent={5} />
+        <Pagination sizeCanChange total={70} bufferSize={2} defaultCurrent={5} />
+        <h2>80</h2>
+        <Pagination sizeCanChange total={80} bufferSize={1} defaultCurrent={5} />
+        <Pagination sizeCanChange total={80} bufferSize={2} defaultCurrent={5} />
+        <h2>90</h2>
+        <Pagination sizeCanChange total={90} bufferSize={1} defaultCurrent={5} />
+        <Pagination sizeCanChange total={90} bufferSize={2} defaultCurrent={5} />
+        <h2>100</h2>
+        <Pagination sizeCanChange total={100} bufferSize={1} defaultCurrent={5} />
+        <Pagination sizeCanChange total={100} bufferSize={2} defaultCurrent={5} />
+        <br />
       </div>
     );
   }

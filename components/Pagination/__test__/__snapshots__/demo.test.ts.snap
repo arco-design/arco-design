@@ -643,27 +643,10 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
       1
     </li>
     <li
-      aria-label="向前 5 页"
-      class="arco-pagination-item arco-pagination-item-jumper"
+      aria-label="第 2 页"
+      class="arco-pagination-item"
     >
-      <svg
-        aria-hidden="true"
-        class="arco-icon arco-icon-more"
-        fill="none"
-        focusable="false"
-        stroke="currentColor"
-        stroke-width="4"
-        viewBox="0 0 48 48"
-      >
-        <path
-          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
-          fill="currentColor"
-          stroke="none"
-        />
-        <path
-          d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
-        />
-      </svg>
+      2
     </li>
     <li
       aria-label="第 3 页"
@@ -1006,6 +989,536 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-vertical"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-bottom:24px"
+    >
+      <div
+        class="arco-pagination arco-pagination-size-default"
+      >
+        <ul
+          class="arco-pagination-list"
+        >
+          <li
+            aria-label="上一页"
+            class="arco-pagination-item arco-pagination-item-prev"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-left"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M32 8.4 16.444 23.956 32 39.513"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 1 页"
+            class="arco-pagination-item"
+          >
+            1
+          </li>
+          <li
+            aria-label="向前 1 页"
+            class="arco-pagination-item arco-pagination-item-jumper"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-more"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              />
+            </svg>
+          </li>
+          <li
+            aria-current="true"
+            aria-label="第 10 页"
+            class="arco-pagination-item arco-pagination-item-active"
+          >
+            10
+          </li>
+          <li
+            aria-label="向后 1 页"
+            class="arco-pagination-item arco-pagination-item-jumper"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-more"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 20 页"
+            class="arco-pagination-item"
+          >
+            20
+          </li>
+          <li
+            aria-label="下一页"
+            class="arco-pagination-item arco-pagination-item-next"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-right"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="m16 39.513 15.556-15.557L16 8.4"
+              />
+            </svg>
+          </li>
+        </ul>
+        <div
+          aria-label="页码"
+          class="arco-pagination-option"
+        >
+          <div
+            class="arco-select arco-select-single arco-select-size-default"
+            tabindex="0"
+          >
+            <div
+              class="arco-select-view"
+              title="10 条/页"
+            >
+              <input
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="10 条/页"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                10 条/页
+              </span>
+              <div
+                class="arco-select-suffix"
+              >
+                <div
+                  class="arco-select-arrow-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="arco-icon arco-icon-down"
+                    fill="none"
+                    focusable="false"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      d="M39.6 17.443 24.043 33 8.487 17.443"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-bottom:24px"
+    >
+      <div
+        class="arco-pagination arco-pagination-size-default"
+      >
+        <ul
+          class="arco-pagination-list"
+        >
+          <li
+            aria-label="上一页"
+            class="arco-pagination-item arco-pagination-item-prev"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-left"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M32 8.4 16.444 23.956 32 39.513"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 1 页"
+            class="arco-pagination-item"
+          >
+            1
+          </li>
+          <li
+            aria-label="向前 3 页"
+            class="arco-pagination-item arco-pagination-item-jumper"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-more"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 9 页"
+            class="arco-pagination-item"
+          >
+            9
+          </li>
+          <li
+            aria-current="true"
+            aria-label="第 10 页"
+            class="arco-pagination-item arco-pagination-item-active"
+          >
+            10
+          </li>
+          <li
+            aria-label="第 11 页"
+            class="arco-pagination-item"
+          >
+            11
+          </li>
+          <li
+            aria-label="向后 3 页"
+            class="arco-pagination-item arco-pagination-item-jumper"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-more"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 20 页"
+            class="arco-pagination-item"
+          >
+            20
+          </li>
+          <li
+            aria-label="下一页"
+            class="arco-pagination-item arco-pagination-item-next"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-right"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="m16 39.513 15.556-15.557L16 8.4"
+              />
+            </svg>
+          </li>
+        </ul>
+        <div
+          aria-label="页码"
+          class="arco-pagination-option"
+        >
+          <div
+            class="arco-select arco-select-single arco-select-size-default"
+            tabindex="0"
+          >
+            <div
+              class="arco-select-view"
+              title="10 条/页"
+            >
+              <input
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="10 条/页"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                10 条/页
+              </span>
+              <div
+                class="arco-select-suffix"
+              >
+                <div
+                  class="arco-select-arrow-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="arco-icon arco-icon-down"
+                    fill="none"
+                    focusable="false"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      d="M39.6 17.443 24.043 33 8.487 17.443"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-pagination arco-pagination-size-default"
+      >
+        <ul
+          class="arco-pagination-list"
+        >
+          <li
+            aria-label="上一页"
+            class="arco-pagination-item arco-pagination-item-prev"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-left"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M32 8.4 16.444 23.956 32 39.513"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 1 页"
+            class="arco-pagination-item"
+          >
+            1
+          </li>
+          <li
+            aria-label="向前 5 页"
+            class="arco-pagination-item arco-pagination-item-jumper"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-more"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 8 页"
+            class="arco-pagination-item"
+          >
+            8
+          </li>
+          <li
+            aria-label="第 9 页"
+            class="arco-pagination-item"
+          >
+            9
+          </li>
+          <li
+            aria-current="true"
+            aria-label="第 10 页"
+            class="arco-pagination-item arco-pagination-item-active"
+          >
+            10
+          </li>
+          <li
+            aria-label="第 11 页"
+            class="arco-pagination-item"
+          >
+            11
+          </li>
+          <li
+            aria-label="第 12 页"
+            class="arco-pagination-item"
+          >
+            12
+          </li>
+          <li
+            aria-label="向后 5 页"
+            class="arco-pagination-item arco-pagination-item-jumper"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-more"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              />
+            </svg>
+          </li>
+          <li
+            aria-label="第 20 页"
+            class="arco-pagination-item"
+          >
+            20
+          </li>
+          <li
+            aria-label="下一页"
+            class="arco-pagination-item arco-pagination-item-next"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-right"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="m16 39.513 15.556-15.557L16 8.4"
+              />
+            </svg>
+          </li>
+        </ul>
+        <div
+          aria-label="页码"
+          class="arco-pagination-option"
+        >
+          <div
+            class="arco-select arco-select-single arco-select-size-default"
+            tabindex="0"
+          >
+            <div
+              class="arco-select-view"
+              title="10 条/页"
+            >
+              <input
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="10 条/页"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                10 条/页
+              </span>
+              <div
+                class="arco-select-suffix"
+              >
+                <div
+                  class="arco-select-arrow-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="arco-icon arco-icon-down"
+                    fill="none"
+                    focusable="false"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      d="M39.6 17.443 24.043 33 8.487 17.443"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Pagination/demo/show-more.md correctly 1`] = `
 <div
   class="arco-pagination arco-pagination-size-default"
@@ -1045,7 +1558,7 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
       2
     </li>
     <li
-      aria-label="向后 5 页"
+      aria-label="向后 1 页"
       class="arco-pagination-item arco-pagination-item-jumper"
     >
       <svg
