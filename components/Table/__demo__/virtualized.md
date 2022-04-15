@@ -63,9 +63,7 @@ ReactDOM.render(
     columns={columns}
     data={data}
     pagination={false}
-    rowSelection={{
-      pureKeys: true,
-    }}
+    rowSelection={{}}
   />,
   CONTAINER
 );

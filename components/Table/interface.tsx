@@ -288,15 +288,6 @@ export interface RowSelectionProps<T = any> {
    */
   onSelectAll?: (selected: boolean, selectedRows) => void;
   /**
-   * @zh
-   * 大数据场景下优化复选框选中体验，onChange 回调里只有 keys，而不返回和计算相应的 rows
-   * @en
-   * In the big data scenario, optimizing the experience of the checkbox, there are only keys in the onChange callback,
-   * and the corresponding rows are not returned and calculated
-   * @version 2.15.0
-   */
-  pureKeys?: boolean;
-  /**
    * @zh 在数据项被删除时仍然保留选项的 `key`
    * @en The `key` is still retained in `selectedRowKeys` when the data item is deleted
    * @version 2.19.0
@@ -318,6 +309,7 @@ export interface RowSelectionProps<T = any> {
    * @en Multi-select or single-select
    */
   type?: 'checkbox' | 'radio';
+  pureKeys?: boolean; // TODO: remove
 }
 
 /**

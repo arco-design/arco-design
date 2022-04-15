@@ -68,7 +68,6 @@ The detailed parameters of `rowSelection`.
 |onChange|Callback when the checkbox/radio changes|`(selectedRowKeys: (string \| number)[], selectedRows: T[]) => void`|`-`|-|
 |onSelect|Callback for user manual selection/deselection|`(selected: boolean, record: T, selectedRows: T[]) => void`|`-`|2.22.0|
 |onSelectAll|Callback when the user to manually select/deselect all rows|`(selected: boolean, selectedRows) => void`|`-`|2.6.0|
-|pureKeys|In the big data scenario, optimizing the experience of the checkbox, there are only keys in the onChange callback,and the corresponding rows are not returned and calculated|`boolean`|`-`|2.15.0|
 |preserveSelectedRowKeys|The `key` is still retained in `selectedRowKeys` when the data item is deleted|`boolean`|`-`|2.19.0|
 |renderCell|Customize checkbox, the usage is same as `column.render`.|`(originNode, checked: boolean, record: T) => ReactNode`|`-`|2.19.0|
 |selectedRowKeys|Table selected row, (controlled mode, need to be used with `onChange`)|`(string \| number)[]`|`-`|-|

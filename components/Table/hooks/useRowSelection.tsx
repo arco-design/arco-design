@@ -25,7 +25,7 @@ export default function useRowSelection<T>(
   const onSelectAll = rowSelection && rowSelection.onSelectAll;
   const onSelect = rowSelection && rowSelection.onSelect;
   const onChange = rowSelection && rowSelection.onChange;
-  const pureKeys = rowSelection && rowSelection.pureKeys;
+  const pureKeys = rowSelection && rowSelection.pureKeys; // TODO: remove
   const preserveSelectedRowKeys = rowSelection && rowSelection.preserveSelectedRowKeys;
 
   // 获取扁平化之后的 data

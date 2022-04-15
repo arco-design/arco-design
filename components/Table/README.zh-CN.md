@@ -68,7 +68,6 @@
 |onChange|单选或多选的选中项发生改变时的回调|`(selectedRowKeys: (string \| number)[], selectedRows: T[]) => void`|`-`|-|
 |onSelect|用户手动选择/取消选择的回调|`(selected: boolean, record: T, selectedRows: T[]) => void`|`-`|2.22.0|
 |onSelectAll|用户手动选择/取消选择所有行的回调|`(selected: boolean, selectedRows) => void`|`-`|2.6.0|
-|pureKeys|大数据场景下优化复选框选中体验，onChange 回调里只有 keys，而不返回和计算相应的 rows|`boolean`|`-`|2.15.0|
 |preserveSelectedRowKeys|在数据项被删除时仍然保留选项的 `key`|`boolean`|`-`|2.19.0|
 |renderCell|定制复选框，用法与 `column.render` 相同。|`(originNode, checked: boolean, record: T) => ReactNode`|`-`|2.19.0|
 |selectedRowKeys|Table选中的项，（受控模式，需要跟 `onChange` 配合使用）|`(string \| number)[]`|`-`|-|
