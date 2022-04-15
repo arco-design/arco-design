@@ -19,7 +19,7 @@ Use `utcOffset` to set the UTC time.
 
 ```js
 import { useState } from 'react';
-import { DatePicker, Space, Select, Typography, Alert } from '@arco-design/web-react';
+import { DatePicker, Space, Select, Typography, Alert, Tag } from '@arco-design/web-react';
 
 
 const utcList = [];
@@ -33,10 +33,12 @@ for (let i = 0; i < 25; i++) {
 }
 
 const defaultValue = new Date('2022-02-22');
+const defaultRangeValue = [new Date('2022-02-22 08:00:00'), new Date('2022-03-22 10:00:00')];
 
 function Demo() {
   const [utcOffset, setUtcOffset] = useState(0);
   const [value, setValue] = useState(defaultValue);
+  const [rangeValue, setRangeValue] = useState(defaultRangeValue);
 
   return <Space direction="vertical">
     <Space>
@@ -52,17 +54,53 @@ function Demo() {
       <DatePicker
         showTime
         utcOffset={utcOffset}
-        defaultValue={defaultValue}
+        value={value}
         onChange={(v, vd) => setValue(vd && vd.toDate())}
+      />
+      <DatePicker.RangePicker
+        showTime
+        utcOffset={utcOffset}
+        value={rangeValue}
+        onChange={(v, vd) => setRangeValue(vd && vd.map(d => d.toDate()))}
       />
     </Space>
     <Alert
       showIcon={false}
       content={
         <Space direction="vertical">
-          <div><Typography.Text bold>Locale String:</Typography.Text> {value.toLocaleString('en-US')}</div>
-          <div><Typography.Text bold>ISO String:</Typography.Text> {value.toISOString()}</div>
-          <div><Typography.Text bold>Timestamp:</Typography.Text> {value.valueOf()}</div>
+          <Tag bordered color="gray">DatePicker</Tag>
+          <div>
+            <Typography.Text bold>Locale String:</Typography.Text>
+            {value ? value.toLocaleString('en-US') : '-'}
+          </div>
+          <div>
+            <Typography.Text bold>ISO String:</Typography.Text>
+            {value ? value.toISOString() : '-'}
+          </div>
+          <div>
+            <Typography.Text bold>Timestamp:</Typography.Text>
+            {value ? value.valueOf() : '-'}
+          </div>
+        </Space>
+      }
+    />
+    <Alert
+      showIcon={false}
+      content={
+        <Space direction="vertical">
+          <Tag bordered color="gray">RangePicker</Tag>
+          <div>
+            <Typography.Text bold>Locale String:</Typography.Text>
+            {rangeValue ? rangeValue.map(v => v.toLocaleString('en-US')).join(' --- ') : '-'}
+          </div>
+          <div>
+            <Typography.Text bold>ISO String:</Typography.Text>
+            {rangeValue ? rangeValue.map(v => v.toISOString()).join(' --- ') : '-'}
+          </div>
+          <div>
+            <Typography.Text bold>Timestamp:</Typography.Text>
+            {rangeValue ? rangeValue.map(v => v.valueOf()).join(' --- ') : '-'}
+          </div>
         </Space>
       }
     />

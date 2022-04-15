@@ -173,7 +173,7 @@ const Picker = (baseProps: RangePickerProps) => {
   const firstRange = useRef<boolean>(true);
 
   const now = getNow();
-  const zoneNow = toTimezone(now);
+  const zoneNow = toTimezone(now, utcOffset, timezone);
 
   function getTimeValues(): Dayjs[] {
     const timeValues: Dayjs[] = [];

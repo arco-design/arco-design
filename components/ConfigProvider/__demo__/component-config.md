@@ -53,6 +53,7 @@ function Demo() {
     },
     DatePicker: {
       dayStartOfWeek: 2,
+      utcOffset: 0
     },
     InputNumber: {
       mode: 'button',
@@ -86,7 +87,7 @@ function Demo() {
           <Radio.Group options={['Light', 'Dark']} defaultValue="Light" />
         </Space>
         <Space>
-          <DatePicker />
+          <DatePicker showTime />
           <DatePicker.RangePicker />
         </Space>
         <Space>
