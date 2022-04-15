@@ -218,6 +218,12 @@ export interface TriggerProps {
    * @en The html attributes of the arrow node
    */
   arrowProps?: HTMLAttributes<HTMLDivElement>;
+  /**
+   * @zh 是否在容器滚动时更新弹出框的位置
+   * @en Whether to update the popover's position when the container is scrolled
+   * @version 2.32.0
+   */
+  updateOnScroll?: boolean;
 }
 
 export type MouseLocationType = { clientX: number; clientY: number };

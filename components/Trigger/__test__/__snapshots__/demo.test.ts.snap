@@ -323,3 +323,23 @@ exports[`renders Trigger/demo/triggers.md correctly 1`] = `
   />
 </div>
 `;
+
+exports[`renders Trigger/demo/updateOnScroll.md correctly 1`] = `
+<div
+  style="background:var(--color-fill-2);padding:40px;height:100px;overflow:auto"
+>
+  <div
+    style="height:200px"
+  >
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      style="margin-top:80px"
+      type="button"
+    >
+      <span>
+        Button
+      </span>
+    </button>
+  </div>
+</div>
+`;
