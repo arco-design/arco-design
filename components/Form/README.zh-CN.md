@@ -33,6 +33,7 @@
 |disabled|统一配置表单控件是否可用|`boolean`|`-`|-|
 |colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。|`boolean`|`-`|-|
 |scrollToFirstError|验证失败后滚动到第一个错误字段。(`ScrollIntoViewOptions` 类型在 `2.19.0` 开始支持)|`boolean \| ScrollIntoViewOptions`|`-`|-|
+|validateMessages|校验提示信息模板 [demo](/react/components/form#表单校验信息模板)|`Partial<{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key]: Record<keyof ValidateMessagesTemplateType[key], (data, { label }) => any \| string>;}>`|`-`|2.32.0|
 |onSubmit|数据验证成功后回调事件|`(values: FormData) => void`|`-`|-|
 |onSubmitFailed|数据验证失败后回调事件|`(errors: { [key: string]: FieldError }) => void`|`-`|2.21.0|
 

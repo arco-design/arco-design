@@ -434,23 +434,23 @@ describe('ControlForm', () => {
 
     await sleep(10);
 
-    expect(formRef.getFieldsError().number.message).toBe('`120` is not less than `10`');
+    expect(formRef.getFieldsError().number.message).toBe('`120` 大于最大值 `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '12' } });
 
     await sleep(10);
-    expect(formRef.getFieldsError().number.message).toBe('`12` is not less than `10`');
+    expect(formRef.getFieldsError().number.message).toBe('`12` 大于最大值 `10`');
 
     InputNumber.find('input').simulate('change', { target: { value: '' } });
     await sleep(10);
-    expect(formRef.getFieldsError().number.message).toBe('number is required');
+    expect(formRef.getFieldsError().number.message).toBe('number 是必填项');
 
     InputNumber.find('input').simulate('change', { target: { value: '1' } });
 
     // TODO: 是否被setField过的也是属于touche字段
     expect(formRef.getTouchedFields()).toEqual(['number']);
     await sleep(10);
-    expect(formRef.getFieldsError().number.message).toBe('`1` is not greater than `5`');
+    expect(formRef.getFieldsError().number.message).toBe('`1` 小于最小值 `5`');
     InputNumber.find('input').simulate('change', { target: { value: '9' } });
     await sleep(10);
     expect(formRef.getFieldsError()).toEqual({});
@@ -465,7 +465,7 @@ describe('ControlForm', () => {
       Input.find('input').simulate('blur');
     });
     await sleep(10);
-    expect(formRef.getFieldsError().name.message).toBe('string is required');
+    expect(formRef.getFieldsError().name.message).toBe('name 是必填项');
     expect(onBlurMock.mock.calls.length).toBe(1);
   });
 

@@ -189,7 +189,7 @@ describe('validate form', () => {
     wrapper.update();
 
     expect(wrapper.find('.arco-form-message').at(0).html()).toBe(
-      '<div class="arco-form-message arco-form-message-help"><div role="alert">Expect min length 6 but got 5</div><div role="alert" class="arco-form-message-help-warning">Expect type email but got `Hello`</div></div>'
+      '<div class="arco-form-message arco-form-message-help"><div role="alert">字符数最少为 6</div><div role="alert" class="arco-form-message-help-warning">Hello 不是合法的邮箱地址</div></div>'
     );
     expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1); // warning 信息
 
@@ -214,5 +214,73 @@ describe('validate form', () => {
     wrapper.update();
 
     expect(wrapper.find('.arco-form-message-help-warning').at(0).text()).toBe('hahahaha');
+  });
+
+  it('validate messages', async () => {
+    const wrapper = mount(
+      <Form
+        validateMessages={{
+          required: (_, { label }) => `必须填写 ${label}`,
+          string: {
+            length: `字符数必须是 #{length}`,
+            match: `不匹配正则 #{pattern}`,
+          },
+        }}
+      >
+        <Form.Item
+          label="Username"
+          field="name"
+          required
+          rules={[
+            {
+              type: 'string',
+              required: true,
+              length: 3,
+              match: /abc/,
+            },
+          ]}
+        >
+          <Input placeholder="please enter your username" />
+        </Form.Item>
+      </Form>
+    );
+
+    const input = wrapper.find('input');
+
+    await act(() => {
+      input.simulate('change', {
+        target: {
+          value: 'Hello',
+        },
+      });
+    });
+    await sleep(10);
+    wrapper.update();
+
+    expect(wrapper.find('.arco-form-message').childAt(0).text()).toBe('字符数必须是 3');
+
+    await act(() => {
+      input.simulate('change', {
+        target: {
+          value: '',
+        },
+      });
+    });
+    await sleep(10);
+    wrapper.update();
+
+    expect(wrapper.find('.arco-form-message').childAt(0).text()).toBe('必须填写 Username');
+
+    await act(() => {
+      input.simulate('change', {
+        target: {
+          value: '123',
+        },
+      });
+    });
+    await sleep(10);
+    wrapper.update();
+
+    expect(wrapper.find('.arco-form-message').childAt(0).text()).toBe('不匹配正则 /abc/');
   });
 });

@@ -163,4 +163,52 @@ export default {
     zoomOut: '缩小',
     originalSize: '原始尺寸',
   },
+  Form: {
+    validateMessages: {
+      required: '#{field} 是必填项',
+      type: {
+        string: '#{value} 不是合法的文本类型',
+        number: '#{value} 不是合法的数字类型',
+        boolean: '#{value} 不是合法的布尔类型',
+        array: '#{value} 不是合法的数组类型',
+        object: '#{value} 不是合法的对象类型',
+        url: '#{value} 不是合法的 url 地址',
+        email: '#{value} 不是合法的邮箱地址',
+        ip: '#{value} 不是合法的 IP 地址',
+      },
+      number: {
+        min: '`#{value}` 小于最小值 `#{min}`',
+        max: '`#{value}` 大于最大值 `#{max}`',
+        equal: '`#{value}` 不等于 `#{equal}`',
+        range: '`#{value}` 不在 `#{min} ~ #{max}` 范围内',
+        positive: '`#{value}` 不是正数',
+        negative: '`#{value}` 不是负数',
+      },
+      array: {
+        length: '`#{value}` 个数不等于 #{length}',
+        minLength: '`#{value}` 个数最少为 #{minLength}',
+        maxLength: '`#{value}` 个数最多为 #{maxLength}',
+        includes: '#{value} 不包含 #{includes}',
+        deepEqual: '#{value} 不等于 #{deepEqual}',
+        empty: '`#{value}` 不是空数组',
+      },
+      string: {
+        minLength: '字符数最少为 #{minLength}',
+        maxLength: '字符数最多为 #{maxLength}',
+        length: '`#{value}` 字符数不等于 #{length}',
+        match: '`#{value}` 不符合模式 #{pattern}',
+        uppercase: '`#{value}` 不是全大写',
+        lowercase: '`#{value}` 不是全小写',
+      },
+      object: {
+        deepEqual: '`#{value}` 不等于 #{deepEqual}',
+        hasKeys: '`#{value}` 不包含字段 #{keys}',
+        empty: '`#{value}` 不是对象',
+      },
+      boolean: {
+        true: '期望是 `true`',
+        false: '期望是 `false`',
+      },
+    },
+  },
 };
