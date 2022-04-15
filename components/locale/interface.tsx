@@ -31,4 +31,5 @@ export interface Locale {
   Typography: Record<string, any>;
   Transfer: Record<string, any>;
   ImagePreview: Record<string, any>;
+  Form?: Record<string, any>;
 }

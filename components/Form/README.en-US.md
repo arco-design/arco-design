@@ -33,6 +33,7 @@ A form with data collection, verification and submission functions, including ch
 |disabled|Whether All Form item is disabled|`boolean`|`-`|-|
 |colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.|`boolean`|`-`|-|
 |scrollToFirstError|Whether scroll to first error item after validation fails. (`ScrollIntoViewOptions` is supported at `2.19.0`)|`boolean \| ScrollIntoViewOptions`|`-`|-|
+|validateMessages|validation prompt template [demo](/react/en-US/components/form#validate%20messages)|`Partial<{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key]: Record<keyof ValidateMessagesTemplateType[key], (data, { label }) => any \| string>;}>`|`-`|2.32.0|
 |onSubmit|Callback when submit data|`(values: FormData) => void`|`-`|-|
 |onSubmitFailed|Callback when validate fail|`(errors: { [key: string]: FieldError }) => void`|`-`|2.21.0|
 

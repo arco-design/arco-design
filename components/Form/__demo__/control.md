@@ -148,7 +148,7 @@ function Demo() {
         <FormItem
           label="Username"
           field="name"
-          rules={[{ required: true, message: 'username is required' }]}
+          rules={[{ required: true }]}
         >
           <Input placeholder="please enter..." />
         </FormItem>
@@ -166,7 +166,6 @@ function Demo() {
             {
               type: 'array',
               length: 4,
-              message: '必须选择长度为四的节点',
             },
           ]}
         >
@@ -194,7 +193,6 @@ function Demo() {
             {
               type: 'array',
               minLength: 1,
-              message: 'choice is required',
             },
           ]}
         >
@@ -206,7 +204,6 @@ function Demo() {
           rules={[
             {
               required: true,
-              message: 'treenode is required',
             },
           ]}
         >
@@ -238,7 +235,6 @@ function Demo() {
           rules={[
             {
               required: true,
-              message: 'date is required',
             },
           ]}
         >
@@ -252,7 +248,6 @@ function Demo() {
             {
               type: 'boolean',
               true: true,
-              message: 'must be true',
             },
           ]}
         >
@@ -333,7 +328,6 @@ function Demo() {
             {
               type: 'boolean',
               true: true,
-              message: 'must be true',
             },
           ]}
         >

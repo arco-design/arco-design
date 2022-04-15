@@ -24,6 +24,7 @@ import {
 import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
 import FormItemLabel from './form-label';
+import { formatValidateMsg } from './utils';
 
 const Row = Grid.Row;
 const Col = Grid.Col;
@@ -152,6 +153,11 @@ const Item = <
 
   const contextProps = {
     ...(formContext as React.Context<FormContextProps<FormData, FieldValue, FieldKey>>),
+    validateMessages:
+      formContext.validateMessages &&
+      formatValidateMsg(formContext.validateMessages, {
+        label: props.label,
+      }),
     prefixCls,
     updateFormItem,
     disabled: 'disabled' in props ? props.disabled : formContext.disabled,
