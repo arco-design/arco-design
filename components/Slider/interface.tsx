@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
+import { InputNumberProps } from '../InputNumber';
 
 export type TooltipPosition =
   | 'top'
@@ -112,10 +113,11 @@ export interface SliderProps {
    */
   vertical?: boolean;
   /**
-   * @zh 是否展示输入框。`onlyMarkValue` 为 `true` 时输入框始终隐藏
-   * @en Whether to display the input box. If `onlyMarkValue` is `true`, the input box will always be hidden.
+   * @zh 是否展示输入框，`onlyMarkValue` 为 `true` 时输入框始终隐藏。可接受 `InputNumber` 的 `props`。
+   * @en Whether to display the input box. If `onlyMarkValue` is `true`, the input box will always be hidden. Accepts `props` for `InputNumber`.
+   * @version `InputNumberProps` in `2.32.0`
    */
-  showInput?: boolean;
+  showInput?: boolean | InputNumberProps | InputNumberProps[];
   /**
    * @zh 设置 `tooltip` 所插入的父元素
    * @en The parent node which the `tooltip` will be rendered to

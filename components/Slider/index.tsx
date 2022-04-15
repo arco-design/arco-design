@@ -1,11 +1,11 @@
-import React, { forwardRef, memo, useContext, CSSProperties, useRef } from 'react';
+import React, { forwardRef, memo, useContext, CSSProperties, useRef, useMemo } from 'react';
 import { plus, times, divide } from 'number-precision';
 import SliderButton from './button';
 import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
-import { isFunction, isObject } from '../_util/is';
+import { isFunction, isObject, isArray } from '../_util/is';
 import { formatPercent, getIntervalOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -99,6 +99,13 @@ function Slider(baseProps: SliderProps, ref) {
 
   // 是否显示输入框
   const isShowInput = showInput && !onlyMarkValue;
+  const extraInputProps = useMemo(() => {
+    if (isShowInput && (isArray(showInput) || isObject(showInput))) {
+      return isArray(showInput) ? [...showInput] : [{ ...showInput }, { ...showInput }];
+    }
+    return [];
+  }, [isShowInput, showInput]);
+
   // 样式前缀
   const prefixCls = getPrefixCls('slider');
   // ref
@@ -388,6 +395,7 @@ function Slider(baseProps: SliderProps, ref) {
             disabled={disabled}
             prefixCls={prefixCls}
             onChange={handleInputChange}
+            extra={extraInputProps}
           />
         )}
       </div>
