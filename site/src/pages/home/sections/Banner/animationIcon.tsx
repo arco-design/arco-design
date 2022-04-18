@@ -12,7 +12,7 @@ interface AnimationIconProps {
   onComplete?: () => void; // 动画播放结束
 }
 
-const animationDuration = 800;
+const animationDuration = 500;
 const animationDelay = 4000;
 
 function animationOut(
@@ -23,6 +23,7 @@ function animationOut(
   timeline.add({
     targets: target,
     opacity: [1, 0],
+    easing: 'easeOutCubic',
     delay: (el, i, l) => anime.stagger(animationDuration / l)(el, i, l),
     duration: animationDuration,
   });
@@ -40,6 +41,7 @@ function animationIn(
     targets: target,
     opacity: [0, 1],
     delay: (el, i, l) => anime.stagger(animationDuration / l)(el, i, l),
+    easing: 'easeInSine',
     complete: config.complete,
     endDelay: animationDelay,
   });

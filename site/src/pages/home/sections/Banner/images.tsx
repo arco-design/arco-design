@@ -103,6 +103,7 @@ export default function BannerImages() {
             .js-motion-bottom > div
           `,
           opacity: [0, 1],
+          easing: 'easeOutCubic',
           delay: (el, i, l) => anime.stagger(400 / l)(el, i, l),
         },
         1200
@@ -111,6 +112,7 @@ export default function BannerImages() {
         {
           targets: '.js-motion-icon-code path',
           opacity: [0, 1],
+          easing: 'easeOutCubic',
           delay: (el, i, l) => anime.stagger(600 / l)(el, i, l),
         },
         '-=400'
@@ -119,7 +121,8 @@ export default function BannerImages() {
         {
           targets: '.js-images-scene div',
           opacity: [0, 1],
-          delay: (el, i, l) => anime.stagger(1400 / l)(el, i, l),
+          easing: 'easeOutCubic',
+          delay: (el, i, l) => anime.stagger(1200 / l)(el, i, l),
         },
         1350
       );
