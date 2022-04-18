@@ -42,9 +42,9 @@ function Badge(baseProps: BadgeProps, ref) {
     offset,
     style,
     status,
-    children,
     ...restProps
   } = props;
+  let {children} = props
 
   const prefixCls = getPrefixCls('badge');
   const dotStyle = { ...(propsDotStyle || {}) };
@@ -55,6 +55,9 @@ function Badge(baseProps: BadgeProps, ref) {
   }
   if (topOffset) {
     dotStyle.marginTop = topOffset;
+  }
+  if (Object.prototype.toString.call(children) === '[object String]') {
+    children = children.trim()
   }
 
   const getDom = () => {
