@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { teaLog } from '@arco-design/arco-site-utils';
 import cs from '../../utils/classNames';
 import CodeCopy from '../../components/CodeCopy';
@@ -13,28 +13,12 @@ import LogoFigmaW from '../../assets/logo_Figma_w.svg';
 import useTheme from '../../hooks/useTheme';
 import useLocale from '../../hooks/useLocale';
 import { linkFigmaArcoComponent } from '../../constant/links';
-import { createScrollTrigger, scaleFadeIn, scaleFadeHide } from '../../utils/animation';
 import Section from '../../components/Section';
 import { EventMap } from '../../utils/eventMap';
 
 export default function QuickStart() {
   const { realTheme } = useTheme();
   const locale = useLocale();
-  const contentRef = useRef<HTMLDivElement>();
-
-  useEffect(() => {
-    const show = () => {
-      scaleFadeIn(contentRef.current);
-    };
-    const hide = () => {
-      scaleFadeHide(contentRef.current);
-    };
-    hide();
-    createScrollTrigger(contentRef.current, {
-      onEnter: show,
-      once: true,
-    });
-  }, []);
 
   const renderDesignContent = () => {
     return (
@@ -93,7 +77,7 @@ export default function QuickStart() {
       }}
       addTracker
     >
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} data-aos="scale-fade-in">
         {data.map(({ title, description, icon, content, isCardDark }) => (
           <div
             className={cs(styles.card, {

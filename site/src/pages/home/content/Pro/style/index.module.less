@@ -156,3 +156,34 @@ body[arco-theme='dark'] {
     box-shadow: none;
   }
 }
+
+.wrapper {
+  :global {
+    [data-aos='content-left-background-init'] {
+      right: 70%;
+      transition-property: right;
+
+      &.aos-animate {
+        right: 47%;
+      }
+    }
+
+    [data-aos='content-left-init'] {
+      width: 30%;
+      transition-property: width;
+
+      &.aos-animate {
+        width: 53%;
+      }
+    }
+
+    [data-aos='split-trigger-init'] {
+      left: 30%;
+      transition-property: left;
+
+      &.aos-animate {
+        left: 53%;
+      }
+    }
+  }
+}

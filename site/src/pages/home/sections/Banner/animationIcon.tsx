@@ -1,5 +1,5 @@
 import React, { CSSProperties, useRef, useState, ReactElement, useLayoutEffect } from 'react';
-import { gsap } from 'gsap/all';
+import anime, { AnimeAnimParams, AnimeTimelineInstance } from 'animejs';
 import cs from '../../utils/classNames';
 import useIsFirstRender from '../../hooks/useIsFirstRender';
 
@@ -12,35 +12,41 @@ interface AnimationIconProps {
   onComplete?: () => void; // 动画播放结束
 }
 
-const animationDuration = 0.5; // 秒
-type AnimationInstance = gsap.core.Tween;
+const animationDuration = 500;
+const animationDelay = 4000;
 
-const animationDelay = 4; // 秒
-
-function animationOut(target, config: gsap.TweenVars = {}): AnimationInstance {
-  return gsap.to(target, {
-    animationDuration,
-    opacity: 0,
-    ease: 'power1.inOut',
-    delay: animationDelay,
-    stagger: {
-      amount: animationDuration,
-      from: 'random',
-    },
-    ...config,
+function animationOut(
+  target: NodeListOf<SVGPathElement>,
+  config: AnimeAnimParams
+): AnimeTimelineInstance {
+  const timeline = anime.timeline();
+  timeline.add({
+    targets: target,
+    opacity: [1, 0],
+    easing: 'easeOutCubic',
+    delay: (el, i, l) => anime.stagger(animationDuration / l)(el, i, l),
+    duration: animationDuration,
   });
+
+  timeline.complete = config.complete;
+  return timeline;
 }
 
-function animationIn(target, config: gsap.TweenVars = {}): AnimationInstance {
-  return gsap.from(target, {
-    opacity: 0,
-    ease: 'power1.inOut',
-    stagger: {
-      amount: animationDuration,
-      from: 'random',
-    },
-    ...config,
+function animationIn(
+  target: NodeListOf<SVGPathElement>,
+  config: AnimeAnimParams
+): AnimeTimelineInstance {
+  const timeline = anime.timeline();
+  timeline.add({
+    targets: target,
+    opacity: [0, 1],
+    delay: (el, i, l) => anime.stagger(animationDuration / l)(el, i, l),
+    easing: 'easeInSine',
+    complete: config.complete,
+    endDelay: animationDelay,
   });
+  timeline.complete = config.complete;
+  return timeline;
 }
 
 export default function AnimationIcon(props: AnimationIconProps) {
@@ -49,14 +55,20 @@ export default function AnimationIcon(props: AnimationIconProps) {
   const [Icon, setIcon] = useState(icon);
   const [updateKey, setUpdateKey] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const refAnimationInstance = useRef<AnimationInstance>();
+  const refAnimationInstance = useRef<AnimeTimelineInstance>();
+
+  const completeAnimation = () => {
+    if (refAnimationInstance.current) {
+      refAnimationInstance.current.seek(refAnimationInstance.current.duration);
+    }
+  };
 
   useLayoutEffect(() => {
-    refAnimationInstance.current && refAnimationInstance.current.progress(1);
+    completeAnimation();
     if (!isFirstRender && animation) {
       const paths = ref.current.querySelectorAll('path');
       refAnimationInstance.current = animationOut(paths, {
-        onComplete() {
+        complete() {
           refAnimationInstance.current = null;
           setIcon(icon);
           setUpdateKey((pre) => pre + 1);
@@ -69,11 +81,11 @@ export default function AnimationIcon(props: AnimationIconProps) {
   }, [animation, icon]);
 
   useLayoutEffect(() => {
-    refAnimationInstance.current && refAnimationInstance.current.progress(1);
+    completeAnimation();
     if (!isFirstRender) {
       const paths = ref.current.querySelectorAll('path');
       refAnimationInstance.current = animationIn(paths, {
-        onComplete() {
+        complete() {
           refAnimationInstance.current = null;
           onComplete && onComplete();
         },

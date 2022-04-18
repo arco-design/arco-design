@@ -341,25 +341,25 @@
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
 
-"@arco-materials/site-footer@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.0.2.tgz#2dd94d59e036d5d513edb105afe4168c6e7cbde7"
-  integrity sha512-36MWGLpAUFjjrA7w4kDk/I1Fk5L117GB0rXtKYBF/UCt/suNXvXy8o0adygebiW3GPrv4VkT4i690sgbEOj8dg==
+"@arco-materials/site-footer@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.0.3.tgz#3049c3c7b727a24d19a2af365d6d4273cd7c5935"
+  integrity sha512-mEgIop73HsZAGf5hjCXLz+V1/8Enp8oF+QltuJ7qTNOqpl7cRLo7mZTbyntzpcsXSyAXWqbG6ZsymzGYjEiSbA==
   dependencies:
     classnames "^2.2.6"
 
-"@arco-materials/site-navbar@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.2.2.tgz#55d041f58d3cbaf93c8e95749b27e0296e8ba5e4"
-  integrity sha512-pb24kFybpyz3pfxnl6rlpWD5ZToITDtcA1P6iRXFcjF30j6cralsz+MjTBC7KYzMb0WMI5+rDzK/KSKWQ7Wrlw==
+"@arco-materials/site-navbar@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.2.5.tgz#d098cf7075b9f0bbebda2c5bec30d8133c7bd844"
+  integrity sha512-8b7MXz5TWHwn7yLwWJHwCJijFNDH9iCp/HiUZZAkjgRMkdRtW4ukrKhY6VcJUaOBxvhNk9IAf6A9wF/INLKitg==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.0.1"
     "@docsearch/react" "^3.0.0-alpha.42"
+    animejs "^3.2.1"
     axios "^0.21.1"
     classnames "^2.2.6"
     dayjs "^1.10.4"
-    gsap "^3.6.0"
     lodash.debounce "^4.0.8"
 
 "@arco-materials/site-utils@^1.0.1":
@@ -660,6 +660,16 @@
   resolved "https://registry.yarnpkg.com/@react-dnd/shallowequal/-/shallowequal-2.0.0.tgz#a3031eb54129f2c66b2753f8404266ec7bf67f0a"
   integrity sha512-Pc/AFTdwZwEKJxFJvlxrSmGe/di+aAOBn60sremrpLo6VI/6cmiUYNNwlI5KNYttg7uypzA3ILPMPgxB2GYZEg==
 
+"@types/animejs@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.npmjs.org/@types/animejs/-/animejs-3.1.4.tgz#92f90d1c800b9041b64a7da9da0e68e690146b0e"
+  integrity sha512-WUjeFT2SXd6intfE6cg6eL1jk/JL88JqM2gC4WqO4iHLmbCvHUq6aoLK13lGpDWs4FtS2PHoYraJZ0dEx99Dyg==
+
+"@types/aos@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/@types/aos/-/aos-3.0.4.tgz#fd0dce430f18d118081aaced2c79c30617b15818"
+  integrity sha512-mna6Jd6bdK1NpwarLopGvXOgUoCfj0470IwLxuVOFDElTGI0JTd7xSGQ0AjbAEnHErC/b3fA9t2uB3IXVKmckA==
+
 "@types/d3-timer@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/d3-timer/-/d3-timer-2.0.1.tgz#ffb6620d290624f3726aa362c0c8a4b44c8d7200"
@@ -754,6 +764,11 @@ algoliasearch@^4.0.0:
     "@algolia/requester-node-http" "4.12.0"
     "@algolia/transporter" "4.12.0"
 
+animejs@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.npmjs.org/animejs/-/animejs-3.2.1.tgz#de9fe2e792f44a777a7fdf6ae160e26604b0cdda"
+  integrity sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -782,6 +797,15 @@ ansi-styles@^3.2.1:
   integrity sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==
   dependencies:
     color-convert "^1.9.0"
+
+aos@^3.0.0-beta.6:
+  version "3.0.0-beta.6"
+  resolved "https://registry.npmjs.org/aos/-/aos-3.0.0-beta.6.tgz#75148e3be4bb1add53f5a1828623bf82b67691e9"
+  integrity sha512-VLWrpq8bfAWcetynVHMMrqdC+89Qq/Ym6UBJbHB4crIwp3RR8uq1dNGgsFzoDl03S43rlVMK+na3r5+oUCZsYw==
+  dependencies:
+    classlist-polyfill "^1.2.0"
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
 
 aproba@^1.1.1:
   version "1.2.0"
@@ -1035,6 +1059,11 @@ ci-info@^1.5.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-1.6.0.tgz#2ca20dbb9ceb32d4524a683303313f0304b1e497"
   integrity sha512-vsGdkwSCDpWmP80ncATX7iea5DWQemg1UgCW5J8tqjU3lYw4FBYuj89J0CTVomA7BEfvSZd84GmHko+MxFQU2A==
+
+classlist-polyfill@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz#935bc2dfd9458a876b279617514638bcaa964a2e"
+  integrity sha1-k1vC39lFiodrJ5YXUUY4vKqWSi4=
 
 classnames@^2.2.6:
   version "2.3.1"
@@ -1814,11 +1843,6 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.2.8"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
-
-gsap@^3.6.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.8.0.tgz#a404dd6ebbaabc92605539aea9d98e3098688064"
-  integrity sha512-cvpzKkWFePDZCycwXwJnDSpTR3j+a4QLQF/t0c+pXqzRESgAYx5hieaoshzZFjbwsARqr0+5c3GKE7wI273w/g==
 
 gzip-size@^5.0.0:
   version "5.1.1"

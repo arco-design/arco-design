@@ -1,17 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { IconMoonFill, IconSunFill } from '@arco-design/web-react/icon';
 import { generate } from '@arco-design/color';
 import useTheme from '../../hooks/useTheme';
 import styles from './index.module.less';
 import CardIntroduce from '../../components/CardIntroduce';
 import useLocale from '../../hooks/useLocale';
-import { createScrollTrigger, scaleFadeHide, scaleFadeIn } from '../../utils/animation';
 
 const HANDLER_RADIUS = 125;
-
-gsap.registerPlugin(ScrollTrigger);
 
 function hslToRgb(h, s = 1, l = 0.5) {
   let r, g, b;
@@ -90,33 +85,13 @@ export default function Palette({ animation = true, onAnimation = () => {} }) {
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
       const { x, y } = getHandlerPosition(cx, cy, HANDLER_RADIUS, angle);
-
       setHandlerStyle({ top: y - rect.top, left: x - rect.left });
 
       if (animation) {
-        ScrollTrigger.create({
-          trigger: '#color-body',
-          once: true,
-          start: 'top center',
-          onEnter: () => {
-            handleTo(rect, 215);
-          },
-        });
-
-        const show = () => {
-          scaleFadeIn('#color-card');
-        };
-        const hide = () => {
-          scaleFadeHide('#color-card');
-        };
-        hide();
-        createScrollTrigger('#color-card', {
-          offsetBottom: 0,
-          once: true,
-          onEnter: show,
-        });
+        handleTo(rect, 215);
       }
     }
+
     window.setTimeout(() => setOpacity(1));
   }, []);
 
@@ -148,7 +123,7 @@ export default function Palette({ animation = true, onAnimation = () => {} }) {
   };
 
   return (
-    <div className={styles['color-body']} style={{ opacity }} id="color-body">
+    <div className={styles['color-body']} style={{ opacity }}>
       <ul className={styles['color-palette']}>
         {[2, 4, 6, 8, 9].map((value) => (
           <li
@@ -194,7 +169,6 @@ export default function Palette({ animation = true, onAnimation = () => {} }) {
       </div>
       <div className={styles['color-body-right']}>
         <CardIntroduce
-          id="color-card"
           style={{ minHeight: 290, border: 'none' }}
           className={styles['color-card']}
           title={locale['content.palette.title']}

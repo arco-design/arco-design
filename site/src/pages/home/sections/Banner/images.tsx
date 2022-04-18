@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { gsap } from 'gsap/all';
 import Parallax from 'parallax-js';
+import anime from 'animejs';
 import LogoArcoMaterial from '../../assets/logo_ArcoMaterial_w.svg';
 import LogoArcoPro from '../../assets/logo_ArcoPro_w.svg';
 import LogoFigma from '../../assets/logo_Figma_w.svg';
@@ -8,6 +8,8 @@ import LogoDesignLab from '../../assets/logo_DesignLab_w.svg';
 import cs from '../../utils/classNames';
 import Motion from './motion';
 import styles from './style/images.module.less';
+
+const chartBarHeightList = [48, 58, 43, 33, 28, 18, 38, 33, 28];
 
 const floatLogoList = [
   {
@@ -41,94 +43,88 @@ const floatLogoList = [
 ];
 
 export default function BannerImages() {
-  // 出场动画
   useEffect(() => {
-    gsap
+    anime
       .timeline()
-      .from('.js-images-bg-light', {
-        opacity: 0,
-        duration: 0.2,
-        ease: 'ease',
+      .add({
+        targets: '.js-images-bg-light',
+        opacity: [0, 1],
+        duration: 200,
+        easing: 'linear',
       })
-      .from('.js-images-motion', {
-        y: '110%',
-        scale: 0.86,
-        duration: 1.8,
-        ease: 'power3.inOut',
+      .add({
+        targets: '.js-images-motion',
+        translateY: ['110%', '0'],
+        scale: [0.86, 1],
+        duration: 1800,
+        easing: 'easeInOutQuart',
       })
-      .from(
-        '.js-images-scene',
+      .add(
         {
-          opacity: 0,
-          scale: '0.9',
-          duration: 1,
-          ease: 'cubic-bezier(0.34, 1.56, 0.64, 1) ',
+          targets: '.js-images-scene',
+          opacity: [0, 1],
+          scale: [0.9, 1],
+          duration: 1000,
+          easing: 'easeOutBack',
         },
-        'start-=0.55'
+        1450
       )
-      .from(
-        '.js-motion-chart > div',
+      .add(
         {
-          opacity: 0,
-          height: '100%',
-          stagger: {
-            amount: 0.6,
+          targets: '.js-motion-chart > div',
+          opacity: [0, 1],
+          height: (_, i) => {
+            return ['100%', chartBarHeightList[i]];
           },
+          delay: (el, i, l) => anime.stagger(600 / l)(el, i, l),
         },
-        'start-=1'
+        1000
       )
-      .from(
-        '.js-motion-top-content-item-3 > button',
+      .add(
         {
-          opacity: 0,
-          stagger: {
-            amount: 0.6,
-          },
+          targets: '.js-motion-top-content-item-3 > button',
+          opacity: [0, 1],
+          delay: (el, i, l) => anime.stagger(600 / l)(el, i, l),
         },
-        'start-=1'
+        1000
       )
-      .from(
-        '.js-motion-color-panel > div',
+      .add(
         {
-          opacity: 0,
-          stagger: {
-            amount: 0.3,
-          },
+          targets: '.js-motion-color-panel > div',
+          opacity: [0, 1],
+          delay: (el, i, l) => anime.stagger(300 / l)(el, i, l),
         },
-        'start-=1'
+        1000
       )
-      .from(
-        `
-          .js-motion-top-content > div,
-          .js-motion-bottom > div
-        `,
+      .add(
         {
-          opacity: 0,
-          stagger: {
-            amount: 0.4,
-          },
+          targets: `
+           .js-motion-top-content > div,
+            .js-motion-bottom > div
+          `,
+          opacity: [0, 1],
+          easing: 'easeOutCubic',
+          delay: (el, i, l) => anime.stagger(400 / l)(el, i, l),
         },
-        'start-=0.8'
+        1200
       )
-      .from(
-        '.js-motion-icon-code path',
+      .add(
         {
-          opacity: 0,
-          stagger: {
-            amount: 0.6,
-          },
+          targets: '.js-motion-icon-code path',
+          opacity: [0, 1],
+          easing: 'easeOutCubic',
+          delay: (el, i, l) => anime.stagger(600 / l)(el, i, l),
         },
-        '<0.4'
+        '-=400'
       )
-      .from(
-        '.js-images-scene div',
+      .add(
         {
-          opacity: 0,
-          stagger: {
-            amount: 1.4,
-          },
+          targets: '.js-images-scene div',
+          opacity: [0, 1],
+          easing: 'easeOutCubic',
+          delay: (el, i, l) => anime.stagger(1200 / l)(el, i, l),
         },
-        'start-=0.65'
+        1350
       );
   }, []);
 

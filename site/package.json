@@ -5,15 +5,16 @@
     "@antv/g2": "^4.1.12",
     "@arco-design/arco-markdown-loader": "^1.15.3",
     "@arco-design/arco-site-utils": "^1.0.2",
-    "@arco-materials/site-footer": "^1.0.2",
-    "@arco-materials/site-navbar": "^1.2.2",
+    "animejs": "^3.2.1",
+    "aos": "^3.0.0-beta.6",
+    "@arco-materials/site-footer": "^1.0.3",
+    "@arco-materials/site-navbar": "^1.2.5",
     "@babel/runtime": "^7.6.0",
     "@loadable/component": "^5.14.1",
     "arco-doc-site-components": "^1.0.0",
     "axios": "^0.24.0",
     "classnames": "^2.2.6",
     "clipboard": "^2.0.6",
-    "gsap": "^3.6.0",
     "lodash.debounce": "^4.0.8",
     "lodash.shuffle": "^4.2.0",
     "nprogress": "^0.2.0",
@@ -32,6 +33,8 @@
     "semver": "^7.3.4"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.4",
+    "@types/aos": "^3.0.4",
     "prism-themes": "^1.5.0",
     "prismjs": "^1.23.0",
     "webpack-bundle-analyzer": "^3.6.0"
