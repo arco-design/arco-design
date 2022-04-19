@@ -2,7 +2,7 @@ import React, { useContext, forwardRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import { isObject } from '../_util/is';
+import { isObject,isString } from '../_util/is';
 import Count from './count';
 import { BadgeProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
@@ -56,8 +56,10 @@ function Badge(baseProps: BadgeProps, ref) {
   if (topOffset) {
     dotStyle.marginTop = topOffset;
   }
-  if (Object.prototype.toString.call(children) === '[object String]') {
-    children = children.trim()
+  if (isString(children)) {
+    if(children.trim()===''){
+      children = children.trim()
+    }
   }
 
   const getDom = () => {
