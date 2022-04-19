@@ -1,6 +1,4 @@
 import React, { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import cs from '../../utils/classNames';
 import styles from './style/index.module.less';
 
@@ -19,8 +17,6 @@ interface EditorSkinProps {
   children: ReactNode;
   animation?: boolean;
 }
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function EditorSkin(props: EditorSkinProps) {
   const { className, style, bodyStyle } = props;
@@ -68,17 +64,8 @@ export default function EditorSkin(props: EditorSkinProps) {
   useEffect(() => {
     if (props.animation) {
       hideContent();
-      ScrollTrigger.create({
-        trigger: contentRef.current,
-        once: true,
-        start: 'top 85%',
-        onEnter: () => {
-          showNextLine();
-        },
-        onEnterBack: () => {
-          showNextLine();
-        },
-      });
+      document.addEventListener('aos:in:skin-content', showNextLine);
+      return () => document.removeEventListener('aos:in:skin-content', showNextLine);
     }
   }, []);
 
@@ -145,7 +132,12 @@ export default function EditorSkin(props: EditorSkinProps) {
       )}
       <div className={styles['editor-skin-body']} style={bodyStyle}>
         <ul className={styles['editor-skin-line-numbers']}>{renderLineNumber()}</ul>
-        <div className={styles['editor-skin-content']} ref={contentRef}>
+        <div
+          className={styles['editor-skin-content']}
+          ref={contentRef}
+          data-aos="skin-content"
+          data-aos-id="skin-content"
+        >
           {children[activeTab]}
         </div>
       </div>

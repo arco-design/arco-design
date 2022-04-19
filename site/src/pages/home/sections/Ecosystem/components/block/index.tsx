@@ -11,13 +11,19 @@ export interface BlockProps {
   desc?: string;
   image?: string;
   onClick?: () => void;
+  'data-aos'?: string;
 }
 
 export default function EcosystemBlock(props: BlockProps) {
   const { logo, logoPlaceholder, name, desc, image, style, className, onClick } = props;
 
   return (
-    <div className={cs(styles['ecosystem-block'], className)} style={style} onClick={onClick}>
+    <div
+      className={cs(styles['ecosystem-block'], className)}
+      style={style}
+      onClick={onClick}
+      data-aos={props['data-aos']}
+    >
       <div className={styles['ecosystem-block-header']}>
         <div className={styles['ecosystem-block-icon-wrapper']}>
           {React.cloneElement(logo as ReactElement, { className: styles['ecosystem-block-icon'] })}
