@@ -170,7 +170,7 @@ module.exports = {
 # 从已加入的团队中选择一个进行关联
 arco group --link
 
-# 关联指定团队，参数未你的团队 ID
+# 关联指定团队，参数为你的团队 ID
 arco group --link 1
 
 # 取消关联团队
