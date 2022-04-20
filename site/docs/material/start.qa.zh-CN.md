@@ -156,6 +156,32 @@ module.exports = {
 };
 ```
 
+## 团队级物料关键词配置
+
+在 `arco init` 创建物料项目时，我们提供了一系列的物料关键词可供选择，这些关键词方便用户对物料进行快速筛选。团队管理者可以通过配置来自定义备选关键词列表：
+
+![](http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20220420-150133.png~tplv-uwbnlip3yd-webp.webp)
+
+完成配置后，团队物料列表将使用所配置的关键词列表进行筛选。 Arco CLI 也可通过 `arco group --link` 来关联指定团队：
+
+**版本要求：arco-cli >= 1.27.0**
+
+```bash
+# 从已加入的团队中选择一个进行关联
+arco group --link
+
+# 关联指定团队，参数未你的团队 ID
+arco group --link 1
+
+# 取消关联团队
+arco group --link 0
+```
+
+关联团队后将有以下变化：
+
+* `arco init` 创建项目时，将使用团队配置的关键词列表作为备选项；
+* `arco sync` 发布物料时，将优先将物料发布至已关联的团队。
+
 ## 物料单元测试报错
 
 物料项目的单元测试采用 [Jest](https://jestjs.io/)，其默认不支持 ES Module 的语法 (import / export)。参考 [此文档](https://jestjs.io/docs/ecmascript-modules)

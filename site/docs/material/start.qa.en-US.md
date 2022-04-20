@@ -158,6 +158,32 @@ module.exports = {
 };
 ````
 
+## Team-level material keyword configuration
+
+When creating a material project in `arco init`, we provide a series of material keywords to choose from. These keywords are convenient for users to quickly filter materials. Team managers can customize the list of alternative keywords by configuring:
+
+![](http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20220420-150133.png~tplv-uwbnlip3yd-webp.webp)
+
+Once configured, the team material list will be filtered using the configured keyword list. Arco CLI can also link specific teams via `arco group --link`:
+
+**Version requirements: arco-cli >= 1.27.0**
+
+```bash
+# Choose one of the joined teams to associate
+arco group --link
+
+# Associate the specified team, the parameter is not your team ID
+arco group --link 1
+
+# unlink team
+arco group --link 0
+````
+
+The following changes will be made after linking teams:
+
+* `arco init` will use the keyword list configured by the team as an alternative when creating a project;
+* When `arco sync` publishes materials, the materials will be released to the associated team first.
+
 ## Material unit test error
 
 The unit test of the material item uses [Jest](https://jestjs.io/), which does not support ES Module syntax (import / export) by default. Reference [this document](https://jestjs.io/docs/ecmascript-modules)

@@ -92,7 +92,7 @@
 |---|---|---|---|
 |dom|DOM 节点|`HTMLDivElement` **(必填)**|`-`|
 |focus|使选择框聚焦|`() => void` **(必填)**|`-`|
-|blur|使选择框聚焦|`() => void` **(必填)**|`-`|
+|blur|使选择框失焦|`() => void` **(必填)**|`-`|
 |hotkeyHandler|鼠标快捷操作的处理函数|`(event: KeyboardEvent) => void` **(必填)**|`-`|
 |activeOptionValue|处于悬浮态的选项的值|`OptionProps['value']` **(必填)**|`-`|
 |getOptionInfoList|获得选项信息的列表|`() => OptionInfo[]` **(必填)**|`-`|
