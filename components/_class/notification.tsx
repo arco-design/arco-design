@@ -5,7 +5,7 @@ function getId(noticeProps) {
   if (noticeProps.id) {
     return noticeProps.id;
   }
-  return `arco_notice_id_${Date.now()}`;
+  return `arco_notice_id_${Math.random().toFixed(10).slice(2)}`;
 }
 
 interface BaseNoticeState {
@@ -25,20 +25,24 @@ class BaseNotice extends Component<any, BaseNoticeState> {
   }
 
   add = (noticeProps) => {
-    const oldNotices = this.state.notices;
-    // update notice
-    if (noticeProps.id && ~oldNotices.findIndex((notice) => notice.id === noticeProps.id)) {
-      this.update(noticeProps);
-      return noticeProps.id;
-    }
     const id: string = getId(noticeProps);
-    const newNotices = oldNotices.concat({
-      ...noticeProps,
-      id,
-    });
-    this.setState({
-      notices: newNotices,
-      position: noticeProps.position,
+
+    this.setState((prevState) => {
+      const oldNotices = prevState.notices;
+
+      // update notice
+      if (noticeProps.id && ~oldNotices.findIndex((notice) => notice.id === noticeProps.id)) {
+        this.update(noticeProps);
+        return prevState;
+      }
+
+      return {
+        notices: oldNotices.concat({
+          ...noticeProps,
+          id,
+        }),
+        position: noticeProps.position,
+      };
     });
     return id;
   };
