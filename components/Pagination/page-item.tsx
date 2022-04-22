@@ -97,7 +97,7 @@ function Pager(props: PagerProps) {
       style={style}
       className={classnames}
       onClick={onClick}
-      aria-label={locale.Pagination.currentPage.replace('{0}', pageNum)}
+      aria-label={locale.Pagination.currentPage?.replace('{0}', pageNum)}
       {...ariaCurrentProps}
     >
       {itemRender ? itemRender(pageNum, 'page', pageNum) : pageNum}
@@ -141,8 +141,8 @@ export const JumpPager = (props: JumpPagerProps) => {
 
   const ariaLabel =
     jumpPage > 0
-      ? locale.Pagination.nextSomePages.replace('{0}', jumpPage)
-      : locale.Pagination.prevSomePages.replace('{0}', -jumpPage);
+      ? locale.Pagination.nextSomePages?.replace('{0}', jumpPage)
+      : locale.Pagination.prevSomePages?.replace('{0}', -jumpPage);
 
   return (
     <li style={pageItemStyle} className={cls} onClick={onClick} aria-label={ariaLabel}>
