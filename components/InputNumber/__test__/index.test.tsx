@@ -130,10 +130,14 @@ describe('InputNumber ', () => {
   });
 
   it('props precision correctly', () => {
-    const wrapper = mountInputNumber(
-      <InputNumber defaultValue={6} min={0} max={15} step={0.01} precision={3} />
-    );
-    expect(+wrapper.find('input').prop('value')).toBe(6);
+    let wrapper = mountInputNumber(<InputNumber defaultValue={6} step={0.01} precision={3} />);
+    expect(wrapper.find('input').prop('value')).toBe('6.000');
+
+    wrapper = mountInputNumber(<InputNumber defaultValue={6.1234} precision={3} />);
+    expect(wrapper.find('input').prop('value')).toBe('6.123');
+
+    wrapper = mountInputNumber(<InputNumber defaultValue={6.1235} precision={3} />);
+    expect(wrapper.find('input').prop('value')).toBe('6.124');
   });
 
   describe('formatter', () => {
