@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.32.1
+
+2022-04-22
+
+### 💎 功能优化
+
+- 优化 `Input.Textarea` 组件外部调用 `focus` 时光标位置。([#800](https://github.com/arco-design/arco-design/pull/800))
+- `InputNumber` 使用 `Math.round` 替换 `Number.prototype.toFixed` 计算小数点后保留的数字，避免末尾数字为 5 时可能出现的临界情况。([#796](https://github.com/arco-design/arco-design/pull/796))
+
+### 🐛 问题修复
+
+- 修复 `Mentions` 组件 `notFoundContent` 不生效的问题。([#801](https://github.com/arco-design/arco-design/pull/801))
+- 修复 `Notification` 组件在并发弹出多个提醒框时，只渲染出部分通知的 bug。([#797](https://github.com/arco-design/arco-design/pull/797))
+
+### 🆎 类型修正
+
+- 优化 `Table` 组件 `rowKey` 的 `TS` 定义为 `React.Key | ((record: T) => React.Key)` \([#799](https://github.com/arco-design/arco-design/pull/799))
+
 ## 2.32.0
 
 2022-04-15

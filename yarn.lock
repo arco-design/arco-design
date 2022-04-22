@@ -3446,13 +3446,12 @@ archy@^1.0.0:
   resolved "https://registry.npmjs.org/archy/-/archy-1.0.0.tgz"
   integrity sha1-+cjBN1fMHde8N5rHeyxipcKGjEA=
 
-arco-cli-dev-utils@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/arco-cli-dev-utils/-/arco-cli-dev-utils-1.1.0.tgz#1923518545b0c8436544a0daa00ab03602551c29"
-  integrity sha512-bhrXoi/zwUGZUYMUUQnSOXW9NKzucsx+WwqwJZ8geRwBe7jhmUFiP0X8wJ/CIgGt0xZqvxnu0SEwZ47XO+iA9w==
+arco-cli-dev-utils@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/arco-cli-dev-utils/-/arco-cli-dev-utils-1.2.0.tgz#18c825dc4b7f51add81351a652ac8b426838b148"
+  integrity sha512-Tb7sKmBW6NiCVPbxcawmaA/V7B1WunDNfTtiNkloO7TiPtxs01gTHmsum81CumHAVPZEzFiIJBDWLf1C3N0A5A==
   dependencies:
     chalk "^4.0.0"
-    cross-spawn "^7.0.3"
     fs-extra "^9.0.1"
     gulp "^4.0.2"
     gulp-if "^3.0.0"
@@ -3461,10 +3460,10 @@ arco-cli-dev-utils@^1.0.0:
     os-locale "^5.0.0"
     semver "^7.3.5"
 
-arco-markdown-loader@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/arco-markdown-loader/-/arco-markdown-loader-1.0.0.tgz#ab6d9e0e980973b5fdeabdd94b19432f366471a0"
-  integrity sha512-iZZP9j5n5HwG7vbPxa7K3zAKCMKU2oV7IM2udWpHv3AxjKFxB5FUM4WFd/zSLxi+oEFBDSDZwiZ5qPI4o3f1dw==
+arco-markdown-loader@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/arco-markdown-loader/-/arco-markdown-loader-1.0.2.tgz#42073c78036c8de7e0aa82eb0568c760f73fbdce"
+  integrity sha512-ojRPH1Jq1YHq0cBDqq/iTPrr14bPn+ko3Xls5mtBTvMslSDjq0S4VmnlCviobLvlIK1hPW+90vNl53HcC8hZQA==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-transform-typescript" "^7.9.6"
@@ -3494,14 +3493,14 @@ arco-scripts-babel-config@^1.0.0:
     "@babel/runtime" "^7.13.10"
     babel-plugin-import "^1.13.3"
 
-arco-scripts@^1.25.17:
-  version "1.25.17"
-  resolved "https://registry.yarnpkg.com/arco-scripts/-/arco-scripts-1.25.17.tgz#46a6b88e81d4c995f27b94965df5d2db4777ec06"
-  integrity sha512-DoCg0AUsiSxOjy2fifbIYD92PxmlMmIq2wxN9OKppkmFteh2uCUivV8tqaoQIVtBHYPjDW0pWOalckjrPJdb1w==
+arco-scripts@^1.27.1:
+  version "1.27.1"
+  resolved "https://registry.yarnpkg.com/arco-scripts/-/arco-scripts-1.27.1.tgz#7a5569a3cb39e23765ceb69d5757282f78755bec"
+  integrity sha512-dAk2KY+rHMHb1K9qa5zxwi3RtnbGM0/HtX9qnPp7F3MUmI1ViZRtQIdECDhVhQMypY718ycOg8Qq0uLzABznwA==
   dependencies:
     "@svgr/webpack" "^4.2.0"
-    arco-cli-dev-utils "^1.0.0"
-    arco-markdown-loader "^1.0.0"
+    arco-cli-dev-utils "^1.1.1"
+    arco-markdown-loader "^1.0.1"
     arco-scripts-babel-config "^1.0.0"
     axios "~0"
     babel-jest "^26.0.1"
@@ -3550,7 +3549,7 @@ arco-scripts@^1.25.17:
     style-loader "^1.2.1"
     terser-webpack-plugin "^2.3.2"
     through2 "^4.0.2"
-    ts-document "^0.3.0"
+    ts-document "~0"
     ts-jest "^26.0.0"
     ts-loader "^7.0.5"
     typescript "^4.0.0"
@@ -5503,7 +5502,7 @@ cross-env@^7.0.3:
   dependencies:
     cross-spawn "^7.0.1"
 
-cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
+cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
@@ -15217,10 +15216,10 @@ ts-dedent@^2.0.0, ts-dedent@^2.1.1:
   resolved "https://registry.npmjs.org/ts-dedent/-/ts-dedent-2.2.0.tgz"
   integrity sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==
 
-ts-document@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/ts-document/-/ts-document-0.3.0.tgz#2a34480ef755ef92fa40435ea0641f315f99aa31"
-  integrity sha512-Jysh9JCODspM1pmu8I5nMEXm20SczPrCFqHUeaILADdye6gy5LLmtedgPHeBVziy8XXSboFfWOuYktBKQNm1Og==
+ts-document@~0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/ts-document/-/ts-document-0.5.0.tgz#675fd8884e45795c7f4c5e3dcd574c341f93e6ad"
+  integrity sha512-dTI2Wf6GJymrLkPxp5ycUxrbPCp0JCv4TG0p82Xu5lPBrZnb7tys0qVNmkAvMz/bvrM9KBucaOE6EMYNBY4sYQ==
   dependencies:
     ts-morph "^11.0.0"
 
