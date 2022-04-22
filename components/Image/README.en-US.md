@@ -14,23 +14,24 @@ Show and preview pictures.
 
 ### Image
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|src|Image path|`string`|`-`|
-|width|Image width|`string \| number`|`-`|
-|height|Image height|`string \| number`|`-`|
-|title|Image title|`string`|`-`|
-|description|Image description|`string`|`-`|
-|actions|Extra operations|`ReactNode[]`|`-`|
-|footerPosition|The position of footer|`'inner' \| 'outer'`|`inner`|
-|simple|Whether to enable simple mode|`boolean`|`-`|
-|loader|Load transition effect, set `true` to show the default loading effect|`boolean \| ReactNode`|`-`|
-|loaderClassName|The style of the loader, will override the default transition effect|`string \| string[]`|`-`|
-|error|Content displayed in error state|`ReactNode`|`-`|
-|preview|Whether to enable preview|`boolean`|`true`|
-|previewProps|Preview options (all options are optional) [ImagePreviewProps](#imagepreview)|`PartialImagePreviewProps`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|style|Additional style|`CSSProperties`|`-`|-|
+|className|Additional css class|`string \| string[]`|`-`|-|
+|src|Image path|`string`|`-`|-|
+|width|Image width|`string \| number`|`-`|-|
+|height|Image height|`string \| number`|`-`|-|
+|title|Image title|`string`|`-`|-|
+|description|Image description|`string`|`-`|-|
+|actions|Extra operations|`ReactNode[]`|`-`|-|
+|footerPosition|The position of footer|`'inner' \| 'outer'`|`inner`|-|
+|simple|Whether to enable simple mode|`boolean`|`-`|-|
+|loader|Load transition effect, set `true` to show the default loading effect|`boolean \| ReactNode`|`-`|-|
+|loaderClassName|The style of the loader, will override the default transition effect|`string \| string[]`|`-`|-|
+|error|Content displayed in error state|`ReactNode`|`-`|-|
+|preview|Whether to enable preview|`boolean`|`true`|-|
+|previewProps|Preview options (all options are optional) [ImagePreviewProps](#imagepreview)|`PartialImagePreviewProps`|`-`|-|
+|index|Use `Image.PreviewGroup` to wrap the preview index. Generally, you don't need to specify it. When there is a problem with the preview order of multiple images, you can manually specify the preview order of the current `image`|`number`|`-`|2.23.0|
 
 ### Image.Preview
 
@@ -46,6 +47,7 @@ Show and preview pictures.
 |closable|Whether display close button|`boolean`|`true`|2.16.0|
 |actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|`ImagePreviewActionProps[]`|`-`|-|
 |actionsLayout|The layout of the control bar|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
+|scales|The zoom percentage in the current array is used when previewing zooms. If `100%` is not included, the `100%` scale will be automatically added in the most adjacent position.|`number[]`|`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
 |onVisibleChange|Callback when visibility changes|`(visible: boolean, preVisible: boolean) => void`|`-`|-|
 |getPopupContainer|Get popup's parent node|`() => HTMLElement`|`() => document.body`|2.16.0|
 |escToExit|Whether to enable pressing `ESC` to close the preview.|`boolean`|`true`|2.24.0|
@@ -72,6 +74,7 @@ Start from `v2.14.0`
 |closable|Whether display close button|`boolean`|`true`|2.16.0|
 |actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|`ImagePreviewActionProps[]`|`-`|-|
 |actionsLayout|The layout of the control bar|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
+|scales|The zoom percentage in the current array is used when previewing zooms. If `100%` is not included, the `100%` scale will be automatically added in the most adjacent position.|`number[]`|`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
 |escToExit|Whether to enable pressing `ESC` to close the preview.|`boolean`|`true`|2.24.0|
 
 ### ImagePreviewActionProps
