@@ -4,7 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import Input from '../Input';
 import Select from '../Select';
 import { MentionsProps } from './interface';
-import { Esc, Enter, ArrowUp, ArrowDown } from '../_util/keycode';
+import { ArrowDown, ArrowUp, Enter, Esc } from '../_util/keycode';
 import { getBeforeSelectionText, getLastMeasureIndex, isValidSearch } from './utils';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import useMergeProps from '../_util/hooks/useMergeProps';
@@ -37,6 +37,7 @@ function Mentions(baseProps: MentionsProps, ref) {
     getPopupContainer,
     onChange,
     onSearch,
+    notFoundContent,
     ...rest
   } = props;
 
@@ -161,7 +162,7 @@ function Mentions(baseProps: MentionsProps, ref) {
             ref={refSelect}
             options={options}
             inputValue={measureInfo.text}
-            notFoundContent={null}
+            notFoundContent={notFoundContent}
             triggerElement={
               <span className={`${prefixCls}-measure-trigger`}>{measureInfo.prefix}</span>
             }
