@@ -41,23 +41,23 @@ Display options in a multi-level cascading dropdown component.
 |onClear|Callback when click clear icon.|`(visible: boolean) => void`|`-`|-|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
-|style|Additional style|`CSSProperties`|`-`|-|
 |className|Additional css class|`string \| string[]`|`-`|-|
 |placeholder|Placeholder of element|`string`|`-`|-|
-|bordered|Whether to render border|`boolean`|`true`|-|
-|showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.|`boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean }`|`-`|-|
+|style|Additional style|`CSSProperties`|`-`|-|
+|prefix|Customize select suffix|`ReactNode`|`-`|2.11.0|
+|onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|`'mini' \| 'small' \| 'default' \| 'large'`|`-`|-|
 |disabled|Whether is disabled|`boolean`|`-`|-|
-|error|Error Style|`boolean`|`-`|-|
 |loading|Whether is in loading|`boolean`|`-`|-|
+|bordered|Whether to render border|`boolean`|`true`|-|
+|showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.|`boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean }`|`-`|-|
+|error|Error Style|`boolean`|`-`|-|
 |allowClear|Whether allow to clear selected options|`boolean`|`-`|-|
 |maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.|`number`|`-`|-|
-|prefix|Customize select suffix|`ReactNode`|`-`|2.11.0|
 |suffixIcon|Customize select suffix icon|`ReactNode`|`-`|-|
 |arrowIcon|Customize select arrow icon.|`ReactNode \| null`|`-`|-|
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|`ReactNode \| null`|`-`|-|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|`ReactNode`|`-`|2.26.0|
-|onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
 
 ## Methods
 

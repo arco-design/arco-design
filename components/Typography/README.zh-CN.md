@@ -50,7 +50,8 @@
 |underline|下划线样式|`boolean`|`-`|-|
 |delete|删除线样式|`boolean`|`-`|-|
 |code|代码块样式|`boolean`|`-`|-|
-|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?:
+|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### Typography.Text

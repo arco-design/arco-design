@@ -20,7 +20,7 @@
 |className|节点类名|`string \| string[]`|`-`|
 |reverse|是否倒序|`boolean`|`-`|
 |direction|时间轴方向|`'horizontal' \| 'vertical'`|`vertical`|
-|mode|时间轴的展示类型：时间轴在左侧，时间轴在右侧, 交替出现。|`'left' \| 'right' \| 'alternate'`|`left`|
+|mode|时间轴的展示类型：时间轴在左侧/右侧(垂直方向)、上方/下方（水平方向），或交替出现。|`'left' \| 'right' \| 'top' \| 'bottom' \| 'alternate'`|`left(vertical) \| top(horizontal)`|
 |pending|是否展示幽灵节点，设置为 true 时候只展示幽灵节点。传入ReactNode时，会作为节点内容展示。|`boolean \| ReactNode`|`-`|
 |pendingDot|可以传入 ReactNode 定制幽灵节点|`ReactNode`|`<Spin size={12} />`|
 |labelPosition|设置标签文本的位置|`'relative' \| 'same'`|`same`|

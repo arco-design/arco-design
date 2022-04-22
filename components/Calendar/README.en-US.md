@@ -25,7 +25,7 @@ Container for displaying data in calendar form.
 |dayStartOfWeek|The first day of the week starts on the day of the week, `0`-Sunday, `1`-Monday.|`0 \| 1`|`0`|
 |defaultMode|The default display mode of the calendar|`'day' \| 'week' \| 'month' \| 'year'`|`month`|
 |mode|The display mode of the calendar|`'day' \| 'week' \| 'month' \| 'year'`|`-`|
-|disabledDate|Function that specifies the dates that cannot be selected|`(current?: Dayjs) => boolean`|`-`|
+|disabledDate|Function that specifies the dates that cannot be selected|`(current: Dayjs) => boolean`|`-`|
 |onChange|Callback when date change.|`(date: Dayjs) => void`|`-`|
 |onPanelChange|Callback when the panel date changes.|`(date: Dayjs) => void`|`-`|
 |dateRender|Customize the date display, which will completely cover the date cell.|`(currentDate: Dayjs) => ReactNode`|`-`|

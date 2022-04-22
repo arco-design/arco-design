@@ -14,23 +14,24 @@
 
 ### Image
 
-|参数名|描述|类型|默认值|
-|---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|src|图片获取地址|`string`|`-`|
-|width|图片显示宽度|`string \| number`|`-`|
-|height|图片显示高度|`string \| number`|`-`|
-|title|标题|`string`|`-`|
-|description|描述|`string`|`-`|
-|actions|额外操作|`ReactNode[]`|`-`|
-|footerPosition|底部显示的位置|`'inner' \| 'outer'`|`inner`|
-|simple|是否开启简洁模式|`boolean`|`-`|
-|loader|加载过渡效果，为 true 显示默认加载效果|`boolean \| ReactNode`|`-`|
-|loaderClassName|loader 的样式，将覆盖默认过渡效果|`string \| string[]`|`-`|
-|error|error 状态下显示的内容|`ReactNode`|`-`|
-|preview|是否开启预览|`boolean`|`true`|
-|previewProps|预览的配置项 （所有选项都是可选的）[ImagePreviewProps](#imagepreview)|`PartialImagePreviewProps`|`-`|
+|参数名|描述|类型|默认值|版本|
+|---|---|---|---|---|
+|style|节点样式|`CSSProperties`|`-`|-|
+|className|节点类名|`string \| string[]`|`-`|-|
+|src|图片获取地址|`string`|`-`|-|
+|width|图片显示宽度|`string \| number`|`-`|-|
+|height|图片显示高度|`string \| number`|`-`|-|
+|title|标题|`string`|`-`|-|
+|description|描述|`string`|`-`|-|
+|actions|额外操作|`ReactNode[]`|`-`|-|
+|footerPosition|底部显示的位置|`'inner' \| 'outer'`|`inner`|-|
+|simple|是否开启简洁模式|`boolean`|`-`|-|
+|loader|加载过渡效果，为 true 显示默认加载效果|`boolean \| ReactNode`|`-`|-|
+|loaderClassName|loader 的样式，将覆盖默认过渡效果|`string \| string[]`|`-`|-|
+|error|error 状态下显示的内容|`ReactNode`|`-`|-|
+|preview|是否开启预览|`boolean`|`true`|-|
+|previewProps|预览的配置项 （所有选项都是可选的）[ImagePreviewProps](#imagepreview)|`PartialImagePreviewProps`|`-`|-|
+|index|使用 `Image.PreviewGroup`包裹时的预览索引，一般不用指定，当多图预览顺序出现问题时，可手动指定当前 `image` 的预览顺序|`number`|`-`|2.23.0|
 
 ### Image.Preview
 
@@ -46,6 +47,7 @@
 |closable|是否显示关闭按钮|`boolean`|`true`|2.16.0|
 |actions|额外操作，[ImagePreviewActionProps](#imagepreviewactionprops)|`ImagePreviewActionProps[]`|`-`|-|
 |actionsLayout|控制条的布局|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
+|scales|在预览缩放时会使用当前数组中的缩放百分比。若不包含 `100%`，则会自动添加在最相邻的位置。|`number[]`|`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
 |onVisibleChange|切换可见状态触发的事件|`(visible: boolean, preVisible: boolean) => void`|`-`|-|
 |getPopupContainer|弹出层挂载的节点|`() => HTMLElement`|`() => document.body`|2.16.0|
 |escToExit|按 `ESC` 键关闭预览|`boolean`|`true`|2.24.0|
@@ -72,6 +74,7 @@
 |closable|是否显示关闭按钮|`boolean`|`true`|2.16.0|
 |actions|额外操作，[ImagePreviewActionProps](#imagepreviewactionprops)|`ImagePreviewActionProps[]`|`-`|-|
 |actionsLayout|控制条的布局|`string[]`|`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
+|scales|在预览缩放时会使用当前数组中的缩放百分比。若不包含 `100%`，则会自动添加在最相邻的位置。|`number[]`|`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
 |escToExit|按 `ESC` 键关闭预览|`boolean`|`true`|2.24.0|
 
 ### ImagePreviewActionProps

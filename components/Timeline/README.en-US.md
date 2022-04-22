@@ -20,7 +20,7 @@ Display information content in chronological or reverse order.
 |className|Additional css class|`string \| string[]`|`-`|
 |reverse|Whether Reverse order|`boolean`|`-`|
 |direction|Timeline direction|`'horizontal' \| 'vertical'`|`vertical`|
-|mode|The display mode of Timeline|`'left' \| 'right' \| 'alternate'`|`left`|
+|mode|The display mode of Timeline|`'left' \| 'right' \| 'top' \| 'bottom' \| 'alternate'`|`left(vertical) \| top(horizontal)`|
 |pending|Whether to display ghost nodes. When set to true, only ghost nodes are displayed. When passed to ReactNode, it will be displayed as node content|`boolean \| ReactNode`|`-`|
 |pendingDot|You can pass in ReactNode to customize the ghost node|`ReactNode`|`<Spin size={12} />`|
 |labelPosition|Position of label text|`'relative' \| 'same'`|`same`|
