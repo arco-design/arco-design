@@ -56,9 +56,11 @@ const TextArea = (props: TextAreaProps, ref) => {
   // set element focus and caret position
   const onFocus = () => {
     if (textareaRef.current && textareaRef.current.focus) {
-      const caretPos = textareaRef.current.textContent.length;
-      // reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
-      textareaRef.current.setSelectionRange(caretPos, caretPos);
+      if (textareaRef.current.setSelectionRange) {
+        const caretPos = textareaRef.current.textContent.length;
+        // reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
+        textareaRef.current.setSelectionRange(caretPos, caretPos);
+      }
       textareaRef.current.focus();
     }
   };
