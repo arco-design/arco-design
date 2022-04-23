@@ -1,3 +1,11 @@
+## 2.32.1
+
+2022-04-22
+
+### 🆎 TypeScript
+
+- Modify the `TS` of the `Table` component `rowKey` to be `React.Key \| ((record: T) => React.Key)`. ([#799](https://github.com/arco-design/arco-design/pull/799))
+
 ## 2.31.1
 
 2022-03-28

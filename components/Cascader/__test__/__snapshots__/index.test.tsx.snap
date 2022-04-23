@@ -2,7 +2,12 @@
 
 exports[`ConfigProvider componentConfig.Cascader default 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-2"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
+  role="combobox"
   tabindex="0"
 >
   <div
@@ -17,9 +22,11 @@ exports[`ConfigProvider componentConfig.Cascader default 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-cascader-view-value arco-cascader-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-cascader-suffix"
     >
       <div
@@ -46,7 +53,12 @@ exports[`ConfigProvider componentConfig.Cascader default 1`] = `
 
 exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-3"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default global-default-class"
+  role="combobox"
   tabindex="0"
 >
   <div
@@ -61,9 +73,11 @@ exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-cascader-view-value arco-cascader-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-cascader-suffix"
     >
       <div
@@ -90,7 +104,12 @@ exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
 
 exports[`ConfigProvider componentConfig.Cascader set className globally and component set className itself. 1`] = `
 <div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-4"
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default component-class"
+  role="combobox"
   tabindex="0"
 >
   <div
@@ -105,9 +124,11 @@ exports[`ConfigProvider componentConfig.Cascader set className globally and comp
       value=""
     />
     <span
+      aria-hidden="true"
       class="arco-cascader-view-value arco-cascader-hidden"
     />
     <div
+      aria-hidden="true"
       class="arco-cascader-suffix"
     >
       <div

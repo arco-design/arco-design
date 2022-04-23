@@ -30,7 +30,7 @@
 |defaultValue|默认值|`number \| number[]`|`-`|-|
 |value|值|`number \| number[]`|`-`|-|
 |vertical|是否竖直方向|`boolean`|`-`|-|
-|showInput|是否展示输入框。`onlyMarkValue` 为 `true` 时输入框始终隐藏|`boolean`|`-`|-|
+|showInput|是否展示输入框，`onlyMarkValue` 为 `true` 时输入框始终隐藏。可接受 `InputNumber` 的 `props`。|`boolean \| InputNumberProps \| InputNumberProps[]`|`-`|`InputNumberProps` in `2.32.0`|
 |getTooltipContainer|设置 `tooltip` 所插入的父元素|`() => Element`|`-`|-|
 |formatTooltip|格式化 `tooltip` 内容|`(value: number) => string \| ReactNode`|`-`|-|
 |reverse|反向坐标轴|`boolean`|`-`|-|

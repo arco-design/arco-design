@@ -25,7 +25,7 @@
 |dayStartOfWeek|每周的第一天开始于周几，0 - 周日，1 - 周一。|`0 \| 1`|`0`|
 |defaultMode|选择日期的月日历和选择月份的年日历。|`'day' \| 'week' \| 'month' \| 'year'`|`month`|
 |mode|选择日期的月日历和选择月份的年日历，受控模式。|`'day' \| 'week' \| 'month' \| 'year'`|`-`|
-|disabledDate|不可选取的时间|`(current?: Dayjs) => boolean`|`-`|
+|disabledDate|不可选取的时间|`(current: Dayjs) => boolean`|`-`|
 |onChange|日期变化触发的回调。|`(date: Dayjs) => void`|`-`|
 |onPanelChange|面板日期发生改变触发的回调。|`(date: Dayjs) => void`|`-`|
 |dateRender|定制日期显示，会完全覆盖日期单元格。|`(currentDate: Dayjs) => ReactNode`|`-`|

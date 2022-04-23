@@ -59,6 +59,8 @@ function Option(props: OptionProps, ref) {
   if (_isMultipleMode) {
     return (
       <li
+        role="option"
+        aria-selected={isChecked}
         ref={ref}
         className={cs(
           `${prefixCls}-option-wrapper`,
@@ -70,6 +72,7 @@ function Option(props: OptionProps, ref) {
         )}
       >
         <Checkbox
+          aria-hidden="true"
           className={`${prefixCls}-checkbox`}
           checked={isChecked}
           disabled={disabled}
@@ -81,7 +84,7 @@ function Option(props: OptionProps, ref) {
   }
 
   return (
-    <li ref={ref} {...optionLabelProps}>
+    <li role="option" aria-selected={isChecked} ref={ref} {...optionLabelProps}>
       {childNode}
     </li>
   );

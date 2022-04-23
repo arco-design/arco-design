@@ -17,7 +17,7 @@
 |style|节点样式|`CSSProperties`|`-`|-|
 |className|节点类名|`string \| string[]`|`-`|-|
 |tableLayoutFixed|表格的 `table-layout` 属性设置为 `fixed`，设置为 `fixed` 后，表格的宽度不会被内容撑开超出 100%。|`boolean`|`-`|-|
-|rowKey|表格行 key 的取值字段|`string \| ((record: T) => string)`|`key`|-|
+|rowKey|表格行 key 的取值字段|`React.Key \| ((record: T) => React.Key)`|`key`|-|
 |columns|列描述数据对象的数组|`ColumnProps<T>[]`|`-`|-|
 |components|覆盖原生表格标签|`ComponentsProps`|`-`|-|
 |data|表格数据|`T[]`|`-`|-|

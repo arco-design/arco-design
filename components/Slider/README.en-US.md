@@ -30,7 +30,7 @@ A Slider component for displaying current value and intervals in range.
 |defaultValue|To set default value|`number \| number[]`|`-`|-|
 |value|To set value|`number \| number[]`|`-`|-|
 |vertical|Whether to display the slider in the vertical direction|`boolean`|`-`|-|
-|showInput|Whether to display the input box. If `onlyMarkValue` is `true`, the input box will always be hidden.|`boolean`|`-`|-|
+|showInput|Whether to display the input box. If `onlyMarkValue` is `true`, the input box will always be hidden. Accepts `props` for `InputNumber`.|`boolean \| InputNumberProps \| InputNumberProps[]`|`-`|`InputNumberProps` in `2.32.0`|
 |getTooltipContainer|The parent node which the `tooltip` will be rendered to|`() => Element`|`-`|-|
 |formatTooltip|Format the content of `tooltip`|`(value: number) => string \| ReactNode`|`-`|-|
 |reverse|Reverse axis|`boolean`|`-`|-|

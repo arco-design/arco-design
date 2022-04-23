@@ -30,6 +30,7 @@
 |showTotal|是否显示数据总数|`boolean \| ((total: number, range: number[]) => ReactNode)`|`-`|-|
 |sizeCanChange|是否可以改变每页条数|`boolean`|`true`|-|
 |sizeOptions|每页可以显示数据条数|`number[]`|`-`|-|
+|bufferSize|`current` 页与 `...` 之间的页码个数|`number`|`2`|2.32.0|
 |onChange|变化时的回调|`(pageNumber: number, pageSize: number) => void`|`-`|-|
 |onPageSizeChange|pageSize 变化时的回调|`(size: number, current: number) => void`|`-`|-|
 |pageSizeChangeResetCurrent|`pageSize` 改变的时候重置当前页码为 `1`|`boolean`|`true`|-|

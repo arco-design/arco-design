@@ -279,7 +279,7 @@ export type SelectHandle = {
    */
   focus: () => void;
   /**
-   * @zh 使选择框聚焦
+   * @zh 使选择框失焦
    * @en Blur Select
    */
   blur: () => void;

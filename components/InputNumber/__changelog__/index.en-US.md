@@ -1,3 +1,11 @@
+## 2.32.1
+
+2022-04-22
+
+### 💎 Enhancement
+
+- `InputNumber` uses `Math.round` instead of `Number.prototype.toFixed` to calculate the number after the decimal point, to avoid the critical situation that may occur when the final number is 5.([#796](https://github.com/arco-design/arco-design/pull/796))
+
 ## 2.29.2
 
 2022-02-25

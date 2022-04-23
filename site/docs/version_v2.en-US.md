@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.32.1
+
+2022-04-22
+
+### 💎 Enhancement
+
+- Optimize the cursor position when `focus` is called outside the `Input.Textarea` component.([#800](https://github.com/arco-design/arco-design/pull/800))
+- `InputNumber` uses `Math.round` instead of `Number.prototype.toFixed` to calculate the number after the decimal point, to avoid the critical situation that may occur when the final number is 5.([#796](https://github.com/arco-design/arco-design/pull/796))
+
+### 🐛 BugFix
+
+- Fixed `Mentions` component `notFoundContent` not taking effect.([#801](https://github.com/arco-design/arco-design/pull/801))
+- Fixed a bug where the `Notification` component only rendered some notifications when multiple reminder boxes popped up concurrently.([#797](https://github.com/arco-design/arco-design/pull/797))
+
+### 🆎 TypeScript
+
+- Modify the `TS` of the `Table` component `rowKey` to be `React.Key \| ((record: T) => React.Key)`. ([#799](https://github.com/arco-design/arco-design/pull/799))
+
 ## 2.32.0
 
 2022-04-15

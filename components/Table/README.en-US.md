@@ -17,7 +17,7 @@ Used for data collection, display, analysis, and processing.
 |style|Additional style|`CSSProperties`|`-`|-|
 |className|Additional css class|`string \| string[]`|`-`|-|
 |tableLayoutFixed|The table's `table-layout` property is set to `fixed`. After set to `fixed`, the width of the table will not be stretched by the content beyond 100%.|`boolean`|`-`|-|
-|rowKey|Table row key|`string \| ((record: T) => string)`|`key`|-|
+|rowKey|Table row key|`React.Key \| ((record: T) => React.Key)`|`key`|-|
 |columns|An array of column objects|`ColumnProps<T>[]`|`-`|-|
 |components|Override native table tag|`ComponentsProps`|`-`|-|
 |data|Data record array to be displayed|`T[]`|`-`|-|

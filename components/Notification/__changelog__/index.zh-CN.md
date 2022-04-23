@@ -1,3 +1,11 @@
+## 2.32.1
+
+2022-04-22
+
+### 🐛 问题修复
+
+- 修复 `Notification` 组件在并发弹出多个提醒框时，只渲染出部分通知的 bug。([#797](https://github.com/arco-design/arco-design/pull/797))
+
 ## 2.2.0
 
 2020-11-20

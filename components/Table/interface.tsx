@@ -30,7 +30,7 @@ export interface TableProps<T = any> {
    * @en Table row key
    * @defaultValue key
    */
-  rowKey?: string | ((record: T) => string);
+  rowKey?: React.Key | ((record: T) => React.Key);
   /**
    * @zh 列描述数据对象的数组
    * @en An array of column objects
@@ -593,7 +593,7 @@ export interface TheadProps<T = any> {
   rowSelection?: RowSelectionProps;
   columnTitle?: string | ReactNode;
   currentFilters?: Partial<Record<keyof T, string[]>>;
-  rowKey?: string | ((record: T) => string);
+  rowKey?: TableProps['rowKey'];
   components?: ComponentsProps;
   expandProps?: ExpandProps<T>;
   allSelectedRowKeys?: (string | number)[];

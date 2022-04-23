@@ -290,7 +290,7 @@ function Pagination(baseProps: PaginationProps, ref) {
   if (typeof showTotal === 'boolean' && showTotal) {
     totalElement = (
       <div className={`${prefixCls}-total-text`}>
-        {locale.Pagination.total.replace('{0}', total)}
+        {locale.Pagination.total?.replace('{0}', total)}
       </div>
     );
   }
