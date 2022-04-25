@@ -95,6 +95,16 @@ describe('DatePicker', () => {
     checkTime(component, '00', '00', '00');
   });
 
+  it('control mode (showTime={})', async () => {
+    const component = mount(<DatePicker showTime={{}} />);
+
+    component.simulate('click');
+
+    component.find('button.arco-picker-btn-select-time').simulate('click');
+
+    checkTime(component, '20', '32', '59');
+  });
+
   it('showTime', () => {
     jest.useFakeTimers();
 
