@@ -313,27 +313,27 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       style={style}
       ref={ref}
     >
-      <div
-        className={cs(`${prefixCls}-header-scroll`, {
-          [`${prefixCls}-header-overflow-scroll`]: isScroll,
-          [`${prefixCls}-header-overflow-dropdown`]: isDropdown,
-        })}
-      >
-        {isScroll && (
-          <TabNavIcon
-            iconPos="prev"
-            prefixCls={prefixCls}
-            currentOffset={headerOffset}
-            headerSize={headerSize}
-            headerWrapperSize={headerWrapperSize}
-            // getRef={(name) => getCalcArguments()[name]}
-            direction={direction}
-            align={align}
-            onChange={updateHeaderOffset}
-          />
-        )}
+      <ResizeObserver onResize={onWrapperResize}>
+        <div
+          className={cs(`${prefixCls}-header-scroll`, {
+            [`${prefixCls}-header-overflow-scroll`]: isScroll,
+            [`${prefixCls}-header-overflow-dropdown`]: isDropdown,
+          })}
+        >
+          {isScroll && (
+            <TabNavIcon
+              iconPos="prev"
+              prefixCls={prefixCls}
+              currentOffset={headerOffset}
+              headerSize={headerSize}
+              headerWrapperSize={headerWrapperSize}
+              // getRef={(name) => getCalcArguments()[name]}
+              direction={direction}
+              align={align}
+              onChange={updateHeaderOffset}
+            />
+          )}
 
-        <ResizeObserver onResize={onWrapperResize}>
           <div className={`${prefixCls}-header-wrapper`} ref={headerWrapperRef}>
             <ResizeObserver onResize={onHeaderResize}>
               <div
@@ -388,37 +388,37 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
             </ResizeObserver>
             {!isScrollable && renderAddIcon(isEditable)}
           </div>
-        </ResizeObserver>
-        {isScroll && (
-          <TabNavIcon
-            prefixCls={prefixCls}
-            currentOffset={headerOffset}
-            headerSize={headerSize}
-            headerWrapperSize={headerWrapperSize}
-            direction={direction}
-            align={align}
-            onChange={updateHeaderOffset}
-          />
-        )}
-        {isDropdown && (
-          <DropdownIcon
-            onClickTab={mergeProps.onClickTab}
-            paneChildren={paneChildren}
-            prefixCls={prefixCls}
-            currentOffset={headerOffset}
-            headerSize={headerSize}
-            headerWrapperSize={headerWrapperSize}
-            getTitleRef={(key) => titleRef.current[key]}
-            direction={direction}
-          />
-        )}
-        {((isEditable && isScrollable) || extra) && (
-          <div className={`${prefixCls}-header-extra`}>
-            {isScrollable && renderAddIcon(isEditable)}
-            {extra}
-          </div>
-        )}
-      </div>
+          {isScroll && (
+            <TabNavIcon
+              prefixCls={prefixCls}
+              currentOffset={headerOffset}
+              headerSize={headerSize}
+              headerWrapperSize={headerWrapperSize}
+              direction={direction}
+              align={align}
+              onChange={updateHeaderOffset}
+            />
+          )}
+          {isDropdown && (
+            <DropdownIcon
+              onClickTab={mergeProps.onClickTab}
+              paneChildren={paneChildren}
+              prefixCls={prefixCls}
+              currentOffset={headerOffset}
+              headerSize={headerSize}
+              headerWrapperSize={headerWrapperSize}
+              getTitleRef={(key) => titleRef.current[key]}
+              direction={direction}
+            />
+          )}
+          {((isEditable && isScrollable) || extra) && (
+            <div className={`${prefixCls}-header-extra`}>
+              {isScrollable && renderAddIcon(isEditable)}
+              {extra}
+            </div>
+          )}
+        </div>
+      </ResizeObserver>
     </div>
   );
 });
