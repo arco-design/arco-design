@@ -80,7 +80,7 @@ function Menu(baseProps: MenuProps, ref) {
   const mergedCollapse = siderCollapsed || collapse || inDropdown || mode === 'popButton';
   const theme = propTheme || menuContext.theme || DEFAULT_THEME;
 
-  const refInlineMenuKeys = useRef<string[]>([]);
+  const refSubMenuKeys = useRef<string[]>([]);
   const refPrevSubMenuKeys = useRef<string[]>([]);
   const forceUpdate = useForceUpdate();
 
@@ -113,16 +113,16 @@ function Menu(baseProps: MenuProps, ref) {
   // autoOpen 时，初次渲染展开所有的子菜单
   useEffect(() => {
     // 从 openKeys 中过滤已经不存在的 subMenuKey
-    let validOpenKeys = openKeys.filter((key) => refInlineMenuKeys.current.indexOf(key) !== -1);
+    let validOpenKeys = openKeys.filter((key) => refSubMenuKeys.current.indexOf(key) !== -1);
     if (autoOpen) {
-      const keysAdded = refInlineMenuKeys.current.filter(
+      const keysAdded = refSubMenuKeys.current.filter(
         (key) => refPrevSubMenuKeys.current.indexOf(key) === -1
       );
       validOpenKeys = openKeys.concat(keysAdded);
     }
     setOpenKeys(accordion ? validOpenKeys.slice(0, 1) : validOpenKeys);
-    refPrevSubMenuKeys.current = refInlineMenuKeys.current.slice();
-  }, [refInlineMenuKeys.current.toString()]);
+    refPrevSubMenuKeys.current = refSubMenuKeys.current.slice();
+  }, [refSubMenuKeys.current.toString()]);
 
   const mergedHasCollapseButton =
     mode !== 'horizontal' && mode !== 'popButton' && !inDropdown && hasCollapseButton;
@@ -211,9 +211,9 @@ function Menu(baseProps: MenuProps, ref) {
           clearHotkeyInfo,
           collectInlineMenuKeys: (key, unmount) => {
             if (unmount) {
-              refInlineMenuKeys.current = refInlineMenuKeys.current.filter((x) => x !== key);
+              refSubMenuKeys.current = refSubMenuKeys.current.filter((x) => x !== key);
             } else {
-              refInlineMenuKeys.current.push(key);
+              refSubMenuKeys.current.push(key);
             }
             forceUpdate();
           },

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import mountTest from '../../../tests/mountTest';
@@ -195,17 +195,38 @@ describe('Menu', () => {
   });
 
   it('collapse', () => {
-    const component = mount(
-      <Menu mode="vertical" collapse defaultSelectedKeys={['3']}>
-        <MenuItem key="1">设计指南</MenuItem>
-        <SubMenu key="layout" title={<span>布局组件</span>}>
-          <MenuItem key="11">栅格</MenuItem>
-          <MenuItem key="12">分隔符</MenuItem>
-          <MenuItem key="13">布局</MenuItem>
-        </SubMenu>
-      </Menu>
-    );
+    const Demo = () => {
+      const [collapse, setCollapse] = useState(false);
+      return (
+        <div>
+          <button id="collapse" onClick={() => setCollapse(!collapse)}>
+            Collapse
+          </button>
+          <Menu mode="vertical" collapse={collapse} defaultOpenKeys={['layout']}>
+            <MenuItem key="1">设计指南</MenuItem>
+            <SubMenu key="layout" title={<span>布局组件</span>}>
+              <MenuItem key="11">栅格</MenuItem>
+              <MenuItem key="12">分隔符</MenuItem>
+              <MenuItem key="13">布局</MenuItem>
+            </SubMenu>
+          </Menu>
+        </div>
+      );
+    };
+
+    const component = mount(<Demo />);
+
+    expect(
+      component.find('.arco-menu-inline-content').at(0).getDOMNode().getAttribute('style')
+    ).toBe('height: auto;');
+
+    component.find('#collapse').simulate('click');
     expect(component.find(Menu.Item).at(0).find(Tooltip).exists()).toBe(true);
+
+    component.find('#collapse').simulate('click');
+    expect(
+      component.find('.arco-menu-inline-content').at(0).getDOMNode().getAttribute('style')
+    ).toBe('height: auto;');
   });
 
   it('overflowItems should be pack up', () => {
