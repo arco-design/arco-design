@@ -1,3 +1,11 @@
+## 2.32.2
+
+2022-04-29
+
+### 🐛 BugFix
+
+- Fix the bug that the `Tooltip` is invalid when the `Typography` component is omitted from a single line([#822](https://github.com/arco-design/arco-design/pull/822))
+
 ## 2.32.0
 
 2022-04-15

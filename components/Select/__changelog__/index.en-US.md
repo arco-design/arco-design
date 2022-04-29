@@ -1,3 +1,11 @@
+## 2.32.2
+
+2022-04-29
+
+### 🐛 BugFix
+
+- Fixed an issue where the matched option text was not highlighted when the `Select` component searched.([#808](https://github.com/arco-design/arco-design/pull/808))
+
 ## 2.32.0
 
 2022-04-15

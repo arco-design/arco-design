@@ -1,3 +1,11 @@
+## 2.32.2
+
+2022-04-29
+
+### 🐛 BugFix
+
+- Fixed the bug that the expanded SubMenu was collapsed when the `collapse` property of the `Menu` component was changed.([#820](https://github.com/arco-design/arco-design/pull/820))
+
 ## 2.27.1
 
 2021-12-24

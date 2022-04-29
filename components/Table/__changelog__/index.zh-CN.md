@@ -1,3 +1,11 @@
+## 2.32.2
+
+2022-04-29
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件的外层 `ConfigProvider` 设置 `pagination` 后无法生效的bug。([#827](https://github.com/arco-design/arco-design/pull/827))
+
 ## 2.32.1
 
 2022-04-22

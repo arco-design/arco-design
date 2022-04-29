@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.32.2
+
+2022-04-29
+
+### 🐛 问题修复
+
+- 修复 `Switch` 组件无法触发 `Popconfirm` 弹出层显示的 bug。([#829](https://github.com/arco-design/arco-design/pull/829))
+- 修复 `Table` 组件的外层 `ConfigProvider` 设置 `pagination` 后无法生效的bug。([#827](https://github.com/arco-design/arco-design/pull/827))
+- 修复 `Form` 组件在 React 18 严格模式下，表单项受控失效的 bug。([#823](https://github.com/arco-design/arco-design/pull/823))
+- 修复 `Typography` 组件单行省略下 `Tooltip` 失效的bug([#822](https://github.com/arco-design/arco-design/pull/822))
+- 修复 `Menu` 组件 `collapse` 属性变化时，已经展开的子菜单被收起的 bug。([#820](https://github.com/arco-design/arco-design/pull/820))
+- 修复 `Tabs` 组件滚动按钮展示/消失临界计算错误的 bug。([#819](https://github.com/arco-design/arco-design/pull/819))
+- 修复 `DatePicker` 组件传入不包含 `defaultValue` 的 `showTime` 对象，导致时间面板报错的 bug。([#811](https://github.com/arco-design/arco-design/pull/811))
+- 修复 `Select` 组件搜索时匹配到的选项文本未高亮的问题。([#808](https://github.com/arco-design/arco-design/pull/808))
+
 ## 2.32.1
 
 2022-04-22
