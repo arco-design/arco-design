@@ -341,10 +341,10 @@
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
 
-"@arco-materials/site-footer@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.0.3.tgz#3049c3c7b727a24d19a2af365d6d4273cd7c5935"
-  integrity sha512-mEgIop73HsZAGf5hjCXLz+V1/8Enp8oF+QltuJ7qTNOqpl7cRLo7mZTbyntzpcsXSyAXWqbG6ZsymzGYjEiSbA==
+"@arco-materials/site-footer@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.0.4.tgz#3b33a7d56e7776913806bfb3ee4b305109ee8ec2"
+  integrity sha512-D8Vy+7Iqz8JBcl2ZNbxbsKi95WWDwIuMM4aCcTGw9TK4ARrjXtr32TCH1DhsHnC5Imdc+5ABfYinP8b/r7xh8w==
   dependencies:
     classnames "^2.2.6"
 
