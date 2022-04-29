@@ -68,6 +68,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   const [headerWrapperRef, headerWrapperSize, setHeaderWrapperSize] = useDomSize<HTMLDivElement>();
   const [headerRef, headerSize, setHeaderSize] = useDomSize<HTMLDivElement>();
+  const [scrollWrapperRef, scrollWrapperSize, setScrollWrapperSize] = useDomSize<HTMLDivElement>();
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -106,13 +107,24 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const isScrollable = useMemo<boolean>(() => {
     const res =
       mergeProps.direction === 'vertical'
-        ? headerWrapperSize.height < headerSize.height
-        : headerWrapperSize.width < headerSize.width;
+        ? scrollWrapperSize.height < headerSize.height
+        : scrollWrapperSize.width < headerSize.width;
 
     return res;
-  }, [mergeProps.direction, headerWrapperSize, headerSize]);
+  }, [mergeProps.direction, scrollWrapperSize, headerSize]);
+
+  const updateScrollWrapperSize = () => {
+    if (scrollWrapperRef.current) {
+      const dom = scrollWrapperRef.current;
+      setScrollWrapperSize({
+        height: (dom as HTMLElement).offsetHeight,
+        width: (dom as HTMLElement).offsetWidth,
+      });
+    }
+  };
 
   const onWrapperResize = throttleByRaf((entry) => {
+    updateScrollWrapperSize();
     const dom = entry[0] && entry[0].target;
     if (dom) {
       setHeaderWrapperSize({
@@ -122,6 +134,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       });
     }
   });
+
   const onHeaderResize = throttleByRaf((entry) => {
     const dom = entry[0] && entry[0].target;
     if (dom) {
@@ -318,6 +331,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           [`${prefixCls}-header-overflow-scroll`]: isScroll,
           [`${prefixCls}-header-overflow-dropdown`]: isDropdown,
         })}
+        ref={scrollWrapperRef}
       >
         {isScroll && (
           <TabNavIcon
@@ -332,7 +346,6 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
             onChange={updateHeaderOffset}
           />
         )}
-
         <ResizeObserver onResize={onWrapperResize}>
           <div className={`${prefixCls}-header-wrapper`} ref={headerWrapperRef}>
             <ResizeObserver onResize={onHeaderResize}>
