@@ -65,6 +65,7 @@ export default class Control<
       const innerMethods = store.getInnerMethods(true);
       this.removeRegisterField = innerMethods.registerField(this);
     }
+    this.isDestroyed = false;
   }
 
   componentWillUnmount() {
