@@ -183,7 +183,7 @@ function Select(baseProps: SelectProps, ref) {
 
   const scrollIntoView = (optionValue) => {
     const activeOption = optionInfoMap.get(optionValue);
-    if (refWrapper.current && activeOption && activeOption.child.props) {
+    if (refWrapper.current && activeOption?.child?.props) {
       refWrapper.current.scrollTo({ key: activeOption.child.props._key });
     }
   };
