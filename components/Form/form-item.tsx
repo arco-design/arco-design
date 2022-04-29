@@ -144,6 +144,8 @@ const Item = <
       : updateInnerFormItem;
 
   useEffect(() => {
+    isDestroyed.current = false;
+
     return () => {
       isDestroyed.current = true;
       setErrors(null);
