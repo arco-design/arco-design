@@ -46,6 +46,7 @@ function Switch(baseProps: SwitchProps, ref) {
     if (loading) {
       return;
     }
+    props.onClick && props.onClick(event);
     if (!('checked' in props)) {
       setChecked(!mergedChecked);
     }

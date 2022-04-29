@@ -4,6 +4,7 @@ import { act } from 'react-dom/test-utils';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Switch from '..';
+import Popconfirm from '../../Popconfirm';
 import IconCheck from '../../../icon/react-icon/IconCheck';
 import IconClose from '../../../icon/react-icon/IconClose';
 
@@ -70,5 +71,21 @@ describe('Switch', () => {
     });
 
     component.find('.arco-switch-dot .arco-switch-dot-icon svg').hasClass('arco-icon-check');
+  });
+
+  it('showTriger ', () => {
+    const component = mount(
+      <Popconfirm title="xxx">
+        <Switch />
+      </Popconfirm>
+    );
+
+    act(() => {
+      component.simulate('click');
+    });
+
+    component.update();
+
+    expect(component.find('.arco-popconfirm')).toHaveLength(1);
   });
 });
