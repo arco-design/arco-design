@@ -11,7 +11,6 @@
 }
 
 // tabs icon style
-
 .icon-hover(@tabs-prefix-cls, @tabs-size-icon, @tabs-size-icon-bg);
 
 .@{tabs-prefix-cls} {
@@ -641,6 +640,28 @@
       .@{tabs-prefix-cls}-header-extra {
         line-height: @@capsule-height;
         font-size: @@capsule-font-size;
+      }
+    }
+
+
+    &.@{tabs-prefix-cls}-header-nav-rounded {
+      @rounded-font-size: ~'tabs-size-@{size}-font-size_rounded';
+      @rounded-height: ~'tabs-size-@{size}-header-height_rounded';
+
+      .@{tabs-prefix-cls}-header-title {
+        font-size: @@rounded-font-size;
+        padding-top: .get-title-padding(
+          @@rounded-height,
+          @@rounded-font-size,
+          0
+        )
+        [];
+        padding-bottom: $padding-top;
+      }
+
+      .@{tabs-prefix-cls}-header-extra {
+        line-height: @@rounded-height;
+        font-size: @@rounded-font-size;
       }
     }
   }
