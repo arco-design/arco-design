@@ -161,6 +161,20 @@ Array [
         it-IT
       </span>
     </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="locale"
+        type="radio"
+        value="vi-VN"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        vi-VN
+      </span>
+    </label>
   </div>,
   <br />,
   <div
