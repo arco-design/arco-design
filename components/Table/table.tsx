@@ -62,6 +62,13 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     componentConfig,
   } = useContext(ConfigContext);
   const props = useMergeProps<TableProps<T>>(baseProps, defaultProps, componentConfig?.Table);
+  // priority: props.pagination > ConfigProvider.tablePagination > ConfigProvider.Table.pagination
+  const mergePagination = useMergeProps<PaginationProps>(
+    isObject(baseProps?.pagination) ? baseProps?.pagination : {},
+    isObject(componentConfig?.Table?.pagination) ? componentConfig?.Table?.pagination : {},
+    tablePagination || {}
+  );
+
   const {
     style,
     className,
@@ -107,7 +114,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const { currentFilters, currentSorter } = getDefaultFiltersAndSorter(columns);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [innerPageSize, setInnerPageSize] = useState<number>(
-    isObject(pagination) ? pagination.defaultPageSize || 10 : 10
+    mergePagination.pageSize || mergePagination.defaultPageSize || 10
   );
   const [filters, setFilters] = useState<FilterType<T>>(currentFilters);
   const [sorter, setSorter] = useState<SorterResult>(currentSorter);
@@ -319,8 +326,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const processedData = getProcessedData(innerSorter, innerFilters);
 
   function getPaginationProps(_processedData = processedData) {
-    const pageSize =
-      typeof pagination === 'object' && pagination.pageSize ? pagination.pageSize : innerPageSize;
+    const pageSize = mergePagination.pageSize || innerPageSize || 10;
     const paginationSize = size === 'middle' ? 'default' : size;
     let selectPopupPosition: 'top' | 'bottom' = 'top';
 
@@ -365,10 +371,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       };
     }
 
-    if (isObject(tablePagination)) {
+    if (isObject(mergePagination)) {
       paginationProps = {
-        ...tablePagination,
         ...paginationProps,
+        ...mergePagination,
       };
     }
 
