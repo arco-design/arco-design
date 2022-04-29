@@ -1,6 +1,6 @@
-import React from 'react';
+import { escapeRegExp } from 'lodash';
+import React, { cloneElement } from 'react';
 import { isArray } from './is';
-import cs from './classNames';
 
 export default function getHighlightText<T>({
   nodeList,
@@ -8,8 +8,8 @@ export default function getHighlightText<T>({
   highlightClassName,
 }: {
   nodeList: T;
-  pattern: string | RegExp;
-  highlightClassName: string | string[];
+  pattern: string;
+  highlightClassName: string;
 }): T {
   if (!pattern) {
     return nodeList;
@@ -17,41 +17,50 @@ export default function getHighlightText<T>({
 
   const transformNode = (node) => {
     if (node && node.props && typeof node.props.children === 'string') {
-      const { children } = node.props;
-      return React.cloneElement(node, {
-        children: (() => {
-          let indexOfNextRegTest = 0;
-          const result = [];
-
-          // 首先进行正则查询，将匹配项和匹配项之间的字符串依次拼接
-          children.replace(pattern, (...args) => {
-            const match = args[0];
-            const index = args[args.length - 2];
-
-            // 与上次匹配项之间的内容
-            if (index > indexOfNextRegTest) {
-              result.push(children.slice(indexOfNextRegTest, index));
-            }
-
-            // 当前匹配项
-            result.push(
-              <span key={index} className={cs(highlightClassName)}>
-                {match}
-              </span>
-            );
-            indexOfNextRegTest = index + match.length;
-          });
-
-          // 最后将剩余未被匹配的字符串拼接到最后
-          result.push(children.slice(indexOfNextRegTest));
-
-          return result;
-        })(),
-      });
+      return cloneElement(
+        node,
+        undefined,
+        <HighlightText
+          text={node.props.children}
+          keyword={pattern}
+          highlightClassName={highlightClassName}
+        />
+      );
     }
 
     return node;
   };
 
   return isArray(nodeList) ? nodeList.map((node) => transformNode(node)) : transformNode(nodeList);
+}
+
+function HighlightText({
+  text,
+  keyword,
+  highlightClassName,
+}: {
+  text: string;
+  keyword?: string;
+  highlightClassName?: string;
+}) {
+  if (!keyword) return <>{text}</>;
+
+  // 注意这里的括号，这里使用了带capture group功能的正则，来split字符串
+  // 从而在strArr中可以保留匹配文本
+  const re = new RegExp(`(${escapeRegExp(keyword)})`, 'i');
+  const strArr = text.split(re);
+
+  return (
+    <>
+      {strArr.map((item, index) =>
+        re.test(item) ? (
+          <span key={index} className={highlightClassName}>
+            {item}
+          </span>
+        ) : (
+          <span key={index}>{item}</span>
+        )
+      )}
+    </>
+  );
 }
