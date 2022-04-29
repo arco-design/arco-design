@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
@@ -24,7 +24,6 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     icons,
     onClickSubMenu,
     onClickMenuItem,
-    collectInlineMenuKeys,
   } = useContext(MenuContext);
 
   const baseClassName = `${prefixCls}-inline`;
@@ -49,13 +48,6 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     const id = `${menuId}-submenu-inline-${globalInlineSubMenuIndex}`;
     globalInlineSubMenuIndex++;
     return id;
-  }, []);
-
-  useEffect(() => {
-    collectInlineMenuKeys(props._key);
-    return () => {
-      collectInlineMenuKeys(props._key, true);
-    };
   }, []);
 
   // Should omit these properties in Menu.Item
