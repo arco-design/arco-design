@@ -46,6 +46,7 @@ export function measure(
     document.body.appendChild(mirrorElement);
   }
   const originStyle = window.getComputedStyle(originElement);
+  const originWhiteSpace = originStyle.whiteSpace || 'normal';
   const extraStyle: ExtraStyle = {
     height: 'auto',
     'min-height': 'auto',
@@ -56,6 +57,8 @@ export function measure(
     position: 'fixed',
     'z-index': '-200',
     'text-overflow': 'clip',
+    // The folding threshold cannot be calculated in the nowrap scene
+    'white-space': originWhiteSpace === 'nowrap' ? 'normal' : originWhiteSpace,
     overflow: 'auto',
   };
   if (!isNumber(originStyle.width)) {
