@@ -710,7 +710,7 @@ function Select(baseProps: SelectProps, ref) {
                 popupVisible={popupVisible}
                 // other
                 prefixCls={prefixCls}
-                ariaControls={instancePopupID}
+                ariaControls={props['aria-controls'] || instancePopupID}
                 isEmptyValue={isNoOptionSelected}
                 isMultiple={isMultipleMode}
                 onSort={tryUpdateSelectValue}
