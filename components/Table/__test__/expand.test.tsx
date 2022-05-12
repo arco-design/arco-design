@@ -103,7 +103,7 @@ describe('Table expand', () => {
     const component = mountTable<TestData>(
       <Table rowKey="name" defaultExpandAllRows columns={columns} data={treeData} />
     );
-    expect(component.find('table tbody tr')).toHaveLength(5);
+    expect(component.find('table tbody tr')).toHaveLength(6);
   });
 
   it('expandProps.rowExpandable', () => {

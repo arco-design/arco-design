@@ -79,6 +79,14 @@ export const treeData: TestTreeData[] = [
             age: 19,
             email: 'email1-1-1@123.com',
           },
+          {
+            key: '1-1-2',
+            name: 'Name1-1-2',
+            address: 'Address1-1-2',
+            sex: 'male',
+            age: 24,
+            email: 'email1-1-2@123.com',
+          },
         ],
       },
       {

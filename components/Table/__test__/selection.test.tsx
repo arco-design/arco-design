@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Table from '..';
 import { columns } from './common/columns';
-import { data, TestData } from './common/data';
+import { data, TestData, treeData } from './common/data';
 import { TableProps } from '../interface';
 
 function mountTable<T = any>(component: React.ReactElement) {
@@ -347,5 +347,129 @@ describe('Table selection', () => {
       sex: 'male',
     });
     expect(onSelect.mock.calls[2][2].map((a) => a.name)).toEqual(['Name2']);
+  });
+
+  it('rowSelection.checkConnected', () => {
+    const onChange = jest.fn();
+    const component = mountTable<TestData>(
+      <Table
+        columns={columns}
+        data={treeData}
+        rowSelection={{
+          type: 'checkbox',
+          checkConnected: true,
+          onChange,
+        }}
+        defaultExpandAllRows
+      />
+    );
+
+    // 1-1
+    component
+      .find('.arco-checkbox > input')
+      .at(2)
+      .simulate('change', {
+        target: {
+          checked: true,
+        },
+      });
+
+    function checkChecked(statusList) {
+      statusList.forEach((status, i) => {
+        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-checked')).toBe(
+          status
+        );
+      });
+    }
+
+    function checkIndeterminate(statusList) {
+      statusList.forEach((status, i) => {
+        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-indeterminate')).toBe(
+          status
+        );
+      });
+    }
+
+    expect(onChange.mock.calls[0][0]).toEqual(['1-1', '1-1-1', '1-1-2']);
+    checkChecked([false, false, true, true, true, false, false]);
+    checkIndeterminate([true, true, false, false, false, false, false]);
+
+    // 1-2
+    component
+      .find('.arco-checkbox > input')
+      .at(5)
+      .simulate('change', {
+        target: {
+          checked: true,
+        },
+      });
+
+    expect(onChange.mock.calls[1][0]).toEqual(['1-1', '1-1-1', '1-1-2', '1-2', '1']);
+    checkChecked([false, true, true, true, true, true, false]);
+    checkIndeterminate([true, false, false, false, false, false, false]);
+
+    // 1-1-1
+    component
+      .find('.arco-checkbox > input')
+      .at(3)
+      .simulate('change', {
+        target: {
+          checked: false,
+        },
+      });
+
+    expect(onChange.mock.calls[2][0]).toEqual(['1-1-2', '1-2']);
+    checkChecked([false, false, false, false, true, true, false]);
+    checkIndeterminate([true, true, true, false, false, false, false]);
+  });
+
+  it('rowSelection.checkConnected set selectedRowKeys', () => {
+    const onChange = jest.fn();
+    const component = mountTable<TestData>(
+      <Table
+        columns={columns}
+        data={treeData}
+        rowSelection={{
+          type: 'checkbox',
+          checkConnected: true,
+          onChange,
+          selectedRowKeys: ['1-1-1', '1-1-2'],
+        }}
+        defaultExpandAllRows
+      />
+    );
+
+    function checkChecked(statusList) {
+      statusList.forEach((status, i) => {
+        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-checked')).toBe(
+          status
+        );
+      });
+    }
+
+    function checkIndeterminate(statusList) {
+      statusList.forEach((status, i) => {
+        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-indeterminate')).toBe(
+          status
+        );
+      });
+    }
+
+    checkChecked([false, false, true, true, true, false, false]);
+    checkIndeterminate([true, true, false, false, false, false, false]);
+
+    // 1
+    component
+      .find('.arco-checkbox > input')
+      .at(1)
+      .simulate('change', {
+        target: {
+          checked: true,
+        },
+      });
+
+    expect(onChange.mock.calls[0][0]).toEqual(['1-1-1', '1-1-2', '1-1', '1', '1-2']);
+    checkChecked([false, false, true, true, true, false, false]);
+    checkIndeterminate([true, true, false, false, false, false, false]);
   });
 });
