@@ -28,6 +28,7 @@ function Tr<T>(props: TrType<T>, ref) {
     onCheckRadio,
     prefixCls,
     selectedRowKeys,
+    indeterminateKeys,
     rowClassName,
     onRow,
     rowSelection,
@@ -51,8 +52,11 @@ function Tr<T>(props: TrType<T>, ref) {
   const { ...rowProps } = onRow && onRow(record, index);
   const rowK = getRowKey(record);
   const usedSelectedRowKeys = type === 'radio' ? selectedRowKeys.slice(0, 1) : selectedRowKeys;
-  const checked = !!~usedSelectedRowKeys.indexOf(rowK);
   const trKey = rowK || index;
+
+  const checked = usedSelectedRowKeys.indexOf(rowK) > -1;
+  const indeterminate = indeterminateKeys.indexOf(rowK) > -1;
+
   const classNameTr = cs(
     `${prefixCls}-tr`,
     {
@@ -140,6 +144,7 @@ function Tr<T>(props: TrType<T>, ref) {
       value={rowK}
       onChange={(check) => onCheck(check, record)}
       checked={checked}
+      indeterminate={indeterminate}
       {...checkboxProps}
     />
   );

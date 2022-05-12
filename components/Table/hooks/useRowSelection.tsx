@@ -1,5 +1,5 @@
 import { useState, Key } from 'react';
-import { isChildrenNotEmpty } from '../utils';
+import { isChildrenNotEmpty, getSelectedKeys, getSelectedKeysByData } from '../utils';
 import { isArray } from '../../_util/is';
 import { TableProps, GetRowKeyType } from '../interface';
 
@@ -13,6 +13,7 @@ export default function useRowSelection<T>(
   getRowKey: GetRowKeyType<T>
 ): {
   selectedRowKeys: Key[];
+  indeterminateKeys: Key[];
   onCheckAll: (checked) => void;
   onCheck: (checked, record) => void;
   onCheckRadio: (key, record) => void;
@@ -20,13 +21,14 @@ export default function useRowSelection<T>(
   allSelectedRowKeys: Key[];
   flattenData: T[];
 } {
-  const { rowSelection, data: originData } = props;
-  const controlledSelectedRowKeys = rowSelection && rowSelection.selectedRowKeys;
-  const onSelectAll = rowSelection && rowSelection.onSelectAll;
-  const onSelect = rowSelection && rowSelection.onSelect;
-  const onChange = rowSelection && rowSelection.onChange;
-  const pureKeys = rowSelection && rowSelection.pureKeys; // TODO: remove
-  const preserveSelectedRowKeys = rowSelection && rowSelection.preserveSelectedRowKeys;
+  const { rowSelection, data: originData, childrenColumnName } = props;
+  const controlledSelectedRowKeys = rowSelection?.selectedRowKeys;
+  const onSelectAll = rowSelection?.onSelectAll;
+  const onSelect = rowSelection?.onSelect;
+  const onChange = rowSelection?.onChange;
+  const pureKeys = rowSelection?.pureKeys; // TODO: remove
+  const checkConnected = rowSelection?.checkConnected;
+  const preserveSelectedRowKeys = rowSelection?.preserveSelectedRowKeys;
 
   // 获取扁平化之后的 data
   function getMetaFromData() {
@@ -50,17 +52,21 @@ export default function useRowSelection<T>(
       }
     };
     travel(data);
-    const travelOrigin = (children) => {
+    const travelOrigin = (children, parent) => {
       if (isArray(children) && children.length) {
         children.forEach((record) => {
+          if (parent) {
+            record.parent = parent;
+          }
           flattenData.push(record);
           if (isChildrenNotEmpty(record, props.childrenColumnName)) {
-            travelOrigin(record[props.childrenColumnName]);
+            const _parent = { ...record };
+            travelOrigin(record[props.childrenColumnName], _parent);
           }
         });
       }
     };
-    travelOrigin(originData);
+    travelOrigin(originData, undefined);
 
     return {
       allSelectedRowKeys,
@@ -70,15 +76,24 @@ export default function useRowSelection<T>(
 
   const { allSelectedRowKeys, flattenData } = getMetaFromData();
 
-  let defaultSelectedRowKeys: Key[] = [];
+  const [selectedRowKeys, setSelectedRowKeys] = useState<Key[]>([]);
+  const [indeterminateKeys, setIndeterminateKeys] = useState<Key[]>([]);
 
-  if (rowSelection && rowSelection.selectedRowKeys) {
-    defaultSelectedRowKeys = rowSelection.selectedRowKeys;
-  }
+  const keys = getSelectedKeysByData(
+    flattenData,
+    getSet(controlledSelectedRowKeys || selectedRowKeys),
+    getRowKey,
+    childrenColumnName,
+    checkConnected
+  );
 
-  const [selectedRowKeys, setSelectedRowKeys] = useState<Key[]>(getSet(defaultSelectedRowKeys));
+  const mergedSelectedRowKeys =
+    checkConnected && !controlledSelectedRowKeys ? selectedRowKeys : keys.selectedRowKeys;
+  const mergedIndeterminateKeys =
+    checkConnected && !controlledSelectedRowKeys ? indeterminateKeys : keys.indeterminateKeys;
+
   const [selectedRows, setSelectedRows] = useState<T[]>(
-    pureKeys ? [] : getRowsFromKeys(selectedRowKeys)
+    pureKeys ? [] : getRowsFromKeys(mergedSelectedRowKeys)
   );
 
   function getRowsFromKeys(keys: Key[], plus?: boolean): T[] {
@@ -86,8 +101,6 @@ export default function useRowSelection<T>(
     const keyMap: Map<Key, T> = new Map(all.map((v) => [getRowKey(v), v]));
     return keys.map((r) => keyMap.get(r)).filter((a) => a);
   }
-
-  const mergedSelectedRowKeys = getSet(controlledSelectedRowKeys || selectedRowKeys);
 
   const flattenKeys = new Set<Key>(flattenData.map((d) => getRowKey(d)));
 
@@ -114,28 +127,28 @@ export default function useRowSelection<T>(
     }
     setSelectedRowKeys(newSelectedRowKeys);
     setSelectedRows(newSelectedRows);
+    setIndeterminateKeys([]);
     onChange && onChange(newSelectedRowKeys, newSelectedRows);
     onSelectAll && onSelectAll(checked, newSelectedRows);
   }
 
   function onCheck(checked, record) {
-    const rowK = getRowKey(record);
-    let newSelectedRowKeys: Key[] = [];
-    let newSelectedRows: T[] = [];
+    const { selectedRowKeys, indeterminateKeys: _indeterminateKeys } = getSelectedKeys(
+      record,
+      checked,
+      mergedSelectedRowKeys,
+      indeterminateKeys,
+      getRowKey,
+      childrenColumnName,
+      checkConnected
+    );
 
-    if (checked) {
-      newSelectedRowKeys = deleteUnExistKeys(mergedSelectedRowKeys.concat(rowK));
-      if (!pureKeys) {
-        newSelectedRows = getRowsFromKeys(newSelectedRowKeys, true);
-      }
-    } else {
-      newSelectedRowKeys = deleteUnExistKeys(mergedSelectedRowKeys.filter((key) => key !== rowK));
-      if (!pureKeys) {
-        newSelectedRows = getRowsFromKeys(newSelectedRowKeys, true);
-      }
-    }
+    const newSelectedRowKeys = deleteUnExistKeys(selectedRowKeys);
+    const newSelectedRows = getRowsFromKeys(newSelectedRowKeys, true);
+
     setSelectedRowKeys(newSelectedRowKeys);
     setSelectedRows(newSelectedRows);
+    setIndeterminateKeys(_indeterminateKeys);
     onSelect && onSelect(checked, record, newSelectedRows);
     onChange && onChange(newSelectedRowKeys, newSelectedRows);
   }
@@ -149,6 +162,7 @@ export default function useRowSelection<T>(
 
   return {
     selectedRowKeys: mergedSelectedRowKeys,
+    indeterminateKeys: mergedIndeterminateKeys,
     onCheckAll,
     onCheck,
     onCheckRadio,

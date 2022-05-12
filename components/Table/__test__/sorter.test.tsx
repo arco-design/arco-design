@@ -158,22 +158,25 @@ describe('Table sorter', () => {
     expect(getAge(1)).toBe('30');
     expect(getAge(2)).toBe('25');
     expect(getAge(3)).toBe('19');
-    expect(getAge(4)).toBe('29');
+    expect(getAge(4)).toBe('24');
+    expect(getAge(5)).toBe('29');
 
     sorter.simulate('click');
 
     expect(getAge(0)).toBe('30');
     expect(getAge(1)).toBe('29');
     expect(getAge(2)).toBe('25');
-    expect(getAge(3)).toBe('19');
-    expect(getAge(4)).toBe('20');
+    expect(getAge(3)).toBe('24');
+    expect(getAge(4)).toBe('19');
+    expect(getAge(5)).toBe('20');
 
     sorter.simulate('click');
 
     expect(getAge(0)).toBe('30');
     expect(getAge(1)).toBe('25');
     expect(getAge(2)).toBe('19');
-    expect(getAge(3)).toBe('29');
-    expect(getAge(4)).toBe('20');
+    expect(getAge(3)).toBe('24');
+    expect(getAge(4)).toBe('29');
+    expect(getAge(5)).toBe('20');
   });
 });

@@ -246,6 +246,12 @@ export interface RowSelectionProps<T = any> {
    */
   checkAll?: boolean;
   /**
+   * @zh 设置为 `true` 的时候父子选择会自动关联。
+   * @en When set to `true`, parent-child selections are automatically associated.
+   * @version 2.33.0
+   */
+  checkConnected?: boolean;
+  /**
    * @zh 多选模式下的复选框是否跨分页，只在非受控模式下生效
    * @en Whether the checkboxes in multi-select mode cross pages, only work in uncontrolled mode
    */
@@ -607,14 +613,15 @@ export type GetRowKeyType<T> = (record: T) => string;
 
 export interface TbodyProps<T = any> {
   data: T[];
-  selectedRowKeys: (string | number)[];
+  selectedRowKeys: React.Key[];
+  indeterminateKeys: React.Key[];
   components?: ComponentsProps;
-  expandedRowKeys: (string | number)[];
+  expandedRowKeys: React.Key[];
   columns: InternalColumnProps<T>[];
   noDataElement?: string | ReactNode;
   onCheck: (checked: boolean, record) => void;
   onCheckRadio: (key, record) => void;
-  onClickExpandBtn: (key: string | number) => void;
+  onClickExpandBtn: (key: React.Key) => void;
   pagination?: PaginationProps | boolean;
   scroll?: { x?: number | string | boolean; y?: number | string | boolean };
   expandedRowRender?: (record: T, index: number) => ReactNode;

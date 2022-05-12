@@ -60,6 +60,7 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |checkAll|多选模式下是否开启全选功能|`boolean`|`-`|-|
+|checkConnected|设置为 `true` 的时候父子选择会自动关联。|`boolean`|`-`|2.33.0|
 |checkCrossPage|多选模式下的复选框是否跨分页，只在非受控模式下生效|`boolean`|`-`|-|
 |columnTitle|自定义列表选择的标题|`string \| ReactNode`|`-`|-|
 |columnWidth|选择框列的宽度|`number`|`-`|-|

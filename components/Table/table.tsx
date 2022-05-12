@@ -541,6 +541,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   const {
     selectedRowKeys,
+    indeterminateKeys,
     onCheckAll,
     onCheck,
     onCheckRadio,
@@ -728,6 +729,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     <Tbody<T>
       {...props}
       selectedRowKeys={selectedRowKeys}
+      indeterminateKeys={indeterminateKeys}
       expandedRowKeys={expandedRowKeys}
       onCheck={onCheck}
       onCheckRadio={onCheckRadio}
