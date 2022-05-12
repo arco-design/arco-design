@@ -57,17 +57,19 @@ function Link(baseProps: AnchorLinkPropsWithChildren, ref) {
 
   return (
     <div className={classNames} style={style} ref={linkRef}>
-      <a
-        className={`${prefixCls}-title`}
-        title={isString(title) ? title : ''}
-        href={href}
-        data-href={href}
-        onClick={(e) => {
-          onLinkClick && onLinkClick(e, href);
-        }}
-      >
-        {title}
-      </a>
+      {title && (
+        <a
+          className={`${prefixCls}-title`}
+          title={isString(title) ? title : ''}
+          href={href}
+          data-href={href}
+          onClick={(e) => {
+            onLinkClick && onLinkClick(e, href);
+          }}
+        >
+          {title}
+        </a>
+      )}
       {children &&
         React.Children.map(children, (item) => {
           return (
