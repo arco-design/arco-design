@@ -246,11 +246,12 @@ export interface RowSelectionProps<T = any> {
    */
   checkAll?: boolean;
   /**
-   * @zh 设置为 `true` 的时候父子选择会自动关联。
-   * @en When set to `true`, parent-child selections are automatically associated.
+   * @zh 设置为 `false` 的时候父子选择会自动关联。
+   * @en When set to `false`, parent-child selections are automatically associated.
    * @version 2.33.0
+   * @defaultValue true
    */
-  checkConnected?: boolean;
+  checkStrictly?: boolean;
   /**
    * @zh 多选模式下的复选框是否跨分页，只在非受控模式下生效
    * @en Whether the checkboxes in multi-select mode cross pages, only work in uncontrolled mode

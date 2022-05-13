@@ -27,7 +27,8 @@ export default function useRowSelection<T>(
   const onSelect = rowSelection?.onSelect;
   const onChange = rowSelection?.onChange;
   const pureKeys = rowSelection?.pureKeys; // TODO: remove
-  const checkConnected = rowSelection?.checkConnected;
+  const checkConnected =
+    typeof rowSelection?.checkStrictly === 'boolean' ? !rowSelection.checkStrictly : false;
   const preserveSelectedRowKeys = rowSelection?.preserveSelectedRowKeys;
 
   // 获取扁平化之后的 data

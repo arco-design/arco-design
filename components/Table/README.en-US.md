@@ -60,7 +60,7 @@ The detailed parameters of `rowSelection`.
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |checkAll|Whether to show check all button|`boolean`|`-`|-|
-|checkConnected|When set to `true`, parent-child selections are automatically associated.|`boolean`|`-`|2.33.0|
+|checkStrictly|When set to `false`, parent-child selections are automatically associated.|`boolean`|`true`|2.33.0|
 |checkCrossPage|Whether the checkboxes in multi-select mode cross pages, only work in uncontrolled mode|`boolean`|`-`|-|
 |columnTitle|Customize the title of the selection column|`string \| ReactNode`|`-`|-|
 |columnWidth|The width of the selection column|`number`|`-`|-|

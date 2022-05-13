@@ -349,7 +349,7 @@ describe('Table selection', () => {
     expect(onSelect.mock.calls[2][2].map((a) => a.name)).toEqual(['Name2']);
   });
 
-  it('rowSelection.checkConnected', () => {
+  it('rowSelection.checkStrictly', () => {
     const onChange = jest.fn();
     const component = mountTable<TestData>(
       <Table
@@ -357,7 +357,7 @@ describe('Table selection', () => {
         data={treeData}
         rowSelection={{
           type: 'checkbox',
-          checkConnected: true,
+          checkStrictly: false,
           onChange,
         }}
         defaultExpandAllRows
@@ -431,7 +431,7 @@ describe('Table selection', () => {
         data={treeData}
         rowSelection={{
           type: 'checkbox',
-          checkConnected: true,
+          checkStrictly: false,
           onChange,
           selectedRowKeys: ['1-1-1', '1-1-2'],
         }}
