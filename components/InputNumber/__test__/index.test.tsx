@@ -29,6 +29,24 @@ describe('InputNumber ', () => {
     expect(+wrapper.find('.arco-input').prop('value')).toBe(0);
   });
 
+  it('init value with scientific notation', () => {
+    const wrapper = mountInputNumber(
+      <>
+        <InputNumber defaultValue={1.234e5} />
+        <InputNumber defaultValue={-2.34e-5} />
+        <InputNumber defaultValue={-0.000000000000000000001} />
+        <InputNumber defaultValue={10000000000000000000000} />
+        <InputNumber defaultValue={-10000000000000000000000} />
+      </>
+    );
+
+    expect(wrapper.find('.arco-input').at(0).prop('value')).toBe('123400');
+    expect(wrapper.find('.arco-input').at(1).prop('value')).toBe('-0.0000234');
+    expect(wrapper.find('.arco-input').at(2).prop('value')).toBe('-0.000000000000000000001');
+    expect(wrapper.find('.arco-input').at(3).prop('value')).toBe('10000000000000000000000');
+    expect(wrapper.find('.arco-input').at(4).prop('value')).toBe('-10000000000000000000000');
+  });
+
   it('init value with empty string correctly', () => {
     const wrapper = mountInputNumber(<InputNumber value="" />);
     expect(wrapper.find('.arco-input').prop('value')).toBe('');
