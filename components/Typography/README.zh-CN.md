@@ -31,8 +31,8 @@
 |underline|下划线样式|`boolean`|`-`|-|
 |delete|删除线样式|`boolean`|`-`|-|
 |code|代码块样式|`boolean`|`-`|-|
-|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
 |copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### Typography.Paragraph
@@ -50,8 +50,8 @@
 |underline|下划线样式|`boolean`|`-`|-|
 |delete|删除线样式|`boolean`|`-`|-|
 |code|代码块样式|`boolean`|`-`|-|
-|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
 |copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### Typography.Text
@@ -67,8 +67,8 @@
 |underline|下划线样式|`boolean`|`-`|-|
 |delete|删除线样式|`boolean`|`-`|-|
 |code|代码块样式|`boolean`|`-`|-|
-|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
 |copyable|开启复制功能|`\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}`|`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|`\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}`|`-`|`onStart` params `e` in `2.31.0`|
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|`boolean \| EllipsisConfig`|`-`|-|
 
 ### EllipsisConfig
@@ -77,10 +77,12 @@
 |---|---|---|---|---|
 |cssEllipsis|自动溢出省略（只支持字符串），在简单的单行省略情况下，会默认使用 css 处理省略，避免复杂计算。|`boolean`|`true`|-|
 |rows|显示省略的行数|`number`|`1`|-|
-|expandable|是否支持展开/折叠|`boolean`|`-`|-|
+|expandable|显示展开/折叠按钮|`boolean`|`-`|-|
 |ellipsisStr|省略号|`string`|`...`|-|
 |suffix|后缀|`string`|`-`|-|
 |expandNodes|配置 折叠 / 展开 的元素|`ReactNode[]`|`-`|-|
 |onEllipsis|在省略发生改变的时候触发，通常是窗口resize情况会触发。|`(isEllipsis: boolean) => void`|`-`|-|
 |onExpand|在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。|`(isExpand: boolean, e) => void`|`-`|e in `2.27.0`|
 |showTooltip|配置省略时的弹出框|`boolean \| { type?: 'tooltip' \| 'popover'; props?: Record<string, any> }`|`-`|-|
+|expanded|是否展开|`boolean`|`-`|`2.33.0`|
+|defaultExpanded|默认展开|`boolean`|`false`|`2.33.0`|

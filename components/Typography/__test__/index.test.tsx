@@ -265,4 +265,34 @@ describe('Typography', () => {
     wrapper.update();
     expect(wrapper.find('.arco-typography').hasClass('arco-typography-simple-ellipsis')).toBe(true);
   });
+
+  it('ellipsis controlled scene', async () => {
+    const wrapper = mount(<Paragraph ellipsis={{ rows: 2, expanded: true }}>{mockText}</Paragraph>);
+    await sleep(200);
+    wrapper.update();
+    expect(wrapper.text().length).toEqual(mockText.length);
+
+    act(() => {
+      wrapper.setProps({ ellipsis: { rows: 2, expanded: false } });
+      wrapper.update();
+    });
+    await sleep(200);
+    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
+  });
+
+  it('support defaultEllipsis scene', async () => {
+    const wrapper = mount(
+      <Paragraph ellipsis={{ rows: 2, defaultExpanded: false }}>{mockText}</Paragraph>
+    );
+    await sleep(200);
+    wrapper.update();
+    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
+
+    act(() => {
+      wrapper.setProps({ ellipsis: { rows: 2, expanded: true, defautExpanded: false } });
+      wrapper.update();
+    });
+    await sleep(200);
+    expect(wrapper.text().length).toEqual(mockText.length);
+  });
 });
