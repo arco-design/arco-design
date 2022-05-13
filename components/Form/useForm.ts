@@ -8,6 +8,7 @@ export function getFormInstance<
   FieldKey extends KeyType = keyof FormData
 >(): FormInstance<FormData, FieldValue, FieldKey> {
   const store = new Store<FormData, FieldValue, FieldKey>();
+
   return {
     getFieldsValue: store.getFieldsValue,
     getFieldValue: store.getFieldValue,
@@ -28,6 +29,7 @@ export function getFormInstance<
       if (inner) {
         [
           'registerField',
+          'registerWatcher',
           'innerSetInitialValues',
           'innerSetInitialValue',
           'innerSetCallbacks',

@@ -6,6 +6,8 @@ import FormControl from './control';
 import FormList from './form-list';
 import FormProvider from './form-provider';
 import useForm from './useForm';
+import useWatch from './hooks/useWatch';
+import useFormContext from './hooks/useContext';
 
 export { FormInstance, FormProps, FormItemProps, FormProviderProps };
 
@@ -17,6 +19,8 @@ export interface FormComponent extends RefForm {
   Control: typeof FormControl;
   Provider: typeof FormProvider;
   useForm: typeof useForm;
+  useFormContext: typeof useFormContext;
+  useWatch: typeof useWatch;
 }
 
 const FormComp: FormComponent = Form as FormComponent;
@@ -29,5 +33,9 @@ FormComp.List = FormList;
 FormComp.Control = FormControl;
 
 FormComp.useForm = useForm;
+
+FormComp.useFormContext = useFormContext;
+
+FormComp.useWatch = useWatch;
 
 export default FormComp;

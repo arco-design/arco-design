@@ -45,6 +45,8 @@ class Store<
 > {
   private registerFields: Control<FormData, FieldValue, FieldKey>[] = [];
 
+  private registerWatchers: (() => void)[] = [];
+
   // 和formControl 的 touched属性不一样。 只要被改过的字段，这里就会存储。并且不会跟随formControl被卸载而清除。
   // reset 的时候清除
   private touchedFields: { [key: string]: unknown } = {};
@@ -62,6 +64,10 @@ class Store<
       const { onValuesChange } = this.callbacks;
       onValuesChange && onValuesChange(value, this.getFields());
     }
+
+    this.registerWatchers.forEach((item) => {
+      item();
+    });
   }
 
   private triggerTouchChange(value: Partial<FormData>) {
@@ -77,6 +83,14 @@ class Store<
     }
   ) => {
     this.callbacks = values;
+  };
+
+  public registerWatcher = (item) => {
+    this.registerWatchers.push(item);
+
+    return () => {
+      this.registerWatchers = this.registerWatchers.filter((x) => x !== item);
+    };
   };
 
   // 收集所有control字段，并在组件卸载时移除

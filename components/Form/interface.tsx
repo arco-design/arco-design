@@ -500,6 +500,7 @@ export type InnerMethodsReturnType<
 > = Pick<
   Store<FormData, FieldValue, FieldKey>,
   | 'registerField'
+  | 'registerWatcher'
   | 'innerSetInitialValues'
   | 'innerSetInitialValue'
   | 'innerSetCallbacks'
