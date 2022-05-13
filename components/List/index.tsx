@@ -147,7 +147,9 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
       const { scrollTop, scrollHeight, clientHeight } = refScrollElement.current;
       const scrollBottom = scrollHeight - (scrollTop + clientHeight);
 
-      if (scrollBottom <= offsetBottom) {
+      // https://github.com/arco-design/arco-design/issues/850
+      // offsetBottom + 1: scrollTop is a non-rounded number, while scrollHeight and clientHeight are both rounded
+      if (Math.abs(scrollBottom) < offsetBottom + 1) {
         if (refCanTriggerReachBottom.current) {
           setPageCurrentForScroll(pageCurrentForScroll + 1);
           onReachBottom && onReachBottom(pageCurrentForScroll + 1);
