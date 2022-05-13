@@ -55,10 +55,11 @@ const uploadRequest: UploadRequest = function (options: RequestOptions) {
     onSuccess(getBody(xhr));
   };
   const formData = new FormData();
-  formData.append(name || 'file', file);
   if (data) {
     Object.keys(data).map((key) => formData.append(key, data[key]));
   }
+  formData.append(name || 'file', file);
+
   xhr.open('post', action, true);
   if (withCredentials && 'withCredentials' in xhr) {
     xhr.withCredentials = true;
