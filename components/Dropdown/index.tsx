@@ -45,8 +45,8 @@ function Dropdown(baseProps: DropdownProps, _) {
 
   const changePopupVisible = (visible: boolean) => {
     setPopupVisible(visible);
-    onVisibleChange?.(visible);
-    triggerProps?.onVisibleChange?.(visible);
+    onVisibleChange && onVisibleChange(visible);
+    triggerProps && triggerProps.onVisibleChange && triggerProps.onVisibleChange(visible);
   };
 
   const handleVisibleChange = (visible: boolean) => {
@@ -71,17 +71,15 @@ function Dropdown(baseProps: DropdownProps, _) {
               returnValueOfOnClickMenuItem = content.props.onClickMenuItem(key, event);
             }
 
-            const triggerRootElement = triggerRef.current && triggerRef.current.getRootElement();
+            // Set focus to avoid onblur
+            const child = triggerRef.current && triggerRef.current.getRootElement();
+            child && child.focus && child.focus();
 
             // Trigger onVisibleChange. Outer component can determine whether to change the state based on the current visibility value.
             if (returnValueOfOnClickMenuItem instanceof Promise) {
-              returnValueOfOnClickMenuItem.finally(() => {
-                changePopupVisible(false);
-                triggerRootElement?.focus();
-              });
+              returnValueOfOnClickMenuItem.finally(() => changePopupVisible(false));
             } else if (returnValueOfOnClickMenuItem !== false) {
               changePopupVisible(false);
-              triggerRootElement?.focus();
             }
           },
         })

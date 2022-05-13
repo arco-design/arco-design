@@ -20,7 +20,7 @@ import { RefInputType } from '../Input/interface';
 import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
-import { toFixed } from './utils';
+import { toFixed, toSafeString } from './utils';
 
 NP.enableBoundaryChecking(false);
 
@@ -205,7 +205,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     } else if (value == null) {
       _value = '';
     } else {
-      _value = value.toString();
+      _value = toSafeString(value);
     }
 
     return formatter ? formatter(_value) : _value;
