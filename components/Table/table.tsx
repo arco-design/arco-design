@@ -670,7 +670,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       const scrollBarWidth = getScrollBarWidth(scrollWrapper);
       if (scrollBarWidth) {
         scrollbarChanged.current = true;
-        wrapper.style.overflowY = 'scroll';
+        if (wrapper) {
+          wrapper.style.overflowY = 'scroll';
+        }
 
         if (refTableFoot.current) {
           refTableFoot.current.style.overflowY = 'scroll';
