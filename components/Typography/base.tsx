@@ -19,6 +19,7 @@ import { raf, caf } from '../_util/raf';
 import omit from '../_util/omit';
 import useUpdateEffect from '../_util/hooks/useUpdate';
 import mergedToString from '../_util/mergedToString';
+import useMergeValue from '../_util/hooks/useMergeValue';
 
 type BaseProps = PropsWithChildren<
   TypographyParagraphProps & TypographyTitleProps & TypographyTextProps
@@ -87,7 +88,6 @@ function Base(props: BaseProps) {
 
   const [editing, setEditing] = useState<boolean>(false);
   const [isEllipsis, setEllipsis] = useState<boolean>(false);
-  const [expanding, setExpanding] = useState<boolean>(false);
   const [ellipsisText, setEllipsisText] = useState<string>('');
   const [measuring, setMeasuring] = useState(false);
 
@@ -111,8 +111,11 @@ function Base(props: BaseProps) {
     if (editable || copyable) return;
     return rows === 1;
   }
-
   const simpleEllipsis = canSimpleEllipsis();
+  const [expanding, setExpanding] = useMergeValue<boolean>(false, {
+    defaultValue: ellipsisConfig.defaultExpanded,
+    value: ellipsisConfig.expanded,
+  });
 
   function renderOperations(forceShowExpand?: boolean) {
     return (
@@ -277,7 +280,7 @@ function Base(props: BaseProps) {
       <TextComponent
         className={cs(
           prefixCls,
-          { [`${prefixCls}-simple-ellipsis`]: simpleEllipsis },
+          { [`${prefixCls}-simple-ellipsis`]: simpleEllipsis && !expanding },
           componentClassName,
           className
         )}
