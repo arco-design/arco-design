@@ -14,7 +14,7 @@ describe('Statistic', () => {
     const component = mount(<Statistic groupSeparator value={100000} />);
 
     expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      ' 100,000'
+      '100,000'
     );
 
     act(() => {
@@ -22,7 +22,7 @@ describe('Statistic', () => {
     });
 
     expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      ' 200,000'
+      '200,000'
     );
   });
 
@@ -30,10 +30,10 @@ describe('Statistic', () => {
     const component = mount(<Statistic title="Title" value={50} prefix="Prefix" suffix="%" />);
 
     expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      'Prefix 50'
+      'Prefix50'
     );
     expect(component.find('.arco-statistic-value > .arco-statistic-value-decimal').text()).toBe(
-      ' %'
+      '%'
     );
   });
 
@@ -43,10 +43,10 @@ describe('Statistic', () => {
     );
 
     expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      ' 1,000,000'
+      '1,000,000'
     );
     expect(component.find('.arco-statistic-value > .arco-statistic-value-decimal').text()).toBe(
-      '.00 $'
+      '.00$'
     );
   });
 
@@ -54,7 +54,7 @@ describe('Statistic', () => {
     const component = mount(<Statistic value={1554869813383} format="YYYY/MM/DD HH:mm:ss" />);
 
     expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      ' 2019/04/10 12:16:53'
+      '2019/04/10 12:16:53'
     );
   });
 

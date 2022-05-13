@@ -126,13 +126,14 @@ function Statistic(baseProps: StatisticProps, ref) {
               value
             ) : (
               <span className={`${prefixCls}-value-int`}>
-                <span className={`${prefixCls}-value-prefix`}>{prefix}</span> {int}
+                <span className={`${prefixCls}-value-prefix`}>{prefix}</span>
+                {int}
               </span>
             )}
 
             {decimal !== undefined || suffix ? (
               <span className={`${prefixCls}-value-decimal`}>
-                {isNumber(Number(value)) && decimal !== undefined && `.${decimal}`}{' '}
+                {isNumber(Number(value)) && decimal !== undefined && `.${decimal}`}
                 {suffix && <span className={`${prefixCls}-value-suffix`}>{suffix}</span>}
               </span>
             ) : null}
