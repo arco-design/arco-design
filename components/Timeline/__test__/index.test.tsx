@@ -8,6 +8,7 @@ const TimelineItem = Timeline.Item;
 
 mountTest(Timeline);
 componentConfigTest(Timeline, 'Timeline');
+componentConfigTest(Timeline.Item, 'Timeline.Item');
 
 let wrapper = null;
 
