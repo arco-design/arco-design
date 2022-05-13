@@ -1656,14 +1656,14 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
       class="arco-space-item"
       style="margin-right:8px"
     >
-      checkConnected:
+      checkStrictly:
     </div>
     <div
       class="arco-space-item"
     >
       <button
-        aria-checked="false"
-        class="arco-switch arco-switch-type-circle"
+        aria-checked="true"
+        class="arco-switch arco-switch-type-circle arco-switch-checked"
         role="switch"
         type="button"
       >

@@ -108,12 +108,12 @@ const data = [
 ];
 
 function Demo() {
-  const [checkConnected, setCheckConnected] = useState(false);
+  const [checkStrictly, setCheckStrictly] = useState(true);
 
   return <div>
     <Space style={{ marginBottom: 16 }}>
-      checkConnected:
-      <Switch onChange={(checked) => setCheckConnected(checked)} checked={checkConnected} />
+      checkStrictly:
+      <Switch onChange={(checked) => setCheckStrictly(checked)} checked={checkStrictly} />
     </Space>
     <Table
       rowSelection={{
@@ -121,7 +121,7 @@ function Demo() {
         onChange: (selectedRowKeys, selectedRows) => {
           console.log(selectedRowKeys, selectedRows);
         },
-        checkConnected,
+        checkStrictly,
       }}
       columns={columns}
       data={data}
