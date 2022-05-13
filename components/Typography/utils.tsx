@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { isNumber } from '../_util/is';
 import mergedToString from '../_util/mergedToString';
 
 interface ExtraStyle {
@@ -61,9 +60,12 @@ export function measure(
     'white-space': originWhiteSpace === 'nowrap' ? 'normal' : originWhiteSpace,
     overflow: 'auto',
   };
-  if (!isNumber(originStyle.width)) {
+  // 行内元素影响折叠计算，需要手动指定宽度；
+  if (originStyle.display === 'inline') {
     const rect = originElement.getBoundingClientRect();
     extraStyle.width = `${rect.width}px`;
+    extraStyle.display = 'block';
+    extraStyle['box-sizing'] = 'border-box';
   }
   const styleString = styleToString(originStyle, extraStyle);
   mirrorElement.setAttribute('style', styleString);
