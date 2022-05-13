@@ -55,7 +55,7 @@ import { SwitchProps } from '../Switch/interface';
 import { TableProps } from '../Table/interface';
 import { TabsProps } from '../Tabs/interface';
 import { TagProps } from '../Tag/interface';
-import { TimelineProps } from '../Timeline/interface';
+import { TimelineProps, TimelineItemProps } from '../Timeline/interface';
 import { PickerProps as TimePickerCommonProps } from '../TimePicker/interface';
 import { TooltipProps } from '../Tooltip/interface';
 import { TransferProps } from '../Transfer/interface';
@@ -140,6 +140,7 @@ export type ComponentConfig = {
   TriggerProps?: TriggerProps;
   Tag?: TagProps;
   Timeline?: TimelineProps;
+  'Timeline.Item'?: TimelineItemProps;
   TimePicker?: TimePickerCommonProps;
   Tooltip?: TooltipProps;
   Transfer?: TransferProps;
