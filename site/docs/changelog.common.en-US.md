@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- Internationalization support set Vietnamese.([#824](https://github.com/arco-design/arco-design/pull/824))
+
 ## 2.29.0
 
 2022-02-11

@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🐛 问题修复
+
+- 修复 `List` 组件 `onReachBottom` 偶现无法触发的 bug。([#854](https://github.com/arco-design/arco-design/pull/854))
+
 ## 2.32.0
 
 2022-04-15

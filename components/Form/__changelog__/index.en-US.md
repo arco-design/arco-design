@@ -1,3 +1,12 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- The `Form` component supports `Form.useWatch`.([#864](https://github.com/arco-design/arco-design/pull/864))
+- The `Form` component supports `Form.useFormContext`.([#864](https://github.com/arco-design/arco-design/pull/864))
+
 ## 2.32.2
 
 2022-04-29

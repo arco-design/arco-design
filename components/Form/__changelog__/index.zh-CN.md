@@ -1,3 +1,12 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 功能升级
+
+- `Form` 组件支持 `Form.useWatch`。([#864](https://github.com/arco-design/arco-design/pull/864))
+- `Form` 组件支持 `Form.useFormContext`。([#864](https://github.com/arco-design/arco-design/pull/864))
+
 ## 2.32.2
 
 2022-04-29

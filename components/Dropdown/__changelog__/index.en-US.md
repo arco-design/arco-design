@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🐛 BugFix
+
+- Fixed the bug that input box in the menu of `Dropdown` can not be focused.([#856](https://github.com/arco-design/arco-design/pull/856))
+
 ## 2.28.1
 
 2022-01-14

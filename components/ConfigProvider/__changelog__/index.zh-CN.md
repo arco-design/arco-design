@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 功能升级
+
+- `ConfigProvider` 组件的 `componentConfig` 支持配置 `Timeline.Item`。([#862](https://github.com/arco-design/arco-design/pull/862))
+
 ## 2.28.0
 
 2022-01-07

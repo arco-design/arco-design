@@ -1,3 +1,15 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 功能升级
+
+- `Typography` 组件省略场景支持展开受控。([#867](https://github.com/arco-design/arco-design/pull/867))
+
+### 🐛 问题修复
+
+- 修复`Typography` 组件使用 `code`等行内元素时，折叠出错的 bug。([#866](https://github.com/arco-design/arco-design/pull/866))
+
 ## 2.32.2
 
 2022-04-29

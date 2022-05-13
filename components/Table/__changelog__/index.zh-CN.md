@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 功能升级
+
+- `Table` 组件新增 `rowSelection.checkStrictly` 支持父子选择关联。([#849](https://github.com/arco-design/arco-design/pull/849))
+
 ## 2.32.2
 
 2022-04-29

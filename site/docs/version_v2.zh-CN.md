@@ -2,6 +2,32 @@
 changelog: true
 ---
 
+## 2.33.0
+
+2022-05-13
+
+### 💎 功能优化
+
+- `InputNumber` 组件始终使用非科学计数法展示数值。([#865](https://github.com/arco-design/arco-design/pull/865))
+
+### 🆕 功能升级
+
+- `Typography` 组件省略场景支持展开受控。([#867](https://github.com/arco-design/arco-design/pull/867))
+- `Form` 组件支持 `Form.useWatch`。([#864](https://github.com/arco-design/arco-design/pull/864))
+- `Form` 组件支持 `Form.useFormContext`。([#864](https://github.com/arco-design/arco-design/pull/864))
+- `ConfigProvider` 组件的 `componentConfig` 支持配置 `Timeline.Item`。([#862](https://github.com/arco-design/arco-design/pull/862))
+- `Table` 组件新增 `rowSelection.checkStrictly` 支持父子选择关联。([#849](https://github.com/arco-design/arco-design/pull/849))
+- 国际化支持设置越南语([#824](https://github.com/arco-design/arco-design/pull/824))
+- `rounded` 类型的 `Tabs` 组件支持不同尺寸。([#817](https://github.com/arco-design/arco-design/pull/817))
+
+### 🐛 问题修复
+
+- 修复`Typography` 组件使用 `code`等行内元素时，折叠出错的 bug。([#866](https://github.com/arco-design/arco-design/pull/866))
+- 修复 `Anchor` 组件在内容高度不够的情况下，点击锚点元素定位出错的 bug([#859](https://github.com/arco-design/arco-design/pull/859))
+- 调整 `Upload` 组件上传请求的参数顺序（`file` 字段最后被添加到 `FormData` 中）。([#857](https://github.com/arco-design/arco-design/pull/857))
+- 修复 `Dropdown` 下拉菜单中的输入框无法被聚焦的 bug。([#856](https://github.com/arco-design/arco-design/pull/856))
+- 修复 `List` 组件 `onReachBottom` 偶现无法触发的 bug。([#854](https://github.com/arco-design/arco-design/pull/854))
+
 ## 2.32.2
 
 2022-04-29

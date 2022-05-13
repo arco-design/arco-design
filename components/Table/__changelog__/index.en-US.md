@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- `Table` Add `rowSelection.checkStrictly` to support parent-child selection associations.([#849](https://github.com/arco-design/arco-design/pull/849))
+
 ## 2.32.2
 
 2022-04-29

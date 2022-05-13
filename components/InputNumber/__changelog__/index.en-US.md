@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 💎 Enhancement
+
+- The `InputNumber` component always displays numbers in non-scientific notation.([#865](https://github.com/arco-design/arco-design/pull/865))
+
 ## 2.32.1
 
 2022-04-22

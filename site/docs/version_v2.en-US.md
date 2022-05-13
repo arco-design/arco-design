@@ -2,6 +2,32 @@
 changelog: true
 ---
 
+## 2.33.0
+
+2022-05-13
+
+### 💎 Enhancement
+
+- The `InputNumber` component always displays numbers in non-scientific notation.([#865](https://github.com/arco-design/arco-design/pull/865))
+
+### 🆕 Feature
+
+- The `Typography` component omits the scene to support expanding controlled.([#867](https://github.com/arco-design/arco-design/pull/867))
+- The `Form` component supports `Form.useWatch`.([#864](https://github.com/arco-design/arco-design/pull/864))
+- The `Form` component supports `Form.useFormContext`.([#864](https://github.com/arco-design/arco-design/pull/864))
+- The `componentConfig` of the `ConfigProvider` component supports configuring `Timeline.Item`.([#862](https://github.com/arco-design/arco-design/pull/862))
+- `Table` Add `rowSelection.checkStrictly` to support parent-child selection associations.([#849](https://github.com/arco-design/arco-design/pull/849))
+- Internationalization support set Vietnamese.([#824](https://github.com/arco-design/arco-design/pull/824))
+- The `Tabs` component of type `rounded` supports different sizes.([#817](https://github.com/arco-design/arco-design/pull/817))
+
+### 🐛 BugFix
+
+- Fix the bug of folding error when `Typography` component uses inline elements such as `code`.([#866](https://github.com/arco-design/arco-design/pull/866))
+- Fixed the bug that the `Anchor` component clicked on the anchor element when the content height was not enough.([#859](https://github.com/arco-design/arco-design/pull/859))
+- Adjust the order of parameters in the upload request of the `Upload` component (the `file` field is added last to `FormData`).([#857](https://github.com/arco-design/arco-design/pull/857))
+- Fixed the bug that input box in the menu of `Dropdown` can not be focused.([#856](https://github.com/arco-design/arco-design/pull/856))
+- Fixed the bug that `List` component `onReachBottom` could not be triggered occasionally.([#854](https://github.com/arco-design/arco-design/pull/854))
+
 ## 2.32.2
 
 2022-04-29

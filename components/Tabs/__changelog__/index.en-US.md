@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- The `Tabs` component of type `rounded` supports different sizes.([#817](https://github.com/arco-design/arco-design/pull/817))
+
 ## 2.32.2
 
 2022-04-29

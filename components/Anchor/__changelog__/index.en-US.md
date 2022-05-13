@@ -1,3 +1,11 @@
+## 2.33.0
+
+2022-05-13
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Anchor` component clicked on the anchor element when the content height was not enough.([#859](https://github.com/arco-design/arco-design/pull/859))
+
 ## 2.28.1
 
 2022-01-14

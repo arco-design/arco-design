@@ -1,3 +1,15 @@
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- The `Typography` component omits the scene to support expanding controlled.([#867](https://github.com/arco-design/arco-design/pull/867))
+
+### 🐛 BugFix
+
+- Fix the bug of folding error when `Typography` component uses inline elements such as `code`.([#866](https://github.com/arco-design/arco-design/pull/866))
+
 ## 2.32.2
 
 2022-04-29
