@@ -212,11 +212,13 @@ function Base(props: BaseProps) {
 
   function wrap(content, component, props) {
     let currentContent = content;
+    // 折叠计算前把行内元素改为块级元素。
+    const ellipsisStyle = ellipsisConfig.rows && !simpleEllipsis ? { display: 'block' } : {};
     component.forEach((c, index) => {
       const _props =
         isObject(props.mark) && props.mark.color
-          ? { style: { backgroundColor: props.mark.color } }
-          : {};
+          ? { style: { backgroundColor: props.mark.color, ...ellipsisStyle } }
+          : { style: ellipsisStyle };
       // The parent node of the text will affect the style of the mirror dom
       const _ref = index === 0 ? { ref: textWrapperRef } : {};
       currentContent = React.createElement(c, { ..._props, ..._ref }, currentContent);
@@ -253,6 +255,18 @@ function Base(props: BaseProps) {
     function renderInnerContent() {
       const text = isEllipsis && !expanding ? ellipsisText : children;
       const innerText = component.length ? wrap(text, component, props) : text;
+
+      if (ellipsisConfig.rows && !simpleEllipsis && component.length) {
+        const node = (
+          <>
+            {addTooltip ? <span>{text}</span> : text}
+            {measuring || (isEllipsis && !expanding && !simpleEllipsis) ? ellipsisStr : null}
+            {suffix}
+            {renderOperations(measuring ? !!ellipsisConfig.expandable : undefined)}
+          </>
+        );
+        return wrap(node, component, props);
+      }
 
       return (
         <>
