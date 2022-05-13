@@ -23,7 +23,7 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           125,670
+          125,670
         </span>
       </div>
     </div>
@@ -43,12 +43,12 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           40,509
+          40,509
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-          .00 
+          .00
         </span>
       </div>
       <div
@@ -118,12 +118,12 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
                 />
               </svg>
             </span>
-             50
+            50
           </span>
           <span
             class="arco-statistic-value-decimal"
           >
-            .32 
+            .32
             <span
               class="arco-statistic-value-suffix"
             >
@@ -194,12 +194,12 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
                 />
               </svg>
             </span>
-             2
+            2
           </span>
           <span
             class="arco-statistic-value-decimal"
           >
-            .59 
+            .59
             <span
               class="arco-statistic-value-suffix"
             >
@@ -394,12 +394,11 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           192393
+          192393
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-           
           <span
             class="arco-statistic-value-suffix"
           >
@@ -458,12 +457,11 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           934230
+          934230
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-           
           <span
             class="arco-statistic-value-suffix"
           >
@@ -551,12 +549,12 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
               />
             </svg>
           </span>
-           50
+          50
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-          .32 
+          .32
           <span
             class="arco-statistic-value-suffix"
           >
@@ -590,7 +588,7 @@ exports[`renders Statistic/demo/time.md correctly 1`] = `
         <span
           class="arco-statistic-value-prefix"
         />
-         2019/04/10 12:16:53
+        2019/04/10 12:16:53
       </span>
     </div>
   </div>
