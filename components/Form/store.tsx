@@ -1,3 +1,4 @@
+import React from 'react';
 import get from 'lodash/get';
 import setWith from 'lodash/setWith';
 import has from 'lodash/has';
@@ -112,15 +113,15 @@ class Store<
     return this.registerFields;
   };
 
-  // 获取props.field === field 的contorl组件。
+  // 获取props.field === field 的control组件。
   public getRegisteredField = (field?: FieldKey) => {
     return this.registerFields.filter((x) => x.props.field === field)[0];
   };
 
-  // 通知所有的formitem进行更新。
-  // setfielValue: 外部调用setFieldsValue (setFieldValue等)方法触发更新
+  // 通知所有的FormItem进行更新。
+  // setFieldValue: 外部调用setFieldsValue (setFieldValue等)方法触发更新
   // innerSetValue: 控件例如Input，通过onChange事件触发的更新
-  // reset： 重置
+  // reset：重置
   private notify = (type: NotifyType, info: StoreChangeInfo<FieldKey>) => {
     if (type === 'setFieldValue' || (type === 'innerSetValue' && !info.ignore)) {
       // type = reset时，在reset函数里处理
@@ -295,7 +296,7 @@ class Store<
   };
 
   public getFieldValue = (field: FieldKey): FieldValue => {
-    return get(this.store, field);
+    return get(this.getFields(), field);
   };
 
   // 获取单个字段的错误信息。
@@ -325,9 +326,7 @@ class Store<
   };
 
   public getFields = (): Partial<FormData> => {
-    const values = cloneDeep(this.store);
-
-    return values;
+    return cloneDeep(this.store);
   };
 
   public getFieldsValue = (fields?: FieldKey[]): Partial<FormData> => {
