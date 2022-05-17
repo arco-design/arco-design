@@ -184,6 +184,16 @@
     margin: 0;
     border-spacing: 0;
     border-collapse: separate;
+
+    thead tr:first-child {
+      th:first-child {
+        border-radius: @table-border-radius 0 0 0;
+      }
+
+      th:last-child {
+        border-radius: 0 @table-border-radius 0 0;
+      }
+    }
   }
 
   .@{table-cls-th} {
@@ -203,14 +213,6 @@
 
     &[colspan] {
       text-align: center;
-    }
-
-    &:first-child {
-      border-radius: @table-border-radius 0 0 0;
-    }
-
-    &:last-child {
-      border-radius: 0 @table-border-radius 0 0;
     }
   }
 
