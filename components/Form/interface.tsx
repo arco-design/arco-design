@@ -5,7 +5,7 @@ import { ValidateMessagesTemplateType } from 'b-validate';
 import { ReactNode, CSSProperties, HTMLAttributes, FormHTMLAttributes } from 'react';
 import { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
 import { ColProps } from '../Grid/col';
-import Store, { DeepPartial } from './store';
+import Store from './store';
 
 export type IndexedObject = { [key: string]: any };
 export type KeyType = string | number | symbol;
@@ -198,10 +198,7 @@ export type FormItemChildrenFn<
   FormData = any,
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
-> = (
-  formData: DeepPartial<FormData>,
-  form: FormInstance<FormData, FieldValue, FieldKey>
-) => React.ReactNode;
+> = (formData: any, form: FormInstance<FormData, FieldValue, FieldKey>) => React.ReactNode;
 
 /**
  * @title Form.Item
@@ -210,7 +207,7 @@ export interface FormItemProps<
   FormData = any,
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
-> extends Omit<HTMLAttributes<any>, 'className'> {
+> extends Omit<HTMLAttributes<any>, 'className' | 'children'> {
   style?: CSSProperties;
   className?: string | string[];
   prefixCls?: string;
