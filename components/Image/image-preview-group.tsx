@@ -62,6 +62,11 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     defaultValue: defaultCurrent,
   });
 
+  useEffect(() => {
+    if (isFirstRender) return;
+    onChange && onChange(currentIndex);
+  }, [currentIndex]);
+
   function registerPreviewUrl(id: number, url: string, preview: boolean) {
     if (!propPreviewUrlMap) {
       setPreviewUrlMap((pre) =>
@@ -93,11 +98,6 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
   const handleVisibleChange = (visible, preVisible) => {
     setVisible(visible);
     onVisibleChange && onVisibleChange(visible, preVisible);
-  };
-
-  const handleSwitch = (index: number) => {
-    onChange && onChange(index);
-    setCurrentIndex(index);
   };
 
   const loopImageIndex = (children) => {
@@ -132,7 +132,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
         previewUrlMap: canPreviewUrlMap,
         infinite,
         currentIndex,
-        setCurrentIndex: handleSwitch,
+        setCurrentIndex,
         setPreviewUrlMap,
         registerPreviewUrl,
         visible,
