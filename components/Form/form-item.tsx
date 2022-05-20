@@ -14,7 +14,14 @@ import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { isArray, isFunction, isUndefined, isObject } from '../_util/is';
 import Grid from '../Grid';
-import { FormItemProps, FieldError, KeyType, FormContextProps, VALIDATE_STATUS } from './interface';
+import {
+  FormItemProps,
+  FieldError,
+  KeyType,
+  FormContextProps,
+  VALIDATE_STATUS,
+  FormItemChildrenFn,
+} from './interface';
 import Control from './control';
 import {
   FormItemContext as RawFormItemContext,
@@ -213,7 +220,9 @@ const Item = <
     if (isFunction(children)) {
       return (
         <Control disabled={disabled} {...(props as any)} {...(field ? { key: field } : {})}>
-          {(...rest) => children(...rest)}
+          {(...rest) =>
+            children(...(rest as Parameters<FormItemChildrenFn<FormData, FieldValue, FieldKey>>))
+          }
         </Control>
       );
     }
@@ -371,7 +380,7 @@ export default ItemComponent as <
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
 >(
-  props: React.PropsWithChildren<FormItemProps<FormData, FieldValue, FieldKey>> & {
+  props: FormItemProps<FormData, FieldValue, FieldKey> & {
     ref?: React.Ref<typeof Row['prototype']>;
   }
 ) => React.ReactElement;
