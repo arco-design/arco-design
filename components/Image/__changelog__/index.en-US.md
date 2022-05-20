@@ -1,3 +1,11 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed `Image.PreviewGroup ` component's `onChange` event not firing when `current` is controlled([#880](https://github.com/arco-design/arco-design/pull/880))
+
 ## 2.30.0
 
 2022-03-04

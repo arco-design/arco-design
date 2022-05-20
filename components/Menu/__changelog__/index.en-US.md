@@ -1,3 +1,11 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed the bug that the icon of SubMenu title was not displayed when Menu is collapsed.([#889](https://github.com/arco-design/arco-design/pull/889))
+
 ## 2.32.2
 
 2022-04-29

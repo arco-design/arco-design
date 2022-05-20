@@ -1,3 +1,11 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Expand/Collapse` button of the `Typography` component was displayed at the wrong time([#890](https://github.com/arco-design/arco-design/pull/890))
+
 ## 2.33.0
 
 2022-05-13

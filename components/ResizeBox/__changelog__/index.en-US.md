@@ -1,3 +1,11 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed a bug that `Split.Group` of `ResizeBox` could not adapt to certain scenes([#892](https://github.com/arco-design/arco-design/pull/892))
+
 ## 2.27.0
 
 2021-12-17

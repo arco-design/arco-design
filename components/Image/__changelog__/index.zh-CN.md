@@ -1,3 +1,11 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 问题修复
+
+- 修复 `Image.PreviewGroup`  组件在 `current` 受控时 `onChange` 事件不触发的问题([#880](https://github.com/arco-design/arco-design/pull/880))
+
 ## 2.30.0
 
 2022-03-04

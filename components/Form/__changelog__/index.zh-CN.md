@@ -1,3 +1,15 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 问题修复
+
+- 对 `getFieldValue` 返回值的修改不应该影响 `Form` 内部的原始数据([#869](https://github.com/arco-design/arco-design/pull/869))
+
+### 🆎 类型修正
+
+- 补全`FormItemProps`中的`children`类型，以兼容React 18([#874](https://github.com/arco-design/arco-design/pull/874))
+
 ## 2.33.0
 
 2022-05-13

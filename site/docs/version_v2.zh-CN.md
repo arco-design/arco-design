@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.33.1
+
+2022-05-20
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox` 的 `Split.Group` 在特定场景无法自适应的 bug([#892](https://github.com/arco-design/arco-design/pull/892))
+- 修复 `Typography` 组件 `展开/折叠` 按钮展示时机错误的bug([#890](https://github.com/arco-design/arco-design/pull/890))
+- 修复 `Menu` 组件折叠状态下子菜单标题的图标未展示的 bug。([#889](https://github.com/arco-design/arco-design/pull/889))
+- 修复 `Message` 设置 `prefixCls` 后，提示图标前缀未改变的 bug。([#887](https://github.com/arco-design/arco-design/pull/887))
+- 修复 `Notification` 设置 `prefixCls` 后，提示图标前缀未改变的 bug。([#887](https://github.com/arco-design/arco-design/pull/887))
+- 修复 `Image.PreviewGroup`  组件在 `current` 受控时 `onChange` 事件不触发的问题([#880](https://github.com/arco-design/arco-design/pull/880))
+- 当`Anchor.Link` 组件的 `title`为空的时候，不显示其下的可点击区域`<a/>`([#878](https://github.com/arco-design/arco-design/pull/878))
+- 修复 `Table` 组件表头分组时，内部的表头单元格也有圆角的样式问题。([#872](https://github.com/arco-design/arco-design/pull/872))
+- 对 `getFieldValue` 返回值的修改不应该影响 `Form` 内部的原始数据([#869](https://github.com/arco-design/arco-design/pull/869))
+
+### 🆎 类型修正
+
+- 补全`FormItemProps`中的`children`类型，以兼容React 18([#874](https://github.com/arco-design/arco-design/pull/874))
+
 ## 2.33.0
 
 2022-05-13

@@ -1,3 +1,11 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed the bug that the table header cells also have border-radius when the `Table` component header is grouped.([#872](https://github.com/arco-design/arco-design/pull/872))
+
 ## 2.33.0
 
 2022-05-13

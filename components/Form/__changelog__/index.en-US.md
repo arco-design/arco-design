@@ -1,3 +1,15 @@
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Modifications to the return value of `getFieldValue` should not affect the original data inside the `Form`([#869](https://github.com/arco-design/arco-design/pull/869))
+
+### 🆎 TypeScript
+
+- Complete `children` property type in `FormItemProps`, compatible with React 18([#874](https://github.com/arco-design/arco-design/pull/874))
+
 ## 2.33.0
 
 2022-05-13

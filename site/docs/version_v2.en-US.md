@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed a bug that `Split.Group` of `ResizeBox` could not adapt to certain scenes([#892](https://github.com/arco-design/arco-design/pull/892))
+- Fixed the bug that the `Expand/Collapse` button of the `Typography` component was displayed at the wrong time([#890](https://github.com/arco-design/arco-design/pull/890))
+- Fixed the bug that the icon of SubMenu title was not displayed when Menu is collapsed.([#889](https://github.com/arco-design/arco-design/pull/889))
+- Fixed a bug that the prefix of the prompt icon did not change after `Message` was set to `prefixCls`.([#887](https://github.com/arco-design/arco-design/pull/887))
+- Fixed a bug that the prefix of the prompt icon did not change after `Notification` was set to `prefixCls`.([#887](https://github.com/arco-design/arco-design/pull/887))
+- Fixed `Image.PreviewGroup ` component's `onChange` event not firing when `current` is controlled([#880](https://github.com/arco-design/arco-design/pull/880))
+- When the `title` of `Anchor.Link` is empty, the clickable area `<a/>` under it is not displayed([#878](https://github.com/arco-design/arco-design/pull/878))
+- Fixed the bug that the table header cells also have border-radius when the `Table` component header is grouped.([#872](https://github.com/arco-design/arco-design/pull/872))
+- Modifications to the return value of `getFieldValue` should not affect the original data inside the `Form`([#869](https://github.com/arco-design/arco-design/pull/869))
+
+### 🆎 TypeScript
+
+- Complete `children` property type in `FormItemProps`, compatible with React 18([#874](https://github.com/arco-design/arco-design/pull/874))
+
 ## 2.33.0
 
 2022-05-13
