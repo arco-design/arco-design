@@ -10,7 +10,7 @@ import AnchorContext from './context';
 import { AnchorLinkProps } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import cs from '../_util/classNames';
-import { isString, isObject } from '../_util/is';
+import { isString, isObject, isUndefined, isNull } from '../_util/is';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 type AnchorLinkHandle = HTMLDivElement;
@@ -57,17 +57,19 @@ function Link(baseProps: AnchorLinkPropsWithChildren, ref) {
 
   return (
     <div className={classNames} style={style} ref={linkRef}>
-      <a
-        className={`${prefixCls}-title`}
-        title={isString(title) ? title : ''}
-        href={href}
-        data-href={href}
-        onClick={(e) => {
-          onLinkClick && onLinkClick(e, href);
-        }}
-      >
-        {title}
-      </a>
+      {!isUndefined(title) && !isNull(title) && (
+        <a
+          className={`${prefixCls}-title`}
+          title={isString(title) ? title : ''}
+          href={href}
+          data-href={href}
+          onClick={(e) => {
+            onLinkClick && onLinkClick(e, href);
+          }}
+        >
+          {title}
+        </a>
+      )}
       {children &&
         React.Children.map(children, (item) => {
           return (
