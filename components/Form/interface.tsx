@@ -194,6 +194,12 @@ export interface RulesProps<FieldValue = any> {
   message?: ReactNode;
 }
 
+export type FormItemChildrenFn<
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData
+> = (formData: any, form: FormInstance<FormData, FieldValue, FieldKey>) => React.ReactNode;
+
 /**
  * @title Form.Item
  */
@@ -201,7 +207,7 @@ export interface FormItemProps<
   FormData = any,
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
-> extends Omit<HTMLAttributes<any>, 'className'> {
+> extends Omit<HTMLAttributes<any>, 'className' | 'children'> {
   style?: CSSProperties;
   className?: string | string[];
   prefixCls?: string;
@@ -368,6 +374,7 @@ export interface FormItemProps<
    */
   requiredSymbol?: boolean | { position: 'start' | 'end' };
   isFormList?: boolean;
+  children?: React.ReactNode | FormItemChildrenFn<FormData, FieldValue, FieldKey>;
 }
 
 export interface FormControlProps<
