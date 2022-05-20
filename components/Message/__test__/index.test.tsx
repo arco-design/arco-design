@@ -64,4 +64,21 @@ describe('open message', () => {
       expect($(`.arco-message-wrapper-${position} .arco-message`).length).toBe(1);
     });
   });
+
+  it('notice icon prefix', () => {
+    Message.config({
+      prefixCls: 'aaa',
+    });
+    Message.success({
+      content: 'New Content',
+    });
+
+    expect($('.aaa-message')).toHaveLength(1);
+
+    expect($('.aaa-icon-check-circle-fill')).toHaveLength(1);
+
+    Message.config({
+      prefixCls: 'arco',
+    });
+  });
 });

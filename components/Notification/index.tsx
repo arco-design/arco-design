@@ -153,6 +153,7 @@ class Notification extends BaseNotification {
                 {...notice}
                 onClose={this.remove}
                 prefixCls={prefixClsNotification}
+                iconPrefix={prefixCls}
                 noticeType="notification"
               />
             </CSSTransition>

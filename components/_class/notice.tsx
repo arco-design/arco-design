@@ -7,6 +7,7 @@ import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCirc
 import IconLoading from '../../icon/react-icon/IconLoading';
 import cs from '../_util/classNames';
 import IconHover from '../_class/icon-hover';
+import { IconContext } from '../../icon/react-icon/context';
 
 export interface NoticeProps {
   style?: CSSProperties;
@@ -22,6 +23,7 @@ export interface NoticeProps {
   type?: string;
   btn?: ReactNode;
   prefixCls?: string;
+  iconPrefix?: string;
   noticeType?: 'message' | 'notification';
   update?: boolean;
   closable?: boolean;
@@ -77,7 +79,7 @@ class Notice extends Component<NoticeProps, {}> {
   };
 
   renderIcon = () => {
-    const { showIcon, icon, type, prefixCls } = this.props;
+    const { showIcon, icon, type, prefixCls, iconPrefix } = this.props;
     let content: ReactNode;
     if (icon) {
       content = icon;
@@ -101,6 +103,11 @@ class Notice extends Component<NoticeProps, {}> {
         default:
           break;
       }
+      content = (
+        <IconContext.Provider value={iconPrefix ? { prefixCls: iconPrefix } : {}}>
+          {content}
+        </IconContext.Provider>
+      );
     }
     return <span className={`${prefixCls}-icon`}>{content}</span>;
   };
@@ -126,6 +133,7 @@ class Notice extends Component<NoticeProps, {}> {
       prefixCls,
       closable,
       noticeType,
+      iconPrefix,
     } = this.props;
     const classNames = cs(
       prefixCls,
@@ -184,7 +192,9 @@ class Notice extends Component<NoticeProps, {}> {
                 className={`${prefixCls}-close-btn`}
                 onClick={this.onClose}
               >
-                <IconClose />
+                <IconContext.Provider value={iconPrefix ? { prefixCls: iconPrefix } : {}}>
+                  <IconClose />
+                </IconContext.Provider>
               </IconHover>
             )}
           </div>
