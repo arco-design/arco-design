@@ -46,6 +46,7 @@ import DemoSkeleton from './components/Skeleton';
 import DemoCollapse from './components/Collapse';
 import DemoProgress from './components/Progress';
 import DemoDatePicker from './components/DatePicker';
+import DemoDatePickerCustomize from './components/DatePickerCustomize';
 import DemoTimePicker from './components/TimePicker';
 import DemoCarousel from './components/Carousel';
 import DemoSlider from './components/Slider';
@@ -108,6 +109,7 @@ const componentsMap = {
   Collapse: () => <DemoCollapse />,
   Progress: () => <DemoProgress />,
   DatePicker: () => <DemoDatePicker />,
+  DemoDatePickerCustomize: () => <DemoDatePickerCustomize />,
   TimePicker: () => <DemoTimePicker />,
   Slider: () => <DemoSlider />,
   Tree: () => <DemoTree />,
