@@ -18,6 +18,7 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
     setEditing,
     onClickExpand,
     forceShowExpand,
+    isEllipsis,
     currentContext = {},
   } = props;
 
@@ -82,7 +83,7 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
   );
 
   const ellipsisElement =
-    forceShowExpand || ellipsisConfig.expandable ? (
+    forceShowExpand || (ellipsisConfig.expandable && isEllipsis) ? (
       <a className={`${prefixCls}-operation-expand`} onClick={onClickExpand}>
         {expanding ? expandNodes[0] : expandNodes[1]}
       </a>

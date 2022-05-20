@@ -186,17 +186,14 @@ function Base(props: BaseProps) {
       return;
     }
     if (ellipsisConfig.rows) {
-      // In ellipsis mode, if the user manually expands, there is no need to calculate ellipsis and ellipsisText;
-      if (expanding) {
-        return;
-      }
       setMeasuring(true);
       const { ellipsis, text } = measure(
         textWrapperRef.current || componentRef.current,
         ellipsisConfig,
         renderOperations(!!ellipsisConfig.expandable),
         children,
-        simpleEllipsis
+        // expanding 情况下只需要判断原空间是否足够，不用计算折叠临界值，
+        simpleEllipsis || expanding
       );
       setMeasuring(false);
       if (ellipsis && text) {
