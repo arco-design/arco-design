@@ -296,7 +296,7 @@ class Store<
   };
 
   public getFieldValue = (field: FieldKey): FieldValue => {
-    return get(this.getFields(), field);
+    return cloneDeep(get(this.store, field));
   };
 
   // 获取单个字段的错误信息。
