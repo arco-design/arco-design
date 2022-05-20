@@ -101,6 +101,7 @@ type formData = {
   slider: number;
   upload: UploadItem;
   readme: boolean;
+  test: any;
 };
 
 function Demo(props: FormProps & { saveFormRef: (form: FormInstance<formData>) => void }) {
@@ -382,6 +383,13 @@ describe('UseForm', () => {
       requiredError: true,
       type: 'string',
     });
+  });
+
+  it('getFieldValue should not change the store', () => {
+    form.setFieldValue('test', { x: { y: 1 } });
+    const testValue = form.getFieldValue('test');
+    testValue.x.y = 2;
+    expect(form.getFieldValue('test')).toEqual({ x: { y: 1 } });
   });
 
   it('normalize', () => {
