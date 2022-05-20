@@ -97,4 +97,21 @@ describe('open message', () => {
   //   jest.runAllTimers();
   //   expect($('.arco-notification').length).toBe(0);
   // });
+
+  it('notice icon prefix', () => {
+    Notification.config({
+      prefixCls: 'aaa',
+    });
+    Notification.success({
+      content: 'New Content',
+    });
+
+    expect($('.aaa-notification')).toHaveLength(1);
+
+    expect($('.aaa-icon-check-circle-fill')).toHaveLength(1);
+
+    Notification.config({
+      prefixCls: 'arco',
+    });
+  });
 });

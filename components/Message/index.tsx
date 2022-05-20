@@ -156,6 +156,7 @@ class Message extends BaseNotification {
               <Notice
                 {...notice}
                 prefixCls={prefixClsMessage}
+                iconPrefix={prefixCls}
                 onClose={this.remove}
                 noticeType="message"
               />
