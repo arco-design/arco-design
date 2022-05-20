@@ -88,7 +88,19 @@ function SplitGroup(props: SplitGroupProps, ref) {
   const getPaneSize = (index) => {
     const prevTriggerSize = triggerSize[index - 1] || 0;
     const currentTriggerSize = triggerSize[index];
-    return `calc(${offsets[index]}px - ${(prevTriggerSize + currentTriggerSize) / 2}px)`;
+    let baseVal = offsets[index];
+    let unit = 'px';
+
+    // `px` is converted to `%` when rendering for wrapper resize.
+    if (wrapperRef.current) {
+      const totalPX = isHorizontal
+        ? wrapperRef.current.offsetWidth
+        : wrapperRef.current.offsetHeight;
+      baseVal = (baseVal / totalPX) * 100;
+      unit = '%';
+    }
+
+    return `calc(${baseVal}${unit} - ${(prevTriggerSize + currentTriggerSize) / 2}px)`;
   };
 
   // 入参 百分比/像素值 => 全部转化为像素值。

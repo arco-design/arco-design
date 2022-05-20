@@ -64,7 +64,7 @@ describe('ResizeBox Split Group', () => {
     );
     expect(wrapper.find('Text')).toHaveLength(1);
     const pane = wrapper.find(`.${groupPrefixCls}-pane`);
-    expect(pane.prop('style')).toEqual({ flexBasis: `calc(${wrapperRef.offsetWidth}px - 0px)` });
+    expect(pane.prop('style')).toEqual({ flexBasis: `calc(100% - 0px)` });
   });
 
   it('render direction vertical correctly', () => {
@@ -86,10 +86,10 @@ describe('ResizeBox Split Group', () => {
     const pane1 = wrapper.find(`.${groupPrefixCls}-pane`).at(0);
     const pane2 = wrapper.find(`.${groupPrefixCls}-pane`).at(1);
     expect(pane1.prop('style')).toEqual({
-      flexBasis: `calc(${wrapperRef.offsetHeight * 0.2}px - ${triggerContentRect.height / 2}px)`,
+      flexBasis: `calc(20% - ${triggerContentRect.height / 2}px)`,
     });
     expect(pane2.prop('style')).toEqual({
-      flexBasis: `calc(${wrapperRef.offsetHeight * 0.8}px - ${triggerContentRect.height / 2}px)`,
+      flexBasis: `calc(80% - ${triggerContentRect.height / 2}px)`,
     });
   });
 
@@ -206,23 +206,23 @@ describe('ResizeBox Split Group', () => {
     const averageWidth = (offsetWidth - offsetWidth * 0.3 - 80) / 2;
 
     expect(panesEl.at(0).prop('style')).toEqual({
-      flexBasis: `calc(${offsetWidth * 0.1}px - 0px)`,
+      flexBasis: `calc(10% - 0px)`,
     });
 
     expect(panesEl.at(1).prop('style')).toEqual({
-      flexBasis: `calc(80px - 0px)`,
+      flexBasis: `calc(10% - 0px)`,
     });
 
     expect(panesEl.at(2).prop('style')).toEqual({
-      flexBasis: `calc(${offsetWidth * 0.2}px - 0px)`,
+      flexBasis: `calc(20% - 0px)`,
     });
 
     expect(panesEl.at(3).prop('style')).toEqual({
-      flexBasis: `calc(${averageWidth}px - ${triggerWidth / 2}px)`,
+      flexBasis: `calc(${(averageWidth / offsetWidth) * 100}% - ${triggerWidth / 2}px)`,
     });
 
     expect(panesEl.at(4).prop('style')).toEqual({
-      flexBasis: `calc(${averageWidth}px - ${triggerWidth / 2}px)`,
+      flexBasis: `calc(${(averageWidth / offsetWidth) * 100}% - ${triggerWidth / 2}px)`,
     });
   });
 
