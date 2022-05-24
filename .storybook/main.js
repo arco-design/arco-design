@@ -22,7 +22,7 @@ function getLoaderForStyle(isCssModule) {
 }
 
 module.exports = {
-  stories: ['../stories/index.stories.js'],
+  stories: ['../stories/**/*.story.tsx', '../stories/**/*.story.jsx'],
   webpackFinal: (config) => {
     const dirIcon = path.resolve(__dirname, '../icon');
     const dirComponent = path.resolve(__dirname, '../es');
@@ -31,6 +31,7 @@ module.exports = {
     config.resolve.alias['@self'] = dirComponent;
     config.resolve.alias['@arco-design/web-react/icon'] = dirIcon;
     config.resolve.alias['@arco-design/web-react'] = dirComponent;
+    config.resolve.extensions.push('.tsx');
 
     config.resolve.modules = ['node_modules', path.resolve(__dirname, '../site/node_modules')];
     // 解决 webpack 编译警告
