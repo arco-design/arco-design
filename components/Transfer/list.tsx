@@ -149,7 +149,9 @@ export const TransferList = (props: TransferListProps, ref) => {
         filteredItems: itemsToRender,
         onItemRemove: (key) => handleRemove([key]),
         onItemSelect: handleItemChecked,
-        onItemSelectAll: handleItemAllChecked,
+        onItemSelectAll: (keys, checked) => {
+          handleSelect(checked ? keys.concat(selectedDisabledKeys) : [...selectedDisabledKeys]);
+        },
       });
 
     return customList ? (

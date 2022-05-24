@@ -38,17 +38,20 @@ const TableTransfer = ({ sourceColumns, targetColumns, ...restProps }) => (
           columns={columns}
           rowSelection={{
             selectedRowKeys: listSelectedKeys,
-            checkboxProps: (item) => ({ disabled: listDisabled || item.disabled }),
+            checkboxProps: (item) => {
+              return {
+                disabled: listDisabled || item.disabled,
+                // Avoid triggering onRow.onClick
+                onClick: (e) => e.stopPropagation(),
+              };
+            },
             onChange(selectedRowKeys) {
               onItemSelectAll(selectedRowKeys, true);
             },
           }}
           onRow={({ key, disabled: itemDisabled }) => ({
             onClick: (e) => {
-              // Filter the situation of directly clicking the CheckBox
-              if (Array.prototype.filter.call(e.target.classList, (c) => c.indexOf('arco-checkbox') > -1).length === 0) {
-                !itemDisabled && !listDisabled && onItemSelect(key, !listSelectedKeys.includes(key));
-              }
+              !itemDisabled && !listDisabled && onItemSelect(key, !listSelectedKeys.includes(key));
             },
           })}
         />
