@@ -116,6 +116,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     triggerElement,
     utcOffset,
     timezone,
+    panelRender,
   } = props;
 
   const prefixCls = getPrefixCls('picker');
@@ -482,6 +483,20 @@ const Picker = (baseProps: InnerPickerProps) => {
       </>
     );
 
+    const contentWithShortcuts = shortcutsPlacementLeft ? (
+      <>
+        <Shortcuts ref={refShortcuts} {...shortcutsProps} />
+        <div ref={refPanel} className={`${prefixCls}-panel-wrapper`}>
+          {content}
+        </div>
+      </>
+    ) : (
+      content
+    );
+
+    const panelNode =
+      typeof panelRender === 'function' ? panelRender(contentWithShortcuts) : contentWithShortcuts;
+
     return (
       <div
         className={classNames}
@@ -490,16 +505,7 @@ const Picker = (baseProps: InnerPickerProps) => {
         }}
         style={panelOnly ? style : {}}
       >
-        {shortcutsPlacementLeft ? (
-          <>
-            <Shortcuts ref={refShortcuts} {...shortcutsProps} />
-            <div ref={refPanel} className={`${prefixCls}-panel-wrapper`}>
-              {content}
-            </div>
-          </>
-        ) : (
-          content
-        )}
+        {panelNode}
       </div>
     );
   }
