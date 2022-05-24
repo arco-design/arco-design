@@ -9,6 +9,7 @@ function Demo() {
         <Typography.Title heading={4}>panelRender</Typography.Title>
         <DatePicker
           // shortcutsPlacementLeft
+          showTime
           shortcuts={[
             {
               text: 'yesterday',

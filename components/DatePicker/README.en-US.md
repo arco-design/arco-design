@@ -35,6 +35,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |onSelect|Callback when the show date changes but the selected value does not change|`(dateString: string, date: Dayjs) => void`|`-`|-|
 |onClear|Callback when clicking the clear button|`() => void`|`-`|-|
 |dateRender|Customize the contents of the date cell.|`(currentDate: Dayjs) => ReactNode`|`-`|-|
+|panelRender|Customize them panel node.|`(panelNode: ReactNode) => ReactNode`|`-`|2.34.0|
 |editable|Whether input box can be entered.|`boolean`|`true`|-|
 |triggerProps|The props of the `Trigger` component.|`Partial<TriggerProps>`|`-`|-|
 |onSelectShortcut|Callback when click shortcut selection.|`(shortcut: ShortcutType) => void`|`-`|-|
