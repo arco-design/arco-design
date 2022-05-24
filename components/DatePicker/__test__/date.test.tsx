@@ -298,4 +298,22 @@ describe('DatePicker', () => {
     expect(onChange.mock.calls.length).toBe(1);
     expect(onChange.mock.calls[0][0]).toBe('2020-04-05 20:32:59');
   });
+
+  it('panelRender correctly', () => {
+    const component = mount(
+      <DatePicker
+        popupVisible
+        panelRender={(panelNode) => {
+          return (
+            <>
+              <div className="custom-content">Custom content</div>
+              {panelNode}
+            </>
+          );
+        }}
+      />
+    );
+
+    expect(component.find('.custom-content').text()).toBe('Custom content');
+  });
 });

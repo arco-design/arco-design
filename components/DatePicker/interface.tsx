@@ -138,7 +138,7 @@ export interface PickerProps {
   dateRender?: (currentDate: Dayjs) => ReactNode;
   /**
    * @zh 自定义渲染面板
-   * @en Customize them panel node.
+   * @en Customize the panel node.
    * @version 2.34.0
    */
   panelRender?: (panelNode: ReactNode) => ReactNode;

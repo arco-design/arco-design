@@ -35,6 +35,7 @@
 |onSelect|选中日期发生改变但组件值未改变时的回调|`(dateString: string, date: Dayjs) => void`|`-`|-|
 |onClear|点击清除按钮后的回调|`() => void`|`-`|-|
 |dateRender|自定义日期单元格的内容。|`(currentDate: Dayjs) => ReactNode`|`-`|-|
+|panelRender|自定义渲染面板|`(panelNode: ReactNode) => ReactNode`|`-`|2.34.0|
 |editable|是否可输入。|`boolean`|`true`|-|
 |triggerProps|可以传入 `Trigger` 组件的参数。|`Partial<TriggerProps>`|`-`|-|
 |onSelectShortcut|点击快捷选择时的回调。|`(shortcut: ShortcutType) => void`|`-`|-|
