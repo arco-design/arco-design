@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { ResizeBox, Typography } from '@self';
 import { IconDoubleLeft, IconDoubleRight } from '@self/icon';
+import { SplitGroupPane } from '../components/ResizeBox/interface';
 
 const { Paragraph, Text } = Typography;
 
-const panes = [
+const panes: Array<Omit<SplitGroupPane, 'content'>> = [
   { size: 0.2, collapsible: { prev: true } },
   { size: 0.4, min: '50px' },
   {
@@ -41,7 +43,7 @@ const panes = [
 const verticalPanes = [{ collapsible: true }, { size: 0.2, collapsible: { next: true } }, {}];
 
 const HorizontalSplitGroup = () => {
-  const [offsets, setOffsets] = useState([]);
+  const [offsets, setOffsets] = useState<string[]>([]);
   return (
     <ResizeBox.SplitGroup
       onMoving={(_, sizes) => setOffsets(sizes)}
