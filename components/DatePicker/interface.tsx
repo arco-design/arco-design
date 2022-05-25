@@ -137,6 +137,12 @@ export interface PickerProps {
    */
   dateRender?: (currentDate: Dayjs) => ReactNode;
   /**
+   * @zh 自定义渲染面板
+   * @en Customize the panel node.
+   * @version 2.34.0
+   */
+  panelRender?: (panelNode: ReactNode) => ReactNode;
+  /**
    * @zh 是否可输入。
    * @en Whether input box can be entered.
    * @defaultValue true
