@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-配合 `react-sticky` 可以实现表头吸顶的效果。
+配合 `react-sticky@6.0.3` 可以实现表头吸顶的效果。
 
 ## en-US
 
-Cooperate with `react-sticky` to achieve the effect of header sticky.
+Cooperate with `react-sticky@6.0.3` to achieve the effect of header sticky.
 
 ```js
 import { Table } from '@arco-design/web-react';

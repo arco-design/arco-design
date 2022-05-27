@@ -7,16 +7,16 @@ title:
 
 ## zh-CN
 
-可以配合 `react-sortable-hoc` 实现拖拽排序。
+可以配合 `react-sortable-hoc@2.0.0` 实现拖拽排序。
 
 ## en-US
 
-Can cooperate with `react-sortable-hoc` to drag rows.
+Can cooperate with `react-sortable-hoc@2.0.0` to drag rows.
 
 ```js
 import { useState } from 'react';
 import { Table } from '@arco-design/web-react';
-import { sortableContainer, sortableElement } from 'react-sortable-hoc';
+import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 
 const arrayMoveMutate = (array, from, to) => {
 	const startIndex = to < 0 ? array.length + to : to;
@@ -84,11 +84,11 @@ const initialData = [{
   email: 'william.smith@example.com'
 }];
 
-const SortableContainer = sortableContainer((props) => {
-  return <tbody {...props} />;
+const SortableWrapper = SortableContainer((props) => {
+  return <tbody {...props} />
 });
 
-const SortableItem = sortableElement((props) => {
+const SortableItem = SortableElement((props) => {
   return <tr style={{ cursor: 'move' }} {...props} />
 });
 
@@ -104,7 +104,7 @@ function Demo() {
   }
 
   const DraggableContainer = props => (
-    <SortableContainer
+    <SortableWrapper
       onSortEnd={onSortEnd}
       helperContainer={() => document.querySelector('.arco-drag-table-container table tbody')}
       updateBeforeSortStart={({ node }) => {

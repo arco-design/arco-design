@@ -7,17 +7,17 @@ title:
 
 ## zh-CN
 
-可以配合 `react-sortable-hoc` 可以实现拖拽锚点排序。
+可以配合 `react-sortable-hoc@2.0.0` 可以实现拖拽锚点排序。
 
 ## en-US
 
-It can be used with `react-sortable-hoc` to drag the anchor to sort table.
+It can be used with `react-sortable-hoc@2.0.0` to drag the anchor to sort table.
 
 ```js
 import { useState } from 'react';
 import { Table } from '@arco-design/web-react';
 import { IconDragDotVertical } from '@arco-design/web-react/icon';
-import { sortableContainer, sortableElement, sortableHandle } from 'react-sortable-hoc';
+import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc';
 
 const arrayMoveMutate = (array, from, to) => {
 	const startIndex = to < 0 ? array.length + to : to;
@@ -85,15 +85,15 @@ const initialData = [{
   email: 'william.smith@example.com'
 }];
 
-const DragHandle = sortableHandle(() => (
+const DragHandle = SortableHandle(() => (
   <IconDragDotVertical style={{ cursor: 'move', color: '#555' }} />
 ));
 
-const SortableContainer = sortableContainer((props) => {
-  return <tbody {...props} />;
+const SortableWrapper = SortableContainer((props) => {
+  return <tbody {...props} />
 });
 
-const SortableItem = sortableElement((props) => {
+const SortableItem = SortableElement((props) => {
   return <tr {...props} />
 });
 
@@ -109,7 +109,7 @@ function Demo() {
   }
 
   const DraggableContainer = props => (
-    <SortableContainer
+    <SortableWrapper
       useDragHandle
       onSortEnd={onSortEnd}
       helperContainer={() => document.querySelector('.arco-drag-table-container-2 table tbody')}
