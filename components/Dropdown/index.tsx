@@ -62,13 +62,13 @@ function Dropdown(baseProps: DropdownProps, _) {
           prefixCls: `${prefixCls}-menu`,
           inDropdown: true,
           selectable: false,
-          onClickMenuItem: (key, event) => {
+          onClickMenuItem: (...args) => {
             let returnValueOfOnClickMenuItem = null;
 
             // Trigger onClickMenuItem first
             const content = getPopupContent();
             if (content.props.onClickMenuItem) {
-              returnValueOfOnClickMenuItem = content.props.onClickMenuItem(key, event);
+              returnValueOfOnClickMenuItem = content.props.onClickMenuItem(...args);
             }
 
             // Set focus to avoid onblur

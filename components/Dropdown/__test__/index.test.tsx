@@ -46,12 +46,15 @@ describe('Dropdown', () => {
   });
 
   it('click menu item', () => {
+    const onClickMenuItem = jest.fn();
     const wrapper = mountDropdown(
       <Dropdown
         trigger="click"
         droplist={
           <Menu
-            onClickMenuItem={(key) => {
+            onClickMenuItem={(key, _, keyPath) => {
+              onClickMenuItem(keyPath);
+
               if (key === '2') {
                 return false;
               }
@@ -87,6 +90,7 @@ describe('Dropdown', () => {
 
     simulateMenuItemClick(0);
     expect(getIsTriggerVisible()).toBe(false);
+    expect(onClickMenuItem).toBeCalledWith(['1']);
 
     wrapper.find(Button).simulate('click');
     simulateMenuItemClick(1);
