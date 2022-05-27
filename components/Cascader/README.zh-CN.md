@@ -15,6 +15,7 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |defaultValue|选择框的默认值|`(string \| string[])[]`|`-`|-|
+|inputValue|输入框的值|`string`|`-`|2.34.0|
 |value|选中值|`(string \| string[])[]`|`-`|-|
 |options|级联数据|`T[]`|`[]`|-|
 |expandTrigger|展开下一级方式|`'click' \| 'hover'`|`click`|-|
@@ -33,8 +34,9 @@
 |renderOption|自定义展示 `option`|`(option: NodeProps<T>, level: number) => ReactNode`|`-`|-|
 |renderFooter|定义每一层级的 `footer`。参数：level: 当前层级, activeOption: 当前点击的节点。返回 `null` 不展示|`(level: number, activeOption: NodeProps<T> \| null) => ReactNode`|`-`|-|
 |renderFormat|格式化显示内容。|`(valueShow: any[]) => ReactNode`|`-`|-|
-|onSearch|搜索时的回调|`(inputValue: string) => void`|`-`|2.20.0|
+|onSearch|搜索时的回调.(reason in `2.34.0`)|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.20.0|
 |onChange|点击选择框的回调。|`(value: (string \| string[])[],selectedOptions,extra: { dropdownVisible?: boolean }) => void`|`-`|-|
+|onInputValueChange|inputValue改变时的回调|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.34.0|
 |getPopupContainer|弹出框挂在的父节点|`(node: HTMLElement) => Element`|`-`|-|
 |loadMore|动态加载数据。pathValue: 当前选中项的路径 value； level: 选中项层级。|`(pathValue: string[], level: number) => Promise<T[]>`|`-`|-|
 |onVisibleChange|下拉框收起展开时触发。|`(visible: boolean) => void`|`-`|-|

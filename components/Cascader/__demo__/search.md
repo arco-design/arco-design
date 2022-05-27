@@ -117,7 +117,7 @@ ReactDOM.render(
       }}
       options={options}
       defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-      showSearch
+      showSearch={{retainInputValueWhileSelect: false}}
       allowClear
       fieldNames={{
         children: 'child',

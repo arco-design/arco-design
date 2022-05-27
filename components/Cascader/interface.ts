@@ -14,6 +14,14 @@ export interface CascaderProps<T = any>
    * @en Initial value
    */
   defaultValue?: (string | string[])[];
+
+  /**
+   * @zh 输入框的值
+   * @en Input Value
+   * @version 2.34.0
+   */
+  inputValue?: string;
+
   /**
    * @zh 选中值
    * @en To set value
@@ -117,11 +125,11 @@ export interface CascaderProps<T = any>
    */
   renderFormat?: (valueShow: any[]) => ReactNode;
   /**
-   * @zh 搜索时的回调
-   * @en Callback when input changed
+   * @zh 搜索时的回调。(reason in `2.34.0`)
+   * @en Callback when input changed.(reason in `2.34.0`)
    * @version 2.20.0
    */
-  onSearch?: (inputValue: string) => void;
+  onSearch?: (inputValue: string, reason: InputValueChangeReason) => void;
   /**
    * @zh 点击选择框的回调。
    * @en Callback when finishing select.
@@ -131,6 +139,12 @@ export interface CascaderProps<T = any>
     selectedOptions,
     extra: { dropdownVisible?: boolean }
   ) => void;
+  /**
+   * @zh inputValue改变时的回调
+   * @en Callback when inputValue change.
+   * @version 2.34.0
+   */
+  onInputValueChange?: (inputValue: string, reason: InputValueChangeReason) => void;
   /**
    * @zh 弹出框挂在的父节点
    * @en ParentNode which the selector should be rendered to.
@@ -184,6 +198,9 @@ export type FieldNamesType = {
   /** 指定 isLeaf 在选项中对应的字段  */
   isLeaf?: string;
 };
+
+// 造成输入框值改变的原因：用户输入、选项下拉框收起、其他
+export type InputValueChangeReason = 'manual' | 'optionListHide' | 'optionChecked';
 
 export interface CascaderPanelProps<T> {
   className?: string | string[];
