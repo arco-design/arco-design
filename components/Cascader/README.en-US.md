@@ -34,7 +34,7 @@ Display options in a multi-level cascading dropdown component.
 |renderOption|Custom rendering `option`|`(option: NodeProps<T>, level: number) => ReactNode`|`-`|-|
 |renderFooter|Custom rendering the `footer` of each level menu.|`(level: number, activeOption: NodeProps<T> \| null) => ReactNode`|`-`|-|
 |renderFormat|The return value will be displayed in the input box.|`(valueShow: any[]) => ReactNode`|`-`|-|
-|onSearch|Callback when input changed|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.20.0|
+|onSearch|Callback when input changed.(reason in `2.34.0`)|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.20.0|
 |onChange|Callback when finishing select.|`(value: (string \| string[])[],selectedOptions,extra: { dropdownVisible?: boolean }) => void`|`-`|-|
 |onInputValueChange|Callback when inputValue change.|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.34.0|
 |getPopupContainer|ParentNode which the selector should be rendered to.|`(node: HTMLElement) => Element`|`-`|-|

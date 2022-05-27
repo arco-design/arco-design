@@ -125,8 +125,8 @@ export interface CascaderProps<T = any>
    */
   renderFormat?: (valueShow: any[]) => ReactNode;
   /**
-   * @zh 搜索时的回调
-   * @en Callback when input changed
+   * @zh 搜索时的回调。(reason in `2.34.0`)
+   * @en Callback when input changed.(reason in `2.34.0`)
    * @version 2.20.0
    */
   onSearch?: (inputValue: string, reason: InputValueChangeReason) => void;
@@ -200,7 +200,7 @@ export type FieldNamesType = {
 };
 
 // 造成输入框值改变的原因：用户输入、选项下拉框收起、其他
-export type InputValueChangeReason = 'manual' | 'optionListHide' | 'multiSearch';
+export type InputValueChangeReason = 'manual' | 'optionListHide' | 'optionChecked';
 
 export interface CascaderPanelProps<T> {
   className?: string | string[];

@@ -34,7 +34,7 @@
 |renderOption|自定义展示 `option`|`(option: NodeProps<T>, level: number) => ReactNode`|`-`|-|
 |renderFooter|定义每一层级的 `footer`。参数：level: 当前层级, activeOption: 当前点击的节点。返回 `null` 不展示|`(level: number, activeOption: NodeProps<T> \| null) => ReactNode`|`-`|-|
 |renderFormat|格式化显示内容。|`(valueShow: any[]) => ReactNode`|`-`|-|
-|onSearch|搜索时的回调|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.20.0|
+|onSearch|搜索时的回调.(reason in `2.34.0`)|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.20.0|
 |onChange|点击选择框的回调。|`(value: (string \| string[])[],selectedOptions,extra: { dropdownVisible?: boolean }) => void`|`-`|-|
 |onInputValueChange|inputValue改变时的回调|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.34.0|
 |getPopupContainer|弹出框挂在的父节点|`(node: HTMLElement) => Element`|`-`|-|

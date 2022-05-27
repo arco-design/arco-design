@@ -226,9 +226,14 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     [store, renderFormat]
   );
 
-  const handleChange = (newValue: string[][]) => {
-    if (isObject(props.showSearch) && !props.showSearch.retainInputValueWhileSelect && isMultiple) {
-      tryUpdateInputValue('', 'multiSearch');
+  const handleChange = (newValue: string[][], trigger?: 'panel') => {
+    if (
+      trigger === 'panel' &&
+      isObject(props.showSearch) &&
+      !props.showSearch.retainInputValueWhileSelect &&
+      isMultiple
+    ) {
+      tryUpdateInputValue('', 'optionChecked');
     }
     const { onChange, changeOnSelect, expandTrigger } = props;
     const isSame = mergeValue === newValue;
@@ -311,7 +316,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 inputValue={inputValue}
                 renderEmpty={() => renderEmptyEle(width)}
                 multiple={isMultiple}
-                onChange={handleChange}
+                onChange={(value) => {
+                  handleChange(value, 'panel');
+                }}
                 prefixCls={prefixCls}
                 onEsc={() => {
                   handleVisibleChange(false);
@@ -327,7 +334,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 changeOnSelect={props.changeOnSelect}
                 showEmptyChildren={props.showEmptyChildren || !!props.loadMore}
                 multiple={isMultiple}
-                onChange={handleChange}
+                onChange={(value) => {
+                  handleChange(value, 'panel');
+                }}
                 loadMore={props.loadMore}
                 prefixCls={prefixCls}
                 renderEmpty={renderEmptyEle}
