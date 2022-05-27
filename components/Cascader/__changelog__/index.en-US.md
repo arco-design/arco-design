@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🆕 Feature
+
+- The `Cascader` component supports controlling the input box value through the `InputValue` property([#931](https://github.com/arco-design/arco-design/pull/931))
+
 ## 2.32.0
 
 2022-04-15

@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🆕 功能升级
+
+- Layout 新增 `resizeBoxProps` 属性，接收 `resizeBox` 的所有参数([#937](https://github.com/arco-design/arco-design/pull/937))
+
 ## 2.4.0
 
 2020-12-11

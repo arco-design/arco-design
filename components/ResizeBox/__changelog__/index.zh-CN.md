@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox.SplitGroup` 响应式出错的bug([#934](https://github.com/arco-design/arco-design/pull/934))
+
 ## 2.33.1
 
 2022-05-20

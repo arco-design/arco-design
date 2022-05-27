@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 💎 Enhancement
+
+- Reduce the number of computations for `Typography` on first render([#935](https://github.com/arco-design/arco-design/pull/935))
+
 ## 2.33.1
 
 2022-05-20

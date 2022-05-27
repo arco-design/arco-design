@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🐛 问题修复
+
+- 修复 `Dropdown` 内的 `Menu` 组件 `onMenuItemClick` 的第三个参数 `keyPath` 缺失的 bug。([#921](https://github.com/arco-design/arco-design/pull/921))
+
 ## 2.33.0
 
 2022-05-13

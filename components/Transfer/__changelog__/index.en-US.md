@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fix the bug that the `onItemSelectAll` method does not work when `Transfer` customizes the list.([#903](https://github.com/arco-design/arco-design/pull/903))
+
 ## 2.30.1
 
 2022-03-11

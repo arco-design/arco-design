@@ -2,6 +2,44 @@
 changelog: true
 ---
 
+## 2.34.0
+
+2022-05-27
+
+### 💎 功能优化
+
+- 减少 `Typography` 首次渲染时的计算次数([#935](https://github.com/arco-design/arco-design/pull/935))
+
+### 🆕 功能升级
+
+- `Layout` 新增 `resizeBoxProps` 属性，接收 `resizeBox` 的所有参数([#937](https://github.com/arco-design/arco-design/pull/937))
+- `Cascader` 组件支持通过 `InputValue` 属性控制输入框值 。([#931](https://github.com/arco-design/arco-design/pull/931))
+- `Upload` 组件支持通过 `showUploadList.imageRender` 属性渲染图片。([#925](https://github.com/arco-design/arco-design/pull/925))
+- `Upload` 组件支持通过 `showUploadList.progressRender` 属性渲染上传进度节点。([#925](https://github.com/arco-design/arco-design/pull/925))
+- `Upload` 组件支持传入函数类型的 `children` 渲染触发上传的节点内容。([#925](https://github.com/arco-design/arco-design/pull/925))
+- 新增阿拉伯语。([#932](https://github.com/arco-design/arco-design/pull/932))
+- 新增葡萄牙语。([#924](https://github.com/arco-design/arco-design/pull/924))
+- 新增俄语。([#922](https://github.com/arco-design/arco-design/pull/922))
+- `DatePicker` 组件新增 `panelRender` 参数。([#914](https://github.com/arco-design/arco-design/pull/914))
+- `Trigger` 组件支持通过 `containerScrollToClose` 属性设置弹出层挂载容器滚动时，关闭弹出层。([#913](https://github.com/arco-design/arco-design/pull/913))
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox.SplitGroup` 响应式出错的bug([#934](https://github.com/arco-design/arco-design/pull/934))
+- 修复 `Form` 组件通过 `setFields` 设置 `warning` 为 `null` 时，表单控件的 `warning` 状态未被清空的 bug 。([#930](https://github.com/arco-design/arco-design/pull/930))
+- 修复 `Timeline` 组件在 `mode=alternate` 时，时间轴右侧 label 内容渲染样式错误的问题。([#929](https://github.com/arco-design/arco-design/pull/929))
+- 修复 `Dropdown` 内的 `Menu` 组件 `onMenuItemClick` 的第三个参数 `keyPath` 缺失的 bug。([#921](https://github.com/arco-design/arco-design/pull/921))
+- 修复 `Transfer` 自定义列表时，`onItemSelectAll` 方法失效的 bug。([#903](https://github.com/arco-design/arco-design/pull/903))
+
+### 💅 样式更新
+
+- 调整 `Menu` 的子菜单从左侧弹出时弹出层的位置。([#923](https://github.com/arco-design/arco-design/pull/923))
+- `Upload` 组件照片墙模式下图片展示区域新增默认灰色背景。([#925](https://github.com/arco-design/arco-design/pull/925))
+
+### 🆎 类型修正
+
+- 完善 `Radio` 组件对 `children` 的 TS 定义([#928](https://github.com/arco-design/arco-design/pull/928))
+
 ## 2.33.1
 
 2022-05-20

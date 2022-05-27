@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fix the bug that the `warning` state of the form control is not cleared when the `Form` component sets the `warning` to `null` through `setFields`.([#930](https://github.com/arco-design/arco-design/pull/930))
+
 ## 2.33.1
 
 2022-05-20

@@ -2,6 +2,44 @@
 changelog: true
 ---
 
+## 2.34.0
+
+2022-05-27
+
+### 💎 Enhancement
+
+- Reduce the number of computations for `Typography` on first render([#935](https://github.com/arco-design/arco-design/pull/935))
+
+### 🆕 Feature
+
+- `Layout` adds `resizeBoxProps` property to receive all parameters of `resizeBox`([#937](https://github.com/arco-design/arco-design/pull/937))
+- Added Arabic.([#932](https://github.com/arco-design/arco-design/pull/932))
+- The `Cascader` component supports controlling the input box value through the `InputValue` property([#931](https://github.com/arco-design/arco-design/pull/931))
+- The `Upload` component supports rendering images via the `showUploadList.imageRender` property.([#925](https://github.com/arco-design/arco-design/pull/925))
+- The `Upload` component supports rendering upload progress nodes via the `showUploadList.progressRender` property.([#925](https://github.com/arco-design/arco-design/pull/925))
+- The `Upload` component supports `children` passed in the function type to render the node content that triggers the upload.([#925](https://github.com/arco-design/arco-design/pull/925))
+- The default gray background has been added to the picture display area in the photo wall mode of the `Upload` component.([#925](https://github.com/arco-design/arco-design/pull/925))
+- Added Portuguese.([#924](https://github.com/arco-design/arco-design/pull/924))
+- Added Russian.([#922](https://github.com/arco-design/arco-design/pull/922))
+- Added `panelRender` parameter to the `DatePicker` component.([#914](https://github.com/arco-design/arco-design/pull/914))
+- The `Trigger` component supports the popup layer to be closed when the container is scrolled by setting the `containerScrollToClose` property.([#913](https://github.com/arco-design/arco-design/pull/913))
+
+### 🐛 BugFix
+
+- Fix `ResizeBox.SplitGroup` responsive error bug([#934](https://github.com/arco-design/arco-design/pull/934))
+- Fix the bug that the `warning` state of the form control is not cleared when the `Form` component sets the `warning` to `null` through `setFields`.([#930](https://github.com/arco-design/arco-design/pull/930))
+- Fixed an issue where the content of the label on the right side of the timeline was rendered incorrectly when the `Timeline` component was in `mode=alternate`.([#929](https://github.com/arco-design/arco-design/pull/929))
+- Fixed the bug that the third parameter `keyPath` of `onMenuItemClick` in `Dropdown.Menu` was missing.([#921](https://github.com/arco-design/arco-design/pull/921))
+- Fix the bug that the `onItemSelectAll` method does not work when `Transfer` customizes the list.([#903](https://github.com/arco-design/arco-design/pull/903))
+
+### 💅 Style
+
+- Adjust the position of the popup layer when the submenu of `Menu` pops up from the left.([#923](https://github.com/arco-design/arco-design/pull/923))
+
+### 🆎 TypeScript
+
+- Improve the TS definition of `children` for `Radio` component([#928](https://github.com/arco-design/arco-design/pull/928))
+
 ## 2.33.1
 
 2022-05-20

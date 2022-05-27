@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 💅 Style
+
+- Adjust the position of the popup layer when the submenu of `Menu` pops up from the left.([#923](https://github.com/arco-design/arco-design/pull/923))
+
 ## 2.33.1
 
 2022-05-20

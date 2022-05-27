@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🆕 功能升级
+
+- `DatePicker` 组件新增 `panelRender` 参数。([#914](https://github.com/arco-design/arco-design/pull/914))
+
 ## 2.32.2
 
 2022-04-29

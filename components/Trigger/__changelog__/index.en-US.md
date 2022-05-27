@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🆕 Feature
+
+- The `Trigger` component supports the popup layer to be closed when the container is scrolled by setting the `containerScrollToClose` property.([#913](https://github.com/arco-design/arco-design/pull/913))
+
 ## 2.32.0
 
 2022-04-15

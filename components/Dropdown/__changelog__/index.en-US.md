@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fixed the bug that the third parameter `keyPath` of `onMenuItemClick` in `Dropdown.Menu` was missing.([#921](https://github.com/arco-design/arco-design/pull/921))
+
 ## 2.33.0
 
 2022-05-13
