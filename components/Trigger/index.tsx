@@ -83,6 +83,7 @@ const defaultProps = {
   clickOutsideToClose: true,
   escToClose: false,
   mouseLeaveToClose: true,
+  containerScrollToClose: false,
   getDocument: () => window.document as any,
   autoFixPosition: true,
   mouseEnterDelay: 100,
@@ -226,7 +227,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
     // popupVisible为true
     this.onContainerResize();
-    if (currentProps.updateOnScroll) {
+    if (currentProps.updateOnScroll || currentProps.containerScrollToClose) {
       this.onContainersScroll();
     }
     if (!this.handleWindowResize) {
@@ -258,7 +259,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   offScrollListeners = () => {
     (this.scrollElements || []).forEach((item) => {
-      off(item, 'scroll', this.handleUpdatePosition);
+      off(item, 'scroll', this.handleScroll);
     });
     this.scrollElements = null;
   };
@@ -275,6 +276,16 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
   };
 
+  handleScroll = () => {
+    const currentProps = this.getMergedProps();
+
+    if (currentProps.containerScrollToClose) {
+      this.setPopupVisible(false);
+    } else if (currentProps.updateOnScroll) {
+      this.handleUpdatePosition();
+    }
+  };
+
   onContainersScroll = () => {
     if (this.scrollElements) {
       return;
@@ -282,7 +293,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     this.scrollElements = getScrollElements(this.childrenDom, this.popupContainer?.parentNode);
 
     this.scrollElements.forEach((item) => {
-      on(item, 'scroll', this.handleUpdatePosition);
+      on(item, 'scroll', this.handleScroll);
     });
   };
 
