@@ -7,14 +7,14 @@ title:
 
 ## zh-CN
 
-配合 `react-resizable` 可以实现可伸缩列的效果。
+配合 `react-resizable@3.0.0` 可以实现可伸缩列的效果。
 
 ## en-US
 
-With `react-resizable`, the effect of resize columns can be achieved.
+With `react-resizable@3.0.0`, the effect of resize columns can be achieved.
 
 ```js
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import { Table } from '@arco-design/web-react';
 import { Resizable } from 'react-resizable';
 
@@ -72,6 +72,21 @@ const data = [{
   email: 'william.smith@example.com'
 }];
 
+const CustomResizeHandle = forwardRef((props, ref) => {
+    const { handleAxis, ...restProps } = props;
+    return (
+      <span
+        ref={ref}
+        className={`react-resizable-handle react-resizable-handle-${handleAxis}`}
+        {...restProps}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      />
+    );
+  }
+);
+
 const ResizableTitle = props => {
   const { onResize, width, ...restProps } = props;
 
@@ -83,14 +98,7 @@ const ResizableTitle = props => {
     <Resizable
       width={width}
       height={0}
-      handle={resizeHandle => (
-        <span
-          className={`react-resizable-handle react-resizable-handle-${resizeHandle}`}
-          onClick={e => {
-            e.stopPropagation();
-          }}
-        />
-      )}
+      handle={<CustomResizeHandle />}
       onResize={onResize}
       draggableOpts={{ enableUserSelectHack: false }}
     >
