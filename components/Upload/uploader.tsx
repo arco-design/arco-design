@@ -246,7 +246,7 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
             }}
             prefixCls={prefixCls}
           >
-            {children}
+            {isFunction(children) ? children({ fileList: this.props.fileList }) : children}
           </TriggerNode>
         </CSSTransition>
         {tip && listType !== 'picture-card' && !drag ? (
