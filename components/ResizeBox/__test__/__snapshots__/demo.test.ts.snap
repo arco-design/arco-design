@@ -552,14 +552,14 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
 >
   <div
     class="arco-resizebox-split-group-pane"
-    style="flex-basis:calc(0.5px - 0px)"
+    style="flex-basis:calc(50% - 0px)"
   >
     <div
       class="arco-resizebox-split-group arco-resizebox-split-group-horizontal resizebox-split-group-demo-horizontal"
     >
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -659,7 +659,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -743,7 +743,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -836,7 +836,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -922,14 +922,14 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
   </div>
   <div
     class="arco-resizebox-split-group-pane"
-    style="flex-basis:calc(0.5px - 0px)"
+    style="flex-basis:calc(50% - 0px)"
   >
     <div
       class="arco-resizebox-split-group arco-resizebox-split-group-vertical resizebox-split-group-demo-vertical"
     >
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.3333333333333333px - 0px)"
+        style="flex-basis:calc(33.33333333333333% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -1013,7 +1013,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.3333333333333333px - 0px)"
+        style="flex-basis:calc(33.33333333333333% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -1081,7 +1081,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.3333333333333333px - 0px)"
+        style="flex-basis:calc(33.33333333333333% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
