@@ -68,6 +68,7 @@ function Demo() {
                   error: {
                     message: 'Maximum is 200',
                   },
+                  warning: <div>warning info ...</div>
                 },
               });
           }}

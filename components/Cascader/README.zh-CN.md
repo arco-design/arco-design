@@ -80,11 +80,19 @@ this.select.blur();
 
 ```
 interface OptionProps {
+  /** 选项的值 */
   value?: string;
+  /** 选项文本 */
   label?: string;
+  /** 是否禁用该选项 */
   disabled?: boolean;
+  /** 下一级选项 */
   children?: OptionProps[];
+  /** 是否是叶子节点 */
   isLeaf?: boolean;
+  /** 是否禁用复选框选中(`v2.21.0`) */
+  disableCheckbox?: boolean;
+  [key: string]: any;
 }
 ```
 
