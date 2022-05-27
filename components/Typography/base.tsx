@@ -147,13 +147,7 @@ function Base(props: BaseProps) {
     });
   };
 
-  const { cor, dor, currentOr } = useResizeObserver(resizeOnNextFrame);
-
-  useIsomorphicLayoutEffect(() => {
-    if (!currentOr) {
-      resizeOnNextFrame();
-    }
-  }, [currentOr]);
+  const { cor, dor } = useResizeObserver(resizeOnNextFrame);
 
   useUpdateEffect(() => {
     ellipsisConfig.onEllipsis && ellipsisConfig.onEllipsis(isEllipsis);
@@ -170,7 +164,6 @@ function Base(props: BaseProps) {
   }, [
     children,
     expanding,
-    isEllipsis,
     editing,
     ellipsisConfig.suffix,
     ellipsisConfig.ellipsisStr,
@@ -181,7 +174,6 @@ function Base(props: BaseProps) {
   ]);
 
   function calcEllipsis() {
-    const currentEllipsis = isEllipsis;
     if (editing) {
       return;
     }
@@ -199,14 +191,10 @@ function Base(props: BaseProps) {
       if (ellipsis && text) {
         setEllipsisText(text);
       }
-      if (ellipsis !== currentEllipsis) {
-        setEllipsis(ellipsis);
-      }
+      setEllipsis(ellipsis);
     } else {
       const isEllipsis = !!ellipsisConfig.rows;
-      if (isEllipsis !== currentEllipsis) {
-        setEllipsis(isEllipsis);
-      }
+      setEllipsis(isEllipsis);
     }
   }
 
