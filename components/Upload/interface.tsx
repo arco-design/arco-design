@@ -24,6 +24,10 @@ export type CustomIconType = {
   errorIcon?: ReactNode;
   successIcon?: ReactNode;
   fileName?: (file: UploadItem) => ReactNode;
+  // 2.34.0
+  progressRender?: (file: UploadItem, originDom: ReactNode) => React.ReactElement;
+  // 2.34.0
+  imageRender?: (file: UploadItem) => React.ReactNode;
 };
 
 export type RequestOptions = Pick<

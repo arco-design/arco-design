@@ -81,7 +81,11 @@ const TextItem = (
       <div className={cls}>
         {props.listType === 'picture-list' && (
           <div className={`${cls}-thumbnail`}>
-            <img src={url} />
+            {isFunction(showUploadList.imageRender) ? (
+              showUploadList.imageRender(file)
+            ) : (
+              <img src={url} />
+            )}
           </div>
         )}
         <div className={`${cls}-content`}>

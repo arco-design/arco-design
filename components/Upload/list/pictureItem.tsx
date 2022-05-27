@@ -33,7 +33,7 @@ const PictureItem = (props: UploadListProps & { file: UploadItem }) => {
         />
       ) : (
         <>
-          <img src={url} />
+          {isFunction(actionIcons.imageRender) ? actionIcons.imageRender(file) : <img src={url} />}
           <div className={`${cls}-mask`}>
             {file.status === STATUS.fail && (
               <div className={`${cls}-error-tip`}>
