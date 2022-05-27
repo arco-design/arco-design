@@ -89,4 +89,32 @@ describe('Upload list', function () {
 
     expect(changeFile.status).toBe(STATUS.uploading);
   });
+
+  it('showUploadList progressRender, imageRender', async function () {
+    const wrapper = mount<UploadProps>(
+      <Upload
+        fileList={[defaultFileList[0]]}
+        action="/sss"
+        showUploadList={{
+          progressRender: () => {
+            return <div id="progress">aaa</div>;
+          },
+          imageRender: () => {
+            return <div id="image">aaa</div>;
+          }
+        }}
+      />
+    );
+
+    expect(wrapper.find('#progress')).toHaveLength(1);
+
+    wrapper.setProps({
+      listType: 'picture-card',
+    });
+
+    wrapper.update();
+
+    expect(wrapper.find('#image')).toHaveLength(1);
+  });
+
 });
