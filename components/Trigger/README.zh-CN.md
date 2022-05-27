@@ -40,6 +40,7 @@
 |clickToClose|是否能通过点击触发节点来关闭弹出框|`boolean`|`true`|-|
 |clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。|`boolean`|`true`|-|
 |escToClose|是否允许按 `ESC` 键关闭弹出框。|`boolean`|`false`|-|
+|containerScrollToClose|是否在容器滚动时关闭弹出框|`boolean`|`false`|2.34.0|
 |onClick|按钮点击事件（`trigger` 包含 `click` 时生效）|`(popupVisible: boolean) => void`|`-`|-|
 |onClickOutside|点击触发节点和弹出框以外的区域的回调。|`Function`|`-`|-|
 |popupAlign|调整弹出框的位置，有四个属性值，`left`, `right`, `top`, `bottom`，分别表示向该方向移动几个像素。具体可查看 [示例](/react/components/trigger#设置弹窗位置偏移量)|`{left?: number \| [number, number];right?: number \| [number, number];top?: number \| [number, number];bottom?: number \| [number, number];}`|`{}`|-|
