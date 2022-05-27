@@ -812,10 +812,10 @@ aproba@^1.1.1:
   resolved "https://registry.npmjs.org/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
   integrity sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==
 
-arco-doc-site-components@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/arco-doc-site-components/-/arco-doc-site-components-1.0.0.tgz#c1abed39872eba8c27bfb175a61e4cd8f1aeb479"
-  integrity sha512-nPZCxUvF5d4iLqShviy1AGnLSJuvnEig6kBTi9pOUsgbWtyO3jBRBTVUqiSVtsDiqy13iWgcwLidkJPOcRI21Q==
+arco-doc-site-components@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/arco-doc-site-components/-/arco-doc-site-components-1.0.2.tgz#144937061d066b56a10f217d7ece025bc939d17d"
+  integrity sha512-Ng4py6SQo1OctimBpNCHgsjY5dCrrcpZfjsd69hBhaZORhrwv7Xk/9li/QkFvM0l8EOwlQ+MupMhBUYHXIewUg==
   dependencies:
     clipboard "^2.0.4"
     codesandbox "^2.2.3"
