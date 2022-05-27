@@ -412,13 +412,23 @@
       }
     }
 
-    &.@{prefix}-trigger-position-rt {
+    &.@{prefix}-trigger[trigger-placement='rt'] {
       transform: translateX(@menu-vertical-padding-horizontal);
 
       .@{prefix}-trigger-arrow {
         z-index: 0;
         border-left: 1px solid @menu-color-border-popup;
         border-bottom: 1px solid @menu-color-border-popup;
+      }
+    }
+
+    &.@{prefix}-trigger[trigger-placement='lt'] {
+      transform: translateX(-@menu-vertical-padding-horizontal);
+
+      .@{prefix}-trigger-arrow {
+        z-index: 0;
+        border-right: 1px solid @menu-color-border-popup;
+        border-top: 1px solid @menu-color-border-popup;
       }
     }
 
