@@ -16,7 +16,7 @@ import SearchPanel from './panel/search-panel';
 import { ConfigContext } from '../ConfigProvider';
 import Store from './base/store';
 import SelectView, { SelectViewHandle } from '../_class/select-view';
-import { CascaderProps, OptionProps } from './interface';
+import { CascaderProps, OptionProps, InputValueChangeReason } from './interface';
 import cs from '../_util/classNames';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import useUpdate from '../_util/hooks/useUpdate';
@@ -66,8 +66,6 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const timerRef = useRef(null);
   const forceUpdate = useForceUpdate();
 
-  const [inputValue, setInputValue] = useState('');
-
   const store = useCurrentRef<Store<T>>(() => {
     return getStore(
       props,
@@ -89,6 +87,15 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     value: props.popupVisible,
     defaultValue: props.defaultPopupVisible,
   });
+  const [inputValue, setInputValue, stateInputValue] = useMergeValue('', {
+    value: 'inputValue' in props ? props.inputValue || '' : undefined,
+  });
+
+  // 触发 onInputValueChange 回调的值
+  const refOnInputChangeCallbackValue = useRef(inputValue);
+  // 触发 onInputValueChange 回调的原因
+  const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
+
   const selectRef = useRef(null);
   // 暂存被选中的值对应的节点。仅在onSearch的时候用到
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
@@ -101,17 +108,36 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     return id;
   }, []);
 
+  // 尝试更新 inputValue，触发 onInputValueChange
+  const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
+    if (value !== refOnInputChangeCallbackValue.current) {
+      setInputValue(value);
+      refOnInputChangeCallbackValue.current = value;
+      refOnInputChangeCallbackReason.current = reason;
+      props.onInputValueChange && props.onInputValueChange(value, reason);
+    }
+  };
+
+  // 在 inputValue 变化时，适时触发 onSearch
+  useEffect(() => {
+    const { current: reason } = refOnInputChangeCallbackReason;
+    if (stateInputValue === inputValue && (reason === 'manual' || reason === 'optionListHide')) {
+      props.onSearch && props.onSearch(inputValue, reason);
+    }
+  }, [inputValue]);
+
   useEffect(() => {
     const clearTimer = () => {
       clearTimeout(timerRef.current);
       timerRef.current = null;
     };
+
     if (!popupVisible && inputValue) {
       if (timerRef.current) {
         clearTimer();
       }
       timerRef.current = setTimeout(() => {
-        setInputValue('');
+        tryUpdateInputValue('', 'optionListHide');
         timerRef.current = null;
       }, 200);
     }
@@ -200,9 +226,14 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     [store, renderFormat]
   );
 
-  const handleChange = (newValue: string[][]) => {
-    if (isObject(props.showSearch) && !props.showSearch.retainInputValueWhileSelect && isMultiple) {
-      setInputValue('');
+  const handleChange = (newValue: string[][], trigger?: 'panel') => {
+    if (
+      trigger === 'panel' &&
+      isObject(props.showSearch) &&
+      !props.showSearch.retainInputValueWhileSelect &&
+      isMultiple
+    ) {
+      tryUpdateInputValue('', 'optionChecked');
     }
     const { onChange, changeOnSelect, expandTrigger } = props;
     const isSame = mergeValue === newValue;
@@ -285,7 +316,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 inputValue={inputValue}
                 renderEmpty={() => renderEmptyEle(width)}
                 multiple={isMultiple}
-                onChange={handleChange}
+                onChange={(value) => {
+                  handleChange(value, 'panel');
+                }}
                 prefixCls={prefixCls}
                 onEsc={() => {
                   handleVisibleChange(false);
@@ -301,7 +334,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 changeOnSelect={props.changeOnSelect}
                 showEmptyChildren={props.showEmptyChildren || !!props.loadMore}
                 multiple={isMultiple}
-                onChange={handleChange}
+                onChange={(value) => {
+                  handleChange(value, 'panel');
+                }}
                 loadMore={props.loadMore}
                 prefixCls={prefixCls}
                 renderEmpty={renderEmptyEle}
@@ -383,8 +418,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
           }}
           // onFocus={this.onFocusInput}
           onChangeInputValue={(v) => {
-            setInputValue(v);
-            props.onSearch && props.onSearch(v);
+            tryUpdateInputValue(v, 'manual');
+
             // tab键 focus 到输入框，此时下拉框未显示。如果输入值，展示下拉框
             if (!popupVisible) {
               handleVisibleChange(true);

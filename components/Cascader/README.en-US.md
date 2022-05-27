@@ -15,6 +15,7 @@ Display options in a multi-level cascading dropdown component.
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |defaultValue|Initial value|`(string \| string[])[]`|`-`|-|
+|inputValue|Input Value|`string`|`-`|2.34.0|
 |value|To set value|`(string \| string[])[]`|`-`|-|
 |options|The data of options|`T[]`|`[]`|-|
 |expandTrigger|Set the way to display the next level menu. One of hover and click|`'click' \| 'hover'`|`click`|-|
@@ -33,8 +34,9 @@ Display options in a multi-level cascading dropdown component.
 |renderOption|Custom rendering `option`|`(option: NodeProps<T>, level: number) => ReactNode`|`-`|-|
 |renderFooter|Custom rendering the `footer` of each level menu.|`(level: number, activeOption: NodeProps<T> \| null) => ReactNode`|`-`|-|
 |renderFormat|The return value will be displayed in the input box.|`(valueShow: any[]) => ReactNode`|`-`|-|
-|onSearch|Callback when input changed|`(inputValue: string) => void`|`-`|2.20.0|
+|onSearch|Callback when input changed.(reason in `2.34.0`)|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.20.0|
 |onChange|Callback when finishing select.|`(value: (string \| string[])[],selectedOptions,extra: { dropdownVisible?: boolean }) => void`|`-`|-|
+|onInputValueChange|Callback when inputValue change.|`(inputValue: string, reason: InputValueChangeReason) => void`|`-`|2.34.0|
 |getPopupContainer|ParentNode which the selector should be rendered to.|`(node: HTMLElement) => Element`|`-`|-|
 |loadMore|To load option lazily|`(pathValue: string[], level: number) => Promise<T[]>`|`-`|-|
 |onVisibleChange|Callback when popup shown or hidden.|`(visible: boolean) => void`|`-`|-|

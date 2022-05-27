@@ -14,7 +14,7 @@ title:
 `children` will override the default select box node.
 
 ```js
-import { Cascader, Link, Typography } from '@arco-design/web-react';
+import { Cascader, Link, Typography, Input, Divider } from '@arco-design/web-react';
 
 const options = [
   {
@@ -72,11 +72,18 @@ const options = [
 class Demo extends React.Component {
   state = {
     text: ['Shanghai', 'Shanghai', 'Huangpu'].join(', '),
+    inputValue: ''
   };
 
   onChange = (value, selectedOptions) => {
     this.setState({
       text: selectedOptions.map((a) => a.label).join(', '),
+    });
+  };
+
+  onInputValueChange = (inputValue) => {
+    this.setState({
+      inputValue,
     });
   };
 
@@ -87,11 +94,27 @@ class Demo extends React.Component {
         <Cascader
           defaultValue={['Shanghai', 'Shanghai', 'Huangpu']}
           placeholder="Please select ..."
+          inputValue={this.state.inputValue}
           style={{ width: 300 }}
           options={options}
           onChange={this.onChange}
+          dropdownRender={menu => {
+            return <div>
+              <div style={{ padding: '6px 8px'}} >
+                <Input.Search
+                  placeholder="Please select ..."
+                  allowClear
+                  onChange={this.onInputValueChange}
+                  value={this.state.inputValue}
+                />
+              </div>
+
+              <Divider style={{margin: 0}}/>
+              {menu}
+            </div>
+          }}
         >
-          <Link >{this.state.text}</Link>
+          <Link>{this.state.text}</Link>
         </Cascader>
       </div>
     );
