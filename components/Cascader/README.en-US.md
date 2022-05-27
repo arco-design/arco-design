@@ -80,10 +80,17 @@ this.select.blur();
 ```
 interface OptionProps {
   value?: string;
+  /** option text */
   label?: string;
+  /** whether to disable this option */
   disabled?: boolean;
+  /** children nodes */
   children?: OptionProps[];
+  /** Is it a leaf node */
   isLeaf?: boolean;
+  /** Whether to disable the checkbox (`v2.21.0`) */
+  disableCheckbox?: boolean;
+  [key: string]: any;
 }
 ```
 

@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import setWith from 'lodash/setWith';
 import { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
 import { FormItemContext } from './context';
-import { isArray, isFunction } from '../_util/is';
+import { isArray, isFunction, isNullOrUndefined } from '../_util/is';
 import warn from '../_util/warning';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
@@ -149,7 +149,9 @@ export default class Control<
             this.touched = info.data.touched;
           }
           if (info.data && 'warnings' in info.data) {
-            this.warnings = [].concat(info.data.warnings);
+            this.warnings = isNullOrUndefined(info.data.warnings)
+              ? []
+              : [].concat(info.data.warnings);
           }
           if (info.data && 'errors' in info.data) {
             this.errors = info.data.errors;

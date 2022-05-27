@@ -182,7 +182,8 @@ this.form.setFields({
     value: 'pjy',
     error: {
       message: 'Yes, I know!'
-    }
+    },
+    warning: 'warning...'
   }
 });
 ```
