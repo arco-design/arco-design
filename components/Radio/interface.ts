@@ -84,6 +84,7 @@ export interface RadioGroupProps {
    * @en Set children options
    */
   options?: (string | number | { label: ReactNode; value: any; disabled?: boolean })[];
+  children?: ReactNode | ((value: { checked: boolean }) => ReactNode);
 }
 
 export interface RadioGroupContextProps {
