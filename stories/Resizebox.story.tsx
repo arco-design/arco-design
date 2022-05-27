@@ -1,101 +1,76 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
-import { ResizeBox, Typography } from '@self';
-import { IconDoubleLeft, IconDoubleRight } from '@self/icon';
-import { SplitGroupPane } from '../components/ResizeBox/interface';
-
-const { Paragraph, Text } = Typography;
-
-const panes: Array<Omit<SplitGroupPane, 'content'>> = [
-  { size: 0.2, collapsible: { prev: true } },
-  { size: 0.4, min: '50px' },
-  {
-    resizable: false,
-    collapsible: {
-      prev: {
-        // 自定义伸缩杆向前快速收缩触发器
-        icon: <IconDoubleLeft />,
-        onClick: (_, collapsed, status, activeIndex) => {
-          console.log('快速收缩：', collapsed, status, activeIndex);
-        },
-      },
-      next: {
-        icon: <IconDoubleRight />,
-        onClick: (_, collapsed, status, activeIndex) => {
-          console.log('快速收缩：', collapsed, status, activeIndex);
-        },
-      },
-    },
-    // 自定义伸缩杆
-    trigger: (prev, resize, next) => {
-      return (
-        <div className="resizebox-split-group-demo-trigger">
-          {prev}
-          {resize}
-          {next}
-        </div>
-      );
-    },
-  },
-  {},
-];
-
-const verticalPanes = [{ collapsible: true }, { size: 0.2, collapsible: { next: true } }, {}];
-
-const HorizontalSplitGroup = () => {
-  const [offsets, setOffsets] = useState<string[]>([]);
-  return (
-    <ResizeBox.SplitGroup
-      onMoving={(_, sizes) => setOffsets(sizes)}
-      className="resizebox-split-group-horizontal"
-      style={{ height: '100%' }}
-      panes={panes.map((obj, index) => ({
-        content: (
-          <div className="resizebox-split-group-demo-content">
-            <Paragraph>
-              <Paragraph>
-                <Text mark>pane {index}</Text>
-                <br />
-                <Text code>min：{obj.min || 0}</Text>
-                <br />
-                <Text code>size： {obj.size || 'not set'}</Text>
-                <br />
-                <Text code>offset：{offsets[index] || 'initial'}</Text>
-              </Paragraph>
-            </Paragraph>
-          </div>
-        ),
-        ...obj,
-      }))}
-    />
-  );
-};
-
-const VerticalSplitGroup = () => {
-  return (
-    <ResizeBox.SplitGroup
-      className="resizebox-split-group-vertical"
-      direction="vertical"
-      style={{ height: '200px' }}
-      panes={verticalPanes.map((obj, index) => ({
-        content: (
-          <div className="resizebox-split-group-demo-content">
-            <Text mark>pane {index}</Text>
-          </div>
-        ),
-        ...obj,
-      }))}
-    />
-  );
-};
+import React from 'react';
+import { ResizeBox } from '@self';
 
 function Demo1() {
   return (
-    <ResizeBox.SplitGroup
-      style={{ height: 400, border: '1px solid #000000' }}
-      direction="vertical"
-      panes={[{ content: <HorizontalSplitGroup /> }, { content: <VerticalSplitGroup /> }]}
-    />
+    <div style={{ width: '100%', height: '100%' }}>
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'red',
+          height: 70,
+        }}
+      >
+        header
+      </div>
+      <ResizeBox.SplitGroup
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+        }}
+        direction="vertical"
+        onMoving={(_, params) => console.log(params)}
+        panes={[
+          {
+            content: (
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'yellow',
+                }}
+              >
+                Panel 1
+              </div>
+            ),
+            trigger: () => (
+              <div
+                style={{
+                  width: '100%',
+                  height: 5,
+                  position: 'absolute',
+                  backgroundColor: 'black',
+                }}
+              />
+            ),
+          },
+          {
+            content: (
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'green',
+                }}
+              >
+                Panel 2
+              </div>
+            ),
+          },
+        ]}
+      />
+    </div>
   );
 }
 

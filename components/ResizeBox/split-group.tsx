@@ -9,7 +9,7 @@ import React, {
 import { SplitGroupProps, CollapsedConfig } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import cs from '../_util/classNames';
-import { isFunction, isNumber, isUndefined, isObject } from '../_util/is';
+import { isFunction, isNumber, isUndefined, isObject, isString } from '../_util/is';
 import ResizeTrigger from './resize-trigger';
 import { on, off } from '../_util/dom';
 
@@ -54,7 +54,6 @@ function SplitGroup(props: SplitGroupProps, ref) {
 
   // 获取初始的 offset, 将传入的size 都转为像素值。
   const getInitialOffsets = () => {
-    const totalPx = isHorizontal ? wrapperRef.current.offsetWidth : wrapperRef.current.offsetHeight;
     let newOffsets = [];
     panes.forEach((pane) => {
       const { size } = pane;
@@ -66,20 +65,20 @@ function SplitGroup(props: SplitGroupProps, ref) {
     });
     // 剩余的空间均分给没有设置 size 的面板
     const noSizeArr = newOffsets.filter((size) => !size);
-    const remainPx =
-      totalPx -
+    const remainPercent =
+      1 -
       newOffsets.reduce((a, b) => {
         const formatA = a || 0;
         const formatB = b || 0;
         return formatA + formatB;
       }, 0);
 
-    const averagePx = remainPx / noSizeArr.length;
+    const averagePercent = remainPercent / noSizeArr.length;
     newOffsets = newOffsets.map((size) => {
       if (!isUndefined(size)) {
         return size;
       }
-      return averagePx;
+      return averagePercent;
     });
     return newOffsets;
   };
@@ -88,32 +87,20 @@ function SplitGroup(props: SplitGroupProps, ref) {
   const getPaneSize = (index) => {
     const prevTriggerSize = triggerSize[index - 1] || 0;
     const currentTriggerSize = triggerSize[index];
-    let baseVal = offsets[index];
-    let unit = 'px';
-
-    // `px` is converted to `%` when rendering for wrapper resize.
-    if (wrapperRef.current) {
-      const totalPX = isHorizontal
-        ? wrapperRef.current.offsetWidth
-        : wrapperRef.current.offsetHeight;
-      baseVal = (baseVal / totalPX) * 100;
-      unit = '%';
-    }
-
+    const baseVal = offsets[index] * 100;
+    const unit = '%';
     return `calc(${baseVal}${unit} - ${(prevTriggerSize + currentTriggerSize) / 2}px)`;
   };
 
-  // 入参 百分比/像素值 => 全部转化为像素值。
+  // 入参 百分比/像素值 => 全部转化为百分比(响应式)
   function formatSize(size?: number | string) {
     const totalPX = isHorizontal ? wrapperRef.current.offsetWidth : wrapperRef.current.offsetHeight;
     if (!size || (isNumber(size) && size < 0)) {
       return 0;
     }
 
-    if (isNumber(size)) {
-      return Math.min(totalPX * size, totalPX);
-    }
-    return parseFloat(size);
+    const percent = isString(size) ? parseFloat(size) / totalPX : size;
+    return Math.min(percent, 1);
   }
 
   // 计算阈值，因为伸缩杆会影响到当前面板 跟 下一个面板。所以同时计算两个阈值。
@@ -138,22 +125,22 @@ function SplitGroup(props: SplitGroupProps, ref) {
   };
 
   // 拖拽时，获取新的占位距离。影响当前面板跟下一个面板的占位值。
-  const getNewOffsets = (startOffset, startPosition, currentPosition) => {
+  const getNewOffsets = (startOffset: number, startPosition: number, currentPosition: number) => {
     const current = movingIndex.current;
     const next = current + 1;
 
     const newOffsets = [...offsets];
 
-    const currentPx = offsets[current];
-    const nextPx = offsets[next];
-    const totalOffset = currentPx + nextPx;
+    const currentPercent = offsets[current];
+    const nextPercent = offsets[next];
+    const totalPercent = currentPercent + nextPercent;
     const { currentMin: minOffset, currentMax: maxOffset } = getMinAndMax(current);
-    let moveOffset = startOffset + (currentPosition - startPosition);
+    let moveOffset = startOffset + formatSize(`${currentPosition - startPosition}px`);
     moveOffset = Math.max(minOffset, moveOffset);
     moveOffset = Math.min(maxOffset, moveOffset);
     newOffsets[current] = moveOffset;
     // 保证 totalOffset = nextOffset + currentOffset  不变。
-    newOffsets[next] = totalOffset - moveOffset;
+    newOffsets[next] = totalPercent - moveOffset;
     return newOffsets;
   };
 
@@ -211,6 +198,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
   function moving(e) {
     const index = movingIndex.current;
     const currentRecord = recordRef.current[index];
+    const totalPX = isHorizontal ? wrapperRef.current.offsetWidth : wrapperRef.current.offsetHeight;
     if (currentRecord.moving) {
       const newOffsets = getNewOffsets(
         currentRecord.startOffset,
@@ -223,7 +211,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
       props.onMoving &&
         props.onMoving(
           e,
-          newOffsets.map((value) => `${value}px`),
+          newOffsets.map((value) => `${value * totalPX}px`),
           index
         );
     }
@@ -250,6 +238,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
     const currentOffset = offsets[index];
     const nextOffset = offsets[next];
     const totalOffset = currentOffset + nextOffset;
+    const totalPX = isHorizontal ? wrapperRef.current.offsetWidth : wrapperRef.current.offsetHeight;
 
     const { currentMin, nextMin } = getMinAndMax(index);
 
@@ -282,7 +271,7 @@ function SplitGroup(props: SplitGroupProps, ref) {
     props.onMoving &&
       props.onMoving(
         e,
-        newOffset.map((value) => `${value}px`),
+        newOffset.map((value) => `${value * totalPX}px`),
         index
       );
     props.onMovingEnd && props.onMovingEnd(index);
