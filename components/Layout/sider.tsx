@@ -1,17 +1,21 @@
-import React, { forwardRef, useContext, useEffect, createContext, useRef } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  createContext,
+  useRef,
+  useMemo,
+  useState,
+} from 'react';
 import cs from '../_util/classNames';
 import IconLeft from '../../icon/react-icon/IconLeft';
 import IconRight from '../../icon/react-icon/IconRight';
 import { ConfigContext } from '../ConfigProvider';
 import ResizeBox from '../ResizeBox';
-import { isArray } from '../_util/is';
+import { isArray, isNumber } from '../_util/is';
 import ResponsiveObserve, { responsiveMap } from '../_util/responsiveObserve';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { SiderProps } from './interface';
-
-const isNumber = (n) => {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-};
 
 export const SiderContext = createContext<{
   siderCollapsed: boolean;
@@ -46,16 +50,18 @@ function Sider(props: SiderProps, ref) {
     breakpoint,
     onBreakpoint,
     onCollapse,
+    resizeBoxProps = {},
   } = props;
 
   const uniqueId = generateId('arco-sider-');
 
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('layout-sider');
-
   const [collapsed, setCollapsed] = useMergeValue(false, {
     value: props.collapsed,
   });
+  const propsWidth = isNumber(width) ? width : parseFloat(width);
+  const [siderWidth, setSiderWidth] = useState(propsWidth);
 
   const refResponsiveHandlerToken = useRef(null);
   // 提供给 ResponsiveHandler，使得其可以获得最新的 state 值
@@ -97,8 +103,13 @@ function Sider(props: SiderProps, ref) {
     };
   }, []);
 
-  const rawWidth = collapsed ? collapsedWidth : width;
-  const siderWidth = isNumber(rawWidth) ? `${rawWidth}px` : String(rawWidth);
+  useEffect(() => {
+    setSiderWidth(collapsed ? collapsedWidth : propsWidth);
+  }, [collapsed, propsWidth, collapsedWidth]);
+
+  const resizable =
+    (resizeDirections && isArray(resizeDirections)) || resizeBoxProps.directions?.length;
+  const TagName: string | React.JSXElementConstructor<any> = resizable ? ResizeBox : 'aside';
 
   const renderTrigger = () => {
     const triggerIcon =
@@ -131,12 +142,20 @@ function Sider(props: SiderProps, ref) {
     ) : null;
   };
 
-  let TagName: string | React.JSXElementConstructor<any> = 'aside';
-  let resizeProps = {};
-  if (resizeDirections && isArray(resizeDirections)) {
-    TagName = ResizeBox;
-    resizeProps = { directions: resizeDirections, component: 'aside' };
-  }
+  const resizeProps = useMemo(() => {
+    if (resizable) {
+      return {
+        component: 'aside',
+        onMoving: (_, { width: currentWidth }) => {
+          setSiderWidth(currentWidth);
+        },
+        ...resizeBoxProps,
+        width: siderWidth,
+        directions: resizeDirections,
+      };
+    }
+    return {};
+  }, [resizable, resizeDirections, siderWidth, resizeBoxProps]);
 
   return (
     <SiderContext.Provider
