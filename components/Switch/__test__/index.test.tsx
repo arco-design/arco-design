@@ -47,6 +47,11 @@ describe('Switch', () => {
     expect(component.find('.arco-switch').hasClass('arco-switch-checked')).toBe(false);
   });
 
+  it('as formItem checked correctly', () => {
+    const component = mount(<Switch value />);
+    expect(component.find('.arco-switch').hasClass('arco-switch-checked')).toBe(true);
+  });
+
   it('loading', () => {
     const component = mount(<Switch defaultChecked loading />);
     expect(component.find('.arco-switch').hasClass('arco-switch-checked')).toBe(true);

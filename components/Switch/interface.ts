@@ -57,6 +57,11 @@ export interface SwitchProps
    * @zh 开关是否打开
    * @en To set checked
    */
+  value?: boolean;
+  /**
+   * @zh 开关是否打开(作为表单项默认值存在时通过该值传递默认值)
+   * @en To set checked(When Switch as a formItem, pass a initialValue to this value)
+   */
   checked?: boolean;
   /**
    * @zh 加载中状态

@@ -38,7 +38,7 @@ function Switch(baseProps: SwitchProps, ref) {
   const prefixCls = getPrefixCls('switch');
 
   const size = propSize || ctxSize;
-  const [checked, setChecked] = useState<boolean>(props.defaultChecked);
+  const [checked, setChecked] = useState<boolean>(props.value ?? props.defaultChecked);
 
   const mergedChecked = 'checked' in props ? props.checked : checked;
 
