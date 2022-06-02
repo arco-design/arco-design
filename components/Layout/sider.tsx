@@ -60,8 +60,8 @@ function Sider(props: SiderProps, ref) {
   const [collapsed, setCollapsed] = useMergeValue(false, {
     value: props.collapsed,
   });
-  const propsWidth = isNumber(width) ? width : parseFloat(width);
-  const [siderWidth, setSiderWidth] = useState(propsWidth);
+  const propsWidth = isNumber(width) ? `${width}px` : String(width);
+  const [siderWidth, setSiderWidth] = useState<string>(propsWidth);
 
   const refResponsiveHandlerToken = useRef(null);
   // 提供给 ResponsiveHandler，使得其可以获得最新的 state 值
