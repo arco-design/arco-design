@@ -8,6 +8,7 @@ function Demo1() {
   const [form] = Form.useForm();
   const name = Form.useWatch('name', form);
   const age = Form.useWatch('age', form);
+  const dymaic = Form.useWatch('dymaic', form);
 
   return (
     <div>
@@ -18,8 +19,18 @@ function Demo1() {
         <Form.Item label="age" field="age">
           <Input placeholder="enter name" />
         </Form.Item>
+        <Form.Item shouldUpdate>
+          {(v) => {
+            return v.name ? (
+              <Form.Item field="dymaic" label="ass">
+                <Input />
+              </Form.Item>
+            ) : null;
+          }}
+        </Form.Item>
         <span id="name">{name}</span>
         <span id="age">{age}</span>
+        <span id="dymaic">{dymaic}</span>
       </Form>
     </div>
   );
@@ -85,6 +96,38 @@ describe('Form.useWatch', () => {
     await sleep(10);
 
     expect(wrapper.find('#age').last().text()).toBe('bbb');
+  });
+
+  it('form.useWatch dymic ', async () => {
+    const wrapper = mount(<Demo1 />);
+
+    act(() => {
+      wrapper
+        .find('input')
+        .at(0)
+        .simulate('change', {
+          target: { value: 'aaa' },
+        });
+    });
+
+    await sleep(10);
+
+    wrapper.update();
+
+    expect(wrapper.find('#name').last().text()).toBe('aaa');
+    expect(wrapper.find('#dymaic').last().text()).toBe('');
+
+    act(() => {
+      wrapper
+        .find('input')
+        .at(2)
+        .simulate('change', {
+          target: { value: 'dymaic' },
+        });
+    });
+    await sleep(10);
+
+    expect(wrapper.find('#dymaic').last().text()).toBe('dymaic');
   });
 
   it('form.useWatch child ', async () => {

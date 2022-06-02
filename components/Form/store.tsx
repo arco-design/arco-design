@@ -60,15 +60,19 @@ class Store<
     onValidateFail?: (errors: { [key in FieldKey]: FieldError<FieldValue> }) => void;
   } = {};
 
+  private notifyWatchers() {
+    this.registerWatchers.forEach((item) => {
+      item();
+    });
+  }
+
   private triggerValuesChange(value: Partial<FormData>) {
     if (value && Object.keys(value).length) {
       const { onValuesChange } = this.callbacks;
       onValuesChange && onValuesChange(value, this.getFields());
     }
 
-    this.registerWatchers.forEach((item) => {
-      item();
-    });
+    this.notifyWatchers();
   }
 
   private triggerTouchChange(value: Partial<FormData>) {
@@ -97,9 +101,11 @@ class Store<
   // 收集所有control字段，并在组件卸载时移除
   public registerField = (item: Control<FormData, FieldValue, FieldKey>) => {
     this.registerFields.push(item);
+    this.notifyWatchers();
 
     return () => {
       this.registerFields = this.registerFields.filter((x) => x !== item);
+      this.notifyWatchers();
     };
   };
 
