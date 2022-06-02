@@ -20,6 +20,10 @@
       color: ~'@{btn-@{type}-color-text_active}';
       background-color: ~'@{btn-@{type}-color-bg_active}';
     }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 @btn-box-shadow-radius ~'@{btn-@{type}-color-box-shadow}';
+    }
   }
 
   .@{btn-prefix-cls}-@{type}.@{btn-prefix-cls}-disabled {
@@ -46,6 +50,10 @@
       border-color: ~'@{btn-@{type}-color-border_@{status}_active}';
       color: ~'@{btn-@{type}-color-text_@{status}_active}';
       background-color: ~'@{btn-@{type}-color-bg_@{status}_active}';
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 @btn-box-shadow-radius ~'@{btn-color-box-shadow_@{status}}';
     }
   }
 

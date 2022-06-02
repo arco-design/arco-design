@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { Button } from '@self';
+import { Button, Space } from '@self';
 import { IconInfoCircleFill, IconExclamationCircleFill, IconCloseCircleFill } from '@self/icon';
 
 export const Status = () => (
@@ -49,6 +49,112 @@ export const Status = () => (
       Default
     </Button>
   </div>
+);
+
+export const Focus = () => (
+  <Space direction="vertical">
+    <Space>
+      <Button type="primary">Round</Button>
+      <Button>Secondary</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="outline">Outline</Button>
+      <Button type="text">Text</Button>
+    </Space>
+    <Space>
+      <Button type="primary" shape="round">
+        Round
+      </Button>
+      <Button shape="round">Secondary</Button>
+      <Button type="dashed" shape="round">
+        Dashed
+      </Button>
+      <Button type="outline" shape="round">
+        Outline
+      </Button>
+      <Button type="text" shape="round">
+        Text
+      </Button>
+    </Space>
+    <Space>
+      <Button type="primary" disabled>
+        Round
+      </Button>
+      <Button disabled>Secondary</Button>
+      <Button type="dashed" disabled>
+        Dashed
+      </Button>
+      <Button type="outline" disabled>
+        Outline
+      </Button>
+      <Button type="text" disabled>
+        Text
+      </Button>
+    </Space>
+    <Space>
+      <Button type="primary" loading>
+        Round
+      </Button>
+      <Button loading>Secondary</Button>
+      <Button type="dashed" loading>
+        Dashed
+      </Button>
+      <Button type="outline" loading>
+        Outline
+      </Button>
+      <Button type="text" loading>
+        Text
+      </Button>
+    </Space>
+    <Space>
+      <Button type="primary" status="danger">
+        Danger
+      </Button>
+      <Button type="primary" status="warning">
+        Warning
+      </Button>
+      <Button type="primary" status="success">
+        Success
+      </Button>
+    </Space>
+    <Space>
+      <Button status="danger">Danger</Button>
+      <Button status="warning">Warning</Button>
+      <Button status="success">Success</Button>
+    </Space>
+    <Space>
+      <Button type="dashed" status="danger">
+        Danger
+      </Button>
+      <Button type="dashed" status="warning">
+        Warning
+      </Button>
+      <Button type="dashed" status="success">
+        Success
+      </Button>
+    </Space>
+    <Space>
+      <Button type="outline" status="danger">
+        Danger
+      </Button>
+      <Button type="outline" status="warning">
+        Warning
+      </Button>
+      <Button type="outline" status="success">
+        Success
+      </Button>
+    </Space>
+    <Space>
+      <Button type="text" status="danger">
+        Danger
+      </Button>
+      <Button type="text" status="warning">
+        Warning
+      </Button>
+      <Button type="text" status="success">
+        Success
+      </Button>
+    </Space>
+  </Space>
 );
 
 export default {
