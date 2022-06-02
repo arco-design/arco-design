@@ -1,3 +1,5 @@
+import { Enter } from '../_util/keycode';
+
 export const getRectDiff = (node: HTMLElement, parentNode: HTMLElement) => {
   const nodeRect = node.getBoundingClientRect();
   const parentRect = parentNode.getBoundingClientRect();
@@ -29,4 +31,15 @@ export const updateScrollOffset = (
   if (direction === 'vertical' && scrollTop) {
     parentNode.scrollTo({ top: -1 * scrollTop });
   }
+};
+
+export const getKeyDownEvent = ({ onPressEnter }) => {
+  return {
+    onKeyDown: (e) => {
+      const keyCode = e.keyCode || e.which;
+      if (keyCode === Enter.code) {
+        onPressEnter(e);
+      }
+    },
+  };
 };
