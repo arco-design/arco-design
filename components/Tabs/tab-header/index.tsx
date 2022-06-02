@@ -7,7 +7,7 @@ import TabHeaderTitle from './tab-title';
 import IconPlus from '../../../icon/react-icon/IconPlus';
 import cs from '../../_util/classNames';
 import { setTransformStyle } from '../../_util/style';
-import { getRectDiff, updateScrollOffset } from '../utils';
+import { getKeyDownEvent, getRectDiff, updateScrollOffset } from '../utils';
 import { TabsContext } from '../tabs';
 import { TabsProps } from '..';
 import TabInk from './tab-ink';
@@ -291,6 +291,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           tabIndex={0}
           role="button"
           onClick={handleAdd}
+          {...getKeyDownEvent({ onPressEnter: handleAdd })}
         >
           {addButton || (
             <IconHover prefix={`${prefixCls}-add`}>
