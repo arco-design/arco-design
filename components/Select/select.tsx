@@ -262,14 +262,15 @@ function Select(baseProps: SelectProps, ref) {
   useEffect(() => {
     // 将无对应下拉框选项的 value 当作自定义 tag，将 value 中不存在的 valueTag 移除
     if (allowCreate && Array.isArray(value)) {
-      const newUseCreatedOptions = (value as any[]).filter((v) => {
-        const option = optionInfoMap.get(v);
+      const newUserCreatedOptions = (value as any[]).filter((v) => {
+        const option =
+          optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
         return !option || option._origin === 'userCreatingOption';
       });
-      const validUseCreatedOptions = userCreatedOptions.filter(
+      const validUserCreatedOptions = userCreatedOptions.filter(
         (tag) => (value as any[]).indexOf(tag) !== -1
       );
-      const _userCreatedOptions = validUseCreatedOptions.concat(newUseCreatedOptions);
+      const _userCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
       if (_userCreatedOptions.toString() !== userCreatedOptions.toString()) {
         setUserCreatedOptions(_userCreatedOptions);
       }
@@ -723,13 +724,29 @@ function Select(baseProps: SelectProps, ref) {
                       (paramsForCallback.option as OptionInfo) || null,
                       paramsForCallback.value as ReactText | LabeledValue
                     );
-                  } else if (option) {
-                    if ('children' in option) {
+                  } else {
+                    let foundLabelFromProps = false;
+                    if (labelInValue) {
+                      const propValue = props.value || props.defaultValue;
+                      if (Array.isArray(propValue)) {
+                        const targetLabeledValue = (propValue as LabeledValue[]).find(
+                          (item) => isObject(item) && item.value === value
+                        );
+                        if (targetLabeledValue) {
+                          text = targetLabeledValue.label;
+                          foundLabelFromProps = true;
+                        }
+                      } else if (isObject(propValue)) {
+                        text = (propValue as LabeledValue).label;
+                        foundLabelFromProps = true;
+                      }
+                    }
+
+                    if (!foundLabelFromProps && option && 'children' in option) {
                       text = option.children;
                     }
-                  } else if (labelInValue && isObject(props.value)) {
-                    text = (props.value as any).label;
                   }
+
                   return {
                     text,
                     disabled: option && option.disabled,
