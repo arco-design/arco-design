@@ -381,6 +381,17 @@ describe('Select', () => {
         labelInValue
         mode="multiple"
         defaultValue={[{ value: 1, label: 'One' }]}
+      />
+    );
+
+    expect(wrapper.find('.arco-input-tag-tag-content').at(0).text()).toBe('One');
+
+    wrapper = mountSelect(
+      <Select
+        placeholder="Please select"
+        labelInValue
+        mode="multiple"
+        defaultValue={[{ value: 1, label: 'One' }]}
         renderFormat={(_, labeledValue) => {
           const { label, value } = labeledValue as LabeledValue;
           return label || value;
