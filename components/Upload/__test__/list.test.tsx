@@ -101,7 +101,7 @@ describe('Upload list', function () {
           },
           imageRender: () => {
             return <div id="image">aaa</div>;
-          }
+          },
         }}
       />
     );
@@ -116,5 +116,4 @@ describe('Upload list', function () {
 
     expect(wrapper.find('#image')).toHaveLength(1);
   });
-
 });
