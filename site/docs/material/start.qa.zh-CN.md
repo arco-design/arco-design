@@ -195,3 +195,14 @@ import { Button } from '@arco-design/web-react';
 // to
 import { Button } from '@arco-design/web-react/lib';
 ```
+
+## 支持暗色主题
+
+物料支持暗色主题无需额外的配置，只需要在组件开发中使用 Arco 内置的色彩变量来定义颜色即可。参考 [ArcoDesign | 暗黑模式](https://arco.design/react/docs/dark)
+
+```css
+table {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-1);
+}
+```
