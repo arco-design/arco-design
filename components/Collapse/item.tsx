@@ -26,7 +26,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
 
   const prefixCls = getPrefixCls('collapse-item');
 
-  const isExpanded = ctx.activeKeys.indexOf(name) > -1;
+  const isExpanded = ctx.activeKeys?.indexOf(name) > -1;
   const icon = showExpandIcon ? ('expandIcon' in props ? expandIcon : ctx.expandIcon) : null;
 
   return (
