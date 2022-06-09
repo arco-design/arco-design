@@ -135,9 +135,11 @@ function TBody<T>(props: TbodyProps<T>) {
         )}
       </VirtualList>
     ) : (
-      <table>
-        <tbody>{noDataTr}</tbody>
-      </table>
+      <div className={`${prefixCls}-body`}>
+        <table>
+          <tbody>{noDataTr}</tbody>
+        </table>
+      </div>
     );
   }
 
