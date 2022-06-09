@@ -5,13 +5,19 @@ interface FillerProps {
   height: number;
   /** offset value of the first element of the viewport */
   offset?: number;
+  outerStyle?: React.CSSProperties;
   children: React.ReactNode;
 }
 
 /**
  * Create visual height for content
  */
-const Filler: React.FC<FillerProps> = ({ height, offset, children }): React.ReactElement => {
+const Filler: React.FC<FillerProps> = ({
+  height,
+  offset,
+  children,
+  outerStyle: propsOuterStyle,
+}): React.ReactElement => {
   let outerStyle: React.CSSProperties = {};
 
   let innerStyle: React.CSSProperties = {
@@ -20,7 +26,13 @@ const Filler: React.FC<FillerProps> = ({ height, offset, children }): React.Reac
   };
 
   if (offset !== undefined) {
-    outerStyle = { height, position: 'relative', overflow: 'hidden', zIndex: 0 };
+    outerStyle = {
+      height,
+      position: 'relative',
+      overflow: 'hidden',
+      zIndex: 0,
+      ...propsOuterStyle,
+    };
 
     innerStyle = {
       ...innerStyle,
