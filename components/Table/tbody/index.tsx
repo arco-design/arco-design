@@ -117,26 +117,27 @@ function TBody<T>(props: TbodyProps<T>) {
     </tr>
   );
 
+  // https://github.com/arco-design/arco-design/issues/644
+  // except the real scroll container, all parent nodes should not have a overflow style.
   if (virtualized) {
-    return (
-      <div className={`${prefixCls}-body`} ref={(ref) => saveVirtualWrapperRef(ref)}>
-        {data.length > 0 ? (
-          <VirtualList
-            data={data}
-            height={scrollStyleY.maxHeight}
-            isStaticItemHeight={false}
-            style={{ ...scrollStyleX, minWidth: '100%' }}
-          >
-            {(child, index) => (
-              <Tr<T> {...trProps} key={getRowKey(child)} record={child} index={index} level={0} />
-            )}
-          </VirtualList>
-        ) : (
-          <table>
-            <tbody>{noDataTr}</tbody>
-          </table>
+    return data.length > 0 ? (
+      <VirtualList
+        data={data}
+        height={scrollStyleY.maxHeight}
+        isStaticItemHeight={false}
+        // position sticky works
+        outerStyle={{ ...scrollStyleX, minWidth: '100%', overflow: 'visible' }}
+        className={`${prefixCls}-body`}
+        ref={(ref) => saveVirtualWrapperRef(ref?.dom as HTMLDivElement)}
+      >
+        {(child, index) => (
+          <Tr<T> {...trProps} key={getRowKey(child)} record={child} index={index} level={0} />
         )}
-      </div>
+      </VirtualList>
+    ) : (
+      <table>
+        <tbody>{noDataTr}</tbody>
+      </table>
     );
   }
 
