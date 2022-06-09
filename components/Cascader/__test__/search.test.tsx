@@ -58,6 +58,6 @@ describe('Cascader search', () => {
       });
     });
 
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(1);
+    expect(wrapper.find(`${prefixCls}-list-item`)).toHaveLength(1);
   });
 });
