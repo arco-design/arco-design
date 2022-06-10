@@ -148,7 +148,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
   useUpdate(() => {
     if ('value' in props && props.value !== stateValue) {
-      const newValue = formatValue(props.value, isMultiple, store);
+      // don't to use formatValue(x, y, store)
+      // we just need to get the value in a valid format, and update it to store nodes
+      const newValue = formatValue(props.value, isMultiple);
       store.setNodeCheckedByValue(newValue);
       setValue(newValue);
     }
