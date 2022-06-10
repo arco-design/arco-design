@@ -99,7 +99,7 @@ class Demo extends React.Component {
           options={options}
           onChange={this.onChange}
           dropdownRender={menu => {
-            return <div>
+            return <div style={{ maxWidth: 'fit-content' }}>
               <div style={{ padding: '6px 8px'}} >
                 <Input.Search
                   placeholder="Please select ..."
