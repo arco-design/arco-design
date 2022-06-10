@@ -162,6 +162,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   return options.length ? (
     <div className={`${prefixCls}-list-wrapper`}>
       <VirtualList
+        needFiller={false}
         wrapper="ul"
         role="menu"
         style={style}

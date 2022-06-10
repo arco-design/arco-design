@@ -293,6 +293,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                     renderEmpty && renderEmpty(props.virtualListProps ? '100%' : 120)
                   ) : (
                     <VirtualList
+                      needFiller={false}
                       threshold={props.virtualListProps ? 100 : null}
                       data={list}
                       isStaticItemHeight

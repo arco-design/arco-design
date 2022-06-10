@@ -63,14 +63,14 @@ describe('Cascader basic test', () => {
     );
     // 展开一层
     wrapper.find(prefixCls).simulate('click');
-    const list1 = wrapper.find(`${prefixCls}-list`);
+    const list1 = wrapper.find(`${prefixCls}-list-column`);
     // 展开第二层
     await act(() => {
       list1.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).simulate('click');
     });
     expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(2);
 
-    const list2 = wrapper.find(`${prefixCls}-list`).last();
+    const list2 = wrapper.find(`${prefixCls}-list-column`).last();
     await act(() => {
       list2.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).simulate('click');
     });
@@ -92,7 +92,7 @@ describe('Cascader basic test', () => {
     const wrapper = mountCascader(<Cascader options={options} changeOnSelect />);
     // 展开一层
     wrapper.find(prefixCls).simulate('click');
-    const list1 = wrapper.find(`${prefixCls}-list`);
+    const list1 = wrapper.find(`${prefixCls}-list-column`);
     list1.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).simulate('click');
     expect(wrapper.find('input').prop('value')).toBe('上海');
   });
@@ -247,13 +247,13 @@ describe('support multiple correctly', () => {
 
     wrapper.find(prefixCls).simulate('click');
     wrapper
-      .find(`${prefixCls}-list`)
+      .find(`${prefixCls}-list-column`)
       .at(0)
       .find(`${prefixCls}-list-item-label`)
       .at(0)
       .simulate('click');
     wrapper
-      .find(`${prefixCls}-list`)
+      .find(`${prefixCls}-list-column`)
       .at(1)
       .find(`${prefixCls}-list-item-label`)
       .at(0)
@@ -265,12 +265,12 @@ describe('support multiple correctly', () => {
       wrapper.find('.arco-checkbox-checked').length
     );
 
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(3);
+    expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(3);
 
     jest.runAllTimers();
 
     wrapper
-      .find(`${prefixCls}-list`)
+      .find(`${prefixCls}-list-column`)
       .at(2)
       .find(`${prefixCls}-list-item`)
       .at(1)
@@ -308,7 +308,7 @@ describe('support multiple correctly', () => {
     expect(wrapper.find('.arco-tag > span').at(0).text()).toBe(`北京-北京市-朝阳区`);
 
     wrapper.find(prefixCls).simulate('click');
-    const list = wrapper.find(`${prefixCls}-list`).at(0);
+    const list = wrapper.find(`${prefixCls}-list-column`).at(0);
     list
       .find(`${prefixCls}-list-item`)
       .at(0)
@@ -387,7 +387,7 @@ describe('support multiple correctly', () => {
       // const wrapper = mountCascader(<Demo />);
       // const cascader = wrapper.find('Cascader');
       // cascader.find(prefixCls).simulate('click');
-      // const list1 = cascader.find(`${prefixCls}-list`);
+      // const list1 = cascader.find(`${prefixCls}-list-column`);
       // list1.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).simulate('click');
     });
   });
@@ -539,7 +539,7 @@ describe('fieldNames Cascader', () => {
         />
       );
       wrapper.find(prefixCls).simulate('click');
-      const list = wrapper.find(`${prefixCls}-list`).first();
+      const list = wrapper.find(`${prefixCls}-list-column`).first();
       list.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).at(0).simulate('click');
       expect(mockfn.mock.calls).toHaveLength(1);
     });
