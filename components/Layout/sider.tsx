@@ -60,8 +60,10 @@ function Sider(props: SiderProps, ref) {
   const [collapsed, setCollapsed] = useMergeValue(false, {
     value: props.collapsed,
   });
-  const propsWidth = isNumber(width) ? width : parseFloat(width);
-  const [siderWidth, setSiderWidth] = useState(propsWidth);
+  //Parsing props width from number to string, to be used as css property value. 
+  //Using px as the default unit
+  const propsWidth = isNumber(width) ? `${width}px` : String(width);
+  const [siderWidth, setSiderWidth] = useState<string>(propsWidth);
 
   const refResponsiveHandlerToken = useRef(null);
   // 提供给 ResponsiveHandler，使得其可以获得最新的 state 值
@@ -104,7 +106,10 @@ function Sider(props: SiderProps, ref) {
   }, []);
 
   useEffect(() => {
-    setSiderWidth(collapsed ? collapsedWidth : propsWidth);
+    //Parsing collapsed width from number to string, to be used as css property value. 
+    //Using px as the default unit
+    const _collapsedWidth = isNumber(collapsedWidth) ? `${collapsedWidth}px` : String(collapsedWidth)
+    setSiderWidth(collapsed ? _collapsedWidth : propsWidth);
   }, [collapsed, propsWidth, collapsedWidth]);
 
   const resizable =
