@@ -22,7 +22,7 @@ import Pagination from '../Pagination';
 import { on, off } from '../_util/dom';
 import { ConfigContext } from '../ConfigProvider';
 import { PaginationProps } from '../Pagination/pagination';
-import { getScrollBarHeight, getScrollBarWidth } from './utils';
+import { getScrollBarHeight, getScrollBarWidth, deepCloneData } from './utils';
 import ColGroup from './colgroup';
 import useExpand from './hooks/useExpand';
 import useRowSelection from './hooks/useRowSelection';
@@ -95,6 +95,11 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     summary,
     rowKey,
   } = props;
+
+  const clonedData = useMemo(
+    () => deepCloneData(data, childrenColumnName),
+    [data, childrenColumnName]
+  );
 
   const prefixCls = getPrefixCls('table');
 
@@ -284,7 +289,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const hasFixedColumn = hasFixedColumnLeft || hasFixedColumnRight;
 
   function getProcessedData(sorter, filters) {
-    let _data = (data || []).slice();
+    let _data = (clonedData || []).slice();
 
     Object.keys(filters).forEach((field) => {
       if (filters[field] && filters[field].length) {
@@ -302,17 +307,19 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
     const column = getColumnByDataIndex(sorter.field) as ColumnProps<T>;
 
-    const getSortData = (data) => {
-      const cloneData = data.slice();
-      return cloneData.sort(sorterFn(column.sorter, sorter.direction)).map((item) => {
-        if (isArray(item[childrenColumnName])) {
-          return {
-            ...item,
-            [childrenColumnName]: getSortData(item[childrenColumnName]),
-          };
-        }
-        return item;
-      });
+    const getSortData = (d) => {
+      return d
+        .slice()
+        .sort(sorterFn(column.sorter, sorter.direction))
+        .map((item) => {
+          if (isArray(item[childrenColumnName])) {
+            return {
+              ...item,
+              [childrenColumnName]: getSortData(item[childrenColumnName]),
+            };
+          }
+          return item;
+        });
     };
 
     if (sorter.direction && column && typeof column.sorter === 'function') {
@@ -390,7 +397,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     if (pagination === false) {
       return currentData;
     }
-    if (isObject(pagination) && data.length <= pageSize) {
+    if (isObject(pagination) && clonedData.length <= pageSize) {
       return currentData;
     }
     return currentData.slice((current - 1) * pageSize, current * pageSize);
@@ -449,16 +456,16 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   }, [hasFixedColumnLeft, hasFixedColumnLeft, scroll?.x, flattenColumns.length]);
 
   useUpdate(() => {
-    const { total, pageSize } = getPaginationProps(data);
+    const { total, pageSize } = getPaginationProps(clonedData);
     const maxPageNum = Math.ceil(total / pageSize);
     if (maxPageNum < currentPage) {
       setCurrentPage(1);
     }
-  }, [data.length]);
+  }, [clonedData.length]);
 
   useUpdate(() => {
     setFixedColumnClassNames();
-  }, [data, hasFixedColumnLeft, hasFixedColumnLeft]);
+  }, [clonedData, hasFixedColumnLeft, hasFixedColumnLeft]);
 
   useImperativeHandle(ref, () => ({
     getRootDomElement,
@@ -554,7 +561,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     setSelectedRowKeys,
     allSelectedRowKeys,
     flattenData,
-  } = useRowSelection<T>(props, pageData, getRowKey);
+  } = useRowSelection<T>(props, pageData, clonedData, getRowKey);
 
   function getColumnByDataIndex(dataIndex) {
     return flattenColumns.find((column, index) => {

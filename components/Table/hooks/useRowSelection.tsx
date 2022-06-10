@@ -9,6 +9,7 @@ function getSet(arr: Key[]) {
 
 export default function useRowSelection<T>(
   props: TableProps<T>,
+  pageData,
   data,
   getRowKey: GetRowKeyType<T>
 ): {
@@ -21,7 +22,7 @@ export default function useRowSelection<T>(
   allSelectedRowKeys: Key[];
   flattenData: T[];
 } {
-  const { rowSelection, data: originData, childrenColumnName } = props;
+  const { rowSelection, childrenColumnName } = props;
   const controlledSelectedRowKeys = rowSelection?.selectedRowKeys;
   const onSelectAll = rowSelection?.onSelectAll;
   const onSelect = rowSelection?.onSelect;
@@ -33,8 +34,8 @@ export default function useRowSelection<T>(
 
   // 获取扁平化之后的 data
   function getMetaFromData() {
-    const allSelectedRowKeys: any[] = [];
-    const flattenData: any[] = [];
+    const allSelectedRowKeys = [];
+    const flattenData = [];
     const travel = (children) => {
       if (isArray(children) && children.length) {
         children.forEach((record) => {
@@ -52,7 +53,7 @@ export default function useRowSelection<T>(
         });
       }
     };
-    travel(data);
+    travel(pageData);
     const travelOrigin = (children, parent) => {
       if (isArray(children) && children.length) {
         children.forEach((record) => {
@@ -67,7 +68,7 @@ export default function useRowSelection<T>(
         });
       }
     };
-    travelOrigin(originData, undefined);
+    travelOrigin(data, undefined);
 
     return {
       allSelectedRowKeys,
