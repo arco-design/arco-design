@@ -35,7 +35,7 @@
 |onPageSizeChange|pageSize 变化时的回调|`(size: number, current: number) => void`|`-`|-|
 |pageSizeChangeResetCurrent|`pageSize` 改变的时候重置当前页码为 `1`|`boolean`|`true`|-|
 |simple|是否应用精简分页模式|`boolean`|`-`|-|
-|showJumper|是否显示快速跳转到某页|`boolean`|`-`|-|
+|showJumper|是否显示快速跳转到某页，在 `simple` 模式下默认为 true|`boolean`|`-`|-|
 |showMore|是否显示更多页码提示（当尚无法计算数据总数时可以使用）|`boolean`|`-`|-|
 |selectProps|用于配置弹出框的属性|`Partial<SelectProps>`|`-`|-|
 |icons|设置分页器的图标|`{prev?: ReactNode;next?: ReactNode;more?: ReactNode;}`|`-`|-|

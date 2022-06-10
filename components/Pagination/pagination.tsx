@@ -189,7 +189,7 @@ function Pagination(baseProps: PaginationProps, ref) {
             totalPages={allPages}
             current={current}
             onPageChange={onPageNumberChange}
-            simple
+            simple={{ showJumper: typeof showJumper === 'boolean' ? showJumper : true }}
             size={innerSize}
           />
         </li>
