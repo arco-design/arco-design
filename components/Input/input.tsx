@@ -134,9 +134,9 @@ function Input(baseProps: InputProps, ref) {
         setFocus(false);
         props.onBlur && props.onBlur(e);
       }}
+      onChange={onChange}
       prefixCls={prefixCls}
       value={value}
-      onValueChange={onChange}
       hasParent={!!needWrapper || allowClear}
       size={size}
     />

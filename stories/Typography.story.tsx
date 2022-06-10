@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { Typography, Button } from '@self';
 
-const defaultText = `A design is a plan or specification for the construction of an object or system or for the
-implementation of an activity or process. A design is a plan or specification for the
-construction of an object or system or for the implementation of an activity or process. A design is a plan or specification for the construction of an object or system or for the
-implementation of an activity or process. A design is a plan or specification for the
-construction of an object or system or for the implementation of an activity or process. `;
-
 const DemoExpand = () => {
   const [expandable, setExpandable] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -14,23 +8,9 @@ const DemoExpand = () => {
 
   return (
     <div>
-      <Button onClick={() => setExpandable(!expandable)}>
-        {!expandable ? '显示按钮' : '不显示按钮'}
-      </Button>
-      <Button onClick={() => setExpanded(!expanded)} style={{ marginLeft: '10px' }} type="primary">
-        {expanded ? '折叠' : '展开'}
-      </Button>
-      <Typography.Text code ellipsis={ellipsisProps}>
-        {defaultText}
-      </Typography.Text>
-      <Typography.Text mark ellipsis={ellipsisProps}>
-        {defaultText}
-      </Typography.Text>
-      <Typography.Text ellipsis={{ rows: 1, cssEllipsis: false, expandable: true }}>
-        {expandable
-          ? 'A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process. A design is a plan or specification for'
-          : defaultText}
-      </Typography.Text>
+      <Typography.Paragraph editable={{ onChange: (s) => console.log(s) }}>
+        Hello world
+      </Typography.Paragraph>
     </div>
   );
 };

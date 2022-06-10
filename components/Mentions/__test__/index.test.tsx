@@ -48,7 +48,7 @@ describe('Mentions', () => {
     );
 
     act(() => {
-      wrapper.find('textarea').prop('onChange')({ currentTarget: { value: 'hello' } });
+      wrapper.find('textarea').prop('onChange')({ target: { value: 'hello' } });
     });
 
     expect(onChange.mock.calls[0][0]).toBe('hello');

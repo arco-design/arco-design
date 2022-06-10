@@ -132,7 +132,7 @@ export interface SelectViewProps extends SelectViewCommonProps {
   renderText: (value) => { text; disabled };
   onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
-  onChangeInputValue?: InputComponentProps['onValueChange'];
+  onChangeInputValue?: InputComponentProps['onChange'];
   onKeyDown?: (e) => void;
   onPaste?: (e) => void;
   onClear?: (e) => void;
@@ -346,7 +346,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       inputProps.onKeyDown = inputEventHandlers.keyDown;
       inputProps.onFocus = inputEventHandlers.focus;
       inputProps.onBlur = inputEventHandlers.blur;
-      inputProps.onValueChange = inputEventHandlers.change;
+      inputProps.onChange = inputEventHandlers.change;
     } else {
       // Avoid input getting focus by Tab
       // Do NOT pass [disabled] to <input>, otherwise the click event will not be triggered
