@@ -3,15 +3,16 @@ import isEqualWith from 'lodash/isEqualWith';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import cs from '../../_util/classNames';
 import IconCheck from '../../../icon/react-icon/IconCheck';
-import { OptionProps } from '../interface';
+import { OptionProps, CascaderProps } from '../interface';
 import Node from '../base/node';
 import Checkbox from '../../Checkbox';
 import Store from '../base/store';
 import { ArrowDown, Esc, Enter, ArrowUp } from '../../_util/keycode';
 import useUpdateEffect from '../../_util/hooks/useUpdate';
 import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
-import { isString } from '../../_util/is';
+import { isString, isObject } from '../../_util/is';
 import { getMultipleCheckValue } from '../util';
+import VirtualList from '../../_class/VirtualList';
 
 export const getLegalIndex = (currentIndex, maxIndex) => {
   if (currentIndex < 0) {
@@ -33,6 +34,7 @@ export type SearchPanelProps<T> = {
   onEsc?: () => void;
   onChange?: (value: string[][]) => void;
   renderEmpty?: () => ReactNode;
+  virtualListProps?: CascaderProps<T>['virtualListProps'];
 };
 
 const formatLabel = (inputValue, label, prefixCls): ReactNode => {
@@ -159,17 +161,23 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
 
   return options.length ? (
     <div className={`${prefixCls}-list-wrapper`}>
-      <ul
+      <VirtualList
+        wrapper="ul"
         role="menu"
+        style={style}
+        data={options}
+        isStaticItemHeight
+        itemKey="value"
+        threshold={props.virtualListProps ? 100 : null}
+        {...(isObject(props.virtualListProps) ? props.virtualListProps : {})}
         onMouseMove={() => {
           isKeyboardHover.current = false;
         }}
         className={cs(`${prefixCls}-list`, `${prefixCls}-list-search`, {
           [`${prefixCls}-list-multiple`]: multiple,
         })}
-        style={style}
       >
-        {options.map((item, i) => {
+        {(item, i) => {
           const pathNodes = item.getPathNodes();
           const label = formatLabel(
             inputValue,
@@ -229,8 +237,8 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
               </div>
             </li>
           );
-        })}
-      </ul>
+        }}
+      </VirtualList>
     </div>
   ) : (
     <>{renderEmpty && renderEmpty()}</>

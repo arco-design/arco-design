@@ -58,6 +58,7 @@ export interface VirtualListProps<T> extends React.HTMLAttributes<any> {
   measureLongestItem?: boolean;
   /* Configure the default behavior related to scrolling */
   scrollOptions?: ScrollIntoViewOptions;
+  needFiller?: boolean;
   /** Custom filler outer style */
   outerStyle?: CSSProperties;
   onScroll?: React.UIEventHandler<HTMLElement>;
@@ -165,6 +166,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     measureLongestItem,
     scrollOptions,
     onScroll,
+    needFiller = true,
     outerStyle,
     ...restProps
   } = props;
@@ -668,8 +670,10 @@ const VirtualList: React.ForwardRefExoticComponent<
             </Filler>
             {renderLongestItem()}
           </>
-        ) : (
+        ) : needFiller ? (
           <Filler height={viewportHeight}>{renderChildren(data, 0)}</Filler>
+        ) : (
+          renderChildren(data, 0)
         )}
       </WrapperTagName>
     </ResizeObserver>

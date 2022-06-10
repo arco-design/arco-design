@@ -47,7 +47,7 @@ describe('Cascader basic test', () => {
     wrapper.find(prefixCls).simulate('click');
     expect(mockFn).toHaveBeenCalledWith(true); // 被调用，传入参数为true
     // 展开第一级
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(1);
+    expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(1);
     wrapper.find(prefixCls).simulate('click');
     // 消失有动画的延时
     jest.runAllTimers();
@@ -68,7 +68,7 @@ describe('Cascader basic test', () => {
     await act(() => {
       list1.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).simulate('click');
     });
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(2);
+    expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(2);
 
     const list2 = wrapper.find(`${prefixCls}-list`).last();
     await act(() => {
@@ -117,7 +117,7 @@ describe('support clear correctly', () => {
     expect(wrapper.find('input').prop('value')).toBe('上海 / 上海市');
     wrapper.find(prefixCls).simulate('click');
 
-    expect(wrapper.find('.arco-cascader-list')).toHaveLength(2);
+    expect(wrapper.find('.arco-cascader-list-column')).toHaveLength(2);
   });
 
   // 清除值正确
@@ -178,6 +178,7 @@ describe('support multiple correctly', () => {
     let option;
     const wrapper = mountCascader(
       <Cascader
+        key="1"
         placeholder="请选择一个地点"
         style={{ maxWidth: 300 }}
         options={options}
@@ -190,8 +191,8 @@ describe('support multiple correctly', () => {
       />
     );
     wrapper.find(prefixCls).simulate('click');
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(4);
-    const list = wrapper.find(`${prefixCls}-list`).at(2);
+    expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(4);
+    const list = wrapper.find(`${prefixCls}-list-column`).at(2);
     list
       .find(`${prefixCls}-list-item`)
       .at(0)
@@ -303,7 +304,7 @@ describe('support multiple correctly', () => {
         />
       );
       wrapper.find(prefixCls).simulate('click');
-      const list = wrapper.find(`${prefixCls}-list`).first();
+      const list = wrapper.find(`${prefixCls}-list-column`).first();
       list.find(`${prefixCls}-list-item ${prefixCls}-list-item-label`).at(0).simulate('click');
       expect(mockfn.mock.calls).toHaveLength(1);
     });
@@ -379,6 +380,7 @@ describe('fieldNames Cascader', () => {
     let value;
     const wrapper = mountCascader(
       <Cascader
+        key="multiplyselect"
         fieldNames={{
           label: 'name',
           value: 'id',
@@ -395,38 +397,51 @@ describe('fieldNames Cascader', () => {
       />
     );
     expect(wrapper.find('Tag').length).toBe(1);
-    wrapper.find(prefixCls).simulate('click');
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(4);
-    const list = wrapper.find(`${prefixCls}-list`).at(2);
-    list
-      .find(`${prefixCls}-list-item`)
-      .at(0)
-      .find('.arco-checkbox > input')
-      .simulate('change', {
-        target: {
-          checked: false,
-        },
-      });
+    act(() => {
+      wrapper.find(prefixCls).simulate('click');
+    });
+
+    wrapper.update();
+
+    expect(wrapper.find(`.arco-cascader-list-column`)).toHaveLength(4);
+    const list = wrapper.find(`${prefixCls}-list-column`).at(2);
+
+    act(() => {
+      list
+        .find(`${prefixCls}-list-item`)
+        .at(0)
+        .find('.arco-checkbox > input')
+        .simulate('change', {
+          target: {
+            checked: false,
+          },
+        });
+    });
 
     expect(value.length).toBe(0);
-    list
-      .find(`${prefixCls}-list-item`)
-      .at(1)
-      .find('.arco-checkbox > input')
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
-    list
-      .find(`${prefixCls}-list-item`)
-      .at(2)
-      .find('.arco-checkbox > input')
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    act(() => {
+      list
+        .find(`${prefixCls}-list-item`)
+        .at(1)
+        .find('.arco-checkbox > input')
+        .simulate('change', {
+          target: {
+            checked: true,
+          },
+        });
+    });
+
+    act(() => {
+      list
+        .find(`${prefixCls}-list-item`)
+        .at(2)
+        .find('.arco-checkbox > input')
+        .simulate('change', {
+          target: {
+            checked: true,
+          },
+        });
+    });
     expect(value.length).toBe(2);
   });
 

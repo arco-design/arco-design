@@ -286,7 +286,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     handleChange(newValue);
   };
 
-  const renderEmptyEle = (width?: number): React.ReactNode => {
+  const renderEmptyEle = (width?: CSSProperties['width']): React.ReactNode => {
     const wd = width || (selectRef.current && selectRef.current.getWidth());
     return (
       <div className={`${prefixCls}-list-empty`} style={{ width: wd as number }}>
@@ -296,14 +296,14 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   };
 
   const renderPopup = () => {
-    const width = selectRef.current && selectRef.current.getWidth();
     const showSearchPanel = !isFunction(props.onSearch) && !!inputValue;
+    const width = selectRef.current && selectRef.current.getWidth();
     const dropdownRender = isFunction(props.dropdownRender) ? props.dropdownRender : (menu) => menu;
 
     return (
       <div
         id={instancePopupID}
-        className={cs(`${prefixCls}-popup`, {
+        className={cs(`${prefixCls}-popup`, props.dropdownMenuClassName, {
           [`${prefixCls}-popup-trigger-hover`]: props.expandTrigger === 'hover',
         })}
       >
@@ -324,9 +324,12 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                   handleVisibleChange(false);
                 }}
                 value={mergeValue}
+                virtualListProps={props.virtualListProps}
               />
             ) : (
               <CascaderPanel
+                dropdownMenuColumnStyle={props.dropdownMenuColumnStyle}
+                virtualListProps={props.virtualListProps}
                 expandTrigger={expandTrigger}
                 store={store}
                 dropdownColumnRender={props.dropdownColumnRender}
