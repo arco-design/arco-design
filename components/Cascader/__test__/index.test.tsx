@@ -226,6 +226,68 @@ describe('support multiple correctly', () => {
     expect(option.length).toEqual(2);
   });
 
+  it('multiply select checkedStrategy correctly controlled', () => {
+    let value = [['beijing']];
+    const wrapper = mountCascader(
+      <Cascader
+        renderFormat={(values) => values.join('-')}
+        placeholder="请选择一个地点"
+        style={{ maxWidth: 300 }}
+        options={options}
+        onChange={(v) => {
+          value = v as string[][];
+        }}
+        checkedStrategy="parent"
+        mode="multiple"
+        value={value}
+      />
+    );
+    expect(wrapper.find('.arco-tag > span').at(0).text()).toBe(`北京`);
+
+    wrapper.find(prefixCls).simulate('click');
+    wrapper
+      .find(`${prefixCls}-list`)
+      .at(0)
+      .find(`${prefixCls}-list-item-label`)
+      .at(0)
+      .simulate('click');
+    wrapper
+      .find(`${prefixCls}-list`)
+      .at(1)
+      .find(`${prefixCls}-list-item-label`)
+      .at(0)
+      .simulate('click');
+
+    jest.runAllTimers();
+
+    expect(wrapper.find('.arco-checkbox').length).toEqual(
+      wrapper.find('.arco-checkbox-checked').length
+    );
+
+    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(3);
+
+    jest.runAllTimers();
+
+    wrapper
+      .find(`${prefixCls}-list`)
+      .at(2)
+      .find(`${prefixCls}-list-item`)
+      .at(1)
+      .find('.arco-checkbox > input')
+      .simulate('change', {
+        target: {
+          checked: false,
+        },
+      });
+
+    jest.runAllTimers();
+    expect(value).toEqual([
+      ['beijing', 'beijingshi', 'chaoyang'],
+      ['beijing', 'beijingshi', 'xicheng'],
+      ['beijing', 'beijingshi', 'haidian'],
+    ]);
+  });
+
   it('multiply select checkedStrategy correctly', () => {
     let value = [['beijing', 'beijingshi', 'chaoyang', 'datunli']];
     const wrapper = mountCascader(
