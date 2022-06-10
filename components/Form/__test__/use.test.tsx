@@ -22,7 +22,7 @@ function Demo1() {
         <Form.Item shouldUpdate>
           {(v) => {
             return v.name ? (
-              <Form.Item field="dymaic" label="ass">
+              <Form.Item field="dymaic" label="dymaic">
                 <Input />
               </Form.Item>
             ) : null;
