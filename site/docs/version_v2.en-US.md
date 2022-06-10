@@ -2,6 +2,37 @@
 changelog: true
 ---
 
+## 2.35.0
+
+2022-06-10
+
+### 💎 Enhancement
+
+- The default value of the `dayStartOfWeek` of the `DatePicker` component is determined by the locale set, no longer default to `0`.([#982](https://github.com/arco-design/arco-design/pull/982))
+
+### 🆕 Feature
+
+- `ResizeBox.Split` added `horizontal-reverse` and `vertical-reverse` two arrangements.([#984](https://github.com/arco-design/arco-design/pull/984))
+- `Cascader` supports opening virtual lists via `virtualListProps`([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` supports custom class name for dropdown menu by setting `dropdownMenuClassname`([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` supports setting the style of each column of the dropdown menu through `dropdownMenuColumnStyle`([#972](https://github.com/arco-design/arco-design/pull/972))
+- The `Table` component supports fixed columns when `virtualized` is enabled.([#971](https://github.com/arco-design/arco-design/pull/971))
+
+### 🐛 BugFix
+
+- Fixed the bug that the length of `Input.TextArea` component may exceed `maxLength` when inputting Chinese.([#988](https://github.com/arco-design/arco-design/pull/988))
+- Adjust `Popconfirm`, `Popover`, `Tooltip` component animation pop-up effect to avoid page jitter caused by overshoot effect in border scenes.([#986](https://github.com/arco-design/arco-design/pull/986))
+- Fixed the bug of `value` controlled invalidation when the `Cascader` component set the echo mode to `parent`.([#983](https://github.com/arco-design/arco-design/pull/983))
+- Fixed a bug where the `simple` property passed in when the `Modal` component created a popup via `useModal` did not take effect.([#980](https://github.com/arco-design/arco-design/pull/980))
+- Fixed a bug where `showJumper=false` did not work for `Pagination` component in `simple` mode.([#979](https://github.com/arco-design/arco-design/pull/979))
+- Fixed a bug where `Form.useWatch` returned a non-latest value when adding/deleting rows in `Form.List`.([#955](https://github.com/arco-design/arco-design/pull/955))
+- Fixed the bug that the callback parameter was wrong when the `Select` component set `LabelInValue`.([#953](https://github.com/arco-design/arco-design/pull/953))
+- Add CSS units support for width property([#951](https://github.com/arco-design/arco-design/pull/951))
+
+### 💅 Style
+
+- Fixed `Menu` component submenu title bar icons not vertically centered.([#985](https://github.com/arco-design/arco-design/pull/985))
+
 ## 2.34.0
 
 2022-05-27

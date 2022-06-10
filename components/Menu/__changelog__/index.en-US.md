@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 💅 Style
+
+- Fixed `Menu` component submenu title bar icons not vertically centered.([#985](https://github.com/arco-design/arco-design/pull/985))
+
 ## 2.34.0
 
 2022-05-27

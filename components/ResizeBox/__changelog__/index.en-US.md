@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🆕 Feature
+
+- `ResizeBox.Split` added `horizontal-reverse` and `vertical-reverse` two arrangements.([#984](https://github.com/arco-design/arco-design/pull/984))
+
 ## 2.34.0
 
 2022-05-27

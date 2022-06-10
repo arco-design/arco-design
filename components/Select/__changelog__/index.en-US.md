@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed the bug that the callback parameter was wrong when the `Select` component set `LabelInValue`.([#953](https://github.com/arco-design/arco-design/pull/953))
+
 ## 2.32.2
 
 2022-04-29

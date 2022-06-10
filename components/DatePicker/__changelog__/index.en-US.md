@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 💎 Enhancement
+
+- The default value of the `dayStartOfWeek` of the `DatePicker` component is determined by the locale set, no longer default to `0`.([#982](https://github.com/arco-design/arco-design/pull/982))
+
 ## 2.34.0
 
 2022-05-27

@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed a bug where `Form.useWatch` returned a non-latest value when adding/deleting rows in `Form.List`.([#955](https://github.com/arco-design/arco-design/pull/955))
+
 ## 2.34.0
 
 2022-05-27

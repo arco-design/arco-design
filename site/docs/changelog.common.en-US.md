@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Adjust `Popconfirm`, `Popover`, `Tooltip` component animation pop-up effect to avoid page jitter caused by overshoot effect in border scenes.([#986](https://github.com/arco-design/arco-design/pull/986))
+
 ## 2.34.0
 
 2022-05-27

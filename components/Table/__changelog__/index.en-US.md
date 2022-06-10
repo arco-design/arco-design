@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🆕 Feature
+
+- The `Table` component supports fixed columns when `virtualized` is enabled.([#971](https://github.com/arco-design/arco-design/pull/971))
+
 ## 2.33.1
 
 2022-05-20

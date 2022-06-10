@@ -2,6 +2,37 @@
 changelog: true
 ---
 
+## 2.35.0
+
+2022-06-10
+
+### 💎 功能优化
+
+- `DatePicker` 组件的 `dayStartOfWeek` 的默认值由 locale 语言决定，不再统一默认 `0`。([#982](https://github.com/arco-design/arco-design/pull/982))
+
+### 🆕 功能升级
+
+- `ResizeBox.Split` 新增 `horizontal-reverse` 和 `vertical-reverse` 两种排列方式。([#984](https://github.com/arco-design/arco-design/pull/984))
+- `Cascader` 支持通过 `virtualListProps` 开启虚拟列表([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` 支持通过 `dropdownMenuClassname` 设置下拉菜单自定义类名([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` 支持通过 `dropdownMenuColumnStyle` 设置下拉菜单每一列的样式([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Table` 组件开启 `virtualized` 后支持固定列。([#971](https://github.com/arco-design/arco-design/pull/971))
+
+### 🐛 问题修复
+
+- 修复 `Input.TextArea` 组件输入中文时长度有可能超过 `maxLength` 的 bug。([#988](https://github.com/arco-design/arco-design/pull/988))
+- 调整 `Popconfirm`，`Popover`， `Tooltip` 组件动画弹出效果，避免边界场景下过冲效果导致的页面抖动。([#986](https://github.com/arco-design/arco-design/pull/986))
+- 修复 `Cascader` 组件在设置回显方式为 `parent` 时，`value` 受控失效的 bug。([#983](https://github.com/arco-design/arco-design/pull/983))
+- 修复 `Modal` 组件通过 `useModal` 创建弹出框时传入的 `simple` 属性不生效的 bug。([#980](https://github.com/arco-design/arco-design/pull/980))
+- 修复 `Pagination` 组件在 `simple` 模式下  `showJumper=false` 不生效的 bug。([#979](https://github.com/arco-design/arco-design/pull/979))
+- 修复在 `Form.List` 新增/删除行时，`Form.useWatch` 返回值非最新值的 bug。([#955](https://github.com/arco-design/arco-design/pull/955))
+- 修复 `Select` 组件设置 `LabelInValue` 时可能出现的回调参数格式错误的 bug。([#953](https://github.com/arco-design/arco-design/pull/953))
+- `Layout.Sider` 增加 width 属性对 css 单位的支持([#951](https://github.com/arco-design/arco-design/pull/951))
+
+### 💅 样式更新
+
+- 修复 `Menu` 组件子菜单标题栏图标未垂直居中的问题。([#985](https://github.com/arco-design/arco-design/pull/985))
+
 ## 2.34.0
 
 2022-05-27
