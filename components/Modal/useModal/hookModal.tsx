@@ -49,7 +49,7 @@ function HookModal(props, ref) {
   }
 
   return (
-    <Modal {...config} simple visible={visible} onOk={onOk} onCancel={onCancel} unmountOnExit>
+    <Modal unmountOnExit simple {...config} visible={visible} onOk={onOk} onCancel={onCancel}>
       {config.content}
     </Modal>
   );
