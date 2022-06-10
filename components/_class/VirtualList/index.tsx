@@ -1,4 +1,12 @@
-import React, { useEffect, useImperativeHandle, useRef, useMemo, useState, ReactNode } from 'react';
+import React, {
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useMemo,
+  useState,
+  ReactNode,
+  CSSProperties,
+} from 'react';
 import {
   Key,
   getValidScrollTop,
@@ -51,6 +59,8 @@ export interface VirtualListProps<T> extends React.HTMLAttributes<any> {
   /* Configure the default behavior related to scrolling */
   scrollOptions?: ScrollIntoViewOptions;
   needFiller?: boolean;
+  /** Custom filler outer style */
+  outerStyle?: CSSProperties;
   onScroll?: React.UIEventHandler<HTMLElement>;
 }
 
@@ -157,6 +167,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     scrollOptions,
     onScroll,
     needFiller = true,
+    outerStyle,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
@@ -653,6 +664,7 @@ const VirtualList: React.ForwardRefExoticComponent<
             <Filler
               height={itemTotalHeight}
               offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
+              outerStyle={outerStyle}
             >
               {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
             </Filler>

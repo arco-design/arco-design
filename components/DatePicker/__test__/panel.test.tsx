@@ -77,10 +77,10 @@ describe('Panel show date', () => {
 
       component
         .find('.arco-picker-date')
-        .at(6) // 2025-01-04
+        .at(6) // 2025-01-05
         .simulate('click');
 
-      expect(component.find('input').prop('value')).toBe(week ? '2025-1周' : '2025-01-04');
+      expect(component.find('input').prop('value')).toBe(week ? '2025-1周' : '2025-01-05');
     }
 
     testPicker();

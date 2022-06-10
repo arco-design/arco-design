@@ -72,7 +72,57 @@ function DemoTable() {
   );
 }
 
-export const Demo = () => <DemoTable />;
+export const DataChange = () => <DemoTable />;
+
+function DemoVirtualList() {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      width: 140,
+      fixed: 'left' as const,
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+      width: 100,
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      width: 200,
+      fixed: 'right' as const,
+    },
+  ];
+
+  const data = Array(100000)
+    .fill('')
+    .map((_, index) => ({
+      key: `${index}`,
+      name: `Kevin ${index}`,
+      salary: 22000,
+      address: `${index} Park Road, London`,
+      email: `kevin.sandra_${index}@example.com`,
+    }));
+
+  return (
+    <Table
+      virtualized
+      scroll={{ x: 1600, y: 500 }}
+      border
+      columns={columns}
+      data={data}
+      pagination={false}
+      rowSelection={{}}
+    />
+  );
+}
+
+export const VirtualList = () => <DemoVirtualList />;
 
 export default {
   title: 'Table',

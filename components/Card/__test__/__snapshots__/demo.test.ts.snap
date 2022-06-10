@@ -1300,53 +1300,57 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
               style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
             >
               <div
+                aria-controls="arco-tabs-0-panel-0"
+                aria-selected="true"
                 class="arco-tabs-header-title arco-tabs-header-title-active"
+                id="arco-tabs-0-tab-0"
+                role="tab"
+                tabindex="0"
               >
                 <span
-                  aria-controls="arco-tabs-0-panel-0"
-                  aria-selected="true"
                   class="arco-tabs-header-title-text"
-                  id="arco-tabs-0-tab-0"
-                  role="tab"
                 >
                   Tab 0
                 </span>
               </div>
               <div
+                aria-controls="arco-tabs-0-panel-1"
+                aria-selected="false"
                 class="arco-tabs-header-title"
+                id="arco-tabs-0-tab-1"
+                role="tab"
+                tabindex="0"
               >
                 <span
-                  aria-controls="arco-tabs-0-panel-1"
-                  aria-selected="false"
                   class="arco-tabs-header-title-text"
-                  id="arco-tabs-0-tab-1"
-                  role="tab"
                 >
                   Tab 1
                 </span>
               </div>
               <div
+                aria-controls="arco-tabs-0-panel-2"
+                aria-selected="false"
                 class="arco-tabs-header-title"
+                id="arco-tabs-0-tab-2"
+                role="tab"
+                tabindex="0"
               >
                 <span
-                  aria-controls="arco-tabs-0-panel-2"
-                  aria-selected="false"
                   class="arco-tabs-header-title-text"
-                  id="arco-tabs-0-tab-2"
-                  role="tab"
                 >
                   Tab 2
                 </span>
               </div>
               <div
+                aria-controls="arco-tabs-0-panel-3"
+                aria-selected="false"
                 class="arco-tabs-header-title"
+                id="arco-tabs-0-tab-3"
+                role="tab"
+                tabindex="0"
               >
                 <span
-                  aria-controls="arco-tabs-0-panel-3"
-                  aria-selected="false"
                   class="arco-tabs-header-title-text"
-                  id="arco-tabs-0-tab-3"
-                  role="tab"
                 >
                   Tab 3
                 </span>

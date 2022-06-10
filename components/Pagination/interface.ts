@@ -112,8 +112,8 @@ export interface PaginationProps {
    */
   simple?: boolean;
   /**
-   * @zh 是否显示快速跳转到某页
-   * @en Whether to display quick jump
+   * @zh 是否显示快速跳转到某页，在 `simple` 模式下默认为 true
+   * @en Whether to display quick jump. Defaults to true in `simple` mode
    */
   showJumper?: boolean;
   /**

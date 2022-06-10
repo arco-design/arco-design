@@ -74,26 +74,26 @@ describe('utcOffset', () => {
     // open, start
     getInput(component, 0).simulate('click');
 
-    // 2020-04-08
+    // 2020-04-09
     getDateCell(component, 0, 10).find('.arco-picker-date').simulate('click');
 
     expect(onSelect.mock.calls.length).toBe(1);
-    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-22 08:00:00']);
+    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-22 08:00:00']);
     expect(onSelect.mock.calls[0][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
       '2020-04-22T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
 
-    // 2020-04-13
+    // 2020-04-14
     getDateCell(component, 0, 15).find('.arco-picker-date').simulate('click');
 
     expect(onSelect.mock.calls.length).toBe(2);
-    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-09 00:00:00', '2020-04-13 08:00:00']);
+    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-10 00:00:00', '2020-04-14 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-13T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-14T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
@@ -103,10 +103,10 @@ describe('utcOffset', () => {
     expect(onSelect.mock.calls.length).toBe(2);
 
     expect(onChange.mock.calls.length).toBe(1);
-    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-13 08:00:00']);
+    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-14 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-13T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-14T00:00:00.000Z',
     ]);
   });
 });
@@ -181,26 +181,26 @@ describe('timezone & DST', () => {
     // open, start
     getInput(component, 0).simulate('click');
 
-    // 2020-04-08
+    // 2020-04-09
     getDateCell(component, 0, 10).find('.arco-picker-date').simulate('click');
 
     expect(onSelect.mock.calls.length).toBe(1);
-    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-22 08:00:00']);
+    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-22 08:00:00']);
     expect(onSelect.mock.calls[0][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
       '2020-04-22T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
 
-    // 2020-04-13
+    // 2020-04-14
     getDateCell(component, 0, 15).find('.arco-picker-date').simulate('click');
 
     expect(onSelect.mock.calls.length).toBe(2);
-    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-09 00:00:00', '2020-04-14 08:00:00']);
+    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-10 00:00:00', '2020-04-15 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-14T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-15T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
@@ -210,10 +210,10 @@ describe('timezone & DST', () => {
     expect(onSelect.mock.calls.length).toBe(2);
 
     expect(onChange.mock.calls.length).toBe(1);
-    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-14 08:00:00']);
+    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-15 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-14T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-15T00:00:00.000Z',
     ]);
   });
 });

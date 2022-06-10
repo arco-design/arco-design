@@ -665,9 +665,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     // 根据 Tbody 决定 Thead 是否显示纵向滚动条
     // TODO: Remove
     setTimeout(() => {
-      const scrollWrapper = virtualized
-        ? (refTableBody.current.children[0] as HTMLDivElement)
-        : refTableBody.current;
+      const scrollWrapper = refTableBody.current;
       const scrollBarWidth = getScrollBarWidth(scrollWrapper);
       if (scrollBarWidth) {
         scrollbarChanged.current = true;
