@@ -264,7 +264,6 @@ export interface InputPasswordProps extends InputProps {
 
 export interface InputComponentProps extends InputProps {
   prefixCls?: string;
-  onValueChange?: InputProps['onChange'];
   hasParent?: boolean;
   // input 随输入文本的宽度变化
   autoFitWidth?: boolean | { delay: number | ((width: number, prevWidth: number) => number) };

@@ -133,16 +133,18 @@ describe('Typography', () => {
       wrapper.update();
     });
 
+    const textarea = wrapper.find('textarea');
+
     expect(onStart).toHaveBeenCalledTimes(1);
-    expect(wrapper.find('TextArea')).toHaveLength(1);
+    expect(textarea).toHaveLength(1);
 
     act(() => {
       wrapper.setProps({ children: afterText });
-      wrapper.find('TextArea').simulate('change', {
+      textarea.prop('onChange')({
         target: {
           value: afterText,
         },
-      });
+      } as any);
       wrapper.update();
     });
 

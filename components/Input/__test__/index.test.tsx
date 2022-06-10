@@ -132,7 +132,7 @@ describe('Test Textarea', () => {
     const textarea = component.find('textarea');
     expect(textarea.text()).toBe('');
     act(() => {
-      textarea.prop('onChange')({ currentTarget: { value: 'Hello' } } as any);
+      textarea.prop('onChange')({ target: { value: 'Hello' } } as any);
     });
     expect(onChange.mock.calls[0][0]).toBe('Hello');
   });

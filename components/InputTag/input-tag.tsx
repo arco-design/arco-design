@@ -313,7 +313,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             setInputValue('');
           }}
           value={inputValue}
-          onValueChange={(v, e) => {
+          onChange={(v, e) => {
             setInputValue(v);
             // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
             onInputChange && onInputChange(v, e);
