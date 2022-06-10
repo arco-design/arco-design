@@ -14,6 +14,10 @@
   box-shadow: inset 0 0 0 @tabs-box-shadow-radius @tabs-color-box-shadow;
 }
 
+.tabs-icon-focus-visible-style() {
+  box-shadow: 0 0 0 @tabs-box-shadow-radius @tabs-color-box-shadow;
+}
+
 // tabs icon style
 .icon-hover(@tabs-prefix-cls, @tabs-size-icon, @tabs-size-icon-bg);
 
@@ -35,7 +39,7 @@
     user-select: none;
 
     &:focus-visible .@{prefix}-icon-hover::before {
-      .tabs-focus-visible-style();
+      .tabs-icon-focus-visible-style();
     }
   }
 
@@ -48,7 +52,7 @@
     padding: 0 @tabs-margin-add-icon-left;
 
     &:focus-visible .@{prefix}-icon-hover::before {
-      .tabs-focus-visible-style();
+      .tabs-icon-focus-visible-style();
     }
   }
 
