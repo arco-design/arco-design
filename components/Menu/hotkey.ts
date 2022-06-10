@@ -23,7 +23,10 @@ export const useHotkeyListener = ({
   const [hotkeyInfo, setHokeyInfo] = useState<HotkeyInfo>(INITIAL_HOTKEY_INFO);
 
   return {
-    clear: () => setHokeyInfo(INITIAL_HOTKEY_INFO),
+    reset: (activeKey?: string) => {
+      const keyPath = activeKey && menuInfoMap[activeKey]?.keyPath;
+      setHokeyInfo({ ...INITIAL_HOTKEY_INFO, activeKeyPath: keyPath || [] });
+    },
     hotkeyInfo,
     listener: (event) => {
       if (typeof needPause === 'function' && needPause()) {

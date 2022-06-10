@@ -32,7 +32,7 @@ function Item(props: MenuItemProps, ref) {
     autoScrollIntoView,
     scrollConfig,
     tooltipProps,
-    clearHotkeyInfo,
+    resetHotkeyInfo,
     onClickMenuItem,
   } = useContext(MenuContext);
 
@@ -45,7 +45,7 @@ function Item(props: MenuItemProps, ref) {
   const isActive = useHotkeyHandler(_key, (isActive, type) => {
     if (isActive && type === 'enter') {
       onClickMenuItem(_key, null);
-      clearHotkeyInfo();
+      resetHotkeyInfo();
     }
   });
 
@@ -91,7 +91,7 @@ function Item(props: MenuItemProps, ref) {
         if (!disabled) {
           onClickMenuItem(_key, event);
           onClick && onClick(event);
-          clearHotkeyInfo();
+          resetHotkeyInfo();
         }
       }}
       {...omit(rest, ['key', '_key'].concat(PROPS_NEED_TO_BE_PASSED_IN_SUBMENU))}

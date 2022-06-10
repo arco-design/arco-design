@@ -12,6 +12,10 @@
   }
 }
 
+.menu-focus-visible-style() {
+  box-shadow: 0 0 0 2px @color-primary-6 inset;
+}
+
 @keyframes ~'@{prefix}-menu-selected-item-label-enter' {
   from {
     opacity: 0;
@@ -29,10 +33,6 @@
   font-size: @menu-font-size;
   line-height: @menu-line-height;
   transition: width @transition-duration-2 @transition-timing-function-standard;
-
-  &:focus-visible {
-    outline: 3px solid var(~'@{arco-cssvars-prefix}-color-primary-light-2');
-  }
 
   // 设置菜单层级的缩进
   &-indent {
@@ -96,6 +96,8 @@
       .@{menu-prefix-cls}-icon-suffix {
         position: absolute;
         right: @menu-vertical-item-padding-horizontal;
+        top: 50%;
+        transform: translateY(-50%);
       }
     };
 
@@ -136,7 +138,7 @@
         }
 
         &.@{menu-prefix-cls}-active {
-          box-shadow: 0 0 0 1px @color-primary-6 inset;
+          .menu-focus-visible-style();
         }
 
         &.@{menu-prefix-cls}-selected {
