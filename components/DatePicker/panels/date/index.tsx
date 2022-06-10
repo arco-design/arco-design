@@ -55,7 +55,7 @@ const getTimeObj = (time: Dayjs) => {
 };
 
 function getAllDaysByTime(props: InnerDatePickerProps, time: Dayjs) {
-  const { dayStartOfWeek = 0, isWeek } = props;
+  const { dayStartOfWeek, isWeek } = props;
   const current = getTimeObj(time);
 
   const flatRows = newArray(allDaysInOnePage).map(() => ({}));
@@ -100,7 +100,6 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
     isWeek,
     popupVisible,
     format,
-    dayStartOfWeek = 0,
     pageShowDate,
     showTime,
     style,
@@ -135,7 +134,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
 
   const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
 
-  const { utcOffset, timezone } = useContext(PickerContext);
+  const { utcOffset, timezone, weekStart } = useContext(PickerContext);
 
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
 
@@ -149,8 +148,8 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
 
   // page data list
   const rows = useMemo(() => {
-    return getAllDaysByTime(props, pageShowDate);
-  }, [pageShowDate.toString(), dayStartOfWeek]);
+    return getAllDaysByTime({ ...props, dayStartOfWeek: weekStart }, pageShowDate);
+  }, [pageShowDate.toString(), weekStart]);
 
   let disabledTimeProps;
 
@@ -172,7 +171,6 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
         showWeekList
         isWeek={isWeek}
         prefixCls={getPrefixCls('picker')}
-        dayStartOfWeek={dayStartOfWeek}
         rows={rows}
         isSameTime={
           isSameTime || ((current: Dayjs, target: Dayjs) => current.isSame(target, 'day'))
@@ -273,7 +271,6 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
 }
 
 DatePicker.defaultProps = {
-  dayStartOfWeek: 0,
   pickerType: 'date',
 };
 

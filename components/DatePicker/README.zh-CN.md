@@ -20,7 +20,7 @@
 |className|节点类名|`string \| string[]`|`-`|-|
 |disabled|是否禁用|`boolean \| boolean[]`|`-`|-|
 |allowClear|允许清除|`boolean`|`true`|-|
-|dayStartOfWeek|每周的第一天开始于周几，0 - 周日，1 - 周一，以此类推。|`0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`|`0`|2 - 6 in `2.20.0`|
+|dayStartOfWeek|每周的第一天开始于周几，0 - 周日，1 - 周一，以此类推。|`0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`|`-`|2 - 6 in `2.20.0`|
 |position|弹出的框的位置|`'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br'`|`-`|-|
 |getPopupContainer|弹出框挂载的父节点|`(node: HTMLElement) => Element`|`bl`|-|
 |placeholder|提示文案|`string \| string[]`|`-`|-|

@@ -2,16 +2,16 @@ import React from 'react';
 
 interface WeekListProps {
   prefixCls?: string;
-  dayStartOfWeek?: number;
+  weekStart?: number;
   isWeek?: boolean;
   CALENDAR_LOCALE?: Record<string, any>;
 }
 
 function WeekList(props: WeekListProps) {
-  const { prefixCls, dayStartOfWeek, isWeek, CALENDAR_LOCALE } = props;
+  const { prefixCls, weekStart, isWeek, CALENDAR_LOCALE } = props;
   let weekList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
-  weekList = weekList.slice(dayStartOfWeek).concat(weekList.slice(0, dayStartOfWeek));
+  weekList = weekList.slice(weekStart).concat(weekList.slice(0, weekStart));
   if (isWeek) {
     weekList.unshift('');
   }

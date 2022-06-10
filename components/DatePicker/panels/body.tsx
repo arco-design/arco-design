@@ -17,7 +17,6 @@ type RowType = {
 
 export interface PanelBodyProps {
   showWeekList?: boolean;
-  dayStartOfWeek?: number;
   isWeek?: boolean;
   prefixCls?: string;
   onSelectDate?: (timeString: string, time: Dayjs) => void;
@@ -45,7 +44,6 @@ function Body(props: PanelBodyProps) {
     dateRender,
     onMouseEnterCell,
     onMouseLeaveCell,
-    dayStartOfWeek,
     CALENDAR_LOCALE,
     rows,
     showWeekList,
@@ -55,7 +53,7 @@ function Body(props: PanelBodyProps) {
     originMode,
   } = props;
 
-  const { utcOffset, timezone } = useContext(PickerContext);
+  const { utcOffset, timezone, weekStart } = useContext(PickerContext);
 
   const getCellClassName = useCellClassName({
     ...props,
@@ -103,7 +101,7 @@ function Body(props: PanelBodyProps) {
       {showWeekList && (
         <WeekList
           prefixCls={prefixCls}
-          dayStartOfWeek={dayStartOfWeek}
+          weekStart={weekStart}
           isWeek={isWeek}
           CALENDAR_LOCALE={CALENDAR_LOCALE}
         />

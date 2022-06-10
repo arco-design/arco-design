@@ -20,7 +20,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |className|Additional css class|`string \| string[]`|`-`|-|
 |disabled|Whether to disable|`boolean \| boolean[]`|`-`|-|
 |allowClear|Allow Clear|`boolean`|`true`|-|
-|dayStartOfWeek|The first day of the week starts on the day of the week, `0`-Sunday, `1`-Monday, and so on.|`0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`|`0`|2 - 6 in `2.20.0`|
+|dayStartOfWeek|The first day of the week starts on the day of the week, `0`-Sunday, `1`-Monday, and so on.|`0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6`|`-`|2 - 6 in `2.20.0`|
 |position|The position of the popup|`'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br'`|`-`|-|
 |getPopupContainer|The parent node of the popup|`(node: HTMLElement) => Element`|`bl`|-|
 |placeholder|The placeholder of date input|`string \| string[]`|`-`|-|
