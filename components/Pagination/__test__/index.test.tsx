@@ -100,4 +100,17 @@ describe('Pagination', () => {
     wrapper.update();
     expect(wrapper.find('.arco-pagination-item-jumper')).toHaveLength(1);
   });
+
+  it('show jumper correctly in simple mode', () => {
+    const wrapper = mountPagination(<Pagination simple total={100} current={5} />);
+    expect(wrapper.find('PageJumper').find('input').prop('value')).toEqual('5');
+    act(() => {
+      wrapper.setProps({
+        showJumper: false,
+      });
+      wrapper.update();
+    });
+    expect(wrapper.find('PageJumper').find('Input')).toHaveLength(0);
+    expect(wrapper.find('PageJumper').text()).toEqual('5/10');
+  });
 });

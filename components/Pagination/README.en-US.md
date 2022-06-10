@@ -35,7 +35,7 @@ Use pagination to control the amount of information in a single page.
 |onPageSizeChange|Callback when pageSize changes|`(size: number, current: number) => void`|`-`|-|
 |pageSizeChangeResetCurrent|When pageSize changes, resets the current page number to `1`|`boolean`|`true`|-|
 |simple|Whether to use simplified pagination mode|`boolean`|`-`|-|
-|showJumper|Whether to display quick jump|`boolean`|`-`|-|
+|showJumper|Whether to display quick jump. Defaults to true in `simple` mode|`boolean`|`-`|-|
 |showMore|Whether to show more page number tips (can be used when the total number of data cannot be calculated yet)|`boolean`|`-`|-|
 |selectProps|Props of the `Select`|`Partial<SelectProps>`|`-`|-|
 |icons|Set icon of the pager|`{prev?: ReactNode;next?: ReactNode;more?: ReactNode;}`|`-`|-|
