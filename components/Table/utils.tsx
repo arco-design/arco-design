@@ -1,4 +1,4 @@
-import { isArray } from '../_util/is';
+import { isArray, isObject } from '../_util/is';
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
@@ -10,6 +10,23 @@ export function getScrollBarWidth(ele: HTMLElement | null) {
 
 export function isChildrenNotEmpty(record, field: string) {
   return isArray(record[field]) && record[field].length;
+}
+
+export function deepCloneData(data, childrenColumnName) {
+  function travel(data) {
+    const newData = [];
+    data.forEach((d) => {
+      const _d = { ...d };
+      if (isObject(_d) && _d[childrenColumnName]) {
+        _d[childrenColumnName] = travel(_d[childrenColumnName]);
+      }
+      newData.push(_d);
+    });
+
+    return newData;
+  }
+
+  return travel(data);
 }
 
 export function getSelectedKeys(
