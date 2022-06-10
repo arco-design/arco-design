@@ -60,14 +60,14 @@ describe('Layout', () => {
       </Sider>
     );
 
-    expect(wrapper.find('.arco-layout-sider').at(0).prop('style').width).toEqual("60px");
+    expect(wrapper.find('.arco-layout-sider').at(0).prop('style').width).toEqual('60px');
     wrapper.setProps({
       collapsed: false,
       width: 300,
     });
     jest.advanceTimersByTime(1000);
     wrapper.update();
-    expect(wrapper.find('.arco-layout-sider').at(0).prop('style').width).toEqual("300px");
+    expect(wrapper.find('.arco-layout-sider').at(0).prop('style').width).toEqual('300px');
   });
 
   it('has Resize Sider', () => {
