@@ -38,8 +38,8 @@
 .zoomInFadeOut-appear-active {
   opacity: 1;
   transform: scale(1, 1);
-  transition: opacity @transition-duration-3 @transition-timing-function-overshoot,
-    transform @transition-duration-3 @transition-timing-function-overshoot;
+  transition: opacity @transition-duration-2 @transition-timing-function-standard,
+    transform @transition-duration-2 @transition-timing-function-standard;
 }
 
 .zoomInFadeOut-exit {
@@ -50,8 +50,8 @@
 .zoomInFadeOut-exit-active {
   opacity: 0;
   transform: scale(0.5, 0.5);
-  transition: opacity @transition-duration-3 @transition-timing-function-overshoot,
-    transform @transition-duration-3 @transition-timing-function-overshoot;
+  transition: opacity @transition-duration-2 @transition-timing-function-overshoot,
+    transform @transition-duration-2 @transition-timing-function-overshoot;
 }
 
 // used by slide, table filter
