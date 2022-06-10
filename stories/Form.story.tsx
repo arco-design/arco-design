@@ -23,7 +23,7 @@ export const Demo = function Demo() {
         <Form.Item shouldUpdate>
           {(v) => {
             return v.username ? (
-              <Form.Item field="aaa" label="ass">
+              <Form.Item field="aaa" label="aaa">
                 <Input />
               </Form.Item>
             ) : null;
