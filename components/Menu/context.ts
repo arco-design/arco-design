@@ -7,7 +7,7 @@ export type HotkeyInfo = {
   type: 'sibling' | 'generation' | 'enter';
 };
 
-export type ClearHotkeyInfo = () => void;
+export type ResetHotkeyInfo = (activeKey?: string) => void;
 
 const MenuContext = createContext<
   Pick<
@@ -28,7 +28,7 @@ const MenuContext = createContext<
     id?: string;
     prefixCls?: string;
     hotkeyInfo?: HotkeyInfo;
-    clearHotkeyInfo?: ClearHotkeyInfo;
+    resetHotkeyInfo?: ResetHotkeyInfo;
     onClickMenuItem?: (key: string, event) => void;
     onClickSubMenu?: (key: string, level: number, type: 'pop' | 'inline') => void;
     collectInlineMenuKeys?: (key: string, unmount?: boolean) => void;

@@ -102,7 +102,7 @@ function Menu(baseProps: MenuProps, ref) {
   const {
     hotkeyInfo,
     listener: hotkeyListener,
-    clear: clearHotkeyInfo,
+    reset: resetHotkeyInfo,
   } = useHotkeyListener({
     openKeys,
     selectedKeys,
@@ -208,7 +208,7 @@ function Menu(baseProps: MenuProps, ref) {
           id: instanceId,
           prefixCls,
           hotkeyInfo: 'hotkeyInfo' in menuContext ? menuContext.hotkeyInfo : hotkeyInfo,
-          clearHotkeyInfo,
+          resetHotkeyInfo,
           collectInlineMenuKeys: (key, unmount) => {
             if (unmount) {
               refSubMenuKeys.current = refSubMenuKeys.current.filter((x) => x !== key);
