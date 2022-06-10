@@ -55,7 +55,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
   const {
     mode = 'date',
     showTime,
-    dayStartOfWeek = 0,
     disabledDate,
     disabledTime,
     format,
@@ -135,7 +134,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 
     const pickerProps = {
       ...basePickerProps,
-      dayStartOfWeek,
       localeName,
       popupVisible,
       timepickerProps,
@@ -305,7 +303,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 }
 
 RangePicker.defaultProps = {
-  dayStartOfWeek: 0,
   pickerType: 'range',
 };
 

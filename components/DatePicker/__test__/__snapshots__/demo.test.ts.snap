@@ -1366,11 +1366,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
           <div
             class="arco-picker-week-list-item"
           >
-            日
-          </div>
-          <div
-            class="arco-picker-week-list-item"
-          >
             一
           </div>
           <div
@@ -1398,6 +1393,11 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
           >
             六
           </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            日
+          </div>
         </div>
         <div
           class="arco-picker-body"
@@ -1405,19 +1405,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
           <div
             class="arco-picker-row"
           >
-            <div
-              class="arco-picker-cell"
-            >
-              <div
-                class="arco-picker-date"
-              >
-                <div
-                  class="arco-picker-date-value"
-                >
-                  29
-                </div>
-              </div>
-            </div>
             <div
               class="arco-picker-cell"
             >
@@ -1496,10 +1483,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1513,6 +1496,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1591,10 +1578,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1608,6 +1591,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1686,10 +1673,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1703,6 +1686,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1781,10 +1768,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1798,6 +1781,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1876,10 +1863,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell"
             >
@@ -1893,6 +1876,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell"
             >
@@ -1968,6 +1955,19 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                   class="arco-picker-date-value"
                 >
                   9
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  10
                 </div>
               </div>
             </div>
@@ -2070,11 +2070,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-week-list-item"
               >
-                日
-              </div>
-              <div
-                class="arco-picker-week-list-item"
-              >
                 一
               </div>
               <div
@@ -2102,6 +2097,11 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               >
                 六
               </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                日
+              </div>
             </div>
             <div
               class="arco-picker-body"
@@ -2109,19 +2109,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-row"
               >
-                <div
-                  class="arco-picker-cell"
-                >
-                  <div
-                    class="arco-picker-date"
-                  >
-                    <div
-                      class="arco-picker-date-value"
-                    >
-                      29
-                    </div>
-                  </div>
-                </div>
                 <div
                   class="arco-picker-cell"
                 >
@@ -2200,10 +2187,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2217,6 +2200,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2295,10 +2282,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2312,6 +2295,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2390,10 +2377,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2407,6 +2390,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2485,10 +2472,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2502,6 +2485,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2580,10 +2567,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell"
                 >
@@ -2597,6 +2580,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell"
                 >
@@ -2672,6 +2659,19 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                       class="arco-picker-date-value"
                     >
                       9
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      10
                     </div>
                   </div>
                 </div>
@@ -2750,11 +2750,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-week-list-item"
               >
-                日
-              </div>
-              <div
-                class="arco-picker-week-list-item"
-              >
                 一
               </div>
               <div
@@ -2782,6 +2777,11 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               >
                 六
               </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                日
+              </div>
             </div>
             <div
               class="arco-picker-body"
@@ -2789,19 +2789,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-row"
               >
-                <div
-                  class="arco-picker-cell"
-                >
-                  <div
-                    class="arco-picker-date"
-                  >
-                    <div
-                      class="arco-picker-date-value"
-                    >
-                      26
-                    </div>
-                  </div>
-                </div>
                 <div
                   class="arco-picker-cell"
                 >
@@ -2880,10 +2867,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2897,6 +2880,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2975,10 +2962,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2992,6 +2975,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3070,10 +3057,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3087,6 +3070,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3165,10 +3152,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3182,6 +3165,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3260,10 +3247,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3277,6 +3260,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell"
                 >
@@ -3352,6 +3339,19 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                       class="arco-picker-date-value"
                     >
                       6
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      7
                     </div>
                   </div>
                 </div>

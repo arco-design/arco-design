@@ -192,14 +192,6 @@ export function toLocal(time: Dayjs, utcOffset?: number, timezone?: string): Day
   return toTimezone(time, utcOffset, timezone, true);
 }
 
-export function initializeDateLocale(localeName: string, weekStart: number) {
-  if (isMoment) {
-    (dayjs as any).updateLocale(localeName, { week: { dow: weekStart } });
-  } else {
-    dayjs.locale({ ...dayjs.Ls[localeName], weekStart });
-  }
-}
-
 export function getTimeFormat(format) {
   const units = ['H', 'h', 'm', 's', 'A', 'a'];
   let timeFormat = '';

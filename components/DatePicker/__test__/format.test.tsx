@@ -16,10 +16,10 @@ describe('Picker Format', () => {
 
     component
       .find('.arco-picker-date')
-      .at(8) // 2020-02-03
+      .at(8) // 2020-02-04
       .simulate('click');
 
-    expect(component.find('input').prop('value')).toBe('2020/02/03');
+    expect(component.find('input').prop('value')).toBe('2020/02/04');
   });
 
   it('MonthPicker', () => {
@@ -119,7 +119,7 @@ describe('Picker Format', () => {
     );
 
     expect(component.find('input').at(0).prop('value')).toBe('2020/5周');
-    expect(component.find('input').at(1).prop('value')).toBe('2020/10周');
+    expect(component.find('input').at(1).prop('value')).toBe('2020/9周');
   });
 
   it('fallback format', () => {

@@ -60,7 +60,6 @@ export interface PickerProps {
   /**
    * @zh 每周的第一天开始于周几，0 - 周日，1 - 周一，以此类推。
    * @en The first day of the week starts on the day of the week, `0`-Sunday, `1`-Monday, and so on.
-   * @defaultValue 0
    * @version 2 - 6 in `2.20.0`
    */
   dayStartOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6;

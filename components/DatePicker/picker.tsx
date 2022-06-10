@@ -4,7 +4,7 @@ import Trigger from '../Trigger';
 import DateInput from '../_class/picker/input';
 import { PickerProps, CalendarValue, ShortcutType, ModeType } from './interface';
 import { TimePickerProps } from '../TimePicker/interface';
-import { isArray, isDayjs, isObject } from '../_util/is';
+import { isArray, isDayjs, isObject, isUndefined } from '../_util/is';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
@@ -15,7 +15,6 @@ import {
   getValueWithTime,
   methods,
   isDayjsChange,
-  initializeDateLocale,
   toLocal,
   toTimezone,
 } from '../_util/dayjs';
@@ -27,6 +26,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import PickerContext from './context';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
+import { getDefaultWeekStart } from './util';
 
 function getFormat(props) {
   const { format, picker, showTime } = props;
@@ -74,7 +74,6 @@ const defaultProps: InnerPickerProps = {
   position: 'bl',
   editable: true,
   showNowBtn: true,
-  dayStartOfWeek: 0,
 };
 
 const Picker = (baseProps: InnerPickerProps) => {
@@ -122,7 +121,9 @@ const Picker = (baseProps: InnerPickerProps) => {
   const prefixCls = getPrefixCls('picker');
   const DATEPICKER_LOCALE = locale.DatePicker;
 
-  initializeDateLocale(locale.dayjsLocale, props.dayStartOfWeek);
+  const weekStart = isUndefined(props.dayStartOfWeek)
+    ? getDefaultWeekStart(locale.dayjsLocale)
+    : props.dayStartOfWeek;
 
   const mode = picker.props.pickerType;
 
@@ -375,7 +376,9 @@ const Picker = (baseProps: InnerPickerProps) => {
     if (!disabled) {
       const placeHolderValue = showTime ? getValueWithTime(value, timeValue) : value;
       setHoverPlaceholderValue(
-        typeof realFormat === 'function' ? realFormat(value) : placeHolderValue.format(format)
+        typeof realFormat === 'function'
+          ? realFormat(value)
+          : placeHolderValue.locale(locale.dayjsLocale).format(format)
       );
     }
   }
@@ -532,40 +535,40 @@ const Picker = (baseProps: InnerPickerProps) => {
     allowClear,
   };
 
-  if (triggerElement === null) {
-    return renderPopup(true);
-  }
-
   return (
-    <PickerContext.Provider value={{ utcOffset, timezone }}>
-      <Trigger
-        popup={renderPopup}
-        trigger="click"
-        clickToClose={false}
-        position={position}
-        disabled={disabled as boolean}
-        popupAlign={{ bottom: 4 }}
-        getPopupContainer={getPopupContainer}
-        onVisibleChange={visibleChange}
-        popupVisible={mergedPopupVisible}
-        classNames="slideDynamicOrigin"
-        unmountOnExit={unmountOnExit}
-        {...triggerProps}
-      >
-        {triggerElement || (
-          <DateInput
-            {...baseInputProps}
-            ref={refInput}
-            placeholder={placeholder || DATEPICKER_LOCALE.placeholder[mode]}
-            popupVisible={mergedPopupVisible}
-            value={valueShow || mergedValue}
-            inputValue={hoverPlaceholderValue || inputValue}
-            prefixCls={prefixCls}
-            onChange={onChangeInput}
-            isPlaceholder={!!hoverPlaceholderValue}
-          />
-        )}
-      </Trigger>
+    <PickerContext.Provider value={{ utcOffset, timezone, weekStart }}>
+      {triggerElement === null ? (
+        renderPopup(true)
+      ) : (
+        <Trigger
+          popup={renderPopup}
+          trigger="click"
+          clickToClose={false}
+          position={position}
+          disabled={disabled as boolean}
+          popupAlign={{ bottom: 4 }}
+          getPopupContainer={getPopupContainer}
+          onVisibleChange={visibleChange}
+          popupVisible={mergedPopupVisible}
+          classNames="slideDynamicOrigin"
+          unmountOnExit={unmountOnExit}
+          {...triggerProps}
+        >
+          {triggerElement || (
+            <DateInput
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={placeholder || DATEPICKER_LOCALE.placeholder[mode]}
+              popupVisible={mergedPopupVisible}
+              value={valueShow || mergedValue}
+              inputValue={hoverPlaceholderValue || inputValue}
+              prefixCls={prefixCls}
+              onChange={onChangeInput}
+              isPlaceholder={!!hoverPlaceholderValue}
+            />
+          )}
+        </Trigger>
+      )}
     </PickerContext.Provider>
   );
 };
