@@ -86,8 +86,9 @@ export interface SplitProps {
    * @zh 分割方向分为水平 `horizontal` 和垂直 `vertical`，默认是水平分割
    * @en The direction of Split. It can be `horizontal` and `vertical`
    * @defaultValue horizontal
+   * @version `reverse` in `2.35.0`
    */
-  direction?: 'horizontal' | 'vertical';
+  direction?: 'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse';
   /**
    * @zh 定制伸缩杆的图标
    * @en Custom the icon of Split

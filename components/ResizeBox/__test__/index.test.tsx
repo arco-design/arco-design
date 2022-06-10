@@ -252,4 +252,56 @@ describe('ResizeBox', () => {
 
     expect(mockPaneResize).toHaveBeenCalledTimes(2);
   });
+
+  it('render direction reverse correctly', () => {
+    const mockMoving = jest.fn();
+    const mockMovingStart = jest.fn();
+    const mockMovingEnd = jest.fn();
+
+    const wrapper = mount(
+      <ResizeBox.Split
+        style={{ height: 400, width: 400 }}
+        direction="horizontal-reverse"
+        onMoving={mockMoving}
+        onMovingStart={mockMovingStart}
+        onMovingEnd={mockMovingEnd}
+        panes={[
+          <Typography.Paragraph key="1">Right</Typography.Paragraph>,
+          <Typography.Paragraph key="2">Left</Typography.Paragraph>,
+        ]}
+      />
+    );
+
+    expect(wrapper.find('.arco-resizebox-split-pane').at(0).text()).toEqual('Left');
+    expect(wrapper.find('.arco-resizebox-split-pane').at(1).text()).toEqual('Right');
+
+    const map: any = {};
+    window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+      map[event] = cb;
+    });
+
+    act(() => {
+      wrapper.find('ResizeTrigger').simulate('mousedown', { pageX: 200, pageY: 100 });
+      wrapper.update();
+    });
+    expect(mockMovingStart).toHaveBeenCalled();
+
+    act(() => {
+      map.mousemove({
+        pageX: 250,
+        pageY: 100,
+      });
+    });
+    expect(mockMoving).toHaveBeenCalledTimes(1);
+    expect(mockMoving.mock.calls[0][1]).toEqual((200 - (250 - 200)) / 400);
+
+    act(() => {
+      wrapper.update();
+    });
+
+    act(() => {
+      map.mouseup();
+      expect(mockMovingEnd).toHaveBeenCalledTimes(1);
+    });
+  });
 });
