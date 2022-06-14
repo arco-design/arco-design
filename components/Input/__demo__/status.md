@@ -16,15 +16,14 @@ Different Input status.
 ```js
 import { Input, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space wrap>
-    <Input
-      style={{ width: 350 }}
-      error
-      placeholder="error status"
-    />
-    <Input style={{ width: 350 }} disabled placeholder="disabled input" />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space wrap>
+      <Input style={{ width: 350 }} error placeholder="error status" />
+      <Input style={{ width: 350 }} disabled placeholder="disabled input" />
+    </Space>
+  );
+};
+
+export default App;
 ```

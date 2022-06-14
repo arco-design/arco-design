@@ -19,8 +19,9 @@ If `target` is specified as a non-window container, the fixed element may escape
 
 ```js
 import { Affix, Button } from '@arco-design/web-react';
+import React from 'react';
 
-class Demo extends React.Component {
+class App extends React.Component {
   container = null;
 
   render() {
@@ -28,9 +29,7 @@ class Demo extends React.Component {
       <div
         id="container"
         style={{ height: 200, overflow: 'auto' }}
-        ref={(node) => {
-          this.container = node;
-        }}
+        ref={(node) => { this.container = node }}
       >
         <div
           style={{
@@ -59,5 +58,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,6 +16,7 @@ Use `<Dropdown.Button>` to use the Dropdown with button on its right side which 
 ```js
 import { Dropdown, Menu, Tooltip, Space } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const dropList = (
   <Menu>
@@ -24,34 +25,35 @@ const dropList = (
   </Menu>
 );
 
-ReactDOM.render(
-  <Space size="large" className="dropdown-demo">
-    <Dropdown.Button type="secondary" droplist={dropList}>
-      Publish
-    </Dropdown.Button>
-    <Dropdown.Button type="secondary" droplist={dropList} disabled>
-      Disabled
-    </Dropdown.Button>
-    <Dropdown.Button
-      type="primary"
-      droplist={dropList}
-      icon={<IconDown />}
-    >
-      Publish
-    </Dropdown.Button>
-    <Dropdown.Button
-      type="primary"
-      droplist={dropList}
-      buttonsRender={([leftButton, rightButton]) => [
-        <Tooltip content="Tooltip">{leftButton}</Tooltip>,
-        React.cloneElement(rightButton, { loading: true }),
-      ]}
-    >
-      With Tooltip
-    </Dropdown.Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large" className="dropdown-demo">
+      <Dropdown.Button type="secondary" droplist={dropList}>
+        Publish
+      </Dropdown.Button>
+      <Dropdown.Button type="secondary" droplist={dropList} disabled>
+        Disabled
+      </Dropdown.Button>
+      <Dropdown.Button type="primary" droplist={dropList} icon={<IconDown />}>
+        Publish
+      </Dropdown.Button>
+      <Dropdown.Button
+        type="primary"
+        droplist={dropList}
+        buttonsRender={([leftButton, rightButton]) => [
+          <Tooltip content="Tooltip">{leftButton}</Tooltip>,
+          React.cloneElement(rightButton, {
+            loading: true,
+          }),
+        ]}
+      >
+        With Tooltip
+      </Dropdown.Button>
+    </Space>
+  );
+};
+
+export default App;
 ```
 
 ```css:silent

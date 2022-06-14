@@ -7,7 +7,7 @@ title:
 
 ## zh-CN
 
-输入框定义了四种默认尺寸（`mini`,`small`, `default`, `large`），分别为24px，28px，32px，36px。
+输入框定义了四种默认尺寸（`mini`,`small`, `default`, `large`），分别为 24px，28px，32px，36px。
 
 ## en-US
 
@@ -16,22 +16,21 @@ Input defines four sizes (`mini`, `small`, `default`, `large`), which are 24px, 
 ```js
 import { Input, Radio, Select, Slider, Typography } from '@arco-design/web-react';
 import { IconClockCircle, IconSearch, IconInfoCircle } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const RadioGroup = Radio.Group;
 const InputSearch = Input.Search;
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     size: 'default',
     height: 0,
   };
-
   handleHeightChange = (height) => {
     this.setState({
       height,
     });
   };
-
   handleChange = (size) => {
     this.setState({
       height: undefined,
@@ -41,7 +40,10 @@ class Demo extends React.Component {
 
   render() {
     const { size, height } = this.state;
-    const props = { size };
+    const props = {
+      size,
+    };
+
     if (height) {
       props.height = height;
     }
@@ -76,7 +78,11 @@ class Demo extends React.Component {
         <div>
           <Input
             {...props}
-            style={{ width: 350, marginRight: 24, marginBottom: 24 }}
+            style={{
+              width: 350,
+              marginRight: 24,
+              marginBottom: 24,
+            }}
             prefix={<IconClockCircle />}
             placeholder="Please enter something"
           />
@@ -90,7 +96,11 @@ class Demo extends React.Component {
         <div>
           <Input
             {...props}
-            style={{ width: 350, marginRight: 24, marginBottom: 24 }}
+            style={{
+              width: 350,
+              marginRight: 24,
+              marginBottom: 24,
+            }}
             addAfter="KG"
             placeholder="Please enter something"
           />
@@ -104,7 +114,11 @@ class Demo extends React.Component {
         <div>
           <Input
             {...props}
-            style={{ width: 350, marginBottom: 24, marginRight: 24 }}
+            style={{
+              width: 350,
+              marginBottom: 24,
+              marginRight: 24,
+            }}
             addBefore="+86"
             addAfter={<IconSearch />}
             prefix={<IconClockCircle />}
@@ -122,7 +136,11 @@ class Demo extends React.Component {
         <div>
           <Input
             {...props}
-            style={{ width: 350, marginBottom: 24, marginRight: 24 }}
+            style={{
+              width: 350,
+              marginBottom: 24,
+              marginRight: 24,
+            }}
             addBefore={
               <Select size={size} placeholder="Please select" style={{ width: 100 }}>
                 <Select.Option value="http://">http://</Select.Option>
@@ -134,7 +152,7 @@ class Demo extends React.Component {
           />
           <Input
             {...props}
-            style={{ width: 350, marginBottom: 24, }}
+            style={{ width: 350, marginBottom: 24 }}
             allowClear={true}
             placeholder="Please enter something"
           />
@@ -144,5 +162,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

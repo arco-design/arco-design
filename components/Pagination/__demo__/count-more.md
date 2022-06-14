@@ -16,9 +16,10 @@ More pages.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Pagination defaultCurrent={5} total={200} sizeCanChange />,
-  CONTAINER
-);
+const App = () => {
+  return <Pagination defaultCurrent={5} total={200} sizeCanChange />;
+};
+
+export default App;
 ```
 

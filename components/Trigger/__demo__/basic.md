@@ -35,7 +35,7 @@ function Popup() {
   );
 }
 
-function Demo() {
+function App() {
   return (
     <div style={{ width: 1000, overflow: 'auto' }}>
       <Trigger
@@ -56,7 +56,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

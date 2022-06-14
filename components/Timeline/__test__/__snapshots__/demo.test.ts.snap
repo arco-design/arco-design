@@ -1929,7 +1929,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
     <span
       class="arco-typography"
     >
-      mode:     
+      mode:    
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"

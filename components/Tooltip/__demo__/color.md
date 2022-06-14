@@ -15,21 +15,29 @@ Set tooltip with different background colors through the `color` property
 
 ```js
 import { Tooltip, Button } from '@arco-design/web-react';
+const colors = ['#3491FA', '#165DFF', '#722ED1'];
 
-const colors = ['#3491FA', '#165DFF', '#722ED1']
+const App = () => {
+  return (
+    <div>
+      {colors.map((color) => {
+        return (
+          <Tooltip key={color} color={color} content="tooltip text">
+            <Button
+              style={{
+                marginRight: 20,
+                background: color,
+                color: '#fff',
+              }}
+            >
+              {color}
+            </Button>
+          </Tooltip>
+        );
+      })}
+    </div>
+  );
+};
 
-ReactDOM.render(
-  <div>
-  {
-    colors.map(color => {
-      return (
-        <Tooltip key={color} color={color} content="tooltip text">
-          <Button style={{ marginRight: 20, background: color,color: '#fff' }}>{color}</Button>
-        </Tooltip>
-      )
-    })
-  }
-  </div>,
-  CONTAINER
-);
+export default App;
 ```

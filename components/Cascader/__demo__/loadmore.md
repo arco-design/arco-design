@@ -27,6 +27,7 @@ Load options lazily with `loadMore`.
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
+import React from 'react';
 
 const options = [
   {
@@ -45,7 +46,7 @@ const options = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   loadMore = (pathValue, level) =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -54,7 +55,6 @@ class Demo extends React.Component {
           value: i,
           isLeaf: level >= 2,
         }));
-
         resolve(nodes);
       }, 500);
     });
@@ -84,5 +84,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

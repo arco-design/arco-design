@@ -33,7 +33,6 @@ You can set the `field` property in `Form.Item` to control the field.
 
 ```js
 import { useRef, useEffect, useState } from 'react';
-
 import {
   Form,
   AutoComplete,
@@ -53,9 +52,7 @@ import {
   DatePicker,
   Modal,
 } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
-
 const cascaderOptions = [
   {
     value: 'beijing',
@@ -96,7 +93,6 @@ const cascaderOptions = [
     ],
   },
 ];
-
 const formItemLayout = {
   labelCol: {
     span: 7,
@@ -112,12 +108,13 @@ const noLabelLayout = {
   },
 };
 
-function Demo() {
+function App() {
   const formRef = useRef();
   const [size, setSize] = useState('default');
-
   useEffect(() => {
-    formRef.current.setFieldsValue({ rate: 5 });
+    formRef.current.setFieldsValue({
+      rate: 5,
+    });
   }, []);
 
   const onValuesChange = (changeValue, values) => {
@@ -145,11 +142,7 @@ function Demo() {
             <Radio value="large">large</Radio>
           </Radio.Group>
         </FormItem>
-        <FormItem
-          label="Username"
-          field="name"
-          rules={[{ required: true }]}
-        >
+        <FormItem label="Username" field="name" rules={[{ required: true }]}>
           <Input placeholder="please enter..." />
         </FormItem>
         <FormItem label="Age" field="age" rules={[{ type: 'number', required: true }]}>
@@ -178,9 +171,18 @@ function Demo() {
           <Select
             placeholder="please select"
             options={[
-              { label: 'one', value: 0 },
-              { label: 'two', value: 1 },
-              { label: 'three', value: 2 },
+              {
+                label: 'one',
+                value: 0,
+              },
+              {
+                label: 'two',
+                value: 1,
+              },
+              {
+                label: 'three',
+                value: 2,
+              },
             ]}
             allowClear
           />
@@ -189,24 +191,16 @@ function Demo() {
           label="Multiple Choice"
           required
           field="a.b[0].c"
-          rules={[
-            {
-              type: 'array',
-              minLength: 1,
-            },
-          ]}
+          rules={[{ type: 'array', minLength: 1 }]}
         >
-          <Select mode="multiple" allowCreate placeholder="please select" options={['a', 'b', 'c', 'd', 'e']} />
+          <Select
+            mode="multiple"
+            allowCreate
+            placeholder="please select"
+            options={['a', 'b', 'c', 'd', 'e']}
+          />
         </FormItem>
-        <FormItem
-          label="TreeSelect"
-          field="treenode"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
+        <FormItem label="TreeSelect" field="treenode" rules={[{ required: true }]}>
           <TreeSelect allowClear placeholder="please select">
             <TreeSelect.Node key="node1" title="Trunk(node1)">
               <TreeSelect.Node key="node2" title="Leaf(node2)" />
@@ -217,39 +211,17 @@ function Demo() {
             </TreeSelect.Node>
           </TreeSelect>
         </FormItem>
-        <FormItem
-          label="Score"
-          field="score"
-          rules={[
-            {
-              required: true,
-              type: 'number',
-            },
-          ]}
-        >
+        <FormItem label="Score" field="score" rules={[{ required: true, type: 'number' }]}>
           <Rate />
         </FormItem>
-        <FormItem
-          label="Date"
-          field="date"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
+        <FormItem label="Date" field="date" rules={[{ required: true }]}>
           <DatePicker showTime />
         </FormItem>
         <FormItem
           label="Switch"
           field="switch"
           triggerPropName="checked"
-          rules={[
-            {
-              type: 'boolean',
-              true: true,
-            },
-          ]}
+          rules={[{ type: 'boolean', true: true }]}
         >
           <Switch />
         </FormItem>
@@ -313,7 +285,9 @@ function Demo() {
                 content: (
                   <img
                     src={file.url || URL.createObjectURL(file.originFile)}
-                    style={{ maxWidth: '100%' }}
+                    style={{
+                      maxWidth: '100%',
+                    }}
                   ></img>
                 ),
               });
@@ -324,12 +298,7 @@ function Demo() {
           {...noLabelLayout}
           field="readme"
           triggerPropName="checked"
-          rules={[
-            {
-              type: 'boolean',
-              true: true,
-            },
-          ]}
+          rules={[{ type: 'boolean', true: true }]}
         >
           <Checkbox>I have read the employee manual</Checkbox>
         </FormItem>
@@ -372,5 +341,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

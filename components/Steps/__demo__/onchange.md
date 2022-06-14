@@ -1,6 +1,6 @@
 ---
 order: 11
-title: 
+title:
   zh-CN: 可点击切换步骤
   en-US: Click to Switch Steps
 ---
@@ -16,29 +16,25 @@ After setting `onChange`, the step bar supports clicking to switch steps.
 ```js
 import { useState } from 'react';
 import { Steps } from '@arco-design/web-react';
-
 const Step = Steps.Step;
 
-function Demo() {
+function App() {
   const [current, setCurrent] = useState(1);
-
-  return <div>
-    <Steps arrow current={current} onChange={setCurrent} style={{ marginBottom: 20 }}>
-      <Step title="Succeeded" description="This is a description" />
-      <Step title="Processing" description="This is a description" />
-      <Step title="Pending" description="This is a description" />
-    </Steps>
-    <Steps
-      current={current}
-      onChange={setCurrent}
-      direction='vertical'
-    >
-      <Step title="Succeeded" description="This is a description" />
-      <Step title="Processing" description="This is a description" />
-      <Step title="Pending" description="This is a description" />
-    </Steps>
-  </div>;
+  return (
+    <div>
+      <Steps arrow current={current} onChange={setCurrent} style={{ marginBottom: 20 }}>
+        <Step title="Succeeded" description="This is a description" />
+        <Step title="Processing" description="This is a description" />
+        <Step title="Pending" description="This is a description" />
+      </Steps>
+      <Steps current={current} onChange={setCurrent} direction="vertical">
+        <Step title="Succeeded" description="This is a description" />
+        <Step title="Processing" description="This is a description" />
+        <Step title="Pending" description="This is a description" />
+      </Steps>
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

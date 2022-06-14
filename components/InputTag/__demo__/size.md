@@ -1,7 +1,7 @@
 ---
 order: 1
-title: 
-  zh-CN: 不同尺寸 
+title:
+  zh-CN: 不同尺寸
   en-US: Different sizes
 ---
 
@@ -18,7 +18,7 @@ import { InputTag, Radio } from '@arco-design/web-react';
 import { useState } from 'react';
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [size, setSize] = useState('default');
   return (
     <div>
@@ -46,5 +46,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

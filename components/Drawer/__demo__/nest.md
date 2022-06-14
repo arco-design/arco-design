@@ -17,10 +17,9 @@ Nested drawer.
 import { useState } from 'react';
 import { Drawer, Button } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
-
   return (
     <div>
       <Button
@@ -51,7 +50,8 @@ function Demo() {
         >
           Open Drawer
         </Button>
-      </Drawer><Drawer
+      </Drawer>
+      <Drawer
         width={332}
         title={<span>Second Drawer </span>}
         visible={visible2}
@@ -70,5 +70,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

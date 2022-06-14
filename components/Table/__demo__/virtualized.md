@@ -23,7 +23,6 @@ At present, the virtual scrolling table is more limited. After the virtual scrol
 
 ```js
 import { Table } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -45,7 +44,6 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
 const data = Array(100000)
   .fill('')
   .map((_, index) => ({
@@ -56,16 +54,22 @@ const data = Array(100000)
     email: `kevin.sandra_${index}@example.com`,
   }));
 
-ReactDOM.render(
-  <Table
-    virtualized
-    scroll={{ y: 500, x: 1000 }}
-    border
-    columns={columns}
-    data={data}
-    pagination={false}
-    rowSelection={{}}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Table
+      virtualized
+      scroll={{
+        y: 500,
+        x: 1000,
+      }}
+      border
+      columns={columns}
+      data={data}
+      pagination={false}
+      rowSelection={{}}
+    />
+  );
+};
+
+export default App;
 ```

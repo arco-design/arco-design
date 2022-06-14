@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 
+title:
   zh-CN: 标签放置位置
   en-US: Label Position
 ---
@@ -15,21 +15,29 @@ Where to place the label, the default `horizontal` is placed on the right side o
 
 ```js
 import { Steps, Divider } from '@arco-design/web-react';
-
 const Step = Steps.Step;
 
-ReactDOM.render(
-  <div>
-    <Steps labelPlacement="vertical" current={2} style={{ maxWidth: 780, margin: '0 auto' }}>
-      <Step title="Succeeded" description="This is a description" />
-      <Step title="Processing" description="This is a description" />
-      <Step title="Pending" description="This is a description" />
-    </Steps>
-    <Divider/>
-    <div style={{ lineHeight: '140px', textAlign: 'center', color: '#C9CDD4' }}>
-      Step 2 Content
+const App = () => {
+  return (
+    <div>
+      <Steps labelPlacement="vertical" current={2} style={{ maxWidth: 780, margin: '0 auto' }}>
+        <Step title="Succeeded" description="This is a description" />
+        <Step title="Processing" description="This is a description" />
+        <Step title="Pending" description="This is a description" />
+      </Steps>
+      <Divider />
+      <div
+        style={{
+          lineHeight: '140px',
+          textAlign: 'center',
+          color: '#C9CDD4',
+        }}
+      >
+        Step 2 Content
+      </div>
     </div>
-  </div>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

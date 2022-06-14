@@ -69,6 +69,10 @@ $ yarn test
 $ yarn demo
 ```
 
+### Component demo
+
+The component demo should be syntax complete on its own. It is recommended to use `tsx` as code block language and install [TS in Markdown](https://marketplace.visualstudio.com/items?itemName=amour1688.ts-in-markdown) to get syntax hints in VSCode. The `default export` in the code block will be the rendered content of the demo.
+
 ## Commit Guidelines
 
 Commit messages are required to follow the [conventional-changelog standard](https://www.conventionalcommits.org/en/v1.0.0/):

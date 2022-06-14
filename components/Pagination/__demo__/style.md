@@ -16,21 +16,23 @@ Customize style to get different visual styles.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Pagination
-      total={200}
-      style={{ marginBottom: 20 }}
-      pageItemStyle={{ background: 'var(--color-bg-2)', marginRight: 0 }}
-      activePageItemStyle={{ background: 'var(--color-fill-2)' }}
-    />
-    <Pagination
-      total={200}
-      pageItemStyle={{ background: 'var(--color-bg-2)' }}
-      activePageItemStyle={{ background: 'var(--color-fill-2)' }}
-    />
-  </div>,
-  CONTAINER
-);
-```
+const App = () => {
+  return (
+    <div>
+      <Pagination
+        total={200}
+        style={{ marginBottom: 20 }}
+        pageItemStyle={{ background: 'var(--color-bg-2)', marginRight: 0 }}
+        activePageItemStyle={{ background: 'var(--color-fill-2)' }}
+      />
+      <Pagination
+        total={200}
+        pageItemStyle={{ background: 'var(--color-bg-2)' }}
+        activePageItemStyle={{ background: 'var(--color-fill-2)' }}
+      />
+    </div>
+  );
+};
 
+export default App;
+```

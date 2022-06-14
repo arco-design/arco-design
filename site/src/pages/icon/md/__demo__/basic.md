@@ -21,13 +21,15 @@ You can use Icon by `<IconXXX />`.
 import { Tooltip } from '@arco-design/web-react';
 import { IconStar } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <div style={{ color: 'var(--color-text-1)' }}>
+const App = () => {
+
+  return <div style={{ color: 'var(--color-text-1)' }}>
     <Tooltip content="This is IconStar">
       <IconStar style={{ fontSize: 24, marginRight: 20 }} />
     </Tooltip>
     <IconStar style={{ fontSize: 24, color: '#ffcd00' }} />
-  </div>,
-  CONTAINER
-);
+  </div>;
+}
+
+export default App;
 ```

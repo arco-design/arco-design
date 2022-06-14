@@ -17,32 +17,30 @@ The specific trigger timing of onVisibleChange can be found in the [Trigger](/re
 
 ```js
 import { Tooltip, Button, Switch, Typography } from '@arco-design/web-react';
+import React from 'react';
 
 const { Text } = Typography;
 
-function Demo () {
-  const [visible, setVisible] = React.useState(false)
-
-  return <div>
-      <Text style={{ marginRight: 10 }}>{visible ? 'Hide' : 'Show'} Tooltip</Text>
+function App() {
+  const [visible, setVisible] = React.useState(false);
+  return (
+    <div>
+      <Text style={{ marginRight: 10, }} >
+        {visible ? 'Hide' : 'Show'} Tooltip
+      </Text>
       <Switch
-        onChange={() => {setVisible(!visible)}}
-        >
-      </Switch>
-      <br/>
-      <br/>
-      <Tooltip
-        position="bottom"
-        content="Mouse over to display tooltip"
-        popupVisible={visible}
-      >
+        onChange={() => {
+          setVisible(!visible);
+        }}
+      ></Switch>
+      <br />
+      <br />
+      <Tooltip position="bottom" content="Mouse over to display tooltip" popupVisible={visible}>
         <Button>Be Controled</Button>
       </Tooltip>
-  </div>
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

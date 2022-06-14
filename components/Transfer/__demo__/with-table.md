@@ -28,10 +28,12 @@ const TableTransfer = ({ sourceColumns, targetColumns, ...restProps }) => (
       disabled: listDisabled,
     }) => {
       const columns = listType === 'source' ? sourceColumns : targetColumns;
-
       return (
         <Table
-          style={{ pointerEvents: listDisabled ? 'none' : null, borderRadius: 0 }}
+          style={{
+            pointerEvents: listDisabled ? 'none' : null,
+            borderRadius: 0,
+          }}
           checkCrossPage
           pagination={false}
           data={filteredItems}
@@ -45,6 +47,7 @@ const TableTransfer = ({ sourceColumns, targetColumns, ...restProps }) => (
                 onClick: (e) => e.stopPropagation(),
               };
             },
+
             onChange(selectedRowKeys) {
               onItemSelectAll(selectedRowKeys, true);
             },
@@ -86,7 +89,6 @@ const dataSource = [
     industry: 'Technology',
   },
 ];
-
 const tableColumns = [
   {
     dataIndex: 'company',
@@ -105,12 +107,15 @@ const tableColumns = [
   },
 ];
 
-function Demo() {
+function App() {
   const [targetKeys, setTargetKeys] = useState([]);
   return (
     <TableTransfer
       className="transfer-demo-with-table"
-      listStyle={{ width: 540, height: 240 }}
+      listStyle={{
+        width: 540,
+        height: 240,
+      }}
       dataSource={dataSource}
       targetKeys={targetKeys}
       sourceColumns={tableColumns}
@@ -120,7 +125,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

@@ -15,10 +15,10 @@ A circular progress bar.
 
 ```js
 import { Progress, Slider } from '@arco-design/web-react';
+import React from 'react';
 
-function Demo() {
+function App() {
   const [value, setValue] = React.useState(20);
-
   return (
     <div>
       <Progress type="circle" percent={value} style={{ marginRight: 80 }} />
@@ -32,5 +32,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

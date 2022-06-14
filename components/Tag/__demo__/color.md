@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 
+title:
   zh-CN: 多色标签
   en-US: Color
 ---
@@ -15,7 +15,6 @@ We provide a variety of label styles with preset colors, and set different color
 
 ```js
 import { Tag } from '@arco-design/web-react';
-
 const COLORS = [
   'red',
   'orangered',
@@ -31,7 +30,6 @@ const COLORS = [
   'magenta',
   'gray',
 ];
-
 const COLORS_CUSTOM = [
   '#f53f3f',
   '#7816ff',
@@ -48,12 +46,23 @@ const COLORS_CUSTOM = [
   '#ff5722',
 ];
 
-ReactDOM.render(
-  <div>
-    {COLORS.map((color, i) => <Tag key={i} closable color={color} style={{ margin: '0 16px 16px 0 ' }}>{color}</Tag>)}
-    <h3 style={{color: 'var(--color-text-2)'}}>Custom Color</h3>
-    {COLORS_CUSTOM.map((color, i) => <Tag key={i} closable color={color} style={{ margin: '0 16px 16px 0 ' }}>{color}</Tag>)}
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      {COLORS.map((color, i) => (
+        <Tag key={i} closable color={color} style={{ margin: '0 16px 16px 0 ' }}>
+          {color}
+        </Tag>
+      ))}
+      <h3 style={{ color: 'var(--color-text-2)' }}>Custom Color</h3>
+      {COLORS_CUSTOM.map((color, i) => (
+        <Tag key={i} closable color={color} style={{ margin: '0 16px 16px 0 ' }}>
+          {color}
+        </Tag>
+      ))}
+    </div>
+  );
+};
+
+export default App;
 ```

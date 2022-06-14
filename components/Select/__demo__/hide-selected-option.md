@@ -16,12 +16,10 @@ Hide selected items in the drop-down menu.
 ```js
 import { useState } from 'react';
 import { Select } from '@arco-design/web-react';
-
 const Option = Select.Option;
-
 const OPTIONS = new Array(10).fill(null).map((_, index) => `Option ${index + 1}`);
 
-function Demo() {
+function App() {
   const [options, setOptions] = useState(OPTIONS);
   return (
     <>
@@ -41,7 +39,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

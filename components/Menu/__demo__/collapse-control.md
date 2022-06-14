@@ -23,17 +23,20 @@ import {
   IconBug,
   IconBulb,
 } from '@arco-design/web-react/icon';
-
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 
-function Demo() {
+function App() {
   const [collapse, setCollapse] = useState(false);
-
   return (
     <div className="menu-demo">
       <Button
-        style={{ padding: '0 12px', height: 30, lineHeight: '30px', marginBottom: 4 }}
+        style={{
+          padding: '0 12px',
+          height: 30,
+          lineHeight: '30px',
+          marginBottom: 4,
+        }}
         type="primary"
         onClick={() => setCollapse(!collapse)}
       >
@@ -87,7 +90,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

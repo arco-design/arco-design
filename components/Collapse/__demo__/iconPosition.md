@@ -16,30 +16,48 @@ The position of the `expandIcon` can be set through `expandIconPosition`.
 ```js
 import { Collapse, Radio, Grid, Typography } from '@arco-design/web-react';
 import { IconInfoCircle, IconSettings } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const CollapseItem = Collapse.Item;
 
-function Demo() {
+function App() {
   const [position, setPosition] = React.useState('left');
-
   return (
     <div>
-      <Grid.Row align="center" style={{ marginBottom: 24 }}>
+      <Grid.Row
+        align="center"
+        style={{ marginBottom: 24 }}
+      >
         <Typography.Text>Position:</Typography.Text>
         <Radio.Group
           style={{ marginLeft: 20 }}
           value={position}
           onChange={setPosition}
           options={[
-            { label: 'hide', value: '' },
-            { label: 'left', value: 'left' },
-            { label: 'right', value: 'right' },
+            {
+              label: 'hide',
+              value: '',
+            },
+            {
+              label: 'left',
+              value: 'left',
+            },
+            {
+              label: 'right',
+              value: 'right',
+            },
           ]}
         />
       </Grid.Row>
 
       <Collapse
-        {...(position ? { expandIconPosition: position } : { expandIcon: null })}
+        {...(position
+          ? {
+              expandIconPosition: position,
+            }
+          : {
+              expandIcon: null,
+            })}
         style={{ maxWidth: 1180 }}
       >
         <CollapseItem
@@ -68,5 +86,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

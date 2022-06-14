@@ -17,7 +17,6 @@ Custom filter dropdown.
 import { useState, useRef } from 'react';
 import { Table, Input, Button } from '@arco-design/web-react';
 import { IconSearch } from '@arco-design/web-react/icon';
-
 const data = [
   {
     key: '1',
@@ -56,7 +55,7 @@ const data = [
   },
 ];
 
-function Demo() {
+function App() {
   const inputRef = useRef(null);
   const columns = [
     {
@@ -101,11 +100,10 @@ function Demo() {
       dataIndex: 'email',
     },
   ];
-
   return <Table columns={columns} data={data} />;
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

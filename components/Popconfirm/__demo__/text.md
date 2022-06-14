@@ -16,22 +16,29 @@ Custom button text.
 ```js
 import { Popconfirm, Message, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Popconfirm
-      title="Do you want to discard the draft?"
-      okText="Discard"
-      cancelText="Cancel"
-      onOk={() => {
-        Message.info({ content: 'ok' });
-      }}
-      onCancel={() => {
-        Message.error({ content: 'cancel' });
-      }}
-    >
-      <Button>Discard</Button>
-    </Popconfirm>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Popconfirm
+        title="Do you want to discard the draft?"
+        okText="Discard"
+        cancelText="Cancel"
+        onOk={() => {
+          Message.info({
+            content: 'ok',
+          });
+        }}
+        onCancel={() => {
+          Message.error({
+            content: 'cancel',
+          });
+        }}
+      >
+        <Button>Discard</Button>
+      </Popconfirm>
+    </div>
+  );
+};
+
+export default App;
 ```

@@ -16,5 +16,9 @@ Create a score component of any total count by specifying `count`.
 ```js
 import { Rate } from '@arco-design/web-react';
 
-ReactDOM.render(<Rate count={10} allowHalf />, CONTAINER);
+const App = () => {
+  return <Rate count={10} allowHalf />;
+};
+
+export default App;
 ```

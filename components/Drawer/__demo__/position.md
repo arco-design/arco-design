@@ -17,13 +17,11 @@ Use `placement` to customize the position where the drawer will slide out from.
 import { useState } from 'react';
 import { Drawer, Trigger, Skeleton, Button, Radio } from '@arco-design/web-react';
 import { IconExclamationCircleFill } from '@arco-design/web-react/icon';
-
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState();
   const [placement, setPlacement] = useState('right');
-
   return (
     <div>
       <RadioGroup name="placement" defaultValue={placement} onChange={setPlacement}>
@@ -62,5 +60,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 
+title:
   zh-CN: 范围选择
   en-US: Range
 ---
@@ -17,7 +17,7 @@ Set `range = true` to enable range selection, at this time `value` is an array.
 import { useState } from 'react';
 import { Slider } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [value, setValue] = useState([0, 50]);
   return (
     <div style={{ width: 200 }}>
@@ -26,5 +26,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

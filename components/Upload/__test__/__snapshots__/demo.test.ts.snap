@@ -1796,11 +1796,11 @@ exports[`renders Upload/demo/trigger.md correctly 1`] = `
           class="trigger"
         >
           <div>
-            Drag the file here or 
+            Drag the file here or
             <span
               style="color:#3370FF"
             >
-               Click to upload
+              Click to upload
             </span>
           </div>
         </div>

@@ -17,25 +17,22 @@ Provide functions such as copying and editing text.
 import { useState } from 'react';
 import { Typography, Divider } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [str, setStr] = useState('Click the icon to edit this text.');
-  return <Typography>
-    <Typography.Paragraph copyable>
-      Click the icon to copy this text.
-    </Typography.Paragraph>
-    <Typography.Paragraph
-      editable={{
-        onChange: setStr,
-      }}
-    >
-      {str}
-    </Typography.Paragraph>
-  </Typography>;
+  return (
+    <Typography>
+      <Typography.Paragraph copyable>Click the icon to copy this text.</Typography.Paragraph>
+      <Typography.Paragraph
+        editable={{
+          onChange: setStr,
+        }}
+      >
+        {str}
+      </Typography.Paragraph>
+    </Typography>
+  );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```
 

@@ -16,7 +16,6 @@ Use `getPopupContainer` to specify the parent node where the drawer should mount
 ```js
 import { useState, useRef } from 'react';
 import { Drawer, Button } from '@arco-design/web-react';
-
 const wrapperStyle = {
   width: '100%',
   height: 300,
@@ -27,10 +26,9 @@ const wrapperStyle = {
   textAlign: 'center',
 };
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState(true);
   const refWrapper = useRef(null);
-
   return (
     <div ref={refWrapper} style={wrapperStyle}>
       <Button type="primary" onClick={() => setVisible(true)}>
@@ -54,5 +52,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

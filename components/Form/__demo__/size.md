@@ -9,15 +9,12 @@ title:
 
 通过 `size` 属性可以设置不同尺寸的表单
 
-
 ## en-US
 
 The `size` attribute allows you to set forms of different sizes
 
-
 ```js
 import { useRef, useEffect, useState } from 'react';
-
 import {
   Form,
   AutoComplete,
@@ -31,9 +28,7 @@ import {
   InputNumber,
   DatePicker,
 } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
-
 const cascaderOptions = [
   {
     value: 'beijing',
@@ -74,7 +69,6 @@ const cascaderOptions = [
     ],
   },
 ];
-
 const formItemLayout = {
   labelCol: {
     span: 7,
@@ -90,7 +84,7 @@ const noLabelLayout = {
   },
 };
 
-function Demo() {
+function App() {
   const formRef = useRef();
   const [size, setSize] = useState('default');
 
@@ -115,33 +109,47 @@ function Demo() {
             <Radio value="large">large</Radio>
           </Radio.Group>
         </FormItem>
-        <FormItem label="Username" >
+        <FormItem label="Username">
           <Input placeholder="please enter..." />
         </FormItem>
-        <FormItem label="Age" >
+        <FormItem label="Age">
           <InputNumber placeholder="please enter" />
         </FormItem>
-        <FormItem label="Province" >
+        <FormItem label="Province">
           <Cascader showSearch placeholder="please select" allowClear options={cascaderOptions} />
         </FormItem>
-        <FormItem label="Auto-complete"  >
+        <FormItem label="Auto-complete">
           <AutoComplete placeholder="please enter" data={['123', '234', '345', '456']} />
         </FormItem>
-        <FormItem label="Post"  >
+        <FormItem label="Post">
           <Select
             placeholder="please select"
             options={[
-              { label: 'one', value: 0 },
-              { label: 'two', value: 1 },
-              { label: 'three', value: 2 },
+              {
+                label: 'one',
+                value: 0,
+              },
+              {
+                label: 'two',
+                value: 1,
+              },
+              {
+                label: 'three',
+                value: 2,
+              },
             ]}
             allowClear
           />
         </FormItem>
-        <FormItem label="Multiple Choice" >
-          <Select mode="multiple" allowCreate placeholder="please select" options={['a', 'b', 'c', 'd', 'e']} />
+        <FormItem label="Multiple Choice">
+          <Select
+            mode="multiple"
+            allowCreate
+            placeholder="please select"
+            options={['a', 'b', 'c', 'd', 'e']}
+          />
         </FormItem>
-        <FormItem label="TreeSelect" >
+        <FormItem label="TreeSelect">
           <TreeSelect allowClear placeholder="please select">
             <TreeSelect.Node key="node1" title="Trunk(node1)">
               <TreeSelect.Node key="node2" title="Leaf(node2)" />
@@ -152,7 +160,7 @@ function Demo() {
             </TreeSelect.Node>
           </TreeSelect>
         </FormItem>
-        <FormItem label="Date" >
+        <FormItem label="Date">
           <DatePicker showTime />
         </FormItem>
       </Form>
@@ -160,5 +168,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

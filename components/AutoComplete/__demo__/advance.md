@@ -17,9 +17,8 @@ This example shows: `1. Add Tooltip`, `2. Custom display`, `3. Manipulate values
 import { useState } from 'react';
 import { AutoComplete, Tooltip } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [value, setValue] = useState('Beijing');
-
   return (
     <Tooltip trigger="focus" content="只有当选中或者输入Beijing的时候才改变值，不然重置为空">
       <AutoComplete
@@ -44,5 +43,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,9 +16,7 @@ Generate a group of checkboxes. If direction is `vertical`, the vertical checkbo
 
 ```js
 import { Checkbox } from '@arco-design/web-react';
-
 const CheckboxGroup = Checkbox.Group;
-
 const options = [
   {
     label: 'Option 1',
@@ -39,24 +37,24 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <div >
-    <CheckboxGroup
-      options={['Option A', 'Option B', 'Option C']}
-      style={{ display: 'block', marginBottom: 16 }}
-    />
+const App = () => {
+  return (
+    <div>
+      <CheckboxGroup
+        options={['Option A', 'Option B', 'Option C']}
+        style={{ display: 'block', marginBottom: 16 }}
+      />
 
-    <CheckboxGroup
-      options={options}
-      defaultValue={['1', '3']}
-      style={{ display: 'block', marginBottom: 20 }}
-    />
+      <CheckboxGroup
+        options={options}
+        defaultValue={['1', '3']}
+        style={{ display: 'block', marginBottom: 20 }}
+      />
 
-    <CheckboxGroup
-      direction="vertical"
-      options={['Option A', 'Option B', 'Option C']}
-    />
-  </div>,
-  CONTAINER
-);
+      <CheckboxGroup direction="vertical" options={['Option A', 'Option B', 'Option C']} />
+    </div>
+  );
+};
+
+export default App;
 ```

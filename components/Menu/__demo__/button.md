@@ -17,10 +17,9 @@ By setting `mode` to `popButton`, you can use a button group style floating menu
 import { useState } from 'react';
 import { Menu, Trigger } from '@arco-design/web-react';
 import { IconMessage, IconClose, IconBug, IconBulb } from '@arco-design/web-react/icon';
-
 const MenuItem = Menu.Item;
 
-function Demo() {
+function App() {
   const renderMenu = () => {
     return (
       <Menu
@@ -43,7 +42,6 @@ function Demo() {
 
   const [popupVisibleOne, setPopupVisibleOne] = useState(false);
   const [popupVisibleTwo, setPopupVisibleTwo] = useState(false);
-
   return (
     <div className="menu-demo menu-demo-button">
       <Trigger
@@ -73,7 +71,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

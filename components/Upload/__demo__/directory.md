@@ -17,10 +17,15 @@ Upload directory.
 ```js
 import { Upload } from '@arco-design/web-react';
 
+const App = () => {
+  return (
+    <div>
+      <div>
+        <Upload directory action="/" />
+      </div>
+    </div>
+  );
+};
 
-ReactDOM.render(<div>
-  <div>
-    <Upload directory action="/" />
-  </div>
-</div>, CONTAINER);
+export default App;
 ```

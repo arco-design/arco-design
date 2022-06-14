@@ -16,5 +16,9 @@ Warning prompts. Suitable for displaying short warning prompts in a way that att
 ```js
 import { Alert } from '@arco-design/web-react';
 
-ReactDOM.render(<Alert content="Here is an example text" />, CONTAINER);
+const App = () => {
+  return <Alert content="Here is an example text" />;
+};
+
+export default App;
 ```

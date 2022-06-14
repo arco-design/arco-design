@@ -16,13 +16,11 @@ Set `triggerElement` to customize the node that triggers the drop-down box. When
 ```js
 import { useState, useRef } from 'react';
 import { Select, Typography, Link } from '@arco-design/web-react';
-
 const Option = Select.Option;
 
 const DemoSelect = () => {
   const refSelect = useRef(null);
   const [text, setText] = useState('None');
-
   return (
     <div>
       <Select
@@ -34,7 +32,9 @@ const DemoSelect = () => {
         }}
         triggerElement={
           <Typography.Paragraph
-            style={{ width: 345 }}
+            style={{
+              width: 345,
+            }}
             tabIndex={0}
             onKeyDown={(e) => {
               refSelect.current && refSelect.current.hotkeyHandler(e);
@@ -55,5 +55,9 @@ const DemoSelect = () => {
   );
 };
 
-ReactDOM.render(<DemoSelect />, CONTAINER);
+const App = () => {
+  return <DemoSelect />;
+};
+
+export default App;
 ```

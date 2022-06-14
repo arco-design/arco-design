@@ -21,11 +21,10 @@ Setting `maxLength.errorOnly` will not limit the number of words entered by the 
 
 It is worth noting that if `showWordLimit` is configured, then you cannot use `suffix`.
 
-
 ```js
 import { Input, Space } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   return (
     <Space direction="vertical">
       <div>
@@ -61,5 +60,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

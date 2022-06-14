@@ -15,13 +15,13 @@ Use `size` to select the size of Select (`mini`, `small`, `default`, `large`), t
 
 ```js
 import { Select, Radio } from '@arco-design/web-react';
+import React from 'react';
 
 const Option = Select.Option;
 const RadioGroup = Radio.Group;
-
 const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Chengdu', 'Wuhan'];
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     value: 'default',
   };
@@ -34,7 +34,9 @@ class Demo extends React.Component {
           name="size"
           value={this.state.value}
           onChange={(value) => {
-            this.setState({ value });
+            this.setState({
+              value,
+            });
           }}
           style={{ marginBottom: 20, borderRadius: 4 }}
         >
@@ -76,5 +78,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -15,19 +15,15 @@ Fill in the necessary information to register a new user
 
 ```js
 import { Form, Input, Button, Message } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
 
-function Demo() {
+function App() {
   const [form] = Form.useForm();
-
   return (
     <Form
       form={form}
       style={{ width: 320 }}
-      wrapperCol={{
-        span: 24
-      }}
+      wrapperCol={{ span: 24 }}
       onValuesChange={(v, vs) => {
         console.log(v, vs);
       }}
@@ -37,17 +33,13 @@ function Demo() {
       }}
     >
       <FormItem field="name" rules={[{ required: true, message: 'username is required' }]}>
-        <Input placeholder='please enter your username' />
+        <Input placeholder="please enter your username" />
       </FormItem>
-      <FormItem
-        field="phone"
-        rules={[{ required: true, message: 'phone number is required' }]}
-      >
-        <Input placeholder='please enter your phone number' />
+      <FormItem field="phone" rules={[{ required: true, message: 'phone number is required' }]}>
+        <Input placeholder="please enter your phone number" />
       </FormItem>
-      <FormItem
-      >
-        <Button type="primary" htmlType="submit"  long>
+      <FormItem>
+        <Button type="primary" htmlType="submit" long>
           Register
         </Button>
       </FormItem>
@@ -55,8 +47,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

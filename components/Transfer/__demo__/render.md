@@ -17,19 +17,31 @@ Custom rendering of each item through `render`.
 import { Transfer } from '@arco-design/web-react';
 import { IconStar } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const dataSource = new Array(8).fill(null).map((_, index) => ({
     key: `${index + 1}`,
     value: `Option ${index + 1}`,
   }));
-
   return (
     <Transfer
       render={(item) => (
-        <span style={+item.key % 5 === 1 ? { color: '#165DFF' } : {}}>
+        <span
+          style={
+            +item.key % 5 === 1
+              ? {
+                  color: '#165DFF',
+                }
+              : {}
+          }
+        >
           {item.value}
           {+item.key === 7 ? (
-            <IconStar style={{ marginLeft: 4, color: 'rgb(var(--gold-6))' }} />
+            <IconStar
+              style={{
+                marginLeft: 4,
+                color: 'rgb(var(--gold-6))',
+              }}
+            />
           ) : null}
         </span>
       )}
@@ -41,5 +53,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

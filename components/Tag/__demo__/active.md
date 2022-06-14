@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { Tag, Button, Input, Message } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -29,6 +29,7 @@ function Demo() {
       setTags(tags);
       setInputValue('');
     }
+
     setShowInput(false);
   }
 
@@ -38,14 +39,16 @@ function Demo() {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+    <div
+      style={{ display: 'flex', alignItems: 'flex-start', }}
+    >
       {tags.map((tag, index) => {
         return (
           <Tag
             key={tag}
             closable={index !== 0}
             onClose={() => removeTag(tag)}
-            style={{ marginRight: 24 }}
+            style={{ marginRight: 24, }}
           >
             {tag}
           </Tag>
@@ -56,7 +59,7 @@ function Demo() {
           autoFocus
           size="mini"
           value={inputValue}
-          style={{ width: 84 }}
+          style={{ width: 84, }}
           onPressEnter={addTag}
           onBlur={addTag}
           onChange={setInputValue}
@@ -79,5 +82,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

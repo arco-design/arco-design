@@ -17,10 +17,13 @@ Basic usage.
 ```js
 import { Checkbox } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Checkbox>Checkbox</Checkbox>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Checkbox>Checkbox</Checkbox>
+    </div>
+  );
+};
+
+export default App;
 ```

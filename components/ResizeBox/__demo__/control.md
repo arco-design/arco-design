@@ -15,17 +15,22 @@ The height and width of the `ResizeBox` can be controlled, corresponding to the 
 
 ```js
 import { ResizeBox, Divider, Typography } from '@arco-design/web-react';
+import React from 'react';
 
 const { Paragraph } = Typography;
 
-function Demo() {
+function App() {
   const [width, setWidth] = React.useState(500);
   const [height, setHeight] = React.useState(200);
   return (
     <div>
       <ResizeBox
         directions={['right', 'bottom']}
-        style={{ minWidth: 100, maxWidth: '100%', textAlign: 'center' }}
+        style={{
+          minWidth: 100,
+          maxWidth: '100%',
+          textAlign: 'center',
+        }}
         width={width}
         height={height}
         onMoving={(e, { width, height }) => {
@@ -42,12 +47,9 @@ function Demo() {
         <Divider>ByteDance</Divider>
         <Paragraph>Yiming Zhang is the founder and CEO of ByteDance.</Paragraph>
       </ResizeBox>
-  </div>
+    </div>
   );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```

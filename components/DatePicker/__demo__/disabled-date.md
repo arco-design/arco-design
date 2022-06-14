@@ -16,14 +16,15 @@ Use `disabledDate` to disable specified dates. `2.5.0` starts to support `disabl
 ```js
 import { DatePicker } from '@arco-design/web-react';
 import dayjs from 'dayjs';
-
 const { RangePicker } = DatePicker;
 
 function range(start, end) {
   const result = [];
+
   for (let i = start; i < end; i++) {
     result.push(i);
   }
+
   return result;
 }
 
@@ -43,29 +44,34 @@ function getDisabledRangeTime(date, type) {
   };
 }
 
-ReactDOM.render(
-  <div>
-    <DatePicker
-      style={{ width: 200, marginRight: 24, marginBottom: 24 }}
-      disabledDate={(current) => current.isBefore(dayjs())}
-    />
-    <RangePicker
-      style={{ width: 300, marginRight: 24, marginBottom: 24 }}
-      disabledDate={(current) => current.isBefore(dayjs())}
-    />
-    <DatePicker
-      style={{ width: 200, marginRight: 24, marginBottom: 24 }}
-      showTime
-      disabledDate={(current) => current.isBefore(dayjs())}
-      disabledTime={getDisabledTime}
-    />
-    <RangePicker
-      style={{ width: 380, marginBottom: 24 }}
-      showTime={{ hideDisabledOptions: true }}
-      disabledDate={(current) => current.isBefore(dayjs())}
-      disabledTime={getDisabledRangeTime}
-    />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <DatePicker
+        style={{ width: 200, marginRight: 24, marginBottom: 24 }}
+        disabledDate={(current) => current.isBefore(dayjs())}
+      />
+      <RangePicker
+        style={{ width: 300, marginRight: 24, marginBottom: 24 }}
+        disabledDate={(current) => current.isBefore(dayjs())}
+      />
+      <DatePicker
+        style={{ width: 200, marginRight: 24, marginBottom: 24 }}
+        showTime
+        disabledDate={(current) => current.isBefore(dayjs())}
+        disabledTime={getDisabledTime}
+      />
+      <RangePicker
+        style={{ width: 380, marginBottom: 24 }}
+        showTime={{
+          hideDisabledOptions: true,
+        }}
+        disabledDate={(current) => current.isBefore(dayjs())}
+        disabledTime={getDisabledRangeTime}
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

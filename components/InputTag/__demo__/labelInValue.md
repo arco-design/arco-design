@@ -16,17 +16,25 @@ Use `labelInValue=true` to get label of the selected option
 ```js
 import { InputTag } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <InputTag
-    allowClear
-    labelInValue
-    defaultValue={[{ label: 'a', value: '1' }]}
-    placeholder="Please input"
-    style={{ maxWidth: 350 }}
-    onChange={(v) => {
-      console.log(v);
-    }}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <InputTag
+      allowClear
+      labelInValue
+      defaultValue={[
+        {
+          label: 'a',
+          value: '1',
+        },
+      ]}
+      placeholder="Please input"
+      style={{ maxWidth: 350 }}
+      onChange={(v) => {
+        console.log(v);
+      }}
+    />
+  );
+};
+
+export default App;
 ```

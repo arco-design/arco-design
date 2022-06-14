@@ -16,7 +16,6 @@ Customize the popup content by `dropdownRender`
 
 ```js
 import { Cascader, Divider, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -58,35 +57,51 @@ const options = [
   },
 ];
 
+const App = () => {
+  return (
+    <Space size="large">
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300 }}
+        options={options}
+        dropdownRender={(menu) => {
+          return (
+            <div>
+              {menu}
+              <Divider style={{ margin: 0 }} />
+              <div style={{ margin: 4 }}>
+                The footer content
+              </div>
+            </div>
+          );
+        }}
+      />
+      <Cascader
+        style={{ width: 300 }}
+        dropdownColumnRender={(menu, level) => {
+          return (
+            <div
+              style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <div style={{ flex: 1 }} >
+                {menu}
+              </div>
+              <Divider style={{ margin: 0 }}/>
+              <div style={{ margin: 4 }}>
+                The footer content(Level {level})
+              </div>
+            </div>
+          );
+        }}
+        options={options}
+      />
+    </Space>
+  );
+};
 
-ReactDOM.render(
-  <Space size="large">
-    <Cascader
-      placeholder="Please select ..."
-      style={{ width: 300  }}
-      options={options}
-      dropdownRender={menu => {
-        return <div >
-            {menu}
-          <Divider style={{margin: 0}}/>
-          <div style={{margin: 4}}> The footer content</div>
-        </div>
-      }}
-    />
-    <Cascader
-      style={{ width: 300  }}
-      dropdownColumnRender={(menu, level) => {
-        return <div style={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
-          <div style={{flex: 1}}>
-            {menu}
-          </div>
-          <Divider style={{margin: 0}}/>
-          <div style={{margin: 4}}> The footer content(Level {level})</div>
-        </div>
-      }}
-      options={options}
-    />
-  </Space>,
-  CONTAINER
-);
+export default App;
 ```

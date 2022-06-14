@@ -15,9 +15,7 @@ Use `droplist` or `routes` to specify the drop-down menu.
 
 ```js
 import { Breadcrumb, Menu } from '@arco-design/web-react';
-
 const BreadcrumbItem = Breadcrumb.Item;
-
 const menu = (
   <Menu>
     <Menu.Item>Data</Menu.Item>
@@ -25,7 +23,6 @@ const menu = (
     <Menu.Item>Permission</Menu.Item>
   </Menu>
 );
-
 const routes = [
   {
     path: '/',
@@ -51,16 +48,19 @@ const routes = [
   },
 ];
 
-ReactDOM.render(
-  <div>
-    <Breadcrumb>
-      <BreadcrumbItem>Home</BreadcrumbItem>
-      <BreadcrumbItem droplist={menu}>Channel</BreadcrumbItem>
-      <BreadcrumbItem>News</BreadcrumbItem>
-    </Breadcrumb>
-    <br />
-    <Breadcrumb style={{ marginTop: 20 }} routes={routes} />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Breadcrumb>
+        <BreadcrumbItem>Home</BreadcrumbItem>
+        <BreadcrumbItem droplist={menu}>Channel</BreadcrumbItem>
+        <BreadcrumbItem>News</BreadcrumbItem>
+      </Breadcrumb>
+      <br />
+      <Breadcrumb style={{ marginTop: 20 }} routes={routes}/>
+    </div>
+  );
+};
+
+export default App;
 ```

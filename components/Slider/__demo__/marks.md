@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 
+title:
   zh-CN: 添加标签文本
   en-US: Marks
 ---
@@ -16,8 +16,9 @@ You can add mark by passing in `marks`. When setting `onlyMarkValue`, only node 
 ```js
 import { Slider } from '@arco-design/web-react';
 import { IconClockCircle } from '@arco-design/web-react/icon';
+import React from 'react';
 
-class Demo extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div style={{ width: 240 }}>
@@ -48,5 +49,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

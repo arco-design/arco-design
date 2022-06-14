@@ -16,12 +16,22 @@ Add an extra footer to meet the needs of some customized information.
 ```js
 import { DatePicker } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <DatePicker extra="Extra footer" style={{ width: 200, marginBottom: 20 }} />
-    <br />
-    <DatePicker.RangePicker showTime extra="Extra footer" style={{ width: 380 }} />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <DatePicker
+        extra="Extra footer"
+        style={{ width: 200, marginBottom: 20 }}
+      />
+      <br />
+      <DatePicker.RangePicker
+        showTime
+        extra="Extra footer"
+        style={{ width: 380 }}
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

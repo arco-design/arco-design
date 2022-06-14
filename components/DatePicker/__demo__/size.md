@@ -15,21 +15,22 @@ Setting `size` can use four sizes (`mini` `small` `default` `large`). The height
 
 ```js
 import { Radio, DatePicker } from '@arco-design/web-react';
+import React from 'react';
 
 const RadioGroup = Radio.Group;
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     size: 'default',
   };
-
   handleChange = (size) => {
-    this.setState({ size });
+    this.setState({
+      size,
+    });
   };
 
   render() {
     const { size } = this.state;
-
     return (
       <div>
         <RadioGroup
@@ -58,5 +59,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -20,14 +20,17 @@ function itemRender(page, type, originElement) {
   if (type === 'prev') {
     return <a style={{ fontSize: 14, margin: '0 8px' }}>Prev</a>;
   }
+
   if (type === 'next') {
     return <a style={{ fontSize: 14, margin: '0 8px' }}>Next</a>;
   }
+
   return originElement;
 }
 
-ReactDOM.render(
-  <Pagination itemRender={itemRender} total={200} />,
-  CONTAINER
-);
+const App = () => {
+  return <Pagination itemRender={itemRender} total={200} />;
+};
+
+export default App;
 ```

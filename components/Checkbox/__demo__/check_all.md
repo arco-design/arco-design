@@ -16,11 +16,10 @@ The indeterminate effect can be achieved with `indeterminate=true`
 ```js
 import { useState } from 'react';
 import { Checkbox } from '@arco-design/web-react';
-
 const CheckboxGroup = Checkbox.Group;
 const options = ['Option 1', 'Option 2', 'Option 3'];
 
-function Demo() {
+function App() {
   const [indeterminate, setIndeterminate] = useState(true);
   const [checkAll, setCheckAll] = useState(false);
   const [value, setValue] = useState([0, 1]);
@@ -45,21 +44,22 @@ function Demo() {
 
   return (
     <div>
-      <div style={{marginBottom: 16}}>
+      <div style={{ marginBottom: 16 }}>
         <Checkbox onChange={onChangeAll} checked={checkAll} indeterminate={indeterminate}>
-          {
-            checkAll ? 'unCheck All' : 'Check All'
-          }
+          {checkAll ? 'unCheck All' : 'Check All'}
         </Checkbox>
       </div>
       <CheckboxGroup
         value={value}
-        options={options.map((x, i) => ({ label: x, value: i }))}
+        options={options.map((x, i) => ({
+          label: x,
+          value: i,
+        }))}
         onChange={onChange}
       />
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

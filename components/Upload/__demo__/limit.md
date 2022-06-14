@@ -16,18 +16,18 @@ Limit the maximum number of uploaded files.
 ```js
 import { Upload, Message } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
   return (
     <Upload
       action="/"
       limit={3}
       multiple
       onExceedLimit={() => {
-        Message.warning('超过上传数量限制！最多上传3个')
+        Message.warning('超过上传数量限制！最多上传3个');
       }}
     />
-  )
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -15,12 +15,12 @@ Time display. Use [dayjs](https://github.com/iamkun/dayjs) to format the time, `
 
 ```js
 import { Statistic, Grid } from '@arco-design/web-react';
-
 const Row = Grid.Row;
 const Col = Grid.Col;
 
-ReactDOM.render(
-  <Statistic title="CreatedTime" value={1554869813383} format="YYYY/MM/DD HH:mm:ss" />,
-  CONTAINER
-);
+const App = () => {
+  return <Statistic title="CreatedTime" value={1554869813383} format="YYYY/MM/DD HH:mm:ss" />;
+};
+
+export default App;
 ```

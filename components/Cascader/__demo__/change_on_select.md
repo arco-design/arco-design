@@ -16,7 +16,6 @@ Each selection will change value if set to true. when `mode=multiple`, child nod
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -58,26 +57,29 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Space size="large">
-    <Cascader
-      placeholder="Please select ..."
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      showSearch
-      changeOnSelect
-      allowClear
-    />
-    <Cascader
-      placeholder="Please select ..."
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      mode="multiple"
-      changeOnSelect
-      allowClear
-      showSearch
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        showSearch
+        changeOnSelect
+        allowClear
+      />
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        mode="multiple"
+        changeOnSelect
+        allowClear
+        showSearch
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

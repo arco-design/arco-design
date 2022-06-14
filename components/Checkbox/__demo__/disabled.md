@@ -15,10 +15,13 @@ Disable the checkbox.
 ```js
 import { Checkbox } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Checkbox disabled>disabled Checkbox</Checkbox>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Checkbox disabled>disabled Checkbox</Checkbox>
+    </div>
+  );
+};
+
+export default App;
 ```

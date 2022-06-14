@@ -16,20 +16,25 @@ When the task state is happening and the recording is still in progress, ghost n
 ```js
 import { Timeline, Grid, Checkbox } from '@arco-design/web-react';
 import { IconFire } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const TimelineItem = Timeline.Item;
 const { Row } = Grid;
 
-function Demo() {
+function App() {
   const [pendingProps, setPendingProps] = React.useState({});
-
   return (
     <div>
-      <Row align="center" style={{ marginBottom: 24 }}>
+      <Row
+        align="center"
+        style={{ marginBottom: 24, }} >
         <Checkbox
           checked={!!pendingProps.direction}
           onChange={(v) => {
-            setPendingProps({ ...pendingProps, direction: v ? 'horizontal' : '' });
+            setPendingProps({
+              ...pendingProps,
+              direction: v ? 'horizontal' : '',
+            });
           }}
         >
           horizontal &nbsp; &nbsp;
@@ -47,7 +52,10 @@ function Demo() {
         <Checkbox
           checked={!!pendingProps.pending}
           onChange={(v) => {
-            setPendingProps({ ...pendingProps, pending: v ? 'This is a pending dot' : false });
+            setPendingProps({
+              ...pendingProps,
+              pending: v ? 'This is a pending dot' : false,
+            });
           }}
         >
           pending &nbsp; &nbsp;
@@ -58,9 +66,17 @@ function Demo() {
           onChange={(v) => {
             const newProps = { ...pendingProps };
             delete newProps.pendingDot;
+
             if (v) {
-              newProps.pendingDot = <IconFire style={{ color: '#e70a0a' }} />;
+              newProps.pendingDot = (
+                <IconFire
+                  style={{
+                    color: '#e70a0a',
+                  }}
+                />
+              );
             }
+
             setPendingProps(newProps);
           }}
         >
@@ -80,5 +96,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

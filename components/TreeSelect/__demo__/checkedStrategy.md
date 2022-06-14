@@ -16,8 +16,6 @@ Customize the return value through the `treeCheckStrategy` property.
 ```js
 import { TreeSelect, Radio } from '@arco-design/web-react';
 import { useState } from 'react';
-
-
 const treeData = [
   {
     title: 'Trunk 0-0',
@@ -37,9 +35,9 @@ const treeData = [
           {
             title: 'Leaf 0-0-2-1',
             value: 'Leaf 0-0-2-1',
-            key: '0-0-2-1'
-          }
-        ]
+            key: '0-0-2-1',
+          },
+        ],
       },
     ],
   },
@@ -63,9 +61,9 @@ const treeData = [
             title: 'Leaf 0-1-1-2',
             value: 'Leaf 0-1-1-2',
             key: '0-1-1-2',
-            disabled: true
+            disabled: true,
           },
-        ]
+        ],
       },
       {
         title: 'Leaf 0-1-2',
@@ -76,44 +74,50 @@ const treeData = [
   },
 ];
 
-
-function Demo () {
-  const [treeCheckedStrategy, setTreeCheckedStrategy] = useState(TreeSelect.SHOW_CHILD)
+function App() {
+  const [treeCheckedStrategy, setTreeCheckedStrategy] = useState(TreeSelect.SHOW_CHILD);
   const [value, setValue] = useState(['0-0']);
-
-  return <div>
-    <div style={{marginBottom: 20}}>
-      <Radio.Group
-        type='button'
-        value={treeCheckedStrategy}
-        onChange={setTreeCheckedStrategy}
-        options={[{
-          value: TreeSelect.SHOW_ALL,
-          label: 'show all'
-        }, {
-          value: TreeSelect.SHOW_PARENT,
-          label: 'show parent'
-        }, {
-          value: TreeSelect.SHOW_CHILD,
-          label: 'show child'
-        }]}
+  return (
+    <div>
+      <div
+        style={{ marginBottom: 20, }}
+      >
+        <Radio.Group
+          type="button"
+          value={treeCheckedStrategy}
+          onChange={setTreeCheckedStrategy}
+          options={[
+            {
+              value: TreeSelect.SHOW_ALL,
+              label: 'show all',
+            },
+            {
+              value: TreeSelect.SHOW_PARENT,
+              label: 'show parent',
+            },
+            {
+              value: TreeSelect.SHOW_CHILD,
+              label: 'show child',
+            },
+          ]}
+        />
+      </div>
+      <TreeSelect
+        showSearch
+        allowClear
+        treeCheckable
+        treeData={treeData}
+        value={value}
+        treeCheckedStrategy={treeCheckedStrategy}
+        onChange={(value) => {
+          console.log(value);
+          setValue(value);
+        }}
+        style={{ width: 300, }}
       />
     </div>
-    <TreeSelect
-      showSearch
-      allowClear
-      treeCheckable
-      treeData={treeData}
-      value={value}
-      treeCheckedStrategy={treeCheckedStrategy}
-      onChange={(value) => {
-        console.log(value)
-        setValue(value)
-      }}
-      style={{ width: 300 }}
-    />
-  </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

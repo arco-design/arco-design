@@ -742,7 +742,7 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
         />
       </svg>
       <span>
-         Delete
+        Delete
       </span>
     </button>
   </div>

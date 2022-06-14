@@ -15,19 +15,21 @@ Use `maxCount` to set the maximum number of breadcrumbs to render. The rest will
 
 ```js
 import { Breadcrumb } from '@arco-design/web-react';
-
 const BreadcrumbItem = Breadcrumb.Item;
 
-ReactDOM.render(
-  <div>
-    <Breadcrumb maxCount="3">
-      <BreadcrumbItem>Home</BreadcrumbItem>
-      <BreadcrumbItem>Sub Home</BreadcrumbItem>
-      <BreadcrumbItem>All Channel</BreadcrumbItem>
-      <BreadcrumbItem>Channel</BreadcrumbItem>
-      <BreadcrumbItem>News</BreadcrumbItem>
-    </Breadcrumb>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Breadcrumb maxCount="3">
+        <BreadcrumbItem>Home</BreadcrumbItem>
+        <BreadcrumbItem>Sub Home</BreadcrumbItem>
+        <BreadcrumbItem>All Channel</BreadcrumbItem>
+        <BreadcrumbItem>Channel</BreadcrumbItem>
+        <BreadcrumbItem>News</BreadcrumbItem>
+      </Breadcrumb>
+    </div>
+  );
+};
+
+export default App;
 ```

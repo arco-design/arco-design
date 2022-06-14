@@ -1,6 +1,6 @@
 ---
 order: 5
-title: 
+title:
   zh-CN: 竖直步骤条
   en-US: Vertical Step Bar
 ---
@@ -17,10 +17,9 @@ Vertical step bar.
 import { useState, useRef } from 'react';
 import { Steps, Button } from '@arco-design/web-react';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
-
 const Step = Steps.Step;
 
-function Demo() {
+function App() {
   const [current, setCurrent] = useState(1);
 
   function renderContent(step) {
@@ -37,11 +36,23 @@ function Demo() {
         <div style={{ lineHeight: '200px' }}>Step{step} Content</div>
 
         <div>
-          <Button type="secondary" disabled={current <= 1} onClick={() => setCurrent(current - 1)} style={{ paddingLeft: 8 }}>
-            <IconLeft />Back
+          <Button
+            type="secondary"
+            disabled={current <= 1}
+            onClick={() => setCurrent(current - 1)}
+            style={{ paddingLeft: 8 }}
+          >
+            <IconLeft />
+            Back
           </Button>
-          <Button disabled={current >= 3} onClick={() => setCurrent(current + 1)} style={{ marginLeft: 20, paddingRight: 8 }} type="primary">
-            Next<IconRight />
+          <Button
+            disabled={current >= 3}
+            onClick={() => setCurrent(current + 1)}
+            style={{ marginLeft: 20, paddingRight: 8 }}
+            type="primary"
+          >
+            Next
+            <IconRight />
           </Button>
         </div>
       </div>
@@ -49,9 +60,22 @@ function Demo() {
   }
 
   return (
-    <div style={{ display: 'flex', maxWidth: 780, padding: 40, background: 'var(--color-fill-2)' }}>
+    <div
+      style={{
+        display: 'flex',
+        maxWidth: 780,
+        padding: 40,
+        background: 'var(--color-fill-2)',
+      }}
+    >
       <div
-        style={{ background: 'var(--color-bg-2)', padding: 24, height: 272, borderRight: '1px solid var(--color-border)', boxSizing: 'border-box' }}
+        style={{
+          background: 'var(--color-bg-2)',
+          padding: 24,
+          height: 272,
+          borderRight: '1px solid var(--color-border)',
+          boxSizing: 'border-box',
+        }}
       >
         <Steps direction="vertical" lineless current={current} style={{ width: 170 }}>
           <Step title="Succeeded" description="This is a description" />
@@ -64,5 +88,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

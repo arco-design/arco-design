@@ -33,31 +33,44 @@ function TextWrapper(props) {
   );
 }
 
-ReactDOM.render(
-  <div>
-    <Rate
-      style={{ display: 'block', margin: '10px 0' }}
-      defaultValue={3}
-      character={<TextWrapper text="A" />}
-    />
-    <Rate
-      style={{ display: 'block', margin: '10px 0' }}
-      defaultValue={3}
-      character={(index) => <TextWrapper text={index + 1} />}
-    />
-    <Rate
-      style={{ display: 'block', margin: '10px 0' }}
-      defaultValue={2.5}
-      allowHalf
-      character={<TextWrapper text="好" />}
-    />
-    <Rate
-      style={{ display: 'block', margin: '10px 0' }}
-      defaultValue={2.5}
-      allowHalf
-      character={<TextWrapper text={<IconHeartFill style={{ fontSize: 18 }} />} />}
-    />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Rate
+        style={{ display: 'block', margin: '10px 0' }}
+        defaultValue={3}
+        character={<TextWrapper text="A" />}
+      />
+      <Rate
+        style={{ display: 'block', margin: '10px 0' }}
+        defaultValue={3}
+        character={(index) => <TextWrapper text={index + 1} />}
+      />
+      <Rate
+        style={{ display: 'block', margin: '10px 0' }}
+        defaultValue={2.5}
+        allowHalf
+        character={<TextWrapper text="好" />}
+      />
+      <Rate
+        style={{ display: 'block', margin: '10px 0' }}
+        defaultValue={2.5}
+        allowHalf
+        character={
+          <TextWrapper
+            text={
+              <IconHeartFill
+                style={{
+                  fontSize: 18,
+                }}
+              />
+            }
+          />
+        }
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

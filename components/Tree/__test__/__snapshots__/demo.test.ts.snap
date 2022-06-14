@@ -520,7 +520,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     <span
       class="arco-checkbox-text"
     >
-       checkStrictly 
+      checkStrictly
     </span>
   </label>
   <div
@@ -4986,7 +4986,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     <span
       class="arco-checkbox-text"
     >
-       multiple 
+      multiple
     </span>
   </label>
   <br />

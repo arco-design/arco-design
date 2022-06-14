@@ -16,15 +16,22 @@ Other card components can be nested in the card.
 ```js
 import { Card, Link } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Card title="Arco Card">
-    <Card style={{ marginBottom: 20 }} title="Inner Card Title" extra={<Link>More</Link>}>
-      Inner Card Content
+const App = () => {
+  return (
+    <Card title="Arco Card">
+      <Card
+        style={{ marginBottom: 20 }}
+        title="Inner Card Title"
+        extra={<Link>More</Link>}
+      >
+        Inner Card Content
+      </Card>
+      <Card title="Inner Card Title" extra={<Link>More</Link>}>
+        Inner Card Content
+      </Card>
     </Card>
-    <Card title="Inner Card Title" extra={<Link>More</Link>}>
-      Inner Card Content
-    </Card>
-  </Card>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

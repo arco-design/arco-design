@@ -16,12 +16,11 @@ Specify `oneWay` to only allow one-way movement
 ```js
 import { Transfer } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const dataSource = new Array(8).fill(null).map((_, index) => ({
     key: `${index + 1}`,
     value: `Option ${index + 1}`,
   }));
-
   return (
     <Transfer
       oneWay
@@ -34,5 +33,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,9 +16,9 @@ There are four sizes available: `mini`, `small`, `default` and `large`. Their he
 
 ```js
 import { Cascader, Radio } from '@arco-design/web-react';
+import React from 'react';
 
 const RadioGroup = Radio.Group;
-
 const options = [
   {
     value: 'beijing',
@@ -72,7 +72,7 @@ const options = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     value: 'default',
   };
@@ -85,7 +85,9 @@ class Demo extends React.Component {
           name="size"
           value={this.state.value}
           onChange={(value) => {
-            this.setState({ value });
+            this.setState({
+              value,
+            });
           }}
           style={{ marginBottom: 20 }}
         >
@@ -117,5 +119,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

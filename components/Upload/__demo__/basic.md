@@ -15,13 +15,22 @@ The Basic usage.
 ```js
 import { Upload } from '@arco-design/web-react';
 
+const App = () => {
+  return (
+    <div>
+      <div>
+        <Upload action="/" />
+      </div>
+      <div>
+        <Upload
+          action="/"
+          disabled
+          style={{ marginTop: 40, }}
+        />
+      </div>
+    </div>
+  );
+};
 
-ReactDOM.render(<div>
-  <div>
-    <Upload action="/" />
-  </div>
-  <div>
-    <Upload action="/" disabled style={{marginTop: 40}}/>
-  </div>
-</div>, CONTAINER);
+export default App;
 ```

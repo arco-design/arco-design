@@ -16,7 +16,6 @@ Custom pagination, by setting `total`, `pageSize`, and `onChange` to dynamically
 ```js
 import { useState, useEffect } from 'react';
 import { Table, Space, Button } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -35,7 +34,6 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
 const allData = Array(200)
   .fill('')
   .map((_, index) => ({
@@ -46,7 +44,7 @@ const allData = Array(200)
     email: `kevin.sandra_${index}@example.com`,
   }));
 
-function Demo() {
+function App() {
   const [data, setData] = useState(allData);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [pagination, setPagination] = useState({
@@ -64,11 +62,7 @@ function Demo() {
     setLoading(true);
     setTimeout(() => {
       setData(allData.slice((current - 1) * pageSize, current * pageSize));
-      setPagination((pagination) => ({
-        ...pagination,
-        current,
-        pageSize,
-      }));
+      setPagination((pagination) => ({ ...pagination, current, pageSize }));
       setLoading(false);
     }, 1000);
   }
@@ -89,7 +83,13 @@ function Demo() {
         },
       }}
       renderPagination={(paginationNode) => (
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10 }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: 10,
+          }}
+        >
           <Space>
             <span>Selected {selectedRowKeys.length}</span>
             <Button size="mini">Save</Button>
@@ -102,5 +102,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

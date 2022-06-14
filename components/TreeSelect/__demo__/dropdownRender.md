@@ -1,6 +1,6 @@
 ---
 order: 12
-title: 
+title:
   zh-CN: 扩展下拉菜单
   en-US: Customize Dropdown
 ---
@@ -17,6 +17,7 @@ Use `dropdownRender` to freely expand the drop-down menu.
 import { useState } from 'react';
 import { TreeSelect, Divider, Input, Button } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const defaultTreeData = [
   {
@@ -46,7 +47,7 @@ const defaultTreeData = [
   },
 ];
 
-function Demo () {
+function App() {
   const [treeData, setTreeData] = React.useState(defaultTreeData);
   const [inputValue, setInputValue] = useState('');
 
@@ -56,49 +57,55 @@ function Demo () {
       {
         key: inputValue,
         title: inputValue,
-      }
-    ])
-  }
+      },
+    ]);
+  };
 
-  return <TreeSelect
-    placeholder="Please select ..."
-    treeData={treeData}
-    style={{ width: 300 }}
-    allowClear
-    dropdownMenuStyle={{ maxHeight: 250, display: 'flex', flexDirection: 'column' }}
-    dropdownRender={(menu) => (
+  return (
+    <TreeSelect
+      placeholder="Please select ..."
+      treeData={treeData}
+      style={{ width: 300 }}
+      allowClear
+      dropdownMenuStyle={{
+        maxHeight: 250,
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+      dropdownRender={(menu) => (
         <>
-        <div style={{flex: 1, overflow: 'auto'}}>
-          {menu}
-        </div>
-        <div>
-          <Divider style={{ margin: 0 }} />
-          <div style={{ display: 'flex', alignItems: 'center', padding: '10px 12px' }}>
-            <Input
-              size='small'
-              style={{ marginRight: 18 }}
-              value={inputValue}
-              onChange={(value) => setInputValue(value)}
-            />
-            <Button
-              style={{ fontSize: 14, padding: '0 6px' }}
-              type='text'
-              size='mini'
-              onClick={addItem}
+          <div style={{ flex: 1, overflow: 'auto' }}>{menu}</div>
+          <div>
+            <Divider style={{ margin: 0 }} />
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                padding: '10px 12px',
+              }}
             >
-              <IconPlus />
-              Add item
-            </Button>
-        </div>
-      </div>
-      </>
-    )}
-  >
-  </TreeSelect>
+              <Input
+                size="small"
+                style={{ marginRight: 18 }}
+                value={inputValue}
+                onChange={(value) => setInputValue(value)}
+              />
+              <Button
+                style={{ fontSize: 14, padding: '0 6px' }}
+                type="text"
+                size="mini"
+                onClick={addItem}
+              >
+                <IconPlus />
+                Add item
+              </Button>
+            </div>
+          </div>
+        </>
+      )}
+    ></TreeSelect>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

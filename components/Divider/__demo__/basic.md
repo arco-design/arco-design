@@ -16,51 +16,73 @@ Can be used to separate paragraphs of different chapters. The default is a horiz
 ```js
 import { Divider, Typography } from '@arco-design/web-react';
 import { IconFileImage, IconUser, IconPen } from '@arco-design/web-react/icon';
-
 const { Paragraph, Title } = Typography;
 
-ReactDOM.render(
-  <>
-    <div className="divider-demo">
-      <Paragraph>A design is a plan or specification for the construction of an object.</Paragraph>
-      <Divider />
-      <Paragraph>A design is a plan or specification for the construction of an object.</Paragraph>
-      <Divider style={{ borderBottomStyle: 'dashed' }} />
-      <Paragraph>A design is a plan or specification for the construction of an object.</Paragraph>
-      <Divider style={{ borderBottomWidth: 2, borderBottomStyle: 'dotted' }} />
-      <Paragraph>A design is a plan or specification for the construction of an object.</Paragraph>
-    </div>
-    <div className="divider-demo" style={{ marginTop: 48 }}>
-      <div className="divider-demo-flex-content">
-        <span className="avatar">
-          <IconFileImage />
-        </span>
-        <div className="content">
-          <Title heading={6}>Image</Title>May 4, 2010
+const App = () => {
+  return (
+    <>
+      <div className="divider-demo">
+        <Paragraph>
+          A design is a plan or specification for the construction of an object.
+        </Paragraph>
+        <Divider />
+        <Paragraph>
+          A design is a plan or specification for the construction of an object.
+        </Paragraph>
+        <Divider
+          style={{
+            borderBottomStyle: 'dashed',
+          }}
+        />
+        <Paragraph>
+          A design is a plan or specification for the construction of an object.
+        </Paragraph>
+        <Divider
+          style={{
+            borderBottomWidth: 2,
+            borderBottomStyle: 'dotted',
+          }}
+        />
+        <Paragraph>
+          A design is a plan or specification for the construction of an object.
+        </Paragraph>
+      </div>
+      <div
+        className="divider-demo"
+        style={{ marginTop: 48 }}
+      >
+        <div className="divider-demo-flex-content">
+          <span className="avatar">
+            <IconFileImage />
+          </span>
+          <div className="content">
+            <Title heading={6}>Image</Title>May 4, 2010
+          </div>
+        </div>
+        <Divider className="half-divider" />
+        <div className="divider-demo-flex-content">
+          <span className="avatar">
+            <IconUser />
+          </span>
+          <div className="content">
+            <Title heading={6}>Avatar</Title>May 4, 2010
+          </div>
+        </div>
+        <Divider className="half-divider" />
+        <div className="divider-demo-flex-content">
+          <span className="avatar">
+            <IconPen />
+          </span>
+          <div className="content">
+            <Title heading={6}>Icon</Title>May 4, 2010
+          </div>
         </div>
       </div>
-      <Divider className="half-divider" />
-      <div className="divider-demo-flex-content">
-        <span className="avatar">
-          <IconUser />
-        </span>
-        <div className="content">
-          <Title heading={6}>Avatar</Title>May 4, 2010
-        </div>
-      </div>
-      <Divider className="half-divider" />
-      <div className="divider-demo-flex-content">
-        <span className="avatar">
-          <IconPen />
-        </span>
-        <div className="content">
-          <Title heading={6}>Icon</Title>May 4, 2010
-        </div>
-      </div>
-    </div>
-  </>,
-  CONTAINER
-);
+    </>
+  );
+};
+
+export default App;
 ```
 
 ```css

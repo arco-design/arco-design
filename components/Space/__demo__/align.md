@@ -17,30 +17,29 @@ There are 4 built-in alignment methods, namely `start` `center` `end` `baseline`
 import { useState } from 'react';
 import { Space, Button, Radio, Typography, Card } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [align, setAlign] = useState('center');
-
-  return <div>
-    <div style={{ marginBottom: 20 }}>
-      <Radio.Group
-        options={['start', 'center', 'end', 'baseline']}
-        value={align}
-        onChange={(value) => setAlign(value)}
-        type="button"
-      />
+  return (
+    <div>
+      <div style={{ marginBottom: 20, }} >
+        <Radio.Group
+          options={['start', 'center', 'end', 'baseline']}
+          value={align}
+          onChange={(value) => setAlign(value)}
+          type="button"
+        />
+      </div>
+      <Space
+        align={align}
+        style={{ backgroundColor: 'var(--color-fill-2)', padding: 10, }}
+      >
+        <Typography.Text>Space:</Typography.Text>
+        <Button type="primary">Item2</Button>
+        <Card title="Card">Card content</Card>
+      </Space>
     </div>
-    <Space align={align} style={{ backgroundColor: 'var(--color-fill-2)', padding: 10 }}>
-      <Typography.Text>Space:</Typography.Text>
-      <Button type="primary">Item2</Button>
-      <Card title='Card'>
-        Card content
-      </Card>
-    </Space>
-  </div>;
+  );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```

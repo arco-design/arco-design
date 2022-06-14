@@ -15,29 +15,31 @@ In functional components, you can use `Form.useFormContext` to get a form contex
 
 ```js
 import { Form, Input, Button, Switch, InputNumber } from '@arco-design/web-react';
+import React from 'react';
 
 const FormItem = Form.Item;
 
-function DemoButton () {
+function DemoButton() {
   const { form, disabled } = Form.useFormContext();
-
   return (
     <Button
       type="text"
       disabled={disabled}
       onClick={() => {
-        form.setFieldsValue({ name: 'admin', age: 11 });
+        form.setFieldsValue({
+          name: 'admin',
+          age: 11,
+        });
       }}
     >
       Fill Form
     </Button>
-  )
+  );
 }
 
-function Demo() {
+function App() {
   const [form] = Form.useForm();
   const [disabled, setDisabled] = React.useState(false);
-
   return (
     <Form
       form={form}
@@ -52,23 +54,19 @@ function Demo() {
       }}
     >
       <FormItem label="Disabled" disabled={false}>
-        <Switch onChange={setDisabled} ></Switch>
+        <Switch onChange={setDisabled}></Switch>
       </FormItem>
       <FormItem label="Username" field="name" rules={[{ required: true }]}>
-        <Input placeholder='please enter your username' />
+        <Input placeholder="please enter your username" />
       </FormItem>
       <FormItem
-        label='Age'
+        label="Age"
         field="age"
         rules={[{ required: true, type: 'number', min: 0, max: 99 }]}
       >
-        <InputNumber placeholder='please enter your age' />
+        <InputNumber placeholder="please enter your age" />
       </FormItem>
-      <FormItem
-        wrapperCol={{
-          offset: 5,
-        }}
-      >
+      <FormItem wrapperCol={{ offset: 5 }}>
         <Button type="primary" htmlType="submit" style={{ marginRight: 24 }}>
           Submit
         </Button>
@@ -86,8 +84,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

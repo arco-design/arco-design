@@ -15,9 +15,11 @@ By specifying `virtualListProps` to turn on the virtual list, high performance c
 
 ```js
 import { Tree, Button } from '@arco-design/web-react';
+import React from 'react';
 
 function loop(path = '0', level = 2) {
   const list = [];
+
   for (let i = 0; i < 10; i += 1) {
     const key = `${path}-${i}`;
     const treeNode = {
@@ -31,14 +33,14 @@ function loop(path = '0', level = 2) {
 
     list.push(treeNode);
   }
+
   return list;
 }
 
 const treeData = loop();
 
-function Demo() {
+function App() {
   const treeRef = React.useRef();
-
   return (
     <div>
       <Button
@@ -55,13 +57,11 @@ function Demo() {
         blockNode
         checkable
         treeData={treeData}
-        virtualListProps={{
-          height: 200,
-        }}
+        virtualListProps={{ height: 200 }}
       />
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

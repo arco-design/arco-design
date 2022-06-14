@@ -16,12 +16,9 @@ Set `saveOnBlur` to automatically save the text being entered as a label when it
 ```js
 import { InputTag } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <InputTag
-    saveOnBlur
-    placeholder="Input and blur directly"
-    style={{ maxWidth: 350 }}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return <InputTag saveOnBlur placeholder="Input and blur directly" style={{ maxWidth: 350 }} />;
+};
+
+export default App;
 ```

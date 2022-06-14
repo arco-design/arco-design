@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 设置 value 格式
   en-US: Value Format
 ---
@@ -16,6 +16,7 @@ When `labelInValue` is `true`, the format of `value` is: `{ label: string, value
 ```js
 import { TreeSelect } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const treeData = [
   {
@@ -46,7 +47,7 @@ const treeData = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   handleChange = (value) => {
     console.log(value);
   };
@@ -56,7 +57,10 @@ class Demo extends React.Component {
       <TreeSelect
         labelInValue={true}
         treeData={treeData}
-        defaultValue={{ value: 'node2', label: 'Leaf' }}
+        defaultValue={{
+          value: 'node2',
+          label: 'Leaf',
+        }}
         onChange={this.handleChange}
         style={{ width: 300 }}
       />
@@ -64,5 +68,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

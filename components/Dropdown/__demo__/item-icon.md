@@ -16,13 +16,11 @@ You can add icons before menu items.
 ```js
 import { Dropdown, Menu, Button } from '@arco-design/web-react';
 import { IconDown, IconLocation } from '@arco-design/web-react/icon';
-
 const iconStyle = {
   marginRight: 8,
   fontSize: 16,
-  transform: 'translateY(1px)'
+  transform: 'translateY(1px)',
 };
-
 const dropList = (
   <Menu>
     <Menu.Item key="1">
@@ -40,7 +38,7 @@ const dropList = (
   </Menu>
 );
 
-function Demo() {
+function App() {
   return (
     <div className="dropdown-demo">
       <Dropdown droplist={dropList} trigger="click" position="bl">
@@ -52,7 +50,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

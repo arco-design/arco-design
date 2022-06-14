@@ -22,7 +22,7 @@ exports[`renders Link/demo/basic.md correctly 1`] = `
       class="arco-link arco-link-disabled"
       href="#"
     >
-       Link 
+      Link
     </a>
   </div>
 </div>
@@ -92,7 +92,7 @@ exports[`renders Link/demo/hoverable.md correctly 1`] = `
     <span
       class="arco-link arco-link-is-error arco-link-hoverless"
     >
-       Link 
+      Link
     </span>
   </div>
 </div>

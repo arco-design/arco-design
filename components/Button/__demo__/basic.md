@@ -13,31 +13,20 @@ title:
 
 There are `primary`, `secondary`, `dashed`, `outline` and `text` button types.
 
-```tsx
+```js
 import { Button, Space } from '@arco-design/web-react';
-import React from 'react';
-
-const primaryText: string = 'Primary'
 
 const App = () => {
   return (
     <Space size="large">
-      <Button type="primary">
-      {primaryText}
-      </Button>
-      <Button type="secondary">
-        Secondary
-      </Button>
-      <Button type="dashed">
-        Dashed
-      </Button>
+      <Button type="primary">Primary</Button>
+      <Button type="secondary">Secondary</Button>
+      <Button type="dashed">Dashed</Button>
       <Button type="outline">Outline</Button>
-      <Button type="text">
-        Text
-      </Button>
+      <Button type="text">Text</Button>
     </Space>
   );
-}
+};
 
 export default App;
 ```

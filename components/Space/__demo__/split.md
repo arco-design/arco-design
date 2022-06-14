@@ -16,12 +16,15 @@ Set separators for adjacent child elements.
 ```js
 import { Space, Link, Divider } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space split={<Divider type="vertical" />}>
-    <Link>Link 1</Link>
-    <Link>Link 2</Link>
-    <Link>Link 3</Link>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space split={<Divider type="vertical" />}>
+      <Link>Link 1</Link>
+      <Link>Link 2</Link>
+      <Link>Link 3</Link>
+    </Space>
+  );
+};
+
+export default App;
 ```

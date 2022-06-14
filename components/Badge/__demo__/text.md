@@ -16,23 +16,26 @@ Customize the content.
 import { Badge, Avatar, Space } from '@arco-design/web-react';
 import { IconUser } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size={40}>
-    <Badge text="NEW">
-      <Avatar shape="square">
-        <span>
-          <IconUser />
-        </span>
-      </Avatar>
-    </Badge>
-    <Badge text="HOT">
-      <Avatar shape="square">
-        <span>
-          <IconUser />
-        </span>
-      </Avatar>
-    </Badge>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size={40}>
+      <Badge text="NEW">
+        <Avatar shape="square">
+          <span>
+            <IconUser />
+          </span>
+        </Avatar>
+      </Badge>
+      <Badge text="HOT">
+        <Avatar shape="square">
+          <span>
+            <IconUser />
+          </span>
+        </Avatar>
+      </Badge>
+    </Space>
+  );
+};
+
+export default App;
 ```

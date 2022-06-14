@@ -25,11 +25,10 @@ const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 const Sider = Layout.Sider;
 const Content = Layout.Content;
-
 const collapsedWidth = 60;
 const normalWidth = 220;
 
-function Demo() {
+function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [siderWidth, setSiderWidth] = useState(normalWidth);
 
@@ -62,7 +61,7 @@ function Demo() {
         }}
       >
         <div className="logo" />
-        <Menu theme="dark" autoOpen  style={{ width: '100%' }}>
+        <Menu theme="dark" autoOpen style={{ width: '100%' }}>
           <MenuItem key="1" disabled>
             <IconHome />
             设计指南
@@ -77,7 +76,11 @@ function Demo() {
           </MenuItem>
           <SubMenu
             key="layout"
-            title={<span><IconCalendar /> 布局组件</span>}
+            title={
+              <span>
+                <IconCalendar /> 布局组件
+              </span>
+            }
           >
             <MenuItem key="11">栅格</MenuItem>
             <MenuItem key="12">分隔符</MenuItem>
@@ -92,5 +95,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

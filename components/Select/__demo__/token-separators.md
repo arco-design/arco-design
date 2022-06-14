@@ -15,25 +15,27 @@ Set `tokenSeparators` to use automatic word segmentation. Try copying `Beijing,S
 
 ```js
 import { Select } from '@arco-design/web-react';
-
 const Option = Select.Option;
 const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Wuhan'];
 
-ReactDOM.render(
-  <Select
-    mode="multiple"
-    placeholder="Please select"
-    tokenSeparators={[',', '|', '/']}
-    allowCreate
-    allowClear
-    style={{ width: 345 }}
-  >
-    {options.map((option) => (
-      <Option key={option} value={option}>
-        {option}
-      </Option>
-    ))}
-  </Select>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Select
+      mode="multiple"
+      placeholder="Please select"
+      tokenSeparators={[',', '|', '/']}
+      allowCreate
+      allowClear
+      style={{ width: 345 }}
+    >
+      {options.map((option) => (
+        <Option key={option} value={option}>
+          {option}
+        </Option>
+      ))}
+    </Select>
+  );
+};
+
+export default App;
 ```

@@ -15,23 +15,25 @@ Basic usage.
 
 ```js
 import { Popover, Button } from '@arco-design/web-react';
+const style = {
+  margin: 0,
+};
 
-const style = { margin: 0 };
+const App = () => {
+  return (
+    <Popover
+      title="Title"
+      content={
+        <span>
+          <p style={style}>Here is the text content</p>
+          <p style={style}>Here is the text content</p>
+        </span>
+      }
+    >
+      <Button type="primary">Hover</Button>
+    </Popover>
+  );
+};
 
-ReactDOM.render(
-  <Popover
-    title="Title"
-    content={
-      <span>
-        <p style={style}>Here is the text content</p>
-        <p style={style}>Here is the text content</p>
-      </span>
-    }
-  >
-    <Button type="primary">
-      Hover
-    </Button>
-  </Popover>,
-  CONTAINER
-);
+export default App;
 ```

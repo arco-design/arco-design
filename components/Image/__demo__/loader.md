@@ -17,16 +17,18 @@ Loading
 
 ```js
 import { Image, Button } from '@arco-design/web-react';
+import React from 'react';
 
-function Demo() {
+function App() {
   const [timestamp, setTimestamp] = React.useState('');
-
   return (
     <div>
       <div>
         <Button
           type="primary"
-          onClick={() => { setTimestamp(Date.now()) }}
+          onClick={() => {
+            setTimestamp(Date.now());
+          }}
           style={{ marginBottom: 20 }}
         >
           reload
@@ -51,10 +53,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```
 
 ```css

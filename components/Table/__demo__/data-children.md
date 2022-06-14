@@ -16,7 +16,6 @@ There is a `children` field in `data`, or set as a custom field by `childrenColu
 ```js
 import { useState } from 'react';
 import { Table, Switch, Space } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -35,7 +34,6 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -107,30 +105,28 @@ const data = [
   },
 ];
 
-function Demo() {
+function App() {
   const [checkStrictly, setCheckStrictly] = useState(true);
-
-  return <div>
-    <Space style={{ marginBottom: 16 }}>
-      checkStrictly:
-      <Switch onChange={(checked) => setCheckStrictly(checked)} checked={checkStrictly} />
-    </Space>
-    <Table
-      rowSelection={{
-        type: 'checkbox',
-        onChange: (selectedRowKeys, selectedRows) => {
-          console.log(selectedRowKeys, selectedRows);
-        },
-        checkStrictly,
-      }}
-      columns={columns}
-      data={data}
-    />
-  </div>;
+  return (
+    <div>
+      <Space style={{ marginBottom: 16 }}>
+        checkStrictly:
+        <Switch onChange={(checked) => setCheckStrictly(checked)} checked={checkStrictly} />
+      </Space>
+      <Table
+        rowSelection={{
+          type: 'checkbox',
+          onChange: (selectedRowKeys, selectedRows) => {
+            console.log(selectedRowKeys, selectedRows);
+          },
+          checkStrictly,
+        }}
+        columns={columns}
+        data={data}
+      />
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```

@@ -15,6 +15,7 @@ Use `getPopupContainer` to specify the parent node where the preview should moun
 
 ```js
 import { Image } from '@arco-design/web-react';
+import React from 'react';
 
 const wrapperStyle = {
   width: '100%',
@@ -26,7 +27,7 @@ const wrapperStyle = {
   textAlign: 'center',
 };
 
-function Demo() {
+function App() {
   const ref = React.useRef();
   return (
     <div style={wrapperStyle} ref={ref}>
@@ -43,5 +44,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

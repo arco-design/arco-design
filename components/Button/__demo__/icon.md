@@ -17,11 +17,16 @@ Icons can be used in buttons. When `icon` is set and there are no children, the 
 import { Button, Space } from '@arco-design/web-react';
 import { IconPlus, IconDelete } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size="large">
-    <Button type="primary" icon={<IconPlus />} />
-    <Button type="primary" icon={<IconDelete />}> Delete</Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Button type="primary" icon={<IconPlus />} />
+      <Button type="primary" icon={<IconDelete />}>
+        Delete
+      </Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

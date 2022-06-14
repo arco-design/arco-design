@@ -16,29 +16,24 @@ Coordinating the selection of provinces and cities is a common use case.
 ```js
 import { useEffect, useState } from 'react';
 import { Select, Space } from '@arco-design/web-react';
-
 const Option = Select.Option;
-
 const data = {
   Beijing: ['Haidian', 'Chaoyang', 'Changping'],
   Sichuan: ['Chengdu', 'Mianyang', 'Aba'],
-  Guangdong: ['Guangzhou', 'Shenzhen', 'Shantou']
+  Guangdong: ['Guangzhou', 'Shenzhen', 'Shantou'],
 };
 
-function Demo() {
+function App() {
   const provinces = Object.keys(data);
   const defaultProvince = provinces[0];
-
   const [province, setProvince] = useState(defaultProvince);
   const [cities, setCities] = useState([]);
   const [city, setCity] = useState('');
-
   useEffect(() => {
     const cities = data[province] || [];
     setCities(cities);
     setCity(cities[0]);
   }, [province]);
-
   return (
     <Space size="large">
       <Select
@@ -69,5 +64,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

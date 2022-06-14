@@ -15,15 +15,18 @@ By setting `mode` to `horizontal`, you can use the horizontal menu.
 
 ```js
 import { Menu } from '@arco-design/web-react';
-
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 
-function Demo() {
+function App() {
   return (
     <div className="menu-demo">
       <Menu mode="horizontal" defaultSelectedKeys={['1']}>
-        <MenuItem key="0" style={{ padding: 0, marginRight: 38 }} disabled>
+        <MenuItem
+          key="0"
+          style={{ padding: 0, marginRight: 38, }}
+          disabled
+        >
           <div
             style={{
               width: 80,
@@ -43,7 +46,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

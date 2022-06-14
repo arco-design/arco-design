@@ -16,9 +16,7 @@ Add the `checkable` attribute to display the checkbox, and you can use `defaultC
 ```js
 import { useState } from 'react';
 import { Tree, Checkbox } from '@arco-design/web-react';
-
 const TreeNode = Tree.Node;
-
 const TreeData = [
   {
     title: 'Trunk 0-0',
@@ -35,14 +33,14 @@ const TreeData = [
         children: [
           {
             title: 'Leaf',
-            key: '0-0-2-1'
+            key: '0-0-2-1',
           },
           {
             title: 'Leaf',
             key: '0-0-2-2',
-            disableCheckbox: true
-          }
-        ]
+            disableCheckbox: true,
+          },
+        ],
       },
     ],
   },
@@ -62,7 +60,7 @@ const TreeData = [
             title: 'Leaf ',
             key: '0-1-1-2',
           },
-        ]
+        ],
       },
       {
         title: 'Leaf',
@@ -72,32 +70,33 @@ const TreeData = [
   },
 ];
 
-function Demo () {
-  const [checkedKeys, setCheckedKeys] = useState(['0-0', '0-1'])
-  const [checkStrictly, setCheckStrictly] = useState(false)
-  return <div>
-    <Checkbox
-      style={{marginBottom: 24}}
-      onChange={(value) => {
-        setCheckStrictly(value)
-        setCheckedKeys([])
-      }}
-    > checkStrictly </Checkbox>
+function App() {
+  const [checkedKeys, setCheckedKeys] = useState(['0-0', '0-1']);
+  const [checkStrictly, setCheckStrictly] = useState(false);
+  return (
+    <div>
+      <Checkbox
+        style={{ marginBottom: 24 }}
+        onChange={(value) => {
+          setCheckStrictly(value);
+          setCheckedKeys([]);
+        }}
+      >
+        checkStrictly
+      </Checkbox>
 
-    <Tree
-      checkStrictly={checkStrictly}
-      checkable
-      checkedKeys={checkedKeys}
-      onCheck={(value, extra) => {
-        setCheckedKeys(value)
-      }}
-      treeData={TreeData}
-    ></Tree>
-  </div>
+      <Tree
+        checkStrictly={checkStrictly}
+        checkable
+        checkedKeys={checkedKeys}
+        onCheck={(value, extra) => {
+          setCheckedKeys(value);
+        }}
+        treeData={TreeData}
+      ></Tree>
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

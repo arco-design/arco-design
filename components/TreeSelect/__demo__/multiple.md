@@ -1,6 +1,6 @@
 ---
 order: 9
-title: 
+title:
   zh-CN: 多选
   en-US: Multiple Selection
 ---
@@ -16,6 +16,7 @@ Multiple Selection
 ```js
 import { TreeSelect, Space } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
+import React from 'react';
 
 const treeData = [
   {
@@ -46,14 +47,15 @@ const treeData = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     value: [],
   };
-
   handleChange = (value) => {
     console.log(value);
-    this.setState({ value });
+    this.setState({
+      value,
+    });
   };
 
   render() {
@@ -85,5 +87,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

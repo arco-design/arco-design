@@ -332,7 +332,6 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
         class="arco-switch-dot"
       />
     </button>
-     
     <span
       class="arco-typography"
     >

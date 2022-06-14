@@ -16,12 +16,13 @@ Open the controlled mode through `activeTab`.
 ```js
 import { useState } from 'react';
 import { Tabs, Typography } from '@arco-design/web-react';
-
 const TabPane = Tabs.TabPane;
+const style = {
+  textAlign: 'center',
+  marginTop: 20,
+};
 
-const style = { textAlign: 'center', marginTop: 20 };
-
-function Demo() {
+function App() {
   const [activeTab, setActiveTab] = useState('1');
   return (
     <Tabs activeTab={activeTab} onChange={setActiveTab}>
@@ -38,5 +39,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

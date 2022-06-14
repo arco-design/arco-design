@@ -16,19 +16,19 @@ Used for password input.
 ```js
 import { Input, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space wrap>
-    <Input.Password
-      defaultValue="password"
-      style={{ width: 350 }}
-    />
-    <Input.Password
-      defaultValue="password"
-      defaultVisibility={true}
-      placeholder="Please enter ..."
-      style={{ width: 350 }}
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space wrap>
+      <Input.Password defaultValue="password" style={{ width: 350 }} />
+      <Input.Password
+        defaultValue="password"
+        defaultVisibility={true}
+        placeholder="Please enter ..."
+        style={{ width: 350 }}
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

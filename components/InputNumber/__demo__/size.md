@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 四种尺寸
   en-US: Size
 ---
@@ -16,12 +16,10 @@ Setting `size` can use four sizes (`mini`, `small`, `default`, `large`) number i
 ```js
 import { useState } from 'react';
 import { InputNumber, Radio } from '@arco-design/web-react';
-
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [size, setSize] = useState('default');
-
   return (
     <div>
       <RadioGroup
@@ -55,5 +53,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

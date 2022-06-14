@@ -16,10 +16,11 @@ By specifying the `spin` field, the icon can be set to the spinning state.
 ```js
 import { IconSync } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <div style={{ color: 'var(--color-text-1)' }}>
+const App = () => {
+  return <div style={{ color: 'var(--color-text-1)' }}>
     <IconSync spin style={{ fontSize: 40 }} />
-  </div>,
-  CONTAINER
-);
+  </div>;
+}
+
+export default App;
 ```

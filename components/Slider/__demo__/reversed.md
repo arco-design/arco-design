@@ -18,13 +18,12 @@ import { useState } from 'react';
 import { Slider, Switch, Typography } from '@arco-design/web-react';
 import { IconSound, IconMute } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const [reverse, setReverse] = useState(true);
-
   return (
     <div>
       <div style={{ marginBottom: 24 }}>
-        <Switch checked={reverse} onChange={setReverse} />{' '}
+        <Switch checked={reverse} onChange={setReverse} />
         <Typography.Text>Reversed</Typography.Text>
       </div>
       <Slider
@@ -44,5 +43,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
