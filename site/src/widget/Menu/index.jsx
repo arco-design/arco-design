@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { Menu, Badge } from '@arco-design/web-react';
 import { useHistory } from 'react-router-dom';
 import NProgress from 'nprogress';
+import cs from 'classnames';
 import { GlobalNoticeContext } from '../../context';
 import MenuHeader from '../MenuHeader';
 import { getPath } from '../../utils/i18n';
@@ -81,18 +82,14 @@ function ACMenu(props) {
     }
   }
 
-  const width = menuCollapse ? 0 : 260;
-
   return (
     <div
-      className="ac-menu-wrapper"
-      style={{ ...style, width, minWidth: width, maxWidth: width, opacity: width === 0 ? 0 : 1 }}
+      className={cs('ac-menu-wrapper', {
+        'ac-menu-wrapper-collapsed': menuCollapse,
+      })}
+      style={style}
     >
-      <div
-        id="menu"
-        className="ac-menu"
-        style={{ left: menuCollapse ? -261 : -1, paddingTop: `${noticeHeight}px` }}
-      >
+      <div id="menu" className="ac-menu" style={{ paddingTop: `${noticeHeight}px` }}>
         <MenuHeader />
         <div id="menu-inner" className="ac-menu-inner">
           <Menu
