@@ -333,17 +333,17 @@
     axios "^0.24.0"
     lodash.throttle "^4.1.1"
 
-"@arco-materials/site-footer@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.0.4.tgz#3b33a7d56e7776913806bfb3ee4b305109ee8ec2"
-  integrity sha512-D8Vy+7Iqz8JBcl2ZNbxbsKi95WWDwIuMM4aCcTGw9TK4ARrjXtr32TCH1DhsHnC5Imdc+5ABfYinP8b/r7xh8w==
+"@arco-materials/site-footer@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@arco-materials/site-footer/-/site-footer-1.1.0.tgz#1720a446199ee0cd12650d65b45c5483923eba7e"
+  integrity sha512-0gNyVTDdMsAU7wRtuPQ129E3uTYiUL+88OMOa8o3wcoJx02NnjY4eyxJDiG7eRlRYSlAYYUJn8d6YeD5HXUM1Q==
   dependencies:
     classnames "^2.2.6"
 
-"@arco-materials/site-navbar@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.2.5.tgz#d098cf7075b9f0bbebda2c5bec30d8133c7bd844"
-  integrity sha512-8b7MXz5TWHwn7yLwWJHwCJijFNDH9iCp/HiUZZAkjgRMkdRtW4ukrKhY6VcJUaOBxvhNk9IAf6A9wF/INLKitg==
+"@arco-materials/site-navbar@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@arco-materials/site-navbar/-/site-navbar-1.3.0.tgz#e0376a754b3f0416a4eb83687ee31138cb00117d"
+  integrity sha512-X3suzT26ao/ibyOoYPTTckpuzqIxFak7+S/QuisfSrBggwWrm5lA3ct2drps6Fxc6/lHP7bpzQVyojP7mecvzQ==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.0.1"
