@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: yarn && cd site && yarn && cd .. && yarn add react@18 react-dom@18
+        run: yarn && cd site && yarn && cd .. && yarn add react@18 react-dom@18 -D
 
       - name: setup node
         uses: actions/setup-node@v2
