@@ -17,6 +17,8 @@ const noAnchorPaths = [
   '/react/en-US/docs/overview',
   '/react/docs/changelog',
   '/react/en-US/docs/changelog',
+  '/react/docs/token',
+  '/react/en-US/docs/token',
 ];
 
 function Components() {

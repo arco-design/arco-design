@@ -86,6 +86,7 @@ export default {
   'routes.theme': 'Custom Theme',
   'routes.question': 'Question',
   'routes.changelog': 'Changelog',
+  'routes.token': 'Design Tokens',
   'routes.migrate_to_v2': 'Migrate To V2',
   'routes.design-language': 'Design Language',
   'routes.component-usage': 'Component Usage',
