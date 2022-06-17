@@ -14,6 +14,7 @@ title:
 Alignment of datetime and actions.
 
 ```js
+import React from 'react';
 import { Comment, Avatar } from '@arco-design/web-react';
 import {
   IconHeartFill,
@@ -22,7 +23,6 @@ import {
   IconHeart,
   IconStar,
 } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const App = () => {
   const [like, setLike] = React.useState(true);

@@ -14,8 +14,8 @@ title:
 Customize the search logic by `onSearch`
 
 ```js
-import { Cascader, Divider, Spin, Space } from '@arco-design/web-react';
 import React from 'react';
+import { Cascader, Divider, Spin, Space } from '@arco-design/web-react';
 
 const genOptions = (keyword) => {
   return !keyword

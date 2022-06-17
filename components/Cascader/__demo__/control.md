@@ -14,8 +14,8 @@ title:
 Control the selected value.
 
 ```js
-import { Cascader, Space } from '@arco-design/web-react';
 import React from 'react';
+import { Cascader, Space } from '@arco-design/web-react';
 
 const options = [
   {

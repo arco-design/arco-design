@@ -16,8 +16,8 @@ There is no loading effect by default. Default loading effect can be enabled wit
 Loading
 
 ```js
-import { Image, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Image, Button } from '@arco-design/web-react';
 
 function App() {
   const [timestamp, setTimestamp] = React.useState('');

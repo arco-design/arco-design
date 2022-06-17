@@ -14,8 +14,8 @@ title:
 Control whether the check box is selected
 
 ```js
-import { Checkbox, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Checkbox, Button } from '@arco-design/web-react';
 
 function App() {
   const [checked, setChecked] = React.useState(false);

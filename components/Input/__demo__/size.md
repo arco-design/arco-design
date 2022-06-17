@@ -14,9 +14,9 @@ title:
 Input defines four sizes (`mini`, `small`, `default`, `large`), which are 24px, 28px, 32px, and 36px.
 
 ```js
+import React from 'react';
 import { Input, Radio, Select, Slider, Typography } from '@arco-design/web-react';
 import { IconClockCircle, IconSearch, IconInfoCircle } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const RadioGroup = Radio.Group;
 const InputSearch = Input.Search;

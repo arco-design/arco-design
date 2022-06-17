@@ -14,8 +14,8 @@ title:
 In functional components, you can use `Form.useFormContext` to get a form context. Facilitate the encapsulation of form controls. (version `2.33.0`)
 
 ```js
-import { Form, Input, Button, Switch, InputNumber } from '@arco-design/web-react';
 import React from 'react';
+import { Form, Input, Button, Switch, InputNumber } from '@arco-design/web-react';
 
 const FormItem = Form.Item;
 

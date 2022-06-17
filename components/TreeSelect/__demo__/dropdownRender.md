@@ -17,7 +17,6 @@ Use `dropdownRender` to freely expand the drop-down menu.
 import { useState } from 'react';
 import { TreeSelect, Divider, Input, Button } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const defaultTreeData = [
   {
@@ -48,7 +47,7 @@ const defaultTreeData = [
 ];
 
 function App() {
-  const [treeData, setTreeData] = React.useState(defaultTreeData);
+  const [treeData, setTreeData] = useState(defaultTreeData);
   const [inputValue, setInputValue] = useState('');
 
   const addItem = () => {

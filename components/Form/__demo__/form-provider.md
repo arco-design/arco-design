@@ -14,6 +14,7 @@ title:
 The 'form.provider' component allows you to manage data from multiple forms. `2.30.0` support. To get the corresponding Form instance, you need to set the ID property for the Form component.
 
 ```js
+import React from 'react';
 import {
   Form,
   Grid,
@@ -28,7 +29,6 @@ import {
   InputNumber,
   Space,
 } from '@arco-design/web-react';
-import React from 'react';
 
 const defaultData = [...new Array(5)].map((_, index) => {
   return {

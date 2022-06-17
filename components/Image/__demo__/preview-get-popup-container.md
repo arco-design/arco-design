@@ -14,8 +14,8 @@ title:
 Use `getPopupContainer` to specify the parent node where the preview should mount to.
 
 ```js
-import { Image } from '@arco-design/web-react';
 import React from 'react';
+import { Image } from '@arco-design/web-react';
 
 const wrapperStyle = {
   width: '100%',

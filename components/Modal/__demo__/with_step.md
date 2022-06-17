@@ -14,8 +14,8 @@ title:
 Dialog with horizontal step bar.
 
 ```js
-import { Modal, Button, Table, Alert, Steps, Divider } from '@arco-design/web-react';
 import React from 'react';
+import { Modal, Button, Table, Alert, Steps, Divider } from '@arco-design/web-react';
 const Step = Steps.Step;
 
 function App() {

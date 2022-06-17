@@ -17,7 +17,6 @@ The `renderExtra` property of `Tree` can customize node content.
 import { useState } from 'react';
 import { Tree, Checkbox } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const TreeNode = Tree.Node; // 从treedata 生成 treenode
 
@@ -80,7 +79,7 @@ const TreeData = [
 ];
 
 function App() {
-  const [treeData, setTreeData] = React.useState(TreeData);
+  const [treeData, setTreeData] = useState(TreeData);
   return (
     <div style={{ width: 500, padding: 2, overflow: 'auto' }}>
       <Tree

@@ -14,8 +14,8 @@ title:
 The popup will align mouse position. If you want to keep the pop-up layer displayed when you click in an area, and update the position of the pop-up layer align the mouse position, see the next [example](/react/en-US/components/trigger#update-position).
 
 ```js
-import { Trigger, Button, Select, Grid, Skeleton, Typography } from '@arco-design/web-react';
 import React from 'react';
+import { Trigger, Button, Select, Grid, Skeleton, Typography } from '@arco-design/web-react';
 
 function Popup() {
   return (

@@ -14,8 +14,8 @@ title:
 You can customize the rendering dialog through `modalRender` to realize the drag and drop function.
 
 ```js
-import { Modal, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Modal, Button } from '@arco-design/web-react';
 import Draggable from 'react-draggable';
 
 function App() {

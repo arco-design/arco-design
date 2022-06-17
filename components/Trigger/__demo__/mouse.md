@@ -6,8 +6,8 @@ title:
 ---
 
 ```js
-import { Trigger, Button, Input, Skeleton, Typography } from '@arco-design/web-react';
 import React from 'react';
+import { Trigger, Button, Input, Skeleton, Typography } from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);

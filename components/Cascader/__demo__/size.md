@@ -15,8 +15,8 @@ title:
 There are four sizes available: `mini`, `small`, `default` and `large`. Their heights are `24px`, `28px`, `32px`, `36px`.
 
 ```js
-import { Cascader, Radio } from '@arco-design/web-react';
 import React from 'react';
+import { Cascader, Radio } from '@arco-design/web-react';
 
 const RadioGroup = Radio.Group;
 const options = [

@@ -14,8 +14,8 @@ title:
 The height and width of the `ResizeBox` can be controlled, corresponding to the attributes `width` and `height`, and the height and width values during dragging can be obtained through `onChange`.
 
 ```js
-import { ResizeBox, Divider, Typography } from '@arco-design/web-react';
 import React from 'react';
+import { ResizeBox, Divider, Typography } from '@arco-design/web-react';
 
 const { Paragraph } = Typography;
 

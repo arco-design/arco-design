@@ -14,8 +14,8 @@ title:
 Load nodes dynamically.
 
 ```js
-import { Tree } from '@arco-design/web-react';
 import React from 'react';
+import { Tree } from '@arco-design/web-react';
 
 const TreeNode = Tree.Node;
 const defaultTreeData = [

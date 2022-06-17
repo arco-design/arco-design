@@ -14,8 +14,8 @@ title:
 Use `size` to select the size of Select (`mini`, `small`, `default`, `large`), the height corresponds to `24px`, `28px`, `32px`, `36px`.
 
 ```js
-import { Select, Radio } from '@arco-design/web-react';
 import React from 'react';
+import { Select, Radio } from '@arco-design/web-react';
 
 const Option = Select.Option;
 const RadioGroup = Radio.Group;

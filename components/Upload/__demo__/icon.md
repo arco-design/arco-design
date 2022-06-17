@@ -14,6 +14,7 @@ title:
 `showUploadList` can be an object to customize `previewIcon`, `removeIcon`, `fileIcon`, `reuploadIcon`, `cancelIcon`, `startIcon`, `errorIcon` and `fileName`.
 
 ```js
+import React from 'react';
 import { Upload, Radio, Typography, Message } from '@arco-design/web-react';
 import {
   IconFileAudio,
@@ -22,7 +23,6 @@ import {
   IconUpload,
   IconEye,
 } from '@arco-design/web-react/icon';
-import React from 'react';
 
 function App() {
   const [listType, setListtype] = React.useState('text');

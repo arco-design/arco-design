@@ -18,8 +18,8 @@ Use `target` to set the element whose scroll event needs to be listened to. The 
 If `target` is specified as a non-window container, the fixed element may escape the container when the outer element scrolls. You can pass in `targetContainer` to set the scrollable element outside `target`. `Affix` will listen to the scroll event of the element and update the position of `Affix` correspondingly. You can also listen to the `scroll` event of the outer scrollable element and call `this.affixRef.updatePosition()` to update the position.
 
 ```js
-import { Affix, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Affix, Button } from '@arco-design/web-react';
 
 class App extends React.Component {
   container = null;

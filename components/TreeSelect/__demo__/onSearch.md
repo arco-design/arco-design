@@ -14,9 +14,9 @@ title:
 Custom search can be enabled when the passed `onSearch` is a function, and data can be loaded remotely.
 
 ```js
+import React from 'react';
 import { TreeSelect, Spin } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const TreeData = [
   {

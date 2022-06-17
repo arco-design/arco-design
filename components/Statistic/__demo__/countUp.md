@@ -18,9 +18,9 @@ If you set `countUp`, the animation will be executed after the component is moun
 If you want to control the animation by yourself, you can also get the instance through `ref` and execute `ins.countUp()`.
 
 ```js
+import React from 'react';
 import { Statistic, Grid, Button } from '@arco-design/web-react';
 import { IconArrowRise, IconArrowFall } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const Row = Grid.Row;
 const Col = Grid.Col;

@@ -14,8 +14,8 @@ title:
 Basic usage
 
 ```js
-import { Switch, Timeline, Typography } from '@arco-design/web-react';
 import React from 'react';
+import { Switch, Timeline, Typography } from '@arco-design/web-react';
 
 const TimelineItem = Timeline.Item;
 

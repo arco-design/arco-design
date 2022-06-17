@@ -15,9 +15,9 @@ The count will be animated as it changes.
 
 
 ```js
+import React from 'react';
 import { Badge, Avatar, Grid, Button, Switch } from '@arco-design/web-react';
 import { IconUser, IconPlus, IconMinus } from '@arco-design/web-react/icon';
-import React from 'react';
 
 function App() {
   const [count, setCount] = React.useState(12);

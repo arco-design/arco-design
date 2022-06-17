@@ -14,6 +14,7 @@ title:
 Display the comments list with List component.
 
 ```js
+import React from 'react';
 import { Comment, List } from '@arco-design/web-react';
 import {
   IconHeart,
@@ -22,7 +23,6 @@ import {
   IconStarFill,
   IconStar,
 } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const App = () => {
   const [likes, setLikes] = React.useState([]);

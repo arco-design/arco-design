@@ -6,8 +6,8 @@ title:
 ---
 
 ```js
-import { Tree, Radio } from '@arco-design/web-react';
 import React from 'react';
+import { Tree, Radio } from '@arco-design/web-react';
 
 const TreeNode = Tree.Node;
 

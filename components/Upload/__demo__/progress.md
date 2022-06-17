@@ -13,8 +13,8 @@ title:
 Use `progressProps` for customize progress bar.
 
 ```js
-import { Upload, Radio, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Upload, Radio, Button } from '@arco-design/web-react';
 
 function App() {
   const [fileList, setFileList] = React.useState([

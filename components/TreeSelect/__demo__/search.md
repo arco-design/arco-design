@@ -14,9 +14,9 @@ title:
 Set `showSearch=true` to enable the search function. You can only search in the loaded data during dynamic loading. The default keyword search is to match from the `value` field. You can also pass in `filterTreeNode` to customize the filtering method.
 
 ```js
+import React from 'react';
 import { TreeSelect, Space } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const treeData = [
   {

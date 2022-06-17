@@ -16,8 +16,8 @@ horizontal 水平排列 (**默认**)、 vertical 垂直排列、 inline 行内�
 `Form` supports three layout: horizontal (**default**), vertical, inline.
 
 ```js
-import { Form, Input, Checkbox, Button, Radio } from '@arco-design/web-react';
 import React from 'react';
+import { Form, Input, Checkbox, Button, Radio } from '@arco-design/web-react';
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;

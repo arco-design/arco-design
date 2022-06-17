@@ -14,6 +14,7 @@ title:
 `Form.Item` supports customizing the form verification status and verification copy through the hasFeedback`validateStatus` and `help` attributes.
 
 ```js
+import React from 'react';
 import {
   Form,
   AutoComplete,
@@ -27,7 +28,6 @@ import {
   TimePicker,
   Radio,
 } from '@arco-design/web-react';
-import React from 'react';
 
 const FormItem = Form.Item;
 

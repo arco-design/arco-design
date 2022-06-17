@@ -14,8 +14,8 @@ title:
 The simplest usage.
 
 ```tsx
-import { Table, TableColumnProps } from "@arco-design/web-react";
 import React from 'react';
+import { Table, TableColumnProps } from "@arco-design/web-react";
 
 const columns: TableColumnProps[] = [
   {

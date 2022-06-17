@@ -14,8 +14,8 @@ title:
 When you need to display a large image, you can pass a smaller image to `loader` to display it when the original image is not successfully loaded to simulate progressive loading.
 
 ```js
-import { Image, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Image, Button } from '@arco-design/web-react';
 
 function App() {
   const [timestamp, setTimestamp] = React.useState('');

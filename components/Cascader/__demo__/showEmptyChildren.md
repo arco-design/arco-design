@@ -15,8 +15,8 @@ If you want to display the next level menu when an option's children is `[]`, pl
 
 
 ```js
-import { Cascader, Checkbox } from '@arco-design/web-react';
 import React from 'react';
+import { Cascader, Checkbox } from '@arco-design/web-react';
 
 const options = [
   {

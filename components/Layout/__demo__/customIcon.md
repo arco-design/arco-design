@@ -14,9 +14,9 @@ title:
 By setting the `trigger` property of `Menu.Sider`, the icon of the collapse button can be customized.
 
 ```js
+import React from 'react';
 import { Layout, Menu, Breadcrumb, Button, Message } from '@arco-design/web-react';
 import { IconHome, IconCalendar, IconCaretRight, IconCaretLeft } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;

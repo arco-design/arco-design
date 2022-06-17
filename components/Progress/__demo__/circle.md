@@ -14,8 +14,8 @@ title:
 A circular progress bar.
 
 ```js
-import { Progress, Slider } from '@arco-design/web-react';
 import React from 'react';
+import { Progress, Slider } from '@arco-design/web-react';
 
 function App() {
   const [value, setValue] = React.useState(20);

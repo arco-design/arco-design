@@ -14,8 +14,8 @@ title:
 The `title` parameter supports text or react nodes, which can support title bar display in various scenarios.
 
 ```js
-import { Modal, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Modal, Button } from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);

@@ -14,8 +14,8 @@ title:
 Pass in `okButtonProps` and `cancelButtonProps` to customize the props of the OK button and the cancel button respectively. If `okButtonProps` and `cancelButtonProps` still cannot meet your needs, you can directly pass in `footer` to customize the footer content.
 
 ```js
-import { Modal, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Modal, Button } from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);

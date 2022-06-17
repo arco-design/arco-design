@@ -14,9 +14,9 @@ title:
 Controlled mode.
 
 ```js
+import React from 'react';
 import { TreeSelect } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const treeData = [
   {

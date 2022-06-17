@@ -14,8 +14,8 @@ title:
 Show Notification in dialog.
 
 ```js
-import { Modal, Button, Table, Alert } from '@arco-design/web-react';
 import React from 'react';
+import { Modal, Button, Table, Alert } from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false); // table

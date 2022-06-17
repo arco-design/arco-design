@@ -14,8 +14,8 @@ title:
 Different styles of text.
 
 ```js
-import { Typography, Divider } from '@arco-design/web-react';
 import React from 'react';
+import { Typography, Divider } from '@arco-design/web-react';
 
 function Layout(props) {
   return React.Children.map(props.children, (child) => {

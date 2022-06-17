@@ -14,9 +14,9 @@ title:
 The Sider on the left can be used with together Menu and set to expand/collapse. Setting `breakpoint` can enable responsive contraction.
 
 ```js
+import React from 'react';
 import { Layout, Menu, Breadcrumb, Message } from '@arco-design/web-react';
 import { IconHome, IconCalendar } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;

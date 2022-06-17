@@ -14,8 +14,8 @@ title:
 The function will be executed when user click remove icon. Remove actions will be aborted when the return value is false or a Promise which resolve(false) or reject
 
 ```js
-import { Upload, Modal } from '@arco-design/web-react';
 import React from 'react';
+import { Upload, Modal } from '@arco-design/web-react';
 
 class App extends React.Component {
   render() {

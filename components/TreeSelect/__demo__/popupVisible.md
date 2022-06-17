@@ -19,8 +19,8 @@ For example, in this demo, onVisibleChange is triggered when the mouse moves out
 For details on triggering onVisibleChange, please refer to [Trigger](/react/components/trigger)
 
 ```js
-import { TreeSelect } from '@arco-design/web-react';
 import React from 'react';
+import { TreeSelect } from '@arco-design/web-react';
 
 const TreeNode = TreeSelect.Node;
 

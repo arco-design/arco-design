@@ -14,8 +14,8 @@ title:
 `Image.PreviewGroup` can be used alone, with `visible` and `onVisibleChange` to control its visibility. The image display is divided into two scenes. One is to specify the first image to be displayed by `defaultCurrent`. The other one is to control which image is currently displayed by `current` and `onChange`.
 
 ```js
-import { Image, Button } from '@arco-design/web-react';
 import React from 'react';
+import { Image, Button } from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);

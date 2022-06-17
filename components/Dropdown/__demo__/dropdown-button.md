@@ -14,9 +14,9 @@ title:
 Use `<Dropdown.Button>` to use the Dropdown with button on its right side which are additional menus.
 
 ```js
+import React from 'react';
 import { Dropdown, Menu, Tooltip, Space } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-import React from 'react';
 
 const dropList = (
   <Menu>
