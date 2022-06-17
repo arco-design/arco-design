@@ -26,18 +26,53 @@
   }
 }
 
-
 @{arco-theme-tag} {
   &[arco-theme='dark'] {
-  .@{prefix}-tooltip-content {
-    border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
-  }
+    .@{prefix}-tooltip-content {
+      border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+    }
 
-  .@{prefix}-tooltip .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
-    border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
-    border-top: none;
-    border-left: none;
-    z-index: 1;
+    .@{prefix}-tooltip {
+      .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+        border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+        z-index: 1;
+      }
+
+      &[trigger-placement='left'],
+      &[trigger-placement='lt'],
+      &[trigger-placement='lb'] {
+        .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+          border-left: none;
+          border-bottom: none;
+        }
+      }
+
+      &[trigger-placement='right'],
+      &[trigger-placement='rt'],
+      &[trigger-placement='rb'] {
+        .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+          border-top: none;
+          border-right: none;
+        }
+      }
+
+      &[trigger-placement='top'],
+      &[trigger-placement='tl'],
+      &[trigger-placement='tr'] {
+        .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+          border-left: none;
+          border-top: none;
+        }
+      }
+
+      &[trigger-placement='bottom'],
+      &[trigger-placement='bl'],
+      &[trigger-placement='br'] {
+        .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+          border-right: none;
+          border-bottom: none;
+        }
+      }
+    }
   }
-}
 }
