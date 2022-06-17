@@ -16,21 +16,24 @@ Buttons can be `mini`, `small`, `medium` and `large` in size, with corresponding
 ```js
 import { Button, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size="large">
-    <Button size="mini" type="primary">
-      Mini
-    </Button>
-    <Button size="small" type="primary">
-      Small
-    </Button>
-    <Button size="default" type="primary">
-      Default
-    </Button>
-    <Button size="large" type="primary">
-      Large
-    </Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Button size="mini" type="primary">
+        Mini
+      </Button>
+      <Button size="small" type="primary">
+        Small
+      </Button>
+      <Button size="default" type="primary">
+        Default
+      </Button>
+      <Button size="large" type="primary">
+        Large
+      </Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

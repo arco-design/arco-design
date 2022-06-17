@@ -25,7 +25,6 @@ import {
   Table,
   Tag,
 } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -45,7 +44,7 @@ const columns = [
   },
 ];
 
-function Demo() {
+function App() {
   const componentConfig = {
     Button: {
       type: 'primary',
@@ -53,7 +52,7 @@ function Demo() {
     },
     DatePicker: {
       dayStartOfWeek: 2,
-      utcOffset: 0
+      utcOffset: 0,
     },
     InputNumber: {
       mode: 'button',
@@ -66,14 +65,13 @@ function Demo() {
     },
     Table: {
       border: false,
-      noDataElement: 'Oops, no data ~'
+      noDataElement: 'Oops, no data ~',
     },
     Tag: {
       color: 'arcoblue',
       size: 'large',
     },
   };
-
   return (
     <ConfigProvider componentConfig={componentConfig}>
       <Space direction="vertical">
@@ -106,5 +104,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -14,16 +14,17 @@ title:
 The function will be executed when user click remove icon. Remove actions will be aborted when the return value is false or a Promise which resolve(false) or reject
 
 ```js
+import React from 'react';
 import { Upload, Modal } from '@arco-design/web-react';
 
-class Demo extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
         <Upload
           multiple
           action="/"
-          onRemove={file => {
+          onRemove={(file) => {
             return new Promise((resolve, reject) => {
               Modal.confirm({
                 title: 'onRemove',
@@ -51,5 +52,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

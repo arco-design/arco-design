@@ -14,51 +14,64 @@ title:
 The `title` parameter supports text or react nodes, which can support title bar display in various scenarios.
 
 ```js
+import React from 'react';
 import { Modal, Button } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
   const [visible, setVisible] = React.useState(false);
   const [visible1, setVisible1] = React.useState(false);
-
   return (
-      <div>
-        <Button onClick={() => setVisible(true)} type="primary">
-           Left align title
-        </Button>
-        <Modal
-          title={(
-            <div style={{ textAlign: 'left' }}> Modal Title </div>
-          )}
-          visible={visible}
-          onCancel={() => {setVisible(false);}}
-          onOk={() => {setVisible(false);}}
-        >
-          <p>Some content...</p>
-          <p>Some content...</p>
-          <p>Some content...</p>
-          <p>Some content...</p>
-          <p>Some content...</p>
-        </Modal>
+    <div>
+      <Button onClick={() => setVisible(true)} type="primary">
+        Left align title
+      </Button>
+      <Modal
+        title={
+          <div style={{ textAlign: 'left' }}>
+            Modal Title
+          </div>
+        }
+        visible={visible}
+        onCancel={() => {
+          setVisible(false);
+        }}
+        onOk={() => {
+          setVisible(false);
+        }}
+      >
+        <p>Some content...</p>
+        <p>Some content...</p>
+        <p>Some content...</p>
+        <p>Some content...</p>
+        <p>Some content...</p>
+      </Modal>
 
-
-        <Button onClick={() => setVisible1(true)} type="primary" style={{ marginLeft: 24 }}>
-           Center align title
-        </Button>
-        <Modal
-          title="Modal Title"
-          visible={visible1}
-          onCancel={() => {setVisible1(false);}}
-          onOk={() => {setVisible1(false);}}
-        >
-          <p>Some content...</p>
-          <p>Some content...</p>
-          <p>Some content...</p>
-          <p>Some content...</p>
-          <p>Some content...</p>
-        </Modal>
-      </div>
-  )
+      <Button
+        onClick={() => setVisible1(true)}
+        type="primary"
+        style={{ marginLeft: 24 }}
+      >
+        Center align title
+      </Button>
+      <Modal
+        title="Modal Title"
+        visible={visible1}
+        onCancel={() => {
+          setVisible1(false);
+        }}
+        onOk={() => {
+          setVisible1(false);
+        }}
+      >
+        <p>Some content...</p>
+        <p>Some content...</p>
+        <p>Some content...</p>
+        <p>Some content...</p>
+        <p>Some content...</p>
+      </Modal>
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

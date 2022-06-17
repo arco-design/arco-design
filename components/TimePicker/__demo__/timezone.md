@@ -20,45 +20,50 @@ Use `timezone` to set timezone, if set the `utcOffset`, `utcOffset` takes effect
 ```js
 import { useState } from 'react';
 import { TimePicker, Space, Select, Typography, Alert } from '@arco-design/web-react';
-
 const zoneList = ['America/Los_Angeles', 'Europe/London', 'Africa/Cairo', 'Asia/Shanghai'];
-
 const defaultValue = new Date('2022-02-22');
 
-function Demo() {
+function App() {
   const [timezone, setTimezone] = useState('Asia/Shanghai');
   const [value, setValue] = useState(defaultValue);
-
-  return <Space direction="vertical">
-    <Space>
-      <Select
-        defaultValue={timezone}
-        options={zoneList}
-        onChange={(tz) => setTimezone(tz)}
-        triggerProps={{
-          autoAlignPopupWidth: false,
-          position: 'bl',
-        }}
-      />
-      <TimePicker
-        showTime
-        timezone={timezone}
-        defaultValue={defaultValue}
-        onChange={(v, vd) => setValue(vd && vd.toDate())}
+  return (
+    <Space direction="vertical">
+      <Space>
+        <Select
+          defaultValue={timezone}
+          options={zoneList}
+          onChange={(tz) => setTimezone(tz)}
+          triggerProps={{
+            autoAlignPopupWidth: false,
+            position: 'bl',
+          }}
+        />
+        <TimePicker
+          showTime
+          timezone={timezone}
+          defaultValue={defaultValue}
+          onChange={(v, vd) => setValue(vd && vd.toDate())}
+        />
+      </Space>
+      <Alert
+        showIcon={false}
+        content={
+          <Space direction="vertical">
+            <div>
+              <Typography.Text bold>Locale String:</Typography.Text> {value.toLocaleString('en-US')}
+            </div>
+            <div>
+              <Typography.Text bold>ISO String:</Typography.Text> {value.toISOString()}
+            </div>
+            <div>
+              <Typography.Text bold>Timestamp:</Typography.Text> {value.valueOf()}
+            </div>
+          </Space>
+        }
       />
     </Space>
-    <Alert
-      showIcon={false}
-      content={
-        <Space direction="vertical">
-          <div><Typography.Text bold>Locale String:</Typography.Text> {value.toLocaleString('en-US')}</div>
-          <div><Typography.Text bold>ISO String:</Typography.Text> {value.toISOString()}</div>
-          <div><Typography.Text bold>Timestamp:</Typography.Text> {value.valueOf()}</div>
-        </Space>
-      }
-    />
-  </Space>;
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,7 +16,6 @@ Basic usage of Dropdown.
 ```js
 import { Dropdown, Menu, Button, Space } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-
 const dropList = (
   <Menu>
     <Menu.Item key="1">Beijing</Menu.Item>
@@ -25,7 +24,7 @@ const dropList = (
   </Menu>
 );
 
-function Demo() {
+function App() {
   return (
     <Space className="dropdown-demo">
       <Dropdown droplist={dropList} position="bl">
@@ -43,7 +42,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

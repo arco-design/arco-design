@@ -17,16 +17,15 @@ Omit multiple lines of text when there is insufficient space.
 
 **Note**: In the parent element `flex` mode, the omitted `Typography`'s `ellipsis` scene will be affected. You can add `width: 100%` to make the `Typography` fill the entire parent element.
 
-
 ```js
 import { useState } from 'react';
 import { Typography, Switch, Tag } from '@arco-design/web-react';
+const mockText =
+  'A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.';
+const mockTitle =
+  ' A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.';
 
-const mockText = 'A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.'
-
-const mockTitle = ' A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.'
-
-const Demo = () => {
+const App = () => {
   const [ellipsis, setEllipsis] = useState(true);
   return (
     <>
@@ -40,7 +39,17 @@ const Demo = () => {
         <Typography.Title heading={4} ellipsis={ellipsis}>
           {mockTitle}
         </Typography.Title>
-        <Typography.Paragraph ellipsis={ellipsis ? { rows: 2, showTooltip: true, expandable: true } : undefined}>
+        <Typography.Paragraph
+          ellipsis={
+            ellipsis
+              ? {
+                  rows: 2,
+                  showTooltip: true,
+                  expandable: true,
+                }
+              : undefined
+          }
+        >
           {mockText}
         </Typography.Paragraph>
       </div>
@@ -50,13 +59,30 @@ const Demo = () => {
           Ellipsis in flex scene
         </Typography.Title>
         <div style={{ display: 'flex' }}>
-          <Typography.Paragraph ellipsis={ellipsis ? { suffix: "----width: 100%" } : undefined} style={{ width: '100%' }}>
-          {mockTitle}
+          <Typography.Paragraph
+            ellipsis={
+              ellipsis
+                ? {
+                    suffix: '----width: 100%',
+                  }
+                : undefined
+            }
+            style={{ width: '100%' }}
+          >
+            {mockTitle}
           </Typography.Paragraph>
         </div>
         <div style={{ display: 'flex' }}>
-          <Typography.Paragraph ellipsis={ ellipsis ? { suffix: "----width: normal" } : undefined}>
-             {mockTitle}
+          <Typography.Paragraph
+            ellipsis={
+              ellipsis
+                ? {
+                    suffix: '----width: normal',
+                  }
+                : undefined
+            }
+          >
+            {mockTitle}
           </Typography.Paragraph>
         </div>
       </div>
@@ -64,5 +90,5 @@ const Demo = () => {
   );
 };
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

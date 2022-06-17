@@ -15,24 +15,26 @@ Specify `autoSize`, the text field will automatically adjust the height of the t
 
 ```js
 import { Input, Space } from '@arco-design/web-react';
-
 const TextArea = Input.TextArea;
 
-ReactDOM.render(
-  <Space wrap align="top">
-    <TextArea
-      placeholder="Please enter ..."
-      defaultValue="This is the contents of the textarea. "
-      autoSize
-      style={{ width: 350 }}
-    />
-    <TextArea
-      placeholder="Please enter ..."
-      autoSize={{ minRows: 2, maxRows: 6 }}
-      style={{ width: 350 }}
-      defaultValue="This is the contents of the textarea. This is the contents of the textarea. This is the contents of the textarea. "
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space wrap align="top">
+      <TextArea
+        placeholder="Please enter ..."
+        defaultValue="This is the contents of the textarea. "
+        autoSize
+        style={{ width: 350 }}
+      />
+      <TextArea
+        placeholder="Please enter ..."
+        autoSize={{ minRows: 2, maxRows: 6 }}
+        style={{ width: 350 }}
+        defaultValue="This is the contents of the textarea. This is the contents of the textarea. This is the contents of the textarea. "
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

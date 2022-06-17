@@ -16,12 +16,10 @@ Combine `Skeleton` to display the text skeleton before the data is loaded.
 ```js
 import { useState } from 'react';
 import { Card, Switch, Skeleton, Avatar, Link, Typography } from '@arco-design/web-react';
-
 const { Meta } = Card;
 
-function Demo() {
+function App() {
   const [loading, setLoading] = useState(true);
-
   return (
     <>
       <Switch
@@ -30,19 +28,27 @@ function Demo() {
         onChange={(checked) => setLoading(!checked)}
       />
       <Card
-        style={{ display: 'inline-block', verticalAlign: 'top', width: 384, margin: 20 }}
+        style={{
+          display: 'inline-block',
+          verticalAlign: 'top',
+          width: 384,
+          margin: 20,
+        }}
         cover={
           <Skeleton
             loading={loading}
-            text={{ rows: 0 }}
-            image={{ style: { width: 352, height: 188, margin: '16px 16px 0 16px' } }}
+            text={{
+              rows: 0,
+            }}
+            image={{
+              style: {
+                width: 352,
+                height: 188,
+                margin: '16px 16px 0 16px',
+              },
+            }}
           >
-            <div
-              style={{
-                height: 204,
-                overflow: 'hidden',
-              }}
-            >
+            <div style={{ height: 204, overflow: 'hidden' }}>
               <img
                 style={{ width: '100%', transform: 'translateY(-20px)' }}
                 alt="dessert"
@@ -55,13 +61,28 @@ function Demo() {
         <Meta
           avatar={
             <Skeleton
-              style={{ display: 'flex', alignItems: 'center', marginTop: 4 }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginTop: 4,
+              }}
               loading={loading}
               text={{ rows: 1, width: 64 }}
-              image={{ shape: 'circle', style: { width: 24, height: 24 } }}
+              image={{
+                shape: 'circle',
+                style: {
+                  width: 24,
+                  height: 24,
+                },
+              }}
             >
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Avatar size={24} style={{ marginRight: 8 }}>
+                <Avatar
+                  size={24}
+                  style={{
+                    marginRight: 8,
+                  }}
+                >
                   A
                 </Avatar>
                 <Typography.Text>Username</Typography.Text>
@@ -69,34 +90,62 @@ function Demo() {
             </Skeleton>
           }
           title={
-            <Skeleton loading={loading} style={{ marginTop: 0 }} text={{ rows: 1, width: 72 }}>
+            <Skeleton
+              loading={loading}
+              style={{ marginTop: 0 }}
+              text={{
+                rows: 1,
+                width: 72,
+              }}
+            >
               Card title
             </Skeleton>
           }
           description={
-            <Skeleton loading={loading} text={{ rows: 1, width: 150 }}>
+            <Skeleton
+              loading={loading}
+              text={{ rows: 1, width: 150 }}
+            >
               This is the description
             </Skeleton>
           }
         />
       </Card>
       <Card
-        style={{ display: 'inline-block', verticalAlign: 'top', width: 384, margin: 20 }}
+        style={{
+          display: 'inline-block',
+          verticalAlign: 'top',
+          width: 384,
+          margin: 20,
+        }}
         title={
-          <Skeleton loading={loading} text={{ rows: 1, width: 72 }}>
+          <Skeleton
+            loading={loading}
+            text={{ rows: 1, width: 72 }}
+          >
             Arco Card
           </Skeleton>
         }
         extra={
           <Skeleton
             loading={loading}
-            text={{ rows: 1, width: '100%', style: { width: 30, float: 'right' } }}
+            text={{
+              rows: 1,
+              width: '100%',
+              style: {
+                width: 30,
+                float: 'right',
+              },
+            }}
           >
             <Link>More</Link>
           </Skeleton>
         }
       >
-        <Skeleton loading={loading} text={{ rows: 2, width: ['100%', '80%'] }}>
+        <Skeleton
+          loading={loading}
+          text={{ rows: 2, width: ['100%', '80%'] }}
+        >
           ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around
           the world.
         </Skeleton>
@@ -104,13 +153,28 @@ function Demo() {
         <Meta
           avatar={
             <Skeleton
-              style={{ display: 'flex', alignItems: 'center', marginTop: 4 }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginTop: 4,
+              }}
               loading={loading}
               text={{ rows: 1, width: 64 }}
-              image={{ shape: 'circle', style: { width: 24, height: 24 } }}
+              image={{
+                shape: 'circle',
+                style: {
+                  width: 24,
+                  height: 24,
+                },
+              }}
             >
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Avatar size={24} style={{ marginRight: 8 }}>
+              <div
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <Avatar
+                  size={24}
+                  style={{ marginRight: 8 }}
+                >
                   A
                 </Avatar>
                 <Typography.Text>Username</Typography.Text>
@@ -123,5 +187,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

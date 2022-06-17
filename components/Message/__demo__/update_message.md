@@ -29,10 +29,13 @@ function updateMessage() {
   }, 2000);
 }
 
-ReactDOM.render(
-  <Button onClick={updateMessage} type="primary">
-    Update message
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button onClick={updateMessage} type="primary">
+      Update message
+    </Button>
+  );
+};
+
+export default App;
 ```

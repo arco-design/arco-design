@@ -16,25 +16,28 @@ Customize icon node. If true, the default icon will be displayed.
 import { Link, Space } from '@arco-design/web-react';
 import { IconEdit } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size={0} direction="vertical">
-    <Space size="large">
-      <Link href="#" icon>
-        Hyperlinks
-      </Link>
-      <Link href="#" icon disabled>
-        Hyperlinks
-      </Link>
+const App = () => {
+  return (
+    <Space size={0} direction="vertical">
+      <Space size="large">
+        <Link href="#" icon>
+          Hyperlinks
+        </Link>
+        <Link href="#" icon disabled>
+          Hyperlinks
+        </Link>
+      </Space>
+      <Space size="large">
+        <Link href="#" icon={<IconEdit />}>
+          Hyperlinks
+        </Link>
+        <Link href="#" icon={<IconEdit />} disabled>
+          Hyperlinks
+        </Link>
+      </Space>
     </Space>
-    <Space size="large">
-      <Link href="#" icon={<IconEdit />}>
-        Hyperlinks
-      </Link>
-      <Link href="#"  icon={<IconEdit />} disabled>
-        Hyperlinks
-      </Link>
-    </Space>
-  </Space>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

@@ -15,30 +15,31 @@ Use `dateRender` to customize date cells.
 
 ```js
 import { DatePicker } from '@arco-design/web-react';
-
 const highlightStyle = {
   border: '1px solid rgb(var(--arcoblue-6))',
 };
 
-ReactDOM.render(
-  <DatePicker
-    dateRender={(current) => {
-      const date = current.date();
-      const highlightDates = [6, 14, 22];
-
-      return (
-        <div className="arco-picker-date">
-          <div
-            className="arco-picker-date-value"
-            style={highlightDates.indexOf(date) > -1 ? highlightStyle : {}}
-          >
-            {current.date()}
+const App = () => {
+  return (
+    <DatePicker
+      dateRender={(current) => {
+        const date = current.date();
+        const highlightDates = [6, 14, 22];
+        return (
+          <div className="arco-picker-date">
+            <div
+              className="arco-picker-date-value"
+              style={highlightDates.indexOf(date) > -1 ? highlightStyle : {}}
+            >
+              {current.date()}
+            </div>
           </div>
-        </div>
-      );
-    }}
-    style={{ width: 200 }}
-  />,
-  CONTAINER
-);
+        );
+      }}
+      style={{ width: 200 }}
+    />
+  );
+};
+
+export default App;
 ```

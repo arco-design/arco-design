@@ -15,7 +15,6 @@ Specify the `disabled` field of an `option` as `true` to disable the option.
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -80,29 +79,32 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Space size="large" align="start">
-    <Cascader
-      allowClear
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      defaultValue={['beijing', 'Beijing', 'dongcheng', 'chaoyangmen']}
-      placeholder="Please select ..."
-      showSearch
-    />
-    <Cascader
-      allowClear
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      defaultValue={[
-        ['beijing', 'Beijing', 'dongcheng', 'chaoyangmen'],
-        ['beijing', 'Beijing', 'dongcheng', 'jianguo'],
-      ]}
-      placeholder="Please select ..."
-      mode="multiple"
-      showSearch
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large" align="start">
+      <Cascader
+        allowClear
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        defaultValue={['beijing', 'Beijing', 'dongcheng', 'chaoyangmen']}
+        placeholder="Please select ..."
+        showSearch
+      />
+      <Cascader
+        allowClear
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        defaultValue={[
+          ['beijing', 'Beijing', 'dongcheng', 'chaoyangmen'],
+          ['beijing', 'Beijing', 'dongcheng', 'jianguo'],
+        ]}
+        placeholder="Please select ..."
+        mode="multiple"
+        showSearch
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

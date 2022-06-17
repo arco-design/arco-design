@@ -17,12 +17,11 @@ The content can be customized through `title` and `footer`. When set to `null`, 
 import { useState } from 'react';
 import { Drawer, Button, Checkbox } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState(false);
   const [hasHeader, setHeader] = useState(true);
   const [hasFooter, setFooter] = useState(true);
   const [hasClose, setClose] = useState(true);
-
   return (
     <div>
       <Checkbox
@@ -79,5 +78,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

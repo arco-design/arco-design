@@ -15,7 +15,6 @@ The return value will be displayed in the input box
 
 ```js
 import { Cascader } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -57,15 +56,18 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Cascader
-    placeholder="Please select ..."
-    style={{ width: 300 }}
-    options={options}
-    defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
-    renderFormat={(valueShow) => `${valueShow.join(' > ')}`}
-    allowClear
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Cascader
+      placeholder="Please select ..."
+      style={{ width: 300 }}
+      options={options}
+      defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
+      renderFormat={(valueShow) => `${valueShow.join(' > ')}`}
+      allowClear
+    />
+  );
+};
+
+export default App;
 ```

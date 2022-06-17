@@ -16,13 +16,22 @@ The simplest usage.
 ```js
 import { Notification, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Button
-    onClick={() => Notification.info({ closable: false, title: 'Notification', content: 'This is a notification!' })}
-    type="primary"
-  >
-    Open Notification
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button
+      onClick={() =>
+        Notification.info({
+          closable: false,
+          title: 'Notification',
+          content: 'This is a notification!',
+        })
+      }
+      type="primary"
+    >
+      Open Notification
+    </Button>
+  );
+};
+
+export default App;
 ```

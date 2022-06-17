@@ -17,13 +17,24 @@ An icon can be added to the label by setting `icon`.
 import { Tag, Space } from '@arco-design/web-react';
 import { IconGitlab, IconTwitter, IconGithub, IconFacebook } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size="large">
-    <Tag color="gray" icon={<IconGithub />}>Github</Tag>
-    <Tag color="orangered" icon={<IconGitlab />}>Gitlab</Tag>
-    <Tag color="blue" icon={<IconTwitter />}>Twitter</Tag>
-    <Tag color="arcoblue" icon={<IconFacebook />}>Facebook</Tag>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Tag color="gray" icon={<IconGithub />}>
+        Github
+      </Tag>
+      <Tag color="orangered" icon={<IconGitlab />}>
+        Gitlab
+      </Tag>
+      <Tag color="blue" icon={<IconTwitter />}>
+        Twitter
+      </Tag>
+      <Tag color="arcoblue" icon={<IconFacebook />}>
+        Facebook
+      </Tag>
+    </Space>
+  );
+};
+
+export default App;
 ```

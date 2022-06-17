@@ -18,7 +18,13 @@ import { Progress } from '@arco-design/web-react';
 
 function Demo() {
   return (
-    <div style={{ display: 'inline-block', width: '40%', marginRight: '10%' }}>
+    <div
+      style={{
+        display: 'inline-block',
+        width: '40%',
+        marginRight: '10%',
+      }}
+    >
       <Progress steps={3} percent={30} style={{ marginBottom: 20 }} />
       <Progress steps={5} percent={100} status="warning" style={{ marginBottom: 20 }} />
       <Progress steps={5} size="small" percent={50} status="success" />
@@ -26,5 +32,9 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+const App = () => {
+  return <Demo />;
+};
+
+export default App;
 ```

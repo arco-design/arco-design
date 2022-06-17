@@ -15,25 +15,26 @@ In multiple mode, specify the `dragToSort` property to allow sort the entered va
 
 ```js
 import { Select, Message, Space } from '@arco-design/web-react';
-
 const Option = Select.Option;
-
 const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen'];
 
-ReactDOM.render(
-  <Select
-    placeholder="Please select"
-    style={{ width: 345 }}
-    mode="multiple"
-    dragToSort
-    defaultValue={options.slice(0, 3)}
-  >
-    {options.map((option, index) => (
-      <Option key={option} value={option}>
-        {option}
-      </Option>
-    ))}
-  </Select>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Select
+      placeholder="Please select"
+      style={{ width: 345 }}
+      mode="multiple"
+      dragToSort
+      defaultValue={options.slice(0, 3)}
+    >
+      {options.map((option, index) => (
+        <Option key={option} value={option}>
+          {option}
+        </Option>
+      ))}
+    </Select>
+  );
+};
+
+export default App;
 ```

@@ -16,9 +16,13 @@ A simple progress bar.
 ```js
 import { Progress } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Progress percent={30} width="40%" />
-  </div>,
-CONTAINER);
+const App = () => {
+  return (
+    <div>
+      <Progress percent={30} width="40%" />
+    </div>
+  );
+};
+
+export default App;
 ```

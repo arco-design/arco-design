@@ -11,7 +11,6 @@ skip: true
 ```js
 import { useState } from 'react';
 import { ConfigProvider, Button, Input, Radio } from '@arco-design/web-react';
-
 const themes = {
   blue: {
     primaryColor: '#3370ff',
@@ -27,9 +26,8 @@ const themes = {
   },
 };
 
-function Demo() {
+function App() {
   const [theme, setTheme] = useState(null);
-
   return (
     <ConfigProvider theme={theme && themes[theme]}>
       <Radio.Group
@@ -40,13 +38,19 @@ function Demo() {
         }}
         style={{ display: 'block', marginBottom: 40 }}
       />
-      <Button style={{ marginRight: 40 }} type="primary">
+      <Button
+        style={{ marginRight: 40 }}
+        type="primary"
+      >
         Button
       </Button>
-      <Input style={{ width: 200 }} placeholder="Please Enter ..." />
+      <Input
+        style={{ width: 200 }}
+        placeholder="Please Enter ..."
+      />
     </ConfigProvider>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,37 +16,32 @@ Use `size` to set the size of the avatar, which defaults to `40px`. Two `shape`s
 ```js
 import { Avatar, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size="large" direction="vertical">
-    <Space size="large">
-      <Avatar size={64}>
-        Arco
-      </Avatar>
-      <Avatar size={40}>
-        Arco
-      </Avatar>
-      <Avatar size={32}>
-        Arco
-      </Avatar>
-      <Avatar size={24}>
-        Arco
-      </Avatar>
+const App = () => {
+  return (
+    <Space size="large" direction="vertical">
+      <Space size="large">
+        <Avatar size={64}>Arco</Avatar>
+        <Avatar size={40}>Arco</Avatar>
+        <Avatar size={32}>Arco</Avatar>
+        <Avatar size={24}>Arco</Avatar>
+      </Space>
+      <Space size="large">
+        <Avatar size={64} shape="square">
+          Arco
+        </Avatar>
+        <Avatar size={40} shape="square">
+          Arco
+        </Avatar>
+        <Avatar size={32} shape="square">
+          Arco
+        </Avatar>
+        <Avatar size={24} shape="square">
+          Arco
+        </Avatar>
+      </Space>
     </Space>
-    <Space size="large">
-      <Avatar size={64} shape="square">
-        Arco
-      </Avatar>
-      <Avatar size={40} shape="square">
-        Arco
-      </Avatar>
-      <Avatar size={32} shape="square">
-        Arco
-      </Avatar>
-      <Avatar size={24} shape="square">
-        Arco
-      </Avatar>
-    </Space>
-  </Space>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

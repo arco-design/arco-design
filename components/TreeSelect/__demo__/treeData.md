@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 通过数据生成树结构
   en-US: Form TreeData
 ---
@@ -16,7 +16,6 @@ Generate a tree structure by `treeData`.
 ```js
 import { TreeSelect } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
-
 const treeData = [
   {
     key: 'node1',
@@ -47,8 +46,9 @@ const treeData = [
   },
 ];
 
-ReactDOM.render(
-  <TreeSelect treeData={treeData} placeholder="请选择..." style={{ width: 300 }} />,
-  CONTAINER
-);
+const App = () => {
+  return <TreeSelect treeData={treeData} placeholder="请选择..." style={{ width: 300 }} />;
+};
+
+export default App;
 ```

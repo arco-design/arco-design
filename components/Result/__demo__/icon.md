@@ -17,16 +17,18 @@ Custom icon.
 import { Result, Button } from '@arco-design/web-react';
 import { IconFaceSmileFill } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <div >
-    <Result
-      status={null}
-      icon={<IconFaceSmileFill style={{color: 'rgb(var(--arcoblue-6))'}} />}
-      title="Your operation has been performed."
-      extra={<Button type="primary">Back</Button>}
-    >
-    </Result>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Result
+        status={null}
+        icon={<IconFaceSmileFill style={{ color: 'rgb(var(--arcoblue-6))' }} />}
+        title="Your operation has been performed."
+        extra={<Button type="primary">Back</Button>}
+      ></Result>
+    </div>
+  );
+};
+
+export default App;
 ```

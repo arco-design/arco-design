@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 自定义节点
   en-US: Dot
 ---
@@ -16,64 +16,82 @@ The color and type of the node can be set through the attributes `dotColor`, `do
 ```js
 import { Timeline } from '@arco-design/web-react';
 import { IconClockCircle, IconCheck, IconExclamationCircleFill } from '@arco-design/web-react/icon';
-
 const TimelineItem = Timeline.Item;
 
-ReactDOM.render(
-  <div style={{ display: 'flex' }}>
-    <Timeline style={{ marginRight: 40 }}>
-      <TimelineItem label="2020-04-12" dotColor="#00B42A">
-        The first milestone
-      </TimelineItem>
-      <TimelineItem label="2020-05-17">The second milestone</TimelineItem>
-      <TimelineItem
-        label="2020-06-22"
-        dot={<IconClockCircle style={{ fontSize: 12, color: '#F53F3F' }} />}
-      >
-        The third milestone
-      </TimelineItem>
-      <TimelineItem label="2020-06-22" dotColor="var(--color-fill-4)">
-        The third milestone
-      </TimelineItem>
-    </Timeline>
+const App = () => {
+  return (
+    <div style={{ display: 'flex' }}>
+      <Timeline style={{ marginRight: 40 }}>
+        <TimelineItem label="2020-04-12" dotColor="#00B42A">
+          The first milestone
+        </TimelineItem>
+        <TimelineItem label="2020-05-17">The second milestone</TimelineItem>
+        <TimelineItem
+          label="2020-06-22"
+          dot={<IconClockCircle style={{ fontSize: 12, color: '#F53F3F' }} />}
+        >
+          The third milestone
+        </TimelineItem>
+        <TimelineItem label="2020-06-22" dotColor="var(--color-fill-4)">
+          The third milestone
+        </TimelineItem>
+      </Timeline>
 
-    <Timeline style={{ marginRight: 40 }}>
-      <TimelineItem
-        label="2020-04-12"
-        dot={
-          <IconCheck
-            style={{ fontSize: 12, padding: 2, boxSizing: 'border-box', borderRadius: '50%', backgroundColor: 'var(--color-primary-light-1)' }}
-          />
-        }
+      <Timeline
+        style={{
+          marginRight: 40,
+        }}
       >
-        The first milestone
-      </TimelineItem>
-      <TimelineItem
-        label="2020-05-17"
-        dot={
-          <IconCheck
-            style={{ fontSize: 12, padding: 2, boxSizing: 'border-box', borderRadius: '50%', backgroundColor: 'var(--color-primary-light-1)' }}
-          />
-        }
-      >
-        The second milestone
-      </TimelineItem>
-      <TimelineItem label="2020-06-22">The third milestone</TimelineItem>
-      <TimelineItem label="2020-06-22" dotColor="var(--color-fill-4)">
-        The third milestone
-      </TimelineItem>
-    </Timeline>
+        <TimelineItem
+          label="2020-04-12"
+          dot={
+            <IconCheck
+              style={{
+                fontSize: 12,
+                padding: 2,
+                boxSizing: 'border-box',
+                borderRadius: '50%',
+                backgroundColor: 'var(--color-primary-light-1)',
+              }}
+            />
+          }
+        >
+          The first milestone
+        </TimelineItem>
+        <TimelineItem
+          label="2020-05-17"
+          dot={
+            <IconCheck
+              style={{
+                fontSize: 12,
+                padding: 2,
+                boxSizing: 'border-box',
+                borderRadius: '50%',
+                backgroundColor: 'var(--color-primary-light-1)',
+              }}
+            />
+          }
+        >
+          The second milestone
+        </TimelineItem>
+        <TimelineItem label="2020-06-22">The third milestone</TimelineItem>
+        <TimelineItem label="2020-06-22" dotColor="var(--color-fill-4)">
+          The third milestone
+        </TimelineItem>
+      </Timeline>
 
-    <Timeline>
-      <TimelineItem label="2020-04-12">The first milestone</TimelineItem>
-      <TimelineItem label="2020-05-17" dotColor="var(--color-fill-4)">
-        The second milestone
-      </TimelineItem>
-      <TimelineItem label="2020-06-22" dotColor="var(--color-fill-4)">
-        The third milestone
-      </TimelineItem>
-    </Timeline>
-  </div>,
-  CONTAINER
-);
+      <Timeline>
+        <TimelineItem label="2020-04-12">The first milestone</TimelineItem>
+        <TimelineItem label="2020-05-17" dotColor="var(--color-fill-4)">
+          The second milestone
+        </TimelineItem>
+        <TimelineItem label="2020-06-22" dotColor="var(--color-fill-4)">
+          The third milestone
+        </TimelineItem>
+      </Timeline>
+    </div>
+  );
+};
+
+export default App;
 ```

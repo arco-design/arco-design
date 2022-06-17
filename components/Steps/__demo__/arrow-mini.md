@@ -1,6 +1,6 @@
 ---
 order: 7
-title: 
+title:
   zh-CN: 迷你箭头步骤条
   en-US: Mini Arrow Step Bar
 ---
@@ -15,22 +15,24 @@ By specifying `type:'arrow', size:'small'`, you can use mini-arrow type step bar
 
 ```js
 import { Steps } from '@arco-design/web-react';
-
 const Step = Steps.Step;
 
-ReactDOM.render(
-  <div>
-    <Steps type="arrow" size="small" current={2} style={{ maxWidth: 780, marginBottom: 20 }}>
-      <Step title="Succeeded" />
-      <Step title="Processing" />
-      <Step title="Pending" />
-    </Steps>
-    <Steps type="arrow" size="small" status="error" current={2} style={{ maxWidth: 780 }}>
-      <Step title="Succeeded" />
-      <Step title="Processing" />
-      <Step title="Pending" />
-    </Steps>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Steps type="arrow" size="small" current={2} style={{ maxWidth: 780, marginBottom: 20 }}>
+        <Step title="Succeeded" />
+        <Step title="Processing" />
+        <Step title="Pending" />
+      </Steps>
+      <Steps type="arrow" size="small" status="error" current={2} style={{ maxWidth: 780 }}>
+        <Step title="Succeeded" />
+        <Step title="Processing" />
+        <Step title="Pending" />
+      </Steps>
+    </div>
+  );
+};
+
+export default App;
 ```

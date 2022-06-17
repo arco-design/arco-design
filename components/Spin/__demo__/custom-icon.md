@@ -17,15 +17,13 @@ By specifying `icon`, you can specify a custom icon as a loading component.
 import { Spin, Card, Link } from '@arco-design/web-react';
 import { IconLoading } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   return (
     <Spin loading={true} size={30} icon={<IconLoading />}>
       <Card
-        style={{ width: 360 }}
+        style={{ width: 360, }}
         title="Arco Card"
-        extra={
-          <Link> More </Link>
-        }
+        extra={<Link> More </Link>}
       >
         ByteDance's core product, Toutiao ("Headlines"), is a content platform in China and around
         the world. Toutiao started out as a news recommendation engine and gradually evolved into a
@@ -35,5 +33,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

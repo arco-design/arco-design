@@ -14,6 +14,7 @@ title:
 Set `showSearch=true` to enable the search function. You can only search in the loaded data during dynamic loading. The default keyword search is to match from the `value` field. You can also pass in `filterTreeNode` to customize the filtering method.
 
 ```js
+import React from 'react';
 import { TreeSelect, Space } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
 
@@ -31,14 +32,14 @@ const treeData = [
           {
             title: 'Leaf 0-0-1-1',
             value: 'Leaf 0-0-1-1',
-            key: '0-0-1-1'
+            key: '0-0-1-1',
           },
           {
             title: 'Leaf 0-0-1-2',
             value: 'Leaf 0-0-1-2',
-            key: '0-0-1-2'
-          }
-        ]
+            key: '0-0-1-2',
+          },
+        ],
       },
     ],
   },
@@ -56,8 +57,8 @@ const treeData = [
             title: 'Leaf 0-1-1-0',
             value: 'Leaf 0-1-1-0',
             key: '0-1-1-0',
-          }
-        ]
+          },
+        ],
       },
       {
         title: 'Branch 0-1-2',
@@ -68,19 +69,20 @@ const treeData = [
             title: 'Leaf 0-1-2-0',
             value: 'Leaf 0-1-2-0',
             key: '0-1-2-0',
-          }
-        ]
+          },
+        ],
       },
     ],
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   handleChange = (value) => {
     console.log(value);
-    this.setState({ value });
+    this.setState({
+      value,
+    });
   };
-
   filterTreeNode = (inputText, node) => {
     return node.props.title.toLowerCase().indexOf(inputText.toLowerCase()) > -1;
   };
@@ -96,8 +98,8 @@ class Demo extends React.Component {
           onChange={this.handleChange}
           treeProps={{
             onSelect: (v, n) => {
-              console.log(n)
-            }
+              console.log(n);
+            },
           }}
           style={{ width: 300 }}
         />
@@ -107,8 +109,8 @@ class Demo extends React.Component {
           allowClear={true}
           treeProps={{
             onSelect: (v, n) => {
-              console.log(n)
-            }
+              console.log(n);
+            },
           }}
           treeData={treeData}
           filterTreeNode={this.filterTreeNode}
@@ -120,5 +122,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

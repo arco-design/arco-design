@@ -17,9 +17,8 @@ Basic usage of Drawer. Click the trigger button to slide out the drawer from the
 import { useState } from 'react';
 import { Drawer, Button } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState(false);
-
   return (
     <div>
       <Button
@@ -49,5 +48,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

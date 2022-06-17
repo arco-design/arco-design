@@ -9,7 +9,6 @@ title:
 
 在对话框中使用表单时，如提交表单，点击确定后异步关闭对话框。
 
-
 ## en-US
 
 When using a form in a dialog, such as submitting a form, click OK to close the dialog asynchronously.
@@ -17,10 +16,9 @@ When using a form in a dialog, such as submitting a form, click OK to close the 
 ```js
 import { useState } from 'react';
 import { Modal, Button, Form, Input, Select, Message } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
@@ -59,8 +57,12 @@ function Demo() {
         <Form
           {...formItemLayout}
           form={form}
-          labelCol={{ style: { flexBasis: 90 } }}
-          wrapperCol={{ style: { flexBasis: 'calc(100% - 90px)' } }}
+          labelCol={{
+            style: { flexBasis: 90 },
+          }}
+          wrapperCol={{
+            style: { flexBasis: 'calc(100% - 90px)' },
+          }}
         >
           <FormItem label="Name" field="name" rules={[{ required: true }]}>
             <Input placeholder="" />
@@ -74,5 +76,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

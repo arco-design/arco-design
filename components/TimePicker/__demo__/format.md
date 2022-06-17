@@ -17,12 +17,15 @@ By setting `format`, you can customize the hour, minute, and second.
 import { TimePicker } from '@arco-design/web-react';
 import dayjs from 'dayjs';
 
-ReactDOM.render(
-  <TimePicker
-    format="HH:mm"
-    defaultValue={dayjs('09:24', 'HH:mm')}
-    style={{ width: 130 }}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <TimePicker
+      format="HH:mm"
+      defaultValue={dayjs('09:24', 'HH:mm')}
+      style={{ width: 130, }}
+    />
+  );
+};
+
+export default App;
 ```

@@ -16,5 +16,9 @@ Specify `Rate` as read-only via `readonly`.
 ```js
 import { Rate } from '@arco-design/web-react';
 
-ReactDOM.render(<Rate readonly defaultValue={3.5} allowHalf />, CONTAINER);
+const App = () => {
+  return <Rate readonly defaultValue={3.5} allowHalf />;
+};
+
+export default App;
 ```

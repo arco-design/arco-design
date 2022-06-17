@@ -14,12 +14,11 @@ title:
 Divide a panel into two parts with adjustable width or height. Use `direction` to control the direction of the split.
 
 ```js
-import { useState } from 'react'
+import { useState } from 'react';
 import { ResizeBox, Tag, Space, Radio } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [direction, setDirection] = useState('horizontal');
-
   return (
     <Space direction="vertical" size={20}>
       <Radio.Group
@@ -30,7 +29,11 @@ function Demo() {
       />
       <ResizeBox.Split
         direction={direction}
-        style={{ height: 300, width: 300, border: '1px solid var(--color-border)' }}
+        style={{
+          height: 300,
+          width: 300,
+          border: '1px solid var(--color-border)',
+        }}
         max={0.8}
         min={0.2}
         panes={[
@@ -39,12 +42,12 @@ function Demo() {
           </Tag>,
           <Tag key="second" color="green">
             Second
-          </Tag>
+          </Tag>,
         ]}
       />
     </Space>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

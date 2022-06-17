@@ -16,21 +16,24 @@ Set whether to be disabled via `disabled`, and set whether to be readonly via `r
 ```js
 import { Mentions, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size={40}>
-    <Mentions
-      style={{ width: 154 }}
-      readOnly
-      defaultValue="Bytedance"
-      options={['Bytedance', 'Bytedesign', 'Bytenumner']}
-    />
-    <Mentions
-      style={{ width: 154 }}
-      disabled
-      defaultValue="Bytedance"
-      options={['Bytedance', 'Bytedesign', 'Bytenumner']}
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size={40}>
+      <Mentions
+        style={{ width: 154 }}
+        readOnly
+        defaultValue="Bytedance"
+        options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+      />
+      <Mentions
+        style={{ width: 154 }}
+        disabled
+        defaultValue="Bytedance"
+        options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

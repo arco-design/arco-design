@@ -16,11 +16,11 @@ Complete the input according to the query result (with group).
 ```js
 import { useState } from 'react';
 import { AutoComplete, Input } from '@arco-design/web-react';
-
 const { OptGroup, Option } = AutoComplete;
 
-function Demo() {
+function App() {
   const [data, setData] = useState([]);
+
   const handleSearch = (inputValue) => {
     if (inputValue) {
       setData(
@@ -55,5 +55,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

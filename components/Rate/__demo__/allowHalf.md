@@ -16,5 +16,9 @@ Specify `allowHalf` to support half selection.
 ```js
 import { Rate } from '@arco-design/web-react';
 
-ReactDOM.render(<Rate allowHalf defaultValue={2.5} />, CONTAINER);
+const App = () => {
+  return <Rate allowHalf defaultValue={2.5} />;
+};
+
+export default App;
 ```

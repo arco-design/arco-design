@@ -16,13 +16,17 @@ Drag files to a specific area, to upload.
 ```js
 import { Upload } from '@arco-design/web-react';
 
+const App = () => {
+  return (
+    <Upload
+      drag
+      multiple
+      accept="image/*"
+      action="/"
+      tip="Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB"
+    />
+  );
+};
 
-ReactDOM.render(
-  <Upload
-    drag
-    multiple
-    accept="image/*"
-    action="/"
-    tip="Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB"
-  />, CONTAINER);
+export default App;
 ```

@@ -15,17 +15,16 @@ A textarea input example.
 
 ```js
 import { Input, Space } from '@arco-design/web-react';
-
 const TextArea = Input.TextArea;
 
-ReactDOM.render(
-  <Space wrap>
-    <TextArea
-      placeholder="Please enter ..."
-      style={{ minHeight: 64, width: 350 }}
-    />
-    <TextArea defaultValue="Disabled" style={{ minHeight: 64, width: 350 }} disabled />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space wrap>
+      <TextArea placeholder="Please enter ..." style={{ minHeight: 64, width: 350 }} />
+      <TextArea defaultValue="Disabled" style={{ minHeight: 64, width: 350 }} disabled />
+    </Space>
+  );
+};
+
+export default App;
 ```

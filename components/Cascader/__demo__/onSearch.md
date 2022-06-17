@@ -14,36 +14,39 @@ title:
 Customize the search logic by `onSearch`
 
 ```js
+import React from 'react';
 import { Cascader, Divider, Spin, Space } from '@arco-design/web-react';
 
 const genOptions = (keyword) => {
-  return !keyword ? [] : [
-    {
-      label: keyword,
-      value: keyword + '-value',
-      children: [
+  return !keyword
+    ? []
+    : [
         {
-          label: `${keyword}-1`,
-          value: `${keyword}-value-1`,
+          label: keyword,
+          value: keyword + '-value',
+          children: [
+            {
+              label: `${keyword}-1`,
+              value: `${keyword}-value-1`,
+            },
+            {
+              label: `${keyword}-2`,
+              value: `${keyword}-value-2`,
+            },
+          ],
         },
-        {
-          label: `${keyword}-2`,
-          value: `${keyword}-value-2`,
-        },
-      ],
-    },
-  ];
+      ];
 };
 
-function Demo() {
+function App() {
   const [options, setOptions] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
   const handleSearch = (inputValue) => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
       setOptions(genOptions(inputValue));
-      setLoading(false)
+      setLoading(false);
     }, 200);
   };
 
@@ -60,12 +63,25 @@ function Demo() {
         }}
         loading={loading}
         dropdownRender={(menu) => {
-          return loading ? <div style={{height: 100, width: 300, textAlign: 'center', lineHeight: '100px'}}><Spin /></div> : menu
+          return loading ? (
+            <div
+              style={{
+                height: 100,
+                width: 300,
+                textAlign: 'center',
+                lineHeight: '100px',
+              }}
+            >
+              <Spin />
+            </div>
+          ) : (
+            menu
+          );
         }}
       />
     </Space>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

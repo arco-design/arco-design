@@ -15,13 +15,16 @@ Display animation effects. Only work when `type` is `'line'`.
 ```js
 import { Progress } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Progress percent={80} animation width={300} />
-    <br/>
-    <br/>
-    <Progress percent={80} status="success" animation width={300}/>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Progress percent={80} animation width={300} />
+      <br />
+      <br />
+      <Progress percent={80} status="success" animation width={300} />
+    </div>
+  );
+};
+
+export default App;
 ```

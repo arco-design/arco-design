@@ -19,21 +19,28 @@ Use `affix=true` to wrap the anchor within [Affix](/react/components/affix) comp
 
 ```js
 import { Anchor } from '@arco-design/web-react';
-
 const AnchorLink = Anchor.Link;
 
-ReactDOM.render(
-  <Anchor
-    offsetBottom={40}
-    affixStyle={{ position: 'absolute', right: -170, top: '50%', zIndex: 1 }}
-  >
-    <AnchorLink href="#Basic" title="Basic" />
-    <AnchorLink href="#Static" title="Static" />
-    <AnchorLink href="#Lineless-mode" title="Lineless mode" />
-    <AnchorLink href="#Affix" title="Affix" />
-    <AnchorLink href="#Scroll-boundary" title="Scroll boundary" />
-    <AnchorLink href="#Hash-mode" title="Hash mode" />
-  </Anchor>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Anchor
+      offsetBottom={40}
+      affixStyle={{
+        position: 'absolute',
+        right: -170,
+        top: '50%',
+        zIndex: 1,
+      }}
+    >
+      <AnchorLink href="#Basic" title="Basic" />
+      <AnchorLink href="#Static" title="Static" />
+      <AnchorLink href="#Lineless-mode" title="Lineless mode" />
+      <AnchorLink href="#Affix" title="Affix" />
+      <AnchorLink href="#Scroll-boundary" title="Scroll boundary" />
+      <AnchorLink href="#Hash-mode" title="Hash mode" />
+    </Anchor>
+  );
+};
+
+export default App;
 ```

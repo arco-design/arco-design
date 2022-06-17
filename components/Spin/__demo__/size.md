@@ -16,12 +16,15 @@ Set `size` to get different sizes of loading icons.
 ```js
 import { Spin, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size={40}>
-    <Spin size={20} />
-    <Spin size={30} />
-    <Spin size={40} />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size={40}>
+      <Spin size={20} />
+      <Spin size={30} />
+      <Spin size={40} />
+    </Space>
+  );
+};
+
+export default App;
 ```

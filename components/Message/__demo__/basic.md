@@ -16,15 +16,18 @@ The simplest usage.
 ```js
 import { Message, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Button
-    onClick={() => {
-      Message.info('This is an info message!');
-    }}
-    type="primary"
-  >
-    Open Message
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button
+      onClick={() => {
+        Message.info('This is an info message!');
+      }}
+      type="primary"
+    >
+      Open Message
+    </Button>
+  );
+};
+
+export default App;
 ```

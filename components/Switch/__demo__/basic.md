@@ -16,5 +16,9 @@ Basic usage.
 ```js
 import { Switch } from '@arco-design/web-react';
 
-ReactDOM.render(<Switch />, CONTAINER);
+const App = () => {
+  return <Switch />;
+};
+
+export default App;
 ```

@@ -16,5 +16,9 @@ The dot type indicator can be displayed by specifying the `dot` property.
 ```js
 import { Spin } from '@arco-design/web-react';
 
-ReactDOM.render(<Spin dot />, CONTAINER);
+const App = () => {
+  return <Spin dot />;
+};
+
+export default App;
 ```

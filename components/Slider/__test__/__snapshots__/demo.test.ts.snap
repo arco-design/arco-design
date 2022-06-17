@@ -1507,7 +1507,6 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
         class="arco-switch-dot"
       />
     </button>
-     
     <span
       class="arco-typography"
     >

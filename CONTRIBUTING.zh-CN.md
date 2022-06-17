@@ -71,6 +71,10 @@ $ yarn test
 $ yarn demo
 ```
 
+### 组件 demo
+
+组件 demo 为一个完整的代码片段，建议使用 `tsx` 标记代码块语言，并安装[TS in Markdown](https://marketplace.visualstudio.com/items?itemName=amour1688.ts-in-markdown)，以便在编辑器中获得语法提示。代码块里的「默认导出」就是 demo 的渲染内容。
+
 ## Commit 指南
 
 Commit messages 请遵循[conventional-changelog 标准](https://www.conventionalcommits.org/en/v1.0.0/)：

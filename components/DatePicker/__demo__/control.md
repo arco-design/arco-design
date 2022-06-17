@@ -17,15 +17,13 @@ title:
 import { useState, useEffect } from 'react';
 import { DatePicker, Space } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [value, setValue] = useState();
   const [valueRange, setValueRange] = useState();
-
   useEffect(() => {
     setValue(Date.now());
     setValueRange([Date.now(), Date.now()]);
   }, []);
-
   return (
     <Space>
       <DatePicker
@@ -44,5 +42,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -1,6 +1,6 @@
 ---
 order: 7
-title: 
+title:
   zh-CN: 标签文本位置
   en-US: Label Position
 ---
@@ -14,15 +14,15 @@ title:
 The position of the label text can be set by `labelPosition`.
 
 ```js
+import React from 'react';
 import { Timeline, Grid, Radio, Typography } from '@arco-design/web-react';
 
 const TimelineItem = Timeline.Item;
 const { Row, Col } = Grid;
 
-function Demo() {
+function App() {
   const [mode, setMode] = React.useState('left');
   const [pos, setLabelPos] = React.useState('same');
-
   return (
     <div>
       <Row align="center">
@@ -31,8 +31,14 @@ function Demo() {
           value={pos}
           onChange={setLabelPos}
           options={[
-            { label: 'same', value: 'same' },
-            { label: 'relative', value: 'relative' },
+            {
+              label: 'same',
+              value: 'same',
+            },
+            {
+              label: 'relative',
+              value: 'relative',
+            },
           ]}
         />
       </Row>
@@ -42,9 +48,18 @@ function Demo() {
           value={mode}
           onChange={setMode}
           options={[
-            { label: 'left', value: 'left' },
-            { label: 'right', value: 'right' },
-            { label: 'alternate', value: 'alternate' },
+            {
+              label: 'left',
+              value: 'left',
+            },
+            {
+              label: 'right',
+              value: 'right',
+            },
+            {
+              label: 'alternate',
+              value: 'alternate',
+            },
           ]}
         />
       </Row>
@@ -63,5 +78,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

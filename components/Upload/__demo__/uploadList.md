@@ -15,7 +15,6 @@ Default upload list.
 
 ```js
 import { Upload, Radio, Modal } from '@arco-design/web-react';
-
 const defaultFileList = [
   {
     uid: '-1',
@@ -37,14 +36,13 @@ const defaultFileList = [
   },
 ];
 
-ReactDOM.render(
-  <div>
-    <Upload
-      action="/"
-      multiple
-      defaultFileList={defaultFileList}
-    ></Upload>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Upload action="/" multiple defaultFileList={defaultFileList}></Upload>
+    </div>
+  );
+};
+
+export default App;
 ```

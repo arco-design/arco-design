@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 
+title:
   zh-CN: 低版本受控模式
   en-US: Control below
 skip: true
@@ -27,22 +27,25 @@ You can also perform Form validation. In other words, you don't need to add even
 Set the initial value by setting initialValue to Form.Control instead of defaultValue.
 
 ```js
+import React from 'react';
 import { Form, Input, InputNumber, Message } from '@arco-design/web-react';
 
 const FormItem = Form.Item;
 const FormControl = Form.Control;
 
-class Demo extends React.Component {
+class App extends React.Component {
   onSubmit = () => {
-    this.form.validate().then((values) => {
-      Message.info('提交成功！');
-      console.log('Values: ', values);
-    }).catch((error) => {
-      console.log(error.message);
-      console.log(error.errors);
-    });
+    this.form
+      .validate()
+      .then((values) => {
+        Message.info('提交成功！');
+        console.log('Values: ', values);
+      })
+      .catch((error) => {
+        console.log(error.message);
+        console.log(error.errors);
+      });
   };
-
   onValuesChange = (value, allValues) => {
     console.log(value, allValues);
   };
@@ -71,15 +74,7 @@ class Demo extends React.Component {
           </FormControl>
         </FormItem>
         <FormItem label="数字" required>
-          <FormControl
-            field="number"
-            rules={[
-              {
-                type: 'number',
-                required: true
-              },
-            ]}
-          >
+          <FormControl field="number" rules={[{ type: 'number', required: true }]}>
             <InputNumber placeholder="请输入数字" />
           </FormControl>
         </FormItem>
@@ -88,5 +83,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

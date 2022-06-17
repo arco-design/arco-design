@@ -16,5 +16,9 @@ Basic usage of Rate.
 ```js
 import { Rate } from '@arco-design/web-react';
 
-ReactDOM.render(<Rate />, CONTAINER);
+const App = () => {
+  return <Rate />;
+};
+
+export default App;
 ```

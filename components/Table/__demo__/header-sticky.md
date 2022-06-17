@@ -16,7 +16,6 @@ Cooperate with `react-sticky@6.0.3` to achieve the effect of header sticky.
 ```js
 import { Table } from '@arco-design/web-react';
 import { StickyContainer, Sticky } from 'react-sticky';
-
 const columns = [
   {
     title: 'Name',
@@ -35,7 +34,6 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -78,7 +76,14 @@ function Wrapper(props) {
   return (
     <Sticky topOffset={-60}>
       {({ style, isSticky }) => (
-        <div style={{ ...style, top: isSticky ? 60 : 0, zIndex: 3, overflow: 'auto' }}>
+        <div
+          style={{
+            ...style,
+            top: isSticky ? 60 : 0,
+            zIndex: 3,
+            overflow: 'auto',
+          }}
+        >
           {props.children}
         </div>
       )}
@@ -92,13 +97,18 @@ const components = {
   },
 };
 
-function Demo() {
+function App() {
   return (
     <StickyContainer>
       <Table
         components={components}
-        scroll={{ y: true }}
-        border={{ wrapper: true, cell: true }}
+        scroll={{
+          y: true,
+        }}
+        border={{
+          wrapper: true,
+          cell: true,
+        }}
         columns={columns}
         data={data}
       />
@@ -106,5 +116,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

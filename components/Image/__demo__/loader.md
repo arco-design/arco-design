@@ -16,17 +16,19 @@ There is no loading effect by default. Default loading effect can be enabled wit
 Loading
 
 ```js
+import React from 'react';
 import { Image, Button } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [timestamp, setTimestamp] = React.useState('');
-
   return (
     <div>
       <div>
         <Button
           type="primary"
-          onClick={() => { setTimestamp(Date.now()) }}
+          onClick={() => {
+            setTimestamp(Date.now());
+          }}
           style={{ marginBottom: 20 }}
         >
           reload
@@ -51,10 +53,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```
 
 ```css

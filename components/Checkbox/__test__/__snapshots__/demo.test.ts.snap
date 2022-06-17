@@ -932,7 +932,7 @@ exports[`renders Checkbox/demo/group_jsx.md correctly 1`] = `
         <span
           class="arco-checkbox-text"
         >
-           Option 2 
+          Option 2
         </span>
       </label>
     </div>

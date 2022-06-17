@@ -16,10 +16,13 @@ In addition to the default head switch, it also supports dropdown selection of h
 ```js
 import { Calendar } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div style={{width: '100%', overflow: 'auto'}}>
-    <Calendar defaultValue="2020-04-01" headerType="select" />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div style={{ width: '100%', overflow: 'auto' }}>
+      <Calendar defaultValue="2020-04-01" headerType="select" />
+    </div>
+  );
+};
+
+export default App;
 ```

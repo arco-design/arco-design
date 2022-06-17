@@ -1,6 +1,6 @@
 ---
 order: 8
-title: 
+title:
   zh-CN: 自定义位置
   en-US: Customize Position
 ---
@@ -14,12 +14,12 @@ title:
 Use `alignCenter` combined with `style` to set the position of the dialog.
 
 ```js
+import React from 'react';
 import { Modal, Button } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [visible, setVisible] = React.useState(false);
   const [visible1, setVisible1] = React.useState(false);
-
   return (
     <div>
       <Button onClick={() => setVisible(true)} type="primary">
@@ -57,5 +57,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

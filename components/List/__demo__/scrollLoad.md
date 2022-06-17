@@ -17,7 +17,7 @@ You can set `onReachBottom` to dynamically loading data when the list is scrolli
 import { useState, useEffect } from 'react';
 import { List, Avatar, Spin } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [mockData, setMockData] = useState([]);
   const [scrollLoading, setScrollLoading] = useState(<Spin loading={true} />);
 
@@ -37,7 +37,6 @@ function Demo() {
   useEffect(() => {
     fetchData(1);
   }, []);
-
   return (
     <List
       style={{ width: 600, maxHeight: 320 }}
@@ -61,5 +60,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

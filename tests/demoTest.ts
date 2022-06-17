@@ -3,6 +3,7 @@ import glob from 'glob';
 import { render } from 'enzyme';
 import './mockDate';
 import ReactDOM from 'react-dom';
+import React from 'react';
 
 beforeAll(() => {
   ReactDOM.createPortal = jest.fn(() => {
@@ -22,8 +23,8 @@ function demoTest(component: string) {
     const length = splits.length;
     const fileName = splits[length - 1];
     it(`renders ${component}/demo/${fileName} correctly`, () => {
-      const demo = require(file).default;
-      const wrapper = render(demo);
+      const Demo = require(file).default;
+      const wrapper = render(React.createElement(Demo));
       expect(wrapper).toMatchSnapshot();
     });
   });

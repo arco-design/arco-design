@@ -16,36 +16,45 @@ Customize the display of uploaded files
 import { Upload, Card, Modal } from '@arco-design/web-react';
 import { IconEye, IconDelete } from '@arco-design/web-react/icon';
 
-function Demo () {
+function App() {
   const renderUploadList = (filesList, props) => (
-    <div style={{ display: 'flex', marginTop: 20 }}>
+    <div style={{ display: 'flex', marginTop: 20, }} >
       {filesList.map((file) => {
         const url = file.url || URL.createObjectURL(file.originFile);
         return (
           <Card
             key={file.uid}
             hoverable
-            style={{ width: 140, marginRight: 10 }}
-            bodyStyle={{ padding: '4px 8px' }}
-            cover={<img src={url} style={{width: '100%'}} />}
+            style={{
+              width: 140,
+              marginRight: 10,
+            }}
+            bodyStyle={{ padding: '4px 8px', }}
+            cover={
+              <img
+                src={url}
+                style={{ width: '100%', }}
+              />
+            }
             actions={[
               <div
                 onClick={() => {
                   Modal.info({
                     title: '预览',
-                    content: <img src={file.url} width="100%" />
-                  })
+                    content: <img src={file.url} width="100%" />,
+                  });
                 }}
-                >
-                <IconEye style={{fontSize: 12}} />
+              >
+                <IconEye style={{ fontSize: 12, }} />
               </div>,
               <div>
-                <IconDelete style={{fontSize: 12}}
+                <IconDelete
+                  style={{ fontSize: 12, }}
                   onClick={() => {
                     props.onRemove(file);
                   }}
                 />
-              </div>
+              </div>,
             ]}
           >
             <Card.Meta description={file.name.split('.')[0]} />
@@ -77,6 +86,5 @@ function Demo () {
   );
 }
 
-
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,14 +16,20 @@ title:
 You can set the status of the progress. If `showText` is `false`, the percentage text will not be displayed.
 
 ```js
+import React from 'react';
 import { Progress, Slider } from '@arco-design/web-react';
 
 function Demo() {
   const [value, setValue] = React.useState(30);
-
   return (
     <div>
-      <div style={{ display: 'inline-block', width: '40%', marginRight: '10%' }}>
+      <div
+        style={{
+          display: 'inline-block',
+          width: '40%',
+          marginRight: '10%',
+        }}
+      >
         <Progress
           percent={value}
           color="#C9CDD4"
@@ -54,5 +60,9 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+const App = () => {
+  return <Demo />;
+};
+
+export default App;
 ```

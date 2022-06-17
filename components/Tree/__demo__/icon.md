@@ -15,12 +15,10 @@ The property `icon` of `TreeNode` can specify an icon for the node.
 
 ```js
 import { Tree } from '@arco-design/web-react';
-import {  IconStar } from '@arco-design/web-react/icon';
-
+import { IconStar } from '@arco-design/web-react/icon';
 const TreeNode = Tree.Node;
 
-function Demo () {
-
+function App() {
   return (
     <Tree>
       <TreeNode icon={<IconStar />} key="node1" title="Trunk">
@@ -31,11 +29,8 @@ function Demo () {
         <TreeNode icon={<IconStar />} key="node5" title="Leaf" />
       </TreeNode>
     </Tree>
-  )
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

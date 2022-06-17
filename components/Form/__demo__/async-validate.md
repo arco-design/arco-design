@@ -19,44 +19,46 @@ p.s: If using `lodash.debounce` does not work, it is recommended to use `debounc
 
 ```js
 import { Form, Input, Button, Message, InputNumber } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
 
-function Demo() {
+function App() {
   const [form] = Form.useForm();
-
   return (
     <Form
       form={form}
-      style={{ width: 600 }}
+      style={{
+        width: 600,
+      }}
     >
       <FormItem
         label="Username"
         field="name"
         required
-        rules={[{
-          validator: async (value, callback) => {
-            return new Promise((resolve) => {
-              if (value !== "admin") {
-                setTimeout(() => {
-                  callback("Name must be admin");
+        rules={[
+          {
+            validator: async (value, callback) => {
+              return new Promise((resolve) => {
+                if (value !== 'admin') {
+                  setTimeout(() => {
+                    callback('Name must be admin');
+                    resolve();
+                  }, 1000);
+                } else {
                   resolve();
-                }, 1000);
-              } else {
-                resolve();
-              }
-            })
-          }
-        }]}
+                }
+              });
+            },
+          },
+        ]}
       >
-        <Input placeholder='please enter your username' />
+        <Input placeholder="please enter your username" />
       </FormItem>
-      <FormItem
-        wrapperCol={{
-          offset: 5,
-        }}
-      >
-        <Button type="primary" htmlType="submit" style={{ marginRight: 24 }}>
+      <FormItem wrapperCol={{ offset: 5 }}>
+        <Button
+          type="primary"
+          htmlType="submit"
+          style={{ marginRight: 24 }}
+        >
           Submit
         </Button>
         <Button
@@ -72,8 +74,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

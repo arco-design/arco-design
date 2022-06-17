@@ -1,6 +1,6 @@
 ---
 order: 8
-title: 
+title:
   zh-CN: 步骤切换
   en-US: Switch Steps
 ---
@@ -17,10 +17,9 @@ You can jump to different steps by modifying the `current` parameter.
 import { useState } from 'react';
 import { Steps, Button } from '@arco-design/web-react';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
-
 const Step = Steps.Step;
 
-function Demo() {
+function App() {
   const [current, setCurrent] = useState(1);
 
   function renderContent(step) {
@@ -37,11 +36,23 @@ function Demo() {
         <div style={{ lineHeight: '160px' }}>Step{step} Content</div>
 
         <div>
-          <Button type="secondary" disabled={current <= 1} onClick={() => setCurrent(current - 1)} style={{ paddingLeft: 8 }}>
-            <IconLeft />Back
+          <Button
+            type="secondary"
+            disabled={current <= 1}
+            onClick={() => setCurrent(current - 1)}
+            style={{ paddingLeft: 8 }}
+          >
+            <IconLeft />
+            Back
           </Button>
-          <Button disabled={current >= 3} onClick={() => setCurrent(current + 1)} style={{ marginLeft: 20, paddingRight: 8 }} type="primary">
-            Next<IconRight />
+          <Button
+            disabled={current >= 3}
+            onClick={() => setCurrent(current + 1)}
+            style={{ marginLeft: 20, paddingRight: 8 }}
+            type="primary"
+          >
+            Next
+            <IconRight />
           </Button>
         </div>
       </div>
@@ -49,16 +60,20 @@ function Demo() {
   }
 
   return (
-    <div style={{ maxWidth: 780 }}>
+    <div
+      style={{
+        maxWidth: 780,
+      }}
+    >
       <Steps current={current}>
-          <Step title="Succeeded" />
-          <Step title="Processing" />
-          <Step title="Pending" />
-        </Steps>
+        <Step title="Succeeded" />
+        <Step title="Processing" />
+        <Step title="Pending" />
+      </Steps>
       {renderContent(current)}
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

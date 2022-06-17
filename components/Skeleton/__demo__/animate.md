@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 动画
   en-US: Animation
 ---
@@ -14,12 +14,12 @@ title:
 Display animation effects.
 
 ```js
+import React from 'react';
 import { Skeleton, Switch, Avatar, Typography } from '@arco-design/web-react';
 
-class DemoSkeleton extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       loading: true,
     };
@@ -54,9 +54,15 @@ class DemoSkeleton extends React.Component {
               Arco
             </Avatar>
             <Typography>
-              <Typography.Paragraph style={{ margin: 0 }}>This is content, this is content, this is content</Typography.Paragraph>
-              <Typography.Paragraph  style={{ margin: 0 }}>This is content, this is content</Typography.Paragraph>
-              <Typography.Paragraph  style={{ margin: 0 }}>This is content, this is content</Typography.Paragraph>
+              <Typography.Paragraph style={{ margin: 0 }}>
+                This is content, this is content, this is content
+              </Typography.Paragraph>
+              <Typography.Paragraph style={{ margin: 0 }}>
+                This is content, this is content
+              </Typography.Paragraph>
+              <Typography.Paragraph style={{ margin: 0 }}>
+                This is content, this is content
+              </Typography.Paragraph>
             </Typography>
           </div>
         </Skeleton>
@@ -65,5 +71,5 @@ class DemoSkeleton extends React.Component {
   }
 }
 
-ReactDOM.render(<DemoSkeleton />, CONTAINER);
+export default App;
 ```

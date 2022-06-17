@@ -19,7 +19,8 @@ import { Modal, Button, Space } from '@arco-design/web-react';
 function info() {
   Modal.info({
     title: 'Info Notification',
-    content: 'This is an info description which directly indicates a neutral informative change or action. (e.g., "We are providing new services for all developers.") '
+    content:
+      'This is an info description which directly indicates a neutral informative change or action. (e.g., "We are providing new services for all developers.") ',
   });
 }
 
@@ -32,30 +33,37 @@ function success() {
 function warning() {
   Modal.warning({
     title: 'Warning Notification',
-    content: 'This is a warning description which directly indicates a warning that might need attention. (e.g., "Invalid request, please contact admininstration.")',
+    content:
+      'This is a warning description which directly indicates a warning that might need attention. (e.g., "Invalid request, please contact admininstration.")',
   });
 }
 
 function error() {
   Modal.error({
     title: 'Error Notification',
-    content: 'This is an error description which directly indicates a dangerous or potentially negative action. (e.g., "It’s a invalid request.")',
+    content:
+      'This is an error description which directly indicates a dangerous or potentially negative action. (e.g., "It’s a invalid request.")',
   });
 }
 
-ReactDOM.render(
-  <Space size="large">
-    <Button type="primary" onClick={info}>
-      Info
-    </Button>
-    <Button type='primary' status="success" onClick={success}>
-      Success
-    </Button>
-    <Button type='primary' status="warning" onClick={warning}>
-      Warning
-    </Button>
-    <Button type='primary' status="danger" onClick={error}>Error</Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Button type="primary" onClick={info}>
+        Info
+      </Button>
+      <Button type="primary" status="success" onClick={success}>
+        Success
+      </Button>
+      <Button type="primary" status="warning" onClick={warning}>
+        Warning
+      </Button>
+      <Button type="primary" status="danger" onClick={error}>
+        Error
+      </Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

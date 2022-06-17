@@ -6,16 +6,15 @@ title:
 ---
 
 ## zh-CN
+
 我们提供多种预设色彩的徽标样式。如果预设值不能满足你的需求，`color` 字段也可以设置自定义色值。
 
 ## en-US
 
 We provide a variety of preset colors for the badge. You can also set a custom color with `color` property.
 
-
 ```js
 import { Badge, Divider } from '@arco-design/web-react';
-
 const COLORS = [
   'red',
   'orangered',
@@ -28,9 +27,8 @@ const COLORS = [
   'purple',
   'pinkpurple',
   'magenta',
-  'gray'
+  'gray',
 ];
-
 const COLORS_CUSTOM = [
   '#F53F3F',
   '#7816FF',
@@ -47,24 +45,23 @@ const COLORS_CUSTOM = [
   '#FF5722',
 ];
 
-ReactDOM.render(
-  <div>
+const App = () => {
+  return (
     <div>
-      {
-        COLORS.map(color => {
-          return <Badge key={color} color={color} text={color} style={{marginRight: 24}}> </Badge>
-        })
-      }
+      <div>
+        {COLORS.map((color) => {
+          return <Badge key={color} color={color} text={color} style={{ marginRight: 24 }}> </Badge>;
+        })}
+      </div>
+      <br />
+      <div>
+        {COLORS_CUSTOM.map((color) => {
+          return <Badge key={color} color={color} text={color} style={{ marginRight: 24 }}> </Badge>;
+        })}
+      </div>
     </div>
-    <br/>
-    <div>
-      {
-        COLORS_CUSTOM.map(color => {
-          return <Badge key={color} color={color} text={color} style={{ marginRight: 24 }}> </Badge>
-        })
-      }
-    </div>
-  </div>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

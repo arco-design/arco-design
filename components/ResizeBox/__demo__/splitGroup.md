@@ -14,14 +14,21 @@ title:
 Multiple panels can be split through `SplitGroup`, and it also supports quick collapse and manual drag;
 
 ```js
-import { useState } from 'react'
+import { useState } from 'react';
 import { ResizeBox, Typography } from '@arco-design/web-react';
 import { IconDoubleLeft, IconDoubleRight } from '@arco-design/web-react/icon';
 const { Paragraph, Text } = Typography;
-
 const panes = [
-  { size: 0.2, collapsible: { prev: true } },
-  { size: 0.4, min: '50px' },
+  {
+    size: 0.2,
+    collapsible: {
+      prev: true,
+    },
+  },
+  {
+    size: 0.4,
+    min: '50px',
+  },
   {
     resizable: false,
     collapsible: {
@@ -50,10 +57,20 @@ const panes = [
       );
     },
   },
-  {}
+  {},
 ];
-
-const verticalPanes = [{ collapsible: true }, { min:0.1, collapsible: { next: true } }, {}];
+const verticalPanes = [
+  {
+    collapsible: true,
+  },
+  {
+    min: 0.1,
+    collapsible: {
+      next: true,
+    },
+  },
+  {},
+];
 
 const HorizontalSplitGroup = () => {
   const [offsets, setOffsets] = useState([]);
@@ -100,17 +117,25 @@ const VerticalSplitGroup = () => {
   );
 };
 
-function Demo() {
+function App() {
   return (
     <ResizeBox.SplitGroup
       direction="vertical"
       className="resizebox-split-group-demo"
-      panes={[{ content: <HorizontalSplitGroup /> ,size: 0.4 }, { content: <VerticalSplitGroup /> }]}
+      panes={[
+        {
+          content: <HorizontalSplitGroup />,
+          size: 0.4,
+        },
+        {
+          content: <VerticalSplitGroup />,
+        },
+      ]}
     />
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

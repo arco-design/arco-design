@@ -19,21 +19,29 @@ title:
 
 ```js
 import { Select, Typography } from '@arco-design/web-react';
-
 const Option = Select.Option;
 const options = new Array(10000).fill(null).map((value, index) => `Item ${index}`);
 
-ReactDOM.render(
-  <>
-    <Typography.Title heading={6}>10000 items</Typography.Title>
-    <Select mode="multiple" allowCreate placeholder="Select a tag" allowClear style={{ width: 345 }}>
-      {options.map((option) => (
-        <Option key={option} value={option}>
-          {option}
-        </Option>
-      ))}
-    </Select>
-  </>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <>
+      <Typography.Title heading={6}>10000 items</Typography.Title>
+      <Select
+        mode="multiple"
+        allowCreate
+        placeholder="Select a tag"
+        allowClear
+        style={{ width: 345 }}
+      >
+        {options.map((option) => (
+          <Option key={option} value={option}>
+            {option}
+          </Option>
+        ))}
+      </Select>
+    </>
+  );
+};
+
+export default App;
 ```

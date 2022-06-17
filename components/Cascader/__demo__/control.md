@@ -14,6 +14,7 @@ title:
 Control the selected value.
 
 ```js
+import React from 'react';
 import { Cascader, Space } from '@arco-design/web-react';
 
 const options = [
@@ -69,18 +70,18 @@ const options = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     value: undefined,
     value1: undefined,
   };
 
-  componentDidMount () {
+  componentDidMount() {
     setTimeout(() => {
       this.setState({
-        value: [["beijing", "Beijing", "chaoyang", "datunli"]]
-      })
-    }, 200)
+        value: [['beijing', 'Beijing', 'chaoyang', 'datunli']],
+      });
+    }, 200);
   }
 
   render() {
@@ -93,11 +94,12 @@ class Demo extends React.Component {
           showSearch
           value={this.state.value1}
           onChange={(value, option) => {
-            console.log(option)
-            this.setState({ value1: value })
+            console.log(option);
+            this.setState({
+              value1: value,
+            });
           }}
-        >
-        </Cascader>
+        ></Cascader>
         <Cascader
           placeholder="Please select ..."
           style={{ width: 300, marginBottom: 20 }}
@@ -107,7 +109,9 @@ class Demo extends React.Component {
           value={this.state.value}
           onChange={(value, options) => {
             console.log(value, options);
-            this.setState({ value })
+            this.setState({
+              value,
+            });
           }}
         />
       </Space>
@@ -115,5 +119,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

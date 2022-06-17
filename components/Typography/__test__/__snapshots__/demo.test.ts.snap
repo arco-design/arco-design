@@ -18,7 +18,7 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
   <div
     class="arco-typography"
   >
-    In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered 
+    In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered
     <span
       class="arco-typography"
     >
@@ -72,7 +72,7 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
         product
       </code>
     </span>
-     or 
+     or
     <span
       class="arco-typography"
     >

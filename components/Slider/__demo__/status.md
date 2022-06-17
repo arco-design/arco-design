@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 基础状态
   en-US: State
 ---
@@ -16,14 +16,14 @@ Default state and disabled state.
 ```js
 import { Slider } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
   return (
     <div>
-      <Slider defaultValue={30} style={{ width: 200 }}/>
-      <Slider defaultValue={30} disabled={true} style={{ width: 200, marginLeft: 74 }}/>
+      <Slider defaultValue={30} style={{ width: 200 }} />
+      <Slider defaultValue={30} disabled={true} style={{ width: 200, marginLeft: 74 }} />
     </div>
-  )
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

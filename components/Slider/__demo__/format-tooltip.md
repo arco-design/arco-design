@@ -1,8 +1,8 @@
 ---
 order: 9
-title: 
-    zh-CN: 自定义提示
-    en-US: Customize Tooltip
+title:
+  zh-CN: 自定义提示
+  en-US: Customize Tooltip
 ---
 
 ## zh-CN
@@ -16,21 +16,17 @@ Use `formatterTooltip` to format the content of Tooltip.
 ```js
 import { Slider } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
+  function formatTooltip(val) {
+    return <span>{val}%</span>;
+  }
 
-    function formatTooltip (val) {
-        return <span>{val}%</span>;
-    };
-
-    return (
-        <div style={{ width: 200 }}>
-            <Slider
-                defaultValue={20}
-                formatTooltip={formatTooltip}
-            />
-        </div>
-    )
+  return (
+    <div style={{ width: 200 }}>
+      <Slider defaultValue={20} formatTooltip={formatTooltip} />
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,17 +16,14 @@ Dropdown with SubMenu.
 ```js
 import { Dropdown, Menu, Button } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
-
 const data = [
   ['Beijing', ['Haidian', 'Chaoyang', 'Daxing']],
   ['Shanghai', ['Pudong', 'Huangpu', 'Xuhui']],
   ['Guangzhou', ['Baiyun', 'Tianhe', 'Fanyu']],
   ['Shenzhen', ['Futian', 'Luohu', 'Nanshan']],
 ];
-
 const dropList = (
   <Menu>
     {data.map((city, outerIndex) => {
@@ -48,7 +45,7 @@ const dropList = (
   </Menu>
 );
 
-function Demo() {
+function App() {
   return (
     <div className="dropdown-demo">
       <Dropdown trigger="click" droplist={dropList} position="bl">
@@ -61,7 +58,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

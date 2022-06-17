@@ -14,14 +14,14 @@ title:
 Countdown component. You can use `now` to correct the initialization time.
 
 ```js
+import React from 'react';
 import { Statistic, Message, Button } from '@arco-design/web-react';
 
 const Countdown = Statistic.Countdown;
-
 const now = Date.now();
 
-function Demo () {
-  const [start, setStart] = React.useState(false)
+function App() {
+  const [start, setStart] = React.useState(false);
 
   const _now = Date.now();
 
@@ -29,7 +29,11 @@ function Demo () {
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <Countdown
         title="Countdown"
-        style={{ marginRight: 60, marginBottom: 20, minWidth: 80 }}
+        style={{
+          marginRight: 60,
+          marginBottom: 20,
+          minWidth: 80,
+        }}
         value={now + 1000 * 60 * 60 * 2}
         now={now}
       />
@@ -37,7 +41,11 @@ function Demo () {
         title="Milliseconds"
         value={now + 1000 * 60 * 60 * 2}
         format="HH:mm:ss.SSS"
-        style={{ marginRight: 60, marginBottom: 20, minWidth: 180 }}
+        style={{
+          marginRight: 60,
+          marginBottom: 20,
+          minWidth: 180,
+        }}
         now={now}
       />
       <Countdown
@@ -45,7 +53,11 @@ function Demo () {
         value={now + 1000 * 60 * 60 * 24 * 4}
         format="D 天 H 时 m 分 s 秒"
         now={now}
-        style={{ marginRight: 60, marginBottom: 20, minWidth: 200}}
+        style={{
+          marginRight: 60,
+          marginBottom: 20,
+          minWidth: 200,
+        }}
       />
       <div style={{ display: 'inline-block', marginBottom: 20 }}>
         <Countdown
@@ -55,13 +67,15 @@ function Demo () {
           start={start}
           now={_now}
           onFinish={() => {
-            Message.info({ content: 'Finish!' });
-            setStart(false)
+            Message.info({
+              content: 'Finish!',
+            });
+            setStart(false);
           }}
         />
         <Button
           onClick={() => {
-            setStart(true)
+            setStart(true);
           }}
           style={{ display: 'block', marginTop: 10 }}
           type="primary"
@@ -70,8 +84,8 @@ function Demo () {
         </Button>
       </div>
     </div>
-  )
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

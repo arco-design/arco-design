@@ -16,18 +16,19 @@ Through the prop `checkable`, the effect of clicking and selecting can be achiev
 ```js
 import { Tag, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size="large">
-    <Tag checkable>
-      Awesome
-    </Tag>
-    <Tag checkable color="red" defaultChecked>
-      Toutiao
-    </Tag>
-    <Tag checkable color="arcoblue" defaultChecked>
-      Lark
-    </Tag>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Tag checkable>Awesome</Tag>
+      <Tag checkable color="red" defaultChecked>
+        Toutiao
+      </Tag>
+      <Tag checkable color="arcoblue" defaultChecked>
+        Lark
+      </Tag>
+    </Space>
+  );
+};
+
+export default App;
 ```

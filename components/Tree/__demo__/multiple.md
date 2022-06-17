@@ -16,9 +16,7 @@ Add `multiple={true}` to `Tree` to enable multiple selection.
 ```js
 import { useState } from 'react';
 import { Tree, Checkbox, Typography } from '@arco-design/web-react';
-
 const TreeNode = Tree.Node;
-
 const TreeData = [
   {
     title: 'Trunk 0-0',
@@ -35,9 +33,9 @@ const TreeData = [
         children: [
           {
             title: 'Leaf',
-            key: '0-0-2-1'
-          }
-        ]
+            key: '0-0-2-1',
+          },
+        ],
       },
     ],
   },
@@ -58,7 +56,7 @@ const TreeData = [
             title: 'Leaf',
             key: '0-1-1-2',
           },
-        ]
+        ],
       },
       {
         title: 'Leaf',
@@ -68,38 +66,37 @@ const TreeData = [
   },
 ];
 
-function Demo () {
-  const [selectedKeys, setSelectedKeys] = useState([])
-  const [checked, setChecked] = useState(true)
-  return <div>
-    <Checkbox
-      style={{marginBottom: 24}}
-      checked={checked}
-      onChange={(value) => {
-        setChecked(value)
-        setSelectedKeys([])
-      }}
-    > multiple </Checkbox>
+function App() {
+  const [selectedKeys, setSelectedKeys] = useState([]);
+  const [checked, setChecked] = useState(true);
+  return (
+    <div>
+      <Checkbox
+        style={{ marginBottom: 24 }}
+        checked={checked}
+        onChange={(value) => {
+          setChecked(value);
+          setSelectedKeys([]);
+        }}
+      >
+        multiple
+      </Checkbox>
 
-    <br/>
-    <Typography.Text>
-      Current: {selectedKeys.join(' , ')}
-    </Typography.Text>
-    <br/>
-    <Tree
-      multiple={checked}
-      selectedKeys={selectedKeys}
-      onSelect={(value, extra) => {
-        console.log(value, extra)
-        setSelectedKeys(value)
-      }}
-      treeData={TreeData}
-    ></Tree>
-  </div>
+      <br />
+      <Typography.Text>Current: {selectedKeys.join(' , ')}</Typography.Text>
+      <br />
+      <Tree
+        multiple={checked}
+        selectedKeys={selectedKeys}
+        onSelect={(value, extra) => {
+          console.log(value, extra);
+          setSelectedKeys(value);
+        }}
+        treeData={TreeData}
+      ></Tree>
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```
