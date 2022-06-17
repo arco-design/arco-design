@@ -45,7 +45,7 @@ export default function TokenTable({ lang, type, data, isDark }) {
       title: t.varValue,
       dataIndex: 'value',
       width: 250,
-      render: (_, item, index) => {
+      render: (_, item) => {
         const varValue = isDark ? item.darkValue ?? item.value : item.value;
         return <ValueCopy text={varValue} />;
       },
@@ -64,5 +64,5 @@ export default function TokenTable({ lang, type, data, isDark }) {
     },
   ];
 
-  return <Table columns={columns} data={data} pagination={false} />;
+  return <Table columns={columns} data={data} pagination={false} rowKey="name" />;
 }

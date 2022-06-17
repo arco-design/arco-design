@@ -483,13 +483,13 @@ export const tokens = [
         value: '16px',
       },
       {
-        name: 'font-size-title-1',
+        name: 'font-size-title-2',
         desc: '标题-中',
         descEN: 'Title - Medium',
         value: '20px',
       },
       {
-        name: 'font-size-title-1',
+        name: 'font-size-title-3',
         desc: '标题-大',
         descEN: 'Title - Large',
         value: '24px',
