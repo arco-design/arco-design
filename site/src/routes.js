@@ -5,6 +5,7 @@ const Palette = lazyLoad(() => import('./pages/palette'));
 const Version = lazyLoad(() => import('./pages/changelog/v2'));
 const Icon = lazyLoad(() => import('./pages/icon'));
 const OverView = lazyLoad(() => import('./pages/overview'));
+const Token = lazyLoad(() => import('./pages/token'));
 
 export default function getRoutes(lang = 'zh', t) {
   const suffix = lang === 'zh-CN' ? '.zh-CN' : '.en-US';
@@ -29,6 +30,11 @@ export default function getRoutes(lang = 'zh', t) {
           name: t['routes.palette'],
           path: 'docs/palette',
           component: Palette,
+        },
+        {
+          name: t['routes.token'],
+          path: 'docs/token',
+          component: Token,
         },
         {
           name: t['routes.i18n'],
