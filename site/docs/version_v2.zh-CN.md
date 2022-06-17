@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.35.1
+
+2022-06-17
+
+### 💎 功能优化
+
+- `Select` 组件通过 Dom Attribute 标记用户正在创建和已经创建的选项。([#1011](https://github.com/arco-design/arco-design/pull/1011))
+
+### 🐛 问题修复
+
+- 修复了黑暗模式下 `Tooltip` 箭头样式问题([#995](https://github.com/arco-design/arco-design/pull/995))
+- 修复 `Table` 组件在树形数据时会改变原始 data 的 bug。([#990](https://github.com/arco-design/arco-design/pull/990))
+
 ## 2.35.0
 
 2022-06-10

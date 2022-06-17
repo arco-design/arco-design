@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.35.1
+
+2022-06-17
+
+### 💎 Enhancement
+
+- The `Select` component uses the Dom Attribute to mark options that the user is creating and has already created.([#1011](https://github.com/arco-design/arco-design/pull/1011))
+
+### 🐛 BugFix
+
+- Fixed arrow style of `Tooltip` in dark mode([#995](https://github.com/arco-design/arco-design/pull/995))
+- Fix the bug that `Table` component will change the original data when tree data.([#990](https://github.com/arco-design/arco-design/pull/990))
+
 ## 2.35.0
 
 2022-06-10

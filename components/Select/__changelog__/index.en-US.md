@@ -1,3 +1,11 @@
+## 2.35.1
+
+2022-06-17
+
+### 💎 Enhancement
+
+- The `Select` component uses the Dom Attribute to mark options that the user is creating and has already created.([#1011](https://github.com/arco-design/arco-design/pull/1011))
+
 ## 2.35.0
 
 2022-06-10

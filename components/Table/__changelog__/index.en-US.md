@@ -1,3 +1,11 @@
+## 2.35.1
+
+2022-06-17
+
+### 🐛 BugFix
+
+- Fix the bug that `Table` component will change the original data when tree data.([#990](https://github.com/arco-design/arco-design/pull/990))
+
 ## 2.35.0
 
 2022-06-10
