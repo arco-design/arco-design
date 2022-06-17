@@ -1,11 +1,11 @@
+/* eslint-disable no-console */
 import React, { useRef, useState } from 'react';
-import { Button, Divider, Tooltip, Avatar } from '@self';
-import List from '@self/_class/VirtualList';
+import { List, Tooltip, Button, Avatar } from '@self';
+import { ListHandle } from '@self/List/interface';
 
-const MyItem = ({ id, randomNumber, height }, ref) => {
+const MyItem = ({ id, randomNumber }: { id: number; randomNumber: number }) => {
   return (
     <div
-      ref={ref}
       style={{
         position: 'relative',
         boxSizing: 'border-box',
@@ -73,9 +73,7 @@ const MyItem = ({ id, randomNumber, height }, ref) => {
   );
 };
 
-const ForwardMyItem = React.forwardRef(MyItem);
-
-const getData = (size) => {
+const getData = (size: number) => {
   const data = [];
   for (let i = 0; i < size; i += 1) {
     data.push({
@@ -87,38 +85,44 @@ const getData = (size) => {
   return data;
 };
 
-const Demo1 = () => {
-  const listRef = useRef(null);
-  const [virtual, setVirtual] = useState(true);
-  const [data, setData] = useState(getData(200));
-
+function Demo1() {
+  const [data] = useState(getData(100));
+  const refList = useRef(null as any as ListHandle);
   return (
-    <React.StrictMode>
-      <Button onClick={() => setVirtual(!virtual)}>{`Virtual: ${virtual}`}</Button>
-      <Button onClick={() => setData(data.concat(getData(1)))}>Append 1</Button>
-      <Button onClick={() => setData(data.concat(getData(50)))}>Append 50</Button>
-      <Button onClick={() => setData(data.slice(50))}>Remove 50 before</Button>
-      <Button onClick={() => listRef.current.scrollTo({ index: 50 })}>Scroll To 50</Button>
-      <Divider>${data.length} Items</Divider>
-      <List
-        threshold={virtual ? 100 : null}
-        isStaticItemHeight={false}
-        ref={listRef}
-        data={data}
-        itemKey="id"
-        style={{
-          border: '1px solid pink',
-          boxSizing: 'border-box',
+    <div>
+      <Button
+        style={{ marginBottom: 24 }}
+        onClick={() => {
+          refList.current?.scrollIntoView(50);
         }}
       >
-        {(item) => <ForwardMyItem {...item} />}
-      </List>
-    </React.StrictMode>
+        Scroll to 50
+      </Button>
+      <List
+        listRef={refList}
+        header={`${data.length} Items`}
+        dataSource={data}
+        virtualListProps={{
+          height: 600,
+          scrollOptions: {
+            block: 'center',
+          },
+        }}
+        render={(item, index) => {
+          return (
+            <List.Item key={index}>
+              <MyItem {...item} />
+            </List.Item>
+          );
+        }}
+        onReachBottom={() => console.log('list reach bottom')}
+      />
+    </div>
   );
-};
+}
 
 export const Demo = () => <Demo1 />;
 
 export default {
-  title: 'Private Components/VirtualList',
+  title: 'List',
 };

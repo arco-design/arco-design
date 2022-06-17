@@ -1,122 +1,76 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
-import { Select, Spin } from '@self';
 
-const generateOptions = (size: number) => {
-  return new Array(size).fill(1).map((_, index) => {
-    return {
-      label: `${new Array(~~(index / 2)).join('-')} ${index}`,
-      value: index,
-    };
-  });
-};
+import React from 'react';
+import { useState, useRef, useCallback } from 'react';
+import debounce from 'lodash/debounce';
+import { Select, Spin, Avatar } from '@self';
 
-function Demo1() {
-  const [options, setOptions] = useState(generateOptions(50));
-  const [loading, setLoading] = useState(false);
-  const [inputValue, setInputValue] = useState('');
+export function Demo() {
+  const [options, setOptions] = useState([]);
+  const [fetching, setFetching] = useState(false);
 
-  const loadMore = async () => {
-    await new Promise((resolve) => {
-      setTimeout(resolve, 2000);
-    });
-    setOptions(generateOptions(options.length + 50));
-    setLoading(false);
-  };
+  const refFetchId = useRef<number | null>(null);
 
-  // function tagRender(props, index, total) {
-  //   if (total > 3) {
-  //     return index === 0 ? (
-  //       <span style={{ marginLeft: 8 }}>{`你已经选择了 ${total} 项`}</span>
-  //     ) : null;
-  //   }
+  const debouncedFetchUser = useCallback(
+    debounce(() => {
+      refFetchId.current = Date.now();
+      const fetchId = refFetchId.current;
 
-  //   const { closable, onClose, label, value } = props;
-  //   return (
-  //     <Tag color={value} closable={closable} onClose={onClose} style={{ margin: '2px 6px 2px 0' }}>
-  //       {label}
-  //     </Tag>
-  //   );
-  // }
+      setFetching(true);
+      setOptions([]);
 
-  const _options = [
-    'red',
-    'orangered',
-    'orange',
-    'gold',
-    'lime',
-    'green',
-    'cyan',
-    'blue',
-    'arcoblue',
-    'purple',
-    'magenta',
-  ];
+      fetch('https://randomuser.me/api/?results=5')
+        .then((response) => response.json())
+        .then((body) => {
+          if (refFetchId.current === fetchId) {
+            const options = body.results.map((user: any) => ({
+              label: (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <Avatar size={24} style={{ marginLeft: 6, marginRight: 12 }}>
+                    <img alt="avatar" src={user.picture.thumbnail} />
+                  </Avatar>
+                  {`${user.name.first} ${user.name.last}`}
+                </div>
+              ),
+              value: user.email,
+            }));
+
+            setFetching(false);
+            setOptions(options);
+          }
+        });
+    }, 500),
+    []
+  );
 
   return (
-    <form onSubmit={() => alert('submit')}>
-      <Select
-        style={{ width: 300 }}
-        options={options}
-        placeholder="Please Select"
-        triggerProps={{
-          autoAlignPopupWidth: false,
-        }}
-        dropdownRender={(menu) => {
-          return (
-            <Spin loading={loading} style={{ width: '100%' }}>
-              {menu}
-              <div onClick={loadMore}>加载更多...</div>
-            </Spin>
-          );
-        }}
-      >
-        <Select.OptGroup label="Group 1">
-          <Select.Option value="G1_V1">G1 V1</Select.Option>
-          <Select.Option value="G1_V2">G1 V2</Select.Option>
-          <Select.OptGroup label="Group 2">
-            <Select.Option value="G2_V1">G2 V1</Select.Option>
-            <Select.Option value="G2_V2">G2 V1</Select.Option>
-          </Select.OptGroup>
-        </Select.OptGroup>
-      </Select>
-      <Select
-        style={{ width: 300 }}
-        showSearch
-        options={options}
-        placeholder="Please Select"
-        onFocus={() => console.log('onFocus 2')}
-        onBlur={() => console.log('onBlur 2')}
-      />
-      <Select
-        style={{ width: 300 }}
-        mode="multiple"
-        allowClear
-        allowCreate
-        tokenSeparators={[',', '\n', '\t']}
-        options={options}
-        placeholder="Please Select"
-        onFocus={() => console.log('onFocus 3')}
-        onBlur={() => console.log('onBlur 3')}
-        inputValue={inputValue}
-        onInputValueChange={(value) => setInputValue(value.slice(0, 10))}
-      />
-      <Select
-        dragToSort
-        style={{ maxWidth: 350, marginRight: 20 }}
-        allowClear
-        placeholder="Please Select"
-        mode="multiple"
-        defaultValue={_options.slice(0, 2)}
-        options={_options}
-        animation={false}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <Select
+      style={{ width: 345 }}
+      labelInValue
+      value={[{ label: 'HELLO', value: 'hello' }]}
+      showSearch
+      allowCreate
+      mode="multiple"
+      options={options}
+      placeholder="Search by name"
+      filterOption={false}
+      notFoundContent={
+        fetching ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Spin style={{ margin: 12 }} />
+          </div>
+        ) : null
+      }
+      onSearch={debouncedFetchUser}
+    />
   );
 }
-
-export const Demo = () => <Demo1 />;
 
 export default {
   title: 'Select',

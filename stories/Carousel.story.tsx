@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import React, { useRef } from 'react';
+import React, { CSSProperties, useRef } from 'react';
 import { Carousel, Button } from '@self';
+import { CarouselHandle } from '@self/Carousel/interface';
 
-const baseStyle = {
+const baseStyle: CSSProperties = {
   color: '#ffffff',
   textAlign: 'center',
   width: '100%',
@@ -30,7 +31,7 @@ const itemStyle4 = {
 };
 
 function Demo1() {
-  const refCarousel = useRef(null);
+  const refCarousel = useRef(null as any as CarouselHandle);
   const refCurrentIndex = useRef(0);
 
   console.log(refCarousel);
@@ -40,7 +41,7 @@ function Demo1() {
       <div style={{ padding: '8px 16px' }}>
         <Button
           onClick={() => {
-            refCarousel.current.goto({ index: refCurrentIndex.current - 1, isNegative: true });
+            refCarousel.current?.goto({ index: refCurrentIndex.current - 1, isNegative: true });
           }}
           type="primary"
           status="warning"
@@ -50,7 +51,7 @@ function Demo1() {
         </Button>
         <Button
           onClick={() => {
-            refCarousel.current.goto({ index: refCurrentIndex.current + 1 });
+            refCarousel.current?.goto({ index: refCurrentIndex.current + 1 });
           }}
         >
           +1
@@ -58,7 +59,6 @@ function Demo1() {
       </div>
       <Carousel
         carousel={refCarousel}
-        refWithAPI
         onChange={(index) => {
           refCurrentIndex.current = index;
         }}

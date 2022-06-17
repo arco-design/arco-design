@@ -13,7 +13,7 @@ import pick from '../_util/pick';
 import { TooltipProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
-type TooltipHandle = {
+export type TooltipHandle = {
   updatePopupPosition: () => void;
 };
 
