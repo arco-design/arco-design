@@ -14,6 +14,8 @@ function Option(props: OptionProps, ref) {
     value: propValue,
     children: propChildren,
     _isMultipleMode,
+    _isUserCreatedOption,
+    _isUserCreatingOption,
     _valueActive,
     _valueSelect,
     _onMouseEnter,
@@ -56,12 +58,19 @@ function Option(props: OptionProps, ref) {
     ...omit(rest, ['_key', 'extra', 'isSelectOption', 'onClick', 'onMouseEnter', 'onMouseLeave']),
   };
 
+  const wrapperProps = {
+    ref,
+    role: 'option',
+    ['aria-selected']: isChecked,
+  };
+  // Mark the option that created/creating by user self
+  _isUserCreatedOption && Object.assign(wrapperProps, { ['data-user-created']: true });
+  _isUserCreatingOption && Object.assign(wrapperProps, { ['data-user-creating']: true });
+
   if (_isMultipleMode) {
     return (
       <li
-        role="option"
-        aria-selected={isChecked}
-        ref={ref}
+        {...wrapperProps}
         className={cs(
           `${prefixCls}-option-wrapper`,
           {
@@ -84,7 +93,7 @@ function Option(props: OptionProps, ref) {
   }
 
   return (
-    <li role="option" aria-selected={isChecked} ref={ref} {...optionLabelProps}>
+    <li {...wrapperProps} {...optionLabelProps}>
       {childNode}
     </li>
   );

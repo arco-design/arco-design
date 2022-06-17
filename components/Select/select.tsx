@@ -517,11 +517,14 @@ function Select(baseProps: SelectProps, ref) {
           }
 
           if (isSelectOption(child)) {
+            const optionValue = child.props?.value;
             const optionProps: Partial<SelectOptionProps> = {
               prefixCls,
               _valueActive: valueActive,
               _valueSelect: value,
               _isMultipleMode: isMultipleMode,
+              _isUserCreatingOption: allowCreate && userCreatingOption === optionValue,
+              _isUserCreatedOption: allowCreate && userCreatedOptions.indexOf(optionValue) > -1,
               _onClick: handleOptionClick,
               _onMouseEnter: (value) => {
                 refKeyboardArrowDirection.current === null && setValueActive(value);
