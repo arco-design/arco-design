@@ -18,14 +18,14 @@ describe('RangePicker hover', () => {
     getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
 
     expect(getDateCell(component, 0, 7).prop('className')).toBe(
-      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-range-start'
+      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-selected arco-picker-cell-range-start'
     );
 
     // 2020-04-08
     getDateCell(component, 0, 9).simulate('mouseenter');
 
     expect(getDateCell(component, 0, 7).prop('className')).toBe(
-      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-range-start arco-picker-cell-in-range'
+      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-selected arco-picker-cell-range-start arco-picker-cell-in-range'
     );
     expect(getDateCell(component, 0, 9).prop('className')).toBe(
       'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-range-end arco-picker-cell-in-range'
@@ -50,10 +50,10 @@ describe('RangePicker hover', () => {
     getDateCell(component, 0, 11).simulate('mouseenter');
 
     expect(getDateCell(component, 0, 7).prop('className')).toBe(
-      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-range-start arco-picker-cell-in-range arco-picker-cell-hover-range-start arco-picker-cell-hover-in-range'
+      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-selected arco-picker-cell-range-start arco-picker-cell-in-range arco-picker-cell-hover-range-start arco-picker-cell-hover-in-range'
     );
     expect(getDateCell(component, 0, 9).prop('className')).toBe(
-      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-range-end arco-picker-cell-in-range arco-picker-cell-hover-in-range arco-picker-cell-range-edge-in-hover-range'
+      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-selected arco-picker-cell-range-end arco-picker-cell-in-range arco-picker-cell-hover-in-range arco-picker-cell-range-edge-in-hover-range'
     );
     expect(getDateCell(component, 0, 11).prop('className')).toBe(
       'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-today arco-picker-cell-hover-range-end arco-picker-cell-hover-in-range'
