@@ -25,3 +25,4 @@
 |tablePagination|Table 全局的分页配置。|`PaginationProps`|`-`|2.6.0|
 |renderEmpty|全局配置组件内的空组件。|`(componentName?: string) => ReactNode`|`-`|2.10.0|
 |focusLock|全局配置弹出框的 `focusLock`，作用于 `Modal` `Drawer` 组件。|`{modal?: boolean \| { autoFocus?: boolean };drawer?: boolean \| { autoFocus?: boolean };}`|`{ modal: { autoFocus: true }, drawer: { autoFocus: true }}`|2.13.0|
+|rtl|视图的表现形式是从右开始向左结束。|`boolean`|`-`|2.36.0|
