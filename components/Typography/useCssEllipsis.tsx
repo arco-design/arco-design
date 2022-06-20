@@ -3,15 +3,18 @@ import { isUndefined } from '../_util/is';
 import { EllipsisConfig } from './interface';
 
 const supportCss = (key, value) => {
-  if (window.CSS && window.CSS.supports) {
+  if (typeof window !== 'undefined' && window.CSS && window.CSS.supports) {
     if (!isUndefined(value)) {
       return window.CSS.supports(key, value);
     }
     return window.CSS.supports(key);
   }
-  const elem = document.createElement('div');
-  elem.setAttribute(`style`, `${key}:${value};`);
-  return typeof elem.style[key] !== 'undefined';
+  if (typeof document !== 'undefined' && document.createElement) {
+    const elem = document.createElement('div');
+    elem.setAttribute(`style`, `${key}:${value};`);
+    return typeof elem.style[key] !== 'undefined';
+  }
+  return false;
 };
 
 const mutiEllipsisAttr = {

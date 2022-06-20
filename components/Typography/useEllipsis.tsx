@@ -1,8 +1,9 @@
-import React, { useMemo, useLayoutEffect, useRef, useState, CSSProperties } from 'react';
+import React, { useMemo, useRef, useState, CSSProperties } from 'react';
 import useUpdate from '../_util/hooks/useUpdate';
 import throttleByRaf from '../_util/throttleByRaf';
 import { isNumber, isString } from '../_util/is';
 import { EllipsisConfig } from './interface';
+import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 
 interface IEllipsis extends EllipsisConfig {
   width: number;
@@ -143,7 +144,7 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
     }
   };
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (props.rows && width) {
       setBinarySearchIndex([0, Math.floor(totalLen / 2), totalLen]);
       setStatus(MEASURE_STATUS.INIT);
@@ -162,14 +163,14 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
     props.rows,
   ]);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (singleRowNode.current && status === MEASURE_STATUS.INIT) {
       const offsetHeight = singleRowNode.current.offsetHeight;
       setLineHeight(offsetHeight);
     }
   }, [status]);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     measure();
   }, [status, midLoc, startLoc, endLoc, lineHeight]);
 
