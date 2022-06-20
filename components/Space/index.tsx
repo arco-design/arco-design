@@ -11,7 +11,7 @@ const defaultProps: SpaceProps = {
 };
 
 function Space(baseProps: SpaceProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SpaceProps>(baseProps, defaultProps, componentConfig?.Space);
   const { className, style, children, size, direction, align, wrap, split, ...rest } = props;
 
@@ -25,6 +25,7 @@ function Space(baseProps: SpaceProps, ref) {
       [`${prefixCls}-${direction}`]: direction,
       [`${prefixCls}-align-${innerAlign}`]: innerAlign,
       [`${prefixCls}-wrap`]: wrap,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -50,38 +51,42 @@ function Space(baseProps: SpaceProps, ref) {
   const childrenList = React.Children.toArray(children);
 
   function getMarginStyle(index) {
+    // const isLastOne =
+    //   rtl && direction === 'horizontal' ? index === 0 : childrenList.length === index + 1;
     const isLastOne = childrenList.length === index + 1;
+    const marginDirection = rtl ? 'marginLeft' : 'marginRight';
+
     if (typeof size === 'string' || typeof size === 'number') {
       const margin = getMargin(size);
       if (wrap) {
         return isLastOne
           ? { marginBottom: margin }
           : {
-              marginRight: margin,
+              [`${marginDirection}`]: margin,
               marginBottom: margin,
             };
       }
       return !isLastOne
         ? {
-            [direction === 'vertical' ? 'marginBottom' : 'marginRight']: margin,
+            [direction === 'vertical' ? 'marginBottom' : marginDirection]: margin,
           }
         : {};
     }
     if (isArray(size)) {
-      const marginRight = getMargin(size[0]);
+      const marginHorizontal = getMargin(size[0]);
       const marginBottom = getMargin(size[1]);
       if (wrap) {
         return isLastOne
           ? { marginBottom }
           : {
-              marginRight,
+              [`${marginDirection}`]: marginHorizontal,
               marginBottom,
             };
       }
       if (direction === 'vertical') {
         return { marginBottom };
       }
-      return { marginRight };
+      return { [`${marginDirection}`]: marginHorizontal };
     }
   }
 
