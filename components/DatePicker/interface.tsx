@@ -505,5 +505,5 @@ export interface DatePickerDecorator extends React.ComponentClass<DatePickerProp
   YearPicker: React.ComponentClass<YearPickerProps>;
   WeekPicker: React.ComponentClass<WeekPickerProps>;
   QuarterPicker: React.ComponentClass<QuarterPickerProps>;
-  RangePicker: React.ComponentClass<RangePickerProps>;
+  RangePicker: React.FC<RangePickerProps>;
 }
