@@ -222,6 +222,12 @@ export interface ConfigProviderProps {
     modal?: boolean | { autoFocus?: boolean };
     drawer?: boolean | { autoFocus?: boolean };
   };
+  /**
+   * @zh 视图的表现形式是从右开始向左结束。
+   * @en View starts from the right and ends on the left.
+   * @version 2.36.0
+   */
+  rtl?: boolean;
   zIndex?: number;
   children?: ReactNode;
 }

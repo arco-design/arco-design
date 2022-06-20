@@ -25,3 +25,4 @@ Configure in the outermost layer of the application to set global params.
 |tablePagination|Table Global pagination configuration.|`PaginationProps`|`-`|2.6.0|
 |renderEmpty|Empty component in component.|`(componentName?: string) => ReactNode`|`-`|2.10.0|
 |focusLock|global `focusLock`, affects component `Modal` `Drawer`.|`{modal?: boolean \| { autoFocus?: boolean };drawer?: boolean \| { autoFocus?: boolean };}`|`{ modal: { autoFocus: true }, drawer: { autoFocus: true }}`|2.13.0|
+|rtl|View starts from the right and ends on the left.|`boolean`|`-`|2.36.0|
