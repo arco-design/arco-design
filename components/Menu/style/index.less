@@ -98,6 +98,10 @@
         right: @menu-vertical-item-padding-horizontal;
         top: 50%;
         transform: translateY(-50%);
+
+        &.is-open {
+          transform: translateY(-50%) rotate(180deg);
+        }
       }
     };
 
@@ -233,13 +237,6 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-  }
-
-  // 展开折叠图标
-  &-icon-suffix {
-    &.is-open {
-      transform: rotate(180deg);
-    }
   }
 
   &-vertical {

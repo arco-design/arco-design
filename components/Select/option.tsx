@@ -61,11 +61,11 @@ function Option(props: OptionProps, ref) {
   const wrapperProps = {
     ref,
     role: 'option',
-    ['aria-selected']: isChecked,
+    'aria-selected': isChecked,
   };
   // Mark the option that created/creating by user self
-  _isUserCreatedOption && Object.assign(wrapperProps, { ['data-user-created']: true });
-  _isUserCreatingOption && Object.assign(wrapperProps, { ['data-user-creating']: true });
+  _isUserCreatedOption && Object.assign(wrapperProps, { 'data-user-created': true });
+  _isUserCreatingOption && Object.assign(wrapperProps, { 'data-user-creating': true });
 
   if (_isMultipleMode) {
     return (
