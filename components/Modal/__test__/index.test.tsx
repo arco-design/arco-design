@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { mount } from 'enzyme';
-import TestUtils from 'react-dom/test-utils';
 import mountTest from '../../../tests/mountTest';
 import Modal from '..';
 import Button from '../../Button';
-import { $ } from '../../../tests/util';
+import { $, render, fireEvent, cleanup } from '../../../tests/util';
 import { Esc } from '../../_util/keycode';
 
 mountTest(Modal);
@@ -42,12 +40,13 @@ describe('Modal', () => {
   });
 
   afterEach(() => {
+    cleanup();
     document.body.innerHTML = '';
     jest.runAllTimers();
   });
 
   it('renders correctly', () => {
-    const component = mount(
+    const component = render(
       <div>
         <Modal title="Title" visible>
           Content
@@ -57,65 +56,57 @@ describe('Modal', () => {
         </Modal>
       </div>
     );
-    expect(component.render()).toMatchSnapshot();
+    expect(component.container.firstChild).toMatchSnapshot();
   });
 
   it('closeIcon correctly', () => {
-    const component = mount(
+    const component = render(
       <div>
         <Modal title="Title" visible closeIcon="xxx">
           Content
         </Modal>
       </div>
     );
-    expect(component.find('.arco-modal-close-icon').text()).toBe('xxx');
+    expect(component.querySelector('.arco-modal-close-icon').textContent).toBe('xxx');
   });
 
   it('open modal correctly', () => {
-    const wrapper = mount(<DemoTest />);
+    const wrapper = render(<DemoTest />);
     expect(wrapper.find('.arco-modal')).toHaveLength(0);
-    expect(wrapper.find(Modal).props().visible).toBe(false);
     // modal mask correctly
     expect($('.arco-modal-mask').length).toBe(0);
 
-    wrapper
-      .find('button')
-      .filterWhere((n) => n.text() === 'Open')
-      .simulate('click');
+    fireEvent.click(wrapper.queryByText('Open') as Element);
 
-    // expect(wrapper.find(Modal).state().display).toBe('block');
     expect(wrapper.find('.arco-modal')).toHaveLength(1);
-    expect(wrapper.find(Modal).props().visible).toBe(true);
+    expect(wrapper.querySelector('.arco-modal-wrapper')).toHaveStyle('display: block');
+
     expect($('.arco-modal-mask').length).toBe(1);
 
-    wrapper.find('.arco-modal-close-icon').last().simulate('click');
+    fireEvent.click(wrapper.querySelector('.arco-modal-close-icon'));
+
+    jest.runAllTimers();
+
+    expect(wrapper.querySelector('.arco-modal-wrapper')).toHaveStyle('display: none');
     expect($('.arco-modal-mask').length).toBe(1);
   });
 
   it('onConfirm and onCancel correctly', () => {
-    const wrapper = mount(<DemoTest />);
+    const wrapper = render(<DemoTest />);
     function open() {
-      wrapper
-        .find('button')
-        .filterWhere((n) => n.text() === 'Open')
-        .simulate('click');
+      fireEvent.click(wrapper.queryByText('Open') as Element);
     }
     open();
     expect($('.arco-modal-wrapper')[0].style.display).toBe('block');
-    wrapper
-      .find('button')
-      .filterWhere((n) => n.text() === '确定')
-      .simulate('click');
+    fireEvent.click(wrapper.queryByText('确定') as Element);
     jest.runAllTimers();
     expect($('.arco-modal-wrapper')[0].style.display).toBe('none');
 
     jest.useFakeTimers();
     open();
     expect($('.arco-modal-wrapper')[0].style.display).toBe('block');
-    wrapper
-      .find('button')
-      .filterWhere((n) => n.text() === '取消')
-      .simulate('click');
+    fireEvent.click(wrapper.queryByText('取消') as Element);
+
     jest.runAllTimers();
     expect($('.arco-modal-wrapper')[0].style.display).toBe('none');
   });
@@ -137,7 +128,7 @@ describe('Modal', () => {
     });
     jest.runAllTimers();
     expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(2);
-    TestUtils.Simulate.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
+    fireEvent.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
       key: Esc.key,
     });
     jest.runAllTimers();
@@ -161,7 +152,7 @@ describe('Modal', () => {
     });
     jest.runAllTimers();
     expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(2);
-    TestUtils.Simulate.keyDown(document.querySelectorAll('[data-focus-lock-disabled]')[0], {
+    fireEvent.keyDown(document.querySelectorAll('[data-focus-lock-disabled]')[0], {
       key: Esc.key,
     });
     jest.runAllTimers();
@@ -181,7 +172,7 @@ describe('Modal', () => {
     });
     jest.runAllTimers();
     expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
-    TestUtils.Simulate.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
+    fireEvent.keyDown(document.querySelectorAll('.arco-modal-wrapper')[0], {
       key: Esc.key,
     });
     jest.runAllTimers();

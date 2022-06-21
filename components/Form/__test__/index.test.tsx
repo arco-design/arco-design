@@ -1,9 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
+// import { mount } from 'enzyme';
+import { render, fireEvent } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import Form from '..';
-import { FormProps } from '../interface';
 import InputNumber from '../../InputNumber';
 import DatePicker from '../../DatePicker';
 
@@ -13,7 +12,7 @@ const FormControl = Form.Control;
 mountTest(Form);
 
 function mountForm(component: React.ReactElement) {
-  return mount<typeof Form, React.PropsWithChildren<FormProps>>(component);
+  return render(component);
 }
 
 describe('Form test', () => {
@@ -31,12 +30,12 @@ describe('Form test', () => {
     const contents = component.find('.arco-form-item .arco-form-item-wrapper.arco-col.arco-col-19');
 
     expect(labels).toHaveLength(2);
-    expect(labels.at(0).text()).toBe(' name');
-    expect(labels.at(1).text()).toBe(' number');
+    expect(labels[0].textContent).toBe(' name');
+    expect(labels[1].textContent).toBe(' number');
 
     expect(contents).toHaveLength(2);
-    expect(contents.at(0).text()).toBe('a');
-    expect(contents.at(1).text()).toBe('1');
+    expect(contents[0].textContent).toBe('a');
+    expect(contents[1].textContent).toBe('1');
   });
 
   // 这个是来测试一些兼容1.15.0以前版本的form-control独有的一些用法.（p.s: 同时提高下分支覆盖率 T . T）
@@ -55,9 +54,7 @@ describe('Form test', () => {
       </Form>
     );
 
-    const input = wrapper.find('InputNumber');
-
-    input.find('input').simulate('change', {
+    fireEvent.change(wrapper.querySelector('input'), {
       target: { value: '12' },
     });
 
@@ -98,20 +95,21 @@ describe('Form test', () => {
     );
 
     expect(formRef.getFieldValue('date')).toEqual(initDate);
-    expect(wrapper.find('input').at(0).getDOMNode().getAttribute('value')).toBe(initDate.begin);
-    expect(wrapper.find('input').at(1).getDOMNode().getAttribute('value')).toBe(initDate.end);
+    expect(wrapper.find('input')[0].getAttribute('value')).toBe(initDate.begin);
+    expect(wrapper.find('input')[1].getAttribute('value')).toBe(initDate.end);
 
-    act(() => {
-      wrapper.find('input').at(0).simulate('click');
+    fireEvent.click(wrapper.find('input')[0]);
 
-      // 选中起始月份的第一天
-      wrapper.find('.arco-picker-cell-in-view').first().simulate('click');
+    const cells = wrapper.find('.arco-picker-cell-in-view');
 
-      wrapper.find('input').at(1).simulate('click');
+    // 选中起始月份的第一天
 
-      // 选中结束月份最后一天
-      wrapper.find('.arco-picker-cell-in-view').last().simulate('click');
-    });
+    fireEvent.click(cells[0]);
+
+    fireEvent.click(wrapper.find('input')[1]);
+
+    // 选中结束月份最后一天
+    fireEvent.click(cells[cells.length - 1]);
 
     expect(formRef.getFieldValue('date')).toEqual({
       begin: '2020-02-01',
@@ -139,9 +137,7 @@ describe('Form test', () => {
       </Form>
     );
 
-    const input = wrapper.find('InputNumber');
-
-    input.find('input').simulate('change', {
+    fireEvent.change(wrapper.querySelector('input'), {
       target: { value: '12' },
     });
   });

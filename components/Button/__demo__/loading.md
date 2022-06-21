@@ -1,6 +1,6 @@
 ---
 order: 6
-title: 
+title:
   zh-CN: 加载中按钮
   en-US: Loading
 ---
@@ -50,8 +50,8 @@ function App() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 100px)',
-          gridRowGap: 24,
-          gridColumnGap: 24,
+          rowGap: 24,
+          columnGap: 24,
           marginLeft: 24,
         }}
       >

@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { mount } from 'enzyme';
 import mountTest from '../../../tests/mountTest';
 import { Form, Input, Radio, Select, Button } from '../..';
-import { FormProps } from '../interface';
-import { sleep } from '../../../tests/util';
+import { sleep, render, fireEvent } from '../../../tests/util';
 
 mountTest(Form);
 
 function mountForm(component: React.ReactElement) {
-  return mount<typeof Form, React.PropsWithChildren<FormProps>>(component);
+  return render(component);
 }
 
 function Demo(props) {
@@ -59,16 +57,16 @@ describe('function component useForm', () => {
       />
     );
 
-    wrapper.find('form').simulate('submit');
+    fireEvent.submit(wrapper.querySelector('form'));
 
     await sleep(10);
 
-    const setValueBtn = wrapper.find('.setvalue-btn').at(1);
+    const setValueBtn = wrapper.querySelector('.setvalue-btn');
 
     expect(value).toBe(0);
 
-    setValueBtn.simulate('click');
-    wrapper.find('form').simulate('submit');
+    fireEvent.click(setValueBtn);
+    fireEvent.submit(wrapper.querySelector('form'));
 
     await sleep(10);
 
@@ -85,14 +83,14 @@ describe('function component useForm', () => {
       />
     );
 
-    wrapper.find('Input').simulate('change', { target: { value: '111' } });
+    fireEvent.change(wrapper.querySelector('Input'), { target: { value: '111' } });
 
-    const setValueBtn = wrapper.find('.setvalue-btn').at(1);
+    const setValueBtn = wrapper.querySelector('.setvalue-btn');
 
     expect(value).toBe(0);
 
-    setValueBtn.simulate('click');
-    wrapper.find('Input').simulate('change', { target: { value: 'ceshi' } });
+    fireEvent.click(setValueBtn);
+    fireEvent.change(wrapper.querySelector('Input'), { target: { value: 'ceshi' } });
 
     expect(value).toBe(1);
   });
@@ -100,7 +98,7 @@ describe('function component useForm', () => {
 
 // form item 的children 函数
 describe('form item children funtion', () => {
-  it('default', () => {
+  it('default', async () => {
     let formRef;
 
     const wrapper = mountForm(
@@ -139,41 +137,38 @@ describe('form item children funtion', () => {
       </Form>
     );
 
-    expect(wrapper.getDOMNode().querySelectorAll('.arco-form-label-item')).toHaveLength(1);
+    expect(wrapper.container.querySelectorAll('.arco-form-label-item')).toHaveLength(1);
 
     formRef.setFieldsValue({ type: '类型A' });
 
-    expect(wrapper.getDOMNode().querySelectorAll('.arco-form-label-item label')[1].innerHTML).toBe(
+    expect(wrapper.container.querySelectorAll('.arco-form-label-item label')[1].innerHTML).toBe(
       ' 类型A名字'
     );
-    expect(wrapper.getDOMNode().querySelector('.arco-textarea').getAttribute('placeholder')).toBe(
+    expect(wrapper.container.querySelector('.arco-textarea')?.getAttribute('placeholder')).toBe(
       '类型A的备注'
     );
 
-    wrapper.update();
-
-    wrapper.find('.arco-input').simulate('change', { target: { value: '123' } });
+    fireEvent.change(wrapper.querySelector('.arco-input'), { target: { value: '123' } });
     expect(formRef.getFields()).toEqual({ type: '类型A', nameA: '123' });
 
     formRef.setFieldsValue({ type: '类型B' });
-    wrapper.update();
 
-    expect(wrapper.getDOMNode().querySelectorAll('.arco-form-label-item label')[1].innerHTML).toBe(
+    await sleep(10);
+
+    expect(wrapper.container.querySelectorAll('.arco-form-label-item label')[1].innerHTML).toBe(
       ' 类型B名字'
     );
-    expect(wrapper.find('textarea').getDOMNode().getAttribute('placeholder')).toBe('类型B的备注');
+    expect(wrapper.querySelector('textarea').getAttribute('placeholder')).toBe('类型B的备注');
 
     expect(formRef.getFieldsValue()).toEqual({ type: '类型B' });
     expect(formRef.getFields()).toEqual({ type: '类型B', nameA: '123' });
-    wrapper.find('.arco-select-view').simulate('click');
-    wrapper.find('.arco-select-option').at(1).simulate('click');
+    fireEvent.click(wrapper.querySelector('.arco-select-view'));
+    fireEvent.click(wrapper.find('.arco-select-option')[1]);
     expect(formRef.getFieldsValue()).toEqual({ type: '类型B', nameB: 'B2' });
 
     formRef.setFieldsValue({ type: '类型A' });
 
-    wrapper.update();
-
-    expect(wrapper.find('.arco-input').getDOMNode().getAttribute('value')).toBe('123');
+    expect(wrapper.querySelector('.arco-input').getAttribute('value')).toBe('123');
     expect(formRef.getFieldsValue()).toEqual({ type: '类型A', nameA: '123' });
     expect(formRef.getFields()).toEqual({ type: '类型A', nameA: '123', nameB: 'B2' });
   });
@@ -181,7 +176,7 @@ describe('form item children funtion', () => {
 
 describe('form initialvalue', () => {
   let form;
-  mount(
+  render(
     <Form initialValues={{ name: '123' }} ref={(node) => (form = node)}>
       <Form.Item label="name" field="name" initialValue="456">
         <Input />
