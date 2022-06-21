@@ -1,16 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { act, fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
-import Radio, { RadioProps } from '..';
+import Radio from '..';
 
 mountTest(Radio);
 componentConfigTest(Radio, 'Radio');
 
-function mountRadio<T>(component: React.ReactElement) {
-  return mount<React.PureComponent<RadioProps<T>>, React.PropsWithChildren<RadioProps<T>>>(
-    component
-  );
+function mountRadio(component: React.ReactElement) {
+  return render(component);
 }
 
 describe('Radio', () => {
@@ -18,15 +16,15 @@ describe('Radio', () => {
     const wrapper = mountRadio(<Radio>周</Radio>);
     expect(wrapper.find('.arco-radio')).toHaveLength(1);
 
-    wrapper.find('.arco-radio input').at(0).simulate('change');
-    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
+    fireEvent.click(wrapper.find('.arco-radio')[0]);
+    expect(wrapper.find('.arco-radio')[0]).toHaveClass('arco-radio-checked');
   });
 
   it('radio defaultChecked correctly', () => {
     const wrapper = mountRadio(<Radio defaultChecked>周</Radio>);
     expect(wrapper.find('.arco-radio')).toHaveLength(1);
 
-    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeTruthy();
+    expect(wrapper.find('.arco-radio')[0]).toHaveClass('arco-radio-checked');
   });
 
   it('radio onChange correctly', () => {
@@ -39,10 +37,13 @@ describe('Radio', () => {
     );
     expect(wrapper.find('.arco-radio')).toHaveLength(1);
 
-    expect(wrapper.find('.arco-radio').at(0).hasClass('arco-radio-checked')).toBeFalsy();
+    expect(wrapper.find('.arco-radio')[0].className).toBe('arco-radio');
 
-    wrapper.find('.arco-radio input').at(0).simulate('change');
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-radio')[0]);
+    });
 
     expect(mockFn).toBeCalledTimes(1);
+    expect(wrapper.find('.arco-radio')[0].className).toBe('arco-radio');
   });
 });
