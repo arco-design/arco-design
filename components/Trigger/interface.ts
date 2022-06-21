@@ -231,6 +231,7 @@ export interface TriggerProps {
    * @version 2.32.0
    */
   updateOnScroll?: boolean;
+  children?: ReactNode;
 }
 
 export type MouseLocationType = { clientX: number; clientY: number };

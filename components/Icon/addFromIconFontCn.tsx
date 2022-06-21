@@ -11,7 +11,7 @@ export interface IconfontOptions {
 
 export default function addFromIconFontCn(
   options: IconfontOptions = {}
-): React.SFC<IconProps & React.RefAttributes<unknown>> {
+): React.FC<IconProps & React.RefAttributes<unknown>> {
   const { src, extraProps = {} } = options;
 
   if (
@@ -27,7 +27,7 @@ export default function addFromIconFontCn(
     document.body.appendChild(script);
   }
 
-  const Iconfont: React.SFC<IconProps> = React.forwardRef((props, ref) => {
+  const Iconfont: React.FC<IconProps> = React.forwardRef((props, ref) => {
     const { type, children, ...restProps } = props;
     const iconRef = React.useRef<Icon>();
 

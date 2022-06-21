@@ -408,6 +408,7 @@ export interface FormControlProps<
   help?: ReactNode;
   isFormList?: boolean;
   hasFeedback?: boolean;
+  children?: ReactNode;
 }
 
 /**

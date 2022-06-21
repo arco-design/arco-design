@@ -97,6 +97,7 @@ const TreeSelect: ForwardRefRenderFunction<
           const nodeProps = key2nodeProps[key];
           let isHit = false;
           if (isFunction(props.filterTreeNode)) {
+            // @ts-ignore
             if (props.filterTreeNode(inputText, <Tree.Node {...nodeProps} />)) {
               isHit = true;
             }

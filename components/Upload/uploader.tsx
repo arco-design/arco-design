@@ -15,7 +15,7 @@ export type UploaderType = {
 type UploaderState = {
   uploadRequests: { [key: string]: UploadRequestReturn };
 };
-class Uploader extends React.Component<UploaderProps, UploaderState> {
+class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, UploaderState> {
   inputRef: HTMLInputElement | null;
 
   constructor(props) {

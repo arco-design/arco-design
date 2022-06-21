@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import Portal from './Portal';
 
 export interface PortalWrapperProps {
@@ -7,6 +7,7 @@ export interface PortalWrapperProps {
   childrenComponent?: Element;
   forceRender?: boolean;
   visible?: boolean;
+  children?: ReactNode;
 }
 
 class PortalWrapper extends Component<PortalWrapperProps> {

@@ -186,7 +186,7 @@ function Tr<T>(props: TrType<T>, ref) {
         const stickyClassName: string = stickyClassNames[colIndex];
 
         if (col.$$isOperation) {
-          let node = col.node;
+          let node: any = col.node;
           let isExtraOperation = true;
 
           if (col.title === INTERNAL_SELECTION_KEY) {

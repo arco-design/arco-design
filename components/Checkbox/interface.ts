@@ -6,7 +6,7 @@ import React, { CSSProperties, ReactNode } from 'react';
  * @en `T = string | number`
  */
 export interface CheckboxProps<T extends React.ReactText = any>
-  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'className' | 'onChange'> {
+  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'children' | 'className' | 'onChange'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
