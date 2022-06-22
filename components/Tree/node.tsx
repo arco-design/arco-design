@@ -56,6 +56,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
     showLine,
     loading,
     selectable = true,
+    blockNode,
   } = props;
 
   const prefixCls = getPrefixCls('tree-node');
@@ -68,6 +69,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
       [`${prefixCls}-disabled-selectable`]: !selectable,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-draggable`]: draggable,
+      [`${prefixCls}-block`]: blockNode,
     },
     props.className
   );
@@ -219,7 +221,6 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
               state.isAllowDrop &&
               state.dragPosition === 0,
             [`${prefixCls}-title-dragging`]: state.isDragging,
-            [`${prefixCls}-title-block`]: props.blockNode,
           })}
           onClick={(e) => {
             const { onSelect, actionOnClick } = treeContext;

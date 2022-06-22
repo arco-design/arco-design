@@ -160,9 +160,13 @@
     }
   }
 
-  &-node-title-block {
+  &-node-block {
     flex: 1;
     box-sizing: content-box;
+
+    &:hover {
+      background-color: @tree-color-title-bg_hover;
+    }
 
     .@{tree-node-prefix-cls}-drag-icon {
       position: absolute;
@@ -196,7 +200,6 @@
     // overflow: hidden;
 
     &:hover {
-      background-color: @tree-color-title-bg_hover;
       color: @tree-color-title-text_hover;
 
       .@{tree-node-prefix-cls}-drag-icon {
