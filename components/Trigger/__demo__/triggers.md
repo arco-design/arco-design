@@ -14,7 +14,7 @@ title:
 the `trigger` property can be an array.
 
 ```js
-import { Trigger, Button, Input, Skeleton, Typography } from '@arco-design/web-react';
+import { Trigger, Button, Input, Skeleton, Typography, Space } from '@arco-design/web-react';
 
 function Popup() {
   return (
@@ -26,14 +26,14 @@ function Popup() {
 
 function App() {
   return (
-    <div>
+    <Space size={40}>
       <Trigger
         popup={() => <Popup />}
         trigger={['click', 'hover']}
         clickToClose={false}
         classNames="zoomInTop"
       >
-        <Button style={{ marginRight: 40 }}>Click/Hover Me</Button>
+        <Button>Click/Hover Me</Button>
       </Trigger>
       <Trigger
         popup={() => (
@@ -45,12 +45,12 @@ function App() {
         )}
         trigger={['hover', 'click', 'focus']}
       >
-        <Input style={{ width: 200, marginRight: 40 }} placeholder="Click/Hover/Focus Me" />
+        <Input style={{ width: 200 }} placeholder="Click/Hover/Focus Me" />
       </Trigger>
       <Trigger popup={() => <Popup />} trigger={['hover', 'focus']} blurToHide={false}>
         <Input style={{ width: 200 }} placeholder="Hover/Focus Me" />
       </Trigger>
-    </div>
+    </Space>
   );
 }
 

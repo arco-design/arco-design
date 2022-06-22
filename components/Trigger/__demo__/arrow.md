@@ -18,42 +18,44 @@ Show arrow node.
 **The popup layer has no style by default.**
 
 ```js
-import { Trigger, Button, Input, Skeleton } from '@arco-design/web-react';
+import { Trigger, Button, Input, Skeleton,Space } from '@arco-design/web-react';
 
 function App() {
   return (
     <div style={{ background: 'var(--color-fill-2)', padding: 40 }}>
-      <Trigger
-        showArrow
-        trigger="click"
-        position="bl"
-        popup={() => (
-          <div className="demo-trigger-popup" style={{ width: 300 }}>
-            <Skeleton />
-          </div>
-        )}
-      >
-        <Button type="primary" style={{ marginRight: 40 }}>
-          Click Me
-        </Button>
-      </Trigger>
-      <Trigger
-        showArrow
-        arrowProps={{
-          style: {
-            background: 'red',
-          },
-        }}
-        trigger="click"
-        position="bl"
-        popup={() => (
-          <div className="demo-trigger-popup">
-            <Skeleton />
-          </div>
-        )}
-      >
-        <Button type="primary">Click Me（arrowProps）</Button>
-      </Trigger>
+      <Space size={40}>
+        <Trigger
+          showArrow
+          trigger="click"
+          position="bl"
+          popup={() => (
+            <div className="demo-trigger-popup" style={{ width: 300 }}>
+              <Skeleton />
+            </div>
+          )}
+        >
+          <Button type="primary">
+            Click Me
+          </Button>
+        </Trigger>
+        <Trigger
+          showArrow
+          arrowProps={{
+            style: {
+              background: 'red',
+            },
+          }}
+          trigger="click"
+          position="bl"
+          popup={() => (
+            <div className="demo-trigger-popup">
+              <Skeleton />
+            </div>
+          )}
+        >
+          <Button type="primary">Click Me（arrowProps）</Button>
+        </Trigger>
+      </Space>
     </div>
   );
 }

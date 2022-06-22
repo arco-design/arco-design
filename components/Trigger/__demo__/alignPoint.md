@@ -38,7 +38,7 @@ function App() {
         <Typography.Text>Trigger</Typography.Text>
         <Select
           value={trigger}
-          style={{ width: 300, marginLeft: 20 }}
+          style={{ width: 300, margin: '0 20px' }}
           options={['click', 'hover', 'contextMenu']}
           onChange={setTrigger}
           mode="multiple"

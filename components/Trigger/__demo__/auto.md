@@ -45,7 +45,7 @@ class App extends React.Component {
           }}
         >
           <Popconfirm position="bottom" {...props} getPopupContainer={(node) => node.parentElement}>
-            <Button style={{ marginLeft: 300 }}>popover</Button>
+            <Button style={{ margin: '0 200px' }}>popover</Button>
           </Popconfirm>
         </div>
       </div>
