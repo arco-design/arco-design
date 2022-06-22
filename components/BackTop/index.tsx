@@ -17,7 +17,7 @@ const defaultProps: BackTopProps = {
 };
 
 function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<BackTopProps>>(
     baseProps,
     defaultProps,
@@ -70,7 +70,7 @@ function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
   return (
     <div
       ref={ref}
-      className={cs(`${prefixCls}`, props.className)}
+      className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, props.className)}
       style={props.style}
       onClick={scrollToTop}
     >
