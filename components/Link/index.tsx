@@ -10,7 +10,7 @@ const defaultProps: LinkProps = {
 };
 
 function Link(baseProps: PropsWithChildren<LinkProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<LinkProps>(baseProps, defaultProps, componentConfig?.Link);
   const { className, style, children, icon, status, disabled, hoverable, ...rest } = props;
 
@@ -27,6 +27,7 @@ function Link(baseProps: PropsWithChildren<LinkProps>, ref) {
           [`${prefixCls}-is-${status}`]: status,
           [`${prefixCls}-with-icon`]: icon,
           [`${prefixCls}-hoverless`]: !hoverable,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}
