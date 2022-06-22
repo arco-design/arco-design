@@ -13,7 +13,8 @@ title:
 
 Button group can be used to group together operation buttons at the same level.
 
-```js
+```tsx
+import React from 'react';
 import { Button, Space } from '@arco-design/web-react';
 import {
   IconLeft,
@@ -48,12 +49,14 @@ const App = () => {
           <Button
             type="primary"
             icon={<IconLeft />}
+            shape="round"
             style={{ padding: '0 8px' }}
           >
             Prev
           </Button>
           <Button
             type="primary"
+            shape="round"
             style={{ padding: '0 8px' }}
           >
             Next
