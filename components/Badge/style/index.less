@@ -7,6 +7,10 @@
   position: relative;
   line-height: 1;
 
+  &-rtl {
+    direction: rtl;
+  }
+
   &-number,
   &-dot,
   &-text,
@@ -15,12 +19,19 @@
     z-index: 2;
     transform: translate(50%, -50%);
     transform-origin: 100% 0%;
-    top: 2px;
-    right: 2px;
     border-radius: @badge-size-count-height;
     box-sizing: border-box;
     text-align: center;
+    top: 2px;
+    right: 2px;
     overflow: hidden;
+  }
+
+  &-rtl &-number,
+  &-rtl &-dot,
+  &-rtl &-text,
+  &-rtl &-custom-dot {
+    right: unset;
   }
 
   &-custom-dot {
@@ -53,9 +64,9 @@
   &-no-children &-text {
     position: relative;
     display: inline-block;
+    transform: none;
     top: unset;
     right: unset;
-    transform: none;
   }
 
   &-status-wrapper {
@@ -106,11 +117,16 @@
 
   .for(@colors);
 
-  .@{badge-prefix-cls}-status-text {
+  &-status-text {
     color: @badge-color-status-text;
     margin-left: @badge-margin-status-text-left;
     font-size: @badge-font-status-text-size;
     line-height: @line-height-base;
+  }
+
+  &-rtl &-status-text {
+    margin-left: 0;
+    margin-right: @badge-margin-status-text-left;
   }
 
   &-number-text {
