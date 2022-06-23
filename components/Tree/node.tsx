@@ -179,6 +179,71 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
         role="treeitem"
         aria-disabled={disabled}
         aria-expanded={expanded}
+        aria-grabbed={state.isDragging}
+        tabIndex={0}
+        onClick={(e) => {
+          const { onSelect, actionOnClick } = treeContext;
+          if (!props.disabled) {
+            const actions = [].concat(actionOnClick);
+            if (selectable && actions.indexOf('select') > -1) {
+              onSelect && onSelect(_key, e);
+            }
+            if (actions.indexOf('expand') > -1) {
+              switchExpandStatus();
+            }
+            if (checkable && actions.indexOf('check') > -1) {
+              handleCheck(!props.checked, e);
+            }
+          }
+        }}
+        draggable={draggable}
+        onDrop={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          treeContext.onNodeDrop && treeContext.onNodeDrop(e, props, state.dragPosition);
+          updateDragOverState.cancel();
+          setState({
+            ...state,
+            isDragOver: false,
+            dragPosition: 0,
+          });
+        }}
+        onDragStart={(e) => {
+          if (!draggable) return;
+
+          e.stopPropagation();
+          // 当前节点正在被拖拽
+          setState({ ...state, isDragging: true });
+
+          treeContext.onNodeDragStart && treeContext.onNodeDragStart(e, props);
+          try {
+            // ie throw error
+            // firefox-need-it
+            e.dataTransfer.setData('text/plain', '');
+          } catch (error) {
+            // empty
+          }
+        }}
+        onDragEnd={(e) => {
+          if (!draggable) return;
+          e.stopPropagation();
+          updateDragOverState.cancel();
+          setState({ ...state, isDragOver: false, isDragging: false });
+          treeContext.onNodeDragEnd && treeContext.onNodeDragEnd(e, props);
+        }}
+        onDragOver={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          e.persist();
+          updateDragOverState(e);
+        }}
+        onDragLeave={(e) => {
+          if (!draggable) return;
+          e.stopPropagation();
+          updateDragOverState.cancel();
+          setState({ ...state, isDragOver: false });
+          treeContext.onNodeDragLeave && treeContext.onNodeDragLeave(e, props);
+        }}
       >
         <span className={`${prefixCls}-indent`} aria-hidden>
           {[...Array(props._level)].map((_, i) => (
@@ -207,7 +272,6 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
           />
         ) : null}
         <span
-          aria-grabbed={state.isDragging}
           ref={nodeTitleRef}
           className={cs(`${prefixCls}-title`, {
             [`${prefixCls}-title-draggable`]: draggable,
@@ -222,81 +286,17 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
               state.dragPosition === 0,
             [`${prefixCls}-title-dragging`]: state.isDragging,
           })}
-          onClick={(e) => {
-            const { onSelect, actionOnClick } = treeContext;
-            if (!props.disabled) {
-              const actions = [].concat(actionOnClick);
-              if (selectable && actions.indexOf('select') > -1) {
-                onSelect && onSelect(_key, e);
-              }
-              if (actions.indexOf('expand') > -1) {
-                switchExpandStatus();
-              }
-              if (checkable && actions.indexOf('check') > -1) {
-                handleCheck(!props.checked, e);
-              }
-            }
-          }}
-          draggable={draggable}
-          onDrop={(e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            treeContext.onNodeDrop && treeContext.onNodeDrop(e, props, state.dragPosition);
-            updateDragOverState.cancel();
-            setState({
-              ...state,
-              isDragOver: false,
-              dragPosition: 0,
-            });
-          }}
-          onDragStart={(e) => {
-            if (!draggable) return;
-
-            e.stopPropagation();
-            // 当前节点正在被拖拽
-            setState({ ...state, isDragging: true });
-
-            treeContext.onNodeDragStart && treeContext.onNodeDragStart(e, props);
-            try {
-              // ie throw error
-              // firefox-need-it
-              e.dataTransfer.setData('text/plain', '');
-            } catch (error) {
-              // empty
-            }
-          }}
-          onDragEnd={(e) => {
-            if (!draggable) return;
-            e.stopPropagation();
-            updateDragOverState.cancel();
-            setState({ ...state, isDragOver: false, isDragging: false });
-            treeContext.onNodeDragEnd && treeContext.onNodeDragEnd(e, props);
-          }}
-          onDragOver={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            e.persist();
-            updateDragOverState(e);
-          }}
-          onDragLeave={(e) => {
-            if (!draggable) return;
-            e.stopPropagation();
-            updateDragOverState.cancel();
-            setState({ ...state, isDragOver: false });
-            treeContext.onNodeDragLeave && treeContext.onNodeDragLeave(e, props);
-          }}
         >
           {icon && <span className={`${prefixCls}-icon ${prefixCls}-custom-icon`}>{icon}</span>}
           <span className={`${prefixCls}-title-text`}>
             {isFunction(treeContext.renderTitle) ? treeContext.renderTitle(props) : title}
           </span>
-
-          {draggable && (
-            <span className={`${prefixCls}-icon ${prefixCls}-drag-icon`}>
-              {'dragIcon' in icons ? icons.dragIcon : <IconDragDotVertical />}
-            </span>
-          )}
         </span>
+        {draggable && (
+          <span className={`${prefixCls}-icon ${prefixCls}-drag-icon`}>
+            {'dragIcon' in icons ? icons.dragIcon : <IconDragDotVertical />}
+          </span>
+        )}
         {isFunction(treeContext.renderExtra) && treeContext.renderExtra(props)}
       </div>
       <AnimationNode {...props} />
