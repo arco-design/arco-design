@@ -21,7 +21,7 @@ const defaultProps: AvatarProps = {
 
 const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
   (props: PropsWithChildren<AvatarProps>, ref) => {
-    const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+    const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
 
     const prefixCls = getPrefixCls('avatar');
     const contextProps = useContext(AvatarContext);
@@ -70,6 +70,7 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
       `${prefixCls}-${shape}`,
       {
         [`${prefixCls}-with-trigger-icon`]: triggerIcon,
+        [`${prefixCls}-rtl`]: rtl,
       },
       className
     );
