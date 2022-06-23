@@ -6,6 +6,10 @@
   position: relative;
   box-sizing: border-box;
 
+  &-rtl {
+    direction: rtl;
+  }
+
   .span(@span, @adaptation) when (@span >= 0) {
     .span((@span - 1), @adaptation);
 
@@ -33,6 +37,11 @@
     &@{usedAdaptation}-offset-@{offset} {
       margin-left: (100% / 24) * @offset;
     }
+
+    &@{usedAdaptation}-offset-@{offset}&-rtl {
+      margin-left: 0;
+      margin-right: (100% / 24) * @offset;
+    }
   }
 
   .order(@order, @adaptation) when (@order >= 0) {
@@ -53,6 +62,11 @@
     &@{usedAdaptation}-pull-@{count} {
       right: (100% / 24) * @count;
     }
+
+    &@{usedAdaptation}-pull-@{count}&-rtl {
+      right: unset;
+      left: (100% / 24) * @count;
+    }
   }
 
   .push(@count, @adaptation) when (@count >= 0) {
@@ -62,6 +76,11 @@
 
     &@{usedAdaptation}-push-@{count} {
       left: (100% / 24) * @count;
+    }
+
+    &@{usedAdaptation}-push-@{count}&-rtl {
+      left: unset;
+      right: (100% / 24) * @count;
     }
   }
 

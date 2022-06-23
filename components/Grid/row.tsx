@@ -18,7 +18,7 @@ const defaultProps: RowProps = {
 };
 
 function Row(baseProps: RowProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<RowProps>(baseProps, defaultProps, componentConfig?.['Grid.Row']);
   const { className, style, children, div, align, justify, gutter, ...rest } = props;
   const [screens, setScreens] = useState<ScreenMap>({
@@ -72,6 +72,7 @@ function Row(baseProps: RowProps, ref) {
       [`${prefixCls}`]: !div,
       [`${prefixCls}-align-${align}`]: align,
       [`${prefixCls}-justify-${justify}`]: justify,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

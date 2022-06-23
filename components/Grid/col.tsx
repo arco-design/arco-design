@@ -18,7 +18,7 @@ function getFlexString(flex: FlexType) {
 }
 
 function Col(baseProps: ColProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<ColProps>(baseProps, defaultProps, componentConfig?.['Grid.Col']);
   const { gutter, div } = useContext(RowContext);
 
@@ -68,6 +68,7 @@ function Col(baseProps: ColProps, ref) {
     [`${prefixCls}-offset-${offset}`]: offset,
     [`${prefixCls}-pull-${pull}`]: pull,
     [`${prefixCls}-push-${push}`]: push,
+    [`${prefixCls}-rtl`]: rtl,
   };
   mergeClassName = adaptationGrid(prefixCls, mergeClassName);
   const classNames = cs(flex ? prefixCls : mergeClassName, className);
