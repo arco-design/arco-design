@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { cleanup, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Card from '..';
@@ -11,7 +11,7 @@ mountTest(Card);
 componentConfigTest(Card, 'Card');
 
 function mountCard(component: React.ReactElement) {
-  return mount(component);
+  return render(component);
 }
 
 function createCard() {
@@ -38,16 +38,17 @@ function createMeta() {
 
 describe('Card', () => {
   afterEach(() => {
+    cleanup();
     document.body.innerHTML = '';
   });
 
   it('Card display correctly', () => {
     const wrapper = mountCard(createCard());
-    expect(wrapper.props().title).toBe('Default Card');
+    expect(wrapper.querySelector('.arco-card-header-title').textContent).toBe('Default Card');
   });
 
   it('Meta display correctly', () => {
     const wrapper = mountCard(createMeta());
-    expect(wrapper.find('.arco-card-meta-title').at(0).text()).toBe('Docor');
+    expect(wrapper.querySelector('.arco-card-meta-title').textContent).toBe('Docor');
   });
 });
