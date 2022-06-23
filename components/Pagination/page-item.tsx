@@ -156,11 +156,12 @@ export const JumpPager = (props: JumpPagerProps) => {
  * @param props
  */
 export const StepPager = (props: StepPagerProps) => {
-  const { locale } = useContext(ConfigContext);
+  const { locale, rtl } = useContext(ConfigContext);
   const { rootPrefixCls, current, allPages, type, icons, disabled, pageItemStyle, itemRender } =
     props;
   const prefixCls = `${rootPrefixCls}-item`;
-  const StepIcon = type === StepType.previous ? getIcon('prev', icons) : getIcon('next', icons);
+  const [prev, next] = rtl ? ['next', 'prev'] : ['prev', 'next'];
+  const StepIcon = type === StepType.previous ? getIcon(prev, icons) : getIcon(next, icons);
   let _disabled = false;
   if (allPages === 0) {
     // total为0
