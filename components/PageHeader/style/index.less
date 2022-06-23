@@ -126,3 +126,32 @@
     }
   }
 }
+
+.@{page-header-prefix-cls}-rtl {
+  .@{page-header-prefix-cls}-head {
+    &-wrapper {
+      padding-left: @page-header-padding-right;
+      padding-right: @page-header-padding-left;
+    }
+
+    &-main {
+      &-with-back {
+        margin-right: (@page-header-size-back-icon / 2) - (@page-header-size-back-icon-bg_hover / 2);
+        padding-right: (@page-header-size-back-icon-bg_hover / 2) -
+          (@page-header-size-back-icon / 2);
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .@{page-header-prefix-cls}-back {
+    margin-left: @page-header-margin-back-icon-right;
+    margin-right: 0;
+  }
+
+  .@{page-header-prefix-cls}-divider {
+    margin-right: @page-header-margin-divider-left;
+    margin-left: @page-header-margin-divider-right;
+  }
+}
