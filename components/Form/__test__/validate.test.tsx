@@ -1,8 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-test-renderer';
 import { Form, Input } from '../..';
-import { sleep } from '../../../tests/util';
+import { sleep, render, fireEvent } from '../../../tests/util';
 
 describe('validate form', () => {
   it('validate trigger in form', async () => {
@@ -12,7 +11,7 @@ describe('validate form', () => {
     const mockBlurFn = jest.fn();
     const mockChangeFn = jest.fn();
 
-    const wrapper = mount(
+    const wrapper = render(
       <Form ref={(node) => (form = node)} validateTrigger="onBlur" style={{ width: 600 }}>
         <Form.Item
           label="Username"
@@ -37,9 +36,9 @@ describe('validate form', () => {
       </Form>
     );
 
-    const input = wrapper.find('input');
+    const input = wrapper.find('input')[0];
     act(() => {
-      input.simulate('click');
+      fireEvent.click(input);
     });
     await sleep(10);
     expect(mockClickFn).toHaveBeenCalledTimes(1);
@@ -47,19 +46,19 @@ describe('validate form', () => {
     expect(mockBlurFn).toHaveBeenCalledTimes(0);
 
     act(() => {
-      input.simulate('focus');
+      fireEvent.focus(input);
     });
     await sleep(10);
     expect(mockBlurFn).toHaveBeenCalledTimes(1);
     act(() => {
-      input.simulate('blur');
+      fireEvent.blur(input);
     });
     await sleep(10);
     expect(mockBlurFn).toHaveBeenCalledTimes(2);
     expect(mockChangeFn).toHaveBeenCalledTimes(1);
 
     act(() => {
-      input.simulate('change', {
+      fireEvent.change(input, {
         target: {
           value: 'Hello',
         },
@@ -85,7 +84,7 @@ describe('validate form', () => {
     const mockBlurFn = jest.fn();
     const mockChangeFn = jest.fn();
 
-    const wrapper = mount(
+    const wrapper = render(
       <Form ref={(node) => (form = node)} style={{ width: 600 }}>
         <Form.Item
           label="Username"
@@ -110,9 +109,9 @@ describe('validate form', () => {
       </Form>
     );
 
-    const input = wrapper.find('input');
+    const input = wrapper.find('input')[0];
     act(() => {
-      input.simulate('click');
+      fireEvent.click(input);
     });
     await sleep(10);
     expect(mockClickFn).toHaveBeenCalledTimes(1);
@@ -120,19 +119,19 @@ describe('validate form', () => {
     expect(mockBlurFn).toHaveBeenCalledTimes(0);
 
     act(() => {
-      input.simulate('focus');
+      fireEvent.focus(input);
     });
     await sleep(10);
     expect(mockBlurFn).toHaveBeenCalledTimes(1);
     act(() => {
-      input.simulate('blur');
+      fireEvent.blur(input);
     });
     await sleep(10);
     expect(mockBlurFn).toHaveBeenCalledTimes(2);
     expect(mockChangeFn).toHaveBeenCalledTimes(0);
 
     act(() => {
-      input.simulate('change', {
+      fireEvent.change(input, {
         target: {
           value: 'Hello',
         },
@@ -153,7 +152,7 @@ describe('validate form', () => {
 
   it('validateLevel in rules', async () => {
     let form;
-    const wrapper = mount(
+    const wrapper = render(
       <Form ref={(node) => (form = node)} style={{ width: 600 }}>
         <Form.Item
           label="url"
@@ -176,9 +175,9 @@ describe('validate form', () => {
       </Form>
     );
 
-    const input = wrapper.find('input');
-    await act(() => {
-      input.simulate('change', {
+    const input = wrapper.find('input')[0];
+    act(() => {
+      fireEvent.change(input, {
         target: {
           value: 'Hello',
         },
@@ -186,22 +185,20 @@ describe('validate form', () => {
     });
 
     await sleep(100);
-    wrapper.update();
 
-    expect(wrapper.find('.arco-form-message').at(0).html()).toBe(
-      '<div class="arco-form-message arco-form-message-help"><div role="alert">字符数最少为 6</div><div role="alert" class="arco-form-message-help-warning">Hello 不是合法的邮箱地址</div></div>'
+    expect(wrapper.querySelector('.arco-form-message').innerHTML).toBe(
+      '<div role="alert">字符数最少为 6</div><div role="alert" class="arco-form-message-help-warning">Hello 不是合法的邮箱地址</div>'
     );
     expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1); // warning 信息
 
-    await act(() => {
-      input.simulate('change', {
+    act(() => {
+      fireEvent.change(input, {
         target: {
           value: 'Helloo',
         },
       });
     });
     await sleep(10);
-    wrapper.update();
 
     expect(wrapper.find('.arco-form-item-status-error')).toHaveLength(0);
     expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1);
@@ -211,13 +208,11 @@ describe('validate form', () => {
         warning: 'hahahaha',
       },
     });
-    wrapper.update();
-
-    expect(wrapper.find('.arco-form-message-help-warning').at(0).text()).toBe('hahahaha');
+    expect(wrapper.find('.arco-form-message-help-warning')[0].textContent).toBe('hahahaha');
   });
 
   it('validate messages', async () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Form
         validateMessages={{
           required: (_, { label }) => `必须填写 ${label}`,
@@ -245,42 +240,39 @@ describe('validate form', () => {
       </Form>
     );
 
-    const input = wrapper.find('input');
+    const input = wrapper.find('input')[0];
 
-    await act(() => {
-      input.simulate('change', {
+    act(() => {
+      fireEvent.change(input, {
         target: {
           value: 'Hello',
         },
       });
     });
     await sleep(10);
-    wrapper.update();
 
-    expect(wrapper.find('.arco-form-message').childAt(0).text()).toBe('字符数必须是 3');
+    expect(wrapper.find('.arco-form-message')[0].children[0].textContent).toBe('字符数必须是 3');
 
-    await act(() => {
-      input.simulate('change', {
+    act(() => {
+      fireEvent.change(input, {
         target: {
           value: '',
         },
       });
     });
     await sleep(10);
-    wrapper.update();
 
-    expect(wrapper.find('.arco-form-message').childAt(0).text()).toBe('必须填写 Username');
+    expect(wrapper.find('.arco-form-message')[0].children[0].textContent).toBe('必须填写 Username');
 
-    await act(() => {
-      input.simulate('change', {
+    act(() => {
+      fireEvent.change(input, {
         target: {
           value: '123',
         },
       });
     });
     await sleep(10);
-    wrapper.update();
 
-    expect(wrapper.find('.arco-form-message').childAt(0).text()).toBe('不匹配正则 /abc/');
+    expect(wrapper.find('.arco-form-message')[0].children[0].textContent).toBe('不匹配正则 /abc/');
   });
 });

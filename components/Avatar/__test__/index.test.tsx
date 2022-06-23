@@ -8,7 +8,7 @@ import IconEdit from '../../../icon/react-icon/IconEdit';
 
 const AvatarGroup = Avatar.Group;
 
-let container: HTMLDivElement;
+let container: HTMLDivElement | null;
 
 mountTest(Avatar);
 componentConfigTest(Avatar, 'Avatar');
@@ -21,7 +21,7 @@ describe('Avatar', () => {
   });
 
   afterEach(() => {
-    document.body.removeChild(container);
+    container && document.body.removeChild(container);
     container = null;
   });
 
@@ -29,8 +29,8 @@ describe('Avatar', () => {
     act(() => {
       ReactDOM.render(<Avatar size={100}>B</Avatar>, container);
     });
-    const text = container.querySelector<HTMLDivElement>('.arco-avatar');
-    expect(text.style.width).toBe('100px');
+    const text = container?.querySelector<HTMLDivElement>('.arco-avatar');
+    expect(text?.style.width).toBe('100px');
   });
 
   it('avatar group', () => {
@@ -45,11 +45,11 @@ describe('Avatar', () => {
       );
     });
 
-    const component = container.querySelector('.arco-avatar-group');
+    const component = container?.querySelector('.arco-avatar-group');
 
-    expect(component.childElementCount).toBe(3);
+    expect(component?.childElementCount).toBe(3);
 
-    const avatars = Array.from(container.querySelectorAll('.arco-avatar'));
+    const avatars = Array.from(container?.querySelectorAll('.arco-avatar') || []);
 
     const texts = ['B', 'Arco', 'Design'];
 
@@ -60,7 +60,7 @@ describe('Avatar', () => {
           avatars.length - index
         }; margin-left: ${index === 0 ? 0 : -15}px;`
       );
-      expect(avatar.querySelector('.arco-avatar-text').innerHTML).toBe(texts[index]);
+      expect(avatar?.querySelector('.arco-avatar-text')?.innerHTML).toBe(texts[index]);
     });
   });
 
@@ -69,11 +69,11 @@ describe('Avatar', () => {
       ReactDOM.render(<Avatar triggerIcon={<IconEdit />}>A</Avatar>, container);
     });
 
-    const component = container.querySelector('.arco-avatar');
-    const triggerButton = component.querySelector('.arco-avatar-trigger-icon-button');
+    const component = container?.querySelector('.arco-avatar');
+    const triggerButton = component?.querySelector('.arco-avatar-trigger-icon-button');
 
-    expect(triggerButton.childElementCount).toBe(1);
-    expect(triggerButton.childNodes[0].nodeName).toBe('svg');
+    expect(triggerButton?.childElementCount).toBe(1);
+    expect(triggerButton?.childNodes[0].nodeName).toBe('svg');
   });
 
   it('triggerIcon mask', () => {
@@ -86,10 +86,10 @@ describe('Avatar', () => {
       );
     });
 
-    const component = container.querySelector('.arco-avatar');
-    const triggerButton = component.querySelector('.arco-avatar-trigger-icon-mask');
+    const component = container?.querySelector('.arco-avatar');
+    const triggerButton = component?.querySelector('.arco-avatar-trigger-icon-mask');
 
-    expect(triggerButton.childElementCount).toBe(1);
-    expect(triggerButton.childNodes[0].nodeName).toBe('svg');
+    expect(triggerButton?.childElementCount).toBe(1);
+    expect(triggerButton?.childNodes[0].nodeName).toBe('svg');
   });
 });

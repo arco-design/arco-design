@@ -1,13 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import { Button, Form, Input, Radio } from '../..';
-import { FormProps } from '../interface';
 
 mountTest(Form);
 
 function mountForm(component: React.ReactElement) {
-  return mount<typeof Form, React.PropsWithChildren<FormProps>>(component);
+  return render(component);
 }
 
 describe('setFieldsValue for shouldUpdate items', () => {
@@ -95,9 +94,7 @@ describe('setFieldsValue for shouldUpdate items', () => {
       </div>
     );
 
-    const button = wrapper.find('.form-button').at(0);
-    button.simulate('click');
-
+    fireEvent.click(wrapper.querySelector('.form-button'));
     expect(formRef.getFieldsValue()).toEqual({
       type: 'B',
       field1: 'setValue',
