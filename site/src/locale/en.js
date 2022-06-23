@@ -110,6 +110,7 @@ export default {
   'routes.material.start': 'Quick Start',
   'routes.material.guide': 'Guide',
   'routes.material.qa': 'Q&A',
+  'routes.material.spec': 'Specification',
   'routes.material.create-project': 'Create Project',
   'routes.material.project-template': 'Material Template',
   'routes.material.project-config': 'Project Config',
