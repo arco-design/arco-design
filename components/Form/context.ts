@@ -47,3 +47,7 @@ export const FormProviderContext = createContext<{
   onFormValuesChange?: (id: string | undefined, changedValues) => void;
   onFormSubmit?: (id: string | undefined, values) => void;
 }>({});
+
+export const FormListContext = createContext<{
+  getItemKey?: (key) => string;
+}>({});

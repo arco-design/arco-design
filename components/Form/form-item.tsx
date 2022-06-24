@@ -27,6 +27,7 @@ import {
   FormItemContext as RawFormItemContext,
   FormItemContextType as RawFormItemContextType,
   FormContext,
+  FormListContext,
 } from './context';
 import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
@@ -100,6 +101,7 @@ const Item = <
 ) => {
   const { getPrefixCls, prefixCls: prefix } = useContext(ConfigContext);
   const topFormContext = useContext(RawFormItemContext);
+  const formListContext = useContext(FormListContext);
   const [errors, setErrors] = useState<{
     [key: string]: FieldError<FieldValue>;
   }>(null);
@@ -242,7 +244,11 @@ const Item = <
     if (React.Children.count(children) === 1) {
       if (field) {
         return (
-          <Control disabled={disabled} {...(props as any)} key={field}>
+          <Control
+            disabled={disabled}
+            {...(props as any)}
+            key={formListContext?.getItemKey?.(field) || field}
+          >
             {children}
           </Control>
         );
