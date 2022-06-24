@@ -57,33 +57,46 @@ function Dropdown(baseProps: DropdownProps, _) {
 
   const renderPopup = () => {
     const content = getPopupContent();
-    return content && content.props.isMenu
-      ? React.cloneElement(content as ReactElement, {
-          prefixCls: `${prefixCls}-menu`,
-          inDropdown: true,
-          selectable: false,
-          onClickMenuItem: (...args) => {
-            let returnValueOfOnClickMenuItem = null;
 
-            // Trigger onClickMenuItem first
-            const content = getPopupContent();
-            if (content.props.onClickMenuItem) {
-              returnValueOfOnClickMenuItem = content.props.onClickMenuItem(...args);
-            }
+    if (content?.props?.isMenu) {
+      let isEmpty = true;
+      for (const child of React.Children.toArray(content.props.children)) {
+        if (child !== null && child !== undefined) {
+          isEmpty = false;
+          break;
+        }
+      }
 
-            // Set focus to avoid onblur
-            const child = triggerRef.current && triggerRef.current.getRootElement();
-            child && child.focus && child.focus();
+      return React.cloneElement(content as ReactElement, {
+        prefixCls: cs(`${prefixCls}-menu`, {
+          [`${prefixCls}-menu-hidden`]: isEmpty,
+        }),
+        inDropdown: true,
+        selectable: false,
+        onClickMenuItem: (...args) => {
+          let returnValueOfOnClickMenuItem = null;
 
-            // Trigger onVisibleChange. Outer component can determine whether to change the state based on the current visibility value.
-            if (returnValueOfOnClickMenuItem instanceof Promise) {
-              returnValueOfOnClickMenuItem.finally(() => changePopupVisible(false));
-            } else if (returnValueOfOnClickMenuItem !== false) {
-              changePopupVisible(false);
-            }
-          },
-        })
-      : content;
+          // Trigger onClickMenuItem first
+          const content = getPopupContent();
+          if (content.props.onClickMenuItem) {
+            returnValueOfOnClickMenuItem = content.props.onClickMenuItem(...args);
+          }
+
+          // Set focus to avoid onblur
+          const child = triggerRef.current && triggerRef.current.getRootElement();
+          child && child.focus && child.focus();
+
+          // Trigger onVisibleChange. Outer component can determine whether to change the state based on the current visibility value.
+          if (returnValueOfOnClickMenuItem instanceof Promise) {
+            returnValueOfOnClickMenuItem.finally(() => changePopupVisible(false));
+          } else if (returnValueOfOnClickMenuItem !== false) {
+            changePopupVisible(false);
+          }
+        },
+      });
+    }
+
+    return content;
   };
 
   return (
