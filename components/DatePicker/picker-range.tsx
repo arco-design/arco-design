@@ -517,9 +517,10 @@ const Picker = (baseProps: RangePickerProps) => {
 
   // Callback when click the panel date cell
   function onSelectPanel(_: string, date: Dayjs) {
-    const isOutOfRange = outOfRange(date);
+    const isOutOfRange = outOfRange(date) && firstRange.current;
     const newValueShow =
       resetRange && selectedLength === 2 && !isHalfAvailable ? [] : [...panelValue];
+
     // if custom triggerElement, focused input index always 0 -> 1
     const focusedIndex = customTriggerElement
       ? selectedLength === 0 || selectedLength === 2
