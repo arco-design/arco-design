@@ -1,3 +1,11 @@
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- Fixed a bug where the selection range of the `DatePicker` component was invalid in rare cases.([#1041](https://github.com/arco-design/arco-design/pull/1041))
+
 ## 2.35.0
 
 2022-06-10

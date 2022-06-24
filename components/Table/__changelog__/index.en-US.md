@@ -1,3 +1,11 @@
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- Fixed the bug that the data and record outputted by the `Table` component contained internal data.([#1047](https://github.com/arco-design/arco-design/pull/1047))
+
 ## 2.35.1
 
 2022-06-17

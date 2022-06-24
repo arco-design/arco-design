@@ -1,3 +1,12 @@
+## 2.36.0
+
+2022-06-24
+
+### 🐛 问题修复
+
+- 修复 `Form.List` 组件在移除表单项时，其他表单项校验状态丢失的 bug。([#1046](https://github.com/arco-design/arco-design/pull/1046))
+- 修复 `form.clearFields()` 方法未清空校验状态的 bug。([#1046](https://github.com/arco-design/arco-design/pull/1046))
+
 ## 2.35.0
 
 2022-06-10

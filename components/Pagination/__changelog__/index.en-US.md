@@ -1,3 +1,11 @@
+## 2.36.0
+
+2022-06-24
+
+### 💅 Style
+
+- Fixed ellipsis in `Pagination` not vertically centered in some cases.([#1040](https://github.com/arco-design/arco-design/pull/1040))
+
 ## 2.35.0
 
 2022-06-10

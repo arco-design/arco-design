@@ -1,3 +1,11 @@
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- fix `dragToSort` not works on `TreeSelect`([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
 ## 2.31.0
 
 2022-03-25

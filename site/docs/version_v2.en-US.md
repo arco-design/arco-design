@@ -2,6 +2,36 @@
 changelog: true
 ---
 
+## 2.36.0
+
+2022-06-24
+
+### 💎 Enhancement
+
+- Optimized the display of the `Transfer` component in `simple` mode for the current number of options in the list.([#1045](https://github.com/arco-design/arco-design/pull/1045))
+- The `Menu` component supports switching operations using the Tab key.([#1038](https://github.com/arco-design/arco-design/pull/1038))
+- The `Typography` component is beyond ellipsis optimization, and `cssEllipsis` supports multi-line elision scenarios to meet performance optimization in the case of large amounts of data.([#1039](https://github.com/arco-design/arco-design/pull/1039))
+
+### 🆕 Feature
+
+- `Statistic` component adds `renderFormat` parameter to support custom rendering.([#1044](https://github.com/arco-design/arco-design/pull/1044))
+
+### 🐛 BugFix
+
+- Fixed the bug that the data and record outputted by the `Table` component contained internal data.([#1047](https://github.com/arco-design/arco-design/pull/1047))
+- Fixed a bug where the validation state of other form items was lost when the `Form.List` component was removed from the form item.([#1046](https://github.com/arco-design/arco-design/pull/1046))
+- Fixed a bug where the `form.clearFields()` method did not clear the validation state.([#1046](https://github.com/arco-design/arco-design/pull/1046))
+- Fixed a bug where `InputNumber` was affected by the global configuration of `Input`.([#1042](https://github.com/arco-design/arco-design/pull/1042))
+- Fixed a bug where the selection range of the `DatePicker` component was invalid in rare cases.([#1041](https://github.com/arco-design/arco-design/pull/1041))
+- fix `dragToSort` not works  on `Cascader`([#1029](https://github.com/arco-design/arco-design/pull/1029))
+- fix `dragToSort` not works on `TreeSelect`([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
+### 💅 Style
+
+- Completely hides the popup menu when the `Dropdown` menu item has no children.([#1043](https://github.com/arco-design/arco-design/pull/1043))
+- Fixed ellipsis in `Pagination` not vertically centered in some cases.([#1040](https://github.com/arco-design/arco-design/pull/1040))
+- Fixed the issue that the arrow direction on the right side of `Menu.SubMenu` did not change when it was expanded.([#1022](https://github.com/arco-design/arco-design/pull/1022))
+
 ## 2.35.1
 
 2022-06-17
