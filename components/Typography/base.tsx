@@ -1,5 +1,4 @@
 import React, { useState, useContext, PropsWithChildren } from 'react';
-import throttle from 'lodash/throttle';
 import { ConfigContext } from '../ConfigProvider';
 import ResizeObserverComponent from '../_util/resizeObserver';
 import {
@@ -89,7 +88,7 @@ function Base(props: BaseProps) {
   const mergedEditing = 'editing' in editableConfig ? editableConfig.editing : editing;
 
   const ellipsisConfig: EllipsisConfig = ellipsis
-    ? { rows: 1, ellipsisStr: '...', cssEllipsis: true, ...(isObject(ellipsis) ? ellipsis : {}) }
+    ? { rows: 1, ellipsisStr: '...', cssEllipsis: false, ...(isObject(ellipsis) ? ellipsis : {}) }
     : {};
 
   const [expanding, setExpanding] = useMergeValue<boolean>(false, {
@@ -122,20 +121,20 @@ function Base(props: BaseProps) {
     simpleEllipsis: simpleEllipsis || expanding,
   });
 
-  const handleResize = throttle((entry) => {
+  const handleResize = (entry) => {
     const { contentRect } = entry?.[0];
     if (contentRect) {
       const currentWidth = component.length ? contentRect.width - 16 : contentRect.width;
-      // CSS single-line ellipsis may expand infinitely in the table，
-      // In this scene width will change frequently
-      if (width > 0 && simpleEllipsis && ellipsisConfig.rows === 1) {
-        return;
-      }
-      if (Math.abs(currentWidth - width) > 4) {
+      const resizeStatus =
+        simpleEllipsis && ellipsisConfig.rows === 1
+          ? // CSS single-line ellipsis may expand infinitely in the table，
+            [MEASURE_STATUS.NO_NEED_ELLIPSIS]
+          : [MEASURE_STATUS.NO_NEED_ELLIPSIS, MEASURE_STATUS.MEASURE_END];
+      if (resizeStatus.includes(measureStatus)) {
         setWidth(currentWidth);
       }
     }
-  }, 200);
+  };
 
   function renderOperations(isEllipsis?: boolean) {
     return (
