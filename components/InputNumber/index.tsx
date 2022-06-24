@@ -280,6 +280,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   return (
     <Input
+      _ignorePropsFromGlobal
       role="spinbutton"
       aria-valuemax={max}
       aria-valuemin={min}
