@@ -27,8 +27,6 @@ const MenuContext = createContext<
   > & {
     id?: string;
     prefixCls?: string;
-    hotkeyInfo?: HotkeyInfo;
-    resetHotkeyInfo?: ResetHotkeyInfo;
     onClickMenuItem?: (key: string, event) => void;
     onClickSubMenu?: (key: string, level: number, type: 'pop' | 'inline') => void;
     collectInlineMenuKeys?: (key: string, unmount?: boolean) => void;

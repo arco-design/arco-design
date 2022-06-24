@@ -9,7 +9,7 @@ import Dropdown from '../../Dropdown';
 import Menu from '../index';
 import MenuIndent from '../indent';
 import MenuContext from '../context';
-import { useHotkeyHandler } from '../hotkey';
+import { Enter } from '../../_util/keycode';
 
 let globalPopSubMenuIndex = 0;
 
@@ -31,7 +31,6 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     mode,
     inDropdown,
     levelIndent,
-    hotkeyInfo,
     selectedKeys = [],
     icons,
     triggerProps: contextTriggerProps,
@@ -45,10 +44,6 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   const baseClassName = `${prefixCls}-pop`;
   const isSelected = selectable && selectedKeys.indexOf(props._key as string) > -1;
   const needPopOnBottom = mode === 'horizontal' && !inDropdown;
-
-  const isActive = useHotkeyHandler(_key, () => {
-    setPopupVisible(hotkeyInfo.activeKeyPath.indexOf(_key) > 0);
-  });
 
   // Unique ID of this instance
   const instanceId = useMemo<string>(() => {
@@ -69,6 +64,10 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   };
 
   const hasSelectedStatus = isChildrenSelected(children, selectedKeys) || isSelected;
+  const subMenuClickHandler = (event) => {
+    onClickSubMenu(_key, level, 'pop');
+    selectable && onClickMenuItem(_key, event);
+  };
 
   return (
     <Dropdown
@@ -100,6 +99,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
       }}
     >
       <div
+        tabIndex={0}
         aria-haspopup
         aria-expanded={popupVisible}
         aria-controls={instanceId}
@@ -109,14 +109,16 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
           baseClassName,
           `${baseClassName}-header`,
           {
-            [`${prefixCls}-active`]: isActive,
             [`${prefixCls}-selected`]: hasSelectedStatus,
           },
           className
         )}
-        onClick={(event) => {
-          onClickSubMenu(_key, level, 'pop');
-          selectable && onClickMenuItem(_key, event);
+        onClick={subMenuClickHandler}
+        onKeyDown={(event) => {
+          const keyCode = event.keyCode || event.which;
+          if (keyCode === Enter.code) {
+            subMenuClickHandler(event);
+          }
         }}
       >
         <MenuIndent prefixCls={prefixCls} levelIndent={levelIndent} level={level} />

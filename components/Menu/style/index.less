@@ -137,7 +137,7 @@
           }
         }
 
-        &.@{menu-prefix-cls}-active {
+        &:focus-visible {
           .menu-focus-visible-style();
         }
 
@@ -384,10 +384,6 @@
     overflow: hidden;
     height: auto;
     transition: height @transition-duration-2 @transition-timing-function-standard;
-
-    &-hide {
-      height: 0;
-    }
   }
 
   // 弹出的 ToolTip 中 a 标签的样式

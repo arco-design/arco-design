@@ -14,7 +14,6 @@ import IconMenuFold from '../../icon/react-icon/IconMenuFold';
 import IconMenuUnfold from '../../icon/react-icon/IconMenuUnfold';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import MenuContext from './context';
-import { useHotkeyListener } from './hotkey';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 // Generate DOM id for instance
@@ -99,17 +98,6 @@ function Menu(baseProps: MenuProps, ref) {
     return id;
   }, [rest.id]);
 
-  const {
-    hotkeyInfo,
-    listener: hotkeyListener,
-    reset: resetHotkeyInfo,
-  } = useHotkeyListener({
-    openKeys,
-    selectedKeys,
-    menuInfoMap,
-    needPause: () => mergedCollapse,
-  });
-
   // autoOpen 时，初次渲染展开所有的子菜单
   useEffect(() => {
     // 从 openKeys 中过滤已经不存在的 subMenuKey
@@ -172,7 +160,6 @@ function Menu(baseProps: MenuProps, ref) {
     <div
       id={mergedHasCollapseButton ? instanceId : undefined}
       role="menu"
-      tabIndex={1}
       {...omit(rest, ['isMenu'])}
       ref={ref}
       style={usedStyle}
@@ -188,7 +175,6 @@ function Menu(baseProps: MenuProps, ref) {
         },
         className
       )}
-      onKeyDown={hotkeyListener}
     >
       <MenuContext.Provider
         value={{
@@ -207,8 +193,6 @@ function Menu(baseProps: MenuProps, ref) {
           // pass props directly
           id: instanceId,
           prefixCls,
-          hotkeyInfo: 'hotkeyInfo' in menuContext ? menuContext.hotkeyInfo : hotkeyInfo,
-          resetHotkeyInfo,
           collectInlineMenuKeys: (key, unmount) => {
             if (unmount) {
               refSubMenuKeys.current = refSubMenuKeys.current.filter((x) => x !== key);
