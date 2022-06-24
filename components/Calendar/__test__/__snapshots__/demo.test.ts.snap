@@ -2186,168 +2186,788 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
 
 exports[`renders Calendar/demo/panel.md correctly 1`] = `
 <div
-  style="display:flex;align-items:start"
+  class="arco-space arco-space-horizontal arco-space-align-start"
 >
   <div
-    class="arco-calendar arco-calendar-mode-month arco-calendar-panel"
-    style="margin-right:50px;width:265px"
+    class="arco-space-item"
+    style="margin-right:8px"
   >
     <div
-      class="arco-calendar-header"
+      class="arco-calendar arco-calendar-mode-month arco-calendar-panel"
+      style="margin-right:50px;width:265px"
     >
       <div
-        class="arco-calendar-header-icon"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-double-left"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
-          />
-        </svg>
-      </div>
-      <div
-        class="arco-calendar-header-icon"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-left"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M32 8.4 16.444 23.956 32 39.513"
-          />
-        </svg>
-      </div>
-      <div
-        class="arco-calendar-header-value"
-      >
-        2020 年 04 月
-      </div>
-      <div
-        class="arco-calendar-header-icon"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-right"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="m16 39.513 15.556-15.557L16 8.4"
-          />
-        </svg>
-      </div>
-      <div
-        class="arco-calendar-header-icon"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-double-right"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
-          />
-        </svg>
-      </div>
-    </div>
-    <div
-      class="arco-calendar-body"
-    >
-      <div
-        class="arco-calendar-month"
+        class="arco-calendar-header"
       >
         <div
-          class="arco-calendar-week-list"
+          class="arco-calendar-header-icon"
         >
-          <div
-            class="arco-calendar-week-list-item"
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-double-left"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
           >
-            日
-          </div>
-          <div
-            class="arco-calendar-week-list-item"
-          >
-            一
-          </div>
-          <div
-            class="arco-calendar-week-list-item"
-          >
-            二
-          </div>
-          <div
-            class="arco-calendar-week-list-item"
-          >
-            三
-          </div>
-          <div
-            class="arco-calendar-week-list-item"
-          >
-            四
-          </div>
-          <div
-            class="arco-calendar-week-list-item"
-          >
-            五
-          </div>
-          <div
-            class="arco-calendar-week-list-item"
-          >
-            六
-          </div>
+            <path
+              d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
+            />
+          </svg>
         </div>
         <div
-          class="arco-calendar-month-cell-body"
+          class="arco-calendar-header-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-left"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M32 8.4 16.444 23.956 32 39.513"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-calendar-header-value"
+        >
+          2020 年 04 月
+        </div>
+        <div
+          class="arco-calendar-header-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-right"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="m16 39.513 15.556-15.557L16 8.4"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-calendar-header-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-double-right"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="arco-calendar-body"
+      >
+        <div
+          class="arco-calendar-month"
         >
           <div
-            class="arco-calendar-month-row"
+            class="arco-calendar-week-list"
           >
             <div
-              class="arco-calendar-cell"
+              class="arco-calendar-week-list-item"
+            >
+              日
+            </div>
+            <div
+              class="arco-calendar-week-list-item"
+            >
+              一
+            </div>
+            <div
+              class="arco-calendar-week-list-item"
+            >
+              二
+            </div>
+            <div
+              class="arco-calendar-week-list-item"
+            >
+              三
+            </div>
+            <div
+              class="arco-calendar-week-list-item"
+            >
+              四
+            </div>
+            <div
+              class="arco-calendar-week-list-item"
+            >
+              五
+            </div>
+            <div
+              class="arco-calendar-week-list-item"
+            >
+              六
+            </div>
+          </div>
+          <div
+            class="arco-calendar-month-cell-body"
+          >
+            <div
+              class="arco-calendar-month-row"
             >
               <div
-                class="arco-calendar-date"
+                class="arco-calendar-cell"
               >
                 <div
-                  class="arco-calendar-date-value"
+                  class="arco-calendar-date"
                 >
-                  29
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    29
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    30
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    31
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view arco-calendar-cell-selected"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    1
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    2
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    3
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    4
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="arco-calendar-cell"
+              class="arco-calendar-month-row"
             >
               <div
-                class="arco-calendar-date"
+                class="arco-calendar-cell arco-calendar-cell-in-view"
               >
                 <div
-                  class="arco-calendar-date-value"
+                  class="arco-calendar-date"
                 >
-                  30
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    5
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    6
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    7
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    8
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    9
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view arco-calendar-cell-today"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    10
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    11
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="arco-calendar-cell"
+              class="arco-calendar-month-row"
+            >
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    12
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    13
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    14
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    15
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    16
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    17
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    18
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-calendar-month-row"
+            >
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    20
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    21
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    22
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    23
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    24
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    25
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-calendar-month-row"
+            >
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    26
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    27
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    28
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    29
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell arco-calendar-cell-in-view"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    30
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    1
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    2
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-calendar-month-row"
+            >
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    3
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    4
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    5
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    6
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    7
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    8
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-calendar-cell"
+              >
+                <div
+                  class="arco-calendar-date"
+                >
+                  <div
+                    class="arco-calendar-date-value"
+                  >
+                    9
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-calendar-footer-btn-wrapper"
+      >
+        今天
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-calendar arco-calendar-mode-year arco-calendar-panel"
+      style="width:265px"
+    >
+      <div
+        class="arco-calendar-header"
+      >
+        <div
+          class="arco-calendar-header-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-double-left"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
+            />
+          </svg>
+        </div>
+        <div
+          class="arco-calendar-header-icon arco-calendar-header-icon-hidden"
+        />
+        <div
+          class="arco-calendar-header-value"
+        >
+          2020 年
+        </div>
+        <div
+          class="arco-calendar-header-icon arco-calendar-header-icon-hidden"
+        />
+        <div
+          class="arco-calendar-header-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-double-right"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="arco-calendar-body"
+      >
+        <div
+          class="arco-calendar-year"
+        >
+          <div
+            class="arco-calendar-year-row"
+          >
+            <div
+              class="arco-calendar-cell arco-calendar-cell-in-view"
             >
               <div
                 class="arco-calendar-date"
@@ -2355,7 +2975,20 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  31
+                  一月
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-calendar-cell arco-calendar-cell-in-view"
+            >
+              <div
+                class="arco-calendar-date"
+              >
+                <div
+                  class="arco-calendar-date-value"
+                >
+                  二月
                 </div>
               </div>
             </div>
@@ -2368,118 +3001,14 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  1
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  2
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  3
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  4
+                  三月
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="arco-calendar-month-row"
+            class="arco-calendar-year-row"
           >
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  5
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  6
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  7
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  8
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  9
-                </div>
-              </div>
-            </div>
             <div
               class="arco-calendar-cell arco-calendar-cell-in-view arco-calendar-cell-today"
             >
@@ -2489,7 +3018,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  10
+                  四月
                 </div>
               </div>
             </div>
@@ -2502,13 +3031,26 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  11
+                  五月
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-calendar-cell arco-calendar-cell-in-view"
+            >
+              <div
+                class="arco-calendar-date"
+              >
+                <div
+                  class="arco-calendar-date-value"
+                >
+                  六月
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="arco-calendar-month-row"
+            class="arco-calendar-year-row"
           >
             <div
               class="arco-calendar-cell arco-calendar-cell-in-view"
@@ -2519,7 +3061,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  12
+                  七月
                 </div>
               </div>
             </div>
@@ -2532,7 +3074,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  13
+                  八月
                 </div>
               </div>
             </div>
@@ -2545,65 +3087,13 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  14
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  15
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  16
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  17
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  18
+                  九月
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="arco-calendar-month-row"
+            class="arco-calendar-year-row"
           >
             <div
               class="arco-calendar-cell arco-calendar-cell-in-view"
@@ -2614,7 +3104,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  19
+                  十月
                 </div>
               </div>
             </div>
@@ -2627,7 +3117,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  20
+                  十一月
                 </div>
               </div>
             </div>
@@ -2640,489 +3130,8 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
                 <div
                   class="arco-calendar-date-value"
                 >
-                  21
+                  十二月
                 </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  22
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  23
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  24
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  25
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-month-row"
-          >
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  26
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  27
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  28
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  29
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell arco-calendar-cell-in-view"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  30
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  1
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  2
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-month-row"
-          >
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  3
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  4
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  5
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  6
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  7
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  8
-                </div>
-              </div>
-            </div>
-            <div
-              class="arco-calendar-cell"
-            >
-              <div
-                class="arco-calendar-date"
-              >
-                <div
-                  class="arco-calendar-date-value"
-                >
-                  9
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-calendar-footer-btn-wrapper"
-    >
-      今天
-    </div>
-  </div>
-  <div
-    class="arco-calendar arco-calendar-mode-year arco-calendar-panel"
-    style="width:265px"
-  >
-    <div
-      class="arco-calendar-header"
-    >
-      <div
-        class="arco-calendar-header-icon"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-double-left"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
-          />
-        </svg>
-      </div>
-      <div
-        class="arco-calendar-header-icon arco-calendar-header-icon-hidden"
-      />
-      <div
-        class="arco-calendar-header-value"
-      >
-        2020 年
-      </div>
-      <div
-        class="arco-calendar-header-icon arco-calendar-header-icon-hidden"
-      />
-      <div
-        class="arco-calendar-header-icon"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-double-right"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
-          />
-        </svg>
-      </div>
-    </div>
-    <div
-      class="arco-calendar-body"
-    >
-      <div
-        class="arco-calendar-year"
-      >
-        <div
-          class="arco-calendar-year-row"
-        >
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                一月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                二月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view arco-calendar-cell-selected"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                三月
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="arco-calendar-year-row"
-        >
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view arco-calendar-cell-today"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                四月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                五月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                六月
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="arco-calendar-year-row"
-        >
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                七月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                八月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                九月
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="arco-calendar-year-row"
-        >
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                十月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                十一月
-              </div>
-            </div>
-          </div>
-          <div
-            class="arco-calendar-cell arco-calendar-cell-in-view"
-          >
-            <div
-              class="arco-calendar-date"
-            >
-              <div
-                class="arco-calendar-date-value"
-              >
-                十二月
               </div>
             </div>
           </div>
