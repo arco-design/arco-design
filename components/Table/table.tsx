@@ -22,7 +22,7 @@ import Pagination from '../Pagination';
 import { on, off } from '../_util/dom';
 import { ConfigContext } from '../ConfigProvider';
 import { PaginationProps } from '../Pagination/pagination';
-import { getScrollBarHeight, getScrollBarWidth, deepCloneData } from './utils';
+import { getScrollBarHeight, getScrollBarWidth, deepCloneData, getOriginData } from './utils';
 import ColGroup from './colgroup';
 import useExpand from './hooks/useExpand';
 import useRowSelection from './hooks/useRowSelection';
@@ -137,7 +137,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   const getRowKey: GetRowKeyType<T> = useMemo(() => {
     if (typeof rowKey === 'function') {
-      return rowKey;
+      return (record) => rowKey(getOriginData(record));
     }
 
     return (record) => record[rowKey];
@@ -226,7 +226,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const currentData = getPageData(newProcessedData);
     onChange &&
       onChange(getPaginationProps(newProcessedData), newSorter, innerFilters, {
-        currentData,
+        currentData: getOriginData(currentData),
         action: 'sort',
       });
   }
@@ -259,7 +259,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       const currentData = getPageData(newProcessedData);
       onChange &&
         onChange(getPaginationProps(newProcessedData), innerSorter, newFilters, {
-          currentData,
+          currentData: getOriginData(currentData),
           action: 'filter',
         });
     } else if (isArray(filter) && !filter.length) {
@@ -277,7 +277,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const currentData = getPageData(newProcessedData);
     onChange &&
       onChange(getPaginationProps(newProcessedData), innerSorter, newFilters, {
-        currentData,
+        currentData: getOriginData(currentData),
         action: 'filter',
       });
   }
@@ -397,7 +397,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     if (pagination === false) {
       return currentData;
     }
-    if (isObject(pagination) && clonedData.length <= pageSize) {
+    if (isObject(pagination) && data.length <= pageSize) {
       return currentData;
     }
     return currentData.slice((current - 1) * pageSize, current * pageSize);
@@ -407,7 +407,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   const fixedHeader = !!(scroll && scroll.y);
 
-  const summaryNode = summary?.(processedData);
+  const summaryNode = summary?.(getOriginData(processedData));
 
   const fixedFooterPosition: 'top' | 'bottom' | undefined =
     summary && React.isValidElement(summaryNode) && summaryNode.props.fixed;
@@ -456,16 +456,16 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   }, [hasFixedColumnLeft, hasFixedColumnLeft, scroll?.x, flattenColumns.length]);
 
   useUpdate(() => {
-    const { total, pageSize } = getPaginationProps(clonedData);
+    const { total, pageSize } = getPaginationProps(data);
     const maxPageNum = Math.ceil(total / pageSize);
     if (maxPageNum < currentPage) {
       setCurrentPage(1);
     }
-  }, [clonedData.length]);
+  }, [data.length]);
 
   useUpdate(() => {
     setFixedColumnClassNames();
-  }, [clonedData, hasFixedColumnLeft, hasFixedColumnLeft]);
+  }, [data, hasFixedColumnLeft, hasFixedColumnLeft]);
 
   useImperativeHandle(ref, () => ({
     getRootDomElement,

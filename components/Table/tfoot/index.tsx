@@ -1,5 +1,6 @@
 import React from 'react';
 import { SummaryContext } from '../summary/context';
+import { getOriginData } from '../utils';
 import { TfootProps } from '../interface';
 
 function Tfoot<T>(props: TfootProps<T>) {
@@ -8,7 +9,7 @@ function Tfoot<T>(props: TfootProps<T>) {
   return (
     <tfoot className={`${prefixCls}-tfoot`}>
       <SummaryContext.Provider value={{ columns, stickyOffsets, stickyClassNames, prefixCls }}>
-        {summary(data)}
+        {summary(getOriginData(data))}
       </SummaryContext.Provider>
     </tfoot>
   );

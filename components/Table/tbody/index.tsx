@@ -5,6 +5,7 @@ import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
 import VirtualList from '../../_class/VirtualList';
 import Tr from './tr';
+import { getOriginData } from '../utils';
 
 function TBody<T>(props: TbodyProps<T>) {
   const {
@@ -27,6 +28,10 @@ function TBody<T>(props: TbodyProps<T>) {
     saveVirtualWrapperRef,
   } = props;
 
+  const er = expandedRowRender
+    ? (r, i) => expandedRowRender(getOriginData(r), i)
+    : expandedRowRender;
+
   const { ComponentTbody } = useComponent(components);
 
   let type: 'radio' | 'checkbox';
@@ -44,7 +49,7 @@ function TBody<T>(props: TbodyProps<T>) {
     if ('rowExpandable' in expandProps && typeof expandProps.rowExpandable === 'function') {
       return expandProps.rowExpandable(record);
     }
-    return expandedRowRender && expandedRowRender(record, index) !== null;
+    return er && er(record, index) !== null;
   }
 
   const trProps = {
@@ -79,7 +84,7 @@ function TBody<T>(props: TbodyProps<T>) {
         });
       }
     };
-    if (!expandedRowRender) {
+    if (!er) {
       travel(record[childrenColumnName], getRowKey(record));
     }
 
@@ -168,10 +173,10 @@ function TBody<T>(props: TbodyProps<T>) {
                           className={`${prefixCls}-expand-fixed-row`}
                           style={{ width: tableViewWidth }}
                         >
-                          {expandedRowRender && expandedRowRender(record, index)}
+                          {er && er(record, index)}
                         </div>
                       ) : (
-                        expandedRowRender && expandedRowRender(record, index)
+                        er && er(record, index)
                       )}
                     </td>
                   </tr>
