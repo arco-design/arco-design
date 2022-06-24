@@ -16,7 +16,12 @@ export function deepCloneData(data, childrenColumnName) {
   function travel(data) {
     const newData = [];
     data.forEach((d) => {
+      // case: [[{}]]
+      if (isArray(d)) {
+        return d;
+      }
       const _d = { ...d };
+      _d.__ORIGIN_DATA = { ...d };
       if (isObject(_d) && _d[childrenColumnName]) {
         _d[childrenColumnName] = travel(_d[childrenColumnName]);
       }
@@ -27,6 +32,19 @@ export function deepCloneData(data, childrenColumnName) {
   }
 
   return travel(data);
+}
+
+export function getOriginData(data) {
+  if (isObject(data)) {
+    return data.__ORIGIN_DATA;
+  }
+
+  return data.map((d) => {
+    if (isArray(d)) {
+      return d;
+    }
+    return d.__ORIGIN_DATA;
+  });
 }
 
 export function getSelectedKeys(
@@ -121,13 +139,13 @@ function updateParent(
   getRowKey,
   childrenColumnName: string
 ) {
-  if (record.parent) {
-    const parentKey = getRowKey(record.parent);
-    if (isArray(record.parent[childrenColumnName])) {
-      const total = record.parent[childrenColumnName].length;
+  if (record.__INTERNAL_PARENT) {
+    const parentKey = getRowKey(record.__INTERNAL_PARENT);
+    if (isArray(record.__INTERNAL_PARENT[childrenColumnName])) {
+      const total = record.__INTERNAL_PARENT[childrenColumnName].length;
       let len = 0;
       let flag = false;
-      record.parent[childrenColumnName].forEach((c) => {
+      record.__INTERNAL_PARENT[childrenColumnName].forEach((c) => {
         if (selectedKeys.has(getRowKey(c))) {
           len += 1;
         }
@@ -150,6 +168,12 @@ function updateParent(
       }
     }
 
-    updateParent(record.parent, selectedKeys, indeterminateKeys, getRowKey, childrenColumnName);
+    updateParent(
+      record.__INTERNAL_PARENT,
+      selectedKeys,
+      indeterminateKeys,
+      getRowKey,
+      childrenColumnName
+    );
   }
 }

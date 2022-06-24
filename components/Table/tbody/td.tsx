@@ -4,6 +4,7 @@ import pick from '../../_util/pick';
 import { isObject, isString } from '../../_util/is';
 import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
+import { getOriginData } from '../utils';
 import { ComponentsProps, InternalColumnProps, SorterResult } from '../interface';
 
 type TdType = {
@@ -109,7 +110,7 @@ function Td(props: TdType) {
     : { onHandleSave: () => {} };
 
   let renderElement =
-    column.render && column.render(get(record, column.dataIndex), record, trIndex);
+    column.render && column.render(get(record, column.dataIndex), getOriginData(record), trIndex);
 
   if (isInvalidRenderElement(renderElement)) {
     tdProps = renderElement.props;

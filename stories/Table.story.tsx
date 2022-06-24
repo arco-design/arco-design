@@ -132,6 +132,11 @@ function DemoTreeData() {
     {
       title: 'Name',
       dataIndex: 'name',
+      render: (col: any, item: any) => {
+        console.log('column.render', col, item);
+        return col;
+      },
+      sorter: (a: any, b: any) => a - b,
     },
     {
       title: 'Salary',
@@ -229,12 +234,21 @@ function DemoTreeData() {
         <Switch onChange={(checked) => setCheckStrictly(checked)} checked={checkStrictly} />
       </Space>
       <Table
+        onExpand={(r) => {
+          console.log('rrrr', r);
+        }}
         rowSelection={{
           type: 'checkbox',
-          onChange: (selectedRowKeys, selectedRows) => {
-            console.log(selectedRowKeys, selectedRows);
+          onChange: (_, selectedRows) => {
+            console.log('selectedRows', selectedRows);
           },
           checkStrictly,
+          checkboxProps: (r) => {
+            return { disabled: false };
+          },
+        }}
+        onChange={(p, s, f, extra) => {
+          console.log(extra.currentData);
         }}
         columns={columns}
         data={data}
