@@ -32,7 +32,7 @@ function App() {
         <Countdown
           value={now + 1000 * 60 * 60 * 2}
           now={now}
-          formatRender={(_diff, _value) => {
+          renderFormat={(_diff, _value) => {
             const minutes = Math.floor(_diff / (1000 * 60));
             const seconds = Math.floor(_diff / 1000);
             let diffTimes = '';
@@ -41,7 +41,7 @@ function App() {
             } else {
               diffTimes = `${seconds}s 后`;
             }
-            return <Statistic title="Countdown formatRender" value={_value} suffix={diffTimes} />;
+            return <Statistic title="Countdown renderFormat" value={_value} suffix={diffTimes} />;
           }}
         />
         <Countdown
