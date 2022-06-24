@@ -5,9 +5,10 @@ export default function useMergeProps<PropsType>(
   defaultProps: Partial<PropsType>,
   globalComponentConfig: Partial<PropsType>
 ): PropsType {
+  const { _ignorePropsFromGlobal } = componentProps as any;
   const _defaultProps = useMemo(() => {
-    return { ...defaultProps, ...globalComponentConfig };
-  }, [defaultProps, globalComponentConfig]);
+    return { ...defaultProps, ...(_ignorePropsFromGlobal ? {} : globalComponentConfig) };
+  }, [defaultProps, globalComponentConfig, _ignorePropsFromGlobal]);
 
   const props = useMemo(() => {
     const mProps = { ...componentProps };
