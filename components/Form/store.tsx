@@ -452,8 +452,15 @@ class Store<
 
       this.triggerValuesChange(changeValues);
 
-      this.notify('setFieldValue', { prev, field: fields });
-      this._popTouchField(fields);
+      this.notify('setFieldValue', {
+        prev,
+        field: fields,
+        data: {
+          errors: null,
+          warnings: null,
+        },
+      });
+      // this._popTouchField(fields);
     } else {
       const changeValues = {};
       this.store = {};
@@ -463,9 +470,16 @@ class Store<
       });
 
       this.triggerValuesChange(changeValues);
-      this._popTouchField();
+      // this._popTouchField();
 
-      this.notify('setFieldValue', { prev, field: Object.keys(changeValues) as FieldKey[] });
+      this.notify('setFieldValue', {
+        prev,
+        field: Object.keys(changeValues) as FieldKey[],
+        data: {
+          errors: null,
+          warnings: null,
+        },
+      });
     }
   };
 }

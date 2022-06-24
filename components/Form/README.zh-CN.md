@@ -136,6 +136,7 @@ export interface RulesProps {
 | 方法           |                                      描述                                      |                                                            类型 |版本|
 | -------------- | :----------------------------------------------------------------------------: | --------------------------------------------------------------: | ---:|
 | validate | 校验并获取表单输入域的值与 Errors，如果不设置 fields 的话，会验证所有的 fields。支持 callback 和 promise 两种使用方法。 | `Function(fields?: string[], callback(errors, values) => void)` |
+| submit  |提交表单|`Function` |
 | setFieldValue  |设置一个表单控件的值|`Function(field: string, value)` |
 | setFields  |设置一组表单控件的值和报错。|`Function({ [field]: string: { value: any, error: FieldError } })` |
 | setFieldsValue  |设置多个表单控件的值|`Function({[field]: string, value})` |
@@ -147,7 +148,7 @@ export interface RulesProps {
 | scrollToField |滚动到指定表单字段位置。[ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |获取被操作过的字段|`() => string[]` |
 | resetFields|重置表单控件的值变为初始值|`Function(field?: string[])` |
-| clearFields|清除表单控件的值|`Function(field?: string[])` |`2.29.0`
+| clearFields|清除表单控件的值以及校验状态。等同于 `form.setFields({ [field]: { value: undefined; error: null, warning: null } })`|`Function(field?: string[])` |`2.29.0`
 
 ### `validate` 用法
 
