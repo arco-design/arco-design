@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 import { Dayjs } from 'dayjs';
 
 /**
@@ -69,7 +69,12 @@ export interface StatisticProps {
    * @en [dayjs](https://github.com/iamkun/dayjs)'s format
    */
   format?: string;
-
+  /**
+   * @zh 自定义 render 函数。`formattedValue` 表示格式化后的值。
+   * @en Custom render function. `formattedValue` represents the formatted value.
+   * @version 2.36.0
+   */
+  renderFormat?: (value: StatisticProps['value'], formattedValue: string) => React.ReactNode;
   /**
    * @zh 数字是否加载中
    * @en Is the number loading
@@ -105,6 +110,12 @@ export interface CountdownProps {
    * @defaultValue HH:mm:ss
    */
   format?: string;
+  /**
+   * @zh 自定义 render 函数。`valueDiff` 表示两个时间的时间差，`formattedDiff` 表示格式化后的时间差，
+   * @en Custom render function, the input parameter is the result formatted by `dayjs`
+   * @version 2.36.0
+   */
+  renderFormat?: (valueDiff: number, formattedDiff: string) => React.ReactNode;
   /**
    * @zh 倒计时完成后触发的回调
    * @en Callback at the end of the countdown

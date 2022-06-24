@@ -57,4 +57,30 @@ describe('Statistic.Countdown', () => {
     expect(component.find('.arco-statistic-value').text()).toBe('00:00:00');
     expect(onFinish).toBeCalled();
   });
+
+  it('renderFormat correctly', () => {
+    function formatTest(format, value, diff) {
+      const mockRender = jest.fn().mockImplementation((a, b) => `${a}-${b}`);
+      const component = mount(
+        <Countdown
+          start={false}
+          now={now}
+          value={countdownTime}
+          format={format}
+          renderFormat={mockRender}
+        />
+      );
+
+      expect(mockRender.mock.calls.length).toBe(1);
+      expect(component.text()).toEqual(`${diff}-${value}`);
+    }
+
+    const formats = [
+      ['HH:mm:ss', '25:01:10', dayjs(countdownTime).diff(now)],
+      ['HH:mm:ss:SSS', '25:01:10:500', dayjs(countdownTime).diff(now)],
+      ['DD HH:mm:ss:SSS', '01 01:01:10:500', dayjs(countdownTime).diff(now)],
+    ];
+
+    formats.forEach(([format, value, diff]) => formatTest(format, value, diff));
+  });
 });

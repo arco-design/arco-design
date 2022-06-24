@@ -28,18 +28,20 @@ Display statistic number.
 |countFrom|The number that the value starts to increase dynamically|`number`|`0`|-|
 |countDuration|Dynamic time (ms)|`number`|`2000`|-|
 |format|[dayjs](https://github.com/iamkun/dayjs)'s format|`string`|`-`|-|
+|renderFormat|Custom render function. `formattedValue` represents the formatted value.|`(value: StatisticProps['value'], formattedValue: string) => React.ReactNode`|`-`|2.36.0|
 |loading|Is the number loading|`boolean`|`-`|2.20.0|
 
 ### Statistic.Countdown
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|styleValue|The css style of statistic's value|`CSSProperties`|`-`|
-|title|The title element|`string \| ReactNode`|`-`|
-|value|To set value|`number \| string \| Date \| Dayjs`|`-`|
-|format|[dayjs](https://github.com/iamkun/dayjs)'s format|`string`|`HH:mm:ss`|
-|onFinish|Callback at the end of the countdown|`() => void`|`-`|
-|start|Whether to start the countdown|`boolean`|`true`|
-|now|The current time. Used to correct the initialization time|`number \| string \| Date \| Dayjs`|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|style|Additional style|`CSSProperties`|`-`|-|
+|className|Additional css class|`string \| string[]`|`-`|-|
+|styleValue|The css style of statistic's value|`CSSProperties`|`-`|-|
+|title|The title element|`string \| ReactNode`|`-`|-|
+|value|To set value|`number \| string \| Date \| Dayjs`|`-`|-|
+|format|[dayjs](https://github.com/iamkun/dayjs)'s format|`string`|`HH:mm:ss`|-|
+|renderFormat|Custom render function, the input parameter is the result formatted by `dayjs`|`(valueDiff: number, formattedDiff: string) => React.ReactNode`|`-`|2.36.0|
+|onFinish|Callback at the end of the countdown|`() => void`|`-`|-|
+|start|Whether to start the countdown|`boolean`|`true`|-|
+|now|The current time. Used to correct the initialization time|`number \| string \| Date \| Dayjs`|`-`|-|

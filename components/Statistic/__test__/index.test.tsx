@@ -131,4 +131,31 @@ describe('Statistic', () => {
     ).toEqual(200);
     expect(Number(component.find('.arco-skeleton').length)).toBe(0);
   });
+
+  it('renderFormat support number value', () => {
+    const value = 1554869813383;
+    const formattedValue = '2019/04/10 12:16:53';
+    const mockRender = jest
+      .fn()
+      .mockImplementation((_value, _formattedValue) => `${_value}-${_formattedValue}`);
+    const component = mount(
+      <Statistic value={value} format="YYYY/MM/DD HH:mm:ss" renderFormat={mockRender} />
+    );
+
+    expect(mockRender.mock.calls[0]).toEqual([value, formattedValue]);
+    expect(component.text()).toEqual(`${value}-${formattedValue}`);
+  });
+
+  it('renderFormat support number value', () => {
+    const value = '哈哈哈';
+    const mockRender = jest
+      .fn()
+      .mockImplementation((_value, _formattedValue) => `${_value}-${_formattedValue}`);
+    const component = mount(
+      <Statistic value={value} format="YYYY/MM/DD HH:mm:ss" renderFormat={mockRender} />
+    );
+
+    expect(mockRender.mock.calls[0]).toEqual([value, value]);
+    expect(component.text()).toEqual(`${value}-${value}`);
+  });
 });
