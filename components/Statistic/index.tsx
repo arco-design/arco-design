@@ -11,7 +11,7 @@ import BTween from 'b-tween';
 import dayjs, { Dayjs } from 'dayjs';
 import cs from '../_util/classNames';
 import Countdown from './countdown';
-import { isNumber } from '../_util/is';
+import { isNumber, isFunction } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import Skeleton from '../Skeleton';
 import { StatisticProps } from './interface';
@@ -39,6 +39,7 @@ function Statistic(baseProps: StatisticProps, ref) {
     prefix,
     suffix,
     format,
+    renderFormat,
     styleValue,
     loading,
   } = props;
@@ -116,6 +117,9 @@ function Statistic(baseProps: StatisticProps, ref) {
     };
   }, [format, groupSeparator, precision, value]);
 
+  const valueFormatted = isFunction(renderFormat)
+    ? renderFormat
+    : (_, formattedValue) => formattedValue;
   return (
     <div className={cs(`${prefixCls}`, className)} style={style}>
       {title && <div className={`${prefixCls}-title`}>{title}</div>}
@@ -123,11 +127,11 @@ function Statistic(baseProps: StatisticProps, ref) {
         <Skeleton animation loading={!!loading} text={{ rows: 1, width: '100%' }}>
           <div className={`${prefixCls}-value`} style={styleValue}>
             {!isNumber(Number(value)) ? (
-              value
+              valueFormatted(value, value)
             ) : (
               <span className={`${prefixCls}-value-int`}>
                 <span className={`${prefixCls}-value-prefix`}>{prefix}</span>
-                {int}
+                {valueFormatted(value, int)}
               </span>
             )}
 
