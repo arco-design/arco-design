@@ -35,6 +35,7 @@ export const TransferList = (props: TransferListProps, ref) => {
     handleSelect,
     handleRemove,
     filterOption,
+    renderHeaderUnit,
     onSearch,
     onResetData,
     onDragStart,
@@ -113,9 +114,16 @@ export const TransferList = (props: TransferListProps, ref) => {
       });
     }
 
+    const eleHeaderUnit = (
+      <span className={`${baseClassName}-header-unit`}>
+        {renderHeaderUnit(countSelected, countRendered)}
+      </span>
+    );
+
     return allowClear ? (
       <>
         <span className={`${baseClassName}-header-title`}>{title}</span>
+        {eleHeaderUnit}
         {!disabled && validKeys.length ? (
           <IconHover
             className={`${baseClassName}-icon-clear`}
@@ -130,9 +138,7 @@ export const TransferList = (props: TransferListProps, ref) => {
         <span className={`${baseClassName}-header-title`}>
           <Checkbox {...checkboxProps}>{title}</Checkbox>
         </span>
-        <span
-          className={`${baseClassName}-header-unit`}
-        >{`${countSelected} / ${countRendered}`}</span>
+        {eleHeaderUnit}
       </>
     );
   };
@@ -158,8 +164,28 @@ export const TransferList = (props: TransferListProps, ref) => {
       <div className={`${baseClassName}-custom-list`}>{customList}</div>
     ) : (
       <List
+        bordered={false}
+        paginationInFooter
         wrapperClassName={`${baseClassName}-list`}
         dataSource={itemsToRender}
+        pagination={
+          pagination
+            ? {
+                simple: true,
+                size: 'mini',
+                ...(typeof pagination === 'object' ? pagination : {}),
+              }
+            : undefined
+        }
+        footer={
+          showFooter === true ? (
+            <Button size="mini" disabled={disabled} onClick={onResetData}>
+              {locale.Transfer.resetText}
+            </Button>
+          ) : (
+            showFooter || null
+          )
+        }
         render={(item: TransferItem) => (
           <Item
             key={item.key}
@@ -195,26 +221,6 @@ export const TransferList = (props: TransferListProps, ref) => {
             }}
           />
         )}
-        pagination={
-          pagination
-            ? {
-                simple: true,
-                size: 'mini',
-                ...(typeof pagination === 'object' ? pagination : {}),
-              }
-            : undefined
-        }
-        bordered={false}
-        paginationInFooter
-        footer={
-          showFooter === true ? (
-            <Button size="mini" disabled={disabled} onClick={onResetData}>
-              {locale.Transfer.resetText}
-            </Button>
-          ) : (
-            showFooter || null
-          )
-        }
       />
     );
   };

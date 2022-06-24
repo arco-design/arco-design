@@ -222,6 +222,9 @@ function Transfer(baseProps: TransferProps, ref) {
         handleSelect={(newSelectKeys) => handleSelect(newSelectKeys, listType)}
         handleRemove={(removeKeys) => moveTo(isTarget ? 'source' : 'target', removeKeys)}
         onSearch={(value) => onSearch && onSearch(value, listType)}
+        renderHeaderUnit={(countSelected, countAll) =>
+          `${mergedOneWay ? '' : `${countSelected} / `}${countAll}`
+        }
       />
     );
   };
