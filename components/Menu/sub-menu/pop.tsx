@@ -1,7 +1,9 @@
 import React, { useContext, useMemo, useState } from 'react';
+import { TriggerProps } from '../../Trigger';
 import cs from '../../_util/classNames';
 import { MenuSubMenuProps } from '../interface';
 import IconRight from '../../../icon/react-icon/IconRight';
+import IconLeft from '../../../icon/react-icon/IconLeft';
 import IconDown from '../../../icon/react-icon/IconDown';
 import { isChildrenSelected } from '../util';
 import omit from '../../_util/omit';
@@ -10,6 +12,7 @@ import Menu from '../index';
 import MenuIndent from '../indent';
 import MenuContext from '../context';
 import { useHotkeyHandler } from '../hotkey';
+import { ConfigContext } from '../../ConfigProvider';
 
 let globalPopSubMenuIndex = 0;
 
@@ -39,6 +42,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     onClickMenuItem,
   } = useContext(MenuContext);
 
+  const { rtl } = useContext(ConfigContext);
   const triggerProps = { ...contextTriggerProps, ...propTriggerProps };
   const [popupVisible, setPopupVisible] = useState(false);
 
@@ -58,7 +62,8 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   }, []);
 
   const renderSuffix = () => {
-    const MergedIconRight = icons && icons.popArrowRight ? icons.popArrowRight : <IconRight />;
+    const MergedIconRight =
+      icons && icons.popArrowRight ? icons.popArrowRight : rtl ? <IconLeft /> : <IconRight />;
     const MergedIconDown =
       icons && icons.horizontalArrowDown ? icons.horizontalArrowDown : <IconDown />;
     return (
@@ -69,6 +74,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   };
 
   const hasSelectedStatus = isChildrenSelected(children, selectedKeys) || isSelected;
+  const popPosition: TriggerProps['position'][] = rtl ? ['br', 'lt'] : ['bl', 'rt'];
 
   return (
     <Dropdown
@@ -87,7 +93,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
         </Menu>
       }
       triggerProps={{
-        position: needPopOnBottom ? 'bl' : 'rt',
+        position: needPopOnBottom ? popPosition[0] : popPosition[1],
         popupVisible,
         showArrow: true,
         autoAlignPopupMinWidth: true,
