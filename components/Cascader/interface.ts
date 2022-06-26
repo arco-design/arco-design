@@ -229,15 +229,15 @@ export interface OptionProps {
  * fieldnames 属性类型
  */
 export type FieldNamesType = {
-  /** 指定 label 在选项中对应的字段  */
+  /* Custom field name for label */
   label?: string;
-  /** 指定 value 在选项中对应的字段  */
+  /** Custom field name for value */
   value?: string;
-  /** 指定 children 在选项中对应的字段  */
+  /** Custom field name for children */
   children?: string;
-  /** 指定 disabled 在选项中对应的字段  */
+  /** Custom field name for disabled  */
   disabled?: string;
-  /** 指定 isLeaf 在选项中对应的字段  */
+  /** Custom field name for isLeaf */
   isLeaf?: string;
 };
 

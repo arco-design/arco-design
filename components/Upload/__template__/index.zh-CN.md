@@ -24,20 +24,6 @@ file: interface
 | abort   | 中止文件上传 | `(file: UploadItem) => void` |
 | reupload   | 重新上传文件 | `(file: UploadItem) => void` |
 
-```js
-// 自定义图标类型
-type CustomIconType = {
-  previewIcon?: ReactNode;
-  removeIcon?: ReactNode;
-  fileIcon?: ReactNode;
-  reuploadIcon?: ReactNode;
-  cancelIcon?: ReactNode;
-  startIcon?: ReactNode;
-  errorIcon?: ReactNode;
-  fileName?: (file: UploadItem) => ReactNode;
-}
-```
-
 
 ## 常见问题
 

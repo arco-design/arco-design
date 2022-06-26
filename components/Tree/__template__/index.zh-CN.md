@@ -24,23 +24,6 @@ file: interface
 |threshold|自动开启虚拟滚动的元素数量阈值，传入`null`以禁用虚拟滚动。|`number`\|`null`|`100`|
 |isStaticItemHeight|是否为相同高度的静态元素|`boolean`|`true`|
 
-
-FieldNamesType
-
-```js
-type FieldNamesType = {
-  // 指定 key 在 treeData 中对应的字段
-  key?: string;
-  // 指定 title 在 treeData 中对应的字段
-  title?: string;
-  disabled?: string;
-  children?: string;
-  isLeaf?: string;
-  disableCheckbox?: string;
-  checkable?: string;
-};
-```
-
 ## 常见问题
 
 1. `Tree` 设置了`autoExpandParent=true`，但没有默认展开全部节点？

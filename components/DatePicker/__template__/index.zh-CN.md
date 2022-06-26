@@ -17,11 +17,3 @@ file: interface
 **Picker 为所有组件共有的属性**
 
 %%Props%%
-
-```js
-type DisabledTimeProps = {
-  disabledHours?: () => number[];
-  disabledMinutes?: () => number[];
-  disabledSeconds?: () => number[];
-};
-```

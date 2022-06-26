@@ -14,43 +14,43 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|className|节点类名|`string \| string[]`|`-`|-|
-|style|弹出框（外部）的样式|`CSSProperties`|`-`|-|
-|popupStyle|弹出框（内部）的样式|`CSSProperties`|`-`|-|
-|alignPoint|弹出层跟随鼠标位置|`boolean`|`-`|-|
-|autoAlignPopupWidth|自动对齐子元素的宽度设置弹出框的宽度|`boolean`|`-`|-|
-|autoAlignPopupMinWidth|自动对齐子元素的宽度设置弹出框的最小宽度|`boolean`|`-`|-|
-|classNames|动画类名|`string`|`fadeId`|-|
-|duration|动画过渡时间|`number \| { exit?: number; enter?: number; appear?: number }`|`200`|-|
-|childrenPrefix|设置这个参数后，打开弹出后，children 上会添加一个名为 `${childrenPrefix}-open` 的类。|`string`|`-`|-|
-|disabled|是否禁用|`boolean`|`-`|-|
-|mouseEnterDelay|mouseenter 触发延时的毫秒数|`number`|`100`|-|
-|mouseLeaveDelay|mouseleave 触发延时的毫秒数|`number`|`100`|-|
-|focusDelay|focus 触发延时的毫秒数|`number`|`-`|-|
-|getDocument|在该元素上执行 clickOutside，触发弹出框关闭|`() => Element`|`() => window.document`|-|
-|getPopupContainer|设置弹出内容所插入的父元素|`(node: HTMLElement) => Element`|`-`|-|
-|unmountOnExit|隐藏后是否销毁 DOM 结构|`boolean`|`true`|-|
-|trigger|触发方式|`\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'>`|`hover`|-|
-|position|弹出位置，一共有 12 个方位可供选择|`\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb'`|`bottom`|-|
-|popup|弹出框的内容|`() => ReactNode`|`-`|-|
-|autoFitPosition|是否根据空间自动调整弹出框的位置|`boolean`|`true`|-|
-|popupHoverStay|是否在鼠标移出触发节点，移入弹出框时保留弹出框。|`boolean`|`true`|-|
-|blurToHide|是否在触发节点失去焦点的时候关闭弹出框，仅在 `trigger` 中含有 `focus` 时生效|`boolean`|`true`|-|
-|mouseLeaveToClose|是否在鼠标移出触发节点和弹出层的时候关闭弹出层|`boolean`|`true`|2.22.0|
-|clickToClose|是否能通过点击触发节点来关闭弹出框|`boolean`|`true`|-|
-|clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。|`boolean`|`true`|-|
-|escToClose|是否允许按 `ESC` 键关闭弹出框。|`boolean`|`false`|-|
-|containerScrollToClose|是否在容器滚动时关闭弹出框|`boolean`|`false`|2.34.0|
-|onClick|按钮点击事件（`trigger` 包含 `click` 时生效）|`(popupVisible: boolean) => void`|`-`|-|
-|onClickOutside|点击触发节点和弹出框以外的区域的回调。|`Function`|`-`|-|
-|popupAlign|调整弹出框的位置，有四个属性值，`left`, `right`, `top`, `bottom`，分别表示向该方向移动几个像素。具体可查看 [示例](/react/components/trigger#设置弹窗位置偏移量)|`{left?: number \| [number, number];right?: number \| [number, number];top?: number \| [number, number];bottom?: number \| [number, number];}`|`{}`|-|
-|defaultPopupVisible|默认弹出框开启或关闭|`boolean`|`-`|-|
-|popupVisible|设置弹出框开启或关闭|`boolean`|`-`|-|
-|onVisibleChange|显示或隐藏时触发的回调|`(visible: boolean) => void`|`-`|-|
-|autoFixPosition|当内容发生变化导致内容区域尺寸发生变化，自动进行重新定位。|`boolean`|`true`|-|
-|showArrow|是否展示箭头元素|`boolean`|`-`|-|
-|arrowProps|箭头元素的所有 html 参数|`HTMLAttributes<HTMLDivElement>`|`-`|-|
-|updateOnScroll|是否在容器滚动时更新弹出框的位置|`boolean`|`-`|2.32.0|
+|className|节点类名|string \| string[] |`-`|-|
+|style|弹出框（外部）的样式|CSSProperties |`-`|-|
+|popupStyle|弹出框（内部）的样式|CSSProperties |`-`|-|
+|alignPoint|弹出层跟随鼠标位置|boolean |`-`|-|
+|autoAlignPopupWidth|自动对齐子元素的宽度设置弹出框的宽度|boolean |`-`|-|
+|autoAlignPopupMinWidth|自动对齐子元素的宽度设置弹出框的最小宽度|boolean |`-`|-|
+|classNames|动画类名|string |`fadeId`|-|
+|duration|动画过渡时间|number \| { exit?: number; enter?: number; appear?: number } |`200`|-|
+|childrenPrefix|设置这个参数后，打开弹出后，children 上会添加一个名为 `${childrenPrefix}-open` 的类。|string |`-`|-|
+|disabled|是否禁用|boolean |`-`|-|
+|mouseEnterDelay|mouseenter 触发延时的毫秒数|number |`100`|-|
+|mouseLeaveDelay|mouseleave 触发延时的毫秒数|number |`100`|-|
+|focusDelay|focus 触发延时的毫秒数|number |`-`|-|
+|getDocument|在该元素上执行 clickOutside，触发弹出框关闭|() => Element |`() => window.document`|-|
+|getPopupContainer|设置弹出内容所插入的父元素|(node: HTMLElement) => Element |`-`|-|
+|unmountOnExit|隐藏后是否销毁 DOM 结构|boolean |`true`|-|
+|trigger|触发方式|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
+|position|弹出位置，一共有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`bottom`|-|
+|popup|弹出框的内容|() => ReactNode |`-`|-|
+|autoFitPosition|是否根据空间自动调整弹出框的位置|boolean |`true`|-|
+|popupHoverStay|是否在鼠标移出触发节点，移入弹出框时保留弹出框。|boolean |`true`|-|
+|blurToHide|是否在触发节点失去焦点的时候关闭弹出框，仅在 `trigger` 中含有 `focus` 时生效|boolean |`true`|-|
+|mouseLeaveToClose|是否在鼠标移出触发节点和弹出层的时候关闭弹出层|boolean |`true`|2.22.0|
+|clickToClose|是否能通过点击触发节点来关闭弹出框|boolean |`true`|-|
+|clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。|boolean |`true`|-|
+|escToClose|是否允许按 `ESC` 键关闭弹出框。|boolean |`false`|-|
+|containerScrollToClose|是否在容器滚动时关闭弹出框|boolean |`false`|2.34.0|
+|onClick|按钮点击事件（`trigger` 包含 `click` 时生效）|(popupVisible: boolean) => void |`-`|-|
+|onClickOutside|点击触发节点和弹出框以外的区域的回调。|Function |`-`|-|
+|popupAlign|调整弹出框的位置，有四个属性值，`left`, `right`, `top`, `bottom`，分别表示向该方向移动几个像素。具体可查看 [示例](/react/components/trigger#设置弹窗位置偏移量)|{left?: number \| [number, number];right?: number \| [number, number];top?: number \| [number, number];bottom?: number \| [number, number];} |`{}`|-|
+|defaultPopupVisible|默认弹出框开启或关闭|boolean |`-`|-|
+|popupVisible|设置弹出框开启或关闭|boolean |`-`|-|
+|onVisibleChange|显示或隐藏时触发的回调|(visible: boolean) => void |`-`|-|
+|autoFixPosition|当内容发生变化导致内容区域尺寸发生变化，自动进行重新定位。|boolean |`true`|-|
+|showArrow|是否展示箭头元素|boolean |`-`|-|
+|arrowProps|箭头元素的所有 html 参数|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
+|updateOnScroll|是否在容器滚动时更新弹出框的位置|boolean |`-`|2.32.0|
 
 ### `onVisibleChange`的触发时机说明
 

@@ -14,18 +14,18 @@ Display a notification message globally.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|title|Notification title|`ReactNode \| string`|`-`|
-|content|Notification content|`ReactNode \| string` **(Required)**|`-`|
-|showIcon|Whether to show the icon|`boolean`|`true`|
-|icon|Custom icon|`ReactNode`|`-`|
-|duration|Automatic shutdown time, the unit is `ms`|`number`|`3000`|
-|onClose|Callback when close|`() => void`|`-`|
-|id|The unique identifier of the current notification, which can be used to update the message|`string`|`-`|
-|position|The position of the message|`'topLeft' \| 'topRight' \| 'bottomLeft' \| 'bottomRight'`|`-`|
-|btn|Add action button|`ReactNode`|`-`|
-|closable|Whether to show the close button|`boolean`|`-`|
+|style|Additional style|CSSProperties |`-`|
+|className|Additional css class|string \| string[] |`-`|
+|title|Notification title|ReactNode \| string |`-`|
+|content|Notification content|ReactNode \| string  **(Required)**|`-`|
+|showIcon|Whether to show the icon|boolean |`true`|
+|icon|Custom icon|ReactNode |`-`|
+|duration|Automatic shutdown time, the unit is `ms`|number |`3000`|
+|onClose|Callback when close|() => void |`-`|
+|id|The unique identifier of the current notification, which can be used to update the message|string |`-`|
+|position|The position of the message|'topLeft' \| 'topRight' \| 'bottomLeft' \| 'bottomRight' |`-`|
+|btn|Add action button|ReactNode |`-`|
+|closable|Whether to show the close button|boolean |`-`|
 
 ### Methods
 

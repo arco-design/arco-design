@@ -37,8 +37,8 @@ The `options` parameters:
 
 |Property|Description|Type|Default value|
 |---|:---:|:---:|---:|
-|src|[iconfont.cn](iconfont.cn) The js address generated online by the project|`string`|`-`|
-|extraProps|Set extra properties to the `svg` tag|`{ [key: string]: any }`|`{}`|
+|src|[iconfont.cn](iconfont.cn) The js address generated online by the project|string|`-`|
+|extraProps|Set extra properties to the `svg` tag|{ [key: string]: any }|`{}`|
 
 ## Props
 
@@ -46,6 +46,6 @@ The `options` parameters:
 
 |Property|Description|Type|Default value|
 |---|:---:|:---:|---:|
-|className|The additional css class|`string \| string[]`|`-`|
-|style|The additional css style|`CSSProperties`|`-`|
-|spin|Whether to spin|`boolean`|`false`|
+|className|The additional css class|string \| string[]|`-`|
+|style|The additional css style|CSSProperties|`-`|
+|spin|Whether to spin|boolean|`false`|
