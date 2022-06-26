@@ -169,7 +169,7 @@ file: index
 ```markdown
 # TooltipButton
 
-## 属性/Props
+## API
 
 ### `<TooltipButton>`
 

@@ -24,20 +24,6 @@ Upload file by selecting or dragging.
 | abort   | cancel upload request	 | `(file: UploadItem) => void` |
 | reupload   | re-upload request	 | `(file: UploadItem) => void` |
 
-```js
-// Custom icons
-type CustomIconType = {
-  previewIcon?: ReactNode;
-  removeIcon?: ReactNode;
-  fileIcon?: ReactNode;
-  reuploadIcon?: ReactNode;
-  cancelIcon?: ReactNode;
-  startIcon?: ReactNode;
-  errorIcon?: ReactNode;
-  fileName?: (file: UploadItem) => ReactNode;
-}
-```
-
 
 ## Q&A
 

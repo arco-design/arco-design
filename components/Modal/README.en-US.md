@@ -14,37 +14,37 @@ Open a floating layer on the current page to carry related operations.
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|-|
-|className|Additional css class|`string \| string[]`|`-`|-|
-|onCancel|Callback when click cancel button|`() => void`|`-`|-|
-|onOk|Callback when click ok button|`(e?: MouseEvent) => Promise<any> \| void`|`-`|-|
-|getPopupContainer|Specify the parent node of the Modal|`() => Element`|`() => document.body`|-|
-|getChildrenPopupContainer|The Popup in Modal. Such as `Select` and `Tooltip` are mounted in the Modal|`(node: HTMLElement) => Element`|`-`|-|
-|title|The title of Modal|`string \| ReactNode`|`-`|-|
-|visible|Whether the Modal is visible|`boolean`|`-`|-|
-|mask|Whether show mask|`boolean`|`true`|-|
-|simple|Simple Mode, no dividing line, the bottom button is displayed in the center.The Alter Modal called by the default method will use `simple` mode. When set to true, the close icon is not display|`boolean`|`-`|-|
-|okText|The text of `ok` button|`string`|`-`|-|
-|cancelText|The text of `cancel` button|`string`|`-`|-|
-|okButtonProps|The props of `ok` button|`ButtonProps`|`-`|-|
-|cancelButtonProps|The props of `cancel` button|`ButtonProps`|`-`|-|
-|footer|Custom `footer`. if it is null, the footer will not be displayed.|`ReactNode \| ((cancelButtonNode: ReactNode, okButtonNode: ReactNode) => ReactNode)`|`-`|2.12.0|
-|closable|Whether to show the close button in TitleBar|`boolean`|`-`|-|
-|closeIcon|Customize the close icon|`ReactNode`|`-`|2.21.0|
-|maskClosable|Whether enable click mask to close Modal.|`boolean`|`true`|-|
-|maskStyle|The style of mask|`CSSProperties`|`-`|2.6.0|
-|afterOpen|Callback when Modal opened|`() => void`|`-`|-|
-|afterClose|Callback when Modal closed|`() => void`|`-`|-|
-|confirmLoading|Whether The `ok` button is loading|`boolean`|`-`|-|
-|mountOnEnter|Whether to render DOM when first opened|`boolean`|`true`|-|
-|unmountOnExit|Whether to destroy DOM after closed|`boolean`|`-`|-|
-|escToExit|Whether enable press `ESC` to close Modal|`boolean`|`true`|-|
-|alignCenter|Modal is centered vertically and horizontally|`boolean`|`true`|-|
-|wrapClassName|The class of the wrapped dom|`string \| string[]`|`-`|-|
-|wrapStyle|The style of the wrapped dom|`CSSProperties`|`-`|2.16.0|
-|autoFocus|Whether to focus the first focusable element|`boolean`|`true`|-|
-|focusLock|Whether to lock the focus in the Modal|`boolean`|`true`|-|
-|modalRender|Custom the render of Modal|`(modalNode: ReactNode) => ReactNode`|`2.2.0`|-|
+|style|Additional style|CSSProperties |`-`|-|
+|className|Additional css class|string \| string[] |`-`|-|
+|onCancel|Callback when click cancel button|() => void |`-`|-|
+|onOk|Callback when click ok button|(e?: MouseEvent) =&gt; Promise&lt;any&gt; \| void |`-`|-|
+|getPopupContainer|Specify the parent node of the Modal|() => Element |`() => document.body`|-|
+|getChildrenPopupContainer|The Popup in Modal. Such as `Select` and `Tooltip` are mounted in the Modal|(node: HTMLElement) => Element |`-`|-|
+|title|The title of Modal|string \| ReactNode |`-`|-|
+|visible|Whether the Modal is visible|boolean |`-`|-|
+|mask|Whether show mask|boolean |`true`|-|
+|simple|Simple Mode, no dividing line, the bottom button is displayed in the center.The Alter Modal called by the default method will use `simple` mode. When set to true, the close icon is not display|boolean |`-`|-|
+|okText|The text of `ok` button|string |`-`|-|
+|cancelText|The text of `cancel` button|string |`-`|-|
+|okButtonProps|The props of `ok` button|ButtonProps |`-`|-|
+|cancelButtonProps|The props of `cancel` button|ButtonProps |`-`|-|
+|footer|Custom `footer`. if it is null, the footer will not be displayed.|ReactNode \| ((cancelButtonNode: ReactNode, okButtonNode: ReactNode) => ReactNode) |`-`|2.12.0|
+|closable|Whether to show the close button in TitleBar|boolean |`-`|-|
+|closeIcon|Customize the close icon|ReactNode |`-`|2.21.0|
+|maskClosable|Whether enable click mask to close Modal.|boolean |`true`|-|
+|maskStyle|The style of mask|CSSProperties |`-`|2.6.0|
+|afterOpen|Callback when Modal opened|() => void |`-`|-|
+|afterClose|Callback when Modal closed|() => void |`-`|-|
+|confirmLoading|Whether The `ok` button is loading|boolean |`-`|-|
+|mountOnEnter|Whether to render DOM when first opened|boolean |`true`|-|
+|unmountOnExit|Whether to destroy DOM after closed|boolean |`-`|-|
+|escToExit|Whether enable press `ESC` to close Modal|boolean |`true`|-|
+|alignCenter|Modal is centered vertically and horizontally|boolean |`true`|-|
+|wrapClassName|The class of the wrapped dom|string \| string[] |`-`|-|
+|wrapStyle|The style of the wrapped dom|CSSProperties |`-`|2.16.0|
+|autoFocus|Whether to focus the first focusable element|boolean |`true`|-|
+|focusLock|Whether to lock the focus in the Modal|boolean |`true`|-|
+|modalRender|Custom the render of Modal|(modalNode: ReactNode) => ReactNode |`2.2.0`|-|
 
 ### Modal.method(config)
 

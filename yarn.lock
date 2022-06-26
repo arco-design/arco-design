@@ -15412,9 +15412,9 @@ ts-dedent@^2.0.0, ts-dedent@^2.1.1:
   integrity sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==
 
 ts-document@~0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/ts-document/-/ts-document-0.5.0.tgz#675fd8884e45795c7f4c5e3dcd574c341f93e6ad"
-  integrity sha512-dTI2Wf6GJymrLkPxp5ycUxrbPCp0JCv4TG0p82Xu5lPBrZnb7tys0qVNmkAvMz/bvrM9KBucaOE6EMYNBY4sYQ==
+  version "0.6.0"
+  resolved "https://registry.npmjs.org/ts-document/-/ts-document-0.6.0.tgz#bd93e429f4077b26438e0512a82e7e2b46f7cd80"
+  integrity sha512-9EMw3jaOeAH54zo97BbWrTDrRIIvBXouJ6r8mXSmJfvUDNhn7OkvYmZ1l4pGUGlmaR7TiiMU+d+X0NMmCazQSg==
   dependencies:
     ts-morph "^11.0.0"
 

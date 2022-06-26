@@ -37,16 +37,16 @@ const IconFont = Icon.addFromIconFontCn({ src: 'url' });
 
 |参数名|描述|类型|默认值|
 |---|:---:|:---:|---:|
-|src|[iconfont.cn](https://www.iconfont.cn/) 项目在线生成的 js 地址|`string`|`-`|
-|extraProps|给 `svg` 标签设置额外的属性|`{ [key: string]: any }`|`{}`|
+|src|[iconfont.cn](https://www.iconfont.cn/) 项目在线生成的 js 地址|string|`-`|
+|extraProps|给 `svg` 标签设置额外的属性|{ [key: string]: any }|`{}`|
 
-## 属性/Props
+## API
 
 ### `<IconXXX>`
 
 |参数名|描述|类型|默认值|
 |---|:---:|:---:|---:|
-|className|节点类名|`string \| string[]`|`-`|
-|style|节点样式|`object`|`{}`|
-|spin|是否旋转|`boolean`|`false`|
+|className|节点类名|string \| string[]|`-`|
+|style|节点样式|object|`{}`|
+|spin|是否旋转|boolean|`false`|
 

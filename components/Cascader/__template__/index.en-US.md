@@ -31,32 +31,3 @@ Display options in a multi-level cascading dropdown component.
 this.select.focus();
 this.select.blur();
 ```
-
-### `OptionProps`
-
-```
-interface OptionProps {
-  value?: string;
-  label?: string;
-  disabled?: boolean;
-  children?: OptionProps[];
-  isLeaf?: boolean;
-}
-```
-
-### `FieldNamesType`
-
-```
-type FieldNamesType = {
-  /** Custom field name for  label   */
-  label?: string;
-  /** Custom field name for value  */
-  value?: string;
-  /** Custom field name for children  */
-  children?: string;
-  /** Custom field name for disabled  */
-  disabled?: string;
-  /** Custom field name for isLeaf  */
-  isLeaf?: string;
-}
-```
