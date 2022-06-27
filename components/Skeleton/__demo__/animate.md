@@ -35,7 +35,7 @@ class App extends React.Component {
     return (
       <div>
         <div style={{ marginBottom: 40 }}>
-          <Typography.Text style={{ marginRight: 8 }}>Animation</Typography.Text>
+          <Typography.Text style={{ margin: '0 8px' }}>Animation</Typography.Text>
           <Switch
             style={{ verticalAlign: 'middle' }}
             size="small"
@@ -50,7 +50,7 @@ class App extends React.Component {
           animation
         >
           <div style={{ display: 'flex' }}>
-            <Avatar size={50} style={{ marginRight: 20 }}>
+            <Avatar size={50} style={{ margin: '0 20px' }}>
               Arco
             </Avatar>
             <Typography>

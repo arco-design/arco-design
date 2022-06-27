@@ -17,7 +17,7 @@ const defaultProps: SkeletonProps = {
 };
 
 function Skeleton(baseProps: PropsWithChildren<SkeletonProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<SkeletonProps>>(
     baseProps,
     defaultProps,
@@ -32,6 +32,7 @@ function Skeleton(baseProps: PropsWithChildren<SkeletonProps>, ref) {
     prefixCls,
     {
       [`${prefixCls}-animate`]: animation,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
