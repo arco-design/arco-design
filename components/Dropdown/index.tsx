@@ -16,7 +16,7 @@ const defaultProps: DropdownProps = {
 };
 
 function Dropdown(baseProps: DropdownProps, _) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<DropdownProps>(baseProps, defaultProps, componentConfig?.Button);
   const {
     trigger,
@@ -117,6 +117,7 @@ function Dropdown(baseProps: DropdownProps, _) {
             className: cs(
               {
                 [`${prefixCls}-popup-visible`]: popupVisible,
+                [`${[prefixCls]}-rtl`]: rtl,
               },
               children.props.className
             ),
