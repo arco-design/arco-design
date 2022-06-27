@@ -15,7 +15,7 @@ const defaultProps: ProgressProps = {
 };
 
 function Progress(baseProps: ProgressProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<ProgressProps>(baseProps, defaultProps, componentConfig?.Progress);
   const { className, style, size, width, strokeWidth, steps, percent } = props;
 
@@ -40,6 +40,7 @@ function Progress(baseProps: ProgressProps, ref) {
         `${prefixCls}-${size}`,
         {
           [`${prefixCls}-is-${status}`]: status !== 'normal',
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

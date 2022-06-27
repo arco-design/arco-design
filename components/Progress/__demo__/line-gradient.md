@@ -45,7 +45,7 @@ const App = () => {
       <br />
       <Progress
         style={{
-          marginRight: 20,
+          margin: "0 20px",
         }}
         type="circle"
         color={{
