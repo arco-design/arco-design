@@ -37,3 +37,23 @@
     }
   }
 }
+
+.@{popconfirm-prefix-cls}-rtl {
+  .@{popconfirm-prefix-cls} {
+    &-title {
+      &-icon {
+        margin-left: @popconfirm-margin-icon-right;
+        margin-right: 0;
+      }
+    }
+
+    &-btn {
+      text-align: left;
+
+      > button {
+        margin-right: @popconfirm-margin-button-left;
+        margin-left: 0;
+      }
+    }
+  }
+}
