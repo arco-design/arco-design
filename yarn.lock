@@ -5857,6 +5857,11 @@ cyclist@^1.0.1:
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
+cz-git@^1.3.8:
+  version "1.3.8"
+  resolved "https://registry.npmjs.org/cz-git/-/cz-git-1.3.8.tgz#b4fa38f5b0affff5ca182f3b208c66e5936692c2"
+  integrity sha512-hFyp/M6r870uMzX/6FjsqeZ5kbi++VR3j9TRMyUhwVurRhZ237AEeoV3KxJp5ySzTMMfSuliVHcmdpZOdJx9qA==
+
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/d/-/d-1.0.1.tgz"
