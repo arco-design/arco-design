@@ -1,16 +1,9 @@
 import React from 'react';
-// import { mount } from 'enzyme';
-// import { $, render, fireEvent, cleanup } from '../../../tests/util';
-// import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Pagination from '..';
 import { render, fireEvent } from '../../../tests/util';
 import { Enter } from '../../_util/keycode';
-// import userEvent from '@testing-library/user-event'
-// import { Enter } from '../../_util/keycode';
-
-// import { PaginationProps, PaginationState } from '../pagination';
 
 mountTest(Pagination);
 componentConfigTest(Pagination, 'Pagination');
