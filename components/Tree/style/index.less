@@ -166,12 +166,16 @@
 
     &:hover {
       background-color: @tree-color-title-bg_hover;
+
+      .@{tree-node-prefix-cls}-drag-icon {
+        opacity: 1;
+      }
     }
 
     .@{tree-node-prefix-cls}-drag-icon {
       position: absolute;
       right: @tree-spacing-drag-icon-right;
-      margin-left: unset;
+      margin-top: @tree-spacing-drag-icon-top;
     }
   }
 
@@ -201,10 +205,6 @@
 
     &:hover {
       color: @tree-color-title-text_hover;
-
-      .@{tree-node-prefix-cls}-drag-icon {
-        opacity: 1;
-      }
     }
 
     &-draggable::before {
