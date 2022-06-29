@@ -8,8 +8,10 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
 >
   <div
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -46,7 +48,6 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -59,8 +60,10 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
   <div
     aria-disabled="true"
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-selected arco-tree-node-expanded arco-tree-node-disabled"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -101,7 +104,6 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -113,8 +115,10 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -131,7 +135,6 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -143,8 +146,10 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -161,7 +166,6 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -173,8 +177,10 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-selected arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -215,7 +221,6 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -236,8 +241,10 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
 >
   <div
     aria-expanded="true"
-    class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    aria-grabbed="false"
+    class="arco-tree-node arco-tree-node-expanded arco-tree-node-block arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -274,8 +281,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
-      class="arco-tree-node-title arco-tree-node-title-block"
+      class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-title-text"
@@ -287,8 +293,10 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
   <div
     aria-disabled="true"
     aria-expanded="true"
-    class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled"
+    aria-grabbed="false"
+    class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled arco-tree-node-block"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -329,8 +337,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
-      class="arco-tree-node-title arco-tree-node-title-block"
+      class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-title-text"
@@ -341,8 +348,10 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
-    class="arco-tree-node arco-tree-node-is-leaf"
+    aria-grabbed="false"
+    class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -359,8 +368,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
-      class="arco-tree-node-title arco-tree-node-title-block"
+      class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-title-text"
@@ -371,8 +379,10 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
-    class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    aria-grabbed="false"
+    class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -389,8 +399,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
-      class="arco-tree-node-title arco-tree-node-title-block"
+      class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-title-text"
@@ -401,8 +410,10 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
   </div>
   <div
     aria-expanded="true"
-    class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    aria-grabbed="false"
+    class="arco-tree-node arco-tree-node-expanded arco-tree-node-block arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -443,8 +454,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
-      class="arco-tree-node-title arco-tree-node-title-block"
+      class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-title-text"
@@ -455,8 +465,10 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
-    class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    aria-grabbed="false"
+    class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -473,8 +485,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
-      class="arco-tree-node-title arco-tree-node-title-block"
+      class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-title-text"
@@ -530,8 +541,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -600,7 +613,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -612,8 +624,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -659,7 +673,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -672,8 +685,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     <div
       aria-disabled="true"
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -746,7 +761,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -758,8 +772,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -806,7 +822,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -818,8 +833,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -868,7 +885,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -880,8 +896,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -950,7 +968,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -962,8 +979,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1036,7 +1055,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1048,8 +1066,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1098,7 +1118,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1110,8 +1129,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1160,7 +1181,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1172,8 +1192,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1219,7 +1241,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1295,8 +1316,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1365,7 +1388,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1377,8 +1399,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1424,7 +1448,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1436,8 +1459,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1510,7 +1535,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1522,8 +1546,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1572,7 +1598,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1584,8 +1609,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1654,7 +1681,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1666,8 +1692,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1740,7 +1768,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1752,8 +1779,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1802,7 +1831,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1814,8 +1842,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1864,7 +1894,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1876,8 +1905,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -1923,7 +1954,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1967,8 +1997,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2035,7 +2067,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2047,8 +2078,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2092,7 +2125,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2104,8 +2136,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2176,7 +2210,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2188,8 +2221,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2236,7 +2271,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2248,8 +2282,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2316,7 +2352,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2328,8 +2363,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2373,7 +2410,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2385,8 +2421,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2430,7 +2468,6 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2488,8 +2525,11 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-block"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2526,43 +2566,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Trunk 0-0
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-block"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2576,43 +2617,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Leaf 0-0-1
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-block arco-tree-node-is-tail"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2653,43 +2695,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Branch 0-0-2
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
+      draggable="false"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2706,9 +2749,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
-        draggable="false"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -2719,8 +2760,11 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-block arco-tree-node-is-tail"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2757,43 +2801,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Trunk 0-1
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-block"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2834,43 +2879,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Branch 0-1-1
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-block"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2887,43 +2933,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Leaf 0-1-1-1
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-block arco-tree-node-is-tail"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2940,43 +2987,44 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Leaf 0-1-1-2
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-block arco-tree-node-is-tail"
+      draggable="true"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -2990,37 +3038,35 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
-        draggable="true"
+        class="arco-tree-node-title arco-tree-node-title-draggable"
       >
         <span
           class="arco-tree-node-title-text"
         >
           Leaf 0-1-2
         </span>
-        <span
-          class="arco-tree-node-icon arco-tree-node-drag-icon"
+      </span>
+      <span
+        class="arco-tree-node-icon arco-tree-node-drag-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-drag-dot-vertical"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            fill="currentColor"
+            stroke="none"
+          />
+          <path
+            d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+          />
+        </svg>
       </span>
     </div>
   </div>
@@ -3036,8 +3082,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3074,7 +3122,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3086,8 +3133,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled-selectable arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3128,7 +3177,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3140,8 +3188,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3185,7 +3235,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3197,8 +3246,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3245,7 +3296,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3257,8 +3307,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3281,7 +3333,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3293,8 +3344,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3331,7 +3384,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3343,8 +3395,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3385,7 +3439,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3397,8 +3450,10 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -3415,7 +3470,6 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3437,8 +3491,10 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
 >
   <div
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-expanded"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3475,7 +3531,6 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -3504,8 +3559,10 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3519,7 +3576,6 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -3548,8 +3604,10 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
   </div>
   <div
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3586,7 +3644,6 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -3615,8 +3672,10 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3630,7 +3689,6 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -3659,8 +3717,10 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3674,7 +3734,6 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -3712,8 +3771,11 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
 >
   <div
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable"
+    draggable="true"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3744,38 +3806,39 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
-      draggable="true"
     >
       <span
         class="arco-tree-node-title-text"
       >
         Trunk
       </span>
-      <span
-        class="arco-tree-node-icon arco-tree-node-drag-icon"
+    </span>
+    <span
+      class="arco-tree-node-icon arco-tree-node-drag-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-drag-arrow"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
       >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-drag-arrow"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
-          />
-        </svg>
-      </span>
+        <path
+          d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
+        />
+      </svg>
     </span>
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+    draggable="true"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3814,38 +3877,39 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
-      draggable="true"
     >
       <span
         class="arco-tree-node-title-text"
       >
         Leaf
       </span>
-      <span
-        class="arco-tree-node-icon arco-tree-node-drag-icon"
+    </span>
+    <span
+      class="arco-tree-node-icon arco-tree-node-drag-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-drag-arrow"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
       >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-drag-arrow"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
-          />
-        </svg>
-      </span>
+        <path
+          d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
+        />
+      </svg>
     </span>
   </div>
   <div
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-is-tail"
+    draggable="true"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3876,38 +3940,39 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
-      draggable="true"
     >
       <span
         class="arco-tree-node-title-text"
       >
         Trunk
       </span>
-      <span
-        class="arco-tree-node-icon arco-tree-node-drag-icon"
+    </span>
+    <span
+      class="arco-tree-node-icon arco-tree-node-drag-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-drag-arrow"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
       >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-drag-arrow"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
-          />
-        </svg>
-      </span>
+        <path
+          d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
+        />
+      </svg>
     </span>
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable"
+    draggable="true"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -3946,38 +4011,39 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
-      draggable="true"
     >
       <span
         class="arco-tree-node-title-text"
       >
         Leaf
       </span>
-      <span
-        class="arco-tree-node-icon arco-tree-node-drag-icon"
+    </span>
+    <span
+      class="arco-tree-node-icon arco-tree-node-drag-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-drag-arrow"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
       >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-drag-arrow"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
-          />
-        </svg>
-      </span>
+        <path
+          d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
+        />
+      </svg>
     </span>
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+    draggable="true"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -4016,32 +4082,30 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
-      draggable="true"
     >
       <span
         class="arco-tree-node-title-text"
       >
         Leaf
       </span>
-      <span
-        class="arco-tree-node-icon arco-tree-node-drag-icon"
+    </span>
+    <span
+      class="arco-tree-node-icon arco-tree-node-drag-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-drag-arrow"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
       >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-drag-arrow"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
-          />
-        </svg>
-      </span>
+        <path
+          d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
+        />
+      </svg>
     </span>
   </div>
 </div>
@@ -4074,8 +4138,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4096,7 +4162,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4108,8 +4173,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4134,7 +4201,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4146,8 +4212,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4189,7 +4257,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4201,8 +4268,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4230,7 +4299,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4242,8 +4310,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4288,7 +4358,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4300,8 +4369,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4343,7 +4414,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4355,8 +4425,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-selected arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4395,7 +4467,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4407,8 +4478,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4433,7 +4506,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4445,8 +4517,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4488,7 +4562,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4500,8 +4573,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4543,7 +4618,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4555,8 +4629,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4591,7 +4667,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4603,8 +4678,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4625,7 +4702,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4637,8 +4713,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4663,7 +4741,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4675,8 +4752,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4718,7 +4797,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4730,8 +4808,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -4773,7 +4853,6 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4795,8 +4874,10 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
 >
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -4833,7 +4914,6 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -4845,8 +4925,10 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
   </div>
   <div
     aria-expanded="true"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -4883,7 +4965,6 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -4895,8 +4976,10 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
   </div>
   <div
     aria-expanded="false"
+    aria-grabbed="false"
     class="arco-tree-node arco-tree-node-is-tail"
     role="treeitem"
+    tabindex="0"
   >
     <span
       aria-hidden="true"
@@ -4937,7 +5020,6 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
       </span>
     </span>
     <span
-      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -5004,8 +5086,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5042,7 +5126,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5054,8 +5137,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5069,7 +5154,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5081,8 +5165,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5123,7 +5209,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5135,8 +5220,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5153,7 +5240,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5165,8 +5251,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5203,7 +5291,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5215,8 +5302,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5257,7 +5346,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5269,8 +5357,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5287,7 +5377,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5299,8 +5388,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5317,7 +5408,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5329,8 +5419,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5344,7 +5436,6 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5369,8 +5460,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-block"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5437,8 +5530,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5463,8 +5555,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5508,8 +5602,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5534,8 +5627,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5606,8 +5701,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5632,8 +5726,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5680,8 +5776,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5706,8 +5801,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5774,8 +5871,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5800,8 +5896,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-block"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5872,8 +5970,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5898,8 +5995,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -5946,8 +6045,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -5972,8 +6070,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6020,8 +6120,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6046,8 +6145,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6091,8 +6192,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6162,8 +6262,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6200,7 +6302,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6212,8 +6313,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6254,7 +6357,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6266,8 +6368,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6284,7 +6388,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6296,8 +6399,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6314,7 +6419,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6326,8 +6430,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6364,7 +6470,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6376,8 +6481,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6418,7 +6525,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6430,8 +6536,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6448,7 +6556,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6460,8 +6567,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6502,7 +6611,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6514,8 +6622,10 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6532,7 +6642,6 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6614,8 +6723,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6682,8 +6793,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6695,8 +6805,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
     <div
       aria-disabled="true"
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled arco-tree-node-block"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6769,8 +6881,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6781,8 +6892,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6829,8 +6942,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6841,8 +6953,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6889,8 +7003,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6901,8 +7014,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
-      class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-expanded arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -6973,8 +7088,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -6985,8 +7099,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
-      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      aria-grabbed="false"
+      class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-block arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7033,8 +7149,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
-        aria-grabbed="false"
-        class="arco-tree-node-title arco-tree-node-title-block"
+        class="arco-tree-node-title"
       >
         <span
           class="arco-tree-node-title-text"
@@ -7056,8 +7171,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
   >
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7094,7 +7211,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7106,8 +7222,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled-selectable arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7148,7 +7266,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7160,8 +7277,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7205,7 +7324,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7217,8 +7335,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7265,7 +7385,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7277,8 +7396,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7301,7 +7422,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7313,8 +7433,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7351,7 +7473,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7363,8 +7484,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="true"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7405,7 +7528,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7417,8 +7539,10 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
     </div>
     <div
       aria-expanded="false"
+      aria-grabbed="false"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
       role="treeitem"
+      tabindex="0"
     >
       <span
         aria-hidden="true"
@@ -7435,7 +7559,6 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
-        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -7474,8 +7597,10 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
       >
         <div
           aria-expanded="true"
-          class="arco-tree-node arco-tree-node-expanded"
+          aria-grabbed="false"
+          class="arco-tree-node arco-tree-node-expanded arco-tree-node-block"
           role="treeitem"
+          tabindex="0"
         >
           <span
             aria-hidden="true"
@@ -7542,8 +7667,7 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
             </span>
           </label>
           <span
-            aria-grabbed="false"
-            class="arco-tree-node-title arco-tree-node-title-block"
+            class="arco-tree-node-title"
           >
             <span
               class="arco-tree-node-title-text"
