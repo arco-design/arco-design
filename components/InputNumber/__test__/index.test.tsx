@@ -112,7 +112,6 @@ describe('InputNumber ', () => {
   it('keyboard plus correctly', () => {
     const wrapper = render(<InputNumber min={0} max={15} />);
     const input = wrapper.getByRole('spinbutton');
-    fireEvent.keyDown(input, { key: 'ArrowUp', which: 38 });
     expect(getInputValue(wrapper, 0)).toBe('0');
     for (let i = 0; i < 5; i++) {
       fireEvent.keyDown(input, { keyCode: ArrowUp.code });

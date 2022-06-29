@@ -18,8 +18,8 @@ export const render = (ui: React.ReactElement, options?: RenderOptions) => {
       ...options,
     }),
   } as ReturnType<typeof ORender> & {
-    querySelector: <T extends Element>(selector: string) => T | null;
-    find: <E extends Element>(selector: string) => NodeListOf<E>;
+    querySelector: <T extends HTMLElement>(selector: string) => T | null;
+    find: <E extends HTMLElement>(selector: string) => NodeListOf<E>;
   };
 
   wrapper.find = <E extends Element>(selector) => {
