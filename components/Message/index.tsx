@@ -14,12 +14,14 @@ type ConfigProps = {
   prefixCls?: string;
   getContainer?: () => HTMLElement;
   duration?: number;
+  rtl?: boolean;
 };
 
 let maxCount;
 let prefixCls;
 let duration;
 let container;
+let rtl;
 
 export interface MessageType {
   (): void;
@@ -94,6 +96,9 @@ class Message extends BaseNotification {
     if (options.duration) {
       duration = options.duration;
     }
+    if (options.rtl) {
+      rtl = options.rtl;
+    }
     if (options.getContainer && options.getContainer() !== container) {
       container = options.getContainer();
       Object.keys(messageInstance).forEach((notice) => messageInstance[notice].clear());
@@ -159,6 +164,7 @@ class Message extends BaseNotification {
                 iconPrefix={prefixCls}
                 onClose={this.remove}
                 noticeType="message"
+                rtl={rtl}
               />
             </CSSTransition>
           ))}
