@@ -108,7 +108,7 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
   };
 
   useEffect(() => {
-    setConfigProviderProps({ locale, prefixCls });
+    setConfigProviderProps({ locale, prefixCls, rtl });
   }, [locale, prefixCls]);
 
   let child = children;

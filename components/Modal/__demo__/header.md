@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 
+title:
   zh-CN: 自定义标题
   en-US: Customize Title
 ---
@@ -15,13 +15,13 @@ The `title` parameter supports text or react nodes, which can support title bar 
 
 ```js
 import React from 'react';
-import { Modal, Button } from '@arco-design/web-react';
+import { Modal, Button, Space} from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);
   const [visible1, setVisible1] = React.useState(false);
   return (
-    <div>
+    <Space>
       <Button onClick={() => setVisible(true)} type="primary">
         Left align title
       </Button>
@@ -49,7 +49,6 @@ function App() {
       <Button
         onClick={() => setVisible1(true)}
         type="primary"
-        style={{ marginLeft: 24 }}
       >
         Center align title
       </Button>
@@ -69,7 +68,7 @@ function App() {
         <p>Some content...</p>
         <p>Some content...</p>
       </Modal>
-    </div>
+    </Space>
   );
 }
 
