@@ -1,8 +1,7 @@
 import React from 'react';
-import { fireEvent, render } from '../../../tests/util';
+import { fireEvent, render, sleep } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
-import { sleep } from '../../../tests/util';
 import BackTop from '..';
 
 mountTest(BackTop);
