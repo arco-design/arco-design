@@ -7,7 +7,7 @@ exports[`renders Skeleton/demo/animate.md correctly 1`] = `
   >
     <span
       class="arco-typography"
-      style="margin-right:8px"
+      style="margin:0 8px"
     >
       Animation
     </span>
