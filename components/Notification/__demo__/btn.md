@@ -29,7 +29,7 @@ function updateNotification() {
           type="secondary"
           size="small"
           onClick={() => Notification.remove(id)}
-          style={{ marginRight: 12 }}
+          style={{ margin: '0 12px' }}
         >
           Cancel
         </Button>
