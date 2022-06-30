@@ -8,7 +8,7 @@ import { UploadListProps } from '../interface';
 import { isFunction } from '../../_util/is';
 
 export const FileList = (props: UploadListProps) => {
-  const { locale } = useContext(ConfigContext);
+  const { locale, rtl } = useContext(ConfigContext);
   const { listType, fileList, renderUploadList, renderUploadItem, prefixCls, ...rest } = props;
 
   if (isFunction(renderUploadList)) {
@@ -16,7 +16,11 @@ export const FileList = (props: UploadListProps) => {
   }
 
   return (
-    <TransitionGroup className={cs(`${prefixCls}-list`, `${prefixCls}-list-type-${listType}`)}>
+    <TransitionGroup
+      className={cs(`${prefixCls}-list`, `${prefixCls}-list-type-${listType}`, {
+        [`${prefixCls}-list-rtl`]: rtl,
+      })}
+    >
       {fileList.map((file) => {
         let originNode: ReactNode =
           listType === 'picture-card' ? (
