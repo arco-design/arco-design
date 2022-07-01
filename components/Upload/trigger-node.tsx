@@ -55,6 +55,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
             const files = getFiles(e.dataTransfer.files, accept);
             props.onDragFiles && props.onDragFiles(multiple ? files : files.slice(0, 1));
           }
+          props.onDrop && props.onDrop(e);
         }
       }}
       onDragOver={(e: React.DragEvent) => {

@@ -204,6 +204,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         'onProgress',
         'onExceedLimit',
         'beforeUpload',
+        'onDrop',
       ])}
       className={cs(
         prefixCls,

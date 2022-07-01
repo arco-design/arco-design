@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import { ProgressProps } from '../Progress';
 
 export const STATUS: {
@@ -296,6 +296,7 @@ export interface UploaderProps extends UploadProps {
   prefixCls?: string;
   limit?: number;
   hide?: boolean;
+  onDrop?: (e: React.DragEvent) => void;
   onFileStatusChange?: (file: UploadItem) => void;
 }
 
@@ -308,6 +309,7 @@ export type TriggerProps = {
   drag?: boolean;
   listType?: 'text' | 'picture-list' | 'picture-card';
   onClick: () => void;
+  onDrop?: (e: React.DragEvent) => void;
   onDragFiles: (files: File[]) => void;
   prefixCls?: string;
 };
