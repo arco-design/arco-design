@@ -384,6 +384,7 @@ export interface FormControlProps<
 > {
   /** 受控组件的唯一标示。 */
   field?: FieldKey;
+  _key?: FieldKey;
   initialValue?: FieldValue;
   getValueFromEvent?: FormItemProps['getValueFromEvent'];
   rules?: RulesProps<FieldValue>[];

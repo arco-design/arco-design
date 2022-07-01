@@ -68,14 +68,25 @@ export default class Control<
     this.isDestroyed = false;
   }
 
+  componentDidUpdate(prevProps) {
+    // key 未改变，但 field 改变了，则需要把绑定在之前 prevProps.field 上的错误状态调整到 props.field
+    // 一般会把 field 直接作为 control 的 key，他们会同步变动，不会触发此逻辑
+    // 在 FormList 下，`FormItem` 顺序会被改变，为了保证校验状态被保留，key 不会改变但 field 和字段顺序有关
+    if (
+      prevProps.field !== this.props.field &&
+      this.props._key &&
+      prevProps._key === this.props._key
+    ) {
+      this.updateFormItem();
+      this.clearFormItemError(prevProps.field);
+    }
+  }
+
   componentWillUnmount() {
     this.removeRegisterField && this.removeRegisterField();
 
     this.removeRegisterField = null;
-
-    // destroy errors
-    const { updateFormItem } = this.context;
-    updateFormItem && updateFormItem(this.props.field as string, { errors: null, warnings: null });
+    this.clearFormItemError();
     this.isDestroyed = true;
   }
 
@@ -89,6 +100,12 @@ export default class Control<
 
   public hasFieldProps = (): boolean => {
     return !!this.props.field;
+  };
+
+  private clearFormItemError = (field = this.props.field) => {
+    // destroy errors
+    const { updateFormItem } = this.context;
+    updateFormItem && updateFormItem(field as string, { errors: null, warnings: null });
   };
 
   private updateFormItem = () => {

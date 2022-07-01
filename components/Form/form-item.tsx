@@ -136,6 +136,7 @@ const Item = <
       }
       return newErrors;
     });
+
     setWarnings((current) => {
       const newVal = { ...(current || {}) };
       if (warnings && warnings.length) {
@@ -221,7 +222,11 @@ const Item = <
 
     if (isFunction(children)) {
       return (
-        <Control disabled={disabled} {...(props as any)} {...(field ? { key: field } : {})}>
+        <Control
+          disabled={disabled}
+          {...(props as any)}
+          {...(field ? { key: field, _key: field } : {})}
+        >
           {(...rest) =>
             children(...(rest as Parameters<FormItemChildrenFn<FormData, FieldValue, FieldKey>>))
           }
@@ -243,12 +248,9 @@ const Item = <
     }
     if (React.Children.count(children) === 1) {
       if (field) {
+        const key = formListContext?.getItemKey?.(field) || field;
         return (
-          <Control
-            disabled={disabled}
-            {...(props as any)}
-            key={formListContext?.getItemKey?.(field) || field}
-          >
+          <Control disabled={disabled} {...(props as any)} key={key} _key={key}>
             {children}
           </Control>
         );
