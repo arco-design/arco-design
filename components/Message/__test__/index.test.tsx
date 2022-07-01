@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import Message from '..';
 import Notice from '../../_class/notice';
 import { IconMessage } from '../../../icon';
 import { $ } from '../../../tests/util';
 
 it('render correctly', () => {
-  const message = mount(
+  const message = render(
     <div>
       <Notice type="info" content="Info type" prefixCls="arco-message" />
       <Notice type="success" content="Success type" prefixCls="arco-message" />
@@ -16,7 +16,7 @@ it('render correctly', () => {
       <Notice type="normal" content="Custom icon" icon={<IconMessage />} prefixCls="arco-message" />
     </div>
   );
-  expect(message.render()).toMatchSnapshot();
+  expect(message.container.firstChild).toMatchSnapshot();
 });
 
 describe('open message', () => {

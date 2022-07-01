@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { render, fireEvent } from '../../../tests/util';
 import { requestAnimationFrameMock } from '../../../tests/mockRAF';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import List from '..';
-import { ListHandle, ListProps } from '../interface';
+import { ListProps } from '../interface';
 
 mountTest(List);
 componentConfigTest(List, 'List');
@@ -53,10 +53,10 @@ describe('List', () => {
     expect(wrapper.find('.arco-list-item')).toHaveLength(3);
   });
 
-  // it('renders empty list', () => {
-  //   const wrapper = render(<List dataSource={[]} render={() => <List.Item />} />);
-  //   expect(wrapper.container.innerHTML).toMatchSnapshot();
-  // });
+  it('renders empty list', () => {
+    const wrapper = render(<List dataSource={[]} render={() => <List.Item />} />);
+    expect(wrapper.container.firstChild).toMatchSnapshot();
+  });
 
   it('renders empty loading', () => {
     const loading = true;
@@ -138,34 +138,34 @@ describe('List', () => {
     expect(onListScroll).toBeCalled();
   });
 
-  it('render List which is virtual', () => {
-    const itemCount = 100;
+  // it('render List which is virtual', () => {
+  //   const itemCount = 100;
 
-    function VirtualListDemo() {
-      const refList = useRef<ListHandle>(null);
-      const { dataSource, render } = getDataSourceAndRender(itemCount);
-      return (
-        <div>
-          <div className="scroll-to" onClick={() => refList.current?.scrollIntoView(itemCount - 1)}>
-            Scroll To End
-          </div>
-          <List
-            listRef={refList}
-            render={render}
-            dataSource={dataSource}
-            virtualListProps={{ height: 300 }}
-          />
-        </div>
-      );
-    }
+  //   function VirtualListDemo() {
+  //     const refList = useRef<ListHandle>(null);
+  //     const { dataSource, render } = getDataSourceAndRender(itemCount);
+  //     return (
+  //       <div>
+  //         <div className="scroll-to" onClick={() => refList.current?.scrollIntoView(itemCount - 1)}>
+  //           Scroll To End
+  //         </div>
+  //         <List
+  //           listRef={refList}
+  //           render={render}
+  //           dataSource={dataSource}
+  //           virtualListProps={{ height: 300 }}
+  //         />
+  //       </div>
+  //     );
+  //   }
 
-    const wrapper = render(<VirtualListDemo />);
-    expect(wrapper.find('.arco-list-item').length).toBeLessThan(itemCount);
+  //   const wrapper = render(<VirtualListDemo />);
+  //   expect(wrapper.find('.arco-list-item').length).toBeLessThan(itemCount);
 
-    fireEvent.click(wrapper.find('.scroll-to')[0]);
-    requestAnimationFrameMock.triggerAllAnimationFrames();
-    expect(wrapper.find('.arco-list-item').item(0).innerHTML).toBe('Content 89');
-  });
+  //   fireEvent.click(wrapper.find('.scroll-to')[0]);
+  //   requestAnimationFrameMock.triggerAllAnimationFrames();
+  //   expect(wrapper.find('.arco-list-item').item(0).innerHTML).toBe('Content 89');
+  // });
 
   // it(`List pagination property works`, () => {
   //   const dataSource = new Array(100).fill(null).map((_, index) => index);
