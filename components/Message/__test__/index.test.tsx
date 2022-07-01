@@ -1,9 +1,8 @@
 import React from 'react';
-import { render } from '../../../tests/util';
+import { render, $ } from '../../../tests/util';
 import Message from '..';
 import Notice from '../../_class/notice';
 import { IconMessage } from '../../../icon';
-import { $ } from '../../../tests/util';
 
 it('render correctly', () => {
   const message = render(

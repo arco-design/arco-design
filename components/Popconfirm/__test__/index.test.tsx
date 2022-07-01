@@ -1,8 +1,7 @@
 import React from 'react';
-import { fireEvent, render } from '../../../tests/util';
+import { fireEvent, render, sleep, $ } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import Popconfirm from '..';
-import { sleep, $ } from '../../../tests/util';
 
 mountTest(Popconfirm);
 
