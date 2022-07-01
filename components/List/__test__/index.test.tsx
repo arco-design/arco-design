@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { render, fireEvent } from '../../../tests/util';
 import { requestAnimationFrameMock } from '../../../tests/mockRAF';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
+import { ListHandle, ListProps } from '../interface';
 import List from '..';
-import { ListProps } from '../interface';
 
 mountTest(List);
 componentConfigTest(List, 'List');
@@ -30,8 +30,12 @@ function getDataSourceAndRender(count = 100): Pick<ListProps, 'dataSource' | 're
     dataSource: new Array(count)
       .fill(null)
       .map((_, index) => ({ title: `Title ${index}`, content: `Content ${index}` })),
-    render: ({ title, content }) => {
-      return <List.Item title={title}>{content}</List.Item>;
+    render: ({ title, content }, index) => {
+      return (
+        <List.Item key={index} title={title}>
+          {content}
+        </List.Item>
+      );
     },
   };
 }
@@ -54,13 +58,17 @@ describe('List', () => {
   });
 
   it('renders empty list', () => {
-    const wrapper = render(<List dataSource={[]} render={() => <List.Item />} />);
+    const wrapper = render(
+      <List dataSource={[]} render={(_, index) => <List.Item key={index} />} />
+    );
     expect(wrapper.container.firstChild).toMatchSnapshot();
   });
 
   it('renders empty loading', () => {
     const loading = true;
-    const wrapper = render(<List loading={loading} dataSource={[]} render={() => <List.Item />} />);
+    const wrapper = render(
+      <List loading={loading} dataSource={[]} render={(_, index) => <List.Item key={index} />} />
+    );
     expect(wrapper.find('.arco-list-item')).toHaveLength(0);
     expect(wrapper.find('.arco-spin .arco-spin')).toHaveLength(1);
   });
@@ -138,63 +146,66 @@ describe('List', () => {
     expect(onListScroll).toBeCalled();
   });
 
-  // it('render List which is virtual', () => {
-  //   const itemCount = 100;
+  it('render List which is virtual', () => {
+    const itemCount = 100;
 
-  //   function VirtualListDemo() {
-  //     const refList = useRef<ListHandle>(null);
-  //     const { dataSource, render } = getDataSourceAndRender(itemCount);
-  //     return (
-  //       <div>
-  //         <div className="scroll-to" onClick={() => refList.current?.scrollIntoView(itemCount - 1)}>
-  //           Scroll To End
-  //         </div>
-  //         <List
-  //           listRef={refList}
-  //           render={render}
-  //           dataSource={dataSource}
-  //           virtualListProps={{ height: 300 }}
-  //         />
-  //       </div>
-  //     );
-  //   }
+    function VirtualListDemo() {
+      const refList = useRef<ListHandle>(null);
+      const { dataSource, render } = getDataSourceAndRender(itemCount);
+      return (
+        <div>
+          <div
+            className="scroll-to"
+            onClick={() => {
+              refList.current?.scrollIntoView(itemCount - 1);
+            }}
+          >
+            Scroll To End
+          </div>
+          <List
+            listRef={refList}
+            render={render}
+            dataSource={dataSource}
+            virtualListProps={{ height: 300 }}
+          />
+        </div>
+      );
+    }
 
-  //   const wrapper = render(<VirtualListDemo />);
-  //   expect(wrapper.find('.arco-list-item').length).toBeLessThan(itemCount);
+    const wrapper = render(<VirtualListDemo />);
+    expect(wrapper.find('.arco-list-item').length).toBeLessThan(itemCount);
+  });
 
-  //   fireEvent.click(wrapper.find('.scroll-to')[0]);
-  //   requestAnimationFrameMock.triggerAllAnimationFrames();
-  //   expect(wrapper.find('.arco-list-item').item(0).innerHTML).toBe('Content 89');
-  // });
+  it(`List pagination property works`, () => {
+    const dataSource = new Array(100).fill(null).map((_, index) => index);
+    const wrapper = render(
+      <List
+        render={(item) => <List.Item key={item}>{item}</List.Item>}
+        dataSource={dataSource}
+        pagination={{
+          defaultPageSize: 30,
+          defaultCurrent: 3,
+          sizeCanChange: true,
+        }}
+      />
+    );
+    expect(wrapper.find('.arco-pagination .arco-select')).toHaveLength(1);
+    expect(wrapper.find('.arco-list-item-content').item(0).innerHTML).toBe('60');
+  });
 
-  // it(`List pagination property works`, () => {
-  //   const dataSource = new Array(100).fill(null).map((_, index) => index);
-  //   const wrapper = render(
-  //     <List
-  //       render={(item) => <List.Item key={item}>{item}</List.Item>}
-  //       dataSource={dataSource}
-  //       pagination={{
-  //         defaultPageSize: 30,
-  //         defaultCurrent: 3,
-  //         sizeCanChange: true,
-  //       }}
-  //     />
-  //   );
-  //   expect(wrapper.find('.arco-pagination .arco-select')).toHaveLength(1);
-  //   expect(wrapper.find('.arco-list-item-content').item(0).innerHTML).toBe('60');
-  // });
+  it('List render callback has correct parameter:index', () => {
+    const itemCount = 10;
+    const wrapper = render(
+      <List
+        grid={{ span: 8 }}
+        dataSource={new Array(itemCount).fill(null)}
+        bordered={false}
+        render={(_, index) => <List.Item>{index + 1}</List.Item>}
+      />
+    );
 
-  // it('List render callback has correct parameter:index', () => {
-  //   const itemCount = 10;
-  //   render(
-  //     <List
-  //       grid={{ span: 8 }}
-  //       dataSource={new Array(itemCount).fill(null)}
-  //       bordered={false}
-  //       render={(_, index) => <List.Item>{index + 1}</List.Item>}
-  //     />
-  //   );
-  //   const listContents = screen.getAllByRole('listitem');
-  //   expect(listContents.at(-1)).toBe(`${itemCount}`);
-  // });
+    expect(wrapper.find('.arco-list-item-content').item(itemCount - 1)).toHaveTextContent(
+      `${itemCount}`
+    );
+  });
 });
