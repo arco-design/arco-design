@@ -1,4 +1,7 @@
 import BTween from 'b-tween';
+import { Dayjs } from 'dayjs';
+import { dayjs, methods } from '../_util/dayjs';
+import { isDayjs } from '../_util/is';
 
 export function getColumnsFromFormat(format) {
   const units = ['H', 'h', 'm', 's', 'a', 'A'];
@@ -44,4 +47,22 @@ export function scrollTo(element: HTMLElement, to: number, duration: number) {
       tween.start();
     })
   );
+}
+
+export function getFormatTime(time: Dayjs): Dayjs {
+  const today = dayjs();
+  const y = today.year();
+  const m = today.month();
+  const d = today.date();
+
+  if (isDayjs(time)) {
+    let returnTime = time;
+    returnTime = methods.set(returnTime, 'year', y);
+    returnTime = methods.set(returnTime, 'month', m);
+    returnTime = methods.set(returnTime, 'date', d);
+
+    return returnTime;
+  }
+
+  return time;
 }
