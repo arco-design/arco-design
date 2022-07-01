@@ -116,7 +116,6 @@ export interface InputProps
    * @en With `maxLength`, Show word count.
    */
   showWordLimit?: boolean;
-  _ignorePropsFromGlobal?: boolean;
 }
 
 /**
