@@ -1,8 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-test-renderer';
 import Typography from '..';
-import { sleep } from '../../../tests/util';
+import { sleep, render, fireEvent } from '../../../tests/util';
 
 const { Paragraph } = Typography;
 
@@ -69,63 +68,55 @@ describe('JS Ellipsis Scene', () => {
   const mockText = 'A design is a plan or specification for the construction';
   it('support basic ellipsis', async () => {
     const onEllipsis = jest.fn();
-    const wrapper = mount(<Paragraph ellipsis={{ onEllipsis }}>{mockText}</Paragraph>);
-
+    const wrapper = render(<Paragraph ellipsis={{ onEllipsis }}>{mockText}</Paragraph>);
     await sleep(200);
-    wrapper.update();
-    const showText1 = wrapper.text();
-    expect(showText1.length).toEqual(LINE_STR_COUNT);
-    expect(mockText.startsWith(showText1.replace('...', ''))).toBeTruthy();
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT - 3)}...`
+    );
     expect(onEllipsis).toHaveBeenCalledWith(true);
 
-    wrapper.setProps({
-      ellipsis: {
-        rows: 2,
-      },
+    act(() => {
+      wrapper.rerender(<Paragraph ellipsis={{ rows: 2 }}>{mockText}</Paragraph>);
     });
     await sleep(200);
-    wrapper.update();
-
-    const showText2 = wrapper.text();
-    expect(showText2.length).toEqual(LINE_STR_COUNT * 2);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT * 2 - 3)}...`
+    );
   });
 
   it('support expand when ellipsis', async () => {
     const onExpand = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <Paragraph ellipsis={{ onExpand, expandNodes: ['Less', 'More'], expandable: true }}>
         {mockText}
       </Paragraph>
     );
-
-    await sleep(200);
-    wrapper.update();
-    expect(wrapper.find('.arco-typography-operation-expand').text()).toEqual('More');
+    expect(wrapper.find('.arco-typography-operation-expand')[0]).toHaveTextContent('More');
     act(() => {
-      wrapper.find('.arco-typography-operation-expand').simulate('click');
+      fireEvent.click(wrapper.find('.arco-typography-operation-expand')[0]);
     });
 
-    const showText = wrapper.text();
-    expect(showText).toEqual(`${mockText}Less`);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(`${mockText}Less`);
     expect(onExpand.mock.calls[0][0]).toBe(true);
-
     onExpand.mockReset();
     act(() => {
-      wrapper.find('.arco-typography-operation-expand').simulate('click');
+      fireEvent.click(wrapper.find('.arco-typography-operation-expand')[0]);
     });
-
-    expect(wrapper.text().length < mockText.length).toEqual(true);
+    await sleep(200);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT - 3 - 4)}...More`
+    );
     expect(onExpand.mock.calls[0][0]).toBe(false);
 
     act(() => {
-      wrapper.setProps({ ellipsis: { expandable: false } });
+      wrapper.rerender(<Paragraph ellipsis={{ expandable: false }}>{mockText}</Paragraph>);
     });
     expect(wrapper.find('.arco-typography-operation-expand')).toHaveLength(0);
   });
 
   it('support suffix when ellipsis', async () => {
     const suffix = '--Arco Design';
-    const wrapper = mount(
+    const wrapper = render(
       <Paragraph
         ellipsis={{
           suffix,
@@ -142,80 +133,94 @@ describe('JS Ellipsis Scene', () => {
     );
 
     await sleep(200);
-    wrapper.update();
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT - suffix.length - 3)}...${suffix}`
+    );
 
-    const showText = wrapper.text();
-    expect(showText.endsWith(suffix)).toBeTruthy();
-    expect(wrapper.find('Tooltip')).toHaveLength(1);
+    act(() => {
+      fireEvent.mouseEnter(wrapper.find('span')[0]);
+    });
+    jest.runAllTimers();
+    await sleep(200);
+    expect(wrapper.find('.arco-tooltip-open')).toHaveLength(1);
   });
 
   it('ellipsis correctly when children is controlled', async () => {
-    const wrapper = mount(<Paragraph ellipsis={{ rows: 2 }}>{mockText}</Paragraph>);
+    const wrapper = render(<Paragraph ellipsis={{ rows: 2 }}>{mockText}</Paragraph>);
     await sleep(200);
-    wrapper.update();
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT * 2 - 3)}...`
+    );
 
     const resetText = `new children`;
-
     act(() => {
-      wrapper.setProps({
-        children: resetText + mockText,
-      });
-      wrapper.update();
+      wrapper.rerender(<Paragraph ellipsis={{ rows: 2 }}>{resetText + mockText}</Paragraph>);
     });
 
     await sleep(200);
 
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
-    expect(wrapper.text().startsWith(resetText)).toBe(true);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${(resetText + mockText).slice(0, LINE_STR_COUNT * 2 - 3)}...`
+    );
   });
 
   it('ellipsis controlled scene', async () => {
-    const wrapper = mount(<Paragraph ellipsis={{ rows: 2, expanded: true }}>{mockText}</Paragraph>);
+    const wrapper = render(
+      <Paragraph ellipsis={{ rows: 2, expanded: true }}>{mockText}</Paragraph>
+    );
     await sleep(200);
-    wrapper.update();
-    expect(wrapper.text().length).toEqual(mockText.length);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(mockText);
 
     act(() => {
-      wrapper.setProps({ ellipsis: { rows: 2, expanded: false } });
-      wrapper.update();
+      wrapper.rerender(<Paragraph ellipsis={{ rows: 2, expanded: false }}>{mockText}</Paragraph>);
     });
     await sleep(200);
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT * 2 - 3)}...`
+    );
   });
 
   it('support defaultEllipsis scene', async () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Paragraph ellipsis={{ rows: 2, defaultExpanded: false }}>{mockText}</Paragraph>
     );
     await sleep(200);
-    wrapper.update();
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 2);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT * 2 - 3)}...`
+    );
 
     act(() => {
-      wrapper.setProps({ ellipsis: { rows: 2, expanded: true, defaultExpanded: false } });
-      wrapper.update();
+      wrapper.rerender(
+        <Paragraph ellipsis={{ rows: 2, expanded: true, defaultExpanded: false }}>
+          {mockText}
+        </Paragraph>
+      );
     });
     await sleep(200);
-    expect(wrapper.text().length).toEqual(mockText.length);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(mockText);
   });
 
   it('render expanding operation correctly', async () => {
-    const wrapper = mount(<Paragraph ellipsis={{ expandable: true }}>{mockText}</Paragraph>);
+    const wrapper = render(<Paragraph ellipsis={{ expandable: true }}>{mockText}</Paragraph>);
     await sleep(200);
-    wrapper.update();
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT * 1);
-    expect(wrapper.find('.arco-typography-operation-expand').text()).toEqual('展开');
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      `${mockText.slice(0, LINE_STR_COUNT - 5)}...展开`
+    );
+    expect(wrapper.find('.arco-typography-operation-expand')[0]).toHaveTextContent('展开');
 
     act(() => {
-      wrapper.setProps({ children: mockText.slice(0, LINE_STR_COUNT - 5) });
-      wrapper.update();
+      wrapper.rerender(
+        <Paragraph ellipsis={{ expandable: true }}>
+          {mockText.slice(0, LINE_STR_COUNT - 5)}
+        </Paragraph>
+      );
     });
 
     await sleep(200);
-    wrapper.update();
 
-    expect(wrapper.text().length).toEqual(LINE_STR_COUNT - 5);
+    expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(
+      mockText.slice(0, LINE_STR_COUNT - 5)
+    );
     expect(wrapper.find('.arco-typography-operation-expand')).toHaveLength(0);
   });
 });
