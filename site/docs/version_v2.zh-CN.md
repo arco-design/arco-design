@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.36.1
+
+2022-07-01
+
+### 🐛 问题修复
+
+- 修复 `Drawer` 在隐藏过程中设置 `visible=true` 时，再次点击蒙层抽屉无法被隐藏的 bug。([#1079](https://github.com/arco-design/arco-design/pull/1079))
+- 修复 `Form.List` 下调整表单项顺序，校验状态可能出现展示错乱的问题。([#1077](https://github.com/arco-design/arco-design/pull/1077))
+- 修复 `Calendar` 组件 `defaultValue` 以及 selected date 没有被高亮的问题。([#1073](https://github.com/arco-design/arco-design/pull/1073))
+- 修复 `Input` 组件导致的控制台 React Warning(not recognize prop on a DOM element)。([#1070](https://github.com/arco-design/arco-design/pull/1070))
+
 ## 2.36.0
 
 2022-06-24

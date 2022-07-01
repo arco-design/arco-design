@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fixed the bug that when the `Drawer` was set to `visible=true` during the hiding process, clicking again on the masked drawer could not be hidden.([#1079](https://github.com/arco-design/arco-design/pull/1079))
+- Fix the problem that the order of form items is adjusted under `Form.List`, and the verification status may be displayed in disorder.([#1077](https://github.com/arco-design/arco-design/pull/1077))
+- Fixed `Calendar` component `defaultValue` and selected date not being highlighted.([#1073](https://github.com/arco-design/arco-design/pull/1073))
+- Fix console React Warning (not recognize prop on a DOM element) caused by `Input` component.([#1070](https://github.com/arco-design/arco-design/pull/1070))
+
 ## 2.36.0
 
 2022-06-24
