@@ -80,8 +80,8 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|onFormValuesChange|This method is called when the value of any wrapped `Form` component changes|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [[FormInstance](#forminstance)](#forminstance);};}) => void |`-`|
-|onFormSubmit|This method will be called when any wrapped `Form` component triggers a submit|(id: string \| undefined,values,{forms,}: {forms: {[key: string]: [[FormInstance](#forminstance)](#forminstance);};}) => void |`-`|
+|onFormValuesChange|This method is called when the value of any wrapped `Form` component changes|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
+|onFormSubmit|This method will be called when any wrapped `Form` component triggers a submit|(id: string \| undefined,values,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
 
 ### FormInstance
 

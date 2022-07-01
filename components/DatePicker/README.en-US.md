@@ -72,32 +72,32 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
 |format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string |`gggg-wo`|
-|defaultValue|To set default date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|To set date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|To set default date|[CalendarValue](#calendarvalue) |`-`|
+|value|To set date|[CalendarValue](#calendarvalue) |`-`|
 
 ### MonthPicker
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
 |format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-MM`|
-|defaultValue|To set default date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|To set date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|To set default date|[CalendarValue](#calendarvalue) |`-`|
+|value|To set date|[CalendarValue](#calendarvalue) |`-`|
 
 ### YearPicker
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
 |format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string |`YYYY`|
-|defaultValue|To set default date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|To set date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|To set default date|[CalendarValue](#calendarvalue) |`-`|
+|value|To set date|[CalendarValue](#calendarvalue) |`-`|
 
 ### QuarterPicker
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
 |format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-[Q]Q`|
-|defaultValue|To set default date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|To set date|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|To set default date|[CalendarValue](#calendarvalue) |`-`|
+|value|To set date|[CalendarValue](#calendarvalue) |`-`|
 
 ### RangePicker
 
@@ -107,8 +107,8 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-MM-DD`|-|
 |onChange|Callback when the selected value changes|(dateString: string[], date: Dayjs[]) => void |`-`|-|
 |onSelect|Callback when the show value changes but the selected value does not change|(dateString: string[], value: Dayjs[], extra: { type: 'start' \| 'end' }) => void |`-`|`extra` in `2.23.0`|
-|defaultValue|To set default date|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|-|
-|value|To set date|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|-|
+|defaultValue|To set default date|[CalendarValue](#calendarvalue)[] |`-`|-|
+|value|To set date|[CalendarValue](#calendarvalue)[] |`-`|-|
 |mode|The type of RangePicker|'date' \| 'month' \| 'week' \| 'year' \| 'quarter' |`date`|-|
 |showTime|Whether to show time selection, if an object is passed in, the parameters will be passed to the built-in TimePicker.|boolean \| [TimePickerRangeProps](#timepickerrangeprops) |`-`|-|
 |placeholder|The placeholder of input|string[] |`-`|-|
@@ -116,8 +116,8 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |onOk|Callback when click confirm button|(dateString: string[], date: Dayjs[]) => void |`-`|-|
 |disabledTime|Specify the time that cannot be selected|(current: Dayjs, type: 'start' \| 'end') => [DisabledTimeProps](#disabledtimeprops) |`-`|-|
 |triggerElement|Trigger element.|ReactNode |`-`|2.9.0|
-|defaultPickerValue|Default displayed date of panel.|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|-|
-|pickerValue|Displayed date of panel.|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|2.9.0|
+|defaultPickerValue|Default displayed date of panel.|[CalendarValue](#calendarvalue)[] |`-`|-|
+|pickerValue|Displayed date of panel.|[CalendarValue](#calendarvalue)[] |`-`|2.9.0|
 |onPickerValueChange|Callback when date of panel changes.|(dateString: string[], value: Dayjs[]) => void |`-`|2.9.0|
 |clearRangeOnReselect|When reselect the range, the previous range will be cleared for next selection|boolean |`-`|2.23.0|
 
@@ -133,7 +133,7 @@ export type ShortcutType = {
 ### CalendarValue
 
 ```js
-export type CalendarValue = Dayjs | Date | string | number;
+export type CalendarValue = number | string | Date | Dayjs;
 ```
 
 ### TimePickerProps
