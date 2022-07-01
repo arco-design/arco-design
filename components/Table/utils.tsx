@@ -1,4 +1,4 @@
-import { isArray, isObject } from '../_util/is';
+import { isArray, isObject, isString } from '../_util/is';
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
@@ -17,11 +17,12 @@ export function deepCloneData(data, childrenColumnName) {
     const newData = [];
     data.forEach((d) => {
       // case: [[{}]]
-      if (isArray(d)) {
+      // case: ['', '']
+      if (isArray(d) || isString(d)) {
         return d;
       }
       const _d = { ...d };
-      _d.__ORIGIN_DATA = { ...d };
+      _d.__ORIGIN_DATA = d;
       if (isObject(_d) && _d[childrenColumnName]) {
         _d[childrenColumnName] = travel(_d[childrenColumnName]);
       }
