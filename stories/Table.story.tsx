@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console,react/no-this-in-sfc */
 import React, { useState, useEffect } from 'react';
-import { Table, Button, PaginationProps, Space, Switch } from '@self';
+import { Table, Button, PaginationProps, Space, Switch, TableColumnProps } from '@self';
 
 const columns = [
   {
@@ -258,6 +258,88 @@ function DemoTreeData() {
 }
 
 export const TreeData = () => <DemoTreeData />;
+
+const DemoDataClass = () => {
+  class Klass {
+    key: string;
+
+    name: string;
+
+    salary: number;
+
+    address: string;
+
+    email: string;
+
+    children: any;
+
+    constructor({ key, name, salary, address, email, children }: any) {
+      this.key = key;
+      this.name = name;
+      this.salary = salary;
+      this.address = address;
+      this.email = email;
+      this.children = children;
+    }
+
+    fn() {}
+  }
+
+  const columns: TableColumnProps[] = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      render(col: any, item: any, index: number) {
+        // 2.31.2 -> 2.36.0
+        // item被复制了一份，没有保留原来的数据结构
+        // 以前是Klass实例
+        // 现在是一个普通对象
+        console.log({ col, item, index });
+        return <span>{col}</span>;
+      },
+    },
+  ];
+  const data = [
+    new Klass({
+      key: '1',
+      name: 'Jane Doe',
+      salary: 23000,
+      address: '32 Park Road, London',
+      email: 'jane.doe@example.com',
+      children: [
+        new Klass({
+          key: '3',
+          name: 'Jane Doe',
+          salary: 23000,
+          address: '32 Park Road, London',
+          email: 'jane.doe@example.com',
+        }),
+      ],
+    }),
+    new Klass({
+      key: '2',
+      name: 'Alisa Ross',
+      salary: 25000,
+      address: '35 Park Road, London',
+      email: 'alisa.ross@example.com',
+    }),
+  ];
+  return <Table columns={columns} data={data} />;
+};
+
+export const DataClass = () => <DemoDataClass />;
 
 export default {
   title: 'Table',
