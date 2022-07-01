@@ -246,6 +246,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           unmountOnExit={unmountOnExit}
           onEnter={(e) => {
             e.parentNode.style.display = 'block';
+            inExit.current = false;
           }}
           onEntered={() => {
             setIsOpened(true);
