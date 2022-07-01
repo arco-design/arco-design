@@ -214,15 +214,14 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         {okText || locale.Modal.okText}
       </Button>
     );
-    let footerContent = footer || (
-      <>
-        {!hideCancel && cancelButtonNode}
-        {okButtonNode}
-      </>
-    );
-    if (isFunction(footer)) {
-      footerContent = footer(cancelButtonNode, okButtonNode);
-    }
+    const footerContent = isFunction(footer)
+      ? footer(cancelButtonNode, okButtonNode)
+      : footer || (
+          <>
+            {!hideCancel && cancelButtonNode}
+            {okButtonNode}
+          </>
+        );
 
     return <div className={`${prefixCls}-footer`}>{footerContent}</div>;
   };

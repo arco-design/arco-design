@@ -4,6 +4,7 @@ import { findDOMNode } from 'react-dom';
 
 export interface ResizeProps {
   onResize?: (entry: ResizeObserverEntry[]) => void;
+  children?: React.ReactNode;
 }
 
 class ResizeObserverComponent extends React.Component<ResizeProps> {

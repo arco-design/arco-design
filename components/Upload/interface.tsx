@@ -290,6 +290,7 @@ export type UploadItem = {
    * @en File name
    */
   name?: string;
+  children?: ReactNode;
 };
 
 export interface UploaderProps extends UploadProps {

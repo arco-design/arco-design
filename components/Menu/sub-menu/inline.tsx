@@ -1,4 +1,4 @@
-import React, { CSSProperties, useContext, useMemo } from 'react';
+import React, { CSSProperties, useContext, useMemo, ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
@@ -56,7 +56,7 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     ...pick(rest, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU),
     level: level + 1,
     selectable,
-  });
+  }) as ReactNode[];
 
   const header = (
     <div

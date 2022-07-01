@@ -4,7 +4,7 @@ import { CSSProperties, ChangeEvent, ReactNode } from 'react';
  * @title Radio
  */
 export interface RadioProps<T = any>
-  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'className' | 'onChange'> {
+  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'children' | 'className' | 'onChange'> {
   style?: CSSProperties;
   className?: string | string[];
   /**

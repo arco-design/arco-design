@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, forwardRef, useRef, useMemo } from 'react';
+import React, { useEffect, useContext, ReactNode, forwardRef, useRef, useMemo } from 'react';
 import cs from '../_util/classNames';
 import Item from './item';
 import ItemGroup from './item-group';
@@ -116,7 +116,7 @@ function Menu(baseProps: MenuProps, ref) {
     mode !== 'horizontal' && mode !== 'popButton' && !inDropdown && hasCollapseButton;
 
   const renderChildren = () => {
-    const childrenList = processChildren(children, { level: 1 });
+    const childrenList = processChildren(children, { level: 1 }) as ReactNode[];
     const collapseIcon = collapse
       ? (icons && icons.collapseActive) || <IconMenuUnfold />
       : (icons && icons.collapseDefault) || <IconMenuFold />;

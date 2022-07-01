@@ -39,7 +39,7 @@ export type RenderFunc<T> = (
 
 type Status = 'NONE' | 'MEASURE_START' | 'MEASURE_DONE';
 
-export interface VirtualListProps<T> extends React.HTMLAttributes<any> {
+export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'children'> {
   children: RenderFunc<T>;
   data: T[];
   /* Viewable area height (`2.11.0` starts support `string` type such as `80%`) */
