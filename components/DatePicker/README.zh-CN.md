@@ -72,32 +72,32 @@
 |参数名|描述|类型|默认值|
 |---|---|---|---|
 |format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string |`gggg-wo`|
-|defaultValue|默认日期|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|日历组件的值|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|默认日期|[CalendarValue](#calendarvalue) |`-`|
+|value|日历组件的值|[CalendarValue](#calendarvalue) |`-`|
 
 ### MonthPicker
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
 |format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-MM`|
-|defaultValue|默认日期|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|日历组件的值|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|默认日期|[CalendarValue](#calendarvalue) |`-`|
+|value|日历组件的值|[CalendarValue](#calendarvalue) |`-`|
 
 ### YearPicker
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
 |format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string |`YYYY`|
-|defaultValue|默认日期|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|日历组件的值|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|默认日期|[CalendarValue](#calendarvalue) |`-`|
+|value|日历组件的值|[CalendarValue](#calendarvalue) |`-`|
 
 ### QuarterPicker
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
 |format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-[Q]Q`|
-|defaultValue|默认日期|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
-|value|日历组件的值|[[CalendarValue](#calendarvalue)](#calendarvalue) |`-`|
+|defaultValue|默认日期|[CalendarValue](#calendarvalue) |`-`|
+|value|日历组件的值|[CalendarValue](#calendarvalue) |`-`|
 
 ### RangePicker
 
@@ -107,8 +107,8 @@
 |format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-MM-DD`|-|
 |onChange|日历组件值发生改变时的回调|(dateString: string[], date: Dayjs[]) => void |`-`|-|
 |onSelect|选中日期发生改变但组件值未改变时的回调|(dateString: string[], value: Dayjs[], extra: { type: 'start' \| 'end' }) => void |`-`|`extra` in `2.23.0`|
-|defaultValue|默认日期|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|-|
-|value|日历组件的值|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|-|
+|defaultValue|默认日期|[CalendarValue](#calendarvalue)[] |`-`|-|
+|value|日历组件的值|[CalendarValue](#calendarvalue)[] |`-`|-|
 |mode|范围选择器的类型，可以是日期、月份。|'date' \| 'month' \| 'week' \| 'year' \| 'quarter' |`date`|-|
 |showTime|是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。|boolean \| [TimePickerRangeProps](#timepickerrangeprops) |`-`|-|
 |placeholder|提示文案|string[] |`-`|-|
@@ -116,8 +116,8 @@
 |onOk|点击确认按钮的回调|(dateString: string[], date: Dayjs[]) => void |`-`|-|
 |disabledTime|不可选取的时间|(current: Dayjs, type: 'start' \| 'end') => [DisabledTimeProps](#disabledtimeprops) |`-`|-|
 |triggerElement|触发元素。|ReactNode |`-`|2.9.0|
-|defaultPickerValue|默认面板显示的日期|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|-|
-|pickerValue|面板显示的日期。|[[CalendarValue](#calendarvalue)](#calendarvalue)[] |`-`|2.9.0|
+|defaultPickerValue|默认面板显示的日期|[CalendarValue](#calendarvalue)[] |`-`|-|
+|pickerValue|面板显示的日期。|[CalendarValue](#calendarvalue)[] |`-`|2.9.0|
 |onPickerValueChange|面板日期改变的回调。|(dateString: string[], value: Dayjs[]) => void |`-`|2.9.0|
 |clearRangeOnReselect|当重新选择范围的时候，会清空之前的范围重新进行选择|boolean |`-`|2.23.0|
 
@@ -133,7 +133,7 @@ export type ShortcutType = {
 ### CalendarValue
 
 ```js
-export type CalendarValue = Dayjs | Date | string | number;
+export type CalendarValue = number | string | Date | Dayjs;
 ```
 
 ### TimePickerProps

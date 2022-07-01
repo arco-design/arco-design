@@ -80,8 +80,8 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|onFormValuesChange|包裹的任意 `Form` 组件的值改变时，该方法会被调用|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [[FormInstance](#forminstance)](#forminstance);};}) => void |`-`|
-|onFormSubmit|包裹的任意 `Form` 组件触发提交时，该方法会被调用|(id: string \| undefined,values,{forms,}: {forms: {[key: string]: [[FormInstance](#forminstance)](#forminstance);};}) => void |`-`|
+|onFormValuesChange|包裹的任意 `Form` 组件的值改变时，该方法会被调用|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
+|onFormSubmit|包裹的任意 `Form` 组件触发提交时，该方法会被调用|(id: string \| undefined,values,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
 
 ### FormInstance
 
@@ -202,7 +202,6 @@ export interface RulesProps {
 ### this.form
 
 通过`ref`可以拿到`this.form`，`this.form`包含了表单的验证、设值等常用操作。
-
 
 ```js
 <Form ref={(ref) => (this.form = ref)}>
