@@ -46,19 +46,17 @@ function ACMenu(props) {
   const [selectedKeys, setSelectedKeys] = useState(defaultSelectedKeys);
 
   const defaultOpenKeys = useMemo(() => {
-    const route = flattenRoutes.find((r) => {
-      return getPath(r.module, r.path, lang) === selectedKeys[0];
-    });
-    return route ? [route.parentKey] : [];
+    const route =
+      flattenRoutes.find((r) => {
+        return getPath(r.module, r.path, lang) === selectedKeys[0];
+      }) || flattenRoutes[0];
+    return [route.parentKey];
   }, []);
-
   const history = useHistory();
 
   useEffect(() => {
-    history.listen(({ pathname }) => {
-      setSelectedKeys([pathname]);
-    });
-  }, []);
+    setSelectedKeys([pathname]);
+  }, [pathname]);
 
   function onClickMenuItem(path) {
     const pathArr = path.split('/');
@@ -69,7 +67,6 @@ function ACMenu(props) {
     NProgress.start();
     preload.then(() => {
       NProgress.done();
-      setSelectedKeys([path]);
       history.push(path);
     });
   }

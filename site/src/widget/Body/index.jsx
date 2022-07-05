@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { getPath } from '../../utils/i18n';
-import NotFound from '../../pages/404';
 
 class Body extends React.PureComponent {
   static propTypes = {
@@ -47,7 +46,7 @@ class Body extends React.PureComponent {
           {/* <Redirect from="/react" to="/react/docs/start" />
           <Redirect from="/docs" to="/docs/spec/introduce" />
           <Redirect from="/docs/spec" to="/docs/spec/introduce" /> */}
-          <Route path="*" component={NotFound} />
+          <Redirect from="*" to={`/react/${lang === 'en-US' ? 'en-US/' : ''}docs/start`} />
         </Switch>
       </div>
     );
