@@ -129,6 +129,10 @@ changelog: true
 
 2022-05-20
 
+### 🚨 重点注意
+
+- **对 `getFieldValue` 返回值的修改不应该影响 `Form` 内部的原始数据。([#869](https://github.com/arco-design/arco-design/pull/869))(请不要把 `form.getFieldValue` 的返回值直接作为 `useEffect` 的依赖，其返回值会被深克隆，引用地址会发生改变)**
+
 ### 🐛 问题修复
 
 - 修复 `ResizeBox` 的 `Split.Group` 在特定场景无法自适应的 bug([#892](https://github.com/arco-design/arco-design/pull/892))

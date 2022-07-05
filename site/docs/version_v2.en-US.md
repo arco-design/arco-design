@@ -129,6 +129,10 @@ changelog: true
 
 2022-05-20
 
+### 🚨 Important attention
+
+- **Modifications to the return value of `getFieldValue` should not affect the original data inside `Form`.([#869](https://github.com/arco-design/arco-design/pull/869))(Please do not use the return value of `form.getFieldValue` as a dependency of `useEffect`, its return value will be deeply cloned, and the reference address will change**
+
 ### 🐛 BugFix
 
 - Fixed a bug that `Split.Group` of `ResizeBox` could not adapt to certain scenes([#892](https://github.com/arco-design/arco-design/pull/892))
