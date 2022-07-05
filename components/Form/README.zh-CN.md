@@ -141,9 +141,9 @@ export interface RulesProps {
 | setFieldValue  |设置一个表单控件的值|`Function(field: string, value)` |
 | setFields  |设置一组表单控件的值和报错。|`Function({ [field]: string: { value: any, error: FieldError } })` |
 | setFieldsValue  |设置多个表单控件的值|`Function({[field]: string, value})` |
-| getFieldValue  |获取一个表单控件的值。**请不要把返回值直接作为 useEffect 的依赖**|`Function(field: string)` |
-| getFields  |获取全部表单项的值，包括被创建后销毁的表单项。**请不要把返回值直接作为 useEffect 的依赖**|`Function` |
-| getFieldsValue |获取一组表单控件的值，如果不设置 fields 的话，会获取所有的 fields。**请不要把返回值直接作为 useEffect 的依赖**|`Function(fields: string[])` |
+| getFieldValue  |获取一个表单控件的值。**请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变**|`Function(field: string)` |
+| getFields  |获取全部表单项的值，包括被创建后销毁的表单项。**请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变**|`Function` |
+| getFieldsValue |获取一组表单控件的值，如果不设置 fields 的话，会获取所有的 fields。**请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变**|`Function(fields: string[])` |
 | getFieldError  |获取一个表单控件的错误状态|`Function(field: string)` |
 | getFieldsError |获取一组表单控件的错误状态，如果不设置 fields 的话，会获取所有的控件的错误状态。|`Function(fields?: string[])` |
 | scrollToField |滚动到指定表单字段位置。[ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
