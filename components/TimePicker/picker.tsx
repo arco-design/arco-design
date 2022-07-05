@@ -46,7 +46,10 @@ const defaultProps: InnerPickerProps = {
 };
 
 const Picker = (baseProps: InnerPickerProps) => {
-  const { locale, getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { locale, getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  if (rtl) {
+    defaultProps.position = 'br';
+  }
   const props = useMergeProps<InnerPickerProps>(
     baseProps,
     defaultProps,
