@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 可关闭标签
   en-US: Close
 ---
@@ -31,7 +31,7 @@ function App() {
         closable
         visible={visible}
         onClose={onClose}
-        style={{ marginRight: 24, }}
+        style={{ margin: '0 24px', }}
       >
         Tag
       </Tag>
@@ -42,7 +42,7 @@ function App() {
         style={{ marginTop: 24, }}
       >
         <Switch
-          style={{ marginRight: 8, }}
+          style={{ margin: '0 8px', }}
           size="small"
           checked={visible}
           onChange={onClose}

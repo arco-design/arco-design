@@ -88,7 +88,7 @@ const defaultProps: InputTagProps = {
 };
 
 function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<InputTagProps>(baseProps, defaultProps, componentConfig?.InputTag);
   const {
     className,
@@ -341,6 +341,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           [`${prefixCls}-readonly`]: readOnly,
           [`${prefixCls}-has-suffix`]: hasSuffix,
           [`${prefixCls}-has-placeholder`]: !value.length,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

@@ -3,6 +3,7 @@
 @import '../../InputTag/style/index.less';
 
 @select-prefix-cls: ~'@{prefix}-select';
+@select-prefix-cls-rtl: ~'@{prefix}-select-rtl';
 
 // used by form
 .color(@prefixCls, @status) {
@@ -345,6 +346,10 @@
     }
   }
 
+  &-popup &-option-rtl {
+    text-align: right;
+  }
+
   &-option-wrapper {
     display: flex;
     align-items: center;
@@ -385,5 +390,56 @@
   &-highlight {
     font-weight: @select-popup-option-font-hightlight-weight;
     color: @select-popup-option-color-hightlight-text;
+  }
+}
+
+.@{select-prefix-cls}-rtl {
+  direction: rtl;
+}
+
+.select-view-rtl(@select-prefix-cls, @select-prefix-cls-rtl);
+
+.select-view-rtl(@prefixCls, @prefixClsRtl) {
+  .size(@size) {
+    @ref-padding: ~'select-signal-size-@{size}-padding';
+    @padding: @@ref-padding - @select-border-width;
+    @multi-padding: @select-multi-padding - @select-border-width;
+
+    .@{prefixClsRtl}.@{prefixCls}-size-@{size}.@{prefixCls}-multiple {
+      .@{prefixCls}-view-with-prefix {
+        padding-left: 0;
+        padding-right: @padding;
+      }
+
+      .@{prefixCls}-suffix {
+        padding-right: 0;
+        padding-left: @padding - @multi-padding;
+      }
+
+      .input-tag-input-element-padding-rtl(@padding - @multi-padding);
+    }
+  }
+
+  .size(mini);
+  .size(small);
+  .size(default);
+  .size(large);
+
+  .@{prefixCls} {
+    &-view {
+      text-align: right;
+    }
+
+    &-multiple {
+      .@{prefixCls}-view-with-prefix {
+        padding-left: 0;
+        padding-right: @select-signal-size-default-padding;
+      }
+    }
+
+    &-prefix {
+      margin-right: 0;
+      margin-left: 12px;
+    }
   }
 }

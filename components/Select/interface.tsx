@@ -220,6 +220,7 @@ export interface OptionProps extends Omit<HTMLAttributes<HTMLLIElement>, 'classN
   style?: CSSProperties;
   children?: ReactNode;
   prefixCls?: string;
+  rtl?: boolean;
   className?: string | string[];
   wrapperClassName?: string | string[];
   /**

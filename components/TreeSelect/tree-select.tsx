@@ -49,7 +49,7 @@ const TreeSelect: ForwardRefRenderFunction<
   RefTreeSelectType,
   PropsWithChildren<TreeSelectProps>
 > = (baseProps: PropsWithChildren<TreeSelectProps>, ref) => {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<TreeSelectProps>>(
     baseProps,
     defaultProps,
@@ -258,7 +258,7 @@ const TreeSelect: ForwardRefRenderFunction<
         return (
           <div
             id={instancePopupID}
-            className={`${prefixCls}-popup`}
+            className={cs(`${prefixCls}-popup`, { [`${prefixCls}-rtl-popup`]: rtl })}
             style={{
               maxHeight:
                 props.treeProps?.height || props.treeProps?.virtualListProps?.height ? 'unset' : '',
@@ -291,6 +291,7 @@ const TreeSelect: ForwardRefRenderFunction<
         : props.triggerElement || (
             <SelectView
               ref={refSelectView}
+              rtl={rtl}
               ariaControls={instancePopupID}
               {...props}
               popupVisible={popupVisible}
