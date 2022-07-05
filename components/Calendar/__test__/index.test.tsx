@@ -108,12 +108,12 @@ describe('Calendar', () => {
       '2020 年'
     );
 
-    expect(
-      component
-        .find('.arco-calendar-month-with-days')
-        .item(3)
-        .querySelectorAll('.arco-calendar-cell-selected .arco-calendar-date-circle')[0].innerHTML
-    ).toBe('1');
+    const selectedCell = component
+      .find('.arco-calendar-month-with-days')
+      .item(3)
+      .querySelector('.arco-calendar-cell-selected');
+
+    expect(selectedCell?.querySelector('.arco-calendar-date-circle')?.innerHTML).toBe('1');
 
     // Click next prev icon
     fireEvent.click(component.find('.arco-calendar-header-icon').item(0));
@@ -139,38 +139,38 @@ describe('Calendar', () => {
     expect(onPanelChange.mock.calls[1][0].isSame(dayjs('2019-06-02'))).toBe(true);
   });
 
-  // it('panel', () => {
-  //   const onChange = jest.fn();
-  //   const component = render(
-  //     <Calendar defaultValue={dayjs('2020-04-01')} onChange={onChange} panel />
-  //   );
+  it('panel', () => {
+    const onChange = jest.fn();
+    const component = render(
+      <Calendar defaultValue={dayjs('2020-04-01')} onChange={onChange} panel />
+    );
 
-  //   // click 2020-04-04
-  //   component.find('.arco-calendar-cell > div').item(7).simulate('click');
+    // click 2020-04-04
+    fireEvent.click(component.find('.arco-calendar-cell > div').item(7));
 
-  //   // expect(onChange.mock.calls[0][0].isSame(dayjs('2020-04-04'), 'date')).toBe(true);
-  //   expect(
-  //     component.find('.arco-calendar-cell').item(7).hasClass('arco-calendar-cell-selected')
-  //   ).toBe(true);
-  // });
+    // expect(onChange.mock.calls[0][0].isSame(dayjs('2020-04-04'), 'date')).toBe(true);
+    expect(component.find('.arco-calendar-cell').item(7).className).toContain(
+      'arco-calendar-cell-selected'
+    );
+  });
 
-  // it('panel mode year', () => {
-  //   const onChange = jest.fn();
-  //   const component = render(
-  //     <Calendar defaultValue={dayjs('2020-04-01')} onChange={onChange} panel mode="year" />
-  //   );
+  it('panel mode year', () => {
+    const onChange = jest.fn();
+    const component = render(
+      <Calendar defaultValue={dayjs('2020-04-01')} onChange={onChange} panel mode="year" />
+    );
 
-  //   expect(component.find('.arco-calendar-cell')).toHaveLength(12);
-  //   expect(component.find('.arco-calendar-cell-selected .arco-calendar-date-value').text()).toBe(
-  //     '四月'
-  //   );
+    expect(component.find('.arco-calendar-cell')).toHaveLength(12);
+    expect(
+      component.find('.arco-calendar-cell-selected .arco-calendar-date-value')[0].innerHTML
+    ).toBe('四月');
 
-  //   // click June
-  //   component.find('.arco-calendar-cell > div').item(5).simulate('click');
+    // click June
+    fireEvent.click(component.find('.arco-calendar-cell > div').item(5));
 
-  //   expect(onChange.mock.calls[0][0].isSame(dayjs('2020-06-01'))).toBe(true);
-  //   expect(component.find('.arco-calendar-cell-selected .arco-calendar-date-value').text()).toBe(
-  //     '六月'
-  //   );
-  // });
+    expect(onChange.mock.calls[0][0].isSame(dayjs('2020-06-01'))).toBe(true);
+    expect(
+      component.find('.arco-calendar-cell-selected .arco-calendar-date-value')[0].innerHTML
+    ).toBe('六月');
+  });
 });
