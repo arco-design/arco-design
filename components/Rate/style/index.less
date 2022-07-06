@@ -89,3 +89,28 @@
     transform: scale(1);
   }
 }
+
+.@{prefixCls}-rtl {
+  direction: rtl;
+
+  .@{prefixCls} {
+    &-character {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-left: @rate-gap-size;
+      }
+
+      &-left {
+        left: initial;
+        right: 0;
+      }
+
+      &-left,
+      &-right {
+        > * {
+          float: right;
+        }
+      }
+    }
+  }
+}
