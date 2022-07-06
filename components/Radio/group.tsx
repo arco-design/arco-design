@@ -18,7 +18,7 @@ const defaultProps: RadioGroupProps = {
 };
 
 function Group(baseProps: PropsWithChildren<RadioGroupProps>) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<RadioGroupProps>>(
     baseProps,
     defaultProps,
@@ -40,6 +40,7 @@ function Group(baseProps: PropsWithChildren<RadioGroupProps>) {
       [`${prefixCls}-mode-${mode}`]: !!mode,
       [`${prefixCls}-group-disabled`]: disabled,
       [`${prefixCls}-group-direction-vertical`]: direction === 'vertical',
+      [`${prefixCls}-group-rtl`]: rtl,
     },
     className
   );

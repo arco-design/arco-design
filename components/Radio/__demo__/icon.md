@@ -20,7 +20,6 @@ const RadioGroup = Radio.Group;
 const imgStyle = {
   width: 30,
   height: 30,
-  marginRight: 8,
   verticalAlign: 'middle',
 };
 
