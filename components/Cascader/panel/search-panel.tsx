@@ -28,6 +28,7 @@ export type SearchPanelProps<T> = {
   store?: Store<T>;
   style?: CSSProperties;
   prefixCls?: string;
+  rtl?: boolean;
   multiple?: boolean;
   value: string[][];
   inputValue?: string;
@@ -57,7 +58,7 @@ const formatLabel = (inputValue, label, prefixCls): ReactNode => {
 };
 
 const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
-  const { store, prefixCls, multiple, onChange, inputValue, renderEmpty, style } = props;
+  const { store, prefixCls, multiple, onChange, inputValue, renderEmpty, style, rtl } = props;
   const value = props.value || [];
 
   const [options, setOptions] = useState<Node<T>[]>(store.searchNodeByLabel(inputValue) || []);
@@ -176,6 +177,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
         }}
         className={cs(`${prefixCls}-list`, `${prefixCls}-list-search`, {
           [`${prefixCls}-list-multiple`]: multiple,
+          [`${prefixCls}-list-rtl`]: rtl,
         })}
       >
         {(item, i) => {

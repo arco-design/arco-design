@@ -425,19 +425,19 @@
   .size(default);
   .size(large);
 
-  .@{prefixCls} {
-    &-view {
+  .@{prefixClsRtl} {
+    .@{prefixCls}-view {
       text-align: right;
     }
 
-    &-multiple {
+    .@{prefixCls}-multiple {
       .@{prefixCls}-view-with-prefix {
         padding-left: 0;
         padding-right: @select-signal-size-default-padding;
       }
     }
 
-    &-prefix {
+    .@{prefixCls}-prefix {
       margin-right: 0;
       margin-left: 12px;
     }
