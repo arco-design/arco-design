@@ -1,107 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders InputTag/demo/basic.md correctly 1`] = `
-<div>
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
   <div
-    style="margin-bottom:20px"
+    class="arco-space-item"
+    style="margin-right:20px"
   >
     <div
-      class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
-      style="max-width:350px;margin-right:20px"
+      class="arco-space arco-space-vertical"
     >
       <div
-        class="arco-input-tag-view"
+        class="arco-space-item"
+        style="margin-bottom:20px"
       >
         <div
-          class="arco-input-tag-inner"
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+          style="width:350px"
         >
-          <input
-            autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
-            placeholder="Input and press Enter"
-            value=""
-          />
-          <span
-            class="arco-input-tag-input-mirror"
+          <div
+            class="arco-input-tag-view"
           >
-            Input and press Enter
-          </span>
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Input and press Enter"
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Input and press Enter
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="arco-input-tag arco-input-tag-size-default arco-input-tag-disabled arco-input-tag-has-placeholder"
-      style="max-width:350px"
-    >
       <div
-        class="arco-input-tag-view"
+        class="arco-space-item"
       >
         <div
-          class="arco-input-tag-inner"
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-disabled arco-input-tag-has-placeholder"
+          style="width:350px"
         >
-          <input
-            autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled"
-            disabled=""
-            placeholder="Disabled"
-            value=""
-          />
-          <span
-            class="arco-input-tag-input-mirror"
+          <div
+            class="arco-input-tag-view"
           >
-            Disabled
-          </span>
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled"
+                disabled=""
+                placeholder="Disabled"
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Disabled
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="arco-space-item"
+  >
     <div
-      class="arco-input-tag arco-input-tag-size-default arco-input-tag-readonly arco-input-tag-has-placeholder"
-      style="max-width:350px;margin-right:20px"
+      class="arco-space arco-space-vertical"
     >
       <div
-        class="arco-input-tag-view"
+        class="arco-space-item"
+        style="margin-bottom:20px"
       >
         <div
-          class="arco-input-tag-inner"
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-readonly arco-input-tag-has-placeholder"
+          style="width:350px"
         >
-          <input
-            autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
-            placeholder="Readonly"
-            readonly=""
-            value=""
-          />
-          <span
-            class="arco-input-tag-input-mirror"
+          <div
+            class="arco-input-tag-view"
           >
-            Readonly
-          </span>
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Readonly"
+                readonly=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Readonly
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="arco-input-tag arco-input-tag-size-default arco-input-tag-error arco-input-tag-has-placeholder"
-      style="max-width:350px"
-    >
       <div
-        class="arco-input-tag-view"
+        class="arco-space-item"
       >
         <div
-          class="arco-input-tag-inner"
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-error arco-input-tag-has-placeholder"
+          style="width:350px"
         >
-          <input
-            autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
-            placeholder="Error"
-            value=""
-          />
-          <span
-            class="arco-input-tag-input-mirror"
+          <div
+            class="arco-input-tag-view"
           >
-            Error
-          </span>
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder="Error"
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Error
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

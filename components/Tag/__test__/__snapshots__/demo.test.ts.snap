@@ -2,86 +2,102 @@
 
 exports[`renders Tag/demo/active.md correctly 1`] = `
 <div
-  style="display:flex;align-items:flex-start"
+  class="arco-space arco-space-horizontal arco-space-align-center"
 >
   <div
-    class="arco-tag arco-tag-checked arco-tag-size-default"
-    style="margin-right:24px"
+    class="arco-space-item"
+    style="margin-right:20px"
   >
-    Tag 1
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+    >
+      Tag 1
+    </div>
   </div>
   <div
-    class="arco-tag arco-tag-checked arco-tag-size-default"
-    style="margin-right:24px"
+    class="arco-space-item"
+    style="margin-right:20px"
   >
-    Tag 2
-    <span
-      aria-label="Close"
-      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
-      role="button"
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      <svg
-        aria-hidden="true"
-        class="arco-icon arco-icon-close"
-        fill="none"
-        focusable="false"
-        stroke="currentColor"
-        stroke-width="4"
-        viewBox="0 0 48 48"
+      Tag 2
+      <span
+        aria-label="Close"
+        class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+        role="button"
       >
-        <path
-          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
-        />
-      </svg>
-    </span>
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-close"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+    </div>
   </div>
   <div
-    class="arco-tag arco-tag-checked arco-tag-size-default"
-    style="margin-right:24px"
+    class="arco-space-item"
+    style="margin-right:20px"
   >
-    Tag 3
-    <span
-      aria-label="Close"
-      class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
-      role="button"
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      <svg
-        aria-hidden="true"
-        class="arco-icon arco-icon-close"
-        fill="none"
-        focusable="false"
-        stroke="currentColor"
-        stroke-width="4"
-        viewBox="0 0 48 48"
+      Tag 3
+      <span
+        aria-label="Close"
+        class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+        role="button"
       >
-        <path
-          d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
-        />
-      </svg>
-    </span>
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-close"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+    </div>
   </div>
   <div
-    class="arco-tag arco-tag-checked arco-tag-size-default"
-    style="width:84px;background-color:var(--color-fill-2);border:1px dashed var(--color-fill-3);cursor:pointer"
+    class="arco-space-item"
   >
-    <span
-      class="arco-tag-icon"
+    <div
+      class="arco-tag arco-tag-checked arco-tag-size-default"
+      style="width:84px;background-color:var(--color-fill-2);border:1px dashed var(--color-fill-3);cursor:pointer"
     >
-      <svg
-        aria-hidden="true"
-        class="arco-icon arco-icon-plus"
-        fill="none"
-        focusable="false"
-        stroke="currentColor"
-        stroke-width="4"
-        viewBox="0 0 48 48"
+      <span
+        class="arco-tag-icon"
       >
-        <path
-          d="M5 24h38M24 5v38"
-        />
-      </svg>
-    </span>
-    Add Tag
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-plus"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M5 24h38M24 5v38"
+          />
+        </svg>
+      </span>
+      Add Tag
+    </div>
   </div>
 </div>
 `;
@@ -340,7 +356,7 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
 <div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default"
-    style="margin-right:24px"
+    style="margin:0 24px"
   >
     Tag
     <span
@@ -411,7 +427,7 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
       aria-checked="true"
       class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
       role="switch"
-      style="margin-right:8px"
+      style="margin:0 8px"
       type="button"
     >
       <div
