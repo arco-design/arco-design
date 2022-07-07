@@ -327,6 +327,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 }}
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
+                defaultActiveFirstOption={props.defaultActiveFirstOption}
               />
             ) : (
               <CascaderPanel

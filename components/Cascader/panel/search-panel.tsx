@@ -35,6 +35,7 @@ export type SearchPanelProps<T> = {
   onChange?: (value: string[][]) => void;
   renderEmpty?: () => ReactNode;
   virtualListProps?: CascaderProps<T>['virtualListProps'];
+  defaultActiveFirstOption: boolean;
 };
 
 const formatLabel = (inputValue, label, prefixCls): ReactNode => {
@@ -57,7 +58,16 @@ const formatLabel = (inputValue, label, prefixCls): ReactNode => {
 };
 
 const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
-  const { store, prefixCls, multiple, onChange, inputValue, renderEmpty, style } = props;
+  const {
+    store,
+    prefixCls,
+    multiple,
+    onChange,
+    inputValue,
+    renderEmpty,
+    style,
+    defaultActiveFirstOption = true,
+  } = props;
   const value = props.value || [];
 
   const [options, setOptions] = useState<Node<T>[]>(store.searchNodeByLabel(inputValue) || []);
@@ -66,7 +76,9 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   const isKeyboardHover = useRef<boolean>();
   const isFirstRender = useIsFirstRender();
   // 保存键盘操作的目标节点
-  const [currentHoverIndex, setCurrentHoverIndex] = useState<number>(-1);
+  const [currentHoverIndex, setCurrentHoverIndex] = useState<number>(
+    defaultActiveFirstOption ? 0 : -1
+  );
 
   const handleSearchOptionClick = (option: Node<T>, checked: boolean, e) => {
     e.stopPropagation();
@@ -88,7 +100,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   useUpdateEffect(() => {
     setCurrentHoverIndex((currentIndex) => {
       if (currentIndex > options.length - 1) {
-        return -1;
+        return defaultActiveFirstOption ? 0 : -1;
       }
       return currentIndex;
     });
@@ -216,7 +228,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
               }}
               onMouseLeave={() => {
                 if (!isKeyboardHover.current && !item.disabled) {
-                  setCurrentHoverIndex(-1);
+                  setCurrentHoverIndex(defaultActiveFirstOption ? 0 : -1);
                 }
               }}
             >

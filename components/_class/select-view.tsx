@@ -118,6 +118,12 @@ export interface SelectViewCommonProps
    * @en Callback when the mouse clicks on the drop-down box
    */
   onClick?: (e) => void;
+  /**
+   * @zh 是否默认高亮搜索结果第一个选项。
+   * @en Whether to highlight the first option of search results by default
+   * @version 2.36.2
+   */
+  defaultActiveFirstOption?: boolean;
 }
 
 export interface SelectViewProps extends SelectViewCommonProps {
