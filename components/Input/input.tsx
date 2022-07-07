@@ -46,7 +46,7 @@ export function formatValue(value, maxLength) {
 }
 
 function Input(baseProps: InputProps, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<InputProps>(baseProps, {}, componentConfig?.Input);
   const {
     className,
@@ -99,13 +99,14 @@ function Input(baseProps: InputProps, ref) {
   }, [valueLength, trueMaxLength, mergedMaxLength]);
 
   if (trueMaxLength && showWordLimit) {
+    const [leftWord, rightWord] = rtl ? [trueMaxLength, valueLength] : [valueLength, trueMaxLength];
     suffixElement = (
       <span
         className={cs(`${prefixCls}-word-limit`, {
           [`${prefixCls}-word-limit-error`]: lengthError,
         })}
       >
-        {valueLength}/{trueMaxLength}
+        {leftWord}/{rightWord}
       </span>
     );
   }
@@ -117,6 +118,7 @@ function Input(baseProps: InputProps, ref) {
       [`${prefixCls}-custom-height`]: isCustomHeight,
       [`${prefixCls}-has-suffix`]: suffixElement,
       [`${prefixCls}-group-wrapper-disabled`]: disabled,
+      [`${prefixCls}-group-wrapper-rtl`]: rtl,
     },
     className
   );
@@ -149,6 +151,7 @@ function Input(baseProps: InputProps, ref) {
     [`${prefixCls}-inner-wrapper-has-prefix`]: prefix,
     [`${prefixCls}-inner-wrapper-${size}`]: size,
     [`${prefixCls}-clear-wrapper`]: allowClear,
+    [`${prefixCls}-inner-wrapper-rtl`]: rtl,
   });
 
   return needWrapper ? (
