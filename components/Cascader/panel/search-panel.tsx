@@ -66,7 +66,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
     inputValue,
     renderEmpty,
     style,
-    defaultActiveFirstOption = true,
+    defaultActiveFirstOption,
   } = props;
   const value = props.value || [];
 

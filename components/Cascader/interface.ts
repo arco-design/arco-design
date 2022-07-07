@@ -111,6 +111,12 @@ export interface CascaderProps<T = any> extends Omit<SelectViewCommonProps, 'all
    */
   virtualListProps?: Pick<VirtualListProps<any>, 'threshold' | 'isStaticItemHeight'>;
   /**
+   * @zh 是否默认高亮搜索结果第一个选项。
+   * @en Whether to highlight the first option of search results by default
+   * @version 2.36.2
+   */
+  defaultActiveFirstOption?: boolean;
+  /**
    * @zh 自定义下拉菜单的展示。
    * @en Customize the popup menu.
    * @version 2.15.0
