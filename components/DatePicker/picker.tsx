@@ -77,7 +77,10 @@ const defaultProps: InnerPickerProps = {
 };
 
 const Picker = (baseProps: InnerPickerProps) => {
-  const { getPrefixCls, locale, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, locale, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
+  if (rtl) {
+    defaultProps.position = 'br';
+  }
   const props = useMergeProps<InnerPickerProps>(
     baseProps,
     defaultProps,
@@ -424,6 +427,7 @@ const Picker = (baseProps: InnerPickerProps) => {
         [`${prefixCls}-panel-only`]: panelOnly,
         [`${prefixCls}-container-shortcuts-placement-left`]:
           isArray(shortcuts) && shortcutsPlacementLeft,
+        [`${prefixCls}-container-rtl`]: rtl,
       },
       panelOnly ? className : ''
     );
