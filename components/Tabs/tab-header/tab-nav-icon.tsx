@@ -15,6 +15,7 @@ const TabNavIcon = (props) => {
     iconPos,
     currentOffset: curOffset,
     align,
+    rtl,
   } = props;
 
   const { height: wrapHeight, width: wrapWidth } = headerWrapperSize;
@@ -106,7 +107,7 @@ const TabNavIcon = (props) => {
         handleHozClick(e, 'left');
       }}
     >
-      <IconLeft />
+      {rtl ? <IconRight /> : <IconLeft />}
     </IconHover>
   ) : (
     <IconHover
@@ -119,7 +120,7 @@ const TabNavIcon = (props) => {
         handleHozClick(e, 'right');
       }}
     >
-      <IconRight />
+      {rtl ? <IconLeft /> : <IconRight />}
     </IconHover>
   );
 };
