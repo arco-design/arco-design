@@ -27,7 +27,7 @@ const defaultProps: StatisticProps = {
 };
 
 function Statistic(baseProps: StatisticProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<StatisticProps>(baseProps, defaultProps, componentConfig?.Statistic);
   const {
     className,
@@ -117,7 +117,7 @@ function Statistic(baseProps: StatisticProps, ref) {
   }, [format, groupSeparator, precision, value]);
 
   return (
-    <div className={cs(`${prefixCls}`, className)} style={style}>
+    <div className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, className)} style={style}>
       {title && <div className={`${prefixCls}-title`}>{title}</div>}
       <div className={`${prefixCls}-content`}>
         <Skeleton animation loading={!!loading} text={{ rows: 1, width: '100%' }}>
