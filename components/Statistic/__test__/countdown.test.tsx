@@ -1,10 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { render, cleanup } from '../../../tests/util';
 import dayjs from 'dayjs';
 import Statistic from '..';
 import mountTest from '../../../tests/mountTest';
-import { sleep } from '../../../tests/util';
 
 const Countdown = Statistic.Countdown;
 
@@ -27,17 +25,19 @@ describe('Statistic.Countdown', () => {
     ];
 
     formats.forEach(([format, value]) => {
-      const component = mount(
+      const component = render(
         <Countdown start={false} now={now} value={countdownTime} format={format} />
       );
 
-      expect(component.find('.arco-statistic-value').text()).toBe(value);
+      expect(component.find('.arco-statistic-value')[0].innerHTML).toBe(value);
+      cleanup();
     });
   });
 
   it('onFinish', async () => {
+    jest.useFakeTimers();
     const onFinish = jest.fn();
-    const component = mount(
+    const component = render(
       <Countdown
         start={false}
         now={now}
@@ -47,14 +47,20 @@ describe('Statistic.Countdown', () => {
       />
     );
 
-    expect(component.find('.arco-statistic-value').text()).toBe('00:00:01');
+    expect(component.find('.arco-statistic-value')[0].innerHTML).toBe('00:00:01');
 
-    await act(async () => {
-      component.setProps({ start: true });
-      await sleep(1200);
-    });
+    component.rerender(
+      <Countdown
+        start={true}
+        now={now}
+        value={now.add(1, 'second')}
+        format="HH:mm:ss"
+        onFinish={onFinish}
+      />
+    );
+    jest.runAllTimers();
 
-    expect(component.find('.arco-statistic-value').text()).toBe('00:00:00');
+    expect(component.find('.arco-statistic-value')[0].innerHTML).toBe('00:00:00');
     expect(onFinish).toBeCalled();
   });
 
