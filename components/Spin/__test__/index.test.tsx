@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Spin from '..';
@@ -22,7 +22,7 @@ describe('Spin', () => {
   });
 
   it('loading content correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Spin loading>
         <Alert type="info" content="Content" />
       </Spin>
@@ -31,7 +31,7 @@ describe('Spin', () => {
   });
 
   it('spin with dot loading', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Spin loading dot>
         <Alert type="info" content="Content" />
       </Spin>
@@ -40,7 +40,7 @@ describe('Spin', () => {
   });
 
   it('loading delay', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Spin loading delay={500}>
         <Alert type="info" content="Content" />
       </Spin>
@@ -48,12 +48,11 @@ describe('Spin', () => {
 
     expect(wrapper.find('.arco-spin-loading-layer').length).toBe(0);
     jest.runAllTimers();
-    wrapper.update();
     expect(wrapper.find('.arco-spin-loading-layer').length).toBe(1);
   });
 
   it('spin with display:block', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Spin loading block>
         <Alert type="info" content="Content" />
       </Spin>

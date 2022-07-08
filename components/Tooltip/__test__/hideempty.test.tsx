@@ -1,15 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from '@testing-library/react-hooks';
+import { render, fireEvent, screen } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
-import Tooltip, { TooltipProps } from '..';
+import Tooltip from '..';
 import { Button } from '../..';
 
 mountTest(Tooltip);
-
-function mountTooltip(component: React.ReactElement) {
-  return mount<typeof Tooltip, React.PropsWithChildren<TooltipProps>>(component);
-}
 
 const Demo: React.FC<{ initialMsg: string }> = ({ initialMsg }) => {
   const [msg, setMsg] = React.useState(initialMsg);
@@ -26,24 +21,18 @@ describe('hide tooltip if empty content', () => {
     jest.useFakeTimers();
   });
   it('hides when content becomes empty', () => {
-    const wrapper = mountTooltip(<Demo initialMsg="message" />);
-
-    act(() => {
-      wrapper.find('Button').simulate('mouseenter');
-      wrapper.find('Button').simulate('click');
-    });
+    const wrapper = render(<Demo initialMsg="message" />);
+    fireEvent.mouseEnter(screen.getByRole('button'));
+    fireEvent.click(screen.getByRole('button'));
     jest.runAllTimers();
-    wrapper.update();
-    expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeFalsy();
+    expect(wrapper.find('.arco-tooltip-content-inner').length).toBe(0);
   });
   it('does not show up if content is already empty', () => {
-    const wrapper = mountTooltip(<Demo initialMsg="" />);
+    const wrapper = render(<Demo initialMsg="" />);
 
-    act(() => {
-      wrapper.find('Button').simulate('mouseenter');
-    });
+    fireEvent.mouseEnter(screen.getByRole('button'));
+
     jest.runAllTimers();
-    wrapper.update();
-    expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeFalsy();
+    expect(wrapper.find('.arco-tooltip-content-inner').length).toBe(0);
   });
 });

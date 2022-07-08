@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Timeline from '..';
@@ -10,15 +10,9 @@ mountTest(Timeline);
 componentConfigTest(Timeline, 'Timeline');
 componentConfigTest(Timeline.Item, 'Timeline.Item');
 
-let wrapper = null;
-
 describe('Timeline', () => {
-  beforeEach(() => {
-    wrapper && wrapper.unmount();
-  });
-
   it('Prop horizontal & reverse works', () => {
-    wrapper = mount(
+    const wrapper = render(
       <Timeline direction="horizontal" reverse>
         <TimelineItem label="2017-03-10">The first milestone</TimelineItem>
         <TimelineItem label="2018-05-12">The second milestone</TimelineItem>
@@ -26,19 +20,17 @@ describe('Timeline', () => {
       </Timeline>
     );
 
-    expect(
-      wrapper
-        .find('.arco-timeline')
-        .at(0)
-        .prop('className')
-        .indexOf('arco-timeline-direction-horizontal') > -1
-    ).toBe(true);
+    expect(wrapper.find('.arco-timeline').item(0).className).toContain(
+      'arco-timeline-direction-horizontal'
+    );
 
-    expect(wrapper.find('.arco-timeline-item-content').at(0).text()).toBe('The third milestone');
+    expect(wrapper.find('.arco-timeline-item-content').item(0).innerHTML).toBe(
+      'The third milestone'
+    );
   });
 
   it('Ignore invalid child', () => {
-    wrapper = mount(
+    const wrapper = render(
       <Timeline>
         <TimelineItem label="2017-03-10">The first milestone</TimelineItem>
         <TimelineItem label="2018-05-12">The second milestone</TimelineItem>
@@ -51,7 +43,7 @@ describe('Timeline', () => {
   });
 
   it('Pending status', () => {
-    wrapper = mount(
+    const wrapper = render(
       <Timeline pending>
         <TimelineItem label="2017-03-10">The first milestone</TimelineItem>
         <TimelineItem label="2018-05-12">The second milestone</TimelineItem>
@@ -60,8 +52,7 @@ describe('Timeline', () => {
     );
 
     expect(
-      wrapper.find('.arco-timeline-item .arco-timeline-item-dot-line').at(2).prop('style')
-        .borderLeftStyle
+      wrapper.find('.arco-timeline-item .arco-timeline-item-dot-line').item(2).style.borderLeftStyle
     ).toBe('dashed');
   });
 });
