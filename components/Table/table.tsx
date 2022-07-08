@@ -876,6 +876,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         tableLayoutFixed ||
         (scroll && (scroll.x || scroll.y)) ||
         columns.find((col) => col.ellipsis),
+      [`${prefixCls}-fixed-column`]: hasFixedColumn,
       [`${prefixCls}-virtualized`]: virtualized,
     },
     className
