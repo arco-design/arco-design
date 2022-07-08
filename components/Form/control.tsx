@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { Component, isValidElement, ReactElement } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import has from 'lodash/has';
 import set from 'lodash/set';
@@ -45,6 +45,9 @@ export default class Control<
   private isDestroyed = false;
 
   private touched: boolean;
+
+  // 保存 props.children 或函数类型 props.children() 的返回值
+  private childrenElement: React.ReactNode = null;
 
   private removeRegisterField: () => void;
 
@@ -200,37 +203,6 @@ export default class Control<
       });
   };
 
-  getTriggerHandler = (children) => {
-    return (_value, ...args) => {
-      const { store } = this.context;
-      const { field, trigger, normalize, getValueFromEvent } = this.props;
-
-      const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
-      let normalizeValue = value;
-      // break if value is instance of SyntheticEvent, 'cos value is missing
-      if (isSyntheticEvent(value)) {
-        warn(
-          true,
-          'changed value missed, please check whether extra elements is outta input/select controled by Form.Item'
-        );
-        value.stopPropagation();
-        return;
-      }
-      if (typeof normalize === 'function') {
-        normalizeValue = normalize(value, store.getFieldValue(field), {
-          ...store.getFieldsValue(),
-        });
-      }
-      this.touched = true;
-      this.innerSetFieldValue(field, normalizeValue);
-
-      this.validateField(trigger);
-      if (children && children.props && children.props[trigger as string]) {
-        children.props[trigger as string](normalizeValue, ...args);
-      }
-    };
-  };
-
   /**
    *
    * @param triggerType the value of validateTrigger.
@@ -283,6 +255,38 @@ export default class Control<
     return Array.from(new Set(result));
   }
 
+  // 每次 render 都会作为 onChange 传递给 children，需要保证引用地址不变
+  // 所以 handleTrigger 需要声明在类上，并且直接作为 children.props.onChange
+  handleTrigger = (_value, ...args) => {
+    const children = (this.childrenElement || this.props.children) as React.ReactNode;
+    const { store } = this.context;
+    const { field, trigger, normalize, getValueFromEvent } = this.props;
+
+    const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
+    let normalizeValue = value;
+    // break if value is instance of SyntheticEvent, 'cos value is missing
+    if (isSyntheticEvent(value)) {
+      warn(
+        true,
+        'changed value missed, please check whether extra elements is outta input/select controled by Form.Item'
+      );
+      value.stopPropagation();
+      return;
+    }
+    if (typeof normalize === 'function') {
+      normalizeValue = normalize(value, store.getFieldValue(field), {
+        ...store.getFieldsValue(),
+      });
+    }
+    this.touched = true;
+    this.innerSetFieldValue(field, normalizeValue);
+
+    this.validateField(trigger);
+    if (isValidElement(children) && children.props && children.props[trigger as string]) {
+      children.props[trigger as string](normalizeValue, ...args);
+    }
+  };
+
   renderControl(children: React.ReactNode, id) {
     const {
       field,
@@ -306,7 +310,7 @@ export default class Control<
       };
     });
 
-    childProps[trigger] = this.getTriggerHandler(child);
+    childProps[trigger] = this.handleTrigger;
 
     if (disabled !== undefined) {
       childProps.disabled = disabled;
@@ -328,12 +332,14 @@ export default class Control<
   getChild = () => {
     const { children } = this.props;
     const { store } = this.context;
+    let child = children;
     if (isFunction(children)) {
-      return children(store.getFields(), {
+      child = children(store.getFields(), {
         ...store,
       });
     }
-    return children;
+    this.childrenElement = child;
+    return child;
   };
 
   render() {
