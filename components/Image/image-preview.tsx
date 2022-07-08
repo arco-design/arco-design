@@ -78,13 +78,14 @@ function Preview(props: ImagePreviewProps, ref) {
   });
 
   const globalContext = useContext(ConfigContext);
-  const { getPrefixCls, locale } = globalContext;
+  const { getPrefixCls, locale, rtl } = globalContext;
   const prefixCls = getPrefixCls('image');
   const previewPrefixCls = `${prefixCls}-preview`;
   const classNames = cs(
     previewPrefixCls,
     {
       [`${previewPrefixCls}-hide`]: !visible,
+      [`${previewPrefixCls}-rtl`]: rtl,
     },
     className
   );

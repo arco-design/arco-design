@@ -14,7 +14,7 @@ title:
 By setting `title` and `description`, the title and description of the picture can be displayed inside or at the bottom of the picture. The display position is controlled by `footerPosition`.
 
 ```js
-import { Image } from '@arco-design/web-react';
+import { Image, Space } from '@arco-design/web-react';
 
 function App() {
   const src =
@@ -22,7 +22,7 @@ function App() {
   const title = 'A user’s avatar';
   const description = 'Present by Arco Design';
   return (
-    <div>
+    <Space size={60} align="start">
       <Image width={200} src={src} title={title} description={description} alt="lamp" />
       <Image
         width={200}
@@ -30,10 +30,9 @@ function App() {
         title={title}
         description={description}
         footerPosition="outer"
-        style={{ marginLeft: 67, verticalAlign: 'top' }}
         alt="lamp"
       />
-    </div>
+    </Space>
   );
 }
 
