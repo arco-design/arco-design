@@ -32,7 +32,7 @@ const defaultProps: CarouselProps = {
 };
 
 function Carousel(baseProps: CarouselProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CarouselProps>(baseProps, defaultProps, componentConfig?.Carousel);
   const {
     style,
@@ -213,6 +213,9 @@ function Carousel(baseProps: CarouselProps, ref) {
   const classNames = cs(
     prefixCls,
     `${prefixCls}-indicator-position-${indicatorPosition}`,
+    {
+      [`${prefixCls}-rtl`]: rtl,
+    },
     className
   );
   const eventHandlers = Object.assign(
