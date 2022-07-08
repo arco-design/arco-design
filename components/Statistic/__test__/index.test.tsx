@@ -69,7 +69,7 @@ describe('Statistic', () => {
         return <Statistic title="Title" loading={this.props.loading} value={200} />;
       }
     }
-    const component = render(<LoadingStatistic loading={true} />);
+    const component = render(<LoadingStatistic loading />);
 
     jest.runAllTimers();
 

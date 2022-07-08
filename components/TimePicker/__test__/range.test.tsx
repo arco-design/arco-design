@@ -1,6 +1,6 @@
 import React from 'react';
-import { fireEvent, render } from '../../../tests/util';
 import dayjs from 'dayjs';
+import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import TimePicker from '..';
 

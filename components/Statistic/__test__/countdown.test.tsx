@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '../../../tests/util';
 import dayjs from 'dayjs';
+import { render, cleanup } from '../../../tests/util';
 import Statistic from '..';
 import mountTest from '../../../tests/mountTest';
 
@@ -51,7 +51,7 @@ describe('Statistic.Countdown', () => {
 
     component.rerender(
       <Countdown
-        start={true}
+        start
         now={now}
         value={now.add(1, 'second')}
         format="HH:mm:ss"
