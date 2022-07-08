@@ -14,26 +14,26 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|style|节点样式|CSSProperties |`-`|-|
+|colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。|boolean |`-`|-|
+|disabled|统一配置表单控件是否可用|boolean |`-`|-|
+|id|设置后，会作为表单控件 `id`的前缀。|string |`-`|-|
+|labelAlign|标签的文本对齐方式|'left' \| 'right' |`right`|-|
+|layout|表单的布局，有三种布局，水平、垂直、多列。|'horizontal' \| 'vertical' \| 'inline' |`horizontal`|-|
+|requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
+|size|不同尺寸。|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |form|form|[FormInstance](#forminstance)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
-|id|设置后，会作为表单控件 `id`的前缀。|string |`-`|-|
-|layout|表单的布局，有三种布局，水平、垂直、多列。|'horizontal' \| 'vertical' \| 'inline' |`horizontal`|-|
-|size|不同尺寸。|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
-|labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|[ColProps](grid#col) |`{ span: 5, offset: 0 }`|-|
-|wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|[ColProps](grid#col) |`{ span: 19, offset: 0 }`|-|
-|requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
-|labelAlign|标签的文本对齐方式|'left' \| 'right' |`right`|-|
 |initialValues|设置表单初始值|Partial&lt;FormData&gt; |`-`|-|
-|validateTrigger|触发验证的时机。|string \| string[] |`onChange`|2.28.0|
-|onValuesChange|任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
+|labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|[ColProps](grid#col) |`{ span: 5, offset: 0 }`|-|
 |onChange|表单项值改变时候触发。和 onValuesChange 不同的是只会在用户操作表单项时触发|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
-|wrapper|配置最外层标签，可以是 html 标签或是组件|[ComponentType](#componenttype) |`form`|-|
-|wrapperProps|配置 `wrapper` 之后，可以传一些参数到 wrapper 上。|[IndexedObject](#indexedobject) |`-`|-|
-|disabled|统一配置表单控件是否可用|boolean |`-`|-|
-|colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。|boolean |`-`|-|
+|onValuesChange|任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
 |scrollToFirstError|验证失败后滚动到第一个错误字段。(`ScrollIntoViewOptions` 类型在 `2.19.0` 开始支持)|boolean \| ScrollIntoViewOptions |`-`|-|
+|style|节点样式|CSSProperties |`-`|-|
 |validateMessages|校验提示信息模板 [demo](/react/components/form#表单校验信息模板)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;;}&gt; |`-`|2.32.0|
+|validateTrigger|触发验证的时机。|string \| string[] |`onChange`|2.28.0|
+|wrapper|配置最外层标签，可以是 html 标签或是组件|[ComponentType](#componenttype) |`form`|-|
+|wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|[ColProps](grid#col) |`{ span: 19, offset: 0 }`|-|
+|wrapperProps|配置 `wrapper` 之后，可以传一些参数到 wrapper 上。|[IndexedObject](#indexedobject) |`-`|-|
 |onSubmit|数据验证成功后回调事件|(values: FormData) => void |`-`|-|
 |onSubmitFailed|数据验证失败后回调事件|(errors: { [key: string]: [FieldError](#fielderror) }) => void |`-`|2.21.0|
 
@@ -41,32 +41,32 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|style|节点样式|CSSProperties |`-`|-|
-|className|节点类名|string \| string[] |`-`|-|
-|initialValue|设置控件初始值.(初始值，请不要使用受控组件的defaultValue了)|FieldValue |`-`|-|
-|field|受控组件的唯一标示|FieldKey |`-`|-|
-|label|标签的文本|ReactNode |`-`|-|
-|labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|[ColProps](grid#col) |`-`|-|
-|wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|[ColProps](grid#col) |`-`|-|
 |colon|是否显示标签后的一个冒号|boolean |`-`|-|
 |disabled|是否禁用，优先级高于 `Form` 的 `disabled` 属性|boolean |`-`|-|
-|rules|受控模式下的验证规则，[RulesProps](#rules)|RulesProps&lt;FieldValue&gt;[] |`-`|-|
+|hasFeedback|是否显示校验图标，配置 validateStatus 使用。|boolean |`-`|-|
+|hidden|隐藏表单项. 表单字段值仍然会被获取|boolean |`-`|2.29.0|
+|required|是否必选，会在 `label` 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required|boolean |`-`|-|
 |trigger|接管子节点，搜集子节点值的时机。|string |`onChange`|-|
 |triggerPropName|子节点被接管的值的属性名，默认是 `value`,比如 `<Checkbox>` 为 `checked`。|string |`value`|-|
-|getValueFromEvent|指定在子节点触发`onChange`事件时如何处理值。（如果自定义了`trigger`属性，那么这里的参数就是对应的事件回调函数的参数类型）|(...args) => FieldValue |`-`|2.23.0|
-|validateTrigger|触发验证的时机。取值和跟包裹的控件有关系，控件支持的触发事件，都可以作为值。例如`Input`支持的 `onFocus`、 `onBlur`、 `onChange` 都可以作为 `validateTrigger` 的值。传递为 `[]` 时，仅会在调用表单 `validate` 方法时执行校验规则。|string \| string[] |`onChange`|-|
-|noStyle|不渲染任何外部标签/样式，只进行字段绑定。**注意**: 设置该属性为true时，该字段若未通过校验，错误信息将不会显示出来。可以传入对象，并设置 showErrorTip（ `2.5.0` 开始支持） 为true，错误信息将会展示在上层 formItem 节点下。|boolean \| { showErrorTip: boolean } |`-`|-|
-|required|是否必选，会在 `label` 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required|boolean |`-`|-|
-|hidden|隐藏表单项. 表单字段值仍然会被获取|boolean |`-`|2.29.0|
-|extra|额外的提示内容。|ReactNode |`-`|-|
-|validateStatus|校验状态|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
-|hasFeedback|是否显示校验图标，配置 validateStatus 使用。|boolean |`-`|-|
-|help|自定义校验文案|ReactNode |`-`|-|
-|normalize|将控件的 `value` 进行一定的转换再保存到form中。|(value: FieldValue \| undefined,prevValue: FieldValue \| undefined,allValues: Partial&lt;FormData&gt;) =&gt; any |`-`|-|
-|formatter|将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。|(value: FieldValue \| undefined) => any |`-`|2.23.0|
-|shouldUpdate|是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。|\| boolean\| ((prevValues: Partial&lt;FormData&gt;,currentValues: Partial&lt;FormData&gt;,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) =&gt; boolean) |`-`|-|
 |labelAlign|标签的文本对齐方式，优先级高于 `Form`|'left' \| 'right' |`right`|-|
 |requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
+|validateStatus|校验状态|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
+|extra|额外的提示内容。|ReactNode |`-`|-|
+|help|自定义校验文案|ReactNode |`-`|-|
+|label|标签的文本|ReactNode |`-`|-|
+|className|节点类名|string \| string[] |`-`|-|
+|field|受控组件的唯一标示|FieldKey |`-`|-|
+|initialValue|设置控件初始值.(初始值，请不要使用受控组件的defaultValue了)|FieldValue |`-`|-|
+|labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|[ColProps](grid#col) |`-`|-|
+|normalize|将控件的 `value` 进行一定的转换再保存到form中。|(value: FieldValue \| undefined,prevValue: FieldValue \| undefined,allValues: Partial&lt;FormData&gt;) =&gt; any |`-`|-|
+|noStyle|不渲染任何外部标签/样式，只进行字段绑定。**注意**: 设置该属性为true时，该字段若未通过校验，错误信息将不会显示出来。可以传入对象，并设置 showErrorTip（ `2.5.0` 开始支持） 为true，错误信息将会展示在上层 formItem 节点下。|boolean \| { showErrorTip: boolean } |`-`|-|
+|rules|受控模式下的验证规则，[RulesProps](#rules)|RulesProps&lt;FieldValue&gt;[] |`-`|-|
+|shouldUpdate|是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。|\| boolean\| ((prevValues: Partial&lt;FormData&gt;,currentValues: Partial&lt;FormData&gt;,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) =&gt; boolean) |`-`|-|
+|style|节点样式|CSSProperties |`-`|-|
+|validateTrigger|触发验证的时机。取值和跟包裹的控件有关系，控件支持的触发事件，都可以作为值。例如`Input`支持的 `onFocus`、 `onBlur`、 `onChange` 都可以作为 `validateTrigger` 的值。传递为 `[]` 时，仅会在调用表单 `validate` 方法时执行校验规则。|string \| string[] |`onChange`|-|
+|wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|[ColProps](grid#col) |`-`|-|
+|formatter|将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。|(value: FieldValue \| undefined) => any |`-`|2.23.0|
+|getValueFromEvent|指定在子节点触发`onChange`事件时如何处理值。（如果自定义了`trigger`属性，那么这里的参数就是对应的事件回调函数的参数类型）|(...args) => FieldValue |`-`|2.23.0|
 
 ### Form.List
 
@@ -80,8 +80,8 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|onFormValuesChange|包裹的任意 `Form` 组件的值改变时，该方法会被调用|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
 |onFormSubmit|包裹的任意 `Form` 组件触发提交时，该方法会被调用|(id: string \| undefined,values,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
+|onFormValuesChange|包裹的任意 `Form` 组件的值改变时，该方法会被调用|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
 
 ### FormInstance
 

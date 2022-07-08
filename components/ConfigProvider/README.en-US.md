@@ -15,17 +15,17 @@ Configure in the outermost layer of the application to set global params.
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |autoInsertSpaceInButton|When there are two Chinese characters in the button, a space is automatically added between two Chinese characters.|boolean |`-`|2.3.0|
-|componentConfig|Default parameters for global configuration of all components|[ComponentConfig](#componentconfig) |`-`|2.23.0|
-|locale|Language package setting|[Locale](#locale) |`-`|-|
-|theme|Theme Configuration|[ThemeConfig](#themeconfig) |`-`|-|
-|size|Configure the default size of the component, which will only take effect for components that support the `size` property.|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
-|prefixCls|Global ClassName prefix|string |`arco`|-|
-|getPopupContainer|The parent node of the global popup.|(node: HTMLElement) => Element |`() => document.body`|-|
-|loadingElement|Global loading icon.|ReactNode |`-`|-|
-|tablePagination|Table Global pagination configuration.|[PaginationProps](pagination#pagination) |`-`|2.6.0|
-|renderEmpty|Empty component in component.|(componentName?: string) => ReactNode |`-`|2.10.0|
-|focusLock|global `focusLock`, affects component `Modal` `Drawer`.|{modal?: boolean \| { autoFocus?: boolean };drawer?: boolean \| { autoFocus?: boolean };} |`{ modal: { autoFocus: true }, drawer: { autoFocus: true }}`|2.13.0|
 |rtl|View starts from the right and ends on the left.|boolean |`-`|2.36.0|
+|prefixCls|Global ClassName prefix|string |`arco`|-|
+|size|Configure the default size of the component, which will only take effect for components that support the `size` property.|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
+|loadingElement|Global loading icon.|ReactNode |`-`|-|
+|componentConfig|Default parameters for global configuration of all components|[ComponentConfig](#componentconfig) |`-`|2.23.0|
+|focusLock|global `focusLock`, affects component `Modal` `Drawer`.|{modal?: boolean \| { autoFocus?: boolean };drawer?: boolean \| { autoFocus?: boolean };} |`{ modal: { autoFocus: true }, drawer: { autoFocus: true }}`|2.13.0|
+|locale|Language package setting|[Locale](#locale) |`-`|-|
+|tablePagination|Table Global pagination configuration.|[PaginationProps](pagination#pagination) |`-`|2.6.0|
+|theme|Theme Configuration|[ThemeConfig](#themeconfig) |`-`|-|
+|getPopupContainer|The parent node of the global popup.|(node: HTMLElement) => Element |`() => document.body`|-|
+|renderEmpty|Empty component in component.|(componentName?: string) => ReactNode |`-`|2.10.0|
 
 ### ComponentConfig
 

@@ -14,37 +14,37 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|style|节点样式|CSSProperties |`-`|-|
-|className|节点类名|string \| string[] |`-`|-|
-|defaultFileList|默认已上传的文件列表|[UploadItem](upload#uploaditem)[] |`-`|-|
-|fileList|已上传的文件列表|[UploadItem](upload#uploaditem)[] |`-`|-|
-|directory|文件夹上传|boolean |`-`|2.11.0|
-|accept|接受上传的类型 [详细请参考](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|
-|customRequest|通过覆盖默认的上传行为，可以自定义自己的上传实现|(options: [RequestOptions](#requestoptions)) => [UploadRequestReturn](#uploadrequestreturn) \| void |`-`|-|
-|listType|展示类型|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
-|showUploadList|是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。|boolean \| [CustomIconType](#customicontype) |`true`|-|
 |autoUpload|是否选中文件后自动上传|boolean |`true`|-|
-|action|action|string |`-`|-|
-|limit|限制上传数量。默认超出后会隐藏上传节点。对象类型在 `2.28.0` 支持|number \| { maxCount: number; hideOnExceedLimit?: boolean } |`-`|-|
+|directory|文件夹上传|boolean |`-`|2.11.0|
 |disabled|禁用|boolean |`-`|-|
 |drag|是否拖拽上传|boolean |`-`|-|
 |multiple|文件多选|boolean |`-`|-|
+|withCredentials|上传请求是否携带 cookie|boolean |`-`|-|
+|accept|接受上传的类型 [详细请参考](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|
+|action|action|string |`-`|-|
+|listType|展示类型|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
 |tip|提示文字，listType 不同，展示会有区别|string \| React.ReactNode |`-`|-|
+|beforeUpload|上传文件之前的回调。返回 false 或者 promise抛出异常的时候会取消上传。|(file: File, filesList: File[]) =&gt; boolean \| Promise&lt;any&gt; |`() => true`|-|
+|className|节点类名|string \| string[] |`-`|-|
+|defaultFileList|默认已上传的文件列表|[UploadItem](upload#uploaditem)[] |`-`|-|
+|fileList|已上传的文件列表|[UploadItem](upload#uploaditem)[] |`-`|-|
 |headers|上传时使用的 headers|object |`-`|-|
+|limit|限制上传数量。默认超出后会隐藏上传节点。对象类型在 `2.28.0` 支持|number \| { maxCount: number; hideOnExceedLimit?: boolean } |`-`|-|
+|progressProps|进度条属性，接收所有进度条的 props。|Partial&lt;[ProgressProps](progress#progress)&gt; |`-`|-|
+|showUploadList|是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。|boolean \| [CustomIconType](#customicontype) |`true`|-|
+|style|节点样式|CSSProperties |`-`|-|
+|customRequest|通过覆盖默认的上传行为，可以自定义自己的上传实现|(options: [RequestOptions](#requestoptions)) => [UploadRequestReturn](#uploadrequestreturn) \| void |`-`|-|
 |data|上传时的 Body 参数|object \| ((any: any) => object) |`-`|-|
 |name|发请求时文件内容的参数名|string \| ((any: any) => string) |`-`|-|
-|withCredentials|上传请求是否携带 cookie|boolean |`-`|-|
-|progressProps|进度条属性，接收所有进度条的 props。|Partial&lt;[ProgressProps](progress#progress)&gt; |`-`|-|
+|onChange|上传文件改变时的回调。文件开始上传，失败，成功时会触发。注意：如果需要实时获取文件的上传进度，请在 `onProgress` 中处理。|(fileList: [UploadItem](upload#uploaditem)[], file: [UploadItem](upload#uploaditem)) => void |`-`|-|
+|onDrop|拖拽上传文件时执行的回调|(e: React.DragEvent) => void |`-`|2.37.0|
+|onExceedLimit|超出上传数量限制时触发|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
+|onPreview|点击预览时候的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
+|onProgress|文件上传进度的回调|(file: [UploadItem](upload#uploaditem), e?: ProgressEvent) => void |`-`|-|
+|onRemove|点击删除文件时的回调。返回 `false` 或者 `Promise.reject` 的时候不会执行删除。|(file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
+|onReupload|文件重新上传时触发的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
 |renderUploadItem|自定义上传列表项|(originNode: ReactNode, file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => ReactNode |`-`|-|
 |renderUploadList|自定义展示上传文件列表|(fileList: [UploadItem](upload#uploaditem)[], uploadListProps: [UploadListProps](upload#uploadlistprops)) => ReactNode |`-`|-|
-|onChange|上传文件改变时的回调。文件开始上传，失败，成功时会触发。注意：如果需要实时获取文件的上传进度，请在 `onProgress` 中处理。|(fileList: [UploadItem](upload#uploaditem)[], file: [UploadItem](upload#uploaditem)) => void |`-`|-|
-|onPreview|点击预览时候的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
-|onRemove|点击删除文件时的回调。返回 `false` 或者 `Promise.reject` 的时候不会执行删除。|(file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
-|onProgress|文件上传进度的回调|(file: [UploadItem](upload#uploaditem), e?: ProgressEvent) => void |`-`|-|
-|onReupload|文件重新上传时触发的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
-|onExceedLimit|超出上传数量限制时触发|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
-|beforeUpload|上传文件之前的回调。返回 false 或者 promise抛出异常的时候会取消上传。|(file: File, filesList: File[]) =&gt; boolean \| Promise&lt;any&gt; |`() => true`|-|
-|onDrop|拖拽上传文件时执行的回调|(e: React.DragEvent) => void |`-`|2.37.0|
 
 ### UploadListProps
 
@@ -52,23 +52,23 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
+|disabled|禁用|boolean |`-`|
 |onAbort|中止文件上传的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|
+|onPreview|点击预览时候的回调。|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 |onRemove|点击删除文件时的回调。返回 false 或者 Promise.reject 的时候不会执行删除|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 |onReupload|重新上传的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|
-|onPreview|点击预览时候的回调。|(file: [UploadItem](upload#uploaditem)) => void |`-`|
-|disabled|禁用|boolean |`-`|
 
 ### UploadItem
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|uid|当前上传文件的唯一标示|string  **(必填)**|`-`|
-|status|当前上传文件的状态|[UploadStatus](#uploadstatus) |`-`|
-|originFile|文件对象|File |`-`|
 |percent|上传进度百分比|number |`-`|
-|response|当前文件上传请求返回的响应|object |`-`|
-|url|文件 url|string |`-`|
 |name|文件名|string |`-`|
+|uid|当前上传文件的唯一标示|string  **(必填)**|`-`|
+|url|文件 url|string |`-`|
+|originFile|文件对象|File |`-`|
+|response|当前文件上传请求返回的响应|object |`-`|
+|status|当前上传文件的状态|[UploadStatus](#uploadstatus) |`-`|
 
 ### RequestOptions
 

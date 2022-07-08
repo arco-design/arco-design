@@ -102,7 +102,7 @@ export interface InputTagProps<T = any> {
    * @zh 校验函数，默认在 按下enter时候触发。
    * @en Function to check user's input, which is triggered when `Enter` is pressed
    * @defaultValue (inputValue, values) => inputValue && values.every((item) => item !== inputValue)
-   * @version return type T and Promise<T> in 2.37.0
+   * @version return type T and `Promise<T>` in 2.37.0
    */
   validate?: (inputValue: string, values: T[]) => boolean | Promise<boolean> | T | Promise<T>;
   /**

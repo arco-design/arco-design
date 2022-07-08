@@ -14,37 +14,37 @@ Upload file by selecting or dragging.
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|style|Additional style|CSSProperties |`-`|-|
-|className|Additional css class|string \| string[] |`-`|-|
-|defaultFileList|Default list of files that have been uploaded|[UploadItem](upload#uploaditem)[] |`-`|-|
-|fileList|List of files that have been uploaded|[UploadItem](upload#uploaditem)[] |`-`|-|
-|directory|Support upload whole directory|boolean |`-`|2.11.0|
-|accept|Accepted [file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|
-|customRequest|Provide an override for the default xhr behavior for additional customization|(options: [RequestOptions](#requestoptions)) => [UploadRequestReturn](#uploadrequestreturn) \| void |`-`|-|
-|listType|Upload list Style|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
-|showUploadList|Whether to show upload list.It can be an object to customize the `previewIcon`, `removeIcon`,`fileIcon`, `reuploadIcon`, `cancelIcon`, `startIcon`, `errorIcon` and `fileName`|boolean \| [CustomIconType](#customicontype) |`true`|-|
 |autoUpload|Whether to automatically upload files after selecting them|boolean |`true`|-|
-|action|Uploading URL|string |`-`|-|
-|limit|maximum number of uploads allowed. Object type is supported in `2.28.0`|number \| { maxCount: number; hideOnExceedLimit?: boolean } |`-`|-|
+|directory|Support upload whole directory|boolean |`-`|2.11.0|
 |disabled|Whether to disable|boolean |`-`|-|
 |drag|Whether to enable drag and drop upload|boolean |`-`|-|
 |multiple|Whether to allow multiple files to be selected|boolean |`-`|-|
+|withCredentials|Whether to carry cookies when uploading requests|boolean |`-`|-|
+|accept|Accepted [file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|
+|action|Uploading URL|string |`-`|-|
+|listType|Upload list Style|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
 |tip|The tip text|string \| React.ReactNode |`-`|-|
+|beforeUpload|Callback before uploading. Uploading will be aborted when the return value is false or a Promise which resolve(false) or reject.|(file: File, filesList: File[]) =&gt; boolean \| Promise&lt;any&gt; |`() => true`|-|
+|className|Additional css class|string \| string[] |`-`|-|
+|defaultFileList|Default list of files that have been uploaded|[UploadItem](upload#uploaditem)[] |`-`|-|
+|fileList|List of files that have been uploaded|[UploadItem](upload#uploaditem)[] |`-`|-|
 |headers|Set request headers|object |`-`|-|
+|limit|maximum number of uploads allowed. Object type is supported in `2.28.0`|number \| { maxCount: number; hideOnExceedLimit?: boolean } |`-`|-|
+|progressProps|The props of [Progress component](/react/en-US/components/progress).|Partial&lt;[ProgressProps](progress#progress)&gt; |`-`|-|
+|showUploadList|Whether to show upload list.It can be an object to customize the `previewIcon`, `removeIcon`,`fileIcon`, `reuploadIcon`, `cancelIcon`, `startIcon`, `errorIcon` and `fileName`|boolean \| [CustomIconType](#customicontype) |`true`|-|
+|style|Additional style|CSSProperties |`-`|-|
+|customRequest|Provide an override for the default xhr behavior for additional customization|(options: [RequestOptions](#requestoptions)) => [UploadRequestReturn](#uploadrequestreturn) \| void |`-`|-|
 |data|additions params of request|object \| ((any: any) => object) |`-`|-|
 |name|The key name of uploading file|string \| ((any: any) => string) |`-`|-|
-|withCredentials|Whether to carry cookies when uploading requests|boolean |`-`|-|
-|progressProps|The props of [Progress component](/react/en-US/components/progress).|Partial&lt;[ProgressProps](progress#progress)&gt; |`-`|-|
+|onChange|Callback when uploading state is changing|(fileList: [UploadItem](upload#uploaditem)[], file: [UploadItem](upload#uploaditem)) => void |`-`|-|
+|onDrop|Callback after drag file to the upload area and drop.|(e: React.DragEvent) => void |`-`|2.37.0|
+|onExceedLimit|Callback when limit is exceeded|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
+|onPreview|Callback when the preview icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
+|onProgress|Callback when uploading progress is changing|(file: [UploadItem](upload#uploaditem), e?: ProgressEvent) => void |`-`|-|
+|onRemove|Callback when the remove icon is clicked.Remove actions will be aborted when the return value is false or a Promise which resolve(false) or reject.|(file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
+|onReupload|Callback when the re-upload icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
 |renderUploadItem|Custom item of uploadList|(originNode: ReactNode, file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => ReactNode |`-`|-|
 |renderUploadList|Custom uploadList|(fileList: [UploadItem](upload#uploaditem)[], uploadListProps: [UploadListProps](upload#uploadlistprops)) => ReactNode |`-`|-|
-|onChange|Callback when uploading state is changing|(fileList: [UploadItem](upload#uploaditem)[], file: [UploadItem](upload#uploaditem)) => void |`-`|-|
-|onPreview|Callback when the preview icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
-|onRemove|Callback when the remove icon is clicked.Remove actions will be aborted when the return value is false or a Promise which resolve(false) or reject.|(file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
-|onProgress|Callback when uploading progress is changing|(file: [UploadItem](upload#uploaditem), e?: ProgressEvent) => void |`-`|-|
-|onReupload|Callback when the re-upload icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
-|onExceedLimit|Callback when limit is exceeded|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
-|beforeUpload|Callback before uploading. Uploading will be aborted when the return value is false or a Promise which resolve(false) or reject.|(file: File, filesList: File[]) =&gt; boolean \| Promise&lt;any&gt; |`() => true`|-|
-|onDrop|Callback after drag file to the upload area and drop.|(e: React.DragEvent) => void |`-`|2.37.0|
 
 ### UploadListProps
 
@@ -52,23 +52,23 @@ File upload list display
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
+|disabled|Whether to disable|boolean |`-`|
 |onAbort|Callback when the cancel icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|
+|onPreview|Callback when the preview icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 |onRemove|Callback when the remove icon is clicked.Remove actions will be aborted when the return value is false or a Promise which resolve(false) or reject|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 |onReupload|Callback when the re-upload icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|
-|onPreview|Callback when the preview icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|
-|disabled|Whether to disable|boolean |`-`|
 
 ### UploadItem
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|uid|Unique identifier|string  **(Required)**|`-`|
-|status|Uploading status|[UploadStatus](#uploadstatus) |`-`|
-|originFile|File Object|File |`-`|
 |percent|Upload progress percentage|number |`-`|
-|response|Response of upload request|object |`-`|
-|url|File url|string |`-`|
 |name|File name|string |`-`|
+|uid|Unique identifier|string  **(Required)**|`-`|
+|url|File url|string |`-`|
+|originFile|File Object|File |`-`|
+|response|Response of upload request|object |`-`|
+|status|Uploading status|[UploadStatus](#uploadstatus) |`-`|
 
 ### RequestOptions
 

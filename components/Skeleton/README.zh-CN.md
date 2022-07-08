@@ -14,11 +14,11 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|style|节点样式|CSSProperties |`-`|
-|className|节点类名|string \| string[] |`-`|
 |animation|是否显示动画效果|boolean |`-`|
 |loading|是否显示子组件。为 `true` 时候显示占位符|boolean |`true`|
+|className|节点类名|string \| string[] |`-`|
 |image|是否显示图片占位|[SkeletonImageProps](#skeletonimageprops) \| boolean |`-`|
+|style|节点样式|CSSProperties |`-`|
 |text|是否显示文本占位|[SkeletonTextProps](#skeletontextprops) \| boolean |`true`|
 
 ### SkeletonImageProps

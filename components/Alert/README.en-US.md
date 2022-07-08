@@ -14,16 +14,16 @@ Used to display warning information in a way that attracts attention.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|CSSProperties |`-`|
-|className|Additional css class|string \| string[] |`-`|
-|action|Custom action item|ReactNode |`-`|
+|banner|Whether to show as banner|boolean |`-`|
 |closable|Whether Alert can be closed|boolean |`-`|
-|onClose|Callback when Alert is closed|(e) => void |`-`|
-|afterClose|Callback when Alert close animation is complete|() => void |`-`|
+|showIcon|Whether to show icon|boolean |`true`|
 |type|Type of Alert|'info' \| 'success' \| 'warning' \| 'error' |`info`|
-|title|Alert title|ReactNode |`-`|
+|action|Custom action item|ReactNode |`-`|
+|closeElement|Custom close button|ReactNode |`-`|
 |content|Alert content|ReactNode |`-`|
 |icon|Custom icon, effective when `showIcon` is `true`|ReactNode |`-`|
-|closeElement|Custom close button|ReactNode |`-`|
-|showIcon|Whether to show icon|boolean |`true`|
-|banner|Whether to show as banner|boolean |`-`|
+|title|Alert title|ReactNode |`-`|
+|className|Additional css class|string \| string[] |`-`|
+|style|Additional style|CSSProperties |`-`|
+|afterClose|Callback when Alert close animation is complete|() => void |`-`|
+|onClose|Callback when Alert is closed|(e) => void |`-`|

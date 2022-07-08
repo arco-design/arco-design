@@ -14,26 +14,26 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|style|Additional style|CSSProperties |`-`|-|
+|colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.|boolean |`-`|-|
+|disabled|Whether All Form item is disabled|boolean |`-`|-|
+|id|prefix of `id` attr|string |`-`|-|
+|labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
+|layout|The layout of Form|'horizontal' \| 'vertical' \| 'inline' |`horizontal`|-|
+|requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
+|size|size of form|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |form|form|[FormInstance](#forminstance)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
-|id|prefix of `id` attr|string |`-`|-|
-|layout|The layout of Form|'horizontal' \| 'vertical' \| 'inline' |`horizontal`|-|
-|size|size of form|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
-|labelCol|Global `<label>` label layout. Same as the props received by the `<Grid.Col>`,the values of `span` and `offset` can be configured,which will be overwritten by the `labelCol` set by `Form.Item`|[ColProps](grid#col) |`{ span: 5, offset: 0 }`|-|
-|wrapperCol|The global control layout, which is the same as the setting method of `labelCol`,will be overwritten by the `wrapperCol` set by `Form.Item`|[ColProps](grid#col) |`{ span: 19, offset: 0 }`|-|
-|requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
-|labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
 |initialValues|Default value of form data|Partial&lt;FormData&gt; |`-`|-|
-|validateTrigger|When to trigger verification.|string \| string[] |`onChange`|2.28.0|
-|onValuesChange|Callback when any form item value changes.The first is the changed value, and the second is the value of all items|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
+|labelCol|Global `<label>` label layout. Same as the props received by the `<Grid.Col>`,the values of `span` and `offset` can be configured,which will be overwritten by the `labelCol` set by `Form.Item`|[ColProps](grid#col) |`{ span: 5, offset: 0 }`|-|
 |onChange|Callback when the form item value changes. Unlike `onValuesChange`, it will only be called when the user manipulates the form item|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
-|wrapper|Custom outer tag. Can be html tags or React components|[ComponentType](#componenttype) |`form`|-|
-|wrapperProps|If set `wrapper`, You can pass some parameters to the wrapper.|[IndexedObject](#indexedobject) |`-`|-|
-|disabled|Whether All Form item is disabled|boolean |`-`|-|
-|colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.|boolean |`-`|-|
+|onValuesChange|Callback when any form item value changes.The first is the changed value, and the second is the value of all items|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
 |scrollToFirstError|Whether scroll to first error item after validation fails. (`ScrollIntoViewOptions` is supported at `2.19.0`)|boolean \| ScrollIntoViewOptions |`-`|-|
+|style|Additional style|CSSProperties |`-`|-|
 |validateMessages|validation prompt template [demo](/react/en-US/components/form#validate%20messages)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;;}&gt; |`-`|2.32.0|
+|validateTrigger|When to trigger verification.|string \| string[] |`onChange`|2.28.0|
+|wrapper|Custom outer tag. Can be html tags or React components|[ComponentType](#componenttype) |`form`|-|
+|wrapperCol|The global control layout, which is the same as the setting method of `labelCol`,will be overwritten by the `wrapperCol` set by `Form.Item`|[ColProps](grid#col) |`{ span: 19, offset: 0 }`|-|
+|wrapperProps|If set `wrapper`, You can pass some parameters to the wrapper.|[IndexedObject](#indexedobject) |`-`|-|
 |onSubmit|Callback when submit data|(values: FormData) => void |`-`|-|
 |onSubmitFailed|Callback when validate fail|(errors: { [key: string]: [FieldError](#fielderror) }) => void |`-`|2.21.0|
 
@@ -41,32 +41,32 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|style|Additional style|CSSProperties |`-`|-|
-|className|Additional css class|string \| string[] |`-`|-|
-|initialValue|Default value|FieldValue |`-`|-|
-|field|Unique identification of controlled components|FieldKey |`-`|-|
-|label|Label text|ReactNode |`-`|-|
-|labelCol|The layout of `<label>`, the same as the props received by the `<Grid.Col>`.The values of `span` and `offset` can be configured, which will override the global `labelCol` setting|[ColProps](grid#col) |`-`|-|
-|wrapperCol|The control layout, which is the same as the setting method of `labelCol`, which will override the global `wrapperCol` setting|[ColProps](grid#col) |`-`|-|
 |colon|Whether to add a colon after label|boolean |`-`|-|
 |disabled|Whether the FormItem is disabled. Priority is higher than the `disabled` prop of `Form`|boolean |`-`|-|
-|rules|Validation rules in controlled component, [RulesProps](#rules)|RulesProps&lt;FieldValue&gt;[] |`-`|-|
+|hasFeedback|Whether to show the verification icon, configure `validateStatus` to use.|boolean |`-`|-|
+|hidden|hide the form item|boolean |`-`|2.29.0|
+|required|Whether The FormItem is Required, Will display an red symbol in front of the `label` label.If it is not set here, it will look for `required` from the rules|boolean |`-`|-|
 |trigger|When to take over and collecting the child nodes.|string |`onChange`|-|
 |triggerPropName|The attribute name of the child node being taken over, default is `value`, ex, `<Checkbox>` is `checked`.|string |`value`|-|
-|getValueFromEvent|Specify how to handle the value when the child node triggers the `onChange` event. (If the `trigger` attribute is customized, then the parameter here is the parameter type of the corresponding event callback function)|(...args) => FieldValue |`-`|2.23.0|
-|validateTrigger|When to trigger verification. The value is related to the wrapped item, and all events supported.For example, `onFocus`, `onBlur`, and `onChange` supported by `Input` can be used as the value of `validateTrigger`.When passed as `[]`, the validation rules will only be executed when the form `validate` method is called|string \| string[] |`onChange`|-|
-|noStyle|No external tags/styles are rendered, only binding field. **Notice**: When set to true, if the field verification failed,the error message will not be displayed. You can pass in an object and set showErrorTip to true(Support at `2.5.0`),The error message will be displayed under the upper formItem node|boolean \| { showErrorTip: boolean } |`-`|-|
-|required|Whether The FormItem is Required, Will display an red symbol in front of the `label` label.If it is not set here, it will look for `required` from the rules|boolean |`-`|-|
-|hidden|hide the form item|boolean |`-`|2.29.0|
-|extra|Additional hint content.|ReactNode |`-`|-|
-|validateStatus|Validate status|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
-|hasFeedback|Whether to show the verification icon, configure `validateStatus` to use.|boolean |`-`|-|
-|help|Custom help text|ReactNode |`-`|-|
-|normalize|Convert the `value` to the FormItem|(value: FieldValue \| undefined,prevValue: FieldValue \| undefined,allValues: Partial&lt;FormData&gt;) =&gt; any |`-`|-|
-|formatter|Convert the `value` of the FormItem to children;|(value: FieldValue \| undefined) => any |`-`|2.23.0|
-|shouldUpdate|Whether to re-render when other FormItem value change. When set to true, any changes to the Form will re-render.|\| boolean\| ((prevValues: Partial&lt;FormData&gt;,currentValues: Partial&lt;FormData&gt;,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) =&gt; boolean) |`-`|-|
 |labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
 |requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
+|validateStatus|Validate status|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
+|extra|Additional hint content.|ReactNode |`-`|-|
+|help|Custom help text|ReactNode |`-`|-|
+|label|Label text|ReactNode |`-`|-|
+|className|Additional css class|string \| string[] |`-`|-|
+|field|Unique identification of controlled components|FieldKey |`-`|-|
+|initialValue|Default value|FieldValue |`-`|-|
+|labelCol|The layout of `<label>`, the same as the props received by the `<Grid.Col>`.The values of `span` and `offset` can be configured, which will override the global `labelCol` setting|[ColProps](grid#col) |`-`|-|
+|normalize|Convert the `value` to the FormItem|(value: FieldValue \| undefined,prevValue: FieldValue \| undefined,allValues: Partial&lt;FormData&gt;) =&gt; any |`-`|-|
+|noStyle|No external tags/styles are rendered, only binding field. **Notice**: When set to true, if the field verification failed,the error message will not be displayed. You can pass in an object and set showErrorTip to true(Support at `2.5.0`),The error message will be displayed under the upper formItem node|boolean \| { showErrorTip: boolean } |`-`|-|
+|rules|Validation rules in controlled component, [RulesProps](#rules)|RulesProps&lt;FieldValue&gt;[] |`-`|-|
+|shouldUpdate|Whether to re-render when other FormItem value change. When set to true, any changes to the Form will re-render.|\| boolean\| ((prevValues: Partial&lt;FormData&gt;,currentValues: Partial&lt;FormData&gt;,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) =&gt; boolean) |`-`|-|
+|style|Additional style|CSSProperties |`-`|-|
+|validateTrigger|When to trigger verification. The value is related to the wrapped item, and all events supported.For example, `onFocus`, `onBlur`, and `onChange` supported by `Input` can be used as the value of `validateTrigger`.When passed as `[]`, the validation rules will only be executed when the form `validate` method is called|string \| string[] |`onChange`|-|
+|wrapperCol|The control layout, which is the same as the setting method of `labelCol`, which will override the global `wrapperCol` setting|[ColProps](grid#col) |`-`|-|
+|formatter|Convert the `value` of the FormItem to children;|(value: FieldValue \| undefined) => any |`-`|2.23.0|
+|getValueFromEvent|Specify how to handle the value when the child node triggers the `onChange` event. (If the `trigger` attribute is customized, then the parameter here is the parameter type of the corresponding event callback function)|(...args) => FieldValue |`-`|2.23.0|
 
 ### Form.List
 
@@ -80,8 +80,8 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|onFormValuesChange|This method is called when the value of any wrapped `Form` component changes|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
 |onFormSubmit|This method will be called when any wrapped `Form` component triggers a submit|(id: string \| undefined,values,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
+|onFormValuesChange|This method is called when the value of any wrapped `Form` component changes|(id: string \| undefined,changedValues,{forms,}: {forms: {[key: string]: [FormInstance](#forminstance);};}) => void |`-`|
 
 ### FormInstance
 
