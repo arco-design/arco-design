@@ -114,10 +114,15 @@
     border-bottom: @descriptions-border-width @descriptions-border-style @descriptions-color-border;
   }
 
+  &-border:not(&-rtl) &-item,
+  &-border:not(&-rtl) &-item-label,
+  &-border:not(&-rtl) &-item-value {
+    border-right: @descriptions-border-width @descriptions-border-style @descriptions-color-border;
+  }
+
   &-border &-item,
   &-border &-item-label,
   &-border &-item-value {
-    border-right: @descriptions-border-width @descriptions-border-style @descriptions-color-border;
     padding: @descriptions-border-item-size-default-padding-vertical
       @descriptions-border-item-size-default-padding-horizontal;
   }
@@ -150,4 +155,59 @@
   .descriptions-size(medium);
 
   .descriptions-size(large);
+}
+
+.@{descriptions-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{descriptions-prefix-cls} {
+    &-item,
+    &-item-label,
+    &-item-value {
+      text-align: right;
+      padding: 0 0 @descriptions-item-size-default-spacing-bottom 4px;
+    }
+
+    &-item-label-inline,
+    &-item-value-inline {
+      text-align: right;
+    }
+  }
+
+  &.@{descriptions-prefix-cls} {
+    &-layout-inline-horizontal {
+      .@{descriptions-prefix-cls}-item-label-inline {
+        margin-right: 0;
+        margin-left: 4px;
+      }
+    }
+
+    &-border {
+      .@{descriptions-prefix-cls}-item,
+      .@{descriptions-prefix-cls}-item-label,
+      .@{descriptions-prefix-cls}-item-value {
+        border-left: @descriptions-border-width @descriptions-border-style
+          @descriptions-color-border;
+        padding: @descriptions-border-item-size-default-padding-vertical
+          @descriptions-border-item-size-default-padding-horizontal;
+      }
+
+      .@{descriptions-prefix-cls}-item:last-child,
+      .@{descriptions-prefix-cls}-item-value:last-child {
+        border-left: none;
+      }
+
+      &.@{descriptions-prefix-cls}-layout-vertical {
+        .@{descriptions-prefix-cls}-item-label:last-child {
+          border-left: none;
+        }
+      }
+    }
+
+    &-layout-vertical:not(&-border) {
+      .@{descriptions-prefix-cls}-item-value:first-child {
+        padding-right: 0;
+      }
+    }
+  }
 }
