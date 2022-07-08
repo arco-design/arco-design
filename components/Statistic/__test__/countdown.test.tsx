@@ -34,7 +34,7 @@ describe('Statistic.Countdown', () => {
     });
   });
 
-  it('onFinish', async () => {
+  it('onFinish', () => {
     jest.useFakeTimers();
     const onFinish = jest.fn();
     const component = render(
@@ -67,7 +67,7 @@ describe('Statistic.Countdown', () => {
   it('renderFormat correctly', () => {
     function formatTest(format, value, diff) {
       const mockRender = jest.fn().mockImplementation((a, b) => `${a}-${b}`);
-      const component = mount(
+      const component = render(
         <Countdown
           start={false}
           now={now}
@@ -78,7 +78,8 @@ describe('Statistic.Countdown', () => {
       );
 
       expect(mockRender.mock.calls.length).toBe(1);
-      expect(component.text()).toEqual(`${diff}-${value}`);
+      expect(component.find('.arco-statistic-value')[0].innerHTML).toEqual(`${diff}-${value}`);
+      cleanup();
     }
 
     const formats = [
