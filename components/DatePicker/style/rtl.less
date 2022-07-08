@@ -1,0 +1,54 @@
+.@{prefix}-picker-container-rtl,
+.@{prefix}-picker-range-container-rtl {
+  direction: rtl;
+
+  .@{picker-prefix-cls} {
+    &-cell-range-start,
+    &-cell-hover-range-start {
+      .@{picker-prefix-cls}-date {
+        border-radius: 0 @picker-panel-cell-boundary-border-radius
+          @picker-panel-cell-boundary-border-radius 0;
+      }
+    }
+
+    &-cell-range-end,
+    &-cell-hover-range-end {
+      .@{picker-prefix-cls}-date {
+        border-radius: @picker-panel-cell-boundary-border-radius 0 0
+          @picker-panel-cell-boundary-border-radius;
+      }
+    }
+  }
+
+  .@{week-panel-prefix-cls} {
+    .@{picker-prefix-cls}-cell {
+      &:nth-child(2) {
+        .@{picker-prefix-cls}-date {
+          padding-right: 4px;
+          padding-left: 0;
+          border-radius: 0 @picker-panel-cell-boundary-border-radius
+            @picker-panel-cell-boundary-border-radius 0;
+
+          .@{picker-prefix-cls}-date-value {
+            border-radius: 0 @picker-panel-border-radius-cell_selected
+              @picker-panel-border-radius-cell_selected 0;
+          }
+        }
+      }
+
+      &:nth-child(8) {
+        .@{picker-prefix-cls}-date {
+          padding-left: 4px;
+          padding-right: 0;
+          border-radius: @picker-panel-cell-boundary-border-radius 0 0
+            @picker-panel-cell-boundary-border-radius;
+
+          .@{picker-prefix-cls}-date-value {
+            border-radius: @picker-panel-border-radius-cell_selected 0 0
+              @picker-panel-border-radius-cell_selected;
+          }
+        }
+      }
+    }
+  }
+}

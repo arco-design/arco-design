@@ -14,11 +14,11 @@ title:
 Use `hoverable` to add a hover style to the card. The hover style can also be customized through style override.
 
 ```js
-import { Card, Link } from '@arco-design/web-react';
+import { Card, Link, Space } from '@arco-design/web-react';
 
 const App = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <Space>
       <Card
         style={{ width: 360 }}
         title="Arco Card"
@@ -30,7 +30,7 @@ const App = () => {
         Card content
       </Card>
       <Card
-        style={{ width: 360, marginLeft: 24 }}
+        style={{ width: 360 }}
         className="card-custom-hover-style"
         title="Custom hover style"
         hoverable
@@ -38,7 +38,7 @@ const App = () => {
       >
         Card content <br /> Card content
       </Card>
-    </div>
+    </Space>
   );
 };
 

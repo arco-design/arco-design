@@ -18,15 +18,15 @@ export const render = (ui: React.ReactElement, options?: RenderOptions) => {
       ...options,
     }),
   } as ReturnType<typeof ORender> & {
-    querySelector: (selector: string) => Element;
-    find: (selector: string) => NodeListOf<any>;
+    querySelector: <T extends HTMLElement | SVGElement>(selector: string) => T | null;
+    find: <E extends HTMLElement | SVGElement>(selector: string) => NodeListOf<E>;
   };
 
-  wrapper.find = (selector) => {
-    return document.querySelectorAll(selector);
+  wrapper.find = <E extends Element>(selector) => {
+    return document.querySelectorAll<E>(selector);
   };
-  wrapper.querySelector = (selector) => {
-    return document.querySelector(selector) as Element;
+  wrapper.querySelector = <T extends Element>(selector) => {
+    return document.querySelector<T>(selector);
   };
 
   return wrapper;

@@ -33,7 +33,7 @@
 |disabled|统一配置表单控件是否可用|boolean |`-`|-|
 |colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。|boolean |`-`|-|
 |scrollToFirstError|验证失败后滚动到第一个错误字段。(`ScrollIntoViewOptions` 类型在 `2.19.0` 开始支持)|boolean \| ScrollIntoViewOptions |`-`|-|
-|validateMessages|校验提示信息模板 [demo](/react/components/form#表单校验信息模板)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key]: Record&lt;keyof ValidateMessagesTemplateType[key], (data, { label }) =&gt; any \| string&gt;;}&gt; |`-`|2.32.0|
+|validateMessages|校验提示信息模板 [demo](/react/components/form#表单校验信息模板)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;;}&gt; |`-`|2.32.0|
 |onSubmit|数据验证成功后回调事件|(values: FormData) => void |`-`|-|
 |onSubmitFailed|数据验证失败后回调事件|(errors: { [key: string]: [FieldError](#fielderror) }) => void |`-`|2.21.0|
 
@@ -212,6 +212,7 @@ export interface RulesProps {
 | 方法           |                                      描述                                      |                                                            类型 |版本|
 | -------------- | :----------------------------------------------------------------------------: | --------------------------------------------------------------: | ---:|
 | validate | 校验并获取表单输入域的值与 Errors，如果不设置 fields 的话，会验证所有的 fields。支持 callback 和 promise 两种使用方法。 | `Function(fields?: string[], callback(errors, values) => void)` |
+| submit  |提交表单|`Function` |
 | setFieldValue  |设置一个表单控件的值|`Function(field: string, value)` |
 | setFields  |设置一组表单控件的值和报错。|`Function({ [field]: string: { value: any, error: FieldError } })` |
 | setFieldsValue  |设置多个表单控件的值|`Function({[field]: string, value})` |
@@ -223,7 +224,7 @@ export interface RulesProps {
 | scrollToField |滚动到指定表单字段位置。[ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |获取被操作过的字段|`() => string[]` |
 | resetFields|重置表单控件的值变为初始值|`Function(field?: string[])` |
-| clearFields|清除表单控件的值|`Function(field?: string[])` |`2.29.0`
+| clearFields|清除表单控件的值以及校验状态。等同于 `form.setFields({ [field]: { value: undefined; error: null, warning: null } })`|`Function(field?: string[])` |`2.29.0`
 
 ### `validate` 用法
 
@@ -257,7 +258,8 @@ this.form.setFields({
     value: 'pjy',
     error: {
       message: 'Yes, I know!'
-    }
+    },
+    warning: 'warning...'
   }
 });
 ```

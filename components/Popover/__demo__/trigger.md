@@ -14,14 +14,14 @@ title:
 By setting `trigger`, you can specify different trigger methods.
 
 ```js
-import { Popover, Button } from '@arco-design/web-react';
+import { Popover, Button, Space } from '@arco-design/web-react';
 const style = {
   margin: 0,
 };
 
 const App = () => {
   return (
-    <div>
+    <Space size={40}>
       <Popover
         trigger="hover"
         title="Title"
@@ -32,7 +32,7 @@ const App = () => {
           </span>
         }
       >
-        <Button style={{ marginRight: 40 }}>Hover</Button>
+        <Button>Hover</Button>
       </Popover>
       <Popover
         trigger="click"
@@ -44,7 +44,7 @@ const App = () => {
           </span>
         }
       >
-        <Button style={{ marginRight: 40 }}>Click</Button>
+        <Button>Click</Button>
       </Popover>
       <Popover
         trigger="focus"
@@ -58,7 +58,7 @@ const App = () => {
       >
         <Button>Focus</Button>
       </Popover>
-    </div>
+    </Space>
   );
 };
 

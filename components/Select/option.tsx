@@ -11,6 +11,7 @@ function Option(props: OptionProps, ref) {
     wrapperClassName,
     disabled,
     prefixCls,
+    rtl,
     value: propValue,
     children: propChildren,
     _isMultipleMode,
@@ -40,6 +41,7 @@ function Option(props: OptionProps, ref) {
         [`${prefixCls}-option-disabled`]: disabled,
         [`${prefixCls}-option-hover`]: value === _valueActive,
         [`${prefixCls}-option-empty`]: !childNode && childNode !== 0,
+        [`${prefixCls}-option-rtl`]: rtl,
       },
       className
     ),

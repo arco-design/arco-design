@@ -14,7 +14,7 @@ title:
 `Form.Item` can be nested.
 
 ```js
-import { Form, Input, Button, Grid, Select, InputNumber, Tooltip } from '@arco-design/web-react';
+import { Form, Input, Button, Grid, Select, InputNumber, Tooltip, Space } from '@arco-design/web-react';
 import { IconExclamationCircle } from '@arco-design/web-react/icon';
 import { useRef, useState } from 'react';
 
@@ -58,7 +58,7 @@ function App() {
               />
             </Form.Item>
             <Tooltip content="必须填写哦">
-              <IconExclamationCircle style={{ marginLeft: 8, color: 'rgb(var(--arcoblue-6))' }} />
+              <IconExclamationCircle style={{ margin: '0 8px', color: 'rgb(var(--arcoblue-6))' }} />
             </Tooltip>
           </Grid.Row>
         </Form.Item>
@@ -75,16 +75,18 @@ function App() {
           }}
         </Form.Item>
         <Form.Item label=" ">
-          <Button type="primary" htmlType="submit" style={{ marginRight: 24 }}>
-            Submit
-          </Button>
-          <Button
-            onClick={() => {
-              formRef.current.resetFields();
-            }}
-          >
-            Reset
-          </Button>
+          <Space size={24}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+            <Button
+              onClick={() => {
+                formRef.current.resetFields();
+              }}
+            >
+              Reset
+            </Button>
+          </Space>
         </Form.Item>
       </Form>
     </div>

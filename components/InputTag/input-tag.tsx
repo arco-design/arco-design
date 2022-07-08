@@ -88,7 +88,7 @@ const defaultProps: InputTagProps = {
 };
 
 function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<InputTagProps>(baseProps, defaultProps, componentConfig?.InputTag);
   const {
     className,
@@ -184,9 +184,16 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
   const tryAddInputValueToTag = async () => {
     try {
-      const isLegal = typeof validate === 'function' ? await validate(inputValue, value) : true;
-      if (isLegal) {
-        valueChangeHandler(value.concat({ value: inputValue, label: inputValue }), 'add');
+      const validateResult =
+        typeof validate === 'function' ? await validate(inputValue, value) : true;
+      if (validateResult) {
+        valueChangeHandler(
+          value.concat({
+            value: validateResult === true ? inputValue : validateResult,
+            label: inputValue,
+          }),
+          'add'
+        );
         setInputValue('');
       }
     } catch (error) {
@@ -341,6 +348,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           [`${prefixCls}-readonly`]: readOnly,
           [`${prefixCls}-has-suffix`]: hasSuffix,
           [`${prefixCls}-has-placeholder`]: !value.length,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

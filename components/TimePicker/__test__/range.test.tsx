@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import dayjs from 'dayjs';
+import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import TimePicker from '..';
 
@@ -9,20 +9,23 @@ const RangePicker = TimePicker.RangePicker;
 mountTest(RangePicker);
 
 function getCells(component, listIndex) {
-  return component.find('.arco-timepicker-list').at(listIndex).find('li.arco-timepicker-cell');
+  return component
+    .find('.arco-timepicker-list')
+    .item(listIndex)
+    .querySelectorAll('li.arco-timepicker-cell');
 }
 
 function getInputValue(component, index) {
-  return component.find('.arco-picker-input input').at(index).getDOMNode().getAttribute('value');
+  return component.find('.arco-picker-input input').item(index).getAttribute('value');
 }
 
 describe('TimePicker.RangePicker', () => {
   it('basic', () => {
-    const component = mount(<RangePicker />);
+    const component = render(<RangePicker />);
 
     expect(component.find('svg.arco-icon-clock-circle')).toHaveLength(1);
 
-    component.find('.arco-picker-range').simulate('click');
+    fireEvent.click(component.find('.arco-picker-range')[0]);
 
     expect(component.find('.arco-timepicker')).toHaveLength(1);
 
@@ -36,13 +39,13 @@ describe('TimePicker.RangePicker', () => {
   });
 
   it('defaultValue', () => {
-    const component = mount(<RangePicker defaultValue={['09:24:53', '18:44:33']} />);
+    const component = render(<RangePicker defaultValue={['09:24:53', '18:44:33']} />);
     expect(getInputValue(component, 0)).toBe('09:24:53');
     expect(getInputValue(component, 1)).toBe('18:44:33');
   });
 
   it('use12hours', () => {
-    const component = mount(
+    const component = render(
       <RangePicker
         use12Hours
         format="hh:mm:ss A"
@@ -50,7 +53,7 @@ describe('TimePicker.RangePicker', () => {
       />
     );
 
-    component.find('.arco-picker-range').simulate('click');
+    fireEvent.click(component.find('.arco-picker-range')[0]);
 
     expect(getCells(component, 3)).toHaveLength(2);
   });

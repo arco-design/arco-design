@@ -14,18 +14,16 @@ title:
 Set `bordered` to `false` to use borderless cards.
 
 ```js
-import { Card, Link } from '@arco-design/web-react';
+import { Card, Link, Space } from '@arco-design/web-react';
 
 const App = () => {
   return (
-    <div
+    <Space
       style={{
-        display: 'flex',
-        width: '100%',
-        boxSizing: 'border-box',
         padding: 40,
         backgroundColor: 'var(--color-fill-2)',
       }}
+      size="large"
     >
       <Card
         style={{ width: 360 }}
@@ -38,7 +36,7 @@ const App = () => {
         Card content
       </Card>
       <Card
-        style={{ width: 360, marginLeft: 24 }}
+        style={{ width: 360 }}
         title="Hover me"
         hoverable
         extra={<Link>More</Link>}
@@ -48,7 +46,7 @@ const App = () => {
         <br />
         Card content
       </Card>
-    </div>
+    </Space>
   );
 };
 

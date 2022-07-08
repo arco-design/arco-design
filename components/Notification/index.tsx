@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
-import { isNumber } from '../_util/is';
+import { isNumber, isUndefined } from '../_util/is';
 import { NotificationProps } from './interface';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
@@ -15,6 +15,7 @@ type ConfigProps = {
   prefixCls?: string;
   getContainer?: () => HTMLElement;
   duration?: number;
+  rtl?: boolean;
 };
 
 // global config
@@ -22,6 +23,7 @@ let maxCount;
 let prefixCls;
 let duration;
 let container;
+let rtl;
 
 class Notification extends BaseNotification {
   static success: (config: NotificationProps) => ReactInstance;
@@ -43,6 +45,9 @@ class Notification extends BaseNotification {
     }
     if (isNumber(options.duration)) {
       duration = options.duration;
+    }
+    if (options.rtl) {
+      rtl = options.rtl;
     }
     if (options.getContainer && options.getContainer() !== container) {
       container = options.getContainer();
@@ -66,7 +71,10 @@ class Notification extends BaseNotification {
   static addInstance: (config: NotificationProps) => ReactInstance = (
     noticeProps: NotificationProps
   ) => {
-    const { position = 'topRight' } = noticeProps;
+    let position = noticeProps.position;
+    if (isUndefined(noticeProps.position)) {
+      position = rtl ? 'topLeft' : 'topRight';
+    }
     const _noticeProps = {
       duration,
       ...noticeProps,
@@ -114,7 +122,11 @@ class Notification extends BaseNotification {
   };
 
   render() {
-    const { notices, position = 'topRight' } = this.state;
+    const { notices } = this.state;
+    let position = this.state.position;
+    if (isUndefined(position)) {
+      position = rtl ? 'topLeft' : 'topRight';
+    }
     const prefixClsNotification = prefixCls ? `${prefixCls}-notification` : 'arco-notification';
     let transitionClass: string;
     if (position === 'topLeft' || position === 'bottomLeft') {
@@ -124,7 +136,8 @@ class Notification extends BaseNotification {
     }
     const classNames = cs(
       `${prefixClsNotification}-wrapper`,
-      `${prefixClsNotification}-wrapper-${position}`
+      `${prefixClsNotification}-wrapper-${position}`,
+      { [`${prefixClsNotification}-wrapper-rtl`]: rtl }
     );
 
     return (
@@ -155,6 +168,7 @@ class Notification extends BaseNotification {
                 prefixCls={prefixClsNotification}
                 iconPrefix={prefixCls}
                 noticeType="notification"
+                rtl={rtl}
               />
             </CSSTransition>
           ))}

@@ -24,7 +24,21 @@ Upload file by selecting or dragging.
 | abort   | cancel upload request	 | `(file: UploadItem) => void` |
 | reupload   | re-upload request	 | `(file: UploadItem) => void` |
 
-
+```js
+// Custom icons
+type CustomIconType = {
+  previewIcon?: ReactNode;
+  removeIcon?: ReactNode;
+  fileIcon?: ReactNode;
+  reuploadIcon?: ReactNode;
+  cancelIcon?: ReactNode;
+  startIcon?: ReactNode;
+  errorIcon?: ReactNode;
+  fileName?: (file: UploadItem) => ReactNode;
+  progressRender?: (file: UploadItem, originDom: ReactNode) => ReactElement; // 2.34.0
+  imageRender?: (file: UploadItem) => ReactNode; // 2.34.0
+}
+```
 ## Q&A
 
 #### How to control the status and progress of uploaded files?

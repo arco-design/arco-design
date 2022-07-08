@@ -13,32 +13,25 @@ title:
 
 If the avatar content is text, the font size will be automatically adjusted to fit the content in the avatar.
 
-```js
-import { useState } from 'react';
-import { Avatar, Button } from '@arco-design/web-react';
+```tsx
+import React, { useState } from 'react';
+import { Avatar, Button, Space } from '@arco-design/web-react';
 
 function App() {
   const [index, setIndex] = useState(0);
   const list = ['B', 'Arco', 'Design', 'Tom', 'AD'];
   return (
-    <div>
-      <Avatar
-        style={{
-          marginRight: 24,
-          verticalAlign: 'middle',
-          backgroundColor: '#14a9f8',
-        }}
-      >
+    <Space>
+      <Avatar>
         {list[index]}
       </Avatar>
       <Button
         type="secondary"
         onClick={() => setIndex(index >= 4 ? 0 : index + 1)}
-        style={{ verticalAlign: 'middle' }}
       >
         Change
       </Button>
-    </div>
+    </Space>
   );
 }
 

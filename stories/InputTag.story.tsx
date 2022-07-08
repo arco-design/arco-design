@@ -1,10 +1,10 @@
 import React from 'react';
 import { InputTag } from '@self';
-import { IconBook } from '@self/icon';
 
-export const Demo = () => (
-  <InputTag dragToSort defaultValue={['1', '2', '3']} allowClear suffix={<IconBook />} />
-);
+export const Demo = () => {
+  const placeholder = 'Please input';
+  return <InputTag disabled readOnly error placeholder={placeholder} />;
+};
 
 export default {
   title: 'InputTag',

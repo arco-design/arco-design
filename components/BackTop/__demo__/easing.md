@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 滚动类型和滚动时间
   en-US: Easing
 browser: true
@@ -16,7 +16,7 @@ Of course, we provide richer functions for use. You can specify the transition e
 
 ```js
 import { useState } from 'react';
-import { BackTop, Button, Select, Input, Typography } from '@arco-design/web-react';
+import { BackTop, Button, Select, Input, Typography, Space } from '@arco-design/web-react';
 import { IconCaretUp } from '@arco-design/web-react/icon';
 const { Paragraph, Text } = Typography;
 const easingTypes = [
@@ -46,14 +46,14 @@ function App() {
   const [duration, setDuration] = useState(200);
   return (
     <div>
-      <div style={{ margin: 12 }}>
-        <Text style={{ marginRight: 8 }}>
+      <Space size={10} style={{ margin: 12 }}>
+        <Text>
           Easing
         </Text>
         <Select
           onChange={setEasing}
           defaultValue={easing}
-          style={{ width: 200, marginRight: 10 }}
+          style={{ width: 200 }}
         >
           {easingTypes.map((easing) => (
             <Select.Option key={easing} value={easing}>
@@ -61,7 +61,7 @@ function App() {
             </Select.Option>
           ))}
         </Select>
-        <Text style={{ margin: '0 8px 0 40px' }}>
+        <Text>
           Time
         </Text>
         <Input
@@ -70,7 +70,7 @@ function App() {
           value={duration}
           placeholder="Please enter the easing time"
         />
-      </div>
+      </Space>
       <div
         style={{ position: 'relative' }}
       >

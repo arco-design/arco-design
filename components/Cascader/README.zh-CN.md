@@ -31,6 +31,7 @@
 |dropdownMenuClassName|自定义下拉列表类名|string \| string[] |`-`|2.35.0|
 |dropdownMenuColumnStyle|菜单列样式|CSSProperties |`-`|2.35.0|
 |virtualListProps|传递虚拟滚动属性。开启虚拟滚动后，每列级联菜单的会存在默认宽度，可通过 `dropdownMenuColumnStyle` 进行样式调整|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
+|defaultActiveFirstOption|是否默认高亮搜索结果第一个选项。|boolean |`true`|2.37.0|
 |dropdownRender|自定义下拉菜单的展示。|(menu: ReactNode) => ReactNode |`-`|2.15.0|
 |dropdownColumnRender|自定义下拉菜单每一列的展示。|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
 |filterOption|默认搜索从 `label` 属性中进行关键字搜索。通过该方法可以自定义搜索逻辑|(inputValue: string, option: NodeProps&lt;T&gt;) =&gt; boolean |`-`|-|
@@ -46,7 +47,7 @@
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|
 |error|是否为错误状态。|boolean |`-`|-|
 |animation|是否为内部标签变化添加动画。|boolean |`true`|2.15.0|
-|renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => React.ReactNode |`-`|index、values added in 2.15.0|
+|renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
 |dragToSort|是否可以通过拖拽为 Tag 排序|boolean |`-`|2.27.0|
 |className|节点类名|string \| string[] |`-`|-|
 |placeholder|选择框默认文字。|string |`-`|-|
@@ -59,7 +60,7 @@
 |bordered|是否需要边框|boolean |`true`|-|
 |showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。|boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean } |`-`|-|
 |allowClear|允许清除值。|boolean |`-`|-|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|number |`-`|-|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |suffixIcon|自定义选择框后缀图标。|ReactNode |`-`|-|
 |arrowIcon|自定义箭头图标，设置为 `null` 不显示箭头图标。|ReactNode \| null |`-`|-|
 |removeIcon|多选时配置选中项的删除图标。当传入`null`，不显示删除图标。|ReactNode \| null |`-`|-|

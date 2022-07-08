@@ -33,7 +33,7 @@ A form with data collection, verification and submission functions, including ch
 |disabled|Whether All Form item is disabled|boolean |`-`|-|
 |colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.|boolean |`-`|-|
 |scrollToFirstError|Whether scroll to first error item after validation fails. (`ScrollIntoViewOptions` is supported at `2.19.0`)|boolean \| ScrollIntoViewOptions |`-`|-|
-|validateMessages|validation prompt template [demo](/react/en-US/components/form#validate%20messages)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key]: Record&lt;keyof ValidateMessagesTemplateType[key], (data, { label }) =&gt; any \| string&gt;;}&gt; |`-`|2.32.0|
+|validateMessages|validation prompt template [demo](/react/en-US/components/form#validate%20messages)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;;}&gt; |`-`|2.32.0|
 |onSubmit|Callback when submit data|(values: FormData) => void |`-`|-|
 |onSubmitFailed|Callback when validate fail|(errors: { [key: string]: [FieldError](#fielderror) }) => void |`-`|2.21.0|
 
@@ -212,6 +212,7 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 |Property|Description|Type|Default|Version|
 | --- | ---- | ---- | ----- | --- |
 | validate | Verified and Get the Form values and Errors, If fields are not set, all fields will be verified. Support callback and promise | `Function(fields?: string[], callback(errors, values) => void)` |
+| submit  |submit the form|`Function` |
 | setFieldValue  |Set the value of a form field|`Function(field: string, value)` |
 | setFields  |Set the value of a group of form fields and errors.|`Function({ [field]: string: { value: any, error: FieldError } })` |
 | setFieldsValue  |Set the value of multiple form fields|`Function({[field]: string, value})` |
@@ -223,8 +224,7 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 | scrollToField |Scroll to the specified form field position. [ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |Get the touched field|`() => string[]` |
 | resetFields|Reset the value of the Form to the initial value|`Function(field?: string[])` |
-| clearFields|Clear the value of the Form.Item|`Function(field?: string[])` | `2.29.0`
-
+| clearFields|Clear the value of the Form.Item and validate status|`Function(field?: string[])` | `2.29.0`
 
 ### `validate` Usage
 
@@ -258,7 +258,8 @@ this.form.setFields({
     value: 'pjy',
     error: {
       message: 'Yes, I know!'
-    }
+    },
+    warning: 'warning...'
   }
 });
 ```

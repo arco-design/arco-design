@@ -19,7 +19,7 @@ const defaultProps: RateProps = {
 };
 
 function Rate(baseProps: RateProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<RateProps>(baseProps, defaultProps, componentConfig?.Rate);
   const {
     style = {},
@@ -49,6 +49,7 @@ function Rate(baseProps: RateProps, ref) {
     {
       [`${prefixCls}-readonly`]: readonly,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

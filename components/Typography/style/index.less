@@ -201,3 +201,36 @@
     margin-bottom: calc(1em - @textarea-padding-vertical - @input-border-width);
   }
 }
+
+.@{typography-prefix-cls}-rtl {
+  direction: rtl;
+
+  & blockquote {
+    border-right: @typography-color-blockquote-border-width solid
+      @typography-color-blockquote-border-left;
+    padding-right: 8px;
+    padding-left: 0;
+  }
+
+  & ul li,
+  & ol li {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .@{typography-prefix-cls} {
+    &-operation-copy,
+    &-operation-copied,
+    &-operation-edit {
+      margin-right: @typography-operation-margin-left;
+      margin-left: 0;
+    }
+
+    &-edit-content {
+      left: initial;
+      right: -(@textarea-padding-horizontal + @input-border-width);
+      margin-left: -(@textarea-padding-horizontal + @input-border-width);
+      margin-right: 0;
+    }
+  }
+}

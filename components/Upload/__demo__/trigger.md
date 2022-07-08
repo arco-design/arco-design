@@ -29,7 +29,7 @@ const App = () => {
         <div className="trigger">
           <div>
             Drag the file here or
-            <span style={{ color: '#3370FF', }} >
+            <span style={{ color: '#3370FF', padding:"0 4px" }} >
               Click to upload
             </span>
           </div>

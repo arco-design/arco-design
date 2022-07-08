@@ -26,7 +26,7 @@ const defaultProps: ResultProps = {
 };
 
 function Result(baseProps: PropsWithChildren<ResultProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<ResultProps>>(
     baseProps,
     defaultProps,
@@ -55,6 +55,7 @@ function Result(baseProps: PropsWithChildren<ResultProps>, ref) {
         prefixCls,
         {
           [`${prefixCls}-is-${status}`]: status,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

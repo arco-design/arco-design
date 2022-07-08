@@ -1,68 +1,63 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
-import { Enter } from '../../_util/keycode';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Pagination from '..';
-import { PaginationProps, PaginationState } from '../pagination';
+import { render, fireEvent } from '../../../tests/util';
+import { Enter } from '../../_util/keycode';
 
 mountTest(Pagination);
 componentConfigTest(Pagination, 'Pagination');
 
-function mountPagination(component: React.ReactElement) {
-  return mount<React.Component, React.PropsWithChildren<PaginationProps>, PaginationState>(
-    component
-  );
-}
+const changePageSize = (component, index: number) => {
+  const pageSizeChanger = component.find('.arco-select-single')[0];
+  fireEvent.click(pageSizeChanger);
+  const pageSizeChangeOptions = document.getElementsByClassName('arco-select-option');
+  if (index < 0) {
+    fireEvent.click(pageSizeChangeOptions[pageSizeChangeOptions.length + index]);
+  } else {
+    fireEvent.click(pageSizeChangeOptions[index]);
+  }
+};
 
 describe('Pagination', () => {
   it('pagination should be update correctly', () => {
-    const wrapper = mountPagination(<Pagination />);
-    act(() => {
-      wrapper.setProps({
-        total: 100,
-      });
-      wrapper.update();
-    });
-    expect(wrapper.find('.arco-pagination-list').childAt(0).prop('allPages')).toBe(10);
+    const component = render(<Pagination total={100} />);
+    const liList = component.find<HTMLLIElement>('.arco-pagination-item');
+    expect(liList.item(liList.length - 2).innerHTML).toBe('10');
   });
 
   it('pagination should be unmount correctly', () => {
-    const wrapper = mountPagination(<Pagination />);
+    const component = render(<Pagination />);
     expect(() => {
-      wrapper.unmount();
+      component.unmount();
     }).not.toThrow();
   });
 
   it('pagination should jump correctly pages', () => {
-    const wrapper = mountPagination(<Pagination total={200} showJumper />);
-    expect(wrapper.find('.arco-pagination-item-active').text()).toBe('1');
-    wrapper
-      .find('PageJumper')
-      .find('Input')
-      .simulate('change', { target: { value: 30 } });
-    wrapper.find('PageJumper').find('Input').simulate('keyDown', { keyCode: Enter.code });
-    expect(wrapper.find('.arco-pagination-item-active').text()).toBe('20');
+    const component = render(<Pagination total={200} showJumper />);
+    expect(component.find('.arco-pagination-item-active').item(0).innerHTML).toBe('1');
+    const PageJumperInput = component.querySelector<HTMLInputElement>(
+      '.arco-pagination-jumper-input'
+    );
+    fireEvent.change(PageJumperInput!, { target: { value: 30 } });
+    fireEvent.keyDown(PageJumperInput!, { keyCode: Enter.code });
+    expect(component.querySelector('.arco-pagination-item-active')!.innerHTML).toBe('20');
   });
 
   it('should change pageSize correctly', () => {
-    const wrapper = mountPagination(<Pagination total={200} showTotal sizeCanChange />);
-    wrapper.setProps({ pageSize: 30 });
-    expect(wrapper.find('.arco-pagination-item')).toHaveLength(Math.ceil(200 / 30) + 2);
-    wrapper.setProps({
-      total: 0,
-      pageSize: 10,
-    });
-    wrapper.setProps({ pageSize: 30 });
-    expect(wrapper.find('.arco-pagination-item')).toHaveLength(2);
-    expect(wrapper.find('.arco-pagination-item-disabled')).toHaveLength(2);
+    const component = render(<Pagination total={200} showTotal sizeCanChange />);
+    component.rerender(<Pagination total={200} showTotal sizeCanChange pageSize={30} />);
+    expect(component.find('.arco-pagination-item')).toHaveLength(Math.ceil(200 / 30) + 2);
+    component.rerender(<Pagination total={0} showTotal sizeCanChange pageSize={10} />);
+    component.rerender(<Pagination total={0} showTotal sizeCanChange pageSize={30} />);
+    expect(component.find('.arco-pagination-item')).toHaveLength(2);
+    expect(component.find('.arco-pagination-item-disabled')).toHaveLength(2);
   });
 
   it('trigger onPageSizeChange correctly', () => {
     const mockPageSizeChange = jest.fn();
     const mockChange = jest.fn();
-    const wrapper = mountPagination(
+    const component = render(
       <Pagination
         total={200}
         onChange={mockChange}
@@ -72,45 +67,41 @@ describe('Pagination', () => {
         pageSizeChangeResetCurrent={false}
       />
     );
-    wrapper.find('Pager').last().simulate('click');
-    expect(mockChange.mock.calls[0]).toEqual([200 / 10, 10]);
+    changePageSize(component, -1);
+    expect(mockChange.mock.calls[0]).toEqual([1, 50]);
+    expect(mockPageSizeChange.mock.calls[0]).toEqual([50, 1]);
+  });
 
-    wrapper.find('PageOption').find('Select').simulate('click');
-    wrapper.find('PageOption').find('.arco-select-option').last().simulate('click');
-    expect(mockChange.mock.calls[1]).toEqual([200 / 50, 50]);
-    expect(mockPageSizeChange.mock.calls[0]).toEqual([50, 200 / 50]);
-
-    wrapper.setProps({
-      pageSizeChangeResetCurrent: true,
-    });
-
-    wrapper.find('PageOption').find('Select').simulate('click');
-    wrapper.find('PageOption').find('.arco-select-option').first().simulate('click');
-    expect(mockChange.mock.calls[2]).toEqual([1, 10]);
-    expect(mockPageSizeChange.mock.calls[1]).toEqual([10, 1]);
+  it('should pageSizeChangeResetCurrent work', () => {
+    const component = render(
+      <Pagination total={200} sizeCanChange sizeOptions={[10, 20, 50]} pageSizeChangeResetCurrent />
+    );
+    const changeCurrentPageItems: Array<HTMLLIElement> = Array.apply(
+      null,
+      component.find('.arco-pagination-item')
+    );
+    changeCurrentPageItems.pop();
+    changeCurrentPageItems.shift();
+    fireEvent.click(changeCurrentPageItems[2]);
+    expect(component.find('.arco-pagination-item-active')[0].innerHTML).toBe('3');
+    changePageSize(component, 1);
+    expect(component.find('.arco-pagination-item-active')[0].innerHTML).toBe('1');
   });
 
   it('fold page correctly when set bufferSize', () => {
-    const wrapper = mountPagination(<Pagination total={100} current={5} bufferSize={1} />);
-    expect(wrapper.find('.arco-pagination-item-jumper')).toHaveLength(2);
+    const component = render(<Pagination total={100} current={5} bufferSize={1} />);
+    expect(component.find('.arco-pagination-item-jumper')).toHaveLength(2);
     // < + begin + ...  + bufferSize + current + bufferSize + ... + end + > = 9
-    expect(wrapper.find('.arco-pagination-item')).toHaveLength(9);
+    expect(component.find('.arco-pagination-item')).toHaveLength(9);
 
-    wrapper.setProps({ current: 2 });
-    wrapper.update();
-    expect(wrapper.find('.arco-pagination-item-jumper')).toHaveLength(1);
+    component.rerender(<Pagination total={100} current={2} bufferSize={1} />);
+    expect(component.find('.arco-pagination-item-jumper')).toHaveLength(1);
   });
 
   it('show jumper correctly in simple mode', () => {
-    const wrapper = mountPagination(<Pagination simple total={100} current={5} />);
-    expect(wrapper.find('PageJumper').find('input').prop('value')).toEqual('5');
-    act(() => {
-      wrapper.setProps({
-        showJumper: false,
-      });
-      wrapper.update();
-    });
-    expect(wrapper.find('PageJumper').find('Input')).toHaveLength(0);
-    expect(wrapper.find('PageJumper').text()).toEqual('5/10');
+    const component = render(<Pagination simple total={100} current={5} />);
+    expect(component.find<HTMLInputElement>('.arco-pagination-jumper-input')[0].value).toEqual('5');
+    component.rerender(<Pagination simple total={100} current={5} showJumper={false} />);
+    expect(component.find('.arco-pagination-jumper-input')).toHaveLength(0);
   });
 });

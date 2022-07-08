@@ -15,7 +15,7 @@ Pass in `okButtonProps` and `cancelButtonProps` to customize the props of the OK
 
 ```js
 import React from 'react';
-import { Modal, Button } from '@arco-design/web-react';
+import { Modal, Button, Space} from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);
@@ -23,11 +23,10 @@ function App() {
   const [loading1, setLoading1] = React.useState(false);
   const [visible2, setVisible2] = React.useState(false);
   return (
-    <div>
+    <Space size="large">
       <Button
         onClick={() => setVisible(true)}
         type="primary"
-        style={{ marginBottom: 20, marginRight: 24 }}
       >
         Open Modal with customized button props
       </Button>
@@ -59,7 +58,6 @@ function App() {
           setVisible1(true);
         }}
         type="primary"
-        style={{ marginBottom: 20, marginRight: 24 }}
       >
         Open Modal with customized footer
       </Button>
@@ -85,7 +83,6 @@ function App() {
                 }, 1500);
               }}
               type="primary"
-              style={{ marginLeft: 12 }}
             >
               Submit
             </Button>
@@ -107,7 +104,6 @@ function App() {
           setVisible2(true);
         }}
         type="primary"
-        style={{ marginBottom: 20 }}
       >
         Open Modal without footer
       </Button>
@@ -125,7 +121,7 @@ function App() {
         <p>Some content...</p>
         <p>Some content...</p>
       </Modal>
-    </div>
+    </Space>
   );
 }
 

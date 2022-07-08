@@ -11,7 +11,7 @@ import { isFunction } from '../_util/is';
 
 function Radio(baseProps: RadioProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<RadioProps>(baseProps, {}, componentConfig?.Radio);
 
   const context = useContext(RadioGroupContext);
@@ -37,6 +37,7 @@ function Radio(baseProps: RadioProps) {
     {
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

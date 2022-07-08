@@ -20,7 +20,7 @@ const defaultProps: BreadcrumbProps = {
 };
 
 function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<BreadcrumbProps>>(
     baseProps,
     defaultProps,
@@ -111,7 +111,7 @@ function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
       role="list"
       ref={ref}
       style={style}
-      className={cs(prefixCls, className)}
+      className={cs(prefixCls, { [`${prefixCls}-rtl`]: rtl }, className)}
       {...omit(rest, ['itemRender'])}
     >
       {routes && routes.length ? getItemsByRoute() : getItemsByChildren()}

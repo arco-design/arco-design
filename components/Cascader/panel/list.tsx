@@ -61,6 +61,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     showEmptyChildren,
     loadMore,
     renderEmpty,
+    rtl,
   } = props;
 
   const [activeNode, setActiveNode] = useState(
@@ -280,6 +281,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
               className={cs(`${prefixCls}-list-column`, {
                 [`${prefixCls}-list-column-virtual`]:
                   props.virtualListProps && props.virtualListProps.threshold !== null,
+                [`${prefixCls}-list-column-rtl`]: rtl,
               })}
               style={{ zIndex: menus.length - level, ...props.dropdownMenuColumnStyle }}
             >
@@ -304,6 +306,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                       ref={(node) => setRefWrapper(node?.dom as HTMLUListElement, level)}
                       className={cs(`${prefixCls}-list`, `${prefixCls}-list-select`, {
                         [`${prefixCls}-list-multiple`]: multiple,
+                        [`${prefixCls}-list-rtl`]: rtl,
                       })}
                     >
                       {(option) => {
@@ -332,6 +335,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                           >
                             <Option
                               prefixCls={prefixCls}
+                              rtl={rtl}
                               multiple={multiple}
                               option={option}
                               // 叶子节点被选中

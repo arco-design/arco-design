@@ -27,6 +27,7 @@ export interface NoticeProps {
   noticeType?: 'message' | 'notification';
   update?: boolean;
   closable?: boolean;
+  rtl?: boolean;
 }
 
 class Notice extends Component<NoticeProps, {}> {
@@ -134,12 +135,14 @@ class Notice extends Component<NoticeProps, {}> {
       closable,
       noticeType,
       iconPrefix,
+      rtl,
     } = this.props;
     const classNames = cs(
       prefixCls,
       `${prefixCls}-${type}`,
       {
         [`${prefixCls}-closable`]: closable,
+        [`${prefixCls}-rtl`]: rtl,
       },
       className
     );

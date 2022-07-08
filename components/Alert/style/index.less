@@ -177,3 +177,32 @@
     margin-right: 0;
   }
 }
+
+.@{alert-prefix-cls}-rtl {
+  direction: rtl;
+  text-align: right;
+
+  .@{alert-prefix-cls}-with-title {
+    align-items: flex-end;
+  }
+
+  .@{alert-prefix-cls}-icon-wrapper {
+    margin-right: 0;
+    margin-left: @alert-margin-icon-right;
+  }
+
+  .@{alert-prefix-cls}-close-btn {
+    right: initial;
+    left: 0;
+  }
+
+  .@{alert-prefix-cls}-action {
+    margin-left: 0;
+    margin-right: @alert-margin-action-left;
+
+    + .@{alert-prefix-cls}-close-btn {
+      margin-left: 0;
+      margin-right: @alert-margin-action-right;
+    }
+  }
+}

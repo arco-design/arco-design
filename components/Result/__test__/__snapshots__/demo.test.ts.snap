@@ -1383,7 +1383,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin-right:16px"
+        style="margin:0 16px"
         type="button"
       >
         <span>
@@ -2220,7 +2220,7 @@ exports[`renders Result/demo/basic.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin-right:16px"
+        style="margin:0 16px"
         type="button"
       >
         <span>
@@ -2281,7 +2281,7 @@ exports[`renders Result/demo/error.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin-right:16px"
+        style="margin:0 16px"
         type="button"
       >
         <span>

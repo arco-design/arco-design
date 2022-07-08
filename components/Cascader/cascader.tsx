@@ -53,10 +53,11 @@ const defaultProps: CascaderProps = {
   trigger: 'click',
   expandTrigger: 'click',
   checkedStrategy: SHOW_CHILD,
+  defaultActiveFirstOption: true,
 };
 
 function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CascaderProps>(baseProps, defaultProps, componentConfig?.Cascader);
   const { disabled, renderFormat, getPopupContainer, children, triggerProps, expandTrigger } =
     props;
@@ -322,11 +323,13 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                   handleChange(value, 'panel');
                 }}
                 prefixCls={prefixCls}
+                rtl={rtl}
                 onEsc={() => {
                   handleVisibleChange(false);
                 }}
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
+                defaultActiveFirstOption={props.defaultActiveFirstOption}
               />
             ) : (
               <CascaderPanel
@@ -344,6 +347,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 }}
                 loadMore={props.loadMore}
                 prefixCls={prefixCls}
+                rtl={rtl}
                 renderEmpty={renderEmptyEle}
                 popupVisible={popupVisible}
                 value={mergeValue}
@@ -374,7 +378,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
       trigger={props.trigger}
       disabled={disabled}
       getPopupContainer={getPopupContainer}
-      position="bl"
+      position={rtl ? 'br' : 'bl'}
       classNames="slideDynamicOrigin"
       popupAlign={{ bottom: 4 }}
       // 动态加载时，unmountOnExit 默认为false。
@@ -391,6 +395,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
           popupVisible={popupVisible}
           value={isMultiple ? mergeValue : mergeValue && mergeValue[0]}
           inputValue={inputValue}
+          rtl={rtl}
           // other
           isEmptyValue={isEmptyValue(mergeValue)}
           prefixCls={prefixCls}

@@ -73,6 +73,7 @@ const Form = <
     ...rest
   } = props;
   const prefixCls = formPrefixCls || ctx.getPrefixCls('form');
+  const rtl = ctx.rtl;
   const size = 'size' in props ? props.size : ctx.size;
   const innerMethods = formInstance.getInnerMethods(true);
   if (!isMount.current) {
@@ -176,6 +177,7 @@ const Form = <
             prefixCls,
             `${prefixCls}-${layout}`,
             `${prefixCls}-size-${size}`,
+            { [`${prefixCls}-rtl`]: rtl },
             className
           )}
           style={props.style}

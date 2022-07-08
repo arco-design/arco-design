@@ -14,28 +14,28 @@ title:
 Basic usage
 
 ```js
-import { InputTag } from '@arco-design/web-react';
+import { InputTag, Space } from '@arco-design/web-react';
 
 const App = () => {
   return (
     <div>
-      <div style={{ marginBottom: 20 }}>
+      <Space style={{marginBottom: 20}}>
         <InputTag
           allowClear
           placeholder="Input and press Enter"
-          style={{ maxWidth: 350, marginRight: 20 }}
+          style={{ width: 350 }}
         />
-        <InputTag allowClear placeholder="Disabled" disabled style={{ maxWidth: 350 }} />
-      </div>
-      <div>
+        <InputTag allowClear placeholder="Disabled" disabled style={{ width: 350 }}/>
+      </Space>
+      <Space>
         <InputTag
           allowClear
           placeholder="Readonly"
           readOnly
-          style={{ maxWidth: 350, marginRight: 20 }}
+          style={{ width: 350 }}
         />
-        <InputTag allowClear placeholder="Error" error style={{ maxWidth: 350 }} />
-      </div>
+        <InputTag allowClear placeholder="Error" error style={{ width: 350 }}/>
+      </Space>
     </div>
   );
 };

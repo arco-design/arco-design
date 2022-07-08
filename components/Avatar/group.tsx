@@ -14,7 +14,7 @@ const defaultProps: AvatarGroupProps = {
 };
 
 function Group(baseProps: PropsWithChildren<AvatarGroupProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<AvatarGroupProps>>(
     baseProps,
     defaultProps,
@@ -35,7 +35,13 @@ function Group(baseProps: PropsWithChildren<AvatarGroupProps>, ref) {
   } = props;
 
   const prefixCls = getPrefixCls('avatar-group');
-  const classNames = cs(prefixCls, className);
+  const classNames = cs(
+    prefixCls,
+    {
+      [`${prefixCls}-rtl`]: rtl,
+    },
+    className
+  );
 
   const childrenArr = React.Children.toArray(children);
   const avatarCount = childrenArr.length;
@@ -67,9 +73,10 @@ function Group(baseProps: PropsWithChildren<AvatarGroupProps>, ref) {
   return (
     <div ref={ref} style={style} className={classNames} {...rest}>
       {avatarsToRender.map((item, index) => {
+        const isFirst = rtl ? index === avatarsToRender.length - 1 : index === 0;
         const stackedStyle = {
           zIndex: zIndexAscend ? index + 1 : avatarCount - index,
-          marginLeft: size ? (index !== 0 ? -size / 4 : 0) : '',
+          marginLeft: size ? (!isFirst ? -size / 4 : 0) : '',
         };
         return (
           <AvatarContext.Provider

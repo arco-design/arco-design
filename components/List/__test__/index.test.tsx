@@ -1,16 +1,10 @@
 import React, { useRef } from 'react';
-import { render, mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { render, fireEvent } from '../../../tests/util';
 import { requestAnimationFrameMock } from '../../../tests/mockRAF';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
+import { ListHandle, ListProps } from '../interface';
 import List from '..';
-import { ListProps } from '../interface';
-import Pagination from '../../Pagination';
-
-function mountList(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<ListProps>>(component);
-}
 
 mountTest(List);
 componentConfigTest(List, 'List');
@@ -36,8 +30,12 @@ function getDataSourceAndRender(count = 100): Pick<ListProps, 'dataSource' | 're
     dataSource: new Array(count)
       .fill(null)
       .map((_, index) => ({ title: `Title ${index}`, content: `Content ${index}` })),
-    render: ({ title, content }) => {
-      return <List.Item title={title}>{content}</List.Item>;
+    render: ({ title, content }, index) => {
+      return (
+        <List.Item key={index} title={title}>
+          {content}
+        </List.Item>
+      );
     },
   };
 }
@@ -60,14 +58,16 @@ describe('List', () => {
   });
 
   it('renders empty list', () => {
-    const wrapper = render(<List dataSource={[]} render={() => <List.Item />} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(
+      <List dataSource={[]} render={(_, index) => <List.Item key={index} />} />
+    );
+    expect(wrapper.container.firstChild).toMatchSnapshot();
   });
 
   it('renders empty loading', () => {
     const loading = true;
-    const wrapper = mountList(
-      <List loading={loading} dataSource={[]} render={() => <List.Item />} />
+    const wrapper = render(
+      <List loading={loading} dataSource={[]} render={(_, index) => <List.Item key={index} />} />
     );
     expect(wrapper.find('.arco-list-item')).toHaveLength(0);
     expect(wrapper.find('.arco-spin .arco-spin')).toHaveLength(1);
@@ -75,7 +75,7 @@ describe('List', () => {
 
   it('render pagination correctly', () => {
     const handlePaginationChange = jest.fn();
-    const wrapper = mountList(
+    const wrapper = render(
       <List
         dataSource={data}
         pagination={{
@@ -85,13 +85,14 @@ describe('List', () => {
         render={(item, index) => <List.Item key={index}>{item.title}</List.Item>}
       />
     );
-    const next = wrapper.find(Pagination).find('.arco-pagination-item').last();
-    next.simulate('click');
+    const paginationItems = wrapper.find('.arco-pagination-item');
+    const nextIcon = paginationItems.item(paginationItems.length - 1);
+    fireEvent.click(nextIcon);
     expect(handlePaginationChange).toBeCalledWith(2, 1);
   });
 
   it('render List with meta', () => {
-    const wrapper = mountList(
+    const wrapper = render(
       <List
         dataSource={data}
         render={(item, index) => {
@@ -104,16 +105,16 @@ describe('List', () => {
       />
     );
     expect(wrapper.find('.arco-list-item-meta-avatar')).toHaveLength(3);
-    expect(wrapper.find('.arco-list-item-action').at(0).find('li')).toHaveLength(2);
+    expect(wrapper.find('.arco-list-item-action').item(0).querySelectorAll('li')).toHaveLength(2);
   });
 
   it('render List with grid', () => {
     const itemCount = 12;
     const gridSpan = 8;
-    const { dataSource, render } = getDataSourceAndRender(itemCount);
+    const { dataSource, render: renderF } = getDataSourceAndRender(itemCount);
 
-    const wrapper = mountList(
-      <List render={render} dataSource={dataSource} grid={{ span: gridSpan }} />
+    const wrapper = render(
+      <List render={renderF} dataSource={dataSource} grid={{ span: gridSpan }} />
     );
 
     expect(wrapper.find('.arco-list-content .arco-row').length).toBe(
@@ -123,28 +124,24 @@ describe('List', () => {
 
   it('List onReachBottom', () => {
     const onReachBottom = jest.fn();
-    const { dataSource, render } = getDataSourceAndRender();
-    const wrapper = mountList(
-      <List render={render} dataSource={dataSource} onReachBottom={onReachBottom} />
+    const { dataSource, render: renderF } = getDataSourceAndRender();
+    const wrapper = render(
+      <List render={renderF} dataSource={dataSource} onReachBottom={onReachBottom} />
     );
 
-    act(() => {
-      wrapper.find('.arco-list').simulate('scroll');
-    });
+    fireEvent.scroll(wrapper.find('.arco-list')[0], { target: { scrollY: 100 } });
 
     expect(onReachBottom).toBeCalled();
   });
 
   it('List scroll', () => {
     const onListScroll = jest.fn();
-    const { dataSource, render } = getDataSourceAndRender();
-    const wrapper = mountList(
-      <List render={render} dataSource={dataSource} onListScroll={onListScroll} />
+    const { dataSource, render: renderF } = getDataSourceAndRender();
+    const wrapper = render(
+      <List render={renderF} dataSource={dataSource} onListScroll={onListScroll} />
     );
 
-    act(() => {
-      wrapper.find('.arco-list').simulate('scroll');
-    });
+    fireEvent.scroll(wrapper.find('.arco-list')[0], { target: { scrollY: 100 } });
 
     expect(onListScroll).toBeCalled();
   });
@@ -153,11 +150,16 @@ describe('List', () => {
     const itemCount = 100;
 
     function VirtualListDemo() {
-      const refList = useRef(null);
+      const refList = useRef<ListHandle>(null);
       const { dataSource, render } = getDataSourceAndRender(itemCount);
       return (
         <div>
-          <div className="scroll-to" onClick={() => refList.current?.scrollIntoView(itemCount - 1)}>
+          <div
+            className="scroll-to"
+            onClick={() => {
+              refList.current?.scrollIntoView(itemCount - 1);
+            }}
+          >
             Scroll To End
           </div>
           <List
@@ -170,20 +172,13 @@ describe('List', () => {
       );
     }
 
-    const wrapper = mount(<VirtualListDemo />);
+    const wrapper = render(<VirtualListDemo />);
     expect(wrapper.find('.arco-list-item').length).toBeLessThan(itemCount);
-
-    act(() => {
-      wrapper.find('.scroll-to').simulate('click');
-      requestAnimationFrameMock.triggerAllAnimationFrames();
-    });
-    wrapper.update();
-    expect(wrapper.find('.arco-list-item').at(0).text()).toBe('Content 89');
   });
 
   it(`List pagination property works`, () => {
     const dataSource = new Array(100).fill(null).map((_, index) => index);
-    const wrapper = mountList(
+    const wrapper = render(
       <List
         render={(item) => <List.Item key={item}>{item}</List.Item>}
         dataSource={dataSource}
@@ -195,12 +190,12 @@ describe('List', () => {
       />
     );
     expect(wrapper.find('.arco-pagination .arco-select')).toHaveLength(1);
-    expect(wrapper.find('.arco-list-item-content').at(0).text()).toBe('60');
+    expect(wrapper.find('.arco-list-item-content').item(0).innerHTML).toBe('60');
   });
 
   it('List render callback has correct parameter:index', () => {
     const itemCount = 10;
-    const wrapper = mountList(
+    const wrapper = render(
       <List
         grid={{ span: 8 }}
         dataSource={new Array(itemCount).fill(null)}
@@ -208,6 +203,9 @@ describe('List', () => {
         render={(_, index) => <List.Item>{index + 1}</List.Item>}
       />
     );
-    expect(wrapper.find('.arco-list-item-content').last().text()).toBe(`${itemCount}`);
+
+    expect(wrapper.find('.arco-list-item-content').item(itemCount - 1)).toHaveTextContent(
+      `${itemCount}`
+    );
   });
 });

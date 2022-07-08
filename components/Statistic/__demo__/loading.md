@@ -23,7 +23,7 @@ function App() {
     <div>
       <div style={{ marginBottom: 24 }}>
         <Switch checked={loading} onChange={setLoading} />
-        <Typography.Text>Loading</Typography.Text>
+        <Typography.Text style={{ margin: '0 10px' }}>Loading</Typography.Text>
       </div>
       <Statistic title="Downloads" value={125670} groupSeparator loading={loading} />
     </div>

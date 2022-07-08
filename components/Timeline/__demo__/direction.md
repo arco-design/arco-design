@@ -1,6 +1,6 @@
 ---
 order: 6
-title: 
+title:
   zh-CN: 横向时间轴
   en-US: Direction
 ---
@@ -19,6 +19,10 @@ import { Timeline, Grid, Radio, Typography } from '@arco-design/web-react';
 
 const TimelineItem = Timeline.Item;
 const { Row } = Grid;
+
+const imageStyle = {
+  margin: '0 12px 12px 12px'
+}
 
 function App() {
   const [mode, setMode] = React.useState('top');
@@ -53,7 +57,7 @@ function App() {
           <Row align="center">
             <img
               width="40"
-              style={{ marginRight: 16, marginBottom: 12, }}
+              style={imageStyle}
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
             />
             <div style={{ marginBottom: 12, }} >
@@ -68,7 +72,7 @@ function App() {
           <Row align="center">
             <img
               width="40"
-              style={{ marginRight: 16, marginBottom: 12, }}
+              style={imageStyle}
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
             />
             <div style={{ marginBottom: 12, }} >
@@ -83,7 +87,7 @@ function App() {
           <Row align="center">
             <img
               width="40"
-              style={{ marginRight: 16, marginBottom: 12, }}
+              style={imageStyle}
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
             />
             <div style={{ marginBottom: 12, }} >

@@ -57,7 +57,7 @@
 |loading|是否为加载状态。|boolean |`-`|-|
 |allowClear|允许清除值。|boolean |`-`|-|
 |allowCreate|是否允许通过输入创建新的选项。|boolean |`-`|2.13.0|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|number |`-`|-|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |prefix|前缀。|ReactNode |`-`|2.11.0|
 |suffixIcon|自定义选择框后缀图标。|ReactNode |`-`|-|
 |arrowIcon|自定义箭头图标，设置为 `null` 不显示箭头图标。|ReactNode \| null |`-`|-|
@@ -65,7 +65,7 @@
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|
 |onClick|鼠标点击下拉框时的回调|(e) => void |`-`|-|
 |animation|是否为内部标签变化添加动画。|boolean |`true`|2.15.0|
-|renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => React.ReactNode |`-`|index、values added in 2.15.0|
+|renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
 |dragToSort|是否可以通过拖拽为 Tag 排序|boolean |`-`|2.27.0|
 
 ### Select.Option

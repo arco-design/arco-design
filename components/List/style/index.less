@@ -172,3 +172,33 @@
     }
   }
 }
+
+.@{list-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{list-prefix-cls} {
+    &-item-meta {
+      &-avatar {
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-left: @list-meta-margin-right-avatar;
+        }
+      }
+    }
+
+    &-item-action {
+      > li {
+        &:not(:last-child) {
+          margin-left: @list-action-gap;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.@{list-prefix-cls}-wrapper-rtl {
+  .@{list-prefix-cls}-pagination {
+    float: left;
+  }
+}

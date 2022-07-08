@@ -14,28 +14,21 @@ title:
 The card can only have a content area.
 
 ```js
-import { Card, Avatar, Link, Typography } from '@arco-design/web-react';
+import { Card, Avatar, Link, Typography, Space } from '@arco-design/web-react';
 import { IconArrowRight } from '@arco-design/web-react/icon';
 
 const Content = ({ children }) => {
   return (
-    <div
+    <Space
       style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
       }}
     >
-      <span
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          color: '#1D2129',
-        }}
-      >
+      <Space>
         <Avatar
           style={{
-            marginRight: 8,
             backgroundColor: '#165DFF',
           }}
           size={28}
@@ -43,9 +36,9 @@ const Content = ({ children }) => {
           A
         </Avatar>
         <Typography.Text>Username</Typography.Text>
-      </span>
+      </Space>
       {children}
-    </div>
+    </Space>
   );
 };
 

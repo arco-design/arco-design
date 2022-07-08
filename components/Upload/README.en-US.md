@@ -44,6 +44,7 @@ Upload file by selecting or dragging.
 |onReupload|Callback when the re-upload icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
 |onExceedLimit|Callback when limit is exceeded|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
 |beforeUpload|Callback before uploading. Uploading will be aborted when the return value is false or a Promise which resolve(false) or reject.|(file: File, filesList: File[]) =&gt; boolean \| Promise&lt;any&gt; |`() => true`|-|
+|onDrop|Callback after drag file to the upload area and drop.|(e: React.DragEvent) => void |`-`|2.37.0|
 
 ### UploadListProps
 
@@ -133,7 +134,21 @@ export type UploadStatus = "init" | "uploading" | "done" | "error";
 | abort   | cancel upload request	 | `(file: UploadItem) => void` |
 | reupload   | re-upload request	 | `(file: UploadItem) => void` |
 
-
+```js
+// Custom icons
+type CustomIconType = {
+  previewIcon?: ReactNode;
+  removeIcon?: ReactNode;
+  fileIcon?: ReactNode;
+  reuploadIcon?: ReactNode;
+  cancelIcon?: ReactNode;
+  startIcon?: ReactNode;
+  errorIcon?: ReactNode;
+  fileName?: (file: UploadItem) => ReactNode;
+  progressRender?: (file: UploadItem, originDom: ReactNode) => ReactElement; // 2.34.0
+  imageRender?: (file: UploadItem) => ReactNode; // 2.34.0
+}
+```
 ## Q&A
 
 #### How to control the status and progress of uploaded files?

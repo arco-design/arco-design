@@ -16,7 +16,7 @@ const defaultProps: AlertProps = {
 };
 
 function Alert(baseProps: AlertProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<AlertProps>(baseProps, defaultProps, componentConfig?.Alert);
   const {
     style,
@@ -67,6 +67,7 @@ function Alert(baseProps: AlertProps, ref) {
     {
       [`${prefixCls}-with-title`]: title,
       [`${prefixCls}-banner`]: banner,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

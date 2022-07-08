@@ -15,7 +15,7 @@ Set `okText` and `cancelText` to customize the button text.
 
 ```js
 import React from 'react';
-import { Modal, Button } from '@arco-design/web-react';
+import { Modal, Button, Space } from '@arco-design/web-react';
 
 function App() {
   const [visible, setVisible] = React.useState(false);
@@ -40,8 +40,8 @@ function App() {
   }
 
   return (
-    <div>
-      <Button onClick={() => setVisible(true)} type="primary" style={{ marginRight: 24 }}>
+    <Space>
+      <Button onClick={() => setVisible(true)} type="primary">
         Modal
       </Button>
       <Modal
@@ -58,14 +58,14 @@ function App() {
         </p>
       </Modal>
 
-      <Button type="primary" onClick={confirm} style={{ marginRight: 24 }}>
+      <Button type="primary" onClick={confirm}>
         Confirm
       </Button>
 
       <Button type="primary" onClick={openInfo}>
         info
       </Button>
-    </div>
+    </Space>
   );
 }
 

@@ -3,6 +3,7 @@ import Tooltip from '../Tooltip';
 import { ConfigContext } from '../ConfigProvider';
 import { PopoverProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import cs from '../_util/classNames';
 
 const defaultProps: PopoverProps = {
   position: 'top',
@@ -11,7 +12,7 @@ const defaultProps: PopoverProps = {
 };
 
 function Popover(baseProps: PropsWithChildren<PopoverProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<PopoverProps>>(
     baseProps,
     defaultProps,
@@ -49,7 +50,7 @@ function Popover(baseProps: PropsWithChildren<PopoverProps>, ref) {
       position={position}
       trigger={trigger}
       content={
-        <div className={`${prefixCls}-inner`}>
+        <div className={cs(`${prefixCls}-inner`, { [`${prefixCls}-inner-rtl`]: rtl })}>
           {title ? <div className={`${prefixCls}-title`}>{title}</div> : null}
           <div className={`${prefixCls}-inner-content`}>{content}</div>
         </div>

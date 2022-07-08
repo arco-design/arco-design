@@ -35,7 +35,7 @@ const defaultProps: PaginationProps = {
 };
 
 function Pagination(baseProps: PaginationProps, ref) {
-  const { getPrefixCls, size: ctxSize, locale, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, locale, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PaginationProps>(
     baseProps,
     defaultProps,
@@ -149,6 +149,7 @@ function Pagination(baseProps: PaginationProps, ref) {
     {
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

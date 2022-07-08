@@ -15,7 +15,7 @@ Provides array management for fields.
 
 ```js
 import { useRef, useState } from 'react';
-import { Form, Input, Button, Grid } from '@arco-design/web-react';
+import { Form, Input, Button, Grid, Space } from '@arco-design/web-react';
 import { IconArrowRise, IconArrowFall, IconDelete } from '@arco-design/web-react/icon';
 
 function App() {
@@ -79,9 +79,8 @@ function App() {
                     </Grid.Row>
                   );
                 })}
-                <div>
+                <Space size={20}>
                   <Button
-                    style={{ marginRight: 20 }}
                     onClick={() => {
                       add();
                     }}
@@ -95,37 +94,38 @@ function App() {
                   >
                     Add post to the second slot
                   </Button>
-                </div>
+                </Space>
               </div>
             );
           }}
         </Form.List>
         <Form.Item style={{ marginTop: 20 }}>
-          <Button type="primary" htmlType="submit" style={{ marginRight: 20 }}>
-            Submit
-          </Button>
-          <Button
-            style={{ marginRight: 20 }}
-            onClick={() => {
-              formRef.current.resetFields();
-            }}
-          >
-            Reset
-          </Button>
-          <Button
-            status="danger"
-            onClick={() => {
-              formRef.current.setFields({
-                'posts[0]': {
-                  error: {
-                    message: 'error',
+          <Space size={20}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+            <Button
+              onClick={() => {
+                formRef.current.resetFields();
+              }}
+            >
+              Reset
+            </Button>
+            <Button
+              status="danger"
+              onClick={() => {
+                formRef.current.setFields({
+                  'posts[0]': {
+                    error: {
+                      message: 'error',
+                    },
                   },
-                },
-              });
-            }}
-          >
-            Set `Post-0` to error state
-          </Button>
+                });
+              }}
+            >
+              Set `Post-0` to error state
+            </Button>
+          </Space>
         </Form.Item>
       </Form>
     </div>

@@ -121,7 +121,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   });
 
   const prefixCls = context.getPrefixCls('modal', props.prefixCls);
-  const { locale } = context;
+  const { locale, rtl } = context;
 
   // 简洁模式下默认不显示关闭按钮
   const defaultClosable = !simple;
@@ -285,6 +285,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         prefixCls,
         {
           [`${prefixCls}-simple`]: simple,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}
@@ -360,6 +361,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             {
               [`${prefixCls}-wrapper-no-mask`]: !mask,
               [`${prefixCls}-wrapper-align-center`]: alignCenter,
+              [`${prefixCls}-wrapper-rtl`]: rtl,
             },
             wrapClassName
           )}

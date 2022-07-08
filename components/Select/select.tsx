@@ -57,7 +57,7 @@ const defaultProps: SelectProps = {
 };
 
 function Select(baseProps: SelectProps, ref) {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SelectProps>(baseProps, defaultProps, componentConfig?.Select);
   const {
     children,
@@ -520,6 +520,7 @@ function Select(baseProps: SelectProps, ref) {
             const optionValue = child.props?.value;
             const optionProps: Partial<SelectOptionProps> = {
               prefixCls,
+              rtl,
               _valueActive: valueActive,
               _valueSelect: value,
               _isMultipleMode: isMultipleMode,
@@ -713,6 +714,7 @@ function Select(baseProps: SelectProps, ref) {
                 inputValue={inputValue}
                 popupVisible={popupVisible}
                 // other
+                rtl={rtl}
                 prefixCls={prefixCls}
                 ariaControls={instancePopupID}
                 isEmptyValue={isNoOptionSelected}

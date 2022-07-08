@@ -102,6 +102,6 @@ export default App;
 }
 
 .list-demo-action-layout .arco-list-item-action .arco-icon {
-  margin-right: 4px;
+  margin: 0 4px;
 }
 ```
