@@ -60,7 +60,7 @@ Display options in a multi-level cascading dropdown component.
 |showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.|`boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean }`|`-`|-|
 |error|Error Style|`boolean`|`-`|-|
 |allowClear|Whether allow to clear selected options|`boolean`|`-`|-|
-|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.|`number`|`-`|-|
+|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. (Object types are supported in version `2.37.0`)|`\| number\| {count: number;render: (invisibleTagCount: number) => ReactNode;}`|`-`|-|
 |suffixIcon|Customize select suffix icon|`ReactNode`|`-`|-|
 |arrowIcon|Customize select arrow icon.|`ReactNode \| null`|`-`|-|
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|`ReactNode \| null`|`-`|-|

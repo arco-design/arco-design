@@ -49,7 +49,7 @@ Can choose tree structure data.Only Single choice is supports.
 |loading|Whether is in loading|`boolean`|`-`|-|
 |allowClear|Whether allow to clear selected options|`boolean`|`-`|-|
 |allowCreate|Whether to allow new options to be created by input.|`boolean`|`-`|2.13.0|
-|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.|`number`|`-`|-|
+|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. (Object types are supported in version `2.37.0`)|`\| number\| {count: number;render: (invisibleTagCount: number) => ReactNode;}`|`-`|-|
 |prefix|Customize select suffix|`ReactNode`|`-`|2.11.0|
 |suffixIcon|Customize select suffix icon|`ReactNode`|`-`|-|
 |arrowIcon|Customize select arrow icon.|`ReactNode \| null`|`-`|-|
@@ -57,5 +57,5 @@ Can choose tree structure data.Only Single choice is supports.
 |clearIcon|Configure the icon of the clear button when `allowClear`.|`ReactNode`|`-`|2.26.0|
 |onClick|Callback when the mouse clicks on the drop-down box|`(e) => void`|`-`|-|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
-|renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
+|renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => ReactNode`|`-`|index、values added in 2.15.0|
 |dragToSort|Weather it is possible to sort tags by drag|`boolean`|`-`|2.27.0|
