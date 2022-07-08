@@ -57,15 +57,14 @@ const App = () => {
       accept="image/*"
       action="/"
       onDrop={(e) => {
-        console.log('触发了！！！')
         let uploadFile = e.dataTransfer.files[0]
         if (isAcceptFile(uploadFile, "image/*")) {
           return
         } else {
-           Message.info('类型不对哦小宝贝~');
+           Message.info('不接受的文件类型，请重新上传指定文件类型~');
         }
       }}
-      tip="Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB"
+      tip="Only pictures can be uploaded"
     />
   );
 };

@@ -205,6 +205,12 @@ export interface UploadProps {
    * @defaultValue () => true
    */
   beforeUpload?: (file: File, filesList: File[]) => boolean | Promise<any>;
+  /**
+   * @zh 拖拽上传文件时执行的回调
+   * @en Callback after drag file to the upload area and drop.
+   * @version 2.37.0
+   */
+  onDrop?: (e: React.DragEvent) => void;
 }
 
 /**
@@ -296,7 +302,6 @@ export interface UploaderProps extends UploadProps {
   prefixCls?: string;
   limit?: number;
   hide?: boolean;
-  onDrop?: (e: React.DragEvent) => void;
   onFileStatusChange?: (file: UploadItem) => void;
 }
 
