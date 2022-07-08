@@ -13,7 +13,7 @@ const defaultProps: CardProps = {
 };
 
 function Card(baseProps: CardProps, ref) {
-  const { getPrefixCls, loadingElement, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, loadingElement, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CardProps>(baseProps, defaultProps, componentConfig?.Card);
   const {
     className,
@@ -73,6 +73,7 @@ function Card(baseProps: CardProps, ref) {
           [`${prefixCls}-bordered`]: bordered,
           [`${prefixCls}-hoverable`]: hoverable,
           [`${prefixCls}-contain-grid`]: isContainGrid,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

@@ -343,66 +343,75 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
 
 exports[`renders Card/demo/hoverable.md correctly 1`] = `
 <div
-  style="display:flex"
+  class="arco-space arco-space-horizontal arco-space-align-center"
 >
   <div
-    class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
-    style="width:360px"
+    class="arco-space-item"
+    style="margin-right:8px"
   >
     <div
-      class="arco-card-header"
+      class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
+      style="width:360px"
     >
       <div
-        class="arco-card-header-title"
+        class="arco-card-header"
       >
-        Arco Card
-      </div>
-      <div
-        class="arco-card-header-extra"
-      >
-        <span
-          class="arco-link"
+        <div
+          class="arco-card-header-title"
         >
-          More
-        </span>
+          Arco Card
+        </div>
+        <div
+          class="arco-card-header-extra"
+        >
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="arco-card-body"
-    >
-      Card content
-      <br />
-      Card content
+      <div
+        class="arco-card-body"
+      >
+        Card content
+        <br />
+        Card content
+      </div>
     </div>
   </div>
   <div
-    class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable card-custom-hover-style"
-    style="width:360px;margin-left:24px"
+    class="arco-space-item"
   >
     <div
-      class="arco-card-header"
+      class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable card-custom-hover-style"
+      style="width:360px"
     >
       <div
-        class="arco-card-header-title"
+        class="arco-card-header"
       >
-        Custom hover style
-      </div>
-      <div
-        class="arco-card-header-extra"
-      >
-        <span
-          class="arco-link"
+        <div
+          class="arco-card-header-title"
         >
-          More
-        </span>
+          Custom hover style
+        </div>
+        <div
+          class="arco-card-header-extra"
+        >
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="arco-card-body"
-    >
-      Card content 
-      <br />
-       Card content
+      <div
+        class="arco-card-body"
+      >
+        Card content 
+        <br />
+         Card content
+      </div>
     </div>
   </div>
 </div>
@@ -530,66 +539,76 @@ exports[`renders Card/demo/meta.md correctly 1`] = `
 
 exports[`renders Card/demo/no-border.md correctly 1`] = `
 <div
-  style="display:flex;width:100%;box-sizing:border-box;padding:40px;background-color:var(--color-fill-2)"
+  class="arco-space arco-space-horizontal arco-space-align-center"
+  style="padding:40px;background-color:var(--color-fill-2)"
 >
   <div
-    class="arco-card arco-card-size-default"
-    style="width:360px"
+    class="arco-space-item"
+    style="margin-right:24px"
   >
     <div
-      class="arco-card-header"
+      class="arco-card arco-card-size-default"
+      style="width:360px"
     >
       <div
-        class="arco-card-header-title"
+        class="arco-card-header"
       >
-        Arco Card
-      </div>
-      <div
-        class="arco-card-header-extra"
-      >
-        <span
-          class="arco-link"
+        <div
+          class="arco-card-header-title"
         >
-          More
-        </span>
+          Arco Card
+        </div>
+        <div
+          class="arco-card-header-extra"
+        >
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="arco-card-body"
-    >
-      Card content
-      <br />
-      Card content
+      <div
+        class="arco-card-body"
+      >
+        Card content
+        <br />
+        Card content
+      </div>
     </div>
   </div>
   <div
-    class="arco-card arco-card-size-default arco-card-hoverable"
-    style="width:360px;margin-left:24px"
+    class="arco-space-item"
   >
     <div
-      class="arco-card-header"
+      class="arco-card arco-card-size-default arco-card-hoverable"
+      style="width:360px"
     >
       <div
-        class="arco-card-header-title"
+        class="arco-card-header"
       >
-        Hover me
-      </div>
-      <div
-        class="arco-card-header-extra"
-      >
-        <span
-          class="arco-link"
+        <div
+          class="arco-card-header-title"
         >
-          More
-        </span>
+          Hover me
+        </div>
+        <div
+          class="arco-card-header-extra"
+        >
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="arco-card-body"
-    >
-      Card content
-      <br />
-      Card content
+      <div
+        class="arco-card-body"
+      >
+        Card content
+        <br />
+        Card content
+      </div>
     </div>
   </div>
 </div>
@@ -605,32 +624,51 @@ Array [
       class="arco-card-body"
     >
       <div
+        class="arco-space arco-space-horizontal arco-space-align-center"
         style="display:flex;align-items:center;justify-content:space-between"
       >
-        <span
-          style="display:flex;align-items:center;color:#1D2129"
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
         >
           <div
-            class="arco-avatar arco-avatar-circle"
-            style="width:28px;height:28px;font-size:14px;margin-right:8px;background-color:#165DFF"
+            class="arco-space arco-space-horizontal arco-space-align-center"
           >
-            <span
-              class="arco-avatar-text"
+            <div
+              class="arco-space-item"
+              style="margin-right:8px"
             >
-              A
-            </span>
+              <div
+                class="arco-avatar arco-avatar-circle"
+                style="width:28px;height:28px;font-size:14px;background-color:#165DFF"
+              >
+                <span
+                  class="arco-avatar-text"
+                >
+                  A
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <span
+                class="arco-typography"
+              >
+                Username
+              </span>
+            </div>
           </div>
-          <span
-            class="arco-typography"
-          >
-            Username
-          </span>
-        </span>
-        <span
-          class="arco-link"
+        </div>
+        <div
+          class="arco-space-item"
         >
-          More
-        </span>
+          <span
+            class="arco-link"
+          >
+            More
+          </span>
+        </div>
       </div>
     </div>
   </div>,
@@ -642,45 +680,64 @@ Array [
       class="arco-card-body"
     >
       <div
+        class="arco-space arco-space-horizontal arco-space-align-center"
         style="display:flex;align-items:center;justify-content:space-between"
       >
-        <span
-          style="display:flex;align-items:center;color:#1D2129"
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
         >
           <div
-            class="arco-avatar arco-avatar-circle"
-            style="width:28px;height:28px;font-size:14px;margin-right:8px;background-color:#165DFF"
+            class="arco-space arco-space-horizontal arco-space-align-center"
           >
-            <span
-              class="arco-avatar-text"
+            <div
+              class="arco-space-item"
+              style="margin-right:8px"
             >
-              A
-            </span>
+              <div
+                class="arco-avatar arco-avatar-circle"
+                style="width:28px;height:28px;font-size:14px;background-color:#165DFF"
+              >
+                <span
+                  class="arco-avatar-text"
+                >
+                  A
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <span
+                class="arco-typography"
+              >
+                Username
+              </span>
+            </div>
           </div>
-          <span
-            class="arco-typography"
-          >
-            Username
-          </span>
-        </span>
-        <span
-          class="icon-hover"
+        </div>
+        <div
+          class="arco-space-item"
         >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-arrow-right"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            style="cursor:pointer"
-            viewBox="0 0 48 48"
+          <span
+            class="icon-hover"
           >
-            <path
-              d="m27.728 11.27 12.728 12.728-12.728 12.728M5 24h34.295"
-            />
-          </svg>
-        </span>
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-arrow-right"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              style="cursor:pointer"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="m27.728 11.27 12.728 12.728-12.728 12.728M5 24h34.295"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>,
@@ -732,23 +789,32 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
           class="arco-card-meta-avatar"
         >
           <div
-            style="display:flex;align-items:center;color:#1D2129"
+            class="arco-space arco-space-horizontal arco-space-align-center"
           >
             <div
-              class="arco-avatar arco-avatar-circle"
-              style="width:24px;height:24px;font-size:12px;margin-right:8px"
+              class="arco-space-item"
+              style="margin-right:8px"
+            >
+              <div
+                class="arco-avatar arco-avatar-circle"
+                style="width:24px;height:24px;font-size:12px"
+              >
+                <span
+                  class="arco-avatar-text"
+                >
+                  A
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
             >
               <span
-                class="arco-avatar-text"
+                class="arco-typography"
               >
-                A
+                Username
               </span>
             </div>
-            <span
-              class="arco-typography"
-            >
-              Username
-            </span>
           </div>
         </div>
         <div
@@ -1021,7 +1087,7 @@ Array [
     aria-checked="false"
     class="arco-switch arco-switch-type-circle"
     role="switch"
-    style="display:block;margin-left:20px"
+    style="display:block;margin-bottom:10px"
     type="button"
   >
     <div
@@ -1029,47 +1095,142 @@ Array [
     />
   </button>,
   <div
-    class="arco-card arco-card-size-default arco-card-bordered"
-    style="display:inline-block;vertical-align:top;width:384px;margin:20px"
+    class="arco-space arco-space-horizontal arco-space-align-start"
   >
     <div
-      class="arco-card-cover"
+      class="arco-space-item"
+      style="margin-right:24px"
     >
       <div
-        class="arco-skeleton"
+        class="arco-card arco-card-size-default arco-card-bordered"
+        style="width:384px"
       >
         <div
-          class="arco-skeleton-header"
+          class="arco-card-cover"
         >
           <div
-            class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-square"
-            style="width:352px;height:188px;margin:16px 16px 0 16px"
-          />
+            class="arco-skeleton"
+          >
+            <div
+              class="arco-skeleton-header"
+            >
+              <div
+                class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-square"
+                style="width:352px;height:188px;margin:16px 16px 0 16px"
+              />
+            </div>
+            <div
+              class="arco-skeleton-content"
+            >
+              <ul
+                class="arco-skeleton-text"
+              />
+            </div>
+          </div>
         </div>
         <div
-          class="arco-skeleton-content"
+          class="arco-card-body"
         >
-          <ul
-            class="arco-skeleton-text"
-          />
+          <div
+            class="arco-card-meta"
+          >
+            <div
+              class="arco-card-meta-content"
+            >
+              <div
+                class="arco-card-meta-title"
+              >
+                <div
+                  class="arco-skeleton"
+                  style="margin-top:0"
+                >
+                  <div
+                    class="arco-skeleton-content"
+                  >
+                    <ul
+                      class="arco-skeleton-text"
+                    >
+                      <li
+                        class="arco-skeleton-text-row"
+                        style="width:72px"
+                      />
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="arco-card-meta-description"
+              >
+                <div
+                  class="arco-skeleton"
+                >
+                  <div
+                    class="arco-skeleton-content"
+                  >
+                    <ul
+                      class="arco-skeleton-text"
+                    >
+                      <li
+                        class="arco-skeleton-text-row"
+                        style="width:150px"
+                      />
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-card-meta-footer "
+            >
+              <div
+                class="arco-card-meta-avatar"
+              >
+                <div
+                  class="arco-skeleton"
+                  style="display:flex;align-items:center;margin-top:4px"
+                >
+                  <div
+                    class="arco-skeleton-header"
+                  >
+                    <div
+                      class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
+                      style="width:24px;height:24px"
+                    />
+                  </div>
+                  <div
+                    class="arco-skeleton-content"
+                  >
+                    <ul
+                      class="arco-skeleton-text"
+                    >
+                      <li
+                        class="arco-skeleton-text-row"
+                        style="width:64px"
+                      />
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="arco-card-body"
+      class="arco-space-item"
     >
       <div
-        class="arco-card-meta"
+        class="arco-card arco-card-size-default arco-card-bordered"
+        style="width:384px"
       >
         <div
-          class="arco-card-meta-content"
+          class="arco-card-header"
         >
           <div
-            class="arco-card-meta-title"
+            class="arco-card-header-title"
           >
             <div
               class="arco-skeleton"
-              style="margin-top:0"
             >
               <div
                 class="arco-skeleton-content"
@@ -1086,7 +1247,7 @@ Array [
             </div>
           </div>
           <div
-            class="arco-card-meta-description"
+            class="arco-card-header-extra"
           >
             <div
               class="arco-skeleton"
@@ -1096,10 +1257,11 @@ Array [
               >
                 <ul
                   class="arco-skeleton-text"
+                  style="width:30px;float:right"
                 >
                   <li
                     class="arco-skeleton-text-row"
-                    style="width:150px"
+                    style="width:100%"
                   />
                 </ul>
               </div>
@@ -1107,145 +1269,62 @@ Array [
           </div>
         </div>
         <div
-          class="arco-card-meta-footer "
+          class="arco-card-body"
         >
           <div
-            class="arco-card-meta-avatar"
+            class="arco-skeleton"
           >
             <div
-              class="arco-skeleton"
-              style="display:flex;align-items:center;margin-top:4px"
+              class="arco-skeleton-content"
             >
-              <div
-                class="arco-skeleton-header"
+              <ul
+                class="arco-skeleton-text"
               >
-                <div
-                  class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
-                  style="width:24px;height:24px"
+                <li
+                  class="arco-skeleton-text-row"
+                  style="width:100%"
                 />
-              </div>
-              <div
-                class="arco-skeleton-content"
-              >
-                <ul
-                  class="arco-skeleton-text"
-                >
-                  <li
-                    class="arco-skeleton-text-row"
-                    style="width:64px"
-                  />
-                </ul>
-              </div>
+                <li
+                  class="arco-skeleton-text-row"
+                  style="width:80%"
+                />
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
-    class="arco-card arco-card-size-default arco-card-bordered"
-    style="display:inline-block;vertical-align:top;width:384px;margin:20px"
-  >
-    <div
-      class="arco-card-header"
-    >
-      <div
-        class="arco-card-header-title"
-      >
-        <div
-          class="arco-skeleton"
-        >
           <div
-            class="arco-skeleton-content"
-          >
-            <ul
-              class="arco-skeleton-text"
-            >
-              <li
-                class="arco-skeleton-text-row"
-                style="width:72px"
-              />
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div
-        class="arco-card-header-extra"
-      >
-        <div
-          class="arco-skeleton"
-        >
-          <div
-            class="arco-skeleton-content"
-          >
-            <ul
-              class="arco-skeleton-text"
-              style="width:30px;float:right"
-            >
-              <li
-                class="arco-skeleton-text-row"
-                style="width:100%"
-              />
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-card-body"
-    >
-      <div
-        class="arco-skeleton"
-      >
-        <div
-          class="arco-skeleton-content"
-        >
-          <ul
-            class="arco-skeleton-text"
-          >
-            <li
-              class="arco-skeleton-text-row"
-              style="width:100%"
-            />
-            <li
-              class="arco-skeleton-text-row"
-              style="width:80%"
-            />
-          </ul>
-        </div>
-      </div>
-      <div
-        class="arco-card-meta"
-      >
-        <div
-          class="arco-card-meta-footer "
-        >
-          <div
-            class="arco-card-meta-avatar"
+            class="arco-card-meta"
           >
             <div
-              class="arco-skeleton"
-              style="display:flex;align-items:center;margin-top:4px"
+              class="arco-card-meta-footer "
             >
               <div
-                class="arco-skeleton-header"
+                class="arco-card-meta-avatar"
               >
                 <div
-                  class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
-                  style="width:24px;height:24px"
-                />
-              </div>
-              <div
-                class="arco-skeleton-content"
-              >
-                <ul
-                  class="arco-skeleton-text"
+                  class="arco-skeleton"
+                  style="display:flex;align-items:center;margin-top:4px"
                 >
-                  <li
-                    class="arco-skeleton-text-row"
-                    style="width:64px"
-                  />
-                </ul>
+                  <div
+                    class="arco-skeleton-header"
+                  >
+                    <div
+                      class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
+                      style="width:24px;height:24px"
+                    />
+                  </div>
+                  <div
+                    class="arco-skeleton-content"
+                  >
+                    <ul
+                      class="arco-skeleton-text"
+                    >
+                      <li
+                        class="arco-skeleton-text-row"
+                        style="width:64px"
+                      />
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
