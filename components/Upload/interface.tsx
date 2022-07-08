@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import { ProgressProps } from '../Progress';
 
 export const STATUS: {
@@ -205,6 +205,12 @@ export interface UploadProps {
    * @defaultValue () => true
    */
   beforeUpload?: (file: File, filesList: File[]) => boolean | Promise<any>;
+  /**
+   * @zh 拖拽上传文件时执行的回调
+   * @en Callback after drag file to the upload area and drop.
+   * @version 2.37.0
+   */
+  onDrop?: (e: React.DragEvent) => void;
 }
 
 /**
@@ -309,6 +315,7 @@ export type TriggerProps = {
   drag?: boolean;
   listType?: 'text' | 'picture-list' | 'picture-card';
   onClick: () => void;
+  onDrop?: (e: React.DragEvent) => void;
   onDragFiles: (files: File[]) => void;
   prefixCls?: string;
 };

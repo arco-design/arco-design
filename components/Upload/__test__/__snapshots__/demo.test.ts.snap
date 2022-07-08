@@ -344,7 +344,7 @@ Array [
         <div
           class="arco-upload-trigger-tip"
         >
-          Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB
+          Only pictures can be uploaded
         </div>
       </div>
     </div>

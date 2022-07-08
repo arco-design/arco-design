@@ -44,6 +44,7 @@
 |onReupload|文件重新上传时触发的回调|`(file: UploadItem) => void`|`-`|-|
 |onExceedLimit|超出上传数量限制时触发|`(files: File[], fileList: UploadItem[]) => void`|`-`|-|
 |beforeUpload|上传文件之前的回调。返回 false 或者 promise抛出异常的时候会取消上传。|`(file: File, filesList: File[]) => boolean \| Promise<any>`|`() => true`|-|
+|onDrop|拖拽上传文件时执行的回调|`(e: React.DragEvent) => void`|`-`|2.37.0|
 
 ### UploadListProps
 
@@ -88,8 +89,6 @@ type CustomIconType = {
   startIcon?: ReactNode;
   errorIcon?: ReactNode;
   fileName?: (file: UploadItem) => ReactNode;
-  progressRender?: (file: UploadItem, originDom: ReactNode) => ReactElement; // 2.34.0
-  imageRender?: (file: UploadItem) => ReactNode; // 2.34.0
 }
 ```
 
