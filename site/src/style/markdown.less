@@ -821,6 +821,24 @@
 
 /** -----------Custom-------------- */
 .markdown-body {
+  &.api-container {
+    table {
+      td:nth-child(3),
+      td:nth-child(3) > code,
+      td:nth-child(4) > code {
+        background-color: #fff;
+        color: #cb1e83;
+      }
+
+      td:nth-child(3),
+      td:nth-child(4) {
+        code {
+          border: none;
+        }
+      }
+    }
+  }
+
   ul {
     padding-left: 24px;
     margin: 0;
@@ -886,15 +904,6 @@
 
     tr:last-child td {
       border-bottom: none;
-    }
-
-    td:nth-child(3),
-    td:nth-child(4) {
-      > code {
-        background-color: #fff;
-        border: 0;
-        color: #0a63ff;
-      }
     }
   }
 }

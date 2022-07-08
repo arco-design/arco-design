@@ -51,7 +51,7 @@ function Tr<T>(props: TrType<T>, ref) {
     level,
   } = props;
   const originRecord = getOriginData(record);
-  const { ...rowProps } = onRow && onRow(originRecord, index);
+  const { ...rowProps } = (onRow && onRow(originRecord, index)) || {};
   const rowK = getRowKey(record);
   const usedSelectedRowKeys = type === 'radio' ? selectedRowKeys.slice(0, 1) : selectedRowKeys;
   const trKey = rowK || index;

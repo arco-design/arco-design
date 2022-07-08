@@ -4,6 +4,7 @@ import uploadRequest from './request';
 import { UploaderProps, STATUS, UploadItem, UploadRequestReturn } from './interface';
 import { isNumber, isFunction, isFile } from '../_util/is';
 import TriggerNode from './trigger-node';
+import { isAcceptFile } from './util';
 
 export type UploaderType = {
   upload: (file: UploadItem) => void;
@@ -171,20 +172,23 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
     };
 
     files.forEach((file, index) => {
-      if (isFunction(this.props.beforeUpload)) {
-        // 只有在beforeUpload返回值 === false 时，取消上传操作
-        Promise.resolve(this.props.beforeUpload(file, files))
-          .then((val) => {
-            if (val !== false) {
-              const newFile = isFile(val) ? val : file;
-              asyncUpload(newFile as File, index);
-            }
-          })
-          .catch((e) => {
-            console.error(e);
-          });
-      } else {
-        asyncUpload(file, index);
+      if (isAcceptFile(file, this.props.accept)) {
+        // windows can upload file type not in accept bug
+        if (isFunction(this.props.beforeUpload)) {
+          // 只有在beforeUpload返回值 === false 时，取消上传操作
+          Promise.resolve(this.props.beforeUpload(file, files))
+            .then((val) => {
+              if (val !== false) {
+                const newFile = isFile(val) ? val : file;
+                asyncUpload(newFile as File, index);
+              }
+            })
+            .catch((e) => {
+              console.error(e);
+            });
+        } else {
+          asyncUpload(file, index);
+        }
       }
     });
   };

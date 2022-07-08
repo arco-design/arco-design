@@ -264,6 +264,18 @@
     text-overflow: ellipsis;
   }
 
+  &-cell-text-ellipsis &-cell-with-sorter {
+    display: flex;
+    align-items: center;
+  }
+
+  &-cell-text-ellipsis &-th-item-title {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   // useless
   &-editable-row {
     .@{table-prefix-cls}-cell-wrap-value {
@@ -552,7 +564,7 @@
     text-align: center;
   }
 
-  &-border &-empty-row &-td:first-child {
+  &-border&-fixed-column &-empty-row &-td:first-child {
     border-bottom: 0;
     border-left: 0;
   }

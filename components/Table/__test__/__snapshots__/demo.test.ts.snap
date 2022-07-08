@@ -5444,7 +5444,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
 
 exports[`renders Table/demo/fixed-column.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed"
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
 >
   <div
     class="arco-spin"
@@ -6495,7 +6495,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
 
 exports[`renders Table/demo/group-columns.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed"
+  class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
 >
   <div
     class="arco-spin"
@@ -7765,7 +7765,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
 
 exports[`renders Table/demo/operations.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed"
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
 >
   <div
     class="arco-spin"
@@ -12748,7 +12748,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
 exports[`renders Table/demo/summary.md correctly 1`] = `
 <div>
   <div
-    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover"
+    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-fixed-column"
   >
     <div
       class="arco-spin"
@@ -13217,7 +13217,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed"
+    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
     style="margin-top:20px"
   >
     <div
@@ -13834,7 +13834,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed"
+    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
     style="margin-top:20px"
   >
     <div
@@ -14912,7 +14912,7 @@ Array [
 
 exports[`renders Table/demo/virtualized.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-virtualized"
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-virtualized"
 >
   <div
     class="arco-spin"
