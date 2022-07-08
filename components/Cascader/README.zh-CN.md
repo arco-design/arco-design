@@ -60,7 +60,7 @@
 |showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。|`boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean }`|`-`|-|
 |error|是否为错误状态。|`boolean`|`-`|-|
 |allowClear|允许清除值。|`boolean`|`-`|-|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|`number`|`-`|-|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。（对象类型在 `2.37.0` 版本支持）|`\| number\| {count: number;render: (invisibleTagCount: number) => ReactNode;}`|`-`|-|
 |suffixIcon|自定义选择框后缀图标。|`ReactNode`|`-`|-|
 |arrowIcon|自定义箭头图标，设置为 `null` 不显示箭头图标。|`ReactNode \| null`|`-`|-|
 |removeIcon|多选时配置选中项的删除图标。当传入`null`，不显示删除图标。|`ReactNode \| null`|`-`|-|

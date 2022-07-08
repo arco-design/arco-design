@@ -50,6 +50,22 @@ const App = () => {
         ))}
       </Select>
 
+
+      <Select
+        mode="multiple"
+        maxTagCount={{count: 2, render: (invisibleNumber) => `+${invisibleNumber} more`}}
+        placeholder="Please select"
+        style={{ width: 345 }}
+        defaultValue={['Beijing', 'Shenzhen', 'Wuhan']}
+        allowClear
+      >
+        {options.map((option) => (
+          <Option key={option} value={option}>
+            {option}
+          </Option>
+        ))}
+      </Select>
+
       <Select
         mode="multiple"
         placeholder="Please select"
