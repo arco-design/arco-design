@@ -33,6 +33,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
     size: ctxSize,
     renderEmpty,
     componentConfig,
+    rtl,
   } = useContext(ConfigContext);
   const props = useMergeProps<ListProps>(baseProps, defaultProps, componentConfig?.List);
   const {
@@ -266,7 +267,11 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
           refDom.current = ref;
         }}
         style={wrapperStyle}
-        className={cs(`${prefixCls}-wrapper`, wrapperClassName)}
+        className={cs(
+          `${prefixCls}-wrapper`,
+          { [`${prefixCls}-wrapper-rtl`]: rtl },
+          wrapperClassName
+        )}
       >
         <div
           style={style}
@@ -277,6 +282,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
               [`${prefixCls}-no-border`]: !bordered,
               [`${prefixCls}-no-split`]: !split,
               [`${prefixCls}-hoverable`]: hoverable,
+              [`${prefixCls}-rtl`]: rtl,
             },
             className
           )}

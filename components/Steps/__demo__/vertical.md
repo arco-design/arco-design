@@ -15,7 +15,7 @@ Vertical step bar.
 
 ```js
 import { useState, useRef } from 'react';
-import { Steps, Button } from '@arco-design/web-react';
+import { Steps, Button, Divider } from '@arco-design/web-react';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
 const Step = Steps.Step;
 
@@ -73,16 +73,16 @@ function App() {
           background: 'var(--color-bg-2)',
           padding: 24,
           height: 272,
-          borderRight: '1px solid var(--color-border)',
           boxSizing: 'border-box',
         }}
       >
-        <Steps direction="vertical" lineless current={current} style={{ width: 170 }}>
+        <Steps direction="vertical" current={current} style={{ width: 170 }}>
           <Step title="Succeeded" description="This is a description" />
           <Step title="Processing" description="This is a description" />
           <Step title="Pending" description="This is a description" />
         </Steps>
       </div>
+      <Divider type="vertical" style={{ display: "block", height: "auto" }}/>
       {renderContent(current)}
     </div>
   );

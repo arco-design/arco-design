@@ -1,5 +1,6 @@
 import React, { useState, forwardRef, PropsWithChildren, useContext, useEffect } from 'react';
 import FocusLock from 'react-focus-lock';
+import cs from '../_util/classNames';
 import Tooltip from '../Tooltip';
 import Button from '../Button';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
@@ -19,7 +20,7 @@ const defaultProps: PopconfirmProps = {
 };
 
 function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
-  const { getPrefixCls, locale, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, locale, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<PopconfirmProps>>(
     baseProps,
     defaultProps,
@@ -152,7 +153,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
         maxWidth: 350,
         ...style,
       }}
-      className={className}
+      className={cs(className, { [`${prefixCls}-rtl`]: rtl })}
       prefixCls={prefixCls}
       getPopupContainer={getPopupContainer}
       position={position}

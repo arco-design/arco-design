@@ -44,7 +44,7 @@ function YearPicker(props: InnerYearPickerProps) {
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls, rtl } = useContext(ConfigContext);
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
   const CALENDAR_LOCALE = DATEPICKER_LOCALE.Calendar;
 
@@ -101,6 +101,7 @@ function YearPicker(props: InnerYearPickerProps) {
         prefixCls={getPrefixCls('picker')}
         icons={icons}
         title={`${rows[0][1].name} - ${rows[3][2].name}`}
+        rtl={rtl}
         {...headerOperations}
       />
       {renderCalendar()}

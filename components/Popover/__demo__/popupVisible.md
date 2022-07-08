@@ -15,7 +15,7 @@ Manual close popover. For more examples, see the [Trigger](/react/components/tri
 
 ```js
 import React from 'react';
-import { Popover, Button, Link } from '@arco-design/web-react';
+import { Popover, Button, Link,Space } from '@arco-design/web-react';
 
 const style = {
   margin: 0,
@@ -25,7 +25,7 @@ function App() {
   const [visible, setVisible] = React.useState(false);
   const [visible2, setVisible2] = React.useState(false);
   return (
-    <div>
+    <Space size={40}>
       <Popover
         title="Title"
         popupVisible={visible}
@@ -40,12 +40,7 @@ function App() {
           </span>
         }
       >
-        <Button
-          type="primary"
-          style={{
-            marginRight: 24,
-          }}
-        >
+        <Button type="primary">
           Hover
         </Button>
       </Popover>
@@ -69,7 +64,7 @@ function App() {
       >
         <Button type="primary">Will not close when moved out</Button>
       </Popover>
-    </div>
+    </Space>
   );
 }
 

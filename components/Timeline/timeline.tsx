@@ -24,7 +24,10 @@ const defaultProps: TimelineProps = {
 };
 
 function Timeline(baseProps: PropsWithChildren<TimelineProps>, ref: RefObject<HTMLDivElement>) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  if (rtl) {
+    defaultProps.mode = 'right';
+  }
   const props = useMergeProps<PropsWithChildren<TimelineProps>>(
     baseProps,
     defaultProps,
@@ -74,6 +77,7 @@ function Timeline(baseProps: PropsWithChildren<TimelineProps>, ref: RefObject<HT
         prefixCls,
         `${prefixCls}-${mode}`,
         `${prefixCls}-direction-${direction}`,
+        { [`${prefixCls}-rtl`]: rtl },
         className
       )}
       style={style}

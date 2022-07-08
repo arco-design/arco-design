@@ -14,7 +14,7 @@ const defaultProps: StepsProps = {
 };
 
 function Steps(baseProps: StepsProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<StepsProps>(baseProps, defaultProps, componentConfig?.Steps);
   const {
     className,
@@ -55,6 +55,7 @@ function Steps(baseProps: StepsProps, ref) {
       [`${prefixCls}-change-onclick`]: typeof onChange === 'function',
       [`${prefixCls}-mode-${type}`]: type !== 'default',
       [`${prefixCls}-lineless`]: lineless,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

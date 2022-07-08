@@ -40,7 +40,7 @@ function App() {
         />
       </FormItem>
       <FormItem wrapperCol={{ offset: 5 }}>
-        <Button style={{ marginRight: 12 }} type="primary">
+        <Button style={{ margin: '0 12px' }} type="primary">
           Submit
         </Button>
         <Button>Reset</Button>

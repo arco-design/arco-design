@@ -16,7 +16,7 @@ Control the visibility of the popup.
 
 ```js
 import React from 'react';
-import { Trigger, Button, Input, Skeleton } from '@arco-design/web-react';
+import { Trigger, Button, Input, Skeleton,Space } from '@arco-design/web-react';
 
 function Popup() {
   return (
@@ -31,7 +31,7 @@ function App() {
   const [visible2, setVisible2] = React.useState(false);
   const [visible3, setVisible3] = React.useState(false);
   return (
-    <div>
+    <Space size={40}>
       <Trigger
         popupVisible={visible}
         popup={() => <Popup />}
@@ -41,7 +41,7 @@ function App() {
           setVisible(visible);
         }}
       >
-        <Button style={{ marginRight: 40 }}>Click Me (controlled)</Button>
+        <Button >Click Me (controlled)</Button>
       </Trigger>
       <Trigger
         popupVisible={visible3}
@@ -53,7 +53,6 @@ function App() {
         }}
       >
         <Button
-          style={{ marginRight: 40 }}
           onClick={() => {
             setVisible3(!visible3);
           }}
@@ -76,7 +75,7 @@ function App() {
       >
         <Input style={{ width: 200 }} placeholder="Focus Me (controlled)"></Input>
       </Trigger>
-    </div>
+    </Space>
   );
 }
 

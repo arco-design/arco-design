@@ -22,7 +22,7 @@ const defaultProps: MentionsProps = {
 };
 
 function Mentions(baseProps: MentionsProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<MentionsProps>(baseProps, defaultProps, componentConfig?.Mentions);
   const {
     style,
@@ -146,7 +146,11 @@ function Mentions(baseProps: MentionsProps, ref) {
     <div
       ref={ref}
       style={style}
-      className={cs(`${prefixCls}`, { [`${prefixCls}-align-textarea`]: alignTextarea }, className)}
+      className={cs(
+        `${prefixCls}`,
+        { [`${prefixCls}-align-textarea`]: alignTextarea, [`${prefixCls}-rtl`]: rtl },
+        className
+      )}
     >
       <TextArea
         ref={refTextarea}

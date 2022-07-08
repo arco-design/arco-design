@@ -54,7 +54,7 @@ function Demo1() {
         <Button
           size="small"
           type="primary"
-          style={{ marginLeft: 16 }}
+          style={{ margin: '0 16px' }}
           onClick={() => { toggle() }}
         >
           Inverse Check
@@ -98,7 +98,7 @@ function Demo2() {
         <Button
           size="small"
           type="primary"
-          style={{ marginLeft: 16 }}
+          style={{ margin: '0 16px' }}
           onClick={() => {
             toggle();
           }}
@@ -110,7 +110,7 @@ function Demo2() {
         return (
           <Checkbox
             key={option.value}
-            style={{ marginRight: 16 }}
+            style={{ margin: '0 16px' }}
             checked={isSelected(option.value)}
             value={option.value}
             onChange={(checked) => {

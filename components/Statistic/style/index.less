@@ -46,3 +46,21 @@
     color: @statistic-color-extra-text;
   }
 }
+
+.@{statistic-prefix-cls}-rtl {
+  .@{statistic-prefix-cls} {
+    &-content {
+      .@{statistic-prefix-cls}-value {
+        &-suffix {
+          margin-right: @statistic-margin-suffix-left;
+          margin-left: 0;
+        }
+
+        &-prefix {
+          margin-right: 0;
+          margin-left: @statistic-margin-prefix-right;
+        }
+      }
+    }
+  }
+}

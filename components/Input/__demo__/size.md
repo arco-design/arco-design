@@ -78,17 +78,13 @@ class App extends React.Component {
         <div>
           <Input
             {...props}
-            style={{
-              width: 350,
-              marginRight: 24,
-              marginBottom: 24,
-            }}
+            style={{ width: 350, margin: 12 }}
             prefix={<IconClockCircle />}
             placeholder="Please enter something"
           />
           <Input
             {...props}
-            style={{ width: 350, marginBottom: 24 }}
+             style={{ width: 350, margin: 12 }}
             suffix={<IconInfoCircle />}
             placeholder="Please enter something"
           />
@@ -96,17 +92,13 @@ class App extends React.Component {
         <div>
           <Input
             {...props}
-            style={{
-              width: 350,
-              marginRight: 24,
-              marginBottom: 24,
-            }}
+            style={{ width: 350, margin: 12 }}
             addAfter="KG"
             placeholder="Please enter something"
           />
           <Input
             {...props}
-            style={{ width: 350, marginBottom: 24 }}
+            style={{ width: 350, margin: 12 }}
             addBefore="+86"
             placeholder="Please enter something"
           />
@@ -114,11 +106,7 @@ class App extends React.Component {
         <div>
           <Input
             {...props}
-            style={{
-              width: 350,
-              marginBottom: 24,
-              marginRight: 24,
-            }}
+            style={{ width: 350, margin: 12 }}
             addBefore="+86"
             addAfter={<IconSearch />}
             prefix={<IconClockCircle />}
@@ -129,18 +117,14 @@ class App extends React.Component {
           <InputSearch
             {...props}
             placeholder="Please enter something"
-            style={{ width: 350, marginBottom: 24 }}
+            style={{ width: 350, margin: 12 }}
             searchButton={true}
           />
         </div>
         <div>
           <Input
             {...props}
-            style={{
-              width: 350,
-              marginBottom: 24,
-              marginRight: 24,
-            }}
+            style={{ width: 350, margin: 12 }}
             addBefore={
               <Select size={size} placeholder="Please select" style={{ width: 100 }}>
                 <Select.Option value="http://">http://</Select.Option>
@@ -152,7 +136,7 @@ class App extends React.Component {
           />
           <Input
             {...props}
-            style={{ width: 350, marginBottom: 24 }}
+            style={{ width: 350, margin: 12 }}
             allowClear={true}
             placeholder="Please enter something"
           />

@@ -15,7 +15,7 @@ The extra operations are set by `actions` and arranged horizontally by default. 
 
 ```js
 import React from 'react';
-import { Image, Tooltip } from '@arco-design/web-react';
+import { Image, Tooltip, Space} from '@arco-design/web-react';
 import { IconEye, IconDownload, IconInfoCircle } from '@arco-design/web-react/icon';
 
 function DemoImage(props) {
@@ -32,7 +32,6 @@ function DemoImage(props) {
           onClick={(e) => {
             setVisible(true);
           }}
-          style={{ padding: '' }}
         >
           <IconEye />
         </span>,
@@ -65,19 +64,20 @@ function DemoImage(props) {
 function App() {
   return (
     <div>
-      <div>
+      <Space size={20} align="start">
         <DemoImage width={300} alt="lamp1" />
         <DemoImage
           width={200}
           simple={true}
           alt="lamp2"
           style={{
-            marginLeft: 67,
             verticalAlign: 'top',
           }}
         />
-      </div>
-      <div
+      </Space>
+      <Space
+        size={20}
+        align="start"
         style={{
           marginTop: 67,
         }}
@@ -89,11 +89,10 @@ function App() {
           footerPosition="outer"
           alt="lamp4"
           style={{
-            marginLeft: 67,
             verticalAlign: 'top',
           }}
         />
-      </div>
+      </Space>
     </div>
   );
 }

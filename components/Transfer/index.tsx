@@ -21,7 +21,7 @@ const defaultProps: TransferProps = {
 };
 
 function Transfer(baseProps: TransferProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<TransferProps>(baseProps, defaultProps, componentConfig?.Transfer);
   const {
     prefixCls: transferPrefixCls,
@@ -237,6 +237,7 @@ function Transfer(baseProps: TransferProps, ref) {
         {
           [`${prefixCls}-simple`]: simple,
           [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

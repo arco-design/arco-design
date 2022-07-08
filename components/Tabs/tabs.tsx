@@ -62,7 +62,7 @@ export const TabsContext = React.createContext<
 >({});
 
 function Tabs(baseProps: TabsProps, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<TabsProps>(baseProps, defaultProps, componentConfig?.Tabs);
 
   const paneChildren = getPaneChildren(props);
@@ -168,6 +168,7 @@ function Tabs(baseProps: TabsProps, ref) {
         `${prefixCls}-size-${size}`,
         {
           [`${prefixCls}-justify`]: justify,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

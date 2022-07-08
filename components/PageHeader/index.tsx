@@ -2,6 +2,7 @@ import React, { useContext, PropsWithChildren, useState, useRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLeft from '../../icon/react-icon/IconLeft';
+import IconRight from '../../icon/react-icon/IconRight';
 import Breadcrumb from '../Breadcrumb';
 import IconHover from '../_class/icon-hover';
 import ResizeObserver from '../_util/resizeObserver';
@@ -9,7 +10,7 @@ import { PageHeaderProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<PageHeaderProps>>(
     baseProps,
     {},
@@ -39,6 +40,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
             [`${prefixCls}-with-content`]: children,
             [`${prefixCls}-with-footer`]: footer,
             [`${prefixCls}-wrap`]: pageWrap,
+            [`${prefixCls}-rtl`]: rtl,
           },
           props.className
         )}
@@ -60,7 +62,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
                   onClick={props.onBack}
                 >
                   <span className={`${prefixCls}-back-icon`}>
-                    {backIcon === true ? <IconLeft /> : backIcon}
+                    {backIcon === true ? rtl ? <IconRight /> : <IconLeft /> : backIcon}
                   </span>
                 </IconHover>
               )}

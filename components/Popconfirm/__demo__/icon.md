@@ -14,12 +14,12 @@ title:
 Customize icon.
 
 ```js
-import { Popconfirm, Message, Button } from '@arco-design/web-react';
+import { Popconfirm, Message, Button, Space } from '@arco-design/web-react';
 import { IconFaceSmileFill } from '@arco-design/web-react/icon';
 
 const App = () => {
   return (
-    <div>
+    <Space size={24}>
       <Popconfirm
         title="Are you sure you want to delete?"
         icon={<IconFaceSmileFill style={{ color: '#0057fe' }} />}
@@ -34,7 +34,7 @@ const App = () => {
           });
         }}
       >
-        <Button style={{ marginRight: 24 }}>Delete</Button>
+        <Button>Delete</Button>
       </Popconfirm>
       <Popconfirm
         icon={null}
@@ -52,7 +52,7 @@ const App = () => {
       >
         <Button>Delete</Button>
       </Popconfirm>
-    </div>
+    </Space>
   );
 };
 

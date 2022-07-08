@@ -142,3 +142,17 @@
     background-color: @dropdown-color-bg;
   }
 }
+
+.@{dropdown-prefix-cls}-menu-rtl {
+  .@{dropdown-prefix-cls}-menu {
+    &-item,
+    &-pop-header {
+      text-align: right;
+
+      .@{dropdown-prefix-cls}-menu-icon-suffix {
+        margin-left: 0;
+        margin-right: @dropdown-margin-left-suffix-icon;
+      }
+    }
+  }
+}

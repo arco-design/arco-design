@@ -132,7 +132,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls, rtl } = useContext(ConfigContext);
 
   const { utcOffset, timezone, weekStart } = useContext(PickerContext);
 
@@ -262,6 +262,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
             value={pageShowDate}
             mode={panelMode}
             onChangePanel={onChangePanel}
+            rtl={rtl}
           />
           {renderCalendar()}
         </div>

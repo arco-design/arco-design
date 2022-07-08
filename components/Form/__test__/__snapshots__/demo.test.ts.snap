@@ -5040,24 +5040,34 @@ exports[`renders Form/demo/list.md correctly 1`] = `
           </svg>
         </button>
       </div>
-      <div>
-        <button
-          class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-center"
+      >
+        <div
+          class="arco-space-item"
           style="margin-right:20px"
-          type="button"
         >
-          <span>
-            Add post
-          </span>
-        </button>
-        <button
-          class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-          type="button"
+          <button
+            class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+            type="button"
+          >
+            <span>
+              Add post
+            </span>
+          </button>
+        </div>
+        <div
+          class="arco-space-item"
         >
-          <span>
-            Add post to the second slot
-          </span>
-        </button>
+          <button
+            class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+            type="button"
+          >
+            <span>
+              Add post to the second slot
+            </span>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -5076,32 +5086,48 @@ exports[`renders Form/demo/list.md correctly 1`] = `
             <div
               class="arco-form-item-control-children"
             >
-              <button
-                class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-                style="margin-right:20px"
-                type="submit"
+              <div
+                class="arco-space arco-space-horizontal arco-space-align-center"
               >
-                <span>
-                  Submit
-                </span>
-              </button>
-              <button
-                class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-                style="margin-right:20px"
-                type="button"
-              >
-                <span>
-                  Reset
-                </span>
-              </button>
-              <button
-                class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
-                type="button"
-              >
-                <span>
-                  Set \`Post-0\` to error state
-                </span>
-              </button>
+                <div
+                  class="arco-space-item"
+                  style="margin-right:20px"
+                >
+                  <button
+                    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+                    type="submit"
+                  >
+                    <span>
+                      Submit
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="arco-space-item"
+                  style="margin-right:20px"
+                >
+                  <button
+                    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+                    type="button"
+                  >
+                    <span>
+                      Reset
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="arco-space-item"
+                >
+                  <button
+                    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
+                    type="button"
+                  >
+                    <span>
+                      Set \`Post-0\` to error state
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -5895,7 +5921,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="margin-left:8px;color:rgb(var(--arcoblue-6))"
+                  style="margin:0 8px;color:rgb(var(--arcoblue-6))"
                   viewBox="0 0 48 48"
                 >
                   <path
@@ -6023,23 +6049,35 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
             <div
               class="arco-form-item-control-children"
             >
-              <button
-                class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-                style="margin-right:24px"
-                type="submit"
+              <div
+                class="arco-space arco-space-horizontal arco-space-align-center"
               >
-                <span>
-                  Submit
-                </span>
-              </button>
-              <button
-                class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-                type="button"
-              >
-                <span>
-                  Reset
-                </span>
-              </button>
+                <div
+                  class="arco-space-item"
+                  style="margin-right:24px"
+                >
+                  <button
+                    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+                    type="submit"
+                  >
+                    <span>
+                      Submit
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="arco-space-item"
+                >
+                  <button
+                    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+                    type="button"
+                  >
+                    <span>
+                      Reset
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

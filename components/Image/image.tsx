@@ -26,7 +26,7 @@ const defaultProps: ImagePropsType = {
 };
 
 function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<ImagePropsType>(baseProps, defaultProps, componentConfig?.Image);
   const {
     style,
@@ -86,6 +86,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   const classNames = cs(
     prefixCls,
     {
+      [`${prefixCls}-rtl`]: rtl,
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-loading`]: isLoading,
       [`${prefixCls}-loading-error`]: isError,

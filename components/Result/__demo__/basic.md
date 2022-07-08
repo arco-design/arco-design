@@ -24,7 +24,7 @@ const App = () => {
         title="Success message"
         subTitle="This is a success description."
         extra={[
-          <Button key="again" type="secondary" style={{ marginRight: 16 }}>
+          <Button key="again" type="secondary" style={{ margin: '0 16px' }}>
             Again
           </Button>,
           <Button key="back" type="primary">

@@ -541,95 +541,117 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
     class="arco-space-item"
     style="margin-bottom:8px"
   >
-    <div>
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-start"
+    >
       <div
-        class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-        style="width:300px;margin-bottom:24px;margin-right:20px"
+        class="arco-space-item"
+        style="margin-right:24px"
       >
-        <span
-          class="arco-input-group"
+        <div
+          class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
+          style="width:300px"
         >
           <span
-            class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+            class="arco-input-group"
           >
-            <input
-              class="arco-input arco-input-size-default"
-              maxlength="10"
-              placeholder="Please enter no more than 10 letters"
-              value=""
-            />
             <span
-              class="arco-input-group-suffix"
+              class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
             >
+              <input
+                class="arco-input arco-input-size-default"
+                maxlength="10"
+                placeholder="Please enter no more than 10 letters"
+                value=""
+              />
               <span
-                class="arco-input-word-limit"
+                class="arco-input-group-suffix"
               >
-                0/10
+                <span
+                  class="arco-input-word-limit"
+                >
+                  0/10
+                </span>
               </span>
             </span>
           </span>
-        </span>
+        </div>
       </div>
       <div
-        class="arco-textarea-wrapper"
-        style="width:300px;margin-bottom:24px"
+        class="arco-space-item"
       >
-        <textarea
-          class="arco-textarea"
-          maxlength="50"
-          placeholder="Please enter no more than 50 letters"
-        />
-        <span
-          class="arco-textarea-word-limit"
+        <div
+          class="arco-textarea-wrapper"
+          style="width:300px"
         >
-          0/50
-        </span>
+          <textarea
+            class="arco-textarea"
+            maxlength="50"
+            placeholder="Please enter no more than 50 letters"
+          />
+          <span
+            class="arco-textarea-word-limit"
+          >
+            0/50
+          </span>
+        </div>
       </div>
     </div>
   </div>
   <div
     class="arco-space-item"
   >
-    <div>
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-start"
+    >
       <div
-        class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-        style="width:300px;margin-bottom:24px;margin-right:20px"
+        class="arco-space-item"
+        style="margin-right:24px"
       >
-        <span
-          class="arco-input-group"
+        <div
+          class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
+          style="width:300px"
         >
           <span
-            class="arco-input-inner-wrapper arco-input-inner-wrapper-error arco-input-inner-wrapper-default"
+            class="arco-input-group"
           >
-            <input
-              class="arco-input arco-input-size-default"
-              value="More than 10 letters will be error"
-            />
             <span
-              class="arco-input-group-suffix"
+              class="arco-input-inner-wrapper arco-input-inner-wrapper-error arco-input-inner-wrapper-default"
             >
+              <input
+                class="arco-input arco-input-size-default"
+                value="More than 10 letters will be error"
+              />
               <span
-                class="arco-input-word-limit arco-input-word-limit-error"
+                class="arco-input-group-suffix"
               >
-                34/10
+                <span
+                  class="arco-input-word-limit arco-input-word-limit-error"
+                >
+                  34/10
+                </span>
               </span>
             </span>
           </span>
-        </span>
+        </div>
       </div>
       <div
-        class="arco-textarea-wrapper"
-        style="width:300px;margin-bottom:24px"
+        class="arco-space-item"
       >
-        <textarea
-          class="arco-textarea"
-          placeholder="More than 50 letters will be error"
-        />
-        <span
-          class="arco-textarea-word-limit"
+        <div
+          class="arco-textarea-wrapper"
+          style="width:300px"
         >
-          0/50
-        </span>
+          <textarea
+            class="arco-textarea"
+            placeholder="More than 50 letters will be error"
+          />
+          <span
+            class="arco-textarea-word-limit"
+          >
+            0/50
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -1354,7 +1376,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin-right:24px;margin-bottom:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1389,7 +1411,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-      style="width:350px;margin-bottom:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1426,7 +1448,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin-right:24px;margin-bottom:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1449,7 +1471,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin-bottom:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1474,7 +1496,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-      style="width:350px;margin-bottom:24px;margin-right:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1548,7 +1570,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-search arco-input-search-button"
-      style="width:350px;margin-bottom:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1590,7 +1612,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin-bottom:24px;margin-right:24px"
+      style="width:350px;margin:12px"
     >
       <span
         class="arco-input-group"
@@ -1662,7 +1684,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <span
       class="arco-input-inner-wrapper arco-input-inner-wrapper-default arco-input-clear-wrapper"
-      style="width:350px;margin-bottom:24px"
+      style="width:350px;margin:12px"
     >
       <input
         class="arco-input arco-input-size-default"

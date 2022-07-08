@@ -1,0 +1,16 @@
+.@{image-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{image-prefix-cls} {
+    &-actions {
+      &-item {
+        margin-left: 0;
+        margin-right: @image-spacing-actions-item-left;
+
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
