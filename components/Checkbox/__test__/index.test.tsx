@@ -1,22 +1,22 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Checkbox from '..';
+import { fireEvent, render } from '../../../tests/util';
 
 mountTest(Checkbox);
 componentConfigTest(Checkbox, 'Checkbox');
 
 describe('Checkbox uncontrolled', () => {
   it('Checkbox default check', () => {
-    const wrapper = mount(<Checkbox defaultChecked>Checkbox</Checkbox>);
-    expect(wrapper.find('.arco-checkbox').hasClass('arco-checkbox-checked')).toBe(true);
+    const wrapper = render(<Checkbox defaultChecked>Checkbox</Checkbox>);
+    expect(wrapper.querySelector('.arco-checkbox')).toHaveClass('arco-checkbox-checked');
   });
 
   it('Checkbox onChange', () => {
     const mockFn = jest.fn();
-    const wrapper = mount(<Checkbox onChange={mockFn}>Checkbox</Checkbox>);
-    wrapper.find('.arco-checkbox > input').simulate('change', {
+    const wrapper = render(<Checkbox onChange={mockFn}>Checkbox</Checkbox>);
+    fireEvent.click(wrapper.querySelector('.arco-checkbox'), {
       target: {
         checked: true,
       },
@@ -24,7 +24,7 @@ describe('Checkbox uncontrolled', () => {
 
     expect(mockFn.call.length).toBe(1);
 
-    expect(wrapper.find('.arco-checkbox').hasClass('arco-checkbox-checked')).toBe(true);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-checked');
   });
 });
 
@@ -32,47 +32,43 @@ describe('Checkbox controlled', () => {
   it('Checkbox check', () => {
     const mockFn = jest.fn();
 
-    const wrapper = mount(
+    const wrapper = render(
       <Checkbox onChange={mockFn} checked>
         Checkbox
       </Checkbox>
     );
-    expect(wrapper.find('.arco-checkbox').hasClass('arco-checkbox-checked')).toBe(true);
-    wrapper.find('.arco-checkbox > input').simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-checked');
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
     expect(mockFn.call.length).toBe(1);
 
-    expect(wrapper.find('.arco-checkbox').hasClass('arco-checkbox-checked')).toBe(true);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-checked');
   });
 
   it('Checkbox onChange', () => {
     let checked = false;
-    const wrapper = mount(
+    const wrapper = render(
       <Checkbox checked={checked} onChange={(v) => (checked = v)}>
         Checkbox
       </Checkbox>
     );
-    wrapper.find('.arco-checkbox > input').simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
 
     expect(checked).toBe(true);
-    wrapper.setProps({ checked });
+    wrapper.rerender(
+      <Checkbox checked={checked} onChange={(v) => (checked = v)}>
+        Checkbox
+      </Checkbox>
+    );
 
-    expect(wrapper.find('.arco-checkbox').hasClass('arco-checkbox-checked')).toBe(true);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-checked');
 
-    wrapper.find('.arco-checkbox > input').simulate('change', {
-      target: {
-        checked: false,
-      },
-    });
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
     expect(checked).toBe(false);
-    wrapper.setProps({ checked: false });
-    expect(wrapper.find('.arco-checkbox').hasClass('arco-checkbox-checked')).toBe(false);
+    wrapper.rerender(
+      <Checkbox checked={false} onChange={(v) => (checked = v)}>
+        Checkbox
+      </Checkbox>
+    );
+    expect(wrapper.querySelector('.arco-checkbox-checked')).toBe(null);
   });
 });
