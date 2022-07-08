@@ -31,6 +31,7 @@
 |dropdownMenuClassName|自定义下拉列表类名|`string \| string[]`|`-`|2.35.0|
 |dropdownMenuColumnStyle|菜单列样式|`CSSProperties`|`-`|2.35.0|
 |virtualListProps|传递虚拟滚动属性。开启虚拟滚动后，每列级联菜单的会存在默认宽度，可通过 `dropdownMenuColumnStyle` 进行样式调整|`Pick<VirtualListProps<any>, 'threshold' \| 'isStaticItemHeight'>`|`-`|2.35.0|
+|defaultActiveFirstOption|是否默认高亮搜索结果第一个选项。|`boolean`|`true`|2.37.0|
 |dropdownRender|自定义下拉菜单的展示。|`(menu: ReactNode) => ReactNode`|`-`|2.15.0|
 |dropdownColumnRender|自定义下拉菜单每一列的展示。|`(menu: ReactNode, level: number) => ReactNode`|`-`|2.15.0, `level` in 2.17.0|
 |filterOption|默认搜索从 `label` 属性中进行关键字搜索。通过该方法可以自定义搜索逻辑|`(inputValue: string, option: NodeProps<T>) => boolean`|`-`|-|
@@ -44,9 +45,8 @@
 |loadMore|动态加载数据。pathValue: 当前选中项的路径 value； level: 选中项层级。|`(pathValue: string[], level: number) => Promise<T[]>`|`-`|-|
 |onVisibleChange|下拉框收起展开时触发。|`(visible: boolean) => void`|`-`|-|
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|`(visible: boolean) => void`|`-`|-|
-|defaultActiveFirstOption|是否默认高亮搜索结果第一个选项。|`boolean`|`-`|2.36.2|
 |animation|是否为内部标签变化添加动画。|`boolean`|`true`|2.15.0|
-|renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
+|renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => ReactNode`|`-`|index、values added in 2.15.0|
 |dragToSort|是否可以通过拖拽为 Tag 排序|`boolean`|`-`|2.27.0|
 |className|节点类名|`string \| string[]`|`-`|-|
 |placeholder|选择框默认文字。|`string`|`-`|-|

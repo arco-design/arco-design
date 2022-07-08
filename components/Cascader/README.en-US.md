@@ -31,6 +31,7 @@ Display options in a multi-level cascading dropdown component.
 |dropdownMenuClassName|Custom dropdown list classname|`string \| string[]`|`-`|2.35.0|
 |dropdownMenuColumnStyle|dropdown menu column style|`CSSProperties`|`-`|2.35.0|
 |virtualListProps|virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`|`Pick<VirtualListProps<any>, 'threshold' \| 'isStaticItemHeight'>`|`-`|2.35.0|
+|defaultActiveFirstOption|Whether to highlight the first option of search results by default|`boolean`|`true`|2.37.0|
 |dropdownRender|Customize the popup menu.|`(menu: ReactNode) => ReactNode`|`-`|2.15.0|
 |dropdownColumnRender|Customize columns of the menu.|`(menu: ReactNode, level: number) => ReactNode`|`-`|2.15.0, `level` in 2.17.0|
 |filterOption|Customize the search logic.|`(inputValue: string, option: NodeProps<T>) => boolean`|`-`|-|
@@ -44,9 +45,8 @@ Display options in a multi-level cascading dropdown component.
 |loadMore|To load option lazily|`(pathValue: string[], level: number) => Promise<T[]>`|`-`|-|
 |onVisibleChange|Callback when popup shown or hidden.|`(visible: boolean) => void`|`-`|-|
 |onClear|Callback when click clear icon.|`(visible: boolean) => void`|`-`|-|
-|defaultActiveFirstOption|Whether to highlight the first option of search results by default|`boolean`|`-`|2.36.2|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
-|renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
+|renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => ReactNode`|`-`|index、values added in 2.15.0|
 |dragToSort|Weather it is possible to sort tags by drag|`boolean`|`-`|2.27.0|
 |className|Additional css class|`string \| string[]`|`-`|-|
 |placeholder|Placeholder of element|`string`|`-`|-|

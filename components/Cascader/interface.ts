@@ -113,7 +113,8 @@ export interface CascaderProps<T = any> extends Omit<SelectViewCommonProps, 'all
   /**
    * @zh 是否默认高亮搜索结果第一个选项。
    * @en Whether to highlight the first option of search results by default
-   * @version 2.36.2
+   * @version 2.37.0
+   * @defaultValue true
    */
   defaultActiveFirstOption?: boolean;
   /**
