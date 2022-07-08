@@ -110,7 +110,17 @@
         }
       }
 
-      // 拖动样式
+      /*********************************************
+       * Style of draggable items
+       ********************************************/
+      &-draggable:first-child {
+        margin-top: @transfer-item-draggable-height-gap;
+      }
+
+      &-draggable:last-child {
+        margin-bottom: @transfer-item-draggable-height-gap;
+      }
+
       &-draggable::before {
         content: '';
         display: block;
