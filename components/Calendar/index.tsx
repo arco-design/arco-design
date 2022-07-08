@@ -25,7 +25,7 @@ const defaultProps: CalendarProps = {
 };
 
 function Calendar(baseProps: CalendarProps) {
-  const { getPrefixCls, locale: globalLocale, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, locale: globalLocale, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CalendarProps>(baseProps, defaultProps, componentConfig?.Calendar);
   const {
     style,
@@ -133,6 +133,7 @@ function Calendar(baseProps: CalendarProps) {
     innerMode === 'month' ? `${prefixCls}-mode-month` : `${prefixCls}-mode-year`,
     {
       [`${prefixCls}-panel`]: panel && (innerMode === 'month' || innerMode === 'year'),
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

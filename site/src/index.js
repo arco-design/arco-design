@@ -37,7 +37,7 @@ function Index() {
       <Navbar.NavbarThemeProvider>
         <GlobalContext.Provider value={{ lang: 'zh-CN', locale, user }}>
           <ScrollToTop />
-          <ConfigProvider locale={zhCN}>
+          <ConfigProvider locale={zhCN} rtl>
             <GlobalNoticeContext.Provider
               value={{
                 noticeHeight,
