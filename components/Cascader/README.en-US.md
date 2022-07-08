@@ -44,6 +44,7 @@ Display options in a multi-level cascading dropdown component.
 |loadMore|To load option lazily|`(pathValue: string[], level: number) => Promise<T[]>`|`-`|-|
 |onVisibleChange|Callback when popup shown or hidden.|`(visible: boolean) => void`|`-`|-|
 |onClear|Callback when click clear icon.|`(visible: boolean) => void`|`-`|-|
+|defaultActiveFirstOption|Whether to highlight the first option of search results by default|`boolean`|`-`|2.36.2|
 |animation|Whether to add animation for internal label changes|`boolean`|`true`|2.15.0|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|`(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => React.ReactNode`|`-`|index、values added in 2.15.0|
 |dragToSort|Weather it is possible to sort tags by drag|`boolean`|`-`|2.27.0|
