@@ -112,6 +112,7 @@ describe('Select', () => {
         <Select.OptGroup label="GroupOne">
           <Select.Option value="G1_V1">G1_V1</Select.Option>
           <Select.Option value="G1_V2">G1_V2</Select.Option>
+          <Select.Option value={undefined} />
         </Select.OptGroup>
       </Select>
     );

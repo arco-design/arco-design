@@ -89,7 +89,10 @@ function flatChildren(
 
   const getChildValue = (child: ReactElement) => {
     const propValue = get(child, 'props.value');
-    return propValue === undefined ? child.props.children.toString() : propValue;
+    const propChildren = get(child, 'props.children');
+    return propValue === undefined && propChildren !== null && propChildren !== undefined
+      ? propChildren.toString()
+      : propValue;
   };
 
   const getChildKey = ({ label, value }, key?, isGroupTitle?) => {
