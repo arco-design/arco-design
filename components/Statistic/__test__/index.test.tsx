@@ -94,12 +94,14 @@ describe('Statistic', () => {
     const mockRender = jest
       .fn()
       .mockImplementation((_value, _formattedValue) => `${_value}-${_formattedValue}`);
-    const component = mount(
+    const component = render(
       <Statistic value={value} format="YYYY/MM/DD HH:mm:ss" renderFormat={mockRender} />
     );
 
     expect(mockRender.mock.calls[0]).toEqual([value, formattedValue]);
-    expect(component.text()).toEqual(`${value}-${formattedValue}`);
+    expect(component.find('.arco-statistic-value')[0].textContent).toEqual(
+      `${value}-${formattedValue}`
+    );
   });
 
   it('renderFormat support number value', () => {
@@ -107,11 +109,11 @@ describe('Statistic', () => {
     const mockRender = jest
       .fn()
       .mockImplementation((_value, _formattedValue) => `${_value}-${_formattedValue}`);
-    const component = mount(
+    const component = render(
       <Statistic value={value} format="YYYY/MM/DD HH:mm:ss" renderFormat={mockRender} />
     );
 
     expect(mockRender.mock.calls[0]).toEqual([value, value]);
-    expect(component.text()).toEqual(`${value}-${value}`);
+    expect(component.find('.arco-statistic-value')[0].textContent).toEqual(`${value}-${value}`);
   });
 });
