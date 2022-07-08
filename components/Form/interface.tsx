@@ -145,8 +145,8 @@ export interface FormProps<
    */
   validateMessages?: Partial<{
     [key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string
-      ? ValidateMessagesTemplateType[key]
-      : Record<keyof ValidateMessagesTemplateType[key], (data, { label }) => any | string>;
+      ? ValidateMessagesTemplateType[key] | ((data, { label }) => any)
+      : Record<keyof ValidateMessagesTemplateType[key], string | ((data, { label }) => any)>;
   }>;
   /**
    * @zh 数据验证成功后回调事件
