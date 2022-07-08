@@ -1,3 +1,13 @@
+## 2.37.0
+
+2022-07-08
+
+### 🐛 BugFix
+
+- Fix the bug that ellipsis does not take effect when `Table` component set `column.sorter` and `column.ellipsis` at the same time.([#1108](https://github.com/arco-design/arco-design/pull/1108))
+- Fix the style issue that the left border of `Table` component disappears when there is no data.([#1106](https://github.com/arco-design/arco-design/pull/1106))
+- Fix the bug of error when `Table` component data is null.([#1104](https://github.com/arco-design/arco-design/pull/1104))
+
 ## 2.36.0
 
 2022-06-24

@@ -1,3 +1,11 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `TreeSelect` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+
 ## 2.36.0
 
 2022-06-24

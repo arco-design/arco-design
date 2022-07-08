@@ -1,3 +1,12 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `Cascader` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `Cascader` supports the default highlighting of the first option after searching by setting the `defaultActiveFirstOption` property.([#1096](https://github.com/arco-design/arco-design/pull/1096))
+
 ## 2.36.0
 
 2022-06-24

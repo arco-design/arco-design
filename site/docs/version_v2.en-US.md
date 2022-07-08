@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- Support for RTL mode. (`Table`, `Resize`, `Slider` components are still being developed)
+- The `Select` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- The `Cascader` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- The `TreeSelect` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- The `InputTag` component allows formatting of values entered by the user via the `validate` property.([#1110](https://github.com/arco-design/arco-design/pull/1110))
+- `Cascader` supports the default highlighting of the first option after searching by setting the `defaultActiveFirstOption` property.([#1096](https://github.com/arco-design/arco-design/pull/1096))
+- The `Upload` component supports listening to the `onDrop` event([#1071](https://github.com/arco-design/arco-design/pull/1071))
+- `Form.useWatch` supports watching multiple field values.([#1034](https://github.com/arco-design/arco-design/pull/1034))
+
+### 🐛 BugFix
+
+- Fixed `Form.useWatch` when monitoring a form control with an initial value but not mounted, the return value has a change of `initial value => undefined`, causing the component to update.([#1034](https://github.com/arco-design/arco-design/pull/1034))
+- Fix the bug that ellipsis does not take effect when `Table` component set `column.sorter` and `column.ellipsis` at the same time.([#1108](https://github.com/arco-design/arco-design/pull/1108))
+- Fix the style issue that the left border of `Table` component disappears when there is no data.([#1106](https://github.com/arco-design/arco-design/pull/1106))
+- Fix the bug of error when `Table` component data is null.([#1104](https://github.com/arco-design/arco-design/pull/1104))
+- Fixed bug where the `onChange` method of the `Form.Item` component injected into a custom form control would be redeclared every time it renders.([#1102](https://github.com/arco-design/arco-design/pull/1102))
+- fix `Upload` can upload file type not in accept([#1097](https://github.com/arco-design/arco-design/pull/1097))
+
+### 💅 Style
+
+- The `Typography` default style adds `white-space: 'normal'` to remove the parent element's effect on ellipsis.([#1109](https://github.com/arco-design/arco-design/pull/1109))
+- Fixed an issue where the drag flag of the first item in the list might be obscured by the container when `Transfer` is draggable.([#1103](https://github.com/arco-design/arco-design/pull/1103))
+
 ## 2.36.1
 
 2022-07-01
@@ -16,6 +45,10 @@ changelog: true
 ## 2.36.0
 
 2022-06-24
+
+### 🚨 Important attention
+
+- **This version has refactored and optimized the `Typography` component beyond omission. In order to avoid the change of the dom structure by default, the default value of `ellipsis.cssEllipsis` has been changed to `false`. For specific reasons [About exceeding omission](https://arco.design/react/en-US/components/typography#about-exceeding-omission)**
 
 ### 💎 Enhancement
 

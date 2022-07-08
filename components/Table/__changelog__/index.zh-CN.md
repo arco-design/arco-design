@@ -1,3 +1,13 @@
+## 2.37.0
+
+2022-07-08
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件同时开启 `column.sorter` 和 `column.ellipsis` 时，ellipsis 不生效的 bug。([#1108](https://github.com/arco-design/arco-design/pull/1108))
+- 修复 `Table` 组件左边框在无数据时消失的样式问题。([#1106](https://github.com/arco-design/arco-design/pull/1106))
+- 修复 `Table` 组件 data 为 null 时报错的 bug。([#1104](https://github.com/arco-design/arco-design/pull/1104))
+
 ## 2.36.0
 
 2022-06-24

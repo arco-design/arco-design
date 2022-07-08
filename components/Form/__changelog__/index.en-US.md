@@ -1,3 +1,16 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- `Form.useWatch` supports watching multiple field values.([#1034](https://github.com/arco-design/arco-design/pull/1034))
+
+### 🐛 BugFix
+
+- Fixed `Form.useWatch` when monitoring a form control with an initial value but not mounted, the return value has a change of `initial value => undefined`, causing the component to update.([#1034](https://github.com/arco-design/arco-design/pull/1034))
+- Fixed bug where the `onChange` method of the `Form.Item` component injected into a custom form control would be redeclared every time it renders.([#1102](https://github.com/arco-design/arco-design/pull/1102))
+
 ## 2.36.1
 
 2022-07-01

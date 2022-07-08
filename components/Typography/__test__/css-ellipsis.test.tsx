@@ -75,6 +75,7 @@ describe('Css Ellipsis Scene', () => {
     expect(wrapper.find('.arco-typography-simple-ellipsis')).toHaveLength(1);
     const ellipsisStyle1 = wrapper.find('.arco-typography-simple-ellipsis > span')[0].style;
     expect(ellipsisStyle1?.textOverflow).toEqual('ellipsis');
+    // @ts-ignore
     expect(ellipsisStyle1?.WebkitLineClamp).toBeFalsy();
     expect(onEllipsis).toHaveBeenCalledWith(true);
     wrapper.rerender(
@@ -88,6 +89,7 @@ describe('Css Ellipsis Scene', () => {
       </Paragraph>
     );
     const ellipsisStyle2 = wrapper.find('.arco-typography-simple-ellipsis > span')[0].style;
+    // @ts-ignore
     expect(ellipsisStyle2?.WebkitLineClamp).toEqual('2');
   });
 
@@ -139,6 +141,7 @@ describe('Css Ellipsis Scene', () => {
     expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(mockText);
     expect(wrapper.find('.arco-typography-simple-ellipsis')).toHaveLength(1);
     act(() => {
+      // @ts-ignore
       fireEvent.mouseEnter(wrapper.find('.arco-typography')[0].closest('span'));
     });
     jest.runAllTimers();
@@ -190,6 +193,7 @@ describe('Css Ellipsis Scene', () => {
     expect(wrapper.find('.arco-typography')[0]).toHaveTextContent(mockText);
     expect(wrapper.find('.arco-typography-simple-ellipsis')).toHaveLength(1);
     expect(
+      // @ts-ignore
       wrapper.find('.arco-typography-simple-ellipsis > span')[0].style?.WebkitLineClamp
     ).toEqual('2');
   });

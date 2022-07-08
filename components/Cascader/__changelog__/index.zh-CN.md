@@ -1,3 +1,12 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过对象类型的 `maxTagCount` 属性定制 `maxTag` 内容展示([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `Cascader` 支持通过  `defaultActiveFirstOption` 属性设置搜索后默认高亮第一个选项。([#1096](https://github.com/arco-design/arco-design/pull/1096))
+
 ## 2.36.0
 
 2022-06-24

@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.37.0
+
+2022-07-08
+
+### 🆕 功能升级
+
+- 全局支持 RTL 模式。 (`Table`，`Resize`, `Slider` 组件仍在完善中)
+- `Select` 组件支持通过对象类型的 `maxTagCount` 属性定制 `maxTag` 内容展示([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `Cascader` 组件支持通过对象类型的 `maxTagCount` 属性定制 `maxTag` 内容展示([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `TreeSelect` 组件支持通过对象类型的 `maxTagCount` 属性定制 `maxTag` 内容展示([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `InputTag` 组件允许通过 `validate` 属性格式化用户输入的值。([#1110](https://github.com/arco-design/arco-design/pull/1110))
+- `Cascader` 支持通过  `defaultActiveFirstOption` 属性设置搜索后默认高亮第一个选项。([#1096](https://github.com/arco-design/arco-design/pull/1096))
+- `Upload` 组件支持监听 `onDrop` 事件([#1071](https://github.com/arco-design/arco-design/pull/1071))
+- `Form.useWatch` 支持监听多个字段值。([#1034](https://github.com/arco-design/arco-design/pull/1034))
+
+### 🐛 问题修复
+
+- 修复 `Form.useWatch` 在监听有初始值但未挂载的表单控件时，返回值存在 `初始值 => undefined` 的变化，导致组件更新。([#1034](https://github.com/arco-design/arco-design/pull/1034))
+- 修复 `Table` 组件同时开启 `column.sorter` 和 `column.ellipsis` 时，ellipsis 不生效的 bug。([#1108](https://github.com/arco-design/arco-design/pull/1108))
+- 修复 `Table` 组件左边框在无数据时消失的样式问题。([#1106](https://github.com/arco-design/arco-design/pull/1106))
+- 修复 `Table` 组件 data 为 null 时报错的 bug。([#1104](https://github.com/arco-design/arco-design/pull/1104))
+- 修复 `Form.Item` 组件注入到自定义表单控件的 `onChange` 方法每次渲染都会重新声明导致子组件可能循环渲染的 bug。([#1102](https://github.com/arco-design/arco-design/pull/1102))
+- 修复 `Upload` 组件在 Windows 系统下可以上传非 `accept` 类型的文件([#1097](https://github.com/arco-design/arco-design/pull/1097))
+
+### 💅 样式更新
+
+- `Typography` 默认样式添加 `white-space: 'normal'` 以消除父元素对省略影响。([#1109](https://github.com/arco-design/arco-design/pull/1109))
+- 修复 `Transfer` 可拖拽时，列表中的第一个条目的拖拽标识可能被容器遮挡的问题。([#1103](https://github.com/arco-design/arco-design/pull/1103))
+
 ## 2.36.1
 
 2022-07-01
@@ -16,6 +45,10 @@ changelog: true
 ## 2.36.0
 
 2022-06-24
+
+### 🚨 重点注意
+
+- **此版本对 `Typography` 组件超出省略进行了重构优化，为了规避默认情况下 dom 结构的变化，将 `ellipsis.cssEllipsis` 默认值改为`false`。具体原因可看[关于超出省略](https://arco.design/react/components/typography#%E5%85%B3%E4%BA%8E%E8%B6%85%E5%87%BA%E7%9C%81%E7%95%A5)**
 
 ### 💎 功能优化
 

@@ -1,3 +1,11 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `InputTag` component allows formatting of values entered by the user via the `validate` property.([#1110](https://github.com/arco-design/arco-design/pull/1110))
+
 ## 2.30.2
 
 2022-03-18
