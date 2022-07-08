@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders InputTag/demo/basic.md correctly 1`] = `
-<div
-  class="arco-space arco-space-horizontal arco-space-align-center"
->
+<div>
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
     style="margin-bottom:20px"
