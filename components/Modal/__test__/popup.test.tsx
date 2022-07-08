@@ -1,9 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import mountTest from '../../../tests/mountTest';
 import Modal from '..';
 import Select from '../../Select';
-import { $ } from '../../../tests/util';
+import { $, cleanup, fireEvent, render } from '../../../tests/util';
 
 mountTest(Modal);
 
@@ -17,12 +16,13 @@ describe('Modal popup test', () => {
   });
 
   afterEach(() => {
+    cleanup();
     document.body.innerHTML = '';
     jest.runAllTimers();
   });
 
   it('popup correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <div>
         <Modal title="Title" visible>
           <Select options={[1, 2, 3]} />
@@ -31,7 +31,7 @@ describe('Modal popup test', () => {
     );
     jest.useFakeTimers();
 
-    wrapper.find('Select').simulate('click');
+    fireEvent.click(wrapper.find('.arco-select-view')[0]);
 
     jest.runAllTimers();
 
@@ -42,13 +42,13 @@ describe('Modal popup test', () => {
   });
 
   it('getChildrenPopupContainer correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Modal
         title="Title"
         visible
         getChildrenPopupContainer={() => {
           // console.log(document.querySelector('.test'));
-          return document.querySelector('.test');
+          return document.querySelector('.test') as Element;
         }}
       >
         <div className="test">
@@ -59,7 +59,7 @@ describe('Modal popup test', () => {
 
     jest.useFakeTimers();
 
-    wrapper.find('Select').simulate('click');
+    fireEvent.click(wrapper.find('.arco-select-view')[0]);
     jest.runAllTimers();
 
     expect($('.arco-select-popup').length).toBe(1);

@@ -98,6 +98,10 @@
         right: @menu-vertical-item-padding-horizontal;
         top: 50%;
         transform: translateY(-50%);
+
+        &.is-open {
+          transform: translateY(-50%) rotate(180deg);
+        }
       }
     };
 
@@ -137,7 +141,7 @@
           }
         }
 
-        &.@{menu-prefix-cls}-active {
+        &:focus-visible {
           .menu-focus-visible-style();
         }
 
@@ -235,13 +239,6 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-  }
-
-  // 展开折叠图标
-  &-icon-suffix {
-    &.is-open {
-      transform: rotate(180deg);
-    }
   }
 
   &-vertical {
@@ -386,10 +383,6 @@
     overflow: hidden;
     height: auto;
     transition: height @transition-duration-2 @transition-timing-function-standard;
-
-    &-hide {
-      height: 0;
-    }
   }
 
   // 弹出的 ToolTip 中 a 标签的样式

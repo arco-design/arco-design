@@ -97,6 +97,7 @@ const TreeSelect: ForwardRefRenderFunction<
           const nodeProps = key2nodeProps[key];
           let isHit = false;
           if (isFunction(props.filterTreeNode)) {
+            // @ts-ignore
             if (props.filterTreeNode(inputText, <Tree.Node {...nodeProps} />)) {
               isHit = true;
             }
@@ -223,6 +224,10 @@ const TreeSelect: ForwardRefRenderFunction<
     return { text: label, disabled };
   }, []);
 
+  const tryUpdateSelectValue = (value: LabelValue[]) => {
+    setValue(value, {});
+  };
+
   return (
     <Trigger
       autoAlignPopupWidth={false}
@@ -302,6 +307,7 @@ const TreeSelect: ForwardRefRenderFunction<
               prefixCls={prefixCls}
               isMultiple={multiple}
               renderText={renderText}
+              onSort={tryUpdateSelectValue}
               onRemoveCheckedItem={handleRemoveCheckedItem}
               onClear={(e) => {
                 e.stopPropagation();

@@ -1,3 +1,11 @@
+## 2.36.0
+
+2022-06-24
+
+### 🆕 Feature
+
+- `Statistic` component adds `renderFormat` parameter to support custom rendering.([#1044](https://github.com/arco-design/arco-design/pull/1044))
+
 ## 2.29.0
 
 2022-02-11

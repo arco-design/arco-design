@@ -1,3 +1,11 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fixed `Calendar` component `defaultValue` and selected date not being highlighted.([#1073](https://github.com/arco-design/arco-design/pull/1073))
+
 ## 2.30.0
 
 2022-03-04

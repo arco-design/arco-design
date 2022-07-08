@@ -20,6 +20,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
 import PickerContext from './context';
+import { getFormatTime } from './util';
 
 function getFormat(props) {
   return props.format || 'HH:mm:ss';
@@ -151,7 +152,10 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onConfirmValue(vs: Dayjs | Dayjs[]) {
-    const newValue = isRangePicker && order ? getSortedDayjsArray(vs as Dayjs[]) : vs;
+    const newValue =
+      isRangePicker && order && isArray(vs)
+        ? getSortedDayjsArray(vs.map((v) => getFormatTime(v)))
+        : vs;
     setValue(newValue);
     setValueShow(undefined);
     setInputValue(undefined);

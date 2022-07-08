@@ -17,7 +17,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import InputComponent from './input-element';
 import Group from './group';
 import { contains } from '../_util/dom';
-import useMergeProps from '../_util/hooks/useMergeProps';
+import useMergeProps, { MergePropsOptions } from '../_util/hooks/useMergeProps';
 
 const keepFocus = (e) => {
   e.target.tagName !== 'INPUT' && e.preventDefault();
@@ -201,16 +201,16 @@ function Input(baseProps: InputProps, ref) {
   );
 }
 
-type InputRefType = ForwardRefExoticComponent<InputProps & React.RefAttributes<RefInputType>> & {
+type InputRefType = ForwardRefExoticComponent<
+  InputProps & React.RefAttributes<RefInputType> & MergePropsOptions
+> & {
   Search: typeof Search;
   TextArea: typeof TextArea;
   Password: typeof Password;
   Group: typeof Group;
 };
 
-const InputElement: InputRefType = React.forwardRef<RefInputType, InputProps>(
-  Input
-) as InputRefType;
+const InputElement = React.forwardRef(Input) as InputRefType;
 
 InputElement.displayName = 'Input';
 

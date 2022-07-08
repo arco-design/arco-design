@@ -2270,7 +2270,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
       <span
         class="arco-transfer-view-header-unit"
       >
-        3 / 5
+        5
       </span>
     </div>
     <div
@@ -2517,6 +2517,11 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
         class="arco-transfer-view-header-title"
       >
         Selected list
+      </span>
+      <span
+        class="arco-transfer-view-header-unit"
+      >
+        3
       </span>
       <span
         class="arco-icon-hover arco-transfer-view-icon-clear"
@@ -4588,7 +4593,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
       <span
         class="arco-transfer-view-header-unit"
       >
-        0 / 5
+        5
       </span>
     </div>
     <div
@@ -4805,6 +4810,11 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
         class="arco-transfer-view-header-title"
       >
         Selected list
+      </span>
+      <span
+        class="arco-transfer-view-header-unit"
+      >
+        3
       </span>
       <span
         class="arco-icon-hover arco-transfer-view-icon-clear"

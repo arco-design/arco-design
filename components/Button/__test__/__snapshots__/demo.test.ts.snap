@@ -752,7 +752,7 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
 exports[`renders Button/demo/loading.md correctly 1`] = `
 <div>
   <div
-    style="display:grid;grid-template-columns:repeat(3, 100px);grid-row-gap:24px;grid-column-gap:24px;margin-left:24px"
+    style="display:grid;grid-template-columns:repeat(3, 100px);row-gap:24px;column-gap:24px;margin-left:24px"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-loading"

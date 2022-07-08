@@ -8,8 +8,7 @@ import { VirtualListProps } from '../_class/VirtualList';
 /**
  * @title Cascader
  */
-export interface CascaderProps<T = any>
-  extends Omit<SelectViewCommonProps, 'allowCreate' | 'dragToSort'> {
+export interface CascaderProps<T = any> extends Omit<SelectViewCommonProps, 'allowCreate'> {
   /**
    * @zh 选择框的默认值
    * @en Initial value

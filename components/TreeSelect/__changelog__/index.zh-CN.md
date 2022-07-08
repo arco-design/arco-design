@@ -1,3 +1,11 @@
+## 2.36.0
+
+2022-06-24
+
+### 🐛 问题修复
+
+- 修复 `dragToSort` 在 TreeSelect 中不生效的问题([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
 ## 2.31.0
 
 2022-03-25

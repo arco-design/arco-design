@@ -20,7 +20,6 @@ function Demo1() {
         }}
       >
         <span style={{ display: 'inline-block' }}>固定在顶部120</span>
-        <Button>当初你到家</Button>
       </Affix>
       <Affix
         onChange={(value) => {

@@ -110,6 +110,7 @@ export default {
   'routes.material.start': '快速开始',
   'routes.material.guide': '物料指南',
   'routes.material.qa': '常见问题',
+  'routes.material.spec': '开发规范',
   'routes.material.create-project': '创建项目',
   'routes.material.project-template': '项目模板',
   'routes.material.project-config': '项目配置',

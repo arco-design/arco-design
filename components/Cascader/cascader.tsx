@@ -366,6 +366,10 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     );
   };
 
+  const updateSelectedValues = (value: string[][]) => {
+    setValue(value);
+  };
+
   return (
     <Trigger
       popup={renderPopup}
@@ -396,6 +400,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
           isMultiple={isMultiple}
           renderText={renderText}
           onRemoveCheckedItem={onRemoveCheckedItem}
+          onSort={updateSelectedValues}
           onClear={(e) => {
             e.stopPropagation();
             if (!isMultiple) {

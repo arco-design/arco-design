@@ -70,6 +70,7 @@ function PageJumper(props: PageJumperProps) {
       {!simple && <span className={`${prefixCls}-text-goto`}>{locale.Pagination.goto}</span>}
       {inputConfig.showJumper ? (
         <Input
+          _ignorePropsFromGlobal
           ref={(ref) => (inputRef.current = ref)}
           className={`${prefixCls}-input`}
           value={!isUndefined(inputText) ? inputText.toString() : undefined}

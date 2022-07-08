@@ -27,18 +27,20 @@
 |countFrom|从什么数字开始动态变大|`number`|`0`|-|
 |countDuration|动态变大的过渡时间 (ms)|`number`|`2000`|-|
 |format|[dayjs](https://github.com/iamkun/dayjs)'s format|`string`|`-`|-|
+|renderFormat|自定义 render 函数。`formattedValue` 表示格式化后的值。|`(value: StatisticProps['value'], formattedValue: string) => React.ReactNode`|`-`|2.36.0|
 |loading|数字是否加载中|`boolean`|`-`|2.20.0|
 
 ### Statistic.Countdown
 
-|参数名|描述|类型|默认值|
-|---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|styleValue|数值的样式|`CSSProperties`|`-`|
-|title|数值的标题|`string \| ReactNode`|`-`|
-|value|倒计时的时间|`number \| string \| Date \| Dayjs`|`-`|
-|format|[dayjs](https://github.com/iamkun/dayjs)'s format|`string`|`HH:mm:ss`|
-|onFinish|倒计时完成后触发的回调|`() => void`|`-`|
-|start|是否开始倒计时，默认为 `true`，可以通过设置该值控制倒计时的时机|`boolean`|`true`|
-|now|用于修正初始化时间显示不正确|`number \| string \| Date \| Dayjs`|`-`|
+|参数名|描述|类型|默认值|版本|
+|---|---|---|---|---|
+|style|节点样式|`CSSProperties`|`-`|-|
+|className|节点类名|`string \| string[]`|`-`|-|
+|styleValue|数值的样式|`CSSProperties`|`-`|-|
+|title|数值的标题|`string \| ReactNode`|`-`|-|
+|value|倒计时的时间|`number \| string \| Date \| Dayjs`|`-`|-|
+|format|[dayjs](https://github.com/iamkun/dayjs)'s format|`string`|`HH:mm:ss`|-|
+|renderFormat|自定义 render 函数。`valueDiff` 表示两个时间的时间差，`formattedDiff` 表示格式化后的时间差，|`(valueDiff: number, formattedDiff: string) => React.ReactNode`|`-`|2.36.0|
+|onFinish|倒计时完成后触发的回调|`() => void`|`-`|-|
+|start|是否开始倒计时，默认为 `true`，可以通过设置该值控制倒计时的时机|`boolean`|`true`|-|
+|now|用于修正初始化时间显示不正确|`number \| string \| Date \| Dayjs`|`-`|-|

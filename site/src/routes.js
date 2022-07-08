@@ -781,6 +781,11 @@ export default function getRoutes(lang = 'zh', t) {
               path: 'material/qa',
               component: lazyLoad(() => import(`../docs/material/start.qa${suffix}.md`)),
             },
+            {
+              name: t['routes.material.spec'],
+              path: 'material/spec',
+              component: lazyLoad(() => import(`../docs/material/start.spec${suffix}.md`)),
+            },
           ],
         },
         {

@@ -1,13 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Menu from '..';
 import Tooltip from '../../Tooltip';
 import { MenuProps } from '../interface';
 import { $ } from '../../../tests/util';
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Enter, Esc } from '../../_util/keycode';
 
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
@@ -265,54 +263,6 @@ describe('Menu', () => {
       </Menu>
     );
     expect(component.render()).toMatchSnapshot();
-  });
-
-  it('hotkey operation with default selected key', () => {
-    const component = mount(generateMenu({ defaultSelectedKeys: ['2'] }));
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowUp.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-active').text()).toBe('设计指南');
-  });
-
-  it('hotkey operations', () => {
-    const component = mount(generateMenu());
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowDown.code });
-    });
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowLeft.code });
-    });
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowRight.code });
-    });
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowDown.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-active').text()).toBe('模块');
-
-    act(() => {
-      component.simulate('keydown', { keyCode: Enter.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-selected').text()).toBe('模块');
-
-    act(() => {
-      component.simulate('keydown', { keyCode: Esc.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-active')).toHaveLength(0);
   });
 
   it('SubMenu properties are passed in correctly', () => {

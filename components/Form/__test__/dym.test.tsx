@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-test-renderer';
+import { fireEvent, render } from '../../../tests/util';
 import { Form, Input, Button } from '../..';
 import { FormInstance } from '..';
 
@@ -91,17 +91,19 @@ const Demo: React.FC<DemoProps> = ({ savRef, onChange }) => {
 };
 
 function mountDemo(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<DemoProps>>(component);
+  return render(component);
 }
 
 describe('add and delete', () => {
   let formRef: FormInstance;
   const changeMock = jest.fn();
-  const wrapper = mountDemo(<Demo onChange={changeMock} savRef={(node) => (formRef = node)} />);
-  const addButton = wrapper.find('.add-button').at(0);
+  const wrapper = mountDemo(
+    <Demo onChange={changeMock} savRef={(node) => (formRef = node as FormInstance)} />
+  );
+  const addButton = wrapper.querySelector('.add-button');
 
   it('should add', async () => {
-    expect(wrapper.find('Control')).toHaveLength(4);
+    expect(wrapper.find('.arco-form-item-control')).toHaveLength(4);
     expect(num).toBe(3);
     expect(Object.keys(formRef.getFieldsValue())).toEqual([
       'license0',
@@ -110,25 +112,25 @@ describe('add and delete', () => {
       'license3',
     ]);
     await act(() => {
-      addButton.simulate('click');
+      fireEvent.click(addButton);
     });
 
     expect(changeMock.call.length).toBe(1);
     expect(num).toBe(4);
-    expect(wrapper.find('Control')).toHaveLength(5);
+    expect(wrapper.find('.arco-form-item-control')).toHaveLength(5);
     expect(`license4` in formRef.getFieldsValue()).toBe(true);
 
     await act(() => {
-      addButton.simulate('click');
+      fireEvent.click(addButton);
     });
 
     expect(Object.keys(formRef.getFieldsValue()).length).toBe(6);
 
     const key0 = Object.keys(formRef.getFieldsValue())[0];
-    const delButton = wrapper.find('.delete-button').at(0);
+    const delButton = wrapper.querySelector('.delete-button');
 
     await act(() => {
-      delButton.simulate('click');
+      fireEvent.click(delButton);
     });
 
     expect(Object.keys(formRef.getFieldsValue()).length).toBe(5);

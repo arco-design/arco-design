@@ -641,6 +641,131 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Cascader/demo/draggable.md correctly 1`] = `
+<div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-10"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+  role="combobox"
+  style="width:600px"
+  tabindex="0"
+>
+  <div
+    class="arco-cascader-view"
+    title=""
+  >
+    <div
+      class="arco-input-tag arco-input-tag-size-default"
+    >
+      <div
+        class="arco-input-tag-view"
+      >
+        <div
+          class="arco-input-tag-inner"
+        >
+          <div
+            class="arco-draggable"
+          >
+            <li
+              class="arco-draggable-item"
+              draggable="true"
+              style="display:inline-block"
+            >
+              <div
+                class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+              >
+                <span
+                  class="arco-input-tag-tag-content"
+                  title="Beijing / Beijing / Chaoyang / Datunli"
+                >
+                  Beijing / Beijing / Chaoyang / Datunli
+                </span>
+                <span
+                  aria-label="Close"
+                  class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                  role="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="arco-icon arco-icon-close"
+                    fill="none"
+                    focusable="false"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </li>
+            <li
+              class="arco-draggable-item"
+              draggable="true"
+              style="display:inline-block"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default"
+                placeholder=""
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              />
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="arco-cascader-suffix"
+    >
+      <span
+        class="arco-icon-hover arco-cascader-clear-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-close"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+          />
+        </svg>
+      </span>
+      <div
+        class="arco-cascader-expand-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-expand"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          style="transform:rotate(-45deg)"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"
@@ -651,7 +776,7 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-10"
+      aria-controls="arco-cascader-popup-11"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -705,7 +830,7 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-11"
+      aria-controls="arco-cascader-popup-12"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -760,7 +885,7 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
 <div>
   <div
     aria-autocomplete="list"
-    aria-controls="arco-cascader-popup-12"
+    aria-controls="arco-cascader-popup-13"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -877,7 +1002,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-13"
+      aria-controls="arco-cascader-popup-14"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -950,7 +1075,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-14"
+      aria-controls="arco-cascader-popup-15"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1068,7 +1193,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-15"
+      aria-controls="arco-cascader-popup-16"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -1141,7 +1266,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-16"
+      aria-controls="arco-cascader-popup-17"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1252,7 +1377,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
 exports[`renders Cascader/demo/format.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-cascader-popup-17"
+  aria-controls="arco-cascader-popup-18"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -1331,7 +1456,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-18"
+      aria-controls="arco-cascader-popup-19"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -1385,7 +1510,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-19"
+      aria-controls="arco-cascader-popup-20"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1459,7 +1584,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-20"
+      aria-controls="arco-cascader-popup-21"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1552,7 +1677,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-21"
+      aria-controls="arco-cascader-popup-22"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1625,7 +1750,7 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-22"
+      aria-controls="arco-cascader-popup-23"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1699,7 +1824,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-23"
+      aria-controls="arco-cascader-popup-24"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -1755,7 +1880,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-24"
+      aria-controls="arco-cascader-popup-25"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -1856,7 +1981,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-25"
+      aria-controls="arco-cascader-popup-26"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -1929,7 +2054,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-26"
+      aria-controls="arco-cascader-popup-27"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -2079,7 +2204,7 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
   </div>
   <div
     aria-autocomplete="list"
-    aria-controls="arco-cascader-popup-27"
+    aria-controls="arco-cascader-popup-28"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -2197,7 +2322,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
   <div>
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-28"
+      aria-controls="arco-cascader-popup-29"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -2248,7 +2373,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
     <br />
     <div
       aria-autocomplete="list"
-      aria-controls="arco-cascader-popup-29"
+      aria-controls="arco-cascader-popup-30"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -2327,7 +2452,7 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
   </p>
   <div
     aria-autocomplete="list"
-    aria-controls="arco-cascader-popup-30"
+    aria-controls="arco-cascader-popup-31"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-size-default"

@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { CSSProperties, useContext, useMemo, ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
@@ -7,10 +7,13 @@ import IconDown from '../../../icon/react-icon/IconDown';
 import { processChildren, isChildrenSelected, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU } from '../util';
 import MenuContext from '../context';
 import MenuIndent from '../indent';
-import { useHotkeyHandler } from '../hotkey';
 import pick from '../../_util/pick';
+import { Enter } from '../../_util/keycode';
 
 let globalInlineSubMenuIndex = 0;
+
+// Use visibility: hidden to avoid Menu.Item get focused by Tab key
+const CONTENT_HIDDEN_STYLE: CSSProperties = { height: 0, visibility: 'hidden' };
 
 const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   const { _key, children, style, className, title, level, forwardedRef, selectable, ...rest } =
@@ -32,16 +35,14 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     (selectable && selectedKeys.indexOf(props._key as string) > -1) ||
     isChildrenSelected(children, selectedKeys);
 
-  const [height, setHeight] = useStateWithPromise(isOpen ? 'auto' : 0);
+  const [contentStyle, setContentStyle] = useStateWithPromise<CSSProperties>(
+    isOpen ? { height: 'auto' } : CONTENT_HIDDEN_STYLE
+  );
 
   const subMenuClickHandler = (event) => {
     onClickSubMenu(_key, level, 'inline');
     selectable && onClickMenuItem(_key, event);
   };
-  const isActive = useHotkeyHandler(
-    _key,
-    (isActive, type) => isActive && type === 'enter' && subMenuClickHandler(null)
-  );
 
   // Unique ID of this instance
   const instanceId = useMemo<string>(() => {
@@ -55,17 +56,23 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     ...pick(rest, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU),
     level: level + 1,
     selectable,
-  });
+  }) as ReactNode[];
 
   const header = (
     <div
+      tabIndex={0}
       aria-expanded={isOpen}
       aria-controls={instanceId}
       className={cs(`${baseClassName}-header`, {
-        [`${prefixCls}-active`]: isActive,
         [`${prefixCls}-selected`]: isSelected,
       })}
       onClick={subMenuClickHandler}
+      onKeyDown={(event) => {
+        const keyCode = event.keyCode || event.which;
+        if (keyCode === Enter.code) {
+          subMenuClickHandler(event);
+        }
+      }}
     >
       <MenuIndent level={level} prefixCls={prefixCls} levelIndent={levelIndent} />
       <span>{title}</span>
@@ -76,7 +83,7 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   );
 
   const content = (
-    <div id={instanceId} className={cs(`${baseClassName}-content`)} style={{ height }}>
+    <div id={instanceId} className={cs(`${baseClassName}-content`)} style={contentStyle}>
       {childrenList}
     </div>
   );
@@ -89,18 +96,16 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
         timeout={200}
         classNames={baseClassName}
         unmountOnExit={false}
-        onEnter={(element) => {
-          setHeight(0).then(() => {
-            setHeight(element.scrollHeight);
-          });
+        onEnter={async (element) => {
+          await setContentStyle(CONTENT_HIDDEN_STYLE);
+          await setContentStyle({ height: element.scrollHeight });
         }}
         onEntered={() => {
-          setHeight('auto');
+          setContentStyle({ height: 'auto' });
         }}
-        onExit={(element) => {
-          setHeight(element.scrollHeight).then(() => {
-            setHeight(0);
-          });
+        onExit={async (element) => {
+          await setContentStyle({ height: element.scrollHeight });
+          await setContentStyle(CONTENT_HIDDEN_STYLE);
         }}
       >
         {content}

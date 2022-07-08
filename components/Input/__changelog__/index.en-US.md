@@ -1,3 +1,11 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fix console React Warning (not recognize prop on a DOM element) caused by `Input` component.([#1070](https://github.com/arco-design/arco-design/pull/1070))
+
 ## 2.35.0
 
 2022-06-10

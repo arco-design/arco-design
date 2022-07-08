@@ -1,3 +1,20 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fix the problem that the order of form items is adjusted under `Form.List`, and the verification status may be displayed in disorder([#1077](https://github.com/arco-design/arco-design/pull/1077))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- Fixed a bug where the validation state of other form items was lost when the `Form.List` component was removed from the form item.([#1046](https://github.com/arco-design/arco-design/pull/1046))
+- Fixed a bug where the `form.clearFields()` method did not clear the validation state.([#1046](https://github.com/arco-design/arco-design/pull/1046))
+
 ## 2.35.0
 
 2022-06-10

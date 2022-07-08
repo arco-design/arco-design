@@ -1,3 +1,11 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fixed the bug that when the `Drawer` was set to `visible=true` during the hiding process, clicking again on the masked drawer could not be hidden.([#1079](https://github.com/arco-design/arco-design/pull/1079))
+
 ## 2.26.0
 
 2021-12-03
