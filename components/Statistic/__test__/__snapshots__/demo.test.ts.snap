@@ -408,6 +408,7 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
     </button>
     <span
       class="arco-typography"
+      style="margin:0 10px"
     >
       Loading
     </span>

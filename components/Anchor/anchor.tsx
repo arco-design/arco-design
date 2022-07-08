@@ -32,7 +32,7 @@ const defaultProps: AnchorProps = {
 };
 
 function Anchor(baseProps: AnchorPropsWithChildren, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<AnchorPropsWithChildren>(
     baseProps,
     defaultProps,
@@ -58,6 +58,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   const prefixCls = getPrefixCls('anchor');
   const classNames = cs(prefixCls, className, {
     [`${prefixCls}-lineless`]: lineless,
+    [`${prefixCls}-rtl`]: rtl,
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
   const sliderLineRef = useRef<HTMLDivElement>(null);

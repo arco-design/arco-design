@@ -14,7 +14,7 @@ title:
 The basic usage. The popup layer has no style by default.
 
 ```js
-import { Trigger, Button, Tooltip, Input, Skeleton, Typography } from '@arco-design/web-react';
+import { Trigger, Button, Tooltip, Input, Skeleton, Typography,Space } from '@arco-design/web-react';
 
 function Element(props) {
   return (
@@ -37,7 +37,7 @@ function Popup() {
 
 function App() {
   return (
-    <div style={{ width: 1000, overflow: 'auto' }}>
+    <Space style={{ width: 1000, overflow: 'auto' }} size={40}>
       <Trigger
         popup={() => <Popup />}
         mouseEnterDelay={400}
@@ -47,12 +47,12 @@ function App() {
         <Element />
       </Trigger>
       <Trigger popup={() => <Popup />} trigger="click" position="bottom" classNames="zoomInTop">
-        <Button style={{ marginRight: 40 }}>Click me</Button>
+        <Button>Click me</Button>
       </Trigger>
       <Trigger popup={() => <Popup />} trigger="focus" position="top" classNames="zoomInBottom">
         <Input style={{ width: 200 }} placeholder="Focus on me" />
       </Trigger>
-    </div>
+    </Space>
   );
 }
 

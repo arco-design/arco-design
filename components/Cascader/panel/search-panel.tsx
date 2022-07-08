@@ -28,6 +28,7 @@ export type SearchPanelProps<T> = {
   store?: Store<T>;
   style?: CSSProperties;
   prefixCls?: string;
+  rtl?: boolean;
   multiple?: boolean;
   value: string[][];
   inputValue?: string;
@@ -67,6 +68,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
     renderEmpty,
     style,
     defaultActiveFirstOption,
+    rtl,
   } = props;
   const value = props.value || [];
 
@@ -188,6 +190,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
         }}
         className={cs(`${prefixCls}-list`, `${prefixCls}-list-search`, {
           [`${prefixCls}-list-multiple`]: multiple,
+          [`${prefixCls}-list-rtl`]: rtl,
         })}
       >
         {(item, i) => {

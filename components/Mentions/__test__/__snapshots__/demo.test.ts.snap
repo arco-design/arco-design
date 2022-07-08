@@ -139,7 +139,7 @@ exports[`renders Mentions/demo/control.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:12px"
+              style="margin:0 12px"
               type="button"
             >
               <span>

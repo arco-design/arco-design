@@ -72,7 +72,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     },
   });
 
-  const { getPrefixCls } = useContext(ConfigContext);
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('textarea');
   if (disabled) {
     textAreaStyle.resize = 'none';
@@ -137,6 +137,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     {
       [`${prefixCls}-error`]: error || lengthError,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -161,10 +162,14 @@ const TextArea = (props: TextAreaProps, ref) => {
 
   if (withWrapper) {
     const showClearIcon = !disabled && allowClear && value;
+    const [leftWord, rightWord] = rtl
+      ? [wordLimitMaxLength, valueLength]
+      : [valueLength, wordLimitMaxLength];
     return (
       <div
         className={cs(`${prefixCls}-wrapper`, {
           [`${prefixCls}-clear-wrapper`]: allowClear,
+          [`${prefixCls}-wrapper-rtl`]: rtl,
         })}
         style={wrapperStyle}
       >
@@ -186,7 +191,7 @@ const TextArea = (props: TextAreaProps, ref) => {
               [`${prefixCls}-word-limit-error`]: lengthError,
             })}
           >
-            {valueLength}/{wordLimitMaxLength}
+            {leftWord}/{rightWord}
           </span>
         )}
       </div>

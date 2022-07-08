@@ -79,7 +79,7 @@ function App() {
   const [value, setValue] = useState(['0-1']);
   return (
     <div>
-      <div style={{ marginBottom: 20, }} >
+      <div style={{ marginBottom: 20 }} >
         <Checkbox checked={treeCheckStrictly} onChange={setTreeCheckStrictly}>
           treeCheckStrictly
         </Checkbox>

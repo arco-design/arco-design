@@ -74,7 +74,7 @@ function Base(props: BaseProps) {
     ...rest
   } = props;
   const configContext = useContext(ConfigContext);
-  const { getPrefixCls } = configContext;
+  const { getPrefixCls, rtl } = configContext;
   const prefixCls = getPrefixCls('typography');
 
   const { component, className: componentClassName } = getClassNameAndComponentName(
@@ -208,7 +208,7 @@ function Base(props: BaseProps) {
     const node = (
       <ResizeObserverComponent onResize={handleResize}>
         <TextComponent
-          className={cs(prefixCls, componentClassName, className)}
+          className={cs(prefixCls, componentClassName, { [`${prefixCls}-rtl`]: rtl }, className)}
           {...baseProps}
           {...omit(rest, [
             'spacing',

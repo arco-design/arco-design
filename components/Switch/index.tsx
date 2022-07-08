@@ -17,7 +17,7 @@ const defaultProps: SwitchProps = {
 };
 
 function Switch(baseProps: SwitchProps, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SwitchProps>(baseProps, defaultProps, componentConfig?.Switch);
   const {
     className,
@@ -60,6 +60,7 @@ function Switch(baseProps: SwitchProps, ref) {
       [`${prefixCls}-type-${type}`]: type,
       [`${prefixCls}-checked`]: mergedChecked,
       [`${prefixCls}-loading`]: loading,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

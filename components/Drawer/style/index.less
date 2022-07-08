@@ -121,3 +121,17 @@
     // }
   }
 }
+
+.@{drawer-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{drawer-prefix-cls}-close-icon {
+    right: initial;
+    left: @drawer-position-close-icon-right +
+      ((@icon-hover-size-default-height - @drawer-font-size-close-icon) / 2);
+  }
+
+  .@{drawer-prefix-cls}-footer {
+    text-align: left;
+  }
+}

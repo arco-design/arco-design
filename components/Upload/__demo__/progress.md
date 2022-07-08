@@ -91,6 +91,12 @@ export default App;
   transform: none;
 }
 
+.custom-upload-progress .arco-upload-list-rtl .arco-upload-list-start-icon,
+.custom-upload-progress .arco-upload-list-rtl .arco-upload-list-cancel-icon {
+  right: unset;
+  left: 0;
+}
+
 .custom-upload-progress .arco-upload-list-status {
   display: block;
 }

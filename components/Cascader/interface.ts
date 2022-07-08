@@ -263,6 +263,7 @@ export interface CascaderPanelProps<T> {
   expandTrigger?: 'click' | 'hover';
   trigger?: 'click';
   prefixCls?: string;
+  rtl?: boolean;
   showEmptyChildren?: boolean;
   virtualListProps?: CascaderProps<T>['virtualListProps'];
   renderOption?: (option: NodeProps<T>, level: number) => ReactNode;

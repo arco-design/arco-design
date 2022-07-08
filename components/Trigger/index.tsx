@@ -871,7 +871,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       popupStyle: dropdownPopupStyle,
     } = this.getMergedProps();
     const isExistChildren = children || children === 0;
-    const { getPrefixCls, zIndex } = this.context;
+    const { getPrefixCls, zIndex, rtl } = this.context;
     const { popupVisible, popupStyle } = this.state;
 
     if (!popup) {
@@ -948,6 +948,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       prefixCls,
       childrenPrefix,
       `${prefixCls}-position-${position}`,
+      { [`${prefixCls}-rtl`]: rtl },
       className
     );
 

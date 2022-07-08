@@ -24,7 +24,7 @@ const App = () => {
         title="Error message"
         subTitle="Something went wrong. Please try again. "
         extra={[
-          <Button key="again" style={{ marginRight: 16 }}>
+          <Button key="again" style={{ margin: '0 16px' }}>
             Again
           </Button>,
           <Button key="back" type="primary">

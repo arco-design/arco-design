@@ -392,7 +392,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
   <br />
   <div
     class="arco-progress arco-progress-circle arco-progress-default"
-    style="margin-right:20px"
+    style="margin:0 20px"
   >
     <div
       aria-valuemax="100"
@@ -1039,7 +1039,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-progress arco-progress-circle arco-progress-default"
-      style="margin-right:20px"
+      style="margin:0 20px"
     >
       <div
         aria-valuemax="100"
@@ -1080,7 +1080,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-error"
-      style="margin-right:20px"
+      style="margin:0 20px"
     >
       <div
         aria-valuemax="100"
@@ -1146,6 +1146,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-success"
+      style="margin:0 20px"
     >
       <div
         aria-valuemax="100"
@@ -1234,191 +1235,204 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
 exports[`renders Progress/demo/status.md correctly 1`] = `
 <div>
   <div
-    style="display:inline-block;width:40%;margin-right:10%"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
-      class="arco-progress arco-progress-line arco-progress-default"
-      style="margin-bottom:20px"
+      class="arco-space-item"
+      style="margin-right:20px"
     >
       <div
-        class="arco-progress-line-wrapper"
+        style="width:300px"
       >
         <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="arco-progress-line-outer"
-          role="progressbar"
-          style="height:4px"
+          class="arco-progress arco-progress-line arco-progress-default"
+          style="margin-bottom:20px"
         >
           <div
-            class="arco-progress-line-inner"
-            style="width:30%;background-color:#C9CDD4"
-          />
-        </div>
-        <div
-          class="arco-progress-line-text arco-progress-line-text-with-icon"
-        >
-          Waiting...
-        </div>
-      </div>
-    </div>
-    <br />
-    <div
-      class="arco-progress arco-progress-line arco-progress-default arco-progress-is-warning"
-      style="margin-bottom:20px"
-    >
-      <div
-        class="arco-progress-line-wrapper"
-      >
-        <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="arco-progress-line-outer"
-          role="progressbar"
-          style="height:4px"
-        >
-          <div
-            class="arco-progress-line-inner"
-            style="width:30%"
-          />
-        </div>
-        <div
-          class="arco-progress-line-text arco-progress-line-text-with-icon"
-        >
-          30 / 100
-        </div>
-      </div>
-    </div>
-    <br />
-    <div
-      class="arco-progress arco-progress-line arco-progress-default"
-    >
-      <div
-        class="arco-progress-line-wrapper"
-      >
-        <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="arco-progress-line-outer"
-          role="progressbar"
-          style="height:4px"
-        >
-          <div
-            class="arco-progress-line-inner-buffer"
-            style="width:40%"
-          />
-          <div
-            class="arco-progress-line-inner"
-            style="width:30%"
-          />
-        </div>
-        <div
-          class="arco-progress-line-text arco-progress-line-text-with-icon"
-        >
-          30%
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    style="display:inline-block;width:40%"
-  >
-    <div
-      class="arco-progress arco-progress-line arco-progress-default arco-progress-is-error"
-      style="margin-bottom:20px"
-    >
-      <div
-        class="arco-progress-line-wrapper"
-      >
-        <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="arco-progress-line-outer"
-          role="progressbar"
-          style="height:4px"
-        >
-          <div
-            class="arco-progress-line-inner"
-            style="width:30%"
-          />
-        </div>
-        <div
-          class="arco-progress-line-text arco-progress-line-text-with-icon"
-        >
-          <span>
-            30% 
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-exclamation-circle-fill"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              viewBox="0 0 48 48"
+            class="arco-progress-line-wrapper"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="30"
+              class="arco-progress-line-outer"
+              role="progressbar"
+              style="height:4px"
             >
-              <path
-                clip-rule="evenodd"
-                d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
-                fill="currentColor"
-                fill-rule="evenodd"
-                stroke="none"
+              <div
+                class="arco-progress-line-inner"
+                style="width:30%;background-color:#C9CDD4"
               />
-            </svg>
-          </span>
+            </div>
+            <div
+              class="arco-progress-line-text arco-progress-line-text-with-icon"
+            >
+              Waiting...
+            </div>
+          </div>
+        </div>
+        <br />
+        <div
+          class="arco-progress arco-progress-line arco-progress-default arco-progress-is-warning"
+          style="margin-bottom:20px"
+        >
+          <div
+            class="arco-progress-line-wrapper"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="30"
+              class="arco-progress-line-outer"
+              role="progressbar"
+              style="height:4px"
+            >
+              <div
+                class="arco-progress-line-inner"
+                style="width:30%"
+              />
+            </div>
+            <div
+              class="arco-progress-line-text arco-progress-line-text-with-icon"
+            >
+              30 / 100
+            </div>
+          </div>
+        </div>
+        <br />
+        <div
+          class="arco-progress arco-progress-line arco-progress-default"
+        >
+          <div
+            class="arco-progress-line-wrapper"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="30"
+              class="arco-progress-line-outer"
+              role="progressbar"
+              style="height:4px"
+            >
+              <div
+                class="arco-progress-line-inner-buffer"
+                style="width:40%"
+              />
+              <div
+                class="arco-progress-line-inner"
+                style="width:30%"
+              />
+            </div>
+            <div
+              class="arco-progress-line-text arco-progress-line-text-with-icon"
+            >
+              30%
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <br />
     <div
-      class="arco-progress arco-progress-line arco-progress-default arco-progress-is-success"
-      style="margin-bottom:20px"
+      class="arco-space-item"
     >
       <div
-        class="arco-progress-line-wrapper"
+        style="width:300px"
       >
         <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="arco-progress-line-outer"
-          role="progressbar"
-          style="height:4px"
+          class="arco-progress arco-progress-line arco-progress-default arco-progress-is-error"
+          style="margin-bottom:20px"
         >
           <div
-            class="arco-progress-line-inner"
-            style="width:30%"
-          />
+            class="arco-progress-line-wrapper"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="30"
+              class="arco-progress-line-outer"
+              role="progressbar"
+              style="height:4px"
+            >
+              <div
+                class="arco-progress-line-inner"
+                style="width:30%"
+              />
+            </div>
+            <div
+              class="arco-progress-line-text arco-progress-line-text-with-icon"
+            >
+              <span>
+                30% 
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-exclamation-circle-fill"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm-2-11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2Zm4-18a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V15Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    stroke="none"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
         </div>
+        <br />
         <div
-          class="arco-progress-line-text arco-progress-line-text-with-icon"
-        >
-          30%
-        </div>
-      </div>
-    </div>
-    <br />
-    <div
-      class="arco-progress arco-progress-line arco-progress-default"
-    >
-      <div
-        class="arco-progress-line-wrapper"
-      >
-        <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="arco-progress-line-outer"
-          role="progressbar"
-          style="height:4px"
+          class="arco-progress arco-progress-line arco-progress-default arco-progress-is-success"
+          style="margin-bottom:20px"
         >
           <div
-            class="arco-progress-line-inner"
-            style="width:30%"
-          />
+            class="arco-progress-line-wrapper"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="30"
+              class="arco-progress-line-outer"
+              role="progressbar"
+              style="height:4px"
+            >
+              <div
+                class="arco-progress-line-inner"
+                style="width:30%"
+              />
+            </div>
+            <div
+              class="arco-progress-line-text arco-progress-line-text-with-icon"
+            >
+              30%
+            </div>
+          </div>
+        </div>
+        <br />
+        <div
+          class="arco-progress arco-progress-line arco-progress-default"
+        >
+          <div
+            class="arco-progress-line-wrapper"
+          >
+            <div
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="30"
+              class="arco-progress-line-outer"
+              role="progressbar"
+              style="height:4px"
+            >
+              <div
+                class="arco-progress-line-inner"
+                style="width:30%"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

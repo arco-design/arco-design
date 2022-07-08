@@ -28,7 +28,7 @@ const defaultProps: MenuProps = {
 };
 
 function Menu(baseProps: MenuProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<MenuProps>(baseProps, defaultProps, componentConfig?.Menu);
   const {
     style,
@@ -172,6 +172,7 @@ function Menu(baseProps: MenuProps, ref) {
           // 缩起状态自动变成 pop 模式
           [`${prefixCls}-pop`]: mode === 'pop' || mergedCollapse,
           [`${prefixCls}-pop-button`]: mode === 'popButton',
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

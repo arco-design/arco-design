@@ -723,7 +723,7 @@ class Tree extends Component<TreeProps, TreeState> {
       : {
           threshold: null,
         };
-    const { getPrefixCls } = this.context;
+    const { getPrefixCls, rtl } = this.context;
 
     const prefixCls = getPrefixCls('tree');
 
@@ -762,6 +762,7 @@ class Tree extends Component<TreeProps, TreeState> {
               [`${prefixCls}-checkable`]: checkable,
               [`${prefixCls}-show-line`]: showLine,
               [`${prefixCls}-size-${size}`]: size,
+              [`${prefixCls}-rtl`]: rtl,
             },
             className
           )}

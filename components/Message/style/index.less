@@ -163,6 +163,14 @@
   transition: all @transition-duration-3 @transition-timing-function-standard;
 }
 
+.@{message-prefix-cls}-rtl {
+  direction: rtl;
+  .@{message-prefix-cls}-icon {
+    margin-right: 0;
+    margin-left: @message-icon-margin-right;
+  }
+}
+
 @keyframes ~'@{prefix}-msg-fade' {
   from {
     opacity: 0;

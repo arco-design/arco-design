@@ -245,7 +245,7 @@ Array [
     </div>
     <span
       class="arco-typography"
-      style="margin-left:16px"
+      style="margin:0 16px"
     >
       allowClear: true
     </span>
@@ -493,7 +493,7 @@ Array [
     </div>
     <span
       class="arco-typography"
-      style="margin-left:16px"
+      style="margin:0 16px"
     >
       allowClear: false
     </span>
@@ -3276,7 +3276,7 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
   </div>
   <span
     class="arco-typography"
-    style="margin-left:16px"
+    style="margin:0 16px"
   >
     Excellent
   </span>

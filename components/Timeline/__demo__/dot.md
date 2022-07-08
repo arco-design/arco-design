@@ -14,14 +14,14 @@ title:
 The color and type of the node can be set through the attributes `dotColor`, `dotType`. At the same time, you can directly pass in `ReactNode` to customize node styles through `dot`. Priority is higher than `dotColor` and `dotType`
 
 ```js
-import { Timeline } from '@arco-design/web-react';
+import { Timeline, Space } from '@arco-design/web-react';
 import { IconClockCircle, IconCheck, IconExclamationCircleFill } from '@arco-design/web-react/icon';
 const TimelineItem = Timeline.Item;
 
 const App = () => {
   return (
-    <div style={{ display: 'flex' }}>
-      <Timeline style={{ marginRight: 40 }}>
+    <Space size={40}>
+      <Timeline>
         <TimelineItem label="2020-04-12" dotColor="#00B42A">
           The first milestone
         </TimelineItem>
@@ -38,9 +38,6 @@ const App = () => {
       </Timeline>
 
       <Timeline
-        style={{
-          marginRight: 40,
-        }}
       >
         <TimelineItem
           label="2020-04-12"
@@ -89,7 +86,7 @@ const App = () => {
           The third milestone
         </TimelineItem>
       </Timeline>
-    </div>
+    </Space>
   );
 };
 

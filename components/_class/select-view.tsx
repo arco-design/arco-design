@@ -128,6 +128,7 @@ export interface SelectViewProps extends SelectViewCommonProps {
   isEmptyValue: boolean;
   isMultiple?: boolean;
   prefixCls: string;
+  rtl?: boolean;
   ariaControls?: string;
   renderText: (value) => { text; disabled };
   onSort?: (value) => void;
@@ -190,6 +191,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     onBlur,
     onRemoveCheckedItem,
     onSort,
+    rtl,
     ...rest
   } = props;
 
@@ -469,6 +471,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-no-border`]: !bordered,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

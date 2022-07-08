@@ -261,3 +261,84 @@
     }
   }
 }
+
+.@{steps-prefix-cls}-rtl {
+  .@{steps-prefix-cls}-item {
+    margin-right: 0;
+    margin-left: @steps-circle-size-item-icon-gap;
+    text-align: right;
+
+    &:last-child {
+      margin-left: 0;
+    }
+
+    &-icon {
+      margin-right: 0;
+      margin-left: @steps-circle-size-item-icon-gap;
+    }
+
+    &-title {
+      padding-right: 0;
+      padding-left: @steps-circle-size-item-icon-gap;
+    }
+  }
+
+  // label horizontal tail style
+  &.@{steps-prefix-cls}-label-horizontal
+    .@{steps-prefix-cls}-item:not(:last-child)
+    .@{steps-prefix-cls}-item-title {
+    &::after {
+      left: 0;
+      right: 100%;
+    }
+  }
+
+  &.@{steps-prefix-cls}-vertical {
+    .@{steps-prefix-cls}-item:not(:last-child) .@{steps-prefix-cls}-item-tail {
+      left: 0;
+      right: ((@steps-size-default - @steps-circle-size-item-tail) / 2);
+    }
+
+    &.@{steps-prefix-cls}-size-small.@{steps-prefix-cls}-vertical
+      .@{steps-prefix-cls}-item:not(:last-child)
+      .@{steps-prefix-cls}-item-tail {
+      left: 0;
+      right: ((@steps-size-small - @steps-circle-size-item-tail) / 2);
+      top: @steps-size-small + @steps-circle-vertical-spacing-tail-top;
+    }
+  }
+
+  &.@{steps-prefix-cls}-label-vertical .@{steps-prefix-cls}-item {
+    &-title {
+      padding-left: 0;
+    }
+
+    &-icon {
+      margin-left: 0;
+      margin-right: @steps-size-default-item-icon-margin-left;
+    }
+
+    &-tail {
+      left: 0;
+      right: @steps-size-default-item-icon-margin-left + @steps-size-default +
+        @steps-circle-size-item-icon-gap;
+      padding-right: 0;
+      padding-left: @steps-size-default + @steps-circle-size-item-icon-gap;
+    }
+  }
+
+  &.@{steps-prefix-cls}-label-vertical.@{steps-prefix-cls}-size-small .@{steps-prefix-cls}-item {
+    &-icon {
+      margin-left: 0;
+      margin-right: @steps-size-small-item-icon-margin-left;
+    }
+
+    &-tail {
+      left: 0;
+      right: @steps-size-small-item-icon-margin-left + @steps-size-small +
+        @steps-circle-size-item-icon-gap;
+      padding-right: 0;
+      padding-left: @steps-size-small + @steps-circle-size-item-icon-gap;
+    }
+  }
+}

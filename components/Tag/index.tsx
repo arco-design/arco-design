@@ -30,7 +30,7 @@ const defaultProps: TagProps = {
 };
 
 function Tag(baseProps: TagProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<TagProps>(baseProps, defaultProps, componentConfig?.Tag);
   const {
     className,
@@ -100,6 +100,7 @@ function Tag(baseProps: TagProps, ref) {
       [`${prefixCls}-size-${size}`]: size,
       [`${prefixCls}-bordered`]: bordered,
       [`${prefixCls}-custom-color`]: _checked && color && !_color,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

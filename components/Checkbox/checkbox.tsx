@@ -14,7 +14,7 @@ import { isFunction } from '../_util/is';
 function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CheckboxProps>(baseProps, {}, componentConfig?.Checkbox);
 
   const context = useContext(CheckboxGroupContext);
@@ -41,6 +41,7 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
       [`${prefixCls}-disabled`]: !!disabled,
       [`${prefixCls}-indeterminate`]: !!indeterminate,
       [`${prefixCls}-checked`]: checked,
+      [`${prefixCls}-rtl`]: rtl,
       error,
     },
     className

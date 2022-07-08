@@ -14,24 +14,34 @@ exports[`renders Popconfirm/demo/basic.md correctly 1`] = `
 `;
 
 exports[`renders Popconfirm/demo/icon.md correctly 1`] = `
-<div>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
     style="margin-right:24px"
-    type="button"
   >
-    <span>
-      Delete
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    type="button"
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Delete
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
   >
-    <span>
-      Delete
-    </span>
-  </button>
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Delete
+      </span>
+    </button>
+  </div>
 </div>
 `;
 

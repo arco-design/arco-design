@@ -37,7 +37,7 @@ const defaultProps: DrawerProps = {
 
 function Drawer(baseProps: DrawerProps, ref) {
   const context = useContext(ConfigContext);
-  const { locale, getPrefixCls, componentConfig } = context;
+  const { locale, getPrefixCls, componentConfig, rtl } = context;
   const props = useMergeProps<DrawerProps>(baseProps, defaultProps, componentConfig?.Drawer);
   const {
     style,
@@ -263,7 +263,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           }}
         >
           <div
-            className={cs(prefixCls, className)}
+            className={cs(prefixCls, className, { [`${prefixCls}-rtl`]: rtl })}
             style={Object.assign(
               placement === 'left' || placement === 'right' ? { width } : { height },
               { [placement]: 0 },

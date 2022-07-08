@@ -35,7 +35,7 @@ function Group<T extends React.ReactText>(props: PropsWithChildren<CheckboxGroup
   });
   const [allOptionValues, setAllOptionValues] = useState([]);
 
-  const { getPrefixCls } = useContext(ConfigContext);
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const { disabled, options, style, className, error, children, direction = 'horizontal' } = props;
   const prefixCls = getPrefixCls('checkbox');
   const classNames = cs(
@@ -43,6 +43,7 @@ function Group<T extends React.ReactText>(props: PropsWithChildren<CheckboxGroup
     {
       [`${prefixCls}-group-is-error`]: error,
       [`${prefixCls}-group-direction-${direction}`]: direction,
+      [`${prefixCls}-group-rtl`]: rtl,
     },
     className
   );

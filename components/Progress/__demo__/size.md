@@ -67,7 +67,7 @@ function Demo() {
           size={size}
           percent={value}
           style={{
-            marginRight: 20,
+            margin: "0 20px",
           }}
         />
         <Progress
@@ -76,10 +76,17 @@ function Demo() {
           percent={value}
           status="error"
           style={{
-            marginRight: 20,
+            margin: "0 20px",
           }}
         />
-        <Progress type="circle" size={size} percent={value} status="success" />
+        <Progress
+          type="circle"
+          size={size}
+          percent={value}
+          status="success"
+          style={{
+            margin: "0 20px",
+          }}/>
       </Row>
       <div style={{ width: 100, marginTop: 44 }}>
         <Slider value={value} onChange={setValue}></Slider>

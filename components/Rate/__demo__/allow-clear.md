@@ -29,11 +29,11 @@ const App = () => {
         }}
       >
         <Rate defaultValue={5} allowClear />
-        <Typography.Text style={{ marginLeft: 16 }}>allowClear: true</Typography.Text>
+        <Typography.Text style={{ margin: '0 16px' }}>allowClear: true</Typography.Text>
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Rate defaultValue={5} />
-        <Typography.Text style={{ marginLeft: 16 }}>allowClear: false</Typography.Text>
+        <Typography.Text style={{ margin: '0 16px' }}>allowClear: false</Typography.Text>
       </div>
     </>
   );

@@ -296,3 +296,29 @@
     }
   }
 }
+
+.@{radio-prefix-cls}-rtl {
+  padding-left: 0;
+  padding-right: (@radio-size-mask-height / 2) - (@radio-layout-height / 2);
+
+  .@{radio-prefix-cls} {
+    &-text {
+      margin-left: 0;
+      margin-right: @radio-margin-text-left;
+    }
+  }
+}
+
+.@{radio-prefix-cls}-group-rtl {
+  .@{radio-prefix-cls} {
+    margin-right: 0;
+    margin-left: @radio-group-margin-right;
+  }
+
+  &.@{radio-prefix-cls}-group-direction-vertical {
+    .@{radio-prefix-cls} {
+      margin-right: unset;
+      margin-left: 0;
+    }
+  }
+}

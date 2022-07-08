@@ -54,3 +54,32 @@
     transform: rotate(45deg);
   }
 }
+
+.@{steps-prefix-cls}-rtl {
+  &.@{steps-prefix-cls}-mode-navigation {
+    .@{steps-prefix-cls}-item {
+      padding-right: @steps-navigation-padding-left;
+      padding-left: @steps-navigation-spacing-arrow-right;
+      margin-left: @steps-navigation-margin-right;
+      margin-right: 0;
+
+      &-description {
+        padding-left: 20px;
+        padding-right: 0;
+      }
+
+      &-active::after {
+        right: @steps-navigation-spacing-ink-left;
+        left: @steps-navigation-spacing-ink-right;
+      }
+
+      &:not(:last-child) .@{steps-prefix-cls}-item-content::after {
+        left: @steps-navigation-spacing-arrow-right;
+        right: initial;
+        border: @steps-navigation-size-arrow-line-width solid @steps-navigation-color-arrow;
+        border-right: none;
+        border-top: none;
+      }
+    }
+  }
+}

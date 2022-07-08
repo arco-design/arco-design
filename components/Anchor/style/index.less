@@ -12,7 +12,10 @@
       position: absolute;
       height: @anchor-line-slider-height;
       width: @anchor-line-width;
-      margin-top: ((@anchor-font-size-title * @line-height-base) / 2 + @anchor-title-padding-vertical - @anchor-line-slider-height / 2);
+      margin-top: (
+        (@anchor-font-size-title * @line-height-base) / 2 + @anchor-title-padding-vertical -
+          @anchor-line-slider-height / 2
+      );
       background-color: @anchor-color-bg-line_active;
       left: 0;
       top: 0;
@@ -83,5 +86,39 @@
     background-color: @anchor-lineless-bg-title_active;
     color: @anchor-lineless-color-title_active;
     font-weight: @anchor-lineless-font-weight-title_active;
+  }
+}
+
+.@{anchor-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{anchor-prefix-cls}-list {
+    margin-left: 0;
+    margin-right: @anchor-line-margin-right - @anchor-title-padding-horizontal + @anchor-line-width;
+
+    &::before {
+      left: initial;
+      right: @anchor-title-padding-horizontal - @anchor-line-margin-right - @anchor-line-width;
+    }
+  }
+
+  .@{anchor-prefix-cls}-link {
+    .@{anchor-prefix-cls}-link {
+      margin-left: 0;
+      margin-right: @anchor-item-inner-margin-left;
+    }
+  }
+
+  &.@{anchor-prefix-cls}-lineless {
+    .@{anchor-prefix-cls}-list {
+      margin-right: 0;
+    }
+  }
+
+  .@{anchor-prefix-cls}-line {
+    &-slider {
+      left: initial;
+      right: 0;
+    }
   }
 }

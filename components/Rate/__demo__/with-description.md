@@ -25,7 +25,7 @@ function App() {
       <Rate value={rate} onChange={(value) => setRate(value)} />
       <Typography.Text
         style={{
-          marginLeft: 16,
+          margin: '0 16px',
         }}
       >
         {desc[rate - 1]}
