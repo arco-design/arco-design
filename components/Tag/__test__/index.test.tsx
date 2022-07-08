@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Tag from '..';
@@ -8,7 +8,7 @@ mountTest(Tag);
 componentConfigTest(Tag, 'Tag');
 
 const mountTag = (props: Record<string, any>) => {
-  return mount(<Tag {...props}>Hello</Tag>);
+  return render(<Tag {...props}>Hello</Tag>);
 };
 
 describe('Tag', () => {
@@ -32,21 +32,23 @@ describe('Tag', () => {
   });
 
   it('close tag', () => {
+    const closeHandler = jest.fn();
     const tag = mountTag({
       closable: true,
-      onClose: jest.fn(),
+      onClose: closeHandler,
     });
-    tag.find('IconClose').simulate('click');
-    expect(tag.prop('onClose')).toBeCalled();
+    fireEvent.click(tag.find('.arco-icon-close')[0]);
+    expect(closeHandler).toBeCalled();
   });
 
   it('check tag', () => {
+    const onCheck = jest.fn();
     const tag = mountTag({
       checkable: true,
-      onCheck: jest.fn(),
+      onCheck,
     });
-    tag.simulate('click');
-    expect(tag.prop('onCheck')).toBeCalled();
+    fireEvent.click(tag.container.firstChild!);
+    expect(onCheck).toBeCalled();
   });
 
   it('async onClose is called while resolve', () => {
@@ -55,18 +57,16 @@ describe('Tag', () => {
       closable: true,
       onClose,
     });
-
-    tag.find('IconClose').simulate('click');
-    expect(tag.find('.arco-tag').hasClass('arco-tag-loading')).toBeTruthy();
+    fireEvent.click(tag.find('.arco-icon-close')[0]);
+    expect(tag.find('.arco-tag')[0].className).toContain('arco-tag-loading');
 
     return onClose.mock.results[0].value
       .then((msg) => {
         expect(msg).toEqual('resolve');
       })
       .finally(() => {
-        tag.update();
-        expect(tag.find('.arco-tag').hasClass('arco-tag-loading')).toBeFalsy();
-        expect(tag.find('.arco-tag').hasClass('arco-tag-hide')).toBeTruthy();
+        expect(tag.find('.arco-tag')[0].className).not.toContain('arco-tag-loading');
+        expect(tag.find('.arco-tag')[0].className).toContain('arco-tag-hide');
       });
   });
 
@@ -76,18 +76,16 @@ describe('Tag', () => {
       closable: true,
       onClose,
     });
-
-    tag.find('IconClose').simulate('click');
-    expect(tag.find('.arco-tag').hasClass('arco-tag-loading')).toBeTruthy();
+    fireEvent.click(tag.find('.arco-icon-close')[0]);
+    expect(tag.find('.arco-tag')[0].className).toContain('arco-tag-loading');
 
     return onClose.mock.results[0].value
       .catch((msg) => {
         expect(msg).toEqual('reject');
       })
       .finally(() => {
-        tag.update();
-        expect(tag.find('.arco-tag').hasClass('arco-tag-loading')).toBeFalsy();
-        expect(tag.find('.arco-tag').hasClass('arco-tag-hide')).toBeFalsy();
+        expect(tag.find('.arco-tag')[0].className).not.toContain('arco-tag-loading');
+        expect(tag.find('.arco-tag')[0].className).not.toContain('arco-tag-hide');
       });
   });
 });

@@ -8,6 +8,7 @@ function Demo1() {
   const name = Form.useWatch('name', form);
   const age = Form.useWatch('age', form);
   const dymaic = Form.useWatch('dymaic', form);
+  const values = Form.useWatch(['name', 'age', 'dymaic'], form);
 
   return (
     <div>
@@ -30,6 +31,7 @@ function Demo1() {
         <span id="name">{name}</span>
         <span id="age">{age}</span>
         <span id="dymaic">{dymaic}</span>
+        <span id="values">{JSON.stringify(values)}</span>
       </Form>
     </div>
   );
@@ -107,6 +109,11 @@ describe('Form.useWatch', () => {
     });
 
     expect(wrapper.querySelector('#dymaic').textContent).toBe('dymaic');
+
+    expect(JSON.parse(wrapper.querySelector('#values').textContent || '')).toEqual({
+      dymaic: 'dymaic',
+      name: 'aaa',
+    });
   });
 
   it('form.useWatch child ', async () => {

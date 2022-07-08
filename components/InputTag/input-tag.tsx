@@ -184,9 +184,16 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
   const tryAddInputValueToTag = async () => {
     try {
-      const isLegal = typeof validate === 'function' ? await validate(inputValue, value) : true;
-      if (isLegal) {
-        valueChangeHandler(value.concat({ value: inputValue, label: inputValue }), 'add');
+      const validateResult =
+        typeof validate === 'function' ? await validate(inputValue, value) : true;
+      if (validateResult) {
+        valueChangeHandler(
+          value.concat({
+            value: validateResult === true ? inputValue : validateResult,
+            label: inputValue,
+          }),
+          'add'
+        );
         setInputValue('');
       }
     } catch (error) {

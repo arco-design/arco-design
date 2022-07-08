@@ -44,6 +44,7 @@ Upload file by selecting or dragging.
 |onReupload|Callback when the re-upload icon is clicked|`(file: UploadItem) => void`|`-`|-|
 |onExceedLimit|Callback when limit is exceeded|`(files: File[], fileList: UploadItem[]) => void`|`-`|-|
 |beforeUpload|Callback before uploading. Uploading will be aborted when the return value is false or a Promise which resolve(false) or reject.|`(file: File, filesList: File[]) => boolean \| Promise<any>`|`() => true`|-|
+|onDrop|Callback after drag file to the upload area and drop.|`(e: React.DragEvent) => void`|`-`|2.37.0|
 
 ### UploadListProps
 
@@ -88,8 +89,6 @@ type CustomIconType = {
   startIcon?: ReactNode;
   errorIcon?: ReactNode;
   fileName?: (file: UploadItem) => ReactNode;
-  progressRender?: (file: UploadItem, originDom: ReactNode) => ReactElement; // 2.34.0
-  imageRender?: (file: UploadItem) => ReactNode; // 2.34.0
 }
 ```
 

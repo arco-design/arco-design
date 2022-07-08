@@ -1,74 +1,60 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { cleanup, fireEvent, render, screen } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import Button from '../../Button';
-import Tooltip, { TooltipProps } from '..';
-import { TriggerState } from '../../Trigger';
+import Tooltip from '..';
+// import { TriggerState } from '../../Trigger';
 
 mountTest(Tooltip);
-
-function mountTooltip(component: React.ReactElement) {
-  return mount<typeof Tooltip, React.PropsWithChildren<TooltipProps>>(component);
-}
 
 describe('Tooltip', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
+  afterEach(() => {
+    jest.runAllTimers();
+  });
   it('mouseenter and mouseleave', () => {
-    const wrapper = mountTooltip(
+    jest.useFakeTimers();
+    const wrapper = render(
       <Tooltip position="top" trigger="hover" content="Content">
         <Button>Top</Button>
       </Tooltip>
     );
-    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
-    wrapper.find('Button').simulate('mouseenter');
+    fireEvent.mouseEnter(screen.getByRole('button'));
     jest.runAllTimers();
-    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(true);
-    wrapper.find('Button').simulate('mouseleave');
+    expect(wrapper.find('.arco-trigger').length).toBe(1);
+    fireEvent.mouseLeave(screen.getByRole('button'));
     jest.runAllTimers();
-    expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(false);
+    expect(wrapper.find('.arco-trigger').length).toBe(0);
   });
-  it('color property', () => {
-    const wrapper = mountTooltip(
-      <Tooltip position="top" color="#333333" popupVisible trigger="hover" content="Content">
-        <Button>Top</Button>
-      </Tooltip>
-    );
-    expect(wrapper.find('.arco-tooltip-content').getDOMNode().getAttribute('style')).toBe(
-      'background-color: rgb(51, 51, 51);'
-    );
-    expect(wrapper.find('.arco-trigger-arrow').getDOMNode().getAttribute('style')).toBe(
-      'background-color: rgb(51, 51, 51);'
-    );
-  });
+
   it('does not show tooltip when content is null or undefined or false or "  "', () => {
     [false, undefined, null, '  '].forEach((item) => {
-      const wrapper = mount(
+      const wrapper = render(
         <Tooltip position="top" color="#333333" trigger="hover" content={item}>
           <Button>Top</Button>
         </Tooltip>
       );
-      wrapper.find(Button).simulate('mouseenter');
-      wrapper.update();
+      fireEvent.mouseEnter(screen.getByRole('button'));
       jest.runAllTimers();
-      expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeFalsy();
+      expect(wrapper.find('.arco-tooltip-content-inner').length).toBe(0);
+      cleanup();
     });
   });
   it('should show tooltip when content is 0', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Tooltip position="top" color="#333333" trigger="hover" content={0}>
         <Button>Top</Button>
       </Tooltip>
     );
-    wrapper.find('Button').simulate('mouseenter');
+    fireEvent.mouseEnter(screen.getByRole('button'));
     jest.runAllTimers();
-    wrapper.update();
-    expect(wrapper.find('.arco-tooltip-content-inner').exists()).toBeTruthy();
+    expect(wrapper.find('.arco-tooltip-content-inner').length).not.toBe(0);
   });
 
   it('showArrow property', () => {
-    const wrapper = mountTooltip(
+    const wrapper = render(
       <Tooltip
         position="top"
         color="#333333"
@@ -84,11 +70,13 @@ describe('Tooltip', () => {
     );
     expect(wrapper.find('.arco-trigger-arrow')).toHaveLength(0);
   });
-  it('arrowProps property', () => {
-    const wrapper = mountTooltip(
+  it('arrowProps property', async () => {
+    jest.useFakeTimers();
+    const container = render(
       <Tooltip
         position="top"
-        color="#333333"
+        trigger="hover"
+        content="Content"
         triggerProps={{
           arrowProps: {
             style: {
@@ -96,15 +84,14 @@ describe('Tooltip', () => {
             },
           },
         }}
-        popupVisible
-        trigger="hover"
-        content="Content"
       >
         <Button>Top</Button>
       </Tooltip>
     );
-    expect(wrapper.find('.arco-trigger-arrow').getDOMNode().getAttribute('style')).toBe(
-      'background-color: rgb(255, 255, 255);'
+    fireEvent.mouseEnter(screen.getByRole('button'));
+    jest.runAllTimers();
+    expect(container.querySelector('.arco-trigger-arrow')?.style.backgroundColor).toBe(
+      'rgb(255, 255, 255)'
     );
   });
 
@@ -124,14 +111,34 @@ describe('Tooltip', () => {
       'rb',
     ] as const;
     positions.forEach((position) => {
-      const wrapper = mountTooltip(
+      const wrapper = render(
         <Tooltip position={position} trigger="hover" content="Content">
           <Button>Position</Button>
         </Tooltip>
       );
-      wrapper.find('Button').simulate('mouseenter');
+      fireEvent.mouseEnter(screen.getByRole('button'));
       jest.runAllTimers();
-      expect((wrapper.find('Trigger').state() as TriggerState).popupVisible).toBe(true);
+      expect(wrapper.find('.arco-trigger')[0].className).toContain(
+        `arco-trigger-position-${position}`
+      );
+      cleanup();
     });
+  });
+
+  it('should onchange be called', () => {
+    const visibleChangeHandler = jest.fn();
+    render(
+      <Tooltip
+        position="top"
+        trigger="hover"
+        content="Content"
+        onVisibleChange={visibleChangeHandler}
+      >
+        <Button>Top</Button>
+      </Tooltip>
+    );
+    fireEvent.mouseEnter(screen.getByRole('button'));
+    jest.runAllTimers();
+    expect(visibleChangeHandler).toHaveBeenCalledTimes(1);
   });
 });

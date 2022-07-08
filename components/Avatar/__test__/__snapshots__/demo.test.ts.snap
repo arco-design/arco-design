@@ -1,26 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Avatar/demo/autoFixFontSize.md correctly 1`] = `
-<div>
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
   <div
-    class="arco-avatar arco-avatar-circle"
-    style="font-size:;margin-right:24px;vertical-align:middle;background-color:#14a9f8"
+    class="arco-space-item"
+    style="margin-right:8px"
   >
-    <span
-      class="arco-avatar-text"
+    <div
+      class="arco-avatar arco-avatar-circle"
+      style="font-size:"
     >
-      B
-    </span>
+      <span
+        class="arco-avatar-text"
+      >
+        B
+      </span>
+    </div>
   </div>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="vertical-align:middle"
-    type="button"
+  <div
+    class="arco-space-item"
   >
-    <span>
-      Change
-    </span>
-  </button>
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Change
+      </span>
+    </button>
+  </div>
 </div>
 `;
 

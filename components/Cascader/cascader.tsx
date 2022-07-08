@@ -53,6 +53,7 @@ const defaultProps: CascaderProps = {
   trigger: 'click',
   expandTrigger: 'click',
   checkedStrategy: SHOW_CHILD,
+  defaultActiveFirstOption: true,
 };
 
 function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
@@ -328,6 +329,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 }}
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
+                defaultActiveFirstOption={props.defaultActiveFirstOption}
               />
             ) : (
               <CascaderPanel

@@ -18,25 +18,25 @@ import { InputTag, Space } from '@arco-design/web-react';
 
 const App = () => {
   return (
-    <Space size={20}>
-      <Space direction="vertical" size={20}>
+    <div>
+      <Space style={{marginBottom: 20}}>
         <InputTag
           allowClear
           placeholder="Input and press Enter"
           style={{ width: 350 }}
         />
-        <InputTag allowClear placeholder="Disabled" disabled style={{ width: 350 }} />
+        <InputTag allowClear placeholder="Disabled" disabled style={{ width: 350 }}/>
       </Space>
-      <Space direction="vertical" size={20}>
+      <Space>
         <InputTag
           allowClear
           placeholder="Readonly"
           readOnly
           style={{ width: 350 }}
         />
-        <InputTag allowClear placeholder="Error" error style={{ width: 350 }} />
+        <InputTag allowClear placeholder="Error" error style={{ width: 350 }}/>
       </Space>
-    </Space>
+    </div>
   );
 };
 
