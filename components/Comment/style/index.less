@@ -64,3 +64,31 @@
     justify-content: flex-end;
   }
 }
+
+.@{comment-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{comment-prefix-cls} {
+    &-title {
+      display: flex;
+      align-items: center;
+    }
+
+    &-avatar {
+      margin-right: 0;
+      margin-left: @comment-margin-avatar-right;
+    }
+
+    &-author {
+      margin-right: 0;
+      margin-left: @comment-margin-author-right;
+    }
+
+    &-actions {
+      > *:not(:last-child) {
+        margin-left: @comment-margin-actions-right;
+        margin-right: 0;
+      }
+    }
+  }
+}
