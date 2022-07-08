@@ -14,6 +14,9 @@ export function isChildrenNotEmpty(record, field: string) {
 
 export function deepCloneData(data, childrenColumnName) {
   function travel(data) {
+    if (!data) {
+      return [];
+    }
     const newData = [];
     data.forEach((d) => {
       // case: [[{}]]
@@ -36,6 +39,9 @@ export function deepCloneData(data, childrenColumnName) {
 }
 
 export function getOriginData(data) {
+  if (!data) {
+    return data;
+  }
   if (isObject(data)) {
     return data.__ORIGIN_DATA;
   }
