@@ -39,7 +39,7 @@ export const CollapseContext = createContext<{
 });
 
 function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<CollapseProps>>(
     baseProps,
     defaultProps,
@@ -85,6 +85,7 @@ function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
     }
     isFunction(onChange) && onChange(key, newActiveKeys, e);
   };
+
   return (
     <CollapseContext.Provider
       value={{
@@ -106,7 +107,12 @@ function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
       <div
         ref={ref}
         {...omit(rest, ['activeKey', 'defaultActiveKey'])}
-        className={cs(prefixCls, `${prefixCls}-${bordered ? 'border' : 'borderless'}`, className)}
+        className={cs(
+          prefixCls,
+          `${prefixCls}-${bordered ? 'border' : 'borderless'}`,
+          { [`${prefixCls}-rtl`]: rtl },
+          className
+        )}
         style={style}
       >
         {children}
