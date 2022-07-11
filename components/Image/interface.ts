@@ -84,7 +84,7 @@ export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'c
 /**
  * @title Image.Preview
  */
-export interface ImagePreviewProps {
+export interface ImagePreviewProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -167,7 +167,7 @@ export type PartialImagePreviewProps = Partial<ImagePreviewProps>;
  * @zh 从 `v2.14.0` 开始支持
  * @en Start from `v2.14.0`
  */
-export interface ImagePreviewGroupProps extends Omit<PartialImagePreviewProps, 'src'> {
+export interface ImagePreviewGroupProps extends Omit<PartialImagePreviewProps, 'src' | 'onChange'> {
   /**
    * @zh 图片列表 （设置了本属性之后，将不再收集 Image 子组件的图片信息）
    * @en Image path list（After setting this property, the information of the `Image` sub-component will no longer be collected)
