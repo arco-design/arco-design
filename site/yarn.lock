@@ -332,10 +332,10 @@
   dependencies:
     classnames "^2.2.6"
 
-"@arco-materials/site-navbar@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.4.0.tgz#b8769879949e5fd9ee66cc5953f5cb1536746255"
-  integrity sha512-GjFrwqJlgN2q82fycHgDYT86wBhR2zM2rrxYNKu79e5hWwZo8B2QhK13x6vDYYrjQadCBlV2opLgP0aUoHc36Q==
+"@arco-materials/site-navbar@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.4.1.tgz#34ccbd11ba2dab664046b3a7eed6c8a21a788143"
+  integrity sha512-T0BefQfKsNie9R1ZA5OzUKubOrVmzF01CPOoszg6fFq2mk6ZrhxemAnsmYio5mNSmSZJQ3DftrdVl/tRlmcKAA==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.2.0"
