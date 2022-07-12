@@ -25,6 +25,7 @@ export const linkGithubRepositoryArcoCli = 'https://github.com/arco-design/arco-
 export const linkFigmaArcoComponent =
   'https://www.figma.com/file/xcwQO53J0OGZ0nKDs5Swrh/Arco-Design-System?node-id=8253%3A44145';
 
+export const linkMobileComponent = 'https://www.figma.com/community/file/1128173873536739844';
 export const linkFigmaArcoPro = 'https://www.figma.com/community/file/1065157704393387989';
 
 export const linkFigmaArcoIcons =

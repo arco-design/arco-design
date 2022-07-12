@@ -1,7 +1,7 @@
 import React, { useEffect, useState, CSSProperties } from 'react';
 import { Divider, Button, Carousel } from '@arco-design/web-react';
 import { IconClose } from '@arco-design/web-react/icon';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import LogoArco from '../../assets/logo_ArcoDesign.svg';
 import LogoDarkArco from '../../assets/logo_dark_ArcoDesign.svg';
 import logoList from '../../assets/products';

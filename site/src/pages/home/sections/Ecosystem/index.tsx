@@ -1,5 +1,5 @@
 import React from 'react';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import LogoDesignLab from '../../assets/logo_DesignLab.svg';
 import LogoDesignLabBlue from '../../assets/logo_DesignLab_blue.svg';
 import LogoDesignGray from '../../assets/logo_DesignLab_gray.svg';

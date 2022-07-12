@@ -1,5 +1,5 @@
 import React, { ReactNode, CSSProperties } from 'react';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import styles from './index.module.less';
 import IconRoundArrow from '../../../../assets/ic_round_arrow.svg';
 import IconCommonArrow from '../../../../assets/ic_common_arrow.svg';

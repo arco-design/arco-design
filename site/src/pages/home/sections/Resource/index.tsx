@@ -5,13 +5,13 @@ import Section from '../../components/Section';
 import ResourceCard from './components/Card';
 import LogoFigmaBlue from '../../assets/logo_Figma_blue.svg';
 import LogoSketchBlue from '../../assets/logo_Sketch_blue.svg';
-import LogoAxureBlue from '../../assets/logo_Axure_blue.svg';
 import LogoIconBoxBlue from '../../assets/logo_IconBox_blue.svg';
 import LogoArcoProBlue from '../../assets/logo_ArcoPro_blue.svg';
 import LogoGitHubWhite from '../../assets/logo_Github_white.svg';
 import LogoArcoCliWhite from '../../assets/logo_ArcoCli_white.svg';
 import LogoArcoWebpackPluginWhite from '../../assets/logo_ArcoWebpackPlugin_white.svg';
 import LogoReact from '../../assets/logo_react.svg';
+import LogoMobile from '../../assets/logo_mobile.svg';
 import LogoVue from '../../assets/logo_vue.svg';
 import LogoJiShiBlue from '../../assets/logo_JiShi_blue.svg';
 import {
@@ -21,6 +21,7 @@ import {
   linkDocsDesignPrinciples,
   linkFigmaArcoComponent,
   linkFigmaArcoPro,
+  linkMobileComponent,
   linkFigmaArcoIcons,
   linkDocksArcoVueComponent,
   linkGithubCodeRepository,
@@ -28,8 +29,8 @@ import {
   linkGithubRepositoryArcoCli,
   linkDocsDesignStyleGuideline,
   linkSketchResource,
-  linkAxureResource,
   linkJiShiResource,
+  linkArcoMobile,
 } from '../../constant/links';
 import DesignValues from './components/DesignValues';
 import useLocale from '../../hooks/useLocale';
@@ -53,9 +54,9 @@ export default function SectionResource() {
           href={linkDesignerDocs}
           bodyResourceList={[
             {
-              name: locale['resource.design.axure'],
-              logo: <LogoAxureBlue />,
-              href: linkAxureResource,
+              name: locale['resource.design.arcoPro'],
+              logo: <LogoArcoProBlue />,
+              href: linkFigmaArcoPro,
             },
             {
               name: locale['resource.design.jishi'],
@@ -78,9 +79,9 @@ export default function SectionResource() {
               href: linkFigmaArcoComponent,
             },
             {
-              name: locale['resource.design.arcoPro'],
-              logo: <LogoArcoProBlue />,
-              href: linkFigmaArcoPro,
+              name: locale['resource.design.mobileComponent'],
+              logo: <LogoFigmaBlue />,
+              href: linkMobileComponent,
             },
           ]}
           footerResourceList={[
@@ -123,14 +124,19 @@ export default function SectionResource() {
           ]}
           footerResourceList={[
             {
-              name: 'React.js',
+              name: 'Web React',
               logo: <LogoReact />,
               href: linkDocsArcoComponent,
             },
             {
-              name: 'Vue.js',
+              name: 'Web Vue',
               logo: <LogoVue />,
               href: linkDocksArcoVueComponent,
+            },
+            {
+              name: 'Mobile React',
+              logo: <LogoMobile />,
+              href: linkArcoMobile,
             },
           ]}
         />

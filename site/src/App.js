@@ -6,7 +6,7 @@ import {
   teaLog,
   ModuleDurationTracker,
   Module,
-} from '@arco-design/arco-site-utils';
+} from '@arco-materials/site-utils';
 import AOS from 'aos';
 import Home from './pages/home';
 import Customer from './pages/customer';
