@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import ConfigProvider from '..';
 import enUS from '../../locale/en-US';
 import zhCN from '../../locale/zh-CN';
@@ -10,22 +10,26 @@ mountTest(ConfigProvider);
 
 describe('ConfigProvider locale', () => {
   it('enUs placeholder correctly', () => {
-    const component = mount(
+    const component = render(
       <ConfigProvider locale={enUS}>
         <DatePicker />
       </ConfigProvider>
     );
 
-    expect(component.find('input').props().placeholder).toBe(enUS.DatePicker.placeholder.date);
+    expect(component.find('.arco-picker-start-time')[0].getAttribute('placeholder')).toBe(
+      enUS.DatePicker.placeholder.date
+    );
   });
 
   it('zhCN placeholder correctly', () => {
-    const component = mount(
+    const component = render(
       <ConfigProvider locale={zhCN}>
         <DatePicker />
       </ConfigProvider>
     );
 
-    expect(component.find('input').props().placeholder).toBe(zhCN.DatePicker.placeholder.date);
+    expect(component.find('.arco-picker-start-time')[0].getAttribute('placeholder')).toBe(
+      zhCN.DatePicker.placeholder.date
+    );
   });
 });

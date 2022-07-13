@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Comment from '..';
@@ -17,7 +16,7 @@ describe('Comment', () => {
         {index}
       </Button>
     ));
-    const wrapper = mount(
+    const wrapper = render(
       <Comment
         actions={actions}
         author="Socrates"
@@ -33,49 +32,53 @@ describe('Comment', () => {
         datetime="1 hour"
       />
     );
-    expect(wrapper.find('Avatar')).toHaveLength(1);
-    expect(wrapper.find('.arco-comment-actions').find('Button')).toHaveLength(5);
-    expect(wrapper.find('.arco-comment-datetime').text()).toEqual('1 hour');
-    expect(wrapper.find('.arco-comment-content').text()).toEqual('Comment body content.');
+    expect(wrapper.find('.arco-avatar')).toHaveLength(1);
+    expect(wrapper.find('.arco-comment-actions')[0].querySelectorAll('.arco-btn')).toHaveLength(5);
+    expect(wrapper.find('.arco-comment-datetime')[0].innerHTML).toEqual('1 hour');
+    expect(wrapper.find('.arco-comment-content')[0].textContent).toEqual('Comment body content.');
   });
 
   it('render align right actions', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Comment
         actions={[<Button key={1}>actions</Button>]}
         content={<div>Comment body content.</div>}
         datetime="1 hour"
       />
     );
-    expect(
-      wrapper.find('.arco-comment-actions').hasClass('arco-comment-actions-align-left')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-comment-actions')[0].className).toContain(
+      'arco-comment-actions-align-left'
+    );
 
-    expect(
-      wrapper.find('.arco-comment-title').hasClass('arco-comment-title-align-left')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-comment-title')[0].className).toContain(
+      'arco-comment-title-align-left'
+    );
 
-    act(() => {
-      wrapper.setProps({
-        align: {
-          datetime: 'right',
-        },
-      });
-    });
+    wrapper.rerender(
+      <Comment
+        actions={[<Button key={1}>actions</Button>]}
+        content={<div>Comment body content.</div>}
+        datetime="1 hour"
+        align={{ datetime: 'right' }}
+      />
+    );
 
     expect(wrapper.find('.arco-comment-title-align-right')).toHaveLength(1);
 
-    act(() => {
-      wrapper.setProps({
-        align: 'right',
-      });
-    });
+    wrapper.rerender(
+      <Comment
+        actions={[<Button key={1}>actions</Button>]}
+        content={<div>Comment body content.</div>}
+        datetime="1 hour"
+        align="right"
+      />
+    );
 
     expect(wrapper.find('.arco-comment-actions-align-right')).toHaveLength(1);
   });
 
   it('render children Node correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Comment>
         <Comment>
           <Comment />
