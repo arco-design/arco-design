@@ -1,3 +1,11 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 BugFix
+
+- Fixed the bug that when the `InputNumber` component is `readOnly=true`, clicking the up and down keys can still change the value.([#1141](https://github.com/arco-design/arco-design/pull/1141))
+
 ## 2.36.0
 
 2022-06-24
