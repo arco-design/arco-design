@@ -1,4 +1,4 @@
-import { escapeRegExp } from 'lodash';
+import escapeRegExp from 'lodash/escapeRegExp';
 import React, { cloneElement } from 'react';
 import { isArray } from './is';
 
