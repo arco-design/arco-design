@@ -43,7 +43,7 @@ describe('Popconfirm', () => {
     expect($('.arco-popconfirm').length).toBe(1);
 
     // onCancel
-    fireEvent.click(component.find('Button').item(0));
+    fireEvent.click(component.find('button').item(0));
 
     expect(onCancel).toBeCalled();
 
@@ -56,7 +56,7 @@ describe('Popconfirm', () => {
     expect($('.arco-popconfirm').length).toBe(1);
 
     // onOk
-    fireEvent.click(component.find('Button').item(1));
+    fireEvent.click(component.find('button').item(1));
 
     expect(onOk).toBeCalled();
 
