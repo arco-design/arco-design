@@ -119,7 +119,6 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
           const closedStartLoc = Math.floor(startRatio * totalLen);
           const closedEndLoc = Math.ceil(endRatio * totalLen);
           const closedMiddleLoc = Math.floor((closedStartLoc + closedEndLoc) / 2);
-          setBinarySearchIndex([closedStartLoc, closedMiddleLoc, closedEndLoc]);
           closedLoc.current = closedMiddleLoc;
         }
         setStatus(MEASURE_STATUS.MEASURING);
