@@ -124,7 +124,7 @@ function Base(props: BaseProps) {
   const handleResize = (entry) => {
     const { contentRect } = entry?.[0];
     if (contentRect) {
-      const currentWidth = component.length ? contentRect.width - 16 : contentRect.width;
+      const currentWidth = component.includes('code') ? contentRect.width - 18 : contentRect.width;
       const resizeStatus =
         simpleEllipsis && ellipsisConfig.rows === 1
           ? // CSS single-line ellipsis may expand infinitely in the table，
