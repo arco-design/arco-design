@@ -40,11 +40,9 @@ const App = () => {
       <Dropdown
         droplist={Droplist}
         position="bl"
-        triggerProps={{
-          disabled: true,
-        }}
+        disabled
       >
-        <Link disabled>
+        <Link>
           City
           <IconDown style={{ fontSize: 12, marginLeft: 6 }} />
         </Link>
