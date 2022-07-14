@@ -51,7 +51,7 @@ exports[`renders Link/demo/dropdown.md correctly 1`] = `
     </svg>
   </span>
   <span
-    class="arco-link"
+    class="arco-link arco-link-disabled"
   >
     City
     <svg

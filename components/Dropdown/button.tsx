@@ -61,6 +61,7 @@ function Button(baseProps: DropdownButtonProps, ref) {
     <ArcoButton.Group className={className} style={style} ref={ref}>
       {leftButton}
       <Dropdown
+        disabled={disabled}
         droplist={droplist}
         position={position}
         trigger={trigger}
