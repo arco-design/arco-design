@@ -172,7 +172,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     event.preventDefault();
     setIsUserInputting(false);
 
-    if (disabled) {
+    if (disabled || readOnly) {
       return;
     }
 
