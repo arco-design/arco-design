@@ -36,7 +36,7 @@ describe('AutoComplete', () => {
         triggerElement={<TextArea style={{ width: 520, height: 96 }} />}
       />
     );
-    fireEvent.focus(wrapper.find('TextArea')[0]);
+    fireEvent.focus(wrapper.find('textarea')[0]);
     expect(wrapper.find('.arco-trigger')).toHaveLength(1);
   });
 

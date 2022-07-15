@@ -67,7 +67,8 @@ const Cropper = (props) => {
   });
   const [zoom, setZoom] = useState(1);
   const [rotation, setRotation] = useState(0);
-  const [newFile, setNewFile] = useState(file);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState(undefined)
+
   const url = React.useMemo(() => {
     return URL.createObjectURL(file);
   }, [file]);
@@ -87,29 +88,17 @@ const Cropper = (props) => {
               height: 280,
             },
           }}
-          cropSize={{
-            width: 280,
-            height: 280,
-          }}
           aspect={4 / 4}
           image={url}
           crop={crop}
           zoom={zoom}
           rotation={rotation}
           onRotationChange={setRotation}
+          onCropComplete={(_, croppedAreaPixels) => {
+            setCroppedAreaPixels(croppedAreaPixels)
+          }}
           onCropChange={setCrop}
           onZoomChange={setZoom}
-          onCropComplete={async (_, pixels) => {
-            console.log(pixels);
-            const blob = await _getCroppedImg(url || '', pixels, rotation);
-
-            if (blob) {
-              const newFile = new File([blob], file.name || 'image', {
-                type: file.type || 'image/*',
-              });
-              setNewFile(newFile);
-            }
-          }}
         />
       </div>
       <Grid.Row justify="space-between" style={{ marginTop: 20, marginBottom: 20 }}>
@@ -156,8 +145,15 @@ const Cropper = (props) => {
         </Button>
         <Button
           type="primary"
-          onClick={() => {
-            props.onOk(newFile);
+          onClick={async () => {
+            const blob = await _getCroppedImg(url || '', croppedAreaPixels, rotation);
+
+            if (blob) {
+              const newFile = new File([blob], file.name || 'image', {
+                type: file.type || 'image/*',
+              });
+              props.onOk(newFile);
+            }
           }}
         >
           确定

@@ -1,225 +1,218 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import dayjs from 'dayjs';
+import { fireEvent, render, sleep, screen } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import DatePicker from '..';
-import { getDateCell, getInput, checkTime } from './utils';
+import { checkTime, getDateCell, getInput } from './utils';
 import '../../../tests/mockDate';
 
 mountTest(DatePicker);
 componentConfigTest(DatePicker, 'DatePicker');
 
 describe('DatePicker', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
   it('dayStartOfWeek', () => {
-    const component = mount(<DatePicker />);
-    component.simulate('click');
+    const component = render(<DatePicker />);
+    fireEvent.click(component.container.firstChild!);
 
-    expect(component.find('.arco-picker-week-list-item').at(0).text()).toBe('一');
+    expect(component.find('.arco-picker-week-list-item').item(0).textContent).toBe('一');
+    component.rerender(<DatePicker dayStartOfWeek={0} />);
 
-    component.setProps({
-      dayStartOfWeek: 0,
-    });
+    expect(component.find('.arco-picker-week-list-item').item(0).textContent).toBe('日');
+    component.rerender(<DatePicker dayStartOfWeek={6} />);
 
-    expect(component.find('.arco-picker-week-list-item').at(0).text()).toBe('日');
-
-    component.setProps({
-      dayStartOfWeek: 6,
-    });
-
-    expect(component.find('.arco-picker-week-list-item').at(0).text()).toBe('六');
+    expect(component.find('.arco-picker-week-list-item').item(0).textContent).toBe('六');
   });
 
   it('defaultValue', () => {
-    const component = mount(<DatePicker defaultValue="2020-02-02" />);
+    const component = render(<DatePicker defaultValue="2020-02-02" />);
 
-    expect(component.find('input').prop('value')).toBe('2020-02-02');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020-02-02');
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component
-      .find('.arco-picker-date')
-      .at(8) // 2020-02-04
-      .simulate('click');
+    fireEvent.click(
+      component.find('.arco-picker-date').item(8) // 2020-02-04
+    );
 
-    expect(component.find('input').prop('value')).toBe('2020-02-04');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020-02-04');
   });
 
   it('today', () => {
-    const component = mount(<DatePicker />);
+    const component = render(<DatePicker />);
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    expect(component.find('.arco-picker-cell-today').text()).toBe('10');
+    expect(component.find('.arco-picker-cell-today')[0].textContent).toBe('10');
 
-    expect(component.find('input').prop('value')).toBe('');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('');
+    fireEvent.click(component.find('.arco-picker-footer .arco-link')[0]);
 
-    component.find('.arco-picker-footer .arco-link').simulate('click');
-
-    expect(component.find('input').prop('value')).toBe('2020-04-10');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020-04-10');
   });
 
   it('allowClear', () => {
     const onClear = jest.fn();
-    const component = mount(<DatePicker allowClear onClear={onClear} />);
+    const component = render(<DatePicker allowClear onClear={onClear} />);
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component.find('.arco-picker-footer .arco-link').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer .arco-link')[0]);
 
-    expect(component.find('input').prop('value')).toBe('2020-04-10');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020-04-10');
+    fireEvent.click(component.find('.arco-icon-close')[0]);
 
-    component.find('IconClose').simulate('click');
-
-    expect(component.find('input').prop('value')).toBe('');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('');
     expect(onClear.mock.calls.length).toBe(1);
   });
 
   it('control mode (showTime)', async () => {
-    const component = mount(<DatePicker showTime={{ defaultValue: '00:00:00' }} />);
+    const component = render(<DatePicker showTime={{ defaultValue: '00:00:00' }} />);
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component.find('button.arco-picker-btn-select-time').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-select-time')[0]);
 
     checkTime(component, '00', '00', '00');
+    component.rerender(
+      <DatePicker value="2021-06-10 01:02:03" showTime={{ defaultValue: '00:00:00' }} />
+    );
 
-    component.setProps({ value: '2021-06-10 01:02:03' });
-
-    expect(component.find('input').prop('value')).toBe('2021-06-10 01:02:03');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe(
+      '2021-06-10 01:02:03'
+    );
 
     checkTime(component, '01', '02', '03');
-
-    component.setProps({ value: undefined });
+    component.rerender(<DatePicker value={undefined} showTime={{ defaultValue: '00:00:00' }} />);
 
     checkTime(component, '00', '00', '00');
   });
 
   it('control mode (showTime={})', async () => {
-    const component = mount(<DatePicker showTime={{}} />);
+    const component = render(<DatePicker showTime={{}} />);
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component.find('button.arco-picker-btn-select-time').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-select-time')[0]);
 
     checkTime(component, '20', '32', '59');
   });
 
-  it('showTime', () => {
-    jest.useFakeTimers();
+  it('showTime', async () => {
+    const component = render(<DatePicker showTime />);
 
-    const component = mount(<DatePicker showTime />);
-
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
     function getTimePickerCell(index, cellIndex) {
       return component
         .find('.arco-timepicker-list')
-        .at(index)
-        .find('.arco-timepicker-cell')
-        .at(cellIndex);
+        .item(index)
+        .querySelectorAll('.arco-timepicker-cell')
+        .item(cellIndex);
     }
 
     function getInputValue() {
-      return component.find('.arco-picker-input input').prop('value');
+      return component.find('.arco-picker-input input')[0].getAttribute('value');
     }
-
-    component.find('button.arco-picker-btn-select-time').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-select-time')[0]);
 
     checkTime(component, '20', '32', '59');
 
-    getTimePickerCell(0, 10).simulate('click');
-    getTimePickerCell(1, 11).simulate('click');
-    getTimePickerCell(2, 12).simulate('click');
+    fireEvent.click(getTimePickerCell(0, 10));
+    fireEvent.click(getTimePickerCell(1, 11));
+    fireEvent.click(getTimePickerCell(2, 12));
 
     checkTime(component, '10', '11', '12');
 
     expect(getInputValue()).toBe('2020-04-10 10:11:12');
 
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary')[0]);
 
     expect(getInputValue()).toBe('2020-04-10 10:11:12');
 
-    jest.runAllTimers();
-
     // click now btn
-    component.simulate('click');
+    fireEvent.click(component.find('.arco-picker')[0]);
+    jest.useRealTimers();
+    await sleep(1000);
+    fireEvent.click(component.queryByText('选择时间')!);
 
-    component.find('button.arco-picker-btn-select-time').simulate('click');
-
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-secondary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-secondary')[0]);
 
     expect(getInputValue()).toBe('2020-04-10 20:32:59');
 
     checkTime(component, '20', '32', '59');
 
     // confirm
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary')[0]);
 
     expect(getInputValue()).toBe('2020-04-10 20:32:59');
   });
 
   it('hideNotInViewDates', () => {
-    const component = mount(<DatePicker hideNotInViewDates triggerElement={null} />);
+    const component = render(<DatePicker hideNotInViewDates triggerElement={null} />);
 
     expect(component.find('.arco-picker-cell-hidden')).toHaveLength(12);
   });
 
   it('update value', () => {
-    const component = mount(<DatePicker value="2020-04-01" />);
+    const component = render(<DatePicker value="2020-04-01" />);
 
-    expect(component.find('input').prop('value')).toBe('2020-04-01');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020-04-01');
+    component.rerender(<DatePicker value="2020-05-06" />);
 
-    component.setProps({ value: '2020-05-06' });
-
-    expect(component.find('input').prop('value')).toBe('2020-05-06');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020-05-06');
   });
 
-  it('hover placeholder', () => {
-    const component = mount(<DatePicker popupVisible />);
+  it('hover placeholder', async () => {
+    const component = render(<DatePicker popupVisible />);
 
     function checkPlaceholder(isPlaceholder: boolean) {
-      expect(getInput(component, 0).parent().hasClass('arco-picker-input-placeholder')).toBe(
-        isPlaceholder
-      );
+      expect(
+        getInput(component, 0).parentElement!.classList.contains('arco-picker-input-placeholder')
+      ).toBe(isPlaceholder);
     }
 
-    expect(component.find('input').prop('value')).toBe('');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('');
 
+    jest.useRealTimers();
+    await sleep(10);
     // 2020-04-06: mouseenter
-    getDateCell(component, 0, 7).simulate('mouseenter');
+    fireEvent.mouseEnter(getDateCell(component, 0, 7));
 
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-06');
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-06');
     checkPlaceholder(true);
 
     // 2020-04-06: mouseleave
-    getDateCell(component, 0, 7).simulate('mouseleave');
+    fireEvent.mouseLeave(getDateCell(component, 0, 7));
 
-    expect(getInput(component, 0).prop('value')).toBe('');
+    expect(getInput(component, 0).getAttribute('value')).toBe('');
     checkPlaceholder(false);
 
     // 2020-04-06: re mouseenter and click
-    getDateCell(component, 0, 7).simulate('mouseenter');
-    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
+    fireEvent.mouseEnter(getDateCell(component, 0, 7));
+    fireEvent.click(getDateCell(component, 0, 7).querySelector('.arco-picker-date')!);
 
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-06');
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-06');
     checkPlaceholder(false);
 
     // 2020-04-07: has value and mouseenter
-    getDateCell(component, 0, 8).simulate('mouseenter');
+    fireEvent.mouseEnter(getDateCell(component, 0, 8));
 
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-07');
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-07');
     checkPlaceholder(true);
 
     // 2020-04-06: has value and mouseleave
-    getDateCell(component, 0, 8).simulate('mouseleave');
+    fireEvent.mouseLeave(getDateCell(component, 0, 8));
 
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-06');
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-06');
     checkPlaceholder(false);
   });
 
-  it('shortcuts', () => {
-    const component = mount(
+  it('shortcuts', async () => {
+    const component = render(
       <DatePicker
         shortcuts={[
           {
@@ -231,39 +224,46 @@ describe('DatePicker', () => {
       />
     );
 
-    expect(getInput(component, 0).prop('value')).toBe('');
+    expect(getInput(component, 0).getAttribute('value')).toBe('');
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(0);
-
+    jest.useRealTimers();
+    await sleep(1000);
     // 2020-04-11: shortcuts mouseenter
-    component.find('.arco-picker-shortcuts').childAt(0).simulate('mouseenter');
-
-    expect(getInput(component, 0).prop('value')).toBe('');
-
+    fireEvent.mouseEnter(await component.findByText('tomorrow'));
+    await sleep(10);
+    expect(getInput(component, 0).getAttribute('value')).toBe('');
     // 2020-04-11
-    expect(getDateCell(component, 0, 12).hasClass('arco-picker-cell-selected')).toBeTruthy();
+    expect(
+      getDateCell(component, 0, 12).classList.contains('arco-picker-cell-selected')
+    ).toBeTruthy();
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(1);
 
     // 2020-04-11: shortcuts mouseleave
-    component.find('.arco-picker-shortcuts').childAt(0).simulate('mouseleave');
+    fireEvent.mouseLeave(await component.findByText('tomorrow'));
 
-    expect(getDateCell(component, 0, 12).hasClass('arco-picker-cell-selected')).toBeFalsy();
+    expect(
+      getDateCell(component, 0, 12).classList.contains('arco-picker-cell-selected')
+    ).toBeFalsy();
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(0);
 
     // 2020-04-11: shortcuts click
-    component.find('.arco-picker-shortcuts').childAt(0).simulate('click');
+    fireEvent.click(await component.findByText('tomorrow'));
 
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-11');
-    expect(getDateCell(component, 0, 12).hasClass('arco-picker-cell-selected')).toBeTruthy();
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-11');
+    expect(
+      getDateCell(component, 0, 12).classList.contains('arco-picker-cell-selected')
+    ).toBeTruthy();
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(1);
   });
 
-  it('onSelect & onChange', () => {
+  it('onSelect & onChange', async () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
-    const component = mount(<DatePicker onSelect={onSelect} onChange={onChange} popupVisible />);
-
+    const component = render(<DatePicker onSelect={onSelect} onChange={onChange} popupVisible />);
+    jest.useRealTimers();
+    await sleep(10);
     // 2020-04-06
-    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
+    fireEvent.click(getDateCell(component, 0, 7).querySelector('.arco-picker-date')!);
 
     expect(onSelect.mock.calls.length).toBe(1);
     expect(onSelect.mock.calls[0][0]).toBe('2020-04-06');
@@ -271,10 +271,10 @@ describe('DatePicker', () => {
     expect(onChange.mock.calls[0][0]).toBe('2020-04-06');
   });
 
-  it('onSelect & onChange (showTime)', () => {
+  it('onSelect & onChange (showTime)', async () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
-    const component = mount(
+    const component = render(
       <DatePicker
         onSelect={onSelect}
         onChange={onChange}
@@ -283,16 +283,17 @@ describe('DatePicker', () => {
         popupVisible
       />
     );
-
+    jest.useRealTimers();
+    await sleep(10);
     // 2020-04-05
-    getDateCell(component, 0, 7).find('.arco-picker-date').simulate('click');
+    fireEvent.click(getDateCell(component, 0, 7).querySelector('.arco-picker-date')!);
 
     expect(onSelect.mock.calls.length).toBe(1);
     expect(onSelect.mock.calls[0][0]).toBe('2020-04-06 20:32:59');
     expect(onChange.mock.calls.length).toBe(0);
 
     // confirm
-    component.find('button.arco-picker-btn-confirm').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-confirm')[0]);
 
     expect(onSelect.mock.calls.length).toBe(1);
     expect(onChange.mock.calls.length).toBe(1);
@@ -300,9 +301,11 @@ describe('DatePicker', () => {
   });
 
   it('panelRender correctly', () => {
-    const component = mount(
+    const component = render(
       <DatePicker
-        popupVisible
+        triggerProps={{
+          trigger: 'hover',
+        }}
         panelRender={(panelNode) => {
           return (
             <>
@@ -313,7 +316,8 @@ describe('DatePicker', () => {
         }}
       />
     );
-
-    expect(component.find('.custom-content').text()).toBe('Custom content');
+    fireEvent.mouseEnter(component.container.firstChild!);
+    jest.runAllTimers();
+    expect(screen.getAllByText('Custom content').length).toBe(1);
   });
 });

@@ -1,3 +1,11 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 BugFix
+
+- Fix the problem of `Typography` text omission under different text styles such as `underline`([#1137](https://github.com/arco-design/arco-design/pull/1137))
+
 ## 2.37.0
 
 2022-07-08

@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-// import mountTest from '../../../tests/mountTest';
+import { fireEvent, render } from '../../../tests/util';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Image from '..';
 import Button from '../../Button';
@@ -21,20 +20,19 @@ describe('Image', () => {
     jest.runAllTimers();
   });
 
-  const updateImg = (wrapper, method = 'load', params = {}) => {
-    wrapper.find('img').simulate(method, params);
-    jest.runAllTimers();
-    wrapper.update();
+  const updateImg = (wrapper, method = 'load') => {
+    if (wrapper.find('img')[0] && fireEvent[method]) {
+      fireEvent[method](wrapper.find('img')[0]);
+      jest.runAllTimers();
+    }
   };
 
   it('render image with error src', () => {
-    const wrapper = mount(<Image src="error" />);
+    const wrapper = render(<Image src="error" />);
     updateImg(wrapper, 'error');
     expect(wrapper.find('.arco-image-error')).toHaveLength(1);
     act(() => {
-      wrapper.setProps({
-        src: imgSrc,
-      });
+      wrapper.find('img')[0].setAttribute('src', imgSrc);
       updateImg(wrapper);
     });
     expect(wrapper.find('.arco-image-error')).toHaveLength(0);
@@ -43,7 +41,7 @@ describe('Image', () => {
   it('render basic instance correctly', () => {
     const mockClick = jest.fn();
     const mockVisibleChange = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <Image
         src={imgSrc}
         width={200}
@@ -51,20 +49,22 @@ describe('Image', () => {
         previewProps={{ onVisibleChange: mockVisibleChange }}
       />
     );
-    const imgInstance = wrapper.find('img');
-    imgInstance.simulate('click');
+    act(() => {
+      updateImg(wrapper, 'click');
+    });
+
     expect(mockClick).toHaveBeenCalledTimes(1);
     expect(mockVisibleChange).toHaveBeenCalledTimes(1);
   });
 
   it('render extra options correctly', () => {
     const mockClick = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <Image
         src={imgSrc}
         width={200}
         actions={[
-          <Button key={1} onClick={mockClick}>
+          <Button key={1} onClick={mockClick} className="extra-btn">
             extra
           </Button>,
         ]}
@@ -73,10 +73,10 @@ describe('Image', () => {
     act(() => {
       updateImg(wrapper);
     });
-    expect(wrapper.find('.arco-image-actions-list').find('.arco-image-actions-item')).toHaveLength(
-      1
-    );
-    wrapper.find('Button').simulate('click');
+    expect(wrapper.find('.arco-image-actions-list .arco-image-actions-item')).toHaveLength(1);
+    act(() => {
+      fireEvent.click(wrapper.find('.extra-btn')[0]);
+    });
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 });

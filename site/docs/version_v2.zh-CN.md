@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.37.1
+
+2022-07-14
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` 组件  `readOnly=true` 时，点击上下键仍然可以改变值的 bug。([#1141](https://github.com/arco-design/arco-design/pull/1141))
+- 修复 `Typography` 组件 `underline` 等不同文本样式下文字省略问题([#1137](https://github.com/arco-design/arco-design/pull/1137))
+- 修复 `disabled` 属性未对 `Dropdown.Button` 的第二个按钮生效的 bug。([#1136](https://github.com/arco-design/arco-design/pull/1136))
+
 ## 2.37.0
 
 2022-07-08

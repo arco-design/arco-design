@@ -19,6 +19,7 @@ export const render = (ui: React.ReactElement, options?: RenderOptions) => {
     }),
   } as ReturnType<typeof ORender> & {
     querySelector: <T extends HTMLElement | SVGElement>(selector: string) => T | null;
+    querySelectorAll: <T extends HTMLElement | SVGElement>(selector: string) => NodeListOf<T>;
     find: <E extends HTMLElement | SVGElement>(selector: string) => NodeListOf<E>;
   };
 
@@ -27,6 +28,9 @@ export const render = (ui: React.ReactElement, options?: RenderOptions) => {
   };
   wrapper.querySelector = <T extends Element>(selector) => {
     return document.querySelector<T>(selector);
+  };
+  wrapper.querySelectorAll = <T extends Element>(selector) => {
+    return document.querySelectorAll<T>(selector);
   };
 
   return wrapper;

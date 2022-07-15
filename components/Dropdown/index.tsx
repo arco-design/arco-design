@@ -126,7 +126,7 @@ function Dropdown(baseProps: DropdownProps, _) {
     >
       {React.isValidElement(children)
         ? React.cloneElement(children, {
-            disabled,
+            ...(typeof disabled === 'boolean' ? { disabled } : {}),
             className: cs(
               {
                 [`${prefixCls}-popup-visible`]: popupVisible,

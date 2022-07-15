@@ -83,14 +83,14 @@ describe('function component useForm', () => {
       />
     );
 
-    fireEvent.change(wrapper.querySelector('Input'), { target: { value: '111' } });
+    fireEvent.change(wrapper.querySelector('input'), { target: { value: '111' } });
 
     const setValueBtn = wrapper.querySelector('.setvalue-btn');
 
     expect(value).toBe(0);
 
     fireEvent.click(setValueBtn);
-    fireEvent.change(wrapper.querySelector('Input'), { target: { value: 'ceshi' } });
+    fireEvent.change(wrapper.querySelector('input'), { target: { value: 'ceshi' } });
 
     expect(value).toBe(1);
   });
