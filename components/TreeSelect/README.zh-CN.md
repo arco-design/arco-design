@@ -28,6 +28,7 @@
 |treeCheckable|是否展示复选框|boolean |`-`|-|
 |treeCheckStrictly|父子节点是否关联|boolean |`-`|-|
 |unmountOnExit|是否在隐藏之后销毁 DOM 结构|boolean |`-`|-|
+|inputValue|输入框搜索文本的受控值|string |`-`|2.38.0|
 |placeholder|选择框默认文字。|string |`-`|-|
 |fieldNames|指定 key，title，isLeaf，disabled，children 对应的字段|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -55,6 +56,7 @@
 |onChange|选中值改变的回调|(value: any,extra: {trigger?: [NodeProps](tree#treenode);checked?: boolean;selected?: boolean;}) => void |`-`|`extra` in `2.29.0`|
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|
 |onClick|鼠标点击下拉框时的回调|(e) => void |`-`|-|
+|onInputValueChange|输入框搜索文本改变的回调。|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.38.0|
 |onSearch|自定义搜索方法。未定义的时候将会在已经在数据中进行搜索|(inputValue: string) => void |`-`|-|
 |onVisibleChange|下拉框收起展开时触发|(visible: boolean) => void |`-`|-|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
@@ -91,6 +93,17 @@ export type TreeDataType = NodeProps & {
   children?: TreeDataType[];
   [key: string]: any;
 };
+```
+
+### InputValueChangeReason
+
+```js
+// 造成输入框值改变的原因：用户输入、选中选项、选项下拉框收起、触发自动分词
+export type InputValueChangeReason =
+  | "manual"
+  | "optionChecked"
+  | "optionListHide"
+  | "tokenSeparator";
 ```
 
 ### ObjectValueType
