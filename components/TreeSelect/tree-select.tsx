@@ -27,6 +27,7 @@ import { NodeProps } from '../Tree/interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useMergeInputValue from './hook/useMergedInputValue';
 
 function isEmptyValue(value) {
   return (
@@ -66,8 +67,15 @@ const TreeSelect: ForwardRefRenderFunction<
   const [popupVisible, setPopupVisible] = useMergeValue<boolean>(false, {
     value: props.popupVisible,
   });
-  const [inputValue, setInputValue] = useState<string>();
-
+  const [inputValue, setInputValue] = useMergeInputValue<string>(
+    undefined, // Compatible with previous behavior 'undefined as default'
+    'inputValue' in props ? props.inputValue || '' : undefined
+  );
+  const onChangeInputValue = isFunction(props.onInputValueChange)
+    ? props.onInputValueChange
+    : (input) => {
+        setInputValue(input);
+      };
   const [value, setValue] = useStateValue(props, key2nodeProps, indeterminateKeys);
 
   const multiple = props.multiple || props.treeCheckable;
@@ -127,7 +135,7 @@ const TreeSelect: ForwardRefRenderFunction<
     }
 
     if (props.multiple && !retainInputValueWhileSelect) {
-      setInputValue('');
+      setInputValue(''); // @2.38.0 setInputValue does nothing while given inputValue prop
       handleSearch('');
     }
   };
@@ -200,6 +208,7 @@ const TreeSelect: ForwardRefRenderFunction<
           treeRef.current.scrollIntoView(target.value);
         }
       });
+    // @2.38.0 setInputValue does nothing while given inputValue prop
     inputValue && setInputValue('');
   }, [popupVisible]);
 
@@ -320,9 +329,7 @@ const TreeSelect: ForwardRefRenderFunction<
               onFocus={(e) => {
                 e && e.stopPropagation();
               }}
-              onChangeInputValue={(input) => {
-                setInputValue(input);
-              }}
+              onChangeInputValue={onChangeInputValue}
             />
           )}
     </Trigger>
