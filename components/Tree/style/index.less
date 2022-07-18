@@ -160,14 +160,22 @@
     }
   }
 
-  &-node-title-block {
+  &-node-block {
     flex: 1;
     box-sizing: content-box;
+
+    &:hover {
+      background-color: @tree-color-title-bg_hover;
+
+      .@{tree-node-prefix-cls}-drag-icon {
+        opacity: 1;
+      }
+    }
 
     .@{tree-node-prefix-cls}-drag-icon {
       position: absolute;
       right: @tree-spacing-drag-icon-right;
-      margin-left: unset;
+      margin-top: @tree-spacing-drag-icon-top;
     }
   }
 
@@ -196,17 +204,8 @@
     // overflow: hidden;
 
     &:hover {
-      background-color: @tree-color-title-bg_hover;
       color: @tree-color-title-text_hover;
-
-      .@{tree-node-prefix-cls}-drag-icon {
-        opacity: 1;
-      }
     }
-
-    // &-draggable {
-    //   margin-top: @tree-draggable-size-gap-height;
-    // }
 
     &-draggable::before {
       content: '';
