@@ -354,7 +354,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     let paginationProps: PaginationProps = {
       size: paginationSize,
       total,
-      onChange: onPaginationChange,
       pageSize,
       current,
       selectProps: {
@@ -385,6 +384,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       };
     }
 
+    paginationProps.onChange = onPaginationChange;
     return paginationProps;
   }
 
