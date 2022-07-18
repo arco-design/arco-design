@@ -332,7 +332,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   // 获得经过 sorter 和 filters 筛选之后的 data
   const processedData = getProcessedData(innerSorter, innerFilters);
 
-  function getPaginationProps(_processedData = processedData, filterPaginationOnchange = false) {
+  function getPaginationProps(_processedData = processedData) {
     const pageSize = mergePagination.pageSize || innerPageSize || 10;
     const paginationSize = size === 'middle' ? 'default' : size;
     let selectPopupPosition: 'top' | 'bottom' = 'top';
@@ -383,10 +383,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         ...mergePagination,
       };
     }
-    paginationProps = {
-      ...paginationProps,
-      onChange: filterPaginationOnchange ? undefined : onPaginationChange,
-    };
 
     paginationProps.onChange = onPaginationChange;
     return paginationProps;
@@ -586,7 +582,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       setSelectedRowKeys([]);
       rowSelection.onChange && rowSelection.onChange([], []);
     }
-    const newPaginationProps = { ...getPaginationProps(processedData, true), current, pageSize };
+    const newPaginationProps = { ...getPaginationProps(), current, pageSize };
     onChange &&
       onChange(newPaginationProps, innerSorter, innerFilters, {
         currentData: getPageData(processedData, newPaginationProps),
