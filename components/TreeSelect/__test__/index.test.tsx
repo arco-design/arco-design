@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
+import { render, fireEvent } from '../../../tests/util';
 import TreeSelect from '..';
 import { normalizeValueToArray } from '../utils';
 
@@ -38,6 +37,10 @@ const treeData = [
 
 const prefixCls = '.arco-tree';
 
+const clickInput = () => {
+  fireEvent.click(document.querySelector('.arco-tree-select-view') as Element);
+};
+
 describe('TreeSelect', () => {
   beforeEach(() => {
     jest.useFakeTimers();
@@ -49,16 +52,16 @@ describe('TreeSelect', () => {
 
   it('popOver expand and collapse', () => {
     const mockVisibleChange = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <TreeSelect
         onVisibleChange={mockVisibleChange}
         treeData={[{ title: <div>123</div>, key: '123' }, ...treeData]}
       />
     );
-    wrapper.simulate('click');
-    expect(wrapper.find('Tree')).toHaveLength(1);
+    clickInput();
+    expect(wrapper.find('.arco-tree')).toHaveLength(1);
     expect(mockVisibleChange).toHaveBeenCalledTimes(1);
-    wrapper.simulate('click');
+    clickInput();
     // 消失有动画的延时
     jest.runAllTimers();
     expect(mockVisibleChange).toHaveBeenCalledTimes(2);
@@ -69,106 +72,91 @@ describe('TreeSelect', () => {
 
   it('select correctly', () => {
     const mockChange = jest.fn();
-    const wrapper = mount(<TreeSelect onChange={mockChange} treeData={treeData} />);
-    wrapper.simulate('click');
-
-    const Tree = wrapper.find('Tree');
+    const wrapper = render(<TreeSelect onChange={mockChange} treeData={treeData} />);
+    clickInput();
 
     // 第一次点击
-    Tree.find(`${prefixCls}-node`)
-      .first()
-      .find(`${prefixCls}-node-title`)
-      .first()
-      .simulate('click');
+    fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(0));
     expect(mockChange).toHaveBeenCalledTimes(1);
     expect(mockChange.mock.calls[0][0]).toEqual('node1');
 
     // 第二次点击
-    wrapper.simulate('click');
-    Tree.find(`${prefixCls}-node`).at(1).find(`${prefixCls}-node-title`).last().simulate('click');
+    clickInput();
+    fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(1));
     expect(mockChange).toHaveBeenCalledTimes(2);
-    expect(wrapper.find('.arco-tree-select-view-value').text()).toBe('小恶魔');
+    expect(wrapper.querySelector('.arco-tree-select-view-value')?.textContent).toBe('小恶魔');
     expect(mockChange.mock.calls[1][0]).toEqual('node1-1');
   });
 
   it('be controlled', () => {
-    const wrapper = mount(<TreeSelect treeData={treeData} value="node1-1" />);
-    expect(wrapper.find('.arco-tree-select-view-value').text()).toBe('小恶魔');
-    expect(wrapper.find('input').prop('value')).toBe('小恶魔');
+    const wrapper = render(<TreeSelect treeData={treeData} value="node1-1" />);
+    expect(wrapper.querySelector('.arco-tree-select-view-value')?.textContent).toBe('小恶魔');
+    expect(wrapper.querySelector('input')?.getAttribute('value')).toBe('小恶魔');
 
-    wrapper.setProps({
-      value: 'node2',
-    });
+    wrapper.rerender(<TreeSelect treeData={treeData} value="node2" />);
 
-    // TODO check here
-    // expect(wrapper.find('input').prop('value')).toBe('史塔克家族');
+    expect(wrapper.querySelector('input')?.getAttribute('value')).toBe('史塔克家族');
   });
 
   it('options loadMore', () => {
-    // TODO: 此处`loadMore`类型及单测逻辑存在问题，待修正后移除`@ts-ignore`
-    // @ts-ignore
     const mockHandleLoadMore = jest.fn();
-    const wrapper = mount(<TreeSelect treeData={treeData} loadMore={mockHandleLoadMore} />);
+    const wrapper = render(<TreeSelect treeData={treeData} loadMore={mockHandleLoadMore} />);
 
-    wrapper.simulate('click');
-    const Tree = wrapper.find('Tree');
-    const treeNode = Tree.find(`${prefixCls}-node`);
+    clickInput();
+    const treeNode = wrapper.find(`${prefixCls}-node`);
     expect(wrapper.find(`${prefixCls}-node-switcher-icon`)).toHaveLength(treeNode.length);
-    treeNode.last().find(`${prefixCls}-node-switcher-icon`).first().simulate('click');
+    fireEvent.click(
+      treeNode[treeNode.length - 1].querySelector(`${prefixCls}-node-switcher-icon`) as any
+    );
     expect(mockHandleLoadMore).toHaveBeenCalledTimes(1);
   });
 
   it('options loadMore function', () => {
     const mockLoad = jest.fn();
-    const wrapper = mount(<TreeSelect treeData={treeData} loadMore={mockLoad} />);
-    wrapper.simulate('click');
-    const Tree = wrapper.find('Tree');
-    const treeNode = Tree.find(`${prefixCls}-node`);
-    treeNode.last().find(`${prefixCls}-node-switcher-icon`).first().simulate('click');
+    const wrapper = render(<TreeSelect treeData={treeData} loadMore={mockLoad} />);
+    clickInput();
+
+    const treeNode = wrapper.find(`${prefixCls}-node`);
+    fireEvent.click(
+      treeNode[treeNode.length - 1]?.querySelector(`${prefixCls}-node-switcher-icon`) as any
+    );
     expect(mockLoad).toHaveBeenCalledTimes(1);
   });
 
   it('search operation', () => {
-    const wrapper = mount(<TreeSelect treeData={treeData} showSearch />);
-    wrapper.simulate('click');
-    expect(wrapper.find(`${prefixCls}-select-view`).find('input')).toHaveLength(1);
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: '小' } });
+    const wrapper = render(<TreeSelect treeData={treeData} showSearch />);
+    clickInput();
+    expect(wrapper.find(`${prefixCls}-select-view input`)).toHaveLength(1);
+    fireEvent.change(wrapper.find('input').item(0), { target: { value: '小' } });
     jest.runAllTimers();
     jest.advanceTimersByTime(200);
-    // expect(wrapper.find('Node')).toHaveLength(2);
+    expect(wrapper.find('.arco-tree-node')).toHaveLength(2);
   });
 
   it('showSearch = retainInputValueWhileSelect ', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <TreeSelect
         multiple
         treeData={treeData}
         showSearch={{ retainInputValueWhileSelect: false }}
       />
     );
-    wrapper.simulate('click');
-    expect(wrapper.find(`${prefixCls}-select-view`).find('input')).toHaveLength(1);
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: '小' } });
+    clickInput();
+    expect(wrapper.find(`${prefixCls}-select-view input`)).toHaveLength(1);
+
+    fireEvent.change(wrapper.find('input').item(0), { target: { value: '小' } });
     jest.runAllTimers();
     jest.advanceTimersByTime(200);
-    expect(wrapper.find(`${prefixCls}-select-view`).find('input').text()).toBe('');
+    expect(wrapper.querySelector(`${prefixCls}-select-view input`)?.textContent).toBe('');
   });
 
   it('define onSearch props', () => {
     const mockSearch = jest.fn();
-    const wrapper = mount(<TreeSelect treeData={treeData} showSearch onSearch={mockSearch} />);
-    wrapper.simulate('click');
-    expect(wrapper.find(`${prefixCls}-select-view`).find('input')).toHaveLength(1);
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: '小' } });
+    const wrapper = render(<TreeSelect treeData={treeData} showSearch onSearch={mockSearch} />);
+    clickInput();
+    expect(wrapper.find(`${prefixCls}-select-view input`)).toHaveLength(1);
+
+    fireEvent.change(wrapper.find('input').item(0), { target: { value: '小' } });
     jest.runAllTimers();
     jest.advanceTimersByTime(200);
     expect(mockSearch).toHaveBeenCalledTimes(1);
@@ -178,7 +166,7 @@ describe('TreeSelect', () => {
       { label: 'ceshi', value: '1111' },
       { label: 'ceshi2', value: '123123123' },
     ];
-    const wrapper = mount(
+    const wrapper = render(
       <TreeSelect
         treeData={treeData}
         labelInValue
@@ -189,49 +177,57 @@ describe('TreeSelect', () => {
     );
     const choice = wrapper.find('.arco-tag');
     expect(choice).toHaveLength(2);
-    expect(choice.at(0).text()).toBe('ceshi');
-    expect(choice.at(1).text()).toBe('ceshi2');
+    expect(choice.item(0).textContent).toBe('ceshi');
+    expect(choice.item(1).textContent).toBe('ceshi2');
 
-    choice.at(1).find('svg').simulate('click');
+    fireEvent.click(choice.item(1).querySelector('svg') as any);
 
     expect(values).toEqual([{ label: 'ceshi', value: '1111' }]);
 
-    wrapper.setProps({ value: values });
+    wrapper.rerender(
+      <TreeSelect
+        treeData={treeData}
+        labelInValue
+        multiple
+        value={values}
+        onChange={(v) => (values = v)}
+      />
+    );
 
     expect(wrapper.find('.arco-tag')).toHaveLength(2);
-    expect(wrapper.find('.arco-tag').at(0).text()).toBe('ceshi');
+    expect(wrapper.find('.arco-tag').item(0).textContent).toBe('ceshi');
   });
 
   it('allowClear props', () => {
     let value = '';
-    const wrapper = mount(
+    const wrapper = render(
       <TreeSelect treeData={treeData} allowClear onChange={(v) => (value = v)} />
     );
 
-    wrapper.simulate('click');
-    const Tree = wrapper.find('Tree');
+    clickInput();
+
     // 第一次点击
-    Tree.find(`${prefixCls}-node-title`).first().simulate('click');
+    fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(0));
     expect(value).toBe('node1');
 
-    wrapper.find('IconClose').simulate('click');
+    fireEvent.click(wrapper.find(`.arco-icon-close`).item(0));
 
     expect(value).toBe(undefined);
   });
 
   it('disabled tree-select', () => {
-    const wrapper = mount(<TreeSelect treeData={treeData} value="node1-1" disabled />);
+    const wrapper = render(<TreeSelect treeData={treeData} value="node1-1" disabled />);
     expect(wrapper.find(`${prefixCls}-select-disabled`)).toHaveLength(1);
     expect(wrapper.find('IconClose')).toHaveLength(0);
 
-    wrapper.simulate('click');
+    clickInput();
     expect(wrapper.find('Tree')).toHaveLength(0);
   });
 
   describe('treeCheckable', () => {
     it('checkable correctly', () => {
       let stateValue = ['node1-1'];
-      const wrapper = mount(
+      const wrapper = render(
         <TreeSelect
           treeCheckable
           defaultValue={['node1']}
@@ -241,32 +237,26 @@ describe('TreeSelect', () => {
         />
       );
       expect(normalizeValueToArray(stateValue)).toEqual(['node1-1']);
-      wrapper.simulate('click');
+      clickInput();
 
-      const tree = wrapper.find('Tree');
-      expect(tree.prop('checkable')).toBe(true);
-
-      tree
-        .find(`${prefixCls}-node`)
-        .last()
-        .find(`${prefixCls}-node-title`)
-        .first()
-        .simulate('click');
+      expect(wrapper.find('.arco-checkbox')).toHaveLength(wrapper.find('.arco-tree-node').length);
+      const nodes = wrapper.find(`${prefixCls}-node`);
+      fireEvent.click(nodes[nodes.length - 1].querySelector(`${prefixCls}-node-title`) as Element);
 
       expect(stateValue).toHaveLength(2);
 
-      tree
-        .find(`${prefixCls}-node`)
-        .at(2)
-        .find(`${prefixCls}-node-title`)
-        .first()
-        .simulate('click');
+      fireEvent.click(
+        wrapper
+          .find(`${prefixCls}-node`)
+          .item(2)
+          .querySelector(`${prefixCls}-node-title`) as Element
+      );
       expect(stateValue).toHaveLength(3);
     });
 
     it('checkable correctly when checkStrictly', () => {
       // let value = ['node1'];
-      // const wrapper = mount(
+      // const wrapper = render(
       //   <TreeSelect
       //     treeCheckable
       //     treeCheckStrictly
@@ -278,7 +268,7 @@ describe('TreeSelect', () => {
       // );
       // const test = function() {
       //   expect(wrapper.find('.arco-tag')).toHaveLength(1);
-      //   wrapper.simulate('click');
+      //   clickInput()
       //   const tree = wrapper.find('Tree');
       //   expect(tree.prop('checkable')).toBe(true);
       //   tree
@@ -301,7 +291,7 @@ describe('TreeSelect', () => {
 
     it('checkable correctly when checkStrategy is parent', () => {
       let value = ['node1-1'];
-      const wrapper = mount(
+      const wrapper = render(
         <TreeSelect
           treeCheckable
           treeCheckedStrategy={TreeSelect.SHOW_PARENT}
@@ -314,44 +304,59 @@ describe('TreeSelect', () => {
         />
       );
       expect(wrapper.find('.arco-tag')).toHaveLength(1);
-      expect(wrapper.find('.arco-tag').at(0).text()).toEqual('拉尼斯特家族');
+      expect(wrapper.find('.arco-tag').item(0).textContent).toEqual('拉尼斯特家族');
 
-      wrapper.simulate('click');
-      const tree = wrapper.find('Tree');
+      clickInput();
 
-      act(() => {
-        tree.find(`${prefixCls}-node`).last().find(`${prefixCls}-node-title`).simulate('click');
-      });
+      const nodes = wrapper.find(`${prefixCls}-node`);
+
+      fireEvent.click(nodes[nodes.length - 1].querySelector(`${prefixCls}-node-title`) as any);
       expect(value).toEqual(['node1', 'node2-2']);
 
-      wrapper.setProps({ value: [...value] });
+      wrapper.rerender(
+        <TreeSelect
+          treeCheckable
+          treeCheckedStrategy={TreeSelect.SHOW_PARENT}
+          value={[...value]}
+          onChange={(v) => {
+            value = v;
+          }}
+          treeData={treeData}
+          allowClear
+        />
+      );
+      jest.runAllTimers();
 
-      // TODO: fixme
-      // expect(
-      //   wrapper
-      //     .find('.arco-tag')
-      //     .at(1)
-      //     .text()
-      // ).toBe('三傻');
+      expect(wrapper.find('.arco-tag').item(1).textContent).toBe('三傻');
 
-      act(() => {
-        tree
+      fireEvent.click(
+        wrapper
           .find(`${prefixCls}-node`)
-          .at(3)
-          .find(`${prefixCls}-node-title`)
-          .first()
-          .simulate('click');
-      });
+          .item(3)
+          .querySelector(`${prefixCls}-node-title`) as Element
+      );
+
       expect(value).toEqual(['node1', 'node2']);
-      wrapper.setProps({ value });
+      wrapper.rerender(
+        <TreeSelect
+          treeCheckable
+          treeCheckedStrategy={TreeSelect.SHOW_PARENT}
+          value={value}
+          onChange={(v) => {
+            value = v;
+          }}
+          treeData={treeData}
+          allowClear
+        />
+      );
 
       expect(wrapper.find('.arco-tag')).toHaveLength(2);
-      expect(wrapper.find('.arco-tag').at(1).text()).toBe('史塔克家族');
+      expect(wrapper.find('.arco-tag').item(1).textContent).toBe('史塔克家族');
     });
 
     // it('checkable correctly when checkStrategy is child', () => {
     //   let value = ['node1'];
-    //   const wrapper = mount(
+    //   const wrapper = render(
     //     <TreeSelect
     //       treeCheckable
     //       treeCheckedStrategy={TreeSelect.SHOW_CHILD}
@@ -365,15 +370,15 @@ describe('TreeSelect', () => {
     //   expect(
     //     wrapper
     //       .find('.arco-tag')
-    //       .at(0)
-    //       .text()
+    //       .item(0)
+    //       .textContent
     //   ).toBe('小恶魔');
 
-    //   wrapper.simulate('click');
+    //   clickInput()
     //   const tree = wrapper.find('Tree');
     //   tree
     //     .find(`${prefixCls}-node`)
-    //     .at(2)
+    //     .item(2)
     //     .find(`${prefixCls}-node-title`)
     //     .first()
     //     .simulate('click');
@@ -383,7 +388,7 @@ describe('TreeSelect', () => {
     // });
     // it('checkable correctly when checkStrategy is all', async () => {
     //   let value = ['node1'];
-    //   const wrapper = mount(
+    //   const wrapper = render(
     //     <TreeSelect
     //       treeCheckable
     //       treeCheckedStrategy={TreeSelect.SHOW_ALL}
@@ -397,21 +402,21 @@ describe('TreeSelect', () => {
     //   expect(
     //     wrapper
     //       .find('.arco-tag')
-    //       .at(0)
-    //       .text()
+    //       .item(0)
+    //       .textContent
     //   ).toBe('拉尼斯特家族');
     //   expect(
     //     wrapper
     //       .find('.arco-tag')
-    //       .at(1)
-    //       .text()
+    //       .item(1)
+    //       .textContent
     //   ).toBe('小恶魔');
-    //   wrapper.simulate('click');
+    //   clickInput()
 
     //   const tree = wrapper.find('Tree');
     //   tree
     //     .find(`${prefixCls}-node`)
-    //     .at(2)
+    //     .item(2)
     //     .find(`${prefixCls}-node-title`)
     //     .simulate('click');
     //   expect(value).toHaveLength(5);
@@ -453,7 +458,7 @@ describe('TreeSelect', () => {
     ];
 
     let value: string[] = [];
-    const wrapper = mount(
+    const wrapper = render(
       <TreeSelect
         treeCheckable
         value={value}
@@ -462,24 +467,42 @@ describe('TreeSelect', () => {
         allowClear
       />
     );
-    wrapper.simulate('click');
-    const tree = wrapper.find('Tree');
+
+    const rerender = (props) => {
+      wrapper.rerender(
+        <TreeSelect
+          treeCheckable
+          value={value}
+          onChange={(v) => (value = v)}
+          treeData={data}
+          allowClear
+          {...props}
+        />
+      );
+    };
+    clickInput();
 
     const testDisableProps = () => {
-      wrapper.setProps({
+      rerender({
         treeData: [...data],
         value: [],
       });
 
-      tree.find(`${prefixCls}-node-title`).first().simulate('click');
+      fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(0));
       expect(value).toEqual(['node3-2']);
-      wrapper.setProps({ value });
+      rerender({
+        treeData: [...data],
+        value,
+      });
 
-      tree.find(`${prefixCls}-node-title`).at(1).simulate('click');
+      fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(1));
       expect(value).toEqual(['node3-2']);
-      wrapper.setProps({ value });
+      rerender({
+        treeData: [...data],
+        value,
+      });
 
-      tree.find(`${prefixCls}-node-title`).at(2).simulate('click');
+      fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(2));
       expect(value).toEqual(['node3-2', 'node1-1']);
     };
     // @ts-ignore
@@ -510,7 +533,7 @@ describe('TreeSelect', () => {
     ];
     let value = ['node2', 'node3'];
 
-    const wrapper = mount(
+    const wrapper = render(
       <TreeSelect
         treeCheckable
         value={value}
@@ -524,14 +547,13 @@ describe('TreeSelect', () => {
     const tags = wrapper.find('.arco-tag');
     expect(tags).toHaveLength(3);
 
-    expect(tags.at(0).text()).toBe('node3');
-    expect(tags.at(1).text()).toBe('二丫');
-    expect(tags.at(2).text()).toBe('三傻');
+    expect(tags.item(0).textContent).toBe('node3');
+    expect(tags.item(1).textContent).toBe('二丫');
+    expect(tags.item(2).textContent).toBe('三傻');
 
     expect(removeIcon).toHaveLength(2);
-    removeIcon.at(0).simulate('click');
+    fireEvent.click(removeIcon.item(0));
 
-    // TODO check here
-    // expect(value).toEqual(['node3', 'node2-2']);
+    expect(value).toEqual(['node3', 'node2-2']);
   });
 });
