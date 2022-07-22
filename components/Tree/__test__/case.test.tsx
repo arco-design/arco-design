@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
+import { render, fireEvent } from '../../../tests/util';
 import Tree from '..';
 
 const TreeData = [
@@ -48,7 +47,7 @@ describe('Tree case', () => {
   });
 
   it('icons correctly', async () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Tree
         treeData={TreeData}
         icons={(nodeprops) => {
@@ -59,14 +58,12 @@ describe('Tree case', () => {
       />
     );
 
-    const firstNode = wrapper.find(`.arco-tree-node-switcher-icon`).first();
+    const firstNode = wrapper.find(`.arco-tree-node-switcher-icon`).item(0);
 
     // 默认是展开的
-    expect(firstNode.text()).toBe('-');
-    await act(() => {
-      firstNode.simulate('click');
-    });
+    expect(firstNode.textContent).toBe('-');
+    fireEvent.click(firstNode);
     // 收起节点
-    expect(firstNode.text()).toBe('+');
+    expect(firstNode.textContent).toBe('+');
   });
 });
