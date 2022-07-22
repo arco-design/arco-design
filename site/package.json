@@ -38,7 +38,11 @@
     "@types/aos": "^3.0.4",
     "prism-themes": "^1.5.0",
     "prismjs": "^1.23.0",
-    "webpack-bundle-analyzer": "^3.6.0"
+    "webpack-bundle-analyzer": "^3.6.0",
+    "workbox-core": "^6.5.3",
+    "workbox-precaching": "^6.5.3",
+    "workbox-routing": "^6.5.3",
+    "workbox-webpack-plugin": "^6.5.3"
   },
   "files": [
     "dist"
