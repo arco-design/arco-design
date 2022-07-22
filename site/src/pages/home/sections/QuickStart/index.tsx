@@ -1,5 +1,5 @@
 import React from 'react';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import cs from '../../utils/classNames';
 import CodeCopy from '../../components/CodeCopy';
 import LogoWrapper from '../../components/LogoWrapper';

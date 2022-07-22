@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Upload, Modal, Progress, Empty, Typography, Spin } from '@arco-design/web-react';
 import Axios from 'axios';
 import * as icons from '@arco-design/web-react/icon/index.es.js';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import { EventMap } from '../site/src/pages/home/utils/eventMap';
 
 const locale = {
