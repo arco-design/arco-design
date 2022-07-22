@@ -40,6 +40,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { SelectOptionProps } from '../index';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
@@ -169,6 +170,8 @@ function Select(baseProps: SelectProps, ref) {
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
+  const refIsFirstRender = useIsFirstRender();
+
   // Unique ID of this select instance
   const instancePopupID = useMemo<string>(() => {
     const id = `${prefixCls}-popup-${globalSelectIndex}`;
@@ -188,9 +191,12 @@ function Select(baseProps: SelectProps, ref) {
     }
   };
 
-  // 尝试更新 inputValue，触发 onInputValueChange
+  // Try to update inputValue and trigger onInputValueChange callback
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
-    if (value !== refOnInputChangeCallbackValue.current) {
+    if (
+      value !== refOnInputChangeCallbackValue.current ||
+      reason !== refOnInputChangeCallbackReason.current
+    ) {
       setInputValue(value);
       refOnInputChangeCallbackValue.current = value;
       refOnInputChangeCallbackReason.current = reason;
@@ -228,7 +234,7 @@ function Select(baseProps: SelectProps, ref) {
       setValueActive(nextValueActive);
       // 在弹出框动画结束之后再执行scrollIntoView，否则会有不必要的滚动产生
       setTimeout(() => scrollIntoView(nextValueActive));
-    } else {
+    } else if (!refIsFirstRender) {
       tryUpdateInputValue('', 'optionListHide');
     }
   }, [popupVisible]);
