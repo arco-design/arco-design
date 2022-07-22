@@ -57,9 +57,6 @@ When publishing to NPM for the first time or modifying the `arco.meta.json` fiel
 
 ```bash
 arco sync
-
-# Automatically generate screenshots before synchronization
-arco sync --screenshot
 ```
 
 In the Lerna project, you can execute the `arco sync` command in any directory under any directory.
