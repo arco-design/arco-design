@@ -55,10 +55,8 @@ function ACMenu(props) {
   const history = useHistory();
 
   useEffect(() => {
-    history.listen(({ pathname }) => {
-      setSelectedKeys([pathname]);
-    });
-  }, []);
+    setSelectedKeys([pathname]);
+  }, [pathname]);
 
   function onClickMenuItem(path) {
     const pathArr = path.split('/');
@@ -69,7 +67,6 @@ function ACMenu(props) {
     NProgress.start();
     preload.then(() => {
       NProgress.done();
-      setSelectedKeys([path]);
       history.push(path);
     });
   }
