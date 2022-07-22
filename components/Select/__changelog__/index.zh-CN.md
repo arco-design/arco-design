@@ -1,3 +1,11 @@
+## 2.37.2
+
+2022-07-22
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件 `inputValue` 受控模式下，`onInputValueChange` 回调可能无法触发的问题。([#1178](https://github.com/arco-design/arco-design/pull/1178))
+
 ## 2.37.0
 
 2022-07-08

@@ -1,3 +1,11 @@
+## 2.37.2
+
+2022-07-22
+
+### 🐛 BugFix
+
+- Fix the bug that the `onChange` callback parameter of the `Table` component is not updated in time([#1155](https://github.com/arco-design/arco-design/pull/1155))
+
 ## 2.37.0
 
 2022-07-08

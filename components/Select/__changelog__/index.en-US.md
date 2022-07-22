@@ -1,3 +1,11 @@
+## 2.37.2
+
+2022-07-22
+
+### 🐛 BugFix
+
+- Fixed an issue where the `onInputValueChange` callback might not be triggered in the `inputValue` controlled mode of the `Select` component.([#1178](https://github.com/arco-design/arco-design/pull/1178))
+
 ## 2.37.0
 
 2022-07-08

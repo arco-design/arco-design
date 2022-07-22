@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.37.2
+
+2022-07-22
+
+### 🐛 BugFix
+
+- Fixed an issue where the `onInputValueChange` callback might not be triggered in the `inputValue` controlled mode of the `Select` component.([#1178](https://github.com/arco-design/arco-design/pull/1178))
+- Fix the bug that the `onChange` callback parameter of the `Table` component is not updated in time([#1155](https://github.com/arco-design/arco-design/pull/1155))
+
 ## 2.37.1
 
 2022-07-14
