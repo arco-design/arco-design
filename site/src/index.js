@@ -12,6 +12,7 @@ import tea from './utils/tea';
 import locale from './locale/zh';
 import './style/index.less';
 import { isProduction } from './utils/env';
+import { registerServiceWorker } from './serviceWorkerRegistration';
 
 const requestDomain = isProduction ? `//${location.hostname}/` : '//localhost:3000';
 
@@ -53,6 +54,14 @@ function Index() {
   );
 }
 
+// register service worker on prod
+if (isProduction) {
+  registerServiceWorker({
+    content: '检测到有新版本，是否刷新页面加载最新版本？',
+    okText: '确认',
+    cancelText: '取消',
+  });
+}
 ReactDOM.render(<Index />, document.getElementById('root'));
 
 tea({ name: 'site_components_zh' });
