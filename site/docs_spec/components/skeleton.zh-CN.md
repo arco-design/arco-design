@@ -81,7 +81,7 @@
 
     ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/6d45aa86fb77b810e84408d84b2fd396.png~tplv-uwbnlip3yd-webp.webp)
 
-    2. 整体加载顺应序保持一致
+    2. 整体加载顺序应该保持一致
 
     ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/822e02487e7ca8b7dde73ab550d7dcaf.png~tplv-uwbnlip3yd-webp.webp)
 

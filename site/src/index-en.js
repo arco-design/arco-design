@@ -11,6 +11,7 @@ import { GlobalContext, GlobalNoticeContext } from './context';
 import locale from './locale/en';
 import tea from './utils/tea';
 import './style/index.less';
+import { registerServiceWorker } from './serviceWorkerRegistration';
 
 import { isProduction } from './utils/env';
 
@@ -54,6 +55,14 @@ function Index() {
   );
 }
 
+// register service worker on prod
+if (isProduction) {
+  registerServiceWorker({
+    content: 'A new version is available, refresh page to get the latest version？',
+    okText: 'Ok',
+    cancelText: 'Cancel',
+  });
+}
 ReactDOM.render(<Index />, document.getElementById('root'));
 
 tea({ name: 'site_components_en' });

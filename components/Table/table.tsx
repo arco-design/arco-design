@@ -354,7 +354,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     let paginationProps: PaginationProps = {
       size: paginationSize,
       total,
-      onChange: onPaginationChange,
       pageSize,
       current,
       selectProps: {
@@ -385,6 +384,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       };
     }
 
+    paginationProps.onChange = onPaginationChange;
     return paginationProps;
   }
 
@@ -453,7 +453,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         off(tableFoot, 'scroll', tableScrollHandler);
       }
     };
-  }, [hasFixedColumnLeft, hasFixedColumnLeft, scroll?.x, flattenColumns.length]);
+  }, [hasFixedColumnLeft, hasFixedColumnRight, scroll?.x, flattenColumns.length]);
 
   useUpdate(() => {
     const { total, pageSize } = getPaginationProps(data);
@@ -465,7 +465,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   useUpdate(() => {
     setFixedColumnClassNames();
-  }, [data, hasFixedColumnLeft, hasFixedColumnLeft]);
+  }, [data, hasFixedColumnLeft, hasFixedColumnRight]);
 
   useImperativeHandle(ref, () => ({
     getRootDomElement,
