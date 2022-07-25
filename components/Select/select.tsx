@@ -124,8 +124,8 @@ function Select(baseProps: SelectProps, ref) {
       'popupVisible' in props
         ? props.popupVisible
         : triggerProps && 'popupVisible' in triggerProps
-        ? triggerProps.popupVisible
-        : undefined,
+          ? triggerProps.popupVisible
+          : undefined,
   });
   // allowCreate 时，用户正在创建的选项值
   const [userCreatingOption, setUserCreatingOption] = useState<string>(null);
@@ -332,7 +332,7 @@ function Select(baseProps: SelectProps, ref) {
 
     return optionValueList[
       optionIndexListForArrowKey[
-        ((direction === 'up' ? _index - 1 : _index + 1) + _length) % _length
+      ((direction === 'up' ? _index - 1 : _index + 1) + _length) % _length
       ]
     ];
   };
@@ -347,8 +347,8 @@ function Select(baseProps: SelectProps, ref) {
       stateValue === undefined
         ? undefined
         : Array.isArray(stateValue)
-        ? stateValue.map(getOptionInfoByValue)
-        : getOptionInfoByValue(stateValue);
+          ? stateValue.map(getOptionInfoByValue)
+          : getOptionInfoByValue(stateValue);
 
     if (labelInValue && !isEmpty) {
       const getOptionLabel = (optionValue: OptionProps['value'], optionInfo: OptionInfo) => {
@@ -550,7 +550,7 @@ function Select(baseProps: SelectProps, ref) {
     ) : null;
 
     // 无选项时的占位符元素
-    const eleNoOptionPlaceholder = mergedNotFoundContent ? (
+    const eleNoOptionPlaceholder = (mergedNotFoundContent && !allowCreate) ? (
       <div
         style={dropdownMenuStyle}
         className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
@@ -711,60 +711,60 @@ function Select(baseProps: SelectProps, ref) {
         {typeof triggerElement === 'function'
           ? (() => triggerElement(getValueAndOptionForCallback(value)))()
           : triggerElement || (
-              <SelectView
-                {...props}
-                {...selectViewEventHandlers}
-                ref={refSelectView}
-                // state
-                value={value}
-                inputValue={inputValue}
-                popupVisible={popupVisible}
-                // other
-                rtl={rtl}
-                prefixCls={prefixCls}
-                ariaControls={instancePopupID}
-                isEmptyValue={isNoOptionSelected}
-                isMultiple={isMultipleMode}
-                onSort={tryUpdateSelectValue}
-                renderText={(value) => {
-                  const option = getOptionInfoByValue(value);
-                  let text = value;
-                  if (isFunction(renderFormat)) {
-                    const paramsForCallback = getValueAndOptionForCallback(value, false);
-                    text = renderFormat(
-                      (paramsForCallback.option as OptionInfo) || null,
-                      paramsForCallback.value as ReactText | LabeledValue
-                    );
-                  } else {
-                    let foundLabelFromProps = false;
-                    if (labelInValue) {
-                      const propValue = props.value || props.defaultValue;
-                      if (Array.isArray(propValue)) {
-                        const targetLabeledValue = (propValue as LabeledValue[]).find(
-                          (item) => isObject(item) && item.value === value
-                        );
-                        if (targetLabeledValue) {
-                          text = targetLabeledValue.label;
-                          foundLabelFromProps = true;
-                        }
-                      } else if (isObject(propValue)) {
-                        text = (propValue as LabeledValue).label;
+            <SelectView
+              {...props}
+              {...selectViewEventHandlers}
+              ref={refSelectView}
+              // state
+              value={value}
+              inputValue={inputValue}
+              popupVisible={popupVisible}
+              // other
+              rtl={rtl}
+              prefixCls={prefixCls}
+              ariaControls={instancePopupID}
+              isEmptyValue={isNoOptionSelected}
+              isMultiple={isMultipleMode}
+              onSort={tryUpdateSelectValue}
+              renderText={(value) => {
+                const option = getOptionInfoByValue(value);
+                let text = value;
+                if (isFunction(renderFormat)) {
+                  const paramsForCallback = getValueAndOptionForCallback(value, false);
+                  text = renderFormat(
+                    (paramsForCallback.option as OptionInfo) || null,
+                    paramsForCallback.value as ReactText | LabeledValue
+                  );
+                } else {
+                  let foundLabelFromProps = false;
+                  if (labelInValue) {
+                    const propValue = props.value || props.defaultValue;
+                    if (Array.isArray(propValue)) {
+                      const targetLabeledValue = (propValue as LabeledValue[]).find(
+                        (item) => isObject(item) && item.value === value
+                      );
+                      if (targetLabeledValue) {
+                        text = targetLabeledValue.label;
                         foundLabelFromProps = true;
                       }
-                    }
-
-                    if (!foundLabelFromProps && option && 'children' in option) {
-                      text = option.children;
+                    } else if (isObject(propValue)) {
+                      text = (propValue as LabeledValue).label;
+                      foundLabelFromProps = true;
                     }
                   }
 
-                  return {
-                    text,
-                    disabled: option && option.disabled,
-                  };
-                }}
-              />
-            )}
+                  if (!foundLabelFromProps && option && 'children' in option) {
+                    text = option.children;
+                  }
+                }
+
+                return {
+                  text,
+                  disabled: option && option.disabled,
+                };
+              }}
+            />
+          )}
       </Trigger>
     </ResizeObserver>
   );
