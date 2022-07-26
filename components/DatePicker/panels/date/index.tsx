@@ -245,6 +245,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
         }}
         disabledDate={disabledDate}
         originMode="date"
+        setPanelMode={setPanelMode}
       />
     );
   }
