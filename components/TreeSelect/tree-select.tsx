@@ -27,7 +27,6 @@ import { NodeProps } from '../Tree/interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import useMergeInputValue from './hook/useMergedInputValue';
 
 function isEmptyValue(value) {
   return (
@@ -67,9 +66,11 @@ const TreeSelect: ForwardRefRenderFunction<
   const [popupVisible, setPopupVisible] = useMergeValue<boolean>(false, {
     value: props.popupVisible,
   });
-  const [inputValue, setInputValue] = useMergeInputValue<string>(
+  const [inputValue, setInputValue] = useMergeValue<string>(
     undefined, // Compatible with previous behavior 'undefined as default'
-    'inputValue' in props ? props.inputValue || '' : undefined
+    {
+      value: 'inputValue' in props ? props.inputValue || '' : undefined,
+    }
   );
   const onChangeInputValue = isFunction(props.onInputValueChange)
     ? props.onInputValueChange
