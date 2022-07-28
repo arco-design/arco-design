@@ -1,49 +1,43 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { cleanup, fireEvent, render } from '../../../tests/util';
 import Table from '..';
 import { columnsFilter, columnsFilterCustom } from './common/columns';
 import { data, TestData } from './common/data';
 import { ColumnProps } from '../interface';
 
-function simulateFilterCheckbox(filterItem, index: number, checked: boolean) {
-  return filterItem.at(index).find('.arco-checkbox > input').simulate('change', {
-    target: {
-      checked,
-    },
-  });
+function simulateFilterCheckbox(filterItem, index: number) {
+  // 点击过滤项
+  fireEvent.click(filterItem.item(index).querySelector('.arco-checkbox > input'));
 }
 
 describe('Table Filter', () => {
   it('filter', async () => {
     function checkFilter(columns: ColumnProps<TestData>[]) {
-      const component = mount(<Table columns={columns} data={data} />);
-      const filter = component.find('div.arco-table-filters');
+      const component = render(<Table columns={columns} data={data} />);
+      const filter = component.find('div.arco-table-filters')[0];
 
-      expect(filter).toHaveLength(1);
-      expect(filter.hasClass('arco-table-filters-active')).toBe(true);
+      expect(filter.className).toContain('arco-table-filters-active');
       expect(component.find('tbody tr')).toHaveLength(3);
 
-      filter.simulate('click');
-
-      component.update();
-
+      fireEvent.click(filter);
       const filterItem = component.find('.arco-table-filters-item');
       expect(filterItem).toHaveLength(2);
 
-      simulateFilterCheckbox(filterItem, 1, true);
+      simulateFilterCheckbox(filterItem, 1); // 选中Female
 
       const okButton = component.find('.arco-table-filters-btn .arco-btn');
-      okButton.at(1).simulate('click');
+      fireEvent.click(okButton.item(1));
       expect(component.find('tbody tr')).toHaveLength(5);
 
-      simulateFilterCheckbox(filterItem, 0, false);
+      simulateFilterCheckbox(filterItem, 0); // 取消选中Male
 
-      okButton.at(1).simulate('click');
+      fireEvent.click(okButton.item(1));
       expect(component.find('tbody tr')).toHaveLength(2);
 
-      component.setProps({ pagination: false });
+      component.rerender(<Table columns={columns} data={data} pagination={false} />);
 
       expect(component.find('tbody tr')).toHaveLength(2);
+      cleanup();
     }
 
     checkFilter(columnsFilter);
@@ -61,20 +55,17 @@ describe('Table Filter', () => {
   });
 
   it('custom filter', async () => {
-    const component = mount(<Table columns={columnsFilterCustom} data={data} />);
-    const filter = component.find('.arco-table-filters');
+    const component = render(<Table columns={columnsFilterCustom} data={data} />);
+    const filter = component.find('.arco-table-filters')[0];
 
-    expect(filter).toHaveLength(1);
-    expect(filter.find('svg').hasClass('arco-icon-search')).toBe(true);
+    expect(filter.querySelector('svg')?.classList.contains('arco-icon-search')).toBe(true);
     expect(component.find('tbody tr')).toHaveLength(5);
 
-    filter.simulate('click');
+    fireEvent.click(filter);
 
-    component.update();
-
-    const customFilterPopup = component.find('.arco-table-custom-filter');
-    customFilterPopup.find('.arco-btn').at(0).simulate('click');
-    customFilterPopup.find('.arco-btn').at(1).simulate('click');
+    const customFilterPopup = component.find('.arco-table-custom-filter')[0];
+    fireEvent.click(customFilterPopup.querySelectorAll('.arco-btn').item(0));
+    fireEvent.click(customFilterPopup.querySelectorAll('.arco-btn').item(1));
 
     expect(component.find('tbody tr')).toHaveLength(3);
   });
@@ -82,18 +73,18 @@ describe('Table Filter', () => {
   it('auto reset pagination current when filter', () => {
     const onChange = jest.fn();
 
-    const component = mount(
+    const component = render(
       <Table columns={columnsFilter} data={data} pagination={{ pageSize: 1 }} onChange={onChange} />
     );
 
     // pageSize & pagination correctly
     expect(component.find('tbody tr')).toHaveLength(1);
     expect(component.find('.arco-pagination-item')).toHaveLength(5);
-    expect(component.find('.arco-pagination-item-active').text()).toBe('1');
+    expect(component.find('.arco-pagination-item-active')[0].textContent).toBe('1');
 
-    component.find('.arco-pagination-item').at(3).simulate('click');
+    fireEvent.click(component.find('.arco-pagination-item').item(3));
 
-    expect(component.find('.arco-pagination-item-active').text()).toBe('3');
+    expect(component.find('.arco-pagination-item-active')[0].textContent).toBe('3');
     expect(onChange.mock.calls[0][0].current).toBe(3);
     expect(onChange.mock.calls[0][0].total).toBe(3);
     // onChange extra
@@ -101,21 +92,19 @@ describe('Table Filter', () => {
     expect(onChange.mock.calls[0][3].currentData.map((a) => a.name)).toEqual(['Name4']);
 
     // filter correctly
-    const filter = component.find('.arco-table-filters');
+    const filter = component.find('.arco-table-filters')[0];
 
-    filter.simulate('click');
-
-    component.update();
+    fireEvent.click(filter);
 
     const filterItem = component.find('.arco-table-filters-item');
 
-    simulateFilterCheckbox(filterItem, 0, false);
+    simulateFilterCheckbox(filterItem, 0); // 取消选中Male
 
-    simulateFilterCheckbox(filterItem, 1, true);
+    simulateFilterCheckbox(filterItem, 1); // 选中Female
 
     const okButton = component.find('.arco-table-filters-btn .arco-btn');
 
-    okButton.at(1).simulate('click');
+    fireEvent.click(okButton.item(1));
 
     // auto reset current correctly
     expect(onChange.mock.calls[1][0].current).toBe(1);
@@ -123,11 +112,11 @@ describe('Table Filter', () => {
     // onChange extra
     expect(onChange.mock.calls[1][3].action).toBe('filter');
     expect(component.find('.arco-pagination-item')).toHaveLength(4);
-    expect(component.find('.arco-pagination-item-active').text()).toBe('1');
+    expect(component.find('.arco-pagination-item-active')[0].textContent).toBe('1');
   });
 
   it('filter in control mode', async () => {
-    const component = mount(
+    const component = render(
       <Table
         columns={columnsFilter.map((col) => {
           const newCol = { ...col };
@@ -143,16 +132,19 @@ describe('Table Filter', () => {
 
     expect(component.find('tbody tr')).toHaveLength(3);
 
-    component.setProps({
-      columns: columnsFilter.map((col) => {
-        const newCol = { ...col };
-        if (newCol.dataIndex === 'sex') {
-          delete newCol.defaultFilters;
-          newCol.filteredValue = undefined;
-        }
-        return newCol;
-      }),
-    });
+    component.rerender(
+      <Table
+        columns={columnsFilter.map((col) => {
+          const newCol = { ...col };
+          if (newCol.dataIndex === 'sex') {
+            delete newCol.defaultFilters;
+            newCol.filteredValue = undefined;
+          }
+          return newCol;
+        })}
+        data={data}
+      />
+    );
 
     expect(component.find('tbody tr')).toHaveLength(5);
   });
