@@ -1,18 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import Table from '..';
 import { columns } from './common/columns';
-import { data, TestData, treeData } from './common/data';
-import { TableProps } from '../interface';
-
-function mountTable<T = any>(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<TableProps<T>>>(component);
-}
+import { data, treeData } from './common/data';
 
 describe('Table selection', () => {
   it('checkbox', () => {
     const onChange = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         columns={columns}
@@ -30,43 +25,34 @@ describe('Table selection', () => {
 
     expect(component.find('colgroup col')).toHaveLength(6);
     expect(component.find('.arco-checkbox').length).toEqual(trLength);
-    expect(component.find('.arco-checkbox').find('.arco-checkbox-disabled')).toHaveLength(1);
+    expect(component.find('.arco-checkbox-disabled')).toHaveLength(1);
 
     const checkboxBtns = component.find('.arco-checkbox > input');
-    const checkAllBtn = checkboxBtns.first();
+    const checkAllBtn = checkboxBtns.item(0);
 
-    checkAllBtn.simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    // fireEvent.change can't change checkbox, use click to simulate
+    fireEvent.click(checkAllBtn);
 
     expect(onChange.mock.calls.length).toBe(1);
     expect(component.find('.arco-checkbox-checked')).toHaveLength(5);
 
-    checkAllBtn.simulate('change', {
-      target: {
-        checked: false,
-      },
-    });
+    fireEvent.click(checkAllBtn);
 
     expect(onChange.mock.calls.length).toBe(2);
     expect(component.find('.arco-checkbox-checked')).toHaveLength(0);
 
-    checkboxBtns.at(1).simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(1));
 
     expect(onChange.mock.calls.length).toBe(3);
     expect(component.find('.arco-checkbox-checked')).toHaveLength(1);
-    expect(component.find('tbody tr').first().find('.arco-checkbox-checked')).toHaveLength(1);
+    expect(
+      component.find('tbody tr').item(0).querySelectorAll('.arco-checkbox-checked')
+    ).toHaveLength(1);
   });
 
   it('radio', () => {
     const onChange = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         columns={columns}
@@ -85,27 +71,29 @@ describe('Table selection', () => {
 
     expect(component.find('colgroup col')).toHaveLength(6);
     expect(component.find('.arco-radio').length).toBe(trLength - 1);
-    expect(component.find('.arco-radio').find('.arco-radio-disabled')).toHaveLength(1);
-    expect(component.find('table thead th.arco-table-radio').text()).toBe('columnTitle');
+    expect(component.find('.arco-radio-disabled')).toHaveLength(1);
+    expect(component.find('table thead th.arco-table-radio')[0].textContent).toBe('columnTitle');
 
-    component.find('.arco-radio input').first().simulate('change');
+    fireEvent.click(component.find('.arco-radio input').item(0));
 
     expect(onChange.mock.calls.length).toBe(1);
     expect(component.find('.arco-radio.arco-radio-checked')).toHaveLength(1);
-    expect(component.find('tbody tr').first().find('.arco-radio.arco-radio-checked')).toHaveLength(
-      1
-    );
+    expect(
+      component.find('tbody tr').item(0).querySelectorAll('.arco-radio.arco-radio-checked')
+    ).toHaveLength(1);
 
-    component.find('.arco-radio input').at(2).simulate('change');
+    fireEvent.click(component.find('.arco-radio input').item(2));
 
     expect(onChange.mock.calls.length).toBe(2);
     expect(component.find('.arco-radio.arco-radio-checked')).toHaveLength(1);
-    expect(component.find('tbody tr').at(2).find('.arco-radio.arco-radio-checked')).toHaveLength(1);
+    expect(
+      component.find('tbody tr').item(2).querySelectorAll('.arco-radio.arco-radio-checked')
+    ).toHaveLength(1);
   });
 
   it('rowSelection.checkCrossPage', () => {
     const onChange = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         columns={columns}
@@ -119,44 +107,33 @@ describe('Table selection', () => {
       />
     );
 
-    component
-      .find('.arco-checkbox > input')
-      .first()
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(0));
 
     expect(onChange.mock.calls[0][0]).toEqual(['Name1', 'Name2']);
 
-    component.find('.arco-pagination-item').at(2).simulate('click');
+    fireEvent.click(component.find('.arco-pagination-item').item(2));
 
     expect(onChange.mock.calls[1][0]).toEqual([]);
 
-    component
-      .find('.arco-checkbox > input')
-      .first()
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(0));
 
     expect(onChange.mock.calls[2][0]).toEqual(['Name3', 'Name4']);
 
-    component.setProps({ rowSelection: { checkCrossPage: true, onChange } });
+    component.rerender(
+      <Table
+        rowKey="name"
+        columns={columns}
+        data={data}
+        rowSelection={{ checkCrossPage: true, onChange }}
+        pagination={{
+          pageSize: 2,
+        }}
+      />
+    );
 
-    component.find('.arco-pagination-item').at(1).simulate('click');
+    fireEvent.click(component.find('.arco-pagination-item').item(1));
 
-    component
-      .find('.arco-checkbox > input')
-      .first()
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(0));
 
     expect(onChange.mock.calls[3][0]).toEqual(['Name3', 'Name4', 'Name1', 'Name2']);
   });
@@ -164,7 +141,7 @@ describe('Table selection', () => {
   it('should filter unExist keys', () => {
     const onChange = jest.fn();
 
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={data}
@@ -179,36 +156,24 @@ describe('Table selection', () => {
     );
 
     const checkboxBtns = component.find('.arco-checkbox > input');
-    const checkAllBtn = checkboxBtns.first();
+    const checkAllBtn = checkboxBtns.item(0);
 
-    checkAllBtn.simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkAllBtn);
 
     expect(onChange.mock.calls[0][0]).toEqual(['1', '3', '4', '5']);
 
-    checkboxBtns.at(3).simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(3));
 
     expect(onChange.mock.calls[1][0]).toEqual(['1', '3']);
 
-    checkboxBtns.at(1).simulate('change', {
-      target: {
-        checked: false,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(1));
 
     expect(onChange.mock.calls[2][0]).toEqual([]);
   });
 
   it('rowSelection.preserveSelectedRowKeys', () => {
     const onChange = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={data}
@@ -220,17 +185,13 @@ describe('Table selection', () => {
       />
     );
     const checkboxBtns = component.find('.arco-checkbox > input');
-    checkboxBtns.at(2).simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(2));
 
     expect(onChange.mock.calls[0][0]).toEqual(['1', 'unExistKey', '2']);
   });
 
   it('rowSelection.renderCell type = checkbox', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={data}
@@ -240,11 +201,11 @@ describe('Table selection', () => {
       />
     );
 
-    expect(component.find('tbody .arco-table-checkbox').at(0).text()).toBe('Name1');
+    expect(component.find('tbody .arco-table-checkbox').item(0).textContent).toBe('Name1');
   });
 
   it('rowSelection.renderCell type = radio', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={data}
@@ -255,13 +216,13 @@ describe('Table selection', () => {
       />
     );
 
-    expect(component.find('tbody .arco-table-radio').at(0).text()).toBe('Name1');
+    expect(component.find('tbody .arco-table-radio').item(0).textContent).toBe('Name1');
   });
 
   it('rowSelection.onSelect, rowSelection.onSelectAll', () => {
     const onSelect = jest.fn();
     const onSelectAll = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={data}
@@ -274,31 +235,19 @@ describe('Table selection', () => {
     );
 
     const checkboxBtns = component.find('.arco-checkbox > input');
-    const checkAllBtn = checkboxBtns.first();
+    const checkAllBtn = checkboxBtns.item(0);
 
-    checkAllBtn.simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkAllBtn);
 
     expect(onSelectAll.mock.calls.length).toBe(1);
     expect(onSelectAll.mock.calls[0][0]).toBe(true);
 
-    checkAllBtn.simulate('change', {
-      target: {
-        checked: false,
-      },
-    });
+    fireEvent.click(checkAllBtn);
 
     expect(onSelectAll.mock.calls.length).toBe(2);
     expect(onSelectAll.mock.calls[1][0]).toBe(false);
 
-    checkboxBtns.at(1).simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(1));
 
     expect(onSelect.mock.calls.length).toBe(1);
     expect(onSelect.mock.calls[0][0]).toBe(true);
@@ -312,11 +261,7 @@ describe('Table selection', () => {
     });
     expect(onSelect.mock.calls[0][2].map((a) => a.name)).toEqual(['Name1']);
 
-    checkboxBtns.at(2).simulate('change', {
-      target: {
-        checked: true,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(2));
 
     expect(onSelect.mock.calls.length).toBe(2);
     expect(onSelect.mock.calls[1][0]).toBe(true);
@@ -330,11 +275,7 @@ describe('Table selection', () => {
     });
     expect(onSelect.mock.calls[1][2].map((a) => a.name)).toEqual(['Name1', 'Name2']);
 
-    checkboxBtns.at(1).simulate('change', {
-      target: {
-        checked: false,
-      },
-    });
+    fireEvent.click(checkboxBtns.item(1));
 
     expect(onSelect.mock.calls.length).toBe(3);
     expect(onSelect.mock.calls[2][0]).toBe(false);
@@ -351,7 +292,7 @@ describe('Table selection', () => {
 
   it('rowSelection.checkStrictly', () => {
     const onChange = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={treeData}
@@ -365,28 +306,21 @@ describe('Table selection', () => {
     );
 
     // 1-1
-    component
-      .find('.arco-checkbox > input')
-      .at(2)
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(2));
 
     function checkChecked(statusList) {
       statusList.forEach((status, i) => {
-        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-checked')).toBe(
-          status
-        );
+        expect(
+          component.find('.arco-checkbox').item(i).classList.contains('arco-checkbox-checked')
+        ).toBe(status);
       });
     }
 
     function checkIndeterminate(statusList) {
       statusList.forEach((status, i) => {
-        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-indeterminate')).toBe(
-          status
-        );
+        expect(
+          component.find('.arco-checkbox').item(i).classList.contains('arco-checkbox-indeterminate')
+        ).toBe(status);
       });
     }
 
@@ -395,28 +329,14 @@ describe('Table selection', () => {
     checkIndeterminate([true, true, false, false, false, false, false]);
 
     // 1-2
-    component
-      .find('.arco-checkbox > input')
-      .at(5)
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(5));
 
     expect(onChange.mock.calls[1][0]).toEqual(['1-1', '1-1-1', '1-1-2', '1-2', '1']);
     checkChecked([false, true, true, true, true, true, false]);
     checkIndeterminate([true, false, false, false, false, false, false]);
 
     // 1-1-1
-    component
-      .find('.arco-checkbox > input')
-      .at(3)
-      .simulate('change', {
-        target: {
-          checked: false,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(3));
 
     expect(onChange.mock.calls[2][0]).toEqual(['1-1-2', '1-2']);
     checkChecked([false, false, false, false, true, true, false]);
@@ -425,7 +345,7 @@ describe('Table selection', () => {
 
   it('rowSelection.checkConnected set selectedRowKeys', () => {
     const onChange = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={treeData}
@@ -441,17 +361,17 @@ describe('Table selection', () => {
 
     function checkChecked(statusList) {
       statusList.forEach((status, i) => {
-        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-checked')).toBe(
-          status
-        );
+        expect(
+          component.find('.arco-checkbox').item(i).classList.contains('arco-checkbox-checked')
+        ).toBe(status);
       });
     }
 
     function checkIndeterminate(statusList) {
       statusList.forEach((status, i) => {
-        expect(component.find('.arco-checkbox').at(i).hasClass('arco-checkbox-indeterminate')).toBe(
-          status
-        );
+        expect(
+          component.find('.arco-checkbox').item(i).classList.contains('arco-checkbox-indeterminate')
+        ).toBe(status);
       });
     }
 
@@ -459,14 +379,7 @@ describe('Table selection', () => {
     checkIndeterminate([true, true, false, false, false, false, false]);
 
     // 1
-    component
-      .find('.arco-checkbox > input')
-      .at(1)
-      .simulate('change', {
-        target: {
-          checked: true,
-        },
-      });
+    fireEvent.click(component.find('.arco-checkbox > input').item(1));
 
     expect(onChange.mock.calls[0][0]).toEqual(['1-1-1', '1-1-2', '1-1', '1', '1-2']);
     checkChecked([false, false, true, true, true, false, false]);

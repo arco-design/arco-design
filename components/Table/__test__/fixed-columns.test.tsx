@@ -1,29 +1,25 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import Table from '..';
 import { columns, columnsFixedColumns } from './common/columns';
-import { data, TestData } from './common/data';
-import { TableProps } from '../interface';
-
-function mountTable<T = any>(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<TableProps<T>>>(component);
-}
+import { data } from './common/data';
 
 describe('Table fixed columns', () => {
   it('basic fixed columns', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table rowKey="name" scroll={{ x: 600 }} columns={columnsFixedColumns} data={data} />
     );
 
     // check column width
-    const leftCol = component.find('colgroup col').first();
-    expect(getComputedStyle(leftCol.getDOMNode()).getPropertyValue('width')).toBe('100px');
+    const cols = component.find('colgroup col');
+    const leftCol = cols.item(0);
+    expect(getComputedStyle(leftCol).getPropertyValue('width')).toBe('100px');
 
-    const rightCol = component.find('colgroup col').last();
-    expect(getComputedStyle(rightCol.getDOMNode()).getPropertyValue('width')).toBe('120px');
+    const rightCol = cols.item(cols.length - 1);
+    expect(getComputedStyle(rightCol).getPropertyValue('width')).toBe('120px');
 
-    const headTr = component.find('thead tr').at(0);
-    const bodyTr = component.find('tbody tr').at(0);
+    const headTr = component.find('thead tr').item(0);
+    const bodyTr = component.find('tbody tr').item(0);
 
     expect(
       component.find('th.arco-table-col-fixed-left.arco-table-col-fixed-left-last')
@@ -40,26 +36,26 @@ describe('Table fixed columns', () => {
     ).toHaveLength(5);
 
     function getHeadCell(i) {
-      return headTr.find('th').at(i);
+      return headTr.querySelectorAll('th').item(i);
     }
 
     function getBodyCell(i) {
-      return bodyTr.find('td').at(i);
+      return bodyTr.querySelectorAll('td').item(i);
     }
 
-    expect(getHeadCell(0).prop('className')).toBe(
+    expect(getHeadCell(0).className).toBe(
       'arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
-    expect(getHeadCell(0).prop('style')).toEqual({ left: 0 });
+    expect(getHeadCell(0).getAttribute('style')).toEqual('left: 0px;');
 
-    expect(getBodyCell(0).prop('className')).toBe(
+    expect(getBodyCell(0).className).toBe(
       'arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
-    expect(getBodyCell(0).prop('style')).toEqual({ left: 0 });
+    expect(getBodyCell(0).getAttribute('style')).toEqual('left: 0px;');
   });
 
   it('only fixed selection', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         scroll={{ x: 600 }}
@@ -79,40 +75,40 @@ describe('Table fixed columns', () => {
 
     expect(component.find('td.arco-table-col-fixed-left')).toHaveLength(10);
 
-    const headTr = component.find('thead tr').at(0);
-    const bodyTr = component.find('tbody tr').at(0);
+    const headTr = component.find('thead tr').item(0);
+    const bodyTr = component.find('tbody tr').item(0);
 
     function getHeadCell(i) {
-      return headTr.find('th').at(i);
+      return headTr.querySelectorAll('th').item(i);
     }
 
     function getBodyCell(i) {
-      return bodyTr.find('td').at(i);
+      return bodyTr.querySelectorAll('td').item(i);
     }
 
-    expect(getHeadCell(0).prop('className')).toBe(
+    expect(getHeadCell(0).className).toBe(
       'arco-table-th arco-table-operation arco-table-expand arco-table-col-fixed-left'
     );
-    expect(getHeadCell(0).prop('style')).toEqual({ left: 0 });
+    expect(getHeadCell(0).getAttribute('style')).toEqual('left: 0px;');
 
-    expect(getHeadCell(1).prop('className')).toBe(
+    expect(getHeadCell(1).className).toBe(
       'arco-table-th arco-table-operation arco-table-checkbox arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
-    expect(getHeadCell(1).prop('style')).toEqual({ left: 40 });
+    expect(getHeadCell(1).getAttribute('style')).toEqual('left: 40px;');
 
-    expect(getBodyCell(0).prop('className')).toBe(
+    expect(getBodyCell(0).className).toBe(
       'arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left'
     );
-    expect(getBodyCell(0).prop('style')).toEqual({ left: 0 });
+    expect(getBodyCell(0).getAttribute('style')).toEqual('left: 0px;');
 
-    expect(getBodyCell(1).prop('className')).toBe(
+    expect(getBodyCell(1).className).toBe(
       'arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
-    expect(getBodyCell(1).prop('style')).toEqual({ left: 40 });
+    expect(getBodyCell(1).getAttribute('style')).toEqual('left: 40px;');
   });
 
   it('fixed columns and fixed header', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table rowKey="name" scroll={{ x: 600, y: 200 }} columns={columnsFixedColumns} data={data} />
     );
 
@@ -127,54 +123,53 @@ describe('Table fixed columns', () => {
       }
       return col;
     });
-    const component = mountTable<TestData>(
+    const component = render(
       <Table scroll={{ x: 600, y: 200 }} columns={fixedColumns} data={data} />
     );
 
     function getHeadCell(component, i) {
-      return component.find('thead tr').at(0).find('th').at(i);
+      return component.find('thead tr')[0].querySelectorAll('th').item(i);
     }
 
     function getBodyCell(component, i) {
-      return component.find('tbody tr').at(0).find('td').at(i);
+      return component.find('tbody tr')[0].querySelectorAll('td').item(i);
     }
 
-    expect(getHeadCell(component, 0).prop('className')).toBe('arco-table-th');
-    expect(getHeadCell(component, 0).prop('style')).toEqual({});
-    expect(getHeadCell(component, 1).prop('className')).toBe('arco-table-th');
-    expect(getHeadCell(component, 1).prop('style')).toEqual({});
+    expect(getHeadCell(component, 0).className).toBe('arco-table-th');
+    expect(getHeadCell(component, 0).getAttribute('style')).toEqual(null);
+    expect(getHeadCell(component, 1).className).toBe('arco-table-th');
+    expect(getHeadCell(component, 1).getAttribute('style')).toEqual(null);
 
-    expect(getBodyCell(component, 0).prop('className')).toBe('arco-table-td');
-    expect(getBodyCell(component, 0).prop('style')).toEqual({});
-    expect(getBodyCell(component, 1).prop('className')).toBe('arco-table-td');
-    expect(getBodyCell(component, 1).prop('style')).toEqual({});
+    expect(getBodyCell(component, 0).className).toBe('arco-table-td');
+    expect(getBodyCell(component, 0).getAttribute('style')).toEqual(null);
+    expect(getBodyCell(component, 1).className).toBe('arco-table-td');
+    expect(getBodyCell(component, 1).getAttribute('style')).toEqual(null);
 
-    component.setProps({
-      columns: fixedColumns.map((col) => {
-        if (col.dataIndex === 'name' || col.dataIndex === 'address') {
-          return { ...col, fixed: 'left' };
-        }
-        return col;
-      }),
-    });
-    component.update();
-
-    expect(getHeadCell(component, 0).prop('className')).toBe(
-      'arco-table-th arco-table-col-fixed-left'
+    component.rerender(
+      <Table
+        scroll={{ x: 600, y: 200 }}
+        columns={fixedColumns.map((col) => {
+          if (col.dataIndex === 'name' || col.dataIndex === 'address') {
+            return { ...col, fixed: 'left' };
+          }
+          return col;
+        })}
+        data={data}
+      />
     );
-    expect(getHeadCell(component, 0).prop('style')).toEqual({ left: 0 });
-    expect(getHeadCell(component, 1).prop('className')).toBe(
+
+    expect(getHeadCell(component, 0).className).toBe('arco-table-th arco-table-col-fixed-left');
+    expect(getHeadCell(component, 0).getAttribute('style')).toEqual('left: 0px;');
+    expect(getHeadCell(component, 1).className).toBe(
       'arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
-    expect(getHeadCell(component, 1).prop('style')).toEqual({ left: 100 });
+    expect(getHeadCell(component, 1).getAttribute('style')).toEqual('left: 100px;');
 
-    expect(getBodyCell(component, 0).prop('className')).toBe(
-      'arco-table-td arco-table-col-fixed-left'
-    );
-    expect(getBodyCell(component, 0).prop('style')).toEqual({ left: 0 });
-    expect(getBodyCell(component, 1).prop('className')).toBe(
+    expect(getBodyCell(component, 0).className).toBe('arco-table-td arco-table-col-fixed-left');
+    expect(getBodyCell(component, 0).getAttribute('style')).toEqual('left: 0px;');
+    expect(getBodyCell(component, 1).className).toBe(
       'arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
-    expect(getBodyCell(component, 1).prop('style')).toEqual({ left: 100 });
+    expect(getBodyCell(component, 1).getAttribute('style')).toEqual('left: 100px;');
   });
 });

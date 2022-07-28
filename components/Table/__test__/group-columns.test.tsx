@@ -1,32 +1,29 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
+import { render } from '../../../tests/util';
 import Table from '..';
 import { columnsGroupColumns } from './common/columns';
-import { data, TestData } from './common/data';
-import { TableProps } from '../interface';
-
-function mountTable<T = any>(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<TableProps<T>>>(component);
-}
+import { data } from './common/data';
 
 describe('Table group columns', () => {
   it('basic usage & childrenColumnName', () => {
-    const component = mountTable<TestData>(<Table columns={columnsGroupColumns} data={data} />);
+    const component = render(<Table columns={columnsGroupColumns} data={data} />);
 
     function getRowCell(rowIndex, colIndex) {
-      return component.find('tr').at(rowIndex).find('th').at(colIndex);
+      return component.find('tr').item(rowIndex).querySelectorAll('th').item(colIndex);
     }
 
-    expect(getRowCell(0, 0).prop('rowSpan')).toBe(2);
-    expect(getRowCell(0, 1).prop('colSpan')).toBe(3);
-    expect(getRowCell(0, 2).prop('rowSpan')).toBe(2);
+    expect(getRowCell(0, 0).getAttribute('rowSpan')).toBe('2');
+    expect(getRowCell(0, 1).getAttribute('colSpan')).toBe('3');
+    expect(getRowCell(0, 2).getAttribute('rowSpan')).toBe('2');
 
-    component.setProps({ childrenColumnName: 'list' });
+    component.rerender(
+      <Table columns={columnsGroupColumns} data={data} childrenColumnName="list" />
+    );
 
-    expect(getRowCell(0, 0).prop('rowSpan')).toBe(undefined);
-    expect(getRowCell(0, 1).prop('colSpan')).toBe(undefined);
-    expect(getRowCell(0, 2).prop('rowSpan')).toBe(undefined);
+    expect(getRowCell(0, 0).getAttribute('rowSpan')).toBe(null);
+    expect(getRowCell(0, 1).getAttribute('colSpan')).toBe(null);
+    expect(getRowCell(0, 2).getAttribute('rowSpan')).toBe(null);
 
     const newColumns = cloneDeep(columnsGroupColumns).map((col, index) => {
       if (index === 1) {
@@ -36,17 +33,15 @@ describe('Table group columns', () => {
       return col;
     });
 
-    component.setProps({
-      columns: newColumns,
-    });
+    component.rerender(<Table columns={newColumns} data={data} childrenColumnName="list" />);
 
-    expect(getRowCell(0, 0).prop('rowSpan')).toBe(2);
-    expect(getRowCell(0, 1).prop('colSpan')).toBe(3);
-    expect(getRowCell(0, 2).prop('rowSpan')).toBe(2);
+    expect(getRowCell(0, 0).getAttribute('rowSpan')).toBe('2');
+    expect(getRowCell(0, 1).getAttribute('colSpan')).toBe('3');
+    expect(getRowCell(0, 2).getAttribute('rowSpan')).toBe('2');
   });
 
   it('group columns + selection + expand', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columnsGroupColumns}
         data={data}
@@ -56,22 +51,19 @@ describe('Table group columns', () => {
     );
 
     function getRowCell(rowIndex, colIndex) {
-      return component.find('tr').at(rowIndex).find('th').at(colIndex);
+      return component.find('tr').item(rowIndex).querySelectorAll('th').item(colIndex);
     }
+    expect(getRowCell(0, 0).className).toBe('arco-table-th arco-table-operation arco-table-expand');
+    expect(getRowCell(0, 0).getAttribute('rowSpan')).toBe('2');
 
-    expect(getRowCell(0, 0).prop('className')).toBe(
-      'arco-table-th arco-table-operation arco-table-expand'
-    );
-    expect(getRowCell(0, 0).prop('rowSpan')).toBe(2);
-
-    expect(getRowCell(0, 1).prop('className')).toBe(
+    expect(getRowCell(0, 1).className).toBe(
       'arco-table-th arco-table-operation arco-table-checkbox'
     );
-    expect(getRowCell(0, 1).prop('rowSpan')).toBe(2);
+    expect(getRowCell(0, 1).getAttribute('rowSpan')).toBe('2');
 
-    expect(getRowCell(0, 2).text()).toBe('Name');
-    expect(getRowCell(0, 2).prop('rowSpan')).toBe(2);
+    expect(getRowCell(0, 2).textContent).toBe('Name');
+    expect(getRowCell(0, 2).getAttribute('rowSpan')).toBe('2');
 
-    expect(getRowCell(1, 0).text()).toBe('Address');
+    expect(getRowCell(1, 0).textContent).toBe('Address');
   });
 });

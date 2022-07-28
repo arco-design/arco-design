@@ -1,20 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import Table from '..';
 import { columns } from './common/columns';
-import { data, treeData, TestData, TestTreeData } from './common/data';
-import { TableProps } from '../interface';
-
-function mountTable<T = any>(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<TableProps<T>>>(component);
-}
+import { data, treeData } from './common/data';
 
 describe('Table expand', () => {
   it('basic expand', () => {
     const onExpand = jest.fn();
     const onExpandedRowsChange = jest.fn();
     const onRowClick = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         columns={columns}
@@ -38,7 +33,7 @@ describe('Table expand', () => {
     expect(component.find('tr')).toHaveLength(6);
     expect(component.find('table td.arco-table-expand-icon-cell > button')).toHaveLength(4);
 
-    component.find('table td.arco-table-expand-icon-cell > button').at(1).simulate('click');
+    fireEvent.click(component.find('table td.arco-table-expand-icon-cell > button').item(1));
 
     expect(onExpand.mock.calls.length).toBe(1);
     expect(onExpandedRowsChange.mock.calls.length).toBe(1);
@@ -48,13 +43,13 @@ describe('Table expand', () => {
 
     expect(onRowClick).not.toBeCalled();
 
-    const expandedRowTd = component.find('table tbody tr').at(2).find('td');
+    const expandedRowTd = component.find('table tbody tr').item(2).querySelectorAll('td');
     expect(expandedRowTd).toHaveLength(1);
-    expect(expandedRowTd.first().text()).toBe('email2@123.com');
+    expect(expandedRowTd.item(0).textContent).toBe('email2@123.com');
   });
 
   it('expandProps', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         columns={columns}
@@ -69,38 +64,50 @@ describe('Table expand', () => {
       />
     );
 
-    const firstCol = component.find('colgroup col').first();
+    const firstCol = component.find('colgroup col').item(0);
+    expect(firstCol.className).toContain('arco-table-expand-icon-col');
+    expect(getComputedStyle(firstCol).getPropertyValue('width')).toBe('120px');
 
-    expect(firstCol.hasClass('arco-table-expand-icon-col')).toBe(true);
-    expect(getComputedStyle(firstCol.getDOMNode()).getPropertyValue('width')).toBe('120px');
-
-    expect(component.find('thead th').first().find('.arco-table-th-item').text()).toBe(
-      'Expand Col'
-    );
+    expect(
+      component.find('thead th').item(0).querySelector('.arco-table-th-item')?.textContent
+    ).toBe('Expand Col');
 
     const getFirstExpandBtn = () =>
-      component.find('table td.arco-table-expand-icon-cell > button').first();
-    expect(getFirstExpandBtn().text()).toBe('+');
+      component.find('table td.arco-table-expand-icon-cell > button').item(0);
+    expect(getFirstExpandBtn().textContent).toBe('+');
 
-    component.setProps({ expandedRowKeys: ['Name1'] });
+    component.rerender(
+      <Table
+        rowKey="name"
+        columns={columns}
+        data={data}
+        expandedRowRender={(record) => record.email}
+        expandedRowKeys={['Name1']}
+        expandProps={{
+          icon: ({ expanded }) => (expanded ? <button>-</button> : <button>+</button>),
+          width: 120,
+          columnTitle: 'Expand Col',
+        }}
+      />
+    );
 
-    expect(getFirstExpandBtn().text()).toBe('-');
+    expect(getFirstExpandBtn().textContent).toBe('-');
   });
 
   it('tree data', () => {
-    const component = mountTable<TestTreeData>(
+    const component = render(
       <Table rowKey="name" columns={columns} data={treeData} rowSelection={{}} />
     );
 
     expect(component.find('table tbody tr')).toHaveLength(2);
 
-    expect(component.find('IconPlus')).toHaveLength(1);
+    expect(component.find('.arco-icon-plus')).toHaveLength(1);
 
-    expect(component.find('Checkbox')).toHaveLength(3);
+    expect(component.find('.arco-checkbox')).toHaveLength(3);
   });
 
   it('tree data defaultExpandAllRows', () => {
-    const component = mountTable<TestData>(
+    const component = render(
       <Table rowKey="name" defaultExpandAllRows columns={columns} data={treeData} />
     );
     expect(component.find('table tbody tr')).toHaveLength(6);
@@ -108,7 +115,7 @@ describe('Table expand', () => {
 
   it('expandProps.rowExpandable', () => {
     const expandedRowRender = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         rowKey="name"
         columns={columns}
@@ -119,15 +126,15 @@ describe('Table expand', () => {
         }}
       />
     );
-    expect(component.find('IconPlus')).toHaveLength(4);
-    expect(component.find('tr').at(2).find('IconRight')).toHaveLength(0);
+    expect(component.find('.arco-icon-plus')).toHaveLength(4);
+    expect(component.find('tr').item(2).querySelectorAll('.arco-icon-right')).toHaveLength(0);
     expect(expandedRowRender.mock.calls.length).toBe(0);
   });
 
   it('expandProps.expandRowByClick', () => {
     const onExpand = jest.fn();
     const onRowClick = jest.fn();
-    const component = mountTable<TestData>(
+    const component = render(
       <Table
         columns={columns}
         data={data}
@@ -136,13 +143,23 @@ describe('Table expand', () => {
         onRow={() => ({ onClick: onRowClick })}
       />
     );
-    component.find('tbody tr').at(0).simulate('click');
+    fireEvent.click(component.find('tbody tr').item(0));
     expect(component.find('tbody tr')).toHaveLength(5);
 
-    component.setProps({ expandProps: { expandRowByClick: true } });
-    component.update();
+    component.rerender(
+      <Table
+        columns={columns}
+        data={data}
+        expandedRowRender={(record) => record.email}
+        onExpand={onExpand}
+        onRow={() => ({ onClick: onRowClick })}
+        expandProps={{
+          expandRowByClick: true,
+        }}
+      />
+    );
 
-    component.find('tbody tr').at(0).simulate('click');
+    fireEvent.click(component.find('tbody tr').item(0));
     expect(component.find('tbody tr')).toHaveLength(6);
     expect(onExpand.mock.calls).toHaveLength(1);
     // should call onRow.onClick
@@ -152,7 +169,7 @@ describe('Table expand', () => {
   it('expandProps.expandRowByClick with tree data', () => {
     const onExpand = jest.fn();
     const onRowClick = jest.fn();
-    const component = mountTable<TestTreeData>(
+    const component = render(
       <Table
         columns={columns}
         data={treeData}
@@ -160,13 +177,22 @@ describe('Table expand', () => {
         onRow={() => ({ onClick: onRowClick })}
       />
     );
-    component.find('tbody tr').at(0).simulate('click');
+    fireEvent.click(component.find('tbody tr').item(0));
     expect(component.find('tbody tr')).toHaveLength(2);
 
-    component.setProps({ expandProps: { expandRowByClick: true } });
-    component.update();
+    component.rerender(
+      <Table
+        columns={columns}
+        data={treeData}
+        onExpand={onExpand}
+        onRow={() => ({ onClick: onRowClick })}
+        expandProps={{
+          expandRowByClick: true,
+        }}
+      />
+    );
 
-    component.find('tbody tr').at(0).simulate('click');
+    fireEvent.click(component.find('tbody tr').item(0));
     expect(component.find('tbody tr')).toHaveLength(4);
     expect(onExpand.mock.calls).toHaveLength(1);
     // should call onRow.onClick
@@ -174,12 +200,20 @@ describe('Table expand', () => {
   });
 
   it('expandProps.strictTreeData', () => {
-    const component = mountTable<TestTreeData>(<Table columns={columns} data={treeData} />);
+    const component = render(<Table columns={columns} data={treeData} />);
 
-    expect(component.find('IconPlus')).toHaveLength(1);
+    expect(component.find('.arco-icon-plus')).toHaveLength(1);
 
-    component.setProps({ expandProps: { strictTreeData: false } });
+    component.rerender(
+      <Table
+        columns={columns}
+        data={treeData}
+        expandProps={{
+          strictTreeData: false,
+        }}
+      />
+    );
 
-    expect(component.find('IconPlus')).toHaveLength(2);
+    expect(component.find('.arco-icon-plus')).toHaveLength(2);
   });
 });
