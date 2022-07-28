@@ -68,6 +68,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     isRangePicker,
     picker,
     error,
+    triggerElement,
     triggerProps,
     value: propsValue,
     onChange,
@@ -305,28 +306,29 @@ const Picker = (baseProps: InnerPickerProps) => {
         unmountOnExit={!!unmountOnExit}
         {...triggerProps}
       >
-        {isRangePicker ? (
-          <InputRange
-            {...baseInputProps}
-            ref={refInput}
-            placeholder={rangePickerPlaceholder as string[]}
-            value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
-            onChange={onChangeInput}
-            inputValue={inputValue}
-            changeFocusedInputIndex={changeFocusedInputIndex}
-            focusedInputIndex={focusedInputIndex}
-            onPressTab={onPressTab}
-          />
-        ) : (
-          <Input
-            {...baseInputProps}
-            ref={refInput}
-            placeholder={inputPlaceHolder}
-            value={(valueShow || mergedValue) as Dayjs}
-            inputValue={inputValue as string}
-            onChange={onChangeInput}
-          />
-        )}
+        {triggerElement ||
+          (isRangePicker ? (
+            <InputRange
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={rangePickerPlaceholder as string[]}
+              value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
+              onChange={onChangeInput}
+              inputValue={inputValue}
+              changeFocusedInputIndex={changeFocusedInputIndex}
+              focusedInputIndex={focusedInputIndex}
+              onPressTab={onPressTab}
+            />
+          ) : (
+            <Input
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={inputPlaceHolder}
+              value={(valueShow || mergedValue) as Dayjs}
+              inputValue={inputValue as string}
+              onChange={onChangeInput}
+            />
+          ))}
       </Trigger>
     </PickerContext.Provider>
   );

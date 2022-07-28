@@ -32,6 +32,7 @@ Common properties of `TimePicker` and `RangePicker`
 |position|The position of the popup box|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
 |size|Input box size|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |extra|Additional content at the bottom|ReactNode |`-`|-|
+|triggerElement|Trigger element.|ReactNode |`-`|2.38.0|
 |className|Additional css class|string \| string[] |`-`|-|
 |icons|Used to configure icons|{ inputSuffix?: ReactNode } |`-`|-|
 |placeholder|The placeholder of input box|string \| string[] |`-`|-|
