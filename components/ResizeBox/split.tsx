@@ -30,14 +30,16 @@ function Split(props: SplitProps, ref) {
     disabled,
     trigger,
   } = props;
-  const { getPrefixCls } = useContext(ConfigContext);
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('resizebox-split');
   const isHorizontal = direction.includes(DIRECTION_HORIZONTAL);
   const isReverse = direction.includes('reverse');
+  const rtlReverse = isHorizontal && rtl;
   const isTriggerHorizontal = !isHorizontal;
   const classNames = cs(
     prefixCls,
     `${prefixCls}-${isHorizontal ? DIRECTION_HORIZONTAL : DIRECTION_VERTICAL}`,
+    { [`${prefixCls}-rtl`]: rtl },
     className
   );
   const [firstPane, secondPane] = panes;
@@ -71,7 +73,9 @@ function Split(props: SplitProps, ref) {
   function getOffset(startSize, startOffset, startPosition, currentPosition) {
     const minOffset = min ? parseFloat(min as string) : 0;
     const maxOffset = max ? parseFloat(max as string) : isPxSize ? startSize : 1;
-    const ratio = isReverse ? -1 : 1;
+    let ratio = isReverse ? -1 : 1;
+    const rtlRatio = rtlReverse ? -1 : 1;
+    ratio *= rtlRatio;
     let moveOffset = isPxSize
       ? startOffset + (currentPosition - startPosition) * ratio
       : px2percent(startSize * startOffset + (currentPosition - startPosition) * ratio, startSize);
@@ -187,10 +191,11 @@ function Split(props: SplitProps, ref) {
       {secondPane}
     </div>
   );
+  const paneNodeArr = isReverse ? [secondPaneNode, firstPaneNode] : [firstPaneNode, secondPaneNode];
 
   return (
     <Tag style={style} className={classNames} ref={wrapperRef}>
-      {isReverse ? secondPaneNode : firstPaneNode}
+      {paneNodeArr[0]}
       {!disabled && (
         <ResizeTrigger
           className={`${prefixCls}-trigger`}
@@ -202,7 +207,7 @@ function Split(props: SplitProps, ref) {
           {trigger}
         </ResizeTrigger>
       )}
-      {isReverse ? firstPaneNode : secondPaneNode}
+      {paneNodeArr[1]}
     </Tag>
   );
 }
