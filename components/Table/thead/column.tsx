@@ -9,6 +9,7 @@ import IconCaretDown from '../../../icon/react-icon/IconCaretDown';
 import IconCaretUp from '../../../icon/react-icon/IconCaretUp';
 import IconFilter from '../../../icon/react-icon/IconFilter';
 import Checkbox from '../../Checkbox';
+import Space from '../../Space';
 import { ColumnComponentProps } from '../interface';
 import { ConfigContext } from '../../ConfigProvider';
 import useComponent from '../hooks/useComponent';
@@ -58,7 +59,7 @@ function Column<T>({
   showSorterTooltip,
   index,
 }: ColumnComponentProps<T>) {
-  const { locale } = useContext(ConfigContext);
+  const { locale, rtl } = useContext(ConfigContext);
 
   const innerDataIndex = dataIndex === undefined ? index : dataIndex;
 
@@ -182,14 +183,14 @@ function Column<T>({
             );
           })}
         </div>
-        <div className={`${prefixCls}-filters-btn`}>
-          <Button onClick={handleFilterReset} size="mini" style={{ marginRight: 8 }}>
+        <Space className={`${prefixCls}-filters-btn`}>
+          <Button onClick={handleFilterReset} size="mini">
             {locale.Table.resetText}
           </Button>
           <Button onClick={handleFilter} type="primary" size="mini">
             {locale.Table.okText}
           </Button>
-        </div>
+        </Space>
       </div>
     );
   }
@@ -294,7 +295,7 @@ function Column<T>({
           popup={renderFilters}
           trigger="click"
           classNames="slideDynamicOrigin"
-          position="br"
+          position={rtl ? 'bl' : 'br'}
           popupAlign={{ bottom: 0 }}
           popupVisible={filterVisible}
           onVisibleChange={onVisibleChange}

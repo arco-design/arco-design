@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement } from 'react';
+import React, { forwardRef, ReactElement, useContext } from 'react';
 import Checkbox from '../../Checkbox';
 import Radio from '../../Radio';
 import { isString, isArray } from '../../_util/is';
@@ -9,6 +9,7 @@ import IconPlus from '../../../icon/react-icon/IconPlus';
 import IconMinus from '../../../icon/react-icon/IconMinus';
 import { TbodyProps } from '../interface';
 import { INTERNAL_EXPAND_KEY, INTERNAL_SELECTION_KEY } from '../constant';
+import { ConfigContext } from '../../ConfigProvider';
 import Td from './td';
 
 type TrType<T = any> = TbodyProps<T> & {
@@ -50,6 +51,7 @@ function Tr<T>(props: TrType<T>, ref) {
     shouldRowExpand,
     level,
   } = props;
+  const { rtl } = useContext(ConfigContext);
   const originRecord = getOriginData(record);
   const { ...rowProps } = (onRow && onRow(originRecord, index)) || {};
   const rowK = getRowKey(record);
@@ -213,7 +215,7 @@ function Tr<T>(props: TrType<T>, ref) {
               ...operationNode?.props?.style,
               ...(col.fixed === 'left'
                 ? {
-                    left: stickyOffset,
+                    [rtl ? 'right' : 'left']: stickyOffset,
                   }
                 : {}),
               width: col.width,

@@ -62,6 +62,24 @@
     cursor: pointer;
   }
 
+  // rtl
+  .@{table-prefix-cls}-rtl .@{table-prefix-cls}-th-item.@{table-prefix-cls}-col-has-filter {
+    padding-left: 28px;
+    padding-right: ~'@{table-size-@{size}-padding-horizontal}';
+  }
+
+  .@{table-prefix-cls}-rtl .@{table-prefix-cls}-col-has-sorter.@{table-prefix-cls}-col-has-filter {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .@{table-prefix-cls}-rtl .@{table-prefix-cls}-col-has-sorter.@{table-prefix-cls}-col-has-filter
+    .@{table-prefix-cls}-cell-with-sorter {
+    padding-right: 0;
+    padding-right: ~'@{table-size-@{size}-padding-horizontal}';
+  }
+  // rtl end
+
   .@{table-cls-td} {
     padding: ~'@{table-size-@{size}-padding-vertical}' ~'@{table-size-@{size}-padding-horizontal}';
     font-size: ~'@{table-size-@{size}-font-size}';
@@ -140,7 +158,7 @@
   }
 
   // box-shadow on the left side of the scroll table
-  &:not(.@{table-prefix-cls}-has-fixed-col-left) {
+  &:not(&-has-fixed-col-left) {
     &.@{table-prefix-cls}-scroll-position-right,
     &.@{table-prefix-cls}-scroll-position-middle {
       .@{table-prefix-cls}-content-scroll::before {
@@ -150,7 +168,7 @@
   }
 
   // box-shadow on the right side of the scroll table
-  &:not(.@{table-prefix-cls}-has-fixed-col-right) {
+  &:not(&-has-fixed-col-right) {
     &.@{table-prefix-cls}-scroll-position-left,
     &.@{table-prefix-cls}-scroll-position-middle {
       .@{table-prefix-cls}-content-scroll::after {
@@ -170,11 +188,11 @@
     }
   }
 
-  thead > .@{table-cls-tr} > .@{table-cls-th} {
+  thead > &-tr > &-th {
     border-bottom: @table-border-width @table-border-style @table-color-border;
   }
 
-  thead > .@{table-cls-tr}:not(:last-child) > .@{table-cls-th}[colspan] {
+  thead > &-tr:not(:last-child) > &-th[colspan] {
     border-bottom: 0;
   }
 
@@ -196,18 +214,11 @@
     }
   }
 
-  .@{table-cls-th} {
-    background-color: @table-color-bg-header-cell;
-  }
-
-  .@{table-cls-td} {
-    background-color: @table-color-bg-body-cell;
-  }
-
-  .@{table-cls-th} {
+  &-th {
     box-sizing: border-box;
     text-align: left;
     color: @table-color-text-header-cell;
+    background-color: @table-color-bg-header-cell;
     line-height: @line-height-base;
     font-weight: @table-font-weight-header-text;
 
@@ -216,19 +227,20 @@
     }
   }
 
-  .@{table-cls-td} {
+  &-td {
     box-sizing: border-box;
     text-align: left;
     color: @table-color-text-body-cell;
+    background-color: @table-color-bg-body-cell;
     border-bottom: @table-border-width @table-border-style @table-color-border;
     line-height: @line-height-base;
   }
 
-  .@{table-cls-th}&-col-sorted {
+  &-th&-col-sorted {
     background-color: @table-color-bg-header-sorted-cell;
   }
 
-  .@{table-cls-td}&-col-sorted {
+  &-td&-col-sorted {
     background-color: @table-color-bg-body-sorted-cell;
   }
 
@@ -754,5 +766,164 @@
 
   .@{prefix}-pagination {
     margin-top: @table-spacing-pagination-margin;
+  }
+}
+
+// RTL
+.@{table-prefix-cls} {
+  &-rtl {
+    direction: rtl;
+  }
+
+  &-rtl&-border {
+    .@{table-cls-th}:first-child,
+    .@{table-cls-td}:first-child {
+      border-left: 0;
+      border-right: @table-border-width @table-border-style @table-color-border;
+    }
+  }
+
+  &-rtl&-border-cell {
+    .@{table-cls-th},
+    .@{table-cls-td} {
+      border-left: @table-border-width @table-border-style @table-color-border;
+    }
+  }
+
+  &-rtl table {
+    thead tr:first-child {
+      th:first-child {
+        border-radius: 0 @table-border-radius 0 0;
+      }
+
+      th:last-child {
+        border-radius: @table-border-radius 0 0 0;
+      }
+    }
+  }
+
+  &-rtl &-th,
+  &-rtl &-td {
+    text-align: right;
+  }
+
+  &-rtl &-th&-operation &-th-item,
+  &-rtl &-td&-operation {
+    text-align: center;
+  }
+
+  &-rtl&-border &-container {
+    border-left: @table-border-width @table-border-style @table-color-border;
+    border-right: 0;
+  }
+
+  &-rtl&-border-cell {
+    .@{table-cls-th},
+    .@{table-cls-td} {
+      border-left: 0;
+      border-right: @table-border-width @table-border-style @table-color-border;
+    }
+  }
+
+  &-rtl&-border-header-cell {
+    .@{table-cls-th} {
+      border-left: 0;
+      border-right: @table-border-width @table-border-style @table-color-border;
+    }
+  }
+
+  &-rtl&-border-body-cell {
+    .@{table-cls-td} {
+      border-left: 0;
+      border-right: @table-border-width @table-border-style @table-color-border;
+    }
+  }
+
+  &-rtl&-border-cell:not(&-border) {
+    .@{table-cls-th}:first-child,
+    .@{table-cls-td}:first-child {
+      border-right: 0;
+    }
+  }
+
+  &-rtl &-cell-indent {
+    float: right;
+  }
+
+  &-rtl &-cell-expand-icon {
+    float: right;
+
+    button {
+      margin-left: @table-spacing-expand-button-margin-right;
+      margin-right: 0;
+    }
+  }
+
+  &-rtl &-cell-expand-icon-hidden {
+    margin-left: @table-spacing-expand-button-margin-right;
+    margin-right: 0;
+  }
+
+  &-rtl &-filters {
+    left: 0;
+    right: unset;
+  }
+
+  &-rtl &-sorter {
+    margin-left: 0;
+    margin-right: @table-spacing-header-sorter-icon-margin-left;
+  }
+
+  &-rtl &-col-fixed-left-last::after,
+  &-rtl &-col-fixed-right-first::after {
+    left: unset;
+    right: -20px;
+  }
+
+  &-rtl &-col-fixed-left-last::after {
+    left: -20px;
+    right: unset;
+  }
+
+  &-rtl&-scroll-position-right &-col-fixed-left-last::after {
+    box-shadow: none;
+  }
+
+  &-rtl&-scroll-position-right &-col-fixed-right-first::after,
+  &-rtl&-scroll-position-middle &-col-fixed-right-first::after {
+    box-shadow: @table-shadow-left;
+  }
+
+  &-rtl&-scroll-position-left &-col-fixed-right-first::after {
+    box-shadow: none;
+  }
+
+  &-rtl&-scroll-position-left &-col-fixed-left-last::after,
+  &-rtl&-scroll-position-middle &-col-fixed-left-last::after {
+    box-shadow: @table-shadow-right;
+  }
+
+  &-rtl&:not(&-has-fixed-col-left) {
+    &.@{table-prefix-cls}-scroll-position-right,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-prefix-cls}-content-scroll::before {
+        box-shadow: none;
+      }
+      .@{table-prefix-cls}-content-scroll::after {
+        box-shadow: @table-shadow-right;
+      }
+    }
+  }
+
+  &-rtl&:not(&-has-fixed-col-right) {
+    &.@{table-prefix-cls}-scroll-position-left,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-prefix-cls}-content-scroll::before {
+        box-shadow: @table-shadow-left;
+      }
+      .@{table-prefix-cls}-content-scroll::after {
+        box-shadow: none;
+      }
+    }
   }
 }
