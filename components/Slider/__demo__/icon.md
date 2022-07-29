@@ -21,8 +21,8 @@ import { IconSound, IconMute } from '@arco-design/web-react/icon';
 function App() {
   const [value, setValue] = useState(10);
   return (
-    <Space>
-      <Space style={{ marginRight: 20 }}>
+    <Space size={60}>
+      <Space>
         <img
           style={{ width: 22, verticalAlign: 'bottom' }}
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/48872c084d77494ebc0ddd0892d97e3d~tplv-uwbnlip3yd-image.image"

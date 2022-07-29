@@ -22,14 +22,16 @@ When `showInput` is passed `InputNumberProps`, the `min`, `max`, `step` properti
 **The segment step size set by the segment input bar is invalid for InputNumber**
 
 ```js
-import { Slider } from '@arco-design/web-react';
+import { Slider, Space } from '@arco-design/web-react';
 
 function App() {
   return (
     <>
-      <Slider defaultValue={80} showInput style={{ width: 280, marginRight: 44 }} />
-      <Slider defaultValue={[10, 80]} range showInput style={{ width: 360 }} />
-      <div style={{ marginTop: '20px' }}>
+      <Space size={60}>
+        <Slider defaultValue={80} showInput style={{ width: 280 }} />
+        <Slider defaultValue={[10, 80]} range showInput style={{ width: 360 }} />
+      </Space>
+      <Space style={{ marginTop: '20px' }} size={60}>
         <Slider
           defaultValue={80}
           showInput={{
@@ -38,7 +40,7 @@ function App() {
               width: 80,
             },
           }}
-          style={{ width: 280, marginRight: 44 }}
+          style={{ width: 280 }}
         />
         <Slider
           defaultValue={[10, 80]}
@@ -51,7 +53,7 @@ function App() {
           range
           style={{ width: 360 }}
         />
-      </div>
+      </Space>
     </>
   );
 }
