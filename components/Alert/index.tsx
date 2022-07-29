@@ -57,6 +57,7 @@ function Alert(baseProps: AlertProps, ref) {
   }
 
   function onHandleClose(e) {
+    e.preventDefault();
     setVisible(false);
     onClose && onClose(e);
   }
