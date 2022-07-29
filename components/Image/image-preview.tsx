@@ -10,6 +10,7 @@ import React, {
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { findDOMNode } from 'react-dom';
+import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import { on, off, isServerRendering } from '../_util/dom';
 import ResizeObserver from '../_util/resizeObserver';
@@ -21,14 +22,12 @@ import IconClose from '../../icon/react-icon/IconClose';
 import IconRotateLeft from '../../icon/react-icon/IconRotateLeft';
 import IconRotateRight from '../../icon/react-icon/IconRotateRight';
 import IconOriginalSize from '../../icon/react-icon/IconOriginalSize';
-
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
 import { ImagePreviewProps } from './interface';
 import useImageStatus from './utils/hooks/useImageStatus';
 import PreviewScales, { defaultScales } from './utils/getScale';
 import getFixTranslate from './utils/getFixTranslate';
 import ImagePreviewToolbar from './image-preview-toolbar';
-import useMergeValue from '../_util/hooks/useMergeValue';
 import Portal from '../Portal';
 import { PreviewGroupContext } from './previewGroupContext';
 import ImagePreviewArrow from './image-preview-arrow';
@@ -71,8 +70,7 @@ function Preview(props: ImagePreviewProps, ref) {
     useContext(PreviewGroupContext);
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
   const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
-
-  const [visible, setVisible] = useMergeValue(false, {
+  const [visible] = useMergeValue(false, {
     defaultValue: defaultVisible,
     value: props.visible,
   });
@@ -221,7 +219,6 @@ function Preview(props: ImagePreviewProps, ref) {
   function close() {
     if (visible) {
       onVisibleChange && onVisibleChange(false, visible);
-      setVisible(false);
     }
   }
 
