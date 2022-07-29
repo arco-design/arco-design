@@ -588,6 +588,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         currentData: getPageData(processedData, newPaginationProps),
         action: 'paginate',
       });
+
+    mergePagination.onChange && mergePagination.onChange(current, pageSize);
   }
 
   function scrollToTop() {
