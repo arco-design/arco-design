@@ -4,8 +4,10 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@self": ["../components"],
-      "@self/icon": ["../icon"]
+      "@self": ["../es"],
+      "@self/*": ["../es/*"],
+      "@self/icon": ["../icon"],
+      "@self/icon/*": ["../icon/*"]
     }
   },
   "include": ["./**/*.tsx"]
