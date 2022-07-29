@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { isUndefined } from '../_util/is';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import ImagePreview, { ImagePreviewHandle } from './image-preview';
@@ -90,9 +91,10 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     },
   }));
 
-  const handleVisibleChange = (visible, preVisible) => {
-    setVisible(visible);
-    onVisibleChange && onVisibleChange(visible, preVisible);
+  const handleVisibleChange = (newVisible, preVisible) => {
+    const _preVisible = isUndefined(preVisible) ? visible : preVisible;
+    onVisibleChange && onVisibleChange(newVisible, _preVisible);
+    setVisible(newVisible);
   };
 
   const handleSwitch = (index: number) => {
@@ -136,7 +138,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
         setPreviewUrlMap,
         registerPreviewUrl,
         visible,
-        setVisible,
+        handleVisibleChange,
       }}
     >
       {loopImageIndex(children)}

@@ -24,7 +24,7 @@ export interface PreviewGroupContextProps {
   setPreviewUrlMap: (map: PreviewUrlMap) => void;
   registerPreviewUrl: RegisterPreviewUrl;
   visible: boolean;
-  setVisible: (visible: boolean) => void;
+  handleVisibleChange: (visible: boolean, preVisible?: boolean) => void;
 }
 
 export const PreviewGroupContext = createContext<PreviewGroupContextProps>({
@@ -36,5 +36,5 @@ export const PreviewGroupContext = createContext<PreviewGroupContextProps>({
   setPreviewUrlMap: () => null,
   registerPreviewUrl: () => null,
   visible: false,
-  setVisible: () => null,
+  handleVisibleChange: () => null,
 });
