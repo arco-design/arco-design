@@ -110,3 +110,41 @@ exports[`ConfigProvider componentConfig.TimePicker set className globally and co
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.TimePicker set data-* property 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  data-test-name="TimePicker"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择时间"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-clock-circle"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

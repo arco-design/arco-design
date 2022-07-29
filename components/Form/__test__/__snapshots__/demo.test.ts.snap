@@ -1527,6 +1527,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 class="arco-slider"
+                id="slider_input"
               >
                 <div
                   class="arco-slider-wrapper"
@@ -3275,6 +3276,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-slider"
+                id="slider_input"
               >
                 <div
                   class="arco-slider-wrapper"

@@ -76,13 +76,13 @@ describe('Affix', () => {
       await sleep(100);
     };
 
-    jest.spyOn(containerElement, 'getBoundingClientRect').mockImplementation(() => {
+    jest.spyOn(containerElement as HTMLElement, 'getBoundingClientRect').mockImplementation(() => {
       return {
         top: 0,
         bottom: 0,
       } as DOMRect;
     });
-    jest.spyOn(wrapperElement, 'getBoundingClientRect').mockImplementation(() => {
+    jest.spyOn(wrapperElement as HTMLElement, 'getBoundingClientRect').mockImplementation(() => {
       return wrapperRect as DOMRect;
     });
 

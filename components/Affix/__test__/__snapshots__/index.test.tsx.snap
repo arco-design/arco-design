@@ -35,3 +35,16 @@ exports[`ConfigProvider componentConfig.Affix set className globally and compone
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Affix set data-* property 1`] = `
+<div
+  class=""
+  data-test-name="Affix"
+>
+  <div
+    class=""
+  >
+    <span />
+  </div>
+</div>
+`;

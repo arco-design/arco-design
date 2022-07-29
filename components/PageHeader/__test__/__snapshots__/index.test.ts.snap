@@ -53,3 +53,22 @@ exports[`ConfigProvider componentConfig.PageHeader set className globally and co
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.PageHeader set data-* property 1`] = `
+<div
+  class="arco-page-header"
+  data-test-name="PageHeader"
+>
+  <div
+    class="arco-page-header-head-wrapper"
+  >
+    <div
+      class="arco-page-header-head"
+    >
+      <div
+        class="arco-page-header-head-main"
+      />
+    </div>
+  </div>
+</div>
+`;

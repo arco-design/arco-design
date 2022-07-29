@@ -29,3 +29,14 @@ exports[`ConfigProvider componentConfig.Carousel set className globally and comp
   />
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Carousel set data-* property 1`] = `
+<div
+  class="arco-carousel arco-carousel-indicator-position-bottom"
+  data-test-name="Carousel"
+>
+  <div
+    class="arco-carousel-slide arco-carousel-horizontal"
+  />
+</div>
+`;

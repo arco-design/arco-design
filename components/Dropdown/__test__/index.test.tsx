@@ -25,7 +25,7 @@ describe('Dropdown', () => {
 
   it("dropdown's children can be string", () => {
     const wrapper = render(<Dropdown droplist={Droplist}>Hello</Dropdown>);
-    expect(wrapper.querySelector('span').innerHTML).toBe('Hello');
+    expect(wrapper.querySelector('span')?.innerHTML).toBe('Hello');
   });
 
   it('dropdown open correctly', () => {
@@ -35,7 +35,7 @@ describe('Dropdown', () => {
       </Dropdown>
     );
 
-    fireEvent.click(wrapper.querySelector('.arco-btn'));
+    fireEvent.click(wrapper.querySelector('.arco-btn') as any);
     jest.runAllTimers();
     expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(1);
     expect(document.querySelectorAll('.arco-dropdown-menu-item')).toHaveLength(3);
@@ -80,21 +80,21 @@ describe('Dropdown', () => {
       const trigger = wrapper.querySelector('.arco-trigger');
       const classNameOfExit = 'slideDynamicOrigin-exit';
       if (visible) {
-        expect(trigger.className.indexOf(classNameOfExit) > -1).toBe(false);
+        expect(trigger?.className.indexOf(classNameOfExit) > -1).toBe(false);
       } else if (trigger) {
         expect(trigger.className.indexOf(classNameOfExit) > -1).toBe(true);
       }
     };
 
     judgeTriggerVisible(false);
-    fireEvent.click(wrapper.querySelector('.arco-btn'));
+    fireEvent.click(wrapper.querySelector('.arco-btn') as HTMLElement);
     judgeTriggerVisible(true);
 
     simulateMenuItemClick(0);
     judgeTriggerVisible(false);
     expect(onClickMenuItem).toBeCalledWith(['1']);
 
-    fireEvent.click(wrapper.querySelector('.arco-btn'));
+    fireEvent.click(wrapper.querySelector('.arco-btn') as HTMLElement);
     simulateMenuItemClick(1);
     judgeTriggerVisible(true);
 

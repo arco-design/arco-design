@@ -1,4 +1,5 @@
 import React, { useContext, PropsWithChildren, useState, useRef } from 'react';
+import omit from '../_util/omit';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLeft from '../../icon/react-icon/IconLeft';
@@ -16,7 +17,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
     {},
     componentConfig?.PageHeader
   );
-  const { title, subTitle, extra, children, backIcon, footer, breadcrumb } = props;
+  const { title, subTitle, extra, children, backIcon, footer, breadcrumb, ...rest } = props;
 
   const [pageWrap, setPageWrap] = useState(false);
   const pageRef = useRef<HTMLDivElement>();
@@ -32,6 +33,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
       }}
     >
       <div
+        {...omit(rest, ['onBack'])}
         ref={pageRef}
         className={cs(
           `${prefixCls}`,

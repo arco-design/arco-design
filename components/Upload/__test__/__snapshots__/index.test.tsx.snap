@@ -122,3 +122,45 @@ Array [
   />,
 ]
 `;
+
+exports[`ConfigProvider componentConfig.Upload set data-* property 1`] = `
+Array [
+  <div
+    class="arco-upload arco-upload-type-text"
+    data-test-name="Upload"
+  >
+    <input
+      style="display:none"
+      type="file"
+    />
+    <div
+      class="arco-upload-trigger"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-upload"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"
+          />
+        </svg>
+        <span>
+          点击上传
+        </span>
+      </button>
+    </div>
+  </div>,
+  <div
+    class="arco-upload-list arco-upload-list-type-text"
+  />,
+]
+`;

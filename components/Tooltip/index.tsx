@@ -9,7 +9,7 @@ import React, {
 import cs from '../_util/classNames';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import { ConfigContext } from '../ConfigProvider';
-import pick from '../_util/pick';
+import pick, { pickDataAttributes } from '../_util/pick';
 import { TooltipProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { isFunction } from '../_util/is';
@@ -75,6 +75,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
   const prefixCls = tooltipPrefixCls || getPrefixCls('tooltip');
   const otherProps: any = {
     ...pick(rest, EventsByTriggerNeed),
+    ...pickDataAttributes(rest),
     ...triggerProps,
   };
 

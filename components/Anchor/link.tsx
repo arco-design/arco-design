@@ -29,11 +29,12 @@ function isNamedComponent(type: any): type is React.ForwardRefExoticComponent<un
 
 function Link(baseProps: AnchorLinkPropsWithChildren, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
-  const { className, style, href, title, children } = useMergeProps<AnchorLinkPropsWithChildren>(
-    baseProps,
-    defaultProps,
-    componentConfig?.['Anchor.Link']
-  );
+  const { className, style, href, title, children, ...rest } =
+    useMergeProps<AnchorLinkPropsWithChildren>(
+      baseProps,
+      defaultProps,
+      componentConfig?.['Anchor.Link']
+    );
   const anchorContext = useContext(AnchorContext);
   const { currentLink, addLink, removeLink, onLinkClick } = anchorContext;
   const prefixCls = getPrefixCls('anchor-link');
@@ -56,7 +57,7 @@ function Link(baseProps: AnchorLinkPropsWithChildren, ref) {
   }, [href]);
 
   return (
-    <div className={classNames} style={style} ref={linkRef}>
+    <div className={classNames} style={style} ref={linkRef} {...rest}>
       {!isUndefined(title) && !isNull(title) && (
         <a
           className={`${prefixCls}-title`}

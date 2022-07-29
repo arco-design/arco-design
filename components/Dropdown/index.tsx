@@ -5,7 +5,7 @@ import { ConfigContext } from '../ConfigProvider';
 import cs from '../_util/classNames';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
-import pick from '../_util/pick';
+import pick, { pickDataAttributes } from '../_util/pick';
 import { DropdownProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
@@ -121,6 +121,7 @@ function Dropdown(baseProps: DropdownProps, _) {
       getPopupContainer={getPopupContainer}
       alignPoint={trigger === 'contextMenu'}
       {...pick(rest, EventsByTriggerNeed)}
+      {...pickDataAttributes(rest)}
       {...omit(triggerProps, ['onVisibleChange'])}
       onVisibleChange={handleVisibleChange}
     >

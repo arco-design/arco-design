@@ -5,6 +5,7 @@ import IconMore from '../../icon/react-icon/IconMore';
 import { DropdownButtonProps } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const defaultProps: DropdownButtonProps = {
   position: 'br',
@@ -58,7 +59,7 @@ function Button(baseProps: DropdownButtonProps, ref) {
     ((rightButton as ReactElement).props && (rightButton as ReactElement).props.loading);
 
   return (
-    <ArcoButton.Group className={className} style={style} ref={ref}>
+    <ArcoButton.Group className={className} style={style} ref={ref} {...pickDataAttributes(props)}>
       {leftButton}
       <Dropdown
         disabled={disabled}

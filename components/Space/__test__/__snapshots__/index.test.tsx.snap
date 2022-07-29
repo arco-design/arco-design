@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Space set className globally and compone
   class="arco-space arco-space-horizontal arco-space-align-center component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Space set data-* property 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+  data-test-name="Space"
+/>
+`;

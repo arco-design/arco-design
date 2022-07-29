@@ -21,6 +21,14 @@ exports[`ConfigProvider componentConfig.Timeline set className globally and comp
 />
 `;
 
+exports[`ConfigProvider componentConfig.Timeline set data-* property 1`] = `
+<div
+  class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+  data-test-name="Timeline"
+  role="list"
+/>
+`;
+
 exports[`ConfigProvider componentConfig.Timeline.Item default 1`] = `
 <div
   class="arco-timeline-item"
@@ -76,6 +84,33 @@ exports[`ConfigProvider componentConfig.Timeline.Item set className globally 1`]
 exports[`ConfigProvider componentConfig.Timeline.Item set className globally and component set className itself. 1`] = `
 <div
   class="arco-timeline-item component-class"
+  role="listitem"
+>
+  <div
+    class="arco-timeline-item-dot-wrapper"
+  >
+    <div
+      class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-undefined"
+      style="border-left-style:solid"
+    />
+    <div
+      class="arco-timeline-item-dot-content"
+    >
+      <div
+        class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-timeline-item-content-wrapper"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Timeline.Item set data-* property 1`] = `
+<div
+  class="arco-timeline-item"
+  data-test-name="Timeline.Item"
   role="listitem"
 >
   <div

@@ -33,6 +33,7 @@ function Alert(baseProps: AlertProps, ref) {
     onClose,
     closeElement,
     banner,
+    ...rest
   } = props;
 
   const prefixCls = getPrefixCls('alert');
@@ -83,7 +84,7 @@ function Alert(baseProps: AlertProps, ref) {
         afterClose && afterClose();
       }}
     >
-      <div ref={ref} style={style} className={classNames} role="alert">
+      <div ref={ref} style={style} className={classNames} role="alert" {...rest}>
         {showIcon && <div className={`${prefixCls}-icon-wrapper`}>{renderIcon(type)}</div>}
         <div className={`${prefixCls}-content-wrapper`}>
           {title && <div className={`${prefixCls}-title`}>{title}</div>}

@@ -18,6 +18,13 @@ exports[`ConfigProvider componentConfig.Grid.Col set className globally and comp
 />
 `;
 
+exports[`ConfigProvider componentConfig.Grid.Col set data-* property 1`] = `
+<div
+  class="arco-col arco-col-24"
+  data-test-name="Grid.Col"
+/>
+`;
+
 exports[`ConfigProvider componentConfig.Grid.Row default 1`] = `
 <div
   class="arco-row arco-row-align-start arco-row-justify-start"
@@ -33,5 +40,12 @@ exports[`ConfigProvider componentConfig.Grid.Row set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Grid.Row set className globally and component set className itself. 1`] = `
 <div
   class="arco-row arco-row-align-start arco-row-justify-start component-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Grid.Row set data-* property 1`] = `
+<div
+  class="arco-row arco-row-align-start arco-row-justify-start"
+  data-test-name="Grid.Row"
 />
 `;

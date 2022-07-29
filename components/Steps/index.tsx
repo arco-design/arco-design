@@ -4,6 +4,7 @@ import Step from './step';
 import { ConfigContext } from '../ConfigProvider';
 import { StepsProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const defaultProps: StepsProps = {
   current: 1,
@@ -61,7 +62,7 @@ function Steps(baseProps: StepsProps, ref) {
   );
 
   return (
-    <div ref={ref} style={style} className={classNames}>
+    <div ref={ref} style={style} className={classNames} {...pickDataAttributes(props)}>
       {React.Children.toArray(children)
         .filter(
           (child: ReactElement) =>

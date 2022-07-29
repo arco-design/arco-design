@@ -8,6 +8,7 @@ import { OptionInfo, SelectProps } from '../Select/interface';
 import { isSelectOption, isSelectOptGroup } from '../Select/utils';
 import { Enter, Esc } from '../_util/keycode';
 import omit from '../_util/omit';
+import { pickDataAttributes } from '../_util/pick';
 import { RefInputType } from '../Input/interface';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import { AutoCompleteProps } from './interface';
@@ -126,6 +127,7 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
     disabled,
     allowClear,
     ...inputProps,
+    ...pickDataAttributes(props),
     // Empty tag to ensure the consistency of the dom structure of input, such that input won't accidentally lose focus due to structure change on input.
     suffix: loading ? <IconLoading /> : inputProps?.suffix || <i />,
     onFocus: (event) => {

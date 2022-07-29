@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import BTween from 'b-tween';
 import dayjs, { Dayjs } from 'dayjs';
+import omit from '../_util/omit';
 import cs from '../_util/classNames';
 import Countdown from './countdown';
 import { isNumber, isFunction } from '../_util/is';
@@ -42,6 +43,7 @@ function Statistic(baseProps: StatisticProps, ref) {
     renderFormat,
     styleValue,
     loading,
+    ...rest
   } = props;
 
   const tween = useRef<BTween>();
@@ -121,7 +123,11 @@ function Statistic(baseProps: StatisticProps, ref) {
     ? renderFormat
     : (_, formattedValue) => formattedValue;
   return (
-    <div className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, className)} style={style}>
+    <div
+      className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, className)}
+      style={style}
+      {...omit(rest, ['value', 'countUp', 'countFrom', 'countDuration'])}
+    >
       {title && <div className={`${prefixCls}-title`}>{title}</div>}
       <div className={`${prefixCls}-content`}>
         <Skeleton animation loading={!!loading} text={{ rows: 1, width: '100%' }}>

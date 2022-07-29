@@ -110,3 +110,41 @@ exports[`ConfigProvider componentConfig.DatePicker set className globally and co
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.DatePicker set data-* property 1`] = `
+<div
+  class="arco-picker arco-picker-size-default"
+  data-test-name="DatePicker"
+>
+  <div
+    class="arco-picker-input"
+  >
+    <input
+      class="arco-picker-start-time"
+      placeholder="请选择日期"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-picker-suffix"
+  >
+    <span
+      class="arco-picker-suffix-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-calendar"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

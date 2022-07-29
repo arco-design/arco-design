@@ -41,3 +41,18 @@ exports[`ConfigProvider componentConfig.Statistic set className globally and com
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Statistic set data-* property 1`] = `
+<div
+  class="arco-statistic"
+  data-test-name="Statistic"
+>
+  <div
+    class="arco-statistic-content"
+  >
+    <div
+      class="arco-statistic-value"
+    />
+  </div>
+</div>
+`;

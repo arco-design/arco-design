@@ -9,6 +9,7 @@ import IconRight from '../../icon/react-icon/IconRight';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { isObject } from '../_util/is';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const defaultProps: TransferProps = {
   titleTexts: ['Source', 'Target'],
@@ -231,6 +232,7 @@ function Transfer(baseProps: TransferProps, ref) {
 
   return (
     <div
+      {...pickDataAttributes(props)}
       ref={ref}
       className={cs(
         prefixCls,

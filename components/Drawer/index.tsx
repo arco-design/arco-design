@@ -22,6 +22,7 @@ import { isObject } from '../_util/is';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import { DrawerProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import omit from '../_util/omit';
 
 const defaultProps: DrawerProps = {
   placement: 'right',
@@ -70,6 +71,7 @@ function Drawer(baseProps: DrawerProps, ref) {
     autoFocus,
     okButtonProps,
     cancelButtonProps,
+    ...rest
   } = props;
 
   const drawerWrapperRef = useRef(null);
@@ -198,6 +200,7 @@ function Drawer(baseProps: DrawerProps, ref) {
   return (
     <Portal forceRender={!mountOnEnter} visible={visible} getContainer={getPopupContainer}>
       <div
+        {...omit(rest, ['onCancel', 'onOk'])}
         ref={drawerWrapperRef}
         className={cs(
           `${prefixCls}-wrapper`,

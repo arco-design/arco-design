@@ -13,7 +13,7 @@ describe('InputTag', () => {
     const placeholder = 'Please input';
     const wrapper = render(<InputTag disabled readOnly error placeholder={placeholder} />);
 
-    expect(wrapper.querySelector('input').getAttribute('placeholder')).toBe(placeholder);
+    expect(wrapper.querySelector('input')?.getAttribute('placeholder')).toBe(placeholder);
     expect(wrapper.querySelector('.arco-input-tag')).toHaveClass(
       'arco-input-tag-disabled',
       'arco-input-tag-error',
@@ -27,7 +27,7 @@ describe('InputTag', () => {
     const wrapper = render(
       <InputTag onChange={mockOnChange} onRemove={mockOnRemove} defaultValue={['a']} />
     );
-    const eleInput = wrapper.querySelector('input');
+    const eleInput = wrapper.querySelector('input') as HTMLElement;
     const eleRoot = wrapper.querySelector('.arco-input-tag');
 
     expect(document.querySelectorAll('.arco-tag')).toHaveLength(1);
@@ -48,7 +48,7 @@ describe('InputTag', () => {
     const inputValue = 'a';
     const mockOnChange = jest.fn();
     const wrapper = render(<InputTag saveOnBlur onChange={mockOnChange} />);
-    const eleInput = wrapper.querySelector('input');
+    const eleInput = wrapper.querySelector('input') as HTMLElement;
 
     fireEvent.change(eleInput, { target: { value: inputValue } });
     fireEvent.blur(eleInput);
@@ -61,7 +61,7 @@ describe('InputTag', () => {
     const mockOnClick = jest.fn();
     const wrapper = render(<InputTag onClick={mockOnClick} />);
 
-    fireEvent.click(wrapper.querySelector('input'));
+    fireEvent.click(wrapper.querySelector('input') as HTMLElement);
     expect(mockOnClick).toBeCalled();
   });
 
@@ -86,10 +86,10 @@ describe('InputTag', () => {
       />
     );
 
-    fireEvent.change(wrapper.querySelector('input'), {
+    fireEvent.change(wrapper.querySelector('input') as HTMLElement, {
       target: { value: inputValue },
     });
-    fireEvent.keyDown(wrapper.querySelector('input'), { keyCode: Enter.code });
+    fireEvent.keyDown(wrapper.querySelector('input') as HTMLElement, { keyCode: Enter.code });
 
     await sleep(10);
 

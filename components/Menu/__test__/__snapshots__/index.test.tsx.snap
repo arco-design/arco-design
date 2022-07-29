@@ -32,3 +32,15 @@ exports[`ConfigProvider componentConfig.Menu set className globally and componen
   />
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Menu set data-* property 1`] = `
+<div
+  class="arco-menu arco-menu-light arco-menu-vertical"
+  data-test-name="Menu"
+  role="menu"
+>
+  <div
+    class="arco-menu-inner"
+  />
+</div>
+`;

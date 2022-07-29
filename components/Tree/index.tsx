@@ -12,6 +12,7 @@ import {
 } from './util';
 import { TreeProps, NodeProps, TreeDataType, NodeInstance, TreeState } from './interface';
 import { TreeContext } from './context';
+import { pickDataAttributes } from '../_util/pick';
 
 const DefaultFieldNames = {
   key: 'key',
@@ -781,6 +782,7 @@ class Tree extends Component<TreeProps, TreeState> {
             role: 'tree',
             'aria-multiselectable': this.props.multiple,
             tabIndex: 0,
+            ...pickDataAttributes(this.props),
           }}
         />
       </TreeContext.Provider>

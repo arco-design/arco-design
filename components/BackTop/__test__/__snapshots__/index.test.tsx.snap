@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.BackTop set className globally and compo
   class="arco-backtop component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.BackTop set data-* property 1`] = `
+<div
+  class="arco-backtop"
+  data-test-name="BackTop"
+/>
+`;

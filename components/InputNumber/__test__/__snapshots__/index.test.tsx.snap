@@ -191,3 +191,68 @@ exports[`ConfigProvider componentConfig.InputNumber set className globally and c
   </span>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.InputNumber set data-* property 1`] = `
+<div
+  class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+>
+  <span
+    class="arco-input-group"
+  >
+    <span
+      class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+    >
+      <input
+        aria-valuemax="Infinity"
+        aria-valuemin="-Infinity"
+        class="arco-input arco-input-size-default"
+        data-test-name="InputNumber"
+        role="spinbutton"
+        value=""
+      />
+      <span
+        class="arco-input-group-suffix"
+      >
+        <div
+          class="arco-input-number-step-layer"
+        >
+          <div
+            class="arco-input-number-step-button"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-up"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M39.6 30.557 24.043 15 8.487 30.557"
+              />
+            </svg>
+          </div>
+          <div
+            class="arco-input-number-step-button"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-down"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </span>
+    </span>
+  </span>
+</div>
+`;

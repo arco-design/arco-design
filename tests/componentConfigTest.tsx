@@ -31,5 +31,10 @@ export default function componentConfigTest(Component, componentName: string, co
       );
       expect(component).toMatchSnapshot();
     });
+
+    it(`set data-* property`, () => {
+      const component = render(<Component data-test-name={componentName} />);
+      expect(component).toMatchSnapshot();
+    });
   });
 }

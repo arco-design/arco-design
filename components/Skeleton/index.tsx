@@ -6,6 +6,7 @@ import Text from './text';
 import Image from './image';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 function getComponentProps(prop) {
   return isObject(prop) ? prop : {};
@@ -60,7 +61,7 @@ function Skeleton(baseProps: PropsWithChildren<SkeletonProps>, ref) {
   return (
     <React.Fragment>
       {loading ? (
-        <div className={classNames} style={style} ref={ref}>
+        <div {...pickDataAttributes(props)} className={classNames} style={style} ref={ref}>
           {imageProps.position !== 'right' && renderImage()}
           {renderText()}
           {imageProps.position === 'right' && renderImage()}
