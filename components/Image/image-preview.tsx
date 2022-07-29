@@ -34,6 +34,7 @@ import ImagePreviewArrow from './image-preview-arrow';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import { Esc } from '../_util/keycode';
 import useUpdate from '../_util/hooks/useUpdate';
+import { isUndefined } from '../_util/is';
 
 const ROTATE_STEP = 90;
 
@@ -70,7 +71,7 @@ function Preview(props: ImagePreviewProps, ref) {
     useContext(PreviewGroupContext);
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
   const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
-  const [visible] = useMergeValue(false, {
+  const [visible, setVisible] = useMergeValue(false, {
     defaultValue: defaultVisible,
     value: props.visible,
   });
@@ -219,6 +220,7 @@ function Preview(props: ImagePreviewProps, ref) {
   function close() {
     if (visible) {
       onVisibleChange && onVisibleChange(false, visible);
+      isUndefined(props.visible) && setVisible(false);
     }
   }
 

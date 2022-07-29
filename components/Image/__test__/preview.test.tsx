@@ -195,6 +195,7 @@ describe('Image', () => {
       fireEvent.click(wrapper.find('.arco-image-preview-close-btn')[0]);
     });
     expect(mockVisibleChange.mock.calls[0]).toEqual([false, true]);
+    expect(wrapper.find('img')).toHaveLength(0);
   });
 
   it('handle maskClosable prop correctly', () => {
