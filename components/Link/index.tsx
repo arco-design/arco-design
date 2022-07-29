@@ -34,6 +34,7 @@ function Link(baseProps: PropsWithChildren<LinkProps>, ref) {
       ref={ref}
       {...rest}
       style={style}
+      tabIndex={disabled ? -1 : undefined}
       onClick={(e) => {
         if (disabled) {
           e.preventDefault();

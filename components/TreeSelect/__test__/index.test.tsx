@@ -556,4 +556,82 @@ describe('TreeSelect', () => {
 
     expect(value).toEqual(['node3', 'node2-2']);
   });
+
+  it('onSearch ', () => {
+    const mockSearch = jest.fn();
+    const searchData = (inputValue) => {
+      const loop = (data) => {
+        const result: any[] = [];
+        data.forEach((item: any) => {
+          if (item.title.toLowerCase().indexOf(inputValue.toLowerCase()) > -1) {
+            result.push({ ...item });
+          } else if (item.children) {
+            const filterData = loop(item.children);
+
+            if (filterData.length) {
+              result.push({ ...item, children: filterData });
+            }
+          }
+        });
+        return result;
+      };
+
+      return loop(treeData);
+    };
+    let value = [];
+
+    const wrapper = render(
+      <TreeSelect
+        treeCheckable
+        value={value}
+        onChange={(v) => {
+          value = v;
+        }}
+        treeData={treeData}
+        showSearch
+        onSearch={mockSearch}
+      />
+    );
+
+    const rerender = (props) => {
+      wrapper.rerender(
+        <TreeSelect
+          treeCheckable
+          value={value}
+          treeData={treeData}
+          onChange={(v) => {
+            value = v;
+          }}
+          showSearch
+          onSearch={mockSearch}
+          {...props}
+        />
+      );
+    };
+    clickInput();
+
+    // 小恶魔
+    fireEvent.click(wrapper.find('.arco-tree-node-title').item(1));
+
+    rerender({ value });
+
+    expect(wrapper.find('.arco-tag')).toHaveLength(1);
+
+    expect(wrapper.find(`${prefixCls}-select-view input`)).toHaveLength(1);
+
+    fireEvent.change(wrapper.find('input').item(0), { target: { value: '二丫' } });
+
+    rerender({ value, treeData: searchData('二丫') });
+
+    expect(wrapper.find('.arco-tree-node')).toHaveLength(2);
+    expect(wrapper.querySelector('.arco-tag')?.textContent).toBe('小恶魔');
+
+    fireEvent.click(wrapper.find('.arco-tree-node-title').item(1));
+
+    rerender({ value, treeData: searchData('二丫') });
+
+    expect(wrapper.find('.arco-tag')).toHaveLength(2);
+    expect(wrapper.querySelectorAll('.arco-tag').item(0)?.textContent).toBe('小恶魔');
+    expect(wrapper.querySelectorAll('.arco-tag').item(1)?.textContent).toBe('二丫');
+  });
 });
