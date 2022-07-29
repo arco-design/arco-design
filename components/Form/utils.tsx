@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import { isArray, isObject, isFunction } from '../_util/is';
 import { IndexedObject, FormProps } from './interface';
 import { RulesProps } from '..';
+import React from 'react';
 
 export function cloneDeep(value) {
   // 只有对象才执行拷贝，否则直接返回。 如果是 File，MouseEvent对象，都可以直接返回
@@ -43,7 +44,12 @@ export function iterativelyGetKeys(obj, prefix = '') {
     return [];
   }
   return Object.keys(obj).reduce((res, el) => {
-    if (typeof obj[el] === 'object' && obj[el] !== null) {
+    if (
+      typeof obj[el] === 'object' &&
+      obj[el] !== null &&
+      Object.keys(obj[el]).length > 0 &&
+      !React.isValidElement(obj[el])
+    ) {
       return [...res, ...iterativelyGetKeys(obj[el], `${prefix + el}.`)];
     }
     return [...res, prefix + el];
