@@ -54,6 +54,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     children,
     onSelect,
     onChange,
+    ...rest
   } = props;
   const prefixCls = getPrefixCls('anchor');
   const classNames = cs(prefixCls, className, {
@@ -249,7 +250,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   }, [currentLink, lineless]);
 
   const content = (
-    <div className={classNames} style={style} ref={wrapperRef}>
+    <div className={classNames} style={style} ref={wrapperRef} {...rest}>
       {!lineless && currentLink && (
         <div className={`${prefixCls}-line-slider`} ref={sliderLineRef} />
       )}
