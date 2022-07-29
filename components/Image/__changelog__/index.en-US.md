@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fix `Image.Preview`'s `onVisibleChange` not triggering when preview is opened.([#1219](https://github.com/arco-design/arco-design/pull/1219))
+
 ## 2.33.1
 
 2022-05-20

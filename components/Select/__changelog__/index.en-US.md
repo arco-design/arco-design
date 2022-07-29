@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fixed  flickering "no data" placeholder when `allowCreate` in Select.([#1184](https://github.com/arco-design/arco-design/pull/1184))
+
 ## 2.37.2
 
 2022-07-22
