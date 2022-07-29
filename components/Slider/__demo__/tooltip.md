@@ -6,11 +6,11 @@ title:
 ---
 
 ```js
-import { Slider } from '@arco-design/web-react';
+import { Slider, Space } from '@arco-design/web-react';
 
 function App() {
   return (
-    <div>
+    <Space size={60}>
       <Slider
         defaultValue={20}
         tooltipVisible={true}
@@ -29,7 +29,7 @@ function App() {
         }}
         style={{ width: 200 }}
       />
-    </div>
+    </Space>
   );
 }
 

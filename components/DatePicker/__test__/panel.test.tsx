@@ -182,15 +182,13 @@ describe('Panel show date', () => {
 
     expect(
       Array.apply(null, component.find('.arco-picker-cell'))
-        .filter((n) => n.textContent === '10')
-        .at(0)
+        .filter((n) => n.textContent === '10')[0]
         .classList.contains('arco-picker-cell-disabled')
     ).toBeFalsy();
 
     expect(
       Array.apply(null, component.find('.arco-picker-cell'))
-        .filter((n) => n.textContent === '11')
-        .at(0)
+        .filter((n) => n.textContent === '11')[0]
         .classList.contains('arco-picker-cell-disabled')
     ).toBeTruthy();
 
@@ -201,15 +199,13 @@ describe('Panel show date', () => {
 
     expect(
       Array.apply(null, component.find('.arco-picker-cell'))
-        .filter((n) => n.textContent === '2020')
-        .at(0)
+        .filter((n) => n.textContent === '2020')[0]
         .classList.contains('arco-picker-cell-disabled')
     ).toBeFalsy();
 
     expect(
       Array.apply(null, component.find('.arco-picker-cell'))
-        .filter((n) => n.textContent === '2021')
-        .at(0)
+        .filter((n) => n.textContent === '2021')[0]
         .classList.contains('arco-picker-cell-disabled')
     ).toBeTruthy();
 
