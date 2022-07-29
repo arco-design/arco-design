@@ -90,8 +90,12 @@ function searchData(inputValue) {
 function App() {
   const [treeData, setTreeData] = React.useState(TreeData);
   const [loading, setLoading] = React.useState(false);
+  const [value, setValue] = React.useState([]);
   return (
     <TreeSelect
+      treeCheckable
+      value={value}
+      onChange={setValue}
       showSearch={true}
       allowClear={true}
       notFoundContent={loading ? <Spin /> : undefined}
