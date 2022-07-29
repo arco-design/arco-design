@@ -51,26 +51,31 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
     resizable = true,
     renderChildren,
   } = props;
-  const { getPrefixCls } = useContext(ConfigContext);
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('resizebox-trigger');
   const isHorizontal = direction === 'horizontal';
+  const rtlReverse = rtl && !isHorizontal;
   const classNames = cs(
     prefixCls,
     `${prefixCls}-${isHorizontal ? 'horizontal' : 'vertical'}`,
     { [`${prefixCls}-not-resizable`]: !resizable },
+    { [`${prefixCls}-rtl`]: rtl },
     className
   );
 
+  const verticalTriggerIcon = rtlReverse
+    ? [<IconCaretRight key="prev" />, <IconCaretLeft key="next" />]
+    : [<IconCaretLeft key="prev" />, <IconCaretRight key="next" />];
   const prevCollapsedConfig: ResizeTriggerProps['collapsible']['prev'] = isObject(collapsible.prev)
     ? {
         ...collapsible.prev,
-        icon: collapsible.prev.icon || (isHorizontal ? <IconCareUp /> : <IconCaretLeft />),
+        icon: collapsible.prev.icon || (isHorizontal ? <IconCareUp /> : verticalTriggerIcon[0]),
       }
     : {};
   const nextCollapsedConfig: ResizeTriggerProps['collapsible']['next'] = isObject(collapsible.next)
     ? {
         ...collapsible.next,
-        icon: collapsible.next.icon || (isHorizontal ? <IconCaretDown /> : <IconCaretRight />),
+        icon: collapsible.next.icon || (isHorizontal ? <IconCaretDown /> : verticalTriggerIcon[1]),
       }
     : {};
 

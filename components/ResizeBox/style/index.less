@@ -2,6 +2,8 @@
 @import './token.less';
 
 @resizebox-prefix-cls: ~'@{prefix}-resizebox';
+@resizebox-split-prefix-cls: ~'@{prefix}-resizebox-split';
+@resizebox-split-group-prefix-cls: ~'@{prefix}-resizebox-split-group';
 @resizebox-trigger-prefix-cls: ~'@{resizebox-prefix-cls}-trigger';
 
 .@{resizebox-prefix-cls} {
@@ -136,4 +138,11 @@
       height: 100%;
     }
   }
+}
+
+.@{resizebox-prefix-cls}-rtl,
+.@{resizebox-split-prefix-cls}-rtl,
+.@{resizebox-split-group-prefix-cls}-rtl,
+.@{resizebox-trigger-prefix-cls}-rtl {
+  direction: rtl;
 }
