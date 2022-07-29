@@ -91,7 +91,7 @@ function Alert(baseProps: AlertProps, ref) {
         </div>
         {action && <div className={`${prefixCls}-action`}>{action}</div>}
         {_closable && (
-          <button onClick={onHandleClose} className={`${prefixCls}-close-btn`}>
+          <button type="button" onClick={onHandleClose} className={`${prefixCls}-close-btn`}>
             {closeElement || <IconClose />}
           </button>
         )}
