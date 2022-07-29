@@ -142,6 +142,8 @@ function Mentions(baseProps: MentionsProps, ref) {
     onBlur: stopMeasure,
   };
 
+  // Pass [value: undefined] to Select, make sure onChange callback will always be triggered
+  // Only parameter of Select.onChange is needed, Select.value is not important cause Select is hidden
   return (
     <div
       ref={ref}
@@ -159,30 +161,29 @@ function Mentions(baseProps: MentionsProps, ref) {
         {...textAreaEventHandlers}
         {...rest}
       />
-      {measureInfo.measuring && (
-        <div ref={refMeasure} className={`${prefixCls}-measure`}>
-          {value.slice(0, measureInfo.location)}
-          <Select
-            ref={refSelect}
-            options={options}
-            inputValue={measureInfo.text}
-            notFoundContent={notFoundContent}
-            triggerElement={
-              <span className={`${prefixCls}-measure-trigger`}>{measureInfo.prefix}</span>
-            }
-            triggerProps={{
-              popupVisible: true,
-              autoAlignPopupWidth: alignTextarea,
-              position,
-              ...triggerProps,
-            }}
-            filterOption={filterOption}
-            getPopupContainer={getPopupContainer}
-            onChange={handleOptionSelect}
-          />
-          {value.slice(measureInfo.location + measureInfo.prefix.length)}
-        </div>
-      )}
+      <div ref={refMeasure} className={`${prefixCls}-measure`}>
+        {value.slice(0, measureInfo.location)}
+        <Select
+          ref={refSelect}
+          options={options}
+          inputValue={measureInfo.text}
+          notFoundContent={notFoundContent}
+          triggerElement={
+            <span className={`${prefixCls}-measure-trigger`}>{measureInfo.prefix}</span>
+          }
+          triggerProps={{
+            popupVisible: measureInfo.measuring,
+            autoAlignPopupWidth: alignTextarea,
+            position,
+            ...triggerProps,
+          }}
+          filterOption={filterOption}
+          getPopupContainer={getPopupContainer}
+          value={undefined}
+          onChange={handleOptionSelect}
+        />
+        {value.slice(measureInfo.location + measureInfo.prefix.length)}
+      </div>
     </div>
   );
 }
