@@ -57,7 +57,7 @@ function Index() {
 // register service worker on prod
 if (isProduction) {
   registerServiceWorker({
-    content: '检测到有新版本，是否刷新页面加载最新版本？',
+    content: '检测文档内容有更新，是否刷新页面加载最新版本？',
     okText: '确认',
     cancelText: '取消',
   });

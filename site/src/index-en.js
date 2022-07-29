@@ -58,7 +58,7 @@ function Index() {
 // register service worker on prod
 if (isProduction) {
   registerServiceWorker({
-    content: 'A new version is available, refresh page to get the latest version？',
+    content: 'A new version of content is available, refresh page to get the latest version？',
     okText: 'Ok',
     cancelText: 'Cancel',
   });
