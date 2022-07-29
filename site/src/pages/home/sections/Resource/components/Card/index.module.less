@@ -183,3 +183,46 @@ body[arco-theme='dark'] {
     width: 100%;
   }
 }
+
+:global(html.rtl) {
+  .card {
+    &-header {
+      &-left {
+        margin-right: 0;
+        margin-left: 20px;
+      }
+
+      &-right {
+        transform: scaleX(-1);
+      }
+    }
+
+    &-body-resource-item {
+      &-logo {
+        margin-left: 20px;
+        margin-right: 0;
+      }
+    }
+
+    &-footer-resource-item {
+      margin-right: 0;
+      margin-left: 20px;
+
+      &:last-child {
+        margin-left: 0;
+      }
+
+      &-logo,
+      &-name {
+        margin-right: 0;
+        margin-left: 4px;
+      }
+
+      &-arrow {
+        svg {
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
+}

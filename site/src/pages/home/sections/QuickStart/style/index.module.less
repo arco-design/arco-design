@@ -52,12 +52,11 @@
 }
 
 .card-dark {
-  background: #383F47;
+  background: #383f47;
 
   &:hover {
     background: hsl(212deg 10% 30%);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 6%),
-    0 3px 3px rgba(78, 89, 105, 20%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 6%), 0 3px 3px rgba(78, 89, 105, 20%);
   }
 
   .card-icon {
@@ -69,7 +68,7 @@
   }
 
   .card-desc {
-    color: #C9CDD4;
+    color: #c9cdd4;
   }
 }
 
@@ -83,7 +82,7 @@
     border-radius: 4px;
     background: #191919;
     box-shadow: 0 2px 3px rgba(78, 89, 105, 14%);
-    color: #fff;
+    color: #fff !important;
     cursor: pointer;
     transition: var(--home-transition-1);
 
@@ -115,7 +114,7 @@
   }
 }
 
-body[arco-theme="dark"] {
+body[arco-theme='dark'] {
   .card {
     background: var(--color-bg-1);
     border: 1px solid var(--home-color-border);
@@ -195,6 +194,24 @@ body[arco-theme="dark"] {
 
     .design-figma-logo-text {
       display: none;
+    }
+  }
+}
+
+:global(html.rtl) {
+  .design {
+    &-terminal {
+      &-content {
+        margin-right: 12px;
+        margin-left: 0;
+      }
+    }
+
+    &-figma-logo {
+      svg {
+        margin-left: 8px;
+        margin-right: 0;
+      }
     }
   }
 }

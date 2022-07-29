@@ -1,5 +1,5 @@
 import React, { useEffect, useState, CSSProperties } from 'react';
-import { Divider, Button, Carousel } from '@arco-design/web-react';
+import { Divider, Button, Carousel, Space } from '@arco-design/web-react';
 import { IconClose } from '@arco-design/web-react/icon';
 import { teaLog } from '@arco-materials/site-utils';
 import LogoArco from '../../assets/logo_ArcoDesign.svg';
@@ -196,7 +196,7 @@ export default function Teams() {
               <div className={styles['teams-count-name']}>{locale['teams.download']}</div>
             </div>
           </div>
-          <div className={styles['teams-bottom']}>
+          <Space className={styles['teams-bottom']} size={12}>
             <StartBtn className={styles['teams-bottom-btn']} reportTea={reportTea} />
             <Button
               className={`home-btn ${styles['teams-bottom-btn']}`}
@@ -208,7 +208,7 @@ export default function Teams() {
             >
               {locale['teams.showcase']}
             </Button>
-          </div>
+          </Space>
         </div>
         <div className={styles['teams-body-right']}>{renderReviewList()}</div>
       </div>

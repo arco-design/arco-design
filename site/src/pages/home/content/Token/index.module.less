@@ -80,8 +80,17 @@
   }
 }
 
-body[arco-theme="dark"] {
+body[arco-theme='dark'] {
   .token-code {
     border-top: 1px solid var(--home-color-border);
+  }
+}
+
+:global(html.rtl) {
+  .token-body {
+    &-right {
+      margin-left: 0;
+      margin-right: 20px;
+    }
   }
 }

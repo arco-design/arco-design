@@ -17,7 +17,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       width: 8px;
       height: 8px;
       border-top: 2px solid @btn-primary-color-text;
@@ -30,7 +30,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       width: 6px;
       height: 2px;
       background-color: @btn-primary-color-text;
@@ -43,11 +43,11 @@
     .start-btn-icon {
       &::before {
         left: 6px;
-        border-color: #A6D8FF;
+        border-color: #a6d8ff;
       }
-  
+
       &::after {
-        background-color: #A6D8FF;
+        background-color: #a6d8ff;
         right: 1px;
         width: 7px;
         bottom: (@icon-height / 2) - 1;
@@ -56,8 +56,17 @@
   }
 }
 
-body:not([arco-theme="dark"]) {
+body:not([arco-theme='dark']) {
   .start-btn:hover {
     background: #1d2129 !important;
+  }
+}
+
+:global(html.rtl) {
+  .start-btn {
+    &-icon {
+      margin-left: 8px;
+      margin-right: 0;
+    }
   }
 }

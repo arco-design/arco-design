@@ -98,7 +98,6 @@
 
       &-btn {
         &:last-child {
-          margin-left: 12px;
           border-radius: var(--border-radius-small);
         }
       }
@@ -301,6 +300,30 @@ body[arco-theme='dark'] {
   body[arco-theme='dark'] {
     .section-wrapper {
       background: none;
+    }
+  }
+}
+
+:global(html.rtl) {
+  .section-wrapper {
+    padding: 0 20px;
+    border: 1px solid var(--home-color-border);
+    border-left: none;
+    border-right: none;
+    background: linear-gradient(
+      to left,
+      transparent 0,
+      transparent 50%,
+      var(--color-fill-1) 50%,
+      var(--color-fill-1) 100%
+    );
+  }
+
+  .teams-body-left {
+    .teams-logo {
+      &-close {
+        margin: 0 8px 0 4px;
+      }
     }
   }
 }
