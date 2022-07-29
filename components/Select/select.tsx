@@ -550,7 +550,7 @@ function Select(baseProps: SelectProps, ref) {
     ) : null;
 
     // 无选项时的占位符元素
-    const eleNoOptionPlaceholder = mergedNotFoundContent ? (
+    const eleNoOptionPlaceholder = (mergedNotFoundContent && !allowCreate) ? (
       <div
         style={dropdownMenuStyle}
         className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
