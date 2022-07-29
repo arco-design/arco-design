@@ -342,9 +342,9 @@
     color "^3.1.3"
 
 "@arco-design/web-react@^2.37.0":
-  version "2.37.1"
-  resolved "https://registry.npmjs.org/@arco-design/web-react/-/web-react-2.37.1.tgz#427569d0f173bb8983fdca0bf5de6919f674576f"
-  integrity sha512-JBjmwPz9azDoahNDOSqQ9RyRnsAsF/7HhybyyaWKM3LhbnzNSa2AfTTSXKJQHwmnsuurAXas10sxQFDE64t7Rw==
+  version "2.37.0"
+  resolved "https://registry.npmjs.org/@arco-design/web-react/-/web-react-2.37.0.tgz#c508ccdf15d9dc86b1ccd2424bac0e64cfa75bff"
+  integrity sha512-PaJqnycVw3a91Wf0f1orMe/d1pk/A7aZtyfBuinFwmv7Szl/XenDKcgkq0eCBIQ4JFjttwzhUuHlax8c8QxAYw==
   dependencies:
     "@arco-design/color" "^0.4.0"
     "@babel/runtime" "^7.5.5"
@@ -1466,10 +1466,10 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
-  version "7.18.9"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.9.tgz#b4fcfce55db3d2e5e080d2490f608a3b9f407f4a"
-  integrity sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+  version "7.18.6"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.6.tgz#6a1ef59f838debd670421f8c7f2cbb8da9751580"
+  integrity sha512-t9wi7/AW6XtKahAe20Yw0/mMljKq0B1r2fPdvaAdV/KPDZewFXdaaa6K7lxmZBZ8FBNpCiAT6iHPmd6QO9bKfQ==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -1477,6 +1477,13 @@
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.0.tgz#e27b977f2e2088ba24748bf99b5e1dece64e4f0b"
   integrity sha512-Nht8L0O8YCktmsDV6FqFue7vQLRx3Hb0B37lS5y0jDRqRxlBG4wIJHnf9/bgSE2UyipKFA01YtS+npRdTWBUyw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.8.4":
+  version "7.18.9"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.9.tgz#b4fcfce55db3d2e5e080d2490f608a3b9f407f4a"
+  integrity sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2593,9 +2600,9 @@ dayjs@^1.10.4:
   integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
 
 dayjs@^1.10.5:
-  version "1.11.4"
-  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.4.tgz#3b3c10ca378140d8917e06ebc13a4922af4f433e"
-  integrity sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==
+  version "1.11.3"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.3.tgz#4754eb694a624057b9ad2224b67b15d552589258"
+  integrity sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==
 
 debug@2.6.9:
   version "2.6.9"

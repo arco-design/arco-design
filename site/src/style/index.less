@@ -41,3 +41,15 @@ a {
     border-color: var(--color-fill-3);
   }
 }
+
+html.rtl {
+  .ac-browser-header {
+    &::before {
+      box-shadow: 0 0 0 0 #ff5959, -1.5em 0 0 0 #ffc75a, -3em 0 0 0 #6bdb43;
+    }
+  }
+
+  .ac-browser-content {
+    text-align: right;
+  }
+}
