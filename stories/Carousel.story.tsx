@@ -3,31 +3,37 @@ import React, { CSSProperties, useRef } from 'react';
 import { Carousel, Button } from '@self';
 import { CarouselHandle } from '@self/Carousel/interface';
 
-const baseStyle: CSSProperties = {
+const BG_OPACITY = 0.4;
+
+const BASE_STYLE: CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 400,
   color: '#ffffff',
-  textAlign: 'center',
-  width: '100%',
-  lineHeight: '300px',
-  height: '100%',
 };
+
 const itemStyle1 = {
-  backgroundColor: 'rgba(0, 0, 0, 0.3)',
-  ...baseStyle,
+  backgroundColor: `rgba(0, 0, 0, ${BG_OPACITY})`,
+  ...BASE_STYLE,
 };
 
 const itemStyle2 = {
-  backgroundColor: 'rgba(255, 0, 0, 0.3)',
-  ...baseStyle,
+  backgroundColor: `rgba(255, 0, 0, ${BG_OPACITY})`,
+  ...BASE_STYLE,
+  height: 300,
 };
 
 const itemStyle3 = {
-  backgroundColor: 'rgba(0, 255, 0, 0.3)',
-  ...baseStyle,
+  backgroundColor: `rgba(0, 255, 0, ${BG_OPACITY})`,
+  ...BASE_STYLE,
+  height: 500,
 };
 
 const itemStyle4 = {
-  backgroundColor: 'rgba(0, 0, 255, 0.3)',
-  ...baseStyle,
+  backgroundColor: `rgba(0, 0, 255, ${BG_OPACITY})`,
+  ...BASE_STYLE,
+  height: 600,
 };
 
 function Demo1() {
@@ -62,7 +68,6 @@ function Demo1() {
         onChange={(index) => {
           refCurrentIndex.current = index;
         }}
-        style={{ width: '100%', height: 300, margin: '0 auto', fontSize: 16 }}
       >
         <div style={itemStyle1}>
           <h1>1</h1>
