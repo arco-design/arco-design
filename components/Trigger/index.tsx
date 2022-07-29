@@ -139,6 +139,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   unmount = false;
 
+  isDidMount = false;
+
   // 保存鼠标的位置
   mouseLocation: MouseLocationType = {
     clientX: 0,
@@ -187,16 +189,16 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   }
 
   getRootElement = (): HTMLElement => {
-    return findDOMNode(this) as HTMLElement;
+    this.childrenDom = findDOMNode(this) as HTMLElement;
+    return this.childrenDom;
   };
-
-  isDidMount = false;
 
   componentDidMount() {
     this.componentDidUpdate(this.getMergedProps());
     this.isDidMount = true;
+    this.unmount = false;
 
-    this.childrenDom = findDOMNode(this);
+    this.childrenDom = this.getRootElement();
     if (this.state.popupVisible) {
       this.childrenDomSize = getDOMPos(this.childrenDom);
     }
@@ -384,7 +386,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   getTransformOrigin = (position) => {
-    const content = findDOMNode(this.triggerRef) as HTMLElement;
+    const content = this.triggerRef as HTMLElement;
     if (!content) return {};
 
     const { showArrow, classNames } = this.getMergedProps();
@@ -450,8 +452,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       return;
     }
     const mountContainer = this.popupContainer as Element;
-    const content = findDOMNode(this.triggerRef) as HTMLElement;
-    const child: HTMLElement = findDOMNode(this) as HTMLElement;
+    const content = this.triggerRef;
+    const child: HTMLElement = this.getRootElement();
     const { style, arrowStyle, realPosition } = getStyle(
       this.getMergedProps(),
       content,
@@ -577,8 +579,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   // 点击非popup内部，非children内部的节点，触发clickoutside 逻辑
   onClickOutside = (e) => {
     const { onClickOutside, clickOutsideToClose } = this.getMergedProps();
-    const triggerNode = findDOMNode(this.triggerRef);
-    const childrenDom = findDOMNode(this);
+    const triggerNode = this.triggerRef;
+    const childrenDom = this.getRootElement();
 
     if (
       !contains(triggerNode, e.target) &&
@@ -795,9 +797,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       const gpc = getPopupContainer || getGlobalPopupContainer;
 
       const rootElement = this.getRootElement();
+
       const parent = gpc(rootElement);
       if (parent) {
         parent.appendChild(node);
+
         return;
       }
     }
@@ -871,7 +875,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       popupStyle: dropdownPopupStyle,
     } = this.getMergedProps();
     const isExistChildren = children || children === 0;
-    const { getPrefixCls, zIndex } = this.context;
+    const { getPrefixCls, zIndex, rtl } = this.context;
     const { popupVisible, popupStyle } = this.state;
 
     if (!popup) {
@@ -948,11 +952,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       prefixCls,
       childrenPrefix,
       `${prefixCls}-position-${position}`,
+      { [`${prefixCls}-rtl`]: rtl },
       className
     );
 
     const childrenComponent = isExistChildren && (
-      <ResizeObserver onResize={this.onResize}>
+      <ResizeObserver onResize={this.onResize} getRef={() => this.getRootElement()}>
         {React.cloneElement(child, {
           ...mergeProps,
         })}
@@ -999,7 +1004,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
           this.setState({ popupStyle: {} });
         }}
       >
-        <ResizeObserver onResize={this.onResize}>
+        <ResizeObserver onResize={this.onResize} getRef={() => this.triggerRef}>
           <span
             ref={(node) => (this.triggerRef = node)}
             trigger-placement={this.realPosition}
