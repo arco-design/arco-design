@@ -117,16 +117,16 @@ function Tr<T>(props: TrType<T>, ref) {
   function renderExpandIcon(record, rowK) {
     const { icon: expandIcon } = expandProps;
     const expanded = !!~expandedRowKeys.indexOf(rowK);
+    const onClickProps = {
+      onClick: (e) => {
+        e.stopPropagation();
+        onClickExpandBtn(rowK);
+      },
+    };
     return typeof expandIcon === 'function' ? (
-      expandIcon({ expanded, record })
+      expandIcon({ expanded, record, ...onClickProps })
     ) : (
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onClickExpandBtn(rowK);
-        }}
-        type="button"
-      >
+      <button {...onClickProps} type="button">
         {expanded ? <IconMinus /> : <IconPlus />}
       </button>
     );
