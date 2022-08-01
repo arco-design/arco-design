@@ -5936,6 +5936,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="true"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-expanded"
           role="treeitem"
         >
@@ -6018,6 +6019,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="true"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
           role="treeitem"
         >
@@ -6104,6 +6106,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="false"
+          aria-level="2"
           class="arco-tree-node arco-tree-node-is-leaf"
           role="treeitem"
         >
@@ -6168,6 +6171,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="false"
+          aria-level="2"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
           role="treeitem"
         >
@@ -6230,6 +6234,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="true"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-expanded"
           role="treeitem"
         >
@@ -6312,6 +6317,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled"
           role="treeitem"
         >
@@ -6374,6 +6380,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled"
           role="treeitem"
         >
@@ -6436,6 +6443,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled arco-tree-node-is-tail"
           role="treeitem"
         >
@@ -6498,6 +6506,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="false"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-is-leaf"
           role="treeitem"
         >
@@ -6553,6 +6562,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled arco-tree-node-is-tail"
           role="treeitem"
         >
