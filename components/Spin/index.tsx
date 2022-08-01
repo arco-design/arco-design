@@ -22,6 +22,7 @@ function Spin(baseProps: SpinProps, ref) {
     dot,
     delay,
     block = false,
+    ...rest
   } = props;
 
   const [loading, setLoading] = useState<boolean>(delay ? false : propLoading);
@@ -64,6 +65,7 @@ function Spin(baseProps: SpinProps, ref) {
         className
       )}
       style={style}
+      {...rest}
     >
       {children ? (
         <>
