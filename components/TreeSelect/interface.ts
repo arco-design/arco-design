@@ -2,7 +2,6 @@ import { ReactNode, CSSProperties } from 'react';
 import { TreeDataType, NodeProps, TreeProps } from '../Tree/interface';
 import { TriggerProps } from '../Trigger';
 import { SelectViewCommonProps } from '../_class/select-view';
-import { InputValueChangeReason } from '../Select/interface';
 
 export type TreeSelectDataType = TreeDataType & { value?: string };
 export type LabelValue = { label: ReactNode; value: string; disabled?: boolean };
@@ -191,3 +190,6 @@ export const DefaultFieldNames = {
   checkable: 'checkable',
   isLeaf: 'isLeaf',
 };
+
+// 造成输入框值改变的原因：用户输入、选中选项、选项下拉框收起
+export type InputValueChangeReason = 'manual' | 'optionChecked' | 'optionListHide';
