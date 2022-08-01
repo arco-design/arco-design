@@ -98,12 +98,11 @@ export type TreeDataType = NodeProps & {
 ### InputValueChangeReason
 
 ```js
-// 造成输入框值改变的原因：用户输入、选中选项、选项下拉框收起、触发自动分词
+// 造成输入框值改变的原因：用户输入、选中选项、选项下拉框收起
 export type InputValueChangeReason =
   | "manual"
   | "optionChecked"
-  | "optionListHide"
-  | "tokenSeparator";
+  | "optionListHide";
 ```
 
 ### ObjectValueType
