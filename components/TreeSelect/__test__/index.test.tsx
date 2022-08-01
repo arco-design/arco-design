@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import { act } from 'react-test-renderer';
 import TreeSelect from '..';
 import { normalizeValueToArray } from '../utils';
+import { cleanup, fireEvent, render } from '../../../tests/util';
 
 const treeData = [
   {
@@ -45,6 +46,42 @@ describe('TreeSelect', () => {
 
   afterEach(() => {
     jest.runAllTimers();
+    cleanup();
+  });
+
+  it('search operation with inputValue', () => {
+    const component = render(<TreeSelect treeData={treeData} inputValue="三" showSearch />);
+    const input = component.find('input')[0];
+    act(() => {
+      fireEvent.click(input);
+    });
+    jest.runAllTimers();
+    component.debug();
+    // Only parent node 史塔克家族 & child node 三傻 remain after searching
+    expect(component.find('.arco-tree-node')).toHaveLength(2);
+  });
+
+  it('search operation triggers onInputValueChange', () => {
+    const mockChange = jest.fn();
+    const component = render(
+      <TreeSelect treeData={treeData} inputValue="" onInputValueChange={mockChange} showSearch />
+    );
+    const input = component.find('input')[0];
+    act(() => {
+      fireEvent.click(input);
+    });
+    jest.runAllTimers();
+    act(() => {
+      fireEvent.change(input, {
+        target: {
+          value: '三',
+        },
+      });
+    });
+    jest.runAllTimers();
+    // inputValue change will trigger onInputValueChange once and get new inputValue
+    expect(mockChange).toBeCalledTimes(1);
+    expect(mockChange.mock.calls[0][0]).toEqual('三');
   });
 
   it('popOver expand and collapse', () => {

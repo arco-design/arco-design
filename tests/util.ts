@@ -19,9 +19,7 @@ export const render = (ui: React.ReactElement, options?: RenderOptions) => {
     }),
   } as ReturnType<typeof ORender> & {
     querySelector: <T extends HTMLElement | SVGElement>(selector: string) => T | null;
-    querySelectorAll: <T extends HTMLElement | SVGElement>(
-      selector: string
-    ) => NodeListOf<T>;
+    querySelectorAll: <T extends HTMLElement | SVGElement>(selector: string) => NodeListOf<T>;
     find: <E extends HTMLElement | SVGElement>(selector: string) => NodeListOf<E>;
   };
 
