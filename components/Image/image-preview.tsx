@@ -65,6 +65,7 @@ function Preview(props: ImagePreviewProps, ref) {
     onVisibleChange,
     scales = defaultScales,
     escToExit = true,
+    ...restProps
   } = props;
 
   const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite } =
@@ -424,6 +425,7 @@ function Preview(props: ImagePreviewProps, ref) {
                 >
                   <img
                     ref={refImage}
+                    {...restProps}
                     className={cs(`${previewPrefixCls}-img`, {
                       [`${previewPrefixCls}-img-moving`]: moving,
                     })}
