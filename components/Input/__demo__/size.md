@@ -126,7 +126,7 @@ class App extends React.Component {
             {...props}
             style={{ width: 350, margin: 12 }}
             addBefore={
-              <Select size={size} placeholder="Please select" style={{ width: 100 }}>
+              <Select size={size} placeholder="Please select" style={{ width: 100, height: props.height }}>
                 <Select.Option value="http://">http://</Select.Option>
                 <Select.Option value="https://">https://</Select.Option>
               </Select>

@@ -18,9 +18,20 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
     value: 'value' in props ? formatValue(props.value, props.maxLength) : undefined,
   });
 
-  const { className, style, placeholder, disabled, searchButton, loading, defaultValue, ...rest } =
-    props;
+  const {
+    className,
+    style = {},
+    placeholder,
+    disabled,
+    searchButton,
+    loading,
+    defaultValue,
+    ...rest
+  } = props;
   const prefixCls = getPrefixCls('input-search');
+  const isCustomHeight = 'height' in rest || 'height' in style;
+  const customHeight = rest.height || style.height;
+
   const classNames = cs(
     prefixCls,
     {
@@ -52,6 +63,7 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
             onClick={onSearch}
             loading={loading}
             loadingFixedWidth
+            style={{ ...(isCustomHeight ? { height: customHeight } : {}) }}
             icon={searchButton === true && !loading && <IconSearch />}
           >
             {searchButton !== true && searchButton}

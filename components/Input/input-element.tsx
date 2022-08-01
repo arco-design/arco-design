@@ -16,7 +16,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       disabled,
       placeholder,
       className,
-      style,
+      style = {},
       height,
       prefixCls,
       hasParent,
@@ -71,6 +71,8 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       },
       hasParent ? undefined : className
     );
+    const isCustomHeight = 'height' in props || 'height' in style;
+    const customHeight = height || style.height;
 
     useImperativeHandle(
       ref,
@@ -146,7 +148,9 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
           <input
             ref={refInput}
             {...inputProps}
-            style={hasParent ? {} : { ...style, ...('height' in props ? { height } : {}) }}
+            style={
+              hasParent ? {} : { ...style, ...(isCustomHeight ? { height: customHeight } : {}) }
+            }
           />
         )}
         {autoFitWidth && (
