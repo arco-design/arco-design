@@ -2,12 +2,14 @@ import React, { useContext, ReactNode, ReactElement, HTMLAttributes } from 'reac
 import { SummaryContext } from './context';
 import cs from '../../_util/classNames';
 import { Omit } from '../../_util/type';
+import { ConfigContext } from '../../ConfigProvider';
 
 interface SummaryRowProps extends Omit<HTMLAttributes<HTMLTableRowElement>, 'children'> {
   children?: ReactNode;
 }
 
 function Row(props: SummaryRowProps) {
+  const { rtl } = useContext(ConfigContext);
   const { columns, stickyOffsets, stickyClassNames, prefixCls } = useContext(SummaryContext);
 
   const { children, ...rest } = props;
@@ -30,9 +32,9 @@ function Row(props: SummaryRowProps) {
 
     const stickyStyle =
       columns[stickyIndex].fixed === 'left'
-        ? { left: stickyOffsets[stickyIndex] }
+        ? { [rtl ? 'right' : 'left']: stickyOffsets[stickyIndex] }
         : columns[stickyIndex].fixed === 'right'
-        ? { right: stickyOffsets[stickyIndex] }
+        ? { [rtl ? 'left' : 'right']: stickyOffsets[stickyIndex] }
         : {};
 
     const stickyClassName =

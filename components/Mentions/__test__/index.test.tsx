@@ -73,7 +73,7 @@ describe('Mentions', () => {
     expect(wrapper.find('.arco-select-option')).toHaveLength(3);
 
     fireEvent.blur(wrapper.find('textarea').item(0));
-    await sleep(10);
+    await sleep(200);
     expect(wrapper.find('.arco-select-option')).toHaveLength(0);
   });
 

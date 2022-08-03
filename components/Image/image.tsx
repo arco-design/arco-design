@@ -53,7 +53,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const {
     previewGroup,
-    setVisible: setGroupPreviewVisible,
+    handleVisibleChange: handleGroupVisibleChange,
     registerPreviewUrl,
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
@@ -109,15 +109,11 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   function onImgClick(e) {
     if (preview && previewGroup) {
       setCurrentIndex(id);
-      setGroupPreviewVisible(true);
+      handleGroupVisibleChange(true);
     } else if (preview) {
       togglePreviewVisible(true);
     }
     onClick && onClick(e);
-  }
-
-  function onPreviewVisibleChange(visible) {
-    togglePreviewVisible(visible);
   }
 
   function togglePreviewVisible(newVisible) {
@@ -202,7 +198,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
           visible={previewVisible}
           src={previewSrc}
           {...availablePreviewProps}
-          onVisibleChange={onPreviewVisibleChange}
+          onVisibleChange={togglePreviewVisible}
         />
       )}
     </div>

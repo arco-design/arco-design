@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fixed a bug where the label of the selected item was not displayed properly when the `TreeSelect` component enabled multiple checkbox selection and remote search in controlled mode.([#1207](https://github.com/arco-design/arco-design/pull/1207))
+
 ## 2.37.0
 
 2022-07-08

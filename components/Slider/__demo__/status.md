@@ -14,14 +14,14 @@ title:
 Default state and disabled state.
 
 ```js
-import { Slider } from '@arco-design/web-react';
+import { Slider, Space } from '@arco-design/web-react';
 
 function App() {
   return (
-    <div>
+    <Space size={60}>
       <Slider defaultValue={30} style={{ width: 200 }} />
-      <Slider defaultValue={30} disabled={true} style={{ width: 200, marginLeft: 74 }} />
-    </div>
+      <Slider defaultValue={30} disabled={true} style={{ width: 200 }} />
+    </Space>
   );
 }
 

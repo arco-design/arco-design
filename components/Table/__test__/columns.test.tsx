@@ -1,13 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
+import { render } from '../../../tests/util';
 import Table from '..';
 import { columns, columnsFixedColumns } from './common/columns';
 import { data, treeData } from './common/data';
 
 describe('Table columns usage test', () => {
   it('column.width', () => {
-    const component = mount(
+    const component = render(
       <Table
         columns={columns.map((col) => {
           if (col.dataIndex === 'name') {
@@ -19,89 +19,79 @@ describe('Table columns usage test', () => {
       />
     );
 
-    expect(component.find('colgroup col').at(0).prop('style')).toEqual({ width: 200 });
+    expect(component.find('colgroup col').item(0).getAttribute('style')).toEqual('width: 200px;');
 
-    component.setProps({
-      columns: columns.map((col) => {
-        if (col.dataIndex === 'name') {
-          return { ...col, width: '200px' };
-        }
-        return col;
-      }),
-    });
+    component.rerender(
+      <Table
+        columns={columns.map((col) => {
+          if (col.dataIndex === 'name') {
+            return { ...col, width: '200px' };
+          }
+          return col;
+        })}
+        data={data}
+      />
+    );
 
-    expect(component.find('colgroup col').at(0).prop('style')).toEqual({ width: '200px' });
+    expect(component.find('colgroup col').item(0).getAttribute('style')).toEqual('width: 200px;');
   });
 
   it('rowSelection change to undefined', () => {
-    const component = mount(<Table columns={columns} data={data} />);
+    const component = render(<Table columns={columns} data={data} />);
 
-    expect(component.find('Checkbox')).toHaveLength(0);
+    expect(component.find('.arco-checkbox')).toHaveLength(0);
 
-    component.setProps({ rowSelection: {} });
+    component.rerender(<Table columns={columns} data={data} rowSelection={{}} />);
 
-    expect(component.find('Checkbox')).toHaveLength(6);
+    expect(component.find('.arco-checkbox')).toHaveLength(6);
   });
 
   it('set columns async, fixed columns correctly', () => {
-    const component = mount(<Table columns={[]} data={data} />);
+    const component = render(<Table columns={[]} data={data} />);
 
-    component.setProps({
-      columns: columnsFixedColumns,
-    });
-
-    component.update();
+    component.rerender(<Table columns={columnsFixedColumns} data={data} />);
 
     expect(
-      component
-        .find('.arco-table')
-        .getDOMNode()
-        .className.indexOf('arco-table-has-fixed-col-left') > -1
+      component.find('.arco-table').item(0).className.indexOf('arco-table-has-fixed-col-left') > -1
     ).toBeTruthy();
     expect(
-      component
-        .find('.arco-table')
-        .getDOMNode()
-        .className.indexOf('arco-table-has-fixed-col-right') > -1
+      component.find('.arco-table').item(0).className.indexOf('arco-table-has-fixed-col-right') > -1
     ).toBeTruthy();
   });
 
   it('delete column, tree data first column correctly', () => {
-    const component = mount(<Table data={treeData} columns={columns} />);
+    const component = render(<Table data={treeData} columns={columns} />);
 
     function checkExpandIcon() {
-      expect(component.find('IconPlus')).toHaveLength(1);
-      expect(component.find('td').at(0).find('IconPlus')).toHaveLength(1);
+      expect(component.find('.arco-icon-plus')).toHaveLength(1);
+      expect(component.find('td').item(0).querySelectorAll('.arco-icon-plus')).toHaveLength(1);
     }
 
     checkExpandIcon();
 
-    component.setProps({ columns: columns.filter(({ dataIndex }) => dataIndex !== 'name') });
-    component.update();
-
+    component.rerender(
+      <Table data={treeData} columns={columns.filter(({ dataIndex }) => dataIndex !== 'name')} />
+    );
     checkExpandIcon();
-
-    component.setProps({ columns });
-    component.update();
-
+    component.rerender(<Table data={treeData} columns={columns} />);
     checkExpandIcon();
   });
 
   it('Table internal compile do not change origin columns', () => {
     const originColumns = cloneDeep(columns);
-    mount(<Table columns={columns} data={[]} />);
+    render(<Table columns={columns} data={[]} />);
     expect(originColumns).toEqual(columns);
   });
 
   it('Table columns placeholder', () => {
-    const component = mount(
+    const component = render(
       <Table
         data={data.map((col) => {
           if (col.key === '1') {
-            return { ...col, name: undefined };
+            return { ...col, name: undefined as unknown as string };
           }
           if (col.key === '2') {
-            return { ...col, name: null };
+            return { ...col, name: null as unknown as string };
           }
           if (col.key === '3') {
             return { ...col, name: '' };
@@ -115,26 +105,67 @@ describe('Table columns usage test', () => {
       />
     );
 
-    expect(component.find('tbody td').at(0).text()).toBe('');
+    expect(component.find('tbody td').item(0).textContent).toBe('');
 
-    component.setProps({
-      columns: columns.map((col) => {
-        if (col.dataIndex === 'name') {
-          return { ...col, placeholder: '-' };
-        }
-        return col;
-      }),
-      placeholder: 'x',
+    component.rerender(
+      <Table
+        data={data.map((col) => {
+          if (col.key === '1') {
+            return { ...col, name: undefined as unknown as string };
+          }
+          if (col.key === '2') {
+            return { ...col, name: null as unknown as string };
+          }
+          if (col.key === '3') {
+            return { ...col, name: '' };
+          }
+          if (col.key === '4') {
+            return { ...col, name: ' ' };
+          }
+          return col;
+        })}
+        columns={columns.map((col) => {
+          if (col.dataIndex === 'name') {
+            return { ...col, placeholder: '-' };
+          }
+          return col;
+        })}
+        placeholder="x"
+      />
+    );
+
+    [0, 1, 2, 3].forEach((item) => {
+      expect(component.find('tbody tr').item(item).querySelectorAll('td').item(0).textContent).toBe(
+        '-'
+      );
     });
 
     [0, 1, 2, 3].forEach((item) => {
-      expect(component.find('tbody tr').at(item).find('td').at(0).text()).toBe('-');
-    });
+      component.rerender(
+        <Table
+          data={data.map((col) => {
+            if (col.key === '1') {
+              return { ...col, name: undefined as unknown as string };
+            }
+            if (col.key === '2') {
+              return { ...col, name: null as unknown as string };
+            }
+            if (col.key === '3') {
+              return { ...col, name: '' };
+            }
+            if (col.key === '4') {
+              return { ...col, name: ' ' };
+            }
+            return col;
+          })}
+          columns={columns}
+          placeholder="x"
+        />
+      );
 
-    [0, 1, 2, 3].forEach((item) => {
-      component.setProps({ columns, placeholder: 'x' });
-      component.update();
-      expect(component.find('tbody tr').at(item).find('td').at(0).text()).toBe('x');
+      expect(component.find('tbody tr').item(item).querySelectorAll('td').item(0).textContent).toBe(
+        'x'
+      );
     });
   });
 });

@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🆕 Feature
+
+- Component `TimePicker` add `triggerElement` prop to support custom trigger element.([#1199](https://github.com/arco-design/arco-design/pull/1199))
+
 ## 2.32.0
 
 2022-04-15

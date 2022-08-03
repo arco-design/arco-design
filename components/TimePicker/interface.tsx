@@ -72,6 +72,12 @@ export interface PickerProps {
    */
   popupVisible?: boolean;
   /**
+   * @zh 触发元素。
+   * @en Trigger element.
+   * @version 2.38.0
+   */
+  triggerElement?: ReactNode;
+  /**
    * @zh 可以传入 `Trigger` 组件的参数
    * @en The props of the `Trigger` component
    */

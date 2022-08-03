@@ -60,6 +60,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     tablePagination,
     renderEmpty,
     componentConfig,
+    rtl,
   } = useContext(ConfigContext);
   const props = useMergeProps<TableProps<T>>(baseProps, defaultProps, componentConfig?.Table);
   // priority: props.pagination > ConfigProvider.tablePagination > ConfigProvider.Table.pagination
@@ -494,17 +495,24 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         fixedHeader ? refTableBody.current : refTableNF.current && refTableNF.current.parentNode
       ) as HTMLElement;
       if (tbody) {
-        const alignLeft = tbody.scrollLeft === 0;
+        const scrollLeft = rtl ? -tbody.scrollLeft : tbody.scrollLeft;
+        const alignLeft = scrollLeft === 0;
         // const alignRight = tbody.scrollLeft + tbody.clientWidth >= tbody.scrollWidth;
         const alignRight =
-          tbody.scrollLeft + 1 >=
+          scrollLeft + 1 >=
           tbody.children[0].getBoundingClientRect().width - tbody.getBoundingClientRect().width;
         if (alignLeft && alignRight) {
           setFixedColumnsClassList(table.classList, `${prefixCls}-scroll-position-both`);
         } else if (alignLeft) {
-          setFixedColumnsClassList(table.classList, `${prefixCls}-scroll-position-left`);
+          setFixedColumnsClassList(
+            table.classList,
+            `${prefixCls}-scroll-position-${rtl ? 'right' : 'left'}`
+          );
         } else if (alignRight) {
-          setFixedColumnsClassList(table.classList, `${prefixCls}-scroll-position-right`);
+          setFixedColumnsClassList(
+            table.classList,
+            `${prefixCls}-scroll-position-${rtl ? 'left' : 'right'}`
+          );
         } else {
           setFixedColumnsClassList(table.classList, `${prefixCls}-scroll-position-middle`);
         }
@@ -588,6 +596,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         currentData: getPageData(processedData, newPaginationProps),
         action: 'paginate',
       });
+
+    mergePagination.onChange && mergePagination.onChange(current, pageSize);
   }
 
   function scrollToTop() {
@@ -878,6 +888,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         columns.find((col) => col.ellipsis),
       [`${prefixCls}-fixed-column`]: hasFixedColumn,
       [`${prefixCls}-virtualized`]: virtualized,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

@@ -15,31 +15,33 @@ Set `reverse={true}` to swap the start and end points of the slider.
 
 ```js
 import { useState } from 'react';
-import { Slider, Switch, Typography } from '@arco-design/web-react';
+import { Slider, Switch, Typography, Space } from '@arco-design/web-react';
 import { IconSound, IconMute } from '@arco-design/web-react/icon';
 
 function App() {
   const [reverse, setReverse] = useState(true);
   return (
-    <div>
-      <div style={{ marginBottom: 24 }}>
+    <>
+      <Space style={{ marginBottom: 24 }} size={4}>
         <Switch checked={reverse} onChange={setReverse} />
         <Typography.Text>Reversed</Typography.Text>
+      </Space>
+      <div>
+        <Slider
+          reverse={reverse}
+          showTicks
+          max={15}
+          defaultValue={10}
+          marks={{
+            0: '0km',
+            5: '5km',
+            10: '10km',
+            15: '15km',
+          }}
+          style={{ width: 200 }}
+        />
       </div>
-      <Slider
-        reverse={reverse}
-        showTicks
-        max={15}
-        defaultValue={10}
-        marks={{
-          0: '0km',
-          5: '5km',
-          10: '10km',
-          15: '15km',
-        }}
-        style={{ width: 200 }}
-      />
-    </div>
+    </>
   );
 }
 

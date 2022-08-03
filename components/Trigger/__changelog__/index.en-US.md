@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Trigger` component could not display the popup in React 18 strict mode.([#1215](https://github.com/arco-design/arco-design/pull/1215))
+
 ## 2.34.0
 
 2022-05-27

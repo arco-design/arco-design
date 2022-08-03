@@ -19,7 +19,6 @@ The icon, width, title, expandable etc. of the expanded column can be customized
 If too many `expandedRowRender` calculations block page render, it is recommended to use `expandProps.rowExpandable`.
 
 ```js
-import { useState } from 'react';
 import { Table } from '@arco-design/web-react';
 import { IconRight, IconDown } from '@arco-design/web-react/icon';
 const columns = [
@@ -79,30 +78,19 @@ const data = [
 ];
 
 function App() {
-  const [expandedRowKeys, setExpandedRowKeys] = useState([]);
-
-  function addExpandedRowKey(key) {
-    setExpandedRowKeys(expandedRowKeys.concat(key));
-  }
-
-  function removeExpandedRowKey(key) {
-    setExpandedRowKeys(expandedRowKeys.filter((k) => k !== key));
-  }
-
   return (
     <Table
       columns={columns}
       data={data}
-      expandedRowKeys={expandedRowKeys}
       expandedRowRender={(record) => record.email}
       expandProps={{
-        icon: ({ expanded, record }) =>
+        icon: ({ expanded, record, ...restProps }) =>
           expanded ? (
-            <button onClick={() => removeExpandedRowKey(record.key)}>
+            <button {...restProps}>
               <IconDown />
             </button>
           ) : (
-            <button onClick={() => addExpandedRowKey(record.key)}>
+            <button {...restProps}>
               <IconRight />
             </button>
           ),

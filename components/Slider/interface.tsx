@@ -129,8 +129,8 @@ export interface SliderProps {
    */
   formatTooltip?: (value: number) => string | ReactNode;
   /**
-   * @zh 反向坐标轴
-   * @en Reverse axis
+   * @zh 反向坐标轴, `rtl` 场景默认为 `true`
+   * @en Reverse axis, default `true` in `rtl`
    */
   reverse?: boolean;
   /**

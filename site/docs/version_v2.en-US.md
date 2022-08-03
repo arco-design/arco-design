@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.38.0
+
+2022-07-29
+
+### 🆕 Feature
+
+- Component `TimePicker` add `triggerElement` prop to support custom trigger element.([#1199](https://github.com/arco-design/arco-design/pull/1199))
+
+### 🐛 BugFix
+
+- Fix the position jitter when the `Mentions` dropdown popup appears.([#1222](https://github.com/arco-design/arco-design/pull/1222))
+- Fix `Image.Preview`'s `onVisibleChange` not triggering when preview is opened.([#1219](https://github.com/arco-design/arco-design/pull/1219))
+- Fix the bug that the `onChange` callback of the paginator does not trigger after `Table` is passed to `pagination` alone([#1217](https://github.com/arco-design/arco-design/pull/1217))
+- Fixed a bug where the `Trigger` component could not display the popup in React 18 strict mode.([#1215](https://github.com/arco-design/arco-design/pull/1215))
+- Fixed the bug that `Carousel` would slide to the first page when clicking in the middle of indicators.([#1210](https://github.com/arco-design/arco-design/pull/1210))
+- Fixed the bug that child elements of `Carousel` could not fill up the height of the component.([#1210](https://github.com/arco-design/arco-design/pull/1210))
+- Fixed a bug where the label of the selected item was not displayed properly when the `TreeSelect` component enabled multiple checkbox selection and remote search in controlled mode.([#1207](https://github.com/arco-design/arco-design/pull/1207))
+- Fixed a bug where clicking the close button of an `Alert` component accidentally triggered the `submit` event of an external `form`.([#1205](https://github.com/arco-design/arco-design/pull/1205))
+- Fix `DatePicker.RangePicker` can't change mode from month to year.([#1188](https://github.com/arco-design/arco-design/pull/1188))
+- Fixed  flickering "no data" placeholder when `allowCreate` in `Select`.([#1184](https://github.com/arco-design/arco-design/pull/1184))
+
 ## 2.37.2
 
 2022-07-22

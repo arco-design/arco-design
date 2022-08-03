@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fix the bug that the `onChange` callback of the paginator does not trigger after `Table` is passed to `pagination` alone([#1217](https://github.com/arco-design/arco-design/pull/1217))
+
 ## 2.37.2
 
 2022-07-22

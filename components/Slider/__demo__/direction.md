@@ -15,18 +15,17 @@ Display vertical slider by setting `vertical={true}`.
 
 ```js
 import { useState } from 'react';
-import { Slider } from '@arco-design/web-react';
+import { Slider, Space } from '@arco-design/web-react';
 import { IconSound, IconMute } from '@arco-design/web-react/icon';
 
 function App() {
   const [value, setValue] = useState(10);
   return (
-    <div style={{ maxWidth: '60%', minWidth: '20%' }}>
+    <Space style={{ maxWidth: '60%', minWidth: '20%' }} size={100}>
       <div
         style={{
           width: 22,
           textAlign: 'center',
-          marginRight: 92,
           display: 'inline-block',
         }}
       >
@@ -45,7 +44,7 @@ function App() {
         }}
         style={{ verticalAlign: 'top' }}
       />
-    </div>
+    </Space>
   );
 }
 

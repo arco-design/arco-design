@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.38.0
+
+2022-07-29
+
+### 🆕 功能升级
+
+- `TimePicker` 组件添加 `triggerElement` 属性支持自定义触发器。([#1199](https://github.com/arco-design/arco-design/pull/1199))
+
+### 🐛 问题修复
+
+- 修复 `Mentions` 组件下拉弹窗出现时的位置抖动。([#1222](https://github.com/arco-design/arco-design/pull/1222))
+- 修复 `Image.Preview` 的 `onVisibleChange` 回调在打开预览不触发的问题。([#1219](https://github.com/arco-design/arco-design/pull/1219))
+- 修复在 `Table` 单独传入 `pagination` 后，分页器的 `onChange` 回调不触发的 bug([#1217](https://github.com/arco-design/arco-design/pull/1217))
+- 修复 `Trigger` 组件在 React 18 严格模式下弹出层无法显示的 bug。([#1215](https://github.com/arco-design/arco-design/pull/1215))
+- 修复 `Carousel` 点击指示器中间的区域时会滑动到第一页的 bug。([#1210](https://github.com/arco-design/arco-design/pull/1210))
+- 修复 `Carousel` 内的子元素无法撑起组件高度的 bug。([#1210](https://github.com/arco-design/arco-design/pull/1210))
+- 修复 `TreeSelect` 组件在受控模式下开启复选框多选且远程搜索时，已选中项存在 label 未正常展示的 bug。([#1207](https://github.com/arco-design/arco-design/pull/1207))
+- 修复点击 `Alert` 组件的关闭按钮误触外部 `form` 的 `submit` 事件的 bug。([#1205](https://github.com/arco-design/arco-design/pull/1205))
+- 修复 `DatePicker.RangePicker` 点击头部月份再点击年份无响应的问题。([#1188](https://github.com/arco-design/arco-design/pull/1188))
+- 修复 `Select` 在 `allowCreate` 时下拉框闪烁空状态的问题。([#1184](https://github.com/arco-design/arco-design/pull/1184))
+
 ## 2.37.2
 
 2022-07-22

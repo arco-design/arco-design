@@ -1,3 +1,11 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fix `DatePicker.RangePicker` can't change mode from month to year.([#1188](https://github.com/arco-design/arco-design/pull/1188))
+
 ## 2.36.0
 
 2022-06-24
