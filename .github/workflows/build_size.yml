@@ -10,8 +10,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
+      - name: submodule
+        run: git submodule init && git submodule update
+
       - name: install
-        run: yarn && cd site && yarn && cd ..
+        run: yarn && cd site/main && yarn && cd ../..
 
       - name: setup node
         uses: actions/setup-node@v2
