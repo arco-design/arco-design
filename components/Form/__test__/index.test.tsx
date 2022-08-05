@@ -1,5 +1,4 @@
 import React from 'react';
-// import { mount } from 'enzyme';
 import { render, fireEvent } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import Form from '..';

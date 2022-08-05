@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import Portal from '..';
-import { $ } from '../../../tests/util';
+import { $, render } from '../../../tests/util';
 
 describe('Portal', () => {
   beforeEach(() => {
@@ -11,7 +10,7 @@ describe('Portal', () => {
   });
 
   it('test default getContainer', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <div className="root">
         <Portal forceRender>
           <div className="content">render to document.body</div>
@@ -24,7 +23,7 @@ describe('Portal', () => {
   });
 
   it('test getContainer', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <div className="root">
         <Portal forceRender getContainer={() => document.getElementById('root')}>
           <div className="content">render to #container</div>
