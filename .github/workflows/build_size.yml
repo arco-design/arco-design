@@ -10,11 +10,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: submodule
-        run: git submodule init && git submodule update
-
       - name: install
-        run: yarn && cd site/main && yarn && cd ../..
+        run: yarn run dependencies
 
       - name: setup node
         uses: actions/setup-node@v2
@@ -27,7 +24,7 @@ jobs:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           build-script: 'prepublishOnly'
           pattern: './{dist,es,lib,icon}/**/*.{js,css}'
-          clean-script: 'init'
+          clean-script: 'dependencies'
 
       - name: build:cjs
         run: yarn run build:cjs
