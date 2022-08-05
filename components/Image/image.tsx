@@ -48,6 +48,8 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     onClick,
     index,
     _index,
+    onError,
+    onLoad,
     ...restProps
   } = props;
 
@@ -98,12 +100,14 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const refImg = useRef<HTMLImageElement>();
 
-  function onImgLoaded() {
+  function onImgLoaded(e) {
     setStatus('loaded');
+    onLoad && onLoad(e);
   }
 
-  function onImgLoadError() {
+  function onImgLoadError(e) {
     setStatus('error');
+    onError && onError(e);
   }
 
   function onImgClick(e) {

@@ -28,8 +28,12 @@ describe('Image', () => {
   };
 
   it('render image with error src', () => {
-    const wrapper = render(<Image src="error" />);
-    updateImg(wrapper, 'error');
+    const mockError = jest.fn();
+    const mockLoad = jest.fn();
+    const wrapper = render(<Image src="error" onError={mockError} onLoad={mockLoad} />);
+    act(() => {
+      updateImg(wrapper, 'error');
+    });
     expect(wrapper.find('.arco-image-error')).toHaveLength(1);
     act(() => {
       wrapper.find('img')[0].setAttribute('src', imgSrc);
@@ -78,5 +82,30 @@ describe('Image', () => {
       fireEvent.click(wrapper.find('.extra-btn')[0]);
     });
     expect(mockClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('The image common property behaves normally', () => {
+    const mockLoad = jest.fn();
+    const mockMouseEnter = jest.fn();
+    const title = 'image_title';
+    const wrapper = render(
+      <Image
+        src={imgSrc}
+        width={200}
+        onLoad={mockLoad}
+        onMouseEnter={mockMouseEnter}
+        title={title}
+      />
+    );
+    act(() => {
+      updateImg(wrapper);
+    });
+    expect(mockLoad).toHaveBeenCalledTimes(1);
+    expect(wrapper.find(`img[title=${title}]`)).toHaveLength(1);
+
+    act(() => {
+      updateImg(wrapper, 'mouseEnter');
+    });
+    expect(mockMouseEnter).toHaveBeenCalledTimes(1);
   });
 });
