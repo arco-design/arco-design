@@ -1,3 +1,11 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- Fix the bug that form value won't update when the parameter of `setFieldsValue` is empty array or empty object.([#1186](https://github.com/arco-design/arco-design/pull/1186))
+
 ## 2.37.0
 
 2022-07-08

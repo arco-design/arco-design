@@ -1,3 +1,11 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- fix `accept=*` does not work in `Upload`([#1233](https://github.com/arco-design/arco-design/pull/1233))
+
 ## 2.37.0
 
 2022-07-08

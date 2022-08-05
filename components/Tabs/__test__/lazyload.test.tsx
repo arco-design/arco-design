@@ -1,8 +1,8 @@
 import React from 'react';
+import { fireEvent } from '@testing-library/dom';
 import mountTest from '../../../tests/mountTest';
 import Tabs, { TabsProps } from '..';
 import { render } from '../../../tests/util';
-import { fireEvent } from '@testing-library/dom';
 
 mountTest(Tabs);
 

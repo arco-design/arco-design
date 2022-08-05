@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.38.1
+
+2022-08-05
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.WeekPicker` 输入框和面板显示的周不一致的 bug。([#1238](https://github.com/arco-design/arco-design/pull/1238))
+- 修复 `Image` 组件传入原生属性 `onLoad`, `onError` 不触发的 bug([#1236](https://github.com/arco-design/arco-design/pull/1236))
+- 修复 `Upload` 组件设置`accept=*`时失效的问题([#1233](https://github.com/arco-design/arco-design/pull/1233))
+- 修复 `Form` 组件 `setFieldsValue` 传入的值为空数组或空对象时，设置未生效的问题。([#1186](https://github.com/arco-design/arco-design/pull/1186))
+
 ## 2.38.0
 
 2022-07-29

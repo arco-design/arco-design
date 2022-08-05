@@ -1,3 +1,11 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Image` component passed the native property `onLoad`, `onError` was not triggered([#1236](https://github.com/arco-design/arco-design/pull/1236))
+
 ## 2.38.0
 
 2022-07-29

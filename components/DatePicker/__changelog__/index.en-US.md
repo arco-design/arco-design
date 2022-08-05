@@ -1,3 +1,11 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- Fix the bug of inconsistent week display between `DatePicker.WeekPicker` input box and panel.([#1238](https://github.com/arco-design/arco-design/pull/1238))
+
 ## 2.38.0
 
 2022-07-29
