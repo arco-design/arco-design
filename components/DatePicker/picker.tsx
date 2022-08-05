@@ -27,6 +27,7 @@ import PickerContext from './context';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
 import { getDefaultWeekStart, getLocaleDayjsValue } from './util';
+import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(props) {
   const { format, picker, showTime } = props;
@@ -573,6 +574,7 @@ const Picker = (baseProps: InnerPickerProps) => {
         >
           {triggerElement || (
             <DateInput
+              {...pickDataAttributes(props)}
               {...baseInputProps}
               ref={refInput}
               placeholder={placeholder || DATEPICKER_LOCALE.placeholder[mode]}

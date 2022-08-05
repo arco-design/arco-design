@@ -23,3 +23,12 @@ exports[`ConfigProvider componentConfig.Tree set className globally and componen
   tabindex="0"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Tree set data-* property 1`] = `
+<div
+  class="arco-tree"
+  data-test-name="Tree"
+  role="tree"
+  tabindex="0"
+/>
+`;

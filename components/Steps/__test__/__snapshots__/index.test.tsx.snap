@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Steps set className globally and compone
   class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Steps set data-* property 1`] = `
+<div
+  class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default"
+  data-test-name="Steps"
+/>
+`;

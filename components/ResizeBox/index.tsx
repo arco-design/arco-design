@@ -6,6 +6,7 @@ import React, {
   useState,
   useRef,
 } from 'react';
+import omit from '../_util/omit';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { on, off } from '../_util/dom';
@@ -66,6 +67,7 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
     resizeTriggers,
     width: propWidth,
     height: propHeight,
+    ...rest
   } = props;
 
   const realDirections = rtl ? directions.map((dir) => getOppositeDirection(dir)) : directions;
@@ -214,7 +216,12 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
   };
   const Tag = component as any;
   return (
-    <Tag style={wrapperStyles} className={classNames} ref={wrapperRef}>
+    <Tag
+      {...omit(rest, ['onMovingStart', 'onMoving', 'onMovingEnd'])}
+      style={wrapperStyles}
+      className={classNames}
+      ref={wrapperRef}
+    >
       {children}
       {realDirections.map((direction) => {
         if (allDirections.indexOf(direction) !== -1) {

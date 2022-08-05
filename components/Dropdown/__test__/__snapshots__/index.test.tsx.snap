@@ -101,3 +101,38 @@ exports[`ConfigProvider componentConfig.Dropdown.Button set className globally a
   </button>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Dropdown.Button set data-* property 1`] = `
+<div
+  class="arco-btn-group"
+  data-test-name="Dropdown.Button"
+>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  />
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="arco-icon arco-icon-more"
+      fill="none"
+      focusable="false"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
+    >
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+        fill="currentColor"
+        stroke="none"
+      />
+      <path
+        d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+      />
+    </svg>
+  </button>
+</div>
+`;

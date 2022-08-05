@@ -53,3 +53,21 @@ exports[`ConfigProvider componentConfig.Descriptions set className globally and 
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Descriptions set data-* property 1`] = `
+<div
+  class="arco-descriptions arco-descriptions-layout-horizontal"
+>
+  <div
+    class="arco-descriptions-body"
+  >
+    <table
+      cellpadding="0"
+      cellspacing="0"
+      class="arco-descriptions-table"
+    >
+      <tbody />
+    </table>
+  </div>
+</div>
+`;

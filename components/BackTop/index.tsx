@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, forwardRef, useState, useEffect, useContext, memo } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import BTween from 'b-tween';
+import { pickDataAttributes } from '../_util/pick';
 import cs from '../_util/classNames';
 import IconToTop from '../../icon/react-icon/IconToTop';
 import { ConfigContext } from '../ConfigProvider';
@@ -69,6 +70,7 @@ function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
 
   return (
     <div
+      {...pickDataAttributes(props)}
       ref={ref}
       className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, props.className)}
       style={props.style}

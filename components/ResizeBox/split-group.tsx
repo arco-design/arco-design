@@ -12,12 +12,21 @@ import cs from '../_util/classNames';
 import { isFunction, isNumber, isUndefined, isObject, isString } from '../_util/is';
 import ResizeTrigger from './resize-trigger';
 import { on, off } from '../_util/dom';
+import omit from '../_util/omit';
 
 const DIRECTION_HORIZONTAL = 'horizontal';
 const DIRECTION_VERTICAL = 'vertical';
 
 function SplitGroup(props: SplitGroupProps, ref) {
-  const { panes, style, className, component = 'div', direction = 'horizontal', icon } = props;
+  const {
+    panes,
+    style,
+    className,
+    component = 'div',
+    direction = 'horizontal',
+    icon,
+    ...rest
+  } = props;
   const { getPrefixCls, rtl } = useContext(ConfigContext);
   const defaultOffset = 1 / panes.length;
   const wrapperRef = useRef<HTMLElement>();
@@ -308,7 +317,12 @@ function SplitGroup(props: SplitGroupProps, ref) {
   }, [offsets]);
 
   return (
-    <Tag style={style} className={classNames} ref={wrapperRef}>
+    <Tag
+      {...omit(rest, ['onMovingStart', 'onPaneResize', 'onMoving', 'onMovingEnd'])}
+      style={style}
+      className={classNames}
+      ref={wrapperRef}
+    >
       {panes.map((pane, index) => {
         const { content, disabled, trigger, resizable = true, collapsible = {} } = pane;
         const { hasPrev, hasNext } = getCollapsedConfig(index);

@@ -4,13 +4,13 @@ import { ConfigContext } from '../ConfigProvider';
 import { ButtonGroupProps } from './interface';
 
 function Group(props: ButtonGroupProps, ref) {
-  const { className, style, children } = props;
+  const { className, style, children, ...rest } = props;
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('btn-group');
   const classNames = cs(prefixCls, className);
 
   return (
-    <div ref={ref} className={classNames} style={style}>
+    <div ref={ref} className={classNames} style={style} {...rest}>
       {children}
     </div>
   );

@@ -68,3 +68,27 @@ exports[`ConfigProvider componentConfig.InputTag set className globally and comp
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.InputTag set data-* property 1`] = `
+<div
+  class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+  data-test-name="InputTag"
+>
+  <div
+    class="arco-input-tag-view"
+  >
+    <div
+      class="arco-input-tag-inner"
+    >
+      <input
+        autocomplete="off"
+        class="arco-input-tag-input arco-input-tag-input-size-default"
+        value=""
+      />
+      <span
+        class="arco-input-tag-input-mirror"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -5,6 +5,7 @@ import DateInputRange from '../_class/picker/input-range';
 import { RangePickerProps, ShortcutType, ModeType } from './interface';
 import { isArray, isDayjs, isObject, isUndefined } from '../_util/is';
 import cs from '../_util/classNames';
+import { pickDataAttributes } from '../_util/pick';
 import { ConfigContext } from '../ConfigProvider';
 import {
   getDayjsValue,
@@ -847,6 +848,7 @@ const Picker = (baseProps: RangePickerProps) => {
         >
           {triggerElement || (
             <DateInputRange
+              {...pickDataAttributes(props)}
               {...baseInputProps}
               ref={refInput}
               placeholder={placeholders}

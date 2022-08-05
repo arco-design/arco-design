@@ -6,6 +6,7 @@ import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { PaginationProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 export interface PaginationState {
   current: number;
@@ -304,7 +305,7 @@ function Pagination(baseProps: PaginationProps, ref) {
   }
 
   return (
-    <div className={classNames} style={style} ref={ref}>
+    <div {...pickDataAttributes(props)} className={classNames} style={style} ref={ref}>
       {totalElement}
       {renderPager}
       <PageOption

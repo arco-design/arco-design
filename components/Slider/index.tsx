@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useContext, CSSProperties, useRef, useMemo } from 'react';
 import { plus, times, divide } from 'number-precision';
+import omit from '../_util/omit';
 import SliderButton from './button';
 import Marks from './marks';
 import Dots from './dots';
@@ -49,6 +50,7 @@ function Slider(baseProps: SliderProps, ref) {
     showInput,
     reverse,
     getIntervalConfig,
+    ...rest
   } = props;
 
   const range = !!propRange;
@@ -307,6 +309,14 @@ function Slider(baseProps: SliderProps, ref) {
 
   return (
     <div
+      {...omit(rest, [
+        'defaultValue',
+        'value',
+        'onChange',
+        'getTooltipContainer',
+        'formatTooltip',
+        'onAfterChange',
+      ])}
       className={cs(
         prefixCls,
         {

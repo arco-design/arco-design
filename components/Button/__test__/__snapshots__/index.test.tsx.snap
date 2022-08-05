@@ -20,3 +20,36 @@ exports[`ConfigProvider componentConfig.Button set className globally and compon
   type="button"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Button set data-* property 1`] = `
+<button
+  class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+  data-test-name="Button"
+  type="button"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Button.Group default 1`] = `
+<div
+  class="arco-btn-group"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Button.Group set className globally 1`] = `
+<div
+  class="arco-btn-group"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Button.Group set className globally and component set className itself. 1`] = `
+<div
+  class="arco-btn-group component-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Button.Group set data-* property 1`] = `
+<div
+  class="arco-btn-group"
+  data-test-name="Button.Group"
+/>
+`;

@@ -18,10 +18,11 @@ import IconClose from '../../icon/react-icon/IconClose';
 import { isObject, isArray } from '../_util/is';
 import getHotkeyHandler from '../_util/getHotkeyHandler';
 import { Backspace } from '../_util/keycode';
-import { pickTriggerPropsFromRest } from '../_util/constant';
+// import { pickTriggerPropsFromRest } from '../_util/constant';
 import { ObjectValueType, InputTagProps, ValueChangeReason } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import Draggable from '../_class/Draggable';
+import omit from '../_util/omit';
 
 const CSS_TRANSITION_DURATION = 300;
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
@@ -119,6 +120,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     onRemove,
     onClear,
     onClick,
+    ...rest
   } = props;
   const prefixCls = getPrefixCls('input-tag');
   const size = 'size' in props ? props.size : ctxSize;
@@ -336,7 +338,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
   return (
     <div
-      {...pickTriggerPropsFromRest(props)}
+      {...omit(rest, ['size', 'defaultValue', 'value', 'inputValue'])}
       style={style}
       className={cs(
         prefixCls,

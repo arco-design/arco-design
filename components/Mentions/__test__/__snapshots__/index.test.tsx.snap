@@ -53,3 +53,22 @@ exports[`ConfigProvider componentConfig.Mentions set className globally and comp
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Mentions set data-* property 1`] = `
+<div
+  class="arco-mentions arco-mentions-align-textarea"
+>
+  <textarea
+    class="arco-textarea arco-mentions-textarea"
+    data-test-name="Mentions"
+    rows="1"
+  />
+  <div
+    class="arco-mentions-measure"
+  >
+    <span
+      class="arco-mentions-measure-trigger"
+    />
+  </div>
+</div>
+`;

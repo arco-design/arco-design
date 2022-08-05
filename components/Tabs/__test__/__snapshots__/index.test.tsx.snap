@@ -80,3 +80,31 @@ exports[`ConfigProvider componentConfig.Tabs set className globally and componen
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Tabs set data-* property 1`] = `
+<div
+  class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
+  data-test-name="Tabs"
+>
+  <div
+    class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+  >
+    <div
+      class="arco-tabs-header-scroll"
+    >
+      <div
+        class="arco-tabs-header-wrapper"
+      >
+        <div
+          class="arco-tabs-header"
+          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+        >
+          <div
+            class="arco-tabs-header-ink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

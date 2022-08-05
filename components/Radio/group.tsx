@@ -6,6 +6,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { RadioGroupProps, RadioGroupContextProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 export const RadioGroupContext = createContext<RadioGroupContextProps>({
   type: 'radio',
@@ -65,7 +66,7 @@ function Group(baseProps: PropsWithChildren<RadioGroupProps>) {
   };
   return (
     <RadioGroupContext.Provider value={contextProp}>
-      <div className={classNames} style={style}>
+      <div className={classNames} style={style} {...pickDataAttributes(props)}>
         {options && isArray(options)
           ? options.map((option, index) => {
               if (isObject(option)) {

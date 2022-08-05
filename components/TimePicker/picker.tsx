@@ -21,6 +21,7 @@ import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
 import PickerContext from './context';
 import { getFormatTime } from './util';
+import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(props) {
   return props.format || 'HH:mm:ss';
@@ -288,6 +289,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     suffixIcon,
     editable,
     allowClear,
+    ...pickDataAttributes(props),
   };
 
   return (

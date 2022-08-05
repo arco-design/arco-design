@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { on, off, contains, getScrollElements } from '../_util/dom';
 import { isFunction } from '../_util/is';
+import { pickDataAttributes } from '../_util/pick';
 import { Esc } from '../_util/keycode';
 import Portal from './portal';
 import ResizeObserver from '../_util/resizeObserver';
@@ -1023,6 +1024,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             }
             {...popupEventProps}
             className={popupClassName}
+            {...pickDataAttributes(this.props)}
           >
             <popupChildren.type
               ref={popupChildren.ref}

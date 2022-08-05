@@ -12,6 +12,7 @@ import VirtualList, { VirtualListHandle } from '../_class/VirtualList';
 import { ListProps } from './interface';
 import scrollIntoView from '../_util/scrollIntoView';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const DEFAULT_PAGE_SIZE = 10;
 const DEFAULT_PAGE_CURRENT = 1;
@@ -274,6 +275,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
         )}
       >
         <div
+          {...pickDataAttributes(props)}
           style={style}
           className={cs(
             prefixCls,

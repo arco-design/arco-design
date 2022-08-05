@@ -38,3 +38,17 @@ exports[`ConfigProvider componentConfig.Image set className globally and compone
   />
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Image set data-* property 1`] = `
+<div
+  class="arco-image"
+>
+  <img
+    class="arco-image-img"
+    data-test-name="Image"
+  />
+  <div
+    class="arco-image-overlay"
+  />
+</div>
+`;

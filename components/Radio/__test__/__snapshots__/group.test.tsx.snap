@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Radio.Group set className globally and c
   class="arco-radio-group arco-radio-size-default arco-radio-mode-outline component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Radio.Group set data-* property 1`] = `
+<div
+  class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+  data-test-name="Radio.Group"
+/>
+`;

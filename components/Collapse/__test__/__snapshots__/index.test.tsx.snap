@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Collapse set className globally and comp
   class="arco-collapse arco-collapse-border component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Collapse set data-* property 1`] = `
+<div
+  class="arco-collapse arco-collapse-border"
+  data-test-name="Collapse"
+/>
+`;

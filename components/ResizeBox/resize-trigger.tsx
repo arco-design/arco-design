@@ -9,6 +9,7 @@ import IconCaretLeft from '../../icon/react-icon/IconCaretLeft';
 import IconCaretDown from '../../icon/react-icon/IconCaretDown';
 import IconCareUp from '../../icon/react-icon/IconCaretUp';
 import { isFunction, isObject } from '../_util/is';
+import omit from '../_util/omit';
 
 export interface ResizeTriggerProps {
   style?: CSSProperties;
@@ -50,6 +51,7 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
     collapsible = {},
     resizable = true,
     renderChildren,
+    ...rest
   } = props;
   const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('resizebox-trigger');
@@ -152,7 +154,7 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
 
   return (
     <ResizeObserver onResize={onResize}>
-      <div className={classNames} onMouseDown={onMouseDown}>
+      <div {...omit(rest, ['style'])} className={classNames} onMouseDown={onMouseDown}>
         {isFunction(renderChildren)
           ? renderChildren(prev, trigger, next)
           : children || renderIcon()}

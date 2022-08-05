@@ -20,3 +20,11 @@ exports[`ConfigProvider componentConfig.Breadcrumb set className globally and co
   role="list"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Breadcrumb set data-* property 1`] = `
+<div
+  class="arco-breadcrumb"
+  data-test-name="Breadcrumb"
+  role="list"
+/>
+`;

@@ -7,6 +7,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
+import { pickDataAttributes } from '../_util/pick';
 import { isUndefined, isObject, isFunction } from '../_util/is';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -511,6 +512,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       aria-disabled={disabled}
       aria-controls={ariaControls}
       {...include(rest, ['onClick', 'onMouseEnter', 'onMouseLeave'])}
+      {...pickDataAttributes(rest)}
       ref={refWrapper}
       tabIndex={disabled ? -1 : 0}
       style={style}

@@ -152,3 +152,55 @@ exports[`ConfigProvider componentConfig.Cascader set className globally and comp
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Cascader set data-* property 1`] = `
+<div
+  aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-4"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  class="arco-cascader arco-cascader-single arco-cascader-size-default"
+  data-test-name="Cascader"
+  role="combobox"
+  tabindex="0"
+>
+  <div
+    class="arco-cascader-view"
+    title=""
+  >
+    <input
+      autocomplete="off"
+      class="arco-cascader-view-input"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      aria-hidden="true"
+      class="arco-cascader-view-value arco-cascader-hidden"
+    />
+    <div
+      aria-hidden="true"
+      class="arco-cascader-suffix"
+    >
+      <div
+        class="arco-cascader-arrow-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-down"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

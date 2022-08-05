@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Link set className globally and componen
   class="arco-link component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Link set data-* property 1`] = `
+<span
+  class="arco-link"
+  data-test-name="Link"
+/>
+`;

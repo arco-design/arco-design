@@ -34,6 +34,7 @@ import useUpdate from '../_util/hooks/useUpdate';
 import ResizeObserver from '../_util/resizeObserver';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
+import { pickDataAttributes } from '../_util/pick';
 
 export interface TableInstance {
   getRootDomElement: () => HTMLDivElement;
@@ -918,7 +919,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   );
 
   return (
-    <div ref={refTable} style={style} className={classNames}>
+    <div ref={refTable} style={style} className={classNames} {...pickDataAttributes(props)}>
       <Spin element={loadingElement || <Spin />} {...loading}>
         {pagination !== false && pageData.length !== 0 && isPaginationTop && paginationEle}
         {renderTable()}

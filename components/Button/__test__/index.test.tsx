@@ -7,12 +7,13 @@ import Button from '..';
 
 mountTest(Button);
 componentConfigTest(Button, 'Button');
+componentConfigTest(Button.Group, 'Button.Group');
 
 describe('button', () => {
   it('click callback correctly', () => {
     const mockFn = jest.fn();
     const component = render(<Button onClick={mockFn} />);
-    const button = component.querySelector('button');
+    const button = component.querySelector('button') as HTMLElement;
     fireEvent.click(button);
     const mockFnCallLength = mockFn.mock.calls.length;
     expect(mockFnCallLength).toBe(1);
@@ -57,12 +58,12 @@ describe('button', () => {
     );
     expect(button.find('button')).toHaveLength(0);
     expect(button.find('a')).toHaveLength(1);
-    expect(button.querySelector('a').getAttribute('href')).not.toBeUndefined();
+    expect(button.querySelector('a')?.getAttribute('href')).not.toBeUndefined();
 
     act(() => {
       button.rerender(<Button type="primary" href="https://arco.design" disabled />);
     });
 
-    expect(button.querySelector('a').getAttribute('href')).toBeNull();
+    expect(button.querySelector('a')?.getAttribute('href')).toBeNull();
   });
 });

@@ -9,8 +9,8 @@ import Year from './year';
 import Header from './header/header';
 import PanelHeader from './header/panel-header';
 import useMergeProps from '../_util/hooks/useMergeProps';
-
 import { getDayjsValue, getNow, methods } from '../_util/dayjs';
+import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(mode: 'day' | 'week' | 'month' | 'year', panel?: boolean) {
   return mode === 'month' || (mode === 'year' && !panel) ? 'YYYY-MM-DD' : 'YYYY-MM';
@@ -151,7 +151,7 @@ function Calendar(baseProps: CalendarProps) {
   };
 
   return (
-    <div className={classNames} style={{ ...style, ...baseStyle }}>
+    <div className={classNames} style={{ ...style, ...baseStyle }} {...pickDataAttributes(props)}>
       {typeof headerRender === 'function' ? (
         headerRender({
           value: mergedValue,

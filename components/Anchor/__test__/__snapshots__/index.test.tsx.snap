@@ -53,3 +53,22 @@ exports[`ConfigProvider componentConfig.Anchor set className globally and compon
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Anchor set data-* property 1`] = `
+<div
+  class=""
+>
+  <div
+    class=""
+  >
+    <div
+      class="arco-anchor"
+      data-test-name="Anchor"
+    >
+      <div
+        class="arco-anchor-list"
+      />
+    </div>
+  </div>
+</div>
+`;

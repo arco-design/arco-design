@@ -55,6 +55,7 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
     targetContainer,
     children,
     onChange,
+    ...rest
   } = props;
 
   const [state, setState] = useState<{
@@ -169,7 +170,7 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
 
   return (
     <ResizeObserver onResize={updatePosition}>
-      <div className={cs(className)} style={style} ref={wrapperRef}>
+      <div className={cs(className)} style={style} ref={wrapperRef} {...rest}>
         {isFixed && <div style={sizeStyles} />}
         <div
           className={classNames}
