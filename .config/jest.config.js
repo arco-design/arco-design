@@ -7,6 +7,8 @@ const BASE_JEST_CONFIG = {
     '^@arco-design/web-react/(.+)$': '<rootDir>/$1',
     '^@arco-design/web-react$': '<rootDir>',
     '^test-utils$': '<rootDir>/tests/util',
+    '^react$': '<rootDir>/node_modules/react',
+    '^react-dom$': '<rootDir>/node_modules/react-dom',
   },
 };
 
