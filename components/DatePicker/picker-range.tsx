@@ -22,7 +22,7 @@ import IconCalendarClock from '../../icon/react-icon/IconCalendarClock';
 import RangePickerPanel from './panels/range';
 import Footer from './panels/footer';
 import Shortcuts from './panels/shortcuts';
-import { getAvailableDayjsLength, getDefaultWeekStart } from './util';
+import { getAvailableDayjsLength, getDefaultWeekStart, getLocaleDayjsValue } from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
@@ -451,7 +451,9 @@ const Picker = (baseProps: RangePickerProps) => {
   function onHandleChange(newValue: Dayjs[] | undefined) {
     if (isDayjsArrayChange(mergedValue, newValue)) {
       const localValue = isArray(newValue)
-        ? newValue.map((v) => toLocal(v, utcOffset, timezone))
+        ? newValue.map((v) =>
+            getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
+          )
         : undefined;
       onChange &&
         onChange(
@@ -497,10 +499,11 @@ const Picker = (baseProps: RangePickerProps) => {
   // Callback when click the confirm button
   function onClickConfirmBtn() {
     onConfirmValue();
+    const localePanelValue = panelValue.map((v) => getLocaleDayjsValue(v, locale.dayjsLocale));
     onOk &&
       onOk(
-        panelValue.map((v) => v && v.format(format)),
-        panelValue
+        localePanelValue.map((v) => v && v.format(format)),
+        localePanelValue
       );
   }
 
@@ -581,7 +584,9 @@ const Picker = (baseProps: RangePickerProps) => {
     setValueShow(newValueShow);
     setValueShowHover(undefined);
     const sortedValues = getSortedDayjsArray(newValueShow);
-    const zoneValues = sortedValues.map((v) => toLocal(v, utcOffset, timezone));
+    const zoneValues = sortedValues.map((v) =>
+      getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
+    );
     onSelect &&
       onSelect(
         zoneValues.map((v) => v && v.format(format)),
