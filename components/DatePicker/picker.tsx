@@ -26,7 +26,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import PickerContext from './context';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
-import { getDefaultWeekStart } from './util';
+import { getDefaultWeekStart, getLocaleDayjsValue } from './util';
 
 function getFormat(props) {
   const { format, picker, showTime } = props;
@@ -257,8 +257,9 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onClickConfirmBtn() {
+    const pv = getLocaleDayjsValue(panelValue, locale.dayjsLocale);
     onConfirmValue();
-    onOk && onOk(panelValue && panelValue.format(format), panelValue);
+    onOk && onOk(pv && pv.format(format), pv);
   }
 
   function onConfirmValue() {
@@ -275,10 +276,16 @@ const Picker = (baseProps: InnerPickerProps) => {
       setValueShow(newTime);
       setPageShowDate(newTime);
 
-      const localTime = toLocal(newTime, utcOffset, timezone);
+      const localTime = getLocaleDayjsValue(
+        toLocal(newTime, utcOffset, timezone),
+        locale.dayjsLocale
+      );
       onSelect && onSelect(localTime.format(format), localTime);
     } else {
-      const localTime = toLocal(date, utcOffset, timezone);
+      const localTime = getLocaleDayjsValue(
+        toLocal(date, utcOffset, timezone).locale(locale.dayjsLocale),
+        locale.dayjsLocale
+      );
       onSelect && onSelect(localTime ? localTime.format(format) : undefined, localTime);
       setValue(date);
       onHandleChange(date);
@@ -288,7 +295,10 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   function onHandleChange(newValue: Dayjs | undefined) {
     if (isDayjsChange(newValue, mergedValue)) {
-      const localValue = toLocal(newValue, utcOffset, timezone);
+      const localValue = getLocaleDayjsValue(
+        toLocal(newValue, utcOffset, timezone),
+        locale.dayjsLocale
+      );
       onChange && onChange(localValue ? localValue.format(format) : undefined, localValue);
     }
   }
@@ -298,7 +308,10 @@ const Picker = (baseProps: InnerPickerProps) => {
     const newValueShow = getValueWithTime(_valueShow, time);
     setValueShow(newValueShow);
 
-    const localNewValueShow = toLocal(newValueShow, utcOffset, timezone);
+    const localNewValueShow = getLocaleDayjsValue(
+      toLocal(newValueShow, utcOffset, timezone),
+      locale.dayjsLocale
+    );
     onSelect && onSelect(localNewValueShow.format(format), localNewValueShow);
   }
 
@@ -370,7 +383,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onSelectNow() {
-    const now = getNow(utcOffset, timezone);
+    const now = getLocaleDayjsValue(getNow(utcOffset, timezone), locale.dayjsLocale);
     handlePickerValueChange(now);
     onHandleSelect(now.format(format), now, true);
   }

@@ -146,10 +146,15 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
 
   const timeFormat = (isObject(showTime) && showTime.format) || getTimeFormat(format);
 
+  const dayjsLocale = globalLocale.dayjsLocale;
+
   // page data list
   const rows = useMemo(() => {
-    return getAllDaysByTime({ ...props, dayStartOfWeek: weekStart }, pageShowDate);
-  }, [pageShowDate.toString(), weekStart]);
+    return getAllDaysByTime(
+      { ...props, dayStartOfWeek: weekStart },
+      pageShowDate.locale(dayjsLocale)
+    );
+  }, [pageShowDate.toString(), weekStart, dayjsLocale]);
 
   let disabledTimeProps;
 
