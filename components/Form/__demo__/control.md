@@ -136,6 +136,13 @@ function Demo() {
         }}
         onValuesChange={onValuesChange}
         scrollToFirstError
+        autoComplete={
+          typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+          ? 
+          'off' 
+          : 
+          false
+        }
       >
         <FormItem label="Form size">
           <Radio.Group type="button" value={size} onChange={setSize}>

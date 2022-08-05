@@ -26,7 +26,16 @@ function Demo() {
 
   return (
     <div>
-      <Form form={form} >
+      <Form 
+        form={form} 
+        autoComplete={
+          typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+          ? 
+          'off' 
+          : 
+          false
+        }
+      >
         <Form.Item label="Name" field="name">
           <Input  placeholder="enter name"/>
         </Form.Item>

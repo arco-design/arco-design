@@ -44,6 +44,13 @@ function Demo() {
       style={{ width: 600 }}
       initialValues={{ name: 'admin' }}
       disabled={disabled}
+      autoComplete={
+        typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+        ? 
+        'off' 
+        : 
+        false
+      }
       onValuesChange={(v, vs) => {
         console.log(v, vs);
       }}

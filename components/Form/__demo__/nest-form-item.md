@@ -29,6 +29,13 @@ function Demo() {
       <Form
         ref={formRef}
         style={{ maxWidth: 500 }}
+        autoComplete={
+          typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+          ? 
+          'off' 
+          : 
+          false
+        }
         initialValues={{
           city: 'Beijing'
         }}

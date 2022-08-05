@@ -28,6 +28,13 @@ function Demo() {
       wrapperCol={{
         span: 24
       }}
+      autoComplete={
+        typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+        ? 
+        'off' 
+        : 
+        false
+      }
       onValuesChange={(v, vs) => {
         console.log(v, vs);
       }}

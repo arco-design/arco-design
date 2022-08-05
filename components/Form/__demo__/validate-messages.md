@@ -28,6 +28,13 @@ function Demo() {
   return (
     <Form
       form={form}
+      autoComplete={
+        typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+        ? 
+        'off' 
+        : 
+        false
+      }
       style={{ width: 600 }}
       validateMessages={{
         required: (_, { label }) => `必须填写 ${label}`,

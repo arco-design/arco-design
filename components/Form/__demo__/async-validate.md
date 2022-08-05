@@ -28,6 +28,13 @@ function Demo() {
   return (
     <Form
       form={form}
+      autoComplete={
+        typeof process === undefined  && navigator.userAgent.indexOf("Chrome") > -1 
+        ? 
+        'off' 
+        : 
+        false
+      }
       style={{ width: 600 }}
     >
       <FormItem
