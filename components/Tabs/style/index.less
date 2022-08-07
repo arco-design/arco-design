@@ -91,16 +91,40 @@
   &-header-nav {
     position: relative;
 
-    &::before {
-      content: '';
-      clear: both;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: @tabs-line-size-header-border;
-      background-color: @tabs-line-color-header-border;
-      display: block;
+    &-top,
+    &-left,
+    &-right {
+      &::before {
+        content: '';
+        clear: both;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: @tabs-line-size-header-border;
+        background-color: @tabs-line-color-header-border;
+        display: block;
+      }
+    }
+
+    &-bottom {
+      &::before {
+        content: '';
+        clear: both;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: @tabs-line-size-header-border;
+        background-color: @tabs-line-color-header-border;
+        display: block;
+      }
+
+      .@{tabs-prefix-cls}-header {
+        &-ink {
+          top: 0;
+        }
+      }
     }
   }
 
