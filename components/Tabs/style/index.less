@@ -323,8 +323,116 @@
 
     &-active,
     &-active:hover {
-      border-bottom-color: var(~'@{arco-cssvars-prefix}-color-bg-2');
       background-color: @tabs-card-color-title-bg_active;
+    }
+  }
+
+  //删除header多余的边框线
+  &-header-nav-card&-header-nav-bottom,
+  &-header-nav-card&-header-nav-top,
+  &-header-nav-card-gutter&-header-nav-bottom,
+  &-header-nav-card-gutter&-header-nav-top {
+    &::before {
+      height: 0;
+    }
+  }
+
+  &-header-nav-card&-header-nav-left,
+  &-header-nav-card&-header-nav-right,
+  &-header-nav-card-gutter&-header-nav-left,
+  &-header-nav-card-gutter&-header-nav-right {
+    &::before {
+      width: 0;
+    }
+  }
+
+  //position=left、type=card
+  &-header-nav-vertical&-header-nav-card&-header-nav-left {
+    .@{tabs-prefix-cls}-header-title-active {
+      border-right: none;
+    }
+  }
+  //position=right、type=card
+  &-header-nav-vertical&-header-nav-card&-header-nav-right {
+    &:first-of-type {
+      position: relative;
+      right: 1px;
+    }
+    .@{tabs-prefix-cls}-header-title-active {
+      border-left: none;
+      border-right: 1px solid @tabs-card-color-title-border;
+      &:hover {
+        border-left: none;
+        border-right: 1px solid @tabs-card-color-title-border;
+      }
+    }
+  }
+  &-vertical&-card&-right {
+    .@{tabs-prefix-cls}-content {
+      border-left: 1px solid @tabs-card-color-title-border;
+      border-right: none;
+    }
+  }
+
+  //position=left、type=card-gutter
+  &-header-nav-vertical&-header-nav-card-gutter&-header-nav-left {
+    .@{tabs-prefix-cls}-header-title-active {
+      border-right: none;
+    }
+  }
+
+  //position=right、type=card-gutter
+  &-header-nav-vertical&-header-nav-card-gutter&-header-nav-right {
+    &:first-of-type {
+      position: relative;
+      right: 1px;
+    }
+
+    .@{tabs-prefix-cls}-header-title-active {
+      border-left: none;
+      border-right: 1px solid @tabs-card-color-title-border;
+      &:hover {
+        border-left: none;
+        border-right: 1px solid @tabs-card-color-title-border;
+      }
+    }
+  }
+  &-vertical&-card-gutter&-right {
+    .@{tabs-prefix-cls}-content {
+      border-left: 1px solid @tabs-card-color-title-border;
+      border-right: none;
+    }
+  }
+
+  //position=top、type=card
+  &-header-nav-card&-header-nav-top {
+    .@{tabs-prefix-cls}-header-title-active {
+      border-bottom: none;
+    }
+  }
+
+  //position=bottom=card
+  &-header-nav-card&-header-nav-bottom {
+    .@{tabs-prefix-cls}-header-title-active {
+      border-top: none;
+    }
+  }
+  //position=top、type=card-gutter
+  &-header-nav-card-gutter&-header-nav-top {
+    .@{tabs-prefix-cls}-header-title-active {
+      border-bottom: none;
+    }
+  }
+  //position=bottom=card-gutter
+  &-header-nav-card-gutter&-header-nav-bottom {
+    .@{tabs-prefix-cls}-header-title-active {
+      border-top: none;
+      border-bottom: 1px solid @tabs-card-color-title-border;
+
+      &:hover {
+        border-top: none;
+        border-bottom: 1px solid @tabs-card-color-title-border;
+      }
     }
   }
 
@@ -584,7 +692,6 @@
   &-card-gutter {
     > .@{tabs-prefix-cls}-content {
       border: @tabs-card-border-content-width solid @tabs-line-color-header-border;
-      border-top: none;
     }
   }
 
