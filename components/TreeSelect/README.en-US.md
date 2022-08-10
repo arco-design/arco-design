@@ -28,7 +28,7 @@ Can choose tree structure data.Only Single choice is supports.
 |treeCheckable|Whether to show checkbox|boolean |`-`|-|
 |treeCheckStrictly|Whether the parent and child nodes are related|boolean |`-`|-|
 |unmountOnExit|Whether to destroy the DOM after hiding|boolean |`-`|-|
-|inputValue|To set input search value|string |`-`|2.38.0|
+|inputValue|To set input search value|string |`-`|2.39.0|
 |placeholder|Placeholder of element|string |`-`|-|
 |fieldNames|Custom field name for key, title, isLeaf, disabled and children|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -56,7 +56,7 @@ Can choose tree structure data.Only Single choice is supports.
 |onChange|Callback when the selection changed|(value: any,extra: {trigger?: [NodeProps](tree#treenode);checked?: boolean;selected?: boolean;}) => void |`-`|`extra` in `2.29.0`|
 |onClear|Callback when clicked clear, the parameter is the visible state of current dropdown|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
-|onInputValueChange|Callback when the search value of input is changed.|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.38.0|
+|onInputValueChange|Callback when the search value of input is changed.|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.39.0|
 |onSearch|Callback when searching data. When undefined, it will search in the data already|(inputValue: string) => void |`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|(visible: boolean) => void |`-`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|

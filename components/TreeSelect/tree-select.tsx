@@ -99,7 +99,10 @@ const TreeSelect: ForwardRefRenderFunction<
 
   // 尝试更新 inputValue，并触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
-    if (value !== refOnInputChangeCallbackValue.current) {
+    if (
+      value !== refOnInputChangeCallbackValue.current ||
+      reason !== refOnInputChangeCallbackReason.current
+    ) {
       setInputValue(value);
       refOnInputChangeCallbackValue.current = value;
       refOnInputChangeCallbackReason.current = reason;

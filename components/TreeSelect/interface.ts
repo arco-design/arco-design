@@ -36,7 +36,7 @@ export interface TreeSelectProps extends SelectViewCommonProps {
   /**
    * @zh 输入框搜索文本的受控值
    * @en To set input search value
-   * @version 2.38.0
+   * @version 2.39.0
    */
   inputValue?: string;
   /**
@@ -165,7 +165,7 @@ export interface TreeSelectProps extends SelectViewCommonProps {
   /**
    * @zh 输入框搜索文本改变的回调。
    * @en Callback when the search value of input is changed.
-   * @version 2.38.0
+   * @version 2.39.0
    */
   onInputValueChange?: (value: string, reason: InputValueChangeReason) => void;
   /**
