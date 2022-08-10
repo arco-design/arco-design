@@ -26,18 +26,44 @@
   }
 }
 
-
 @{arco-theme-tag} {
   &[arco-theme='dark'] {
-  .@{prefix}-tooltip-content {
-    border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
-  }
+    .@{prefix}-tooltip-content {
+      border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+    }
 
-  .@{prefix}-tooltip .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
-    border: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
-    border-top: none;
-    border-left: none;
-    z-index: 1;
+    .@{prefix}-tooltip .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+      z-index: 1;
+    }
+
+    .@{prefix}-trigger {
+      &[trigger-placement='top'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='tl'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='tr'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+        border-bottom: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+        border-right: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+      }
+
+      &[trigger-placement='bottom'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='bl'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='br'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+        border-top: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+        border-left: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+      }
+
+      &[trigger-placement='left'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='lt'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='lb'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+        border-top: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+        border-right: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+      }
+
+      &[trigger-placement='right'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='rt'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow,
+      &[trigger-placement='rb'] .@{prefix}-trigger-arrow.@{prefix}-tooltip-arrow {
+        border-left: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+        border-bottom: @border-1 solid var(~'@{arco-cssvars-prefix}-color-neutral-3');
+      }
+    }
   }
-}
 }

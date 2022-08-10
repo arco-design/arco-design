@@ -96,87 +96,148 @@ exports[`renders Modal/demo/confirm_type.md correctly 1`] = `
 `;
 
 exports[`renders Modal/demo/custom_button_text.md correctly 1`] = `
-<div>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:24px"
-    type="button"
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
   >
-    <span>
-      Modal
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:24px"
-    type="button"
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Modal
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  />
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
   >
-    <span>
-      Confirm
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    type="button"
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Confirm
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
   >
-    <span>
-      info
-    </span>
-  </button>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        info
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`renders Modal/demo/footer.md correctly 1`] = `
-<div>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-bottom:20px;margin-right:24px"
-    type="button"
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
   >
-    <span>
-      Open Modal with customized button props
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-bottom:20px;margin-right:24px"
-    type="button"
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Open Modal with customized button props
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  />
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
   >
-    <span>
-      Open Modal with customized footer
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-bottom:20px"
-    type="button"
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Open Modal with customized footer
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  />
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
   >
-    <span>
-      Open Modal without footer
-    </span>
-  </button>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Open Modal without footer
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  />
 </div>
 `;
 
 exports[`renders Modal/demo/header.md correctly 1`] = `
-<div>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    type="button"
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
   >
-    <span>
-      Left align title
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-left:24px"
-    type="button"
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Left align title
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  />
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
   >
-    <span>
-      Center align title
-    </span>
-  </button>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Center align title
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  />
 </div>
 `;
 

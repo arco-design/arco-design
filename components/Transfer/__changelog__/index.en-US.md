@@ -1,3 +1,19 @@
+## 2.37.0
+
+2022-07-08
+
+### 💅 Style
+
+- Fixed an issue where the drag flag of the first item in the list might be obscured by the container when `Transfer` is draggable.([#1103](https://github.com/arco-design/arco-design/pull/1103))
+
+## 2.36.0
+
+2022-06-24
+
+### 💎 Enhancement
+
+- Optimized the display of the `Transfer` component in `simple` mode for the current number of options in the list.([#1045](https://github.com/arco-design/arco-design/pull/1045))
+
 ## 2.34.0
 
 2022-05-27

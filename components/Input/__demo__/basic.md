@@ -16,12 +16,9 @@ Input content via mouse or keyboard.
 ```js
 import { Input } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Input
-    style={{ width: 350 }}
-    allowClear
-    placeholder="Please Enter something"
-  />,
-  CONTAINER
-);
+const App = () => {
+  return <Input style={{ width: 350 }} allowClear placeholder="Please Enter something" />;
+};
+
+export default App;
 ```

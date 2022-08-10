@@ -17,7 +17,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import InputComponent from './input-element';
 import Group from './group';
 import { contains } from '../_util/dom';
-import useMergeProps from '../_util/hooks/useMergeProps';
+import useMergeProps, { MergePropsOptions } from '../_util/hooks/useMergeProps';
 
 const keepFocus = (e) => {
   e.target.tagName !== 'INPUT' && e.preventDefault();
@@ -46,7 +46,7 @@ export function formatValue(value, maxLength) {
 }
 
 function Input(baseProps: InputProps, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<InputProps>(baseProps, {}, componentConfig?.Input);
   const {
     className,
@@ -99,13 +99,14 @@ function Input(baseProps: InputProps, ref) {
   }, [valueLength, trueMaxLength, mergedMaxLength]);
 
   if (trueMaxLength && showWordLimit) {
+    const [leftWord, rightWord] = rtl ? [trueMaxLength, valueLength] : [valueLength, trueMaxLength];
     suffixElement = (
       <span
         className={cs(`${prefixCls}-word-limit`, {
           [`${prefixCls}-word-limit-error`]: lengthError,
         })}
       >
-        {valueLength}/{trueMaxLength}
+        {leftWord}/{rightWord}
       </span>
     );
   }
@@ -117,6 +118,7 @@ function Input(baseProps: InputProps, ref) {
       [`${prefixCls}-custom-height`]: isCustomHeight,
       [`${prefixCls}-has-suffix`]: suffixElement,
       [`${prefixCls}-group-wrapper-disabled`]: disabled,
+      [`${prefixCls}-group-wrapper-rtl`]: rtl,
     },
     className
   );
@@ -134,9 +136,9 @@ function Input(baseProps: InputProps, ref) {
         setFocus(false);
         props.onBlur && props.onBlur(e);
       }}
+      onChange={onChange}
       prefixCls={prefixCls}
       value={value}
-      onValueChange={onChange}
       hasParent={!!needWrapper || allowClear}
       size={size}
     />
@@ -149,6 +151,7 @@ function Input(baseProps: InputProps, ref) {
     [`${prefixCls}-inner-wrapper-has-prefix`]: prefix,
     [`${prefixCls}-inner-wrapper-${size}`]: size,
     [`${prefixCls}-clear-wrapper`]: allowClear,
+    [`${prefixCls}-inner-wrapper-rtl`]: rtl,
   });
 
   return needWrapper ? (
@@ -198,16 +201,16 @@ function Input(baseProps: InputProps, ref) {
   );
 }
 
-type InputRefType = ForwardRefExoticComponent<InputProps & React.RefAttributes<RefInputType>> & {
+type InputRefType = ForwardRefExoticComponent<
+  InputProps & React.RefAttributes<RefInputType> & MergePropsOptions
+> & {
   Search: typeof Search;
   TextArea: typeof TextArea;
   Password: typeof Password;
   Group: typeof Group;
 };
 
-const InputElement: InputRefType = React.forwardRef<RefInputType, InputProps>(
-  Input
-) as InputRefType;
+const InputElement = React.forwardRef(Input) as InputRefType;
 
 InputElement.displayName = 'Input';
 

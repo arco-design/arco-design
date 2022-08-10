@@ -155,21 +155,23 @@
   }
 
   &-mode-dot&-vertical &-item-title {
-    margin-top: @steps-dot-vertical-item-dot-margin-top + (@steps-dot-size-item-icon / 2) - (@steps-size-default / 2);
+    margin-top: @steps-dot-vertical-item-dot-margin-top + (@steps-dot-size-item-icon / 2) -
+      (@steps-size-default / 2);
   }
 
-
   &-mode-dot&-vertical&-size-small &-item-title {
-    margin-top: @steps-dot-vertical-item-dot-margin-top + (@steps-dot-size-item-icon / 2) - (@steps-size-small / 2);
+    margin-top: @steps-dot-vertical-item-dot-margin-top + (@steps-dot-size-item-icon / 2) -
+      (@steps-size-small / 2);
   }
 
   &-mode-dot&-vertical &-item-active &-item-title {
-    margin-top: @steps-dot-vertical-item-dot-margin-top-active + (@steps-dot-size-item-icon-active / 2) - (@steps-size-default / 2);
+    margin-top: @steps-dot-vertical-item-dot-margin-top-active +
+      (@steps-dot-size-item-icon-active / 2) - (@steps-size-default / 2);
   }
 
-
   &-mode-dot&-vertical&-size-small &-item-active &-item-title {
-    margin-top: @steps-dot-vertical-item-dot-margin-top-active + (@steps-dot-size-item-icon-active / 2) - (@steps-size-small / 2);
+    margin-top: @steps-dot-vertical-item-dot-margin-top-active +
+      (@steps-dot-size-item-icon-active / 2) - (@steps-size-small / 2);
   }
 
   &-mode-dot&-vertical &-item-description {
@@ -217,5 +219,56 @@
   &-mode-dot&-vertical &-item-active &-item-icon {
     margin-top: @steps-dot-vertical-item-dot-margin-top-active;
     margin-left: -((@steps-dot-size-item-icon-active - @steps-dot-size-item-icon) / 2);
+  }
+}
+
+.@{steps-prefix-cls}-rtl {
+  &.@{steps-prefix-cls}-mode-dot {
+    .@{steps-prefix-cls}-item {
+      margin-right: 0;
+      margin-left: @steps-dot-size-item-icon + @steps-dot-size-item-icon-gap * 2;
+      text-align: right;
+
+      &:last-child {
+        margin-left: 0;
+      }
+
+      &:not(:last-child) {
+        .@{steps-prefix-cls}-item-tail {
+          left: initial;
+          right: @steps-dot-item-icon-margin-left + @steps-dot-size-item-icon +
+            @steps-dot-size-item-icon-gap;
+        }
+      }
+    }
+  }
+
+  &.@{steps-prefix-cls}-mode-dot.@{steps-prefix-cls}-horizontal {
+    .@{steps-prefix-cls}-item-icon {
+      margin-left: 0;
+      margin-right: @steps-dot-item-icon-margin-left;
+    }
+
+    .@{steps-prefix-cls}-item-active .@{steps-prefix-cls}-item-icon {
+      margin-left: 0;
+      margin-right: @steps-dot-item-icon-margin-left -
+        ((@steps-dot-size-item-icon-active - @steps-dot-size-item-icon) / 2);
+    }
+  }
+
+  &.@{steps-prefix-cls}-mode-dot.@{steps-prefix-cls}-vertical {
+    .@{steps-prefix-cls}-item-icon {
+      margin-right: 0;
+      margin-left: @steps-dot-vertical-item-icon-margin-right;
+    }
+
+    .@{steps-prefix-cls}-item:not(:last-child) .@{steps-prefix-cls}-item-tail {
+      left: 0;
+      right: (@steps-dot-size-item-icon / 2);
+    }
+
+    .@{steps-prefix-cls}-item-active .@{steps-prefix-cls}-item-icon {
+      margin-right: -((@steps-dot-size-item-icon-active - @steps-dot-size-item-icon) / 2);
+    }
   }
 }

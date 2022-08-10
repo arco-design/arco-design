@@ -21,41 +21,41 @@ const sleep = async (time) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve();
-    }, time)
-  })
+    }, time);
+  });
+};
+
+function App() {
+  return (
+    <div>
+      <Button
+        type="primary"
+        onClick={async () => {
+          const modalIns = Modal.confirm({
+            title: 'Submiting...',
+            icon: <IconInfoCircleFill />,
+            content: (
+              <span>
+                This modal will be successful after 1.5s. <Spin size={14} />
+              </span>
+            ),
+            footer: null,
+          });
+          await sleep(1500);
+          modalIns.update({
+            icon: <IconCheckCircleFill />,
+            title: 'Success',
+            content: 'This modal will be closed after 1.5s.',
+          });
+          await sleep(1500);
+          modalIns.close();
+        }}
+      >
+        Open Modal
+      </Button>
+    </div>
+  );
 }
 
-function Demo() {
-  return <div>
-    <Button
-      type="primary"
-      onClick={async () => {
-        const modalIns = Modal.confirm({
-          title: 'Submiting...',
-          icon: <IconInfoCircleFill/>,
-          content: <span>
-            This modal will be successful after 1.5s. <Spin size={14} />
-          </span>,
-          footer: null
-        });
-
-        await sleep(1500);
-
-        modalIns.update({
-          icon: <IconCheckCircleFill/>,
-          title: 'Success',
-          content: 'This modal will be closed after 1.5s.',
-        })
-
-        await sleep(1500);
-
-        modalIns.close();
-      }}
-    >
-      Open Modal
-    </Button>
-  </div>
-}
-
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -13,17 +13,29 @@ title:
 
 Set `disabled` to the `Form` component to globally disable all form controls.
 
-
 ```js
 import { useRef, useEffect, useState } from 'react';
-
 import {
-  Form, AutoComplete, Input, Select, Button, Tooltip, Checkbox, Switch, Radio,
-  Cascader, Message, InputNumber, Rate, Slider, Upload, Grid, DatePicker, Modal
+  Form,
+  AutoComplete,
+  Input,
+  Select,
+  Button,
+  Tooltip,
+  Checkbox,
+  Switch,
+  Radio,
+  Cascader,
+  Message,
+  InputNumber,
+  Rate,
+  Slider,
+  Upload,
+  Grid,
+  DatePicker,
+  Modal,
 } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
-
 const cascaderOptions = [
   {
     value: 'beijing',
@@ -64,7 +76,6 @@ const cascaderOptions = [
     ],
   },
 ];
-
 const formItemLayout = {
   labelCol: {
     span: 7,
@@ -80,20 +91,21 @@ const noLabelLayout = {
   },
 };
 
-function Demo() {
+function App() {
   const formRef = useRef();
   const [size, setSize] = useState('default');
-
   useEffect(() => {
-    formRef.current.setFieldsValue({ rate: 5 })
-  }, [])
+    formRef.current.setFieldsValue({
+      rate: 5,
+    });
+  }, []);
 
   const onValuesChange = (changeValue, values) => {
     console.log('onValuesChange: ', changeValue, values);
   };
 
   return (
-    <div style={{maxWidth: 650}}>
+    <div style={{ maxWidth: 650 }}>
       <Form
         disabled
         ref={formRef}
@@ -101,7 +113,7 @@ function Demo() {
         size={size}
         initialValues={{
           slider: 20,
-          'a.b[0].c': ['b']
+          'a.b[0].c': ['b'],
         }}
         onValuesChange={onValuesChange}
         scrollToFirstError
@@ -117,15 +129,11 @@ function Demo() {
         <FormItem
           label="Username"
           field="name"
-          rules={[{required: true, message: 'username is required'}]}
+          rules={[{ required: true, message: 'username is required' }]}
         >
           <Input placeholder="please enter..." />
         </FormItem>
-        <FormItem
-          label="Age"
-          field="age"
-          rules={[ { type: 'number', required: true, }, ]}
-        >
+        <FormItem label="Age" field="age" rules={[{ type: 'number', required: true }]}>
           <InputNumber placeholder="please enter" />
         </FormItem>
         <FormItem
@@ -145,27 +153,25 @@ function Demo() {
         >
           <Cascader showSearch placeholder="please select" allowClear options={cascaderOptions} />
         </FormItem>
-        <FormItem
-          label="Auto-complete"
-          field="autocomplete"
-          rules={[ { required: true, }, ]}
-        >
-          <AutoComplete
-            placeholder="please enter"
-            data={['123', '234', '345', '456']}
-          />
+        <FormItem label="Auto-complete" field="autocomplete" rules={[{ required: true }]}>
+          <AutoComplete placeholder="please enter" data={['123', '234', '345', '456']} />
         </FormItem>
-        <FormItem
-          label="Post"
-          field="post"
-          rules={[ { required: true } ]}
-        >
+        <FormItem label="Post" field="post" rules={[{ required: true }]}>
           <Select
             placeholder="please select"
             options={[
-              { label: 'one', value: 0 },
-              { label: 'two', value: 1 },
-              { label: 'three', value: 2 },
+              {
+                label: 'one',
+                value: 0,
+              },
+              {
+                label: 'two',
+                value: 1,
+              },
+              {
+                label: 'three',
+                value: 2,
+              },
             ]}
             allowClear
           />
@@ -174,51 +180,30 @@ function Demo() {
           label="Multiple Choice"
           required
           field="a.b[0].c"
-          rules={[
-            {
-              type: 'array',
-              minLength: 1,
-              message: 'choice is required',
-            },
-          ]}
+          rules={[{ type: 'array', minLength: 1, message: 'choice is required' }]}
         >
-          <Select mode="multiple" allowCreate placeholder="please select" options={['a', 'b', 'c', 'd', 'e']} />
+          <Select
+            mode="multiple"
+            allowCreate
+            placeholder="please select"
+            options={['a', 'b', 'c', 'd', 'e']}
+          />
         </FormItem>
-        <FormItem
-          label="Score"
-          field="score"
-          rules={[
-            {
-              required: true,
-              type: 'number',
-            },
-          ]}
-        >
+        <FormItem label="Score" field="score" rules={[{ required: true, type: 'number' }]}>
           <Rate />
         </FormItem>
         <FormItem
           label="Date"
           field="date"
-          rules={[
-            {
-              required: true,
-              message: 'date is required',
-            },
-          ]}
+          rules={[{ required: true, message: 'date is required' }]}
         >
-          <DatePicker showTime  />
+          <DatePicker showTime />
         </FormItem>
         <FormItem
           label="Switch"
           field="switch"
           triggerPropName="checked"
-          rules={[
-            {
-              type: 'boolean',
-              true: true,
-              message: 'must be true',
-            },
-          ]}
+          rules={[{ type: 'boolean', true: true, message: 'must be true' }]}
         >
           <Switch />
         </FormItem>
@@ -263,22 +248,31 @@ function Demo() {
           label="Upload"
           field="upload"
           triggerPropName="fileList"
-          initialValue={[{
-            uid: '-1',
-            url: '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp',
-            name: '20200717'
-          }]}
+          initialValue={[
+            {
+              uid: '-1',
+              url: '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp',
+              name: '20200717',
+            },
+          ]}
         >
           <Upload
             listType="picture-card"
             multiple
             name="files"
             action="/"
-            onPreview={file => {
+            onPreview={(file) => {
               Modal.info({
                 title: 'Preview',
-                content: <img src={file.url || URL.createObjectURL(file.originFile)} style={{maxWidth: '100%'}}></img>
-              })
+                content: (
+                  <img
+                    src={file.url || URL.createObjectURL(file.originFile)}
+                    style={{
+                      maxWidth: '100%',
+                    }}
+                  ></img>
+                ),
+              });
             }}
           />
         </Form.Item>
@@ -304,13 +298,15 @@ function Demo() {
                   await formRef.current.validate();
                   Message.info('pass verification, submit succeed!');
                 } catch (_) {
-                  console.log(formRef.current.getFieldsError())
+                  console.log(formRef.current.getFieldsError());
                   Message.error('verification failed, Please check the fields!');
                 }
               }
             }}
             type="primary"
-            style={{ marginRight: 24 }}
+            style={{
+              marginRight: 24,
+            }}
           >
             Submit
           </Button>
@@ -324,7 +320,7 @@ function Demo() {
           <Button
             type="text"
             onClick={() => {
-              Message.info(`fields: ${formRef.current.getTouchedFields().join(',')}`)
+              Message.info(`fields: ${formRef.current.getTouchedFields().join(',')}`);
             }}
           >
             Get touched fields
@@ -335,5 +331,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

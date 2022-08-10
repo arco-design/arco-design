@@ -44,8 +44,7 @@
       background-color: @calendar-color-bg-switch-icon;
 
       &:not(:first-child) {
-        margin-left: 12px;
-        margin-right: 32px;
+        margin: 0 12px;
       }
     }
 
@@ -149,6 +148,12 @@
   }
 
   &-mode-month &-cell-selected &-date-circle {
+    border: 1px solid @calendar-color-bg-circle_selected;
+    background-color: @calendar-color-bg-circle_selected;
+    color: #fff;
+  }
+
+  &-mode-year &-cell-selected &-cell-selected &-date-circle {
     border: 1px solid @calendar-color-bg-circle_selected;
     background-color: @calendar-color-bg-circle_selected;
     color: #fff;
@@ -432,5 +437,35 @@
     border-top: 1px solid @calendar-color-border;
     cursor: pointer;
     color: var(~'@{arco-cssvars-prefix}-color-text-1');
+  }
+
+  &-rtl {
+    direction: rtl;
+  }
+
+  &-rtl &-header-icon {
+    margin-right: 0;
+    margin-left: 12px;
+    transform: scaleX(-1);
+  }
+
+  // rtl
+  &-rtl &-week-list-item {
+    text-align: right;
+  }
+
+  &-rtl&-mode-month:not(&-panel) &-cell:not(:last-child) {
+    border-left: 1px solid @calendar-color-border;
+    border-right: 0;
+  }
+
+  &-rtl &-header-value-year {
+    margin-left: 8px;
+    margin-right: 0;
+  }
+
+  &-rtl &-header-value-month {
+    margin-right: 0;
+    margin-left: 32px;
   }
 }

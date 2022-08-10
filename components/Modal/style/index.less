@@ -217,3 +217,39 @@
   opacity: 0;
   transition: opacity @transition-duration-4 @transition-timing-function-overshoot;
 }
+
+.@{modal-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{modal-prefix-cls}-footer {
+    text-align: unset;
+
+    > .@{prefix}-btn {
+      margin-left: 0;
+      margin-right: @modal-margin-footer-button-left;
+
+      &:only-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .@{modal-prefix-cls}-title {
+    .@{prefix}-icon {
+      margin-right: 0;
+      margin-left: @modal-margin-tip-icon-right;
+    }
+  }
+
+  .@{modal-prefix-cls}-close-icon {
+    right: initial;
+    left: @modal-position-close-icon-right +
+      ((@icon-hover-size-default-height - @modal-font-size-close-icon) / 2);
+  }
+
+  &.@{modal-prefix-cls}-simple {
+    .@{modal-prefix-cls}-footer {
+      text-align: @modal-simple-align-footer;
+    }
+  }
+}

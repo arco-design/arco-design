@@ -1,13 +1,15 @@
-import React, { forwardRef, ReactElement } from 'react';
+import React, { forwardRef, ReactElement, useContext } from 'react';
 import Checkbox from '../../Checkbox';
 import Radio from '../../Radio';
 import { isString, isArray } from '../../_util/is';
+import { getOriginData } from '../utils';
 import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
 import IconPlus from '../../../icon/react-icon/IconPlus';
 import IconMinus from '../../../icon/react-icon/IconMinus';
 import { TbodyProps } from '../interface';
 import { INTERNAL_EXPAND_KEY, INTERNAL_SELECTION_KEY } from '../constant';
+import { ConfigContext } from '../../ConfigProvider';
 import Td from './td';
 
 type TrType<T = any> = TbodyProps<T> & {
@@ -49,7 +51,9 @@ function Tr<T>(props: TrType<T>, ref) {
     shouldRowExpand,
     level,
   } = props;
-  const { ...rowProps } = onRow && onRow(record, index);
+  const { rtl } = useContext(ConfigContext);
+  const originRecord = getOriginData(record);
+  const { ...rowProps } = (onRow && onRow(originRecord, index)) || {};
   const rowK = getRowKey(record);
   const usedSelectedRowKeys = type === 'radio' ? selectedRowKeys.slice(0, 1) : selectedRowKeys;
   const trKey = rowK || index;
@@ -62,11 +66,11 @@ function Tr<T>(props: TrType<T>, ref) {
     {
       [`${prefixCls}-row-checked`]: checked,
     },
-    rowClassName && rowClassName(record, index)
+    rowClassName && rowClassName(originRecord, index)
   );
   const checkboxProps =
     rowSelection && typeof rowSelection.checkboxProps === 'function'
-      ? rowSelection.checkboxProps(record)
+      ? rowSelection.checkboxProps(originRecord)
       : {};
   const operationClassName = cs(`${prefixCls}-td`, `${prefixCls}-operation`);
   const getPrefixColClassName = (name) => {
@@ -115,16 +119,16 @@ function Tr<T>(props: TrType<T>, ref) {
   function renderExpandIcon(record, rowK) {
     const { icon: expandIcon } = expandProps;
     const expanded = !!~expandedRowKeys.indexOf(rowK);
+    const onClickProps = {
+      onClick: (e) => {
+        e.stopPropagation();
+        onClickExpandBtn(rowK);
+      },
+    };
     return typeof expandIcon === 'function' ? (
-      expandIcon({ expanded, record })
+      expandIcon({ expanded, record, ...onClickProps })
     ) : (
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onClickExpandBtn(rowK);
-        }}
-        type="button"
-      >
+      <button {...onClickProps} type="button">
         {expanded ? <IconMinus /> : <IconPlus />}
       </button>
     );
@@ -161,14 +165,16 @@ function Tr<T>(props: TrType<T>, ref) {
   if (type === 'checkbox') {
     selectionNode = (
       <InnerComponentTd className={getPrefixColClassName('checkbox')}>
-        {renderSelectionCell ? renderSelectionCell(checkboxNode, checked, record) : checkboxNode}
+        {renderSelectionCell
+          ? renderSelectionCell(checkboxNode, checked, originRecord)
+          : checkboxNode}
       </InnerComponentTd>
     );
   }
   if (type === 'radio') {
     selectionNode = (
       <InnerComponentTd className={getPrefixColClassName('radio')}>
-        {renderSelectionCell ? renderSelectionCell(radioNode, checked, record) : radioNode}
+        {renderSelectionCell ? renderSelectionCell(radioNode, checked, originRecord) : radioNode}
       </InnerComponentTd>
     );
   }
@@ -182,7 +188,7 @@ function Tr<T>(props: TrType<T>, ref) {
         const stickyClassName: string = stickyClassNames[colIndex];
 
         if (col.$$isOperation) {
-          let node = col.node;
+          let node: any = col.node;
           let isExtraOperation = true;
 
           if (col.title === INTERNAL_SELECTION_KEY) {
@@ -209,7 +215,7 @@ function Tr<T>(props: TrType<T>, ref) {
               ...operationNode?.props?.style,
               ...(col.fixed === 'left'
                 ? {
-                    left: stickyOffset,
+                    [rtl ? 'right' : 'left']: stickyOffset,
                   }
                 : {}),
               width: col.width,

@@ -16,7 +16,6 @@ Group menu items by `Menu.ItemGroup`.
 ```js
 import { Dropdown, Menu, Button } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-
 const dropList = (
   <Menu>
     <Menu.ItemGroup title="Beijing">
@@ -31,7 +30,7 @@ const dropList = (
   </Menu>
 );
 
-function Demo() {
+function App() {
   return (
     <div className="dropdown-demo">
       <Dropdown
@@ -48,7 +47,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

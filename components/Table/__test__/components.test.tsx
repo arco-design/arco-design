@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import Table from '..';
 import { columns } from './common/columns';
 import { data } from './common/data';
@@ -7,7 +7,7 @@ import Tooltip from '../../Tooltip/index';
 
 describe('Table components', () => {
   it('table custom header and body by param components', () => {
-    const component = mount(
+    const component = render(
       <Table
         components={{
           table: 'custom-table',
@@ -33,28 +33,26 @@ describe('Table components', () => {
     );
 
     expect(
-      component.find(
-        'custom-header-wrapper.arco-table-header custom-table custom-thead custom-header-tr'
-      )
+      component.find('custom-header-wrapper custom-table custom-thead custom-header-tr')
     ).toHaveLength(1);
     expect(
       component.find(
-        'custom-header-wrapper.arco-table-header custom-table custom-thead custom-header-tr custom-th custom-th-cell'
+        'custom-header-wrapper custom-table custom-thead custom-header-tr custom-th custom-th-cell'
       )
     ).toHaveLength(5);
 
     expect(
-      component.find('custom-body-wrapper.arco-table-body custom-table custom-tbody custom-body-tr')
+      component.find('custom-body-wrapper custom-table custom-tbody custom-body-tr')
     ).toHaveLength(5);
     expect(
       component.find(
-        'custom-body-wrapper.arco-table-body custom-table custom-tbody custom-body-tr custom-td custom-td-cell'
+        'custom-body-wrapper custom-table custom-tbody custom-body-tr custom-td custom-td-cell'
       )
     ).toHaveLength(5 * 5);
   });
 
   it('table custom operations', () => {
-    const component = mount(
+    const component = render(
       <Table
         components={{
           header: {
@@ -97,10 +95,12 @@ describe('Table components', () => {
       />
     );
 
-    expect(component.find('thead th').at(0).text()).toBe('Index');
+    expect(component.find('thead th').item(0).textContent).toBe('Index');
 
     for (let i = 0; i < 5; i++) {
-      expect(component.find('tbody tr').at(i).find('td').at(0).text()).toBe(`${i + 1}`);
+      expect(component.find('tbody tr').item(i).querySelectorAll('td').item(0).textContent).toBe(
+        `${i + 1}`
+      );
     }
   });
 
@@ -108,7 +108,7 @@ describe('Table components', () => {
   it('Table custom operations selectionNode with tooltip', () => {
     jest.useFakeTimers();
 
-    const component = mount(
+    const component = render(
       <Table
         components={{
           header: {
@@ -133,24 +133,16 @@ describe('Table components', () => {
         rowSelection={{}}
       />
     );
-
-    component.find('thead .arco-table-checkbox').simulate('mouseenter');
-
+    fireEvent.mouseEnter(component.find('thead .arco-table-checkbox')[0]);
     jest.runAllTimers();
 
-    component.update();
-
-    expect(component.find('thead .arco-table-checkbox').prop('className')).toBe(
+    expect(component.find('thead .arco-table-checkbox')[0].className).toBe(
       'arco-table-th arco-table-operation arco-table-checkbox arco-tooltip-open'
     );
-
-    component.find('tbody .arco-table-checkbox').first().simulate('mouseenter');
-
+    fireEvent.mouseEnter(component.find('tbody .arco-table-checkbox').item(0));
     jest.runAllTimers();
 
-    component.update();
-
-    expect(component.find('tbody .arco-table-checkbox').first().prop('className')).toBe(
+    expect(component.find('tbody .arco-table-checkbox').item(0).className).toBe(
       'arco-table-td arco-table-operation arco-table-checkbox arco-tooltip-open'
     );
   });

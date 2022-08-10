@@ -17,14 +17,16 @@ Pass render functions to `titleTexts` to completely customize the title bar of t
 import { Transfer } from '@arco-design/web-react';
 import { IconDelete } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const dataSource = new Array(8).fill(null).map((_, index) => ({
     key: `${index + 1}`,
     value: `Option ${index + 1}`,
   }));
-
-  const styleHeader = { display: 'flex', alignItems: 'center', justifyContent: 'space-between' };
-
+  const styleHeader = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  };
   return (
     <Transfer
       dataSource={dataSource}
@@ -43,7 +45,10 @@ function Demo() {
           return (
             <div style={styleHeader}>
               {`RIGHT ${countSelected}-${countTotal}`}
-              <IconDelete style={{ cursor: 'pointer' }} onClick={clear} />
+              <IconDelete
+                style={{ cursor: 'pointer', }}
+                onClick={clear}
+              />
             </div>
           );
         },
@@ -52,5 +57,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -16,18 +16,21 @@ Editable cell.
 ```js
 import React, { useState, useRef, useEffect, useContext, useCallback } from 'react';
 import { Button, Table, Input, Select, Form } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
-
 const EditableContext = React.createContext({});
 
 function EditableRow(props) {
   const { children, record, className, ...rest } = props;
   const refForm = useRef(null);
+
   const getForm = () => refForm.current;
 
   return (
-    <EditableContext.Provider value={{ getForm }}>
+    <EditableContext.Provider
+      value={{
+        getForm,
+      }}
+    >
       <Form
         style={{ display: 'table-row' }}
         children={children}
@@ -42,12 +45,10 @@ function EditableRow(props) {
 
 function EditableCell(props) {
   const { children, className, rowData, column, onHandleSave } = props;
-
   const ref = useRef(null);
   const refInput = useRef(null);
   const { getForm } = useContext(EditableContext);
   const [editing, setEditing] = useState(false);
-
   const handleClick = useCallback(
     (e) => {
       if (
@@ -62,11 +63,9 @@ function EditableCell(props) {
     },
     [editing, rowData, column]
   );
-
   useEffect(() => {
     editing && refInput.current && refInput.current.focus();
   }, [editing]);
-
   useEffect(() => {
     document.addEventListener('click', handleClick, true);
     return () => {
@@ -76,7 +75,9 @@ function EditableCell(props) {
 
   const cellValueChangeHandler = (value) => {
     if (column.dataIndex === 'salary') {
-      const values = { [column.dataIndex]: value };
+      const values = {
+        [column.dataIndex]: value,
+      };
       onHandleSave && onHandleSave({ ...rowData, ...values });
       setTimeout(() => setEditing(!editing), 300);
     } else {
@@ -102,19 +103,11 @@ function EditableCell(props) {
         ) : (
           <FormItem
             style={{ marginBottom: 0 }}
-            labelCol={{
-              span: 0,
-            }}
-            wrapperCol={{
-              span: 24,
-            }}
+            labelCol={{ span: 0 }}
+            wrapperCol={{ span: 24 }}
             initialValue={rowData[column.dataIndex]}
             field={column.dataIndex}
-            rules={[
-              {
-                required: true,
-              },
-            ]}
+            rules={[{ required: true }]}
           >
             <Input ref={refInput} onPressEnter={cellValueChangeHandler} />
           </FormItem>
@@ -172,7 +165,6 @@ function EditableTable() {
       email: 'william.smith@example.com',
     },
   ]);
-
   const columns = [
     {
       title: 'Name',
@@ -206,10 +198,7 @@ function EditableTable() {
   function handleSave(row) {
     const newData = [...data];
     const index = newData.findIndex((item) => row.key === item.key);
-    newData.splice(index, 1, {
-      ...newData[index],
-      ...row,
-    });
+    newData.splice(index, 1, { ...newData[index], ...row });
     setData(newData);
   }
 
@@ -232,7 +221,11 @@ function EditableTable() {
 
   return (
     <>
-      <Button style={{ marginBottom: 10 }} type="primary" onClick={addRow}>
+      <Button
+        style={{ marginBottom: 10, }}
+        type="primary"
+        onClick={addRow}
+      >
         Add
       </Button>
       <Table
@@ -259,7 +252,7 @@ function EditableTable() {
   );
 }
 
-ReactDOM.render(<EditableTable />, CONTAINER);
+export default EditableTable;
 ```
 
 ```css

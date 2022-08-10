@@ -1,10 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { useFakeXMLHttpRequest } from 'sinon';
 import { act } from 'react-test-renderer';
 import { UploadItem, UploadProps } from '../interface';
 import mountTest from '../../../tests/mountTest';
-import { sleep } from '../../../tests/util';
+import { sleep, render, fireEvent } from '../../../tests/util';
 import Upload from '..';
 
 function getFile(name = 'file1') {
@@ -16,11 +15,11 @@ function getFile(name = 'file1') {
 mountTest(Upload);
 
 const getWrapper = async (props: UploadProps) => {
-  const wrapper = mount<UploadProps>(<Upload action="/sss" {...props} />);
-  const input = wrapper.find('input');
+  const wrapper = render(<Upload action="/sss" {...props} />);
+  const input = wrapper.querySelector('input');
   const files = [getFile()];
   await act(() => {
-    input.simulate('change', {
+    fireEvent.change(input as HTMLElement, {
       target: {
         files,
       },
@@ -30,7 +29,7 @@ const getWrapper = async (props: UploadProps) => {
 };
 
 describe('Upload api callbacks', function () {
-  const requests = [];
+  const requests: any[] = [];
   let xhr;
   beforeEach(function () {
     xhr = useFakeXMLHttpRequest();
@@ -66,7 +65,7 @@ describe('Upload api callbacks', function () {
 
   it('onPreview should be fired', async function () {
     const mockFn = jest.fn();
-    const wrapper = mount<UploadProps>(
+    const wrapper = render(
       <Upload
         action="/sss"
         listType="picture-card"
@@ -83,7 +82,7 @@ describe('Upload api callbacks', function () {
 
     expect(wrapper.find('.arco-upload-list-preview-icon')).toHaveLength(1);
     await act(() => {
-      wrapper.find('.arco-upload-list-preview-icon').at(0).simulate('click');
+      fireEvent.click(wrapper.find('.arco-upload-list-preview-icon').item(0));
     });
 
     expect(mockFn.mock.calls.length).toBe(1);
@@ -105,23 +104,22 @@ describe('Upload api callbacks', function () {
     it('should delete', async () => {
       let fileList = defaultFileList;
 
-      const wrapper = mount<UploadProps>(
+      const wrapper = render(
         <Upload
           action="/sss"
           fileList={fileList}
           onChange={(files) => {
             fileList = files;
-            wrapper.setProps({ fileList });
           }}
         />
       );
 
       // onRemove 不设置，直接删除
-      const items = wrapper.find('FileList').find('.arco-upload-list-item');
+      const items = wrapper.find('.arco-upload-list-item');
       expect(items).toHaveLength(2);
 
       await act(() => {
-        wrapper.find('.arco-upload-list-remove-icon').at(0).simulate('click');
+        fireEvent.click(wrapper.find('.arco-upload-list-remove-icon').item(0));
       });
       expect(fileList).toEqual([{ ...defaultFileList[1], percent: 100 }]);
       expect(fileList).toHaveLength(1);
@@ -130,7 +128,7 @@ describe('Upload api callbacks', function () {
     it('onRemove return false', async () => {
       let fileList = defaultFileList;
       // onRemove 返回false，不执行删除操作
-      const wrapper = mount<UploadProps>(
+      const wrapper = render(
         <Upload
           action="/sss"
           onRemove={() => false}
@@ -138,9 +136,7 @@ describe('Upload api callbacks', function () {
           onChange={(files) => (fileList = files)}
         />
       );
-      await act(() => {
-        wrapper.find('.arco-upload-list-remove-icon').at(0).simulate('click');
-      });
+      fireEvent.click(wrapper.find('.arco-upload-list-remove-icon').item(0));
 
       expect(fileList).toEqual(defaultFileList);
       expect(fileList).toHaveLength(2);
@@ -149,7 +145,7 @@ describe('Upload api callbacks', function () {
     it('onRemove return reject', async () => {
       let fileList = defaultFileList;
       // onRemove 返回reject promise，不执行删除操作
-      const wrapper = mount<UploadProps>(
+      const wrapper = render(
         <Upload
           action="/sss"
           onRemove={() =>
@@ -164,9 +160,7 @@ describe('Upload api callbacks', function () {
         />
       );
 
-      await act(() => {
-        wrapper.find('.arco-upload-list-remove-icon').at(0).simulate('click');
-      });
+      fireEvent.click(wrapper.find('.arco-upload-list-remove-icon').item(0));
       await sleep(20);
       expect(fileList).toEqual(defaultFileList);
       expect(fileList).toHaveLength(2);
@@ -174,7 +168,7 @@ describe('Upload api callbacks', function () {
     it('onRemove return resolve promise', async function () {
       // onRemove 返回resolve promise，执行删除操作
       let fileList;
-      const wrapper = mount<UploadProps>(
+      const wrapper = render(
         <Upload
           action="/sss"
           onRemove={() =>
@@ -192,7 +186,7 @@ describe('Upload api callbacks', function () {
       );
 
       await act(() => {
-        wrapper.find('FileList').find('.arco-upload-list-remove-icon').at(0).simulate('click');
+        fireEvent.click(wrapper.find('.arco-upload-list-remove-icon').item(0));
       });
 
       await sleep(20);
@@ -224,7 +218,6 @@ describe('Upload api callbacks', function () {
     });
 
     await sleep(200);
-    wrapper.update();
 
     expect(wrapper.find('.arco-upload-trigger')).toHaveLength(0);
   });
@@ -235,8 +228,7 @@ describe('Upload api callbacks', function () {
     });
 
     await sleep(200);
-    wrapper.update();
     expect(wrapper.find('.arco-upload-trigger')).toHaveLength(1);
-    expect(wrapper.find('TriggerNode').props().disabled).toBe(true);
+    expect(wrapper.find('.arco-upload-trigger .arco-btn-disabled')).toHaveLength(1);
   });
 });

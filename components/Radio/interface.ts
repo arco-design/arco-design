@@ -4,7 +4,7 @@ import { CSSProperties, ChangeEvent, ReactNode } from 'react';
  * @title Radio
  */
 export interface RadioProps<T = any>
-  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'className' | 'onChange'> {
+  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'children' | 'className' | 'onChange'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -32,6 +32,7 @@ export interface RadioProps<T = any>
    * @en Callback when radio status change
    */
   onChange?: (checked: boolean, event: ChangeEvent) => void;
+  children?: ReactNode | ((value: { checked: boolean }) => ReactNode);
 }
 
 /**
@@ -84,7 +85,6 @@ export interface RadioGroupProps {
    * @en Set children options
    */
   options?: (string | number | { label: ReactNode; value: any; disabled?: boolean })[];
-  children?: ReactNode | ((value: { checked: boolean }) => ReactNode);
 }
 
 export interface RadioGroupContextProps {

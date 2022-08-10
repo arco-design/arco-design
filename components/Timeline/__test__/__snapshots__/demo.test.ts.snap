@@ -244,7 +244,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
-              style="margin-right:16px;margin-bottom:12px"
+              style="margin:0 12px 12px 12px"
               width="40"
             />
             <div
@@ -291,7 +291,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
-              style="margin-right:16px;margin-bottom:12px"
+              style="margin:0 12px 12px 12px"
               width="40"
             />
             <div
@@ -338,7 +338,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
-              style="margin-right:16px;margin-bottom:12px"
+              style="margin:0 12px 12px 12px"
               width="40"
             />
             <div
@@ -407,445 +407,457 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
 
 exports[`renders Timeline/demo/dot.md correctly 1`] = `
 <div
-  style="display:flex"
+  class="arco-space arco-space-horizontal arco-space-align-center"
 >
   <div
-    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
-    role="list"
+    class="arco-space-item"
     style="margin-right:40px"
   >
     <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
+      class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+      role="list"
     >
       <div
-        class="arco-timeline-item-dot-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#00B42A"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
           />
-        </div>
-      </div>
-      <div
-        class="arco-timeline-item-content-wrapper"
-      >
-        <div
-          class="arco-timeline-item-content"
-        >
-          The first milestone
-        </div>
-        <div
-          class="arco-timeline-item-label"
-        >
-          2020-04-12
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
-        >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-          />
-        </div>
-      </div>
-      <div
-        class="arco-timeline-item-content-wrapper"
-      >
-        <div
-          class="arco-timeline-item-content"
-        >
-          The second milestone
-        </div>
-        <div
-          class="arco-timeline-item-label"
-        >
-          2020-05-17
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
-        >
-          <div
-            class="arco-timeline-item-dot-custom"
+            class="arco-timeline-item-dot-content"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-clock-circle"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              style="font-size:12px;color:#F53F3F"
-              viewBox="0 0 48 48"
-            >
-              <path
-                d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
-              />
-            </svg>
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+              style="background-color:#00B42A"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-timeline-item-content-wrapper"
+        >
+          <div
+            class="arco-timeline-item-content"
+          >
+            The first milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-04-12
           </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
-        >
-          The third milestone
-        </div>
-        <div
-          class="arco-timeline-item-label"
-        >
-          2020-06-22
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:var(--color-fill-4)"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
           />
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-timeline-item-content-wrapper"
+        >
+          <div
+            class="arco-timeline-item-content"
+          >
+            The second milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-05-17
+          </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
+          class="arco-timeline-item-dot-wrapper"
         >
-          The third milestone
+          <div
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
+          />
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot-custom"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-clock-circle"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                style="font-size:12px;color:#F53F3F"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          class="arco-timeline-item-label"
+          class="arco-timeline-item-content-wrapper"
         >
-          2020-06-22
+          <div
+            class="arco-timeline-item-content"
+          >
+            The third milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-06-22
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+        role="listitem"
+      >
+        <div
+          class="arco-timeline-item-dot-wrapper"
+        >
+          <div
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
+          />
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+              style="background-color:var(--color-fill-4)"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-timeline-item-content-wrapper"
+        >
+          <div
+            class="arco-timeline-item-content"
+          >
+            The third milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-06-22
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
-    role="list"
+    class="arco-space-item"
     style="margin-right:40px"
   >
     <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
+      class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+      role="list"
     >
       <div
-        class="arco-timeline-item-dot-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot-custom"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
+          />
+          <div
+            class="arco-timeline-item-dot-content"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-check"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
-              viewBox="0 0 48 48"
+            <div
+              class="arco-timeline-item-dot-custom"
             >
-              <path
-                d="M41.678 11.05 19.05 33.678 6.322 20.95"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-check"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M41.678 11.05 19.05 33.678 6.322 20.95"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-timeline-item-content-wrapper"
+        >
+          <div
+            class="arco-timeline-item-content"
+          >
+            The first milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-04-12
           </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
-        >
-          The first milestone
-        </div>
-        <div
-          class="arco-timeline-item-label"
-        >
-          2020-04-12
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot-custom"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
+          />
+          <div
+            class="arco-timeline-item-dot-content"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-check"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
-              viewBox="0 0 48 48"
+            <div
+              class="arco-timeline-item-dot-custom"
             >
-              <path
-                d="M41.678 11.05 19.05 33.678 6.322 20.95"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-check"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M41.678 11.05 19.05 33.678 6.322 20.95"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-timeline-item-content-wrapper"
+        >
+          <div
+            class="arco-timeline-item-content"
+          >
+            The second milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-05-17
           </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
-        >
-          The second milestone
-        </div>
-        <div
-          class="arco-timeline-item-label"
-        >
-          2020-05-17
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
           />
-        </div>
-      </div>
-      <div
-        class="arco-timeline-item-content-wrapper"
-      >
-        <div
-          class="arco-timeline-item-content"
-        >
-          The third milestone
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            />
+          </div>
         </div>
         <div
-          class="arco-timeline-item-label"
-        >
-          2020-06-22
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-content-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:var(--color-fill-4)"
-          />
+            class="arco-timeline-item-content"
+          >
+            The third milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-06-22
+          </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
+          class="arco-timeline-item-dot-wrapper"
         >
-          The third milestone
+          <div
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
+          />
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+              style="background-color:var(--color-fill-4)"
+            />
+          </div>
         </div>
         <div
-          class="arco-timeline-item-label"
+          class="arco-timeline-item-content-wrapper"
         >
-          2020-06-22
+          <div
+            class="arco-timeline-item-content"
+          >
+            The third milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-06-22
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
-    role="list"
+    class="arco-space-item"
   >
     <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
+      class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
+      role="list"
     >
       <div
-        class="arco-timeline-item-dot-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
           />
-        </div>
-      </div>
-      <div
-        class="arco-timeline-item-content-wrapper"
-      >
-        <div
-          class="arco-timeline-item-content"
-        >
-          The first milestone
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+            />
+          </div>
         </div>
         <div
-          class="arco-timeline-item-label"
-        >
-          2020-04-12
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-content-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:var(--color-fill-4)"
-          />
+            class="arco-timeline-item-content"
+          >
+            The first milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-04-12
+          </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
-        >
-          The second milestone
-        </div>
-        <div
-          class="arco-timeline-item-label"
-        >
-          2020-05-17
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
-      role="listitem"
-    >
-      <div
-        class="arco-timeline-item-dot-wrapper"
-      >
-        <div
-          class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
-        />
-        <div
-          class="arco-timeline-item-dot-content"
+          class="arco-timeline-item-dot-wrapper"
         >
           <div
-            class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:var(--color-fill-4)"
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
           />
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+              style="background-color:var(--color-fill-4)"
+            />
+          </div>
+        </div>
+        <div
+          class="arco-timeline-item-content-wrapper"
+        >
+          <div
+            class="arco-timeline-item-content"
+          >
+            The second milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-05-17
+          </div>
         </div>
       </div>
       <div
-        class="arco-timeline-item-content-wrapper"
+        class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same arco-timeline-item-last"
+        role="listitem"
       >
         <div
-          class="arco-timeline-item-content"
+          class="arco-timeline-item-dot-wrapper"
         >
-          The third milestone
+          <div
+            class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
+            style="border-left-style:solid"
+          />
+          <div
+            class="arco-timeline-item-dot-content"
+          >
+            <div
+              class="arco-timeline-item-dot arco-timeline-item-dot-solid"
+              style="background-color:var(--color-fill-4)"
+            />
+          </div>
         </div>
         <div
-          class="arco-timeline-item-label"
+          class="arco-timeline-item-content-wrapper"
         >
-          2020-06-22
+          <div
+            class="arco-timeline-item-content"
+          >
+            The third milestone
+          </div>
+          <div
+            class="arco-timeline-item-label"
+          >
+            2020-06-22
+          </div>
         </div>
       </div>
     </div>
@@ -1929,7 +1941,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
     <span
       class="arco-typography"
     >
-      mode:     
+      mode:    
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
@@ -2032,7 +2044,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
-              style="margin-right:16px;margin-bottom:12px"
+              style="margin:0 12px 12px 12px"
               width="40"
             />
             <div
@@ -2085,7 +2097,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
-              style="margin-right:16px;margin-bottom:12px"
+              style="margin:0 12px 12px 12px"
               width="40"
             />
             <div
@@ -2138,7 +2150,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
-              style="margin-right:16px;margin-bottom:12px"
+              style="margin:0 12px 12px 12px"
               width="40"
             />
             <div

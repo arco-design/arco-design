@@ -1,3 +1,19 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件 `underline` 等不同文本样式下文字省略问题([#1137](https://github.com/arco-design/arco-design/pull/1137))
+
+## 2.37.0
+
+2022-07-08
+
+### 💅 样式更新
+
+- `Typography` 默认样式添加 `white-space: 'normal'` 以消除父元素对省略影响。([#1109](https://github.com/arco-design/arco-design/pull/1109))
+
 ## 2.34.0
 
 2022-05-27

@@ -33,13 +33,69 @@ exports[`renders Slider/demo/basic.md correctly 1`] = `
 
 exports[`renders Slider/demo/direction.md correctly 1`] = `
 <div
+  class="arco-space arco-space-horizontal arco-space-align-center"
   style="max-width:60%;min-width:20%"
 >
   <div
-    style="width:22px;text-align:center;margin-right:92px;display:inline-block"
+    class="arco-space-item"
+    style="margin-right:100px"
   >
     <div
-      class="arco-slider arco-slider-vertical"
+      style="width:22px;text-align:center;display:inline-block"
+    >
+      <div
+        class="arco-slider arco-slider-vertical"
+      >
+        <div
+          class="arco-slider-wrapper"
+        >
+          <div
+            class="arco-slider-road arco-slider-road-vertical"
+          >
+            <div
+              class="arco-slider-bar"
+              style="bottom:0%;top:90%"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="10"
+              aria-valuetext="10"
+              class="arco-slider-button"
+              role="slider"
+              style="bottom:10%"
+              tabindex="0"
+            />
+          </div>
+        </div>
+      </div>
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-sound"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        style="font-size:16px;color:var(--color-text-1)"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m14 16 10-9v34l-10-9H6V16h8Z"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M31.071 16.929c3.905 3.905 3.905 10.237 0 14.142M36.727 11.272c7.03 7.03 7.03 18.426 0 25.456"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-slider arco-slider-vertical arco-slider-with-marks"
+      style="vertical-align:top"
     >
       <div
         class="arco-slider-wrapper"
@@ -49,131 +105,85 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="bottom:0%;top:90%"
+            style="bottom:25%;top:50%"
+          />
+          <div
+            class="arco-slider-dots"
+          >
+            <div
+              class="arco-slider-dot-wrapper"
+              style="bottom:0%"
+            >
+              <div
+                class="arco-slider-dot"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="bottom:25%"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="bottom:50%"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="bottom:100%"
+            >
+              <div
+                class="arco-slider-dot"
+              />
+            </div>
+          </div>
+          <div
+            class="arco-slider-marks"
+          >
+            <div
+              aria-hidden="true"
+              class="arco-slider-marks-text"
+              style="bottom:25%"
+            >
+              5km
+            </div>
+            <div
+              aria-hidden="true"
+              class="arco-slider-marks-text"
+              style="bottom:50%"
+            >
+              10km
+            </div>
+          </div>
+          <div
+            aria-disabled="false"
+            aria-valuemax="20"
+            aria-valuemin="0"
+            aria-valuenow="5"
+            aria-valuetext="5"
+            class="arco-slider-button"
+            role="slider"
+            style="bottom:25%"
+            tabindex="0"
           />
           <div
             aria-disabled="false"
-            aria-valuemax="100"
+            aria-valuemax="20"
             aria-valuemin="0"
             aria-valuenow="10"
             aria-valuetext="10"
             class="arco-slider-button"
             role="slider"
-            style="bottom:10%"
+            style="bottom:50%"
             tabindex="0"
           />
         </div>
-      </div>
-    </div>
-    <svg
-      aria-hidden="true"
-      class="arco-icon arco-icon-sound"
-      fill="none"
-      focusable="false"
-      stroke="currentColor"
-      stroke-width="4"
-      style="font-size:16px;color:var(--color-text-1)"
-      viewBox="0 0 48 48"
-    >
-      <path
-        d="m14 16 10-9v34l-10-9H6V16h8Z"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M31.071 16.929c3.905 3.905 3.905 10.237 0 14.142M36.727 11.272c7.03 7.03 7.03 18.426 0 25.456"
-      />
-    </svg>
-  </div>
-  <div
-    class="arco-slider arco-slider-vertical arco-slider-with-marks"
-    style="vertical-align:top"
-  >
-    <div
-      class="arco-slider-wrapper"
-    >
-      <div
-        class="arco-slider-road arco-slider-road-vertical"
-      >
-        <div
-          class="arco-slider-bar"
-          style="bottom:25%;top:50%"
-        />
-        <div
-          class="arco-slider-dots"
-        >
-          <div
-            class="arco-slider-dot-wrapper"
-            style="bottom:0%"
-          >
-            <div
-              class="arco-slider-dot"
-            />
-          </div>
-          <div
-            class="arco-slider-dot-wrapper"
-            style="bottom:25%"
-          >
-            <div
-              class="arco-slider-dot arco-slider-dot-active"
-            />
-          </div>
-          <div
-            class="arco-slider-dot-wrapper"
-            style="bottom:50%"
-          >
-            <div
-              class="arco-slider-dot arco-slider-dot-active"
-            />
-          </div>
-          <div
-            class="arco-slider-dot-wrapper"
-            style="bottom:100%"
-          >
-            <div
-              class="arco-slider-dot"
-            />
-          </div>
-        </div>
-        <div
-          class="arco-slider-marks"
-        >
-          <div
-            aria-hidden="true"
-            class="arco-slider-marks-text"
-            style="bottom:25%"
-          >
-            5km
-          </div>
-          <div
-            aria-hidden="true"
-            class="arco-slider-marks-text"
-            style="bottom:50%"
-          >
-            10km
-          </div>
-        </div>
-        <div
-          aria-disabled="false"
-          aria-valuemax="20"
-          aria-valuemin="0"
-          aria-valuenow="5"
-          aria-valuetext="5"
-          class="arco-slider-button"
-          role="slider"
-          style="bottom:25%"
-          tabindex="0"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="20"
-          aria-valuemin="0"
-          aria-valuenow="10"
-          aria-valuetext="10"
-          class="arco-slider-button"
-          role="slider"
-          style="bottom:50%"
-          tabindex="0"
-        />
       </div>
     </div>
   </div>
@@ -261,11 +271,10 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right:60px"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
-      style="margin-right:20px"
     >
       <div
         class="arco-space-item"
@@ -407,426 +416,449 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
 exports[`renders Slider/demo/input.md correctly 1`] = `
 Array [
   <div
-    class="arco-slider"
-    style="width:280px;margin-right:44px"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
-      class="arco-slider-wrapper"
+      class="arco-space-item"
+      style="margin-right:60px"
     >
       <div
-        class="arco-slider-road"
+        class="arco-slider"
+        style="width:280px"
       >
         <div
-          class="arco-slider-bar"
-          style="left:0%;right:19.999999999999996%"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="80"
-          aria-valuetext="80"
-          class="arco-slider-button"
-          role="slider"
-          style="left:80%"
-          tabindex="0"
-        />
-      </div>
-      <div
-        class="arco-slider-input"
-      >
-        <div
-          class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+          class="arco-slider-wrapper"
         >
-          <span
-            class="arco-input-group"
+          <div
+            class="arco-slider-road"
           >
-            <span
-              class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-            >
-              <input
-                aria-valuemax="100"
-                aria-valuemin="0"
-                aria-valuenow="80"
-                class="arco-input arco-input-size-default"
-                role="spinbutton"
-                value="80"
-              />
-              <span
-                class="arco-input-group-suffix"
-              />
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
-    class="arco-slider"
-    style="width:360px"
-  >
-    <div
-      class="arco-slider-wrapper"
-    >
-      <div
-        class="arco-slider-road"
-      >
-        <div
-          class="arco-slider-bar"
-          style="left:10%;right:19.999999999999996%"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="10"
-          aria-valuetext="10"
-          class="arco-slider-button"
-          role="slider"
-          style="left:10%"
-          tabindex="0"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="80"
-          aria-valuetext="80"
-          class="arco-slider-button"
-          role="slider"
-          style="left:80%"
-          tabindex="0"
-        />
-      </div>
-      <div
-        class="arco-slider-input arco-slider-input-group"
-      >
-        <div
-          class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-        >
-          <span
-            class="arco-input-group"
-          >
-            <span
-              class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-            >
-              <input
-                aria-valuemax="100"
-                aria-valuemin="0"
-                aria-valuenow="10"
-                class="arco-input arco-input-size-default"
-                role="spinbutton"
-                value="10"
-              />
-              <span
-                class="arco-input-group-suffix"
-              />
-            </span>
-          </span>
-        </div>
-        <div
-          class="arco-slider-input-range"
-        >
-          <span
-            class="arco-slider-input-range-content"
-          />
-        </div>
-        <div
-          class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-        >
-          <span
-            class="arco-input-group"
-          >
-            <span
-              class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-            >
-              <input
-                aria-valuemax="100"
-                aria-valuemin="0"
-                aria-valuenow="80"
-                class="arco-input arco-input-size-default"
-                role="spinbutton"
-                value="80"
-              />
-              <span
-                class="arco-input-group-suffix"
-              />
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
-    style="margin-top:20px"
-  >
-    <div
-      class="arco-slider"
-      style="width:280px;margin-right:44px"
-    >
-      <div
-        class="arco-slider-wrapper"
-      >
-        <div
-          class="arco-slider-road"
-        >
-          <div
-            class="arco-slider-bar"
-            style="left:0%;right:19.999999999999996%"
-          />
-          <div
-            aria-disabled="false"
-            aria-valuemax="100"
-            aria-valuemin="0"
-            aria-valuenow="80"
-            aria-valuetext="80"
-            class="arco-slider-button"
-            role="slider"
-            style="left:80%"
-            tabindex="0"
-          />
-        </div>
-        <div
-          class="arco-slider-input"
-        >
-          <div
-            class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-            style="width:80px"
-          >
-            <span
-              class="arco-input-group"
-            >
-              <span
-                class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-              >
-                <input
-                  aria-valuemax="100"
-                  aria-valuemin="0"
-                  aria-valuenow="80"
-                  class="arco-input arco-input-size-default"
-                  role="spinbutton"
-                  value="80"
-                />
-                <span
-                  class="arco-input-group-suffix"
-                >
-                  <div
-                    class="arco-input-number-step-layer"
-                  >
-                    <div
-                      class="arco-input-number-step-button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="arco-icon arco-icon-up"
-                        fill="none"
-                        focusable="false"
-                        stroke="currentColor"
-                        stroke-width="4"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          d="M39.6 30.557 24.043 15 8.487 30.557"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      class="arco-input-number-step-button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="arco-icon arco-icon-down"
-                        fill="none"
-                        focusable="false"
-                        stroke="currentColor"
-                        stroke-width="4"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          d="M39.6 17.443 24.043 33 8.487 17.443"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-slider"
-      style="width:360px"
-    >
-      <div
-        class="arco-slider-wrapper"
-      >
-        <div
-          class="arco-slider-road"
-        >
-          <div
-            class="arco-slider-bar"
-            style="left:10%;right:19.999999999999996%"
-          />
-          <div
-            aria-disabled="false"
-            aria-valuemax="100"
-            aria-valuemin="0"
-            aria-valuenow="10"
-            aria-valuetext="10"
-            class="arco-slider-button"
-            role="slider"
-            style="left:10%"
-            tabindex="0"
-          />
-          <div
-            aria-disabled="false"
-            aria-valuemax="100"
-            aria-valuemin="0"
-            aria-valuenow="80"
-            aria-valuetext="80"
-            class="arco-slider-button"
-            role="slider"
-            style="left:80%"
-            tabindex="0"
-          />
-        </div>
-        <div
-          class="arco-slider-input arco-slider-input-group"
-        >
-          <div
-            class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-            style="width:80px"
-          >
-            <span
-              class="arco-input-group"
-            >
-              <span
-                class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-              >
-                <input
-                  aria-valuemax="100"
-                  aria-valuemin="0"
-                  aria-valuenow="10"
-                  class="arco-input arco-input-size-default"
-                  role="spinbutton"
-                  value="10"
-                />
-                <span
-                  class="arco-input-group-suffix"
-                >
-                  <div
-                    class="arco-input-number-step-layer"
-                  >
-                    <div
-                      class="arco-input-number-step-button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="arco-icon arco-icon-up"
-                        fill="none"
-                        focusable="false"
-                        stroke="currentColor"
-                        stroke-width="4"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          d="M39.6 30.557 24.043 15 8.487 30.557"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      class="arco-input-number-step-button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="arco-icon arco-icon-down"
-                        fill="none"
-                        focusable="false"
-                        stroke="currentColor"
-                        stroke-width="4"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          d="M39.6 17.443 24.043 33 8.487 17.443"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          <div
-            class="arco-slider-input-range"
-          >
-            <span
-              class="arco-slider-input-range-content"
+            <div
+              class="arco-slider-bar"
+              style="left:0%;right:19.999999999999996%"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="80"
+              aria-valuetext="80"
+              class="arco-slider-button"
+              role="slider"
+              style="left:80%"
+              tabindex="0"
             />
           </div>
           <div
-            class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-            style="width:80px"
+            class="arco-slider-input"
           >
-            <span
-              class="arco-input-group"
+            <div
+              class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
             >
               <span
-                class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+                class="arco-input-group"
               >
-                <input
-                  aria-valuemax="100"
-                  aria-valuemin="0"
-                  aria-valuenow="80"
-                  class="arco-input arco-input-size-default"
-                  role="spinbutton"
-                  value="80"
-                />
                 <span
-                  class="arco-input-group-suffix"
+                  class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
                 >
-                  <div
-                    class="arco-input-number-step-layer"
-                  >
-                    <div
-                      class="arco-input-number-step-button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="arco-icon arco-icon-up"
-                        fill="none"
-                        focusable="false"
-                        stroke="currentColor"
-                        stroke-width="4"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          d="M39.6 30.557 24.043 15 8.487 30.557"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      class="arco-input-number-step-button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="arco-icon arco-icon-down"
-                        fill="none"
-                        focusable="false"
-                        stroke="currentColor"
-                        stroke-width="4"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          d="M39.6 17.443 24.043 33 8.487 17.443"
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                  <input
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="80"
+                    class="arco-input arco-input-size-default"
+                    role="spinbutton"
+                    value="80"
+                  />
+                  <span
+                    class="arco-input-group-suffix"
+                  />
                 </span>
               </span>
-            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-slider"
+        style="width:360px"
+      >
+        <div
+          class="arco-slider-wrapper"
+        >
+          <div
+            class="arco-slider-road"
+          >
+            <div
+              class="arco-slider-bar"
+              style="left:10%;right:19.999999999999996%"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="10"
+              aria-valuetext="10"
+              class="arco-slider-button"
+              role="slider"
+              style="left:10%"
+              tabindex="0"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="80"
+              aria-valuetext="80"
+              class="arco-slider-button"
+              role="slider"
+              style="left:80%"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="arco-slider-input arco-slider-input-group"
+          >
+            <div
+              class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+            >
+              <span
+                class="arco-input-group"
+              >
+                <span
+                  class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+                >
+                  <input
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="10"
+                    class="arco-input arco-input-size-default"
+                    role="spinbutton"
+                    value="10"
+                  />
+                  <span
+                    class="arco-input-group-suffix"
+                  />
+                </span>
+              </span>
+            </div>
+            <div
+              class="arco-slider-input-range"
+            >
+              <span
+                class="arco-slider-input-range-content"
+              />
+            </div>
+            <div
+              class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+            >
+              <span
+                class="arco-input-group"
+              >
+                <span
+                  class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+                >
+                  <input
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="80"
+                    class="arco-input arco-input-size-default"
+                    role="spinbutton"
+                    value="80"
+                  />
+                  <span
+                    class="arco-input-group-suffix"
+                  />
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+    style="margin-top:20px"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:60px"
+    >
+      <div
+        class="arco-slider"
+        style="width:280px"
+      >
+        <div
+          class="arco-slider-wrapper"
+        >
+          <div
+            class="arco-slider-road"
+          >
+            <div
+              class="arco-slider-bar"
+              style="left:0%;right:19.999999999999996%"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="80"
+              aria-valuetext="80"
+              class="arco-slider-button"
+              role="slider"
+              style="left:80%"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="arco-slider-input"
+          >
+            <div
+              class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+              style="width:80px"
+            >
+              <span
+                class="arco-input-group"
+              >
+                <span
+                  class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+                >
+                  <input
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="80"
+                    class="arco-input arco-input-size-default"
+                    role="spinbutton"
+                    value="80"
+                  />
+                  <span
+                    class="arco-input-group-suffix"
+                  >
+                    <div
+                      class="arco-input-number-step-layer"
+                    >
+                      <div
+                        class="arco-input-number-step-button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="arco-icon arco-icon-up"
+                          fill="none"
+                          focusable="false"
+                          stroke="currentColor"
+                          stroke-width="4"
+                          viewBox="0 0 48 48"
+                        >
+                          <path
+                            d="M39.6 30.557 24.043 15 8.487 30.557"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="arco-input-number-step-button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="arco-icon arco-icon-down"
+                          fill="none"
+                          focusable="false"
+                          stroke="currentColor"
+                          stroke-width="4"
+                          viewBox="0 0 48 48"
+                        >
+                          <path
+                            d="M39.6 17.443 24.043 33 8.487 17.443"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-slider"
+        style="width:360px"
+      >
+        <div
+          class="arco-slider-wrapper"
+        >
+          <div
+            class="arco-slider-road"
+          >
+            <div
+              class="arco-slider-bar"
+              style="left:10%;right:19.999999999999996%"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="10"
+              aria-valuetext="10"
+              class="arco-slider-button"
+              role="slider"
+              style="left:10%"
+              tabindex="0"
+            />
+            <div
+              aria-disabled="false"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="80"
+              aria-valuetext="80"
+              class="arco-slider-button"
+              role="slider"
+              style="left:80%"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="arco-slider-input arco-slider-input-group"
+          >
+            <div
+              class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+              style="width:80px"
+            >
+              <span
+                class="arco-input-group"
+              >
+                <span
+                  class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+                >
+                  <input
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="10"
+                    class="arco-input arco-input-size-default"
+                    role="spinbutton"
+                    value="10"
+                  />
+                  <span
+                    class="arco-input-group-suffix"
+                  >
+                    <div
+                      class="arco-input-number-step-layer"
+                    >
+                      <div
+                        class="arco-input-number-step-button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="arco-icon arco-icon-up"
+                          fill="none"
+                          focusable="false"
+                          stroke="currentColor"
+                          stroke-width="4"
+                          viewBox="0 0 48 48"
+                        >
+                          <path
+                            d="M39.6 30.557 24.043 15 8.487 30.557"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="arco-input-number-step-button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="arco-icon arco-icon-down"
+                          fill="none"
+                          focusable="false"
+                          stroke="currentColor"
+                          stroke-width="4"
+                          viewBox="0 0 48 48"
+                        >
+                          <path
+                            d="M39.6 17.443 24.043 33 8.487 17.443"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div
+              class="arco-slider-input-range"
+            >
+              <span
+                class="arco-slider-input-range-content"
+              />
+            </div>
+            <div
+              class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+              style="width:80px"
+            >
+              <span
+                class="arco-input-group"
+              >
+                <span
+                  class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+                >
+                  <input
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="80"
+                    class="arco-input arco-input-size-default"
+                    role="spinbutton"
+                    value="80"
+                  />
+                  <span
+                    class="arco-input-group-suffix"
+                  >
+                    <div
+                      class="arco-input-number-step-layer"
+                    >
+                      <div
+                        class="arco-input-number-step-button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="arco-icon arco-icon-up"
+                          fill="none"
+                          focusable="false"
+                          stroke="currentColor"
+                          stroke-width="4"
+                          viewBox="0 0 48 48"
+                        >
+                          <path
+                            d="M39.6 30.557 24.043 15 8.487 30.557"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="arco-input-number-step-button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="arco-icon arco-icon-down"
+                          fill="none"
+                          focusable="false"
+                          stroke="currentColor"
+                          stroke-width="4"
+                          viewBox="0 0 48 48"
+                        >
+                          <path
+                            d="M39.6 17.443 24.043 33 8.487 17.443"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1493,424 +1525,208 @@ exports[`renders Slider/demo/range.md correctly 1`] = `
 `;
 
 exports[`renders Slider/demo/reversed.md correctly 1`] = `
-<div>
+Array [
   <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
     style="margin-bottom:24px"
   >
-    <button
-      aria-checked="true"
-      class="arco-switch arco-switch-type-circle arco-switch-checked"
-      role="switch"
-      type="button"
-    >
-      <div
-        class="arco-switch-dot"
-      />
-    </button>
-     
-    <span
-      class="arco-typography"
-    >
-      Reversed
-    </span>
-  </div>
-  <div
-    class="arco-slider arco-slider-with-marks arco-slider-reverse"
-    style="width:200px"
-  >
     <div
-      class="arco-slider-wrapper"
+      class="arco-space-item"
+      style="margin-right:4px"
     >
-      <div
-        class="arco-slider-road"
+      <button
+        aria-checked="true"
+        class="arco-switch arco-switch-type-circle arco-switch-checked"
+        role="switch"
+        type="button"
       >
         <div
-          class="arco-slider-bar"
-          style="right:0%;left:33.333333333333336%"
+          class="arco-switch-dot"
         />
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <span
+        class="arco-typography"
+      >
+        Reversed
+      </span>
+    </div>
+  </div>,
+  <div>
+    <div
+      class="arco-slider arco-slider-with-marks arco-slider-reverse"
+      style="width:200px"
+    >
+      <div
+        class="arco-slider-wrapper"
+      >
         <div
-          class="arco-slider-ticks"
+          class="arco-slider-road"
         >
           <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:6.666666666666667%"
+            class="arco-slider-bar"
+            style="right:0%;left:33.333333333333336%"
           />
           <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:13.333333333333334%"
-          />
+            class="arco-slider-ticks"
+          >
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:6.666666666666667%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:13.333333333333334%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:20%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:26.666666666666668%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:33.33333333333333%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:40%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:46.666666666666664%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:53.333333333333336%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:60%"
+            />
+            <div
+              class="arco-slider-tick arco-slider-tick-active"
+              style="right:66.66666666666666%"
+            />
+            <div
+              class="arco-slider-tick"
+              style="right:73.33333333333333%"
+            />
+            <div
+              class="arco-slider-tick"
+              style="right:80%"
+            />
+            <div
+              class="arco-slider-tick"
+              style="right:86.66666666666667%"
+            />
+            <div
+              class="arco-slider-tick"
+              style="right:93.33333333333333%"
+            />
+          </div>
           <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:20%"
-          />
+            class="arco-slider-dots"
+          >
+            <div
+              class="arco-slider-dot-wrapper"
+              style="right:0%"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="right:33.33333333333333%"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="right:66.66666666666666%"
+            >
+              <div
+                class="arco-slider-dot arco-slider-dot-active"
+              />
+            </div>
+            <div
+              class="arco-slider-dot-wrapper"
+              style="right:100%"
+            >
+              <div
+                class="arco-slider-dot"
+              />
+            </div>
+          </div>
           <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:26.666666666666668%"
-          />
+            class="arco-slider-marks"
+          >
+            <div
+              aria-hidden="true"
+              class="arco-slider-marks-text"
+              style="right:0%"
+            >
+              0km
+            </div>
+            <div
+              aria-hidden="true"
+              class="arco-slider-marks-text"
+              style="right:33.33333333333333%"
+            >
+              5km
+            </div>
+            <div
+              aria-hidden="true"
+              class="arco-slider-marks-text"
+              style="right:66.66666666666666%"
+            >
+              10km
+            </div>
+            <div
+              aria-hidden="true"
+              class="arco-slider-marks-text"
+              style="right:100%"
+            >
+              15km
+            </div>
+          </div>
           <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:33.33333333333333%"
-          />
-          <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:40%"
-          />
-          <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:46.666666666666664%"
-          />
-          <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:53.333333333333336%"
-          />
-          <div
-            class="arco-slider-tick arco-slider-tick-active"
-            style="right:60%"
-          />
-          <div
-            class="arco-slider-tick arco-slider-tick-active"
+            aria-disabled="false"
+            aria-valuemax="15"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            aria-valuetext="10"
+            class="arco-slider-button"
+            role="slider"
             style="right:66.66666666666666%"
-          />
-          <div
-            class="arco-slider-tick"
-            style="right:73.33333333333333%"
-          />
-          <div
-            class="arco-slider-tick"
-            style="right:80%"
-          />
-          <div
-            class="arco-slider-tick"
-            style="right:86.66666666666667%"
-          />
-          <div
-            class="arco-slider-tick"
-            style="right:93.33333333333333%"
+            tabindex="0"
           />
         </div>
-        <div
-          class="arco-slider-dots"
-        >
-          <div
-            class="arco-slider-dot-wrapper"
-            style="right:0%"
-          >
-            <div
-              class="arco-slider-dot arco-slider-dot-active"
-            />
-          </div>
-          <div
-            class="arco-slider-dot-wrapper"
-            style="right:33.33333333333333%"
-          >
-            <div
-              class="arco-slider-dot arco-slider-dot-active"
-            />
-          </div>
-          <div
-            class="arco-slider-dot-wrapper"
-            style="right:66.66666666666666%"
-          >
-            <div
-              class="arco-slider-dot arco-slider-dot-active"
-            />
-          </div>
-          <div
-            class="arco-slider-dot-wrapper"
-            style="right:100%"
-          >
-            <div
-              class="arco-slider-dot"
-            />
-          </div>
-        </div>
-        <div
-          class="arco-slider-marks"
-        >
-          <div
-            aria-hidden="true"
-            class="arco-slider-marks-text"
-            style="right:0%"
-          >
-            0km
-          </div>
-          <div
-            aria-hidden="true"
-            class="arco-slider-marks-text"
-            style="right:33.33333333333333%"
-          >
-            5km
-          </div>
-          <div
-            aria-hidden="true"
-            class="arco-slider-marks-text"
-            style="right:66.66666666666666%"
-          >
-            10km
-          </div>
-          <div
-            aria-hidden="true"
-            class="arco-slider-marks-text"
-            style="right:100%"
-          >
-            15km
-          </div>
-        </div>
-        <div
-          aria-disabled="false"
-          aria-valuemax="15"
-          aria-valuemin="0"
-          aria-valuenow="10"
-          aria-valuetext="10"
-          class="arco-slider-button"
-          role="slider"
-          style="right:66.66666666666666%"
-          tabindex="0"
-        />
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`renders Slider/demo/set-range.md correctly 1`] = `
 <div
-  style="display:flex;align-items:center"
+  class="arco-space arco-space-horizontal arco-space-align-center"
 >
   <div
-    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:78px;margin-right:16px"
+    class="arco-space-item"
+    style="margin-right:16px"
   >
-    <span
-      class="arco-input-group"
-    >
-      <span
-        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-      >
-        <input
-          aria-valuemax="Infinity"
-          aria-valuemin="-Infinity"
-          aria-valuenow="0"
-          class="arco-input arco-input-size-default"
-          role="spinbutton"
-          value="0"
-        />
-        <span
-          class="arco-input-group-suffix"
-        >
-          <div
-            class="arco-input-number-step-layer"
-          >
-            <div
-              class="arco-input-number-step-button"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-up"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M39.6 30.557 24.043 15 8.487 30.557"
-                />
-              </svg>
-            </div>
-            <div
-              class="arco-input-number-step-button"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-down"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M39.6 17.443 24.043 33 8.487 17.443"
-                />
-              </svg>
-            </div>
-          </div>
-        </span>
-      </span>
-    </span>
-  </div>
-  <div
-    class="arco-slider"
-    style="width:200px"
-  >
-    <div
-      class="arco-slider-wrapper"
-    >
-      <div
-        class="arco-slider-road"
-      >
-        <div
-          class="arco-slider-bar"
-          style="left:0%;right:70%"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          aria-valuetext="30"
-          class="arco-slider-button"
-          role="slider"
-          style="left:30%"
-          tabindex="0"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:78px;margin-left:16px"
-  >
-    <span
-      class="arco-input-group"
-    >
-      <span
-        class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
-      >
-        <input
-          aria-valuemax="Infinity"
-          aria-valuemin="-Infinity"
-          aria-valuenow="100"
-          class="arco-input arco-input-size-default"
-          role="spinbutton"
-          value="100"
-        />
-        <span
-          class="arco-input-group-suffix"
-        >
-          <div
-            class="arco-input-number-step-layer"
-          >
-            <div
-              class="arco-input-number-step-button"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-up"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M39.6 30.557 24.043 15 8.487 30.557"
-                />
-              </svg>
-            </div>
-            <div
-              class="arco-input-number-step-button"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-down"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M39.6 17.443 24.043 33 8.487 17.443"
-                />
-              </svg>
-            </div>
-          </div>
-        </span>
-      </span>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`renders Slider/demo/status.md correctly 1`] = `
-<div>
-  <div
-    class="arco-slider"
-    style="width:200px"
-  >
-    <div
-      class="arco-slider-wrapper"
-    >
-      <div
-        class="arco-slider-road"
-      >
-        <div
-          class="arco-slider-bar"
-          style="left:0%;right:70%"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          aria-valuetext="30"
-          class="arco-slider-button"
-          role="slider"
-          style="left:30%"
-          tabindex="0"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="arco-slider"
-    style="width:200px;margin-left:74px"
-  >
-    <div
-      class="arco-slider-wrapper"
-    >
-      <div
-        class="arco-slider-road arco-slider-road-disabled"
-      >
-        <div
-          class="arco-slider-bar"
-          style="left:0%;right:70%"
-        />
-        <div
-          aria-disabled="true"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          aria-valuetext="30"
-          class="arco-slider-button"
-          role="slider"
-          style="left:30%"
-          tabindex="0"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders Slider/demo/step.md correctly 1`] = `
-<div
-  style="max-width:40%;min-width:20%"
->
-  <div
-    style="margin-bottom:20px;line-height:32px"
-  >
-    <span
-      class="arco-typography"
-      style="margin-right:8px"
-    >
-      step
-    </span>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-      style="width:68px;margin-right:16px"
+      style="width:78px"
     >
       <span
         class="arco-input-group"
@@ -1919,12 +1735,12 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
           class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
         >
           <input
-            aria-valuemax="10"
-            aria-valuemin="1"
-            aria-valuenow="1"
+            aria-valuemax="Infinity"
+            aria-valuemin="-Infinity"
+            aria-valuenow="0"
             class="arco-input arco-input-size-default"
             role="spinbutton"
-            value="1"
+            value="0"
           />
           <span
             class="arco-input-group-suffix"
@@ -1950,7 +1766,7 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
                 </svg>
               </div>
               <div
-                class="arco-input-number-step-button arco-input-number-step-button-disabled"
+                class="arco-input-number-step-button"
               >
                 <svg
                   aria-hidden="true"
@@ -1971,22 +1787,288 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
         </span>
       </span>
     </div>
-    <span
-      class="arco-typography"
-      style="margin-right:8px"
-    >
-      showTicks
-    </span>
-    <button
-      aria-checked="true"
-      class="arco-switch arco-switch-type-circle arco-switch-checked"
-      role="switch"
-      type="button"
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:16px"
+  >
+    <div
+      class="arco-slider"
+      style="width:200px"
     >
       <div
-        class="arco-switch-dot"
-      />
-    </button>
+        class="arco-slider-wrapper"
+      >
+        <div
+          class="arco-slider-road"
+        >
+          <div
+            class="arco-slider-bar"
+            style="left:0%;right:70%"
+          />
+          <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="30"
+            aria-valuetext="30"
+            class="arco-slider-button"
+            role="slider"
+            style="left:30%"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+      style="width:78px"
+    >
+      <span
+        class="arco-input-group"
+      >
+        <span
+          class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+        >
+          <input
+            aria-valuemax="Infinity"
+            aria-valuemin="-Infinity"
+            aria-valuenow="100"
+            class="arco-input arco-input-size-default"
+            role="spinbutton"
+            value="100"
+          />
+          <span
+            class="arco-input-group-suffix"
+          >
+            <div
+              class="arco-input-number-step-layer"
+            >
+              <div
+                class="arco-input-number-step-button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-up"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M39.6 30.557 24.043 15 8.487 30.557"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-input-number-step-button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </div>
+            </div>
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Slider/demo/status.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:60px"
+  >
+    <div
+      class="arco-slider"
+      style="width:200px"
+    >
+      <div
+        class="arco-slider-wrapper"
+      >
+        <div
+          class="arco-slider-road"
+        >
+          <div
+            class="arco-slider-bar"
+            style="left:0%;right:70%"
+          />
+          <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="30"
+            aria-valuetext="30"
+            class="arco-slider-button"
+            role="slider"
+            style="left:30%"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-slider"
+      style="width:200px"
+    >
+      <div
+        class="arco-slider-wrapper"
+      >
+        <div
+          class="arco-slider-road arco-slider-road-disabled"
+        >
+          <div
+            class="arco-slider-bar"
+            style="left:0%;right:70%"
+          />
+          <div
+            aria-disabled="true"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="30"
+            aria-valuetext="30"
+            class="arco-slider-button"
+            role="slider"
+            style="left:30%"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Slider/demo/step.md correctly 1`] = `
+<div
+  style="max-width:40%;min-width:20%"
+>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+    style="margin-bottom:20px;line-height:32px"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:20px"
+    >
+      <div>
+        <span
+          class="arco-typography"
+          style="margin:0 4px"
+        >
+          step
+        </span>
+        <div
+          class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
+          style="width:68px"
+        >
+          <span
+            class="arco-input-group"
+          >
+            <span
+              class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+            >
+              <input
+                aria-valuemax="10"
+                aria-valuemin="1"
+                aria-valuenow="1"
+                class="arco-input arco-input-size-default"
+                role="spinbutton"
+                value="1"
+              />
+              <span
+                class="arco-input-group-suffix"
+              >
+                <div
+                  class="arco-input-number-step-layer"
+                >
+                  <div
+                    class="arco-input-number-step-button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="arco-icon arco-icon-up"
+                      fill="none"
+                      focusable="false"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      viewBox="0 0 48 48"
+                    >
+                      <path
+                        d="M39.6 30.557 24.043 15 8.487 30.557"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="arco-input-number-step-button arco-input-number-step-button-disabled"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="arco-icon arco-icon-down"
+                      fill="none"
+                      focusable="false"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      viewBox="0 0 48 48"
+                    >
+                      <path
+                        d="M39.6 17.443 24.043 33 8.487 17.443"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div>
+        <span
+          class="arco-typography"
+          style="margin:0 4px"
+        >
+          showTicks
+        </span>
+        <button
+          aria-checked="true"
+          class="arco-switch arco-switch-type-circle arco-switch-checked"
+          role="switch"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          />
+        </button>
+      </div>
+    </div>
   </div>
   <div>
     <span
@@ -1996,7 +2078,7 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
     </span>
     <div
       class="arco-slider"
-      style="width:258px;margin-left:7px;margin-right:7px;vertical-align:middle"
+      style="width:258px;margin-left:8px;margin-right:8px;vertical-align:middle"
     >
       <div
         class="arco-slider-wrapper"
@@ -2072,71 +2154,82 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
 `;
 
 exports[`renders Slider/demo/tooltip.md correctly 1`] = `
-<div>
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
   <div
-    class="arco-slider"
-    style="width:200px;margin-right:100px"
+    class="arco-space-item"
+    style="margin-right:60px"
   >
     <div
-      class="arco-slider-wrapper"
+      class="arco-slider"
+      style="width:200px;margin-right:100px"
     >
       <div
-        class="arco-slider-road"
+        class="arco-slider-wrapper"
       >
         <div
-          class="arco-slider-bar"
-          style="left:0%;right:80%"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="20"
-          aria-valuetext="20"
-          class="arco-slider-button arco-tooltip-open"
-          role="slider"
-          style="left:20%"
-          tabindex="0"
-        />
+          class="arco-slider-road"
+        >
+          <div
+            class="arco-slider-bar"
+            style="left:0%;right:80%"
+          />
+          <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="20"
+            aria-valuetext="20"
+            class="arco-slider-button arco-tooltip-open"
+            role="slider"
+            style="left:20%"
+            tabindex="0"
+          />
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="arco-slider"
-    style="width:200px"
+    class="arco-space-item"
   >
     <div
-      class="arco-slider-wrapper"
+      class="arco-slider"
+      style="width:200px"
     >
       <div
-        class="arco-slider-road"
+        class="arco-slider-wrapper"
       >
         <div
-          class="arco-slider-bar"
-          style="left:0%;right:50%"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="0"
-          aria-valuetext="0"
-          class="arco-slider-button arco-tooltip-open"
-          role="slider"
-          style="left:0%"
-          tabindex="0"
-        />
-        <div
-          aria-disabled="false"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="50"
-          aria-valuetext="50"
-          class="arco-slider-button arco-tooltip-open"
-          role="slider"
-          style="left:50%"
-          tabindex="0"
-        />
+          class="arco-slider-road"
+        >
+          <div
+            class="arco-slider-bar"
+            style="left:0%;right:50%"
+          />
+          <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="0"
+            aria-valuetext="0"
+            class="arco-slider-button arco-tooltip-open"
+            role="slider"
+            style="left:0%"
+            tabindex="0"
+          />
+          <div
+            aria-disabled="false"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="50"
+            aria-valuetext="50"
+            class="arco-slider-button arco-tooltip-open"
+            role="slider"
+            style="left:50%"
+            tabindex="0"
+          />
+        </div>
       </div>
     </div>
   </div>

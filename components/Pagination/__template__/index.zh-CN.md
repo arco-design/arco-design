@@ -12,6 +12,6 @@ file: interface
 
 %%Content%%
 
-## 属性/Props
+## API 
 
 %%Props%%

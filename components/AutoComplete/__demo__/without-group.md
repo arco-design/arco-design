@@ -16,11 +16,11 @@ Complete the input according to the query result (without group).
 ```js
 import { useState } from 'react';
 import { AutoComplete, Input } from '@arco-design/web-react';
-
 const { Option } = AutoComplete;
 
-function Demo() {
+function App() {
   const [data, setData] = useState([]);
+
   const handleSearch = (inputValue) => {
     if (inputValue) {
       setData(
@@ -29,7 +29,11 @@ function Demo() {
           return (
             <Option key={index} value={value}>
               <span>{value}</span>
-              <span style={{ float: 'right' }}>{`${~~(Math.random() * 1000)} results`}</span>
+              <span
+                style={{
+                  float: 'right',
+                }}
+              >{`${~~(Math.random() * 1000)} results`}</span>
             </Option>
           );
         })
@@ -52,5 +56,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

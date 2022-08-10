@@ -177,6 +177,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
         role="treeitem"
         aria-disabled={disabled}
         aria-expanded={expanded}
+        aria-level={props._level}
       >
         <span className={`${prefixCls}-indent`} aria-hidden>
           {[...Array(props._level)].map((_, i) => (

@@ -16,5 +16,9 @@ The simplest usage.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(<Pagination total={200} />, CONTAINER);
+const App = () => {
+  return <Pagination total={200} />;
+};
+
+export default App;
 ```

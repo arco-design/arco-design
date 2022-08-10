@@ -16,10 +16,13 @@ The element will be fixed when it scrolls down to a certain distance from the to
 ```js
 import { Affix, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Affix offsetTop={80}>
-    <Button type="primary">80px to affix top</Button>
-  </Affix>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Affix offsetTop={80}>
+      <Button type="primary">80px to affix top</Button>
+    </Affix>
+  );
+};
+
+export default App;
 ```

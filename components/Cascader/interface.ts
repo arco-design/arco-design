@@ -3,12 +3,12 @@ import Store from './base/store';
 import { TriggerProps } from '../Trigger';
 import { SelectViewCommonProps } from '../_class/select-view';
 import { NodeProps } from './base/node';
+import { VirtualListProps } from '../_class/VirtualList';
 
 /**
  * @title Cascader
  */
-export interface CascaderProps<T = any>
-  extends Omit<SelectViewCommonProps, 'allowCreate' | 'dragToSort'> {
+export interface CascaderProps<T = any> extends Omit<SelectViewCommonProps, 'allowCreate'> {
   /**
    * @zh 选择框的默认值
    * @en Initial value
@@ -93,6 +93,31 @@ export interface CascaderProps<T = any>
    */
   checkedStrategy?: 'parent' | 'child';
   /**
+   * @zh 自定义下拉列表类名
+   * @en Custom dropdown list classname
+   * @version 2.35.0
+   */
+  dropdownMenuClassName?: string | string[];
+  /**
+   * @zh 菜单列样式
+   * @en dropdown menu column style
+   * @version 2.35.0
+   */
+  dropdownMenuColumnStyle?: CSSProperties;
+  /**
+   * @zh 传递虚拟滚动属性。开启虚拟滚动后，每列级联菜单的会存在默认宽度，可通过 `dropdownMenuColumnStyle` 进行样式调整
+   * @en virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`
+   * @version 2.35.0
+   */
+  virtualListProps?: Pick<VirtualListProps<any>, 'threshold' | 'isStaticItemHeight'>;
+  /**
+   * @zh 是否默认高亮搜索结果第一个选项。
+   * @en Whether to highlight the first option of search results by default
+   * @version 2.37.0
+   * @defaultValue true
+   */
+  defaultActiveFirstOption?: boolean;
+  /**
    * @zh 自定义下拉菜单的展示。
    * @en Customize the popup menu.
    * @version 2.15.0
@@ -168,18 +193,42 @@ export interface CascaderProps<T = any>
 }
 
 export interface OptionProps {
-  /** 选项的值 */
+  /**
+   * @zh 选项的值
+   * @en: the value of Option
+   *
+   */
   value?: string;
-  /** 选项文本 */
+  /**
+   * @zh 选项文本
+   * @en option text
+   */
   label?: string;
-  /** 是否禁用该选项 */
+  /**
+   * @zh 是否禁用该选项
+   * @en whether to disabled
+   */
   disabled?: boolean;
-  /** 下一级选项 */
+  /**
+   * @zh 下一级选项
+   * @en next level menu
+   */
   children?: OptionProps[];
-  /** 是否是叶子节点 */
+  /**
+   * @zh 是否是叶子节点
+   * @en Flag whether it is a leaf node
+   */
   isLeaf?: boolean;
-  /** 是否禁用复选框选中(`v2.21.0`) */
+  /**
+   * @zh 是否禁用复选框选中
+   * @en Whether to disable the check box is selected
+   * @version 2.21.0
+   */
   disableCheckbox?: boolean;
+  /**
+   * @zh 其他字段
+   * @en other fields
+   */
   [key: string]: any;
 }
 
@@ -187,15 +236,15 @@ export interface OptionProps {
  * fieldnames 属性类型
  */
 export type FieldNamesType = {
-  /** 指定 label 在选项中对应的字段  */
+  /* Custom field name for label */
   label?: string;
-  /** 指定 value 在选项中对应的字段  */
+  /** Custom field name for value */
   value?: string;
-  /** 指定 children 在选项中对应的字段  */
+  /** Custom field name for children */
   children?: string;
-  /** 指定 disabled 在选项中对应的字段  */
+  /** Custom field name for disabled  */
   disabled?: string;
-  /** 指定 isLeaf 在选项中对应的字段  */
+  /** Custom field name for isLeaf */
   isLeaf?: string;
 };
 
@@ -214,13 +263,16 @@ export interface CascaderPanelProps<T> {
   expandTrigger?: 'click' | 'hover';
   trigger?: 'click';
   prefixCls?: string;
+  rtl?: boolean;
   showEmptyChildren?: boolean;
+  virtualListProps?: CascaderProps<T>['virtualListProps'];
   renderOption?: (option: NodeProps<T>, level: number) => ReactNode;
   onChange?: (value: string[][]) => void;
   loadMore?: (activeValue, level: number) => void;
-  renderEmpty?: (width?: number) => ReactNode;
+  renderEmpty?: (width?: CSSProperties['width']) => ReactNode;
   renderFooter?: (level: number, activeOption: NodeProps<T> | null) => ReactNode;
   onDoubleClickOption?: () => void;
   onEsc?: () => void;
   dropdownColumnRender?: CascaderProps<T>['dropdownColumnRender'];
+  dropdownMenuColumnStyle?: CascaderProps<T>['dropdownMenuColumnStyle'];
 }

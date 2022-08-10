@@ -14,29 +14,36 @@ title:
 Control whether the check box is selected
 
 ```js
-import { Checkbox, Button } from '@arco-design/web-react';
+import React from 'react';
+import { Checkbox, Button, Space } from '@arco-design/web-react';
 
-function Demo () {
-
+function App() {
   const [checked, setChecked] = React.useState(false);
-
-  return <div>
-    <Checkbox checked={checked} style={{ marginRight: 40 }}>Checkbox</Checkbox>
-    <Checkbox checked={checked} disabled>disabled Checkbox</Checkbox>
-
-    <div style={{marginTop: 30}}>
-      <Button
-        type="primary"
-        onClick={() => { setChecked(!checked) }}
-      >
-        { checked ? 'unCheck' : 'Check'}
-      </Button>
+  return (
+    <div>
+      <Space size={40}>
+        <Checkbox
+          checked={checked}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox checked={checked} disabled>
+          disabled Checkbox
+        </Checkbox>
+      </Space>
+      <div style={{ marginTop: 30 }}>
+        <Button
+          type="primary"
+          onClick={() => {
+            setChecked(!checked);
+          }}
+        >
+          {checked ? 'unCheck' : 'Check'}
+        </Button>
+      </div>
     </div>
-  </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

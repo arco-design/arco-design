@@ -1,10 +1,11 @@
-import React, { useMemo, CSSProperties, ReactElement } from 'react';
+import React, { useMemo, CSSProperties, ReactElement, useContext } from 'react';
 import { TheadProps } from '../interface';
 import Checkbox from '../../Checkbox';
 import Column from './column';
 import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
 import { INTERNAL_EXPAND_KEY, INTERNAL_SELECTION_KEY } from '../constant';
+import { ConfigContext } from '../../ConfigProvider';
 
 function THead<T>(props: TheadProps<T>) {
   const {
@@ -28,6 +29,7 @@ function THead<T>(props: TheadProps<T>) {
     showSorterTooltip,
   } = props;
 
+  const { rtl } = useContext(ConfigContext);
   const { ComponentThead, ComponentHeaderRow, getHeaderComponentOperations } =
     useComponent(components);
 
@@ -119,7 +121,7 @@ function THead<T>(props: TheadProps<T>) {
                     ...operationNode?.props?.style,
                     ...(column.fixed === 'left'
                       ? {
-                          left: stickyOffset,
+                          [rtl ? 'right' : 'left']: stickyOffset,
                         }
                       : {}),
                     width: column.width,
@@ -135,11 +137,11 @@ function THead<T>(props: TheadProps<T>) {
               const columnFixedStyle: CSSProperties = {};
 
               if (column.fixed === 'left') {
-                columnFixedStyle.left = stickyOffset;
+                columnFixedStyle[rtl ? 'right' : 'left'] = stickyOffset;
               }
 
               if (column.fixed === 'right') {
-                columnFixedStyle.right = stickyOffset;
+                columnFixedStyle[rtl ? 'left' : 'right'] = stickyOffset;
               }
 
               return (

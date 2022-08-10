@@ -14,10 +14,10 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|className|节点类名|`string \| string[]`|`-`|
-|style|节点样式|`CSSProperties`|`-`|
-|title|标题文字|`ReactNode`|`-`|
-|subTitle|子标题文字|`ReactNode`|`-`|
-|status|不同状态，传入 null 时，需要通过 `icon` 属性设置图标，并且默认没有背景色以及图标颜色|`'success' \| 'error' \| 'info' \| 'warning' \| '404' \| '403' \| '500' \| null`|`info`|
-|icon|自定义图标|`ReactNode`|`-`|
-|extra|额外内容|`ReactNode`|`-`|
+|status|不同状态，传入 null 时，需要通过 `icon` 属性设置图标，并且默认没有背景色以及图标颜色|'success' \| 'error' \| 'info' \| 'warning' \| '404' \| '403' \| '500' \| null |`info`|
+|extra|额外内容|ReactNode |`-`|
+|icon|自定义图标|ReactNode |`-`|
+|subTitle|子标题文字|ReactNode |`-`|
+|title|标题文字|ReactNode |`-`|
+|className|节点类名|string \| string[] |`-`|
+|style|节点样式|CSSProperties |`-`|

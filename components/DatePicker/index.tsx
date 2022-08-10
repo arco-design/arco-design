@@ -6,7 +6,6 @@ import MonthPickerPanel from './panels/month';
 import YearPickerPanel from './panels/year';
 import WeekPickerPanel from './panels/week';
 import QuarterPickerPanel from './panels/quarter';
-import '../_util/polyfill/object-assign';
 
 import {
   DatePickerProps,

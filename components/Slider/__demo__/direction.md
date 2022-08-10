@@ -1,6 +1,6 @@
 ---
 order: 7
-title: 
+title:
   zh-CN: 竖直滑动条
   en-US: Vertical
 ---
@@ -15,22 +15,23 @@ Display vertical slider by setting `vertical={true}`.
 
 ```js
 import { useState } from 'react';
-import { Slider } from '@arco-design/web-react';
+import { Slider, Space } from '@arco-design/web-react';
 import { IconSound, IconMute } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const [value, setValue] = useState(10);
-
   return (
-    <div style={{ maxWidth: '60%', minWidth: '20%' }}>
-      <div style={{ width: 22, textAlign: 'center', marginRight: 92, display: 'inline-block' }}>
-        <Slider
-          value={value}
-          onChange={setValue}
-          vertical
-        />
-        { value ? <IconSound style={{ fontSize: 16, color: 'var(--color-text-1)' }} /> : null }
-        { !value ? <IconMute style={{ fontSize: 16, color: 'var(--color-text-1)' }} /> : null }
+    <Space style={{ maxWidth: '60%', minWidth: '20%' }} size={100}>
+      <div
+        style={{
+          width: 22,
+          textAlign: 'center',
+          display: 'inline-block',
+        }}
+      >
+        <Slider value={value} onChange={setValue} vertical />
+        {value ? <IconSound style={{ fontSize: 16, color: 'var(--color-text-1)' }} /> : null}
+        {!value ? <IconMute style={{ fontSize: 16, color: 'var(--color-text-1)' }} /> : null}
       </div>
       <Slider
         range
@@ -43,9 +44,9 @@ function Demo() {
         }}
         style={{ verticalAlign: 'top' }}
       />
-    </div>
+    </Space>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

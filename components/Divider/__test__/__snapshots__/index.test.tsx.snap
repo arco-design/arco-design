@@ -20,3 +20,11 @@ exports[`ConfigProvider componentConfig.Divider set className globally and compo
   role="separator"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Divider set data-* property 1`] = `
+<div
+  class="arco-divider arco-divider-horizontal"
+  data-test-name="Divider"
+  role="separator"
+/>
+`;

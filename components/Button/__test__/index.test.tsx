@@ -1,39 +1,36 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { render, fireEvent } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Button from '..';
 
 mountTest(Button);
 componentConfigTest(Button, 'Button');
+componentConfigTest(Button.Group, 'Button.Group');
 
 describe('button', () => {
   it('click callback correctly', () => {
     const mockFn = jest.fn();
-    const component = mount(<Button onClick={mockFn} />);
-    const button = component.find('button');
-    button.simulate('click');
+    const component = render(<Button onClick={mockFn} />);
+    const button = component.querySelector('button') as HTMLElement;
+    fireEvent.click(button);
     const mockFnCallLength = mockFn.mock.calls.length;
     expect(mockFnCallLength).toBe(1);
 
-    act(() => {
-      component.setProps({
-        disabled: true,
-      });
-    });
+    component.rerender(<Button onClick={mockFn} disabled />);
 
-    button.simulate('click');
+    fireEvent.click(button);
     expect(mockFn.mock.calls.length).toBe(mockFnCallLength);
   });
 
   it('render multiple children correctly', () => {
-    const button = mount(
+    const { container } = render(
       <Button>
         1{'  '}2{'  '}3{'  '}
       </Button>
     );
-    expect(button.text()).toEqual('1  2  3  ');
+    expect(container.firstElementChild?.textContent).toEqual('1  2  3  ');
   });
 
   it('use context autoInsertSpaceInButton correctly', () => {
@@ -47,27 +44,26 @@ describe('button', () => {
     const prefixCls = `.test-btn`;
     React.useContext = mockContext;
 
-    const button = mount(<Button>{mockText}</Button>);
-    expect(button.find(prefixCls).hasClass(`test-btn-two-chinese-chars`)).toBe(true);
+    const button = render(<Button>{mockText}</Button>);
+    expect(button.querySelector(prefixCls)).toHaveClass('test-btn-two-chinese-chars');
 
     React.useContext = realContext;
   });
 
   it('render href type correctly', () => {
-    const button = mount(
+    const button = render(
       <Button type="primary" href="https://arco.design">
         测试
       </Button>
     );
     expect(button.find('button')).toHaveLength(0);
     expect(button.find('a')).toHaveLength(1);
-    expect(button.find('a').prop('href')).not.toBeUndefined();
+    expect(button.querySelector('a')?.getAttribute('href')).not.toBeUndefined();
 
     act(() => {
-      button.setProps({
-        disabled: true,
-      });
+      button.rerender(<Button type="primary" href="https://arco.design" disabled />);
     });
-    expect(button.find('a').prop('href')).toBeUndefined();
+
+    expect(button.querySelector('a')?.getAttribute('href')).toBeNull();
   });
 });

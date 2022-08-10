@@ -16,5 +16,9 @@ When page space is limited, you can set `simple` to `true`.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(<Pagination simple total={50} size="small" />, CONTAINER);
+const App = () => {
+  return <Pagination simple total={50} size="small" />;
+};
+
+export default App;
 ```

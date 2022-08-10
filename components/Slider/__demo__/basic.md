@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 
+title:
   zh-CN: 基本用法
   en-US: Basic
 ---
@@ -17,10 +17,10 @@ Basic usage of Slider.
 import { useState } from 'react';
 import { Slider } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
   const [value, setValue] = useState(30);
-  return <Slider value={value} onChange={setValue} style={{ width: 200 }}/>
+  return <Slider value={value} onChange={setValue} style={{ width: 200 }} />;
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

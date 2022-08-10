@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Tag set className globally and component
   class="arco-tag arco-tag-checked arco-tag-size-default component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Tag set data-* property 1`] = `
+<div
+  class="arco-tag arco-tag-checked arco-tag-size-default"
+  data-test-name="Tag"
+/>
+`;

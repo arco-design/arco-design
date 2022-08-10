@@ -1,3 +1,19 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 BugFix
+
+- Fix the problem of `Typography` text omission under different text styles such as `underline`([#1137](https://github.com/arco-design/arco-design/pull/1137))
+
+## 2.37.0
+
+2022-07-08
+
+### 💅 Style
+
+- The `Typography` default style adds `white-space: 'normal'` to remove the parent element's effect on ellipsis.([#1109](https://github.com/arco-design/arco-design/pull/1109))
+
 ## 2.34.0
 
 2022-05-27

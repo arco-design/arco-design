@@ -16,12 +16,11 @@ When the amount of data is large, specify `pagination` to display the data in pa
 ```js
 import { Transfer } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const dataSource = new Array(30).fill(null).map((_, index) => ({
     key: `${index + 1}`,
     value: `Option ${index + 1}`,
   }));
-
   return (
     <Transfer
       pagination
@@ -33,5 +32,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

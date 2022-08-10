@@ -1,8 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
 import Modal from '..';
-import { $ } from '../../../tests/util';
+import { $, cleanup, fireEvent, render } from '../../../tests/util';
 
 mountTest(Modal);
 
@@ -16,6 +17,7 @@ describe('Modal api test', () => {
   });
 
   afterEach(() => {
+    cleanup();
     document.body.innerHTML = '';
     jest.runAllTimers();
   });
@@ -23,44 +25,48 @@ describe('Modal api test', () => {
   it('afteropen afterClose correctly', () => {
     const openMockFn = jest.fn();
     const closeMockFn = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <Modal afterOpen={openMockFn} afterClose={closeMockFn} visible={false}>
         <div>123</div>
       </Modal>
     );
 
     jest.useFakeTimers();
-    wrapper.setProps({
-      visible: true,
-    });
+    wrapper.rerender(
+      <Modal afterOpen={openMockFn} afterClose={closeMockFn} visible>
+        <div>123</div>
+      </Modal>
+    );
     jest.runAllTimers();
 
     expect(openMockFn).toBeCalledTimes(1);
     jest.useFakeTimers();
 
-    wrapper.setProps({
-      visible: false,
-    });
+    wrapper.rerender(
+      <Modal afterOpen={openMockFn} afterClose={closeMockFn} visible={false}>
+        <div>123</div>
+      </Modal>
+    );
     jest.runAllTimers();
 
     expect(closeMockFn).toBeCalledTimes(1);
   });
   it('simple and closable', () => {
-    const wrapper = mount(<Modal visible />);
+    const wrapper = render(<Modal visible />);
     expect($('.arco-modal-close-icon').length).toBe(1);
 
-    wrapper.setProps({ simple: true });
+    wrapper.rerender(<Modal visible simple />);
     expect($('.arco-modal-close-icon').length).toBe(0);
 
-    wrapper.setProps({ closable: true });
+    wrapper.rerender(<Modal visible simple closable />);
     expect($('.arco-modal-close-icon').length).toBe(1);
-    wrapper.setProps({ closable: false, simple: false });
+    wrapper.rerender(<Modal visible simple={false} closable={false} />);
     expect($('.arco-modal-close-icon').length).toBe(0);
   });
   it('click mask', () => {
     let visible = true;
 
-    const wrapper = mount(
+    const wrapper = render(
       <Modal
         visible={visible}
         onCancel={() => {
@@ -70,7 +76,10 @@ describe('Modal api test', () => {
     );
 
     jest.useFakeTimers();
-    wrapper.find('.arco-modal-wrapper').simulate('mousedown').simulate('click');
+    act(() => {
+      fireEvent.mouseDown(wrapper.find('.arco-modal-wrapper')[0]);
+      fireEvent.click(wrapper.find('.arco-modal-wrapper')[0]);
+    });
 
     jest.runAllTimers();
 
@@ -78,7 +87,7 @@ describe('Modal api test', () => {
   });
 
   it('modalRender and custom footer', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Modal
         footer={<div>1234</div>}
         modalRender={(node) => {
@@ -97,6 +106,6 @@ describe('Modal api test', () => {
     // 作为modal的兄弟节点
     expect(document.querySelectorAll('.arco-modal+.test-content')).toHaveLength(1);
 
-    expect(wrapper.find('.arco-modal-footer').childAt(0).html()).toBe('<div>1234</div>');
+    expect(wrapper.find('.arco-modal-footer')[0].innerHTML).toBe('<div>1234</div>');
   });
 });

@@ -16,7 +16,6 @@ Use `Menu.onClickMenuItem` to specify the callback function to be triggered when
 ```js
 import { Dropdown, Menu, Button, Message } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-
 const dropList = (
   <Menu onClickMenuItem={(key) => Message.info(`You clicked ${key}`)}>
     <Menu.Item key="Beijing">Beijing</Menu.Item>
@@ -25,7 +24,7 @@ const dropList = (
   </Menu>
 );
 
-function Demo() {
+function App() {
   return (
     <div className="dropdown-demo">
       <Dropdown droplist={dropList} position="bl" triggerProps={{ autoAlignPopupWidth: true }}>
@@ -37,7 +36,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

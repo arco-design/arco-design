@@ -17,70 +17,95 @@ Specify moving a few pixels in some directions.
 
 For example, when `position` is `'top'`, set popupAlign to `{ top: 20}`, the popup will move up by `20px`, and set popupAlign to `{top: [100, 20]}`, the popup will move horizontally `100px` right and `20px` up.
 
-
 ```js
-import { Trigger, Button, Input, Skeleton } from '@arco-design/web-react';
+import { Trigger, Button, Input, Skeleton, Space } from '@arco-design/web-react';
 
-function Popup () {
-  return  <Skeleton className="demo-trigger-popup" style={{width: 300}} />;
+function Popup() {
+  return <Skeleton className="demo-trigger-popup" style={{ width: 300 }} />;
 }
 
-function Demo () {
-
-  return <div style={{ background: 'var(--color-fill-2)', padding: 40 }}>
-    <Trigger
-      trigger="click"
-      position="top"
-      popupAlign={{ top: 20 }}
-      popup={() => <Popup/>}
-    >
-      <Button type="primary" style={{marginRight: 40}}>Top</Button>
-    </Trigger>
-    <Trigger
-      trigger="click"
-      position="top"
-      popupAlign={{ top: [100, 20] }}
-      popup={() => <Popup/>}
-    >
-      <Button type="primary" style={{marginRight: 40}}>Top offset [100, 20]</Button>
-    </Trigger>
-    <Trigger
-      trigger="click"
-      position="top"
-      popupAlign={{ top: [-100, 20] }}
-      popup={() => <Popup/>}
-    >
-      <Button type="primary" style={{marginRight: 40}}>Top offset [-100, 20]</Button>
-    </Trigger>
-    <Trigger
-      trigger="click"
-      position="right"
-      popupAlign={{ right: 30 }}
-      popup={() => <Popup/>}
-    >
-      <Button type="primary" style={{marginRight: 40}}>Right</Button>
-    </Trigger>
-    <Trigger
-      trigger="click"
-      position="right"
-      popupAlign={{ right: [30, 50] }}
-      popup={() => <Popup/>}
-    >
-      <Button type="primary" style={{marginRight: 40}}>Right offset [30, 50]</Button>
-    </Trigger>
-    <Trigger
-      trigger="click"
-      position="right"
-      popupAlign={{ right: [30, -50] }}
-      popup={() => <Popup/>}
-    >
-      <Button type="primary" style={{marginRight: 40}}>Right offset [30, -50]</Button>
-    </Trigger>
-  </div>
+function App() {
+  return (
+    <div style={{ background: 'var(--color-fill-2)', padding: 40 }}>
+      <Space size={[40, 10]} wrap>
+        <Trigger
+          trigger="click"
+          position="top"
+          popupAlign={{
+            top: 20,
+          }}
+          popup={() => <Popup />}
+        >
+          <Button type="primary">
+            Top
+          </Button>
+        </Trigger>
+        <Trigger
+          trigger="click"
+          position="top"
+          popupAlign={{
+            top: [100, 20],
+          }}
+          popup={() => <Popup />}
+        >
+          <Button type="primary">
+            Top offset [100, 20]
+          </Button>
+        </Trigger>
+        <Trigger
+          trigger="click"
+          position="top"
+          popupAlign={{
+            top: [-100, 20],
+          }}
+          popup={() => <Popup />}
+        >
+          <Button type="primary">
+            Top offset [-100, 20]
+          </Button>
+        </Trigger>
+        <Trigger
+          trigger="click"
+          position="right"
+          popupAlign={{
+            right: 30,
+          }}
+          popup={() => <Popup />}
+        >
+          <Button type="primary">
+            Right
+          </Button>
+        </Trigger>
+        <Trigger
+          trigger="click"
+          position="right"
+          popupAlign={{
+            right: [30, 50],
+          }}
+          popup={() => <Popup />}
+        >
+          <Button type="primary">
+            Right offset [30, 50]
+          </Button>
+        </Trigger>
+        <Trigger
+          trigger="click"
+          position="right"
+          popupAlign={{
+            right: [30, -50],
+          }}
+          popup={() => <Popup />}
+        >
+          <Button type="primary">
+            Right offset [30, -50]
+          </Button>
+        </Trigger>
+      </Space>
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
-
+export default App;
 ```
 
 ```css:silent

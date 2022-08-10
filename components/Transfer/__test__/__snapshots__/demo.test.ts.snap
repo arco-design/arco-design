@@ -2270,7 +2270,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
       <span
         class="arco-transfer-view-header-unit"
       >
-        3 / 5
+        5
       </span>
     </div>
     <div
@@ -2517,6 +2517,11 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
         class="arco-transfer-view-header-title"
       >
         Selected list
+      </span>
+      <span
+        class="arco-transfer-view-header-unit"
+      >
+        3
       </span>
       <span
         class="arco-icon-hover arco-transfer-view-icon-clear"
@@ -4588,7 +4593,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
       <span
         class="arco-transfer-view-header-unit"
       >
-        0 / 5
+        5
       </span>
     </div>
     <div
@@ -4805,6 +4810,11 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
         class="arco-transfer-view-header-title"
       >
         Selected list
+      </span>
+      <span
+        class="arco-transfer-view-header-unit"
+      >
+        3
       </span>
       <span
         class="arco-icon-hover arco-transfer-view-icon-clear"
@@ -5926,6 +5936,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="true"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-expanded"
           role="treeitem"
         >
@@ -6008,6 +6019,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="true"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
           role="treeitem"
         >
@@ -6094,6 +6106,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="false"
+          aria-level="2"
           class="arco-tree-node arco-tree-node-is-leaf"
           role="treeitem"
         >
@@ -6158,6 +6171,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="false"
+          aria-level="2"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
           role="treeitem"
         >
@@ -6220,6 +6234,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="true"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-expanded"
           role="treeitem"
         >
@@ -6302,6 +6317,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled"
           role="treeitem"
         >
@@ -6364,6 +6380,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled"
           role="treeitem"
         >
@@ -6426,6 +6443,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="1"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled arco-tree-node-is-tail"
           role="treeitem"
         >
@@ -6488,6 +6506,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="false"
           aria-expanded="false"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-is-leaf"
           role="treeitem"
         >
@@ -6543,6 +6562,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         <div
           aria-disabled="true"
           aria-expanded="false"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-disabled arco-tree-node-is-tail"
           role="treeitem"
         >

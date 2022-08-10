@@ -15,7 +15,6 @@ Allow multiple selection. Set the 'checkedStrategy' property to set the data ech
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -70,23 +69,28 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Space>
-  <Cascader
-    placeholder="Please select ..."
-    style={{ width: 300 }}
-    options={options}
-    mode="multiple"
-    defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-  />
-  <Cascader
-    placeholder="Please select ..."
-    style={{ width: 300 }}
-    options={options}
-    mode="multiple"
-    checkedStrategy="parent"
-  />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space>
+      <Cascader
+        placeholder="Please select ..."
+        style={{
+          width: 300,
+        }}
+        options={options}
+        mode="multiple"
+        defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
+      />
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300 }}
+        options={options}
+        mode="multiple"
+        checkedStrategy="parent"
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

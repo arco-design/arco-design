@@ -1,3 +1,19 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fix console React Warning (not recognize prop on a DOM element) caused by `Input` component.([#1070](https://github.com/arco-design/arco-design/pull/1070))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed the bug that the length of `Input.TextArea` component may exceed `maxLength` when inputting Chinese.([#988](https://github.com/arco-design/arco-design/pull/988))
+
 ## 2.32.1
 
 2022-04-22

@@ -14,12 +14,7 @@ const getOptionList = (labelPrefix: string, valuePrefix: string, len: number) =>
 const options = getOptionList('选项', 'value', 10).map((item) => {
   return {
     ...item,
-    children: getOptionList(`${item.label}-`, `${item.value}-`, 10).map((item2) => {
-      return {
-        ...item2,
-        children: getOptionList(`${item2.label}-`, `${item2.value}-`, 30),
-      };
-    }),
+    children: getOptionList(`${item.label}-`, `${item.value}-`, 1000),
   };
 });
 
@@ -36,6 +31,7 @@ function Demo1() {
       maxTagCount={20}
       onChange={setValue}
       value={value}
+      virtualListProps={{}}
     />
   );
 }

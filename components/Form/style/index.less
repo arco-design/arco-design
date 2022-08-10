@@ -207,3 +207,31 @@
     opacity: 1;
   }
 }
+
+.@{form-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{form-prefix-cls} {
+    &-item {
+      > .@{form-prefix-cls}-label-item {
+        padding-left: @form-margin-label-right;
+        padding-right: 0;
+      }
+    }
+
+    &-label-item {
+      text-align: left;
+    }
+  }
+
+  .@{form-prefix-cls}-layout-vertical {
+    > .@{form-prefix-cls}-label-item {
+      text-align: right;
+    }
+  }
+
+  .@{form-prefix-cls}-layout-inline {
+    margin-right: 0;
+    margin-left: @form-inline-margin-item-right;
+  }
+}

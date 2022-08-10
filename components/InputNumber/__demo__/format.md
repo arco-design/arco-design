@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 
+title:
   zh-CN: 格式化展示值
   en-US: Format
 ---
@@ -17,7 +17,7 @@ The display value of the input box can be defined through the use of `formatter`
 import { useState } from 'react';
 import { InputNumber } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [value, setValue] = useState(12000);
   return (
     <InputNumber
@@ -34,5 +34,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

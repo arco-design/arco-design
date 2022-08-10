@@ -12,15 +12,23 @@ import cs from '../_util/classNames';
 import { isFunction, isNumber, isUndefined, isObject, isString } from '../_util/is';
 import ResizeTrigger from './resize-trigger';
 import { on, off } from '../_util/dom';
+import omit from '../_util/omit';
 
 const DIRECTION_HORIZONTAL = 'horizontal';
 const DIRECTION_VERTICAL = 'vertical';
 
 function SplitGroup(props: SplitGroupProps, ref) {
-  const { panes, style, className, component = 'div', direction = 'horizontal', icon } = props;
-  const { getPrefixCls } = useContext(ConfigContext);
+  const {
+    panes,
+    style,
+    className,
+    component = 'div',
+    direction = 'horizontal',
+    icon,
+    ...rest
+  } = props;
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const defaultOffset = 1 / panes.length;
-
   const wrapperRef = useRef<HTMLElement>();
   const recordRef = useRef<Array<{ moving: boolean; startOffset: number; startPosition: number }>>(
     new Array(panes.length).fill({
@@ -42,12 +50,14 @@ function SplitGroup(props: SplitGroupProps, ref) {
 
   const prefixCls = getPrefixCls('resizebox-split-group');
   const isHorizontal = direction === DIRECTION_HORIZONTAL;
+  const rtlReverse = isHorizontal && rtl;
   const isTriggerHorizontal = !isHorizontal;
 
   const classNames = cs(
     prefixCls,
     `${prefixCls}-${isHorizontal ? DIRECTION_HORIZONTAL : DIRECTION_VERTICAL}`,
     { [`${prefixCls}-moving`]: isMoving },
+    { [`${prefixCls}-rtl`]: rtl },
     className
   );
   const Tag = component as any;
@@ -128,14 +138,13 @@ function SplitGroup(props: SplitGroupProps, ref) {
   const getNewOffsets = (startOffset: number, startPosition: number, currentPosition: number) => {
     const current = movingIndex.current;
     const next = current + 1;
-
     const newOffsets = [...offsets];
-
+    const ratio = rtlReverse ? -1 : 1;
     const currentPercent = offsets[current];
     const nextPercent = offsets[next];
     const totalPercent = currentPercent + nextPercent;
     const { currentMin: minOffset, currentMax: maxOffset } = getMinAndMax(current);
-    let moveOffset = startOffset + formatSize(`${currentPosition - startPosition}px`);
+    let moveOffset = startOffset + formatSize(`${(currentPosition - startPosition) * ratio}px`);
     moveOffset = Math.max(minOffset, moveOffset);
     moveOffset = Math.min(maxOffset, moveOffset);
     newOffsets[current] = moveOffset;
@@ -308,7 +317,12 @@ function SplitGroup(props: SplitGroupProps, ref) {
   }, [offsets]);
 
   return (
-    <Tag style={style} className={classNames} ref={wrapperRef}>
+    <Tag
+      {...omit(rest, ['onMovingStart', 'onPaneResize', 'onMoving', 'onMovingEnd'])}
+      style={style}
+      className={classNames}
+      ref={wrapperRef}
+    >
       {panes.map((pane, index) => {
         const { content, disabled, trigger, resizable = true, collapsible = {} } = pane;
         const { hasPrev, hasNext } = getCollapsedConfig(index);

@@ -1,7 +1,6 @@
 import React, { createContext } from 'react';
-import { mount } from 'enzyme';
 import Modal from '..';
-import { $ } from '../../../tests/util';
+import { $, cleanup, render } from '../../../tests/util';
 
 describe('Modal api test', () => {
   beforeEach(() => {
@@ -9,14 +8,18 @@ describe('Modal api test', () => {
     jest.useFakeTimers();
   });
 
+  afterEach(() => {
+    cleanup();
+  });
+
   it('useModal', () => {
     const [modal, contextHolder] = Modal.useModal();
 
     const ConfigContext = createContext({});
 
-    mount(<ConfigContext.Provider value="PJY">{contextHolder}</ConfigContext.Provider>);
+    render(<ConfigContext.Provider value="PJY">{contextHolder}</ConfigContext.Provider>);
 
-    const m = modal.confirm({
+    const m = modal.confirm?.({
       title: '123',
       content: <ConfigContext.Consumer>{(name) => name}</ConfigContext.Consumer>,
     });
@@ -26,7 +29,7 @@ describe('Modal api test', () => {
     expect($('.arco-modal').length).toBe(1);
     expect($('.arco-modal-content')[0].innerHTML).toBe('PJY');
 
-    m.close();
+    m?.close();
 
     jest.runAllTimers();
 

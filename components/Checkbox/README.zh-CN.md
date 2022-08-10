@@ -16,28 +16,28 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|disabled|是否禁用|`boolean`|`-`|
-|error|错误样式|`boolean`|`-`|
-|checked|是否选中|`boolean`|`-`|
-|defaultChecked|默认是否选中|`boolean`|`-`|
-|indeterminate|半选状态|`boolean`|`-`|
-|onChange|点击复选框的回调|`(checked: boolean, e: Event) => void`|`-`|
-|value|复选框的 value 属性|`T`|`-`|
+|checked|是否选中|boolean |`-`|
+|defaultChecked|默认是否选中|boolean |`-`|
+|disabled|是否禁用|boolean |`-`|
+|error|错误样式|boolean |`-`|
+|indeterminate|半选状态|boolean |`-`|
+|className|节点类名|string \| string[] |`-`|
+|style|节点样式|CSSProperties |`-`|
+|value|复选框的 value 属性|T |`-`|
+|onChange|点击复选框的回调|(checked: boolean, e: Event) => void |`-`|
 
 ### Checkbox.Group
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|disabled|整组失效|`boolean`|`-`|
-|direction|方向|`'horizontal' \| 'vertical'`|`horizontal`|
-|defaultValue|默认选中的选项|`T[]`|`-`|
-|options|可选项|`(T \| { label: ReactNode; value: T; disabled?: boolean })[]`|`-`|
-|value|选中的选项（受控模式）|`T[]`|`-`|
-|onChange|变化时的回调函数|`(value: T[], e: Event) => void`|`-`|
+|disabled|整组失效|boolean |`-`|
+|direction|方向|'horizontal' \| 'vertical' |`horizontal`|
+|className|节点类名|string \| string[] |`-`|
+|defaultValue|默认选中的选项|T[] |`-`|
+|options|可选项|(T \| { label: ReactNode; value: T; disabled?: boolean })[] |`-`|
+|style|节点样式|CSSProperties |`-`|
+|value|选中的选项（受控模式）|T[] |`-`|
+|onChange|变化时的回调函数|(value: T[], e: Event) => void |`-`|
 
 ### `Checkbox.useCheckbox`
 

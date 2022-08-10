@@ -1,3 +1,19 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` 组件  `readOnly=true` 时，点击上下键仍然可以改变值的 bug。([#1141](https://github.com/arco-design/arco-design/pull/1141))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` 被 `Input` 的全局配置影响的 bug。([#1042](https://github.com/arco-design/arco-design/pull/1042))
+
 ## 2.33.0
 
 2022-05-13

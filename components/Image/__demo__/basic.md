@@ -16,16 +16,15 @@ When you need to view a picture, simply set the `src` property to get a componen
 ```js
 import { Image } from '@arco-design/web-react';
 
-function Demo() {
-  return <Image
-    width={200}
-    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
-    alt="lamp"
-  />
+function App() {
+  return (
+    <Image
+      width={200}
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
+      alt="lamp"
+    />
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

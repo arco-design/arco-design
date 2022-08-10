@@ -15,11 +15,10 @@ The theme is specified by `theme`, which can be divided into two types: `light` 
 
 ```js
 import { Menu } from '@arco-design/web-react';
-
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 
-function Demo() {
+function App() {
   return (
     <div className="menu-demo">
       <Menu mode="horizontal" theme="dark" defaultSelectedKeys={['1']}>
@@ -42,7 +41,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

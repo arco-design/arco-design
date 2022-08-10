@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 问题修复
+
+- 调整 `Popconfirm`，`Popover`， `Tooltip` 组件动画弹出效果，避免边界场景下过冲效果导致的页面抖动。([#986](https://github.com/arco-design/arco-design/pull/986))
+
 ## 2.34.0
 
 2022-05-27

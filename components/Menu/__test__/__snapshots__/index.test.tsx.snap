@@ -4,7 +4,6 @@ exports[`ConfigProvider componentConfig.Menu default 1`] = `
 <div
   class="arco-menu arco-menu-light arco-menu-vertical"
   role="menu"
-  tabindex="1"
 >
   <div
     class="arco-menu-inner"
@@ -16,7 +15,6 @@ exports[`ConfigProvider componentConfig.Menu set className globally 1`] = `
 <div
   class="arco-menu arco-menu-light arco-menu-vertical global-default-class"
   role="menu"
-  tabindex="1"
 >
   <div
     class="arco-menu-inner"
@@ -28,7 +26,6 @@ exports[`ConfigProvider componentConfig.Menu set className globally and componen
 <div
   class="arco-menu arco-menu-light arco-menu-vertical component-class"
   role="menu"
-  tabindex="1"
 >
   <div
     class="arco-menu-inner"
@@ -36,134 +33,14 @@ exports[`ConfigProvider componentConfig.Menu set className globally and componen
 </div>
 `;
 
-exports[`Menu overflowItems should be pack up 1`] = `
+exports[`ConfigProvider componentConfig.Menu set data-* property 1`] = `
 <div
-  class="arco-menu arco-menu-light arco-menu-horizontal"
+  class="arco-menu arco-menu-light arco-menu-vertical"
+  data-test-name="Menu"
   role="menu"
-  style="width: 600px;"
-  tabindex="1"
 >
   <div
     class="arco-menu-inner"
-  >
-    <div
-      class="arco-menu-overflow-wrap"
-    >
-      <div
-        aria-controls="arco-menu-15-submenu-pop-6"
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
-      >
-        <span>
-          ···
-        </span>
-        <span
-          class="arco-menu-icon-suffix"
-        >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-down"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M39.6 17.443 24.043 33 8.487 17.443"
-            />
-          </svg>
-        </span>
-      </div>
-      <div
-        class="arco-menu-item arco-menu-overflow-hidden-menu-item"
-        role="menuitem"
-      >
-        设计指南
-      </div>
-      <div
-        class="arco-menu-item arco-menu-overflow-hidden-menu-item"
-        role="menuitem"
-      >
-        区块
-      </div>
-      <div
-        class="arco-menu-item arco-menu-overflow-hidden-menu-item"
-        role="menuitem"
-      >
-        模块
-      </div>
-      <div
-        aria-controls="arco-menu-15-submenu-pop-7"
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="arco-menu-pop arco-menu-pop-header arco-menu-selected arco-menu-overflow-hidden-menu-item"
-      >
-        <span>
-          组件
-        </span>
-        <span
-          class="arco-menu-icon-suffix"
-        >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-down"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M39.6 17.443 24.043 33 8.487 17.443"
-            />
-          </svg>
-        </span>
-        <div
-          class="arco-menu-selected-label"
-        />
-      </div>
-      <div
-        aria-controls="arco-menu-15-submenu-pop-8"
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-hidden-menu-item"
-      >
-        <span>
-          布局组件
-        </span>
-        <span
-          class="arco-menu-icon-suffix"
-        >
-          <svg
-            aria-hidden="true"
-            class="arco-icon arco-icon-down"
-            fill="none"
-            focusable="false"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-          >
-            <path
-              d="M39.6 17.443 24.043 33 8.487 17.443"
-            />
-          </svg>
-        </span>
-      </div>
-      <div
-        class="arco-menu-item arco-menu-overflow-hidden-menu-item"
-        role="menuitem"
-      >
-        工具
-      </div>
-      <div
-        class="arco-menu-item arco-menu-overflow-hidden-menu-item"
-        role="menuitem"
-      >
-        主题实验室
-      </div>
-    </div>
-  </div>
+  />
 </div>
 `;

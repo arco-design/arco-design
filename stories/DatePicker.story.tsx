@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
+import { Dayjs } from 'dayjs';
 import { Button, ConfigProvider, DatePicker, Tag, TimePicker, Typography, Space } from '@self';
 // import enUS from '@self/locale/en-US';
 // import zhCN from '@self/locale/zh-CN';
@@ -162,6 +163,30 @@ function DemoPanelRender() {
 }
 
 export const panelRender = () => <DemoPanelRender />;
+
+const TimePickerZoneDemo = () => {
+  const [value, setValue] = useState(['16:00:00+00:00', '18:00:00+00:00']);
+  // 给value增加年月日前缀，方便转dayjs对象
+  const dayValue = value?.map((item) => {
+    const t = dayjs().format(`YYYY-MM-DDT`) + item;
+    return t;
+  });
+  // console.log('dayValue:', dayValue);
+
+  const handleChange = (v: string[], day: Dayjs[]) => {
+    // 截取出时分秒时区 作为value
+    const ISOValue = day?.map((item) => dayjs(item).format().substring(11));
+    setValue(ISOValue);
+
+    console.log('changeValue:', v, day, ISOValue);
+  };
+
+  return (
+    <TimePicker.RangePicker value={dayValue?.map(dayjs)} utcOffset={8} onChange={handleChange} />
+  );
+};
+
+export const TimePickerZone = () => <TimePickerZoneDemo />;
 
 export default {
   title: 'DatePicker',

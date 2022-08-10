@@ -15,23 +15,22 @@ If direction is 'vertical', the vertical Radio.Group will be displayed.
 
 ```js
 import { Radio } from '@arco-design/web-react';
-
 const RadioGroup = Radio.Group;
 
-ReactDOM.render(
-  <div>
-    <RadioGroup
-      direction="vertical"
-      defaultValue="a"
-    >
-      <Radio value="a">A</Radio>
-      <Radio value="b">B</Radio>
-      <Radio value="c">C</Radio>
-      <Radio disabled value="d">
-        D
-      </Radio>
-    </RadioGroup>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <RadioGroup direction="vertical" defaultValue="a">
+        <Radio value="a">A</Radio>
+        <Radio value="b">B</Radio>
+        <Radio value="c">C</Radio>
+        <Radio disabled value="d">
+          D
+        </Radio>
+      </RadioGroup>
+    </div>
+  );
+};
+
+export default App;
 ```

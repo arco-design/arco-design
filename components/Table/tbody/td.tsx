@@ -1,9 +1,11 @@
-import React, { CSSProperties, ReactNode, memo } from 'react';
+import React, { CSSProperties, ReactNode, memo, useContext } from 'react';
 import get from 'lodash/get';
 import pick from '../../_util/pick';
 import { isObject, isString } from '../../_util/is';
 import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
+import { getOriginData } from '../utils';
+import { ConfigContext } from '../../ConfigProvider';
 import { ComponentsProps, InternalColumnProps, SorterResult } from '../interface';
 
 type TdType = {
@@ -52,6 +54,7 @@ function Td(props: TdType) {
     recordHaveChildren,
     haveTreeData,
   } = props;
+  const { rtl } = useContext(ConfigContext);
   const { ComponentBodyCell } = useComponent(components);
 
   const classNameTd = cs(
@@ -73,11 +76,11 @@ function Td(props: TdType) {
   let styleTd: CSSProperties = {};
 
   if (column.fixed === 'left') {
-    styleTd.left = stickyOffset;
+    styleTd[rtl ? 'right' : 'left'] = stickyOffset;
   }
 
   if (column.fixed === 'right') {
-    styleTd.right = stickyOffset;
+    styleTd[rtl ? 'left' : 'right'] = stickyOffset;
   }
 
   if (isObject(column.cellStyle)) {
@@ -109,7 +112,7 @@ function Td(props: TdType) {
     : { onHandleSave: () => {} };
 
   let renderElement =
-    column.render && column.render(get(record, column.dataIndex), record, trIndex);
+    column.render && column.render(get(record, column.dataIndex), getOriginData(record), trIndex);
 
   if (isInvalidRenderElement(renderElement)) {
     tdProps = renderElement.props;

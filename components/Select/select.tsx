@@ -40,6 +40,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { SelectOptionProps } from '../index';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
@@ -57,7 +58,7 @@ const defaultProps: SelectProps = {
 };
 
 function Select(baseProps: SelectProps, ref) {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SelectProps>(baseProps, defaultProps, componentConfig?.Select);
   const {
     children,
@@ -169,6 +170,8 @@ function Select(baseProps: SelectProps, ref) {
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
+  const refIsFirstRender = useIsFirstRender();
+
   // Unique ID of this select instance
   const instancePopupID = useMemo<string>(() => {
     const id = `${prefixCls}-popup-${globalSelectIndex}`;
@@ -188,9 +191,12 @@ function Select(baseProps: SelectProps, ref) {
     }
   };
 
-  // 尝试更新 inputValue，触发 onInputValueChange
+  // Try to update inputValue and trigger onInputValueChange callback
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
-    if (value !== refOnInputChangeCallbackValue.current) {
+    if (
+      value !== refOnInputChangeCallbackValue.current ||
+      reason !== refOnInputChangeCallbackReason.current
+    ) {
       setInputValue(value);
       refOnInputChangeCallbackValue.current = value;
       refOnInputChangeCallbackReason.current = reason;
@@ -228,7 +234,7 @@ function Select(baseProps: SelectProps, ref) {
       setValueActive(nextValueActive);
       // 在弹出框动画结束之后再执行scrollIntoView，否则会有不必要的滚动产生
       setTimeout(() => scrollIntoView(nextValueActive));
-    } else {
+    } else if (!refIsFirstRender) {
       tryUpdateInputValue('', 'optionListHide');
     }
   }, [popupVisible]);
@@ -262,14 +268,15 @@ function Select(baseProps: SelectProps, ref) {
   useEffect(() => {
     // 将无对应下拉框选项的 value 当作自定义 tag，将 value 中不存在的 valueTag 移除
     if (allowCreate && Array.isArray(value)) {
-      const newUseCreatedOptions = (value as any[]).filter((v) => {
-        const option = optionInfoMap.get(v);
+      const newUserCreatedOptions = (value as any[]).filter((v) => {
+        const option =
+          optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
         return !option || option._origin === 'userCreatingOption';
       });
-      const validUseCreatedOptions = userCreatedOptions.filter(
+      const validUserCreatedOptions = userCreatedOptions.filter(
         (tag) => (value as any[]).indexOf(tag) !== -1
       );
-      const _userCreatedOptions = validUseCreatedOptions.concat(newUseCreatedOptions);
+      const _userCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
       if (_userCreatedOptions.toString() !== userCreatedOptions.toString()) {
         setUserCreatedOptions(_userCreatedOptions);
       }
@@ -516,11 +523,15 @@ function Select(baseProps: SelectProps, ref) {
           }
 
           if (isSelectOption(child)) {
+            const optionValue = child.props?.value;
             const optionProps: Partial<SelectOptionProps> = {
               prefixCls,
+              rtl,
               _valueActive: valueActive,
               _valueSelect: value,
               _isMultipleMode: isMultipleMode,
+              _isUserCreatingOption: allowCreate && userCreatingOption === optionValue,
+              _isUserCreatedOption: allowCreate && userCreatedOptions.indexOf(optionValue) > -1,
               _onClick: handleOptionClick,
               _onMouseEnter: (value) => {
                 refKeyboardArrowDirection.current === null && setValueActive(value);
@@ -539,14 +550,15 @@ function Select(baseProps: SelectProps, ref) {
     ) : null;
 
     // 无选项时的占位符元素
-    const eleNoOptionPlaceholder = mergedNotFoundContent ? (
-      <div
-        style={dropdownMenuStyle}
-        className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
-      >
-        {mergedNotFoundContent}
-      </div>
-    ) : null;
+    const eleNoOptionPlaceholder =
+      mergedNotFoundContent && !allowCreate ? (
+        <div
+          style={dropdownMenuStyle}
+          className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
+        >
+          {mergedNotFoundContent}
+        </div>
+      ) : null;
 
     return (
       <div
@@ -709,6 +721,7 @@ function Select(baseProps: SelectProps, ref) {
                 inputValue={inputValue}
                 popupVisible={popupVisible}
                 // other
+                rtl={rtl}
                 prefixCls={prefixCls}
                 ariaControls={instancePopupID}
                 isEmptyValue={isNoOptionSelected}
@@ -723,13 +736,29 @@ function Select(baseProps: SelectProps, ref) {
                       (paramsForCallback.option as OptionInfo) || null,
                       paramsForCallback.value as ReactText | LabeledValue
                     );
-                  } else if (option) {
-                    if ('children' in option) {
+                  } else {
+                    let foundLabelFromProps = false;
+                    if (labelInValue) {
+                      const propValue = props.value || props.defaultValue;
+                      if (Array.isArray(propValue)) {
+                        const targetLabeledValue = (propValue as LabeledValue[]).find(
+                          (item) => isObject(item) && item.value === value
+                        );
+                        if (targetLabeledValue) {
+                          text = targetLabeledValue.label;
+                          foundLabelFromProps = true;
+                        }
+                      } else if (isObject(propValue)) {
+                        text = (propValue as LabeledValue).label;
+                        foundLabelFromProps = true;
+                      }
+                    }
+
+                    if (!foundLabelFromProps && option && 'children' in option) {
                       text = option.children;
                     }
-                  } else if (labelInValue && isObject(props.value)) {
-                    text = (props.value as any).label;
                   }
+
                   return {
                     text,
                     disabled: option && option.disabled,

@@ -9,6 +9,7 @@ import IconCaretLeft from '../../icon/react-icon/IconCaretLeft';
 import IconCaretDown from '../../icon/react-icon/IconCaretDown';
 import IconCareUp from '../../icon/react-icon/IconCaretUp';
 import { isFunction, isObject } from '../_util/is';
+import omit from '../_util/omit';
 
 export interface ResizeTriggerProps {
   style?: CSSProperties;
@@ -50,27 +51,33 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
     collapsible = {},
     resizable = true,
     renderChildren,
+    ...rest
   } = props;
-  const { getPrefixCls } = useContext(ConfigContext);
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('resizebox-trigger');
   const isHorizontal = direction === 'horizontal';
+  const rtlReverse = rtl && !isHorizontal;
   const classNames = cs(
     prefixCls,
     `${prefixCls}-${isHorizontal ? 'horizontal' : 'vertical'}`,
     { [`${prefixCls}-not-resizable`]: !resizable },
+    { [`${prefixCls}-rtl`]: rtl },
     className
   );
 
+  const verticalTriggerIcon = rtlReverse
+    ? [<IconCaretRight key="prev" />, <IconCaretLeft key="next" />]
+    : [<IconCaretLeft key="prev" />, <IconCaretRight key="next" />];
   const prevCollapsedConfig: ResizeTriggerProps['collapsible']['prev'] = isObject(collapsible.prev)
     ? {
         ...collapsible.prev,
-        icon: collapsible.prev.icon || (isHorizontal ? <IconCareUp /> : <IconCaretLeft />),
+        icon: collapsible.prev.icon || (isHorizontal ? <IconCareUp /> : verticalTriggerIcon[0]),
       }
     : {};
   const nextCollapsedConfig: ResizeTriggerProps['collapsible']['next'] = isObject(collapsible.next)
     ? {
         ...collapsible.next,
-        icon: collapsible.next.icon || (isHorizontal ? <IconCaretDown /> : <IconCaretRight />),
+        icon: collapsible.next.icon || (isHorizontal ? <IconCaretDown /> : verticalTriggerIcon[1]),
       }
     : {};
 
@@ -147,7 +154,7 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
 
   return (
     <ResizeObserver onResize={onResize}>
-      <div className={classNames} onMouseDown={onMouseDown}>
+      <div {...omit(rest, ['style'])} className={classNames} onMouseDown={onMouseDown}>
         {isFunction(renderChildren)
           ? renderChildren(prev, trigger, next)
           : children || renderIcon()}

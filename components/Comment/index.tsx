@@ -4,6 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import { isString, isObject } from '../_util/is';
 import { CommentProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const defaultAlign = {
   datetime: 'left',
@@ -15,7 +16,7 @@ const defaultProps: CommentProps = {
 };
 
 function Comment(baseProps: PropsWithChildren<CommentProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<CommentProps>>(
     baseProps,
     defaultProps,
@@ -36,7 +37,12 @@ function Comment(baseProps: PropsWithChildren<CommentProps>, ref) {
   };
 
   return (
-    <div ref={ref} className={cs(`${prefixCls}`, props.className)} style={props.style}>
+    <div
+      ref={ref}
+      className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, props.className)}
+      style={props.style}
+      {...pickDataAttributes(props)}
+    >
       {avatar && (
         <div className={cs(`${prefixCls}-avatar`)}>
           {isString(avatar) ? <img src={avatar} alt="comment-avatar" /> : avatar}

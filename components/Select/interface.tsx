@@ -220,6 +220,7 @@ export interface OptionProps extends Omit<HTMLAttributes<HTMLLIElement>, 'classN
   style?: CSSProperties;
   children?: ReactNode;
   prefixCls?: string;
+  rtl?: boolean;
   className?: string | string[];
   wrapperClassName?: string | string[];
   /**
@@ -241,6 +242,8 @@ export interface OptionProps extends Omit<HTMLAttributes<HTMLLIElement>, 'classN
   // Some user may use isSelectOption to hack, Do NOT change it to _isSelectOption
   isSelectOption?: boolean;
   _isMultipleMode?: boolean;
+  _isUserCreatedOption?: boolean;
+  _isUserCreatingOption?: boolean;
   _valueActive?: OptionProps['value'];
   _valueSelect?: SelectInnerStateValue;
   _onClick?: (value: OptionProps['value'], disabled: boolean) => void;

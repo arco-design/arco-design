@@ -7,8 +7,8 @@ import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import MenuContext from './context';
 import MenuIndent from './indent';
 import omit from '../_util/omit';
-import { useHotkeyHandler } from './hotkey';
 import { PROPS_NEED_TO_BE_PASSED_IN_SUBMENU } from './util';
+import { Enter } from '../_util/keycode';
 
 function Item(props: MenuItemProps, ref) {
   const {
@@ -32,7 +32,6 @@ function Item(props: MenuItemProps, ref) {
     autoScrollIntoView,
     scrollConfig,
     tooltipProps,
-    clearHotkeyInfo,
     onClickMenuItem,
   } = useContext(MenuContext);
 
@@ -42,15 +41,9 @@ function Item(props: MenuItemProps, ref) {
   const needTextIndent = mode === 'vertical' && level > 1;
   const needTooltip = collapse && !inDropdown && level === 1;
   const isSelected = selectedKeys && ~selectedKeys.indexOf(_key);
-  const isActive = useHotkeyHandler(_key, (isActive, type) => {
-    if (isActive && type === 'enter') {
-      onClickMenuItem(_key, null);
-      clearHotkeyInfo();
-    }
-  });
 
   useEffect(() => {
-    const shouldScroll = isActive || (isSelected && autoScrollIntoView);
+    const shouldScroll = isSelected && autoScrollIntoView;
     if (refElement.current && shouldScroll) {
       // 首次渲染需要等待展开动画结束之后滚动
       setTimeout(
@@ -66,10 +59,18 @@ function Item(props: MenuItemProps, ref) {
         isFirstRender ? 500 : 0
       );
     }
-  }, [isActive, isSelected, autoScrollIntoView]);
+  }, [isSelected, autoScrollIntoView]);
+
+  const menuItemClickHandler = (event) => {
+    if (!disabled) {
+      onClickMenuItem(_key, event);
+      onClick && onClick(event);
+    }
+  };
 
   const itemElement = (
     <WrapperTagName
+      tabIndex={disabled ? -1 : 0}
       role="menuitem"
       ref={(_ref) => {
         ref = _ref;
@@ -80,18 +81,17 @@ function Item(props: MenuItemProps, ref) {
         `${prefixCls}-item`,
         {
           [`${prefixCls}-disabled`]: disabled,
-          [`${prefixCls}-active`]: isActive,
           [`${prefixCls}-selected`]: isSelected,
           // 存在缩进dom
           [`${prefixCls}-item-indented`]: needTextIndent && !collapse,
         },
         className
       )}
-      onClick={(event) => {
-        if (!disabled) {
-          onClickMenuItem(_key, event);
-          onClick && onClick(event);
-          clearHotkeyInfo();
+      onClick={menuItemClickHandler}
+      onKeyDown={(event) => {
+        const keyCode = event.keyCode || event.which;
+        if (keyCode === Enter.code) {
+          menuItemClickHandler(event);
         }
       }}
       {...omit(rest, ['key', '_key'].concat(PROPS_NEED_TO_BE_PASSED_IN_SUBMENU))}

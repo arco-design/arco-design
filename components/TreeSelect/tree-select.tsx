@@ -49,7 +49,7 @@ const TreeSelect: ForwardRefRenderFunction<
   RefTreeSelectType,
   PropsWithChildren<TreeSelectProps>
 > = (baseProps: PropsWithChildren<TreeSelectProps>, ref) => {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<TreeSelectProps>>(
     baseProps,
     defaultProps,
@@ -97,6 +97,7 @@ const TreeSelect: ForwardRefRenderFunction<
           const nodeProps = key2nodeProps[key];
           let isHit = false;
           if (isFunction(props.filterTreeNode)) {
+            // @ts-ignore
             if (props.filterTreeNode(inputText, <Tree.Node {...nodeProps} />)) {
               isHit = true;
             }
@@ -223,6 +224,10 @@ const TreeSelect: ForwardRefRenderFunction<
     return { text: label, disabled };
   }, []);
 
+  const tryUpdateSelectValue = (value: LabelValue[]) => {
+    setValue(value, {});
+  };
+
   return (
     <Trigger
       autoAlignPopupWidth={false}
@@ -258,7 +263,7 @@ const TreeSelect: ForwardRefRenderFunction<
         return (
           <div
             id={instancePopupID}
-            className={`${prefixCls}-popup`}
+            className={cs(`${prefixCls}-popup`, { [`${prefixCls}-rtl-popup`]: rtl })}
             style={{
               maxHeight:
                 props.treeProps?.height || props.treeProps?.virtualListProps?.height ? 'unset' : '',
@@ -291,6 +296,7 @@ const TreeSelect: ForwardRefRenderFunction<
         : props.triggerElement || (
             <SelectView
               ref={refSelectView}
+              rtl={rtl}
               ariaControls={instancePopupID}
               {...props}
               popupVisible={popupVisible}
@@ -301,6 +307,7 @@ const TreeSelect: ForwardRefRenderFunction<
               prefixCls={prefixCls}
               isMultiple={multiple}
               renderText={renderText}
+              onSort={tryUpdateSelectValue}
               onRemoveCheckedItem={handleRemoveCheckedItem}
               onClear={(e) => {
                 e.stopPropagation();

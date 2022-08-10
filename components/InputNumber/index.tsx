@@ -172,7 +172,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     event.preventDefault();
     setIsUserInputting(false);
 
-    if (disabled) {
+    if (disabled || readOnly) {
       return;
     }
 
@@ -280,6 +280,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   return (
     <Input
+      _ignorePropsFromGlobal
       role="spinbutton"
       aria-valuemax={max}
       aria-valuemin={min}

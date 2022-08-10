@@ -15,7 +15,6 @@ title:
 
 ```js
 import { Table } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -69,7 +68,6 @@ const columns = [
     width: 120,
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -128,13 +126,21 @@ const data = [
   },
 ];
 
-ReactDOM.render(
-  <Table
-    scroll={{ x: 1200 }}
-    border={{ wrapper: true, cell: true }}
-    columns={columns}
-    data={data}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Table
+      scroll={{
+        x: 1200,
+      }}
+      border={{
+        wrapper: true,
+        cell: true,
+      }}
+      columns={columns}
+      data={data}
+    />
+  );
+};
+
+export default App;
 ```

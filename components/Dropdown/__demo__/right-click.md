@@ -17,7 +17,7 @@ Right click to trigger menu.
 import { useState } from 'react';
 import { Dropdown, Menu, Grid } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   return (
     <Dropdown
       trigger="contextMenu"
@@ -46,5 +46,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

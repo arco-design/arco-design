@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
+import { render, fireEvent, act } from '../../../tests/util';
 import Tree from '..';
 
 const TreeData = [
@@ -48,7 +47,7 @@ describe('Tree fieldNames', () => {
   });
 
   it('render fieldNames correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Tree
         treeData={TreeData}
         fieldNames={{
@@ -60,12 +59,12 @@ describe('Tree fieldNames', () => {
     );
 
     expect(wrapper.find('.arco-tree-node')).toHaveLength(6);
-    expect(wrapper.find('.arco-tree-node-title-text').at(0).text()).toBe('Trunk 0-0');
+    expect(wrapper.find('.arco-tree-node-title-text').item(0).textContent).toBe('Trunk 0-0');
   });
 
   it('fieldNames checkedStrategy=parent  correctly', async () => {
-    let value = [];
-    const wrapper = mount(
+    let value: string[] = [];
+    const wrapper = render(
       <Tree
         checkable
         onCheck={(keys) => {
@@ -82,14 +81,7 @@ describe('Tree fieldNames', () => {
     );
 
     await act(() => {
-      wrapper
-        .find('.arco-checkbox > input')
-        .at(2)
-        .simulate('change', {
-          target: {
-            checked: true,
-          },
-        });
+      fireEvent.click(wrapper.find('.arco-checkbox').item(2));
     });
 
     expect(value).toEqual([TreeData[0].value]);

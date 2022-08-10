@@ -14,14 +14,22 @@ title:
 Use `panel=true` to display date in card format.
 
 ```js
-import { Calendar } from '@arco-design/web-react';
-import dayjs from 'dayjs';
+import { Calendar, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div style={{ display: 'flex', alignItems: 'start' }}>
-    <Calendar panel defaultValue={dayjs('2020-04-01')} panelTodayBtn style={{ marginRight: 50 }} onChange={(a) => console.log(a)} />
-    <Calendar panel defaultValue="2020-03" mode="year" />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space align="start">
+      <Calendar
+        panel
+        defaultValue="2020-04-01"
+        panelTodayBtn
+        style={{ marginRight: 50 }}
+        onChange={(a) => console.log(a)}
+      />
+      <Calendar panel defaultValue="2020-03" mode="year" />
+    </Space>
+  );
+};
+
+export default App;
 ```

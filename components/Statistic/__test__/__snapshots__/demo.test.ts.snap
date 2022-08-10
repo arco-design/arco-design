@@ -224,95 +224,169 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
 
 exports[`renders Statistic/demo/countdown.md correctly 1`] = `
 <div
-  style="display:flex;flex-wrap:wrap"
+  class="arco-space arco-space-vertical"
 >
   <div
-    class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px;min-width:80px"
+    class="arco-space-item"
+    style="margin-bottom:40px"
   >
     <div
-      class="arco-statistic-title"
-    >
-      Countdown
-    </div>
-    <div
-      class="arco-statistic-content"
+      class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
-        class="arco-statistic-value"
-      >
-        02:00:00
-      </div>
-    </div>
-  </div>
-  <div
-    class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px;min-width:180px"
-  >
-    <div
-      class="arco-statistic-title"
-    >
-      Milliseconds
-    </div>
-    <div
-      class="arco-statistic-content"
-    >
-      <div
-        class="arco-statistic-value"
-      >
-        02:00:00.000
-      </div>
-    </div>
-  </div>
-  <div
-    class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px;min-width:200px"
-  >
-    <div
-      class="arco-statistic-title"
-    >
-      Days
-    </div>
-    <div
-      class="arco-statistic-content"
-    >
-      <div
-        class="arco-statistic-value"
-      >
-        4 天 0 时 0 分 0 秒
-      </div>
-    </div>
-  </div>
-  <div
-    style="display:inline-block;margin-bottom:20px"
-  >
-    <div
-      class="arco-statistic arco-statistic-countdown"
-    >
-      <div
-        class="arco-statistic-title"
-      >
-        Trigger on finish
-      </div>
-      <div
-        class="arco-statistic-content"
+        class="arco-space-item"
+        style="margin-right:60px"
       >
         <div
-          class="arco-statistic-value"
+          class="arco-statistic arco-statistic-countdown"
         >
-          00:00:05.000
+          <div
+            class="arco-statistic-title"
+          >
+            Countdown
+          </div>
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              02:00:00
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:60px"
+      >
+        <div
+          class="arco-statistic arco-statistic-countdown"
+        >
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              <div
+                class="arco-statistic"
+              >
+                <div
+                  class="arco-statistic-title"
+                >
+                  Countdown renderFormat
+                </div>
+                <div
+                  class="arco-statistic-content"
+                >
+                  <div
+                    class="arco-statistic-value"
+                  >
+                    02:00:00
+                    <span
+                      class="arco-statistic-value-decimal"
+                    >
+                      <span
+                        class="arco-statistic-value-suffix"
+                      >
+                        120min 后
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-statistic arco-statistic-countdown"
+        >
+          <div
+            class="arco-statistic-title"
+          >
+            Milliseconds
+          </div>
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              02:00:00.000
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <button
-      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="display:block;margin-top:10px"
-      type="button"
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-start"
     >
-      <span>
-        Start
-      </span>
-    </button>
+      <div
+        class="arco-space-item"
+        style="margin-right:40px"
+      >
+        <div
+          class="arco-statistic arco-statistic-countdown"
+        >
+          <div
+            class="arco-statistic-title"
+          >
+            Days
+          </div>
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              4 天 0 时 0 分 0 秒
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div>
+          <div
+            class="arco-statistic arco-statistic-countdown"
+          >
+            <div
+              class="arco-statistic-title"
+            >
+              Trigger on finish
+            </div>
+            <div
+              class="arco-statistic-content"
+            >
+              <div
+                class="arco-statistic-value"
+              >
+                00:00:05.000
+              </div>
+            </div>
+          </div>
+          <button
+            class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+            style="display:block;margin-top:10px"
+            type="button"
+          >
+            <span>
+              Start
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -332,9 +406,9 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
         class="arco-switch-dot"
       />
     </button>
-     
     <span
       class="arco-typography"
+      style="margin:0 10px"
     >
       Loading
     </span>

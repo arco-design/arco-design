@@ -18,25 +18,23 @@ You can use `Form.useWatch` to monitor the changes of field values inside the fo
 ```js
 import { Form, Typography, Input, InputNumber } from '@arco-design/web-react';
 
-function Demo() {
-
+function App() {
   const [form] = Form.useForm();
   const name = Form.useWatch('name', form);
   const age = Form.useWatch('age', form);
-
   return (
     <div>
-      <Form form={form} >
+      <Form form={form}>
         <Form.Item label="Name" field="name">
-          <Input  placeholder="enter name"/>
+          <Input placeholder="enter name" />
         </Form.Item>
 
         <Form.Item label="Age" field="age">
-          <InputNumber  placeholder="enter age"/>
+          <InputNumber placeholder="enter age" />
         </Form.Item>
         <Form.Item label=" ">
           <Typography.Text code>
-            Name: {name}; Age: {age }
+            Name: {name}; Age: {age}
           </Typography.Text>
         </Form.Item>
       </Form>
@@ -44,8 +42,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```

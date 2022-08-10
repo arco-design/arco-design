@@ -69,19 +69,19 @@ You can get `this.form` through `ref`, and `this.form` contains common operation
 |Property|Description|Type|Default|Version|
 | --- | ---- | ---- | ----- | --- |
 | validate | Verified and Get the Form values and Errors, If fields are not set, all fields will be verified. Support callback and promise | `Function(fields?: string[], callback(errors, values) => void)` |
+| submit  |submit the form|`Function` |
 | setFieldValue  |Set the value of a form field|`Function(field: string, value)` |
 | setFields  |Set the value of a group of form fields and errors.|`Function({ [field]: string: { value: any, error: FieldError } })` |
 | setFieldsValue  |Set the value of multiple form fields|`Function({[field]: string, value})` |
-| getFieldValue  |Get the field value of a form field|`Function(field: string)` |
-| getFields  |Gets the values of all form items, including those that were created and then destroyed.|`Function` |
-| getFieldsValue |Get the field value of a group of form fields. If you don't set fields, you will get the field value of all fields.|`Function(fields: string[])` |
+| getFieldValue  |Get the field value of a form field.**Please do not use the return value directly as a dependency of useEffect, the return value will be deeply cloned and the reference address will change**|`Function(field: string)` |
+| getFields  |Gets the values of all form items, including those that were created and then destroyed.**Please do not use the return value directly as a dependency of useEffect, the return value will be deeply cloned and the reference address will change**|`Function` |
+| getFieldsValue |Get the field value of a group of form fields. If you don't set fields, you will get the field value of all fields.**Please do not use the return value directly as a dependency of useEffect, the return value will be deeply cloned and the reference address will change**|`Function(fields: string[])` |
 | getFieldError  |Get the error status of a form field|`Function(field: string)` |
 | getFieldsError |Get the error status of a group of form fields. If you don't set fields, you will get the error status of all fields.|`Function(fields?: string[])` |
 | scrollToField |Scroll to the specified form field position. [ScrollIntoViewOptions](https://github.com/stipsan/scroll-into-view-if-needed/blob/master/src/index.ts#L16)|`Function(field: string, options?: ScrollIntoViewOptions)`
 | getTouchedFields |Get the touched field|`() => string[]` |
 | resetFields|Reset the value of the Form to the initial value|`Function(field?: string[])` |
-| clearFields|Clear the value of the Form.Item|`Function(field?: string[])` | `2.29.0`
-
+| clearFields|Clear the value of the Form.Item and validate status|`Function(field?: string[])` | `2.29.0`
 
 ### `validate` Usage
 
@@ -115,7 +115,8 @@ this.form.setFields({
     value: 'pjy',
     error: {
       message: 'Yes, I know!'
-    }
+    },
+    warning: 'warning...'
   }
 });
 ```

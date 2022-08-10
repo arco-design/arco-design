@@ -11,6 +11,14 @@ exports[`renders Mentions/demo/basic.md correctly 1`] = `
   >
     @Bytedance
   </textarea>
+  <div
+    class="arco-mentions-measure"
+  >
+    <span
+      class="arco-mentions-measure-trigger"
+    />
+    @Bytedance
+  </div>
 </div>
 `;
 
@@ -116,6 +124,13 @@ exports[`renders Mentions/demo/control.md correctly 1`] = `
                 placeholder="You can use @ Plato to mention Platon"
                 rows="2"
               />
+              <div
+                class="arco-mentions-measure"
+              >
+                <span
+                  class="arco-mentions-measure-trigger"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -139,7 +154,7 @@ exports[`renders Mentions/demo/control.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:12px"
+              style="margin:0 12px"
               type="button"
             >
               <span>
@@ -179,6 +194,13 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
         placeholder="Input @"
         rows="1"
       />
+      <div
+        class="arco-mentions-measure"
+      >
+        <span
+          class="arco-mentions-measure-trigger"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -194,6 +216,13 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
         placeholder="Input #"
         rows="1"
       />
+      <div
+        class="arco-mentions-measure"
+      >
+        <span
+          class="arco-mentions-measure-trigger"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -208,6 +237,13 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
         placeholder="Input *"
         rows="1"
       />
+      <div
+        class="arco-mentions-measure"
+      >
+        <span
+          class="arco-mentions-measure-trigger"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -232,6 +268,14 @@ exports[`renders Mentions/demo/status.md correctly 1`] = `
       >
         Bytedance
       </textarea>
+      <div
+        class="arco-mentions-measure"
+      >
+        <span
+          class="arco-mentions-measure-trigger"
+        />
+        Bytedance
+      </div>
     </div>
   </div>
   <div
@@ -249,6 +293,14 @@ exports[`renders Mentions/demo/status.md correctly 1`] = `
       >
         Bytedance
       </textarea>
+      <div
+        class="arco-mentions-measure"
+      >
+        <span
+          class="arco-mentions-measure-trigger"
+        />
+        Bytedance
+      </div>
     </div>
   </div>
 </div>

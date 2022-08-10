@@ -17,7 +17,7 @@ Specify `draggable` as `true`, and the left and right panels can be sorted by dr
 import { useState } from 'react';
 import { Transfer } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const swapArrayItem = (arr, index1, index2) => {
     arr = [...arr];
     arr.splice(index1, 1, ...arr.splice(index2, 1, arr[index1]));
@@ -30,7 +30,6 @@ function Demo() {
       value: `Option ${index + 1}`,
     }))
   );
-
   return (
     <Transfer
       draggable
@@ -47,5 +46,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -13,37 +13,43 @@ title:
 
 Display a drop-down menu by the Dropdown component.
 
-
 ```js
 import { Link, Dropdown, Menu, Divider } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-
 const Droplist = (
   <Menu>
-    <Menu.Item key='1'>Beijing</Menu.Item>
-    <Menu.Item key='2'>Shanghai</Menu.Item>
-    <Menu.Item key='3'>Guangzhou</Menu.Item>
-    <Menu.Item disabled key='4'> <Link disabled>Shenzhen</Link> </Menu.Item>
+    <Menu.Item key="1">Beijing</Menu.Item>
+    <Menu.Item key="2">Shanghai</Menu.Item>
+    <Menu.Item key="3">Guangzhou</Menu.Item>
+    <Menu.Item disabled key="4">
+      <Link disabled>Shenzhen</Link>
+    </Menu.Item>
   </Menu>
 );
 
+const App = () => {
+  return (
+    <div>
+      <Dropdown droplist={Droplist} position="bl">
+        <Link style={{ marginRight: 40 }}>
+          City
+          <IconDown style={{ fontSize: 12, marginLeft: 6 }} />
+        </Link>
+      </Dropdown>
 
-ReactDOM.render(
-  <div>
-    <Dropdown droplist={Droplist} position='bl'>
-      <Link style={{ marginRight: 40 }}>
-        City
-        <IconDown style={{ fontSize: 12, marginLeft: 6 }} />
-      </Link>
-    </Dropdown>
+      <Dropdown
+        droplist={Droplist}
+        position="bl"
+        disabled
+      >
+        <Link>
+          City
+          <IconDown style={{ fontSize: 12, marginLeft: 6 }} />
+        </Link>
+      </Dropdown>
+    </div>
+  );
+};
 
-    <Dropdown droplist={Droplist} position='bl' triggerProps={{ disabled: true }}>
-      <Link disabled>
-        City
-        <IconDown style={{ fontSize: 12, marginLeft: 6 }} />
-      </Link>
-    </Dropdown>
-  </div>,
-  CONTAINER
-);
+export default App;
 ```

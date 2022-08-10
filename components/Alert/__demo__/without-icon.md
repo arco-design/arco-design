@@ -15,42 +15,44 @@ Use `showIcon=false` to hide the icon.
 
 ```js
 import { Alert, Grid } from '@arco-design/web-react';
-
 const { Row, Col } = Grid;
 
-ReactDOM.render(
-  <Row gutter={40}>
-    <Col span={12}>
-      <Alert
-        style={{ marginBottom: 20 }}
-        showIcon={false}
-        type="info"
-        content="Here is an info text"
-      />
-      <Alert
-        style={{ marginBottom: 20 }}
-        showIcon={false}
-        type="warning"
-        title="Warning"
-        content="Here is a warning text"
-      />
-    </Col>
-    <Col span={12}>
-      <Alert
-        style={{ marginBottom: 20 }}
-        showIcon={false}
-        type="success"
-        content="Here is a success text"
-      />
-      <Alert
-        style={{ marginBottom: 20, color: 'red' }}
-        showIcon={false}
-        type="error"
-        title="Error"
-        content="Here is an error text"
-      />
-    </Col>
-  </Row>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Row gutter={40}>
+      <Col span={12}>
+        <Alert
+          style={{ marginBottom: 20 }}
+          showIcon={false}
+          type="info"
+          content="Here is an info text"
+        />
+        <Alert
+          style={{ marginBottom: 20 }}
+          showIcon={false}
+          type="warning"
+          title="Warning"
+          content="Here is a warning text"
+        />
+      </Col>
+      <Col span={12}>
+        <Alert
+          style={{ marginBottom: 20 }}
+          showIcon={false}
+          type="success"
+          content="Here is a success text"
+        />
+        <Alert
+          style={{ marginBottom: 20, color: 'red' }}
+          showIcon={false}
+          type="error"
+          title="Error"
+          content="Here is an error text"
+        />
+      </Col>
+    </Row>
+  );
+};
+
+export default App;
 ```

@@ -1,6 +1,5 @@
 // 自定义 webpack 构建配置
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { version } = require('../package.json');
 
@@ -23,68 +22,5 @@ exports.icon = (config) => {
       banner: `ArcoDesign v${version}\n\nCopyright 2019-present, Bytedance, Inc.\nAll rights reserved.\n`,
     })
   );
-};
-
-// 官网
-exports.site = (config, env) => {
-  if (env === 'prod') {
-    config.output.publicPath = '/';
-  }
-
-  config.entry = {
-    react: path.resolve(__dirname, '../site/src/index.js'),
-    'react-en': path.resolve(__dirname, '../site/src/index-en.js'),
-  };
-
-  config.module.rules[1].use[1].options.demoDir = '__demo__';
-
-  config.module.rules[1].use[1].options.autoHelmet = {
-    formatTitle: (value) => `${value} | ArcoDesign`,
-  };
-
-  // esbuild
-  config.module.rules[0].loader = 'esbuild-loader';
-  config.module.rules[0].options = {
-    loader: 'tsx',
-    target: 'es2015',
-  };
-  config.module.rules[1].use[0].loader = 'esbuild-loader';
-  config.module.rules[1].use[0].options = {
-    loader: 'tsx',
-    target: 'es2015',
-  };
-
-  config.plugins[0] = new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, '../site/public/index.ejs'),
-    templateParameters: {
-      title: 'Arco Design - 企业级产品的完整设计和开发解决方案',
-      lang: 'zh',
-    },
-    chunks: ['react'],
-  });
-
-  config.plugins.push(
-    new HtmlWebpackPlugin({
-      filename: 'index-en.html',
-      template: path.resolve(__dirname, '../site/public/index.ejs'),
-      templateParameters: {
-        title:
-          'Arco Design - Complete design and development solutions for enterprise-level products',
-        lang: 'en',
-      },
-      chunks: ['react-en'],
-    })
-  );
-
-  config.resolve.alias['@arco-design/web-react'] = path.resolve(__dirname, '..');
-  // config.resolve.alias['dayjs$'] = 'moment-timezone';
-
-  if (env === 'dev') {
-    config.devServer.historyApiFallback = {
-      rewrites: [
-        { from: /^(\/(react|docs|showcase)){0,1}\/en-US/, to: '/index-en.html' },
-        { from: /^\/$/, to: '/index.html' },
-      ],
-    };
-  }
+  config.resolve.modules = ['node_modules', path.resolve(__dirname, '../site/main/node_modules')];
 };

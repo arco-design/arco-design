@@ -16,10 +16,13 @@ Basic usage.
 ```js
 import { Calendar } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div style={{width: '100%', overflow: 'auto'}}>
-    <Calendar defaultValue="2020-04-01" />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div style={{ width: '100%', overflow: 'auto' }}>
+      <Calendar defaultValue="2020-04-01" />
+    </div>
+  );
+};
+
+export default App;
 ```

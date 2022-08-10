@@ -83,3 +83,17 @@
     background-position: 0 50%;
   }
 }
+
+.@{skeleton-prefix-cls}-rtl {
+  .@{skeleton-prefix-cls}-image {
+    &-left {
+      margin-right: 0;
+      margin-left: @skeleton-spacing-image_left-margin-right;
+    }
+
+    &-right {
+      margin-left: 0;
+      margin-right: @skeleton-spacing-image_right-margin-left;
+    }
+  }
+}

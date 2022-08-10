@@ -15,7 +15,6 @@ Use `grid.span` to set the number of columns expected to occupy.
 
 ```js
 import { List, Card } from '@arco-design/web-react';
-
 const data = [
   {
     title: 'Platform',
@@ -35,25 +34,25 @@ const data = [
   },
 ];
 
-ReactDOM.render(
-  <List
-    grid={{
-      gutter: 0,
-      span: 6,
-    }}
-    dataSource={data}
-    bordered={false}
-    render={(item, index) => (
-      <List.Item key={index}>
-        <List
-          size="small"
-          header={item.title}
-          dataSource={item.data}
-          render={(item, index) => <List.Item key={index}>{item}</List.Item>}
-        />
-      </List.Item>
-    )}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <List
+      grid={{ gutter: 0, span: 6 }}
+      dataSource={data}
+      bordered={false}
+      render={(item, index) => (
+        <List.Item key={index}>
+          <List
+            size="small"
+            header={item.title}
+            dataSource={item.data}
+            render={(item, index) => <List.Item key={index}>{item}</List.Item>}
+          />
+        </List.Item>
+      )}
+    />
+  );
+};
+
+export default App;
 ```

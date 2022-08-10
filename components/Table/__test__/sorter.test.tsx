@@ -1,38 +1,31 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render, cleanup, sleep } from '../../../tests/util';
 import Table, { ColumnProps } from '..';
 import { columnsSorter } from './common/columns';
 import { data, treeData, TestData } from './common/data';
-import { TableProps } from '../interface';
-import { sleep } from '../../../tests/util';
-
-function mountTable<T = any>(component: React.ReactElement) {
-  return mount<React.PropsWithChildren<TableProps<T>>>(component);
-}
 
 describe('Table sorter', () => {
   it('sorter', () => {
     function checkSorter(columns: ColumnProps<TestData>[]) {
       const onChange = jest.fn();
-      const component = mountTable(<Table columns={columns} data={data} onChange={onChange} />);
-      const sorter = component.find('.arco-table-cell-with-sorter');
+      const component = render(<Table columns={columns} data={data} onChange={onChange} />);
+      const sorter = component.find('.arco-table-cell-with-sorter')[0];
       const getFirstTdText = () => {
-        return component.find('tbody tr').at(0).find('td .arco-table-cell').at(3).text();
+        return component.find('tbody tr').item(0).querySelectorAll('td .arco-table-cell').item(3)
+          .textContent;
       };
-
-      expect(sorter).toHaveLength(1);
 
       // default ascend
       expect(getFirstTdText()).toBe('19');
 
       function checkSortDirections() {
         // descend
-        sorter.simulate('click');
+        fireEvent.click(sorter);
 
         expect(getFirstTdText()).toBe('30');
 
         // cancel
-        sorter.simulate('click');
+        fireEvent.click(sorter);
 
         expect(getFirstTdText()).toBe('20');
       }
@@ -49,14 +42,17 @@ describe('Table sorter', () => {
         'Name3',
       ]);
 
-      component.setProps({ pagination: false });
+      component.rerender(
+        <Table columns={columns} data={data} onChange={onChange} pagination={false} />
+      );
 
       // ascend
-      sorter.simulate('click');
+      fireEvent.click(sorter);
 
       expect(getFirstTdText()).toBe('19');
 
       checkSortDirections();
+      cleanup();
     }
 
     checkSorter(columnsSorter);
@@ -74,7 +70,7 @@ describe('Table sorter', () => {
   });
 
   it('sortDirections', () => {
-    const component = mountTable(
+    const component = render(
       <Table
         columns={columnsSorter.map((d) => {
           const _d = { ...d };
@@ -91,33 +87,34 @@ describe('Table sorter', () => {
         data={data}
       />
     );
-    const sorter = component.find('.arco-table-cell-with-sorter');
+    const sorter = component.find('.arco-table-cell-with-sorter')[0];
     const getFirstTdText = () => {
-      return component.find('tbody tr').at(0).find('td .arco-table-cell').at(3).text();
+      return component.find('tbody tr').item(0).querySelectorAll('td .arco-table-cell').item(3)
+        .textContent;
     };
 
     // default
     expect(getFirstTdText()).toBe('20');
 
     // descend
-    sorter.simulate('click');
+    fireEvent.click(sorter);
 
     expect(getFirstTdText()).toBe('30');
 
     // cancel
-    sorter.simulate('click');
+    fireEvent.click(sorter);
 
     expect(getFirstTdText()).toBe('20');
   });
 
   it('showSorterTooltip', async (done) => {
-    const component = mountTable(<Table columns={columnsSorter} data={data} />);
+    const component = render(<Table columns={columnsSorter} data={data} />);
 
-    component.find('.arco-table-cell-with-sorter').simulate('mouseenter');
+    fireEvent.mouseEnter(component.find('.arco-table-cell-with-sorter')[0]);
 
     function checkTooltipText(text: string) {
       setTimeout(() => {
-        expect(document.querySelector('.arco-tooltip-content').innerHTML).toEqual(
+        expect(document.querySelector('.arco-tooltip-content')!.innerHTML).toEqual(
           `<div class="arco-tooltip-content-inner">${text}</div>`
         );
         done();
@@ -127,17 +124,17 @@ describe('Table sorter', () => {
     checkTooltipText('点击降序');
 
     await sleep(200);
-    component.find('.arco-table-cell-with-sorter').simulate('click');
+    fireEvent.click(component.find('.arco-table-cell-with-sorter')[0]);
 
     checkTooltipText('取消排序');
 
     await sleep(200);
-    component.find('.arco-table-cell-with-sorter').simulate('click');
+    fireEvent.click(component.find('.arco-table-cell-with-sorter')[0]);
 
     checkTooltipText('点击升序');
 
     await sleep(200);
-    component.setProps({ showSorterTooltip: false });
+    component.rerender(<Table columns={columnsSorter} data={data} showSorterTooltip={false} />);
 
     setTimeout(() => {
       expect(document.querySelector('.arco-tooltip-content')).toHaveLength(0);
@@ -146,12 +143,15 @@ describe('Table sorter', () => {
   });
 
   it('sort tree data', () => {
-    const component = mount(<Table data={treeData} columns={columnsSorter} defaultExpandAllRows />);
+    const component = render(
+      <Table data={treeData} columns={columnsSorter} defaultExpandAllRows />
+    );
 
-    const sorter = component.find('.arco-table-cell-with-sorter');
+    const sorter = component.find('.arco-table-cell-with-sorter')[0];
 
     const getAge = (index) => {
-      return component.find('tbody tr').at(index).find('td .arco-table-cell').at(3).text();
+      return component.find('tbody tr').item(index).querySelectorAll('td .arco-table-cell').item(3)
+        .textContent;
     };
 
     expect(getAge(0)).toBe('20');
@@ -161,7 +161,7 @@ describe('Table sorter', () => {
     expect(getAge(4)).toBe('24');
     expect(getAge(5)).toBe('29');
 
-    sorter.simulate('click');
+    fireEvent.click(sorter);
 
     expect(getAge(0)).toBe('30');
     expect(getAge(1)).toBe('29');
@@ -170,7 +170,7 @@ describe('Table sorter', () => {
     expect(getAge(4)).toBe('19');
     expect(getAge(5)).toBe('20');
 
-    sorter.simulate('click');
+    fireEvent.click(sorter);
 
     expect(getAge(0)).toBe('30');
     expect(getAge(1)).toBe('25');

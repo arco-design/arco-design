@@ -32,7 +32,7 @@ const defaultProps: AnchorProps = {
 };
 
 function Anchor(baseProps: AnchorPropsWithChildren, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<AnchorPropsWithChildren>(
     baseProps,
     defaultProps,
@@ -54,10 +54,12 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     children,
     onSelect,
     onChange,
+    ...rest
   } = props;
   const prefixCls = getPrefixCls('anchor');
   const classNames = cs(prefixCls, className, {
     [`${prefixCls}-lineless`]: lineless,
+    [`${prefixCls}-rtl`]: rtl,
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
   const sliderLineRef = useRef<HTMLDivElement>(null);
@@ -97,6 +99,8 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
 
   const setActiveLink = useCallback(
     (hash: string) => {
+      if (hash === '#a') {
+      }
       if (!hash || !wrapperRef.current) return;
       // Try to add when there is no corresponding link
       if (!linkMap.current.has(hash)) {
@@ -246,7 +250,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   }, [currentLink, lineless]);
 
   const content = (
-    <div className={classNames} style={style} ref={wrapperRef}>
+    <div className={classNames} style={style} ref={wrapperRef} {...rest}>
       {!lineless && currentLink && (
         <div className={`${prefixCls}-line-slider`} ref={sliderLineRef} />
       )}

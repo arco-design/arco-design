@@ -20,6 +20,8 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
 import PickerContext from './context';
+import { getFormatTime } from './util';
+import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(props) {
   return props.format || 'HH:mm:ss';
@@ -46,7 +48,10 @@ const defaultProps: InnerPickerProps = {
 };
 
 const Picker = (baseProps: InnerPickerProps) => {
-  const { locale, getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { locale, getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  if (rtl) {
+    defaultProps.position = 'br';
+  }
   const props = useMergeProps<InnerPickerProps>(
     baseProps,
     defaultProps,
@@ -64,6 +69,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     isRangePicker,
     picker,
     error,
+    triggerElement,
     triggerProps,
     value: propsValue,
     onChange,
@@ -148,7 +154,10 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onConfirmValue(vs: Dayjs | Dayjs[]) {
-    const newValue = isRangePicker && order ? getSortedDayjsArray(vs as Dayjs[]) : vs;
+    const newValue =
+      isRangePicker && order && isArray(vs)
+        ? getSortedDayjsArray(vs.map((v) => getFormatTime(v)))
+        : vs;
     setValue(newValue);
     setValueShow(undefined);
     setInputValue(undefined);
@@ -280,6 +289,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     suffixIcon,
     editable,
     allowClear,
+    ...pickDataAttributes(props),
   };
 
   return (
@@ -298,28 +308,29 @@ const Picker = (baseProps: InnerPickerProps) => {
         unmountOnExit={!!unmountOnExit}
         {...triggerProps}
       >
-        {isRangePicker ? (
-          <InputRange
-            {...baseInputProps}
-            ref={refInput}
-            placeholder={rangePickerPlaceholder as string[]}
-            value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
-            onChange={onChangeInput}
-            inputValue={inputValue}
-            changeFocusedInputIndex={changeFocusedInputIndex}
-            focusedInputIndex={focusedInputIndex}
-            onPressTab={onPressTab}
-          />
-        ) : (
-          <Input
-            {...baseInputProps}
-            ref={refInput}
-            placeholder={inputPlaceHolder}
-            value={(valueShow || mergedValue) as Dayjs}
-            inputValue={inputValue as string}
-            onChange={onChangeInput}
-          />
-        )}
+        {triggerElement ||
+          (isRangePicker ? (
+            <InputRange
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={rangePickerPlaceholder as string[]}
+              value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
+              onChange={onChangeInput}
+              inputValue={inputValue}
+              changeFocusedInputIndex={changeFocusedInputIndex}
+              focusedInputIndex={focusedInputIndex}
+              onPressTab={onPressTab}
+            />
+          ) : (
+            <Input
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={inputPlaceHolder}
+              value={(valueShow || mergedValue) as Dayjs}
+              inputValue={inputValue as string}
+              onChange={onChangeInput}
+            />
+          ))}
       </Trigger>
     </PickerContext.Provider>
   );

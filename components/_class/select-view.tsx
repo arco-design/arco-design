@@ -7,7 +7,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { isUndefined, isObject } from '../_util/is';
+import { pickDataAttributes } from '../_util/pick';
+import { isUndefined, isObject, isFunction } from '../_util/is';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconDown from '../../icon/react-icon/IconDown';
@@ -84,8 +85,14 @@ export interface SelectViewCommonProps
   /**
    * @zh 最多显示多少个 `tag`，仅在多选或标签模式有效。
    * @en The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.
+   * @version Object type in 2.37.0
    */
-  maxTagCount?: number;
+  maxTagCount?:
+    | number
+    | {
+        count: number;
+        render?: (invisibleTagCount: number) => ReactNode;
+      };
   /**
    * @zh 前缀。
    * @en Customize select suffix
@@ -128,11 +135,12 @@ export interface SelectViewProps extends SelectViewCommonProps {
   isEmptyValue: boolean;
   isMultiple?: boolean;
   prefixCls: string;
+  rtl?: boolean;
   ariaControls?: string;
   renderText: (value) => { text; disabled };
   onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
-  onChangeInputValue?: InputComponentProps['onValueChange'];
+  onChangeInputValue?: InputComponentProps['onChange'];
   onKeyDown?: (e) => void;
   onPaste?: (e) => void;
   onClear?: (e) => void;
@@ -190,6 +198,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     onBlur,
     onRemoveCheckedItem,
     onSort,
+    rtl,
     ...rest
   } = props;
 
@@ -346,7 +355,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       inputProps.onKeyDown = inputEventHandlers.keyDown;
       inputProps.onFocus = inputEventHandlers.focus;
       inputProps.onBlur = inputEventHandlers.blur;
-      inputProps.onValueChange = inputEventHandlers.change;
+      inputProps.onChange = inputEventHandlers.change;
     } else {
       // Avoid input getting focus by Tab
       // Do NOT pass [disabled] to <input>, otherwise the click event will not be triggered
@@ -382,8 +391,15 @@ export const SelectView = (props: SelectViewProps, ref) => {
 
   const renderMultiple = () => {
     const usedValue = isUndefined(value) ? [] : [].concat(value as []);
+    const maxTagCountNumber = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
+
+    const maxTagCountRender =
+      isObject(maxTagCount) && isFunction(maxTagCount.render)
+        ? maxTagCount.render
+        : (invisibleCount) => `+${invisibleCount}...`;
+
     const usedMaxTagCount =
-      typeof maxTagCount === 'number' ? Math.max(maxTagCount, 0) : usedValue.length;
+      typeof maxTagCountNumber === 'number' ? Math.max(maxTagCountNumber, 0) : usedValue.length;
     const tagsToShow: ObjectValueType[] = [];
     let lastClosableTagIndex = -1;
 
@@ -405,7 +421,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     const invisibleTagCount = usedValue.length - usedMaxTagCount;
     if (invisibleTagCount > 0) {
       tagsToShow.push({
-        label: `+${invisibleTagCount}...`,
+        label: maxTagCountRender(invisibleTagCount),
         closable: false,
         // InputTag needs to extract value as key
         value: '__arco_value_tag_placeholder',
@@ -469,6 +485,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-no-border`]: !bordered,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -495,6 +512,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       aria-disabled={disabled}
       aria-controls={ariaControls}
       {...include(rest, ['onClick', 'onMouseEnter', 'onMouseLeave'])}
+      {...pickDataAttributes(rest)}
       ref={refWrapper}
       tabIndex={disabled ? -1 : 0}
       style={style}

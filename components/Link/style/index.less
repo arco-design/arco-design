@@ -25,6 +25,10 @@
     background-color: @link-color-bg_active;
   }
 
+  &:focus-visible {
+    box-shadow: 0 0 0 2px @link-color-text;
+  }
+
   &&-hoverless {
     background-color: unset;
     padding: 0;
@@ -94,5 +98,10 @@
   &-icon {
     margin-right: @link-margin-icon-right;
     font-size: @link-size-icon;
+  }
+
+  &-rtl &-icon {
+    margin-left: @link-margin-icon-right;
+    margin-right: 0;
   }
 }

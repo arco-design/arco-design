@@ -1,13 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { fireEvent } from '@testing-library/dom';
+import Menu from '..';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
-import Menu from '..';
-import Tooltip from '../../Tooltip';
 import { MenuProps } from '../interface';
-import { $ } from '../../../tests/util';
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Enter, Esc } from '../../_util/keycode';
+import { render, sleep } from '../../../tests/util';
 
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
@@ -46,47 +43,41 @@ const testProps: MenuProps = {
 };
 
 describe('Menu', () => {
-  beforeEach(() => {
-    jest.useFakeTimers();
-  });
-
   it('should render correct Menu and children based on vertical props', () => {
-    const component = mount(generateMenu(testProps));
-    expect(component.find('.arco-menu').exists()).toBe(true);
-    expect(component.find('.arco-menu-inner').children().length).toBe(6);
-    // className
-    expect(component.find('.arco-menu').hasClass('arco-menu-test')).toBe(true);
+    const wrapper = render(generateMenu(testProps));
+    expect(wrapper.querySelectorAll('.arco-menu-inner > *').length).toBe(5);
+    expect(wrapper.querySelector('.arco-menu')).toHaveClass('arco-menu-test');
   });
 
   it('should render correct theme', () => {
-    const component = mount(generateMenu());
-    expect(component.find('.arco-menu').hasClass('arco-menu-dark')).toBe(false);
-    component.setProps({ theme: 'dark' });
-    expect(component.find('.arco-menu').hasClass('arco-menu-dark')).toBe(true);
+    const wrapper = render(generateMenu({ theme: 'dark' }));
+    expect(wrapper.querySelector('.arco-menu')).toHaveClass('arco-menu-dark');
   });
 
   it('should render menuItem disabled', () => {
-    const component = mount(generateMenu());
-    expect(component.find('.arco-menu-disabled').length).toBe(1);
+    const wrapper = render(generateMenu());
+    expect(wrapper.querySelectorAll('.arco-menu-disabled').length).toBe(1);
   });
 
   it('click items should change active and call the right callback', () => {
-    const component = mount(generateMenu(testProps));
-    expect(component.find('.arco-menu-selected').text()).toBe('设计指南');
-    component.find('.arco-menu-item').at(2).simulate('click');
+    const wrapper = render(generateMenu(testProps));
+    expect(wrapper.querySelector('.arco-menu-selected')).toHaveTextContent('设计指南');
+    fireEvent.click(wrapper.querySelectorAll('.arco-menu-item')[2]);
     expect(testProps.onClickMenuItem).toBeCalled();
-    expect(component.find('.arco-menu-selected').text()).toBe('模块');
+    expect(wrapper.querySelector('.arco-menu-selected')).toHaveTextContent('模块');
   });
 
   it('vertical openKeys', () => {
-    const component = mount(generateMenu(testProps));
-    expect(component.find('.arco-menu-inline-content').props().style.height).toBe('auto');
-    component.find('.arco-menu-inline-header').simulate('click');
+    const wrapper = render(generateMenu(testProps));
+    expect(getComputedStyle(wrapper.querySelector('.arco-menu-inline-content')).height).toBe(
+      'auto'
+    );
+    fireEvent.click(wrapper.querySelector('.arco-menu-inline-header'));
     expect(testProps.onClickSubMenu).toBeCalled();
-    expect(component.find('.arco-menu-inline-content').props().style.height).toBe(0);
+    expect(getComputedStyle(wrapper.querySelector('.arco-menu-inline-content')).height).toBe('0px');
   });
 
-  it('triggerProps works', () => {
+  it('triggerProps works', async () => {
     const Demo = () => {
       const refDiv = useRef(null);
       return (
@@ -108,23 +99,25 @@ describe('Menu', () => {
         </div>
       );
     };
-    const wrapper = mount(<Demo />);
-    const popupMenuItems = wrapper.find('.arco-dropdown-menu-item');
+    const wrapper = render(<Demo />);
+    await sleep(100);
+
+    const popupMenuItems = wrapper.querySelectorAll('.arco-dropdown-menu-item');
     expect(popupMenuItems).toHaveLength(2);
-    expect(popupMenuItems.at(0).text()).toBe('Item 1');
-    expect(popupMenuItems.at(1).text()).toBe('Item 2');
+    expect(popupMenuItems[0]).toHaveTextContent('Item 1');
+    expect(popupMenuItems[1]).toHaveTextContent('Item 2');
   });
 
   it('accordion', () => {
-    const component = mount(
+    const wrapper = render(
       <Menu
         accordion
         onClickSubMenu={testProps.onClickSubMenu}
-        defaultOpenKeys={['component']}
+        defaultOpenKeys={['wrapper']}
         defaultSelectedKeys={['3']}
       >
         <MenuItem key="1">设计指南</MenuItem>
-        <SubMenu key="component" title={<span>组件</span>}>
+        <SubMenu key="wrapper" title={<span>组件</span>}>
           <MenuItem key="4">通用组件</MenuItem>
         </SubMenu>
         <SubMenu key="layout" title={<span>布局组件</span>}>
@@ -132,18 +125,17 @@ describe('Menu', () => {
         </SubMenu>
       </Menu>
     );
-    expect(component.find('.arco-menu-inline-content').at(0).props().style.height).toBe('auto');
-    expect(component.find('.arco-menu-inline-content').at(1).props().style.height).toBe(0);
 
-    component.find('.arco-menu-inline-header').at(1).simulate('click');
-    jest.runAllTimers();
+    const eleInlineContents = wrapper.querySelectorAll('.arco-menu-inline-content');
+    expect(getComputedStyle(eleInlineContents[0]).height).toBe('auto');
 
+    fireEvent.click(wrapper.querySelectorAll('.arco-menu-inline-header')[1]);
     expect(testProps.onClickSubMenu).toBeCalled();
-    expect(component.find('.arco-menu-inline-content').at(0).props().style.height).toBe(0);
+    expect(getComputedStyle(eleInlineContents[0]).height).toBe('0px');
   });
 
   it('ItemGroup', () => {
-    const component = mount(
+    const wrapper = render(
       <Menu defaultSelectedKeys={['3']} theme="dark">
         <MenuItemGroup key="help" title="开发指南">
           <MenuItem key="1">安装</MenuItem>
@@ -151,58 +143,75 @@ describe('Menu', () => {
         </MenuItemGroup>
       </Menu>
     );
-    expect(component.find('.arco-menu-group').exists()).toBe(true);
+    expect(wrapper.querySelectorAll('.arco-menu-group').length).toBe(1);
   });
 
-  it('horizontal', () => {
-    const component = mount(
-      <Menu defaultSelectedKeys={['4']} onClickSubMenu={testProps.onClickSubMenu} mode="horizontal">
-        <SubMenu key="component" title={<span>组件</span>}>
+  it('horizontal', async () => {
+    const wrapper = render(
+      <Menu
+        triggerProps={{ trigger: 'click' }}
+        defaultSelectedKeys={['4']}
+        onClickSubMenu={testProps.onClickSubMenu}
+        mode="horizontal"
+      >
+        <SubMenu key="wrapper" title={<span>组件</span>}>
           <MenuItem key="4">通用组件</MenuItem>
           <MenuItem key="5">布局组件</MenuItem>
         </SubMenu>
       </Menu>
     );
-    expect($('.arco-menu-pop-trigger').length).toBe(0);
-    component.find('.arco-menu-pop').at(0).simulate('mouseenter');
-    jest.runAllTimers();
-    component.find('.arco-menu-pop-header').at(0).simulate('click');
+
+    fireEvent.click(wrapper.querySelector('.arco-menu-pop-header'));
+    await sleep(0);
+    expect(wrapper.querySelectorAll('.arco-menu-pop-trigger').length).toBe(1);
+
     expect(testProps.onClickSubMenu).toBeCalled();
-    expect($('.arco-menu-pop-trigger').length).toBe(1);
-    component.find('.arco-menu-pop').at(0).simulate('mouseleave');
-    jest.runAllTimers();
-    expect($('.arco-menu-pop-trigger').length).toBe(0);
+
+    fireEvent.click(wrapper.querySelector('.arco-menu-pop-header'));
+    await sleep(100);
+    expect(wrapper.querySelectorAll('.arco-menu-pop-trigger').length).toBe(0);
   });
 
-  it('pop', () => {
-    const component = mount(
-      <Menu defaultSelectedKeys={['4']} onClickSubMenu={testProps.onClickSubMenu} mode="pop">
-        <SubMenu key="component" title={<span>组件</span>}>
+  it('pop', async () => {
+    const wrapper = render(
+      <Menu
+        triggerProps={{ trigger: 'click' }}
+        defaultSelectedKeys={['4']}
+        onClickSubMenu={testProps.onClickSubMenu}
+        mode="pop"
+      >
+        <SubMenu key="wrapper" title={<span>组件</span>}>
           <MenuItem key="4">通用组件</MenuItem>
           <MenuItem key="5">布局组件</MenuItem>
         </SubMenu>
       </Menu>
     );
-    expect($('.arco-menu-pop-trigger').length).toBe(0);
-    component.find('.arco-menu-pop').at(1).simulate('mouseenter');
-    jest.runAllTimers();
-    expect($('.arco-menu-pop-trigger').length).toBe(1);
-    component.find('.arco-menu-pop-header').simulate('click');
+
+    fireEvent.click(wrapper.querySelector('.arco-menu-pop-header'));
+    await sleep(0);
+    expect(wrapper.querySelectorAll('.arco-menu-pop-trigger').length).toBe(1);
+
     expect(testProps.onClickSubMenu).toBeCalled();
-    component.find('.arco-menu-pop').at(1).simulate('mouseleave');
-    jest.runAllTimers();
-    expect($('.arco-menu-pop-trigger').length).toBe(0);
+
+    fireEvent.click(wrapper.querySelector('.arco-menu-pop-header'));
+    await sleep(100);
+    expect(wrapper.querySelectorAll('.arco-menu-pop-trigger').length).toBe(0);
   });
 
-  it('collapse', () => {
+  it('collapse', async () => {
     const Demo = () => {
-      const [collapse, setCollapse] = useState(false);
+      const [collapse, setCollapse] = useState(true);
       return (
         <div>
           <button id="collapse" onClick={() => setCollapse(!collapse)}>
             Collapse
           </button>
-          <Menu mode="vertical" collapse={collapse} defaultOpenKeys={['layout']}>
+          <Menu
+            triggerProps={{ popupVisible: true }}
+            mode="vertical"
+            collapse={collapse}
+            defaultOpenKeys={['layout']}
+          >
             <MenuItem key="1">设计指南</MenuItem>
             <SubMenu key="layout" title={<span>布局组件</span>}>
               <MenuItem key="11">栅格</MenuItem>
@@ -214,19 +223,14 @@ describe('Menu', () => {
       );
     };
 
-    const component = mount(<Demo />);
+    const wrapper = render(<Demo />);
+    await sleep(100);
 
-    expect(
-      component.find('.arco-menu-inline-content').at(0).getDOMNode().getAttribute('style')
-    ).toBe('height: auto;');
-
-    component.find('#collapse').simulate('click');
-    expect(component.find(Menu.Item).at(0).find(Tooltip).exists()).toBe(true);
-
-    component.find('#collapse').simulate('click');
-    expect(
-      component.find('.arco-menu-inline-content').at(0).getDOMNode().getAttribute('style')
-    ).toBe('height: auto;');
+    expect(wrapper.querySelectorAll('.arco-dropdown-menu').length).toBe(1);
+    fireEvent.click(wrapper.querySelector('#collapse'));
+    expect(getComputedStyle(wrapper.querySelector('.arco-menu-inline-content')).height).toBe(
+      'auto'
+    );
   });
 
   it('overflowItems should be pack up', () => {
@@ -235,12 +239,12 @@ describe('Menu', () => {
       mode: 'horizontal',
       style: { width: '600px' },
     };
-    const component = mount(
+    const wrapper = render(
       <Menu {...props}>
         <MenuItem key="1">设计指南</MenuItem>
         <MenuItem key="2">区块</MenuItem>
         <MenuItem key="3">模块</MenuItem>
-        <SubMenu key="component" title={<span>组件</span>}>
+        <SubMenu key="wrapper" title={<span>组件</span>}>
           <MenuItem key="4">通用组件</MenuItem>
           <MenuItem key="5">布局组件</MenuItem>
           <SubMenu key="nav" title={<span>导航组件</span>}>
@@ -264,59 +268,11 @@ describe('Menu', () => {
         <MenuItem key="14">主题实验室</MenuItem>
       </Menu>
     );
-    expect(component.render()).toMatchSnapshot();
-  });
-
-  it('hotkey operation with default selected key', () => {
-    const component = mount(generateMenu({ defaultSelectedKeys: ['2'] }));
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowUp.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-active').text()).toBe('设计指南');
-  });
-
-  it('hotkey operations', () => {
-    const component = mount(generateMenu());
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowDown.code });
-    });
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowLeft.code });
-    });
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowRight.code });
-    });
-
-    act(() => {
-      component.simulate('keydown', { keyCode: ArrowDown.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-active').text()).toBe('模块');
-
-    act(() => {
-      component.simulate('keydown', { keyCode: Enter.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-selected').text()).toBe('模块');
-
-    act(() => {
-      component.simulate('keydown', { keyCode: Esc.code });
-    });
-
-    component.update();
-    expect(component.find('.arco-menu-item.arco-menu-active')).toHaveLength(0);
+    expect(wrapper.querySelectorAll('.arco-menu-overflow-hidden-menu-item')).toHaveLength(7);
   });
 
   it('SubMenu properties are passed in correctly', () => {
-    const component = mount(
+    const wrapper = render(
       <Menu
         mode="vertical"
         theme="dark"
@@ -335,12 +291,12 @@ describe('Menu', () => {
       </Menu>
     );
 
-    expect(component.find('.arco-menu-item-inner')).toHaveLength(2);
-    expect(component.find('.arco-menu-pop-header').text()).toBe('sub_submenu_2');
+    expect(wrapper.querySelectorAll('.arco-menu-item-inner')).toHaveLength(2);
+    expect(wrapper.querySelector('.arco-menu-pop-header')).toHaveTextContent('sub_submenu_2');
   });
 
   it('SubMenu selectable', () => {
-    const component = mount(
+    const wrapper = render(
       <Menu mode="vertical" defaultSelectedKeys={['submenu']}>
         <SubMenu selectable title="submenu" key="submenu">
           <Menu.Item key="1">1</Menu.Item>
@@ -348,6 +304,6 @@ describe('Menu', () => {
       </Menu>
     );
 
-    expect(component.find('.arco-menu-selected')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.arco-menu-selected')).toHaveLength(1);
   });
 });

@@ -1,4 +1,4 @@
-import { isArray } from '../_util/is';
+import { isArray, isObject, isString } from '../_util/is';
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
@@ -10,6 +10,48 @@ export function getScrollBarWidth(ele: HTMLElement | null) {
 
 export function isChildrenNotEmpty(record, field: string) {
   return isArray(record[field]) && record[field].length;
+}
+
+export function deepCloneData(data, childrenColumnName) {
+  function travel(data) {
+    if (!data) {
+      return [];
+    }
+    const newData = [];
+    data.forEach((d) => {
+      // case: [[{}]]
+      // case: ['', '']
+      if (isArray(d) || isString(d)) {
+        return d;
+      }
+      const _d = { ...d };
+      _d.__ORIGIN_DATA = d;
+      if (isObject(_d) && _d[childrenColumnName]) {
+        _d[childrenColumnName] = travel(_d[childrenColumnName]);
+      }
+      newData.push(_d);
+    });
+
+    return newData;
+  }
+
+  return travel(data);
+}
+
+export function getOriginData(data) {
+  if (!data) {
+    return data;
+  }
+  if (isObject(data)) {
+    return data.__ORIGIN_DATA;
+  }
+
+  return data.map((d) => {
+    if (isArray(d)) {
+      return d;
+    }
+    return d.__ORIGIN_DATA;
+  });
 }
 
 export function getSelectedKeys(
@@ -104,13 +146,13 @@ function updateParent(
   getRowKey,
   childrenColumnName: string
 ) {
-  if (record.parent) {
-    const parentKey = getRowKey(record.parent);
-    if (isArray(record.parent[childrenColumnName])) {
-      const total = record.parent[childrenColumnName].length;
+  if (record.__INTERNAL_PARENT) {
+    const parentKey = getRowKey(record.__INTERNAL_PARENT);
+    if (isArray(record.__INTERNAL_PARENT[childrenColumnName])) {
+      const total = record.__INTERNAL_PARENT[childrenColumnName].length;
       let len = 0;
       let flag = false;
-      record.parent[childrenColumnName].forEach((c) => {
+      record.__INTERNAL_PARENT[childrenColumnName].forEach((c) => {
         if (selectedKeys.has(getRowKey(c))) {
           len += 1;
         }
@@ -133,6 +175,12 @@ function updateParent(
       }
     }
 
-    updateParent(record.parent, selectedKeys, indeterminateKeys, getRowKey, childrenColumnName);
+    updateParent(
+      record.__INTERNAL_PARENT,
+      selectedKeys,
+      indeterminateKeys,
+      getRowKey,
+      childrenColumnName
+    );
   }
 }

@@ -16,10 +16,13 @@ Use `tooltips` to provide hint information for each rating when the mouse is hov
 ```js
 import { Rate } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Rate tooltips={['😠', '🙂', '😊' , '😘', '😍']} />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Rate tooltips={['😠', '🙂', '😊', '😘', '😍']} />
+    </div>
+  );
+};
+
+export default App;
 ```

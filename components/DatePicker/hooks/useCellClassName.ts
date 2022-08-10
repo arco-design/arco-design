@@ -72,6 +72,8 @@ export default function useClassName(props) {
 
     const isRangeStart = getIsRangeStartOrEnd(rangeStart);
     const isRangeEnd = getIsRangeStartOrEnd(rangeEnd);
+    const isRangeStartSelected = getIsRangeStartOrEnd(getDateValue(rangeValues, 0));
+    const isRangeEndSelected = getIsRangeStartOrEnd(getDateValue(rangeValues, 1));
     const isHoverRangeStart = getIsRangeStartOrEnd(hoverRangeStart);
     const isHoverRangeEnd = getIsRangeStartOrEnd(hoverRangeEnd);
 
@@ -110,7 +112,7 @@ export default function useClassName(props) {
       [`${prefixCls}-cell-hidden`]: hideNotInViewDates && !isInView,
       [`${prefixCls}-cell-in-view`]: isInView,
       [`${prefixCls}-cell-today`]: isToday && isInView,
-      [`${prefixCls}-cell-selected`]: selected,
+      [`${prefixCls}-cell-selected`]: selected || isRangeStartSelected || isRangeEndSelected,
       [`${prefixCls}-cell-range-start`]: isRangeStart,
       [`${prefixCls}-cell-range-end`]: isRangeEnd,
       [`${prefixCls}-cell-in-range`]:

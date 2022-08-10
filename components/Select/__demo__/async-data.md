@@ -18,20 +18,16 @@ import { useState, useRef, useCallback } from 'react';
 import { Select, Spin, Avatar } from '@arco-design/web-react';
 import debounce from 'lodash/debounce';
 
-function Demo() {
+function App() {
   const [options, setOptions] = useState([]);
   const [fetching, setFetching] = useState(false);
-
   const refFetchId = useRef(null);
-
   const debouncedFetchUser = useCallback(
     debounce((inputValue) => {
       refFetchId.current = Date.now();
       const fetchId = refFetchId.current;
-
       setFetching(true);
       setOptions([]);
-
       fetch('https://randomuser.me/api/?results=5')
         .then((response) => response.json())
         .then((body) => {
@@ -47,7 +43,6 @@ function Demo() {
               ),
               value: user.email,
             }));
-
             setFetching(false);
             setOptions(options);
           }
@@ -55,7 +50,6 @@ function Demo() {
     }, 500),
     []
   );
-
   return (
     <Select
       style={{ width: 345 }}
@@ -69,7 +63,13 @@ function Demo() {
       }}
       notFoundContent={
         fetching ? (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <Spin style={{ margin: 12 }} />
           </div>
         ) : null
@@ -79,5 +79,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

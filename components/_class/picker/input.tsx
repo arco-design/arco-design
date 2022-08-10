@@ -65,7 +65,7 @@ function DateInput(
   }: DateInputProps,
   ref
 ) {
-  const { getPrefixCls, size: ctxSize, locale } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, locale, rtl } = useContext(ConfigContext);
   const input = useRef<HTMLInputElement>(null);
   const size = propSize || ctxSize;
 
@@ -105,6 +105,7 @@ function DateInput(
       [`${prefixCls}-focused`]: !!popupVisible,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-error`]: error,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );

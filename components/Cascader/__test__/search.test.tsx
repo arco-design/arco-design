@@ -1,8 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-test-renderer';
 import Cascader from '../cascader';
-import { CascaderProps } from '../interface';
+import { fireEvent, render } from '../../../tests/util';
 
 const prefixCls = '.arco-cascader';
 const options = [
@@ -18,8 +16,8 @@ const options = [
   },
 ];
 
-function mountCascader<T>(component: React.ReactElement) {
-  return mount<typeof Cascader, React.PropsWithChildren<CascaderProps<T>>>(component);
+function mountCascader(component: React.ReactElement) {
+  return render(component);
 }
 
 describe('Cascader search', () => {
@@ -31,33 +29,39 @@ describe('Cascader search', () => {
     jest.runAllTimers();
   });
 
-  it('multiply select correctly', () => {
+  it('multiply select correctly', async () => {
+    const mockFn = jest.fn();
     const wrapper = mountCascader(
       <Cascader
         placeholder="Please enter ..."
         mode="multiple"
         style={{ width: 300 }}
         options={[]}
-        onSearch={() => {
-          wrapper.setProps({
-            options,
-          } as any);
-        }}
+        onSearch={mockFn}
+        showSearch
       />
     );
-
-    act(() => {
-      wrapper.find(prefixCls).simulate('click');
-    });
-
+    fireEvent.click(wrapper.querySelector('.arco-cascader-view'));
     expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(0);
-
-    act(() => {
-      wrapper.find('input').simulate('change', {
-        target: 1,
-      });
+    fireEvent.change(wrapper.container.querySelector('input') as Element, {
+      target: { value: '1' },
     });
 
-    expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(1);
+    jest.runAllTimers();
+
+    expect(mockFn).toBeCalledTimes(1); // 得到mock函数被触发的次数
+    expect(mockFn.mock.calls[0][0]).toEqual('1');
+
+    wrapper.rerender(
+      <Cascader
+        placeholder="Please enter ..."
+        mode="multiple"
+        style={{ width: 300 }}
+        options={options}
+        onSearch={mockFn}
+      />
+    );
+    jest.runAllTimers();
+    expect(wrapper.find(`${prefixCls}-list-item`)).toHaveLength(1);
   });
 });

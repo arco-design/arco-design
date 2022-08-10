@@ -6,6 +6,7 @@ import CircleProgress from './circle-progress';
 import StepsProgress from './steps-progress';
 import { ProgressProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import omit from '../_util/omit';
 
 const defaultProps: ProgressProps = {
   type: 'line',
@@ -15,9 +16,9 @@ const defaultProps: ProgressProps = {
 };
 
 function Progress(baseProps: ProgressProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<ProgressProps>(baseProps, defaultProps, componentConfig?.Progress);
-  const { className, style, size, width, strokeWidth, steps, percent } = props;
+  const { className, style, size, width, strokeWidth, steps, percent, ...rest } = props;
 
   const type = steps && props.type !== 'circle' ? 'steps' : props.type;
 
@@ -40,10 +41,22 @@ function Progress(baseProps: ProgressProps, ref) {
         `${prefixCls}-${size}`,
         {
           [`${prefixCls}-is-${status}`]: status !== 'normal',
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}
       style={{ ...widthStyle, ...style }}
+      {...omit(rest, [
+        'type',
+        'animation',
+        'status',
+        'color',
+        'trailColor',
+        'showText',
+        'formatText',
+        'buffer',
+        'bufferColor',
+      ])}
     >
       {type === 'steps' && (
         <StepsProgress {...props} type={type} status={status} prefixCls={prefixCls} />

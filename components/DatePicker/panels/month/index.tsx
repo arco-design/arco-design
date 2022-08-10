@@ -49,7 +49,7 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls, rtl } = useContext(ConfigContext);
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
   const CALENDAR_LOCALE = DATEPICKER_LOCALE.Calendar;
 
@@ -139,6 +139,7 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
         value={pageShowDate}
         mode={panelMode}
         onChangePanel={onChangePanel}
+        rtl={rtl}
       />
       {renderCalendar()}
     </div>

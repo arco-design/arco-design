@@ -4,7 +4,7 @@ import isEqualWith from 'lodash/isEqualWith';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import Option from './option';
-import { isFunction } from '../../_util/is';
+import { isFunction, isObject } from '../../_util/is';
 import { CascaderPanelProps, OptionProps } from '../interface';
 import useRefs from '../../_util/hooks/useRefs';
 import useForceUpdate from '../../_util/hooks/useForceUpdate';
@@ -12,6 +12,7 @@ import { ArrowDown, Esc, Enter, ArrowUp, ArrowRight, ArrowLeft } from '../../_ut
 import useUpdate from '../../_util/hooks/useUpdate';
 import Node from '../base/node';
 import { getMultipleCheckValue } from '../util';
+import VirtualList from '../../_class/VirtualList';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -60,6 +61,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     showEmptyChildren,
     loadMore,
     renderEmpty,
+    rtl,
   } = props;
 
   const [activeNode, setActiveNode] = useState(
@@ -250,14 +252,13 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     ? props.dropdownColumnRender
     : (menu) => menu;
 
-  return (
+  return !menus.length || !menus[0]?.length ? (
+    <>{renderEmpty()}</>
+  ) : (
     <TransitionGroup component={React.Fragment}>
       {menus.map((list, level) => {
         const footer = renderFooter ? renderFooter(level, activeNode || null) : null;
 
-        if (list.length === 0 && !showEmptyChildren && level === 0) {
-          return renderEmpty();
-        }
         return list.length === 0 && !showEmptyChildren ? null : (
           <CSSTransition
             key={level}
@@ -276,7 +277,14 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
               e.style.marginLeft = '';
             }}
           >
-            <div className={`${prefixCls}-list-column`} style={{ zIndex: menus.length - level }}>
+            <div
+              className={cs(`${prefixCls}-list-column`, {
+                [`${prefixCls}-list-column-virtual`]:
+                  props.virtualListProps && props.virtualListProps.threshold !== null,
+                [`${prefixCls}-list-column-rtl`]: rtl,
+              })}
+              style={{ zIndex: menus.length - level, ...props.dropdownMenuColumnStyle }}
+            >
               {dropdownColumnRender(
                 <div
                   className={cs(`${prefixCls}-list-wrapper`, {
@@ -284,16 +292,24 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                   })}
                 >
                   {list.length === 0 ? (
-                    renderEmpty && renderEmpty(120)
+                    renderEmpty && renderEmpty(props.virtualListProps ? '100%' : 120)
                   ) : (
-                    <ul
+                    <VirtualList
+                      needFiller={false}
+                      threshold={props.virtualListProps ? 100 : null}
+                      data={list}
+                      isStaticItemHeight
+                      itemKey="value"
+                      {...(isObject(props.virtualListProps) ? props.virtualListProps : {})}
+                      wrapper="ul"
                       role="menu"
-                      ref={(node) => setRefWrapper(node, level)}
+                      ref={(node) => setRefWrapper(node?.dom as HTMLUListElement, level)}
                       className={cs(`${prefixCls}-list`, `${prefixCls}-list-select`, {
                         [`${prefixCls}-list-multiple`]: multiple,
+                        [`${prefixCls}-list-rtl`]: rtl,
                       })}
                     >
-                      {list.map((option) => {
+                      {(option) => {
                         let isActive = false;
                         if (activeNode) {
                           isActive = activeNode.pathValue[level] === option.value;
@@ -319,6 +335,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                           >
                             <Option
                               prefixCls={prefixCls}
+                              rtl={rtl}
                               multiple={multiple}
                               option={option}
                               // 叶子节点被选中
@@ -356,8 +373,8 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                             />
                           </li>
                         );
-                      })}
-                    </ul>
+                      }}
+                    </VirtualList>
                   )}
                   {footer && (
                     <div

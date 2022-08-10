@@ -15,7 +15,3 @@ Grid can effectively ensure the consistency and logic of the page, strengthen te
 ## API
 
 %%Props%%
-
-```ts
-type FlexType = number | string | 'auto' | 'none';
-```

@@ -19,7 +19,6 @@ If `expandTrigger` is `'hover'`, next level menu will be expanded when current o
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -61,12 +60,23 @@ const options = [
   },
 ];
 
+const App = () => {
+  return (
+    <Space size="large">
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+      />
+      <Cascader
+        placeholder="Hover to expand"
+        expandTrigger="hover"
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+      />
+    </Space>
+  );
+};
 
-ReactDOM.render(
-  <Space size="large">
-    <Cascader placeholder="Please select ..." style={{ width: 300, marginBottom: 20 }} options={options} />
-    <Cascader placeholder="Hover to expand" expandTrigger="hover" style={{ width: 300, marginBottom: 20 }} options={options} />
-  </Space>,
-  CONTAINER
-);
+export default App;
 ```

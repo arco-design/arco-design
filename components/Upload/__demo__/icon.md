@@ -14,11 +14,18 @@ title:
 `showUploadList` can be an object to customize `previewIcon`, `removeIcon`, `fileIcon`, `reuploadIcon`, `cancelIcon`, `startIcon`, `errorIcon` and `fileName`.
 
 ```js
+import React from 'react';
 import { Upload, Radio, Typography, Message } from '@arco-design/web-react';
-import { IconFileAudio, IconClose, IconFaceFrownFill, IconUpload, IconEye } from '@arco-design/web-react/icon';
+import {
+  IconFileAudio,
+  IconClose,
+  IconFaceFrownFill,
+  IconUpload,
+  IconEye,
+} from '@arco-design/web-react/icon';
 
-function Demo () {
-  const [listType, setListtype] = React.useState('text')
+function App() {
+  const [listType, setListtype] = React.useState('text');
   return (
     <div>
       <Typography.Text>Type:</Typography.Text> &emsp;
@@ -27,9 +34,8 @@ function Demo () {
         value={listType}
         onChange={setListtype}
         style={{ marginLeft: 20, marginBottom: 20 }}
-        options={["text", "picture-list", "picture-card"]}
-      >
-      </Radio.Group>
+        options={['text', 'picture-list', 'picture-card']}
+      ></Radio.Group>
       <div>
         <Upload
           showUploadList={{
@@ -40,11 +46,21 @@ function Demo () {
             removeIcon: <IconClose />,
             previewIcon: null,
             errorIcon: <IconFaceFrownFill />,
-            fileName: file => {
-              return <a onClick={() => { Message.info('click ' + file.name) }}>{file.name}</a>
-            }
+            fileName: (file) => {
+              return (
+                <a
+                  onClick={() => {
+                    Message.info('click ' + file.name);
+                  }}
+                >
+                  {file.name}
+                </a>
+              );
+            },
           }}
-          progressProps={{ formatText: (percent) =>  `${percent}%` }}
+          progressProps={{
+            formatText: (percent) => `${percent}%`,
+          }}
           multiple
           defaultFileList={[
             {
@@ -66,5 +82,5 @@ function Demo () {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

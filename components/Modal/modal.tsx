@@ -103,7 +103,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
 
   const modalWrapperRef = useRef<HTMLDivElement>(null);
   const contentWrapper = useRef<HTMLDivElement>(null);
-  const [wrapperVisible, setWrapperVisible] = useState(visible);
+  const [wrapperVisible, setWrapperVisible] = useState<boolean>();
   const [popupZIndex, setPopupZIndex] = useState<number>();
   const cursorPositionRef = useRef<CursorPositionType>(null);
   const haveOriginTransformOrigin = useRef<boolean>(false);
@@ -121,7 +121,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   });
 
   const prefixCls = context.getPrefixCls('modal', props.prefixCls);
-  const { locale } = context;
+  const { locale, rtl } = context;
 
   // 简洁模式下默认不显示关闭按钮
   const defaultClosable = !simple;
@@ -214,15 +214,14 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         {okText || locale.Modal.okText}
       </Button>
     );
-    let footerContent = footer || (
-      <>
-        {!hideCancel && cancelButtonNode}
-        {okButtonNode}
-      </>
-    );
-    if (isFunction(footer)) {
-      footerContent = footer(cancelButtonNode, okButtonNode);
-    }
+    const footerContent = isFunction(footer)
+      ? footer(cancelButtonNode, okButtonNode)
+      : footer || (
+          <>
+            {!hideCancel && cancelButtonNode}
+            {okButtonNode}
+          </>
+        );
 
     return <div className={`${prefixCls}-footer`}>{footerContent}</div>;
   };
@@ -286,6 +285,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         prefixCls,
         {
           [`${prefixCls}-simple`]: simple,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}
@@ -361,6 +361,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             {
               [`${prefixCls}-wrapper-no-mask`]: !mask,
               [`${prefixCls}-wrapper-align-center`]: alignCenter,
+              [`${prefixCls}-wrapper-rtl`]: rtl,
             },
             wrapClassName
           )}

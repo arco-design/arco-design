@@ -16,12 +16,11 @@ A two-column multi-select component that moves elements from one column to anoth
 ```js
 import { Transfer } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const dataSource = new Array(8).fill(null).map((_, index) => ({
     key: `${index + 1}`,
     value: `Option ${index + 1}`,
   }));
-
   return (
     <Transfer
       dataSource={dataSource}
@@ -32,5 +31,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

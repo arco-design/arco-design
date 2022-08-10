@@ -13,10 +13,8 @@ title:
 
 The radio group of button type has four sizes available: `mini`, `small`, `default`, `large`.
 
-
 ```js
 import { Radio } from '@arco-design/web-react';
-
 const RadioGroup = Radio.Group;
 const options = [
   {
@@ -30,52 +28,51 @@ const options = [
   {
     value: 'Guangzhou',
     label: 'Guangzhou',
-    disabled: true
+    disabled: true,
   },
   {
     value: 'Shenzhen',
-    label: 'Shenzhen'
+    label: 'Shenzhen',
   },
 ];
 
-ReactDOM.render(
-  <div>
-    <RadioGroup
-      options={options}
-      size="mini"
-      type="button"
-      defaultValue="Beijing"
-      style={{ marginBottom: 20 }}
-    >
-    </RadioGroup>
-    <br/>
-    <RadioGroup
-      options={options}
-      size="small"
-      type="button"
-      defaultValue="Beijing"
-      style={{ marginBottom: 20 }}
-    >
-    </RadioGroup>
-    <br/>
-    <RadioGroup
-      options={options}
-      size="default"
-      type="button"
-      defaultValue="Beijing"
-      style={{ marginBottom: 20 }}
-    >
-    </RadioGroup>
-    <br/>
-    <RadioGroup
-      options={options}
-      size="large"
-      type="button"
-      defaultValue="Beijing"
-      style={{ marginBottom: 20 }}
-    >
-    </RadioGroup>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <RadioGroup
+        options={options}
+        size="mini"
+        type="button"
+        defaultValue="Beijing"
+        style={{ marginBottom: 20 }}
+      />
+      <br />
+      <RadioGroup
+        options={options}
+        size="small"
+        type="button"
+        defaultValue="Beijing"
+        style={{ marginBottom: 20 }}
+      />
+      <br />
+      <RadioGroup
+        options={options}
+        size="default"
+        type="button"
+        defaultValue="Beijing"
+        style={{ marginBottom: 20 }}
+      />
+      <br />
+      <RadioGroup
+        options={options}
+        size="large"
+        type="button"
+        defaultValue="Beijing"
+        style={{ marginBottom: 20 }}
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

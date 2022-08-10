@@ -21,22 +21,25 @@ function updateNotification() {
     id: 'need_update_duration',
     title: 'Ready to update',
     content: 'Will update after 2 seconds...',
-    duration: 3000
+    duration: 3000,
   });
   setTimeout(() => {
     Notification.success({
       id: 'need_update_duration',
       title: 'Success',
       content: 'Will close after 3 seconds!',
-      duration: 3000
+      duration: 3000,
     });
   }, 2000);
 }
 
-ReactDOM.render(
-  <Button onClick={updateNotification} type="primary">
-    Update Notification
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button onClick={updateNotification} type="primary">
+      Update Notification
+    </Button>
+  );
+};
+
+export default App;
 ```

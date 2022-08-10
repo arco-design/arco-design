@@ -1,6 +1,8 @@
 const Enzyme = require('enzyme');
 const Adapter = require('enzyme-adapter-react-16');
 
+// import '@testing-library/jest-dom';
+
 jest.mock('lodash.debounce', () =>
   jest.fn(function (fn, time) {
     let timeoutId;

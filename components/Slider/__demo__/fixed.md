@@ -1,6 +1,6 @@
 ---
 order: 10
-title: 
+title:
   zh-CN: 范围刻度可拖拽
   en-US: Range scale dragging
 ---
@@ -16,12 +16,18 @@ By setting `range.draggableBar` to `true`, the range scale can be dragged.
 ```js
 import { Slider } from '@arco-design/web-react';
 
-function Demo () {
-
+function App() {
   return (
-    <Slider style={{ width: 200 }} max={10} range={{ draggableBar: true }} defaultValue={[ 3, 6 ]} />
-  )
+    <Slider
+      style={{ width: 200 }}
+      max={10}
+      range={{
+        draggableBar: true,
+      }}
+      defaultValue={[3, 6]}
+    />
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

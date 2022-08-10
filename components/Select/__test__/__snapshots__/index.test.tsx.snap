@@ -152,3 +152,55 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Select set data-* property 1`] = `
+<div
+  aria-autocomplete="list"
+  aria-controls="arco-select-popup-4"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  class="arco-select arco-select-single arco-select-size-default"
+  data-test-name="Select"
+  role="combobox"
+  tabindex="0"
+>
+  <div
+    class="arco-select-view"
+    title=""
+  >
+    <input
+      autocomplete="off"
+      class="arco-select-view-input"
+      style="width:100%;pointer-events:none"
+      tabindex="-1"
+      value=""
+    />
+    <span
+      aria-hidden="true"
+      class="arco-select-view-value arco-select-hidden"
+    />
+    <div
+      aria-hidden="true"
+      class="arco-select-suffix"
+    >
+      <div
+        class="arco-select-arrow-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-down"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M39.6 17.443 24.043 33 8.487 17.443"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

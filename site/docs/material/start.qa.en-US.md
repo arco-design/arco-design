@@ -197,3 +197,14 @@ import {Button} from'@arco-design/web-react';
 // to
 import {Button} from'@arco-design/web-react/lib';
 ```
+
+## Dark theme
+
+The material supports the dark theme without additional configuration, just use Arco's built-in color variables to define the color in the component development. Reference [ArcoDesign | Dark Mode](https://arco.design/react/docs/dark)
+
+```css
+table {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-1);
+}
+```

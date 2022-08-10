@@ -15,7 +15,6 @@ Used for cell merging, the header can only be column merged.
 
 ```js
 import { Table } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -25,9 +24,11 @@ const columns = [
         children: col,
         props: {},
       };
+
       if (index > 3) {
         obj.props.colSpan = 2;
       }
+
       return obj;
     },
   },
@@ -39,9 +40,11 @@ const columns = [
         children: col,
         props: {},
       };
+
       if (index > 3) {
         obj.props.colSpan = 0;
       }
+
       return obj;
     },
   },
@@ -54,12 +57,15 @@ const columns = [
         children: col,
         props: {},
       };
+
       if (index === 0) {
         obj.props.rowSpan = 3;
       }
+
       if (index === 1 || index === 2) {
         obj.props.rowSpan = 0;
       }
+
       return obj;
     },
   },
@@ -69,7 +75,6 @@ const columns = [
     colSpan: 0,
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -108,5 +113,9 @@ const data = [
   },
 ];
 
-ReactDOM.render(<Table border borderCell hover columns={columns} data={data} />, CONTAINER);
+const App = () => {
+  return <Table border borderCell hover columns={columns} data={data} />;
+};
+
+export default App;
 ```

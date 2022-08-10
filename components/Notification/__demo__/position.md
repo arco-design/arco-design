@@ -16,61 +16,64 @@ Notification has 4 different positions, `Top Left`, `Top Right (default)`, `Bott
 ```js
 import { Notification, Button, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size="large">
-    <Button
-      onClick={() =>
-        Notification.success({
-          title: 'Title',
-          content: 'This is a Notification!',
-          showIcon: true,
-          position: 'topLeft',
-        })
-      }
-      type="primary"
-    >
-      Top Left
-    </Button>
-    <Button
-      onClick={() =>
-        Notification.success({
-          title: 'Title',
-          content: 'This is a Notification!',
-          showIcon: true,
-          position: 'topRight',
-        })
-      }
-      type="primary"
-    >
-      Top Right
-    </Button>
-    <Button
-      onClick={() =>
-        Notification.success({
-          title: 'Title',
-          content: 'This is a Notification!',
-          showIcon: true,
-          position: 'bottomLeft',
-        })
-      }
-      type="primary"
-    >
-      Bottom Left
-    </Button>
-    <Button
-      onClick={() =>
-        Notification.success({
-          title: 'Title',
-          content: 'This is a Notification!',
-          showIcon: true,
-          position: 'bottomRight',
-        })
-      }
-      type="primary"
-    >
-      Bottom Right
-    </Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Button
+        onClick={() =>
+          Notification.success({
+            title: 'Title',
+            content: 'This is a Notification!',
+            showIcon: true,
+            position: 'topLeft',
+          })
+        }
+        type="primary"
+      >
+        Top Left
+      </Button>
+      <Button
+        onClick={() =>
+          Notification.success({
+            title: 'Title',
+            content: 'This is a Notification!',
+            showIcon: true,
+            position: 'topRight',
+          })
+        }
+        type="primary"
+      >
+        Top Right
+      </Button>
+      <Button
+        onClick={() =>
+          Notification.success({
+            title: 'Title',
+            content: 'This is a Notification!',
+            showIcon: true,
+            position: 'bottomLeft',
+          })
+        }
+        type="primary"
+      >
+        Bottom Left
+      </Button>
+      <Button
+        onClick={() =>
+          Notification.success({
+            title: 'Title',
+            content: 'This is a Notification!',
+            showIcon: true,
+            position: 'bottomRight',
+          })
+        }
+        type="primary"
+      >
+        Bottom Right
+      </Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

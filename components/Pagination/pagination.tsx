@@ -6,6 +6,7 @@ import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { PaginationProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 export interface PaginationState {
   current: number;
@@ -35,7 +36,7 @@ const defaultProps: PaginationProps = {
 };
 
 function Pagination(baseProps: PaginationProps, ref) {
-  const { getPrefixCls, size: ctxSize, locale, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, locale, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PaginationProps>(
     baseProps,
     defaultProps,
@@ -149,6 +150,7 @@ function Pagination(baseProps: PaginationProps, ref) {
     {
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -189,7 +191,7 @@ function Pagination(baseProps: PaginationProps, ref) {
             totalPages={allPages}
             current={current}
             onPageChange={onPageNumberChange}
-            simple
+            simple={{ showJumper: typeof showJumper === 'boolean' ? showJumper : true }}
             size={innerSize}
           />
         </li>
@@ -303,7 +305,7 @@ function Pagination(baseProps: PaginationProps, ref) {
   }
 
   return (
-    <div className={classNames} style={style} ref={ref}>
+    <div {...pickDataAttributes(props)} className={classNames} style={style} ref={ref}>
       {totalElement}
       {renderPager}
       <PageOption

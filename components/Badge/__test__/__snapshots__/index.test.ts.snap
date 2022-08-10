@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Badge set className globally and compone
   class="arco-badge arco-badge-no-children component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Badge set data-* property 1`] = `
+<span
+  class="arco-badge arco-badge-no-children"
+  data-test-name="Badge"
+/>
+`;

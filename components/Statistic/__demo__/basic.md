@@ -16,11 +16,14 @@ Use `Statistics` when you need to highlight a certain number or group of numbers
 ```js
 import { Statistic } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Statistic title="Downloads" value={125670} groupSeparator style={{ marginRight: 60 }} />
-    <Statistic extra="Comments" value={40509} groupSeparator precision={2} />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Statistic title="Downloads" value={125670} groupSeparator style={{ marginRight: 60 }} />
+      <Statistic extra="Comments" value={40509} groupSeparator precision={2} />
+    </div>
+  );
+};
+
+export default App;
 ```

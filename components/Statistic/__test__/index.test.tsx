@@ -1,134 +1,119 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { render } from '../../../tests/util';
 import Statistic from '..';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
-import { sleep } from '../../../tests/util';
 
 mountTest(Statistic);
 componentConfigTest(Statistic, 'Statistic');
 
 describe('Statistic', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
   it('groupSeparator', () => {
-    const component = mount(<Statistic groupSeparator value={100000} />);
+    const component = render(<Statistic groupSeparator value={100000} />);
 
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      '100,000'
-    );
+    expect(
+      component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-int')[0]
+        .textContent
+    ).toBe('100,000');
 
-    act(() => {
-      component.setProps({ value: 200000 });
-    });
+    component.rerender(<Statistic groupSeparator value={200000} />);
 
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      '200,000'
-    );
+    expect(
+      component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-int')[0]
+        .textContent
+    ).toBe('200,000');
   });
 
   it('prefix / suffix', () => {
-    const component = mount(<Statistic title="Title" value={50} prefix="Prefix" suffix="%" />);
+    const component = render(<Statistic title="Title" value={50} prefix="Prefix" suffix="%" />);
 
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      'Prefix50'
-    );
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-decimal').text()).toBe(
-      '%'
-    );
+    expect(
+      component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-int')[0]
+        .textContent
+    ).toBe('Prefix50');
+    expect(
+      component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-decimal')[0]
+        .textContent
+    ).toBe('%');
   });
 
   it('precision', () => {
-    const component = mount(
+    const component = render(
       <Statistic title="Title" value={1000000} groupSeparator precision={2} suffix="$" />
     );
 
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      '1,000,000'
-    );
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-decimal').text()).toBe(
-      '.00$'
-    );
+    expect(
+      component.find('.arco-statistic-value > .arco-statistic-value-int')[0].innerHTML
+    ).toContain('1,000,000');
+    expect(
+      component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-decimal')[0]
+        .textContent
+    ).toBe('.00$');
   });
 
   it('date', () => {
-    const component = mount(<Statistic value={1554869813383} format="YYYY/MM/DD HH:mm:ss" />);
-
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-int').text()).toBe(
-      '2019/04/10 12:16:53'
-    );
-  });
-
-  it('countUp', async () => {
-    const component = mount(<Statistic title="Title" value={100} countDuration={300} countUp />);
-
-    await act(async () => {
-      await sleep(100);
-    });
+    const component = render(<Statistic value={1554869813383} format="YYYY/MM/DD HH:mm:ss" />);
 
     expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
-    ).toBeGreaterThan(0);
-    expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
-    ).toBeLessThan(100);
-
-    await act(async () => {
-      await sleep(300);
-    });
-
-    expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
-    ).toEqual(100);
-
-    await act(async () => {
-      component.setProps({ value: 200 });
-      await sleep(100);
-    });
-
-    expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
-    ).toBeGreaterThan(100);
-    expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
-    ).toBeLessThan(200);
-
-    await act(async () => {
-      await sleep(300);
-    });
-
-    expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
-    ).toEqual(200);
+      component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-int')[0]
+        .textContent
+    ).toBe('2019/04/10 12:16:53');
   });
 
   it('loading', async () => {
-    class LoadingStatistic extends React.Component<{}, { loading: boolean }> {
-      state = {
-        loading: true,
-      };
-
+    class LoadingStatistic extends React.Component<{ loading: boolean }, {}> {
       render() {
-        return <Statistic title="Title" loading={this.state.loading} value={200} />;
+        return <Statistic title="Title" loading={this.props.loading} value={200} />;
       }
     }
-    const component = mount(<LoadingStatistic />);
+    const component = render(<LoadingStatistic loading />);
 
-    await act(async () => {
-      await sleep(100);
-    });
+    jest.runAllTimers();
 
-    expect(component.find('.arco-statistic-value > .arco-statistic-value-int').length).toBe(0);
+    expect(component.find('.arco-statistic-value > .arco-statistic-value-int ').length).toBe(0);
     expect(Number(component.find('.arco-skeleton').length)).toBe(1);
 
     // update loading
-    await act(async () => {
-      component.setState({ loading: false });
-      await sleep(300);
-    });
-
+    component.rerender(<LoadingStatistic loading={false} />);
+    jest.runAllTimers();
     expect(
-      Number(component.find('.arco-statistic-value > .arco-statistic-value-int').text())
+      Number(
+        component.find<HTMLSpanElement>('.arco-statistic-value > .arco-statistic-value-int')[0]
+          .textContent
+      )
     ).toEqual(200);
     expect(Number(component.find('.arco-skeleton').length)).toBe(0);
+  });
+
+  it('renderFormat support number value', () => {
+    const value = 1554869813383;
+    const formattedValue = '2019/04/10 12:16:53';
+    const mockRender = jest
+      .fn()
+      .mockImplementation((_value, _formattedValue) => `${_value}-${_formattedValue}`);
+    const component = render(
+      <Statistic value={value} format="YYYY/MM/DD HH:mm:ss" renderFormat={mockRender} />
+    );
+
+    expect(mockRender.mock.calls[0]).toEqual([value, formattedValue]);
+    expect(component.find('.arco-statistic-value')[0].textContent).toEqual(
+      `${value}-${formattedValue}`
+    );
+  });
+
+  it('renderFormat support number value', () => {
+    const value = '哈哈哈';
+    const mockRender = jest
+      .fn()
+      .mockImplementation((_value, _formattedValue) => `${_value}-${_formattedValue}`);
+    const component = render(
+      <Statistic value={value} format="YYYY/MM/DD HH:mm:ss" renderFormat={mockRender} />
+    );
+
+    expect(mockRender.mock.calls[0]).toEqual([value, value]);
+    expect(component.find('.arco-statistic-value')[0].textContent).toEqual(`${value}-${value}`);
   });
 });

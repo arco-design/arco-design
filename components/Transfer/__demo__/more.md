@@ -16,12 +16,11 @@ Advanced usage of shuttle frame, configurable operation copy, and customizable w
 ```js
 import { Transfer } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const dataSource = new Array(10).fill(null).map((_, index) => ({
     key: `${index + 1}`,
     value: `Option ${index + 1}`,
   }));
-
   return (
     <Transfer
       showFooter
@@ -30,10 +29,13 @@ function Demo() {
       defaultSelectedKeys={['2', '6', '7']}
       titleTexts={['To-do list', 'Selected list']}
       operationTexts={['To right', 'To left']}
-      listStyle={{ width: 220, height: 316 }}
+      listStyle={{
+        width: 220,
+        height: 316,
+      }}
     />
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

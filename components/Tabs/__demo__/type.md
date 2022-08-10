@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 不同类型
   en-US: Type
 ---
@@ -16,15 +16,14 @@ Use `type` to set the type of the tab.
 ```js
 import { useState } from 'react';
 import { Tabs, Radio, Typography } from '@arco-design/web-react';
-
 const TabPane = Tabs.TabPane;
+const style = {
+  textAlign: 'center',
+  marginTop: 20,
+};
 
-const style = { textAlign: 'center', marginTop: 20 };
-
-
-function Demo() {
+function App() {
   const [type, setType] = useState('line');
-
   return (
     <div>
       <Radio.Group name="type" value={type} onChange={setType} style={{ marginBottom: 40 }}>
@@ -37,7 +36,7 @@ function Demo() {
       </Radio.Group>
 
       <Tabs type={type}>
-        <TabPane key="1" title="Tab 1" >
+        <TabPane key="1" title="Tab 1">
           <Typography.Paragraph style={style}>Content of Tab Panel 1</Typography.Paragraph>
         </TabPane>
         <TabPane key="2" title="Tab 2" disabled>
@@ -54,5 +53,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

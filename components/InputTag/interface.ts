@@ -92,7 +92,7 @@ export interface InputTagProps<T = any> {
    * @zh 后缀
    * @en The suffix for the InputTag
    */
-  suffix?: React.ReactNode;
+  suffix?: ReactNode;
   /**
    * @zh 自定义图标
    * @en Custom icons
@@ -102,8 +102,9 @@ export interface InputTagProps<T = any> {
    * @zh 校验函数，默认在 按下enter时候触发。
    * @en Function to check user's input, which is triggered when `Enter` is pressed
    * @defaultValue (inputValue, values) => inputValue && values.every((item) => item !== inputValue)
+   * @version return type T and `Promise<T>` in 2.37.0
    */
-  validate?: (inputValue: string, values: T[]) => boolean | Promise<boolean>;
+  validate?: (inputValue: string, values: T[]) => boolean | Promise<boolean> | T | Promise<T>;
   /**
    * @zh 自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.
    * @en Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags
@@ -118,7 +119,7 @@ export interface InputTagProps<T = any> {
     },
     index: number,
     values: ObjectValueType[]
-  ) => React.ReactNode;
+  ) => ReactNode;
   /**
    * @zh 移除某一个标签时改变时触发
    * @en Callback when a tag is removed

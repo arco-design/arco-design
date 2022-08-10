@@ -14,18 +14,18 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|title|通知标题|`ReactNode \| string`|`-`|
-|content|通知内容|`ReactNode \| string` **(必填)**|`-`|
-|showIcon|是否显示图标|`boolean`|`true`|
-|icon|自定义图标|`ReactNode`|`-`|
-|duration|自动关闭的时间，单位为 `ms`|`number`|`3000`|
-|onClose|关闭时的回调|`() => void`|`-`|
-|id|当前通知的唯一标识，可以用来更新消息|`string`|`-`|
-|position|消息的位置，分为 `topLeft` 左上方、`topRight` 右上方、`bottomLeft` 左下方和 `bottomRight` 右下方|`'topLeft' \| 'topRight' \| 'bottomLeft' \| 'bottomRight'`|`-`|
-|btn|添加操作按钮|`ReactNode`|`-`|
-|closable|是否显示关闭按钮|`boolean`|`-`|
+|closable|是否显示关闭按钮|boolean |`-`|
+|showIcon|是否显示图标|boolean |`true`|
+|duration|自动关闭的时间，单位为 `ms`|number |`3000`|
+|id|当前通知的唯一标识，可以用来更新消息|string |`-`|
+|position|消息的位置，分为 `topLeft` 左上方、`topRight` 右上方、`bottomLeft` 左下方和 `bottomRight` 右下方|'topLeft' \| 'topRight' \| 'bottomLeft' \| 'bottomRight' |`-`|
+|btn|添加操作按钮|ReactNode |`-`|
+|icon|自定义图标|ReactNode |`-`|
+|className|节点类名|string \| string[] |`-`|
+|content|通知内容|ReactNode \| string  **(必填)**|`-`|
+|style|节点样式|CSSProperties |`-`|
+|title|通知标题|ReactNode \| string |`-`|
+|onClose|关闭时的回调|() => void |`-`|
 
 ### 使用方法
 

@@ -6,6 +6,7 @@ import Text from './text';
 import Image from './image';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 function getComponentProps(prop) {
   return isObject(prop) ? prop : {};
@@ -17,7 +18,7 @@ const defaultProps: SkeletonProps = {
 };
 
 function Skeleton(baseProps: PropsWithChildren<SkeletonProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<SkeletonProps>>(
     baseProps,
     defaultProps,
@@ -32,6 +33,7 @@ function Skeleton(baseProps: PropsWithChildren<SkeletonProps>, ref) {
     prefixCls,
     {
       [`${prefixCls}-animate`]: animation,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -59,7 +61,7 @@ function Skeleton(baseProps: PropsWithChildren<SkeletonProps>, ref) {
   return (
     <React.Fragment>
       {loading ? (
-        <div className={classNames} style={style} ref={ref}>
+        <div {...pickDataAttributes(props)} className={classNames} style={style} ref={ref}>
           {imageProps.position !== 'right' && renderImage()}
           {renderText()}
           {imageProps.position === 'right' && renderImage()}

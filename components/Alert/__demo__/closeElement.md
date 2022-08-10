@@ -16,30 +16,32 @@ Use `closeElement` to customize the close element. `closeElement` can receive `o
 ```js
 import { Alert, Grid } from '@arco-design/web-react';
 import { IconCheck } from '@arco-design/web-react/icon';
-
 const { Row, Col } = Grid;
 
-ReactDOM.render(
-  <Row gutter={40}>
-    <Col span={12}>
-      <Alert
-        closable
-        style={{ marginBottom: 20 }}
-        type="success"
-        content="Here is a success text"
-        closeElement={<IconCheck />}
-      />
-    </Col>
-    <Col span={12}>
-      <Alert
-        closable
-        style={{ marginBottom: 20 }}
-        type="success"
-        content="Here is a success text"
-        closeElement="Close"
-      />
-    </Col>
-  </Row>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Row gutter={40}>
+      <Col span={12}>
+        <Alert
+          closable
+          style={{ marginBottom: 20 }}
+          type="success"
+          content="Here is a success text"
+          closeElement={<IconCheck />}
+        />
+      </Col>
+      <Col span={12}>
+        <Alert
+          closable
+          style={{ marginBottom: 20 }}
+          type="success"
+          content="Here is a success text"
+          closeElement="Close"
+        />
+      </Col>
+    </Row>
+  );
+};
+
+export default App;
 ```

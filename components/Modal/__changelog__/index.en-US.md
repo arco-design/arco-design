@@ -1,3 +1,11 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed a bug where the `simple` property passed in when the `Modal` component created a popup via `useModal` did not take effect.([#980](https://github.com/arco-design/arco-design/pull/980))
+
 ## 2.32.0
 
 2022-04-15

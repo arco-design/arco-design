@@ -25,7 +25,6 @@ Configure the `filters` of `Column` to filter the table.
 
 ```js
 import { Table } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -73,7 +72,6 @@ const columns = [
     sorter: (a, b) => a.email.length - b.email.length,
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -112,5 +110,9 @@ const data = [
   },
 ];
 
-ReactDOM.render(<Table columns={columns} data={data} />, CONTAINER);
+const App = () => {
+  return <Table columns={columns} data={data} />;
+};
+
+export default App;
 ```

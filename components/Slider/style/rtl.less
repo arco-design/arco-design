@@ -1,0 +1,19 @@
+.@{slider-prefix}-rtl {
+  direction: rtl;
+
+  &.@{slider-prefix}:not(.@{slider-prefix}-vertical) {
+    .@{slider-prefix}-input {
+      margin-right: @slider-spacing-input-margin-left;
+      margin-left: 0;
+    }
+  }
+
+  &.@{slider-prefix}-vertical {
+    .@{slider-prefix}-road-vertical {
+      .@{slider-prefix}-marks {
+        left: 0;
+        right: @slider-size-button-width + @slider-spacing-mark-left;
+      }
+    }
+  }
+}

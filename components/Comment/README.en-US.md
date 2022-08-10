@@ -14,11 +14,11 @@ Display a comment.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|actions|List of action items rendered below the comment content|`ReactNode`|`-`|
-|author|Display as the comment author|`ReactNode`|`-`|
-|avatar|Display as the comment avatar|`ReactNode`|`-`|
-|content|The content of the comment|`ReactNode`|`-`|
-|datetime|Display as the comment datetime|`ReactNode`|`-`|
-|align|Alignment of `datetime` and `actions`\|`"left" \\| "right" \\| { datetime?: "left" \\| "right"; actions?: "left" \\| "right"; }`|`\| 'left'\| 'right'\| {datetime?: 'left' \| 'right';actions?: 'left' \| 'right';}`|`-`|
+|align|Alignment of `datetime` and `actions`\|`"left" \\| "right" \\| { datetime?: "left" \\| "right"; actions?: "left" \\| "right"; }`|\| 'left'\| 'right'\| {datetime?: 'left' \| 'right';actions?: 'left' \| 'right';} |`-`|
+|actions|List of action items rendered below the comment content|ReactNode |`-`|
+|author|Display as the comment author|ReactNode |`-`|
+|avatar|Display as the comment avatar|ReactNode |`-`|
+|content|The content of the comment|ReactNode |`-`|
+|datetime|Display as the comment datetime|ReactNode |`-`|
+|className|Additional css class|string \| string[] |`-`|
+|style|Additional style|CSSProperties |`-`|

@@ -1,6 +1,6 @@
 ---
 order: 9
-title: 
+title:
   zh-CN: 数据请求加载
   en-US: Request Data
 ---
@@ -14,6 +14,7 @@ title:
 Show loading effect in dialog.
 
 ```js
+import React from 'react';
 import { Modal, Button, Table, Spin } from '@arco-design/web-react';
 
 function getDataFromServer() {
@@ -43,10 +44,10 @@ function getDataFromServer() {
   });
 }
 
-function Demo () {
+function App() {
   const [visible, setVisible] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
-  // table
+  const [loading, setLoading] = React.useState(false); // table
+
   const [data, setData] = React.useState([]);
   const columns = [
     {
@@ -60,10 +61,12 @@ function Demo () {
       sorter: (a, b) => {
         const aVersion = a.version.split('.');
         const bVersion = b.version.split('.');
-        for(let i = 0; i < aVersion.length; i++) {
+
+        for (let i = 0; i < aVersion.length; i++) {
           if (aVersion[i] === bVersion[i]) continue;
-          return aVersion[i] - bVersion[i]
+          return aVersion[i] - bVersion[i];
         }
+
         return 1;
       },
     },
@@ -76,49 +79,65 @@ function Demo () {
 
   function loadData() {
     setLoading(true);
-    getDataFromServer().then(res => {
+    getDataFromServer().then((res) => {
       setData(res);
       setLoading(false);
     });
   }
 
   return (
-      <div>
-        <Button onClick={() => {
+    <div>
+      <Button
+        onClick={() => {
           setVisible(true);
           loadData();
-        }} type="primary">
-          Open Modal
-        </Button>
-        <Modal
-          title="Manage Plugins"
-          visible={visible}
-          onOk={() => setVisible(false)}
-          onCancel={() => setVisible(false)}
-          afterClose={() => setData([])}
-        >
-          <Spin tip='loading Data...' loading={loading}>
-            <div style={{ height: 266, visibility: !loading ? 'visible' : 'hidden' }}>
-              <p>
-                You can select multiple plugins for the current project so that our app will verify that the plugins are installed and enabled. 
-              </p>
-              <p style={{ marginTop: 20, marginBottom: 8, fontWeight: 600 }}>
-                List of plugins
-              </p>
-              <Table 
-                columns={columns} 
-                data={data} 
-                pagination={false}
-                border={{ headerCell: true, wrapper: true, }}
-                rowKey='id'
-                rowSelection={{ type: 'checkbox', checkAll: true }}
-              ></Table>
-            </div>
-          </Spin>
-        </Modal>
-      </div>
-  )
+        }}
+        type="primary"
+      >
+        Open Modal
+      </Button>
+      <Modal
+        title="Manage Plugins"
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        afterClose={() => setData([])}
+      >
+        <Spin tip="loading Data..." loading={loading}>
+          <div style={{ height: 266, visibility: !loading ? 'visible' : 'hidden' }}>
+            <p>
+              You can select multiple plugins for the current project so that our app will verify
+              that the plugins are installed and enabled.
+            </p>
+            <p
+              style={{
+                marginTop: 20,
+                marginBottom: 8,
+                fontWeight: 600,
+              }}
+            >
+              List of plugins
+            </p>
+            <Table
+              columns={columns}
+              data={data}
+              pagination={false}
+              border={{
+                headerCell: true,
+                wrapper: true,
+              }}
+              rowKey="id"
+              rowSelection={{
+                type: 'checkbox',
+                checkAll: true,
+              }}
+            ></Table>
+          </div>
+        </Spin>
+      </Modal>
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

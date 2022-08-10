@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 带有面包屑
   en-US: Breadcrumb
 ---
@@ -16,39 +16,42 @@ Basic page header, suitable for use in scenarios that require a simple descripti
 ```js
 import { PageHeader, Radio } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div style={{ background: 'var(--color-fill-2)', padding: 40 }}>
-    <PageHeader
-      style={{ background: 'var(--color-bg-2)' }}
-      title="ArcoDesign"
-      subTitle="This is a description"
-      breadcrumb={{
-        routes: [
-          {
-            path: '/',
-            breadcrumbName: 'Home',
-          },
-          {
-            path: '/channel',
-            breadcrumbName: 'Channel',
-          },
-          {
-            path: '/news',
-            breadcrumbName: 'News',
-          },
-        ],
-      }}
-      extra={
-        <div>
-          <Radio.Group mode="fill" type="button" defaultValue="small">
-            <Radio value="large">Large</Radio>
-            <Radio value="medium">Medium</Radio>
-            <Radio value="small">Small</Radio>
-          </Radio.Group>
-        </div>
-      }
-    />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div style={{ background: 'var(--color-fill-2)', padding: 40 }}>
+      <PageHeader
+        style={{ background: 'var(--color-bg-2)' }}
+        title="ArcoDesign"
+        subTitle="This is a description"
+        breadcrumb={{
+          routes: [
+            {
+              path: '/',
+              breadcrumbName: 'Home',
+            },
+            {
+              path: '/channel',
+              breadcrumbName: 'Channel',
+            },
+            {
+              path: '/news',
+              breadcrumbName: 'News',
+            },
+          ],
+        }}
+        extra={
+          <div>
+            <Radio.Group mode="fill" type="button" defaultValue="small">
+              <Radio value="large">Large</Radio>
+              <Radio value="medium">Medium</Radio>
+              <Radio value="small">Small</Radio>
+            </Radio.Group>
+          </div>
+        }
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

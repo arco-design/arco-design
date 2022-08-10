@@ -50,8 +50,7 @@ Commands:
 -------------------------------------------------- -------------------------------------
 If you need to view a subcommand, you can use the subcommand help, such as: arco sync -h
 Examples:
-  $ arco sync --screenshot
-  $ arco group --id 1
+  $ arco sync -h
 -------------------------------------------------- -------------------------------------
 ```
 

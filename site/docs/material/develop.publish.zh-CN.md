@@ -57,9 +57,6 @@ arco publish
 
 ```bash
 arco sync
-
-# 在同步前自动生成截图
-arco sync --screenshot
 ```
 
 在 Lerna 项目中，你可以在任何目录下的任何目录执行 `arco sync` 命令。

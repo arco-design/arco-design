@@ -187,7 +187,6 @@
       background-color: @progress-line-color-inner-bg_error;
     }
 
-
     .@{progress-prefix-cls}-steps-item-active {
       background-color: @progress-steps-color-item-bg_error;
     }
@@ -367,5 +366,64 @@
 
   100% {
     background-position: 0 50%;
+  }
+}
+
+.@{progress-prefix-cls}-rtl {
+  .@{progress-prefix-cls}-line,
+  .@{progress-prefix-cls}-steps {
+    &-text {
+      margin-left: 0;
+      margin-right: @progress-line-margin-text-left;
+
+      .@{prefix}-icon {
+        margin-left: 0;
+        margin-right: @progress-line-margin-icon-left;
+      }
+    }
+  }
+
+  & .@{progress-prefix-cls}-steps {
+    &-text {
+      margin-left: 0;
+      margin-right: @progress-steps-margin-text-left;
+    }
+
+    &-item {
+      &:not(:last-of-type) {
+        margin-right: 0;
+        margin-left: @progress-steps-margin-steps-item-right;
+      }
+    }
+  }
+
+  &.@{progress-prefix-cls}-steps.@{progress-prefix-cls}-small {
+    .@{progress-prefix-cls}-steps-item {
+      &:not(:last-of-type) {
+        margin-right: 0;
+        margin-left: @progress-steps-margin-steps-item-right_small;
+      }
+    }
+  }
+
+  &.@{progress-prefix-cls}-small {
+    .@{progress-prefix-cls}-line-text {
+      margin-right: @progress-line-size-small-margin-text-left;
+      margin-left: 0;
+    }
+  }
+
+  &.@{progress-prefix-cls}-large {
+    .@{progress-prefix-cls}-line-text {
+      margin-right: @progress-line-size-large-margin-text-left;
+      margin-left: 0;
+    }
+  }
+
+  &.@{progress-prefix-cls}-line {
+    .@{progress-prefix-cls}-line-inner-buffer {
+      left: initial;
+      right: 0;
+    }
   }
 }

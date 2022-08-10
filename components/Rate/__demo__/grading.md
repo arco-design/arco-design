@@ -16,10 +16,13 @@ Use `grading` to show score with smiley icons.
 ```js
 import { Rate } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Rate grading />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Rate grading />
+    </div>
+  );
+};
+
+export default App;
 ```

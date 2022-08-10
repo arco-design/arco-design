@@ -17,10 +17,9 @@ According to the selected value to control the selected range, use `onSelect` an
 import { useState } from 'react';
 import { DatePicker } from '@arco-design/web-react';
 import dayjs from 'dayjs';
-
 const { RangePicker } = DatePicker;
 
-function Demo() {
+function App() {
   const [dates, setDates] = useState([]);
   return (
     <RangePicker
@@ -39,6 +38,7 @@ function Demo() {
           const tooEarly = dates[1] && Math.abs(dates[1].diff(current, 'day')) > 7;
           return tooEarly || tooLate;
         }
+
         return false;
       }}
       clearRangeOnReselect
@@ -46,5 +46,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

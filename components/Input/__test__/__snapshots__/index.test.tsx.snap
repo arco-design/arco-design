@@ -20,3 +20,11 @@ exports[`ConfigProvider componentConfig.Input set className globally and compone
   value=""
 />
 `;
+
+exports[`ConfigProvider componentConfig.Input set data-* property 1`] = `
+<input
+  class="arco-input arco-input-size-default"
+  data-test-name="Input"
+  value=""
+/>
+`;

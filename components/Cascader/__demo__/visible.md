@@ -16,6 +16,7 @@ Use `popupVisible` and `onVisibleChange` to control the visibility of the dropdo
 More examples can be found in [Trigger](/react/en-US/components/trigger).
 
 ```js
+import React from 'react';
 import { Cascader, Message, Link, Button } from '@arco-design/web-react';
 
 const options = [
@@ -95,46 +96,59 @@ const options = [
   },
   {
     value: 'guangzhou',
-    label: 'guangzhou'
+    label: 'guangzhou',
   },
   {
     value: 'shenzhen',
-    label: 'Shenzhen'
+    label: 'Shenzhen',
   },
   {
     value: 'hangzhou',
-    label: '杭州'
+    label: '杭州',
   },
 ];
 
-function Demo () {
+function App() {
   const [visible, setVisible] = React.useState(false);
-
-  return <div>
-    <p>
-      <Button style={{marginRight: 20}} onClick={() => {setVisible(!visible)}}>Show Menu</Button>
-    </p>
-    <Cascader
-      style={{width: 250, marginTop: 20}}
-      placeholder="Please select ..."
-      popupVisible={visible}
-      trigger={[]}
-      // 具体触发时机可查看Trigger组件文档
-      onVisibleChange={setVisible}
-      triggerProps={{clickOutsideToClose: false}}
-      style={{ width: 300 }}
-      allowClear
-      options={options}
-      renderFooter={() => {
-        return <Link onClick={ () => { setVisible(false) } }>Close</Link>
-      }}
-    />
-  </div>
+  return (
+    <div>
+      <p>
+        <Button
+          style={{ marginRight: 20 }}
+          onClick={() => {
+            setVisible(!visible);
+          }}
+        >
+          Show Menu
+        </Button>
+      </p>
+      <Cascader
+        style={{ width: 250, marginTop: 20 }}
+        placeholder="Please select ..."
+        popupVisible={visible}
+        trigger={[]} // 具体触发时机可查看Trigger组件文档
+        onVisibleChange={setVisible}
+        triggerProps={{
+          clickOutsideToClose: false,
+        }}
+        style={{ width: 300 }}
+        allowClear
+        options={options}
+        renderFooter={() => {
+          return (
+            <Link
+              onClick={() => {
+                setVisible(false);
+              }}
+            >
+              Close
+            </Link>
+          );
+        }}
+      />
+    </div>
+  );
 }
 
-
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

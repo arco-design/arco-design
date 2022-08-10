@@ -19,12 +19,10 @@ You can also set `validateMessages` for the global `Form` component in the `comp
 
 ```js
 import { Form, Input, Button, Message, InputNumber } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
 
-function Demo() {
+function App() {
   const [form] = Form.useForm();
-
   return (
     <Form
       form={form}
@@ -37,35 +35,40 @@ function Demo() {
         },
         number: {
           min: `最小值为 #{min}`,
-          max: `最大值为 #{max}`
-        }
+          max: `最大值为 #{max}`,
+        },
       }}
     >
       <FormItem
         label="Username"
         field="name"
         required
-        rules={[{
-          type: 'string',
-          required: true,
-          length: 3,
-          match: /abc/
-        }]}
+        rules={[
+          {
+            type: 'string',
+            required: true,
+            length: 3,
+            match: /abc/,
+          },
+        ]}
       >
-        <Input placeholder='please enter your username' />
+        <Input placeholder="please enter your username" />
       </FormItem>
       <FormItem
-        label='Age'
+        label="Age"
         field="age"
-        rules={[{ required: true, type: 'number', min: 0, max: 99 }]}
+        rules={[
+          {
+            required: true,
+            type: 'number',
+            min: 0,
+            max: 99,
+          },
+        ]}
       >
-        <InputNumber placeholder='please enter your age' />
+        <InputNumber placeholder="please enter your age" />
       </FormItem>
-      <FormItem
-        wrapperCol={{
-          offset: 5,
-        }}
-      >
+      <FormItem wrapperCol={{ offset: 5 }}>
         <Button type="primary" htmlType="submit" style={{ marginRight: 24 }}>
           Validate
         </Button>
@@ -82,8 +85,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

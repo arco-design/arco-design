@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import DatePicker from '..';
 import '../../../tests/mockDate';
@@ -10,33 +10,30 @@ mountTest(YearPicker);
 
 describe('YearPicker', () => {
   it('defaultValue & today', async () => {
-    const component = mount(<YearPicker />);
+    const component = render(<YearPicker />);
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstElementChild!);
 
-    expect(component.find('.arco-picker-cell-today').text()).toBe('2020');
+    expect(component.find('.arco-picker-cell-today')[0].textContent).toBe('2020');
 
-    expect(component.find('input').prop('value')).toBe('');
+    expect(component.find('.arco-picker-start-time')[0].getAttribute('value')).toBe('');
 
-    component
-      .find('.arco-picker-date')
-      .at(6) // 2025
-      .simulate('click');
+    fireEvent.click(component.find('.arco-picker-date').item(6));
 
-    expect(component.find('input').prop('value')).toBe('2025');
+    expect(component.find('.arco-picker-start-time')[0].getAttribute('value')).toBe('2025');
   });
 
   it('allowClear', () => {
     const onClear = jest.fn();
-    const component = mount(<YearPicker defaultValue="2020" allowClear onClear={onClear} />);
+    const component = render(<YearPicker defaultValue="2020" allowClear onClear={onClear} />);
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstElementChild!);
 
-    expect(component.find('input').prop('value')).toBe('2020');
+    expect(component.find('.arco-picker-start-time')[0].getAttribute('value')).toBe('2020');
 
-    component.find('IconClose').simulate('click');
+    fireEvent.click(component.find('.arco-icon-close')[0]);
 
-    expect(component.find('input').prop('value')).toBe('');
+    expect(component.find('input')[0].getAttribute('value')).toBe('');
     expect(onClear.mock.calls.length).toBe(1);
   });
 });

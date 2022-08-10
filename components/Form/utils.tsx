@@ -1,10 +1,10 @@
 import cloneDeepWith from 'lodash/cloneDeepWith';
 import lodashSet from 'lodash/set';
 import { PropertyPath } from 'lodash';
-import { Schema, SchemaType, ValidateMessagesType } from 'b-validate';
-import { ReactNode } from 'react';
+import { Schema, SchemaType } from 'b-validate';
+import React, { ReactNode } from 'react';
 import { isArray, isObject, isFunction } from '../_util/is';
-import { IndexedObject } from './interface';
+import { IndexedObject, FormProps } from './interface';
 import { RulesProps } from '..';
 
 export function cloneDeep(value) {
@@ -17,7 +17,7 @@ export function cloneDeep(value) {
 }
 
 export const formatValidateMsg = (
-  validateMessages: ValidateMessagesType,
+  validateMessages: FormProps['validateMessages'],
   info: { label: ReactNode }
 ) => {
   return cloneDeepWith(validateMessages, (val) => {
@@ -43,7 +43,12 @@ export function iterativelyGetKeys(obj, prefix = '') {
     return [];
   }
   return Object.keys(obj).reduce((res, el) => {
-    if (typeof obj[el] === 'object' && obj[el] !== null) {
+    if (
+      typeof obj[el] === 'object' &&
+      obj[el] !== null &&
+      Object.keys(obj[el]).length > 0 &&
+      !React.isValidElement(obj[el])
+    ) {
       return [...res, ...iterativelyGetKeys(obj[el], `${prefix + el}.`)];
     }
     return [...res, prefix + el];

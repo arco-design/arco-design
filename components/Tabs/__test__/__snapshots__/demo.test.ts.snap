@@ -733,7 +733,7 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
             class="arco-typography"
             style="text-align:center;margin-top:20px"
           >
-            Content of Tab Panel  1
+            Content of Tab Panel 1
           </div>
         </div>
       </div>
@@ -801,7 +801,7 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
                     d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
                   />
                 </svg>
-                 Tab 1
+                Tab 1
               </span>
             </span>
           </div>
@@ -832,7 +832,7 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
                     d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
                   />
                 </svg>
-                 Tab 2
+                Tab 2
               </span>
             </span>
           </div>
@@ -867,7 +867,7 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
                     r="8"
                   />
                 </svg>
-                 Tab 3
+                Tab 3
               </span>
             </span>
           </div>
@@ -1291,7 +1291,7 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
               class="arco-typography"
               style="text-align:center;margin-top:20px"
             >
-              Content of Tab Panel  1
+              Content of Tab Panel 1
             </div>
           </div>
         </div>
@@ -1425,7 +1425,7 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
               class="arco-typography"
               style="text-align:center;margin-top:20px"
             >
-              Content of Tab Panel  3
+              Content of Tab Panel 3
             </div>
           </div>
         </div>

@@ -17,34 +17,45 @@ exports[`renders Image/demo/basic.md correctly 1`] = `
 `;
 
 exports[`renders Image/demo/caption.md correctly 1`] = `
-<div>
+<div
+  class="arco-space arco-space-horizontal arco-space-align-start"
+>
   <div
-    class="arco-image"
-    style="width:200px"
+    class="arco-space-item"
+    style="margin-right:60px"
   >
-    <img
-      alt="lamp"
-      class="arco-image-img"
-      title="A user’s avatar"
-      width="200"
-    />
     <div
-      class="arco-image-overlay"
-    />
+      class="arco-image"
+      style="width:200px"
+    >
+      <img
+        alt="lamp"
+        class="arco-image-img"
+        title="A user’s avatar"
+        width="200"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
   </div>
   <div
-    class="arco-image"
-    style="width:200px;margin-left:67px;vertical-align:top"
+    class="arco-space-item"
   >
-    <img
-      alt="lamp"
-      class="arco-image-img"
-      title="A user’s avatar"
-      width="200"
-    />
     <div
-      class="arco-image-overlay"
-    />
+      class="arco-image"
+      style="width:200px"
+    >
+      <img
+        alt="lamp"
+        class="arco-image-img"
+        title="A user’s avatar"
+        width="200"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -137,66 +148,87 @@ exports[`renders Image/demo/error.md correctly 1`] = `
 
 exports[`renders Image/demo/extra-actions.md correctly 1`] = `
 <div>
-  <div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-start"
+  >
     <div
-      class="arco-image"
-      style="width:300px"
+      class="arco-space-item"
+      style="margin-right:20px"
     >
-      <img
-        alt="lamp1"
-        class="arco-image-img"
-        title="A user’s avatar"
-        width="300"
-      />
       <div
-        class="arco-image-overlay"
-      />
+        class="arco-image"
+        style="width:300px"
+      >
+        <img
+          alt="lamp1"
+          class="arco-image-img"
+          title="A user’s avatar"
+          width="300"
+        />
+        <div
+          class="arco-image-overlay"
+        />
+      </div>
     </div>
     <div
-      class="arco-image arco-image-simple"
-      style="width:200px;margin-left:67px;vertical-align:top"
+      class="arco-space-item"
     >
-      <img
-        alt="lamp2"
-        class="arco-image-img"
-        title="A user’s avatar"
-        width="200"
-      />
       <div
-        class="arco-image-overlay"
-      />
+        class="arco-image arco-image-simple"
+        style="width:200px;vertical-align:top"
+      >
+        <img
+          alt="lamp2"
+          class="arco-image-img"
+          title="A user’s avatar"
+          width="200"
+        />
+        <div
+          class="arco-image-overlay"
+        />
+      </div>
     </div>
   </div>
   <div
+    class="arco-space arco-space-horizontal arco-space-align-start"
     style="margin-top:67px"
   >
     <div
-      class="arco-image"
-      style="width:300px"
+      class="arco-space-item"
+      style="margin-right:20px"
     >
-      <img
-        alt="lamp3"
-        class="arco-image-img"
-        title="A user’s avatar"
-        width="300"
-      />
       <div
-        class="arco-image-overlay"
-      />
+        class="arco-image"
+        style="width:300px"
+      >
+        <img
+          alt="lamp3"
+          class="arco-image-img"
+          title="A user’s avatar"
+          width="300"
+        />
+        <div
+          class="arco-image-overlay"
+        />
+      </div>
     </div>
     <div
-      class="arco-image arco-image-simple"
-      style="width:200px;margin-left:67px;vertical-align:top"
+      class="arco-space-item"
     >
-      <img
-        alt="lamp4"
-        class="arco-image-img"
-        title="A user’s avatar"
-        width="200"
-      />
       <div
-        class="arco-image-overlay"
-      />
+        class="arco-image arco-image-simple"
+        style="width:200px;vertical-align:top"
+      >
+        <img
+          alt="lamp4"
+          class="arco-image-img"
+          title="A user’s avatar"
+          width="200"
+        />
+        <div
+          class="arco-image-overlay"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -216,32 +248,45 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
     </button>
   </div>
   <div
-    class="arco-image"
-    style="width:200px;height:200px"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
-    <img
-      alt="lamp1"
-      class="arco-image-img"
-      height="200"
-      width="200"
-    />
     <div
-      class="arco-image-overlay"
-    />
-  </div>
-  <div
-    class="arco-image"
-    style="width:200px;height:200px;margin-left:67px"
-  >
-    <img
-      alt="lamp2"
-      class="arco-image-img"
-      height="200"
-      width="200"
-    />
+      class="arco-space-item"
+      style="margin-right:20px"
+    >
+      <div
+        class="arco-image"
+        style="width:200px;height:200px"
+      >
+        <img
+          alt="lamp1"
+          class="arco-image-img"
+          height="200"
+          width="200"
+        />
+        <div
+          class="arco-image-overlay"
+        />
+      </div>
+    </div>
     <div
-      class="arco-image-overlay"
-    />
+      class="arco-space-item"
+    >
+      <div
+        class="arco-image"
+        style="width:200px;height:200px;margin-left:67px"
+      >
+        <img
+          alt="lamp2"
+          class="arco-image-img"
+          height="200"
+          width="200"
+        />
+        <div
+          class="arco-image-overlay"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;

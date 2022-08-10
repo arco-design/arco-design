@@ -21,8 +21,9 @@ exports[`renders Link/demo/basic.md correctly 1`] = `
     <a
       class="arco-link arco-link-disabled"
       href="#"
+      tabindex="-1"
     >
-       Link 
+      Link
     </a>
   </div>
 </div>
@@ -51,7 +52,8 @@ exports[`renders Link/demo/dropdown.md correctly 1`] = `
     </svg>
   </span>
   <span
-    class="arco-link"
+    class="arco-link arco-link-disabled"
+    tabindex="-1"
   >
     City
     <svg
@@ -92,7 +94,7 @@ exports[`renders Link/demo/hoverable.md correctly 1`] = `
     <span
       class="arco-link arco-link-is-error arco-link-hoverless"
     >
-       Link 
+      Link
     </span>
   </div>
 </div>
@@ -143,6 +145,7 @@ exports[`renders Link/demo/icon.md correctly 1`] = `
         <a
           class="arco-link arco-link-disabled arco-link-with-icon"
           href="#"
+          tabindex="-1"
         >
           <span
             class="arco-link-icon"
@@ -206,6 +209,7 @@ exports[`renders Link/demo/icon.md correctly 1`] = `
         <a
           class="arco-link arco-link-disabled arco-link-with-icon"
           href="#"
+          tabindex="-1"
         >
           <span
             class="arco-link-icon"
@@ -245,6 +249,7 @@ exports[`renders Link/demo/status.md correctly 1`] = `
   <a
     class="arco-link arco-link-disabled arco-link-is-error"
     href="#"
+    tabindex="-1"
   >
     Error Link
   </a>
@@ -257,6 +262,7 @@ exports[`renders Link/demo/status.md correctly 1`] = `
   <a
     class="arco-link arco-link-disabled arco-link-is-success"
     href="#"
+    tabindex="-1"
   >
     Success Link
   </a>
@@ -269,6 +275,7 @@ exports[`renders Link/demo/status.md correctly 1`] = `
   <a
     class="arco-link arco-link-disabled arco-link-is-warning"
     href="#"
+    tabindex="-1"
   >
     Warning Link
   </a>

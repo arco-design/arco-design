@@ -15,7 +15,6 @@ Through the prop `bordered` to display a bordered tag.
 
 ```js
 import { Tag, Space } from '@arco-design/web-react';
-
 const COLORS = [
   'red',
   'orangered',
@@ -32,13 +31,18 @@ const COLORS = [
   'gray',
 ];
 
-ReactDOM.render(
-  <Space wrap>
-    <Tag bordered >
-      Default
-    </Tag>
-    {COLORS.map((color, i) => <Tag key={i} color={color} bordered>{color}</Tag>)}
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space wrap>
+      <Tag bordered>Default</Tag>
+      {COLORS.map((color, i) => (
+        <Tag key={i} color={color} bordered>
+          {color}
+        </Tag>
+      ))}
+    </Space>
+  );
+};
+
+export default App;
 ```

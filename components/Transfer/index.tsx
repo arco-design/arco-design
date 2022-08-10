@@ -9,6 +9,7 @@ import IconRight from '../../icon/react-icon/IconRight';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { isObject } from '../_util/is';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const defaultProps: TransferProps = {
   titleTexts: ['Source', 'Target'],
@@ -21,7 +22,7 @@ const defaultProps: TransferProps = {
 };
 
 function Transfer(baseProps: TransferProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<TransferProps>(baseProps, defaultProps, componentConfig?.Transfer);
   const {
     prefixCls: transferPrefixCls,
@@ -222,18 +223,23 @@ function Transfer(baseProps: TransferProps, ref) {
         handleSelect={(newSelectKeys) => handleSelect(newSelectKeys, listType)}
         handleRemove={(removeKeys) => moveTo(isTarget ? 'source' : 'target', removeKeys)}
         onSearch={(value) => onSearch && onSearch(value, listType)}
+        renderHeaderUnit={(countSelected, countAll) =>
+          `${mergedOneWay ? '' : `${countSelected} / `}${countAll}`
+        }
       />
     );
   };
 
   return (
     <div
+      {...pickDataAttributes(props)}
       ref={ref}
       className={cs(
         prefixCls,
         {
           [`${prefixCls}-simple`]: simple,
           [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

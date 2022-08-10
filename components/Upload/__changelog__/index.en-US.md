@@ -1,3 +1,23 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- fix `accept=*` does not work in `Upload`([#1233](https://github.com/arco-design/arco-design/pull/1233))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `Upload` component supports listening to the `onDrop` event([#1071](https://github.com/arco-design/arco-design/pull/1071))
+
+### 🐛 BugFix
+
+- fix `Upload` can upload file type not in accept([#1097](https://github.com/arco-design/arco-design/pull/1097))
+
 ## 2.34.0
 
 2022-05-27

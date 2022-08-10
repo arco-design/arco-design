@@ -1,14 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import Button from '../../Button';
-import Popover, { PopoverProps } from '..';
+import Popover from '..';
 
 mountTest(Popover);
-
-function mountPopover(component: React.ReactElement) {
-  return mount<typeof Popover, React.PropsWithChildren<PopoverProps>>(component);
-}
 
 describe('Popover', () => {
   beforeEach(() => {
@@ -16,12 +12,12 @@ describe('Popover', () => {
   });
 
   it('mouseenter and mouseleave', () => {
-    const wrapper = mountPopover(
+    const wrapper = render(
       <Popover position="top" title="Title" content="Content">
         <Button>Top</Button>
       </Popover>
     );
-    wrapper.find('Button').simulate('mouseenter');
+    fireEvent.mouseEnter(wrapper.getByRole('button'));
     jest.runAllTimers();
     expect(1).toBe(1);
   });

@@ -53,10 +53,11 @@ const defaultProps: CascaderProps = {
   trigger: 'click',
   expandTrigger: 'click',
   checkedStrategy: SHOW_CHILD,
+  defaultActiveFirstOption: true,
 };
 
 function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CascaderProps>(baseProps, defaultProps, componentConfig?.Cascader);
   const { disabled, renderFormat, getPopupContainer, children, triggerProps, expandTrigger } =
     props;
@@ -148,7 +149,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
   useUpdate(() => {
     if ('value' in props && props.value !== stateValue) {
-      const newValue = formatValue(props.value, isMultiple, store);
+      // don't to use formatValue(x, y, store)
+      // we just need to get the value in a valid format, and update it to store nodes
+      const newValue = formatValue(props.value, isMultiple);
       store.setNodeCheckedByValue(newValue);
       setValue(newValue);
     }
@@ -286,7 +289,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     handleChange(newValue);
   };
 
-  const renderEmptyEle = (width?: number): React.ReactNode => {
+  const renderEmptyEle = (width?: CSSProperties['width']): React.ReactNode => {
     const wd = width || (selectRef.current && selectRef.current.getWidth());
     return (
       <div className={`${prefixCls}-list-empty`} style={{ width: wd as number }}>
@@ -296,14 +299,14 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   };
 
   const renderPopup = () => {
-    const width = selectRef.current && selectRef.current.getWidth();
     const showSearchPanel = !isFunction(props.onSearch) && !!inputValue;
+    const width = selectRef.current && selectRef.current.getWidth();
     const dropdownRender = isFunction(props.dropdownRender) ? props.dropdownRender : (menu) => menu;
 
     return (
       <div
         id={instancePopupID}
-        className={cs(`${prefixCls}-popup`, {
+        className={cs(`${prefixCls}-popup`, props.dropdownMenuClassName, {
           [`${prefixCls}-popup-trigger-hover`]: props.expandTrigger === 'hover',
         })}
       >
@@ -320,13 +323,18 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                   handleChange(value, 'panel');
                 }}
                 prefixCls={prefixCls}
+                rtl={rtl}
                 onEsc={() => {
                   handleVisibleChange(false);
                 }}
                 value={mergeValue}
+                virtualListProps={props.virtualListProps}
+                defaultActiveFirstOption={props.defaultActiveFirstOption}
               />
             ) : (
               <CascaderPanel
+                dropdownMenuColumnStyle={props.dropdownMenuColumnStyle}
+                virtualListProps={props.virtualListProps}
                 expandTrigger={expandTrigger}
                 store={store}
                 dropdownColumnRender={props.dropdownColumnRender}
@@ -339,6 +347,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 }}
                 loadMore={props.loadMore}
                 prefixCls={prefixCls}
+                rtl={rtl}
                 renderEmpty={renderEmptyEle}
                 popupVisible={popupVisible}
                 value={mergeValue}
@@ -359,13 +368,17 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     );
   };
 
+  const updateSelectedValues = (value: string[][]) => {
+    setValue(value);
+  };
+
   return (
     <Trigger
       popup={renderPopup}
       trigger={props.trigger}
       disabled={disabled}
       getPopupContainer={getPopupContainer}
-      position="bl"
+      position={rtl ? 'br' : 'bl'}
       classNames="slideDynamicOrigin"
       popupAlign={{ bottom: 4 }}
       // 动态加载时，unmountOnExit 默认为false。
@@ -382,12 +395,14 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
           popupVisible={popupVisible}
           value={isMultiple ? mergeValue : mergeValue && mergeValue[0]}
           inputValue={inputValue}
+          rtl={rtl}
           // other
           isEmptyValue={isEmptyValue(mergeValue)}
           prefixCls={prefixCls}
           isMultiple={isMultiple}
           renderText={renderText}
           onRemoveCheckedItem={onRemoveCheckedItem}
+          onSort={updateSelectedValues}
           onClear={(e) => {
             e.stopPropagation();
             if (!isMultiple) {

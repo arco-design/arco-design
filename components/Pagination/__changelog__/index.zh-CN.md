@@ -1,3 +1,19 @@
+## 2.36.0
+
+2022-06-24
+
+### 💅 样式更新
+
+- 修复 `Pagination` 中的省略号在某些情况下垂直方向未居中的问题。([#1040](https://github.com/arco-design/arco-design/pull/1040))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 问题修复
+
+- 修复 `Pagination` 组件在 `simple` 模式下  `showJumper=false` 不生效的 bug。([#979](https://github.com/arco-design/arco-design/pull/979))
+
 ## 2.32.0
 
 2022-04-15

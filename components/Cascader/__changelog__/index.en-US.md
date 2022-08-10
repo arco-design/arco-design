@@ -1,3 +1,34 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `Cascader` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `Cascader` supports the default highlighting of the first option after searching by setting the `defaultActiveFirstOption` property.([#1096](https://github.com/arco-design/arco-design/pull/1096))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- fix `dragToSort` not works  on `Cascader`([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
+## 2.35.0
+
+2022-06-10
+
+### 🆕 Feature
+
+- `Cascader` supports opening virtual lists via `virtualListProps`([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` supports custom class name for dropdown menu by setting `dropdownMenuClassname`([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` supports setting the style of each column of the dropdown menu through `dropdownMenuColumnStyle`([#972](https://github.com/arco-design/arco-design/pull/972))
+
+### 🐛 BugFix
+
+- Fixed the bug of `value` controlled invalidation when the `Cascader` component set the echo mode to `parent`.([#983](https://github.com/arco-design/arco-design/pull/983))
+
 ## 2.34.0
 
 2022-05-27

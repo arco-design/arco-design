@@ -16,9 +16,7 @@ You can customize `treeData` by `fieldNames`.
 ```js
 import { useState } from 'react';
 import { TreeSelect } from '@arco-design/web-react';
-
 const TreeNode = TreeSelect.Node;
-
 const TreeData = [
   {
     label: 'Trunk 0-0',
@@ -39,13 +37,13 @@ const TreeData = [
                 items: [
                   {
                     label: 'Leaf',
-                    value: '0-0-2-1-0-0'
-                  }
-                ]
+                    value: '0-0-2-1-0-0',
+                  },
+                ],
               },
             ],
-          }
-        ]
+          },
+        ],
       },
     ],
   },
@@ -60,33 +58,30 @@ const TreeData = [
           {
             label: 'Leaf',
             value: '0-1-1-0',
-          }
-        ]
+          },
+        ],
       },
     ],
   },
 ];
 
-function Demo () {
-  const [treeData, setTreeData] = useState(TreeData)
-
-  return <div>
-    <TreeSelect
-      style={{width: 300}}
-      defaultSelectedKeys={['0-0-1']}
-      treeData={treeData}
-      fieldNames={{
-        key: 'value',
-        title: 'label',
-        children: 'items'
-      }}
-    >
-    </TreeSelect>
-  </div>
+function App() {
+  const [treeData, setTreeData] = useState(TreeData);
+  return (
+    <div>
+      <TreeSelect
+        style={{ width: 300 }}
+        defaultSelectedKeys={['0-0-1']}
+        treeData={treeData}
+        fieldNames={{
+          key: 'value',
+          title: 'label',
+          children: 'items',
+        }}
+      ></TreeSelect>
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```

@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import Steps from '..';
 
 const Step = Steps.Step;
 
 describe('Steps type arrow test', () => {
   it('direction horizontal', () => {
-    const component = mount(
+    const component = render(
       <Steps type="arrow" current={2}>
         <Step title="Step1" description="Description1" />
         <Step title="Step2" description="Description2" />
@@ -20,20 +20,22 @@ describe('Steps type arrow test', () => {
     expect(component.find('.arco-steps-item-tail')).toHaveLength(0);
 
     for (let i = 0; i < 3; i++) {
-      const item = component.find('.arco-steps-item').at(i);
+      const item = component.find('.arco-steps-item').item(i);
 
       if (i === 1) {
-        expect(item.hasClass('arco-steps-item-active')).toBe(true);
+        expect(item.className).toContain('arco-steps-item-active');
       }
 
-      expect(item.find('.arco-steps-item-icon .arco-steps-icon')).toHaveLength(0);
-      expect(item.find('.arco-steps-item-title').text()).toBe(`Step${i + 1}`);
-      expect(item.find('.arco-steps-item-description').text()).toBe(`Description${i + 1}`);
+      expect(item.querySelectorAll('.arco-steps-item-icon .arco-steps-icon')).toHaveLength(0);
+      expect(item.querySelector('.arco-steps-item-title')?.innerHTML).toBe(`Step${i + 1}`);
+      expect(item.querySelector('.arco-steps-item-description')?.innerHTML).toBe(
+        `Description${i + 1}`
+      );
     }
   });
 
   it('no vertical', () => {
-    const component = mount(
+    const component = render(
       <Steps type="arrow" direction="vertical" current={1}>
         <Step title="Step1" description="Description1" />
         <Step title="Step2" description="Description2" />

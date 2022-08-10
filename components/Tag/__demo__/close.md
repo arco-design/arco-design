@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 
+title:
   zh-CN: 可关闭标签
   en-US: Close
 ---
@@ -18,24 +18,31 @@ import { useState } from 'react';
 import { Tag, Button, Switch, Typography } from '@arco-design/web-react';
 import { IconStar } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const [visible, setVisible] = useState(true);
 
   function onClose() {
     setVisible(!visible);
-  };
+  }
 
   return (
     <div>
-      <Tag closable visible={visible} onClose={onClose} style={{ marginRight: 24 }}>
+      <Tag
+        closable
+        visible={visible}
+        onClose={onClose}
+        style={{ margin: '0 24px', }}
+      >
         Tag
       </Tag>
       <Tag icon={<IconStar />} closable visible={visible} onClose={onClose}>
         Tag
       </Tag>
-      <div style={{ marginTop: 24 }}>
+      <div
+        style={{ marginTop: 24, }}
+      >
         <Switch
-          style={{ marginRight: 8 }}
+          style={{ margin: '0 8px', }}
           size="small"
           checked={visible}
           onChange={onClose}
@@ -46,5 +53,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

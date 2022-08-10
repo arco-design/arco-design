@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import Picker from './picker';
 import TimePickerPopup from './time-picker';
 import RangePickerPopup from './range-picker';
-import '../_util/polyfill/object-assign';
 
 import { TimePickerDecorator, RangePickerProps, TimePickerProps } from './interface';
 

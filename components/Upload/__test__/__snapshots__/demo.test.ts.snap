@@ -344,7 +344,7 @@ Array [
         <div
           class="arco-upload-trigger-tip"
         >
-          Only pdf, png, jpg can be uploaded, and the size does not exceed 100MB
+          Only pictures can be uploaded
         </div>
       </div>
     </div>
@@ -1796,11 +1796,11 @@ exports[`renders Upload/demo/trigger.md correctly 1`] = `
           class="trigger"
         >
           <div>
-            Drag the file here or 
+            Drag the file here or
             <span
-              style="color:#3370FF"
+              style="color:#3370FF;padding:0 4px"
             >
-               Click to upload
+              Click to upload
             </span>
           </div>
         </div>

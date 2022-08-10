@@ -7,7 +7,7 @@ file: interface
 
 # 树选择 TreeSelect
 
-可以对树形结构数据进行选择。目前仅支持单选
+可以对树形结构数据进行选择。
 `````
 
 %%Content%%

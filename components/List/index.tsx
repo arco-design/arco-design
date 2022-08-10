@@ -12,6 +12,7 @@ import VirtualList, { VirtualListHandle } from '../_class/VirtualList';
 import { ListProps } from './interface';
 import scrollIntoView from '../_util/scrollIntoView';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const DEFAULT_PAGE_SIZE = 10;
 const DEFAULT_PAGE_CURRENT = 1;
@@ -33,6 +34,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
     size: ctxSize,
     renderEmpty,
     componentConfig,
+    rtl,
   } = useContext(ConfigContext);
   const props = useMergeProps<ListProps>(baseProps, defaultProps, componentConfig?.List);
   const {
@@ -266,9 +268,14 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
           refDom.current = ref;
         }}
         style={wrapperStyle}
-        className={cs(`${prefixCls}-wrapper`, wrapperClassName)}
+        className={cs(
+          `${prefixCls}-wrapper`,
+          { [`${prefixCls}-wrapper-rtl`]: rtl },
+          wrapperClassName
+        )}
       >
         <div
+          {...pickDataAttributes(props)}
           style={style}
           className={cs(
             prefixCls,
@@ -277,6 +284,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
               [`${prefixCls}-no-border`]: !bordered,
               [`${prefixCls}-no-split`]: !split,
               [`${prefixCls}-hoverable`]: hoverable,
+              [`${prefixCls}-rtl`]: rtl,
             },
             className
           )}

@@ -134,3 +134,49 @@ exports[`ConfigProvider componentConfig.Result set className globally and compon
   </div>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Result set data-* property 1`] = `
+<div
+  class="arco-result arco-result-is-info"
+  data-test-name="Result"
+>
+  <div
+    class="arco-result-icon"
+  >
+    <span
+      class="arco-result-icon-tip arco-result-icon-info"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-info"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="M25 39H27V60H25z"
+          transform="rotate(180 25 39)"
+        />
+        <path
+          d="M25 39H27V60H25z"
+          fill="currentColor"
+          stroke="none"
+          transform="rotate(180 25 39)"
+        />
+        <path
+          d="M25 11H27V13H25z"
+          transform="rotate(180 25 11)"
+        />
+        <path
+          d="M25 11H27V13H25z"
+          fill="currentColor"
+          stroke="none"
+          transform="rotate(180 25 11)"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

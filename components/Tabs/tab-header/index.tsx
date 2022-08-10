@@ -15,6 +15,7 @@ import IconHover from '../../_class/icon-hover';
 import useDomSize from '../hook/useDomSize';
 import throttleByRaf from '../../_util/throttleByRaf';
 import useHeaderScroll from '../hook/useHeaderScroll';
+import { ConfigContext } from '../../ConfigProvider';
 
 const DIRECTION_VERTICAL = 'vertical';
 const ALIGN_RIGHT = 'right';
@@ -64,6 +65,7 @@ const getCurrentHeaderOffset = ({
 
 const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const ctxProps = useContext(TabsContext);
+  const { rtl } = useContext(ConfigContext);
   const mergeProps = { ...props, ...ctxProps };
 
   const [headerWrapperRef, headerWrapperSize, setHeaderWrapperSize] = useDomSize<HTMLDivElement>();
@@ -102,7 +104,10 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     ? { ...SCROLL_MAP, ...scrollAfterEdit }
     : SCROLL_MAP;
 
-  const align = type === 'capsule' ? ALIGN_RIGHT : ALIGN_LEFT;
+  const [left, right]: Array<'left' | 'right'> = rtl
+    ? [ALIGN_RIGHT, ALIGN_LEFT]
+    : [ALIGN_LEFT, ALIGN_RIGHT];
+  const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
     const res =
@@ -337,6 +342,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
         {isScroll && (
           <TabNavIcon
             iconPos="prev"
+            rtl={rtl}
             prefixCls={prefixCls}
             currentOffset={headerOffset}
             headerSize={headerSize}
@@ -406,6 +412,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
         {isScroll && (
           <TabNavIcon
             prefixCls={prefixCls}
+            rtl={rtl}
             currentOffset={headerOffset}
             headerSize={headerSize}
             headerWrapperSize={headerWrapperSize}

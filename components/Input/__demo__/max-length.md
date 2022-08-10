@@ -21,45 +21,44 @@ Setting `maxLength.errorOnly` will not limit the number of words entered by the 
 
 It is worth noting that if `showWordLimit` is configured, then you cannot use `suffix`.
 
-
 ```js
 import { Input, Space } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   return (
     <Space direction="vertical">
-      <div>
+      <Space align="start" size={24}>
         <Input
           maxLength={10}
           showWordLimit
           placeholder="Please enter no more than 10 letters"
-          style={{ width: 300, marginBottom: 24, marginRight: 20 }}
+          style={{ width: 300 }}
         />
         <Input.TextArea
           maxLength={50}
           showWordLimit
           placeholder="Please enter no more than 50 letters"
-          wrapperStyle={{ width: 300, marginBottom: 24 }}
+          wrapperStyle={{ width: 300 }}
         />
-      </div>
+      </Space>
 
-      <div>
+      <Space align="start" size={24}>
         <Input
           maxLength={{ length: 10, errorOnly: true }}
           showWordLimit
           defaultValue="More than 10 letters will be error"
-          style={{ width: 300, marginBottom: 24, marginRight: 20 }}
+          style={{ width: 300 }}
         />
         <Input.TextArea
           maxLength={{ length: 50, errorOnly: true }}
           showWordLimit
           placeholder="More than 50 letters will be error"
-          wrapperStyle={{ width: 300, marginBottom: 24 }}
+          wrapperStyle={{ width: 300 }}
         />
-      </div>
+      </Space>
     </Space>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

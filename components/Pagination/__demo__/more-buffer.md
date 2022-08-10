@@ -19,16 +19,19 @@ With `bufferSize` you can set the number of pages between the `current` page and
 An `...` means at least `2` pages are omitted.
 
 ```js
-import { Pagination,  Space } from '@arco-design/web-react';
+import { Pagination, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Space direction='vertical' size="large">
-      <Pagination sizeCanChange total={200} bufferSize={0} defaultCurrent={10} />
-      <Pagination sizeCanChange total={200} bufferSize={1} defaultCurrent={10} />
-      <Pagination sizeCanChange total={200} bufferSize={2} defaultCurrent={10} />
-    </Space>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Space direction="vertical" size="large">
+        <Pagination sizeCanChange total={200} bufferSize={0} defaultCurrent={10} />
+        <Pagination sizeCanChange total={200} bufferSize={1} defaultCurrent={10} />
+        <Pagination sizeCanChange total={200} bufferSize={2} defaultCurrent={10} />
+      </Space>
+    </div>
+  );
+};
+
+export default App;
 ```

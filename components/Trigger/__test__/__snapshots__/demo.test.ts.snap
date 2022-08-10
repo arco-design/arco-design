@@ -18,7 +18,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
       role="combobox"
-      style="width:300px;margin-left:20px"
+      style="width:300px;margin:0 20px"
       tabindex="0"
     >
       <div
@@ -117,23 +117,35 @@ exports[`renders Trigger/demo/arrow.md correctly 1`] = `
 <div
   style="background:var(--color-fill-2);padding:40px"
 >
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
-    <span>
-      Click Me
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    type="button"
-  >
-    <span>
-      Click Me（arrowProps）
-    </span>
-  </button>
+    <div
+      class="arco-space-item"
+      style="margin-right:40px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Click Me
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Click Me（arrowProps）
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
@@ -148,7 +160,7 @@ exports[`renders Trigger/demo/auto.md correctly 1`] = `
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-      style="margin-left:300px"
+      style="margin:0 200px"
       type="button"
     >
       <span>
@@ -161,60 +173,88 @@ exports[`renders Trigger/demo/auto.md correctly 1`] = `
 
 exports[`renders Trigger/demo/basic.md correctly 1`] = `
 <div
+  class="arco-space arco-space-horizontal arco-space-align-center"
   style="width:1000px;overflow:auto"
 >
-  <span
-    class="arco-typography"
-    style="margin-right:20px"
-  >
-    Hover me
-  </span>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+  <div
+    class="arco-space-item"
     style="margin-right:40px"
-    type="button"
   >
-    <span>
-      Click me
+    <span
+      class="arco-typography"
+      style="margin-right:20px"
+    >
+      Hover me
     </span>
-  </button>
-  <input
-    class="arco-input arco-input-size-default"
-    placeholder="Focus on me"
-    style="width:200px"
-    tabindex="0"
-    value=""
-  />
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Click me
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <input
+      class="arco-input arco-input-size-default"
+      placeholder="Focus on me"
+      style="width:200px"
+      tabindex="0"
+      value=""
+    />
+  </div>
 </div>
 `;
 
 exports[`renders Trigger/demo/control.md correctly 1`] = `
-<div>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
     style="margin-right:40px"
-    type="button"
   >
-    <span>
-      Click Me (controlled)
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Click Me (controlled)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
     style="margin-right:40px"
-    type="button"
   >
-    <span>
-      no onVisibleChange (controlled)
-    </span>
-  </button>
-  <input
-    class="arco-input arco-input-size-default"
-    placeholder="Focus Me (controlled)"
-    style="width:200px"
-    tabindex="0"
-    value=""
-  />
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        no onVisibleChange (controlled)
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <input
+      class="arco-input arco-input-size-default"
+      placeholder="Focus Me (controlled)"
+      style="width:200px"
+      tabindex="0"
+      value=""
+    />
+  </div>
 </div>
 `;
 
@@ -245,88 +285,131 @@ exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
 <div
   style="background:var(--color-fill-2);padding:40px"
 >
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
   >
-    <span>
-      Top
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
-  >
-    <span>
-      Top offset [100, 20]
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
-  >
-    <span>
-      Top offset [-100, 20]
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
-  >
-    <span>
-      Right
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
-  >
-    <span>
-      Right offset [30, 50]
-    </span>
-  </button>
-  <button
-    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
-    type="button"
-  >
-    <span>
-      Right offset [30, -50]
-    </span>
-  </button>
+    <div
+      class="arco-space-item"
+      style="margin-right:40px;margin-bottom:10px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Top
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:40px;margin-bottom:10px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Top offset [100, 20]
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:40px;margin-bottom:10px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Top offset [-100, 20]
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:40px;margin-bottom:10px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Right
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:40px;margin-bottom:10px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Right offset [30, 50]
+        </span>
+      </button>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-bottom:10px"
+    >
+      <button
+        class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+        type="button"
+      >
+        <span>
+          Right offset [30, -50]
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`renders Trigger/demo/triggers.md correctly 1`] = `
-<div>
-  <button
-    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
     style="margin-right:40px"
-    type="button"
   >
-    <span>
-      Click/Hover Me
-    </span>
-  </button>
-  <input
-    class="arco-input arco-input-size-default"
-    placeholder="Click/Hover/Focus Me"
-    style="width:200px;margin-right:40px"
-    tabindex="0"
-    value=""
-  />
-  <input
-    class="arco-input arco-input-size-default"
-    placeholder="Hover/Focus Me"
-    style="width:200px"
-    tabindex="0"
-    value=""
-  />
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        Click/Hover Me
+      </span>
+    </button>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:40px"
+  >
+    <input
+      class="arco-input arco-input-size-default"
+      placeholder="Click/Hover/Focus Me"
+      style="width:200px"
+      tabindex="0"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <input
+      class="arco-input arco-input-size-default"
+      placeholder="Hover/Focus Me"
+      style="width:200px"
+      tabindex="0"
+      value=""
+    />
+  </div>
 </div>
 `;
 

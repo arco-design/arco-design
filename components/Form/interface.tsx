@@ -145,8 +145,8 @@ export interface FormProps<
    */
   validateMessages?: Partial<{
     [key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string
-      ? ValidateMessagesTemplateType[key]
-      : Record<keyof ValidateMessagesTemplateType[key], (data, { label }) => any | string>;
+      ? ValidateMessagesTemplateType[key] | ((data, { label }) => any)
+      : Record<keyof ValidateMessagesTemplateType[key], string | ((data, { label }) => any)>;
   }>;
   /**
    * @zh 数据验证成功后回调事件
@@ -384,6 +384,7 @@ export interface FormControlProps<
 > {
   /** 受控组件的唯一标示。 */
   field?: FieldKey;
+  _key?: FieldKey;
   initialValue?: FieldValue;
   getValueFromEvent?: FormItemProps['getValueFromEvent'];
   rules?: RulesProps<FieldValue>[];
@@ -408,6 +409,7 @@ export interface FormControlProps<
   help?: ReactNode;
   isFormList?: boolean;
   hasFeedback?: boolean;
+  children?: ReactNode;
 }
 
 /**

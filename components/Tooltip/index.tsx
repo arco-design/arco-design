@@ -9,11 +9,12 @@ import React, {
 import cs from '../_util/classNames';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import { ConfigContext } from '../ConfigProvider';
-import pick from '../_util/pick';
+import pick, { pickDataAttributes } from '../_util/pick';
 import { TooltipProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { isFunction } from '../_util/is';
 
-type TooltipHandle = {
+export type TooltipHandle = {
   updatePopupPosition: () => void;
 };
 
@@ -74,10 +75,11 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
   const prefixCls = tooltipPrefixCls || getPrefixCls('tooltip');
   const otherProps: any = {
     ...pick(rest, EventsByTriggerNeed),
+    ...pickDataAttributes(rest),
     ...triggerProps,
   };
 
-  const renderedContent = typeof content === 'function' ? content() : content;
+  const renderedContent = isFunction(content) ? content() : content;
 
   // it is important to note that this method has its limitations
   // it fails in cases such as content = <>&nbsp;&nbsp;</>

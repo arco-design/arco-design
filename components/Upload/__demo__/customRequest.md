@@ -20,48 +20,53 @@ Override for the default xhr behavior allowing for additional customization and 
 import { useState } from 'react';
 import { Upload } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
+  const [fileList, setFileList] = useState([]);
+  return (
+    <Upload
+      fileList={fileList}
+      onChange={setFileList}
+      customRequest={(option) => {
+        const { onProgress, onError, onSuccess, file } = option;
+        const xhr = new XMLHttpRequest();
 
-  const [fileList, setFileList] = useState([])
+        if (xhr.upload) {
+          xhr.upload.onprogress = function (event) {
+            let percent;
 
-  return <Upload
-    fileList={fileList}
-    onChange={setFileList}
-    customRequest={(option) => {
-      const { onProgress, onError, onSuccess, file } = option
-      const xhr = new XMLHttpRequest();
-      if (xhr.upload) {
-        xhr.upload.onprogress = function (event) {
-          let percent;
-          if (event.total > 0) {
-            percent = (event.loaded / event.total) * 100;
-          }
-          onProgress(parseInt(percent, 10), event);
+            if (event.total > 0) {
+              percent = (event.loaded / event.total) * 100;
+            }
+
+            onProgress(parseInt(percent, 10), event);
+          };
+        }
+
+        xhr.onerror = function error(e) {
+          onError(e);
         };
-      }
-      xhr.onerror = function error(e) {
-        onError(e);
-      };
-      xhr.onload = function onload() {
-        if (xhr.status < 200 || xhr.status >= 300) {
-          return onError(xhr.responseText);
-        }
-        onSuccess(xhr.responseText, xhr);
-      };
 
-      const formData = new FormData();
-      formData.append(name || 'file', file);
-      xhr.open('post', '//upload-z2.qbox.me/', true);
-      xhr.send(formData);
+        xhr.onload = function onload() {
+          if (xhr.status < 200 || xhr.status >= 300) {
+            return onError(xhr.responseText);
+          }
 
-      return {
-        abort () {
-          xhr.abort()
-        }
-      }
-    }}
-  />
+          onSuccess(xhr.responseText, xhr);
+        };
+
+        const formData = new FormData();
+        formData.append(name || 'file', file);
+        xhr.open('post', '//upload-z2.qbox.me/', true);
+        xhr.send(formData);
+        return {
+          abort() {
+            xhr.abort();
+          },
+        };
+      }}
+    />
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

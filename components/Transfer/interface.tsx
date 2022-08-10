@@ -221,6 +221,7 @@ export interface TransferListProps
   handleSelect: (newSelectKeys: string[]) => void;
   handleRemove: (removeKeys: string[]) => void;
   renderList: (props: TransferCustomListProps) => ReactNode;
+  renderHeaderUnit: (countSelected, countAll) => ReactNode;
 }
 
 export interface TransferCustomListProps

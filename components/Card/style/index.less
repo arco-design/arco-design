@@ -206,6 +206,11 @@
 
   .size(default);
   .size(small);
+
+  &-rtl &-actions-item:not(:last-child) {
+    margin-left: @card-margin-right-action-item;
+    margin-right: 0;
+  }
 }
 
 // dark mode

@@ -1,4 +1,4 @@
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { isArray, isDayjs } from '../_util/is';
 
 function getFormat(time) {
@@ -36,4 +36,17 @@ export function isDisabledDate(date, disabledDate, mode, originMode): boolean {
     return disabledDate(date);
   }
   return disabledDate(date.startOf(mode)) && disabledDate(date.endOf(mode));
+}
+
+type WeekStartType = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+export function getDefaultWeekStart(dayjsLocale: string): WeekStartType {
+  return (dayjs.Ls?.[dayjsLocale]?.weekStart as WeekStartType) || 0;
+}
+
+export function getLocaleDayjsValue(
+  date: Dayjs | undefined,
+  dayjsLocale: string
+): Dayjs | undefined {
+  return date ? date.locale(dayjsLocale) : date;
 }

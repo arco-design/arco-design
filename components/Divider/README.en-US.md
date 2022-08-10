@@ -14,7 +14,7 @@ Divide the content area and separate the modules.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|type|Two types are available: `horizontal` and `vertical`|`'horizontal' \| 'vertical'`|`horizontal`|
-|orientation|The position of description content in Divider|`'left' \| 'right' \| 'center'`|`center`|
+|orientation|The position of description content in Divider|'left' \| 'right' \| 'center' |`center`|
+|type|Two types are available: `horizontal` and `vertical`|'horizontal' \| 'vertical' |`horizontal`|
+|className|Additional css class|string \| string[] |`-`|
+|style|Additional style|CSSProperties |`-`|

@@ -6,28 +6,6 @@
 这里汇总了一些在使用组件库时常见的一些问题。
 `````
 
-## ArcoDesign 支持时区吗？
-
-ArcoDesign 内部使用 `dayjs`，但是兼容了 `moment` 的逻辑。因为 `dayjs` 不支持时区，所以如果有时区需求可以配置 webpack 的 alias，使用 `moment` 代替 `dayjs`，如下：
-
-```
-resolve: {
-  alias: {
-    dayjs$: 'moment-timezone'
-  }
-}
-```
-
-然后，在项目入口全局设置时区，如下：
-
-```js
-import moment from 'moment-timezone';
-
-moment.tz.setDefault('America/Los_Angeles');
-```
-
-这样，你就可以在项目中使用 `moment` 了。
-
 ## 项目中同时存在 `antd` 和 `arco-design`，出现样式问题。
 
 如果项目中同时使用 `antd` 和 `arco-design`，并且都使用 `less` 的引用方式，那么在编译的时候，`less` 变量会出现相互覆盖的情况。

@@ -319,7 +319,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c621ef94232e4b91917c7d2e5d9eae00~tplv-uwbnlip3yd-image.image"
-          style="width:30px;height:30px;margin-right:8px;vertical-align:middle"
+          style="width:30px;height:30px;vertical-align:middle"
         />
         BCY
       </span>
@@ -343,7 +343,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/cb76fb049c3c44128b26f02902a0373b~tplv-uwbnlip3yd-image.image"
-          style="width:30px;height:30px;margin-right:8px;vertical-align:middle"
+          style="width:30px;height:30px;vertical-align:middle"
         />
         Pipidance
       </span>
@@ -368,7 +368,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/74fb860e37aa4840a8eb235e6df6e6e0~tplv-uwbnlip3yd-image.image"
-          style="width:30px;height:30px;margin-right:8px;vertical-align:middle"
+          style="width:30px;height:30px;vertical-align:middle"
         />
         Xigua Video
       </span>

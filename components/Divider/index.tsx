@@ -12,7 +12,7 @@ const defaultProps: DividerProps = {
 function Divider(baseProps: DividerProps, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<DividerProps>(baseProps, defaultProps, componentConfig?.Divider);
-  const { children, style, className, type, orientation } = props;
+  const { children, style, className, type, orientation, ...rest } = props;
 
   const prefixCls = getPrefixCls('divider');
   const classNames = cs(
@@ -26,7 +26,7 @@ function Divider(baseProps: DividerProps, ref) {
   );
 
   return (
-    <div role="separator" ref={ref} className={classNames} style={style}>
+    <div role="separator" ref={ref} className={classNames} style={style} {...rest}>
       {children && type === 'horizontal' ? (
         <span className={`${prefixCls}-text ${prefixCls}-text-${orientation}`}>{children}</span>
       ) : null}

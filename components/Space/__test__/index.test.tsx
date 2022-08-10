@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, cleanup } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Space, { SpaceSize } from '..';
@@ -17,41 +17,48 @@ const mapSize = {
 };
 
 function getItemStyle(component, index) {
-  return component.find('.arco-space-item').at(index).prop('style');
+  return component.find('.arco-space-item').item(index).style.cssText;
 }
 
 function getSizeValue(size) {
   if (typeof size === 'string') {
-    return mapSize[size];
+    return `${mapSize[size]}px`;
   }
   if (typeof size === 'number') {
-    return size;
+    return `${size}px`;
   }
-  return 8;
+  return '8px';
+}
+
+const objToCsstext = (obj: Object) => {
+  return Object.entries(obj)
+    .map(([k, v]) => `${k}: ${v};`)
+    .join(' ');
+};
+
+function checkSize(size?: SpaceSize | SpaceSize[]) {
+  const sizeProps = size ? { size, wrap: !!isArray(size) } : {};
+  const component = render(
+    <Space {...sizeProps}>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </Space>
+  );
+  expect(component.find('.arco-space-item')).toHaveLength(3);
+
+  const marginValue = isArray(size)
+    ? { 'margin-right': getSizeValue(size[0]), 'margin-bottom': getSizeValue(size[1]) }
+    : { 'margin-right': getSizeValue(size) };
+
+  expect(getItemStyle(component, 0)).toEqual(objToCsstext(marginValue));
+  expect(getItemStyle(component, 1)).toEqual(objToCsstext(marginValue));
+  expect(getItemStyle(component, 2)).toEqual(objToCsstext(omit(marginValue, ['margin-right'])));
+  cleanup();
 }
 
 describe('Space', () => {
-  it('different size', () => {
-    function checkSize(size?: SpaceSize | SpaceSize[]) {
-      const sizeProps = size ? { size, wrap: !!isArray(size) } : {};
-      const component = mount(
-        <Space {...sizeProps}>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </Space>
-      );
-      expect(component.find('.arco-space-item')).toHaveLength(3);
-
-      const marginValue = isArray(size)
-        ? { marginRight: getSizeValue(size[0]), marginBottom: getSizeValue(size[1]) }
-        : { marginRight: getSizeValue(size) };
-
-      expect(getItemStyle(component, 0)).toEqual(marginValue);
-      expect(getItemStyle(component, 1)).toEqual(marginValue);
-      expect(getItemStyle(component, 2)).toEqual(omit(marginValue, ['marginRight']));
-    }
-
+  it('should default size work', () => {
     checkSize();
     checkSize('mini');
     checkSize('small');
@@ -62,7 +69,7 @@ describe('Space', () => {
   });
 
   it('direction', () => {
-    const component = mount(
+    const component = render(
       <Space direction="vertical">
         <span>1</span>
         <span>2</span>
@@ -70,13 +77,13 @@ describe('Space', () => {
       </Space>
     );
 
-    expect(getItemStyle(component, 0)).toEqual({ marginBottom: 8 });
-    expect(getItemStyle(component, 1)).toEqual({ marginBottom: 8 });
-    expect(getItemStyle(component, 2)).toEqual({});
+    expect(getItemStyle(component, 0)).toEqual('margin-bottom: 8px;');
+    expect(getItemStyle(component, 1)).toEqual('margin-bottom: 8px;');
+    expect(getItemStyle(component, 2)).toEqual('');
   });
 
   it('align', () => {
-    const component = mount(
+    const component = render(
       <Space>
         <span>1</span>
         <span>2</span>
@@ -84,17 +91,29 @@ describe('Space', () => {
       </Space>
     );
 
-    expect(component.find('.arco-space').prop('className')).toBe(
+    expect(component.find('.arco-space')[0].className).toBe(
       'arco-space arco-space-horizontal arco-space-align-center'
     );
 
-    component.setProps({ direction: 'vertical' });
+    component.rerender(
+      <Space direction="vertical">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </Space>
+    );
 
-    expect(component.find('.arco-space').prop('className')).toBe('arco-space arco-space-vertical');
+    expect(component.find('.arco-space')[0].className).toBe('arco-space arco-space-vertical');
 
-    component.setProps({ align: 'start' });
+    component.rerender(
+      <Space direction="vertical" align="start">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </Space>
+    );
 
-    expect(component.find('.arco-space').prop('className')).toBe(
+    expect(component.find('.arco-space')[0].className).toBe(
       'arco-space arco-space-vertical arco-space-align-start'
     );
   });

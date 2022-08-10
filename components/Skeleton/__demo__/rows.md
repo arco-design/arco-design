@@ -16,8 +16,17 @@ Set the number of text lines and text width.
 ```js
 import { Skeleton } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Skeleton text={{ rows: 3, width: ['100%', 600, 400] }} image></Skeleton>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Skeleton
+      text={{
+        rows: 3,
+        width: ['100%', 600, 400],
+      }}
+      image
+    ></Skeleton>
+  );
+};
+
+export default App;
 ```

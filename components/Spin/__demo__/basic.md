@@ -16,5 +16,9 @@ A simple loading state.
 ```js
 import { Spin } from '@arco-design/web-react';
 
-ReactDOM.render(<Spin />, CONTAINER);
+const App = () => {
+  return <Spin />;
+};
+
+export default App;
 ```

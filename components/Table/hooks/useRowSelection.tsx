@@ -1,5 +1,10 @@
 import { useState, Key } from 'react';
-import { isChildrenNotEmpty, getSelectedKeys, getSelectedKeysByData } from '../utils';
+import {
+  isChildrenNotEmpty,
+  getSelectedKeys,
+  getSelectedKeysByData,
+  getOriginData,
+} from '../utils';
 import { isArray } from '../../_util/is';
 import { TableProps, GetRowKeyType } from '../interface';
 
@@ -9,6 +14,7 @@ function getSet(arr: Key[]) {
 
 export default function useRowSelection<T>(
   props: TableProps<T>,
+  pageData,
   data,
   getRowKey: GetRowKeyType<T>
 ): {
@@ -21,7 +27,7 @@ export default function useRowSelection<T>(
   allSelectedRowKeys: Key[];
   flattenData: T[];
 } {
-  const { rowSelection, data: originData, childrenColumnName } = props;
+  const { rowSelection, childrenColumnName } = props;
   const controlledSelectedRowKeys = rowSelection?.selectedRowKeys;
   const onSelectAll = rowSelection?.onSelectAll;
   const onSelect = rowSelection?.onSelect;
@@ -33,15 +39,15 @@ export default function useRowSelection<T>(
 
   // 获取扁平化之后的 data
   function getMetaFromData() {
-    const allSelectedRowKeys: any[] = [];
-    const flattenData: any[] = [];
+    const allSelectedRowKeys = [];
+    const flattenData = [];
     const travel = (children) => {
       if (isArray(children) && children.length) {
         children.forEach((record) => {
           const rowKey = getRowKey(record);
           const checkboxProps =
             rowSelection && typeof rowSelection.checkboxProps === 'function'
-              ? rowSelection.checkboxProps(record)
+              ? rowSelection.checkboxProps(getOriginData(record))
               : {};
           if (!checkboxProps.disabled) {
             allSelectedRowKeys.push(rowKey);
@@ -52,12 +58,12 @@ export default function useRowSelection<T>(
         });
       }
     };
-    travel(data);
+    travel(pageData);
     const travelOrigin = (children, parent) => {
       if (isArray(children) && children.length) {
         children.forEach((record) => {
-          if (parent) {
-            record.parent = parent;
+          if (parent && checkConnected) {
+            record.__INTERNAL_PARENT = parent;
           }
           flattenData.push(record);
           if (isChildrenNotEmpty(record, props.childrenColumnName)) {
@@ -67,7 +73,7 @@ export default function useRowSelection<T>(
         });
       }
     };
-    travelOrigin(originData, undefined);
+    travelOrigin(data, undefined);
 
     return {
       allSelectedRowKeys,
@@ -126,11 +132,14 @@ export default function useRowSelection<T>(
     if (!pureKeys) {
       newSelectedRows = getRowsFromKeys(newSelectedRowKeys, true);
     }
+
+    const originSelectedRows = getOriginData(newSelectedRows);
+
     setSelectedRowKeys(newSelectedRowKeys);
     setSelectedRows(newSelectedRows);
     setIndeterminateKeys([]);
-    onChange && onChange(newSelectedRowKeys, newSelectedRows);
-    onSelectAll && onSelectAll(checked, newSelectedRows);
+    onChange && onChange(newSelectedRowKeys, originSelectedRows);
+    onSelectAll && onSelectAll(checked, originSelectedRows);
   }
 
   function onCheck(checked, record) {
@@ -147,18 +156,22 @@ export default function useRowSelection<T>(
     const newSelectedRowKeys = deleteUnExistKeys(selectedRowKeys);
     const newSelectedRows = getRowsFromKeys(newSelectedRowKeys, true);
 
+    const originSelectedRows = getOriginData(newSelectedRows);
+
     setSelectedRowKeys(newSelectedRowKeys);
     setSelectedRows(newSelectedRows);
     setIndeterminateKeys(_indeterminateKeys);
-    onSelect && onSelect(checked, record, newSelectedRows);
-    onChange && onChange(newSelectedRowKeys, newSelectedRows);
+    onSelect && onSelect(checked, getOriginData(record), originSelectedRows);
+    onChange && onChange(newSelectedRowKeys, originSelectedRows);
   }
 
   function onCheckRadio(key, record) {
     const newSelectedRows = [flattenData.find((d) => getRowKey(d) === key)];
+    const originSelectedRows = getOriginData(newSelectedRows);
+
     setSelectedRowKeys([key]);
-    onSelect && onSelect(true, record, newSelectedRows);
-    onChange && onChange([key], newSelectedRows);
+    onSelect && onSelect(true, getOriginData(record), originSelectedRows);
+    onChange && onChange([key], originSelectedRows);
   }
 
   return {

@@ -26,13 +26,13 @@ async function _getCroppedImg(url, pixelCrop, rotation = 0) {
     image.addEventListener('error', (error) => reject(error));
     image.src = url;
   });
-
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
 
   if (!ctx || !image) {
     return null;
   }
+
   const imageSize = 2 * ((Math.max(image.width, image.height) / 2) * Math.sqrt(2));
   canvas.width = imageSize;
   canvas.height = imageSize;
@@ -45,65 +45,70 @@ async function _getCroppedImg(url, pixelCrop, rotation = 0) {
 
   ctx.drawImage(image, imageSize / 2 - image.width / 2, imageSize / 2 - image.height / 2);
   const data = ctx.getImageData(0, 0, imageSize, imageSize);
-
   canvas.width = pixelCrop.width;
   canvas.height = pixelCrop.height;
-
   ctx.putImageData(
     data,
     Math.round(0 - imageSize / 2 + image.width * 0.5 - pixelCrop.x),
     Math.round(0 - imageSize / 2 + image.height * 0.5 - pixelCrop.y)
   );
-
   return new Promise((resolve) => {
     canvas.toBlob((blob) => {
       resolve(blob);
     });
   });
-}
+} // 裁剪组件
 
-// 裁剪组件
 const Cropper = (props) => {
   const { file, onOk } = props;
-
-  const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [crop, setCrop] = useState({
+    x: 0,
+    y: 0,
+  });
   const [zoom, setZoom] = useState(1);
   const [rotation, setRotation] = useState(0);
-  const [newFile, setNewFile] = useState(file);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState(undefined)
 
   const url = React.useMemo(() => {
     return URL.createObjectURL(file);
   }, [file]);
-
   return (
     <div>
-      <div style={{ width: '100%', height: 280, position: 'relative' }}>
+      <div
+        style={{
+          width: '100%',
+          height: 280,
+          position: 'relative',
+        }}
+      >
         <EasyCropper
-          style={{ containerStyle: { width: '100%', height: 280 } }}
-          cropSize={{ width: 280, height: 280 }}
+          style={{
+            containerStyle: {
+              width: '100%',
+              height: 280,
+            },
+          }}
           aspect={4 / 4}
           image={url}
           crop={crop}
           zoom={zoom}
           rotation={rotation}
           onRotationChange={setRotation}
+          onCropComplete={(_, croppedAreaPixels) => {
+            setCroppedAreaPixels(croppedAreaPixels)
+          }}
           onCropChange={setCrop}
           onZoomChange={setZoom}
-          onCropComplete={async (_, pixels) => {
-            console.log(pixels);
-            const blob = await _getCroppedImg(url || '', pixels, rotation);
-            if (blob) {
-              const newFile = new File([blob], file.name || 'image', {
-                type: file.type || 'image/*',
-              });
-
-              setNewFile(newFile);
-            }
-          }}
         />
       </div>
       <Grid.Row justify="space-between" style={{ marginTop: 20, marginBottom: 20 }}>
-        <Grid.Row style={{ flex: 1, marginLeft: 12, marginRight: 12 }}>
+        <Grid.Row
+          style={{
+            flex: 1,
+            marginLeft: 12,
+            marginRight: 12,
+          }}
+        >
           <IconMinus
             style={{ marginRight: 10 }}
             onClick={() => {
@@ -140,8 +145,15 @@ const Cropper = (props) => {
         </Button>
         <Button
           type="primary"
-          onClick={() => {
-            props.onOk(newFile);
+          onClick={async () => {
+            const blob = await _getCroppedImg(url || '', croppedAreaPixels, rotation);
+
+            if (blob) {
+              const newFile = new File([blob], file.name || 'image', {
+                type: file.type || 'image/*',
+              });
+              props.onOk(newFile);
+            }
           }}
         >
           确定
@@ -151,7 +163,7 @@ const Cropper = (props) => {
   );
 };
 
-function Demo() {
+function App() {
   return (
     <div>
       <Upload
@@ -191,7 +203,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

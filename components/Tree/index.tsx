@@ -12,6 +12,7 @@ import {
 } from './util';
 import { TreeProps, NodeProps, TreeDataType, NodeInstance, TreeState } from './interface';
 import { TreeContext } from './context';
+import { pickDataAttributes } from '../_util/pick';
 
 const DefaultFieldNames = {
   key: 'key',
@@ -723,7 +724,7 @@ class Tree extends Component<TreeProps, TreeState> {
       : {
           threshold: null,
         };
-    const { getPrefixCls } = this.context;
+    const { getPrefixCls, rtl } = this.context;
 
     const prefixCls = getPrefixCls('tree');
 
@@ -762,6 +763,7 @@ class Tree extends Component<TreeProps, TreeState> {
               [`${prefixCls}-checkable`]: checkable,
               [`${prefixCls}-show-line`]: showLine,
               [`${prefixCls}-size-${size}`]: size,
+              [`${prefixCls}-rtl`]: rtl,
             },
             className
           )}
@@ -780,6 +782,7 @@ class Tree extends Component<TreeProps, TreeState> {
             role: 'tree',
             'aria-multiselectable': this.props.multiple,
             tabIndex: 0,
+            ...pickDataAttributes(this.props),
           }}
         />
       </TreeContext.Provider>

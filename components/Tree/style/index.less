@@ -374,3 +374,93 @@
   overflow: hidden;
   transition: height @transition-duration-2 @transition-timing-function-standard;
 }
+
+.@{tree-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{tree-node-prefix-cls} {
+    &-switcher {
+      margin-left: @tree-margin-switcher-icon-right;
+      margin-right: 0;
+
+      &-icon {
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &-expanded,
+    &-is-leaf {
+      .@{tree-node-prefix-cls}-switcher-icon svg {
+        transform: rotate(0);
+      }
+    }
+
+    &-custom-icon {
+      margin-right: 0;
+      margin-left: @tree-margin-custom-icon-right;
+    }
+
+    &-minus-icon,
+    &-plus-icon {
+      &::after {
+        margin-left: 0;
+        margin-right: -(@tree-showline-size-plus-icon-width / 2);
+      }
+    }
+
+    &-plus-icon::before {
+      margin-left: 0;
+      margin-right: -(@tree-showline-size-plus-icon-stroke / 2);
+    }
+  }
+
+  .@{prefix}-checkbox {
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: @tree-margin-checkbox-right;
+  }
+
+  .@{tree-prefix-cls}-node {
+    padding-left: 0;
+    padding-right: (@tree-size-expand-icon-bg_hover / 2) - (@tree-size-default-icon-size / 2);
+    align-items: flex-end;
+
+    &-title-block {
+      .@{tree-node-prefix-cls}-drag-icon {
+        left: @tree-spacing-drag-icon-right;
+        right: initial;
+        margin-right: unset;
+      }
+    }
+  }
+
+  &-node-indent-block {
+    margin-right: 0;
+    margin-left: @tree-margin-switcher-icon-right;
+  }
+
+  &-node-title {
+    padding-right: @tree-padding-title-horizontal;
+    padding-left: @tree-padding-title-horizontal;
+    margin-left: unset;
+    margin-right: -@tree-padding-title-horizontal;
+  }
+
+  &-show-line {
+    padding-left: 0;
+    padding-right: (@tree-size-expand-icon-bg_hover / 2) - (@tree-showline-size-switcher-icon / 2);
+
+    .@{tree-prefix-cls}-node-indent-block::before {
+      border-left: none;
+      border-right: @tree-showline-size-line-width @tree-showline-style-line
+        @tree-showline-color-line-bg;
+    }
+
+    .@{tree-prefix-cls}-node-is-leaf:not(.@{tree-prefix-cls}-node-is-tail)
+      .@{tree-prefix-cls}-node-indent::after {
+      left: -(@tree-showline-size-switcher-icon / 2);
+    }
+  }
+}

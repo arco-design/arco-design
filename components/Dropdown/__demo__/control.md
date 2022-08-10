@@ -23,7 +23,6 @@ import { IconDown } from '@arco-design/web-react/icon';
 function DemoWithPopupVisible() {
   const [popupVisible, setPopupVisible] = useState(false);
   const refMenuItemClicked = useRef(null);
-
   const dropList = (
     <Menu
       onClickMenuItem={(key) => {
@@ -34,7 +33,6 @@ function DemoWithPopupVisible() {
       <Menu.Item key="2">Will close the menu</Menu.Item>
     </Menu>
   );
-
   return (
     <Dropdown
       droplist={dropList}
@@ -45,6 +43,7 @@ function DemoWithPopupVisible() {
         if (refMenuItemClicked.current === null || refMenuItemClicked.current === '2') {
           setPopupVisible(visible);
         }
+
         refMenuItemClicked.current = null;
       }}
     >
@@ -69,13 +68,8 @@ function DemoWithOnClickMenuItem() {
       <Menu.Item key="2">Will close the menu</Menu.Item>
     </Menu>
   );
-
   return (
-    <Dropdown
-      droplist={dropList}
-      trigger="click"
-      position="bl"
-    >
+    <Dropdown droplist={dropList} trigger="click" position="bl">
       <Button type="text">
         Click
         <IconDown />
@@ -84,13 +78,16 @@ function DemoWithOnClickMenuItem() {
   );
 }
 
-ReactDOM.render(
-  <Space size="large" className="dropdown-demo">
-    <DemoWithPopupVisible />
-    <DemoWithOnClickMenuItem />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large" className="dropdown-demo">
+      <DemoWithPopupVisible />
+      <DemoWithOnClickMenuItem />
+    </Space>
+  );
+};
+
+export default App;
 ```
 
 ```css:silent

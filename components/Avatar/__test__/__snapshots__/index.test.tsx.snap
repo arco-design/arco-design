@@ -33,6 +33,18 @@ exports[`ConfigProvider componentConfig.Avatar set className globally and compon
 </div>
 `;
 
+exports[`ConfigProvider componentConfig.Avatar set data-* property 1`] = `
+<div
+  class="arco-avatar arco-avatar-circle"
+  data-test-name="Avatar"
+  style="font-size:"
+>
+  <span
+    class="arco-avatar-text"
+  />
+</div>
+`;
+
 exports[`ConfigProvider componentConfig.Avatar.Group default 1`] = `
 <div
   class="arco-avatar-group"
@@ -48,5 +60,12 @@ exports[`ConfigProvider componentConfig.Avatar.Group set className globally 1`] 
 exports[`ConfigProvider componentConfig.Avatar.Group set className globally and component set className itself. 1`] = `
 <div
   class="arco-avatar-group component-class"
+/>
+`;
+
+exports[`ConfigProvider componentConfig.Avatar.Group set data-* property 1`] = `
+<div
+  class="arco-avatar-group"
+  data-test-name="Avatar.Group"
 />
 `;

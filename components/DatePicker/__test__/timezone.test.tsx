@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '../../../tests/util';
 import DatePicker from '..';
 import { getInput, getDateCell, checkTime } from './utils';
 import '../../../tests/mockDate';
@@ -8,7 +8,7 @@ describe('utcOffset', () => {
   it('defaultValue & now & onSelect & onChange for DatePicker', () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
-    const component = mount(
+    const component = render(
       <DatePicker
         showTime
         defaultValue={new Date('2020-02-22')}
@@ -20,21 +20,23 @@ describe('utcOffset', () => {
     );
 
     // default value displayed in input
-    expect(component.find('input').prop('value')).toBe('2020-02-22 00:00:00');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe(
+      '2020-02-22 00:00:00'
+    );
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
     // switch to time select panel
-    component.find('button.arco-picker-btn-select-time').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-select-time')[0]);
 
     checkTime(component, '00', '00', '00');
 
     function getInputValue() {
-      return component.find('.arco-picker-input input').prop('value');
+      return component.find('.arco-picker-input input')[0].getAttribute('value');
     }
 
     // click now btn
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-secondary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-secondary')[0]);
 
     expect(getInputValue()).toBe('2020-04-10 12:32:59');
 
@@ -45,7 +47,7 @@ describe('utcOffset', () => {
     expect(onSelect.mock.calls[0][1].toISOString()).toBe('2020-04-10T12:32:59.000Z');
 
     // confirm
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary')[0]);
 
     expect(getInputValue()).toBe('2020-04-10 12:32:59');
     expect(onChange.mock.calls.length).toBe(1);
@@ -57,7 +59,7 @@ describe('utcOffset', () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
 
-    const component = mount(
+    const component = render(
       <DatePicker.RangePicker
         utcOffset={0}
         timezone="Asia/Shanghai" // if utcOffset exist, timezone not work
@@ -68,45 +70,45 @@ describe('utcOffset', () => {
       />
     );
 
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-19 16:00:00');
-    expect(getInput(component, 1).prop('value')).toBe('2020-04-22 00:00:00');
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-19 16:00:00');
+    expect(getInput(component, 1).getAttribute('value')).toBe('2020-04-22 00:00:00');
 
     // open, start
-    getInput(component, 0).simulate('click');
+    fireEvent.click(getInput(component, 0));
 
-    // 2020-04-08
-    getDateCell(component, 0, 10).find('.arco-picker-date').simulate('click');
+    // 2020-04-09
+    fireEvent.click(getDateCell(component, 0, 10).querySelector('.arco-picker-date')!);
 
     expect(onSelect.mock.calls.length).toBe(1);
-    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-22 08:00:00']);
+    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-22 08:00:00']);
     expect(onSelect.mock.calls[0][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
       '2020-04-22T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
 
-    // 2020-04-13
-    getDateCell(component, 0, 15).find('.arco-picker-date').simulate('click');
+    // 2020-04-14
+    fireEvent.click(getDateCell(component, 0, 15).querySelector('.arco-picker-date')!);
 
     expect(onSelect.mock.calls.length).toBe(2);
-    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-09 00:00:00', '2020-04-13 08:00:00']);
+    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-10 00:00:00', '2020-04-14 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-13T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-14T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
 
-    component.find('button.arco-picker-btn-confirm').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-confirm')[0]);
 
     expect(onSelect.mock.calls.length).toBe(2);
 
     expect(onChange.mock.calls.length).toBe(1);
-    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-13 08:00:00']);
+    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-14 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-13T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-14T00:00:00.000Z',
     ]);
   });
 });
@@ -115,7 +117,7 @@ describe('timezone & DST', () => {
   it('defaultValue & now & onSelect & onChange for DatePicker', () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
-    const component = mount(
+    const component = render(
       <DatePicker
         showTime
         defaultValue={new Date('2020-02-22')}
@@ -126,21 +128,23 @@ describe('timezone & DST', () => {
     );
 
     // default value displayed in input
-    expect(component.find('input').prop('value')).toBe('2020-02-21 16:00:00');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe(
+      '2020-02-21 16:00:00'
+    );
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
     // switch to time select panel
-    component.find('button.arco-picker-btn-select-time').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-select-time')[0]);
 
     checkTime(component, '16', '00', '00');
 
     function getInputValue() {
-      return component.find('.arco-picker-input input').prop('value');
+      return component.find('.arco-picker-input input')[0].getAttribute('value');
     }
 
     // click now btn
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-secondary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-secondary')[0]);
 
     // DST work
     expect(getInputValue()).toBe('2020-04-10 05:32:59');
@@ -152,7 +156,7 @@ describe('timezone & DST', () => {
     expect(onSelect.mock.calls[0][1].toISOString()).toBe('2020-04-10T12:32:59.000Z');
 
     // confirm
-    component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary').simulate('click');
+    fireEvent.click(component.find('.arco-picker-footer-btn-wrapper .arco-btn-primary')[0]);
 
     expect(getInputValue()).toBe('2020-04-10 05:32:59');
     expect(onChange.mock.calls.length).toBe(1);
@@ -164,7 +168,7 @@ describe('timezone & DST', () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
 
-    const component = mount(
+    const component = render(
       <DatePicker.RangePicker
         timezone="America/Los_Angeles"
         onSelect={onSelect}
@@ -175,45 +179,45 @@ describe('timezone & DST', () => {
     );
 
     // DST work
-    expect(getInput(component, 0).prop('value')).toBe('2020-04-19 09:00:00');
-    expect(getInput(component, 1).prop('value')).toBe('2020-04-21 17:00:00');
+    expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-19 09:00:00');
+    expect(getInput(component, 1).getAttribute('value')).toBe('2020-04-21 17:00:00');
 
     // open, start
-    getInput(component, 0).simulate('click');
+    fireEvent.click(getInput(component, 0));
 
-    // 2020-04-08
-    getDateCell(component, 0, 10).find('.arco-picker-date').simulate('click');
+    // 2020-04-09
+    fireEvent.click(getDateCell(component, 0, 10).querySelector('.arco-picker-date')!);
 
     expect(onSelect.mock.calls.length).toBe(1);
-    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-22 08:00:00']);
+    expect(onSelect.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-22 08:00:00']);
     expect(onSelect.mock.calls[0][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
       '2020-04-22T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
 
-    // 2020-04-13
-    getDateCell(component, 0, 15).find('.arco-picker-date').simulate('click');
+    // 2020-04-14
+    fireEvent.click(getDateCell(component, 0, 15).querySelector('.arco-picker-date')!);
 
     expect(onSelect.mock.calls.length).toBe(2);
-    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-09 00:00:00', '2020-04-14 08:00:00']);
+    expect(onSelect.mock.calls[1][0]).toEqual(['2020-04-10 00:00:00', '2020-04-15 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-14T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-15T00:00:00.000Z',
     ]);
 
     expect(onChange.mock.calls.length).toBe(0);
 
-    component.find('button.arco-picker-btn-confirm').simulate('click');
+    fireEvent.click(component.find('button.arco-picker-btn-confirm')[0]);
 
     expect(onSelect.mock.calls.length).toBe(2);
 
     expect(onChange.mock.calls.length).toBe(1);
-    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-09 00:00:00', '2020-04-14 08:00:00']);
+    expect(onChange.mock.calls[0][0]).toEqual(['2020-04-10 00:00:00', '2020-04-15 08:00:00']);
     expect(onSelect.mock.calls[1][1].map((a) => a.toISOString())).toEqual([
-      '2020-04-08T16:00:00.000Z',
-      '2020-04-14T00:00:00.000Z',
+      '2020-04-09T16:00:00.000Z',
+      '2020-04-15T00:00:00.000Z',
     ]);
   });
 });

@@ -14,17 +14,17 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|transitionClassNames|消息弹出动画的类名，见 react-transition-group 的 `classNames`|`string`|`-`|
-|content|消息内容|`ReactNode \| string` **(必填)**|`-`|
-|showIcon|是否显示图标|`boolean`|`true`|
-|icon|自定义图标|`ReactNode`|`-`|
-|duration|自动关闭的时间，单位为 `ms`|`number`|`3000`|
-|onClose|关闭时的回调|`() => void`|`-`|
-|id|当前消息的唯一标识，可以用来更新消息|`string`|`-`|
-|position|消息的位置，分为 `top` 上方和 `bottom` 下方|`'top' \| 'bottom'`|`-`|
-|closable|是否显示关闭按钮|`boolean`|`-`|
+|closable|是否显示关闭按钮|boolean |`-`|
+|showIcon|是否显示图标|boolean |`true`|
+|duration|自动关闭的时间，单位为 `ms`|number |`3000`|
+|id|当前消息的唯一标识，可以用来更新消息|string |`-`|
+|transitionClassNames|消息弹出动画的类名，见 react-transition-group 的 `classNames`|string |`-`|
+|position|消息的位置，分为 `top` 上方和 `bottom` 下方|'top' \| 'bottom' |`-`|
+|icon|自定义图标|ReactNode |`-`|
+|className|节点类名|string \| string[] |`-`|
+|content|消息内容|ReactNode \| string  **(必填)**|`-`|
+|style|节点样式|CSSProperties |`-`|
+|onClose|关闭时的回调|() => void |`-`|
 
 ### 使用方法
 

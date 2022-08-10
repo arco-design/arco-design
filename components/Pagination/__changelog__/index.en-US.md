@@ -1,3 +1,19 @@
+## 2.36.0
+
+2022-06-24
+
+### 💅 Style
+
+- Fixed ellipsis in `Pagination` not vertically centered in some cases.([#1040](https://github.com/arco-design/arco-design/pull/1040))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed a bug where `showJumper=false` did not work for `Pagination` component in `simple` mode.([#979](https://github.com/arco-design/arco-design/pull/979))
+
 ## 2.32.0
 
 2022-04-15

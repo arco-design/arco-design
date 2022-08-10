@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 
+title:
   zh-CN: 受控模式
   en-US: Controlled
 ---
@@ -14,6 +14,7 @@ title:
 Controlled mode.
 
 ```js
+import React from 'react';
 import { TreeSelect } from '@arco-design/web-react';
 import { IconCalendar } from '@arco-design/web-react/icon';
 
@@ -46,14 +47,15 @@ const treeData = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     value: 'node2',
   };
-
   handleChange = (value) => {
     console.log(value);
-    this.setState({ value });
+    this.setState({
+      value,
+    });
   };
 
   render() {
@@ -68,5 +70,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

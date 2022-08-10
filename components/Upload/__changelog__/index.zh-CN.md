@@ -1,3 +1,23 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 问题修复
+
+- 修复 `Upload` 组件设置`accept=*`时失效的问题([#1233](https://github.com/arco-design/arco-design/pull/1233))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 功能升级
+
+- `Upload` 组件支持监听 `onDrop` 事件([#1071](https://github.com/arco-design/arco-design/pull/1071))
+
+### 🐛 问题修复
+
+- 修复 `Upload` 组件在 Windows 系统下可以上传非 `accept` 类型的文件([#1097](https://github.com/arco-design/arco-design/pull/1097))
+
 ## 2.34.0
 
 2022-05-27

@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import { Component, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
 export interface PortalProps {
   /** Portal 挂载的容器 */
   getContainer?: () => Element;
-  childrenComponent?: Element;
+  children?: ReactNode;
 }
 
 class Portal extends Component<PortalProps> {

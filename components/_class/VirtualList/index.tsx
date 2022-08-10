@@ -1,4 +1,12 @@
-import React, { useEffect, useImperativeHandle, useRef, useMemo, useState, ReactNode } from 'react';
+import React, {
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useMemo,
+  useState,
+  ReactNode,
+  CSSProperties,
+} from 'react';
 import {
   Key,
   getValidScrollTop,
@@ -31,7 +39,7 @@ export type RenderFunc<T> = (
 
 type Status = 'NONE' | 'MEASURE_START' | 'MEASURE_DONE';
 
-export interface VirtualListProps<T> extends React.HTMLAttributes<any> {
+export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'children'> {
   children: RenderFunc<T>;
   data: T[];
   /* Viewable area height (`2.11.0` starts support `string` type such as `80%`) */
@@ -50,6 +58,9 @@ export interface VirtualListProps<T> extends React.HTMLAttributes<any> {
   measureLongestItem?: boolean;
   /* Configure the default behavior related to scrolling */
   scrollOptions?: ScrollIntoViewOptions;
+  needFiller?: boolean;
+  /** Custom filler outer style */
+  outerStyle?: CSSProperties;
   onScroll?: React.UIEventHandler<HTMLElement>;
 }
 
@@ -155,6 +166,8 @@ const VirtualList: React.ForwardRefExoticComponent<
     measureLongestItem,
     scrollOptions,
     onScroll,
+    needFiller = true,
+    outerStyle,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
@@ -651,13 +664,16 @@ const VirtualList: React.ForwardRefExoticComponent<
             <Filler
               height={itemTotalHeight}
               offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
+              outerStyle={outerStyle}
             >
               {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
             </Filler>
             {renderLongestItem()}
           </>
-        ) : (
+        ) : needFiller ? (
           <Filler height={viewportHeight}>{renderChildren(data, 0)}</Filler>
+        ) : (
+          renderChildren(data, 0)
         )}
       </WrapperTagName>
     </ResizeObserver>

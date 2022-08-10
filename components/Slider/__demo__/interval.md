@@ -17,19 +17,15 @@ After setting `marks`, the `Slider` is actually divided into multiple intervals,
 
 ** Note: The space will be allocated first to the interval passed in `width`, and the rest will be allocated the remaining space according to the length of the interval. **
 
-
-
 ```js
 import { useState } from 'react';
 import { Slider, Switch, Form, Typography } from '@arco-design/web-react';
-
 const defaultConfig = {
   showTicks: false,
   showInput: false,
   onlyMarkValue: false,
   reverse: false,
 };
-
 const marks = {
   0: '0km',
   10: '10km',
@@ -38,9 +34,8 @@ const marks = {
   50: '50km',
 };
 
-function Demo() {
+function App() {
   const [config, setConfig] = useState(defaultConfig);
-
   return (
     <div style={{ width: 600 }}>
       <Form
@@ -72,12 +67,18 @@ function Demo() {
           marks={marks}
           getIntervalConfig={([begin, end]) => {
             const interval = `${begin}~${end}`;
+
             switch (interval) {
               case `0~10`: {
-                return { width: '50%' };
+                return {
+                  width: '50%',
+                };
               }
+
               default:
-                return { step: (end - begin) / 5 };
+                return {
+                  step: (end - begin) / 5,
+                };
             }
           }}
         />
@@ -88,5 +89,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

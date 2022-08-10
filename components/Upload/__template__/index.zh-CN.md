@@ -35,9 +35,10 @@ type CustomIconType = {
   startIcon?: ReactNode;
   errorIcon?: ReactNode;
   fileName?: (file: UploadItem) => ReactNode;
+  progressRender?: (file: UploadItem, originDom: ReactNode) => ReactElement; // 2.34.0
+  imageRender?: (file: UploadItem) => ReactNode; // 2.34.0
 }
 ```
-
 
 ## 常见问题
 

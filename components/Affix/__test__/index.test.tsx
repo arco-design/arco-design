@@ -1,10 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { sleep, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Affix from '..';
 import Button from '../../Button';
-import { sleep } from '../../../tests/util';
 
 mountTest(Affix);
 componentConfigTest(Affix, 'Affix');
@@ -18,14 +17,17 @@ interface TestProps {
 }
 
 class Test extends React.Component<TestProps> {
-  private container: HTMLDivElement;
+  private container: HTMLDivElement | null;
 
   componentDidMount() {
-    this.container.addEventListener = jest
-      .fn()
-      .mockImplementation((event: keyof HTMLElementEventMap, cb: (ev: Partial<Event>) => void) => {
-        events[event] = cb;
-      });
+    this.container &&
+      (this.container.addEventListener = jest
+        .fn()
+        .mockImplementation(
+          (event: keyof HTMLElementEventMap, cb: (ev: Partial<Event>) => void) => {
+            events[event] = cb;
+          }
+        ));
   }
 
   getTarget = () => this.container;
@@ -46,18 +48,14 @@ class Test extends React.Component<TestProps> {
   }
 }
 
-function mountTestComp(component: React.ReactElement) {
-  return mount<Test, React.PropsWithChildren<TestProps>>(component);
-}
-
 describe('Affix', () => {
   it('should trigger onChange when fixed changed', async () => {
     const onChange = jest.fn();
 
-    const componentWrapper = mountTestComp(<Test offsetTop={0} onChange={onChange} />);
+    const componentWrapper = render(<Test offsetTop={0} onChange={onChange} />);
 
-    const containerElement = componentWrapper.find('.container').first().getDOMNode();
-    const wrapperElement = componentWrapper.find('.affix').first().getDOMNode();
+    const containerElement = componentWrapper.querySelector('.container');
+    const wrapperElement = componentWrapper.querySelector('.affix');
 
     let wrapperRect = {
       top: 0,
@@ -78,13 +76,13 @@ describe('Affix', () => {
       await sleep(100);
     };
 
-    jest.spyOn(containerElement, 'getBoundingClientRect').mockImplementation(() => {
+    jest.spyOn(containerElement as HTMLElement, 'getBoundingClientRect').mockImplementation(() => {
       return {
         top: 0,
         bottom: 0,
       } as DOMRect;
     });
-    jest.spyOn(wrapperElement, 'getBoundingClientRect').mockImplementation(() => {
+    jest.spyOn(wrapperElement as HTMLElement, 'getBoundingClientRect').mockImplementation(() => {
       return wrapperRect as DOMRect;
     });
 
@@ -104,7 +102,7 @@ describe('Affix', () => {
 
     console.error = jest.fn();
     console.warn = jest.fn();
-    mount(
+    render(
       <Affix offsetBottom={120}>
         {null}
         {null}

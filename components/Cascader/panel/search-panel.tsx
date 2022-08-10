@@ -3,15 +3,16 @@ import isEqualWith from 'lodash/isEqualWith';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import cs from '../../_util/classNames';
 import IconCheck from '../../../icon/react-icon/IconCheck';
-import { OptionProps } from '../interface';
+import { OptionProps, CascaderProps } from '../interface';
 import Node from '../base/node';
 import Checkbox from '../../Checkbox';
 import Store from '../base/store';
 import { ArrowDown, Esc, Enter, ArrowUp } from '../../_util/keycode';
 import useUpdateEffect from '../../_util/hooks/useUpdate';
 import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
-import { isString } from '../../_util/is';
+import { isString, isObject } from '../../_util/is';
 import { getMultipleCheckValue } from '../util';
+import VirtualList from '../../_class/VirtualList';
 
 export const getLegalIndex = (currentIndex, maxIndex) => {
   if (currentIndex < 0) {
@@ -27,12 +28,15 @@ export type SearchPanelProps<T> = {
   store?: Store<T>;
   style?: CSSProperties;
   prefixCls?: string;
+  rtl?: boolean;
   multiple?: boolean;
   value: string[][];
   inputValue?: string;
   onEsc?: () => void;
   onChange?: (value: string[][]) => void;
   renderEmpty?: () => ReactNode;
+  virtualListProps?: CascaderProps<T>['virtualListProps'];
+  defaultActiveFirstOption: boolean;
 };
 
 const formatLabel = (inputValue, label, prefixCls): ReactNode => {
@@ -55,7 +59,17 @@ const formatLabel = (inputValue, label, prefixCls): ReactNode => {
 };
 
 const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
-  const { store, prefixCls, multiple, onChange, inputValue, renderEmpty, style } = props;
+  const {
+    store,
+    prefixCls,
+    multiple,
+    onChange,
+    inputValue,
+    renderEmpty,
+    style,
+    defaultActiveFirstOption,
+    rtl,
+  } = props;
   const value = props.value || [];
 
   const [options, setOptions] = useState<Node<T>[]>(store.searchNodeByLabel(inputValue) || []);
@@ -64,7 +78,9 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   const isKeyboardHover = useRef<boolean>();
   const isFirstRender = useIsFirstRender();
   // 保存键盘操作的目标节点
-  const [currentHoverIndex, setCurrentHoverIndex] = useState<number>(-1);
+  const [currentHoverIndex, setCurrentHoverIndex] = useState<number>(
+    defaultActiveFirstOption ? 0 : -1
+  );
 
   const handleSearchOptionClick = (option: Node<T>, checked: boolean, e) => {
     e.stopPropagation();
@@ -86,7 +102,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   useUpdateEffect(() => {
     setCurrentHoverIndex((currentIndex) => {
       if (currentIndex > options.length - 1) {
-        return -1;
+        return defaultActiveFirstOption ? 0 : -1;
       }
       return currentIndex;
     });
@@ -159,17 +175,25 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
 
   return options.length ? (
     <div className={`${prefixCls}-list-wrapper`}>
-      <ul
+      <VirtualList
+        needFiller={false}
+        wrapper="ul"
         role="menu"
+        style={style}
+        data={options}
+        isStaticItemHeight
+        itemKey="value"
+        threshold={props.virtualListProps ? 100 : null}
+        {...(isObject(props.virtualListProps) ? props.virtualListProps : {})}
         onMouseMove={() => {
           isKeyboardHover.current = false;
         }}
         className={cs(`${prefixCls}-list`, `${prefixCls}-list-search`, {
           [`${prefixCls}-list-multiple`]: multiple,
+          [`${prefixCls}-list-rtl`]: rtl,
         })}
-        style={style}
       >
-        {options.map((item, i) => {
+        {(item, i) => {
           const pathNodes = item.getPathNodes();
           const label = formatLabel(
             inputValue,
@@ -207,7 +231,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
               }}
               onMouseLeave={() => {
                 if (!isKeyboardHover.current && !item.disabled) {
-                  setCurrentHoverIndex(-1);
+                  setCurrentHoverIndex(defaultActiveFirstOption ? 0 : -1);
                 }
               }}
             >
@@ -229,8 +253,8 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
               </div>
             </li>
           );
-        })}
-      </ul>
+        }}
+      </VirtualList>
     </div>
   ) : (
     <>{renderEmpty && renderEmpty()}</>

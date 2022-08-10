@@ -14,14 +14,14 @@ title:
 The function buttons on the control preview control bar can be sorted and filtered through `actionLayout`. Among them, `extra` represents the buttons in `actions`, and the `key` in `actions` also supports separate sorting.
 
 ```js
-import { Image, Tooltip } from '@arco-design/web-react';
+import { Image, Tooltip, Space } from '@arco-design/web-react';
 import { IconDownload, IconInfoCircle } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   return (
     <Image
       width={200}
-      src='//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp'
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
       previewProps={{
         actions: [
           {
@@ -34,7 +34,7 @@ function Demo() {
             content: <IconInfoCircle />,
             name: 'Info',
             getContainer: (action) => {
-              return <Tooltip content="A user’s avatar">{action}</Tooltip>
+              return <Tooltip content="A user’s avatar">{action}</Tooltip>;
             },
           },
         ],
@@ -45,8 +45,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```
