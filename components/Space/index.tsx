@@ -56,6 +56,9 @@ function Space(baseProps: SpaceProps, ref) {
     const isLastOne = childrenList.length === index + 1;
     const marginDirection = rtl ? 'marginLeft' : 'marginRight';
 
+    if (split && !size) {
+      return {};
+    }
     if (typeof size === 'string' || typeof size === 'number') {
       const margin = getMargin(size);
       if (wrap) {

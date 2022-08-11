@@ -31,8 +31,8 @@ export interface SpaceProps {
    */
   wrap?: boolean;
   /**
-   * @zh 设置分隔符
-   * @en Set separator
+   * @zh 设置分隔符（这会让`size`失效）
+   * @en Set separator (This will make`size`not work)
    * @version 2.22.0
    */
   split?: ReactNode;
