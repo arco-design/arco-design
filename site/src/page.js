@@ -95,7 +95,7 @@ function Components() {
         )}
       </div>
       <ThemeBox lang={lang} />
-      <BackTop style={{ right: 70, bottom: 80 }}>
+      <BackTop className="ac-back-top">
         <Button shape="circle" size="large" className="ac-backtop-btn">
           <IconUp />
         </Button>
