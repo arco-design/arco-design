@@ -123,7 +123,7 @@ function Tag(baseProps: TagProps, ref) {
   return (
     <div ref={ref} style={colorStyle} className={classNames} {...otherProps}>
       {icon && <span className={`${prefixCls}-icon`}>{icon}</span>}
-      {children}
+      <span className={`${prefixCls}-content`}>{children}</span>
       {closable && !loading && closeIcon !== null && (
         <IconHover
           prefix={prefixCls}

@@ -87,10 +87,10 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="a10"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="a10"
+                  class="arco-tag-content"
                 >
                   a10
                 </span>
@@ -116,10 +116,10 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="b11"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="b11"
+                  class="arco-tag-content"
                 >
                   b11
                 </span>
@@ -587,10 +587,10 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Beijing"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing"
+                  class="arco-tag-content"
                 >
                   Beijing
                 </span>
@@ -622,10 +622,10 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Shanghai"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Shanghai"
+                  class="arco-tag-content"
                 >
                   Shanghai
                 </span>
@@ -657,10 +657,10 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Guangzhou"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Guangzhou"
+                  class="arco-tag-content"
                 >
                   Guangzhou
                 </span>
@@ -937,10 +937,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Beijing"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing"
+                  class="arco-tag-content"
                 >
                   Beijing
                 </span>
@@ -966,10 +966,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Shenzhen"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Shenzhen"
+                  class="arco-tag-content"
                 >
                   Shenzhen
                 </span>
@@ -1077,10 +1077,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Beijing"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing"
+                  class="arco-tag-content"
                 >
                   Beijing
                 </span>
@@ -1106,10 +1106,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Shenzhen"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Shenzhen"
+                  class="arco-tag-content"
                 >
                   Shenzhen
                 </span>
@@ -1135,10 +1135,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="+1..."
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="+1..."
+                  class="arco-tag-content"
                 >
                   +1...
                 </span>
@@ -1227,10 +1227,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Beijing"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing"
+                  class="arco-tag-content"
                 >
                   Beijing
                 </span>
@@ -1256,10 +1256,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Shenzhen"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Shenzhen"
+                  class="arco-tag-content"
                 >
                   Shenzhen
                 </span>
@@ -1285,10 +1285,10 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="+1 more"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="+1 more"
+                  class="arco-tag-content"
                 >
                   +1 more
                 </span>
@@ -1711,10 +1711,10 @@ exports[`renders Select/demo/options.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Beijing"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing"
+                  class="arco-tag-content"
                 >
                   Beijing
                 </span>
@@ -1740,10 +1740,10 @@ exports[`renders Select/demo/options.md correctly 1`] = `
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="Shanghai"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Shanghai"
+                  class="arco-tag-content"
                 >
                   Shanghai
                 </span>
@@ -2015,7 +2015,7 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
               >
                 <span
-                  class="arco-input-tag-tag-content"
+                  class="arco-tag-content"
                 >
                   <span>
                     <svg
@@ -2059,7 +2059,7 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
               >
                 <span
-                  class="arco-input-tag-tag-content"
+                  class="arco-tag-content"
                 >
                   <span>
                     <svg
@@ -2172,7 +2172,11 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
                 class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default"
                 style="margin:2px 6px 2px 0"
               >
-                red
+                <span
+                  class="arco-tag-content"
+                >
+                  red
+                </span>
                 <span
                   aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
@@ -2197,7 +2201,11 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
                 class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
                 style="margin:2px 6px 2px 0"
               >
-                orangered
+                <span
+                  class="arco-tag-content"
+                >
+                  orangered
+                </span>
                 <span
                   aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"

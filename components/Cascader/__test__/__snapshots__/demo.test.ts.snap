@@ -565,20 +565,20 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Dongcheng / Chaoyangmen"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Dongcheng / Chaoyangmen"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Dongcheng / Chaoyangmen
                 </span>
               </div>
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Dongcheng / Jianguomen"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Dongcheng / Jianguomen"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Dongcheng / Jianguomen
                 </span>
@@ -675,10 +675,10 @@ exports[`renders Cascader/demo/draggable.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Chaoyang / Datunli"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Chaoyang / Datunli"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
@@ -908,10 +908,10 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
           >
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+              title="Beijing / Beijing / Chaoyang / Datunli"
             >
               <span
-                class="arco-input-tag-tag-content"
-                title="Beijing / Beijing / Chaoyang / Datunli"
+                class="arco-tag-content"
               >
                 Beijing / Beijing / Chaoyang / Datunli
               </span>
@@ -1098,10 +1098,10 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Chaoyang / Datunli"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Chaoyang / Datunli"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
@@ -1289,10 +1289,10 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Chaoyang / Datunli"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Chaoyang / Datunli"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
@@ -1607,10 +1607,10 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Chaoyang / Datunli"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Chaoyang / Datunli"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
@@ -1903,10 +1903,10 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Chaoyang / Datunli"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Chaoyang / Datunli"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
@@ -2077,10 +2077,10 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
+                title="Beijing / Beijing / Chaoyang / Datunli"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="Beijing / Beijing / Chaoyang / Datunli"
+                  class="arco-tag-content"
                 >
                   Beijing / Beijing / Chaoyang / Datunli
                 </span>
