@@ -44,7 +44,8 @@ Show and preview pictures.
 |visible|Whether is visible|boolean |`-`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |src|Image path, The default in Image is the src of Image|string  **(Required)**|`-`|-|
-|actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|-|
+|imgAttributes|Image props, passthrough to the `img` tag in the preview modal|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|-|
+|actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|2.39.0|
 |actionsLayout|The layout of the control bar|string[] |`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |scales|The zoom percentage in the current array is used when previewing zooms. If `100%` is not included, the `100%` scale will be automatically added in the most adjacent position.|number[] |`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
@@ -67,6 +68,7 @@ Start from `v2.14.0`
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |current|The index of current image (controlled prop)|number |`-`|-|
 |defaultCurrent|The default index of first image|number |`-`|-|
+|imgAttributes|Image props, passthrough to the `img` tag in the preview modal|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|-|
 |actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|-|
 |actionsLayout|The layout of the control bar|string[] |`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |className|Additional css class|string \| string[] |`-`|-|

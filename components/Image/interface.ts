@@ -93,6 +93,12 @@ export interface ImagePreviewProps {
    */
   src: string;
   /**
+   * @zh 图片属性，透传至预览弹窗中的 `img` 标签上
+   * @en Image props, passthrough to the `img` tag in the preview modal
+   * @version 2.39.0
+   */
+  imgAttributes?: Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'>;
+  /**
    * @zh 是否可见，受控属性
    * @en Whether is visible
    */
