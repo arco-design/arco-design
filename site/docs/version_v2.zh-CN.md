@@ -8,7 +8,7 @@ changelog: true
 
 ### 🚨 重点注意
 
-- ** 为了修复 `Tag` 组件超出省略以及关闭图标被遮挡的 bug，内部新增了一层 DOM 结构，`children` 将会被放置在 `.arco-tag-content` 下 **
+- **为了修复 `Tag` 组件超出省略以及关闭图标被遮挡的 bug，内部新增了一层 DOM 结构，`children` 将会被放置在 `.arco-tag-content` 下**
 
 
 ### 💎 功能优化
