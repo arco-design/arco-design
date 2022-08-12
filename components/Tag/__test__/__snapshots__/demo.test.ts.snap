@@ -26,6 +26,7 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -55,6 +56,7 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -363,6 +365,7 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -404,6 +407,7 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -452,6 +456,7 @@ exports[`renders Tag/demo/close-async.md correctly 1`] = `
     aria-label="Close"
     class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     role="button"
+    tabindex="0"
   >
     <svg
       aria-hidden="true"
@@ -481,6 +486,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -506,6 +512,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -531,6 +538,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -556,6 +564,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -581,6 +590,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -606,6 +616,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -631,6 +642,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -656,6 +668,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -681,6 +694,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -706,6 +720,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -731,6 +746,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -756,6 +772,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -781,6 +798,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -811,6 +829,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -836,6 +855,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -861,6 +881,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -886,6 +907,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -911,6 +933,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -936,6 +959,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -961,6 +985,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -986,6 +1011,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1011,6 +1037,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1036,6 +1063,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1061,6 +1089,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1086,6 +1115,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1111,6 +1141,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1268,6 +1299,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1297,6 +1329,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1326,6 +1359,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1354,6 +1388,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"

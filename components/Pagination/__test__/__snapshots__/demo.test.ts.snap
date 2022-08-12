@@ -17,6 +17,7 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -36,30 +37,35 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
+        tabindex="0"
       >
         1
       </li>
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         2
       </li>
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         3
       </li>
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         4
       </li>
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         5
       </li>
@@ -89,12 +95,14 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
       <li
         aria-label="第 20 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         20
       </li>
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -195,6 +203,7 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -214,30 +223,35 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
+        tabindex="-1"
       >
         1
       </li>
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
+        tabindex="-1"
       >
         2
       </li>
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
+        tabindex="-1"
       >
         3
       </li>
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
+        tabindex="-1"
       >
         4
       </li>
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
+        tabindex="-1"
       >
         5
       </li>
@@ -267,12 +281,14 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
       <li
         aria-label="第 20 页"
         class="arco-pagination-item"
+        tabindex="-1"
       >
         20
       </li>
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -374,6 +390,7 @@ exports[`renders Pagination/demo/basic.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -393,30 +410,35 @@ exports[`renders Pagination/demo/basic.md correctly 1`] = `
       aria-current="true"
       aria-label="第 1 页"
       class="arco-pagination-item arco-pagination-item-active"
+      tabindex="0"
     >
       1
     </li>
     <li
       aria-label="第 2 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       2
     </li>
     <li
       aria-label="第 3 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       3
     </li>
     <li
       aria-label="第 4 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       4
     </li>
     <li
       aria-label="第 5 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       5
     </li>
@@ -446,12 +468,14 @@ exports[`renders Pagination/demo/basic.md correctly 1`] = `
     <li
       aria-label="第 20 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       20
     </li>
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -481,6 +505,7 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -500,30 +525,35 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
       aria-current="true"
       aria-label="第 1 页"
       class="arco-pagination-item arco-pagination-item-active"
+      tabindex="0"
     >
       1
     </li>
     <li
       aria-label="第 2 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       2
     </li>
     <li
       aria-label="第 3 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       3
     </li>
     <li
       aria-label="第 4 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       4
     </li>
     <li
       aria-label="第 5 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       5
     </li>
@@ -553,12 +583,14 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
     <li
       aria-label="第 20 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       20
     </li>
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -643,6 +675,7 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -661,24 +694,28 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
     <li
       aria-label="第 1 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       1
     </li>
     <li
       aria-label="第 2 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       2
     </li>
     <li
       aria-label="第 3 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       3
     </li>
     <li
       aria-label="第 4 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       4
     </li>
@@ -686,18 +723,21 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
       aria-current="true"
       aria-label="第 5 页"
       class="arco-pagination-item arco-pagination-item-active"
+      tabindex="0"
     >
       5
     </li>
     <li
       aria-label="第 6 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       6
     </li>
     <li
       aria-label="第 7 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       7
     </li>
@@ -727,12 +767,14 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
     <li
       aria-label="第 20 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       20
     </li>
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -817,6 +859,7 @@ exports[`renders Pagination/demo/itemRender.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <a
         style="font-size:14px;margin:0 8px"
@@ -828,30 +871,35 @@ exports[`renders Pagination/demo/itemRender.md correctly 1`] = `
       aria-current="true"
       aria-label="第 1 页"
       class="arco-pagination-item arco-pagination-item-active"
+      tabindex="0"
     >
       1
     </li>
     <li
       aria-label="第 2 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       2
     </li>
     <li
       aria-label="第 3 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       3
     </li>
     <li
       aria-label="第 4 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       4
     </li>
     <li
       aria-label="第 5 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       5
     </li>
@@ -881,12 +929,14 @@ exports[`renders Pagination/demo/itemRender.md correctly 1`] = `
     <li
       aria-label="第 20 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       20
     </li>
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <a
         style="font-size:14px;margin:0 8px"
@@ -908,6 +958,7 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -927,30 +978,35 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
       aria-current="true"
       aria-label="第 1 页"
       class="arco-pagination-item arco-pagination-item-active"
+      tabindex="0"
     >
       1
     </li>
     <li
       aria-label="第 2 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       2
     </li>
     <li
       aria-label="第 3 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       3
     </li>
     <li
       aria-label="第 4 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       4
     </li>
     <li
       aria-label="第 5 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       5
     </li>
@@ -980,12 +1036,14 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
     <li
       aria-label="第 20 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       20
     </li>
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1036,6 +1094,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="上一页"
             class="arco-pagination-item arco-pagination-item-prev"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1054,6 +1113,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 1 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             1
           </li>
@@ -1084,6 +1144,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
             aria-current="true"
             aria-label="第 10 页"
             class="arco-pagination-item arco-pagination-item-active"
+            tabindex="0"
           >
             10
           </li>
@@ -1113,12 +1174,14 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 20 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             20
           </li>
           <li
             aria-label="下一页"
             class="arco-pagination-item arco-pagination-item-next"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1205,6 +1268,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="上一页"
             class="arco-pagination-item arco-pagination-item-prev"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1223,6 +1287,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 1 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             1
           </li>
@@ -1252,6 +1317,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 9 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             9
           </li>
@@ -1259,12 +1325,14 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
             aria-current="true"
             aria-label="第 10 页"
             class="arco-pagination-item arco-pagination-item-active"
+            tabindex="0"
           >
             10
           </li>
           <li
             aria-label="第 11 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             11
           </li>
@@ -1294,12 +1362,14 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 20 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             20
           </li>
           <li
             aria-label="下一页"
             class="arco-pagination-item arco-pagination-item-next"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1385,6 +1455,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="上一页"
             class="arco-pagination-item arco-pagination-item-prev"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1403,6 +1474,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 1 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             1
           </li>
@@ -1432,12 +1504,14 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 8 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             8
           </li>
           <li
             aria-label="第 9 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             9
           </li>
@@ -1445,18 +1519,21 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
             aria-current="true"
             aria-label="第 10 页"
             class="arco-pagination-item arco-pagination-item-active"
+            tabindex="0"
           >
             10
           </li>
           <li
             aria-label="第 11 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             11
           </li>
           <li
             aria-label="第 12 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             12
           </li>
@@ -1486,12 +1563,14 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
           <li
             aria-label="第 20 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             20
           </li>
           <li
             aria-label="下一页"
             class="arco-pagination-item arco-pagination-item-next"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1579,6 +1658,7 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -1598,12 +1678,14 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
       aria-current="true"
       aria-label="第 1 页"
       class="arco-pagination-item arco-pagination-item-active"
+      tabindex="0"
     >
       1
     </li>
     <li
       aria-label="第 2 页"
       class="arco-pagination-item"
+      tabindex="0"
     >
       2
     </li>
@@ -1633,6 +1715,7 @@ exports[`renders Pagination/demo/show-more.md correctly 1`] = `
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1669,6 +1752,7 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -1688,36 +1772,42 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
+        tabindex="0"
       >
         1
       </li>
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         2
       </li>
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         3
       </li>
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         4
       </li>
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         5
       </li>
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1751,6 +1841,7 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -1770,30 +1861,35 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
+        tabindex="0"
       >
         1
       </li>
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         2
       </li>
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         3
       </li>
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         4
       </li>
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         5
       </li>
@@ -1823,12 +1919,14 @@ exports[`renders Pagination/demo/show-total.md correctly 1`] = `
       <li
         aria-label="第 20 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         20
       </li>
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1859,6 +1957,7 @@ exports[`renders Pagination/demo/simple.md correctly 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -1897,6 +1996,7 @@ exports[`renders Pagination/demo/simple.md correctly 1`] = `
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1990,6 +2090,7 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -2009,36 +2110,42 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
+        tabindex="0"
       >
         1
       </li>
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         2
       </li>
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         3
       </li>
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         4
       </li>
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         5
       </li>
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -2140,6 +2247,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -2160,6 +2268,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
         style="background:var(--color-fill-2);margin-right:0"
+        tabindex="0"
       >
         1
       </li>
@@ -2167,6 +2276,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 2 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="0"
       >
         2
       </li>
@@ -2174,6 +2284,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 3 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="0"
       >
         3
       </li>
@@ -2181,6 +2292,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 4 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="0"
       >
         4
       </li>
@@ -2188,6 +2300,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 5 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="0"
       >
         5
       </li>
@@ -2219,6 +2332,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 20 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="0"
       >
         20
       </li>
@@ -2226,6 +2340,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
         style="background:var(--color-bg-2);margin-right:0"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -2253,6 +2368,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
         style="background:var(--color-bg-2)"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -2273,6 +2389,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
         style="background:var(--color-fill-2)"
+        tabindex="0"
       >
         1
       </li>
@@ -2280,6 +2397,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 2 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2)"
+        tabindex="0"
       >
         2
       </li>
@@ -2287,6 +2405,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 3 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2)"
+        tabindex="0"
       >
         3
       </li>
@@ -2294,6 +2413,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 4 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2)"
+        tabindex="0"
       >
         4
       </li>
@@ -2301,6 +2421,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 5 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2)"
+        tabindex="0"
       >
         5
       </li>
@@ -2332,6 +2453,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="第 20 页"
         class="arco-pagination-item"
         style="background:var(--color-bg-2)"
+        tabindex="0"
       >
         20
       </li>
@@ -2339,6 +2461,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
         style="background:var(--color-bg-2)"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
