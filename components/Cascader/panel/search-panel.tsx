@@ -161,6 +161,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
 
   useEffect(() => {
     const target = refActiveItem.current;
+
     if (target && (isKeyboardHover.current || isFirstRender)) {
       scrollIntoView(target, {
         behavior: 'instant',
@@ -182,7 +183,6 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
         style={style}
         data={options}
         isStaticItemHeight
-        itemKey="value"
         threshold={props.virtualListProps ? 100 : null}
         {...(isObject(props.virtualListProps) ? props.virtualListProps : {})}
         onMouseMove={() => {
