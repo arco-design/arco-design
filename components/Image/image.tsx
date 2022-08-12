@@ -57,6 +57,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     previewGroup,
     handleVisibleChange: handleGroupVisibleChange,
     registerPreviewUrl,
+    registerPreviewProps,
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
   const previewSrc = previewProps.src || src;
@@ -134,8 +135,10 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   useEffect(() => {
     if (!previewGroup) return;
     const unRegister = registerPreviewUrl(id, previewSrc, preview);
+    const unRegisterPreviewProps = registerPreviewProps(id, availablePreviewProps);
     return () => {
       unRegister(id);
+      unRegisterPreviewProps(id);
     };
   }, [previewGroup]);
 
