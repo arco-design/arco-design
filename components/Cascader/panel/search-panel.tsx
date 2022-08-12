@@ -4,13 +4,13 @@ import scrollIntoView from 'scroll-into-view-if-needed';
 import cs from '../../_util/classNames';
 import IconCheck from '../../../icon/react-icon/IconCheck';
 import { OptionProps, CascaderProps } from '../interface';
-import Node from '../base/node';
+import Node, { NodeProps } from '../base/node';
 import Checkbox from '../../Checkbox';
 import Store from '../base/store';
 import { ArrowDown, Esc, Enter, ArrowUp } from '../../_util/keycode';
 import useUpdateEffect from '../../_util/hooks/useUpdate';
 import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
-import { isString, isObject } from '../../_util/is';
+import { isString, isObject, isFunction } from '../../_util/is';
 import { getMultipleCheckValue } from '../util';
 import VirtualList from '../../_class/VirtualList';
 
@@ -37,6 +37,7 @@ export type SearchPanelProps<T> = {
   renderEmpty?: () => ReactNode;
   virtualListProps?: CascaderProps<T>['virtualListProps'];
   defaultActiveFirstOption: boolean;
+  renderOption?: (inputValue: string, node: NodeProps<T>) => ReactNode;
 };
 
 const formatLabel = (inputValue, label, prefixCls): ReactNode => {
@@ -195,16 +196,16 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
       >
         {(item, i) => {
           const pathNodes = item.getPathNodes();
-          const label = formatLabel(
-            inputValue,
-            pathNodes.map((x) => x.label).join(' / '),
-            prefixCls
-          );
+          const pathLabel = pathNodes.map((x) => x.label).join(' / ');
+          const label = isFunction(props.renderOption)
+            ? props.renderOption(inputValue, item._data)
+            : formatLabel(inputValue, pathLabel, prefixCls);
 
           const isChecked = item._checked;
 
           return (
             <li
+              title={isString(label) ? label : isString(pathLabel) ? pathLabel : undefined}
               role="menuitem"
               aria-disabled={item.disabled}
               ref={(node) => {
@@ -236,7 +237,9 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
               }}
             >
               <div className={`${prefixCls}-list-item-label`}>
-                {multiple ? (
+                {isFunction(props.renderOption) ? (
+                  label
+                ) : multiple ? (
                   <Checkbox checked={isChecked} disabled={item.disabled}>
                     {label}
                   </Checkbox>

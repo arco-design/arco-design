@@ -7,6 +7,11 @@ export const ValueSeparator = '__arco_cascader__';
 export const SHOW_PARENT = 'parent';
 export const SHOW_CHILD = 'child';
 
+export const PANEL_MODE = {
+  cascader: 'cascader',
+  select: 'select',
+};
+
 export function isEmptyValue(value) {
   return !value || (isArray(value) && value.length === 0);
 }

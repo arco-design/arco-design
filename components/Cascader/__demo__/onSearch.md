@@ -7,15 +7,15 @@ title:
 
 ## zh-CN
 
-使用 `onSearch` 自定义搜索逻辑
+使用 `onSearch` 自定义搜索逻辑。可以通过 `showSearch.panelMode` 属性控制是否以搜索面板的形式展示所有可选项。
 
 ## en-US
 
-Customize the search logic by `onSearch`
+Customize the search logic by `onSearch`. Whether to display all options in the search panel can be controlled via the `showSearch.panelMode` property.
 
 ```js
 import React from 'react';
-import { Cascader, Divider, Spin, Space } from '@arco-design/web-react';
+import { Cascader, Checkbox, Divider, Spin, Space } from '@arco-design/web-react';
 
 const genOptions = (keyword) => {
   return !keyword
@@ -38,7 +38,7 @@ const genOptions = (keyword) => {
       ];
 };
 
-function App() {
+function CascaderDemo(props) {
   const [options, setOptions] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -51,10 +51,9 @@ function App() {
   };
 
   return (
-    <Space size="large">
       <Cascader
         placeholder="Please enter ..."
-        mode="multiple"
+        showSearch
         style={{ width: 300 }}
         options={options}
         onSearch={handleSearch}
@@ -78,9 +77,23 @@ function App() {
             menu
           );
         }}
+        {...props}
       />
-    </Space>
   );
+}
+
+function App () {
+  const [showSearchPanel, setShowSearchPanel] = React.useState(false);
+
+  return <div>
+    <div style={{marginBottom: 20}}>
+      <Checkbox checked={showSearchPanel} onChange={setShowSearchPanel}>是否以搜索面板展示可选项</Checkbox>
+    </div>
+    <Space size="large">
+      <CascaderDemo showSearch={{ panelMode: showSearchPanel ? 'select' : 'cascader' }} />
+      <CascaderDemo  showSearch={{ panelMode: showSearchPanel ? 'select' : 'cascader'}} mode="multiple" />
+    </Space>
+  </div>
 }
 
 export default App;
