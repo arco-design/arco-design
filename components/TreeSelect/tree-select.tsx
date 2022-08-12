@@ -33,6 +33,7 @@ import { NodeProps } from '../Tree/interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 
 function isEmptyValue(value) {
   return (
@@ -61,7 +62,7 @@ const TreeSelect: ForwardRefRenderFunction<
     defaultProps,
     componentConfig?.TreeSelect
   );
-
+  const refIsFirstRender = useIsFirstRender();
   const triggerRef = useRef<Trigger>();
   const treeRef = useRef(null);
   const refSelectView = useRef(null);
@@ -228,7 +229,7 @@ const TreeSelect: ForwardRefRenderFunction<
           treeRef.current.scrollIntoView(target.value);
         }
       });
-    } else {
+    } else if (!refIsFirstRender) {
       inputValue && tryUpdateInputValue('', 'optionListHide');
     }
   }, [popupVisible]);
