@@ -41,7 +41,7 @@ describe('Cascader search', () => {
         showSearch
       />
     );
-    fireEvent.click(wrapper.querySelector('.arco-cascader-view'));
+    fireEvent.click(wrapper.querySelector('.arco-cascader-view') as any);
     expect(wrapper.find(`${prefixCls}-list`)).toHaveLength(0);
     fireEvent.change(wrapper.container.querySelector('input') as Element, {
       target: { value: '1' },
@@ -63,5 +63,38 @@ describe('Cascader search', () => {
     );
     jest.runAllTimers();
     expect(wrapper.find(`${prefixCls}-list-item`)).toHaveLength(1);
+  });
+
+  it('showSearch.panelMode', async () => {
+    const wrapper = mountCascader(
+      <Cascader
+        placeholder="Please enter ..."
+        mode="multiple"
+        style={{ width: 300 }}
+        options={options}
+        showSearch={{ panelMode: 'select' }}
+      />
+    );
+    fireEvent.click(wrapper.querySelector('.arco-cascader-view') as any);
+
+    jest.runAllTimers();
+    expect(wrapper.find(`${prefixCls}-list-search-item`)).toHaveLength(1);
+  });
+
+  it('showSearch.renderOption', async () => {
+    const wrapper = mountCascader(
+      <Cascader
+        placeholder="Please enter ..."
+        style={{ width: 300 }}
+        options={options}
+        showSearch={{ panelMode: 'select', renderOption: () => 'aaa' }}
+      />
+    );
+    fireEvent.click(wrapper.querySelector('.arco-cascader-view') as any);
+    jest.runAllTimers();
+    expect(
+      wrapper.querySelector(`${prefixCls}-list-search-item .arco-cascader-list-item-label`)
+        ?.textContent
+    ).toBe('aaa');
   });
 });

@@ -67,15 +67,18 @@ export interface CascaderProps<T = any>
    * 使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容
    * 传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。
    * 传入 `{ panelMode: 'select' }` 以搜索面板形式展示可选项 (`2.39.0`)
+   * `renderOption` 自定义渲染搜索项 (`2.39.0`)
    * @en
    * Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,
    * `{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.
    * `{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)
+   * `renderOption` Custom rendering search option (`2.39.0`)
    */
   showSearch?:
     | boolean
     | {
         panelMode?: 'cascader' | 'select';
+        renderOption?: (inputValue: string, option: NodeProps<T>) => ReactNode;
         retainInputValue?: boolean;
         retainInputValueWhileSelect?: boolean;
       };
