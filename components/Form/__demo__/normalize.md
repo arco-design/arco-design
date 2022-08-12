@@ -23,6 +23,7 @@ const App = () => {
       <FormItem
         label="Number"
         extra="Please enter number"
+        autoComplete='off'
         field="number"
         rules={[{ required: true, message: 'Please enter number' }]}
         normalize={(value) => {

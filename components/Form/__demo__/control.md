@@ -127,6 +127,7 @@ function App() {
         ref={formRef}
         {...formItemLayout}
         size={size}
+        autoComplete='off'
         initialValues={{
           slider: 20,
           'a.b[0].c': ['b'],

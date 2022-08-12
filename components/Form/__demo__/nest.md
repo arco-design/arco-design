@@ -23,6 +23,7 @@ function App() {
     <div>
       <Form
         style={{ maxWidth: 650 }}
+        autoComplete='off'
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 18 }}
         onValuesChange={(_, values) => {

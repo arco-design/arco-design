@@ -98,6 +98,7 @@ function App() {
         ref={formRef}
         {...formItemLayout}
         size={size}
+        autoComplete='off'
         onValuesChange={onValuesChange}
         scrollToFirstError
       >

@@ -20,7 +20,7 @@ const FormItem = Form.Item;
 function App() {
   const [form] = Form.useForm();
   return (
-    <Form form={form} style={{ width: 600 }}>
+    <Form form={form} style={{ width: 600 }} autoComplete='off'>
       <Form.Item
         field="email"
         label="Email"

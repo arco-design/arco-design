@@ -24,6 +24,7 @@ function App() {
     <div>
       <Form
         ref={formRef}
+        autoComplete='off'
         style={{ width: 600 }}
         initialValues={{
           users: [

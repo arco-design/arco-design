@@ -19,7 +19,7 @@ const FormItem = Form.Item;
 
 const App = () => {
   return (
-    <Form style={{ width: 600 }}>
+    <Form style={{ width: 600 }} autoComplete='off'>
       <FormItem label="Username">
         <Input placeholder="please enter your username..." />
       </FormItem>

@@ -30,6 +30,7 @@ function App() {
           height: 300,
           overflow: 'auto',
         }}
+        autoComplete='off'
         initialValues={{ users: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] }}
       >
         <Form.List field="users">

@@ -26,6 +26,7 @@ function App() {
   const [layout, setLayout] = React.useState('horizontal');
   return (
     <Form
+      autoComplete='off'
       style={
         layout === 'inline'
           ? {

@@ -55,6 +55,7 @@ class App extends React.Component {
       <Form
         ref={(ref) => (this.form = ref)}
         style={{ maxWidth: 650 }}
+        autoComplete='off'
         onValuesChange={this.onValuesChange}
       >
         <FormItem label="姓名" required extra="请输入长度在 1 - 10 的名字，注意不要使用特殊符号。">

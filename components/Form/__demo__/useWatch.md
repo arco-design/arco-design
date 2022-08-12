@@ -24,7 +24,7 @@ function App() {
   const age = Form.useWatch('age', form);
   return (
     <div>
-      <Form form={form}>
+      <Form form={form} autoComplete='off'>
         <Form.Item label="Name" field="name">
           <Input placeholder="enter name" />
         </Form.Item>

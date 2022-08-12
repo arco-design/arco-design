@@ -23,6 +23,7 @@ function App() {
     <Form
       form={form}
       style={{ width: 320 }}
+      autoComplete='off'
       wrapperCol={{ span: 24 }}
       onValuesChange={(v, vs) => {
         console.log(v, vs);

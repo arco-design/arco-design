@@ -29,6 +29,7 @@ function App() {
       style={{
         width: 600,
       }}
+      autoComplete='off'
     >
       <FormItem
         label="Username"

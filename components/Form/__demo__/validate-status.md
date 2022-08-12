@@ -36,7 +36,7 @@ function App() {
   const [size, setSize] = React.useState('default');
   return (
     <div style={{ maxWidth: 650 }}>
-      <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} size={size}>
+      <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} autoComplete='off' size={size}>
         <div>
           <Radio.Group
             value={status}
