@@ -1,0 +1,24 @@
+.anchor-wrapper {
+  width: 160px;
+
+  :global(.arco-anchor) {
+    width: 100%;
+  }
+
+  :global(.arco-anchor-link) {
+    margin: 6px 0;
+  }
+
+  :global(.arco-anchor-link-title) {
+    font-size: 16px;
+    line-height: 36px;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+
+  :global(.arco-anchor-lineless .arco-anchor-link-active > .arco-anchor-link-title) {
+    background-color: rgba(var(--primary-6));
+    color: var(--color-white);
+  }
+}

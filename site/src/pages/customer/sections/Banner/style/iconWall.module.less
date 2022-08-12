@@ -1,0 +1,127 @@
+@icon-size-large: 64px;
+@icon-size-small: 44px;
+@wall-width: 230px;
+@wall-height: 310px;
+@horizontal-offset-large: (@wall-width - @icon-size-large) / 2;
+@horizontal-offset-small: @icon-size-small / 2;
+@vertical-offset-large: (@wall-height / 2) - @icon-size-large;
+@vertical-offset-small: (@wall-height / 2) - @icon-size-small;
+
+.icon-item(@index, @large) {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 10%);
+  background: var(--banner-icon-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: @icon-size-small;
+  height: @icon-size-small;
+  border-radius: 8px;
+  position: absolute;
+
+  & when (@large) {
+    width: @icon-size-large;
+    height: @icon-size-large;
+    line-height: @icon-size-large;
+    border-radius: 12px;
+  }
+}
+
+.icon-wall {
+  padding: 100px 0;
+  height: 100%;
+  box-sizing: border-box;
+
+  &-left {
+    padding-left: calc(50vw - 640px);
+  }
+
+  &-right {
+    padding-right: calc(50vw - 640px);
+  }
+
+  &-block {
+    position: relative;
+    width: @wall-width;
+    height: @wall-height;
+  }
+
+  &-item-0 {
+    .icon-item(0, false);
+
+    top: 0;
+  }
+
+  &-item-1 {
+    .icon-item(1, true);
+
+    top: @vertical-offset-large;
+  }
+
+  &-item-2 {
+    .icon-item(2, false);
+
+    bottom: @vertical-offset-small;
+  }
+
+  &-item-3 {
+    .icon-item(3, true);
+
+    bottom: 0;
+  }
+}
+
+.icon-wall-left {
+  .icon-wall-item-0 {
+    right: @horizontal-offset-small;
+  }
+
+  .icon-wall-item-1 {
+    left: 0;
+  }
+
+  .icon-wall-item-2 {
+    right: 0;
+  }
+
+  .icon-wall-item-3 {
+    left: @horizontal-offset-large;
+  }
+}
+
+.icon-wall-right {
+  .icon-wall-item-0 {
+    left: @horizontal-offset-small;
+  }
+
+  .icon-wall-item-1 {
+    right: 0;
+  }
+
+  .icon-wall-item-2 {
+    left: 0;
+  }
+
+  .icon-wall-item-3 {
+    right: @horizontal-offset-large;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icon-wall {
+    display: none;
+  }
+}
+
+:global(html.rtl) {
+  .icon-wall {
+    &-left {
+      padding-left: 0;
+      padding-right: calc(50vw - 640px);
+    }
+
+    &-right {
+      padding-right: 0;
+      padding-left: calc(50vw - 640px);
+    }
+  }
+}

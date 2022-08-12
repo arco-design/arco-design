@@ -1,10 +1,7 @@
-git submodule init
-git submodule update
-
-cd site/main
+cd site
 yarn
 
-cd ../..
+cd ..
 yarn
 yarn icon
 yarn build

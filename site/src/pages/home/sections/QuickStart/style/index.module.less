@@ -1,0 +1,217 @@
+@import '../../../style/common.less';
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 580px;
+  box-sizing: border-box;
+  padding: 64px 56px;
+  background: var(--color-neutral-1);
+  border-radius: 8px;
+  transition: var(--home-transition-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    background: var(--color-bg-1);
+    box-shadow: var(--home-box-shadow);
+  }
+
+  &-icon {
+    &-code {
+      background-color: #000;
+
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &-title {
+    margin-top: 32px;
+    color: var(--color-text-1);
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &-desc {
+    margin-top: 16px;
+    width: 80%;
+    text-align: center;
+    color: var(--color-text-2);
+  }
+
+  &-content {
+    margin-top: 60px;
+    width: 100%;
+  }
+}
+
+.card-dark {
+  background: #383f47;
+
+  &:hover {
+    background: hsl(212deg 10% 30%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 6%), 0 3px 3px rgba(78, 89, 105, 20%);
+  }
+
+  .card-icon {
+    background-color: #000;
+  }
+
+  .card-title {
+    color: #fff;
+  }
+
+  .card-desc {
+    color: #c9cdd4;
+  }
+}
+
+.design {
+  &-terminal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-radius: 4px;
+    background: #191919;
+    box-shadow: 0 2px 3px rgba(78, 89, 105, 14%);
+    color: #fff !important;
+    cursor: pointer;
+    transition: var(--home-transition-1);
+
+    &:hover {
+      background: rgba(#191919, 0.9);
+    }
+
+    &-content {
+      margin-left: 12px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &-figma-logo {
+    height: 26px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 18px;
+      margin-right: 8px;
+    }
+
+    &-text {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+body[arco-theme='dark'] {
+  .card {
+    background: var(--color-bg-1);
+    border: 1px solid var(--home-color-border);
+    box-shadow: var(--home-box-shadow);
+
+    &:hover {
+      background: var(--home-color-bg-1);
+      border-color: rgba(255, 255, 255, 14%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 32%);
+    }
+  }
+
+  .card-title {
+    color: var(--color-text-1);
+  }
+
+  .card-desc {
+    color: var(--color-text-2);
+  }
+
+  .design-terminal {
+    background: rgb(var(--primary-6));
+
+    &:hover {
+      background: rgba(var(--primary-6), 0.9);
+    }
+  }
+}
+
+:global(.home-arco-lang) {
+  .card-desc {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      margin-top: 16px;
+      font-size: 16px;
+    }
+
+    &-desc {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 20px;
+      width: 100%;
+    }
+
+    &-content {
+      margin-top: 24px;
+    }
+  }
+
+  .design {
+    &-terminal {
+      height: 44px;
+    }
+  }
+
+  :global(.home-arco-lang) {
+    .card-desc {
+      width: 100%;
+    }
+
+    .design-figma-logo-text {
+      display: none;
+    }
+  }
+}
+
+:global(html.rtl) {
+  .design {
+    &-terminal {
+      &-content {
+        margin-right: 12px;
+        margin-left: 0;
+      }
+    }
+
+    &-figma-logo {
+      svg {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
+}
