@@ -16,7 +16,7 @@ A Slider component for displaying current value and intervals in range.
 |---|---|---|---|---|
 |disabled|Whether to disable the component|boolean |`-`|-|
 |onlyMarkValue|Whether only the mark value can be selected|boolean |`-`|-|
-|reverse|Reverse axis|boolean |`-`|-|
+|reverse|Reverse axis, default `true` in `rtl`|boolean |`-`|-|
 |showTicks|Whether to display step tick marks|boolean |`-`|-|
 |tooltipVisible|If true, `Tooltip` will show always, or it will hidden anyway,even if dragging or hovering|boolean |`-`|-|
 |vertical|Whether to display the slider in the vertical direction|boolean |`-`|-|

@@ -16,7 +16,7 @@
 |---|---|---|---|---|
 |disabled|是否禁用|boolean |`-`|-|
 |onlyMarkValue|只能选择标签值，此时step将会被忽略|boolean |`-`|-|
-|reverse|反向坐标轴|boolean |`-`|-|
+|reverse|反向坐标轴, `rtl` 场景默认为 `true`|boolean |`-`|-|
 |showTicks|是否显示步长刻度线|boolean |`-`|-|
 |tooltipVisible|控制 tooltip 的展示。设置为 `true` 时，将一直展示 tooltip。设置为 `false` 时，将一直隐藏 tooltip。|boolean |`-`|-|
 |vertical|是否竖直方向|boolean |`-`|-|
