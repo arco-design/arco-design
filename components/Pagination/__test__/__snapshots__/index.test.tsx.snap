@@ -10,6 +10,7 @@ exports[`ConfigProvider componentConfig.Pagination default 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -28,6 +29,7 @@ exports[`ConfigProvider componentConfig.Pagination default 1`] = `
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -57,6 +59,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally 1`] = 
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -75,6 +78,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally 1`] = 
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -104,6 +108,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally and co
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -122,6 +127,7 @@ exports[`ConfigProvider componentConfig.Pagination set className globally and co
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -152,6 +158,7 @@ exports[`ConfigProvider componentConfig.Pagination set data-* property 1`] = `
     <li
       aria-label="上一页"
       class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -170,6 +177,7 @@ exports[`ConfigProvider componentConfig.Pagination set data-* property 1`] = `
     <li
       aria-label="下一页"
       class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
