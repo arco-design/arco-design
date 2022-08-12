@@ -19,7 +19,13 @@ import Tree from '../Tree';
 import { ConfigContext } from '../ConfigProvider';
 import { getAllCheckedKeysByCheck } from '../Tree/util';
 import SelectView from '../_class/select-view';
-import { TreeSelectProps, LabelValue, DefaultFieldNames, RefTreeSelectType } from './interface';
+import {
+  TreeSelectProps,
+  LabelValue,
+  DefaultFieldNames,
+  RefTreeSelectType,
+  InputValueChangeReason,
+} from './interface';
 import useTreeData from './hook/useTreeData';
 import useKeyCache from './hook/useKeyCache';
 import TreeList from './tree-list';
@@ -27,6 +33,7 @@ import { NodeProps } from '../Tree/interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 
 function isEmptyValue(value) {
   return (
@@ -55,7 +62,7 @@ const TreeSelect: ForwardRefRenderFunction<
     defaultProps,
     componentConfig?.TreeSelect
   );
-
+  const refIsFirstRender = useIsFirstRender();
   const triggerRef = useRef<Trigger>();
   const treeRef = useRef(null);
   const refSelectView = useRef(null);
@@ -66,8 +73,17 @@ const TreeSelect: ForwardRefRenderFunction<
   const [popupVisible, setPopupVisible] = useMergeValue<boolean>(false, {
     value: props.popupVisible,
   });
-  const [inputValue, setInputValue] = useState<string>();
-
+  const [inputValue, setInputValue] = useMergeValue<string>(
+    undefined, // Compatible with previous behavior 'undefined as default'
+    {
+      value: 'inputValue' in props ? props.inputValue || '' : undefined,
+    }
+  );
+  // 触发 onInputValueChange 回调的值
+  const refOnInputChangeCallbackValue = useRef(inputValue);
+  // 触发 onInputValueChange 回调的原因
+  const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
+  const { onInputValueChange } = props;
   const [value, setValue] = useStateValue(props, key2nodeProps, indeterminateKeys);
 
   const multiple = props.multiple || props.treeCheckable;
@@ -81,6 +97,19 @@ const TreeSelect: ForwardRefRenderFunction<
     globalTreeSelectIndex++;
     return id;
   }, []);
+
+  // 尝试更新 inputValue，并触发 onInputValueChange
+  const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
+    if (
+      value !== refOnInputChangeCallbackValue.current ||
+      reason !== refOnInputChangeCallbackReason.current
+    ) {
+      setInputValue(value);
+      refOnInputChangeCallbackValue.current = value;
+      refOnInputChangeCallbackReason.current = reason;
+      onInputValueChange && onInputValueChange(value, reason);
+    }
+  };
 
   const handleSearch = useCallback(
     (inputText) => {
@@ -127,7 +156,7 @@ const TreeSelect: ForwardRefRenderFunction<
     }
 
     if (props.multiple && !retainInputValueWhileSelect) {
-      setInputValue('');
+      tryUpdateInputValue('', 'optionChecked');
       handleSearch('');
     }
   };
@@ -193,14 +222,16 @@ const TreeSelect: ForwardRefRenderFunction<
   }, [inputValue, key2nodeProps, hitKeys]);
 
   useEffect(() => {
-    popupVisible &&
+    if (popupVisible) {
       setTimeout(() => {
         const target = value[0];
         if (treeRef.current && target) {
           treeRef.current.scrollIntoView(target.value);
         }
       });
-    inputValue && setInputValue('');
+    } else if (!refIsFirstRender) {
+      inputValue && tryUpdateInputValue('', 'optionListHide');
+    }
   }, [popupVisible]);
 
   useImperativeHandle(ref, () => ({
@@ -320,8 +351,8 @@ const TreeSelect: ForwardRefRenderFunction<
               onFocus={(e) => {
                 e && e.stopPropagation();
               }}
-              onChangeInputValue={(input) => {
-                setInputValue(input);
+              onChangeInputValue={(value) => {
+                tryUpdateInputValue(value, 'manual');
               }}
             />
           )}
