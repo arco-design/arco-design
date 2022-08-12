@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, Typography, Input } from '@self';
+import { Tabs, Typography, Input, Button } from '@self';
 import { IconEdit } from '@self/icon';
 
 const TabPane = Tabs.TabPane;
@@ -20,12 +20,12 @@ const TabTitle = (props: { title: string }) => {
       {editing ? (
         <Input
           autoFocus
-          style={{ width: 200, margin: '10px' }}
+          style={{ width: 30, margin: '10px' }}
           value={title}
           onBlur={() => setEditing(false)}
         />
       ) : (
-        <div style={{ width: 200 }}>
+        <div style={{ width: 30 }}>
           {title}
           <IconEdit style={{ marginLeft: 10 }} onClick={() => setEditing(true)} />
         </div>
@@ -62,7 +62,7 @@ function DemoTabs() {
   };
 
   return (
-    <div style={{ width: '600px' }}>
+    <div>
       <Tabs
         editable
         type="card-gutter"
@@ -70,6 +70,7 @@ function DemoTabs() {
         onAddTab={handleAddTab}
         onDeleteTab={handleDeleteTab}
         onChange={setActiveTab}
+        extra={<Button>我是一个超级超级超级长的Button</Button>}
       >
         {tabs.map((x, i) => (
           <TabPane destroyOnHide key={x.key} title={<TabTitle title={x.title} />}>

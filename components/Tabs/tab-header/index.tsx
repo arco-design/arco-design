@@ -71,6 +71,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const [headerWrapperRef, headerWrapperSize, setHeaderWrapperSize] = useDomSize<HTMLDivElement>();
   const [headerRef, headerSize, setHeaderSize] = useDomSize<HTMLDivElement>();
   const [scrollWrapperRef, scrollWrapperSize, setScrollWrapperSize] = useDomSize<HTMLDivElement>();
+  const [extraRef, extraSize, setExtraSize] = useDomSize<HTMLDivElement>();
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -110,13 +111,15 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
+    const headerContentHeight = scrollWrapperSize.height - extraSize.height;
+    const headerContentWidth = scrollWrapperSize.width - extraSize.width;
     const res =
       mergeProps.direction === 'vertical'
-        ? scrollWrapperSize.height < headerSize.height
-        : scrollWrapperSize.width < headerSize.width;
+        ? headerContentHeight < headerSize.height
+        : headerContentWidth < headerSize.width;
 
     return res;
-  }, [mergeProps.direction, scrollWrapperSize, headerSize]);
+  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize]);
 
   const updateScrollWrapperSize = () => {
     if (scrollWrapperRef.current) {
@@ -144,6 +147,17 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     const dom = entry[0] && entry[0].target;
     if (dom) {
       setHeaderSize({
+        height: (dom as HTMLElement).offsetHeight,
+        width: (dom as HTMLElement).offsetWidth,
+        domRect: dom.getBoundingClientRect(),
+      });
+    }
+  });
+
+  const onExtraResize = throttleByRaf((entry) => {
+    const dom = entry[0] && entry[0].target;
+    if (dom) {
+      setExtraSize({
         height: (dom as HTMLElement).offsetHeight,
         width: (dom as HTMLElement).offsetWidth,
         domRect: dom.getBoundingClientRect(),
@@ -434,10 +448,12 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           />
         )}
         {((isEditable && isScrollable) || extra) && (
-          <div className={`${prefixCls}-header-extra`}>
-            {isScrollable && renderAddIcon(isEditable)}
-            {extra}
-          </div>
+          <ResizeObserver onResize={onExtraResize}>
+            <div className={`${prefixCls}-header-extra`} ref={extraRef}>
+              {isScrollable && renderAddIcon(isEditable)}
+              {extra}
+            </div>
+          </ResizeObserver>
         )}
       </div>
     </div>
