@@ -45,7 +45,7 @@ function ModalForm(props) {
   return (
     <div>
       <Modal visible title="Add" footer={null}>
-        <Form id="modalForm">
+        <Form id="modalForm" autoComplete="off">
           <Form.Item field="email" label="Email">
             <Input />
           </Form.Item>

@@ -25,6 +25,7 @@ function App() {
       form={form}
       style={{ width: 600 }}
       initialValues={{ name: 'admin' }}
+      autoComplete="off"
       onValuesChange={(v, vs) => {
         console.log(v, vs);
       }}

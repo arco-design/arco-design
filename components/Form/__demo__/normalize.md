@@ -24,6 +24,7 @@ const App = () => {
         label="Number"
         extra="Please enter number"
         field="number"
+        autoComplete="off"
         rules={[{ required: true, message: 'Please enter number' }]}
         normalize={(value) => {
           if (value) {
