@@ -33,7 +33,7 @@ module.exports = {
     config.resolve.alias['@arco-design/web-react'] = dirComponent;
     config.resolve.extensions.push('.tsx');
 
-    config.resolve.modules = ['node_modules', path.resolve(__dirname, '../site/main/node_modules')];
+    config.resolve.modules = ['node_modules', path.resolve(__dirname, '../site/node_modules')];
     // 解决 webpack 编译警告
     config.module.rules[0].use[0].options.plugins.push([
       '@babel/plugin-proposal-private-property-in-object',

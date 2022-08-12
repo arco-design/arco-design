@@ -1,0 +1,138 @@
+@border-color: var(--color-border);
+
+.arco-page {
+  display: flex;
+  width: 100%;
+
+  .content-wrapper {
+    position: relative;
+    padding-top: 60px;
+    min-height: 900px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .ac-anchor-wrapper {
+    background-color: var(--color-bg-1);
+    padding-top: 110px;
+  }
+
+  .code-preview h1,
+  .code-preview h2,
+  .code-preview h3,
+  .code-preview h4,
+  .code-preview h5,
+  .code-preview h6 {
+    font-weight: 500;
+  }
+
+  .code-preview h2 {
+    font-size: 20px;
+    margin-top: 48px;
+    margin-bottom: 12px;
+  }
+
+  .code-preview p {
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.ac-backtop-btn {
+  background: var(--color-bg-5) !important;
+  border: 1px solid var(--color-fill-3) !important;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 10%);
+}
+
+.site-page-tab {
+  position: absolute;
+  top: 180px;
+  right: 56px;
+  box-sizing: border-box;
+}
+
+.arco-site-share-link {
+  position: absolute;
+  top: 158px;
+  right: 96px;
+}
+
+.ac-nav-intro {
+  padding-right: 240px;
+  height: 194px;
+  border-bottom: 1px solid @border-color;
+  overflow: hidden;
+
+  p {
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 36px;
+      line-height: 20px;
+    }
+
+    &:last-child {
+      margin-top: 12px;
+      line-height: 20px;
+    }
+  }
+
+  .separator {
+    color: var(--color-text-4);
+    padding: 0 5px;
+    font-weight: 900;
+  }
+
+  strong {
+    color: var(--color-text-1);
+  }
+
+  h1 {
+    margin: 20px 0 0;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 45px;
+  }
+}
+
+.ac-spin-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+// 避免被自定义主题覆盖
+.ac-toolbar {
+  position: absolute !important;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  box-sizing: border-box;
+  padding-top: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .ac-nav-intro {
+    padding-right: 0;
+  }
+}
+
+html.rtl {
+  .ac-nav-intro {
+    padding-left: 240px;
+    padding-right: 0;
+  }
+
+  .ac-toolbar {
+    right: unset;
+    left: 46px;
+  }
+}
