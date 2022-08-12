@@ -310,4 +310,28 @@ describe('Image', () => {
       `scale(1, 1)`
     );
   });
+
+  it('support imgAttribute correctly', () => {
+    const onLoad = jest.fn();
+    const wrapper = render(
+      <DemoImage
+        src={imgSrc}
+        imgAttributes={{ className: 'img-elem', onLoad, style: { background: 'red' } }}
+      />
+    );
+
+    expect(wrapper.find('img')).toHaveLength(0);
+
+    act(() => {
+      openPreview(wrapper);
+      jest.runAllTimers();
+    });
+
+    expect(wrapper.find('img')[0].classList).toContain('img-elem');
+    expect(wrapper.find('img')[0].style.background).toEqual('red');
+    act(() => {
+      updateImg(wrapper);
+    });
+    expect(onLoad).toHaveBeenCalledTimes(1);
+  });
 });

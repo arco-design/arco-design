@@ -131,4 +131,49 @@ describe('mount and unmount', () => {
     jest.runAllTimers();
     expect(wrapper1.find('img')[0].getAttribute('src')).toEqual(srcList[2]);
   });
+
+  it('transparent transmission of previewProps', () => {
+    const mockLoad = jest.fn();
+    const mockError = jest.fn();
+    const wrapper = render(
+      <Image.PreviewGroup>
+        <Image
+          src={srcList[0]}
+          previewProps={{ className: 'preview-0', imgAttributes: { onLoad: mockLoad } }}
+        />
+        <Image
+          src="error-url"
+          previewProps={{ className: 'preview-1', imgAttributes: { onError: mockError } }}
+        />
+      </Image.PreviewGroup>
+    );
+
+    // 检查是否透传至第一个Preview。
+    act(() => {
+      updateImg(wrapper, 'click');
+    });
+    expect(wrapper.find('.arco-image-preview')[0].classList).toContain('preview-0');
+
+    act(() => {
+      fireEvent.load(wrapper.find('.arco-image-preview img')[0]);
+      jest.runAllTimers();
+    });
+    expect(mockLoad).toBeCalledTimes(1);
+
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-image-preview-close-btn')[0]);
+      jest.runAllTimers();
+    });
+
+    // 检查是否透传至第二个Preview。
+    act(() => {
+      updateImg(wrapper, 'click', 1);
+    });
+    expect(wrapper.find('.arco-image-preview')[0].classList).toContain('preview-1');
+    act(() => {
+      fireEvent.error(wrapper.find('.arco-image-preview img')[0]);
+      jest.runAllTimers();
+    });
+    expect(mockError).toBeCalledTimes(1);
+  });
 });
