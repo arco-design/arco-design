@@ -32,6 +32,7 @@ Display options in a multi-level cascading dropdown component.
 |checkedStrategy|Customize the return value<br/> parent:Only return the parent node when all child nodes are selected <br/> child: Return child nodes|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|Set the way to display the next level menu. One of hover and click|'click' \| 'hover' |`click`|-|
 |mode|Set mode|'multiple' |`-`|-|
+|showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |virtualListProps|virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
@@ -50,7 +51,6 @@ Display options in a multi-level cascading dropdown component.
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|ReactNode \| null |`-`|-|
 |renderFooter|Custom rendering the `footer` of each level menu.|(level: number, activeOption: NodeProps&lt;T&gt; \| null) =&gt; ReactNode |`-`|-|
 |renderOption|Custom rendering `option`|(option: NodeProps&lt;T&gt;, level: number) =&gt; ReactNode |`-`|-|
-|showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.|boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |value|To set value|(string \| string[])[] |`-`|-|
 |dropdownColumnRender|Customize columns of the menu.|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|

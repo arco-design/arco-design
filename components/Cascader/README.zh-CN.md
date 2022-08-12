@@ -32,6 +32,7 @@
 |checkedStrategy|定制回填方式 <br/> parent: 子节点都被选中时候返回父节点 <br/> child: 返回子节点|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|展开下一级方式|'click' \| 'hover' |`click`|-|
 |mode|是否开启多选|'multiple' |`-`|-|
+|showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。传入 `{ panelMode: 'select' }` 以搜索面板形式展示可选项 (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |virtualListProps|传递虚拟滚动属性。开启虚拟滚动后，每列级联菜单的会存在默认宽度，可通过 `dropdownMenuColumnStyle` 进行样式调整|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|
@@ -50,7 +51,6 @@
 |removeIcon|多选时配置选中项的删除图标。当传入`null`，不显示删除图标。|ReactNode \| null |`-`|-|
 |renderFooter|定义每一层级的 `footer`。参数：level: 当前层级, activeOption: 当前点击的节点。返回 `null` 不展示|(level: number, activeOption: NodeProps&lt;T&gt; \| null) =&gt; ReactNode |`-`|-|
 |renderOption|自定义展示 `option`|(option: NodeProps&lt;T&gt;, level: number) =&gt; ReactNode |`-`|-|
-|showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。|boolean \| { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |value|选中值|(string \| string[])[] |`-`|-|
 |dropdownColumnRender|自定义下拉菜单每一列的展示。|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
