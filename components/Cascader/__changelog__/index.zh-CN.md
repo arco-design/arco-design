@@ -1,3 +1,16 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件的搜索面板存在 `value` 相同的选项时，开启虚拟滚动会出现选项渲染错乱的问题。([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
 ## 2.37.0
 
 2022-07-08

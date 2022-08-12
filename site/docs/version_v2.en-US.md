@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.39.0
+
+2022-08-12
+
+### 🚨 Important attention
+
+- ** In order to fix the bug that the `Tag` component exceeds the omission and the close icon is blocked, a new layer of DOM structure is added inside, and `children` will be placed under `.arco-tag-content` **
+
+### 💎 Enhancement
+
+- `Pagination` supports switching page numbers via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+- `Collapse` supports switching the current panel selection via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+- `The `Tag` component supports closing tags via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+
+### 🆕 Feature
+
+- `Image.Preview` adds the `imgAttributes` parameter to transparently transmit the properties to the `img` tag in the preview modal([#1274](https://github.com/arco-design/arco-design/pull/1274))
+- The `Cascader` component supports the `showSearch.showSearchPanel` property to control whether to display options in the search panel([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `TreeSelect` add properties `inputValue` and `onInputValueChange`.([#1151](https://github.com/arco-design/arco-design/pull/1151))
+
+### 🐛 BugFix
+
+- Fixed the bug that the width of the `extra` node of Tabs caused an error in the calculation of the head scrolling threshold.([#1275](https://github.com/arco-design/arco-design/pull/1275))
+- Fix the problem that the `DatePicker.RangePicker` component is wrong to judge whether it is out of range in a critical situation.([#1273](https://github.com/arco-design/arco-design/pull/1273))
+- Fixed `Table` component not rendering correctly when data format is `[['1']], ['2']]`.([#1270](https://github.com/arco-design/arco-design/pull/1270))
+- Fix the bug that the ellipsis is not displayed after the `Tag` component text content exceeds.([#1268](https://github.com/arco-design/arco-design/pull/1268))
+- Fixed the issue that when virtual scrolling is enabled, when options with the same value exist in the search panel of the `Cascader` component, the options are rendered incorrectly.([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
 ## 2.38.1
 
 2022-08-05

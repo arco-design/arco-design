@@ -2,6 +2,36 @@
 changelog: true
 ---
 
+## 2.39.0
+
+2022-08-12
+
+### 🚨 重点注意
+
+- ** 为了修复 `Tag` 组件超出省略以及关闭图标被遮挡的 bug，内部新增了一层 DOM 结构，`children` 将会被放置在 `.arco-tag-content` 下 **
+
+
+### 💎 功能优化
+
+- `Pagination` 组件支持通过键盘事件切换页码([#1276](https://github.com/arco-design/arco-design/pull/1276))
+- `Collapse` 组件支持通过键盘事件切换当前面板选中([#1276](https://github.com/arco-design/arco-design/pull/1276))
+- `Tag` 组件支持通过键盘事件关闭标签([#1276](https://github.com/arco-design/arco-design/pull/1276))
+
+### 🆕 功能升级
+
+- `Image.Preview` 新增 `imgAttributes` 参数，将属性透传至弹窗中的 `img` 标签上([#1274](https://github.com/arco-design/arco-design/pull/1274))
+- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `TreeSelect` 新增 `inputValue` 和 `onInputValueChange` 属性。([#1151](https://github.com/arco-design/arco-design/pull/1151))
+
+### 🐛 问题修复
+
+- 修复 `Tabs` 组件 `extra` 节点宽度导致头部滚动临界值计算错误的 bug([#1275](https://github.com/arco-design/arco-design/pull/1275))
+- 修复 `DatePicker.RangePicker` 组件在临界情况判断是否超出范围有误的问题。([#1273](https://github.com/arco-design/arco-design/pull/1273))
+- 修复 `Table` 组件在 data 格式为 `[['1']], ['2']]` 时不能正确渲染的问题。([#1270](https://github.com/arco-design/arco-design/pull/1270))
+- 修复 `Tag` 组件文本内容超出后未显示省略号的 bug。([#1268](https://github.com/arco-design/arco-design/pull/1268))
+- 修复 `Cascader` 组件的搜索面板存在 `value` 相同的选项时，开启虚拟滚动会出现选项渲染错乱的问题。([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
 ## 2.38.1
 
 2022-08-05

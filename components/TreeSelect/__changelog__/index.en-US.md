@@ -1,3 +1,11 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 Feature
+
+- `TreeSelect` add properties `inputValue` and `onInputValueChange`.([#1151](https://github.com/arco-design/arco-design/pull/1151))
+
 ## 2.38.0
 
 2022-07-29
