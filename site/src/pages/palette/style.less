@@ -1,0 +1,58 @@
+.color-palette-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+
+  &:hover {
+    .color-palette-value {
+      opacity: 1;
+    }
+
+    // .color-name,
+    // .color-contrast {
+    //   height: 23px;
+    //   line-height: 23px;
+    //   opacity: 1;
+    //   font-size: 12px;
+    // }
+  }
+}
+
+.color-palette-value {
+  transition: all 0.2s;
+  opacity: 0;
+  font-size: 12px;
+}
+
+.color-palette-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.05, 1.05);
+  }
+
+  &:first-child {
+    border-radius: 6px 6px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 6px 6px;
+  }
+
+  .color-name,
+  .color-contrast {
+    transition: all 0.2s;
+  }
+
+  .color-contrast {
+    opacity: 0;
+  }
+}

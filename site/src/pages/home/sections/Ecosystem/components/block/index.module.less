@@ -1,0 +1,176 @@
+.ecosystem-block {
+  width: 380px;
+  height: 420px;
+  padding: 48px 0 0 48px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: var(--color-neutral-1);
+  position: relative;
+  overflow: hidden;
+  transition: var(--home-transition-base);
+  cursor: pointer;
+
+  &-icon {
+    vertical-align: top;
+    height: 32px;
+    transition: var(--home-transition-2);
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  &-title {
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 800;
+    margin-top: 8px;
+    color: var(--color-text-1);
+  }
+
+  &-description {
+    width: 270px;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--color-text-2);
+  }
+
+  &-image {
+    position: absolute;
+    width: 400px;
+    bottom: -42px;
+    transition: var(--home-transition-1);
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: #fff;
+    box-shadow: var(--home-box-shadow);
+
+    .ecosystem-block-icon {
+      opacity: 1;
+
+      &-placeholder {
+        opacity: 0;
+      }
+    }
+
+    .ecosystem-block-image {
+      box-shadow: 20px 32px 56px rgba(78, 89, 105, 40%);
+      transform: translateY(-16px);
+    }
+  }
+}
+
+body[arco-theme='dark'] {
+  .ecosystem-block {
+    box-shadow: var(--home-box-shadow);
+    background: var(--color-bg-1);
+    border: 1px solid var(--home-color-border);
+    height: 220px;
+
+    &::before {
+      opacity: 0.6;
+    }
+
+    &-image {
+      display: none;
+    }
+
+    &:hover {
+      background: var(--home-color-bg-1);
+      border: 1px solid rgba(255, 255, 255, 14%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 32%);
+    }
+  }
+}
+
+:global(.home-arco-lang) {
+  .ecosystem-block {
+    height: 440px;
+  }
+
+  &[arco-theme='dark'] {
+    .ecosystem-block {
+      height: 240px;
+    }
+  }
+}
+
+:global(html.rtl) {
+  .ecosystem-block {
+    padding: 48px 48px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ecosystem-block {
+    width: 100%;
+    height: 104px;
+    padding: 16px 20px;
+
+    &:hover {
+      border: none;
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    &-icon {
+      width: 28px;
+      height: 28px;
+      opacity: 1;
+
+      &-placeholder {
+        opacity: 0;
+      }
+    }
+
+    &-title {
+      font-size: 16px;
+      line-height: 24px;
+      flex: 1;
+      margin-top: 0;
+    }
+
+    &-description {
+      width: unset;
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    &-image {
+      display: none;
+    }
+  }
+
+  body[arco-theme='dark'] {
+    .ecosystem-block {
+      height: 104px;
+    }
+  }
+
+  :global(.home-arco-lang) {
+    .ecosystem-block {
+      height: 124px;
+    }
+
+    &[arco-theme='dark'] {
+      .ecosystem-block {
+        height: 124px;
+      }
+    }
+  }
+}
