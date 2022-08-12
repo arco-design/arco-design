@@ -817,10 +817,10 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       >
                         <div
                           class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                          title="b"
                         >
                           <span
-                            class="arco-input-tag-tag-content"
-                            title="b"
+                            class="arco-tag-content"
                           >
                             b
                           </span>
@@ -2676,10 +2676,10 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       >
                         <div
                           class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                          title="b"
                         >
                           <span
-                            class="arco-input-tag-tag-content"
-                            title="b"
+                            class="arco-tag-content"
                           >
                             b
                           </span>
@@ -4031,7 +4031,11 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
           id="searchForm-email_input"
         >
-          email: null
+          <span
+            class="arco-tag-content"
+          >
+            email: null
+          </span>
         </div>
       </div>
       <div

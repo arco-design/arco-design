@@ -315,7 +315,11 @@ exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
         >
-          Beijing
+          <span
+            class="arco-tag-content"
+          >
+            Beijing
+          </span>
         </div>
       </label>
       <label
@@ -328,7 +332,11 @@ exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-checked arco-tag-size-default"
         >
-          Shanghai
+          <span
+            class="arco-tag-content"
+          >
+            Shanghai
+          </span>
         </div>
       </label>
       <label
@@ -341,7 +349,11 @@ exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-checked arco-tag-size-default"
         >
-          Guangzhou
+          <span
+            class="arco-tag-content"
+          >
+            Guangzhou
+          </span>
         </div>
       </label>
     </span>

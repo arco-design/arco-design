@@ -888,7 +888,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          ArcoDesign
+          <span
+            class="arco-tag-content"
+          >
+            ArcoDesign
+          </span>
         </div>
       </div>
       <div
@@ -898,7 +902,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          Design System
+          <span
+            class="arco-tag-content"
+          >
+            Design System
+          </span>
         </div>
       </div>
       <div
@@ -908,7 +916,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          Component
+          <span
+            class="arco-tag-content"
+          >
+            Component
+          </span>
         </div>
       </div>
       <div
@@ -917,7 +929,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          Design Lab
+          <span
+            class="arco-tag-content"
+          >
+            Design Lab
+          </span>
         </div>
       </div>
     </div>
@@ -1523,7 +1539,11 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <div
             class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default arco-tag-rtl"
           >
-            red
+            <span
+              class="arco-tag-content"
+            >
+              red
+            </span>
             <span
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
@@ -1553,7 +1573,11 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <div
             class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default arco-tag-rtl"
           >
-            arcoblue
+            <span
+              class="arco-tag-content"
+            >
+              arcoblue
+            </span>
             <span
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
@@ -1582,7 +1606,11 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <div
             class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default arco-tag-rtl"
           >
-            green
+            <span
+              class="arco-tag-content"
+            >
+              green
+            </span>
             <span
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
