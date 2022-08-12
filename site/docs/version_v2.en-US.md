@@ -8,7 +8,7 @@ changelog: true
 
 ### 🚨 Important attention
 
-- ** In order to fix the bug that the `Tag` component exceeds the omission and the close icon is blocked, a new layer of DOM structure is added inside, and `children` will be placed under `.arco-tag-content` **
+- **In order to fix the bug that the `Tag` component exceeds the omission and the close icon is blocked, a new layer of DOM structure is added inside, and `children` will be placed under `.arco-tag-content`**
 
 ### 💎 Enhancement
 
