@@ -77,6 +77,10 @@
     &:not(:last-child) {
       margin-right: @pagination-item-spacing;
     }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(~'@{arco-cssvars-prefix}-color-primary-light-3');
+    }
   }
 
   &-item-prev,

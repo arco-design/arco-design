@@ -1,4 +1,5 @@
 import React, { useState, useContext, forwardRef, CSSProperties } from 'react';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 import cs from '../_util/classNames';
 import IconClose from '../../icon/react-icon/IconClose';
 import IconLoading from '../../icon/react-icon/IconLoading';
@@ -31,6 +32,7 @@ const defaultProps: TagProps = {
 
 function Tag(baseProps: TagProps, ref) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  const getKeyboardEvents = useKeyboardEvent();
   const props = useMergeProps<TagProps>(baseProps, defaultProps, componentConfig?.Tag);
   const {
     className,
@@ -130,6 +132,8 @@ function Tag(baseProps: TagProps, ref) {
           className={`${prefixCls}-close-btn`}
           onClick={onHandleClose}
           role="button"
+          tabIndex={0}
+          {...getKeyboardEvents({ onPressEnter: onHandleClose })}
           aria-label="Close"
         >
           {closeIcon !== undefined ? closeIcon : <IconClose />}

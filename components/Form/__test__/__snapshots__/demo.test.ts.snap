@@ -825,6 +825,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                             aria-label="Close"
                             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                             role="button"
+                            tabindex="0"
                           >
                             <svg
                               aria-hidden="true"
@@ -4598,6 +4599,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
               <li
                 aria-label="上一页"
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+                tabindex="-1"
               >
                 <svg
                   aria-hidden="true"
@@ -4617,12 +4619,14 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                 aria-current="true"
                 aria-label="第 1 页"
                 class="arco-pagination-item arco-pagination-item-active"
+                tabindex="0"
               >
                 1
               </li>
               <li
                 aria-label="下一页"
                 class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+                tabindex="-1"
               >
                 <svg
                   aria-hidden="true"
