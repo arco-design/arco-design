@@ -1,3 +1,11 @@
+## 2.39.0
+
+2022-08-12
+
+### 💎 Enhancement
+
+- `Pagination` supports switching page numbers via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+
 ## 2.36.0
 
 2022-06-24

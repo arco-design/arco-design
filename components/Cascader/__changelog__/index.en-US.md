@@ -1,3 +1,16 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 Feature
+
+- The `Cascader` component supports the `showSearch.showSearchPanel` property to control whether to display options in the search panel([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
+
+### 🐛 BugFix
+
+- Fixed the issue that when virtual scrolling is enabled, when options with the same value exist in the search panel of the `Cascader` component, the options are rendered incorrectly.([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
 ## 2.37.0
 
 2022-07-08

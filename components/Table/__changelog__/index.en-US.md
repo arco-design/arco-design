@@ -1,3 +1,11 @@
+## 2.39.0
+
+2022-08-12
+
+### 🐛 BugFix
+
+- Fixed `Table` component not rendering correctly when data format is `[['1']], ['2']]`.([#1270](https://github.com/arco-design/arco-design/pull/1270))
+
 ## 2.38.0
 
 2022-07-29
