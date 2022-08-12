@@ -62,6 +62,10 @@
       font-weight: @anchor-font-weight-title_hover;
     }
 
+    &-title:focus-visible {
+      box-shadow: 0 0 0 2px @color-primary-6 inset;
+    }
+
     &-active > &-title {
       transition: all @transition-duration-1 @transition-timing-function-linear;
       color: @anchor-color-title_active;
