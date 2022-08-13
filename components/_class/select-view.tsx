@@ -30,6 +30,7 @@ export interface SelectViewCommonProps
   style?: CSSProperties;
   className?: string | string[];
   children?: ReactNode;
+  id?: string;
   inputValue?: string;
   /**
    * @zh 选择框默认文字。
@@ -165,6 +166,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
   const {
     style,
     className,
+    id,
     size,
     bordered,
     allowClear,
@@ -517,6 +519,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       tabIndex={disabled ? -1 : 0}
       style={style}
       className={classNames}
+      id={id}
       // When there is an input box, the keyboard events are handled inside the input box to avoid triggering redundant events in the Chinese input method
       onKeyDown={tryTriggerKeyDown}
       onFocus={(event) => {
