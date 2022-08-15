@@ -154,8 +154,12 @@ const TreeSelect: ForwardRefRenderFunction<
     if (isObject(props.showSearch)) {
       retainInputValueWhileSelect = props.showSearch.retainInputValueWhileSelect !== false;
     }
-
-    if (props.multiple && !retainInputValueWhileSelect) {
+    if (
+      props.multiple &&
+      !retainInputValueWhileSelect &&
+      refOnInputChangeCallbackValue.current !== '' &&
+      refOnInputChangeCallbackValue.current !== undefined
+    ) {
       tryUpdateInputValue('', 'optionChecked');
       handleSearch('');
     }
