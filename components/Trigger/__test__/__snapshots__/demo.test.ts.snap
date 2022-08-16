@@ -36,10 +36,10 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="click"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="click"
+                  class="arco-tag-content"
                 >
                   click
                 </span>
@@ -47,6 +47,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
                   aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                   role="button"
+                  tabindex="0"
                 >
                   <svg
                     aria-hidden="true"

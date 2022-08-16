@@ -151,10 +151,10 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
         >
           <div
             class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+            title="a"
           >
             <span
-              class="arco-input-tag-tag-content"
-              title="a"
+              class="arco-tag-content"
             >
               a
             </span>
@@ -162,6 +162,7 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -186,10 +187,10 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
         >
           <div
             class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+            title="b"
           >
             <span
-              class="arco-input-tag-tag-content"
-              title="b"
+              class="arco-tag-content"
             >
               b
             </span>
@@ -197,6 +198,7 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -221,10 +223,10 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
         >
           <div
             class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+            title="c"
           >
             <span
-              class="arco-input-tag-tag-content"
-              title="c"
+              class="arco-tag-content"
             >
               c
             </span>
@@ -232,6 +234,7 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -256,10 +259,10 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
         >
           <div
             class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+            title="d"
           >
             <span
-              class="arco-input-tag-tag-content"
-              title="d"
+              class="arco-tag-content"
             >
               d
             </span>
@@ -267,6 +270,7 @@ exports[`renders InputTag/demo/draggable.md correctly 1`] = `
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -339,10 +343,10 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
     >
       <div
         class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+        title="a"
       >
         <span
-          class="arco-input-tag-tag-content"
-          title="a"
+          class="arco-tag-content"
         >
           a
         </span>
@@ -350,6 +354,7 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
           aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
           role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -416,11 +421,16 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
         class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
         style="margin:2px 6px 2px 0"
       >
-        arcoblue
+        <span
+          class="arco-tag-content"
+        >
+          arcoblue
+        </span>
         <span
           aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
           role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -441,11 +451,16 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
         class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default"
         style="margin:2px 6px 2px 0"
       >
-        orange
+        <span
+          class="arco-tag-content"
+        >
+          orange
+        </span>
         <span
           aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
           role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -466,11 +481,16 @@ exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
         class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default"
         style="margin:2px 6px 2px 0"
       >
-        lime
+        <span
+          class="arco-tag-content"
+        >
+          lime
+        </span>
         <span
           aria-label="Close"
           class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
           role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -626,10 +646,10 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
       >
         <div
           class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+          title="Beijing"
         >
           <span
-            class="arco-input-tag-tag-content"
-            title="Beijing"
+            class="arco-tag-content"
           >
             Beijing
           </span>
@@ -637,6 +657,7 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
             aria-label="Close"
             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             role="button"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -655,10 +676,10 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+          title="Shanghai"
         >
           <span
-            class="arco-input-tag-tag-content"
-            title="Shanghai"
+            class="arco-tag-content"
           >
             Shanghai
           </span>
@@ -666,6 +687,7 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
             aria-label="Close"
             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
             role="button"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"

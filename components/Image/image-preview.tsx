@@ -10,6 +10,7 @@ import React, {
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { findDOMNode } from 'react-dom';
+import useMergeProps from '../_util/hooks/useMergeProps';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import { on, off, isServerRendering } from '../_util/dom';
@@ -42,38 +43,50 @@ export type ImagePreviewHandle = {
   reset: () => void;
 };
 
-function Preview(props: ImagePreviewProps, ref) {
+const defaultProps: Partial<ImagePreviewProps> = {
+  maskClosable: true,
+  closable: true,
+  breakPoint: 316,
+  actionsLayout: [
+    'fullScreen',
+    'rotateRight',
+    'rotateLeft',
+    'zoomIn',
+    'zoomOut',
+    'originalSize',
+    'extra',
+  ],
+  getPopupContainer: () => document.body,
+  escToExit: true,
+  scales: defaultScales,
+};
+
+function Preview(baseProps: ImagePreviewProps, ref) {
+  const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite, previewPropsMap } =
+    useContext(PreviewGroupContext);
+  const mergedPreviewProps = previewGroup ? previewPropsMap.get(currentIndex) : {};
+  const mergedProps = useMergeProps(baseProps, defaultProps, mergedPreviewProps);
   const {
     className,
     style,
     src,
     defaultVisible,
-    maskClosable = true,
-    closable = true,
-    breakPoint = 316,
+    maskClosable,
+    closable,
+    breakPoint,
     actions,
-    actionsLayout = [
-      'fullScreen',
-      'rotateRight',
-      'rotateLeft',
-      'zoomIn',
-      'zoomOut',
-      'originalSize',
-      'extra',
-    ],
-    getPopupContainer = () => document.body,
+    actionsLayout,
+    getPopupContainer,
     onVisibleChange,
-    scales = defaultScales,
-    escToExit = true,
-  } = props;
-
-  const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite } =
-    useContext(PreviewGroupContext);
+    scales,
+    escToExit,
+    imgAttributes = {},
+  } = mergedProps;
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
   const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
   const [visible, setVisible] = useMergeValue(false, {
     defaultValue: defaultVisible,
-    value: props.visible,
+    value: mergedProps.visible,
   });
 
   const globalContext = useContext(ConfigContext);
@@ -112,6 +125,15 @@ function Preview(props: ImagePreviewProps, ref) {
   const previewScales = useMemo(() => {
     return new PreviewScales(scales);
   }, []);
+
+  const {
+    onLoad,
+    onError,
+    onMouseDown,
+    style: imgStyle,
+    className: imgClassName,
+    ...restImgAttributes
+  } = imgAttributes;
 
   // Reset image params
   function reset() {
@@ -220,7 +242,7 @@ function Preview(props: ImagePreviewProps, ref) {
   function close() {
     if (visible) {
       onVisibleChange && onVisibleChange(false, visible);
-      isUndefined(props.visible) && setVisible(false);
+      isUndefined(mergedProps.visible) && setVisible(false);
     }
   }
 
@@ -265,6 +287,16 @@ function Preview(props: ImagePreviewProps, ref) {
     setMoving(false);
   };
 
+  function onImgLoaded(e) {
+    setStatus('loaded');
+    onLoad && onLoad(e);
+  }
+
+  function onImgLoadError(e) {
+    setStatus('error');
+    onError && onError(e);
+  }
+
   // Record position data on move start
   const onMoveStart = (e) => {
     e.preventDefault && e.preventDefault();
@@ -275,6 +307,7 @@ function Preview(props: ImagePreviewProps, ref) {
     refMoveData.current.pageY = ev.pageY;
     refMoveData.current.originX = translate.x;
     refMoveData.current.originY = translate.y;
+    onMouseDown && onMouseDown(e);
   };
 
   useEffect(() => {
@@ -424,18 +457,16 @@ function Preview(props: ImagePreviewProps, ref) {
                 >
                   <img
                     ref={refImage}
-                    className={cs(`${previewPrefixCls}-img`, {
+                    className={cs(imgClassName, `${previewPrefixCls}-img`, {
                       [`${previewPrefixCls}-img-moving`]: moving,
                     })}
                     style={{
+                      ...imgStyle,
                       transform: `translate(${translate.x}px, ${translate.y}px) rotate(${rotate}deg)`,
                     }}
-                    onLoad={() => {
-                      setStatus('loaded');
-                    }}
-                    onError={() => {
-                      setStatus('error');
-                    }}
+                    {...restImgAttributes}
+                    onLoad={onImgLoaded}
+                    onError={onImgLoadError}
                     onMouseDown={onMoveStart}
                     key={previewImgSrc}
                     src={previewImgSrc}

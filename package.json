@@ -1,6 +1,6 @@
 {
   "name": "@arco-design/web-react",
-  "version": "2.38.1",
+  "version": "2.39.0",
   "description": "Arco Design React UI Library.",
   "module": "./es/index.js",
   "main": "./lib/index.js",
@@ -22,8 +22,8 @@
     "build:css:vars": "node ./scripts/css-variables.js",
     "build": "arco-scripts build:component && yarn build:dist:dev && yarn build:css:dev",
     "dev": "arco-scripts dev:component",
-    "dev:site": "cd site/main && yarn dev:sub",
-    "build:site": "cd site/main && yarn build:sub",
+    "dev:site": "arco-scripts dev:site --port 9000",
+    "build:site": "arco-scripts build:site",
     "demo": "start-storybook -p 6006",
     "changelog": "arco-scripts changelog",
     "eslint": "eslint tests/ components/ --fix --cache --quiet --ext .js,.jsx,.ts,.tsx",

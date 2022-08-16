@@ -1,0 +1,82 @@
+@import '~@arco-design/web-react/es/style/theme/default.less';
+
+.wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: @arcoblue-6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.medium {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.large {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+body[arco-theme='dark'] {
+  .wrapper {
+    // 解决 filter: blur 消失的问题
+    transform: translateZ(0);
+
+    &::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 20px;
+      left: 23px;
+      background: @arcoblue-2;
+      opacity: 0.5;
+      filter: blur(12px);
+      // transform: translateZ(0);
+    }
+  }
+
+  .theme {
+    &.wrapper {
+      background: none;
+      border: 1px solid @arcoblue-6;
+
+      &::after {
+        background: none;
+        opacity: 0.55;
+        filter: blur(15px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .medium {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .large {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+}

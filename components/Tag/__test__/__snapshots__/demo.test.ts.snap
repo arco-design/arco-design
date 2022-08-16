@@ -11,7 +11,11 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      Tag 1
+      <span
+        class="arco-tag-content"
+      >
+        Tag 1
+      </span>
     </div>
   </div>
   <div
@@ -21,11 +25,16 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      Tag 2
+      <span
+        class="arco-tag-content"
+      >
+        Tag 2
+      </span>
       <span
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -50,11 +59,16 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      Tag 3
+      <span
+        class="arco-tag-content"
+      >
+        Tag 3
+      </span>
       <span
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -96,7 +110,11 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
           />
         </svg>
       </span>
-      Add Tag
+      <span
+        class="arco-tag-content"
+      >
+        Add Tag
+      </span>
     </div>
   </div>
 </div>
@@ -113,7 +131,11 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      Default
+      <span
+        class="arco-tag-content"
+      >
+        Default
+      </span>
     </div>
   </div>
   <div
@@ -123,7 +145,11 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      Tag 1
+      <span
+        class="arco-tag-content"
+      >
+        Tag 1
+      </span>
     </div>
   </div>
   <div
@@ -133,7 +159,11 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      Tag 2
+      <span
+        class="arco-tag-content"
+      >
+        Tag 2
+      </span>
     </div>
   </div>
   <div
@@ -163,7 +193,11 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
           />
         </svg>
       </span>
-      Complete
+      <span
+        class="arco-tag-content"
+      >
+        Complete
+      </span>
     </div>
   </div>
 </div>
@@ -180,7 +214,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      Default
+      <span
+        class="arco-tag-content"
+      >
+        Default
+      </span>
     </div>
   </div>
   <div
@@ -190,7 +228,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      red
+      <span
+        class="arco-tag-content"
+      >
+        red
+      </span>
     </div>
   </div>
   <div
@@ -200,7 +242,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      orangered
+      <span
+        class="arco-tag-content"
+      >
+        orangered
+      </span>
     </div>
   </div>
   <div
@@ -210,7 +256,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      orange
+      <span
+        class="arco-tag-content"
+      >
+        orange
+      </span>
     </div>
   </div>
   <div
@@ -220,7 +270,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-gold arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      gold
+      <span
+        class="arco-tag-content"
+      >
+        gold
+      </span>
     </div>
   </div>
   <div
@@ -230,7 +284,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      lime
+      <span
+        class="arco-tag-content"
+      >
+        lime
+      </span>
     </div>
   </div>
   <div
@@ -240,7 +298,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      green
+      <span
+        class="arco-tag-content"
+      >
+        green
+      </span>
     </div>
   </div>
   <div
@@ -250,7 +312,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-cyan arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      cyan
+      <span
+        class="arco-tag-content"
+      >
+        cyan
+      </span>
     </div>
   </div>
   <div
@@ -260,7 +326,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      blue
+      <span
+        class="arco-tag-content"
+      >
+        blue
+      </span>
     </div>
   </div>
   <div
@@ -270,7 +340,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      arcoblue
+      <span
+        class="arco-tag-content"
+      >
+        arcoblue
+      </span>
     </div>
   </div>
   <div
@@ -280,7 +354,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-purple arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      purple
+      <span
+        class="arco-tag-content"
+      >
+        purple
+      </span>
     </div>
   </div>
   <div
@@ -290,7 +368,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-pinkpurple arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      pinkpurple
+      <span
+        class="arco-tag-content"
+      >
+        pinkpurple
+      </span>
     </div>
   </div>
   <div
@@ -300,7 +382,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-magenta arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      magenta
+      <span
+        class="arco-tag-content"
+      >
+        magenta
+      </span>
     </div>
   </div>
   <div
@@ -310,7 +396,11 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
     >
-      gray
+      <span
+        class="arco-tag-content"
+      >
+        gray
+      </span>
     </div>
   </div>
 </div>
@@ -327,7 +417,11 @@ exports[`renders Tag/demo/check.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checkable arco-tag-size-default"
     >
-      Awesome
+      <span
+        class="arco-tag-content"
+      >
+        Awesome
+      </span>
     </div>
   </div>
   <div
@@ -337,7 +431,11 @@ exports[`renders Tag/demo/check.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-red arco-tag-checkable arco-tag-checked arco-tag-size-default"
     >
-      Toutiao
+      <span
+        class="arco-tag-content"
+      >
+        Toutiao
+      </span>
     </div>
   </div>
   <div
@@ -346,7 +444,11 @@ exports[`renders Tag/demo/check.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-arcoblue arco-tag-checkable arco-tag-checked arco-tag-size-default"
     >
-      Lark
+      <span
+        class="arco-tag-content"
+      >
+        Lark
+      </span>
     </div>
   </div>
 </div>
@@ -358,11 +460,16 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default"
     style="margin:0 24px"
   >
-    Tag
+    <span
+      class="arco-tag-content"
+    >
+      Tag
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -399,11 +506,16 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
         />
       </svg>
     </span>
-    Tag
+    <span
+      class="arco-tag-content"
+    >
+      Tag
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -447,11 +559,16 @@ exports[`renders Tag/demo/close-async.md correctly 1`] = `
 <div
   class="arco-tag arco-tag-checked arco-tag-size-default"
 >
-  Tag 1
+  <span
+    class="arco-tag-content"
+  >
+    Tag 1
+  </span>
   <span
     aria-label="Close"
     class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
     role="button"
+    tabindex="0"
   >
     <svg
       aria-hidden="true"
@@ -476,11 +593,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    red
+    <span
+      class="arco-tag-content"
+    >
+      red
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -501,11 +623,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    orangered
+    <span
+      class="arco-tag-content"
+    >
+      orangered
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -526,11 +653,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    orange
+    <span
+      class="arco-tag-content"
+    >
+      orange
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -551,11 +683,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-gold arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    gold
+    <span
+      class="arco-tag-content"
+    >
+      gold
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -576,11 +713,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    lime
+    <span
+      class="arco-tag-content"
+    >
+      lime
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -601,11 +743,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    green
+    <span
+      class="arco-tag-content"
+    >
+      green
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -626,11 +773,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-cyan arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    cyan
+    <span
+      class="arco-tag-content"
+    >
+      cyan
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -651,11 +803,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    blue
+    <span
+      class="arco-tag-content"
+    >
+      blue
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -676,11 +833,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    arcoblue
+    <span
+      class="arco-tag-content"
+    >
+      arcoblue
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -701,11 +863,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-purple arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    purple
+    <span
+      class="arco-tag-content"
+    >
+      purple
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -726,11 +893,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-pinkpurple arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    pinkpurple
+    <span
+      class="arco-tag-content"
+    >
+      pinkpurple
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -751,11 +923,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-magenta arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    magenta
+    <span
+      class="arco-tag-content"
+    >
+      magenta
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -776,11 +953,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default"
     style="margin:0 16px 16px 0"
   >
-    gray
+    <span
+      class="arco-tag-content"
+    >
+      gray
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -806,11 +988,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#f53f3f;border-color:#f53f3f"
   >
-    #f53f3f
+    <span
+      class="arco-tag-content"
+    >
+      #f53f3f
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -831,11 +1018,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#7816ff;border-color:#7816ff"
   >
-    #7816ff
+    <span
+      class="arco-tag-content"
+    >
+      #7816ff
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -856,11 +1048,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#00b42a;border-color:#00b42a"
   >
-    #00b42a
+    <span
+      class="arco-tag-content"
+    >
+      #00b42a
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -881,11 +1078,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#165dff;border-color:#165dff"
   >
-    #165dff
+    <span
+      class="arco-tag-content"
+    >
+      #165dff
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -906,11 +1108,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#ff7d00;border-color:#ff7d00"
   >
-    #ff7d00
+    <span
+      class="arco-tag-content"
+    >
+      #ff7d00
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -931,11 +1138,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#eb0aa4;border-color:#eb0aa4"
   >
-    #eb0aa4
+    <span
+      class="arco-tag-content"
+    >
+      #eb0aa4
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -956,11 +1168,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#7bc616;border-color:#7bc616"
   >
-    #7bc616
+    <span
+      class="arco-tag-content"
+    >
+      #7bc616
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -981,11 +1198,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#86909c;border-color:#86909c"
   >
-    #86909c
+    <span
+      class="arco-tag-content"
+    >
+      #86909c
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1006,11 +1228,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#b71de8;border-color:#b71de8"
   >
-    #b71de8
+    <span
+      class="arco-tag-content"
+    >
+      #b71de8
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1031,11 +1258,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#0fc6c2;border-color:#0fc6c2"
   >
-    #0fc6c2
+    <span
+      class="arco-tag-content"
+    >
+      #0fc6c2
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1056,11 +1288,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#ffb400;border-color:#ffb400"
   >
-    #ffb400
+    <span
+      class="arco-tag-content"
+    >
+      #ffb400
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1081,11 +1318,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#168cff;border-color:#168cff"
   >
-    #168cff
+    <span
+      class="arco-tag-content"
+    >
+      #168cff
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1106,11 +1348,16 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
     style="margin:0 16px 16px 0;background-color:#ff5722;border-color:#ff5722"
   >
-    #ff5722
+    <span
+      class="arco-tag-content"
+    >
+      #ff5722
+    </span>
     <span
       aria-label="Close"
       class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
       role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -1160,7 +1407,11 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
           />
         </svg>
       </span>
-      Github
+      <span
+        class="arco-tag-content"
+      >
+        Github
+      </span>
     </div>
   </div>
   <div
@@ -1189,7 +1440,11 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
           />
         </svg>
       </span>
-      Gitlab
+      <span
+        class="arco-tag-content"
+      >
+        Gitlab
+      </span>
     </div>
   </div>
   <div
@@ -1218,7 +1473,11 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
           />
         </svg>
       </span>
-      Twitter
+      <span
+        class="arco-tag-content"
+      >
+        Twitter
+      </span>
     </div>
   </div>
   <div
@@ -1246,7 +1505,11 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
           />
         </svg>
       </span>
-      Facebook
+      <span
+        class="arco-tag-content"
+      >
+        Facebook
+      </span>
     </div>
   </div>
 </div>
@@ -1263,11 +1526,16 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-large"
     >
-      Large
+      <span
+        class="arco-tag-content"
+      >
+        Large
+      </span>
       <span
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1292,11 +1560,16 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-medium"
     >
-      Medium
+      <span
+        class="arco-tag-content"
+      >
+        Medium
+      </span>
       <span
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1321,11 +1594,16 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
     >
-      default
+      <span
+        class="arco-tag-content"
+      >
+        default
+      </span>
       <span
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1349,11 +1627,16 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-checked arco-tag-size-small"
     >
-      small
+      <span
+        class="arco-tag-content"
+      >
+        small
+      </span>
       <span
         aria-label="Close"
         class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
         role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"

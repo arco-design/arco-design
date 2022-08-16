@@ -231,14 +231,10 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         })}
         closable={closable}
         closeIcon={icon && icon.removeIcon}
+        title={typeof label === 'string' ? label : undefined}
         onClose={onClose}
       >
-        <span
-          title={typeof label === 'string' ? label : undefined}
-          className={`${prefixCls}-tag-content`}
-        >
-          {typeof label === 'string' ? label.replace(/\s/g, '\u00A0') : label}
-        </span>
+        {typeof label === 'string' ? label.replace(/\s/g, '\u00A0') : label}
       </Tag>
     );
   };

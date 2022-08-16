@@ -1,0 +1,141 @@
+.case-wrapper {
+  margin: 72px 0;
+}
+
+.case-title {
+  > svg {
+    transform: scale(1.5);
+    margin-left: 24px;
+  }
+}
+
+.case-content {
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-text-2);
+  margin-top: 20px;
+  margin-bottom: 12px;
+
+  mark {
+    background-color: var(--color-primary-light-1);
+    color: var(--color-text-2);
+  }
+}
+
+.case-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.case-record {
+  display: flex;
+  width: 460px;
+  justify-content: space-between;
+
+  &-item {
+    display: flex;
+
+    &-label {
+      font-weight: 500;
+      color: var(--color-text-1);
+      margin-right: 10px;
+      line-height: 36px;
+    }
+
+    &-value {
+      font-weight: 700;
+      color: #165dff;
+      font-size: 24px;
+    }
+  }
+}
+
+.card-link-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 720px;
+}
+
+.card-link {
+  width: 200px;
+  box-sizing: border-box;
+  background-color: var(--showcase-background-color);
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 #0000001a;
+
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &-logo {
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &-name {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-1);
+  }
+
+  &-arrow {
+    color: var(--color-text-1);
+  }
+}
+
+.case-cover {
+  padding: 48px;
+  background: #4e5969;
+  border-radius: 8px;
+
+  img {
+    border-radius: 4px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .case-wrapper {
+    margin: 72px 20px;
+  }
+
+  .case-content {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+
+  .case-record {
+    width: auto;
+
+    &-item {
+      margin-right: 16px;
+      display: block;
+
+      &-label {
+        line-height: 20px;
+        display: inline-block;
+      }
+
+      &-value {
+        font-size: 14px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .case-cover {
+    padding: 0;
+  }
+}

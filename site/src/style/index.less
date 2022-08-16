@@ -1,0 +1,55 @@
+@import '~@arco-design/web-react/dist/css/index.less';
+@import '~arco-doc-site-components/dist/arco-components.css';
+@import '~nprogress/nprogress.css';
+@import '../widget/style/index.less';
+@import './demo.less';
+@import './markdown.less';
+@import './page.less';
+@import './changelog.less';
+@import './animation.less';
+
+html.rtl {
+  direction: rtl;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  // font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  //   'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  background-color: var(--color-bg-1);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(var(--arcoblue-6));
+
+  &:hover {
+    color: rgb(var(--arcoblue-5));
+  }
+}
+
+.ac-browser {
+  &-header {
+    background-color: var(--color-fill-3);
+    height: 28px;
+  }
+
+  &-content {
+    background-color: var(--color-bg-5);
+    border-color: var(--color-fill-3);
+  }
+}
+
+html.rtl {
+  .ac-browser-header {
+    &::before {
+      box-shadow: 0 0 0 0 #ff5959, -1.5em 0 0 0 #ffc75a, -3em 0 0 0 #6bdb43;
+    }
+  }
+
+  .ac-browser-content {
+    text-align: right;
+  }
+}
