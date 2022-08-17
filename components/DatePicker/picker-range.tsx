@@ -104,6 +104,7 @@ const Picker = (baseProps: RangePickerProps) => {
     onOk,
     defaultPickerValue,
     pickerValue,
+    panelRender,
     onPickerValueChange,
     triggerElement,
     clearRangeOnReselect,
@@ -799,18 +800,23 @@ const Picker = (baseProps: RangePickerProps) => {
       </>
     );
 
+    const contentWithShortcuts = shortcutsPlacementLeft ? (
+      <>
+        <Shortcuts ref={refShortcuts} {...shortcutsProps} />
+        <div ref={refPanel} className={`${prefixCls}-panel-wrapper`}>
+          {content}
+        </div>
+      </>
+    ) : (
+      content
+    );
+
+    const panelNode =
+      typeof panelRender === 'function' ? panelRender(contentWithShortcuts) : contentWithShortcuts;
+
     return (
       <div className={classNames} onClick={() => focusInput()} style={panelOnly ? style : {}}>
-        {shortcutsPlacementLeft ? (
-          <>
-            <Shortcuts ref={refShortcuts} {...shortcutsProps} />
-            <div ref={refPanel} className={`${prefixCls}-panel-wrapper`}>
-              {content}
-            </div>
-          </>
-        ) : (
-          content
-        )}
+        {panelNode}
       </div>
     );
   }
