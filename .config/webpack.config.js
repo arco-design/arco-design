@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { version } = require('../package.json');
-const { getPWAConfig } = require('../site/config/pwa');
+// const { getPWAConfig } = require('../site/config/pwa');
 
 // 组件 dist 打包
 exports.component = (config) => {
@@ -78,5 +78,5 @@ exports.site = (config, env) => {
     };
   }
 
-  getPWAConfig(config, env);
+  // getPWAConfig(config, env);
 };
