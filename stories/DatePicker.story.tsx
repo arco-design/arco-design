@@ -157,6 +157,31 @@ function DemoPanelRender() {
             );
           }}
         />
+        <DatePicker.RangePicker
+          shortcutsPlacementLeft
+          shortcuts={[
+            {
+              text: 'next 7 days',
+              value: () => [dayjs(), dayjs().add(1, 'week')],
+            },
+            {
+              text: 'next 30 days',
+              value: () => [dayjs(), dayjs().add(1, 'month')],
+            },
+            {
+              text: 'next 365 days',
+              value: () => [dayjs(), dayjs().add(1, 'year')],
+            },
+          ]}
+          panelRender={(panelNode) => {
+            return (
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ borderBottom: '1px solid var(--color-border)' }}>header</div>
+                <div style={{ display: 'flex' }}>{panelNode}</div>
+              </div>
+            );
+          }}
+        />
       </Space>
     </Space>
   );
