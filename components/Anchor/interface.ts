@@ -46,6 +46,11 @@ export interface AnchorProps {
    */
   affixStyle?: CSSProperties;
   /**
+   * @zh 通过该属性可以设置 `Affix` 组件的`fixed`元素的样式。即 `Affix` 固钉组件的 `offsetTop` 属性
+   * @en The style to be applied to the fixed element of `Affix`. i.e. `Affix`'s `affixStyle` props
+   */
+  affixFixedStyle?: CSSProperties;
+  /**
    * @zh 距离窗口顶部达到指定偏移量后触发。即 `Affix` 固钉组件的 `offsetTop` 属性
    * @en Offset from the top of the viewport (in pixels). i.e. `Affix`'s `offsetTop` props
    */

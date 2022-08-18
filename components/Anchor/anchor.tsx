@@ -46,6 +46,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     lineless,
     affix = true,
     affixStyle,
+    affixFixedStyle,
     offsetBottom,
     offsetTop,
     hash: willChangeHash = true,
@@ -269,6 +270,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       offsetTop={offsetTop}
       offsetBottom={offsetBottom}
       style={affixStyle}
+      affixStyle={affixFixedStyle}
       target={getAffixTarget}
     >
       {content}
