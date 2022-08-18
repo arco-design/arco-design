@@ -1,3 +1,76 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fixed  flickering "no data" placeholder when `allowCreate` in Select.([#1184](https://github.com/arco-design/arco-design/pull/1184))
+
+## 2.37.2
+
+2022-07-22
+
+### 🐛 BugFix
+
+- Fixed an issue where the `onInputValueChange` callback might not be triggered in the `inputValue` controlled mode of the `Select` component.([#1178](https://github.com/arco-design/arco-design/pull/1178))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `Select` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+
+## 2.35.1
+
+2022-06-17
+
+### 💎 Enhancement
+
+- The `Select` component uses the Dom Attribute to mark options that the user is creating and has already created.([#1011](https://github.com/arco-design/arco-design/pull/1011))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed the bug that the callback parameter was wrong when the `Select` component set `LabelInValue`.([#953](https://github.com/arco-design/arco-design/pull/953))
+
+## 2.32.2
+
+2022-04-29
+
+### 🐛 BugFix
+
+- Fixed an issue where the matched option text was not highlighted when the `Select` component searched.([#808](https://github.com/arco-design/arco-design/pull/808))
+
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- Fixed the bug that `onMouseEnter` and `onMouseLeave` of `Select.Option` not works.([#729](https://github.com/arco-design/arco-design/pull/729))
+
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- `Select` component's `triggerElement` property allows passing in a function to customize the component trigger node.([#686](https://github.com/arco-design/arco-design/pull/686))
+
+## 2.30.1
+
+2022-03-11
+
+### 🐛 BugFix
+
+- Fix the bug that the Tag animation fails when `Select` is multiple mode.([#630](https://github.com/arco-design/arco-design/pull/630))
+- Fix the bug that the options of `Select` with `maxTagCount` are not unchecked in the correct order when press `Backspace`.([#630](https://github.com/arco-design/arco-design/pull/630))
+
 ## 2.28.2
 
 2022-01-21

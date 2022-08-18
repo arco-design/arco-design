@@ -16,25 +16,21 @@ Support scrolling operation via scroll wheel or touch pad.
 ```js
 import { useState } from 'react';
 import { Tabs, Radio } from '@arco-design/web-react';
-
 const TabPane = Tabs.TabPane;
-
 const paneStyle = {
   width: '100%',
   height: 50,
   padding: '24px 0',
   color: '#939aa3',
 };
-
 const tabs = [...new Array(30)].map((x, i) => ({
   title: `标签${i + 1}`,
   key: `key${i + 1}`,
   content: `标签${i + 1}内容`,
 }));
 
-function Demo() {
+function App() {
   const [direction, setDirection] = useState('horizontal');
-
   return (
     <div>
       <Radio.Group
@@ -56,5 +52,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

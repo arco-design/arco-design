@@ -1,3 +1,108 @@
+## 2.39.0
+
+2022-08-12
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件在临界情况判断是否超出范围有误的问题。([#1273](https://github.com/arco-design/arco-design/pull/1273))
+
+## 2.38.1
+
+2022-08-05
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.WeekPicker` 输入框和面板显示的周不一致的 bug。([#1238](https://github.com/arco-design/arco-design/pull/1238))
+
+## 2.38.0
+
+2022-07-29
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 点击头部月份再点击年份无响应的问题。([#1188](https://github.com/arco-design/arco-design/pull/1188))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件少数情况选择范围失效的 bug。([#1041](https://github.com/arco-design/arco-design/pull/1041))
+
+## 2.35.0
+
+2022-06-10
+
+### 💎 功能优化
+
+- `DatePicker` 组件的 `dayStartOfWeek` 的默认值由 locale 语言决定，不再统一默认 `0`。([#982](https://github.com/arco-design/arco-design/pull/982))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 功能升级
+
+- `DatePicker` 组件新增 `panelRender` 参数。([#914](https://github.com/arco-design/arco-design/pull/914))
+
+## 2.32.2
+
+2022-04-29
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件传入不包含 `defaultValue` 的 `showTime` 对象，导致时间面板报错的 bug。([#811](https://github.com/arco-design/arco-design/pull/811))
+
+## 2.32.0
+
+2022-04-15
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件 `utcOffset` 和 `timezone` 不生效的 bug。([#765](https://github.com/arco-design/arco-design/pull/765))
+
+## 2.31.3
+
+2022-04-11
+
+### 🐛 问题修复
+
+- 修正 `DatePicker` 组件的 `disabledDate` 的 ts 定义。([#750](https://github.com/arco-design/arco-design/pull/750))
+- 修复 `DatePicker.RangePicker` 组件直接选择时间会报错的 bug。([#749](https://github.com/arco-design/arco-design/pull/749))
+
+## 2.31.0
+
+2022-03-25
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件 `disabledDate` 在快捷选择面板边界不正确的问题。([#687](https://github.com/arco-design/arco-design/pull/687))
+
+## 2.30.2
+
+2022-03-18
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件  `separator` 参数不生效的问题。([#647](https://github.com/arco-design/arco-design/pull/647))
+
+## 2.30.1
+
+2022-03-11
+
+### 💎 优化
+
+- `DatePicker` 组件在选择日期的时候不再进行面板的跳动。([#627](https://github.com/arco-design/arco-design/pull/627))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 功能升级
+
+- `DatePicker` 组件支持 `utcOffset` 和 `timezone` 来设置 UTC 时间和时区。([#604](https://github.com/arco-design/arco-design/pull/604))
+
 ## 2.28.1
 
 2022-01-14

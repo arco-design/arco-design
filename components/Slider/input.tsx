@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
-import InputNumber from '../InputNumber';
+import InputNumber, { InputNumberProps } from '../InputNumber';
 import cs from '../_util/classNames';
 
 interface InputProps {
@@ -11,18 +11,21 @@ interface InputProps {
   disabled?: boolean;
   prefixCls?: string;
   onChange?: (val: number[]) => void;
+  extra?: InputNumberProps[];
 }
 
 const Input = function (props: InputProps) {
-  const { value, range, min, max, step, disabled, prefixCls, onChange } = props;
-  const inputProps = {
+  const { value, range, min, max, step, disabled, prefixCls, onChange, extra = [] } = props;
+  const baseProps = {
     min,
     max,
     step,
     disabled,
-    hideControl: true,
   };
   const [innerValue, setInnerValue] = useState(value);
+  const beginExtraProps = extra[0];
+  const endExtraProps = range ? extra[1] : extra[0];
+
   useEffect(() => {
     setInnerValue(value);
   }, [value]);
@@ -42,11 +45,12 @@ const Input = function (props: InputProps) {
     >
       {range && [
         <InputNumber
+          {...{ hideControl: true, ...beginExtraProps, ...baseProps }}
           value={innerValue[0]}
           key={0}
-          {...inputProps}
           onChange={(val) => {
             handleChange([val, innerValue[1]]);
+            beginExtraProps?.onChange && beginExtraProps?.onChange(val);
           }}
         />,
         <div key={1} className={`${prefixCls}-input-range`}>
@@ -54,11 +58,12 @@ const Input = function (props: InputProps) {
         </div>,
       ]}
       <InputNumber
+        {...{ hideControl: true, ...endExtraProps, ...baseProps }}
         key={2}
         value={innerValue[1]}
-        {...inputProps}
         onChange={(val) => {
           handleChange([innerValue[0], val]);
+          endExtraProps?.onChange && endExtraProps?.onChange(val);
         }}
       />
     </div>

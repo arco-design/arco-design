@@ -3,6 +3,7 @@
 
 @tree-prefix-cls: ~'@{prefix}-tree';
 @tree-select-prefix-cls: ~'@{prefix}-tree-select';
+@tree-select-prefix-cls-rtl: ~'@{prefix}-tree-select-rtl';
 
 .select-view(@tree-select-prefix-cls);
 
@@ -28,3 +29,14 @@
     font-weight: @font-weight-500;
   }
 }
+
+.@{tree-select-prefix-cls}-rtl {
+  direction: rtl;
+
+  &-popup {
+    padding-left: @tree-select-padding-popup-right;
+    padding-right: @tree-select-padding-popup-left;
+  }
+}
+
+.select-view-rtl(@tree-select-prefix-cls,@tree-select-prefix-cls-rtl);

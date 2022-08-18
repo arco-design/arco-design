@@ -1,13 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import mountTest from '../../../tests/mountTest';
 import { Form, Input } from '../..';
-import { FormProps } from '../interface';
+import { render } from '../../../tests/util';
 
 mountTest(Form);
 
 function mountForm(component: React.ReactElement) {
-  return mount<typeof Form, React.PropsWithChildren<FormProps>>(component);
+  return render(component);
 }
 
 describe('form validate status', () => {
@@ -20,9 +19,7 @@ describe('form validate status', () => {
       </Form>
     );
 
-    expect(
-      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-success')
-    ).toBe(true);
+    expect(wrapper.find('.arco-form-item')[0]).toHaveClass('arco-form-item-status-success');
   });
   it('error', async () => {
     const wrapper = mountForm(
@@ -32,10 +29,7 @@ describe('form validate status', () => {
         </Form.Item>
       </Form>
     );
-
-    expect(
-      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-error')
-    ).toBe(true);
+    expect(wrapper.find('.arco-form-item')[0]).toHaveClass('arco-form-item-status-error');
   });
   it('warning', async () => {
     const wrapper = mountForm(
@@ -46,9 +40,7 @@ describe('form validate status', () => {
       </Form>
     );
 
-    expect(
-      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-warning')
-    ).toBe(true);
+    expect(wrapper.find('.arco-form-item')[0]).toHaveClass('arco-form-item-status-warning');
   });
 
   it('help', async () => {
@@ -60,9 +52,7 @@ describe('form validate status', () => {
       </Form>
     );
 
-    expect(wrapper.find('.arco-form-message').hostNodes().hasClass('arco-form-message-help')).toBe(
-      true
-    );
+    expect(wrapper.find('.arco-form-message')[0]).toHaveClass('arco-form-message-help');
   });
 
   it('dont under Form', async () => {
@@ -73,12 +63,7 @@ describe('form validate status', () => {
         </Form.Item>
       </div>
     );
-    expect(
-      wrapper.find('.arco-form-item').hostNodes().hasClass('arco-form-item-status-error')
-    ).toBe(true);
-
-    expect(wrapper.find('.arco-form-message').hostNodes().hasClass('arco-form-message-help')).toBe(
-      true
-    );
+    expect(wrapper.find('.arco-form-item')[0]).toHaveClass('arco-form-item-status-error');
+    expect(wrapper.find('.arco-form-message')[0]).toHaveClass('arco-form-message-help');
   });
 });

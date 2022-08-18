@@ -23,13 +23,13 @@ exports[`renders PageHeader/demo/background.md correctly 1`] = `
               class="arco-page-header-back-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-left"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M32 8.4 16.444 23.956 32 39.513"
@@ -207,9 +207,11 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/"
@@ -218,16 +220,17 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -236,6 +239,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/channel"
@@ -244,16 +248,17 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -262,6 +267,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <span>
             News
@@ -357,9 +363,11 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/"
@@ -368,16 +376,17 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -386,6 +395,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <a
             href="#/channel"
@@ -394,16 +404,17 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
           </a>
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -412,6 +423,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           <span>
             News
@@ -431,13 +443,13 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
               class="arco-page-header-back-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-left"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M32 8.4 16.444 23.956 32 39.513"
@@ -461,7 +473,11 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
               class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-small"
               style="margin-left:8px"
             >
-              Default
+              <span
+                class="arco-tag-content"
+              >
+                Default
+              </span>
             </div>
           </div>
         </div>

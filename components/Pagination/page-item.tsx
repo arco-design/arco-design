@@ -1,8 +1,10 @@
-import React, { ReactNode, CSSProperties } from 'react';
+import React, { useContext, ReactNode, CSSProperties } from 'react';
 import cs from '../_util/classNames';
 import IconLeft from '../../icon/react-icon/IconLeft';
 import IconRight from '../../icon/react-icon/IconRight';
 import IconMore from '../../icon/react-icon/IconMore';
+import { ConfigContext } from '../ConfigProvider';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 type itemRenderType = (
   page: number,
@@ -63,6 +65,22 @@ export interface StepPagerProps {
  */
 
 function Pager(props: PagerProps) {
+  const { locale } = useContext(ConfigContext);
+  const getKeyboardEvents = useKeyboardEvent();
+
+  const { pageNum, current, rootPrefixCls, pageItemStyle, activePageItemStyle, itemRender } = props;
+
+  const prefixCls = `${rootPrefixCls}-item`;
+  const isActive = current === pageNum;
+  const classnames = cs(prefixCls, isActive ? `${prefixCls}-active` : '');
+
+  let style = pageItemStyle;
+  if (isActive) {
+    style = { ...style, ...activePageItemStyle };
+  }
+
+  const ariaCurrentProps = isActive ? { 'aria-current': true } : {};
+
   const onClick = (e) => {
     const { pageNum, onClick, disabled } = props;
     if (e.currentTarget.dataset.active === 'true') {
@@ -76,19 +94,16 @@ function Pager(props: PagerProps) {
     }
   };
 
-  const { pageNum, current, rootPrefixCls, pageItemStyle, activePageItemStyle, itemRender } = props;
-
-  const prefixCls = `${rootPrefixCls}-item`;
-  const isActive = current === pageNum;
-  const classnames = cs(prefixCls, isActive ? `${prefixCls}-active` : '');
-
-  let style = pageItemStyle;
-  if (isActive) {
-    style = { ...style, ...activePageItemStyle };
-  }
-
   return (
-    <li style={style} className={classnames} data-active={isActive} onClick={onClick}>
+    <li
+      style={style}
+      className={classnames}
+      onClick={onClick}
+      tabIndex={props.disabled ? -1 : 0}
+      aria-label={locale.Pagination.currentPage?.replace('{0}', pageNum)}
+      {...getKeyboardEvents({ onPressEnter: onClick })}
+      {...ariaCurrentProps}
+    >
       {itemRender ? itemRender(pageNum, 'page', pageNum) : pageNum}
     </li>
   );
@@ -112,6 +127,8 @@ function getIcon(name: string, icons) {
  * @param props
  */
 export const JumpPager = (props: JumpPagerProps) => {
+  const { locale } = useContext(ConfigContext);
+
   const { rootPrefixCls, current, allPages, jumpPage, icons, disabled, pageItemStyle, itemRender } =
     props;
 
@@ -126,8 +143,13 @@ export const JumpPager = (props: JumpPagerProps) => {
 
   const originElement = getIcon('more', icons);
 
+  const ariaLabel =
+    jumpPage > 0
+      ? locale.Pagination.nextSomePages?.replace('{0}', jumpPage)
+      : locale.Pagination.prevSomePages?.replace('{0}', -jumpPage);
+
   return (
-    <li style={pageItemStyle} className={cls} onClick={onClick}>
+    <li style={pageItemStyle} className={cls} onClick={onClick} aria-label={ariaLabel}>
       {itemRender ? itemRender(undefined, 'more', originElement) : originElement}
     </li>
   );
@@ -138,10 +160,14 @@ export const JumpPager = (props: JumpPagerProps) => {
  * @param props
  */
 export const StepPager = (props: StepPagerProps) => {
+  const { locale, rtl } = useContext(ConfigContext);
+
+  const getKeyboardEvents = useKeyboardEvent();
   const { rootPrefixCls, current, allPages, type, icons, disabled, pageItemStyle, itemRender } =
     props;
   const prefixCls = `${rootPrefixCls}-item`;
-  const StepIcon = type === StepType.previous ? getIcon('prev', icons) : getIcon('next', icons);
+  const [prev, next] = rtl ? ['next', 'prev'] : ['prev', 'next'];
+  const StepIcon = type === StepType.previous ? getIcon(prev, icons) : getIcon(next, icons);
   let _disabled = false;
   if (allPages === 0) {
     // total为0
@@ -171,7 +197,16 @@ export const StepPager = (props: StepPagerProps) => {
   };
 
   return (
-    <li style={pageItemStyle} className={cls} onClick={onClick}>
+    <li
+      style={pageItemStyle}
+      className={cls}
+      onClick={onClick}
+      tabIndex={innerDisabled ? -1 : 0}
+      aria-label={locale.Pagination[pageType]}
+      {...getKeyboardEvents({
+        onPressEnter: onClick,
+      })}
+    >
       {itemRender ? itemRender(undefined, pageType, StepIcon) : StepIcon}
     </li>
   );

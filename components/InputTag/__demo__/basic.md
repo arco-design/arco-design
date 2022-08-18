@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 
+title:
   zh-CN: 基本用法
   en-US: Basic
 ---
@@ -14,28 +14,31 @@ title:
 Basic usage
 
 ```js
-import { InputTag } from '@arco-design/web-react';
+import { InputTag, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <div style={{ marginBottom: 20 }}>
-      <InputTag
-        allowClear
-        placeholder="Input and press Enter"
-        style={{ maxWidth: 350, marginRight: 20 }}
-      />
-      <InputTag allowClear placeholder="Disabled" disabled style={{ maxWidth: 350 }} />
-    </div>
+const App = () => {
+  return (
     <div>
-      <InputTag
-        allowClear
-        placeholder="Readonly"
-        readOnly
-        style={{ maxWidth: 350, marginRight: 20 }}
-      />
-      <InputTag allowClear placeholder="Error" error style={{ maxWidth: 350 }} />
+      <Space style={{marginBottom: 20}}>
+        <InputTag
+          allowClear
+          placeholder="Input and press Enter"
+          style={{ width: 350 }}
+        />
+        <InputTag allowClear placeholder="Disabled" disabled style={{ width: 350 }}/>
+      </Space>
+      <Space>
+        <InputTag
+          allowClear
+          placeholder="Readonly"
+          readOnly
+          style={{ width: 350 }}
+        />
+        <InputTag allowClear placeholder="Error" error style={{ width: 350 }}/>
+      </Space>
     </div>
-  </div>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

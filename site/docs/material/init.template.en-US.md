@@ -15,6 +15,7 @@ Currently, Arco provides the following templates:
 - Component - used to create component materials;
 - Block - used to create block materials;
 - Page - used to create page materials;
+- Utils - used to create function tool library;
 - Component library - used to create a business component library project with a structure similar to [Arco Component Library](https://github.com/arco-design/arco-design) **(recommended)**;
 - Monorepo - used to create Lerna-managed Monorepo projects **(recommended)**;
 

@@ -164,6 +164,13 @@ export interface TriggerProps {
    */
   escToClose?: boolean;
   /**
+   * @zh 是否在容器滚动时关闭弹出框
+   * @en Whether to close the popup when the container is scrolled
+   * @defaultValue false
+   * @version 2.34.0
+   */
+  containerScrollToClose?: boolean;
+  /**
    * @zh 按钮点击事件（`trigger` 包含 `click` 时生效）
    * @en Callback when click the child node. (Only work when `trigger` contains `click`)
    */
@@ -218,6 +225,13 @@ export interface TriggerProps {
    * @en The html attributes of the arrow node
    */
   arrowProps?: HTMLAttributes<HTMLDivElement>;
+  /**
+   * @zh 是否在容器滚动时更新弹出框的位置
+   * @en Whether to update the popover's position when the container is scrolled
+   * @version 2.32.0
+   */
+  updateOnScroll?: boolean;
+  children?: ReactNode;
 }
 
 export type MouseLocationType = { clientX: number; clientY: number };

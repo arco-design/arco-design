@@ -8,13 +8,13 @@ exports[`ConfigProvider componentConfig.Spin default 1`] = `
     class="arco-spin-icon"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-loading"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -32,13 +32,13 @@ exports[`ConfigProvider componentConfig.Spin set className globally 1`] = `
     class="arco-spin-icon"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-loading"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -56,13 +56,38 @@ exports[`ConfigProvider componentConfig.Spin set className globally and componen
     class="arco-spin-icon"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-loading"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
+    >
+      <path
+        d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+      />
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Spin set data-* property 1`] = `
+<div
+  class="arco-spin"
+  data-test-name="Spin"
+>
+  <span
+    class="arco-spin-icon"
+  >
+    <svg
+      aria-hidden="true"
+      class="arco-icon arco-icon-loading"
+      fill="none"
+      focusable="false"
+      stroke="currentColor"
+      stroke-width="4"
+      viewBox="0 0 48 48"
     >
       <path
         d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"

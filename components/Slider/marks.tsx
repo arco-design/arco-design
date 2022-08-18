@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { isObject, isFunction } from '../_util/is';
-import { formatPercent, getOffset, isNotEmpty } from './utils';
+import { formatPercent, getIntervalOffset, isNotEmpty } from './utils';
+import { IntervalConfig } from './hooks/useInterval';
 
 type MaskType = {
   key: number | string;
@@ -9,23 +10,22 @@ type MaskType = {
 
 interface MaskProps {
   data: MaskType[];
-  min: number;
-  max: number;
   vertical?: boolean;
   prefixCls?: string;
   onMouseDown?: (val: number) => void;
   reverse?: boolean;
+  intervalConfigs?: IntervalConfig[];
 }
 
 const Marks = function (props: MaskProps) {
-  const { data = [], min, max, vertical, prefixCls, reverse } = props;
+  const { data = [], vertical, prefixCls, reverse, intervalConfigs } = props;
 
   if (!data.length) return null;
 
   return (
     <div className={`${prefixCls}-marks`}>
       {data.map(({ key, content }) => {
-        const offset = formatPercent(getOffset(key, [min, max]));
+        const offset = formatPercent(getIntervalOffset(+key, intervalConfigs));
         let dom = null;
         if (isObject(content) && isNotEmpty(content.text)) {
           dom = content.text;
@@ -36,6 +36,7 @@ const Marks = function (props: MaskProps) {
           isNotEmpty(dom) && (
             <div
               className={`${prefixCls}-marks-text`}
+              aria-hidden
               key={key}
               style={
                 vertical

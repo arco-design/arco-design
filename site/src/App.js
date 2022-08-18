@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
+import { Switch as ArcoSwitch } from '@arco-design/web-react';
 import Navbar from '@arco-materials/site-navbar';
 import {
   PageDurationTracker,
   teaLog,
   ModuleDurationTracker,
   Module,
-} from '@arco-design/arco-site-utils';
+} from '@arco-materials/site-utils';
+import AOS from 'aos';
 import Home from './pages/home';
 import Customer from './pages/customer';
 import page from './page';
@@ -17,7 +19,7 @@ import UserNavbarBorderStyle from './hooks/useNavbarBorderStyle';
 import { EventMap } from './pages/home/utils/eventMap';
 
 export default function App() {
-  const { lang, theme, toggleTheme, user } = useContext(GlobalContext);
+  const { lang, user, rtl, toggleRtl } = useContext(GlobalContext);
   const { setNoticeHeight } = useContext(GlobalNoticeContext);
   const history = useHistory();
   const isHome = history.location.pathname === '/';
@@ -60,6 +62,11 @@ export default function App() {
       teaLog(EventMap.moduleShow, params);
     });
     addTrackerModule();
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out-custom',
+      duration: 700,
+    });
 
     return () => {
       if (TrackerRef.current) {
@@ -77,14 +84,15 @@ export default function App() {
   return (
     <div id="app">
       <Navbar
-        theme={theme}
-        onChangeTheme={toggleTheme}
         lang={lang}
         onChangeLanguage={(lang) => goPath(lang, true)}
         history={history}
         isHome={isHome}
         style={isHome ? navbarBorderStyle : {}}
         user={user}
+        onChangeRtl={(value) => toggleRtl(value === 'rtl')}
+        rtl={rtl}
+        hideRtl={false}
         {...navbarProps}
       />
       <Navbar.GlobalNotice onHeightChange={setNoticeHeight} lang={lang} />

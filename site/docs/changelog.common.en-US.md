@@ -1,3 +1,29 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Adjust `Popconfirm`, `Popover`, `Tooltip` component animation pop-up effect to avoid page jitter caused by overshoot effect in border scenes.([#986](https://github.com/arco-design/arco-design/pull/986))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 Feature
+
+- Added Arabic.([#932](https://github.com/arco-design/arco-design/pull/932))
+- Added Portuguese.([#924](https://github.com/arco-design/arco-design/pull/924))
+- Added Russian.([#922](https://github.com/arco-design/arco-design/pull/922))
+
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- Internationalization support set Vietnamese.([#824](https://github.com/arco-design/arco-design/pull/824))
+
 ## 2.29.0
 
 2022-02-11

@@ -15,8 +15,11 @@ The basic usage of the YearPicker.
 
 ```js
 import { DatePicker } from '@arco-design/web-react';
-
 const { YearPicker } = DatePicker;
 
-ReactDOM.render(<YearPicker style={{ width: 200 }} />, CONTAINER);
+const App = () => {
+  return <YearPicker style={{ width: 200 }} />;
+};
+
+export default App;
 ```

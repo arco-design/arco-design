@@ -17,3 +17,10 @@ exports[`ConfigProvider componentConfig.Layout set className globally and compon
   class="arco-layout component-class"
 />
 `;
+
+exports[`ConfigProvider componentConfig.Layout set data-* property 1`] = `
+<section
+  class="arco-layout"
+  data-test-name="Layout"
+/>
+`;

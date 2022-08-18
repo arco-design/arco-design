@@ -9,13 +9,15 @@
 ## Types of changes
 
 <!-- What types of changes does this PR introduce -->
+<!-- Only support choose one type, if there are multiple types, you can add the `Type` column in the Changelog. -->
+
 - [ ] New feature
 - [ ] Bug fix
+- [ ] Enhancement
 - [ ] Documentation change
 - [ ] Coding style change
 - [ ] Component style change
 - [ ] Refactoring
-- [ ] Performance improvement
 - [ ] Test cases
 - [ ] Continuous integration
 - [ ] Typescript definition change
@@ -42,6 +44,7 @@
 | --------- | ------------- | ------------- | -------------- |
 |           |               |               |                |
 
+<!-- If there are multiple types, you can add the `Type` column in the Changelog, the value of the column is the same as `Types of changes` -->
 ## Checklist:
 
 - [ ] Test suite passes (`npm run test`)

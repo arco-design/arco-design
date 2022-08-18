@@ -1,9 +1,9 @@
-import { CSSProperties, ReactNode, HTMLAttributes } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes } from 'react';
 
 /**
  * @title Image
  */
-export interface ImageProps {
+export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -73,6 +73,12 @@ export interface ImageProps {
    * @en Preview options (all options are optional) [ImagePreviewProps](#imagepreview)
    */
   previewProps?: PartialImagePreviewProps;
+  /**
+   * @zh 使用 `Image.PreviewGroup`包裹时的预览索引，一般不用指定，当多图预览顺序出现问题时，可手动指定当前 `image` 的预览顺序
+   * @en Use `Image.PreviewGroup` to wrap the preview index. Generally, you don't need to specify it. When there is a problem with the preview order of multiple images, you can manually specify the preview order of the current `image`
+   * @version 2.23.0
+   */
+  index?: number;
 }
 
 /**
@@ -86,6 +92,12 @@ export interface ImagePreviewProps {
    * @en Image path, The default in Image is the src of Image
    */
   src: string;
+  /**
+   * @zh 图片属性，透传至预览弹窗中的 `img` 标签上
+   * @en Image props, passthrough to the `img` tag in the preview modal
+   * @version 2.39.0
+   */
+  imgAttributes?: Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'>;
   /**
    * @zh 是否可见，受控属性
    * @en Whether is visible
@@ -126,6 +138,13 @@ export interface ImagePreviewProps {
    * @defaultValue ['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']
    */
   actionsLayout?: string[];
+  /**
+   * @zh 在预览缩放时会使用当前数组中的缩放百分比。若不包含 `100%`，则会自动添加在最相邻的位置。
+   * @en The zoom percentage in the current array is used when previewing zooms. If `100%` is not included, the `100%` scale will be automatically added in the most adjacent position.
+   * @defaultValue [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];
+   * @version 2.30.0
+   */
+  scales?: number[];
   /**
    * @zh 切换可见状态触发的事件
    * @en Callback when visibility changes

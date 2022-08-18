@@ -1,12 +1,12 @@
-import React, { useState, useRef, useImperativeHandle, useEffect } from 'react';
+import React, { useRef, useImperativeHandle, useEffect } from 'react';
 import { InputComponentProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
-import { Enter } from '../_util/keycode';
 import ResizeObserver from '../_util/resizeObserver';
 import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
+import useComposition from './useComposition';
 
 const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
@@ -24,7 +24,10 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       value,
       autoFitWidth,
       onClear,
-      onValueChange,
+      readOnly,
+      onChange,
+      onKeyDown,
+      onPressEnter,
       maxLength: propMaxLength,
       ...rest
     } = props;
@@ -37,23 +40,27 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       'addAfter',
       'afterStyle',
       'beforeStyle',
-      'onKeyDown',
-      'onPressEnter',
       'prefix',
       'suffix',
     ]);
 
-    const [compositionValue, setCompositionValue] = useState('');
-
-    const refIsComposition = useRef(false);
     const refInput = useRef<HTMLInputElement>();
     const refInputMirror = useRef<HTMLSpanElement>();
     const refPrevInputWidth = useRef<number>(null);
-    const refPrevValueChangeCallbackParameter = useRef<string>(null);
 
-    const maxLength = isObject(propMaxLength) ? propMaxLength.length : propMaxLength;
-    const mergedMaxLength =
-      isObject(propMaxLength) && propMaxLength.errorOnly ? undefined : maxLength;
+    const maxLength = isObject(propMaxLength)
+      ? propMaxLength.errorOnly
+        ? undefined
+        : propMaxLength.length
+      : propMaxLength;
+
+    const {
+      compositionValue,
+      valueChangeHandler,
+      compositionHandler,
+      keyDownHandler,
+      triggerValueChangeCallback,
+    } = useComposition({ value, maxLength, onChange, onKeyDown, onPressEnter });
 
     const inputClassNames = cs(
       prefixCls,
@@ -91,67 +98,20 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     // 设定 <input> 初始宽度，之后的更新交由 ResizeObserver 触发
     useEffect(() => autoFitWidth && updateInputWidth(), []);
 
-    const tryTriggerValueChangeCallback: typeof onValueChange = (value, e) => {
-      if (
-        onValueChange &&
-        // https://github.com/arco-design/arco-design/issues/520
-        // Avoid triggering onChange repeatedly for the same value
-        // Compositionend is earlier than onchange in Firefox, different with chrome
-        value !== refPrevValueChangeCallbackParameter.current &&
-        (mergedMaxLength === undefined || value.length <= mergedMaxLength)
-      ) {
-        onValueChange(value, e);
-        refPrevValueChangeCallbackParameter.current = value;
-      }
-    };
-
-    const onChange: React.ChangeEventHandler<HTMLInputElement> = (e: any) => {
-      const newValue = e.target.value;
-      if (!refIsComposition.current) {
-        compositionValue && setCompositionValue(undefined);
-        tryTriggerValueChangeCallback(newValue, e);
-      } else {
-        // https://github.com/arco-design/arco-design/issues/397
-        // compositionupdate => onchange
-        refIsComposition.current = false;
-        setCompositionValue(newValue);
-      }
-    };
-
-    const onComposition = (e) => {
-      refIsComposition.current = e.type !== 'compositionend';
-      if (!refIsComposition.current) {
-        setCompositionValue(undefined);
-        tryTriggerValueChangeCallback(e.target.value, e);
-      }
-    };
-
-    const onKeyDown = (e) => {
-      const { onKeyDown, onPressEnter } = props;
-      const keyCode = e.keyCode || e.which;
-
-      if (refIsComposition.current) {
-        return;
-      }
-
-      onKeyDown && onKeyDown(e);
-      if (keyCode === Enter.code) {
-        onPressEnter && onPressEnter(e);
-      }
-    };
-
     const inputProps = {
+      'aria-invalid': error,
       ...otherProps,
-      maxLength: mergedMaxLength,
-      value: compositionValue || value || '',
+      readOnly,
+      maxLength,
       disabled,
       placeholder,
-      onChange,
-      onKeyDown,
+      value: compositionValue || value || '',
       className: inputClassNames,
-      onCompositionStart: onComposition,
-      onCompositionUpdate: onComposition,
-      onCompositionEnd: onComposition,
+      onKeyDown: keyDownHandler,
+      onChange: valueChangeHandler,
+      onCompositionStart: compositionHandler,
+      onCompositionUpdate: compositionHandler,
+      onCompositionEnd: compositionHandler,
     };
 
     const mirrorValue = inputProps.value || placeholder;
@@ -161,7 +121,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
         {allowClear ? (
           <>
             <input ref={refInput} {...inputProps} />
-            {!disabled && allowClear && value ? (
+            {!readOnly && !disabled && allowClear && value ? (
               <IconHover
                 className={`${prefixCls}-clear-icon`}
                 onClick={(e) => {
@@ -169,7 +129,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
                   if (refInput.current && refInput.current.focus) {
                     refInput.current.focus();
                   }
-                  onValueChange && onValueChange('', e);
+                  triggerValueChangeCallback('', e);
                   onClear && onClear();
                 }}
               >

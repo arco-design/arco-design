@@ -10,6 +10,8 @@ import React, {
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { findDOMNode } from 'react-dom';
+import useMergeProps from '../_util/hooks/useMergeProps';
+import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import { on, off, isServerRendering } from '../_util/dom';
 import ResizeObserver from '../_util/resizeObserver';
@@ -21,19 +23,19 @@ import IconClose from '../../icon/react-icon/IconClose';
 import IconRotateLeft from '../../icon/react-icon/IconRotateLeft';
 import IconRotateRight from '../../icon/react-icon/IconRotateRight';
 import IconOriginalSize from '../../icon/react-icon/IconOriginalSize';
-
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
 import { ImagePreviewProps } from './interface';
 import useImageStatus from './utils/hooks/useImageStatus';
-import getScale, { minScale, maxScale } from './utils/getScale';
+import PreviewScales, { defaultScales } from './utils/getScale';
 import getFixTranslate from './utils/getFixTranslate';
 import ImagePreviewToolbar from './image-preview-toolbar';
-import useMergeValue from '../_util/hooks/useMergeValue';
 import Portal from '../Portal';
 import { PreviewGroupContext } from './previewGroupContext';
 import ImagePreviewArrow from './image-preview-arrow';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import { Esc } from '../_util/keycode';
+import useUpdate from '../_util/hooks/useUpdate';
+import { isUndefined } from '../_util/is';
 
 const ROTATE_STEP = 90;
 
@@ -41,48 +43,61 @@ export type ImagePreviewHandle = {
   reset: () => void;
 };
 
-function Preview(props: ImagePreviewProps, ref) {
+const defaultProps: Partial<ImagePreviewProps> = {
+  maskClosable: true,
+  closable: true,
+  breakPoint: 316,
+  actionsLayout: [
+    'fullScreen',
+    'rotateRight',
+    'rotateLeft',
+    'zoomIn',
+    'zoomOut',
+    'originalSize',
+    'extra',
+  ],
+  getPopupContainer: () => document.body,
+  escToExit: true,
+  scales: defaultScales,
+};
+
+function Preview(baseProps: ImagePreviewProps, ref) {
+  const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite, previewPropsMap } =
+    useContext(PreviewGroupContext);
+  const mergedPreviewProps = previewGroup ? previewPropsMap.get(currentIndex) : {};
+  const mergedProps = useMergeProps(baseProps, defaultProps, mergedPreviewProps);
   const {
     className,
     style,
     src,
     defaultVisible,
-    maskClosable = true,
-    closable = true,
-    breakPoint = 316,
+    maskClosable,
+    closable,
+    breakPoint,
     actions,
-    actionsLayout = [
-      'fullScreen',
-      'rotateRight',
-      'rotateLeft',
-      'zoomIn',
-      'zoomOut',
-      'originalSize',
-      'extra',
-    ],
-    getPopupContainer = () => document.body,
+    actionsLayout,
+    getPopupContainer,
     onVisibleChange,
-    escToExit = true,
-  } = props;
-
-  const { previewGroup, previewUrlMap, currentIndex, setCurrentIndex, infinite } =
-    useContext(PreviewGroupContext);
+    scales,
+    escToExit,
+    imgAttributes = {},
+  } = mergedProps;
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
   const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
-
   const [visible, setVisible] = useMergeValue(false, {
     defaultValue: defaultVisible,
-    value: props.visible,
+    value: mergedProps.visible,
   });
 
   const globalContext = useContext(ConfigContext);
-  const { getPrefixCls, locale } = globalContext;
+  const { getPrefixCls, locale, rtl } = globalContext;
   const prefixCls = getPrefixCls('image');
   const previewPrefixCls = `${prefixCls}-preview`;
   const classNames = cs(
     previewPrefixCls,
     {
       [`${previewPrefixCls}-hide`]: !visible,
+      [`${previewPrefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -106,6 +121,19 @@ function Preview(props: ImagePreviewProps, ref) {
   const [scaleValueVisible, setScaleValueVisible] = useState(false);
   const [rotate, setRotate] = useState(0);
   const [moving, setMoving] = useState(false);
+
+  const previewScales = useMemo(() => {
+    return new PreviewScales(scales);
+  }, []);
+
+  const {
+    onLoad,
+    onError,
+    onMouseDown,
+    style: imgStyle,
+    className: imgClassName,
+    ...restImgAttributes
+  } = imgAttributes;
 
   // Reset image params
   function reset() {
@@ -177,12 +205,12 @@ function Preview(props: ImagePreviewProps, ref) {
   };
 
   function onZoomIn() {
-    const newScale = getScale(scale, 'zoomIn');
+    const newScale = previewScales.getNextScale(scale, 'zoomIn');
     onScaleChange(newScale);
   }
 
   function onZoomOut() {
-    const newScale = getScale(scale, 'zoomOut');
+    const newScale = previewScales.getNextScale(scale, 'zoomOut');
     onScaleChange(newScale);
   }
 
@@ -214,7 +242,7 @@ function Preview(props: ImagePreviewProps, ref) {
   function close() {
     if (visible) {
       onVisibleChange && onVisibleChange(false, visible);
-      setVisible(false);
+      isUndefined(mergedProps.visible) && setVisible(false);
     }
   }
 
@@ -259,6 +287,16 @@ function Preview(props: ImagePreviewProps, ref) {
     setMoving(false);
   };
 
+  function onImgLoaded(e) {
+    setStatus('loaded');
+    onLoad && onLoad(e);
+  }
+
+  function onImgLoadError(e) {
+    setStatus('error');
+    onError && onError(e);
+  }
+
   // Record position data on move start
   const onMoveStart = (e) => {
     e.preventDefault && e.preventDefault();
@@ -269,6 +307,7 @@ function Preview(props: ImagePreviewProps, ref) {
     refMoveData.current.pageY = ev.pageY;
     refMoveData.current.originX = translate.x;
     refMoveData.current.originY = translate.y;
+    onMouseDown && onMouseDown(e);
   };
 
   useEffect(() => {
@@ -307,6 +346,11 @@ function Preview(props: ImagePreviewProps, ref) {
     setStatus(mergedSrc ? 'loading' : 'loaded');
     reset();
   }, [mergedSrc]);
+
+  useUpdate(() => {
+    previewScales.updateScale(scales);
+    setScale(1);
+  }, [scales]);
 
   // Close when pressing esc
   useEffect(() => {
@@ -351,14 +395,14 @@ function Preview(props: ImagePreviewProps, ref) {
       name: locale.ImagePreview.zoomIn,
       content: <IconZoomIn />,
       onClick: onZoomIn,
-      disabled: scale === maxScale,
+      disabled: scale === previewScales.maxScale,
     },
     {
       key: 'zoomOut',
       name: locale.ImagePreview.zoomOut,
       content: <IconZoomOut />,
       onClick: onZoomOut,
-      disabled: scale === minScale,
+      disabled: scale === previewScales.minScale,
     },
     {
       key: 'originalSize',
@@ -413,18 +457,16 @@ function Preview(props: ImagePreviewProps, ref) {
                 >
                   <img
                     ref={refImage}
-                    className={cs(`${previewPrefixCls}-img`, {
+                    className={cs(imgClassName, `${previewPrefixCls}-img`, {
                       [`${previewPrefixCls}-img-moving`]: moving,
                     })}
                     style={{
+                      ...imgStyle,
                       transform: `translate(${translate.x}px, ${translate.y}px) rotate(${rotate}deg)`,
                     }}
-                    onLoad={() => {
-                      setStatus('loaded');
-                    }}
-                    onError={() => {
-                      setStatus('error');
-                    }}
+                    {...restImgAttributes}
+                    onLoad={onImgLoaded}
+                    onError={onImgLoadError}
                     onMouseDown={onMoveStart}
                     key={previewImgSrc}
                     src={previewImgSrc}

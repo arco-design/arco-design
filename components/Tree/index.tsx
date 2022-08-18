@@ -12,6 +12,7 @@ import {
 } from './util';
 import { TreeProps, NodeProps, TreeDataType, NodeInstance, TreeState } from './interface';
 import { TreeContext } from './context';
+import { pickDataAttributes } from '../_util/pick';
 
 const DefaultFieldNames = {
   key: 'key',
@@ -582,7 +583,10 @@ class Tree extends Component<TreeProps, TreeState> {
         !this.isChildOfNode(node, this.dragNode) &&
         !this.isSameNode(this.dragNode, nodeInstance)
       ) {
-        if (allowDrop && !allowDrop({ dropNode: nodeInstance, dropPosition })) {
+        if (
+          allowDrop &&
+          !allowDrop({ dropNode: nodeInstance, dragNode: this.dragNode, dropPosition })
+        ) {
           return;
         }
         onDrop({
@@ -599,7 +603,11 @@ class Tree extends Component<TreeProps, TreeState> {
     const { allowDrop } = this.getMergedProps();
     let isAllowDrop = true;
     if (typeof allowDrop === 'function') {
-      isAllowDrop = allowDrop({ dropNode: this.cacheNodes[node._key], dropPosition });
+      isAllowDrop = allowDrop({
+        dropNode: this.cacheNodes[node._key],
+        dragNode: this.dragNode,
+        dropPosition,
+      });
     }
     return isAllowDrop;
   };
@@ -716,7 +724,7 @@ class Tree extends Component<TreeProps, TreeState> {
       : {
           threshold: null,
         };
-    const { getPrefixCls } = this.context;
+    const { getPrefixCls, rtl } = this.context;
 
     const prefixCls = getPrefixCls('tree');
 
@@ -755,6 +763,7 @@ class Tree extends Component<TreeProps, TreeState> {
               [`${prefixCls}-checkable`]: checkable,
               [`${prefixCls}-show-line`]: showLine,
               [`${prefixCls}-size-${size}`]: size,
+              [`${prefixCls}-rtl`]: rtl,
             },
             className
           )}
@@ -765,8 +774,15 @@ class Tree extends Component<TreeProps, TreeState> {
           currentExpandKeys={this.state.currentExpandKeys}
           getNodeProps={this.getNodeProps}
           nodeList={this.state.nodeList}
+          onMouseDown={this.props.onMouseDown}
           saveCacheNode={(node) => {
             this.cacheNodes[node.key] = node;
+          }}
+          ariaProps={{
+            role: 'tree',
+            'aria-multiselectable': this.props.multiple,
+            tabIndex: 0,
+            ...pickDataAttributes(this.props),
           }}
         />
       </TreeContext.Provider>

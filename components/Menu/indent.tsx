@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import MenuContext from './context';
 
 export default function MenuIndent(props: {
   prefixCls: string;
@@ -6,8 +7,10 @@ export default function MenuIndent(props: {
   levelIndent?: number;
 }) {
   const { prefixCls, levelIndent } = props;
+  const { collapse } = useContext(MenuContext);
   const level = props.level - 1;
-  return level > 0 ? (
+
+  return !collapse && level > 0 ? (
     <span>
       {[...new Array(level)].map((_, index) => {
         return (

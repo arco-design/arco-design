@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import mountTest from '../../../tests/mountTest';
+import { render, fireEvent } from '../../../tests/util';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Dropdown from '..';
 import Button from '../../Button';
@@ -8,10 +8,6 @@ import Menu from '../../Menu';
 
 mountTest(Dropdown);
 componentConfigTest(Dropdown.Button, 'Dropdown.Button');
-
-function mountDropdown(component: React.ReactElement) {
-  return mount(component);
-}
 
 const mockFn = jest.fn();
 const Droplist = (
@@ -28,30 +24,33 @@ describe('Dropdown', () => {
   });
 
   it("dropdown's children can be string", () => {
-    const wrapper = mountDropdown(<Dropdown droplist={Droplist}>Hello</Dropdown>);
-    expect(wrapper.find('span').text()).toBe('Hello');
+    const wrapper = render(<Dropdown droplist={Droplist}>Hello</Dropdown>);
+    expect(wrapper.querySelector('span')?.innerHTML).toBe('Hello');
   });
 
   it('dropdown open correctly', () => {
-    const wrapper = mountDropdown(
+    const wrapper = render(
       <Dropdown droplist={Droplist} trigger="click">
         <Button>Click Me</Button>
       </Dropdown>
     );
-    wrapper.find(Button).simulate('click');
+
+    fireEvent.click(wrapper.querySelector('.arco-btn') as any);
     jest.runAllTimers();
-    const menu = wrapper.find('Menu');
-    expect(menu.length).toBe(1);
-    expect(menu.find('MenuItem').length).toBe(3);
+    expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(1);
+    expect(document.querySelectorAll('.arco-dropdown-menu-item')).toHaveLength(3);
   });
 
   it('click menu item', () => {
-    const wrapper = mountDropdown(
+    const onClickMenuItem = jest.fn();
+    const wrapper = render(
       <Dropdown
         trigger="click"
         droplist={
           <Menu
-            onClickMenuItem={(key) => {
+            onClickMenuItem={(key, _, keyPath) => {
+              onClickMenuItem(keyPath);
+
               if (key === '2') {
                 return false;
               }
@@ -74,26 +73,33 @@ describe('Dropdown', () => {
     );
 
     const simulateMenuItemClick = (index: number) => {
-      wrapper.find('Menu').find('MenuItem').at(index).simulate('click');
+      fireEvent.click(document.querySelectorAll('.arco-dropdown-menu-item')[index]);
     };
 
-    const getIsTriggerVisible = () => {
-      return wrapper.find('Trigger').state().popupVisible;
+    const judgeTriggerVisible = (visible) => {
+      const trigger = wrapper.querySelector('.arco-trigger');
+      const classNameOfExit = 'slideDynamicOrigin-exit';
+      if (visible) {
+        expect(trigger?.className.indexOf(classNameOfExit) > -1).toBe(false);
+      } else if (trigger) {
+        expect(trigger.className.indexOf(classNameOfExit) > -1).toBe(true);
+      }
     };
 
-    expect(getIsTriggerVisible()).toBe(false);
-    wrapper.find(Button).simulate('click');
-    expect(getIsTriggerVisible()).toBe(true);
+    judgeTriggerVisible(false);
+    fireEvent.click(wrapper.querySelector('.arco-btn') as HTMLElement);
+    judgeTriggerVisible(true);
 
     simulateMenuItemClick(0);
-    expect(getIsTriggerVisible()).toBe(false);
+    judgeTriggerVisible(false);
+    expect(onClickMenuItem).toBeCalledWith(['1']);
 
-    wrapper.find(Button).simulate('click');
+    fireEvent.click(wrapper.querySelector('.arco-btn') as HTMLElement);
     simulateMenuItemClick(1);
-    expect(getIsTriggerVisible()).toBe(true);
+    judgeTriggerVisible(true);
 
     simulateMenuItemClick(2);
-    expect(getIsTriggerVisible()).toBe(true);
+    judgeTriggerVisible(true);
   });
 
   it('Dropdown.Button mount correctly', () => {
@@ -103,12 +109,13 @@ describe('Dropdown', () => {
         <Menu.Item key="2">Save and Publish</Menu.Item>
       </Menu>
     );
-    const wrapper = mountDropdown(
-      <Dropdown.Button droplist={dropList}>
+
+    const wrapper = render(
+      <Dropdown.Button disabled droplist={dropList}>
         <Button>Click Me</Button>
       </Dropdown.Button>
     );
-
-    expect(wrapper.find('.arco-btn-group')).toHaveLength(1);
+    expect(wrapper.querySelector('.arco-btn-group')).toBeTruthy();
+    expect(document.querySelectorAll('.arco-btn-disabled')).toHaveLength(2);
   });
 });

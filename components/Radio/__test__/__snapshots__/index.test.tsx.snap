@@ -53,3 +53,22 @@ exports[`ConfigProvider componentConfig.Radio set className globally and compone
   </span>
 </label>
 `;
+
+exports[`ConfigProvider componentConfig.Radio set data-* property 1`] = `
+<label
+  class="arco-radio"
+  data-test-name="Radio"
+>
+  <input
+    type="radio"
+    value=""
+  />
+  <span
+    class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
+  >
+    <div
+      class="arco-radio-mask"
+    />
+  </span>
+</label>
+`;

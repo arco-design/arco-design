@@ -1,6 +1,6 @@
 ---
 order: 6
-title: 
+title:
   zh-CN: 箭头步骤条
   en-US: Arrow Step Bar
 ---
@@ -15,15 +15,17 @@ By specifying `type:'arrow'`, you can use arrow type step bar. **Note**: Only ho
 
 ```js
 import { Steps } from '@arco-design/web-react';
-
 const Step = Steps.Step;
 
-ReactDOM.render(
-  <Steps type="arrow" current={2} style={{ maxWidth: 780 }}>
-    <Step title="Succeeded" description="This is a description" />
-    <Step title="Processing" description="This is a description" />
-    <Step title="Pending" description="This is a description" />
-  </Steps>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Steps type="arrow" current={2} style={{ maxWidth: 780 }}>
+      <Step title="Succeeded" description="This is a description" />
+      <Step title="Processing" description="This is a description" />
+      <Step title="Pending" description="This is a description" />
+    </Steps>
+  );
+};
+
+export default App;
 ```

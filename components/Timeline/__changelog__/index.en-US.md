@@ -1,3 +1,11 @@
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fixed an issue where the content of the label on the right side of the timeline was rendered incorrectly when the `Timeline` component was in `mode=alternate`.([#929](https://github.com/arco-design/arco-design/pull/929))
+
 ## 2.29.0
 
 2022-02-11

@@ -15,19 +15,21 @@ Specify `type` as `vertical` to make it vertical. Vertical dividers can't contai
 
 ```js
 import { Divider, Typography } from '@arco-design/web-react';
-
 const { Text } = Typography;
 
-ReactDOM.render(
-  <div className="divider-demo">
-    <Text>Item 1</Text>
-    <Divider type="vertical" />
-    <Text>Item 2</Text>
-    <Divider type="vertical" />
-    <Text>Item 3</Text>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div className="divider-demo">
+      <Text>Item 1</Text>
+      <Divider type="vertical" />
+      <Text>Item 2</Text>
+      <Divider type="vertical" />
+      <Text>Item 3</Text>
+    </div>
+  );
+};
+
+export default App;
 ```
 
 ```css:silent

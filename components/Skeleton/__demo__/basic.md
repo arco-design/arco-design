@@ -16,5 +16,9 @@ Basic usage of skeleton screen.
 ```js
 import { Skeleton } from '@arco-design/web-react';
 
-ReactDOM.render(<Skeleton></Skeleton>, CONTAINER);
+const App = () => {
+  return <Skeleton></Skeleton>;
+};
+
+export default App;
 ```

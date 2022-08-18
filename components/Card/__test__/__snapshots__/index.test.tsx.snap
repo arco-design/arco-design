@@ -29,3 +29,14 @@ exports[`ConfigProvider componentConfig.Card set className globally and componen
   />
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.Card set data-* property 1`] = `
+<div
+  class="arco-card arco-card-size-default arco-card-bordered"
+  data-test-name="Card"
+>
+  <div
+    class="arco-card-body"
+  />
+</div>
+`;

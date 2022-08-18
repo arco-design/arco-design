@@ -16,13 +16,13 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
         Hover me 
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-down"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -47,13 +47,13 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
           Hover me 
         </span>
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -77,13 +77,13 @@ exports[`renders Dropdown/demo/callback.md correctly 1`] = `
       Hover me and click an item 
     </span>
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-down"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -109,13 +109,13 @@ exports[`renders Dropdown/demo/control.md correctly 1`] = `
         Click
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-down"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -134,13 +134,13 @@ exports[`renders Dropdown/demo/control.md correctly 1`] = `
         Click
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-down"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -175,13 +175,13 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-more"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -211,29 +211,36 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
           Disabled
         </span>
       </button>
-      <button
-        class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
-        type="button"
+      <span
+        class=""
+        style="display:inline-block;cursor:not-allowed"
       >
-        <svg
-          class="arco-icon arco-icon-more"
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-          width="1em"
+        <button
+          class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only arco-btn-disabled"
+          disabled=""
+          style="pointer-events:none"
+          type="button"
         >
-          <path
-            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
-            fill="currentColor"
-            stroke="none"
-          />
-          <path
-            d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
-          />
-        </svg>
-      </button>
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-more"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
+            />
+          </svg>
+        </button>
+      </span>
     </div>
   </div>
   <div
@@ -256,13 +263,13 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -290,13 +297,13 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-loading"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -320,13 +327,13 @@ exports[`renders Dropdown/demo/extra-element.md correctly 1`] = `
       Hover
     </span>
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-down"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -348,13 +355,13 @@ exports[`renders Dropdown/demo/group.md correctly 1`] = `
       Group Menu 
     </span>
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-down"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -376,13 +383,13 @@ exports[`renders Dropdown/demo/item-icon.md correctly 1`] = `
       Click me 
     </span>
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-down"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -499,13 +506,13 @@ exports[`renders Dropdown/demo/sub-menu.md correctly 1`] = `
       Click
     </span>
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-down"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -531,13 +538,13 @@ exports[`renders Dropdown/demo/trigger.md correctly 1`] = `
         Hover
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-down"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -556,13 +563,13 @@ exports[`renders Dropdown/demo/trigger.md correctly 1`] = `
         Click
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-down"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M39.6 17.443 24.043 33 8.487 17.443"

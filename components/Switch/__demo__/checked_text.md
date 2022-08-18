@@ -17,12 +17,15 @@ Customize the text or icon to be displayed when the switch is turned on (off).
 import { Switch, Space } from '@arco-design/web-react';
 import { IconCheck, IconClose } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size="large">
-    <Switch checkedText="ON" uncheckedText="OFF" />
-    <Switch checkedText="1" uncheckedText="0" type="round" defaultChecked />
-    <Switch checkedText={<IconCheck />} uncheckedText={<IconClose />} defaultChecked />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Switch checkedText="ON" uncheckedText="OFF" />
+      <Switch checkedText="1" uncheckedText="0" type="round" defaultChecked />
+      <Switch checkedText={<IconCheck />} uncheckedText={<IconClose />} defaultChecked />
+    </Space>
+  );
+};
+
+export default App;
 ```

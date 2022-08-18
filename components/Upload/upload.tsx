@@ -61,7 +61,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
   baseProps: PropsWithChildren<UploadProps>,
   ref
 ) => {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<UploadProps>>(
     baseProps,
     defaultProps,
@@ -204,6 +204,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         'onProgress',
         'onExceedLimit',
         'beforeUpload',
+        'onDrop',
       ])}
       className={cs(
         prefixCls,
@@ -212,6 +213,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
           [`${prefixCls}-drag`]: props.drag,
           [`${prefixCls}-disabled`]: disabledUploadDom,
           [`${prefixCls}-hide`]: limit.hideOnExceedLimit && exceedLimit,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

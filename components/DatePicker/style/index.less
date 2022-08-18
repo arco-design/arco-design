@@ -17,7 +17,7 @@
     display: flex;
     align-items: flex-start;
 
-    > .@{prefix}-picker-shortcuts {
+    .@{prefix}-picker-shortcuts {
       display: flex;
       flex-direction: column;
       padding: 5px 8px;
@@ -169,24 +169,6 @@
     color: @picker-panel-color-text-cell_hover;
   }
 
-  &-cell-disabled &-date {
-    background-color: @picker-color-bg-cell-disabled;
-    cursor: not-allowed;
-  }
-
-  &-cell-disabled &-date-value,
-  &-cell-disabled:hover &-date-value {
-    color: @picker-color-cell-text-not-in-view;
-    background-color: @color-transparent;
-  }
-
-  &-cell-selected &-date-value,
-  &-cell-selected:hover &-date-value {
-    color: @picker-panel-color-text-cell_selected;
-    background-color: @picker-panel-color-bg-cell_selected;
-    transition: background-color @transition-duration-1 @transition-timing-function-linear;
-  }
-
   &-cell-today {
     position: relative;
 
@@ -220,13 +202,27 @@
     border-bottom-right-radius: @picker-panel-cell-boundary-border-radius;
   }
 
-  &-cell-range-start &-date-value,
-  &-cell-range-end &-date-value,
   &-cell-range-start:hover &-date-value,
   &-cell-range-end:hover &-date-value {
-    background-color: @picker-color-bg-cell-range-boundary;
-    border-radius: @picker-panel-cell-boundary-border-radius;
-    color: @picker-color-text-cell-range-boundary;
+    background-color: unset;
+  }
+
+  &-cell-disabled &-date {
+    background-color: @picker-color-bg-cell-disabled;
+    cursor: not-allowed;
+  }
+
+  &-cell-disabled &-date-value,
+  &-cell-disabled:hover &-date-value {
+    color: @picker-color-cell-text-not-in-view;
+    background-color: @color-transparent;
+  }
+
+  &-cell-selected &-date-value,
+  &-cell-selected:hover &-date-value {
+    color: @picker-panel-color-text-cell_selected;
+    background-color: @picker-panel-color-bg-cell_selected;
+    transition: background-color @transition-duration-1 @transition-timing-function-linear;
   }
 
   &-cell-hover-in-range &-date,
@@ -303,3 +299,4 @@
 @import './quarter.less';
 @import './range.less';
 @import './shortcuts.less';
+@import './rtl.less';

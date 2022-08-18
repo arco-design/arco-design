@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@self": ["../es"],
+      "@self/*": ["../es/*"],
+      "@self/icon": ["../icon"],
+      "@self/icon/*": ["../icon/*"]
+    }
+  },
+  "include": ["./**/*.tsx"]
+}

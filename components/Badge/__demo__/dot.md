@@ -17,15 +17,24 @@ A red dot will be displayed instead of the count when `dot=true`. If count equal
 import { Badge, Space } from '@arco-design/web-react';
 import { IconNotification } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size={40}>
-    <Badge count={9} dot offset={[6, -2]}>
-      <a href="#">Link</a>
-    </Badge>
-    <Badge count={9} dot  offset={[2, -2]}>
-      <IconNotification style={{ color: '#888', fontSize: 18, verticalAlign: -3 }} />
-    </Badge>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size={40}>
+      <Badge count={9} dot offset={[6, -2]}>
+        <a href="#">Link</a>
+      </Badge>
+      <Badge count={9} dot offset={[2, -2]}>
+        <IconNotification
+          style={{
+            color: '#888',
+            fontSize: 18,
+            verticalAlign: -3,
+          }}
+        />
+      </Badge>
+    </Space>
+  );
+};
+
+export default App;
 ```

@@ -15,6 +15,8 @@ export type ConfigType<T> = {
   filterOption?: CascaderProps<T>['filterOption'];
   // fieldNames
   fieldNames?: FieldNamesType;
+  // 回显父节点
+  showParent?: boolean;
 };
 
 class Store<T> {
@@ -79,11 +81,17 @@ class Store<T> {
 
     // 根据value设置节点初始选中状态
     this.flatNodes.forEach((node) => {
-      if (valueInSet(valuesSet, node.pathValue)) {
-        node.setCheckedStateIgnoreDisabled(true);
-      } else {
-        node.setCheckedStateIgnoreDisabled(false);
+      let checked = false;
+      if (this.config.showParent) {
+        if (
+          node.pathValue.some((_, index, arr) => valueInSet(valuesSet, arr.slice(0, index + 1)))
+        ) {
+          checked = true;
+        }
+      } else if (valueInSet(valuesSet, node.pathValue)) {
+        checked = true;
       }
+      node.setCheckedStateIgnoreDisabled(checked);
     });
   };
 
@@ -151,11 +159,33 @@ class Store<T> {
     return this.nodes;
   };
 
-  /** 获取所有选中状态的节点。 */
+  /** 获取所有选中状态的节点。 aggregation: 是否聚合节点 */
   public getCheckedNodes = (): Node<T>[] => {
+    if (this.config.showParent) {
+      return this.getCheckedParentNodes();
+    }
     return this.flatNodes.filter((node) => {
       return node._checked;
     });
+  };
+
+  // 按照父节点纬度聚合当前所有选中节点。
+  public getCheckedParentNodes = (): Node<T>[] => {
+    const result: Set<Node<T>> = new Set();
+    this.flatNodes.forEach((node) => {
+      if (node._checked) {
+        const pathnodes = node.getPathNodes();
+        pathnodes.some((node) => {
+          if (node._checked) {
+            if (!result.has(node)) {
+              result.add(node);
+            }
+            return true;
+          }
+        });
+      }
+    });
+    return Array.from(result);
   };
 }
 

@@ -11,8 +11,7 @@ export const bannerHeroPng = {
 };
 
 export const mobileHeroJpg = {
-  hero:
-    '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/941db0f2e4041d2aa499156f1e3604a5.jpg~tplv-uwbnlip3yd-png.png',
+  hero: '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/941db0f2e4041d2aa499156f1e3604a5.jpg~tplv-uwbnlip3yd-png.png',
   heroDark:
     '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/9b4d5259dfdee5ce0468140547e48a55.jpg~tplv-uwbnlip3yd-png.png',
 };

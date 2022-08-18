@@ -6,15 +6,22 @@ import { isArray, isDayjs } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import {
   getDayjsValue,
-  dayjs,
   getSortedDayjsArray,
   isDayjsArrayChange,
   isDayjsChange,
+  isValidTimeString,
+  toLocal,
+  toTimezone,
 } from '../_util/dayjs';
 import IconClockCircle from '../../icon/react-icon/IconClockCircle';
 import Input from '../_class/picker/input';
 import InputRange from '../_class/picker/input-range';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import usePrevious from '../_util/hooks/usePrevious';
+import useUpdate from '../_util/hooks/useUpdate';
+import PickerContext from './context';
+import { getFormatTime } from './util';
+import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(props) {
   return props.format || 'HH:mm:ss';
@@ -41,7 +48,10 @@ const defaultProps: InnerPickerProps = {
 };
 
 const Picker = (baseProps: InnerPickerProps) => {
-  const { locale, getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { locale, getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  if (rtl) {
+    defaultProps.position = 'br';
+  }
   const props = useMergeProps<InnerPickerProps>(
     baseProps,
     defaultProps,
@@ -59,6 +69,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     isRangePicker,
     picker,
     error,
+    triggerElement,
     triggerProps,
     value: propsValue,
     onChange,
@@ -67,6 +78,8 @@ const Picker = (baseProps: InnerPickerProps) => {
     editable,
     unmountOnExit,
     order,
+    utcOffset,
+    timezone,
   } = props;
 
   const format = getFormat(props);
@@ -76,9 +89,9 @@ const Picker = (baseProps: InnerPickerProps) => {
   function getDefaultValue() {
     let value;
     if (props.value) {
-      value = getDayjsValue(props.value, format);
+      value = getDayjsValue(props.value, format, utcOffset, timezone);
     } else if (props.defaultValue) {
-      value = getDayjsValue(props.defaultValue, format);
+      value = getDayjsValue(props.defaultValue, format, utcOffset, timezone);
     }
     return value;
   }
@@ -90,8 +103,25 @@ const Picker = (baseProps: InnerPickerProps) => {
   const [focusedInputIndex, setFocusedInputIndex] = useState<number>(0);
 
   // controlled mode / uncontrolled mode
-  const mergedValue = 'value' in props ? getDayjsValue(propsValue, format) : value;
+  const mergedValue =
+    'value' in props ? getDayjsValue(propsValue, format, utcOffset, timezone) : value;
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+
+  const previousUtcOffset = usePrevious(utcOffset);
+  const previousTimezone = usePrevious(timezone);
+
+  // when timezone or utcOffset change changed
+  useUpdate(() => {
+    if (value && (previousUtcOffset !== utcOffset || timezone !== previousTimezone)) {
+      const localValue = isArray(value)
+        ? value.map((v) => toLocal(v, previousUtcOffset, previousTimezone))
+        : toLocal(value, previousUtcOffset, previousTimezone);
+      const zoneValue = isArray(localValue)
+        ? localValue.map((v) => toTimezone(v, utcOffset, timezone))
+        : toTimezone(localValue, utcOffset, timezone);
+      setValue(zoneValue);
+    }
+  }, [utcOffset, previousUtcOffset, timezone, previousTimezone]);
 
   const refInput = useRef(null);
 
@@ -123,12 +153,11 @@ const Picker = (baseProps: InnerPickerProps) => {
     }
   }
 
-  function isValidTime(time): boolean {
-    return typeof time === 'string' && dayjs(time, format).format(format) === time;
-  }
-
   function onConfirmValue(vs: Dayjs | Dayjs[]) {
-    const newValue = isRangePicker && order ? getSortedDayjsArray(vs as Dayjs[]) : vs;
+    const newValue =
+      isRangePicker && order && isArray(vs)
+        ? getSortedDayjsArray(vs.map((v) => getFormatTime(v)))
+        : vs;
     setValue(newValue);
     setValueShow(undefined);
     setInputValue(undefined);
@@ -144,12 +173,13 @@ const Picker = (baseProps: InnerPickerProps) => {
     if (isArray(vs) && isDayjsArrayChange(mergedValue as Dayjs[], vs)) {
       onChange &&
         onChange(
-          vs.map((t) => t.format(format)),
-          vs
+          vs.map((t) => toLocal(t, utcOffset, timezone).format(format)),
+          vs.map((t) => toLocal(t, utcOffset, timezone))
         );
     }
     if (isDayjs(vs) && isDayjsChange(mergedValue as Dayjs, vs)) {
-      onChange && onChange(vs.format(format), vs);
+      onChange &&
+        onChange(toLocal(vs, utcOffset, timezone).format(format), toLocal(vs, utcOffset, timezone));
     }
   }
 
@@ -189,15 +219,24 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function confirmInputValue(newInputValue?: string) {
+    const newInputDayjs = getDayjsValue(newInputValue, format) as Dayjs;
     if (isRangePicker) {
       const newValueShow = [...(isArray(valueShow) ? valueShow : (value as Dayjs[]) || [])];
-      if (isValidTime(newInputValue)) {
-        newValueShow[focusedInputIndex] = getDayjsValue(newInputValue, format) as Dayjs;
+      if (isValidTimeString(newInputValue, format)) {
+        newValueShow[focusedInputIndex] = newInputDayjs;
+        const localDayjsArray = newValueShow.map((nv) => toLocal(nv, utcOffset, timezone));
+        props.onSelect &&
+          props.onSelect(
+            localDayjsArray.map((la) => la && la.format(format)),
+            localDayjsArray
+          );
         setValueShow(newValueShow);
         setInputValue(undefined);
       }
-    } else if (isValidTime(newInputValue)) {
-      setValueShow(getDayjsValue(newInputValue, format));
+    } else if (isValidTimeString(newInputValue, format)) {
+      const localDayjs = toLocal(newInputDayjs, utcOffset, timezone);
+      props.onSelect && props.onSelect(localDayjs.format(format), localDayjs);
+      setValueShow(newInputDayjs);
       setInputValue(undefined);
     }
   }
@@ -205,7 +244,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   function onPressEnter() {
     if (isRangePicker) {
       if (isArray(valueShow) && valueShow.length) {
-        if (inputValue && !isValidTime(inputValue)) {
+        if (inputValue && !isValidTimeString(inputValue, format)) {
           setOpen(false);
         } else if (valueShow[0] === undefined || valueShow[1] === undefined) {
           changeFocusedInputIndex(focusedInputIndex === 0 ? 1 : 0);
@@ -250,46 +289,50 @@ const Picker = (baseProps: InnerPickerProps) => {
     suffixIcon,
     editable,
     allowClear,
+    ...pickDataAttributes(props),
   };
 
   return (
-    <Trigger
-      popup={() => renderPopup()}
-      trigger="click"
-      clickToClose={false}
-      position={position}
-      disabled={disabled}
-      popupAlign={{ bottom: 4 }}
-      getPopupContainer={getPopupContainer}
-      onVisibleChange={onVisibleChange}
-      popupVisible={mergedPopupVisible}
-      classNames="slideDynamicOrigin"
-      unmountOnExit={!!unmountOnExit}
-      {...triggerProps}
-    >
-      {isRangePicker ? (
-        <InputRange
-          {...baseInputProps}
-          ref={refInput}
-          placeholder={rangePickerPlaceholder as string[]}
-          value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
-          onChange={onChangeInput}
-          inputValue={inputValue}
-          changeFocusedInputIndex={changeFocusedInputIndex}
-          focusedInputIndex={focusedInputIndex}
-          onPressTab={onPressTab}
-        />
-      ) : (
-        <Input
-          {...baseInputProps}
-          ref={refInput}
-          placeholder={inputPlaceHolder}
-          value={(valueShow || mergedValue) as Dayjs}
-          inputValue={inputValue as string}
-          onChange={onChangeInput}
-        />
-      )}
-    </Trigger>
+    <PickerContext.Provider value={{ utcOffset, timezone }}>
+      <Trigger
+        popup={() => renderPopup()}
+        trigger="click"
+        clickToClose={false}
+        position={position}
+        disabled={disabled}
+        popupAlign={{ bottom: 4 }}
+        getPopupContainer={getPopupContainer}
+        onVisibleChange={onVisibleChange}
+        popupVisible={mergedPopupVisible}
+        classNames="slideDynamicOrigin"
+        unmountOnExit={!!unmountOnExit}
+        {...triggerProps}
+      >
+        {triggerElement ||
+          (isRangePicker ? (
+            <InputRange
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={rangePickerPlaceholder as string[]}
+              value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
+              onChange={onChangeInput}
+              inputValue={inputValue}
+              changeFocusedInputIndex={changeFocusedInputIndex}
+              focusedInputIndex={focusedInputIndex}
+              onPressTab={onPressTab}
+            />
+          ) : (
+            <Input
+              {...baseInputProps}
+              ref={refInput}
+              placeholder={inputPlaceHolder}
+              value={(valueShow || mergedValue) as Dayjs}
+              inputValue={inputValue as string}
+              onChange={onChangeInput}
+            />
+          ))}
+      </Trigger>
+    </PickerContext.Provider>
   );
 };
 

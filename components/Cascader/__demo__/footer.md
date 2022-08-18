@@ -13,7 +13,6 @@ Custom rendering the footer of each level menu 。
 
 ```js
 import { Cascader, Message, Link, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -91,52 +90,77 @@ const options = [
   },
   {
     value: 'guangzhou',
-    label: 'guangzhou'
+    label: 'guangzhou',
   },
   {
     value: 'shenzhen',
-    label: 'Shenzhen'
+    label: 'Shenzhen',
   },
   {
     value: 'hangzhou',
-    label: 'Hangzhou'
+    label: 'Hangzhou',
   },
 ];
 
-ReactDOM.render(
-  <Space size="large">
-    <Cascader
-      placeholder="Please select ..."
-      style={{ maxWidth: 300 }}
-      options={options}
-      defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
-      showSearch
-      allowClear
-      renderFooter={(level, activeNode) => {
-        console.log(level, activeNode)
-        if (level < 2) {
-          return <Link type="text" onClick={() => { Message.info('Click me') }}>Click me</Link>
-        }
-        return null
-      }}
-    />
-    <Cascader
-      mode="multiple"
-      placeholder="Please select ..."
-      style={{ maxWidth: 300 }}
-      options={options}
-      defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-      showSearch
-      allowClear
-      renderFooter={(level, activeNode) => {
-        console.log(level, activeNode)
-        if (level < 2) {
-          return <Link type="text" onClick={() => { Message.info('Click me') }}>Click me</Link>
-        }
-        return null
-      }}
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Cascader
+        placeholder="Please select ..."
+        style={{ maxWidth: 300 }}
+        options={options}
+        defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
+        showSearch
+        allowClear
+        renderFooter={(level, activeNode) => {
+          console.log(level, activeNode);
+
+          if (level < 2) {
+            return (
+              <Link
+                type="text"
+                onClick={() => {
+                  Message.info('Click me');
+                }}
+              >
+                Click me
+              </Link>
+            );
+          }
+
+          return null;
+        }}
+      />
+      <Cascader
+        mode="multiple"
+        placeholder="Please select ..."
+        style={{ maxWidth: 300 }}
+        options={options}
+        defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
+        showSearch
+        allowClear
+        renderFooter={(level, activeNode) => {
+          console.log(level, activeNode);
+
+          if (level < 2) {
+            return (
+              <Link
+                type="text"
+                onClick={() => {
+                  Message.info('Click me');
+                }}
+              >
+                Click me
+              </Link>
+            );
+          }
+
+          return null;
+        }}
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

@@ -39,10 +39,15 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { SelectOptionProps } from '../index';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
 const THRESHOLD_TOKEN_SEPARATOR_TRIGGER = 100;
+
+// Generate DOM id for instance
+let globalSelectIndex = 0;
 
 const defaultProps: SelectProps = {
   trigger: 'click',
@@ -53,7 +58,7 @@ const defaultProps: SelectProps = {
 };
 
 function Select(baseProps: SelectProps, ref) {
-  const { getPrefixCls, renderEmpty, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SelectProps>(baseProps, defaultProps, componentConfig?.Select);
   const {
     children,
@@ -165,6 +170,14 @@ function Select(baseProps: SelectProps, ref) {
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
+  const refIsFirstRender = useIsFirstRender();
+
+  // Unique ID of this select instance
+  const instancePopupID = useMemo<string>(() => {
+    const id = `${prefixCls}-popup-${globalSelectIndex}`;
+    globalSelectIndex++;
+    return id;
+  }, []);
 
   const isNoOptionSelected = isEmptyValue(value, isMultipleMode);
   const valueActiveDefault = defaultActiveFirstOption
@@ -173,14 +186,17 @@ function Select(baseProps: SelectProps, ref) {
 
   const scrollIntoView = (optionValue) => {
     const activeOption = optionInfoMap.get(optionValue);
-    if (refWrapper.current && activeOption && activeOption.child.props) {
+    if (refWrapper.current && activeOption?.child?.props) {
       refWrapper.current.scrollTo({ key: activeOption.child.props._key });
     }
   };
 
-  // 尝试更新 inputValue，触发 onInputValueChange
+  // Try to update inputValue and trigger onInputValueChange callback
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
-    if (value !== refOnInputChangeCallbackValue.current) {
+    if (
+      value !== refOnInputChangeCallbackValue.current ||
+      reason !== refOnInputChangeCallbackReason.current
+    ) {
       setInputValue(value);
       refOnInputChangeCallbackValue.current = value;
       refOnInputChangeCallbackReason.current = reason;
@@ -218,7 +234,7 @@ function Select(baseProps: SelectProps, ref) {
       setValueActive(nextValueActive);
       // 在弹出框动画结束之后再执行scrollIntoView，否则会有不必要的滚动产生
       setTimeout(() => scrollIntoView(nextValueActive));
-    } else {
+    } else if (!refIsFirstRender) {
       tryUpdateInputValue('', 'optionListHide');
     }
   }, [popupVisible]);
@@ -252,14 +268,15 @@ function Select(baseProps: SelectProps, ref) {
   useEffect(() => {
     // 将无对应下拉框选项的 value 当作自定义 tag，将 value 中不存在的 valueTag 移除
     if (allowCreate && Array.isArray(value)) {
-      const newUseCreatedOptions = (value as any[]).filter((v) => {
-        const option = optionInfoMap.get(v);
+      const newUserCreatedOptions = (value as any[]).filter((v) => {
+        const option =
+          optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
         return !option || option._origin === 'userCreatingOption';
       });
-      const validUseCreatedOptions = userCreatedOptions.filter(
+      const validUserCreatedOptions = userCreatedOptions.filter(
         (tag) => (value as any[]).indexOf(tag) !== -1
       );
-      const _userCreatedOptions = validUseCreatedOptions.concat(newUseCreatedOptions);
+      const _userCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
       if (_userCreatedOptions.toString() !== userCreatedOptions.toString()) {
         setUserCreatedOptions(_userCreatedOptions);
       }
@@ -321,11 +338,18 @@ function Select(baseProps: SelectProps, ref) {
   };
 
   // Object should be returned when labelInValue is true
-  const getValueForCallbackParameter = (
-    value: SelectInnerStateValue,
-    option: OptionInfo | Array<OptionInfo>,
-    isEmpty = isEmptyValue(value, isMultipleMode)
-  ): SelectProps['value'] => {
+  const getValueAndOptionForCallback = (
+    stateValue: SelectInnerStateValue,
+    isEmpty = isEmptyValue(stateValue, isMultipleMode)
+  ): { value: SelectProps['value']; option: OptionInfo | OptionInfo[] } => {
+    let value: SelectProps['value'] = stateValue;
+    const option =
+      stateValue === undefined
+        ? undefined
+        : Array.isArray(stateValue)
+        ? stateValue.map(getOptionInfoByValue)
+        : getOptionInfoByValue(stateValue);
+
     if (labelInValue && !isEmpty) {
       const getOptionLabel = (optionValue: OptionProps['value'], optionInfo: OptionInfo) => {
         if (optionInfo) {
@@ -351,28 +375,24 @@ function Select(baseProps: SelectProps, ref) {
         }
       };
 
-      if (Array.isArray(value)) {
-        return value.map((optionValue, index) => ({
+      if (Array.isArray(stateValue)) {
+        value = stateValue.map((optionValue, index) => ({
           value: optionValue,
           label: getOptionLabel(optionValue, (option as OptionInfo[])[index]),
         }));
+      } else {
+        value = { value: stateValue, label: getOptionLabel(stateValue, option as OptionInfo) };
       }
-
-      return { value, label: getOptionLabel(value, option as OptionInfo) };
     }
-    return value;
+
+    return { option, value };
   };
 
   const tryUpdateSelectValue = (value: SelectInnerStateValue) => {
     setValue(value);
     if (onChange) {
-      const option =
-        value === undefined
-          ? undefined
-          : Array.isArray(value)
-          ? value.map(getOptionInfoByValue)
-          : getOptionInfoByValue(value);
-      onChange(getValueForCallbackParameter(value, option), option);
+      const paramsForCallback = getValueAndOptionForCallback(value);
+      onChange(paramsForCallback.value, paramsForCallback.option);
     }
   };
 
@@ -388,14 +408,14 @@ function Select(baseProps: SelectProps, ref) {
   // 多选时，取消一个选项
   const uncheckOption = (valueToRemove) => {
     // 取消选中时不需要检查option是否存在，因为可能已被外部剔除了此选项
-    const option = getOptionInfoByValue(valueToRemove);
     const newValue = (value as string[]).filter((v) => v !== valueToRemove);
     tryUpdateSelectValue(newValue);
 
     if (onDeselect) {
+      const paramsForCallback = getValueAndOptionForCallback(valueToRemove, false);
       onDeselect(
-        getValueForCallbackParameter(valueToRemove, option, false) as ReactText | LabeledValue,
-        option
+        paramsForCallback.value as ReactText | LabeledValue,
+        paramsForCallback.option as OptionInfo
       );
     }
   };
@@ -479,6 +499,8 @@ function Select(baseProps: SelectProps, ref) {
     // 选项列表元素
     const eleOptionList = childrenList.length ? (
       <VirtualList
+        id={instancePopupID}
+        role="listbox"
         style={dropdownMenuStyle}
         className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
         ref={refWrapper}
@@ -501,24 +523,25 @@ function Select(baseProps: SelectProps, ref) {
           }
 
           if (isSelectOption(child)) {
-            return (
-              child && (
-                <child.type
-                  {...child.props}
-                  prefixCls={prefixCls}
-                  valueSelect={value}
-                  valueActive={valueActive}
-                  isMultipleMode={isMultipleMode}
-                  onClickOption={handleOptionClick}
-                  onMouseEnter={(value) => {
-                    refKeyboardArrowDirection.current === null && setValueActive(value);
-                  }}
-                  onMouseLeave={() => {
-                    refKeyboardArrowDirection.current === null && setValueActive(undefined);
-                  }}
-                />
-              )
-            );
+            const optionValue = child.props?.value;
+            const optionProps: Partial<SelectOptionProps> = {
+              prefixCls,
+              rtl,
+              _valueActive: valueActive,
+              _valueSelect: value,
+              _isMultipleMode: isMultipleMode,
+              _isUserCreatingOption: allowCreate && userCreatingOption === optionValue,
+              _isUserCreatedOption: allowCreate && userCreatedOptions.indexOf(optionValue) > -1,
+              _onClick: handleOptionClick,
+              _onMouseEnter: (value) => {
+                refKeyboardArrowDirection.current === null && setValueActive(value);
+              },
+              _onMouseLeave: () => {
+                refKeyboardArrowDirection.current === null && setValueActive(undefined);
+              },
+            };
+
+            return child && <child.type {...child.props} {...optionProps} />;
           }
 
           return child;
@@ -527,14 +550,15 @@ function Select(baseProps: SelectProps, ref) {
     ) : null;
 
     // 无选项时的占位符元素
-    const eleNoOptionPlaceholder = mergedNotFoundContent ? (
-      <div
-        style={dropdownMenuStyle}
-        className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
-      >
-        {mergedNotFoundContent}
-      </div>
-    ) : null;
+    const eleNoOptionPlaceholder =
+      mergedNotFoundContent && !allowCreate ? (
+        <div
+          style={dropdownMenuStyle}
+          className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
+        >
+          {mergedNotFoundContent}
+        </div>
+      ) : null;
 
     return (
       <div
@@ -685,42 +709,63 @@ function Select(baseProps: SelectProps, ref) {
         onVisibleChange={tryUpdatePopupVisible}
         {...omit(triggerProps, ['popupVisible', 'onVisibleChange'])}
       >
-        {triggerElement || (
-          <SelectView
-            {...props}
-            {...selectViewEventHandlers}
-            ref={refSelectView}
-            // state
-            value={value}
-            inputValue={inputValue}
-            popupVisible={popupVisible}
-            // other
-            prefixCls={prefixCls}
-            isEmptyValue={isNoOptionSelected}
-            isMultiple={isMultipleMode}
-            onSort={tryUpdateSelectValue}
-            renderText={(value) => {
-              const option = getOptionInfoByValue(value);
-              let text = value;
-              if (isFunction(renderFormat)) {
-                text = renderFormat(
-                  option || null,
-                  getValueForCallbackParameter(value, option, false) as ReactText | LabeledValue
-                );
-              } else if (option) {
-                if ('children' in option) {
-                  text = option.children;
-                }
-              } else if (labelInValue && isObject(props.value)) {
-                text = (props.value as any).label;
-              }
-              return {
-                text,
-                disabled: option && option.disabled,
-              };
-            }}
-          />
-        )}
+        {typeof triggerElement === 'function'
+          ? (() => triggerElement(getValueAndOptionForCallback(value)))()
+          : triggerElement || (
+              <SelectView
+                {...props}
+                {...selectViewEventHandlers}
+                ref={refSelectView}
+                // state
+                value={value}
+                inputValue={inputValue}
+                popupVisible={popupVisible}
+                // other
+                rtl={rtl}
+                prefixCls={prefixCls}
+                ariaControls={instancePopupID}
+                isEmptyValue={isNoOptionSelected}
+                isMultiple={isMultipleMode}
+                onSort={tryUpdateSelectValue}
+                renderText={(value) => {
+                  const option = getOptionInfoByValue(value);
+                  let text = value;
+                  if (isFunction(renderFormat)) {
+                    const paramsForCallback = getValueAndOptionForCallback(value, false);
+                    text = renderFormat(
+                      (paramsForCallback.option as OptionInfo) || null,
+                      paramsForCallback.value as ReactText | LabeledValue
+                    );
+                  } else {
+                    let foundLabelFromProps = false;
+                    if (labelInValue) {
+                      const propValue = props.value || props.defaultValue;
+                      if (Array.isArray(propValue)) {
+                        const targetLabeledValue = (propValue as LabeledValue[]).find(
+                          (item) => isObject(item) && item.value === value
+                        );
+                        if (targetLabeledValue) {
+                          text = targetLabeledValue.label;
+                          foundLabelFromProps = true;
+                        }
+                      } else if (isObject(propValue)) {
+                        text = (propValue as LabeledValue).label;
+                        foundLabelFromProps = true;
+                      }
+                    }
+
+                    if (!foundLabelFromProps && option && 'children' in option) {
+                      text = option.children;
+                    }
+                  }
+
+                  return {
+                    text,
+                    disabled: option && option.disabled,
+                  };
+                }}
+              />
+            )}
       </Trigger>
     </ResizeObserver>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '../../../tests/util';
 import { ArrowDown, ArrowUp, Enter, Esc } from '../../_util/keycode';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
@@ -12,7 +12,7 @@ mountTest(AutoComplete);
 componentConfigTest(AutoComplete, 'AutoComplete');
 
 function mountAutoComplete(component: React.ReactElement) {
-  return mount(component);
+  return render(component);
 }
 
 afterEach(() => {
@@ -36,7 +36,7 @@ describe('AutoComplete', () => {
         triggerElement={<TextArea style={{ width: 520, height: 96 }} />}
       />
     );
-    wrapper.find('TextArea').simulate('focus');
+    fireEvent.focus(wrapper.find('textarea')[0]);
     expect(wrapper.find('.arco-trigger')).toHaveLength(1);
   });
 
@@ -47,7 +47,7 @@ describe('AutoComplete', () => {
         <AutoComplete.Option value="shanghai">Shanghai</AutoComplete.Option>
       </AutoComplete>
     );
-    wrapper.find('input').simulate('focus');
+    fireEvent.focus(wrapper.find('input')[0]);
     expect(wrapper.find('.arco-trigger')).toHaveLength(1);
   });
 
@@ -76,10 +76,9 @@ describe('AutoComplete', () => {
         onPressEnter={onPressEnter}
       />
     );
-    wrapper.find('input').simulate('focus');
+    fireEvent.focus(wrapper.find('input')[0]);
     expect(onFocus).toBeCalled();
-
-    wrapper.find('input').simulate('change', {
+    fireEvent.change(wrapper.find('input')[0], {
       target: {
         value: '上',
       },
@@ -87,13 +86,10 @@ describe('AutoComplete', () => {
     expect(onSearch).toBeCalled();
     expect(onChange).toBeCalled();
     expect(onInputChange).toBeCalled();
-
-    wrapper.find('input').simulate('keydown', {
-      keyCode: Enter.code,
-    });
+    fireEvent.keyDown(wrapper.find('input')[0], { keyCode: Enter.code });
     expect(onPressEnter).toBeCalled();
 
-    wrapper.find('.arco-select-option').at(0).simulate('click');
+    fireEvent.click(wrapper.find('.arco-select-option').item(0));
     expect(onSelect).toBeCalled();
   });
 
@@ -105,15 +101,14 @@ describe('AutoComplete', () => {
         style={{ width: 260, marginRight: 20, marginBottom: 20 }}
       />
     );
-    wrapper.find('input').simulate('focus');
-    wrapper.find('input').simulate('keyDown', { keyCode: ArrowDown.code });
-    expect(wrapper.find('.arco-select-option-hover').text()).toBe('上海');
+    fireEvent.focus(wrapper.find('input')[0]);
+    fireEvent.keyDown(wrapper.find('input')[0], { keyCode: ArrowDown.code });
+    expect(wrapper.find('.arco-select-option-hover')[0].innerHTML).toBe('上海');
+    fireEvent.keyDown(wrapper.find('input')[0], { keyCode: ArrowUp.code });
 
-    wrapper.find('input').simulate('keyDown', { keyCode: ArrowUp.code });
-    expect(wrapper.find('.arco-select-option-hover').text()).toBe('北京');
-
-    wrapper.find('input').simulate('keyDown', { keyCode: Enter.code });
-    wrapper.find('input').simulate('keyDown', { keyCode: Esc.code });
-    expect(wrapper.find('input').prop('value')).toBe('北京');
+    expect(wrapper.find('.arco-select-option-hover')[0].innerHTML).toBe('北京');
+    fireEvent.keyDown(wrapper.find('input')[0], { keyCode: Enter.code });
+    fireEvent.keyDown(wrapper.find('input')[0], { keyCode: Esc.code });
+    expect(wrapper.find<HTMLInputElement>('input')[0].value).toBe('北京');
   });
 });

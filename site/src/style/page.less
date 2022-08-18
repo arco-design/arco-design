@@ -38,79 +38,6 @@
   }
 }
 
-.ac-anchor-layout-holder {
-  width: 180px;
-  height: 100vh;
-  transition: all 0.15s;
-
-  &-close {
-    width: 0;
-    overflow: hidden;
-
-    .ac-anchor-wrapper {
-      right: -180px;
-    }
-  }
-}
-
-.ac-menu-collapse-btn {
-  position: fixed !important;
-  top: 241px;
-  left: 247px;
-  z-index: 2;
-  background: var(--color-bg-5) !important;
-  border: 1px solid var(--color-fill-3) !important;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 10%);
-  transition: all 0.15s;
-
-  &:hover {
-    transform: scale(1.1, 1.1);
-  }
-
-  &-close {
-    left: 0;
-
-    svg {
-      transform: rotate(180deg);
-    }
-  }
-}
-
-.ac-menu-holder {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 12px;
-  height: 100vh;
-  background-color: var(--color-fill-1);
-  border-right: 1px solid var(--color-border);
-  z-index: 1;
-}
-
-.ac-anchor-collapse-btn {
-  position: fixed !important;
-  top: 100px;
-  right: 112px;
-
-  svg {
-    vertical-align: -3px;
-    transform: rotate(180deg);
-  }
-
-  &-close {
-    width: 28px !important;
-    right: 0;
-    background-color: var(--color-bg-5) !important;
-    box-shadow: -1px 0 5px 0 rgba(0, 0, 0, 10%);
-    border-radius: 18px 0 0 18px !important;
-
-    svg {
-      margin-left: 2px;
-      transform: none;
-    }
-  }
-}
-
 .ac-backtop-btn {
   background: var(--color-bg-5) !important;
   border: 1px solid var(--color-fill-3) !important;
@@ -195,5 +122,17 @@
 @media screen and (max-width: 768px) {
   .ac-nav-intro {
     padding-right: 0;
+  }
+}
+
+html.rtl {
+  .ac-nav-intro {
+    padding-left: 240px;
+    padding-right: 0;
+  }
+
+  .ac-toolbar {
+    right: unset;
+    left: 46px;
   }
 }

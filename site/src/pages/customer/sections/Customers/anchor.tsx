@@ -5,7 +5,7 @@ import styles from './styles/anchor.module.less';
 
 const AnchorLink = Anchor.Link;
 
-export default function(props: { list: ShowCaseCardProps[] }) {
+export default function (props: { list: ShowCaseCardProps[] }) {
   const { list = [] } = props;
   const [anchorStyle, setAnchorStyle] = useState<CSSProperties>({});
 

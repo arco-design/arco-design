@@ -28,7 +28,7 @@ const defaultProps: BadgeProps = {
 };
 
 function Badge(baseProps: BadgeProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<BadgeProps>(baseProps, defaultProps, componentConfig?.Badge);
   const {
     count,
@@ -134,6 +134,7 @@ function Badge(baseProps: BadgeProps, ref) {
         {
           [`${prefixCls}-status`]: status,
           [`${prefixCls}-no-children`]: !children,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

@@ -15,10 +15,12 @@ title: useCheckbox
 ```js
 import { useState } from 'react';
 import { Checkbox, Divider, Button, Typography } from '@arco-design/web-react';
-
 const CheckboxGroup = Checkbox.Group;
 const useCheckbox = Checkbox.useCheckbox;
-const options = [...Array(6)].map((_, i) => ({ label: `Option ${i}`, value: i }));
+const options = [...Array(6)].map((_, i) => ({
+  label: `Option ${i}`,
+  value: i,
+}));
 
 function Demo1() {
   const {
@@ -33,10 +35,9 @@ function Demo1() {
     options.map((x) => x.value),
     [1, 2]
   );
-
   return (
     <div>
-      <div style={{marginBottom: 16}}>
+      <div style={{ marginBottom: 16 }}>
         <Checkbox
           onChange={(checked) => {
             if (checked) {
@@ -53,10 +54,8 @@ function Demo1() {
         <Button
           size="small"
           type="primary"
-          style={{ marginLeft: 16 }}
-          onClick={() => {
-            toggle();
-          }}
+          style={{ margin: '0 16px' }}
+          onClick={() => { toggle() }}
         >
           Inverse Check
         </Button>
@@ -79,10 +78,9 @@ function Demo2() {
     options.map((x) => x.value),
     [1, 2]
   );
-
   return (
     <div>
-      <div style={{marginBottom: 16}}>
+      <div style={{ marginBottom: 16 }}>
         <Checkbox
           onChange={(checked) => {
             if (checked) {
@@ -100,7 +98,7 @@ function Demo2() {
         <Button
           size="small"
           type="primary"
-          style={{ marginLeft: 16 }}
+          style={{ margin: '0 16px' }}
           onClick={() => {
             toggle();
           }}
@@ -112,7 +110,7 @@ function Demo2() {
         return (
           <Checkbox
             key={option.value}
-            style={{ marginRight: 16 }}
+            style={{ margin: '0 16px' }}
             checked={isSelected(option.value)}
             value={option.value}
             onChange={(checked) => {
@@ -127,7 +125,6 @@ function Demo2() {
   );
 }
 
-
 function Demo3() {
   const options2 = options.map((x, i) => {
     return {
@@ -140,10 +137,11 @@ function Demo3() {
     options2.map((x) => x.value),
     [1, 2]
   );
-
   return (
     <div>
-      <div style={{margin: '16px 0'}}>
+      <div
+        style={{ margin: '16px 0' }}
+      >
         <Button
           size="small"
           type="primary"
@@ -159,15 +157,28 @@ function Demo3() {
   );
 }
 
-ReactDOM.render(<div>
-    <Typography.Paragraph style={{ margin: '20px 0'}}>Checkbox group</Typography.Paragraph>
-    <Demo1 />
-    <Divider />
-    <Typography.Paragraph style={{ margin: '20px 0'}}>Checkbox</Typography.Paragraph>
-    <Demo2 />
-    <Divider />
-    <Typography.Paragraph>Checkbox group with disabled items</Typography.Paragraph>
-    <Demo3 />
-  </div>
-  , CONTAINER);
+const App = () => {
+  return (
+    <div>
+      <Typography.Paragraph
+        style={{ margin: '20px 0' }}
+      >
+        Checkbox group
+      </Typography.Paragraph>
+      <Demo1 />
+      <Divider />
+      <Typography.Paragraph
+        style={{ margin: '20px 0' }}
+      >
+        Checkbox
+      </Typography.Paragraph>
+      <Demo2 />
+      <Divider />
+      <Typography.Paragraph>Checkbox group with disabled items</Typography.Paragraph>
+      <Demo3 />
+    </div>
+  );
+};
+
+export default App;
 ```

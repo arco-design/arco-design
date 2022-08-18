@@ -34,6 +34,12 @@ export interface TreeSelectProps extends SelectViewCommonProps {
     | { label: ReactNode; value: string; disabled?: boolean }
     | { label: ReactNode; value: string; disabled?: boolean }[];
   /**
+   * @zh 输入框搜索文本的受控值
+   * @en To set input search value
+   * @version 2.39.0
+   */
+  inputValue?: string;
+  /**
    * @zh 指定 key，title，isLeaf，disabled，children 对应的字段
    * @en Custom field name for key, title, isLeaf, disabled and children
    * @defaultValue DefaultFieldNames
@@ -84,8 +90,9 @@ export interface TreeSelectProps extends SelectViewCommonProps {
   /**
    * @zh 自定义上方显示元素
    * @en Customize the trigger element
+   * @version `() => ReactNode` in 2.31.0
    */
-  triggerElement?: ReactNode;
+  triggerElement?: ReactNode | ((params: { value: any }) => ReactNode);
   /**
    * @zh 是否显示边框
    * @en Whether show border
@@ -156,6 +163,12 @@ export interface TreeSelectProps extends SelectViewCommonProps {
    */
   onSearch?: (inputValue: string) => void;
   /**
+   * @zh 输入框搜索文本改变的回调。
+   * @en Callback when the search value of input is changed.
+   * @version 2.39.0
+   */
+  onInputValueChange?: (value: string, reason: InputValueChangeReason) => void;
+  /**
    * @zh 点击清除时触发，参数是当前下拉框的展开状态。
    * @en Callback when clicked clear, the parameter is the visible state of current dropdown
    */
@@ -177,3 +190,6 @@ export const DefaultFieldNames = {
   checkable: 'checkable',
   isLeaf: 'isLeaf',
 };
+
+// 造成输入框值改变的原因：用户输入、选中选项、选项下拉框收起
+export type InputValueChangeReason = 'manual' | 'optionChecked' | 'optionListHide';

@@ -1,3 +1,32 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 功能升级
+
+- `Slider` 组件的 `showInput` 支持传入`InputNumberProps`([#762](https://github.com/arco-design/arco-design/pull/762))
+
+## 2.31.0
+
+2022-03-25
+
+### 🐛 问题修复
+
+- 修复 `Slider` 的步长设置为小数时计算出错的 bug([#655](https://github.com/arco-design/arco-design/pull/655))
+- 修复 `Slider` 点击非滑动轴区域控制台报错的 bug([#655](https://github.com/arco-design/arco-design/pull/655))
+
+### 💅 样式更新
+
+- `Slider` 在传入 `marks` 添加标签的场景下始终展示首尾端点([#683](https://github.com/arco-design/arco-design/pull/683))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 功能升级
+
+- Slider 支持按区间分段设置宽度和步长([#600](https://github.com/arco-design/arco-design/pull/600))
+
 ## 2.27.2
 
 2021-12-31

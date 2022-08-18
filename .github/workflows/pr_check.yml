@@ -11,12 +11,12 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: yarn && cd site && yarn && cd ..
-
+        run: yarn run dependencies
       - name: setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
+          cache: 'yarn'
 
       - name: run-icon
         run: yarn icon

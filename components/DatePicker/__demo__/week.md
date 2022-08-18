@@ -15,8 +15,11 @@ The basic usage of WeekPicker.
 
 ```js
 import { DatePicker } from '@arco-design/web-react';
-
 const { WeekPicker } = DatePicker;
 
-ReactDOM.render(<WeekPicker style={{ width: 200 }} />, CONTAINER);
+const App = () => {
+  return <WeekPicker style={{ width: 200 }} />;
+};
+
+export default App;
 ```

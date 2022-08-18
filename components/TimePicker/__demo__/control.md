@@ -17,9 +17,8 @@ title:
 import { useState } from 'react';
 import { TimePicker } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [value, setValue] = useState();
-
   return (
     <TimePicker
       style={{ width: 194 }}
@@ -29,5 +28,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

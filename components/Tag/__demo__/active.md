@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 
+title:
   zh-CN: 动态编辑标签
   en-US: Active
 ---
@@ -15,10 +15,10 @@ Can add and delete tags dynamically.
 
 ```js
 import { useState } from 'react';
-import { Tag, Button, Input, Message } from '@arco-design/web-react';
+import { Tag, Button, Input, Message, Space } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
 
-function Demo() {
+function App() {
   const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -29,6 +29,7 @@ function Demo() {
       setTags(tags);
       setInputValue('');
     }
+
     setShowInput(false);
   }
 
@@ -38,14 +39,13 @@ function Demo() {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+    <Space size={20}>
       {tags.map((tag, index) => {
         return (
           <Tag
             key={tag}
             closable={index !== 0}
             onClose={() => removeTag(tag)}
-            style={{ marginRight: 24 }}
           >
             {tag}
           </Tag>
@@ -75,9 +75,9 @@ function Demo() {
           Add Tag
         </Tag>
       )}
-    </div>
+    </Space>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

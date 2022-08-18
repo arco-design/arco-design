@@ -1,3 +1,36 @@
+## 2.33.0
+
+2022-05-13
+
+### 🐛 问题修复
+
+- 修复 `List` 组件 `onReachBottom` 偶现无法触发的 bug。([#854](https://github.com/arco-design/arco-design/pull/854))
+
+## 2.32.0
+
+2022-04-15
+
+### 🆕 功能升级
+
+- `List` 组件 `scrollIntoView` 方法允许指定列表滚动的具体行为。([#768](https://github.com/arco-design/arco-design/pull/768))
+- `List` 组件 `virtualListProps` 允许指定虚拟列表元素高度以改善滚动效果。([#768](https://github.com/arco-design/arco-design/pull/768))
+
+## 2.31.0
+
+2022-03-25
+
+### 🐛 问题修复
+
+- 修复 `List` 组件栅格布局下 `render` 方法的 `index` 参数错误的 bug。([#688](https://github.com/arco-design/arco-design/pull/688))
+
+## 2.30.1
+
+2022-03-11
+
+### 🐛 问题修复
+
+- 修复 `List` 组件为虚拟列表时 `scrollIntoView` 方法对首屏渲染的元素不生效的 bug。([#628](https://github.com/arco-design/arco-design/pull/628))
+
 ## 2.26.0
 
 2021-12-03

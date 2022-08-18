@@ -41,7 +41,11 @@ export type TreeDataType = NodeProps & {
   [key: string]: any;
 };
 
-export type AllowDrop = (options: { dropNode: NodeInstance; dropPosition: number }) => boolean;
+export type AllowDrop = (options: {
+  dropNode: NodeInstance;
+  dragNode: NodeInstance | null;
+  dropPosition: number;
+}) => boolean;
 
 /**
  * @title Tree
@@ -83,8 +87,8 @@ export interface TreeProps {
    */
   draggable?: boolean;
   /**
-   * @zh 是否允许拖拽时放置在该节点
-   * @en Whether to allow dropping on node
+   * @zh 是否允许拖拽时放置在该节点。 (`dragNode` in `2.23.0`)
+   * @en Whether to allow dropping on node. (`dragNode` in `2.23.0`)
    * @defaultValue () => true
    * @version 2.7.0
    */
@@ -273,6 +277,7 @@ export interface TreeProps {
   }) => void;
   filterNode?: (node: NodeProps) => boolean; // 仅提供给tree-select使用
   children?: ReactNode;
+  onMouseDown?: (e) => void;
 }
 
 /**

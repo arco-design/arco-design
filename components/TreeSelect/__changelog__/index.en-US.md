@@ -1,3 +1,51 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 Feature
+
+- `TreeSelect` add properties `inputValue` and `onInputValueChange`.([#1151](https://github.com/arco-design/arco-design/pull/1151))
+
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fixed a bug where the label of the selected item was not displayed properly when the `TreeSelect` component enabled multiple checkbox selection and remote search in controlled mode.([#1207](https://github.com/arco-design/arco-design/pull/1207))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `TreeSelect` component supports customizing the `maxTag` content display through the `maxTagCount` property of the object type([#1112](https://github.com/arco-design/arco-design/pull/1112))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- fix `dragToSort` not works on `TreeSelect`([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
+## 2.31.0
+
+2022-03-25
+
+### 🆕 Feature
+
+- `TreeSelect` component's `triggerElement` property allows passing in a function to customize the component trigger node.([#686](https://github.com/arco-design/arco-design/pull/686))
+
+## 2.30.0
+
+2022-03-04
+
+### 🐛 BugFix
+
+- Fixed the problem that the input box of the `TreeSelect` component in the extension drop-down menu could not be focused.([#608](https://github.com/arco-design/arco-design/pull/608))
+
 ## 2.29.0
 
 2022-02-11

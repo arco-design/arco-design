@@ -14,8 +14,8 @@ The function will be executed before each file upload. Uploading will be aborted
 
 ```js
 import { Upload, Modal } from '@arco-design/web-react';
-function Demo () {
 
+function App() {
   return (
     <div>
       <Upload
@@ -34,8 +34,7 @@ function Demo () {
       />
     </div>
   );
-
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

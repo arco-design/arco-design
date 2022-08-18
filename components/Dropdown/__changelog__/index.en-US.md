@@ -1,3 +1,35 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 BugFix
+
+- Fixed the bug that `disabled` didn't work for the second button of `Dropdown.Button`.([#1136](https://github.com/arco-design/arco-design/pull/1136))
+
+## 2.36.0
+
+2022-06-24
+
+### 💅 Style
+
+- Completely hides the popup menu when the `Dropdown` menu item has no children.([#1043](https://github.com/arco-design/arco-design/pull/1043))
+
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fixed the bug that the third parameter `keyPath` of `onMenuItemClick` in `Dropdown.Menu` was missing.([#921](https://github.com/arco-design/arco-design/pull/921))
+
+## 2.33.0
+
+2022-05-13
+
+### 🐛 BugFix
+
+- Fixed the bug that input box in the menu of `Dropdown` can not be focused.([#856](https://github.com/arco-design/arco-design/pull/856))
+
 ## 2.28.1
 
 2022-01-14

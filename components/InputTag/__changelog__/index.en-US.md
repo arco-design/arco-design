@@ -1,3 +1,27 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `InputTag` component allows formatting of values entered by the user via the `validate` property.([#1110](https://github.com/arco-design/arco-design/pull/1110))
+
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fixed `InputTag` display cleat button when set `allowClear` and `readOnly` together.([#651](https://github.com/arco-design/arco-design/pull/651))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fixed the bug that the `clear-icon` style of `InputTag` did not take effect([#589](https://github.com/arco-design/arco-design/pull/589))
+
 ## 2.28.2
 
 2022-01-21

@@ -2,8 +2,10 @@
 @import '../../Select/style/index.less';
 
 @cascader-prefix-cls: ~'@{prefix}-cascader';
+@cascader-prefix-cls-rtl: ~'@{cascader-prefix-cls}-rtl';
 
 .select-view(@cascader-prefix-cls);
+.select-view-rtl(@cascader-prefix-cls, @cascader-prefix-cls-rtl);
 
 .@{cascader-prefix-cls} {
   &-popup {
@@ -39,6 +41,10 @@
     display: inline-block;
     background-color: var(~'@{arco-cssvars-prefix}-color-bg-popup');
     height: 100%;
+
+    &-virtual {
+      width: @cascader-size-item-width;
+    }
 
     &:not(:last-of-type) {
       border-right: 1px solid @select-popup-color-border;
@@ -133,7 +139,7 @@
       &-disabled,
       &-disabled:hover {
         cursor: not-allowed;
-        background-color: @color-transparent;
+        background-color: @cascader-color-item-bg_disabled;
         color: @cascader-color-item-text_disabled;
 
         .@{prefix}-icon-right {
@@ -204,3 +210,5 @@
 .cascaderSlide-appear-active {
   transition: margin @transition-duration-3 @transition-timing-function-standard;
 }
+
+@import './rtl.less';

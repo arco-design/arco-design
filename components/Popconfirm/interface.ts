@@ -72,11 +72,11 @@ export interface PopconfirmProps {
    * @zh 点击确认按钮的回调函数。回调函数 `event` 参数在 `2.29.0` 支持
    * @en Callback when click the ok button. Callback `event` params is supported in `2.29.0`
    */
-  onOk?: (e: React.MouseEvent) => void;
+  onOk?: (e: React.MouseEvent) => Promise<any> | void;
   /**
    * @deprecated 统一为 onOk, onConfirm 保留，不建议使用
    */
-  onConfirm?: (e: React.MouseEvent) => void;
+  onConfirm?: (e: React.MouseEvent) => Promise<any> | void;
   /**
    * @zh 点击取消按钮的回调函数。 回调函数 `event` 参数在 `2.29.0` 支持
    * @en Callback when click the cancel button. Callback `event` params is supported in `2.29.0`

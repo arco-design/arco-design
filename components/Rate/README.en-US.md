@@ -14,17 +14,17 @@ Rate is used for scoring.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|defaultValue|To set default value|`number`|`-`|
-|character|The custom character of rate|`ReactNode \| ((index: number) => ReactNode)`|`<IconStarFill />`|
-|count|Star count|`number`|`5`|
-|value|To set value|`number`|`-`|
-|tooltips|Customize tooltip by each character|`string[]`|`-`|
-|allowHalf|Whether to allow half selection|`boolean`|`-`|
-|allowClear|Whether to allow clear when click again|`boolean`|`-`|
-|readonly|Whether is readonly|`boolean`|`-`|
-|disabled|Whether is disabled|`boolean`|`-`|
-|grading|Whether to show score with smiley icon|`boolean`|`-`|
-|onChange|Callback when score is changed|`(value: number) => void`|`-`|
-|onHoverChange|Callback when the score user hovered is changed|`(value: number) => void`|`-`|
+|allowClear|Whether to allow clear when click again|boolean |`-`|
+|allowHalf|Whether to allow half selection|boolean |`-`|
+|disabled|Whether is disabled|boolean |`-`|
+|grading|Whether to show score with smiley icon|boolean |`-`|
+|readonly|Whether is readonly|boolean |`-`|
+|count|Star count|number |`5`|
+|defaultValue|To set default value|number |`-`|
+|value|To set value|number |`-`|
+|className|Additional css class|string \| string[] |`-`|
+|style|Additional style|CSSProperties |`-`|
+|tooltips|Customize tooltip by each character|string[] |`-`|
+|character|The custom character of rate|ReactNode \| ((index: number) => ReactNode) |`<IconStarFill />`|
+|onChange|Callback when score is changed|(value: number) => void |`-`|
+|onHoverChange|Callback when the score user hovered is changed|(value: number) => void |`-`|

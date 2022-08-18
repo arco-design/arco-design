@@ -7,31 +7,27 @@ title:
 
 ## zh-CN
 
-通过 `filterOption` 和 `onSearch` 结合，可以使用远程搜索功能。
+指定 `showSearch`，并且结合 `filterOption` 和 `onSearch`，可以使用远程搜索功能。
 
 ## en-US
 
-Through the combination of `filterOption` and `onSearch`, you can search user from origin and select them.
+Through the combination of `showSearch`, `filterOption` and `onSearch`, you can search user from origin and select them.
 
 ```js
 import { useState, useRef, useCallback } from 'react';
 import { Select, Spin, Avatar } from '@arco-design/web-react';
 import debounce from 'lodash/debounce';
 
-function Demo() {
+function App() {
   const [options, setOptions] = useState([]);
   const [fetching, setFetching] = useState(false);
-
   const refFetchId = useRef(null);
-
   const debouncedFetchUser = useCallback(
     debounce((inputValue) => {
       refFetchId.current = Date.now();
       const fetchId = refFetchId.current;
-
       setFetching(true);
       setOptions([]);
-
       fetch('https://randomuser.me/api/?results=5')
         .then((response) => response.json())
         .then((body) => {
@@ -47,7 +43,6 @@ function Demo() {
               ),
               value: user.email,
             }));
-
             setFetching(false);
             setOptions(options);
           }
@@ -55,10 +50,10 @@ function Demo() {
     }, 500),
     []
   );
-
   return (
     <Select
       style={{ width: 345 }}
+      showSearch
       mode="multiple"
       options={options}
       placeholder="Search by name"
@@ -68,7 +63,13 @@ function Demo() {
       }}
       notFoundContent={
         fetching ? (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <Spin style={{ margin: 12 }} />
           </div>
         ) : null
@@ -78,5 +79,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

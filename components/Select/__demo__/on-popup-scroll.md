@@ -18,29 +18,36 @@ import { useRef, useCallback, useState } from 'react';
 import { Select, Spin, Avatar } from '@arco-design/web-react';
 import debounce from 'lodash/debounce';
 
-function Demo() {
+function App() {
   const [options, setOptions] = useState([]);
   const [fetching, setFetching] = useState(false);
-
   const refFetchId = useRef(null);
   const refCanTriggerLoadMore = useRef(true);
-
   const debouncedFetchUser = useCallback(
     debounce((inputValue) => {
       refFetchId.current = Date.now();
       const fetchId = refFetchId.current;
-
       setFetching(true);
       setOptions([]);
-
       fetch('https://randomuser.me/api/?results=10')
         .then((response) => response.json())
         .then((body) => {
           if (refFetchId.current === fetchId) {
             const newOptions = body.results.map((user) => ({
               label: (
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <Avatar size={24} style={{ marginLeft: 6, marginRight: 12 }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Avatar
+                    size={24}
+                    style={{
+                      marginLeft: 6,
+                      marginRight: 12,
+                    }}
+                  >
                     <img alt="avatar" src={user.picture.thumbnail} />
                   </Avatar>
                   {`${user.name.first} ${user.name.last}`}
@@ -48,7 +55,6 @@ function Demo() {
               ),
               value: user.email,
             }));
-
             setFetching(false);
             setOptions(newOptions);
           }
@@ -60,6 +66,7 @@ function Demo() {
   const popupScrollHandler = (element) => {
     const { scrollTop, scrollHeight, clientHeight } = element;
     const scrollBottom = scrollHeight - (scrollTop + clientHeight);
+
     if (scrollBottom < 10) {
       if (!fetching && refCanTriggerLoadMore.current) {
         debouncedFetchUser();
@@ -82,7 +89,13 @@ function Demo() {
       }}
       notFoundContent={
         fetching ? (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <Spin style={{ margin: 12 }} />
           </div>
         ) : null
@@ -93,5 +106,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

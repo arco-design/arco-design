@@ -1,7 +1,7 @@
 import React, { useEffect, useState, CSSProperties } from 'react';
-import { Divider, Button, Carousel } from '@arco-design/web-react';
+import { Divider, Button, Carousel, Space } from '@arco-design/web-react';
 import { IconClose } from '@arco-design/web-react/icon';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import LogoArco from '../../assets/logo_ArcoDesign.svg';
 import LogoDarkArco from '../../assets/logo_dark_ArcoDesign.svg';
 import logoList from '../../assets/products';
@@ -170,7 +170,10 @@ export default function Teams() {
             <div className={styles['teams-logo-teams']}>
               <ul
                 className={styles['teams-logo-list']}
-                style={{ top: logoOffset, transition: isAnimate ? 'top ease-out 300ms' : 'none' }}
+                style={{
+                  top: logoOffset,
+                  transition: isAnimate ? 'top ease-out 300ms' : 'none',
+                }}
                 onTransitionEnd={handleTransitionEnd}
               >
                 {logoList.concat(logoList[0]).map((item, index) => {
@@ -196,19 +199,23 @@ export default function Teams() {
               <div className={styles['teams-count-name']}>{locale['teams.download']}</div>
             </div>
           </div>
-          <div className={styles['teams-bottom']}>
+          <Space className={styles['teams-bottom']} size={12}>
             <StartBtn className={styles['teams-bottom-btn']} reportTea={reportTea} />
             <Button
               className={`home-btn ${styles['teams-bottom-btn']}`}
               type="secondary"
               href={linkShowCase}
               onClick={() => {
-                reportTea({ name: locale['banner.showcase'], link: linkShowCase, target: '_self' });
+                reportTea({
+                  name: locale['banner.showcase'],
+                  link: linkShowCase,
+                  target: '_self',
+                });
               }}
             >
               {locale['teams.showcase']}
             </Button>
-          </div>
+          </Space>
         </div>
         <div className={styles['teams-body-right']}>{renderReviewList()}</div>
       </div>

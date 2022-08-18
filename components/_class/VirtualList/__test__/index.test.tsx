@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
-import { mount } from 'enzyme';
+import { fireEvent } from '@testing-library/dom';
 
-import { act } from 'react-dom/test-utils';
-import { requestAnimationFrameMock } from '../../../../tests/mockRAF';
 import VirtualList from '../index';
+import { requestAnimationFrameMock } from '../../../../tests/mockRAF';
+import { render, sleep } from '../../../../tests/util';
 
 function getData(size: number) {
   return new Array(size).fill(null).map((_, index) => ({ content: `Content ${index}` }));
@@ -14,7 +14,7 @@ describe('VirtualList', () => {
     requestAnimationFrameMock.reset();
   });
 
-  it('virtual auto toggle', () => {
+  it('virtual auto toggle', async () => {
     function Demo() {
       const refList = useRef(null);
       const [data, setData] = useState(getData(60));
@@ -47,69 +47,56 @@ describe('VirtualList', () => {
         </div>
       );
     }
-    const wrapper = mount(<Demo />);
+    const wrapper = render(<Demo />);
     expect(wrapper.find('.list-item').length).toBe(60);
 
     // scroll when not virtual
-    act(() => {
-      wrapper.find('.scroll-to-last-item').simulate('click');
-      requestAnimationFrameMock.triggerAllAnimationFrames();
-    });
+    fireEvent.click(wrapper.querySelector('.scroll-to-last-item'));
+    requestAnimationFrameMock.triggerAllAnimationFrames();
 
     // scroll to px
-    act(() => {
-      wrapper.find('.scroll-to-top').simulate('click');
-      requestAnimationFrameMock.triggerAllAnimationFrames();
-    });
+    fireEvent.click(wrapper.querySelector('.scroll-to-top'));
+    requestAnimationFrameMock.triggerAllAnimationFrames();
 
     // switch to virtual when items are added
-    act(() => {
-      wrapper.find('.add-items').simulate('click');
-    });
-    wrapper.update();
+    fireEvent.click(wrapper.querySelector('.add-items'));
     expect(wrapper.find('.list-item').length).toBe(8);
 
     // scroll to last item when list is virtual
-    act(() => {
-      wrapper.find('.scroll-to-last-item').simulate('click');
-      requestAnimationFrameMock.triggerAllAnimationFrames();
-    });
-    wrapper.update();
-    expect(wrapper.find('.list-item').at(0).text()).toBe('Content 102');
+    fireEvent.click(wrapper.querySelector('.scroll-to-last-item'));
+    await sleep(100);
+    requestAnimationFrameMock.triggerAllAnimationFrames();
+    expect(wrapper.find('.list-item').length).toBe(8);
+    expect(wrapper.querySelector('.list-item')).toHaveTextContent('Content 102');
 
     // scroll to 50th item when list is virtual
-    act(() => {
-      wrapper.find('.scroll-to-item-50').simulate('click');
-      requestAnimationFrameMock.triggerAllAnimationFrames();
-    });
-    wrapper.update();
-    expect(wrapper.find('.list-item').at(0).text()).toBe('Content 42');
+    fireEvent.click(wrapper.querySelector('.scroll-to-item-50'));
+    await sleep(100);
+    requestAnimationFrameMock.triggerAllAnimationFrames();
+    expect(wrapper.querySelector('.list-item')).toHaveTextContent('Content 42');
 
     // switch to real list when items are removed
-    act(() => {
-      wrapper.find('.remove-items').simulate('click');
-    });
-    wrapper.update();
+    fireEvent.click(wrapper.querySelector('.remove-items'));
     expect(wrapper.find('.list-item').length).toBe(60);
   });
 
   it('onScroll is called', () => {
+    const className = 'virtual-list';
     const onScroll = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <VirtualList
         style={{ maxHeight: 200 }}
         measureLongestItem
         data={getData(200)}
         onScroll={onScroll}
         threshold={null}
+        className={className}
       >
         {({ content }) => <div className="list-item">{content}</div>}
       </VirtualList>
     );
 
-    act(() => {
-      wrapper.simulate('scroll');
-    });
+    fireEvent.scroll(wrapper.querySelector(`.${className}`));
     expect(onScroll).toBeCalled();
   });
 });

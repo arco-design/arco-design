@@ -16,9 +16,15 @@ Show extra content.
 ```js
 import { TimePicker } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <TimePicker extra="Extra Footer" style={{ width: 194 }} />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <TimePicker
+      extra="Extra Footer"
+      style={{ width: 194, }}
+    />
+  );
+};
+
+export default App;
 ```
 

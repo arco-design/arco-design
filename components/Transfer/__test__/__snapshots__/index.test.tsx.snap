@@ -26,8 +26,10 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -60,6 +62,7 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -71,13 +74,13 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
                 class="arco-empty-image"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-empty"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -99,18 +102,20 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -118,18 +123,20 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -159,8 +166,10 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -193,6 +202,7 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -204,13 +214,13 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
                 class="arco-empty-image"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-empty"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -257,8 +267,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -291,6 +303,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -302,13 +315,13 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
                 class="arco-empty-image"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-empty"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -330,18 +343,20 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -349,18 +364,20 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -390,8 +407,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -424,6 +443,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -435,13 +455,13 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
                 class="arco-empty-image"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-empty"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -488,8 +508,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -522,6 +544,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -533,13 +556,13 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
                 class="arco-empty-image"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-empty"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -561,18 +584,20 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
     class="arco-transfer-operations"
   >
     <button
+      aria-label="move selected right"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -580,18 +605,20 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -621,8 +648,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -655,6 +684,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
       >
         <div
           class="arco-list-content"
+          role="list"
         >
           <div
             class="arco-empty"
@@ -666,13 +696,13 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
                 class="arco-empty-image"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-empty"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
@@ -693,9 +723,10 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
 </div>
 `;
 
-exports[`Transfer should render correctly 1`] = `
+exports[`ConfigProvider componentConfig.Transfer set data-* property 1`] = `
 <div
   class="arco-transfer"
+  data-test-name="Transfer"
 >
   <div
     class="arco-transfer-view arco-transfer-view-source"
@@ -707,22 +738,22 @@ exports[`Transfer should render correctly 1`] = `
         class="arco-transfer-view-header-title"
       >
         <label
-          checked=""
-          class="arco-checkbox arco-checkbox-checked"
+          class="arco-checkbox"
         >
           <input
-            checked=""
             type="checkbox"
           />
           <span
-            class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
+            class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
           >
             <div
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -744,7 +775,7 @@ exports[`Transfer should render correctly 1`] = `
       <span
         class="arco-transfer-view-header-unit"
       >
-        1 / 2
+        0 / 0
       </span>
     </div>
     <div
@@ -755,82 +786,38 @@ exports[`Transfer should render correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
-          <li
-            class="arco-transfer-view-item"
+          <div
+            class="arco-empty"
           >
-            <label
-              checked=""
-              class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
+            <div
+              class="arco-empty-wrapper"
             >
-              <input
-                checked=""
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
+              <div
+                class="arco-empty-image"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-empty"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
                 >
-                  <svg
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
-                  >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
+                  <path
+                    d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-empty-description"
               >
-                a
-              </span>
-            </label>
-          </li>
-          <li
-            class="arco-transfer-view-item arco-transfer-view-item-disabled"
-          >
-            <label
-              class="arco-checkbox arco-checkbox-disabled arco-transfer-view-item-content"
-            >
-              <input
-                disabled=""
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
-              >
-                <div
-                  class="arco-checkbox-mask"
-                >
-                  <svg
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
-                  >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
-              >
-                c
-              </span>
-            </label>
-          </li>
+                暂无数据
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -839,17 +826,20 @@ exports[`Transfer should render correctly 1`] = `
     class="arco-transfer-operations"
   >
     <button
-      class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only"
+      aria-label="move selected right"
+      class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
+      disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-right"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m16 39.513 15.556-15.557L16 8.4"
@@ -857,18 +847,20 @@ exports[`Transfer should render correctly 1`] = `
       </svg>
     </button>
     <button
+      aria-label="move selected left"
       class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-round arco-btn-icon-only arco-btn-disabled"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -898,8 +890,10 @@ exports[`Transfer should render correctly 1`] = `
               class="arco-checkbox-mask"
             >
               <svg
+                aria-hidden="true"
                 class="arco-checkbox-mask-icon"
                 fill="currentColor"
+                focusable="false"
                 height="200"
                 viewBox="0 0 1024 1024"
                 width="200"
@@ -921,7 +915,7 @@ exports[`Transfer should render correctly 1`] = `
       <span
         class="arco-transfer-view-header-unit"
       >
-        0 / 1
+        0 / 0
       </span>
     </div>
     <div
@@ -932,43 +926,38 @@ exports[`Transfer should render correctly 1`] = `
       >
         <div
           class="arco-list-content"
+          role="list"
         >
-          <li
-            class="arco-transfer-view-item"
+          <div
+            class="arco-empty"
           >
-            <label
-              class="arco-checkbox arco-transfer-view-item-content"
+            <div
+              class="arco-empty-wrapper"
             >
-              <input
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+              <div
+                class="arco-empty-image"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-empty"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
                 >
-                  <svg
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
-                  >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
+                  <path
+                    d="M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="arco-empty-description"
               >
-                b
-              </span>
-            </label>
-          </li>
+                暂无数据
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

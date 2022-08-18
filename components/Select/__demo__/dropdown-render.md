@@ -17,10 +17,9 @@ Use `dropdownRender` to freely customize the drop-down menu.
 import { useState } from 'react';
 import { Select, Divider, Input, Button } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
-
 const Option = Select.Option;
 
-function Demo() {
+function App() {
   const [options, setOptions] = useState(['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen']);
   const [inputValue, setInputValue] = useState('');
 
@@ -39,7 +38,13 @@ function Demo() {
         <div>
           {menu}
           <Divider style={{ margin: 0 }} />
-          <div style={{ display: 'flex', alignItems: 'center', padding: '10px 12px' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              padding: '10px 12px',
+            }}
+          >
             <Input
               size="small"
               style={{ marginRight: 18 }}
@@ -69,5 +74,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

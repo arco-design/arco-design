@@ -1,9 +1,10 @@
 import cloneDeepWith from 'lodash/cloneDeepWith';
 import lodashSet from 'lodash/set';
 import { PropertyPath } from 'lodash';
-import { Schema } from 'b-validate';
-import { isArray, isObject } from '../_util/is';
-import { IndexedObject } from './interface';
+import { Schema, SchemaType } from 'b-validate';
+import React, { ReactNode } from 'react';
+import { isArray, isObject, isFunction } from '../_util/is';
+import { IndexedObject, FormProps } from './interface';
 import { RulesProps } from '..';
 
 export function cloneDeep(value) {
@@ -14,6 +15,19 @@ export function cloneDeep(value) {
     }
   });
 }
+
+export const formatValidateMsg = (
+  validateMessages: FormProps['validateMessages'],
+  info: { label: ReactNode }
+) => {
+  return cloneDeepWith(validateMessages, (val) => {
+    if (isFunction(val)) {
+      return (data) => {
+        return val(data, info);
+      };
+    }
+  });
+};
 
 export function set<T extends IndexedObject>(target: T, field: PropertyPath, value: any) {
   lodashSet(target, field, cloneDeep(value));
@@ -29,7 +43,12 @@ export function iterativelyGetKeys(obj, prefix = '') {
     return [];
   }
   return Object.keys(obj).reduce((res, el) => {
-    if (typeof obj[el] === 'object' && obj[el] !== null) {
+    if (
+      typeof obj[el] === 'object' &&
+      obj[el] !== null &&
+      Object.keys(obj[el]).length > 0 &&
+      !React.isValidElement(obj[el])
+    ) {
       return [...res, ...iterativelyGetKeys(obj[el], `${prefix + el}.`)];
     }
     return [...res, prefix + el];
@@ -41,7 +60,7 @@ export function isSyntheticEvent(e: any): boolean {
   return e?.constructor?.name === 'SyntheticEvent' || e?.nativeEvent instanceof Event;
 }
 
-export async function schemaValidate(field, value, _rules: RulesProps[]) {
+export async function schemaValidate(field, value, _rules: RulesProps[], validateMessages) {
   const rules: RulesProps[] = [..._rules];
   let current = 0;
 
@@ -65,7 +84,11 @@ export async function schemaValidate(field, value, _rules: RulesProps[]) {
       if (!_rule.type && !_rule.validator) {
         _rule.type = 'string';
       }
-      const schema = new Schema({ [field]: [_rule] }, { ignoreEmptyString: true });
+      const schema = new Schema({ [field]: [_rule] } as SchemaType, {
+        ignoreEmptyString: true,
+        validateMessages,
+      });
+
       schema.validate({ [field]: value }, (error) => {
         if (error) {
           if (rule.validateLevel === 'warning') {

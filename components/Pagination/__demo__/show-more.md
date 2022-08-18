@@ -14,9 +14,10 @@ title:
 By changing the value of `total`, solve the situation where the total number of pages cannot be calculated.
 
 ```js
+import React from 'react';
 import { Pagination } from '@arco-design/web-react';
 
-class Demo extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,14 +44,16 @@ class Demo extends React.Component {
   };
 
   render() {
-    return <Pagination
-      current={this.state.current}
-      total={this.state.total}
-      onChange={this.handeChange}
-      showMore={this.state.showMore}
-    />;
+    return (
+      <Pagination
+        current={this.state.current}
+        total={this.state.total}
+        onChange={this.handeChange}
+        showMore={this.state.showMore}
+      />
+    );
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -1,4 +1,4 @@
-import { useState, MutableRefObject, useCallback } from 'react';
+import { useState, MutableRefObject, useRef, useCallback } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import { NodeProps } from '../../Tree/interface';
 import { LabelValue, TreeSelectProps } from '../interface';
@@ -98,6 +98,8 @@ const useStateValue = (
     }
   ) => void
 ] => {
+  const valueCopy = useRef([]);
+
   const calcValue = (): LabelValue[] => {
     const propsValue = props.value || props.defaultValue || [];
     if (props.treeCheckable) {
@@ -107,7 +109,8 @@ const useStateValue = (
         indeterminateKeys,
         props
       );
-      const parsedPropValue = parseValue(propsValue as valueType, key2nodeProps);
+      const parsedPropValue = parseValue(propsValue as valueType, key2nodeProps, valueCopy.current);
+
       const parsedCheckedValue = parseValue(initCheckedKeys, key2nodeProps, parsedPropValue);
       return parsedCheckedValue;
     }
@@ -115,7 +118,12 @@ const useStateValue = (
     return parseValue(propsValue as valueType, key2nodeProps);
   };
 
-  const [value, setValue] = useState<LabelValue[]>(calcValue());
+  const [value, _setValue] = useState<LabelValue[]>(calcValue);
+
+  const setValue = (value) => {
+    valueCopy.current = value;
+    _setValue(value);
+  };
 
   useUpdate(() => {
     const nextValue = calcValue();

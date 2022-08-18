@@ -16,21 +16,19 @@ Dynamically add or subtract tabs. Only effective when `type=card | card-gutter`.
 ```js
 import { useState } from 'react';
 import { Tabs, Typography } from '@arco-design/web-react';
-
 const TabPane = Tabs.TabPane;
-
 let count = 5;
-
-const style = { textAlign: 'center', marginTop: 20 };
-
-
+const style = {
+  textAlign: 'center',
+  marginTop: 20,
+};
 const initTabs = [...new Array(count)].map((x, i) => ({
   title: `Tab ${i + 1}`,
   key: `key${i + 1}`,
   content: `${i + 1}`,
 }));
 
-function Demo() {
+function App() {
   const [tabs, setTabs] = useState(initTabs);
   const [activeTab, setActiveTab] = useState('key2');
 
@@ -46,10 +44,10 @@ function Demo() {
 
   const handleDeleteTab = (key) => {
     const index = tabs.findIndex((x) => x.key === key);
-    const newTabs = tabs.slice(0, index).concat(tabs.slice(index + 1))
+    const newTabs = tabs.slice(0, index).concat(tabs.slice(index + 1));
 
     if (key === activeTab && index > -1 && newTabs.length) {
-      setActiveTab(newTabs[index] ? newTabs[index].key : newTabs[index - 1].key)
+      setActiveTab(newTabs[index] ? newTabs[index].key : newTabs[index - 1].key);
     }
 
     if (index > -1) {
@@ -67,13 +65,15 @@ function Demo() {
       onChange={setActiveTab}
     >
       {tabs.map((x, i) => (
-        <TabPane destroyOnHide  key={x.key} title={x.title}>
-          <Typography.Paragraph style={style}>{`Content of Tab Panel ${x.content}`}</Typography.Paragraph>
+        <TabPane destroyOnHide key={x.key} title={x.title}>
+          <Typography.Paragraph
+            style={style}
+          >{`Content of Tab Panel ${x.content}`}</Typography.Paragraph>
         </TabPane>
       ))}
     </Tabs>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

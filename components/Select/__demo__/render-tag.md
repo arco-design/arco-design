@@ -15,7 +15,6 @@ Use `renderTag` to customize Tags will be rendered in select box.
 
 ```js
 import { Select, Tag } from '@arco-design/web-react';
-
 const options = [
   'red',
   'orangered',
@@ -32,7 +31,6 @@ const options = [
 
 function tagRender(props) {
   const { label, value, closable, onClose } = props;
-
   return (
     <Tag
       color={options.indexOf(value) > -1 ? value : 'gray'}
@@ -45,20 +43,23 @@ function tagRender(props) {
   );
 }
 
-ReactDOM.render(
-  <div>
-    <div style={{ marginBottom: 20 }}>
-      <Select
-        style={{ maxWidth: 350, marginRight: 20 }}
-        allowClear
-        placeholder="Please Select"
-        mode={'multiple'}
-        defaultValue={options.slice(0, 2)}
-        options={options}
-        renderTag={tagRender}
-      />
+const App = () => {
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <Select
+          style={{ maxWidth: 350, marginRight: 20 }}
+          allowClear
+          placeholder="Please Select"
+          mode={'multiple'}
+          defaultValue={options.slice(0, 2)}
+          options={options}
+          renderTag={tagRender}
+        />
+      </div>
     </div>
-  </div>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

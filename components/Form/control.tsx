@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { Component, isValidElement, ReactElement } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import has from 'lodash/has';
 import set from 'lodash/set';
@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import setWith from 'lodash/setWith';
 import { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
 import { FormItemContext } from './context';
-import { isArray, isFunction } from '../_util/is';
+import { isArray, isFunction, isNullOrUndefined } from '../_util/is';
 import warn from '../_util/warning';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
@@ -46,6 +46,9 @@ export default class Control<
 
   private touched: boolean;
 
+  // 保存 props.children 或函数类型 props.children() 的返回值
+  private childrenElement: React.ReactNode = null;
+
   private removeRegisterField: () => void;
 
   constructor(
@@ -65,16 +68,28 @@ export default class Control<
       const innerMethods = store.getInnerMethods(true);
       this.removeRegisterField = innerMethods.registerField(this);
     }
+    this.isDestroyed = false;
+  }
+
+  componentDidUpdate(prevProps) {
+    // key 未改变，但 field 改变了，则需要把绑定在之前 prevProps.field 上的错误状态调整到 props.field
+    // 一般会把 field 直接作为 control 的 key，他们会同步变动，不会触发此逻辑
+    // 在 FormList 下，`FormItem` 顺序会被改变，为了保证校验状态被保留，key 不会改变但 field 和字段顺序有关
+    if (
+      prevProps.field !== this.props.field &&
+      this.props._key &&
+      prevProps._key === this.props._key
+    ) {
+      this.updateFormItem();
+      this.clearFormItemError(prevProps.field);
+    }
   }
 
   componentWillUnmount() {
     this.removeRegisterField && this.removeRegisterField();
 
     this.removeRegisterField = null;
-
-    // destroy errors
-    const { updateFormItem } = this.context;
-    updateFormItem && updateFormItem(this.props.field as string, { errors: null, warnings: null });
+    this.clearFormItemError();
     this.isDestroyed = true;
   }
 
@@ -88,6 +103,12 @@ export default class Control<
 
   public hasFieldProps = (): boolean => {
     return !!this.props.field;
+  };
+
+  private clearFormItemError = (field = this.props.field) => {
+    // destroy errors
+    const { updateFormItem } = this.context;
+    updateFormItem && updateFormItem(field as string, { errors: null, warnings: null });
   };
 
   private updateFormItem = () => {
@@ -148,7 +169,9 @@ export default class Control<
             this.touched = info.data.touched;
           }
           if (info.data && 'warnings' in info.data) {
-            this.warnings = [].concat(info.data.warnings);
+            this.warnings = isNullOrUndefined(info.data.warnings)
+              ? []
+              : [].concat(info.data.warnings);
           }
           if (info.data && 'errors' in info.data) {
             this.errors = info.data.errors;
@@ -180,37 +203,6 @@ export default class Control<
       });
   };
 
-  handleTrigger = (_value, ...args) => {
-    const { store } = this.context;
-    const { field, trigger, normalize, getValueFromEvent } = this.props;
-    const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
-    const children = this.props.children as ReactElement;
-    let normalizeValue = value;
-    // break if value is instance of SyntheticEvent, 'cos value is missing
-    if (isSyntheticEvent(value)) {
-      warn(
-        true,
-        'changed value missed, please check whether extra elements is outta input/select controled by Form.Item'
-      );
-      value.stopPropagation();
-      return;
-    }
-
-    if (typeof normalize === 'function') {
-      normalizeValue = normalize(value, store.getFieldValue(field), {
-        ...store.getFieldsValue(),
-      });
-    }
-    this.touched = true;
-    this.innerSetFieldValue(field, normalizeValue);
-
-    this.validateField(trigger);
-
-    if (children && children.props && children.props[trigger as string]) {
-      children.props[trigger as string](normalizeValue, ...args);
-    }
-  };
-
   /**
    *
    * @param triggerType the value of validateTrigger.
@@ -223,7 +215,7 @@ export default class Control<
     value: FieldValue;
     field: FieldKey;
   }> => {
-    const { store, validateTrigger: ctxValidateTrigger } = this.context;
+    const { store, validateTrigger: ctxValidateTrigger, validateMessages } = this.context;
     const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
     const _rules = !triggerType
@@ -233,7 +225,7 @@ export default class Control<
           return triggers.indexOf(triggerType) > -1;
         });
     if (_rules && _rules.length && field) {
-      return schemaValidate(field, value, _rules).then(({ error, warning }) => {
+      return schemaValidate(field, value, _rules, validateMessages).then(({ error, warning }) => {
         this.errors = error ? error[field] : null;
         this.warnings = warning || null;
         this.updateFormItem();
@@ -262,6 +254,38 @@ export default class Control<
     });
     return Array.from(new Set(result));
   }
+
+  // 每次 render 都会作为 onChange 传递给 children，需要保证引用地址不变
+  // 所以 handleTrigger 需要声明在类上，并且直接作为 children.props.onChange
+  handleTrigger = (_value, ...args) => {
+    const children = (this.childrenElement || this.props.children) as React.ReactNode;
+    const { store } = this.context;
+    const { field, trigger, normalize, getValueFromEvent } = this.props;
+
+    const value = isFunction(getValueFromEvent) ? getValueFromEvent(_value, ...args) : _value;
+    let normalizeValue = value;
+    // break if value is instance of SyntheticEvent, 'cos value is missing
+    if (isSyntheticEvent(value)) {
+      warn(
+        true,
+        'changed value missed, please check whether extra elements is outta input/select controled by Form.Item'
+      );
+      value.stopPropagation();
+      return;
+    }
+    if (typeof normalize === 'function') {
+      normalizeValue = normalize(value, store.getFieldValue(field), {
+        ...store.getFieldsValue(),
+      });
+    }
+    this.touched = true;
+    this.innerSetFieldValue(field, normalizeValue);
+
+    this.validateField(trigger);
+    if (isValidElement(children) && children.props && children.props[trigger as string]) {
+      children.props[trigger as string](normalizeValue, ...args);
+    }
+  };
 
   renderControl(children: React.ReactNode, id) {
     const {
@@ -308,12 +332,14 @@ export default class Control<
   getChild = () => {
     const { children } = this.props;
     const { store } = this.context;
+    let child = children;
     if (isFunction(children)) {
-      return children(store.getFields(), {
+      child = children(store.getFields(), {
         ...store,
       });
     }
-    return children;
+    this.childrenElement = child;
+    return child;
   };
 
   render() {

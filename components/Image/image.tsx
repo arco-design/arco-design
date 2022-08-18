@@ -1,4 +1,4 @@
-import React, { useContext, ImgHTMLAttributes, useEffect, useMemo, LegacyRef, useRef } from 'react';
+import React, { useContext, useEffect, useMemo, LegacyRef, useRef } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLoading from '../../icon/react-icon/IconLoading';
@@ -16,8 +16,7 @@ import { PreviewGroupContext } from './previewGroupContext';
 import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
-type ImagePropsType = ImageProps &
-  Omit<ImgHTMLAttributes<HTMLImageElement>, 'className'> & { _index?: number };
+type ImagePropsType = ImageProps & { _index?: number };
 
 let uuid = 0;
 
@@ -27,7 +26,7 @@ const defaultProps: ImagePropsType = {
 };
 
 function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<ImagePropsType>(baseProps, defaultProps, componentConfig?.Image);
   const {
     style,
@@ -47,22 +46,28 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     previewProps = {} as ImagePreviewProps,
     alt,
     onClick,
+    index,
     _index,
+    onError,
+    onLoad,
     ...restProps
   } = props;
 
   const {
     previewGroup,
-    setVisible: setGroupPreviewVisible,
+    handleVisibleChange: handleGroupVisibleChange,
     registerPreviewUrl,
+    registerPreviewProps,
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
   const previewSrc = previewProps.src || src;
+
   const id = useMemo(() => {
-    if (isNumber(_index)) {
-      uuid = _index;
+    if (isNumber(index) || isNumber(_index)) {
+      uuid = isNumber(index) ? index : _index;
+      return uuid;
     }
-    return uuid;
+    return uuid++;
   }, []);
 
   const [showFooter] = useShowFooter({ title, description, actions });
@@ -84,6 +89,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   const classNames = cs(
     prefixCls,
     {
+      [`${prefixCls}-rtl`]: rtl,
       [`${prefixCls}-simple`]: simple,
       [`${prefixCls}-loading`]: isLoading,
       [`${prefixCls}-loading-error`]: isError,
@@ -95,26 +101,24 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const refImg = useRef<HTMLImageElement>();
 
-  function onImgLoaded() {
+  function onImgLoaded(e) {
     setStatus('loaded');
+    onLoad && onLoad(e);
   }
 
-  function onImgLoadError() {
+  function onImgLoadError(e) {
     setStatus('error');
+    onError && onError(e);
   }
 
   function onImgClick(e) {
     if (preview && previewGroup) {
       setCurrentIndex(id);
-      setGroupPreviewVisible(true);
+      handleGroupVisibleChange(true);
     } else if (preview) {
       togglePreviewVisible(true);
     }
     onClick && onClick(e);
-  }
-
-  function onPreviewVisibleChange(visible) {
-    togglePreviewVisible(visible);
   }
 
   function togglePreviewVisible(newVisible) {
@@ -131,8 +135,10 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   useEffect(() => {
     if (!previewGroup) return;
     const unRegister = registerPreviewUrl(id, previewSrc, preview);
+    const unRegisterPreviewProps = registerPreviewProps(id, availablePreviewProps);
     return () => {
       unRegister(id);
+      unRegisterPreviewProps(id);
     };
   }, [previewGroup]);
 
@@ -177,6 +183,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
         onLoad={onImgLoaded}
         onError={onImgLoadError}
         onClick={onImgClick}
+        alt={alt}
       />
       {!isLoaded && (
         <div className={`${prefixCls}-overlay`}>
@@ -198,7 +205,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
           visible={previewVisible}
           src={previewSrc}
           {...availablePreviewProps}
-          onVisibleChange={onPreviewVisibleChange}
+          onVisibleChange={togglePreviewVisible}
         />
       )}
     </div>

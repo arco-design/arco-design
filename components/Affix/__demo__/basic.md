@@ -16,10 +16,13 @@ Basic usage. If the fixed position is not set, the element will be fixed at the 
 ```js
 import { Affix, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Affix>
-    <Button type="primary">Affix Top</Button>
-  </Affix>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Affix>
+      <Button type="primary">Affix Top</Button>
+    </Affix>
+  );
+};
+
+export default App;
 ```

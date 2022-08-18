@@ -20,20 +20,19 @@ Use `renderFormat` to customize the content what will be rendered in select box.
 ```js
 import { Select, Space } from '@arco-design/web-react';
 import { IconStar, IconDelete } from '@arco-design/web-react/icon';
-
 const Option = Select.Option;
 
-function Demo() {
+function App() {
   const data = ['Beijing', 'Guangzhou', 'Shanghai', 'Shenzhen'];
   return (
     <Space size="large">
       <Select
         placeholder="Select city"
-        style={{ width: 345 }}
+        style={{ width: 345, }}
         renderFormat={(option, value) => {
           return option ? (
             <span>
-              <IconStar style={{ color: '#f7ba1e' }} />
+              <IconStar style={{ color: '#f7ba1e', }} />
               {` ${option.value} `}
             </span>
           ) : (
@@ -50,14 +49,19 @@ function Demo() {
 
       <Select
         placeholder="Select city"
-        style={{ width: 345 }}
+        style={{ width: 345, }}
         mode="multiple"
         removeIcon={<IconDelete />}
         defaultValue={['Beijing', 'Shenzhen']}
         renderFormat={(option, value) => {
+          // When labelInValue is true, the value is an object
           return option ? (
             <span>
-              <IconStar style={{ color: '#f7ba1e' }} />
+              <IconStar
+                style={{
+                  color: '#f7ba1e',
+                }}
+              />
               {` ${option.value} City `}
             </span>
           ) : (
@@ -75,5 +79,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

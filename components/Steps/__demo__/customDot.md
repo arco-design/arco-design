@@ -1,6 +1,6 @@
 ---
 order: 10
-title: 
+title:
   zh-CN: 自定义节点
   en-US: Customize Node
 ---
@@ -17,24 +17,21 @@ You can customize the node by setting `customDot`, and you can add pop-up or any
 import { useState } from 'react';
 import { Button, Steps, Popover } from '@arco-design/web-react';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
-
 const Step = Steps.Step;
 
-function Demo() {
+function App() {
   const [current, setCurrent] = useState(2);
 
   const customDot = (dot, { status, index, title, description }) => {
     const visible = index === current;
     return (
-      <Popover
-        popupVisible={visible}
-        content={<span>Step: {index}</span>}
-      >
+      <Popover popupVisible={visible} content={<span>Step: {index}</span>}>
         {dot}
       </Popover>
     );
     return dot;
   };
+
   return (
     <div style={{ overflow: 'hidden', textAlign: 'center' }}>
       <Steps type="dot" current={current} customDot={customDot} style={{ marginTop: 20 }}>
@@ -43,16 +40,28 @@ function Demo() {
         <Step title="Pending" description="This is a description" />
       </Steps>
       <div style={{ marginTop: 40 }}>
-        <Button type="secondary" disabled={current <= 1} onClick={() => setCurrent(current - 1)} style={{ paddingLeft: 8 }}>
-          <IconLeft />Back
+        <Button
+          type="secondary"
+          disabled={current <= 1}
+          onClick={() => setCurrent(current - 1)}
+          style={{ paddingLeft: 8 }}
+        >
+          <IconLeft />
+          Back
         </Button>
-        <Button disabled={current >= 3} onClick={() => setCurrent(current + 1)} style={{ marginLeft: 20, paddingRight: 8 }} type="primary">
-          Next<IconRight />
+        <Button
+          disabled={current >= 3}
+          onClick={() => setCurrent(current + 1)}
+          style={{ marginLeft: 20, paddingRight: 8 }}
+          type="primary"
+        >
+          Next
+          <IconRight />
         </Button>
       </div>
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

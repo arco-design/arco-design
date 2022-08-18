@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import ConfigProvider from '..';
 import { lighten } from '../util';
 
 describe('ConfigProvider theme', () => {
   it('global css var correctly', () => {
-    mount(
+    render(
       <ConfigProvider theme={{ primaryColor: '#000' }}>
         <div />
       </ConfigProvider>

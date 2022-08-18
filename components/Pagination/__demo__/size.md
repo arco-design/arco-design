@@ -16,26 +16,25 @@ Set `size` field to use different sizes.
 ```js
 import { useState } from 'react';
 import { Pagination, Radio } from '@arco-design/web-react';
-
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [size, setSize] = useState('default');
-
-  return <div>
-    <RadioGroup
-      value={size}
-      options={['large', 'default', 'small', 'mini' ]}
-      onChange={(value) => setSize(value)}
-      type="button"
-      style={{ marginBottom: 20 }}
-    />
-    <Pagination size={size} total={50} showTotal showJumper sizeCanChange />
-  </div>
+  return (
+    <div>
+      <RadioGroup
+        value={size}
+        options={['large', 'default', 'small', 'mini']}
+        onChange={(value) => setSize(value)}
+        type="button"
+        style={{
+          marginBottom: 20,
+        }}
+      />
+      <Pagination size={size} total={50} showTotal showJumper sizeCanChange />
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```

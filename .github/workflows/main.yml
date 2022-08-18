@@ -1,0 +1,39 @@
+name: pr_check_react18
+on:
+  workflow_dispatch:
+
+jobs:
+  jest-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: yarn run dependencies && yarn add react@18 react-dom@18 -D
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: run-icon
+        run: yarn icon
+
+      - name: build:cjs
+        run: yarn build:cjs
+
+      - name: build:es
+        run: yarn build:es
+
+      - name: mock-time
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Singapore'
+          timezoneMacos: 'Asia/Singapore'
+          timezoneWindows: 'Singapore Standard Time'
+
+      - name: test:client
+        run: yarn test:client
+
+      - name: test:node
+        run: yarn test:node

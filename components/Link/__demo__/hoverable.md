@@ -16,12 +16,16 @@ You can use the `hoverable` property to set whether to hide the background color
 ```js
 import { Link, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
+const App = () => {
+  return (
+    <Space size={40}>
+      <Link hoverable={false}> Link </Link>
+      <Link hoverable={false} status="error">
+        Link
+      </Link>
+    </Space>
+  );
+};
 
-  <Space size={40}>
-    <Link hoverable={false}> Link </Link>
-    <Link hoverable={false} status="error"> Link </Link>
-  </Space>,
-  CONTAINER
-);
+export default App;
 ```

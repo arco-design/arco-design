@@ -14,11 +14,11 @@ title:
 You can easily open or close the properties of the table.
 
 ```js
+import React from 'react';
 import { Table, Grid, Switch, Form, Radio } from '@arco-design/web-react';
 
 const FormItem = Form.Item;
 const { Row, Col } = Grid;
-
 const columns = [
   {
     title: 'Name',
@@ -37,42 +37,46 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
-const defaultData = [{
-  key: '1',
-  name: 'Jane Doe',
-  salary: 23000,
-  address: '32 Park Road, London',
-  email: 'jane.doe@example.com'
-}, {
-  key: '2',
-  name: 'Alisa Ross',
-  salary: 25000,
-  address: '35 Park Road, London',
-  email: 'alisa.ross@example.com'
-}, {
-  key: '3',
-  name: 'Kevin Sandra',
-  salary: 22000,
-  address: '31 Park Road, London',
-  email: 'kevin.sandra@example.com'
-}, {
-  key: '4',
-  name: 'Ed Hellen',
-  salary: 17000,
-  address: '42 Park Road, London',
-  email: 'ed.hellen@example.com'
-}, {
-  key: '5',
-  name: 'William Smith',
-  salary: 27000,
-  address: '62 Park Road, London',
-  email: 'william.smith@example.com'
-}];
-
+const defaultData = [
+  {
+    key: '1',
+    name: 'Jane Doe',
+    salary: 23000,
+    address: '32 Park Road, London',
+    email: 'jane.doe@example.com',
+  },
+  {
+    key: '2',
+    name: 'Alisa Ross',
+    salary: 25000,
+    address: '35 Park Road, London',
+    email: 'alisa.ross@example.com',
+  },
+  {
+    key: '3',
+    name: 'Kevin Sandra',
+    salary: 22000,
+    address: '31 Park Road, London',
+    email: 'kevin.sandra@example.com',
+  },
+  {
+    key: '4',
+    name: 'Ed Hellen',
+    salary: 17000,
+    address: '42 Park Road, London',
+    email: 'ed.hellen@example.com',
+  },
+  {
+    key: '5',
+    name: 'William Smith',
+    salary: 27000,
+    address: '62 Park Road, London',
+    email: 'william.smith@example.com',
+  },
+];
 let data = defaultData;
 
-class Demo extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -87,7 +91,7 @@ class Demo extends React.Component {
       fixedHeader: false,
       no_data: false,
       size: 'default',
-      pagePosition: 'br'
+      pagePosition: 'br',
     };
   }
 
@@ -95,6 +99,7 @@ class Demo extends React.Component {
     if (type === 'no_data') {
       data = checked ? [] : defaultData;
     }
+
     this.setState({
       [type]: checked,
     });
@@ -115,7 +120,6 @@ class Demo extends React.Component {
       size,
       pagePosition,
     } = this.state;
-
     return (
       <div>
         <div>
@@ -172,11 +176,15 @@ class Demo extends React.Component {
               />
             </FormItem>
             <FormItem label="No data" colon={false}>
-              <Switch size="small" onChange={this.onChange.bind(this, 'no_data')} checked={no_data} />
+              <Switch
+                size="small"
+                onChange={this.onChange.bind(this, 'no_data')}
+                checked={no_data}
+              />
             </FormItem>
             <FormItem label="Size" colon={false}>
               <Radio.Group
-                type='button'
+                type="button"
                 options={['default', 'middle', 'small', 'mini']}
                 value={size}
                 onChange={this.onChange.bind(this, 'size')}
@@ -184,14 +192,32 @@ class Demo extends React.Component {
             </FormItem>
             <FormItem label="Pagination position" colon={false}>
               <Radio.Group
-                type='button'
+                type="button"
                 options={[
-                  {label: 'BottomRight', value: 'br'},
-                  {label: 'BottomLeft', value: 'bl'},
-                  {label: 'TopRight', value: 'tr'},
-                  {label: 'TopLeft', value: 'tl'},
-                  {label: 'TopCenter', value: 'topCenter'},
-                  {label: 'BottomCenter', value: 'bottomCenter'},
+                  {
+                    label: 'BottomRight',
+                    value: 'br',
+                  },
+                  {
+                    label: 'BottomLeft',
+                    value: 'bl',
+                  },
+                  {
+                    label: 'TopRight',
+                    value: 'tr',
+                  },
+                  {
+                    label: 'TopLeft',
+                    value: 'tl',
+                  },
+                  {
+                    label: 'TopCenter',
+                    value: 'topCenter',
+                  },
+                  {
+                    label: 'BottomCenter',
+                    value: 'bottomCenter',
+                  },
                 ]}
                 value={pagePosition}
                 onChange={this.onChange.bind(this, 'pagePosition')}
@@ -204,13 +230,15 @@ class Demo extends React.Component {
             columns={columns}
             data={data}
             {...this.state}
-            rowSelection={checkbox && {
-              type: 'checkbox',
-              checkAll: checkAll
-            }}
+            rowSelection={
+              checkbox && {
+                type: 'checkbox',
+                checkAll: checkAll,
+              }
+            }
             scroll={fixedHeader ? { y: 120 } : {}}
-            style={{ marginTop: 10 }}
-            pagination={{ pageSize: 5 }}
+            style={{ marginTop: 10, }}
+            pagination={{ pageSize: 5, }}
           />
         </div>
       </div>
@@ -218,5 +246,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Dayjs } from 'dayjs';
 import { methods } from '../../../_util/dayjs';
 import { WeekPickerProps, PrivateCType, ModeType } from '../../interface';
 import DatePanel from '../date';
+import PickerContext from '../../context';
 
 interface InnerWeekPickerProps extends WeekPickerProps {
   isRangePicker?: boolean;
@@ -27,15 +28,16 @@ function WeekPicker(props: InnerWeekPickerProps & PrivateCType) {
     onSuperPrev,
     onSuperNext,
     localeName,
-    dayStartOfWeek,
     ...rest
   } = props;
+
+  const { weekStart } = useContext(PickerContext);
 
   const bodyProps = isRangePicker ? { rangeValues } : { value };
   const headerOperations = { onPrev, onNext, onSuperPrev, onSuperNext };
 
   function isSameTime(current: Dayjs, target: Dayjs) {
-    return methods.isSameWeek(current, target, dayStartOfWeek, localeName);
+    return methods.isSameWeek(current, target, weekStart, localeName);
   }
 
   return (
@@ -46,14 +48,12 @@ function WeekPicker(props: InnerWeekPickerProps & PrivateCType) {
       isWeek
       isSameTime={isSameTime}
       isRangePicker={isRangePicker}
-      dayStartOfWeek={dayStartOfWeek}
     />
   );
 }
 
 WeekPicker.defaultProps = {
   pickerType: 'week',
-  dayStartOfWeek: 0,
 };
 
 export default WeekPicker;

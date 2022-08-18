@@ -1,3 +1,32 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `showInput` of the `Slider` component supports passing in `InputNumberProps`([#762](https://github.com/arco-design/arco-design/pull/762))
+
+## 2.31.0
+
+2022-03-25
+
+### 🐛 BugFix
+
+- Fix the bug of calculation error when the step size of `Slider` is set to decimal([#655](https://github.com/arco-design/arco-design/pull/655))
+- Fix the bug of `Slider` clicking on the non-sliding axis area console to report an error([#655](https://github.com/arco-design/arco-design/pull/655))
+
+### 💅 Style
+
+- `Slider` always displays the first and last endpoints in the scene of adding labels by passing in `marks`([#683](https://github.com/arco-design/arco-design/pull/683))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- `Slider` supports setting width and step size by interval segment([#600](https://github.com/arco-design/arco-design/pull/600))
+
 ## 2.27.2
 
 2021-12-31

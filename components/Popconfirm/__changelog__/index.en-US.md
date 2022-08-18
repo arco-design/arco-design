@@ -1,3 +1,11 @@
+## 2.31.0
+
+2022-03-25
+
+### 🆎 TypeScript
+
+- Modify the TS definition of the `onOk` parameter of the `Popconfirm` component to support returning `Promise<void>`([#689](https://github.com/arco-design/arco-design/pull/689))
+
 ## 2.29.0
 
 2022-02-11

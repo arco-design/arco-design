@@ -4,13 +4,15 @@ import isEqualWith from 'lodash/isEqualWith';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import Option from './option';
-import { isFunction } from '../../_util/is';
+import { isFunction, isObject } from '../../_util/is';
 import { CascaderPanelProps, OptionProps } from '../interface';
 import useRefs from '../../_util/hooks/useRefs';
 import useForceUpdate from '../../_util/hooks/useForceUpdate';
 import { ArrowDown, Esc, Enter, ArrowUp, ArrowRight, ArrowLeft } from '../../_util/keycode';
 import useUpdate from '../../_util/hooks/useUpdate';
 import Node from '../base/node';
+import { getMultipleCheckValue } from '../util';
+import VirtualList from '../../_class/VirtualList';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -59,6 +61,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     showEmptyChildren,
     loadMore,
     renderEmpty,
+    rtl,
   } = props;
 
   const [activeNode, setActiveNode] = useState(
@@ -100,36 +103,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
   };
 
   const onMultipleChecked = (option, checked: boolean) => {
-    // props.value 可能包含不存在对应option的选中值，不应该被清除掉。
-    const beforeCheckedNodes = store
-      .getCheckedNodes()
-      .map((node) => JSON.stringify(node.pathValue));
-    const inexistenceValue = (props.value || []).filter(
-      (x) => beforeCheckedNodes.indexOf(JSON.stringify(x)) === -1
-    );
-    option.setCheckedState(checked);
-    const checkedNodes = store.getCheckedNodes();
-    const value = checkedNodes.map((node) => node.pathValue);
-    const newValue = [...inexistenceValue, ...value];
-
-    const indexMap = props.value.reduce((map, next, index) => {
-      map.set(next, index);
-      return map;
-    }, new Map());
-
-    // 按照当前props.value的顺序排序
-    newValue.sort((a, b) => {
-      const aIndex = indexMap.get(a);
-      const bIndex = indexMap.get(b);
-
-      if (aIndex === undefined) {
-        return 1;
-      }
-      if (bIndex === undefined) {
-        return -1;
-      }
-      return aIndex - bIndex;
-    });
+    const newValue = getMultipleCheckValue(props.value, store, option, checked);
 
     if (option === activeNode) {
       // setActiveNode 不会执行rerender，需要forceupdate
@@ -264,24 +238,27 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [props.popupVisible, handleKeyDown]);
-  const pathNodes = activeNode ? activeNode.getPathNodes() : [];
-  const menus = [options];
-  pathNodes.forEach((option) => {
-    option && option.children && menus.push(option.children);
-  });
+
+  const menus = (() => {
+    const list = [options];
+    const pathNodes = activeNode ? activeNode.getPathNodes() : [];
+    pathNodes.forEach((option) => {
+      option && option.children && list.push(option.children);
+    });
+    return list;
+  })();
 
   const dropdownColumnRender = isFunction(props.dropdownColumnRender)
     ? props.dropdownColumnRender
     : (menu) => menu;
 
-  return (
+  return !menus.length || !menus[0]?.length ? (
+    <>{renderEmpty()}</>
+  ) : (
     <TransitionGroup component={React.Fragment}>
       {menus.map((list, level) => {
         const footer = renderFooter ? renderFooter(level, activeNode || null) : null;
 
-        if (list.length === 0 && !showEmptyChildren && level === 0) {
-          return renderEmpty();
-        }
         return list.length === 0 && !showEmptyChildren ? null : (
           <CSSTransition
             key={level}
@@ -300,7 +277,14 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
               e.style.marginLeft = '';
             }}
           >
-            <div className={`${prefixCls}-list-column`} style={{ zIndex: menus.length - level }}>
+            <div
+              className={cs(`${prefixCls}-list-column`, {
+                [`${prefixCls}-list-column-virtual`]:
+                  props.virtualListProps && props.virtualListProps.threshold !== null,
+                [`${prefixCls}-list-column-rtl`]: rtl,
+              })}
+              style={{ zIndex: menus.length - level, ...props.dropdownMenuColumnStyle }}
+            >
               {dropdownColumnRender(
                 <div
                   className={cs(`${prefixCls}-list-wrapper`, {
@@ -308,22 +292,37 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                   })}
                 >
                   {list.length === 0 ? (
-                    renderEmpty && renderEmpty(120)
+                    renderEmpty && renderEmpty(props.virtualListProps ? '100%' : 120)
                   ) : (
-                    <ul
-                      ref={(node) => setRefWrapper(node, level)}
+                    <VirtualList
+                      needFiller={false}
+                      threshold={props.virtualListProps ? 100 : null}
+                      data={list}
+                      isStaticItemHeight
+                      itemKey="value"
+                      {...(isObject(props.virtualListProps) ? props.virtualListProps : {})}
+                      wrapper="ul"
+                      role="menu"
+                      ref={(node) => setRefWrapper(node?.dom as HTMLUListElement, level)}
                       className={cs(`${prefixCls}-list`, `${prefixCls}-list-select`, {
                         [`${prefixCls}-list-multiple`]: multiple,
+                        [`${prefixCls}-list-rtl`]: rtl,
                       })}
                     >
-                      {list.map((option) => {
+                      {(option) => {
                         let isActive = false;
                         if (activeNode) {
                           isActive = activeNode.pathValue[level] === option.value;
                         }
                         return (
                           <li
+                            tabIndex={0}
+                            role="menuitem"
+                            aria-haspopup={!option.isLeaf}
+                            aria-expanded={isActive && !option.isLeaf}
+                            aria-disabled={option.disabled}
                             key={option.value}
+                            title={option.label}
                             className={cs(`${prefixCls}-list-item`, {
                               [`${prefixCls}-list-item-active`]: isActive,
                               [`${prefixCls}-list-item-disabled`]: option.disabled,
@@ -336,6 +335,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                           >
                             <Option
                               prefixCls={prefixCls}
+                              rtl={rtl}
                               multiple={multiple}
                               option={option}
                               // 叶子节点被选中
@@ -345,9 +345,12 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                                 isEqualWith(props.value, option.pathValue)
                               }
                               onMouseEnter={() => {
+                                if (option.disabled) {
+                                  return;
+                                }
                                 if (props.expandTrigger === 'hover') {
                                   setActiveNode(option);
-                                  loadData(option);
+                                  !option.isLeaf && loadData(option);
                                 }
                               }}
                               renderOption={
@@ -370,8 +373,8 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                             />
                           </li>
                         );
-                      })}
-                    </ul>
+                      }}
+                    </VirtualList>
                   )}
                   {footer && (
                     <div

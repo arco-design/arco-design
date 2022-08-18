@@ -1,3 +1,51 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 功能升级
+
+- `TreeSelect` 新增 `inputValue` 和 `onInputValueChange` 属性。([#1151](https://github.com/arco-design/arco-design/pull/1151))
+
+## 2.38.0
+
+2022-07-29
+
+### 🐛 问题修复
+
+- 修复 `TreeSelect` 组件在受控模式下开启复选框多选且远程搜索时，已选中项存在 label 未正常展示的 bug。([#1207](https://github.com/arco-design/arco-design/pull/1207))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 功能升级
+
+- `TreeSelect` 组件支持通过对象类型的 `maxTagCount` 属性定制 `maxTag` 内容展示([#1112](https://github.com/arco-design/arco-design/pull/1112))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 问题修复
+
+- 修复 `dragToSort` 在 TreeSelect 中不生效的问题([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
+## 2.31.0
+
+2022-03-25
+
+### 🆕 功能升级
+
+- `TreeSelect` 组件 `triggerElement` 属性允许传入函数以自定义组件触发节点。([#686](https://github.com/arco-design/arco-design/pull/686))
+
+## 2.30.0
+
+2022-03-04
+
+### 🐛 问题修复
+
+- 修复 `TreeSelect` 组件在扩展下拉菜单中的输入框无法被聚焦的问题。([#608](https://github.com/arco-design/arco-design/pull/608))
+
 ## 2.29.0
 
 2022-02-11

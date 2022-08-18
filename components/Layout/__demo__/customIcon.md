@@ -14,22 +14,21 @@ title:
 By setting the `trigger` property of `Menu.Sider`, the icon of the collapse button can be customized.
 
 ```js
+import React from 'react';
 import { Layout, Menu, Breadcrumb, Button, Message } from '@arco-design/web-react';
 import { IconHome, IconCalendar, IconCaretRight, IconCaretLeft } from '@arco-design/web-react/icon';
 
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
-
 const Sider = Layout.Sider;
 const Header = Layout.Header;
 const Footer = Layout.Footer;
 const Content = Layout.Content;
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     collapsed: false,
   };
-
   handleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -39,15 +38,23 @@ class Demo extends React.Component {
   render() {
     return (
       <Layout className="layout-collapse-demo">
-        <Sider collapsed={this.state.collapsed} onCollapse={this.handleCollapsed} collapsible trigger={this.state.collapsed ? <IconCaretRight /> : <IconCaretLeft />} breakpoint="xl">
+        <Sider
+          collapsed={this.state.collapsed}
+          onCollapse={this.handleCollapsed}
+          collapsible
+          trigger={this.state.collapsed ? <IconCaretRight /> : <IconCaretLeft />}
+          breakpoint="xl"
+        >
           <div className="logo" />
           <Menu
             defaultOpenKeys={['1']}
             defaultSelectedKeys={['0_3']}
             onClickMenuItem={(key) =>
-              Message.info({ content: `You select ${key}`, showIcon: true })
+              Message.info({
+                content: `You select ${key}`,
+                showIcon: true,
+              })
             }
-          
             style={{ width: '100%' }}
           >
             <MenuItem key="0_1" disabled>
@@ -99,9 +106,7 @@ class Demo extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ paddingLeft: 20 }}>
-            Header
-          </Header>
+          <Header style={{ paddingLeft: 20 }}>Header</Header>
           <Layout style={{ padding: '0 24px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
@@ -117,7 +122,7 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css

@@ -2,8 +2,21 @@ import React, { useEffect, useRef, useContext, RefObject } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext, ConfigProviderProps } from '../ConfigProvider';
 import { TimelineItemProps } from './interface';
+import useMergeProps from '../_util/hooks/useMergeProps';
 
-function Item(props: TimelineItemProps, ref: RefObject<HTMLDivElement>) {
+const defaultProps: TimelineItemProps = {
+  dotType: 'solid',
+  lineType: 'solid',
+};
+
+function Item(baseProps: TimelineItemProps, ref: RefObject<HTMLDivElement>) {
+  const { getPrefixCls, componentConfig } = useContext<ConfigProviderProps>(ConfigContext);
+  const props = useMergeProps<TimelineItemProps>(
+    baseProps,
+    defaultProps,
+    componentConfig?.['Timeline.Item']
+  );
+
   const {
     children,
     className,
@@ -12,8 +25,8 @@ function Item(props: TimelineItemProps, ref: RefObject<HTMLDivElement>) {
     position,
     dot,
     dotColor,
-    dotType = 'solid',
-    lineType = 'solid',
+    dotType,
+    lineType,
     lineColor,
     direction,
     labelPosition,
@@ -22,7 +35,6 @@ function Item(props: TimelineItemProps, ref: RefObject<HTMLDivElement>) {
   } = props;
 
   const dotRef = useRef<HTMLDivElement>();
-  const { getPrefixCls } = useContext<ConfigProviderProps>(ConfigContext);
 
   const prefixCls = getPrefixCls('timeline');
 
@@ -45,6 +57,7 @@ function Item(props: TimelineItemProps, ref: RefObject<HTMLDivElement>) {
   return (
     <div
       ref={ref}
+      role="listitem"
       {...rest}
       className={cs(
         `${prefixCls}-item`,

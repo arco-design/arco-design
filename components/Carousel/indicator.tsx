@@ -55,8 +55,9 @@ function CarouselIndicator(props: CarouselIndicatorProps, ref) {
           index !== activeIndex && onSelectIndex(index);
         }
       } else {
-        const index = +event.target.getAttribute('data-index');
-        !isNaN(index) && index !== activeIndex && onSelectIndex(index);
+        const dataIndex: string = event.target.getAttribute('data-index');
+        // Judge if data-index exists at first, event.target can be the wrapper of indicators
+        dataIndex && +dataIndex !== activeIndex && onSelectIndex(+dataIndex);
       }
     },
   };

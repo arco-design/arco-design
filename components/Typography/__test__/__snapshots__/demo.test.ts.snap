@@ -18,7 +18,7 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
   <div
     class="arco-typography"
   >
-    In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered 
+    In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered
     <span
       class="arco-typography"
     >
@@ -72,7 +72,7 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
         product
       </code>
     </span>
-     or 
+     or
     <span
       class="arco-typography"
     >
@@ -134,7 +134,9 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
 exports[`renders Typography/demo/ellipsis.md correctly 1`] = `
 Array [
   <button
+    aria-checked="true"
     class="arco-switch arco-switch-type-circle arco-switch-checked"
+    role="switch"
     type="button"
   >
     <div
@@ -143,7 +145,7 @@ Array [
   </button>,
   <div>
     <h4
-      class="arco-typography arco-typography-simple-ellipsis"
+      class="arco-typography"
     >
        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.
     </h4>
@@ -222,8 +224,10 @@ Array [
                   class="arco-form-item-control-children"
                 >
                   <button
+                    aria-checked="false"
                     class="arco-switch arco-switch-small arco-switch-type-circle"
                     id="ellipsis_input"
+                    role="switch"
                     type="button"
                   >
                     <div
@@ -261,8 +265,10 @@ Array [
                   class="arco-form-item-control-children"
                 >
                   <button
+                    aria-checked="false"
                     class="arco-switch arco-switch-small arco-switch-type-circle"
                     id="expandable_input"
+                    role="switch"
                     type="button"
                   >
                     <div
@@ -518,13 +524,13 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
       class="arco-typography-operation-copy"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-copy"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M20 6h18a2 2 0 0 1 2 2v22M8 16v24c0 1.105.891 2 1.996 2h20.007A1.99 1.99 0 0 0 32 40.008V15.997A1.997 1.997 0 0 0 30 14H10a2 2 0 0 0-2 2Z"
@@ -540,13 +546,13 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
       class="arco-typography-operation-edit"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-edit"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"

@@ -3,16 +3,26 @@ import Store from './base/store';
 import { TriggerProps } from '../Trigger';
 import { SelectViewCommonProps } from '../_class/select-view';
 import { NodeProps } from './base/node';
+import { VirtualListProps } from '../_class/VirtualList';
 
 /**
  * @title Cascader
  */
-export interface CascaderProps<T = any> extends SelectViewCommonProps {
+export interface CascaderProps<T = any>
+  extends Omit<SelectViewCommonProps, 'allowCreate' | 'showSearch'> {
   /**
    * @zh 选择框的默认值
    * @en Initial value
    */
   defaultValue?: (string | string[])[];
+
+  /**
+   * @zh 输入框的值
+   * @en Input Value
+   * @version 2.34.0
+   */
+  inputValue?: string;
+
   /**
    * @zh 选中值
    * @en To set value
@@ -53,6 +63,27 @@ export interface CascaderProps<T = any> extends SelectViewCommonProps {
   mode?: 'multiple';
   triggerProps?: Partial<TriggerProps>;
   /**
+   * @zh
+   * 使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容
+   * 传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。
+   * 传入 `{ panelMode: 'select' }` 以搜索面板形式展示可选项 (`2.39.0`)
+   * `renderOption` 自定义渲染搜索项 (`2.39.0`)
+   * @en
+   * Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,
+   * `{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.
+   * `{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)
+   * `renderOption` Custom rendering search option (`2.39.0`)
+   */
+  showSearch?:
+    | boolean
+    | {
+        panelMode?: 'cascader' | 'select';
+        renderOption?: (inputValue: string, option: NodeProps<T>) => ReactNode;
+        retainInputValue?: boolean;
+        retainInputValueWhileSelect?: boolean;
+      };
+
+  /**
    * @zh 没有数据时显示的内容
    * @en The content to show when no result matches
    */
@@ -73,6 +104,41 @@ export interface CascaderProps<T = any> extends SelectViewCommonProps {
    * @en Whether the popup is visible by default
    */
   defaultPopupVisible?: boolean;
+  /**
+   * @zh
+   * 定制回填方式 <br/> parent: 子节点都被选中时候返回父节点 <br/> child: 返回子节点
+   * @en
+   * Customize the return value  <br/> parent:
+   * Only return the parent node when all child nodes are selected <br/> child: Return child nodes
+   * @defaultValue child
+   * @version 2.31.0
+   */
+  checkedStrategy?: 'parent' | 'child';
+  /**
+   * @zh 自定义下拉列表类名
+   * @en Custom dropdown list classname
+   * @version 2.35.0
+   */
+  dropdownMenuClassName?: string | string[];
+  /**
+   * @zh 菜单列样式
+   * @en dropdown menu column style
+   * @version 2.35.0
+   */
+  dropdownMenuColumnStyle?: CSSProperties;
+  /**
+   * @zh 传递虚拟滚动属性。开启虚拟滚动后，每列级联菜单的会存在默认宽度，可通过 `dropdownMenuColumnStyle` 进行样式调整
+   * @en virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`
+   * @version 2.35.0
+   */
+  virtualListProps?: Pick<VirtualListProps<any>, 'threshold' | 'isStaticItemHeight'>;
+  /**
+   * @zh 是否默认高亮搜索结果第一个选项。
+   * @en Whether to highlight the first option of search results by default
+   * @version 2.37.0
+   * @defaultValue true
+   */
+  defaultActiveFirstOption?: boolean;
   /**
    * @zh 自定义下拉菜单的展示。
    * @en Customize the popup menu.
@@ -106,11 +172,11 @@ export interface CascaderProps<T = any> extends SelectViewCommonProps {
    */
   renderFormat?: (valueShow: any[]) => ReactNode;
   /**
-   * @zh 搜索时的回调
-   * @en Callback when input changed
+   * @zh 搜索时的回调。(reason in `2.34.0`)
+   * @en Callback when input changed.(reason in `2.34.0`)
    * @version 2.20.0
    */
-  onSearch?: (inputValue: string) => void;
+  onSearch?: (inputValue: string, reason: InputValueChangeReason) => void;
   /**
    * @zh 点击选择框的回调。
    * @en Callback when finishing select.
@@ -120,6 +186,12 @@ export interface CascaderProps<T = any> extends SelectViewCommonProps {
     selectedOptions,
     extra: { dropdownVisible?: boolean }
   ) => void;
+  /**
+   * @zh inputValue改变时的回调
+   * @en Callback when inputValue change.
+   * @version 2.34.0
+   */
+  onInputValueChange?: (inputValue: string, reason: InputValueChangeReason) => void;
   /**
    * @zh 弹出框挂在的父节点
    * @en ParentNode which the selector should be rendered to.
@@ -143,18 +215,42 @@ export interface CascaderProps<T = any> extends SelectViewCommonProps {
 }
 
 export interface OptionProps {
-  /** 选项的值 */
+  /**
+   * @zh 选项的值
+   * @en: the value of Option
+   *
+   */
   value?: string;
-  /** 选项文本 */
+  /**
+   * @zh 选项文本
+   * @en option text
+   */
   label?: string;
-  /** 是否禁用该选项 */
+  /**
+   * @zh 是否禁用该选项
+   * @en whether to disabled
+   */
   disabled?: boolean;
-  /** 下一级选项 */
+  /**
+   * @zh 下一级选项
+   * @en next level menu
+   */
   children?: OptionProps[];
-  /** 是否是叶子节点 */
+  /**
+   * @zh 是否是叶子节点
+   * @en Flag whether it is a leaf node
+   */
   isLeaf?: boolean;
-  /** 是否禁用复选框选中(`v2.21.0`) */
+  /**
+   * @zh 是否禁用复选框选中
+   * @en Whether to disable the check box is selected
+   * @version 2.21.0
+   */
   disableCheckbox?: boolean;
+  /**
+   * @zh 其他字段
+   * @en other fields
+   */
   [key: string]: any;
 }
 
@@ -162,17 +258,20 @@ export interface OptionProps {
  * fieldnames 属性类型
  */
 export type FieldNamesType = {
-  /** 指定 label 在选项中对应的字段  */
+  /* Custom field name for label */
   label?: string;
-  /** 指定 value 在选项中对应的字段  */
+  /** Custom field name for value */
   value?: string;
-  /** 指定 children 在选项中对应的字段  */
+  /** Custom field name for children */
   children?: string;
-  /** 指定 disabled 在选项中对应的字段  */
+  /** Custom field name for disabled  */
   disabled?: string;
-  /** 指定 isLeaf 在选项中对应的字段  */
+  /** Custom field name for isLeaf */
   isLeaf?: string;
 };
+
+// 造成输入框值改变的原因：用户输入、选项下拉框收起、其他
+export type InputValueChangeReason = 'manual' | 'optionListHide' | 'optionChecked';
 
 export interface CascaderPanelProps<T> {
   className?: string | string[];
@@ -186,13 +285,16 @@ export interface CascaderPanelProps<T> {
   expandTrigger?: 'click' | 'hover';
   trigger?: 'click';
   prefixCls?: string;
+  rtl?: boolean;
   showEmptyChildren?: boolean;
+  virtualListProps?: CascaderProps<T>['virtualListProps'];
   renderOption?: (option: NodeProps<T>, level: number) => ReactNode;
   onChange?: (value: string[][]) => void;
   loadMore?: (activeValue, level: number) => void;
-  renderEmpty?: (width?: number) => ReactNode;
+  renderEmpty?: (width?: CSSProperties['width']) => ReactNode;
   renderFooter?: (level: number, activeOption: NodeProps<T> | null) => ReactNode;
   onDoubleClickOption?: () => void;
   onEsc?: () => void;
   dropdownColumnRender?: CascaderProps<T>['dropdownColumnRender'];
+  dropdownMenuColumnStyle?: CascaderProps<T>['dropdownMenuColumnStyle'];
 }

@@ -14,17 +14,17 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|style|节点样式|`CSSProperties`|`-`|
-|className|节点类名|`string \| string[]`|`-`|
-|count|徽标显示的数字|`number \| ReactNode`|`0`|
-|text|自定义提示内容|`string`|`-`|
-|dot|显示为小红点|`boolean`|`-`|
-|dotStyle|徽标的样式|`CSSProperties`|`-`|
-|dotClassName|徽标的类名|`string \| string[]`|`-`|
-|maxCount|徽标最大显示数值，如果 count 超过这个数值会显示为 `${maxCount}+`|`number`|`99`|
-|offset|设置徽标位置的偏移|`[number, number]`|`-`|
-|color|内置的一些颜色|`\| 'red'\| 'orangered'\| 'orange'\| 'gold'\| 'lime'\| 'green'\| 'cyan'\| 'arcoblue'\| 'purple'\| 'pinkpurple'\| 'magenta'\| 'gray'\| string`|`-`|
-|status|徽标的状态类型|`'default' \| 'processing' \| 'success' \| 'warning' \| 'error'`|`-`|
+|dot|显示为小红点|boolean |`-`|
+|maxCount|徽标最大显示数值，如果 count 超过这个数值会显示为 `${maxCount}+`|number |`99`|
+|text|自定义提示内容|string |`-`|
+|color|内置的一些颜色|\| 'red'\| 'orangered'\| 'orange'\| 'gold'\| 'lime'\| 'green'\| 'cyan'\| 'arcoblue'\| 'purple'\| 'pinkpurple'\| 'magenta'\| 'gray'\| string |`-`|
+|status|徽标的状态类型|'default' \| 'processing' \| 'success' \| 'warning' \| 'error' |`-`|
+|count|徽标显示的数字|number \| ReactNode |`0`|
+|className|节点类名|string \| string[] |`-`|
+|dotClassName|徽标的类名|string \| string[] |`-`|
+|dotStyle|徽标的样式|CSSProperties |`-`|
+|offset|设置徽标位置的偏移|[number, number] |`-`|
+|style|节点样式|CSSProperties |`-`|
 
 ## 常见问题
 

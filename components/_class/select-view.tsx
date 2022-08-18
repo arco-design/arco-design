@@ -7,7 +7,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { isUndefined, isObject } from '../_util/is';
+import { pickDataAttributes } from '../_util/pick';
+import { isUndefined, isObject, isFunction } from '../_util/is';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconDown from '../../icon/react-icon/IconDown';
@@ -22,7 +23,7 @@ import { InputComponentProps } from '../Input/interface';
 import include from '../_util/include';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import IconHover from './icon-hover';
-import { Enter } from '../_util/keycode';
+import { Backspace, Enter } from '../_util/keycode';
 
 export interface SelectViewCommonProps
   extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
@@ -84,8 +85,14 @@ export interface SelectViewCommonProps
   /**
    * @zh 最多显示多少个 `tag`，仅在多选或标签模式有效。
    * @en The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.
+   * @version Object type in 2.37.0
    */
-  maxTagCount?: number;
+  maxTagCount?:
+    | number
+    | {
+        count: number;
+        render?: (invisibleTagCount: number) => ReactNode;
+      };
   /**
    * @zh 前缀。
    * @en Customize select suffix
@@ -128,10 +135,12 @@ export interface SelectViewProps extends SelectViewCommonProps {
   isEmptyValue: boolean;
   isMultiple?: boolean;
   prefixCls: string;
+  rtl?: boolean;
+  ariaControls?: string;
   renderText: (value) => { text; disabled };
   onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
-  onChangeInputValue?: InputComponentProps['onValueChange'];
+  onChangeInputValue?: InputComponentProps['onChange'];
   onKeyDown?: (e) => void;
   onPaste?: (e) => void;
   onClear?: (e) => void;
@@ -178,6 +187,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     isMultiple,
     isEmptyValue,
     prefix,
+    ariaControls,
     renderTag,
     dragToSort,
     onKeyDown,
@@ -188,6 +198,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     onBlur,
     onRemoveCheckedItem,
     onSort,
+    rtl,
     ...rest
   } = props;
 
@@ -344,7 +355,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       inputProps.onKeyDown = inputEventHandlers.keyDown;
       inputProps.onFocus = inputEventHandlers.focus;
       inputProps.onBlur = inputEventHandlers.blur;
-      inputProps.onValueChange = inputEventHandlers.change;
+      inputProps.onChange = inputEventHandlers.change;
     } else {
       // Avoid input getting focus by Tab
       // Do NOT pass [disabled] to <input>, otherwise the click event will not be triggered
@@ -354,11 +365,12 @@ export const SelectView = (props: SelectViewProps, ref) => {
     }
 
     // <input> is used to input and display placeholder, in other cases use <span> to display value to support displaying rich text
-    const needShowInput = (mergedFocused && canFocusInput) || isEmptyValue;
+    const needShowInput = !!((mergedFocused && canFocusInput) || isEmptyValue);
 
     return (
       <>
         <InputComponent
+          aria-hidden={!needShowInput || undefined}
           ref={refInput}
           disabled={disabled}
           className={cs(`${prefixCls}-view-input`, {
@@ -367,7 +379,10 @@ export const SelectView = (props: SelectViewProps, ref) => {
           autoComplete="off"
           {...inputProps}
         />
-        <span className={cs(`${prefixCls}-view-value`, { [`${prefixCls}-hidden`]: needShowInput })}>
+        <span
+          aria-hidden={needShowInput || undefined}
+          className={cs(`${prefixCls}-view-value`, { [`${prefixCls}-hidden`]: needShowInput })}
+        >
           {_inputValue}
         </span>
       </>
@@ -376,21 +391,37 @@ export const SelectView = (props: SelectViewProps, ref) => {
 
   const renderMultiple = () => {
     const usedValue = isUndefined(value) ? [] : [].concat(value as []);
-    const usedMaxTagCount =
-      typeof maxTagCount === 'number' ? Math.max(maxTagCount, 0) : usedValue.length;
-    const tagsToShow: ObjectValueType[] = usedValue.slice(0, usedMaxTagCount).map((v) => {
-      const result = renderText(v);
-      return {
-        value: v,
-        label: result.text,
-        closable: !result.disabled,
-      };
-    });
-    const invisibleTagCount = usedValue.length - usedMaxTagCount;
+    const maxTagCountNumber = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
 
+    const maxTagCountRender =
+      isObject(maxTagCount) && isFunction(maxTagCount.render)
+        ? maxTagCount.render
+        : (invisibleCount) => `+${invisibleCount}...`;
+
+    const usedMaxTagCount =
+      typeof maxTagCountNumber === 'number' ? Math.max(maxTagCountNumber, 0) : usedValue.length;
+    const tagsToShow: ObjectValueType[] = [];
+    let lastClosableTagIndex = -1;
+
+    for (let i = usedValue.length - 1; i >= 0; i--) {
+      const v = usedValue[i];
+      const result = renderText(v);
+      if (i < usedMaxTagCount) {
+        tagsToShow.unshift({
+          value: v,
+          label: result.text,
+          closable: !result.disabled,
+        });
+      }
+      if (!result.disabled && lastClosableTagIndex === -1) {
+        lastClosableTagIndex = i;
+      }
+    }
+
+    const invisibleTagCount = usedValue.length - usedMaxTagCount;
     if (invisibleTagCount > 0) {
       tagsToShow.push({
-        label: `+${invisibleTagCount}...`,
+        label: maxTagCountRender(invisibleTagCount),
         closable: false,
         // InputTag needs to extract value as key
         value: '__arco_value_tag_placeholder',
@@ -404,6 +435,13 @@ export const SelectView = (props: SelectViewProps, ref) => {
       onBlur: inputEventHandlers.blur,
       onInputChange: inputEventHandlers.change,
       onRemove: (value, index, event) => {
+        // Should always delete the last option value when press Backspace
+        const keyCode = event.keyCode || event.which;
+        if (keyCode === Backspace.code && lastClosableTagIndex > -1) {
+          value = usedValue[lastClosableTagIndex];
+          index = lastClosableTagIndex;
+        }
+
         // If there is a limit on the maximum number of tags, the parameters passed into InputTag need to be recalculated
         maxTagCount && forceUpdate();
         onRemoveCheckedItem && onRemoveCheckedItem(value, index, event);
@@ -447,6 +485,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-no-border`]: !bordered,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -466,7 +505,14 @@ export const SelectView = (props: SelectViewProps, ref) => {
 
   return (
     <div
+      role="combobox"
+      aria-haspopup="listbox"
+      aria-autocomplete="list"
+      aria-expanded={popupVisible}
+      aria-disabled={disabled}
+      aria-controls={ariaControls}
       {...include(rest, ['onClick', 'onMouseEnter', 'onMouseLeave'])}
+      {...pickDataAttributes(rest)}
       ref={refWrapper}
       tabIndex={disabled ? -1 : 0}
       style={style}
@@ -494,6 +540,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       >
         {prefix && (
           <div
+            aria-hidden="true"
             className={cs(`${prefixCls}-prefix`)}
             onMouseDown={(event) => focused && keepFocus(event)}
           >
@@ -503,7 +550,11 @@ export const SelectView = (props: SelectViewProps, ref) => {
 
         {isMultiple ? renderMultiple() : renderSingle()}
 
-        <div className={`${prefixCls}-suffix`} onMouseDown={(event) => focused && keepFocus(event)}>
+        <div
+          aria-hidden="true"
+          className={`${prefixCls}-suffix`}
+          onMouseDown={(event) => focused && keepFocus(event)}
+        >
           {mergedClearIcon}
           {mergedSuffixIcon}
         </div>

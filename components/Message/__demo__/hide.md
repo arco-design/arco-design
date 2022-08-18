@@ -17,16 +17,22 @@ title:
 import { Message, Button } from '@arco-design/web-react';
 
 function updateMessage() {
-  const close = Message.info({ content: 'Close after 2 seconds...', duration: 0 });
+  const close = Message.info({
+    content: 'Close after 2 seconds...',
+    duration: 0,
+  });
   setTimeout(() => {
     close();
   }, 2000);
 }
 
-ReactDOM.render(
-  <Button onClick={updateMessage} type="primary">
-    Close after 2 seconds
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button onClick={updateMessage} type="primary">
+      Close after 2 seconds
+    </Button>
+  );
+};
+
+export default App;
 ```

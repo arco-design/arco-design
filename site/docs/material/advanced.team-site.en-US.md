@@ -60,6 +60,8 @@ Since `arco-material-doc-site` ships with TypeScript typings, you can leverage y
 module.exports = {... };
 ```
 
+The complete `MainConfig` configuration field declaration please [go here](https://github.com/arco-design/arco-cli/blob/main/packages/arco-material-doc-site/src/interface.ts#L55).
+
 ```js
 // .config/webpack.config.js
 
@@ -86,24 +88,12 @@ module.exports = {
     globs: {
       // Can be used for configuration of Arco Monorepo template
       component: {
+        // Relative path relative to the site directory, an absolute path is also allowed
         base:'../*',
         doc:'docs/README.md',
         demo:'src/demo/index.js',
         style:'src/style/index.ts',
       },
-      // Can be used for configuration of Arco material library template
-      // component: {
-      // base:'../components/*',
-      // doc:'README.md',
-      // demo:'demo/index.js',
-      // style:'style/index.ts',
-      // },
-      // Can be used for configuration of Arco tool library templates
-      // component: {
-      // base:'../src/*',
-      // doc:'README.md',
-      // demo:'demo/index.js',
-      // },
       doc:'./docs/**/*.md',
     },
     // Whether to introduce the material style file
@@ -111,12 +101,7 @@ module.exports = {
   },
   // Site configuration
   site: {
-    // Languages ​​supported by the site
-    languages: ['zh-CN'],
-    // ID of Feishu onCall group
-    larkGroupID:'',
-    // Allow to switch site theme
-    allowThemeToggle: false,
+    // ...
   },
 };
 ```
@@ -195,114 +180,101 @@ After the preview confirms that the content is correct, you need to publish the 
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d14e7b6b380cee60d66e7180d05420d5.png~tplv-uwbnlip3yd-webp.webp)
 
-## globalization
+## Site configuration
 
-Multi-language support for site content mainly includes three parts: custom documentation, component API documentation, and component description information.
+Through `/.config/main.js` configuration, you can make some customizations to the site. Currently supported configurations include:
 
-- Custom documents need to be written under `/site/docs`, and the languages ​​are distinguished by folders.
-- The suffix of the component API document distinguishes different languages, for example: `README.zh-CN.md`, `README.en-US.md`. The comments written in `/** xxx */` will be extracted by the document generation tool. The default generated document is named `README.md`. If you need to support other languages, you need to create a corresponding document and translate it.
+- Multi-language switch
+- dark mode toggle
+- Demo behavior
+- Side menu behavior
+- Custom page module
+- [ArcoDesignLab](https://arco.design/themes) theme package association
+- [ArcoIconBox](https://arco.design/iconbox/libs) icon library association
 
-```typescript
-export interface ComponentOneProps {
-  /** Child node of the component */
-  children?: ReactNode;
-  /** Additional style of the component */
-  style?: CSSProperties;
-}
-```
+For details of configuration fields, please [go here](https://github.com/arco-design/arco-cli/blob/main/packages/arco-material-doc-site/src/interface.ts#L93) , refer to `MainConfig.site` field type.
 
--Component description information needs to be written in JSDOC syntax in `demo/index.js`, and this information will be collected when the site module is packaged.
+### Custom page module
 
-```jsx
-/**
- * @file
- * @name
- * zh-CN: component name
- * en-US: Name of Component
- *
- * @memberOf
- * zh-CN: component classification, for example: data input, navigation
- * en-US: Sort of this component
- *
- * @description
- * zh-CN: description information of the component
- * en-US: Description of this component
- */
-
-/**
- * @name
- * zh-CN: The title of this demo
- * en-US: Title of this demo
- *
- * @description
- * zh-CN: Descriptive information of Demo, which can describe its usage and precautions
- * en-US: Description of this demo
- */
-export {default as Basic} from'./basic';
-
-/**
- * @name
- * zh-CN: Advanced usage
- * en-US: Advanced
- *
- * @description
- * zh-CN: This is the advanced usage of the component
- * en-US: This is a advanced usage of ComponentOne.
- */
-export {default as Advanced} from'./advanced';
-```
-
-## Dark theme
-
-The material supports the dark theme without additional configuration, just use Arco's built-in color variables to define the color in the component development. Reference [ArcoDesign | Dark Mode](https://arco.design/react/docs/dark)
-
-```css
-table {
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-1);
-}
-```
-
-## Using the Arco Design Lab theme
-
-**Version requirement `arco-material-doc-site >= 1.8.0`**
-
-By extending the configuration items, you can quickly use any theme from the Arco theme store on your team site.
+With the `MainConfig.build.customModulePath` field, you can specify an entry file to expose custom modules. E.g
 
 ````javascript
+//.config/main.js
 module.exports = {
-  // ...
-  // site configuration
-  site: {
-    // Configure the Arco Design Lab theme that needs to be used
-    arcoDesignLabTheme: '@arco-design/theme-package-name',
+  // build configuration
+  build: {
+    // ...
+    customModulePath: './customModule.tsx',
   },
 };
 ````
 
-## Site configuration
+Expose a module with a specific name in `customModule.tsx` and the site page will render it into the page. Currently customizable modules include `Navbar | Footer | Menu | Affix`.
 
-Through the open configuration field, we allow some simple configuration of the site, currently supported configurations include:
+```tsx
+//customModule.tsx
+import React, { useContext } from 'react';
+import { Menu as ArcoMenu } from '@arco-design/web-react';
+import { ArcoSiteGlobalContext, ArcoSiteRouteType } from 'arco-material-doc-site';
 
-- Multi-language options
-- Theme switching options
+export function Navbar() {
+  return <div>Arco Design</div>;
+}
 
-The basic site configuration can be quickly configured in `/.config/main.js`, and the material platform will render the page according to the configuration after adding this module:
+export function Affix() {
+  // Get globalContext by window.arcoSiteGlobalContext
+  const { user } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
+  return (
+    <div>
+      <h1>Hello {user?.name}!</h1>
+    </div>
+  );
+}
 
-```javascript
-module.exports = {
-  // ...
-  // Site configuration
-  site: {
-    // Languages ​​supported by the site
-    languages: ['zh-CN'],
-    // Allow to switch site theme
-    allowThemeToggle: false,
-  },
-};
-```
+const { SubMenu, Item: MenuItem } = ArcoMenu;
 
-By exposing the module with the specified name in the site building product, it can theoretically support a higher degree of customization, such as fully customizing the footer, rendering team custom components (floating help window), etc.
+export function Menu() {
+  // Get globalContext by window.arcoSiteGlobalContext
+  const {
+    history,
+    location,
+    routes: [docRoutes, componentRoutes],
+  } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
+
+  const renderMenuItems = ({ name, path, children }: ArcoSiteRouteType) => {
+    if (children) {
+      return (
+        <SubMenu key={name} title={name}>
+          {children.map(({ name, path }) => (
+            <MenuItem key={path}>{name}</MenuItem>
+          ))}
+        </SubMenu>
+      );
+    }
+
+    return path ? <MenuItem key={path}>{name}</MenuItem> : null;
+  };
+
+  return (
+    <ArcoMenu
+      autoOpen
+      defaultSelectedKeys={[location.pathname.replace(/\/$/, '')]}
+      onClickMenuItem={(key) => {
+        history.push(`${key}${location.search}`);
+      }}
+    >
+      <SubMenu key={docRoutes.key} title={docRoutes.name}>
+        {docRoutes.children?.map(renderMenuItems)}
+      </SubMenu>
+      {componentRoutes.children?.map(renderMenuItems)}
+    </ArcoMenu>
+  );
+}
+````
+
+## Using the Arco Design Lab theme
+
+See ["FAQ - Associated Topics"](/docs/en-US/material/qa#how-to-associate-design-lab-theme).
 
 ## Use Hook
 
@@ -452,152 +424,49 @@ module.exports = {
 
 Complete site preview and deployment.
 
-## Detailed configuration file
 
-All available configurations of `.config/main.js` are as follows:
+## I18N
+
+Multi-language support for site content mainly includes three parts: custom documentation, component API documentation, and component description information.
+
+- Custom documents need to be written under `/site/docs`, and the languages ​​are distinguished by folders.
+- The suffix of the component API document distinguishes different languages, for example: `README.zh-CN.md`, `README.en-US.md`. The comments written in `/** xxx */` will be extracted by the document generation tool. The default generated document is named `README.md`. If you need to support other languages, you need to create a corresponding document and translate it.
 
 ```typescript
-interface MainConfig {
-  /**
-   * Build config for site
-   * @zh 站点构建配置
-   */
-  build: {
-    /**
-     * Rules to match the path of document and demos
-     * @zh 配置文档和 Demo 的路径
-     */
-    globs: {
-      /**
-       * Glob pattern of pure document
-       * @zh 纯文档的 Glob 匹配符
-       */
-      doc: string;
-      /**
-       * Glob patterns of component
-       * @zh 组件相关的 Glob 匹配规则
-       */
-      component: {
-        /**
-         * Glob pattern to math the path of component
-         * @zh 组件目录的 Glob 匹配符
-         * @e.g ../components/*
-         */
-        base: string;
-        /**
-         * Glob pattern of component demos
-         * @zh 组件 Demo 的 Glob 匹配符
-         * @e.g demo/index.js
-         */
-        demo: string;
-        /**
-         * Glob pattern of component document
-         * @zh 组件文档的 Glob 匹配符
-         * @e.g README.md
-         */
-        doc?: string;
-        /**
-         * Path of component style
-         * @zh 组件样式路径
-         * @e.g style/index.less
-         */
-        style?: string;
-      };
-      /**
-       * Hooks to execute when demos are rendered
-       * @zh Demo 渲染时执行的钩子函数
-       */
-      hook?: {
-        /**
-         * Callback function executed before all demos are rendered
-         * @zh 在所有 Demo 渲染之前执行的回调函数
-         */
-        beforeAll?: string;
-        /**
-         * Callback function executed before each demo is rendered
-         * @zh 在每个 Demo 渲染之前执行的回调函数
-         */
-        beforeEach?: string;
-      };
-    };
-    /**
-     * Whether to import material style file
-     * @zh 是否将组件的样式一同打包
-     */
-    withMaterialStyle?: boolean;
-    /**
-     * Options for development mode
-     * @zh 站点 Dev 模式时的配置
-     */
-    devOptions?: {
-      /**
-       * Whether to auto import Arco library style
-       * @zh 是否自动注入 Arco 组件库的样式
-       * @default true
-       */
-      withArcoStyle?: boolean;
-    };
-  };
-  /**
-   * Runtime config for site
-   * @zh 站点运行时配置
-   */
-  site: {
-    /**
-     * Languages allowed to switch
-     * @zh 可切换的语言类型
-     * @e.g ['zh-CN', 'en-US']
-     */
-    languages: string[];
-    /**
-     * Lark group id for on call
-     * @zh 飞书 onCall 群的 ID
-     */
-    larkGroupID?: string;
-    /**
-     * Theme package name of Arco Design Lab
-     * @zh 关联使用的 Arco 主题商店主题包名
-     */
-    arcoDesignLabTheme?: string;
-    /**
-     * Whether switching themes is allowed
-     * @zh 是否允许切换主题
-     */
-    allowThemeToggle?: boolean;
-    /**
-     * Config of material demos
-     * @zh 页面 Demo 的配置
-     */
-    demo?: {
-      /**
-       * Whether demos are editable
-       * @zh Demo 是否允许编辑调试
-       */
-      editable?: boolean;
-      /**
-       * Default external info of code editor
-       * @zh Demo 编辑器默认的 External 资源配置
-       */
-      defaultExternalList?: ExternalSourceInfo[];
-    };
-    /**
-     * Config menu items
-     * @zh 配置菜单栏
-     */
-    menu?: {
-      /**
-       * The maximum allowed sub-menu level, the excess levels will be displayed in groups
-       * @zh 允许的最大菜单层级，超出的层级将以分组的形式展示
-       * @default 1
-       */
-      maxSubMenuLevel?: number;
-      /**
-       * Sort rule of menu items. The higher the menu item, the higher the priority
-       * @zh 菜单排序规则，越靠前的菜单项优先级越高
-       * @e.g { guide: ['document2', 'document1'] }
-       */
-      sortRule?: Record<string, String[]>;
-    };
-  };
+export interface ComponentOneProps {
+  /** Child node of the component */
+  children?: ReactNode;
+  /** Additional style of the component */
+  style?: CSSProperties;
 }
+```
+
+-Component description information needs to be written in JSDOC syntax in `demo/index.js`, and this information will be collected when the site module is packaged.
+
+```jsx
+/**
+ * @file
+ * @name
+ * zh-CN: component name
+ * en-US: Name of Component
+ *
+ * @memberOf
+ * zh-CN: component classification, for example: data input, navigation
+ * en-US: Sort of this component
+ *
+ * @description
+ * zh-CN: description information of the component
+ * en-US: Description of this component
+ */
+
+/**
+ * @name
+ * zh-CN: The title of this demo
+ * en-US: Title of this demo
+ *
+ * @description
+ * zh-CN: Descriptive information of Demo, which can describe its usage and precautions
+ * en-US: Description of this demo
+ */
+export {default as Basic} from'./basic';
 ```

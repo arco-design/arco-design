@@ -14,29 +14,31 @@ title:
 If `autoUpload` equals `false`, files will not be uploaded automatically after being selected. You can submit them by `uploadRef.submit` method.
 
 ```js
+import React from 'react';
 import { Upload, Button, Space } from '@arco-design/web-react';
 
-function Demo () {
-  const uploadRef = React.useRef()
-  const [disabled, setDisabled] = React.useState(false)
-  const [fileList, setFileList] = React.useState([])
+function App() {
+  const uploadRef = React.useRef();
+  const [disabled, setDisabled] = React.useState(false);
+  const [fileList, setFileList] = React.useState([]);
 
   const onSubmit = (e, isFirst) => {
     e.stopPropagation();
-    const file = isFirst ? fileList.filter(x => x.status === 'init')[0] : null
+    const file = isFirst ? fileList.filter((x) => x.status === 'init')[0] : null;
     uploadRef.current && uploadRef.current.submit(file);
   };
 
   const onChange = (files) => {
-    setFileList(files)
-    setDisabled(!files.some((x) => x.status === 'init'))
+    setFileList(files);
+    setDisabled(!files.some((x) => x.status === 'init'));
   };
 
   const onProgress = (file) => {
     setFileList((files) => {
-      return files.map(x => x.uid === file.uid ? file : x)
-    })
-  }
+      return files.map((x) => (x.uid === file.uid ? file : x));
+    });
+  };
+
   return (
     <Upload
       ref={uploadRef}
@@ -55,16 +57,16 @@ function Demo () {
         <Button
           type="primary"
           onClick={(e) => {
-            onSubmit(e, true)
+            onSubmit(e, true);
           }}
           disabled={disabled}
-          >
+        >
           Only upload one
         </Button>
       </Space>
     </Upload>
-  )
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

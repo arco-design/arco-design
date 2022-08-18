@@ -1,6 +1,6 @@
 export function debounce(fn: () => void, delay: number, immediate?: boolean) {
   let timer = null;
-  return function(...args) {
+  return function (...args) {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const context = this;
 

@@ -15,12 +15,12 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|className|节点类名|`string \| string[]`|`-`|
-|style|节点样式|`CSSProperties`|`-`|
-|title|主标题|`ReactNode`|`-`|
-|subTitle|次级标题|`ReactNode`|`-`|
-|breadcrumb|面包屑，接受面包屑的所有属性, [BreadcrumbProps](/react/components/breadcrumb)|`BreadcrumbProps`|`-`|
-|backIcon|返回图标，设置为 `false` 时会隐藏图标|`ReactNode \| boolean`|`-`|
-|extra|展示额外内容|`ReactNode`|`-`|
-|footer|底部内容|`ReactNode`|`-`|
-|onBack|点击返回图标的回调|`(e: MouseEvent) => void`|`-`|
+|extra|展示额外内容|ReactNode |`-`|
+|footer|底部内容|ReactNode |`-`|
+|subTitle|次级标题|ReactNode |`-`|
+|title|主标题|ReactNode |`-`|
+|backIcon|返回图标，设置为 `false` 时会隐藏图标|ReactNode \| boolean |`-`|
+|breadcrumb|面包屑，接受面包屑的所有属性, [BreadcrumbProps](/react/components/breadcrumb)|[BreadcrumbProps](breadcrumb#breadcrumb) |`-`|
+|className|节点类名|string \| string[] |`-`|
+|style|节点样式|CSSProperties |`-`|
+|onBack|点击返回图标的回调|(e: MouseEvent) => void |`-`|

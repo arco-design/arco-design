@@ -20,6 +20,7 @@ import { RefInputType } from '../Input/interface';
 import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
+import { toFixed, toSafeString } from './utils';
 
 NP.enableBoundaryChecking(false);
 
@@ -140,7 +141,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
       return isNumber(finalValue)
         ? isNumber(mergedPrecision)
-          ? Number(finalValue.toFixed(mergedPrecision))
+          ? Number(toFixed(finalValue, mergedPrecision))
           : finalValue
         : undefined;
     },
@@ -171,7 +172,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     event.preventDefault();
     setIsUserInputting(false);
 
-    if (disabled) {
+    if (disabled || readOnly) {
       return;
     }
 
@@ -200,11 +201,11 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     if (isUserInputting) {
       _value = inputValue;
     } else if (isNumber(value) && isNumber(mergedPrecision)) {
-      _value = value.toFixed(mergedPrecision);
+      _value = toFixed(value, mergedPrecision);
     } else if (value == null) {
       _value = '';
     } else {
-      _value = value.toString();
+      _value = toSafeString(value);
     }
 
     return formatter ? formatter(_value) : _value;
@@ -217,7 +218,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       let targetValue = value.trim().replace(/。/g, '.');
       targetValue = parser ? parser(targetValue) : targetValue;
 
-      if (isNumber(+targetValue) || targetValue === '-' || !targetValue) {
+      if (isNumber(+targetValue) || targetValue === '-' || !targetValue || targetValue === '.') {
         const formatValue = getLegalValue(targetValue);
 
         setInputValue(targetValue);
@@ -279,6 +280,11 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   return (
     <Input
+      _ignorePropsFromGlobal
+      role="spinbutton"
+      aria-valuemax={max}
+      aria-valuemin={min}
+      aria-valuenow={value as number}
       {...omit(rest, ['allowClear'])}
       {...inputEventHandlers}
       style={style}

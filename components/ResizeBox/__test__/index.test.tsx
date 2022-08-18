@@ -1,11 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import ResizeBox from '..';
 import Typography from '../../Typography';
 import Layout from '../../Layout';
+import { fireEvent, render } from '../../../tests/util';
+import { mockMouseEvent } from '../../../tests/fakeMouseEvent';
 
 const Sider = Layout.Sider;
 const Header = Layout.Header;
@@ -50,30 +51,19 @@ describe('ResizeBox', () => {
   });
 
   it('render without props correctly', () => {
-    const wrapper = mount(<ResizeBox />);
+    const wrapper = render(<ResizeBox />);
     expect(wrapper.find('.arco-resizebox')).toHaveLength(1);
 
-    expect(
-      wrapper.find('.arco-resizebox-trigger').hasClass('arco-resizebox-direction-right')
-    ).toBeTruthy();
-
-    act(() => {
-      wrapper.setProps({
-        directions: ['bottom'],
-      });
-      wrapper.update();
-    });
-    expect(wrapper.find('.arco-resizebox')).toHaveLength(1);
-    expect(
-      wrapper.find('.arco-resizebox-trigger').hasClass('arco-resizebox-direction-bottom')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-resizebox-trigger')[0].classList).toContain(
+      'arco-resizebox-direction-right'
+    );
   });
 
   it('handle right change correctly', () => {
     const mockMoving = jest.fn();
     const mockMovingStart = jest.fn();
     const mockMovingEnd = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox
         onMoving={mockMoving}
         onMovingEnd={mockMovingEnd}
@@ -90,8 +80,10 @@ describe('ResizeBox', () => {
     });
 
     act(() => {
-      wrapper.find('ResizeTrigger').simulate('mousedown', { pageX: 100, pageY: 100 });
-      wrapper.update();
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 100, pageY: 100 })
+      );
     });
     expect(mockMovingStart).toHaveBeenCalled();
 
@@ -103,11 +95,8 @@ describe('ResizeBox', () => {
     });
     expect(mockMoving).toHaveBeenCalledTimes(1);
     expect(mockMoving.mock.calls[0][1]).toEqual({ width: 200, height: 100 });
-
-    act(() => {
-      wrapper.update();
-    });
-    expect(wrapper.find('.arco-resizebox').prop('style')).toEqual({ width: 200, height: 100 });
+    expect(wrapper.find('.arco-resizebox')[0].style.width).toEqual('200px');
+    expect(wrapper.find('.arco-resizebox')[0].style.height).toEqual('100px');
 
     act(() => {
       map.mouseup();
@@ -116,7 +105,7 @@ describe('ResizeBox', () => {
   });
 
   it('handle bottom change correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox directions={['bottom']} style={{ width: 100, height: 100 }} />
     );
 
@@ -126,21 +115,22 @@ describe('ResizeBox', () => {
     });
 
     act(() => {
-      wrapper.find('ResizeTrigger').simulate('mousedown', { pageX: 100, pageY: 100 });
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 100, pageY: 100 })
+      );
       map.mousemove({
         pageX: 100,
         pageY: 300,
       });
     });
 
-    act(() => {
-      wrapper.update();
-    });
-    expect(wrapper.find('.arco-resizebox').prop('style')).toEqual({ width: 100, height: 300 });
+    expect(wrapper.find('.arco-resizebox')[0].style.width).toEqual('100px');
+    expect(wrapper.find('.arco-resizebox')[0].style.height).toEqual('300px');
   });
 
   it('render basic split correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.Split
         style={{ height: 400, width: 400 }}
         panes={[
@@ -151,10 +141,10 @@ describe('ResizeBox', () => {
     );
 
     expect(wrapper.find('.arco-resizebox-split-pane')).toHaveLength(2);
-    expect(wrapper.find('ResizeTrigger')).toHaveLength(1);
-    expect(
-      wrapper.find('.arco-resizebox-trigger').hasClass('arco-resizebox-trigger-vertical')
-    ).toBeTruthy();
+    expect(wrapper.find('.arco-resizebox-trigger')).toHaveLength(1);
+    expect(wrapper.find('.arco-resizebox-trigger')[0].classList).toContain(
+      'arco-resizebox-trigger-vertical'
+    );
   });
 
   it('handle mouse event correctly', () => {
@@ -162,7 +152,7 @@ describe('ResizeBox', () => {
     const mockMovingStart = jest.fn();
     const mockMovingEnd = jest.fn();
 
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.Split
         style={{ height: 400, width: 400 }}
         onMoving={mockMoving}
@@ -181,9 +171,12 @@ describe('ResizeBox', () => {
     });
 
     act(() => {
-      wrapper.find('ResizeTrigger').simulate('mousedown', { pageX: 200, pageY: 100 });
-      wrapper.update();
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 200, pageY: 100 })
+      );
     });
+
     expect(mockMovingStart).toHaveBeenCalled();
 
     act(() => {
@@ -196,17 +189,13 @@ describe('ResizeBox', () => {
     expect(mockMoving.mock.calls[0][1]).toEqual(300 / 400);
 
     act(() => {
-      wrapper.update();
-    });
-
-    act(() => {
       map.mouseup();
       expect(mockMovingEnd).toHaveBeenCalledTimes(1);
     });
   });
 
   it('use in Layout correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <Layout>
         <Header>Header</Header>
         <Layout>
@@ -218,13 +207,13 @@ describe('ResizeBox', () => {
         <Footer>Footer</Footer>
       </Layout>
     );
-    expect(wrapper.find('.arco-resizebox').hasClass('arco-layout-sider')).toBeTruthy();
+    expect(wrapper.find('.arco-resizebox')[0].classList).toContain('arco-layout-sider');
   });
 
   it('trigger onPaneResize when pane resized', () => {
     const mockPaneResize = jest.fn();
 
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.Split
         style={{ height: 200, width: 500 }}
         panes={[
@@ -243,7 +232,10 @@ describe('ResizeBox', () => {
     });
 
     act(() => {
-      wrapper.find('ResizeTrigger').simulate('mousedown', { pageX: 100, pageY: 300 });
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 100, pageY: 300 })
+      );
       map.mousemove({
         pageX: 200,
         pageY: 300,
@@ -251,5 +243,59 @@ describe('ResizeBox', () => {
     });
 
     expect(mockPaneResize).toHaveBeenCalledTimes(2);
+  });
+
+  it('render direction reverse correctly', () => {
+    const mockMoving = jest.fn();
+    const mockMovingStart = jest.fn();
+    const mockMovingEnd = jest.fn();
+
+    const wrapper = render(
+      <ResizeBox.Split
+        style={{ height: 400, width: 400 }}
+        direction="horizontal-reverse"
+        onMoving={mockMoving}
+        onMovingStart={mockMovingStart}
+        onMovingEnd={mockMovingEnd}
+        panes={[
+          <Typography.Paragraph key="1">Right</Typography.Paragraph>,
+          <Typography.Paragraph key="2">Left</Typography.Paragraph>,
+        ]}
+      />
+    );
+
+    expect(wrapper.find('.arco-resizebox-split-pane .arco-typography')[0].innerHTML).toEqual(
+      'Left'
+    );
+    expect(wrapper.find('.arco-resizebox-split-pane .arco-typography')[1].innerHTML).toEqual(
+      'Right'
+    );
+
+    const map: any = {};
+    window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+      map[event] = cb;
+    });
+
+    act(() => {
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 200, pageY: 100 })
+      );
+    });
+    expect(mockMovingStart).toHaveBeenCalled();
+
+    act(() => {
+      map.mousemove({
+        pageX: 250,
+        pageY: 100,
+      });
+    });
+    expect(mockMoving).toHaveBeenCalledTimes(1);
+    expect(mockMoving.mock.calls[0][1]).toEqual((200 - (250 - 200)) / 400);
+
+    act(() => {
+      map.mouseup();
+      expect(mockMovingEnd).toHaveBeenCalledTimes(1);
+    });
   });
 });

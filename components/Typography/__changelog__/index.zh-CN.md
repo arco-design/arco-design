@@ -1,3 +1,80 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件 `underline` 等不同文本样式下文字省略问题([#1137](https://github.com/arco-design/arco-design/pull/1137))
+
+## 2.37.0
+
+2022-07-08
+
+### 💅 样式更新
+
+- `Typography` 默认样式添加 `white-space: 'normal'` 以消除父元素对省略影响。([#1109](https://github.com/arco-design/arco-design/pull/1109))
+
+## 2.34.0
+
+2022-05-27
+
+### 💎 功能优化
+
+- 减少 `Typography` 首次渲染时的计算次数([#935](https://github.com/arco-design/arco-design/pull/935))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件 `展开/折叠` 按钮展示时机错误的bug([#890](https://github.com/arco-design/arco-design/pull/890))
+
+## 2.33.0
+
+2022-05-13
+
+### 🆕 功能升级
+
+- `Typography` 组件省略场景支持展开受控。([#867](https://github.com/arco-design/arco-design/pull/867))
+
+### 🐛 问题修复
+
+- 修复`Typography` 组件使用 `code`等行内元素时，折叠出错的 bug。([#866](https://github.com/arco-design/arco-design/pull/866))
+
+## 2.32.2
+
+2022-04-29
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件单行省略下 `Tooltip` 失效的bug([#822](https://github.com/arco-design/arco-design/pull/822))
+
+## 2.32.0
+
+2022-04-15
+
+### 🐛 问题修复
+
+- `Typography` 组件多行省略支持不同样式的文本。([#776](https://github.com/arco-design/arco-design/pull/776))
+- 修复 `Typography` 设置 `white-space` 后无法折叠的bug([#772](https://github.com/arco-design/arco-design/pull/772))
+
+## 2.31.0
+
+2022-03-25
+
+### 🆕 功能升级
+
+- `Typography` 的 `copyable` 和 `editable` 对应点击回调暴露 `event` 参数。([#684](https://github.com/arco-design/arco-design/pull/684))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件在编辑状态时， `onStart` 入参错误的bug([#555](https://github.com/arco-design/arco-design/pull/555))
+
 ## 2.29.1
 
 2022-02-18

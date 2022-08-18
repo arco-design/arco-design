@@ -1,6 +1,6 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { sleep, $ } from '../../../tests/util';
+import React, { useState } from 'react';
+import { fireEvent } from '@testing-library/dom';
+import { sleep, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Button from '../../Button';
@@ -11,23 +11,9 @@ import { LabeledValue } from '../interface';
 mountTest(Select);
 componentConfigTest(Select, 'Select');
 
-function mountSelect(component) {
-  return mount(component);
-}
+const OPTIONS = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
 
 const Option = Select.Option;
-const options = [
-  '南非龙虾',
-  '新西兰羊排',
-  '海鲜烩意面',
-  '摩卡慕斯',
-  '酱烧豆腐',
-  '千舟一叶',
-  '葱油鲷鱼',
-  '提拉米苏',
-  '奶油蘑菇鸡肉卷',
-];
-
 let wrapper = null;
 
 describe('Select', () => {
@@ -37,276 +23,195 @@ describe('Select', () => {
 
   it('tokenSeparators', async () => {
     const onChange = jest.fn();
-    wrapper = mountSelect(
+    wrapper = render(
       <Select
         popupVisible
         allowCreate
+        filterOption={false}
         mode="multiple"
         tokenSeparators={[',', ';', '\n']}
         onChange={onChange}
       />
     );
 
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: 'a,b' } })
-      .simulate('keydown', {
-        key: Enter.key,
-      });
+    const eleInput = wrapper.querySelector('input');
 
+    fireEvent.change(eleInput, { target: { value: 'a,b' } });
     expect(onChange.mock.calls[0][0]).toEqual(['a', 'b']);
 
     await sleep(100);
 
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: 'c' } })
-      .simulate('keydown', {
-        key: ',',
-      })
-      .simulate('change', { target: { value: 'c,' } });
-
+    fireEvent.change(eleInput, { target: { value: 'c' } });
+    fireEvent.keyDown(eleInput, { key: ',' });
     expect(wrapper.find('.arco-select-option')).toHaveLength(3);
   });
 
-  it('tokenSeparators with allowCreate is false', async () => {
-    wrapper = mountSelect(
-      <Select
-        mode="multiple"
-        placeholder="Please select"
-        tokenSeparators={[',', '|', '/', '\n']}
-        allowCreate={false}
-        allowClear
-        style={{ width: 345 }}
-      />
+  it('tokenSeparators with allowCreate-false', async () => {
+    wrapper = render(
+      <Select mode="multiple" tokenSeparators={[',', '|', '/', '\n']} allowCreate={false} />
     );
 
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: 'a,b' } })
-      .simulate('keydown', {
-        key: Enter.key,
-      });
+    const eleInput = wrapper.querySelector('input');
 
-    expect(wrapper.find('.arco-tag').exists()).toBeFalsy();
+    fireEvent.change(eleInput, { target: { value: 'a,b' } });
+    fireEvent.keyDown(eleInput, {
+      key: Enter.key,
+    });
+    expect(wrapper.find('.arco-tag')).toHaveLength(0);
 
     await sleep(100);
 
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: 'c' } })
-      .simulate('keydown', {
-        key: Tab.key,
-      });
-
-    expect(wrapper.find('.arco-tag').exists()).toBeFalsy();
+    fireEvent.change(eleInput, { target: { value: 'c' } });
+    fireEvent.keyDown(eleInput, { key: Tab.key });
+    expect(wrapper.find('.arco-tag')).toHaveLength(0);
   });
 
-  it('OptGroup works', () => {
-    wrapper = mountSelect(
+  it('OptGroup works', async () => {
+    wrapper = render(
       <Select popupVisible options={[1, 2, 3]}>
         <Select.OptGroup label="GroupOne">
           <Select.Option value="G1_V1">G1_V1</Select.Option>
           <Select.Option value="G1_V2">G1_V2</Select.Option>
+          <Select.Option value={undefined} />
         </Select.OptGroup>
       </Select>
     );
 
-    expect(wrapper.find('.arco-select-group-title').at(0).text()).toBe('GroupOne');
+    await sleep(100);
+    expect(wrapper.querySelector('.arco-select-group-title').innerHTML).toBe('GroupOne');
     expect(wrapper.find('.arco-select-option')).toHaveLength(5);
   });
 
-  it('onChange listener correctly', () => {
-    const mockFn = jest.fn();
-    jest.useFakeTimers();
-    wrapper = mountSelect(
-      <Select
-        placeholder="请选择语言"
-        style={{ width: 300 }}
-        defaultValue="南非龙虾"
-        allowClear
-        onChange={mockFn}
-      >
-        {options.map((option) => (
+  it('onChange listener correctly', async () => {
+    const onChange = jest.fn();
+    wrapper = render(
+      <Select defaultValue="Option 1" onChange={onChange}>
+        {OPTIONS.map((option) => (
           <Option key={option} value={option}>
             {option}
           </Option>
         ))}
       </Select>
     );
-    expect(wrapper.find('input').props().value).toBe('南非龙虾');
 
-    wrapper.simulate('click');
-    jest.runAllTimers();
-    expect($('.arco-select-popup').length).toBe(1);
+    const eleInput = wrapper.querySelector('input');
+    expect(eleInput.getAttribute('value')).toBe('Option 1');
 
-    wrapper.find('.arco-select-option').at(2).simulate('click');
-    expect(wrapper.find('input').props().value).toBe('海鲜烩意面');
-    expect(mockFn.mock.calls.length).toBe(1);
+    fireEvent.click(wrapper.querySelector('.arco-select'));
+    await sleep(100);
+    expect(wrapper.querySelectorAll('.arco-select-popup')).toHaveLength(1);
+
+    fireEvent.click(wrapper.querySelectorAll('.arco-select-option')[2]);
+    expect(eleInput.getAttribute('value')).toBe('Option 3');
+    expect(onChange.mock.calls.length).toBe(1);
   });
 
-  it('multiply mode correctly,clear correctly, disabled correctly', () => {
+  it('multiply mode correctly, clear correctly, disabled correctly', async () => {
     const onChange = jest.fn();
-    wrapper = mountSelect(
+    wrapper = render(
       <Select
-        mode="multiple"
-        placeholder="请选择语言"
-        style={{ width: 300 }}
-        defaultValue={['新西兰羊排', '酱烧豆腐', '海鲜烩意面']}
         allowClear
+        popupVisible
+        mode="multiple"
+        defaultValue={['Option 2', 'Option 3', 'Option 5']}
         onChange={onChange}
       >
-        {options.map((option, index) => (
+        {OPTIONS.map((option, index) => (
           <Option key={option} value={option} disabled={index === 2}>
             {option}
           </Option>
         ))}
       </Select>
     );
+
+    await sleep(100);
+
     expect(wrapper.find('.arco-tag')).toHaveLength(3);
-
-    wrapper.find('.arco-select').at(0).simulate('click');
-    expect($('.arco-select-popup-inner .arco-select-option-disabled').length).toBe(1);
-
-    wrapper.find('IconClose').last().simulate('click');
+    fireEvent.click(wrapper.querySelector('.arco-select-clear-icon'));
     expect(onChange.mock.calls[0][0]).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.arco-select-option-disabled')).toHaveLength(1);
   });
 
-  it('showSearch correctly', () => {
-    wrapper = mountSelect(
-      <Select showSearch allowClear placeholder="请选择食物" style={{ width: 300 }}>
-        {options.map((option) => (
+  it('showSearch correctly', async () => {
+    wrapper = render(
+      <Select showSearch>
+        {OPTIONS.map((option) => (
           <Option key={option} value={option}>
             {option}
           </Option>
         ))}
       </Select>
     );
-    const input = wrapper.find('input');
+    const eleInput = wrapper.querySelector('input');
 
-    wrapper.find('.arco-select').at(0).simulate('click');
-    expect(
-      wrapper
-        .find('.arco-select-popup .arco-select-option')
-        .at(0)
-        .hasClass('arco-select-option-hover')
-    ).toBeTruthy();
-
-    input.simulate('change', { target: { value: '海鲜' } });
-
-    expect(wrapper.find('.arco-select-popup .arco-select-option')).toHaveLength(1);
-    expect(wrapper.find('.arco-select-popup .arco-select-option').at(0).text()).toEqual(
-      '海鲜烩意面'
+    fireEvent.click(wrapper.querySelector('.arco-select'));
+    await sleep(100);
+    expect(wrapper.querySelectorAll('.arco-select-option')[0]).toHaveClass(
+      'arco-select-option-hover'
     );
 
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: '@' } });
-    expect(wrapper.find('Empty')).toHaveLength(1);
+    fireEvent.change(eleInput, { target: { value: OPTIONS[3] } });
+    expect(wrapper.find('.arco-select-option')).toHaveLength(1);
+    expect(wrapper.querySelector('.arco-select-highlight').innerHTML).toBe(OPTIONS[3]);
+
+    fireEvent.change(eleInput, { target: { value: '@' } });
+    expect(wrapper.find('.arco-select-option')).toHaveLength(0);
   });
 
-  it('showSearch async correctly', () => {
-    const mockFn = jest.fn();
-    wrapper = mountSelect(
-      <Select
-        mode="multiple"
-        placeholder="请选择语言"
-        style={{ width: 300 }}
-        onSearch={mockFn}
-        filterOption={false}
-        defaultValue={['新西兰羊排', '酱烧豆腐', '海鲜烩意面']}
-        allowClear
-      >
-        {options.map((option, index) => (
-          <Option key={option} value={option} disabled={index === 2}>
-            {option}
-          </Option>
-        ))}
-      </Select>
+  it('showSearch async correctly', async () => {
+    const onSearch = jest.fn();
+    wrapper = render(
+      <Select mode="multiple" filterOption={false} options={OPTIONS} onSearch={onSearch} />
     );
-    wrapper.find('.arco-select').at(0).simulate('click');
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change', { target: { value: '南' } });
-    expect(mockFn.mock.calls[0][0]).toBe('南');
+    fireEvent.change(wrapper.querySelector('input'), { target: { value: 'A' } });
+    expect(onSearch.mock.calls[0][0]).toBe('A');
   });
 
-  it('popOver correctly', () => {
-    wrapper = mountSelect(
+  it('popup with correct position', async () => {
+    wrapper = render(
       <Select
-        placeholder="请选择语言"
-        style={{ width: 300 }}
-        defaultValue="南非龙虾"
-        allowClear
+        options={OPTIONS}
         triggerProps={{
           position: 'left',
         }}
-      >
-        {options.map((option) => (
-          <Option key={option} value={option}>
-            {option}
-          </Option>
-        ))}
-      </Select>
+      />
     );
-    wrapper.find('.arco-select').at(0).simulate('click');
-    expect(wrapper.find('.arco-trigger').hasClass('arco-trigger-position-left')).toBeTruthy();
+    fireEvent.click(wrapper.querySelector('.arco-select'));
+    await sleep(100);
+    expect(wrapper.querySelector('.arco-trigger')).toHaveClass('arco-trigger-position-left');
   });
 
   it('show value correctly when defaultValue does not exist in options', () => {
-    wrapper = mountSelect(
-      <Select className="test" mode="multiple" defaultValue={[1]}>
-        {options.map((option, index) => (
-          <Option key={option} value={option} disabled={index === 2}>
-            {option}
-          </Option>
-        ))}
-      </Select>
+    wrapper = render(
+      <div>
+        <Select mode="multiple" options={OPTIONS} defaultValue={[1]} />
+        <Select options={OPTIONS} defaultValue={1} />
+      </div>
     );
     expect(wrapper.find('.arco-tag')).toHaveLength(1);
-    expect(wrapper.find('.arco-tag').at(0).text()).toBe('1');
-
-    const singleWrapper = mountSelect(
-      <Select defaultValue={1}>
-        {options.map((option, index) => (
-          <Option key={option} value={option} disabled={index === 2}>
-            {option}
-          </Option>
-        ))}
-      </Select>
-    );
-    expect(singleWrapper.find('input').prop('value')).toBe(1);
+    expect(wrapper.querySelector('.arco-select-view-value').innerHTML).toBe('1');
   });
 
   it('renderFormat correctly', () => {
-    wrapper = mountSelect(
+    wrapper = render(
       <Select
         showSearch
-        allowClear
         defaultValue={1}
-        placeholder="请选择食物"
-        renderFormat={(option) => {
-          return `${option.value} - ${option.children}`;
-        }}
-        options={options.map((option, index) => ({ label: option, value: index }))}
+        options={OPTIONS.map((option, index) => ({ label: option, value: index }))}
+        renderFormat={(option) => `${option.value} - ${option.children}`}
       />
     );
-    const input = wrapper.find('input');
-    expect(input.prop('value')).toBe(`1 - ${options[1]}`);
-    wrapper.find('.arco-select-view').simulate('click');
-    // expect(wrapper.find('input').prop('value')).toBeFalsy();
-    expect(input.prop('placeholder')).toBe(`1 - ${options[1]}`);
+    const eleInput = wrapper.querySelector('input');
+    expect(eleInput.getAttribute('value')).toBe(`1 - ${OPTIONS[1]}`);
+    fireEvent.click(wrapper.querySelector('.arco-select-view'));
+    expect(eleInput.getAttribute('placeholder')).toBe(`1 - ${OPTIONS[1]}`);
   });
 
-  it('dropdownRender', () => {
-    wrapper = mountSelect(
+  it('dropdownRender', async () => {
+    wrapper = render(
       <Select
+        popupVisible
+        options={OPTIONS}
         dropdownRender={(menu) => {
           return (
             <div>
@@ -315,85 +220,88 @@ describe('Select', () => {
             </div>
           );
         }}
-        options={options}
       />
     );
-    wrapper.find('.arco-select').at(0).simulate('click');
-    expect(wrapper.find('.arco-select-popup .arco-btn').text()).toBe('Add');
+    await sleep(100);
+    expect(wrapper.querySelector('.arco-select-popup .arco-btn span').innerHTML).toBe('Add');
   });
 
-  it('dropdownStyle & dropdownClassName', () => {
-    wrapper = mountSelect(
-      <Select options={options} dropdownMenuStyle={{ fontSize: 20 }} dropdownMenuClassName="xxx" />
+  it('dropdownStyle & dropdownClassName', async () => {
+    wrapper = render(
+      <Select
+        popupVisible
+        options={OPTIONS}
+        dropdownMenuStyle={{ fontSize: 20 }}
+        dropdownMenuClassName="xxx"
+      />
     );
-    wrapper.find('.arco-select').at(0).simulate('click');
 
-    const menu = wrapper.find('.arco-select-popup .arco-select-popup-inner').at(0);
-    expect(menu.hasClass('xxx')).toBeTruthy();
-    expect(getComputedStyle(menu.getDOMNode()).getPropertyValue('font-size')).toBe('20px');
+    await sleep(100);
+    const menu = wrapper.querySelector('.arco-select-popup .arco-select-popup-inner');
+    expect(menu).toHaveClass('xxx');
+    expect(getComputedStyle(menu).fontSize).toBe('20px');
   });
 
   it('Compatible when labelInValue is set, value is passed in the object', () => {
-    wrapper = mountSelect(
-      <Select
-        mode="multiple"
-        labelInValue
-        options={[
-          { label: '1', value: 1 },
-          { label: '2', value: 2 },
-        ]}
-      />
+    wrapper = render(
+      <>
+        <Select
+          className="demo-1"
+          mode="multiple"
+          labelInValue
+          options={[
+            { label: '1', value: 1 },
+            { label: '2', value: 2 },
+          ]}
+        />
+        <Select
+          className="demo-2"
+          mode="multiple"
+          labelInValue
+          defaultValue={[{ label: '1', value: 1 }, 2] as any}
+          options={[
+            { label: '1', value: 1 },
+            { label: '2', value: 2 },
+          ]}
+        />
+        <Select
+          className="demo-3"
+          labelInValue
+          value={{ value: 1, label: 'One' }}
+          renderFormat={(_, labeledValue) => {
+            const { label, value } = labeledValue as LabeledValue;
+            return label || value;
+          }}
+        />
+        <Select
+          className="demo-4"
+          labelInValue
+          mode="multiple"
+          defaultValue={[{ value: 1, label: 'One' }]}
+        />
+        <Select
+          className="demo-5"
+          labelInValue
+          mode="multiple"
+          defaultValue={[{ value: 1, label: 'One' }]}
+          renderFormat={(_, labeledValue) => {
+            const { label, value } = labeledValue as LabeledValue;
+            return label || value;
+          }}
+        />
+      </>
     );
 
-    expect(wrapper.find('.arco-tag')).toHaveLength(0);
-
-    wrapper = mountSelect(
-      <Select
-        mode="multiple"
-        labelInValue
-        defaultValue={[{ label: '1', value: 1 }, 2] as any}
-        options={[
-          { label: '1', value: 1 },
-          { label: '2', value: 2 },
-        ]}
-      />
-    );
-
-    expect(wrapper.find('.arco-tag')).toHaveLength(2);
-
-    wrapper = mountSelect(
-      <Select
-        placeholder="Please select"
-        labelInValue
-        value={{ value: 1, label: 'One' }}
-        renderFormat={(_, labeledValue) => {
-          const { label, value } = labeledValue as LabeledValue;
-          return label || value;
-        }}
-      />
-    );
-
-    expect(wrapper.find('.arco-select-view-value').at(0).text()).toBe('One');
-
-    wrapper = mountSelect(
-      <Select
-        placeholder="Please select"
-        labelInValue
-        mode="multiple"
-        defaultValue={[{ value: 1, label: 'One' }]}
-        renderFormat={(_, labeledValue) => {
-          const { label, value } = labeledValue as LabeledValue;
-          return label || value;
-        }}
-      />
-    );
-
-    expect(wrapper.find('.arco-input-tag-tag-content').at(0).text()).toBe('One');
+    expect(wrapper.find('.demo-1 .arco-tag')).toHaveLength(0);
+    expect(wrapper.find('.demo-2 .arco-tag')).toHaveLength(2);
+    expect(wrapper.querySelector('.demo-3 .arco-select-view-value')).toHaveTextContent('One');
+    expect(wrapper.querySelector('.demo-4 .arco-tag')).toHaveTextContent('One');
+    expect(wrapper.querySelector('.demo-5 .arco-tag')).toHaveTextContent('One');
   });
 
-  it('User creating option will not affect original options', () => {
+  it('User creating option will not affect original options', async () => {
     const value = 'Hello';
-    wrapper = mountSelect(
+    wrapper = render(
       <Select
         allowCreate
         popupVisible
@@ -403,6 +311,83 @@ describe('Select', () => {
         options={[{ value, label: value, disabled: true }]}
       />
     );
+    await sleep(100);
     expect(wrapper.find('.arco-select-option-disabled')).toHaveLength(1);
+  });
+
+  it('Render triggerElement correctly', () => {
+    wrapper = render(
+      <Select
+        value="hello"
+        labelInValue
+        options={[{ value: 'hello', label: 'HELLO' }]}
+        triggerElement={({ value: { value, label } }) => (
+          <span className="custom-trigger-element">
+            {label}-{value}
+          </span>
+        )}
+      />
+    );
+    expect(wrapper.querySelector('.custom-trigger-element').innerHTML).toBe('HELLO-hello');
+  });
+
+  it('Mouse event callback of Select.Option', async () => {
+    const onMouseEnter = jest.fn();
+    const onMouseLeave = jest.fn();
+    const onClick = jest.fn();
+    wrapper = render(
+      <Select popupVisible>
+        <Select.Option
+          value={1}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onClick={onClick}
+        />
+      </Select>
+    );
+
+    await sleep(100);
+
+    const eleOption = wrapper.querySelector('.arco-select-option');
+
+    // fireEvent.mouseLeave(eleOption);
+    // fireEvent.mouseEnter(eleOption);
+    fireEvent.click(eleOption);
+
+    // expect(onMouseEnter).toBeCalled();
+    // expect(onMouseLeave).toBeCalled();
+    expect(onClick).toBeCalled();
+  });
+
+  it('trigger onInputValueChange correctly', async () => {
+    const Demo = () => {
+      const [inputValue, setInputValue] = useState('');
+      return (
+        <Select
+          popupVisible
+          filterOption={false}
+          mode="multiple"
+          options={[1, 2, 3, 4]}
+          inputValue={inputValue}
+          onInputValueChange={(inputValue, reason) => {
+            if (reason !== 'optionChecked') {
+              setInputValue(inputValue);
+            }
+          }}
+        />
+      );
+    };
+    wrapper = render(<Demo />);
+
+    await sleep(100);
+    const eleInput = wrapper.querySelector('input');
+    // Input 1
+    fireEvent.change(eleInput, { target: { value: '1' } });
+    expect(eleInput.getAttribute('value')).toBe('1');
+    fireEvent.click(wrapper.querySelector('.arco-select-option'));
+    expect(eleInput.getAttribute('value')).toBe('1');
+    // Clear input
+    fireEvent.change(eleInput, { target: { value: '' } });
+    expect(eleInput.getAttribute('value')).toBe('');
   });
 });

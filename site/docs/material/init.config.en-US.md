@@ -32,7 +32,9 @@ module.exports = {
 };
 ```
 
-## **Build Configuration**
+## Build Configuration
+
+For detailed configuration parameter types and default configuration, please refer to [arco-scripts source code](https://github.com/arco-design/arco-cli/tree/main/packages/arco-scripts/src/config).
 
 The project created by the official Arco template uses `arco-scripts` to test and package the project, and you can modify its default configuration through the configuration file. In the `.config` folder of the project root directory, we provide an entry for the extended configuration:
 

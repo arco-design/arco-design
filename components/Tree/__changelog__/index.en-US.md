@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- `Tree` component's `allowDrop` callback parameter supports `dragNode`([#614](https://github.com/arco-design/arco-design/pull/614))
+
 ## 2.29.0
 
 2022-02-11

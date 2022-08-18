@@ -377,13 +377,13 @@
   &-item-picture {
     width: @upload-picture-item-size-width;
     height: @upload-picture-item-size-width;
-    line-height: @upload-picture-item-size-width;
     position: relative;
     overflow: hidden;
     border-radius: @upload-picture-item-border-radius;
     box-sizing: border-box;
     text-align: center;
     vertical-align: top;
+    background-color: @upload-picture-item-color-bg;
 
     img {
       width: 100%;
@@ -513,5 +513,72 @@
     transition: opacity @transition-duration-1 @transition-timing-function-linear,
       width @transition-duration-3 @transition-timing-function-standard @transition-duration-1,
       margin @transition-duration-3 @transition-timing-function-standard @transition-duration-1;
+  }
+}
+
+.@{upload-prefix-cls}-rtl {
+  direction: rtl;
+}
+
+.@{upload-prefix-cls}-list-rtl {
+  direction: rtl;
+
+  .@{upload-prefix-cls}-list {
+    &-file-icon {
+      margin-right: 0;
+      margin-left: @upload-text-item-margin-file-icon-right;
+    }
+
+    &-error-icon {
+      margin-left: 0;
+      margin-right: @upload-text-item-margin-error-icon-left;
+    }
+
+    &-item {
+      padding-right: 0;
+      padding-left: @upload-text-item-size-operation-icon +
+        @upload-text-item-margin-remove-icon-left;
+
+      &-operation {
+        right: initial;
+        left: 0;
+      }
+
+      &-text {
+        padding-right: @upload-text-item-padding-left;
+        padding-left: @upload-text-item-padding-right;
+
+        &-thumbnail {
+          margin-right: 0;
+          margin-left: @upload-text-item-margin-thumbnail-right;
+        }
+
+        &-name {
+          margin-right: 0;
+          margin-left: @upload-text-item-margin-status-left;
+        }
+      }
+
+      &-picture-operation {
+        .@{upload-prefix-cls}-list-reupload-icon + .@{upload-prefix-cls}-list-remove-icon,
+        .@{upload-prefix-cls}-list-preview-icon + .@{upload-prefix-cls}-list-remove-icon {
+          margin-left: 0;
+          margin-right: @upload-picture-item-margin-preview-icon-right;
+        }
+      }
+    }
+  }
+
+  &.@{upload-prefix-cls}-list-type-picture-card {
+    .@{upload-prefix-cls}-list-status {
+      margin-left: initial;
+      margin-right: 0;
+    }
+
+    .@{upload-prefix-cls}-list-item {
+      margin-right: 0;
+      padding-left: 0;
+      margin-left: @upload-picture-item-margin-right;
+    }
   }
 }

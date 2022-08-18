@@ -6,7 +6,7 @@ import useShowcaseData from '../../../../hooks/useShowCase';
 import Anchor from './anchor';
 import useTheme from '../../../home/hooks/useTheme';
 
-export default function() {
+export default function () {
   const { realTheme } = useTheme();
 
   const data = useShowcaseData();

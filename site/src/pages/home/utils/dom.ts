@@ -1,5 +1,5 @@
-export const on = (function() {
-  return function(
+export const on = (function () {
+  return function (
     element: any,
     event: string,
     handler: EventListener | EventListenerObject | Function,
@@ -9,8 +9,8 @@ export const on = (function() {
   };
 })();
 
-export const off = (function() {
-  return function(
+export const off = (function () {
+  return function (
     element: any,
     event: string,
     handler: EventListener | EventListenerObject | Function,

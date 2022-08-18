@@ -26,7 +26,7 @@ const GroupList = {
   ],
 };
 
-export default function() {
+export default function () {
   return (
     <div className={styles['banner-wrapper']}>
       <IconWall IconList={GroupList.left} direction="left" />

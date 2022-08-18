@@ -22,10 +22,16 @@ function getLoaderForStyle(isCssModule) {
 }
 
 module.exports = {
-  stories: ['../stories/index.stories.js'],
+  stories: ['../stories/**/*.story.tsx', '../stories/**/*.story.jsx'],
   webpackFinal: (config) => {
-    config.resolve.alias['@self/icon'] = path.resolve(__dirname, '../icon');
-    config.resolve.alias['@self'] = path.resolve(__dirname, '../es');
+    const dirIcon = path.resolve(__dirname, '../icon');
+    const dirComponent = path.resolve(__dirname, '../es');
+
+    config.resolve.alias['@self/icon'] = dirIcon;
+    config.resolve.alias['@self'] = dirComponent;
+    config.resolve.alias['@arco-design/web-react/icon'] = dirIcon;
+    config.resolve.alias['@arco-design/web-react'] = dirComponent;
+    config.resolve.extensions.push('.tsx');
 
     config.resolve.modules = ['node_modules', path.resolve(__dirname, '../site/node_modules')];
     // 解决 webpack 编译警告

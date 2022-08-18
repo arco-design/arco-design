@@ -23,7 +23,7 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           125,670
+          125,670
         </span>
       </div>
     </div>
@@ -43,12 +43,12 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           40,509
+          40,509
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-          .00 
+          .00
         </span>
       </div>
       <div
@@ -90,13 +90,13 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
               class="arco-statistic-value-prefix"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-arrow-rise"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
@@ -118,12 +118,12 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
                 />
               </svg>
             </span>
-             50
+            50
           </span>
           <span
             class="arco-statistic-value-decimal"
           >
-            .32 
+            .32
             <span
               class="arco-statistic-value-suffix"
             >
@@ -168,13 +168,13 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
               class="arco-statistic-value-prefix"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-arrow-fall"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M24.008 41.99a.01.01 0 0 1-.016 0l-9.978-11.974A.01.01 0 0 1 14.02 30H33.98a.01.01 0 0 1 .007.016l-9.978 11.975Z"
@@ -194,12 +194,12 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
                 />
               </svg>
             </span>
-             2
+            2
           </span>
           <span
             class="arco-statistic-value-decimal"
           >
-            .59 
+            .59
             <span
               class="arco-statistic-value-suffix"
             >
@@ -224,95 +224,169 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
 
 exports[`renders Statistic/demo/countdown.md correctly 1`] = `
 <div
-  style="display:flex;flex-wrap:wrap"
+  class="arco-space arco-space-vertical"
 >
   <div
-    class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px;min-width:80px"
+    class="arco-space-item"
+    style="margin-bottom:40px"
   >
     <div
-      class="arco-statistic-title"
-    >
-      Countdown
-    </div>
-    <div
-      class="arco-statistic-content"
+      class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
-        class="arco-statistic-value"
-      >
-        02:00:00
-      </div>
-    </div>
-  </div>
-  <div
-    class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px;min-width:180px"
-  >
-    <div
-      class="arco-statistic-title"
-    >
-      Milliseconds
-    </div>
-    <div
-      class="arco-statistic-content"
-    >
-      <div
-        class="arco-statistic-value"
-      >
-        02:00:00.000
-      </div>
-    </div>
-  </div>
-  <div
-    class="arco-statistic arco-statistic-countdown"
-    style="margin-right:60px;margin-bottom:20px;min-width:200px"
-  >
-    <div
-      class="arco-statistic-title"
-    >
-      Days
-    </div>
-    <div
-      class="arco-statistic-content"
-    >
-      <div
-        class="arco-statistic-value"
-      >
-        4 天 0 时 0 分 0 秒
-      </div>
-    </div>
-  </div>
-  <div
-    style="display:inline-block;margin-bottom:20px"
-  >
-    <div
-      class="arco-statistic arco-statistic-countdown"
-    >
-      <div
-        class="arco-statistic-title"
-      >
-        Trigger on finish
-      </div>
-      <div
-        class="arco-statistic-content"
+        class="arco-space-item"
+        style="margin-right:60px"
       >
         <div
-          class="arco-statistic-value"
+          class="arco-statistic arco-statistic-countdown"
         >
-          00:00:05.000
+          <div
+            class="arco-statistic-title"
+          >
+            Countdown
+          </div>
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              02:00:00
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:60px"
+      >
+        <div
+          class="arco-statistic arco-statistic-countdown"
+        >
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              <div
+                class="arco-statistic"
+              >
+                <div
+                  class="arco-statistic-title"
+                >
+                  Countdown renderFormat
+                </div>
+                <div
+                  class="arco-statistic-content"
+                >
+                  <div
+                    class="arco-statistic-value"
+                  >
+                    02:00:00
+                    <span
+                      class="arco-statistic-value-decimal"
+                    >
+                      <span
+                        class="arco-statistic-value-suffix"
+                      >
+                        120min 后
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-statistic arco-statistic-countdown"
+        >
+          <div
+            class="arco-statistic-title"
+          >
+            Milliseconds
+          </div>
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              02:00:00.000
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <button
-      class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="display:block;margin-top:10px"
-      type="button"
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-start"
     >
-      <span>
-        Start
-      </span>
-    </button>
+      <div
+        class="arco-space-item"
+        style="margin-right:40px"
+      >
+        <div
+          class="arco-statistic arco-statistic-countdown"
+        >
+          <div
+            class="arco-statistic-title"
+          >
+            Days
+          </div>
+          <div
+            class="arco-statistic-content"
+          >
+            <div
+              class="arco-statistic-value"
+            >
+              4 天 0 时 0 分 0 秒
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div>
+          <div
+            class="arco-statistic arco-statistic-countdown"
+          >
+            <div
+              class="arco-statistic-title"
+            >
+              Trigger on finish
+            </div>
+            <div
+              class="arco-statistic-content"
+            >
+              <div
+                class="arco-statistic-value"
+              >
+                00:00:05.000
+              </div>
+            </div>
+          </div>
+          <button
+            class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+            style="display:block;margin-top:10px"
+            type="button"
+          >
+            <span>
+              Start
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -323,16 +397,18 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
     style="margin-bottom:24px"
   >
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       type="button"
     >
       <div
         class="arco-switch-dot"
       />
     </button>
-     
     <span
       class="arco-typography"
+      style="margin:0 10px"
     >
       Loading
     </span>
@@ -392,24 +468,23 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           192393
+          192393
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-           
           <span
             class="arco-statistic-value-suffix"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-arrow-rise"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="color:#ee4d38"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
@@ -456,24 +531,23 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
           <span
             class="arco-statistic-value-prefix"
           />
-           934230
+          934230
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-           
           <span
             class="arco-statistic-value-suffix"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-arrow-fall"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="color:#0fbf60"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.008 41.99a.01.01 0 0 1-.016 0l-9.978-11.974A.01.01 0 0 1 14.02 30H33.98a.01.01 0 0 1 .007.016l-9.978 11.975Z"
@@ -520,14 +594,14 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
             class="arco-statistic-value-prefix"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-arrow-rise"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               style="color:#ee4d38"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M23.992 6.01a.01.01 0 0 1 .016 0l9.978 11.974a.01.01 0 0 1-.007.016H14.02a.01.01 0 0 1-.007-.016l9.978-11.975Z"
@@ -549,12 +623,12 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
               />
             </svg>
           </span>
-           50
+          50
         </span>
         <span
           class="arco-statistic-value-decimal"
         >
-          .32 
+          .32
           <span
             class="arco-statistic-value-suffix"
           >
@@ -588,7 +662,7 @@ exports[`renders Statistic/demo/time.md correctly 1`] = `
         <span
           class="arco-statistic-value-prefix"
         />
-         2019/04/10 12:16:53
+        2019/04/10 12:16:53
       </span>
     </div>
   </div>

@@ -14,8 +14,8 @@ title:
 There is a `children` field in `data`, or set as a custom field by `childrenColumnName` to display tree data.
 
 ```js
-import { Table } from '@arco-design/web-react';
-
+import { useState } from 'react';
+import { Table, Switch, Space } from '@arco-design/web-react';
 const columns = [
   {
     title: 'Name',
@@ -34,7 +34,6 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -44,7 +43,7 @@ const data = [
     email: 'jane.doe@example.com',
     children: [
       {
-        key: '2',
+        key: '1-1',
         name: 'Christina',
         address: '332 Park Road, London',
         email: 'christina@example.com',
@@ -52,34 +51,48 @@ const data = [
     ],
   },
   {
-    key: '3',
+    key: '2',
     name: 'Alisa Ross',
     salary: 25000,
     address: '35 Park Road, London',
     email: 'alisa.ross@example.com',
     children: [
       {
-        key: '4',
+        key: '2-1',
         name: 'Ed Hellen',
         salary: 17000,
         address: '42 Park Road, London',
         email: 'ed.hellen@example.com',
         children: [
           {
-            key: '5',
+            key: '2-1-1',
             name: 'Eric Miller',
             salary: 23000,
             address: '67 Park Road, London',
             email: 'eric.miller@example.com',
           },
+          {
+            key: '2-1-2',
+            name: 'Tom Jerry',
+            salary: 666,
+            address: '67 Park Road, London',
+            email: 'tom.jerry@example.com',
+          },
         ],
       },
       {
-        key: '6',
+        key: '2-2',
         name: 'William Smith',
         salary: 27000,
         address: '62 Park Road, London',
         email: 'william.smith@example.com',
+      },
+      {
+        key: '2-3',
+        name: 'George Bush',
+        salary: 24000,
+        address: '62 Park Road, London',
+        email: 'george.bush@example.com',
       },
     ],
   },
@@ -92,17 +105,28 @@ const data = [
   },
 ];
 
-ReactDOM.render(
-  <Table
-    rowSelection={{
-      type: 'checkbox',
-      onChange: (selectedRowKeys, selectedRows) => {
-        console.log(selectedRowKeys, selectedRows);
-      },
-    }}
-    columns={columns}
-    data={data}
-  />,
-  CONTAINER
-);
+function App() {
+  const [checkStrictly, setCheckStrictly] = useState(true);
+  return (
+    <div>
+      <Space style={{ marginBottom: 16 }}>
+        checkStrictly:
+        <Switch onChange={(checked) => setCheckStrictly(checked)} checked={checkStrictly} />
+      </Space>
+      <Table
+        rowSelection={{
+          type: 'checkbox',
+          onChange: (selectedRowKeys, selectedRows) => {
+            console.log(selectedRowKeys, selectedRows);
+          },
+          checkStrictly,
+        }}
+        columns={columns}
+        data={data}
+      />
+    </div>
+  );
+}
+
+export default App;
 ```

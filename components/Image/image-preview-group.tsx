@@ -7,10 +7,11 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { isObject, isUndefined } from '../_util/is';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import ImagePreview, { ImagePreviewHandle } from './image-preview';
-import { ImagePreviewGroupProps } from './interface';
+import { ImagePreviewGroupProps, ImagePreviewProps } from './interface';
 import { PreviewGroupContext, PreviewUrlMap } from './previewGroupContext';
 
 export { ImagePreviewGroupProps };
@@ -46,6 +47,10 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
   const isFirstRender = useIsFirstRender();
   const getPreviewUrlMap = () => (propPreviewUrlMap ? new Map(propPreviewUrlMap) : new Map());
   const [previewUrlMap, setPreviewUrlMap] = useState<PreviewUrlMap>(getPreviewUrlMap());
+  const [previewPropsMap, setPreviewPropsMap] = useState<Map<number, Partial<ImagePreviewProps>>>(
+    new Map()
+  );
+
   useEffect(() => {
     if (isFirstRender) return;
     setPreviewUrlMap(getPreviewUrlMap());
@@ -61,11 +66,6 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     value: propCurrentIndex,
     defaultValue: defaultCurrent,
   });
-
-  useEffect(() => {
-    if (isFirstRender) return;
-    onChange && onChange(currentIndex);
-  }, [currentIndex]);
 
   function registerPreviewUrl(id: number, url: string, preview: boolean) {
     if (!propPreviewUrlMap) {
@@ -87,6 +87,18 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     };
   }
 
+  function registerPreviewProps(id: number, previewProps?: Partial<ImagePreviewProps>) {
+    setPreviewPropsMap((pre) => new Map(pre).set(id, isObject(previewProps) ? previewProps : {}));
+
+    return function unRegisterPreviewProps() {
+      setPreviewPropsMap((pre) => {
+        const cloneMap = new Map(pre);
+        const hasDelete = cloneMap.delete(id);
+        return hasDelete ? cloneMap : pre;
+      });
+    };
+  }
+
   const refPreview = useRef<ImagePreviewHandle>();
 
   useImperativeHandle<any, ImagePreviewGroupHandle>(ref, () => ({
@@ -95,9 +107,15 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     },
   }));
 
-  const handleVisibleChange = (visible, preVisible) => {
-    setVisible(visible);
-    onVisibleChange && onVisibleChange(visible, preVisible);
+  const handleVisibleChange = (newVisible, preVisible) => {
+    const _preVisible = isUndefined(preVisible) ? visible : preVisible;
+    onVisibleChange && onVisibleChange(newVisible, _preVisible);
+    setVisible(newVisible);
+  };
+
+  const handleSwitch = (index: number) => {
+    onChange && onChange(index);
+    setCurrentIndex(index);
   };
 
   const loopImageIndex = (children) => {
@@ -130,13 +148,15 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
       value={{
         previewGroup: true,
         previewUrlMap: canPreviewUrlMap,
+        previewPropsMap,
         infinite,
         currentIndex,
-        setCurrentIndex,
+        setCurrentIndex: handleSwitch,
         setPreviewUrlMap,
         registerPreviewUrl,
+        registerPreviewProps,
         visible,
-        setVisible,
+        handleVisibleChange,
       }}
     >
       {loopImageIndex(children)}

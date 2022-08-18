@@ -1,3 +1,19 @@
+## 2.35.1
+
+2022-06-17
+
+### 🐛 BugFix
+
+- Fixed arrow style of `Tooltip` in dark mode([#995](https://github.com/arco-design/arco-design/pull/995))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- ` Tooltip ` content value is false does not display the popup([#579](https://github.com/arco-design/arco-design/pull/579))
+
 ## 2.25.0
 
 2021-11-19

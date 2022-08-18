@@ -13,7 +13,6 @@ title:
 
 `Form.Item` will pass the `onChange` and `value` properties to its direct child nodes. Only after calling this `onChange`, can its own value be collected by `Form.Item`.
 
-
 ```js
 import { useRef, useState, useEffect } from 'react';
 import { Form, Input, Select, Typography } from '@arco-design/web-react';
@@ -21,37 +20,35 @@ import { Form, Input, Select, Typography } from '@arco-design/web-react';
 function CustomInput(props) {
   const [stateValue, setValue] = useState(props.value);
   const value = props.value || stateValue || {};
-
   useEffect(() => {
     if (props.value !== stateValue && props.value === undefined) {
       setValue(props.value);
     }
-  }, [props.value])
+  }, [props.value]);
 
   const handleChange = (newValue) => {
     if (!('value' in props)) {
       setValue(newValue);
-    }
-    // onChange is passed in by Form.Item and will update the fields bound to the form when triggered.
+    } // onChange is passed in by Form.Item and will update the fields bound to the form when triggered.
+
     props.onChange && props.onChange(newValue);
-  }
+  };
 
   return (
     <Input
       value={value.input}
       onChange={(v) => {
-        handleChange({ ...value, input: v, });
+        handleChange({ ...value, input: v });
       }}
       addBefore={
-        <Select
-          // select component has defined error style
+        <Select // select component has defined error style
           error={props.error}
           placeholder="Please select ..."
-          style={{width: 100}}
+          style={{ width: 100 }}
           value={value.select}
           options={['aaa', 'bbb']}
           onChange={(v) => {
-            handleChange({ ...value, select: v, });
+            handleChange({ ...value, select: v });
           }}
         />
       }
@@ -59,25 +56,28 @@ function CustomInput(props) {
   );
 }
 
-function Demo() {
+function App() {
   const formRef = useRef();
   const [values, setValues] = useState({});
-
   return (
     <div>
       <Form ref={formRef} style={{ maxWidth: 650 }} onValuesChange={(_, v) => setValues(v)}>
         <Form.Item
           rules={[
-            { required: true },
+            {
+              required: true,
+            },
             {
               validator: (val, cb) => {
                 console.log(val);
+
                 if (val.select !== 'bbb') {
-                  cb('Please select bbb')
+                  cb('Please select bbb');
                 }
-                cb()
-              }
-            }
+
+                cb();
+              },
+            },
           ]}
           label="Custom"
           field="customInput"
@@ -93,5 +93,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

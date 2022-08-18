@@ -6,6 +6,7 @@ import React, {
   useState,
   useRef,
 } from 'react';
+import omit from '../_util/omit';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { on, off } from '../_util/dom';
@@ -38,8 +39,19 @@ const defaultProps: ResizeBoxProps = {
   resizeTriggers: {},
 };
 
+const getOppositeDirection = (direction: DirectionType) => {
+  switch (direction) {
+    case 'left':
+      return 'right';
+    case 'right':
+      return 'left';
+    default:
+      return direction;
+  }
+};
+
 function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<ResizeBoxProps>>(
     baseProps,
     defaultProps,
@@ -55,10 +67,12 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
     resizeTriggers,
     width: propWidth,
     height: propHeight,
+    ...rest
   } = props;
 
+  const realDirections = rtl ? directions.map((dir) => getOppositeDirection(dir)) : directions;
   const prefixCls = getPrefixCls('resizebox');
-  const classNames = cs(prefixCls, className);
+  const classNames = cs(prefixCls, { [`${prefixCls}-rtl`]: rtl }, className);
   const [paddingStyles, setPaddingStyles] = useState({});
   const [width, setWidth] = useMergeValue(undefined, { value: propWidth });
   const [height, setHeight] = useMergeValue(undefined, { value: propHeight });
@@ -202,9 +216,14 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
   };
   const Tag = component as any;
   return (
-    <Tag style={wrapperStyles} className={classNames} ref={wrapperRef}>
+    <Tag
+      {...omit(rest, ['onMovingStart', 'onMoving', 'onMovingEnd'])}
+      style={wrapperStyles}
+      className={classNames}
+      ref={wrapperRef}
+    >
       {children}
-      {directions.map((direction) => {
+      {realDirections.map((direction) => {
         if (allDirections.indexOf(direction) !== -1) {
           return (
             <ResizeTrigger

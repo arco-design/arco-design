@@ -13,57 +13,69 @@ title:
 Use `progressProps` for customize progress bar.
 
 ```js
+import React from 'react';
 import { Upload, Radio, Button } from '@arco-design/web-react';
 
-function Demo () {
+function App() {
   const [fileList, setFileList] = React.useState([
     {
       status: 'init',
       uid: '-2',
       percent: 0,
       name: 'light.png',
-      url:
-        '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp',
-    },{
+      url: '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp',
+    },
+    {
       status: 'error',
       uid: '-1',
       percent: 0,
       name: 'cat.png',
       url: '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp',
     },
-  ])
-
+  ]);
   return (
     <div className="custom-upload-progress">
       <Upload
         showUploadList={{
-          startIcon: <Button size="mini" type="text">开始上传</Button>,
-          cancelIcon: <Button size="mini" type="text">取消上传</Button>,
-          reuploadIcon: <Button size="mini" type="text">点击重试</Button>,
+          startIcon: (
+            <Button size="mini" type="text">
+              开始上传
+            </Button>
+          ),
+          cancelIcon: (
+            <Button size="mini" type="text">
+              取消上传
+            </Button>
+          ),
+          reuploadIcon: (
+            <Button size="mini" type="text">
+              点击重试
+            </Button>
+          ),
         }}
         progressProps={{
           size: 'small',
           type: 'line',
           showText: true,
-          width: '100%'
+          width: '100%',
         }}
         multiple
         fileList={fileList}
         action="/"
         onChange={setFileList}
         onProgress={(file) => {
-          setFileList(v => {
-            return v.map(x => {
-              return x.uid === file.uid ? file : x
-            })
-          })
+          setFileList((v) => {
+            return v.map((x) => {
+              return x.uid === file.uid ? file : x;
+            });
+          });
         }}
       />
     </div>
-  )
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css
@@ -77,6 +89,12 @@ ReactDOM.render(<Demo />, CONTAINER);
   left: unset;
   top: -22px;
   transform: none;
+}
+
+.custom-upload-progress .arco-upload-list-rtl .arco-upload-list-start-icon,
+.custom-upload-progress .arco-upload-list-rtl .arco-upload-list-cancel-icon {
+  right: unset;
+  left: 0;
 }
 
 .custom-upload-progress .arco-upload-list-status {

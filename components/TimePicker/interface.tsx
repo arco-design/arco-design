@@ -72,6 +72,12 @@ export interface PickerProps {
    */
   popupVisible?: boolean;
   /**
+   * @zh 触发元素。
+   * @en Trigger element.
+   * @version 2.38.0
+   */
+  triggerElement?: ReactNode;
+  /**
    * @zh 可以传入 `Trigger` 组件的参数
    * @en The props of the `Trigger` component
    */
@@ -134,6 +140,16 @@ export interface PickerProps {
    * @en Whether to destroy popup when hidden
    */
   unmountOnExit?: boolean;
+  /**
+   * @zh 设置时区偏移，如果需要 utc 时间则设置为 0。
+   * @en Set the timezone offset, set to 0 if utc time is required.
+   */
+  utcOffset?: number;
+  /**
+   * @zh 设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。
+   * @en timezone name, if `utcOffset` is set, `utcOffset` takes effect.
+   */
+  timezone?: string;
 }
 
 /**

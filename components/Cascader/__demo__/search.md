@@ -15,7 +15,6 @@ Specify `showSearch=true`, you can enter text to search for options.
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
-
 const options = [
   {
     id: 'beijing',
@@ -93,39 +92,42 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Space size="large">
-    <Cascader
-      placeholder="Please select ..."
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
-      showSearch
-      allowClear
-      fieldNames={{
-        children: 'child',
-        label: 'name',
-        value: 'id'
-      }}
-    />
-    <Cascader
-      mode="multiple"
-      placeholder="Please select ..."
-      style={{ width: 300, marginBottom: 20 }}
-      onChange={(x, y) => {
-        console.log(x, y)
-      }}
-      options={options}
-      defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-      showSearch
-      allowClear
-      fieldNames={{
-        children: 'child',
-        label: 'name',
-        value: 'id'
-      }}
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
+        showSearch
+        allowClear
+        fieldNames={{
+          children: 'child',
+          label: 'name',
+          value: 'id',
+        }}
+      />
+      <Cascader
+        mode="multiple"
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        onChange={(x, y) => {
+          console.log(x, y);
+        }}
+        options={options}
+        defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
+        showSearch={{ retainInputValueWhileSelect: false }}
+        allowClear
+        fieldNames={{
+          children: 'child',
+          label: 'name',
+          value: 'id',
+        }}
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

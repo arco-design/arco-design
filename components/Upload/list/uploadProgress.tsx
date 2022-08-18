@@ -8,6 +8,7 @@ import IconUpload from '../../../icon/react-icon/IconUpload';
 import IconPlayArrowFill from '../../../icon/react-icon/IconPlayArrowFill';
 import IconPause from '../../../icon/react-icon/IconPause';
 import Tooltip from '../../Tooltip';
+import { isFunction } from '../../_util/is';
 
 const UploadProgress: FC<
   {
@@ -20,12 +21,12 @@ const UploadProgress: FC<
     onAbort?: UploadListProps['onAbort'];
   } & CustomIconType
 > = (props) => {
-  const { file, prefixCls, progressProps } = props;
+  const { file, prefixCls, progressProps, progressRender } = props;
   const { locale } = useContext(ConfigContext);
   const { status, percent = 0 } = file;
   const cls = `${prefixCls}-list`;
   const widthStyle = progressProps && progressProps.width ? { width: progressProps.width } : {};
-  return (
+  const dom = (
     <>
       {status === STATUS.fail && props.reuploadIcon !== null && (
         <span
@@ -89,6 +90,8 @@ const UploadProgress: FC<
       )}
     </>
   );
+
+  return isFunction(progressRender) ? progressRender(file, dom) : dom;
 };
 
 export default UploadProgress;

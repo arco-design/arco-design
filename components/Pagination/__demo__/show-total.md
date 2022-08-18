@@ -16,11 +16,23 @@ Set `showTotal` to show the total number of data.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Pagination showTotal total={50} style={{ marginBottom: 20 }} />
-    <Pagination showTotal={(total, range) => <span>{`${range[0]} - ${range[1]} of ${total} items`}</span>} total={200} />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Pagination
+        showTotal
+        total={50}
+        style={{
+          marginBottom: 20,
+        }}
+      />
+      <Pagination
+        showTotal={(total, range) => <span>{`${range[0]} - ${range[1]} of ${total} items`}</span>}
+        total={200}
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

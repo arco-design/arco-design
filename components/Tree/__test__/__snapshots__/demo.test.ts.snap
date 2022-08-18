@@ -3,11 +3,17 @@
 exports[`renders Tree/demo/basic.md correctly 1`] = `
 <div
   class="arco-tree"
+  role="tree"
+  tabindex="0"
 >
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
@@ -17,16 +23,19 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -38,6 +47,7 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -48,9 +58,14 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-disabled="true"
+    aria-expanded="true"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-selected arco-tree-node-expanded arco-tree-node-disabled"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -64,16 +79,19 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -85,6 +103,7 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -95,9 +114,13 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="2"
     class="arco-tree-node arco-tree-node-is-leaf"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -111,6 +134,7 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -121,9 +145,13 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="2"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -137,6 +165,7 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -147,9 +176,13 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-selected arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -163,16 +196,19 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="expand button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -184,6 +220,7 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -199,11 +236,17 @@ exports[`renders Tree/demo/basic.md correctly 1`] = `
 exports[`renders Tree/demo/blocknode.md correctly 1`] = `
 <div
   class="arco-tree"
+  role="tree"
+  tabindex="0"
 >
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
@@ -213,16 +256,19 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -234,6 +280,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-block"
     >
       <span
@@ -244,9 +291,14 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-disabled="true"
+    aria-expanded="true"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -260,16 +312,19 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -281,6 +336,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-block"
     >
       <span
@@ -291,9 +347,13 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="2"
     class="arco-tree-node arco-tree-node-is-leaf"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -307,6 +367,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-block"
     >
       <span
@@ -317,9 +378,13 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="2"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -333,6 +398,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-block"
     >
       <span
@@ -343,9 +409,13 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="true"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -359,16 +429,19 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -380,6 +453,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-block"
     >
       <span
@@ -390,9 +464,13 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="2"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -406,6 +484,7 @@ exports[`renders Tree/demo/blocknode.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-block"
     >
       <span
@@ -434,8 +513,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-checkbox-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-checkbox-mask-icon"
           fill="currentColor"
+          focusable="false"
           height="200"
           viewBox="0 0 1024 1024"
           width="200"
@@ -450,16 +531,22 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
     <span
       class="arco-checkbox-text"
     >
-       checkStrictly 
+      checkStrictly
     </span>
   </label>
   <div
     class="arco-tree arco-tree-checkable"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -469,16 +556,19 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -505,8 +595,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -520,6 +612,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -530,9 +623,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -558,8 +655,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -573,6 +672,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -583,9 +683,14 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-disabled="true"
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -599,16 +704,19 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -620,6 +728,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </span>
       <label
+        aria-disabled="true"
         class="arco-checkbox arco-checkbox-disabled"
       >
         <input
@@ -634,8 +743,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -649,6 +760,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -659,9 +771,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -688,8 +804,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -703,6 +821,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -713,9 +832,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -729,6 +852,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
+        aria-disabled="true"
         class="arco-checkbox arco-checkbox-disabled"
       >
         <input
@@ -743,8 +867,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -758,6 +884,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -768,9 +895,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -780,16 +911,19 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -816,8 +950,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -831,6 +967,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -841,9 +978,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -857,16 +998,19 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -893,8 +1037,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -908,6 +1054,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -918,9 +1065,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -949,8 +1100,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -964,6 +1117,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -974,9 +1128,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1005,8 +1163,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1020,6 +1180,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1030,9 +1191,13 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1058,8 +1223,10 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1073,6 +1240,7 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1143,11 +1311,17 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
   </div>
   <div
     class="arco-tree arco-tree-checkable"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -1157,16 +1331,19 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1193,8 +1370,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1208,6 +1387,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1218,9 +1398,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1246,8 +1430,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1261,6 +1447,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1271,9 +1458,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1287,16 +1478,19 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1323,8 +1517,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1338,6 +1534,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1348,9 +1545,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1379,8 +1580,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1394,6 +1597,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1404,9 +1608,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -1416,16 +1624,19 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1452,8 +1663,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1467,6 +1680,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1477,9 +1691,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1493,16 +1711,19 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1529,8 +1750,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1544,6 +1767,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1554,9 +1778,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1585,8 +1813,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1600,6 +1830,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1610,9 +1841,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1641,8 +1876,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1656,6 +1893,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1666,9 +1904,13 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1694,8 +1936,10 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1709,6 +1953,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1747,11 +1992,17 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
   </div>
   <div
     class="arco-tree arco-tree-checkable"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -1761,16 +2012,19 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1795,8 +2049,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1810,6 +2066,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1820,9 +2077,13 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1846,8 +2107,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1861,6 +2124,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1871,9 +2135,13 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1887,16 +2155,19 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1921,8 +2192,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1936,6 +2209,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -1946,9 +2220,13 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -1975,8 +2253,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -1990,6 +2270,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2000,9 +2281,13 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -2012,16 +2297,19 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2046,8 +2334,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2061,6 +2351,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2071,9 +2362,13 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2097,8 +2392,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2112,6 +2409,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2122,9 +2420,13 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2148,8 +2450,10 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -2163,6 +2467,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2192,8 +2497,10 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-checkbox-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-checkbox-mask-icon"
           fill="currentColor"
+          focusable="false"
           height="200"
           viewBox="0 0 1024 1024"
           width="200"
@@ -2213,11 +2520,17 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
   </label>
   <div
     class="arco-tree"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -2227,16 +2540,19 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2248,6 +2564,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2260,13 +2577,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2281,9 +2598,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2294,6 +2615,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2306,13 +2628,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2327,9 +2649,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2343,16 +2669,19 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2364,6 +2693,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2376,13 +2706,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2397,9 +2727,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2413,6 +2747,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
         draggable="false"
       >
@@ -2424,9 +2759,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -2436,16 +2775,19 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2457,6 +2799,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2469,13 +2812,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2490,9 +2833,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2506,16 +2853,19 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2527,6 +2877,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2539,13 +2890,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2560,9 +2911,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2576,6 +2931,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2588,13 +2944,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2609,9 +2965,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2625,6 +2985,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2637,13 +2998,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2658,9 +3019,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2671,6 +3036,7 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-draggable arco-tree-node-title-block"
         draggable="true"
       >
@@ -2683,13 +3049,13 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
           class="arco-tree-node-icon arco-tree-node-drag-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -2711,11 +3077,17 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
 <div>
   <div
     class="arco-tree"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -2725,16 +3097,19 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2746,6 +3121,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2756,9 +3132,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled-selectable arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2772,16 +3152,19 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2793,6 +3176,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2803,9 +3187,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2822,16 +3210,19 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2843,6 +3234,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2853,9 +3245,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="3"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2875,16 +3271,19 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2896,6 +3295,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2906,9 +3306,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="4"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2928,6 +3332,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2938,9 +3343,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -2950,16 +3359,19 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -2971,6 +3383,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -2981,9 +3394,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -2997,16 +3414,19 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -3018,6 +3438,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3028,9 +3449,13 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3044,6 +3469,7 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3060,11 +3486,17 @@ exports[`renders Tree/demo/fieldnames.md correctly 1`] = `
 exports[`renders Tree/demo/icon.md correctly 1`] = `
 <div
   class="arco-tree"
+  role="tree"
+  tabindex="0"
 >
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
@@ -3074,16 +3506,19 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -3095,19 +3530,20 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-icon arco-tree-node-custom-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-star"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -3122,9 +3558,13 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -3135,19 +3575,20 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-icon arco-tree-node-custom-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-star"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -3162,9 +3603,13 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
@@ -3174,16 +3619,19 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -3195,19 +3643,20 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-icon arco-tree-node-custom-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-star"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -3222,9 +3671,13 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-leaf"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -3235,19 +3688,20 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-icon arco-tree-node-custom-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-star"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -3262,9 +3716,13 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -3275,19 +3733,20 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
       class="arco-tree-node-switcher"
     />
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
         class="arco-tree-node-icon arco-tree-node-custom-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-star"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -3307,27 +3766,36 @@ exports[`renders Tree/demo/icon.md correctly 1`] = `
 exports[`renders Tree/demo/icons.md correctly 1`] = `
 <div
   class="arco-tree arco-tree-show-line"
+  role="tree"
+  tabindex="0"
 >
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
       class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
     >
       <span
+        aria-label="fold button"
         class="arco-tree-node-switcher-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -3336,6 +3804,7 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
       draggable="true"
     >
@@ -3348,13 +3817,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-tree-node-icon arco-tree-node-drag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-arrow"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
@@ -3364,9 +3833,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -3380,16 +3853,19 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="expand button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -3399,6 +3875,7 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
       draggable="true"
     >
@@ -3411,13 +3888,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-tree-node-icon arco-tree-node-drag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-arrow"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
@@ -3427,25 +3904,32 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-draggable arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
       class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
     >
       <span
+        aria-label="fold button"
         class="arco-tree-node-switcher-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -3454,6 +3938,7 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
       draggable="true"
     >
@@ -3466,13 +3951,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-tree-node-icon arco-tree-node-drag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-arrow"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
@@ -3482,9 +3967,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -3498,16 +3987,19 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="expand button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drive-file"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M38.5 17H29a1 1 0 0 1-1-1V6.5m0-.5H10a1 1 0 0 0-1 1v34a1 1 0 0 0 1 1h28a1 1 0 0 0 1-1V17L28 6Z"
@@ -3517,6 +4009,7 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
       draggable="true"
     >
@@ -3529,13 +4022,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-tree-node-icon arco-tree-node-drag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-arrow"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
@@ -3545,9 +4038,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-draggable arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -3561,16 +4058,19 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="expand button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drive-file"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M38.5 17H29a1 1 0 0 1-1-1V6.5m0-.5H10a1 1 0 0 0-1 1v34a1 1 0 0 0 1 1h28a1 1 0 0 0 1-1V17L28 6Z"
@@ -3580,6 +4080,7 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title arco-tree-node-title-draggable"
       draggable="true"
     >
@@ -3592,13 +4093,13 @@ exports[`renders Tree/demo/icons.md correctly 1`] = `
         class="arco-tree-node-icon arco-tree-node-drag-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-arrow"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 24h34M24 7v34M30 12l-6-6-6 6M36 30l6-6-6-6M12 30l-6-6 6-6M18 36l6 6 6-6"
@@ -3619,7 +4120,9 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       showLine
     </span>
     <button
+      aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
+      role="switch"
       style="margin-left:12px"
       type="button"
     >
@@ -3630,18 +4133,27 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
   </div>
   <div
     class="arco-tree arco-tree-show-line"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
         class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <span
             class="arco-tree-node-minus-icon"
@@ -3649,6 +4161,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3659,9 +4172,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3672,7 +4189,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <span
             class="arco-tree-node-minus-icon"
@@ -3680,6 +4200,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3690,9 +4211,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3709,16 +4234,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -3728,6 +4256,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3738,9 +4267,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3754,7 +4287,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <span
             class="arco-tree-node-minus-icon"
@@ -3762,6 +4298,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3772,9 +4309,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="3"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3794,16 +4335,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -3813,6 +4357,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3823,9 +4368,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3842,16 +4391,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -3861,6 +4413,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3871,9 +4424,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-selected arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3887,16 +4444,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -3906,6 +4466,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3916,9 +4477,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3929,7 +4494,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <span
             class="arco-tree-node-minus-icon"
@@ -3937,6 +4505,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3947,9 +4516,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -3966,16 +4539,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -3985,6 +4561,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -3995,9 +4572,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4014,16 +4595,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -4033,6 +4617,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4043,9 +4628,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -4055,16 +4644,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -4074,6 +4666,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4084,16 +4677,23 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
         class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <span
             class="arco-tree-node-minus-icon"
@@ -4101,6 +4701,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4111,9 +4712,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4124,7 +4729,10 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <span
             class="arco-tree-node-minus-icon"
@@ -4132,6 +4740,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4142,9 +4751,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4161,16 +4774,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -4180,6 +4796,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4190,9 +4807,13 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4209,16 +4830,19 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="expand button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-file"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M16 21h16m-16 8h10m11 13H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h21l7 7v27a2 2 0 0 1-2 2Z"
@@ -4228,6 +4852,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4244,11 +4869,17 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
 exports[`renders Tree/demo/loadmore.md correctly 1`] = `
 <div
   class="arco-tree"
+  role="tree"
+  tabindex="0"
 >
   <div
+    aria-expanded="false"
+    aria-level="0"
     class="arco-tree-node"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
@@ -4258,16 +4889,19 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="expand button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4279,6 +4913,7 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -4289,9 +4924,13 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="true"
+    aria-level="0"
     class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     />
     <span
@@ -4301,16 +4940,19 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="fold button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4322,6 +4964,7 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -4332,9 +4975,13 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
     </span>
   </div>
   <div
+    aria-expanded="false"
+    aria-level="1"
     class="arco-tree-node arco-tree-node-is-tail"
+    role="treeitem"
   >
     <span
+      aria-hidden="true"
       class="arco-tree-node-indent"
     >
       <span
@@ -4348,16 +4995,19 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
         class="arco-icon-hover arco-tree-node-icon-hover"
       >
         <span
+          aria-label="expand button"
           class="arco-tree-node-switcher-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-caret-down"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4369,6 +5019,7 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
       </span>
     </span>
     <span
+      aria-grabbed="false"
       class="arco-tree-node-title"
     >
       <span
@@ -4399,8 +5050,10 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-checkbox-mask"
       >
         <svg
+          aria-hidden="true"
           class="arco-checkbox-mask-icon"
           fill="currentColor"
+          focusable="false"
           height="200"
           viewBox="0 0 1024 1024"
           width="200"
@@ -4415,7 +5068,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
     <span
       class="arco-checkbox-text"
     >
-       multiple 
+      multiple
     </span>
   </label>
   <br />
@@ -4426,12 +5079,19 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
   </span>
   <br />
   <div
+    aria-multiselectable="true"
     class="arco-tree"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -4441,16 +5101,19 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4462,6 +5125,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4472,9 +5136,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4485,6 +5153,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4495,9 +5164,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4511,16 +5184,19 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4532,6 +5208,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4542,9 +5219,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4558,6 +5239,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4568,9 +5250,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -4580,16 +5266,19 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4601,6 +5290,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4611,9 +5301,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4627,16 +5321,19 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4648,6 +5345,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4658,9 +5356,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4674,6 +5376,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4684,9 +5387,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4700,6 +5407,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4710,9 +5418,13 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4723,6 +5435,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -4742,11 +5455,17 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
 >
   <div
     class="arco-tree arco-tree-checkable"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -4756,16 +5475,19 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4790,8 +5512,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -4805,6 +5529,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -4814,14 +5539,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -4829,9 +5554,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4855,8 +5584,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -4870,6 +5601,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -4879,14 +5611,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -4894,9 +5626,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -4910,16 +5646,19 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -4944,8 +5683,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -4959,6 +5700,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -4968,14 +5710,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -4983,9 +5725,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5012,8 +5758,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5027,6 +5775,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5036,14 +5785,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -5051,9 +5800,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -5063,16 +5816,19 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5097,8 +5853,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5112,6 +5870,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5121,14 +5880,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -5136,9 +5895,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5152,16 +5915,19 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5186,8 +5952,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5201,6 +5969,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5210,14 +5979,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -5225,9 +5994,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5254,8 +6027,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5269,6 +6044,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5278,14 +6054,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -5293,9 +6069,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5322,8 +6102,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5337,6 +6119,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5346,14 +6129,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -5361,9 +6144,13 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
       </svg>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5387,8 +6174,10 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5402,6 +6191,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5411,14 +6201,14 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         </span>
       </span>
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -5449,13 +6239,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
           class="arco-input-group-suffix"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-search"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M33.072 33.071c6.248-6.248 6.248-16.379 0-22.627-6.249-6.249-16.38-6.249-22.628 0-6.248 6.248-6.248 16.379 0 22.627 6.248 6.248 16.38 6.248 22.628 0Zm0 0 8.485 8.485"
@@ -5467,11 +6257,17 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
   </div>
   <div
     class="arco-tree"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -5481,16 +6277,19 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5502,6 +6301,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5512,9 +6312,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5528,16 +6332,19 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5549,6 +6356,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5559,9 +6367,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5575,6 +6387,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5585,9 +6398,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5601,6 +6418,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5611,9 +6429,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -5623,16 +6445,19 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5644,6 +6469,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5654,9 +6480,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5670,16 +6500,19 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5691,6 +6524,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5701,9 +6535,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5717,6 +6555,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5727,9 +6566,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5743,16 +6586,19 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5764,6 +6610,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5774,9 +6621,13 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5790,6 +6641,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -5865,12 +6717,18 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-tree arco-tree-checkable arco-tree-size-default"
+    role="tree"
     style="margin-right:20px"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -5880,16 +6738,19 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5914,8 +6775,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -5929,6 +6792,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -5939,9 +6803,14 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-disabled="true"
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -5955,16 +6824,19 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -5976,6 +6848,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </span>
       <label
+        aria-disabled="true"
         class="arco-checkbox arco-checkbox-disabled"
       >
         <input
@@ -5990,8 +6863,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6005,6 +6880,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -6015,9 +6891,13 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6044,8 +6924,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6059,6 +6941,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -6069,9 +6952,13 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6098,8 +6985,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6113,6 +7002,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -6123,9 +7013,13 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6139,16 +7033,19 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6173,8 +7070,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6188,6 +7087,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -6198,9 +7098,13 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6227,8 +7131,10 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
             class="arco-checkbox-mask"
           >
             <svg
+              aria-hidden="true"
               class="arco-checkbox-mask-icon"
               fill="currentColor"
+              focusable="false"
               height="200"
               viewBox="0 0 1024 1024"
               width="200"
@@ -6242,6 +7148,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
         </span>
       </label>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title arco-tree-node-title-block"
       >
         <span
@@ -6259,11 +7166,17 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
 <div>
   <div
     class="arco-tree"
+    role="tree"
+    tabindex="0"
   >
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -6273,16 +7186,19 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6294,6 +7210,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6304,9 +7221,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-disabled-selectable arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6320,16 +7241,19 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6341,6 +7265,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6351,9 +7276,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6370,16 +7299,19 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6391,6 +7323,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6401,9 +7334,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="3"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6423,16 +7360,19 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6444,6 +7384,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6454,9 +7395,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="4"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6476,6 +7421,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6486,9 +7432,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="0"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       />
       <span
@@ -6498,16 +7448,19 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6519,6 +7472,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6529,9 +7483,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="true"
+      aria-level="1"
       class="arco-tree-node arco-tree-node-expanded arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6545,16 +7503,19 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
           class="arco-icon-hover arco-tree-node-icon-hover"
         >
           <span
+            aria-label="fold button"
             class="arco-tree-node-switcher-icon"
+            role="button"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6566,6 +7527,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         </span>
       </span>
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6576,9 +7538,13 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
       </span>
     </div>
     <div
+      aria-expanded="false"
+      aria-level="2"
       class="arco-tree-node arco-tree-node-is-leaf arco-tree-node-is-tail"
+      role="treeitem"
     >
       <span
+        aria-hidden="true"
         class="arco-tree-node-indent"
       >
         <span
@@ -6592,6 +7558,7 @@ exports[`renders Tree/demo/treeData.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <span
+        aria-grabbed="false"
         class="arco-tree-node-title"
       >
         <span
@@ -6618,7 +7585,9 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
   </button>
   <div
     class="arco-tree arco-tree-checkable"
+    role="tree"
     style="overflow-y:auto;overflow-anchor:none;max-height:200px"
+    tabindex="0"
   >
     <div
       style="height:35520px;position:relative;overflow:hidden;z-index:0"
@@ -6627,9 +7596,13 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
         style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
       >
         <div
+          aria-expanded="true"
+          aria-level="0"
           class="arco-tree-node arco-tree-node-expanded"
+          role="treeitem"
         >
           <span
+            aria-hidden="true"
             class="arco-tree-node-indent"
           />
           <span
@@ -6639,16 +7612,19 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
               class="arco-icon-hover arco-tree-node-icon-hover"
             >
               <span
+                aria-label="fold button"
                 class="arco-tree-node-switcher-icon"
+                role="button"
+                tabindex="0"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-caret-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -6673,8 +7649,10 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
                 class="arco-checkbox-mask"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-checkbox-mask-icon"
                   fill="currentColor"
+                  focusable="false"
                   height="200"
                   viewBox="0 0 1024 1024"
                   width="200"
@@ -6688,6 +7666,7 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
             </span>
           </label>
           <span
+            aria-grabbed="false"
             class="arco-tree-node-title arco-tree-node-title-block"
           >
             <span

@@ -17,7 +17,6 @@ Specify `fixed: "left"` or `fixed: "right"` in `column` to fix the column to the
 
 ```js
 import { Table } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -55,7 +54,6 @@ const columns = [
     width: 120,
   },
 ];
-
 const data = [
   {
     key: '1',
@@ -94,14 +92,20 @@ const data = [
   },
 ];
 
-ReactDOM.render(
-  <Table
-    columns={columns}
-    data={data}
-    expandedRowRender={(record) => `${record.name}'s address is ${record.address}`}
-    rowSelection={{}}
-    scroll={{ x: 1600, y: 400 }}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Table
+      columns={columns}
+      data={data}
+      expandedRowRender={(record) => `${record.name}'s address is ${record.address}`}
+      rowSelection={{}}
+      scroll={{
+        x: 1600,
+        y: 400,
+      }}
+    />
+  );
+};
+
+export default App;
 ```

@@ -7,11 +7,16 @@ import React, {
   useRef,
 } from 'react';
 import scrollIntoView, { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
+import merge from 'lodash/merge';
 import cs from '../_util/classNames';
 import useForm from './useForm';
 import { FormProps, FormInstance, FieldError, KeyType } from './interface';
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
-import { FormContext as RawFormContext, FormContextType as RawFormContextType } from './context';
+import {
+  FormContext as RawFormContext,
+  FormContextType as RawFormContextType,
+  FormProviderContext,
+} from './context';
 import { isObject } from '../_util/is';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
@@ -44,6 +49,7 @@ const Form = <
   ref: React.Ref<FormInstance<FormData, FieldValue, FieldKey>>
 ) => {
   const ctx = useContext(ConfigContext);
+  const formProviderCtx = useContext(FormProviderContext);
   const wrapperRef = useRef<HTMLElement>(null);
   const [formInstance] = useForm<FormData, FieldValue, FieldKey>(baseProps.form);
   const isMount = useRef<boolean>();
@@ -63,9 +69,11 @@ const Form = <
     className,
     validateTrigger,
     prefixCls: formPrefixCls,
+    validateMessages,
     ...rest
   } = props;
   const prefixCls = formPrefixCls || ctx.getPrefixCls('form');
+  const rtl = ctx.rtl;
   const size = 'size' in props ? props.size : ctx.size;
   const innerMethods = formInstance.getInnerMethods(true);
   if (!isMount.current) {
@@ -74,6 +82,14 @@ const Form = <
   useEffect(() => {
     isMount.current = true;
   }, []);
+
+  useEffect(() => {
+    let unregister;
+    if (formProviderCtx.register) {
+      unregister = formProviderCtx.register(props.id, formInstance);
+    }
+    return unregister;
+  }, [props.id, formInstance]);
 
   useImperativeHandle(ref, () => {
     return formInstance;
@@ -101,7 +117,10 @@ const Form = <
   };
 
   innerMethods.innerSetCallbacks({
-    onValuesChange: props.onValuesChange,
+    onValuesChange: (value, values) => {
+      props.onValuesChange && props.onValuesChange(value, values);
+      formProviderCtx.onFormValuesChange && formProviderCtx.onFormValuesChange(props.id, value);
+    },
     onChange: props.onChange,
     onValidateFail: (errors: { [key in FieldKey]: FieldError<FieldValue> }) => {
       if (props.scrollToFirstError) {
@@ -110,7 +129,10 @@ const Form = <
       }
     },
     onSubmitFailed: props.onSubmitFailed,
-    onSubmit: props.onSubmit,
+    onSubmit: (values) => {
+      props.onSubmit && props.onSubmit(values);
+      formProviderCtx.onFormSubmit && formProviderCtx.onFormSubmit(props.id, values);
+    },
   });
 
   const contextProps = {
@@ -124,6 +146,7 @@ const Form = <
     store: formInstance,
     prefixCls,
     validateTrigger,
+    validateMessages: merge({}, ctx.locale.Form?.validateMessages, validateMessages),
     getFormElementId: (field: FieldKey) => getFormElementId(id, field),
   };
 
@@ -154,6 +177,7 @@ const Form = <
             prefixCls,
             `${prefixCls}-${layout}`,
             `${prefixCls}-size-${size}`,
+            { [`${prefixCls}-rtl`]: rtl },
             className
           )}
           style={props.style}

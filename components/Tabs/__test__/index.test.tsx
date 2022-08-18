@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { act } from 'react-test-renderer';
+import { render, fireEvent } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Tabs, { TabsProps } from '..';
@@ -34,34 +35,43 @@ const initTabs = [...new Array(5)].map((_, i) => ({
 describe('Tabs', () => {
   it('onClickTab listener correctly', () => {
     const mockFn = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       createDemo({
         onClickTab: mockFn,
       })
     );
     const tabBars = wrapper.find('.arco-tabs-header-title');
-    expect(tabBars.at(0).hasClass('arco-tabs-header-title-active')).toBe(true);
-    tabBars.at(1).simulate('click');
+    expect(tabBars[0].classList.contains('arco-tabs-header-title-active')).toBe(true);
+    act(() => {
+      fireEvent.click(tabBars[1]);
+    });
     expect(
-      wrapper.find('.arco-tabs-header-title').at(1).hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title')[1].classList.contains('arco-tabs-header-title-active')
     ).toBe(true);
     expect(mockFn.mock.calls.length).toBe(1);
   });
+
   it('onChange listener correctly', () => {
     const mockFn = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       createDemo({
         onChange: mockFn,
       })
     );
     const tabBars = wrapper.find('.arco-tabs-header-title');
-    expect(tabBars.at(0).hasClass('arco-tabs-header-title-active')).toBe(true);
-    tabBars.at(1).simulate('click');
+    expect(tabBars[0].classList.contains('arco-tabs-header-title-active')).toBe(true);
+
+    act(() => {
+      fireEvent.click(tabBars[1]);
+    });
     expect(
-      wrapper.find('.arco-tabs-header-title').at(1).hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title')[1].classList.contains('arco-tabs-header-title-active')
     ).toBe(true);
     expect(mockFn.mock.calls.length).toBe(1);
-    tabBars.at(1).simulate('click');
+
+    act(() => {
+      fireEvent.click(tabBars[1]);
+    });
     expect(mockFn.mock.calls.length).toBe(1);
   });
 
@@ -77,13 +87,29 @@ describe('Tabs', () => {
       ));
     };
 
-    const wrapper = mount(
+    const updateComp = (props = {}, children) => {
+      return (
+        <Tabs
+          editable
+          type="card-gutter"
+          onAddTab={() => {
+            tabs.push({ key: String(count++), title: String(count), content: String(count) });
+          }}
+          onDeleteTab={(key) => {
+            tabs = tabs.filter((x) => x.key !== key);
+          }}
+          {...props}
+        >
+          {children}
+        </Tabs>
+      );
+    };
+    const wrapper = render(
       <Tabs
         editable
         type="card-gutter"
         onAddTab={() => {
           tabs.push({ key: String(count++), title: String(count), content: String(count) });
-          wrapper.update();
         }}
         onDeleteTab={(key) => {
           tabs = tabs.filter((x) => x.key !== key);
@@ -92,51 +118,67 @@ describe('Tabs', () => {
         {getChildren()}
       </Tabs>
     );
-    wrapper.find('.arco-tabs-add-icon').simulate('click');
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-tabs-add-icon')[0]);
+    });
 
     expect(tabs.length).toBe(6);
-    wrapper.setProps({ children: getChildren() });
-    expect(wrapper.prop('children').length).toBe(6);
+    wrapper.rerender(updateComp({}, getChildren()));
 
-    wrapper.find('.arco-tabs-close-icon').at(0).simulate('click');
+    expect(wrapper.find('.arco-tabs-header-title').length).toBe(6);
+    expect(wrapper.find('.arco-tabs-content-item').length).toBe(6);
+
+    fireEvent.click(wrapper.find('.arco-tabs-close-icon')[0]);
     expect(tabs.length).toBe(5);
 
     expect(tabs.findIndex((x) => x.key === 'key1')).toBe(-1);
-    wrapper.setProps({ children: getChildren() });
-    expect(wrapper.prop('children').length).toBe(5);
 
-    wrapper.setProps({
-      activeTab: 'key3',
+    act(() => {
+      wrapper.rerender(updateComp({}, getChildren()));
+    });
+
+    expect(wrapper.find('.arco-tabs-header-title').length).toBe(5);
+    expect(wrapper.find('.arco-tabs-content-item').length).toBe(5);
+
+    act(() => {
+      wrapper.rerender(updateComp({ activeTab: 'key3' }, getChildren()));
     });
 
     expect(
-      wrapper.find('.arco-tabs-header-title').at(1).hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title')[1].classList.contains('arco-tabs-header-title-active')
     ).toBe(true);
 
-    wrapper.setProps({
-      activeTab: 'key11100',
+    act(() => {
+      wrapper.rerender(updateComp({ activeTab: 'key11100' }, getChildren()));
     });
 
     expect(
-      wrapper.find('.arco-tabs-header-title').at(2).hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title')[2].classList.contains('arco-tabs-header-title-active')
     ).toBe(false);
 
-    wrapper.setProps({
-      activeTab: 'key2',
-      onChange: (key) => {
-        wrapper.setProps({ activeTab: key });
-      },
+    act(() => {
+      wrapper.rerender(
+        updateComp(
+          {
+            activeTab: 'key2',
+            onChange: (key) => {
+              wrapper.rerender(updateComp({ activeTab: key }, getChildren()));
+            },
+          },
+          getChildren()
+        )
+      );
     });
-
-    expect(wrapper.prop('activeTab')).toBe('key2');
-
-    wrapper.find('.arco-tabs-close-icon').at(0).simulate('click');
-    wrapper.setProps({ children: getChildren() });
+    expect(wrapper.find('.arco-tabs-header-title-active')[0]).toHaveTextContent('标签2');
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-tabs-close-icon')[0]);
+      wrapper.rerender(updateComp({}, getChildren()));
+    });
 
     expect(wrapper.find('.arco-tabs-content-item').length).toBe(getChildren().length);
 
     expect(
-      wrapper.find('.arco-tabs-header-title').at(0).hasClass('arco-tabs-header-title-active')
+      wrapper.find('.arco-tabs-header-title')[0].classList.contains('arco-tabs-header-title-active')
     ).toBe(false);
   });
 });

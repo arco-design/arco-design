@@ -1383,7 +1383,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin-right:16px"
+        style="margin:0 16px"
         type="button"
       >
         <span>
@@ -2113,13 +2113,13 @@ exports[`renders Result/demo/all.md correctly 1`] = `
         class="arco-result-icon-tip arco-result-icon-error"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-face-frown-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -2191,13 +2191,13 @@ exports[`renders Result/demo/basic.md correctly 1`] = `
         class="arco-result-icon-tip arco-result-icon-success"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-check"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M41.678 11.05 19.05 33.678 6.322 20.95"
@@ -2220,7 +2220,7 @@ exports[`renders Result/demo/basic.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin-right:16px"
+        style="margin:0 16px"
         type="button"
       >
         <span>
@@ -2252,13 +2252,13 @@ exports[`renders Result/demo/error.md correctly 1`] = `
         class="arco-result-icon-tip arco-result-icon-error"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -2281,7 +2281,7 @@ exports[`renders Result/demo/error.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin-right:16px"
+        style="margin:0 16px"
         type="button"
       >
         <span>
@@ -2313,14 +2313,14 @@ exports[`renders Result/demo/icon.md correctly 1`] = `
         class="arco-result-icon-tip arco-result-icon-custom"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-face-smile-fill"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           style="color:rgb(var(--arcoblue-6))"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             clip-rule="evenodd"
@@ -2365,13 +2365,13 @@ exports[`renders Result/demo/info.md correctly 1`] = `
         class="arco-result-icon-tip arco-result-icon-info"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-info"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M25 39H27V60H25z"
@@ -2429,13 +2429,13 @@ exports[`renders Result/demo/warning.md correctly 1`] = `
         class="arco-result-icon-tip arco-result-icon-warning"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-exclamation"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M23 9H25V30H23z"

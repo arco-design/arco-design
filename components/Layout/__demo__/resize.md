@@ -15,27 +15,36 @@ By `resizeDirections`, you can use the mouse to drag the sidebar to zoom in and 
 
 ```js
 import { Layout } from '@arco-design/web-react';
-
 const Sider = Layout.Sider;
 const Header = Layout.Header;
 const Footer = Layout.Footer;
 const Content = Layout.Content;
 
-ReactDOM.render(
-  <div className="layout-basic-demo">
-    <Layout>
-      <Header>Header</Header>
+const App = () => {
+  return (
+    <div className="layout-basic-demo">
       <Layout>
-        <Sider resizeDirections={['right']} style={{ minWidth: 150, maxWidth: 500, height: 200 }}>
-          Sider
-        </Sider>
-        <Content>Content</Content>
+        <Header>Header</Header>
+        <Layout>
+          <Sider
+            resizeDirections={['right']}
+            style={{
+              minWidth: 150,
+              maxWidth: 500,
+              height: 200,
+            }}
+          >
+            Sider
+          </Sider>
+          <Content>Content</Content>
+        </Layout>
+        <Footer>Footer</Footer>
       </Layout>
-      <Footer>Footer</Footer>
-    </Layout>
-  </div>,
-  CONTAINER
-);
+    </div>
+  );
+};
+
+export default App;
 ```
 
 ```css:silent

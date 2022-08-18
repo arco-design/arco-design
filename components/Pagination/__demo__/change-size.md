@@ -16,9 +16,10 @@ The pageSize of Pagination can be changed.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Pagination total={200} sizeCanChange />,
-  CONTAINER
-);
+const App = () => {
+  return <Pagination total={200} sizeCanChange />;
+};
+
+export default App;
 ```
 

@@ -1,3 +1,27 @@
+## 2.35.0
+
+2022-06-10
+
+### 🆕 功能升级
+
+- `ResizeBox.Split` 新增 `horizontal-reverse` 和 `vertical-reverse` 两种排列方式。([#984](https://github.com/arco-design/arco-design/pull/984))
+
+## 2.34.0
+
+2022-05-27
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox.SplitGroup` 响应式出错的bug([#934](https://github.com/arco-design/arco-design/pull/934))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox` 的 `Split.Group` 在特定场景无法自适应的 bug([#892](https://github.com/arco-design/arco-design/pull/892))
+
 ## 2.27.0
 
 2021-12-17

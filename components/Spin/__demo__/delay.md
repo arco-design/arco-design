@@ -17,9 +17,8 @@ Use `delay` to delay the switch of loading status, which effectively avoids scre
 import { useState } from 'react';
 import { Spin, Card, Button } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [loading, setLoading] = useState(true);
-
   return (
     <>
       <Button style={{ display: 'block', marginBottom: 24 }} onClick={() => setLoading(!loading)}>
@@ -44,5 +43,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

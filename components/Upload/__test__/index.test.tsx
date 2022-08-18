@@ -1,13 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { useFakeXMLHttpRequest } from 'sinon';
 import { act } from 'react-test-renderer';
-import { UploadProps, UploadItem, STATUS } from '../interface';
+import { UploadItem, STATUS } from '../interface';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
-// import { sleep } from '../../../tests/util';
 import Upload from '..';
-import { sleep } from '../../../tests/util';
+import { sleep, render, fireEvent } from '../../../tests/util';
 
 mountTest(Upload);
 componentConfigTest(Upload, 'Upload');
@@ -19,7 +17,7 @@ function getFile(name = 'file1') {
 }
 
 describe('Upload', function () {
-  const requests = [];
+  const requests: any[] = [];
   let xhr;
   beforeEach(function () {
     xhr = useFakeXMLHttpRequest();
@@ -34,7 +32,7 @@ describe('Upload', function () {
 
   it('basic upload', async function () {
     let fileList: UploadItem[] = [];
-    const wrapper = mount<UploadProps>(
+    const wrapper = render(
       <Upload
         action="/sss"
         onChange={(files) => {
@@ -47,7 +45,7 @@ describe('Upload', function () {
     const files = [getFile('file1')];
 
     await act(() => {
-      input.simulate('change', {
+      fireEvent.change(input.item(0), {
         target: {
           files,
         },
@@ -66,15 +64,13 @@ describe('Upload', function () {
 
   it('upload error', async function () {
     let fileList: UploadItem[] = [];
-    const wrapper = mount<UploadProps>(
-      <Upload action="/sss" onChange={(files) => (fileList = files)} />
-    );
+    const wrapper = render(<Upload action="/sss" onChange={(files) => (fileList = files)} />);
     const input = wrapper.find('input');
     expect(input).toHaveLength(1);
     const files = [getFile()];
 
     await act(() => {
-      input.simulate('change', {
+      fireEvent.change(input.item(0), {
         target: {
           files,
         },
@@ -82,6 +78,7 @@ describe('Upload', function () {
     });
 
     await sleep(100);
+
     requests[1].respond(400, {}, JSON.stringify(files.map(() => 'error: upload error')));
     expect(fileList.every((x) => x.status === 'error')).toBe(true);
   });
@@ -93,15 +90,11 @@ describe('Upload', function () {
         uid: 'x',
       },
     ] as any;
-    const wrapper = mount<UploadProps>(<Upload action="/sss" defaultFileList={fileList} />);
-    expect(wrapper.find('FileList').find('.arco-upload-list-item')).toHaveLength(1);
-    expect((wrapper.find('FileList').props() as any).fileList).toEqual([
-      {
-        ...fileList[0],
-        status: 'done',
-        percent: 100,
-      },
-    ]);
+    const wrapper = render(<Upload action="/sss" defaultFileList={fileList} />);
+    expect(wrapper.find('.arco-upload-list-item')).toHaveLength(1);
+    expect(wrapper.find('.arco-upload-list-item').item(0)).toHaveClass(
+      'arco-upload-list-item-done'
+    );
   });
 
   it('initial fileList', async function () {
@@ -116,41 +109,59 @@ describe('Upload', function () {
         uid: '2',
       },
     ];
-    const wrapper = mount<UploadProps>(
+    const wrapper = render(
       <Upload
         action="/sss"
         fileList={fileList}
         onChange={(files) => {
           fileList = files;
-          wrapper.setProps({ fileList });
         }}
       />
     );
-    expect(wrapper.find('FileList').find('.arco-upload-list-item')).toHaveLength(2);
+    expect(wrapper.find('.arco-upload-list-item')).toHaveLength(2);
 
     const input = wrapper.find('input');
     expect(input).toHaveLength(1);
     const files = [getFile('file1')];
 
     await act(() => {
-      input.simulate('change', {
+      fireEvent.change(input.item(0), {
         target: {
           files,
         },
       });
     });
 
-    await sleep(100);
+    await sleep(10);
+
+    wrapper.rerender(
+      <Upload
+        action="/sss"
+        fileList={fileList}
+        onChange={(files) => {
+          fileList = files;
+        }}
+      />
+    );
 
     requests[2].respond(400, {}, JSON.stringify(files.map(() => 'error: upload error')));
+
     expect(fileList.map((x) => x.status)).toEqual(['done', 'done', 'error']);
 
-    wrapper.setProps({ fileList });
-    const items = wrapper.find('FileList').find('.arco-upload-list-item');
+    wrapper.rerender(
+      <Upload
+        action="/sss"
+        fileList={fileList}
+        onChange={(files) => {
+          fileList = files;
+        }}
+      />
+    );
+    const items = wrapper.find('.arco-upload-list-item');
     expect(items).toHaveLength(3);
 
     await act(() => {
-      items.at(2).find('.arco-upload-list-reupload-icon').at(0).simulate('click');
+      fireEvent.click(items.item(2).querySelector('.arco-upload-list-reupload-icon') as any);
     });
 
     expect(fileList[2].status).toBe(STATUS.uploading);

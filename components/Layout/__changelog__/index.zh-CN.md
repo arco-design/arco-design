@@ -1,3 +1,19 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 问题修复
+
+- `Layout.Sider` 增加 width 属性对 css 单位的支持([#951](https://github.com/arco-design/arco-design/pull/951))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 功能升级
+
+- Layout 新增 `resizeBoxProps` 属性，接收 `resizeBox` 的所有参数([#937](https://github.com/arco-design/arco-design/pull/937))
+
 ## 2.4.0
 
 2020-12-11

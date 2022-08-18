@@ -1,3 +1,44 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 功能升级
+
+- `Image.Preview` 新增 `imgAttributes` 参数，将属性透传至弹窗中的 `img` 标签上([#1274](https://github.com/arco-design/arco-design/pull/1274))
+
+## 2.38.1
+
+2022-08-05
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件传入原生属性 `onLoad`, `onError` 不触发的 bug([#1236](https://github.com/arco-design/arco-design/pull/1236))
+
+## 2.38.0
+
+2022-07-29
+
+### 🐛 问题修复
+
+- 修复 `Image.Preview` 的 `onVisibleChange` 回调在打开预览不触发的问题。([#1219](https://github.com/arco-design/arco-design/pull/1219))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 问题修复
+
+- 修复 `Image.PreviewGroup`  组件在 `current` 受控时 `onChange` 事件不触发的问题([#880](https://github.com/arco-design/arco-design/pull/880))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 功能升级
+
+- `Image` 组件 新增 `index` 参数，表示预览时的索引，在复杂的多图预览场景下可指定，保证预览顺序一致([#588](https://github.com/arco-design/arco-design/pull/588))
+- `Image.Preview` 组件 新增 `scales` 参数，支持自定义图片预览缩放百分比([#588](https://github.com/arco-design/arco-design/pull/588))
+
 ## 2.29.1
 
 2022-02-18

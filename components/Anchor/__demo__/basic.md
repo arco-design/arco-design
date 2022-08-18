@@ -15,20 +15,25 @@ Basic usage. The anchor will be fixed on the page as the page scrolls.
 
 ```js
 import { Anchor } from '@arco-design/web-react';
-
 const AnchorLink = Anchor.Link;
 
-ReactDOM.render(
-  <Anchor offsetTop={60} style={{ backgroundColor: 'var(--color-bg-2)' }}>
-    <AnchorLink href="#Basic" title="Basic">
-      <AnchorLink href="#Static" title="Static">
-        <AnchorLink href="#Lineless-mode" title="Lineless mode" />
-        <AnchorLink href="#Affix" title="Affix" />
+const App = () => {
+  return (
+    <Anchor
+      offsetTop={60}
+      style={{ backgroundColor: 'var(--color-bg-2)' }}
+    >
+      <AnchorLink href="#Basic" title="Basic">
+        <AnchorLink href="#Static" title="Static">
+          <AnchorLink href="#Lineless-mode" title="Lineless mode" />
+          <AnchorLink href="#Affix" title="Affix" />
+        </AnchorLink>
       </AnchorLink>
-    </AnchorLink>
-    <AnchorLink href="#Scroll-boundary" title="Scroll boundary" />
-    <AnchorLink href="#Hash-mode" title="Hash mode" />
-  </Anchor>,
-  CONTAINER
-);
+      <AnchorLink href="#Scroll-boundary" title="Scroll boundary" />
+      <AnchorLink href="#Hash-mode" title="Hash mode" />
+    </Anchor>
+  );
+};
+
+export default App;
 ```

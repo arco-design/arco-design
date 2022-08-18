@@ -21,6 +21,7 @@ interface InnerMonthPickerProps extends MonthPickerProps {
   onSuperNext?: () => void;
   panelMode?: ModeType;
   setPanelMode?: (mode: ModeType) => void;
+  originMode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
 }
 
 function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
@@ -43,11 +44,12 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
     setPageShowDate,
     icons,
     panelMode,
+    originMode,
     setPanelMode,
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls, rtl } = useContext(ConfigContext);
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
   const CALENDAR_LOCALE = DATEPICKER_LOCALE.Calendar;
 
@@ -102,6 +104,7 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
         disabledDate={disabledDate}
         CALENDAR_LOCALE={CALENDAR_LOCALE}
         mode="month"
+        originMode={originMode}
         format={format}
       />
     );
@@ -136,6 +139,7 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
         value={pageShowDate}
         mode={panelMode}
         onChangePanel={onChangePanel}
+        rtl={rtl}
       />
       {renderCalendar()}
     </div>

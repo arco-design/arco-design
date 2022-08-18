@@ -218,10 +218,10 @@ export interface TransferListProps
   validKeys: string[];
   selectedDisabledKeys: string[];
   listType: TransferListType;
-  selectedStatus: 'none' | 'part' | 'all';
   handleSelect: (newSelectKeys: string[]) => void;
   handleRemove: (removeKeys: string[]) => void;
   renderList: (props: TransferCustomListProps) => ReactNode;
+  renderHeaderUnit: (countSelected, countAll) => ReactNode;
 }
 
 export interface TransferCustomListProps

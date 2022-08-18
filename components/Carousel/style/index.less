@@ -30,6 +30,7 @@
 
   &-item-current {
     z-index: 1;
+    position: relative;
   }
 
   &-slide {
@@ -366,6 +367,16 @@
     .@{carousel-prefix-cls}-arrow-hover div {
       opacity: 1;
     }
+  }
+
+  &-rtl &-indicator-dot &-indicator-item:not(:last-child) {
+    margin-left: @carousel-indicator-gap;
+    margin-right: 0;
+  }
+
+  &-rtl &-indicator-line &-indicator-item:not(:last-child) {
+    margin-left: @carousel-indicator-gap;
+    margin-right: 0;
   }
 }
 

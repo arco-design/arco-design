@@ -1,11 +1,16 @@
 @import '~@arco-design/web-react/dist/css/index.less';
-@import '~@arco-design/arco-doc-site-components/dist/arco-components.css';
+@import '~arco-doc-site-components/dist/arco-components.css';
 @import '~nprogress/nprogress.css';
 @import '../widget/style/index.less';
 @import './demo.less';
 @import './markdown.less';
 @import './page.less';
 @import './changelog.less';
+@import './animation.less';
+
+html.rtl {
+  direction: rtl;
+}
 
 html,
 body {
@@ -34,5 +39,17 @@ a {
   &-content {
     background-color: var(--color-bg-5);
     border-color: var(--color-fill-3);
+  }
+}
+
+html.rtl {
+  .ac-browser-header {
+    &::before {
+      box-shadow: 0 0 0 0 #ff5959, -1.5em 0 0 0 #ffc75a, -3em 0 0 0 #6bdb43;
+    }
+  }
+
+  .ac-browser-content {
+    text-align: right;
   }
 }

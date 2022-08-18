@@ -11,14 +11,17 @@ import { GlobalContext, GlobalNoticeContext } from './context';
 import locale from './locale/en';
 import tea from './utils/tea';
 import './style/index.less';
+import { registerServiceWorker } from './serviceWorkerRegistration';
 
 import { isProduction } from './utils/env';
 
 const requestDomain = isProduction ? `//${location.hostname}/` : '//localhost:3000';
 
 function Index() {
+  const arcoDirection = localStorage.getItem('arco-direction');
   const [user, setUser] = useState();
   const [noticeHeight, setNoticeHeight] = useState(0);
+  const [rtl, setRtl] = useState(arcoDirection === 'rtl');
 
   async function getUser() {
     try {
@@ -33,12 +36,22 @@ function Index() {
     getUser();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('arco-direction', rtl ? 'rtl' : 'ltr');
+    const rootElement = document.querySelector('html');
+    if (rtl) {
+      rootElement.setAttribute('class', 'rtl');
+    } else {
+      rootElement.setAttribute('class', '');
+    }
+  }, [rtl]);
+
   return (
     <BrowserRouter>
       <Navbar.NavbarThemeProvider>
-        <GlobalContext.Provider value={{ lang: 'en-US', locale, user }}>
+        <GlobalContext.Provider value={{ lang: 'en-US', locale, user, rtl, toggleRtl: setRtl }}>
           <ScrollToTop />
-          <ConfigProvider locale={enUS}>
+          <ConfigProvider locale={enUS} rtl={rtl}>
             <GlobalNoticeContext.Provider
               value={{
                 noticeHeight,
@@ -54,6 +67,14 @@ function Index() {
   );
 }
 
+// register service worker on prod
+if (isProduction) {
+  registerServiceWorker({
+    content: 'New doc content is available, refresh page to get the latest version？',
+    okText: 'Ok',
+    cancelText: 'Cancel',
+  });
+}
 ReactDOM.render(<Index />, document.getElementById('root'));
 
 tea({ name: 'site_components_en' });

@@ -4,7 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import Input from '../Input';
 import Select from '../Select';
 import { MentionsProps } from './interface';
-import { Esc, Enter, ArrowUp, ArrowDown } from '../_util/keycode';
+import { ArrowDown, ArrowUp, Enter, Esc } from '../_util/keycode';
 import { getBeforeSelectionText, getLastMeasureIndex, isValidSearch } from './utils';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import useMergeProps from '../_util/hooks/useMergeProps';
@@ -22,7 +22,7 @@ const defaultProps: MentionsProps = {
 };
 
 function Mentions(baseProps: MentionsProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<MentionsProps>(baseProps, defaultProps, componentConfig?.Mentions);
   const {
     style,
@@ -37,6 +37,7 @@ function Mentions(baseProps: MentionsProps, ref) {
     getPopupContainer,
     onChange,
     onSearch,
+    notFoundContent,
     ...rest
   } = props;
 
@@ -141,11 +142,17 @@ function Mentions(baseProps: MentionsProps, ref) {
     onBlur: stopMeasure,
   };
 
+  // Pass [value: undefined] to Select, make sure onChange callback will always be triggered
+  // Only parameter of Select.onChange is needed, Select.value is not important cause Select is hidden
   return (
     <div
       ref={ref}
       style={style}
-      className={cs(`${prefixCls}`, { [`${prefixCls}-align-textarea`]: alignTextarea }, className)}
+      className={cs(
+        `${prefixCls}`,
+        { [`${prefixCls}-align-textarea`]: alignTextarea, [`${prefixCls}-rtl`]: rtl },
+        className
+      )}
     >
       <TextArea
         ref={refTextarea}
@@ -154,30 +161,29 @@ function Mentions(baseProps: MentionsProps, ref) {
         {...textAreaEventHandlers}
         {...rest}
       />
-      {measureInfo.measuring && (
-        <div ref={refMeasure} className={`${prefixCls}-measure`}>
-          {value.slice(0, measureInfo.location)}
-          <Select
-            ref={refSelect}
-            options={options}
-            inputValue={measureInfo.text}
-            notFoundContent={null}
-            triggerElement={
-              <span className={`${prefixCls}-measure-trigger`}>{measureInfo.prefix}</span>
-            }
-            triggerProps={{
-              popupVisible: true,
-              autoAlignPopupWidth: alignTextarea,
-              position,
-              ...triggerProps,
-            }}
-            filterOption={filterOption}
-            getPopupContainer={getPopupContainer}
-            onChange={handleOptionSelect}
-          />
-          {value.slice(measureInfo.location + measureInfo.prefix.length)}
-        </div>
-      )}
+      <div ref={refMeasure} className={`${prefixCls}-measure`}>
+        {value.slice(0, measureInfo.location)}
+        <Select
+          ref={refSelect}
+          options={options}
+          inputValue={measureInfo.text}
+          notFoundContent={notFoundContent}
+          triggerElement={
+            <span className={`${prefixCls}-measure-trigger`}>{measureInfo.prefix}</span>
+          }
+          triggerProps={{
+            popupVisible: measureInfo.measuring,
+            autoAlignPopupWidth: alignTextarea,
+            position,
+            ...triggerProps,
+          }}
+          filterOption={filterOption}
+          getPopupContainer={getPopupContainer}
+          value={undefined}
+          onChange={handleOptionSelect}
+        />
+        {value.slice(measureInfo.location + measureInfo.prefix.length)}
+      </div>
     </div>
   );
 }

@@ -179,3 +179,21 @@
     line-height: @checkbox-group-size-line-height_vertical;
   }
 }
+
+.@{checkbox-prefix-cls}-rtl {
+  direction: rtl;
+  padding-left: 0;
+  padding-right: (@checkbox-mask-bg-height / 2) - (@checkbox-mask-height / 2);
+
+  .@{checkbox-prefix-cls}-text {
+    margin-left: 0;
+    margin-right: @checkbox-text-mask-spacing;
+  }
+}
+
+.@{checkbox-prefix-cls}-group-rtl {
+  .@{checkbox-prefix-cls} {
+    margin-right: 0;
+    margin-left: @checkbox-group-spacing;
+  }
+}

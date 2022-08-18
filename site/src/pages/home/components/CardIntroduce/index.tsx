@@ -3,7 +3,6 @@ import cs from '../../utils/classNames';
 import styles from './style/index.module.less';
 
 interface CardIntroduceProps {
-  id?: string;
   style?: CSSProperties;
   className?: string | string[];
   title?: string;
@@ -18,7 +17,7 @@ interface CardIntroduceProps {
 }
 
 export default function CardIntroduce(props: CardIntroduceProps) {
-  const { id, style, className, title, description, code, product } = props;
+  const { style, className, title, description, code, product } = props;
   const hasContent = Boolean(title || description);
   const hasCode = Boolean(code);
   const hasProduct = Boolean(product);
@@ -27,7 +26,7 @@ export default function CardIntroduce(props: CardIntroduceProps) {
   });
 
   return (
-    <div className={classNames} style={style} id={id}>
+    <div className={classNames} style={style} data-aos="scale-fade-in">
       {hasCode && <div className={styles.code}>{code}</div>}
       {hasContent && (
         <div className={styles.content}>

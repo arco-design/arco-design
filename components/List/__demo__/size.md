@@ -16,12 +16,10 @@ There are three sizes (`small` `default` `large`) that you can select according 
 ```js
 import { useState } from 'react';
 import { List, Radio } from '@arco-design/web-react';
-
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [size, setSize] = useState('default');
-
   return (
     <>
       <RadioGroup
@@ -52,5 +50,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

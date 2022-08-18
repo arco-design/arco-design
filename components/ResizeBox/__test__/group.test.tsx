@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import ResizeBox from '..';
 import Typography from '../../Typography';
 import { IconPlus } from '../../../icon';
 import Button from '../../Button';
+import { fireEvent, render } from '../../../tests/util';
 
 const wrapperRef = {
   offsetWidth: 800,
@@ -53,7 +53,7 @@ afterEach(() => {
 
 describe('ResizeBox Split Group', () => {
   it('render one panes correctly', () => {
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.SplitGroup
         panes={[
           {
@@ -62,14 +62,14 @@ describe('ResizeBox Split Group', () => {
         ]}
       />
     );
-    expect(wrapper.find('Text')).toHaveLength(1);
-    const pane = wrapper.find(`.${groupPrefixCls}-pane`);
-    expect(pane.prop('style')).toEqual({ flexBasis: `calc(${wrapperRef.offsetWidth}px - 0px)` });
+    expect(wrapper.find('.arco-typography')).toHaveLength(1);
+    const pane = wrapper.find(`.${groupPrefixCls}-pane`)[0];
+    expect(pane.style.flexBasis).toEqual(`calc(100% - 0px)`);
   });
 
   it('render direction vertical correctly', () => {
     const panes = [{ size: 0.2 }, {}];
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.SplitGroup
         direction="vertical"
         panes={panes.map((obj) => {
@@ -81,16 +81,12 @@ describe('ResizeBox Split Group', () => {
       />
     );
 
-    expect(wrapper.find('Text')).toHaveLength(2);
+    expect(wrapper.find('.arco-typography')).toHaveLength(2);
     expect(wrapper.find(`.${triggerPrefixCls}`)).toHaveLength(1);
-    const pane1 = wrapper.find(`.${groupPrefixCls}-pane`).at(0);
-    const pane2 = wrapper.find(`.${groupPrefixCls}-pane`).at(1);
-    expect(pane1.prop('style')).toEqual({
-      flexBasis: `calc(${wrapperRef.offsetHeight * 0.2}px - ${triggerContentRect.height / 2}px)`,
-    });
-    expect(pane2.prop('style')).toEqual({
-      flexBasis: `calc(${wrapperRef.offsetHeight * 0.8}px - ${triggerContentRect.height / 2}px)`,
-    });
+    const pane1 = wrapper.find(`.${groupPrefixCls}-pane`)[0];
+    const pane2 = wrapper.find(`.${groupPrefixCls}-pane`)[1];
+    expect(pane1.style.flexBasis).toEqual(`calc(20% - ${triggerContentRect.height / 2}px)`);
+    expect(pane2.style.flexBasis).toEqual(`calc(80% - ${triggerContentRect.height / 2}px)`);
   });
 
   it('handle collapsed correctly', () => {
@@ -98,7 +94,7 @@ describe('ResizeBox Split Group', () => {
     const prevFn = jest.fn();
     const nextFn = jest.fn();
     const mockMoving = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.SplitGroup
         panes={panes.map((_, index) => {
           return {
@@ -119,13 +115,10 @@ describe('ResizeBox Split Group', () => {
 
     const basicOffset = wrapperRef.offsetWidth / panes.length;
 
-    expect(wrapper.find('Text')).toHaveLength(panes.length);
+    expect(wrapper.find('.arco-typography')).toHaveLength(panes.length);
+    const firstTrigger = wrapper.find(`.${triggerPrefixCls}`)[0];
     act(() => {
-      wrapper
-        .find(`.${triggerPrefixCls}`)
-        .at(0)
-        .find(`.${triggerPrefixCls}-next`)
-        .simulate('click');
+      fireEvent.click(firstTrigger.querySelector(`.${triggerPrefixCls}-next`) as Element);
     });
 
     const params = nextFn.mock.calls[0];
@@ -139,20 +132,14 @@ describe('ResizeBox Split Group', () => {
       `${basicOffset}px`,
     ]);
     expect(movingParams[2]).toEqual(0);
-
-    act(() => {
-      wrapper.find(`.${triggerPrefixCls}`).at(0).update();
-    });
-    expect(
-      wrapper.find(`.${triggerPrefixCls}`).at(0).find(`.${triggerPrefixCls}-icon-empty`)
-    ).toHaveLength(1);
+    expect(firstTrigger.querySelectorAll(`.${triggerPrefixCls}-icon-empty`)).toHaveLength(1);
   });
 
   it('set pane min correctly when collapsiable', () => {
     const min = 0.1;
     const panes = [{ collapsible: true }, { min, collapsible: true }, {}, {}];
     const mockMoving = jest.fn();
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.SplitGroup
         direction="vertical"
         panes={panes.map((obj) => {
@@ -167,12 +154,10 @@ describe('ResizeBox Split Group', () => {
 
     const basicOffset = wrapperRef.offsetHeight / panes.length;
     const minOffset = wrapperRef.offsetHeight * min;
+
+    const trigger1 = wrapper.find(`.${triggerPrefixCls}`)[1];
     act(() => {
-      wrapper
-        .find(`.${triggerPrefixCls}`)
-        .at(1)
-        .find(`.${triggerPrefixCls}-prev`)
-        .simulate('click');
+      fireEvent.click(trigger1.querySelector(`.${triggerPrefixCls}-prev`) as Element);
     });
 
     expect(mockMoving).toHaveBeenCalledTimes(1);
@@ -189,7 +174,7 @@ describe('ResizeBox Split Group', () => {
 
   it('set size correctly', () => {
     const panes = [{ size: 0.1 }, { size: '80px' }, { size: 0.2 }, {}, {}];
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.SplitGroup
         panes={panes.map((obj) => {
           return {
@@ -205,25 +190,19 @@ describe('ResizeBox Split Group', () => {
 
     const averageWidth = (offsetWidth - offsetWidth * 0.3 - 80) / 2;
 
-    expect(panesEl.at(0).prop('style')).toEqual({
-      flexBasis: `calc(${offsetWidth * 0.1}px - 0px)`,
-    });
+    expect(panesEl[0].style.flexBasis).toEqual(`calc(10% - 0px)`);
 
-    expect(panesEl.at(1).prop('style')).toEqual({
-      flexBasis: `calc(80px - 0px)`,
-    });
+    expect(panesEl[1].style.flexBasis).toEqual(`calc(10% - 0px)`);
 
-    expect(panesEl.at(2).prop('style')).toEqual({
-      flexBasis: `calc(${offsetWidth * 0.2}px - 0px)`,
-    });
+    expect(panesEl[2].style.flexBasis).toEqual(`calc(20% - 0px)`);
 
-    expect(panesEl.at(3).prop('style')).toEqual({
-      flexBasis: `calc(${averageWidth}px - ${triggerWidth / 2}px)`,
-    });
+    expect(panesEl[3].style.flexBasis).toEqual(
+      `calc(${(averageWidth / offsetWidth) * 100}% - ${triggerWidth / 2}px)`
+    );
 
-    expect(panesEl.at(4).prop('style')).toEqual({
-      flexBasis: `calc(${averageWidth}px - ${triggerWidth / 2}px)`,
-    });
+    expect(panesEl[4].style.flexBasis).toEqual(
+      `calc(${(averageWidth / offsetWidth) * 100}% - ${triggerWidth / 2}px)`
+    );
   });
 
   it('render customer icon and trigger correctly', () => {
@@ -245,7 +224,7 @@ describe('ResizeBox Split Group', () => {
       {},
     ];
 
-    const wrapper = mount(
+    const wrapper = render(
       <ResizeBox.SplitGroup
         panes={panes.map((obj) => {
           return {
@@ -256,7 +235,7 @@ describe('ResizeBox Split Group', () => {
       />
     );
 
-    expect(wrapper.find('Button')).toHaveLength(1);
-    expect(wrapper.find('Button').find('IconPlus')).toHaveLength(1);
+    expect(wrapper.find('.arco-btn')).toHaveLength(1);
+    expect(wrapper.find('.arco-btn .arco-icon-plus')).toHaveLength(1);
   });
 });

@@ -38,7 +38,7 @@ const defaultProps = {
 };
 
 function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<AffixProps>>(
     baseProps,
     defaultProps,
@@ -55,6 +55,7 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
     targetContainer,
     children,
     onChange,
+    ...rest
   } = props;
 
   const [state, setState] = useState<{
@@ -72,7 +73,7 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
   const lastIsFixed = useRef(isFixed);
 
   const prefixCls = getPrefixCls('affix');
-  const classNames = cs({ [prefixCls]: isFixed }, affixClassName);
+  const classNames = cs({ [prefixCls]: isFixed, [`${prefixCls}-rtl`]: rtl }, affixClassName);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLElement | Window>(null);
 
@@ -169,7 +170,7 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
 
   return (
     <ResizeObserver onResize={updatePosition}>
-      <div className={cs(className)} style={style} ref={wrapperRef}>
+      <div className={cs(className)} style={style} ref={wrapperRef} {...rest}>
         {isFixed && <div style={sizeStyles} />}
         <div
           className={classNames}

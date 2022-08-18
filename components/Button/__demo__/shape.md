@@ -17,15 +17,18 @@ Button has many shapes, `square`-rectangle **(default)**, `circle`-round, `round
 import { Button, Space } from '@arco-design/web-react';
 import { IconPlus } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size="large">
-    <Button type="primary" icon={<IconPlus />} />
-    <Button shape="circle" type="primary" icon={<IconPlus />} />
-    <Button shape="round" type="primary">
-      Primary
-    </Button>
-    <Button type="primary">Primary</Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Button type="primary" icon={<IconPlus />} />
+      <Button shape="circle" type="primary" icon={<IconPlus />} />
+      <Button shape="round" type="primary">
+        Primary
+      </Button>
+      <Button type="primary">Primary</Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

@@ -14,6 +14,16 @@
   }
 }
 
+.input-tag-input-element-padding-rtl(@paddingRight) {
+  .@{input-tag-prefix-cls}-has-placeholder {
+    input,
+    .@{input-tag-prefix-cls}-input-mirror {
+      padding-left: 0;
+      padding-right: @paddingRight;
+    }
+  }
+}
+
 .@{input-tag-prefix-cls} {
   display: inline-block;
   box-sizing: border-box;
@@ -70,7 +80,7 @@
   }
 
   &:not(&-focus) {
-    &-clear-icon:hover::before {
+    .@{input-tag-prefix-cls}-clear-icon:hover::before {
       background-color: @input-tag-color-icon-clear-bg_hover;
     }
 
@@ -138,14 +148,6 @@
       color: @input-tag-color-text_default;
       border-color: @input-tag-tag-color-border;
       background-color: @input-tag-tag-color-bg;
-      display: inline-flex;
-      align-items: center;
-
-      &-content {
-        flex: 1;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
     }
 
     .@{prefix}-icon-hover:hover::before {
@@ -232,6 +234,48 @@
         .@{input-tag-prefix-cls}-input-mirror {
           box-sizing: border-box;
           padding-left: @padding-horizontal_not_tag - @input-tag-padding-horizontal;
+        }
+      }
+    }
+  }
+
+  .size(mini);
+  .size(default);
+  .size(small);
+  .size(large);
+}
+
+.@{input-tag-prefix-cls}-rtl {
+  direction: rtl;
+  padding-right: @input-tag-padding-horizontal;
+  padding-left: @input-tag-padding-horizontal;
+
+  .@{input-tag-prefix-cls}-suffix {
+    padding-right: 0;
+    padding-left: 8px;
+  }
+
+  .@{input-tag-prefix-cls}-tag {
+    margin-right: 0;
+    margin-left: @input-tag-tag-margin-right;
+  }
+
+  .@{input-tag-prefix-cls}-input {
+    &-mirror {
+      right: 0;
+      left: initial;
+    }
+  }
+
+  .size(@size) {
+    @ref-padding-horizontal_not_tag: ~'input-tag-size-@{size}-padding_no_tag';
+    @padding-horizontal_not_tag: @@ref-padding-horizontal_not_tag;
+
+    &.@{input-tag-prefix-cls}-size-@{size} {
+      &.@{input-tag-prefix-cls}-has-placeholder {
+        input,
+        .@{input-tag-prefix-cls}-input-mirror {
+          padding-right: @padding-horizontal_not_tag - @input-tag-padding-horizontal;
         }
       }
     }

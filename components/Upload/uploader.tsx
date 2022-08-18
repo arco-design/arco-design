@@ -4,6 +4,7 @@ import uploadRequest from './request';
 import { UploaderProps, STATUS, UploadItem, UploadRequestReturn } from './interface';
 import { isNumber, isFunction, isFile } from '../_util/is';
 import TriggerNode from './trigger-node';
+import { isAcceptFile } from './util';
 
 export type UploaderType = {
   upload: (file: UploadItem) => void;
@@ -15,7 +16,7 @@ export type UploaderType = {
 type UploaderState = {
   uploadRequests: { [key: string]: UploadRequestReturn };
 };
-class Uploader extends React.Component<UploaderProps, UploaderState> {
+class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, UploaderState> {
   inputRef: HTMLInputElement | null;
 
   constructor(props) {
@@ -171,20 +172,23 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
     };
 
     files.forEach((file, index) => {
-      if (isFunction(this.props.beforeUpload)) {
-        // 只有在beforeUpload返回值 === false 时，取消上传操作
-        Promise.resolve(this.props.beforeUpload(file, files))
-          .then((val) => {
-            if (val !== false) {
-              const newFile = isFile(val) ? val : file;
-              asyncUpload(newFile as File, index);
-            }
-          })
-          .catch((e) => {
-            console.error(e);
-          });
-      } else {
-        asyncUpload(file, index);
+      if (isAcceptFile(file, this.props.accept)) {
+        // windows can upload file type not in accept bug
+        if (isFunction(this.props.beforeUpload)) {
+          // 只有在beforeUpload返回值 === false 时，取消上传操作
+          Promise.resolve(this.props.beforeUpload(file, files))
+            .then((val) => {
+              if (val !== false) {
+                const newFile = isFile(val) ? val : file;
+                asyncUpload(newFile as File, index);
+              }
+            })
+            .catch((e) => {
+              console.error(e);
+            });
+        } else {
+          asyncUpload(file, index);
+        }
       }
     });
   };
@@ -201,6 +205,7 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
       listType,
       hide,
       directory,
+      onDrop,
     } = this.props;
 
     return (
@@ -240,13 +245,14 @@ class Uploader extends React.Component<UploaderProps, UploaderState> {
             disabled={disabled}
             drag={drag}
             listType={listType}
+            onDrop={onDrop}
             onDragFiles={this.handleFiles}
             onClick={() => {
               !disabled && this.inputRef && this.inputRef.click();
             }}
             prefixCls={prefixCls}
           >
-            {children}
+            {isFunction(children) ? children({ fileList: this.props.fileList }) : children}
           </TriggerNode>
         </CSSTransition>
         {tip && listType !== 'picture-card' && !drag ? (

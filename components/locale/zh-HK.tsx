@@ -1,3 +1,5 @@
+import 'dayjs/locale/zh-hk';
+
 const Calendar = {
   formatYear: 'YYYY 年',
   formatMonth: 'YYYY 年 MM 月',
@@ -64,6 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'zh-HK',
+  dayjsLocale: 'zh-hk',
   Calendar,
   DatePicker: {
     Calendar,
@@ -103,6 +106,12 @@ export default {
     page: '頁',
     countPerPage: '個/頁',
     total: '共 {0} 個',
+    prev: '上一頁',
+    next: '下一頁',
+    currentPage: '第 {0} 頁',
+    prevSomePages: '向前 {0} 頁',
+    nextSomePages: '向后 {0} 頁',
+    pageSize: '頁碼',
   },
   Popconfirm: {
     okText: '確認',
@@ -153,5 +162,53 @@ export default {
     zoomIn: '放大',
     zoomOut: '縮小',
     originalSize: '原始尺寸',
+  },
+  Form: {
+    validateMessages: {
+      required: '#{field} 是必填項',
+      type: {
+        string: '#{value} 不是合法的文本類型',
+        number: '#{value} 不是合法的數字類型',
+        boolean: '#{value} 不是合法的布爾類型',
+        array: '#{value} 不是合法的數組類型',
+        object: '#{value} 不是合法的對像類型',
+        url: '#{value} 不是合法的 url 地址',
+        email: '#{value} 不是合法的郵箱地址',
+        ip: '#{value} 不是合法的 IP 地址',
+      },
+      number: {
+        min: '`#{value}` 小於最小值 `#{min}`',
+        max: '`#{value}` 大於最大值 `#{max}`',
+        equal: '`#{value}` 不等於 `#{equal}`',
+        range: '`#{value}` 不在 `#{min} ~ #{max}` 範圍內',
+        positive: '`#{value}` 不是正數',
+        negative: '`#{value}` 不是負數',
+      },
+      array: {
+        length: '`#{value}` 個數不等於 #{length}',
+        minLength: '`#{value}` 個數最少為 #{minLength}',
+        maxLength: '`#{value}` 個數最多為 #{maxLength}',
+        includes: '#{value} 不包含 #{includes}',
+        deepEqual: '#{value} 不等於 #{deepEqual}',
+        empty: '`#{value}` 不是空數組',
+      },
+      string: {
+        minLength: '字符數最少為 #{minLength}',
+        maxLength: '字符數最多為 #{maxLength}',
+        length: '`#{value}` 字符數不等於 #{length}',
+        match: '`#{value}` 不符合模式 #{pattern}',
+        uppercase: '`#{value}` 不是全大寫',
+        lowercase: '`#{value}` 不是全小寫',
+      },
+      object: {
+        deepEqual: '`#{value}` 不等於 #{deepEqual}',
+        hasKeys: '`#{value}` 不包含字段 #{keys}',
+        empty: '`#{value}` 不是對象',
+      },
+      boolean: {
+        true: '期望是 `true`',
+        false: '期望是 `false`',
+      },
+    },
   },
 };

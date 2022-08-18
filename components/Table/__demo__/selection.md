@@ -16,7 +16,6 @@ Table enable selection, you can set `rowSelection.type` to use checkbox and radi
 ```js
 import { useState } from 'react';
 import { Table, Radio } from '@arco-design/web-react';
-
 const columns = [
   {
     title: 'Name',
@@ -35,7 +34,6 @@ const columns = [
     dataIndex: 'email',
   },
 ];
-
 const data = [
   {
     id: '1',
@@ -74,15 +72,16 @@ const data = [
   },
 ];
 
-function Demo() {
+function App() {
   const [type, setType] = useState('checkbox');
   const [selectedRowKeys, setSelectedRowKeys] = useState(['4']);
-
   return (
     <div>
       <Radio.Group
-        style={{ marginBottom: 20 }}
-        type='button'
+        style={{
+          marginBottom: 20,
+        }}
+        type="button"
         options={['checkbox', 'radio']}
         value={type}
         onChange={(v) => setType(v)}
@@ -99,7 +98,7 @@ function Demo() {
             setSelectedRowKeys(selectedRowKeys);
           },
           onSelect: (selected, record, selectedRows) => {
-            console.log('onSelect:', selected, record, selectedRows)
+            console.log('onSelect:', selected, record, selectedRows);
           },
           checkboxProps: (record) => {
             return {
@@ -112,5 +111,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

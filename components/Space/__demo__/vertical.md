@@ -16,12 +16,15 @@ You can set the spacing in the vertical direction.
 ```js
 import { Space, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space direction="vertical">
-    <Button type="primary">Item1</Button>
-    <Button type="primary">Item2</Button>
-    <Button type="primary">Item3</Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space direction="vertical">
+      <Button type="primary">Item1</Button>
+      <Button type="primary">Item2</Button>
+      <Button type="primary">Item3</Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

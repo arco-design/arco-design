@@ -16,29 +16,29 @@ There are four sizes.
 ```js
 import { useState } from 'react';
 import { TimePicker, Radio } from '@arco-design/web-react';
-
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [size, setSize] = useState('default');
-
-  return <div>
-    <RadioGroup
-      value={size}
-      options={['large', 'default', 'small', 'mini' ]}
-      onChange={(value) => setSize(value)}
-      type="button"
-      style={{ marginBottom: 24 }}
-    />
-    <br />
-    <TimePicker style={{ width: 194 }} size={size} placeholder="请选择时间" />
-  </div>
+  return (
+    <div>
+      <RadioGroup
+        value={size}
+        options={['large', 'default', 'small', 'mini']}
+        onChange={(value) => setSize(value)}
+        type="button"
+        style={{ marginBottom: 24, }}
+      />
+      <br />
+      <TimePicker
+        style={{ width: 194, }}
+        size={size}
+        placeholder="请选择时间"
+      />
+    </div>
+  );
 }
 
-
-ReactDOM.render(
-  <Demo />,
-  CONTAINER
-);
+export default App;
 ```
 

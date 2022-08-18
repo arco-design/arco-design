@@ -1,6 +1,6 @@
 ---
 order: 5
-title: 
+title:
   zh-CN: 前缀及后缀
   en-US: Prefix and Suffix
 ---
@@ -16,7 +16,7 @@ You can add a prefix or a suffix.
 ```js
 import { InputNumber } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   return (
     <div>
       <InputNumber
@@ -45,5 +45,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

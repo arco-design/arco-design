@@ -15,18 +15,20 @@ Use `strict=true` to enable case-sensitive matching for options.
 
 ```js
 import { AutoComplete } from '@arco-design/web-react';
-
 const data = ['beijing', 'beihai', 'baoding'];
 
-ReactDOM.render(
-  <div>
-    <AutoComplete
-      placeholder="Input `B`"
-      strict
-      data={data}
-      style={{ width: 154 }}
-    />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <AutoComplete
+        placeholder="Input `B`"
+        strict
+        data={data}
+        style={{ width: 154 }}
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

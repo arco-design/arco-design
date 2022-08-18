@@ -1,3 +1,44 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 Feature
+
+- `Image.Preview` adds the `imgAttributes` parameter to transparently transmit the properties to the `img` tag in the preview modal([#1274](https://github.com/arco-design/arco-design/pull/1274))
+
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Image` component passed the native property `onLoad`, `onError` was not triggered([#1236](https://github.com/arco-design/arco-design/pull/1236))
+
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fix `Image.Preview`'s `onVisibleChange` not triggering when preview is opened.([#1219](https://github.com/arco-design/arco-design/pull/1219))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed `Image.PreviewGroup ` component's `onChange` event not firing when `current` is controlled([#880](https://github.com/arco-design/arco-design/pull/880))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- Image component Added `index` parameter, which indicates the index during preview, which can be specified in complex multi-image preview scenarios to ensure consistent preview order([#588](https://github.com/arco-design/arco-design/pull/588))
+- `Image.Preview` component Added `scales` parameter to support custom image preview zoom percentage([#588](https://github.com/arco-design/arco-design/pull/588))
+
 ## 2.29.1
 
 2022-02-18

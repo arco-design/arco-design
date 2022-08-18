@@ -16,37 +16,39 @@ title:
 You can set the status of the progress. If `showText` is `false`, the percentage text will not be displayed.
 
 ```js
-import { Progress, Slider } from '@arco-design/web-react';
+import React from 'react';
+import { Progress, Slider, Space } from '@arco-design/web-react';
 
 function Demo() {
   const [value, setValue] = React.useState(30);
-
   return (
     <div>
-      <div style={{ display: 'inline-block', width: '40%', marginRight: '10%' }}>
-        <Progress
-          percent={value}
-          color="#C9CDD4"
-          formatText={() => 'Waiting...'}
-          style={{ marginBottom: 20 }}
-        />
-        <br />
-        <Progress
-          percent={value}
-          status="warning"
-          formatText={(val) => `${val} / 100`}
-          style={{ marginBottom: 20 }}
-        />
-        <br />
-        <Progress percent={value} buffer />
-      </div>
-      <div style={{ display: 'inline-block', width: '40%' }}>
-        <Progress percent={value} status="error" style={{ marginBottom: 20 }} />
-        <br />
-        <Progress percent={value} status="success" style={{ marginBottom: 20 }} />
-        <br />
-        <Progress percent={value} showText={false} />
-      </div>
+      <Space size={20}>
+        <div style={{ width: '300px' }}>
+          <Progress
+            percent={value}
+            color="#C9CDD4"
+            formatText={() => 'Waiting...'}
+            style={{ marginBottom: 20 }}
+          />
+          <br />
+          <Progress
+            percent={value}
+            status="warning"
+            formatText={(val) => `${val} / 100`}
+            style={{ marginBottom: 20 }}
+          />
+          <br />
+          <Progress percent={value} buffer />
+        </div>
+        <div style={{ width: '300px' }}>
+          <Progress percent={value} status="error" style={{ marginBottom: 20 }} />
+          <br />
+          <Progress percent={value} status="success" style={{ marginBottom: 20 }} />
+          <br />
+          <Progress percent={value} showText={false} />
+        </div>
+      </Space>
       <div style={{ marginTop: 40 }}>
         <Slider value={value} onChange={setValue} style={{ width: 100 }}></Slider>
       </div>
@@ -54,5 +56,9 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+const App = () => {
+  return <Demo />;
+};
+
+export default App;
 ```

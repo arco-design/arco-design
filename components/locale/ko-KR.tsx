@@ -1,3 +1,5 @@
+import 'dayjs/locale/ko';
+
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
@@ -64,6 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'ko-KR',
+  dayjsLocale: 'ko',
   Calendar,
   DatePicker: {
     Calendar,
@@ -103,6 +106,12 @@ export default {
     page: '페이지',
     countPerPage: '기입 / 페이지',
     total: '총 {0}',
+    prev: '이전 페이지로 이동',
+    next: '다음 페이지로 이동',
+    currentPage: '페이지 {0}',
+    prevSomePages: '{0} 페이지 뒤로',
+    nextSomePages: '{0} 페이지 앞으로',
+    pageSize: '페이지 번호',
   },
   Popconfirm: {
     okText: '결정',

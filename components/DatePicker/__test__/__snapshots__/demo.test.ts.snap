@@ -21,13 +21,13 @@ exports[`renders DatePicker/demo/basic.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -66,13 +66,13 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
           class="arco-picker-suffix-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-calendar-clock"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -124,13 +124,13 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
           class="arco-picker-suffix-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-calendar-clock"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -171,13 +171,13 @@ exports[`renders DatePicker/demo/dateRender.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -210,13 +210,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -227,13 +227,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -263,13 +263,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -280,13 +280,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -315,13 +315,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -332,13 +332,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -374,13 +374,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -391,13 +391,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -426,13 +426,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -443,13 +443,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -478,13 +478,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -495,13 +495,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -542,13 +542,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -559,13 +559,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -613,13 +613,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -630,13 +630,13 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -671,13 +671,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -688,13 +688,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -738,13 +738,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -755,13 +755,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -804,13 +804,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-close"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
@@ -821,13 +821,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -870,13 +870,13 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -917,13 +917,13 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -964,13 +964,13 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -999,13 +999,13 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -1053,13 +1053,13 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -1111,13 +1111,13 @@ exports[`renders DatePicker/demo/disabled-date-advance.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1150,13 +1150,13 @@ exports[`renders DatePicker/demo/extra.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1198,13 +1198,13 @@ exports[`renders DatePicker/demo/extra.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -1244,13 +1244,13 @@ exports[`renders DatePicker/demo/month.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1280,13 +1280,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
             class="arco-picker-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-double-left"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
@@ -1297,13 +1297,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
             class="arco-picker-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-left"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M32 8.4 16.444 23.956 32 39.513"
@@ -1329,13 +1329,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
             class="arco-picker-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="m16 39.513 15.556-15.557L16 8.4"
@@ -1346,13 +1346,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
             class="arco-picker-header-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-double-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
@@ -1363,11 +1363,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
         <div
           class="arco-picker-week-list"
         >
-          <div
-            class="arco-picker-week-list-item"
-          >
-            日
-          </div>
           <div
             class="arco-picker-week-list-item"
           >
@@ -1398,6 +1393,11 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
           >
             六
           </div>
+          <div
+            class="arco-picker-week-list-item"
+          >
+            日
+          </div>
         </div>
         <div
           class="arco-picker-body"
@@ -1405,19 +1405,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
           <div
             class="arco-picker-row"
           >
-            <div
-              class="arco-picker-cell"
-            >
-              <div
-                class="arco-picker-date"
-              >
-                <div
-                  class="arco-picker-date-value"
-                >
-                  29
-                </div>
-              </div>
-            </div>
             <div
               class="arco-picker-cell"
             >
@@ -1496,10 +1483,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1513,6 +1496,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1591,10 +1578,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1608,6 +1591,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1686,10 +1673,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1703,6 +1686,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1781,10 +1768,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1798,6 +1781,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell arco-picker-cell-in-view"
             >
@@ -1876,10 +1863,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="arco-picker-row"
-          >
             <div
               class="arco-picker-cell"
             >
@@ -1893,6 +1876,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="arco-picker-row"
+          >
             <div
               class="arco-picker-cell"
             >
@@ -1971,6 +1958,19 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              class="arco-picker-cell"
+            >
+              <div
+                class="arco-picker-date"
+              >
+                <div
+                  class="arco-picker-date-value"
+                >
+                  10
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2012,13 +2012,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 class="arco-picker-header-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-double-left"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
@@ -2029,13 +2029,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 class="arco-picker-header-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-left"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M32 8.4 16.444 23.956 32 39.513"
@@ -2070,11 +2070,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-week-list-item"
               >
-                日
-              </div>
-              <div
-                class="arco-picker-week-list-item"
-              >
                 一
               </div>
               <div
@@ -2102,6 +2097,11 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               >
                 六
               </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                日
+              </div>
             </div>
             <div
               class="arco-picker-body"
@@ -2109,19 +2109,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-row"
               >
-                <div
-                  class="arco-picker-cell"
-                >
-                  <div
-                    class="arco-picker-date"
-                  >
-                    <div
-                      class="arco-picker-date-value"
-                    >
-                      29
-                    </div>
-                  </div>
-                </div>
                 <div
                   class="arco-picker-cell"
                 >
@@ -2200,10 +2187,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2217,6 +2200,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2295,10 +2282,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2312,6 +2295,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2390,10 +2377,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2407,6 +2390,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2485,10 +2472,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2502,6 +2485,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2580,10 +2567,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell"
                 >
@@ -2597,6 +2580,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell"
                 >
@@ -2672,6 +2659,19 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                       class="arco-picker-date-value"
                     >
                       9
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      10
                     </div>
                   </div>
                 </div>
@@ -2713,13 +2713,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 class="arco-picker-header-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-right"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="m16 39.513 15.556-15.557L16 8.4"
@@ -2730,13 +2730,13 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 class="arco-picker-header-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-double-right"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
@@ -2747,11 +2747,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
             <div
               class="arco-picker-week-list"
             >
-              <div
-                class="arco-picker-week-list-item"
-              >
-                日
-              </div>
               <div
                 class="arco-picker-week-list-item"
               >
@@ -2782,6 +2777,11 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               >
                 六
               </div>
+              <div
+                class="arco-picker-week-list-item"
+              >
+                日
+              </div>
             </div>
             <div
               class="arco-picker-body"
@@ -2789,19 +2789,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
               <div
                 class="arco-picker-row"
               >
-                <div
-                  class="arco-picker-cell"
-                >
-                  <div
-                    class="arco-picker-date"
-                  >
-                    <div
-                      class="arco-picker-date-value"
-                    >
-                      26
-                    </div>
-                  </div>
-                </div>
                 <div
                   class="arco-picker-cell"
                 >
@@ -2880,10 +2867,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2897,6 +2880,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2975,10 +2962,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -2992,6 +2975,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3070,10 +3057,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3087,6 +3070,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3165,10 +3152,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3182,6 +3165,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3260,10 +3247,6 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="arco-picker-row"
-              >
                 <div
                   class="arco-picker-cell arco-picker-cell-in-view"
                 >
@@ -3277,6 +3260,10 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-picker-row"
+              >
                 <div
                   class="arco-picker-cell"
                 >
@@ -3355,6 +3342,19 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="arco-picker-cell"
+                >
+                  <div
+                    class="arco-picker-date"
+                  >
+                    <div
+                      class="arco-picker-date-value"
+                    >
+                      7
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -3386,13 +3386,13 @@ exports[`renders DatePicker/demo/quarter.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3530,13 +3530,13 @@ exports[`renders DatePicker/demo/range.md correctly 1`] = `
           class="arco-picker-suffix-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-calendar"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3571,13 +3571,13 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -3613,13 +3613,13 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3660,13 +3660,13 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3707,13 +3707,13 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3747,13 +3747,13 @@ exports[`renders DatePicker/demo/shortcuts-placement-left.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3795,13 +3795,13 @@ exports[`renders DatePicker/demo/shortcuts-placement-left.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -3835,13 +3835,13 @@ exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -3877,13 +3877,13 @@ exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -3931,13 +3931,13 @@ exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar-clock"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
@@ -4041,19 +4041,386 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
         class="arco-picker-suffix-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-calendar"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
           />
         </svg>
       </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:8px"
+      >
+        <div
+          aria-autocomplete="list"
+          aria-controls="arco-select-popup-0"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="arco-select arco-select-single arco-select-size-default"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="arco-select-view"
+            title="Asia/Shanghai"
+          >
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="Asia/Shanghai"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              Asia/Shanghai
+            </span>
+            <div
+              aria-hidden="true"
+              class="arco-select-suffix"
+            >
+              <div
+                class="arco-select-arrow-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:8px"
+      >
+        <div
+          class="arco-picker arco-picker-size-default"
+        >
+          <div
+            class="arco-picker-input"
+          >
+            <input
+              class="arco-picker-start-time"
+              placeholder="请选择日期"
+              value="2022-02-22 08:00:00"
+            />
+          </div>
+          <div
+            class="arco-picker-suffix"
+          >
+            <span
+              class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-close"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-picker-suffix-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-calendar-clock"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-picker arco-picker-range arco-picker-size-default"
+        >
+          <div
+            class="arco-picker-input arco-picker-input-active"
+          >
+            <input
+              placeholder="开始日期"
+              value="2022-02-22 08:00:00"
+            />
+          </div>
+          <span
+            class="arco-picker-separator"
+          >
+            -
+          </span>
+          <div
+            class="arco-picker-input"
+          >
+            <input
+              placeholder="结束日期"
+              value="2022-03-22 10:00:00"
+            />
+          </div>
+          <div
+            class="arco-picker-suffix"
+          >
+            <span
+              class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-close"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-picker-suffix-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-calendar-clock"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+      role="alert"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          <div
+            class="arco-space arco-space-vertical"
+          >
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div
+                class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
+              >
+                <span
+                  class="arco-tag-content"
+                >
+                  DatePicker
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Locale String:
+                  </b>
+                </span>
+                2/22/2022, 8:00:00 AM
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    ISO String:
+                  </b>
+                </span>
+                2022-02-22T00:00:00.000Z
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Timestamp:
+                  </b>
+                </span>
+                1645488000000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+      role="alert"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          <div
+            class="arco-space arco-space-vertical"
+          >
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div
+                class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
+              >
+                <span
+                  class="arco-tag-content"
+                >
+                  RangePicker
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Locale String:
+                  </b>
+                </span>
+                2/22/2022, 8:00:00 AM --- 3/22/2022, 10:00:00 AM
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    ISO String:
+                  </b>
+                </span>
+                2022-02-22T00:00:00.000Z --- 2022-03-22T02:00:00.000Z
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Timestamp:
+                  </b>
+                </span>
+                1645488000000 --- 1647914400000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -4091,6 +4458,373 @@ exports[`renders DatePicker/demo/triggerElement.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-right:8px"
+      >
+        <div
+          aria-autocomplete="list"
+          aria-controls="arco-select-popup-1"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="arco-select arco-select-single arco-select-size-default"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="arco-select-view"
+            title="UTC "
+          >
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="UTC "
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              UTC 
+            </span>
+            <div
+              aria-hidden="true"
+              class="arco-select-suffix"
+            >
+              <div
+                class="arco-select-arrow-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+        style="margin-right:8px"
+      >
+        <div
+          class="arco-picker arco-picker-size-default"
+        >
+          <div
+            class="arco-picker-input"
+          >
+            <input
+              class="arco-picker-start-time"
+              placeholder="请选择日期"
+              value="2022-02-22 00:00:00"
+            />
+          </div>
+          <div
+            class="arco-picker-suffix"
+          >
+            <span
+              class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-close"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-picker-suffix-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-calendar-clock"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <div
+          class="arco-picker arco-picker-range arco-picker-size-default"
+        >
+          <div
+            class="arco-picker-input arco-picker-input-active"
+          >
+            <input
+              placeholder="开始日期"
+              value="2022-02-22 00:00:00"
+            />
+          </div>
+          <span
+            class="arco-picker-separator"
+          >
+            -
+          </span>
+          <div
+            class="arco-picker-input"
+          >
+            <input
+              placeholder="结束日期"
+              value="2022-03-22 02:00:00"
+            />
+          </div>
+          <div
+            class="arco-picker-suffix"
+          >
+            <span
+              class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-close"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                />
+              </svg>
+            </span>
+            <span
+              class="arco-picker-suffix-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-calendar-clock"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:8px"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+      role="alert"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          <div
+            class="arco-space arco-space-vertical"
+          >
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div
+                class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
+              >
+                <span
+                  class="arco-tag-content"
+                >
+                  DatePicker
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Locale String:
+                  </b>
+                </span>
+                2/22/2022, 8:00:00 AM
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    ISO String:
+                  </b>
+                </span>
+                2022-02-22T00:00:00.000Z
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Timestamp:
+                  </b>
+                </span>
+                1645488000000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-alert arco-alert-info"
+      role="alert"
+    >
+      <div
+        class="arco-alert-content-wrapper"
+      >
+        <div
+          class="arco-alert-content"
+        >
+          <div
+            class="arco-space arco-space-vertical"
+          >
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div
+                class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
+              >
+                <span
+                  class="arco-tag-content"
+                >
+                  RangePicker
+                </span>
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Locale String:
+                  </b>
+                </span>
+                2/22/2022, 8:00:00 AM --- 3/22/2022, 10:00:00 AM
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+              style="margin-bottom:8px"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    ISO String:
+                  </b>
+                </span>
+                2022-02-22T00:00:00.000Z --- 2022-03-22T02:00:00.000Z
+              </div>
+            </div>
+            <div
+              class="arco-space-item"
+            >
+              <div>
+                <span
+                  class="arco-typography"
+                >
+                  <b>
+                    Timestamp:
+                  </b>
+                </span>
+                1645488000000 --- 1647914400000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders DatePicker/demo/week.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
@@ -4112,13 +4846,13 @@ exports[`renders DatePicker/demo/week.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -4150,13 +4884,13 @@ exports[`renders DatePicker/demo/year.md correctly 1`] = `
       class="arco-picker-suffix-icon"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-calendar"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"

@@ -17,39 +17,38 @@ Add a prefix(suffix) in the input box by specifying `prefix`(`suffix`).
 import { Input, Space } from '@arco-design/web-react';
 import { IconUser, IconSearch, IconInfoCircle } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space direction="vertical">
-    <Space wrap>
-      <Input
-        style={{ width: 350 }}
-        prefix={<IconUser />}
-        placeholder="Please enter"
-      />
-      <Input
-        allowClear
-        style={{ width: 350 }}
-        suffix={<IconInfoCircle />}
-        placeholder="Please enter"
-      />
+const App = () => {
+  return (
+    <Space direction="vertical">
+      <Space wrap>
+        <Input style={{ width: 350 }} prefix={<IconUser />} placeholder="Please enter" />
+        <Input
+          allowClear
+          style={{ width: 350 }}
+          suffix={<IconInfoCircle />}
+          placeholder="Please enter"
+        />
+      </Space>
+      <Space wrap>
+        <Input
+          style={{ width: 350 }}
+          prefix={<IconUser />}
+          suffix={<IconInfoCircle />}
+          placeholder="Please enter"
+        />
+        <Input
+          style={{ width: 350 }}
+          addBefore="+86"
+          addAfter={<IconSearch />}
+          prefix={<IconUser />}
+          suffix={<IconInfoCircle />}
+          allowClear
+          placeholder="Please enter"
+        />
+      </Space>
     </Space>
-    <Space wrap>
-      <Input
-        style={{ width: 350 }}
-        prefix={<IconUser />}
-        suffix={<IconInfoCircle />}
-        placeholder="Please enter"
-      />
-      <Input
-        style={{ width: 350 }}
-        addBefore="+86"
-        addAfter={<IconSearch />}
-        prefix={<IconUser />}
-        suffix={<IconInfoCircle />}
-        allowClear
-        placeholder="Please enter"
-      />
-    </Space>
-  </Space>,
-  CONTAINER
-);
+  );
+};
+
+export default App;
 ```

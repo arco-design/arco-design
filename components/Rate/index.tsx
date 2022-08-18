@@ -19,7 +19,7 @@ const defaultProps: RateProps = {
 };
 
 function Rate(baseProps: RateProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<RateProps>(baseProps, defaultProps, componentConfig?.Rate);
   const {
     style = {},
@@ -49,6 +49,7 @@ function Rate(baseProps: RateProps, ref) {
     {
       [`${prefixCls}-readonly`]: readonly,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -124,6 +125,15 @@ function Rate(baseProps: RateProps, ref) {
     const CharacterWrapper = tooltip ? Tooltip : React.Fragment;
     const tooltipProps = tooltip ? { content: tooltip } : {};
 
+    function getAriaProps(isHalf?: boolean) {
+      return {
+        role: 'radio',
+        'aria-checked': index + (isHalf ? 0.5 : 1) <= _usedIndex,
+        'aria-setsize': count,
+        'aria-posinset': index + (isHalf ? 0.5 : 1),
+      };
+    }
+
     return (
       <CharacterWrapper key={index} {...tooltipProps}>
         <div
@@ -134,11 +144,20 @@ function Rate(baseProps: RateProps, ref) {
               setAnimation(false);
             }
           }}
+          {...(!allowHalf ? getAriaProps() : {})}
         >
-          <div className={`${prefixCls}-character-left`} {...leftProps}>
+          <div
+            className={`${prefixCls}-character-left`}
+            {...leftProps}
+            {...(allowHalf ? getAriaProps(true) : {})}
+          >
             {_usedCharacter}
           </div>
-          <div className={`${prefixCls}-character-right`} {...rightProps}>
+          <div
+            className={`${prefixCls}-character-right`}
+            {...rightProps}
+            {...(allowHalf ? getAriaProps() : {})}
+          >
             {_usedCharacter}
           </div>
         </div>

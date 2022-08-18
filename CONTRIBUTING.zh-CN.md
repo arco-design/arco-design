@@ -31,7 +31,14 @@
 1. 在仓库根目录下执行 `yarn run init`。
 1. 执行 `yarn start` 启动和预览站点.
 1. 对代码库进行更改。如果适用的话，请确保写了相应的测试。
-1. 确认执行 `yarn test` 后所有的测试都是通过的。开发过程中可以用 `yarn test --watch TestName` 来运行指定的测试。
+1. 确认执行 `yarn test` 后所有的测试都是通过的。开发过程中可以用 `yarn test:watch TestName` (例如 `yarn test:watch Alert`) 来运行指定的测试以节省时间。
+
+    注意: 在个人电脑运行 `yarn test` 可能导致资源高占用、甚至系统卡死。另一种测试方法是：
+    1. 在你的 fork 中启用 Github Action
+    2. 在你的 fork 内创建一个**内部 PR** 以触发 CI
+    3. 在你的 fork 中查看测试结果
+
+
 1. 如果进行了任何 `props` 更改（即 `interface.ts` 文件），请不要手动更新组件下的 `README` 文件。运行 `yarn docgen` 会自动生成 `README` 文件。
 1. 提交 git commit, 请同时遵守 [Commit 规范](#commit-指南)。
 1. 提交 pull request, 如果有对应的 issue，请进行[关联](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)。
@@ -59,7 +66,14 @@ $ yarn build
 
 # 运行完整的单元测试
 $ yarn test
+
+# 启动 Storybook 以预览或调试组件 （无热加载，需要先 `yarn build` 才能使用变更后代码）
+$ yarn demo
 ```
+
+### 组件 demo
+
+组件 demo 为一个完整的代码片段，建议使用 `tsx` 标记代码块语言，并安装[TS in Markdown](https://marketplace.visualstudio.com/items?itemName=amour1688.ts-in-markdown)，以便在编辑器中获得语法提示。代码块里的「默认导出」就是 demo 的渲染内容。
 
 ## Commit 指南
 

@@ -8,6 +8,7 @@ import { OptionInfo, SelectProps } from '../Select/interface';
 import { isSelectOption, isSelectOptGroup } from '../Select/utils';
 import { Enter, Esc } from '../_util/keycode';
 import omit from '../_util/omit';
+import { pickDataAttributes } from '../_util/pick';
 import { RefInputType } from '../Input/interface';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import { AutoCompleteProps } from './interface';
@@ -107,11 +108,13 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
 
   useImperativeHandle(ref, () => refInput.current);
 
-  const TriggerElement = React.cloneElement(triggerElement, {
+  const usedTriggerElement =
+    typeof triggerElement === 'function' ? triggerElement({ value }) : triggerElement;
+  const TriggerElement = React.cloneElement(usedTriggerElement, {
     ref: (node) => {
       refInput.current = node;
 
-      const { ref: originRef } = triggerElement as any;
+      const { ref: originRef } = usedTriggerElement as any;
       if (typeof originRef === 'function') {
         originRef(node);
       }
@@ -124,6 +127,7 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
     disabled,
     allowClear,
     ...inputProps,
+    ...pickDataAttributes(props),
     // Empty tag to ensure the consistency of the dom structure of input, such that input won't accidentally lose focus due to structure change on input.
     suffix: loading ? <IconLoading /> : inputProps?.suffix || <i />,
     onFocus: (event) => {

@@ -16,11 +16,11 @@ Pass in `AutoComplete.Option` as the `children` of the component instead of usin
 ```js
 import { useState } from 'react';
 import { AutoComplete } from '@arco-design/web-react';
-
 const { Option } = AutoComplete;
 
-function Demo() {
+function App() {
   const [options, setOptions] = useState([]);
+
   const handleSearch = (inputValue) => {
     setOptions(
       inputValue ? new Array(5).fill(null).map((_, index) => `${inputValue}_${index}`) : []
@@ -28,7 +28,11 @@ function Demo() {
   };
 
   return (
-    <AutoComplete placeholder="Please Enter" style={{ width: 154 }} onSearch={handleSearch}>
+    <AutoComplete
+      placeholder="Please Enter"
+      style={{ width: 154 }}
+      onSearch={handleSearch}
+    >
       {options.map((option) => (
         <Option key={option} value={option}>
           {option}
@@ -38,5 +42,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -1,3 +1,27 @@
+## 2.38.0
+
+2022-07-29
+
+### 🆕 功能升级
+
+- `TimePicker` 组件添加 `triggerElement` 属性支持自定义触发器。([#1199](https://github.com/arco-design/arco-design/pull/1199))
+
+## 2.32.0
+
+2022-04-15
+
+### 🐛 问题修复
+
+- 修复 `TimePicker` 输入正确时不触发 `onSelect` 事件的 bug。([#769](https://github.com/arco-design/arco-design/pull/769))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 功能升级
+
+- `TimePicker` 组件支持 `utcOffset` 和 `timezone` 来设置 UTC 时间和时区。([#604](https://github.com/arco-design/arco-design/pull/604))
+
 ## 2.27.1
 
 2021-12-24

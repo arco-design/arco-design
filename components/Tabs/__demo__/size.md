@@ -1,6 +1,6 @@
 ---
 order: 7
-title: 
+title:
   zh-CN: 不同尺寸
   en-US: Size
 ---
@@ -16,15 +16,15 @@ Use `Size` to set the size of the tab.
 ```js
 import { useState } from 'react';
 import { Tabs, Radio, Typography } from '@arco-design/web-react';
-
 const TabPane = Tabs.TabPane;
+const style = {
+  textAlign: 'center',
+  marginTop: 20,
+};
 
-const style = { textAlign: 'center', marginTop: 20 };
-
-function Demo() {
+function App() {
   const [type, setType] = useState('line');
   const [size, setSize] = useState('default');
-
   return (
     <div>
       <span style={{ marginRight: 20 }}>Size:</span>
@@ -34,7 +34,7 @@ function Demo() {
         <Radio value="default">default</Radio>
         <Radio value="large">large</Radio>
       </Radio.Group>
-      <br/>
+      <br />
       <span style={{ marginRight: 20 }}>Type:</span>
       <Radio.Group name="type" value={type} onChange={setType} style={{ marginBottom: 40 }}>
         <Radio value="line">line</Radio>
@@ -46,7 +46,7 @@ function Demo() {
       </Radio.Group>
 
       <Tabs type={type} size={size}>
-        <TabPane key="1" title="Tab 1" >
+        <TabPane key="1" title="Tab 1">
           <Typography.Paragraph style={style}>Content of Tab Panel 1</Typography.Paragraph>
         </TabPane>
         <TabPane key="2" title="Tab 2" disabled>
@@ -63,5 +63,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

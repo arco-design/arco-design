@@ -68,7 +68,14 @@ const CircleProgress = (
   const color = isLinearGradient ? `url(#${linearGradientId})` : (props.color as string);
 
   let dom = (
-    <div className={`${cls}-wrapper`} style={{ width, height: width }}>
+    <div
+      className={`${cls}-wrapper`}
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={percent}
+      style={{ width, height: width }}
+    >
       <svg viewBox={`0 0 ${width} ${width}`} className={`${svgCls}`}>
         {isLinearGradient && (
           <defs>

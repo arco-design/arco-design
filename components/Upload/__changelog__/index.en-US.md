@@ -1,3 +1,45 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- fix `accept=*` does not work in `Upload`([#1233](https://github.com/arco-design/arco-design/pull/1233))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- The `Upload` component supports listening to the `onDrop` event([#1071](https://github.com/arco-design/arco-design/pull/1071))
+
+### 🐛 BugFix
+
+- fix `Upload` can upload file type not in accept([#1097](https://github.com/arco-design/arco-design/pull/1097))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 Feature
+
+- The `Upload` component supports rendering images via the `showUploadList.imageRender` property.([#925](https://github.com/arco-design/arco-design/pull/925))
+- The `Upload` component supports rendering upload progress nodes via the `showUploadList.progressRender` property.([#925](https://github.com/arco-design/arco-design/pull/925))
+- The `Upload` component supports `children` passed in the function type to render the node content that triggers the upload.([#925](https://github.com/arco-design/arco-design/pull/925))
+
+### 💅 Style
+
+- The default gray background has been added to the picture display area in the photo wall mode of the `Upload` component.([#925](https://github.com/arco-design/arco-design/pull/925))
+
+## 2.33.0
+
+2022-05-13
+
+### 🐛 BugFix
+
+- Adjust the order of parameters in the upload request of the `Upload` component (the `file` field is added last to `FormData`).([#857](https://github.com/arco-design/arco-design/pull/857))
+
 ## 2.29.0
 
 2022-02-11

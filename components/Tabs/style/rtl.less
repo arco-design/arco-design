@@ -1,0 +1,95 @@
+.@{tabs-prefix-cls}-rtl {
+  direction: rtl;
+
+  .@{tabs-prefix-cls} {
+    &-close-icon {
+      margin-left: 0;
+      margin-right: @tabs-margin-close-icon-left;
+    }
+
+    &-left-icon,
+    &-right-icon {
+      margin-left: @tabs-spacing-nav-icon-header;
+      margin-right: @tabs-padding-header-wrapper-horizontal;
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-line {
+    > .@{tabs-prefix-cls}-header-nav-horizontal {
+      .@{tabs-prefix-cls}-header-scroll {
+        > .@{tabs-prefix-cls}-header-title {
+          &:first-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-line,
+  .@{tabs-prefix-cls}-header-nav-text {
+    > .@{tabs-prefix-cls}-header-nav-horizontal {
+      .@{tabs-prefix-cls}-header-no-padding {
+        > .@{tabs-prefix-cls}-header-title {
+          &:first-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-card,
+  .@{tabs-prefix-cls}-header-nav-card-gutter {
+    .@{tabs-prefix-cls}-header-title-editable {
+      padding-left: @tabs-card-padding-title-right_editable;
+      padding-right: 0;
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-card .@{tabs-prefix-cls}-header-title {
+    border-right: @tabs-card-border-width solid @tabs-card-color-title-border;
+    border-left: none;
+
+    &:last-child {
+      border-left: @tabs-card-border-width solid @tabs-card-color-title-border;
+      border-top-left-radius: @tabs-card-border-radius;
+      border-top-right-radius: 0;
+    }
+
+    &:first-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: @tabs-card-border-radius;
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-card-gutter .@{tabs-prefix-cls}-header-title {
+    margin-right: @tabs-card-gutter-spacing-horizontal;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-text {
+    .@{tabs-prefix-cls}-header-title {
+      &:not(:first-of-type)::before {
+        left: initial;
+        right: -(@tabs-text-margin-title-horizontal + (@tabs-text-size-separator-width / 2));
+      }
+    }
+  }
+
+  .@{tabs-prefix-cls}-header-nav-capsule.@{tabs-prefix-cls}-header-nav-horizontal {
+    .@{tabs-prefix-cls}-header-title:not(:first-of-type) {
+      margin-left: 0;
+      margin-right: @tabs-capsule-margin-title-horizontal;
+
+      &::before {
+        right: -(@tabs-capsule-margin-title-horizontal / 2) - (@tabs-capsule-size-separator-width /
+              2);
+        left: initial;
+      }
+    }
+  }
+}

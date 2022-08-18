@@ -1,3 +1,11 @@
+## 2.32.0
+
+2022-04-15
+
+### 🆎 TypeScript
+
+- Adjusted the `children` property type definition of `Checkbox`.([#753](https://github.com/arco-design/arco-design/pull/753))
+
 ## 2.29.0
 
 2022-02-11

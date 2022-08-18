@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '../../../tests/util';
 import Steps from '..';
 
 const Step = Steps.Step;
 
 describe('Steps type circle test', () => {
   it('direction horizontal', () => {
-    const component = mount(
+    const component = render(
       <Steps current={1}>
         <Step title="Step1" description="Description1" />
         <Step title="Step2" description="Description2" />
@@ -20,20 +20,24 @@ describe('Steps type circle test', () => {
     expect(component.find('.arco-steps-item-tail')).toHaveLength(0);
 
     for (let i = 0; i < 3; i++) {
-      const item = component.find('.arco-steps-item').at(i);
+      const item = component.find('.arco-steps-item').item(i);
 
       if (i === 0) {
-        expect(item.hasClass('arco-steps-item-active')).toBe(true);
+        expect(item.className).toContain('arco-steps-item-active');
       }
 
-      expect(item.find('.arco-steps-item-icon .arco-steps-icon').text()).toBe(String(i + 1));
-      expect(item.find('.arco-steps-item-title').text()).toBe(`Step${i + 1}`);
-      expect(item.find('.arco-steps-item-description').text()).toBe(`Description${i + 1}`);
+      expect(item.querySelector('.arco-steps-item-icon .arco-steps-icon')?.innerHTML).toBe(
+        String(i + 1)
+      );
+      expect(item.querySelector('.arco-steps-item-title')?.innerHTML).toBe(`Step${i + 1}`);
+      expect(item.querySelector('.arco-steps-item-description')?.innerHTML).toBe(
+        `Description${i + 1}`
+      );
     }
   });
 
   it('direction vertical', () => {
-    const component = mount(
+    const component = render(
       <Steps direction="vertical" current={1}>
         <Step title="Step1" description="Description1" />
         <Step title="Step2" description="Description2" />
@@ -47,15 +51,19 @@ describe('Steps type circle test', () => {
     expect(component.find('.arco-steps-item-tail')).toHaveLength(3);
 
     for (let i = 0; i < 3; i++) {
-      const item = component.find('.arco-steps-item').at(i);
-      expect(item.find('.arco-steps-item-icon .arco-steps-icon').text()).toBe(String(i + 1));
-      expect(item.find('.arco-steps-item-title').text()).toBe(`Step${i + 1}`);
-      expect(item.find('.arco-steps-item-description').text()).toBe(`Description${i + 1}`);
+      const item = component.find('.arco-steps-item').item(i);
+      expect(item.querySelector('.arco-steps-item-icon .arco-steps-icon')?.innerHTML).toBe(
+        String(i + 1)
+      );
+      expect(item.querySelector('.arco-steps-item-title')?.innerHTML).toBe(`Step${i + 1}`);
+      expect(item.querySelector('.arco-steps-item-description')?.innerHTML).toBe(
+        `Description${i + 1}`
+      );
     }
   });
 
   it('label vertical', () => {
-    const component = mount(
+    const component = render(
       <Steps labelPlacement="vertical" current={1}>
         <Step title="Step1" description="Description1" />
         <Step title="Step2" description="Description2" />
@@ -68,15 +76,19 @@ describe('Steps type circle test', () => {
     expect(component.find('.arco-steps-item-tail')).toHaveLength(3);
 
     for (let i = 0; i < 3; i++) {
-      const item = component.find('.arco-steps-item').at(i);
-      expect(item.find('.arco-steps-item-icon .arco-steps-icon').text()).toBe(String(i + 1));
-      expect(item.find('.arco-steps-item-title').text()).toBe(`Step${i + 1}`);
-      expect(item.find('.arco-steps-item-description').text()).toBe(`Description${i + 1}`);
+      const item = component.find('.arco-steps-item').item(i);
+      expect(item.querySelector('.arco-steps-item-icon .arco-steps-icon')?.innerHTML).toBe(
+        String(i + 1)
+      );
+      expect(item.querySelector('.arco-steps-item-title')?.innerHTML).toBe(`Step${i + 1}`);
+      expect(item.querySelector('.arco-steps-item-description')?.innerHTML).toBe(
+        `Description${i + 1}`
+      );
     }
   });
 
   it('lineless', () => {
-    const component = mount(
+    const component = render(
       <Steps lineless labelPlacement="vertical" current={1}>
         <Step title="Step1" description="Description1" />
         <Step title="Step2" description="Description2" />

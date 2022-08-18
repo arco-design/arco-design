@@ -15,10 +15,9 @@ An example that `Mentions` is used with `Form`,
 
 ```js
 import { Form, Input, Button, Mentions } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
 
-function Demo() {
+function App() {
   const onValuesChange = (changeValue, values) => {
     console.log('onValuesChange: ', changeValue, values);
   };
@@ -26,9 +25,7 @@ function Demo() {
   return (
     <Form
       style={{ width: 360 }}
-      initialValues={{
-        task: 'Component usage',
-      }}
+      initialValues={{ task: 'Component usage' }}
       onValuesChange={onValuesChange}
     >
       <FormItem label="Task" field="task" rules={[{ required: true, message: 'Task is required' }]}>
@@ -42,12 +39,8 @@ function Demo() {
           rows={2}
         />
       </FormItem>
-      <FormItem
-        wrapperCol={{
-          offset: 5,
-        }}
-      >
-        <Button style={{ marginRight: 12 }} type="primary">
+      <FormItem wrapperCol={{ offset: 5 }}>
+        <Button style={{ margin: '0 12px' }} type="primary">
           Submit
         </Button>
         <Button>Reset</Button>
@@ -56,5 +49,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

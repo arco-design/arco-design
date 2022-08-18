@@ -1,3 +1,51 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 问题修复
+
+- 修复 `Input` 组件导致的控制台 React Warning(not recognize prop on a DOM element)。([#1070](https://github.com/arco-design/arco-design/pull/1070))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 问题修复
+
+- 修复 `Input.TextArea` 组件输入中文时长度有可能超过 `maxLength` 的 bug。([#988](https://github.com/arco-design/arco-design/pull/988))
+
+## 2.32.1
+
+2022-04-22
+
+### 💎 功能优化
+
+- 优化 `Input.Textarea` 组件外部调用 `focus` 时光标位置。([#800](https://github.com/arco-design/arco-design/pull/800))
+
+## 2.31.0
+
+2022-03-25
+
+### 💅 样式更新
+
+- 修复在特定场景下 `Input` 的清除按钮无法隐藏的bug([#685](https://github.com/arco-design/arco-design/pull/685))
+
+## 2.30.2
+
+2022-03-18
+
+### 🐛 问题修复
+
+- 修复 `Input` 同时设置  `allowClear` 和 `readOnly` 属性时， 依然展示清除按钮的问题。([#640](https://github.com/arco-design/arco-design/pull/640))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- 修复 `Input` 组件粘贴文本并清空之后，无法再次粘贴同样文本的 bug。([#584](https://github.com/arco-design/arco-design/pull/584))
+
 ## 2.29.0
 
 2022-02-11

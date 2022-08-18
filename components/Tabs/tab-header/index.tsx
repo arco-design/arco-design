@@ -7,7 +7,7 @@ import TabHeaderTitle from './tab-title';
 import IconPlus from '../../../icon/react-icon/IconPlus';
 import cs from '../../_util/classNames';
 import { setTransformStyle } from '../../_util/style';
-import { getRectDiff, updateScrollOffset } from '../utils';
+import { getKeyDownEvent, getRectDiff, updateScrollOffset } from '../utils';
 import { TabsContext } from '../tabs';
 import { TabsProps } from '..';
 import TabInk from './tab-ink';
@@ -15,6 +15,7 @@ import IconHover from '../../_class/icon-hover';
 import useDomSize from '../hook/useDomSize';
 import throttleByRaf from '../../_util/throttleByRaf';
 import useHeaderScroll from '../hook/useHeaderScroll';
+import { ConfigContext } from '../../ConfigProvider';
 
 const DIRECTION_VERTICAL = 'vertical';
 const ALIGN_RIGHT = 'right';
@@ -64,10 +65,13 @@ const getCurrentHeaderOffset = ({
 
 const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const ctxProps = useContext(TabsContext);
+  const { rtl } = useContext(ConfigContext);
   const mergeProps = { ...props, ...ctxProps };
 
   const [headerWrapperRef, headerWrapperSize, setHeaderWrapperSize] = useDomSize<HTMLDivElement>();
   const [headerRef, headerSize, setHeaderSize] = useDomSize<HTMLDivElement>();
+  const [scrollWrapperRef, scrollWrapperSize, setScrollWrapperSize] = useDomSize<HTMLDivElement>();
+  const [extraRef, extraSize, setExtraSize] = useDomSize<HTMLDivElement>();
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -101,18 +105,34 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     ? { ...SCROLL_MAP, ...scrollAfterEdit }
     : SCROLL_MAP;
 
-  const align = type === 'capsule' ? ALIGN_RIGHT : ALIGN_LEFT;
+  const [left, right]: Array<'left' | 'right'> = rtl
+    ? [ALIGN_RIGHT, ALIGN_LEFT]
+    : [ALIGN_LEFT, ALIGN_RIGHT];
+  const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
+    const headerContentHeight = scrollWrapperSize.height - extraSize.height;
+    const headerContentWidth = scrollWrapperSize.width - extraSize.width;
     const res =
       mergeProps.direction === 'vertical'
-        ? headerWrapperSize.height < headerSize.height
-        : headerWrapperSize.width < headerSize.width;
+        ? headerContentHeight < headerSize.height
+        : headerContentWidth < headerSize.width;
 
     return res;
-  }, [mergeProps.direction, headerWrapperSize, headerSize]);
+  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize]);
+
+  const updateScrollWrapperSize = () => {
+    if (scrollWrapperRef.current) {
+      const dom = scrollWrapperRef.current;
+      setScrollWrapperSize({
+        height: (dom as HTMLElement).offsetHeight,
+        width: (dom as HTMLElement).offsetWidth,
+      });
+    }
+  };
 
   const onWrapperResize = throttleByRaf((entry) => {
+    updateScrollWrapperSize();
     const dom = entry[0] && entry[0].target;
     if (dom) {
       setHeaderWrapperSize({
@@ -122,10 +142,22 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       });
     }
   });
+
   const onHeaderResize = throttleByRaf((entry) => {
     const dom = entry[0] && entry[0].target;
     if (dom) {
       setHeaderSize({
+        height: (dom as HTMLElement).offsetHeight,
+        width: (dom as HTMLElement).offsetWidth,
+        domRect: dom.getBoundingClientRect(),
+      });
+    }
+  });
+
+  const onExtraResize = throttleByRaf((entry) => {
+    const dom = entry[0] && entry[0].target;
+    if (dom) {
+      setExtraSize({
         height: (dom as HTMLElement).offsetHeight,
         width: (dom as HTMLElement).offsetWidth,
         domRect: dom.getBoundingClientRect(),
@@ -272,7 +304,14 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     return (
       isEditable &&
       showAddButton && (
-        <div className={`${prefixCls}-add-icon`} onClick={handleAdd}>
+        <div
+          className={`${prefixCls}-add-icon`}
+          aria-label="add tab"
+          tabIndex={0}
+          role="button"
+          onClick={handleAdd}
+          {...getKeyDownEvent({ onPressEnter: handleAdd })}
+        >
           {addButton || (
             <IconHover prefix={`${prefixCls}-add`}>
               <span className={`${prefixCls}-add`}>{icons?.add || <IconPlus />}</span>
@@ -312,10 +351,12 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           [`${prefixCls}-header-overflow-scroll`]: isScroll,
           [`${prefixCls}-header-overflow-dropdown`]: isDropdown,
         })}
+        ref={scrollWrapperRef}
       >
         {isScroll && (
           <TabNavIcon
             iconPos="prev"
+            rtl={rtl}
             prefixCls={prefixCls}
             currentOffset={headerOffset}
             headerSize={headerSize}
@@ -326,7 +367,6 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
             onChange={updateHeaderOffset}
           />
         )}
-
         <ResizeObserver onResize={onWrapperResize}>
           <div className={`${prefixCls}-header-wrapper`} ref={headerWrapperRef}>
             <ResizeObserver onResize={onHeaderResize}>
@@ -358,6 +398,8 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
                     editable={isEditable && child.props.closable !== false}
                     deleteIcon={icons?.delete}
                     deleteButton={deleteButton}
+                    getIdPrefix={ctxProps.getIdPrefix}
+                    index={index}
                   />
                 ))}
                 {type === 'line' && (
@@ -384,6 +426,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
         {isScroll && (
           <TabNavIcon
             prefixCls={prefixCls}
+            rtl={rtl}
             currentOffset={headerOffset}
             headerSize={headerSize}
             headerWrapperSize={headerWrapperSize}
@@ -405,10 +448,12 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           />
         )}
         {((isEditable && isScrollable) || extra) && (
-          <div className={`${prefixCls}-header-extra`}>
-            {isScrollable && renderAddIcon(isEditable)}
-            {extra}
-          </div>
+          <ResizeObserver onResize={onExtraResize}>
+            <div className={`${prefixCls}-header-extra`} ref={extraRef}>
+              {isScrollable && renderAddIcon(isEditable)}
+              {extra}
+            </div>
+          </ResizeObserver>
         )}
       </div>
     </div>

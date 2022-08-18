@@ -16,11 +16,20 @@ Show all configuration items.
 ```js
 import { Pagination } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <div>
-    <Pagination showTotal total={200} showJumper sizeCanChange style={{ width: 800, marginBottom: 20 }} />
-    <Pagination disabled showTotal total={200} showJumper sizeCanChange style={{ width: 800 }} />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Pagination
+        showTotal
+        total={200}
+        showJumper
+        sizeCanChange
+        style={{ width: 800, marginBottom: 20 }}
+      />
+      <Pagination disabled showTotal total={200} showJumper sizeCanChange style={{ width: 800 }} />
+    </div>
+  );
+};
+
+export default App;
 ```

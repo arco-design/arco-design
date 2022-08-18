@@ -16,33 +16,31 @@ Use `popupVisible` and `onVisibleChange` to control the expansion and collapse o
 The specific trigger timing of onVisibleChange can be found in the [Trigger](/react/components/trigger#controlled-usage) component document
 
 ```js
+import React from 'react';
 import { Tooltip, Button, Switch, Typography } from '@arco-design/web-react';
 
 const { Text } = Typography;
 
-function Demo () {
-  const [visible, setVisible] = React.useState(false)
-
-  return <div>
-      <Text style={{ marginRight: 10 }}>{visible ? 'Hide' : 'Show'} Tooltip</Text>
+function App() {
+  const [visible, setVisible] = React.useState(false);
+  return (
+    <div>
+      <Text style={{ marginRight: 10, }} >
+        {visible ? 'Hide' : 'Show'} Tooltip
+      </Text>
       <Switch
-        onChange={() => {setVisible(!visible)}}
-        >
-      </Switch>
-      <br/>
-      <br/>
-      <Tooltip
-        position="bottom"
-        content="Mouse over to display tooltip"
-        popupVisible={visible}
-      >
+        onChange={() => {
+          setVisible(!visible);
+        }}
+      ></Switch>
+      <br />
+      <br />
+      <Tooltip position="bottom" content="Mouse over to display tooltip" popupVisible={visible}>
         <Button>Be Controled</Button>
       </Tooltip>
-  </div>
+    </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

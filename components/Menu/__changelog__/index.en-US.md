@@ -1,3 +1,47 @@
+## 2.36.0
+
+2022-06-24
+
+### 💎 Enhancement
+
+- The `Menu` component supports switching operations using the Tab key.([#1038](https://github.com/arco-design/arco-design/pull/1038))
+
+### 💅 Style
+
+- Fixed the issue that the arrow direction on the right side of `Menu.SubMenu` did not change when it was expanded.([#1022](https://github.com/arco-design/arco-design/pull/1022))
+
+## 2.35.0
+
+2022-06-10
+
+### 💅 Style
+
+- Fixed `Menu` component submenu title bar icons not vertically centered.([#985](https://github.com/arco-design/arco-design/pull/985))
+
+## 2.34.0
+
+2022-05-27
+
+### 💅 Style
+
+- Adjust the position of the popup layer when the submenu of `Menu` pops up from the left.([#923](https://github.com/arco-design/arco-design/pull/923))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed the bug that the icon of SubMenu title was not displayed when Menu is collapsed.([#889](https://github.com/arco-design/arco-design/pull/889))
+
+## 2.32.2
+
+2022-04-29
+
+### 🐛 BugFix
+
+- Fixed the bug that the expanded SubMenu was collapsed when the `collapse` property of the `Menu` component was changed.([#820](https://github.com/arco-design/arco-design/pull/820))
+
 ## 2.27.1
 
 2021-12-24

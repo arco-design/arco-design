@@ -1,6 +1,6 @@
 import { createContext, Context } from 'react';
 import { NOOP } from '../_util/constant';
-import { FormItemContextProps, FormContextProps, KeyType } from './interface';
+import { FormItemContextProps, FormContextProps, KeyType, FormInstance } from './interface';
 
 export type FormContextType<
   FormData = any,
@@ -41,3 +41,13 @@ export type FormItemContextType<
   FieldKey extends KeyType = keyof FormData
 > = Context<FormItemContextProps<FormData, FieldValue, FieldKey>>;
 export const FormItemContext = createContext<FormItemContextProps>({});
+
+export const FormProviderContext = createContext<{
+  register?: (name: string, form: FormInstance) => void;
+  onFormValuesChange?: (id: string | undefined, changedValues) => void;
+  onFormSubmit?: (id: string | undefined, values) => void;
+}>({});
+
+export const FormListContext = createContext<{
+  getItemKey?: (key) => string;
+}>({});

@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 设置步长
   en-US: Step
 ---
@@ -15,38 +15,48 @@ Pass in `step` to set the step size. The default step size is 1. It is recommend
 
 ```js
 import { useState } from 'react';
-import { Slider, InputNumber, Switch, Typography } from '@arco-design/web-react';
+import { Slider, InputNumber, Switch, Typography, Space } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [step, setStep] = useState(1);
   const [showTicks, setShowTicks] = useState(true);
   return (
-    <div style={{ maxWidth: '40%', minWidth: '20%'}}>
-      <div style={{ marginBottom: 20, lineHeight: `32px` }}>
-        <Typography.Text style={{ marginRight: 8 }}>step</Typography.Text>
-        <InputNumber
-          value={step}
-          min={1}
-          max={10}
-          onChange={setStep}
-          style={{ width: 68, marginRight: 16 }}
-        />
-        <Typography.Text style={{ marginRight: 8 }}>showTicks</Typography.Text>
-        <Switch checked={showTicks} onChange={setShowTicks}/>
-      </div>
+    <div style={{ maxWidth: '40%', minWidth: '20%' }}>
+      <Space style={{ marginBottom: 20, lineHeight: '32px' }} size={20}>
+        <div>
+          <Typography.Text style={{ margin: '0 4px' }}>step</Typography.Text>
+          <InputNumber
+            value={step}
+            min={1}
+            max={10}
+            onChange={setStep}
+            style={{ width: 68 }}
+          />
+        </div>
+        <div>
+          <Typography.Text style={{ margin: '0 4px'}}>showTicks</Typography.Text>
+          <Switch checked={showTicks} onChange={setShowTicks} />
+        </div>
+      </Space>
       <div>
         <Typography.Text>0</Typography.Text>
-        <Slider 
-          defaultValue={5} 
-          max={10} 
-          step={step} 
+        <Slider
+          defaultValue={5}
+          max={10}
+          step={step}
           showTicks={showTicks}
-          style={{ width: 258, marginLeft: 7, marginRight: 7, verticalAlign: 'middle' }}/>
+          style={{
+            width: 258,
+            marginLeft:8,
+            marginRight: 8,
+            verticalAlign: 'middle',
+          }}
+        />
         <Typography.Text>10</Typography.Text>
       </div>
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

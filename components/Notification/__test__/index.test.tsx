@@ -1,12 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, $ } from '../../../tests/util';
 import Notification from '..';
 import Notice from '../../_class/notice';
 import { IconMessage } from '../../../icon';
-import { $ } from '../../../tests/util';
 
 it('render correctly', () => {
-  const notification = mount(
+  const notification = render(
     <div>
       <Notice type="info" content="Info Content" prefixCls="arco-notification" />
       <Notice type="success" content="Success Content" prefixCls="arco-notification" />
@@ -21,7 +20,7 @@ it('render correctly', () => {
       />
     </div>
   );
-  expect(notification.render()).toMatchSnapshot();
+  expect(notification.container.firstChild).toMatchSnapshot();
 });
 
 describe('open message', () => {
@@ -97,4 +96,21 @@ describe('open message', () => {
   //   jest.runAllTimers();
   //   expect($('.arco-notification').length).toBe(0);
   // });
+
+  it('notice icon prefix', () => {
+    Notification.config({
+      prefixCls: 'aaa',
+    });
+    Notification.success({
+      content: 'New Content',
+    });
+
+    expect($('.aaa-notification')).toHaveLength(1);
+
+    expect($('.aaa-icon-check-circle-fill')).toHaveLength(1);
+
+    Notification.config({
+      prefixCls: 'arco',
+    });
+  });
 });

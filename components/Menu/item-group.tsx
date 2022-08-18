@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, ReactNode, useContext } from 'react';
 import cs from '../_util/classNames';
 import { processChildren } from './util';
 import { MenuItemGroupProps } from './interface';
@@ -10,7 +10,7 @@ function ItemGroup(props: MenuItemGroupProps, ref) {
   const { prefixCls, levelIndent } = useContext(MenuContext);
 
   const childrenLevel = level === 1 ? level + 1 : level;
-  const childrenList = processChildren(children, { level: childrenLevel });
+  const childrenList = processChildren(children, { level: childrenLevel }) as ReactNode[];
 
   return (
     <div ref={ref} className={cs(`${prefixCls}-group`, className)} style={style}>

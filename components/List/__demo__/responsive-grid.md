@@ -16,7 +16,6 @@ Dynamically set the number of columns occupied by each item through parameters s
 
 ```js
 import { List, Card } from '@arco-design/web-react';
-
 const data = [
   {
     title: 'Platform',
@@ -56,26 +55,29 @@ const data = [
   },
 ];
 
-ReactDOM.render(
-  <List
-    grid={{
-      sm: 24,
-      md: 12,
-      lg: 8,
-      xl: 6,
-    }}
-    dataSource={data}
-    bordered={false}
-    render={(item, index) => (
-      <List.Item key={index}>
-        <List
-          header={item.title}
-          dataSource={item.data}
-          render={(item, index) => <List.Item key={index}>{item}</List.Item>}
-        />
-      </List.Item>
-    )}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <List
+      grid={{
+        sm: 24,
+        md: 12,
+        lg: 8,
+        xl: 6,
+      }}
+      dataSource={data}
+      bordered={false}
+      render={(item, index) => (
+        <List.Item key={index}>
+          <List
+            header={item.title}
+            dataSource={item.data}
+            render={(item, index) => <List.Item key={index}>{item}</List.Item>}
+          />
+        </List.Item>
+      )}
+    />
+  );
+};
+
+export default App;
 ```

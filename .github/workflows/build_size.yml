@@ -24,6 +24,7 @@ jobs:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           build-script: 'prepublishOnly'
           pattern: './{dist,es,lib,icon}/**/*.{js,css}'
+          clean-script: 'dependencies'
 
       - name: build:cjs
         run: yarn run build:cjs

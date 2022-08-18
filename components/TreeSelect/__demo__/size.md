@@ -16,13 +16,11 @@ Four sizes (small, default, large, huge) can be selected through `size`. The hei
 ```js
 import { useState } from 'react';
 import { TreeSelect, Radio } from '@arco-design/web-react';
-
 const TreeNode = TreeSelect.Node;
 const RadioGroup = Radio.Group;
 
-function Demo() {
+function App() {
   const [size, setSize] = useState('default');
-
   return (
     <div>
       <RadioGroup
@@ -30,7 +28,7 @@ function Demo() {
         name="size"
         value={size}
         onChange={setSize}
-        style={{ marginBottom: 20 }}
+        style={{ marginBottom: 20, }}
       >
         <Radio value="mini">mini</Radio>
         <Radio value="small">small</Radio>
@@ -38,7 +36,11 @@ function Demo() {
         <Radio value="large">large</Radio>
       </RadioGroup>
       <div>
-        <TreeSelect size={size} defaultValue="node1" style={{ width: 300 }}>
+        <TreeSelect
+          size={size}
+          defaultValue="node1"
+          style={{ width: 300, }}
+        >
           <TreeNode key="node1" title="Trunk">
             <TreeNode key="node2" title="Leaf" />
           </TreeNode>
@@ -52,5 +54,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

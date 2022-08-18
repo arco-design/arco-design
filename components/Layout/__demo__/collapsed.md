@@ -14,22 +14,21 @@ title:
 After setting the `trigger` property of `Menu.Sider` to `null`, the built-in trigger of `Sider` will not be displayed. At this time, you can customize the collapse button.
 
 ```js
+import React from 'react';
 import { Layout, Menu, Breadcrumb, Button, Message } from '@arco-design/web-react';
 import { IconHome, IconCalendar, IconCaretRight, IconCaretLeft } from '@arco-design/web-react/icon';
 
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
-
 const Sider = Layout.Sider;
 const Header = Layout.Header;
 const Footer = Layout.Footer;
 const Content = Layout.Content;
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     collapsed: false,
   };
-
   handleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -45,9 +44,11 @@ class Demo extends React.Component {
             defaultOpenKeys={['1']}
             defaultSelectedKeys={['0_3']}
             onClickMenuItem={(key) =>
-              Message.info({ content: `You select ${key}`, showIcon: true })
+              Message.info({
+                content: `You select ${key}`,
+                showIcon: true,
+              })
             }
-          
             style={{ width: '100%' }}
           >
             <MenuItem key="0_1" disabled>
@@ -119,7 +120,7 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

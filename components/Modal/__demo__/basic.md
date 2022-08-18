@@ -14,11 +14,11 @@ title:
 Dialog with text.
 
 ```js
+import React from 'react';
 import { Modal, Button } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [visible, setVisible] = React.useState(false);
-
   return (
     <div>
       <Button onClick={() => setVisible(true)} type="primary">
@@ -41,5 +41,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

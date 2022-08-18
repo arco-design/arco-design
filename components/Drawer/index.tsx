@@ -22,6 +22,7 @@ import { isObject } from '../_util/is';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import { DrawerProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import omit from '../_util/omit';
 
 const defaultProps: DrawerProps = {
   placement: 'right',
@@ -37,7 +38,7 @@ const defaultProps: DrawerProps = {
 
 function Drawer(baseProps: DrawerProps, ref) {
   const context = useContext(ConfigContext);
-  const { locale, getPrefixCls, componentConfig } = context;
+  const { locale, getPrefixCls, componentConfig, rtl } = context;
   const props = useMergeProps<DrawerProps>(baseProps, defaultProps, componentConfig?.Drawer);
   const {
     style,
@@ -70,6 +71,7 @@ function Drawer(baseProps: DrawerProps, ref) {
     autoFocus,
     okButtonProps,
     cancelButtonProps,
+    ...rest
   } = props;
 
   const drawerWrapperRef = useRef(null);
@@ -198,6 +200,7 @@ function Drawer(baseProps: DrawerProps, ref) {
   return (
     <Portal forceRender={!mountOnEnter} visible={visible} getContainer={getPopupContainer}>
       <div
+        {...omit(rest, ['onCancel', 'onOk'])}
         ref={drawerWrapperRef}
         className={cs(
           `${prefixCls}-wrapper`,
@@ -246,6 +249,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           unmountOnExit={unmountOnExit}
           onEnter={(e) => {
             e.parentNode.style.display = 'block';
+            inExit.current = false;
           }}
           onEntered={() => {
             setIsOpened(true);
@@ -262,7 +266,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           }}
         >
           <div
-            className={cs(prefixCls, className)}
+            className={cs(prefixCls, className, { [`${prefixCls}-rtl`]: rtl })}
             style={Object.assign(
               placement === 'left' || placement === 'right' ? { width } : { height },
               { [placement]: 0 },

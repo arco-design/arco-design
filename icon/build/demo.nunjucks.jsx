@@ -10,12 +10,16 @@ import {
   InputNumber,
   Button,
   Modal,
+  Tooltip,
   Typography,
 } from '@arco-design/web-react';
 import * as icons from '@arco-design/web-react/icon/index.es.js';
+import { teaLog } from '@arco-materials/site-utils';
+import { IconClassifyModal } from './classifyModal';
 
 const RadioGroup = Radio.Group;
 const { Paragraph } = Typography;
+const IconCamera = icons.IconCamera;
 
 const svgData = JSON.parse('{{ svgData | safe }}');
 const newIcons = JSON.parse('{{ newIcons | safe }}');
@@ -42,6 +46,7 @@ const locale = {
     ),
     'show-config': '显示配置',
     add: '添加',
+    iconClassifyModalTitle: '上传图片搜索图标',
   },
   'en-US': {
     title: 'Icon Configuration',
@@ -62,10 +67,11 @@ const locale = {
     ),
     'show-config': 'Show Config',
     add: 'Add',
+    iconClassifyModalTitle: 'Upload an image to search for icons',
   },
 };
 
-export default function({ lang = 'zh-CN' }) {
+export default function ({ lang = 'zh-CN' }) {
   const [type, setType] = useState('outline');
   const [filter, setFilter] = useState('');
   const [strokeWidth, setStrokeWidth] = useState(4);
@@ -77,6 +83,8 @@ export default function({ lang = 'zh-CN' }) {
   const getWidthStyle = (width) => ({ width });
   const iconStyle = { fontSize };
   const spaceStyle = { justifyContent: 'space-between', whiteSpace: 'nowrap' };
+  const iconCameraStyle = { marginLeft: 8 };
+  const [iconClassifyModalVisible, setIconClassifyModalVisible] = useState(false);
 
   const maps = JSON.parse('{{ maps | safe }}')[lang];
 
@@ -98,6 +106,23 @@ export default function({ lang = 'zh-CN' }) {
           <Radio value="color">{t.color}</Radio>
         </RadioGroup>
         <Input.Search size="large" onChange={setFilter} placeholder={t.search} />
+        <Tooltip content={t.iconClassifyModalTitle}>
+          <Button
+            size="large"
+            icon={<IconCamera />}
+            style={iconCameraStyle}
+            onClick={() => {
+              teaLog('search_icon_by_img', { type: 'open' });
+              setIconClassifyModalVisible(true);
+            }}
+          />
+          <IconClassifyModal
+            title={t.iconClassifyModalTitle}
+            lang={lang}
+            visible={iconClassifyModalVisible}
+            onVisibleChange={setIconClassifyModalVisible}
+          />
+        </Tooltip>
       </div>
       <Affix offsetTop={60} className="iconlist-affix">
         <Space className="iconlist-operations" style={spaceStyle}>

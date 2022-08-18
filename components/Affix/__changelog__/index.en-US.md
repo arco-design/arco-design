@@ -1,3 +1,11 @@
+## 2.31.2
+
+2022-04-01
+
+### 🐛 BugFix
+
+- Fix the bug that resizeObserver will report an error when the children of Affix is invalid.([#726](https://github.com/arco-design/arco-design/pull/726))
+
 ## 2.20.2
 
 2021-08-09

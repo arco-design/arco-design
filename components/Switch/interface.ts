@@ -1,9 +1,10 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes } from 'react';
 
 /**
  * @title Switch
  */
-export interface SwitchProps {
+export interface SwitchProps
+  extends Omit<HTMLAttributes<HTMLButtonElement>, 'className' | 'onChange'> {
   style?: CSSProperties;
   className?: string | string[];
   /**

@@ -5,10 +5,12 @@ import { CollapseContext } from './collapse';
 import { ConfigContext } from '../ConfigProvider';
 import IconHover from '../_class/icon-hover';
 import { CollapseItemProps } from './interface';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
   const { getPrefixCls } = useContext(ConfigContext);
   const ctx = useContext(CollapseContext);
+  const getEventListeners = useKeyboardEvent();
   const {
     children,
     name,
@@ -26,7 +28,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
 
   const prefixCls = getPrefixCls('collapse-item');
 
-  const isExpanded = ctx.activeKeys.indexOf(name) > -1;
+  const isExpanded = ctx.activeKeys?.indexOf(name) > -1;
   const icon = showExpandIcon ? ('expandIcon' in props ? expandIcon : ctx.expandIcon) : null;
 
   return (
@@ -45,12 +47,21 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
       style={style}
     >
       <div
+        role="button"
+        aria-disabled={disabled}
+        aria-expanded={isExpanded}
+        tabIndex={0}
         className={cs(`${prefixCls}-header`, `${prefixCls}-header-${ctx.expandIconPosition}`, {
           [`${prefixCls}-header-disabled`]: disabled,
         })}
         onClick={(e) => {
           !disabled && ctx.onToggle(name, e);
         }}
+        {...getEventListeners({
+          onPressEnter: (e) => {
+            !disabled && ctx.onToggle(name, e);
+          },
+        })}
       >
         {icon && (
           <IconHover
@@ -114,6 +125,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
         }}
       >
         <div
+          role="region"
           className={cs(`${prefixCls}-content`, {
             [`${prefixCls}-content-expanded`]: isExpanded,
           })}

@@ -16,12 +16,10 @@ In functional components, you can use `Form.useForm` to get a form instance, You
 
 ```js
 import { Form, Input, Button, InputNumber } from '@arco-design/web-react';
-
 const FormItem = Form.Item;
 
-function Demo() {
+function App() {
   const [form] = Form.useForm();
-
   return (
     <Form
       form={form}
@@ -35,20 +33,16 @@ function Demo() {
       }}
     >
       <FormItem label="Username" field="name" rules={[{ required: true }]}>
-        <Input placeholder='please enter your username' />
+        <Input placeholder="please enter your username" />
       </FormItem>
       <FormItem
-        label='Age'
+        label="Age"
         field="age"
         rules={[{ required: true, type: 'number', min: 0, max: 99 }]}
       >
-        <InputNumber placeholder='please enter your age' />
+        <InputNumber placeholder="please enter your age" />
       </FormItem>
-      <FormItem
-        wrapperCol={{
-          offset: 5,
-        }}
-      >
+      <FormItem wrapperCol={{ offset: 5 }}>
         <Button type="primary" htmlType="submit" style={{ marginRight: 24 }}>
           Submit
         </Button>
@@ -63,7 +57,10 @@ function Demo() {
         <Button
           type="text"
           onClick={() => {
-            form.setFieldsValue({ name: 'admin', age: 11 });
+            form.setFieldsValue({
+              name: 'admin',
+              age: 11,
+            });
           }}
         >
           Fill Form
@@ -73,8 +70,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

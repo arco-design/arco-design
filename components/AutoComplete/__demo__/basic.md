@@ -17,8 +17,9 @@ Show input suggestions based on current input (drop-down selection).
 import { useState } from 'react';
 import { AutoComplete } from '@arco-design/web-react';
 
-function Demo() {
+function App() {
   const [data, setData] = useState([]);
+
   const handleSearch = (inputValue) => {
     setData(inputValue ? new Array(5).fill(null).map((_, index) => `${inputValue}_${index}`) : []);
   };
@@ -33,5 +34,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

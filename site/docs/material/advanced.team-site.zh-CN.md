@@ -58,6 +58,8 @@ Arco 提供的所有物料模板的开发预览使用 Storybook 的方式，我�
 module.exports = { ... };
 ```
 
+完整的 `MainConfig` 配置字段声明请 [移步至此](https://github.com/arco-design/arco-cli/blob/main/packages/arco-material-doc-site/src/interface.ts#L55) 。
+
 ```js
 // .config/webpack.config.js
 
@@ -84,24 +86,12 @@ module.exports = {
     globs: {
       // 可用于 Arco Monorepo 模板的配置
       component: {
+        // 相对于站点目录的相对路径，也可指定绝对路径
         base: '../*',
         doc: 'docs/README.md',
         demo: 'src/demo/index.js',
-        style: 'src/style/index.ts',
+        style: 'src/style/index.less',
       },
-      // 可用于 Arco 物料库模板的配置
-      // component: {
-      //   base: '../components/*',
-      //   doc: 'README.md',
-      //   demo: 'demo/index.js',
-      //   style: 'style/index.ts',
-      // },
-      // 可用于 Arco 工具库模板的配置
-      // component: {
-      //   base: '../src/*',
-      //   doc: 'README.md',
-      //   demo: 'demo/index.js',
-      // },
       doc: './docs/**/*.md',
     },
     // 是否引入物料的样式文件
@@ -109,12 +99,7 @@ module.exports = {
   },
   // 站点配置
   site: {
-    // 站点支持的语言种类
-    languages: ['zh-CN'],
-    // 飞书 onCall 群的 ID
-    larkGroupID: '',
-    // 是否允许切换站点主题
-    allowThemeToggle: false,
+    // ...
   },
 };
 ```
@@ -149,7 +134,7 @@ module.exports = (config) => {
 ```jsx
 import { Button } from '@arco-design/my-material';
 
-export default () => <Button/>;
+export default () => <Button />;
 ```
 
 可通过 `resolve.alias` 配置，指定 Webpack 查找此模块的路径。
@@ -193,114 +178,101 @@ yarn preview
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/d14e7b6b380cee60d66e7180d05420d5.png~tplv-uwbnlip3yd-webp.webp)
 
-## 国际化
+## 个性化配置
 
-站点内容的多语言支持主要包括三部分：自定义文档、组件 API 文档、组件描述信息。
+通过对 `.config/main.js` 进行配置，你可对站点的进行一些个性化定制。目前支持的配置包括：
 
-- 自定义文档需要在 `/site/docs` 下书写，以文件夹区分语言。
-- 组件 API 文档以后缀名区分不同的语言，例如: `README.zh-CN.md`、 `README.en-US.md`。书写于 `/** xxx */` 之内的注释会被文档生成工具提取，默认生成的文档名为 `README.md`，如需支持其他语言需要创建对应的文档并翻译它。
+- 多语言切换
+- 暗色模式切换
+- Demo 行为
+- 侧边菜单行为
+- 自定义页面模块
+- [ArcoDesignLab](https://arco.design/themes) 主题包关联
+- [ArcoIconBox](https://arco.design/iconbox/libs) 图标库关联
 
-```typescript
-export interface ComponentOneProps {
-  /** 组件的子节点 */
-  children?: ReactNode;
-  /** 组件的附加样式 */
-  style?: CSSProperties;
+配置字段详情请 [移步至此](https://github.com/arco-design/arco-cli/blob/main/packages/arco-material-doc-site/src/interface.ts#L93) ，参考 `MainConfig.site` 字段类型。
+
+### 自定义页面模块
+
+通过 `MainConfig.build.customModulePath` 字段，你可以指定一个用以暴露自定义模块的入口文件。例如
+
+```javascript
+// .config/main.js
+module.exports = {
+  // 构建配置
+  build: {
+    // ...
+    customModulePath: './customModule.tsx',
+  },
+};
+```
+
+在 `customModule.tsx` 中暴露特定名称的模块，站点页面将会将其渲染至页面中。目前可自定义的模块包括 `Navbar | Footer | Menu | Affix`。
+
+```tsx
+// customModule.tsx
+import React, { useContext } from 'react';
+import { Menu as ArcoMenu } from '@arco-design/web-react';
+import { ArcoSiteGlobalContext, ArcoSiteRouteType } from 'arco-material-doc-site';
+
+export function Navbar() {
+  return <div>Arco Design</div>;
 }
-```
 
-- 组件描述信息需要在 `demo/index.js` 中以 JSDOC 的语法书写，这些信息将会在站点模块打包时被收集。
+export function Affix() {
+  // Get globalContext by window.arcoSiteGlobalContext
+  const { user } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
+  return (
+    <div>
+      <h1>Hello {user?.name}!</h1>
+    </div>
+  );
+}
 
-```jsx
-/**
- * @file
- * @name
- * zh-CN: 组件名
- * en-US: Name of Component
- *
- * @memberOf
- * zh-CN: 组件分类，例如：数据输入、导航
- * en-US: Sort of this component
- *
- * @description
- * zh-CN: 组件的描述信息
- * en-US: Description of this component
- */
+const { SubMenu, Item: MenuItem } = ArcoMenu;
 
-/**
- * @name
- * zh-CN: 此 Demo 的标题
- * en-US: Title of this demo
- *
- * @description
- * zh-CN: Demo 的描述信息，可描述其用法、注意事项
- * en-US: Description of this demo
- */
-export { default as Basic } from './basic';
+export function Menu() {
+  // Get globalContext by window.arcoSiteGlobalContext
+  const {
+    history,
+    location,
+    routes: [docRoutes, componentRoutes],
+  } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
 
-/**
- * @name
- * zh-CN: 高级用法
- * en-US: Advanced
- *
- * @description
- * zh-CN: 这是组件的高级用法
- * en-US: This is a advanced usage of ComponentOne.
- */
-export { default as Advanced } from './advanced';
-```
+  const renderMenuItems = ({ name, path, children }: ArcoSiteRouteType) => {
+    if (children) {
+      return (
+        <SubMenu key={name} title={name}>
+          {children.map(({ name, path }) => (
+            <MenuItem key={path}>{name}</MenuItem>
+          ))}
+        </SubMenu>
+      );
+    }
 
-## 暗色主题
+    return path ? <MenuItem key={path}>{name}</MenuItem> : null;
+  };
 
-物料支持暗色主题无需额外的配置，只需要在组件开发中使用 Arco 内置的色彩变量来定义颜色即可。参考 [ArcoDesign | 暗黑模式](https://arco.design/react/docs/dark)
-
-```css
-table {
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-1);
+  return (
+    <ArcoMenu
+      autoOpen
+      defaultSelectedKeys={[location.pathname.replace(/\/$/, '')]}
+      onClickMenuItem={(key) => {
+        history.push(`${key}${location.search}`);
+      }}
+    >
+      <SubMenu key={docRoutes.key} title={docRoutes.name}>
+        {docRoutes.children?.map(renderMenuItems)}
+      </SubMenu>
+      {componentRoutes.children?.map(renderMenuItems)}
+    </ArcoMenu>
+  );
 }
 ```
 
 ## 使用 Arco 主题商店主题
 
-**版本要求 `arco-material-doc-site >= 1.8.0`**
-
-通过拓展配置项，你可以快速在团队站点上使用 Arco 主题商店上的任意主题。
-
-```javascript
-module.exports = {
-  // ...
-  // 站点配置
-  site: {
-    // 配置所需要使用的 Arco 主题商店主题
-    arcoDesignLabTheme: '@arco-design/theme-package-name',
-  },
-};
-```
-
-## 站点配置
-
-通过开放配置字段，我们允许对站点的进行一些简单配置，目前支持的配置包括：
-
-- 多语言选项
-- 主题切换选项
-
-基本的站点配置可在 `/.config/main.js` 中快速配置，物料平台加完此模块后会依据配置渲染页面：
-
-```javascript
-module.exports = {
-  // ...
-  // 站点配置
-  site: {
-    // 站点支持的语言种类
-    languages: ['zh-CN'],
-    // 是否允许切换站点主题
-    allowThemeToggle: false,
-  },
-};
-```
-
-通过在站点构建产物中暴露指定名字的模块，理论上可以支持更高自由度的自定义，例如完全自定义页脚、渲染团队自定义的组件（悬浮帮助窗）等。
+参考 [「常见问题 - 关联主题」](/docs/material/qa#如何关联主题？)。
 
 ## 使用 Hook
 
@@ -315,7 +287,7 @@ module.exports = {
         // 站点初始化时执行函数的路径
         beforeAll: 'hooks/beforeAll.ts',
       },
-    }
+    },
   },
 };
 ```
@@ -450,152 +422,48 @@ module.exports = {
 
 完成站点预览和部署。
 
-## 配置文件详解
+## 国际化
 
-`.config/main.js` 的所有可用配置如下：
+站点内容的多语言支持主要包括三部分：自定义文档、组件 API 文档、组件描述信息。
+
+- 自定义文档需要在 `/site/docs` 下书写，以文件夹区分语言。
+- 组件 API 文档以后缀名区分不同的语言，例如: `README.zh-CN.md`、 `README.en-US.md`。书写于 `/** xxx */` 之内的注释会被文档生成工具提取，默认生成的文档名为 `README.md`，如需支持其他语言需要创建对应的文档并翻译它。
 
 ```typescript
-interface MainConfig {
-  /**
-   * Build config for site
-   * @zh 站点构建配置
-   */
-  build: {
-    /**
-     * Rules to match the path of document and demos
-     * @zh 配置文档和 Demo 的路径
-     */
-    globs: {
-      /**
-       * Glob pattern of pure document
-       * @zh 纯文档的 Glob 匹配符
-       */
-      doc: string;
-      /**
-       * Glob patterns of component
-       * @zh 组件相关的 Glob 匹配规则
-       */
-      component: {
-        /**
-         * Glob pattern to math the path of component
-         * @zh 组件目录的 Glob 匹配符
-         * @e.g ../components/*
-         */
-        base: string;
-        /**
-         * Glob pattern of component demos
-         * @zh 组件 Demo 的 Glob 匹配符
-         * @e.g demo/index.js
-         */
-        demo: string;
-        /**
-         * Glob pattern of component document
-         * @zh 组件文档的 Glob 匹配符
-         * @e.g README.md
-         */
-        doc?: string;
-        /**
-         * Path of component style
-         * @zh 组件样式路径
-         * @e.g style/index.less
-         */
-        style?: string;
-      };
-      /**
-       * Hooks to execute when demos are rendered
-       * @zh Demo 渲染时执行的钩子函数
-       */
-      hook?: {
-        /**
-         * Callback function executed before all demos are rendered
-         * @zh 在所有 Demo 渲染之前执行的回调函数
-         */
-        beforeAll?: string;
-        /**
-         * Callback function executed before each demo is rendered
-         * @zh 在每个 Demo 渲染之前执行的回调函数
-         */
-        beforeEach?: string;
-      };
-    };
-    /**
-     * Whether to import material style file
-     * @zh 是否将组件的样式一同打包
-     */
-    withMaterialStyle?: boolean;
-    /**
-     * Options for development mode
-     * @zh 站点 Dev 模式时的配置
-     */
-    devOptions?: {
-      /**
-       * Whether to auto import Arco library style
-       * @zh 是否自动注入 Arco 组件库的样式
-       * @default true
-       */
-      withArcoStyle?: boolean;
-    };
-  };
-  /**
-   * Runtime config for site
-   * @zh 站点运行时配置
-   */
-  site: {
-    /**
-     * Languages allowed to switch
-     * @zh 可切换的语言类型
-     * @e.g ['zh-CN', 'en-US']
-     */
-    languages: string[];
-    /**
-     * Lark group id for on call
-     * @zh 飞书 onCall 群的 ID
-     */
-    larkGroupID?: string;
-    /**
-     * Theme package name of Arco Design Lab
-     * @zh 关联使用的 Arco 主题商店主题包名
-     */
-    arcoDesignLabTheme?: string;
-    /**
-     * Whether switching themes is allowed
-     * @zh 是否允许切换主题
-     */
-    allowThemeToggle?: boolean;
-    /**
-     * Config of material demos
-     * @zh 页面 Demo 的配置
-     */
-    demo?: {
-      /**
-       * Whether demos are editable
-       * @zh Demo 是否允许编辑调试
-       */
-      editable?: boolean;
-      /**
-       * Default external info of code editor
-       * @zh Demo 编辑器默认的 External 资源配置
-       */
-      defaultExternalList?: ExternalSourceInfo[];
-    };
-    /**
-     * Config menu items
-     * @zh 配置菜单栏
-     */
-    menu?: {
-      /**
-       * The maximum allowed sub-menu level, the excess levels will be displayed in groups
-       * @zh 允许的最大菜单层级，超出的层级将以分组的形式展示
-       * @default 1
-       */
-      maxSubMenuLevel?: number;
-      /**
-       * Sort rule of menu items. The higher the menu item, the higher the priority
-       * @zh 菜单排序规则，越靠前的菜单项优先级越高
-       * @e.g { guide: ['document2', 'document1'] }
-       */
-      sortRule?: Record<string, String[]>;
-    };
-  };
+export interface ComponentOneProps {
+  /** 组件的子节点 */
+  children?: ReactNode;
+  /** 组件的附加样式 */
+  style?: CSSProperties;
 }
+```
+
+- 组件描述信息需要在 `demo/index.js` 中以 JSDOC 的语法书写，这些信息将会在站点模块打包时被收集。
+
+```jsx
+/**
+ * @file
+ * @name
+ * zh-CN: 组件名
+ * en-US: Name of Component
+ *
+ * @memberOf
+ * zh-CN: 组件分类，例如：数据输入、导航
+ * en-US: Sort of this component
+ *
+ * @description
+ * zh-CN: 组件的描述信息
+ * en-US: Description of this component
+ */
+
+/**
+ * @name
+ * zh-CN: 此 Demo 的标题
+ * en-US: Title of this demo
+ *
+ * @description
+ * zh-CN: Demo 的描述信息，可描述其用法、注意事项
+ * en-US: Description of this demo
+ */
+export { default as Basic } from './basic';
 ```

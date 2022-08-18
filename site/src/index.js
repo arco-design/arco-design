@@ -12,12 +12,15 @@ import tea from './utils/tea';
 import locale from './locale/zh';
 import './style/index.less';
 import { isProduction } from './utils/env';
+import { registerServiceWorker } from './serviceWorkerRegistration';
 
 const requestDomain = isProduction ? `//${location.hostname}/` : '//localhost:3000';
 
 function Index() {
+  const arcoDirection = localStorage.getItem('arco-direction');
   const [user, setUser] = useState();
   const [noticeHeight, setNoticeHeight] = useState(0);
+  const [rtl, setRtl] = useState(arcoDirection === 'rtl');
 
   async function getUser() {
     try {
@@ -32,12 +35,22 @@ function Index() {
     getUser();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('arco-direction', rtl ? 'rtl' : 'ltr');
+    const rootElement = document.querySelector('html');
+    if (rtl) {
+      rootElement.setAttribute('class', 'rtl');
+    } else {
+      rootElement.setAttribute('class', '');
+    }
+  }, [rtl]);
+
   return (
     <BrowserRouter>
       <Navbar.NavbarThemeProvider>
-        <GlobalContext.Provider value={{ lang: 'zh-CN', locale, user }}>
+        <GlobalContext.Provider value={{ lang: 'zh-CN', locale, user, rtl, toggleRtl: setRtl }}>
           <ScrollToTop />
-          <ConfigProvider locale={zhCN}>
+          <ConfigProvider locale={zhCN} rtl={rtl}>
             <GlobalNoticeContext.Provider
               value={{
                 noticeHeight,
@@ -53,6 +66,14 @@ function Index() {
   );
 }
 
+// register service worker on prod
+if (isProduction) {
+  registerServiceWorker({
+    content: '检测到文档内容有更新，是否刷新页面加载最新版本？',
+    okText: '确认',
+    cancelText: '取消',
+  });
+}
 ReactDOM.render(<Index />, document.getElementById('root'));
 
 tea({ name: 'site_components_zh' });

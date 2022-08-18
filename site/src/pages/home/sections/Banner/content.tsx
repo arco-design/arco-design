@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@arco-design/web-react';
-import { teaLog } from '@arco-design/arco-site-utils';
+import { teaLog } from '@arco-materials/site-utils';
 import styles from './style/content.module.less';
 import useLocale from '../../hooks/useLocale';
 import { linkShowCase } from '../../constant/links';

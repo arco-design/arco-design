@@ -1,3 +1,51 @@
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fix console React Warning (not recognize prop on a DOM element) caused by `Input` component.([#1070](https://github.com/arco-design/arco-design/pull/1070))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed the bug that the length of `Input.TextArea` component may exceed `maxLength` when inputting Chinese.([#988](https://github.com/arco-design/arco-design/pull/988))
+
+## 2.32.1
+
+2022-04-22
+
+### 💎 Enhancement
+
+- Optimize the cursor position when `focus` is called outside the `Input.Textarea` component.([#800](https://github.com/arco-design/arco-design/pull/800))
+
+## 2.31.0
+
+2022-03-25
+
+### 💅 Style
+
+- Fixed the bug that the clear button of `Input` could not be hidden in certain scenarios([#685](https://github.com/arco-design/arco-design/pull/685))
+
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fixed display of clear button when `Input` set `allowClear` and `readOnly` at same time.([#640](https://github.com/arco-design/arco-design/pull/640))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fixed a bug where the same text could not be pasted again after the `Input` component pasted text and cleared it.([#584](https://github.com/arco-design/arco-design/pull/584))
+
 ## 2.29.0
 
 2022-02-11

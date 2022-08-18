@@ -16,7 +16,6 @@ Disable menu items and insert dividing lines.
 ```js
 import { Dropdown, Menu, Button, Divider } from '@arco-design/web-react';
 import { IconDown } from '@arco-design/web-react/icon';
-
 const dropList = (
   <Menu>
     <Menu.Item key="1">Beijing</Menu.Item>
@@ -29,19 +28,20 @@ const dropList = (
   </Menu>
 );
 
-function Demo() {
+function App() {
   return (
     <div className="dropdown-demo">
       <Dropdown droplist={dropList} position="br">
         <Button type="text">
-          Hover<IconDown />
+          Hover
+          <IconDown />
         </Button>
       </Dropdown>
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

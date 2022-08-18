@@ -9,11 +9,12 @@ import React, {
 import cs from '../_util/classNames';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import { ConfigContext } from '../ConfigProvider';
-import pick from '../_util/pick';
+import pick, { pickDataAttributes } from '../_util/pick';
 import { TooltipProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { isFunction } from '../_util/is';
 
-type TooltipHandle = {
+export type TooltipHandle = {
   updatePopupPosition: () => void;
 };
 
@@ -74,15 +75,16 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
   const prefixCls = tooltipPrefixCls || getPrefixCls('tooltip');
   const otherProps: any = {
     ...pick(rest, EventsByTriggerNeed),
+    ...pickDataAttributes(rest),
     ...triggerProps,
   };
 
-  const renderedContent = typeof content === 'function' ? content() : content;
+  const renderedContent = isFunction(content) ? content() : content;
 
   // it is important to note that this method has its limitations
   // it fails in cases such as content = <>&nbsp;&nbsp;</>
   const isEmpty = (content: ReactNode): boolean => {
-    if (content === null || content === undefined) {
+    if (content === null || content === undefined || content === false) {
       return true;
     }
     if (typeof content === 'string' && content.trim() === '') {
@@ -128,6 +130,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
             className={cs(`${prefixCls}-content`, `${prefixCls}-content-${position}`, {
               [`${prefixCls}-mini`]: mini,
             })}
+            role="tooltip"
           >
             <div className={`${prefixCls}-content-inner`}>{renderedContent}</div>
           </div>

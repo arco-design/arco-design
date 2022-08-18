@@ -13,6 +13,7 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -21,6 +22,7 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -46,13 +48,13 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
           class="arco-resizebox-trigger-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -82,13 +84,13 @@ exports[`renders ResizeBox/demo/basic.md correctly 1`] = `
           class="arco-resizebox-trigger-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
@@ -122,6 +124,7 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -130,6 +133,7 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -155,13 +159,13 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
           class="arco-resizebox-trigger-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -191,13 +195,13 @@ exports[`renders ResizeBox/demo/control.md correctly 1`] = `
           class="arco-resizebox-trigger-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
@@ -231,6 +235,7 @@ exports[`renders ResizeBox/demo/custom-triggers.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal"
+      role="separator"
     />
     <div
       class="arco-typography"
@@ -239,6 +244,7 @@ exports[`renders ResizeBox/demo/custom-triggers.md correctly 1`] = `
     </div>
     <div
       class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
     >
       <span
         class="arco-divider-text arco-divider-text-center"
@@ -314,13 +320,13 @@ exports[`renders ResizeBox/demo/layout.md correctly 1`] = `
               class="arco-resizebox-trigger-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -382,13 +388,13 @@ exports[`renders ResizeBox/demo/nested_split.md correctly 1`] = `
           class="arco-resizebox-trigger-icon"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-drag-dot-vertical"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -436,13 +442,13 @@ exports[`renders ResizeBox/demo/nested_split.md correctly 1`] = `
                 class="arco-resizebox-trigger-icon"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-drag-dot"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
@@ -476,64 +482,140 @@ exports[`renders ResizeBox/demo/nested_split.md correctly 1`] = `
 `;
 
 exports[`renders ResizeBox/demo/split.md correctly 1`] = `
-<div>
+<div
+  class="arco-space arco-space-vertical"
+>
   <div
-    class="arco-resizebox-split arco-resizebox-split-horizontal"
-    style="height:200px;width:500px;border:1px solid var(--color-border)"
+    class="arco-space-item"
+    style="margin-bottom:20px"
   >
     <div
-      class="arco-resizebox-split-pane first-pane"
-      style="flex-basis:calc(50% - 0px)"
+      class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     >
-      <div
-        class="arco-typography"
+      <label
+        class="arco-radio-button arco-radio-checked"
       >
-        Right
-      </div>
-    </div>
-    <div
-      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-split-trigger"
-    >
-      <div
-        class="arco-resizebox-trigger-icon-wrapper"
-      >
-        <span
-          class="arco-resizebox-trigger-icon-empty"
+        <input
+          checked=""
+          type="radio"
+          value="horizontal"
         />
         <span
-          class="arco-resizebox-trigger-icon"
+          class="arco-radio-button-inner"
         >
-          <svg
-            class="arco-icon arco-icon-drag-dot-vertical"
-            fill="none"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="4"
-            viewBox="0 0 48 48"
-            width="1em"
-          >
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-              fill="currentColor"
-              stroke="none"
-            />
-            <path
-              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-            />
-          </svg>
+          horizontal
         </span>
-        <span
-          class="arco-resizebox-trigger-icon-empty"
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="vertical"
         />
-      </div>
+        <span
+          class="arco-radio-button-inner"
+        >
+          vertical
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="horizontal-reverse"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          horizontal-reverse
+        </span>
+      </label>
+      <label
+        class="arco-radio-button"
+      >
+        <input
+          type="radio"
+          value="vertical-reverse"
+        />
+        <span
+          class="arco-radio-button-inner"
+        >
+          vertical-reverse
+        </span>
+      </label>
     </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
     <div
-      class="arco-resizebox-split-pane second-pane"
+      class="arco-resizebox-split arco-resizebox-split-horizontal"
+      style="height:300px;width:300px;border:1px solid var(--color-border)"
     >
       <div
-        class="arco-typography"
+        class="arco-resizebox-split-pane first-pane"
+        style="flex-basis:calc(50% - 0px)"
       >
-        Left
+        <div
+          class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
+        >
+          <span
+            class="arco-tag-content"
+          >
+            Fist
+          </span>
+        </div>
+      </div>
+      <div
+        class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-split-trigger"
+      >
+        <div
+          class="arco-resizebox-trigger-icon-wrapper"
+        >
+          <span
+            class="arco-resizebox-trigger-icon-empty"
+          />
+          <span
+            class="arco-resizebox-trigger-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
+          </span>
+          <span
+            class="arco-resizebox-trigger-icon-empty"
+          />
+        </div>
+      </div>
+      <div
+        class="arco-resizebox-split-pane second-pane"
+      >
+        <div
+          class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default"
+        >
+          <span
+            class="arco-tag-content"
+          >
+            Second
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -546,14 +628,14 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
 >
   <div
     class="arco-resizebox-split-group-pane"
-    style="flex-basis:calc(0.5px - 0px)"
+    style="flex-basis:calc(50% - 0px)"
   >
     <div
       class="arco-resizebox-split-group arco-resizebox-split-group-horizontal resizebox-split-group-demo-horizontal"
     >
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -609,13 +691,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon arco-resizebox-trigger-prev"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-left"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M13.171 24.937a1.2 1.2 0 0 1 0-1.874L30.051 9.56c.785-.629 1.949-.07 1.949.937v27.006c0 1.006-1.164 1.566-1.95.937L13.171 24.937Z"
@@ -628,13 +710,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-drag-dot-vertical"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -653,7 +735,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -712,13 +794,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-drag-dot-vertical"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -737,7 +819,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -793,13 +875,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon arco-resizebox-trigger-prev"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-double-left"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M36.857 9.9 22.715 24.042l14.142 14.142M25.544 9.9 11.402 24.042l14.142 14.142"
@@ -813,13 +895,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon arco-resizebox-trigger-next"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-double-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="m11.143 38.1 14.142-14.142L11.143 9.816M22.456 38.1l14.142-14.142L22.456 9.816"
@@ -830,7 +912,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.25px - 0px)"
+        style="flex-basis:calc(25% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -891,13 +973,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
         class="arco-resizebox-trigger-icon"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-drag-dot"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
@@ -916,14 +998,14 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
   </div>
   <div
     class="arco-resizebox-split-group-pane"
-    style="flex-basis:calc(0.5px - 0px)"
+    style="flex-basis:calc(50% - 0px)"
   >
     <div
       class="arco-resizebox-split-group arco-resizebox-split-group-vertical resizebox-split-group-demo-vertical"
     >
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.3333333333333333px - 0px)"
+        style="flex-basis:calc(33.33333333333333% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -947,13 +1029,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon arco-resizebox-trigger-prev"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-up"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
@@ -966,13 +1048,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-drag-dot"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
@@ -988,13 +1070,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon arco-resizebox-trigger-next"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1007,7 +1089,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.3333333333333333px - 0px)"
+        style="flex-basis:calc(33.33333333333333% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"
@@ -1034,13 +1116,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-drag-dot"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M40 17v2h-2v-2h2ZM25 17v2h-2v-2h2ZM10 17v2H8v-2h2ZM40 29v2h-2v-2h2ZM25 29v2h-2v-2h2ZM10 29v2H8v-2h2Z"
@@ -1056,13 +1138,13 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
             class="arco-resizebox-trigger-icon arco-resizebox-trigger-next"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-caret-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
@@ -1075,7 +1157,7 @@ exports[`renders ResizeBox/demo/splitGroup.md correctly 1`] = `
       </div>
       <div
         class="arco-resizebox-split-group-pane"
-        style="flex-basis:calc(0.3333333333333333px - 0px)"
+        style="flex-basis:calc(33.33333333333333% - 0px)"
       >
         <div
           class="resizebox-split-group-demo-content"

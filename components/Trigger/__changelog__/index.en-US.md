@@ -1,3 +1,27 @@
+## 2.38.0
+
+2022-07-29
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Trigger` component could not display the popup in React 18 strict mode.([#1215](https://github.com/arco-design/arco-design/pull/1215))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 Feature
+
+- The `Trigger` component supports the popup layer to be closed when the container is scrolled by setting the `containerScrollToClose` property.([#913](https://github.com/arco-design/arco-design/pull/913))
+
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `Trigger` component supports the `updateOnScroll` property to update the position of the popover when the container is scrolled.([#770](https://github.com/arco-design/arco-design/pull/770))
+
 ## 2.26.1
 
 2021-12-07

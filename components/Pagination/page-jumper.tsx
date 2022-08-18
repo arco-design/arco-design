@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useContext, useEffect } from 'react';
 import Input from '../Input';
-import { isFunction, isUndefined } from '../_util/is';
+import { isFunction, isUndefined, isObject } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import { RefInputType } from '../Input/interface';
 
@@ -9,7 +9,7 @@ export interface PageJumperProps {
   rootPrefixCls?: string;
   totalPages: number;
   current: number;
-  simple?: boolean;
+  simple?: boolean | { showJumper?: boolean };
   onPageChange?: (value) => void;
   size?: 'mini' | 'small' | 'default' | 'large';
 }
@@ -18,15 +18,13 @@ function PageJumper(props: PageJumperProps) {
   const defaultInputText = props.simple ? props.current : undefined;
   const { locale } = useContext(ConfigContext);
   const [inputText, setInputText] = useState<number>(defaultInputText);
-  const [current, setCurrent] = useState<number>(defaultInputText);
   const inputRef = useRef<RefInputType>();
 
   useEffect(() => {
-    if (props.current !== current && props.simple) {
+    if (props.simple) {
       setInputText(props.current);
-      setCurrent(props.current);
     }
-  }, [props.current, props.simple, current]);
+  }, [props.simple, props.current]);
 
   const handleChange = (val) => {
     const value = parseInt(val, 10);
@@ -63,23 +61,29 @@ function PageJumper(props: PageJumperProps) {
     }
   };
 
-  const { rootPrefixCls, simple, totalPages, size, disabled } = props;
+  const { rootPrefixCls, totalPages, simple, size, disabled } = props;
   const prefixCls = `${rootPrefixCls}-jumper`;
+  const inputConfig = { showJumper: true, ...(isObject(simple) ? simple : {}) };
 
   return (
     <div className={`${prefixCls}`}>
       {!simple && <span className={`${prefixCls}-text-goto`}>{locale.Pagination.goto}</span>}
-      <Input
-        ref={(ref) => (inputRef.current = ref)}
-        className={`${prefixCls}-input`}
-        value={!isUndefined(inputText) ? inputText.toString() : undefined}
-        size={size}
-        disabled={disabled || !totalPages}
-        onChange={handleChange}
-        onPressEnter={handleJump}
-        onFocus={onFocus}
-        onBlur={handleJump}
-      />
+      {inputConfig.showJumper ? (
+        <Input
+          _ignorePropsFromGlobal
+          ref={(ref) => (inputRef.current = ref)}
+          className={`${prefixCls}-input`}
+          value={!isUndefined(inputText) ? inputText.toString() : undefined}
+          size={size}
+          disabled={disabled || !totalPages}
+          onChange={handleChange}
+          onPressEnter={handleJump}
+          onFocus={onFocus}
+          onBlur={handleJump}
+        />
+      ) : (
+        <span>{inputText}</span>
+      )}
       {simple && (
         <>
           <span className={`${prefixCls}-separator`}>/</span>

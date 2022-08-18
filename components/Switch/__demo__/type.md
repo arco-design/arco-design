@@ -16,12 +16,15 @@ There are three types of switches to choose from.
 ```js
 import { Switch, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size="large">
-    <Switch />
-    <Switch type="round" />
-    <Switch type="line" />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Switch />
+      <Switch type="round" />
+      <Switch type="line" />
+    </Space>
+  );
+};
+
+export default App;
 ```

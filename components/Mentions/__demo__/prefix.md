@@ -16,26 +16,29 @@ Specify `prefix` to customize the trigger character. The default is `@`, which c
 ```js
 import { Mentions, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size={40}>
-    <Mentions
-      style={{ width: 154, marginBottom: 10 }}
-      placeholder="Input @"
-      options={['Bytedance', 'Bytedesign', 'Bytenumner']}
-    />
-    <Mentions
-      style={{ width: 154, marginBottom: 10 }}
-      prefix="#"
-      placeholder="Input #"
-      options={['Bytedance', 'Bytedesign', 'Bytenumner']}
-    />
-    <Mentions
-      style={{ width: 154, marginBottom: 10 }}
-      prefix="*"
-      placeholder="Input *"
-      options={['Bytedance', 'Bytedesign', 'Bytenumner']}
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size={40}>
+      <Mentions
+        style={{ width: 154, marginBottom: 10 }}
+        placeholder="Input @"
+        options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+      />
+      <Mentions
+        style={{ width: 154, marginBottom: 10 }}
+        prefix="#"
+        placeholder="Input #"
+        options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+      />
+      <Mentions
+        style={{ width: 154, marginBottom: 10 }}
+        prefix="*"
+        placeholder="Input *"
+        options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

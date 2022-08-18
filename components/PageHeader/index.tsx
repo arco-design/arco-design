@@ -1,7 +1,9 @@
 import React, { useContext, PropsWithChildren, useState, useRef } from 'react';
+import omit from '../_util/omit';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLeft from '../../icon/react-icon/IconLeft';
+import IconRight from '../../icon/react-icon/IconRight';
 import Breadcrumb from '../Breadcrumb';
 import IconHover from '../_class/icon-hover';
 import ResizeObserver from '../_util/resizeObserver';
@@ -9,13 +11,13 @@ import { PageHeaderProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<PageHeaderProps>>(
     baseProps,
     {},
     componentConfig?.PageHeader
   );
-  const { title, subTitle, extra, children, backIcon, footer, breadcrumb } = props;
+  const { title, subTitle, extra, children, backIcon, footer, breadcrumb, ...rest } = props;
 
   const [pageWrap, setPageWrap] = useState(false);
   const pageRef = useRef<HTMLDivElement>();
@@ -31,6 +33,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
       }}
     >
       <div
+        {...omit(rest, ['onBack'])}
         ref={pageRef}
         className={cs(
           `${prefixCls}`,
@@ -39,6 +42,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
             [`${prefixCls}-with-content`]: children,
             [`${prefixCls}-with-footer`]: footer,
             [`${prefixCls}-wrap`]: pageWrap,
+            [`${prefixCls}-rtl`]: rtl,
           },
           props.className
         )}
@@ -60,7 +64,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
                   onClick={props.onBack}
                 >
                   <span className={`${prefixCls}-back-icon`}>
-                    {backIcon === true ? <IconLeft /> : backIcon}
+                    {backIcon === true ? rtl ? <IconRight /> : <IconLeft /> : backIcon}
                   </span>
                 </IconHover>
               )}

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Dayjs } from 'dayjs';
 import TimePicker from './time-picker';
 import { RangePickerProps } from './interface';
-import omit from '../_util/omit';
 import { isArray, isDayjs } from '../_util/is';
+import { toLocal, toTimezone } from '../_util/dayjs';
+import omit from '../_util/omit';
+import PickerContext from './context';
 
 interface InnerRangePickerProps extends RangePickerProps {
   focusedInputIndex?: number;
@@ -28,18 +30,25 @@ function RangePicker(props: InnerRangePickerProps) {
     ...rest
   } = props;
 
+  const { utcOffset, timezone } = useContext(PickerContext);
+
   function onSelectTime(_: string, time: Dayjs) {
-    const v = valueShow.slice();
+    const zoneValue = valueShow.slice();
+    const v = valueShow.map((a) => toLocal(a, utcOffset, timezone));
+
+    zoneValue[focusedInputIndex] = toTimezone(time, utcOffset, timezone);
     v[focusedInputIndex] = time;
+
     onSelect &&
       onSelect(
         v.map((t) => t.format(format)),
         v
       );
-    setValueShow(v);
+
+    setValueShow(zoneValue);
 
     if (disableConfirm && isArray(v) && isDayjs(v[0]) && isDayjs(v[1])) {
-      onConfirmValue(v);
+      onConfirmValue(zoneValue);
     }
   }
 

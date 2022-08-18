@@ -250,70 +250,95 @@ exports[`renders BackTop/demo/custom_button.md correctly 1`] = `
 exports[`renders BackTop/demo/easing.md correctly 1`] = `
 <div>
   <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
     style="margin:12px"
   >
-    <span
-      class="arco-typography"
-      style="margin-right:8px"
-    >
-      Easing
-    </span>
     <div
-      class="arco-select arco-select-single arco-select-size-default"
-      style="width:200px;margin-right:10px"
-      tabindex="0"
+      class="arco-space-item"
+      style="margin-right:10px"
+    >
+      <span
+        class="arco-typography"
+      >
+        Easing
+      </span>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:10px"
     >
       <div
-        class="arco-select-view"
-        title="linear"
+        aria-autocomplete="list"
+        aria-controls="arco-select-popup-0"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-size-default"
+        role="combobox"
+        style="width:200px"
+        tabindex="0"
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="linear"
-        />
-        <span
-          class="arco-select-view-value"
-        >
-          linear
-        </span>
         <div
-          class="arco-select-suffix"
+          class="arco-select-view"
+          title="linear"
         >
-          <div
-            class="arco-select-arrow-icon"
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="linear"
+          />
+          <span
+            class="arco-select-view-value"
           >
-            <svg
-              class="arco-icon arco-icon-down"
-              fill="none"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="4"
-              viewBox="0 0 48 48"
-              width="1em"
+            linear
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
             >
-              <path
-                d="M39.6 17.443 24.043 33 8.487 17.443"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <span
-      class="arco-typography"
-      style="margin:0 8px 0 40px"
+    <div
+      class="arco-space-item"
+      style="margin-right:10px"
     >
-      Time
-    </span>
-    <input
-      class="arco-input arco-input-size-default"
-      placeholder="Please enter the easing time"
-      style="width:200px"
-      value="200"
-    />
+      <span
+        class="arco-typography"
+      >
+        Time
+      </span>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <input
+        class="arco-input arco-input-size-default"
+        placeholder="Please enter the easing time"
+        style="width:200px"
+        value="200"
+      />
+    </div>
   </div>
   <div
     style="position:relative"

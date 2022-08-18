@@ -60,7 +60,6 @@ export interface PickerProps {
   /**
    * @zh 每周的第一天开始于周几，0 - 周日，1 - 周一，以此类推。
    * @en The first day of the week starts on the day of the week, `0`-Sunday, `1`-Monday, and so on.
-   * @defaultValue 0
    * @version 2 - 6 in `2.20.0`
    */
   dayStartOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -137,6 +136,12 @@ export interface PickerProps {
    */
   dateRender?: (currentDate: Dayjs) => ReactNode;
   /**
+   * @zh 自定义渲染面板
+   * @en Customize the panel node.
+   * @version 2.34.0
+   */
+  panelRender?: (panelNode: ReactNode) => ReactNode;
+  /**
    * @zh 是否可输入。
    * @en Whether input box can be entered.
    * @defaultValue true
@@ -180,7 +185,7 @@ export interface PickerProps {
    * @zh 不可选取的日期
    * @en Specify the date that cannot be selected
    */
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   /**
    * @zh 额外的页脚
    * @en Extra footer
@@ -220,6 +225,16 @@ export interface PickerProps {
    * @version 2.20.0
    */
   hideNotInViewDates?: boolean;
+  /**
+   * @zh 设置时区偏移，如果需要 utc 时间则设置为 0。
+   * @en Set the timezone offset, set to 0 if utc time is required.
+   */
+  utcOffset?: number;
+  /**
+   * @zh 设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。
+   * @en timezone name, if `utcOffset` is set, `utcOffset` takes effect.
+   */
+  timezone?: string;
 }
 
 /**

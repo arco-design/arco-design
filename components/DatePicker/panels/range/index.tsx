@@ -17,9 +17,10 @@ import { ConfigContext } from '../../../ConfigProvider';
 import { getNow, getDayjsValue } from '../../../_util/dayjs';
 import { TimePickerProps } from '../../../TimePicker/interface';
 import { isObject } from '../../../_util/is';
+import PickerContext from '../../context';
 
 interface InnerRangePickerProps extends RangePickerProps {
-  disabledDate?: (current?: Dayjs) => boolean;
+  disabledDate?: (current: Dayjs) => boolean;
   dateRender?: (currentDate: Dayjs) => ReactNode;
   icons?: IconsType;
   locale?: Record<string, any>;
@@ -54,7 +55,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
   const {
     mode = 'date',
     showTime,
-    dayStartOfWeek = 0,
     disabledDate,
     disabledTime,
     format,
@@ -89,8 +89,10 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 
   const prefixCls = getPrefixCls('picker-range');
 
-  const startShowDate = pageShowDates[0] || getNow();
-  const endShowDate = pageShowDates[1] || getNow();
+  const { utcOffset, timezone } = useContext(PickerContext);
+
+  const startShowDate = pageShowDates[0] || getNow(utcOffset, timezone);
+  const endShowDate = pageShowDates[1] || getNow(utcOffset, timezone);
 
   const value = getDayjsValue(propsValue, format) as Dayjs[];
 
@@ -132,7 +134,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 
     const pickerProps = {
       ...basePickerProps,
-      dayStartOfWeek,
       localeName,
       popupVisible,
       timepickerProps,
@@ -302,7 +303,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
 }
 
 RangePicker.defaultProps = {
-  dayStartOfWeek: 0,
   pickerType: 'range',
 };
 

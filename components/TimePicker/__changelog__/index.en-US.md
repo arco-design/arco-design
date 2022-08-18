@@ -1,3 +1,27 @@
+## 2.38.0
+
+2022-07-29
+
+### 🆕 Feature
+
+- Component `TimePicker` add `triggerElement` prop to support custom trigger element.([#1199](https://github.com/arco-design/arco-design/pull/1199))
+
+## 2.32.0
+
+2022-04-15
+
+### 🐛 BugFix
+
+- Fix the `onSelect` event not triggered when the `TimePicker` input is correct.([#769](https://github.com/arco-design/arco-design/pull/769))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- The `TimePicker` component supports `utcOffset` and `timezone` to set the UTC time and timezone.([#604](https://github.com/arco-design/arco-design/pull/604))
+
 ## 2.27.1
 
 2021-12-24

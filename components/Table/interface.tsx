@@ -30,7 +30,7 @@ export interface TableProps<T = any> {
    * @en Table row key
    * @defaultValue key
    */
-  rowKey?: string | ((record: T) => string);
+  rowKey?: React.Key | ((record: T) => React.Key);
   /**
    * @zh 列描述数据对象的数组
    * @en An array of column objects
@@ -246,6 +246,13 @@ export interface RowSelectionProps<T = any> {
    */
   checkAll?: boolean;
   /**
+   * @zh 设置为 `false` 的时候父子选择会自动关联。
+   * @en When set to `false`, parent-child selections are automatically associated.
+   * @version 2.33.0
+   * @defaultValue true
+   */
+  checkStrictly?: boolean;
+  /**
    * @zh 多选模式下的复选框是否跨分页，只在非受控模式下生效
    * @en Whether the checkboxes in multi-select mode cross pages, only work in uncontrolled mode
    */
@@ -288,15 +295,6 @@ export interface RowSelectionProps<T = any> {
    */
   onSelectAll?: (selected: boolean, selectedRows) => void;
   /**
-   * @zh
-   * 大数据场景下优化复选框选中体验，onChange 回调里只有 keys，而不返回和计算相应的 rows
-   * @en
-   * In the big data scenario, optimizing the experience of the checkbox, there are only keys in the onChange callback,
-   * and the corresponding rows are not returned and calculated
-   * @version 2.15.0
-   */
-  pureKeys?: boolean;
-  /**
    * @zh 在数据项被删除时仍然保留选项的 `key`
    * @en The `key` is still retained in `selectedRowKeys` when the data item is deleted
    * @version 2.19.0
@@ -318,6 +316,7 @@ export interface RowSelectionProps<T = any> {
    * @en Multi-select or single-select
    */
   type?: 'checkbox' | 'radio';
+  pureKeys?: boolean; // TODO: remove
 }
 
 /**
@@ -601,7 +600,7 @@ export interface TheadProps<T = any> {
   rowSelection?: RowSelectionProps;
   columnTitle?: string | ReactNode;
   currentFilters?: Partial<Record<keyof T, string[]>>;
-  rowKey?: string | ((record: T) => string);
+  rowKey?: TableProps['rowKey'];
   components?: ComponentsProps;
   expandProps?: ExpandProps<T>;
   allSelectedRowKeys?: (string | number)[];
@@ -615,14 +614,15 @@ export type GetRowKeyType<T> = (record: T) => string;
 
 export interface TbodyProps<T = any> {
   data: T[];
-  selectedRowKeys: (string | number)[];
+  selectedRowKeys: React.Key[];
+  indeterminateKeys: React.Key[];
   components?: ComponentsProps;
-  expandedRowKeys: (string | number)[];
+  expandedRowKeys: React.Key[];
   columns: InternalColumnProps<T>[];
   noDataElement?: string | ReactNode;
   onCheck: (checked: boolean, record) => void;
   onCheckRadio: (key, record) => void;
-  onClickExpandBtn: (key: string | number) => void;
+  onClickExpandBtn: (key: React.Key) => void;
   pagination?: PaginationProps | boolean;
   scroll?: { x?: number | string | boolean; y?: number | string | boolean };
   expandedRowRender?: (record: T, index: number) => ReactNode;

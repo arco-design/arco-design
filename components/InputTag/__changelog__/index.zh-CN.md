@@ -1,3 +1,27 @@
+## 2.37.0
+
+2022-07-08
+
+### 🆕 功能升级
+
+- `InputTag` 组件允许通过 `validate` 属性格式化用户输入的值。([#1110](https://github.com/arco-design/arco-design/pull/1110))
+
+## 2.30.2
+
+2022-03-18
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件同时设置 `allowClear` 和 `readOnly` 时， 依然展示清除按钮的 bug。([#651](https://github.com/arco-design/arco-design/pull/651))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 的 `clear-icon` 样式未生效的bug([#589](https://github.com/arco-design/arco-design/pull/589))
+
 ## 2.28.2
 
 2022-01-21

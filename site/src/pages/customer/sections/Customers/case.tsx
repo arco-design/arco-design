@@ -5,7 +5,7 @@ import { ShowCaseCardProps } from '../../../../hooks/useShowCase';
 
 const prefixCls = 'case';
 
-export default function(props: ShowCaseCardProps) {
+export default function (props: ShowCaseCardProps) {
   const { data = [], link = [] } = props;
   const getCaseRecord = () => {
     const recordPrefixCls = `${prefixCls}-record`;

@@ -3,17 +3,40 @@
 exports[`ConfigProvider componentConfig.Tag default 1`] = `
 <div
   class="arco-tag arco-tag-checked arco-tag-size-default"
-/>
+>
+  <span
+    class="arco-tag-content"
+  />
+</div>
 `;
 
 exports[`ConfigProvider componentConfig.Tag set className globally 1`] = `
 <div
   class="arco-tag arco-tag-checked arco-tag-size-default global-default-class"
-/>
+>
+  <span
+    class="arco-tag-content"
+  />
+</div>
 `;
 
 exports[`ConfigProvider componentConfig.Tag set className globally and component set className itself. 1`] = `
 <div
   class="arco-tag arco-tag-checked arco-tag-size-default component-class"
-/>
+>
+  <span
+    class="arco-tag-content"
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Tag set data-* property 1`] = `
+<div
+  class="arco-tag arco-tag-checked arco-tag-size-default"
+  data-test-name="Tag"
+>
+  <span
+    class="arco-tag-content"
+  />
+</div>
 `;

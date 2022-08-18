@@ -14,17 +14,17 @@ Lightweight global feedback triggered by user actions.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|transitionClassNames|ClassNames of react-transition-group of the message pop-up animation, see `classNames`|`string`|`-`|
-|content|Message content|`ReactNode \| string` **(Required)**|`-`|
-|showIcon|Whether to show the icon|`boolean`|`true`|
-|icon|Custom icon|`ReactNode`|`-`|
-|duration|Automatic shutdown time, the unit is `ms`|`number`|`3000`|
-|onClose|Callback when close|`() => void`|`-`|
-|id|The unique identifier of the current message, which can be used to update the message|`string`|`-`|
-|position|The position of the message|`'top' \| 'bottom'`|`-`|
-|closable|Whether to show the close button|`boolean`|`-`|
+|closable|Whether to show the close button|boolean |`-`|
+|showIcon|Whether to show the icon|boolean |`true`|
+|duration|Automatic shutdown time, the unit is `ms`|number |`3000`|
+|id|The unique identifier of the current message, which can be used to update the message|string |`-`|
+|transitionClassNames|ClassNames of react-transition-group of the message pop-up animation, see `classNames`|string |`-`|
+|position|The position of the message|'top' \| 'bottom' |`-`|
+|icon|Custom icon|ReactNode |`-`|
+|className|Additional css class|string \| string[] |`-`|
+|content|Message content|ReactNode \| string  **(Required)**|`-`|
+|style|Additional style|CSSProperties |`-`|
+|onClose|Callback when close|() => void |`-`|
 
 ### Methods
 

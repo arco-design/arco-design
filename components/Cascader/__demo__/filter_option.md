@@ -15,7 +15,6 @@ Customize the search logic.
 
 ```js
 import { Cascader, Space } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -93,32 +92,35 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Space size="large">
-    <Cascader
-      placeholder="Please select ..."
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
-      filterOption={(input, node) => {
-        return node.value.indexOf(input) > -1 || node.label.indexOf(input) > -1
-      }}
-      showSearch
-      allowClear
-    />
-    <Cascader
-      mode="multiple"
-      placeholder="Please select ..."
-      style={{ width: 300, marginBottom: 20 }}
-      options={options}
-      defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-      filterOption={(input, node) => {
-        return node.value.indexOf(input) > -1 || node.label.indexOf(input) > -1
-      }}
-      showSearch
-      allowClear
-    />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
+        filterOption={(input, node) => {
+          return node.value.indexOf(input) > -1 || node.label.indexOf(input) > -1;
+        }}
+        showSearch
+        allowClear
+      />
+      <Cascader
+        mode="multiple"
+        placeholder="Please select ..."
+        style={{ width: 300, marginBottom: 20 }}
+        options={options}
+        defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
+        filterOption={(input, node) => {
+          return node.value.indexOf(input) > -1 || node.label.indexOf(input) > -1;
+        }}
+        showSearch
+        allowClear
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

@@ -16,28 +16,28 @@ In a set of data, the user can select one or more items through the Checkbox.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|disabled|Whether to disable|`boolean`|`-`|
-|error|Whether to show in error style|`boolean`|`-`|
-|checked|Whether the checkbox is checked|`boolean`|`-`|
-|defaultChecked|To set default checked|`boolean`|`-`|
-|indeterminate|The indeterminate state of checkbox|`boolean`|`-`|
-|onChange|Callback when the state changes|`(checked: boolean, e: Event) => void`|`-`|
-|value|To set checkbox value|`T`|`-`|
+|checked|Whether the checkbox is checked|boolean |`-`|
+|defaultChecked|To set default checked|boolean |`-`|
+|disabled|Whether to disable|boolean |`-`|
+|error|Whether to show in error style|boolean |`-`|
+|indeterminate|The indeterminate state of checkbox|boolean |`-`|
+|className|Additional css class|string \| string[] |`-`|
+|style|Additional style|CSSProperties |`-`|
+|value|To set checkbox value|T |`-`|
+|onChange|Callback when the state changes|(checked: boolean, e: Event) => void |`-`|
 
 ### Checkbox.Group
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|style|Additional style|`CSSProperties`|`-`|
-|className|Additional css class|`string \| string[]`|`-`|
-|disabled|Whether to disable all checkboxes in the group|`boolean`|`-`|
-|direction|Arrangement direction|`'horizontal' \| 'vertical'`|`horizontal`|
-|defaultValue|Initial selected value|`T[]`|`-`|
-|options|Specifies options|`(T \| { label: ReactNode; value: T; disabled?: boolean })[]`|`-`|
-|value|To set value|`T[]`|`-`|
-|onChange|Callback when the state changes|`(value: T[], e: Event) => void`|`-`|
+|disabled|Whether to disable all checkboxes in the group|boolean |`-`|
+|direction|Arrangement direction|'horizontal' \| 'vertical' |`horizontal`|
+|className|Additional css class|string \| string[] |`-`|
+|defaultValue|Initial selected value|T[] |`-`|
+|options|Specifies options|(T \| { label: ReactNode; value: T; disabled?: boolean })[] |`-`|
+|style|Additional style|CSSProperties |`-`|
+|value|To set value|T[] |`-`|
+|onChange|Callback when the state changes|(value: T[], e: Event) => void |`-`|
 
 ### `Checkbox.useCheckbox`
 

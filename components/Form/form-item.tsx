@@ -14,16 +14,25 @@ import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { isArray, isFunction, isUndefined, isObject } from '../_util/is';
 import Grid from '../Grid';
-import { FormItemProps, FieldError, KeyType, FormContextProps, VALIDATE_STATUS } from './interface';
+import {
+  FormItemProps,
+  FieldError,
+  KeyType,
+  FormContextProps,
+  VALIDATE_STATUS,
+  FormItemChildrenFn,
+} from './interface';
 import Control from './control';
 import {
   FormItemContext as RawFormItemContext,
   FormItemContextType as RawFormItemContextType,
   FormContext,
+  FormListContext,
 } from './context';
 import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
 import FormItemLabel from './form-label';
+import { formatValidateMsg } from './utils';
 
 const Row = Grid.Row;
 const Col = Grid.Col;
@@ -42,13 +51,17 @@ const FormItemTip: React.FC<FormItemTipProps> = ({
 }) => {
   const errorTip = propsErrors.map((item, i) => {
     if (item) {
-      return <div key={i}>{item.message}</div>;
+      return (
+        <div key={i} role="alert">
+          {item.message}
+        </div>
+      );
     }
   });
   const warningTip = [];
   warnings.map((item, i) => {
     warningTip.push(
-      <div key={i} className={`${prefixCls}-message-help-warning`}>
+      <div key={i} role="alert" className={`${prefixCls}-message-help-warning`}>
         {item}
       </div>
     );
@@ -88,6 +101,7 @@ const Item = <
 ) => {
   const { getPrefixCls, prefixCls: prefix } = useContext(ConfigContext);
   const topFormContext = useContext(RawFormItemContext);
+  const formListContext = useContext(FormListContext);
   const [errors, setErrors] = useState<{
     [key: string]: FieldError<FieldValue>;
   }>(null);
@@ -122,6 +136,7 @@ const Item = <
       }
       return newErrors;
     });
+
     setWarnings((current) => {
       const newVal = { ...(current || {}) };
       if (warnings && warnings.length) {
@@ -139,6 +154,8 @@ const Item = <
       : updateInnerFormItem;
 
   useEffect(() => {
+    isDestroyed.current = false;
+
     return () => {
       isDestroyed.current = true;
       setErrors(null);
@@ -148,6 +165,11 @@ const Item = <
 
   const contextProps = {
     ...(formContext as React.Context<FormContextProps<FormData, FieldValue, FieldKey>>),
+    validateMessages:
+      formContext.validateMessages &&
+      formatValidateMsg(formContext.validateMessages, {
+        label: props.label,
+      }),
     prefixCls,
     updateFormItem,
     disabled: 'disabled' in props ? props.disabled : formContext.disabled,
@@ -200,8 +222,14 @@ const Item = <
 
     if (isFunction(children)) {
       return (
-        <Control disabled={disabled} {...(props as any)} {...(field ? { key: field } : {})}>
-          {(...rest) => children(...rest)}
+        <Control
+          disabled={disabled}
+          {...(props as any)}
+          {...(field ? { key: field, _key: field } : {})}
+        >
+          {(...rest) =>
+            children(...(rest as Parameters<FormItemChildrenFn<FormData, FieldValue, FieldKey>>))
+          }
         </Control>
       );
     }
@@ -220,8 +248,9 @@ const Item = <
     }
     if (React.Children.count(children) === 1) {
       if (field) {
+        const key = formListContext?.getItemKey?.(field) || field;
         return (
-          <Control disabled={disabled} {...(props as any)} key={field}>
+          <Control disabled={disabled} {...(props as any)} key={key} _key={key}>
             {children}
           </Control>
         );
@@ -359,7 +388,7 @@ export default ItemComponent as <
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
 >(
-  props: React.PropsWithChildren<FormItemProps<FormData, FieldValue, FieldKey>> & {
+  props: FormItemProps<FormData, FieldValue, FieldKey> & {
     ref?: React.Ref<typeof Row['prototype']>;
   }
 ) => React.ReactElement;

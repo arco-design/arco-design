@@ -9,8 +9,8 @@ import Year from './year';
 import Header from './header/header';
 import PanelHeader from './header/panel-header';
 import useMergeProps from '../_util/hooks/useMergeProps';
-
 import { getDayjsValue, getNow, methods } from '../_util/dayjs';
+import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(mode: 'day' | 'week' | 'month' | 'year', panel?: boolean) {
   return mode === 'month' || (mode === 'year' && !panel) ? 'YYYY-MM-DD' : 'YYYY-MM';
@@ -25,7 +25,7 @@ const defaultProps: CalendarProps = {
 };
 
 function Calendar(baseProps: CalendarProps) {
-  const { getPrefixCls, locale: globalLocale, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, locale: globalLocale, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CalendarProps>(baseProps, defaultProps, componentConfig?.Calendar);
   const {
     style,
@@ -133,6 +133,7 @@ function Calendar(baseProps: CalendarProps) {
     innerMode === 'month' ? `${prefixCls}-mode-month` : `${prefixCls}-mode-year`,
     {
       [`${prefixCls}-panel`]: panel && (innerMode === 'month' || innerMode === 'year'),
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
@@ -150,7 +151,7 @@ function Calendar(baseProps: CalendarProps) {
   };
 
   return (
-    <div className={classNames} style={{ ...style, ...baseStyle }}>
+    <div className={classNames} style={{ ...style, ...baseStyle }} {...pickDataAttributes(props)}>
       {typeof headerRender === 'function' ? (
         headerRender({
           value: mergedValue,

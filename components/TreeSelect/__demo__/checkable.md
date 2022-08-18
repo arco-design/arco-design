@@ -16,8 +16,6 @@ The `treeCheckable` property can display checkbox.
 ```js
 import { TreeSelect, Checkbox } from '@arco-design/web-react';
 import { useState } from 'react';
-
-
 const treeData = [
   {
     title: 'Trunk 0-0',
@@ -37,9 +35,9 @@ const treeData = [
           {
             title: 'Leaf 0-0-2-1',
             value: 'Leaf 0-0-2-1',
-            key: '0-0-2-1'
-          }
-        ]
+            key: '0-0-2-1',
+          },
+        ],
       },
     ],
   },
@@ -63,9 +61,9 @@ const treeData = [
             title: 'Leaf 0-1-1-2',
             value: 'Leaf 0-1-1-2',
             key: '0-1-1-2',
-            disabled: true
+            disabled: true,
           },
-        ]
+        ],
       },
       {
         title: 'Leaf 0-1-2',
@@ -76,34 +74,32 @@ const treeData = [
   },
 ];
 
-function Demo () {
-  const [treeCheckStrictly, setTreeCheckStrictly] = useState(false)
+function App() {
+  const [treeCheckStrictly, setTreeCheckStrictly] = useState(false);
   const [value, setValue] = useState(['0-1']);
-
-  return <div>
-    <div style={{marginBottom: 20}}>
-      <Checkbox
-        checked={treeCheckStrictly}
-        onChange={setTreeCheckStrictly}
-      >
-        treeCheckStrictly
-      </Checkbox>
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }} >
+        <Checkbox checked={treeCheckStrictly} onChange={setTreeCheckStrictly}>
+          treeCheckStrictly
+        </Checkbox>
+      </div>
+      <TreeSelect
+        showSearch
+        allowClear
+        treeCheckable
+        treeData={treeData}
+        value={value}
+        treeCheckStrictly={treeCheckStrictly}
+        onChange={(value) => {
+          console.log(value);
+          setValue(value);
+        }}
+        style={{ width: 300, }}
+      />
     </div>
-    <TreeSelect
-      showSearch
-      allowClear
-      treeCheckable
-      treeData={treeData}
-      value={value}
-      treeCheckStrictly={treeCheckStrictly}
-      onChange={(value) => {
-        console.log(value)
-        setValue(value)
-      }}
-      style={{ width: 300 }}
-    />
-  </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -2,7 +2,7 @@ import React from 'react';
 import cs from 'classnames';
 import styles from './style/iconWall.module.less';
 
-export default function(props: { IconList: React.ReactNode[]; direction: 'left' | 'right' }) {
+export default function (props: { IconList: React.ReactNode[]; direction: 'left' | 'right' }) {
   const { IconList, direction } = props;
 
   const getIconNode = (list: React.ReactNode[]) => {

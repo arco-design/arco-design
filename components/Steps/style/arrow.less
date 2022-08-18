@@ -199,3 +199,103 @@
     border-left: (@steps-size-small-arrow / 2) solid @steps-arrow-color-item-bg_finish;
   }
 }
+
+.@{steps-prefix-cls}-rtl.@{steps-prefix-cls}-mode-arrow {
+  .@{steps-prefix-cls}-item {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-left: @steps-arrow-size-item-gap;
+    }
+
+    &:first-child {
+      .@{steps-prefix-cls}-item-content {
+        padding-left: 0;
+        padding-right: @steps-arrow-size-default-title-padding-left;
+      }
+    }
+
+    &:not(:first-child) {
+      .@{steps-prefix-cls}-item-content {
+        padding-left: 0;
+        padding-right: @steps-arrow-size-default-title-padding-left +
+          (@steps-size-default-arrow / 2);
+      }
+    }
+
+    &:not(:first-child)::before {
+      border-left: none;
+      border-right: (@steps-size-default-arrow / 2) solid var(~'@{arco-cssvars-prefix}-color-bg-2');
+      right: 0;
+    }
+
+    &:not(:last-child)::after {
+      left: -(@steps-size-default-arrow / 2);
+      right: initial;
+    }
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-wait::after {
+    border-left: none;
+    border-right: (@steps-size-default-arrow / 2) solid @steps-arrow-color-item-bg_wait;
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-process::after {
+    border-left: none;
+    border-right: (@steps-size-default-arrow / 2) solid @steps-arrow-color-item-bg_process;
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-finish::after {
+    border-left: none;
+    border-right: (@steps-size-default-arrow / 2) solid @steps-arrow-color-item-bg_finish;
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-error::after {
+    border-left: none;
+    border-right: (@steps-size-default-arrow / 2) solid @steps-arrow-color-item-bg_error;
+  }
+}
+
+.@{steps-prefix-cls}-rtl.@{steps-prefix-cls}-mode-arrow.@{steps-prefix-cls}-size-small {
+  .@{steps-prefix-cls}-item {
+    &:not(:first-child) {
+      &::before {
+        border-right: (@steps-size-small-arrow / 2) solid var(~'@{arco-cssvars-prefix}-color-bg-2');
+      }
+    }
+
+    &:not(:last-child)::after {
+      left: -(@steps-size-small-arrow / 2);
+      border-right: (@steps-size-small-arrow / 2) solid @steps-arrow-color-item-bg_wait;
+    }
+
+    &:first-child {
+      .@{steps-prefix-cls}-item-content {
+        padding-left: 0;
+        padding-right: @steps-arrow-size-small-title-padding-left;
+      }
+    }
+
+    &:not(:first-child) {
+      .@{steps-prefix-cls}-item-content {
+        padding-left: 0;
+        padding-right: @steps-arrow-size-small-title-padding-left + (@steps-size-small-arrow / 2);
+      }
+    }
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-wait::after {
+    border-right: (@steps-size-small-arrow / 2) solid @steps-arrow-color-item-bg_wait;
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-process::after {
+    border-right: (@steps-size-small-arrow / 2) solid @steps-arrow-color-item-bg_process;
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-finish::after {
+    border-right: (@steps-size-small-arrow / 2) solid @steps-arrow-color-item-bg_finish;
+  }
+
+  .@{steps-prefix-cls}-item:not(:last-child).@{steps-prefix-cls}-item-error::after {
+    border-right: (@steps-size-small-arrow / 2) solid @steps-arrow-color-item-bg_error;
+  }
+}

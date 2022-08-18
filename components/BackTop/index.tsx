@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, forwardRef, useState, useEffect, useContext, memo } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import BTween from 'b-tween';
+import { pickDataAttributes } from '../_util/pick';
 import cs from '../_util/classNames';
 import IconToTop from '../../icon/react-icon/IconToTop';
 import { ConfigContext } from '../ConfigProvider';
@@ -17,7 +18,7 @@ const defaultProps: BackTopProps = {
 };
 
 function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<BackTopProps>>(
     baseProps,
     defaultProps,
@@ -69,8 +70,9 @@ function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
 
   return (
     <div
+      {...pickDataAttributes(props)}
       ref={ref}
-      className={cs(`${prefixCls}`, props.className)}
+      className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, props.className)}
       style={props.style}
       onClick={scrollToTop}
     >

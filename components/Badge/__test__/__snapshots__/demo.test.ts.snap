@@ -1,104 +1,132 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Badge/demo/animate.md correctly 1`] = `
-<div>
+<div
+  class="arco-space arco-space-vertical"
+>
   <div
-    class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:20px"
+    class="arco-space-item"
+    style="margin-bottom:24px"
   >
-    <span
-      class="arco-badge"
-      style="margin-right:50px"
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
-        class="arco-avatar arco-avatar-square"
-        style="font-size:"
+        class="arco-space-item"
+        style="margin-right:24px"
       >
         <span
-          class="arco-avatar-text"
+          class="arco-badge"
         >
-           
+          <div
+            class="arco-avatar arco-avatar-square"
+            style="font-size:"
+          >
+            <span
+              class="arco-avatar-text"
+            >
+               
+            </span>
+          </div>
+          <span
+            class="arco-badge-dot"
+          />
         </span>
       </div>
-      <span
-        class="arco-badge-dot"
-      />
-    </span>
-    <button
-      class="arco-switch arco-switch-type-circle arco-switch-checked"
-      type="button"
-    >
       <div
-        class="arco-switch-dot"
-      />
-    </button>
+        class="arco-space-item"
+      >
+        <button
+          aria-checked="true"
+          class="arco-switch arco-switch-type-circle arco-switch-checked"
+          role="switch"
+          type="button"
+        >
+          <div
+            class="arco-switch-dot"
+          />
+        </button>
+      </div>
+    </div>
   </div>
   <div
-    class="arco-row arco-row-align-center arco-row-justify-start"
+    class="arco-space-item"
   >
-    <span
-      class="arco-badge"
-      style="margin-right:50px"
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
-        class="arco-avatar arco-avatar-square"
-        style="font-size:"
+        class="arco-space-item"
+        style="margin-right:24px"
       >
         <span
-          class="arco-avatar-text"
+          class="arco-badge"
         >
-           
+          <div
+            class="arco-avatar arco-avatar-square"
+            style="font-size:"
+          >
+            <span
+              class="arco-avatar-text"
+            >
+               
+            </span>
+          </div>
+          <span
+            class="arco-badge-number"
+          >
+            <span
+              class=""
+            >
+              12
+            </span>
+          </span>
         </span>
       </div>
-      <span
-        class="arco-badge-number"
+      <div
+        class="arco-space-item"
       >
-        <span
-          class=""
+        <div
+          class="arco-btn-group"
         >
-          12
-        </span>
-      </span>
-    </span>
-    <div
-      class="arco-btn-group"
-    >
-      <button
-        class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
-        type="button"
-      >
-        <svg
-          class="arco-icon arco-icon-plus"
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-          width="1em"
-        >
-          <path
-            d="M5 24h38M24 5v38"
-          />
-        </svg>
-      </button>
-      <button
-        class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
-        type="button"
-      >
-        <svg
-          class="arco-icon arco-icon-minus"
-          fill="none"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-          width="1em"
-        >
-          <path
-            d="M5 24h38"
-          />
-        </svg>
-      </button>
+          <button
+            class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-plus"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M5 24h38M24 5v38"
+              />
+            </svg>
+          </button>
+          <button
+            class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-minus"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M5 24h38"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -174,14 +202,14 @@ exports[`renders Badge/demo/basic.md correctly 1`] = `
         style="height:16px;width:16px;font-size:14px"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-clock-circle"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           style="vertical-align:middle;color:var(--color-text-2)"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
@@ -695,14 +723,14 @@ exports[`renders Badge/demo/dot.md correctly 1`] = `
       class="arco-badge"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-notification"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         style="color:#888;font-size:18px;vertical-align:-3px"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M24 9c7.18 0 13 5.82 13 13v13H11V22c0-7.18 5.82-13 13-13Zm0 0V4M6 35h36m-25 7h14"
@@ -737,13 +765,13 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
         >
           <span>
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-user"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -784,13 +812,13 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
         >
           <span>
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-user"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -830,13 +858,13 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
         >
           <span>
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-user"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -1170,13 +1198,13 @@ exports[`renders Badge/demo/text.md correctly 1`] = `
         >
           <span>
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-user"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"
@@ -1212,13 +1240,13 @@ exports[`renders Badge/demo/text.md correctly 1`] = `
         >
           <span>
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-user"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 37c0-4.97 4.03-8 9-8h16c4.97 0 9 3.03 9 8v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3Z"

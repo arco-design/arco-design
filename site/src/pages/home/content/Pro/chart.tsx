@@ -108,11 +108,7 @@ function Chart(props: ChartProps) {
           },
         ]);
     } else {
-      chart
-        .line()
-        .position('x*y')
-        .color('name', ['#4080FF'])
-        .shape('smooth');
+      chart.line().position('x*y').color('name', ['#4080FF']).shape('smooth');
     }
 
     chart.interaction('active-region');

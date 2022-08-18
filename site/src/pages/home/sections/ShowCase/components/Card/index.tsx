@@ -22,13 +22,7 @@ export default function ShowCaseCard(props: ShowCaseCardProps) {
           ))}
         {link?.length &&
           link.map((item, index) => (
-            <div
-              key={index}
-              className={styles['card-link']}
-              onClick={() => {
-                window.open(item.href);
-              }}
-            >
+            <a href={item.href} key={index} className={styles['card-link']}>
               <div className={styles['card-link-left']}>
                 <div className={styles['card-link-logo']}>{item.logo}</div>
                 <div className={styles['card-link-name']}>{item.name}</div>
@@ -36,7 +30,7 @@ export default function ShowCaseCard(props: ShowCaseCardProps) {
               <div className={styles['card-link-arrow']}>
                 <IconArrowRight />
               </div>
-            </div>
+            </a>
           ))}
       </div>
     </div>

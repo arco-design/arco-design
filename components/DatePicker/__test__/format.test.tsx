@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import dayjs from 'dayjs';
+import { fireEvent, render } from '../../../tests/util';
 import DatePicker from '..';
 import '../../../tests/mockDate';
 
@@ -8,109 +8,91 @@ const { MonthPicker, YearPicker, QuarterPicker, WeekPicker, RangePicker } = Date
 
 describe('Picker Format', () => {
   it('DatePicker', () => {
-    const component = mount(<DatePicker format="YYYY/MM/DD" defaultValue="2020/02/01" />);
+    const component = render(<DatePicker format="YYYY/MM/DD" defaultValue="2020/02/01" />);
 
-    expect(component.find('input').prop('value')).toBe('2020/02/01');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/02/01');
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component
-      .find('.arco-picker-date')
-      .at(8) // 2020-02-03
-      .simulate('click');
-
-    expect(component.find('input').prop('value')).toBe('2020/02/03');
+    fireEvent.click(component.find('.arco-picker-date').item(8)); // 2020-02-04
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/02/04');
   });
 
   it('MonthPicker', () => {
-    const component = mount(<MonthPicker format="YYYY/MM" defaultValue="2020/02" />);
+    const component = render(<MonthPicker format="YYYY/MM" defaultValue="2020/02" />);
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/02');
 
-    expect(component.find('input').prop('value')).toBe('2020/02');
+    fireEvent.click(component.container.firstChild!);
 
-    component.simulate('click');
-
-    component
-      .find('.arco-picker-date')
-      .at(0) // 2020-01
-      .simulate('click');
-
-    expect(component.find('input').prop('value')).toBe('2020/01');
+    fireEvent.click(component.find('.arco-picker-date').item(0)); // 2020-01
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/01');
   });
 
   it('YearPicker', () => {
-    const component = mount(<YearPicker format="YYYY [year]" defaultValue="2020" />);
+    const component = render(<YearPicker format="YYYY [year]" defaultValue="2020" />);
 
-    expect(component.find('input').prop('value')).toBe('2020 year');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020 year');
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component
-      .find('.arco-picker-date')
-      .at(3) // 2022
-      .simulate('click');
+    fireEvent.click(component.find('.arco-picker-date').item(3)); // 2022
 
-    expect(component.find('input').prop('value')).toBe('2022 year');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2022 year');
   });
 
   it('QuarterPicker', () => {
-    const component = mount(<QuarterPicker format="YYYY/[Q]Q" defaultValue="2020-01" />);
+    const component = render(<QuarterPicker format="YYYY/[Q]Q" defaultValue="2020-01" />);
 
-    expect(component.find('input').prop('value')).toBe('2020/Q1');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/Q1');
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component
-      .find('.arco-picker-date')
-      .at(1) // Q2
-      .simulate('click');
+    fireEvent.click(component.find('.arco-picker-date').item(1)); // Q2
 
-    expect(component.find('input').prop('value')).toBe('2020/Q2');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/Q2');
   });
 
   it('WeekPicker', () => {
-    const component = mount(<WeekPicker format="gggg/wo" defaultValue={dayjs('2020-01-01')} />);
+    const component = render(<WeekPicker format="gggg/wo" defaultValue={dayjs('2020-01-01')} />);
 
-    expect(component.find('input').prop('value')).toBe('2020/1周');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/1周');
 
-    component.simulate('click');
+    fireEvent.click(component.container.firstChild!);
 
-    component
-      .find('.arco-picker-date')
-      .at(9) // 2020-01-05 2周
-      .simulate('click');
+    fireEvent.click(component.find('.arco-picker-date').item(9)); // 2020-01-05 2周
 
-    expect(component.find('input').prop('value')).toBe('2020/2周');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/2周');
   });
 
   it('RangePicker (date)', () => {
-    const component = mount(
+    const component = render(
       <RangePicker format="YYYY/MM/DD" defaultValue={['2020/02/01', '2020/03/01']} />
     );
 
-    expect(component.find('input').at(0).prop('value')).toBe('2020/02/01');
-    expect(component.find('input').at(1).prop('value')).toBe('2020/03/01');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/02/01');
+    expect(component.find('.arco-picker-input input')[1].getAttribute('value')).toBe('2020/03/01');
   });
 
   it('RangePicker (month)', () => {
-    const component = mount(
+    const component = render(
       <RangePicker mode="month" format="YYYY/MM" defaultValue={['2020/02', '2020/03']} />
     );
 
-    expect(component.find('input').at(0).prop('value')).toBe('2020/02');
-    expect(component.find('input').at(1).prop('value')).toBe('2020/03');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/02');
+    expect(component.find('.arco-picker-input input')[1].getAttribute('value')).toBe('2020/03');
   });
 
   it('RangePicker (year)', () => {
-    const component = mount(
+    const component = render(
       <RangePicker mode="year" format="YYYY [year]" defaultValue={['2020', '2031']} />
     );
 
-    expect(component.find('input').at(0).prop('value')).toBe('2020 year');
-    expect(component.find('input').at(1).prop('value')).toBe('2031 year');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020 year');
+    expect(component.find('.arco-picker-input input')[1].getAttribute('value')).toBe('2031 year');
   });
 
   it('RangePicker (week)', () => {
-    const component = mount(
+    const component = render(
       <RangePicker
         mode="week"
         format="gggg/wo"
@@ -118,12 +100,14 @@ describe('Picker Format', () => {
       />
     );
 
-    expect(component.find('input').at(0).prop('value')).toBe('2020/5周');
-    expect(component.find('input').at(1).prop('value')).toBe('2020/10周');
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('2020/5周');
+    expect(component.find('.arco-picker-input input')[1].getAttribute('value')).toBe('2020/9周');
   });
 
   it('fallback format', () => {
-    const component = mount(<DatePicker format="YYYY-MM-DD HH:mm:ss" defaultValue="2020-02-01" />);
-    expect(component.find('input').at(0).prop('value')).toBe('2020-02-01 00:00:00');
+    const component = render(<DatePicker format="YYYY-MM-DD HH:mm:ss" defaultValue="2020-02-01" />);
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe(
+      '2020-02-01 00:00:00'
+    );
   });
 });

@@ -6,7 +6,7 @@ import React, { CSSProperties, ReactNode } from 'react';
  * @en `T = string | number`
  */
 export interface CheckboxProps<T extends React.ReactText = any>
-  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'className' | 'onChange'> {
+  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'children' | 'className' | 'onChange'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -47,7 +47,7 @@ export interface CheckboxProps<T extends React.ReactText = any>
   checkboxGroupValue?: T[];
   onGroupChange?: (value: T, checked: boolean) => void;
   isCheckboxGroup?: boolean;
-  children?: ReactNode;
+  children?: ReactNode | ((value: { checked: boolean; indeterminate: boolean }) => ReactNode);
 }
 
 /**

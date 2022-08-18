@@ -14,6 +14,7 @@ title:
 Use `getPopupContainer` to specify the parent node where the preview should mount to.
 
 ```js
+import React from 'react';
 import { Image } from '@arco-design/web-react';
 
 const wrapperStyle = {
@@ -26,7 +27,7 @@ const wrapperStyle = {
   textAlign: 'center',
 };
 
-function Demo() {
+function App() {
   const ref = React.useRef();
   return (
     <div style={wrapperStyle} ref={ref}>
@@ -37,10 +38,11 @@ function Demo() {
           closable: false,
         }}
         src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
+        alt="lamp"
       />
     </div>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

@@ -1,3 +1,35 @@
+## 2.39.0
+
+2022-08-12
+
+### 💎 功能优化
+
+- `Pagination` 组件支持通过键盘事件切换页码([#1276](https://github.com/arco-design/arco-design/pull/1276))
+
+## 2.36.0
+
+2022-06-24
+
+### 💅 样式更新
+
+- 修复 `Pagination` 中的省略号在某些情况下垂直方向未居中的问题。([#1040](https://github.com/arco-design/arco-design/pull/1040))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 问题修复
+
+- 修复 `Pagination` 组件在 `simple` 模式下  `showJumper=false` 不生效的 bug。([#979](https://github.com/arco-design/arco-design/pull/979))
+
+## 2.32.0
+
+2022-04-15
+
+### 🆕 功能升级
+
+- `Pagination` 组件新增 `bufferSize` 属性，支持设置页码被折叠时的展示区间([#767](https://github.com/arco-design/arco-design/pull/767))
+
 ## 2.24.0
 
 2021-11-05

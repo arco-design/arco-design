@@ -16,25 +16,36 @@ Message has 2 different positions.
 ```js
 import { Message, Button, Space } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Space size="large">
-    <Button
-      onClick={() =>
-        Message.info({ content: 'This is a message!', showIcon: true, position: 'top' })
-      }
-      type="primary"
-    >
-      Top
-    </Button>
-    <Button
-      onClick={() =>
-        Message.info({ content: 'This is a message!', showIcon: true, position: 'bottom' })
-      }
-      type="primary"
-    >
-      Bottom
-    </Button>
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Button
+        onClick={() =>
+          Message.info({
+            content: 'This is a message!',
+            showIcon: true,
+            position: 'top',
+          })
+        }
+        type="primary"
+      >
+        Top
+      </Button>
+      <Button
+        onClick={() =>
+          Message.info({
+            content: 'This is a message!',
+            showIcon: true,
+            position: 'bottom',
+          })
+        }
+        type="primary"
+      >
+        Bottom
+      </Button>
+    </Space>
+  );
+};
+
+export default App;
 ```

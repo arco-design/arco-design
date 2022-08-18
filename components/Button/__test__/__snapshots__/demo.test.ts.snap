@@ -102,13 +102,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-down"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -136,13 +136,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-more"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M38 25v-2h2v2h-2ZM23 25v-2h2v2h-2ZM8 25v-2h2v2H8Z"
@@ -178,13 +178,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-down"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -207,18 +207,18 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
           class="arco-btn-group"
         >
           <button
-            class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+            class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
             style="padding:0 8px"
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-left"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M32 8.4 16.444 23.956 32 39.513"
@@ -229,7 +229,7 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             </span>
           </button>
           <button
-            class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+            class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
             style="padding:0 8px"
             type="button"
           >
@@ -237,13 +237,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
               Next
             </span>
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-right"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="m16 39.513 15.556-15.557L16 8.4"
@@ -264,13 +264,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-star"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -282,13 +282,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-message"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M15 20h18m-18 9h9M7 41h17.63C33.67 41 41 33.67 41 24.63V24c0-9.389-7.611-17-17-17S7 14.611 7 24v17Z"
@@ -300,13 +300,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-settings"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M18.797 6.732A1 1 0 0 1 19.76 6h8.48a1 1 0 0 1 .964.732l1.285 4.628a1 1 0 0 0 1.213.7l4.651-1.2a1 1 0 0 1 1.116.468l4.24 7.344a1 1 0 0 1-.153 1.2L38.193 23.3a1 1 0 0 0 0 1.402l3.364 3.427a1 1 0 0 1 .153 1.2l-4.24 7.344a1 1 0 0 1-1.116.468l-4.65-1.2a1 1 0 0 0-1.214.7l-1.285 4.628a1 1 0 0 1-.964.732h-8.48a1 1 0 0 1-.963-.732L17.51 36.64a1 1 0 0 0-1.213-.7l-4.65 1.2a1 1 0 0 1-1.116-.468l-4.24-7.344a1 1 0 0 1 .153-1.2L9.809 24.7a1 1 0 0 0 0-1.402l-3.364-3.427a1 1 0 0 1-.153-1.2l4.24-7.344a1 1 0 0 1 1.116-.468l4.65 1.2a1 1 0 0 0 1.213-.7l1.286-4.628Z"
@@ -329,13 +329,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-star"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
@@ -350,13 +350,13 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-settings"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M18.797 6.732A1 1 0 0 1 19.76 6h8.48a1 1 0 0 1 .964.732l1.285 4.628a1 1 0 0 0 1.213.7l4.651-1.2a1 1 0 0 1 1.116.468l4.24 7.344a1 1 0 0 1-.153 1.2L38.193 23.3a1 1 0 0 0 0 1.402l3.364 3.427a1 1 0 0 1 .153 1.2l-4.24 7.344a1 1 0 0 1-1.116.468l-4.65-1.2a1 1 0 0 0-1.214.7l-1.285 4.628a1 1 0 0 1-.964.732h-8.48a1 1 0 0 1-.963-.732L17.51 36.64a1 1 0 0 0-1.213-.7l-4.65 1.2a1 1 0 0 1-1.116-.468l-4.24-7.344a1 1 0 0 1 .153-1.2L9.809 24.7a1 1 0 0 0 0-1.402l-3.364-3.427a1 1 0 0 1-.153-1.2l4.24-7.344a1 1 0 0 1 1.116-.468l4.65 1.2a1 1 0 0 0 1.213-.7l1.286-4.628Z"
@@ -707,13 +707,13 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -729,20 +729,20 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-delete"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
         />
       </svg>
       <span>
-         Delete
+        Delete
       </span>
     </button>
   </div>
@@ -752,20 +752,20 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
 exports[`renders Button/demo/loading.md correctly 1`] = `
 <div>
   <div
-    style="display:grid;grid-template-columns:repeat(3, 100px);grid-row-gap:24px;grid-column-gap:24px;margin-left:24px"
+    style="display:grid;grid-template-columns:repeat(3, 100px);row-gap:24px;column-gap:24px;margin-left:24px"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-loading"
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-loading"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -780,13 +780,13 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-loading"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -801,13 +801,13 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-loading"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -822,13 +822,13 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-loading"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -840,13 +840,13 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-loading"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -858,13 +858,13 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-loading"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
@@ -887,13 +887,13 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="arco-icon arco-icon-plus"
       fill="none"
-      height="1em"
+      focusable="false"
       stroke="currentColor"
       stroke-width="4"
       viewBox="0 0 48 48"
-      width="1em"
     >
       <path
         d="M5 24h38M24 5v38"
@@ -905,6 +905,7 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
   </button>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+    role="separator"
     style="width:440px;min-width:440px"
   >
     <span
@@ -1010,13 +1011,13 @@ exports[`renders Button/demo/shape.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"
@@ -1033,13 +1034,13 @@ exports[`renders Button/demo/shape.md correctly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-plus"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M5 24h38M24 5v38"

@@ -17,12 +17,25 @@ Customize the icon displayed on the switch button.
 import { Switch, Space } from '@arco-design/web-react';
 import { IconCheck, IconClose } from '@arco-design/web-react/icon';
 
-ReactDOM.render(
-  <Space size="large">
-    <Switch checkedIcon={<IconCheck />} uncheckedIcon={<IconClose />} defaultChecked />
-    <Switch type="round" checkedIcon={<IconCheck />} uncheckedIcon={<IconClose />} defaultChecked />
-    <Switch type="line" checkedIcon={<IconCheck />} uncheckedIcon={<IconClose />} defaultChecked />
-  </Space>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Space size="large">
+      <Switch checkedIcon={<IconCheck />} uncheckedIcon={<IconClose />} defaultChecked />
+      <Switch
+        type="round"
+        checkedIcon={<IconCheck />}
+        uncheckedIcon={<IconClose />}
+        defaultChecked
+      />
+      <Switch
+        type="line"
+        checkedIcon={<IconCheck />}
+        uncheckedIcon={<IconClose />}
+        defaultChecked
+      />
+    </Space>
+  );
+};
+
+export default App;
 ```

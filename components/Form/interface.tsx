@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // TS泛型默认值需要，忽略显式`any`定义
 
+import { ValidateMessagesTemplateType } from 'b-validate';
 import { ReactNode, CSSProperties, HTMLAttributes, FormHTMLAttributes } from 'react';
 import { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
 import { ColProps } from '../Grid/col';
@@ -138,6 +139,16 @@ export interface FormProps<
    */
   scrollToFirstError?: boolean | ScrollIntoViewOptions;
   /**
+   * @zh 校验提示信息模板 [demo](/react/components/form#表单校验信息模板)
+   * @en validation prompt template [demo](/react/en-US/components/form#validate%20messages)
+   * @version 2.32.0
+   */
+  validateMessages?: Partial<{
+    [key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string
+      ? ValidateMessagesTemplateType[key] | ((data, { label }) => any)
+      : Record<keyof ValidateMessagesTemplateType[key], string | ((data, { label }) => any)>;
+  }>;
+  /**
    * @zh 数据验证成功后回调事件
    * @en Callback when submit data
    */
@@ -183,6 +194,12 @@ export interface RulesProps<FieldValue = any> {
   message?: ReactNode;
 }
 
+export type FormItemChildrenFn<
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData
+> = (formData: any, form: FormInstance<FormData, FieldValue, FieldKey>) => React.ReactNode;
+
 /**
  * @title Form.Item
  */
@@ -190,7 +207,7 @@ export interface FormItemProps<
   FormData = any,
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
-> extends Omit<HTMLAttributes<any>, 'className'> {
+> extends Omit<HTMLAttributes<any>, 'className' | 'children'> {
   style?: CSSProperties;
   className?: string | string[];
   prefixCls?: string;
@@ -357,6 +374,7 @@ export interface FormItemProps<
    */
   requiredSymbol?: boolean | { position: 'start' | 'end' };
   isFormList?: boolean;
+  children?: React.ReactNode | FormItemChildrenFn<FormData, FieldValue, FieldKey>;
 }
 
 export interface FormControlProps<
@@ -366,6 +384,7 @@ export interface FormControlProps<
 > {
   /** 受控组件的唯一标示。 */
   field?: FieldKey;
+  _key?: FieldKey;
   initialValue?: FieldValue;
   getValueFromEvent?: FormItemProps['getValueFromEvent'];
   rules?: RulesProps<FieldValue>[];
@@ -390,6 +409,7 @@ export interface FormControlProps<
   help?: ReactNode;
   isFormList?: boolean;
   hasFeedback?: boolean;
+  children?: ReactNode;
 }
 
 /**
@@ -441,6 +461,7 @@ export type FormContextProps<
   | 'layout'
   | 'validateTrigger'
 > & {
+  validateMessages?: FormProps['validateMessages'];
   getFormElementId?: (field: FieldKey) => string;
   store?: FormInstance<FormData, FieldValue, FieldKey>;
 };
@@ -450,6 +471,7 @@ export type FormItemContextProps<
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
 > = FormContextProps<FormData, FieldValue, FieldKey> & {
+  validateMessages?: FormProps['validateMessages'];
   updateFormItem?: (
     field: string,
     params: { errors?: FieldError<FieldValue>; warnings?: ReactNode[] }
@@ -487,6 +509,7 @@ export type InnerMethodsReturnType<
 > = Pick<
   Store<FormData, FieldValue, FieldKey>,
   | 'registerField'
+  | 'registerWatcher'
   | 'innerSetInitialValues'
   | 'innerSetInitialValue'
   | 'innerSetCallbacks'
@@ -538,3 +561,39 @@ export const VALIDATE_STATUS = {
   warning: 'warning',
   validating: 'validating',
 };
+
+/**
+ * @title Form.Provider(`2.30.0`)
+ */
+export interface FormProviderProps {
+  /**
+   * @zh 包裹的任意 `Form` 组件的值改变时，该方法会被调用
+   * @en This method is called when the value of any wrapped `Form` component changes
+   */
+  onFormValuesChange?: (
+    id: string | undefined,
+    changedValues,
+    {
+      forms,
+    }: {
+      forms: {
+        [key: string]: FormInstance;
+      };
+    }
+  ) => void;
+  /**
+   * @zh 包裹的任意 `Form` 组件触发提交时，该方法会被调用
+   * @en This method will be called when any wrapped `Form` component triggers a submit
+   */
+  onFormSubmit?: (
+    id: string | undefined,
+    values,
+    {
+      forms,
+    }: {
+      forms: {
+        [key: string]: FormInstance;
+      };
+    }
+  ) => void;
+}

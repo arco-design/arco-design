@@ -14,21 +14,23 @@ The treeNode occupy the remaining horizontal space.
 
 ```js
 import { Tree } from '@arco-design/web-react';
-
 const TreeNode = Tree.Node;
 
-ReactDOM.render(
-  <Tree blockNode >
-    <TreeNode title="Trunk 0-0" key="0-0">
-      <TreeNode title="Branch 0-0-0" key="0-0-0" disabled>
-        <TreeNode title="Leaf 0-0-0-0" key="0-0-0-0" />
-        <TreeNode title="Leaf 0-0-0-1" key="0-0-0-1" />
+const App = () => {
+  return (
+    <Tree blockNode>
+      <TreeNode title="Trunk 0-0" key="0-0">
+        <TreeNode title="Branch 0-0-0" key="0-0-0" disabled>
+          <TreeNode title="Leaf 0-0-0-0" key="0-0-0-0" />
+          <TreeNode title="Leaf 0-0-0-1" key="0-0-0-1" />
+        </TreeNode>
+        <TreeNode title="Branch 0-0-1" key="0-0-1">
+          <TreeNode title="Leaf 0-0-1-0" key="0-0-1-0" />
+        </TreeNode>
       </TreeNode>
-      <TreeNode title="Branch 0-0-1" key="0-0-1">
-        <TreeNode title="Leaf 0-0-1-0" key="0-0-1-0" />
-      </TreeNode>
-    </TreeNode>
-  </Tree>,
-  CONTAINER
-);
+    </Tree>
+  );
+};
+
+export default App;
 ```

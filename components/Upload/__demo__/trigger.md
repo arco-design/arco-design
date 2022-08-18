@@ -17,22 +17,29 @@ Customize the node that triggers the upload operation.
 import { Upload } from '@arco-design/web-react';
 import { IconLink } from '@arco-design/web-react/icon';
 
-
-ReactDOM.render(
-  <div className="upload-demo-trigger">
-    <Upload
-      action="/"
-      onChange={(fileList, file) => {
-        console.log(fileList, file);
-      }}
-    >
-      <div className="trigger">
-        <div>
-          Drag the file here or <span style={{ color: '#3370FF' }}> Click to upload</span>
+const App = () => {
+  return (
+    <div className="upload-demo-trigger">
+      <Upload
+        action="/"
+        onChange={(fileList, file) => {
+          console.log(fileList, file);
+        }}
+      >
+        <div className="trigger">
+          <div>
+            Drag the file here or
+            <span style={{ color: '#3370FF', padding:"0 4px" }} >
+              Click to upload
+            </span>
+          </div>
         </div>
-      </div>
-    </Upload>
-</div>, CONTAINER);
+      </Upload>
+    </div>
+  );
+};
+
+export default App;
 ```
 
 ```css

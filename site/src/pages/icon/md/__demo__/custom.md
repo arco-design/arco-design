@@ -16,10 +16,11 @@ This example shows how to customize Icon. Use with `@svgr/webpack` to import svg
 ```js
 import IconIronMan from './Iron Man.svg';
 
-ReactDOM.render(
-  <div>
+const App = () => {
+  return <div>
     <IconIronMan className="arco-icon" style={{ fontSize: '50px' }} />
-  </div>,
-  CONTAINER
-);
+  </div>;
+}
+
+export default App;
 ```

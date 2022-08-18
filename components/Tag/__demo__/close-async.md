@@ -16,24 +16,27 @@ If `onClose` returns a `Promise`, the tag can be closed asynchronously and the l
 ```js
 import { Tag, Message } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Tag
-    closable
-    onClose={() => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (Math.random() >= 0.5) {
-            resolve();
-          } else {
-            Message.error('Close failed');
-            reject();
-          }
-        }, 3000);
-      });
-    }}
-  >
-    Tag 1
-  </Tag>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Tag
+      closable
+      onClose={() => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (Math.random() >= 0.5) {
+              resolve();
+            } else {
+              Message.error('Close failed');
+              reject();
+            }
+          }, 3000);
+        });
+      }}
+    >
+      Tag 1
+    </Tag>
+  );
+};
+
+export default App;
 ```

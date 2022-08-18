@@ -15,7 +15,6 @@ Custom field name for label, value, isLeaf, disabled and children.
 
 ```js
 import { Cascader } from '@arco-design/web-react';
-
 const options = [
   {
     id: 'beijing',
@@ -93,26 +92,29 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <div>
-    <Cascader
-      mode="multiple"
-      placeholder="Please select ..."
-      style={{ width: 300 }}
-      onChange={(x, y) => {
-        console.log(x, y)
-      }}
-      options={options}
-      defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
-      showSearch
-      allowClear
-      fieldNames={{
-        children: 'child',
-        label: 'name',
-        value: 'id'
-      }}
-    />
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Cascader
+        mode="multiple"
+        placeholder="Please select ..."
+        style={{ width: 300 }}
+        onChange={(x, y) => {
+          console.log(x, y);
+        }}
+        options={options}
+        defaultValue={[['beijing', 'Beijing', 'chaoyang', 'datunli']]}
+        showSearch
+        allowClear
+        fieldNames={{
+          children: 'child',
+          label: 'name',
+          value: 'id',
+        }}
+      />
+    </div>
+  );
+};
+
+export default App;
 ```

@@ -1,6 +1,6 @@
 ---
 order: 8
-title: 
+title:
   zh-CN: 自定义显示
   en-US: Customize Trigger
 ---
@@ -16,21 +16,19 @@ Set `triggerElement` to customize the display.
 ```js
 import { useState } from 'react';
 import { TreeSelect, Typography, Link } from '@arco-design/web-react';
-
 const TreeNode = TreeSelect.Node;
 
 const DemoTreeSelect = () => {
   const [text, setText] = useState('node1');
-
   return (
     <TreeSelect
       allowClear
       onChange={(value) => {
-        setText(value.label)
+        setText(value.label);
       }}
       labelInValue
       triggerElement={
-        <Typography.Paragraph style={{width:'300px'}}>
+        <Typography.Paragraph style={{ width: '300px' }}>
           You selected: <Link>{text}</Link>
         </Typography.Paragraph>
       }
@@ -47,7 +45,7 @@ const DemoTreeSelect = () => {
       </TreeNode>
     </TreeSelect>
   );
-}
+};
 
-ReactDOM.render(<DemoTreeSelect/>,CONTAINER);
+export default DemoTreeSelect;
 ```

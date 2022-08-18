@@ -1,3 +1,29 @@
+## 2.35.0
+
+2022-06-10
+
+### 🐛 问题修复
+
+- 调整 `Popconfirm`，`Popover`， `Tooltip` 组件动画弹出效果，避免边界场景下过冲效果导致的页面抖动。([#986](https://github.com/arco-design/arco-design/pull/986))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 功能升级
+
+- 新增阿拉伯语。([#932](https://github.com/arco-design/arco-design/pull/932))
+- 新增葡萄牙语。([#924](https://github.com/arco-design/arco-design/pull/924))
+- 新增俄语。([#922](https://github.com/arco-design/arco-design/pull/922))
+
+## 2.33.0
+
+2022-05-13
+
+### 🆕 功能升级
+
+- 国际化支持设置越南语([#824](https://github.com/arco-design/arco-design/pull/824))
+
 ## 2.29.0
 
 2022-02-11

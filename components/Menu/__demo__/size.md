@@ -17,19 +17,13 @@ Freely specify width of menu and height of menu item through `style`.
 import { useState } from 'react';
 import { Menu, Slider } from '@arco-design/web-react';
 import { IconApps, IconBug, IconBulb } from '@arco-design/web-react/icon';
-
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 
-function Demo() {
+function App() {
   const [width, setWidth] = useState(240);
   return (
-    <div
-      className="menu-demo"
-      style={{
-        height: 600,
-      }}
-    >
+    <div className="menu-demo" style={{ height: 600 }}>
       <Slider
         style={{ width: 320, marginBottom: 24 }}
         value={width}
@@ -87,7 +81,7 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css:silent

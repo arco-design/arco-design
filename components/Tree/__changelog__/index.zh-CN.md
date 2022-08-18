@@ -1,3 +1,11 @@
+## 2.30.0
+
+2022-03-04
+
+### 🆕 功能升级
+
+- `Tree` 组件的 `allowDrop` 回调参数支持 `dragNode`([#614](https://github.com/arco-design/arco-design/pull/614))
+
 ## 2.29.0
 
 2022-02-11

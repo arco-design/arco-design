@@ -158,23 +158,25 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
       />
       <div
         class="arco-menu arco-menu-dark arco-menu-vertical"
+        role="menu"
         style="width:100%"
-        tabindex="1"
       >
         <div
           class="arco-menu-inner"
         >
           <div
             class="arco-menu-item arco-menu-disabled"
+            role="menuitem"
+            tabindex="-1"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-home"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 17 24 7l17 10v24H7V17Z"
@@ -187,15 +189,17 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-selected"
+            role="menuitem"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -207,18 +211,21 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             class="arco-menu-inline"
           >
             <div
+              aria-controls="arco-menu-0-submenu-inline-0"
+              aria-expanded="true"
               class="arco-menu-inline-header"
+              tabindex="0"
             >
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -231,13 +238,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix is-open"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -247,10 +254,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-inline-content"
+              id="arco-menu-0-submenu-inline-0"
               style="height:auto"
             >
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -266,6 +276,8 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -283,7 +295,10 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-inline"
               >
                 <div
+                  aria-controls="arco-menu-0-submenu-inline-1"
+                  aria-expanded="false"
                   class="arco-menu-inline-header"
+                  tabindex="0"
                 >
                   <span>
                     <span
@@ -297,13 +312,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -313,10 +328,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-menu-inline-content"
-                  style="height:0"
+                  id="arco-menu-0-submenu-inline-1"
+                  style="height:0;visibility:hidden"
                 >
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -335,6 +353,8 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -357,7 +377,10 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-inline"
               >
                 <div
+                  aria-controls="arco-menu-0-submenu-inline-2"
+                  aria-expanded="false"
                   class="arco-menu-inline-header"
+                  tabindex="0"
                 >
                   <span>
                     <span
@@ -371,13 +394,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -387,10 +410,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-menu-inline-content"
-                  style="height:0"
+                  id="arco-menu-0-submenu-inline-2"
+                  style="height:0;visibility:hidden"
                 >
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -409,6 +435,8 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -427,6 +455,8 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -451,18 +481,21 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             class="arco-menu-inline"
           >
             <div
+              aria-controls="arco-menu-0-submenu-inline-3"
+              aria-expanded="false"
               class="arco-menu-inline-header"
+              tabindex="0"
             >
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -475,13 +508,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix "
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -491,10 +524,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-inline-content"
-              style="height:0"
+              id="arco-menu-0-submenu-inline-3"
+              style="height:0;visibility:hidden"
             >
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -510,6 +546,8 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -525,6 +563,8 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -548,13 +588,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
       style="width:220px"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M32 8.4 16.444 23.956 32 39.513"
@@ -570,7 +610,7 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
     >
       <div
         class="arco-menu arco-menu-light arco-menu-horizontal"
-        tabindex="1"
+        role="menu"
       >
         <div
           class="arco-menu-inner"
@@ -579,7 +619,11 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             class="arco-menu-overflow-wrap"
           >
             <div
+              aria-controls="arco-menu-1-submenu-pop-0"
+              aria-expanded="false"
+              aria-haspopup="true"
               class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
+              tabindex="0"
             >
               <span>
                 ···
@@ -588,13 +632,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -604,15 +648,17 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-item arco-menu-disabled"
+              role="menuitem"
+              tabindex="-1"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-home"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M7 17 24 7l17 10v24H7V17Z"
@@ -625,15 +671,17 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-item arco-menu-selected"
+              role="menuitem"
+              tabindex="0"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-calendar"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -645,17 +693,21 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               />
             </div>
             <div
+              aria-controls="arco-menu-1-submenu-pop-1"
+              aria-expanded="false"
+              aria-haspopup="true"
               class="arco-menu-pop arco-menu-pop-header"
+              tabindex="0"
             >
               <span>
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-calendar"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -667,13 +719,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -682,17 +734,21 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
               </span>
             </div>
             <div
+              aria-controls="arco-menu-1-submenu-pop-2"
+              aria-expanded="false"
+              aria-haspopup="true"
               class="arco-menu-pop arco-menu-pop-header"
+              tabindex="0"
             >
               <span>
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-calendar"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -704,13 +760,13 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
                 class="arco-menu-icon-suffix"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -728,24 +784,27 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
         style="margin:16px 0"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           Home
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -754,20 +813,22 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           List
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -776,6 +837,7 @@ exports[`renders Layout/demo/breakpoint.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           App
         </div>
@@ -811,23 +873,25 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
       />
       <div
         class="arco-menu arco-menu-light arco-menu-vertical"
+        role="menu"
         style="width:100%"
-        tabindex="1"
       >
         <div
           class="arco-menu-inner"
         >
           <div
             class="arco-menu-item arco-menu-disabled"
+            role="menuitem"
+            tabindex="-1"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-home"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 17 24 7l17 10v24H7V17Z"
@@ -840,15 +904,17 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item"
+            role="menuitem"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -858,15 +924,17 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-selected"
+            role="menuitem"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -878,18 +946,21 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             class="arco-menu-inline"
           >
             <div
+              aria-controls="arco-menu-2-submenu-inline-4"
+              aria-expanded="true"
               class="arco-menu-inline-header"
+              tabindex="0"
             >
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -902,13 +973,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 class="arco-menu-icon-suffix is-open"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -918,10 +989,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-inline-content"
+              id="arco-menu-2-submenu-inline-4"
               style="height:auto"
             >
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -937,6 +1011,8 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -954,7 +1030,10 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 class="arco-menu-inline"
               >
                 <div
+                  aria-controls="arco-menu-2-submenu-inline-5"
+                  aria-expanded="false"
                   class="arco-menu-inline-header"
+                  tabindex="0"
                 >
                   <span>
                     <span
@@ -968,13 +1047,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -984,10 +1063,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-menu-inline-content"
-                  style="height:0"
+                  id="arco-menu-2-submenu-inline-5"
+                  style="height:0;visibility:hidden"
                 >
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1006,6 +1088,8 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1028,7 +1112,10 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 class="arco-menu-inline"
               >
                 <div
+                  aria-controls="arco-menu-2-submenu-inline-6"
+                  aria-expanded="false"
                   class="arco-menu-inline-header"
+                  tabindex="0"
                 >
                   <span>
                     <span
@@ -1042,13 +1129,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1058,10 +1145,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-menu-inline-content"
-                  style="height:0"
+                  id="arco-menu-2-submenu-inline-6"
+                  style="height:0;visibility:hidden"
                 >
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1080,6 +1170,8 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1098,6 +1190,8 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1122,18 +1216,21 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             class="arco-menu-inline"
           >
             <div
+              aria-controls="arco-menu-2-submenu-inline-7"
+              aria-expanded="false"
               class="arco-menu-inline-header"
+              tabindex="0"
             >
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1146,13 +1243,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
                 class="arco-menu-icon-suffix "
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1162,10 +1259,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-inline-content"
-              style="height:0"
+              id="arco-menu-2-submenu-inline-7"
+              style="height:0;visibility:hidden"
             >
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1181,6 +1281,8 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1196,6 +1298,8 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1226,13 +1330,13 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="arco-icon arco-icon-caret-left"
           fill="none"
-          height="1em"
+          focusable="false"
           stroke="currentColor"
           stroke-width="4"
           viewBox="0 0 48 48"
-          width="1em"
         >
           <path
             d="M13.171 24.937a1.2 1.2 0 0 1 0-1.874L30.051 9.56c.785-.629 1.949-.07 1.949.937v27.006c0 1.006-1.164 1.566-1.95.937L13.171 24.937Z"
@@ -1248,24 +1352,27 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
         style="margin:16px 0"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           Home
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1274,20 +1381,22 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           List
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1296,6 +1405,7 @@ exports[`renders Layout/demo/collapsed.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           App
         </div>
@@ -1331,23 +1441,25 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
       />
       <div
         class="arco-menu arco-menu-light arco-menu-vertical"
+        role="menu"
         style="width:100%"
-        tabindex="1"
       >
         <div
           class="arco-menu-inner"
         >
           <div
             class="arco-menu-item arco-menu-disabled"
+            role="menuitem"
+            tabindex="-1"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-home"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 17 24 7l17 10v24H7V17Z"
@@ -1360,15 +1472,17 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item"
+            role="menuitem"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1378,15 +1492,17 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
           </div>
           <div
             class="arco-menu-item arco-menu-selected"
+            role="menuitem"
+            tabindex="0"
           >
             <svg
+              aria-hidden="true"
               class="arco-icon arco-icon-calendar"
               fill="none"
-              height="1em"
+              focusable="false"
               stroke="currentColor"
               stroke-width="4"
               viewBox="0 0 48 48"
-              width="1em"
             >
               <path
                 d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1398,18 +1514,21 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             class="arco-menu-inline"
           >
             <div
+              aria-controls="arco-menu-3-submenu-inline-8"
+              aria-expanded="true"
               class="arco-menu-inline-header"
+              tabindex="0"
             >
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1422,13 +1541,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 class="arco-menu-icon-suffix is-open"
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1438,10 +1557,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-inline-content"
+              id="arco-menu-3-submenu-inline-8"
               style="height:auto"
             >
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1457,6 +1579,8 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1474,7 +1598,10 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 class="arco-menu-inline"
               >
                 <div
+                  aria-controls="arco-menu-3-submenu-inline-9"
+                  aria-expanded="false"
                   class="arco-menu-inline-header"
+                  tabindex="0"
                 >
                   <span>
                     <span
@@ -1488,13 +1615,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1504,10 +1631,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-menu-inline-content"
-                  style="height:0"
+                  id="arco-menu-3-submenu-inline-9"
+                  style="height:0;visibility:hidden"
                 >
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1526,6 +1656,8 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1548,7 +1680,10 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 class="arco-menu-inline"
               >
                 <div
+                  aria-controls="arco-menu-3-submenu-inline-10"
+                  aria-expanded="false"
                   class="arco-menu-inline-header"
+                  tabindex="0"
                 >
                   <span>
                     <span
@@ -1562,13 +1697,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                     class="arco-menu-icon-suffix "
                   >
                     <svg
+                      aria-hidden="true"
                       class="arco-icon arco-icon-down"
                       fill="none"
-                      height="1em"
+                      focusable="false"
                       stroke="currentColor"
                       stroke-width="4"
                       viewBox="0 0 48 48"
-                      width="1em"
                     >
                       <path
                         d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1578,10 +1713,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-menu-inline-content"
-                  style="height:0"
+                  id="arco-menu-3-submenu-inline-10"
+                  style="height:0;visibility:hidden"
                 >
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1600,6 +1738,8 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1618,6 +1758,8 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                   </div>
                   <div
                     class="arco-menu-item arco-menu-item-indented"
+                    role="menuitem"
+                    tabindex="0"
                   >
                     <span>
                       <span
@@ -1642,18 +1784,21 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             class="arco-menu-inline"
           >
             <div
+              aria-controls="arco-menu-3-submenu-inline-11"
+              aria-expanded="false"
               class="arco-menu-inline-header"
+              tabindex="0"
             >
               <span>
                 <span>
                   <svg
+                    aria-hidden="true"
                     class="arco-icon arco-icon-calendar"
                     fill="none"
-                    height="1em"
+                    focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
                     viewBox="0 0 48 48"
-                    width="1em"
                   >
                     <path
                       d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
@@ -1666,13 +1811,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
                 class="arco-menu-icon-suffix "
               >
                 <svg
+                  aria-hidden="true"
                   class="arco-icon arco-icon-down"
                   fill="none"
-                  height="1em"
+                  focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
                   viewBox="0 0 48 48"
-                  width="1em"
                 >
                   <path
                     d="M39.6 17.443 24.043 33 8.487 17.443"
@@ -1682,10 +1827,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
             </div>
             <div
               class="arco-menu-inline-content"
-              style="height:0"
+              id="arco-menu-3-submenu-inline-11"
+              style="height:0;visibility:hidden"
             >
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1701,6 +1849,8 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1716,6 +1866,8 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
               </div>
               <div
                 class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
               >
                 <span>
                   <span
@@ -1739,13 +1891,13 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
       style="width:200px"
     >
       <svg
+        aria-hidden="true"
         class="arco-icon arco-icon-caret-left"
         fill="none"
-        height="1em"
+        focusable="false"
         stroke="currentColor"
         stroke-width="4"
         viewBox="0 0 48 48"
-        width="1em"
       >
         <path
           d="M13.171 24.937a1.2 1.2 0 0 1 0-1.874L30.051 9.56c.785-.629 1.949-.07 1.949.937v27.006c0 1.006-1.164 1.566-1.95.937L13.171 24.937Z"
@@ -1770,24 +1922,27 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
     >
       <div
         class="arco-breadcrumb"
+        role="list"
         style="margin:16px 0"
       >
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           Home
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1796,20 +1951,22 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           List
         </div>
         <span
+          aria-hidden="true"
           class="arco-breadcrumb-item-separator"
         >
           <svg
+            aria-hidden="true"
             class="arco-icon arco-icon-oblique-line"
             fill="none"
-            height="1em"
+            focusable="false"
             stroke="currentColor"
             stroke-width="4"
             viewBox="0 0 48 48"
-            width="1em"
           >
             <path
               d="M29.506 6.502 18.493 41.498"
@@ -1818,6 +1975,7 @@ exports[`renders Layout/demo/customIcon.md correctly 1`] = `
         </span>
         <div
           class="arco-breadcrumb-item"
+          role="listitem"
         >
           App
         </div>
@@ -1874,13 +2032,13 @@ exports[`renders Layout/demo/resize.md correctly 1`] = `
               class="arco-resizebox-trigger-icon"
             >
               <svg
+                aria-hidden="true"
                 class="arco-icon arco-icon-drag-dot-vertical"
                 fill="none"
-                height="1em"
+                focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
                 viewBox="0 0 48 48"
-                width="1em"
               >
                 <path
                   d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
@@ -1911,4 +2069,263 @@ exports[`renders Layout/demo/resize.md correctly 1`] = `
     </footer>
   </section>
 </div>
+`;
+
+exports[`renders Layout/demo/resizeProps.md correctly 1`] = `
+<section
+  class="arco-layout byte-layout-collapse-demo"
+>
+  <aside
+    class="arco-resizebox arco-layout-sider arco-layout-sider-has-trigger"
+    style="width:220px"
+  >
+    <div
+      class="arco-layout-sider-children"
+    >
+      <div
+        class="logo"
+      />
+      <div
+        class="arco-menu arco-menu-dark arco-menu-vertical"
+        role="menu"
+        style="width:100%"
+      >
+        <div
+          class="arco-menu-inner"
+        >
+          <div
+            class="arco-menu-item arco-menu-disabled"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-home"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 17 24 7l17 10v24H7V17Z"
+              />
+              <path
+                d="M20 28h8v13h-8V28Z"
+              />
+            </svg>
+            设计指南
+          </div>
+          <div
+            class="arco-menu-item"
+            role="menuitem"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-calendar"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+              />
+            </svg>
+            区块
+          </div>
+          <div
+            class="arco-menu-item"
+            role="menuitem"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-calendar"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+              />
+            </svg>
+            模块
+          </div>
+          <div
+            class="arco-menu-inline"
+          >
+            <div
+              aria-controls="arco-menu-4-submenu-inline-12"
+              aria-expanded="false"
+              class="arco-menu-inline-header"
+              tabindex="0"
+            >
+              <span>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="arco-icon arco-icon-calendar"
+                    fill="none"
+                    focusable="false"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+                    />
+                  </svg>
+                   布局组件
+                </span>
+              </span>
+              <span
+                class="arco-menu-icon-suffix "
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-down"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="arco-menu-inline-content"
+              id="arco-menu-4-submenu-inline-12"
+              style="height:0;visibility:hidden"
+            >
+              <div
+                class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
+              >
+                <span>
+                  <span
+                    class="arco-menu-indent"
+                  />
+                </span>
+                <span
+                  class="arco-menu-item-inner"
+                  style="display:block"
+                >
+                  栅格
+                </span>
+              </div>
+              <div
+                class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
+              >
+                <span>
+                  <span
+                    class="arco-menu-indent"
+                  />
+                </span>
+                <span
+                  class="arco-menu-item-inner"
+                  style="display:block"
+                >
+                  分隔符
+                </span>
+              </div>
+              <div
+                class="arco-menu-item arco-menu-item-indented"
+                role="menuitem"
+                tabindex="0"
+              >
+                <span>
+                  <span
+                    class="arco-menu-indent"
+                  />
+                </span>
+                <span
+                  class="arco-menu-item-inner"
+                  style="display:block"
+                >
+                  布局
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-layout-sider-trigger"
+      style="width:220px"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-left"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="M32 8.4 16.444 23.956 32 39.513"
+        />
+      </svg>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-direction-right"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon-empty"
+        />
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-drag-dot-vertical"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            />
+          </svg>
+        </span>
+        <span
+          class="arco-resizebox-trigger-icon-empty"
+        />
+      </div>
+    </div>
+  </aside>
+  <main
+    class="arco-layout-content"
+    style="background:rgb(240,255,255);text-align:center;padding:30px"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      Content
+    </div>
+  </main>
+</section>
 `;

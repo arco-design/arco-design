@@ -7,7 +7,6 @@ import React, {
   ReactNode,
 } from 'react';
 import { Dayjs } from 'dayjs';
-import { getResolvedDayjsLocaleName } from '../../_util/dayjs';
 import IconClose from '../../../icon/react-icon/IconClose';
 import IconHover from '../../_class/icon-hover';
 import cs from '../../_util/classNames';
@@ -72,14 +71,12 @@ function DateInput(
   }: DateInputRangeProps,
   ref
 ) {
-  const { getPrefixCls, size: ctxSize, locale } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, locale, rtl } = useContext(ConfigContext);
   const input0 = useRef<HTMLInputElement>(null);
   const input1 = useRef<HTMLInputElement>(null);
 
   const disabled1 = isArray(disabled) ? disabled[0] : disabled;
   const disabled2 = isArray(disabled) ? disabled[1] : disabled;
-
-  const localeName = getResolvedDayjsLocaleName(locale.locale);
 
   useImperativeHandle<any, DateInputHandle>(ref, () => ({
     focus(index?: number) {
@@ -131,11 +128,12 @@ function DateInput(
       [`${prefixCls}-focused`]: !!popupVisible,
       [`${prefixCls}-disabled`]: disabled1 && disabled2,
       [`${prefixCls}-error`]: error,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
   const getInputValue = (index: number) => {
-    const valueText = value[index] ? value[index].locale(localeName).format(format) : '';
+    const valueText = value[index] ? value[index].locale(locale.dayjsLocale).format(format) : '';
     if (inputValue) {
       return index === focusedInputIndex ? inputValue : valueText;
     }

@@ -23,7 +23,7 @@ import {
   TimePicker,
   Popconfirm,
   Button,
-  Modal
+  Modal,
 } from '@arco-design/web-react';
 import zhCN from '@arco-design/web-react/es/locale/zh-CN';
 import enUS from '@arco-design/web-react/es/locale/en-US';
@@ -36,34 +36,49 @@ import frFR from '@arco-design/web-react/es/locale/fr-FR';
 import esES from '@arco-design/web-react/es/locale/es-ES';
 import deDE from '@arco-design/web-react/es/locale/de-DE';
 import itIT from '@arco-design/web-react/es/locale/it-IT';
+import viVN from '@arco-design/web-react/es/locale/vi-VN';
 
-function Demo() {
+function App() {
   const [locale, setLocale] = useState('zh-CN');
 
   function getLocale() {
-    switch(locale) {
+    switch (locale) {
       case 'zh-CN':
         return zhCN;
+
       case 'en-US':
         return enUS;
+
       case 'ja-JP':
         return jaJP;
+
       case 'ko-KR':
         return koKR;
+
       case 'id-ID':
         return idID;
+
       case 'th-TH':
         return thTH;
+
       case 'zh-HK':
         return zhHK;
+
       case 'fr-FR':
         return frFR;
+
       case 'es-ES':
         return esES;
+
       case 'de-DE':
         return deDE;
+
       case 'it-IT':
         return itIT;
+
+      case 'vi-VN':
+        return viVN;
+
       default:
         return zhCN;
     }
@@ -73,7 +88,20 @@ function Demo() {
     <ConfigProvider locale={getLocale()}>
       <Radio.Group
         value={locale}
-        options={['zh-CN', 'en-US', 'zh-HK', 'ja-JP', 'ko-KR', 'id-ID', 'th-TH', 'fr-FR', 'es-ES', 'de-DE', 'it-IT']}
+        options={[
+          'zh-CN',
+          'en-US',
+          'zh-HK',
+          'ja-JP',
+          'ko-KR',
+          'id-ID',
+          'th-TH',
+          'fr-FR',
+          'es-ES',
+          'de-DE',
+          'it-IT',
+          'vi-VN',
+        ]}
         name="locale"
         type="button"
         mode="fill"
@@ -94,10 +122,19 @@ function Demo() {
           Popconfirm
         </Button>
       </Popconfirm>
-      <Button onClick={() => Modal.confirm({title: 'Title', content: 'Content'})}>Modal confirm</Button>
+      <Button
+        onClick={() =>
+          Modal.confirm({
+            title: 'Title',
+            content: 'Content',
+          })
+        }
+      >
+        Modal confirm
+      </Button>
     </ConfigProvider>
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

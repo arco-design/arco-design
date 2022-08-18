@@ -16,15 +16,22 @@ Set `closable` to show the close button.
 ```js
 import { Message, Button } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Button
-    onClick={() => {
-      Message.info({ content: 'This is a message!', closable: true, duration: 10000 });
-    }}
-    type="primary"
-  >
-    Open Message
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button
+      onClick={() => {
+        Message.info({
+          content: 'This is a message!',
+          closable: true,
+          duration: 10000,
+        });
+      }}
+      type="primary"
+    >
+      Open Message
+    </Button>
+  );
+};
+
+export default App;
 ```

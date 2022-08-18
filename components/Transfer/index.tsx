@@ -9,6 +9,7 @@ import IconRight from '../../icon/react-icon/IconRight';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { isObject } from '../_util/is';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { pickDataAttributes } from '../_util/pick';
 
 const defaultProps: TransferProps = {
   titleTexts: ['Source', 'Target'],
@@ -21,7 +22,7 @@ const defaultProps: TransferProps = {
 };
 
 function Transfer(baseProps: TransferProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<TransferProps>(baseProps, defaultProps, componentConfig?.Transfer);
   const {
     prefixCls: transferPrefixCls,
@@ -67,7 +68,7 @@ function Transfer(baseProps: TransferProps, ref) {
   const [sourceInfo, targetInfo] = useMemo(() => {
     type ListInfo = { selectedValidKeys: TransferItem['key'][] } & Pick<
       TransferListProps,
-      'dataSource' | 'selectedKeys' | 'validKeys' | 'selectedDisabledKeys' | 'selectedStatus'
+      'dataSource' | 'selectedKeys' | 'validKeys' | 'selectedDisabledKeys'
     >;
     // 每次重新计算时，清空数组
     sourceListDataSource.length = 0;
@@ -80,7 +81,6 @@ function Transfer(baseProps: TransferProps, ref) {
       validKeys: [],
       selectedValidKeys: [],
       selectedDisabledKeys: [],
-      selectedStatus: 'none',
     };
     const targetInfo: ListInfo = {
       dataSource: targetListDataSource,
@@ -88,7 +88,6 @@ function Transfer(baseProps: TransferProps, ref) {
       validKeys: [],
       selectedValidKeys: [],
       selectedDisabledKeys: [],
-      selectedStatus: 'none',
     };
 
     dataSource.forEach((item) => {
@@ -120,15 +119,6 @@ function Transfer(baseProps: TransferProps, ref) {
       sourceInfo.dataSource = dataSource.slice();
       sourceInfo.selectedKeys = targetKeys.slice();
     }
-
-    const computeSelectedStatus = (info: ListInfo): TransferListProps['selectedStatus'] => {
-      const validCount = info.validKeys.length;
-      const validSelectedCount = info.selectedKeys.length - info.selectedDisabledKeys.length;
-      return validSelectedCount === 0 ? 'none' : validSelectedCount === validCount ? 'all' : 'part';
-    };
-
-    sourceInfo.selectedStatus = computeSelectedStatus(sourceInfo);
-    targetInfo.selectedStatus = computeSelectedStatus(targetInfo);
 
     return [sourceInfo, targetInfo];
   }, [dataSource, targetKeys, selectedKeys, simple]);
@@ -198,6 +188,8 @@ function Transfer(baseProps: TransferProps, ref) {
           return (
             <Button
               key={index}
+              tabIndex={-1}
+              aria-label={`move selected ${to === 'target' ? 'right' : 'left'}`}
               type="secondary"
               size="small"
               shape="round"
@@ -231,18 +223,23 @@ function Transfer(baseProps: TransferProps, ref) {
         handleSelect={(newSelectKeys) => handleSelect(newSelectKeys, listType)}
         handleRemove={(removeKeys) => moveTo(isTarget ? 'source' : 'target', removeKeys)}
         onSearch={(value) => onSearch && onSearch(value, listType)}
+        renderHeaderUnit={(countSelected, countAll) =>
+          `${mergedOneWay ? '' : `${countSelected} / `}${countAll}`
+        }
       />
     );
   };
 
   return (
     <div
+      {...pickDataAttributes(props)}
       ref={ref}
       className={cs(
         prefixCls,
         {
           [`${prefixCls}-simple`]: simple,
           [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

@@ -1,3 +1,36 @@
+## 2.33.0
+
+2022-05-13
+
+### 🐛 BugFix
+
+- Fixed the bug that `List` component `onReachBottom` could not be triggered occasionally.([#854](https://github.com/arco-design/arco-design/pull/854))
+
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `List` component's `scrollIntoView` method allows specifying the specific behavior of list scrolling.([#768](https://github.com/arco-design/arco-design/pull/768))
+- The `List` component `virtualListProps` allows specifying virtual list item height to improve scrolling.([#768](https://github.com/arco-design/arco-design/pull/768))
+
+## 2.31.0
+
+2022-03-25
+
+### 🐛 BugFix
+
+- Fixed the bug that the `index` parameter of the `render` method under the grid layout of the `List` component was incorrect.([#688](https://github.com/arco-design/arco-design/pull/688))
+
+## 2.30.1
+
+2022-03-11
+
+### 🐛 BugFix
+
+- Fix the bug that the `scrollIntoView` method did not work for elements rendered on the first screen when `List` is a virtual list.([#628](https://github.com/arco-design/arco-design/pull/628))
+
 ## 2.26.0
 
 2021-12-03

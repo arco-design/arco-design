@@ -111,3 +111,17 @@
     display: none;
   }
 }
+
+:global(html.rtl) {
+  .icon-wall {
+    &-left {
+      padding-left: 0;
+      padding-right: calc(50vw - 640px);
+    }
+
+    &-right {
+      padding-right: 0;
+      padding-left: calc(50vw - 640px);
+    }
+  }
+}

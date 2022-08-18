@@ -1,4 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
+import { pickDataAttributes } from '../_util/pick';
 import cs from '../_util/classNames';
 import Dropdown from '../Dropdown';
 import IconDown from '../../icon/react-icon/IconDown';
@@ -6,11 +7,12 @@ import omit from '../_util/omit';
 import { BreadCrumbItemProps } from './interface';
 
 function Item(props: PropsWithChildren<BreadCrumbItemProps>) {
-  const { children, style, className, prefixCls, droplist, dropdownProps } = props;
+  const { children, style, className, prefixCls, droplist, dropdownProps, ...rest } = props;
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const dom = (
     <div
+      role="listitem"
       style={style}
       className={cs(
         `${prefixCls}-item`,
@@ -19,10 +21,12 @@ function Item(props: PropsWithChildren<BreadCrumbItemProps>) {
         },
         className
       )}
+      {...pickDataAttributes(rest)}
     >
       {children}
       {droplist && (
         <span
+          aria-hidden
           className={cs(`${prefixCls}-item-dropdown-icon`, {
             [`${prefixCls}-item-dropdown-icon-active`]: dropdownVisible,
           })}

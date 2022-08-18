@@ -14,11 +14,12 @@ title:
 Basic usage
 
 ```js
+import React from 'react';
 import { Switch, Timeline, Typography } from '@arco-design/web-react';
 
 const TimelineItem = Timeline.Item;
 
-class Demo extends React.Component {
+class App extends React.Component {
   state = {
     reverse: false,
   };
@@ -27,14 +28,20 @@ class Demo extends React.Component {
     const { reverse } = this.state;
     return (
       <div>
-        <div style={{ marginBottom: 40 }}>
-          <Typography.Text style={{ verticalAlign: 'middle', marginRight: 8 }}>Reverse</Typography.Text>
+        <div
+          style={{ marginBottom: 40, }}
+        >
+          <Typography.Text style={{ verticalAlign: 'middle', marginRight: 8, }} >
+            Reverse
+          </Typography.Text>
           <Switch
-            style={{ verticalAlign: 'middle' }}
+            style={{ verticalAlign: 'middle', }}
             size="small"
             checked={reverse}
             onChange={() => {
-              this.setState({ reverse: !this.state.reverse });
+              this.setState({
+                reverse: !this.state.reverse,
+              });
             }}
           />
         </div>
@@ -48,5 +55,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo></Demo>, CONTAINER);
+export default App;
 ```

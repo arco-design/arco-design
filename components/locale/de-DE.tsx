@@ -1,3 +1,5 @@
+import 'dayjs/locale/de';
+
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
@@ -64,6 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'de-DE',
+  dateLocale: 'de',
   Calendar,
   DatePicker: {
     Calendar,
@@ -103,6 +106,12 @@ export default {
     page: '',
     countPerPage: '/ Seite',
     total: 'Gesamt {0}',
+    prev: 'Zurück zur letzten Seite',
+    next: 'Gehen Sie zur nächsten Seite',
+    currentPage: 'Seite {0}',
+    prevSomePages: 'vorherigen {0} Seiten',
+    nextSomePages: 'Die nächsten {0} Seiten',
+    pageSize: 'Seitengröße',
   },
   Popconfirm: {
     okText: 'OK',

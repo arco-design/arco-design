@@ -8,6 +8,7 @@ import { ConfigContext } from '../../../ConfigProvider';
 import Header from '../header';
 import Body from '../body';
 import { newArray } from '../../../_util/constant';
+import PickerContext from '../../context';
 
 interface InnerYearPickerProps extends YearPickerProps {
   dateRender?: (currentDate: Dayjs) => ReactNode;
@@ -19,6 +20,7 @@ interface InnerYearPickerProps extends YearPickerProps {
   rangeValues?: Dayjs[];
   onSuperPrev?: () => void;
   onSuperNext?: () => void;
+  originMode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
 }
 
 function YearPicker(props: InnerYearPickerProps) {
@@ -38,12 +40,15 @@ function YearPicker(props: InnerYearPickerProps) {
     onSuperNext,
     format,
     icons,
+    originMode,
     ...rest
   } = props;
 
-  const { locale: globalLocale, getPrefixCls } = useContext(ConfigContext);
+  const { locale: globalLocale, getPrefixCls, rtl } = useContext(ConfigContext);
   const DATEPICKER_LOCALE = merge(globalLocale.DatePicker, locale);
   const CALENDAR_LOCALE = DATEPICKER_LOCALE.Calendar;
+
+  const { utcOffset, timezone } = useContext(PickerContext);
 
   const prefixCls = getPrefixCls('panel-year');
 
@@ -51,7 +56,7 @@ function YearPicker(props: InnerYearPickerProps) {
 
   const bodyProps = isRangePicker ? { rangeValues } : { value };
 
-  const showYear = pageShowDate ? pageShowDate.year() : getNow().year();
+  const showYear = pageShowDate ? pageShowDate.year() : getNow(utcOffset, timezone).year();
   const startYear = Math.floor(showYear / 10) * 10 - 1;
   const groupRow = newArray(3).map((_) => '');
   const rows = newArray(4)
@@ -82,6 +87,7 @@ function YearPicker(props: InnerYearPickerProps) {
         disabledDate={disabledDate}
         CALENDAR_LOCALE={CALENDAR_LOCALE}
         mode="year"
+        originMode={originMode}
         format={format}
       />
     );
@@ -95,6 +101,7 @@ function YearPicker(props: InnerYearPickerProps) {
         prefixCls={getPrefixCls('picker')}
         icons={icons}
         title={`${rows[0][1].name} - ${rows[3][2].name}`}
+        rtl={rtl}
         {...headerOperations}
       />
       {renderCalendar()}

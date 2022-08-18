@@ -18,13 +18,14 @@ import { Icon } from '@arco-design/web-react';
 
 const IconFont = Icon.addFromIconFontCn({ src: '//at.alicdn.com/t/font_180975_ue66sq60vyd.js' });
 
-ReactDOM.render(
-  <div>
+const App = () => {
+  return <div>
     <IconFont type="icon-person" style={{ fontSize: 40, marginRight: 40 }} />
     <IconFont type="icon-earth" style={{ fontSize: 40, marginRight: 40 }} />
     <IconFont type="icon-flag" style={{ fontSize: 40 }} />
-  </div>,
-  CONTAINER
-);
+  </div>;
+}
+
+export default App;
 ```
 

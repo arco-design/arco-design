@@ -1,3 +1,103 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件的搜索面板存在 `value` 相同的选项时，开启虚拟滚动会出现选项渲染错乱的问题。([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过对象类型的 `maxTagCount` 属性定制 `maxTag` 内容展示([#1112](https://github.com/arco-design/arco-design/pull/1112))
+- `Cascader` 支持通过  `defaultActiveFirstOption` 属性设置搜索后默认高亮第一个选项。([#1096](https://github.com/arco-design/arco-design/pull/1096))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 问题修复
+
+- 修复 `dragToSort` 在 `Cascader` 中不生效的问题([#1029](https://github.com/arco-design/arco-design/pull/1029))
+
+## 2.35.0
+
+2022-06-10
+
+### 🆕 功能升级
+
+- `Cascader` 支持通过 `virtualListProps` 开启虚拟列表([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` 支持通过 `dropdownMenuClassname` 设置下拉菜单自定义类名([#972](https://github.com/arco-design/arco-design/pull/972))
+- `Cascader` 支持通过 `dropdownMenuColumnStyle` 设置下拉菜单每一列的样式([#972](https://github.com/arco-design/arco-design/pull/972))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件在设置回显方式为 `parent` 时，`value` 受控失效的 bug。([#983](https://github.com/arco-design/arco-design/pull/983))
+
+## 2.34.0
+
+2022-05-27
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过 `InputValue` 属性控制输入框值 。([#931](https://github.com/arco-design/arco-design/pull/931))
+
+## 2.32.0
+
+2022-04-15
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件 `checkedstrategy=parenet` 时，在搜索面板选中选项回显值错误的 bug 。([#763](https://github.com/arco-design/arco-design/pull/763))
+
+## 2.31.2
+
+2022-04-01
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件在`expandTrigger=hover`，鼠标从路径节点移到叶子节点时，选项面板未更新的 bug。([#727](https://github.com/arco-design/arco-design/pull/727))
+
+## 2.31.0
+
+2022-03-25
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过  `checkedStrategy` 属性设置多选时数据的回显方式([#692](https://github.com/arco-design/arco-design/pull/692))
+
+## 2.30.1
+
+2022-03-11
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件在直接输入文本远程搜索时，组件默认值对应的 label 文本显示丢失的问题。([#632](https://github.com/arco-design/arco-design/pull/632))
+
+## 2.30.0
+
+2022-03-04
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件单选时，第一次触发 `onChange` 时的第二个参数未传递当前选中节点信息的 bug。([#599](https://github.com/arco-design/arco-design/pull/599))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件在受控时偶发复选框选中状态和传入 `value` 不一致的bug。([#587](https://github.com/arco-design/arco-design/pull/587))
+
 ## 2.29.1
 
 2022-02-18

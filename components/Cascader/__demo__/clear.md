@@ -15,7 +15,6 @@ Allow clear.
 
 ```js
 import { Cascader } from '@arco-design/web-react';
-
 const options = [
   {
     value: 'beijing',
@@ -57,17 +56,20 @@ const options = [
   },
 ];
 
-ReactDOM.render(
-  <Cascader
-    placeholder="Please select ..."
-    style={{ width: 300 }}
-    options={options}
-    onChange={(value, option) => {
-      console.log(value, option)
-    }}
-    defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
-    allowClear
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Cascader
+      placeholder="Please select ..."
+      style={{ width: 300 }}
+      options={options}
+      onChange={(value, option) => {
+        console.log(value, option);
+      }}
+      defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
+      allowClear
+    />
+  );
+};
+
+export default App;
 ```

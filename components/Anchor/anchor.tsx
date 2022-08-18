@@ -32,7 +32,7 @@ const defaultProps: AnchorProps = {
 };
 
 function Anchor(baseProps: AnchorPropsWithChildren, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<AnchorPropsWithChildren>(
     baseProps,
     defaultProps,
@@ -55,10 +55,12 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     children,
     onSelect,
     onChange,
+    ...rest
   } = props;
   const prefixCls = getPrefixCls('anchor');
   const classNames = cs(prefixCls, className, {
     [`${prefixCls}-lineless`]: lineless,
+    [`${prefixCls}-rtl`]: rtl,
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
   const sliderLineRef = useRef<HTMLDivElement>(null);
@@ -98,6 +100,8 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
 
   const setActiveLink = useCallback(
     (hash: string) => {
+      if (hash === '#a') {
+      }
       if (!hash || !wrapperRef.current) return;
       // Try to add when there is no corresponding link
       if (!linkMap.current.has(hash)) {
@@ -182,6 +186,9 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       const promises = actions.map(({ el, top }) => {
         return new Promise((resolve) => {
           if (!stopScroll) {
+            if (el === scrollContainer.current) {
+              stopScroll = true;
+            }
             const targetTop = top - offset;
             if (!animation) {
               // Manually trigger scrolling as browser's default action is prevented when `props.hash` is false
@@ -190,12 +197,8 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
               }
               return resolve(null);
             }
-            slide(el as HTMLElement, targetTop, resolve);
+            return slide(el as HTMLElement, targetTop, resolve);
           }
-          if (!stopScroll && el === scrollContainer.current) {
-            stopScroll = true;
-          }
-
           resolve(null);
         });
       });
@@ -248,7 +251,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   }, [currentLink, lineless]);
 
   const content = (
-    <div className={classNames} style={style} ref={wrapperRef}>
+    <div className={classNames} style={style} ref={wrapperRef} {...rest}>
       {!lineless && currentLink && (
         <div className={`${prefixCls}-line-slider`} ref={sliderLineRef} />
       )}

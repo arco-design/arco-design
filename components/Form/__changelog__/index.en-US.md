@@ -1,3 +1,122 @@
+## 2.38.1
+
+2022-08-05
+
+### 🐛 BugFix
+
+- Fix the bug that form value won't update when the parameter of `setFieldsValue` is empty array or empty object.([#1186](https://github.com/arco-design/arco-design/pull/1186))
+
+## 2.37.0
+
+2022-07-08
+
+### 🆕 Feature
+
+- `Form.useWatch` supports watching multiple field values.([#1034](https://github.com/arco-design/arco-design/pull/1034))
+
+### 🐛 BugFix
+
+- Fixed `Form.useWatch` when monitoring a form control with an initial value but not mounted, the return value has a change of `initial value => undefined`, causing the component to update.([#1034](https://github.com/arco-design/arco-design/pull/1034))
+- Fixed bug where the `onChange` method of the `Form.Item` component injected into a custom form control would be redeclared every time it renders.([#1102](https://github.com/arco-design/arco-design/pull/1102))
+
+## 2.36.1
+
+2022-07-01
+
+### 🐛 BugFix
+
+- Fix the problem that the order of form items is adjusted under `Form.List`, and the verification status may be displayed in disorder([#1077](https://github.com/arco-design/arco-design/pull/1077))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- Fixed a bug where the validation state of other form items was lost when the `Form.List` component was removed from the form item.([#1046](https://github.com/arco-design/arco-design/pull/1046))
+- Fixed a bug where the `form.clearFields()` method did not clear the validation state.([#1046](https://github.com/arco-design/arco-design/pull/1046))
+
+## 2.35.0
+
+2022-06-10
+
+### 🐛 BugFix
+
+- Fixed a bug where `Form.useWatch` returned a non-latest value when adding/deleting rows in `Form.List`.([#955](https://github.com/arco-design/arco-design/pull/955))
+
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fix the bug that the `warning` state of the form control is not cleared when the `Form` component sets the `warning` to `null` through `setFields`.([#930](https://github.com/arco-design/arco-design/pull/930))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Modifications to the return value of `getFieldValue` should not affect the original data inside the `Form`([#869](https://github.com/arco-design/arco-design/pull/869))
+
+### 🆎 TypeScript
+
+- Complete `children` property type in `FormItemProps`, compatible with React 18([#874](https://github.com/arco-design/arco-design/pull/874))
+
+## 2.33.0
+
+2022-05-13
+
+### 🆕 Feature
+
+- The `Form` component supports `Form.useWatch`.([#864](https://github.com/arco-design/arco-design/pull/864))
+- The `Form` component supports `Form.useFormContext`.([#864](https://github.com/arco-design/arco-design/pull/864))
+
+## 2.32.2
+
+2022-04-29
+
+### 🐛 BugFix
+
+- Fix the bug that the `Form` component has controlled invalidation of form items in React 18 strict mode.([#823](https://github.com/arco-design/arco-design/pull/823))
+
+## 2.32.0
+
+2022-04-15
+
+### 🆕 Feature
+
+- The `Form` component supports setting the validation message template through the `validateMessages` property([#773](https://github.com/arco-design/arco-design/pull/773))
+
+### 🐛 BugFix
+
+- Fix the bug that `onChange` is not called when the form control wrapped by `Form.Item` is returned by the function type `children`.([#760](https://github.com/arco-design/arco-design/pull/760))
+
+## 2.30.2
+
+2022-03-18
+
+### 🐛 BugFix
+
+- Fix a bug where `Form.provider` causes console warning.([#646](https://github.com/arco-design/arco-design/pull/646))
+
+## 2.30.0
+
+2022-03-04
+
+### 🆕 Feature
+
+- The `Form` component supports multiple form data management through the `Form.Provider` component.([#607](https://github.com/arco-design/arco-design/pull/607))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fixed the bug that the `form` parameter passed to the `Form.useForm` method did not take effect.([#577](https://github.com/arco-design/arco-design/pull/577))
+
 ## 2.29.0
 
 2022-02-11

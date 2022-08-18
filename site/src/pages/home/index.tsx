@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '@arco-design/arco-site-footer';
+import Footer from '@arco-materials/site-footer';
 import Banner from './sections/Banner';
 import QuickStart from './sections/QuickStart';
 import Ecosystem from './sections/Ecosystem';

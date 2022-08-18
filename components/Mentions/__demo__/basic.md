@@ -16,12 +16,15 @@ Used to mention someone or something, often used for posting, chatting or commen
 ```js
 import { Mentions } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <Mentions
-    style={{ width: 154 }}
-    defaultValue="@Bytedance"
-    options={['Bytedance', 'Bytedesign', 'Bytenumner']}
-  />,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Mentions
+      style={{ width: 154 }}
+      defaultValue="@Bytedance"
+      options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+    />
+  );
+};
+
+export default App;
 ```

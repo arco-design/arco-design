@@ -74,3 +74,29 @@ exports[`ConfigProvider componentConfig.AutoComplete set className globally and 
   </span>
 </div>
 `;
+
+exports[`ConfigProvider componentConfig.AutoComplete set data-* property 1`] = `
+<div
+  class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-autocomplete"
+>
+  <span
+    class="arco-input-group"
+  >
+    <span
+      class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+    >
+      <input
+        class="arco-input arco-input-size-default"
+        data-test-name="AutoComplete"
+        tabindex="0"
+        value=""
+      />
+      <span
+        class="arco-input-group-suffix"
+      >
+        <i />
+      </span>
+    </span>
+  </span>
+</div>
+`;

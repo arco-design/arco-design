@@ -1,3 +1,43 @@
+## 2.37.1
+
+2022-07-14
+
+### 🐛 BugFix
+
+- Fixed the bug that when the `InputNumber` component is `readOnly=true`, clicking the up and down keys can still change the value.([#1141](https://github.com/arco-design/arco-design/pull/1141))
+
+## 2.36.0
+
+2022-06-24
+
+### 🐛 BugFix
+
+- Fixed a bug where `InputNumber` was affected by the global configuration of `Input`.([#1042](https://github.com/arco-design/arco-design/pull/1042))
+
+## 2.33.0
+
+2022-05-13
+
+### 💎 Enhancement
+
+- The `InputNumber` component always displays numbers in non-scientific notation.([#865](https://github.com/arco-design/arco-design/pull/865))
+
+## 2.32.1
+
+2022-04-22
+
+### 💎 Enhancement
+
+- `InputNumber` uses `Math.round` instead of `Number.prototype.toFixed` to calculate the number after the decimal point, to avoid the critical situation that may occur when the final number is 5.([#796](https://github.com/arco-design/arco-design/pull/796))
+
+## 2.29.2
+
+2022-02-25
+
+### 🐛 BugFix
+
+- Fix the bug in `InputNumber` where decimal point is handled incorrectly([#568](https://github.com/arco-design/arco-design/pull/568))
+
 ## 2.29.1
 
 2022-02-18

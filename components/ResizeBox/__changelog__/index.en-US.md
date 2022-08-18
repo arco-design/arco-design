@@ -1,3 +1,27 @@
+## 2.35.0
+
+2022-06-10
+
+### 🆕 Feature
+
+- `ResizeBox.Split` added `horizontal-reverse` and `vertical-reverse` two arrangements.([#984](https://github.com/arco-design/arco-design/pull/984))
+
+## 2.34.0
+
+2022-05-27
+
+### 🐛 BugFix
+
+- Fix `ResizeBox.SplitGroup` responsive error bug([#934](https://github.com/arco-design/arco-design/pull/934))
+
+## 2.33.1
+
+2022-05-20
+
+### 🐛 BugFix
+
+- Fixed a bug that `Split.Group` of `ResizeBox` could not adapt to certain scenes([#892](https://github.com/arco-design/arco-design/pull/892))
+
 ## 2.27.0
 
 2021-12-17

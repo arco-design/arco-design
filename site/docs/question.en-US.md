@@ -6,28 +6,6 @@ Developer Guild
 Here is a summary of some common questions occurred when using the component library.
 `````
 
-## Does ArcoDesign support timezone?
-
-ArcoDesign uses `dayjs` internally, but it is compatible with the logic of `moment`. Since `dayjs` doesn't support timezone, you can configure alias of webpack if you need timezone, and replace `dayjs` with `moment`, which is as follows: 
-
-```
-resolve: {
-  alias: {
-    dayjs$: 'moment-timezone'
-  }
-}
-```
-
-Then set the timezone globally at the project entrance, which is as follows: 
-
-```js
-import moment from 'moment-timezone';
-
-moment.tz.setDefault('America/Los_Angeles');
-```
-
-Now, you can use `moment` in the project.
-
 ## When `antd` and `arco-design` coexist in the project, there will be style problems.
 
 If both `antd` and `arco-design` are used in the project, and both uses the reference method of `less`, then the `less` variables will overlay each other when compiling. You can use `css` to import styles, so that the `less` variables will not be overlaid.

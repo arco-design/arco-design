@@ -26,6 +26,7 @@ Load options lazily with `loadMore`.
 如果使用搜索功能，将只从已加载数据的`label`属性进行关键字匹配。
 
 ```js
+import React from 'react';
 import { Cascader, Space } from '@arco-design/web-react';
 
 const options = [
@@ -45,7 +46,7 @@ const options = [
   },
 ];
 
-class Demo extends React.Component {
+class App extends React.Component {
   loadMore = (pathValue, level) =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -54,7 +55,6 @@ class Demo extends React.Component {
           value: i,
           isLeaf: level >= 2,
         }));
-
         resolve(nodes);
       }, 500);
     });
@@ -84,5 +84,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

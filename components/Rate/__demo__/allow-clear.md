@@ -18,17 +18,26 @@ Specify `allowClear` to allow clearing of ratings.
 ```js
 import { Rate, Typography } from '@arco-design/web-react';
 
-ReactDOM.render(
-  <>
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: 15 }}>
-      <Rate defaultValue={5} allowClear />
-      <Typography.Text style={{ marginLeft: 16 }}>allowClear: true</Typography.Text>
-    </div>
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Rate defaultValue={5} />
-      <Typography.Text style={{ marginLeft: 16 }}>allowClear: false</Typography.Text>
-    </div>
-  </>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginBottom: 15,
+        }}
+      >
+        <Rate defaultValue={5} allowClear />
+        <Typography.Text style={{ margin: '0 16px' }}>allowClear: true</Typography.Text>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Rate defaultValue={5} />
+        <Typography.Text style={{ margin: '0 16px' }}>allowClear: false</Typography.Text>
+      </div>
+    </>
+  );
+};
+
+export default App;
 ```

@@ -1,18 +1,20 @@
-import React, { forwardRef, memo, useContext, CSSProperties, useMemo, useRef } from 'react';
-import { plus } from 'number-precision';
+import React, { forwardRef, memo, useContext, CSSProperties, useRef, useMemo } from 'react';
+import { plus, times, divide } from 'number-precision';
+import omit from '../_util/omit';
 import SliderButton from './button';
 import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
-import { isFunction, isNumber, isObject } from '../_util/is';
-import { formatPercent, getOffset } from './utils';
+import { isFunction, isObject, isArray } from '../_util/is';
+import { formatPercent, getIntervalOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { TooltipPosition, SliderProps } from './interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { off, on } from '../_util/dom';
 import useLegalValue from './hooks/useLegalValue';
+import useInterval from './hooks/useInterval';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useUpdate from '../_util/hooks/useUpdate';
 
@@ -29,7 +31,7 @@ const defaultProps: SliderProps = {
 };
 
 function Slider(baseProps: SliderProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SliderProps>(baseProps, defaultProps, componentConfig?.Slider);
   const {
     className,
@@ -47,10 +49,22 @@ function Slider(baseProps: SliderProps, ref) {
     vertical,
     showInput,
     reverse,
+    getIntervalConfig,
+    ...rest
   } = props;
 
   const range = !!propRange;
   const rangeConfig = isObject(propRange) ? { ...propRange } : { draggableBar: false };
+  const isReverse = rtl ? !reverse : reverse;
+
+  const { intervalConfigs, markList } = useInterval({
+    min,
+    max,
+    onlyMarkValue,
+    step,
+    marks,
+    getIntervalConfig,
+  });
 
   const { getLegalValue, getLegalRangeValue, isLegalValue } = useLegalValue({
     isRange: range,
@@ -58,6 +72,7 @@ function Slider(baseProps: SliderProps, ref) {
     max,
     onlyMarkValue,
     step,
+    intervalConfigs,
     marks,
   });
 
@@ -82,19 +97,18 @@ function Slider(baseProps: SliderProps, ref) {
     [beginVal, endVal] = [endVal, beginVal];
   }
   // 偏移比例
-  const beginOffset = getOffset(beginVal, [min, max]);
-  const endOffset = getOffset(endVal, [min, max]);
-  // 标签数组
-  const markList = useMemo(
-    () =>
-      Object.keys(marks || {})
-        .filter((key) => isNumber(+key))
-        .sort((a, b) => (+a > +b ? 1 : -1))
-        .map((key) => ({ key, content: marks[key] })),
-    [marks]
-  );
+  const beginOffset = getIntervalOffset(beginVal, intervalConfigs);
+  const endOffset = getIntervalOffset(endVal, intervalConfigs);
+
   // 是否显示输入框
   const isShowInput = showInput && !onlyMarkValue;
+  const extraInputProps = useMemo(() => {
+    if (isShowInput && (isArray(showInput) || isObject(showInput))) {
+      return isArray(showInput) ? [...showInput] : [{ ...showInput }, { ...showInput }];
+    }
+    return [];
+  }, [isShowInput, showInput]);
+
   // 样式前缀
   const prefixCls = getPrefixCls('slider');
   // ref
@@ -152,16 +166,32 @@ function Slider(baseProps: SliderProps, ref) {
   function getValueByCoords(x: number, y: number): number {
     const { left, top, width, height } = position.current;
     let roadLength = width;
-    let diff = reverse ? left + width - x : x - left;
+    let diff = isReverse ? left + width - x : x - left;
     if (vertical) {
       roadLength = height;
-      diff = reverse ? y - top : top + height - y;
+      diff = isReverse ? y - top : top + height - y;
     }
-    diff = diff < 0 ? 0 : diff > roadLength ? roadLength : diff;
-    const stepLen = (roadLength * step) / (max - min);
-    const steps = Math.round(diff / stepLen);
-
-    return plus(min, steps * step);
+    if (roadLength <= 0) {
+      return 0;
+    }
+    // 通过坐标点偏移算出当前值相对于整个滑动轴的比例位置
+    let offset = Math.max(divide(diff, roadLength), 0);
+    offset = Math.min(1, offset);
+    // 通过偏移值算出当前值在哪个区间
+    const currentInterval = intervalConfigs.find((config) => {
+      return offset >= config.beginOffset && offset <= config.endOffset;
+    });
+    const { begin, beginOffset, step: currentStep, endOffset, end } = currentInterval;
+    // 当前值对整体来说，多出这个区间的比例
+    const currentValueOffset = offset - beginOffset;
+    // 这个区间整体的比例
+    const currentIntervalOffset = endOffset - beginOffset;
+    // 当前在这个区间的值 = （在这个区间的比例（相对于整体） / 这个区间相对于整体的比例）* 这个区间的总值
+    const valueInInterval = (currentValueOffset / currentIntervalOffset) * (end - begin);
+    // 算出当前值在这个区间的步数
+    const stepNum = Math.round(valueInInterval / currentStep);
+    // 当前值 = 区间起始值 + 区间步数 * 步长
+    return plus(begin, times(stepNum, currentStep));
   }
 
   function getBarStyle(offsets: number[]): CSSProperties {
@@ -173,19 +203,19 @@ function Slider(baseProps: SliderProps, ref) {
     const endOffset = formatPercent(1 - end);
     return vertical
       ? {
-          [reverse ? 'top' : 'bottom']: beginOffset,
-          [reverse ? 'bottom' : 'top']: endOffset,
+          [isReverse ? 'top' : 'bottom']: beginOffset,
+          [isReverse ? 'bottom' : 'top']: endOffset,
         }
       : {
-          [reverse ? 'right' : 'left']: beginOffset,
-          [reverse ? 'left' : 'right']: endOffset,
+          [isReverse ? 'right' : 'left']: beginOffset,
+          [isReverse ? 'left' : 'right']: endOffset,
         };
   }
 
   function getBtnStyle(offset: number): CSSProperties {
     return vertical
-      ? { [reverse ? 'top' : 'bottom']: formatPercent(offset) }
-      : { [reverse ? 'right' : 'left']: formatPercent(offset) };
+      ? { [isReverse ? 'top' : 'bottom']: formatPercent(offset) }
+      : { [isReverse ? 'right' : 'left']: formatPercent(offset) };
   }
 
   function getTooltipProps() {
@@ -279,12 +309,21 @@ function Slider(baseProps: SliderProps, ref) {
 
   return (
     <div
+      {...omit(rest, [
+        'defaultValue',
+        'value',
+        'onChange',
+        'getTooltipContainer',
+        'formatTooltip',
+        'onAfterChange',
+      ])}
       className={cs(
         prefixCls,
         {
           [`${prefixCls}-vertical`]: vertical,
           [`${prefixCls}-with-marks`]: marks,
-          [`${prefixCls}-reverse`]: reverse,
+          [`${prefixCls}-reverse`]: isReverse,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}
@@ -303,32 +342,30 @@ function Slider(baseProps: SliderProps, ref) {
           <div className={`${prefixCls}-bar`} style={getBarStyle([beginOffset, endOffset])} />
           {showTicks && (
             <Ticks
-              step={step}
+              intervalConfigs={intervalConfigs}
               min={min}
               max={max}
               value={[beginVal, endVal]}
               prefixCls={prefixCls}
               vertical={vertical}
-              reverse={reverse}
+              reverse={isReverse}
             />
           )}
           <Dots
             data={markList}
-            min={min}
-            max={max}
+            intervalConfigs={intervalConfigs}
             value={[beginVal, endVal]}
             vertical={vertical}
             prefixCls={prefixCls}
-            reverse={reverse}
+            reverse={isReverse}
             onMouseDown={handleJumpClick}
           />
           <Marks
             data={markList}
-            min={min}
-            max={max}
+            intervalConfigs={intervalConfigs}
             vertical={vertical}
             prefixCls={prefixCls}
-            reverse={reverse}
+            reverse={isReverse}
             onMouseDown={handleJumpClick}
           />
           {range && (
@@ -337,6 +374,8 @@ function Slider(baseProps: SliderProps, ref) {
               disabled={disabled}
               prefixCls={prefixCls}
               value={beginVal}
+              maxValue={max}
+              minValue={min}
               vertical={vertical}
               {...getTooltipProps()}
               onMoveBegin={getPosition}
@@ -349,6 +388,8 @@ function Slider(baseProps: SliderProps, ref) {
             disabled={disabled}
             prefixCls={prefixCls}
             value={endVal}
+            maxValue={max}
+            minValue={min}
             vertical={vertical}
             {...getTooltipProps()}
             onMoveBegin={getPosition}
@@ -366,6 +407,7 @@ function Slider(baseProps: SliderProps, ref) {
             disabled={disabled}
             prefixCls={prefixCls}
             onChange={handleInputChange}
+            extra={extraInputProps}
           />
         )}
       </div>

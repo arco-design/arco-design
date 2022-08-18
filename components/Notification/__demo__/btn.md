@@ -23,21 +23,31 @@ function updateNotification() {
     title: 'Notification',
     content: 'This is a notification!',
     duration: 0,
-    btn: <span>
-      <Button type="secondary" size="small" onClick={() => Notification.remove(id)} style={{ marginRight: 12 }}>
-        Cancel
-      </Button>
-      <Button type="primary" size="small"  onClick={() => Notification.remove(id)}>
-        Ok
-      </Button>
-    </span>,
+    btn: (
+      <span>
+        <Button
+          type="secondary"
+          size="small"
+          onClick={() => Notification.remove(id)}
+          style={{ margin: '0 12px' }}
+        >
+          Cancel
+        </Button>
+        <Button type="primary" size="small" onClick={() => Notification.remove(id)}>
+          Ok
+        </Button>
+      </span>
+    ),
   });
 }
 
-ReactDOM.render(
-  <Button onClick={updateNotification} type="primary">
-    Open Notification
-  </Button>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <Button onClick={updateNotification} type="primary">
+      Open Notification
+    </Button>
+  );
+};
+
+export default App;
 ```

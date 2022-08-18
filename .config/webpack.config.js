@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { version } = require('../package.json');
+const { getPWAConfig } = require('../site/config/pwa');
 
 // 组件 dist 打包
 exports.component = (config) => {
@@ -27,7 +28,8 @@ exports.icon = (config) => {
 
 // 官网
 exports.site = (config, env) => {
-  if (env === 'prod') {
+  const isProd = env === 'prod';
+  if (isProd) {
     config.output.publicPath = '/';
   }
 
@@ -42,18 +44,6 @@ exports.site = (config, env) => {
     formatTitle: (value) => `${value} | ArcoDesign`,
   };
 
-  // esbuild
-  config.module.rules[0].loader = 'esbuild-loader';
-  config.module.rules[0].options = {
-    loader: 'tsx',
-    target: 'es2015',
-  };
-  config.module.rules[1].use[0].loader = 'esbuild-loader';
-  config.module.rules[1].use[0].options = {
-    loader: 'tsx',
-    target: 'es2015',
-  };
-
   config.plugins[0] = new HtmlWebpackPlugin({
     template: path.resolve(__dirname, '../site/public/index.ejs'),
     templateParameters: {
@@ -65,7 +55,7 @@ exports.site = (config, env) => {
 
   config.plugins.push(
     new HtmlWebpackPlugin({
-      filename: 'index-en.html',
+      filename: 'react-en.html',
       template: path.resolve(__dirname, '../site/public/index.ejs'),
       templateParameters: {
         title:
@@ -82,9 +72,11 @@ exports.site = (config, env) => {
   if (env === 'dev') {
     config.devServer.historyApiFallback = {
       rewrites: [
-        { from: /^(\/(react|docs|showcase)){0,1}\/en-US/, to: '/index-en.html' },
+        { from: /^(\/(react|docs|showcase)){0,1}\/en-US/, to: '/react-en.html' },
         { from: /^\/$/, to: '/index.html' },
       ],
     };
   }
+
+  getPWAConfig(config, env);
 };

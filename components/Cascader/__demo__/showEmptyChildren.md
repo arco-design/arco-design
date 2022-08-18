@@ -16,7 +16,6 @@ If you want to display the next level menu when an option's children is `[]`, pl
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Cascader, Checkbox } from '@arco-design/web-react';
 
 const options = [
@@ -31,11 +30,11 @@ const options = [
           {
             value: 'huangpu',
             label: 'Huangpu',
-            children: []
+            children: [],
           },
           {
             value: 'jingan',
-            label: 'Jingan'
+            label: 'Jingan',
           },
         ],
       },
@@ -48,40 +47,40 @@ const options = [
       {
         value: 'Beijing',
         label: 'Beijing',
-        children: []
+        children: [],
       },
     ],
   },
 ];
 
-function Demo () {
-  const [checked, setChecked] = React.useState(false)
-  const [value, setValue] = React.useState()
-
-  return <div>
-    <div style={{marginBottom: 20}}>
-      <Checkbox onChange={(v) => {
-        setChecked(v)
-        setValue()
-      }}>
-        showEmptyChildren
-      </Checkbox>
+function App() {
+  const [checked, setChecked] = React.useState(false);
+  const [value, setValue] = React.useState();
+  return (
+    <div>
+      <div style={{ marginBottom: 20 }}>
+        <Checkbox
+          onChange={(v) => {
+            setChecked(v);
+            setValue();
+          }}
+        >
+          showEmptyChildren
+        </Checkbox>
+      </div>
+      <Cascader
+        showSearch
+        allowClear
+        value={value}
+        onChange={setValue}
+        placeholder="Please select ..."
+        showEmptyChildren={checked}
+        style={{ width: 300 }}
+        options={options}
+      />
     </div>
-    <Cascader
-      showSearch
-      allowClear
-      value={value}
-      onChange={setValue}
-      placeholder="Please select ..."
-      showEmptyChildren={checked}
-      style={{ width: 300 }}
-      options={options}
-    />
-  </div>
+  );
 }
 
-ReactDOM.render(
-  <Demo/>,
-  CONTAINER
-);
+export default App;
 ```

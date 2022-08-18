@@ -13,7 +13,13 @@
     "esModuleInterop": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@arco-design/web-react": ["components/index.tsx"],
+      "@arco-design/web-react/icon": ["icon/index.js"],
+      "test-utils": ["tests/util.ts"]
+    }
   },
   "include": ["components/**/*.ts", "components/**/*.tsx"],
   "exclude": ["node_modules", "components/**/*.test.tsx", "components/**/*.test.ts"]

@@ -16,11 +16,11 @@ Support custom input components.
 ```js
 import { useState } from 'react';
 import { AutoComplete, Input } from '@arco-design/web-react';
-
 const { TextArea } = Input;
 
-function Demo() {
+function App() {
   const [data, setData] = useState([]);
+
   const handleSearch = (inputValue) => {
     setData(
       inputValue && inputValue.trim()
@@ -40,5 +40,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

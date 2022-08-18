@@ -15,14 +15,14 @@ Specify `allowCreate` as `true` to create entries that do not exist in the optio
 
 ```js
 import { Select, Space } from '@arco-design/web-react';
-
 const Option = Select.Option;
 const options = [];
+
 for (let i = 10; i < 24; i++) {
   options.push(i.toString(36) + i);
 }
 
-function Demo() {
+function App() {
   return (
     <Space size="large">
       <Select allowCreate placeholder="Create an item" allowClear style={{ width: 345 }}>
@@ -32,7 +32,7 @@ function Demo() {
           </Option>
         ))}
       </Select>
-      
+
       <Select
         allowCreate
         mode="multiple"
@@ -51,5 +51,5 @@ function Demo() {
   );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```

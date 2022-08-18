@@ -1,10 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { act } from 'react-test-renderer';
 import { IconFileAudio, IconClose, IconFaceFrownFill, IconUpload } from '../../../icon';
-import { STATUS, UploadProps } from '../interface';
+import { STATUS } from '../interface';
 import mountTest from '../../../tests/mountTest';
 import Upload from '..';
+import { render, fireEvent } from '../../../tests/util';
 
 mountTest(Upload);
 
@@ -24,7 +24,7 @@ const defaultFileList = [
 describe('Upload list', function () {
   it('renderUploadList', async function () {
     const mockFn = jest.fn();
-    const wrapper = mount<UploadProps>(
+    const wrapper = render(
       <Upload
         defaultFileList={defaultFileList}
         action="/sss"
@@ -41,7 +41,7 @@ describe('Upload list', function () {
 
   it('showUploadList', async function () {
     const onRemoveFn = jest.fn();
-    const wrapper = mount<UploadProps>(
+    const wrapper = render(
       <Upload
         fileList={[defaultFileList[0], { ...defaultFileList[1], status: 'error' }]}
         action="/sss"
@@ -64,7 +64,7 @@ describe('Upload list', function () {
     expect(wrapper.find('.arco-upload-list-remove-icon .arco-icon-close')).toHaveLength(2);
 
     await act(() => {
-      wrapper.find('.arco-upload-list-remove-icon .arco-icon-close').at(0).simulate('click');
+      fireEvent.click(wrapper.find('.arco-upload-list-remove-icon .arco-icon-close').item(0));
     });
 
     expect(onRemoveFn.mock.calls.length).toBe(1);
@@ -73,20 +73,74 @@ describe('Upload list', function () {
     expect(wrapper.find('.arco-upload-list-error-icon .arco-icon-face-frown-fill')).toHaveLength(1);
 
     let changeFile;
-    wrapper.setProps({
-      listType: 'picture-card',
-      onChange: (_, file) => {
-        changeFile = file;
-      },
-    });
+
+    wrapper.rerender(
+      <Upload
+        listType="picture-card"
+        fileList={[defaultFileList[0], { ...defaultFileList[1], status: 'error' }]}
+        action="/sss"
+        onRemove={onRemoveFn}
+        onChange={(_, file) => {
+          changeFile = file;
+        }}
+        showUploadList={{
+          reuploadIcon: <IconUpload />,
+          cancelIcon: <IconClose />,
+          fileIcon: <IconFileAudio />,
+          removeIcon: <IconClose />,
+          previewIcon: null,
+          errorIcon: <IconFaceFrownFill />,
+          fileName: (file) => {
+            return <a id="test">{file.name}</a>;
+          },
+        }}
+      />
+    );
 
     expect(wrapper.find('.arco-upload-list-preview-icon')).toHaveLength(0);
     expect(wrapper.find('.arco-upload-list-reupload-icon')).toHaveLength(1);
 
     await act(() => {
-      wrapper.find('.arco-upload-list-reupload-icon').simulate('click');
+      fireEvent.click(wrapper.find('.arco-upload-list-reupload-icon')[0]);
     });
 
     expect(changeFile.status).toBe(STATUS.uploading);
+  });
+
+  it('showUploadList progressRender, imageRender', async function () {
+    const wrapper = render(
+      <Upload
+        fileList={[defaultFileList[0]]}
+        action="/sss"
+        showUploadList={{
+          progressRender: () => {
+            return <div id="progress">aaa</div>;
+          },
+          imageRender: () => {
+            return <div id="image">aaa</div>;
+          },
+        }}
+      />
+    );
+
+    expect(wrapper.find('#progress')).toHaveLength(1);
+
+    wrapper.rerender(
+      <Upload
+        listType="picture-card"
+        fileList={[defaultFileList[0]]}
+        action="/sss"
+        showUploadList={{
+          progressRender: () => {
+            return <div id="progress">aaa</div>;
+          },
+          imageRender: () => {
+            return <div id="image">aaa</div>;
+          },
+        }}
+      />
+    );
+
+    expect(wrapper.find('#image')).toHaveLength(1);
   });
 });

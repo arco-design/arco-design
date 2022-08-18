@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import { TextAreaProps } from './interface';
 import cs from '../_util/classNames';
-import { Enter } from '../_util/keycode';
 import autoSizeTextAreaHeight from './autoSizeTextAreaHeight';
 import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
@@ -18,6 +17,7 @@ import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
+import useComposition from './useComposition';
 
 const TextArea = (props: TextAreaProps, ref) => {
   const {
@@ -27,62 +27,66 @@ const TextArea = (props: TextAreaProps, ref) => {
     placeholder,
     disabled,
     error,
-    maxLength,
+    maxLength: propMaxLength,
     showWordLimit,
     allowClear,
+    onChange,
     onClear,
+    onKeyDown,
+    onPressEnter,
     ...rest
   } = props;
 
-  const trueMaxLength = isObject(maxLength) ? maxLength.length : maxLength;
-  const mergedMaxLength = isObject(maxLength) && maxLength.errorOnly ? undefined : trueMaxLength;
+  // Only for error judgement
+  const wordLimitMaxLength = isObject(propMaxLength) ? propMaxLength.length : propMaxLength;
+  // The real maxLength passed to input element
+  const maxLength = isObject(propMaxLength)
+    ? propMaxLength.errorOnly
+      ? undefined
+      : propMaxLength.length
+    : propMaxLength;
 
-  const isComposition = useRef(false);
   const textareaRef = useRef<HTMLTextAreaElement>();
-  const [compositionValue, setCompositionValue] = useState('');
   const [textAreaStyle, setTextAreaStyle] = useState<CSSProperties>({});
   const [value, setValue] = useMergeValue('', {
-    defaultValue:
-      'defaultValue' in props ? formatValue(props.defaultValue, mergedMaxLength) : undefined,
-    value: 'value' in props ? formatValue(props.value, mergedMaxLength) : undefined,
+    defaultValue: 'defaultValue' in props ? formatValue(props.defaultValue, maxLength) : undefined,
+    value: 'value' in props ? formatValue(props.value, maxLength) : undefined,
   });
 
-  const { getPrefixCls } = useContext(ConfigContext);
+  const {
+    compositionValue,
+    compositionHandler,
+    valueChangeHandler,
+    keyDownHandler,
+    triggerValueChangeCallback,
+  } = useComposition({
+    value,
+    maxLength,
+    onChange,
+    onKeyDown,
+    onPressEnter,
+    beforeTriggerValueChangeCallback: (v) => {
+      if (!('value' in props) && (maxLength === undefined || v.length <= maxLength)) {
+        setValue(v);
+      }
+    },
+  });
+
+  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('textarea');
   if (disabled) {
     textAreaStyle.resize = 'none';
   }
 
-  const handleChangeValue = (value, e) => {
-    const { onChange } = props;
-    if (!('value' in props)) {
-      setValue(value);
-    }
-    onChange && onChange(value, e);
-  };
-
-  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
-    const newValue = e.currentTarget.value;
-    if (!isComposition.current) {
-      if (mergedMaxLength) {
-        if (newValue.length <= trueMaxLength) {
-          handleChangeValue(newValue, e);
-        }
-      } else {
-        handleChangeValue(newValue, e);
+  // set element focus and caret position
+  const onFocus = () => {
+    if (textareaRef.current && textareaRef.current.focus) {
+      if (textareaRef.current.setSelectionRange) {
+        const caretPos = textareaRef.current.textContent.length;
+        // reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
+        textareaRef.current.setSelectionRange(caretPos, caretPos);
       }
-    } else {
-      setCompositionValue(newValue);
-    }
-  };
-
-  const onComposition = (e) => {
-    if (e.type === 'compositionend') {
-      isComposition.current = false;
-      setCompositionValue(undefined);
-      handleChangeValue(e.target.value, e);
-    } else {
-      isComposition.current = true;
+      textareaRef.current.focus();
     }
   };
 
@@ -95,10 +99,8 @@ const TextArea = (props: TextAreaProps, ref) => {
 
   const handleClearClick = (e) => {
     e.stopPropagation();
-    if (textareaRef.current && textareaRef.current.focus) {
-      textareaRef.current.focus();
-    }
-    handleChangeValue('', e);
+    onFocus();
+    triggerValueChangeCallback('', e);
     onClear && onClear();
   };
 
@@ -111,7 +113,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     () => ({
       dom: textareaRef.current,
       focus: () => {
-        textareaRef.current && textareaRef.current.focus && textareaRef.current.focus();
+        onFocus();
       },
       blur: () => {
         textareaRef.current && textareaRef.current.blur && textareaRef.current.blur();
@@ -121,56 +123,53 @@ const TextArea = (props: TextAreaProps, ref) => {
   );
 
   const valueLength = value ? value.length : 0;
-
-  const withWrapper = (trueMaxLength && showWordLimit) || allowClear;
+  const withWrapper = (wordLimitMaxLength && showWordLimit) || allowClear;
 
   const lengthError = useMemo(() => {
-    if (!mergedMaxLength && trueMaxLength) {
-      return valueLength > trueMaxLength;
+    if (!maxLength && wordLimitMaxLength) {
+      return valueLength > wordLimitMaxLength;
     }
     return false;
-  }, [valueLength, trueMaxLength, mergedMaxLength]);
+  }, [valueLength, wordLimitMaxLength, maxLength]);
 
   const classNames = cs(
     prefixCls,
     {
       [`${prefixCls}-error`]: error || lengthError,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-rtl`]: rtl,
     },
     className
   );
 
   const TextAreaElement = (
     <textarea
-      {...omit(rest, ['autoSize', 'defaultValue', 'onPressEnter'])}
-      maxLength={mergedMaxLength}
+      {...omit(rest, ['autoSize', 'defaultValue'])}
+      maxLength={maxLength}
       ref={textareaRef}
       style={{ ...style, ...textAreaStyle }}
       className={classNames}
       placeholder={placeholder}
       disabled={disabled}
-      onChange={handleChange}
-      onKeyDown={(e) => {
-        const { onKeyDown, onPressEnter } = props;
-        const keyCode = e.keyCode || e.which;
-        onKeyDown && onKeyDown(e);
-        if (keyCode === Enter.code) {
-          onPressEnter && onPressEnter(e);
-        }
-      }}
-      onCompositionStart={onComposition}
-      onCompositionUpdate={onComposition}
-      onCompositionEnd={onComposition}
       value={compositionValue || value || ''}
+      onChange={valueChangeHandler}
+      onKeyDown={keyDownHandler}
+      onCompositionStart={compositionHandler}
+      onCompositionUpdate={compositionHandler}
+      onCompositionEnd={compositionHandler}
     />
   );
 
   if (withWrapper) {
     const showClearIcon = !disabled && allowClear && value;
+    const [leftWord, rightWord] = rtl
+      ? [wordLimitMaxLength, valueLength]
+      : [valueLength, wordLimitMaxLength];
     return (
       <div
         className={cs(`${prefixCls}-wrapper`, {
           [`${prefixCls}-clear-wrapper`]: allowClear,
+          [`${prefixCls}-wrapper-rtl`]: rtl,
         })}
         style={wrapperStyle}
       >
@@ -186,13 +185,13 @@ const TextArea = (props: TextAreaProps, ref) => {
             />
           </IconHover>
         ) : null}
-        {trueMaxLength && showWordLimit && (
+        {wordLimitMaxLength && showWordLimit && (
           <span
             className={cs(`${prefixCls}-word-limit`, {
               [`${prefixCls}-word-limit-error`]: lengthError,
             })}
           >
-            {valueLength}/{trueMaxLength}
+            {leftWord}/{rightWord}
           </span>
         )}
       </div>

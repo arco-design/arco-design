@@ -1,6 +1,6 @@
 ---
 order: 9
-title: 
+title:
   zh-CN: 点状步骤条
   en-US: Dotted Step Bar
 ---
@@ -17,22 +17,24 @@ By specifying `type: 'dot'`, you can use dotted step bar.
 
 ```js
 import { Steps } from '@arco-design/web-react';
-
 const Step = Steps.Step;
 
-ReactDOM.render(
-  <div>
-    <Steps type="dot" current={2} style={{ maxWidth: 780, marginBottom: 40 }}>
-      <Step title="Succeeded" description="This is a description" />
-      <Step title="Processing" description="This is a description" />
-      <Step title="Pending" description="This is a description" />
-    </Steps>
-    <Steps type="dot" direction="vertical" current={2} style={{ maxWidth: 780 }}>
-      <Step title="Succeeded" description="This is a description" />
-      <Step title="Processing" description="This is a description" />
-      <Step title="Pending" description="This is a description" />
-    </Steps>
-  </div>,
-  CONTAINER
-);
+const App = () => {
+  return (
+    <div>
+      <Steps type="dot" current={2} style={{ maxWidth: 780, marginBottom: 40 }}>
+        <Step title="Succeeded" description="This is a description" />
+        <Step title="Processing" description="This is a description" />
+        <Step title="Pending" description="This is a description" />
+      </Steps>
+      <Steps type="dot" direction="vertical" current={2} style={{ maxWidth: 780 }}>
+        <Step title="Succeeded" description="This is a description" />
+        <Step title="Processing" description="This is a description" />
+        <Step title="Pending" description="This is a description" />
+      </Steps>
+    </div>
+  );
+};
+
+export default App;
 ```

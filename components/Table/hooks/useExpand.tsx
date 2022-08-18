@@ -1,6 +1,6 @@
 import { useState, Key } from 'react';
 import { TableProps, GetRowKeyType } from '../interface';
-import { isChildrenNotEmpty } from '../utils';
+import { isChildrenNotEmpty, getOriginData } from '../utils';
 
 export default function useExpand<T>(
   props: TableProps<T>,
@@ -28,15 +28,16 @@ export default function useExpand<T>(
     } else if (defaultExpandAllRows) {
       rows = flattenData
         .map((item, index) => {
+          const originItem = getOriginData(item);
           if (
             expandProps &&
             'rowExpandable' in expandProps &&
             typeof expandProps.rowExpandable === 'function'
           ) {
-            return expandProps.rowExpandable(item);
+            return expandProps.rowExpandable(originItem);
           }
           if (typeof expandedRowRender === 'function') {
-            return expandedRowRender(item, index) && getRowKey(item);
+            return expandedRowRender(originItem, index) && getRowKey(item);
           }
           return isChildrenNotEmpty(item, childrenColumnName) && getRowKey(item);
         })
@@ -61,10 +62,7 @@ export default function useExpand<T>(
 
   function handleExpandChange(key: React.Key, expanded: boolean) {
     onExpand &&
-      onExpand(
-        flattenData.find((item) => getRowKey(item) === key),
-        expanded
-      );
+      onExpand(getOriginData(flattenData.find((item) => getRowKey(item) === key)), expanded);
   }
 
   return [mergedExpandedRowKeys, onClickExpandBtn];

@@ -14,43 +14,55 @@ title:
 The popup will align mouse position. If you want to keep the pop-up layer displayed when you click in an area, and update the position of the pop-up layer align the mouse position, see the next [example](/react/en-US/components/trigger#update-position).
 
 ```js
+import React from 'react';
 import { Trigger, Button, Select, Grid, Skeleton, Typography } from '@arco-design/web-react';
 
 function Popup() {
-  return <div className="demo-trigger-popup" style={{width: 300}}>
-    <Skeleton />
-  </div>;
+  return (
+    <div
+      className="demo-trigger-popup"
+      style={{
+        width: 300,
+      }}
+    >
+      <Skeleton />
+    </div>
+  );
 }
 
-function Demo () {
-  const [trigger, setTrigger] = React.useState(['click'])
-
-  return <div>
-      <Grid.Row align="center" style={{marginBottom: 20}}>
+function App() {
+  const [trigger, setTrigger] = React.useState(['click']);
+  return (
+    <div>
+      <Grid.Row align="center" style={{ marginBottom: 20 }}>
         <Typography.Text>Trigger</Typography.Text>
         <Select
           value={trigger}
-          style={{width: 300, marginLeft: 20}}
+          style={{ width: 300, margin: '0 20px' }}
           options={['click', 'hover', 'contextMenu']}
           onChange={setTrigger}
           mode="multiple"
         ></Select>
       </Grid.Row>
       <Trigger
-        popup={() => <Popup/>}
+        popup={() => <Popup />}
         alignPoint
         position="bl"
-        popupAlign={{ bottom: 8, left: 8}}
+        popupAlign={{
+          bottom: 8,
+          left: 8,
+        }}
         trigger={trigger}
       >
-      <div className="demo-trigger-manual">
-        <Typography.Text>Click</Typography.Text>
-      </div>
-    </Trigger>
-  </div>
+        <div className="demo-trigger-manual">
+          <Typography.Text>Click</Typography.Text>
+        </div>
+      </Trigger>
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, CONTAINER);
+export default App;
 ```
 
 ```css
