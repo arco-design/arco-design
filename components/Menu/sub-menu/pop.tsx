@@ -12,7 +12,7 @@ import Menu from '../index';
 import MenuIndent from '../indent';
 import MenuContext from '../context';
 import { ConfigContext } from '../../ConfigProvider';
-import { Enter } from '../../_util/keycode';
+import { ArrowLeft, ArrowRight, Enter } from '../../_util/keycode';
 
 let globalPopSubMenuIndex = 0;
 
@@ -78,7 +78,8 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   return (
     <Dropdown
       trigger="hover"
-      onVisibleChange={(visible) => setPopupVisible(visible)}
+      popupVisible={popupVisible}
+      onVisibleChange={setPopupVisible}
       droplist={
         <Menu
           id={instanceId}
@@ -93,7 +94,6 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
       }
       triggerProps={{
         position: needPopOnBottom ? popPosition[0] : popPosition[1],
-        popupVisible,
         showArrow: true,
         autoAlignPopupMinWidth: true,
         classNames: 'fadeIn',
@@ -124,6 +124,10 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
           const keyCode = event.keyCode || event.which;
           if (keyCode === Enter.code) {
             subMenuClickHandler(event);
+          } else if (keyCode === ArrowLeft.code) {
+            setPopupVisible(false);
+          } else if (keyCode === ArrowRight.code) {
+            setPopupVisible(true);
           }
         }}
       >
