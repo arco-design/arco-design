@@ -206,4 +206,8 @@ export type EllipsisConfig = {
    * @defaultValue false
    */
   defaultExpanded?: boolean;
+  // https://github.com/arco-design/arco-design/issues/1185
+  // https://github.com/facebook/react/issues/17256
+  // React.Fragment will cause the page to crash in special scenarios
+  wrapper?: string | React.FC<any> | React.ComponentClass<any>;
 };

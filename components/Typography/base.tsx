@@ -91,6 +91,7 @@ function Base(props: BaseProps) {
     ? { rows: 1, ellipsisStr: '...', cssEllipsis: false, ...(isObject(ellipsis) ? ellipsis : {}) }
     : {};
 
+  const EllipsisWrapperTag = ellipsisConfig.wrapper || React.Fragment;
   const [expanding, setExpanding] = useMergeValue<boolean>(false, {
     defaultValue: ellipsisConfig.defaultExpanded,
     value: ellipsisConfig.expanded,
@@ -103,12 +104,12 @@ function Base(props: BaseProps) {
       : '...';
     const suffix = !isUndefined(ellipsisConfig.suffix) && ellipsisConfig.suffix;
     return (
-      <>
+      <EllipsisWrapperTag>
         {node}
         {isEllipsis && !expanding && !simpleEllipsis ? ellipsisStr : ''}
         {suffix}
         {renderOperations(isEllipsis)}
-      </>
+      </EllipsisWrapperTag>
     );
   };
 

@@ -1,10 +1,18 @@
+## 2.39.1
+
+2022-08-19
+
+### 💎 功能优化
+
+- 优化 `Cascader` 组件多选时对传入的非法格式 `value` 的边界处理([#1304](https://github.com/arco-design/arco-design/pull/1304))
+
 ## 2.39.0
 
 2022-08-12
 
 ### 🆕 功能升级
 
-- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.panelMode` 属性控制下拉面板展示([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
 
 ### 🐛 问题修复

@@ -1,3 +1,11 @@
+## 2.39.1
+
+2022-08-19
+
+### 💅 Style
+
+- Unify the style of the right arrow in `Select` multi-select and single-select modes.([#1302](https://github.com/arco-design/arco-design/pull/1302))
+
 ## 2.38.0
 
 2022-07-29

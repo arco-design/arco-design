@@ -8,7 +8,7 @@ export interface TooltipProps {
   style?: CSSProperties;
   className?: string | string[];
   /**
-   * @zh 触发方式，目前仅支持 `hover`
+   * @zh 触发方式
    * @en Trigger mode
    * @defaultValue hover
    */

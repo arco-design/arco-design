@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.39.1
+
+2022-08-19
+
+### 💎 Enhancement
+
+- Optimize cascader edge case handling([#1304](https://github.com/arco-design/arco-design/pull/1304))
+- Export prop `version`.([#1303](https://github.com/arco-design/arco-design/pull/1303))
+
+### 🐛 BugFix
+
+- Fix the bug that setting `md = 0` in the `Grid.Col` would cause it to not display on larger window sizes.([#1307](https://github.com/arco-design/arco-design/pull/1307))
+- Fix the bug that the method `update` returned by `useModal` is `undefined` when creating a modal instance.([#1300](https://github.com/arco-design/arco-design/pull/1300))
+- Fixed the bug that the `panelRender` of the `DatePicker.RangePicker` component did not work.([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
+### 💅 Style
+
+- Unify the style of the right arrow in `Select` multi-select and single-select modes.([#1302](https://github.com/arco-design/arco-design/pull/1302))
+
 ## 2.39.0
 
 2022-08-12
@@ -19,7 +38,7 @@ changelog: true
 ### 🆕 Feature
 
 - `Image.Preview` adds the `imgAttributes` parameter to transparently transmit the properties to the `img` tag in the preview modal([#1274](https://github.com/arco-design/arco-design/pull/1274))
-- The `Cascader` component supports the `showSearch.showSearchPanel` property to control whether to display options in the search panel([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports controlling the display of drop-down panels through the `showSearch.panelMode` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `TreeSelect` add properties `inputValue` and `onInputValueChange`.([#1151](https://github.com/arco-design/arco-design/pull/1151))
 

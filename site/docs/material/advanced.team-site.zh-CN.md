@@ -467,3 +467,96 @@ export interface ComponentOneProps {
  */
 export { default as Basic } from './basic';
 ```
+
+## 私有化部署
+
+**版本要求 `arco-material-doc-site >= 1.12.0`**
+
+我们提供了两种方式来将团队站点部署到你的域名之下。在此之前，你需要在站点项目的配置文件中预先配置自己的团队信息，我们会对其进行合法性校验。
+
+```js
+// .config/main.js
+module.exports = {
+  // ...
+  // 配置你的团队信息
+  group: {
+    // 团队 ID
+    id: 1,
+    // 是否是物料平台内网版团队
+    private: false,
+  },
+};
+```
+
+### 通过静态页面部署
+
+站点项目的产物文件如下，它包含了完整的站点静态资源。通过页面托管的形式，你可以直接将产物文件部署在自己的域名。
+
+```text
+./dist
+├── arcoSite.css
+├── arcoSite.zh-CN.js
+└── index.html
+```
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/isolate.png~tplv-uwbnlip3yd-webp.webp)
+
+### 通过 React 组件引入
+
+我们提供了名为 `@arco-materials/material-site-viewer` 的物料用于预览团队站点，你可以在自己的项目中使用它。通过组件的形式引入站点进行渲染会存在以下副作用：
+
+- 需要在全局作用域注入 React/ReactDOM/arco/arcoicon；
+- 需要全量引入 `@arco-design/web-react` 的组件样式（或主题包样式）；
+- Demo 未在沙盒环境中运行，任何全局性的操作都会直接影响当前页面；
+- 需要额外的操作来处理路由逻辑。
+
+**因此我们强烈建议在你的应用中开辟新的 HTML 入口来作为文档页，而非采用前端路由的形式在原有应用页面中进行扩展。** 具体的用法可以参考下边的代码片段。
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import * as arco from '@arco-design/web-react';
+import * as arcoicon from '@arco-design/web-react/icon';
+
+import { createBrowserHistory } from 'history';
+import { Router } from 'react-router-dom';
+import SiteViewer from '@arco-materials/material-site-viewer';
+
+// 确保当前项目中全局引入了 arco 的样式
+// 如果使用了 Design Lab 主题，可引入主题包的 css 文件
+import '@arco-design/web-react/dist/css/arco.min.css';
+
+// 由于站点产物文件已经将 React/ReactDOM/Arco 去除，需要在全局作用域将其暴露
+(function injectGlobalDependencies() {
+  const globalDependencies = {
+    React,
+    ReactDOM,
+    arco,
+    arcoicon,
+  };
+
+  Object.entries(globalDependencies).forEach(([key, value]) => {
+    window[key] = value;
+  });
+})();
+
+export default () => {
+  return (
+    <Router history={createBrowserHistory({ basename: '' })}>
+      <SiteViewer
+        // 文档站页面的基础路由
+        routerHistoryBasename="/doc/"
+        // 指定站点产物的 URL（非文件路径
+        siteFileUrl={{
+          js: 'https://unpkg.com/@arco-materials/material-team-site@latest/dist/arcoSite.zh-CN.js',
+          css: 'https://unpkg.com/@arco-materials/material-team-site@latest/dist/arcoSite.css',
+        }}
+        // route 中包含了所点击的菜单项对应的页面路径信息，可以根据这个信息自行修改页面路由
+        onClickMenuItem={(route) => {
+          console.log(route);
+        }}
+      />
+    </Router>
+  );
+};
+```

@@ -1,3 +1,11 @@
+## 2.39.1
+
+2022-08-19
+
+### 🐛 BugFix
+
+- Fixed the bug that the `panelRender` of the `DatePicker.RangePicker` component did not work.([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
 ## 2.39.0
 
 2022-08-12
