@@ -197,7 +197,7 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
   let ellipsisNode;
   if (status === MEASURE_STATUS.INIT || status === MEASURE_STATUS.BEFORE_MEASURE) {
     ellipsisNode = (
-      <>
+      <div>
         <div ref={singleRowNode} style={singleRowNodeStyle}>
           {status === MEASURE_STATUS.INIT
             ? MEASURE_LINE_HEIGHT_TEXT
@@ -206,17 +206,19 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
         <div ref={mirrorNode} style={{ width, ...mirrorNodeStyle }}>
           {renderMeasureContent(children, isEllipsis)}
         </div>
-      </>
+      </div>
     );
+    ellipsisNode = ellipsisNode.props.children;
   } else if (status === MEASURE_STATUS.MEASURING) {
     ellipsisNode = (
-      <>
+      <div>
         <div ref={mirrorNode} style={{ width, ...mirrorNodeStyle }}>
           {renderMeasureContent(getSlicedNode(midLoc), isEllipsis)}
         </div>
         {getSlicedNode(closedLoc.current)}
-      </>
+      </div>
     );
+    ellipsisNode = ellipsisNode.props.children;
   } else if (status === MEASURE_STATUS.MEASURE_END) {
     ellipsisNode = renderMeasureContent(getSlicedNode(midLoc), isEllipsis);
   } else if (status === MEASURE_STATUS.NO_NEED_ELLIPSIS) {

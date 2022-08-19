@@ -132,61 +132,33 @@ exports[`renders Typography/demo/basic.md correctly 1`] = `
 `;
 
 exports[`renders Typography/demo/ellipsis.md correctly 1`] = `
-Array [
-  <button
-    aria-checked="true"
-    class="arco-switch arco-switch-type-circle arco-switch-checked"
-    role="switch"
-    type="button"
+<div>
+  <h4
+    class="arco-typography"
   >
-    <div
-      class="arco-switch-dot"
-    />
-  </button>,
-  <div>
-    <h4
-      class="arco-typography"
-    >
+    <span>
        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.
-    </h4>
-    <div
-      class="arco-typography"
-    >
+    </span>
+  </h4>
+  <div
+    class="arco-typography"
+  >
+    <span>
       A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
-    </div>
-  </div>,
-  <div>
-    <h4
-      class="arco-typography"
-      style="width:240px"
-    >
-      Ellipsis in flex scene
-    </h4>
-    <div
-      style="display:flex"
-    >
-      <div
-        class="arco-typography"
-        style="width:100%"
-      >
-         A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.----width: 100%
-      </div>
-    </div>
-    <div
-      style="display:flex"
-    >
-      <div
-        class="arco-typography"
-      >
-         A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.----width: normal
-      </div>
-    </div>
-  </div>,
-]
+    </span>
+  </div>
+  <div
+    class="arco-typography"
+  >
+    <span>
+       A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process.---width: 100%
+    </span>
+  </div>
+</div>
 `;
 
 exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
-Array [
+<div>
   <div
     class="arco-space arco-space-horizontal arco-space-align-start"
   >
@@ -499,7 +471,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div>
     <div
       class="arco-typography"
@@ -508,8 +480,8 @@ Array [
 implementation of an activity or process. A design is a plan or specification for the
 construction of an object or system or for the implementation of an activity or process. 
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`renders Typography/demo/operations.md correctly 1`] = `
