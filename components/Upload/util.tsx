@@ -1,3 +1,4 @@
+import { Enter } from '../_util/keycode';
 import { isArray } from '../_util/is';
 
 export const isAcceptFile = (file: File, accept?: string | string[]): boolean => {
@@ -112,4 +113,13 @@ export const loopDirectory = (items: DataTransferItemList, accept, callback) => 
       _loopDirectory(item.webkitGetAsEntry());
     }
   });
+};
+
+export const isPressEnter = (e) => {
+  const keyCode = e.keyCode || e.which;
+
+  if (keyCode === Enter.code) {
+    return true;
+  }
+  return false;
 };

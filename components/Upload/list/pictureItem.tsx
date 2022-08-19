@@ -7,6 +7,7 @@ import IconImageClose from '../../../icon/react-icon/IconImageClose';
 import IconEye from '../../../icon/react-icon/IconEye';
 import IconDelete from '../../../icon/react-icon/IconDelete';
 import IconUpload from '../../../icon/react-icon/IconUpload';
+import { isPressEnter } from '../util';
 
 const PictureItem = (props: UploadListProps & { file: UploadItem }) => {
   const { disabled, prefixCls, file, showUploadList } = props;
@@ -19,7 +20,7 @@ const PictureItem = (props: UploadListProps & { file: UploadItem }) => {
   const actionIcons = isObject(showUploadList) ? (showUploadList as CustomIconType) : {};
 
   return (
-    <div className={cls}>
+    <div className={cls} tabIndex={0}>
       {status === STATUS.uploading ? (
         <UploadProgress
           onReupload={props.onReupload}
@@ -48,6 +49,12 @@ const PictureItem = (props: UploadListProps & { file: UploadItem }) => {
               {file.status !== STATUS.fail && actionIcons.previewIcon !== null && (
                 <span
                   className={`${prefixCls}-list-preview-icon`}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (isPressEnter(e)) {
+                      props.onPreview && props.onPreview(file);
+                    }
+                  }}
                   onClick={() => {
                     props.onPreview && props.onPreview(file);
                   }}
@@ -57,9 +64,15 @@ const PictureItem = (props: UploadListProps & { file: UploadItem }) => {
               )}
               {file.status === STATUS.fail && actionIcons.reuploadIcon !== null && (
                 <span
+                  tabIndex={0}
                   className={`${props.prefixCls}-list-reupload-icon`}
                   onClick={() => {
                     props.onReupload && props.onReupload(file);
+                  }}
+                  onKeyDown={(e) => {
+                    if (isPressEnter(e)) {
+                      props.onReupload && props.onReupload(file);
+                    }
                   }}
                 >
                   {actionIcons.reuploadIcon || <IconUpload />}
@@ -68,8 +81,14 @@ const PictureItem = (props: UploadListProps & { file: UploadItem }) => {
               {!disabled && actionIcons.removeIcon !== null && (
                 <span
                   className={`${prefixCls}-list-remove-icon`}
+                  tabIndex={0}
                   onClick={() => {
                     props.onRemove && props.onRemove(file);
+                  }}
+                  onKeyDown={(e) => {
+                    if (isPressEnter(e)) {
+                      props.onRemove && props.onRemove(file);
+                    }
                   }}
                 >
                   {actionIcons.removeIcon || <IconDelete />}

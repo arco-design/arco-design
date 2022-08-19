@@ -13,6 +13,7 @@ import IconExclamationCircleFill from '../../../icon/react-icon/IconExclamationC
 import IconDelete from '../../../icon/react-icon/IconDelete';
 import IconHover from '../../_class/icon-hover';
 import { ConfigProviderProps } from '../../ConfigProvider';
+import { isPressEnter } from '../util';
 
 const getIconType = (file: UploadItem) => {
   let type = '';
@@ -135,6 +136,13 @@ const TextItem = (
       <div className={`${prefixCls}-list-item-operation`}>
         {!disabled && actionIcons.removeIcon !== null && (
           <IconHover
+            tabIndex={0}
+            aria-label={locale.Upload.delete}
+            onKeyDown={(e) => {
+              if (isPressEnter(e)) {
+                props.onRemove && props.onRemove(file);
+              }
+            }}
             onClick={() => {
               props.onRemove && props.onRemove(file);
             }}
