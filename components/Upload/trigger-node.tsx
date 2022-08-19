@@ -26,6 +26,11 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
     <div
       className={`${prefixCls}-trigger`}
       onClick={disabled ? undefined : props.onClick}
+      onKeyDown={(e) => {
+        if (!disabled && e.key === 'Enter') {
+          props.onClick && props.onClick();
+        }
+      }}
       onDragEnter={() => {
         setDragEnterCount(dragEnterCount + 1);
       }}
@@ -70,7 +75,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
           {React.cloneElement(children, nodeProps)}
         </div>
       ) : listType === 'picture-card' ? (
-        <div className={`${prefixCls}-trigger-picture-wrapper`}>
+        <div className={`${prefixCls}-trigger-picture-wrapper`} tabIndex={0}>
           <div className={`${prefixCls}-trigger-picture`}>
             <div className={`${prefixCls}-trigger-picture-text`}>
               <IconPlus />
@@ -82,6 +87,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
           className={cs(`${prefixCls}-trigger-drag`, {
             [`${prefixCls}-trigger-drag-active`]: isDragging,
           })}
+          tabIndex={0}
         >
           <IconPlus />
           <p className={`${prefixCls}-trigger-drag-text`}>

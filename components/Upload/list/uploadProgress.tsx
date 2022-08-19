@@ -9,6 +9,7 @@ import IconPlayArrowFill from '../../../icon/react-icon/IconPlayArrowFill';
 import IconPause from '../../../icon/react-icon/IconPause';
 import Tooltip from '../../Tooltip';
 import { isFunction } from '../../_util/is';
+import { isPressEnter } from '../util';
 
 const UploadProgress: FC<
   {
@@ -30,9 +31,15 @@ const UploadProgress: FC<
     <>
       {status === STATUS.fail && props.reuploadIcon !== null && (
         <span
+          tabIndex={0}
           className={`${prefixCls}-list-reupload-icon`}
           onClick={() => {
             props.onReupload && props.onReupload(file);
+          }}
+          onKeyDown={(e) => {
+            if (isPressEnter(e)) {
+              props.onReupload && props.onReupload(file);
+            }
           }}
         >
           {props.reuploadIcon ||
@@ -63,6 +70,12 @@ const UploadProgress: FC<
               onClick={() => {
                 props.onUpload && props.onUpload(file);
               }}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (isPressEnter(e)) {
+                  props.onUpload && props.onUpload(file);
+                }
+              }}
             >
               {props.startIcon || (
                 <Tooltip content={locale.Upload.start}>
@@ -74,7 +87,13 @@ const UploadProgress: FC<
 
           {status === STATUS.uploading && props.cancelIcon !== null && (
             <span
+              tabIndex={0}
               className={`${props.prefixCls}-list-cancel-icon`}
+              onKeyDown={(e) => {
+                if (isPressEnter(e)) {
+                  props.onAbort && props.onAbort(file);
+                }
+              }}
               onClick={() => {
                 props.onAbort && props.onAbort(file);
               }}

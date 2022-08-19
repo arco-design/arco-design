@@ -1592,6 +1592,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                 >
                   <div
                     class="arco-upload-list-item-picture"
+                    tabindex="0"
                   >
                     <img
                       src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
@@ -1604,6 +1605,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       >
                         <span
                           class="arco-upload-list-preview-icon"
+                          tabindex="0"
                         >
                           <svg
                             aria-hidden="true"
@@ -1625,6 +1627,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                         </span>
                         <span
                           class="arco-upload-list-remove-icon"
+                          tabindex="0"
                         >
                           <svg
                             aria-hidden="true"
@@ -1659,6 +1662,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                 >
                   <div
                     class="arco-upload-trigger-picture-wrapper"
+                    tabindex="0"
                   >
                     <div
                       class="arco-upload-trigger-picture"
@@ -3341,6 +3345,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                 >
                   <div
                     class="arco-upload-list-item-picture"
+                    tabindex="0"
                   >
                     <img
                       src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
@@ -3353,6 +3358,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       >
                         <span
                           class="arco-upload-list-preview-icon"
+                          tabindex="0"
                         >
                           <svg
                             aria-hidden="true"
@@ -3391,6 +3397,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                 >
                   <div
                     class="arco-upload-trigger-picture-wrapper"
+                    tabindex="0"
                   >
                     <div
                       class="arco-upload-trigger-picture"
