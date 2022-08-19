@@ -52,6 +52,11 @@
         background-color: @dropdown-option-color-bg_hover;
       }
 
+      // focus by Tab
+      &:focus-visible {
+        box-shadow: 0 0 0 2px @color-primary-6 inset;
+      }
+
       // hotkey active
       &.@{dropdown-prefix-cls}-menu-active {
         box-shadow: 0 0 0 1px @color-primary-6 inset;

@@ -15,6 +15,7 @@ import IconMenuUnfold from '../../icon/react-icon/IconMenuUnfold';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import MenuContext from './context';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 // Generate DOM id for instance
 let globalMenuIndex = 0;
@@ -82,6 +83,7 @@ function Menu(baseProps: MenuProps, ref) {
   const refSubMenuKeys = useRef<string[]>([]);
   const refPrevSubMenuKeys = useRef<string[]>([]);
   const forceUpdate = useForceUpdate();
+  const getKeyboardEvents = useKeyboardEvent();
 
   const menuInfoMap = useMemo(() => {
     return generateInfoMap(children);
@@ -120,6 +122,11 @@ function Menu(baseProps: MenuProps, ref) {
     const collapseIcon = collapse
       ? (icons && icons.collapseActive) || <IconMenuUnfold />
       : (icons && icons.collapseDefault) || <IconMenuFold />;
+    const collapseButtonClickHandler = () => {
+      const newCollapse = !collapse;
+      setCollapse(newCollapse);
+      onCollapseChange && onCollapseChange(newCollapse);
+    };
 
     return (
       <>
@@ -138,11 +145,8 @@ function Menu(baseProps: MenuProps, ref) {
             aria-controls={instanceId}
             aria-expanded={!collapse}
             className={`${prefixCls}-collapse-button`}
-            onClick={() => {
-              const newCollapse = !collapse;
-              setCollapse(newCollapse);
-              onCollapseChange && onCollapseChange(newCollapse);
-            }}
+            onClick={collapseButtonClickHandler}
+            {...getKeyboardEvents({ onPressEnter: collapseButtonClickHandler })}
           >
             {collapseIcon}
           </div>
