@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.39.1
+
+2022-08-19
+
+### 💎 功能优化
+
+- 优化 `Cascader` 组件多选时对传入的非法格式 `value` 的边界处理([#1304](https://github.com/arco-design/arco-design/pull/1304))
+- 组件库对外暴露 `version` 字段。([#1303](https://github.com/arco-design/arco-design/pull/1303))
+
+### 🐛 问题修复
+
+- 修复 `Grid.Col` 组件设置 `md = 0` 会导致其在更大的窗口尺寸下也不展示的 bug。([#1307](https://github.com/arco-design/arco-design/pull/1307))
+- 修复通过 `useModal` 创建弹窗实例时返回的方法 `update`为 `undefined` 的bug([#1300](https://github.com/arco-design/arco-design/pull/1300))
+- 修复 `DatePicker.RangePicker` 组件 `panelRender` 不生效的 bug。([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
+### 💅 样式更新
+
+- 统一 `Select` 多选和单选模式下的右侧箭头样式。([#1302](https://github.com/arco-design/arco-design/pull/1302))
+
 ## 2.39.0
 
 2022-08-12
@@ -20,7 +39,7 @@ changelog: true
 ### 🆕 功能升级
 
 - `Image.Preview` 新增 `imgAttributes` 参数，将属性透传至弹窗中的 `img` 标签上([#1274](https://github.com/arco-design/arco-design/pull/1274))
-- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.panelMode` 属性控制下拉面板展示([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `TreeSelect` 新增 `inputValue` 和 `onInputValueChange` 属性。([#1151](https://github.com/arco-design/arco-design/pull/1151))
 

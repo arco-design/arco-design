@@ -1,3 +1,11 @@
+## 2.39.1
+
+2022-08-19
+
+### 💎 Enhancement
+
+- Export prop `version`.([#1303](https://github.com/arco-design/arco-design/pull/1303))
+
 ## 2.35.0
 
 2022-06-10

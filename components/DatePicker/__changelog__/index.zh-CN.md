@@ -1,3 +1,11 @@
+## 2.39.1
+
+2022-08-19
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件 `panelRender` 不生效的 bug。([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
 ## 2.39.0
 
 2022-08-12

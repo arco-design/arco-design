@@ -1,10 +1,18 @@
+## 2.39.1
+
+2022-08-19
+
+### 💎 Enhancement
+
+- Optimize cascader edge case handling([#1304](https://github.com/arco-design/arco-design/pull/1304))
+
 ## 2.39.0
 
 2022-08-12
 
 ### 🆕 Feature
 
-- The `Cascader` component supports the `showSearch.showSearchPanel` property to control whether to display options in the search panel([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports controlling the display of drop-down panels through the `showSearch.panelMode` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
 
 ### 🐛 BugFix
