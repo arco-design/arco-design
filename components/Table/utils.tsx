@@ -1,4 +1,4 @@
-import { isArray, isObject, isString } from '../_util/is';
+import { isArray, isObject } from '../_util/is';
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
@@ -19,17 +19,19 @@ export function deepCloneData(data, childrenColumnName) {
     }
     const newData = [];
     data.forEach((d) => {
-      // case: [[{}]]
+      // case: [[], []]
       // case: ['', '']
-      if (isArray(d) || isString(d)) {
-        return d;
+      // case: [1, 2]
+      if (!isObject(d)) {
+        newData.push(d);
+      } else {
+        const _d = { ...d };
+        _d.__ORIGIN_DATA = d;
+        if (isObject(_d) && _d[childrenColumnName]) {
+          _d[childrenColumnName] = travel(_d[childrenColumnName]);
+        }
+        newData.push(_d);
       }
-      const _d = { ...d };
-      _d.__ORIGIN_DATA = d;
-      if (isObject(_d) && _d[childrenColumnName]) {
-        _d[childrenColumnName] = travel(_d[childrenColumnName]);
-      }
-      newData.push(_d);
     });
 
     return newData;
@@ -47,7 +49,7 @@ export function getOriginData(data) {
   }
 
   return data.map((d) => {
-    if (isArray(d)) {
+    if (!isObject(d)) {
       return d;
     }
     return d.__ORIGIN_DATA;

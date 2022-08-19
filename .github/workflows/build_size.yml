@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: yarn run dependencies
+        run: yarn && cd site && yarn && cd ..
 
       - name: setup node
         uses: actions/setup-node@v2

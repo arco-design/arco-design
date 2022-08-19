@@ -32,6 +32,7 @@ import {
   formatValue,
   removeValueFromSet,
   SHOW_CHILD,
+  PANEL_MODE,
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 
@@ -299,7 +300,15 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   };
 
   const renderPopup = () => {
-    const showSearchPanel = !isFunction(props.onSearch) && !!inputValue;
+    // 远程搜索时是否以搜索面板展示搜索结果
+    const panelMode = isObject(props.showSearch) ? props.showSearch.panelMode : undefined;
+
+    const showSearchPanel =
+      panelMode === PANEL_MODE.select
+        ? true
+        : panelMode === PANEL_MODE.cascader
+        ? false
+        : !isFunction(props.onSearch) && !!inputValue;
     const width = selectRef.current && selectRef.current.getWidth();
     const dropdownRender = isFunction(props.dropdownRender) ? props.dropdownRender : (menu) => menu;
 
@@ -327,6 +336,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 onEsc={() => {
                   handleVisibleChange(false);
                 }}
+                renderOption={
+                  (isObject(props.showSearch) && props.showSearch.renderOption) || undefined
+                }
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
                 defaultActiveFirstOption={props.defaultActiveFirstOption}

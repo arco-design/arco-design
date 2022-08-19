@@ -18,7 +18,19 @@ function Demo1() {
     <div>
       <Space direction="vertical">
         <Image.PreviewGroup infinite scales={[50, 150]}>
-          <Image src={newSrc} width={230} />
+          <Image
+            src={newSrc}
+            width={230}
+            preview
+            previewProps={{
+              imgAttributes: {
+                onLoad: (e) => {
+                  console.log(e, 'loaded!!');
+                },
+              },
+              className: 'img-demo-preview',
+            }}
+          />
           <div>
             <Space>
               {srcList.map((src) => (
@@ -35,10 +47,10 @@ function Demo1() {
           </div>
           <Image src={srcList[1]} width={220} />
         </Image.PreviewGroup>
+        <Button type="primary" onClick={replaceSrc}>
+          Replace
+        </Button>
       </Space>
-      <Button type="primary" onClick={replaceSrc}>
-        Replace
-      </Button>
     </div>
   );
 }

@@ -1,0 +1,129 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &::before {
+    content: '';
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-neutral-3);
+    display: block;
+  }
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  box-sizing: border-box;
+  padding-top: 12px;
+  padding-bottom: (20px + 8);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 8px);
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: var(--home-transition-1);
+    background-color: var(--color-fill-1);
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &-logo {
+    line-height: 1;
+    width: 34px;
+    height: 34px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &-name {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 16px;
+    color: var(--color-text-1);
+    margin-top: 16px;
+  }
+
+  &-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-text-2);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  &-active {
+    position: relative;
+
+    &::before {
+      content: '';
+      clear: both;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: rgba(var(--primary-6));
+      display: block;
+    }
+  }
+}
+
+.tab-content {
+  padding-top: 32px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 28px;
+
+  &-left {
+    margin-right: 48px;
+  }
+
+  &-name {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 2px 8px;
+    color: var(--color-text-2);
+    background: var(--color-fill-2);
+    border-radius: 2px;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    color: var(--color-text-1);
+    margin-top: 8px;
+  }
+
+  &-description {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--color-text-2);
+    margin-top: 8px;
+  }
+}

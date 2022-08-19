@@ -473,7 +473,11 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
               class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-small"
               style="margin-left:8px"
             >
-              Default
+              <span
+                class="arco-tag-content"
+              >
+                Default
+              </span>
             </div>
           </div>
         </div>

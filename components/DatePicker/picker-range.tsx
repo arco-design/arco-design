@@ -104,6 +104,7 @@ const Picker = (baseProps: RangePickerProps) => {
     onOk,
     defaultPickerValue,
     pickerValue,
+    panelRender,
     onPickerValueChange,
     triggerElement,
     clearRangeOnReselect,
@@ -508,15 +509,29 @@ const Picker = (baseProps: RangePickerProps) => {
       );
   }
 
+  function getUnit(): QUnitType {
+    switch (mode) {
+      case 'date':
+      case 'week':
+        return 'date';
+      case 'month':
+        return 'month';
+      case 'year':
+        return 'year';
+      default:
+        return undefined;
+    }
+  }
+
   function outOfRange(date: Dayjs): boolean {
     if (selectedLength !== 2) {
       return false;
     }
     const v = valueShow || mergedValue;
-    if (focusedInputIndex === 0 && date.valueOf() > v[1].valueOf()) {
+    if (focusedInputIndex === 0 && date.isAfter(v[1], getUnit())) {
       return true;
     }
-    if (focusedInputIndex === 1 && date.valueOf() < v[0].valueOf()) {
+    if (focusedInputIndex === 1 && date.isBefore(v[0], getUnit())) {
       return true;
     }
     return false;
@@ -785,18 +800,23 @@ const Picker = (baseProps: RangePickerProps) => {
       </>
     );
 
+    const contentWithShortcuts = shortcutsPlacementLeft ? (
+      <>
+        <Shortcuts ref={refShortcuts} {...shortcutsProps} />
+        <div ref={refPanel} className={`${prefixCls}-panel-wrapper`}>
+          {content}
+        </div>
+      </>
+    ) : (
+      content
+    );
+
+    const panelNode =
+      typeof panelRender === 'function' ? panelRender(contentWithShortcuts) : contentWithShortcuts;
+
     return (
       <div className={classNames} onClick={() => focusInput()} style={panelOnly ? style : {}}>
-        {shortcutsPlacementLeft ? (
-          <>
-            <Shortcuts ref={refShortcuts} {...shortcutsProps} />
-            <div ref={refPanel} className={`${prefixCls}-panel-wrapper`}>
-              {content}
-            </div>
-          </>
-        ) : (
-          content
-        )}
+        {panelNode}
       </div>
     );
   }

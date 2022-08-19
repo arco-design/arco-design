@@ -1,3 +1,11 @@
+## 2.39.0
+
+2022-08-12
+
+### 🆕 Feature
+
+- `Image.Preview` adds the `imgAttributes` parameter to transparently transmit the properties to the `img` tag in the preview modal([#1274](https://github.com/arco-design/arco-design/pull/1274))
+
 ## 2.38.1
 
 2022-08-05

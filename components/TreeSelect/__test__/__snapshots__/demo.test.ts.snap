@@ -136,10 +136,10 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
           >
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-tree-select-tag"
+              title="Leaf 0-1-2"
             >
               <span
-                class="arco-input-tag-tag-content"
-                title="Leaf 0-1-2"
+                class="arco-tag-content"
               >
                 Leaf 0-1-2
               </span>
@@ -147,6 +147,7 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
                 aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 role="button"
+                tabindex="0"
               >
                 <svg
                   aria-hidden="true"
@@ -295,10 +296,10 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
           >
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-tree-select-tag"
+              title="Leaf 0-0-1"
             >
               <span
-                class="arco-input-tag-tag-content"
-                title="Leaf 0-0-1"
+                class="arco-tag-content"
               >
                 Leaf 0-0-1
               </span>
@@ -306,6 +307,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
                 aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 role="button"
+                tabindex="0"
               >
                 <svg
                   aria-hidden="true"
@@ -324,10 +326,10 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
             </div>
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-tree-select-tag"
+              title="Leaf 0-0-2-1"
             >
               <span
-                class="arco-input-tag-tag-content"
-                title="Leaf 0-0-2-1"
+                class="arco-tag-content"
               >
                 Leaf 0-0-2-1
               </span>
@@ -335,6 +337,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
                 aria-label="Close"
                 class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                 role="button"
+                tabindex="0"
               >
                 <svg
                   aria-hidden="true"

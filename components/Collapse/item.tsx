@@ -5,10 +5,12 @@ import { CollapseContext } from './collapse';
 import { ConfigContext } from '../ConfigProvider';
 import IconHover from '../_class/icon-hover';
 import { CollapseItemProps } from './interface';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
   const { getPrefixCls } = useContext(ConfigContext);
   const ctx = useContext(CollapseContext);
+  const getEventListeners = useKeyboardEvent();
   const {
     children,
     name,
@@ -55,6 +57,11 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
         onClick={(e) => {
           !disabled && ctx.onToggle(name, e);
         }}
+        {...getEventListeners({
+          onPressEnter: (e) => {
+            !disabled && ctx.onToggle(name, e);
+          },
+        })}
       >
         {icon && (
           <IconHover

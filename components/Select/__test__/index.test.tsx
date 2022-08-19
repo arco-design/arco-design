@@ -294,9 +294,9 @@ describe('Select', () => {
 
     expect(wrapper.find('.demo-1 .arco-tag')).toHaveLength(0);
     expect(wrapper.find('.demo-2 .arco-tag')).toHaveLength(2);
-    expect(wrapper.querySelector('.demo-3 .arco-select-view-value').innerHTML).toBe('One');
-    expect(wrapper.querySelector('.demo-4 .arco-input-tag-tag-content').innerHTML).toBe('One');
-    expect(wrapper.querySelector('.demo-5 .arco-input-tag-tag-content').innerHTML).toBe('One');
+    expect(wrapper.querySelector('.demo-3 .arco-select-view-value')).toHaveTextContent('One');
+    expect(wrapper.querySelector('.demo-4 .arco-tag')).toHaveTextContent('One');
+    expect(wrapper.querySelector('.demo-5 .arco-tag')).toHaveTextContent('One');
   });
 
   it('User creating option will not affect original options', async () => {

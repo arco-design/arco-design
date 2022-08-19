@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.39.0
+
+2022-08-12
+
+### 🚨 Important attention
+
+- **In order to fix the bug that the `Tag` component exceeds the omission and the close icon is blocked, a new layer of DOM structure is added inside, and `children` will be placed under `.arco-tag-content`**
+
+### 💎 Enhancement
+
+- `Pagination` supports switching page numbers via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+- `Collapse` supports switching the current panel selection via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+- `The `Tag` component supports closing tags via keyboard events([#1276](https://github.com/arco-design/arco-design/pull/1276))
+
+### 🆕 Feature
+
+- `Image.Preview` adds the `imgAttributes` parameter to transparently transmit the properties to the `img` tag in the preview modal([#1274](https://github.com/arco-design/arco-design/pull/1274))
+- The `Cascader` component supports the `showSearch.showSearchPanel` property to control whether to display options in the search panel([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `TreeSelect` add properties `inputValue` and `onInputValueChange`.([#1151](https://github.com/arco-design/arco-design/pull/1151))
+
+### 🐛 BugFix
+
+- Fixed the bug that the width of the `extra` node of Tabs caused an error in the calculation of the head scrolling threshold.([#1275](https://github.com/arco-design/arco-design/pull/1275))
+- Fix the problem that the `DatePicker.RangePicker` component is wrong to judge whether it is out of range in a critical situation.([#1273](https://github.com/arco-design/arco-design/pull/1273))
+- Fixed `Table` component not rendering correctly when data format is `[['1']], ['2']]`.([#1270](https://github.com/arco-design/arco-design/pull/1270))
+- Fix the bug that the ellipsis is not displayed after the `Tag` component text content exceeds.([#1268](https://github.com/arco-design/arco-design/pull/1268))
+- Fixed the issue that when virtual scrolling is enabled, when options with the same value exist in the search panel of the `Cascader` component, the options are rendered incorrectly.([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
 ## 2.38.1
 
 2022-08-05
@@ -32,7 +61,7 @@ changelog: true
 - Fixed a bug where the label of the selected item was not displayed properly when the `TreeSelect` component enabled multiple checkbox selection and remote search in controlled mode.([#1207](https://github.com/arco-design/arco-design/pull/1207))
 - Fixed a bug where clicking the close button of an `Alert` component accidentally triggered the `submit` event of an external `form`.([#1205](https://github.com/arco-design/arco-design/pull/1205))
 - Fix `DatePicker.RangePicker` can't change mode from month to year.([#1188](https://github.com/arco-design/arco-design/pull/1188))
-- Fixed  flickering "no data" placeholder when `allowCreate` in `Select`.([#1184](https://github.com/arco-design/arco-design/pull/1184))
+- Fixed flickering "no data" placeholder when `allowCreate` in `Select`.([#1184](https://github.com/arco-design/arco-design/pull/1184))
 
 ## 2.37.2
 
@@ -118,7 +147,7 @@ changelog: true
 - Fixed a bug where the `form.clearFields()` method did not clear the validation state.([#1046](https://github.com/arco-design/arco-design/pull/1046))
 - Fixed a bug where `InputNumber` was affected by the global configuration of `Input`.([#1042](https://github.com/arco-design/arco-design/pull/1042))
 - Fixed a bug where the selection range of the `DatePicker` component was invalid in rare cases.([#1041](https://github.com/arco-design/arco-design/pull/1041))
-- fix `dragToSort` not works  on `Cascader`([#1029](https://github.com/arco-design/arco-design/pull/1029))
+- fix `dragToSort` not works on `Cascader`([#1029](https://github.com/arco-design/arco-design/pull/1029))
 - fix `dragToSort` not works on `TreeSelect`([#1029](https://github.com/arco-design/arco-design/pull/1029))
 
 ### 💅 Style
@@ -427,7 +456,7 @@ changelog: true
 
 ### 🐛 BugFix
 
-- `placeholder`   attributes take effect when `Table` data is an empty string or null([#609](https://github.com/arco-design/arco-design/pull/609))
+- `placeholder` attributes take effect when `Table` data is an empty string or null([#609](https://github.com/arco-design/arco-design/pull/609))
 - Fixed the problem that the input box of the `TreeSelect` component in the extension drop-down menu could not be focused.([#608](https://github.com/arco-design/arco-design/pull/608))
 - Fixed the bug that the second parameter of `onChange` was not passed the information of the currently selected node when the `Cascader` component was single-selected for the first time.([#599](https://github.com/arco-design/arco-design/pull/599))
 - Fix the style issue that the width of the month block becomes larger when the year mode of the `Calendar` component is selected([#560](https://github.com/arco-design/arco-design/pull/560))
@@ -441,7 +470,7 @@ changelog: true
 - Fixed the bug that the `clear-icon` style of `InputTag` did not take effect([#589](https://github.com/arco-design/arco-design/pull/589))
 - Fixed a bug where the checked state of the `Cascader` component was occasionally inconsistent with the incoming `value` when it was controlled.([#587](https://github.com/arco-design/arco-design/pull/587))
 - Fixed a bug where the same text could not be pasted again after the `Input` component pasted text and cleared it.([#584](https://github.com/arco-design/arco-design/pull/584))
-- ` Tooltip ` content value is false does not display the popup([#579](https://github.com/arco-design/arco-design/pull/579))
+- `Tooltip` content value is false does not display the popup([#579](https://github.com/arco-design/arco-design/pull/579))
 - Fixed the bug that the `form` parameter passed to the `Form.useForm` method did not take effect.([#577](https://github.com/arco-design/arco-design/pull/577))
 - Fix the bug in `InputNumber` where decimal point is handled incorrectly([#568](https://github.com/arco-design/arco-design/pull/568))
 - Fix the bug that the `onStart` input parameter was wrong when the `Typography` component was editing the state([#555](https://github.com/arco-design/arco-design/pull/555))
@@ -456,7 +485,7 @@ changelog: true
 
 ### 🐛 BugFix
 
-- `InputNumber`  Omit the unnecessary `allowClear`([#549](https://github.com/arco-design/arco-design/pull/549))
+- `InputNumber` Omit the unnecessary `allowClear`([#549](https://github.com/arco-design/arco-design/pull/549))
 - Fixed the issue that the selected state rendering error occurs when the `Cascader` component is multi-selected.([#544](https://github.com/arco-design/arco-design/pull/544))
 - Fixed `Image.Preview` component `onload` not triggering when loading images from cache([#539](https://github.com/arco-design/arco-design/pull/539))
 
@@ -483,7 +512,7 @@ changelog: true
 - `Form.Item` supports hiding form items via the `hidden` property([#509](https://github.com/arco-design/arco-design/pull/509))
 - Support for clearing field values via the `clearFields` method([#509](https://github.com/arco-design/arco-design/pull/509))
 - `Popconfirm` component `onOk`, `onCancel` callback methods expose `event` parameter([#501](https://github.com/arco-design/arco-design/pull/501))
-- The `Spin` component supports as block-level element  display([#493](https://github.com/arco-design/arco-design/pull/493))
+- The `Spin` component supports as block-level element display([#493](https://github.com/arco-design/arco-design/pull/493))
 
 ### 🐛 BugFix
 
@@ -511,7 +540,7 @@ changelog: true
 ### 🐛 BugFix
 
 - Fixed the bug that `Table` component `size` did not work on `Pagination`.([#475](https://github.com/arco-design/arco-design/pull/475))
-- Fix the incorrectly style when  `Button` content is empty.([#471](https://github.com/arco-design/arco-design/pull/471))
+- Fix the incorrectly style when `Button` content is empty.([#471](https://github.com/arco-design/arco-design/pull/471))
 - Fix the type of the `webkitdirectory` attribute of the `Upload` component.([#470](https://github.com/arco-design/arco-design/pull/470))
 - `Select` fixes an issue where automatic word segmentation introduced new options when `allowCreate` was `false`.([#466](https://github.com/arco-design/arco-design/pull/466))
 - Fixed the edge click of the remove button not working in the Upload component upload list([#457](https://github.com/arco-design/arco-design/pull/457))
@@ -520,6 +549,7 @@ changelog: true
 ## 2.28.1
 
 2022-01-14
+
 ### 🚨 Important attention
 
 - **Fixed a bug where the second parameter of the `renderFormat` method returned a non-object type when `labelInValue` was set in the `Select` component. It may have an impact on scenarios where the parameter is used directly as the return value of the function. **
@@ -602,7 +632,7 @@ changelog: true
 - Fix the bug that the next time the onChange callback is incorrect when the `TimePicker` component is set to `undefined` under the control mode.([#361](https://github.com/arco-design/arco-design/pull/361))
 - Fix the bug that the text in the input box is not cleared after blur when the `popupVisible` of the `Select` is `false`.([#359](https://github.com/arco-design/arco-design/pull/359))
 - Fix the bug that only 100 files will be uploaded when the upload component is dragged to upload a folder.([#357](https://github.com/arco-design/arco-design/pull/357))
-- fix when `Modal` component  the visible is true, the locale does not work([#339](https://github.com/arco-design/arco-design/pull/339))
+- fix when `Modal` component the visible is true, the locale does not work([#339](https://github.com/arco-design/arco-design/pull/339))
 
 ## 2.27.0
 
@@ -733,7 +763,7 @@ changelog: true
 ### 🐛 BugFix
 
 - Fix the bug that the ratio of the panels changes when the `ResizeBox.Split` component switches the `direction`.([#188](https://github.com/arco-design/arco-design/pull/188))
-- `Progress`  gix the bug that the'trailColor 'attribute does not take effect on the circular progress bar and the step progress bar.([#175](https://github.com/arco-design/arco-design/pull/175))
+- `Progress` gix the bug that the'trailColor 'attribute does not take effect on the circular progress bar and the step progress bar.([#175](https://github.com/arco-design/arco-design/pull/175))
 - Fix the bug that the steps of the `Progress` component are displayed incorrectly.([#170](https://github.com/arco-design/arco-design/pull/170))
 
 ### 💅 Style
@@ -800,8 +830,8 @@ changelog: true
 - Trigger's popup can not get correct width when first render([#69](https://github.com/arco-design/arco-design/pull/69))
 - Fix the problem that the pop-up layer of the `Popver` component has a very small width of the parent node, and the arrow element is incorrectly positioned.([#69](https://github.com/arco-design/arco-design/pull/69))
 - Fix the bug of using unupdated variables for calculation when the `Typography` component is in the collapsed state.([#57](https://github.com/arco-design/arco-design/pull/57))
-- Fix `Select` virtual list abnormal positioning that may be caused by setting custom height of  `Select.Option` .([#55](https://github.com/arco-design/arco-design/pull/55))
-- Fix  the InputTag component default validate function  always returns false([#43](https://github.com/arco-design/arco-design/pull/43))
+- Fix `Select` virtual list abnormal positioning that may be caused by setting custom height of `Select.Option` .([#55](https://github.com/arco-design/arco-design/pull/55))
+- Fix the InputTag component default validate function always returns false([#43](https://github.com/arco-design/arco-design/pull/43))
 
 ## 2.23.4
 
@@ -899,7 +929,7 @@ changelog: true
 
 - Optimizing the recently selected option of the `Cascader` component is displayed at the end of the input box.
 - After the drop-down list appears, `TreeSelect` will automatically scroll to the first selected node
--  When the `add` method of `Form.List` receives the event object as a parameter, it will prompt in the console.
+- When the `add` method of `Form.List` receives the event object as a parameter, it will prompt in the console.
 
 ### 🆕 Feature
 
@@ -923,10 +953,10 @@ changelog: true
 - Fix the bug that when the `DatePicker.RangePicker` component only uses the panel and has a default value, the first click to select requires one more point.
 - Fix the problem that the status of the `Table` component is not updated in time when the reset button is clicked when the filter is controlled.
 - Fix text display width calculation error of `Typography` in `flex` mode
--  Fix the bug that the `Typography` component `ellipsis` cannot be re-rendered when the `ellipsis` is under control
--  Fix the bug that the call of `Typography` component `ellipsis` cannot be triggered when passing `onExpand`
--  Fix the bug that the status of `ellipsis` cannot be automatically updated according to the taste when `resize` of the `Typography` window
--  Fix the bug that the `Cascader` component cannot click to expand the next level option when the option `disableCheckbox=true` is set.
+- Fix the bug that the `Typography` component `ellipsis` cannot be re-rendered when the `ellipsis` is under control
+- Fix the bug that the call of `Typography` component `ellipsis` cannot be triggered when passing `onExpand`
+- Fix the bug that the status of `ellipsis` cannot be automatically updated according to the taste when `resize` of the `Typography` window
+- Fix the bug that the `Cascader` component cannot click to expand the next level option when the option `disableCheckbox=true` is set.
 
 ### 🆎 TypeScript
 
@@ -954,7 +984,7 @@ changelog: true
 ### 🐛 BugFix
 
 - Fix bug that asynchronous setting of `value` does not take effect when the `DatePicker` component has a value.
--  Fix the bug that `onChange` can't be fired when to add or remove an item in `Form.List`.
+- Fix the bug that `onChange` can't be fired when to add or remove an item in `Form.List`.
 - Fix bug when update `Table` component's `columns.fixed`, does not update events. and fix bug that the scrolling events cannot be correctly linked when the custom header is set as a function component.
 
 ### 💅 Style
@@ -989,7 +1019,7 @@ changelog: true
 
 ### 🆎 TypeScript
 
--  Optimize `Form.setFieldsValue` ts definition
+- Optimize `Form.setFieldsValue` ts definition
 
 ## 2.21.0-beta.0
 
@@ -1727,7 +1757,7 @@ changelog: true
 - Fix the bug that the `Select` component uses the carriage return to select the option in React 17 will trigger the form submission event.
 - Fix the bug that the new message appears at the bottom when the `Message` and `Notifaction` components are set to `maxCount`.
 - Fixed a bug that caused console error when `Form.Item` was updated during uninstallation.
-- Fix the bug that suffix`does not take effect when`value`` is passed as a string in the `Statistic` component.
+- Fix the bug that suffix`does not take effect when`value``is passed as a string in the`Statistic` component.
 
 ### 💅 Style
 

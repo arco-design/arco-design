@@ -1,3 +1,11 @@
+## 2.39.0
+
+2022-08-12
+
+### 🐛 BugFix
+
+- Fix the problem that the `DatePicker.RangePicker` component is wrong to judge whether it is out of range in a critical situation.([#1273](https://github.com/arco-design/arco-design/pull/1273))
+
 ## 2.38.1
 
 2022-08-05
