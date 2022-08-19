@@ -38,20 +38,19 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -159,20 +158,19 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -226,20 +224,19 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -713,20 +710,19 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -820,20 +816,19 @@ exports[`renders Select/demo/group.md correctly 1`] = `
         class="arco-select-suffix"
       >
         <div
-          class="arco-select-expand-icon"
+          class="arco-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
-            class="arco-icon arco-icon-expand"
+            class="arco-icon arco-icon-down"
             fill="none"
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
           >
             <path
-              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              d="M39.6 17.443 24.043 33 8.487 17.443"
             />
           </svg>
         </div>
@@ -886,20 +881,19 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -1033,20 +1027,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1185,20 +1178,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1337,20 +1329,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1423,20 +1414,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1610,20 +1600,19 @@ exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -1796,20 +1785,19 @@ exports[`renders Select/demo/options.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2130,20 +2118,19 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2276,20 +2263,19 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2338,20 +2324,19 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2393,20 +2378,19 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2447,20 +2431,19 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2566,20 +2549,19 @@ exports[`renders Select/demo/size.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2629,20 +2611,19 @@ exports[`renders Select/demo/size.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2696,20 +2677,19 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -2767,20 +2747,19 @@ Array [
         class="arco-select-suffix"
       >
         <div
-          class="arco-select-expand-icon"
+          class="arco-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
-            class="arco-icon arco-icon-expand"
+            class="arco-icon arco-icon-down"
             fill="none"
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
           >
             <path
-              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              d="M39.6 17.443 24.043 33 8.487 17.443"
             />
           </svg>
         </div>

@@ -566,20 +566,19 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-cascader-suffix"
                   >
                     <div
-                      class="arco-cascader-expand-icon"
+                      class="arco-cascader-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -859,20 +858,19 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -2418,20 +2416,19 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-cascader-suffix"
                   >
                     <div
-                      class="arco-cascader-expand-icon"
+                      class="arco-cascader-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -2696,20 +2693,19 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -7248,20 +7244,19 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     class="arco-cascader-suffix"
                   >
                     <div
-                      class="arco-cascader-expand-icon"
+                      class="arco-cascader-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -7462,20 +7457,19 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -8997,20 +8991,19 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>

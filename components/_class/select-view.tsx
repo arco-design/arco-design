@@ -14,7 +14,6 @@ import { ConfigContext } from '../ConfigProvider';
 import IconDown from '../../icon/react-icon/IconDown';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import IconClose from '../../icon/react-icon/IconClose';
-import IconExpand from '../../icon/react-icon/IconExpand';
 import IconSearch from '../../icon/react-icon/IconSearch';
 import InputTag, { InputTagProps } from '../InputTag';
 import InputComponent from '../Input/input-element';
@@ -282,10 +281,6 @@ export const SelectView = (props: SelectViewProps, ref) => {
       arrowIcon === null ? null : (
         <div className={`${prefixCls}-arrow-icon`}>{arrowIcon}</div>
       )
-    ) : canFocusInput ? (
-      <div className={`${prefixCls}-expand-icon`}>
-        <IconExpand style={{ transform: 'rotate(-45deg)' }} />
-      </div>
     ) : (
       <div className={`${prefixCls}-arrow-icon`}>
         <IconDown />
