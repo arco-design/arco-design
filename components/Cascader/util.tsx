@@ -36,7 +36,8 @@ export function getStore(props, value) {
 export const transformValuesToSet = (values: string[][]) => {
   const _values = values || [];
   const valuesSet = _values.reduce((set, next) => {
-    set.add(next.join(ValueSeparator));
+    // 'next' could be a string.
+    set.add([].concat(next).join(ValueSeparator));
     return set;
   }, new Set());
 
