@@ -198,20 +198,19 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
           </svg>
         </span>
         <div
-          class="arco-tree-select-expand-icon"
+          class="arco-tree-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
-            class="arco-icon arco-icon-expand"
+            class="arco-icon arco-icon-down"
             fill="none"
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
           >
             <path
-              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              d="M39.6 17.443 24.043 33 8.487 17.443"
             />
           </svg>
         </div>
@@ -388,20 +387,19 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
           </svg>
         </span>
         <div
-          class="arco-tree-select-expand-icon"
+          class="arco-tree-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
-            class="arco-icon arco-icon-expand"
+            class="arco-icon arco-icon-down"
             fill="none"
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
           >
             <path
-              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              d="M39.6 17.443 24.043 33 8.487 17.443"
             />
           </svg>
         </div>
@@ -518,20 +516,19 @@ exports[`renders TreeSelect/demo/draggable.md correctly 1`] = `
       class="arco-tree-select-suffix"
     >
       <div
-        class="arco-tree-select-expand-icon"
+        class="arco-tree-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -734,20 +731,19 @@ exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
       class="arco-tree-select-suffix"
     >
       <div
-        class="arco-tree-select-expand-icon"
+        class="arco-tree-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -806,20 +802,19 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
           class="arco-tree-select-suffix"
         >
           <div
-            class="arco-tree-select-expand-icon"
+            class="arco-tree-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -872,20 +867,19 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
           class="arco-tree-select-suffix"
         >
           <div
-            class="arco-tree-select-expand-icon"
+            class="arco-tree-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -939,20 +933,19 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
       class="arco-tree-select-suffix"
     >
       <div
-        class="arco-tree-select-expand-icon"
+        class="arco-tree-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -1052,20 +1045,19 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
           class="arco-tree-select-suffix"
         >
           <div
-            class="arco-tree-select-expand-icon"
+            class="arco-tree-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1106,20 +1098,19 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
           class="arco-tree-select-suffix"
         >
           <div
-            class="arco-tree-select-expand-icon"
+            class="arco-tree-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
