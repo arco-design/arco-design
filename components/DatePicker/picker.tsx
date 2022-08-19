@@ -26,8 +26,9 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import PickerContext from './context';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
-import { getDefaultWeekStart, getLocaleDayjsValue } from './util';
+import { getDefaultWeekStart, getLocaleDayjsValue, isInnerPickerPanel } from './util';
 import { pickDataAttributes } from '../_util/pick';
+import usePickerFocused from './hooks/usePickerFocused';
 
 function getFormat(props) {
   const { format, picker, showTime } = props;
@@ -134,6 +135,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   const refInput = useRef(null);
   const refPanel = useRef(null);
   const refShortcuts = useRef(null);
+  const totalPanelRef = useRef(null);
 
   const realFormat = getFormat(props);
   let format = realFormat;
@@ -194,10 +196,6 @@ const Picker = (baseProps: InnerPickerProps) => {
     refInput.current && refInput.current.blur && refInput.current.focus();
   }
 
-  function blurInput() {
-    refInput.current && refInput.current.blur && refInput.current.blur();
-  }
-
   const previousUtcOffset = usePrevious(utcOffset);
   const previousTimezone = usePrevious(timezone);
 
@@ -224,10 +222,19 @@ const Picker = (baseProps: InnerPickerProps) => {
       setTimeout(() => {
         setIsTimePanel(false);
         setPanelMode(mode);
-        blurInput();
       }, 100);
     }
   }, [mergedPopupVisible]);
+
+  usePickerFocused(
+    (e) => {
+      if (isInnerPickerPanel(totalPanelRef.current, e.target as HTMLElement)) {
+        refInput.current && refInput.current.setFocused(true);
+      }
+    },
+    popupVisible,
+    refInput.current && refInput.current.setFocused
+  );
 
   function visibleChange(visible) {
     if (visible) {
@@ -339,12 +346,17 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function onPressEnter() {
-    if (panelValue) {
+    if (!mergedPopupVisible) {
+      setOpen(true);
+    } else if (panelValue) {
       onConfirmValue();
-      blurInput();
-    } else if (mergedPopupVisible) {
-      setOpen(false);
     }
+  }
+
+  function onPressEsc() {
+    setOpen(false, () => {
+      focusInput();
+    });
   }
 
   function changePageShowDate(type: 'prev' | 'next', unit: UnitType, num = 1) {
@@ -520,6 +532,7 @@ const Picker = (baseProps: InnerPickerProps) => {
 
     return (
       <div
+        ref={totalPanelRef}
         className={classNames}
         onClick={() => {
           refInput.current && refInput.current.focus && refInput.current.focus();
@@ -547,6 +560,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     error,
     size,
     onPressEnter,
+    onPressEsc,
     onClear,
     suffixIcon,
     editable: editable && typeof realFormat !== 'function',

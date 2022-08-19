@@ -50,3 +50,8 @@ export function getLocaleDayjsValue(
 ): Dayjs | undefined {
   return date ? date.locale(dayjsLocale) : date;
 }
+
+export const isInnerPickerPanel = (
+  totalPanelRef: HTMLElement | undefined | null,
+  target: HTMLElement
+) => totalPanelRef && totalPanelRef.contains(target);
