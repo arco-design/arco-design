@@ -44,8 +44,6 @@ describe('RangePicker hover', () => {
     expect(getInput(component, 0).getAttribute('value')).toBe('2020-04-06');
     expect(getInput(component, 1).getAttribute('value')).toBe('2020-04-08');
 
-    expect(component.find('.arco-picker')[0].classList.contains('arco-picker-focused')).toBeFalsy();
-
     // reopen
     fireEvent.click(getInput(component, 1));
 

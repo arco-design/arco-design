@@ -5,15 +5,17 @@ import React, {
   forwardRef,
   CSSProperties,
   ReactNode,
+  useState,
 } from 'react';
 import { Dayjs } from 'dayjs';
 import IconClose from '../../../icon/react-icon/IconClose';
 import IconHover from '../../_class/icon-hover';
 import cs from '../../_util/classNames';
-import { Enter, Tab } from '../../_util/keycode';
+import { Enter, Esc, Tab } from '../../_util/keycode';
 import omit from '../../_util/omit';
 import { ConfigContext } from '../../ConfigProvider';
 import { isArray } from '../../_util/is';
+import usePickerFocused from '../../DatePicker/hooks/usePickerFocused';
 
 export interface DateInputRangeProps {
   style?: CSSProperties;
@@ -29,6 +31,7 @@ export interface DateInputRangeProps {
   onClear?: (e) => void;
   onPressEnter?: () => void;
   onPressTab?: (e) => void;
+  onPressEsc?: (e) => void;
   editable?: boolean;
   suffixIcon?: ReactNode;
   onChange?: (e) => void;
@@ -61,6 +64,7 @@ function DateInput(
     inputValue,
     onPressEnter,
     onPressTab,
+    onPressEsc,
     onChange,
     separator,
     suffixIcon,
@@ -78,23 +82,42 @@ function DateInput(
   const disabled1 = isArray(disabled) ? disabled[0] : disabled;
   const disabled2 = isArray(disabled) ? disabled[1] : disabled;
 
-  useImperativeHandle<any, DateInputHandle>(ref, () => ({
-    focus(index?: number) {
-      const focusedIndex = typeof index === 'number' ? index : focusedInputIndex;
-      const focusElement = focusedIndex === 0 ? input0 : input1;
-      if ((focusedInputIndex === 0 && !disabled1) || (focusedInputIndex === 1 && !disabled2)) {
-        focusElement.current && focusElement.current.focus && focusElement.current.focus();
+  const [focused, setFocused] = useState(false);
+
+  const focus = (index?: number) => {
+    const focusedIndex = typeof index === 'number' ? index : focusedInputIndex;
+    const focusElement = focusedIndex === 0 ? input0 : input1;
+    if ((focusedInputIndex === 0 && !disabled1) || (focusedInputIndex === 1 && !disabled2)) {
+      focusElement.current && focusElement.current.focus && focusElement.current.focus();
+    }
+  };
+
+  const blur = () => {
+    if (focusedInputIndex === 0) {
+      input0.current && input0.current.blur && input0.current.blur();
+    }
+    if (focusedInputIndex === 1) {
+      input1.current && input1.current.blur && input1.current.blur();
+    }
+  };
+
+  useImperativeHandle<any, DateInputHandle>(ref, () => {
+    const innerSetFocused = (focused: boolean) => {
+      if (focused) {
+        focus();
+        setFocused(true);
+      } else {
+        blur();
+        setFocused(false);
       }
-    },
-    blur() {
-      if (focusedInputIndex === 0) {
-        input0.current && input0.current.blur && input0.current.blur();
-      }
-      if (focusedInputIndex === 1) {
-        input1.current && input1.current.blur && input1.current.blur();
-      }
-    },
-  }));
+    };
+
+    return {
+      focus,
+      blur,
+      innerSetFocused,
+    };
+  });
 
   function changeFocusedInput(index: number) {
     if (focusedInputIndex !== index) {
@@ -109,6 +132,9 @@ function DateInput(
     }
     if (keyCode === Tab.code) {
       onPressTab && onPressTab(e);
+    }
+    if (keyCode === Esc.code) {
+      onPressEsc && onPressEsc(e);
     }
   }
 
@@ -125,7 +151,7 @@ function DateInput(
     `${prefixCls}-range`,
     `${prefixCls}-size-${size}`,
     {
-      [`${prefixCls}-focused`]: !!popupVisible,
+      [`${prefixCls}-focused`]: focused,
       [`${prefixCls}-disabled`]: disabled1 && disabled2,
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-rtl`]: rtl,
@@ -148,6 +174,19 @@ function DateInput(
     });
   }
 
+  const isInRangeInput = (inputRefs: (HTMLElement | undefined | null)[], target: HTMLElement) =>
+    inputRefs.some((element) => element.contains(target));
+
+  usePickerFocused(
+    (e) => {
+      if (!isInRangeInput([input0.current, input1.current], e.target as HTMLElement)) {
+        setFocused(false);
+      }
+    },
+    popupVisible,
+    setFocused
+  );
+
   return (
     <div style={style} className={inputClassNames} {...omit(rest, ['onChange', 'onPressEnter'])}>
       <div className={getFocusInputClassName(0)}>
@@ -158,7 +197,10 @@ function DateInput(
           value={getInputValue(0)}
           onChange={onChangeInput}
           onKeyDown={onKeyDown}
-          onClick={() => changeFocusedInput(0)}
+          onClick={() => {
+            changeFocusedInput(0);
+            setFocused(true);
+          }}
           {...readOnlyProps}
         />
       </div>
@@ -171,7 +213,10 @@ function DateInput(
           value={getInputValue(1)}
           onChange={onChangeInput}
           onKeyDown={onKeyDown}
-          onClick={() => changeFocusedInput(1)}
+          onClick={() => {
+            changeFocusedInput(1);
+            setFocused(true);
+          }}
           {...readOnlyProps}
         />
       </div>

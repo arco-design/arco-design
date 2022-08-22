@@ -5,10 +5,12 @@ import React, {
   useContext,
   CSSProperties,
   ReactNode,
+  useState,
 } from 'react';
 import { Dayjs } from 'dayjs';
+import usePickerFocused from '../../DatePicker/hooks/usePickerFocused';
 import omit from '../../_util/omit';
-import { Enter } from '../../_util/keycode';
+import { Enter, Esc } from '../../_util/keycode';
 import { ConfigContext } from '../../ConfigProvider';
 import IconClose from '../../../icon/react-icon/IconClose';
 import IconHover from '../../_class/icon-hover';
@@ -31,6 +33,7 @@ export interface DateInputProps {
   onClear?: (e) => void;
   editable?: boolean;
   onPressEnter?: () => void;
+  onPressEsc?: () => void;
   onChange?: (e) => void;
   suffixIcon?: ReactNode;
   isPlaceholder?: boolean;
@@ -39,6 +42,7 @@ export interface DateInputProps {
 type DateInputHandle = {
   focus: () => void;
   blur: () => void;
+  setFocused: (focused: boolean) => void;
 };
 
 function DateInput(
@@ -57,6 +61,7 @@ function DateInput(
     value,
     inputValue,
     onPressEnter,
+    onPressEsc,
     suffixIcon,
     onChange,
     popupVisible,
@@ -68,6 +73,7 @@ function DateInput(
   const { getPrefixCls, size: ctxSize, locale, rtl } = useContext(ConfigContext);
   const input = useRef<HTMLInputElement>(null);
   const size = propSize || ctxSize;
+  const [focused, setFocused] = useState(false);
 
   useImperativeHandle<any, DateInputHandle>(ref, () => ({
     focus() {
@@ -76,12 +82,24 @@ function DateInput(
     blur() {
       input.current && input.current.blur && input.current.blur();
     },
+    setFocused(val) {
+      setFocused(val);
+    },
   }));
 
   function onKeyDown(e) {
     const keyCode = e.keyCode || e.which;
-    if (keyCode === Enter.code) {
-      onPressEnter && onPressEnter();
+    switch (keyCode) {
+      case Enter.code: {
+        onPressEnter && onPressEnter();
+        break;
+      }
+      case Esc.code: {
+        onPressEsc && onPressEsc();
+        break;
+      }
+      default:
+        break;
     }
   }
 
@@ -102,12 +120,24 @@ function DateInput(
     prefixCls,
     `${prefixCls}-size-${size}`,
     {
-      [`${prefixCls}-focused`]: !!popupVisible,
+      [`${prefixCls}-focused`]: focused,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-rtl`]: rtl,
     },
     className
+  );
+
+  usePickerFocused(
+    (e) => {
+      if (e.target === input.current) {
+        setFocused(true);
+      } else {
+        setFocused(false);
+      }
+    },
+    popupVisible,
+    setFocused
   );
 
   return (

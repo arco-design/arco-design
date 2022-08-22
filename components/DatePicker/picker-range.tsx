@@ -23,11 +23,17 @@ import IconCalendarClock from '../../icon/react-icon/IconCalendarClock';
 import RangePickerPanel from './panels/range';
 import Footer from './panels/footer';
 import Shortcuts from './panels/shortcuts';
-import { getAvailableDayjsLength, getDefaultWeekStart, getLocaleDayjsValue } from './util';
+import {
+  getAvailableDayjsLength,
+  getDefaultWeekStart,
+  getLocaleDayjsValue,
+  isInnerPickerPanel,
+} from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
 import PickerContext from './context';
+import usePickerFocused from './hooks/usePickerFocused';
 
 // get default format by mode
 function getFormat(props) {
@@ -122,6 +128,7 @@ const Picker = (baseProps: RangePickerProps) => {
   const refInput = useRef(null);
   const refPanel = useRef(null);
   const refShortcuts = useRef(null);
+  const totalPanelRef = useRef(null);
 
   const shortcutEnterTimer = useRef(null);
   const shortcutLeaveTimer = useRef(null);
@@ -268,10 +275,19 @@ const Picker = (baseProps: RangePickerProps) => {
       setValueShowHover(undefined);
       setShortcutsValue(undefined);
       resetSelectedDisabledDate();
-      blurInput();
     }
     firstRange.current = mergedPopupVisible;
   }, [mergedPopupVisible]);
+
+  usePickerFocused(
+    (e) => {
+      if (isInnerPickerPanel(totalPanelRef.current, e.target as HTMLElement)) {
+        refInput.current && refInput.current.innerSetFocused(true);
+      }
+    },
+    popupVisible,
+    refInput.current && refInput.current.innerSetFocused
+  );
 
   const startStr = propsValueDayjs?.[0]?.format(format);
   const endStr = propsValueDayjs?.[1]?.format(format);
@@ -364,10 +380,6 @@ const Picker = (baseProps: RangePickerProps) => {
     refInput.current &&
       refInput.current.focus &&
       refInput.current.focus(isHalfAvailable ? availableInputIndex : index);
-  }
-
-  function blurInput() {
-    refInput.current && refInput.current.blur && refInput.current.blur();
   }
 
   function visibleChange(visible) {
@@ -476,10 +488,19 @@ const Picker = (baseProps: RangePickerProps) => {
       }
     } else if (mergedPopupVisible) {
       setOpen(false);
+    } else if (!mergedPopupVisible) {
+      setOpen(true);
+    }
+  }
+
+  function onPressEsc() {
+    if (mergedPopupVisible) {
+      setOpen(false);
     }
   }
 
   function onPressTab(e) {
+    switchFocusedInput(true);
     e.preventDefault();
   }
 
@@ -815,7 +836,12 @@ const Picker = (baseProps: RangePickerProps) => {
       typeof panelRender === 'function' ? panelRender(contentWithShortcuts) : contentWithShortcuts;
 
     return (
-      <div className={classNames} onClick={() => focusInput()} style={panelOnly ? style : {}}>
+      <div
+        ref={totalPanelRef}
+        className={classNames}
+        onClick={() => focusInput()}
+        style={panelOnly ? style : {}}
+      >
         {panelNode}
       </div>
     );
@@ -839,6 +865,7 @@ const Picker = (baseProps: RangePickerProps) => {
     size,
     onPressEnter,
     onPressTab,
+    onPressEsc,
     onClear,
     suffixIcon,
     editable,
