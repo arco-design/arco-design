@@ -566,6 +566,9 @@ function Select(baseProps: SelectProps, ref) {
           [`${prefixCls}-popup-hidden`]: eleOptionList === null && eleNoOptionPlaceholder === null,
           [`${prefixCls}-popup-multiple`]: isMultipleMode,
         })}
+        // Make sure hotkey works when dropdown layer get focused
+        tabIndex={-1}
+        onKeyDown={(e) => hotkeyHandler(e as any)}
       >
         {typeof dropdownRender === 'function'
           ? dropdownRender(eleOptionList || eleNoOptionPlaceholder)
