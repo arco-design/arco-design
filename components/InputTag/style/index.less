@@ -1,28 +1,9 @@
 @import '../../style/mixin.less';
 @import './token.less';
 @import '../../_class/Draggable/style/index.less';
+@import './mixin.less';
 
 @input-tag-prefix-cls: ~'@{prefix}-input-tag';
-
-.input-tag-input-element-padding(@paddingLeft) {
-  .@{input-tag-prefix-cls}-has-placeholder {
-    input,
-    .@{input-tag-prefix-cls}-input-mirror {
-      box-sizing: border-box;
-      padding-left: @paddingLeft;
-    }
-  }
-}
-
-.input-tag-input-element-padding-rtl(@paddingRight) {
-  .@{input-tag-prefix-cls}-has-placeholder {
-    input,
-    .@{input-tag-prefix-cls}-input-mirror {
-      padding-left: 0;
-      padding-right: @paddingRight;
-    }
-  }
-}
 
 .@{input-tag-prefix-cls} {
   display: inline-block;
