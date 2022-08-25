@@ -1,13 +1,15 @@
-import React, { useState, useRef, useContext, ReactElement, ReactNode, useEffect } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
+import React, { useState, useRef, useContext, ReactElement, ReactNode } from 'react';
 import SubMenu from './sub-menu';
 import { getStyle } from '../_util/style';
 import MenuContext from './context';
+import ResizeObserver from '../_util/resizeObserver';
 
 const OVERFLOW_THRESHOLD = 10;
 
 function getNodeWidth(node) {
-  return node && +node.getBoundingClientRect().width.toFixed(2);
+  // getBoundingClientRect will get a result like 20.45
+  // Use Math.ceil to avoid menu item wrap in specific menu-width
+  return node && Math.ceil(+node.getBoundingClientRect().width);
 }
 
 function translatePxToNumber(str): number {
@@ -24,29 +26,11 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   const { prefixCls } = useContext(MenuContext);
 
   const refUl = useRef(null);
-  const refResizeObserver = useRef(null);
   const [lastVisibleIndex, setLastVisibleIndex] = useState(null);
 
   const overflowSubMenuClass = `${prefixCls}-overflow-sub-menu`;
   const overflowMenuItemClass = `${prefixCls}-overflow-hidden-menu-item`;
   const overflowSubMenuMirrorClass = `${prefixCls}-overflow-sub-menu-mirror`;
-
-  useEffect(() => {
-    const ulElement = refUl.current;
-
-    computeLastVisibleIndex();
-
-    refResizeObserver.current = new ResizeObserver((entries) => {
-      entries.forEach(computeLastVisibleIndex);
-    });
-    refResizeObserver.current.observe(ulElement);
-
-    return () => {
-      if (refResizeObserver.current) {
-        refResizeObserver.current.disconnect();
-      }
-    };
-  }, [children]);
 
   function computeLastVisibleIndex() {
     if (!refUl.current) {
@@ -145,9 +129,11 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   };
 
   return (
-    <div className={`${prefixCls}-overflow-wrap`} ref={refUl}>
-      {renderChildren()}
-    </div>
+    <ResizeObserver onResize={computeLastVisibleIndex}>
+      <div className={`${prefixCls}-overflow-wrap`} ref={refUl}>
+        {renderChildren()}
+      </div>
+    </ResizeObserver>
   );
 };
 
