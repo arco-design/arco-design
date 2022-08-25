@@ -26,6 +26,7 @@ function App() {
   return (
     <Form
       form={form}
+      autoComplete="off"
       style={{
         width: 600,
       }}

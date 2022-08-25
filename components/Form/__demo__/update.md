@@ -23,6 +23,7 @@ function App() {
     <div>
       <Form
         form={form}
+        autoComplete="off"
         style={{ maxWidth: 650 }}
         onValuesChange={(_, vs) => {
           console.log(vs);
