@@ -72,6 +72,8 @@
 
   &-input {
     width: 100%;
+    // width might be overwrite by inline-style, max-width make text-ellipsis work
+    max-width: 100%;
     padding: 0;
     border: none;
     outline: none;
@@ -79,6 +81,7 @@
     font-size: inherit;
     cursor: inherit;
     color: inherit;
+    .text-ellipsis();
 
     &[disabled] {
       width: 0 !important;
