@@ -77,7 +77,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     value: previewProps.visible,
   });
 
-  // Props passed directly into Preivew component
+  // Props passed directly into Preview component
   const availablePreviewProps = omit(previewProps, [
     'visible',
     'defaultVisible',

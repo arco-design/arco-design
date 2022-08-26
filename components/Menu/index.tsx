@@ -16,9 +16,7 @@ import useForceUpdate from '../_util/hooks/useForceUpdate';
 import MenuContext from './context';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
-
-// Generate DOM id for instance
-let globalMenuIndex = 0;
+import useId from '../_util/hooks/useId';
 
 const DEFAULT_THEME: MenuProps['theme'] = 'light';
 
@@ -89,16 +87,9 @@ function Menu(baseProps: MenuProps, ref) {
     return generateInfoMap(children);
   }, [children]);
 
-  // Unique ID of this select instance
-  const instanceId = useMemo<string>(() => {
-    if (rest.id) {
-      return rest.id;
-    }
-
-    const id = `${prefixCls}-${globalMenuIndex}`;
-    globalMenuIndex++;
-    return id;
-  }, [rest.id]);
+  // Unique ID of this instance
+  const _instanceId = useId(`${prefixCls}-`);
+  const instanceId = rest.id || _instanceId;
 
   // autoOpen 时，初次渲染展开所有的子菜单
   useEffect(() => {

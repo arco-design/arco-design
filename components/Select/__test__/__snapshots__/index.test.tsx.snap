@@ -3,7 +3,6 @@
 exports[`ConfigProvider componentConfig.Select default 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-1"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"
@@ -54,7 +53,6 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
 exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-2"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default global-default-class"
@@ -105,7 +103,6 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Select set className globally and component set className itself. 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-3"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default component-class"
@@ -156,7 +153,6 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
 exports[`ConfigProvider componentConfig.Select set data-* property 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-4"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"

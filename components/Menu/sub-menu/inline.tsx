@@ -1,4 +1,4 @@
-import React, { CSSProperties, useContext, useMemo, ReactNode } from 'react';
+import React, { CSSProperties, useContext, ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
@@ -9,8 +9,7 @@ import MenuContext from '../context';
 import MenuIndent from '../indent';
 import pick from '../../_util/pick';
 import { Enter } from '../../_util/keycode';
-
-let globalInlineSubMenuIndex = 0;
+import useId from '../../_util/hooks/useId';
 
 // Use visibility: hidden to avoid Menu.Item get focused by Tab key
 const CONTENT_HIDDEN_STYLE: CSSProperties = { height: 0, visibility: 'hidden' };
@@ -45,11 +44,7 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   };
 
   // Unique ID of this instance
-  const instanceId = useMemo<string>(() => {
-    const id = `${menuId}-submenu-inline-${globalInlineSubMenuIndex}`;
-    globalInlineSubMenuIndex++;
-    return id;
-  }, []);
+  const instanceId = useId(`${menuId}-submenu-inline-`);
 
   // Should omit these properties in Menu.Item
   const childrenList = processChildren(children, {

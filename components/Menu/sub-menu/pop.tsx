@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { TriggerProps } from '../../Trigger';
 import cs from '../../_util/classNames';
 import { MenuSubMenuProps } from '../interface';
@@ -13,8 +13,7 @@ import MenuIndent from '../indent';
 import MenuContext from '../context';
 import { ConfigContext } from '../../ConfigProvider';
 import { ArrowLeft, ArrowRight, Enter } from '../../_util/keycode';
-
-let globalPopSubMenuIndex = 0;
+import useId from '../../_util/hooks/useId';
 
 const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   const {
@@ -50,11 +49,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
   const needPopOnBottom = mode === 'horizontal' && !inDropdown;
 
   // Unique ID of this instance
-  const instanceId = useMemo<string>(() => {
-    const id = `${menuId}-submenu-pop-${globalPopSubMenuIndex}`;
-    globalPopSubMenuIndex++;
-    return id;
-  }, []);
+  const instanceId = useId(`${menuId}-submenu-pop-`);
 
   const renderSuffix = () => {
     const MergedIconRight =
