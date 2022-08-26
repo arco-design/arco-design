@@ -149,6 +149,13 @@ const Picker = (baseProps: RangePickerProps) => {
   const [focusedInputIndex, setFocusedInputIndex] = useState<number>(
     isHalfAvailable ? availableInputIndex : 0
   );
+
+  useEffect(() => {
+    if (isHalfAvailable) {
+      setFocusedInputIndex(availableInputIndex);
+    }
+  }, [disabled]);
+
   const nextFocusedInputIndex = 1 ^ focusedInputIndex;
 
   const [inputValue, setInputValue] = useState<string | undefined>();
@@ -192,14 +199,12 @@ const Picker = (baseProps: RangePickerProps) => {
 
   const timeValues = getTimeValues();
 
-  const initialDisabledDate = isHalfAvailable
+  const selectedDisabledDate = isHalfAvailable
     ? (current: Dayjs) =>
         availableInputIndex === 0
           ? current.isAfter(panelValue[1], mode as QUnitType)
           : current.isBefore(panelValue[0], mode as QUnitType)
     : undefined;
-
-  const selectedDisabledDate = useRef<(current?: Dayjs) => boolean>(initialDisabledDate);
 
   // if triggerElement !== undefined, we should activate clearRangeOnReselect by default
   const customTriggerElement = triggerElement !== undefined;
@@ -267,7 +272,6 @@ const Picker = (baseProps: RangePickerProps) => {
       setValueShow(undefined);
       setValueShowHover(undefined);
       setShortcutsValue(undefined);
-      resetSelectedDisabledDate();
       blurInput();
     }
     firstRange.current = mergedPopupVisible;
@@ -411,9 +415,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   function isDisabledDate(date: Dayjs): boolean {
     const selectedDisabled =
-      typeof selectedDisabledDate.current === 'function'
-        ? selectedDisabledDate.current(date)
-        : false;
+      typeof selectedDisabledDate === 'function' ? selectedDisabledDate(date) : false;
     const originDisabledDate = typeof disabledDate === 'function' ? disabledDate(date) : false;
     return originDisabledDate || selectedDisabled;
   }
@@ -428,10 +430,6 @@ const Picker = (baseProps: RangePickerProps) => {
       //     : panelValue[nextFocusedInputIndex].isAfter(dayjs(time, format))
       //   : true)
     );
-  }
-
-  function resetSelectedDisabledDate() {
-    selectedDisabledDate.current = initialDisabledDate;
   }
 
   function onChangeInput(e) {
@@ -492,7 +490,6 @@ const Picker = (baseProps: RangePickerProps) => {
     const sortedValues = getSortedDayjsArray(confirmValue);
     setValue(sortedValues);
     onHandleChange(sortedValues);
-    resetSelectedDisabledDate();
     if (triggerElement !== null && !keepOpen) {
       setOpen(false);
     }
