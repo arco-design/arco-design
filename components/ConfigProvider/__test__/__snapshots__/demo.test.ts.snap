@@ -300,7 +300,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -1062,7 +1061,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-cascader-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -1117,7 +1115,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-1"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -1171,7 +1168,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-tree-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -1425,10 +1421,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-0-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-0-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -1439,10 +1433,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-0-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-0-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -1453,10 +1445,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-0-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-0-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -1868,7 +1858,6 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-2"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default arco-select-rtl"

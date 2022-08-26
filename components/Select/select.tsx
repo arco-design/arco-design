@@ -41,13 +41,11 @@ import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { SelectOptionProps } from '../index';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
+import useId from '../_util/hooks/useId';
 
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
 const THRESHOLD_TOKEN_SEPARATOR_TRIGGER = 100;
-
-// Generate DOM id for instance
-let globalSelectIndex = 0;
 
 const defaultProps: SelectProps = {
   trigger: 'click',
@@ -171,13 +169,8 @@ function Select(baseProps: SelectProps, ref) {
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
   const refIsFirstRender = useIsFirstRender();
-
   // Unique ID of this select instance
-  const instancePopupID = useMemo<string>(() => {
-    const id = `${prefixCls}-popup-${globalSelectIndex}`;
-    globalSelectIndex++;
-    return id;
-  }, []);
+  const instancePopupID = useId(`${prefixCls}-popup-`);
 
   const isNoOptionSelected = isEmptyValue(value, isMultipleMode);
   const valueActiveDefault = defaultActiveFirstOption
