@@ -2,6 +2,29 @@
 changelog: true
 ---
 
+## 2.39.2
+
+2022-08-26
+
+### 💎 Enhancement
+
+- Optimized the behavior of auto-folding when horizontal `Menu` width changes to avoid occasional line breaks.([#1331](https://github.com/arco-design/arco-design/pull/1331))
+- Make sure that the keyboard shortcuts are still available when the `Select` component uses `dropdownRender` to customize the dropdown box content and gets the page focus.([#1328](https://github.com/arco-design/arco-design/pull/1328))
+
+### 🐛 BugFix
+
+- Fix the problem that after the `Table` component updates `data`, the `selectedRows` is not updated in time when the selectedRows is selected next time.([#1341](https://github.com/arco-design/arco-design/pull/1341))
+- Fix the bug that the `DatePicker.RangePicker` component dynamically modifies `disabled`, and the disabled date is not updated in time.([#1336](https://github.com/arco-design/arco-design/pull/1336))
+- Fix server-side rendering error due to auto-generated DOM `id`.([#1334](https://github.com/arco-design/arco-design/pull/1334))
+- Fixed a bug where the initial `pageSize` of the `Pagination` component was inconsistent with the selected `sizeOptions`.([#1333](https://github.com/arco-design/arco-design/pull/1333))
+- Fixed a bug where the selected node was not scrolled to the viewport correctly when the `Cascader` component opened the virtual list.([#1329](https://github.com/arco-design/arco-design/pull/1329))
+- Fixed the problem that the `Select` component was repeatedly introduced when the `Cascader` / `TreeSelect` style was introduced by on-demand loading([#1327](https://github.com/arco-design/arco-design/pull/1327))
+
+### 💅 Style
+
+- When the `placeholder` of the `InputTag` component is too long, it will be displayed with `...` at the end.([#1339](https://github.com/arco-design/arco-design/pull/1339))
+- Fix the bug that the display position of the built-in collapse button of the `Menu` component is wrong([#1332](https://github.com/arco-design/arco-design/pull/1332))
+
 ## 2.39.1
 
 2022-08-19

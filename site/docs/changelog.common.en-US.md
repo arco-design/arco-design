@@ -1,3 +1,12 @@
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fix server-side rendering error due to auto-generated DOM `id`.([#1334](https://github.com/arco-design/arco-design/pull/1334))
+- Fixed the problem that the `Select` component was repeatedly introduced when the `Cascader` / `TreeSelect` style was introduced by on-demand loading([#1327](https://github.com/arco-design/arco-design/pull/1327))
+
 ## 2.39.1
 
 2022-08-19

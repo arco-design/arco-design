@@ -1,3 +1,11 @@
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fix the bug that the `DatePicker.RangePicker` component dynamically modifies `disabled`, and the disabled date is not updated in time.([#1336](https://github.com/arco-design/arco-design/pull/1336))
+
 ## 2.39.1
 
 2022-08-19

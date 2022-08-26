@@ -1,3 +1,15 @@
+## 2.39.2
+
+2022-08-26
+
+### 💎 Enhancement
+
+- Optimized the behavior of auto-folding when horizontal `Menu` width changes to avoid occasional line breaks.([#1331](https://github.com/arco-design/arco-design/pull/1331))
+
+### 💅 Style
+
+- Fix the bug that the display position of the built-in collapse button of the `Menu` component is wrong([#1332](https://github.com/arco-design/arco-design/pull/1332))
+
 ## 2.36.0
 
 2022-06-24

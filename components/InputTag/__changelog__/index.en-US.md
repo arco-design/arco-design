@@ -1,3 +1,11 @@
+## 2.39.2
+
+2022-08-26
+
+### 💅 Style
+
+- When the `placeholder` of the `InputTag` component is too long, it will be displayed with `...` at the end.([#1339](https://github.com/arco-design/arco-design/pull/1339))
+
 ## 2.37.0
 
 2022-07-08

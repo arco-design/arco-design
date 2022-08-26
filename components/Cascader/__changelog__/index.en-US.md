@@ -1,3 +1,11 @@
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the selected node was not scrolled to the viewport correctly when the `Cascader` component opened the virtual list.([#1329](https://github.com/arco-design/arco-design/pull/1329))
+
 ## 2.39.1
 
 2022-08-19

@@ -1,3 +1,11 @@
+## 2.39.2
+
+2022-08-26
+
+### 🐛 问题修复
+
+- 修复 `Pagination` 组件的初始 `pageSize` 与选中的 `sizeOptions` 不一致的 bug。([#1333](https://github.com/arco-design/arco-design/pull/1333))
+
 ## 2.39.0
 
 2022-08-12

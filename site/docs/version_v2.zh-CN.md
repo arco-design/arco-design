@@ -2,6 +2,29 @@
 changelog: true
 ---
 
+## 2.39.2
+
+2022-08-26
+
+### 💎 功能优化
+
+- 优化水平 `Menu` 宽度改变时自动折叠的表现，避免偶发的折行。([#1331](https://github.com/arco-design/arco-design/pull/1331))
+- 确保 `Select` 组件使用 `dropdownRender` 自定义下拉框内容并获取页面焦点时，键盘快捷键仍然可用。([#1328](https://github.com/arco-design/arco-design/pull/1328))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件更新 `data` 之后，下次选中 `selectedRows` 未及时更新的问题。([#1341](https://github.com/arco-design/arco-design/pull/1341))
+- 修复 `DatePicker.RangePicker` 组件动态修改 `disabled`，禁用日期没有及时更新的 bug。([#1336](https://github.com/arco-design/arco-design/pull/1336))
+- 修复由于自动生成的 DOM `id` 导致的服务端渲染报错的问题。([#1334](https://github.com/arco-design/arco-design/pull/1334))
+- 修复 `Pagination` 组件的初始 `pageSize` 与选中的 `sizeOptions` 不一致的 bug。([#1333](https://github.com/arco-design/arco-design/pull/1333))
+- 修复 `Cascader` 组件开启虚拟列表时，选中节点未正确滚动到视口的 bug。([#1329](https://github.com/arco-design/arco-design/pull/1329))
+- 修复按需加载引入 `Cascader` / `TreeSelect` 样式时，`Select` 组件被重复引入的问题([#1327](https://github.com/arco-design/arco-design/pull/1327))
+
+### 💅 样式更新
+
+- `InputTag` 组件 `placeholder` 过长时末尾使用 `...` 展示。([#1339](https://github.com/arco-design/arco-design/pull/1339))
+- 修复 `Menu` 组件内置折叠按钮显示位置出错的 bug([#1332](https://github.com/arco-design/arco-design/pull/1332))
+
 ## 2.39.1
 
 2022-08-19
