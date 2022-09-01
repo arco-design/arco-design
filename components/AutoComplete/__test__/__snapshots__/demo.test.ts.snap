@@ -3,7 +3,7 @@
 exports[`renders AutoComplete/demo/advance.md correctly 1`] = `
 <div
   class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-autocomplete"
-  style="width:154px"
+  style="width: 154px;"
 >
   <span
     class="arco-input-group"
@@ -30,7 +30,7 @@ exports[`renders AutoComplete/demo/advance.md correctly 1`] = `
 exports[`renders AutoComplete/demo/basic.md correctly 1`] = `
 <div
   class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-autocomplete"
-  style="width:154px;margin-right:20px"
+  style="width: 154px; margin-right: 20px;"
 >
   <span
     class="arco-input-group"
@@ -58,7 +58,7 @@ exports[`renders AutoComplete/demo/custom-input.md correctly 1`] = `
 <textarea
   class="arco-textarea arco-autocomplete"
   placeholder="Customize this with your words"
-  style="width:320px;height:80px"
+  style="width: 320px; height: 80px;"
   suffix="[object Object]"
   tabindex="0"
 />
@@ -67,7 +67,7 @@ exports[`renders AutoComplete/demo/custom-input.md correctly 1`] = `
 exports[`renders AutoComplete/demo/options.md correctly 1`] = `
 <div
   class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-autocomplete"
-  style="width:154px"
+  style="width: 154px;"
 >
   <span
     class="arco-input-group"
@@ -95,7 +95,7 @@ exports[`renders AutoComplete/demo/strict.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-autocomplete"
-    style="width:154px"
+    style="width: 154px;"
   >
     <span
       class="arco-input-group"
@@ -124,7 +124,7 @@ exports[`renders AutoComplete/demo/with-group.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search arco-autocomplete"
-    style="width:320px"
+    style="width: 320px;"
   >
     <span
       class="arco-input-group"
@@ -165,7 +165,7 @@ exports[`renders AutoComplete/demo/without-group.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search arco-autocomplete"
-    style="width:320px"
+    style="width: 320px;"
   >
     <span
       class="arco-input-group"

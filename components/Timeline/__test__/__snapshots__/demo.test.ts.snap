@@ -3,11 +3,11 @@
 exports[`renders Timeline/demo/basic.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:40px"
+    style="margin-bottom: 40px;"
   >
     <span
       class="arco-typography"
-      style="vertical-align:middle;margin-right:8px"
+      style="vertical-align: middle; margin-right: 8px;"
     >
       Reverse
     </span>
@@ -15,7 +15,7 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
       aria-checked="false"
       class="arco-switch arco-switch-small arco-switch-type-circle"
       role="switch"
-      style="vertical-align:middle"
+      style="vertical-align: middle;"
       type="button"
     >
       <div
@@ -36,7 +36,7 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -70,7 +70,7 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -104,7 +104,7 @@ exports[`renders Timeline/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -137,7 +137,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
 <div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <span
       class="arco-typography"
@@ -223,7 +223,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
-          style="border-top-style:solid"
+          style="border-top-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -244,15 +244,15 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
-              style="margin:0 12px 12px 12px"
+              style="margin: 0px 12px 12px 12px;"
               width="40"
             />
             <div
-              style="margin-bottom:12px"
+              style="margin-bottom: 12px;"
             >
               Toutiao
               <div
-                style="font-size:12px;color:#4E5969"
+                style="font-size: 12px; color: rgb(78, 89, 105);"
               >
                 Founded in 2012
               </div>
@@ -270,7 +270,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
-          style="border-top-style:solid"
+          style="border-top-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -291,15 +291,15 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
-              style="margin:0 12px 12px 12px"
+              style="margin: 0px 12px 12px 12px;"
               width="40"
             />
             <div
-              style="margin-bottom:12px"
+              style="margin-bottom: 12px;"
             >
               Xigua Video
               <div
-                style="font-size:12px;color:#4E5969"
+                style="font-size: 12px; color: rgb(78, 89, 105);"
               >
                 Founded in 2017
               </div>
@@ -317,7 +317,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
-          style="border-top-style:dashed"
+          style="border-top-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -338,15 +338,15 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
-              style="margin:0 12px 12px 12px"
+              style="margin: 0px 12px 12px 12px;"
               width="40"
             />
             <div
-              style="margin-bottom:12px"
+              style="margin-bottom: 12px;"
             >
               Pipidance
               <div
-                style="font-size:12px;color:#4E5969"
+                style="font-size: 12px; color: rgb(78, 89, 105);"
               >
                 Founded in 2018
               </div>
@@ -364,7 +364,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-horizontal"
-          style="border-top-style:dashed"
+          style="border-top-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -385,7 +385,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="font-size:12px"
+                  style="font-size: 12px;"
                   viewBox="0 0 48 48"
                 >
                   <path
@@ -411,7 +411,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
@@ -426,14 +426,14 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
           >
             <div
               class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-              style="background-color:#00B42A"
+              style="background-color: rgb(0, 180, 42);"
             />
           </div>
         </div>
@@ -461,7 +461,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
@@ -495,7 +495,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
@@ -510,7 +510,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
                 focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
-                style="font-size:12px;color:#F53F3F"
+                style="font-size: 12px; color: rgb(245, 63, 63);"
                 viewBox="0 0 48 48"
               >
                 <path
@@ -544,14 +544,13 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
           >
             <div
               class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-              style="background-color:var(--color-fill-4)"
             />
           </div>
         </div>
@@ -574,7 +573,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-timeline arco-timeline-left arco-timeline-direction-vertical"
@@ -589,7 +588,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
@@ -604,7 +603,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
                 focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
-                style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
+                style="font-size: 12px; padding: 2px; box-sizing: border-box; border-radius: 50%;"
                 viewBox="0 0 48 48"
               >
                 <path
@@ -638,7 +637,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
@@ -653,7 +652,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
                 focusable="false"
                 stroke="currentColor"
                 stroke-width="4"
-                style="font-size:12px;padding:2px;box-sizing:border-box;border-radius:50%;background-color:var(--color-primary-light-1)"
+                style="font-size: 12px; padding: 2px; box-sizing: border-box; border-radius: 50%;"
                 viewBox="0 0 48 48"
               >
                 <path
@@ -687,7 +686,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
@@ -721,14 +720,13 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
           >
             <div
               class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-              style="background-color:var(--color-fill-4)"
             />
           </div>
         </div>
@@ -765,7 +763,7 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
@@ -799,14 +797,13 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
           >
             <div
               class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-              style="background-color:var(--color-fill-4)"
             />
           </div>
         </div>
@@ -834,14 +831,13 @@ exports[`renders Timeline/demo/dot.md correctly 1`] = `
         >
           <div
             class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-            style="border-left-style:solid"
+            style="border-left-style: solid;"
           />
           <div
             class="arco-timeline-item-dot-content"
           >
             <div
               class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-              style="background-color:var(--color-fill-4)"
             />
           </div>
         </div>
@@ -880,14 +876,14 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#00B42A"
+            style="background-color: rgb(0, 180, 42);"
           />
         </div>
       </div>
@@ -915,7 +911,7 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -949,14 +945,14 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#F53F3F"
+            style="background-color: rgb(245, 63, 63);"
           />
         </div>
       </div>
@@ -974,7 +970,7 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="color:F53F3F;font-size:12px;margin-left:4px"
+            style="font-size: 12px; margin-left: 4px;"
             viewBox="0 0 48 48"
           >
             <path
@@ -1002,14 +998,14 @@ exports[`renders Timeline/demo/icon.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#C9CDD4"
+            style="background-color: rgb(201, 205, 212);"
           />
         </div>
       </div>
@@ -1090,7 +1086,7 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin:20px 0 24px"
+    style="margin: 20px 0px 24px;"
   >
     <span
       class="arco-typography"
@@ -1176,14 +1172,14 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#52C419"
+            style="background-color: rgb(82, 196, 25);"
           />
         </div>
       </div>
@@ -1211,14 +1207,14 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#F5222D"
+            style="background-color: rgb(245, 34, 45);"
           />
         </div>
       </div>
@@ -1246,7 +1242,7 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1282,7 +1278,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
   <div
     class="arco-timeline arco-timeline-alternate arco-timeline-direction-vertical"
     role="list"
-    style="flex:1"
+    style="flex: 1;"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-left arco-timeline-item-label-same"
@@ -1293,7 +1289,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1327,7 +1323,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1361,7 +1357,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1390,7 +1386,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
   <div
     class="arco-timeline arco-timeline-right arco-timeline-direction-vertical"
     role="list"
-    style="flex:1"
+    style="flex: 1;"
   >
     <div
       class="arco-timeline-item arco-timeline-item-vertical-right arco-timeline-item-label-same"
@@ -1401,7 +1397,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1435,7 +1431,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1469,7 +1465,7 @@ exports[`renders Timeline/demo/mode.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1502,13 +1498,14 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
 <div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <label
       class="arco-checkbox"
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1543,6 +1540,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1577,6 +1575,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1611,6 +1610,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1654,14 +1654,14 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#52C419"
+            style="background-color: rgb(82, 196, 25);"
           />
         </div>
       </div>
@@ -1689,14 +1689,14 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
         >
           <div
             class="arco-timeline-item-dot arco-timeline-item-dot-solid"
-            style="background-color:#F5222D"
+            style="background-color: rgb(245, 34, 45);"
           />
         </div>
       </div>
@@ -1724,7 +1724,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:dashed"
+          style="border-left-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1758,7 +1758,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:dashed"
+          style="border-left-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1779,7 +1779,7 @@ exports[`renders Timeline/demo/pending.md correctly 1`] = `
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="font-size:12px"
+                  style="font-size: 12px;"
                   viewBox="0 0 48 48"
                 >
                   <path
@@ -1814,7 +1814,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:dashed"
+          style="border-left-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1834,7 +1834,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
           <br />
           <span
             class="arco-typography arco-typography-secondary"
-            style="font-size:12px;margin-top:4px"
+            style="font-size: 12px; margin-top: 4px;"
           >
             This is a descriptive message
           </span>
@@ -1855,7 +1855,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:dashed"
+          style="border-left-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1875,7 +1875,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
           <br />
           <span
             class="arco-typography arco-typography-secondary"
-            style="font-size:12px;margin-top:4px"
+            style="font-size: 12px; margin-top: 4px;"
           >
             This is a descriptive message
           </span>
@@ -1896,7 +1896,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:dashed"
+          style="border-left-style: dashed;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -1916,7 +1916,7 @@ exports[`renders Timeline/demo/type.md correctly 1`] = `
           <br />
           <span
             class="arco-typography arco-typography-secondary"
-            style="font-size:12px;margin-top:4px"
+            style="font-size: 12px; margin-top: 4px;"
           >
             This is a descriptive message
           </span>
@@ -1936,7 +1936,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
 <div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <span
       class="arco-typography"
@@ -2022,7 +2022,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -2040,19 +2040,19 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
         >
           <div
             class="arco-row arco-row-align-start arco-row-justify-start"
-            style="display:inline-flex;align-items:center"
+            style="display: inline-flex; align-items: center;"
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/b5d834b83708a269b4562924436eac48.png~tplv-uwbnlip3yd-png.png"
-              style="margin:0 12px 12px 12px"
+              style="margin: 0px 12px 12px 12px;"
               width="40"
             />
             <div
-              style="margin-bottom:12px"
+              style="margin-bottom: 12px;"
             >
               Toutiao
               <div
-                style="font-size:12px;color:#4E5969"
+                style="font-size: 12px; color: rgb(78, 89, 105);"
               >
                 Founded in 2012
               </div>
@@ -2075,7 +2075,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -2093,19 +2093,19 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
         >
           <div
             class="arco-row arco-row-align-start arco-row-justify-start"
-            style="display:inline-flex;align-items:center"
+            style="display: inline-flex; align-items: center;"
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/385ed540c359ec8a9b9ce2b5fe89b098.png~tplv-uwbnlip3yd-png.png"
-              style="margin:0 12px 12px 12px"
+              style="margin: 0px 12px 12px 12px;"
               width="40"
             />
             <div
-              style="margin-bottom:12px"
+              style="margin-bottom: 12px;"
             >
               Xigua Video
               <div
-                style="font-size:12px;color:#4E5969"
+                style="font-size: 12px; color: rgb(78, 89, 105);"
               >
                 Founded in 2017
               </div>
@@ -2128,7 +2128,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
       >
         <div
           class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-vertical"
-          style="border-left-style:solid"
+          style="border-left-style: solid;"
         />
         <div
           class="arco-timeline-item-dot-content"
@@ -2146,19 +2146,19 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
         >
           <div
             class="arco-row arco-row-align-start arco-row-justify-start"
-            style="display:inline-flex;align-items:center"
+            style="display: inline-flex; align-items: center;"
           >
             <img
               src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/73a34d47f2885cf5182d755aa0c8a7d4.png~tplv-uwbnlip3yd-png.png"
-              style="margin:0 12px 12px 12px"
+              style="margin: 0px 12px 12px 12px;"
               width="40"
             />
             <div
-              style="margin-bottom:12px"
+              style="margin-bottom: 12px;"
             >
               Pipidance
               <div
-                style="font-size:12px;color:#4E5969"
+                style="font-size: 12px; color: rgb(78, 89, 105);"
               >
                 Founded in 2018
               </div>

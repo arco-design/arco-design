@@ -501,10 +501,11 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
 <div>
   <label
     class="arco-checkbox"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <input
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -580,7 +581,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -640,7 +640,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -935,7 +934,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1022,7 +1020,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1085,7 +1082,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1148,7 +1144,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1208,7 +1203,6 @@ exports[`renders Tree/demo/checkboxTree.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1301,7 +1295,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
     </label>
   </div>
   <div
-    style="margin:20px 0"
+    style="margin: 20px 0px;"
   >
     <span
       class="arco-typography"
@@ -1355,7 +1349,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1415,7 +1408,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1502,7 +1494,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1565,7 +1556,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1648,7 +1638,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1735,7 +1724,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         </span>
       </span>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1798,7 +1786,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1861,7 +1848,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1921,7 +1907,6 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
         class="arco-tree-node-switcher"
       />
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1971,7 +1956,7 @@ exports[`renders Tree/demo/controled.md correctly 1`] = `
 <div>
   <div
     class="arco-btn-group"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -2485,10 +2470,11 @@ exports[`renders Tree/demo/drag.md correctly 1`] = `
 <div>
   <label
     class="arco-checkbox"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <input
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4123,7 +4109,7 @@ exports[`renders Tree/demo/line.md correctly 1`] = `
       aria-checked="true"
       class="arco-switch arco-switch-type-circle arco-switch-checked"
       role="switch"
-      style="margin-left:12px"
+      style="margin-left: 12px;"
       type="button"
     >
       <div
@@ -5035,13 +5021,13 @@ exports[`renders Tree/demo/loadmore.md correctly 1`] = `
 exports[`renders Tree/demo/multiple.md correctly 1`] = `
 <div>
   <label
-    checked=""
     class="arco-checkbox arco-checkbox-checked"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <input
       checked=""
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -5451,7 +5437,7 @@ exports[`renders Tree/demo/multiple.md correctly 1`] = `
 
 exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
 <div
-  style="width:500px;padding:2px;overflow:auto"
+  style="width: 500px; padding: 2px; overflow: auto;"
 >
   <div
     class="arco-tree arco-tree-checkable"
@@ -5545,7 +5531,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -5617,7 +5603,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -5716,7 +5702,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -5791,7 +5777,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -5886,7 +5872,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -5985,7 +5971,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -6060,7 +6046,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -6135,7 +6121,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -6207,7 +6193,7 @@ exports[`renders Tree/demo/renderTreeNode.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="position:absolute;right:8px;font-size:12px;top:10px;color:#3370ff"
+        style="position: absolute; right: 8px; font-size: 12px; top: 10px; color: rgb(51, 112, 255);"
         viewBox="0 0 48 48"
       >
         <path
@@ -6223,7 +6209,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search"
-    style="margin-bottom:8px;max-width:240px"
+    style="margin-bottom: 8px; max-width: 240px;"
   >
     <span
       class="arco-input-group"
@@ -6659,7 +6645,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button"
@@ -6718,7 +6704,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
   <div
     class="arco-tree arco-tree-checkable arco-tree-size-default"
     role="tree"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
     tabindex="0"
   >
     <div
@@ -7576,7 +7562,7 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
 <div>
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
     type="button"
   >
     <span>
@@ -7586,14 +7572,14 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
   <div
     class="arco-tree arco-tree-checkable"
     role="tree"
-    style="overflow-y:auto;overflow-anchor:none;max-height:200px"
+    style="overflow-y: auto; max-height: 200px;"
     tabindex="0"
   >
     <div
-      style="height:35520px;position:relative;overflow:hidden;z-index:0"
+      style="height: 35520px; position: relative; overflow: hidden; z-index: 0;"
     >
       <div
-        style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
+        style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
       >
         <div
           aria-expanded="true"
@@ -7673,6 +7659,457 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
               class="arco-tree-node-title-text"
             >
               0-0
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="true"
+          aria-level="1"
+          class="arco-tree-node arco-tree-node-expanded"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher arco-tree-node-switcher-expanded"
+          >
+            <span
+              class="arco-icon-hover arco-tree-node-icon-hover"
+            >
+              <span
+                aria-label="fold button"
+                class="arco-tree-node-switcher-icon"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-caret-down"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </span>
+            </span>
+          </span>
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="false"
+          aria-level="2"
+          class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher"
+          />
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0-0"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0-0
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="false"
+          aria-level="2"
+          class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher"
+          />
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0-1"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0-1
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="false"
+          aria-level="2"
+          class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher"
+          />
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0-2"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0-2
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="false"
+          aria-level="2"
+          class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher"
+          />
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0-3"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0-3
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="false"
+          aria-level="2"
+          class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher"
+          />
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0-4"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0-4
+            </span>
+          </span>
+        </div>
+        <div
+          aria-expanded="false"
+          aria-level="2"
+          class="arco-tree-node arco-tree-node-is-leaf"
+          role="treeitem"
+        >
+          <span
+            aria-hidden="true"
+            class="arco-tree-node-indent"
+          >
+            <span
+              class="arco-tree-node-indent-block"
+            />
+            <span
+              class="arco-tree-node-indent-block"
+            />
+          </span>
+          <span
+            class="arco-tree-node-switcher"
+          />
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+              value="0-0-0-5"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+          </label>
+          <span
+            aria-grabbed="false"
+            class="arco-tree-node-title arco-tree-node-title-block"
+          >
+            <span
+              class="arco-tree-node-title-text"
+            >
+              0-0-0-5
             </span>
           </span>
         </div>

@@ -4,7 +4,7 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
 <div>
   <div
     class="arco-statistic"
-    style="margin-right:60px"
+    style="margin-right: 60px;"
   >
     <div
       class="arco-statistic-title"
@@ -81,7 +81,7 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
       >
         <div
           class="arco-statistic-value"
-          style="color:#0fbf60"
+          style="color: rgb(15, 191, 96);"
         >
           <span
             class="arco-statistic-value-int"
@@ -118,12 +118,12 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
                 />
               </svg>
             </span>
-            50
+            0
           </span>
           <span
             class="arco-statistic-value-decimal"
           >
-            .32
+            .00
             <span
               class="arco-statistic-value-suffix"
             >
@@ -135,7 +135,7 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
     </div>
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="display:block;margin-top:10px"
+      style="display: block; margin-top: 10px;"
       type="button"
     >
       <span>
@@ -159,7 +159,7 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
       >
         <div
           class="arco-statistic-value"
-          style="color:#ee4d38"
+          style="color: rgb(238, 77, 56);"
         >
           <span
             class="arco-statistic-value-int"
@@ -194,12 +194,12 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
                 />
               </svg>
             </span>
-            2
+            0
           </span>
           <span
             class="arco-statistic-value-decimal"
           >
-            .59
+            .00
             <span
               class="arco-statistic-value-suffix"
             >
@@ -211,7 +211,7 @@ exports[`renders Statistic/demo/countUp.md correctly 1`] = `
     </div>
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="display:block;margin-top:10px"
+      style="display: block; margin-top: 10px;"
       type="button"
     >
       <span>
@@ -228,14 +228,14 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:40px"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:60px"
+        style="margin-right: 60px;"
       >
         <div
           class="arco-statistic arco-statistic-countdown"
@@ -258,7 +258,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:60px"
+        style="margin-right: 60px;"
       >
         <div
           class="arco-statistic arco-statistic-countdown"
@@ -332,7 +332,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:40px"
+        style="margin-right: 40px;"
       >
         <div
           class="arco-statistic arco-statistic-countdown"
@@ -377,7 +377,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
           </div>
           <button
             class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-            style="display:block;margin-top:10px"
+            style="display: block; margin-top: 10px;"
             type="button"
           >
             <span>
@@ -394,7 +394,7 @@ exports[`renders Statistic/demo/countdown.md correctly 1`] = `
 exports[`renders Statistic/demo/loading.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <button
       aria-checked="true"
@@ -408,7 +408,7 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
     </button>
     <span
       class="arco-typography"
-      style="margin:0 10px"
+      style="margin: 0px 10px;"
     >
       Loading
     </span>
@@ -435,7 +435,7 @@ exports[`renders Statistic/demo/loading.md correctly 1`] = `
           >
             <li
               class="arco-skeleton-text-row"
-              style="width:100%"
+              style="width: 100%;"
             />
           </ul>
         </div>
@@ -449,7 +449,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
 <div>
   <div
     class="arco-statistic"
-    style="margin-right:60px;margin-bottom:20px"
+    style="margin-right: 60px; margin-bottom: 20px;"
   >
     <div
       class="arco-statistic-title"
@@ -483,7 +483,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="color:#ee4d38"
+              style="color: rgb(238, 77, 56);"
               viewBox="0 0 48 48"
             >
               <path
@@ -512,7 +512,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
   </div>
   <div
     class="arco-statistic"
-    style="margin-right:60px;margin-bottom:20px"
+    style="margin-right: 60px; margin-bottom: 20px;"
   >
     <div
       class="arco-statistic-title"
@@ -546,7 +546,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="color:#0fbf60"
+              style="color: rgb(15, 191, 96);"
               viewBox="0 0 48 48"
             >
               <path
@@ -573,7 +573,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
   </div>
   <div
     class="arco-statistic"
-    style="margin-right:60px;margin-bottom:20px"
+    style="margin-right: 60px; margin-bottom: 20px;"
   >
     <div
       class="arco-statistic-title"
@@ -585,7 +585,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
     >
       <div
         class="arco-statistic-value"
-        style="color:#ee4d38"
+        style="color: rgb(238, 77, 56);"
       >
         <span
           class="arco-statistic-value-int"
@@ -600,7 +600,7 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="color:#ee4d38"
+              style="color: rgb(238, 77, 56);"
               viewBox="0 0 48 48"
             >
               <path

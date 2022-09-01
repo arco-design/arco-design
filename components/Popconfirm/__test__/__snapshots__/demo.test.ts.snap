@@ -19,7 +19,7 @@ exports[`renders Popconfirm/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -48,7 +48,7 @@ exports[`renders Popconfirm/demo/icon.md correctly 1`] = `
 exports[`renders Popconfirm/demo/loading.md correctly 1`] = `
 <button
   class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-  style="margin-right:20px"
+  style="margin-right: 20px;"
   type="button"
 >
   <span>
@@ -59,11 +59,11 @@ exports[`renders Popconfirm/demo/loading.md correctly 1`] = `
 
 exports[`renders Popconfirm/demo/position.md correctly 1`] = `
 <div
-  style="position:relative;width:400px;height:300px"
+  style="position: relative; width: 400px; height: 300px;"
 >
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:20px;left:70px"
+    style="position: absolute; width: 80px; top: 20px; left: 70px;"
     type="button"
   >
     <span>
@@ -72,7 +72,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:20px;left:180px"
+    style="position: absolute; width: 80px; top: 20px; left: 180px;"
     type="button"
   >
     <span>
@@ -81,7 +81,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:20px;left:290px"
+    style="position: absolute; width: 80px; top: 20px; left: 290px;"
     type="button"
   >
     <span>
@@ -90,7 +90,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:60px;left:10px"
+    style="position: absolute; width: 80px; top: 60px; left: 10px;"
     type="button"
   >
     <span>
@@ -99,7 +99,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:120px;left:10px"
+    style="position: absolute; width: 80px; top: 120px; left: 10px;"
     type="button"
   >
     <span>
@@ -108,7 +108,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:180px;left:10px"
+    style="position: absolute; width: 80px; top: 180px; left: 10px;"
     type="button"
   >
     <span>
@@ -117,7 +117,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:60px;left:350px"
+    style="position: absolute; width: 80px; top: 60px; left: 350px;"
     type="button"
   >
     <span>
@@ -126,7 +126,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:120px;left:350px"
+    style="position: absolute; width: 80px; top: 120px; left: 350px;"
     type="button"
   >
     <span>
@@ -135,7 +135,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:180px;left:350px"
+    style="position: absolute; width: 80px; top: 180px; left: 350px;"
     type="button"
   >
     <span>
@@ -144,7 +144,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:226px;left:70px"
+    style="position: absolute; width: 80px; top: 226px; left: 70px;"
     type="button"
   >
     <span>
@@ -153,7 +153,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:226px;left:180px"
+    style="position: absolute; width: 80px; top: 226px; left: 180px;"
     type="button"
   >
     <span>
@@ -162,7 +162,7 @@ exports[`renders Popconfirm/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:226px;left:290px"
+    style="position: absolute; width: 80px; top: 226px; left: 290px;"
     type="button"
   >
     <span>

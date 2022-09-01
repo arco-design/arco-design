@@ -6,7 +6,7 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
@@ -20,7 +20,7 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
@@ -54,7 +54,7 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
@@ -91,7 +91,7 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
-      style="width:84px;background-color:var(--color-fill-2);border:1px dashed var(--color-fill-3);cursor:pointer"
+      style="width: 84px; cursor: pointer;"
     >
       <span
         class="arco-tag-icon"
@@ -126,7 +126,7 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
@@ -140,7 +140,7 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
@@ -154,7 +154,7 @@ exports[`renders Tag/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"
@@ -209,7 +209,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -223,7 +223,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -237,7 +237,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -251,7 +251,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -265,7 +265,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-gold arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -279,7 +279,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -293,7 +293,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -307,7 +307,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-cyan arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -321,7 +321,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -335,7 +335,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -349,7 +349,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-purple arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -363,7 +363,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-pinkpurple arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -377,7 +377,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-magenta arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -391,7 +391,7 @@ exports[`renders Tag/demo/bordered.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -412,7 +412,7 @@ exports[`renders Tag/demo/check.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checkable arco-tag-size-default"
@@ -426,7 +426,7 @@ exports[`renders Tag/demo/check.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-red arco-tag-checkable arco-tag-checked arco-tag-size-default"
@@ -458,7 +458,7 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
 <div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default"
-    style="margin:0 24px"
+    style="margin: 0px 24px;"
   >
     <span
       class="arco-tag-content"
@@ -533,13 +533,13 @@ exports[`renders Tag/demo/close.md correctly 1`] = `
     </span>
   </div>
   <div
-    style="margin-top:24px"
+    style="margin-top: 24px;"
   >
     <button
       aria-checked="true"
       class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
       role="switch"
-      style="margin:0 8px"
+      style="margin: 0px 8px;"
       type="button"
     >
       <div
@@ -591,7 +591,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
 <div>
   <div
     class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -621,7 +621,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -651,7 +651,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-orange arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -681,7 +681,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-gold arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -711,7 +711,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-lime arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -741,7 +741,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -771,7 +771,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-cyan arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -801,7 +801,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -831,7 +831,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -861,7 +861,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-purple arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -891,7 +891,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-pinkpurple arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -921,7 +921,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-magenta arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -951,7 +951,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default"
-    style="margin:0 16px 16px 0"
+    style="margin: 0px 16px 16px 0px;"
   >
     <span
       class="arco-tag-content"
@@ -979,14 +979,12 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
       </svg>
     </span>
   </div>
-  <h3
-    style="color:var(--color-text-2)"
-  >
+  <h3>
     Custom Color
   </h3>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#f53f3f;border-color:#f53f3f"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(245, 63, 63); border-color: #f53f3f;"
   >
     <span
       class="arco-tag-content"
@@ -1016,7 +1014,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#7816ff;border-color:#7816ff"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(120, 22, 255); border-color: #7816ff;"
   >
     <span
       class="arco-tag-content"
@@ -1046,7 +1044,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#00b42a;border-color:#00b42a"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(0, 180, 42); border-color: #00b42a;"
   >
     <span
       class="arco-tag-content"
@@ -1076,7 +1074,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#165dff;border-color:#165dff"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(22, 93, 255); border-color: #165dff;"
   >
     <span
       class="arco-tag-content"
@@ -1106,7 +1104,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#ff7d00;border-color:#ff7d00"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(255, 125, 0); border-color: #ff7d00;"
   >
     <span
       class="arco-tag-content"
@@ -1136,7 +1134,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#eb0aa4;border-color:#eb0aa4"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(235, 10, 164); border-color: #eb0aa4;"
   >
     <span
       class="arco-tag-content"
@@ -1166,7 +1164,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#7bc616;border-color:#7bc616"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(123, 198, 22); border-color: #7bc616;"
   >
     <span
       class="arco-tag-content"
@@ -1196,7 +1194,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#86909c;border-color:#86909c"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(134, 144, 156); border-color: #86909c;"
   >
     <span
       class="arco-tag-content"
@@ -1226,7 +1224,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#b71de8;border-color:#b71de8"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(183, 29, 232); border-color: #b71de8;"
   >
     <span
       class="arco-tag-content"
@@ -1256,7 +1254,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#0fc6c2;border-color:#0fc6c2"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(15, 198, 194); border-color: #0fc6c2;"
   >
     <span
       class="arco-tag-content"
@@ -1286,7 +1284,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#ffb400;border-color:#ffb400"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(255, 180, 0); border-color: #ffb400;"
   >
     <span
       class="arco-tag-content"
@@ -1316,7 +1314,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#168cff;border-color:#168cff"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(22, 140, 255); border-color: #168cff;"
   >
     <span
       class="arco-tag-content"
@@ -1346,7 +1344,7 @@ exports[`renders Tag/demo/color.md correctly 1`] = `
   </div>
   <div
     class="arco-tag arco-tag-checked arco-tag-size-default arco-tag-custom-color"
-    style="margin:0 16px 16px 0;background-color:#ff5722;border-color:#ff5722"
+    style="margin: 0px 16px 16px 0px; background-color: rgb(255, 87, 34); border-color: #ff5722;"
   >
     <span
       class="arco-tag-content"
@@ -1383,7 +1381,7 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default"
@@ -1416,7 +1414,7 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-orangered arco-tag-checked arco-tag-size-default"
@@ -1449,7 +1447,7 @@ exports[`renders Tag/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-blue arco-tag-checked arco-tag-size-default"
@@ -1521,7 +1519,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-large"
@@ -1555,7 +1553,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-medium"
@@ -1589,7 +1587,7 @@ exports[`renders Tag/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-tag arco-tag-checked arco-tag-size-default"

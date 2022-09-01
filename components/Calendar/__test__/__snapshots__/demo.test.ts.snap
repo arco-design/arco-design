@@ -2,7 +2,7 @@
 
 exports[`renders Calendar/demo/basic.md correctly 1`] = `
 <div
-  style="width:100%;overflow:auto"
+  style="width: 100%; overflow: auto;"
 >
   <div
     class="arco-calendar arco-calendar-mode-month"
@@ -1018,7 +1018,7 @@ exports[`renders Calendar/demo/basic.md correctly 1`] = `
 
 exports[`renders Calendar/demo/date-content.md correctly 1`] = `
 <div
-  style="width:100%;overflow:auto"
+  style="width: 100%; overflow: auto;"
 >
   <div
     class="arco-calendar arco-calendar-mode-month"
@@ -1303,11 +1303,11 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                   class="arco-calendar-date-content"
                 >
                   <div
-                    style="padding:0 10px"
+                    style="padding: 0px 10px;"
                   >
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1325,7 +1325,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                     <br />
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1343,7 +1343,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                     <br />
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1569,11 +1569,11 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                   class="arco-calendar-date-content"
                 >
                   <div
-                    style="padding:0 10px"
+                    style="padding: 0px 10px;"
                   >
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1591,7 +1591,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                     <br />
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1609,7 +1609,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                     <br />
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1627,7 +1627,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                     <br />
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -1645,7 +1645,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
                     <br />
                     <span
                       class="arco-badge arco-badge-status arco-badge-no-children"
-                      style="width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                      style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
                     >
                       <span
                         class="arco-badge-status-wrapper"
@@ -2190,11 +2190,11 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <div
       class="arco-calendar arco-calendar-mode-month arco-calendar-panel"
-      style="margin-right:50px;width:265px"
+      style="margin-right: 50px; width: 265px;"
     >
       <div
         class="arco-calendar-header"
@@ -2906,7 +2906,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
   >
     <div
       class="arco-calendar arco-calendar-mode-year arco-calendar-panel"
-      style="width:265px"
+      style="width: 265px;"
     >
       <div
         class="arco-calendar-header"
@@ -3144,7 +3144,7 @@ exports[`renders Calendar/demo/panel.md correctly 1`] = `
 
 exports[`renders Calendar/demo/select-header.md correctly 1`] = `
 <div
-  style="width:100%;overflow:auto"
+  style="width: 100%; overflow: auto;"
 >
   <div
     class="arco-calendar arco-calendar-mode-month"
@@ -3157,6 +3157,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-small arco-calendar-header-value-year"
@@ -3170,7 +3171,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
               aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value="2020"
             />
@@ -3205,6 +3206,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
         </div>
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-small arco-calendar-header-value-month"
@@ -3218,7 +3220,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
               aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value="4"
             />

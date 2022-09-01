@@ -6,18 +6,18 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px;margin-bottom:8px"
+        style="margin-right: 8px; margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -41,11 +41,11 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-bottom:8px"
+        style="margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -77,11 +77,11 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px;margin-bottom:8px"
+        style="margin-right: 8px; margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -105,11 +105,12 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-0"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
                 role="combobox"
-                style="width:80px"
+                style="width: 80px;"
                 tabindex="0"
               >
                 <div
@@ -121,7 +122,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                     autocomplete="off"
                     class="arco-select-view-input arco-select-hidden"
                     placeholder=".com"
-                    style="width:100%"
+                    style="width: 100%;"
                     value=".com"
                   />
                   <span
@@ -159,11 +160,11 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-bottom:8px"
+        style="margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -198,7 +199,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
 exports[`renders Input/demo/basic.md correctly 1`] = `
 <span
   class="arco-input-inner-wrapper arco-input-inner-wrapper-default arco-input-clear-wrapper"
-  style="width:350px"
+  style="width: 350px;"
 >
   <input
     class="arco-input arco-input-size-default"
@@ -214,18 +215,19 @@ exports[`renders Input/demo/group.md correctly 1`] = `
     class="arco-row arco-row-align-start arco-row-justify-start"
   >
     <div
-      style="margin-right:24px;width:360px;display:inline-block;margin-bottom:24px"
+      style="margin-right: 24px; width: 360px; display: inline-block; margin-bottom: 24px;"
     >
       <div
         class="arco-input-group arco-input-group-compact"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
           role="combobox"
-          style="width:25%"
+          style="width: 25%;"
           tabindex="0"
         >
           <div
@@ -237,7 +239,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
-              style="width:100%"
+              style="width: 100%;"
               value="Beijing"
             />
             <span
@@ -272,24 +274,25 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         <input
           class="arco-input arco-input-size-default"
           placeholder="Please enter an address"
-          style="width:75%"
+          style="width: 75%;"
           value=""
         />
       </div>
     </div>
     <div
-      style="margin-right:24px;width:360px;display:inline-block;margin-bottom:24px"
+      style="margin-right: 24px; width: 360px; display: inline-block; margin-bottom: 24px;"
     >
       <div
         class="arco-input-group arco-input-group-compact"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-2"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
           role="combobox"
-          style="width:25%"
+          style="width: 25%;"
           tabindex="0"
         >
           <div
@@ -301,7 +304,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
-              style="width:100%"
+              style="width: 100%;"
               value="Beijing"
             />
             <span
@@ -335,7 +338,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         </div>
         <div
           class="arco-picker arco-picker-size-default"
-          style="width:75%"
+          style="width: 75%;"
         >
           <div
             class="arco-picker-input"
@@ -371,18 +374,19 @@ exports[`renders Input/demo/group.md correctly 1`] = `
       </div>
     </div>
     <div
-      style="margin-right:24px;width:360px;display:inline-block;margin-bottom:24px"
+      style="margin-right: 24px; width: 360px; display: inline-block; margin-bottom: 24px;"
     >
       <div
         class="arco-input-group arco-input-group-compact"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-3"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
           role="combobox"
-          style="width:25%"
+          style="width: 25%;"
           tabindex="0"
         >
           <div
@@ -394,7 +398,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
               placeholder="Beijing"
-              style="width:100%"
+              style="width: 100%;"
               value="Beijing"
             />
             <span
@@ -428,7 +432,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         </div>
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search"
-          style="width:75%"
+          style="width: 75%;"
         >
           <span
             class="arco-input-group"
@@ -468,7 +472,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
     class="arco-row arco-row-align-start arco-row-justify-start"
   >
     <div
-      style="margin-right:24px;width:360px;display:inline-block;margin-bottom:24px"
+      style="margin-right: 24px; width: 360px; display: inline-block; margin-bottom: 24px;"
     >
       <div
         class="arco-input-group"
@@ -476,19 +480,19 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         <input
           class="arco-input arco-input-size-default"
           readonly=""
-          style="width:24%;margin-right:8px"
+          style="width: 24%; margin-right: 8px;"
           value="010"
         />
         <input
           class="arco-input arco-input-size-default"
           placeholder="Phone number"
-          style="width:60%"
+          style="width: 60%;"
           value=""
         />
       </div>
     </div>
     <div
-      style="margin-right:24px;width:360px;display:inline-block;margin-bottom:24px"
+      style="margin-right: 24px; width: 360px; display: inline-block; margin-bottom: 24px;"
     >
       <div
         class="arco-input-group"
@@ -496,7 +500,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         <input
           class="arco-input arco-input-size-default"
           readonly=""
-          style="width:24%;margin-right:8px"
+          style="width: 24%; margin-right: 8px;"
           value="010"
         />
         <svg
@@ -506,7 +510,6 @@ exports[`renders Input/demo/group.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="color:var(--color-text-1)"
           viewBox="0 0 48 48"
         >
           <path
@@ -516,7 +519,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         <input
           class="arco-input arco-input-size-default"
           placeholder="Phone number"
-          style="width:60%;margin-left:8px"
+          style="width: 60%; margin-left: 8px;"
           value="8899887"
         />
       </div>
@@ -531,18 +534,18 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-start"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-          style="width:300px"
+          style="width: 300px;"
         >
           <span
             class="arco-input-group"
@@ -574,7 +577,7 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
       >
         <div
           class="arco-textarea-wrapper"
-          style="width:300px"
+          style="width: 300px;"
         >
           <textarea
             class="arco-textarea"
@@ -598,11 +601,11 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-          style="width:300px"
+          style="width: 300px;"
         >
           <span
             class="arco-input-group"
@@ -632,7 +635,7 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
       >
         <div
           class="arco-textarea-wrapper"
-          style="width:300px"
+          style="width: 300px;"
         >
           <textarea
             class="arco-textarea"
@@ -656,11 +659,11 @@ exports[`renders Input/demo/password.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-password arco-input-password-visibility"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -699,11 +702,11 @@ exports[`renders Input/demo/password.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-password arco-input-password-visibility"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -751,18 +754,18 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px;margin-bottom:8px"
+        style="margin-right: 8px; margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -803,11 +806,11 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-bottom:8px"
+        style="margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -851,11 +854,11 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px;margin-bottom:8px"
+        style="margin-right: 8px; margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -913,11 +916,11 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-bottom:8px"
+        style="margin-bottom: 8px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-          style="width:350px"
+          style="width: 350px;"
         >
           <span
             class="arco-input-group"
@@ -1006,11 +1009,11 @@ exports[`renders Input/demo/search.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -1046,11 +1049,11 @@ exports[`renders Input/demo/search.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-search arco-input-search-button"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -1091,11 +1094,11 @@ exports[`renders Input/demo/search.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-search arco-input-search-button"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -1133,11 +1136,11 @@ exports[`renders Input/demo/search_loading.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -1173,11 +1176,11 @@ exports[`renders Input/demo/search_loading.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-search arco-input-search-button"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -1218,11 +1221,11 @@ exports[`renders Input/demo/search_loading.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-search arco-input-search-button"
-      style="width:350px"
+      style="width: 350px;"
     >
       <span
         class="arco-input-group"
@@ -1271,7 +1274,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <label
       class="arco-radio-button"
@@ -1339,7 +1342,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   </span>
   <div
     class="arco-slider"
-    style="width:180px;margin:0 0 20px 20px"
+    style="width: 180px; margin: 0px 0px 20px 20px;"
   >
     <div
       class="arco-slider-wrapper"
@@ -1349,7 +1352,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
       >
         <div
           class="arco-slider-bar"
-          style="left:0%;right:100%"
+          style="left: 0%; right: 100%;"
         />
         <div
           aria-disabled="false"
@@ -1359,7 +1362,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
           aria-valuetext="24"
           class="arco-slider-button"
           role="slider"
-          style="left:0%"
+          style="left: 0%;"
           tabindex="0"
         />
       </div>
@@ -1368,7 +1371,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1403,7 +1406,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1440,7 +1443,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1463,7 +1466,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1488,7 +1491,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1562,7 +1565,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-search arco-input-search-button"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1604,7 +1607,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <span
         class="arco-input-group"
@@ -1614,11 +1617,12 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
+            aria-controls="arco-select-popup-4"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default"
             role="combobox"
-            style="width:100px"
+            style="width: 100px;"
             tabindex="0"
           >
             <div
@@ -1629,7 +1633,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-select-view-input"
                 placeholder="Please select"
-                style="width:100%;pointer-events:none"
+                style="width: 100%; pointer-events: none;"
                 tabindex="-1"
                 value=""
               />
@@ -1675,7 +1679,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     </div>
     <span
       class="arco-input-inner-wrapper arco-input-inner-wrapper-default arco-input-clear-wrapper"
-      style="width:350px;margin:12px"
+      style="width: 350px; margin: 12px;"
     >
       <input
         class="arco-input arco-input-size-default"
@@ -1693,25 +1697,25 @@ exports[`renders Input/demo/status.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <input
       aria-invalid="true"
       class="arco-input arco-input-size-default arco-input-error"
       placeholder="error status"
-      style="width:350px"
+      style="width: 350px;"
       value=""
     />
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <input
       class="arco-input arco-input-size-default arco-input-disabled"
       disabled=""
       placeholder="disabled input"
-      style="width:350px"
+      style="width: 350px;"
       value=""
     />
   </div>
@@ -1724,22 +1728,22 @@ exports[`renders Input/demo/textarea.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <textarea
       class="arco-textarea"
       placeholder="Please enter ..."
-      style="min-height:64px;width:350px"
+      style="min-height: 64px; width: 350px;"
     />
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <textarea
       class="arco-textarea arco-textarea-disabled"
       disabled=""
-      style="min-height:64px;width:350px;resize:none"
+      style="min-height: 64px; width: 350px; resize: none;"
     >
       Disabled
     </textarea>
@@ -1753,24 +1757,24 @@ exports[`renders Input/demo/textarea_autosize.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px;margin-bottom:8px"
+    style="margin-right: 8px; margin-bottom: 8px;"
   >
     <textarea
       class="arco-textarea"
       placeholder="Please enter ..."
-      style="width:350px"
+      style="width: 350px; height: 2px;"
     >
       This is the contents of the textarea. 
     </textarea>
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <textarea
       class="arco-textarea"
       placeholder="Please enter ..."
-      style="width:350px"
+      style="width: 350px; height: 2px; min-height: -8px; max-height: -24px; overflow-y: auto;"
     >
       This is the contents of the textarea. This is the contents of the textarea. This is the contents of the textarea. 
     </textarea>

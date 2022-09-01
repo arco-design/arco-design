@@ -3,11 +3,11 @@
 exports[`renders Skeleton/demo/animate.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:40px"
+    style="margin-bottom: 40px;"
   >
     <span
       class="arco-typography"
-      style="margin:0 8px"
+      style="margin: 0px 8px;"
     >
       Animation
     </span>
@@ -15,7 +15,7 @@ exports[`renders Skeleton/demo/animate.md correctly 1`] = `
       aria-checked="true"
       class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
       role="switch"
-      style="vertical-align:middle"
+      style="vertical-align: middle;"
       type="button"
     >
       <div
@@ -47,7 +47,7 @@ exports[`renders Skeleton/demo/animate.md correctly 1`] = `
         />
         <li
           class="arco-skeleton-text-row"
-          style="width:90%"
+          style="width: 90%;"
         />
       </ul>
     </div>
@@ -73,7 +73,7 @@ exports[`renders Skeleton/demo/basic.md correctly 1`] = `
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:60%"
+        style="width: 60%;"
       />
     </ul>
   </div>
@@ -99,15 +99,15 @@ exports[`renders Skeleton/demo/rows.md correctly 1`] = `
     >
       <li
         class="arco-skeleton-text-row"
-        style="width:100%"
+        style="width: 100%;"
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:600px"
+        style="width: 600px;"
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:400px"
+        style="width: 400px;"
       />
     </ul>
   </div>

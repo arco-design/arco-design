@@ -33,7 +33,7 @@ exports[`renders Spin/demo/custom-icon.md correctly 1`] = `
   >
     <div
       class="arco-card arco-card-size-default arco-card-bordered"
-      style="width:360px"
+      style="width: 360px;"
     >
       <div
         class="arco-card-header"
@@ -62,7 +62,7 @@ exports[`renders Spin/demo/custom-icon.md correctly 1`] = `
   </div>
   <div
     class="arco-spin-loading-layer"
-    style="font-size:30px"
+    style="font-size: 30px;"
   >
     <span
       class="arco-spin-loading-layer-inner"
@@ -77,7 +77,7 @@ exports[`renders Spin/demo/custom-icon.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:30px"
+          style="font-size: 30px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -94,7 +94,7 @@ exports[`renders Spin/demo/delay.md correctly 1`] = `
 Array [
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="display:block;margin-bottom:24px"
+    style="display: block; margin-bottom: 24px;"
     type="button"
   >
     <span>
@@ -109,7 +109,7 @@ Array [
     >
       <div
         class="arco-card arco-card-size-default arco-card-bordered"
-        style="width:360px"
+        style="width: 360px;"
       >
         <div
           class="arco-card-header"
@@ -124,7 +124,7 @@ Array [
           >
             <a
               href="#"
-              style="color:#165DFF;text-decoration:none"
+              style="color: rgb(22, 93, 255); text-decoration: none;"
             >
               More
             </a>
@@ -150,7 +150,6 @@ exports[`renders Spin/demo/dot.md correctly 1`] = `
   >
     <div
       class="arco-spin-dot-list"
-      style="width:"
     >
       <div
         class="arco-spin-dot"
@@ -178,7 +177,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-spin"
@@ -193,7 +192,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:20px"
+          style="font-size: 20px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -205,7 +204,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-spin"
@@ -220,7 +219,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:30px"
+          style="font-size: 30px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -246,7 +245,7 @@ exports[`renders Spin/demo/size.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:40px"
+          style="font-size: 40px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -263,7 +262,7 @@ exports[`renders Spin/demo/spin-component.md correctly 1`] = `
 Array [
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="display:block;margin-bottom:24px"
+    style="display: block; margin-bottom: 24px;"
     type="button"
   >
     <span>
@@ -275,7 +274,7 @@ Array [
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <div
         class="arco-spin arco-spin-loading"
@@ -285,7 +284,7 @@ Array [
         >
           <div
             class="arco-card arco-card-size-default arco-card-bordered"
-            style="width:100%"
+            style="width: 100%;"
           >
             <div
               class="arco-card-header"
@@ -350,7 +349,7 @@ Array [
         >
           <div
             class="arco-card arco-card-size-default arco-card-bordered"
-            style="width:100%"
+            style="width: 100%;"
           >
             <div
               class="arco-card-header"
@@ -407,7 +406,7 @@ Array [
   </div>,
   <div
     class="arco-spin arco-spin-loading"
-    style="display:block;margin-top:8px"
+    style="display: block; margin-top: 8px;"
   >
     <div
       class="arco-spin-children"
@@ -478,7 +477,7 @@ exports[`renders Spin/demo/tip.md correctly 1`] = `
   >
     <div
       class="arco-card arco-card-size-default arco-card-bordered"
-      style="width:360px"
+      style="width: 360px;"
     >
       <div
         class="arco-card-header"

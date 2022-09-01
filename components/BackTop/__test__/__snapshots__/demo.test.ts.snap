@@ -2,11 +2,11 @@
 
 exports[`renders BackTop/demo/basic.md correctly 1`] = `
 <div
-  style="position:relative;padding:8px 12px"
+  style="position: relative; padding: 8px 12px;"
 >
   <div
     class="arco-backtop"
-    style="position:absolute"
+    style="position: absolute;"
   />
   <div
     class="arco-typography"
@@ -15,7 +15,7 @@ exports[`renders BackTop/demo/basic.md correctly 1`] = `
   </div>
   <div
     id="custom_backtop0"
-    style="height:300px;overflow:auto"
+    style="height: 300px; overflow: auto;"
   >
     <div
       class="arco-typography"
@@ -123,15 +123,15 @@ exports[`renders BackTop/demo/basic.md correctly 1`] = `
 
 exports[`renders BackTop/demo/custom_button.md correctly 1`] = `
 <div
-  style="position:relative;padding:8px 12px"
+  style="position: relative; padding: 8px 12px;"
 >
   <div
     class="arco-backtop"
-    style="position:absolute"
+    style="position: absolute;"
   />
   <div
     id="custom_backtop"
-    style="height:300px;overflow:auto"
+    style="height: 300px; overflow: auto;"
   >
     <div
       class="arco-typography"
@@ -251,11 +251,11 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
 <div>
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
-    style="margin:12px"
+    style="margin: 12px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:10px"
+      style="margin-right: 10px;"
     >
       <span
         class="arco-typography"
@@ -265,15 +265,16 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:10px"
+      style="margin-right: 10px;"
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
         role="combobox"
-        style="width:200px"
+        style="width: 200px;"
         tabindex="0"
       >
         <div
@@ -284,7 +285,7 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
             aria-hidden="true"
             autocomplete="off"
             class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value="linear"
           />
@@ -320,7 +321,7 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:10px"
+      style="margin-right: 10px;"
     >
       <span
         class="arco-typography"
@@ -334,21 +335,21 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
       <input
         class="arco-input arco-input-size-default"
         placeholder="Please enter the easing time"
-        style="width:200px"
+        style="width: 200px;"
         value="200"
       />
     </div>
   </div>
   <div
-    style="position:relative"
+    style="position: relative;"
   >
     <div
       class="arco-backtop"
-      style="position:absolute;right:60px;bottom:60px"
+      style="position: absolute; right: 60px; bottom: 60px;"
     />
     <div
       id="custom_backtop2"
-      style="height:300px;overflow:auto;padding:8px 12px"
+      style="height: 300px; overflow: auto; padding: 8px 12px;"
     >
       <div
         class="arco-typography"

@@ -575,7 +575,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
   <div>
     <div
       class="arco-table arco-table-size-default arco-table-border arco-table-hover"
-      style="margin-top:10px"
+      style="margin-top: 10px;"
     >
       <div
         class="arco-spin"
@@ -618,6 +618,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                           >
                             <input
                               type="checkbox"
+                              value=""
                             />
                             <span
                               class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1656,11 +1657,11 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
 <div>
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       checkStrictly:
     </div>
@@ -1723,6 +1724,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                         >
                           <input
                             type="checkbox"
+                            value=""
                           />
                           <span
                             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2071,7 +2073,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                       >
                         <span
                           class="arco-table-cell-indent"
-                          style="padding-left:20px"
+                          style="padding-left: 20px;"
                         />
                         <span
                           class="arco-table-cell-wrap-value"
@@ -2276,7 +2278,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
               <tbody>
                 <tr
                   class="arco-table-tr"
-                  style="cursor:move"
+                  style="cursor: move;"
                 >
                   <td
                     class="arco-table-td"
@@ -2333,7 +2335,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                 </tr>
                 <tr
                   class="arco-table-tr"
-                  style="cursor:move"
+                  style="cursor: move;"
                 >
                   <td
                     class="arco-table-td"
@@ -2390,7 +2392,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                 </tr>
                 <tr
                   class="arco-table-tr"
-                  style="cursor:move"
+                  style="cursor: move;"
                 >
                   <td
                     class="arco-table-td"
@@ -2447,7 +2449,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                 </tr>
                 <tr
                   class="arco-table-tr"
-                  style="cursor:move"
+                  style="cursor: move;"
                 >
                   <td
                     class="arco-table-td"
@@ -2504,7 +2506,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                 </tr>
                 <tr
                   class="arco-table-tr"
-                  style="cursor:move"
+                  style="cursor: move;"
                 >
                   <td
                     class="arco-table-td"
@@ -2649,7 +2651,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
             <table>
               <colgroup>
                 <col
-                  style="width:40px"
+                  style="width: 40px;"
                 />
                 <col
                   class="arco-table-selection-col"
@@ -2665,7 +2667,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                 >
                   <th
                     class="arco-table-th arco-table-operation"
-                    style="width:40px;min-width:40px"
+                    style="width: 40px; min-width: 40px;"
                   />
                   <th
                     class="arco-table-th arco-table-operation arco-table-checkbox"
@@ -2679,6 +2681,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                       >
                         <input
                           type="checkbox"
+                          value=""
                         />
                         <span
                           class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2765,7 +2768,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation"
-                    style="width:40px;min-width:40px"
+                    style="width: 40px; min-width: 40px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -2777,7 +2780,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="cursor:move;color:#555"
+                        style="cursor: move; color: rgb(85, 85, 85);"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -2883,7 +2886,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation"
-                    style="width:40px;min-width:40px"
+                    style="width: 40px; min-width: 40px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -2895,7 +2898,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="cursor:move;color:#555"
+                        style="cursor: move; color: rgb(85, 85, 85);"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -3001,7 +3004,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation"
-                    style="width:40px;min-width:40px"
+                    style="width: 40px; min-width: 40px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -3013,7 +3016,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="cursor:move;color:#555"
+                        style="cursor: move; color: rgb(85, 85, 85);"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -3119,7 +3122,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation"
-                    style="width:40px;min-width:40px"
+                    style="width: 40px; min-width: 40px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -3131,7 +3134,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="cursor:move;color:#555"
+                        style="cursor: move; color: rgb(85, 85, 85);"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -3237,7 +3240,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation"
-                    style="width:40px;min-width:40px"
+                    style="width: 40px; min-width: 40px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -3249,7 +3252,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="cursor:move;color:#555"
+                        style="cursor: move; color: rgb(85, 85, 85);"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -4511,7 +4514,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
               <colgroup>
                 <col
                   class="arco-table-expand-icon-col"
-                  style="width:60px"
+                  style="width: 60px;"
                 />
                 <col />
                 <col />
@@ -4524,7 +4527,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                 >
                   <th
                     class="arco-table-th arco-table-operation arco-table-expand"
-                    style="width:60px;min-width:60px"
+                    style="width: 60px; min-width: 60px;"
                   >
                     <div
                       class="arco-table-th-item"
@@ -4592,7 +4595,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
-                    style="width:60px;min-width:60px"
+                    style="width: 60px; min-width: 60px;"
                   >
                     <button>
                       <svg
@@ -4668,7 +4671,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
-                    style="width:60px;min-width:60px"
+                    style="width: 60px; min-width: 60px;"
                   >
                     <button>
                       <svg
@@ -4744,7 +4747,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
-                    style="width:60px;min-width:60px"
+                    style="width: 60px; min-width: 60px;"
                   >
                     <button>
                       <svg
@@ -4820,7 +4823,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
-                    style="width:60px;min-width:60px"
+                    style="width: 60px; min-width: 60px;"
                   />
                   <td
                     class="arco-table-td"
@@ -4880,7 +4883,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
-                    style="width:60px;min-width:60px"
+                    style="width: 60px; min-width: 60px;"
                   >
                     <button>
                       <svg
@@ -5471,7 +5474,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
 
 exports[`renders Table/demo/fixed-column.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-has-fixed-col-left arco-table-has-fixed-col-right arco-table-scroll-position-both"
 >
   <div
     class="arco-spin"
@@ -5492,7 +5495,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
               class="arco-table-header"
             >
               <table
-                style="width:1600px"
+                style="width: 1600px;"
               >
                 <colgroup>
                   <col
@@ -5502,7 +5505,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-selection-col"
                   />
                   <col
-                    style="width:140px"
+                    style="width: 140px;"
                   />
                   <col />
                   <col />
@@ -5510,7 +5513,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   <col />
                   <col />
                   <col
-                    style="width:120px"
+                    style="width: 120px;"
                   />
                 </colgroup>
                 <thead>
@@ -5519,11 +5522,11 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   >
                     <th
                       class="arco-table-th arco-table-operation arco-table-expand arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     />
                     <th
                       class="arco-table-th arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -5534,6 +5537,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                         >
                           <input
                             type="checkbox"
+                            value=""
                           />
                           <span
                             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -5562,7 +5566,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </th>
                     <th
                       class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:80px"
+                      style="left: 80px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -5641,7 +5645,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </th>
                     <th
                       class="arco-table-th arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -5659,10 +5663,10 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
             </div>
             <div
               class="arco-table-body"
-              style="max-height:400px"
+              style="max-height: 400px;"
             >
               <table
-                style="width:1600px"
+                style="width: 1600px;"
               >
                 <colgroup>
                   <col
@@ -5672,7 +5676,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-selection-col"
                   />
                   <col
-                    style="width:140px"
+                    style="width: 140px;"
                   />
                   <col />
                   <col />
@@ -5680,7 +5684,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   <col />
                   <col />
                   <col
-                    style="width:120px"
+                    style="width: 120px;"
                   />
                 </colgroup>
                 <tbody>
@@ -5689,7 +5693,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <button
                         type="button"
@@ -5711,7 +5715,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <label
                         class="arco-checkbox"
@@ -5746,7 +5750,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:80px"
+                      style="left: 80px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -5825,7 +5829,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -5843,7 +5847,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <button
                         type="button"
@@ -5865,7 +5869,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <label
                         class="arco-checkbox"
@@ -5900,7 +5904,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:80px"
+                      style="left: 80px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -5979,7 +5983,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -5997,7 +6001,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <button
                         type="button"
@@ -6019,7 +6023,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <label
                         class="arco-checkbox"
@@ -6054,7 +6058,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:80px"
+                      style="left: 80px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -6133,7 +6137,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -6151,7 +6155,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <button
                         type="button"
@@ -6173,7 +6177,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <label
                         class="arco-checkbox"
@@ -6208,7 +6212,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:80px"
+                      style="left: 80px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -6287,7 +6291,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -6305,7 +6309,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <button
                         type="button"
@@ -6327,7 +6331,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <label
                         class="arco-checkbox"
@@ -6362,7 +6366,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:80px"
+                      style="left: 80px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -6441,7 +6445,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -6525,7 +6529,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
 
 exports[`renders Table/demo/group-columns.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
+  class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-has-fixed-col-left arco-table-has-fixed-col-right arco-table-scroll-position-both"
 >
   <div
     class="arco-spin"
@@ -6543,11 +6547,11 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
             class="arco-table-content-inner"
           >
             <table
-              style="width:1200px"
+              style="width: 1200px;"
             >
               <colgroup>
                 <col
-                  style="width:140px"
+                  style="width: 140px;"
                 />
                 <col />
                 <col />
@@ -6556,7 +6560,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 <col />
                 <col />
                 <col
-                  style="width:120px"
+                  style="width: 120px;"
                 />
               </colgroup>
               <thead>
@@ -6566,7 +6570,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   <th
                     class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
                     rowspan="3"
-                    style="left:0"
+                    style="left: 0px;"
                   >
                     <div
                       class="arco-table-th-item"
@@ -6609,7 +6613,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   <th
                     class="arco-table-th arco-table-col-fixed-right arco-table-col-fixed-right-first"
                     rowspan="3"
-                    style="right:0"
+                    style="right: 0px;"
                   >
                     <div
                       class="arco-table-th-item"
@@ -6732,7 +6736,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:0"
+                    style="left: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -6824,7 +6828,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -6842,7 +6846,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:0"
+                    style="left: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -6934,7 +6938,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -6952,7 +6956,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:0"
+                    style="left: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -7044,7 +7048,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -7062,7 +7066,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:0"
+                    style="left: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -7154,7 +7158,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -7172,7 +7176,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:0"
+                    style="left: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -7264,7 +7268,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right: 0px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -7368,7 +7372,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
               <div>
                 <div />
                 <div
-                  style="top:0;z-index:3;overflow:auto"
+                  style="top: 0px; z-index: 3; overflow: auto;"
                 >
                   <table>
                     <colgroup>
@@ -7801,7 +7805,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
 
 exports[`renders Table/demo/operations.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-has-fixed-col-left arco-table-scroll-position-both"
 >
   <div
     class="arco-spin"
@@ -7819,11 +7823,11 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
             class="arco-table-content-inner"
           >
             <table
-              style="width:1200px"
+              style="width: 1200px;"
             >
               <colgroup>
                 <col
-                  style="width:40px"
+                  style="width: 40px;"
                 />
                 <col
                   class="arco-table-selection-col"
@@ -7832,7 +7836,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-expand-icon-col"
                 />
                 <col
-                  style="width:120px"
+                  style="width: 120px;"
                 />
                 <col />
                 <col />
@@ -7844,7 +7848,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                 >
                   <th
                     class="arco-table-th arco-table-operation arco-table-col-fixed-left"
-                    style="left:0;width:40px;min-width:40px"
+                    style="left: 0px; width: 40px; min-width: 40px;"
                   >
                     <div
                       class="arco-table-th-item"
@@ -7854,7 +7858,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </th>
                   <th
                     class="arco-table-th arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                    style="left:40px"
+                    style="left: 40px;"
                   >
                     <div
                       class="arco-table-th-item"
@@ -7865,6 +7869,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                       >
                         <input
                           type="checkbox"
+                          value=""
                         />
                         <span
                           class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -7893,11 +7898,11 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </th>
                   <th
                     class="arco-table-th arco-table-operation arco-table-expand arco-table-col-fixed-left"
-                    style="left:80px"
+                    style="left: 80px;"
                   />
                   <th
                     class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:120px"
+                    style="left: 120px;"
                   >
                     <div
                       class="arco-table-th-item"
@@ -7956,13 +7961,13 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-col-fixed-left"
-                    style="left:0;width:40px;min-width:40px"
+                    style="left: 0px; width: 40px; min-width: 40px;"
                   >
                     1
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                    style="left:40px"
+                    style="left: 40px;"
                   >
                     <label
                       aria-disabled="false"
@@ -7998,7 +8003,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                    style="left:80px"
+                    style="left: 80px;"
                   >
                     <button
                       type="button"
@@ -8020,7 +8025,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:120px"
+                    style="left: 120px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -8077,13 +8082,13 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-col-fixed-left"
-                    style="left:0;width:40px;min-width:40px"
+                    style="left: 0px; width: 40px; min-width: 40px;"
                   >
                     2
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                    style="left:40px"
+                    style="left: 40px;"
                   >
                     <label
                       aria-disabled="false"
@@ -8119,7 +8124,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                    style="left:80px"
+                    style="left: 80px;"
                   >
                     <button
                       type="button"
@@ -8141,7 +8146,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:120px"
+                    style="left: 120px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -8198,13 +8203,13 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-col-fixed-left"
-                    style="left:0;width:40px;min-width:40px"
+                    style="left: 0px; width: 40px; min-width: 40px;"
                   >
                     3
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                    style="left:40px"
+                    style="left: 40px;"
                   >
                     <label
                       aria-disabled="false"
@@ -8240,7 +8245,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                    style="left:80px"
+                    style="left: 80px;"
                   >
                     <button
                       type="button"
@@ -8262,7 +8267,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:120px"
+                    style="left: 120px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -8319,17 +8324,16 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-col-fixed-left"
-                    style="left:0;width:40px;min-width:40px"
+                    style="left: 0px; width: 40px; min-width: 40px;"
                   >
                     4
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                    style="left:40px"
+                    style="left: 40px;"
                   >
                     <label
                       aria-disabled="false"
-                      checked=""
                       class="arco-checkbox arco-checkbox-checked"
                     >
                       <input
@@ -8363,11 +8367,11 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                    style="left:80px"
+                    style="left: 80px;"
                   />
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:120px"
+                    style="left: 120px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -8424,13 +8428,13 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                 >
                   <td
                     class="arco-table-td arco-table-operation arco-table-col-fixed-left"
-                    style="left:0;width:40px;min-width:40px"
+                    style="left: 0px; width: 40px; min-width: 40px;"
                   >
                     5
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                    style="left:40px"
+                    style="left: 40px;"
                   >
                     <label
                       aria-disabled="false"
@@ -8466,7 +8470,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
-                    style="left:80px"
+                    style="left: 80px;"
                   >
                     <button
                       type="button"
@@ -8488,7 +8492,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                    style="left:120px"
+                    style="left: 120px;"
                   >
                     <div
                       class="arco-table-cell"
@@ -8653,6 +8657,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                       >
                         <input
                           type="checkbox"
+                          value=""
                         />
                         <span
                           class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -9640,14 +9645,14 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
         </div>
       </div>
       <div
-        style="display:flex;justify-content:space-between;margin-top:10px"
+        style="display: flex; justify-content: space-between; margin-top: 10px;"
       >
         <div
           class="arco-space arco-space-horizontal arco-space-align-center"
         >
           <div
             class="arco-space-item"
-            style="margin-right:8px"
+            style="margin-right: 8px;"
           >
             <span>
               Selected 0
@@ -9655,7 +9660,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
           </div>
           <div
             class="arco-space-item"
-            style="margin-right:8px"
+            style="margin-right: 8px;"
           >
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-mini arco-btn-shape-square"
@@ -9801,6 +9806,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
           >
             <div
               aria-autocomplete="list"
+              aria-controls="arco-select-popup-0"
               aria-expanded="false"
               aria-haspopup="listbox"
               class="arco-select arco-select-single arco-select-size-default"
@@ -9815,7 +9821,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   aria-hidden="true"
                   autocomplete="off"
                   class="arco-select-view-input arco-select-hidden"
-                  style="width:100%;pointer-events:none"
+                  style="width: 100%; pointer-events: none;"
                   tabindex="-1"
                   value="10 条/页"
                 />
@@ -9968,7 +9974,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                       >
                         <span>
                           <span
-                            style="color:#FF7D00;font-weight:600"
+                            style="color: rgb(255, 125, 0); font-weight: 600;"
                           >
                             $
                           </span>
@@ -10031,7 +10037,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                       >
                         <span>
                           <span
-                            style="color:#FF7D00;font-weight:600"
+                            style="color: rgb(255, 125, 0); font-weight: 600;"
                           >
                             $
                           </span>
@@ -10094,7 +10100,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                       >
                         <span>
                           <span
-                            style="color:#FF7D00;font-weight:600"
+                            style="color: rgb(255, 125, 0); font-weight: 600;"
                           >
                             $
                           </span>
@@ -10157,7 +10163,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                       >
                         <span>
                           <span
-                            style="color:#FF7D00;font-weight:600"
+                            style="color: rgb(255, 125, 0); font-weight: 600;"
                           >
                             $
                           </span>
@@ -10220,7 +10226,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                       >
                         <span>
                           <span
-                            style="color:#FF7D00;font-weight:600"
+                            style="color: rgb(255, 125, 0); font-weight: 600;"
                           >
                             $
                           </span>
@@ -10346,13 +10352,13 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
             <table>
               <colgroup>
                 <col
-                  style="width:120px"
+                  style="width: 120px;"
                 />
                 <col
-                  style="width:100px"
+                  style="width: 100px;"
                 />
                 <col
-                  style="width:180px"
+                  style="width: 180px;"
                 />
                 <col />
               </colgroup>
@@ -11160,7 +11166,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -11234,6 +11240,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                         >
                           <input
                             type="checkbox"
+                            value=""
                           />
                           <span
                             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -11596,7 +11603,6 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                     >
                       <label
                         aria-disabled="true"
-                        checked=""
                         class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
                       >
                         <input
@@ -12404,7 +12410,6 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                 >
                   <th
                     class="arco-table-th"
-                    style="background-color:var(--color-bg-2)"
                   >
                     <div
                       class="arco-table-th-item"
@@ -12418,7 +12423,6 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   </th>
                   <th
                     class="arco-table-th"
-                    style="background-color:var(--color-bg-2)"
                   >
                     <div
                       class="arco-table-th-item"
@@ -12432,7 +12436,6 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   </th>
                   <th
                     class="arco-table-th"
-                    style="background-color:var(--color-bg-2)"
                   >
                     <div
                       class="arco-table-th-item"
@@ -12446,7 +12449,6 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   </th>
                   <th
                     class="arco-table-th"
-                    style="background-color:var(--color-bg-2)"
                   >
                     <div
                       class="arco-table-th-item"
@@ -12812,7 +12814,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
 exports[`renders Table/demo/summary.md correctly 1`] = `
 <div>
   <div
-    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-fixed-column"
+    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-fixed-column arco-table-has-fixed-col-left arco-table-scroll-position-both"
   >
     <div
       class="arco-spin"
@@ -12832,7 +12834,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
               <table>
                 <colgroup>
                   <col
-                    style="width:200px"
+                    style="width: 200px;"
                   />
                   <col />
                   <col />
@@ -12844,7 +12846,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <th
                       class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -12903,7 +12905,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -12960,7 +12962,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13017,7 +13019,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13074,7 +13076,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13131,7 +13133,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13190,13 +13192,12 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   <tr>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       Total
                     </td>
                     <td
                       class="arco-table-td"
-                      style="background-color:rgb(var(--success-1))"
                     >
                       <span
                         class="arco-typography arco-typography-success"
@@ -13284,8 +13285,8 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
-    style="margin-top:20px"
+    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-has-fixed-col-left arco-table-has-fixed-col-right arco-table-scroll-position-both"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-spin"
@@ -13303,17 +13304,17 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
               class="arco-table-content-inner"
             >
               <table
-                style="width:1200px"
+                style="width: 1200px;"
               >
                 <colgroup>
                   <col
-                    style="width:200px"
+                    style="width: 200px;"
                   />
                   <col />
                   <col />
                   <col />
                   <col
-                    style="width:100px"
+                    style="width: 100px;"
                   />
                 </colgroup>
                 <thead>
@@ -13322,7 +13323,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <th
                       class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -13375,7 +13376,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </th>
                     <th
                       class="arco-table-th arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -13395,7 +13396,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13448,7 +13449,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13473,7 +13474,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13526,7 +13527,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13551,7 +13552,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13604,7 +13605,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13629,7 +13630,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13682,7 +13683,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13707,7 +13708,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   >
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13760,7 +13761,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -13787,7 +13788,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                   <tr>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       Total
                     </td>
@@ -13812,13 +13813,13 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     />
                   </tr>
                   <tr>
                     <td
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       Avarage
                     </td>
@@ -13834,7 +13835,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     </td>
                     <td
                       class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                      style="right:0"
+                      style="right: 0px;"
                     />
                   </tr>
                 </tfoot>
@@ -13904,8 +13905,8 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column"
-    style="margin-top:20px"
+    class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-has-fixed-col-left arco-table-scroll-position-both"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-spin"
@@ -13926,11 +13927,11 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                 class="arco-table-header"
               >
                 <table
-                  style="width:1200px"
+                  style="width: 1200px;"
                 >
                   <colgroup>
                     <col
-                      style="width:200px"
+                      style="width: 200px;"
                     />
                     <col />
                     <col />
@@ -13942,7 +13943,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     >
                       <th
                         class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         <div
                           class="arco-table-th-item"
@@ -13999,14 +14000,14 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
               </div>
               <div
                 class="arco-table-body"
-                style="max-height:150px"
+                style="max-height: 150px;"
               >
                 <table
-                  style="width:1200px"
+                  style="width: 1200px;"
                 >
                   <colgroup>
                     <col
-                      style="width:200px"
+                      style="width: 200px;"
                     />
                     <col />
                     <col />
@@ -14018,7 +14019,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     >
                       <td
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         <div
                           class="arco-table-cell"
@@ -14075,7 +14076,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     >
                       <td
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         <div
                           class="arco-table-cell"
@@ -14132,7 +14133,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     >
                       <td
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         <div
                           class="arco-table-cell"
@@ -14189,7 +14190,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     >
                       <td
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         <div
                           class="arco-table-cell"
@@ -14246,7 +14247,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     >
                       <td
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         <div
                           class="arco-table-cell"
@@ -14305,11 +14306,11 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                 class="arco-table-tfoot"
               >
                 <table
-                  style="width:1200px"
+                  style="width: 1200px;"
                 >
                   <colgroup>
                     <col
-                      style="width:200px"
+                      style="width: 200px;"
                     />
                     <col />
                     <col />
@@ -14321,13 +14322,12 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     <tr>
                       <td
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:0"
+                        style="left: 0px;"
                       >
                         Total
                       </td>
                       <td
                         class="arco-table-td"
-                        style="background-color:rgb(var(--success-1))"
                       >
                         <span
                           class="arco-typography arco-typography-success"
@@ -14422,7 +14422,7 @@ exports[`renders Table/demo/table-edit.md correctly 1`] = `
 Array [
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
     type="button"
   >
     <span>
@@ -14530,7 +14530,7 @@ Array [
                   <tr
                     class="arco-form arco-form-horizontal arco-form-size-default arco-table-tr editable-row"
                     index="0"
-                    style="display:table-row"
+                    style="display: table-row;"
                   >
                     <td
                       class="arco-table-td"
@@ -14608,7 +14608,7 @@ Array [
                   <tr
                     class="arco-form arco-form-horizontal arco-form-size-default arco-table-tr editable-row"
                     index="1"
-                    style="display:table-row"
+                    style="display: table-row;"
                   >
                     <td
                       class="arco-table-td"
@@ -14686,7 +14686,7 @@ Array [
                   <tr
                     class="arco-form arco-form-horizontal arco-form-size-default arco-table-tr editable-row"
                     index="2"
-                    style="display:table-row"
+                    style="display: table-row;"
                   >
                     <td
                       class="arco-table-td"
@@ -14764,7 +14764,7 @@ Array [
                   <tr
                     class="arco-form arco-form-horizontal arco-form-size-default arco-table-tr editable-row"
                     index="3"
-                    style="display:table-row"
+                    style="display: table-row;"
                   >
                     <td
                       class="arco-table-td"
@@ -14842,7 +14842,7 @@ Array [
                   <tr
                     class="arco-form arco-form-horizontal arco-form-size-default arco-table-tr editable-row"
                     index="4"
-                    style="display:table-row"
+                    style="display: table-row;"
                   >
                     <td
                       class="arco-table-td"
@@ -14988,7 +14988,7 @@ Array [
 
 exports[`renders Table/demo/virtualized.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-virtualized"
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column arco-table-virtualized arco-table-has-fixed-col-left arco-table-scroll-position-both"
 >
   <div
     class="arco-spin"
@@ -15009,17 +15009,17 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
               class="arco-table-header"
             >
               <table
-                style="width:1000px"
+                style="width: 1000px;"
               >
                 <colgroup>
                   <col
                     class="arco-table-selection-col"
                   />
                   <col
-                    style="width:140px"
+                    style="width: 140px;"
                   />
                   <col
-                    style="width:100px"
+                    style="width: 100px;"
                   />
                   <col />
                   <col />
@@ -15030,7 +15030,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                   >
                     <th
                       class="arco-table-th arco-table-operation arco-table-checkbox arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -15041,6 +15041,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                         >
                           <input
                             type="checkbox"
+                            value=""
                           />
                           <span
                             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -15069,7 +15070,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                     </th>
                     <th
                       class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:40px"
+                      style="left: 40px;"
                     >
                       <div
                         class="arco-table-th-item"
@@ -15126,20 +15127,20 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
             </div>
             <div
               class="arco-table-body"
-              style="overflow-y:auto;overflow-anchor:none;max-height:500px"
+              style="overflow-y: auto; max-height: 500px;"
             >
               <div
-                style="height:3200000px;position:relative;overflow:visible;z-index:0;width:1000px;min-width:100%"
+                style="height: 3200000px; position: relative; overflow: visible; z-index: 0; width: 1000px; min-width: 100%;"
               >
                 <div
-                  style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
+                  style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
                 >
                   <div
                     class="arco-table-tr"
                   >
                     <div
                       class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
-                      style="left:0"
+                      style="left: 0px;"
                     >
                       <label
                         class="arco-checkbox"
@@ -15174,7 +15175,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                      style="left:40px;width:140px;min-width:140px;max-width:140px"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -15188,7 +15189,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-table-td"
-                      style="width:100px;min-width:100px;max-width:100px"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
                     >
                       <div
                         class="arco-table-cell"
@@ -15223,6 +15224,1494 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                           class="arco-table-cell-wrap-value"
                         >
                           kevin.sandra_0@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="1"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 1
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          1 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_1@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="2"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 2
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          2 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_2@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="3"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 3
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          3 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_3@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="4"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 4
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          4 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_4@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="5"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 5
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          5 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_5@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="6"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 6
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          6 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_6@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="7"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 7
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          7 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_7@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="8"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 8
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          8 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_8@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="9"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 9
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          9 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_9@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="10"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 10
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          10 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_10@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="11"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 11
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          11 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_11@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="12"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 12
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          12 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_12@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="13"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 13
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          13 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_13@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="14"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 14
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          14 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_14@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="15"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 15
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          15 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_15@example.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-table-tr"
+                  >
+                    <div
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                      style="left: 0px;"
+                    >
+                      <label
+                        class="arco-checkbox"
+                      >
+                        <input
+                          type="checkbox"
+                          value="16"
+                        />
+                        <span
+                          class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+                        >
+                          <div
+                            class="arco-checkbox-mask"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-checkbox-mask-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height="200"
+                              viewBox="0 0 1024 1024"
+                              width="200"
+                            >
+                              <path
+                                d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                                p-id="840"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      style="left: 40px; width: 140px; min-width: 140px; max-width: 140px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          Kevin 16
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                      style="width: 100px; min-width: 100px; max-width: 100px;"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          22000
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          16 Park Road, London
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="arco-table-td"
+                    >
+                      <div
+                        class="arco-table-cell"
+                      >
+                        <span
+                          class="arco-table-cell-wrap-value"
+                        >
+                          kevin.sandra_16@example.com
                         </span>
                       </div>
                     </div>

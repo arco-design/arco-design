@@ -39,7 +39,7 @@ exports[`renders Message/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -52,7 +52,7 @@ exports[`renders Message/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
@@ -65,7 +65,7 @@ exports[`renders Message/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
@@ -78,7 +78,7 @@ exports[`renders Message/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
@@ -110,7 +110,7 @@ exports[`renders Message/demo/position.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -142,7 +142,7 @@ exports[`renders Message/demo/type.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -155,7 +155,7 @@ exports[`renders Message/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
@@ -168,7 +168,7 @@ exports[`renders Message/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
@@ -181,7 +181,7 @@ exports[`renders Message/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"

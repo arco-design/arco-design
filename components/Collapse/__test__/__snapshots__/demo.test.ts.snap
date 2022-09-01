@@ -3,7 +3,7 @@
 exports[`renders Collapse/demo/accordion.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item"
@@ -128,7 +128,7 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
 exports[`renders Collapse/demo/basic.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"
@@ -179,13 +179,13 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
         <div
           class="arco-divider arco-divider-horizontal"
           role="separator"
-          style="margin:8px 0"
+          style="margin: 8px 0px;"
         />
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
           role="separator"
-          style="margin:8px 0"
+          style="margin: 8px 0px;"
         />
         Beijing Toutiao Technology Co., Ltd.
       </div>
@@ -286,7 +286,7 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
 exports[`renders Collapse/demo/borderless.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-borderless"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"
@@ -337,13 +337,13 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
         <div
           class="arco-divider arco-divider-horizontal"
           role="separator"
-          style="margin:8px 0"
+          style="margin: 8px 0px;"
         />
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
           role="separator"
-          style="margin:8px 0"
+          style="margin: 8px 0px;"
         />
         Beijing Toutiao Technology Co., Ltd.
       </div>
@@ -433,11 +433,11 @@ exports[`renders Collapse/demo/borderless.md correctly 1`] = `
 exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-borderless"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"
-    style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
+    style="border-radius: 2px; margin-bottom: 24px; overflow: hidden;"
   >
     <div
       aria-expanded="true"
@@ -485,13 +485,13 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
         <div
           class="arco-divider arco-divider-horizontal"
           role="separator"
-          style="margin:8px 0"
+          style="margin: 8px 0px;"
         />
         Beijing Toutiao Technology Co., Ltd.
         <div
           class="arco-divider arco-divider-horizontal"
           role="separator"
-          style="margin:8px 0"
+          style="margin: 8px 0px;"
         />
         Beijing Toutiao Technology Co., Ltd.
       </div>
@@ -499,7 +499,7 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
   </div>
   <div
     class="arco-collapse-item arco-collapse-item-active"
-    style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
+    style="border-radius: 2px; margin-bottom: 24px; overflow: hidden;"
   >
     <div
       aria-expanded="true"
@@ -549,7 +549,7 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
   </div>
   <div
     class="arco-collapse-item"
-    style="border-radius:2px;margin-bottom:24px;border:none;overflow:hidden"
+    style="border-radius: 2px; margin-bottom: 24px; overflow: hidden;"
   >
     <div
       aria-expanded="false"
@@ -593,7 +593,7 @@ exports[`renders Collapse/demo/customStyle.md correctly 1`] = `
 exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"
@@ -738,7 +738,7 @@ exports[`renders Collapse/demo/destoryOnHide.md correctly 1`] = `
 exports[`renders Collapse/demo/extra.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"
@@ -950,7 +950,7 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
 <div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <span
       class="arco-typography"
@@ -959,7 +959,7 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
-      style="margin-left:20px"
+      style="margin-left: 20px;"
     >
       <label
         class="arco-radio"
@@ -1026,7 +1026,7 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
   </div>
   <div
     class="arco-collapse arco-collapse-border"
-    style="max-width:1180px"
+    style="max-width: 1180px;"
   >
     <div
       class="arco-collapse-item"
@@ -1189,7 +1189,7 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
 exports[`renders Collapse/demo/inline.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"
@@ -1425,7 +1425,7 @@ exports[`renders Collapse/demo/inline.md correctly 1`] = `
 exports[`renders Collapse/demo/lazyload.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
-  style="max-width:1180px"
+  style="max-width: 1180px;"
 >
   <div
     class="arco-collapse-item arco-collapse-item-active"

@@ -18,6 +18,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -68,12 +69,12 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -112,6 +113,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -146,12 +148,12 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -186,12 +188,12 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -230,6 +232,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -323,6 +326,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -377,6 +381,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -415,6 +420,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -453,6 +459,7 @@ exports[`renders Transfer/demo/basic.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -501,7 +508,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       class="arco-transfer-view-header"
     >
       <div
-        style="display:flex;align-items:center;justify-content:space-between"
+        style="display: flex; align-items: center; justify-content: space-between;"
       >
         LEFT 3-5
         <label
@@ -509,6 +516,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -549,12 +557,12 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -593,6 +601,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -627,12 +636,12 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -667,12 +676,12 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -711,6 +720,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -797,7 +807,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
       class="arco-transfer-view-header"
     >
       <div
-        style="display:flex;align-items:center;justify-content:space-between"
+        style="display: flex; align-items: center; justify-content: space-between;"
       >
         RIGHT 0-3
         <svg
@@ -807,7 +817,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="cursor:pointer"
+          style="cursor: pointer;"
           viewBox="0 0 48 48"
         >
           <path
@@ -834,6 +844,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -872,6 +883,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -910,6 +922,7 @@ exports[`renders Transfer/demo/custom-header.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -965,6 +978,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1038,12 +1052,12 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               </svg>
             </span>
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1105,6 +1119,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1162,12 +1177,12 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               </svg>
             </span>
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1225,12 +1240,12 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
               </svg>
             </span>
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1292,6 +1307,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1385,6 +1401,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1462,6 +1479,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1523,6 +1541,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1584,6 +1603,7 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1627,7 +1647,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
 >
   <div
     class="arco-transfer-view arco-transfer-view-source"
-    style="width:220px;height:316px"
+    style="width: 220px; height: 316px;"
   >
     <div
       class="arco-transfer-view-header"
@@ -1640,6 +1660,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1690,12 +1711,12 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1734,6 +1755,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1768,12 +1790,12 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1808,12 +1830,12 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1852,6 +1874,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1890,6 +1913,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1928,6 +1952,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2027,7 +2052,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
   </div>
   <div
     class="arco-transfer-view arco-transfer-view-target"
-    style="width:220px;height:316px"
+    style="width: 220px; height: 316px;"
   >
     <div
       class="arco-transfer-view-header"
@@ -2040,6 +2065,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2094,6 +2120,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2132,6 +2159,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2170,6 +2198,7 @@ exports[`renders Transfer/demo/more.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2237,6 +2266,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2287,12 +2317,12 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2331,6 +2361,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2365,12 +2396,12 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2405,12 +2436,12 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2449,6 +2480,7 @@ exports[`renders Transfer/demo/one-way.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2654,6 +2686,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2704,12 +2737,12 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2748,6 +2781,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2782,12 +2816,12 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2822,12 +2856,12 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -2866,6 +2900,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2904,6 +2939,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2942,6 +2978,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2980,6 +3017,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3018,6 +3056,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3056,6 +3095,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3219,6 +3259,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3273,6 +3314,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3311,6 +3353,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3349,6 +3392,7 @@ exports[`renders Transfer/demo/pagination.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3474,6 +3518,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -3524,12 +3569,12 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -3570,6 +3615,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3606,12 +3652,12 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -3639,7 +3685,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
                 class="arco-checkbox-text"
               >
                 <span
-                  style="color:#165DFF"
+                  style="color: rgb(22, 93, 255);"
                 >
                   Option 6
                 </span>
@@ -3650,12 +3696,12 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -3691,7 +3737,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
                     focusable="false"
                     stroke="currentColor"
                     stroke-width="4"
-                    style="margin-left:4px;color:rgb(var(--gold-6))"
+                    style="margin-left: 4px;"
                     viewBox="0 0 48 48"
                   >
                     <path
@@ -3710,6 +3756,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3805,6 +3852,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3859,6 +3907,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3886,7 +3935,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
                 class="arco-checkbox-text"
               >
                 <span
-                  style="color:#165DFF"
+                  style="color: rgb(22, 93, 255);"
                 >
                   Option 1
                 </span>
@@ -3901,6 +3950,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3941,6 +3991,7 @@ exports[`renders Transfer/demo/render.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -3998,6 +4049,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -4086,12 +4138,12 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -4130,6 +4182,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4164,12 +4217,12 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -4204,12 +4257,12 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             class="arco-transfer-view-item"
           >
             <label
-              checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
             >
               <input
                 checked=""
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -4248,6 +4301,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4341,6 +4395,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4433,6 +4488,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4471,6 +4527,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4509,6 +4566,7 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4564,6 +4622,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4618,6 +4677,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4656,6 +4716,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4694,6 +4755,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4732,6 +4794,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4770,6 +4833,7 @@ exports[`renders Transfer/demo/simple.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4939,7 +5003,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
 >
   <div
     class="arco-transfer-view arco-transfer-view-source"
-    style="width:540px;height:240px"
+    style="width: 540px; height: 240px;"
   >
     <div
       class="arco-transfer-view-header"
@@ -4952,6 +5016,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -4993,7 +5058,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
     >
       <div
         class="arco-table arco-table-size-default arco-table-border arco-table-hover"
-        style="border-radius:0"
+        style="border-radius: 0;"
       >
         <div
           class="arco-spin"
@@ -5035,6 +5100,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                             >
                               <input
                                 type="checkbox"
+                                value=""
                               />
                               <span
                                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -5561,7 +5627,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
   </div>
   <div
     class="arco-transfer-view arco-transfer-view-target"
-    style="width:540px;height:240px"
+    style="width: 540px; height: 240px;"
   >
     <div
       class="arco-transfer-view-header"
@@ -5574,6 +5640,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -5615,7 +5682,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
     >
       <div
         class="arco-table arco-table-size-default arco-table-border arco-table-hover"
-        style="border-radius:0"
+        style="border-radius: 0;"
       >
         <div
           class="arco-spin"
@@ -5658,6 +5725,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                               <input
                                 disabled=""
                                 type="checkbox"
+                                value=""
                               />
                               <span
                                 class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -5892,6 +5960,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -5934,7 +6003,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
       <div
         class="arco-tree arco-tree-checkable"
         role="tree"
-        style="padding:0 14px"
+        style="padding: 0px 14px;"
         tabindex="0"
       >
         <div
@@ -6130,7 +6199,6 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           />
           <label
             aria-disabled="false"
-            checked=""
             class="arco-checkbox arco-checkbox-checked"
           >
             <input
@@ -6338,7 +6406,6 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           />
           <label
             aria-disabled="true"
-            checked=""
             class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
           >
             <input
@@ -6401,7 +6468,6 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           />
           <label
             aria-disabled="true"
-            checked=""
             class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
           >
             <input
@@ -6464,7 +6530,6 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           />
           <label
             aria-disabled="true"
-            checked=""
             class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
           >
             <input
@@ -6579,7 +6644,6 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
           />
           <label
             aria-disabled="true"
-            checked=""
             class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
           >
             <input
@@ -6684,6 +6748,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -6738,6 +6803,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -6776,6 +6842,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -6814,6 +6881,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -6852,6 +6920,7 @@ exports[`renders Transfer/demo/with-tree.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"

@@ -3,7 +3,7 @@
 exports[`renders Anchor/demo/affix.md correctly 1`] = `
 <div
   class=""
-  style="position:absolute;right:-170px;top:50%;z-index:1"
+  style="position: absolute; right: -170px; top: 50%; z-index: 1;"
 >
   <div
     class=""
@@ -101,7 +101,6 @@ exports[`renders Anchor/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-anchor"
-      style="background-color:var(--color-bg-2)"
     >
       <div
         class="arco-anchor-list"

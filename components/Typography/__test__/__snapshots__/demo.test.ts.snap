@@ -3,7 +3,7 @@
 exports[`renders Typography/demo/basic.md correctly 1`] = `
 <article
   class="arco-typography"
-  style="margin-top:-40px"
+  style="margin-top: -40px;"
 >
   <h1
     class="arco-typography"
@@ -164,11 +164,11 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:120px"
+      style="margin-right: 120px;"
     >
       <form
         class="arco-form arco-form-horizontal arco-form-size-small"
-        style="width:400px"
+        style="width: 400px;"
       >
         <div
           class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -349,7 +349,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
                   >
                     <div
                       class="arco-space-item"
-                      style="margin-right:8px"
+                      style="margin-right: 8px;"
                     >
                       <button
                         class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
@@ -420,7 +420,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
     >
       <div
         class="arco-descriptions arco-descriptions-layout-horizontal"
-        style="margin-bottom:20px"
+        style="margin-bottom: 20px;"
       >
         <div
           class="arco-descriptions-title"
@@ -441,7 +441,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   ellipsisStr
                 </td>
@@ -456,7 +456,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   rows
                 </td>
@@ -585,7 +585,7 @@ exports[`renders Typography/demo/paragraph.md correctly 1`] = `
 exports[`renders Typography/demo/text.md correctly 1`] = `
 Array [
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -594,7 +594,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-secondary"
@@ -603,7 +603,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-primary"
@@ -612,7 +612,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-success"
@@ -621,7 +621,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-warning"
@@ -630,7 +630,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-error"
@@ -639,7 +639,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -650,7 +650,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-disabled"
@@ -659,7 +659,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -670,7 +670,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -681,7 +681,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -692,7 +692,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"

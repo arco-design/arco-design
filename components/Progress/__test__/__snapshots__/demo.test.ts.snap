@@ -4,7 +4,7 @@ exports[`renders Progress/demo/animate.md correctly 1`] = `
 <div>
   <div
     class="arco-progress arco-progress-line arco-progress-default"
-    style="width:300px"
+    style="width: 300px;"
   >
     <div
       class="arco-progress-line-wrapper"
@@ -15,11 +15,11 @@ exports[`renders Progress/demo/animate.md correctly 1`] = `
         aria-valuenow="80"
         class="arco-progress-line-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-line-inner arco-progress-line-inner-animate"
-          style="width:80%"
+          style="width: 80%;"
         />
       </div>
       <div
@@ -33,7 +33,7 @@ exports[`renders Progress/demo/animate.md correctly 1`] = `
   <br />
   <div
     class="arco-progress arco-progress-line arco-progress-default arco-progress-is-success"
-    style="width:300px"
+    style="width: 300px;"
   >
     <div
       class="arco-progress-line-wrapper"
@@ -44,11 +44,11 @@ exports[`renders Progress/demo/animate.md correctly 1`] = `
         aria-valuenow="80"
         class="arco-progress-line-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-line-inner arco-progress-line-inner-animate"
-          style="width:80%"
+          style="width: 80%;"
         />
       </div>
       <div
@@ -65,7 +65,7 @@ exports[`renders Progress/demo/basic.md correctly 1`] = `
 <div>
   <div
     class="arco-progress arco-progress-line arco-progress-default"
-    style="width:40%"
+    style="width: 40%;"
   >
     <div
       class="arco-progress-line-wrapper"
@@ -76,11 +76,11 @@ exports[`renders Progress/demo/basic.md correctly 1`] = `
         aria-valuenow="30"
         class="arco-progress-line-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-line-inner"
-          style="width:30%"
+          style="width: 30%;"
         />
       </div>
       <div
@@ -97,7 +97,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
 <div>
   <div
     class="arco-progress arco-progress-circle arco-progress-default"
-    style="margin-right:80px"
+    style="margin-right: 80px;"
   >
     <div
       aria-valuemax="100"
@@ -105,7 +105,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
       aria-valuenow="20"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
@@ -126,7 +126,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke-dasharray:188.49555921538757;stroke-dashoffset:150.79644737231007"
+          style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 150.79644737231007;"
         />
       </svg>
       <div
@@ -138,7 +138,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
   </div>
   <div
     class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-warning"
-    style="margin-right:80px"
+    style="margin-right: 80px;"
   >
     <div
       aria-valuemax="100"
@@ -146,7 +146,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
       aria-valuenow="20"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
@@ -167,7 +167,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke-dasharray:188.49555921538757;stroke-dashoffset:150.79644737231007"
+          style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 150.79644737231007;"
         />
       </svg>
       <div
@@ -179,7 +179,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
   </div>
   <div
     class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-error"
-    style="margin-right:80px"
+    style="margin-right: 80px;"
   >
     <div
       aria-valuemax="100"
@@ -187,7 +187,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
       aria-valuenow="20"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
@@ -208,7 +208,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke-dasharray:188.49555921538757;stroke-dashoffset:150.79644737231007"
+          style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 150.79644737231007;"
         />
       </svg>
       <div
@@ -245,7 +245,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
   </div>
   <div
     class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-success"
-    style="margin-right:80px"
+    style="margin-right: 80px;"
   >
     <div
       aria-valuemax="100"
@@ -253,7 +253,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
       aria-valuenow="20"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
@@ -274,7 +274,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke-dasharray:188.49555921538757;stroke-dashoffset:150.79644737231007"
+          style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 150.79644737231007;"
         />
       </svg>
       <div
@@ -297,11 +297,11 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="margin-top:40px"
+    style="margin-top: 40px;"
   >
     <div
       class="arco-slider"
-      style="width:100px"
+      style="width: 100px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -311,7 +311,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:80%"
+            style="left: 0%; right: 80%;"
           />
           <div
             aria-disabled="false"
@@ -321,7 +321,7 @@ exports[`renders Progress/demo/circle.md correctly 1`] = `
             aria-valuetext="20"
             class="arco-slider-button"
             role="slider"
-            style="left:20%"
+            style="left: 20%;"
             tabindex="0"
           />
         </div>
@@ -335,7 +335,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
 <div>
   <div
     class="arco-progress arco-progress-line arco-progress-default"
-    style="width:300px"
+    style="width: 300px;"
   >
     <div
       class="arco-progress-line-wrapper"
@@ -346,11 +346,11 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
         aria-valuenow="80"
         class="arco-progress-line-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-line-inner arco-progress-line-inner-animate"
-          style="width:80%;background-image:linear-gradient(to right, rgb(var(--primary-6)) 0%,rgb(var(--success-6)) 100%);background-size:125%"
+          style="width: 80%; background-size: 125%;"
         />
       </div>
       <div
@@ -363,7 +363,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
   <br />
   <div
     class="arco-progress arco-progress-line arco-progress-default arco-progress-is-success"
-    style="width:300px"
+    style="width: 300px;"
   >
     <div
       class="arco-progress-line-wrapper"
@@ -374,11 +374,11 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
         aria-valuenow="100"
         class="arco-progress-line-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-line-inner arco-progress-line-inner-animate"
-          style="width:100%;background-image:linear-gradient(to right, rgb(var(--primary-6)) 0%,rgb(var(--success-6)) 100%);background-size:100%"
+          style="width: 100%; background-size: 100%;"
         />
       </div>
       <div
@@ -392,7 +392,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
   <br />
   <div
     class="arco-progress arco-progress-circle arco-progress-default"
-    style="margin:0 20px"
+    style="margin: 0px 20px;"
   >
     <div
       aria-valuemax="100"
@@ -400,14 +400,15 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
       aria-valuenow="80"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
         viewBox="0 0 64 64"
       >
         <defs>
-          <linearGradient
+          <lineargradient
+            id="arco-progress-linear-gradient-4"
             x1="0"
             x2="0"
             y1="1"
@@ -421,7 +422,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
               offset="100%"
               stop-color="rgb(var(--success-6))"
             />
-          </linearGradient>
+          </lineargradient>
         </defs>
         <circle
           class="arco-progress-circle-mask"
@@ -438,7 +439,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke:url(#undefined);stroke-dasharray:188.49555921538757;stroke-dashoffset:37.6991118430775"
+          style="stroke: url(#arco-progress-linear-gradient-4); stroke-dasharray: 188.49555921538757; stroke-dashoffset: 37.6991118430775;"
         />
       </svg>
       <div
@@ -457,14 +458,15 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
       aria-valuenow="100"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
         viewBox="0 0 64 64"
       >
         <defs>
-          <linearGradient
+          <lineargradient
+            id="arco-progress-linear-gradient-5"
             x1="0"
             x2="0"
             y1="1"
@@ -478,7 +480,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
               offset="100%"
               stop-color="rgb(var(--success-6))"
             />
-          </linearGradient>
+          </lineargradient>
         </defs>
         <circle
           class="arco-progress-circle-mask"
@@ -495,7 +497,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke:url(#undefined);stroke-dasharray:188.49555921538757;stroke-dashoffset:0"
+          style="stroke: url(#arco-progress-linear-gradient-5); stroke-dasharray: 188.49555921538757; stroke-dashoffset: 0;"
         />
       </svg>
       <div
@@ -525,7 +527,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
   <div>
     <div
       class="arco-progress arco-progress-line arco-progress-mini"
-      style="width:16px;height:16px;margin-right:80px"
+      style="width: 16px; height: 16px; margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -533,7 +535,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="0"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -554,14 +556,14 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="6"
             stroke-width="4"
-            style="stroke-dasharray:37.69911184307752;stroke-dashoffset:37.69911184307752"
+            style="stroke-dasharray: 37.69911184307752; stroke-dashoffset: 37.69911184307752;"
           />
         </svg>
       </div>
     </div>
     <div
       class="arco-progress arco-progress-line arco-progress-mini"
-      style="width:16px;height:16px;margin-right:80px"
+      style="width: 16px; height: 16px; margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -569,7 +571,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="40"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -590,14 +592,14 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="6"
             stroke-width="4"
-            style="stroke-dasharray:37.69911184307752;stroke-dashoffset:22.61946710584651"
+            style="stroke-dasharray: 37.69911184307752; stroke-dashoffset: 22.61946710584651;"
           />
         </svg>
       </div>
     </div>
     <div
       class="arco-progress arco-progress-line arco-progress-mini arco-progress-is-error"
-      style="width:16px;height:16px;margin-right:80px"
+      style="width: 16px; height: 16px; margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -605,7 +607,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="70"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -626,14 +628,14 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="6"
             stroke-width="4"
-            style="stroke-dasharray:37.69911184307752;stroke-dashoffset:11.309733552923257"
+            style="stroke-dasharray: 37.69911184307752; stroke-dashoffset: 11.309733552923257;"
           />
         </svg>
       </div>
     </div>
     <div
       class="arco-progress arco-progress-line arco-progress-mini arco-progress-is-success"
-      style="width:16px;height:16px;margin-right:80px"
+      style="width: 16px; height: 16px; margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -641,7 +643,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="100"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -662,18 +664,18 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="6"
             stroke-width="4"
-            style="stroke-dasharray:37.69911184307752;stroke-dashoffset:0"
+            style="stroke-dasharray: 37.69911184307752; stroke-dashoffset: 0;"
           />
         </svg>
       </div>
     </div>
   </div>
   <div
-    style="margin-top:20px"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-progress arco-progress-circle arco-progress-mini"
-      style="margin-right:80px"
+      style="margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -681,7 +683,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="0"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -702,14 +704,14 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="4"
             stroke-width="8"
-            style="stroke-dasharray:25.132741228718345;stroke-dashoffset:25.132741228718345"
+            style="stroke-dasharray: 25.132741228718345; stroke-dashoffset: 25.132741228718345;"
           />
         </svg>
       </div>
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-mini"
-      style="margin-right:80px"
+      style="margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -717,7 +719,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="40"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -738,14 +740,14 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="4"
             stroke-width="8"
-            style="stroke-dasharray:25.132741228718345;stroke-dashoffset:15.079644737231007"
+            style="stroke-dasharray: 25.132741228718345; stroke-dashoffset: 15.079644737231007;"
           />
         </svg>
       </div>
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-mini arco-progress-is-error"
-      style="margin-right:80px"
+      style="margin-right: 80px;"
     >
       <div
         aria-valuemax="100"
@@ -753,7 +755,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
         aria-valuenow="70"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -774,18 +776,18 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
             fill="none"
             r="4"
             stroke-width="8"
-            style="stroke-dasharray:25.132741228718345;stroke-dashoffset:7.539822368615504"
+            style="stroke-dasharray: 25.132741228718345; stroke-dashoffset: 7.539822368615504;"
           />
         </svg>
       </div>
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-mini arco-progress-is-success"
-      style="margin-right:80px"
+      style="margin-right: 80px;"
     >
       <div
         class="arco-progress-circle-wrapper"
-        style="width:16px;height:16px"
+        style="width: 16px; height: 16px;"
       >
         <svg
           aria-hidden="true"
@@ -794,7 +796,7 @@ exports[`renders Progress/demo/mini.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:14px"
+          style="font-size: 14px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -811,7 +813,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:44px"
+    style="margin-bottom: 44px;"
   >
     <span
       class="arco-typography"
@@ -886,16 +888,16 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start"
-    style="margin-bottom:44px;margin-left:-22px;margin-right:-22px"
+    style="margin-bottom: 44px; margin-left: -22px; margin-right: -22px;"
   >
     <div
       class="arco-col arco-col-7"
-      style="padding-left:22px;padding-right:22px"
+      style="padding-left: 22px; padding-right: 22px;"
     >
       <div>
         <div
           class="arco-progress arco-progress-line arco-progress-default"
-          style="margin-bottom:44px"
+          style="margin-bottom: 44px;"
         >
           <div
             class="arco-progress-line-wrapper"
@@ -906,11 +908,11 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
               aria-valuenow="90"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:90%;background-color:#C9CDD4"
+                style="width: 90%; background-color: rgb(201, 205, 212);"
               />
             </div>
             <div
@@ -934,11 +936,11 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
               aria-valuenow="90"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:90%"
+                style="width: 90%;"
               />
             </div>
             <div
@@ -971,12 +973,12 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-7"
-      style="padding-left:22px;padding-right:22px"
+      style="padding-left: 22px; padding-right: 22px;"
     >
       <div>
         <div
           class="arco-progress arco-progress-line arco-progress-default"
-          style="margin-bottom:44px"
+          style="margin-bottom: 44px;"
         >
           <div
             class="arco-progress-line-wrapper"
@@ -987,11 +989,11 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
               aria-valuenow="90"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:90%"
+                style="width: 90%;"
               />
             </div>
             <div
@@ -1015,11 +1017,11 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
               aria-valuenow="90"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:90%"
+                style="width: 90%;"
               />
             </div>
             <div
@@ -1037,7 +1039,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-progress arco-progress-circle arco-progress-default"
-      style="margin:0 20px"
+      style="margin: 0px 20px;"
     >
       <div
         aria-valuemax="100"
@@ -1045,7 +1047,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
         aria-valuenow="90"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:64px;height:64px"
+        style="width: 64px; height: 64px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -1066,7 +1068,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
             fill="none"
             r="30"
             stroke-width="4"
-            style="stroke-dasharray:188.49555921538757;stroke-dashoffset:18.84955592153875"
+            style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 18.84955592153875;"
           />
         </svg>
         <div
@@ -1078,7 +1080,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-error"
-      style="margin:0 20px"
+      style="margin: 0px 20px;"
     >
       <div
         aria-valuemax="100"
@@ -1086,7 +1088,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
         aria-valuenow="90"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:64px;height:64px"
+        style="width: 64px; height: 64px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -1107,7 +1109,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
             fill="none"
             r="30"
             stroke-width="4"
-            style="stroke-dasharray:188.49555921538757;stroke-dashoffset:18.84955592153875"
+            style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 18.84955592153875;"
           />
         </svg>
         <div
@@ -1144,7 +1146,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-progress arco-progress-circle arco-progress-default arco-progress-is-success"
-      style="margin:0 20px"
+      style="margin: 0px 20px;"
     >
       <div
         aria-valuemax="100"
@@ -1152,7 +1154,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
         aria-valuenow="90"
         class="arco-progress-circle-wrapper"
         role="progressbar"
-        style="width:64px;height:64px"
+        style="width: 64px; height: 64px;"
       >
         <svg
           class="arco-progress-circle-svg"
@@ -1173,7 +1175,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
             fill="none"
             r="30"
             stroke-width="4"
-            style="stroke-dasharray:188.49555921538757;stroke-dashoffset:18.84955592153875"
+            style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 18.84955592153875;"
           />
         </svg>
         <div
@@ -1197,7 +1199,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="width:100px;margin-top:44px"
+    style="width: 100px; margin-top: 44px;"
   >
     <div
       class="arco-slider"
@@ -1210,7 +1212,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:9.999999999999998%"
+            style="left: 0%; right: 9.999999999999998%;"
           />
           <div
             aria-disabled="false"
@@ -1220,7 +1222,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
             aria-valuetext="90"
             class="arco-slider-button"
             role="slider"
-            style="left:90%"
+            style="left: 90%;"
             tabindex="0"
           />
         </div>
@@ -1237,14 +1239,14 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
     >
       <div
-        style="width:300px"
+        style="width: 300px;"
       >
         <div
           class="arco-progress arco-progress-line arco-progress-default"
-          style="margin-bottom:20px"
+          style="margin-bottom: 20px;"
         >
           <div
             class="arco-progress-line-wrapper"
@@ -1255,11 +1257,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
               aria-valuenow="30"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:30%;background-color:#C9CDD4"
+                style="width: 30%; background-color: rgb(201, 205, 212);"
               />
             </div>
             <div
@@ -1272,7 +1274,7 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
         <br />
         <div
           class="arco-progress arco-progress-line arco-progress-default arco-progress-is-warning"
-          style="margin-bottom:20px"
+          style="margin-bottom: 20px;"
         >
           <div
             class="arco-progress-line-wrapper"
@@ -1283,11 +1285,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
               aria-valuenow="30"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:30%"
+                style="width: 30%;"
               />
             </div>
             <div
@@ -1310,15 +1312,15 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
               aria-valuenow="30"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner-buffer"
-                style="width:40%"
+                style="width: 40%;"
               />
               <div
                 class="arco-progress-line-inner"
-                style="width:30%"
+                style="width: 30%;"
               />
             </div>
             <div
@@ -1334,11 +1336,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        style="width:300px"
+        style="width: 300px;"
       >
         <div
           class="arco-progress arco-progress-line arco-progress-default arco-progress-is-error"
-          style="margin-bottom:20px"
+          style="margin-bottom: 20px;"
         >
           <div
             class="arco-progress-line-wrapper"
@@ -1349,11 +1351,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
               aria-valuenow="30"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:30%"
+                style="width: 30%;"
               />
             </div>
             <div
@@ -1385,7 +1387,7 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
         <br />
         <div
           class="arco-progress arco-progress-line arco-progress-default arco-progress-is-success"
-          style="margin-bottom:20px"
+          style="margin-bottom: 20px;"
         >
           <div
             class="arco-progress-line-wrapper"
@@ -1396,11 +1398,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
               aria-valuenow="30"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:30%"
+                style="width: 30%;"
               />
             </div>
             <div
@@ -1423,11 +1425,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
               aria-valuenow="30"
               class="arco-progress-line-outer"
               role="progressbar"
-              style="height:4px"
+              style="height: 4px;"
             >
               <div
                 class="arco-progress-line-inner"
-                style="width:30%"
+                style="width: 30%;"
               />
             </div>
           </div>
@@ -1436,11 +1438,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="margin-top:40px"
+    style="margin-top: 40px;"
   >
     <div
       class="arco-slider"
-      style="width:100px"
+      style="width: 100px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -1450,7 +1452,7 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:70%"
+            style="left: 0%; right: 70%;"
           />
           <div
             aria-disabled="false"
@@ -1460,7 +1462,7 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
             aria-valuetext="30"
             class="arco-slider-button"
             role="slider"
-            style="left:30%"
+            style="left: 30%;"
             tabindex="0"
           />
         </div>
@@ -1472,11 +1474,11 @@ exports[`renders Progress/demo/status.md correctly 1`] = `
 
 exports[`renders Progress/demo/steps.md correctly 1`] = `
 <div
-  style="display:inline-block;width:40%;margin-right:10%"
+  style="display: inline-block; width: 40%; margin-right: 10%;"
 >
   <div
     class="arco-progress arco-progress-steps arco-progress-default"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-progress-steps-wrapper"
@@ -1487,18 +1489,16 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
         aria-valuenow="30"
         class="arco-progress-steps-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-steps-item arco-progress-steps-item-active"
         />
         <div
           class="arco-progress-steps-item"
-          style="background-color:"
         />
         <div
           class="arco-progress-steps-item"
-          style="background-color:"
         />
       </div>
       <div
@@ -1510,7 +1510,7 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
   </div>
   <div
     class="arco-progress arco-progress-steps arco-progress-default arco-progress-is-warning"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-progress-steps-wrapper"
@@ -1521,7 +1521,7 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
         aria-valuenow="100"
         class="arco-progress-steps-outer"
         role="progressbar"
-        style="height:4px"
+        style="height: 4px;"
       >
         <div
           class="arco-progress-steps-item arco-progress-steps-item-active"
@@ -1558,7 +1558,7 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
         aria-valuenow="50"
         class="arco-progress-steps-outer"
         role="progressbar"
-        style="height:8px"
+        style="height: 8px;"
       >
         <div
           class="arco-progress-steps-item arco-progress-steps-item-active"
@@ -1571,11 +1571,9 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
         />
         <div
           class="arco-progress-steps-item"
-          style="background-color:"
         />
         <div
           class="arco-progress-steps-item"
-          style="background-color:"
         />
       </div>
       <div
@@ -1591,7 +1589,7 @@ exports[`renders Progress/demo/steps.md correctly 1`] = `
 exports[`renders Progress/demo/trailColor.md correctly 1`] = `
 <div>
   <div
-    style="width:40%;margin-bottom:20px"
+    style="width: 40%; margin-bottom: 20px;"
   >
     <div
       class="arco-progress arco-progress-line arco-progress-default"
@@ -1605,11 +1603,11 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           aria-valuenow="30"
           class="arco-progress-line-outer"
           role="progressbar"
-          style="height:4px;background-color:var(--color-primary-light-1)"
+          style="height: 4px;"
         >
           <div
             class="arco-progress-line-inner"
-            style="width:30%"
+            style="width: 30%;"
           />
         </div>
         <div
@@ -1621,7 +1619,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="width:40%;margin-bottom:20px"
+    style="width: 40%; margin-bottom: 20px;"
   >
     <div
       class="arco-progress arco-progress-steps arco-progress-default"
@@ -1635,7 +1633,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           aria-valuenow="30"
           class="arco-progress-steps-outer"
           role="progressbar"
-          style="height:4px"
+          style="height: 4px;"
         >
           <div
             class="arco-progress-steps-item arco-progress-steps-item-active"
@@ -1645,11 +1643,9 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           />
           <div
             class="arco-progress-steps-item"
-            style="background-color:var(--color-primary-light-1)"
           />
           <div
             class="arco-progress-steps-item"
-            style="background-color:var(--color-primary-light-1)"
           />
         </div>
         <div
@@ -1669,7 +1665,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
       aria-valuenow="30"
       class="arco-progress-circle-wrapper"
       role="progressbar"
-      style="width:64px;height:64px"
+      style="width: 64px; height: 64px;"
     >
       <svg
         class="arco-progress-circle-svg"
@@ -1682,7 +1678,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="2"
-          style="stroke:var(--color-primary-light-1)"
+          style="stroke: var(--color-primary-light-1);"
         />
         <circle
           class="arco-progress-circle-path"
@@ -1691,7 +1687,7 @@ exports[`renders Progress/demo/trailColor.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke-dasharray:188.49555921538757;stroke-dashoffset:131.9468914507713"
+          style="stroke-dasharray: 188.49555921538757; stroke-dashoffset: 131.9468914507713;"
         />
       </svg>
       <div

@@ -2,12 +2,13 @@
 
 exports[`renders Image/demo/basic.md correctly 1`] = `
 <div
-  class="arco-image"
-  style="width:200px"
+  class="arco-image arco-image-loading"
+  style="width: 200px;"
 >
   <img
     alt="lamp"
     class="arco-image-img"
+    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
     width="200"
   />
   <div
@@ -22,15 +23,16 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:60px"
+    style="margin-right: 60px;"
   >
     <div
-      class="arco-image"
-      style="width:200px"
+      class="arco-image arco-image-loading"
+      style="width: 200px;"
     >
       <img
         alt="lamp"
         class="arco-image-img"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
         title="A user’s avatar"
         width="200"
       />
@@ -43,12 +45,13 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-image"
-      style="width:200px"
+      class="arco-image arco-image-loading"
+      style="width: 200px;"
     >
       <img
         alt="lamp"
         class="arco-image-img"
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
         title="A user’s avatar"
         width="200"
       />
@@ -88,12 +91,13 @@ exports[`renders Image/demo/component-preview-group.md correctly 1`] = `
 
 exports[`renders Image/demo/custom-preview-actions.md correctly 1`] = `
 <div
-  class="arco-image"
-  style="width:200px"
+  class="arco-image arco-image-loading"
+  style="width: 200px;"
 >
   <img
     alt="lamp"
     class="arco-image-img"
+    src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
     width="200"
   />
   <div
@@ -108,16 +112,17 @@ exports[`renders Image/demo/error.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     <div
-      class="arco-image"
-      style="width:400px;height:300px"
+      class="arco-image arco-image-loading"
+      style="width: 400px; height: 300px;"
     >
       <img
         alt="some-error"
         class="arco-image-img"
         height="300"
+        src="some-error.png"
         width="400"
       />
       <div
@@ -129,13 +134,14 @@ exports[`renders Image/demo/error.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-image"
-      style="width:400px;height:300px"
+      class="arco-image arco-image-loading"
+      style="width: 400px; height: 300px;"
     >
       <img
         alt="This is a picture of humans eating ice cream. The humans on the screen are very happy just now. The ice cream is green, it seems to be flavored with matcha. The gender of the human is unknown. It has very long hair and the human hair is brown."
         class="arco-image-img"
         height="300"
+        src="some-error.png"
         width="400"
       />
       <div
@@ -153,15 +159,16 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
     >
       <div
-        class="arco-image"
-        style="width:300px"
+        class="arco-image arco-image-loading"
+        style="width: 300px;"
       >
         <img
           alt="lamp1"
           class="arco-image-img"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
           title="A user’s avatar"
           width="300"
         />
@@ -174,12 +181,13 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-image arco-image-simple"
-        style="width:200px;vertical-align:top"
+        class="arco-image arco-image-simple arco-image-loading"
+        style="width: 200px; vertical-align: top;"
       >
         <img
           alt="lamp2"
           class="arco-image-img"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
           title="A user’s avatar"
           width="200"
         />
@@ -191,19 +199,20 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
   </div>
   <div
     class="arco-space arco-space-horizontal arco-space-align-start"
-    style="margin-top:67px"
+    style="margin-top: 67px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
     >
       <div
-        class="arco-image"
-        style="width:300px"
+        class="arco-image arco-image-loading"
+        style="width: 300px;"
       >
         <img
           alt="lamp3"
           class="arco-image-img"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
           title="A user’s avatar"
           width="300"
         />
@@ -216,12 +225,13 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-image arco-image-simple"
-        style="width:200px;vertical-align:top"
+        class="arco-image arco-image-simple arco-image-loading"
+        style="width: 200px; vertical-align: top;"
       >
         <img
           alt="lamp4"
           class="arco-image-img"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
           title="A user’s avatar"
           width="200"
         />
@@ -239,7 +249,7 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
   <div>
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="margin-bottom:20px"
+      style="margin-bottom: 20px;"
       type="button"
     >
       <span>
@@ -252,39 +262,72 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
     >
       <div
-        class="arco-image"
-        style="width:200px;height:200px"
+        class="arco-image arco-image-loading"
+        style="width: 200px; height: 200px;"
       >
         <img
           alt="lamp1"
           class="arco-image-img"
           height="200"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp?timestamp="
           width="200"
         />
         <div
           class="arco-image-overlay"
-        />
+        >
+          <div
+            class="arco-image-loader"
+          >
+            <div
+              class="arco-image-loader-spin"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-loading"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6"
+                />
+              </svg>
+              <div
+                class="arco-image-loader-spin-text"
+              >
+                Loading
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
       class="arco-space-item"
     >
       <div
-        class="arco-image"
-        style="width:200px;height:200px;margin-left:67px"
+        class="arco-image arco-image-loading"
+        style="width: 200px; height: 200px; margin-left: 67px;"
       >
         <img
           alt="lamp2"
           class="arco-image-img"
           height="200"
+          src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp?timestamp="
           width="200"
         />
         <div
           class="arco-image-overlay"
-        />
+        >
+          <div
+            class="arco-image-loader image-demo-loader-animate"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -293,15 +336,16 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
 
 exports[`renders Image/demo/preview-get-popup-container.md correctly 1`] = `
 <div
-  style="width:100%;height:400px;background-color:var(--color-fill-2);position:relative;overflow:hidden;line-height:400px;text-align:center"
+  style="width: 100%; height: 400px; position: relative; overflow: hidden; line-height: 400px; text-align: center;"
 >
   <div
-    class="arco-image"
-    style="width:200px"
+    class="arco-image arco-image-loading"
+    style="width: 200px;"
   >
     <img
       alt="lamp"
       class="arco-image-img"
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
       width="200"
     />
     <div
@@ -324,15 +368,16 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
-            class="arco-image"
-            style="width:200px"
+            class="arco-image arco-image-loading"
+            style="width: 200px;"
           >
             <img
               alt="lamp1"
               class="arco-image-img"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
               width="200"
             />
             <div
@@ -342,15 +387,16 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
         </div>
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
-            class="arco-image"
-            style="width:200px"
+            class="arco-image arco-image-loading"
+            style="width: 200px;"
           >
             <img
               alt="lamp2"
               class="arco-image-img"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
               width="200"
             />
             <div
@@ -360,15 +406,16 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
         </div>
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
-            class="arco-image"
-            style="width:200px"
+            class="arco-image arco-image-loading"
+            style="width: 200px;"
           >
             <img
               alt="lamp3"
               class="arco-image-img"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp"
               width="200"
             />
             <div
@@ -380,12 +427,13 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           class="arco-space-item"
         >
           <div
-            class="arco-image"
-            style="width:200px"
+            class="arco-image arco-image-loading"
+            style="width: 200px;"
           >
             <img
               alt="lamp4"
               class="arco-image-img"
+              src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/8361eeb82904210b4f55fab888fe8416.png~tplv-uwbnlip3yd-webp.webp"
               width="200"
             />
             <div
@@ -404,7 +452,7 @@ exports[`renders Image/demo/progressive-loader.md correctly 1`] = `
   <div>
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="margin-bottom:20px"
+      style="margin-bottom: 20px;"
       type="button"
     >
       <span>
@@ -413,17 +461,24 @@ exports[`renders Image/demo/progressive-loader.md correctly 1`] = `
     </button>
   </div>
   <div
-    class="arco-image"
-    style="width:200px"
+    class="arco-image arco-image-loading"
+    style="width: 200px;"
   >
     <img
       alt="lamp"
       class="arco-image-img"
+      src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp?timestamp="
       width="200"
     />
     <div
       class="arco-image-overlay"
-    />
+    >
+      <img
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
+        style="filter: blur(5px);"
+        width="200"
+      />
+    </div>
   </div>
 </div>
 `;

@@ -7,6 +7,7 @@ exports[`renders Checkbox/demo/basic.md correctly 1`] = `
   >
     <input
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -42,13 +43,14 @@ exports[`renders Checkbox/demo/basic.md correctly 1`] = `
 exports[`renders Checkbox/demo/check_all.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <label
       class="arco-checkbox arco-checkbox-indeterminate"
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -83,7 +85,6 @@ exports[`renders Checkbox/demo/check_all.md correctly 1`] = `
     class="arco-checkbox-group arco-checkbox-group-direction-horizontal"
   >
     <label
-      checked=""
       class="arco-checkbox arco-checkbox-checked"
     >
       <input
@@ -120,7 +121,6 @@ exports[`renders Checkbox/demo/check_all.md correctly 1`] = `
       </span>
     </label>
     <label
-      checked=""
       class="arco-checkbox arco-checkbox-checked"
     >
       <input
@@ -202,13 +202,14 @@ exports[`renders Checkbox/demo/control.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:40px"
+      style="margin-right: 40px;"
     >
       <label
         class="arco-checkbox"
       >
         <input
           type="checkbox"
+          value=""
         />
         <span
           class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -249,6 +250,7 @@ exports[`renders Checkbox/demo/control.md correctly 1`] = `
         <input
           disabled=""
           type="checkbox"
+          value=""
         />
         <span
           class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -281,7 +283,7 @@ exports[`renders Checkbox/demo/control.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="margin-top:30px"
+    style="margin-top: 30px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -298,13 +300,12 @@ exports[`renders Checkbox/demo/control.md correctly 1`] = `
 exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <span
       class="arco-checkbox-group arco-checkbox-group-direction-horizontal"
     >
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -373,7 +374,7 @@ exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
             class="custom-checkbox-card-mask"
@@ -413,7 +414,7 @@ exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
             class="custom-checkbox-card-mask"
@@ -454,6 +455,7 @@ exports[`renders Checkbox/demo/disabled.md correctly 1`] = `
     <input
       disabled=""
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -490,7 +492,7 @@ exports[`renders Checkbox/demo/group.md correctly 1`] = `
 <div>
   <span
     class="arco-checkbox-group arco-checkbox-group-direction-horizontal"
-    style="display:block;margin-bottom:16px"
+    style="display: block; margin-bottom: 16px;"
   >
     <label
       aria-disabled="false"
@@ -603,10 +605,9 @@ exports[`renders Checkbox/demo/group.md correctly 1`] = `
   </span>
   <span
     class="arco-checkbox-group arco-checkbox-group-direction-horizontal"
-    style="display:block;margin-bottom:20px"
+    style="display: block; margin-bottom: 20px;"
   >
     <label
-      checked=""
       class="arco-checkbox arco-checkbox-checked"
     >
       <input
@@ -680,7 +681,6 @@ exports[`renders Checkbox/demo/group.md correctly 1`] = `
       </span>
     </label>
     <label
-      checked=""
       class="arco-checkbox arco-checkbox-checked"
     >
       <input
@@ -876,10 +876,9 @@ exports[`renders Checkbox/demo/group_jsx.md correctly 1`] = `
   >
     <div
       class="arco-col arco-col-8"
-      style="margin-bottom:12px"
+      style="margin-bottom: 12px;"
     >
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -918,11 +917,10 @@ exports[`renders Checkbox/demo/group_jsx.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-8"
-      style="margin-bottom:12px"
+      style="margin-bottom: 12px;"
     >
       <label
         aria-disabled="true"
-        checked=""
         class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
       >
         <input
@@ -962,7 +960,7 @@ exports[`renders Checkbox/demo/group_jsx.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-8"
-      style="margin-bottom:12px"
+      style="margin-bottom: 12px;"
     >
       <label
         class="arco-checkbox"
@@ -1086,19 +1084,20 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
 <div>
   <div
     class="arco-typography"
-    style="margin:20px 0"
+    style="margin: 20px 0px;"
   >
     Checkbox group
   </div>
   <div>
     <div
-      style="margin-bottom:16px"
+      style="margin-bottom: 16px;"
     >
       <label
         class="arco-checkbox arco-checkbox-indeterminate"
       >
         <input
           type="checkbox"
+          value=""
         />
         <span
           class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1130,7 +1129,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
       </label>
       <button
         class="arco-btn arco-btn-primary arco-btn-size-small arco-btn-shape-square"
-        style="margin:0 16px"
+        style="margin: 0px 16px;"
         type="button"
       >
         <span>
@@ -1177,7 +1176,6 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
         </span>
       </label>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1214,7 +1212,6 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
         </span>
       </label>
       <label
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1363,19 +1360,20 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
   />
   <div
     class="arco-typography"
-    style="margin:20px 0"
+    style="margin: 20px 0px;"
   >
     Checkbox
   </div>
   <div>
     <div
-      style="margin-bottom:16px"
+      style="margin-bottom: 16px;"
     >
       <label
         class="arco-checkbox arco-checkbox-indeterminate"
       >
         <input
           type="checkbox"
+          value=""
         />
         <span
           class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -1407,7 +1405,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
       </label>
       <button
         class="arco-btn arco-btn-primary arco-btn-size-small arco-btn-shape-square"
-        style="margin:0 16px"
+        style="margin: 0px 16px;"
         type="button"
       >
         <span>
@@ -1417,7 +1415,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
     </div>
     <label
       class="arco-checkbox"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       <input
         type="checkbox"
@@ -1452,9 +1450,8 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
       </span>
     </label>
     <label
-      checked=""
       class="arco-checkbox arco-checkbox-checked"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       <input
         checked=""
@@ -1490,9 +1487,8 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
       </span>
     </label>
     <label
-      checked=""
       class="arco-checkbox arco-checkbox-checked"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       <input
         checked=""
@@ -1529,7 +1525,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
     </label>
     <label
       class="arco-checkbox"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       <input
         type="checkbox"
@@ -1565,7 +1561,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
     </label>
     <label
       class="arco-checkbox"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       <input
         type="checkbox"
@@ -1601,7 +1597,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
     </label>
     <label
       class="arco-checkbox"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       <input
         type="checkbox"
@@ -1647,7 +1643,7 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
   </div>
   <div>
     <div
-      style="margin:16px 0"
+      style="margin: 16px 0px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-small arco-btn-shape-square"
@@ -1700,7 +1696,6 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
       </label>
       <label
         aria-disabled="false"
-        checked=""
         class="arco-checkbox arco-checkbox-checked"
       >
         <input
@@ -1738,7 +1733,6 @@ exports[`renders Checkbox/demo/useCheckbox.md correctly 1`] = `
       </label>
       <label
         aria-disabled="true"
-        checked=""
         class="arco-checkbox arco-checkbox-disabled arco-checkbox-checked"
       >
         <input

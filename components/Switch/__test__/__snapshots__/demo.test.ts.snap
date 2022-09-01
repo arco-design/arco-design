@@ -19,7 +19,7 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -44,7 +44,7 @@ exports[`renders Switch/demo/checked_text.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="true"
@@ -124,7 +124,7 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -140,7 +140,7 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="true"
@@ -156,7 +156,7 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -172,7 +172,7 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="true"
@@ -188,7 +188,7 @@ exports[`renders Switch/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -226,7 +226,7 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="true"
@@ -259,7 +259,7 @@ exports[`renders Switch/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="true"
@@ -331,14 +331,14 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="true"
@@ -371,7 +371,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="false"
@@ -404,7 +404,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="true"
@@ -437,7 +437,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="false"
@@ -470,7 +470,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="true"
@@ -543,7 +543,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="true"
@@ -576,7 +576,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="false"
@@ -609,7 +609,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="true"
@@ -642,7 +642,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="false"
@@ -675,7 +675,7 @@ exports[`renders Switch/demo/loading.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           aria-checked="true"
@@ -749,7 +749,7 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -764,7 +764,7 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -779,7 +779,7 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -794,7 +794,7 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -809,7 +809,7 @@ exports[`renders Switch/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -845,7 +845,7 @@ exports[`renders Switch/demo/type.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"
@@ -860,7 +860,7 @@ exports[`renders Switch/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       aria-checked="false"

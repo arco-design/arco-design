@@ -3,7 +3,7 @@
 exports[`renders TimePicker/demo/basic.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:194px"
+  style="width: 194px;"
 >
   <div
     class="arco-picker-input"
@@ -41,7 +41,7 @@ exports[`renders TimePicker/demo/basic.md correctly 1`] = `
 exports[`renders TimePicker/demo/control.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:194px"
+  style="width: 194px;"
 >
   <div
     class="arco-picker-input"
@@ -80,7 +80,7 @@ exports[`renders TimePicker/demo/defaultValue.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px;margin-right:24px;margin-bottom:24px"
+    style="width: 194px; margin-right: 24px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -132,7 +132,7 @@ exports[`renders TimePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:252px;margin-bottom:24px"
+    style="width: 252px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -201,7 +201,7 @@ exports[`renders TimePicker/demo/disableConfirm.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px;margin:0 24px 24px 0"
+    style="width: 194px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -236,7 +236,7 @@ exports[`renders TimePicker/demo/disableConfirm.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:252px;margin:0 24px 24px 0"
+    style="width: 252px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -288,7 +288,7 @@ exports[`renders TimePicker/demo/disabled.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default arco-picker-disabled"
-    style="margin:0 24px 24px 0"
+    style="margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -324,7 +324,7 @@ exports[`renders TimePicker/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default arco-picker-disabled"
-    style="width:252px;margin:0 24px 24px 0"
+    style="width: 252px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -378,7 +378,7 @@ exports[`renders TimePicker/demo/disabledTime.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px;margin:0 24px 24px 0"
+    style="width: 194px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -413,7 +413,7 @@ exports[`renders TimePicker/demo/disabledTime.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:252px;margin:0 24px 24px 0"
+    style="width: 252px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -464,7 +464,7 @@ exports[`renders TimePicker/demo/disabledTime.md correctly 1`] = `
 exports[`renders TimePicker/demo/extra.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:194px"
+  style="width: 194px;"
 >
   <div
     class="arco-picker-input"
@@ -502,7 +502,7 @@ exports[`renders TimePicker/demo/extra.md correctly 1`] = `
 exports[`renders TimePicker/demo/format.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:130px"
+  style="width: 130px;"
 >
   <div
     class="arco-picker-input"
@@ -557,7 +557,7 @@ exports[`renders TimePicker/demo/format.md correctly 1`] = `
 exports[`renders TimePicker/demo/rangepicker.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-range arco-picker-size-default"
-  style="width:252px"
+  style="width: 252px;"
 >
   <div
     class="arco-picker-input arco-picker-input-active"
@@ -608,7 +608,7 @@ exports[`renders TimePicker/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <label
       class="arco-radio-button"
@@ -667,7 +667,7 @@ exports[`renders TimePicker/demo/size.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px"
+    style="width: 194px;"
   >
     <div
       class="arco-picker-input"
@@ -706,7 +706,7 @@ exports[`renders TimePicker/demo/size.md correctly 1`] = `
 exports[`renders TimePicker/demo/step.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:194px"
+  style="width: 194px;"
 >
   <div
     class="arco-picker-input"
@@ -764,17 +764,18 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -789,7 +790,7 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
               aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value="Asia/Shanghai"
             />
@@ -898,7 +899,7 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -913,7 +914,7 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -952,7 +953,7 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px;margin:0 24px 24px 0"
+    style="width: 194px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -1004,7 +1005,7 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px;margin:0 24px 24px 0"
+    style="width: 194px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -1056,7 +1057,7 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:194px;margin:0 24px 24px 0"
+    style="width: 194px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -1108,7 +1109,7 @@ exports[`renders TimePicker/demo/use-12-hours.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:300px;margin:0 24px 24px 0"
+    style="width: 300px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -1179,17 +1180,18 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -1204,7 +1206,7 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
               aria-hidden="true"
               autocomplete="off"
               class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value="UTC "
             />
@@ -1313,7 +1315,7 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -1328,7 +1330,7 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span

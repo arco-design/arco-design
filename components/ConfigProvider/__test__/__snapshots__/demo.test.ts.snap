@@ -4,7 +4,7 @@ exports[`renders ConfigProvider/demo/basic.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
-    style="margin-bottom:40px"
+    style="margin-bottom: 40px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -179,7 +179,7 @@ Array [
   <br />,
   <div
     class="arco-pagination arco-pagination-size-default"
-    style="margin-bottom:20px;margin-right:40px;min-width:550px"
+    style="margin-bottom: 20px; margin-right: 40px; min-width: 550px;"
   >
     <div
       class="arco-pagination-total-text"
@@ -300,6 +300,7 @@ Array [
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -314,7 +315,7 @@ Array [
             aria-hidden="true"
             autocomplete="off"
             class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value="10 条/页"
           />
@@ -351,7 +352,7 @@ Array [
   </div>,
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="margin-bottom:20px;margin-right:40px;width:300px"
+    style="margin-bottom: 20px; margin-right: 40px; width: 300px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -398,7 +399,7 @@ Array [
   </div>,
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="margin-bottom:20px;margin-right:40px;width:300px"
+    style="margin-bottom: 20px; margin-right: 40px; width: 300px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -445,7 +446,7 @@ Array [
   </div>,
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-bottom:20px;margin-right:20px"
+    style="margin-bottom: 20px; margin-right: 20px;"
     type="button"
   >
     <span>
@@ -469,14 +470,14 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
@@ -489,7 +490,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round arco-btn-status-success"
@@ -516,14 +517,14 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
@@ -622,14 +623,14 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-picker arco-picker-size-default"
@@ -727,14 +728,14 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
@@ -875,14 +876,14 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
@@ -896,7 +897,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
@@ -910,7 +911,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
@@ -1057,15 +1058,16 @@ Array [
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
         role="combobox"
-        style="width:200px"
+        style="width: 200px;"
         tabindex="0"
       >
         <div
@@ -1076,7 +1078,7 @@ Array [
             autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Cascader"
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value=""
           />
@@ -1111,15 +1113,16 @@ Array [
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-select-popup-1"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
         role="combobox"
-        style="width:200px"
+        style="width: 200px;"
         tabindex="0"
       >
         <div
@@ -1130,7 +1133,7 @@ Array [
             autocomplete="off"
             class="arco-select-view-input"
             placeholder="Select"
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value=""
           />
@@ -1168,11 +1171,12 @@ Array [
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-tree-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
         role="combobox"
-        style="width:200px"
+        style="width: 200px;"
         tabindex="0"
       >
         <div
@@ -1183,7 +1187,7 @@ Array [
             autocomplete="off"
             class="arco-tree-select-view-input"
             placeholder="TreeSelect"
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value=""
           />
@@ -1222,7 +1226,7 @@ Array [
   >
     <div
       class="arco-list arco-list-default"
-      style="margin-top:20px"
+      style="margin-top: 20px;"
     >
       <div
         class="arco-list-header"
@@ -1268,7 +1272,7 @@ Array [
   </div>,
   <div
     class="arco-table arco-table-size-default arco-table-border arco-table-hover"
-    style="margin-top:20px"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-spin"
@@ -1405,7 +1409,7 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
   />
   <div
     class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default arco-tabs-rtl"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -1418,11 +1422,13 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         >
           <div
             class="arco-tabs-header"
-            style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+            style="transform: translateX(0px);"
           >
             <div
+              aria-controls="arco-tabs-0-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
+              id="arco-tabs-0-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -1433,8 +1439,10 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
+              aria-controls="arco-tabs-0-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
+              id="arco-tabs-0-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -1445,8 +1453,10 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
+              aria-controls="arco-tabs-0-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
+              id="arco-tabs-0-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -1466,32 +1476,31 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
   </div>
   <div
     class="arco-space arco-space-vertical arco-space-rtl"
-    style="width:100%"
+    style="width: 100%;"
   >
     <div
       class="arco-space-item"
-      style="margin-bottom:8px"
+      style="margin-bottom: 8px;"
     >
       <div
         class="arco-space arco-space-horizontal arco-space-align-center arco-space-rtl"
       >
         <div
           class="arco-space-item"
-          style="margin-left:24px"
+          style="margin-left: 24px;"
         >
           <span
             class="arco-badge arco-badge-rtl"
           >
             <div
               class="arco-avatar arco-avatar-square arco-avatar-rtl"
-              style="font-size:"
             >
               <span
                 class="arco-avatar-text"
               />
             </div>
             <span
-              class="arco-badge-number"
+              class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
             >
               <span
                 class=""
@@ -1503,28 +1512,27 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         </div>
         <div
           class="arco-space-item"
-          style="margin-left:24px"
+          style="margin-left: 24px;"
         >
           <span
             class="arco-badge arco-badge-rtl"
           >
             <div
               class="arco-avatar arco-avatar-square arco-avatar-rtl"
-              style="font-size:"
             >
               <span
                 class="arco-avatar-text"
               />
             </div>
             <span
-              class="arco-badge-dot"
-              style="width:10px;height:10px"
+              class="arco-badge-dot badge-zoom-appear badge-zoom-appear-active"
+              style="width: 10px; height: 10px;"
             />
           </span>
         </div>
         <div
           class="arco-space-item"
-          style="margin-left:24px"
+          style="margin-left: 24px;"
         >
           <div
             class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default arco-tag-rtl"
@@ -1558,7 +1566,7 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         </div>
         <div
           class="arco-space-item"
-          style="margin-left:24px"
+          style="margin-left: 24px;"
         >
           <div
             class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default arco-tag-rtl"
@@ -1627,14 +1635,14 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-bottom:8px"
+      style="margin-bottom: 8px;"
     >
       <div
         class="arco-space arco-space-horizontal arco-space-align-center arco-space-rtl"
       >
         <div
           class="arco-space-item"
-          style="margin-left:8px"
+          style="margin-left: 8px;"
         >
           <div
             class="arco-picker arco-picker-size-default arco-picker-rtl"
@@ -1676,7 +1684,7 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         >
           <div
             class="arco-picker arco-picker-range arco-picker-size-default arco-picker-rtl"
-            style="width:300px"
+            style="width: 300px;"
           >
             <div
               class="arco-picker-input arco-picker-input-active"
@@ -1858,6 +1866,7 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
+            aria-controls="arco-select-popup-2"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default arco-select-rtl"
@@ -1872,7 +1881,7 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
                 aria-hidden="true"
                 autocomplete="off"
                 class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
+                style="width: 100%; pointer-events: none;"
                 tabindex="-1"
                 value="10 条/页"
               />
@@ -1916,11 +1925,11 @@ exports[`renders ConfigProvider/demo/tablePagination.md correctly 1`] = `
 Array [
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <span
         class="arco-typography"
@@ -2213,7 +2222,7 @@ exports[`renders ConfigProvider/demo/theme.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
-    style="display:block;margin-bottom:40px"
+    style="display: block; margin-bottom: 40px;"
   >
     <label
       class="arco-radio"
@@ -2302,7 +2311,7 @@ Array [
   </div>,
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
     type="button"
   >
     <span>
@@ -2312,7 +2321,7 @@ Array [
   <input
     class="arco-input arco-input-size-default"
     placeholder="Please Enter ..."
-    style="width:200px"
+    style="width: 200px;"
     value=""
   />,
 ]
