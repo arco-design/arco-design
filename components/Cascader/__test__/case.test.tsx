@@ -1,6 +1,6 @@
 import React from 'react';
 import Cascader from '../cascader';
-import { render } from '../../../tests/util';
+import { fireEvent, render } from '../../../tests/util';
 
 const options = [
   {
@@ -44,5 +44,158 @@ describe('Cascader basic test', () => {
     );
 
     expect(wrapper.querySelectorAll('.arco-tag-content').item(1)?.textContent).toBe('');
+  });
+
+  it('checked & unchecked correctly', () => {
+    const options = [
+      {
+        value: 'Beijing',
+        label: 'Beijing',
+        children: [
+          {
+            value: 'dongcheng',
+            label: 'Dongcheng',
+            disabled: true,
+            children: [
+              {
+                value: 'chaoyangmen',
+                label: 'Chaoyangmen',
+              },
+              {
+                value: 'jianguo',
+                label: 'Jianguomen',
+              },
+            ],
+          },
+          {
+            value: 'xicheng',
+            label: 'Xicheng',
+          },
+        ],
+      },
+    ];
+    const wrapper = render(<Cascader options={options} mode="multiple" />);
+
+    fireEvent.click(wrapper.find('.arco-cascader')[0]);
+    expect(wrapper.find(`.arco-cascader-list-column`)).toHaveLength(1);
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-indeterminate');
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+    expect(wrapper.find('.arco-checkbox')[0].className).toBe('arco-checkbox');
+  });
+
+  it('halfchecked correctly', () => {
+    const options = [
+      {
+        value: 'beijing',
+        label: 'Beijing',
+        children: [
+          {
+            value: 'dongcheng',
+            label: 'Dongcheng',
+            disabled: true,
+            children: [
+              {
+                value: 'chaoyangmen',
+                label: 'Chaoyangmen',
+              },
+              {
+                value: 'jianguo',
+                label: 'Jianguomen',
+              },
+            ],
+          },
+          {
+            value: 'xicheng',
+            label: 'Xicheng',
+          },
+        ],
+      },
+    ];
+    const wrapper = render(
+      <Cascader
+        defaultValue={[['beijing', 'dongcheng', 'chaoyangmen']]}
+        options={options}
+        mode="multiple"
+      />
+    );
+
+    fireEvent.click(wrapper.find('.arco-cascader')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-indeterminate');
+    expect(wrapper.find('[title="Dongcheng"] .arco-checkbox')[0]).toHaveClass(
+      'arco-checkbox-indeterminate'
+    );
+
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-indeterminate');
+    expect(wrapper.find('[title="Xicheng"] .arco-checkbox')[0]).toHaveClass(
+      'arco-checkbox-checked'
+    );
+
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-indeterminate');
+    expect(wrapper.find('[title="Dongcheng"] .arco-checkbox')[0]).toHaveClass(
+      'arco-checkbox-indeterminate'
+    );
+    expect(wrapper.find('[title="Xicheng"] .arco-checkbox')[0].className).toBe('arco-checkbox');
+  });
+
+  it('checked & halfchecked correctly', () => {
+    const options = [
+      {
+        value: 'beijing',
+        label: 'Beijing',
+        children: [
+          {
+            value: 'dongcheng',
+            label: 'Dongcheng',
+            disabled: true,
+            children: [
+              {
+                value: 'chaoyangmen',
+                label: 'Chaoyangmen',
+              },
+              {
+                value: 'jianguo',
+                label: 'Jianguomen',
+              },
+            ],
+          },
+          {
+            value: 'xicheng',
+            label: 'Xicheng',
+          },
+        ],
+      },
+    ];
+    const wrapper = render(
+      <Cascader
+        defaultValue={[
+          ['beijing', 'dongcheng', 'chaoyangmen'],
+          ['beijing', 'dongcheng', 'jianguo'],
+        ]}
+        options={options}
+        mode="multiple"
+      />
+    );
+
+    fireEvent.click(wrapper.find('.arco-cascader')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-indeterminate');
+    expect(wrapper.find('[title="Dongcheng"] .arco-checkbox')[0]).toHaveClass(
+      'arco-checkbox-checked'
+    );
+
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-checked');
+    expect(wrapper.find('[title="Xicheng"] .arco-checkbox')[0]).toHaveClass(
+      'arco-checkbox-checked'
+    );
+
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+    expect(wrapper.find('.arco-checkbox')[0]).toHaveClass('arco-checkbox-indeterminate');
+    expect(wrapper.find('[title="Dongcheng"] .arco-checkbox')[0]).toHaveClass(
+      'arco-checkbox-checked'
+    );
+    expect(wrapper.find('[title="Xicheng"] .arco-checkbox')[0].className).toBe('arco-checkbox');
   });
 });
