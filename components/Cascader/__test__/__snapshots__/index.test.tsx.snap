@@ -3,6 +3,7 @@
 exports[`ConfigProvider componentConfig.Cascader default 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-1"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -16,7 +17,7 @@ exports[`ConfigProvider componentConfig.Cascader default 1`] = `
     <input
       autocomplete="off"
       class="arco-cascader-view-input"
-      style="width:100%;pointer-events:none"
+      style="width: 100%; pointer-events: none;"
       tabindex="-1"
       value=""
     />
@@ -53,6 +54,7 @@ exports[`ConfigProvider componentConfig.Cascader default 1`] = `
 exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-2"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default global-default-class"
@@ -66,7 +68,7 @@ exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
     <input
       autocomplete="off"
       class="arco-cascader-view-input"
-      style="width:100%;pointer-events:none"
+      style="width: 100%; pointer-events: none;"
       tabindex="-1"
       value=""
     />
@@ -103,6 +105,7 @@ exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Cascader set className globally and component set className itself. 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-3"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default component-class"
@@ -116,7 +119,7 @@ exports[`ConfigProvider componentConfig.Cascader set className globally and comp
     <input
       autocomplete="off"
       class="arco-cascader-view-input"
-      style="width:100%;pointer-events:none"
+      style="width: 100%; pointer-events: none;"
       tabindex="-1"
       value=""
     />
@@ -153,6 +156,7 @@ exports[`ConfigProvider componentConfig.Cascader set className globally and comp
 exports[`ConfigProvider componentConfig.Cascader set data-* property 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-4"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -167,7 +171,7 @@ exports[`ConfigProvider componentConfig.Cascader set data-* property 1`] = `
     <input
       autocomplete="off"
       class="arco-cascader-view-input"
-      style="width:100%;pointer-events:none"
+      style="width: 100%; pointer-events: none;"
       tabindex="-1"
       value=""
     />
