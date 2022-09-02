@@ -25,10 +25,10 @@ export function goPath(language, setLocal) {
   }
 }
 
-export function i18nRedirect(lang) {
+export function resetI18nLocalStorage(lang) {
   const localLang = localStorage.getItem('arco-lang');
   if (localLang && localLang !== lang) {
-    goPath(localLang);
+    localStorage.setItem('arco-lang', lang);
   }
 }
 
