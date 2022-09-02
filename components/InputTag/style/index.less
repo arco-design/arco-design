@@ -83,7 +83,7 @@
     color: inherit;
     .text-ellipsis();
 
-    &[disabled] {
+    .@{prefix}-tag + &[disabled] {
       width: 0 !important;
     }
 
@@ -101,6 +101,7 @@
   }
 
   &-tag {
+    max-width: 100%;
     margin-right: @input-tag-tag-margin-right;
     font-size: @input-tag-tag-font-size;
   }
