@@ -337,10 +337,11 @@ const TreeSelect: ForwardRefRenderFunction<
               onClear={(e) => {
                 e.stopPropagation();
                 triggerChange([], {});
-                props.onClear && props.onClear(!!popupVisible);
+                props.onClear?.(!!popupVisible);
               }}
               onKeyDown={(e) => {
                 e.stopPropagation();
+                props.onKeyDown?.(e);
               }}
               onFocus={(e) => {
                 e && e.stopPropagation();

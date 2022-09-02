@@ -419,8 +419,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
               handleChange(newValue);
             }
-
-            props.onClear && props.onClear(!!popupVisible);
+            props.onClear?.(!!popupVisible);
           }}
           onKeyDown={(e) => {
             if (disabled) {
@@ -435,6 +434,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
             if (keyCode === Tab.code && popupVisible) {
               handleVisibleChange(false);
             }
+            props.onKeyDown?.(e);
           }}
           // onFocus={this.onFocusInput}
           onChangeInputValue={(v) => {

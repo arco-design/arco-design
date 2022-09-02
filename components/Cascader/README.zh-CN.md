@@ -61,6 +61,7 @@
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|
 |onClick|鼠标点击下拉框时的回调|(e) => void |`-`|-|
 |onInputValueChange|inputValue改变时的回调|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.34.0|
+|onKeyDown|键盘输入时的回调|(e) => void |`-`|2.40.0|
 |onSearch|搜索时的回调。(reason in `2.34.0`)|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.20.0|
 |onVisibleChange|下拉框收起展开时触发。|(visible: boolean) => void |`-`|-|
 |renderFormat|格式化显示内容。|(valueShow: any[]) => ReactNode |`-`|-|

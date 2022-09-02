@@ -390,4 +390,11 @@ describe('Select', () => {
     fireEvent.change(eleInput, { target: { value: '' } });
     expect(eleInput.getAttribute('value')).toBe('');
   });
+
+  it('trigger onKeyDown correctly', () => {
+    const onKeyDown = jest.fn();
+    const wrapper = render(<Select onKeyDown={onKeyDown} />);
+    fireEvent.keyDown(wrapper.querySelector('input'));
+    expect(onKeyDown).toHaveBeenCalled();
+  });
 });

@@ -57,6 +57,7 @@ Can choose tree structure data.Only Single choice is supports.
 |onClear|Callback when clicked clear, the parameter is the visible state of current dropdown|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
 |onInputValueChange|Callback when the search value of input is changed.|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.39.0|
+|onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onSearch|Callback when searching data. When undefined, it will search in the data already|(inputValue: string) => void |`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|(visible: boolean) => void |`-`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
