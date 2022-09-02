@@ -116,6 +116,20 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     triggerChange(newValue);
   };
 
+  const scrollToActiveNode = useCallback(
+    (targetNode = activeNode) => {
+      let current = targetNode;
+      while (current) {
+        refWrapper[current._level]?.scrollTo({
+          index: current._index,
+          options: { block: 'nearest' },
+        });
+        current = current._level < 1 ? null : current.parent;
+      }
+    },
+    [activeNode]
+  );
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       e.stopPropagation();
@@ -148,6 +162,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
               }
             }
           }
+          scrollToActiveNode(nextActiveNode);
           onClickOption(nextActiveNode, false);
           e.preventDefault();
           return false;
@@ -211,22 +226,9 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
 
   useEffect(() => {
     if (props.popupVisible && options.length) {
-      const scrollTo = () => {
-        let current = activeNode;
-        while (current) {
-          refWrapper[current._level]?.scrollTo({
-            index: current._index,
-            options: { block: 'nearest' },
-          });
-          current = current._level < 1 ? null : current.parent;
-        }
-      };
-      setTimeout(() => {
-        scrollTo();
-      });
+      setTimeout(scrollToActiveNode);
     }
-    // dependency activeNode. Scrolling is required when switching up and down the keyboard
-  }, [props.popupVisible, activeNode]);
+  }, [props.popupVisible]);
 
   useEffect(() => {
     if (props.popupVisible) {
