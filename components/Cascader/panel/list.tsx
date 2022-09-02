@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import scrollIntoView from 'scroll-into-view-if-needed';
 import isEqualWith from 'lodash/isEqualWith';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import cs from '../../_util/classNames';
@@ -12,7 +11,7 @@ import { ArrowDown, Esc, Enter, ArrowUp, ArrowRight, ArrowLeft } from '../../_ut
 import useUpdate from '../../_util/hooks/useUpdate';
 import Node from '../base/node';
 import { getMultipleCheckValue } from '../util';
-import VirtualList from '../../_class/VirtualList';
+import VirtualList, { VirtualListHandle } from '../../_class/VirtualList';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -48,8 +47,7 @@ export const getLegalIndex = (currentIndex, maxIndex) => {
 };
 
 const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
-  const [activeOptionList, setActiveOptionList] = useRefs<HTMLLIElement>();
-  const [refWrapper, setRefWrapper] = useRefs<HTMLUListElement>();
+  const [refWrapper, setRefWrapper] = useRefs<VirtualListHandle>();
   const forceUpdate = useForceUpdate();
   const {
     store,
@@ -118,6 +116,20 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     triggerChange(newValue);
   };
 
+  const scrollToActiveNode = useCallback(
+    (targetNode = activeNode) => {
+      let current = targetNode;
+      while (current) {
+        refWrapper[current._level]?.scrollTo({
+          index: current._index,
+          options: { block: 'nearest' },
+        });
+        current = current._level < 1 ? null : current.parent;
+      }
+    },
+    [activeNode]
+  );
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       e.stopPropagation();
@@ -150,6 +162,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
               }
             }
           }
+          scrollToActiveNode(nextActiveNode);
           onClickOption(nextActiveNode, false);
           e.preventDefault();
           return false;
@@ -213,20 +226,9 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
 
   useEffect(() => {
     if (props.popupVisible && options.length) {
-      const scrollTo = () => {
-        activeOptionList.forEach((activeOption, i) => {
-          activeOption &&
-            scrollIntoView(activeOption, {
-              block: 'nearest',
-              boundary: refWrapper[i],
-            });
-        });
-      };
-      setTimeout(() => {
-        scrollTo();
-      });
+      setTimeout(scrollToActiveNode);
     }
-  }, [props.popupVisible, activeNode]);
+  }, [props.popupVisible]);
 
   useEffect(() => {
     if (props.popupVisible) {
@@ -303,7 +305,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                       {...(isObject(props.virtualListProps) ? props.virtualListProps : {})}
                       wrapper="ul"
                       role="menu"
-                      ref={(node) => setRefWrapper(node?.dom as HTMLUListElement, level)}
+                      ref={(node) => setRefWrapper(node, level)}
                       className={cs(`${prefixCls}-list`, `${prefixCls}-list-select`, {
                         [`${prefixCls}-list-multiple`]: multiple,
                         [`${prefixCls}-list-rtl`]: rtl,
@@ -327,11 +329,6 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                               [`${prefixCls}-list-item-active`]: isActive,
                               [`${prefixCls}-list-item-disabled`]: option.disabled,
                             })}
-                            ref={(ref) => {
-                              if (isActive) {
-                                setActiveOptionList(ref, level);
-                              }
-                            }}
                           >
                             <Option
                               prefixCls={prefixCls}

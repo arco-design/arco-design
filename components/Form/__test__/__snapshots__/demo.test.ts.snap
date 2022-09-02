@@ -2,6 +2,7 @@
 
 exports[`renders Form/demo/async-validate.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -98,6 +99,7 @@ exports[`renders Form/demo/async-validate.md correctly 1`] = `
 
 exports[`renders Form/demo/basic.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -255,6 +257,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
   style="max-width:650px"
 >
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
   >
     <div
@@ -539,7 +542,6 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-cascader-popup-0"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -566,20 +568,19 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-cascader-suffix"
                   >
                     <div
-                      class="arco-cascader-expand-icon"
+                      class="arco-cascader-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -699,7 +700,6 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-1"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
@@ -792,7 +792,6 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-2"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -814,10 +813,10 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       >
                         <div
                           class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                          title="b"
                         >
                           <span
-                            class="arco-input-tag-tag-content"
-                            title="b"
+                            class="arco-tag-content"
                           >
                             b
                           </span>
@@ -825,6 +824,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                             aria-label="Close"
                             class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                             role="button"
+                            tabindex="0"
                           >
                             <svg
                               aria-hidden="true"
@@ -858,20 +858,19 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -924,7 +923,6 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-tree-select-popup-0"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -1795,6 +1793,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
 
 exports[`renders Form/demo/control-below.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="max-width:650px"
 >
@@ -1962,6 +1961,7 @@ exports[`renders Form/demo/control-below.md correctly 1`] = `
 exports[`renders Form/demo/custom.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="max-width:650px"
   >
@@ -2015,7 +2015,6 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                   >
                     <div
                       aria-autocomplete="list"
-                      aria-controls="arco-select-popup-3"
                       aria-expanded="false"
                       aria-haspopup="listbox"
                       class="arco-select arco-select-single arco-select-size-default"
@@ -2098,6 +2097,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
   style="max-width:650px"
 >
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
   >
     <div
@@ -2388,7 +2388,6 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-cascader-popup-1"
                 aria-disabled="true"
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -2417,20 +2416,19 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-cascader-suffix"
                   >
                     <div
-                      class="arco-cascader-expand-icon"
+                      class="arco-cascader-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -2551,7 +2549,6 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-5"
                 aria-disabled="true"
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -2646,7 +2643,6 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-6"
                 aria-disabled="true"
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -2669,10 +2665,10 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       >
                         <div
                           class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                          title="b"
                         >
                           <span
-                            class="arco-input-tag-tag-content"
-                            title="b"
+                            class="arco-tag-content"
                           >
                             b
                           </span>
@@ -2695,20 +2691,19 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -3532,6 +3527,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
 
 exports[`renders Form/demo/form-context.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -3860,7 +3856,6 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                 >
                   <div
                     aria-autocomplete="list"
-                    aria-controls="arco-select-popup-7"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     class="arco-select arco-select-single arco-select-size-default"
@@ -4023,7 +4018,11 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
           id="searchForm-email_input"
         >
-          email: null
+          <span
+            class="arco-tag-content"
+          >
+            email: null
+          </span>
         </div>
       </div>
       <div
@@ -4598,6 +4597,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
               <li
                 aria-label="上一页"
                 class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+                tabindex="-1"
               >
                 <svg
                   aria-hidden="true"
@@ -4617,12 +4617,14 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                 aria-current="true"
                 aria-label="第 1 页"
                 class="arco-pagination-item arco-pagination-item-active"
+                tabindex="0"
               >
                 1
               </li>
               <li
                 aria-label="下一页"
                 class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+                tabindex="-1"
               >
                 <svg
                   aria-hidden="true"
@@ -4649,6 +4651,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
 
 exports[`renders Form/demo/layout.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="max-width:600px"
 >
@@ -4898,6 +4901,7 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
 exports[`renders Form/demo/list.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="width:600px"
   >
@@ -5142,6 +5146,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
 exports[`renders Form/demo/list-nest.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="width:600px"
   >
@@ -5256,6 +5261,7 @@ exports[`renders Form/demo/list-nest.md correctly 1`] = `
 
 exports[`renders Form/demo/methods.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -5468,6 +5474,7 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
 exports[`renders Form/demo/nest.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="max-width:650px"
   >
@@ -5713,6 +5720,7 @@ exports[`renders Form/demo/nest.md correctly 1`] = `
 exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="max-width:500px"
   >
@@ -5868,7 +5876,6 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
               >
                 <div
                   aria-autocomplete="list"
-                  aria-controls="arco-select-popup-8"
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   class="arco-select arco-select-single arco-select-size-default"
@@ -5977,7 +5984,6 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-9"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
@@ -6095,6 +6101,7 @@ exports[`renders Form/demo/normalize.md correctly 1`] = `
   style="width:600px"
 >
   <div
+    autocomplete="off"
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
   >
     <div
@@ -6300,6 +6307,7 @@ exports[`renders Form/demo/normalize.md correctly 1`] = `
 
 exports[`renders Form/demo/register.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:320px"
 >
@@ -6399,6 +6407,7 @@ exports[`renders Form/demo/scrollToField.md correctly 1`] = `
     </span>
   </button>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="max-width:500px;margin-top:20px;padding-right:16px;height:300px;overflow:auto"
   >
@@ -6768,6 +6777,7 @@ exports[`renders Form/demo/scrollToField.md correctly 1`] = `
 
 exports[`renders Form/demo/setFields.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -6982,6 +6992,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
   style="max-width:650px"
 >
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
   >
     <div
@@ -7213,7 +7224,6 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-cascader-popup-2"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -7240,20 +7250,19 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     class="arco-cascader-suffix"
                   >
                     <div
-                      class="arco-cascader-expand-icon"
+                      class="arco-cascader-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -7339,7 +7348,6 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-11"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
@@ -7415,7 +7423,6 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-12"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -7454,20 +7461,19 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -7503,7 +7509,6 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-tree-select-popup-1"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -7630,6 +7635,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
 exports[`renders Form/demo/update.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
     style="max-width:650px"
   >
@@ -7742,6 +7748,7 @@ exports[`renders Form/demo/update.md correctly 1`] = `
 exports[`renders Form/demo/useWatch.md correctly 1`] = `
 <div>
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
   >
     <div
@@ -7913,6 +7920,7 @@ exports[`renders Form/demo/useWatch.md correctly 1`] = `
 
 exports[`renders Form/demo/validate.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -8125,6 +8133,7 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
 
 exports[`renders Form/demo/validate-messages.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >
@@ -8331,6 +8340,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
   style="max-width:650px"
 >
   <form
+    autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
   >
     <div>
@@ -8855,7 +8865,6 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-cascader-popup-3"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -8950,7 +8959,6 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-14"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -8989,20 +8997,19 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -9160,7 +9167,6 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-tree-select-popup-2"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -9244,6 +9250,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
 
 exports[`renders Form/demo/validateLevel.md correctly 1`] = `
 <form
+  autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
   style="width:600px"
 >

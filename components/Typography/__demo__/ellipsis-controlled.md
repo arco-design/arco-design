@@ -36,7 +36,7 @@ const App = () => {
   const [text, setText] = useState(defaultText);
   const { ellipsis, ellipsisStr, expandable, suffix } = config;
   return (
-    <>
+    <div>
       <Space align="start" size={120}>
         <Form
           onValuesChange={(_, values) => setConfig(values)}
@@ -96,6 +96,7 @@ const App = () => {
                   expandable,
                   suffix,
                   ellipsisStr,
+                  wrapper: "div"
                 }
               : undefined
           }
@@ -103,7 +104,7 @@ const App = () => {
           {text}
         </Typography.Paragraph>
       </div>
-    </>
+    </div>
   );
 };
 

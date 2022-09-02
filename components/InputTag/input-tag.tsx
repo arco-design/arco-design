@@ -231,14 +231,10 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         })}
         closable={closable}
         closeIcon={icon && icon.removeIcon}
+        title={typeof label === 'string' ? label : undefined}
         onClose={onClose}
       >
-        <span
-          title={typeof label === 'string' ? label : undefined}
-          className={`${prefixCls}-tag-content`}
-        >
-          {typeof label === 'string' ? label.replace(/\s/g, '\u00A0') : label}
-        </span>
+        {typeof label === 'string' ? label.replace(/\s/g, '\u00A0') : label}
       </Tag>
     );
   };
@@ -264,6 +260,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     ) : null;
 
   const hasSuffix = !!(clearIcon || suffix);
+  const disableInputComponent = disabled || disableInput;
 
   // CSSTransition needs to be a direct child of TransitionGroup, otherwise the animation will NOT work
   // https://github.com/arco-design/arco-design/issues/622
@@ -293,7 +290,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         <InputComponent
           autoComplete="off"
           size={size}
-          disabled={disabled || disableInput}
+          disabled={disableInputComponent}
           readOnly={readOnly}
           ref={inputRef}
           autoFocus={autoFocus}
@@ -308,7 +305,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             await tryAddInputValueToTag();
           }}
           onFocus={(e) => {
-            if (!disabled && !readOnly) {
+            if (!disableInputComponent && !readOnly) {
               setFocused(true);
               onFocus && onFocus(e);
             }

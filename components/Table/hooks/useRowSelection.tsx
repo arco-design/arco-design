@@ -104,7 +104,8 @@ export default function useRowSelection<T>(
   );
 
   function getRowsFromKeys(keys: Key[], plus?: boolean): T[] {
-    const all: T[] = plus ? flattenData.concat(selectedRows) : flattenData;
+    // selectedRows is placed before flattenData: https://github.com/arco-design/arco-design/issues/1294
+    const all: T[] = plus ? selectedRows.concat(flattenData) : flattenData;
     const keyMap: Map<Key, T> = new Map(all.map((v) => [getRowKey(v), v]));
     return keys.map((r) => keyMap.get(r)).filter((a) => a);
   }

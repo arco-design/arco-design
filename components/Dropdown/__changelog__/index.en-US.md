@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 💅 Style
+
+- Optimize the style of `<a/>` embedded in `Menu` in the dropdown menu of the `Dropdown` component.([#1362](https://github.com/arco-design/arco-design/pull/1362))
+
 ## 2.37.1
 
 2022-07-14

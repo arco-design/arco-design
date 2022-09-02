@@ -13,7 +13,6 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
     </span>
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-0"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -36,10 +35,10 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-select-tag"
+                title="click"
               >
                 <span
-                  class="arco-input-tag-tag-content"
-                  title="click"
+                  class="arco-tag-content"
                 >
                   click
                 </span>
@@ -47,6 +46,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
                   aria-label="Close"
                   class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
                   role="button"
+                  tabindex="0"
                 >
                   <svg
                     aria-hidden="true"
@@ -80,20 +80,19 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>

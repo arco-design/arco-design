@@ -561,7 +561,11 @@ exports[`renders ResizeBox/demo/split.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
         >
-          Fist
+          <span
+            class="arco-tag-content"
+          >
+            Fist
+          </span>
         </div>
       </div>
       <div
@@ -606,7 +610,11 @@ exports[`renders ResizeBox/demo/split.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default"
         >
-          Second
+          <span
+            class="arco-tag-content"
+          >
+            Second
+          </span>
         </div>
       </div>
     </div>

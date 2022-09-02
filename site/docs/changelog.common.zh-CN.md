@@ -1,3 +1,28 @@
+## 2.39.3
+
+2022-09-02
+
+### 💎 功能优化
+
+- 优化 `Modal`, `Notification`, `Message` 组件在 React 18 下通过 `createRoot` 渲染节点。([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
+## 2.39.2
+
+2022-08-26
+
+### 🐛 问题修复
+
+- 修复由于自动生成的 DOM `id` 导致的服务端渲染报错的问题。([#1334](https://github.com/arco-design/arco-design/pull/1334))
+- 修复按需加载引入 `Cascader` / `TreeSelect` 样式时，`Select` 组件被重复引入的问题([#1327](https://github.com/arco-design/arco-design/pull/1327))
+
+## 2.39.1
+
+2022-08-19
+
+### 💎 功能优化
+
+- 组件库对外暴露 `version` 字段。([#1303](https://github.com/arco-design/arco-design/pull/1303))
+
 ## 2.35.0
 
 2022-06-10

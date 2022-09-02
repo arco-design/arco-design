@@ -15,9 +15,8 @@ import IconMenuUnfold from '../../icon/react-icon/IconMenuUnfold';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import MenuContext from './context';
 import useMergeProps from '../_util/hooks/useMergeProps';
-
-// Generate DOM id for instance
-let globalMenuIndex = 0;
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
+import useId from '../_util/hooks/useId';
 
 const DEFAULT_THEME: MenuProps['theme'] = 'light';
 
@@ -82,21 +81,15 @@ function Menu(baseProps: MenuProps, ref) {
   const refSubMenuKeys = useRef<string[]>([]);
   const refPrevSubMenuKeys = useRef<string[]>([]);
   const forceUpdate = useForceUpdate();
+  const getKeyboardEvents = useKeyboardEvent();
 
   const menuInfoMap = useMemo(() => {
     return generateInfoMap(children);
   }, [children]);
 
-  // Unique ID of this select instance
-  const instanceId = useMemo<string>(() => {
-    if (rest.id) {
-      return rest.id;
-    }
-
-    const id = `${prefixCls}-${globalMenuIndex}`;
-    globalMenuIndex++;
-    return id;
-  }, [rest.id]);
+  // Unique ID of this instance
+  const _instanceId = useId(`${prefixCls}-`);
+  const instanceId = rest.id || _instanceId;
 
   // autoOpen 时，初次渲染展开所有的子菜单
   useEffect(() => {
@@ -120,6 +113,11 @@ function Menu(baseProps: MenuProps, ref) {
     const collapseIcon = collapse
       ? (icons && icons.collapseActive) || <IconMenuUnfold />
       : (icons && icons.collapseDefault) || <IconMenuFold />;
+    const collapseButtonClickHandler = () => {
+      const newCollapse = !collapse;
+      setCollapse(newCollapse);
+      onCollapseChange && onCollapseChange(newCollapse);
+    };
 
     return (
       <>
@@ -138,11 +136,8 @@ function Menu(baseProps: MenuProps, ref) {
             aria-controls={instanceId}
             aria-expanded={!collapse}
             className={`${prefixCls}-collapse-button`}
-            onClick={() => {
-              const newCollapse = !collapse;
-              setCollapse(newCollapse);
-              onCollapseChange && onCollapseChange(newCollapse);
-            }}
+            onClick={collapseButtonClickHandler}
+            {...getKeyboardEvents({ onPressEnter: collapseButtonClickHandler })}
           >
             {collapseIcon}
           </div>

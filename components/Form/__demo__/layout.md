@@ -35,6 +35,7 @@ function App() {
               maxWidth: 600,
             }
       }
+      autoComplete="off"
       layout={layout}
     >
       <FormItem label="Layout">

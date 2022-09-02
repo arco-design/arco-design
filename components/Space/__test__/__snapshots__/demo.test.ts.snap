@@ -137,7 +137,11 @@ exports[`renders Space/demo/basic.md correctly 1`] = `
     <div
       class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
     >
-      Tag
+      <span
+        class="arco-tag-content"
+      >
+        Tag
+      </span>
     </div>
   </div>
   <div

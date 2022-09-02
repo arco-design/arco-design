@@ -44,6 +44,7 @@ Show and preview pictures.
 |visible|Whether is visible|boolean |`-`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |src|Image path, The default in Image is the src of Image|string  **(Required)**|`-`|-|
+|imgAttributes|Image props, passthrough to the `img` tag in the preview modal|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|2.39.0|
 |actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|-|
 |actionsLayout|The layout of the control bar|string[] |`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |className|Additional css class|string \| string[] |`-`|-|
@@ -67,6 +68,7 @@ Start from `v2.14.0`
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |current|The index of current image (controlled prop)|number |`-`|-|
 |defaultCurrent|The default index of first image|number |`-`|-|
+|imgAttributes|Image props, passthrough to the `img` tag in the preview modal|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|2.39.0|
 |actions|Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|-|
 |actionsLayout|The layout of the control bar|string[] |`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |className|Additional css class|string \| string[] |`-`|-|

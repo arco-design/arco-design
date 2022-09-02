@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `position` 设置位置。
+通过 `tabPosition` 设置位置。
 
 ## en-US
 
-Set the position of tabs by `position`.
+Set the position of tabs by `tabPosition`.
 
 ```js
 import { useState } from 'react';

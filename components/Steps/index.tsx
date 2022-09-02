@@ -81,7 +81,7 @@ function Steps(baseProps: StepsProps, ref) {
               customDot,
               labelPlacement: innerLabelPlacement,
               direction: innerDirection,
-              onClick: onChange,
+              onChange,
               lineless,
               ...child.props,
             };

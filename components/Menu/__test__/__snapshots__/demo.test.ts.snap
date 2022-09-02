@@ -76,7 +76,6 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-0-submenu-inline-0"
           aria-expanded="true"
           class="arco-menu-inline-header arco-menu-selected"
           tabindex="0"
@@ -130,7 +129,6 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-0-submenu-inline-0"
           style="height:auto"
         >
           <div
@@ -207,7 +205,6 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-0-submenu-inline-1"
           aria-expanded="false"
           class="arco-menu-inline-header"
           tabindex="0"
@@ -249,7 +246,6 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-0-submenu-inline-1"
           style="height:0;visibility:hidden"
         >
           <div
@@ -309,7 +305,6 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-0-submenu-inline-2"
           aria-expanded="false"
           class="arco-menu-inline-header"
           tabindex="0"
@@ -350,7 +345,6 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-0-submenu-inline-2"
           style="height:0;visibility:hidden"
         >
           <div
@@ -409,7 +403,6 @@ exports[`renders Menu/demo/dark-horizontal.md correctly 1`] = `
         class="arco-menu-overflow-wrap"
       >
         <div
-          aria-controls="arco-menu-1-submenu-pop-0"
           aria-expanded="false"
           aria-haspopup="true"
           class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
@@ -498,7 +491,6 @@ exports[`renders Menu/demo/horizontal.md correctly 1`] = `
         class="arco-menu-overflow-wrap"
       >
         <div
-          aria-controls="arco-menu-2-submenu-pop-1"
           aria-expanded="false"
           aria-haspopup="true"
           class="arco-menu-pop arco-menu-pop-header arco-menu-overflow-sub-menu-mirror"
@@ -579,7 +571,6 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
 >
   <div
     class="arco-menu arco-menu-light arco-menu-vertical arco-menu-pop"
-    id="arco-menu-3"
     role="menu"
     style="width:200px"
   >
@@ -620,7 +611,6 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
         Navigation 1
       </div>
       <div
-        aria-controls="arco-menu-3-submenu-pop-2"
         aria-expanded="false"
         aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header"
@@ -664,7 +654,6 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
         </span>
       </div>
       <div
-        aria-controls="arco-menu-3-submenu-pop-3"
         aria-expanded="false"
         aria-haspopup="true"
         class="arco-menu-pop arco-menu-pop-header"
@@ -744,7 +733,6 @@ exports[`renders Menu/demo/pop.md correctly 1`] = `
       </div>
     </div>
     <div
-      aria-controls="arco-menu-3"
       aria-expanded="true"
       class="arco-menu-collapse-button"
       role="button"
@@ -803,7 +791,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-menu arco-menu-light arco-menu-vertical"
-    id="arco-menu-4"
     role="menu"
     style="width:240px;height:calc(100% - 28px)"
   >
@@ -814,7 +801,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-4-submenu-inline-3"
           aria-expanded="true"
           class="arco-menu-inline-header arco-menu-selected"
           tabindex="0"
@@ -868,7 +854,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-4-submenu-inline-3"
           style="height:auto"
         >
           <div
@@ -928,7 +913,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-4-submenu-inline-4"
           aria-expanded="false"
           class="arco-menu-inline-header"
           tabindex="0"
@@ -970,7 +954,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-4-submenu-inline-4"
           style="height:0;visibility:hidden"
         >
           <div
@@ -1030,7 +1013,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-4-submenu-inline-5"
           aria-expanded="false"
           class="arco-menu-inline-header"
           tabindex="0"
@@ -1071,7 +1053,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-4-submenu-inline-5"
           style="height:0;visibility:hidden"
         >
           <div
@@ -1129,7 +1110,6 @@ exports[`renders Menu/demo/size.md correctly 1`] = `
       </div>
     </div>
     <div
-      aria-controls="arco-menu-4"
       aria-expanded="true"
       class="arco-menu-collapse-button"
       role="button"
@@ -1160,7 +1140,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
 >
   <div
     class="arco-menu arco-menu-light arco-menu-vertical"
-    id="arco-menu-5"
     role="menu"
     style="width:200px;height:100%"
   >
@@ -1171,7 +1150,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-5-submenu-inline-6"
           aria-expanded="true"
           class="arco-menu-inline-header arco-menu-selected"
           tabindex="0"
@@ -1225,7 +1203,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-5-submenu-inline-6"
           style="height:auto"
         >
           <div
@@ -1285,7 +1262,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-5-submenu-inline-7"
           aria-expanded="false"
           class="arco-menu-inline-header"
           tabindex="0"
@@ -1327,7 +1303,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-5-submenu-inline-7"
           style="height:0;visibility:hidden"
         >
           <div
@@ -1387,7 +1362,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         class="arco-menu-inline"
       >
         <div
-          aria-controls="arco-menu-5-submenu-inline-8"
           aria-expanded="false"
           class="arco-menu-inline-header"
           tabindex="0"
@@ -1428,7 +1402,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
         </div>
         <div
           class="arco-menu-inline-content"
-          id="arco-menu-5-submenu-inline-8"
           style="height:0;visibility:hidden"
         >
           <div
@@ -1535,7 +1508,6 @@ exports[`renders Menu/demo/sub-menu.md correctly 1`] = `
       </div>
     </div>
     <div
-      aria-controls="arco-menu-5"
       aria-expanded="true"
       class="arco-menu-collapse-button"
       role="button"

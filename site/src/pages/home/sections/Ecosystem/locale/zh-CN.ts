@@ -1,0 +1,23 @@
+export default {
+  'ecosystem.title': '灵活丰富的生态平台',
+  'ecosystem.subTitle': '工具平台',
+  'ecosystem.item.BrandStore.desc': 'Arco 生态下汇集字节跳动旗下众多品牌资源的平台',
+  'ecosystem.item.fontMall.desc': '以字节拥有的版权字体为依托，助力内部字体的使用体验',
+  'ecosystem.item.DesignLab.alias': '风格配置平台',
+  'ecosystem.item.DesignLab.slogan': '千人千面的风格配置平台',
+  'ecosystem.item.DesignLab.desc':
+    '轻松维护跨平台品牌统一性，提高业务伙伴的设计与开发的接入效率，一键生成设计系统',
+  'ecosystem.item.Palette.alias': '色彩配置工具',
+  'ecosystem.item.Palette.slogan': '色彩配置从未如此简单',
+  'ecosystem.item.Palette.desc': '轻松配置多格式色彩文件',
+  'ecosystem.item.IconBox.alias': '图标平台',
+  'ecosystem.item.IconBox.slogan': '一站式图标管理平台',
+  'ecosystem.item.IconBox.desc': '一键调用，无缝衔接设计与实现',
+  'ecosystem.item.MaterialMarket.alias': '物料市场',
+  'ecosystem.item.MaterialMarket.slogan': '创作与管理定制化组件、区块与页面',
+  'ecosystem.item.MaterialMarket.desc': '创作与管理定制化组件、区块与页面',
+  'ecosystem.item.ArcoPro.alias': '中后台最佳实践',
+  'ecosystem.item.ArcoPro.slogan': '开箱即用的中后台前端解决方案',
+  'ecosystem.item.ArcoPro.desc': '设计/前端工程化，快速构建现代网页',
+  'ecosystem.item.More.alias': '更多生态',
+};

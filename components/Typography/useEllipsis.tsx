@@ -4,6 +4,7 @@ import throttleByRaf from '../_util/throttleByRaf';
 import { isNumber, isString } from '../_util/is';
 import { EllipsisConfig } from './interface';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
+import useCssEllipsis from './useCssEllipsis';
 
 interface IEllipsis extends EllipsisConfig {
   width: number;
@@ -47,7 +48,7 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
 
   const nodeList = useMemo(() => React.Children.toArray(children), [children]);
   const closedLoc = useRef(0);
-
+  const { ellipsisStyle } = useCssEllipsis({ rows, cssEllipsis: true });
   useUpdate(() => {
     onEllipsis && onEllipsis(isEllipsis);
   }, [isEllipsis]);
@@ -197,7 +198,7 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
   let ellipsisNode;
   if (status === MEASURE_STATUS.INIT || status === MEASURE_STATUS.BEFORE_MEASURE) {
     ellipsisNode = (
-      <>
+      <div>
         <div ref={singleRowNode} style={singleRowNodeStyle}>
           {status === MEASURE_STATUS.INIT
             ? MEASURE_LINE_HEIGHT_TEXT
@@ -206,17 +207,21 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
         <div ref={mirrorNode} style={{ width, ...mirrorNodeStyle }}>
           {renderMeasureContent(children, isEllipsis)}
         </div>
-      </>
+      </div>
     );
+    ellipsisNode = ellipsisNode.props.children;
   } else if (status === MEASURE_STATUS.MEASURING) {
+    // 计算过程中的展示，不抖动
+    const showStyle = { height: lineHeight * rows, width, ...ellipsisStyle };
     ellipsisNode = (
-      <>
+      <div>
         <div ref={mirrorNode} style={{ width, ...mirrorNodeStyle }}>
           {renderMeasureContent(getSlicedNode(midLoc), isEllipsis)}
         </div>
-        {getSlicedNode(closedLoc.current)}
-      </>
+        <div style={showStyle}>{getSlicedNode(closedLoc.current)}</div>
+      </div>
     );
+    ellipsisNode = ellipsisNode.props.children;
   } else if (status === MEASURE_STATUS.MEASURE_END) {
     ellipsisNode = renderMeasureContent(getSlicedNode(midLoc), isEllipsis);
   } else if (status === MEASURE_STATUS.NO_NEED_ELLIPSIS) {

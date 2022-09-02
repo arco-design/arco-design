@@ -125,6 +125,7 @@ function App() {
     <div style={{ maxWidth: 650 }}>
       <Form
         ref={formRef}
+        autoComplete="off"
         {...formItemLayout}
         size={size}
         initialValues={{

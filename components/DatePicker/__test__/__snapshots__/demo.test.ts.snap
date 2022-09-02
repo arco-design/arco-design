@@ -4076,7 +4076,6 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -4288,7 +4287,11 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
               >
-                DatePicker
+                <span
+                  class="arco-tag-content"
+                >
+                  DatePicker
+                </span>
               </div>
             </div>
             <div
@@ -4363,7 +4366,11 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
               >
-                RangePicker
+                <span
+                  class="arco-tag-content"
+                >
+                  RangePicker
+                </span>
               </div>
             </div>
             <div
@@ -4467,7 +4474,6 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -4679,7 +4685,11 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
               >
-                DatePicker
+                <span
+                  class="arco-tag-content"
+                >
+                  DatePicker
+                </span>
               </div>
             </div>
             <div
@@ -4754,7 +4764,11 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
               >
-                RangePicker
+                <span
+                  class="arco-tag-content"
+                >
+                  RangePicker
+                </span>
               </div>
             </div>
             <div

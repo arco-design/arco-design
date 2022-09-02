@@ -7,6 +7,11 @@ export const ValueSeparator = '__arco_cascader__';
 export const SHOW_PARENT = 'parent';
 export const SHOW_CHILD = 'child';
 
+export const PANEL_MODE = {
+  cascader: 'cascader',
+  select: 'select',
+};
+
 export function isEmptyValue(value) {
   return !value || (isArray(value) && value.length === 0);
 }
@@ -31,7 +36,8 @@ export function getStore(props, value) {
 export const transformValuesToSet = (values: string[][]) => {
   const _values = values || [];
   const valuesSet = _values.reduce((set, next) => {
-    set.add(next.join(ValueSeparator));
+    // 'next' could be a string.
+    set.add([].concat(next).join(ValueSeparator));
     return set;
   }, new Set());
 
@@ -80,7 +86,24 @@ export const formatValue = (value, isMultiple, store?): string[][] | undefined =
   return _value;
 };
 
-export const getMultipleCheckValue = (propsValue, store: Store<any>, option, checked) => {
+// change check status to false
+const deny2Checked = (option) => {
+  const deny = (options) => {
+    return !Array.isArray(options)
+      ? false
+      : options.every((item) => {
+          if (item._checked || item.disabled) {
+            return true;
+          }
+          return deny(item.children);
+        });
+  };
+  return deny(option?.children);
+};
+
+export const getMultipleCheckValue = (propsValue, store: Store<any>, option, _checked) => {
+  const checked = _checked && deny2Checked(option) ? false : _checked;
+
   const beforeValueSet = store.getCheckedNodes().reduce((set, node) => {
     set.add(node.pathValue.join(ValueSeparator));
     return set;

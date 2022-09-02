@@ -210,11 +210,13 @@
       .@{menu-prefix-cls}-collapse-button {
         background-color: ~'@{menu-@{theme}-color-bg-button}';
         color: ~'@{menu-@{theme}-color-button}';
-        right: initial;
-        left: 12px;
 
         &:hover {
           background-color: ~'@{menu-@{theme}-color-bg-button_hover}';
+        }
+
+        &:focus-visible {
+          box-shadow: 0 0 0 0.25em @color-primary-3;
         }
       }
     }
@@ -232,6 +234,17 @@
     color: inherit;
     cursor: inherit;
     text-decoration: none;
+  }
+
+  &-item {
+    a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
   }
 
   &-inner {
@@ -394,12 +407,22 @@
   // 弹出的 ToolTip 中 a 标签的样式
   &-item-tooltip a {
     color: inherit;
-    cursor: text;
+    cursor: pointer;
+    text-decoration: none;
 
     &:hover,
     &:focus,
     &:active {
       color: inherit;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 
@@ -519,7 +542,7 @@
     left: initial;
   }
 
-  &.@{menu-prefix-cls}-collapse {
+  .@{menu-prefix-cls}-collapse {
     @rtl-style-item-text: {
       .@{prefix}-icon {
         margin-left: 100vw;

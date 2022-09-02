@@ -192,6 +192,7 @@ Array [
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+        tabindex="-1"
       >
         <svg
           aria-hidden="true"
@@ -211,30 +212,35 @@ Array [
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
+        tabindex="0"
       >
         1
       </li>
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         2
       </li>
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         3
       </li>
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         4
       </li>
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         5
       </li>
@@ -264,12 +270,14 @@ Array [
       <li
         aria-label="第 20 页"
         class="arco-pagination-item"
+        tabindex="0"
       >
         20
       </li>
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -292,7 +300,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -880,7 +887,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          ArcoDesign
+          <span
+            class="arco-tag-content"
+          >
+            ArcoDesign
+          </span>
         </div>
       </div>
       <div
@@ -890,7 +901,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          Design System
+          <span
+            class="arco-tag-content"
+          >
+            Design System
+          </span>
         </div>
       </div>
       <div
@@ -900,7 +915,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          Component
+          <span
+            class="arco-tag-content"
+          >
+            Component
+          </span>
         </div>
       </div>
       <div
@@ -909,7 +928,11 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-large"
         >
-          Design Lab
+          <span
+            class="arco-tag-content"
+          >
+            Design Lab
+          </span>
         </div>
       </div>
     </div>
@@ -1038,7 +1061,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-cascader-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -1093,7 +1115,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-1"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -1147,7 +1168,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-tree-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -1401,10 +1421,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-0-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-0-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -1415,10 +1433,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-0-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-0-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -1429,10 +1445,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-0-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-0-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -1515,11 +1529,16 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <div
             class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-default arco-tag-rtl"
           >
-            red
+            <span
+              class="arco-tag-content"
+            >
+              red
+            </span>
             <span
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1544,11 +1563,16 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <div
             class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default arco-tag-rtl"
           >
-            arcoblue
+            <span
+              class="arco-tag-content"
+            >
+              arcoblue
+            </span>
             <span
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1572,11 +1596,16 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <div
             class="arco-tag arco-tag-green arco-tag-checked arco-tag-size-default arco-tag-rtl"
           >
-            green
+            <span
+              class="arco-tag-content"
+            >
+              green
+            </span>
             <span
               aria-label="Close"
               class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
               role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1707,6 +1736,7 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <li
             aria-label="上一页"
             class="arco-pagination-item arco-pagination-item-prev"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1725,24 +1755,28 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <li
             aria-label="第 1 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             1
           </li>
           <li
             aria-label="第 2 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             2
           </li>
           <li
             aria-label="第 3 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             3
           </li>
           <li
             aria-label="第 4 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             4
           </li>
@@ -1750,18 +1784,21 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
             aria-current="true"
             aria-label="第 5 页"
             class="arco-pagination-item arco-pagination-item-active"
+            tabindex="0"
           >
             5
           </li>
           <li
             aria-label="第 6 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             6
           </li>
           <li
             aria-label="第 7 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             7
           </li>
@@ -1791,12 +1828,14 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
           <li
             aria-label="第 20 页"
             class="arco-pagination-item"
+            tabindex="0"
           >
             20
           </li>
           <li
             aria-label="下一页"
             class="arco-pagination-item arco-pagination-item-next"
+            tabindex="0"
           >
             <svg
               aria-hidden="true"
@@ -1819,7 +1858,6 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-2"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default arco-select-rtl"

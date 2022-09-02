@@ -7,7 +7,6 @@ import React, {
   useRef,
   useContext,
   useCallback,
-  useMemo,
 } from 'react';
 import { isArray, isFunction, isObject, isString } from '../_util/is';
 import Trigger from '../Trigger';
@@ -32,11 +31,10 @@ import {
   formatValue,
   removeValueFromSet,
   SHOW_CHILD,
+  PANEL_MODE,
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
-
-// Generate DOM id for instance
-let globalCascaderIndex = 0;
+import useId from '../_util/hooks/useId';
 
 export const DefaultFieldNames = {
   label: 'label',
@@ -102,12 +100,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>(store?.getCheckedNodes() || []);
 
-  // Unique ID of this select instance
-  const instancePopupID = useMemo<string>(() => {
-    const id = `${prefixCls}-popup-${globalCascaderIndex}`;
-    globalCascaderIndex++;
-    return id;
-  }, []);
+  // Unique ID of this instance
+  const instancePopupID = useId(`${prefixCls}-popup-`);
 
   // 尝试更新 inputValue，触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
@@ -299,7 +293,15 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   };
 
   const renderPopup = () => {
-    const showSearchPanel = !isFunction(props.onSearch) && !!inputValue;
+    // 远程搜索时是否以搜索面板展示搜索结果
+    const panelMode = isObject(props.showSearch) ? props.showSearch.panelMode : undefined;
+
+    const showSearchPanel =
+      panelMode === PANEL_MODE.select
+        ? true
+        : panelMode === PANEL_MODE.cascader
+        ? false
+        : !isFunction(props.onSearch) && !!inputValue;
     const width = selectRef.current && selectRef.current.getWidth();
     const dropdownRender = isFunction(props.dropdownRender) ? props.dropdownRender : (menu) => menu;
 
@@ -327,6 +329,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 onEsc={() => {
                   handleVisibleChange(false);
                 }}
+                renderOption={
+                  (isObject(props.showSearch) && props.showSearch.renderOption) || undefined
+                }
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
                 defaultActiveFirstOption={props.defaultActiveFirstOption}

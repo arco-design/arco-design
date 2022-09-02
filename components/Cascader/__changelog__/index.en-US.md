@@ -1,3 +1,41 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed the jitter of the drop-down list when the `Cascader` component set `expandTrigger` to `hover`.([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- Fixed the bug that when the `Cascader` component has disabled child nodes, when the parent node in the half-selected state is selected, the selected state cannot be switched.([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the selected node was not scrolled to the viewport correctly when the `Cascader` component opened the virtual list.([#1329](https://github.com/arco-design/arco-design/pull/1329))
+
+## 2.39.1
+
+2022-08-19
+
+### 💎 Enhancement
+
+- Optimize cascader edge case handling([#1304](https://github.com/arco-design/arco-design/pull/1304))
+
+## 2.39.0
+
+2022-08-12
+
+### 🆕 Feature
+
+- The `Cascader` component supports controlling the display of drop-down panels through the `showSearch.panelMode` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
+
+### 🐛 BugFix
+
+- Fixed the issue that when virtual scrolling is enabled, when options with the same value exist in the search panel of the `Cascader` component, the options are rendered incorrectly.([#1266](https://github.com/arco-design/arco-design/pull/1266))
+
 ## 2.37.0
 
 2022-07-08

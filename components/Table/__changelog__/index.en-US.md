@@ -1,3 +1,19 @@
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fix the problem that after the `Table` component updates `data`, the `selectedRows` is not updated in time when the selectedRows is selected next time.([#1341](https://github.com/arco-design/arco-design/pull/1341))
+
+## 2.39.0
+
+2022-08-12
+
+### 🐛 BugFix
+
+- Fixed `Table` component not rendering correctly when data format is `[['1']], ['2']]`.([#1270](https://github.com/arco-design/arco-design/pull/1270))
+
 ## 2.38.0
 
 2022-07-29

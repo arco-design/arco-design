@@ -26,6 +26,7 @@ function App() {
   return (
     <Form
       form={form}
+      autoComplete="off"
       style={{ width: 600 }}
       validateMessages={{
         required: (_, { label }) => `必须填写 ${label}`,

@@ -43,14 +43,18 @@ function useModal(): [modalFunctionsType, ReactElement] {
     }
 
     function close() {
-      modalRef.current.close();
+      modalRef.current?.close();
+    }
+
+    function update(config) {
+      modalRef.current?.update(config);
     }
 
     destroyList.push(close);
 
     return {
       close,
-      update: modalRef.current?.update,
+      update,
     };
   }
 

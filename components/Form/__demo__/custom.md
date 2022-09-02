@@ -61,7 +61,7 @@ function App() {
   const [values, setValues] = useState({});
   return (
     <div>
-      <Form ref={formRef} style={{ maxWidth: 650 }} onValuesChange={(_, v) => setValues(v)}>
+      <Form ref={formRef} style={{ maxWidth: 650 }} autoComplete="off" onValuesChange={(_, v) => setValues(v)}>
         <Form.Item
           rules={[
             {

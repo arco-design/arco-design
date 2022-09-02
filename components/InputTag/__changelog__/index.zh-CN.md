@@ -1,3 +1,19 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 设置 `disabled` 时 `placeholder` 未按预期展示的 bug。([#1357](https://github.com/arco-design/arco-design/pull/1357))
+
+## 2.39.2
+
+2022-08-26
+
+### 💅 样式更新
+
+- `InputTag` 组件 `placeholder` 过长时末尾使用 `...` 展示。([#1339](https://github.com/arco-design/arco-design/pull/1339))
+
 ## 2.37.0
 
 2022-07-08

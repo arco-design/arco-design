@@ -1,3 +1,19 @@
+## 2.39.2
+
+2022-08-26
+
+### 💎 Enhancement
+
+- Make sure that the keyboard shortcuts are still available when the `Select` component uses `dropdownRender` to customize the dropdown box content and gets the page focus.([#1328](https://github.com/arco-design/arco-design/pull/1328))
+
+## 2.39.1
+
+2022-08-19
+
+### 💅 Style
+
+- Unify the style of the right arrow in `Select` multi-select and single-select modes.([#1302](https://github.com/arco-design/arco-design/pull/1302))
+
 ## 2.38.0
 
 2022-07-29
