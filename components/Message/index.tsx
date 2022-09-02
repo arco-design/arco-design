@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { render } from '../_util/react-dom';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
@@ -52,7 +52,7 @@ function addInstance(noticeProps: MessageProps) {
     const div = document.createElement('div');
     (container || document.body).appendChild(div);
 
-    ReactDOM.render(
+    render(
       <Message
         transitionClassNames={transitionClassNames}
         ref={(instance) => {
