@@ -21,6 +21,7 @@ function Step(props: StepProps, ref) {
     labelPlacement,
     disabled,
     onClick,
+    onChange,
     direction,
     id,
     lineless,
@@ -44,8 +45,13 @@ function Step(props: StepProps, ref) {
     return <div className={`${prefixCls}-icon`}>{content}</div>;
   }
 
-  function onClickStep() {
-    onClick && !disabled && current !== index && onClick(index, id);
+  function onClickStep(e) {
+    if (!disabled) {
+      // Step.onChange
+      onChange && current !== index && onChange(index, id);
+      // props.onClick
+      onClick && onClick(index, id, e);
+    }
   }
 
   let currentStatus;
