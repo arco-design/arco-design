@@ -125,7 +125,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
         </div>
         <div className={`${prefixCls}-btn`}>
           {focusLock ? (
-            <FocusLock disabled={!popupVisible} autoFocus={!!autoFocus}>
+            <FocusLock crossFrame={false} disabled={!popupVisible} autoFocus={!!autoFocus}>
               {element}
             </FocusLock>
           ) : (

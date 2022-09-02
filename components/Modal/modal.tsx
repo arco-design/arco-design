@@ -293,6 +293,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     >
       {innerFocusLock ? (
         <FocusLock
+          crossFrame={false}
           disabled={!visible}
           autoFocus={innerAutoFocus}
           lockProps={{
