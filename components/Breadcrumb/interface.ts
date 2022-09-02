@@ -56,4 +56,23 @@ export interface BreadCrumbItemProps extends CustomHTMLElement {
    * @en The dropdown props [DropdownProps](/react/components/dropdown)
    */
   dropdownProps?: DropdownProps;
+  /**
+   * @zh 超链接地址
+   * @en href
+   * @version 2.40.0
+   */
+  href?: string;
+  /**
+   * @zh 点击回调
+   * @en click callback
+   * @version 2.40.0
+   */
+  onClick?: (e: any) => void;
+  /**
+   * @zh 标签名，可以是 html 标签或是组件
+   * @en Configure the outermost label, which can be an html label or a component
+   * @version 2.40.0
+   * @defaultValue div
+   */
+  tagName?: string | React.FC<any> | React.ComponentClass<any>;
 }
