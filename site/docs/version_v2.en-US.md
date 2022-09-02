@@ -2,6 +2,31 @@
 changelog: true
 ---
 
+## 2.39.3
+
+2022-09-02
+
+### 💎 Enhancement
+
+- Optimized `Modal`, `Notification`, `Message` components to render nodes via `createRoot` in React 18.([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Typography` component would jitter in the folding calculation([#1366](https://github.com/arco-design/arco-design/pull/1366))
+- Fixed the jitter of the drop-down list when the `Cascader` component set `expandTrigger` to `hover`.([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- Fix the bug that the callback is not triggered occasionally after `Steps.Step` is passed to the `onClick` event([#1364](https://github.com/arco-design/arco-design/pull/1364))
+- Fixed a bug where the `Drawer` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- Fixed a bug where the `Modal` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- Fixed a bug where the `Popconfirm` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- Fixed `DatePicker` component error in `de-DE` language.([#1358](https://github.com/arco-design/arco-design/pull/1358))
+- Fixed the bug that `placeholder` was not displayed as expected when `InputTag` was set to `disabled`.([#1357](https://github.com/arco-design/arco-design/pull/1357))
+- Fixed the bug that when the `Cascader` component has disabled child nodes, when the parent node in the half-selected state is selected, the selected state cannot be switched.([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
+### 💅 Style
+
+- Optimize the style of inline `<a/>` in `Menu` component.([#1362](https://github.com/arco-design/arco-design/pull/1362))
+- Optimize the style of `<a/>` embedded in `Menu` in the dropdown menu of the `Dropdown` component.([#1362](https://github.com/arco-design/arco-design/pull/1362))
+
 ## 2.39.2
 
 2022-08-26
@@ -367,6 +392,10 @@ changelog: true
 
 2022-04-15
 
+### 🚨 Important attention
+
+- Fix the bug that `onChange` is not called when the form control wrapped by `Form.Item` is returned by the function type `children`.([#760](https://github.com/arco-design/arco-design/pull/760))(Note: When fixing this issue, the issue that child components will be rendered circularly in special scenarios was introduced, which has been fixed in `2.37.0`)
+
 ### 🆕 Feature
 
 - The `Form` component supports setting the validation message template through the `validateMessages` property([#773](https://github.com/arco-design/arco-design/pull/773))
@@ -383,7 +412,6 @@ changelog: true
 - Fix the `onSelect` event not triggered when the `TimePicker` input is correct.([#769](https://github.com/arco-design/arco-design/pull/769))
 - Fixed the bug where `utcOffset` and `timezone` of `DatePicker.RangePicker` component did not work.([#765](https://github.com/arco-design/arco-design/pull/765))
 - Fixed a bug where the selected option echoed the wrong value in the search panel when `checkedstrategy=parenet` in the `Cascader` component.([#763](https://github.com/arco-design/arco-design/pull/763))
-- Fix the bug that `onChange` is not called when the form control wrapped by `Form.Item` is returned by the function type `children`.([#760](https://github.com/arco-design/arco-design/pull/760))
 - Fixed the bug that `onMouseEnter` and `onMouseLeave` of `Select.Option` not works.([#729](https://github.com/arco-design/arco-design/pull/729))
 - Optimize 'Modal' closing all popover when closing with ESC([#629](https://github.com/arco-design/arco-design/pull/629))
 

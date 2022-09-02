@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 💎 Enhancement
+
+- Optimized `Modal`, `Notification`, `Message` components to render nodes via `createRoot` in React 18.([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
 ## 2.39.2
 
 2022-08-26

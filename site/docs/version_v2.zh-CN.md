@@ -2,6 +2,31 @@
 changelog: true
 ---
 
+## 2.39.3
+
+2022-09-02
+
+### 💎 功能优化
+
+- 优化 `Modal`, `Notification`, `Message` 组件在 React 18 下渲染节点出现控制台 warning 的问题。([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件在折叠计算中会出现抖动情况的 bug([#1366](https://github.com/arco-design/arco-design/pull/1366))
+- 修复 `Cascader` 组件设置 `expandTrigger` 为 `hover` 时下拉列表的抖动问题。([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- 修复 `Steps.Step` 传入 `onClick` 事件后偶现不触发回调的 bug([#1364](https://github.com/arco-design/arco-design/pull/1364))
+- 修复 `Drawer` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- 修复 `Modal` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- 修复 `Popconfirm` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- 修复 `DatePicker` 组件在 `de-DE` 语言下会报错的问题。([#1358](https://github.com/arco-design/arco-design/pull/1358))
+- 修复 `InputTag` 设置 `disabled` 时 `placeholder` 未按预期展示的 bug。([#1357](https://github.com/arco-design/arco-design/pull/1357))
+- 修复 `Cascader` 组件存在禁用子节点时，选中半选状态的父节点时无法切换选中状态的 bug。([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
+### 💅 样式更新
+
+- 优化 `Menu` 组件中内嵌 `<a/>` 的样式。([#1362](https://github.com/arco-design/arco-design/pull/1362))
+- 优化 `Dropdown` 组件下拉菜单中 `Menu` 内嵌 `<a/>` 的样式。([#1362](https://github.com/arco-design/arco-design/pull/1362))
+
 ## 2.39.2
 
 2022-08-26
@@ -367,6 +392,10 @@ changelog: true
 ## 2.32.0
 
 2022-04-15
+
+### 🚨 重点注意
+
+- 修复 `Form.Item` 包裹的表单控件是由函数类型的 `children` 返回时，`onChange` 未被调用的 bug。([#760](https://github.com/arco-design/arco-design/pull/760))（注意：在修复该问题时，引入了在特殊场景下子组件会被循环渲染的问题， `2.37.0` 版本已修复）
 
 ### 🆕 功能升级
 

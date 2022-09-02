@@ -1,3 +1,12 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed the jitter of the drop-down list when the `Cascader` component set `expandTrigger` to `hover`.([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- Fixed the bug that when the `Cascader` component has disabled child nodes, when the parent node in the half-selected state is selected, the selected state cannot be switched.([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
 ## 2.39.2
 
 2022-08-26

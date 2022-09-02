@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed `DatePicker` component error in `de-DE` language.([#1358](https://github.com/arco-design/arco-design/pull/1358))
+
 ## 2.39.2
 
 2022-08-26

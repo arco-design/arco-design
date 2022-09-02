@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 💎 功能优化
+
+- 优化 `Modal`, `Notification`, `Message` 组件在 React 18 下通过 `createRoot` 渲染节点。([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
 ## 2.39.2
 
 2022-08-26

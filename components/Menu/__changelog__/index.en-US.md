@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 💅 Style
+
+- Optimize the style of inline `<a/>` in `Menu` component.([#1362](https://github.com/arco-design/arco-design/pull/1362))
+
 ## 2.39.2
 
 2022-08-26
