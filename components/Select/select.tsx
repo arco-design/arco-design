@@ -91,6 +91,7 @@ function Select(baseProps: SelectProps, ref) {
     onVisibleChange,
     onInputValueChange,
     onPaste,
+    onKeyDown,
   } = props;
 
   // TODO 兼容逻辑，3.0 移除 tags 模式
@@ -601,7 +602,7 @@ function Select(baseProps: SelectProps, ref) {
   const selectViewEventHandlers = {
     onFocus,
     onBlur: (event) => {
-      onBlur && onBlur(event);
+      onBlur?.(event);
       // 兼容：下拉列表隐藏时，失焦需要清空已输入内容
       !popupVisible && tryUpdateInputValue('', 'optionListHide');
     },
@@ -623,6 +624,7 @@ function Select(baseProps: SelectProps, ref) {
 
       // 处理快捷键
       hotkeyHandler(event);
+      onKeyDown?.(event);
     },
 
     onChangeInputValue: (value, { nativeEvent: { inputType } }) => {
@@ -645,7 +647,7 @@ function Select(baseProps: SelectProps, ref) {
       if (handleTokenSeparators(e.clipboardData.getData('text'))) {
         refTSLastSeparateTriggered.current = Date.now();
       }
-      onPaste && onPaste(e);
+      onPaste?.(e);
     },
 
     // Option Items
@@ -667,7 +669,7 @@ function Select(baseProps: SelectProps, ref) {
         tryUpdateSelectValue(undefined);
       }
       tryUpdateInputValue('', 'manual');
-      onClear && onClear(popupVisible);
+      onClear?.(popupVisible);
     },
   };
 

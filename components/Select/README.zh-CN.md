@@ -60,6 +60,7 @@
 |onDeselect|取消选中的时候触发的回调，(只在 `multiple` 模式下触发)。|(value: string \| number \| [LabeledValue](#labeledvalue), option: [OptionInfo](#optioninfo)) => void |`-`|-|
 |onFocus|获得焦点时的回调|(e) => void |`-`|-|
 |onInputValueChange|输入框文本改变的回调。|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.3.0|
+|onKeyDown|键盘输入时的回调|(e) => void |`-`|2.40.0|
 |onPaste|输入框文本粘贴的回调。|(e) => void |`-`|2.9.0|
 |onPopupScroll|下拉框的滚动监听函数，参数为滚动元素。|(elem) => void |`-`|-|
 |onSearch|搜索时的回调|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|-|

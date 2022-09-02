@@ -61,6 +61,7 @@ Display options in a multi-level cascading dropdown component.
 |onClear|Callback when click clear icon.|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
 |onInputValueChange|Callback when inputValue change.|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.34.0|
+|onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onSearch|Callback when input changed.(reason in `2.34.0`)|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.20.0|
 |onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|-|
 |renderFormat|The return value will be displayed in the input box.|(valueShow: any[]) => ReactNode |`-`|-|

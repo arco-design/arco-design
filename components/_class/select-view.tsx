@@ -124,6 +124,12 @@ export interface SelectViewCommonProps
    * @en Callback when the mouse clicks on the drop-down box
    */
   onClick?: (e) => void;
+  /**
+   * @zh 键盘输入时的回调
+   * @en Callback when keyboard pressed
+   * @version 2.40.0
+   */
+  onKeyDown?: (e) => void;
 }
 
 export interface SelectViewProps extends SelectViewCommonProps {
@@ -140,7 +146,6 @@ export interface SelectViewProps extends SelectViewCommonProps {
   onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
   onChangeInputValue?: InputComponentProps['onChange'];
-  onKeyDown?: (e) => void;
   onPaste?: (e) => void;
   onClear?: (e) => void;
   onFocus?: (e) => void;

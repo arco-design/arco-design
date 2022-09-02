@@ -60,6 +60,7 @@ When users need to select one or more from a group of similar data, they can use
 |onDeselect|Called when a option is deselected.Only called for `multiple` mode.|(value: string \| number \| [LabeledValue](#labeledvalue), option: [OptionInfo](#optioninfo)) => void |`-`|-|
 |onFocus|Callback when get focus|(e) => void |`-`|-|
 |onInputValueChange|Callback when the value of input is changed.|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.3.0|
+|onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onPaste|Callback when the you paste text in input box.|(e) => void |`-`|2.9.0|
 |onPopupScroll|Callback when dropdown scrolls.|(elem) => void |`-`|-|
 |onSearch|Callback when input changed|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|-|
