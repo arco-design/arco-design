@@ -236,6 +236,17 @@
     text-decoration: none;
   }
 
+  &-item {
+    a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
   &-inner {
     box-sizing: border-box;
     width: 100%;
@@ -396,12 +407,22 @@
   // 弹出的 ToolTip 中 a 标签的样式
   &-item-tooltip a {
     color: inherit;
-    cursor: text;
+    cursor: pointer;
+    text-decoration: none;
 
     &:hover,
     &:focus,
     &:active {
       color: inherit;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 
