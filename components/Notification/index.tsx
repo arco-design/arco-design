@@ -1,6 +1,6 @@
 import React, { ReactInstance } from 'react';
-import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { render as ReactDOMRender } from '../_util/react-dom';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
@@ -96,7 +96,7 @@ class Notification extends BaseNotification {
     const div = document.createElement('div');
     let instance = null;
     (container || document.body).appendChild(div);
-    ReactDOM.render(
+    ReactDOMRender(
       <Notification
         ref={(ref) => {
           notificationInstance[position] = ref;
