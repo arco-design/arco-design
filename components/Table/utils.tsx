@@ -14,6 +14,7 @@ export function isChildrenNotEmpty(record, field: string) {
 
 export function deepCloneData(data, childrenColumnName) {
   function travel(data) {
+    console.log('test agign');
     if (!data) {
       return [];
     }
