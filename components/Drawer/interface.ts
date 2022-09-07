@@ -66,7 +66,7 @@ export interface DrawerProps {
    * @en The placement of the drawer: `top` `right` `bottom` `left`
    * @defaultValue right
    */
-  placement?: string;
+  placement?: 'top' | 'right' | 'bottom' | 'left';
   /**
    * @zh 抽屉的宽度，`placement`为 `left` `right` 时生效
    * @en The width of the drawer dialog. Only works when `placement` is `left` or `right`
