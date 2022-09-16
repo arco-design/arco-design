@@ -1,8 +1,8 @@
 import { CSSProperties, HTMLAttributes } from 'react';
 
-export type GridRowGutter =
-  | number
-  | Partial<Record<'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs', number>>;
+export type GridResponsiveBreakpoint = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+
+export type GridRowGutter = number | Partial<Record<GridResponsiveBreakpoint, number>>;
 
 /**
  * @title Row
@@ -103,6 +103,12 @@ export interface ColProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNam
    * @en `screen >= 1600px`
    */
   xxl?: number | { [key: string]: any };
+  /**
+   * @zh >= 2000px 响应式栅格
+   * @en `screen >= 2000px`
+   * @version 2.40.0
+   */
+  xxxl?: number | { [key: string]: any };
   /**
    * @zh 设置 flex 布局属性
    * @en Set flex layout properties
