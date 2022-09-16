@@ -186,3 +186,50 @@ describe('form initialvalue', () => {
 
   expect(form.getFieldValue('name')).toBe('456');
 });
+
+describe('form usewatch ', () => {
+  it('field change', () => {
+    let form;
+
+    function Demo({ field }) {
+      const value = Form.useWatch(field, form);
+
+      return <div id="text">{value || ''}</div>;
+    }
+
+    const wrapper = render(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item label="name" field="name">
+          <Input />
+        </Form.Item>
+        <Form.Item label="name" field="name2">
+          <Input />
+        </Form.Item>
+        <Demo field="name" />
+      </Form>
+    );
+
+    fireEvent.change(wrapper.find('input').item(0), {
+      target: { value: '111' },
+    });
+
+    expect(wrapper.querySelector('#text')?.textContent).toBe('111');
+
+    wrapper.rerender(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item label="name" field="name">
+          <Input />
+        </Form.Item>
+        <Form.Item label="name" field="name2">
+          <Input />
+        </Form.Item>
+        <Demo field="name2" />
+      </Form>
+    );
+
+    fireEvent.change(wrapper.find('input').item(1), {
+      target: { value: '123' },
+    });
+    expect(wrapper.querySelector('#text')?.textContent).toBe('123');
+  });
+});
