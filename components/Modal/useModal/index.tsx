@@ -1,5 +1,5 @@
 import React, { createRef, ReactElement } from 'react';
-import ContextHolderElement, { HolderRef } from './contextHolder';
+import ContextHolderElement, { HolderRef } from '../../_util/contextHolder';
 import HookModal, { HookModalRef } from './hookModal';
 import { normalizeConfig, ConfirmProps } from '../confirm';
 import { destroyList } from '../config';
