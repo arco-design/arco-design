@@ -6,11 +6,12 @@ import Notice from '../_class/notice';
 import cs from '../_util/classNames';
 import { isNumber, isUndefined } from '../_util/is';
 import { NotificationProps } from './interface';
+import useNotification, { notificationFuncType } from './useNotification';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
 let notificationInstance: object = {};
 
-type ConfigProps = {
+export type ConfigProps = {
   maxCount?: number;
   prefixCls?: string;
   getContainer?: () => HTMLElement;
@@ -26,6 +27,8 @@ let container;
 let rtl;
 
 class Notification extends BaseNotification {
+  static useNotification: (config?: ConfigProps) => [notificationFuncType, JSX.Element];
+
   static success: (config: NotificationProps) => ReactInstance;
 
   static info: (config: NotificationProps) => ReactInstance;
@@ -123,11 +126,16 @@ class Notification extends BaseNotification {
 
   render() {
     const { notices } = this.state;
+    const { prefixCls: _prefixCls, rtl: _rtl } = this.props;
     let position = this.state.position;
+    const mergedRtl = !isUndefined(_rtl) ? _rtl : rtl;
     if (isUndefined(position)) {
-      position = rtl ? 'topLeft' : 'topRight';
+      position = mergedRtl ? 'topLeft' : 'topRight';
     }
-    const prefixClsNotification = prefixCls ? `${prefixCls}-notification` : 'arco-notification';
+    const mergedPrefixCls = _prefixCls || prefixCls;
+    const prefixClsNotification = mergedPrefixCls
+      ? `${mergedPrefixCls}-notification`
+      : 'arco-notification';
     let transitionClass: string;
     if (position === 'topLeft' || position === 'bottomLeft') {
       transitionClass = 'slideNoticeLeft';
@@ -166,9 +174,9 @@ class Notification extends BaseNotification {
                 {...notice}
                 onClose={this.remove}
                 prefixCls={prefixClsNotification}
-                iconPrefix={prefixCls}
+                iconPrefix={mergedPrefixCls}
                 noticeType="notification"
-                rtl={rtl}
+                rtl={mergedRtl}
               />
             </CSSTransition>
           ))}
@@ -186,6 +194,8 @@ notificationTypes.forEach((type) => {
     });
   };
 });
+
+Notification.useNotification = useNotification;
 
 export default Notification;
 

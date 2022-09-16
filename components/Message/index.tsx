@@ -5,11 +5,13 @@ import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
 import { MessageProps } from './interface';
+import { isUndefined } from '../_util/is';
+import useMessage, { messageFuncType } from './useMessage';
 
 const messageTypes = ['info', 'success', 'error', 'warning', 'loading', 'normal'];
 let messageInstance: object = {};
 
-type ConfigProps = {
+export type ConfigProps = {
   maxCount?: number;
   prefixCls?: string;
   getContainer?: () => HTMLElement;
@@ -74,6 +76,8 @@ function addInstance(noticeProps: MessageProps) {
 }
 
 class Message extends BaseNotification {
+  static useMessage: (config?: ConfigProps) => [messageFuncType, JSX.Element];
+
   static success: (config: MessageProps | string) => MessageType;
 
   static info: (config: MessageProps | string) => MessageType;
@@ -130,12 +134,12 @@ class Message extends BaseNotification {
   };
 
   render() {
-    const { transitionClassNames } = this.props;
+    const { transitionClassNames, prefixCls: _prefixCls, rtl: _rtl } = this.props;
     const { notices, position } = this.state;
-    const prefixClsMessage = prefixCls ? `${prefixCls}-message` : 'arco-message';
-
+    const mergedPrefixCls = _prefixCls || prefixCls;
+    const mergedRtl = !isUndefined(_rtl) ? _rtl : rtl;
+    const prefixClsMessage = mergedPrefixCls ? `${mergedPrefixCls}-message` : 'arco-message';
     const classNames = cs(`${prefixClsMessage}-wrapper`, `${prefixClsMessage}-wrapper-${position}`);
-
     return (
       <div className={classNames}>
         <TransitionGroup component={null}>
@@ -161,10 +165,10 @@ class Message extends BaseNotification {
               <Notice
                 {...notice}
                 prefixCls={prefixClsMessage}
-                iconPrefix={prefixCls}
+                iconPrefix={mergedPrefixCls}
                 onClose={this.remove}
                 noticeType="message"
-                rtl={rtl}
+                rtl={mergedRtl}
               />
             </CSSTransition>
           ))}
@@ -183,6 +187,8 @@ messageTypes.forEach((type) => {
     });
   };
 });
+
+Message.useMessage = useMessage;
 
 export default Message;
 
