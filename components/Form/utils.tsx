@@ -36,7 +36,7 @@ export function set<T extends IndexedObject>(target: T, field: PropertyPath, val
 
 // iteratively get all keys of object including nested objects
 // e.g. const myObj = { a: { b: { c: [1,2] } } }
-// iterativelyGetKeys(myObj) returns ['a.b.0.c.0', 'a.b.0.c.1']
+// iterativelyGetKeys(myObj) returns ['a.b.c.0', 'a.b.c.1']
 // reference https://stackoverflow.com/a/47063174
 export function iterativelyGetKeys(obj, prefix = '') {
   if (!obj) {
