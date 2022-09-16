@@ -20,9 +20,6 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
         <span
           class="arco-statistic-value-int"
         >
-          <span
-            class="arco-statistic-value-prefix"
-          />
           125,670
         </span>
       </div>
@@ -40,9 +37,6 @@ exports[`renders Statistic/demo/basic.md correctly 1`] = `
         <span
           class="arco-statistic-value-int"
         >
-          <span
-            class="arco-statistic-value-prefix"
-          />
           40,509
         </span>
         <span
@@ -465,9 +459,6 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
         <span
           class="arco-statistic-value-int"
         >
-          <span
-            class="arco-statistic-value-prefix"
-          />
           192393
         </span>
         <span
@@ -528,9 +519,6 @@ exports[`renders Statistic/demo/prefix_suffix.md correctly 1`] = `
         <span
           class="arco-statistic-value-int"
         >
-          <span
-            class="arco-statistic-value-prefix"
-          />
           934230
         </span>
         <span
@@ -659,9 +647,6 @@ exports[`renders Statistic/demo/time.md correctly 1`] = `
       <span
         class="arco-statistic-value-int"
       >
-        <span
-          class="arco-statistic-value-prefix"
-        />
         2019/04/10 12:16:53
       </span>
     </div>
