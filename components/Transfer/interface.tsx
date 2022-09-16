@@ -1,5 +1,5 @@
 import { CSSProperties, DragEvent, ReactNode } from 'react';
-import { PaginationProps } from '../Pagination/pagination';
+import { PaginationProps } from '../Pagination';
 import { InputProps } from '../Input';
 
 export type TransferItem = {
@@ -20,10 +20,43 @@ type TransferListTitle =
       searchInput: ReactNode;
     }) => ReactNode);
 
+interface TransferPropsWithArrayType {
+  /**
+   * @zh 搜索框默认提示文字，通过数组为左右列表传入不同属性
+   * @en Placeholder of search box, pass in different properties for lists through array
+   * @version Array format in '2.40.0'
+   */
+  searchPlaceholder?: string | string[];
+  /**
+   * @zh 左右两栏是否显示搜索框，通过数组为左右列表传入不同属性
+   * @en Whether to display the search box in columns, pass in different properties for lists through array
+   * @version Array format in '2.40.0'
+   */
+  showSearch?: boolean | InputProps | Array<boolean | InputProps>;
+  /**
+   * @zh 左右两栏是否显示底部重置按钮，通过数组为左右列表传入不同属性
+   * @en Whether to display the reset-button in columns, pass in different properties for lists through array
+   * @version ReactNode in `2.11.0`, array format in '2.40.0'
+   */
+  showFooter?: boolean | ReactNode | Array<boolean | ReactNode>;
+  /**
+   * @zh 是否使用翻页，也可传入 `Pagination` 的配置，通过数组为左右列表传入不同属性
+   * @en Whether to divide into pages, you can also pass in the configuration of `Pagination`, pass in different properties for lists through array
+   * @version Array format in '2.40.0'
+   */
+  pagination?: boolean | PaginationProps | Array<boolean | PaginationProps>;
+  /**
+   * @zh 左右两栏框的样式，通过数组为左右列表传入不同属性
+   * @en The additional css style of columns, pass in different properties for lists through array
+   * @version Array format in '2.40.0'
+   */
+  listStyle?: CSSProperties | CSSProperties[];
+}
+
 /**
  * @title Transfer
  */
-export interface TransferProps {
+export interface TransferProps extends TransferPropsWithArrayType {
   prefixCls?: string;
   style?: CSSProperties;
   className?: string | string[];
@@ -71,11 +104,6 @@ export interface TransferProps {
    */
   operationTexts?: string[] | ReactNode[];
   /**
-   * @zh 搜索框默认提示文字
-   * @en Placeholder of search box
-   */
-  searchPlaceholder?: string;
-  /**
    * @zh 禁用穿梭框
    * @en Whether is disabled
    */
@@ -100,27 +128,6 @@ export interface TransferProps {
    * @en Whether the items in the list can be dragged
    */
   draggable?: boolean;
-  /**
-   * @zh 左右两栏是否显示搜索框
-   * @en Whether to display the search box in columns
-   */
-  showSearch?: boolean | InputProps;
-  /**
-   * @zh 左右两栏是否显示底部重置按钮
-   * @en Whether to display the reset-button in columns
-   * @version ReactNode in `2.11.0`
-   */
-  showFooter?: boolean | ReactNode;
-  /**
-   * @zh 是否使用翻页，也可传入 `Pagination` 的配置
-   * @en Whether to divide into pages, you can also pass in the configuration of `Pagination`
-   */
-  pagination?: boolean | PaginationProps;
-  /**
-   * @zh 左右两栏框的样式
-   * @en The additional css style of columns
-   */
-  listStyle?: CSSProperties;
   /**
    * @zh 穿梭中间操作部分的样式
    * @en The additional css style of operation buttons
@@ -196,12 +203,8 @@ export interface TransferListProps
     | 'style'
     | 'className'
     | 'dataSource'
-    | 'searchPlaceholder'
     | 'disabled'
     | 'draggable'
-    | 'showSearch'
-    | 'showFooter'
-    | 'pagination'
     | 'render'
     | 'filterOption'
     | 'onSearch'
@@ -212,6 +215,10 @@ export interface TransferListProps
     | 'onDragOver'
     | 'onDrop'
   > {
+  searchPlaceholder?: string;
+  showSearch?: boolean | InputProps;
+  showFooter?: boolean | ReactNode;
+  pagination?: boolean | PaginationProps;
   title: TransferListTitle;
   allowClear: boolean;
   selectedKeys: string[];

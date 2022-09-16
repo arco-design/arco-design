@@ -296,4 +296,31 @@ describe('Transfer', () => {
     fireEvent.dragEnd(item);
     expect(onDragEnd).toBeCalled();
   });
+
+  it('Pass different properties to transfer list by array', () => {
+    const component = render(
+      <Transfer
+        dataSource={[]}
+        listStyle={[{ height: 200 }, { height: 400 }]}
+        showSearch={[{ placeholder: 'Placeholder 1' }, { placeholder: 'Placeholder 2' }]}
+        showFooter={[false, true]}
+        pagination={[false, true]}
+      />
+    );
+    const [source, target] = Array.prototype.slice.call(
+      component.querySelectorAll('.arco-transfer-view')
+    );
+    expect(
+      source.querySelector('.arco-transfer-view-search input').getAttribute('placeholder')
+    ).toBe('Placeholder 1');
+    expect(
+      target.querySelector('.arco-transfer-view-search input').getAttribute('placeholder')
+    ).toBe('Placeholder 2');
+    expect(source.querySelector('.arco-list-footer')).toBeFalsy();
+    expect(target.querySelector('.arco-list-footer')).toBeTruthy();
+    expect(source.querySelector('.arco-pagination')).toBeFalsy();
+    expect(target.querySelector('.arco-pagination')).toBeTruthy();
+    expect(getComputedStyle(source).height).toBe('200px');
+    expect(getComputedStyle(target).height).toBe('400px');
+  });
 });

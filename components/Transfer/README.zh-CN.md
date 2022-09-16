@@ -17,15 +17,13 @@
 |disabled|禁用穿梭框|boolean |`-`|-|
 |draggable|列表内条目是否可拖拽|boolean |`-`|-|
 |oneWay|单向|boolean |`-`|-|
-|searchPlaceholder|搜索框默认提示文字|string |`-`|-|
 |onChange|选中项在两栏之间转移时的回调|(newTargetKeys: string[], direction: 'source' \| 'target', moveKeys: string[]) => void |`-`|-|
 |onSearch|搜索框输入进行搜索时回调函数|(value: string, type?: 'source' \| 'target') => void |`-`|-|
-|showFooter|左右两栏是否显示底部重置按钮|boolean \| ReactNode |`-`|ReactNode in `2.11.0`|
 |className|节点类名|string \| string[] |`-`|-|
 |dataSource|穿梭框数据源，其中一部分会被渲染到左边一栏，targetKeys 中指定的除外|[TransferItem](#transferitem)[] |`-`|-|
 |defaultSelectedKeys|默认的 `selectKeys`|string[] |`[]`|-|
 |defaultTargetKeys|默认的 `targetKeys`|string[] |`[]`|-|
-|listStyle|左右两栏框的样式|CSSProperties |`-`|-|
+|listStyle|左右两栏框的样式，通过数组为左右列表传入不同属性|CSSProperties \| CSSProperties[] |`-`|Array format in '2.40.0'|
 |onDragEnd|节点结束拖拽的回调|(e: DragEvent&lt;HTMLSpanElement&gt;, item: [TransferItem](#transferitem)) =&gt; void |`-`|-|
 |onDragLeave|节点离开可释放目标上时的回调|(e: DragEvent&lt;HTMLSpanElement&gt;, item: [TransferItem](#transferitem)) =&gt; void |`-`|-|
 |onDragOver|节点被拖拽至可释放目标上时的回调|(e: DragEvent&lt;HTMLSpanElement&gt;, item: [TransferItem](#transferitem)) =&gt; void |`-`|-|
@@ -33,9 +31,11 @@
 |onDrop|节点在可释放目标上释放时的回调|(info: {e: DragEvent&lt;HTMLSpanElement&gt;;dragItem: [TransferItem](#transferitem);dropItem: [TransferItem](#transferitem);dropPosition: number;}) =&gt; void |`-`|-|
 |operationStyle|穿梭中间操作部分的样式|CSSProperties |`-`|-|
 |operationTexts|穿梭按钮的文案数组，顺序从上至下|string[] \| ReactNode[] |`-`|-|
-|pagination|是否使用翻页，也可传入 `Pagination` 的配置|boolean \| [PaginationProps](pagination#pagination) |`-`|-|
+|pagination|是否使用翻页，也可传入 `Pagination` 的配置，通过数组为左右列表传入不同属性|boolean \| [PaginationProps](pagination#pagination) \| Array&lt;boolean \| [PaginationProps](pagination#pagination)&gt; |`-`|Array format in '2.40.0'|
+|searchPlaceholder|搜索框默认提示文字，通过数组为左右列表传入不同属性|string \| string[] |`-`|Array format in '2.40.0'|
 |selectedKeys|当前应该有哪些项被选中|string[] |`-`|-|
-|showSearch|左右两栏是否显示搜索框|boolean \| [InputProps](input#input) |`-`|-|
+|showFooter|左右两栏是否显示底部重置按钮，通过数组为左右列表传入不同属性|boolean \| ReactNode \| Array&lt;boolean \| ReactNode&gt; |`-`|ReactNode in `2.11.0`, array format in '2.40.0'|
+|showSearch|左右两栏是否显示搜索框，通过数组为左右列表传入不同属性|boolean \| [InputProps](input#input) \| Array&lt;boolean \| [InputProps](input#input)&gt; |`-`|Array format in '2.40.0'|
 |simple|简单模式|\| boolean\| {retainSelectedItems?: boolean;} |`-`|`retainSelectedItems` in '2.21.0'|
 |style|节点样式|CSSProperties |`-`|-|
 |targetKeys|渲染到右边一栏数据的 key 集合|string[] |`-`|-|
