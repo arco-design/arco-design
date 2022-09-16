@@ -2,6 +2,42 @@
 changelog: true
 ---
 
+## 2.40.0
+
+2022-09-16
+
+### 💎 功能优化
+
+- 优化 `Form` 组件内置校验信息模板([#1398](https://github.com/arco-design/arco-design/pull/1398))
+- 优化 `Space` 的子元素在被指定的 `key` 值未发生变化时 DOM 节点却重新挂载的问题。([#1393](https://github.com/arco-design/arco-design/pull/1393))
+
+### 🆕 功能升级
+
+- `Message` 组件支持 `useMessage` 用法以便读取 `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Notification` 组件支持 `useNotification` 用法以便读取 `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Form.Item` 支持 `dependencies` 属性([#1397](https://github.com/arco-design/arco-design/pull/1397))
+- `Grid` 响应式断点支持 `xxxl` (页面宽度 > 2000px)。([#1396](https://github.com/arco-design/arco-design/pull/1396))
+- `Transfer`的 `showSearch / showFooter / searchPlaceholder / pagination / listStyle` 属性支持通过数组来为源/目标列表传入不同的属性值。([#1389](https://github.com/arco-design/arco-design/pull/1389))
+- `Breadcrumb` 新增 `href`, `onClick` 和 `tagName` 属性([#1363](https://github.com/arco-design/arco-design/pull/1363))
+- `Select` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- `TreeSelect` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- `Cascader` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+
+### 🐛 问题修复
+
+- 修复 `Form.useWatch` 在 `field` 改变时，返回值未及时更新的 bug。([#1400](https://github.com/arco-design/arco-design/pull/1400))
+- 修复 `Message` 在设置了 `body { display: 'flex' }` 的页面中无法正常显示的 bug。([#1373](https://github.com/arco-design/arco-design/pull/1373))
+
+### 💅 样式更新
+
+- 修复 `Layout` 亮色主题下可能导致的页面出现滚动的问题。([#1391](https://github.com/arco-design/arco-design/pull/1391))
+- 修复 `Statistic` 不传 `prefix` / `suffix` 时，对应 dom 节点仍然渲染的 bug。([#1388](https://github.com/arco-design/arco-design/pull/1388))
+- 修复深色模式下 `capsule` 类型的 `Tabs` 组件中禁用的 `TabPane` 标题区域的 hover 样式。([#1368](https://github.com/arco-design/arco-design/pull/1368))
+
+### 🆎 类型修正
+
+- 优化 `Drawer` 组件  `placement` 属性的类型。([#1377](https://github.com/arco-design/arco-design/pull/1377))
+
 ## 2.39.3
 
 2022-09-02

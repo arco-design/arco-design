@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 💅 Style
+
+- Fix the bug that the corresponding dom node still renders when `Statistic` does not pass `prefix` / `suffix`([#1388](https://github.com/arco-design/arco-design/pull/1388))
+
 ## 2.36.0
 
 2022-06-24

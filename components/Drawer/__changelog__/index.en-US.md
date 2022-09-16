@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆎 TypeScript
+
+- Improve typescript definition of the `placement` property of `Drawer`.([#1377](https://github.com/arco-design/arco-design/pull/1377))
+
 ## 2.39.3
 
 2022-09-02

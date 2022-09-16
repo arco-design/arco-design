@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- `Grid` responsive breakpoints support `xxxl` (width > 2000px).([#1396](https://github.com/arco-design/arco-design/pull/1396))
+
 ## 2.39.1
 
 2022-08-19

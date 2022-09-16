@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 功能升级
+
+- `Transfer`的 `showSearch / showFooter / searchPlaceholder / pagination / listStyle` 属性支持通过数组来为源/目标列表传入不同的属性值。([#1389](https://github.com/arco-design/arco-design/pull/1389))
+
 ## 2.37.0
 
 2022-07-08

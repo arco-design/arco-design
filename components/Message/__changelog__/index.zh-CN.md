@@ -1,3 +1,15 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 功能升级
+
+- `Message` 组件支持 `useMessage` 用法以便读取 `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+
+### 🐛 问题修复
+
+- 修复 `Message` 在设置了 `body { display: 'flex' }` 的页面中无法正常显示的 bug。([#1373](https://github.com/arco-design/arco-design/pull/1373))
+
 ## 2.33.1
 
 2022-05-20

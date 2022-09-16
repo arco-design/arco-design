@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- The `Cascader` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+
 ## 2.39.3
 
 2022-09-02

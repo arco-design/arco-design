@@ -2,6 +2,42 @@
 changelog: true
 ---
 
+## 2.40.0
+
+2022-09-16
+
+### 💎 Enhancement
+
+- Optimize the built-in validation information template of the `Form` component([#1398](https://github.com/arco-design/arco-design/pull/1398))
+- Optimize the problem that the DOM node of `Space` is remounted when the specified `key` value has not changed.([#1393](https://github.com/arco-design/arco-design/pull/1393))
+
+### 🆕 Feature
+
+- `Message` component supports `useMessage` usage for reading `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Notification` component supports `useNotification` usage for reading `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Form.Item` supports the `dependencies` property([#1397](https://github.com/arco-design/arco-design/pull/1397))
+- `Grid` responsive breakpoints support `xxxl` (width > 2000px).([#1396](https://github.com/arco-design/arco-design/pull/1396))
+- The `showSearch / showFooter / searchPlaceholder / pagination / listStyle` properties of `Transfer` support passing in different property values for source/target lists via arrays.([#1389](https://github.com/arco-design/arco-design/pull/1389))
+- `Breadcrumb` adds `href`, `onClick` and `tagName` properties.([#1363](https://github.com/arco-design/arco-design/pull/1363))
+- The `Select` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- The `TreeSelect` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- The `Cascader` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+
+### 🐛 BugFix
+
+- Fix the bug that the return value of `Form.useWatch` is not updated in time when `field` changes([#1400](https://github.com/arco-design/arco-design/pull/1400))
+- Fixed the bug that `Message` could not be displayed properly in pages with `body { display: 'flex' }` set.([#1373](https://github.com/arco-design/arco-design/pull/1373))
+
+### 💅 Style
+
+- Fixed the issue that could cause the page to scroll under the `Layout` light theme.([#1391](https://github.com/arco-design/arco-design/pull/1391))
+- Fix the bug that the corresponding dom node still renders when `Statistic` does not pass `prefix` / `suffix`([#1388](https://github.com/arco-design/arco-design/pull/1388))
+- Fix disabled `TabPane` header area hover style in `Tabs` with `capsule` type in dark mode.([#1368](https://github.com/arco-design/arco-design/pull/1368))
+
+### 🆎 TypeScript
+
+- Improve typescript definition of the `placement` property of `Drawer`.([#1377](https://github.com/arco-design/arco-design/pull/1377))
+
 ## 2.39.3
 
 2022-09-02
