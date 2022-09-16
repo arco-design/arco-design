@@ -34,7 +34,7 @@ describe('Form.Provider', () => {
     );
 
     act(() => {
-      fireEvent.change(wrapper.querySelector('input'), {
+      fireEvent.change(wrapper.querySelector('input') as Element, {
         target: { value: '1' },
       });
     });

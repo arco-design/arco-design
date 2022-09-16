@@ -124,11 +124,23 @@ export default class Control<
 
   public onStoreChange = (type: NotifyType, info: StoreChangeInfo<FieldKey> & { current: any }) => {
     const fields = isArray(info.field) ? info.field : [info.field];
-    const { field, shouldUpdate } = this.props;
+    const { field, shouldUpdate, dependencies } = this.props;
 
     // isInner: the value is changed by innerSetValue
     const shouldUpdateItem = (extra?: { isInner?: boolean; isFormList?: boolean }) => {
-      if (shouldUpdate) {
+      if (dependencies && shouldUpdate) {
+        warn(true, '`shouldUpdate` of the `Form.Item` will be ignored.');
+      }
+      if (dependencies) {
+        if (
+          isArray(dependencies) ||
+          (dependencies as string[]).some((depField) => isFieldMath(depField, fields))
+        ) {
+          if (this.isTouched()) {
+            this.validateField();
+          }
+        }
+      } else if (shouldUpdate) {
         let shouldRender = false;
         if (isFunction(shouldUpdate)) {
           shouldRender = shouldUpdate(info.prev, info.current, {
@@ -218,6 +230,7 @@ export default class Control<
     const { store, validateTrigger: ctxValidateTrigger, validateMessages } = this.context;
     const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
+
     const _rules = !triggerType
       ? rules
       : (rules || []).filter((rule) => {

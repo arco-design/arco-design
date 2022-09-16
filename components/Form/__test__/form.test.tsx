@@ -634,8 +634,8 @@ describe('ControlForm', () => {
       </Form>
     );
 
-    expect(wrapper.querySelector('label').getAttribute('for')).toBe('a_input');
-    expect(wrapper.querySelector('input').getAttribute('id')).toBe('input');
+    expect(wrapper.querySelector('label')?.getAttribute('for')).toBe('a_input');
+    expect(wrapper.querySelector('input')?.getAttribute('id')).toBe('input');
   });
 
   it('clearFields', async () => {

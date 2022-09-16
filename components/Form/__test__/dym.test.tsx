@@ -100,7 +100,7 @@ describe('add and delete', () => {
   const wrapper = mountDemo(
     <Demo onChange={changeMock} savRef={(node) => (formRef = node as FormInstance)} />
   );
-  const addButton = wrapper.querySelector('.add-button');
+  const addButton = wrapper.querySelector('.add-button') as Element;
 
   it('should add', async () => {
     expect(wrapper.find('.arco-form-item-control')).toHaveLength(4);
@@ -127,7 +127,7 @@ describe('add and delete', () => {
     expect(Object.keys(formRef.getFieldsValue()).length).toBe(6);
 
     const key0 = Object.keys(formRef.getFieldsValue())[0];
-    const delButton = wrapper.querySelector('.delete-button');
+    const delButton = wrapper.querySelector('.delete-button') as Element;
 
     await act(() => {
       fireEvent.click(delButton);
