@@ -34,6 +34,7 @@ try {
   };
   // Avoid console warning
   createRoot = CopyReactDOM.createRoot;
+  CopyReactDOM[__SECRET_INTERNALS__].usingClientEntryPoint = false;
 } catch (_) {
   //
 }

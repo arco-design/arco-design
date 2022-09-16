@@ -1,4 +1,5 @@
 import 'dayjs/locale/en';
+import { DefaultValidateMessage } from 'b-validate';
 
 const Calendar = {
   formatYear: 'YYYY',
@@ -163,4 +164,5 @@ export default {
     zoomOut: 'Zoom Out',
     originalSize: 'Original Size',
   },
+  Form: DefaultValidateMessage,
 };
