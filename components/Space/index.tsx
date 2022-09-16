@@ -1,4 +1,4 @@
-import React, { useContext, Fragment, forwardRef } from 'react';
+import React, { useContext, Fragment, forwardRef, ReactElement } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { isArray, isNumber } from '../_util/is';
@@ -93,9 +93,12 @@ function Space(baseProps: SpaceProps, ref) {
   return (
     <div ref={ref} className={classNames} style={style} {...rest}>
       {childrenList.map((child, index) => {
+        // Keep the key passed on the child to avoid additional DOM remounting
+        // Related issue: https://github.com/arco-design/arco-design/issues/1320
+        const key = (child as ReactElement)?.key || index;
         const shouldRenderSplit = split !== undefined && split !== null && index > 0;
         return (
-          <Fragment key={index}>
+          <Fragment key={key}>
             {shouldRenderSplit && <div className={`${prefixCls}-item-split`}>{split}</div>}
             <div className={`${prefixCls}-item`} style={getMarginStyle(index)}>
               {child}
