@@ -53,7 +53,7 @@ describe('Form test', () => {
       </Form>
     );
 
-    fireEvent.change(wrapper.querySelector('input'), {
+    fireEvent.change(wrapper.querySelector('input') as Element, {
       target: { value: '12' },
     });
 
@@ -136,7 +136,7 @@ describe('Form test', () => {
       </Form>
     );
 
-    fireEvent.change(wrapper.querySelector('input'), {
+    fireEvent.change(wrapper.querySelector('input') as Element, {
       target: { value: '12' },
     });
   });

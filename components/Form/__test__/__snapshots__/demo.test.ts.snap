@@ -6349,15 +6349,43 @@ exports[`renders Form/demo/register.md correctly 1`] = `
       >
         <div
           class="arco-form-item-control"
-          id="phone"
+          id="password"
         >
           <div
             class="arco-form-item-control-children"
           >
             <input
               class="arco-input arco-input-size-default"
-              id="phone_input"
-              placeholder="please enter your phone number"
+              id="password_input"
+              placeholder="please enter your password"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+    dependencies="password"
+  >
+    <div
+      class="arco-col arco-col-24 arco-form-item-wrapper"
+    >
+      <div
+        class="arco-form-item-control-wrapper"
+      >
+        <div
+          class="arco-form-item-control"
+          id="confirm_password"
+        >
+          <div
+            class="arco-form-item-control-children"
+          >
+            <input
+              class="arco-input arco-input-size-default"
+              id="confirm_password_input"
+              placeholder="please confirm your password"
               value=""
             />
           </div>

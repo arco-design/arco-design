@@ -345,6 +345,12 @@ export interface FormItemProps<
    */
   formatter?: (value: FieldValue | undefined) => any;
   /**
+   * @zh 依赖的字段。
+   * @en the dependency fields
+   * @version 2.40.0
+   */
+  dependencies?: string[];
+  /**
    * @zh 是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。
    * @en Whether to re-render when other FormItem value change. When set to true, any changes to the Form will re-render.
    */
@@ -386,6 +392,7 @@ export interface FormControlProps<
   field?: FieldKey;
   _key?: FieldKey;
   initialValue?: FieldValue;
+  dependencies?: FormItemProps['dependencies'];
   getValueFromEvent?: FormItemProps['getValueFromEvent'];
   rules?: RulesProps<FieldValue>[];
   /** 接管子节点，搜集子节点的时机 */
