@@ -236,8 +236,8 @@
     text-decoration: none;
   }
 
-  &-item {
-    a::before {
+  &-item-inner {
+    > a:only-child::before {
       content: '';
       position: absolute;
       left: 0;
