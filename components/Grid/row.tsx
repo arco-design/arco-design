@@ -28,6 +28,7 @@ function Row(baseProps: RowProps, ref) {
     lg: true,
     xl: true,
     xxl: true,
+    xxxl: true,
   });
 
   const token = useRef<string>();

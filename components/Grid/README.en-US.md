@@ -39,13 +39,14 @@ Grid can effectively ensure the consistency and logic of the page, strengthen te
 |xl|`screen >= 1200px`|number \| { [key: string]: any } |`-`|-|
 |xs|`screen < 576px`|number \| { [key: string]: any } |`-`|-|
 |xxl|`screen >= 1600px`|number \| { [key: string]: any } |`-`|-|
+|xxxl|`screen >= 2000px`|number \| { [key: string]: any } |`-`|2.40.0|
 
 ### GridRowGutter
 
 ```js
 export type GridRowGutter =
   | number
-  | Partial<Record<"xxl" | "xl" | "lg" | "md" | "sm" | "xs", number>>;
+  | Partial<Record<GridResponsiveBreakpoint, number>>;
 ```
 
 ### FlexType

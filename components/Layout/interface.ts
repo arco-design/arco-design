@@ -1,6 +1,7 @@
 import { CSSProperties, ReactNode } from 'react';
 import { ResizeBoxProps } from '../ResizeBox';
 import { Omit } from '../_util/type';
+import { GridResponsiveBreakpoint } from '../Grid/interface';
 
 /**
  * @title Layout
@@ -110,7 +111,7 @@ export interface SiderProps {
    * @zh 触发响应式布局的断点, 详见[响应式栅格](/react/components/Grid)
    * @en Breakpoint in responsive layout. See details [Grid](/react/components/Grid)
    */
-  breakpoint?: 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+  breakpoint?: GridResponsiveBreakpoint;
   /**
    * @zh 触发响应式布局断点时的回调
    * @en Callback when responsive layout breakpoint is triggered
