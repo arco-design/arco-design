@@ -285,8 +285,8 @@ const Picker = (baseProps: RangePickerProps) => {
     setValueShowHover(undefined);
   }, [startStr, endStr]);
 
-  function setFixedPageShowDates(innerValue) {
-    const newPageShowDates = getShowDatesFromFocused(innerValue);
+  function setFixedPageShowDates(innerValue, index = focusedInputIndex) {
+    const newPageShowDates = getShowDatesFromFocused(innerValue, index);
     setPageShowDates(newPageShowDates);
     handlePickerValueChange(newPageShowDates);
   }
@@ -312,15 +312,6 @@ const Picker = (baseProps: RangePickerProps) => {
         mode,
         prev && !dates[index === 0 ? 1 : 0] ? 'prev' : 'next'
       );
-    }
-  }
-
-  function setNestPageShowDates(dates: Dayjs[], pickerMode: ModeType, index: number) {
-    if (isArray(dates) && dates[index]) {
-      setPageShowDates(
-        getPageShowDatesByValue(dates[index], pickerMode, index === 0 ? 'prev' : 'next')
-      );
-      handlePickerValueChange(dates);
     }
   }
 
@@ -558,6 +549,7 @@ const Picker = (baseProps: RangePickerProps) => {
     const sortedValueShow = getSortedDayjsArray(newValueShow);
 
     onSelectValueShow(sortedValueShow);
+    setFixedPageShowDates(sortedValueShow);
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
 
@@ -761,7 +753,7 @@ const Picker = (baseProps: RangePickerProps) => {
           {...props}
           {...getHeaderOperations()}
           getHeaderOperations={getHeaderOperations}
-          setRangePageShowDates={setNestPageShowDates}
+          setRangePageShowDates={setFixedPageShowDates}
           pageShowDates={mergedPageShowDate}
           value={panelValue}
           format={format}
