@@ -95,7 +95,7 @@ function Space(baseProps: SpaceProps, ref) {
       {childrenList.map((child, index) => {
         const shouldRenderSplit = split !== undefined && split !== null && index > 0;
         return (
-          <Fragment key={index}>
+          <Fragment key={(React.isValidElement(child) && child.key) || index}>
             {shouldRenderSplit && <div className={`${prefixCls}-item-split`}>{split}</div>}
             <div className={`${prefixCls}-item`} style={getMarginStyle(index)}>
               {child}
