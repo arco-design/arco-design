@@ -187,7 +187,7 @@ describe('validate form', () => {
     await sleep(100);
 
     expect(wrapper.querySelector('.arco-form-message')?.innerHTML).toBe(
-      '<div role="alert">字符数最少为 6</div><div role="alert" class="arco-form-message-help-warning">Hello 不是合法的邮箱地址</div>'
+      '<div role="alert">字符数最少为 6</div><div role="alert" class="arco-form-message-help-warning">url 不是合法的邮箱地址</div>'
     );
     expect(wrapper.find('.arco-form-message-help-warning')).toHaveLength(1); // warning 信息
 
