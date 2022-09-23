@@ -36,10 +36,10 @@ function useModal(): [modalFunctionsType, ReactElement] {
       <HookModal key={uuid} ref={modalRef} {...normalizeConfig(config)} afterClose={afterClose} />
     );
 
-    contextHolderRef.current.addInstance(modal);
+    contextHolderRef.current?.addInstance(modal);
 
     function removeModalInstance() {
-      contextHolderRef.current.removeInstance(modal);
+      contextHolderRef.current?.removeInstance(modal);
     }
 
     function close() {
