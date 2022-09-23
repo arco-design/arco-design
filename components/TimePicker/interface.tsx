@@ -197,7 +197,7 @@ export type BaseRangePickerProps = {
    */
   onChange?: (valueString: string[], value: Dayjs[]) => void;
   /**
-   * @zh 选择日期是的回调
+   * @zh 选择日期时的回调
    * @en Callback when select time
    */
   onSelect?: (valueString: string[], value: Dayjs[]) => void;
