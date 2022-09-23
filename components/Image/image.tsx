@@ -11,7 +11,7 @@ import useShowFooter from './utils/hooks/useShowFooter';
 import useImageStatus from './utils/hooks/useImageStatus';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
-import { isNumber } from '../_util/is';
+import { isNumber, isUndefined } from '../_util/is';
 import { PreviewGroupContext } from './previewGroupContext';
 import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
@@ -86,6 +86,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   ]);
 
   const prefixCls = getPrefixCls('image');
+  const isControlled = !isUndefined(previewProps.visible);
   const classNames = cs(
     prefixCls,
     {
@@ -95,6 +96,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       [`${prefixCls}-loading-error`]: isError,
       [`${prefixCls}-with-footer-inner`]: isLoaded && showFooter && footerPosition === 'inner',
       [`${prefixCls}-with-footer-outer`]: isLoaded && showFooter && footerPosition === 'outer',
+      [`${prefixCls}-with-preview`]: isLoaded && preview && !isError && !isControlled,
     },
     className
   );
