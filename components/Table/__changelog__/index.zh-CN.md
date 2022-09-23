@@ -1,3 +1,11 @@
+## 2.40.1
+
+2022-09-23
+
+### 🐛 问题修复
+
+- 修复 Table 在关闭 `checkStrictly` 后，传入不存在的 `selectedKey` 导致页面报错的 bug([#1420](https://github.com/arco-design/arco-design/pull/1420))
+
 ## 2.39.2
 
 2022-08-26

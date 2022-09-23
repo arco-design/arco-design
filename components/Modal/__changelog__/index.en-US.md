@@ -1,3 +1,11 @@
+## 2.40.1
+
+2022-09-23
+
+### 🐛 BugFix
+
+- Fix the bug that the `holderRef` of `useModal` may not exist([#1418](https://github.com/arco-design/arco-design/pull/1418))
+
 ## 2.39.3
 
 2022-09-02

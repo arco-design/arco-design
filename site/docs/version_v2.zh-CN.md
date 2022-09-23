@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.40.1
+
+2022-09-23
+
+### 🐛 问题修复
+
+- 修复 Table 在关闭 `checkStrictly` 后，传入不存在的 `selectedKey` 导致页面报错的 bug([#1420](https://github.com/arco-design/arco-design/pull/1420))
+- 修复 `useModal` 的 `holderRef` 可能不存在的 bug([#1418](https://github.com/arco-design/arco-design/pull/1418))
+
+### 💅 样式更新
+
+- Image 组件的开启 `preview` 后，鼠标悬停样式变为 `zoom-out`([#1419](https://github.com/arco-design/arco-design/pull/1419))
+
 ## 2.40.0
 
 2022-09-16

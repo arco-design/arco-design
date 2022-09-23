@@ -1,3 +1,11 @@
+## 2.40.1
+
+2022-09-23
+
+### 💅 Style
+
+- After opening `preview` of the Image component, the hover style changes to `zoom-out`([#1419](https://github.com/arco-design/arco-design/pull/1419))
+
 ## 2.39.0
 
 2022-08-12
