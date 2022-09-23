@@ -60,7 +60,7 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |checkAll|多选模式下是否开启全选功能|boolean |`-`|-|
-|checkCrossPage|多选模式下的复选框是否跨分页，只在非受控模式下生效|boolean |`-`|-|
+|checkCrossPage|多选模式下的复选框是否跨分页，如在受控模式下使用，需要设置 `preserveSelectedRowKeys`。|boolean |`-`|-|
 |checkStrictly|设置为 `false` 的时候父子选择会自动关联。|boolean |`true`|2.33.0|
 |fixed|是否固定选择列到左边|boolean |`-`|-|
 |preserveSelectedRowKeys|在数据项被删除时仍然保留选项的 `key`|boolean |`-`|2.19.0|

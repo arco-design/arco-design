@@ -253,8 +253,8 @@ export interface RowSelectionProps<T = any> {
    */
   checkStrictly?: boolean;
   /**
-   * @zh 多选模式下的复选框是否跨分页，只在非受控模式下生效
-   * @en Whether the checkboxes in multi-select mode cross pages, only work in uncontrolled mode
+   * @zh 多选模式下的复选框是否跨分页，如在受控模式下使用，需要设置 `preserveSelectedRowKeys`。
+   * @en Whether the checkbox in multi-select mode cross page, if used in controlled mode, you need to set `preserveSelectedRowKeys`.
    */
   checkCrossPage?: boolean;
   /**

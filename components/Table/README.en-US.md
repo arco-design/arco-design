@@ -60,7 +60,7 @@ The detailed parameters of `rowSelection`.
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |checkAll|Whether to show check all button|boolean |`-`|-|
-|checkCrossPage|Whether the checkboxes in multi-select mode cross pages, only work in uncontrolled mode|boolean |`-`|-|
+|checkCrossPage|Whether the checkbox in multi-select mode cross page, if used in controlled mode, you need to set `preserveSelectedRowKeys`.|boolean |`-`|-|
 |checkStrictly|When set to `false`, parent-child selections are automatically associated.|boolean |`true`|2.33.0|
 |fixed|Whether to fix column to the left|boolean |`-`|-|
 |preserveSelectedRowKeys|The `key` is still retained in `selectedRowKeys` when the data item is deleted|boolean |`-`|2.19.0|
