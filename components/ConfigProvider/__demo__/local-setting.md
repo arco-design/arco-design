@@ -21,7 +21,7 @@ If you want to work only inside `ConfigProvider`, you need to use it in combinat
 
 **This is supported in 2.40.0**
 
-```jsx
+```js
 import React, { useState } from 'react';
 import { Button, Message, Space, ConfigProvider, Notification, Typography } from '@arco-design/web-react';
 
