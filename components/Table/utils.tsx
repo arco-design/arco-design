@@ -1,4 +1,4 @@
-import { isArray, isObject } from '../_util/is';
+import { isArray, isObject, isUndefined, isNull } from '../_util/is';
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
@@ -130,10 +130,10 @@ export function getSelectedKeysByData(
 
   checkedKeys.forEach((key) => {
     const record = flattenData.find((d) => getRowKey(d) === key);
-
-    loop(record);
-
-    updateParent(record, selectedRowKeys, indeterminateKeys, getRowKey, childrenColumnName);
+    if (!isUndefined(record) && !isNull(record)) {
+      loop(record);
+      updateParent(record, selectedRowKeys, indeterminateKeys, getRowKey, childrenColumnName);
+    }
   });
 
   return {
