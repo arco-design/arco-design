@@ -44,7 +44,6 @@ type User = {
   role: 'owner' | 'master';
 };
 
-
 type GroupInfo = {
   id: number;
   name: string;
@@ -98,5 +97,47 @@ type GroupQueryParams = {
     path: string;
     link?: boolean;
   }>
+}
+```
+
+## 查询团队站点文档大纲
+
+```
+POST https://arco.design/material/api/group/queryGroupSiteOutline
+
+Return { ok: boolean, result: Record<string, { text: string; depth: number; href: string }[]> }
+```
+
+请求参数如下：
+
+```typescript
+type GroupQueryParams = {
+  /**
+   * 团队 ID
+   */
+  id: number;
+  /**
+   * 查询关键词
+   */
+  keyword?: string;
+};
+```
+
+上述接口返回数据为包含站点文档大纲的数组，具体字段如下：
+
+```typescript
+{
+  DocSearch: [
+    {
+      href: '/DocSearch#basic',
+      text: 'Basic',
+      depth: 2,
+    },
+    {
+      href: '/DocSearch#docsearchprops',
+      text: 'DocSearchProps',
+      depth: 2,
+    },
+  ]
 }
 ```
