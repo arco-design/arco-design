@@ -71,9 +71,26 @@ export default function useLegalValue(props: {
     return [beginVal, endVal];
   }
 
+  function getNextMarkValue(value: number, type: 'addition' | 'subtraction') {
+    // arrow Left or arrowRight
+    const multi = type === 'subtraction' ? -1 : 1;
+
+    let newValue = plus(value, multi * props.step);
+    if (props.onlyMarkValue) {
+      const markKeys = Object.keys(props.marks);
+      const currentIndex = markKeys.findIndex((key) => Number(key) === value);
+      newValue =
+        markKeys[currentIndex + multi] !== undefined
+          ? Number(markKeys[currentIndex + multi])
+          : value;
+    }
+    return newValue;
+  }
+
   return {
     getLegalRangeValue,
     getLegalValue,
     isLegalValue,
+    getNextMarkValue,
   };
 }
