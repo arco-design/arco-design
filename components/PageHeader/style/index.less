@@ -43,7 +43,6 @@
 
     &-extra {
       white-space: nowrap;
-      overflow: hidden;
     }
   }
 
@@ -62,6 +61,10 @@
     color: @page-header-color-back-icon;
     font-size: @page-header-size-back-icon;
     margin-right: @page-header-margin-back-icon-right;
+
+    &:focus-visible::before {
+      box-shadow: inset 0 0 0 2px @page-header-color-back-icon-box-shadow;
+    }
 
     &-icon {
       position: relative;
