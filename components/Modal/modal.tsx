@@ -14,7 +14,7 @@ import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
-import { isServerRendering } from '../_util/dom';
+import { isServerRendering, contains } from '../_util/dom';
 import { Esc } from '../_util/keycode';
 import Button from '../Button';
 import Portal from '../Portal';
@@ -181,7 +181,9 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     let timer = null;
     if (escToExit) {
       timer = setTimeout(() => {
-        modalWrapperRef.current?.focus();
+        if (contains(document.body, modalWrapperRef.current)) {
+          modalWrapperRef.current?.focus();
+        }
       });
     }
     return () => {
@@ -280,6 +282,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   const modalDom = (
     <div
       role="dialog"
+      aria-modal="true"
       {...ariaProps}
       className={cs(
         prefixCls,
@@ -304,7 +307,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
           {element}
         </FocusLock>
       ) : (
-        element
+        <>{element}</>
       )}
     </div>
   );

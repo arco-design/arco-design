@@ -36,7 +36,13 @@ export const off = (function () {
   };
 })();
 
-export const contains = function (root, ele) {
+export const contains = function (root: HTMLElement, ele) {
+  if (!root) {
+    return false;
+  }
+  if (root.contains) {
+    return root.contains(ele);
+  }
   let node = ele;
   while (node) {
     if (node === root) {
