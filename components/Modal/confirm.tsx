@@ -122,7 +122,7 @@ function confirm(config: ConfirmProps, renderFunc?: (props: ConfirmProps) => voi
   renderFunction(modalConfig);
 
   function destroy() {
-    root = root?.unmount();
+    root = root?._unmount();
 
     if (div.parentNode) {
       div.parentNode.removeChild(div);

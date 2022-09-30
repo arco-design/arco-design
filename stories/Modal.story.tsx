@@ -10,6 +10,18 @@ function Demo1() {
       <Button onClick={() => setVisible(true)} type="primary">
         打开对话框
       </Button>
+
+      <Button
+        onClick={() => {
+          Modal.info({
+            title: 'info',
+            content: 'content...',
+          });
+        }}
+        type="primary"
+      >
+        Modal.info
+      </Button>
       <Modal
         title="基础"
         visible={visible}
