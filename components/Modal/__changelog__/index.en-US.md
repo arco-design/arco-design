@@ -1,3 +1,11 @@
+## 2.40.2
+
+2022-09-30
+
+### 🐛 BugFix
+
+- Fix the bug of console warning when `Modal` component is uninstalled under React 18([#1440](https://github.com/arco-design/arco-design/pull/1440))
+
 ## 2.40.1
 
 2022-09-23

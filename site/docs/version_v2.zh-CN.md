@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.40.2
+
+2022-09-30
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件在 React 18  下卸载时控制台出现 warning 的 bug([#1440](https://github.com/arco-design/arco-design/pull/1440))
+- 修复 `Popconfirm` 组件开启 `focusLock` 时，Footer 内部 DOM 层级表现和默认不一致，导致按钮外边距样式失效的问题([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
+### 💅 样式更新
+
+- 移除 `PageHeader` 组件额外内容渲染区域的 `overflow: hidden` 属性，避免自定义渲染内容被遮盖的问题([#1436](https://github.com/arco-design/arco-design/pull/1436))
+- 修复 `Table` 组件展开行嵌套子表格时，子表格开启固定列会出现单元格透明的问题。([#1433](https://github.com/arco-design/arco-design/pull/1433))
+
 ## 2.40.1
 
 2022-09-23

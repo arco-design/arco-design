@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.40.2
+
+2022-09-30
+
+### 🐛 BugFix
+
+- Fix the bug of console warning when `Modal` component is uninstalled under React 18([#1440](https://github.com/arco-design/arco-design/pull/1440))
+- Fixed the issue that when the `Popconfirm` component enables `focusLock`, the performance of the DOM level inside the Footer is inconsistent with the default, causing the button margin style to fail.([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
+### 💅 Style
+
+- Remove the `overflow: hidden` attribute of the extra content rendering area of the `PageHeader` component to avoid the problem of custom rendering content being covered([#1436](https://github.com/arco-design/arco-design/pull/1436))
+- Fixed the issue that when the `Table` component expands a row and nested a sub table, the cell transparent problem occurs when the subtable opens fixed column.([#1433](https://github.com/arco-design/arco-design/pull/1433))
+
 ## 2.40.1
 
 2022-09-23

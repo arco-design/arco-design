@@ -1,3 +1,11 @@
+## 2.40.2
+
+2022-09-30
+
+### 💅 Style
+
+- Fixed the issue that when the `Table` component expands a row and nested a sub table, the cell transparent problem occurs when the subtable opens fixed column.([#1433](https://github.com/arco-design/arco-design/pull/1433))
+
 ## 2.40.1
 
 2022-09-23

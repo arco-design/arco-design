@@ -1,3 +1,11 @@
+## 2.40.2
+
+2022-09-30
+
+### 🐛 BugFix
+
+- Fixed the issue that when the `Popconfirm` component enables `focusLock`, the performance of the DOM level inside the Footer is inconsistent with the default, causing the button margin style to fail.([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
 ## 2.39.3
 
 2022-09-02
