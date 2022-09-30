@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, KeyboardEventHandler } from 'react';
 import { Enter, ArrowDown, ArrowUp, ArrowLeft, ArrowRight } from '../keycode';
 
 type CallBackEventType =
@@ -8,12 +8,13 @@ type CallBackEventType =
   | 'onArrowRight'
   | 'onArrowDown';
 
-export default function useKeyboardEvent() {
+export default function useKeyboardEvent(props?: { onKeyDown?: KeyboardEventHandler }) {
   const getEventListeners = useCallback(
     (callbacks: { [key in CallBackEventType]?: (e) => void }) => {
       return {
         onKeyDown: (e) => {
           const keyCode = e.keyCode || e.which;
+
           if (keyCode === Enter.code) {
             callbacks.onPressEnter?.(e);
           }
@@ -29,6 +30,7 @@ export default function useKeyboardEvent() {
           if (keyCode === ArrowUp.code) {
             callbacks.onArrowUp?.(e);
           }
+          props?.onKeyDown?.(e);
         },
       };
     },

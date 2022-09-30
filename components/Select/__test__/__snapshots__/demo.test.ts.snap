@@ -529,8 +529,8 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
 exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
 <div>
   <div
-    class="arco-typography"
-    style="width:345px"
+    class="arco-typography trigger-element"
+    style="width:300px"
     tabindex="0"
   >
     Favorite Cities：

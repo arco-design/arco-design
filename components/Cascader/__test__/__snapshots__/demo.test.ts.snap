@@ -441,7 +441,9 @@ exports[`renders Cascader/demo/custom_children.md correctly 1`] = `
     City
   </span>
   <span
-    class="arco-link"
+    class="arco-link trigger-element"
+    role="button"
+    tabindex="0"
   >
     Shanghai, Shanghai, Huangpu
   </span>

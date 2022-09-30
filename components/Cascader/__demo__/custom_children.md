@@ -121,7 +121,7 @@ class App extends React.Component {
             );
           }}
         >
-          <Link>{this.state.text}</Link>
+          <Link className="trigger-element" role="button" tabIndex={0}>{this.state.text}</Link>
         </Cascader>
       </div>
     );
@@ -129,4 +129,15 @@ class App extends React.Component {
 }
 
 export default App;
+```
+```css
+.trigger-element {
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+
+.trigger-element:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3)
+}
 ```
