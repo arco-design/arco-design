@@ -9,6 +9,7 @@ import IconHover from '../_class/icon-hover';
 import ResizeObserver from '../_util/resizeObserver';
 import { PageHeaderProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
@@ -19,6 +20,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
   );
   const { title, subTitle, extra, children, backIcon, footer, breadcrumb, ...rest } = props;
 
+  const getKeyboardEvents = useKeyboardEvent();
   const [pageWrap, setPageWrap] = useState(false);
   const pageRef = useRef<HTMLDivElement>();
 
@@ -60,8 +62,13 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
               {backIcon && (
                 <IconHover
                   prefix={prefixCls}
+                  tabIndex={0}
+                  role="button"
                   className={`${prefixCls}-back`}
                   onClick={props.onBack}
+                  {...getKeyboardEvents({
+                    onPressEnter: props.onBack,
+                  })}
                 >
                   <span className={`${prefixCls}-back-icon`}>
                     {backIcon === true ? rtl ? <IconRight /> : <IconLeft /> : backIcon}
