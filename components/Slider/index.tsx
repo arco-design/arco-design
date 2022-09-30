@@ -66,7 +66,7 @@ function Slider(baseProps: SliderProps, ref) {
     getIntervalConfig,
   });
 
-  const { getLegalValue, getLegalRangeValue, isLegalValue } = useLegalValue({
+  const { getLegalValue, getLegalRangeValue, isLegalValue, getNextMarkValue } = useLegalValue({
     isRange: range,
     min,
     max,
@@ -288,6 +288,19 @@ function Slider(baseProps: SliderProps, ref) {
     onMouseUp();
   }
 
+  // 结束节点的 arrow event
+  function handleEndArrowEvent(type: 'addition' | 'subtraction') {
+    if (disabled) return;
+
+    onChange([beginVal, getNextMarkValue(endVal, type)]);
+  }
+
+  // 起始节点的 arrow event
+  function handleBeginArrowEvent(type: 'addition' | 'subtraction') {
+    if (disabled) return;
+    onChange([getNextMarkValue(beginVal, type), endVal]);
+  }
+
   // bar 移动中
   function onBarMouseMove(e) {
     const newVal = getLegalValue(getValueByCoords(e.clientX, e.clientY));
@@ -381,6 +394,7 @@ function Slider(baseProps: SliderProps, ref) {
               onMoveBegin={getPosition}
               onMoving={handleBeginMove}
               onMoveEnd={handleMoveEnd}
+              onArrowEvent={handleBeginArrowEvent}
             />
           )}
           <SliderButton
@@ -395,6 +409,7 @@ function Slider(baseProps: SliderProps, ref) {
             onMoveBegin={getPosition}
             onMoving={handleEndMove}
             onMoveEnd={handleMoveEnd}
+            onArrowEvent={handleEndArrowEvent}
           />
         </div>
         {isShowInput && (
