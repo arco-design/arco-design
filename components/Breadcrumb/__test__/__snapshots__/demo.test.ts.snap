@@ -30,16 +30,13 @@ exports[`renders Breadcrumb/demo/basic.md correctly 1`] = `
         />
       </svg>
     </span>
-    <div
+    <a
       class="arco-breadcrumb-item"
+      href="#"
       role="listitem"
     >
-      <a
-        href="#"
-      >
-        Channel
-      </a>
-    </div>
+      Channel
+    </a>
     <span
       aria-hidden="true"
       class="arco-breadcrumb-item-separator"

@@ -62,7 +62,7 @@ const App = () => {
               content={item.content}
               datetime={item.datetime}
               actions={[
-                <span
+                <button
                   className="custom-comment-action"
                   key="heart"
                   onClick={() =>
@@ -75,8 +75,8 @@ const App = () => {
                     <IconHeart />
                   )}
                   {item.like + (like ? 1 : 0)}
-                </span>,
-                <span
+                </button>,
+                <button
                   className="custom-comment-action"
                   key="star"
                   onClick={() =>
@@ -89,10 +89,10 @@ const App = () => {
                     <IconStar />
                   )}
                   {item.star + (star ? 1 : 0)}
-                </span>,
-                <span className="custom-comment-action" key="reply">
+                </button>,
+                <button className="custom-comment-action" key="reply">
                   <IconMessage /> Reply
-                </span>,
+                </button>,
               ]}
             />
           </List.Item>
@@ -115,6 +115,11 @@ export default App;
   color: var(--color-text-1);
   cursor: pointer;
   display: inline-block;
+  border: none;
+}
+
+.custom-comment-action:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--color-primary-light-3);
 }
 
 .custom-comment-action:hover {

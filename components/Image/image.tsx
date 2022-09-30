@@ -15,6 +15,7 @@ import { isNumber, isUndefined } from '../_util/is';
 import { PreviewGroupContext } from './previewGroupContext';
 import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 type ImagePropsType = ImageProps & { _index?: number };
 
@@ -53,6 +54,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     ...restProps
   } = props;
 
+  const getKeyboardEvents = useKeyboardEvent();
   const {
     previewGroup,
     handleVisibleChange: handleGroupVisibleChange,
@@ -178,6 +180,10 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       <img
         ref={refImg}
         className={`${prefixCls}-img`}
+        tabIndex={0}
+        {...getKeyboardEvents({
+          onPressEnter: onImgClick,
+        })}
         {...restProps}
         title={title}
         width={width}

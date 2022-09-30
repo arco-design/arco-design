@@ -1041,6 +1041,7 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -1311,6 +1312,7 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -1941,6 +1943,7 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -1978,6 +1981,7 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -2634,6 +2638,7 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
   </span>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:24px"
   >
     <label
@@ -2730,6 +2735,7 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
   </span>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -2983,6 +2989,7 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label

@@ -90,8 +90,9 @@ exports[`renders Tag/demo/active.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-tag arco-tag-checked arco-tag-size-default"
+      class="arco-tag arco-tag-checked arco-tag-size-default add-tag"
       style="width:84px;background-color:var(--color-fill-2);border:1px dashed var(--color-fill-3);cursor:pointer"
+      tabindex="0"
     >
       <span
         class="arco-tag-icon"

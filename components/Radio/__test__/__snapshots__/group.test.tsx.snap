@@ -3,18 +3,21 @@
 exports[`ConfigProvider componentConfig.Radio.Group default 1`] = `
 <div
   class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+  role="radiogroup"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Radio.Group set className globally 1`] = `
 <div
   class="arco-radio-group arco-radio-size-default arco-radio-mode-outline global-default-class"
+  role="radiogroup"
 />
 `;
 
 exports[`ConfigProvider componentConfig.Radio.Group set className globally and component set className itself. 1`] = `
 <div
   class="arco-radio-group arco-radio-size-default arco-radio-mode-outline component-class"
+  role="radiogroup"
 />
 `;
 
@@ -22,5 +25,6 @@ exports[`ConfigProvider componentConfig.Radio.Group set data-* property 1`] = `
 <div
   class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
   data-test-name="Radio.Group"
+  role="radiogroup"
 />
 `;

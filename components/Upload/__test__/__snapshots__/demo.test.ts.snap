@@ -65,6 +65,7 @@ exports[`renders Upload/demo/basic.md correctly 1`] = `
         class="arco-upload-trigger"
       >
         <button
+          aria-label="点击上传"
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
           type="button"
         >
@@ -104,6 +105,7 @@ exports[`renders Upload/demo/basic.md correctly 1`] = `
         class="arco-upload-trigger"
       >
         <button
+          aria-label="点击上传"
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-disabled arco-upload-trigger-with-icon"
           disabled=""
           type="button"
@@ -148,6 +150,7 @@ exports[`renders Upload/demo/beforeUpload.md correctly 1`] = `
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -195,7 +198,9 @@ exports[`renders Upload/demo/crop.md correctly 1`] = `
         class="arco-upload-trigger-picture-wrapper"
       >
         <div
+          aria-label="点击上传"
           class="arco-upload-trigger-picture"
+          tabindex="0"
         >
           <div
             class="arco-upload-trigger-picture-text"
@@ -234,6 +239,7 @@ Array [
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -277,6 +283,7 @@ exports[`renders Upload/demo/directory.md correctly 1`] = `
         class="arco-upload-trigger"
       >
         <button
+          aria-label="点击上传"
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
           type="button"
         >
@@ -321,7 +328,9 @@ Array [
       class="arco-upload-trigger"
     >
       <div
+        aria-label="点击或拖拽文件到此处上传"
         class="arco-upload-trigger-drag"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -365,6 +374,7 @@ exports[`renders Upload/demo/icon.md correctly 1`] = `
     
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-left:20px;margin-bottom:20px"
   >
     <label
@@ -445,6 +455,7 @@ exports[`renders Upload/demo/icon.md correctly 1`] = `
         class="arco-upload-trigger"
       >
         <button
+          aria-label="点击上传"
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
           type="button"
         >
@@ -538,7 +549,9 @@ exports[`renders Upload/demo/icon.md correctly 1`] = `
           class="arco-upload-list-item-operation"
         >
           <span
-            class="arco-icon-hover"
+            aria-label="删除"
+            class="arco-icon-hover arco-upload-list-remove-icon-hover"
+            tabindex="0"
           >
             <span
               class="arco-upload-list-remove-icon"
@@ -628,7 +641,9 @@ exports[`renders Upload/demo/icon.md correctly 1`] = `
           class="arco-upload-list-item-operation"
         >
           <span
-            class="arco-icon-hover"
+            aria-label="删除"
+            class="arco-icon-hover arco-upload-list-remove-icon-hover"
+            tabindex="0"
           >
             <span
               class="arco-upload-list-remove-icon"
@@ -669,6 +684,7 @@ Array [
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -778,6 +794,7 @@ exports[`renders Upload/demo/onRemove.md correctly 1`] = `
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -864,7 +881,9 @@ exports[`renders Upload/demo/onRemove.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"
@@ -947,7 +966,9 @@ exports[`renders Upload/demo/onRemove.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"
@@ -987,6 +1008,7 @@ exports[`renders Upload/demo/pictureList.md correctly 1`] = `
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -1063,7 +1085,9 @@ exports[`renders Upload/demo/pictureList.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"
@@ -1105,12 +1129,16 @@ exports[`renders Upload/demo/preview.md correctly 1`] = `
         />
         <div
           class="arco-upload-list-item-picture-mask"
+          role="radiogroup"
         >
           <div
             class="arco-upload-list-item-picture-operation"
           >
             <span
+              aria-label="预览"
               class="arco-upload-list-preview-icon"
+              role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1131,7 +1159,10 @@ exports[`renders Upload/demo/preview.md correctly 1`] = `
               </svg>
             </span>
             <span
+              aria-label="删除"
               class="arco-upload-list-remove-icon"
+              role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1162,12 +1193,16 @@ exports[`renders Upload/demo/preview.md correctly 1`] = `
         />
         <div
           class="arco-upload-list-item-picture-mask"
+          role="radiogroup"
         >
           <div
             class="arco-upload-list-item-picture-operation"
           >
             <span
+              aria-label="预览"
               class="arco-upload-list-preview-icon"
+              role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1188,7 +1223,10 @@ exports[`renders Upload/demo/preview.md correctly 1`] = `
               </svg>
             </span>
             <span
+              aria-label="删除"
               class="arco-upload-list-remove-icon"
+              role="button"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -1224,7 +1262,9 @@ exports[`renders Upload/demo/preview.md correctly 1`] = `
         class="arco-upload-trigger-picture-wrapper"
       >
         <div
+          aria-label="点击上传"
           class="arco-upload-trigger-picture"
+          tabindex="0"
         >
           <div
             class="arco-upload-trigger-picture-text"
@@ -1266,6 +1306,7 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -1361,7 +1402,10 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
               </div>
             </div>
             <span
+              aria-label="开始"
               class="arco-upload-list-start-icon"
+              role="button"
+              tabindex="0"
             >
               <button
                 class="arco-btn arco-btn-text arco-btn-size-mini arco-btn-shape-square"
@@ -1379,7 +1423,9 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"
@@ -1461,7 +1507,10 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
             </span>
           </div>
           <span
+            aria-label="点击重试"
             class="arco-upload-list-reupload-icon"
+            role="button"
+            tabindex="0"
           >
             <button
               class="arco-btn arco-btn-text arco-btn-size-mini arco-btn-shape-square"
@@ -1529,7 +1578,9 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"
@@ -1568,6 +1619,7 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -1827,6 +1879,7 @@ exports[`renders Upload/demo/uploadList.md correctly 1`] = `
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -1913,7 +1966,9 @@ exports[`renders Upload/demo/uploadList.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"
@@ -1996,7 +2051,9 @@ exports[`renders Upload/demo/uploadList.md correctly 1`] = `
         class="arco-upload-list-item-operation"
       >
         <span
-          class="arco-icon-hover"
+          aria-label="删除"
+          class="arco-icon-hover arco-upload-list-remove-icon-hover"
+          tabindex="0"
         >
           <span
             class="arco-upload-list-remove-icon"

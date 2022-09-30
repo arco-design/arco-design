@@ -70,7 +70,15 @@ function App() {
             border: '1px dashed var(--color-fill-3)',
             cursor: 'pointer',
           }}
+          className="add-tag"
+          tabIndex={0}
           onClick={() => setShowInput(true)}
+          onKeyDown={e => {
+            const keyCode = e.keyCode || e.which;
+            if (keyCode === 13) { // enter
+              setShowInput(true)
+            }
+          }}
         >
           Add Tag
         </Tag>
@@ -80,4 +88,10 @@ function App() {
 }
 
 export default App;
+```
+```css
+.add-tag:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
+}
+
 ```

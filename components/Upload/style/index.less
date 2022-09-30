@@ -77,6 +77,10 @@
         color: @upload-picture-color-text_hover;
       }
 
+      &:focus-visible {
+        box-shadow: 0 0 0 2px @upload-color-icon-box-shadow_default;
+      }
+
       &-text {
         position: relative;
         top: 50%;
@@ -111,6 +115,10 @@
         .@{prefix}-icon-plus {
           color: @upload-drag-color-icon_hover;
         }
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 2px @upload-color-icon-box-shadow_default;
       }
 
       &-active {
@@ -197,6 +205,10 @@
     top: 50%;
     left: 50%;
     font-size: @upload-text-item-size-status-icon;
+
+    &:focus-visible {
+      color: @upload-color-icon-box-shadow_active;
+    }
   }
 
   &-reupload-icon {
@@ -208,6 +220,10 @@
     &:active,
     &:hover {
       color: @upload-text-item-color-reupload-icon_hover;
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 2px @upload-color-icon-box-shadow_default;
     }
   }
 
@@ -246,6 +262,10 @@
       top: 50%;
       transform: translateY(-50%);
       color: @upload-text-item-color-remove-icon;
+
+      .@{upload-prefix-cls}-list-remove-icon-hover:focus-visible::before {
+        box-shadow: 0 0 0 2px @upload-color-icon-box-shadow_active;
+      }
 
       .@{upload-prefix-cls}-list-remove-icon {
         font-size: inherit;
@@ -407,7 +427,6 @@
     }
 
     &-operation {
-      display: none;
       font-size: @upload-picture-item-size-operation-icon;
 
       .@{upload-prefix-cls}-list-reupload-icon {
@@ -418,9 +437,23 @@
       .@{upload-prefix-cls}-list-preview-icon + .@{upload-prefix-cls}-list-remove-icon {
         margin-left: @upload-picture-item-margin-preview-icon-right;
       }
+
+      .@{upload-prefix-cls}-list-reupload-icon,
+      .@{upload-prefix-cls}-list-preview-icon,
+      .@{upload-prefix-cls}-list-remove-icon {
+        &:focus-visible {
+          border-radius: 2px;
+          box-shadow: 0 0 0 2px @upload-color-icon-box-shadow_default;
+        }
+      }
     }
 
     &-error-tip {
+      .@{upload-prefix-cls}-list-item-picture-operation {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
       .@{upload-prefix-cls}-list-error-icon {
         font-size: @upload-picture-item-size-error-icon;
         color: @upload-picture-item-color-error-icon;
@@ -428,12 +461,15 @@
     }
 
     &-mask:hover,
-    &-mask:hover &-operation {
+    &-mask:focus-within,
+    &-mask:hover &-operation,
+    &-mask:focus-within &-operation {
       opacity: 1;
       display: block;
     }
 
-    &-mask:hover &-error-tip {
+    &-mask:hover &-error-tip,
+    &-mask:focus-within &-error-tip {
       display: none;
     }
   }

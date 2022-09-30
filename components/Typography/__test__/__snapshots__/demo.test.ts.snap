@@ -493,7 +493,10 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   >
     Click the icon to copy this text.
     <span
+      aria-label="复制"
       class="arco-typography-operation-copy"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -515,7 +518,10 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   >
     Click the icon to edit this text.
     <span
+      aria-label="编辑"
       class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"

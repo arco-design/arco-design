@@ -59,6 +59,7 @@ exports[`renders PageHeader/demo/background.md correctly 1`] = `
           <div>
             <div
               class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+              role="radiogroup"
             >
               <label
                 class="arco-radio-button"
@@ -146,6 +147,7 @@ exports[`renders PageHeader/demo/basic.md correctly 1`] = `
           <div>
             <div
               class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+              role="radiogroup"
             >
               <label
                 class="arco-radio-button"
@@ -302,6 +304,7 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
           <div>
             <div
               class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+              role="radiogroup"
             >
               <label
                 class="arco-radio-button"
