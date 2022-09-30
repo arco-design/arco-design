@@ -187,7 +187,7 @@ function Transfer(baseProps: TransferProps, ref) {
           return (
             <Button
               key={index}
-              tabIndex={-1}
+              tabIndex={_disabled ? -1 : undefined}
               aria-label={`move selected ${to === 'target' ? 'right' : 'left'}`}
               type="secondary"
               size="small"

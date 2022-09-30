@@ -11,8 +11,10 @@ import IconDelete from '../../icon/react-icon/IconDelete';
 import IconHover from '../_class/icon-hover';
 import { ConfigContext } from '../ConfigProvider';
 import { isObject } from '../_util/is';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 export const TransferList = (props: TransferListProps, ref) => {
+  const getKeyboardEvents = useKeyboardEvent();
   const {
     style,
     prefixCls,
@@ -128,6 +130,11 @@ export const TransferList = (props: TransferListProps, ref) => {
           <IconHover
             className={`${baseClassName}-icon-clear`}
             onClick={clearItems(keysCanBeChecked)}
+            tabIndex={0}
+            role="button"
+            {...getKeyboardEvents({
+              onPressEnter: clearItems(keysCanBeChecked),
+            })}
           >
             <IconDelete />
           </IconHover>

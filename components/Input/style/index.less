@@ -126,6 +126,10 @@
   cursor: pointer;
   color: @input-color-icon-clear;
 
+  &:focus-visible::before {
+    box-shadow: 0 0 0 2px @input-color-border_focus;
+  }
+
   > svg {
     transition: color @transition-duration-1 @transition-timing-function-linear;
     position: relative;

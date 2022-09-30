@@ -3413,6 +3413,7 @@ exports[`renders DatePicker/demo/range.md correctly 1`] = `
   >
     <div
       class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio-button arco-radio-checked"
@@ -3960,6 +3961,7 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label

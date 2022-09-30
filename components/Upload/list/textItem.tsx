@@ -13,6 +13,7 @@ import IconExclamationCircleFill from '../../../icon/react-icon/IconExclamationC
 import IconDelete from '../../../icon/react-icon/IconDelete';
 import IconHover from '../../_class/icon-hover';
 import { ConfigProviderProps } from '../../ConfigProvider';
+import useKeyboardEvent from '../../_util/hooks/useKeyboardEvent';
 
 const getIconType = (file: UploadItem) => {
   let type = '';
@@ -52,6 +53,7 @@ const TextItem = (
 ) => {
   const { prefixCls, disabled, file, locale } = props;
   const cls = `${prefixCls}-list-item-text`;
+  const getKeyboardEvents = useKeyboardEvent();
 
   const Icon = getIconType(file);
 
@@ -135,9 +137,17 @@ const TextItem = (
       <div className={`${prefixCls}-list-item-operation`}>
         {!disabled && actionIcons.removeIcon !== null && (
           <IconHover
+            className={`${prefixCls}-list-remove-icon-hover`}
             onClick={() => {
               props.onRemove && props.onRemove(file);
             }}
+            tabIndex={0}
+            aria-label={locale.Upload.delete}
+            {...getKeyboardEvents({
+              onPressEnter: () => {
+                props.onRemove && props.onRemove(file);
+              },
+            })}
           >
             <span className={`${prefixCls}-list-remove-icon`}>
               {actionIcons.removeIcon || <IconDelete />}

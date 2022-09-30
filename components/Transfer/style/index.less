@@ -165,6 +165,10 @@
       &:hover::before {
         background-color: @transfer-color-bg-icon;
       }
+
+      &:focus-visible::before {
+        box-shadow: 0 0 0 2px @transfer-color-icon-box-shadow;
+      }
     }
 
     .@{prefix}-list {

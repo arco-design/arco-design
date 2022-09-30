@@ -7,6 +7,7 @@ import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
 import useComposition from './useComposition';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
@@ -44,6 +45,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       'suffix',
     ]);
 
+    const getKeyboardEvents = useKeyboardEvent();
     const refInput = useRef<HTMLInputElement>();
     const refInputMirror = useRef<HTMLSpanElement>();
     const refPrevInputWidth = useRef<number>(null);
@@ -122,6 +124,14 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     // Here also need placeholder to trigger updateInputWidth after user-input is cleared
     const mirrorValue = inputProps.value || placeholder;
 
+    const handleClear = (e) => {
+      if (refInput.current && refInput.current.focus) {
+        refInput.current.focus();
+      }
+      triggerValueChangeCallback('', e);
+      onClear && onClear();
+    };
+
     return (
       <>
         {allowClear ? (
@@ -129,14 +139,12 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
             <input ref={refInput} {...inputProps} />
             {!readOnly && !disabled && allowClear && value ? (
               <IconHover
+                tabIndex={0}
                 className={`${prefixCls}-clear-icon`}
+                {...getKeyboardEvents({ onPressEnter: handleClear })}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (refInput.current && refInput.current.focus) {
-                    refInput.current.focus();
-                  }
-                  triggerValueChangeCallback('', e);
-                  onClear && onClear();
+                  handleClear(e);
                 }}
               >
                 <IconClose

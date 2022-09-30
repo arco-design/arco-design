@@ -65,17 +65,20 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
   >
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio arco-radio-checked"
       >
         <input
           checked=""
+          name="button-radio-group"
           type="radio"
           value="Beijing"
         />
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -87,11 +90,13 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
         class="arco-radio"
       >
         <input
+          name="button-radio-group"
           type="radio"
           value="Shanghai"
         />
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-round"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -103,11 +108,13 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
         class="arco-radio"
       >
         <input
+          name="button-radio-group"
           type="radio"
           value="Guangzhou"
         />
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-round"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -119,11 +126,13 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
   </div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
   >
     <label
       class="arco-radio"
     >
       <input
+        name="card-radio-group"
         type="radio"
         value="1"
       />
@@ -164,6 +173,7 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
       class="arco-radio"
     >
       <input
+        name="card-radio-group"
         type="radio"
         value="2"
       />
@@ -208,6 +218,7 @@ exports[`renders Radio/demo/direction.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline arco-radio-group-direction-vertical"
+    role="radiogroup"
   >
     <label
       class="arco-radio arco-radio-checked"
@@ -299,6 +310,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
   >
     <label
       class="arco-radio"
@@ -381,6 +393,7 @@ exports[`renders Radio/demo/radio_button.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-right:20px;margin-bottom:20px"
   >
     <label
@@ -449,6 +462,7 @@ exports[`renders Radio/demo/radio_group.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -537,6 +551,7 @@ exports[`renders Radio/demo/radio_group.md correctly 1`] = `
   <br />
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -623,6 +638,7 @@ exports[`renders Radio/demo/radio_group.md correctly 1`] = `
   <br />
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
   >
     <label
       class="arco-radio"
@@ -713,6 +729,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-mini arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -773,6 +790,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <br />
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -833,6 +851,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <br />
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -893,6 +912,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <br />
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-large arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label

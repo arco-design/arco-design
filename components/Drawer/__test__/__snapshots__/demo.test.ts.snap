@@ -177,6 +177,7 @@ exports[`renders Drawer/demo/position.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
   >
     <label
       class="arco-radio"

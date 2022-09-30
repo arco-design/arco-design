@@ -9,6 +9,7 @@ import { on, off } from '../_util/dom';
 import throttleByRaf from '../_util/throttleByRaf';
 import { BackTopProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 const defaultProps: BackTopProps = {
   visibleHeight: 400,
@@ -19,6 +20,7 @@ const defaultProps: BackTopProps = {
 
 function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  const getKeyboardEvents = useKeyboardEvent();
   const props = useMergeProps<PropsWithChildren<BackTopProps>>(
     baseProps,
     defaultProps,
@@ -75,6 +77,9 @@ function BackTop(baseProps: PropsWithChildren<BackTopProps>, ref) {
       className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, props.className)}
       style={props.style}
       onClick={scrollToTop}
+      {...getKeyboardEvents({
+        onPressEnter: scrollToTop,
+      })}
     >
       <CSSTransition in={visible} timeout={100} classNames="fadeIn" unmountOnExit>
         {props.children || (

@@ -677,12 +677,11 @@ exports[`renders Input/demo/password.md correctly 1`] = `
             class="arco-input-group-suffix"
           >
             <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-eye-invisible"
+              class="arco-input-password-visibility-icon arco-icon arco-icon-eye-invisible"
               fill="none"
-              focusable="false"
               stroke="currentColor"
               stroke-width="4"
+              tabindex="0"
               viewBox="0 0 48 48"
             >
               <path
@@ -721,12 +720,11 @@ exports[`renders Input/demo/password.md correctly 1`] = `
             class="arco-input-group-suffix"
           >
             <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-eye"
+              class="arco-input-password-visibility-icon arco-icon arco-icon-eye"
               fill="none"
-              focusable="false"
               stroke="currentColor"
               stroke-width="4"
+              tabindex="0"
               viewBox="0 0 48 48"
             >
               <path
@@ -1271,6 +1269,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
     style="margin-bottom:24px"
   >
     <label

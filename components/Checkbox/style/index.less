@@ -20,8 +20,9 @@
     width: 0;
     height: 0;
 
-    &:focus + .@{checkbox-prefix-cls}-icon-hover::before {
+    &:focus-visible + .@{checkbox-prefix-cls}-icon-hover::before {
       background-color: @checkbox-mask-bg-color-bg;
+      opacity: 1;
     }
   }
 

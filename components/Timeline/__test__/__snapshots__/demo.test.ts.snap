@@ -146,6 +146,7 @@ exports[`renders Timeline/demo/direction.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio arco-radio-checked"
@@ -1044,6 +1045,7 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio arco-radio-checked"
@@ -1099,6 +1101,7 @@ exports[`renders Timeline/demo/labelPosition.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio arco-radio-checked"
@@ -1945,6 +1948,7 @@ exports[`renders Timeline/demo/vertical.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio arco-radio-checked"

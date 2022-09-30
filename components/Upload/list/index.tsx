@@ -25,7 +25,7 @@ export const FileList = (props: UploadListProps) => {
         let originNode: ReactNode =
           listType === 'picture-card' ? (
             <div className={`${prefixCls}-list-item ${prefixCls}-list-item-${file.status}`}>
-              <PictureItem {...props} file={file} />
+              <PictureItem {...props} file={file} locale={locale} />
             </div>
           ) : (
             <TextItem {...props} file={file} locale={locale} />

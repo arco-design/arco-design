@@ -46,6 +46,10 @@
       &:not(:first-child) {
         margin: 0 12px;
       }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 2px @calendar-color-box-shadow;
+      }
     }
 
     &-icon:not(&-icon-hidden) {
