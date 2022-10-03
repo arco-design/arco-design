@@ -37,6 +37,7 @@ Show the task flow and the current degree of completion, and guide users to foll
 |className|The additional css className|string \| string[] |`-`|2.11.0|
 |id|Specify the ID of the node, which will be used as a parameter in callback onChange|any |`-`|-|
 |style|The additional css style|CSSProperties |`-`|2.11.0|
+|onClick|Callback when item is clicked|(index: number, id: any, e) => void |`-`|`e` in `2.40.0`|
 
 ### CustomDotRecord
 

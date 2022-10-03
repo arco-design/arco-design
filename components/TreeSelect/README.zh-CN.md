@@ -57,6 +57,7 @@
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|
 |onClick|鼠标点击下拉框时的回调|(e) => void |`-`|-|
 |onInputValueChange|输入框搜索文本改变的回调。|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.39.0|
+|onKeyDown|键盘输入时的回调|(e) => void |`-`|2.40.0|
 |onSearch|自定义搜索方法。未定义的时候将会在已经在数据中进行搜索|(inputValue: string) => void |`-`|-|
 |onVisibleChange|下拉框收起展开时触发|(visible: boolean) => void |`-`|-|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|

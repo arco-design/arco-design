@@ -1,3 +1,19 @@
+## 2.40.2
+
+2022-09-30
+
+### 🐛 BugFix
+
+- Fixed the issue that when the `Popconfirm` component enables `focusLock`, the performance of the DOM level inside the Footer is inconsistent with the default, causing the button margin style to fail.([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Popconfirm` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+
 ## 2.31.0
 
 2022-03-25

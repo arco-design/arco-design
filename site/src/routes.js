@@ -842,7 +842,7 @@ export default function getRoutes(lang = 'zh', t) {
             {
               name: t['routes.material.command'],
               path: 'material/command',
-              component: lazyLoad(() => import(`../docs/material/advanced.command.zn-CN.md`)),
+              component: lazyLoad(() => import(`../docs/material/advanced.command${suffix}.md`)),
             },
             {
               name: t['routes.material.develop-template'],

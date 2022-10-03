@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fix the bug that the callback is not triggered occasionally after `Steps.Step` is passed to the `onClick` event([#1364](https://github.com/arco-design/arco-design/pull/1364))
+
 ## 2.26.0
 
 2021-12-03

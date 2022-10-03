@@ -10,7 +10,6 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-0"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -38,20 +37,19 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -64,7 +62,6 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-1"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -159,20 +156,19 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -186,7 +182,6 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
 exports[`renders Select/demo/async-data.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-2"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -226,20 +221,19 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -258,7 +252,6 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-3"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -312,7 +305,6 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-4"
       aria-disabled="true"
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -371,7 +363,6 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
 exports[`renders Select/demo/clear.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-5"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"
@@ -431,7 +422,6 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-6"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -485,7 +475,6 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-7"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -557,7 +546,6 @@ exports[`renders Select/demo/custom-trigger.md correctly 1`] = `
 exports[`renders Select/demo/darggable.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-9"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -713,20 +701,19 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -738,7 +725,6 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
 exports[`renders Select/demo/dropdown-render.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-10"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"
@@ -792,7 +778,6 @@ exports[`renders Select/demo/group.md correctly 1`] = `
 <div>
   <div
     aria-autocomplete="list"
-    aria-controls="arco-select-popup-11"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -820,20 +805,19 @@ exports[`renders Select/demo/group.md correctly 1`] = `
         class="arco-select-suffix"
       >
         <div
-          class="arco-select-expand-icon"
+          class="arco-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
-            class="arco-icon arco-icon-expand"
+            class="arco-icon arco-icon-down"
             fill="none"
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
           >
             <path
-              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              d="M39.6 17.443 24.043 33 8.487 17.443"
             />
           </svg>
         </div>
@@ -846,7 +830,6 @@ exports[`renders Select/demo/group.md correctly 1`] = `
 exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-12"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -886,20 +869,19 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -918,7 +900,6 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-13"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -1033,20 +1014,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1060,7 +1040,6 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-14"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -1185,20 +1164,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1212,7 +1190,6 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-15"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -1337,20 +1314,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1363,7 +1339,6 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-16"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -1423,20 +1398,19 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1457,7 +1431,6 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-17"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default arco-select-no-border"
@@ -1511,7 +1484,6 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-18"
       aria-disabled="true"
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -1570,7 +1542,6 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
 exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-19"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -1610,20 +1581,19 @@ exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -1642,7 +1612,6 @@ exports[`renders Select/demo/options.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-20"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -1698,7 +1667,6 @@ exports[`renders Select/demo/options.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-21"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -1796,20 +1764,19 @@ exports[`renders Select/demo/options.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -1830,7 +1797,6 @@ exports[`renders Select/demo/relative.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-22"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -1886,7 +1852,6 @@ exports[`renders Select/demo/relative.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-23"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -1948,7 +1913,6 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-24"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -2002,7 +1966,6 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-25"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -2130,20 +2093,19 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2161,7 +2123,6 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-26"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -2276,20 +2237,19 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
             </svg>
           </span>
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2310,7 +2270,6 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-27"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -2338,20 +2297,19 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2365,7 +2323,6 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-28"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -2393,20 +2350,19 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2419,7 +2375,6 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-29"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -2447,20 +2402,19 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2538,7 +2492,6 @@ exports[`renders Select/demo/size.md correctly 1`] = `
   <div>
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-30"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -2566,20 +2519,19 @@ exports[`renders Select/demo/size.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2589,7 +2541,6 @@ exports[`renders Select/demo/size.md correctly 1`] = `
     <br />
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-31"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -2629,20 +2580,19 @@ exports[`renders Select/demo/size.md correctly 1`] = `
           class="arco-select-suffix"
         >
           <div
-            class="arco-select-expand-icon"
+            class="arco-select-arrow-icon"
           >
             <svg
               aria-hidden="true"
-              class="arco-icon arco-icon-expand"
+              class="arco-icon arco-icon-down"
               fill="none"
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="transform:rotate(-45deg)"
               viewBox="0 0 48 48"
             >
               <path
-                d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                d="M39.6 17.443 24.043 33 8.487 17.443"
               />
             </svg>
           </div>
@@ -2656,7 +2606,6 @@ exports[`renders Select/demo/size.md correctly 1`] = `
 exports[`renders Select/demo/token-separators.md correctly 1`] = `
 <div
   aria-autocomplete="list"
-  aria-controls="arco-select-popup-32"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -2696,20 +2645,19 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
       class="arco-select-suffix"
     >
       <div
-        class="arco-select-expand-icon"
+        class="arco-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
-          class="arco-icon arco-icon-expand"
+          class="arco-icon arco-icon-down"
           fill="none"
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="transform:rotate(-45deg)"
           viewBox="0 0 48 48"
         >
           <path
-            d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+            d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
       </div>
@@ -2727,7 +2675,6 @@ Array [
   </h6>,
   <div
     aria-autocomplete="list"
-    aria-controls="arco-select-popup-33"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -2767,20 +2714,19 @@ Array [
         class="arco-select-suffix"
       >
         <div
-          class="arco-select-expand-icon"
+          class="arco-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
-            class="arco-icon arco-icon-expand"
+            class="arco-icon arco-icon-down"
             fill="none"
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="transform:rotate(-45deg)"
             viewBox="0 0 48 48"
           >
             <path
-              d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+              d="M39.6 17.443 24.043 33 8.487 17.443"
             />
           </svg>
         </div>

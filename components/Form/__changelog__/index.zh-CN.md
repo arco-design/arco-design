@@ -1,3 +1,19 @@
+## 2.40.0
+
+2022-09-16
+
+### 💎 功能优化
+
+- 优化 `Form` 组件内置校验信息模板([#1398](https://github.com/arco-design/arco-design/pull/1398))
+
+### 🆕 功能升级
+
+- `Form.Item` 支持 `dependencies` 属性([#1397](https://github.com/arco-design/arco-design/pull/1397))
+
+### 🐛 问题修复
+
+- 修复 `Form.useWatch` 在 `field` 改变时，返回值未及时更新的 bug。([#1400](https://github.com/arco-design/arco-design/pull/1400))
+
 ## 2.38.1
 
 2022-08-05

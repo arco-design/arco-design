@@ -39,13 +39,14 @@
 |xl|>= 1200px 响应式栅格|number \| { [key: string]: any } |`-`|-|
 |xs|< 576px 响应式栅格|number \| { [key: string]: any } |`-`|-|
 |xxl|>= 1600px 响应式栅格|number \| { [key: string]: any } |`-`|-|
+|xxxl|>= 2000px 响应式栅格|number \| { [key: string]: any } |`-`|2.40.0|
 
 ### GridRowGutter
 
 ```js
 export type GridRowGutter =
   | number
-  | Partial<Record<"xxl" | "xl" | "lg" | "md" | "sm" | "xs", number>>;
+  | Partial<Record<GridResponsiveBreakpoint, number>>;
 ```
 
 ### FlexType

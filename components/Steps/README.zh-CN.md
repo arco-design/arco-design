@@ -37,6 +37,7 @@
 |className|节点类名|string \| string[] |`-`|2.11.0|
 |id|指定节点的 ID，将在 onChange 回调中作为参数。|any |`-`|-|
 |style|节点样式|CSSProperties |`-`|2.11.0|
+|onClick|点击回调|(index: number, id: any, e) => void |`-`|`e` in `2.40.0`|
 
 ### CustomDotRecord
 

@@ -1,3 +1,27 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件在 `de-DE` 语言下会报错的问题。([#1358](https://github.com/arco-design/arco-design/pull/1358))
+
+## 2.39.2
+
+2022-08-26
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件动态修改 `disabled`，禁用日期没有及时更新的 bug。([#1336](https://github.com/arco-design/arco-design/pull/1336))
+
+## 2.39.1
+
+2022-08-19
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件 `panelRender` 不生效的 bug。([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
 ## 2.39.0
 
 2022-08-12

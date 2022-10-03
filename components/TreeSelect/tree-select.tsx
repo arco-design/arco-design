@@ -34,6 +34,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
+import useId from '../_util/hooks/useId';
 
 function isEmptyValue(value) {
   return (
@@ -42,9 +43,6 @@ function isEmptyValue(value) {
     (isObject(value) && Object.keys(value).length === 0)
   );
 }
-
-// Generate DOM id for instance
-let globalTreeSelectIndex = 0;
 
 const defaultProps: TreeSelectProps = {
   bordered: true,
@@ -92,11 +90,7 @@ const TreeSelect: ForwardRefRenderFunction<
   const isFilterNode = inputValue && !isFunction(props.onSearch);
 
   // Unique ID of this select instance
-  const instancePopupID = useMemo<string>(() => {
-    const id = `${prefixCls}-popup-${globalTreeSelectIndex}`;
-    globalTreeSelectIndex++;
-    return id;
-  }, []);
+  const instancePopupID = useId(`${prefixCls}-popup-`);
 
   // 尝试更新 inputValue，并触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
@@ -343,10 +337,11 @@ const TreeSelect: ForwardRefRenderFunction<
               onClear={(e) => {
                 e.stopPropagation();
                 triggerChange([], {});
-                props.onClear && props.onClear(!!popupVisible);
+                props.onClear?.(!!popupVisible);
               }}
               onKeyDown={(e) => {
                 e.stopPropagation();
+                props.onKeyDown?.(e);
               }}
               onFocus={(e) => {
                 e && e.stopPropagation();

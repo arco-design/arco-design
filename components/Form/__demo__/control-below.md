@@ -54,6 +54,7 @@ class App extends React.Component {
     return (
       <Form
         ref={(ref) => (this.form = ref)}
+        autoComplete="off"
         style={{ maxWidth: 650 }}
         onValuesChange={this.onValuesChange}
       >

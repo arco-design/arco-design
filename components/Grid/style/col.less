@@ -17,6 +17,7 @@
 
     &@{usedAdaptation}-@{span} {
       .col-style(@span) when (@span > 0) {
+        display: block;
         width: (100% / 24) * @span;
         flex: 0 0 (100% / 24) * @span;
       }
@@ -135,5 +136,13 @@
     .order(24, xxl);
     .pull(24, xxl);
     .push(24, xxl);
+  }
+
+  @media (min-width: 2000px) {
+    .span(24, xxxl);
+    .offset(23, xxxl);
+    .order(24, xxxl);
+    .pull(24, xxxl);
+    .push(24, xxxl);
   }
 }

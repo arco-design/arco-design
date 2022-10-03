@@ -87,16 +87,18 @@ export const ConfigContext = createContext<ConfigProviderProps>({
 
 function ConfigProvider(baseProps: ConfigProviderProps) {
   const props = useMergeProps<ConfigProviderProps>(baseProps, defaultProps, componentConfig);
-  const { theme, prefixCls, children, locale, rtl } = props;
+  const { theme, prefixCls, children, locale, rtl, effectGlobalNotice = true } = props;
 
   useEffect(() => {
     setTheme(theme);
   }, [theme]);
 
   useEffect(() => {
-    Message.config({ prefixCls, rtl });
-    Notification.config({ prefixCls, rtl });
-  }, [prefixCls, rtl]);
+    if (effectGlobalNotice) {
+      Message.config({ prefixCls, rtl });
+      Notification.config({ prefixCls, rtl });
+    }
+  }, [prefixCls, rtl, effectGlobalNotice]);
 
   function getPrefixCls(componentName: string, customPrefix?: string) {
     return `${customPrefix || prefixCls}-${componentName}`;

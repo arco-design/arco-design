@@ -2,8 +2,8 @@
 import { Component } from 'react';
 
 function getId(noticeProps) {
-  if (noticeProps.id) {
-    return noticeProps.id;
+  if (noticeProps?.id) {
+    return noticeProps?.id;
   }
   return `arco_notice_id_${Math.random().toFixed(10).slice(2)}`;
 }

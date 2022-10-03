@@ -1,3 +1,19 @@
+## 2.40.0
+
+2022-09-16
+
+### 💎 Enhancement
+
+- Optimize the built-in validation information template of the `Form` component([#1398](https://github.com/arco-design/arco-design/pull/1398))
+
+### 🆕 Feature
+
+- `Form.Item` supports the `dependencies` property([#1397](https://github.com/arco-design/arco-design/pull/1397))
+
+### 🐛 BugFix
+
+- Fix the bug that the return value of `Form.useWatch` is not updated in time when `field` changes([#1400](https://github.com/arco-design/arco-design/pull/1400))
+
 ## 2.38.1
 
 2022-08-05

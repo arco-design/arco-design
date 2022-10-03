@@ -17,6 +17,11 @@ const useWatch = (field: string | string[], form?: FormInstance) => {
     }
     return fieldValues;
   });
+
+  //  if field change, get the real value from fieldRef.current
+  const fieldRef = useRef(field);
+  fieldRef.current = field;
+
   const valueRef = useRef(JSON.stringify(value));
 
   useEffect(() => {
@@ -27,6 +32,7 @@ const useWatch = (field: string | string[], form?: FormInstance) => {
     const { registerWatcher } = formInstance?.getInnerMethods(true);
 
     const updateValue = () => {
+      const field = fieldRef.current;
       const formValues = formInstance.getFieldsValue([].concat(field));
       let newValue = formValues;
       if (!isArray(field)) {

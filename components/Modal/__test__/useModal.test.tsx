@@ -29,6 +29,9 @@ describe('Modal api test', () => {
     expect($('.arco-modal').length).toBe(1);
     expect($('.arco-modal-content')[0].innerHTML).toBe('PJY');
 
+    m?.update({ content: 'YYH' });
+    expect($('.arco-modal-content')[0].innerHTML).toBe('YYH');
+
     m?.close();
 
     jest.runAllTimers();

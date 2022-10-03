@@ -775,7 +775,6 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -1191,7 +1190,6 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"

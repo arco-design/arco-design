@@ -13,11 +13,11 @@ title:
 
 Editable cell.
 
-```js
+```tsx
 import React, { useState, useRef, useEffect, useContext, useCallback } from 'react';
-import { Button, Table, Input, Select, Form } from '@arco-design/web-react';
+import { Button, Table, Input, Select, Form, FormInstance } from '@arco-design/web-react';
 const FormItem = Form.Item;
-const EditableContext = React.createContext({});
+const EditableContext = React.createContext<{ getForm?: () => FormInstance }>({});
 
 function EditableRow(props) {
   const { children, record, className, ...rest } = props;
@@ -187,7 +187,7 @@ function EditableTable() {
     {
       title: 'Operation',
       dataIndex: 'op',
-      render: (col, record) => (
+      render: (_, record) => (
         <Button onClick={() => removeRow(record.key)} type="primary" status="danger">
           Delete
         </Button>

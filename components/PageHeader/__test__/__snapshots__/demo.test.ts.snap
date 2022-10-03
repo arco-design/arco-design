@@ -18,6 +18,8 @@ exports[`renders PageHeader/demo/background.md correctly 1`] = `
         >
           <span
             class="arco-icon-hover arco-page-header-icon-hover arco-page-header-back"
+            role="button"
+            tabindex="0"
           >
             <span
               class="arco-page-header-back-icon"
@@ -438,6 +440,8 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
         >
           <span
             class="arco-icon-hover arco-page-header-icon-hover arco-page-header-back"
+            role="button"
+            tabindex="0"
           >
             <span
               class="arco-page-header-back-icon"

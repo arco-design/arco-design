@@ -2,6 +2,136 @@
 changelog: true
 ---
 
+## 2.40.2
+
+2022-09-30
+
+### 🐛 BugFix
+
+- Fix the bug of console warning when `Modal` component is uninstalled under React 18([#1440](https://github.com/arco-design/arco-design/pull/1440))
+- Fixed the issue that when the `Popconfirm` component enables `focusLock`, the performance of the DOM level inside the Footer is inconsistent with the default, causing the button margin style to fail.([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
+### 💅 Style
+
+- Remove the `overflow: hidden` attribute of the extra content rendering area of the `PageHeader` component to avoid the problem of custom rendering content being covered([#1436](https://github.com/arco-design/arco-design/pull/1436))
+- Fixed the issue that when the `Table` component expands a row and nested a sub table, the cell transparent problem occurs when the subtable opens fixed column.([#1433](https://github.com/arco-design/arco-design/pull/1433))
+
+## 2.40.1
+
+2022-09-23
+
+### 🐛 BugFix
+
+- Fix the bug that when Table is turned off `checkStrictly`, passing in non-existing `selectedKeys` will  report an error([#1420](https://github.com/arco-design/arco-design/pull/1420))
+- Fix the bug that the `holderRef` of `useModal` may not exist([#1418](https://github.com/arco-design/arco-design/pull/1418))
+
+### 💅 Style
+
+- After opening `preview` of the Image component, the hover style changes to `zoom-out`([#1419](https://github.com/arco-design/arco-design/pull/1419))
+
+## 2.40.0
+
+2022-09-16
+
+### 💎 Enhancement
+
+- Optimize the built-in validation information template of the `Form` component([#1398](https://github.com/arco-design/arco-design/pull/1398))
+- Optimize the problem that the DOM node of `Space` is remounted when the specified `key` value has not changed.([#1393](https://github.com/arco-design/arco-design/pull/1393))
+
+### 🆕 Feature
+
+- `Message` component supports `useMessage` usage for reading `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Notification` component supports `useNotification` usage for reading `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Form.Item` supports the `dependencies` property([#1397](https://github.com/arco-design/arco-design/pull/1397))
+- `Grid` responsive breakpoints support `xxxl` (width > 2000px).([#1396](https://github.com/arco-design/arco-design/pull/1396))
+- The `showSearch / showFooter / searchPlaceholder / pagination / listStyle` properties of `Transfer` support passing in different property values for source/target lists via arrays.([#1389](https://github.com/arco-design/arco-design/pull/1389))
+- `Breadcrumb` adds `href`, `onClick` and `tagName` properties.([#1363](https://github.com/arco-design/arco-design/pull/1363))
+- The `Select` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- The `TreeSelect` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- The `Cascader` component supports listening to the `onKeyDown` callback.([#1360](https://github.com/arco-design/arco-design/pull/1360))
+
+### 🐛 BugFix
+
+- Fix the bug that the return value of `Form.useWatch` is not updated in time when `field` changes([#1400](https://github.com/arco-design/arco-design/pull/1400))
+- Fixed the bug that `Message` could not be displayed properly in pages with `body { display: 'flex' }` set.([#1373](https://github.com/arco-design/arco-design/pull/1373))
+
+### 💅 Style
+
+- Fixed the issue that could cause the page to scroll under the `Layout` light theme.([#1391](https://github.com/arco-design/arco-design/pull/1391))
+- Fix the bug that the corresponding dom node still renders when `Statistic` does not pass `prefix` / `suffix`([#1388](https://github.com/arco-design/arco-design/pull/1388))
+- Fix disabled `TabPane` header area hover style in `Tabs` with `capsule` type in dark mode.([#1368](https://github.com/arco-design/arco-design/pull/1368))
+
+### 🆎 TypeScript
+
+- Improve typescript definition of the `placement` property of `Drawer`.([#1377](https://github.com/arco-design/arco-design/pull/1377))
+
+## 2.39.3
+
+2022-09-02
+
+### 💎 Enhancement
+
+- Optimized `Modal`, `Notification`, `Message` components to render nodes via `createRoot` in React 18.([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Typography` component would jitter in the folding calculation([#1366](https://github.com/arco-design/arco-design/pull/1366))
+- Fixed the jitter of the drop-down list when the `Cascader` component set `expandTrigger` to `hover`.([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- Fix the bug that the callback is not triggered occasionally after `Steps.Step` is passed to the `onClick` event([#1364](https://github.com/arco-design/arco-design/pull/1364))
+- Fixed a bug where the `Drawer` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- Fixed a bug where the `Modal` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- Fixed a bug where the `Popconfirm` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- Fixed `DatePicker` component error in `de-DE` language.([#1358](https://github.com/arco-design/arco-design/pull/1358))
+- Fixed the bug that `placeholder` was not displayed as expected when `InputTag` was set to `disabled`.([#1357](https://github.com/arco-design/arco-design/pull/1357))
+- Fixed the bug that when the `Cascader` component has disabled child nodes, when the parent node in the half-selected state is selected, the selected state cannot be switched.([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
+### 💅 Style
+
+- Optimize the style of inline `<a/>` in `Menu` component.([#1362](https://github.com/arco-design/arco-design/pull/1362))
+- Optimize the style of `<a/>` embedded in `Menu` in the dropdown menu of the `Dropdown` component.([#1362](https://github.com/arco-design/arco-design/pull/1362))
+
+## 2.39.2
+
+2022-08-26
+
+### 💎 Enhancement
+
+- Optimized the behavior of auto-folding when horizontal `Menu` width changes to avoid occasional line breaks.([#1331](https://github.com/arco-design/arco-design/pull/1331))
+- Make sure that the keyboard shortcuts are still available when the `Select` component uses `dropdownRender` to customize the dropdown box content and gets the page focus.([#1328](https://github.com/arco-design/arco-design/pull/1328))
+
+### 🐛 BugFix
+
+- Fix the problem that after the `Table` component updates `data`, the `selectedRows` is not updated in time when the selectedRows is selected next time.([#1341](https://github.com/arco-design/arco-design/pull/1341))
+- Fix the bug that the `DatePicker.RangePicker` component dynamically modifies `disabled`, and the disabled date is not updated in time.([#1336](https://github.com/arco-design/arco-design/pull/1336))
+- Fix server-side rendering error due to auto-generated DOM `id`.([#1334](https://github.com/arco-design/arco-design/pull/1334))
+- Fixed a bug where the initial `pageSize` of the `Pagination` component was inconsistent with the selected `sizeOptions`.([#1333](https://github.com/arco-design/arco-design/pull/1333))
+- Fixed a bug where the selected node was not scrolled to the viewport correctly when the `Cascader` component opened the virtual list.([#1329](https://github.com/arco-design/arco-design/pull/1329))
+- Fixed the problem that the `Select` component was repeatedly introduced when the `Cascader` / `TreeSelect` style was introduced by on-demand loading([#1327](https://github.com/arco-design/arco-design/pull/1327))
+
+### 💅 Style
+
+- When the `placeholder` of the `InputTag` component is too long, it will be displayed with `...` at the end.([#1339](https://github.com/arco-design/arco-design/pull/1339))
+- Fix the bug that the display position of the built-in collapse button of the `Menu` component is wrong([#1332](https://github.com/arco-design/arco-design/pull/1332))
+
+## 2.39.1
+
+2022-08-19
+
+### 💎 Enhancement
+
+- Optimize cascader edge case handling([#1304](https://github.com/arco-design/arco-design/pull/1304))
+- Export prop `version`.([#1303](https://github.com/arco-design/arco-design/pull/1303))
+
+### 🐛 BugFix
+
+- Fix the bug that setting `md = 0` in the `Grid.Col` would cause it to not display on larger window sizes.([#1307](https://github.com/arco-design/arco-design/pull/1307))
+- Fix the bug that the method `update` returned by `useModal` is `undefined` when creating a modal instance.([#1300](https://github.com/arco-design/arco-design/pull/1300))
+- Fixed the bug that the `panelRender` of the `DatePicker.RangePicker` component did not work.([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
+### 💅 Style
+
+- Unify the style of the right arrow in `Select` multi-select and single-select modes.([#1302](https://github.com/arco-design/arco-design/pull/1302))
+
 ## 2.39.0
 
 2022-08-12
@@ -19,7 +149,7 @@ changelog: true
 ### 🆕 Feature
 
 - `Image.Preview` adds the `imgAttributes` parameter to transparently transmit the properties to the `img` tag in the preview modal([#1274](https://github.com/arco-design/arco-design/pull/1274))
-- The `Cascader` component supports the `showSearch.showSearchPanel` property to control whether to display options in the search panel([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- The `Cascader` component supports controlling the display of drop-down panels through the `showSearch.panelMode` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - The `Cascader` component supports customizing the rendering of search terms via the `showSearch.renderOption` property([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `TreeSelect` add properties `inputValue` and `onInputValueChange`.([#1151](https://github.com/arco-design/arco-design/pull/1151))
 
@@ -325,6 +455,10 @@ changelog: true
 
 2022-04-15
 
+### 🚨 Important attention
+
+- Fix the bug that `onChange` is not called when the form control wrapped by `Form.Item` is returned by the function type `children`.([#760](https://github.com/arco-design/arco-design/pull/760))(Note: When fixing this issue, the issue that child components will be rendered circularly in special scenarios was introduced, which has been fixed in `2.37.0`)
+
 ### 🆕 Feature
 
 - The `Form` component supports setting the validation message template through the `validateMessages` property([#773](https://github.com/arco-design/arco-design/pull/773))
@@ -341,7 +475,6 @@ changelog: true
 - Fix the `onSelect` event not triggered when the `TimePicker` input is correct.([#769](https://github.com/arco-design/arco-design/pull/769))
 - Fixed the bug where `utcOffset` and `timezone` of `DatePicker.RangePicker` component did not work.([#765](https://github.com/arco-design/arco-design/pull/765))
 - Fixed a bug where the selected option echoed the wrong value in the search panel when `checkedstrategy=parenet` in the `Cascader` component.([#763](https://github.com/arco-design/arco-design/pull/763))
-- Fix the bug that `onChange` is not called when the form control wrapped by `Form.Item` is returned by the function type `children`.([#760](https://github.com/arco-design/arco-design/pull/760))
 - Fixed the bug that `onMouseEnter` and `onMouseLeave` of `Select.Option` not works.([#729](https://github.com/arco-design/arco-design/pull/729))
 - Optimize 'Modal' closing all popover when closing with ESC([#629](https://github.com/arco-design/arco-design/pull/629))
 

@@ -23,12 +23,15 @@
 
 ### Breadcrumb.Item
 
-|参数名|描述|类型|默认值|
-|---|---|---|---|
-|droplist|下拉菜单的内容，等同于下拉菜单组件的 droplist 属性|[DropdownProps](dropdown#dropdown)['droplist'] |`-`|
-|className|节点类名|string \| string[] |`-`|
-|dropdownProps|下拉菜单的属性 [DropdownProps](/react/components/dropdown)|[DropdownProps](dropdown#dropdown) |`-`|
-|style|节点样式|CSSProperties |`-`|
+|参数名|描述|类型|默认值|版本|
+|---|---|---|---|---|
+|href|超链接地址|string |`-`|2.40.0|
+|droplist|下拉菜单的内容，等同于下拉菜单组件的 droplist 属性|[DropdownProps](dropdown#dropdown)['droplist'] |`-`|-|
+|className|节点类名|string \| string[] |`-`|-|
+|dropdownProps|下拉菜单的属性 [DropdownProps](/react/components/dropdown)|[DropdownProps](dropdown#dropdown) |`-`|-|
+|style|节点样式|CSSProperties |`-`|-|
+|tagName|标签名，可以是 html 标签或是组件|string \| React.FC&lt;any&gt; \| React.ComponentClass&lt;any&gt; |`div`|2.40.0|
+|onClick|点击回调|(e: any) => void |`-`|2.40.0|
 
 ### RouteProps
 

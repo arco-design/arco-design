@@ -53,6 +53,13 @@ describe('Cascader basic test', () => {
     expect(mockFn).toHaveBeenCalledWith(false); // 传入参数false
   });
 
+  it('onKeyDown is called', () => {
+    const onKeyDown = jest.fn();
+    const wrapper = mountCascader(<Cascader onKeyDown={onKeyDown} />);
+    fireEvent.keyDown(wrapper.querySelector('input'));
+    expect(onKeyDown).toHaveBeenCalled();
+  });
+
   it('select correctly', async () => {
     const mockChange = jest.fn();
     const mockFn = jest.fn();

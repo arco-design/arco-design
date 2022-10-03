@@ -1,3 +1,15 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- `Message` component supports `useMessage` usage for reading `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+
+### 🐛 BugFix
+
+- Fixed the bug that `Message` could not be displayed properly in pages with `body { display: 'flex' }` set.([#1373](https://github.com/arco-design/arco-design/pull/1373))
+
 ## 2.33.1
 
 2022-05-20

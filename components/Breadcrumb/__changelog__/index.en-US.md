@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- `Breadcrumb` adds `href`, `onClick` and `tagName` properties.([#1363](https://github.com/arco-design/arco-design/pull/1363))
+
 ## 2.12.0
 
 2021-03-19

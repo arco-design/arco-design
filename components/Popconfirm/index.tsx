@@ -123,15 +123,21 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
           {icon && <span className={`${prefixCls}-title-icon`}>{icon}</span>}
           <div className={`${prefixCls}-title-text`}>{title}</div>
         </div>
-        <div className={`${prefixCls}-btn`}>
-          {focusLock ? (
-            <FocusLock disabled={!popupVisible} autoFocus={!!autoFocus}>
-              {element}
-            </FocusLock>
-          ) : (
-            element
-          )}
-        </div>
+
+        {focusLock ? (
+          <FocusLock
+            returnFocus
+            as="div"
+            className={`${prefixCls}-btn`}
+            crossFrame={false}
+            disabled={!popupVisible}
+            autoFocus={!!autoFocus}
+          >
+            {element}
+          </FocusLock>
+        ) : (
+          <div className={`${prefixCls}-btn`}>{element}</div>
+        )}
       </div>
     );
   };

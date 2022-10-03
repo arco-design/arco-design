@@ -7,7 +7,6 @@ import React, {
   useRef,
   useContext,
   useCallback,
-  useMemo,
 } from 'react';
 import { isArray, isFunction, isObject, isString } from '../_util/is';
 import Trigger from '../Trigger';
@@ -35,9 +34,7 @@ import {
   PANEL_MODE,
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
-
-// Generate DOM id for instance
-let globalCascaderIndex = 0;
+import useId from '../_util/hooks/useId';
 
 export const DefaultFieldNames = {
   label: 'label',
@@ -103,12 +100,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>(store?.getCheckedNodes() || []);
 
-  // Unique ID of this select instance
-  const instancePopupID = useMemo<string>(() => {
-    const id = `${prefixCls}-popup-${globalCascaderIndex}`;
-    globalCascaderIndex++;
-    return id;
-  }, []);
+  // Unique ID of this instance
+  const instancePopupID = useId(`${prefixCls}-popup-`);
 
   // 尝试更新 inputValue，触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
@@ -426,8 +419,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
               handleChange(newValue);
             }
-
-            props.onClear && props.onClear(!!popupVisible);
+            props.onClear?.(!!popupVisible);
           }}
           onKeyDown={(e) => {
             if (disabled) {
@@ -442,6 +434,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
             if (keyCode === Tab.code && popupVisible) {
               handleVisibleChange(false);
             }
+            props.onKeyDown?.(e);
           }}
           // onFocus={this.onFocusInput}
           onChangeInputValue={(v) => {

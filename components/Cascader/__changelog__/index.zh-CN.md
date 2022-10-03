@@ -1,10 +1,43 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+
+## 2.39.3
+
+2022-09-02
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件设置 `expandTrigger` 为 `hover` 时下拉列表的抖动问题。([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- 修复 `Cascader` 组件存在禁用子节点时，选中半选状态的父节点时无法切换选中状态的 bug。([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
+## 2.39.2
+
+2022-08-26
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件开启虚拟列表时，选中节点未正确滚动到视口的 bug。([#1329](https://github.com/arco-design/arco-design/pull/1329))
+
+## 2.39.1
+
+2022-08-19
+
+### 💎 功能优化
+
+- 优化 `Cascader` 组件多选时对传入的非法格式 `value` 的边界处理([#1304](https://github.com/arco-design/arco-design/pull/1304))
+
 ## 2.39.0
 
 2022-08-12
 
 ### 🆕 功能升级
 
-- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.panelMode` 属性控制下拉面板展示([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
 
 ### 🐛 问题修复
