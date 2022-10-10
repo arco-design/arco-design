@@ -207,68 +207,9 @@ module.exports = {
 };
 ```
 
-在 `customModule.tsx` 中暴露特定名称的模块，站点页面将会将其渲染至页面中。目前可自定义的模块包括 `Navbar | Footer | Menu | Affix`。
+在 `customModule.tsx` 中暴露特定名称的模块，站点页面将会将其渲染至页面中。目前可自定义的模块包括 `Navbar | Footer | Menu | Sider | DocHeader | Affix`。[示例代码](https://github.com/arco-design/official-material-react/blob/main/team-site/fixtures/customModule.tsx)
 
-```tsx
-// customModule.tsx
-import React, { useContext } from 'react';
-import { Menu as ArcoMenu } from '@arco-design/web-react';
-import { ArcoSiteGlobalContext, ArcoSiteRouteType } from 'arco-material-doc-site';
-
-export function Navbar() {
-  return <div>Arco Design</div>;
-}
-
-export function Affix() {
-  // Get globalContext by window.arcoSiteGlobalContext
-  const { user } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
-  return (
-    <div>
-      <h1>Hello {user?.name}!</h1>
-    </div>
-  );
-}
-
-const { SubMenu, Item: MenuItem } = ArcoMenu;
-
-export function Menu() {
-  // Get globalContext by window.arcoSiteGlobalContext
-  const {
-    history,
-    location,
-    routes: [docRoutes, componentRoutes],
-  } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
-
-  const renderMenuItems = ({ name, path, children }: ArcoSiteRouteType) => {
-    if (children) {
-      return (
-        <SubMenu key={name} title={name}>
-          {children.map(({ name, path }) => (
-            <MenuItem key={path}>{name}</MenuItem>
-          ))}
-        </SubMenu>
-      );
-    }
-
-    return path ? <MenuItem key={path}>{name}</MenuItem> : null;
-  };
-
-  return (
-    <ArcoMenu
-      autoOpen
-      defaultSelectedKeys={[location.pathname.replace(/\/$/, '')]}
-      onClickMenuItem={(key) => {
-        history.push(`${key}${location.search}`);
-      }}
-    >
-      <SubMenu key={docRoutes.key} title={docRoutes.name}>
-        {docRoutes.children?.map(renderMenuItems)}
-      </SubMenu>
-      {componentRoutes.children?.map(renderMenuItems)}
-    </ArcoMenu>
-  );
-}
-```
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20221010-153712.png~tplv-uwbnlip3yd-webp.webp)
 
 ## 使用 Arco 主题商店主题
 

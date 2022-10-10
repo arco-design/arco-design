@@ -209,68 +209,9 @@ module.exports = {
 };
 ````
 
-Expose a module with a specific name in `customModule.tsx` and the site page will render it into the page. Currently customizable modules include `Navbar | Footer | Menu | Affix`.
+Expose a module with a specific name in `customModule.tsx` and the site page will render it into the page. Currently customizable modules include `Navbar | Footer | Menu | Sider | DocHeader | Affix`. [Demo](https://github.com/arco-design/official-material-react/blob/main/team-site/fixtures/customModule.tsx)
 
-```tsx
-//customModule.tsx
-import React, { useContext } from 'react';
-import { Menu as ArcoMenu } from '@arco-design/web-react';
-import { ArcoSiteGlobalContext, ArcoSiteRouteType } from 'arco-material-doc-site';
-
-export function Navbar() {
-  return <div>Arco Design</div>;
-}
-
-export function Affix() {
-  // Get globalContext by window.arcoSiteGlobalContext
-  const { user } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
-  return (
-    <div>
-      <h1>Hello {user?.name}!</h1>
-    </div>
-  );
-}
-
-const { SubMenu, Item: MenuItem } = ArcoMenu;
-
-export function Menu() {
-  // Get globalContext by window.arcoSiteGlobalContext
-  const {
-    history,
-    location,
-    routes: [docRoutes, componentRoutes],
-  } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
-
-  const renderMenuItems = ({ name, path, children }: ArcoSiteRouteType) => {
-    if (children) {
-      return (
-        <SubMenu key={name} title={name}>
-          {children.map(({ name, path }) => (
-            <MenuItem key={path}>{name}</MenuItem>
-          ))}
-        </SubMenu>
-      );
-    }
-
-    return path ? <MenuItem key={path}>{name}</MenuItem> : null;
-  };
-
-  return (
-    <ArcoMenu
-      autoOpen
-      defaultSelectedKeys={[location.pathname.replace(/\/$/, '')]}
-      onClickMenuItem={(key) => {
-        history.push(`${key}${location.search}`);
-      }}
-    >
-      <SubMenu key={docRoutes.key} title={docRoutes.name}>
-        {docRoutes.children?.map(renderMenuItems)}
-      </SubMenu>
-      {componentRoutes.children?.map(renderMenuItems)}
-    </ArcoMenu>
-  );
-}
-````
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20221010-153712.png~tplv-uwbnlip3yd-webp.webp)
 
 ## Using the Arco Design Lab theme
 
