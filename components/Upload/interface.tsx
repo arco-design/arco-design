@@ -90,6 +90,11 @@ export interface UploadProps {
    */
   listType?: 'text' | 'picture-list' | 'picture-card';
   /**
+   * @zh 启用内置的图片预览，仅在 listType='picture-card' 时生效。(`v2.41.0`)
+   * @en Enable built-in image preview, only works when listType='picture-card'. (`v2.41.0`)
+   */
+  imagePreview?: boolean;
+  /**
    * @zh
    * 是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。
    * @en
@@ -219,6 +224,7 @@ export interface UploadProps {
  * @en File upload list display
  */
 export interface UploadListProps {
+  imagePreview?: boolean;
   listType?: string;
   fileList?: UploadItem[];
   showUploadList?: boolean | CustomIconType;

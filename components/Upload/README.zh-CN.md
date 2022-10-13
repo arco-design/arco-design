@@ -18,6 +18,7 @@
 |directory|文件夹上传|boolean |`-`|2.11.0|
 |disabled|禁用|boolean |`-`|-|
 |drag|是否拖拽上传|boolean |`-`|-|
+|imagePreview|启用内置的图片预览，仅在 listType='picture-card' 时生效。(`v2.41.0`)|boolean |`-`|-|
 |multiple|文件多选|boolean |`-`|-|
 |withCredentials|上传请求是否携带 cookie|boolean |`-`|-|
 |accept|接受上传的类型 [详细请参考](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|
