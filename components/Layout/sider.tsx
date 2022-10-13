@@ -58,7 +58,8 @@ function Sider(props: SiderProps, ref) {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('layout-sider');
   const [collapsed, setCollapsed] = useMergeValue(false, {
-    value: props.collapsed,
+    value: 'collapsed' in props ? props.collapsed : undefined,
+    defaultValue: props.defaultCollapsed,
   });
   // Parsing props width from number to string, to be used as css property value.
   // Using px as the default unit
