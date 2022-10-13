@@ -6,7 +6,7 @@ import TextItem from './textItem';
 import { ConfigContext } from '../../ConfigProvider';
 import { STATUS, UploadListProps } from '../interface';
 import { isFunction } from '../../_util/is';
-import Image from '../../Image';
+import ImagePreviewGroup from '../../Image/image-preview-group';
 
 export const FileList = (props: UploadListProps) => {
   const { locale, rtl } = useContext(ConfigContext);
@@ -110,7 +110,7 @@ export const FileList = (props: UploadListProps) => {
       </TransitionGroup>
 
       {listType === 'picture-card' && props.imagePreview && (
-        <Image.PreviewGroup
+        <ImagePreviewGroup
           srcList={srcList}
           visible={previewCurrent !== -1}
           current={previewCurrent}

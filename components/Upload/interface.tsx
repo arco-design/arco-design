@@ -216,6 +216,18 @@ export interface UploadProps {
    * @version 2.37.0
    */
   onDrop?: (e: React.DragEvent) => void;
+  /**
+   * @zh 拖拽上传文件进入拖拽区时的回调
+   * @en Callback when drag and drop uploaded file into the drag area
+   * @version 2.41.0
+   */
+  onDragOver?: (e: React.DragEvent) => void;
+  /**
+   * @zh 拖拽上传文件离开拖拽区时的回调
+   * @en Callback when drag and drop uploaded file leaves the drag area
+   * @version 2.41.0
+   */
+  onDragLeave?: (e: React.DragEvent) => void;
 }
 
 /**
@@ -322,6 +334,8 @@ export type TriggerProps = {
   listType?: 'text' | 'picture-list' | 'picture-card';
   onClick: () => void;
   onDrop?: (e: React.DragEvent) => void;
+  onDragLeave?: (e: React.DragEvent) => void;
+  onDragOver?: (e: React.DragEvent) => void;
   onDragFiles: (files: File[]) => void;
   prefixCls?: string;
 };
