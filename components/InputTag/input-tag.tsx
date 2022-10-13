@@ -362,8 +362,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       }}
     >
       <div className={`${prefixCls}-view`}>
-        <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
-          {draggable ? (
+        {draggable ? (
+          <UsedTransitionGroup
+            key="transitionGroupWithDrag"
+            prefixCls={prefixCls}
+            animation={animation}
+          >
             <Draggable
               itemWrapperStyle={{ display: 'inline-block' }}
               direction="horizontal"
@@ -380,10 +384,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             >
               {childrenWithAnimation}
             </Draggable>
-          ) : (
-            childrenWithAnimation
-          )}
-        </UsedTransitionGroup>
+          </UsedTransitionGroup>
+        ) : (
+          <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
+            {childrenWithAnimation}
+          </UsedTransitionGroup>
+        )}
 
         {hasSuffix && (
           <div className={`${prefixCls}-suffix`} onMouseDown={keepFocus}>
