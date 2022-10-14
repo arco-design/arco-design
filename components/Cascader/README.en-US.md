@@ -35,6 +35,7 @@ Display options in a multi-level cascading dropdown component.
 |showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string, option: NodeProps&lt;T&gt;) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |virtualListProps|virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
+|addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
 |notFoundContent|The content to show when no result matches|ReactNode |`-`|-|
 |prefix|Customize select suffix|ReactNode |`-`|2.11.0|

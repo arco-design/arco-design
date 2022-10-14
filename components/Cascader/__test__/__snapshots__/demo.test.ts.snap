@@ -1,5 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders Cascader/demo/addon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:24px"
+  >
+    <div
+      class="arco-cascader-wrapper"
+      style="width:300px;margin-bottom:20px"
+    >
+      <div
+        class="arco-cascader-addbefore"
+      >
+        Select city
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-cascader arco-cascader-single arco-cascader-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-cascader-view"
+          title=""
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            aria-hidden="true"
+            class="arco-cascader-view-value arco-cascader-hidden"
+          />
+          <div
+            aria-hidden="true"
+            class="arco-cascader-suffix"
+          >
+            <div
+              class="arco-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-cascader-wrapper"
+      style="width:300px;margin-bottom:20px"
+    >
+      <div
+        class="arco-cascader-addbefore"
+      >
+        Select city
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-cascader-view"
+          title=""
+        >
+          <div
+            class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+          >
+            <div
+              class="arco-input-tag-view"
+            >
+              <div
+                class="arco-input-tag-inner"
+              >
+                <input
+                  autocomplete="off"
+                  class="arco-input-tag-input arco-input-tag-input-size-default"
+                  placeholder="Hover to expand"
+                  value=""
+                />
+                <span
+                  class="arco-input-tag-input-mirror"
+                >
+                  Hover to expand
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="arco-cascader-suffix"
+          >
+            <div
+              class="arco-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Cascader/demo/basic.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"

@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `addBefore` 设置前置标签
+通过 `addBefore` 设置前置标签 (`2.41.0`)
 
 ## en-US
 
-Specify `addBefore` to add elements before/after the select box.
+Specify `addBefore` to add elements before the select box.  (`2.41.0`)
 
 
 
