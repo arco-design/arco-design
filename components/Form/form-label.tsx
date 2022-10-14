@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { isArray, isObject } from '../_util/is';
 import { ID_SUFFIX } from './utils';
-
 import { FormItemProps } from './interface';
 
 interface FormItemLabelProps
   extends Pick<FormItemProps, 'label' | 'requiredSymbol' | 'required' | 'rules'> {
-  showColon: boolean;
+  showColon: boolean | ReactNode;
   prefix: string;
   htmlFor?: string;
 }
@@ -36,7 +35,7 @@ const FormItemLabel: React.FC<FormItemLabelProps> = ({
     <label htmlFor={htmlFor && `${htmlFor}${ID_SUFFIX}`}>
       {symbolPosition !== 'end' && symbolNode} {label}
       {symbolPosition === 'end' && <> {symbolNode}</>}
-      {showColon ? ':' : ''}
+      {showColon ? (showColon === true ? ':' : showColon) : ''}
     </label>
   ) : null;
 };
