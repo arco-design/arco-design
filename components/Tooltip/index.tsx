@@ -7,7 +7,7 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import cs from '../_util/classNames';
-import Trigger, { EventsByTriggerNeed } from '../Trigger';
+import Trigger, { OriginalTrigger, EventsByTriggerNeed } from '../Trigger';
 import { ConfigContext } from '../ConfigProvider';
 import pick, { pickDataAttributes } from '../_util/pick';
 import { TooltipProps } from './interface';
@@ -58,7 +58,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
     ...rest
   } = props;
 
-  const refTrigger = useRef<Trigger>();
+  const refTrigger = useRef<OriginalTrigger>();
 
   const updatePopupPosition = (delay = 0, callback?: () => void) => {
     refTrigger.current && refTrigger.current.updatePopupPosition(delay, callback);

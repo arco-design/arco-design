@@ -92,7 +92,7 @@ const defaultProps = {
   autoFitPosition: true,
 };
 
-class Trigger extends PureComponent<TriggerProps, TriggerState> {
+class OriginalTrigger extends PureComponent<TriggerProps, TriggerState> {
   static displayName = 'Trigger';
 
   static contextType = ConfigContext;
@@ -1072,4 +1072,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   }
 }
 
-export default memo(Trigger);
+export { OriginalTrigger };
+
+const Trigger = memo(OriginalTrigger);
+
+export default Trigger;
