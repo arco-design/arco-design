@@ -32,6 +32,7 @@
 |mode|是否开启多选模式或标签模式 (**`tags` 推荐使用 `mode: multiple; allowCreate: true` 替代，下一大版本将移除此模式**)|'multiple' \| 'tags' |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |trigger|触发方式。|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
+|addBefore|选择框前添加元素|ReactNode |`-`|2.41.0|
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|
 |notFoundContent|没有数据时显示的内容|ReactNode |`-`|-|
 |prefix|前缀。|ReactNode |`-`|2.11.0|

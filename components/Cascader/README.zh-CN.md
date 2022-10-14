@@ -35,6 +35,7 @@
 |showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。传入 `{ panelMode: 'select' }` 以搜索面板形式展示可选项 (`2.39.0`)`renderOption` 自定义渲染搜索项 (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string, option: NodeProps&lt;T&gt;) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |virtualListProps|传递虚拟滚动属性。开启虚拟滚动后，每列级联菜单的会存在默认宽度，可通过 `dropdownMenuColumnStyle` 进行样式调整|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
+|addBefore|选择框前添加元素|ReactNode |`-`|2.41.0|
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|
 |notFoundContent|没有数据时显示的内容|ReactNode |`-`|-|
 |prefix|前缀。|ReactNode |`-`|2.11.0|

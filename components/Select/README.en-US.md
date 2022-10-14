@@ -32,6 +32,7 @@ When users need to select one or more from a group of similar data, they can use
 |mode|Set mode of Select(**`tags` recommends using `mode: multiple; allowCreate: true` instead, this mode will be removed in the next major version**)|'multiple' \| 'tags' |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |trigger|The trigger mode which executes the dropdown action.|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
+|addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
 |notFoundContent|Specify content to show when no result matches.|ReactNode |`-`|-|
 |prefix|Customize select suffix|ReactNode |`-`|2.11.0|
