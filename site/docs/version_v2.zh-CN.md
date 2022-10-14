@@ -2,6 +2,34 @@
 changelog: true
 ---
 
+## 2.41.0-beta.0
+
+2022-10-14
+
+### 🆕 功能升级
+
+- 新增马来语。([#1465](https://github.com/arco-design/arco-design/pull/1465))
+- `Select` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- `TreeSelect` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- `Cascader` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- `Upload` 组件支持通过 `imagePreview` 属性启用内置的图片预览功能。([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Upload` 组件支持 `onDragLeave` 和 `onDragOver` 事件回调([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Form` 组件的 `colon` 属性支持传入 `ReactNode`。([#1455](https://github.com/arco-design/arco-design/pull/1455))
+
+### 🐛 问题修复
+
+- 优化 `Cascader` 组件选项的 `title` 属性显示 `[object object]` 的问题。([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- 修复 `Cascader` 组件在设置 `changeOnSelect` & `mode=multiple` 时，子节点选中后父节点无法被选中的 bug([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- 修复 Slider 由于父组件更新导致起始范围乱序的 bug。([#1467](https://github.com/arco-design/arco-design/pull/1467))
+- 修复 `TreeSelect` 受控清空 `inputValue` 后无法再次输入相同值的 bug([#1463](https://github.com/arco-design/arco-design/pull/1463))
+- 修复 `Form.Item` 组件的 `shouldUpdate` 属性在重置表单项时未生效的 bug。([#1462](https://github.com/arco-design/arco-design/pull/1462))
+- 修复 `Layout.Sider` 组件 `defaultCollapsed` 属性未生效的 bug。([#1458](https://github.com/arco-design/arco-design/pull/1458))
+- 修复 `InputTag` 组件开启 `dragToSort` 时，切换禁用状态时会将 Tag 重复渲染两遍的 bug。([#1457](https://github.com/arco-design/arco-design/pull/1457))
+
+### 💅 样式更新
+
+- 修复暗黑模式下 `Tabs` 组件的新增图标色值有误的 bug。([#1454](https://github.com/arco-design/arco-design/pull/1454))
+
 ## 2.40.2
 
 2022-09-30
