@@ -3,7 +3,7 @@ import isEqualWith from 'lodash/isEqualWith';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import Option from './option';
-import { isFunction, isObject } from '../../_util/is';
+import { isFunction, isObject, isString } from '../../_util/is';
 import { CascaderPanelProps, OptionProps } from '../interface';
 import useRefs from '../../_util/hooks/useRefs';
 import useForceUpdate from '../../_util/hooks/useForceUpdate';
@@ -324,7 +324,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                             aria-expanded={isActive && !option.isLeaf}
                             aria-disabled={option.disabled}
                             key={option.value}
-                            title={option.label}
+                            title={isString(option.label) ? option.label : undefined}
                             className={cs(`${prefixCls}-list-item`, {
                               [`${prefixCls}-list-item-active`]: isActive,
                               [`${prefixCls}-list-item-disabled`]: option.disabled,
