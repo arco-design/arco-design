@@ -197,6 +197,9 @@ const TreeSelect: ForwardRefRenderFunction<
 
   useEffect(() => {
     inputValue !== undefined && handleSearch(inputValue);
+    if (inputValue !== refOnInputChangeCallbackValue.current) {
+      refOnInputChangeCallbackValue.current = inputValue;
+    }
   }, [inputValue]);
 
   const searchKeys = useMemo<string[]>(() => {

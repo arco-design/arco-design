@@ -119,6 +119,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     if (stateInputValue === inputValue && (reason === 'manual' || reason === 'optionListHide')) {
       props.onSearch && props.onSearch(inputValue, reason);
     }
+    if (inputValue !== refOnInputChangeCallbackValue.current) {
+      refOnInputChangeCallbackValue.current = inputValue;
+    }
   }, [inputValue]);
 
   useEffect(() => {
