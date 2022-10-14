@@ -7,6 +7,8 @@ import React, {
   useRef,
   useContext,
   useCallback,
+  ReactElement,
+  ReactNode,
 } from 'react';
 import { isArray, isFunction, isObject, isString } from '../_util/is';
 import Trigger from '../Trigger';
@@ -377,77 +379,84 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     setValue(value);
   };
 
-  return (
-    <Trigger
-      popup={renderPopup}
-      trigger={props.trigger}
-      disabled={disabled}
-      getPopupContainer={getPopupContainer}
-      position={rtl ? 'br' : 'bl'}
-      classNames="slideDynamicOrigin"
-      popupAlign={{ bottom: 4 }}
-      // 动态加载时，unmountOnExit 默认为false。
-      unmountOnExit={'unmountOnExit' in props ? props.unmountOnExit : !isFunction(props.loadMore)}
+  const renderView = (eleView: ReactElement | ReactNode) => {
+    return (
+      <Trigger
+        popup={renderPopup}
+        trigger={props.trigger}
+        disabled={disabled}
+        getPopupContainer={getPopupContainer}
+        position={rtl ? 'br' : 'bl'}
+        classNames="slideDynamicOrigin"
+        popupAlign={{ bottom: 4 }}
+        // 动态加载时，unmountOnExit 默认为false。
+        unmountOnExit={'unmountOnExit' in props ? props.unmountOnExit : !isFunction(props.loadMore)}
+        popupVisible={popupVisible}
+        {...triggerProps}
+        onVisibleChange={handleVisibleChange}
+      >
+        {eleView}
+      </Trigger>
+    );
+  };
+
+  return children ? (
+    renderView(children)
+  ) : (
+    <SelectView
+      {...props}
+      ref={selectRef}
+      ariaControls={instancePopupID}
       popupVisible={popupVisible}
-      {...triggerProps}
-      onVisibleChange={handleVisibleChange}
-    >
-      {children || (
-        <SelectView
-          {...props}
-          ref={selectRef}
-          ariaControls={instancePopupID}
-          popupVisible={popupVisible}
-          value={isMultiple ? mergeValue : mergeValue && mergeValue[0]}
-          inputValue={inputValue}
-          rtl={rtl}
-          // other
-          isEmptyValue={isEmptyValue(mergeValue)}
-          prefixCls={prefixCls}
-          isMultiple={isMultiple}
-          renderText={renderText}
-          onRemoveCheckedItem={onRemoveCheckedItem}
-          onSort={updateSelectedValues}
-          onClear={(e) => {
-            e.stopPropagation();
-            if (!isMultiple) {
-              handleChange([]);
-            } else {
-              const nodes = store.getCheckedNodes();
-              const newValue = nodes.filter((x) => x.disabled).map((x) => x.pathValue);
-              store.setNodeCheckedByValue(newValue);
+      value={isMultiple ? mergeValue : mergeValue && mergeValue[0]}
+      inputValue={inputValue}
+      rtl={rtl}
+      // other
+      isEmptyValue={isEmptyValue(mergeValue)}
+      prefixCls={prefixCls}
+      isMultiple={isMultiple}
+      renderText={renderText}
+      onRemoveCheckedItem={onRemoveCheckedItem}
+      onSort={updateSelectedValues}
+      renderView={renderView}
+      onClear={(e) => {
+        e.stopPropagation();
+        if (!isMultiple) {
+          handleChange([]);
+        } else {
+          const nodes = store.getCheckedNodes();
+          const newValue = nodes.filter((x) => x.disabled).map((x) => x.pathValue);
+          store.setNodeCheckedByValue(newValue);
 
-              handleChange(newValue);
-            }
-            props.onClear?.(!!popupVisible);
-          }}
-          onKeyDown={(e) => {
-            if (disabled) {
-              return;
-            }
-            e.stopPropagation();
-            const keyCode = e.keyCode || e.which;
-            if (keyCode === Enter.code && !popupVisible) {
-              handleVisibleChange(true);
-              e.preventDefault();
-            }
-            if (keyCode === Tab.code && popupVisible) {
-              handleVisibleChange(false);
-            }
-            props.onKeyDown?.(e);
-          }}
-          // onFocus={this.onFocusInput}
-          onChangeInputValue={(v) => {
-            tryUpdateInputValue(v, 'manual');
+          handleChange(newValue);
+        }
+        props.onClear?.(!!popupVisible);
+      }}
+      onKeyDown={(e) => {
+        if (disabled) {
+          return;
+        }
+        e.stopPropagation();
+        const keyCode = e.keyCode || e.which;
+        if (keyCode === Enter.code && !popupVisible) {
+          handleVisibleChange(true);
+          e.preventDefault();
+        }
+        if (keyCode === Tab.code && popupVisible) {
+          handleVisibleChange(false);
+        }
+        props.onKeyDown?.(e);
+      }}
+      // onFocus={this.onFocusInput}
+      onChangeInputValue={(v) => {
+        tryUpdateInputValue(v, 'manual');
 
-            // tab键 focus 到输入框，此时下拉框未显示。如果输入值，展示下拉框
-            if (!popupVisible) {
-              handleVisibleChange(true);
-            }
-          }}
-        />
-      )}
-    </Trigger>
+        // tab键 focus 到输入框，此时下拉框未显示。如果输入值，展示下拉框
+        if (!popupVisible) {
+          handleVisibleChange(true);
+        }
+      }}
+    />
   );
 }
 

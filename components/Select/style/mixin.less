@@ -281,6 +281,10 @@
       display: inline-flex;
       align-items: stretch;
 
+      .@{prefixCls} {
+        min-width: 0; // 避免 .arco-select 宽度超出 .arco-select-wrapper
+      }
+
       .@{prefixCls}:not(.@{prefixCls}-focused) {
         &:not(:first-child) .@{prefixCls}-view {
           border-top-left-radius: 0;
@@ -294,8 +298,8 @@
       }
     }
 
-    &-addbefore,
-    &-addafter {
+    // &-addafter,
+    &-addbefore {
       display: flex;
       align-items: center;
       padding: 0 @select-addon-padding-horizontal;
@@ -311,11 +315,11 @@
       border-bottom-left-radius: @select-border-radius;
     }
 
-    &-addafter {
-      border-left: @select-border-addon-separator-width solid @select-color-addon-border;
-      border-top-right-radius: @select-border-radius;
-      border-bottom-right-radius: @select-border-radius;
-    }
+    // &-addafter {
+    //   border-left: @select-border-addon-separator-width solid @select-color-addon-border;
+    //   border-top-right-radius: @select-border-radius;
+    //   border-bottom-right-radius: @select-border-radius;
+    // }
   }
 }
 
