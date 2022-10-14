@@ -18,12 +18,6 @@ import useInterval from './hooks/useInterval';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useUpdate from '../_util/hooks/useUpdate';
 
-function isSameOrder(firstNums: number[], secondNums) {
-  const diff1 = firstNums[0] - firstNums[1];
-  const diff2 = secondNums[0] - secondNums[1];
-  return diff1 <= 0 === diff2 <= 0;
-}
-
 const defaultProps: SliderProps = {
   max: 100,
   min: 0,
@@ -86,14 +80,14 @@ function Slider(baseProps: SliderProps, ref) {
   const curVal = getLegalRangeValue(value);
   const lastVal = useRef<number[]>(curVal);
   let [beginVal, endVal] = curVal;
+  const reverseOrder = useRef(beginVal > endVal);
 
   // value变化后 更新lastVal
   useUpdate(() => {
     lastVal.current = getLegalRangeValue(value);
   }, [value, getLegalRangeValue]);
 
-  if (!isSameOrder(curVal, lastVal.current)) {
-    // 保持顺序
+  if (reverseOrder.current) {
     [beginVal, endVal] = [endVal, beginVal];
   }
   // 偏移比例
@@ -133,15 +127,22 @@ function Slider(baseProps: SliderProps, ref) {
     let [newBeginVal, newEndVal] = val;
     newBeginVal = getLegalValue(newBeginVal);
     newEndVal = getLegalValue(newEndVal);
-
     lastVal.current = [newBeginVal, newEndVal];
-    const emitParams = getEmitParams([newBeginVal, newEndVal]);
-    setValue(emitParams);
-    return emitParams;
+    return [newBeginVal, newEndVal];
   }
 
-  function onChange(val) {
-    const emitParams = updateValue(val);
+  function onChange(val, reason?: 'mousemove' | 'jumpToClick' | 'inputValueChange') {
+    const [newBeginVal, newEndVal] = updateValue(val);
+    const emitParams = getEmitParams([newBeginVal, newEndVal]);
+    setValue(emitParams);
+
+    // 在手动修改的情况下才可能出现反序问题。
+    if (reason === 'inputValueChange') {
+      reverseOrder.current = newBeginVal > newEndVal;
+    } else {
+      // 在mousemove 跟 jumpToClick 顺序会保持 [begin,end]
+      reverseOrder.current = false;
+    }
     if (isFunction(props.onChange)) {
       props.onChange(emitParams);
     }
@@ -259,28 +260,28 @@ function Slider(baseProps: SliderProps, ref) {
 
     const value = getLegalValue(val);
     if (range && endVal - value > value - beginVal) {
-      onChange([value, endVal]);
+      onChange([value, endVal], 'jumpToClick');
     } else {
-      onChange([beginVal, value]);
+      onChange([beginVal, value], 'jumpToClick');
     }
     onMouseUp();
   }
 
   function handleInputChange(val) {
-    onChange(val);
+    onChange(val, 'inputValueChange');
     onMouseUp();
   }
 
   // 拖动开始节点
   function handleBeginMove(x: number, y: number) {
     isDragging.current = true;
-    onChange([getValueByCoords(x, y), endVal]);
+    onChange([getValueByCoords(x, y), endVal], 'mousemove');
   }
 
   // 拖动结束节点
   function handleEndMove(x: number, y: number) {
     isDragging.current = true;
-    onChange([beginVal, getValueByCoords(x, y)]);
+    onChange([beginVal, getValueByCoords(x, y)], 'mousemove');
   }
 
   function handleMoveEnd() {
@@ -309,7 +310,7 @@ function Slider(baseProps: SliderProps, ref) {
     const newEndVal = endVal + offsetVal;
 
     if (isLegalValue(newBeginVal) && isLegalValue(newEndVal)) {
-      onChange([newBeginVal, newEndVal]);
+      onChange([newBeginVal, newEndVal], 'mousemove');
     }
   }
 

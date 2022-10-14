@@ -165,9 +165,9 @@ describe('Slider ', () => {
     expect(component.find('.arco-slider-tick').length).toBe(9);
   });
 
-  it('should keep right order when start lager then end', () => {
+  it('should auto reverse when begin is greater than end', () => {
     const component = render(<Slider range value={[60, 20]} min={0} max={100} />);
-    expect(component.find('.arco-slider-button:last-child')[0].style.left).toEqual('20%');
+    expect(component.find('.arco-slider-button:last-child')[0].style.left).toEqual('60%');
   });
 
   it('should show tooltip when hovering slider button', (done) => {
