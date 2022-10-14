@@ -46,6 +46,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
 
         if (dragEnterCount === 0) {
           setIsDragging(false);
+          !disabled && props.onDragLeave?.(e);
         } else {
           setDragEnterCount(dragEnterCount - 1);
         }
@@ -69,6 +70,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
         e.preventDefault();
         if (!disabled && !isDragging) {
           setIsDragging(true);
+          props.onDragOver?.(e);
         }
       }}
     >

@@ -17,6 +17,7 @@ const PictureItem = (
   const keyboardEvents = useKeyboardEvent();
   const cls = `${prefixCls}-list-item-picture`;
   const { status, originFile } = file;
+
   const url =
     file.url !== undefined
       ? file.url
@@ -38,7 +39,11 @@ const PictureItem = (
         />
       ) : (
         <>
-          {isFunction(actionIcons.imageRender) ? actionIcons.imageRender(file) : <img src={url} />}
+          {isFunction(actionIcons.imageRender) ? (
+            actionIcons.imageRender(file)
+          ) : (
+            <img src={url} alt={file.name} />
+          )}
           <div className={`${cls}-mask`} role="radiogroup">
             {file.status === STATUS.fail && (
               <div className={`${cls}-error-tip`}>

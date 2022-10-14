@@ -163,6 +163,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
     showUploadList,
     renderUploadList,
     progressProps,
+    imagePreview,
     ...rest
   } = props;
 
@@ -205,6 +206,8 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         'onExceedLimit',
         'beforeUpload',
         'onDrop',
+        'onDragOver',
+        'onDragLeave',
       ])}
       className={cs(
         prefixCls,
@@ -261,6 +264,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
       {listType !== 'picture-card' && uploadDom}
       {showUploadList && (
         <UploadList
+          imagePreview={imagePreview}
           progressProps={progressProps}
           showUploadList={showUploadList}
           disabled={props.disabled}
