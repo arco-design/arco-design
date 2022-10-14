@@ -198,4 +198,19 @@ describe('Cascader basic test', () => {
     );
     expect(wrapper.find('[title="Xicheng"] .arco-checkbox')[0].className).toBe('arco-checkbox');
   });
+
+  it('changeonselect ', () => {
+    const wrapper = render(<Cascader changeOnSelect options={options} mode="multiple" />);
+
+    fireEvent.click(wrapper.find('.arco-cascader')[0]);
+    fireEvent.click(wrapper.find('.arco-cascader-list-item-label')[0]);
+    expect(wrapper.find('.arco-checkbox')).toHaveLength(2);
+    fireEvent.click(wrapper.find('.arco-checkbox')[1]);
+
+    expect(wrapper.find('.arco-tag')).toHaveLength(1);
+
+    fireEvent.click(wrapper.find('.arco-checkbox')[0]);
+
+    expect(wrapper.find('.arco-tag')).toHaveLength(2);
+  });
 });

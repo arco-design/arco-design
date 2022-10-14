@@ -98,7 +98,7 @@ const deny2Checked = (option) => {
           return deny(item.children);
         });
   };
-  return deny(option?.children);
+  return option._halfChecked && deny(option?.children);
 };
 
 export const getMultipleCheckValue = (propsValue, store: Store<any>, option, _checked) => {
