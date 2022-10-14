@@ -232,4 +232,39 @@ describe('form usewatch ', () => {
     });
     expect(wrapper.querySelector('#text')?.textContent).toBe('123');
   });
+
+  describe('form reset & shouldupdate', () => {
+    let form;
+    let renderCount = 0;
+    let render2Count = 0;
+
+    render(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item label="name" field="name" initialValue="456">
+          <Input />
+        </Form.Item>
+        <Form.Item shouldUpdate={() => false}>
+          {() => {
+            renderCount++;
+            return <div />;
+          }}
+        </Form.Item>
+
+        <Form.Item>
+          {() => {
+            render2Count++;
+            return <div />;
+          }}
+        </Form.Item>
+      </Form>
+    );
+
+    expect(renderCount).toBe(1);
+    expect(render2Count).toBe(1);
+
+    form.resetFields(['name']);
+
+    expect(renderCount).toBe(1);
+    expect(render2Count).toBeGreaterThan(1); // 保持原有行为不变，避免 breaking change
+  });
 });
