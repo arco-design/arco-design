@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import useKeyboardEvent from '../../_util/hooks/useKeyboardEvent';
 import Select from '../../Select';
 import Button from '../../Button';
 import Radio from '../../Radio';
@@ -26,6 +27,7 @@ function Header(props) {
     onChangeMonth,
     modes,
   } = props;
+  const getKeyboardEvents = useKeyboardEvent();
 
   const modesOptions = isArray(modes)
     ? modes.map((m) => ({
@@ -78,7 +80,12 @@ function Header(props) {
           <>
             <div
               className={`${prefixCls}-header-icon`}
+              role="button"
+              tabIndex={0}
               onClick={() => changePageShowDate('prev', innerMode)}
+              {...getKeyboardEvents({
+                onPressEnter: () => changePageShowDate('prev', innerMode),
+              })}
             >
               <IconLeft />
             </div>
@@ -86,8 +93,13 @@ function Header(props) {
               {mergedPageShowDate.format(headerValueFormat)}
             </div>
             <div
+              role="button"
+              tabIndex={0}
               className={`${prefixCls}-header-icon`}
               onClick={() => changePageShowDate('next', innerMode)}
+              {...getKeyboardEvents({
+                onPressEnter: () => changePageShowDate('next', innerMode),
+              })}
             >
               <IconRight />
             </div>

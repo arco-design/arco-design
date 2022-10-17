@@ -2,6 +2,34 @@
 changelog: true
 ---
 
+## 2.41.0-beta.0
+
+2022-10-14
+
+### 🆕 Feature
+
+- Add Melayu.([#1465](https://github.com/arco-design/arco-design/pull/1465))
+- The `Select` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- The `TreeSelect` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- The `Cascader` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- The `Upload` component supports enabling built-in image preview functionality via the `imagePreview` property.([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Upload` component supports `onDragLeave` and `onDragOver` event callbacks([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- The `colon` property of the `Form` component supports passing a `ReactNode`.([#1455](https://github.com/arco-design/arco-design/pull/1455))
+
+### 🐛 BugFix
+
+- Optimized the problem that the `title` property of the `Cascader` component option displays `[object object]`.([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- Fixed the bug that the parent node cannot be selected after the child node is selected when the `Cascader` component is set to `changeOnSelect` & `mode=multiple`([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- Fix the bug that the starting range of Slider is out of order due to the update of the parent component([#1467](https://github.com/arco-design/arco-design/pull/1467))
+- Fixed the bug that the same value could not be entered again after `TreeSelect` was controlled to empty `inputValue`([#1463](https://github.com/arco-design/arco-design/pull/1463))
+- Fixed a bug where the `shouldUpdate` property of the `Form.Item` component did not take effect when resetting the form item.([#1462](https://github.com/arco-design/arco-design/pull/1462))
+- Fixed the bug that `defaultCollapsed` of `Layout.Sider` component did not take effect.([#1458](https://github.com/arco-design/arco-design/pull/1458))
+- Fixed the bug that when the `InputTag` component has enabled `dragToSort`, the tag will be rendered twice when the disabled state is toggled.([#1457](https://github.com/arco-design/arco-design/pull/1457))
+
+### 💅 Style
+
+- Fixed a bug where the new icon color value of the `Tabs` component in dark mode was incorrect.([#1454](https://github.com/arco-design/arco-design/pull/1454))
+
 ## 2.40.2
 
 2022-09-30

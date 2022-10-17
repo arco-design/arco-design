@@ -8,6 +8,7 @@ exports[`renders Image/demo/basic.md correctly 1`] = `
   <img
     alt="lamp"
     class="arco-image-img"
+    tabindex="0"
     width="200"
   />
   <div
@@ -31,6 +32,7 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
       <img
         alt="lamp"
         class="arco-image-img"
+        tabindex="0"
         title="A user’s avatar"
         width="200"
       />
@@ -49,6 +51,7 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
       <img
         alt="lamp"
         class="arco-image-img"
+        tabindex="0"
         title="A user’s avatar"
         width="200"
       />
@@ -94,6 +97,7 @@ exports[`renders Image/demo/custom-preview-actions.md correctly 1`] = `
   <img
     alt="lamp"
     class="arco-image-img"
+    tabindex="0"
     width="200"
   />
   <div
@@ -118,6 +122,7 @@ exports[`renders Image/demo/error.md correctly 1`] = `
         alt="some-error"
         class="arco-image-img"
         height="300"
+        tabindex="0"
         width="400"
       />
       <div
@@ -136,6 +141,7 @@ exports[`renders Image/demo/error.md correctly 1`] = `
         alt="This is a picture of humans eating ice cream. The humans on the screen are very happy just now. The ice cream is green, it seems to be flavored with matcha. The gender of the human is unknown. It has very long hair and the human hair is brown."
         class="arco-image-img"
         height="300"
+        tabindex="0"
         width="400"
       />
       <div
@@ -162,6 +168,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
         <img
           alt="lamp1"
           class="arco-image-img"
+          tabindex="0"
           title="A user’s avatar"
           width="300"
         />
@@ -180,6 +187,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
         <img
           alt="lamp2"
           class="arco-image-img"
+          tabindex="0"
           title="A user’s avatar"
           width="200"
         />
@@ -204,6 +212,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
         <img
           alt="lamp3"
           class="arco-image-img"
+          tabindex="0"
           title="A user’s avatar"
           width="300"
         />
@@ -222,6 +231,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
         <img
           alt="lamp4"
           class="arco-image-img"
+          tabindex="0"
           title="A user’s avatar"
           width="200"
         />
@@ -262,6 +272,7 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
           alt="lamp1"
           class="arco-image-img"
           height="200"
+          tabindex="0"
           width="200"
         />
         <div
@@ -280,6 +291,7 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
           alt="lamp2"
           class="arco-image-img"
           height="200"
+          tabindex="0"
           width="200"
         />
         <div
@@ -302,6 +314,7 @@ exports[`renders Image/demo/preview-get-popup-container.md correctly 1`] = `
     <img
       alt="lamp"
       class="arco-image-img"
+      tabindex="0"
       width="200"
     />
     <div
@@ -333,6 +346,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
             <img
               alt="lamp1"
               class="arco-image-img"
+              tabindex="0"
               width="200"
             />
             <div
@@ -351,6 +365,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
             <img
               alt="lamp2"
               class="arco-image-img"
+              tabindex="0"
               width="200"
             />
             <div
@@ -369,6 +384,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
             <img
               alt="lamp3"
               class="arco-image-img"
+              tabindex="0"
               width="200"
             />
             <div
@@ -386,6 +402,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
             <img
               alt="lamp4"
               class="arco-image-img"
+              tabindex="0"
               width="200"
             />
             <div
@@ -419,6 +436,7 @@ exports[`renders Image/demo/progressive-loader.md correctly 1`] = `
     <img
       alt="lamp"
       class="arco-image-img"
+      tabindex="0"
       width="200"
     />
     <div

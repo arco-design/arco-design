@@ -85,6 +85,7 @@ function Switch(baseProps: SwitchProps, ref) {
       ref={ref}
       role="switch"
       aria-checked={!!mergedChecked}
+      tabIndex={loading ? -1 : undefined}
       {...extraProps}
       style={style}
       className={classNames}

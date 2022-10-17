@@ -233,6 +233,8 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
   >
     <div
       class="arco-carousel-arrow-left"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -250,6 +252,8 @@ exports[`renders Carousel/demo/auto.md correctly 1`] = `
     </div>
     <div
       class="arco-carousel-arrow-right"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -347,6 +351,8 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-carousel-arrow-left"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -364,6 +370,8 @@ exports[`renders Carousel/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-carousel-arrow-right"
+      role="button"
+      tabindex="0"
     >
       <svg
         aria-hidden="true"
@@ -387,6 +395,7 @@ exports[`renders Carousel/demo/indicator.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:10px"
   >
     <label
@@ -436,6 +445,7 @@ Array [
   <br />,
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -661,6 +671,8 @@ exports[`renders Carousel/demo/selfComponent.md correctly 1`] = `
     >
       <div
         class="arco-carousel-arrow-left"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -678,6 +690,8 @@ exports[`renders Carousel/demo/selfComponent.md correctly 1`] = `
       </div>
       <div
         class="arco-carousel-arrow-right"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"

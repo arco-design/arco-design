@@ -1,4 +1,6 @@
 import React, {
+  ReactElement,
+  ReactNode,
   ReactText,
   useContext,
   useEffect,
@@ -691,8 +693,8 @@ function Select(baseProps: SelectProps, ref) {
     [hotkeyHandler, optionInfoMap, valueActive]
   );
 
-  return (
-    <ResizeObserver onResize={() => refTrigger.current.updatePopupPosition()}>
+  const renderView = (eleView: ReactElement | ReactNode) => {
+    return (
       <Trigger
         ref={(ref) => (refTrigger.current = ref)}
         popup={renderPopup}
@@ -707,64 +709,75 @@ function Select(baseProps: SelectProps, ref) {
         onVisibleChange={tryUpdatePopupVisible}
         {...omit(triggerProps, ['popupVisible', 'onVisibleChange'])}
       >
-        {typeof triggerElement === 'function'
-          ? (() => triggerElement(getValueAndOptionForCallback(value)))()
-          : triggerElement || (
-              <SelectView
-                {...props}
-                {...selectViewEventHandlers}
-                ref={refSelectView}
-                // state
-                value={value}
-                inputValue={inputValue}
-                popupVisible={popupVisible}
-                // other
-                rtl={rtl}
-                prefixCls={prefixCls}
-                ariaControls={instancePopupID}
-                isEmptyValue={isNoOptionSelected}
-                isMultiple={isMultipleMode}
-                onSort={tryUpdateSelectValue}
-                renderText={(value) => {
-                  const option = getOptionInfoByValue(value);
-                  let text = value;
-                  if (isFunction(renderFormat)) {
-                    const paramsForCallback = getValueAndOptionForCallback(value, false);
-                    text = renderFormat(
-                      (paramsForCallback.option as OptionInfo) || null,
-                      paramsForCallback.value as ReactText | LabeledValue
-                    );
-                  } else {
-                    let foundLabelFromProps = false;
-                    if (labelInValue) {
-                      const propValue = props.value || props.defaultValue;
-                      if (Array.isArray(propValue)) {
-                        const targetLabeledValue = (propValue as LabeledValue[]).find(
-                          (item) => isObject(item) && item.value === value
-                        );
-                        if (targetLabeledValue) {
-                          text = targetLabeledValue.label;
-                          foundLabelFromProps = true;
-                        }
-                      } else if (isObject(propValue)) {
-                        text = (propValue as LabeledValue).label;
-                        foundLabelFromProps = true;
-                      }
-                    }
-
-                    if (!foundLabelFromProps && option && 'children' in option) {
-                      text = option.children;
-                    }
-                  }
-
-                  return {
-                    text,
-                    disabled: option && option.disabled,
-                  };
-                }}
-              />
-            )}
+        {eleView}
       </Trigger>
+    );
+  };
+  const usedTriggerElement =
+    typeof triggerElement === 'function'
+      ? triggerElement(getValueAndOptionForCallback(value))
+      : triggerElement;
+
+  return (
+    <ResizeObserver onResize={() => refTrigger.current.updatePopupPosition()}>
+      {usedTriggerElement !== undefined && usedTriggerElement !== null ? (
+        renderView(usedTriggerElement)
+      ) : (
+        <SelectView
+          {...props}
+          {...selectViewEventHandlers}
+          ref={refSelectView}
+          // state
+          value={value}
+          inputValue={inputValue}
+          popupVisible={popupVisible}
+          // other
+          rtl={rtl}
+          prefixCls={prefixCls}
+          ariaControls={instancePopupID}
+          isEmptyValue={isNoOptionSelected}
+          isMultiple={isMultipleMode}
+          onSort={tryUpdateSelectValue}
+          renderText={(value) => {
+            const option = getOptionInfoByValue(value);
+            let text = value;
+            if (isFunction(renderFormat)) {
+              const paramsForCallback = getValueAndOptionForCallback(value, false);
+              text = renderFormat(
+                (paramsForCallback.option as OptionInfo) || null,
+                paramsForCallback.value as ReactText | LabeledValue
+              );
+            } else {
+              let foundLabelFromProps = false;
+              if (labelInValue) {
+                const propValue = props.value || props.defaultValue;
+                if (Array.isArray(propValue)) {
+                  const targetLabeledValue = (propValue as LabeledValue[]).find(
+                    (item) => isObject(item) && item.value === value
+                  );
+                  if (targetLabeledValue) {
+                    text = targetLabeledValue.label;
+                    foundLabelFromProps = true;
+                  }
+                } else if (isObject(propValue)) {
+                  text = (propValue as LabeledValue).label;
+                  foundLabelFromProps = true;
+                }
+              }
+
+              if (!foundLabelFromProps && option && 'children' in option) {
+                text = option.children;
+              }
+            }
+
+            return {
+              text,
+              disabled: option && option.disabled,
+            };
+          }}
+          renderView={renderView}
+        />
+      )}
     </ResizeObserver>
   );
 }

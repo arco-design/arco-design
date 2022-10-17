@@ -45,6 +45,28 @@
   vertical-align: middle;
   overflow: hidden;
 
+  &-type-round,
+  &-type-circle {
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @switch-color-box-shadow_default;
+    }
+
+    &.@{switch-prefix-cls}-checked:focus-visible {
+      box-shadow: 0 0 0 2px @switch-color-box-shadow_checked;
+    }
+  }
+
+  &-type-line {
+    &:focus-visible .@{switch-prefix-cls}-dot {
+      box-shadow: 0 0 0 2px @switch-color-box-shadow_default;
+      transition: none;
+    }
+
+    &.@{switch-prefix-cls}-checked:focus-visible .@{switch-prefix-cls}-dot {
+      box-shadow: 0 0 0 2px @switch-color-box-shadow_checked;
+    }
+  }
+
   &-dot {
     position: absolute;
     display: flex;

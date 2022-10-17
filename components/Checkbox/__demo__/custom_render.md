@@ -7,12 +7,12 @@ title:
 
 ## zh-CN
 
-可以通过传入函数类型的 `children` 来自定义渲染节点内容。
+可以通过传入函数类型的 `children` 来自定义渲染节点内容( `v2.29.0`)。
 
 
 ## en-US
 
-Render nodes can be customized by passing a function of type 'children'.
+Render nodes can be customized by passing a function of type 'children'( `v2.29.0`)。.
 
 ```js
 import { Checkbox, Tag, Space, Typography } from '@arco-design/web-react';
@@ -23,7 +23,7 @@ const App = () => {
       <div
         style={{ marginBottom: 20 }}
       >
-        <Checkbox.Group defaultValue={['Beijing']}>
+        <Checkbox.Group defaultValue={['Beijing']} >
           {['Beijing', 'Shanghai', 'Guangzhou'].map((item) => {
             return (
               <Checkbox key={item} value={item}>
@@ -73,6 +73,14 @@ export default App;
 ```
 
 ```css
+
+input[type='checkbox']:focus-visible + .arco-tag {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
+}
+
+input[type='checkbox']:focus-visible + .custom-checkbox-card {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
+}
 
 .custom-checkbox-card {
   padding: 10px 16px;

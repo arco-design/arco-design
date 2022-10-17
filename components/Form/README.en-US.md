@@ -14,13 +14,13 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.|boolean |`-`|-|
 |disabled|Whether All Form item is disabled|boolean |`-`|-|
 |id|prefix of `id` attr|string |`-`|-|
 |labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
 |layout|The layout of Form|'horizontal' \| 'vertical' \| 'inline' |`horizontal`|-|
 |requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |size|size of form|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |form|form|[FormInstance](#forminstance)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
 |initialValues|Default value of form data|Partial&lt;FormData&gt; |`-`|-|
@@ -41,7 +41,6 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|colon|Whether to add a colon after label|boolean |`-`|-|
 |disabled|Whether the FormItem is disabled. Priority is higher than the `disabled` prop of `Form`|boolean |`-`|-|
 |hasFeedback|Whether to show the verification icon, configure `validateStatus` to use.|boolean |`-`|-|
 |hidden|hide the form item|boolean |`-`|2.29.0|
@@ -51,10 +50,12 @@ A form with data collection, verification and submission functions, including ch
 |labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
 |requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |validateStatus|Validate status|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
+|colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|
 |extra|Additional hint content.|ReactNode |`-`|-|
 |help|Custom help text|ReactNode |`-`|-|
 |label|Label text|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
+|dependencies|the dependency fields|string[] |`-`|2.40.0|
 |field|Unique identification of controlled components|FieldKey |`-`|-|
 |initialValue|Default value|FieldValue |`-`|-|
 |labelCol|The layout of `<label>`, the same as the props received by the `<Grid.Col>`.The values of `span` and `offset` can be configured, which will override the global `labelCol` setting|[ColProps](grid#col) |`-`|-|

@@ -1,5 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders TreeSelect/demo/addon.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <div
+      class="arco-tree-select-wrapper"
+      style="width:350px"
+    >
+      <div
+        class="arco-tree-select-addbefore"
+      >
+        TreeNode
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-tree-select-view"
+          title=""
+        >
+          <input
+            autocomplete="off"
+            class="arco-tree-select-view-input"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            aria-hidden="true"
+            class="arco-tree-select-view-value arco-tree-select-hidden"
+          />
+          <div
+            aria-hidden="true"
+            class="arco-tree-select-suffix"
+          >
+            <div
+              class="arco-tree-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-tree-select-wrapper"
+      style="width:350px"
+    >
+      <div
+        class="arco-tree-select-addbefore"
+      >
+        TreeNode
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-tree-select arco-tree-select-multiple arco-tree-select-show-search arco-tree-select-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-tree-select-view"
+          title=""
+        >
+          <div
+            class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+          >
+            <div
+              class="arco-input-tag-view"
+            >
+              <div
+                class="arco-input-tag-inner"
+              >
+                <input
+                  autocomplete="off"
+                  class="arco-input-tag-input arco-input-tag-input-size-default"
+                  value=""
+                />
+                <span
+                  class="arco-input-tag-input-mirror"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="arco-tree-select-suffix"
+          >
+            <div
+              class="arco-tree-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
 <div
   aria-autocomplete="list"
@@ -225,6 +364,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
   >
     <div
       class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio-button"
@@ -1124,6 +1264,7 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label

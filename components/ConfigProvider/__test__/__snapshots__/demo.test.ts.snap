@@ -4,6 +4,7 @@ exports[`renders ConfigProvider/demo/basic.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -527,6 +528,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"
@@ -588,6 +590,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"
@@ -2302,6 +2305,7 @@ exports[`renders ConfigProvider/demo/theme.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="display:block;margin-bottom:40px"
   >
     <label

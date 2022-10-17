@@ -85,7 +85,7 @@ function App() {
           visibleHeight={30}
           target={() => document.getElementById('custom_backtop2')}
         >
-          <div className="custom-backtop">
+          <div className="custom-backtop" tabIndex={0} role="button" aria-label="scroll to top">
             <IconCaretUp />
             <br />
             TOP
@@ -144,5 +144,9 @@ export default App;
 
 .custom-backtop:hover {
   background: var(--color-fill-3);
+}
+
+.custom-backtop:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
 }
 ```

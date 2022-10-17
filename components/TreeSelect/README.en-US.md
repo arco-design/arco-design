@@ -33,6 +33,7 @@ Can choose tree structure data.Only Single choice is supports.
 |fieldNames|Custom field name for key, title, isLeaf, disabled and children|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |treeCheckedStrategy|Customize the return value|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
+|addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
 |notFoundContent|The content display when no data|ReactNode |`-`|-|
 |prefix|Customize select suffix|ReactNode |`-`|2.11.0|

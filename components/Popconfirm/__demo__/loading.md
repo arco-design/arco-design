@@ -41,6 +41,7 @@ const App = () => {
           content: 'cancel',
         });
       }}
+      focusLock
     >
       <Button style={{ marginRight: 20 }}>Async close</Button>
     </Popconfirm>

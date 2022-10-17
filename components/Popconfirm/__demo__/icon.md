@@ -21,6 +21,7 @@ const App = () => {
   return (
     <Space size={24}>
       <Popconfirm
+        focusLock
         title="Are you sure you want to delete?"
         icon={<IconFaceSmileFill style={{ color: '#0057fe' }} />}
         onOk={() => {

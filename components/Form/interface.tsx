@@ -129,10 +129,10 @@ export interface FormProps<
    */
   disabled?: boolean;
   /**
-   * @zh 是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。
-   * @en Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.
+   * @zh 是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。(`ReactNode` in `v2.41.0`)
+   * @en Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.(`ReactNode` in `v2.41.0`)
    */
-  colon?: boolean;
+  colon?: boolean | ReactNode;
   /**
    * @zh 验证失败后滚动到第一个错误字段。(`ScrollIntoViewOptions` 类型在 `2.19.0` 开始支持)
    * @en Whether scroll to first error item after validation fails. (`ScrollIntoViewOptions` is supported at `2.19.0`)
@@ -241,10 +241,10 @@ export interface FormItemProps<
    */
   wrapperCol?: ColProps;
   /**
-   * @zh 是否显示标签后的一个冒号
-   * @en Whether to add a colon after label
+   * @zh 是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。(`ReactNode` in `v2.41.0`)
+   * @en Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.(`ReactNode` in `v2.41.0`)
    */
-  colon?: boolean;
+  colon?: boolean | ReactNode;
   /**
    * @zh 是否禁用，优先级高于 `Form` 的 `disabled` 属性
    * @en Whether the FormItem is disabled. Priority is higher than the `disabled` prop of `Form`

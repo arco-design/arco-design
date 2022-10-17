@@ -284,6 +284,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+                role="radiogroup"
               >
                 <label
                   class="arco-radio-button"
@@ -1410,6 +1411,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+                role="radiogroup"
               >
                 <label
                   class="arco-radio"
@@ -1591,16 +1593,21 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-upload-list-item-picture"
                   >
                     <img
+                      alt="20200717"
                       src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
                     />
                     <div
                       class="arco-upload-list-item-picture-mask"
+                      role="radiogroup"
                     >
                       <div
                         class="arco-upload-list-item-picture-operation"
                       >
                         <span
+                          aria-label="预览"
                           class="arco-upload-list-preview-icon"
+                          role="button"
+                          tabindex="0"
                         >
                           <svg
                             aria-hidden="true"
@@ -1621,7 +1628,10 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                           </svg>
                         </span>
                         <span
+                          aria-label="删除"
                           class="arco-upload-list-remove-icon"
+                          role="button"
+                          tabindex="0"
                         >
                           <svg
                             aria-hidden="true"
@@ -1658,7 +1668,9 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     class="arco-upload-trigger-picture-wrapper"
                   >
                     <div
+                      aria-label="点击上传"
                       class="arco-upload-trigger-picture"
+                      tabindex="0"
                     >
                       <div
                         class="arco-upload-trigger-picture-text"
@@ -2124,6 +2136,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline arco-radio-group-disabled"
+                role="radiogroup"
               >
                 <label
                   class="arco-radio-button arco-radio-disabled"
@@ -3153,6 +3166,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 class="arco-radio-group arco-radio-size-default arco-radio-mode-outline arco-radio-group-disabled"
+                role="radiogroup"
               >
                 <label
                   class="arco-radio arco-radio-disabled"
@@ -3292,7 +3306,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       class="arco-slider-button"
                       role="slider"
                       style="left:20%"
-                      tabindex="0"
+                      tabindex="-1"
                     />
                   </div>
                 </div>
@@ -3337,16 +3351,21 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-upload-list-item-picture"
                   >
                     <img
+                      alt="20200717"
                       src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
                     />
                     <div
                       class="arco-upload-list-item-picture-mask"
+                      role="radiogroup"
                     >
                       <div
                         class="arco-upload-list-item-picture-operation"
                       >
                         <span
+                          aria-label="预览"
                           class="arco-upload-list-preview-icon"
+                          role="button"
+                          tabindex="0"
                         >
                           <svg
                             aria-hidden="true"
@@ -3387,7 +3406,9 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     class="arco-upload-trigger-picture-wrapper"
                   >
                     <div
+                      aria-label="点击上传"
                       class="arco-upload-trigger-picture"
+                      tabindex="0"
                     >
                       <div
                         class="arco-upload-trigger-picture-text"
@@ -4679,6 +4700,7 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
           >
             <div
               class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+              role="radiogroup"
             >
               <label
                 class="arco-radio-button arco-radio-checked"
@@ -7047,6 +7069,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+                role="radiogroup"
               >
                 <label
                   class="arco-radio-button"
@@ -7694,6 +7717,7 @@ exports[`renders Form/demo/update.md correctly 1`] = `
             >
               <div
                 class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+                role="radiogroup"
               >
                 <label
                   class="arco-radio"
@@ -8374,6 +8398,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
     <div>
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button"
@@ -8433,6 +8458,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
       <br />
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button"

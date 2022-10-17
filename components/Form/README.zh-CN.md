@@ -14,13 +14,13 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。|boolean |`-`|-|
 |disabled|统一配置表单控件是否可用|boolean |`-`|-|
 |id|设置后，会作为表单控件 `id`的前缀。|string |`-`|-|
 |labelAlign|标签的文本对齐方式|'left' \| 'right' |`right`|-|
 |layout|表单的布局，有三种布局，水平、垂直、多列。|'horizontal' \| 'vertical' \| 'inline' |`horizontal`|-|
 |requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |size|不同尺寸。|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |form|form|[FormInstance](#forminstance)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
 |initialValues|设置表单初始值|Partial&lt;FormData&gt; |`-`|-|
@@ -41,7 +41,6 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|colon|是否显示标签后的一个冒号|boolean |`-`|-|
 |disabled|是否禁用，优先级高于 `Form` 的 `disabled` 属性|boolean |`-`|-|
 |hasFeedback|是否显示校验图标，配置 validateStatus 使用。|boolean |`-`|-|
 |hidden|隐藏表单项. 表单字段值仍然会被获取|boolean |`-`|2.29.0|
@@ -51,10 +50,12 @@
 |labelAlign|标签的文本对齐方式，优先级高于 `Form`|'left' \| 'right' |`right`|-|
 |requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |validateStatus|校验状态|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
+|colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|
 |extra|额外的提示内容。|ReactNode |`-`|-|
 |help|自定义校验文案|ReactNode |`-`|-|
 |label|标签的文本|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
+|dependencies|依赖的字段。|string[] |`-`|2.40.0|
 |field|受控组件的唯一标示|FieldKey |`-`|-|
 |initialValue|设置控件初始值.(初始值，请不要使用受控组件的defaultValue了)|FieldValue |`-`|-|
 |labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|[ColProps](grid#col) |`-`|-|

@@ -26,7 +26,7 @@ A floating layer that slides in from the edge of the screen.
 |visible|Visibility of the drawer|boolean |`-`|-|
 |cancelText|Text of the Cancel button|string |`-`|-|
 |okText|Text of the OK button|string |`-`|-|
-|placement|The placement of the drawer: `top` `right` `bottom` `left`|string |`right`|-|
+|placement|The placement of the drawer: `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
 |footer|The footer element. Drawer will not render the footer element when `footer` is `null`|ReactNode |`-`|-|
 |title|The title element. Drawer will not render the title element when `title` is `null`|ReactNode |`-`|-|
 |bodyStyle|The additional css style for content|CSSProperties |`-`|2.9.0|

@@ -199,7 +199,7 @@ exports[`renders Collapse/demo/basic.md correctly 1`] = `
       aria-expanded="true"
       class="arco-collapse-item-header arco-collapse-item-header-left arco-collapse-item-header-disabled"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <span
         class="arco-icon-hover arco-collapse-item-icon-hover arco-icon-hover-disabled"
@@ -959,6 +959,7 @@ exports[`renders Collapse/demo/iconPosition.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
       style="margin-left:20px"
     >
       <label

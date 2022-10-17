@@ -26,7 +26,7 @@ function DemoImage(props) {
       title="A user’s avatar"
       description="Present by Arco Design"
       actions={[
-        <span
+        <button
           key="1"
           className="image-demo-action-item"
           onClick={(e) => {
@@ -34,8 +34,8 @@ function DemoImage(props) {
           }}
         >
           <IconEye />
-        </span>,
-        <span
+        </button>,
+        <button
           key="2"
           className="image-demo-action-item"
           onClick={(e) => {
@@ -43,11 +43,11 @@ function DemoImage(props) {
           }}
         >
           <IconDownload />
-        </span>,
+        </button>,
         <Tooltip key="3" content="A user’s avatar">
-          <span className="image-demo-action-item">
+          <button className="image-demo-action-item">
             <IconInfoCircle />
-          </span>
+          </button>
         </Tooltip>,
       ]}
       previewProps={{
@@ -102,8 +102,20 @@ export default App;
 
 ```css
 .image-demo-action-item {
-  padding: 5px 4px;
-  display: inline-block;
+  height: 22px;
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: unset;
+  background: unset;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.image-demo-action-item:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
 }
 
 .image-demo-props table:nth-of-type(2) thead th:last-child,

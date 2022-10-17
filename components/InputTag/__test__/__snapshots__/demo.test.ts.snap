@@ -573,6 +573,7 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px;border-radius:4px"
   >
     <label

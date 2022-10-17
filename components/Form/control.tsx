@@ -161,7 +161,14 @@ export default class Control<
         this.touched = false;
         this.errors = null;
         this.warnings = null;
-        this.updateFormItem();
+        // https://github.com/arco-design/arco-design/issues/1460
+        if (dependencies || shouldUpdate) {
+          shouldUpdateItem();
+        } else {
+          // TODO
+          // Keep the previous behavior, removed in the next major release
+          this.updateFormItem();
+        }
         break;
       case 'innerSetValue':
         if (isFieldMath(field, fields)) {
