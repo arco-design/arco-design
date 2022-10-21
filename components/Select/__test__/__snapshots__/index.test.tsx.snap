@@ -13,17 +13,20 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
     class="arco-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-select-view-input"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-select-view-value arco-select-hidden"
-    />
+      class="arco-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-select-view-input"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-view-value-mirror"
+      />
+    </span>
     <div
       aria-hidden="true"
       class="arco-select-suffix"
@@ -63,17 +66,20 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
     class="arco-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-select-view-input"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-select-view-value arco-select-hidden"
-    />
+      class="arco-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-select-view-input"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-view-value-mirror"
+      />
+    </span>
     <div
       aria-hidden="true"
       class="arco-select-suffix"
@@ -113,17 +119,20 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
     class="arco-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-select-view-input"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-select-view-value arco-select-hidden"
-    />
+      class="arco-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-select-view-input"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-view-value-mirror"
+      />
+    </span>
     <div
       aria-hidden="true"
       class="arco-select-suffix"
@@ -164,17 +173,20 @@ exports[`ConfigProvider componentConfig.Select set data-* property 1`] = `
     class="arco-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-select-view-input"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-select-view-value arco-select-hidden"
-    />
+      class="arco-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-select-view-input"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-view-value-mirror"
+      />
+    </span>
     <div
       aria-hidden="true"
       class="arco-select-suffix"

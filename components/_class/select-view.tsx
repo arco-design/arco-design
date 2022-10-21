@@ -385,7 +385,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     const needShowInput = !!((mergedFocused && canFocusInput) || isEmptyValue);
 
     return (
-      <>
+      <span className={`${prefixCls}-view-selector`}>
         <InputComponent
           aria-hidden={!needShowInput || undefined}
           ref={refInput}
@@ -396,13 +396,15 @@ export const SelectView = (props: SelectViewProps, ref) => {
           autoComplete="off"
           {...inputProps}
         />
+
         <span
-          aria-hidden={needShowInput || undefined}
-          className={cs(`${prefixCls}-view-value`, { [`${prefixCls}-hidden`]: needShowInput })}
+          className={cs(`${prefixCls}-view-value`, {
+            [`${prefixCls}-view-value-mirror`]: needShowInput,
+          })}
         >
-          {_inputValue}
+          {_inputValue || inputProps.placeholder}
         </span>
-      </>
+      </span>
     );
   };
 

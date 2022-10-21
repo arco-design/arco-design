@@ -116,18 +116,22 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                   class="arco-select-view"
                   title=".com"
                 >
-                  <input
-                    aria-hidden="true"
-                    autocomplete="off"
-                    class="arco-select-view-input arco-select-hidden"
-                    placeholder=".com"
-                    style="width:100%"
-                    value=".com"
-                  />
                   <span
-                    class="arco-select-view-value"
+                    class="arco-select-view-selector"
                   >
-                    .com
+                    <input
+                      aria-hidden="true"
+                      autocomplete="off"
+                      class="arco-select-view-input arco-select-hidden"
+                      placeholder=".com"
+                      style="width:100%"
+                      value=".com"
+                    />
+                    <span
+                      class="arco-select-view-value"
+                    >
+                      .com
+                    </span>
                   </span>
                   <div
                     aria-hidden="true"
@@ -232,18 +236,22 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             class="arco-select-view"
             title="Beijing"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              placeholder="Beijing"
-              style="width:100%"
-              value="Beijing"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Beijing
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                placeholder="Beijing"
+                style="width:100%"
+                value="Beijing"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Beijing
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -296,18 +304,22 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             class="arco-select-view"
             title="Beijing"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              placeholder="Beijing"
-              style="width:100%"
-              value="Beijing"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Beijing
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                placeholder="Beijing"
+                style="width:100%"
+                value="Beijing"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Beijing
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -389,18 +401,22 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             class="arco-select-view"
             title="Beijing"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              placeholder="Beijing"
-              style="width:100%"
-              value="Beijing"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Beijing
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                placeholder="Beijing"
+                style="width:100%"
+                value="Beijing"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Beijing
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -1624,18 +1640,23 @@ exports[`renders Input/demo/size.md correctly 1`] = `
               class="arco-select-view"
               title=""
             >
-              <input
-                autocomplete="off"
-                class="arco-select-view-input"
-                placeholder="Please select"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value=""
-              />
               <span
-                aria-hidden="true"
-                class="arco-select-view-value arco-select-hidden"
-              />
+                class="arco-select-view-selector"
+              >
+                <input
+                  autocomplete="off"
+                  class="arco-select-view-input"
+                  placeholder="Please select"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value=""
+                />
+                <span
+                  class="arco-select-view-value arco-select-view-value-mirror"
+                >
+                  Please select
+                </span>
+              </span>
               <div
                 aria-hidden="true"
                 class="arco-select-suffix"

@@ -29,18 +29,23 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
           class="arco-select-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-select-view-input"
-            placeholder="Please select"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-select-view-value arco-select-hidden"
-          />
+            class="arco-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              placeholder="Please select"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-select-view-value arco-select-view-value-mirror"
+            >
+              Please select
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-select-suffix"
@@ -161,17 +166,22 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Create an item"
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Create an item"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Create an item
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -403,18 +413,23 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Please select"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Please select"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -457,20 +472,24 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
         class="arco-select-view"
         title="Beijing"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          disabled=""
-          placeholder="Select city"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="Beijing"
-        />
         <span
-          class="arco-select-view-value"
+          class="arco-select-view-selector"
         >
-          Beijing
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            disabled=""
+            placeholder="Select city"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="Beijing"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            Beijing
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -514,18 +533,23 @@ exports[`renders Select/demo/clear.md correctly 1`] = `
     class="arco-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-select-view-input"
-      placeholder="Please select"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-select-view-value arco-select-hidden"
-    />
+      class="arco-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-select-view-input"
+        placeholder="Please select"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-view-value-mirror"
+      >
+        Please select
+      </span>
+    </span>
     <div
       aria-hidden="true"
       class="arco-select-suffix"
@@ -573,18 +597,23 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Please select"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Please select"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -626,18 +655,23 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Please select"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Please select"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -876,18 +910,23 @@ exports[`renders Select/demo/dropdown-render.md correctly 1`] = `
     class="arco-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-select-view-input"
-      placeholder="Select city"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-select-view-value arco-select-hidden"
-    />
+      class="arco-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-select-view-input"
+        placeholder="Select city"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-select-view-value arco-select-view-value-mirror"
+      >
+        Select city
+      </span>
+    </span>
     <div
       aria-hidden="true"
       class="arco-select-suffix"
@@ -929,17 +968,22 @@ exports[`renders Select/demo/group.md correctly 1`] = `
       class="arco-select-view"
       title=""
     >
-      <input
-        autocomplete="off"
-        class="arco-select-view-input"
-        placeholder="Select drink"
-        style="width:100%"
-        value=""
-      />
       <span
-        aria-hidden="true"
-        class="arco-select-view-value arco-select-hidden"
-      />
+        class="arco-select-view-selector"
+      >
+        <input
+          autocomplete="off"
+          class="arco-select-view-input"
+          placeholder="Select drink"
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-select-view-value arco-select-view-value-mirror"
+        >
+          Select drink
+        </span>
+      </span>
       <div
         aria-hidden="true"
         class="arco-select-suffix"
@@ -1582,18 +1626,23 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Please select"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Please select"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -1636,20 +1685,24 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
         class="arco-select-view"
         title="Beijing"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          disabled=""
-          placeholder="Please select"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="Beijing"
-        />
         <span
-          class="arco-select-view-value"
+          class="arco-select-view-selector"
         >
-          Beijing
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            disabled=""
+            placeholder="Please select"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="Beijing"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            Beijing
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -1763,19 +1816,23 @@ exports[`renders Select/demo/options.md correctly 1`] = `
         class="arco-select-view"
         title="Beijing"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          placeholder="Select city"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="Beijing"
-        />
         <span
-          class="arco-select-view-value"
+          class="arco-select-view-selector"
         >
-          Beijing
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            placeholder="Select city"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="Beijing"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            Beijing
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -1948,19 +2005,23 @@ exports[`renders Select/demo/relative.md correctly 1`] = `
         class="arco-select-view"
         title="Beijing"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          placeholder="Select Province"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="Beijing"
-        />
         <span
-          class="arco-select-view-value"
+          class="arco-select-view-selector"
         >
-          Beijing
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            placeholder="Select Province"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="Beijing"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            Beijing
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -2003,18 +2064,24 @@ exports[`renders Select/demo/relative.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          placeholder="Select city"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          class="arco-select-view-value"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            placeholder="Select city"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            Select city
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -2064,18 +2131,23 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Select city"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Select city"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Select city
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -2421,17 +2493,22 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Select city"
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Select city"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Select city
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -2474,17 +2551,22 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Filter option"
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Filter option"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Filter option
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -2526,17 +2608,22 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Retain input value"
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Retain input value"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Retain input value
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
@@ -2644,17 +2731,22 @@ exports[`renders Select/demo/size.md correctly 1`] = `
         class="arco-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-select-view-input"
-          placeholder="Please select"
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-select-view-value arco-select-hidden"
-        />
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Please select"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-select-suffix"
