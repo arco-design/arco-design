@@ -2,9 +2,13 @@
 changelog: true
 ---
 
-## 2.41.0-beta.0
+## 2.41.0-beta.1
 
-2022-10-14
+2022-10-21
+
+### 💎 功能优化
+
+- `Image` 组件悬浮时显示`zoom-in`鼠标类型([#1477](https://github.com/arco-design/arco-design/pull/1477))
 
 ### 🆕 功能升级
 
@@ -18,6 +22,9 @@ changelog: true
 
 ### 🐛 问题修复
 
+- 修复 `Transfer` 开启 `draggable` 时被禁用的选项仍然可以被拖拽的问题。([#1493](https://github.com/arco-design/arco-design/pull/1493))
+- 修复 `Select` 在 `width: auto` 时宽度未跟随内容自动变化的问题。（单选模式下内层新增 DOM 节点直接包裹 `.arco-select-view-value` 和 `input` 标签）([#1490](https://github.com/arco-design/arco-design/pull/1490))
+- 修复 `Tabs` 组件在 `RTL` 视图下水平滚动方向错误的 bug。([#1487](https://github.com/arco-design/arco-design/pull/1487))
 - 优化 `Cascader` 组件选项的 `title` 属性显示 `[object object]` 的问题。([#1468](https://github.com/arco-design/arco-design/pull/1468))
 - 修复 `Cascader` 组件在设置 `changeOnSelect` & `mode=multiple` 时，子节点选中后父节点无法被选中的 bug([#1468](https://github.com/arco-design/arco-design/pull/1468))
 - 修复 Slider 由于父组件更新导致起始范围乱序的 bug。([#1467](https://github.com/arco-design/arco-design/pull/1467))
@@ -28,7 +35,10 @@ changelog: true
 
 ### 💅 样式更新
 
+- 修复 `Tabs` 组件 `extra` 元素较大宽度时被遮盖样式问题。([#1494](https://github.com/arco-design/arco-design/pull/1494))
+- 修复 `Table` 组件当 `scroll.x` 过小时总结列高度塌陷的样式问题。([#1492](https://github.com/arco-design/arco-design/pull/1492))
 - 修复暗黑模式下 `Tabs` 组件的新增图标色值有误的 bug。([#1454](https://github.com/arco-design/arco-design/pull/1454))
+- 修复 `Tabs` 组件在 `type=line` & `tabPosition=bottom` 时，分割线位置错误的样式问题。([#1248](https://github.com/arco-design/arco-design/pull/1248))
 
 ## 2.40.2
 

@@ -2,9 +2,13 @@
 changelog: true
 ---
 
-## 2.41.0-beta.0
+## 2.41.0
 
-2022-10-14
+2022-10-21
+
+### 💎 Enhancement
+
+- Show `zoom-in` mouse type when `Image` component is hovered([#1477](https://github.com/arco-design/arco-design/pull/1477))
 
 ### 🆕 Feature
 
@@ -18,6 +22,9 @@ changelog: true
 
 ### 🐛 BugFix
 
+- Fix `Transfer` disabled items can still be draggable when `draggable` is enabled.([#1493](https://github.com/arco-design/arco-design/pull/1493))
+- Fix the bug that the width of `Select` does not automatically change with the content when `width: auto` is set. (In the single-selection mode, the new DOM node in the inner layer directly wraps the `.arco-select-view-value` and `input` tags)([#1490](https://github.com/arco-design/arco-design/pull/1490))
+- Fix the bug that is wrong in the horizontal scrolling direction under the `RTL` view.([#1487](https://github.com/arco-design/arco-design/pull/1487))
 - Optimized the problem that the `title` property of the `Cascader` component option displays `[object object]`.([#1468](https://github.com/arco-design/arco-design/pull/1468))
 - Fixed the bug that the parent node cannot be selected after the child node is selected when the `Cascader` component is set to `changeOnSelect` & `mode=multiple`([#1468](https://github.com/arco-design/arco-design/pull/1468))
 - Fix the bug that the starting range of Slider is out of order due to the update of the parent component([#1467](https://github.com/arco-design/arco-design/pull/1467))
@@ -28,7 +35,10 @@ changelog: true
 
 ### 💅 Style
 
+- Fix `Tabs` component's `extra` element's style issue that is covered when the width is large.([#1494](https://github.com/arco-design/arco-design/pull/1494))
+- Fixed `Table` component's style issue of collapsed column height when `scroll.x` is too small.([#1492](https://github.com/arco-design/arco-design/pull/1492))
 - Fixed a bug where the new icon color value of the `Tabs` component in dark mode was incorrect.([#1454](https://github.com/arco-design/arco-design/pull/1454))
+- Fixed `Tabs` component in `type=line` & `tabPosition=bottom`, the style issue of the wrong split line position.([#1248](https://github.com/arco-design/arco-design/pull/1248))
 
 ## 2.40.2
 
