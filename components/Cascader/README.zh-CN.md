@@ -53,6 +53,7 @@
 |renderFooter|定义每一层级的 `footer`。参数：level: 当前层级, activeOption: 当前点击的节点。返回 `null` 不展示|(level: number, activeOption: NodeProps&lt;T&gt; \| null) =&gt; ReactNode |`-`|-|
 |renderOption|自定义展示 `option`|(option: NodeProps&lt;T&gt;, level: number) =&gt; ReactNode |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
+|triggerProps|可以接受所有 Trigger 组件的 Props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |value|选中值|(string \| string[])[] |`-`|-|
 |dropdownColumnRender|自定义下拉菜单每一列的展示。|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
 |dropdownRender|自定义下拉菜单的展示。|(menu: ReactNode) => ReactNode |`-`|2.15.0|

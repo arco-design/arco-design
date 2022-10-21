@@ -53,6 +53,7 @@ Display options in a multi-level cascading dropdown component.
 |renderFooter|Custom rendering the `footer` of each level menu.|(level: number, activeOption: NodeProps&lt;T&gt; \| null) =&gt; ReactNode |`-`|-|
 |renderOption|Custom rendering `option`|(option: NodeProps&lt;T&gt;, level: number) =&gt; ReactNode |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
+|triggerProps|All `Trigger` component props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |value|To set value|(string \| string[])[] |`-`|-|
 |dropdownColumnRender|Customize columns of the menu.|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
 |dropdownRender|Customize the popup menu.|(menu: ReactNode) => ReactNode |`-`|2.15.0|
