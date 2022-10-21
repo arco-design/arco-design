@@ -102,6 +102,18 @@
       background-color: @tabs-line-color-header-border;
       display: block;
     }
+
+    &-bottom {
+      &::before {
+        top: 0;
+      }
+
+      .@{tabs-prefix-cls}-header {
+        &-ink {
+          top: 0;
+        }
+      }
+    }
   }
 
   &-header-wrapper {
