@@ -39,6 +39,7 @@ function TransferItem(props: TransferItemProps) {
   const [dragPosition, setDragPosition] = useState(0);
 
   const _disabled = disabled || item.disabled;
+  const _draggable = draggable && !_disabled;
   const checked = selectedKeys.indexOf(item.key) > -1;
   const itemContent = render ? render(item) : item.value;
 
@@ -62,14 +63,14 @@ function TransferItem(props: TransferItemProps) {
         baseClassName,
         {
           [`${baseClassName}-disabled`]: _disabled,
-          [`${baseClassName}-draggable`]: draggable,
+          [`${baseClassName}-draggable`]: _draggable,
           [`${baseClassName}-gap-top`]: dragOver && dragPosition < 0,
           [`${baseClassName}-gap-bottom`]: dragOver && dragPosition > 0,
           [`${baseClassName}-${dragStatus}`]: dragStatus !== 'none',
         },
         className
       )}
-      draggable={draggable}
+      draggable={_draggable}
       onDragStart={(e) => {
         e.stopPropagation();
         setDragStatus('dragging');
