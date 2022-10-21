@@ -29,18 +29,23 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
           class="arco-cascader-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-cascader-view-input"
-            placeholder="Please select ..."
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-cascader-view-value arco-cascader-hidden"
-          />
+            class="arco-cascader-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Please select ..."
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            >
+              Please select ...
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-cascader-suffix"
@@ -164,18 +169,23 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Please select ..."
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -217,18 +227,23 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Hover to expand"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Hover to expand"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Hover to expand
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -278,17 +293,22 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Please select ..."
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -395,19 +415,23 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
     class="arco-cascader-view"
     title="Shanghai / Shanghai / Huangpu"
   >
-    <input
-      aria-hidden="true"
-      autocomplete="off"
-      class="arco-cascader-view-input arco-cascader-hidden"
-      placeholder="Please select ..."
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value="Shanghai / Shanghai / Huangpu"
-    />
     <span
-      class="arco-cascader-view-value"
+      class="arco-cascader-view-selector"
     >
-      Shanghai / Shanghai / Huangpu
+      <input
+        aria-hidden="true"
+        autocomplete="off"
+        class="arco-cascader-view-input arco-cascader-hidden"
+        placeholder="Please select ..."
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value="Shanghai / Shanghai / Huangpu"
+      />
+      <span
+        class="arco-cascader-view-value"
+      >
+        Shanghai / Shanghai / Huangpu
+      </span>
     </span>
     <div
       aria-hidden="true"
@@ -473,17 +497,22 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Please select ..."
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -614,18 +643,22 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
         class="arco-cascader-view"
         title="Beijing / Beijing / Dongcheng / Chaoyangmen"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-cascader-view-input arco-cascader-hidden"
-          placeholder="Beijing / Beijing / Dongcheng / Chaoyangmen"
-          style="width:100%"
-          value="Beijing / Beijing / Dongcheng / Chaoyangmen"
-        />
         <span
-          class="arco-cascader-view-value"
+          class="arco-cascader-view-selector"
         >
-          Beijing / Beijing / Dongcheng / Chaoyangmen
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-cascader-view-input arco-cascader-hidden"
+            placeholder="Beijing / Beijing / Dongcheng / Chaoyangmen"
+            style="width:100%"
+            value="Beijing / Beijing / Dongcheng / Chaoyangmen"
+          />
+          <span
+            class="arco-cascader-view-value"
+          >
+            Beijing / Beijing / Dongcheng / Chaoyangmen
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -916,18 +949,23 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Please select ..."
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -969,17 +1007,20 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          />
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -1139,18 +1180,22 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
         class="arco-cascader-view"
         title="Shanghai / Shanghai / Huangpu"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-cascader-view-input arco-cascader-hidden"
-          placeholder="Shanghai / Shanghai / Huangpu"
-          style="width:100%"
-          value="Shanghai / Shanghai / Huangpu"
-        />
         <span
-          class="arco-cascader-view-value"
+          class="arco-cascader-view-selector"
         >
-          Shanghai / Shanghai / Huangpu
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-cascader-view-input arco-cascader-hidden"
+            placeholder="Shanghai / Shanghai / Huangpu"
+            style="width:100%"
+            value="Shanghai / Shanghai / Huangpu"
+          />
+          <span
+            class="arco-cascader-view-value"
+          >
+            Shanghai / Shanghai / Huangpu
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -1327,18 +1372,22 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
         class="arco-cascader-view"
         title="Shanghai / Shanghai / Huangpu"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-cascader-view-input arco-cascader-hidden"
-          placeholder="Shanghai / Shanghai / Huangpu"
-          style="width:100%"
-          value="Shanghai / Shanghai / Huangpu"
-        />
         <span
-          class="arco-cascader-view-value"
+          class="arco-cascader-view-selector"
         >
-          Shanghai / Shanghai / Huangpu
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-cascader-view-input arco-cascader-hidden"
+            placeholder="Shanghai / Shanghai / Huangpu"
+            style="width:100%"
+            value="Shanghai / Shanghai / Huangpu"
+          />
+          <span
+            class="arco-cascader-view-value"
+          >
+            Shanghai / Shanghai / Huangpu
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -1508,19 +1557,23 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
     class="arco-cascader-view"
     title="Shanghai > Shanghai > Huangpu"
   >
-    <input
-      aria-hidden="true"
-      autocomplete="off"
-      class="arco-cascader-view-input arco-cascader-hidden"
-      placeholder="Please select ..."
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value="Shanghai > Shanghai > Huangpu"
-    />
     <span
-      class="arco-cascader-view-value"
+      class="arco-cascader-view-selector"
     >
-      Shanghai &gt; Shanghai &gt; Huangpu
+      <input
+        aria-hidden="true"
+        autocomplete="off"
+        class="arco-cascader-view-input arco-cascader-hidden"
+        placeholder="Please select ..."
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value="Shanghai > Shanghai > Huangpu"
+      />
+      <span
+        class="arco-cascader-view-value"
+      >
+        Shanghai &gt; Shanghai &gt; Huangpu
+      </span>
     </span>
     <div
       aria-hidden="true"
@@ -1586,17 +1639,22 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Please select ..."
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -1913,17 +1971,22 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
           class="arco-cascader-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-cascader-view-input"
-            placeholder="Please enter ..."
-            style="width:100%"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-cascader-view-value arco-cascader-hidden"
-          />
+            class="arco-cascader-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Please enter ..."
+              style="width:100%"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            >
+              Please enter ...
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-cascader-suffix"
@@ -2038,18 +2101,22 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
         class="arco-cascader-view"
         title="Shanghai / Shanghai / Huangpu"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-cascader-view-input arco-cascader-hidden"
-          placeholder="Shanghai / Shanghai / Huangpu"
-          style="width:100%"
-          value="Shanghai / Shanghai / Huangpu"
-        />
         <span
-          class="arco-cascader-view-value"
+          class="arco-cascader-view-selector"
         >
-          Shanghai / Shanghai / Huangpu
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-cascader-view-input arco-cascader-hidden"
+            placeholder="Shanghai / Shanghai / Huangpu"
+            style="width:100%"
+            value="Shanghai / Shanghai / Huangpu"
+          />
+          <span
+            class="arco-cascader-view-value"
+          >
+            Shanghai / Shanghai / Huangpu
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -2192,18 +2259,22 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
         class="arco-cascader-view"
         title="Shanghai / Shanghai / Huangpu"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-cascader-view-input arco-cascader-hidden"
-          placeholder="Shanghai / Shanghai / Huangpu"
-          style="width:100%"
-          value="Shanghai / Shanghai / Huangpu"
-        />
         <span
-          class="arco-cascader-view-value"
+          class="arco-cascader-view-selector"
         >
-          Shanghai / Shanghai / Huangpu
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-cascader-view-input arco-cascader-hidden"
+            placeholder="Shanghai / Shanghai / Huangpu"
+            style="width:100%"
+            value="Shanghai / Shanghai / Huangpu"
+          />
+          <span
+            class="arco-cascader-view-value"
+          >
+            Shanghai / Shanghai / Huangpu
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -2412,17 +2483,22 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
       class="arco-cascader-view"
       title=""
     >
-      <input
-        autocomplete="off"
-        class="arco-cascader-view-input"
-        placeholder="Please select ..."
-        style="width:100%"
-        value=""
-      />
       <span
-        aria-hidden="true"
-        class="arco-cascader-view-value arco-cascader-hidden"
-      />
+        class="arco-cascader-view-selector"
+      >
+        <input
+          autocomplete="off"
+          class="arco-cascader-view-input"
+          placeholder="Please select ..."
+          style="width:100%"
+          value=""
+        />
+        <span
+          class="arco-cascader-view-value arco-cascader-view-value-mirror"
+        >
+          Please select ...
+        </span>
+      </span>
       <div
         aria-hidden="true"
         class="arco-cascader-suffix"
@@ -2529,18 +2605,23 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
         class="arco-cascader-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-cascader-view-input"
-          placeholder="Please select ..."
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-cascader-view-value arco-cascader-hidden"
-        />
+          class="arco-cascader-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-cascader-view-input"
+            placeholder="Please select ..."
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value=""
+          />
+          <span
+            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-cascader-suffix"
@@ -2656,18 +2737,23 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
       class="arco-cascader-view"
       title=""
     >
-      <input
-        autocomplete="off"
-        class="arco-cascader-view-input"
-        placeholder="Please select ..."
-        style="width:100%;pointer-events:none"
-        tabindex="-1"
-        value=""
-      />
       <span
-        aria-hidden="true"
-        class="arco-cascader-view-value arco-cascader-hidden"
-      />
+        class="arco-cascader-view-selector"
+      >
+        <input
+          autocomplete="off"
+          class="arco-cascader-view-input"
+          placeholder="Please select ..."
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-cascader-view-value arco-cascader-view-value-mirror"
+        >
+          Please select ...
+        </span>
+      </span>
       <div
         aria-hidden="true"
         class="arco-cascader-suffix"

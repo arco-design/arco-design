@@ -166,27 +166,36 @@
 
     &-single &-view {
       &-input {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
         box-sizing: border-box;
         width: 100%;
         padding: 0;
         border: none;
         outline: none;
         background: transparent;
+        z-index: 1;
         .text-ellipsis();
+      }
+
+      &-selector {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
       }
 
       &-value {
         display: inline-block;
-        box-sizing: border-box;
         width: 100%;
         .text-ellipsis();
 
-        // 修复当value为空字符串时，造成select外层div的高度多余了4px的样式问题。
-        &::after {
-          content: '.';
-          font-size: 0;
-          line-height: 0;
-          visibility: hidden;
+        &-mirror {
+          opacity: 0;
         }
       }
 

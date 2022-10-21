@@ -29,17 +29,20 @@ exports[`renders TreeSelect/demo/addon.md correctly 1`] = `
           class="arco-tree-select-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-tree-select-view-input"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-tree-select-view-value arco-tree-select-hidden"
-          />
+            class="arco-tree-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-tree-select-view-input"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+            />
+          </span>
           <div
             aria-hidden="true"
             class="arco-tree-select-suffix"
@@ -153,18 +156,22 @@ exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
     class="arco-tree-select-view"
     title="Trunk"
   >
-    <input
-      aria-hidden="true"
-      autocomplete="off"
-      class="arco-tree-select-view-input arco-tree-select-hidden"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value="Trunk"
-    />
     <span
-      class="arco-tree-select-view-value"
+      class="arco-tree-select-view-selector"
     >
-      Trunk
+      <input
+        aria-hidden="true"
+        autocomplete="off"
+        class="arco-tree-select-view-input arco-tree-select-hidden"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value="Trunk"
+      />
+      <span
+        class="arco-tree-select-view-value"
+      >
+        Trunk
+      </span>
     </span>
     <div
       aria-hidden="true"
@@ -560,18 +567,22 @@ exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
     class="arco-tree-select-view"
     title="Leaf"
   >
-    <input
-      aria-hidden="true"
-      autocomplete="off"
-      class="arco-tree-select-view-input arco-tree-select-hidden"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value="Leaf"
-    />
     <span
-      class="arco-tree-select-view-value"
+      class="arco-tree-select-view-selector"
     >
-      Leaf
+      <input
+        aria-hidden="true"
+        autocomplete="off"
+        class="arco-tree-select-view-input arco-tree-select-hidden"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value="Leaf"
+      />
+      <span
+        class="arco-tree-select-view-value"
+      >
+        Leaf
+      </span>
     </span>
     <div
       aria-hidden="true"
@@ -686,18 +697,23 @@ exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
     class="arco-tree-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-tree-select-view-input"
-      placeholder="Please select ..."
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-tree-select-view-value arco-tree-select-hidden"
-    />
+      class="arco-tree-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-tree-select-view-input"
+        placeholder="Please select ..."
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+      >
+        Please select ...
+      </span>
+    </span>
     <div
       aria-hidden="true"
       class="arco-tree-select-suffix"
@@ -739,17 +755,20 @@ exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
       class="arco-tree-select-view"
       title=""
     >
-      <input
-        autocomplete="off"
-        class="arco-tree-select-view-input"
-        style="width:100%;pointer-events:none"
-        tabindex="-1"
-        value=""
-      />
       <span
-        aria-hidden="true"
-        class="arco-tree-select-view-value arco-tree-select-hidden"
-      />
+        class="arco-tree-select-view-selector"
+      >
+        <input
+          autocomplete="off"
+          class="arco-tree-select-view-input"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+        />
+      </span>
       <div
         aria-hidden="true"
         class="arco-tree-select-suffix"
@@ -791,18 +810,22 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
     class="arco-tree-select-view"
     title="Leaf"
   >
-    <input
-      aria-hidden="true"
-      autocomplete="off"
-      class="arco-tree-select-view-input arco-tree-select-hidden"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value="Leaf"
-    />
     <span
-      class="arco-tree-select-view-value"
+      class="arco-tree-select-view-selector"
     >
-      Leaf
+      <input
+        aria-hidden="true"
+        autocomplete="off"
+        class="arco-tree-select-view-input arco-tree-select-hidden"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value="Leaf"
+      />
+      <span
+        class="arco-tree-select-view-value"
+      >
+        Leaf
+      </span>
     </span>
     <div
       aria-hidden="true"
@@ -844,18 +867,22 @@ exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
     class="arco-tree-select-view"
     title="node2"
   >
-    <input
-      aria-hidden="true"
-      autocomplete="off"
-      class="arco-tree-select-view-input arco-tree-select-hidden"
-      placeholder="node2"
-      style="width:100%"
-      value="node2"
-    />
     <span
-      class="arco-tree-select-view-value"
+      class="arco-tree-select-view-selector"
     >
-      node2
+      <input
+        aria-hidden="true"
+        autocomplete="off"
+        class="arco-tree-select-view-input arco-tree-select-hidden"
+        placeholder="node2"
+        style="width:100%"
+        value="node2"
+      />
+      <span
+        class="arco-tree-select-view-value"
+      >
+        node2
+      </span>
     </span>
     <div
       aria-hidden="true"
@@ -1096,18 +1123,23 @@ exports[`renders TreeSelect/demo/popupVisible.md correctly 1`] = `
     class="arco-tree-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-tree-select-view-input"
-      placeholder="hover to show options"
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-tree-select-view-value arco-tree-select-hidden"
-    />
+      class="arco-tree-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-tree-select-view-input"
+        placeholder="hover to show options"
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+      >
+        hover to show options
+      </span>
+    </span>
     <div
       aria-hidden="true"
       class="arco-tree-select-suffix"
@@ -1155,17 +1187,22 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
         class="arco-tree-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-tree-select-view-input"
-          placeholder="Please select ..."
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-tree-select-view-value arco-tree-select-hidden"
-        />
+          class="arco-tree-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-tree-select-view-input"
+            placeholder="Please select ..."
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-tree-select-suffix"
@@ -1207,17 +1244,22 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
         class="arco-tree-select-view"
         title=""
       >
-        <input
-          autocomplete="off"
-          class="arco-tree-select-view-input"
-          placeholder="Please select ..."
-          style="width:100%"
-          value=""
-        />
         <span
-          aria-hidden="true"
-          class="arco-tree-select-view-value arco-tree-select-hidden"
-        />
+          class="arco-tree-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-tree-select-view-input"
+            placeholder="Please select ..."
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+          >
+            Please select ...
+          </span>
+        </span>
         <div
           aria-hidden="true"
           class="arco-tree-select-suffix"
@@ -1339,18 +1381,22 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
         class="arco-tree-select-view"
         title="Trunk"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-tree-select-view-input arco-tree-select-hidden"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="Trunk"
-        />
         <span
-          class="arco-tree-select-view-value"
+          class="arco-tree-select-view-selector"
         >
-          Trunk
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-tree-select-view-input arco-tree-select-hidden"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="Trunk"
+          />
+          <span
+            class="arco-tree-select-view-value"
+          >
+            Trunk
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -1394,18 +1440,23 @@ exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
     class="arco-tree-select-view"
     title=""
   >
-    <input
-      autocomplete="off"
-      class="arco-tree-select-view-input"
-      placeholder="请选择..."
-      style="width:100%;pointer-events:none"
-      tabindex="-1"
-      value=""
-    />
     <span
-      aria-hidden="true"
-      class="arco-tree-select-view-value arco-tree-select-hidden"
-    />
+      class="arco-tree-select-view-selector"
+    >
+      <input
+        autocomplete="off"
+        class="arco-tree-select-view-input"
+        placeholder="请选择..."
+        style="width:100%;pointer-events:none"
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+      >
+        请选择...
+      </span>
+    </span>
     <div
       aria-hidden="true"
       class="arco-tree-select-suffix"
@@ -1446,17 +1497,20 @@ exports[`renders TreeSelect/demo/virtual.md correctly 1`] = `
       class="arco-tree-select-view"
       title=""
     >
-      <input
-        autocomplete="off"
-        class="arco-tree-select-view-input"
-        style="width:100%;pointer-events:none"
-        tabindex="-1"
-        value=""
-      />
       <span
-        aria-hidden="true"
-        class="arco-tree-select-view-value arco-tree-select-hidden"
-      />
+        class="arco-tree-select-view-selector"
+      >
+        <input
+          autocomplete="off"
+          class="arco-tree-select-view-input"
+          style="width:100%;pointer-events:none"
+          tabindex="-1"
+          value=""
+        />
+        <span
+          class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+        />
+      </span>
       <div
         aria-hidden="true"
         class="arco-tree-select-suffix"

@@ -311,18 +311,22 @@ Array [
           class="arco-select-view"
           title="10 条/页"
         >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="10 条/页"
-          />
           <span
-            class="arco-select-view-value"
+            class="arco-select-view-selector"
           >
-            10 条/页
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="10 条/页"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              10 条/页
+            </span>
           </span>
           <div
             aria-hidden="true"
@@ -1164,18 +1168,23 @@ Array [
           class="arco-cascader-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-cascader-view-input"
-            placeholder="Cascader"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-cascader-view-value arco-cascader-hidden"
-          />
+            class="arco-cascader-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Cascader"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            >
+              Cascader
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-cascader-suffix"
@@ -1218,18 +1227,23 @@ Array [
           class="arco-select-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-select-view-input"
-            placeholder="Select"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-select-view-value arco-select-hidden"
-          />
+            class="arco-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              placeholder="Select"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-select-view-value arco-select-view-value-mirror"
+            >
+              Select
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-select-suffix"
@@ -1271,18 +1285,23 @@ Array [
           class="arco-tree-select-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-tree-select-view-input"
-            placeholder="TreeSelect"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-tree-select-view-value arco-tree-select-hidden"
-          />
+            class="arco-tree-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-tree-select-view-input"
+              placeholder="TreeSelect"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+            >
+              TreeSelect
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-tree-select-suffix"
@@ -1960,18 +1979,22 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               class="arco-select-view"
               title="10 条/页"
             >
-              <input
-                aria-hidden="true"
-                autocomplete="off"
-                class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value="10 条/页"
-              />
               <span
-                class="arco-select-view-value"
+                class="arco-select-view-selector"
               >
-                10 条/页
+                <input
+                  aria-hidden="true"
+                  autocomplete="off"
+                  class="arco-select-view-input arco-select-hidden"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value="10 条/页"
+                />
+                <span
+                  class="arco-select-view-value"
+                >
+                  10 条/页
+                </span>
               </span>
               <div
                 aria-hidden="true"

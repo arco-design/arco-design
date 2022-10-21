@@ -553,17 +553,22 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   class="arco-cascader-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-cascader-view-input"
-                    placeholder="please select"
-                    style="width:100%"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-cascader-view-value arco-cascader-hidden"
-                  />
+                    class="arco-cascader-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-cascader-view-input"
+                      placeholder="please select"
+                      style="width:100%"
+                      value=""
+                    />
+                    <span
+                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-cascader-suffix"
@@ -711,18 +716,23 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   class="arco-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-select-view-input"
-                    placeholder="please select"
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-select-view-value arco-select-hidden"
-                  />
+                    class="arco-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-select-view-input"
+                      placeholder="please select"
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-select-view-value arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-select-suffix"
@@ -934,18 +944,23 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   class="arco-tree-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-tree-select-view-input"
-                    placeholder="please select"
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-tree-select-view-value arco-tree-select-hidden"
-                  />
+                    class="arco-tree-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-tree-select-view-input"
+                      placeholder="please select"
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-tree-select-suffix"
@@ -2038,18 +2053,23 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                         class="arco-select-view"
                         title=""
                       >
-                        <input
-                          autocomplete="off"
-                          class="arco-select-view-input"
-                          placeholder="Please select ..."
-                          style="width:100%;pointer-events:none"
-                          tabindex="-1"
-                          value=""
-                        />
                         <span
-                          aria-hidden="true"
-                          class="arco-select-view-value arco-select-hidden"
-                        />
+                          class="arco-select-view-selector"
+                        >
+                          <input
+                            autocomplete="off"
+                            class="arco-select-view-input"
+                            placeholder="Please select ..."
+                            style="width:100%;pointer-events:none"
+                            tabindex="-1"
+                            value=""
+                          />
+                          <span
+                            class="arco-select-view-value arco-select-view-value-mirror"
+                          >
+                            Please select ...
+                          </span>
+                        </span>
                         <div
                           aria-hidden="true"
                           class="arco-select-suffix"
@@ -2412,18 +2432,23 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   class="arco-cascader-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-cascader-view-input"
-                    disabled=""
-                    placeholder="please select"
-                    style="width:100%"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-cascader-view-value arco-cascader-hidden"
-                  />
+                    class="arco-cascader-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-cascader-view-input"
+                      disabled=""
+                      placeholder="please select"
+                      style="width:100%"
+                      value=""
+                    />
+                    <span
+                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-cascader-suffix"
@@ -2573,19 +2598,24 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   class="arco-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-select-view-input"
-                    disabled=""
-                    placeholder="please select"
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-select-view-value arco-select-hidden"
-                  />
+                    class="arco-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-select-view-input"
+                      disabled=""
+                      placeholder="please select"
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-select-view-value arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-select-suffix"
@@ -3887,18 +3917,23 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                       class="arco-select-view"
                       title=""
                     >
-                      <input
-                        autocomplete="off"
-                        class="arco-select-view-input"
-                        placeholder="select gender"
-                        style="width:100%;pointer-events:none"
-                        tabindex="-1"
-                        value=""
-                      />
                       <span
-                        aria-hidden="true"
-                        class="arco-select-view-value arco-select-hidden"
-                      />
+                        class="arco-select-view-selector"
+                      >
+                        <input
+                          autocomplete="off"
+                          class="arco-select-view-input"
+                          placeholder="select gender"
+                          style="width:100%;pointer-events:none"
+                          tabindex="-1"
+                          value=""
+                        />
+                        <span
+                          class="arco-select-view-value arco-select-view-value-mirror"
+                        >
+                          select gender
+                        </span>
+                      </span>
                       <div
                         aria-hidden="true"
                         class="arco-select-suffix"
@@ -5909,18 +5944,23 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                     class="arco-select-view"
                     title=""
                   >
-                    <input
-                      autocomplete="off"
-                      class="arco-select-view-input"
-                      placeholder="please enter you gender"
-                      style="width:100%;pointer-events:none"
-                      tabindex="-1"
-                      value=""
-                    />
                     <span
-                      aria-hidden="true"
-                      class="arco-select-view-value arco-select-hidden"
-                    />
+                      class="arco-select-view-selector"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="arco-select-view-input"
+                        placeholder="please enter you gender"
+                        style="width:100%;pointer-events:none"
+                        tabindex="-1"
+                        value=""
+                      />
+                      <span
+                        class="arco-select-view-value arco-select-view-value-mirror"
+                      >
+                        please enter you gender
+                      </span>
+                    </span>
                     <div
                       aria-hidden="true"
                       class="arco-select-suffix"
@@ -6016,18 +6056,23 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                   class="arco-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-select-view-input"
-                    placeholder="please select"
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-select-view-value arco-select-hidden"
-                  />
+                    class="arco-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-select-view-input"
+                      placeholder="please select"
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-select-view-value arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-select-suffix"
@@ -7285,17 +7330,22 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                   class="arco-cascader-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-cascader-view-input"
-                    placeholder="please select"
-                    style="width:100%"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-cascader-view-value arco-cascader-hidden"
-                  />
+                    class="arco-cascader-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-cascader-view-input"
+                      placeholder="please select"
+                      style="width:100%"
+                      value=""
+                    />
+                    <span
+                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-cascader-suffix"
@@ -7409,18 +7459,23 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                   class="arco-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-select-view-input"
-                    placeholder="please select"
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-select-view-value arco-select-hidden"
-                  />
+                    class="arco-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-select-view-input"
+                      placeholder="please select"
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-select-view-value arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-select-suffix"
@@ -7570,18 +7625,23 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                   class="arco-tree-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-tree-select-view-input"
-                    placeholder="please select"
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-tree-select-view-value arco-tree-select-hidden"
-                  />
+                    class="arco-tree-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-tree-select-view-input"
+                      placeholder="please select"
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-tree-select-suffix"
@@ -8929,18 +8989,23 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                   class="arco-cascader-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-cascader-view-input"
-                    placeholder="Cascader..."
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-cascader-view-value arco-cascader-hidden"
-                  />
+                    class="arco-cascader-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-cascader-view-input"
+                      placeholder="Cascader..."
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                    >
+                      Cascader...
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-cascader-suffix"
@@ -9231,18 +9296,23 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                   class="arco-tree-select-view"
                   title=""
                 >
-                  <input
-                    autocomplete="off"
-                    class="arco-tree-select-view-input"
-                    placeholder="TreeSelect..."
-                    style="width:100%;pointer-events:none"
-                    tabindex="-1"
-                    value=""
-                  />
                   <span
-                    aria-hidden="true"
-                    class="arco-tree-select-view-value arco-tree-select-hidden"
-                  />
+                    class="arco-tree-select-view-selector"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="arco-tree-select-view-input"
+                      placeholder="TreeSelect..."
+                      style="width:100%;pointer-events:none"
+                      tabindex="-1"
+                      value=""
+                    />
+                    <span
+                      class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+                    >
+                      TreeSelect...
+                    </span>
+                  </span>
                   <div
                     aria-hidden="true"
                     class="arco-tree-select-suffix"

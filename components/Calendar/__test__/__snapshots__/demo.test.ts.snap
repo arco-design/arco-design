@@ -3176,18 +3176,22 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
           <div
             class="arco-select-view"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
-              tabindex="-1"
-              value="2020"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              2020
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="2020"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                2020
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -3224,18 +3228,22 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
           <div
             class="arco-select-view"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
-              tabindex="-1"
-              value="4"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              4
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="4"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                4
+              </span>
             </span>
             <div
               aria-hidden="true"
