@@ -12,6 +12,8 @@ exports[`ConfigProvider componentConfig.Calendar default 1`] = `
     >
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -34,6 +36,8 @@ exports[`ConfigProvider componentConfig.Calendar default 1`] = `
       </div>
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -63,6 +67,7 @@ exports[`ConfigProvider componentConfig.Calendar default 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -1024,6 +1029,8 @@ exports[`ConfigProvider componentConfig.Calendar set className globally 1`] = `
     >
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1046,6 +1053,8 @@ exports[`ConfigProvider componentConfig.Calendar set className globally 1`] = `
       </div>
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -1075,6 +1084,7 @@ exports[`ConfigProvider componentConfig.Calendar set className globally 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -2036,6 +2046,8 @@ exports[`ConfigProvider componentConfig.Calendar set className globally and comp
     >
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -2058,6 +2070,8 @@ exports[`ConfigProvider componentConfig.Calendar set className globally and comp
       </div>
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -2087,6 +2101,7 @@ exports[`ConfigProvider componentConfig.Calendar set className globally and comp
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -3049,6 +3064,8 @@ exports[`ConfigProvider componentConfig.Calendar set data-* property 1`] = `
     >
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -3071,6 +3088,8 @@ exports[`ConfigProvider componentConfig.Calendar set data-* property 1`] = `
       </div>
       <div
         class="arco-calendar-header-icon"
+        role="button"
+        tabindex="0"
       >
         <svg
           aria-hidden="true"
@@ -3100,6 +3119,7 @@ exports[`ConfigProvider componentConfig.Calendar set data-* property 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"

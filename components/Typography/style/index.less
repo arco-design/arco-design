@@ -161,6 +161,10 @@
       color: @typography-color-icon-copy_hover;
       background-color: @typography-color-bg-icon-copy_hover;
     }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @typography-color-box-shadow;
+    }
   }
 
   &-operation-copied {
@@ -180,6 +184,10 @@
       color: @typography-color-icon-edit_hover;
       background-color: @typography-color-bg-icon-edit_hover;
     }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @typography-color-box-shadow;
+    }
   }
 
   &-operation-expand {
@@ -189,6 +197,11 @@
 
     &:hover {
       color: @typography-color-expand-text_hover;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @typography-color-box-shadow;
+      border-radius: @radius-small;
     }
   }
 

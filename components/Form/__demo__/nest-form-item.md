@@ -27,6 +27,7 @@ function App() {
         ref={formRef}
         style={{ maxWidth: 500 }}
         initialValues={{ city: 'Beijing' }}
+        autoComplete="off"
         onSubmit={(values) => {
           console.log(values);
         }}

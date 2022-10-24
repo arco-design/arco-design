@@ -1,15 +1,12 @@
 import { CSSProperties, HTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { PaginationProps } from '../Pagination/pagination';
 import { AvailableVirtualListProps } from '../_class/VirtualList';
-import { RowProps, ColProps } from '../Grid/interface';
+import { RowProps, ColProps, GridResponsiveBreakpoint } from '../Grid/interface';
 
 type ListGridProps = {
   column?: number;
 } & Pick<RowProps, 'gutter' | 'justify' | 'align'> &
-  Pick<
-    ColProps,
-    'span' | 'offset' | 'order' | 'pull' | 'push' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-  >;
+  Pick<ColProps, 'span' | 'offset' | 'order' | 'pull' | 'push' | GridResponsiveBreakpoint>;
 
 export type ListHandle = {
   dom: HTMLDivElement;

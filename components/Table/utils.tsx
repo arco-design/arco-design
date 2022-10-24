@@ -1,4 +1,4 @@
-import { isArray, isObject } from '../_util/is';
+import { isArray, isObject, isUndefined, isNull } from '../_util/is';
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
@@ -27,8 +27,9 @@ export function deepCloneData(data, childrenColumnName) {
       } else {
         const _d = { ...d };
         _d.__ORIGIN_DATA = d;
-        if (isObject(_d) && _d[childrenColumnName]) {
-          _d[childrenColumnName] = travel(_d[childrenColumnName]);
+        const children = _d[childrenColumnName];
+        if (isObject(_d) && children && isArray(children)) {
+          _d[childrenColumnName] = travel(children);
         }
         newData.push(_d);
       }
@@ -129,10 +130,10 @@ export function getSelectedKeysByData(
 
   checkedKeys.forEach((key) => {
     const record = flattenData.find((d) => getRowKey(d) === key);
-
-    loop(record);
-
-    updateParent(record, selectedRowKeys, indeterminateKeys, getRowKey, childrenColumnName);
+    if (!isUndefined(record) && !isNull(record)) {
+      loop(record);
+      updateParent(record, selectedRowKeys, indeterminateKeys, getRowKey, childrenColumnName);
+    }
   });
 
   return {

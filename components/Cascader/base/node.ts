@@ -195,7 +195,9 @@ class Node<T> {
 
   // 设置当前节点选中状态
   public setCheckedState = (checked: boolean) => {
-    if (this.disabled || checked === this._checked) {
+    const noNeedToUpdate = checked ? this._checked : !this._checked && !this._halfChecked;
+
+    if (this.disabled || noNeedToUpdate) {
       return;
     }
 

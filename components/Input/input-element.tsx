@@ -1,4 +1,4 @@
-import React, { useRef, useImperativeHandle, useEffect } from 'react';
+import React, { useRef, useImperativeHandle, useEffect, useState } from 'react';
 import { InputComponentProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
@@ -7,6 +7,7 @@ import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
 import useComposition from './useComposition';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
@@ -44,9 +45,11 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       'suffix',
     ]);
 
+    const getKeyboardEvents = useKeyboardEvent();
     const refInput = useRef<HTMLInputElement>();
     const refInputMirror = useRef<HTMLSpanElement>();
     const refPrevInputWidth = useRef<number>(null);
+    const [inputElementWidth, setInputElementWidth] = useState<number>(null);
 
     const maxLength = isObject(propMaxLength)
       ? propMaxLength.errorOnly
@@ -71,6 +74,21 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       },
       hasParent ? undefined : className
     );
+    const inputProps = {
+      'aria-invalid': error,
+      ...otherProps,
+      readOnly,
+      maxLength,
+      disabled,
+      placeholder,
+      value: compositionValue || value || '',
+      className: inputClassNames,
+      onKeyDown: keyDownHandler,
+      onChange: valueChangeHandler,
+      onCompositionStart: compositionHandler,
+      onCompositionUpdate: compositionHandler,
+      onCompositionEnd: compositionHandler,
+    };
 
     useImperativeHandle(
       ref,
@@ -90,31 +108,29 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     const updateInputWidth = () => {
       if (refInputMirror.current && refInput.current) {
-        const width = refInputMirror.current.offsetWidth;
-        refInput.current.style.width = `${width + (width ? 8 : 4)}px`;
+        // Unset width when need to show placeholder
+        if (!inputProps.value && placeholder) {
+          setInputElementWidth(null);
+        } else {
+          const width = refInputMirror.current.offsetWidth;
+          setInputElementWidth(width + (width ? 8 : 4));
+        }
       }
     };
 
-    // 设定 <input> 初始宽度，之后的更新交由 ResizeObserver 触发
+    // Set the initial width of <input>, and subsequent updates are triggered by ResizeObserver
     useEffect(() => autoFitWidth && updateInputWidth(), []);
 
-    const inputProps = {
-      'aria-invalid': error,
-      ...otherProps,
-      readOnly,
-      maxLength,
-      disabled,
-      placeholder,
-      value: compositionValue || value || '',
-      className: inputClassNames,
-      onKeyDown: keyDownHandler,
-      onChange: valueChangeHandler,
-      onCompositionStart: compositionHandler,
-      onCompositionUpdate: compositionHandler,
-      onCompositionEnd: compositionHandler,
-    };
-
+    // Here also need placeholder to trigger updateInputWidth after user-input is cleared
     const mirrorValue = inputProps.value || placeholder;
+
+    const handleClear = (e) => {
+      if (refInput.current && refInput.current.focus) {
+        refInput.current.focus();
+      }
+      triggerValueChangeCallback('', e);
+      onClear && onClear();
+    };
 
     return (
       <>
@@ -123,14 +139,12 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
             <input ref={refInput} {...inputProps} />
             {!readOnly && !disabled && allowClear && value ? (
               <IconHover
+                tabIndex={0}
                 className={`${prefixCls}-clear-icon`}
+                {...getKeyboardEvents({ onPressEnter: handleClear })}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (refInput.current && refInput.current.focus) {
-                    refInput.current.focus();
-                  }
-                  triggerValueChangeCallback('', e);
-                  onClear && onClear();
+                  handleClear(e);
                 }}
               >
                 <IconClose
@@ -146,7 +160,15 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
           <input
             ref={refInput}
             {...inputProps}
-            style={hasParent ? {} : { ...style, ...('height' in props ? { height } : {}) }}
+            style={
+              hasParent
+                ? {}
+                : {
+                    ...style,
+                    ...('height' in props ? { height } : {}),
+                    ...(typeof inputElementWidth === 'number' ? { width: inputElementWidth } : {}),
+                  }
+            }
           />
         )}
         {autoFitWidth && (

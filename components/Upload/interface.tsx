@@ -90,6 +90,11 @@ export interface UploadProps {
    */
   listType?: 'text' | 'picture-list' | 'picture-card';
   /**
+   * @zh 启用内置的图片预览，仅在 listType='picture-card' 时生效。(`v2.41.0`)
+   * @en Enable built-in image preview, only works when listType='picture-card'. (`v2.41.0`)
+   */
+  imagePreview?: boolean;
+  /**
    * @zh
    * 是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。
    * @en
@@ -211,6 +216,18 @@ export interface UploadProps {
    * @version 2.37.0
    */
   onDrop?: (e: React.DragEvent) => void;
+  /**
+   * @zh 拖拽上传文件进入拖拽区时的回调
+   * @en Callback when drag and drop uploaded file into the drag area
+   * @version 2.41.0
+   */
+  onDragOver?: (e: React.DragEvent) => void;
+  /**
+   * @zh 拖拽上传文件离开拖拽区时的回调
+   * @en Callback when drag and drop uploaded file leaves the drag area
+   * @version 2.41.0
+   */
+  onDragLeave?: (e: React.DragEvent) => void;
 }
 
 /**
@@ -219,6 +236,7 @@ export interface UploadProps {
  * @en File upload list display
  */
 export interface UploadListProps {
+  imagePreview?: boolean;
   listType?: string;
   fileList?: UploadItem[];
   showUploadList?: boolean | CustomIconType;
@@ -316,6 +334,8 @@ export type TriggerProps = {
   listType?: 'text' | 'picture-list' | 'picture-card';
   onClick: () => void;
   onDrop?: (e: React.DragEvent) => void;
+  onDragLeave?: (e: React.DragEvent) => void;
+  onDragOver?: (e: React.DragEvent) => void;
   onDragFiles: (files: File[]) => void;
   prefixCls?: string;
 };

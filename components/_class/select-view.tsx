@@ -6,6 +6,7 @@ import React, {
   useImperativeHandle,
   useRef,
   useEffect,
+  ReactElement,
 } from 'react';
 import { pickDataAttributes } from '../_util/pick';
 import { isUndefined, isObject, isFunction } from '../_util/is';
@@ -14,7 +15,6 @@ import { ConfigContext } from '../ConfigProvider';
 import IconDown from '../../icon/react-icon/IconDown';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import IconClose from '../../icon/react-icon/IconClose';
-import IconExpand from '../../icon/react-icon/IconExpand';
 import IconSearch from '../../icon/react-icon/IconSearch';
 import InputTag, { InputTagProps } from '../InputTag';
 import InputComponent from '../Input/input-element';
@@ -121,10 +121,28 @@ export interface SelectViewCommonProps
    */
   clearIcon?: ReactNode;
   /**
+   * @zh 选择框前添加元素
+   * @en The label text displayed before (on the left side of) the select field
+   * @version 2.41.0
+   */
+  addBefore?: ReactNode;
+  // /**
+  //  * @zh 选择框后添加元素
+  //  * @en The label text displayed after (on the right side of) the select field
+  //  * @version 2.41.0
+  //  */
+  // addAfter?: ReactNode;
+  /**
    * @zh 鼠标点击下拉框时的回调
    * @en Callback when the mouse clicks on the drop-down box
    */
   onClick?: (e) => void;
+  /**
+   * @zh 键盘输入时的回调
+   * @en Callback when keyboard pressed
+   * @version 2.40.0
+   */
+  onKeyDown?: (e) => void;
 }
 
 export interface SelectViewProps extends SelectViewCommonProps {
@@ -138,10 +156,10 @@ export interface SelectViewProps extends SelectViewCommonProps {
   rtl?: boolean;
   ariaControls?: string;
   renderText: (value) => { text; disabled };
+  renderView?: (eleView: ReactElement) => ReactElement;
   onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
   onChangeInputValue?: InputComponentProps['onChange'];
-  onKeyDown?: (e) => void;
   onPaste?: (e) => void;
   onClear?: (e) => void;
   onFocus?: (e) => void;
@@ -179,6 +197,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     removeIcon,
     clearIcon,
     placeholder,
+    renderView,
     renderText,
     value,
     inputValue,
@@ -190,6 +209,8 @@ export const SelectView = (props: SelectViewProps, ref) => {
     ariaControls,
     renderTag,
     dragToSort,
+    addBefore,
+    // addAfter,
     onKeyDown,
     onChangeInputValue,
     onPaste,
@@ -282,10 +303,6 @@ export const SelectView = (props: SelectViewProps, ref) => {
       arrowIcon === null ? null : (
         <div className={`${prefixCls}-arrow-icon`}>{arrowIcon}</div>
       )
-    ) : canFocusInput ? (
-      <div className={`${prefixCls}-expand-icon`}>
-        <IconExpand style={{ transform: 'rotate(-45deg)' }} />
-      </div>
     ) : (
       <div className={`${prefixCls}-arrow-icon`}>
         <IconDown />
@@ -368,7 +385,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     const needShowInput = !!((mergedFocused && canFocusInput) || isEmptyValue);
 
     return (
-      <>
+      <span className={`${prefixCls}-view-selector`}>
         <InputComponent
           aria-hidden={!needShowInput || undefined}
           ref={refInput}
@@ -379,13 +396,15 @@ export const SelectView = (props: SelectViewProps, ref) => {
           autoComplete="off"
           {...inputProps}
         />
+
         <span
-          aria-hidden={needShowInput || undefined}
-          className={cs(`${prefixCls}-view-value`, { [`${prefixCls}-hidden`]: needShowInput })}
+          className={cs(`${prefixCls}-view-value`, {
+            [`${prefixCls}-view-value-mirror`]: needShowInput,
+          })}
         >
-          {_inputValue}
+          {_inputValue || inputProps.placeholder}
         </span>
-      </>
+      </span>
     );
   };
 
@@ -474,21 +493,22 @@ export const SelectView = (props: SelectViewProps, ref) => {
     );
   };
 
-  const classNames = cs(
-    prefixCls,
-    `${prefixCls}-${isMultiple ? 'multiple' : 'single'}`,
-    {
-      [`${prefixCls}-show-search`]: showSearch,
-      [`${prefixCls}-open`]: popupVisible,
-      [`${prefixCls}-size-${mergedSize}`]: mergedSize,
-      [`${prefixCls}-focused`]: mergedFocused,
-      [`${prefixCls}-error`]: error,
-      [`${prefixCls}-disabled`]: disabled,
-      [`${prefixCls}-no-border`]: !bordered,
-      [`${prefixCls}-rtl`]: rtl,
-    },
-    className
-  );
+  const needAddBefore = addBefore !== null && addBefore !== undefined;
+  // const needAddAfter = addAfter !== null && addAfter !== undefined;
+  const needAddAfter = false;
+  const needWrapper = needAddBefore || needAddAfter;
+  const innerClassNames = cs(prefixCls, `${prefixCls}-${isMultiple ? 'multiple' : 'single'}`, {
+    [`${prefixCls}-show-search`]: showSearch,
+    [`${prefixCls}-open`]: popupVisible,
+    [`${prefixCls}-size-${mergedSize}`]: mergedSize,
+    [`${prefixCls}-focused`]: mergedFocused,
+    [`${prefixCls}-error`]: error,
+    [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-no-border`]: !bordered,
+    [`${prefixCls}-rtl`]: rtl,
+  });
+  const dataAttributes = pickDataAttributes(rest);
+  const propsAppendToRoot = { style, className, ...dataAttributes };
 
   const mergedClearIcon =
     !disabled && !isEmptyValue && allowClear ? (
@@ -503,7 +523,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
       </IconHover>
     ) : null;
 
-  return (
+  let eleSelectView = (
     <div
       role="combobox"
       aria-haspopup="listbox"
@@ -512,11 +532,11 @@ export const SelectView = (props: SelectViewProps, ref) => {
       aria-disabled={disabled}
       aria-controls={ariaControls}
       {...include(rest, ['onClick', 'onMouseEnter', 'onMouseLeave'])}
-      {...pickDataAttributes(rest)}
       ref={refWrapper}
       tabIndex={disabled ? -1 : 0}
-      style={style}
-      className={classNames}
+      style={needWrapper ? undefined : style}
+      {...(needWrapper ? {} : propsAppendToRoot)}
+      className={needWrapper ? innerClassNames : cs(innerClassNames, propsAppendToRoot.className)}
       // When there is an input box, the keyboard events are handled inside the input box to avoid triggering redundant events in the Chinese input method
       onKeyDown={tryTriggerKeyDown}
       onFocus={(event) => {
@@ -559,6 +579,28 @@ export const SelectView = (props: SelectViewProps, ref) => {
           {mergedSuffixIcon}
         </div>
       </div>
+    </div>
+  );
+  eleSelectView = typeof renderView === 'function' ? renderView(eleSelectView) : eleSelectView;
+
+  if (!needWrapper) {
+    return eleSelectView;
+  }
+
+  return (
+    <div
+      {...propsAppendToRoot}
+      className={cs(
+        `${prefixCls}-wrapper`,
+        {
+          [`${prefixCls}-wrapper-rtl`]: rtl,
+        },
+        propsAppendToRoot.className
+      )}
+    >
+      {needAddBefore && <div className={`${prefixCls}-addbefore`}>{addBefore}</div>}
+      {eleSelectView}
+      {/* {needAddAfter && <div className={`${prefixCls}-addafter`}>{addAfter}</div>} */}
     </div>
   );
 };

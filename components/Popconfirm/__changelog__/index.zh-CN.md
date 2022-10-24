@@ -1,3 +1,19 @@
+## 2.40.2
+
+2022-09-30
+
+### 🐛 问题修复
+
+- 修复 `Popconfirm` 组件开启 `focusLock` 时，Footer 内部 DOM 层级表现和默认不一致，导致按钮外边距样式失效的问题([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
+## 2.39.3
+
+2022-09-02
+
+### 🐛 问题修复
+
+- 修复 `Popconfirm` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+
 ## 2.31.0
 
 2022-03-25

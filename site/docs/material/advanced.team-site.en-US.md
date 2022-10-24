@@ -209,68 +209,9 @@ module.exports = {
 };
 ````
 
-Expose a module with a specific name in `customModule.tsx` and the site page will render it into the page. Currently customizable modules include `Navbar | Footer | Menu | Affix`.
+Expose a module with a specific name in `customModule.tsx` and the site page will render it into the page. Currently customizable modules include `Navbar | Footer | Menu | Sider | DocHeader | Affix`. [Demo](https://github.com/arco-design/official-material-react/blob/main/team-site/fixtures/customModule.tsx)
 
-```tsx
-//customModule.tsx
-import React, { useContext } from 'react';
-import { Menu as ArcoMenu } from '@arco-design/web-react';
-import { ArcoSiteGlobalContext, ArcoSiteRouteType } from 'arco-material-doc-site';
-
-export function Navbar() {
-  return <div>Arco Design</div>;
-}
-
-export function Affix() {
-  // Get globalContext by window.arcoSiteGlobalContext
-  const { user } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
-  return (
-    <div>
-      <h1>Hello {user?.name}!</h1>
-    </div>
-  );
-}
-
-const { SubMenu, Item: MenuItem } = ArcoMenu;
-
-export function Menu() {
-  // Get globalContext by window.arcoSiteGlobalContext
-  const {
-    history,
-    location,
-    routes: [docRoutes, componentRoutes],
-  } = useContext<ArcoSiteGlobalContext>((window as any).arcoSiteGlobalContext);
-
-  const renderMenuItems = ({ name, path, children }: ArcoSiteRouteType) => {
-    if (children) {
-      return (
-        <SubMenu key={name} title={name}>
-          {children.map(({ name, path }) => (
-            <MenuItem key={path}>{name}</MenuItem>
-          ))}
-        </SubMenu>
-      );
-    }
-
-    return path ? <MenuItem key={path}>{name}</MenuItem> : null;
-  };
-
-  return (
-    <ArcoMenu
-      autoOpen
-      defaultSelectedKeys={[location.pathname.replace(/\/$/, '')]}
-      onClickMenuItem={(key) => {
-        history.push(`${key}${location.search}`);
-      }}
-    >
-      <SubMenu key={docRoutes.key} title={docRoutes.name}>
-        {docRoutes.children?.map(renderMenuItems)}
-      </SubMenu>
-      {componentRoutes.children?.map(renderMenuItems)}
-    </ArcoMenu>
-  );
-}
-````
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/screenshot-20221010-153712.png~tplv-uwbnlip3yd-webp.webp)
 
 ## Using the Arco Design Lab theme
 
@@ -470,3 +411,96 @@ export interface ComponentOneProps {
  */
 export {default as Basic} from'./basic';
 ```
+
+## Private deployment
+
+**Version requirements `arco-material-doc-site >= 1.12.0`**
+
+We offer two ways to deploy the team site under your domain name. Before that, you need to pre-configure your team information in the configuration file of the site project, and we will verify its validity.
+
+````js
+//.config/main.js
+module.exports = {
+  // ...
+  // configure your team info
+  group: {
+    // team ID
+    id: 1,
+    // Whether it is the intranet team of the material platform
+    private: false,
+  },
+};
+````
+
+### Deploy via static page
+
+The product file of the site project is as follows, which contains the complete static resources of the site. In the form of page hosting, you can directly deploy product files on your own domain name.
+
+````text
+./dist
+├── arcoSite.css
+├── arcoSite.zh-CN.js
+└── index.html
+````
+
+![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/isolate.png~tplv-uwbnlip3yd-webp.webp)
+
+### Import via React components
+
+We provide a material called `@arco-materials/material-site-viewer` for previewing the team site, which you can use in your own projects. Introducing a site for rendering in the form of a component has the following side effects:
+
+- Need to inject React/ReactDOM/arco/arcoicon in the global scope;
+- The component styles (or theme package styles) of `@arco-design/web-react` need to be imported in full;
+- Demo is not running in a sandbox environment, any global operation will directly affect the current page;
+- Additional operations are required to handle routing logic.
+
+**Therefore, we strongly recommend to open up a new HTML entry in your application as a document page, rather than extending the original application page in the form of front-end routing.** For specific usage, please refer to the code snippet below.
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import * as arco from '@arco-design/web-react';
+import * as arcoicon from '@arco-design/web-react/icon';
+
+import { createBrowserHistory } from 'history';
+import { Router } from 'react-router-dom';
+import SiteViewer from '@arco-materials/material-site-viewer';
+
+// Make sure the arco style is introduced globally in the current project
+// If the Design Lab theme is used, import the css file of the theme package
+import '@arco-design/web-react/dist/css/arco.min.css';
+
+// Since the site product file has removed React/ReactDOM/Arco, it needs to be exposed in the global scope
+(function injectGlobalDependencies() {
+  const globalDependencies = {
+    React,
+    ReactDOM,
+    arco,
+    arcoicon,
+  };
+
+  Object.entries(globalDependencies).forEach(([key, value]) => {
+    window[key] = value;
+  });
+})();
+
+export default () => {
+  return (
+    <Router history={createBrowserHistory({ basename: '' })}>
+      <SiteViewer
+        // Basic routing for documentation site pages
+        routerHistoryBasename="/doc/"
+        // Specify the URL of the site product (not a file path
+        siteFileUrl={{
+          js: 'https://unpkg.com/@arco-materials/material-team-site@latest/dist/arcoSite.zh-CN.js',
+          css: 'https://unpkg.com/@arco-materials/material-team-site@latest/dist/arcoSite.css',
+        }}
+        // route contains the page path information corresponding to the clicked menu item, you can modify the page route according to this information
+        onClickMenuItem={(route) => {
+          console.log(route);
+        }}
+      />
+    </Router>
+  );
+};
+````

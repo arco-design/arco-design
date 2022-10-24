@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import ReactDOM from 'react-dom';
+import { render as ReactDOMRender } from '../_util/react-dom';
 import Modal, { ModalProps } from './modal';
 import IconInfoCircleFill from '../../icon/react-icon/IconInfoCircleFill';
 import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
@@ -65,18 +65,23 @@ export const normalizeConfig = (_config: ConfirmProps): ConfirmProps => {
 };
 
 function confirm(config: ConfirmProps, renderFunc?: (props: ConfirmProps) => void) {
+  let root;
   const div = document.createElement('div');
   document.body.appendChild(div);
 
   const configProviderProps = getConfigProviderProps();
 
   function render(props: ConfirmProps) {
-    ReactDOM.render(
+    const dom = (
       <ConfigProvider {...configProviderProps}>
         <ConfirmModal {...props} onCancel={onCancel} />
-      </ConfigProvider>,
-      div
+      </ConfigProvider>
     );
+    if (root) {
+      root.render(dom);
+    } else {
+      root = ReactDOMRender(dom, div);
+    }
   }
 
   const renderFunction = renderFunc || render;
@@ -117,8 +122,9 @@ function confirm(config: ConfirmProps, renderFunc?: (props: ConfirmProps) => voi
   renderFunction(modalConfig);
 
   function destroy() {
-    const unmountEle = ReactDOM.unmountComponentAtNode(div);
-    if (unmountEle && div.parentNode) {
+    root = root?._unmount();
+
+    if (div.parentNode) {
       div.parentNode.removeChild(div);
     }
     for (let i = 0; i < destroyList.length; i++) {

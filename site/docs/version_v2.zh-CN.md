@@ -2,6 +2,174 @@
 changelog: true
 ---
 
+## 2.41.0-beta.1
+
+2022-10-21
+
+### 💎 功能优化
+
+- `Image` 组件悬浮时显示`zoom-in`鼠标类型([#1477](https://github.com/arco-design/arco-design/pull/1477))
+
+### 🆕 功能升级
+
+- 新增马来语。([#1465](https://github.com/arco-design/arco-design/pull/1465))
+- `Select` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- `TreeSelect` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- `Cascader` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+- `Upload` 组件支持通过 `imagePreview` 属性启用内置的图片预览功能。([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Upload` 组件支持 `onDragLeave` 和 `onDragOver` 事件回调([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Form` 组件的 `colon` 属性支持传入 `ReactNode`。([#1455](https://github.com/arco-design/arco-design/pull/1455))
+
+### 🐛 问题修复
+
+- 修复 `Transfer` 开启 `draggable` 时被禁用的选项仍然可以被拖拽的问题。([#1493](https://github.com/arco-design/arco-design/pull/1493))
+- 修复 `Select` 在 `width: auto` 时宽度未跟随内容自动变化的问题。（单选模式下内层新增 DOM 节点直接包裹 `.arco-select-view-value` 和 `input` 标签）([#1490](https://github.com/arco-design/arco-design/pull/1490))
+- 修复 `Tabs` 组件在 `RTL` 视图下水平滚动方向错误的 bug。([#1487](https://github.com/arco-design/arco-design/pull/1487))
+- 优化 `Cascader` 组件选项的 `title` 属性显示 `[object object]` 的问题。([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- 修复 `Cascader` 组件在设置 `changeOnSelect` & `mode=multiple` 时，子节点选中后父节点无法被选中的 bug([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- 修复 Slider 由于父组件更新导致起始范围乱序的 bug。([#1467](https://github.com/arco-design/arco-design/pull/1467))
+- 修复 `TreeSelect` 受控清空 `inputValue` 后无法再次输入相同值的 bug([#1463](https://github.com/arco-design/arco-design/pull/1463))
+- 修复 `Form.Item` 组件的 `shouldUpdate` 属性在重置表单项时未生效的 bug。([#1462](https://github.com/arco-design/arco-design/pull/1462))
+- 修复 `Layout.Sider` 组件 `defaultCollapsed` 属性未生效的 bug。([#1458](https://github.com/arco-design/arco-design/pull/1458))
+- 修复 `InputTag` 组件开启 `dragToSort` 时，切换禁用状态时会将 Tag 重复渲染两遍的 bug。([#1457](https://github.com/arco-design/arco-design/pull/1457))
+
+### 💅 样式更新
+
+- 修复 `Tabs` 组件 `extra` 元素较大宽度时被遮盖样式问题。([#1494](https://github.com/arco-design/arco-design/pull/1494))
+- 修复 `Table` 组件当 `scroll.x` 过小时总结列高度塌陷的样式问题。([#1492](https://github.com/arco-design/arco-design/pull/1492))
+- 修复暗黑模式下 `Tabs` 组件的新增图标色值有误的 bug。([#1454](https://github.com/arco-design/arco-design/pull/1454))
+- 修复 `Tabs` 组件在 `type=line` & `tabPosition=bottom` 时，分割线位置错误的样式问题。([#1248](https://github.com/arco-design/arco-design/pull/1248))
+
+## 2.40.2
+
+2022-09-30
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件在 React 18  下卸载时控制台出现 warning 的 bug([#1440](https://github.com/arco-design/arco-design/pull/1440))
+- 修复 `Popconfirm` 组件开启 `focusLock` 时，Footer 内部 DOM 层级表现和默认不一致，导致按钮外边距样式失效的问题([#1437](https://github.com/arco-design/arco-design/pull/1437))
+
+### 💅 样式更新
+
+- 移除 `PageHeader` 组件额外内容渲染区域的 `overflow: hidden` 属性，避免自定义渲染内容被遮盖的问题([#1436](https://github.com/arco-design/arco-design/pull/1436))
+- 修复 `Table` 组件展开行嵌套子表格时，子表格开启固定列会出现单元格透明的问题。([#1433](https://github.com/arco-design/arco-design/pull/1433))
+
+## 2.40.1
+
+2022-09-23
+
+### 🐛 问题修复
+
+- 修复 Table 在关闭 `checkStrictly` 后，传入不存在的 `selectedKey` 导致页面报错的 bug([#1420](https://github.com/arco-design/arco-design/pull/1420))
+- 修复 `useModal` 的 `holderRef` 可能不存在的 bug([#1418](https://github.com/arco-design/arco-design/pull/1418))
+
+### 💅 样式更新
+
+- Image 组件的开启 `preview` 后，鼠标悬停样式变为 `zoom-out`([#1419](https://github.com/arco-design/arco-design/pull/1419))
+
+## 2.40.0
+
+2022-09-16
+
+### 💎 功能优化
+
+- 优化 `Form` 组件内置校验信息模板([#1398](https://github.com/arco-design/arco-design/pull/1398))
+- 优化 `Space` 的子元素在被指定的 `key` 值未发生变化时 DOM 节点却重新挂载的问题。([#1393](https://github.com/arco-design/arco-design/pull/1393))
+
+### 🆕 功能升级
+
+- `Message` 组件支持 `useMessage` 用法以便读取 `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Notification` 组件支持 `useNotification` 用法以便读取 `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+- `Form.Item` 支持 `dependencies` 属性([#1397](https://github.com/arco-design/arco-design/pull/1397))
+- `Grid` 响应式断点支持 `xxxl` (页面宽度 > 2000px)。([#1396](https://github.com/arco-design/arco-design/pull/1396))
+- `Transfer`的 `showSearch / showFooter / searchPlaceholder / pagination / listStyle` 属性支持通过数组来为源/目标列表传入不同的属性值。([#1389](https://github.com/arco-design/arco-design/pull/1389))
+- `Breadcrumb` 新增 `href`, `onClick` 和 `tagName` 属性([#1363](https://github.com/arco-design/arco-design/pull/1363))
+- `Select` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- `TreeSelect` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+- `Cascader` 组件支持监听 `onKeyDown` 回调。([#1360](https://github.com/arco-design/arco-design/pull/1360))
+
+### 🐛 问题修复
+
+- 修复 `Form.useWatch` 在 `field` 改变时，返回值未及时更新的 bug。([#1400](https://github.com/arco-design/arco-design/pull/1400))
+- 修复 `Message` 在设置了 `body { display: 'flex' }` 的页面中无法正常显示的 bug。([#1373](https://github.com/arco-design/arco-design/pull/1373))
+
+### 💅 样式更新
+
+- 修复 `Layout` 亮色主题下可能导致的页面出现滚动的问题。([#1391](https://github.com/arco-design/arco-design/pull/1391))
+- 修复 `Statistic` 不传 `prefix` / `suffix` 时，对应 dom 节点仍然渲染的 bug。([#1388](https://github.com/arco-design/arco-design/pull/1388))
+- 修复深色模式下 `capsule` 类型的 `Tabs` 组件中禁用的 `TabPane` 标题区域的 hover 样式。([#1368](https://github.com/arco-design/arco-design/pull/1368))
+
+### 🆎 类型修正
+
+- 优化 `Drawer` 组件  `placement` 属性的类型。([#1377](https://github.com/arco-design/arco-design/pull/1377))
+
+## 2.39.3
+
+2022-09-02
+
+### 💎 功能优化
+
+- 优化 `Modal`, `Notification`, `Message` 组件在 React 18 下渲染节点出现控制台 warning 的问题。([#1367](https://github.com/arco-design/arco-design/pull/1367))
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件在折叠计算中会出现抖动情况的 bug([#1366](https://github.com/arco-design/arco-design/pull/1366))
+- 修复 `Cascader` 组件设置 `expandTrigger` 为 `hover` 时下拉列表的抖动问题。([#1365](https://github.com/arco-design/arco-design/pull/1365))
+- 修复 `Steps.Step` 传入 `onClick` 事件后偶现不触发回调的 bug([#1364](https://github.com/arco-design/arco-design/pull/1364))
+- 修复 `Drawer` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- 修复 `Modal` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- 修复 `Popconfirm` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+- 修复 `DatePicker` 组件在 `de-DE` 语言下会报错的问题。([#1358](https://github.com/arco-design/arco-design/pull/1358))
+- 修复 `InputTag` 设置 `disabled` 时 `placeholder` 未按预期展示的 bug。([#1357](https://github.com/arco-design/arco-design/pull/1357))
+- 修复 `Cascader` 组件存在禁用子节点时，选中半选状态的父节点时无法切换选中状态的 bug。([#1354](https://github.com/arco-design/arco-design/pull/1354))
+
+### 💅 样式更新
+
+- 优化 `Menu` 组件中内嵌 `<a/>` 的样式。([#1362](https://github.com/arco-design/arco-design/pull/1362))
+- 优化 `Dropdown` 组件下拉菜单中 `Menu` 内嵌 `<a/>` 的样式。([#1362](https://github.com/arco-design/arco-design/pull/1362))
+
+## 2.39.2
+
+2022-08-26
+
+### 💎 功能优化
+
+- 优化水平 `Menu` 宽度改变时自动折叠的表现，避免偶发的折行。([#1331](https://github.com/arco-design/arco-design/pull/1331))
+- 确保 `Select` 组件使用 `dropdownRender` 自定义下拉框内容并获取页面焦点时，键盘快捷键仍然可用。([#1328](https://github.com/arco-design/arco-design/pull/1328))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件更新 `data` 之后，下次选中 `selectedRows` 未及时更新的问题。([#1341](https://github.com/arco-design/arco-design/pull/1341))
+- 修复 `DatePicker.RangePicker` 组件动态修改 `disabled`，禁用日期没有及时更新的 bug。([#1336](https://github.com/arco-design/arco-design/pull/1336))
+- 修复由于自动生成的 DOM `id` 导致的服务端渲染报错的问题。([#1334](https://github.com/arco-design/arco-design/pull/1334))
+- 修复 `Pagination` 组件的初始 `pageSize` 与选中的 `sizeOptions` 不一致的 bug。([#1333](https://github.com/arco-design/arco-design/pull/1333))
+- 修复 `Cascader` 组件开启虚拟列表时，选中节点未正确滚动到视口的 bug。([#1329](https://github.com/arco-design/arco-design/pull/1329))
+- 修复按需加载引入 `Cascader` / `TreeSelect` 样式时，`Select` 组件被重复引入的问题([#1327](https://github.com/arco-design/arco-design/pull/1327))
+
+### 💅 样式更新
+
+- `InputTag` 组件 `placeholder` 过长时末尾使用 `...` 展示。([#1339](https://github.com/arco-design/arco-design/pull/1339))
+- 修复 `Menu` 组件内置折叠按钮显示位置出错的 bug([#1332](https://github.com/arco-design/arco-design/pull/1332))
+
+## 2.39.1
+
+2022-08-19
+
+### 💎 功能优化
+
+- 优化 `Cascader` 组件多选时对传入的非法格式 `value` 的边界处理([#1304](https://github.com/arco-design/arco-design/pull/1304))
+- 组件库对外暴露 `version` 字段。([#1303](https://github.com/arco-design/arco-design/pull/1303))
+
+### 🐛 问题修复
+
+- 修复 `Grid.Col` 组件设置 `md = 0` 会导致其在更大的窗口尺寸下也不展示的 bug。([#1307](https://github.com/arco-design/arco-design/pull/1307))
+- 修复通过 `useModal` 创建弹窗实例时返回的方法 `update`为 `undefined` 的bug([#1300](https://github.com/arco-design/arco-design/pull/1300))
+- 修复 `DatePicker.RangePicker` 组件 `panelRender` 不生效的 bug。([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
+### 💅 样式更新
+
+- 统一 `Select` 多选和单选模式下的右侧箭头样式。([#1302](https://github.com/arco-design/arco-design/pull/1302))
+
 ## 2.39.0
 
 2022-08-12
@@ -20,7 +188,7 @@ changelog: true
 ### 🆕 功能升级
 
 - `Image.Preview` 新增 `imgAttributes` 参数，将属性透传至弹窗中的 `img` 标签上([#1274](https://github.com/arco-design/arco-design/pull/1274))
-- `Cascader` 组件支持通过 `showSearch.showSearchPanel` 属性控制是否以搜索面板展示可选项([#1267](https://github.com/arco-design/arco-design/pull/1267))
+- `Cascader` 组件支持通过 `showSearch.panelMode` 属性控制下拉面板展示([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `Cascader` 组件支持通过 `showSearch.renderOption` 属性自定义搜索项的渲染([#1267](https://github.com/arco-design/arco-design/pull/1267))
 - `TreeSelect` 新增 `inputValue` 和 `onInputValueChange` 属性。([#1151](https://github.com/arco-design/arco-design/pull/1151))
 
@@ -325,6 +493,10 @@ changelog: true
 ## 2.32.0
 
 2022-04-15
+
+### 🚨 重点注意
+
+- 修复 `Form.Item` 包裹的表单控件是由函数类型的 `children` 返回时，`onChange` 未被调用的 bug。([#760](https://github.com/arco-design/arco-design/pull/760))（注意：在修复该问题时，引入了在特殊场景下子组件会被循环渲染的问题， `2.37.0` 版本已修复）
 
 ### 🆕 功能升级
 

@@ -25,7 +25,7 @@
 |visible|是否显示弹出框|boolean |`-`|-|
 |cancelText|取消按钮文案|string |`-`|-|
 |okText|确认按钮文案|string |`-`|-|
-|placement|抽屉的方向 `top` `right` `bottom` `left`|string |`right`|-|
+|placement|抽屉的方向 `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
 |footer|自定义按钮确认和取消按钮，为 null 的话没有按钮组|ReactNode |`-`|-|
 |title|弹出框的标题（设置为 null 时，不显示标题栏）|ReactNode |`-`|-|
 |bodyStyle|内容区域的样式|CSSProperties |`-`|2.9.0|

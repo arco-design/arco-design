@@ -1258,6 +1258,7 @@ exports[`renders Tree/demo/checkedStrategy.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -6659,6 +6660,7 @@ exports[`renders Tree/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label

@@ -33,8 +33,9 @@ const DemoSelect = () => {
         triggerElement={
           <Typography.Paragraph
             style={{
-              width: 345,
+              width: 300,
             }}
+            className="trigger-element"
             tabIndex={0}
             onKeyDown={(e) => {
               refSelect.current && refSelect.current.hotkeyHandler(e);
@@ -60,4 +61,18 @@ const App = () => {
 };
 
 export default App;
+```
+```css
+.trigger-element {
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.trigger-element:hover {
+  background-color: var(--color-fill-2);
+}
+
+.trigger-element:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3)
+}
 ```

@@ -37,12 +37,13 @@ function Col(baseProps: ColProps, ref) {
     lg,
     xl,
     xxl,
+    xxxl,
     flex,
     ...rest
   } = props;
 
   function adaptationGrid(prefixCls: string, mergeClassName: { [key: string]: any }) {
-    const screenList = { xs, sm, md, lg, xl, xxl };
+    const screenList = { xs, sm, md, lg, xl, xxl, xxxl };
     Object.keys(screenList).forEach((screen) => {
       const screenValue = screenList[screen];
       if (isNumber(screenValue)) {
@@ -64,7 +65,7 @@ function Col(baseProps: ColProps, ref) {
   let mergeClassName = {
     [`${prefixCls}`]: !div,
     [`${prefixCls}-order-${order}`]: order,
-    [`${prefixCls}-${span}`]: !div && !xs && !sm && !md && !lg && !xl && !xxl,
+    [`${prefixCls}-${span}`]: !div && !xs && !sm && !md && !lg && !xl && !xxl && !xxxl,
     [`${prefixCls}-offset-${offset}`]: offset,
     [`${prefixCls}-pull-${pull}`]: pull,
     [`${prefixCls}-push-${push}`]: push,

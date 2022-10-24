@@ -25,6 +25,7 @@ function App() {
         style={{ maxWidth: 650 }}
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 18 }}
+        autoComplete="off"
         onValuesChange={(_, values) => {
           console.log(values);
           setValues(values);

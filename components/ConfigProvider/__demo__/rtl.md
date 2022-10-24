@@ -37,7 +37,7 @@ function App() {
     <div>
       <Switch checkedText='RTL' uncheckedText='LTR' checked={rtl} onChange={(checked) => setRtl(checked)} />
       <Divider />
-      <ConfigProvider rtl={rtl}>
+      <ConfigProvider rtl={rtl} effectGlobalNotice={false}>
         <Tabs defaultActiveTab='1' style={{ marginBottom: 20 }}>
           <TabPane key='1' title='Tab 1' />
           <TabPane key='2' title='Tab 2' />

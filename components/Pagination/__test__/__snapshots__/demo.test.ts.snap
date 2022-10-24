@@ -125,7 +125,6 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -136,18 +135,22 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
           class="arco-select-view"
           title="10 条/页"
         >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="10 条/页"
-          />
           <span
-            class="arco-select-view-value"
+            class="arco-select-view-selector"
           >
-            10 条/页
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="10 条/页"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              10 条/页
+            </span>
           </span>
           <div
             aria-hidden="true"
@@ -311,7 +314,6 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-1"
         aria-disabled="true"
         aria-expanded="false"
         aria-haspopup="listbox"
@@ -323,19 +325,23 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
           class="arco-select-view"
           title="10 条/页"
         >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            disabled=""
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="10 条/页"
-          />
           <span
-            class="arco-select-view-value"
+            class="arco-select-view-selector"
           >
-            10 条/页
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              disabled=""
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="10 条/页"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              10 条/页
+            </span>
           </span>
           <div
             aria-hidden="true"
@@ -613,7 +619,6 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-2"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -624,18 +629,22 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
         class="arco-select-view"
         title="10 条/页"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="10 条/页"
-        />
         <span
-          class="arco-select-view-value"
+          class="arco-select-view-selector"
         >
-          10 条/页
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="10 条/页"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            10 条/页
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -797,7 +806,6 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
-      aria-controls="arco-select-popup-3"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-single arco-select-size-default"
@@ -808,18 +816,22 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
         class="arco-select-view"
         title="10 条/页"
       >
-        <input
-          aria-hidden="true"
-          autocomplete="off"
-          class="arco-select-view-input arco-select-hidden"
-          style="width:100%;pointer-events:none"
-          tabindex="-1"
-          value="10 条/页"
-        />
         <span
-          class="arco-select-view-value"
+          class="arco-select-view-selector"
         >
-          10 条/页
+          <input
+            aria-hidden="true"
+            autocomplete="off"
+            class="arco-select-view-input arco-select-hidden"
+            style="width:100%;pointer-events:none"
+            tabindex="-1"
+            value="10 条/页"
+          />
+          <span
+            class="arco-select-view-value"
+          >
+            10 条/页
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -1204,7 +1216,6 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-4"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default"
@@ -1215,18 +1226,22 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
               class="arco-select-view"
               title="10 条/页"
             >
-              <input
-                aria-hidden="true"
-                autocomplete="off"
-                class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value="10 条/页"
-              />
               <span
-                class="arco-select-view-value"
+                class="arco-select-view-selector"
               >
-                10 条/页
+                <input
+                  aria-hidden="true"
+                  autocomplete="off"
+                  class="arco-select-view-input arco-select-hidden"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value="10 条/页"
+                />
+                <span
+                  class="arco-select-view-value"
+                >
+                  10 条/页
+                </span>
               </span>
               <div
                 aria-hidden="true"
@@ -1392,7 +1407,6 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-5"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default"
@@ -1403,18 +1417,22 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
               class="arco-select-view"
               title="10 条/页"
             >
-              <input
-                aria-hidden="true"
-                autocomplete="off"
-                class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value="10 条/页"
-              />
               <span
-                class="arco-select-view-value"
+                class="arco-select-view-selector"
               >
-                10 条/页
+                <input
+                  aria-hidden="true"
+                  autocomplete="off"
+                  class="arco-select-view-input arco-select-hidden"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value="10 条/页"
+                />
+                <span
+                  class="arco-select-view-value"
+                >
+                  10 条/页
+                </span>
               </span>
               <div
                 aria-hidden="true"
@@ -1593,7 +1611,6 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-6"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default"
@@ -1604,18 +1621,22 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
               class="arco-select-view"
               title="10 条/页"
             >
-              <input
-                aria-hidden="true"
-                autocomplete="off"
-                class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value="10 条/页"
-              />
               <span
-                class="arco-select-view-value"
+                class="arco-select-view-selector"
               >
-                10 条/页
+                <input
+                  aria-hidden="true"
+                  autocomplete="off"
+                  class="arco-select-view-input arco-select-hidden"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value="10 条/页"
+                />
+                <span
+                  class="arco-select-view-value"
+                >
+                  10 条/页
+                </span>
               </span>
               <div
                 aria-hidden="true"
@@ -2020,6 +2041,7 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -2168,7 +2190,6 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-7"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -2179,18 +2200,22 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
           class="arco-select-view"
           title="10 条/页"
         >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="10 条/页"
-          />
           <span
-            class="arco-select-view-value"
+            class="arco-select-view-selector"
           >
-            10 条/页
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="10 条/页"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              10 条/页
+            </span>
           </span>
           <div
             aria-hidden="true"
@@ -2246,7 +2271,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="上一页"
         class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="-1"
       >
         <svg
@@ -2267,7 +2292,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
         aria-current="true"
         aria-label="第 1 页"
         class="arco-pagination-item arco-pagination-item-active"
-        style="background:var(--color-fill-2);margin-right:0"
+        style="background:var(--color-fill-2);margin-right:2px"
         tabindex="0"
       >
         1
@@ -2275,7 +2300,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="第 2 页"
         class="arco-pagination-item"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="0"
       >
         2
@@ -2283,7 +2308,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="第 3 页"
         class="arco-pagination-item"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="0"
       >
         3
@@ -2291,7 +2316,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="第 4 页"
         class="arco-pagination-item"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="0"
       >
         4
@@ -2299,7 +2324,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="第 5 页"
         class="arco-pagination-item"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="0"
       >
         5
@@ -2307,7 +2332,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="向后 5 页"
         class="arco-pagination-item arco-pagination-item-jumper"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
       >
         <svg
           aria-hidden="true"
@@ -2331,7 +2356,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="第 20 页"
         class="arco-pagination-item"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="0"
       >
         20
@@ -2339,7 +2364,7 @@ exports[`renders Pagination/demo/style.md correctly 1`] = `
       <li
         aria-label="下一页"
         class="arco-pagination-item arco-pagination-item-next"
-        style="background:var(--color-bg-2);margin-right:0"
+        style="background:var(--color-bg-2);margin-right:2px"
         tabindex="0"
       >
         <svg

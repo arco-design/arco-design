@@ -20,6 +20,7 @@ const App = () => {
   return (
     <div>
       <Popconfirm
+        focusLock
         title="Do you want to discard the draft?"
         okText="Discard"
         cancelText="Cancel"

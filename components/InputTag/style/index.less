@@ -1,28 +1,9 @@
 @import '../../style/mixin.less';
 @import './token.less';
 @import '../../_class/Draggable/style/index.less';
+@import './mixin.less';
 
 @input-tag-prefix-cls: ~'@{prefix}-input-tag';
-
-.input-tag-input-element-padding(@paddingLeft) {
-  .@{input-tag-prefix-cls}-has-placeholder {
-    input,
-    .@{input-tag-prefix-cls}-input-mirror {
-      box-sizing: border-box;
-      padding-left: @paddingLeft;
-    }
-  }
-}
-
-.input-tag-input-element-padding-rtl(@paddingRight) {
-  .@{input-tag-prefix-cls}-has-placeholder {
-    input,
-    .@{input-tag-prefix-cls}-input-mirror {
-      padding-left: 0;
-      padding-right: @paddingRight;
-    }
-  }
-}
 
 .@{input-tag-prefix-cls} {
   display: inline-block;
@@ -91,6 +72,8 @@
 
   &-input {
     width: 100%;
+    // width might be overwrite by inline-style, max-width make text-ellipsis work
+    max-width: 100%;
     padding: 0;
     border: none;
     outline: none;
@@ -98,6 +81,11 @@
     font-size: inherit;
     cursor: inherit;
     color: inherit;
+    .text-ellipsis();
+
+    .@{prefix}-tag + &[disabled] {
+      width: 0 !important;
+    }
 
     &-mirror {
       position: absolute;
@@ -113,6 +101,7 @@
   }
 
   &-tag {
+    max-width: 100%;
     margin-right: @input-tag-tag-margin-right;
     font-size: @input-tag-tag-font-size;
   }

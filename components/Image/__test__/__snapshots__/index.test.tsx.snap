@@ -6,6 +6,7 @@ exports[`ConfigProvider componentConfig.Image default 1`] = `
 >
   <img
     class="arco-image-img"
+    tabindex="0"
   />
   <div
     class="arco-image-overlay"
@@ -19,6 +20,7 @@ exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
 >
   <img
     class="arco-image-img"
+    tabindex="0"
   />
   <div
     class="arco-image-overlay"
@@ -32,6 +34,7 @@ exports[`ConfigProvider componentConfig.Image set className globally and compone
 >
   <img
     class="arco-image-img"
+    tabindex="0"
   />
   <div
     class="arco-image-overlay"
@@ -46,6 +49,7 @@ exports[`ConfigProvider componentConfig.Image set data-* property 1`] = `
   <img
     class="arco-image-img"
     data-test-name="Image"
+    tabindex="0"
   />
   <div
     class="arco-image-overlay"

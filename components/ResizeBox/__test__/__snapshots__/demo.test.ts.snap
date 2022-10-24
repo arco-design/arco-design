@@ -491,6 +491,7 @@ exports[`renders ResizeBox/demo/split.md correctly 1`] = `
   >
     <div
       class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio-button arco-radio-checked"

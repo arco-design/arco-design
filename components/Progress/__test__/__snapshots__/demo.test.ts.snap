@@ -408,7 +408,6 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
       >
         <defs>
           <linearGradient
-            id="arco-progress-linear-gradient-5"
             x1="0"
             x2="0"
             y1="1"
@@ -439,7 +438,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke:url(#arco-progress-linear-gradient-5);stroke-dasharray:188.49555921538757;stroke-dashoffset:37.6991118430775"
+          style="stroke:url(#undefined);stroke-dasharray:188.49555921538757;stroke-dashoffset:37.6991118430775"
         />
       </svg>
       <div
@@ -466,7 +465,6 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
       >
         <defs>
           <linearGradient
-            id="arco-progress-linear-gradient-6"
             x1="0"
             x2="0"
             y1="1"
@@ -497,7 +495,7 @@ exports[`renders Progress/demo/line-gradient.md correctly 1`] = `
           fill="none"
           r="30"
           stroke-width="4"
-          style="stroke:url(#arco-progress-linear-gradient-6);stroke-dasharray:188.49555921538757;stroke-dashoffset:0"
+          style="stroke:url(#undefined);stroke-dasharray:188.49555921538757;stroke-dashoffset:0"
         />
       </svg>
       <div
@@ -822,6 +820,7 @@ exports[`renders Progress/demo/size.md correctly 1`] = `
     </span>
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio"

@@ -1,9 +1,11 @@
 import React from 'react';
+import { act } from 'react-test-renderer';
 import { fireEvent, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Breadcrumb from '..';
 import { DropdownProps } from '../../Dropdown';
+import Button from '../../Button';
 
 const BreadcrumbItem = Breadcrumb.Item;
 
@@ -124,5 +126,35 @@ describe('Breadcrumb', () => {
     expect(
       (wrapper.find('.arco-breadcrumb-item').item(3).firstChild! as HTMLAnchorElement).innerHTML
     ).toEqual(`name-${delta + 3}`);
+  });
+
+  it('support href correctly', () => {
+    const wrapper = render(
+      <Breadcrumb separator="=>">
+        <BreadcrumbItem href="https://arco.design">Home</BreadcrumbItem>
+        <BreadcrumbItem>Article</BreadcrumbItem>
+        <BreadcrumbItem>Technology</BreadcrumbItem>
+      </Breadcrumb>
+    );
+    expect(wrapper.find("a[href='https://arco.design']")).toHaveLength(1);
+  });
+
+  it('support custom Tag correctly', () => {
+    const mockClick = jest.fn();
+    const wrapper = render(
+      <Breadcrumb separator="=>">
+        <BreadcrumbItem onClick={mockClick} tagName={Button}>
+          Home
+        </BreadcrumbItem>
+        <BreadcrumbItem>Article</BreadcrumbItem>
+        <BreadcrumbItem>Technology</BreadcrumbItem>
+      </Breadcrumb>
+    );
+
+    expect(wrapper.find('.arco-btn')).toHaveLength(1);
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-btn')[0]);
+    });
+    expect(mockClick).toHaveBeenCalledTimes(1);
   });
 });

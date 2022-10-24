@@ -22,7 +22,7 @@ import { useState } from 'react';
 import { DatePicker, Space, Select, Typography, Alert, Tag } from '@arco-design/web-react';
 const zoneList = ['America/Los_Angeles', 'Europe/London', 'Africa/Cairo', 'Asia/Shanghai'];
 const defaultValue = new Date('2022-02-22');
-const defaultRangeValue = [new Date('2022-02-22 08:00:00'), new Date('2022-03-22 10:00:00')];
+const defaultRangeValue = [new Date(2022, 1, 22, 8), new Date(2022, 2, 22, 10)];
 
 function App() {
   const [timezone, setTimezone] = useState('Asia/Shanghai');

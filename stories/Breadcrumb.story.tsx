@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb } from '@self';
+import { Breadcrumb, Button } from '@self';
 
 const BreadcrumbItem = Breadcrumb.Item;
 
@@ -42,10 +42,10 @@ export const Demo = () => (
     <br />
     <Breadcrumb maxCount={2}>
       <BreadcrumbItem>Home</BreadcrumbItem>
-      <BreadcrumbItem>
-        <a>Management</a>
+      <BreadcrumbItem href="https://arco.design">Management</BreadcrumbItem>
+      <BreadcrumbItem onClick={(e) => console.log(e)} tagName={Button}>
+        Data List
       </BreadcrumbItem>
-      <BreadcrumbItem>Data List</BreadcrumbItem>
       <BreadcrumbItem>Date Detail</BreadcrumbItem>
     </Breadcrumb>
   </div>

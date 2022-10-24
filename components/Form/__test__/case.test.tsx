@@ -57,16 +57,16 @@ describe('function component useForm', () => {
       />
     );
 
-    fireEvent.submit(wrapper.querySelector('form'));
+    fireEvent.submit(wrapper.querySelector('form') as Element);
 
     await sleep(10);
 
-    const setValueBtn = wrapper.querySelector('.setvalue-btn');
+    const setValueBtn = wrapper.querySelector('.setvalue-btn') as Element;
 
     expect(value).toBe(0);
 
     fireEvent.click(setValueBtn);
-    fireEvent.submit(wrapper.querySelector('form'));
+    fireEvent.submit(wrapper.querySelector('form') as Element);
 
     await sleep(10);
 
@@ -83,14 +83,14 @@ describe('function component useForm', () => {
       />
     );
 
-    fireEvent.change(wrapper.querySelector('input'), { target: { value: '111' } });
+    fireEvent.change(wrapper.querySelector('input') as Element, { target: { value: '111' } });
 
-    const setValueBtn = wrapper.querySelector('.setvalue-btn');
+    const setValueBtn = wrapper.querySelector('.setvalue-btn') as Element;
 
     expect(value).toBe(0);
 
     fireEvent.click(setValueBtn);
-    fireEvent.change(wrapper.querySelector('input'), { target: { value: 'ceshi' } });
+    fireEvent.change(wrapper.querySelector('input') as Element, { target: { value: 'ceshi' } });
 
     expect(value).toBe(1);
   });
@@ -148,7 +148,7 @@ describe('form item children funtion', () => {
       '类型A的备注'
     );
 
-    fireEvent.change(wrapper.querySelector('.arco-input'), { target: { value: '123' } });
+    fireEvent.change(wrapper.querySelector('.arco-input') as Element, { target: { value: '123' } });
     expect(formRef.getFields()).toEqual({ type: '类型A', nameA: '123' });
 
     formRef.setFieldsValue({ type: '类型B' });
@@ -158,17 +158,17 @@ describe('form item children funtion', () => {
     expect(wrapper.container.querySelectorAll('.arco-form-label-item label')[1].innerHTML).toBe(
       ' 类型B名字'
     );
-    expect(wrapper.querySelector('textarea').getAttribute('placeholder')).toBe('类型B的备注');
+    expect(wrapper.querySelector('textarea')?.getAttribute('placeholder')).toBe('类型B的备注');
 
     expect(formRef.getFieldsValue()).toEqual({ type: '类型B' });
     expect(formRef.getFields()).toEqual({ type: '类型B', nameA: '123' });
-    fireEvent.click(wrapper.querySelector('.arco-select-view'));
+    fireEvent.click(wrapper.querySelector('.arco-select-view') as Element);
     fireEvent.click(wrapper.find('.arco-select-option')[1]);
     expect(formRef.getFieldsValue()).toEqual({ type: '类型B', nameB: 'B2' });
 
     formRef.setFieldsValue({ type: '类型A' });
 
-    expect(wrapper.querySelector('.arco-input').getAttribute('value')).toBe('123');
+    expect(wrapper.querySelector('.arco-input')?.getAttribute('value')).toBe('123');
     expect(formRef.getFieldsValue()).toEqual({ type: '类型A', nameA: '123' });
     expect(formRef.getFields()).toEqual({ type: '类型A', nameA: '123', nameB: 'B2' });
   });
@@ -185,4 +185,86 @@ describe('form initialvalue', () => {
   );
 
   expect(form.getFieldValue('name')).toBe('456');
+});
+
+describe('form usewatch ', () => {
+  it('field change', () => {
+    let form;
+
+    function Demo({ field }) {
+      const value = Form.useWatch(field, form);
+
+      return <div id="text">{value || ''}</div>;
+    }
+
+    const wrapper = render(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item label="name" field="name">
+          <Input />
+        </Form.Item>
+        <Form.Item label="name" field="name2">
+          <Input />
+        </Form.Item>
+        <Demo field="name" />
+      </Form>
+    );
+
+    fireEvent.change(wrapper.find('input').item(0), {
+      target: { value: '111' },
+    });
+
+    expect(wrapper.querySelector('#text')?.textContent).toBe('111');
+
+    wrapper.rerender(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item label="name" field="name">
+          <Input />
+        </Form.Item>
+        <Form.Item label="name" field="name2">
+          <Input />
+        </Form.Item>
+        <Demo field="name2" />
+      </Form>
+    );
+
+    fireEvent.change(wrapper.find('input').item(1), {
+      target: { value: '123' },
+    });
+    expect(wrapper.querySelector('#text')?.textContent).toBe('123');
+  });
+
+  describe('form reset & shouldupdate', () => {
+    let form;
+    let renderCount = 0;
+    let render2Count = 0;
+
+    render(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item label="name" field="name" initialValue="456">
+          <Input />
+        </Form.Item>
+        <Form.Item shouldUpdate={() => false}>
+          {() => {
+            renderCount++;
+            return <div />;
+          }}
+        </Form.Item>
+
+        <Form.Item>
+          {() => {
+            render2Count++;
+            return <div />;
+          }}
+        </Form.Item>
+      </Form>
+    );
+
+    expect(renderCount).toBe(1);
+    expect(render2Count).toBe(1);
+
+    form.resetFields(['name']);
+
+    expect(renderCount).toBe(1);
+    expect(render2Count).toBeGreaterThan(1); // 保持原有行为不变，避免 breaking change
+  });
 });

@@ -26,7 +26,7 @@ const isSupportMuti = () =>
   Object.entries(mutiEllipsisAttr).every(([key, value]) => supportCss(key, value));
 
 function useCssEllipsis(props: EllipsisConfig) {
-  const { cssEllipsis, ellipsisStr, suffix, rows } = props;
+  const { cssEllipsis, ellipsisStr = '...', suffix, rows } = props;
 
   const simpleEllipsis = useMemo(() => {
     if (!cssEllipsis || (rows > 1 && !isSupportMuti())) {

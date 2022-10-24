@@ -50,7 +50,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
         role="button"
         aria-disabled={disabled}
         aria-expanded={isExpanded}
-        tabIndex={0}
+        tabIndex={disabled ? -1 : 0}
         className={cs(`${prefixCls}-header`, `${prefixCls}-header-${ctx.expandIconPosition}`, {
           [`${prefixCls}-header-disabled`]: disabled,
         })}

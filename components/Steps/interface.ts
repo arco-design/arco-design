@@ -92,7 +92,13 @@ export interface StepProps {
   customDot?: (IconDot: React.ReactNode, stepConfig: CustomDotRecord) => React.ReactNode;
   labelPlacement?: 'horizontal' | 'vertical';
   lineless?: boolean;
-  onClick?: (index: number, id: any) => void;
+  /**
+   * @zh 点击回调
+   * @en Callback when item is clicked
+   * @version `e` in `2.40.0`
+   */
+  onClick?: (index: number, id: any, e) => void;
+  onChange?: (index: number, id: any) => void;
   /**
    * @zh 指定节点的 ID，将在 onChange 回调中作为参数。
    * @en Specify the ID of the node, which will be used as a parameter in callback onChange

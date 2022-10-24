@@ -105,7 +105,6 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
-                aria-controls="arco-select-popup-0"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -117,38 +116,41 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                   class="arco-select-view"
                   title=".com"
                 >
-                  <input
-                    aria-hidden="true"
-                    autocomplete="off"
-                    class="arco-select-view-input arco-select-hidden"
-                    placeholder=".com"
-                    style="width:100%"
-                    value=".com"
-                  />
                   <span
-                    class="arco-select-view-value"
+                    class="arco-select-view-selector"
                   >
-                    .com
+                    <input
+                      aria-hidden="true"
+                      autocomplete="off"
+                      class="arco-select-view-input arco-select-hidden"
+                      placeholder=".com"
+                      style="width:100%"
+                      value=".com"
+                    />
+                    <span
+                      class="arco-select-view-value"
+                    >
+                      .com
+                    </span>
                   </span>
                   <div
                     aria-hidden="true"
                     class="arco-select-suffix"
                   >
                     <div
-                      class="arco-select-expand-icon"
+                      class="arco-select-arrow-icon"
                     >
                       <svg
                         aria-hidden="true"
-                        class="arco-icon arco-icon-expand"
+                        class="arco-icon arco-icon-down"
                         fill="none"
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="transform:rotate(-45deg)"
                         viewBox="0 0 48 48"
                       >
                         <path
-                          d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                          d="M39.6 17.443 24.043 33 8.487 17.443"
                         />
                       </svg>
                     </div>
@@ -223,7 +225,6 @@ exports[`renders Input/demo/group.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -235,38 +236,41 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             class="arco-select-view"
             title="Beijing"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              placeholder="Beijing"
-              style="width:100%"
-              value="Beijing"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Beijing
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                placeholder="Beijing"
+                style="width:100%"
+                value="Beijing"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Beijing
+              </span>
             </span>
             <div
               aria-hidden="true"
               class="arco-select-suffix"
             >
               <div
-                class="arco-select-expand-icon"
+                class="arco-select-arrow-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="arco-icon arco-icon-expand"
+                  class="arco-icon arco-icon-down"
                   fill="none"
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="transform:rotate(-45deg)"
                   viewBox="0 0 48 48"
                 >
                   <path
-                    d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
                   />
                 </svg>
               </div>
@@ -289,7 +293,6 @@ exports[`renders Input/demo/group.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-2"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -301,38 +304,41 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             class="arco-select-view"
             title="Beijing"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              placeholder="Beijing"
-              style="width:100%"
-              value="Beijing"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Beijing
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                placeholder="Beijing"
+                style="width:100%"
+                value="Beijing"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Beijing
+              </span>
             </span>
             <div
               aria-hidden="true"
               class="arco-select-suffix"
             >
               <div
-                class="arco-select-expand-icon"
+                class="arco-select-arrow-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="arco-icon arco-icon-expand"
+                  class="arco-icon arco-icon-down"
                   fill="none"
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="transform:rotate(-45deg)"
                   viewBox="0 0 48 48"
                 >
                   <path
-                    d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
                   />
                 </svg>
               </div>
@@ -384,7 +390,6 @@ exports[`renders Input/demo/group.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-3"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
@@ -396,38 +401,41 @@ exports[`renders Input/demo/group.md correctly 1`] = `
             class="arco-select-view"
             title="Beijing"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              placeholder="Beijing"
-              style="width:100%"
-              value="Beijing"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Beijing
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                placeholder="Beijing"
+                style="width:100%"
+                value="Beijing"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Beijing
+              </span>
             </span>
             <div
               aria-hidden="true"
               class="arco-select-suffix"
             >
               <div
-                class="arco-select-expand-icon"
+                class="arco-select-arrow-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="arco-icon arco-icon-expand"
+                  class="arco-icon arco-icon-down"
                   fill="none"
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="transform:rotate(-45deg)"
                   viewBox="0 0 48 48"
                 >
                   <path
-                    d="M7 26v14c0 .552.444 1 .996 1H22m19-19V8c0-.552-.444-1-.996-1H26"
+                    d="M39.6 17.443 24.043 33 8.487 17.443"
                   />
                 </svg>
               </div>
@@ -685,12 +693,11 @@ exports[`renders Input/demo/password.md correctly 1`] = `
             class="arco-input-group-suffix"
           >
             <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-eye-invisible"
+              class="arco-input-password-visibility-icon arco-icon arco-icon-eye-invisible"
               fill="none"
-              focusable="false"
               stroke="currentColor"
               stroke-width="4"
+              tabindex="0"
               viewBox="0 0 48 48"
             >
               <path
@@ -729,12 +736,11 @@ exports[`renders Input/demo/password.md correctly 1`] = `
             class="arco-input-group-suffix"
           >
             <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-eye"
+              class="arco-input-password-visibility-icon arco-icon arco-icon-eye"
               fill="none"
-              focusable="false"
               stroke="currentColor"
               stroke-width="4"
+              tabindex="0"
               viewBox="0 0 48 48"
             >
               <path
@@ -1279,6 +1285,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
     style="margin-bottom:24px"
   >
     <label
@@ -1622,7 +1629,6 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-4"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default"
@@ -1634,18 +1640,23 @@ exports[`renders Input/demo/size.md correctly 1`] = `
               class="arco-select-view"
               title=""
             >
-              <input
-                autocomplete="off"
-                class="arco-select-view-input"
-                placeholder="Please select"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value=""
-              />
               <span
-                aria-hidden="true"
-                class="arco-select-view-value arco-select-hidden"
-              />
+                class="arco-select-view-selector"
+              >
+                <input
+                  autocomplete="off"
+                  class="arco-select-view-input"
+                  placeholder="Please select"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value=""
+                />
+                <span
+                  class="arco-select-view-value arco-select-view-value-mirror"
+                >
+                  Please select
+                </span>
+              </span>
               <div
                 aria-hidden="true"
                 class="arco-select-suffix"

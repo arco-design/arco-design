@@ -20,6 +20,7 @@ const App = () => {
   return (
     <div>
       <Popconfirm
+        focusLock
         title="Are you sure you want to delete?"
         onOk={() => {
           Message.info({

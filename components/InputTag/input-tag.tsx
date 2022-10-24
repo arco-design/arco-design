@@ -260,6 +260,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     ) : null;
 
   const hasSuffix = !!(clearIcon || suffix);
+  const disableInputComponent = disabled || disableInput;
 
   // CSSTransition needs to be a direct child of TransitionGroup, otherwise the animation will NOT work
   // https://github.com/arco-design/arco-design/issues/622
@@ -289,7 +290,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         <InputComponent
           autoComplete="off"
           size={size}
-          disabled={disabled || disableInput}
+          disabled={disableInputComponent}
           readOnly={readOnly}
           ref={inputRef}
           autoFocus={autoFocus}
@@ -304,7 +305,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             await tryAddInputValueToTag();
           }}
           onFocus={(e) => {
-            if (!disabled && !readOnly) {
+            if (!disableInputComponent && !readOnly) {
               setFocused(true);
               onFocus && onFocus(e);
             }
@@ -361,8 +362,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       }}
     >
       <div className={`${prefixCls}-view`}>
-        <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
-          {draggable ? (
+        {draggable ? (
+          <UsedTransitionGroup
+            key="transitionGroupWithDrag"
+            prefixCls={prefixCls}
+            animation={animation}
+          >
             <Draggable
               itemWrapperStyle={{ display: 'inline-block' }}
               direction="horizontal"
@@ -379,10 +384,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             >
               {childrenWithAnimation}
             </Draggable>
-          ) : (
-            childrenWithAnimation
-          )}
-        </UsedTransitionGroup>
+          </UsedTransitionGroup>
+        ) : (
+          <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
+            {childrenWithAnimation}
+          </UsedTransitionGroup>
+        )}
 
         {hasSuffix && (
           <div className={`${prefixCls}-suffix`} onMouseDown={keepFocus}>

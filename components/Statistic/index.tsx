@@ -136,7 +136,9 @@ function Statistic(baseProps: StatisticProps, ref) {
               valueFormatted(value, value)
             ) : (
               <span className={`${prefixCls}-value-int`}>
-                <span className={`${prefixCls}-value-prefix`}>{prefix}</span>
+                {prefix !== null && prefix !== undefined ? (
+                  <span className={`${prefixCls}-value-prefix`}>{prefix}</span>
+                ) : null}
                 {valueFormatted(value, int)}
               </span>
             )}
@@ -144,7 +146,9 @@ function Statistic(baseProps: StatisticProps, ref) {
             {decimal !== undefined || suffix ? (
               <span className={`${prefixCls}-value-decimal`}>
                 {isNumber(Number(value)) && decimal !== undefined && `.${decimal}`}
-                {suffix && <span className={`${prefixCls}-value-suffix`}>{suffix}</span>}
+                {suffix !== null && suffix !== undefined ? (
+                  <span className={`${prefixCls}-value-suffix`}>{suffix}</span>
+                ) : null}
               </span>
             ) : null}
           </div>

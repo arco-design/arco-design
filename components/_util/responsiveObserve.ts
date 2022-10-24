@@ -1,10 +1,10 @@
 // https://github.com/ant-design/ant-design/blob/master/components/_util/responsiveObserve.ts
 
-export type Breakpoint = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+export type Breakpoint = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 export type BreakpointMap = Partial<Record<Breakpoint, string>>;
 export type ScreenMap = Partial<Record<Breakpoint, boolean>>;
 
-export const responsiveArray: Breakpoint[] = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
+export const responsiveArray: Breakpoint[] = ['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
 
 export const responsiveMap: BreakpointMap = {
   xs: '(max-width: 575px)',
@@ -13,6 +13,7 @@ export const responsiveMap: BreakpointMap = {
   lg: '(min-width: 992px)',
   xl: '(min-width: 1200px)',
   xxl: '(min-width: 1600px)',
+  xxxl: '(min-width: 2000px)',
 };
 
 type SubscribeFunc = (screens: ScreenMap, breakpointChecked: Breakpoint) => void;

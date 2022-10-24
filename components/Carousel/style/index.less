@@ -323,6 +323,10 @@
       cursor: pointer;
       z-index: 2;
 
+      &:focus-visible {
+        box-shadow: 0 0 0 2px @carousel-arrow-color-box-shadow;
+      }
+
       > svg {
         color: @carousel-arrow-color-icon;
         font-size: @carousel-arrow-font-size;

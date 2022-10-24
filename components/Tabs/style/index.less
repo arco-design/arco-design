@@ -102,6 +102,18 @@
       background-color: @tabs-line-color-header-border;
       display: block;
     }
+
+    &-bottom {
+      &::before {
+        top: 0;
+      }
+
+      .@{tabs-prefix-cls}-header {
+        &-ink {
+          top: 0;
+        }
+      }
+    }
   }
 
   &-header-wrapper {
@@ -121,6 +133,7 @@
       display: flex;
       align-items: center;
       line-height: @tabs-size-default-header-height;
+      flex-shrink: 0;
 
       .@{tabs-prefix-cls}-add-icon {
         padding-left: 0;
@@ -295,6 +308,7 @@
   &-header-nav-card,
   &-header-nav-card-gutter {
     .@{tabs-prefix-cls}-add-icon {
+      color: @tabs-color-icon;
       height: @tabs-size-default-header-height;
     }
   }
@@ -712,7 +726,7 @@
           background-color: var(~'@{arco-cssvars-prefix}-color-fill-3');
         }
 
-        &:hover {
+        &:not(&-disabled):hover {
           background-color: var(~'@{arco-cssvars-prefix}-color-fill-3');
         }
       }

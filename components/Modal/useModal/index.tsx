@@ -1,5 +1,5 @@
 import React, { createRef, ReactElement } from 'react';
-import ContextHolderElement, { HolderRef } from './contextHolder';
+import ContextHolderElement, { HolderRef } from '../../_util/contextHolder';
 import HookModal, { HookModalRef } from './hookModal';
 import { normalizeConfig, ConfirmProps } from '../confirm';
 import { destroyList } from '../config';
@@ -36,21 +36,25 @@ function useModal(): [modalFunctionsType, ReactElement] {
       <HookModal key={uuid} ref={modalRef} {...normalizeConfig(config)} afterClose={afterClose} />
     );
 
-    contextHolderRef.current.addInstance(modal);
+    contextHolderRef.current?.addInstance(modal);
 
     function removeModalInstance() {
-      contextHolderRef.current.removeInstance(modal);
+      contextHolderRef.current?.removeInstance(modal);
     }
 
     function close() {
-      modalRef.current.close();
+      modalRef.current?.close();
+    }
+
+    function update(config) {
+      modalRef.current?.update(config);
     }
 
     destroyList.push(close);
 
     return {
       close,
-      update: modalRef.current?.update,
+      update,
     };
   }
 

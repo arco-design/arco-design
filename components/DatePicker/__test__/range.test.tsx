@@ -312,4 +312,26 @@ describe('RangePicker', () => {
 
     expect(component.find('.arco-picker-separator')[0].textContent).toBe('to');
   });
+
+  it('change disabled', () => {
+    const component = render(<RangePicker disabled={false} />);
+
+    component.rerender(
+      <RangePicker disabled={[true, false]} value={['2020-04-01 00:00:00']} popupVisible />
+    );
+
+    fireEvent.click(getInput(component, 0));
+
+    expect(
+      component.find('.arco-picker-input')[1].classList.contains('arco-picker-input-active')
+    ).toBeTruthy();
+
+    expect(getDateCell(component, 0, 1).className).toBe(
+      'arco-picker-cell arco-picker-cell-disabled'
+    );
+
+    expect(getDateCell(component, 0, 2).className).toBe(
+      'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-selected arco-picker-cell-range-start'
+    );
+  });
 });

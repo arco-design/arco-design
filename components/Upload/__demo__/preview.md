@@ -9,18 +9,23 @@ title:
 
 点击图片预览按钮时，可以`onPreview`中进行预览逻辑。
 
+可以通过 `imagePreview` 属性启用内置的图片预览。（`imagePreview` 属性在 `2.41.0` 支持）
+
 ## en-US
 
 `onPreview` will be executed when user click preview icon.
 
+The built-in image preview can be enabled via the `imagePreview` property. (The `imagePreview` property is supported in `2.41.0`)
+
 ```js
-import { Upload, Modal } from '@arco-design/web-react';
+import { Upload, Message } from '@arco-design/web-react';
 
 const App = () => {
   return (
     <div>
       <Upload
         multiple
+        imagePreview
         defaultFileList={[
           {
             uid: '-2',
@@ -36,23 +41,7 @@ const App = () => {
         action="/"
         listType="picture-card"
         onPreview={(file) => {
-          Modal.info({
-            title: '预览',
-            content: (
-              <div
-                style={{
-                  textAlign: 'center',
-                }}
-              >
-                <img
-                  style={{
-                    maxWidth: '100%',
-                  }}
-                  src={file.url || URL.createObjectURL(file.originFile)}
-                />
-              </div>
-            ),
-          });
+          Message.info('click preview icon')
         }}
       />
     </div>

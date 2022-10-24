@@ -51,7 +51,7 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
       <div
         class="arco-comment-actions arco-comment-actions-align-right"
       >
-        <span
+        <button
           class="custom-comment-action"
         >
           <svg
@@ -71,8 +71,8 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
             />
           </svg>
           84
-        </span>
-        <span
+        </button>
+        <button
           class="custom-comment-action"
         >
           <svg
@@ -92,8 +92,8 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
             />
           </svg>
           4
-        </span>
-        <span
+        </button>
+        <button
           class="custom-comment-action"
         >
           <svg
@@ -110,7 +110,7 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
             />
           </svg>
            Reply
-        </span>
+        </button>
       </div>
     </div>
   </div>
@@ -168,7 +168,7 @@ exports[`renders Comment/demo/basic.md correctly 1`] = `
       <div
         class="arco-comment-actions arco-comment-actions-align-left"
       >
-        <span
+        <button
           class="custom-comment-action"
         >
           <svg
@@ -185,8 +185,8 @@ exports[`renders Comment/demo/basic.md correctly 1`] = `
             />
           </svg>
           83
-        </span>
-        <span
+        </button>
+        <button
           class="custom-comment-action"
         >
           <svg
@@ -203,8 +203,8 @@ exports[`renders Comment/demo/basic.md correctly 1`] = `
             />
           </svg>
           3
-        </span>
-        <span
+        </button>
+        <button
           class="custom-comment-action"
         >
           <svg
@@ -221,7 +221,7 @@ exports[`renders Comment/demo/basic.md correctly 1`] = `
             />
           </svg>
            Reply
-        </span>
+        </button>
       </div>
     </div>
   </div>
@@ -678,7 +678,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                   <div
                     class="arco-comment-actions arco-comment-actions-align-left"
                   >
-                    <span
+                    <button
                       class="custom-comment-action"
                     >
                       <svg
@@ -695,8 +695,8 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                         />
                       </svg>
                       13
-                    </span>
-                    <span
+                    </button>
+                    <button
                       class="custom-comment-action"
                     >
                       <svg
@@ -713,8 +713,8 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                         />
                       </svg>
                       3
-                    </span>
-                    <span
+                    </button>
+                    <button
                       class="custom-comment-action"
                     >
                       <svg
@@ -731,7 +731,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                         />
                       </svg>
                        Reply
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -788,7 +788,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                   <div
                     class="arco-comment-actions arco-comment-actions-align-left"
                   >
-                    <span
+                    <button
                       class="custom-comment-action"
                     >
                       <svg
@@ -805,8 +805,8 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                         />
                       </svg>
                       12
-                    </span>
-                    <span
+                    </button>
+                    <button
                       class="custom-comment-action"
                     >
                       <svg
@@ -823,8 +823,8 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                         />
                       </svg>
                       1
-                    </span>
-                    <span
+                    </button>
+                    <button
                       class="custom-comment-action"
                     >
                       <svg
@@ -841,7 +841,7 @@ exports[`renders Comment/demo/list.md correctly 1`] = `
                         />
                       </svg>
                        Reply
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>

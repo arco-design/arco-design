@@ -269,7 +269,6 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -281,18 +280,22 @@ exports[`renders BackTop/demo/easing.md correctly 1`] = `
           class="arco-select-view"
           title="linear"
         >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="linear"
-          />
           <span
-            class="arco-select-view-value"
+            class="arco-select-view-selector"
           >
-            linear
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="linear"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              linear
+            </span>
           </span>
           <div
             aria-hidden="true"

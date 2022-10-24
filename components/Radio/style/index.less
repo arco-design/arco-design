@@ -13,8 +13,14 @@
     top: 0;
     left: 0;
 
-    &:focus + .@{prefix}-radio-icon-hover::before {
+    &:focus-visible + .@{prefix}-radio-icon-hover::before {
       background-color: @icon-hover-color-bg;
+      opacity: 1;
+    }
+
+    &:focus-visible + .@{prefix}-radio-button-inner {
+      box-shadow: inset 0 0 0 2px @radio-color-box-shadow;
+      border-radius: inherit;
     }
   }
 }

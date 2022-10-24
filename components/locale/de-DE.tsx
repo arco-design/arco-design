@@ -66,7 +66,7 @@ const Calendar = {
 
 export default {
   locale: 'de-DE',
-  dateLocale: 'de',
+  dayjsLocale: 'de',
   Calendar,
   DatePicker: {
     Calendar,

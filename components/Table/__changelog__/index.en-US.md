@@ -1,3 +1,27 @@
+## 2.40.2
+
+2022-09-30
+
+### 💅 Style
+
+- Fixed the issue that when the `Table` component expands a row and nested a sub table, the cell transparent problem occurs when the subtable opens fixed column.([#1433](https://github.com/arco-design/arco-design/pull/1433))
+
+## 2.40.1
+
+2022-09-23
+
+### 🐛 BugFix
+
+- Fix the bug that when Table is turned off `checkStrictly`, passing in non-existing `selectedKeys` will  report an error([#1420](https://github.com/arco-design/arco-design/pull/1420))
+
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fix the problem that after the `Table` component updates `data`, the `selectedRows` is not updated in time when the selectedRows is selected next time.([#1341](https://github.com/arco-design/arco-design/pull/1341))
+
 ## 2.39.0
 
 2022-08-12

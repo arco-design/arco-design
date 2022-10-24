@@ -4,6 +4,7 @@ import { render, fireEvent } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Tabs, { TabsProps } from '..';
+import { ConfigProvider } from '../..';
 
 mountTest(Tabs);
 componentConfigTest(Tabs, 'Tabs');
@@ -73,6 +74,20 @@ describe('Tabs', () => {
       fireEvent.click(tabBars[1]);
     });
     expect(mockFn.mock.calls.length).toBe(1);
+  });
+
+  it('should show panel in right direction', () => {
+    const mockFn = jest.fn();
+    const wrapper = render(
+      <ConfigProvider rtl>
+        {createDemo({
+          onChange: mockFn,
+        })}
+      </ConfigProvider>
+    );
+    const tabBars = wrapper.find('.arco-tabs-content-inner');
+    expect(tabBars[0].style?.marginRight).not.toBe('');
+    expect(tabBars[0].style?.marginLeft).toBe('');
   });
 
   it('onEditTab ', () => {

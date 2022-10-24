@@ -1,3 +1,35 @@
+## 2.40.2
+
+2022-09-30
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件在 React 18  下卸载时控制台出现 warning 的 bug([#1440](https://github.com/arco-design/arco-design/pull/1440))
+
+## 2.40.1
+
+2022-09-23
+
+### 🐛 问题修复
+
+- 修复 `useModal` 的 `holderRef` 可能不存在的 bug([#1418](https://github.com/arco-design/arco-design/pull/1418))
+
+## 2.39.3
+
+2022-09-02
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件在 `iframe` 内强制锁定焦点导致父页面无法获取焦点的 bug。([#1359](https://github.com/arco-design/arco-design/pull/1359))
+
+## 2.39.1
+
+2022-08-19
+
+### 🐛 问题修复
+
+- 修复通过 `useModal` 创建弹窗实例时返回的方法 `update`为 `undefined` 的bug([#1300](https://github.com/arco-design/arco-design/pull/1300))
+
 ## 2.35.0
 
 2022-06-10

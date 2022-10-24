@@ -108,6 +108,7 @@ function App() {
     <div style={{ maxWidth: 650 }}>
       <Form
         disabled
+        autoComplete="off"
         ref={formRef}
         {...formItemLayout}
         size={size}

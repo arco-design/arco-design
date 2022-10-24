@@ -1,3 +1,11 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Typography` component would jitter in the folding calculation([#1366](https://github.com/arco-design/arco-design/pull/1366))
+
 ## 2.37.1
 
 2022-07-14

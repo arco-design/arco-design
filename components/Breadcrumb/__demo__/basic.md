@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 
+title:
   zh-CN: 基础用法
   en-US: Basic
 ---
@@ -22,8 +22,8 @@ const App = () => {
     <div>
       <Breadcrumb>
         <BreadcrumbItem>Home</BreadcrumbItem>
-        <BreadcrumbItem>
-          <a href="#">Channel</a>
+        <BreadcrumbItem href="#">
+          Channel
         </BreadcrumbItem>
         <BreadcrumbItem>News</BreadcrumbItem>
       </Breadcrumb>

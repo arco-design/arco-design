@@ -15,6 +15,8 @@ exports[`renders Calendar/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-calendar-header-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -37,6 +39,8 @@ exports[`renders Calendar/demo/basic.md correctly 1`] = `
         </div>
         <div
           class="arco-calendar-header-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -66,6 +70,7 @@ exports[`renders Calendar/demo/basic.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"
@@ -1031,6 +1036,8 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
       >
         <div
           class="arco-calendar-header-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -1053,6 +1060,8 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
         </div>
         <div
           class="arco-calendar-header-icon"
+          role="button"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -1082,6 +1091,7 @@ exports[`renders Calendar/demo/date-content.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"
@@ -3157,7 +3167,6 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-small arco-calendar-header-value-year"
@@ -3167,18 +3176,22 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
           <div
             class="arco-select-view"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
-              tabindex="-1"
-              value="2020"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              2020
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="2020"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                2020
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -3206,7 +3219,6 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
         </div>
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-small arco-calendar-header-value-month"
@@ -3216,18 +3228,22 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
           <div
             class="arco-select-view"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
-              tabindex="-1"
-              value="4"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              4
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="4"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                4
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -3267,6 +3283,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"

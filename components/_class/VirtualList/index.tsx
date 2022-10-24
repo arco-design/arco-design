@@ -560,6 +560,12 @@ const VirtualList: React.ForwardRefExoticComponent<
               itemTop += getCachedItemHeight(getItemKeyByIndex(i));
             }
             const itemBottom = itemTop + indexItemHeight;
+            const itemMiddle = itemTop + indexItemHeight / 2;
+
+            // If item is visible, skip scrolling
+            if (itemMiddle > scrollTop && itemMiddle < clientHeight + scrollTop) {
+              return;
+            }
 
             if (align === 'nearest') {
               if (itemTop < scrollTop) {

@@ -24,6 +24,7 @@ function App() {
       form={form}
       style={{ width: 320 }}
       wrapperCol={{ span: 24 }}
+      autoComplete="off"
       onValuesChange={(v, vs) => {
         console.log(v, vs);
       }}
@@ -35,8 +36,24 @@ function App() {
       <FormItem field="name" rules={[{ required: true, message: 'username is required' }]}>
         <Input placeholder="please enter your username" />
       </FormItem>
-      <FormItem field="phone" rules={[{ required: true, message: 'phone number is required' }]}>
-        <Input placeholder="please enter your phone number" />
+      <FormItem field="password" rules={[{ required: true, message: 'password is required' }]}>
+        <Input placeholder="please enter your password" />
+      </FormItem>
+      <FormItem
+        field="confirm_password"
+        dependencies={['password']}
+        rules={[{
+          validator: (v, cb) => {
+            if (!v) {
+              return cb('confirm_password is required')
+            } else if (form.getFieldValue('password') !== v) {
+              return cb('confirm_password must be equal with password')
+            }
+            cb(null)
+          }
+        }]}
+      >
+        <Input placeholder="please confirm your password" />
       </FormItem>
       <FormItem>
         <Button type="primary" htmlType="submit" long>

@@ -798,6 +798,7 @@ Array [
         >
           <span
             class="list-demo-actions-button"
+            tabindex="0"
           >
             More
             <svg
@@ -2432,6 +2433,7 @@ exports[`renders List/demo/size.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:20px;border-radius:4px"
   >
     <label

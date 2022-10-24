@@ -7,6 +7,7 @@ import IconEyeInvisible from '../../icon/react-icon/IconEyeInvisible';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 const Password = React.forwardRef<RefInputType, InputPasswordProps>(
   (props: InputPasswordProps, ref) => {
@@ -15,6 +16,7 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
       value: props.visibility,
     });
     const { getPrefixCls } = useContext(ConfigContext);
+    const getKeyboardEvents = useKeyboardEvent();
     const { className, visibilityToggle, onVisibilityChange, ...rest } = props;
 
     const prefixCls = getPrefixCls('input-password');
@@ -35,12 +37,19 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
 
     let icon = props.suffix;
 
+    const handleClickVisibility = () => {
+      onClickVisibility(!visibility);
+    };
+
     if (visibilityToggle) {
       const IconProps = {
-        onClick: () => onClickVisibility(!visibility),
+        onClick: handleClickVisibility,
         // 预防focus丢失
         onMouseDown: (e) => e.preventDefault(),
         onMouseUp: (e) => e.preventDefault(),
+        ...getKeyboardEvents({
+          onPressEnter: handleClickVisibility,
+        }),
       };
 
       if (props.suffix) {
@@ -48,7 +57,17 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
       } else {
         const IconComponent = visibility ? IconEye : IconEyeInvisible;
 
-        icon = <IconComponent {...IconProps} />;
+        icon = (
+          <IconComponent
+            {...IconProps}
+            {...{
+              focusable: undefined,
+              'aria-hidden': undefined,
+              tabIndex: 0,
+              className: `${prefixCls}-visibility-icon`,
+            }}
+          />
+        );
       }
     }
 

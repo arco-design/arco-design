@@ -77,7 +77,7 @@ describe('Form.useWatch', () => {
       });
     });
 
-    expect(wrapper.querySelector('#name').textContent).toBe('aaa');
+    expect(wrapper.querySelector('#name')?.textContent).toBe('aaa');
 
     act(() => {
       fireEvent.change(wrapper.find('input')[1], {
@@ -85,7 +85,7 @@ describe('Form.useWatch', () => {
       });
     });
 
-    expect(wrapper.querySelector('#age').textContent).toBe('bbb');
+    expect(wrapper.querySelector('#age')?.textContent).toBe('bbb');
   });
 
   it('form.useWatch dymic ', async () => {
@@ -99,8 +99,8 @@ describe('Form.useWatch', () => {
 
     await sleep(10);
 
-    expect(wrapper.querySelector('#name').textContent).toBe('aaa');
-    expect(wrapper.querySelector('#dymaic').textContent).toBe('');
+    expect(wrapper.querySelector('#name')?.textContent).toBe('aaa');
+    expect(wrapper.querySelector('#dymaic')?.textContent).toBe('');
 
     act(() => {
       fireEvent.change(wrapper.find('input')[2], {
@@ -108,9 +108,9 @@ describe('Form.useWatch', () => {
       });
     });
 
-    expect(wrapper.querySelector('#dymaic').textContent).toBe('dymaic');
+    expect(wrapper.querySelector('#dymaic')?.textContent).toBe('dymaic');
 
-    expect(JSON.parse(wrapper.querySelector('#values').textContent || '')).toEqual({
+    expect(JSON.parse(wrapper.querySelector('#values')?.textContent || '')).toEqual({
       dymaic: 'dymaic',
       name: 'aaa',
     });
@@ -125,7 +125,7 @@ describe('Form.useWatch', () => {
       });
     });
 
-    expect(wrapper.querySelector('#name').textContent).toBe('aaa');
+    expect(wrapper.querySelector('#name')?.textContent).toBe('aaa');
 
     act(() => {
       fireEvent.change(wrapper.find('input')[1], {
@@ -134,7 +134,7 @@ describe('Form.useWatch', () => {
     });
     await sleep(10);
 
-    expect(wrapper.querySelector('#age').textContent).toBe('bbb');
+    expect(wrapper.querySelector('#age')?.textContent).toBe('bbb');
   });
 });
 
