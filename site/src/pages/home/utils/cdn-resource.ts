@@ -1,6 +1,5 @@
 export const coverArcoMaterial =
-  '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/457119e5ffbf603283edfecc421cfa85.png~tplv-uwbnlip3yd-png.png';
-
+  '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/arco-material.png~tplv-uwbnlip3yd-png.png';
 export const bannerHeroPng = {
   heroBanner1:
     '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/31db0350b0b5a65b3137d52de56e39d0.png~tplv-uwbnlip3yd-png.png',

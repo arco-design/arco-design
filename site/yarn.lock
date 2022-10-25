@@ -324,39 +324,39 @@
   dependencies:
     color "^3.1.3"
 
-"@arco-design/web-react@^2.38.1":
-  version "2.38.1"
-  resolved "https://registry.npmjs.org/@arco-design/web-react/-/web-react-2.38.1.tgz#facc7688f3e25c1f779d35c51ab463676b92ddcb"
-  integrity sha512-uOePl7RS4j/fm2xgq32aCz1ARRxvvh3+rvQOQfOtjkj0j2R53fM0N8kfFpvT7sdkGNiExmyH1+IyFsC5N2W02g==
+"@arco-design/web-react@^2.37.0":
+  version "2.40.2"
+  resolved "https://registry.npmjs.org/@arco-design/web-react/-/web-react-2.40.2.tgz#6e1c0004ffa03c4d738aaf814bf63019a4552ae5"
+  integrity sha512-6I95ImJb+1WzpS5rXNkSV29atCkMCO4PCAn+5MMcDtQiiOrzLc9sJxCRY1/oNrStKZHnmvV+w6zWCr2aL3N5Hw==
   dependencies:
     "@arco-design/color" "^0.4.0"
     "@babel/runtime" "^7.5.5"
     b-tween "^0.3.3"
-    b-validate "^1.4.0"
+    b-validate "^1.4.2"
     compute-scroll-into-view "^1.0.17"
     dayjs "^1.10.5"
     lodash "^4.17.21"
     number-precision "^1.3.1"
-    react-focus-lock "^2.2.1"
+    react-focus-lock "^2.9.1"
     react-transition-group "^4.3.0"
     resize-observer-polyfill "^1.5.1"
     scroll-into-view-if-needed "2.2.20"
     shallowequal "^1.1.0"
 
-"@arco-materials/site-footer@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.2.0.tgz#4fe35ade4029a3102f8de2e62bdf5ea28228785a"
-  integrity sha512-0wu7go1uSxviNqq0Nw+QZijY8usdD4qhv2PxVJHcSvX6fJLDSgnk6Z02BO+j6sIC4PvpwyXFvokzmKuhQzAoyg==
+"@arco-materials/site-footer@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.3.0.tgz#708a19dc540c80625bffe565eb7015f2e9d7bad8"
+  integrity sha512-D83p1ugL69WJcSARcDqOHcVsBi088ZFAvnxcCtc7ogxbWJmCI/WZFzxibmtLCdyZab5RgE8R87JyOiQasQOKRA==
   dependencies:
     classnames "^2.2.6"
 
-"@arco-materials/site-navbar@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.6.0.tgz#927de4808f416ce29eb16584c9d79a7c243494ba"
-  integrity sha512-SDqZOhHkFsGFKcxzJo0RO5p3RaxdiR2W/74gOCH93FtKFSlHyghythq0xlG/Qza8jXIiXVoxZcxSkjEP3EQ6xg==
+"@arco-materials/site-navbar@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar/-/site-navbar-1.7.0.tgz#6435080c163751053b533d0cca81cdb25c2b590e"
+  integrity sha512-2tzDDspwVOmjAWOSFOwoXOEgsaIatzNd1Ra4M0cuuY0YE8pVU6YxjHLfcAp39I3oOrxuoWlkMcXVnRfui6jxsA==
   dependencies:
     "@antv/g2" "^4.1.12"
-    "@arco-design/web-react" "^2.38.1"
+    "@arco-design/web-react" "^2.37.0"
     "@arco-materials/site-utils" "^1.2.0"
     "@docsearch/react" "^3.0.0-alpha.42"
     animejs "^3.2.1"
@@ -1706,10 +1706,10 @@ b-tween@^0.3.3:
   resolved "https://registry.npmjs.org/b-tween/-/b-tween-0.3.3.tgz#7a93ed199c98cd41a33ba4c711a0fa7e86db3fa2"
   integrity sha512-oEHegcRpA7fAuc9KC4nktucuZn2aS8htymCPcP3qkEGPqiBH+GfqtqoG2l7LxHngg6O0HFM7hOeOYExl1Oz4ZA==
 
-b-validate@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/b-validate/-/b-validate-1.4.1.tgz#908bb3997d45780e8e0ca501d70361ff9f75e374"
-  integrity sha512-X6ImDku5YY8NfWTh/hX8CAaronWnNXpb159cqs6lDWLtI4OWiehZ4B0NshfatTuKt1HIeNq9PObE/Xl5YoJYUg==
+b-validate@^1.4.2:
+  version "1.4.3"
+  resolved "https://registry.npmjs.org/b-validate/-/b-validate-1.4.3.tgz#ae7e8132ecff793da98597908140f8bbda32449d"
+  integrity sha512-du2f0NOvfG7DwNLMmsRT+F/7VOeZfClOkxQN60JZFcLq0FwRC/+96HqpFUnFu6dBqNeyZnw2cl/0ydtCLnPNEg==
 
 babel-plugin-dynamic-import-node@^2.3.3:
   version "2.3.3"
@@ -4281,7 +4281,7 @@ react-fast-compare@^3.1.1:
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-focus-lock@^2.2.1:
+react-focus-lock@^2.9.1:
   version "2.9.1"
   resolved "https://registry.npmjs.org/react-focus-lock/-/react-focus-lock-2.9.1.tgz#094cfc19b4f334122c73bb0bff65d77a0c92dd16"
   integrity sha512-pSWOQrUmiKLkffPO6BpMXN7SNKXMsuOakl652IBuALAu1esk+IcpJyM+ALcYzPTTFz1rD0R54aB9A4HuP5t1Wg==
