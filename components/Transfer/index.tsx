@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { CSSProperties, useContext, useMemo } from 'react';
 import { ConfigContext } from '../ConfigProvider';
 import { TransferProps, TransferListProps, TransferItem, TransferListType } from './interface';
 import cs from '../_util/classNames';
@@ -29,7 +29,6 @@ function Transfer(baseProps: TransferProps, ref) {
     style,
     className,
     children,
-    listStyle,
     dataSource,
     defaultTargetKeys,
     defaultSelectedKeys,
@@ -188,7 +187,7 @@ function Transfer(baseProps: TransferProps, ref) {
           return (
             <Button
               key={index}
-              tabIndex={-1}
+              tabIndex={_disabled ? -1 : undefined}
               aria-label={`move selected ${to === 'target' ? 'right' : 'left'}`}
               type="secondary"
               size="small"
@@ -208,11 +207,26 @@ function Transfer(baseProps: TransferProps, ref) {
   const renderList = (listType: TransferListType) => {
     const info = listType === 'source' ? sourceInfo : targetInfo;
     const isTarget = listType === 'target';
+    const usedRestProps = { ...restProps };
+
+    Object.entries(usedRestProps).forEach(([key, value]) => {
+      const propertiesCanBeArray = [
+        'searchPlaceholder',
+        'showSearch',
+        'showFooter',
+        'pagination',
+        'listStyle',
+      ];
+      if (propertiesCanBeArray.indexOf(key) > -1) {
+        usedRestProps[key] = Array.isArray(value) ? value[listType === 'source' ? 0 : 1] : value;
+      }
+    });
+
     return (
       <TransferList
         {...info}
-        {...restProps}
-        style={listStyle}
+        {...(usedRestProps as TransferListProps)}
+        style={usedRestProps.listStyle as CSSProperties}
         prefixCls={prefixCls}
         className={`${prefixCls}-view-${listType}`}
         listType={listType}

@@ -1,4 +1,6 @@
-import { version } from '../../package.json';
+import { version, dependencies } from '../../package.json';
+let arcoVersion = dependencies['@arco-design/web-react'] || version;
+arcoVersion = arcoVersion.replace('^', '');
 
 export default {
   joinChats: [
@@ -13,7 +15,7 @@ export default {
   ],
   versions: [
     { version: '1.x', link: 'https://arco.bytedance.net/react/1.x/docs/start' },
-    { version, link: 'https://arco.design' },
+    { version: arcoVersion, link: 'https://arco.design' },
   ],
   defaultVersion: version,
   loginHref: `/login?redirectUrl=${location.href}`,

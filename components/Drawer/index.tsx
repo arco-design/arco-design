@@ -190,7 +190,7 @@ function Drawer(baseProps: DrawerProps, ref) {
 
   // Only enable FocusLock when drawer is fully opened, to avoid element shaking.
   const dom = innerFocusLock ? (
-    <FocusLock as="span" disabled={!isOpened} autoFocus={innerAutoFocus}>
+    <FocusLock as="span" disabled={!isOpened} crossFrame={false} autoFocus={innerAutoFocus}>
       {element}
     </FocusLock>
   ) : (

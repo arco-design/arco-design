@@ -23,7 +23,7 @@
 |childrenPrefix|会在打开状态给元素加上一个类，格式为 `${childrenPrefix}-open`。|string |`-`|-|
 |color|弹出层背景色|string |`-`|2.22.0|
 |position|弹出框的方位，有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
-|trigger|触发方式，目前仅支持 `hover`|[TriggerProps](trigger#trigger)['trigger'] |`hover`|-|
+|trigger|触发方式|[TriggerProps](trigger#trigger)['trigger'] |`hover`|-|
 |content|弹出的内容|ReactNode |`-`|-|
 |title|标题|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|

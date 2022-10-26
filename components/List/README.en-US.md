@@ -68,17 +68,7 @@ type ListGridProps = {
 } & Pick<RowProps, "gutter" | "justify" | "align"> &
   Pick<
     ColProps,
-    | "span"
-    | "offset"
-    | "order"
-    | "pull"
-    | "push"
-    | "xs"
-    | "sm"
-    | "md"
-    | "lg"
-    | "xl"
-    | "xxl"
+    "span" | "offset" | "order" | "pull" | "push" | GridResponsiveBreakpoint
   >;
 ```
 

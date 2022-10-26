@@ -1,3 +1,27 @@
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed `DatePicker` component error in `de-DE` language.([#1358](https://github.com/arco-design/arco-design/pull/1358))
+
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fix the bug that the `DatePicker.RangePicker` component dynamically modifies `disabled`, and the disabled date is not updated in time.([#1336](https://github.com/arco-design/arco-design/pull/1336))
+
+## 2.39.1
+
+2022-08-19
+
+### 🐛 BugFix
+
+- Fixed the bug that the `panelRender` of the `DatePicker.RangePicker` component did not work.([#1293](https://github.com/arco-design/arco-design/pull/1293))
+
 ## 2.39.0
 
 2022-08-12

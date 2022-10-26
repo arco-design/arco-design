@@ -136,7 +136,7 @@ describe('FormList test', () => {
         ],
       });
 
-      const removeBtn = getItems()[0].querySelector('.remove-button');
+      const removeBtn = getItems()[0].querySelector('.remove-button') as Element;
       fireEvent.click(removeBtn);
 
       act(() => {});
@@ -159,7 +159,7 @@ describe('FormList test', () => {
     }
     test();
 
-    fireEvent.click(wrapper.querySelector('.reset-button'));
+    fireEvent.click(wrapper.querySelector('.reset-button') as Element);
 
     // 重置后回到初始状态，再次执行测试case
     test();
@@ -184,7 +184,7 @@ describe('FormList test', () => {
       };
       expect(getItems()).toHaveLength(3);
 
-      const addButton = wrapper.querySelector('.add-button-A');
+      const addButton = wrapper.querySelector('.add-button-A') as Element;
 
       fireEvent.click(addButton);
       act(() => {});
@@ -196,7 +196,7 @@ describe('FormList test', () => {
       });
 
       let curValues = formRef.getFieldsValue().users;
-      const removeBtn = getItems()[0].querySelector('.remove-button');
+      const removeBtn = getItems()[0].querySelector('.remove-button') as Element;
 
       act(() => {
         fireEvent.click(removeBtn);
@@ -210,7 +210,7 @@ describe('FormList test', () => {
       curValues = formRef.getFieldsValue().users;
 
       act(() => {
-        fireEvent.click(wrapper.querySelector('.add-button'));
+        fireEvent.click(wrapper.querySelector('.add-button') as Element);
       });
 
       expect(getItems()).toHaveLength(4);
@@ -269,7 +269,7 @@ describe('FormList test', () => {
     };
     expect(getItems()).toHaveLength(0);
 
-    const addButton = wrapper.querySelector('.add-button');
+    const addButton = wrapper.querySelector('.add-button') as Element;
     // 再添加一个用户
     fireEvent.click(addButton);
     act(() => {});
@@ -285,7 +285,7 @@ describe('FormList test', () => {
     act(() => {});
 
     expect(getItems()).toHaveLength(2);
-    const removeBtn = getItems()[0].querySelector('.remove-button');
+    const removeBtn = getItems()[0].querySelector('.remove-button') as Element;
     fireEvent.click(removeBtn);
 
     act(() => {});
@@ -400,7 +400,7 @@ describe('FormList test', () => {
 
     expect(getItems()).toHaveLength(1);
 
-    fireEvent.click(wrapper.querySelector('.arco-select-view'));
+    fireEvent.click(wrapper.querySelector('.arco-select-view') as Element);
 
     fireEvent.click(wrapper.find('.arco-select-option')[1]);
 
@@ -446,7 +446,7 @@ describe('FormList test', () => {
     };
 
     expect(getItems()).toHaveLength(4);
-    const moveBtn = wrapper.querySelector('.move-button');
+    const moveBtn = wrapper.querySelector('.move-button') as Element;
 
     fireEvent.click(moveBtn);
 
@@ -475,7 +475,7 @@ describe('FormList test', () => {
 
     expect(getItems()).toHaveLength(1);
 
-    const moveBtn = wrapper.querySelector('.remove-button');
+    const moveBtn = wrapper.querySelector('.remove-button') as Element;
 
     act(() => {
       fireEvent.click(moveBtn);

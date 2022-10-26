@@ -61,6 +61,10 @@ export interface CascaderProps<T = any>
    * @en Set mode
    */
   mode?: 'multiple';
+  /**
+   * @zh 可以接受所有 Trigger 组件的 Props
+   * @en All `Trigger` component props
+   */
   triggerProps?: Partial<TriggerProps>;
   /**
    * @zh

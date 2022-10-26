@@ -1,3 +1,19 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- `Grid` responsive breakpoints support `xxxl` (width > 2000px).([#1396](https://github.com/arco-design/arco-design/pull/1396))
+
+## 2.39.1
+
+2022-08-19
+
+### 🐛 BugFix
+
+- Fix the bug that setting `md = 0` in the `Grid.Col` would cause it to not display on larger window sizes.([#1307](https://github.com/arco-design/arco-design/pull/1307))
+
 ## 2.28.2
 
 2022-01-21

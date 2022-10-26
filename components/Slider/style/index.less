@@ -161,6 +161,10 @@
       }
     }
 
+    &:focus-visible::after {
+      box-shadow: 0 0 0 2px @slider-color-box-shadow-button_focus;
+    }
+
     .@{slider-prefix}-road-vertical & {
       top: unset;
       bottom: 0;

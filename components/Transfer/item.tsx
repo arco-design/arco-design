@@ -5,6 +5,7 @@ import IconHover from '../_class/icon-hover';
 import Checkbox from '../Checkbox';
 import IconClose from '../../icon/react-icon/IconClose';
 import IconDragDotVertical from '../../icon/react-icon/IconDragDotVertical';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 type ActiveStatus = 'none' | 'dragged' | 'dragging';
 
@@ -27,6 +28,7 @@ function TransferItem(props: TransferItemProps) {
     onDragOver,
     onDrop,
   } = props;
+  const getKeyboardEvents = useKeyboardEvent();
   const baseClassName = `${prefixCls}-view-item`;
 
   const refItem = useRef(null);
@@ -37,6 +39,7 @@ function TransferItem(props: TransferItemProps) {
   const [dragPosition, setDragPosition] = useState(0);
 
   const _disabled = disabled || item.disabled;
+  const _draggable = draggable && !_disabled;
   const checked = selectedKeys.indexOf(item.key) > -1;
   const itemContent = render ? render(item) : item.value;
 
@@ -60,14 +63,14 @@ function TransferItem(props: TransferItemProps) {
         baseClassName,
         {
           [`${baseClassName}-disabled`]: _disabled,
-          [`${baseClassName}-draggable`]: draggable,
+          [`${baseClassName}-draggable`]: _draggable,
           [`${baseClassName}-gap-top`]: dragOver && dragPosition < 0,
           [`${baseClassName}-gap-bottom`]: dragOver && dragPosition > 0,
           [`${baseClassName}-${dragStatus}`]: dragStatus !== 'none',
         },
         className
       )}
-      draggable={draggable}
+      draggable={_draggable}
       onDragStart={(e) => {
         e.stopPropagation();
         setDragStatus('dragging');
@@ -132,6 +135,11 @@ function TransferItem(props: TransferItemProps) {
             <IconHover
               className={`${baseClassName}-icon-remove`}
               onClick={() => onItemRemove(item.key)}
+              tabIndex={0}
+              role="button"
+              {...getKeyboardEvents({
+                onPressEnter: () => onItemRemove(item.key),
+              })}
             >
               <IconClose />
             </IconHover>

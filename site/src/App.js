@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import { Switch as ArcoSwitch } from '@arco-design/web-react';
 import Navbar from '@arco-materials/site-navbar';
 import {
   PageDurationTracker,
@@ -14,7 +13,7 @@ import Customer from './pages/customer';
 import page from './page';
 import { GlobalContext, GlobalNoticeContext } from './context';
 import navbarProps from './utils/navbarProps';
-import { goPath, i18nRedirect } from './utils/i18n';
+import { goPath, resetI18nLocalStorage } from './utils/i18n';
 import UserNavbarBorderStyle from './hooks/useNavbarBorderStyle';
 import { EventMap } from './pages/home/utils/eventMap';
 
@@ -40,7 +39,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    i18nRedirect(lang);
+    resetI18nLocalStorage(lang);
   }, [lang]);
 
   const addTrackerModule = () => {

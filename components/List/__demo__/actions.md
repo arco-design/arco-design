@@ -44,6 +44,12 @@ function App() {
         cursor: 'pointer',
       }}
       onClick={() => setLoading(!loading)}
+      onKeyDown={e => {
+        const keyCode = e.keyCode || e.which;
+        if (keyCode === 13) { // enter
+          setLoading(!loading)
+        }
+      }}
     >
       {loading ? (
         <span style={{ color: 'var(--color-text-3)' }}>
@@ -51,7 +57,7 @@ function App() {
           loading...
         </span>
       ) : (
-        <span className="list-demo-actions-button">
+        <span className="list-demo-actions-button" tabIndex={0} >
           More
           <IconDown style={{ marginLeft: 8 }} />
         </span>
@@ -103,6 +109,10 @@ export default App;
 
 .list-demo-actions-icon:hover {
   background-color: var(--color-fill-3);
+}
+
+.list-demo-actions-button[tabindex]:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
 }
 
 .list-demo-actions-button {

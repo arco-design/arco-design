@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- `Notification` component supports `useNotification` usage for reading `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+
 ## 2.33.1
 
 2022-05-20

@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-可以通过传入函数类型的 `children` 来自定义渲染单选节点。
+可以通过传入函数类型的 `children` 来自定义渲染单选节点。(`2.29.0`)
 
 ## en-US
 
-Render radio nodes can be customized by passing a function of type 'children'.
+Render radio nodes can be customized by passing a function of type 'children'.(`2.29.0`)
 
 ```js
 import { Radio, Button, Space, Typography } from '@arco-design/web-react';
@@ -20,13 +20,13 @@ const App = () => {
   return (
     <div>
       <div style={{ marginBottom: 20 }}>
-        <Radio.Group defaultValue={'Beijing'}>
+        <Radio.Group defaultValue={'Beijing'} name="button-radio-group">
           {['Beijing', 'Shanghai', 'Guangzhou'].map((item) => {
             return (
               <Radio key={item} value={item}>
                 {({ checked }) => {
                   return (
-                    <Button key={item} shape="round" type={checked ? 'primary' : 'default'}>
+                    <Button tabIndex={-1} key={item} shape="round" type={checked ? 'primary' : 'default'}>
                       {item}
                     </Button>
                   );
@@ -36,7 +36,7 @@ const App = () => {
           })}
         </Radio.Group>
       </div>
-      <Radio.Group>
+      <Radio.Group name="card-radio-group">
         {[1, 2].map((item) => {
           return (
             <Radio key={item} value={item}>
@@ -68,6 +68,11 @@ export default App;
 ```
 
 ```css
+
+input[name='button-radio-group']:focus-visible + .arco-btn {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
+}
+
 .custom-radio-card {
   padding: 10px 16px;
   border: 1px solid var(--color-border-2);
@@ -98,6 +103,10 @@ export default App;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 8px;
+}
+
+input[name='card-radio-group']:focus-visible + .custom-radio-card {
+  box-shadow: 0 0 0 2px var(--color-primary-light-3);
 }
 
 .custom-radio-card:hover,

@@ -64,7 +64,7 @@
 |placeholder|提示文案|string[] |`-`|-|
 |value|日历组件的值|[CalendarValue](#calendarvalue)[] |`-`|-|
 |onChange|日历组件值发生改变时的回调|(valueString: string[], value: Dayjs[]) => void |`-`|-|
-|onSelect|选择日期是的回调|(valueString: string[], value: Dayjs[]) => void |`-`|-|
+|onSelect|选择日期时的回调|(valueString: string[], value: Dayjs[]) => void |`-`|-|
 
 ### CalendarValue
 

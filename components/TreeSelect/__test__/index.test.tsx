@@ -664,4 +664,11 @@ describe('TreeSelect', () => {
     expect(wrapper.querySelectorAll('.arco-tag').item(0)?.textContent).toBe('小恶魔');
     expect(wrapper.querySelectorAll('.arco-tag').item(1)?.textContent).toBe('二丫');
   });
+
+  it('onKeyDown is called', () => {
+    const onKeyDown = jest.fn();
+    const wrapper = render(<TreeSelect onKeyDown={onKeyDown} />);
+    fireEvent.keyDown(wrapper.querySelector('input'));
+    expect(onKeyDown).toHaveBeenCalled();
+  });
 });

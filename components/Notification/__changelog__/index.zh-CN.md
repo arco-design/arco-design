@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 功能升级
+
+- `Notification` 组件支持 `useNotification` 用法以便读取 `context`([#1401](https://github.com/arco-design/arco-design/pull/1401))
+
 ## 2.33.1
 
 2022-05-20

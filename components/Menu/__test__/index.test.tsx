@@ -233,44 +233,6 @@ describe('Menu', () => {
     );
   });
 
-  it('overflowItems should be pack up', () => {
-    const props: MenuProps = {
-      defaultSelectedKeys: ['7'],
-      mode: 'horizontal',
-      style: { width: '600px' },
-    };
-    const wrapper = render(
-      <Menu {...props}>
-        <MenuItem key="1">设计指南</MenuItem>
-        <MenuItem key="2">区块</MenuItem>
-        <MenuItem key="3">模块</MenuItem>
-        <SubMenu key="wrapper" title={<span>组件</span>}>
-          <MenuItem key="4">通用组件</MenuItem>
-          <MenuItem key="5">布局组件</MenuItem>
-          <SubMenu key="nav" title={<span>导航组件</span>}>
-            <MenuItem key="6" disabled>
-              面包屑
-            </MenuItem>
-            <MenuItem key="7">垂直菜单</MenuItem>
-          </SubMenu>
-          <SubMenu key="dataInput" title={<span>数据输入</span>}>
-            <MenuItem key="8">单选框</MenuItem>
-            <MenuItem key="9">复选框</MenuItem>
-            <MenuItem key="10">输入框</MenuItem>
-          </SubMenu>
-        </SubMenu>
-        <SubMenu key="layout" title={<span>布局组件</span>}>
-          <MenuItem key="11">栅格</MenuItem>
-          <MenuItem key="12">分隔符</MenuItem>
-          <MenuItem key="13">布局</MenuItem>
-        </SubMenu>
-        <MenuItem key="15">工具</MenuItem>
-        <MenuItem key="14">主题实验室</MenuItem>
-      </Menu>
-    );
-    expect(wrapper.querySelectorAll('.arco-menu-overflow-hidden-menu-item')).toHaveLength(7);
-  });
-
   it('SubMenu properties are passed in correctly', () => {
     const wrapper = render(
       <Menu

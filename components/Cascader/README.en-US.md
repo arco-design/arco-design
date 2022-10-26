@@ -35,6 +35,7 @@ Display options in a multi-level cascading dropdown component.
 |showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string, option: NodeProps&lt;T&gt;) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |virtualListProps|virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
+|addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
 |notFoundContent|The content to show when no result matches|ReactNode |`-`|-|
 |prefix|Customize select suffix|ReactNode |`-`|2.11.0|
@@ -52,6 +53,7 @@ Display options in a multi-level cascading dropdown component.
 |renderFooter|Custom rendering the `footer` of each level menu.|(level: number, activeOption: NodeProps&lt;T&gt; \| null) =&gt; ReactNode |`-`|-|
 |renderOption|Custom rendering `option`|(option: NodeProps&lt;T&gt;, level: number) =&gt; ReactNode |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
+|triggerProps|All `Trigger` component props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |value|To set value|(string \| string[])[] |`-`|-|
 |dropdownColumnRender|Customize columns of the menu.|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
 |dropdownRender|Customize the popup menu.|(menu: ReactNode) => ReactNode |`-`|2.15.0|
@@ -61,6 +63,7 @@ Display options in a multi-level cascading dropdown component.
 |onClear|Callback when click clear icon.|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
 |onInputValueChange|Callback when inputValue change.|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.34.0|
+|onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onSearch|Callback when input changed.(reason in `2.34.0`)|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.20.0|
 |onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|-|
 |renderFormat|The return value will be displayed in the input box.|(valueShow: any[]) => ReactNode |`-`|-|

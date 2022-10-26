@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 💎 Enhancement
+
+- Optimize the problem that the DOM node of `Space` is remounted when the specified `key` value has not changed.([#1393](https://github.com/arco-design/arco-design/pull/1393))
+
 ## 2.22.0
 
 2021-09-10

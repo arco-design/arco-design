@@ -13,6 +13,7 @@ Array [
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -54,6 +55,7 @@ Array [
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -95,6 +97,7 @@ Array [
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >
@@ -137,6 +140,7 @@ Array [
       class="arco-upload-trigger"
     >
       <button
+        aria-label="点击上传"
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-upload-trigger-with-icon"
         type="button"
       >

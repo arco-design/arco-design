@@ -18,6 +18,7 @@ Upload file by selecting or dragging.
 |directory|Support upload whole directory|boolean |`-`|2.11.0|
 |disabled|Whether to disable|boolean |`-`|-|
 |drag|Whether to enable drag and drop upload|boolean |`-`|-|
+|imagePreview|Enable built-in image preview, only works when listType='picture-card'. (`v2.41.0`)|boolean |`-`|-|
 |multiple|Whether to allow multiple files to be selected|boolean |`-`|-|
 |withCredentials|Whether to carry cookies when uploading requests|boolean |`-`|-|
 |accept|Accepted [file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|

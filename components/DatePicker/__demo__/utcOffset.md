@@ -32,7 +32,7 @@ for (let i = 0; i < 25; i++) {
 }
 
 const defaultValue = new Date('2022-02-22');
-const defaultRangeValue = [new Date('2022-02-22 08:00:00'), new Date('2022-03-22 10:00:00')];
+const defaultRangeValue = [new Date(2022, 1, 22, 8), new Date(2022, 2, 22, 10)];
 
 function App() {
   const [utcOffset, setUtcOffset] = useState(0);

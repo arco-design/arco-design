@@ -23,7 +23,8 @@
       color: @breadcrumb-color-icon;
     }
 
-    a {
+    a,
+    &[href] {
       display: inline-block;
       border-radius: @breadcrumb-border-text-radius_hover;
       padding: 0 @breadcrumb-padding-text-horizontal;
@@ -35,6 +36,10 @@
       &:hover {
         background-color: @breadcrumb-color-bg_hover;
         color: @breadcrumb-color-link-text_hover;
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 2px @breadcrumb-color-box-shadow;
       }
     }
 

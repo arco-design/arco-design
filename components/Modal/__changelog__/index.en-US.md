@@ -1,3 +1,35 @@
+## 2.40.2
+
+2022-09-30
+
+### 🐛 BugFix
+
+- Fix the bug of console warning when `Modal` component is uninstalled under React 18([#1440](https://github.com/arco-design/arco-design/pull/1440))
+
+## 2.40.1
+
+2022-09-23
+
+### 🐛 BugFix
+
+- Fix the bug that the `holderRef` of `useModal` may not exist([#1418](https://github.com/arco-design/arco-design/pull/1418))
+
+## 2.39.3
+
+2022-09-02
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Modal` component was forced to lock the focus inside an `iframe`, causing the parent page to fail to get the focus.([#1359](https://github.com/arco-design/arco-design/pull/1359))
+
+## 2.39.1
+
+2022-08-19
+
+### 🐛 BugFix
+
+- Fix the bug that the method `update` returned by `useModal` is `undefined` when creating a modal instance.([#1300](https://github.com/arco-design/arco-design/pull/1300))
+
 ## 2.35.0
 
 2022-06-10

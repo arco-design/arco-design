@@ -18,10 +18,8 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
           style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
         >
           <div
-            aria-controls="arco-tabs-0-panel-0"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active"
-            id="arco-tabs-0-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -32,11 +30,9 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-0-panel-1"
             aria-disabled="true"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-disabled"
-            id="arco-tabs-0-tab-1"
             role="tab"
             tabindex="-1"
           >
@@ -47,10 +43,8 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-0-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-0-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -75,9 +69,7 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
       style="margin-left:-0%"
     >
       <div
-        aria-labelledby="arco-tabs-0-tab-0"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-0-panel-0"
         role="tabpanel"
         tabindex="0"
       >
@@ -94,17 +86,13 @@ exports[`renders Tabs/demo/basic.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-0-tab-1"
         class="arco-tabs-content-item"
-        id="arco-tabs-0-panel-1"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-0-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-0-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
@@ -131,10 +119,8 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
           style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
         >
           <div
-            aria-controls="arco-tabs-1-panel-0"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active"
-            id="arco-tabs-1-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -145,10 +131,8 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-1-panel-1"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-1-tab-1"
             role="tab"
             tabindex="0"
           >
@@ -159,10 +143,8 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-1-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-1-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -187,9 +169,7 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
       style="margin-left:-0%"
     >
       <div
-        aria-labelledby="arco-tabs-1-tab-0"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-1-panel-0"
         role="tabpanel"
         tabindex="0"
       >
@@ -206,17 +186,13 @@ exports[`renders Tabs/demo/controled.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-1-tab-1"
         class="arco-tabs-content-item"
-        id="arco-tabs-1-panel-1"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-1-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-1-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
@@ -243,10 +219,8 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
           style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
         >
           <div
-            aria-controls="arco-tabs-2-panel-0"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-editable"
-            id="arco-tabs-2-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -281,10 +255,8 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-2-panel-1"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active arco-tabs-header-title-editable"
-            id="arco-tabs-2-tab-1"
             role="tab"
             tabindex="0"
           >
@@ -319,10 +291,8 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-2-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-editable"
-            id="arco-tabs-2-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -357,10 +327,8 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-2-panel-3"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-editable"
-            id="arco-tabs-2-tab-3"
             role="tab"
             tabindex="0"
           >
@@ -395,10 +363,8 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-2-panel-4"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-editable"
-            id="arco-tabs-2-tab-4"
             role="tab"
             tabindex="0"
           >
@@ -473,16 +439,12 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
     >
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-2-tab-0"
         class="arco-tabs-content-item"
-        id="arco-tabs-2-panel-0"
         role="tabpanel"
         tabindex="-1"
       />
       <div
-        aria-labelledby="arco-tabs-2-tab-1"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-2-panel-1"
         role="tabpanel"
         tabindex="0"
       >
@@ -499,25 +461,19 @@ exports[`renders Tabs/demo/delete.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-2-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-2-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-2-tab-3"
         class="arco-tabs-content-item"
-        id="arco-tabs-2-panel-3"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-2-tab-4"
         class="arco-tabs-content-item"
-        id="arco-tabs-2-panel-4"
         role="tabpanel"
         tabindex="-1"
       />
@@ -544,10 +500,8 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
           style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
         >
           <div
-            aria-controls="arco-tabs-3-panel-0"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active"
-            id="arco-tabs-3-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -558,10 +512,8 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-3-panel-1"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-3-tab-1"
             role="tab"
             tabindex="0"
           >
@@ -572,10 +524,8 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-3-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-3-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -600,9 +550,7 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
       style="margin-left:-0%"
     >
       <div
-        aria-labelledby="arco-tabs-3-tab-0"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-3-panel-0"
         role="tabpanel"
         tabindex="0"
       >
@@ -614,17 +562,13 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-3-tab-1"
         class="arco-tabs-content-item"
-        id="arco-tabs-3-panel-1"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-3-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-3-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
@@ -651,10 +595,8 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
           style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
         >
           <div
-            aria-controls="arco-tabs-4-panel-0"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active"
-            id="arco-tabs-4-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -665,11 +607,9 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-4-panel-1"
             aria-disabled="true"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-disabled"
-            id="arco-tabs-4-tab-1"
             role="tab"
             tabindex="-1"
           >
@@ -680,10 +620,8 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-4-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-4-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -720,9 +658,7 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
       style="margin-left:-0%"
     >
       <div
-        aria-labelledby="arco-tabs-4-tab-0"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-4-panel-0"
         role="tabpanel"
         tabindex="0"
       >
@@ -739,17 +675,13 @@ exports[`renders Tabs/demo/extra.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-4-tab-1"
         class="arco-tabs-content-item"
-        id="arco-tabs-4-panel-1"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-4-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-4-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
@@ -776,10 +708,8 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
           style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
         >
           <div
-            aria-controls="arco-tabs-5-panel-0"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active"
-            id="arco-tabs-5-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -806,11 +736,9 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-5-panel-1"
             aria-disabled="true"
             aria-selected="false"
             class="arco-tabs-header-title arco-tabs-header-title-disabled"
-            id="arco-tabs-5-tab-1"
             role="tab"
             tabindex="-1"
           >
@@ -837,10 +765,8 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-5-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-5-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -886,9 +812,7 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
       style="margin-left:-0%"
     >
       <div
-        aria-labelledby="arco-tabs-5-tab-0"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-5-panel-0"
         role="tabpanel"
         tabindex="0"
       >
@@ -905,17 +829,13 @@ exports[`renders Tabs/demo/icon.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-5-tab-1"
         class="arco-tabs-content-item"
-        id="arco-tabs-5-panel-1"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-5-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-5-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
@@ -942,10 +862,8 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
           style="transform:translateY(0px);-webkit-transform:translateY(0px);-ms-transform:translateY(0px);-moz-transform:translateY(0px);-o-transform:translateY(0px)"
         >
           <div
-            aria-controls="arco-tabs-6-panel-0"
             aria-selected="true"
             class="arco-tabs-header-title arco-tabs-header-title-active"
-            id="arco-tabs-6-tab-0"
             role="tab"
             tabindex="0"
           >
@@ -956,10 +874,8 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-6-panel-1"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-6-tab-1"
             role="tab"
             tabindex="0"
           >
@@ -970,10 +886,8 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
             </span>
           </div>
           <div
-            aria-controls="arco-tabs-6-panel-2"
             aria-selected="false"
             class="arco-tabs-header-title"
-            id="arco-tabs-6-tab-2"
             role="tab"
             tabindex="0"
           >
@@ -998,9 +912,7 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
       style="margin-left:-0%"
     >
       <div
-        aria-labelledby="arco-tabs-6-tab-0"
         class="arco-tabs-content-item arco-tabs-content-item-active"
-        id="arco-tabs-6-panel-0"
         role="tabpanel"
         tabindex="0"
       >
@@ -1025,10 +937,8 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
                       style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
                     >
                       <div
-                        aria-controls="arco-tabs-7-panel-0"
                         aria-selected="true"
                         class="arco-tabs-header-title arco-tabs-header-title-active"
-                        id="arco-tabs-7-tab-0"
                         role="tab"
                         tabindex="0"
                       >
@@ -1039,10 +949,8 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
                         </span>
                       </div>
                       <div
-                        aria-controls="arco-tabs-7-panel-1"
                         aria-selected="false"
                         class="arco-tabs-header-title"
-                        id="arco-tabs-7-tab-1"
                         role="tab"
                         tabindex="0"
                       >
@@ -1053,10 +961,8 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
                         </span>
                       </div>
                       <div
-                        aria-controls="arco-tabs-7-panel-2"
                         aria-selected="false"
                         class="arco-tabs-header-title"
-                        id="arco-tabs-7-tab-2"
                         role="tab"
                         tabindex="0"
                       >
@@ -1081,9 +987,7 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
                   style="margin-left:-0%"
                 >
                   <div
-                    aria-labelledby="arco-tabs-7-tab-0"
                     class="arco-tabs-content-item arco-tabs-content-item-active"
-                    id="arco-tabs-7-panel-0"
                     role="tabpanel"
                     tabindex="0"
                   >
@@ -1100,17 +1004,13 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
                   </div>
                   <div
                     aria-hidden="true"
-                    aria-labelledby="arco-tabs-7-tab-1"
                     class="arco-tabs-content-item"
-                    id="arco-tabs-7-panel-1"
                     role="tabpanel"
                     tabindex="-1"
                   />
                   <div
                     aria-hidden="true"
-                    aria-labelledby="arco-tabs-7-tab-2"
                     class="arco-tabs-content-item"
-                    id="arco-tabs-7-panel-2"
                     role="tabpanel"
                     tabindex="-1"
                   />
@@ -1122,17 +1022,13 @@ exports[`renders Tabs/demo/inline.md correctly 1`] = `
       </div>
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-6-tab-1"
         class="arco-tabs-content-item"
-        id="arco-tabs-6-panel-1"
         role="tabpanel"
         tabindex="-1"
       />
       <div
         aria-hidden="true"
-        aria-labelledby="arco-tabs-6-tab-2"
         class="arco-tabs-content-item"
-        id="arco-tabs-6-panel-2"
         role="tabpanel"
         tabindex="-1"
       />
@@ -1145,6 +1041,7 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -1222,10 +1119,8 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-8-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-8-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -1236,10 +1131,8 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-8-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-8-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -1250,10 +1143,8 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-8-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-8-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -1278,9 +1169,7 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
         style="margin-left:-0%"
       >
         <div
-          aria-labelledby="arco-tabs-8-tab-0"
           class="arco-tabs-content-item arco-tabs-content-item-active"
-          id="arco-tabs-8-panel-0"
           role="tabpanel"
           tabindex="0"
         >
@@ -1297,17 +1186,13 @@ exports[`renders Tabs/demo/position.md correctly 1`] = `
         </div>
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-8-tab-1"
           class="arco-tabs-content-item"
-          id="arco-tabs-8-panel-1"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-8-tab-2"
           class="arco-tabs-content-item"
-          id="arco-tabs-8-panel-2"
           role="tabpanel"
           tabindex="-1"
         />
@@ -1339,10 +1224,8 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
               style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
             >
               <div
-                aria-controls="arco-tabs-9-panel-0"
                 aria-selected="false"
                 class="arco-tabs-header-title"
-                id="arco-tabs-9-tab-0"
                 role="tab"
                 tabindex="0"
               >
@@ -1353,10 +1236,8 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
                 </span>
               </div>
               <div
-                aria-controls="arco-tabs-9-panel-1"
                 aria-selected="false"
                 class="arco-tabs-header-title"
-                id="arco-tabs-9-tab-1"
                 role="tab"
                 tabindex="0"
               >
@@ -1367,10 +1248,8 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
                 </span>
               </div>
               <div
-                aria-controls="arco-tabs-9-panel-2"
                 aria-selected="true"
                 class="arco-tabs-header-title arco-tabs-header-title-active"
-                id="arco-tabs-9-tab-2"
                 role="tab"
                 tabindex="0"
               >
@@ -1397,24 +1276,18 @@ exports[`renders Tabs/demo/renderTabbar.md correctly 1`] = `
       >
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-9-tab-0"
           class="arco-tabs-content-item"
-          id="arco-tabs-9-panel-0"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-9-tab-1"
           class="arco-tabs-content-item"
-          id="arco-tabs-9-panel-1"
           role="tabpanel"
           tabindex="-1"
         />
         <div
-          aria-labelledby="arco-tabs-9-tab-2"
           class="arco-tabs-content-item arco-tabs-content-item-active"
-          id="arco-tabs-9-panel-2"
           role="tabpanel"
           tabindex="0"
         >
@@ -1439,6 +1312,7 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -1489,10 +1363,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-10-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-10-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -1503,10 +1375,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -1517,10 +1387,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -1531,10 +1399,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-3"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-3"
               role="tab"
               tabindex="0"
             >
@@ -1545,10 +1411,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-4"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-4"
               role="tab"
               tabindex="0"
             >
@@ -1559,10 +1423,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-5"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-5"
               role="tab"
               tabindex="0"
             >
@@ -1573,10 +1435,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-6"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-6"
               role="tab"
               tabindex="0"
             >
@@ -1587,10 +1447,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-7"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-7"
               role="tab"
               tabindex="0"
             >
@@ -1601,10 +1459,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-8"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-8"
               role="tab"
               tabindex="0"
             >
@@ -1615,10 +1471,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-9"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-9"
               role="tab"
               tabindex="0"
             >
@@ -1629,10 +1483,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-10"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-10"
               role="tab"
               tabindex="0"
             >
@@ -1643,10 +1495,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-11"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-11"
               role="tab"
               tabindex="0"
             >
@@ -1657,10 +1507,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-12"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-12"
               role="tab"
               tabindex="0"
             >
@@ -1671,10 +1519,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-13"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-13"
               role="tab"
               tabindex="0"
             >
@@ -1685,10 +1531,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-14"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-14"
               role="tab"
               tabindex="0"
             >
@@ -1699,10 +1543,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-15"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-15"
               role="tab"
               tabindex="0"
             >
@@ -1713,10 +1555,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-16"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-16"
               role="tab"
               tabindex="0"
             >
@@ -1727,10 +1567,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-17"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-17"
               role="tab"
               tabindex="0"
             >
@@ -1741,10 +1579,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-18"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-18"
               role="tab"
               tabindex="0"
             >
@@ -1755,10 +1591,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-19"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-19"
               role="tab"
               tabindex="0"
             >
@@ -1769,10 +1603,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-20"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-20"
               role="tab"
               tabindex="0"
             >
@@ -1783,10 +1615,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-21"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-21"
               role="tab"
               tabindex="0"
             >
@@ -1797,10 +1627,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-22"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-22"
               role="tab"
               tabindex="0"
             >
@@ -1811,10 +1639,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-23"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-23"
               role="tab"
               tabindex="0"
             >
@@ -1825,10 +1651,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-24"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-24"
               role="tab"
               tabindex="0"
             >
@@ -1839,10 +1663,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-25"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-25"
               role="tab"
               tabindex="0"
             >
@@ -1853,10 +1675,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-26"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-26"
               role="tab"
               tabindex="0"
             >
@@ -1867,10 +1687,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-27"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-27"
               role="tab"
               tabindex="0"
             >
@@ -1881,10 +1699,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-28"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-28"
               role="tab"
               tabindex="0"
             >
@@ -1895,10 +1711,8 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-10-panel-29"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-10-tab-29"
               role="tab"
               tabindex="0"
             >
@@ -1923,9 +1737,7 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
         style="margin-left:-0%"
       >
         <div
-          aria-labelledby="arco-tabs-10-tab-0"
           class="arco-tabs-content-item arco-tabs-content-item-active"
-          id="arco-tabs-10-panel-0"
           role="tabpanel"
           tabindex="0"
         >
@@ -1941,233 +1753,175 @@ exports[`renders Tabs/demo/scroll.md correctly 1`] = `
         </div>
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-1"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-1"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-2"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-2"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-3"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-3"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-4"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-4"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-5"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-5"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-6"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-6"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-7"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-7"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-8"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-8"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-9"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-9"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-10"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-10"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-11"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-11"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-12"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-12"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-13"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-13"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-14"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-14"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-15"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-15"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-16"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-16"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-17"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-17"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-18"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-18"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-19"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-19"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-20"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-20"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-21"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-21"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-22"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-22"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-23"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-23"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-24"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-24"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-25"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-25"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-26"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-26"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-27"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-27"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-28"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-28"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-10-tab-29"
           class="arco-tabs-content-item"
-          id="arco-tabs-10-panel-29"
           role="tabpanel"
           tabindex="-1"
         />
@@ -2189,6 +1943,7 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -2226,6 +1981,7 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
     >
       <div
         class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+        role="radiogroup"
       >
         <label
           class="arco-radio-button arco-radio-checked"
@@ -2305,10 +2061,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-11-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-11-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -2319,10 +2073,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -2333,10 +2085,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -2347,10 +2097,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-3"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-3"
               role="tab"
               tabindex="0"
             >
@@ -2361,10 +2109,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-4"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-4"
               role="tab"
               tabindex="0"
             >
@@ -2375,10 +2121,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-5"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-5"
               role="tab"
               tabindex="0"
             >
@@ -2389,10 +2133,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-6"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-6"
               role="tab"
               tabindex="0"
             >
@@ -2403,10 +2145,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-7"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-7"
               role="tab"
               tabindex="0"
             >
@@ -2417,10 +2157,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-8"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-8"
               role="tab"
               tabindex="0"
             >
@@ -2431,10 +2169,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-9"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-9"
               role="tab"
               tabindex="0"
             >
@@ -2445,10 +2181,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-10"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-10"
               role="tab"
               tabindex="0"
             >
@@ -2459,10 +2193,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-11"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-11"
               role="tab"
               tabindex="0"
             >
@@ -2473,10 +2205,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-12"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-12"
               role="tab"
               tabindex="0"
             >
@@ -2487,10 +2217,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-13"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-13"
               role="tab"
               tabindex="0"
             >
@@ -2501,10 +2229,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-14"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-14"
               role="tab"
               tabindex="0"
             >
@@ -2515,10 +2241,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-15"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-15"
               role="tab"
               tabindex="0"
             >
@@ -2529,10 +2253,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-16"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-16"
               role="tab"
               tabindex="0"
             >
@@ -2543,10 +2265,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-17"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-17"
               role="tab"
               tabindex="0"
             >
@@ -2557,10 +2277,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-18"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-18"
               role="tab"
               tabindex="0"
             >
@@ -2571,10 +2289,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-19"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-19"
               role="tab"
               tabindex="0"
             >
@@ -2585,10 +2301,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-20"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-20"
               role="tab"
               tabindex="0"
             >
@@ -2599,10 +2313,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-21"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-21"
               role="tab"
               tabindex="0"
             >
@@ -2613,10 +2325,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-22"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-22"
               role="tab"
               tabindex="0"
             >
@@ -2627,10 +2337,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-23"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-23"
               role="tab"
               tabindex="0"
             >
@@ -2641,10 +2349,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-24"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-24"
               role="tab"
               tabindex="0"
             >
@@ -2655,10 +2361,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-25"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-25"
               role="tab"
               tabindex="0"
             >
@@ -2669,10 +2373,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-26"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-26"
               role="tab"
               tabindex="0"
             >
@@ -2683,10 +2385,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-27"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-27"
               role="tab"
               tabindex="0"
             >
@@ -2697,10 +2397,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-28"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-28"
               role="tab"
               tabindex="0"
             >
@@ -2711,10 +2409,8 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-11-panel-29"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-11-tab-29"
               role="tab"
               tabindex="0"
             >
@@ -2739,9 +2435,7 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
         style="margin-left:-0%"
       >
         <div
-          aria-labelledby="arco-tabs-11-tab-0"
           class="arco-tabs-content-item arco-tabs-content-item-active"
-          id="arco-tabs-11-panel-0"
           role="tabpanel"
           tabindex="0"
         >
@@ -2757,233 +2451,175 @@ exports[`renders Tabs/demo/scrollPosition.md correctly 1`] = `
         </div>
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-1"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-1"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-2"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-2"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-3"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-3"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-4"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-4"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-5"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-5"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-6"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-6"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-7"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-7"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-8"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-8"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-9"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-9"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-10"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-10"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-11"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-11"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-12"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-12"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-13"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-13"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-14"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-14"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-15"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-15"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-16"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-16"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-17"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-17"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-18"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-18"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-19"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-19"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-20"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-20"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-21"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-21"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-22"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-22"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-23"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-23"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-24"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-24"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-25"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-25"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-26"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-26"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-27"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-27"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-28"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-28"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-11-tab-29"
           class="arco-tabs-content-item"
-          id="arco-tabs-11-panel-29"
           role="tabpanel"
           tabindex="-1"
         />
@@ -3002,6 +2638,7 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
   </span>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:24px"
   >
     <label
@@ -3098,6 +2735,7 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
   </span>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -3245,10 +2883,8 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-12-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-12-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -3259,11 +2895,9 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-12-panel-1"
               aria-disabled="true"
               aria-selected="false"
               class="arco-tabs-header-title arco-tabs-header-title-disabled"
-              id="arco-tabs-12-tab-1"
               role="tab"
               tabindex="-1"
             >
@@ -3274,10 +2908,8 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-12-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-12-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -3288,10 +2920,8 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-12-panel-3"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-12-tab-3"
               role="tab"
               tabindex="0"
             >
@@ -3316,9 +2946,7 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
         style="margin-left:-0%"
       >
         <div
-          aria-labelledby="arco-tabs-12-tab-0"
           class="arco-tabs-content-item arco-tabs-content-item-active"
-          id="arco-tabs-12-panel-0"
           role="tabpanel"
           tabindex="0"
         >
@@ -3335,25 +2963,19 @@ exports[`renders Tabs/demo/size.md correctly 1`] = `
         </div>
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-12-tab-1"
           class="arco-tabs-content-item"
-          id="arco-tabs-12-panel-1"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-12-tab-2"
           class="arco-tabs-content-item"
-          id="arco-tabs-12-panel-2"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-12-tab-3"
           class="arco-tabs-content-item"
-          id="arco-tabs-12-panel-3"
           role="tabpanel"
           tabindex="-1"
         />
@@ -3367,6 +2989,7 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -3514,10 +3137,8 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-13-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-13-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -3528,11 +3149,9 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-13-panel-1"
               aria-disabled="true"
               aria-selected="false"
               class="arco-tabs-header-title arco-tabs-header-title-disabled"
-              id="arco-tabs-13-tab-1"
               role="tab"
               tabindex="-1"
             >
@@ -3543,10 +3162,8 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-13-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-13-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -3557,10 +3174,8 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-13-panel-3"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-13-tab-3"
               role="tab"
               tabindex="0"
             >
@@ -3585,9 +3200,7 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
         style="margin-left:-0%"
       >
         <div
-          aria-labelledby="arco-tabs-13-tab-0"
           class="arco-tabs-content-item arco-tabs-content-item-active"
-          id="arco-tabs-13-panel-0"
           role="tabpanel"
           tabindex="0"
         >
@@ -3604,25 +3217,19 @@ exports[`renders Tabs/demo/type.md correctly 1`] = `
         </div>
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-13-tab-1"
           class="arco-tabs-content-item"
-          id="arco-tabs-13-panel-1"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-13-tab-2"
           class="arco-tabs-content-item"
-          id="arco-tabs-13-panel-2"
           role="tabpanel"
           tabindex="-1"
         />
         <div
           aria-hidden="true"
-          aria-labelledby="arco-tabs-13-tab-3"
           class="arco-tabs-content-item"
-          id="arco-tabs-13-panel-3"
           role="tabpanel"
           tabindex="-1"
         />

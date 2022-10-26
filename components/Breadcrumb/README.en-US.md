@@ -23,12 +23,15 @@ Used to display the location of the current page and quickly return to the histo
 
 ### Breadcrumb.Item
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|droplist|The dropdown menu|[DropdownProps](dropdown#dropdown)['droplist'] |`-`|
-|className|Additional css class|string \| string[] |`-`|
-|dropdownProps|The dropdown props [DropdownProps](/react/components/dropdown)|[DropdownProps](dropdown#dropdown) |`-`|
-|style|Additional style|CSSProperties |`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|href|href|string |`-`|2.40.0|
+|droplist|The dropdown menu|[DropdownProps](dropdown#dropdown)['droplist'] |`-`|-|
+|className|Additional css class|string \| string[] |`-`|-|
+|dropdownProps|The dropdown props [DropdownProps](/react/components/dropdown)|[DropdownProps](dropdown#dropdown) |`-`|-|
+|style|Additional style|CSSProperties |`-`|-|
+|tagName|Configure the outermost label, which can be an html label or a component|string \| React.FC&lt;any&gt; \| React.ComponentClass&lt;any&gt; |`div`|2.40.0|
+|onClick|click callback|(e: any) => void |`-`|2.40.0|
 
 ### RouteProps
 

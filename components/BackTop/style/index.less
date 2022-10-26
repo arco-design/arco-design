@@ -22,6 +22,10 @@
     cursor: pointer;
     border: none;
 
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(~'@{arco-cssvars-prefix}-color-primary-light-3');
+    }
+
     &:hover {
       background-color: @backtop-button-color-bg_hover;
     }

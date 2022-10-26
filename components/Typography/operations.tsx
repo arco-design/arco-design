@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, PropsWithChildren } from 'react';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 import Tooltip from '../Tooltip';
 import { isObject, isArray } from '../_util/is';
 import copy from '../_util/clipboard';
@@ -21,6 +22,8 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
     isEllipsis,
     currentContext = {},
   } = props;
+
+  const getEventListeners = useKeyboardEvent();
 
   const { getPrefixCls, locale } = currentContext;
 
@@ -56,12 +59,23 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
     }, 3000);
   }
 
+  const onClickEdit = (e) => {
+    editableConfig.onStart && editableConfig.onStart(mergedToString(children), e);
+    setEditing(true);
+  };
+
   const tooltips = copyConfig.tooltips || [locale.Typography.copy, locale.Typography.copied];
   const copyElement = copyable && (
     <Tooltip content={isCopied ? tooltips[1] : tooltips[0]}>
       <span
         className={isCopied ? `${prefixCls}-operation-copied` : `${prefixCls}-operation-copy`}
         onClick={onClickCopy}
+        role="button"
+        aria-label={tooltips[0]}
+        tabIndex={0}
+        {...getEventListeners({
+          onPressEnter: onClickCopy,
+        })}
       >
         {isCopied ? <IconCheckCircleFill /> : copyConfig.icon || <IconCopy />}
       </span>
@@ -71,11 +85,14 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
   const editElement = editable && (
     <Tooltip content={locale.Typography.edit}>
       <span
+        tabIndex={0}
+        aria-label={locale.Typography.edit}
+        role="button"
         className={`${prefixCls}-operation-edit`}
-        onClick={(e) => {
-          editableConfig.onStart && editableConfig.onStart(mergedToString(children), e);
-          setEditing(true);
-        }}
+        onClick={onClickEdit}
+        {...getEventListeners({
+          onPressEnter: onClickEdit,
+        })}
       >
         <IconEdit />
       </span>
@@ -84,7 +101,16 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
 
   const ellipsisElement =
     forceShowExpand || (ellipsisConfig.expandable && isEllipsis) ? (
-      <a className={`${prefixCls}-operation-expand`} onClick={onClickExpand}>
+      <a
+        className={`${prefixCls}-operation-expand`}
+        onClick={onClickExpand}
+        role="button"
+        tabIndex={0}
+        aria-label={locale.Typography.unfold}
+        {...getEventListeners({
+          onPressEnter: onClickExpand,
+        })}
+      >
         {expanding ? expandNodes[0] : expandNodes[1]}
       </a>
     ) : null;

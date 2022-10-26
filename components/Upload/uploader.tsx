@@ -206,6 +206,8 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
       hide,
       directory,
       onDrop,
+      onDragOver,
+      onDragLeave,
     } = this.props;
 
     return (
@@ -246,6 +248,8 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
             drag={drag}
             listType={listType}
             onDrop={onDrop}
+            onDragOver={onDragOver}
+            onDragLeave={onDragLeave}
             onDragFiles={this.handleFiles}
             onClick={() => {
               !disabled && this.inputRef && this.inputRef.click();

@@ -3413,6 +3413,7 @@ exports[`renders DatePicker/demo/range.md correctly 1`] = `
   >
     <div
       class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+      role="radiogroup"
     >
       <label
         class="arco-radio-button arco-radio-checked"
@@ -3960,6 +3961,7 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
 <div>
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
     style="margin-bottom:20px"
   >
     <label
@@ -4076,7 +4078,6 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -4087,18 +4088,22 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
             class="arco-select-view"
             title="Asia/Shanghai"
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
-              tabindex="-1"
-              value="Asia/Shanghai"
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              Asia/Shanghai
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="Asia/Shanghai"
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                Asia/Shanghai
+              </span>
             </span>
             <div
               aria-hidden="true"
@@ -4475,7 +4480,6 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
       >
         <div
           aria-autocomplete="list"
-          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -4486,18 +4490,22 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
             class="arco-select-view"
             title="UTC "
           >
-            <input
-              aria-hidden="true"
-              autocomplete="off"
-              class="arco-select-view-input arco-select-hidden"
-              style="width:100%;pointer-events:none"
-              tabindex="-1"
-              value="UTC "
-            />
             <span
-              class="arco-select-view-value"
+              class="arco-select-view-selector"
             >
-              UTC 
+              <input
+                aria-hidden="true"
+                autocomplete="off"
+                class="arco-select-view-input arco-select-hidden"
+                style="width:100%;pointer-events:none"
+                tabindex="-1"
+                value="UTC "
+              />
+              <span
+                class="arco-select-view-value"
+              >
+                UTC 
+              </span>
             </span>
             <div
               aria-hidden="true"

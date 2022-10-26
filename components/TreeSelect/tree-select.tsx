@@ -9,11 +9,13 @@ import React, {
   useMemo,
   useCallback,
   ForwardRefRenderFunction,
+  ReactElement,
+  ReactNode,
 } from 'react';
 import debounce from 'lodash/debounce';
 import useStateValue, { parseValue } from './hook/useStateValue';
 import { normalizeValueToArray } from './utils';
-import { isArray, isFunction, isObject } from '../_util/is';
+import { isArray, isFunction, isNullOrUndefined, isObject } from '../_util/is';
 import Trigger from '../Trigger';
 import Tree from '../Tree';
 import { ConfigContext } from '../ConfigProvider';
@@ -34,6 +36,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
+import useId from '../_util/hooks/useId';
 
 function isEmptyValue(value) {
   return (
@@ -42,9 +45,6 @@ function isEmptyValue(value) {
     (isObject(value) && Object.keys(value).length === 0)
   );
 }
-
-// Generate DOM id for instance
-let globalTreeSelectIndex = 0;
 
 const defaultProps: TreeSelectProps = {
   bordered: true,
@@ -92,11 +92,7 @@ const TreeSelect: ForwardRefRenderFunction<
   const isFilterNode = inputValue && !isFunction(props.onSearch);
 
   // Unique ID of this select instance
-  const instancePopupID = useMemo<string>(() => {
-    const id = `${prefixCls}-popup-${globalTreeSelectIndex}`;
-    globalTreeSelectIndex++;
-    return id;
-  }, []);
+  const instancePopupID = useId(`${prefixCls}-popup-`);
 
   // 尝试更新 inputValue，并触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
@@ -203,6 +199,9 @@ const TreeSelect: ForwardRefRenderFunction<
 
   useEffect(() => {
     inputValue !== undefined && handleSearch(inputValue);
+    if (inputValue !== refOnInputChangeCallbackValue.current) {
+      refOnInputChangeCallbackValue.current = inputValue;
+    }
   }, [inputValue]);
 
   const searchKeys = useMemo<string[]>(() => {
@@ -259,104 +258,117 @@ const TreeSelect: ForwardRefRenderFunction<
     setValue(value, {});
   };
 
-  return (
-    <Trigger
-      autoAlignPopupWidth={false}
-      autoAlignPopupMinWidth
-      ref={triggerRef}
-      classNames="slideDynamicOrigin"
-      trigger="click"
-      position="bl"
-      getPopupContainer={props.getPopupContainer}
-      popupAlign={{ bottom: 4 }}
-      unmountOnExit={props.unmountOnExit}
-      {...props.triggerProps}
-      className={cs(`${prefixCls}-trigger`, props.triggerProps && props.triggerProps.className)}
-      popup={() => {
-        const dropdownRender = props.dropdownRender;
-        const dom =
-          (isFilterNode && isEmptyValue(searchKeys)) || isEmptyValue(treeData) ? (
-            props.notFoundContent || renderEmpty('TreeSelect')
-          ) : (
-            <TreeList
-              prefixCls={prefixCls}
-              ref={treeRef}
-              {...props}
-              inputValue={inputValue}
-              filterNode={filterNode}
-              value={value}
-              onChange={triggerChange}
-              multiple={multiple}
-              treeData={treeData}
-            />
-          );
+  const renderView = (eleView: ReactElement | ReactNode) => {
+    return (
+      <Trigger
+        autoAlignPopupWidth={false}
+        autoAlignPopupMinWidth
+        ref={triggerRef}
+        classNames="slideDynamicOrigin"
+        trigger="click"
+        position="bl"
+        getPopupContainer={props.getPopupContainer}
+        popupAlign={{ bottom: 4 }}
+        unmountOnExit={props.unmountOnExit}
+        {...props.triggerProps}
+        className={cs(`${prefixCls}-trigger`, props.triggerProps && props.triggerProps.className)}
+        popup={() => {
+          const dropdownRender = props.dropdownRender;
+          const dom =
+            (isFilterNode && isEmptyValue(searchKeys)) || isEmptyValue(treeData) ? (
+              props.notFoundContent || renderEmpty('TreeSelect')
+            ) : (
+              <TreeList
+                prefixCls={prefixCls}
+                ref={treeRef}
+                {...props}
+                inputValue={inputValue}
+                filterNode={filterNode}
+                value={value}
+                onChange={triggerChange}
+                multiple={multiple}
+                treeData={treeData}
+              />
+            );
 
-        return (
-          <div
-            id={instancePopupID}
-            className={cs(`${prefixCls}-popup`, { [`${prefixCls}-rtl-popup`]: rtl })}
-            style={{
-              maxHeight:
-                props.treeProps?.height || props.treeProps?.virtualListProps?.height ? 'unset' : '',
-              ...props.dropdownMenuStyle,
-            }}
-          >
-            {isFunction(dropdownRender) ? dropdownRender(dom) : dom}
-          </div>
-        );
-      }}
-      disabled={props.disabled}
-      onVisibleChange={(visible: boolean) => {
-        setPopupVisible(visible);
-        props.onVisibleChange && props.onVisibleChange(visible);
-      }}
+          return (
+            <div
+              id={instancePopupID}
+              className={cs(`${prefixCls}-popup`, { [`${prefixCls}-rtl-popup`]: rtl })}
+              style={{
+                maxHeight:
+                  props.treeProps?.height || props.treeProps?.virtualListProps?.height
+                    ? 'unset'
+                    : '',
+                ...props.dropdownMenuStyle,
+              }}
+            >
+              {isFunction(dropdownRender) ? dropdownRender(dom) : dom}
+            </div>
+          );
+        }}
+        disabled={props.disabled}
+        onVisibleChange={(visible: boolean) => {
+          setPopupVisible(visible);
+          props.onVisibleChange && props.onVisibleChange(visible);
+        }}
+        popupVisible={popupVisible}
+      >
+        {eleView}
+      </Trigger>
+    );
+  };
+
+  const customTriggerElement =
+    typeof props.triggerElement === 'function'
+      ? (() => {
+          let valueForCallback;
+          if (multiple) {
+            valueForCallback = value.map((x) =>
+              props.labelInValue ? { label: x.label, value: x.value } : x.value
+            );
+          } else {
+            valueForCallback = props.labelInValue ? value[0] : value[0]?.value;
+          }
+          return props.triggerElement({ value: valueForCallback });
+        })()
+      : props.triggerElement;
+
+  return !isNullOrUndefined(customTriggerElement) ? (
+    renderView(customTriggerElement)
+  ) : (
+    <SelectView
+      ref={refSelectView}
+      rtl={rtl}
+      ariaControls={instancePopupID}
+      {...props}
       popupVisible={popupVisible}
-    >
-      {typeof props.triggerElement === 'function'
-        ? (() => {
-            let valueForCallback;
-            if (multiple) {
-              valueForCallback = value.map((x) =>
-                props.labelInValue ? { label: x.label, value: x.value } : x.value
-              );
-            } else {
-              valueForCallback = props.labelInValue ? value[0] : value[0]?.value;
-            }
-            return props.triggerElement({ value: valueForCallback });
-          })()
-        : props.triggerElement || (
-            <SelectView
-              ref={refSelectView}
-              rtl={rtl}
-              ariaControls={instancePopupID}
-              {...props}
-              popupVisible={popupVisible}
-              value={!multiple && isArray(value) ? value[0] : value}
-              inputValue={inputValue}
-              // other
-              isEmptyValue={isEmptyValue(value)}
-              prefixCls={prefixCls}
-              isMultiple={multiple}
-              renderText={renderText}
-              onSort={tryUpdateSelectValue}
-              onRemoveCheckedItem={handleRemoveCheckedItem}
-              onClear={(e) => {
-                e.stopPropagation();
-                triggerChange([], {});
-                props.onClear && props.onClear(!!popupVisible);
-              }}
-              onKeyDown={(e) => {
-                e.stopPropagation();
-              }}
-              onFocus={(e) => {
-                e && e.stopPropagation();
-              }}
-              onChangeInputValue={(value) => {
-                tryUpdateInputValue(value, 'manual');
-              }}
-            />
-          )}
-    </Trigger>
+      value={!multiple && isArray(value) ? value[0] : value}
+      inputValue={inputValue}
+      // other
+      isEmptyValue={isEmptyValue(value)}
+      prefixCls={prefixCls}
+      isMultiple={multiple}
+      renderText={renderText}
+      onSort={tryUpdateSelectValue}
+      onRemoveCheckedItem={handleRemoveCheckedItem}
+      onClear={(e) => {
+        e.stopPropagation();
+        triggerChange([], {});
+        props.onClear?.(!!popupVisible);
+      }}
+      onKeyDown={(e) => {
+        e.stopPropagation();
+        props.onKeyDown?.(e);
+      }}
+      onFocus={(e) => {
+        e && e.stopPropagation();
+      }}
+      onChangeInputValue={(value) => {
+        tryUpdateInputValue(value, 'manual');
+      }}
+      renderView={renderView}
+    />
   );
 };
 

@@ -33,6 +33,7 @@ Can choose tree structure data.Only Single choice is supports.
 |fieldNames|Custom field name for key, title, isLeaf, disabled and children|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |treeCheckedStrategy|Customize the return value|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
+|addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
 |notFoundContent|The content display when no data|ReactNode |`-`|-|
 |prefix|Customize select suffix|ReactNode |`-`|2.11.0|
@@ -57,6 +58,7 @@ Can choose tree structure data.Only Single choice is supports.
 |onClear|Callback when clicked clear, the parameter is the visible state of current dropdown|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
 |onInputValueChange|Callback when the search value of input is changed.|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.39.0|
+|onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onSearch|Callback when searching data. When undefined, it will search in the data already|(inputValue: string) => void |`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|(visible: boolean) => void |`-`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|

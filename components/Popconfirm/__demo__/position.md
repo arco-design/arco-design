@@ -38,7 +38,7 @@ const App = () => {
         height: 300,
       }}
     >
-      <Popconfirm position="tl" {...props}>
+      <Popconfirm focusLock position="tl" {...props}>
         <Button
           style={{
             position: 'absolute',

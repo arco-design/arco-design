@@ -2,6 +2,7 @@ import React, { ReactElement, useContext } from 'react';
 import cs from '../_util/classNames';
 import { TabsProps, TabsContext } from './tabs';
 import { TabPaneProps, TabPaneType } from './tab-pane';
+import { ConfigContext } from '../ConfigProvider';
 
 interface TabContentProps
   extends Pick<TabsProps, 'animation' | 'activeTab' | 'direction' | 'lazyload' | 'destroyOnHide'> {
@@ -14,6 +15,7 @@ export default function TabContent(props: TabContentProps) {
     props;
   const activeIndex = paneChildren.findIndex((p) => p.key === activeTab);
   const ctxProps = useContext(TabsContext);
+  const { rtl } = useContext(ConfigContext);
 
   if (
     paneChildren.every((x) => {
@@ -31,9 +33,9 @@ export default function TabContent(props: TabContentProps) {
     <div className={`${prefixCls}-content ${prefixCls}-content-${direction}`}>
       <div
         className={classNamesContentInner}
-        style={{
-          marginLeft: `-${activeIndex * 100}%`,
-        }}
+        style={
+          rtl ? { marginRight: `-${activeIndex * 100}%` } : { marginLeft: `-${activeIndex * 100}%` }
+        }
       >
         {paneChildren.map((child, index) => {
           const { tabpane, tab } = ctxProps.getIdPrefix(index);

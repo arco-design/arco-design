@@ -1,3 +1,11 @@
+## 2.39.2
+
+2022-08-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the initial `pageSize` of the `Pagination` component was inconsistent with the selected `sizeOptions`.([#1333](https://github.com/arco-design/arco-design/pull/1333))
+
 ## 2.39.0
 
 2022-08-12

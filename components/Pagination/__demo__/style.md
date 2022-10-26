@@ -22,7 +22,7 @@ const App = () => {
       <Pagination
         total={200}
         style={{ marginBottom: 20 }}
-        pageItemStyle={{ background: 'var(--color-bg-2)', marginRight: 0 }}
+        pageItemStyle={{ background: 'var(--color-bg-2)', marginRight: 2 }}
         activePageItemStyle={{ background: 'var(--color-fill-2)' }}
       />
       <Pagination

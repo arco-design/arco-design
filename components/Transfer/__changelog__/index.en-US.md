@@ -1,3 +1,11 @@
+## 2.40.0
+
+2022-09-16
+
+### 🆕 Feature
+
+- The `showSearch / showFooter / searchPlaceholder / pagination / listStyle` properties of `Transfer` support passing in different property values for source/target lists via arrays.([#1389](https://github.com/arco-design/arco-design/pull/1389))
+
 ## 2.37.0
 
 2022-07-08

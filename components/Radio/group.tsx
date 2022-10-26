@@ -66,7 +66,7 @@ function Group(baseProps: PropsWithChildren<RadioGroupProps>) {
   };
   return (
     <RadioGroupContext.Provider value={contextProp}>
-      <div className={classNames} style={style} {...pickDataAttributes(props)}>
+      <div className={classNames} role="radiogroup" style={style} {...pickDataAttributes(props)}>
         {options && isArray(options)
           ? options.map((option, index) => {
               if (isObject(option)) {

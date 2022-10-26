@@ -1,0 +1,23 @@
+@import './token.less';
+
+@input-tag-prefix-cls: ~'@{prefix}-input-tag';
+
+.input-tag-input-element-padding(@paddingLeft) {
+  .@{input-tag-prefix-cls}-has-placeholder {
+    input,
+    .@{input-tag-prefix-cls}-input-mirror {
+      box-sizing: border-box;
+      padding-left: @paddingLeft;
+    }
+  }
+}
+
+.input-tag-input-element-padding-rtl(@paddingRight) {
+  .@{input-tag-prefix-cls}-has-placeholder {
+    input,
+    .@{input-tag-prefix-cls}-input-mirror {
+      padding-left: 0;
+      padding-right: @paddingRight;
+    }
+  }
+}

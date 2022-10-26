@@ -4,6 +4,7 @@ exports[`renders ConfigProvider/demo/basic.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
     style="margin-bottom:40px"
   >
     <label
@@ -300,7 +301,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -311,18 +311,22 @@ Array [
           class="arco-select-view"
           title="10 条/页"
         >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="10 条/页"
-          />
           <span
-            class="arco-select-view-value"
+            class="arco-select-view-selector"
           >
-            10 条/页
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="10 条/页"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              10 条/页
+            </span>
           </span>
           <div
             aria-hidden="true"
@@ -528,6 +532,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"
@@ -589,6 +594,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
       >
         <div
           class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
+          role="radiogroup"
         >
           <label
             class="arco-radio-button arco-radio-checked"
@@ -1051,6 +1057,95 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders ConfigProvider/demo/local-setting.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:20px"
+  >
+    <h6
+      class="arco-typography arco-typography-rtl"
+    >
+       局部 RTL 视图
+    </h6>
+    <div
+      class="demo-holder-wrapper"
+    />
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center arco-space-rtl"
+    >
+      <div
+        class="arco-space-item"
+        style="margin-left:8px"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-rtl"
+          type="button"
+        >
+          <span>
+            Open Message
+          </span>
+        </button>
+      </div>
+      <div
+        class="arco-space-item"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-rtl"
+          type="button"
+        >
+          <span>
+            Open Notification
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div>
+      <h6
+        class="arco-typography"
+      >
+         正常视图 
+      </h6>
+      <div
+        class="arco-space arco-space-horizontal arco-space-align-center"
+      >
+        <div
+          class="arco-space-item"
+          style="margin-right:8px"
+        >
+          <button
+            class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+            type="button"
+          >
+            <span>
+              Open Message
+            </span>
+          </button>
+        </div>
+        <div
+          class="arco-space-item"
+        >
+          <button
+            class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+            type="button"
+          >
+            <span>
+              Open Notification
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders ConfigProvider/demo/renderEmpty.md correctly 1`] = `
 Array [
   <div
@@ -1062,7 +1157,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-cascader-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -1074,18 +1168,23 @@ Array [
           class="arco-cascader-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-cascader-view-input"
-            placeholder="Cascader"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-cascader-view-value arco-cascader-hidden"
-          />
+            class="arco-cascader-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Cascader"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            >
+              Cascader
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-cascader-suffix"
@@ -1117,7 +1216,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-select-popup-1"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-select arco-select-single arco-select-size-default"
@@ -1129,18 +1227,23 @@ Array [
           class="arco-select-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-select-view-input"
-            placeholder="Select"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-select-view-value arco-select-hidden"
-          />
+            class="arco-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              placeholder="Select"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-select-view-value arco-select-view-value-mirror"
+            >
+              Select
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-select-suffix"
@@ -1171,7 +1274,6 @@ Array [
     >
       <div
         aria-autocomplete="list"
-        aria-controls="arco-tree-select-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -1183,18 +1285,23 @@ Array [
           class="arco-tree-select-view"
           title=""
         >
-          <input
-            autocomplete="off"
-            class="arco-tree-select-view-input"
-            placeholder="TreeSelect"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
           <span
-            aria-hidden="true"
-            class="arco-tree-select-view-value arco-tree-select-hidden"
-          />
+            class="arco-tree-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-tree-select-view-input"
+              placeholder="TreeSelect"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+            >
+              TreeSelect
+            </span>
+          </span>
           <div
             aria-hidden="true"
             class="arco-tree-select-suffix"
@@ -1425,10 +1532,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
             style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
           >
             <div
-              aria-controls="arco-tabs-0-panel-0"
               aria-selected="true"
               class="arco-tabs-header-title arco-tabs-header-title-active"
-              id="arco-tabs-0-tab-0"
               role="tab"
               tabindex="0"
             >
@@ -1439,10 +1544,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-0-panel-1"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-0-tab-1"
               role="tab"
               tabindex="0"
             >
@@ -1453,10 +1556,8 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               </span>
             </div>
             <div
-              aria-controls="arco-tabs-0-panel-2"
               aria-selected="false"
               class="arco-tabs-header-title"
-              id="arco-tabs-0-tab-2"
               role="tab"
               tabindex="0"
             >
@@ -1868,7 +1969,6 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
         >
           <div
             aria-autocomplete="list"
-            aria-controls="arco-select-popup-2"
             aria-expanded="false"
             aria-haspopup="listbox"
             class="arco-select arco-select-single arco-select-size-default arco-select-rtl"
@@ -1879,18 +1979,22 @@ exports[`renders ConfigProvider/demo/rtl.md correctly 1`] = `
               class="arco-select-view"
               title="10 条/页"
             >
-              <input
-                aria-hidden="true"
-                autocomplete="off"
-                class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
-                tabindex="-1"
-                value="10 条/页"
-              />
               <span
-                class="arco-select-view-value"
+                class="arco-select-view-selector"
               >
-                10 条/页
+                <input
+                  aria-hidden="true"
+                  autocomplete="off"
+                  class="arco-select-view-input arco-select-hidden"
+                  style="width:100%;pointer-events:none"
+                  tabindex="-1"
+                  value="10 条/页"
+                />
+                <span
+                  class="arco-select-view-value"
+                >
+                  10 条/页
+                </span>
               </span>
               <div
                 aria-hidden="true"
@@ -2224,6 +2328,7 @@ exports[`renders ConfigProvider/demo/theme.md correctly 1`] = `
 Array [
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
+    role="radiogroup"
     style="display:block;margin-bottom:40px"
   >
     <label

@@ -15,6 +15,7 @@ import Trigger from '../Trigger';
 import { TooltipPosition } from './interface';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
+import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 interface SliderButtonProps {
   style?: CSSProperties;
@@ -32,6 +33,7 @@ interface SliderButtonProps {
   onMoving?: (x: number, y: number) => void;
   onMoveEnd?: () => void;
   onMoveBegin?: () => void;
+  onArrowEvent?: (type: 'addition' | 'subtraction') => void;
 }
 
 const SliderButton = function (props: SliderButtonProps) {
@@ -50,6 +52,8 @@ const SliderButton = function (props: SliderButtonProps) {
     onMoveEnd,
     onMoveBegin,
   } = props;
+
+  const getKeyboardEvents = useKeyboardEvent();
 
   // state
   const [isActive, setIsActive] = useState(false);
@@ -215,10 +219,28 @@ const SliderButton = function (props: SliderButtonProps) {
         aria-valuemin={props.minValue}
         aria-valuenow={value}
         aria-disabled={!!disabled}
-        tabIndex={0}
+        tabIndex={disabled ? -1 : 0}
         aria-valuetext={
           isString(tooltipText) || isNumber(tooltipText) ? String(tooltipText) : undefined
         }
+        {...getKeyboardEvents({
+          onArrowRight: (e) => {
+            e.preventDefault();
+            props.onArrowEvent?.('addition');
+          },
+          onArrowUp: (e) => {
+            e.preventDefault();
+            props.onArrowEvent?.('addition');
+          },
+          onArrowLeft: (e) => {
+            e.preventDefault();
+            props.onArrowEvent?.('subtraction');
+          },
+          onArrowDown: (e) => {
+            e.preventDefault();
+            props.onArrowEvent?.('subtraction');
+          },
+        })}
       />
     </Trigger>
   );
