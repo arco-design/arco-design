@@ -50,6 +50,12 @@ export interface CollapseProps {
    */
   destroyOnHide?: boolean;
   /**
+   * @zh 可触发折叠操作的区域
+   * @en The area that can trigger the collapse operation
+   * @version 2.41.0
+   */
+  triggerRegion?: 'header' | 'icon';
+  /**
    * @zh 展开面板改变时触发
    * @en Callback when the active panel changes
    */
@@ -72,7 +78,7 @@ export interface CollapseItemProps {
    * @zh 折叠面板头部内容，允许自定义
    * @en Header content
    */
-  header?: React.ReactNode;
+  header?: ReactNode;
   /**
    * @zh 对应 activeKey，当前面板组件的的唯一标识
    * @en Unique identifier key of the current panel item

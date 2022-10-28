@@ -125,6 +125,76 @@ exports[`renders Collapse/demo/accordion.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Collapse/demo/activeRegion.md correctly 1`] = `
+<div
+  activeregion="header"
+  class="arco-collapse arco-collapse-border"
+  style="max-width:1180px"
+>
+  <div
+    class="arco-collapse-item arco-collapse-item-active"
+  >
+    <div
+      aria-expanded="true"
+      class="arco-collapse-item-header arco-collapse-item-header-left"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="arco-icon-hover arco-collapse-item-icon-hover"
+      >
+        <span
+          class="arco-collapse-item-header-icon arco-collapse-item-header-icon-down"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-caret-right"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937l16.879 13.503Z"
+              fill="currentColor"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </span>
+      <div
+        class="arco-collapse-item-header-title"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+    <div
+      class="arco-collapse-item-content arco-collapse-item-content-expanded"
+      role="region"
+    >
+      <div
+        class="arco-collapse-item-content-box"
+      >
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          role="separator"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+        <div
+          class="arco-divider arco-divider-horizontal"
+          role="separator"
+          style="margin:8px 0"
+        />
+        Beijing Toutiao Technology Co., Ltd.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Collapse/demo/basic.md correctly 1`] = `
 <div
   class="arco-collapse arco-collapse-border"
