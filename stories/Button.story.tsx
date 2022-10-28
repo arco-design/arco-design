@@ -157,6 +157,42 @@ export const Focus = () => (
   </Space>
 );
 
+export const ButtonGroup = () => (
+  <Space direction="vertical">
+    <Button.Group>
+      <Button type="primary">Primary</Button>
+      <Button type="secondary">Secondary</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="outline">Outline</Button>
+      <Button type="text">Text</Button>
+    </Button.Group>
+    <Button.Group>
+      <Button type="text" status="warning">
+        Warning
+      </Button>
+      <Button type="primary" status="success">
+        Success
+      </Button>
+      <Button status="default">Default</Button>
+      <Button type="outline" status="danger">
+        Danger
+      </Button>
+    </Button.Group>
+
+    <Button.Group>
+      <Button type="text" status="warning">
+        Warning
+      </Button>
+      <Button type="text" status="success">
+        Success
+      </Button>
+      <Button type="text">Default</Button>
+      <Button type="text" status="danger">
+        Danger
+      </Button>
+    </Button.Group>
+  </Space>
+);
 export default {
   title: 'Button',
 };
