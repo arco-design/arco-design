@@ -283,16 +283,29 @@
     border-right: 1px solid @btn-secondary-color-bg_hover;
   }
 
+  .@{btn-prefix-cls}-text:not(:last-child) {
+    border-right: 1px solid @btn-text-color-border_hover;
+  }
+
   .@{btn-prefix-cls}-status-warning:not(:last-child) {
     border-right: 1px solid @btn-primary-color-bg_warning_hover;
+    &.@{btn-prefix-cls}-text {
+      border-right: 1px solid @btn-text-color-bg_warning_hover;
+    }
   }
 
   .@{btn-prefix-cls}-status-danger:not(:last-child) {
     border-right: 1px solid @btn-primary-color-bg_danger_hover;
+    &.@{btn-prefix-cls}-text {
+      border-right: 1px solid @btn-text-color-bg_danger_hover;
+    }
   }
 
   .@{btn-prefix-cls}-status-success:not(:last-child) {
     border-right: 1px solid @btn-primary-color-bg_success_hover;
+    &.@{btn-prefix-cls}-text {
+      border-right: 1px solid @btn-text-color-bg_success_hover;
+    }
   }
 
   .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-outline:not(:first-child),
@@ -311,19 +324,33 @@
     border-right: 0;
   }
 
+  .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-text:not(:last-child) {
+    border-left: 1px solid @btn-text-color-border_hover;
+    border-right: 0;
+  }
+
   .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-status-warning:not(:last-child) {
     border-left: 1px solid @btn-primary-color-bg_warning_hover;
     border-right: 0;
+    &.@{btn-prefix-cls}-text {
+      border-left: 1px solid @btn-text-color-bg_warning_hover;
+    }
   }
 
   .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-status-danger:not(:last-child) {
     border-left: 1px solid @btn-primary-color-bg_danger_hover;
     border-right: 0;
+    &.@{btn-prefix-cls}-text {
+      border-left: 1px solid @btn-text-color-bg_danger_hover;
+    }
   }
 
   .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-status-success:not(:last-child) {
     border-left: 1px solid @btn-primary-color-bg_success_hover;
     border-right: 0;
+    &.@{btn-prefix-cls}-text {
+      border-left: 1px solid @btn-text-color-bg_success_hover;
+    }
   }
 
   .@{btn-prefix-cls}-outline,
