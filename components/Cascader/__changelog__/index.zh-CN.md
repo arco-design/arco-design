@@ -1,3 +1,16 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 功能升级
+
+- `Cascader` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+
+### 🐛 问题修复
+
+- 优化 `Cascader` 组件选项的 `title` 属性显示 `[object object]` 的问题。([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- 修复 `Cascader` 组件在设置 `changeOnSelect` & `mode=multiple` 时，子节点选中后父节点无法被选中的 bug([#1468](https://github.com/arco-design/arco-design/pull/1468))
+
 ## 2.40.0
 
 2022-09-16

@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 BugFix
+
+- Fix `Transfer` disabled items can still be draggable when `draggable` is enabled.([#1493](https://github.com/arco-design/arco-design/pull/1493))
+
 ## 2.40.0
 
 2022-09-16

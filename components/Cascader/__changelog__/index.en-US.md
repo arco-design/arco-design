@@ -1,3 +1,16 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- The `Cascader` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
+
+### 🐛 BugFix
+
+- Optimized the problem that the `title` property of the `Cascader` component option displays `[object object]`.([#1468](https://github.com/arco-design/arco-design/pull/1468))
+- Fixed the bug that the parent node cannot be selected after the child node is selected when the `Cascader` component is set to `changeOnSelect` & `mode=multiple`([#1468](https://github.com/arco-design/arco-design/pull/1468))
+
 ## 2.40.0
 
 2022-09-16

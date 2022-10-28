@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 💅 Style
+
+- Fix the bug that the border style of text buttons is wrong under `Button.Group`([#1515](https://github.com/arco-design/arco-design/pull/1515))
+
 ## 2.28.2
 
 2022-01-21

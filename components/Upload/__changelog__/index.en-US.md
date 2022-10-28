@@ -1,3 +1,12 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- The `Upload` component supports enabling built-in image preview functionality via the `imagePreview` property.([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Upload` component supports `onDragLeave` and `onDragOver` event callbacks([#1459](https://github.com/arco-design/arco-design/pull/1459))
+
 ## 2.38.1
 
 2022-08-05

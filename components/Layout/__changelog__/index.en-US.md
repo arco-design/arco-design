@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 BugFix
+
+- Fixed the bug that `defaultCollapsed` of `Layout.Sider` component did not take effect.([#1458](https://github.com/arco-design/arco-design/pull/1458))
+
 ## 2.40.0
 
 2022-09-16

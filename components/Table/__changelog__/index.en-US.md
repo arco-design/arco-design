@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 💅 Style
+
+- Fixed `Table` component's style issue of collapsed column height when `scroll.x` is too small.([#1492](https://github.com/arco-design/arco-design/pull/1492))
+
 ## 2.40.2
 
 2022-09-30

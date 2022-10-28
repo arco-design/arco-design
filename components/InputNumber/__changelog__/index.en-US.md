@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- The `InputNumber` component `formatter` adds a parameter to mark the user-typing state.([#1516](https://github.com/arco-design/arco-design/pull/1516))
+
 ## 2.37.1
 
 2022-07-14

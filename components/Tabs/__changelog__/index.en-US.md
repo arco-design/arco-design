@@ -1,3 +1,17 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 BugFix
+
+- Fix the bug that is wrong in the horizontal scrolling direction under the `RTL` view.([#1487](https://github.com/arco-design/arco-design/pull/1487))
+
+### 💅 Style
+
+- Fix `Tabs` component's `extra` element's style issue that is covered when the width is large.([#1494](https://github.com/arco-design/arco-design/pull/1494))
+- Fixed a bug where the new icon color value of the `Tabs` component in dark mode was incorrect.([#1454](https://github.com/arco-design/arco-design/pull/1454))
+- Fixed `Tabs` component in `type=line` & `tabPosition=bottom`, the style issue of the wrong split line position.([#1248](https://github.com/arco-design/arco-design/pull/1248))
+
 ## 2.40.0
 
 2022-09-16

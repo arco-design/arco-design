@@ -1,3 +1,12 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 功能升级
+
+- `Upload` 组件支持通过 `imagePreview` 属性启用内置的图片预览功能。([#1459](https://github.com/arco-design/arco-design/pull/1459))
+- `Upload` 组件支持 `onDragLeave` 和 `onDragOver` 事件回调([#1459](https://github.com/arco-design/arco-design/pull/1459))
+
 ## 2.38.1
 
 2022-08-05

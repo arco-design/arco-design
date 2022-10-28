@@ -1,3 +1,19 @@
+## 2.41.0
+
+2022-10-28
+
+### 💎 Enhancement
+
+- Reduce the number of times the `TreeSelect` component re-renders when `retainInputValueWhileSelect` is enabled([#1517](https://github.com/arco-design/arco-design/pull/1517))
+
+### 🆕 Feature
+
+- The `TreeSelect` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
+
+### 🐛 BugFix
+
+- Fixed the bug that the same value could not be entered again after `TreeSelect` was controlled to empty `inputValue`([#1463](https://github.com/arco-design/arco-design/pull/1463))
+
 ## 2.40.0
 
 2022-09-16

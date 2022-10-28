@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 BugFix
+
+- Fix the bug that the starting range of Slider is out of order due to the update of the parent component([#1467](https://github.com/arco-design/arco-design/pull/1467))
+
 ## 2.32.0
 
 2022-04-15

@@ -2,16 +2,19 @@
 changelog: true
 ---
 
-## 2.41.0-beta.1
+## 2.41.0
 
-2022-10-21
+2022-10-28
 
 ### 💎 功能优化
 
+- 减少 `TreeSelect` 组件在开启 `retainInputValueWhileSelect` 时重新渲染的次数([#1517](https://github.com/arco-design/arco-design/pull/1517))
 - `Image` 组件悬浮时显示`zoom-in`鼠标类型([#1477](https://github.com/arco-design/arco-design/pull/1477))
 
 ### 🆕 功能升级
 
+- `Collapse` 组件新增 `triggerRegion` 属性以自定义折叠触发区域。([#1520](https://github.com/arco-design/arco-design/pull/1520))
+- `InputNumber` 组件 `formatter` 新增参数以标记用户输入状态。([#1516](https://github.com/arco-design/arco-design/pull/1516))
 - 新增马来语。([#1465](https://github.com/arco-design/arco-design/pull/1465))
 - `Select` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
 - `TreeSelect` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
@@ -35,6 +38,7 @@ changelog: true
 
 ### 💅 样式更新
 
+- 修复文字按钮在 `Button.Group` 下边框样式出错的 bug([#1515](https://github.com/arco-design/arco-design/pull/1515))
 - 修复 `Tabs` 组件 `extra` 元素较大宽度时被遮盖样式问题。([#1494](https://github.com/arco-design/arco-design/pull/1494))
 - 修复 `Table` 组件当 `scroll.x` 过小时总结列高度塌陷的样式问题。([#1492](https://github.com/arco-design/arco-design/pull/1492))
 - 修复暗黑模式下 `Tabs` 组件的新增图标色值有误的 bug。([#1454](https://github.com/arco-design/arco-design/pull/1454))

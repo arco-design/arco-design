@@ -1,3 +1,17 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 问题修复
+
+- 修复 `Tabs` 组件在 `RTL` 视图下水平滚动方向错误的 bug。([#1487](https://github.com/arco-design/arco-design/pull/1487))
+
+### 💅 样式更新
+
+- 修复 `Tabs` 组件 `extra` 元素较大宽度时被遮盖样式问题。([#1494](https://github.com/arco-design/arco-design/pull/1494))
+- 修复暗黑模式下 `Tabs` 组件的新增图标色值有误的 bug。([#1454](https://github.com/arco-design/arco-design/pull/1454))
+- 修复 `Tabs` 组件在 `type=line` & `tabPosition=bottom` 时，分割线位置错误的样式问题。([#1248](https://github.com/arco-design/arco-design/pull/1248))
+
 ## 2.40.0
 
 2022-09-16

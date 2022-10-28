@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 问题修复
+
+- 修复 `Layout.Sider` 组件 `defaultCollapsed` 属性未生效的 bug。([#1458](https://github.com/arco-design/arco-design/pull/1458))
+
 ## 2.40.0
 
 2022-09-16

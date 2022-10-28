@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 💎 Enhancement
+
+- Show `zoom-in` mouse type when `Image` component is hovered([#1477](https://github.com/arco-design/arco-design/pull/1477))
+
 ## 2.40.1
 
 2022-09-23

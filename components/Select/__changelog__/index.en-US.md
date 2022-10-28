@@ -1,3 +1,15 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- The `Select` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
+
+### 🐛 BugFix
+
+- Fix the bug that the width of `Select` does not automatically change with the content when `width: auto` is set. (In the single-selection mode, the new DOM node in the inner layer directly wraps the `.arco-select-view-value` and `input` tags)([#1490](https://github.com/arco-design/arco-design/pull/1490))
+
 ## 2.40.0
 
 2022-09-16

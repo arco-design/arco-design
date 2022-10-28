@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- The `Collapse` component adds a `triggerRegion` property to customize the collapse trigger region.([#1520](https://github.com/arco-design/arco-design/pull/1520))
+
 ## 2.39.0
 
 2022-08-12

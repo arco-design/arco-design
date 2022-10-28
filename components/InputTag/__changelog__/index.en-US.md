@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🐛 BugFix
+
+- Fixed the bug that when the `InputTag` component has enabled `dragToSort`, the tag will be rendered twice when the disabled state is toggled.([#1457](https://github.com/arco-design/arco-design/pull/1457))
+
 ## 2.39.3
 
 2022-09-02

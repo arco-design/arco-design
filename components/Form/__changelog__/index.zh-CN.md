@@ -1,3 +1,15 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 功能升级
+
+- `Form` 组件的 `colon` 属性支持传入 `ReactNode`。([#1455](https://github.com/arco-design/arco-design/pull/1455))
+
+### 🐛 问题修复
+
+- 修复 `Form.Item` 组件的 `shouldUpdate` 属性在重置表单项时未生效的 bug。([#1462](https://github.com/arco-design/arco-design/pull/1462))
+
 ## 2.40.0
 
 2022-09-16

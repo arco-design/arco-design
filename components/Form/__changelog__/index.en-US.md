@@ -1,3 +1,15 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- The `colon` property of the `Form` component supports passing a `ReactNode`.([#1455](https://github.com/arco-design/arco-design/pull/1455))
+
+### 🐛 BugFix
+
+- Fixed a bug where the `shouldUpdate` property of the `Form.Item` component did not take effect when resetting the form item.([#1462](https://github.com/arco-design/arco-design/pull/1462))
+
 ## 2.40.0
 
 2022-09-16

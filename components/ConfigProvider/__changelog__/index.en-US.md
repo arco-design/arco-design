@@ -1,3 +1,11 @@
+## 2.41.0
+
+2022-10-28
+
+### 🆕 Feature
+
+- Add Malay.([#1465](https://github.com/arco-design/arco-design/pull/1465))
+
 ## 2.33.0
 
 2022-05-13

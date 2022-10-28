@@ -4,15 +4,18 @@ changelog: true
 
 ## 2.41.0
 
-2022-10-21
+2022-10-28
 
 ### 💎 Enhancement
 
+- Reduce the number of times the `TreeSelect` component re-renders when `retainInputValueWhileSelect` is enabled([#1517](https://github.com/arco-design/arco-design/pull/1517))
 - Show `zoom-in` mouse type when `Image` component is hovered([#1477](https://github.com/arco-design/arco-design/pull/1477))
 
 ### 🆕 Feature
 
-- Add Melayu.([#1465](https://github.com/arco-design/arco-design/pull/1465))
+- The `Collapse` component adds a `triggerRegion` property to customize the collapse trigger region.([#1520](https://github.com/arco-design/arco-design/pull/1520))
+- The `InputNumber` component `formatter` adds a parameter to mark the user-typing state.([#1516](https://github.com/arco-design/arco-design/pull/1516))
+- Add Malay.([#1465](https://github.com/arco-design/arco-design/pull/1465))
 - The `Select` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
 - The `TreeSelect` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
 - The `Cascader` component supports setting the front tag through the `addBefore` property([#1464](https://github.com/arco-design/arco-design/pull/1464))
@@ -35,6 +38,7 @@ changelog: true
 
 ### 💅 Style
 
+- Fix the bug that the border style of text buttons is wrong under `Button.Group`([#1515](https://github.com/arco-design/arco-design/pull/1515))
 - Fix `Tabs` component's `extra` element's style issue that is covered when the width is large.([#1494](https://github.com/arco-design/arco-design/pull/1494))
 - Fixed `Table` component's style issue of collapsed column height when `scroll.x` is too small.([#1492](https://github.com/arco-design/arco-design/pull/1492))
 - Fixed a bug where the new icon color value of the `Tabs` component in dark mode was incorrect.([#1454](https://github.com/arco-design/arco-design/pull/1454))

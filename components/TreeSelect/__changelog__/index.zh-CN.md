@@ -1,3 +1,19 @@
+## 2.41.0
+
+2022-10-28
+
+### 💎 功能优化
+
+- 减少 `TreeSelect` 组件在开启 `retainInputValueWhileSelect` 时重新渲染的次数([#1517](https://github.com/arco-design/arco-design/pull/1517))
+
+### 🆕 功能升级
+
+- `TreeSelect` 组件支持通过 `addBefore` 属性设置前置标签([#1464](https://github.com/arco-design/arco-design/pull/1464))
+
+### 🐛 问题修复
+
+- 修复 `TreeSelect` 受控清空 `inputValue` 后无法再次输入相同值的 bug([#1463](https://github.com/arco-design/arco-design/pull/1463))
+
 ## 2.40.0
 
 2022-09-16
