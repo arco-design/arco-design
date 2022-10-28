@@ -13,6 +13,7 @@ import MonthPanel from '../month';
 import YearPanel from '../year';
 import { newArray } from '../../../_util/constant';
 import PickerContext from '../../context';
+import omit from '../../../_util/omit';
 
 interface InnerDatePickerProps extends DatePickerProps {
   onTimePickerSelect?: (timeString: string, time: Dayjs) => void;
@@ -200,7 +201,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
       <div className={`${prefixCls}-timepicker`}>
         <header className={`${prefixCls}-timepicker-title`}>{DATEPICKER_LOCALE.selectTime}</header>
         <TimePicker
-          {...timepickerProps}
+          {...omit(timepickerProps, ['disableConfirm'])}
           {...showTimeProps}
           {...disabledTimeProps}
           hideFooter
