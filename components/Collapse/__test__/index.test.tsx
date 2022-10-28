@@ -249,4 +249,22 @@ describe('Collapse', () => {
     fireEvent.click(wrapper.find(`${prefixCls}-item-header`).item(1));
     expect(wrapper.find('.arco-collapse-item-content')).toHaveLength(2);
   });
+
+  it('expand and collapse correctly with trigger region', () => {
+    let activeKey = [];
+    const wrapper = render(
+      <Collapse triggerRegion="header" onChange={(_, keys) => (activeKey = keys)}>
+        <CollapseItem header="header" name="name">
+          Hello world
+        </CollapseItem>
+      </Collapse>
+    );
+
+    fireEvent.click(wrapper.querySelector(`${prefixCls}-item-header`));
+    expect(activeKey).toHaveLength(0);
+    fireEvent.click(wrapper.querySelector(`${prefixCls}-item-header-title`));
+    expect(activeKey).toHaveLength(1);
+    fireEvent.click(wrapper.querySelector('.arco-icon-hover'));
+    expect(activeKey).toHaveLength(0);
+  });
 });

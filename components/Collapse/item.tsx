@@ -30,6 +30,12 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
 
   const isExpanded = ctx.activeKeys?.indexOf(name) > -1;
   const icon = showExpandIcon ? ('expandIcon' in props ? expandIcon : ctx.expandIcon) : null;
+  const clickEventHandler = (e, regionLevel: 0 | 1 | 2) => {
+    if (disabled) return;
+    const { triggerRegion } = ctx;
+    const triggerRegionLevel = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
+    regionLevel <= triggerRegionLevel && ctx.onToggle(name, e);
+  };
 
   return (
     <div
@@ -50,13 +56,12 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
         role="button"
         aria-disabled={disabled}
         aria-expanded={isExpanded}
+        data-active-region={ctx.triggerRegion}
         tabIndex={disabled ? -1 : 0}
         className={cs(`${prefixCls}-header`, `${prefixCls}-header-${ctx.expandIconPosition}`, {
           [`${prefixCls}-header-disabled`]: disabled,
         })}
-        onClick={(e) => {
-          !disabled && ctx.onToggle(name, e);
-        }}
+        onClick={(e) => clickEventHandler(e, 2)}
         {...getEventListeners({
           onPressEnter: (e) => {
             !disabled && ctx.onToggle(name, e);
@@ -71,6 +76,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
               [`${prefixCls}-icon-hover-right`]: ctx.expandIconPosition === 'right',
               [`${prefixCls}-header-icon-right`]: ctx.expandIconPosition === 'right',
             })}
+            onClick={(e) => clickEventHandler(e, 0)}
           >
             <span
               className={cs(`${prefixCls}-header-icon`, {
@@ -81,7 +87,9 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
             </span>
           </IconHover>
         )}
-        <div className={`${prefixCls}-header-title`}>{header}</div>
+        <div className={`${prefixCls}-header-title`} onClick={(e) => clickEventHandler(e, 1)}>
+          {header}
+        </div>
         {extra && (
           <div
             className={`${prefixCls}-header-extra`}

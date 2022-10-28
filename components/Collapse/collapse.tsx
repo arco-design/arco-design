@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, PropsWithChildren } from 'react';
+import React, { createContext, useContext, PropsWithChildren } from 'react';
 import { isFunction } from '../_util/is';
 import cs from '../_util/classNames';
 import CollapseItem from './item';
@@ -24,14 +24,15 @@ const defaultProps: CollapseProps = {
   expandIconPosition: 'left',
 };
 
-export const CollapseContext = createContext<{
-  expandIcon?: ReactNode;
-  activeKeys: string[];
-  expandIconPosition?: 'left' | 'right';
-  lazyload?: boolean;
-  destroyOnHide?: boolean;
-  onToggle?: (_key: string, _e) => void;
-}>({
+export const CollapseContext = createContext<
+  Pick<
+    CollapseProps,
+    'expandIcon' | 'triggerRegion' | 'expandIconPosition' | 'lazyload' | 'destroyOnHide'
+  > & {
+    activeKeys: string[];
+    onToggle?: (_key: string, _e) => void;
+  }
+>({
   expandIconPosition: 'left',
   expandIcon: <IconCaretRight />,
   activeKeys: [],
@@ -64,6 +65,7 @@ function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
     expandIconPosition,
     destroyOnHide,
     accordion,
+    triggerRegion,
     onChange,
     ...rest
   } = props;
@@ -90,8 +92,11 @@ function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
     <CollapseContext.Provider
       value={{
         activeKeys,
-        onToggle: onItemClick,
+        triggerRegion,
         lazyload,
+        destroyOnHide,
+        expandIconPosition,
+        onToggle: onItemClick,
         expandIcon:
           'expandIcon' in props ? (
             expandIcon
@@ -100,8 +105,6 @@ function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
           ) : (
             <IconCaretRight />
           ),
-        destroyOnHide,
-        expandIconPosition,
       }}
     >
       <div

@@ -55,6 +55,23 @@
       // 保证在收起动画完成时才隐藏边框
       transition: border-color 0s ease 0.19s;
 
+      &[data-active-region='header'] {
+        cursor: unset;
+
+        > .@{collapse-prefix-cls}-item-header-title,
+        > .@{prefix}-icon-hover {
+          cursor: pointer;
+        }
+      }
+
+      &[data-active-region='icon'] {
+        cursor: unset;
+
+        > .@{prefix}-icon-hover {
+          cursor: pointer;
+        }
+      }
+
       &:focus-visible {
         box-shadow: inset 0 0 0 2px @collapse-color-box-shadow;
       }
