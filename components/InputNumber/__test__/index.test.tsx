@@ -198,14 +198,17 @@ describe('InputNumber ', () => {
           defaultValue={6}
           min={0}
           max={15}
-          formatter={(num) => `${num}%`}
+          formatter={(value, { userTyping, input }) =>
+            userTyping ? input : `${`${value}`.replace(/%/g, '')}%`
+          }
+          parser={(value) => value.replace('%', '')}
           onChange={(val) => (changeValue = val)}
         />
       );
       const input = wrapper.find('.arco-input')[0];
       fireEvent.focus(input);
       fireEvent.change(input, { target: { value: '12' } });
-      expect(getInputValue(wrapper)).toBe('12%');
+      expect(getInputValue(wrapper)).toBe('12');
       expect(changeValue).toBe(12);
       fireEvent.blur(input);
       expect(getInputValue(wrapper)).toBe('12%');

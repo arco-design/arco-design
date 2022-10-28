@@ -95,7 +95,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   const [inputValue, setInputValue] = useState<string>('');
   const [isOutOfRange, setIsOutOfRange] = useState(false);
-  const [isUserInputting, setIsUserInputting] = useState(false);
+  const [isUserTyping, setIsUserTyping] = useState(false);
 
   // Value is not set
   const isEmptyValue = value === '' || value === undefined || value === null;
@@ -170,7 +170,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   const handleArrowKey = (event, method: StepMethods, needRepeat = false) => {
     event.persist();
     event.preventDefault();
-    setIsUserInputting(false);
+    setIsUserTyping(false);
 
     if (disabled || readOnly) {
       return;
@@ -196,10 +196,10 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   };
 
   const getDisplayInputValue = () => {
-    let _value: string | number;
+    let _value: string;
 
-    if (isUserInputting) {
-      _value = inputValue;
+    if (isUserTyping) {
+      _value = parser ? `${parser(inputValue)}` : inputValue;
     } else if (isNumber(value) && isNumber(mergedPrecision)) {
       _value = toFixed(value, mergedPrecision);
     } else if (value == null) {
@@ -208,21 +208,18 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       _value = toSafeString(value);
     }
 
-    return formatter ? formatter(_value) : _value;
+    return formatter ? formatter(_value, { userTyping: isUserTyping, input: inputValue }) : _value;
   };
 
   const inputEventHandlers = {
-    onChange: (value) => {
-      setIsUserInputting(true);
+    onChange: (rawText) => {
+      setIsUserTyping(true);
+      rawText = rawText.trim().replace(/。/g, '.');
+      const parsedValue = parser ? parser(rawText) : rawText;
 
-      let targetValue = value.trim().replace(/。/g, '.');
-      targetValue = parser ? parser(targetValue) : targetValue;
-
-      if (isNumber(+targetValue) || targetValue === '-' || !targetValue || targetValue === '.') {
-        const formatValue = getLegalValue(targetValue);
-
-        setInputValue(targetValue);
-        setValue(formatValue);
+      if (isNumber(+parsedValue) || parsedValue === '-' || !parsedValue || parsedValue === '.') {
+        setInputValue(rawText);
+        setValue(getLegalValue(parsedValue));
       }
     },
     onKeyDown: (e) => {
@@ -246,7 +243,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     },
     onBlur: (e) => {
       setValue(getLegalValue(value));
-      setIsUserInputting(false);
+      setIsUserTyping(false);
       onBlur && onBlur(e);
     },
   };
