@@ -88,8 +88,9 @@ export interface InputNumberProps
   /**
    * @zh 定义输入框展示值
    * @en Specifies the format of the value presented
+   * @version Param `info` in `2.41.0`
    */
-  formatter?: (value: number | string) => string;
+  formatter?: (value: number | string, info: { userTyping: boolean; input: string }) => string;
   /**
    * @zh 从 formatter 转换为数字，和 formatter 搭配使用。
    * @en Specifies the value extracted from formatter

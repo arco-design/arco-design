@@ -32,7 +32,7 @@
 |icons|配置图标|{up?: ReactNode;down?: ReactNode;plus?: ReactNode;minus?: ReactNode;} |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |value|当前值|undefined \| number \| string |`-`|-|
-|formatter|定义输入框展示值|(value: number \| string) => string |`-`|-|
+|formatter|定义输入框展示值|(value: number \| string, info: { userTyping: boolean; input: string }) => string |`-`|Param `info` in `2.41.0`|
 |onBlur|输入框失去聚焦事件的回调|(e) => void |`-`|-|
 |onChange|变化回调|(value: number) => void |`-`|-|
 |onFocus|输入框聚焦事件的回调|(e) => void |`-`|-|

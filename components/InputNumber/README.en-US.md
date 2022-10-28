@@ -32,7 +32,7 @@ An input box which only allows to enter number.
 |icons|Customize icons|{up?: ReactNode;down?: ReactNode;plus?: ReactNode;minus?: ReactNode;} |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |value|To set value|undefined \| number \| string |`-`|-|
-|formatter|Specifies the format of the value presented|(value: number \| string) => string |`-`|-|
+|formatter|Specifies the format of the value presented|(value: number \| string, info: { userTyping: boolean; input: string }) => string |`-`|Param `info` in `2.41.0`|
 |onBlur|Callback when the input is blurred|(e) => void |`-`|-|
 |onChange|Callback when the value changes|(value: number) => void |`-`|-|
 |onFocus|Callback when the input is focused|(e) => void |`-`|-|
