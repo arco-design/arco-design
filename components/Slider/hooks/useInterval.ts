@@ -60,33 +60,28 @@ function useInterval(props: {
     return { markIntervals, markList };
   }, [marks, min, max]);
 
-  if (!isFunction(getIntervalConfig)) {
-    return {
-      intervalConfigs: [
-        { begin: min, end: max, step: props.step, beginOffset: 0, endOffset: 1, width: 1 },
-      ],
-      markList,
+  const intervalConfigs = useMemo(() => {
+    if (!isFunction(getIntervalConfig)) {
+      return [{ begin: min, end: max, step: props.step, beginOffset: 0, endOffset: 1, width: 1 }];
+    }
+
+    const getStepAndWidth = ([begin, end], index) => {
+      const config = { step: props.step, width: 0 };
+      const customConfig = getIntervalConfig([begin, end], index) || {};
+      const step = customConfig.step;
+      const width = rateToFloat(customConfig.width);
+      // 如果用户传入了step
+      if (isNumber(step) && step) {
+        config.step = step;
+      }
+      // 用户传入了width
+      if (isNumber(width) && width) {
+        config.width = width;
+      }
+
+      return config;
     };
-  }
 
-  const getStepAndWidth = ([begin, end], index) => {
-    const config = { step: props.step, width: 0 };
-    const customConfig = getIntervalConfig([begin, end], index) || {};
-    const step = customConfig.step;
-    const width = rateToFloat(customConfig.width);
-    // 如果用户传入了step
-    if (isNumber(step) && step) {
-      config.step = step;
-    }
-    // 用户传入了width
-    if (isNumber(width) && width) {
-      config.width = width;
-    }
-
-    return config;
-  };
-
-  const getIntervalConfigs = () => {
     let remainWidth = 1;
     let remainLen = max - min;
 
@@ -127,9 +122,7 @@ function useInterval(props: {
     });
 
     return allConfigs;
-  };
-
-  const intervalConfigs = getIntervalConfigs();
+  }, [getIntervalConfig, markIntervals, max, min, props.step]);
   return {
     intervalConfigs,
     markList,
