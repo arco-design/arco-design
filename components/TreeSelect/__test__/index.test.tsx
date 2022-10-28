@@ -164,20 +164,36 @@ describe('TreeSelect', () => {
   });
 
   it('showSearch = retainInputValueWhileSelect ', () => {
+    const mockSearch = jest.fn();
     const wrapper = render(
       <TreeSelect
         multiple
         treeData={treeData}
         showSearch={{ retainInputValueWhileSelect: false }}
+        onSearch={mockSearch}
       />
     );
     clickInput();
     expect(wrapper.find(`${prefixCls}-select-view input`)).toHaveLength(1);
-
     fireEvent.change(wrapper.find('input').item(0), { target: { value: '小' } });
     jest.runAllTimers();
     jest.advanceTimersByTime(200);
-    expect(wrapper.querySelector(`${prefixCls}-select-view input`)?.textContent).toBe('');
+    expect(wrapper.find(`${prefixCls}-select-view input`).item(0).getAttribute('value')).toEqual(
+      '小'
+    );
+    expect(mockSearch).toHaveBeenCalledTimes(1);
+    fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(0));
+    expect(wrapper.find(`${prefixCls}-select-view input`).item(0).getAttribute('value')).toEqual(
+      ''
+    );
+    jest.runAllTimers();
+    jest.advanceTimersByTime(200);
+    expect(mockSearch).toHaveBeenCalledTimes(2);
+
+    fireEvent.click(wrapper.find(`${prefixCls}-node-title`).item(2));
+    jest.runAllTimers();
+    jest.advanceTimersByTime(200);
+    expect(mockSearch).toHaveBeenCalledTimes(2);
   });
 
   it('define onSearch props', () => {

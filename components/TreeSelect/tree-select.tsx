@@ -144,18 +144,18 @@ const TreeSelect: ForwardRefRenderFunction<
     [props.onSearch, treeData, key2nodeProps, props.filterTreeNode]
   );
 
-  const resetInputValue = () => {
+  const resetInputValue = useCallback(() => {
     // 多选选中值时候不清除搜索文本
     let retainInputValueWhileSelect = true;
     if (isObject(props.showSearch)) {
       retainInputValueWhileSelect = props.showSearch.retainInputValueWhileSelect !== false;
     }
-
-    if (props.multiple && !retainInputValueWhileSelect) {
+    // default scene: inputValue = refOnInputChangeCallbackValue =  undefined
+    // if updateTo ''，will trigger an unnecessary onsearch
+    if (props.multiple && !retainInputValueWhileSelect && inputValue !== undefined) {
       tryUpdateInputValue('', 'optionChecked');
-      handleSearch('');
     }
-  };
+  }, [inputValue, props.multiple, JSON.stringify(props.showSearch)]);
 
   const triggerChange = useCallback<typeof setValue>(
     (newValue: LabelValue[], extra) => {
@@ -165,7 +165,7 @@ const TreeSelect: ForwardRefRenderFunction<
         setPopupVisible(false);
       }
     },
-    [setValue]
+    [setValue, resetInputValue]
   );
 
   const handleRemoveCheckedItem = (item, index, e) => {
