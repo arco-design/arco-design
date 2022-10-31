@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Layout, Grid, Radio } from '@arco-design/web-react';
 import { generate, getPresetColors } from '@arco-design/color';
-import Navbar from '@arco-materials/site-navbar';
+import Navbar from '@arco-materials/site-navbar-new';
 import lazyLoad from '../../utils/lazyload';
 import Card from './card';
 import './style.less';
