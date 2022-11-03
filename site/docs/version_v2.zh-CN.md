@@ -6,6 +6,10 @@ changelog: true
 
 2022-10-28
 
+### 🚨 重点注意
+
+- **为了修复 `Select` 在 `width: auto` 时宽度未跟随内容自动变化的问题，单选模式下内层新增 DOM 节点直接包裹 `.arco-select-view-value` 和 `input` 标签**
+
 ### 💎 功能优化
 
 - 减少 `TreeSelect` 组件在开启 `retainInputValueWhileSelect` 时重新渲染的次数([#1517](https://github.com/arco-design/arco-design/pull/1517))

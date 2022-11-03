@@ -5,6 +5,9 @@ changelog: true
 ## 2.41.0
 
 2022-10-28
+### 🚨 Important attention
+
+- **In order to fix the problem that the width of `Select` does not automatically change with the content when `width: auto`, the new DOM node in the inner layer directly wraps `.arco-select-view-value` and `input` in radio mode Label**
 
 ### 💎 Enhancement
 
