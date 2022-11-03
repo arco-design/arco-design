@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Radio, Typography } from '@arco-design/web-react';
 import { IconSunFill, IconMoonFill } from '@arco-design/web-react/icon';
-import Navbar from '@arco-materials/site-navbar';
+import Navbar from '@arco-materials/site-navbar-new';
 import TokenTable from './tokenTable';
 import { tokens as tokenGroups } from './tokens';
 import lazyLoad from '../../utils/lazyload';
