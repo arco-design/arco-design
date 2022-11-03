@@ -165,37 +165,53 @@
     }
 
     &-single &-view {
+      // Keep forward compatibility
+      // Do NOT move this section under &-selector
       &-input {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
         box-sizing: border-box;
         width: 100%;
         padding: 0;
         border: none;
         outline: none;
         background: transparent;
-        z-index: 1;
         .text-ellipsis();
       }
 
       &-selector {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
         box-sizing: border-box;
         width: 100%;
         overflow: hidden;
+
+        // Keep forward compatibility
+        // Do NOT move this section out of &-selector
+        .@{prefixCls}-view-input {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
+        }
+
+        .@{prefixCls}-view-value-mirror {
+          opacity: 0;
+        }
       }
 
       &-value {
         display: inline-block;
+        box-sizing: border-box;
         width: 100%;
         .text-ellipsis();
 
-        &-mirror {
-          opacity: 0;
+        // Do NOT remove this, it may cause baseline-changing of select-view
+        &::after {
+          content: '.';
+          font-size: 0;
+          line-height: 0;
+          visibility: hidden;
         }
       }
 
