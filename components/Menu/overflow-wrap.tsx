@@ -4,7 +4,7 @@ import { getStyle } from '../_util/style';
 import MenuContext from './context';
 import ResizeObserver from '../_util/resizeObserver';
 
-const OVERFLOW_THRESHOLD = 10;
+const OVERFLOW_THRESHOLD = 5;
 
 function getNodeWidth(node) {
   // getBoundingClientRect will get a result like 20.45
