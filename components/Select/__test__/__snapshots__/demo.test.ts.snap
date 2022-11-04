@@ -2078,9 +2078,7 @@ exports[`renders Select/demo/relative.md correctly 1`] = `
           />
           <span
             class="arco-select-view-value"
-          >
-            Select city
-          </span>
+          />
         </span>
         <div
           aria-hidden="true"
