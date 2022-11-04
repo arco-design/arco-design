@@ -402,7 +402,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
             [`${prefixCls}-view-value-mirror`]: needShowInput,
           })}
         >
-          {_inputValue || inputProps.placeholder}
+          {isEmptyValue ? inputProps.placeholder : _inputValue}
         </span>
       </span>
     );

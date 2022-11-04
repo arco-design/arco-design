@@ -397,4 +397,19 @@ describe('Select', () => {
     fireEvent.keyDown(wrapper.querySelector('input'));
     expect(onKeyDown).toHaveBeenCalled();
   });
+
+  it('show placeholder correctly', async () => {
+    const placeholder = 'Please select';
+    const wrapper = render(
+      <div>
+        <Select value="" placeholder={placeholder} />
+        <Select value={null} placeholder={placeholder} />
+        <Select placeholder={placeholder} />
+      </div>
+    );
+    const eleSpanList = wrapper.querySelectorAll('.arco-select-view-value');
+    expect(eleSpanList[0]).toHaveTextContent('');
+    expect(eleSpanList[1]).toHaveTextContent('');
+    expect(eleSpanList[2]).toHaveTextContent(placeholder);
+  });
 });
