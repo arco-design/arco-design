@@ -468,10 +468,6 @@ const Picker = (baseProps: RangePickerProps) => {
     }
   }
 
-  function onPressTab(e) {
-    e.preventDefault();
-  }
-
   // Confirm and update component value
   function onConfirmValue(date?: Dayjs[], keepOpen?: boolean) {
     const confirmValue = date || panelValue;
@@ -827,7 +823,6 @@ const Picker = (baseProps: RangePickerProps) => {
     error,
     size,
     onPressEnter,
-    onPressTab,
     onClear,
     suffixIcon,
     editable,
