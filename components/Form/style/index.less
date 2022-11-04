@@ -43,7 +43,7 @@
   /** size style **/
 
   &-size-mini &-label-item {
-    line-height: @size-mini;
+    line-height: @form-size-mini-size-item-height;
     font-size: @form-size-mini-font-label-size;
 
     > label {
@@ -52,11 +52,11 @@
   }
 
   &-size-mini &-item-control {
-    min-height: @size-mini;
+    min-height: @form-size-mini-size-item-height;
   }
 
   &-size-small &-label-item {
-    line-height: @size-small;
+    line-height: @form-size-small-size-item-height;
 
     > label {
       font-size: @form-size-small-font-label-size;
@@ -64,11 +64,11 @@
   }
 
   &-size-small &-item-control {
-    min-height: @size-small;
+    min-height: @form-size-small-size-item-height;
   }
 
   &-size-large &-label-item {
-    line-height: @size-large;
+    line-height: @form-size-large-size-item-height;
 
     > label {
       font-size: @form-size-large-font-label-size;
@@ -76,7 +76,7 @@
   }
 
   &-size-large &-item-control {
-    min-height: @size-large;
+    min-height: @form-size-large-size-item-height;
   }
 
   &-extra {
@@ -120,7 +120,7 @@
   &-label-item {
     text-align: right;
     white-space: nowrap;
-    line-height: @size-default;
+    line-height: @form-size-default-size-item-height;
 
     &-flex.@{prefix}-col {
       flex: 0;
@@ -154,7 +154,7 @@
   &-item-control {
     display: flex;
     align-items: center;
-    min-height: @size-default;
+    min-height: @form-size-default-size-item-height;
     width: 100%;
 
     &-children {
