@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.41.1
+
+2022-11-04
+
+### 💎 功能优化
+
+- 更新 `IconLarkColor` 图标([#1541](https://github.com/arco-design/arco-design/pull/1541))
+- 优化 `Menu` 组件水平模式自动折叠时可能出现的抖动问题。([#1543](https://github.com/arco-design/arco-design/pull/1543))
+
+### 🐛 问题修复
+
+- 修复 `Typography`  组件按需加载样式时未引入 `Tooltip`, `Popover`, `Input`  样式的 bug。([#1541](https://github.com/arco-design/arco-design/pull/1541))
+- 修复 `Select` 组件在 `value = ''` 时，错误将 `placeholder` 作为 `value` 展示的 bug。([#1536](https://github.com/arco-design/arco-design/pull/1536))
+
+### 💅 样式更新
+
+- 修复 `Select` 组件在 `Input.Group` 内使用时竖直方向无法对齐的问题。([#1534](https://github.com/arco-design/arco-design/pull/1534))
+
 ## 2.41.0
 
 2022-10-28

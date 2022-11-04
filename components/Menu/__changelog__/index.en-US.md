@@ -1,3 +1,11 @@
+## 2.41.1
+
+2022-11-04
+
+### 💎 Enhancement
+
+- Optimize the jitter problem that may occur when the horizontal mode of the `Menu` component is automatically collapsed.([#1543](https://github.com/arco-design/arco-design/pull/1543))
+
 ## 2.39.3
 
 2022-09-02

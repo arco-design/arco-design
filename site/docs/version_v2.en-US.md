@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.41.1
+
+2022-11-04
+
+### 💎 Enhancement
+
+- Update `IconLarkColor` icon([#1541](https://github.com/arco-design/arco-design/pull/1541))
+- Optimize the jitter problem that may occur when the horizontal mode of the `Menu` component is automatically collapsed.([#1543](https://github.com/arco-design/arco-design/pull/1543))
+
+### 🐛 BugFix
+
+- Fixed a bug where `Tooltip`, `Popover`, `Input` styles were not introduced when `Typography` component loads styles on demand.([#1541](https://github.com/arco-design/arco-design/pull/1541))
+- Fixed `Select` component showing `placeholder` as `value` bug when `value = ''`.([#1536](https://github.com/arco-design/arco-design/pull/1536))
+
+### 💅 Style
+
+- Fixed `Select` vertical alignment problem when used in `Input.Group`.([#1534](https://github.com/arco-design/arco-design/pull/1534))
+
 ## 2.41.0
 
 2022-10-28

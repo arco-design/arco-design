@@ -1,3 +1,15 @@
+## 2.41.1
+
+2022-11-04
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件在 `value = ''` 时，错误将 `placeholder` 作为 `value` 展示的 bug。([#1536](https://github.com/arco-design/arco-design/pull/1536))
+
+### 💅 样式更新
+
+- 修复 `Select` 组件在 `Input.Group` 内使用时竖直方向无法对齐的问题。([#1534](https://github.com/arco-design/arco-design/pull/1534))
+
 ## 2.41.0
 
 2022-10-28

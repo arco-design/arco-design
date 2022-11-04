@@ -1,3 +1,15 @@
+## 2.41.1
+
+2022-11-04
+
+### 🐛 BugFix
+
+- Fixed `Select` component showing `placeholder` as `value` bug when `value = ''`.([#1536](https://github.com/arco-design/arco-design/pull/1536))
+
+### 💅 Style
+
+- Fixed `Select` vertical alignment problem when used in `Input.Group`.([#1534](https://github.com/arco-design/arco-design/pull/1534))
+
 ## 2.41.0
 
 2022-10-28

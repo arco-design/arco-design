@@ -1,3 +1,11 @@
+## 2.41.1
+
+2022-11-04
+
+### 🐛 BugFix
+
+- Update `IconLarkColor` icon([#1541](https://github.com/arco-design/arco-design/pull/1541))
+
 ## 2.39.3
 
 2022-09-02

@@ -1,3 +1,11 @@
+## 2.41.1
+
+2022-11-04
+
+### 🐛 问题修复
+
+- 修复 `Typography`  组件按需加载样式时未引入 `Tooltip`, `Popover`, `Input`  样式的 bug。([#1541](https://github.com/arco-design/arco-design/pull/1541))
+
 ## 2.39.3
 
 2022-09-02
