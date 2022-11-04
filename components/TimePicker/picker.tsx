@@ -259,10 +259,6 @@ const Picker = (baseProps: InnerPickerProps) => {
     }
   }
 
-  function onPressTab(e) {
-    e.preventDefault();
-  }
-
   function onClear(e: React.MouseEvent<HTMLElement>) {
     e.stopPropagation();
     onConfirmValue(undefined);
@@ -319,7 +315,6 @@ const Picker = (baseProps: InnerPickerProps) => {
               inputValue={inputValue}
               changeFocusedInputIndex={changeFocusedInputIndex}
               focusedInputIndex={focusedInputIndex}
-              onPressTab={onPressTab}
             />
           ) : (
             <Input
