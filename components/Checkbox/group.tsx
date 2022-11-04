@@ -13,6 +13,14 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import { isArray, isObject } from '../_util/is';
 import { CheckboxGroupProps } from './interface';
 
+const defaultContextValue = {
+  isCheckboxGroup: false,
+  checkboxGroupValue: [],
+  onGroupChange: () => {},
+  registerValue: () => {},
+  unRegisterValue: () => {},
+};
+
 export const CheckboxGroupContext = createContext<{
   disabled?: boolean;
   isCheckboxGroup: boolean;
@@ -20,13 +28,11 @@ export const CheckboxGroupContext = createContext<{
   checkboxGroupValue: ReactText[];
   registerValue: (value: ReactText) => void;
   unRegisterValue: (value: ReactText) => void;
-}>({
-  isCheckboxGroup: false,
-  checkboxGroupValue: [],
-  onGroupChange: () => {},
-  registerValue: () => {},
-  unRegisterValue: () => {},
-});
+}>(defaultContextValue);
+
+export const ClearCheckboxGroupContext = ({ children }: PropsWithChildren<{}>) => {
+  return <CheckboxGroupContext.Provider children={children} value={defaultContextValue} />;
+};
 
 function Group<T extends React.ReactText>(props: PropsWithChildren<CheckboxGroupProps<T>>) {
   const [value, setValue] = useMergeValue([], {

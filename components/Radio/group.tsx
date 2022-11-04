@@ -8,14 +8,20 @@ import { RadioGroupProps, RadioGroupContextProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { pickDataAttributes } from '../_util/pick';
 
-export const RadioGroupContext = createContext<RadioGroupContextProps>({
+const defaultContextValue: RadioGroupContextProps = {
   type: 'radio',
-});
+};
 
 const defaultProps: RadioGroupProps = {
   type: 'radio',
   mode: 'outline',
   direction: 'horizontal',
+};
+
+export const RadioGroupContext = createContext<RadioGroupContextProps>(defaultContextValue);
+
+export const ClearRadioGroupContext = ({ children }: PropsWithChildren<{}>) => {
+  return <RadioGroupContext.Provider children={children} value={defaultContextValue} />;
 };
 
 function Group(baseProps: PropsWithChildren<RadioGroupProps>) {
