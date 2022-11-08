@@ -84,7 +84,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           # Message to comment
           message: |
-            [📚 📚 Site Preview: ](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app)
+            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app)
     
 
 
