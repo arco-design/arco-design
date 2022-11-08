@@ -1,0 +1,103 @@
+name: deploy-site-preview
+on:
+ pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-site: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          
+      - name: install
+        run: yarn && cd site && yarn && cd ../
+          
+      - name: build components
+        run: yarn icon && yarn build:es && yarn build:css
+
+      - name: build site
+        run: yarn build:site
+        
+      - name: Upload site-dist Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+         name: site-dist
+         path: site/dist
+
+  deploy-preview: 
+    runs-on: ubuntu-latest
+    needs: build-site
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          
+      - name: Download site-dist Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          # Artifact name
+          name: site-dist
+          # Destination path
+          path: dist/
+      
+      - name: netlify install
+        run: yarn add netlify-cli -D
+
+      - name: netlify deploy
+        env: 
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ github.event.number }}
+
+  add-pr-comment: 
+    runs-on: ubuntu-latest
+    needs: deploy-preview
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn' 
+          
+      - name: PR Comment
+        uses: github-actions-up-and-running/pr-comment@v1.0.1
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        with:
+          # GITHUB_TOKEN secret
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          # Message to comment
+          message: |
+            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app)
+    
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
