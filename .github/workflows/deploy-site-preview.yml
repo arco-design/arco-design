@@ -1,38 +1,37 @@
 name: deploy-site-preview
 on:
- pull_request:
+  pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build-site: 
+  build-site:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@master
-
 
       - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'yarn'
-          
+
       - name: install
         run: yarn && cd site && yarn && cd ../
-          
+
       - name: build components
         run: yarn icon && yarn build:es && yarn build:css
 
       - name: build site
         run: yarn build:site
-        
+
       - name: Upload site-dist Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
-         name: site-dist
-         path: site/dist
+          name: site-dist
+          path: site/dist
 
-  deploy-preview: 
+  deploy-preview:
     runs-on: ubuntu-latest
     needs: build-site
     steps:
@@ -44,7 +43,7 @@ jobs:
         with:
           node-version: 16
           cache: 'yarn'
-          
+
       - name: Download site-dist Artifact
         uses: actions/download-artifact@v3.0.1
         with:
@@ -52,17 +51,17 @@ jobs:
           name: site-dist
           # Destination path
           path: dist/
-      
+
       - name: netlify install
         run: yarn add netlify-cli -D
 
       - name: netlify deploy
-        env: 
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ github.event.number }}
 
-  add-pr-comment: 
+  add-pr-comment:
     runs-on: ubuntu-latest
     needs: deploy-preview
     steps:
@@ -73,8 +72,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn' 
-          
+          cache: 'yarn'
+
       - name: PR Comment
         uses: github-actions-up-and-running/pr-comment@v1.0.1
         env:
@@ -84,20 +83,31 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           # Message to comment
           message: |
-            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app)
-    
+            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app]([https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app/react/docs/start))
 
+  image-test:
+    runs-on: ubuntu-latest
+    needs: deploy-preview
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
+      - name: install
+        run: yarn
 
-    
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
 
+      - name: build:cjs
+        run: yarn icon && yarn build:cjs
 
+      - name: gen screenshots
+        run: yarn run test:screenshots --domain=https://pr-preview-${{ github.event.number }}--arco-design.netlify.app
 
-
-
-
-
-    
-
-
-
+      - name: upload screenshots to argos-cli
+        run: npx @argos-ci/cli upload ./tests/__screenshots__
