@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode, memo, useContext } from 'react';
+import React, { CSSProperties, ReactNode, memo, useContext, useMemo } from 'react';
 import get from 'lodash/get';
 import pick from '../../_util/pick';
 import { isObject, isString } from '../../_util/is';
@@ -111,8 +111,11 @@ function Td(props: TdType) {
     ? column.onCell(record, trIndex)
     : { onHandleSave: () => {} };
 
-  let renderElement =
-    column.render && column.render(get(record, column.dataIndex), getOriginData(record), trIndex);
+  let renderElement = useMemo(
+    () =>
+      column.render && column.render(get(record, column.dataIndex), getOriginData(record), trIndex),
+    [record, column, trIndex]
+  );
 
   if (isInvalidRenderElement(renderElement)) {
     tdProps = renderElement.props;
