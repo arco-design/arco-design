@@ -64,7 +64,8 @@ function Sider(props: SiderProps, ref) {
   // Parsing props width from number to string, to be used as css property value.
   // Using px as the default unit
   const propsWidth = isNumber(width) ? `${width}px` : String(width);
-  const [siderWidth, setSiderWidth] = useState<string>(propsWidth);
+  const _collapsedWidth = isNumber(collapsedWidth) ? `${collapsedWidth}` : String(collapsedWidth);
+  const [siderWidth, setSiderWidth] = useState<string>(collapsed ? _collapsedWidth : propsWidth);
 
   const refResponsiveHandlerToken = useRef(null);
   // 提供给 ResponsiveHandler，使得其可以获得最新的 state 值
