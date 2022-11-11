@@ -82,7 +82,7 @@
     "@types/shallowequal": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
-    "arco-scripts": "^1.27.7",
+    "arco-scripts": "^1.27.11",
     "chalk": "^2.4.2",
     "concurrently": "^5.2.0",
     "cross-env": "^7.0.3",
