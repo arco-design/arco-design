@@ -42,19 +42,21 @@
 .@{steps-prefix-cls} {
   &-vertical {
     flex-direction: column;
-  }
 
-  &-vertical &-item {
-    &:not(:last-child) {
-      min-height: 90px;
-    }
+    > .@{steps-prefix-cls}-item {
+      &:not(:last-child) {
+        min-height: 90px;
+      }
 
-    &-title::after {
-      display: none !important;
-    }
+      > .@{steps-prefix-cls}-item-content {
+        > .@{steps-prefix-cls}-item-title::after {
+          display: none !important;
+        }
 
-    &-description {
-      max-width: none;
+        > .@{steps-prefix-cls}-item-description {
+          max-width: none;
+        }
+      }
     }
   }
 }
@@ -73,7 +75,6 @@
     }
   }
 }
-
 .@{steps-prefix-cls}-rtl {
   direction: rtl;
 }
