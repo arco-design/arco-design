@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `activeRegion` 属性，设置面板可以触发折叠的区域。
+通过 `triggerRegion` 属性，设置面板可以触发折叠的区域。
 
 ## en-US
 
-Through the `activeRegion`, set the region that can trigger collapsing.
+Through the `triggerRegion`, set the region that can trigger collapsing.
 
 ```js
 import { Collapse, Divider } from '@arco-design/web-react';
@@ -22,7 +22,7 @@ const App = () => {
     <Collapse
       style={{ maxWidth: 1180 }}
       defaultActiveKey={['1']}
-      activeRegion="header"
+      triggerRegion="header"
     >
       <CollapseItem header="Beijing Toutiao Technology Co., Ltd." name="1">
         Beijing Toutiao Technology Co., Ltd.
