@@ -25,6 +25,10 @@
     font-weight: @steps-circle-font-weight-item-title_active;
   }
 
+  &-item:not(&-item-active) &-item-title {
+    font-weight: normal;
+  }
+
   &-item-icon {
     display: inline-block;
     vertical-align: top;
@@ -121,8 +125,8 @@
   }
 
   // label horizontal tail style
-  &-label-horizontal &-item:not(:last-child) &-item-title {
-    &::after {
+  &-label-horizontal:not(.@{steps-prefix-cls}-vertical) > &-item:not(:last-child) {
+    .@{steps-prefix-cls}-item-title::after {
       content: '';
       display: block;
       position: absolute;
@@ -135,51 +139,61 @@
     }
   }
 
-  &-label-horizontal &-item&-item-process &-item-title::after {
-    background-color: @steps-circle-color-item-tail_wait;
-  }
-
-  &-label-horizontal &-item&-item-finish &-item-title::after {
-    background-color: @steps-circle-color-item-tail_process;
-  }
-
-  &-label-horizontal &-item&-item-next-error &-item-title::after {
-    background-color: @steps-circle-color-item-tail_error;
-  }
-
-  &-vertical &-item:not(:last-child) &-item-tail {
-    position: absolute;
-    width: @steps-circle-size-item-tail;
-    top: @steps-size-default + @steps-circle-vertical-spacing-tail-top;
-    bottom: @steps-circle-vertical-spacing-tail-bottom;
-    left: ((@steps-size-default - @steps-circle-size-item-tail) / 2);
-    box-sizing: border-box;
-    padding: 0;
-    height: unset;
-
-    &::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
+  &-label-horizontal > &-item&-item-process {
+    .@{steps-prefix-cls}-item-title::after {
       background-color: @steps-circle-color-item-tail_wait;
     }
   }
 
-  // label vertical & direction vertical tail style
-  &-item:not(:last-child) &-item-tail {
-    position: absolute;
-    width: 100%;
-    height: @steps-circle-size-item-tail;
-    top: ((@steps-size-default - @steps-circle-size-item-tail) / 2);
-    box-sizing: border-box;
+  &-label-horizontal > &-item&-item-finish {
+    .@{steps-prefix-cls}-item-title::after {
+      background-color: @steps-circle-color-item-tail_process;
+    }
+  }
 
-    &::after {
-      content: '';
-      display: block;
+  &-label-horizontal > &-item&-item-next-error {
+    .@{steps-prefix-cls}-item-title::after {
+      background-color: @steps-circle-color-item-tail_error;
+    }
+  }
+
+  &-vertical > &-item:not(:last-child) {
+    > .@{steps-prefix-cls}-item-tail {
+      position: absolute;
+      width: @steps-circle-size-item-tail;
+      top: @steps-size-default + @steps-circle-vertical-spacing-tail-top;
+      bottom: @steps-circle-vertical-spacing-tail-bottom;
+      left: ((@steps-size-default - @steps-circle-size-item-tail) / 2);
+      box-sizing: border-box;
+      padding: 0;
+      height: unset;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: @steps-circle-color-item-tail_wait;
+      }
+    }
+  }
+
+  // label vertical & direction vertical tail style
+  > &-item:not(:last-child) {
+    > .@{steps-prefix-cls}-item-tail {
+      position: absolute;
       width: 100%;
-      height: 100%;
-      background-color: @steps-circle-color-item-tail_wait;
+      height: @steps-circle-size-item-tail;
+      top: ((@steps-size-default - @steps-circle-size-item-tail) / 2);
+      box-sizing: border-box;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: @steps-circle-color-item-tail_wait;
+      }
     }
   }
 
@@ -294,13 +308,13 @@
   }
 
   &.@{steps-prefix-cls}-vertical {
-    .@{steps-prefix-cls}-item:not(:last-child) .@{steps-prefix-cls}-item-tail {
+    > .@{steps-prefix-cls}-item:not(:last-child) .@{steps-prefix-cls}-item-tail {
       left: 0;
       right: ((@steps-size-default - @steps-circle-size-item-tail) / 2);
     }
 
     &.@{steps-prefix-cls}-size-small.@{steps-prefix-cls}-vertical
-      .@{steps-prefix-cls}-item:not(:last-child)
+      > .@{steps-prefix-cls}-item:not(:last-child)
       .@{steps-prefix-cls}-item-tail {
       left: 0;
       right: ((@steps-size-small - @steps-circle-size-item-tail) / 2);
