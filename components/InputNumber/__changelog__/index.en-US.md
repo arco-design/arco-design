@@ -1,3 +1,11 @@
+## 2.41.2
+
+2022-11-11
+
+### 💎 Enhancement
+
+- Optimize the problem that the `InputNumber` with `formatter` automatically move back to the end of the text when the user is typing.([#1559](https://github.com/arco-design/arco-design/pull/1559))
+
 ## 2.41.0
 
 2022-10-28

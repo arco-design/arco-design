@@ -1,3 +1,11 @@
+## 2.41.2
+
+2022-11-11
+
+### 🐛 BugFix
+
+- Fixed the bug that `Layout.Sider` would flicker for the first rendering when `collapsed` is enabled by default([#1564](https://github.com/arco-design/arco-design/pull/1564))
+
 ## 2.41.0
 
 2022-10-28

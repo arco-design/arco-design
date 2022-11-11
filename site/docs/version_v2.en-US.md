@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.41.2
+
+2022-11-11
+
+### 💎 Enhancement
+
+- Reduced unexpected rendering times of `Table` component `column.render`.([#1562](https://github.com/arco-design/arco-design/pull/1562))
+- Optimize the problem that the `InputNumber` with `formatter` automatically move back to the end of the text when the user is typing.([#1559](https://github.com/arco-design/arco-design/pull/1559))
+- Optimize the jitter problem that may occur when the virtual list is scrolled to the bottom.
+
+### 🐛 BugFix
+
+- Fixed the bug that `Layout.Sider` would flicker for the first rendering when `collapsed` is enabled by default([#1564](https://github.com/arco-design/arco-design/pull/1564))
+- Fixed a bug where the `Steps` component had the wrong style when it was nested([#1563](https://github.com/arco-design/arco-design/pull/1563))
+
+### 🆎 TypeScript
+
+- Adjust the TS definition of `Modal` `Drawer` `Popconfirm` parameters `okText` and `cancelText` properties to `ReactNode`.([#1558](https://github.com/arco-design/arco-design/pull/1558))
+
 ## 2.41.1
 
 2022-11-04

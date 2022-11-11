@@ -1,3 +1,11 @@
+## 2.41.2
+
+2022-11-11
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Steps` component had the wrong style when it was nested([#1563](https://github.com/arco-design/arco-design/pull/1563))
+
 ## 2.39.3
 
 2022-09-02

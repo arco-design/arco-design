@@ -1,3 +1,11 @@
+## 2.41.2
+
+2022-11-11
+
+### 💎 Enhancement
+
+- Reduced unexpected rendering times of `Table` component `column.render`.([#1562](https://github.com/arco-design/arco-design/pull/1562))
+
 ## 2.41.0
 
 2022-10-28

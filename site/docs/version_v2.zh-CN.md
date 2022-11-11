@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.41.2
+
+2022-11-11
+
+### 💎 功能优化
+
+- 减少 `Table` 组件 `column.render` 不合预期的渲染次数。([#1562](https://github.com/arco-design/arco-design/pull/1562))
+- 优化带有 `formatter` 的 `InputNumber` 组件在用户输入时光标位置自动回退至文本尾部的问题。([#1559](https://github.com/arco-design/arco-design/pull/1559))
+- 优化虚拟列表在滚动至底部时可能出现的抖动问题。
+
+### 🐛 问题修复
+
+- 修复 `Layout.Sider` 在默认开启 `collapsed` 时，初次渲染会闪动的 bug([#1564](https://github.com/arco-design/arco-design/pull/1564))
+- 修复 `Steps` 组件在嵌套使用时样式错误的 bug([#1563](https://github.com/arco-design/arco-design/pull/1563))
+
+### 🆎 类型修正
+
+- 调整 `Modal` `Drawer` `Popconfirm` 参数 `okText` 和 `cancelText` 属性的 TS 定义为 `ReactNode`。([#1558](https://github.com/arco-design/arco-design/pull/1558))
+
 ## 2.41.1
 
 2022-11-04

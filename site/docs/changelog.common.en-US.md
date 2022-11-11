@@ -1,3 +1,11 @@
+## 2.41.2
+
+2022-11-11
+
+### 🆎 TypeScript
+
+- Adjust the TS definition of `Modal` `Drawer` `Popconfirm` parameters `okText` and `cancelText` properties to `ReactNode`.([#1558](https://github.com/arco-design/arco-design/pull/1558))
+
 ## 2.41.1
 
 2022-11-04

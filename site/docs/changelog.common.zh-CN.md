@@ -1,3 +1,11 @@
+## 2.41.2
+
+2022-11-11
+
+### 🆎 类型修正
+
+- 调整 `Modal` `Drawer` `Popconfirm` 参数 `okText` 和 `cancelText` 属性的 TS 定义为 `ReactNode`。([#1558](https://github.com/arco-design/arco-design/pull/1558))
+
 ## 2.41.1
 
 2022-11-04
