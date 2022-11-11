@@ -26,9 +26,9 @@
 |simple|简洁模式的样式，没有分割线，底部按钮居中显示。默认通过方法调用的提示类型的弹窗会展示`simple`样式。设置为true时，默认不显示右上角关闭图标|boolean |`-`|-|
 |unmountOnExit|是否在隐藏之后销毁DOM结构|boolean |`-`|-|
 |visible|弹出框是否可见|boolean |`-`|-|
-|cancelText|取消按钮文案|string |`-`|-|
-|okText|确认按钮文案|string |`-`|-|
+|cancelText|取消按钮文案|ReactNode |`-`|-|
 |closeIcon|自定义右上角的关闭按钮节点|ReactNode |`-`|2.21.0|
+|okText|确认按钮文案|ReactNode |`-`|-|
 |title|弹出框的标题|string \| ReactNode |`-`|-|
 |cancelButtonProps|取消按钮的 props|ButtonProps |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|

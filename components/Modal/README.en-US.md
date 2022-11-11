@@ -26,9 +26,9 @@ Open a floating layer on the current page to carry related operations.
 |simple|Simple Mode, no dividing line, the bottom button is displayed in the center.The Alter Modal called by the default method will use `simple` mode. When set to true, the close icon is not display|boolean |`-`|-|
 |unmountOnExit|Whether to destroy DOM after closed|boolean |`-`|-|
 |visible|Whether the Modal is visible|boolean |`-`|-|
-|cancelText|The text of `cancel` button|string |`-`|-|
-|okText|The text of `ok` button|string |`-`|-|
+|cancelText|The text of `cancel` button|ReactNode |`-`|-|
 |closeIcon|Customize the close icon|ReactNode |`-`|2.21.0|
+|okText|The text of `ok` button|ReactNode |`-`|-|
 |title|The title of Modal|string \| ReactNode |`-`|-|
 |cancelButtonProps|The props of `cancel` button|ButtonProps |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|

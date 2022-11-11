@@ -24,10 +24,10 @@ A floating layer that slides in from the edge of the screen.
 |mountOnEnter|Whether to render the drawer component only when it is opened initially.|boolean |`true`|-|
 |unmountOnExit|Whether to unmount component when hidden|boolean |`-`|-|
 |visible|Visibility of the drawer|boolean |`-`|-|
-|cancelText|Text of the Cancel button|string |`-`|-|
-|okText|Text of the OK button|string |`-`|-|
 |placement|The placement of the drawer: `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
+|cancelText|Text of the Cancel button|ReactNode |`-`|-|
 |footer|The footer element. Drawer will not render the footer element when `footer` is `null`|ReactNode |`-`|-|
+|okText|Text of the OK button|ReactNode |`-`|-|
 |title|The title element. Drawer will not render the title element when `title` is `null`|ReactNode |`-`|-|
 |bodyStyle|The additional css style for content|CSSProperties |`-`|2.9.0|
 |cancelButtonProps|The props of `cancel` button|ButtonProps |`-`|2.26.0|

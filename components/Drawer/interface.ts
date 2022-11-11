@@ -43,12 +43,12 @@ export interface DrawerProps {
    * @zh 确认按钮文案
    * @en Text of the OK button
    */
-  okText?: string;
+  okText?: ReactNode;
   /**
    * @zh 取消按钮文案
    * @en Text of the Cancel button
    */
-  cancelText?: string;
+  cancelText?: ReactNode;
   /**
    * @zh 确认按钮的 props
    * @en The props of `ok` button

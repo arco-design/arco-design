@@ -20,12 +20,12 @@ A simple confirmation box of an action.
 |focusLock|Whether to lock the focus in the confirmation box|boolean |`-`|-|
 |popupVisible|Whether the confirmation box is visible|boolean |`-`|-|
 |unmountOnExit|Whether to destroy the confirmation box when hidden|boolean |`true`|-|
-|cancelText|The text of the cancel button|string |`-`|-|
-|okText|The text of the ok button|string |`-`|-|
 |okType|The type of the ok button|ButtonProps['type'] |`primary`|-|
 |position|The position of the confirmation box relative to the target.|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|Trigger mode|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
+|cancelText|The text of the cancel button|ReactNode |`-`|-|
 |icon|Customize icon of the confirmation box|ReactNode |`<IconExclamationCircleFill />`|-|
+|okText|The text of the ok button|ReactNode |`-`|-|
 |title|Title of Popconfirm|ReactNode |`-`|-|
 |cancelButtonProps|The props of the cancel button|ButtonProps |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
