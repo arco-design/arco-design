@@ -23,10 +23,10 @@
 |mountOnEnter|是否在初次打开对话框时才渲染 dom。|boolean |`true`|-|
 |unmountOnExit|是否在隐藏的时候销毁 DOM 结构|boolean |`-`|-|
 |visible|是否显示弹出框|boolean |`-`|-|
-|cancelText|取消按钮文案|string |`-`|-|
-|okText|确认按钮文案|string |`-`|-|
 |placement|抽屉的方向 `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
+|cancelText|取消按钮文案|ReactNode |`-`|-|
 |footer|自定义按钮确认和取消按钮，为 null 的话没有按钮组|ReactNode |`-`|-|
+|okText|确认按钮文案|ReactNode |`-`|-|
 |title|弹出框的标题（设置为 null 时，不显示标题栏）|ReactNode |`-`|-|
 |bodyStyle|内容区域的样式|CSSProperties |`-`|2.9.0|
 |cancelButtonProps|取消按钮的 props|ButtonProps |`-`|2.26.0|

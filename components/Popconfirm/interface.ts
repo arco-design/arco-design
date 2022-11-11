@@ -46,12 +46,12 @@ export interface PopconfirmProps {
    * @zh 取消按钮文字
    * @en The text of the cancel button
    */
-  cancelText?: string;
+  cancelText?: ReactNode;
   /**
    * @zh 确认按钮文字
    * @en The text of the ok button
    */
-  okText?: string;
+  okText?: ReactNode;
   /**
    * @zh 确认按钮的类型
    * @en The type of the ok button

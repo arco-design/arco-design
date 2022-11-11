@@ -20,12 +20,12 @@
 |focusLock|是否将焦点锁定在弹出框内|boolean |`-`|-|
 |popupVisible|弹出框是打开还是关闭。(受控)|boolean |`-`|-|
 |unmountOnExit|是否在隐藏的时候销毁 DOM 节点|boolean |`true`|-|
-|cancelText|取消按钮文字|string |`-`|-|
-|okText|确认按钮文字|string |`-`|-|
 |okType|确认按钮的类型|ButtonProps['type'] |`primary`|-|
 |position|弹出框的方位，有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|触发方式|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
+|cancelText|取消按钮文字|ReactNode |`-`|-|
 |icon|标题前的图标|ReactNode |`<IconExclamationCircleFill />`|-|
+|okText|确认按钮文字|ReactNode |`-`|-|
 |title|标题|ReactNode |`-`|-|
 |cancelButtonProps|取消按钮的参数，可接受 `Button` 组件的所有参数|ButtonProps |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
