@@ -3,6 +3,7 @@ import React, {
   useContext,
   useEffect,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -21,6 +22,7 @@ import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
 import { toFixed, toSafeString } from './utils';
+import useSelectionRange from './useSelectionRange';
 
 NP.enableBoundaryChecking(false);
 
@@ -195,7 +197,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     }
   };
 
-  const getDisplayInputValue = () => {
+  const displayedInputValue = useMemo<string>(() => {
     let _value: string;
 
     if (isUserTyping) {
@@ -209,10 +211,15 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     }
 
     return formatter ? formatter(_value, { userTyping: isUserTyping, input: inputValue }) : _value;
-  };
+  }, [value, inputValue, isUserTyping, mergedPrecision, parser, formatter]);
+
+  const updateSelectionRangePosition = useSelectionRange({
+    inputElement: refInput.current?.dom,
+    inputValue: displayedInputValue,
+  });
 
   const inputEventHandlers = {
-    onChange: (rawText) => {
+    onChange: (rawText, event) => {
       setIsUserTyping(true);
       rawText = rawText.trim().replace(/。/g, '.');
       const parsedValue = parser ? parser(rawText) : rawText;
@@ -220,6 +227,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       if (isNumber(+parsedValue) || parsedValue === '-' || !parsedValue || parsedValue === '.') {
         setInputValue(rawText);
         setValue(getLegalValue(parsedValue));
+        updateSelectionRangePosition(event);
       }
     },
     onKeyDown: (e) => {
@@ -300,7 +308,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       error={error}
       disabled={disabled}
       readOnly={readOnly}
-      value={getDisplayInputValue()}
+      value={displayedInputValue}
       placeholder={placeholder}
       prefix={prefix && <div className={`${prefixCls}-prefix`}>{prefix}</div>}
       suffix={
