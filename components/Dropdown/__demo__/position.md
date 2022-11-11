@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `position` 支持指定 6 种弹出方位，分别是：`top: 向上`, `tl: 左上`, `tr: 右上`, `bottom: 下方(默认)`, `bl: 左下`, `br: 右下`。
+通过 `position` 支持指定 6 种弹出方位，分别是：`top: 向上`, `tl: 左上`, `tr: 右上`, `bottom: 下方`, `bl: 左下(默认)`, `br: 右下`。
 
 ## en-US
 
-Six popup `position` are available: `top`, `tl` (top-left), `tr` (top-right), `bottom (default)`, `bl` (bottom-left), `br` (bottom-right)。
+Six popup `position` are available: `top`, `tl: top-left`, `tr: top-right`, `bottom`, `bl: bottom-left` (default), `br: bottom-right`。
 
 ```js
 import { Dropdown, Menu, Button, Space } from '@arco-design/web-react';
