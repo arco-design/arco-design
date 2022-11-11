@@ -2,6 +2,7 @@ name: deploy-site-preview
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   build-site:
@@ -83,7 +84,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           # Message to comment
           message: |
-            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app]([https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app/react/docs/start))
+            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app/react/docs/start)
 
   image-test:
     runs-on: ubuntu-latest
