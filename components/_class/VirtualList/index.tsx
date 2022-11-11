@@ -353,7 +353,11 @@ const VirtualList: React.ForwardRefExoticComponent<
 
   // Modify the state and recalculate the position in the next render
   const virtualListScrollHandler = (event, isInit = false) => {
-    const { scrollTop: rawScrollTop, clientHeight, scrollHeight } = refList.current;
+    // Do NOT use refList.current.scrollHeight
+    // We should use Filler's height as total scroll height
+    // Filler's translate style may make refList.current.scrollHeight larger than Filler's height
+    const scrollHeight = itemTotalHeight;
+    const { scrollTop: rawScrollTop, clientHeight } = refList.current;
     const scrollTop = getValidScrollTop(rawScrollTop, scrollHeight - clientHeight);
 
     // Prevent jitter
