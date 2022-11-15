@@ -8,7 +8,9 @@ export const isAcceptFile = (file: File, accept?: string | string[]): boolean =>
           .split(',')
           .map((x) => x.trim())
           .filter((x) => x);
-    const fileExtension = file.name.indexOf('.') > -1 ? `.${file.name.split('.').pop()}` : '';
+    const fileExtension = (
+      file.name.indexOf('.') > -1 ? `.${file.name.split('.').pop()}` : ''
+    ).toLowerCase();
     return accepts.some((type) => {
       const typeText = type && type.toLowerCase();
       const fileType = (file.type || '').toLowerCase();
