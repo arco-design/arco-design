@@ -275,7 +275,7 @@ const Picker = (baseProps: RangePickerProps) => {
       blurInput();
     }
     firstRange.current = mergedPopupVisible;
-  }, [mergedPopupVisible]);
+  }, [mergedPopupVisible, mode]);
 
   const startStr = propsValueDayjs?.[0]?.format(format);
   const endStr = propsValueDayjs?.[1]?.format(format);
