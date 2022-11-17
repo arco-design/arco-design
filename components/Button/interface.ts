@@ -1,4 +1,10 @@
-import React, { CSSProperties, HTMLProps, ReactNode } from 'react';
+import {
+  CSSProperties,
+  HTMLProps,
+  ReactNode,
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+} from 'react';
 
 export interface BaseButtonProps {
   style?: CSSProperties;
@@ -88,7 +94,7 @@ export type AnchorButtonProps = {
   target?: string;
   anchorProps?: HTMLProps<HTMLAnchorElement>;
 } & BaseButtonProps &
-  Omit<React.AnchorHTMLAttributes<any>, 'type' | 'onClick' | 'className'>;
+  Omit<AnchorHTMLAttributes<any>, 'type' | 'onClick' | 'className'>;
 
 export type FinalButtonProps = {
   /**
@@ -98,7 +104,7 @@ export type FinalButtonProps = {
    */
   htmlType?: 'button' | 'submit' | 'reset';
 } & BaseButtonProps &
-  Omit<React.ButtonHTMLAttributes<any>, 'type' | 'onClick' | 'className'>;
+  Omit<ButtonHTMLAttributes<any>, 'type' | 'onClick' | 'className'>;
 
 /**
  * @title Button
