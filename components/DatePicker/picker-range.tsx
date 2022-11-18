@@ -252,6 +252,11 @@ const Picker = (baseProps: RangePickerProps) => {
     }
   }, [utcOffset, previousUtcOffset, timezone, previousTimezone]);
 
+  // panel open and change mode
+  useUpdate(() => {
+    setPageShowDates(getShowDatesFromFocused(mergedPageShowDate));
+  }, [mode]);
+
   useEffect(() => {
     setPanelModes([mode, mode]);
   }, [mode]);

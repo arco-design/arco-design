@@ -278,6 +278,7 @@ describe('RangePicker', () => {
     expect(onChange.mock.calls[0][0]).toEqual(['2020-04-12 20:32:59', '2020-04-13 20:32:59']);
   });
 
+  // issue: https://github.com/arco-design/arco-design/issues/1570
   it('change mode', async () => {
     const component = render(<RangePicker popupVisible />);
     jest.useRealTimers();
@@ -287,23 +288,38 @@ describe('RangePicker', () => {
       return component.find('.arco-picker-header-value').item(0).textContent;
     }
 
+    function getSecondPickerHeaderValue(component) {
+      return component.find('.arco-picker-header-value').item(1).textContent;
+    }
+
     expect(getFirstPickerHeaderValue(component)).toBe('2020-04');
+
+    expect(getSecondPickerHeaderValue(component)).toBe('2020-05');
 
     component.rerender(<RangePicker popupVisible mode="month" />);
 
     expect(getFirstPickerHeaderValue(component)).toBe('2020');
 
+    expect(getSecondPickerHeaderValue(component)).toBe('2021');
+
     component.rerender(<RangePicker popupVisible mode="year" />);
 
     expect(getFirstPickerHeaderValue(component)).toBe('2020 - 2030');
+
+    expect(getSecondPickerHeaderValue(component)).toBe('2030 - 2040');
 
     component.rerender(<RangePicker popupVisible mode="quarter" />);
 
     expect(getFirstPickerHeaderValue(component)).toBe('2020');
 
+    expect(getSecondPickerHeaderValue(component)).toBe('2021');
+
     component.rerender(<RangePicker popupVisible mode="week" />);
 
     expect(getFirstPickerHeaderValue(component)).toBe('2020-04');
+
+    expect(getSecondPickerHeaderValue(component)).toBe('2020-05');
+
     expect(component.find('.arco-picker-cell-week')).toHaveLength(12);
   });
 
