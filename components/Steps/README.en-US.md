@@ -23,7 +23,7 @@ Show the task flow and the current degree of completion, and guide users to foll
 |type|Type of step|'default' \| 'arrow' \| 'dot' \| 'navigation' |`default`|
 |className|Additional css class|string \| string[] |`-`|
 |style|Additional style|CSSProperties |`-`|
-|customDot|Customize the step,arrow type is not supported|(IconDot: React.ReactNode, stepConfig: [CustomDotRecord](#customdotrecord)) => React.ReactNode |`-`|
+|customDot|Customize the step,arrow type is not supported|(IconDot: ReactNode, stepConfig: [CustomDotRecord](#customdotrecord)) => ReactNode |`-`|
 |onChange|Callback when click step, after setting this prop, the step bar will switch when clicked.|(current: number, id: any) => void |`-`|
 
 ### Steps.Step

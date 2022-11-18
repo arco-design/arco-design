@@ -23,7 +23,7 @@
 |type|节点样式类型|'default' \| 'arrow' \| 'dot' \| 'navigation' |`default`|
 |className|节点类名|string \| string[] |`-`|
 |style|节点样式|CSSProperties |`-`|
-|customDot|自定义步骤条节点 ，不支持箭头模式|(IconDot: React.ReactNode, stepConfig: [CustomDotRecord](#customdotrecord)) => React.ReactNode |`-`|
+|customDot|自定义步骤条节点 ，不支持箭头模式|(IconDot: ReactNode, stepConfig: [CustomDotRecord](#customdotrecord)) => ReactNode |`-`|
 |onChange|点击步骤切换的回调，设置这个属性后，步骤条可点击切换。|(current: number, id: any) => void |`-`|
 
 ### Steps.Step

@@ -40,7 +40,7 @@
 |onChange|`activeTab` 改变的回调|(key: string) => void |`-`|-|
 |onClickTab|点击选项卡的回调|(key: string) => void |`-`|-|
 |onDeleteTab|点击删除按钮的回调|(key: string) => void |`-`|-|
-|renderTabHeader|自定义选项卡头部|(tabProps: [TabsProps](tabs#tabs), DefaultTabHeader: typeof TabHeader) => React.ReactElement |`-`|-|
+|renderTabHeader|自定义选项卡头部|(tabProps: [TabsProps](tabs#tabs), DefaultTabHeader: typeof TabHeader) => ReactElement |`-`|-|
 |renderTabTitle|自定义单个选项卡头部|(tabTitle: ReactNode,info: {key: string \| number;isActive: boolean;disabled: boolean;editable: boolean;}) => ReactNode |`-`|-|
 
 ### Tabs.TabPane

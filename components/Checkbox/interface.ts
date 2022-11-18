@@ -1,12 +1,12 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, ReactText, HTMLAttributes } from 'react';
 
 /**
  * @title Checkbox
  * @zh `T = string | number`
  * @en `T = string | number`
  */
-export interface CheckboxProps<T extends React.ReactText = any>
-  extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'children' | 'className' | 'onChange'> {
+export interface CheckboxProps<T extends ReactText = any>
+  extends Omit<HTMLAttributes<HTMLLabelElement>, 'children' | 'className' | 'onChange'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -53,7 +53,7 @@ export interface CheckboxProps<T extends React.ReactText = any>
 /**
  * @title Checkbox.Group
  */
-export interface CheckboxGroupProps<T extends React.ReactText> {
+export interface CheckboxGroupProps<T extends ReactText> {
   style?: CSSProperties;
   className?: string | string[];
   /**

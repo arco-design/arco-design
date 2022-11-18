@@ -1,8 +1,8 @@
-import { CSSProperties, ReactNode, DragEvent, PropsWithChildren } from 'react';
+import { CSSProperties, ReactNode, ReactElement, DragEvent, PropsWithChildren } from 'react';
 import TreeNode from './node';
 import { AvailableVirtualListProps } from '../_class/VirtualList';
 
-export type NodeInstance = React.ReactElement<PropsWithChildren<NodeProps>, typeof TreeNode>;
+export type NodeInstance = ReactElement<PropsWithChildren<NodeProps>, typeof TreeNode>;
 
 export type SHOW_ALL = 'all';
 export type SHOW_PARENT = 'parent';

@@ -21,7 +21,7 @@ Display statistic number.
 |countFrom|The number that the value starts to increase dynamically|number |`0`|-|
 |precision|The precision of the value|number |`-`|-|
 |format|[dayjs](https://github.com/iamkun/dayjs)'s format|string |`-`|-|
-|renderFormat|Custom render function. `formattedValue` represents the formatted value.|(value: [StatisticProps](statistic#statistic)['value'], formattedValue: string) => React.ReactNode |`-`|2.36.0|
+|renderFormat|Custom render function. `formattedValue` represents the formatted value.|(value: [StatisticProps](statistic#statistic)['value'], formattedValue: string) => ReactNode |`-`|2.36.0|
 |extra|he extra content to be rendered under the value|ReactNode |`-`|-|
 |prefix|The prefix element|string \| ReactNode |`-`|-|
 |suffix|The suffix element|string \| ReactNode |`-`|-|
@@ -44,4 +44,4 @@ Display statistic number.
 |styleValue|The css style of statistic's value|CSSProperties |`-`|-|
 |value|To set value|number \| string \| Date \| Dayjs |`-`|-|
 |onFinish|Callback at the end of the countdown|() => void |`-`|-|
-|renderFormat|Custom render function, the input parameter is the result formatted by `dayjs`|(valueDiff: number, formattedDiff: string) => React.ReactNode |`-`|2.36.0|
+|renderFormat|Custom render function, the input parameter is the result formatted by `dayjs`|(valueDiff: number, formattedDiff: string) => ReactNode |`-`|2.36.0|

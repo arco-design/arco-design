@@ -38,6 +38,8 @@
 |data|上传时的 Body 参数|object \| ((any: any) => object) |`-`|-|
 |name|发请求时文件内容的参数名|string \| ((any: any) => string) |`-`|-|
 |onChange|上传文件改变时的回调。文件开始上传，失败，成功时会触发。注意：如果需要实时获取文件的上传进度，请在 `onProgress` 中处理。|(fileList: [UploadItem](upload#uploaditem)[], file: [UploadItem](upload#uploaditem)) => void |`-`|-|
+|onDragLeave|拖拽上传文件离开拖拽区时的回调|(e: React.DragEvent) => void |`-`|2.41.0|
+|onDragOver|拖拽上传文件进入拖拽区时的回调|(e: React.DragEvent) => void |`-`|2.41.0|
 |onDrop|拖拽上传文件时执行的回调|(e: React.DragEvent) => void |`-`|2.37.0|
 |onExceedLimit|超出上传数量限制时触发|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
 |onPreview|点击预览时候的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|

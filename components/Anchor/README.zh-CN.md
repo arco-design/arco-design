@@ -34,6 +34,6 @@
 |参数名|描述|类型|默认值|
 |---|---|---|---|
 |href|锚点链接|string |`#`|
-|title|文本内容。可以是字符串或者自定义节点。|string \| React.ReactNode |`-`|
+|title|文本内容。可以是字符串或者自定义节点。|string \| ReactNode |`-`|
 |className|节点类名|string \| string[] |`-`|
 |style|节点样式|CSSProperties |`-`|

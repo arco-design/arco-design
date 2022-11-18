@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, ReactElement } from 'react';
 import TabHeader from './tab-header/index';
 
 /**
@@ -152,7 +152,7 @@ export interface TabsProps {
    * @zh 自定义选项卡头部
    * @en Custom Tab Header
    */
-  renderTabHeader?: (tabProps: TabsProps, DefaultTabHeader: typeof TabHeader) => React.ReactElement;
+  renderTabHeader?: (tabProps: TabsProps, DefaultTabHeader: typeof TabHeader) => ReactElement;
   /**
    * @zh 自定义单个选项卡头部
    * @en Customize tab header

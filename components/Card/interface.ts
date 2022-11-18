@@ -1,11 +1,10 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes } from 'react';
 import { Omit } from '../_util/type';
 
 /**
  * @title Card
  */
-export interface CardProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title' | 'className'> {
+export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title' | 'className'> {
   style?: CSSProperties;
   className?: string | string[];
   children?: ReactNode;

@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 
 /**
  * @title Anchor
@@ -96,5 +96,5 @@ export interface AnchorLinkProps {
    * @zh 文本内容。可以是字符串或者自定义节点。
    * @en The content of the hyperlink
    */
-  title?: string | React.ReactNode;
+  title?: string | ReactNode;
 }

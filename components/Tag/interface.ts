@@ -1,9 +1,9 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes } from 'react';
 
 /**
  * @title Tag
  */
-export interface TagProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'className' | 'ref'> {
+export interface TagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'ref'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
