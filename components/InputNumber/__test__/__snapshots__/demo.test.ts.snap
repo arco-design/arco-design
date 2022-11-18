@@ -749,6 +749,75 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders InputNumber/demo/strictMode.md correctly 1`] = `
+<div
+  class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
+  style="width:480px"
+>
+  <span
+    class="arco-input-group"
+  >
+    <span
+      class="arco-input-group-addbefore"
+    >
+      <div
+        class="arco-input-number-step-button"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-minus"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M5 24h38"
+          />
+        </svg>
+      </div>
+    </span>
+    <span
+      class="arco-input-inner-wrapper arco-input-inner-wrapper-default"
+    >
+      <input
+        aria-valuemax="Infinity"
+        aria-valuemin="-Infinity"
+        aria-valuenow="100000000000000000000"
+        class="arco-input arco-input-size-default"
+        role="spinbutton"
+        value="100000000000000000000"
+      />
+      <span
+        class="arco-input-group-suffix"
+      />
+    </span>
+    <span
+      class="arco-input-group-addafter"
+    >
+      <div
+        class="arco-input-number-step-button"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-plus"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M5 24h38M24 5v38"
+          />
+        </svg>
+      </div>
+    </span>
+  </span>
+</div>
+`;
+
 exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
 <div>
   <div

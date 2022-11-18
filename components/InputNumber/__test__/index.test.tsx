@@ -278,4 +278,16 @@ describe('InputNumber ', () => {
     fireEvent.blur(wrapper.find('input')[0]);
     expect(getInputValue(wrapper)).toBe('20');
   });
+
+  it('big decimal', () => {
+    const valueStrAfterAddOnce = '1000000000000000019884624838656.000000000000000000000000000001';
+    const onChange = jest.fn();
+    const wrapper = render(
+      <InputNumber mode="button" strictMode defaultValue={1e30} step={1e-30} onChange={onChange} />
+    );
+
+    fireEvent.mouseDown(wrapper.querySelectorAll('.arco-input-number-step-button')[1]);
+    expect(getInputValue(wrapper)).toBe(valueStrAfterAddOnce);
+    expect(onChange).toBeCalledWith(valueStrAfterAddOnce);
+  });
 });

@@ -18,7 +18,7 @@ An input box which only allows to enter number.
 |error|Whether input has error status|boolean |`-`|-|
 |hideControl|Whether to hide the control buttons|boolean |`-`|-|
 |readOnly|Whether input is readonly|boolean |`-`|2.17.0|
-|defaultValue|To set default value|number |`-`|-|
+|strictMode|`onChange` will return a string in strict mode|boolean |`-`|2.42.0|
 |max|The max value|number |`Infinity`|-|
 |min|The min value|number |`-Infinity`|-|
 |precision|The precision of input value|number |`-`|-|
@@ -29,6 +29,7 @@ An input box which only allows to enter number.
 |prefix|The prefix for the InputNumber|ReactNode |`-`|-|
 |suffix|The suffix for the InputNumber|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
+|defaultValue|To set default value|number \| string |`-`|-|
 |icons|Customize icons|{up?: ReactNode;down?: ReactNode;plus?: ReactNode;minus?: ReactNode;} |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |value|To set value|undefined \| number \| string |`-`|-|
