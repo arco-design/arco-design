@@ -3,15 +3,19 @@ const Arco = require('../lib');
 
 // const components = Object.keys(Arco).filter((key) => typeof Arco[key] === 'object');
 
-const _domain = process.argv?.[2] || 'http://127.0.0.1/'; // --domain=https://a.b.com
+const _domain = process.argv?.[2] || 'http://localhost:9000'; // --domain=https://a.b.com
 
 const baseurl = _domain.replace('--domain=', '');
 
 (async () => {
   const baseURL = `${baseurl}/react`;
-  const browser = await playwright.chromium.launch({});
+  const browser = await playwright.chromium.launch({
+    args: ['--font-render-hinting=none'],
+  });
   const componentNames = Object.keys(Arco).filter((key) => typeof Arco[key] === 'object');
 
+  let total = 0;
+  const componentCount = componentNames.length;
   const page = await browser.newPage({
     viewport: {
       width: 1440,
@@ -21,7 +25,6 @@ const baseurl = _domain.replace('--domain=', '');
 
   const genComponentScreenshots = async (componentName) => {
     // eslint-disable-next-line
-    console.log('gen screenshots________', componentName);
     const name = componentName
       .replace(/([A-Z])/g, '-$1')
       .toLowerCase()
@@ -29,6 +32,8 @@ const baseurl = _domain.replace('--domain=', '');
     await page.goto(`${baseURL}/components/${name}`);
     const demos = page.locator('.codebox-wrapper');
     const totalElements = await demos.count();
+
+    total += totalElements;
 
     await Promise.all(
       [...Array(totalElements)].map(async (_, index) => {
@@ -41,12 +46,16 @@ const baseurl = _domain.replace('--domain=', '');
       })
     );
     // eslint-disable-next-line
-    console.log('success gen screenshots________', componentName);
+    console.log(
+      `[${
+        componentCount - componentNames.length
+      }/${componentCount}]: ${componentName} (${totalElements})`
+    );
     if (componentNames.length) {
       genComponentScreenshots(componentNames.pop());
     } else {
       // eslint-disable-next-line
-      console.log('end________');
+      console.log('end________', total);
       await browser.close();
       process.exit(0);
     }

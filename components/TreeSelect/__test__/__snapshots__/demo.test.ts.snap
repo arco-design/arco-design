@@ -808,7 +808,6 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
 >
   <div
     class="arco-tree-select-view"
-    title="Leaf"
   >
     <span
       class="arco-tree-select-view-selector"
@@ -819,12 +818,27 @@ exports[`renders TreeSelect/demo/labelInvalue.md correctly 1`] = `
         class="arco-tree-select-view-input arco-tree-select-hidden"
         style="width:100%;pointer-events:none"
         tabindex="-1"
-        value="Leaf"
+        value=""
       />
       <span
         class="arco-tree-select-view-value"
       >
-        Leaf
+        <span>
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-star"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M22.552 6.908a.5.5 0 0 1 .896 0l5.02 10.17a.5.5 0 0 0 .376.274l11.224 1.631a.5.5 0 0 1 .277.853l-8.122 7.916a.5.5 0 0 0-.143.443l1.917 11.178a.5.5 0 0 1-.726.527l-10.038-5.278a.5.5 0 0 0-.466 0L12.73 39.9a.5.5 0 0 1-.726-.527l1.918-11.178a.5.5 0 0 0-.144-.443l-8.122-7.916a.5.5 0 0 1 .278-.853l11.223-1.63a.5.5 0 0 0 .376-.274l5.02-10.17Z"
+            />
+          </svg>
+           Leaf
+        </span>
       </span>
     </span>
     <div
