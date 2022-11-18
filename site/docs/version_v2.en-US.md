@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.41.3
+
+2022-11-18
+
+### 🐛 BugFix
+
+- Fix `DatePicker.Range` component when the panel is open, the panel date is incorrect bug when switching `mode`.([#1580](https://github.com/arco-design/arco-design/pull/1580))
+- Fixed a bug that the `Upload` component incorrectly filters files with uppercase suffixes.([#1572](https://github.com/arco-design/arco-design/pull/1572))
+
+### 💅 Style
+
+- Fix the bug that `Steps` does not display connecting lines when the label position is `vertical`([#1581](https://github.com/arco-design/arco-design/pull/1581))
+
 ## 2.41.2
 
 2022-11-11

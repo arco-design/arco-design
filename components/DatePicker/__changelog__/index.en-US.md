@@ -1,3 +1,11 @@
+## 2.41.3
+
+2022-11-18
+
+### 🐛 BugFix
+
+- Fix `DatePicker.Range` component when the panel is open, the panel date is incorrect bug when switching `mode`.([#1580](https://github.com/arco-design/arco-design/pull/1580))
+
 ## 2.39.3
 
 2022-09-02

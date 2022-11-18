@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.41.3
+
+2022-11-18
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.Range` 组件在面板打开时，切换 `mode` 时面板日期不正确的 bug。([#1580](https://github.com/arco-design/arco-design/pull/1580))
+- 修复 `Upload` 组件对大写后缀名文件错误过滤的 bug。([#1572](https://github.com/arco-design/arco-design/pull/1572))
+
+### 💅 样式更新
+
+- 修复 `Steps` 在标签位置为 `vertical` 时不展示连接线的 bug([#1581](https://github.com/arco-design/arco-design/pull/1581))
+
 ## 2.41.2
 
 2022-11-11

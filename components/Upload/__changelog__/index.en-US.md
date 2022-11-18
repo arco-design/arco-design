@@ -1,3 +1,11 @@
+## 2.41.3
+
+2022-11-18
+
+### 🐛 BugFix
+
+- Fixed a bug that the `Upload` component incorrectly filters files with uppercase suffixes.([#1572](https://github.com/arco-design/arco-design/pull/1572))
+
 ## 2.41.0
 
 2022-10-28

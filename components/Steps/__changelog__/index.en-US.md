@@ -1,3 +1,11 @@
+## 2.41.3
+
+2022-11-18
+
+### 💅 Style
+
+- Fix the bug that `Steps` does not display connecting lines when the label position is `vertical`([#1581](https://github.com/arco-design/arco-design/pull/1581))
+
 ## 2.41.2
 
 2022-11-11
