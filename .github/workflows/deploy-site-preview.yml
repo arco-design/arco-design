@@ -35,6 +35,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     needs: build-site
+    environment: netlify
     steps:
       - name: checkout
         uses: actions/checkout@master
