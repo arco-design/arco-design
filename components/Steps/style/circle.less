@@ -157,7 +157,7 @@
     }
   }
 
-  &-vertical > &-item:not(:last-child) {
+  &&-vertical > &-item:not(:last-child) {
     > .@{steps-prefix-cls}-item-tail {
       position: absolute;
       width: @steps-circle-size-item-tail;
@@ -179,7 +179,7 @@
   }
 
   // label vertical & direction vertical tail style
-  > &-item:not(:last-child) {
+  & > &-item:not(:last-child) {
     > .@{steps-prefix-cls}-item-tail {
       position: absolute;
       width: 100%;
