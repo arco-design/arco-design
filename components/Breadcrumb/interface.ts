@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode, HTMLAttributes } from 'react';
 import { DropdownProps } from '../Dropdown';
 
 export interface RouteProps {
@@ -37,7 +37,7 @@ export interface BreadcrumbProps {
   itemRender?: (route: RouteProps, routes: RouteProps[], paths: string[]) => ReactNode;
 }
 
-type CustomHTMLElement = Omit<React.HTMLAttributes<HTMLDivElement>, 'className'>;
+type CustomHTMLElement = Omit<HTMLAttributes<HTMLDivElement>, 'className'>;
 
 /**
  * @title Breadcrumb.Item

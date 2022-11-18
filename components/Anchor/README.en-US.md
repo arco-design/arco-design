@@ -34,6 +34,6 @@ By the Anchor can quickly find the information content of the current page.
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
 |href|The target that the hyperlink points to|string |`#`|
-|title|The content of the hyperlink|string \| React.ReactNode |`-`|
+|title|The content of the hyperlink|string \| ReactNode |`-`|
 |className|Additional css class|string \| string[] |`-`|
 |style|Additional style|CSSProperties |`-`|

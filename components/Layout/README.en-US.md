@@ -50,7 +50,7 @@ The basic layout framework which is often nested with components to build the ov
 |collapsedWidth|Width of collapsed sider|number |`48`|-|
 |onCollapse|Callback when sider collapse state changes|(collapse: boolean, type: 'clickTrigger' \| 'responsive') => void |`-`|-|
 |theme|Theme of layout|'dark' \| 'light' |`light`|-|
-|trigger|Customize the trigger element to collapse sider at bottom. Set it to `null` to hide the trigger|string \| React.ReactNode |`-`|-|
+|trigger|Customize the trigger element to collapse sider at bottom. Set it to `null` to hide the trigger|string \| ReactNode |`-`|-|
 |breakpoint|Breakpoint in responsive layout. See details [Grid](/react/components/Grid)|[GridResponsiveBreakpoint](#gridresponsivebreakpoint) |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |resizeBoxProps|All props of `ResizeBox` can be accepted. The `width` of the menu bar can be displayed in a controlled manner through `resizeBoxProps` or linked with `collapsed`|[ResizeBoxProps](resize-box#resizebox) |`-`|2.34.0|

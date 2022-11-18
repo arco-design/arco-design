@@ -20,7 +20,7 @@
 |countFrom|从什么数字开始动态变大|number |`0`|-|
 |precision|数字精度|number |`-`|-|
 |format|[dayjs](https://github.com/iamkun/dayjs)'s format|string |`-`|-|
-|renderFormat|自定义 render 函数。`formattedValue` 表示格式化后的值。|(value: [StatisticProps](statistic#statistic)['value'], formattedValue: string) => React.ReactNode |`-`|2.36.0|
+|renderFormat|自定义 render 函数。`formattedValue` 表示格式化后的值。|(value: [StatisticProps](statistic#statistic)['value'], formattedValue: string) => ReactNode |`-`|2.36.0|
 |extra|在数值下展示额外内容|ReactNode |`-`|-|
 |prefix|前缀|string \| ReactNode |`-`|-|
 |suffix|后缀|string \| ReactNode |`-`|-|
@@ -43,4 +43,4 @@
 |styleValue|数值的样式|CSSProperties |`-`|-|
 |value|倒计时的时间|number \| string \| Date \| Dayjs |`-`|-|
 |onFinish|倒计时完成后触发的回调|() => void |`-`|-|
-|renderFormat|自定义 render 函数。`valueDiff` 表示两个时间的时间差，`formattedDiff` 表示格式化后的时间差，|(valueDiff: number, formattedDiff: string) => React.ReactNode |`-`|2.36.0|
+|renderFormat|自定义 render 函数。`valueDiff` 表示两个时间的时间差，`formattedDiff` 表示格式化后的时间差，|(valueDiff: number, formattedDiff: string) => ReactNode |`-`|2.36.0|

@@ -38,6 +38,8 @@ Upload file by selecting or dragging.
 |data|additions params of request|object \| ((any: any) => object) |`-`|-|
 |name|The key name of uploading file|string \| ((any: any) => string) |`-`|-|
 |onChange|Callback when uploading state is changing|(fileList: [UploadItem](upload#uploaditem)[], file: [UploadItem](upload#uploaditem)) => void |`-`|-|
+|onDragLeave|Callback when drag and drop uploaded file leaves the drag area|(e: React.DragEvent) => void |`-`|2.41.0|
+|onDragOver|Callback when drag and drop uploaded file into the drag area|(e: React.DragEvent) => void |`-`|2.41.0|
 |onDrop|Callback after drag file to the upload area and drop.|(e: React.DragEvent) => void |`-`|2.37.0|
 |onExceedLimit|Callback when limit is exceeded|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
 |onPreview|Callback when the preview icon is clicked|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|

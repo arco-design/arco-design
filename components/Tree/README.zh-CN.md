@@ -120,7 +120,7 @@ export type ActionOnClick = "select" | "check" | "expand";
 ### NodeInstance
 
 ```js
-export type NodeInstance = React.ReactElement<
+export type NodeInstance = ReactElement<
   PropsWithChildren<NodeProps>,
   typeof TreeNode
 >;

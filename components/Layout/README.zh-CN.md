@@ -50,7 +50,7 @@
 |collapsedWidth|收缩宽度，设置为 0 会出现特殊 trigger|number |`48`|-|
 |onCollapse|展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发|(collapse: boolean, type: 'clickTrigger' \| 'responsive') => void |`-`|-|
 |theme|主题颜色|'dark' \| 'light' |`light`|-|
-|trigger|自定义底部折叠触发器，设置为 null 时隐藏 trigger|string \| React.ReactNode |`-`|-|
+|trigger|自定义底部折叠触发器，设置为 null 时隐藏 trigger|string \| ReactNode |`-`|-|
 |breakpoint|触发响应式布局的断点, 详见[响应式栅格](/react/components/Grid)|[GridResponsiveBreakpoint](#gridresponsivebreakpoint) |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |resizeBoxProps|可以接受 `ResizeBox` 所有参数，在伸缩开启时，可以通过 `resizeBoxProps` 对菜单栏的 `width` 进行受控展示或者与 `collapsed` 联动|[ResizeBoxProps](resize-box#resizebox) |`-`|2.34.0|

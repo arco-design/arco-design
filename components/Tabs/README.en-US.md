@@ -40,7 +40,7 @@ Organize content in the same view, and view content one view at a time. You can 
 |onChange|Callback when `activeTab` changed|(key: string) => void |`-`|-|
 |onClickTab|Callback when click Tab|(key: string) => void |`-`|-|
 |onDeleteTab|Callback when click Delete Button|(key: string) => void |`-`|-|
-|renderTabHeader|Custom Tab Header|(tabProps: [TabsProps](tabs#tabs), DefaultTabHeader: typeof TabHeader) => React.ReactElement |`-`|-|
+|renderTabHeader|Custom Tab Header|(tabProps: [TabsProps](tabs#tabs), DefaultTabHeader: typeof TabHeader) => ReactElement |`-`|-|
 |renderTabTitle|Customize tab header|(tabTitle: ReactNode,info: {key: string \| number;isActive: boolean;disabled: boolean;editable: boolean;}) => ReactNode |`-`|-|
 
 ### Tabs.TabPane

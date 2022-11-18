@@ -23,9 +23,9 @@
 |defaultValue|自动补全组件的默认值|string |`-`|-|
 |placeholder|输入框提示|string |`-`|-|
 |value|自动补全组件的值（受控模式）|string |`-`|-|
-|children|自定义输入框/数据源|React.ReactNode |`-`|-|
+|children|自定义输入框/数据源|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|data|自动完成的数据源|(string \| { value: string; name: string; [key: string]: any } \| React.ReactNode)[] |`-`|-|
+|data|自动完成的数据源|(string \| { value: string; name: string; [key: string]: any } \| ReactNode)[] |`-`|-|
 |inputProps|传递 Input 组件的属性。|Partial&lt;[InputProps](input#input)&gt; |`-`|2.10.0|
 |style|节点样式|CSSProperties |`-`|-|
 |triggerProps|可以接受所有 `Trigger` 的 `Props`|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|

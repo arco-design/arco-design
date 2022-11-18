@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import { CSSProperties, ReactNode, ReactElement } from 'react';
 import { InputProps } from '../Input';
 import { OptionInfo, SelectProps } from '../Select/interface';
 
@@ -28,7 +28,7 @@ export interface AutoCompleteProps extends PartialSelectProps {
    * @zh 自定义输入框/数据源
    * @en Custom input/source data
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * @zh 是否允许一键清除
    * @en Whether to allow clear the content
@@ -38,7 +38,7 @@ export interface AutoCompleteProps extends PartialSelectProps {
    * @zh 自动完成的数据源
    * @en Data source
    */
-  data?: (string | { value: string; name: string; [key: string]: any } | React.ReactNode)[];
+  data?: (string | { value: string; name: string; [key: string]: any } | ReactNode)[];
   /**
    * @zh 输入框提示
    * @en Placeholder of input

@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
 import { ResizeBoxProps } from '../ResizeBox';
 import { Omit } from '../_util/type';
 import { GridResponsiveBreakpoint } from '../Grid/interface';
@@ -7,10 +7,7 @@ import { GridResponsiveBreakpoint } from '../Grid/interface';
  * @title Layout
  */
 export interface LayoutProps
-  extends Omit<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
-    'className' | 'ref'
-  > {
+  extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className' | 'ref'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
@@ -27,10 +24,7 @@ export interface LayoutProps
  * @title Layout.Header
  */
 export interface HeaderProps
-  extends Omit<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
-    'className' | 'ref'
-  > {
+  extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className' | 'ref'> {
   className?: string | string[];
 }
 
@@ -38,10 +32,7 @@ export interface HeaderProps
  * @title Layout.Footer
  */
 export interface FooterProps
-  extends Omit<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
-    'className' | 'ref'
-  > {
+  extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className' | 'ref'> {
   className?: string | string[];
 }
 
@@ -49,10 +40,7 @@ export interface FooterProps
  * @title Layout.Content
  */
 export interface ContentProps
-  extends Omit<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
-    'className' | 'ref'
-  > {
+  extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className' | 'ref'> {
   className?: string | string[];
 }
 
@@ -100,7 +88,7 @@ export interface SiderProps {
    * @zh 自定义底部折叠触发器，设置为 null 时隐藏 trigger
    * @en Customize the trigger element to collapse sider at bottom. Set it to `null` to hide the trigger
    */
-  trigger?: string | React.ReactNode;
+  trigger?: string | ReactNode;
   /**
    * @zh 宽度
    * @en Width of sider

@@ -23,9 +23,9 @@ An input box or custom input control, with enhanced automatic completion functio
 |defaultValue|The default value of the autocomplete.|string |`-`|-|
 |placeholder|Placeholder of input|string |`-`|-|
 |value|The value of the autocomplete.|string |`-`|-|
-|children|Custom input/source data|React.ReactNode |`-`|-|
+|children|Custom input/source data|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|data|Data source|(string \| { value: string; name: string; [key: string]: any } \| React.ReactNode)[] |`-`|-|
+|data|Data source|(string \| { value: string; name: string; [key: string]: any } \| ReactNode)[] |`-`|-|
 |inputProps|Properties of Input component.|Partial&lt;[InputProps](input#input)&gt; |`-`|2.10.0|
 |style|Additional style|CSSProperties |`-`|-|
 |triggerProps|Pass all `Trigger` component properties|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
