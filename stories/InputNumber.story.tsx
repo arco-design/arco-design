@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import { InputNumber, Button } from '@self';
+import { InputNumber } from '@self';
 
 function Demo1() {
-  const [value, setValue] = useState(10000000000000000000000);
+  const [value, setValue] = useState(1e20);
   return (
-    <div>
-      <Button onClick={() => setValue(value + 10)}>Add</Button>
-      <InputNumber mode="button" value={value} onChange={setValue} />
-    </div>
+    <InputNumber
+      strictMode
+      mode="button"
+      value={value}
+      step={1e-20}
+      onChange={(value) => {
+        console.log('InputNumber value is ', value);
+        setValue(value);
+      }}
+    />
   );
 }
 

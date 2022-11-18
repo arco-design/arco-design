@@ -50,10 +50,16 @@ export interface InputNumberProps
    */
   readOnly?: boolean;
   /**
+   * @zh 严格模式下，`onChange` 回调将返回字符串类型
+   * @en `onChange` will return a string in strict mode
+   * @version 2.42.0
+   */
+  strictMode?: boolean;
+  /**
    * @zh 初始值
    * @en To set default value
    */
-  defaultValue?: number;
+  defaultValue?: number | string;
   /**
    * @zh 当前值
    * @en To set value

@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import NP from 'number-precision';
 import IconUp from '../../icon/react-icon/IconUp';
 import IconDown from '../../icon/react-icon/IconDown';
 import IconPlus from '../../icon/react-icon/IconPlus';
@@ -16,15 +15,13 @@ import { isNumber } from '../_util/is';
 import cs from '../_util/classNames';
 import { ArrowUp, ArrowDown } from '../_util/keycode';
 import { ConfigContext } from '../ConfigProvider';
-import Input from '../Input';
+import Input, { InputProps } from '../Input';
 import { RefInputType } from '../Input/interface';
 import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
-import { toFixed, toSafeString } from './utils';
 import useSelectionRange from './useSelectionRange';
-
-NP.enableBoundaryChecking(false);
+import { Decimal } from './Decimal';
 
 // Value's auto change speed when user holds on plus or minus
 const AUTO_CHANGE_INTERVAL = 200;
@@ -56,6 +53,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     disabled,
     error,
     readOnly,
+    strictMode,
     placeholder,
     hideControl,
     suffix,
@@ -87,34 +85,43 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     return null;
   })();
 
-  const [innerValue, setInnerValue] = useState<InputNumberProps['value']>(
-    'defaultValue' in props ? defaultValue : undefined
-  );
-  const value = (() => {
-    const mergedValue = 'value' in props ? props.value : innerValue;
-    return typeof mergedValue === 'string' && mergedValue !== '' ? +mergedValue : mergedValue;
-  })();
-
+  const [innerValue, setInnerValue] = useState<Decimal>(() => {
+    return Decimal.from(
+      'value' in props ? props.value : 'defaultValue' in props ? defaultValue : undefined
+    );
+  });
   const [inputValue, setInputValue] = useState<string>('');
   const [isOutOfRange, setIsOutOfRange] = useState(false);
   const [isUserTyping, setIsUserTyping] = useState(false);
-
-  // Value is not set
-  const isEmptyValue = value === '' || value === undefined || value === null;
 
   const refAutoTimer = useRef(null);
   const refInput = useRef<RefInputType>(null);
   // Ref to keep track of whether user has taken operations since the last change of prop value
   const refHasOperateSincePropValueChanged = useRef(false);
 
+  const value = useMemo<Decimal>(() => {
+    return 'value' in props ? Decimal.from(props.value) : innerValue;
+  }, [props.value, innerValue]);
+
+  const [maxDecimal, minDecimal] = useMemo<Decimal[]>(() => {
+    return [Decimal.from(max), Decimal.from(min)];
+  }, [max, min]);
+
   useImperativeHandle(ref, () => refInput.current, []);
 
-  const setValue = (newVal) => {
-    setInnerValue(newVal);
-
-    const newValue = isNumber(+newVal) ? +newVal : undefined;
-    if (newValue !== value) {
-      onChange && onChange(newValue);
+  const setValue = (newValue: Decimal) => {
+    setInnerValue(newValue);
+    if (!newValue.equals(value) && onChange) {
+      const newValueStr = newValue.toString({ safe: true, precision: mergedPrecision });
+      onChange(
+        newValue.isEmpty
+          ? undefined
+          : strictMode
+          ? (newValueStr as any)
+          : newValue.isNaN
+          ? NaN
+          : Number(newValueStr)
+      );
     }
   };
 
@@ -123,31 +130,19 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     refAutoTimer.current = null;
   };
 
-  const getLegalValue = useCallback(
+  const getLegalValue = useCallback<(value: Decimal) => Decimal>(
     (changedValue) => {
-      let finalValue: string | number = Number(changedValue);
+      let finalValue = changedValue;
 
-      if (!changedValue && changedValue !== 0) {
-        finalValue = undefined;
-      } else if (!isNumber(finalValue)) {
-        finalValue = changedValue === '-' ? changedValue : '';
+      if (finalValue.less(minDecimal)) {
+        finalValue = minDecimal;
+      } else if (maxDecimal.less(finalValue)) {
+        finalValue = maxDecimal;
       }
 
-      if (finalValue < min) {
-        finalValue = min;
-      }
-
-      if (finalValue > max) {
-        finalValue = max;
-      }
-
-      return isNumber(finalValue)
-        ? isNumber(mergedPrecision)
-          ? Number(toFixed(finalValue, mergedPrecision))
-          : finalValue
-        : undefined;
+      return finalValue;
     },
-    [min, max, mergedPrecision]
+    [minDecimal, maxDecimal]
   );
 
   useEffect(() => {
@@ -159,7 +154,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   }, [props.value]);
 
   useEffect(() => {
-    const _isOutOfRange = (isNumber(min) && value < min) || (isNumber(max) && value > max);
+    const _isOutOfRange = value.less(minDecimal) || maxDecimal.less(value);
 
     // Don't correct the illegal value caused by prop value. Wait for user to take actions.
     if (_isOutOfRange && refHasOperateSincePropValueChanged.current) {
@@ -167,7 +162,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     }
 
     setIsOutOfRange(_isOutOfRange);
-  }, [min, max, value, getLegalValue]);
+  }, [minDecimal, maxDecimal, value, getLegalValue]);
 
   const handleArrowKey = (event, method: StepMethods, needRepeat = false) => {
     event.persist();
@@ -178,11 +173,9 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       return;
     }
 
-    let finalValue = min === -Infinity ? 0 : min;
-
-    if (!isEmptyValue) {
-      finalValue = NP[method](value, step);
-    }
+    const finalValue = value.isInvalid
+      ? Decimal.from(min === -Infinity ? 0 : min)
+      : value.add(method === 'plus' ? step : -step);
 
     setValue(getLegalValue(finalValue));
     refInput.current && refInput.current.focus();
@@ -202,12 +195,12 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
     if (isUserTyping) {
       _value = parser ? `${parser(inputValue)}` : inputValue;
-    } else if (isNumber(value) && isNumber(mergedPrecision)) {
-      _value = toFixed(value, mergedPrecision);
-    } else if (value == null) {
+    } else if (isNumber(mergedPrecision)) {
+      _value = value.toString({ safe: true, precision: mergedPrecision });
+    } else if (value.isInvalid) {
       _value = '';
     } else {
-      _value = toSafeString(value);
+      _value = value.toString();
     }
 
     return formatter ? formatter(_value, { userTyping: isUserTyping, input: inputValue }) : _value;
@@ -218,7 +211,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     inputValue: displayedInputValue,
   });
 
-  const inputEventHandlers = {
+  const inputEventHandlers: Partial<InputProps> = {
     onChange: (rawText, event) => {
       setIsUserTyping(true);
       rawText = rawText.trim().replace(/。/g, '.');
@@ -226,7 +219,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
       if (isNumber(+parsedValue) || parsedValue === '-' || !parsedValue || parsedValue === '.') {
         setInputValue(rawText);
-        setValue(getLegalValue(parsedValue));
+        setValue(getLegalValue(Decimal.from(parsedValue)));
         updateSelectionRangePosition(event);
       }
     },
@@ -241,18 +234,18 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       }
 
       stop();
-      onKeyDown && onKeyDown(e);
+      onKeyDown?.(e as any);
     },
     onFocus: (e) => {
       // Both tab and button click trigger focus event. This can be used to determine whether user has taken operations
       refHasOperateSincePropValueChanged.current = true;
       setInputValue(refInput.current?.dom?.value);
-      onFocus && onFocus(e);
+      onFocus?.(e);
     },
     onBlur: (e) => {
       setValue(getLegalValue(value));
       setIsUserTyping(false);
-      onBlur && onBlur(e);
+      onBlur?.(e);
     },
   };
 
@@ -270,13 +263,18 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   const shouldRenderLayer = !hideControl && !readOnly && mode === 'embed';
 
   const renderStepButton = (method: StepMethods, icon) => {
+    const isStepButtonValid =
+      !disabled &&
+      (value.isInvalid ||
+        (method === 'plus'
+          ? maxDecimal.isInvalid || value.less(maxDecimal)
+          : minDecimal.isInvalid || minDecimal.less(value)));
     return (
       <div
         className={cs(`${prefixCls}-step-button`, {
-          [`${prefixCls}-step-button-disabled`]:
-            disabled || (method === 'plus' ? +value >= +max : +value <= +min),
+          [`${prefixCls}-step-button-disabled`]: !isStepButtonValid,
         })}
-        {...getControlButtonEventsHandlers(method)}
+        {...(isStepButtonValid ? getControlButtonEventsHandlers(method) : {})}
       >
         {icon}
       </div>
@@ -289,7 +287,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       role="spinbutton"
       aria-valuemax={max}
       aria-valuemin={min}
-      aria-valuenow={value as number}
+      aria-valuenow={value.isEmpty ? undefined : value.toNumber()}
       {...omit(rest, ['allowClear'])}
       {...inputEventHandlers}
       style={style}
@@ -299,7 +297,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
         `${prefixCls}-size-${mergedSize}`,
         {
           [`${prefixCls}-readonly`]: readOnly,
-          [`${prefixCls}-illegal-value`]: !isEmptyValue && isOutOfRange,
+          [`${prefixCls}-illegal-value`]: !value.isEmpty && isOutOfRange,
         },
         className
       )}
