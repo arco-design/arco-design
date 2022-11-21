@@ -40,6 +40,7 @@ const baseurl = _domain.replace('--domain=', '');
         const demo = demos.nth(index);
         const id = await demo.getAttribute('id');
         await demo.locator('.demo').screenshot({
+          animations: 'disabled',
           path: `${__dirname}/__screenshots__/${componentName}/${id}.png`,
           type: 'png',
         });

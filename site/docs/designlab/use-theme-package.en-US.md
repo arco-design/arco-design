@@ -26,12 +26,12 @@ Confirm whether the project needs to use **load on demand** for the style
 
 #### Need to load styles on demand
 
-Introduce the theme package through the [ArcoWebpack plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) or [Arco Vite plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md) (recommended `1.5.0` version and above)
+Introduce the theme package through the [ArcoWebpack plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) or [Arco Vite plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md)
 
-Introduce the `@arco-design/webpack-plugin` plugin in the webpack configuration. Specify the theme package name through the `theme` field.
+Introduce the `@arco-plugins/webpack-react` plugin in the webpack configuration. Specify the theme package name through the `theme` field.
 
 ```js
-const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
+const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 
 // webpack config
 {
