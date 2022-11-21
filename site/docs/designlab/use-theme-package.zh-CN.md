@@ -24,12 +24,12 @@ npm i @arco-design/theme-line
 
 #### 需要按需加载样式
 
-通过 [Arco Webpack 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) 或 [Arco Vite 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md) 引入主题包（推荐 `1.5.0` 版本及以上）
+通过 [Arco Webpack 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) 或 [Arco Vite 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md)
 
-以 webpack 配置为例，引入 `@arco-design/webpack-plugin` 插件。通过 `theme` 字段指定主题包名。
+以 webpack 配置为例，引入 `@arco-plugins/webpack-react` 插件。通过 `theme` 字段指定主题包名。
 
 ```js
-const ArcoWebpackPlugin = require('@arco-design/webpack-plugin');
+const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 
 // webpack config
 {
