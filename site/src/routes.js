@@ -723,6 +723,11 @@ export default function getRoutes(lang = 'zh', t) {
           path: 'designlab/use-theme-package',
           component: lazyLoad(() => import(`../docs/designlab/use-theme-package${suffix}.md`)),
         },
+        {
+          name: t['routes.use-config-provider'],
+          path: 'designlab/use-config-provider',
+          component: lazyLoad(() => import(`../docs/designlab/use-config-provider${suffix}.md`)),
+        },
       ],
     },
     {

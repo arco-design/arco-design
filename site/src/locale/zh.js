@@ -106,6 +106,7 @@ export default {
   'routes.designlab-guideline': '平台使用指南',
   'routes.partial-dark': '局部暗黑样式',
   'routes.use-theme-package': '使用主题包',
+  'routes.use-config-provider': '使用全局配置',
   'routes.material': '物料平台',
   'routes.material.start': '快速开始',
   'routes.material.guide': '物料指南',
