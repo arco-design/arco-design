@@ -309,6 +309,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           aria-label="add tab"
           tabIndex={0}
           role="button"
+          ref={extraRef}
           onClick={handleAdd}
           {...getKeyDownEvent({ onPressEnter: handleAdd })}
         >
