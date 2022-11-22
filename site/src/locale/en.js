@@ -106,6 +106,7 @@ export default {
   'routes.designlab-guideline': 'Guideline',
   'routes.partial-dark': 'Partially apply dark style',
   'routes.use-theme-package': 'Use Theme Package',
+  'routes.use-config-provider': 'Use Config Provider',
   'routes.material': 'Material Market',
   'routes.material.start': 'Quick Start',
   'routes.material.guide': 'Guide',
