@@ -521,7 +521,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         table && resetTableClassName(table.classList);
       }
     }, 100),
-    [refTable.current, refTableBody.current]
+    [refTable.current, refTableBody.current, fixedHeader]
   );
 
   function setFixedColumnClassNames() {
