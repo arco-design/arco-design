@@ -14,12 +14,12 @@ In a set of related and mutually exclusive data, the user can only select one op
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|checked|The value of radio|boolean |`-`|
+|checked|Whether the radio is checked (Controlled)|boolean |`-`|
 |defaultChecked|Whether the radio is initially selected|boolean |`-`|
 |disabled|Whether the radio is disabled|boolean |`-`|
 |className|Additional css class|string \| string[] |`-`|
 |style|Additional style|CSSProperties |`-`|
-|value|Whether the radio is checked (Controlled)|T |`-`|
+|value|The value of radio|T |`-`|
 |onChange|Callback when radio status change|(checked: boolean, event: ChangeEvent) => void |`-`|
 
 ### Radio.Group
