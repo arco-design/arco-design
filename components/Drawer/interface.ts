@@ -6,6 +6,12 @@ import { ButtonProps } from '../Button';
 export interface DrawerProps {
   style?: CSSProperties;
   className?: string | string[];
+  /**
+   * @zh 设置抽屉的 zIndex
+   * @en Set the zIndex of the drawer
+   * @version 2.42.0
+   */
+  zIndex?: number;
   children?: ReactNode;
   /**
    * @zh 设置外层容器的类名

@@ -71,6 +71,7 @@ function Drawer(baseProps: DrawerProps, ref) {
     autoFocus,
     okButtonProps,
     cancelButtonProps,
+    zIndex,
     ...rest
   } = props;
 
@@ -210,7 +211,11 @@ function Drawer(baseProps: DrawerProps, ref) {
           },
           wrapClassName
         )}
-        style={isFixed ? { position: 'fixed' } : { zIndex: 'inherit', position: 'absolute' }}
+        style={
+          isFixed
+            ? { position: 'fixed', zIndex }
+            : { zIndex: zIndex || 'inherit', position: 'absolute' }
+        }
       >
         {mask ? (
           <CSSTransition

@@ -14,12 +14,12 @@ export interface RadioProps<T = any>
   disabled?: boolean;
   /**
    * @zh 控件的 `value`
-   * @en Whether the radio is checked (Controlled)
+   * @en The value of radio
    */
   value?: T;
   /**
    * @zh 是否选中（受控模式）
-   * @en The value of radio
+   * @en Whether the radio is checked (Controlled)
    */
   checked?: boolean;
   /**
