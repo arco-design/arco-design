@@ -53,7 +53,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
       }}
       onDrop={(e: React.DragEvent) => {
         e.preventDefault();
-        if (!disabled) {
+        if (!disabled && props.drag !== false) {
           setIsDragging(false);
           if (props.directory) {
             loopDirectory(e.dataTransfer.items, accept, (files) => {
