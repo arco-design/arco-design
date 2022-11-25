@@ -54,7 +54,12 @@ export const contains = function (root: HTMLElement, ele) {
 };
 
 export const isScrollElement = (element: HTMLElement) => {
-  return element.scrollHeight > element.offsetHeight || element.scrollWidth > element.offsetWidth;
+  const clientHeight =
+    element === document.documentElement ? element.clientHeight : element.offsetHeight;
+  const clientWidth =
+    element === document.documentElement ? element.clientWidth : element.offsetWidth;
+
+  return element.scrollHeight > clientHeight || element.scrollWidth > clientWidth;
 };
 
 /**
