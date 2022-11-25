@@ -146,7 +146,8 @@
     .hide-input-element() {
       // 需要在隐藏 input 的同时保证其能被 Tab 键聚焦
       // 故不要用 display: none / visibility: hidden
-      width: 0 !important;
+      // width 设置为0的隐藏方式，会导致在火狐浏览器下select-view.tsx中role=combobox的div触发onFocus之后不能立刻触发onClick
+      opacity: 0;
       // width: 0 的 div 还能引起换行导致输入框被撑开，将其脱离标准文档流
       position: absolute;
     }
