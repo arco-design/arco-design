@@ -12,6 +12,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { isArray, isObject } from '../_util/is';
 import { CheckboxGroupProps } from './interface';
+import { pickTriggerPropsFromRest } from '../_util/constant';
 
 const defaultContextValue = {
   isCheckboxGroup: false,
@@ -75,7 +76,7 @@ function Group<T extends React.ReactText>(props: PropsWithChildren<CheckboxGroup
   );
 
   return (
-    <span className={classNames} style={style}>
+    <span className={classNames} style={style} {...pickTriggerPropsFromRest(props)}>
       <CheckboxGroupContext.Provider
         value={{
           isCheckboxGroup: true,
