@@ -72,6 +72,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const [headerRef, headerSize, setHeaderSize] = useDomSize<HTMLDivElement>();
   const [scrollWrapperRef, scrollWrapperSize, setScrollWrapperSize] = useDomSize<HTMLDivElement>();
   const [extraRef, extraSize, setExtraSize] = useDomSize<HTMLDivElement>();
+  const [addBtnRef, addBtnSize, setAddenBtnSize] = useDomSize<HTMLDivElement>();
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -111,15 +112,14 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
-    const headerContentHeight = scrollWrapperSize.height - extraSize.height;
-    const headerContentWidth = scrollWrapperSize.width - extraSize.width;
+    const headerContentHeight = scrollWrapperSize.height - extraSize.height - addBtnSize.height;
+    const headerContentWidth = scrollWrapperSize.width - extraSize.width - addBtnSize.width;
     const res =
       mergeProps.direction === 'vertical'
         ? headerContentHeight < headerSize.height
         : headerContentWidth < headerSize.width;
-
     return res;
-  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize]);
+  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize, addBtnSize]);
 
   const updateScrollWrapperSize = () => {
     if (scrollWrapperRef.current) {
@@ -131,39 +131,29 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     }
   };
 
-  const onWrapperResize = throttleByRaf((entry) => {
-    updateScrollWrapperSize();
-    const dom = entry[0] && entry[0].target;
-    if (dom) {
-      setHeaderWrapperSize({
-        height: (dom as HTMLElement).offsetHeight,
-        width: (dom as HTMLElement).offsetWidth,
-        domRect: dom.getBoundingClientRect(),
-      });
-    }
-  });
+  const resizeCallback = (
+    callback:
+      | typeof setHeaderSize
+      | typeof setHeaderWrapperSize
+      | typeof setExtraSize
+      | typeof setAddenBtnSize
+  ) =>
+    throttleByRaf((entry) => {
+      updateScrollWrapperSize();
+      const dom = entry[0] && entry[0].target;
+      if (dom) {
+        callback({
+          height: (dom as HTMLElement).offsetHeight,
+          width: (dom as HTMLElement).offsetWidth,
+          domRect: dom.getBoundingClientRect(),
+        });
+      }
+    });
 
-  const onHeaderResize = throttleByRaf((entry) => {
-    const dom = entry[0] && entry[0].target;
-    if (dom) {
-      setHeaderSize({
-        height: (dom as HTMLElement).offsetHeight,
-        width: (dom as HTMLElement).offsetWidth,
-        domRect: dom.getBoundingClientRect(),
-      });
-    }
-  });
-
-  const onExtraResize = throttleByRaf((entry) => {
-    const dom = entry[0] && entry[0].target;
-    if (dom) {
-      setExtraSize({
-        height: (dom as HTMLElement).offsetHeight,
-        width: (dom as HTMLElement).offsetWidth,
-        domRect: dom.getBoundingClientRect(),
-      });
-    }
-  });
+  const onWrapperResize = resizeCallback(setHeaderWrapperSize);
+  const onHeaderResize = resizeCallback(setHeaderSize);
+  const onExtraResize = resizeCallback(setExtraSize);
+  const onAddBtnResize = resizeCallback(setAddenBtnSize);
 
   const getValidOffset = useCallback(
     (offset) => {
@@ -188,8 +178,10 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   useEffect(() => {
     return () => {
-      onHeaderResize.cancel && onHeaderResize.cancel();
-      onWrapperResize.cancel && onWrapperResize.cancel();
+      onHeaderResize?.cancel?.();
+      onWrapperResize?.cancel?.();
+      onExtraResize?.cancel?.();
+      onAddBtnResize?.cancel?.();
     };
   }, []);
 
@@ -304,20 +296,23 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     return (
       isEditable &&
       showAddButton && (
-        <div
-          className={`${prefixCls}-add-icon`}
-          aria-label="add tab"
-          tabIndex={0}
-          role="button"
-          onClick={handleAdd}
-          {...getKeyDownEvent({ onPressEnter: handleAdd })}
-        >
-          {addButton || (
-            <IconHover prefix={`${prefixCls}-add`}>
-              <span className={`${prefixCls}-add`}>{icons?.add || <IconPlus />}</span>
-            </IconHover>
-          )}
-        </div>
+        <ResizeObserver onResize={onAddBtnResize}>
+          <div
+            className={`${prefixCls}-add-icon`}
+            aria-label="add tab"
+            tabIndex={0}
+            role="button"
+            ref={addBtnRef}
+            onClick={handleAdd}
+            {...getKeyDownEvent({ onPressEnter: handleAdd })}
+          >
+            {addButton || (
+              <IconHover prefix={`${prefixCls}-add`}>
+                <span className={`${prefixCls}-add`}>{icons?.add || <IconPlus />}</span>
+              </IconHover>
+            )}
+          </div>
+        </ResizeObserver>
       )
     );
   };
