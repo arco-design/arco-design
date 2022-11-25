@@ -9,6 +9,19 @@ mountTest(Modal);
  */
 
 describe('Modal config test', () => {
+  it('title is null', () => {
+    jest.useFakeTimers();
+    const modal = Modal.info({
+      title: null,
+      icon: null,
+    });
+
+    jest.runAllTimers();
+
+    expect($('.arco-modal-title').length).toBe(0);
+
+    modal.close();
+  });
   it('icons', () => {
     let modal;
     jest.useFakeTimers();
@@ -129,7 +142,7 @@ describe('Modal config test', () => {
 
   it('promise', () => {
     jest.useFakeTimers();
-    Modal.info({
+    const modal = Modal.info({
       title: '123',
       unmountOnExit: true,
       onOk: () => {
@@ -142,6 +155,8 @@ describe('Modal config test', () => {
     $('.arco-modal-footer button')[0].click();
 
     expect($('.arco-modal-footer .arco-icon-loading').length).toBe(1);
+
+    modal.close();
   });
 
   it('promise reject', async () => {
@@ -150,7 +165,7 @@ describe('Modal config test', () => {
     const error = new Error('error');
 
     jest.useFakeTimers();
-    Modal.info({
+    const modal = Modal.info({
       title: '123',
       unmountOnExit: true,
       onOk: () => {
@@ -170,5 +185,6 @@ describe('Modal config test', () => {
 
     expect($('.arco-modal-footer .arco-icon-loading').length).toBe(0);
     expect(catchError).toHaveBeenCalledWith(error);
+    modal.close();
   });
 });
