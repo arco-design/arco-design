@@ -2,7 +2,7 @@ import React, { PureComponent, ReactElement, PropsWithChildren, CSSProperties } 
 import { findDOMNode } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
-import { on, off, contains, getScrollElements } from '../_util/dom';
+import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
 import { isFunction } from '../_util/is';
 import { pickDataAttributes } from '../_util/pick';
 import { Esc } from '../_util/keycode';
@@ -152,7 +152,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   observerContainer = null;
 
   // 保存当前节点到 popupContainer 间的所有滚动元素
-  scrollElements: HTMLElement[] = null;
+  scrollElements: (HTMLElement | Window)[] = null;
 
   // container 触发 resize时执行
   resizeObserver = new ResizeObserverPolyfill(() => {
@@ -231,7 +231,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     // popupVisible为true
     this.onContainerResize();
     if (currentProps.updateOnScroll || currentProps.containerScrollToClose) {
-      this.onContainersScroll();
+      this.onContainersScroll(currentProps);
     }
     if (!this.handleWindowResize) {
       on(window, 'resize', this.handleUpdatePosition);
@@ -289,11 +289,23 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
   };
 
-  onContainersScroll = () => {
+  onContainersScroll = (props: TriggerProps) => {
     if (this.scrollElements) {
       return;
     }
     this.scrollElements = getScrollElements(this.childrenDom, this.popupContainer?.parentNode);
+
+    // 弹出层挂载载 body 且 body 不是滚动元素时，需要额外检测 document.documentElement 是否是滚动元素
+    // 默认 html,body 不限制宽高时，滚动事件仅能在 window 上监听
+    // fix: https://github.com/arco-design/arco-design/issues/1599
+    if (
+      props.containerScrollToClose &&
+      this.popupContainer?.parentNode === document.body &&
+      this.scrollElements.indexOf(document.body) === -1 &&
+      isScrollElement(document.documentElement)
+    ) {
+      this.scrollElements.push(window);
+    }
 
     this.scrollElements.forEach((item) => {
       on(item, 'scroll', this.handleScroll);

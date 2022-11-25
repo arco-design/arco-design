@@ -38,6 +38,33 @@ describe('Trigger case', () => {
     expect(wrapper.find('#test')).toHaveLength(1);
   });
 
+  it('containerScrollToClose', async () => {
+    const wrapper = render(
+      <div style={{ height: '150vh' }}>
+        <Trigger
+          containerScrollToClose
+          trigger="click"
+          popup={() => {
+            return <div id="test">123123</div>;
+          }}
+        >
+          <button>click</button>
+        </Trigger>
+      </div>
+    );
+
+    await act(() => {
+      fireEvent.click(wrapper.querySelector('button') as Element);
+    });
+    expect(wrapper.find('#test')).toHaveLength(1);
+
+    await act(() => {
+      fireEvent.scroll(document.body);
+    });
+
+    expect(wrapper.find('#test')).toHaveLength(1);
+  });
+
   it('children is 0', async () => {
     const a = 0;
     const wrapper = render(
