@@ -42,11 +42,12 @@ export function deepCloneData(data, childrenColumnName) {
 }
 
 export function getOriginData(data) {
-  if (!data) {
-    return data;
-  }
   if (isObject(data)) {
     return data.__ORIGIN_DATA;
+  }
+
+  if (!data || !isArray(data)) {
+    return data;
   }
 
   return data.map((d) => {

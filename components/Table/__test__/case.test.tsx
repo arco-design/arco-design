@@ -24,6 +24,24 @@ describe('Table special case test', () => {
     expect(component.find('td')[0].textContent).toBe('1');
   });
 
+  it('data item is number or string', () => {
+    // case https://github.com/arco-design/arco-design/issues/1608
+    const columns = [
+      {
+        title: 'title',
+        render: (_, record) => record,
+      },
+    ];
+    const arrayData = [1, '2'];
+    const component = render(
+      <Table<number | string> rowKey={(record) => record} columns={columns} data={arrayData} />
+    );
+
+    expect(component.find('tr')).toHaveLength(3);
+    expect(component.find('td')[0].textContent).toBe('1');
+    expect(component.find('td')[1].textContent).toBe('2');
+  });
+
   it('change data and selectedRows should up-to-date', () => {
     // case: https://github.com/arco-design/arco-design/issues/1294
     const columns = [
