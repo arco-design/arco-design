@@ -26,9 +26,11 @@ function ConfirmModal(props: ConfirmProps) {
 
 // 如果是消息提示型弹出框，那么只有确认按钮
 export const normalizeConfig = (_config: ConfirmProps): ConfirmProps => {
-  if (_config.isNotice) {
-    let icon = _config.icon;
-    if (!icon && icon !== null) {
+  let icon = _config.icon;
+
+  if (!icon && icon !== null) {
+    icon = <IconExclamationCircleFill />;
+    if (_config.isNotice) {
       switch (_config.noticeType) {
         case 'info':
           icon = <IconInfoCircleFill />;
@@ -46,21 +48,20 @@ export const normalizeConfig = (_config: ConfirmProps): ConfirmProps => {
           break;
       }
     }
-    _config.title = (
+  }
+
+  if (_config.isNotice) {
+    _config.hideCancel = true;
+  }
+
+  _config.title =
+    icon === null && _config.title === null ? null : (
       <span>
         {icon}
         {_config.title}
       </span>
     );
-    _config.hideCancel = true;
-  } else {
-    _config.title = (
-      <span>
-        {_config.icon !== null && (_config.icon || <IconExclamationCircleFill />)}
-        {_config.title}
-      </span>
-    );
-  }
+
   return _config;
 };
 
