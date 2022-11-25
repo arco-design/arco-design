@@ -40,6 +40,7 @@ A two-column multi-select component that moves elements from one column to anoth
 |style|Additional style|CSSProperties |`-`|-|
 |targetKeys|Set of keys of items that are listed on the target column|string[] |`-`|-|
 |titleTexts|Title list of Transfer columns. (`2.18.0` began to support function)|Array&lt;[TransferListTitle](#transferlisttitle)&gt; |`['Source', 'Target']`|-|
+|virtualListProps|Pass properties used by VirtualList.|[AvailableVirtualListProps](#availablevirtuallistprops) |`-`|2.42.0|
 |children|Customize render list|(props: [TransferCustomListProps](#transfercustomlistprops)) => ReactNode |`-`|-|
 |filterOption|A function to determine whether an item should show in search result list|(inputValue: string, item: [TransferItem](#transferitem)) => boolean |`(inputValue, item) => item.value.indexOf(inputValue) !== -1`|-|
 |onResetData|Callback when reset-button is clicked|() => void |`-`|-|
@@ -87,6 +88,15 @@ type TransferListTitle =
       checkbox: ReactNode;
       searchInput: ReactNode;
     }) => ReactNode);
+```
+
+### AvailableVirtualListProps
+
+```js
+export type AvailableVirtualListProps = Pick<
+  VirtualListProps<any>,
+  "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
+>;
 ```
 
 ### Transfer.Item

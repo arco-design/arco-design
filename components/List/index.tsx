@@ -247,7 +247,8 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
 
   const renderList = () => {
     const listItems = renderListItems();
-    const isVirtual = virtualListProps && Array.isArray(listItems);
+    const isVirtual =
+      virtualListProps && virtualListProps.threshold !== null && Array.isArray(listItems);
     const paginationElement = pagination ? (
       <Pagination
         {...paginationProps}

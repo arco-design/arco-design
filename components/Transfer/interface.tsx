@@ -1,6 +1,7 @@
 import { CSSProperties, DragEvent, ReactNode } from 'react';
 import { PaginationProps } from '../Pagination';
 import { InputProps } from '../Input';
+import { AvailableVirtualListProps } from '../_class/VirtualList';
 
 export type TransferItem = {
   key: string;
@@ -134,6 +135,12 @@ export interface TransferProps extends TransferPropsWithArrayType {
    */
   operationStyle?: CSSProperties;
   /**
+   * @zh 传递虚拟滚动属性。
+   * @en Pass properties used by VirtualList.
+   * @version 2.42.0
+   */
+  virtualListProps?: AvailableVirtualListProps;
+  /**
    * @zh 每行数据渲染函数
    * @en A function to generate the item shown on a column.
    */
@@ -207,6 +214,7 @@ export interface TransferListProps
     | 'draggable'
     | 'render'
     | 'filterOption'
+    | 'virtualListProps'
     | 'onSearch'
     | 'onResetData'
     | 'onDragStart'

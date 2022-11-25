@@ -40,6 +40,7 @@
 |style|节点样式|CSSProperties |`-`|-|
 |targetKeys|渲染到右边一栏数据的 key 集合|string[] |`-`|-|
 |titleTexts|穿梭框左右栏标题数组。(函数写法 `2.18.0` 开始支持)|Array&lt;[TransferListTitle](#transferlisttitle)&gt; |`['Source', 'Target']`|-|
+|virtualListProps|传递虚拟滚动属性。|[AvailableVirtualListProps](#availablevirtuallistprops) |`-`|2.42.0|
 |children|自定义列表渲染函数|(props: [TransferCustomListProps](#transfercustomlistprops)) => ReactNode |`-`|-|
 |filterOption|搜索框筛选算法|(inputValue: string, item: [TransferItem](#transferitem)) => boolean |`(inputValue, item) => item.value.indexOf(inputValue) !== -1`|-|
 |onResetData|点击重置按钮后的回调|() => void |`-`|-|
@@ -87,6 +88,15 @@ type TransferListTitle =
       checkbox: ReactNode;
       searchInput: ReactNode;
     }) => ReactNode);
+```
+
+### AvailableVirtualListProps
+
+```js
+export type AvailableVirtualListProps = Pick<
+  VirtualListProps<any>,
+  "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
+>;
 ```
 
 ### Transfer.Item

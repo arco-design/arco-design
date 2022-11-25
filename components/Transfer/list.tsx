@@ -38,6 +38,7 @@ export const TransferList = (props: TransferListProps, ref) => {
     handleRemove,
     filterOption,
     renderHeaderUnit,
+    virtualListProps,
     onSearch,
     onResetData,
     onDragStart,
@@ -173,6 +174,7 @@ export const TransferList = (props: TransferListProps, ref) => {
       <List
         bordered={false}
         paginationInFooter
+        virtualListProps={virtualListProps}
         wrapperClassName={`${baseClassName}-list`}
         dataSource={itemsToRender}
         pagination={
