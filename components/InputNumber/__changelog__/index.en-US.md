@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🆕 Feature
+
+- `InputNumber` adds `strictMode` to support large numbers and high precision decimals.([#1603](https://github.com/arco-design/arco-design/pull/1603))
+
 ## 2.41.2
 
 2022-11-11

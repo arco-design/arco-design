@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.42.0
+
+2022-11-25
+
+### 🆕 Feature
+
+- `Upload` supports turning off drag upload by setting `drag=false`([#1613](https://github.com/arco-design/arco-design/pull/1613))
+- `Transfer` adds `virtualListProps` property to support virtual scrolling of the list.([#1610](https://github.com/arco-design/arco-design/pull/1610))
+- `Drawer` component supports `zIndex` property([#1604](https://github.com/arco-design/arco-design/pull/1604))
+- `InputNumber` adds `strictMode` to support large numbers and high precision decimals.([#1603](https://github.com/arco-design/arco-design/pull/1603))
+
+### 🐛 BugFix
+
+- Fix the bug that the width of `addButton` of the `Tabs` component causes inaccurate calculation of scrolling timing([#1614](https://github.com/arco-design/arco-design/pull/1614))
+- Fixed a bug where the popup layer could not be displayed when `Checkbox.Group` was used as a child of `Trigger`.([#1612](https://github.com/arco-design/arco-design/pull/1612))
+- Fix the bug of reporting an error when the data of the `Table` component is `number[]` or `string[]`.([#1611](https://github.com/arco-design/arco-design/pull/1611))
+- Fixed the bug that the config passed in when creating the popup layer was lost when the `Modal` component updated the popup content through the `update` method.([#1609](https://github.com/arco-design/arco-design/pull/1609))
+- Fixed a bug where the `.arco-modal-title` node was still rendered when `title={null}` & `icon={null}` were set when the `Modal` component created a popup layer through a static method.([#1609](https://github.com/arco-design/arco-design/pull/1609))
+- Fix the bug that the `containerScrollToClose` property of the `Trigger` component does not take effect when the page scrolling container is document.documentElement.([#1606](https://github.com/arco-design/arco-design/pull/1606))
+- Fixed a bug that when the `Table` component enabled virtual scrolling, dynamically changing the `scroll` would cause the fixed column highlight to lose its style.([#1600](https://github.com/arco-design/arco-design/pull/1600))
+- Fix the problem that when `showSearch = true` in Firefox browser, Select needs to be clicked twice to pop up the drop-down box.([#1569](https://github.com/arco-design/arco-design/pull/1569))
+
 ## 2.41.3
 
 2022-11-18

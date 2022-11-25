@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.42.0
+
+2022-11-25
+
+### 🆕 功能升级
+
+- `Upload` 支持通过 `drag=false` 设置关闭拖拽上传([#1613](https://github.com/arco-design/arco-design/pull/1613))
+- `Transfer` 组件新增 `virtualListProps` 属性以支持开启列表虚拟滚动。([#1610](https://github.com/arco-design/arco-design/pull/1610))
+- `Drawer` 组件支持 `zIndex` 属性([#1604](https://github.com/arco-design/arco-design/pull/1604))
+- `InputNumber` 新增 `strictMode` 以支持大数和高精度小数。([#1603](https://github.com/arco-design/arco-design/pull/1603))
+
+### 🐛 问题修复
+
+- 修复 `Tabs` 组件的 `addButton` 宽度造成滚动时机计算不准确的 bug([#1614](https://github.com/arco-design/arco-design/pull/1614))
+- 修复 `Checkbox.Group` 作为 `Trigger` 子元素时，弹出层无法显示的 bug。([#1612](https://github.com/arco-design/arco-design/pull/1612))
+- 修复 `Table` 组件 data 为 `number[]` 或 `string[]` 时，报错的问题。([#1611](https://github.com/arco-design/arco-design/pull/1611))
+- 修复 `Modal` 组件通过 `update` 方法更新弹窗内容时丢失创建弹出层时传入的 config 的 bug.([#1609](https://github.com/arco-design/arco-design/pull/1609))
+- 修复 `Modal` 组件通过静态方法创建弹出层时设置 `title={null}` & `icon={null}` 时，`.arco-modal-title` 节点仍然被渲染的 bug。([#1609](https://github.com/arco-design/arco-design/pull/1609))
+- 修复 `Trigger` 组件的 `containerScrollToClose` 属性在页面滚动容器为 document.documentElement 时不生效的 bug。([#1606](https://github.com/arco-design/arco-design/pull/1606))
+- 修复 `Table` 组件开启虚拟滚动时，动态改变 `scroll` 会导致固定列高亮丢失样式的 bug。([#1600](https://github.com/arco-design/arco-design/pull/1600))
+- 修复 Firefox 浏览器下当 `showSearch = true` 时，Select 需要点击两次才能弹出下拉框的问题。([#1569](https://github.com/arco-design/arco-design/pull/1569))
+
 ## 2.41.3
 
 2022-11-18

@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件的 `containerScrollToClose` 属性在页面滚动容器为 document.documentElement 时不生效的 bug。([#1606](https://github.com/arco-design/arco-design/pull/1606))
+
 ## 2.38.0
 
 2022-07-29

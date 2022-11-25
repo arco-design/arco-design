@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 BugFix
+
+- Fix the bug that the width of `addButton` of the `Tabs` component causes inaccurate calculation of scrolling timing([#1614](https://github.com/arco-design/arco-design/pull/1614))
+
 ## 2.41.0
 
 2022-10-28

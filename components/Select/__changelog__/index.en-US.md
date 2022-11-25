@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 BugFix
+
+- Fix the problem that when `showSearch = true` in Firefox browser, Select needs to be clicked twice to pop up the drop-down box.([#1569](https://github.com/arco-design/arco-design/pull/1569))
+
 ## 2.41.1
 
 2022-11-04

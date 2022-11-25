@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 BugFix
+
+- Fixed a bug where the popup layer could not be displayed when `Checkbox.Group` was used as a child of `Trigger`.([#1612](https://github.com/arco-design/arco-design/pull/1612))
+
 ## 2.32.0
 
 2022-04-15

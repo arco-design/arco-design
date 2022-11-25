@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🆕 Feature
+
+- `Upload` supports turning off drag upload by setting `drag=false`([#1613](https://github.com/arco-design/arco-design/pull/1613))
+
 ## 2.41.3
 
 2022-11-18

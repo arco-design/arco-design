@@ -1,3 +1,12 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件通过 `update` 方法更新弹窗内容时丢失创建弹出层时传入的 config 的 bug.([#1609](https://github.com/arco-design/arco-design/pull/1609))
+- 修复 `Modal` 组件通过静态方法创建弹出层时设置 `title={null}` & `icon={null}` 时，`.arco-modal-title` 节点仍然被渲染的 bug。([#1609](https://github.com/arco-design/arco-design/pull/1609))
+
 ## 2.40.2
 
 2022-09-30

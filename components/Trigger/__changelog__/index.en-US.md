@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 BugFix
+
+- Fix the bug that the `containerScrollToClose` property of the `Trigger` component does not take effect when the page scrolling container is document.documentElement.([#1606](https://github.com/arco-design/arco-design/pull/1606))
+
 ## 2.38.0
 
 2022-07-29

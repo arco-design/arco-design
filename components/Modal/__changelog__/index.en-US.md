@@ -1,3 +1,12 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 BugFix
+
+- Fixed the bug that the config passed in when creating the popup layer was lost when the `Modal` component updated the popup content through the `update` method.([#1609](https://github.com/arco-design/arco-design/pull/1609))
+- Fixed a bug where the `.arco-modal-title` node was still rendered when `title={null}` & `icon={null}` were set when the `Modal` component created a popup layer through a static method.([#1609](https://github.com/arco-design/arco-design/pull/1609))
+
 ## 2.40.2
 
 2022-09-30

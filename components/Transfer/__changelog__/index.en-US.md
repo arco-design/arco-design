@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🆕 Feature
+
+- `Transfer` adds `virtualListProps` property to support virtual scrolling of the list.([#1610](https://github.com/arco-design/arco-design/pull/1610))
+
 ## 2.41.0
 
 2022-10-28

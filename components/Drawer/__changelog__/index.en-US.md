@@ -1,3 +1,11 @@
+## 2.42.0
+
+2022-11-25
+
+### 🆕 Feature
+
+- `Drawer` component supports `zIndex` property([#1604](https://github.com/arco-design/arco-design/pull/1604))
+
 ## 2.40.0
 
 2022-09-16

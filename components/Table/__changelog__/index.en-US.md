@@ -1,3 +1,12 @@
+## 2.42.0
+
+2022-11-25
+
+### 🐛 BugFix
+
+- Fix the bug of reporting an error when the data of the `Table` component is `number[]` or `string[]`.([#1611](https://github.com/arco-design/arco-design/pull/1611))
+- Fixed a bug that when the `Table` component enabled virtual scrolling, dynamically changing the `scroll` would cause the fixed column highlight to lose its style.([#1600](https://github.com/arco-design/arco-design/pull/1600))
+
 ## 2.41.2
 
 2022-11-11
