@@ -23,6 +23,7 @@
 |mountOnEnter|是否在初次打开对话框时才渲染 dom。|boolean |`true`|-|
 |unmountOnExit|是否在隐藏的时候销毁 DOM 结构|boolean |`-`|-|
 |visible|是否显示弹出框|boolean |`-`|-|
+|zIndex|设置抽屉的 zIndex|number |`-`|2.42.0|
 |placement|抽屉的方向 `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
 |cancelText|取消按钮文案|ReactNode |`-`|-|
 |footer|自定义按钮确认和取消按钮，为 null 的话没有按钮组|ReactNode |`-`|-|

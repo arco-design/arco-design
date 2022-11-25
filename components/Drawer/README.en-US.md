@@ -24,6 +24,7 @@ A floating layer that slides in from the edge of the screen.
 |mountOnEnter|Whether to render the drawer component only when it is opened initially.|boolean |`true`|-|
 |unmountOnExit|Whether to unmount component when hidden|boolean |`-`|-|
 |visible|Visibility of the drawer|boolean |`-`|-|
+|zIndex|Set the zIndex of the drawer|number |`-`|2.42.0|
 |placement|The placement of the drawer: `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
 |cancelText|Text of the Cancel button|ReactNode |`-`|-|
 |footer|The footer element. Drawer will not render the footer element when `footer` is `null`|ReactNode |`-`|-|
