@@ -2,16 +2,16 @@
 order: 10
 title:
   zh-CN: 带有通知对话框
-  en-US: Dialog with Notification
+  en-US: Dialog with Alert
 ---
 
 ## zh-CN
 
-对话框中显示 Notification。
+对话框中显示 Alert.
 
 ## en-US
 
-Show Notification in dialog.
+Show Alert in dialog.
 
 ```js
 import React from 'react';
