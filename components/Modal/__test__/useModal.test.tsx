@@ -20,7 +20,7 @@ describe('Modal api test', () => {
     render(<ConfigContext.Provider value="PJY">{contextHolder}</ConfigContext.Provider>);
 
     const m = modal.confirm?.({
-      title: '123',
+      title: <span id="modal-title">123</span>,
       content: <ConfigContext.Consumer>{(name) => name}</ConfigContext.Consumer>,
     });
 
@@ -31,6 +31,7 @@ describe('Modal api test', () => {
 
     m?.update({ content: 'YYH' });
     expect($('.arco-modal-content')[0].innerHTML).toBe('YYH');
+    expect($('#modal-title')[0].innerHTML).toBe('123');
 
     m?.close();
 
