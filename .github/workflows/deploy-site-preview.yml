@@ -60,7 +60,7 @@ jobs:
       - name: get PreviewID
         run: |
           if ${{ github.event_name == 'pull_request' }}; then
-            echo "PreviewID=${github.event.number}" >> $GITHUB_ENV
+            echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
           else
             echo "PreviewID=main" >> $GITHUB_ENV
           fi
@@ -121,7 +121,7 @@ jobs:
       - name: get PreviewID
         run: |
           if ${{ github.event_name == 'pull_request' }}; then
-            echo "PreviewID=${github.event.number}" >> $GITHUB_ENV
+            echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
           else
             echo "PreviewID=main" >> $GITHUB_ENV
           fi
