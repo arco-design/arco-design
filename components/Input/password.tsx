@@ -17,7 +17,7 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
     });
     const { getPrefixCls } = useContext(ConfigContext);
     const getKeyboardEvents = useKeyboardEvent();
-    const { className, visibilityToggle, onVisibilityChange, ...rest } = props;
+    const { className, visibilityToggle, onVisibilityChange, iconRender, ...rest } = props;
 
     const prefixCls = getPrefixCls('input-password');
     const classNames = cs(
@@ -55,18 +55,25 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
       if (props.suffix) {
         icon = <span {...IconProps}>{props.suffix}</span>;
       } else {
-        const IconComponent = visibility ? IconEye : IconEyeInvisible;
+        const defaultIconRender = (visible: boolean) =>
+          visible ? <IconEye /> : <IconEyeInvisible />;
 
-        icon = (
-          <IconComponent
-            {...IconProps}
-            {...{
-              focusable: undefined,
-              'aria-hidden': undefined,
-              tabIndex: 0,
-              className: `${prefixCls}-visibility-icon`,
-            }}
-          />
+        const iconRenderFun = iconRender ?? defaultIconRender;
+        const iconEle = iconRenderFun(visibility);
+
+        const IconComponentProps = {
+          ...IconProps,
+          ...{
+            focusable: undefined,
+            'aria-hidden': undefined,
+            tabIndex: 0,
+            className: `${prefixCls}-visibility-icon`,
+          },
+        };
+
+        icon = React.cloneElement(
+          React.isValidElement(iconEle) ? iconEle : <span>{iconEle}</span>,
+          IconComponentProps
         );
       }
     }

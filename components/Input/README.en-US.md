@@ -85,6 +85,7 @@ Contains all the parameters of the Input component
 |defaultVisibility|To set default visibility|boolean |`-`|
 |visibility|-|boolean |`-`|
 |visibilityToggle|Whether to display the button to switch the visible state of the password|boolean |`-`|
+|iconRender|Icon when show or hide password|(visibility: boolean) => ReactNode |`-`|
 |onVisibilityChange|Callback when visibility changes|(visibility: boolean) => void |`-`|
 
 ## Method

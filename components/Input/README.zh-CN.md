@@ -85,6 +85,7 @@
 |defaultVisibility|初始是否显示|boolean |`-`|
 |visibility|是否显示|boolean |`-`|
 |visibilityToggle|是否显示切换密码可见状态的按钮|boolean |`-`|
+|iconRender|显示或者隐藏时的图标|(visibility: boolean) => ReactNode |`-`|
 |onVisibilityChange|visibility 改变时触发|(visibility: boolean) => void |`-`|
 
 ## 方法

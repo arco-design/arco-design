@@ -15,6 +15,7 @@ Used for password input.
 
 ```js
 import { Input, Space } from '@arco-design/web-react';
+import { IconEye, IconEyeInvisible } from '@arco-design/web-react/icon';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         defaultValue="password"
         defaultVisibility={true}
         placeholder="Please enter ..."
+        iconRender={(visible) =>  visible ? <IconEye /> : <IconEyeInvisible /> }
         style={{ width: 350 }}
       />
     </Space>

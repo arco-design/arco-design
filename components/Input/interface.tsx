@@ -260,6 +260,11 @@ export interface InputPasswordProps extends InputProps {
    * @en Callback when visibility changes
    */
   onVisibilityChange?: (visibility: boolean) => void;
+  /**
+   * @zh 显示或者隐藏时的图标
+   * @en Icon when show or hide password
+   */
+  iconRender?: (visibility: boolean) => ReactNode;
 }
 
 export interface InputComponentProps extends InputProps {
