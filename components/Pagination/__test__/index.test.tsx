@@ -176,4 +176,59 @@ describe('Pagination', () => {
       `${Math.ceil(total / sizeOptions2[3])}`
     );
   });
+
+  it('sizeOptions changed correctly on defaultPageSize', () => {
+    const total = 202;
+    const defaultPageSize = 20;
+    const sizeOptions1 = [12, 24, 36, 48];
+    const sizeOptions2 = [24, 36, 48, 72];
+    const Demo = () => {
+      const [bol, setBol] = useState(true);
+      function changeSize() {
+        setBol(!bol);
+      }
+      return (
+        <div>
+          <button onClick={changeSize} className="btn-trigger">
+            change
+          </button>
+          <Pagination
+            defaultCurrent={5}
+            defaultPageSize={defaultPageSize}
+            total={total}
+            sizeCanChange
+            sizeOptions={bol ? sizeOptions1 : sizeOptions2}
+            pageSizeChangeResetCurrent={bol}
+          />
+        </div>
+      );
+    };
+    const component = render(<Demo />);
+    const lastPageOptionIndex = component.find('.arco-pagination-item').length - 2;
+    expect(component.find('.arco-pagination-item')[lastPageOptionIndex].innerHTML).toEqual(
+      `${Math.ceil(total / sizeOptions1[0])}`
+    );
+
+    act(async () => {
+      fireEvent.click(component.find('.arco-select')[0]);
+      await sleep(1000);
+    });
+    act(() => {
+      fireEvent.click(component.find('.arco-select-option')[2]);
+    });
+    const currentPageSize = sizeOptions1[2];
+    const totalLength = Math.ceil(total / currentPageSize) + 2;
+    expect(component.find('.arco-pagination-item').length).toEqual(totalLength);
+
+    act(() => {
+      fireEvent.click(component.find('.btn-trigger')[0]);
+    });
+
+    const nextIndex = sizeOptions2.findIndex((num) => num === currentPageSize);
+    expect(
+      component
+        .find('.arco-select-view-value')[0]
+        .innerHTML.startsWith(sizeOptions2[nextIndex].toString())
+    ).toBe(true);
+  });
 });
