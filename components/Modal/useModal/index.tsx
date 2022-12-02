@@ -26,6 +26,7 @@ function useModal(): [modalFunctionsType, ReactElement] {
   function addNewModal(config) {
     uuid += 1;
     const modalRef = createRef<HookModalRef>();
+    let currentConfig = { ...config };
 
     function afterClose() {
       config.afterClose && config.afterClose();
@@ -33,7 +34,12 @@ function useModal(): [modalFunctionsType, ReactElement] {
     }
 
     const modal = (
-      <HookModal key={uuid} ref={modalRef} {...normalizeConfig(config)} afterClose={afterClose} />
+      <HookModal
+        key={uuid}
+        ref={modalRef}
+        {...normalizeConfig({ ...config })}
+        afterClose={afterClose}
+      />
     );
 
     contextHolderRef.current?.addInstance(modal);
@@ -46,8 +52,12 @@ function useModal(): [modalFunctionsType, ReactElement] {
       modalRef.current?.close();
     }
 
-    function update(config) {
-      modalRef.current?.update(config);
+    function update(newConfig) {
+      currentConfig = {
+        ...currentConfig,
+        ...newConfig,
+      };
+      modalRef.current?.update(normalizeConfig({ ...currentConfig }));
     }
 
     destroyList.push(close);
