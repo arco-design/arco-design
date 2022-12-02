@@ -27,7 +27,7 @@
     "demo": "start-storybook -p 6006",
     "changelog": "arco-scripts changelog",
     "eslint": "eslint tests/ components/ --fix --cache --quiet --ext .js,.jsx,.ts,.tsx",
-    "stylelint": "stylelint '{components,site}/**/*.less'",
+    "stylelint": "stylelint \"{components,site}/**/*.less\"",
     "test:client": "arco-scripts test:client",
     "test:node": "arco-scripts test:node --silent=false",
     "test:watch": "arco-scripts test:client --silent=false --collectCoverage=false --watch",
