@@ -1,3 +1,13 @@
+## 2.42.1
+
+2022-12-02
+
+### 🐛 BugFix
+
+- Fix the bug that the popup layer is not displayed when `modal.confirm` returned by `Modal.useModal` is called in `useCallback`.([#1628](https://github.com/arco-design/arco-design/pull/1628))
+- Fix the bug that the icon is lost when the title of the popup layer created by `Modal.useModal` is updated by the `update` method([#1628](https://github.com/arco-design/arco-design/pull/1628))
+- Fix the bug that updating the content of the popup layer through `update` in Promise does not take effect when onOK is set to Promise for the popup layer created by `Modal.useModal`.([#1628](https://github.com/arco-design/arco-design/pull/1628))
+
 ## 2.42.0
 
 2022-11-25

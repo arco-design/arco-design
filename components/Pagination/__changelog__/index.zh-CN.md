@@ -1,3 +1,11 @@
+## 2.42.1
+
+2022-12-02
+
+### 🐛 问题修复
+
+- 修复 `Pagination` 组件在 `sizeOptions` 模式下 `defaultPageSize` 不生效的 bug([#1627](https://github.com/arco-design/arco-design/pull/1627))
+
 ## 2.39.2
 
 2022-08-26

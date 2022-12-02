@@ -1,3 +1,11 @@
+## 2.42.1
+
+2022-12-02
+
+### 🐛 BugFix
+
+- Fix the bug that `defaultPageSize` does not take effect in `sizeOptions` mode of `Pagination` component.([#1627](https://github.com/arco-design/arco-design/pull/1627))
+
 ## 2.39.2
 
 2022-08-26

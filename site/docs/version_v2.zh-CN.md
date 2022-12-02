@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.42.1
+
+2022-12-02
+
+### 🐛 问题修复
+
+- 修复 `Modal.useModal` 返回的 `modal.confirm` 在 `useCallback` 中调用时，不显示弹出层的 bug。([#1628](https://github.com/arco-design/arco-design/pull/1628))
+- 修复通过 `Modal.useModal` 创建的弹出层在通过 `update` 方法更新 title 时，icon 丢失的 bug。([#1628](https://github.com/arco-design/arco-design/pull/1628))
+- 修复通过 `Modal.useModal` 创建的弹出层在 onOK 设置为 Promise 时，Promise 中通过 `update` 更新弹出层内容不生效的 bug。([#1628](https://github.com/arco-design/arco-design/pull/1628))
+- 修复 `Pagination` 组件在 `sizeOptions` 模式下 `defaultPageSize` 不生效的 bug([#1627](https://github.com/arco-design/arco-design/pull/1627))
+
 ## 2.42.0
 
 2022-11-25
