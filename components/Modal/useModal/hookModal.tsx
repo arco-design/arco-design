@@ -12,11 +12,8 @@ function HookModal(props, ref) {
   const [config, setConfig] = useState<ConfirmProps>(props);
 
   useImperativeHandle(ref, () => ({
-    update: (newConfig: ConfirmProps) => {
-      setConfig({
-        ...config,
-        ...newConfig,
-      });
+    update: (config: ConfirmProps) => {
+      setConfig(config);
     },
     close: () => {
       setVisible(false);
