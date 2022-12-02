@@ -159,8 +159,8 @@ export default (
     const windowWidth = document.documentElement?.clientWidth || window.innerWidth;
 
     let result = false; // 是否进行了位置调整
-    // 视口左侧/顶部到 popupcontainer 的距离
-    const boundnary = {
+    // 视口左侧/顶部到 popupContainer 的距离
+    const boundary = {
       left: left - childRect.left,
       top: top - childRect.top,
     };
@@ -168,88 +168,88 @@ export default (
 
     // 水平方向微调
     if (direction === 'top' || direction === 'bottom') {
-      if (boundnary.left > styleLeft && childRect.right > 12) {
+      if (boundary.left > styleLeft && childRect.right > 12) {
         // 左边被遮挡
-        style.left = Math.max(boundnary.left, left - content.clientWidth);
+        style.left = Math.max(boundary.left, left - content.clientWidth);
         style.left = Math.max(style.left as number, left - content.clientWidth + 24);
       } else if (
-        styleLeft - boundnary.left + content.clientWidth > windowWidth &&
+        styleLeft - boundary.left + content.clientWidth > windowWidth &&
         windowWidth - childRect.left > 12
       ) {
         // 右侧被遮挡，右侧贴边。如果child在可视区内的宽度小于12，不进行位置调整
-        style.left = Math.max(boundnary.left, boundnary.left + windowWidth - content.clientWidth);
+        style.left = Math.max(boundary.left, boundary.left + windowWidth - content.clientWidth);
         style.left = Math.max(style.left as number, left - content.clientWidth + 24);
       }
     }
     // 垂直方向微调
     if (direction === 'left' || direction === 'right') {
-      if (boundnary.top > styleTop && childRect.bottom > 12) {
+      if (boundary.top > styleTop && childRect.bottom > 12) {
         // 上面
-        style.top = boundnary.top;
+        style.top = boundary.top;
         style.top = Math.max(
           style.top as number,
           top - content.clientHeight + childRect.height / 2
         );
       } else if (
-        styleTop - boundnary.top + content.clientHeight > windowHeight &&
+        styleTop - boundary.top + content.clientHeight > windowHeight &&
         windowHeight - childRect.top > 12
       ) {
         // 向上微调位置，如果child在可视区内的高度小于12，不进行位置调整
-        style.top = Math.max(boundnary.top, boundnary.top + windowHeight - content.clientHeight);
+        style.top = Math.max(boundary.top, boundary.top + windowHeight - content.clientHeight);
         style.top = Math.max(
           style.top as number,
           top - content.clientHeight + childRect.height / 2
         );
       }
     }
-    if (direction === 'top' && boundnary.top > styleTop) {
+    if (direction === 'top' && boundary.top > styleTop) {
       // 上面被遮挡
       if (childRect.top < windowHeight - childRect.bottom) {
         // 放到下面
         style.top = Math.min(
           top + height + (alignTop || 0),
-          boundnary.top + windowHeight - content.clientHeight
+          boundary.top + windowHeight - content.clientHeight
         );
         result = true;
       } else {
         // 贴顶部边界
-        style.top = boundnary.top;
+        style.top = boundary.top;
       }
     }
-    if (direction === 'bottom' && styleTop - boundnary.top + content.clientHeight > windowHeight) {
+    if (direction === 'bottom' && styleTop - boundary.top + content.clientHeight > windowHeight) {
       // 下部分被遮挡
       if (windowHeight - childRect.bottom < childRect.top) {
         // 放到上面
-        style.top = Math.max(top - content.clientHeight - (alignBottom || 0), boundnary.top);
+        style.top = Math.max(top - content.clientHeight - (alignBottom || 0), boundary.top);
 
         result = true;
       } else {
         // 贴底边界
-        style.top = boundnary.top + windowHeight - content.clientHeight;
+        style.top = boundary.top + windowHeight - content.clientHeight;
       }
     }
-    if (direction === 'left' && boundnary.left > styleLeft) {
+    if (direction === 'left' && boundary.left > styleLeft) {
       // 左边被遮挡
       if (childRect.left < windowWidth - childRect.right) {
         // 放到右边
         style.left = Math.min(
           width + left + alignRight,
-          boundnary.left + windowWidth - content.clientWidth
+          boundary.left + windowWidth - content.clientWidth
         );
         result = true;
       } else {
-        style.left = boundnary.left;
+        style.left = boundary.left;
       }
     }
-    if (direction === 'right' && styleLeft - boundnary.left + content.clientWidth > windowWidth) {
+    if (direction === 'right' && styleLeft - boundary.left + content.clientWidth > windowWidth) {
       // 右边被遮挡
       if (windowWidth - childRect.right < childRect.left) {
         // 放到左边
-        style.left = Math.max(left - content.clientWidth - alignLeft, boundnary.left);
+        style.left = Math.max(left - content.clientWidth - alignLeft, boundary.left);
         result = true;
       } else {
         // 贴左边界
-        style.left = boundnary.left + windowWidth - content.clientWidth;
+        style.left = boundary.left + windowWidth - content.clientWidth;
       }
     }
 
