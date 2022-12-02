@@ -1,4 +1,4 @@
-import React, { createRef, ReactElement } from 'react';
+import React, { createRef, useRef, ReactElement } from 'react';
 import ContextHolderElement, { HolderRef } from '../../_util/contextHolder';
 import HookModal, { HookModalRef } from './hookModal';
 import { normalizeConfig, ConfirmProps } from '../confirm';
@@ -18,7 +18,7 @@ type modalFunctionsType = {
 };
 
 function useModal(): [modalFunctionsType, ReactElement] {
-  const contextHolderRef = createRef<HolderRef>();
+  const contextHolderRef = useRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
 
   let uuid = 0;
