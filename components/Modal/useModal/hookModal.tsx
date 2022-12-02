@@ -26,20 +26,20 @@ function HookModal(props, ref) {
   function onOk() {
     const ret = config.onOk && config.onOk();
     if (ret && ret.then) {
-      setConfig({
+      setConfig((config) => ({
         ...config,
         confirmLoading: true,
-      });
+      }));
       ret.then(
         () => {
           setVisible(false);
         },
         (e: Error) => {
           console.error(e);
-          setConfig({
+          setConfig((config) => ({
             ...config,
             confirmLoading: false,
-          });
+          }));
         }
       );
     }
