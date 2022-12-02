@@ -89,9 +89,13 @@ function Pagination(baseProps: PaginationProps, ref) {
 
   useEffect(() => {
     // adjust pageSize after sizeOption changes
-    const adjustPageSize = getAdjustPageSize(propSizeOptions);
-    if (!('pageSize' in props)) {
-      setPageSize(adjustPageSize);
+    const needAdjust = propSizeOptions && !propSizeOptions.includes(pageSize);
+    // trigged when currentPageSize not in the options;
+    if (needAdjust) {
+      const adjustPageSize = getAdjustPageSize(propSizeOptions);
+      if (!('pageSize' in props)) {
+        setPageSize(adjustPageSize);
+      }
     }
   }, [propSizeOptions]);
 
