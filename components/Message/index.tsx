@@ -6,7 +6,9 @@ import Notice from '../_class/notice';
 import cs from '../_util/classNames';
 import { MessageProps } from './interface';
 import { isUndefined } from '../_util/is';
+import { getConfigProviderProps } from '../_util/transferConfigProvider';
 import useMessage, { messageFuncType } from './useMessage';
+import { ConfigProvider } from '..';
 
 const messageTypes = ['info', 'success', 'error', 'warning', 'loading', 'normal'];
 let messageInstance: object = {};
@@ -140,6 +142,8 @@ class Message extends BaseNotification {
     const mergedRtl = !isUndefined(_rtl) ? _rtl : rtl;
     const prefixClsMessage = mergedPrefixCls ? `${mergedPrefixCls}-message` : 'arco-message';
     const classNames = cs(`${prefixClsMessage}-wrapper`, `${prefixClsMessage}-wrapper-${position}`);
+    const configProviderProps = getConfigProviderProps();
+
     return (
       <div className={classNames}>
         <TransitionGroup component={null}>
@@ -162,14 +166,16 @@ class Message extends BaseNotification {
                 notice.onClose && notice.onClose();
               }}
             >
-              <Notice
-                {...notice}
-                prefixCls={prefixClsMessage}
-                iconPrefix={mergedPrefixCls}
-                onClose={this.remove}
-                noticeType="message"
-                rtl={mergedRtl}
-              />
+              <ConfigProvider {...configProviderProps} _inLoop>
+                <Notice
+                  {...notice}
+                  prefixCls={prefixClsMessage}
+                  iconPrefix={mergedPrefixCls}
+                  onClose={this.remove}
+                  noticeType="message"
+                  rtl={mergedRtl}
+                />
+              </ConfigProvider>
             </CSSTransition>
           ))}
         </TransitionGroup>

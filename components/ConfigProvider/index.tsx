@@ -5,7 +5,7 @@ import { lighten } from './util';
 import Message from '../Message';
 import Notification from '../Notification';
 import Empty from '../Empty';
-import { setConfigProviderProps } from '../Modal/config';
+import { setConfigProviderProps } from '../_util/transferConfigProvider';
 import { IconContext } from '../../icon/react-icon/context';
 import { ConfigProviderProps } from './interface';
 import omit from '../_util/omit';
@@ -87,7 +87,7 @@ export const ConfigContext = createContext<ConfigProviderProps>({
 
 function ConfigProvider(baseProps: ConfigProviderProps) {
   const props = useMergeProps<ConfigProviderProps>(baseProps, defaultProps, componentConfig);
-  const { theme, prefixCls, children, locale, rtl, effectGlobalNotice = true } = props;
+  const { theme, prefixCls, children, rtl, effectGlobalNotice = true } = props;
 
   useEffect(() => {
     setTheme(theme);
@@ -110,8 +110,11 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
   };
 
   useEffect(() => {
-    setConfigProviderProps({ locale, prefixCls, rtl });
-  }, [locale, prefixCls]);
+    // If the internal components are manually wrapped, there is no need to reset
+    if (!props._inLoop) {
+      setConfigProviderProps(config);
+    }
+  }, [config]);
 
   let child = children;
 

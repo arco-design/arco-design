@@ -7,6 +7,8 @@ import cs from '../_util/classNames';
 import { isNumber, isUndefined } from '../_util/is';
 import { NotificationProps } from './interface';
 import useNotification, { notificationFuncType } from './useNotification';
+import { getConfigProviderProps } from '../_util/transferConfigProvider';
+import { ConfigProvider } from '..';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
 let notificationInstance: object = {};
@@ -148,6 +150,8 @@ class Notification extends BaseNotification {
       { [`${prefixClsNotification}-wrapper-rtl`]: rtl }
     );
 
+    const configProviderProps = getConfigProviderProps();
+
     return (
       <div className={classNames}>
         <TransitionGroup component={null}>
@@ -170,14 +174,16 @@ class Notification extends BaseNotification {
                 notice.onClose && notice.onClose();
               }}
             >
-              <Notice
-                {...notice}
-                onClose={this.remove}
-                prefixCls={prefixClsNotification}
-                iconPrefix={mergedPrefixCls}
-                noticeType="notification"
-                rtl={mergedRtl}
-              />
+              <ConfigProvider {...configProviderProps} _inLoop>
+                <Notice
+                  {...notice}
+                  onClose={this.remove}
+                  prefixCls={prefixClsNotification}
+                  iconPrefix={mergedPrefixCls}
+                  noticeType="notification"
+                  rtl={mergedRtl}
+                />
+              </ConfigProvider>
             </CSSTransition>
           ))}
         </TransitionGroup>
