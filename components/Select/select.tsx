@@ -545,9 +545,11 @@ function Select(baseProps: SelectProps, ref) {
       </VirtualList>
     ) : null;
 
-    // 无选项时的占位符元素
+    // Avoid drop-down box jitter when user is creating a selection
+    const isUserCreating = allowCreate && inputValue;
+    // Dropdown-placeholder when there is no options
     const eleNoOptionPlaceholder =
-      mergedNotFoundContent && !allowCreate ? (
+      mergedNotFoundContent && !isUserCreating ? (
         <div
           style={dropdownMenuStyle}
           className={cs(`${prefixCls}-popup-inner`, dropdownMenuClassName)}
