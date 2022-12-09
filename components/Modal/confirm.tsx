@@ -5,7 +5,8 @@ import IconInfoCircleFill from '../../icon/react-icon/IconInfoCircleFill';
 import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
-import { getModalConfig, destroyList, getConfigProviderProps } from './config';
+import { getModalConfig, destroyList } from './config';
+import { getConfigProviderProps } from '../_util/transferConfigProvider';
 import ConfigProvider from '../ConfigProvider';
 
 export interface ConfirmProps extends ModalProps {
@@ -74,7 +75,7 @@ function confirm(config: ConfirmProps, renderFunc?: (props: ConfirmProps) => voi
 
   function render(props: ConfirmProps) {
     const dom = (
-      <ConfigProvider {...configProviderProps}>
+      <ConfigProvider {...configProviderProps} _inLoop>
         <ConfirmModal {...props} onCancel={onCancel} />
       </ConfigProvider>
     );

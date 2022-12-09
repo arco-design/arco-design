@@ -237,4 +237,5 @@ export interface ConfigProviderProps {
   effectGlobalNotice?: boolean;
   zIndex?: number;
   children?: ReactNode;
+  _inLoop?: boolean;
 }
