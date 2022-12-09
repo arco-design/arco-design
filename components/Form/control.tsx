@@ -1,9 +1,7 @@
 import React, { Component, isValidElement, ReactElement } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
-import has from 'lodash/has';
 import set from 'lodash/set';
 import get from 'lodash/get';
-import setWith from 'lodash/setWith';
 import { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
 import { FormItemContext } from './context';
 import { isArray, isFunction, isNullOrUndefined } from '../_util/is';
@@ -14,13 +12,7 @@ import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import { NotifyType, StoreChangeInfo } from './store';
 import classNames from '../_util/classNames';
-import { isSyntheticEvent, schemaValidate, ID_SUFFIX } from './utils';
-
-function isFieldMath(field, fields) {
-  const fieldObj = setWith({}, field, undefined, Object);
-
-  return fields.some((item) => has(fieldObj, item));
-}
+import { isSyntheticEvent, schemaValidate, isFieldMatch, ID_SUFFIX } from './utils';
 
 export default class Control<
   FormData = any,
@@ -134,7 +126,7 @@ export default class Control<
       if (dependencies) {
         if (
           isArray(dependencies) ||
-          (dependencies as string[]).some((depField) => isFieldMath(depField, fields))
+          (dependencies as string[]).some((depField) => isFieldMatch(depField, fields))
         ) {
           if (this.isTouched()) {
             this.validateField();
@@ -171,7 +163,7 @@ export default class Control<
         }
         break;
       case 'innerSetValue':
-        if (isFieldMath(field, fields)) {
+        if (isFieldMatch(field, fields)) {
           this.touched = true;
           this.updateFormItem();
           return;
@@ -182,7 +174,7 @@ export default class Control<
         });
         break;
       case 'setFieldValue':
-        if (isFieldMath(field, fields)) {
+        if (isFieldMatch(field, fields)) {
           this.touched = true;
           if (info.data && 'touched' in info.data) {
             this.touched = info.data.touched;

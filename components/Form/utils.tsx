@@ -3,6 +3,8 @@ import lodashSet from 'lodash/set';
 import { PropertyPath } from 'lodash';
 import { Schema, SchemaType } from 'b-validate';
 import React, { ReactNode } from 'react';
+import has from 'lodash/has';
+import setWith from 'lodash/setWith';
 import { isArray, isObject, isFunction } from '../_util/is';
 import { IndexedObject, FormProps } from './interface';
 import { RulesProps } from '..';
@@ -114,6 +116,11 @@ export async function schemaValidate(field, value, _rules: RulesProps[], validat
     };
     validate(rules[current]);
   });
+}
+export function isFieldMatch(field, fields) {
+  const fieldObj = setWith({}, field, undefined, Object);
+
+  return fields.some((item) => has(fieldObj, item));
 }
 
 export const ID_SUFFIX = '_input';
