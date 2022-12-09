@@ -1,3 +1,11 @@
+## 2.42.2
+
+2022-12-09
+
+### 🐛 BugFix
+
+- Fix `DatePicker` week selector compatibility with moment.js.([#1631](https://github.com/arco-design/arco-design/pull/1631))
+
 ## 2.41.3
 
 2022-11-18

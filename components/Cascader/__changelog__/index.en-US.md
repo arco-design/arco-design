@@ -1,3 +1,11 @@
+## 2.42.2
+
+2022-12-09
+
+### 🐛 BugFix
+
+- Fix the bug that empty data may appear in the search result panel when the `Cascader` component searches remotely.([#1639](https://github.com/arco-design/arco-design/pull/1639))
+
 ## 2.41.0
 
 2022-10-28

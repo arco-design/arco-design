@@ -1,3 +1,11 @@
+## 2.42.2
+
+2022-12-09
+
+### 💎 Enhancement
+
+- Optimize the situation where the `Form.List` component is completely re-rendered when the form item data is updated through the Form API, causing the page to freeze.([#1638](https://github.com/arco-design/arco-design/pull/1638))
+
 ## 2.41.0
 
 2022-10-28

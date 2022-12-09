@@ -1,3 +1,11 @@
+## 2.42.2
+
+2022-12-09
+
+### 💎 Enhancement
+
+- `Select` allows to show dropdown when `allowCreate` is enabled and no option data is present.([#1640](https://github.com/arco-design/arco-design/pull/1640))
+
 ## 2.42.0
 
 2022-11-25

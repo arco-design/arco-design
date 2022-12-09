@@ -1,3 +1,11 @@
+## 2.42.2
+
+2022-12-09
+
+### 💅 Style
+
+- Fix `Switch` component switching animation jitter issue.([#1641](https://github.com/arco-design/arco-design/pull/1641))
+
 ## 2.32.2
 
 2022-04-29

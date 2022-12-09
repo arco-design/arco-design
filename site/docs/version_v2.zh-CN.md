@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.42.2
+
+2022-12-09
+
+### 💎 功能优化
+
+- `Select` 允许在 `allowCreate` 并且无选项数据时展示下拉框。([#1640](https://github.com/arco-design/arco-design/pull/1640))
+- 优化 `Form.List` 组件在通过 Form API 更新表单项数据时全部重渲染导致页面卡顿的情况。([#1638](https://github.com/arco-design/arco-design/pull/1638))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件远程搜索时，搜索结果面板可能出现空数据的 bug。([#1639](https://github.com/arco-design/arco-design/pull/1639))
+- 修复 `DatePicker` 组件周选择器对 moment.js 的兼容。([#1631](https://github.com/arco-design/arco-design/pull/1631))
+
+### 💅 样式更新
+
+- 修复 `Switch` 组件切换动画抖动的问题。([#1641](https://github.com/arco-design/arco-design/pull/1641))
+
 ## 2.42.1
 
 2022-12-02

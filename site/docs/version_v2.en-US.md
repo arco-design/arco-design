@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.42.2
+
+2022-12-09
+
+### 💎 Enhancement
+
+- `Select` allows to show dropdown when `allowCreate` is enabled and no option data is present.([#1640](https://github.com/arco-design/arco-design/pull/1640))
+- Optimize the situation where the `Form.List` component is completely re-rendered when the form item data is updated through the Form API, causing the page to freeze.([#1638](https://github.com/arco-design/arco-design/pull/1638))
+
+### 🐛 BugFix
+
+- Fix the bug that empty data may appear in the search result panel when the `Cascader` component searches remotely.([#1639](https://github.com/arco-design/arco-design/pull/1639))
+- Fix `DatePicker` week selector compatibility with moment.js.([#1631](https://github.com/arco-design/arco-design/pull/1631))
+
+### 💅 Style
+
+- Fix `Switch` component switching animation jitter issue.([#1641](https://github.com/arco-design/arco-design/pull/1641))
+
 ## 2.42.1
 
 2022-12-02
