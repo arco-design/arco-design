@@ -46,6 +46,16 @@ originDayjs.extend(QuarterOfYear);
 
 export const dayjs = originDayjs;
 
+function startOfWeekTimestamp(date, weekStart: number) {
+  // 计算 date 与前一个 weekStart 日期的间隔
+  const diff = (date.day() - weekStart + 7) % 7;
+  const startOfWeek = date.clone().startOf('day').subtract(diff, 'day');
+  return startOfWeek.valueOf();
+}
+function isSameWeekMoment(date1, date2, weekStart: number) {
+  return startOfWeekTimestamp(date1, weekStart) === startOfWeekTimestamp(date2, weekStart);
+}
+
 // 兼容 moment
 export const methods = {
   add(time, value: number, unit: UnitType) {
@@ -65,7 +75,7 @@ export const methods = {
   },
   isSameWeek(date1, date2, weekStart: number, localeName) {
     return isMoment
-      ? date1.locale(localeName, { week: { dow: weekStart } }).isSame(date2, 'week')
+      ? isSameWeekMoment(date1, date2, weekStart)
       : date1.locale({ ...dayjs.Ls[localeName], weekStart }).isSame(date2, 'week');
   },
 };
