@@ -98,7 +98,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
 
   useUpdateEffect(() => {
     setOptions(store.searchNodeByLabel(inputValue));
-  }, [inputValue]);
+  }, [inputValue, store]);
 
   useUpdateEffect(() => {
     setCurrentHoverIndex((currentIndex) => {
