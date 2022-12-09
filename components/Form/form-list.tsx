@@ -5,7 +5,7 @@ import FormItem from './form-item';
 import { FormListProps, KeyType } from './interface';
 import { isFunction, isUndefined } from '../_util/is';
 import { FormInstance } from '.';
-import { isSyntheticEvent } from './utils';
+import { isSyntheticEvent, isFieldMatch, set } from './utils';
 import warning from '../_util/warning';
 import { FormListContext } from './context';
 
@@ -49,10 +49,22 @@ const List = <
         noStyle
         shouldUpdate={(prev, current, info) => {
           if (info && info.isInner && !info.isFormList && info.field !== field) {
-            // 如果是内部控件触发的value更新，那么不需要重新渲染整个formList。
+            // 如果是内部控件触发的 value 更新，那么不需要重新渲染整个formList。
             // info.field !== field 判断是因为如果内部修改了整个formList所绑定field的值的时候， 需要rerender，常见于formList嵌套formList
 
             return false;
+          }
+
+          if (info && !info.isInner && info.field !== field && !Array.isArray(info.field)) {
+            // 通过 setFieldValue 更新 field 对应的值.setFieldValue('field.100', 'xxx')
+            if (isFieldMatch(info.field, [field])) {
+              const length = get(set({} as any, info.field, undefined), field)?.length;
+
+              // 找到当前修改的字段在数组中的位置，如果大于当前数组的长度，说明新增，整体渲染。否则交由 FormItem 渲染即可
+              if (length <= get(prev, field).length) {
+                return false;
+              }
+            }
           }
           return !isEqualWith(get(prev, field), get(current, field));
         }}
