@@ -126,10 +126,10 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
     this.updateFileStatus(file);
 
     let request;
-    if (action) {
-      request = uploadRequest({ ...options, action });
-    } else if (customRequest) {
+    if (customRequest) {
       request = await customRequest(options);
+    } else if (action) {
+      request = uploadRequest({ ...options, action });
     }
 
     this.setState({
