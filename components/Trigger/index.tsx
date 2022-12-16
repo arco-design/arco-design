@@ -467,6 +467,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const mountContainer = this.popupContainer as Element;
     const content = this.triggerRef;
     const child: HTMLElement = this.getRootElement();
+
+    if (!child?.offsetParent) {
+      // child display:none
+      return this.state.popupStyle;
+    }
     const { style, arrowStyle, realPosition } = getStyle(
       this.getMergedProps(),
       content,
