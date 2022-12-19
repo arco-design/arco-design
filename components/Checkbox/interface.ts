@@ -44,6 +44,11 @@ export interface CheckboxProps<T extends ReactText = any>
    * @en To set checkbox value
    */
   value?: T;
+  /**
+   * @zh 自定义IconCheck
+   * @en Custom IconCheck
+   */
+  icon?: ReactNode;
   checkboxGroupValue?: T[];
   onGroupChange?: (value: T, checked: boolean) => void;
   isCheckboxGroup?: boolean;

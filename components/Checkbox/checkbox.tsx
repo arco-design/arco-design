@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, useRef, useEffect } from 'react';
+import React, { useContext, useCallback, useRef, useEffect, ReactNode, ReactElement } from 'react';
 import Group, { CheckboxGroupContext } from './group';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -79,6 +79,18 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
     },
     [props.children, rest.onClick]
   );
+
+  let icon: ReactNode = <IconCheck className={`${prefixCls}-mask-icon`} />;
+  if (mergeProps.icon) {
+    if (React.isValidElement(mergeProps.icon)) {
+      icon = React.cloneElement(mergeProps.icon as ReactElement, {
+        className: `${prefixCls}-mask-icon`,
+      });
+    } else {
+      icon = mergeProps.icon;
+    }
+  }
+
   return (
     <label
       ref={ref}
@@ -108,9 +120,7 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
             className={`${prefixCls}-mask-wrapper`}
             disabled={checked || disabled || indeterminate}
           >
-            <div className={`${prefixCls}-mask`}>
-              <IconCheck className={`${prefixCls}-mask-icon`} />
-            </div>
+            <div className={`${prefixCls}-mask`}>{icon}</div>
           </Hover>
           {children && <span className={`${prefixCls}-text`}>{children}</span>}
         </>

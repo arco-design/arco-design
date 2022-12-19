@@ -295,6 +295,45 @@ exports[`renders Checkbox/demo/control.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Checkbox/demo/custom_icon.md correctly 1`] = `
+<div>
+  <label
+    class="arco-checkbox"
+    icon="[object Object]"
+  >
+    <input
+      type="checkbox"
+    />
+    <span
+      class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+    >
+      <div
+        class="arco-checkbox-mask"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-checkbox-mask-icon arco-icon arco-icon-at"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M31 23a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm0 0c0 3.038 2.462 6.5 5.5 6.5A5.5 5.5 0 0 0 42 24c0-9.941-8.059-18-18-18S6 14.059 6 24s8.059 18 18 18c4.244 0 8.145-1.469 11.222-3.925"
+          />
+        </svg>
+      </div>
+    </span>
+    <span
+      class="arco-checkbox-text"
+    >
+      Checkbox
+    </span>
+  </label>
+</div>
+`;
+
 exports[`renders Checkbox/demo/custom_render.md correctly 1`] = `
 <div>
   <div
