@@ -21,6 +21,7 @@ In a set of data, the user can select one or more items through the Checkbox.
 |disabled|Whether to disable|boolean |`-`|
 |error|Whether to show in error style|boolean |`-`|
 |indeterminate|The indeterminate state of checkbox|boolean |`-`|
+|icon|Custom IconCheck|ReactNode |`-`|
 |className|Additional css class|string \| string[] |`-`|
 |style|Additional style|CSSProperties |`-`|
 |value|To set checkbox value|T |`-`|

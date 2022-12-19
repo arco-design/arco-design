@@ -21,6 +21,7 @@
 |disabled|是否禁用|boolean |`-`|
 |error|错误样式|boolean |`-`|
 |indeterminate|半选状态|boolean |`-`|
+|icon|自定义IconCheck|ReactNode |`-`|
 |className|节点类名|string \| string[] |`-`|
 |style|节点样式|CSSProperties |`-`|
 |value|复选框的 value 属性|T |`-`|
