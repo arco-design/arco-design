@@ -34,6 +34,7 @@ export interface DateInputProps {
   onChange?: (e) => void;
   suffixIcon?: ReactNode;
   isPlaceholder?: boolean;
+  prefix?: ReactNode;
 }
 
 type DateInputHandle = {
@@ -58,6 +59,7 @@ function DateInput(
     inputValue,
     onPressEnter,
     suffixIcon,
+    prefix,
     onChange,
     popupVisible,
     isPlaceholder,
@@ -104,6 +106,7 @@ function DateInput(
     {
       [`${prefixCls}-focused`]: !!popupVisible,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-has-prefix`]: prefix,
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-rtl`]: rtl,
     },
@@ -112,6 +115,7 @@ function DateInput(
 
   return (
     <div style={style} className={classNames} {...omit(rest, ['onChange', 'onPressEnter'])}>
+      {prefix && <div className={`${prefixCls}-prefix`}>{prefix}</div>}
       <div
         className={cs(`${prefixCls}-input`, { [`${prefixCls}-input-placeholder`]: isPlaceholder })}
       >

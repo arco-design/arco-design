@@ -5,7 +5,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 4px 11px 4px 4px;
+  padding: @picker-padding-horizontal 11px 4px 4px;
   line-height: @line-height-base;
   border-radius: @picker-input-border-radius;
   background-color: @picker-color-bg;
@@ -21,7 +21,7 @@
   input {
     text-align: left;
     padding: 0;
-    padding-left: 8px;
+    padding-left: @picker-input-padding-horizontal;
     border: none;
     width: 100%;
     color: @picker-color-text;
@@ -36,6 +36,16 @@
 
   &-input-placeholder input {
     color: @picker-color-placeholder;
+  }
+
+  &-has-prefix {
+    padding-left: @input-padding-horizontal;
+  }
+
+  &-prefix {
+    color: @input-color-prefix-text;
+    padding-right: @picker-padding-horizontal;
+    font-size: @input-size-default-icon-suffix-size;
   }
 
   &-suffix {

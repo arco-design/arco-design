@@ -285,6 +285,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     suffixIcon,
     editable,
     allowClear,
+    prefix: props.prefix,
     ...pickDataAttributes(props),
   };
 

@@ -832,6 +832,7 @@ const Picker = (baseProps: RangePickerProps) => {
     suffixIcon,
     editable,
     allowClear,
+    prefix: props.prefix,
   };
 
   const triggerDisabled = isArray(disabled) ? disabled[0] && disabled[1] : disabled;

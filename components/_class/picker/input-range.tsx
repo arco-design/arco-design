@@ -37,6 +37,7 @@ export interface DateInputRangeProps {
   changeFocusedInputIndex?: (index: number) => void;
   focusedInputIndex?: number;
   isPlaceholder?: boolean;
+  prefix?: ReactNode;
 }
 
 type DateInputHandle = {
@@ -67,6 +68,7 @@ function DateInput(
     changeFocusedInputIndex,
     focusedInputIndex,
     isPlaceholder,
+    prefix,
     ...rest
   }: DateInputRangeProps,
   ref
@@ -129,6 +131,7 @@ function DateInput(
       [`${prefixCls}-disabled`]: disabled1 && disabled2,
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-rtl`]: rtl,
+      [`${prefixCls}-has-prefix`]: prefix,
     },
     className
   );
@@ -150,6 +153,7 @@ function DateInput(
 
   return (
     <div style={style} className={inputClassNames} {...omit(rest, ['onChange', 'onPressEnter'])}>
+      {prefix && <div className={`${prefixCls}-prefix`}>{prefix}</div>}
       <div className={getFocusInputClassName(0)}>
         <input
           ref={input0}

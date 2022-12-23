@@ -28,6 +28,7 @@
 |position|弹出的框的位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`-`|-|
 |size|日期选择器的尺寸|'mini' \| 'small' \| 'default' \| 'large' |`true`|-|
 |extra|额外的页脚|ReactNode |`-`|-|
+|prefix|前缀|ReactNode |`-`|2.43.0|
 |separator|范围选择器输入框内的分割符号|ReactNode |`-`|-|
 |triggerElement|触发元素。|ReactNode |`-`|2.9.0|
 |className|节点类名|string \| string[] |`-`|-|
