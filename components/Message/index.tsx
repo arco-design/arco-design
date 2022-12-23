@@ -5,7 +5,7 @@ import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
 import { MessageProps } from './interface';
-import { isUndefined } from '../_util/is';
+import { isUndefined, isNumber } from '../_util/is';
 import useMessage, { messageFuncType } from './useMessage';
 
 const messageTypes = ['info', 'success', 'error', 'warning', 'loading', 'normal'];
@@ -35,7 +35,7 @@ function addInstance(noticeProps: MessageProps) {
     duration,
     ...noticeProps,
   };
-  const { position, transitionClassNames } = _noticeProps;
+  const { position, transitionClassNames, transitionTimeout } = _noticeProps;
   let id;
   if (messageInstance[position]) {
     const notices = messageInstance[position].state.notices;
@@ -57,6 +57,7 @@ function addInstance(noticeProps: MessageProps) {
     render(
       <Message
         transitionClassNames={transitionClassNames}
+        transitionTimeout={transitionTimeout}
         ref={(instance) => {
           messageInstance[position] = instance;
           id = messageInstance[position].add(_noticeProps);
@@ -134,11 +135,21 @@ class Message extends BaseNotification {
   };
 
   render() {
-    const { transitionClassNames, prefixCls: _prefixCls, rtl: _rtl } = this.props;
+    const {
+      transitionClassNames,
+      transitionTimeout: _transitionTimeout,
+      prefixCls: _prefixCls,
+      rtl: _rtl,
+    } = this.props;
     const { notices, position } = this.state;
     const mergedPrefixCls = _prefixCls || prefixCls;
     const mergedRtl = !isUndefined(_rtl) ? _rtl : rtl;
     const prefixClsMessage = mergedPrefixCls ? `${mergedPrefixCls}-message` : 'arco-message';
+    const transitionTimeout = {
+      enter: isNumber(_transitionTimeout?.enter) ? _transitionTimeout?.enter : 100,
+      exit: isNumber(_transitionTimeout?.exit) ? _transitionTimeout?.exit : 300,
+    };
+
     const classNames = cs(`${prefixClsMessage}-wrapper`, `${prefixClsMessage}-wrapper-${position}`);
     return (
       <div className={classNames}>
@@ -146,10 +157,7 @@ class Message extends BaseNotification {
           {notices.map((notice) => (
             <CSSTransition
               key={notice.id}
-              timeout={{
-                enter: 100,
-                exit: 300,
-              }}
+              timeout={transitionTimeout}
               classNames={transitionClassNames || `fadeMessage`}
               onExit={(e) => {
                 e.style.height = `${e.scrollHeight}px`;

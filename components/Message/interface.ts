@@ -12,6 +12,16 @@ export interface MessageProps {
    */
   transitionClassNames?: string;
   /**
+   * @zh 动画持续时间，见 react-transition-group 的 `timeout`
+   * @en timeout of `react-transition-group` of the message pop-up animation, see `timeout`
+   * @defaultValue {enter: 100, exit: 300}
+   * @version 2.43.0
+   */
+  transitionTimeout?: {
+    enter?: number;
+    exit?: number;
+  };
+  /**
    * @zh 消息内容
    * @en Message content
    */
