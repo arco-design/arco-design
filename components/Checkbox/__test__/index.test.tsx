@@ -72,3 +72,18 @@ describe('Checkbox controlled', () => {
     expect(wrapper.querySelector('.arco-checkbox-checked')).toBe(null);
   });
 });
+
+describe('Checkbox Custom Icon', () => {
+  it('custom icon is not element', () => {
+    const randomIcon = `${Math.floor(Math.random() * 10)}`;
+    const wrapper = render(<Checkbox icon={randomIcon}>Checkbox</Checkbox>);
+    const mask = wrapper.querySelector('.arco-checkbox-mask')!;
+    expect(mask.textContent).toBe(randomIcon);
+  });
+  it('custom icon is element', () => {
+    const id = 'mock-icon';
+    const wrapper = render(<Checkbox icon={<div id={id} />}>Checkbox</Checkbox>);
+    const mask = wrapper.querySelector('.arco-checkbox-mask')!;
+    expect(mask.querySelector(`#${id}`)).not.toBeNull();
+  });
+});
