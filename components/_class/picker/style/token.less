@@ -1,4 +1,5 @@
 @import '../../../style/theme/default.less';
+@import '../../../Input/style/token.less';
 
 @picker-size-mini: @size-mini;
 @picker-size-small: @size-small;
@@ -43,3 +44,7 @@
 @picker-color-separator_disabled: var(~'@{arco-cssvars-prefix}-color-text-4');
 
 @picker-range-color-bg-input_focus: var(~'@{arco-cssvars-prefix}-color-primary-light-1');
+
+// calc
+@picker-padding-horizontal: @spacing-2; // 4px
+@picker-input-padding-horizontal: @input-padding-horizontal - @picker-padding-horizontal; // 8px

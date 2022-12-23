@@ -32,6 +32,7 @@
 |position|弹出的框的位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
 |size|输入框尺寸|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |extra|底部附加内容|ReactNode |`-`|-|
+|prefix|前缀|ReactNode |`-`|2.43.0|
 |triggerElement|触发元素。|ReactNode |`-`|2.38.0|
 |className|节点类名|string \| string[] |`-`|-|
 |icons|用于配置图标|{ inputSuffix?: ReactNode } |`-`|-|

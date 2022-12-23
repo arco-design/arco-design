@@ -28,6 +28,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |position|The position of the popup|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`-`|-|
 |size|The size of input box|'mini' \| 'small' \| 'default' \| 'large' |`true`|-|
 |extra|Extra footer|ReactNode |`-`|-|
+|prefix|prefix|ReactNode |`-`|2.43.0|
 |separator|Separator symbol in the range selector input box|ReactNode |`-`|-|
 |triggerElement|Trigger element.|ReactNode |`-`|2.9.0|
 |className|Additional css class|string \| string[] |`-`|-|

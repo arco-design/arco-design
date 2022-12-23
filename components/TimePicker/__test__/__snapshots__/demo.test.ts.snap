@@ -554,6 +554,138 @@ exports[`renders TimePicker/demo/format.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders TimePicker/demo/prefix.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px"
+  >
+    <div
+      class="arco-picker arco-picker-size-default arco-picker-has-prefix"
+      style="width:200px"
+    >
+      <div
+        class="arco-picker-prefix"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-info-circle"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M24 20v14m0-16v-4m18 10c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          class="arco-picker-start-time"
+          placeholder="请选择时间"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-clock-circle"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-picker arco-picker-range arco-picker-size-default arco-picker-has-prefix"
+      style="width:250px"
+    >
+      <div
+        class="arco-picker-prefix"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-info-circle"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M24 20v14m0-16v-4m18 10c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="arco-picker-input arco-picker-input-active"
+      >
+        <input
+          placeholder="开始时间"
+          value=""
+        />
+      </div>
+      <span
+        class="arco-picker-separator"
+      >
+        -
+      </span>
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          placeholder="结束时间"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-clock-circle"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M24 14v10h9.5m8.5 0c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6s18 8.059 18 18Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders TimePicker/demo/rangepicker.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-range arco-picker-size-default"

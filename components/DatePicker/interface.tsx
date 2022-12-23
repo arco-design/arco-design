@@ -95,6 +95,12 @@ export interface PickerProps {
    */
   error?: boolean;
   /**
+   * @zh 前缀
+   * @en prefix
+   * @version 2.43.0
+   */
+  prefix?: ReactNode;
+  /**
    * @zh 是否在隐藏的时候销毁 DOM 结构
    * @en Whether to destroy popup when hidden
    */

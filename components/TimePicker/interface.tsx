@@ -23,6 +23,12 @@ export interface PickerProps {
    */
   error?: boolean;
   /**
+   * @zh 前缀
+   * @en prefix
+   * @version 2.43.0
+   */
+  prefix?: ReactNode;
+  /**
    * @zh 允许清除
    * @en Whether to show clear button
    * @defaultValue true

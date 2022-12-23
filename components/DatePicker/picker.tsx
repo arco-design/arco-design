@@ -548,6 +548,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     size,
     onPressEnter,
     onClear,
+    prefix: props.prefix,
     suffixIcon,
     editable: editable && typeof realFormat !== 'function',
     allowClear,
