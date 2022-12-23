@@ -14,7 +14,14 @@ export const isAcceptFile = (file: File, accept?: string | string[]): boolean =>
     return accepts.some((type) => {
       const typeText = type && type.toLowerCase();
       const fileType = (file.type || '').toLowerCase();
-      if (typeText === fileType) {
+      const baseFileType = fileType.split('/')[0]; // audio/mpeg => audio;
+
+      // `${baseFileType}/${fileExtension}` === typeText
+      // filetype is audio/mpeg, but accept is audio/mp3, should return true
+      if (
+        typeText === fileType ||
+        `${baseFileType}${fileExtension.replace('.', '/')}` === typeText
+      ) {
         // 类似excel文件这种
         // 比如application/vnd.ms-excel和application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
         // 本身就带有.字符的，不能走下面的.jpg等文件扩展名判断处理
