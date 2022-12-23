@@ -73,8 +73,8 @@ function Collapse(baseProps: PropsWithChildren<CollapseProps>, ref) {
   const prefixCls = getPrefixCls('collapse');
 
   const onItemClick = (key: string, e): void => {
-    let newActiveKeys = [...activeKeys];
-    const index = activeKeys.indexOf(key);
+    let newActiveKeys = [...(activeKeys || [])];
+    const index = activeKeys?.indexOf(key);
     if (index > -1) {
       newActiveKeys.splice(index, 1);
     } else if (accordion) {
