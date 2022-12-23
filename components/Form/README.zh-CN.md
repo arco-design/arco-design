@@ -64,6 +64,7 @@
 |rules|受控模式下的验证规则，[RulesProps](#rules)|RulesProps&lt;FieldValue&gt;[] |`-`|-|
 |shouldUpdate|是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。|\| boolean\| ((prevValues: Partial&lt;FormData&gt;,currentValues: Partial&lt;FormData&gt;,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) =&gt; boolean) |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
+|tooltip|提示文本|ReactNode \| ([TooltipProps](tooltip#tooltip) & { icon?: ReactElement }) |`-`|2.43.0|
 |validateTrigger|触发验证的时机。取值和跟包裹的控件有关系，控件支持的触发事件，都可以作为值。例如`Input`支持的 `onFocus`、 `onBlur`、 `onChange` 都可以作为 `validateTrigger` 的值。传递为 `[]` 时，仅会在调用表单 `validate` 方法时执行校验规则。|string \| string[] |`onChange`|-|
 |wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|[ColProps](grid#col) |`-`|-|
 |formatter|将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。|(value: FieldValue \| undefined) => any |`-`|2.23.0|

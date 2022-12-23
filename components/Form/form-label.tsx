@@ -1,10 +1,13 @@
-import React, { ReactNode } from 'react';
+import React, { isValidElement, ReactElement, ReactNode } from 'react';
+import IconQuestionCircle from '../../icon/react-icon/IconQuestionCircle';
 import { isArray, isObject } from '../_util/is';
 import { ID_SUFFIX } from './utils';
 import { FormItemProps } from './interface';
+import Tooltip, { TooltipProps } from '../Tooltip';
+import cs from '../_util/classNames';
 
 interface FormItemLabelProps
-  extends Pick<FormItemProps, 'label' | 'requiredSymbol' | 'required' | 'rules'> {
+  extends Pick<FormItemProps, 'tooltip' | 'label' | 'requiredSymbol' | 'required' | 'rules'> {
   showColon: boolean | ReactNode;
   prefix: string;
   htmlFor?: string;
@@ -19,6 +22,7 @@ const FormItemLabel: React.FC<FormItemLabelProps> = ({
   required,
   rules,
   prefix,
+  tooltip,
 }) => {
   const isRequiredRule = isArray(rules) && rules.some((rule) => rule && rule.required);
   const symbolPosition = isObject(requiredSymbol) ? requiredSymbol.position : 'start';
@@ -31,9 +35,35 @@ const FormItemLabel: React.FC<FormItemLabelProps> = ({
     </strong>
   );
 
+  const renderTooltip = () => {
+    if (!tooltip) {
+      return null;
+    }
+    const tooltipIconClassName = `${prefix}-form-item-tooltip`;
+    let tooltipProps: TooltipProps = {};
+    let tooltipIcon = <IconQuestionCircle className={tooltipIconClassName} />;
+    if (!isObject(tooltip) || isValidElement(tooltip)) {
+      tooltipProps = {
+        content: tooltip,
+      };
+    } else {
+      const { icon, ...rest } = tooltip as TooltipProps & { icon?: ReactElement };
+      tooltipProps = rest;
+      if (icon) {
+        tooltipIcon = isValidElement(icon)
+          ? React.cloneElement(icon as ReactElement, {
+              className: cs(tooltipIconClassName, (icon as ReactElement).props.className),
+            })
+          : icon;
+      }
+    }
+    return <Tooltip {...tooltipProps}>{tooltipIcon}</Tooltip>;
+  };
+
   return label ? (
     <label htmlFor={htmlFor && `${htmlFor}${ID_SUFFIX}`}>
       {symbolPosition !== 'end' && symbolNode} {label}
+      {renderTooltip()}
       {symbolPosition === 'end' && <> {symbolNode}</>}
       {showColon ? (showColon === true ? ':' : showColon) : ''}
     </label>
