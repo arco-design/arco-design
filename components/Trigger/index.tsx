@@ -464,12 +464,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     if (this.unmount || !this.popupContainer) {
       return;
     }
+
     const mountContainer = this.popupContainer as Element;
     const content = this.triggerRef;
     const child: HTMLElement = this.getRootElement();
 
-    if (!child?.offsetParent) {
-      // child display:none
+    // offsetParent=null when display:none or position: fixed
+    if (!child.offsetParent && !child.getClientRects().length) {
       return this.state.popupStyle;
     }
     const { style, arrowStyle, realPosition } = getStyle(
@@ -1022,7 +1023,19 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
           this.setState({ popupStyle: {} });
         }}
       >
-        <ResizeObserver onResize={this.onResize}>
+        <ResizeObserver
+          onResize={() => {
+            const target = this.triggerRef;
+            if (target) {
+              // Avoid the flickering problem caused by the size change and positioning not being recalculated in time.
+              // TODO: Consider changing the popup style directly  in the next major version
+              const popupStyle = this.getPopupStyle();
+              target.style.top = `${popupStyle.top}px`;
+              target.style.left = `${popupStyle.left}px`;
+            }
+            this.onResize();
+          }}
+        >
           <span
             ref={(node) => (this.triggerRef = node)}
             trigger-placement={this.realPosition}
