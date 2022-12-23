@@ -14,18 +14,18 @@
 
 `T = string | number`
 
-|参数名|描述|类型|默认值|
-|---|---|---|---|
-|checked|是否选中|boolean |`-`|
-|defaultChecked|默认是否选中|boolean |`-`|
-|disabled|是否禁用|boolean |`-`|
-|error|错误样式|boolean |`-`|
-|indeterminate|半选状态|boolean |`-`|
-|icon|自定义IconCheck|ReactNode |`-`|
-|className|节点类名|string \| string[] |`-`|
-|style|节点样式|CSSProperties |`-`|
-|value|复选框的 value 属性|T |`-`|
-|onChange|点击复选框的回调|(checked: boolean, e: Event) => void |`-`|
+|参数名|描述|类型|默认值|版本|
+|---|---|---|---|---|
+|checked|是否选中|boolean |`-`|-|
+|defaultChecked|默认是否选中|boolean |`-`|-|
+|disabled|是否禁用|boolean |`-`|-|
+|error|错误样式|boolean |`-`|-|
+|indeterminate|半选状态|boolean |`-`|-|
+|icon|自定义 IconCheck|ReactNode |`-`|2.43.0|
+|className|节点类名|string \| string[] |`-`|-|
+|style|节点样式|CSSProperties |`-`|-|
+|value|复选框的 value 属性|T |`-`|-|
+|onChange|点击复选框的回调|(checked: boolean, e: Event) => void |`-`|-|
 
 ### Checkbox.Group
 

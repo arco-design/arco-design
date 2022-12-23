@@ -45,8 +45,9 @@ export interface CheckboxProps<T extends ReactText = any>
    */
   value?: T;
   /**
-   * @zh 自定义IconCheck
+   * @zh 自定义 IconCheck
    * @en Custom IconCheck
+   * @version 2.43.0
    */
   icon?: ReactNode;
   checkboxGroupValue?: T[];

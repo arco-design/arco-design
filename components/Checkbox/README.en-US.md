@@ -14,18 +14,18 @@ In a set of data, the user can select one or more items through the Checkbox.
 
 `T = string | number`
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|checked|Whether the checkbox is checked|boolean |`-`|
-|defaultChecked|To set default checked|boolean |`-`|
-|disabled|Whether to disable|boolean |`-`|
-|error|Whether to show in error style|boolean |`-`|
-|indeterminate|The indeterminate state of checkbox|boolean |`-`|
-|icon|Custom IconCheck|ReactNode |`-`|
-|className|Additional css class|string \| string[] |`-`|
-|style|Additional style|CSSProperties |`-`|
-|value|To set checkbox value|T |`-`|
-|onChange|Callback when the state changes|(checked: boolean, e: Event) => void |`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|checked|Whether the checkbox is checked|boolean |`-`|-|
+|defaultChecked|To set default checked|boolean |`-`|-|
+|disabled|Whether to disable|boolean |`-`|-|
+|error|Whether to show in error style|boolean |`-`|-|
+|indeterminate|The indeterminate state of checkbox|boolean |`-`|-|
+|icon|Custom IconCheck|ReactNode |`-`|2.43.0|
+|className|Additional css class|string \| string[] |`-`|-|
+|style|Additional style|CSSProperties |`-`|-|
+|value|To set checkbox value|T |`-`|-|
+|onChange|Callback when the state changes|(checked: boolean, e: Event) => void |`-`|-|
 
 ### Checkbox.Group
 

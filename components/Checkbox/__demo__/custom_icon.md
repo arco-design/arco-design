@@ -1,18 +1,18 @@
 ---
 order: 5
 title:
-  zh-CN: 自定义Icon
+  zh-CN: 自定义 Icon
   en-US: Custom Icon
 ---
 
 ## zh-CN
 
-可以自定义Icon。
+通过 `icon` 属性自定义选中态图标。
 
 
 ## en-US
 
-CustomIcon.
+Customize the selected icon through the `icon` property.
 
 ```js
 import { Checkbox } from '@arco-design/web-react';
