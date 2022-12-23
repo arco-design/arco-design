@@ -12,19 +12,20 @@ Lightweight global feedback triggered by user actions.
 
 ### Message
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|closable|Whether to show the close button|boolean |`-`|
-|showIcon|Whether to show the icon|boolean |`true`|
-|duration|Automatic shutdown time, the unit is `ms`|number |`3000`|
-|id|The unique identifier of the current message, which can be used to update the message|string |`-`|
-|transitionClassNames|ClassNames of react-transition-group of the message pop-up animation, see `classNames`|string |`-`|
-|position|The position of the message|'top' \| 'bottom' |`-`|
-|icon|Custom icon|ReactNode |`-`|
-|className|Additional css class|string \| string[] |`-`|
-|content|Message content|ReactNode \| string  **(Required)**|`-`|
-|style|Additional style|CSSProperties |`-`|
-|onClose|Callback when close|() => void |`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|closable|Whether to show the close button|boolean |`-`|-|
+|showIcon|Whether to show the icon|boolean |`true`|-|
+|duration|Automatic shutdown time, the unit is `ms`|number |`3000`|-|
+|id|The unique identifier of the current message, which can be used to update the message|string |`-`|-|
+|transitionClassNames|ClassNames of react-transition-group of the message pop-up animation, see `classNames`|string |`-`|-|
+|position|The position of the message|'top' \| 'bottom' |`-`|-|
+|icon|Custom icon|ReactNode |`-`|-|
+|className|Additional css class|string \| string[] |`-`|-|
+|content|Message content|ReactNode \| string  **(Required)**|`-`|-|
+|style|Additional style|CSSProperties |`-`|-|
+|transitionTimeout|timeout of `react-transition-group` of the message pop-up animation, see `timeout`|{enter?: number;exit?: number;} |`{enter: 100, exit: 300}`|2.43.0|
+|onClose|Callback when close|() => void |`-`|-|
 
 ### Methods
 
