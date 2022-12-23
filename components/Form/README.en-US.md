@@ -64,6 +64,7 @@ A form with data collection, verification and submission functions, including ch
 |rules|Validation rules in controlled component, [RulesProps](#rules)|RulesProps&lt;FieldValue&gt;[] |`-`|-|
 |shouldUpdate|Whether to re-render when other FormItem value change. When set to true, any changes to the Form will re-render.|\| boolean\| ((prevValues: Partial&lt;FormData&gt;,currentValues: Partial&lt;FormData&gt;,info: {isFormList?: boolean;field?: FieldKey \| FieldKey[];isInner?: boolean;}) =&gt; boolean) |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
+|tooltip|Tooltip text|ReactNode \| ([TooltipProps](tooltip#tooltip) & { icon?: ReactElement }) |`-`|2.43.0|
 |validateTrigger|When to trigger verification. The value is related to the wrapped item, and all events supported.For example, `onFocus`, `onBlur`, and `onChange` supported by `Input` can be used as the value of `validateTrigger`.When passed as `[]`, the validation rules will only be executed when the form `validate` method is called|string \| string[] |`onChange`|-|
 |wrapperCol|The control layout, which is the same as the setting method of `labelCol`, which will override the global `wrapperCol` setting|[ColProps](grid#col) |`-`|-|
 |formatter|Convert the `value` of the FormItem to children;|(value: FieldValue \| undefined) => any |`-`|2.23.0|

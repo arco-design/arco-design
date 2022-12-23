@@ -2,8 +2,9 @@
 // TS泛型默认值需要，忽略显式`any`定义
 
 import { ValidateMessagesTemplateType } from 'b-validate';
-import { ReactNode, CSSProperties, HTMLAttributes, FormHTMLAttributes } from 'react';
+import { ReactNode, CSSProperties, HTMLAttributes, ReactElement, FormHTMLAttributes } from 'react';
 import { Options as ScrollIntoViewOptions } from 'scroll-into-view-if-needed';
+import { TooltipProps } from '..';
 import { ColProps } from '../Grid/col';
 import Store from './store';
 
@@ -227,6 +228,12 @@ export interface FormItemProps<
    * @en Label text
    */
   label?: ReactNode;
+  /**
+   * @zh 提示文本
+   * @en Tooltip text
+   * @version 2.43.0
+   */
+  tooltip?: ReactNode | (TooltipProps & { icon?: ReactElement });
   /**
    * @zh
    * `<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置

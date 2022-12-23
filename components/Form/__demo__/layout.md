@@ -38,14 +38,14 @@ function App() {
       autoComplete="off"
       layout={layout}
     >
-      <FormItem label="Layout">
+      <FormItem label="Layout" >
         <RadioGroup onChange={setLayout} type="button" name="layout" value={layout}>
           <Radio value="horizontal">horizontal</Radio>
           <Radio value="vertical">vertical</Radio>
           <Radio value="inline">inline</Radio>
         </RadioGroup>
       </FormItem>
-      <FormItem label="Username" field="username" rules={[{ required: true }]}>
+      <FormItem label="Username" field="username" tooltip={<div>Username is required </div>} rules={[{ required: true }]}>
         <Input style={{ width: 270 }} placeholder="please enter your name" />
       </FormItem>
       <FormItem label="Post">

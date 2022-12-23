@@ -295,6 +295,7 @@ const Item = <
           <Row
             ref={ref}
             {...omit(rest, [
+              'tooltip',
               'children',
               'prefixCls',
               'store',
@@ -340,6 +341,7 @@ const Item = <
                 )}
               >
                 <FormItemLabel
+                  tooltip={props.tooltip}
                   htmlFor={props.field && formContext.getFormElementId(props.field)}
                   label={label}
                   prefix={prefix}
