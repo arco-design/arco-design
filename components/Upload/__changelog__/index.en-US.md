@@ -1,3 +1,11 @@
+## 2.43.0
+
+2022-12-23
+
+### 🐛 BugFix
+
+- Fix the bug that mp3 files cannot be uploaded normally when the `Upload` component is set to `accept=audio/mp3`.([#1669](https://github.com/arco-design/arco-design/pull/1669))
+
 ## 2.42.0
 
 2022-11-25

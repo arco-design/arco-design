@@ -1,3 +1,11 @@
+## 2.43.0
+
+2022-12-23
+
+### 🆕 Feature
+
+- `Form.Item` supports setting tooltip via `tooltip` property.([#1665](https://github.com/arco-design/arco-design/pull/1665))
+
 ## 2.42.2
 
 2022-12-09

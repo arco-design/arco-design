@@ -1,3 +1,11 @@
+## 2.43.0
+
+2022-12-23
+
+### 🆕 Feature
+
+- `TimePicker` supports setting prefix by `prefix`.([#1668](https://github.com/arco-design/arco-design/pull/1668))
+
 ## 2.38.0
 
 2022-07-29

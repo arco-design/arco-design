@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.43.0
+
+2022-12-23
+
+### 💎 Enhancement
+
+- Optimize the problem that the position of the popup layer flickers when the trigger node style of the `Trigger` component changes to `display: none`.([#1652](https://github.com/arco-design/arco-design/pull/1652))
+- Optimize the flickering problem caused by the size change of the popup layer of the `Trigger` component and the location is not updated in time.([#1652](https://github.com/arco-design/arco-design/pull/1652))
+
+### 🆕 Feature
+
+- `DatePicker` supports setting prefix by `prefix`.([#1668](https://github.com/arco-design/arco-design/pull/1668))
+- `TimePicker` supports setting prefix by `prefix`.([#1668](https://github.com/arco-design/arco-design/pull/1668))
+- Message adds `transitionTimeout` attribute to improve custom animation configuration.([#1667](https://github.com/arco-design/arco-design/pull/1667))
+- `Form.Item` supports setting tooltip via `tooltip` property.([#1665](https://github.com/arco-design/arco-design/pull/1665))
+- The `Checkbox` component adds an `icon` prop to customize the checked icon.([#1656](https://github.com/arco-design/arco-design/pull/1656))
+
+### 🐛 BugFix
+
+- Fix the bug that mp3 files cannot be uploaded normally when the `Upload` component is set to `accept=audio/mp3`.([#1669](https://github.com/arco-design/arco-design/pull/1669))
+- Fix the bug that the `Collapse` component reported an error in React 18 strict mode.([#1666](https://github.com/arco-design/arco-design/pull/1666))
+
 ## 2.42.2
 
 2022-12-09

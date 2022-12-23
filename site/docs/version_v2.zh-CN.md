@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.43.0
+
+2022-12-23
+
+### 💎 功能优化
+
+- 优化 `Trigger` 组件的触发节点样式变为 `display: none` 时弹出层位置出现闪动的问题。([#1652](https://github.com/arco-design/arco-design/pull/1652))
+- 优化 `Trigger` 组件的弹出层尺寸改变定位未及时更新导致的闪动问题。([#1652](https://github.com/arco-design/arco-design/pull/1652))
+
+### 🆕 功能升级
+
+- `DatePicker` 支持通过 `prefix` 设置前缀。([#1668](https://github.com/arco-design/arco-design/pull/1668))
+- `TimePicker` 支持通过 `prefix` 设置前缀。([#1668](https://github.com/arco-design/arco-design/pull/1668))
+- `Message` 新增 `transitionTimeout` 属性，完善自定义动画配置。([#1667](https://github.com/arco-design/arco-design/pull/1667))
+- `Form.Item` 支持通过 `tooltip` 属性设置提示信息。([#1665](https://github.com/arco-design/arco-design/pull/1665))
+- `Checkbox` 组件新增 `icon` 属性以自定义选中态图标。([#1656](https://github.com/arco-design/arco-design/pull/1656))
+
+### 🐛 问题修复
+
+- 修复 `Upload` 组件在设置 `accept=audio/mp3` 时，mp3 文件无法被正常上传的 bug。([#1669](https://github.com/arco-design/arco-design/pull/1669))
+- 修复 `Collapse` 组件在 React 18 严格模式下，组件报错的 bug。([#1666](https://github.com/arco-design/arco-design/pull/1666))
+
 ## 2.42.2
 
 2022-12-09

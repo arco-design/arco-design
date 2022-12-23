@@ -1,3 +1,11 @@
+## 2.43.0
+
+2022-12-23
+
+### 🐛 BugFix
+
+- Fix the bug that the `Collapse` component reported an error in React 18 strict mode.([#1666](https://github.com/arco-design/arco-design/pull/1666))
+
 ## 2.41.0
 
 2022-10-28

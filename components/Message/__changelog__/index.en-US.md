@@ -1,3 +1,11 @@
+## 2.43.0
+
+2022-12-23
+
+### 🆕 Feature
+
+- Message adds `transitionTimeout` attribute to improve custom animation configuration.([#1667](https://github.com/arco-design/arco-design/pull/1667))
+
 ## 2.40.0
 
 2022-09-16

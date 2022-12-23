@@ -1,3 +1,11 @@
+## 2.43.0
+
+2022-12-23
+
+### 🆕 Feature
+
+- The `Checkbox` component adds an `icon` prop to customize the checked icon.([#1656](https://github.com/arco-design/arco-design/pull/1656))
+
 ## 2.42.0
 
 2022-11-25

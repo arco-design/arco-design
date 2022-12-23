@@ -1,3 +1,12 @@
+## 2.43.0
+
+2022-12-23
+
+### 💎 Enhancement
+
+- Optimize the problem that the position of the popup layer flickers when the trigger node style of the `Trigger` component changes to `display: none`.([#1652](https://github.com/arco-design/arco-design/pull/1652))
+- Optimize the flickering problem caused by the size change of the popup layer of the `Trigger` component and the location is not updated in time.([#1652](https://github.com/arco-design/arco-design/pull/1652))
+
 ## 2.42.0
 
 2022-11-25
