@@ -124,10 +124,6 @@ export const FileList = (props: UploadListProps) => {
   );
 };
 
-FileList.defaultProps = {
-  listType: 'text',
-};
-
 FileList.displayName = 'FileList';
 
 export default FileList;
