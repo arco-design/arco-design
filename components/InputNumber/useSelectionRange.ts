@@ -1,5 +1,6 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { isNumber } from '../_util/is';
+import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 
 export default function useSelectionRange({
   inputElement,
@@ -11,7 +12,7 @@ export default function useSelectionRange({
   // Selection position from the tail (e.g. 1234|56, this value will be 2)
   const refSelectionPosition = useRef<number>(null);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     try {
       const position = refSelectionPosition.current;
       if (inputElement && inputValue && isNumber(position)) {
