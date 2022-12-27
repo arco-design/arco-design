@@ -99,12 +99,14 @@ function Group<T extends React.ReactText>(props: PropsWithChildren<CheckboxGroup
           ? options.map((option) => {
               const label = isObject(option) ? option.label : option;
               const checkValue = isObject(option) ? option.value : option;
+              const icon = isObject(option) ? option.icon : undefined;
 
               return (
                 <Checkbox
                   disabled={disabled || (isObject(option) && option.disabled)}
                   key={checkValue}
                   value={checkValue}
+                  icon={icon}
                 >
                   {label}
                 </Checkbox>
