@@ -22,18 +22,16 @@ jobs:
           install-yarn: true
           node-version: '16.13'
       - run: node --version & yarn --version
-      # - restore_cache:
-      #     name: Restore Yarn Package Cache
-      #     keys:
-      #       - yarn-pkgs-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}-{{ checksum "site/yarn.lock" }}
       - run:
           name: yarn install
           command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd site && yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd ../
-          # command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn & cd site && yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd ../
-          
       - save_cache:
           name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
+          key: yarn-packages-{{ checksum "yarn.lock" }}-{{ checksum "site/yarn.lock" }}
           paths:
             - ~/.cache/yarn
       - run: ls
