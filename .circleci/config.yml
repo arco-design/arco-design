@@ -8,9 +8,9 @@ jobs:
   deploy-preview:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    working_directory: ~/repo
     docker:
       - image: cimg/base:stable
+    working_directory: ~/repo
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -18,26 +18,25 @@ jobs:
       - node/install:
           install-yarn: true
           node-version: "16.13"
-      - run: node --version
       - restore_cache:
-        name: Restore Yarn Package Cache
-        keys:
-          - yarn-pkgs-{{ checksum "yarn.lock" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-pkgs-{{ checksum "yarn.lock" }}
       - run:
-        name: yarn install
-        command: yarn install --immutable & cd site && yarn install --immutable && cd ../
+          name: yarn install
+          command: yarn install --immutable & cd site && yarn install --immutable && cd ../
       - save_cache:
-        name: Save Yarn Package Cache
-        key: yarn-packages-{{ checksum "yarn.lock" }}
-        paths:
-          - .yarn/cache
-          - .yarn/unplugged
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - .yarn/cache
+            - .yarn/unplugged
       - run:
-        name: build components
-        command: yarn icon && yarn build:es && yarn build:css
+          name: build components
+          command: yarn icon && yarn build:es && yarn build:css
       - run:
-        name: build site
-        command: yarn build:site
+          name: build site
+          command: yarn build:site
       # - run:
       #   name: Upload site-dist Artifact
       #   uses: actions/upload-artifact@v3.1.1
@@ -55,8 +54,8 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-        name: netlify install
-        command: yarn add netlify-cli -D
+          name: netlify install
+          command: yarn add netlify-cli -D
       # - name: get PreviewID
       #   run: |
       #     if ${{ github.event_name == 'pull_request' }}; then
@@ -65,8 +64,8 @@ jobs:
       #       echo "PreviewID=main" >> $GITHUB_ENV
       #     fi
       - runs:
-        name: netlify deploy
-        command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-test
+          name: netlify deploy
+          command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-test
         # command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-${{ env.PreviewID }}
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
