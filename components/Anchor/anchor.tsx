@@ -137,12 +137,18 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       const element = findNode(document, hash);
       let inView = false;
       if (element) {
-        const { top } = element.getBoundingClientRect();
+        const { top, height } = element.getBoundingClientRect();
         if (isWindow(container)) {
-          inView = top >= startTop && top <= (targetOffset ?? documentHeight / 2);
+          const innerTargetOffset = targetOffset ?? documentHeight / 2;
+          inView =
+            (top >= startTop && top <= innerTargetOffset) ||
+            (top <= startTop && top + height >= innerTargetOffset);
         } else {
           const offsetTop = top - containerRect.top - startTop;
-          inView = offsetTop >= 0 && offsetTop <= (targetOffset ?? containerRect.height / 2);
+          const innerTargetOffset = targetOffset ?? containerRect.height / 2;
+          inView =
+            (offsetTop >= 0 && offsetTop <= innerTargetOffset) ||
+            (offsetTop <= 0 && offsetTop + height >= innerTargetOffset);
         }
         if (inView) {
           result = element;
