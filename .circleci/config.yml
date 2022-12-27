@@ -15,10 +15,10 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      
+
       - node/install:
           install-yarn: true
-          node-version: '16.13'
+          node-version: "16.13"
 
       - run: node --version
 
@@ -30,7 +30,7 @@ jobs:
       - run:
         name: yarn install
         command: yarn install --immutable & cd site && yarn install --immutable && cd ../
-      
+
       - save_cache:
         name: Save Yarn Package Cache
         key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -60,7 +60,7 @@ jobs:
       #     name: site-dist
       #     # Destination path
       #     path: dist/
-      
+
       - attach_workspace:
           at: ~/repo
 
@@ -75,7 +75,6 @@ jobs:
       #     else
       #       echo "PreviewID=main" >> $GITHUB_ENV
       #     fi
-
       - runs:
         name: netlify deploy
         command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-test
