@@ -44,17 +44,9 @@ jobs:
       - run:
           name: netlify install
           command: yarn add netlify-cli -D
-      # - name: get PreviewID
-      #   run: |
-      #     if ${{ github.event_name == 'pull_request' }}; then
-      #       echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
-      #     else
-      #       echo "PreviewID=main" >> $GITHUB_ENV
-      #     fi
       - run:
           name: netlify deploy
-          command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-test
-        # command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-${{ env.PreviewID }}
+          command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-${{ CIRCLE_PR_NUMBER }}
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
