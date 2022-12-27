@@ -11,16 +11,17 @@ jobs:
   deploy-preview:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    # docker:
-    #   - image: cimg/base:stable
+    docker:
+      - image: cimg/base:stable
     working_directory: ~/repo
-    executor: node/default
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
@@ -40,20 +41,6 @@ jobs:
       - run:
           name: build site
           command: yarn build:site
-      # - run:
-      #   name: Upload site-dist Artifact
-      #   uses: actions/upload-artifact@v3.1.1
-      #   with:
-      #     name: site-dist
-      #     path: site/dist
-
-      # - name: Download site-dist Artifact
-      #   uses: actions/download-artifact@v3.0.1
-      #   with:
-      #     # Artifact name
-      #     name: site-dist
-      #     # Destination path
-      #     path: dist/
       - attach_workspace:
           at: ~/repo
       - run:
