@@ -5,81 +5,85 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build-site:
+  deploy-preview:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    working_directory: ~/repo
     docker:
       - image: cimg/base:stable
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      steps:
-      - name: checkout
-        uses: actions/checkout@master
+      - checkout
+      
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
 
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'yarn'
+      - run: node --version
 
-      - name: install
-        run: yarn && cd site && yarn && cd ../
+      - restore_cache:
+        name: Restore Yarn Package Cache
+        keys:
+          - yarn-pkgs-{{ checksum "yarn.lock" }}
 
-      - name: build components
-        run: yarn icon && yarn build:es && yarn build:css
+      - run:
+        name: yarn install
+        command: yarn install --immutable & cd site && yarn install --immutable && cd ../
+      
+      - save_cache:
+        name: Save Yarn Package Cache
+        key: yarn-packages-{{ checksum "yarn.lock" }}
+        paths:
+          - .yarn/cache
+          - .yarn/unplugged
 
-      - name: build site
-        run: yarn build:site
+      - run:
+        name: build components
+        command: yarn icon && yarn build:es && yarn build:css
 
-      - name: Upload site-dist Artifact
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: site-dist
-          path: site/dist
-  deploy-preview:
-    runs-on: ubuntu-latest
-    needs: build-site
-    steps:
-      - name: checkout
-        uses: actions/checkout@master
+      - run:
+        name: build site
+        command: yarn build:site
 
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'yarn'
+      # - run:
+      #   name: Upload site-dist Artifact
+      #   uses: actions/upload-artifact@v3.1.1
+      #   with:
+      #     name: site-dist
+      #     path: site/dist
 
-      - name: Download site-dist Artifact
-        uses: actions/download-artifact@v3.0.1
-        with:
-          # Artifact name
-          name: site-dist
-          # Destination path
-          path: dist/
+      # - name: Download site-dist Artifact
+      #   uses: actions/download-artifact@v3.0.1
+      #   with:
+      #     # Artifact name
+      #     name: site-dist
+      #     # Destination path
+      #     path: dist/
+      
+      - attach_workspace:
+          at: ~/repo
 
-      - name: netlify install
-        run: yarn add netlify-cli -D
+      - run:
+        name: netlify install
+        command: yarn add netlify-cli -D
 
-      - name: get PreviewID
-        run: |
-          if ${{ github.event_name == 'pull_request' }}; then
-            echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
-          else
-            echo "PreviewID=main" >> $GITHUB_ENV
-          fi
+      # - name: get PreviewID
+      #   run: |
+      #     if ${{ github.event_name == 'pull_request' }}; then
+      #       echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
+      #     else
+      #       echo "PreviewID=main" >> $GITHUB_ENV
+      #     fi
 
-      - name: netlify deploy
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
-
+      - runs:
+        name: netlify deploy
+        command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-test
+        # command: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=site/dist --alias=pr-preview-${{ env.PreviewID }}
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   deploy-pr-site:
     jobs:
-      - build-site
       - deploy-preview
