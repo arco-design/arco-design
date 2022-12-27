@@ -28,7 +28,7 @@ jobs:
       #       - yarn-pkgs-{{ checksum "yarn.lock" }}
       - run:
           name: yarn install
-          command: yarn install & cd site && yarn install && cd ../
+          command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd site && yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd ../
           # command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn & cd site && yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd ../
           
       - save_cache:
