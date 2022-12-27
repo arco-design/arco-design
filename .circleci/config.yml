@@ -22,10 +22,10 @@ jobs:
           install-yarn: true
           node-version: '16.13'
       - run: node --version & yarn --version
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-pkgs-{{ checksum "yarn.lock" }}
+      # - restore_cache:
+      #     name: Restore Yarn Package Cache
+      #     keys:
+      #       - yarn-pkgs-{{ checksum "yarn.lock" }}
       - run:
           name: yarn install
           command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn & cd site && yarn install --frozen-lockfile --cache-folder ~/.cache/yarn && cd ../
@@ -34,13 +34,13 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - run: ls
       - run:
           name: build components
           command: yarn icon && yarn build:es && yarn build:css
       - run:
           name: build site
           command: yarn build:site
-      - run: ls
       - run:
           name: netlify install
           command: yarn add netlify-cli -D
