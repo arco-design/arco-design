@@ -6,6 +6,8 @@ on:
 
 jobs:
   build-site:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -35,7 +37,8 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     needs: build-site
-    environment: pr-test
+    permissions:
+      contents: read
     steps:
       - name: checkout
         uses: actions/checkout@master
@@ -69,12 +72,19 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
+        run: |
+          if: ${{ env.NETLIFY_AUTH_TOKEN != '' }}        
+            netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
+          else 
+             echo 'netlify deploy failed, auth error'
+          fi
 
   add-pr-comment:
     runs-on: ubuntu-latest
     needs: deploy-preview
     if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write
     steps:
       - name: checkout
         uses: actions/checkout@master
@@ -86,15 +96,16 @@ jobs:
           cache: 'yarn'
 
       - name: PR Comment
-        uses: github-actions-up-and-running/pr-comment@v1.0.1
+        uses: mshick/add-pr-comment@v2
         env:
           PR_NUMBER: ${{ github.event.number }}
         with:
           # GITHUB_TOKEN secret
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message-id: pr-${{ env.PR_NUMBER }}
           # Message to comment
           message: |
-            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app/react/docs/start)
+            [📚 📚 Site Preview: https://pr-preview-${{ env.PR_NUMBER }}--arco-design.netlify.app](https://pr-preview-${{ env.PR_NUMBER }}--arco-design.netlify.app/react/docs/start)
 
   image-test:
     runs-on: ubuntu-latest
