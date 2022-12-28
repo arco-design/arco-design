@@ -72,13 +72,12 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          run: netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
-#         run: |
-#           if ${{ env.NETLIFY_AUTH_TOKEN != '' }}; then
-#             netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
-#           else 
-#              echo 'netlify deploy failed, auth error'
-#           fi
+        run: |
+         if ${{ env.NETLIFY_AUTH_TOKEN != '' }}; then
+           netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
+         else 
+            echo 'netlify deploy failed, auth error'
+         fi
 
   add-pr-comment:
     runs-on: ubuntu-latest
