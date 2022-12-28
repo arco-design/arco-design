@@ -73,7 +73,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          if: ${{ env.NETLIFY_AUTH_TOKEN != '' }}        
+          if ${{ env.NETLIFY_AUTH_TOKEN != '' }}        
             netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID  --dir=dist --alias=pr-preview-${{ env.PreviewID }}
           else 
              echo 'netlify deploy failed, auth error'
