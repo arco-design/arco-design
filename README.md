@@ -91,7 +91,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 
 | Project               | Description                                             |
 | --------------------- | ------------------------------------------------------- |
-| [Vue Component Library] | A comprehensive Vue UI components library based on the Arco Design system |
+| [Vue Component Library] | A comprehensive Vue UI components library based on the [Arco Design](https://arco.design/) system |
 | [Design Lab] | A platform to create and manage your themes with ease. |
 | [Material Market] | A platform that provides massive high-quality customized materials to greatly boost development efficiency. |
 | [Icon Box] | One-stop platform to manage your icons. |
