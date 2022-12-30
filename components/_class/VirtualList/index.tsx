@@ -609,11 +609,11 @@ const VirtualList: React.ForwardRefExoticComponent<
           ) {
             if (isStaticItemHeight) {
               if (!heightMap[KEY_VIRTUAL_ITEM_HEIGHT]) {
-                heightMap[KEY_VIRTUAL_ITEM_HEIGHT] = getNodeHeight(ele);
+                heightMap[KEY_VIRTUAL_ITEM_HEIGHT] = getNodeHeight(ele, true);
               }
               heightMap[key] = heightMap[KEY_VIRTUAL_ITEM_HEIGHT];
             } else {
-              heightMap[key] = getNodeHeight(ele);
+              heightMap[key] = getNodeHeight(ele, true);
             }
           }
         },

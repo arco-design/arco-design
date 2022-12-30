@@ -34,9 +34,15 @@ export function getLocationItem(scrollPtg: number, total: number): LocationItemR
 /**
  * 获取HTML元素高度
  */
-export function getNodeHeight(node: HTMLElement) {
+export function getNodeHeight(node: HTMLElement, needMargin = false) {
   const element = findDOMNode(node) as HTMLElement;
-  return element ? element.offsetHeight : 0;
+  let marginVertical = 0;
+  if (needMargin) {
+    const { marginTop, marginBottom } = window.getComputedStyle(node);
+    marginVertical = Number(marginTop.replace(/\D/g, '')) + Number(marginBottom.replace(/\D/g, ''));
+    marginVertical = isNaN(marginVertical) ? 0 : marginVertical;
+  }
+  return element ? element.offsetHeight + marginVertical : 0;
 }
 
 /**
