@@ -1,4 +1,5 @@
 import React, { useContext, ReactNode, ReactElement, HTMLAttributes } from 'react';
+import get from 'lodash/get';
 import { SummaryContext } from './context';
 import cs from '../../_util/classNames';
 import { Omit } from '../../_util/type';
@@ -21,7 +22,10 @@ function Row(props: SummaryRowProps) {
 
   const element = React.Children.map(children, (child, index) => {
     const childElement = child as ReactElement;
-    const isSummaryCell = childElement?.props?.$$ArcoTableSummaryCell;
+    // childElement?.props?.$$ArcoTableSummaryCell: Compatible Cell.defaultProps.$$ArcoTableSummaryCell
+    const isSummaryCell =
+      get(childElement, 'type.__ARCO_TABLE_SUMMARY_CELL__') ||
+      get(childElement, 'props.$$ArcoTableSummaryCell');
 
     const childStyle = childElement?.props?.style;
     const childClassName = childElement?.props?.className;

@@ -29,17 +29,17 @@ function LineProgress(props) {
   const {
     // textInside,
     type,
-    size,
     prefixCls,
     buffer,
     percent,
-    status,
     color,
     animation,
-    showText,
     bufferColor,
     formatText,
     trailColor,
+    showText = true,
+    size = 'default',
+    status = 'normal',
   } = props;
 
   const strokeWidth = props.strokeWidth || defaultStrokeWidth[size];
@@ -96,11 +96,5 @@ function LineProgress(props) {
     </div>
   );
 }
-
-LineProgress.defaultProps = {
-  showText: true,
-  size: 'default',
-  status: 'normal',
-};
 
 export default LineProgress;

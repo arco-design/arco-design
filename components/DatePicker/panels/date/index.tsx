@@ -278,8 +278,4 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
   );
 }
 
-DatePicker.defaultProps = {
-  pickerType: 'date',
-};
-
 export default DatePicker;

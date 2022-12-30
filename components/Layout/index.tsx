@@ -1,4 +1,5 @@
 import React, { useState, useContext, forwardRef, ReactElement } from 'react';
+import get from 'lodash/get';
 import cs from '../_util/classNames';
 import Sider, { SiderContext } from './sider';
 import Header from './header';
@@ -33,7 +34,10 @@ function Layout(baseProps: LayoutProps, ref) {
   return (
     <section ref={ref} {...rest} className={classNames}>
       {React.Children.map(children, (child: ReactElement) => {
-        if (child && child.props && child.props.sign === 'sider') {
+        // child?.props?.sign: Compatible with custom components
+        const sign = get(child, 'type.__ARCO_SIGN__') || get(child, 'props.sign');
+
+        if (child && sign === 'sider') {
           return React.cloneElement(child, {
             onSiderMount: (id) => setSiders([...siders, id]),
             onSiderUnmount: (id) => setSiders(siders.filter((currentId) => currentId !== id)),

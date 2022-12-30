@@ -9,7 +9,8 @@ import { CarouselArrowProps } from './interface';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 function CarouselArrow(props: CarouselArrowProps, ref) {
-  const { className, direction, showArrow, prev, next, icons } = props;
+  const { className, direction = 'horizontal', showArrow = 'always', prev, next, icons } = props;
+
   const getKeyboardEvents = useKeyboardEvent();
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('carousel');
@@ -62,10 +63,5 @@ function CarouselArrow(props: CarouselArrowProps, ref) {
 }
 
 const CarouselArrowComponent = React.forwardRef<unknown, CarouselArrowProps>(CarouselArrow);
-
-CarouselArrowComponent.defaultProps = {
-  direction: 'horizontal',
-  showArrow: 'always',
-};
 
 export default CarouselArrowComponent;

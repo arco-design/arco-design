@@ -4,7 +4,17 @@ import { isFunction } from '../_util/is';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 
 export const StepsProgress = (props) => {
-  const { size, prefixCls, percent, status, color, type, showText, formatText, trailColor } = props;
+  const {
+    prefixCls,
+    percent,
+    color,
+    type,
+    formatText,
+    trailColor,
+    showText = true,
+    size = 'default',
+    status = 'normal',
+  } = props;
 
   const strokeWidth = props.strokeWidth || (size === 'small' ? 8 : 4);
   const cls = `${prefixCls}-${type}`;
@@ -56,12 +66,6 @@ export const StepsProgress = (props) => {
       )}
     </div>
   );
-};
-
-StepsProgress.defaultProps = {
-  showText: true,
-  size: 'default',
-  status: 'normal',
 };
 
 export default StepsProgress;

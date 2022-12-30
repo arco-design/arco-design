@@ -9,8 +9,17 @@ import { isFunction } from '../_util/is';
 
 function Countdown(props: CountdownProps, ref) {
   const { getPrefixCls } = useContext(ConfigContext);
-  const { className, style, title, styleValue, value, start, format, onFinish, renderFormat } =
-    props;
+  const {
+    className,
+    style,
+    title,
+    styleValue,
+    value,
+    onFinish,
+    renderFormat,
+    format = 'HH:mm:ss',
+    start = true,
+  } = props;
 
   const dayjsValue = (getDayjsValue(value, format) as Dayjs) || dayjs();
   const now = getDayjsValue(props.now, format) as Dayjs;
@@ -71,11 +80,6 @@ function Countdown(props: CountdownProps, ref) {
 const CountdownComponent = forwardRef<unknown, CountdownProps>(Countdown);
 
 CountdownComponent.displayName = 'StatisticCountdown';
-
-CountdownComponent.defaultProps = {
-  format: 'HH:mm:ss',
-  start: true,
-};
 
 export default CountdownComponent;
 

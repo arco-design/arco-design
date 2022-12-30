@@ -13,8 +13,6 @@ function Cell(props: SummaryCellProps) {
   return <td {...omit(rest, ['$$ArcoTableSummaryCell'])}>{children}</td>;
 }
 
-Cell.defaultProps = {
-  $$ArcoTableSummaryCell: true,
-};
+Cell.__ARCO_TABLE_SUMMARY_CELL__ = true;
 
 export default Cell;

@@ -52,8 +52,4 @@ function WeekPicker(props: InnerWeekPickerProps & PrivateCType) {
   );
 }
 
-WeekPicker.defaultProps = {
-  pickerType: 'week',
-};
-
 export default WeekPicker;

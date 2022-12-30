@@ -101,11 +101,12 @@ function Option(props: OptionProps, ref) {
   );
 }
 
-const OptionComponent = React.forwardRef<unknown, OptionProps>(Option);
+const ForwordRefOption = React.forwardRef<unknown, OptionProps>(Option);
 
-OptionComponent.defaultProps = {
-  // private use
-  isSelectOption: true,
+const OptionComponent = ForwordRefOption as typeof ForwordRefOption & {
+  __ARCO_SELECT_OPTION__?: boolean;
 };
+
+OptionComponent.__ARCO_SELECT_OPTION__ = true;
 
 export default OptionComponent;

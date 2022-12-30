@@ -35,7 +35,6 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     needs: build-site
-    environment: pr-test
     steps:
       - name: checkout
         uses: actions/checkout@master
@@ -86,20 +85,17 @@ jobs:
           cache: 'yarn'
 
       - name: PR Comment
-        uses: github-actions-up-and-running/pr-comment@v1.0.1
+        uses: mshick/add-pr-comment@v2
         env:
           PR_NUMBER: ${{ github.event.number }}
         with:
-          # GITHUB_TOKEN secret
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
           # Message to comment
           message: |
-            [📚 📚 Site Preview: https://pr-preview-${{ github.event.number }}--arco-design.netlify.app](https://pr-preview-${{ github.event.number }}--arco-design.netlify.app/react/docs/start)
+            [📚 📚 Site Preview: https://pr-preview-${{ env.PR_NUMBER }}--arco-design.netlify.app](https://pr-preview-${{ env.PR_NUMBER }}--arco-design.netlify.app/react/docs/start)
 
   image-test:
     runs-on: ubuntu-latest
     needs: deploy-preview
-    environment: pr-test
     steps:
       - name: checkout
         uses: actions/checkout@v3
