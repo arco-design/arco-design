@@ -1,3 +1,12 @@
+## 2.43.1
+
+2022-12-30
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` 组件传入精度超过 100 (e.g. 1e-200) 的小数时页面崩溃的问题。([#1688](https://github.com/arco-design/arco-design/pull/1688))
+- 修复 `InputNumber` 组件由于 `useLayoutEffect` 导致的 SSR 警告。([#1672](https://github.com/arco-design/arco-design/pull/1672))
+
 ## 2.42.0
 
 2022-11-25

@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.43.1
+
+2022-12-30
+
+### 💎 Enhancement
+
+- Optimize the virtual list scroll position offset problem when the list item has a `margin` value set.([#1690](https://github.com/arco-design/arco-design/pull/1690))
+- Remove `defaultProps` usage of inner function components to avoid console warning in React 18 strict mode.([#1687](https://github.com/arco-design/arco-design/pull/1687))
+
+### 🐛 BugFix
+
+- Fix the bug that defaultValue does not take effect in React 18 strict mode for some components.([#1689](https://github.com/arco-design/arco-design/pull/1689))
+- Fix the page crash issue when the `InputNumber` passes a decimal with a precision greater than 100 (e.g. 1e-200).([#1688](https://github.com/arco-design/arco-design/pull/1688))
+- Optimize the `Anchor` component. When the height of the anchor element is large, the scroll target container may have a bug that activates `Anchor.Link` calculation inaccurately.([#1676](https://github.com/arco-design/arco-design/pull/1676))
+- Fix SSR warning for `InputNumber` component due to `useLayoutEffect`.([#1672](https://github.com/arco-design/arco-design/pull/1672))
+
 ## 2.43.0
 
 2022-12-23

@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.43.1
+
+2022-12-30
+
+### 💎 功能优化
+
+- 优化虚拟列表在列表项设置了 `margin` 值时滚动定位偏移的问题。([#1690](https://github.com/arco-design/arco-design/pull/1690))
+- 移除内部函数组件的 `defaultProps` 用法，避免在 React 18 严格模式下控制台 warning。([#1687](https://github.com/arco-design/arco-design/pull/1687))
+
+### 🐛 问题修复
+
+- 修复部分组件在 React 18 严格模式下，defaultValue 不生效的 bug。([#1689](https://github.com/arco-design/arco-design/pull/1689))
+- 修复 `InputNumber` 组件传入精度超过 100 (e.g. 1e-200) 的小数时页面崩溃的问题。([#1688](https://github.com/arco-design/arco-design/pull/1688))
+- 优化 `Anchor` 组件在锚点元素高度较大时，滚动目标容器可能出现激活 `Anchor.Link` 计算不准确的 bug。([#1676](https://github.com/arco-design/arco-design/pull/1676))
+- 修复 `InputNumber` 组件由于 `useLayoutEffect` 导致的 SSR 警告。([#1672](https://github.com/arco-design/arco-design/pull/1672))
+
 ## 2.43.0
 
 2022-12-23

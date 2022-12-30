@@ -1,3 +1,12 @@
+## 2.43.1
+
+2022-12-30
+
+### 🐛 BugFix
+
+- Fix the page crash issue when the `InputNumber` passes a decimal with a precision greater than 100 (e.g. 1e-200).([#1688](https://github.com/arco-design/arco-design/pull/1688))
+- Fix SSR warning for `InputNumber` component due to `useLayoutEffect`.([#1672](https://github.com/arco-design/arco-design/pull/1672))
+
 ## 2.42.0
 
 2022-11-25

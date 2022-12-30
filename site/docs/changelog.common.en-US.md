@@ -1,3 +1,16 @@
+## 2.43.1
+
+2022-12-30
+
+### 💎 Enhancement
+
+- Optimize the virtual list scroll position offset problem when the list item has a `margin` value set.([#1690](https://github.com/arco-design/arco-design/pull/1690))
+- Remove `defaultProps` usage of inner function components to avoid console warning in React 18 strict mode.([#1687](https://github.com/arco-design/arco-design/pull/1687))
+
+### 🐛 BugFix
+
+- Fix the bug that defaultValue does not take effect in React 18 strict mode for some components.([#1689](https://github.com/arco-design/arco-design/pull/1689))
+
 ## 2.41.2
 
 2022-11-11

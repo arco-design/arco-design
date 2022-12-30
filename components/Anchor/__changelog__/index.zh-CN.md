@@ -1,3 +1,11 @@
+## 2.43.1
+
+2022-12-30
+
+### 🐛 问题修复
+
+- 优化 `Anchor` 组件在锚点元素高度较大时，滚动目标容器可能出现激活 `Anchor.Link` 计算不准确的 bug。([#1676](https://github.com/arco-design/arco-design/pull/1676))
+
 ## 2.33.1
 
 2022-05-20

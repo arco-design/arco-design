@@ -1,3 +1,16 @@
+## 2.43.1
+
+2022-12-30
+
+### 💎 功能优化
+
+- 优化虚拟列表在列表项设置了 `margin` 值时滚动定位偏移的问题。([#1690](https://github.com/arco-design/arco-design/pull/1690))
+- 移除内部函数组件的 `defaultProps` 用法，避免在 React 18 严格模式下控制台 warning。([#1687](https://github.com/arco-design/arco-design/pull/1687))
+
+### 🐛 问题修复
+
+- 修复部分组件在 React 18 严格模式下，defaultValue 不生效的 bug。([#1689](https://github.com/arco-design/arco-design/pull/1689))
+
 ## 2.41.2
 
 2022-11-11

@@ -1,3 +1,11 @@
+## 2.43.1
+
+2022-12-30
+
+### 🐛 BugFix
+
+- Optimize the `Anchor` component. When the height of the anchor element is large, the scroll target container may have a bug that activates `Anchor.Link` calculation inaccurately.([#1676](https://github.com/arco-design/arco-design/pull/1676))
+
 ## 2.33.1
 
 2022-05-20
