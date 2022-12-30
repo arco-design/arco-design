@@ -36,7 +36,9 @@ export function toSafeString(number: number | string): string {
       return BigInt(number).toString();
     }
 
-    nativeNumberStr = Number(number).toFixed(getNumberPrecision(nativeNumberStr));
+    // This may lose precision, but foFixed must accept argument in the range 0-100
+    const precision = getNumberPrecision(nativeNumberStr);
+    nativeNumberStr = Number(number).toFixed(Math.min(100, precision));
   }
 
   return trimNumber(nativeNumberStr).fullStr;

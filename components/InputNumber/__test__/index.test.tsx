@@ -290,4 +290,9 @@ describe('InputNumber ', () => {
     expect(getInputValue(wrapper)).toBe(valueStrAfterAddOnce);
     expect(onChange).toBeCalledWith(valueStrAfterAddOnce);
   });
+
+  it('avoid Number.toFixed() error while precision is larger than 100', () => {
+    const wrapper = render(<InputNumber defaultValue={1e-200} />);
+    expect(getInputValue(wrapper)).toBe('0');
+  });
 });
