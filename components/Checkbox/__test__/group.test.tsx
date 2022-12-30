@@ -31,6 +31,7 @@ describe('Checkbox group', () => {
       {
         label: 'Option 3',
         value: '3',
+        icon: <div id="mock-icon" />,
       },
       {
         label: 'Option 4',
@@ -47,6 +48,7 @@ describe('Checkbox group', () => {
         return x.textContent;
       })
     ).toEqual(options.map((x) => x.label));
+    expect(wrapper.find('#mock-icon').length).toBe(1);
   });
 
   it('CheckboxGroup onChange', () => {

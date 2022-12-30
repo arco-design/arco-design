@@ -83,7 +83,7 @@ export interface CheckboxGroupProps<T extends ReactText> {
    * @zh 可选项
    * @en Specifies options
    */
-  options?: (T | { label: ReactNode; value: T; disabled?: boolean })[];
+  options?: (T | { label: ReactNode; value: T; disabled?: boolean; icon?: ReactNode })[];
   /**
    * @zh 选中的选项（受控模式）
    * @en To set value
