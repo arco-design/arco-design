@@ -44,11 +44,11 @@ function getValidValue(value, isMultiple: boolean, labelInValue: boolean): Selec
 }
 
 function isSelectOption(child): boolean {
-  return get(child, 'props.isSelectOption');
+  return get(child, 'props.isSelectOption') || get(child, 'type.__ARCO_SELECT_OPTION__');
 }
 
 function isSelectOptGroup(child): boolean {
-  return get(child, 'props.isSelectOptGroup');
+  return get(child, 'props.isSelectOptGroup') || get(child, 'type.__ARCO_SELECT_OPTGROUP__');
 }
 
 function flatChildren(

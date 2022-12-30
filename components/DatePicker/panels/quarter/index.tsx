@@ -123,8 +123,4 @@ function QuarterPicker(props: InnerQuarterPickerProps & PrivateCType) {
   );
 }
 
-QuarterPicker.defaultProps = {
-  pickerType: 'quarter',
-};
-
 export default QuarterPicker;

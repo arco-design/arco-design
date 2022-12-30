@@ -302,8 +302,4 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
   );
 }
 
-RangePicker.defaultProps = {
-  pickerType: 'range',
-};
-
 export default RangePicker;

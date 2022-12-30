@@ -146,8 +146,4 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
   );
 }
 
-MonthPicker.defaultProps = {
-  pickerType: 'month',
-};
-
 export default MonthPicker;

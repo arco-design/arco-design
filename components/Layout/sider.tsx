@@ -197,13 +197,14 @@ function Sider(props: SiderProps, ref) {
   );
 }
 
-const SiderComponent = forwardRef<unknown, SiderProps>(Sider);
+const ForwardRefSider = forwardRef<unknown, SiderProps>(Sider);
 
-SiderComponent.defaultProps = {
-  // private use
-  sign: 'sider',
+const SiderComponent = ForwardRefSider as typeof ForwardRefSider & {
+  __ARCO_SIGN__: 'sider';
 };
 
 SiderComponent.displayName = 'LayoutSider';
+
+SiderComponent.__ARCO_SIGN__ = 'sider';
 
 export default SiderComponent;

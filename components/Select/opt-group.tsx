@@ -15,11 +15,12 @@ function OptGroup(props: OptGroupProps, ref) {
   );
 }
 
-const OptGroupComponent = React.forwardRef<unknown, OptGroupProps>(OptGroup);
+const ForwardRefOptGroup = React.forwardRef<unknown, OptGroupProps>(OptGroup);
 
-OptGroupComponent.defaultProps = {
-  // private use
-  isSelectOptGroup: true,
+const OptGroupComponent = ForwardRefOptGroup as typeof ForwardRefOptGroup & {
+  __ARCO_SELECT_OPTGROUP__?: boolean;
 };
+
+OptGroupComponent.__ARCO_SELECT_OPTGROUP__ = true;
 
 export default OptGroupComponent;

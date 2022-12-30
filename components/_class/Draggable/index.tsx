@@ -8,7 +8,7 @@ import { DraggableProps } from './interface';
 export default function Draggable(props: DraggableProps) {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('draggable');
-  const { className, children, direction, onIndexChange, itemWrapperStyle } = props;
+  const { className, children, direction = 'vertical', onIndexChange, itemWrapperStyle } = props;
 
   const [dragItemIndex, setDragItemIndex] = useState(null);
 
@@ -38,7 +38,3 @@ export default function Draggable(props: DraggableProps) {
     </div>
   );
 }
-
-Draggable.defaultProps = {
-  direction: 'vertical',
-};

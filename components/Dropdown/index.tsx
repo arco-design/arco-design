@@ -1,4 +1,5 @@
 import React, { ReactElement, useContext, useRef } from 'react';
+import get from 'lodash/get';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import Button from './button';
 import { ConfigContext } from '../ConfigProvider';
@@ -58,7 +59,8 @@ function Dropdown(baseProps: DropdownProps, _) {
   const renderPopup = () => {
     const content = getPopupContent();
 
-    if (content?.props?.isMenu) {
+    // props.isMenu: Compatible Menu.defaultProps.isMenu = true
+    if (get(content, 'type.__ARCO_MENU__') || get(content, 'props.isMenu')) {
       let isEmpty = true;
       for (const child of React.Children.toArray(content.props.children)) {
         if (child !== null && child !== undefined) {

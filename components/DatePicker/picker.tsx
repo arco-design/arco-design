@@ -32,7 +32,8 @@ import { pickDataAttributes } from '../_util/pick';
 function getFormat(props) {
   const { format, picker, showTime } = props;
   let valueFormat;
-  switch (picker.props.pickerType) {
+  const mode = props.mode || picker.props.pickerType;
+  switch (mode) {
     case 'date':
       valueFormat = showTime ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';
       break;
@@ -67,9 +68,10 @@ interface InnerPickerProps extends PickerProps {
   onSelect?: (dateString: string, date: Dayjs) => void;
   onChange?: (dateString: string, date: Dayjs) => void;
   showNowBtn?: boolean;
+  mode: ModeType;
 }
 
-const defaultProps: InnerPickerProps = {
+const defaultProps: Partial<InnerPickerProps> = {
   allowClear: true,
   unmountOnExit: true,
   position: 'bl',
@@ -129,7 +131,8 @@ const Picker = (baseProps: InnerPickerProps) => {
     ? getDefaultWeekStart(locale.dayjsLocale)
     : props.dayStartOfWeek;
 
-  const mode = picker.props.pickerType;
+  // picker.props.pickerType: Compatible with defaultProps
+  const mode = props.mode || picker.props.pickerType;
 
   const refInput = useRef(null);
   const refPanel = useRef(null);

@@ -17,7 +17,7 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
     });
     const { getPrefixCls } = useContext(ConfigContext);
     const getKeyboardEvents = useKeyboardEvent();
-    const { className, visibilityToggle, onVisibilityChange, ...rest } = props;
+    const { className, visibilityToggle = true, onVisibilityChange, ...rest } = props;
 
     const prefixCls = getPrefixCls('input-password');
     const classNames = cs(
@@ -85,9 +85,6 @@ const Password = React.forwardRef<RefInputType, InputPasswordProps>(
 
 Password.displayName = 'Password';
 
-Password.defaultProps = {
-  visibilityToggle: true,
-};
 export default Password;
 
 export { InputPasswordProps };

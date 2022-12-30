@@ -109,8 +109,4 @@ function YearPicker(props: InnerYearPickerProps) {
   );
 }
 
-YearPicker.defaultProps = {
-  pickerType: 'year',
-};
-
 export default YearPicker;

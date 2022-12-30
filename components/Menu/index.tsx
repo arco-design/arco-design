@@ -235,6 +235,7 @@ const MenuComponent = ForwardRefMenu as typeof ForwardRefMenu & {
   Item: typeof Item;
   ItemGroup: typeof ItemGroup;
   SubMenu: typeof SubMenu;
+  __ARCO_MENU__: boolean;
 };
 
 MenuComponent.displayName = 'Menu';
@@ -242,11 +243,7 @@ MenuComponent.displayName = 'Menu';
 MenuComponent.Item = Item;
 MenuComponent.SubMenu = SubMenu;
 MenuComponent.ItemGroup = ItemGroup;
-
-// private use
-MenuComponent.defaultProps = {
-  isMenu: true,
-};
+MenuComponent.__ARCO_MENU__ = true;
 
 export default MenuComponent;
 

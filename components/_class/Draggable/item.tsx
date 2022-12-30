@@ -10,7 +10,7 @@ function Item(props: DraggableItemProps) {
     children,
     direction,
     disabled,
-    droppable,
+    droppable = true,
     onDrop,
     onDragStart,
     onDragEnd,
@@ -107,9 +107,5 @@ function Item(props: DraggableItemProps) {
     </li>
   );
 }
-
-Item.defaultProps = {
-  droppable: true,
-};
 
 export default Item;
