@@ -24,6 +24,7 @@ const defaultProps: MenuProps = {
   mode: 'vertical',
   selectable: true,
   ellipsis: true,
+  ellipsisText: '···',
 };
 
 function Menu(baseProps: MenuProps, ref) {
@@ -44,6 +45,7 @@ function Menu(baseProps: MenuProps, ref) {
     triggerProps,
     tooltipProps,
     ellipsis,
+    ellipsisText,
     accordion,
     autoOpen,
     autoScrollIntoView,
@@ -123,7 +125,7 @@ function Menu(baseProps: MenuProps, ref) {
       <>
         <div className={`${prefixCls}-inner`}>
           {mode === 'horizontal' && ellipsis !== false ? (
-            <OverflowWrap>{childrenList}</OverflowWrap>
+            <OverflowWrap ellipsisText={ellipsisText}>{childrenList}</OverflowWrap>
           ) : (
             childrenList
           )}

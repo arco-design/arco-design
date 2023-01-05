@@ -22,6 +22,7 @@ A component to organize, arrange, and display a list of options.
 |hasCollapseButton|Whether built-in folding button|boolean |`-`|-|
 |selectable|Whether is the menu item selectable|boolean |`true`|-|
 |levelIndent|Indentation between levels|number |`-`|-|
+|ellipsisText|The text displayed when the horizontal menu overflows|string |`···`|2.44.0|
 |mode|Mode of Menu|'vertical' \| 'horizontal' \| 'pop' \| 'popButton' |`vertical`|-|
 |theme|Theme of Menu|'light' \| 'dark' |`light`|-|
 |className|Additional css class|string \| string[] |`-`|-|

@@ -22,6 +22,7 @@
 |hasCollapseButton|是否内置折叠按钮|boolean |`-`|-|
 |selectable|菜单选项是否可选|boolean |`true`|-|
 |levelIndent|层级之间的缩进量|number |`-`|-|
+|ellipsisText|水平菜单溢出省略时显示的文本|string |`···`|2.44.0|
 |mode|菜单类型，目前支持垂直（vertical）、水平菜单（horizontal）、弹出（pop）|'vertical' \| 'horizontal' \| 'pop' \| 'popButton' |`vertical`|-|
 |theme|菜单风格|'light' \| 'dark' |`light`|-|
 |className|节点类名|string \| string[] |`-`|-|
