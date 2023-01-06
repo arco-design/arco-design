@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { isObject, isUndefined } from '../_util/is';
+import { isArray, isObject, isUndefined } from '../_util/is';
 import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import ImagePreview, { ImagePreviewHandle } from './image-preview';
@@ -122,7 +122,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     let index = 0;
 
     const loop = (children) => {
-      return React.Children.map(children, (child) => {
+      const result = React.Children.map(children, (child) => {
         if (child && child.props && child.type) {
           const displayName = child.type.displayName;
           if (displayName === 'Image') {
@@ -138,6 +138,11 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
 
         return child;
       });
+      // 避免单个子节点 <div></div> 被处理为  [<div></div>] 格式
+      if (!isArray(children) && React.Children.count(children) === 1) {
+        return result[0];
+      }
+      return result;
     };
 
     return loop(children);
