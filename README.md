@@ -81,7 +81,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 # Useful Links
 
 * [Documentation website](https://arco.design/)
-* [Components documentation](https://arco.design/react/components/overview)
+* [Components documentation](https://arco.design/react/docs/overview)
 * [Dark mode](https://arco.design/react/docs/dark)
 * [Theme customization](https://arco.design/react/docs/theme)
 * [Figma component library](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
