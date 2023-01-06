@@ -59,12 +59,14 @@ function Tr<T>(props: TrType<T>, ref) {
   const trKey = rowK || index;
 
   const checked = usedSelectedRowKeys.indexOf(rowK) > -1;
+  const expanded = expandedRowKeys.indexOf(rowK) > -1;
   const indeterminate = indeterminateKeys.indexOf(rowK) > -1;
 
   const classNameTr = cs(
     `${prefixCls}-tr`,
     {
       [`${prefixCls}-row-checked`]: checked,
+      [`${prefixCls}-row-expanded`]: expanded,
     },
     rowClassName && rowClassName(originRecord, index)
   );
