@@ -1,3 +1,11 @@
+## 2.43.2
+
+2023-01-06
+
+### 🐛 问题修复
+
+- 修复在 `ImagePreviewGroup` 内嵌套  `Popover` 组件导致报错的 bug。([#1706](https://github.com/arco-design/arco-design/pull/1706))
+
 ## 2.41.0
 
 2022-10-28

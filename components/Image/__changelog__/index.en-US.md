@@ -1,3 +1,11 @@
+## 2.43.2
+
+2023-01-06
+
+### 🐛 BugFix
+
+- Fix the bug that nesting `Popover` components inside `ImagePreviewGroup` causes an error.([#1706](https://github.com/arco-design/arco-design/pull/1706))
+
 ## 2.41.0
 
 2022-10-28

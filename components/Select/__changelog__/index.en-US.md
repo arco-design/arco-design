@@ -1,3 +1,11 @@
+## 2.43.2
+
+2023-01-06
+
+### 💎 Enhancement
+
+- Optimize the empty string display of `Select` component option value.([#1703](https://github.com/arco-design/arco-design/pull/1703))
+
 ## 2.42.2
 
 2022-12-09

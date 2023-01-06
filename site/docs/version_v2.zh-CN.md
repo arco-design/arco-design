@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.43.2
+
+2023-01-06
+
+### 💎 功能优化
+
+- 优化 `Select` 组件选项值的空字符串展示。([#1703](https://github.com/arco-design/arco-design/pull/1703))
+
+### 🐛 问题修复
+
+- 修复在 `ImagePreviewGroup` 内嵌套  `Popover` 组件导致报错的 bug。([#1706](https://github.com/arco-design/arco-design/pull/1706))
+
 ## 2.43.1
 
 2022-12-30

@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.43.2
+
+2023-01-06
+
+### 💎 Enhancement
+
+- Optimize the empty string display of `Select` component option value.([#1703](https://github.com/arco-design/arco-design/pull/1703))
+
+### 🐛 BugFix
+
+- Fix the bug that nesting `Popover` components inside `ImagePreviewGroup` causes an error.([#1706](https://github.com/arco-design/arco-design/pull/1706))
+
 ## 2.43.1
 
 2022-12-30
