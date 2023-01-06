@@ -23,6 +23,7 @@ import { ObjectValueType, InputTagProps, ValueChangeReason } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import Draggable from '../_class/Draggable';
 import omit from '../_util/omit';
+import fillNBSP from '../_util/fillNBSP';
 
 const CSS_TRANSITION_DURATION = 300;
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
@@ -234,7 +235,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         title={typeof label === 'string' ? label : undefined}
         onClose={onClose}
       >
-        {typeof label === 'string' ? label.replace(/\s/g, '\u00A0') : label}
+        {fillNBSP(label)}
       </Tag>
     );
   };

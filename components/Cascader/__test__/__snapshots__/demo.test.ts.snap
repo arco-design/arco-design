@@ -114,7 +114,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
                 <span
                   class="arco-input-tag-input-mirror"
                 >
-                  Hover to expand
+                  Hover to expand
                 </span>
               </div>
             </div>
@@ -368,7 +368,7 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select ...
+                Please select ...
               </span>
             </div>
           </div>
@@ -572,7 +572,7 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select ...
+                Please select ...
               </span>
             </div>
           </div>
@@ -734,7 +734,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Dongcheng / Chaoyangmen
+                  Beijing / Beijing / Dongcheng / Chaoyangmen
                 </span>
               </div>
               <div
@@ -744,7 +744,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Dongcheng / Jianguomen
+                  Beijing / Beijing / Dongcheng / Jianguomen
                 </span>
               </div>
               <input
@@ -842,7 +842,7 @@ exports[`renders Cascader/demo/draggable.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Chaoyang / Datunli
+                  Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
                   aria-label="Close"
@@ -1080,7 +1080,7 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
               <span
                 class="arco-tag-content"
               >
-                Beijing / Beijing / Chaoyang / Datunli
+                Beijing / Beijing / Chaoyang / Datunli
               </span>
               <span
                 aria-label="Close"
@@ -1271,7 +1271,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Chaoyang / Datunli
+                  Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
                   aria-label="Close"
@@ -1463,7 +1463,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Chaoyang / Datunli
+                  Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
                   aria-label="Close"
@@ -1714,7 +1714,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select ...
+                Please select ...
               </span>
             </div>
           </div>
@@ -1784,7 +1784,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Chaoyang / Datunli
+                  Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
                   aria-label="Close"
@@ -1878,7 +1878,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select ...
+                Please select ...
               </span>
             </div>
           </div>
@@ -2046,7 +2046,7 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
                 <span
                   class="arco-input-tag-input-mirror"
                 >
-                  Please enter ...
+                  Please enter ...
                 </span>
               </div>
             </div>
@@ -2175,7 +2175,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Chaoyang / Datunli
+                  Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
                   aria-label="Close"
@@ -2350,7 +2350,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  Beijing / Beijing / Chaoyang / Datunli
+                  Beijing / Beijing / Chaoyang / Datunli
                 </span>
                 <span
                   aria-label="Close"
@@ -2678,7 +2678,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select ...
+                Please select ...
               </span>
             </div>
           </div>

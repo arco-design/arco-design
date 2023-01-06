@@ -8,6 +8,7 @@ import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
 import useComposition from './useComposition';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
+import fillNBSP from '../_util/fillNBSP';
 
 const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
@@ -188,7 +189,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
             }}
           >
             <span className={`${prefixCls}-mirror`} ref={refInputMirror}>
-              {mirrorValue && mirrorValue.replace(/\s/g, '\u00A0')}
+              {fillNBSP(mirrorValue)}
             </span>
           </ResizeObserver>
         )}

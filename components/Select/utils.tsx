@@ -10,6 +10,7 @@ import {
 } from './interface';
 import { isArray, isString, isNumber, isObject } from '../_util/is';
 import getHighlightText from '../_util/getHighlightText';
+import fillNBSP from '../_util/fillNBSP';
 
 export type OptionInfoMap = Map<OptionProps['value'], OptionInfo>;
 
@@ -170,7 +171,7 @@ function flatChildren(
             disabled={option.disabled === true}
             extra={option.extra}
           >
-            {option.label}
+            {fillNBSP(option.label)}
           </Option>
         );
         handleOption(child, origin);

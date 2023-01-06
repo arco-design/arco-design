@@ -7573,7 +7573,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                         <span
                           class="arco-input-tag-input-mirror"
                         >
-                          please select
+                          please select
                         </span>
                       </div>
                     </div>
