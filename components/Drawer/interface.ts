@@ -135,7 +135,7 @@ export interface DrawerProps {
    * @zh 点击确认按钮的回调
    * @en Callback when the OK button is clicked
    */
-  onOk?: (e: Event) => void;
+  onOk?: (e: MouseEvent) => void;
   /**
    * @zh 关闭弹出框的回调
    * @en Callback when the Cancel button is clicked

@@ -45,4 +45,4 @@ A floating layer that slides in from the edge of the screen.
 |getChildrenPopupContainer|Set the mount node for popup such as `Select`, `Tooltip`, etc. Default to the drawer dialog.|(node: HTMLElement) => Element |`-`|-|
 |getPopupContainer|Parent node which the drawer should be rendered to.|() => Element |`() => document.body`|-|
 |onCancel|Callback when the Cancel button is clicked|(e: MouseEvent \| Event) => void |`-`|-|
-|onOk|Callback when the OK button is clicked|(e: Event) => void |`-`|-|
+|onOk|Callback when the OK button is clicked|(e: MouseEvent) => void |`-`|-|

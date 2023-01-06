@@ -73,10 +73,8 @@ function Button(baseProps: ButtonProps, ref) {
     if (autoInsertSpaceInButton && buttonRef && buttonRef.current) {
       const textContent = buttonRef.current.textContent;
       if (regexTwoCNChar.test(textContent)) {
-        if (!isTwoCNChar) {
-          setIsTwoCNChar(true);
-        }
-      } else if (isTwoCNChar) {
+        setIsTwoCNChar(true);
+      } else {
         setIsTwoCNChar(false);
       }
     }
@@ -103,7 +101,7 @@ function Button(baseProps: ButtonProps, ref) {
     className
   );
 
-  const handleClick: React.MouseEventHandler<HTMLElement> = (event: any): void => {
+  const handleClick: React.MouseEventHandler<HTMLElement> = (event) => {
     if (loading) {
       typeof event?.preventDefault === 'function' && event.preventDefault();
       return;

@@ -35,7 +35,7 @@ In a set of data, the user can select one or more items through the Checkbox.
 |direction|Arrangement direction|'horizontal' \| 'vertical' |`horizontal`|
 |className|Additional css class|string \| string[] |`-`|
 |defaultValue|Initial selected value|T[] |`-`|
-|options|Specifies options|(T \| { label: ReactNode; value: T; disabled?: boolean })[] |`-`|
+|options|Specifies options|(T \| { label: ReactNode; value: T; disabled?: boolean; icon?: ReactNode })[] |`-`|
 |style|Additional style|CSSProperties |`-`|
 |value|To set value|T[] |`-`|
 |onChange|Callback when the state changes|(value: T[], e: Event) => void |`-`|

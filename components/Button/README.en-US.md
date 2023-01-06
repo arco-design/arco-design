@@ -30,4 +30,4 @@ A button is a command component to trigger an operation.
 |anchorProps|The native attribute of the link, which takes effect when href exists|HTMLProps&lt;HTMLAnchorElement&gt; |`-`|
 |className|Additional css class|string \| string[] |`-`|
 |style|Additional style|CSSProperties |`-`|
-|onClick|Callback fired when the button is clicked|(e: Event) => void |`-`|
+|onClick|Callback fired when the button is clicked|(e: MouseEvent) => void |`-`|

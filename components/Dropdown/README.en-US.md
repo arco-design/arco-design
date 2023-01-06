@@ -41,5 +41,5 @@ When there are too many commands, the alternative commands can be stored in the 
 |className|Additional css class|string \| string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |buttonsRender|Custom buttons inside Dropdown.Button|(buttons: ReactNode[]) => ReactNode[] |`-`|-|
-|onClick|Callback when button on the left is clicked|(e: Event) => void |`-`|-|
+|onClick|Callback when button on the left is clicked|(e: MouseEvent) => void |`-`|-|
 |onVisibleChange|Callback when visibility changes|(visible: boolean) => void |`-`|-|

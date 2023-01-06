@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import { ReactNode, CSSProperties, MouseEvent } from 'react';
 import { ButtonProps } from '../Button';
 
 /**

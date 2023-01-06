@@ -44,4 +44,4 @@
 |getChildrenPopupContainer|抽屉里的弹出框 `Select` `Tooltip` 等挂载的容器，默认挂载在对话框内。|(node: HTMLElement) => Element |`-`|-|
 |getPopupContainer|指定弹出框挂载的父节点|() => Element |`() => document.body`|-|
 |onCancel|关闭弹出框的回调|(e: MouseEvent \| Event) => void |`-`|-|
-|onOk|点击确认按钮的回调|(e: Event) => void |`-`|-|
+|onOk|点击确认按钮的回调|(e: MouseEvent) => void |`-`|-|

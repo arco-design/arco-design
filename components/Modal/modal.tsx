@@ -155,7 +155,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     }
   };
 
-  const onConfirmModal = (e: MouseEvent) => {
+  const onConfirmModal = (e: React.MouseEvent) => {
     const { onConfirm, onOk } = props;
     const _onConfirm = onOk || onConfirm;
 

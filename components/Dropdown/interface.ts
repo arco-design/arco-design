@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, MouseEvent } from 'react';
 import { TriggerProps } from '../Trigger';
 import { ButtonProps } from '../Button';
 
@@ -129,7 +129,7 @@ export interface DropdownButtonProps {
    * @zh 左侧按钮的点击事件
    * @en Callback when button on the left is clicked
    */
-  onClick?: (e: Event) => void;
+  onClick?: (e: MouseEvent) => void;
   /**
    * @zh 弹出框打开/关闭时会触发
    * @en Callback when visibility changes

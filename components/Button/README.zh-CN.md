@@ -30,4 +30,4 @@
 |anchorProps|a 链接的原生属性，href 存在时生效|HTMLProps&lt;HTMLAnchorElement&gt; |`-`|
 |className|节点类名|string \| string[] |`-`|
 |style|节点样式|CSSProperties |`-`|
-|onClick|点击按钮的回调|(e: Event) => void |`-`|
+|onClick|点击按钮的回调|(e: MouseEvent) => void |`-`|

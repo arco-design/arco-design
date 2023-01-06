@@ -41,5 +41,5 @@
 |className|节点类名|string \| string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |buttonsRender|自定义两个按钮的渲染|(buttons: ReactNode[]) => ReactNode[] |`-`|-|
-|onClick|左侧按钮的点击事件|(e: Event) => void |`-`|-|
+|onClick|左侧按钮的点击事件|(e: MouseEvent) => void |`-`|-|
 |onVisibleChange|弹出框打开/关闭时会触发|(visible: boolean) => void |`-`|-|
