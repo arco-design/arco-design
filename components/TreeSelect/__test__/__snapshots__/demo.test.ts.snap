@@ -285,7 +285,7 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
               <span
                 class="arco-tag-content"
               >
-                Leaf 0-1-2
+                Leaf 0-1-2
               </span>
               <span
                 aria-label="Close"
@@ -444,7 +444,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
               <span
                 class="arco-tag-content"
               >
-                Leaf 0-0-1
+                Leaf 0-0-1
               </span>
               <span
                 aria-label="Close"
@@ -474,7 +474,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
               <span
                 class="arco-tag-content"
               >
-                Leaf 0-0-2-1
+                Leaf 0-0-2-1
               </span>
               <span
                 aria-label="Close"
@@ -963,7 +963,7 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select ...
+                Please select ...
               </span>
             </div>
           </div>
@@ -1027,7 +1027,7 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Max display 2 tags
+                Max display 2 tags
               </span>
             </div>
           </div>
@@ -1092,7 +1092,7 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            please select...
+            please select...
           </span>
         </div>
       </div>

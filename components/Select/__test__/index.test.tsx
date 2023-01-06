@@ -412,4 +412,17 @@ describe('Select', () => {
     expect(eleSpanList[1]).toHaveTextContent('');
     expect(eleSpanList[2]).toHaveTextContent(placeholder);
   });
+
+  it('convert empty string in option.label to &nbsp', async () => {
+    const originLabel = 'a   b';
+    const transformedLabel = originLabel.replace(/\s/g, '&nbsp;');
+
+    wrapper = render(
+      <Select popupVisible value="a" options={[{ label: originLabel, value: 'a' }]} />
+    );
+
+    await sleep(100);
+    expect(wrapper.querySelector('.arco-select-view-value').innerHTML).toBe(transformedLabel);
+    expect(wrapper.querySelector('.arco-select-option').innerHTML).toBe(transformedLabel);
+  });
 });

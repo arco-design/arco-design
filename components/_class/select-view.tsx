@@ -24,6 +24,7 @@ import include from '../_util/include';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import IconHover from './icon-hover';
 import { Backspace, Enter } from '../_util/keycode';
+import fillNBSP from '../_util/fillNBSP';
 
 export interface SelectViewCommonProps
   extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
@@ -402,7 +403,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
             [`${prefixCls}-view-value-mirror`]: needShowInput,
           })}
         >
-          {isEmptyValue ? inputProps.placeholder : _inputValue}
+          {fillNBSP(isEmptyValue ? inputProps.placeholder : _inputValue)}
         </span>
       </span>
     );

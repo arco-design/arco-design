@@ -361,7 +361,7 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            Search by name
+            Search by name
           </span>
         </div>
       </div>
@@ -1043,7 +1043,7 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            Please select
+            Please select
           </span>
         </div>
       </div>
@@ -1461,7 +1461,7 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
                 <span
                   class="arco-tag-content"
                 >
-                  +1 more
+                  +1 more
                 </span>
               </div>
               <input
@@ -1764,7 +1764,7 @@ exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            Search by name
+            Search by name
           </span>
         </div>
       </div>
@@ -2801,7 +2801,7 @@ exports[`renders Select/demo/size.md correctly 1`] = `
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select
+                Please select
               </span>
             </div>
           </div>
@@ -2866,7 +2866,7 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            Please select
+            Please select
           </span>
         </div>
       </div>
@@ -2935,7 +2935,7 @@ Array [
             <span
               class="arco-input-tag-input-mirror"
             >
-              Select a tag
+              Select a tag
             </span>
           </div>
         </div>

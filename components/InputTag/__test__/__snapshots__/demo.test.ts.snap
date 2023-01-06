@@ -29,7 +29,7 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
             <span
               class="arco-input-tag-input-mirror"
             >
-              Input and press Enter
+              Input and press Enter
             </span>
           </div>
         </div>
@@ -562,7 +562,7 @@ exports[`renders InputTag/demo/save-on-blur.md correctly 1`] = `
       <span
         class="arco-input-tag-input-mirror"
       >
-        Input and blur directly
+        Input and blur directly
       </span>
     </div>
   </div>
@@ -768,7 +768,7 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            Please input
+            Please input
           </span>
         </div>
       </div>
@@ -796,7 +796,7 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
           <span
             class="arco-input-tag-input-mirror"
           >
-            Format user input
+            Format user input
           </span>
         </div>
       </div>
