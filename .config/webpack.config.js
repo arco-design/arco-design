@@ -68,6 +68,9 @@ exports.site = (config, env) => {
 
   config.resolve.alias['@arco-design/web-react'] = path.resolve(__dirname, '..');
   // config.resolve.alias['dayjs$'] = 'moment-timezone';
+  config.resolve.alias['react/jsx-runtime'] = require.resolve('react/jsx-runtime');
+  config.resolve.alias['react$'] = require.resolve('react/index');
+  delete config.resolve.alias['react'];
 
   if (env === 'dev') {
     config.devServer.historyApiFallback = {
