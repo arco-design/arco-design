@@ -26,7 +26,7 @@ A component to organize, arrange, and display a list of options.
 |className|Additional css class|string \| string[] |`-`|-|
 |defaultOpenKeys|The initially opened menu item's key array|string[] |`-`|-|
 |defaultSelectedKeys|The initially selected menu item's key array|string[] |`-`|-|
-|ellipsis|Whether the horizontal menu automatically collapses when it overflows|\| boolean\| {text?: string;} |`true`|2.24.0|
+|ellipsis|Whether the horizontal menu automatically collapses when it overflows|\| boolean\| {text?: ReactNode;} |`true`|2.24.0|
 |icons|Customize icons|{horizontalArrowDown?: ReactNode \| null;popArrowRight?: ReactNode \| null;collapseDefault?: ReactNode \| null;collapseActive?: ReactNode \| null;} |`-`|-|
 |openKeys|Opened menu item's key array|string[] |`-`|-|
 |scrollConfig|Scroll to the configuration item in the visible area and receive all the parameters of[scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)|{ [key: string]: any } |`-`|-|

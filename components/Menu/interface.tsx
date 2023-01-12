@@ -70,7 +70,7 @@ export interface MenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
   ellipsis?:
     | boolean
     | {
-        text?: string;
+        text?: ReactNode;
       };
   /**
    * @zh 是否自动滚动选中项目到可见区域

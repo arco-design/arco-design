@@ -18,7 +18,7 @@ function translatePxToNumber(str): number {
 }
 
 interface OverflowWrapProps {
-  ellipsisText?: string;
+  ellipsisText?: ReactNode;
   children: ReactNode;
 }
 
