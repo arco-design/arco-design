@@ -8,6 +8,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { PopconfirmProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { isNullOrUndefined } from '../_util/is';
 
 const defaultProps: PopconfirmProps = {
   position: 'top',
@@ -47,6 +48,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
     cancelButtonProps,
     autoFocus,
     focusLock,
+    content,
     ...rest
   } = props;
 
@@ -56,6 +58,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
   });
   const [buttonLoading, setLoading] = useState(false);
   const prefixCls = getPrefixCls('popconfirm');
+  const hasContent = !isNullOrUndefined(content);
 
   const handleVisibleChange = (visible: boolean) => {
     if (!('popupVisible' in props)) {
@@ -123,6 +126,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
           {icon && <span className={`${prefixCls}-title-icon`}>{icon}</span>}
           <div className={`${prefixCls}-title-text`}>{title}</div>
         </div>
+        {hasContent && <div className={`${prefixCls}-inner-content`}>{content}</div>}
 
         {focusLock ? (
           <FocusLock
@@ -159,7 +163,10 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
         maxWidth: 350,
         ...style,
       }}
-      className={cs(className, { [`${prefixCls}-rtl`]: rtl })}
+      className={cs(className, {
+        [`${prefixCls}-rtl`]: rtl,
+        [`${prefixCls}-has-content`]: hasContent,
+      })}
       prefixCls={prefixCls}
       getPopupContainer={getPopupContainer}
       position={position}

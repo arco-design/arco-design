@@ -146,7 +146,6 @@ export type EllipsisConfig = {
   /**
    * @zh 自动溢出省略（只支持字符串），在大量使用情况下建议开启提高性能。
    * @en Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.
-   * @defaultValue false
    * @version `2.36.0` 将默认值改为 `false` 并支持多行CSS省略。
    */
   cssEllipsis?: boolean;
@@ -203,7 +202,6 @@ export type EllipsisConfig = {
    * @zh 默认展开
    * @en Default expanded state
    * @version `2.33.0`
-   * @defaultValue false
    */
   defaultExpanded?: boolean;
   // https://github.com/arco-design/arco-design/issues/1185

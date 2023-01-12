@@ -160,13 +160,11 @@ export interface TriggerProps {
   /**
    * @zh 是否允许按 `ESC` 键关闭弹出框。
    * @en Whether to allow close the popup by pressing `ESC`.
-   * @defaultValue false
    */
   escToClose?: boolean;
   /**
    * @zh 是否在容器滚动时关闭弹出框
    * @en Whether to close the popup when the container is scrolled
-   * @defaultValue false
    * @version 2.34.0
    */
   containerScrollToClose?: boolean;
