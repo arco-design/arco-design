@@ -17,6 +17,7 @@ import MenuContext from './context';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 import useId from '../_util/hooks/useId';
+import { isObject } from '../_util/is';
 
 const DEFAULT_THEME: MenuProps['theme'] = 'light';
 
@@ -24,7 +25,6 @@ const defaultProps: MenuProps = {
   mode: 'vertical',
   selectable: true,
   ellipsis: true,
-  ellipsisText: '···',
 };
 
 function Menu(baseProps: MenuProps, ref) {
@@ -45,7 +45,6 @@ function Menu(baseProps: MenuProps, ref) {
     triggerProps,
     tooltipProps,
     ellipsis,
-    ellipsisText,
     accordion,
     autoOpen,
     autoScrollIntoView,
@@ -125,7 +124,9 @@ function Menu(baseProps: MenuProps, ref) {
       <>
         <div className={`${prefixCls}-inner`}>
           {mode === 'horizontal' && ellipsis !== false ? (
-            <OverflowWrap ellipsisText={ellipsisText}>{childrenList}</OverflowWrap>
+            <OverflowWrap ellipsisText={isObject(ellipsis) ? ellipsis.text : '···'}>
+              {childrenList}
+            </OverflowWrap>
           ) : (
             childrenList
           )}

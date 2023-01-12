@@ -67,14 +67,11 @@ export interface MenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
    * @defaultValue true
    * @version 2.24.0
    */
-  ellipsis?: boolean;
-  /**
-   * @zh 水平菜单溢出省略时显示的文本
-   * @en The text displayed when the horizontal menu overflows
-   * @defaultValue ···
-   * @version 2.44.0
-   */
-  ellipsisText?: string;
+  ellipsis?:
+    | boolean
+    | {
+        text?: string;
+      };
   /**
    * @zh 是否自动滚动选中项目到可见区域
    * @en Whether to automatically scroll the selected item to the visible area

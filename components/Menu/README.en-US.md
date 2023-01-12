@@ -18,16 +18,15 @@ A component to organize, arrange, and display a list of options.
 |autoOpen|Whether to expand all multi-level menus by default|boolean |`-`|-|
 |autoScrollIntoView|Whether to automatically scroll the selected item to the visible area|boolean |`-`|-|
 |collapse|Whether to collapse the menu horizontally|boolean |`-`|-|
-|ellipsis|Whether the horizontal menu automatically collapses when it overflows|boolean |`true`|2.24.0|
 |hasCollapseButton|Whether built-in folding button|boolean |`-`|-|
 |selectable|Whether is the menu item selectable|boolean |`true`|-|
 |levelIndent|Indentation between levels|number |`-`|-|
-|ellipsisText|The text displayed when the horizontal menu overflows|string |`···`|2.44.0|
 |mode|Mode of Menu|'vertical' \| 'horizontal' \| 'pop' \| 'popButton' |`vertical`|-|
 |theme|Theme of Menu|'light' \| 'dark' |`light`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |defaultOpenKeys|The initially opened menu item's key array|string[] |`-`|-|
 |defaultSelectedKeys|The initially selected menu item's key array|string[] |`-`|-|
+|ellipsis|Whether the horizontal menu automatically collapses when it overflows|\| boolean\| {text?: string;} |`true`|2.24.0|
 |icons|Customize icons|{horizontalArrowDown?: ReactNode \| null;popArrowRight?: ReactNode \| null;collapseDefault?: ReactNode \| null;collapseActive?: ReactNode \| null;} |`-`|-|
 |openKeys|Opened menu item's key array|string[] |`-`|-|
 |scrollConfig|Scroll to the configuration item in the visible area and receive all the parameters of[scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)|{ [key: string]: any } |`-`|-|
