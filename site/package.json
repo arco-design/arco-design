@@ -22,8 +22,8 @@
     "parallax-js": "^3.1.0",
     "path-to-regexp": "^1.8.0",
     "react-color": "^2.19.3",
-    "react-dnd": "^11.1.3",
-    "react-dnd-html5-backend": "^11.1.3",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-easy-crop": "^3.3.3",
     "react-redux": "^7.2.2",
     "react-resizable": "^3.0.0",
@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/animejs": "^3.1.4",
     "@types/aos": "^3.0.4",
+    "dnd-core": "^16.0.1",
     "prism-themes": "^1.5.0",
     "prismjs": "^1.23.0",
     "webpack-bundle-analyzer": "^3.6.0",
