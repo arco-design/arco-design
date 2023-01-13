@@ -29,6 +29,17 @@
     }
   }
 
+  &-has-content &-title {
+    margin-bottom: 0;
+    font-weight: @font-weight-500;
+  }
+
+  &-inner-content {
+    margin-top: @popconfirm-margin-content-top;
+    margin-bottom: @popconfirm-margin-content-bottom;
+    padding-left: @popconfirm-size-title-icon + @popconfirm-margin-icon-right;
+  }
+
   .@{popconfirm-prefix-cls}-btn {
     text-align: right;
 
@@ -45,6 +56,11 @@
         margin-left: @popconfirm-margin-icon-right;
         margin-right: 0;
       }
+    }
+
+    &-inner-content {
+      padding-left: 0;
+      padding-right: @popconfirm-size-title-icon + @popconfirm-margin-icon-right;
     }
 
     &-btn {

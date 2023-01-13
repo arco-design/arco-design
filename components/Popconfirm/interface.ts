@@ -37,6 +37,12 @@ export interface PopconfirmProps {
    */
   title?: ReactNode;
   /**
+   * @zh 内容
+   * @en Content of Popconfirm
+   * @version 2.44.0
+   */
+  content?: ReactNode;
+  /**
    * @zh 是否禁用
    * @en whether to disabled
    * @version 2.11.0

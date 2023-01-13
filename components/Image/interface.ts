@@ -233,7 +233,6 @@ export interface ImagePreviewActionProps extends HTMLAttributes<HTMLDivElement> 
   /**
    * @zh 是否禁用
    * @en Whether disabled
-   * @defaultValue false
    */
   disabled?: boolean;
 }
