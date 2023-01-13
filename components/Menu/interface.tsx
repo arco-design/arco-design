@@ -67,7 +67,11 @@ export interface MenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
    * @defaultValue true
    * @version 2.24.0
    */
-  ellipsis?: boolean;
+  ellipsis?:
+    | boolean
+    | {
+        text?: ReactNode;
+      };
   /**
    * @zh 是否自动滚动选中项目到可见区域
    * @en Whether to automatically scroll the selected item to the visible area

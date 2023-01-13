@@ -18,7 +18,6 @@
 |autoOpen|默认展开所有多级菜单|boolean |`-`|-|
 |autoScrollIntoView|是否自动滚动选中项目到可见区域|boolean |`-`|-|
 |collapse|是否水平折叠收起菜单|boolean |`-`|-|
-|ellipsis|水平菜单是否自动溢出省略|boolean |`true`|2.24.0|
 |hasCollapseButton|是否内置折叠按钮|boolean |`-`|-|
 |selectable|菜单选项是否可选|boolean |`true`|-|
 |levelIndent|层级之间的缩进量|number |`-`|-|
@@ -27,6 +26,7 @@
 |className|节点类名|string \| string[] |`-`|-|
 |defaultOpenKeys|初始展开的子菜单 key 数组|string[] |`-`|-|
 |defaultSelectedKeys|初始选中的菜单项 key 数组|string[] |`-`|-|
+|ellipsis|水平菜单是否自动溢出省略|\| boolean\| {text?: ReactNode;} |`true`|2.24.0|
 |icons|用于定制图标|{horizontalArrowDown?: ReactNode \| null;popArrowRight?: ReactNode \| null;collapseDefault?: ReactNode \| null;collapseActive?: ReactNode \| null;} |`-`|-|
 |openKeys|展开的子菜单 key 数组（受控模式）|string[] |`-`|-|
 |scrollConfig|滚动到可见区域的配置项，接收所有[scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)的参数|{ [key: string]: any } |`-`|-|

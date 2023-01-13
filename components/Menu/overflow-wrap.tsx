@@ -18,11 +18,12 @@ function translatePxToNumber(str): number {
 }
 
 interface OverflowWrapProps {
+  ellipsisText?: ReactNode;
   children: ReactNode;
 }
 
 const OverflowWrap = (props: OverflowWrapProps) => {
-  const { children } = props;
+  const { children, ellipsisText = '···' } = props;
   const { prefixCls } = useContext(MenuContext);
 
   const refUl = useRef(null);
@@ -89,7 +90,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   const renderOverflowSubMenu = (children, isMirror = false) => {
     return (
       <SubMenu
-        title={<span>···</span>}
+        title={<span>{ellipsisText}</span>}
         key={`arco-menu-overflow-sub-menu${isMirror ? '-mirror' : ''}`}
         className={isMirror ? overflowSubMenuMirrorClass : overflowSubMenuClass}
         {...props}
