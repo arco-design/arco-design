@@ -55,13 +55,13 @@ export default () => {
 // /src/demo/index.js
 /**
  * @file
- * @name 组将名，例如：EmployeeSelect
+ * @title 组将名，例如：EmployeeSelect
  * @memberOf 组件类型，例如：数据输入
  * @description 描述你的组件
  */
 
 /**
- * @name 基本用法
+ * @title 基本用法
  * @description 描述你的例子
  */
 export { default as Basic } from './basic';

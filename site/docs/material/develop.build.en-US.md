@@ -57,13 +57,13 @@ In the Demo entry file, add a material description and a demo description. This 
 // /src/demo/index.js
 /**
  * @file
- * @name The name of the group, for example: EmployeeSelect
+ * @title The name of the group, for example: EmployeeSelect
  * @memberOf component type, for example: data input
  * @description describes your component
  */
 
 /**
- * @name basic usage
+ * @title basic usage
  * @description describe your example
  */
 export {default as Basic} from'./basic';

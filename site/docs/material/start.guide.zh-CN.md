@@ -113,19 +113,19 @@ Demo 的书写位置位于 `/src/demo` 目录下，每个示例应对应一个�
 ```javascript
  /**
  * @file
- * @name CloudIcon
+ * @title CloudIcon
  * @memberOf 通用
  * @description 字节云图标
  */
 
 /**
- * @name 基本应用
+ * @title 基本应用
  * @description `CloudIcon` 示例
  */
 export { default as Basic } from './basic';
 
 /**
- * @name 所有的Icon
+ * @title 所有的Icon
  * @description `CloudIcon` 所包含的所有图标
  */
 export { default as AllIcon } from './icon';

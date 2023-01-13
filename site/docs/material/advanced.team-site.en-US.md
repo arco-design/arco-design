@@ -298,14 +298,14 @@ export default () => {
 
 /**
  * @file
- * @name ComponentOne
+ * @title ComponentOne
  * @memberOf component type, for example: data input
  * @description Describe your component.
  * @author Material author
  */
 
 /**
- * @name basic usage
+ * @title basic usage
  * @description describe your example
  */
 export {default as Basic} from'./basic';
@@ -319,14 +319,14 @@ export {default as Basic} from'./basic';
 
 /**
  * @file
- * @name function name
+ * @title function name
  * @memberOf function classification, for example: array processing
  * @description describes your function
  */
 import add from'../../../src/add';
 
 /**
- * @name basic usage
+ * @title basic usage
  * @description describe your example
  */
 export const basic = {
@@ -387,7 +387,7 @@ export interface ComponentOneProps {
 ```jsx
 /**
  * @file
- * @name
+ * @title
  * zh-CN: component name
  * en-US: Name of Component
  *
@@ -401,7 +401,7 @@ export interface ComponentOneProps {
  */
 
 /**
- * @name
+ * @title
  * zh-CN: The title of this demo
  * en-US: Title of this demo
  *

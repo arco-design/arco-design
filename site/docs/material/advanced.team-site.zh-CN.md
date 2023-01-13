@@ -296,14 +296,14 @@ export default () => {
 
 /**
  * @file
- * @name ComponentOne
+ * @title ComponentOne
  * @memberOf 组件类型，例如：数据输入
  * @description 描述你的组件。
  * @author 物料作者
  */
 
 /**
- * @name 基本用法
+ * @title 基本用法
  * @description 描述你的例子
  */
 export { default as Basic } from './basic';
@@ -317,14 +317,14 @@ export { default as Basic } from './basic';
 
 /**
  * @file
- * @name 函数名称
+ * @title 函数名称
  * @memberOf 函数分类，例如：数组处理
  * @description 描述你的函数
  */
 import add from '../../../src/add';
 
 /**
- * @name 基本用法
+ * @title 基本用法
  * @description 描述你的例子
  */
 export const basic = {
@@ -384,7 +384,7 @@ export interface ComponentOneProps {
 ```jsx
 /**
  * @file
- * @name
+ * @title
  * zh-CN: 组件名
  * en-US: Name of Component
  *
@@ -398,7 +398,7 @@ export interface ComponentOneProps {
  */
 
 /**
- * @name
+ * @title
  * zh-CN: 此 Demo 的标题
  * en-US: Title of this demo
  *

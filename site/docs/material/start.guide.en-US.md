@@ -115,19 +115,19 @@ The writing location of Demo is in the `/src/demo` directory, and each example s
 ```javascript
  /**
  * @file
- * @name CloudIcon
+ * @title CloudIcon
  * @memberOf general
  * @description byte cloud icon
  */
 
 /**
- * @name basic application
+ * @title basic application
  * @description `CloudIcon` example
  */
 export {default as Basic} from'./basic';
 
 /**
- * @name all icons
+ * @title all icons
  * @description `CloudIcon` includes all icons
  */
 export {default as AllIcon} from'./icon';
