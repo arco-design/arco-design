@@ -18,7 +18,7 @@ import { TimePicker } from '@arco-design/web-react';
 
 const App = () => {
   return (
-    <TimePicker style={{ width: 194, }} />
+    <TimePicker style={{ width: 194 }} />
   );
 };
 
