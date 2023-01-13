@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🆕 Feature
+
+- `InputTag` adds the `tokenSeparators` property to support automatic word segmentation.([#1720](https://github.com/arco-design/arco-design/pull/1720))
+
 ## 2.41.0
 
 2022-10-28

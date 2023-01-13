@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🆕 功能升级
+
+- `Popconfirm` 支持 `content` 属性([#1714](https://github.com/arco-design/arco-design/pull/1714))
+
 ## 2.40.2
 
 2022-09-30

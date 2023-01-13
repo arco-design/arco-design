@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🆕 Feature
+
+- `Form` supports to get the verification information of the specified field through `useFormState`, verification status([#1723](https://github.com/arco-design/arco-design/pull/1723))
+
 ## 2.43.0
 
 2022-12-23

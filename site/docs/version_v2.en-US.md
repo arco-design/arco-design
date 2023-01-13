@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.44.0
+
+2023-01-13
+
+### 🆕 Feature
+
+- `Form` supports to get the verification information of the specified field through `useFormState`, verification status([#1723](https://github.com/arco-design/arco-design/pull/1723))
+- `TimePicker` support set `triggerElement=null` to use panel only.([#1721](https://github.com/arco-design/arco-design/pull/1721))
+- `InputTag` adds the `tokenSeparators` property to support automatic word segmentation.([#1720](https://github.com/arco-design/arco-design/pull/1720))
+- `Popconfirm` supports `content` property([#1714](https://github.com/arco-design/arco-design/pull/1714))
+- Menu property `ellipsis` support `{ text: ReactNode }` to customize the overflow submenu title.([#1700](https://github.com/arco-design/arco-design/pull/1700))
+
+### 🐛 BugFix
+
+- Fix the bug that the `Notification` component occasionally updates the timer after the delay.([#1716](https://github.com/arco-design/arco-design/pull/1716))
+
+### 💅 Style
+
+- Fix `Table` component summary row style error when `fixed=top`.([#1719](https://github.com/arco-design/arco-design/pull/1719))
+
 ## 2.43.2
 
 2023-01-06

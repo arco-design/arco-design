@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🐛 BugFix
+
+- Fix the bug that the `Notification` component occasionally updates the timer after the delay.([#1716](https://github.com/arco-design/arco-design/pull/1716))
+
 ## 2.40.0
 
 2022-09-16

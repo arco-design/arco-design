@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🆕 Feature
+
+- `TimePicker` support set `triggerElement=null` to use panel only.([#1721](https://github.com/arco-design/arco-design/pull/1721))
+
 ## 2.43.0
 
 2022-12-23

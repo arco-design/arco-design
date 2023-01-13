@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 💅 Style
+
+- Fix `Table` component summary row style error when `fixed=top`.([#1719](https://github.com/arco-design/arco-design/pull/1719))
+
 ## 2.42.0
 
 2022-11-25

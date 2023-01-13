@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🆕 Feature
+
+- Menu property `ellipsis` support `{ text: ReactNode }` to customize the overflow submenu title.([#1700](https://github.com/arco-design/arco-design/pull/1700))
+
 ## 2.41.1
 
 2022-11-04

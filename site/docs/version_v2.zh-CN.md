@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.44.0
+
+2023-01-13
+
+### 🆕 功能升级
+
+- `Form` 支持通过 `useFormState` 获取指定字段的校验信息，校验状态([#1723](https://github.com/arco-design/arco-design/pull/1723))
+- `TimePicker` 组件支持设置 `triggerElement=null` 只使用面板。([#1721](https://github.com/arco-design/arco-design/pull/1721))
+- `InputTag` 组件新增 `tokenSeparators` 属性以支持自动分词。([#1720](https://github.com/arco-design/arco-design/pull/1720))
+- `Popconfirm` 支持 `content` 属性([#1714](https://github.com/arco-design/arco-design/pull/1714))
+- `Menu` 组件 `ellipsis` 属性支持传入 `{ text: ReactNode }` 属性以自定义溢出文本。([#1700](https://github.com/arco-design/arco-design/pull/1700))
+
+### 🐛 问题修复
+
+- 修复 `Notification` 组件偶现更新延迟后定时器错乱的 bug([#1716](https://github.com/arco-design/arco-design/pull/1716))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件总结行在 `fixed=top` 时有问题的 bug。([#1719](https://github.com/arco-design/arco-design/pull/1719))
+
 ## 2.43.2
 
 2023-01-06

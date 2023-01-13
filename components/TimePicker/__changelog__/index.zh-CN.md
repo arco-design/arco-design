@@ -1,3 +1,11 @@
+## 2.44.0
+
+2023-01-13
+
+### 🆕 功能升级
+
+- `TimePicker` 组件支持设置 `triggerElement=null` 只使用面板。([#1721](https://github.com/arco-design/arco-design/pull/1721))
+
 ## 2.43.0
 
 2022-12-23
