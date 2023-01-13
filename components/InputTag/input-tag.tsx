@@ -28,6 +28,10 @@ import fillNBSP from '../_util/fillNBSP';
 const CSS_TRANSITION_DURATION = 300;
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
 
+// 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
+// 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
+const THRESHOLD_TOKEN_SEPARATOR_TRIGGER = 100;
+
 const keepFocus = (e) => {
   e.target.tagName !== 'INPUT' && e.preventDefault();
 };
@@ -108,6 +112,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     dragToSort,
     icon,
     suffix,
+    tokenSeparators,
     validate,
     renderTag,
     tagClassName,
@@ -126,7 +131,8 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
   const prefixCls = getPrefixCls('input-tag');
   const size = 'size' in props ? props.size : ctxSize;
 
-  const inputRef = useRef<ElementRef<typeof InputComponent>>();
+  const refInput = useRef<ElementRef<typeof InputComponent>>();
+  const refTSLastSeparateTriggered = useRef<number>(null);
 
   const [focused, setFocused] = useState(false);
   const [value, setValue] = useMergeValue<ObjectValueType[]>([], {
@@ -143,8 +149,8 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     ref,
     () => {
       return {
-        blur: inputRef.current && inputRef.current.blur,
-        focus: inputRef.current && inputRef.current.focus,
+        blur: refInput.current?.blur,
+        focus: refInput.current?.focus,
       };
     },
     []
@@ -240,6 +246,33 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     );
   };
 
+  const handleTokenSeparators = (str: string): boolean => {
+    let hasSeparator = false;
+
+    if (isArray(tokenSeparators) && tokenSeparators.length) {
+      const rawSplitText = str.split(new RegExp(`[${tokenSeparators.join('')}]`));
+      if (rawSplitText.length > 1) {
+        // remove empty string
+        const splitText = rawSplitText.filter((str) => str);
+        if (splitText.length) {
+          valueChangeHandler(
+            value.concat(
+              splitText.map((text) => ({
+                value: text,
+                label: text,
+                closable: true,
+              }))
+            ),
+            'add'
+          );
+          hasSeparator = true;
+        }
+      }
+    }
+
+    return hasSeparator;
+  };
+
   const clearIcon =
     allowClear && !disabled && !readOnly && value.length ? (
       <IconHover
@@ -250,7 +283,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           e.stopPropagation();
           valueChangeHandler([], 'clear');
           if (!focused) {
-            inputRef.current && inputRef.current.focus();
+            refInput.current?.focus();
           }
           onClear && onClear();
         }}
@@ -293,7 +326,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           size={size}
           disabled={disableInputComponent}
           readOnly={readOnly}
-          ref={inputRef}
+          ref={refInput}
           autoFocus={autoFocus}
           placeholder={!value.length ? placeholder : ''}
           prefixCls={`${prefixCls}-input`}
@@ -302,34 +335,49 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           }}
           onPressEnter={async (e) => {
             inputValue && e.preventDefault();
-            onPressEnter && onPressEnter(e);
+            onPressEnter?.(e);
             await tryAddInputValueToTag();
           }}
           onFocus={(e) => {
             if (!disableInputComponent && !readOnly) {
               setFocused(true);
-              onFocus && onFocus(e);
+              onFocus?.(e);
             }
           }}
           onBlur={async (e) => {
             setFocused(false);
-            onBlur && onBlur(e);
+            onBlur?.(e);
             if (saveOnBlur) {
               await tryAddInputValueToTag();
             }
             setInputValue('');
           }}
           value={inputValue}
-          onChange={(v, e) => {
-            setInputValue(v);
+          onChange={(value, event) => {
+            const inputType = event.nativeEvent.inputType;
+            if (
+              (inputType === 'insertFromPaste' &&
+                Date.now() - refTSLastSeparateTriggered.current <
+                  THRESHOLD_TOKEN_SEPARATOR_TRIGGER) ||
+              handleTokenSeparators(value)
+            ) {
+              setInputValue('');
+            } else {
+              setInputValue(value);
+            }
             // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
-            onInputChange && onInputChange(v, e);
+            onInputChange?.(value, event);
           }}
           onKeyDown={(event) => {
             hotkeyHandler(event as any);
-            onKeyDown && onKeyDown(event);
+            onKeyDown?.(event);
           }}
-          onPaste={onPaste}
+          onPaste={(event) => {
+            if (handleTokenSeparators(event.clipboardData.getData('text'))) {
+              refTSLastSeparateTriggered.current = Date.now();
+            }
+            onPaste?.(event);
+          }}
         />
       </CSSTransition>
     );
@@ -356,7 +404,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         focused && keepFocus(event);
       }}
       onClick={(e) => {
-        !focused && inputRef.current && inputRef.current.focus();
+        !focused && refInput.current?.focus();
         if (onClick) {
           onClick(e);
         }

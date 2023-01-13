@@ -31,6 +31,7 @@ An input box which will display your input as tags.
 |defaultValue|To set default value|T[] |`-`|-|
 |icon|Custom icons|{ removeIcon?: ReactNode; clearIcon?: ReactNode } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
+|tokenSeparators|Separator used to tokenize|string[] |`-`|2.44.0|
 |validate|Function to check user's input, which is triggered when `Enter` is pressed|(inputValue: string, values: T[]) =&gt; boolean \| Promise&lt;boolean&gt; \| T \| Promise&lt;T&gt; |`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|return type T and `Promise<T>` in 2.37.0|
 |value|To set value|T[] |`-`|-|
 |onBlur|Callback when input is blurred|(e) => void |`-`|-|

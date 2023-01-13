@@ -741,6 +741,60 @@ exports[`renders InputTag/demo/size.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders InputTag/demo/tokenSeparator.md correctly 1`] = `
+<div>
+  <div
+    class="arco-typography"
+  >
+    Beijing,Shenzhen|Nanjing/Xi'an
+    <span
+      aria-label="复制"
+      class="arco-typography-operation-copy"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-copy"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="M20 6h18a2 2 0 0 1 2 2v22M8 16v24c0 1.105.891 2 1.996 2h20.007A1.99 1.99 0 0 0 32 40.008V15.997A1.997 1.997 0 0 0 30 14H10a2 2 0 0 0-2 2Z"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+    style="width:350px"
+  >
+    <div
+      class="arco-input-tag-view"
+    >
+      <div
+        class="arco-input-tag-inner"
+      >
+        <input
+          autocomplete="off"
+          class="arco-input-tag-input arco-input-tag-input-size-default"
+          placeholder="Paste text here"
+          value=""
+        />
+        <span
+          class="arco-input-tag-input-mirror"
+        >
+          Paste text here
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders InputTag/demo/validate.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"
