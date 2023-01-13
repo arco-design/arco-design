@@ -118,6 +118,9 @@ class Notice extends Component<NoticeProps, {}> {
   };
 
   onMouseLeave = () => {
+    // An update operation may be triggered after mouseEnter to start a new timer.
+    // mouseEnter(clear) => clickBtn => update(new timer) => mouseLeave
+    this.removeTimer();
     this.startTimer();
   };
 
