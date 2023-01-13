@@ -86,3 +86,7 @@ export function isDayjs(time): time is Dayjs {
       time._isAMomentObject) // 兼容 moment 的验证
   );
 }
+
+export function isBoolean(value: any): value is Boolean {
+  return typeof value === 'boolean';
+}

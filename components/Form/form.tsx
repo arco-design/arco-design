@@ -130,8 +130,9 @@ const Form = <
     },
     onSubmitFailed: props.onSubmitFailed,
     onSubmit: (values) => {
-      props.onSubmit && props.onSubmit(values);
+      const returnValue = props.onSubmit && props.onSubmit(values);
       formProviderCtx.onFormSubmit && formProviderCtx.onFormSubmit(props.id, values);
+      return returnValue;
     },
   });
 

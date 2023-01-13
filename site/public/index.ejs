@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://unpkg.byted-static.com/latest/byted/arco-config/assets/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= title %></title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta property="og:site_name" content="Arco Design" />
+    <meta
+      property="og:image"
+      content="https://sf3-cdn-tos.douyinstatic.com/obj/eden-cn/fzthvoaeh7pbrnuhf/arco.png"
+    />
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="640" />
+    <script src="https://unpkg.byted-static.com/latest/byted/arco-config/index.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="shortcut icon" type="image/x-icon"
-    href="https://unpkg.byted-static.com/latest/byted/arco-config/assets/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>
-    <%= title %>
-  </title>
-  <meta property="og:site_name" content="Arco Design" />
-  <meta property="og:image" content="https://sf3-cdn-tos.douyinstatic.com/obj/eden-cn/fzthvoaeh7pbrnuhf/arco.png" />
-  <meta property="og:image:width" content="640" />
-  <meta property="og:image:height" content="640" />
-  <script src="https://unpkg.byted-static.com/latest/byted/arco-config/index.js"></script>
+    <script>
+      const VERSION = '2.23.2';
+      window.CODEPEN_ENABLE = true;
+      window.CODEPEN_CSS_EXTERNAL = ['https://unpkg.com/@arco-design/web-react/dist/css/arco.css'];
+      window.CODEPEN_JS_EXTERNAL = [
+        'https://unpkg.com/react@16.x/umd/react.development.js',
+        'https://unpkg.com/react-dom@16.x/umd/react-dom.development.js',
+        'https://unpkg.com/dayjs@1.x/dayjs.min.js',
+        'https://unpkg.com/@arco-design/web-react/dist/arco.min.js',
+        'https://unpkg.com/@arco-design/web-react/dist/arco-icon.min.js',
+      ];
+    </script>
 
-  <script>
-    const VERSION = '2.23.2';
-    window.CODEPEN_ENABLE = true;
-    window.CODEPEN_CSS_EXTERNAL = [
-      'https://unpkg.com/@arco-design/web-react/dist/css/arco.css',
-    ];
-    window.CODEPEN_JS_EXTERNAL = [
-      'https://unpkg.com/react@16.x/umd/react.development.js',
-      'https://unpkg.com/react-dom@16.x/umd/react-dom.development.js',
-      'https://unpkg.com/dayjs@1.x/dayjs.min.js',
-      'https://unpkg.com/@arco-design/web-react/dist/arco.min.js',
-      'https://unpkg.com/@arco-design/web-react/dist/arco-icon.min.js',
-    ];
-  </script>
-
-  <script>
-    (function (win, export_obj) {
-      win['TeaAnalyticsObject'] = export_obj;
-      if (!win[export_obj]) {
-        function _collect() {
-          _collect.q.push(arguments);
+    <script>
+      (function (win, export_obj) {
+        win['TeaAnalyticsObject'] = export_obj;
+        if (!win[export_obj]) {
+          function _collect() {
+            _collect.q.push(arguments);
+          }
+          _collect.q = _collect.q || [];
+          win[export_obj] = _collect;
         }
-        _collect.q = _collect.q || [];
-        win[export_obj] = _collect;
-      }
-      win[export_obj].l = +new Date();
-    })(window, 'collectEvent');
-  </script>
-  <script async src="https://lf3-cdn-tos.bytescm.com/obj/static/log-sdk/collect/collect-autotrack.js"></script>
-</head>
+        win[export_obj].l = +new Date();
+      })(window, 'collectEvent');
+    </script>
+    <script
+      async
+      src="https://lf3-cdn-tos.bytescm.com/obj/static/log-sdk/collect/collect-autotrack.js"
+    ></script>
+  </head>
 
-<body>
-  <!-- <script src="https://unpkg.com/dayjs@1.x/dayjs.min.js"></script>
+  <body>
+    <!-- <script src="https://unpkg.com/dayjs@1.x/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs/plugin/advancedFormat"></script>
     <script src="https://unpkg.com/dayjs/plugin/customParseFormat"></script> -->
-  <div id="root"></div>
-</body>
-
+    <div id="root"></div>
+  </body>
 </html>

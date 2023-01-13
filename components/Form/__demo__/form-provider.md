@@ -44,7 +44,7 @@ const defaultData = [...new Array(5)].map((_, index) => {
 function ModalForm(props) {
   return (
     <div>
-      <Modal visible title="Add" footer={null}>
+      <Modal visible title="Add" footer={null} onCancel={props.onCancel}>
         <Form id="modalForm" autoComplete="off">
           <Form.Item field="email" label="Email">
             <Input />
