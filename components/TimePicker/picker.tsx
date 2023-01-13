@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState, ReactElement } from 'react';
 import { Dayjs } from 'dayjs';
+import cs from '../_util/classNames';
 import Trigger from '../Trigger';
 import { PickerProps, CalendarValue } from './interface';
 import { isArray, isDayjs } from '../_util/is';
@@ -183,7 +184,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     }
   }
 
-  function renderPopup() {
+  function renderPopup(panelOnly?: boolean) {
     const vs = isRangePicker
       ? isArray(valueShow) && valueShow.length
         ? valueShow
@@ -191,7 +192,11 @@ const Picker = (baseProps: InnerPickerProps) => {
       : valueShow || mergedValue;
 
     return (
-      <div className={`${prefixCls}-container`} onClick={() => focusInput()}>
+      <div
+        className={cs(`${prefixCls}-container`, panelOnly ? className : '')}
+        style={panelOnly ? style : {}}
+        onClick={() => focusInput()}
+      >
         {React.cloneElement(picker as ReactElement, {
           ...props,
           format,
@@ -291,43 +296,49 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   return (
     <PickerContext.Provider value={{ utcOffset, timezone }}>
-      <Trigger
-        popup={() => renderPopup()}
-        trigger="click"
-        clickToClose={false}
-        position={position}
-        disabled={disabled}
-        popupAlign={{ bottom: 4 }}
-        getPopupContainer={getPopupContainer}
-        onVisibleChange={onVisibleChange}
-        popupVisible={mergedPopupVisible}
-        classNames="slideDynamicOrigin"
-        unmountOnExit={!!unmountOnExit}
-        {...triggerProps}
-      >
-        {triggerElement ||
-          (isRangePicker ? (
-            <InputRange
-              {...baseInputProps}
-              ref={refInput}
-              placeholder={rangePickerPlaceholder as string[]}
-              value={(isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]}
-              onChange={onChangeInput}
-              inputValue={inputValue}
-              changeFocusedInputIndex={changeFocusedInputIndex}
-              focusedInputIndex={focusedInputIndex}
-            />
-          ) : (
-            <Input
-              {...baseInputProps}
-              ref={refInput}
-              placeholder={inputPlaceHolder}
-              value={(valueShow || mergedValue) as Dayjs}
-              inputValue={inputValue as string}
-              onChange={onChangeInput}
-            />
-          ))}
-      </Trigger>
+      {triggerElement === null ? (
+        renderPopup(true)
+      ) : (
+        <Trigger
+          popup={() => renderPopup()}
+          trigger="click"
+          clickToClose={false}
+          position={position}
+          disabled={disabled}
+          popupAlign={{ bottom: 4 }}
+          getPopupContainer={getPopupContainer}
+          onVisibleChange={onVisibleChange}
+          popupVisible={mergedPopupVisible}
+          classNames="slideDynamicOrigin"
+          unmountOnExit={!!unmountOnExit}
+          {...triggerProps}
+        >
+          {triggerElement ||
+            (isRangePicker ? (
+              <InputRange
+                {...baseInputProps}
+                ref={refInput}
+                placeholder={rangePickerPlaceholder as string[]}
+                value={
+                  (isArray(valueShow) && valueShow.length ? valueShow : mergedValue) as Dayjs[]
+                }
+                onChange={onChangeInput}
+                inputValue={inputValue}
+                changeFocusedInputIndex={changeFocusedInputIndex}
+                focusedInputIndex={focusedInputIndex}
+              />
+            ) : (
+              <Input
+                {...baseInputProps}
+                ref={refInput}
+                placeholder={inputPlaceHolder}
+                value={(valueShow || mergedValue) as Dayjs}
+                inputValue={inputValue as string}
+                onChange={onChangeInput}
+              />
+            ))}
+        </Trigger>
+      )}
     </PickerContext.Provider>
   );
 };
