@@ -99,6 +99,12 @@ export interface InputTagProps<T = any> {
    */
   icon?: { removeIcon?: ReactNode; clearIcon?: ReactNode };
   /**
+   * @zh 触发自动分词的分隔符
+   * @en Separator used to tokenize
+   * @version 2.44.0
+   */
+  tokenSeparators?: string[];
+  /**
    * @zh 校验函数，默认在 按下enter时候触发。
    * @en Function to check user's input, which is triggered when `Enter` is pressed
    * @defaultValue (inputValue, values) => inputValue && values.every((item) => item !== inputValue)

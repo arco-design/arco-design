@@ -97,4 +97,13 @@ describe('InputTag', () => {
       JSON.stringify(defaultValue.map(({ value }) => value).concat({ word: inputValue }))
     );
   });
+
+  it('tokenSeparators', async () => {
+    const onChange = jest.fn();
+    const wrapper = render(<InputTag tokenSeparators={[',', ';', '\n']} onChange={onChange} />);
+    const eleInput = wrapper.querySelector('input');
+
+    fireEvent.change(eleInput, { target: { value: 'a,b' } });
+    expect(onChange.mock.calls[0][0]).toEqual(['a', 'b']);
+  });
 });

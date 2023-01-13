@@ -31,6 +31,7 @@
 |defaultValue|默认值|T[] |`-`|-|
 |icon|自定义图标|{ removeIcon?: ReactNode; clearIcon?: ReactNode } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
+|tokenSeparators|触发自动分词的分隔符|string[] |`-`|2.44.0|
 |validate|校验函数，默认在 按下enter时候触发。|(inputValue: string, values: T[]) =&gt; boolean \| Promise&lt;boolean&gt; \| T \| Promise&lt;T&gt; |`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|return type T and `Promise<T>` in 2.37.0|
 |value|控件值|T[] |`-`|-|
 |onBlur|失去焦点时候触发|(e) => void |`-`|-|
