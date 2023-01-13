@@ -4547,393 +4547,417 @@ exports[`renders Transfer/demo/show-search.md correctly 1`] = `
 `;
 
 exports[`renders Transfer/demo/simple.md correctly 1`] = `
-<div
-  class="arco-transfer arco-transfer-simple"
->
+<div>
   <div
-    class="arco-transfer-view arco-transfer-view-source"
+    style="margin-bottom:24px"
   >
-    <div
-      class="arco-transfer-view-header"
-    >
-      <span
-        class="arco-transfer-view-header-title"
-      >
-        <label
-          class="arco-checkbox"
-        >
-          <input
-            type="checkbox"
-          />
-          <span
-            class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
-          >
-            <div
-              class="arco-checkbox-mask"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-checkbox-mask-icon"
-                fill="currentColor"
-                focusable="false"
-                height="200"
-                viewBox="0 0 1024 1024"
-                width="200"
-              >
-                <path
-                  d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                  p-id="840"
-                />
-              </svg>
-            </div>
-          </span>
-          <span
-            class="arco-checkbox-text"
-          >
-            To-do list
-          </span>
-        </label>
-      </span>
-      <span
-        class="arco-transfer-view-header-unit"
-      >
-        5
-      </span>
-    </div>
-    <div
-      class="arco-list-wrapper arco-transfer-view-list"
+    <button
+      aria-checked="false"
+      class="arco-switch arco-switch-small arco-switch-type-circle"
+      role="switch"
+      style="margin-right:8px"
+      type="button"
     >
       <div
-        class="arco-list arco-list-default arco-list-no-border"
+        class="arco-switch-dot"
+      />
+    </button>
+    <span
+      class="arco-typography"
+    >
+      <code>
+        simple = { retainSelectedItems: false }
+      </code>
+    </span>
+  </div>
+  <div
+    class="arco-transfer arco-transfer-simple"
+  >
+    <div
+      class="arco-transfer-view arco-transfer-view-source"
+    >
+      <div
+        class="arco-transfer-view-header"
+      >
+        <span
+          class="arco-transfer-view-header-title"
+        >
+          <label
+            class="arco-checkbox"
+          >
+            <input
+              type="checkbox"
+            />
+            <span
+              class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+            >
+              <div
+                class="arco-checkbox-mask"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-checkbox-mask-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height="200"
+                  viewBox="0 0 1024 1024"
+                  width="200"
+                >
+                  <path
+                    d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                    p-id="840"
+                  />
+                </svg>
+              </div>
+            </span>
+            <span
+              class="arco-checkbox-text"
+            >
+              To-do list
+            </span>
+          </label>
+        </span>
+        <span
+          class="arco-transfer-view-header-unit"
+        >
+          5
+        </span>
+      </div>
+      <div
+        class="arco-list-wrapper arco-transfer-view-list"
       >
         <div
-          class="arco-list-content"
-          role="list"
+          class="arco-list arco-list-default arco-list-no-border"
         >
-          <li
-            class="arco-transfer-view-item"
+          <div
+            class="arco-list-content"
+            role="list"
           >
-            <label
-              class="arco-checkbox arco-transfer-view-item-content"
+            <li
+              class="arco-transfer-view-item"
             >
-              <input
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+              <label
+                class="arco-checkbox arco-transfer-view-item-content"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <input
+                  type="checkbox"
+                />
+                <span
+                  class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
+                  <div
+                    class="arco-checkbox-mask"
                   >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
-              >
-                Option 4
-              </span>
-            </label>
-          </li>
-          <li
-            class="arco-transfer-view-item"
-          >
-            <label
-              class="arco-checkbox arco-transfer-view-item-content"
+                    <svg
+                      aria-hidden="true"
+                      class="arco-checkbox-mask-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height="200"
+                      viewBox="0 0 1024 1024"
+                      width="200"
+                    >
+                      <path
+                        d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                        p-id="840"
+                      />
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="arco-checkbox-text"
+                >
+                  Option 4
+                </span>
+              </label>
+            </li>
+            <li
+              class="arco-transfer-view-item"
             >
-              <input
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+              <label
+                class="arco-checkbox arco-transfer-view-item-content"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <input
+                  type="checkbox"
+                />
+                <span
+                  class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
+                  <div
+                    class="arco-checkbox-mask"
                   >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
-              >
-                Option 5
-              </span>
-            </label>
-          </li>
-          <li
-            class="arco-transfer-view-item"
-          >
-            <label
-              class="arco-checkbox arco-transfer-view-item-content"
+                    <svg
+                      aria-hidden="true"
+                      class="arco-checkbox-mask-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height="200"
+                      viewBox="0 0 1024 1024"
+                      width="200"
+                    >
+                      <path
+                        d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                        p-id="840"
+                      />
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="arco-checkbox-text"
+                >
+                  Option 5
+                </span>
+              </label>
+            </li>
+            <li
+              class="arco-transfer-view-item"
             >
-              <input
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+              <label
+                class="arco-checkbox arco-transfer-view-item-content"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <input
+                  type="checkbox"
+                />
+                <span
+                  class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
+                  <div
+                    class="arco-checkbox-mask"
                   >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
-              >
-                Option 6
-              </span>
-            </label>
-          </li>
-          <li
-            class="arco-transfer-view-item"
-          >
-            <label
-              class="arco-checkbox arco-transfer-view-item-content"
+                    <svg
+                      aria-hidden="true"
+                      class="arco-checkbox-mask-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height="200"
+                      viewBox="0 0 1024 1024"
+                      width="200"
+                    >
+                      <path
+                        d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                        p-id="840"
+                      />
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="arco-checkbox-text"
+                >
+                  Option 6
+                </span>
+              </label>
+            </li>
+            <li
+              class="arco-transfer-view-item"
             >
-              <input
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+              <label
+                class="arco-checkbox arco-transfer-view-item-content"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <input
+                  type="checkbox"
+                />
+                <span
+                  class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
+                  <div
+                    class="arco-checkbox-mask"
                   >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
-              >
-                Option 7
-              </span>
-            </label>
-          </li>
-          <li
-            class="arco-transfer-view-item"
-          >
-            <label
-              class="arco-checkbox arco-transfer-view-item-content"
+                    <svg
+                      aria-hidden="true"
+                      class="arco-checkbox-mask-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height="200"
+                      viewBox="0 0 1024 1024"
+                      width="200"
+                    >
+                      <path
+                        d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                        p-id="840"
+                      />
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="arco-checkbox-text"
+                >
+                  Option 7
+                </span>
+              </label>
+            </li>
+            <li
+              class="arco-transfer-view-item"
             >
-              <input
-                type="checkbox"
-              />
-              <span
-                class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
+              <label
+                class="arco-checkbox arco-transfer-view-item-content"
               >
-                <div
-                  class="arco-checkbox-mask"
+                <input
+                  type="checkbox"
+                />
+                <span
+                  class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="arco-checkbox-mask-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height="200"
-                    viewBox="0 0 1024 1024"
-                    width="200"
+                  <div
+                    class="arco-checkbox-mask"
                   >
-                    <path
-                      d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
-                      p-id="840"
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="arco-checkbox-text"
-              >
-                Option 8
-              </span>
-            </label>
-          </li>
+                    <svg
+                      aria-hidden="true"
+                      class="arco-checkbox-mask-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height="200"
+                      viewBox="0 0 1024 1024"
+                      width="200"
+                    >
+                      <path
+                        d="M877.44815445 206.10060629a64.72691371 64.72691371 0 0 0-95.14856334 4.01306852L380.73381888 685.46812814 235.22771741 533.48933518a64.72691371 64.72691371 0 0 0-92.43003222-1.03563036l-45.82665557 45.82665443a64.72691371 64.72691371 0 0 0-0.90617629 90.61767965l239.61903446 250.10479331a64.72691371 64.72691371 0 0 0 71.19960405 15.14609778 64.33855261 64.33855261 0 0 0 35.08198741-21.23042702l36.24707186-42.71976334 40.5190474-40.77795556-3.36579926-3.49525333 411.40426297-486.74638962a64.72691371 64.72691371 0 0 0-3.88361443-87.64024149l-45.3088404-45.43829334z"
+                        p-id="840"
+                      />
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="arco-checkbox-text"
+                >
+                  Option 8
+                </span>
+              </label>
+            </li>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="arco-transfer-view arco-transfer-view-target"
-  >
     <div
-      class="arco-transfer-view-header"
-    >
-      <span
-        class="arco-transfer-view-header-title"
-      >
-        Selected list
-      </span>
-      <span
-        class="arco-transfer-view-header-unit"
-      >
-        3
-      </span>
-      <span
-        class="arco-icon-hover arco-transfer-view-icon-clear"
-        role="button"
-        tabindex="0"
-      >
-        <svg
-          aria-hidden="true"
-          class="arco-icon arco-icon-delete"
-          fill="none"
-          focusable="false"
-          stroke="currentColor"
-          stroke-width="4"
-          viewBox="0 0 48 48"
-        >
-          <path
-            d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
-          />
-        </svg>
-      </span>
-    </div>
-    <div
-      class="arco-list-wrapper arco-transfer-view-list"
+      class="arco-transfer-view arco-transfer-view-target"
     >
       <div
-        class="arco-list arco-list-default arco-list-no-border"
+        class="arco-transfer-view-header"
+      >
+        <span
+          class="arco-transfer-view-header-title"
+        >
+          Selected list
+        </span>
+        <span
+          class="arco-transfer-view-header-unit"
+        >
+          3
+        </span>
+        <span
+          class="arco-icon-hover arco-transfer-view-icon-clear"
+          role="button"
+          tabindex="0"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-delete"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M5 11h5.5m0 0v29a1 1 0 0 0 1 1h25a1 1 0 0 0 1-1V11m-27 0H16m21.5 0H43m-5.5 0H32m-16 0V7h16v4m-16 0h16M20 18v15m8-15v15"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="arco-list-wrapper arco-transfer-view-list"
       >
         <div
-          class="arco-list-content"
-          role="list"
+          class="arco-list arco-list-default arco-list-no-border"
         >
-          <li
-            class="arco-transfer-view-item"
+          <div
+            class="arco-list-content"
+            role="list"
           >
-            <span
-              class="arco-transfer-view-item-content"
+            <li
+              class="arco-transfer-view-item"
             >
-              Option 1
-            </span>
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-remove"
-              role="button"
-              tabindex="0"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-close"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
+              <span
+                class="arco-transfer-view-item-content"
               >
-                <path
-                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
-                />
-              </svg>
-            </span>
-          </li>
-          <li
-            class="arco-transfer-view-item"
-          >
-            <span
-              class="arco-transfer-view-item-content"
-            >
-              Option 2
-            </span>
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-remove"
-              role="button"
-              tabindex="0"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-close"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
+                Option 1
+              </span>
+              <span
+                class="arco-icon-hover arco-transfer-view-item-icon-remove"
+                role="button"
+                tabindex="0"
               >
-                <path
-                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
-                />
-              </svg>
-            </span>
-          </li>
-          <li
-            class="arco-transfer-view-item"
-          >
-            <span
-              class="arco-transfer-view-item-content"
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </li>
+            <li
+              class="arco-transfer-view-item"
             >
-              Option 3
-            </span>
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-remove"
-              role="button"
-              tabindex="0"
-            >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-close"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
+              <span
+                class="arco-transfer-view-item-content"
               >
-                <path
-                  d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
-                />
-              </svg>
-            </span>
-          </li>
+                Option 2
+              </span>
+              <span
+                class="arco-icon-hover arco-transfer-view-item-icon-remove"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </li>
+            <li
+              class="arco-transfer-view-item"
+            >
+              <span
+                class="arco-transfer-view-item-content"
+              >
+                Option 3
+              </span>
+              <span
+                class="arco-icon-hover arco-transfer-view-item-icon-remove"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </li>
+          </div>
         </div>
       </div>
     </div>

@@ -508,7 +508,9 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
             <span
               class="arco-tabs-header-title-text"
             >
-              tab 1
+              <div>
+                tab 1
+              </div>
             </span>
           </div>
           <div
@@ -520,7 +522,9 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
             <span
               class="arco-tabs-header-title-text"
             >
-              tab 2
+              <div>
+                tab 2
+              </div>
             </span>
           </div>
           <div
@@ -532,7 +536,9 @@ exports[`renders Tabs/demo/drag.md correctly 1`] = `
             <span
               class="arco-tabs-header-title-text"
             >
-              tab 3
+              <div>
+                tab 3
+              </div>
             </span>
           </div>
           <div

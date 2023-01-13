@@ -34,4 +34,6 @@ exports.client = (config) => {
     '/components/index.tsx',
     '/components/locale/',
   ];
+
+  config.transformIgnorePatterns = ['node_modules/(?!@?react-dnd|dnd-core)'];
 };
