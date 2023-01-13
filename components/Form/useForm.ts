@@ -24,17 +24,20 @@ export function getFormInstance<
     submit: store.submit,
     validate: store.validate,
     scrollToField: () => {},
+    getFieldsState: store.getFieldsState,
     getInnerMethods: (inner?: boolean): InnerMethodsReturnType<FormData, FieldValue, FieldKey> => {
       const methods = {} as InnerMethodsReturnType<FormData, FieldValue, FieldKey>;
       if (inner) {
         [
           'registerField',
           'registerWatcher',
+          'registerStateWatcher',
           'innerSetInitialValues',
           'innerSetInitialValue',
           'innerSetCallbacks',
           'innerSetFieldValue',
           'innerGetStore',
+          'innerCollectFormState',
         ].map((key) => {
           methods[key] = store[key];
         });

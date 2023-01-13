@@ -511,6 +511,7 @@ export type FormInstance<
   | 'clearFields'
   | 'submit'
   | 'validate'
+  | 'getFieldsState'
 > & {
   scrollToField: (field: FieldKey, options?: ScrollIntoViewOptions) => void;
   getInnerMethods: (inner?: boolean) => InnerMethodsReturnType<FormData, FieldValue, FieldKey>;
@@ -523,12 +524,14 @@ export type InnerMethodsReturnType<
 > = Pick<
   Store<FormData, FieldValue, FieldKey>,
   | 'registerField'
+  | 'registerStateWatcher'
   | 'registerWatcher'
   | 'innerSetInitialValues'
   | 'innerSetInitialValue'
   | 'innerSetCallbacks'
   | 'innerSetFieldValue'
   | 'innerGetStore'
+  | 'innerCollectFormState'
 >;
 
 export interface FormValidateFn<
@@ -611,3 +614,11 @@ export interface FormProviderProps {
     }
   ) => void;
 }
+
+export type FieldState<FieldValue = any> = {
+  errors: FieldError<FieldValue>[];
+  warnings: ReactNode[];
+  validateStatus: FormItemProps['validateStatus'] | undefined;
+  isSubmitting: boolean;
+  isTouched: boolean;
+};

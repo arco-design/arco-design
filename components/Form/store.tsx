@@ -6,7 +6,14 @@ import omit from 'lodash/omit';
 import { cloneDeep, set, iterativelyGetKeys } from './utils';
 import { isArray, isObject, isString } from '../_util/is';
 import Control from './control';
-import { FieldError, FormProps, ValidateFieldsErrors, KeyType, FormValidateFn } from './interface';
+import {
+  FieldError,
+  FormProps,
+  ValidateFieldsErrors,
+  FieldState,
+  KeyType,
+  FormValidateFn,
+} from './interface';
 import promisify from './promisify';
 
 export type DeepPartial<T> = T extends object
@@ -44,9 +51,16 @@ class Store<
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
 > {
+  // 是否正在提交
+  private isSubmitting: boolean = false;
+
   private registerFields: Control<FormData, FieldValue, FieldKey>[] = [];
 
+  // 所有 form item value 的变动，都会通知这里注册到的 watcher
   private registerWatchers: (() => void)[] = [];
+
+  // 所有 form item 内部 errors, validating, touched 状态的变化，都会通知这里注册到的 watcher
+  private registerStateWatchers: (() => void)[] = [];
 
   // 和formControl 的 touched属性不一样。 只要被改过的字段，这里就会存储。并且不会跟随formControl被卸载而清除。
   // reset 的时候清除
@@ -62,6 +76,12 @@ class Store<
 
   private notifyWatchers() {
     this.registerWatchers.forEach((item) => {
+      item();
+    });
+  }
+
+  private notifyStateWatchers() {
+    this.registerStateWatchers.forEach((item) => {
       item();
     });
   }
@@ -82,12 +102,25 @@ class Store<
     }
   }
 
+  // 告知 form 状态改变，进行状态收集
+  public innerCollectFormState = () => {
+    this.notifyStateWatchers();
+  };
+
   public innerSetCallbacks = (
     values: Pick<FormProps<FormData, FieldValue, FieldKey>, innerCallbackType> & {
       onValidateFail?: (errors: { [key in FieldKey]: FieldError<FieldValue> }) => void;
     }
   ) => {
     this.callbacks = values;
+  };
+
+  public registerStateWatcher = (item) => {
+    this.registerStateWatchers.push(item);
+
+    return () => {
+      this.registerStateWatchers = this.registerStateWatchers.filter((x) => x !== item);
+    };
   };
 
   public registerWatcher = (item) => {
@@ -428,16 +461,63 @@ class Store<
     }
   );
 
+  private toggleSubmitting = () => {
+    this.isSubmitting = !this.isSubmitting;
+    this.innerCollectFormState();
+  };
+
   public submit = () => {
+    this.toggleSubmitting();
     this.validate((errors, values) => {
-      if (!errors) {
-        const { onSubmit } = this.callbacks;
-        onSubmit && onSubmit(values);
+      let result;
+      const { onSubmit, onSubmitFailed } = this.callbacks;
+      if (!errors && onSubmit) {
+        result = onSubmit(values);
+      }
+      if (errors && onSubmitFailed) {
+        result = onSubmitFailed(errors);
+      }
+
+      if (result && result.then) {
+        // resolve 或者 reject， 都需要更新 submitting 的提交状态
+        result.then(this.toggleSubmitting, (error) => {
+          this.toggleSubmitting();
+          // 保持以前的逻辑
+          return Promise.reject(error);
+        });
       } else {
-        const { onSubmitFailed } = this.callbacks;
-        onSubmitFailed && onSubmitFailed(errors);
+        this.toggleSubmitting();
       }
     });
+  };
+
+  public getFieldsState = (fields?: FieldKey[]): { [key in FieldKey]?: FieldState<FieldValue> } => {
+    const result = {} as { [key in FieldKey]?: FieldState<FieldValue> };
+
+    const getItemState = (item) => {
+      if (!item) {
+        return null;
+      }
+      const error = item.getErrors();
+      return {
+        errors: error ? [error] : [],
+        warnings: item.getWarnings(),
+        validateStatus: item.getValidateStatus(),
+        isSubmitting: this.isSubmitting,
+        isTouched: item.isTouched(),
+      };
+    };
+
+    if (isArray(fields)) {
+      fields.forEach((key) => {
+        result[key] = getItemState(this.getRegisteredField(key));
+      });
+      return result;
+    }
+    this.getRegisteredFields(true).forEach((item) => {
+      result[item.props.field] = getItemState(item);
+    });
+    return result;
   };
 
   public clearFields = (fieldKeys?: FieldKey | FieldKey[]) => {

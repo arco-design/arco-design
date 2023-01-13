@@ -1,10 +1,16 @@
-import React, { Component, isValidElement, ReactElement } from 'react';
+import React, { Component, ReactNode, isValidElement, ReactElement } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import set from 'lodash/set';
 import get from 'lodash/get';
-import { FormControlProps, FieldError, FormItemContextProps, KeyType } from './interface';
+import {
+  FormControlProps,
+  FieldError,
+  FormItemContextProps,
+  KeyType,
+  FormItemProps,
+} from './interface';
 import { FormItemContext } from './context';
-import { isArray, isFunction, isNullOrUndefined } from '../_util/is';
+import { isArray, isFunction, isNullOrUndefined, isBoolean } from '../_util/is';
 import warn from '../_util/warning';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
@@ -30,13 +36,19 @@ export default class Control<
 
   context: FormItemContextProps<FormData, FieldValue, FieldKey>;
 
+  // 校验信息
   private errors: FieldError<FieldValue> = null;
 
+  // 校验 warning 信息
   private warnings: React.ReactNode[] = null;
 
-  private isDestroyed = false;
+  // undefined => validating => success / error => (validating or undefined)
+  private validateStatus: FormItemProps['validateStatus'];
 
+  // 是否被用户操作过
   private touched: boolean;
+
+  private isDestroyed = false;
 
   // 保存 props.children 或函数类型 props.children() 的返回值
   private childrenElement: React.ReactNode = null;
@@ -85,12 +97,52 @@ export default class Control<
     this.isDestroyed = true;
   }
 
-  getErrors = (): FieldError<FieldValue> | null => {
+  // 触发 store 进行状态收集
+  // TODO: error, validateStatys ,touched 状态和 UI 组件解耦，统一维护在 store 内部
+  private triggerStateCollect = () => {
+    const { innerCollectFormState } = this.context.store.getInnerMethods(true);
+    innerCollectFormState();
+  };
+
+  // 切换校验状态
+  private toggleValidateStatus = (status: FormItemProps['validateStatus'] | undefined) => {
+    this.validateStatus = status;
+    this.triggerStateCollect();
+  };
+
+  // 切换 touch 状态
+  private toggleTouched = (touched?: boolean) => {
+    this.touched = isBoolean(touched) ? touched : !this.touched;
+    this.triggerStateCollect();
+  };
+
+  private setWarnings = (warnings: React.ReactNode[]) => {
+    this.warnings = warnings;
+    this.triggerStateCollect();
+  };
+
+  private setErrors = (errors: FieldError<FieldValue> | null) => {
+    this.errors = errors;
+    this.triggerStateCollect();
+  };
+
+  public getErrors = (): FieldError<FieldValue> | null => {
     return this.errors;
   };
 
-  isTouched = (): boolean => {
+  public getWarnings = (): ReactNode[] => {
+    return this.warnings || [];
+  };
+
+  public isTouched = (): boolean => {
     return this.touched;
+  };
+
+  public getValidateStatus = (): FormItemProps['validateStatus'] => {
+    if (this.props.validateStatus) {
+      return this.props.validateStatus;
+    }
+    return this.validateStatus;
   };
 
   public hasFieldProps = (): boolean => {
@@ -150,9 +202,11 @@ export default class Control<
 
     switch (type) {
       case 'reset':
-        this.touched = false;
-        this.errors = null;
-        this.warnings = null;
+        this.toggleTouched(false);
+        this.toggleValidateStatus(undefined);
+
+        this.setErrors(null);
+        this.setWarnings(null);
         // https://github.com/arco-design/arco-design/issues/1460
         if (dependencies || shouldUpdate) {
           shouldUpdateItem();
@@ -164,7 +218,7 @@ export default class Control<
         break;
       case 'innerSetValue':
         if (isFieldMatch(field, fields)) {
-          this.touched = true;
+          this.toggleTouched(true);
           this.updateFormItem();
           return;
         }
@@ -175,19 +229,19 @@ export default class Control<
         break;
       case 'setFieldValue':
         if (isFieldMatch(field, fields)) {
-          this.touched = true;
+          this.toggleTouched(true);
           if (info.data && 'touched' in info.data) {
-            this.touched = info.data.touched;
+            this.toggleTouched(info.data.touched);
           }
           if (info.data && 'warnings' in info.data) {
-            this.warnings = isNullOrUndefined(info.data.warnings)
-              ? []
-              : [].concat(info.data.warnings);
+            this.setWarnings(
+              isNullOrUndefined(info.data.warnings) ? [] : [].concat(info.data.warnings)
+            );
           }
           if (info.data && 'errors' in info.data) {
-            this.errors = info.data.errors;
+            this.setErrors(info.data.errors);
           } else if (!isEqualWith(get(info.prev, field), get(info.current, field))) {
-            this.errors = null;
+            this.setErrors(null);
           }
           this.updateFormItem();
           return;
@@ -230,25 +284,36 @@ export default class Control<
     const { field, rules, validateTrigger } = this.props;
     const value = store.getFieldValue(field);
 
+    // 进入到校验中的状态
+    const gotoValidatingStatus = () => {
+      const needUpdateItem = this.errors || this.warnings?.length;
+      this.toggleValidateStatus('validating');
+      this.setErrors(null);
+      this.setWarnings(null);
+      needUpdateItem && this.updateFormItem();
+    };
+
     const _rules = !triggerType
       ? rules
       : (rules || []).filter((rule) => {
           const triggers = [].concat(rule.validateTrigger || validateTrigger || ctxValidateTrigger);
           return triggers.indexOf(triggerType) > -1;
         });
+
     if (_rules && _rules.length && field) {
+      gotoValidatingStatus();
       return schemaValidate(field, value, _rules, validateMessages).then(({ error, warning }) => {
-        this.errors = error ? error[field] : null;
-        this.warnings = warning || null;
+        this.setErrors(error ? error[field] : null);
+        this.setWarnings(warning || null);
+        this.toggleValidateStatus(
+          this.errors ? 'error' : this.warnings?.length ? 'warning' : 'success'
+        );
         this.updateFormItem();
         return Promise.resolve({ error, value, field });
       });
     }
-    if (this.errors) {
-      this.errors = null;
-      this.warnings = null;
-      this.updateFormItem();
-    }
+
+    gotoValidatingStatus();
     return Promise.resolve({ error: null, value, field });
   };
 
@@ -290,7 +355,7 @@ export default class Control<
         ...store.getFieldsValue(),
       });
     }
-    this.touched = true;
+    this.toggleTouched(true);
     this.innerSetFieldValue(field, normalizeValue);
 
     this.validateField(trigger);
@@ -356,7 +421,7 @@ export default class Control<
 
   render() {
     const { noStyle, field, isFormList, hasFeedback } = this.props;
-    const validateStatus = this.props.validateStatus || (this.errors ? 'error' : '');
+    const validateStatus = this.getValidateStatus();
     const { prefixCls, getFormElementId } = this.context;
     let child = this.getChild();
     const id = this.hasFieldProps() ? getFormElementId(field) : undefined;
