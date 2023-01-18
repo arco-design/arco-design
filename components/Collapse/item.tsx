@@ -34,7 +34,10 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
     if (disabled) return;
     const { triggerRegion } = ctx;
     const triggerRegionLevel = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
-    regionLevel <= triggerRegionLevel && ctx.onToggle(name, e);
+    if (regionLevel <= triggerRegionLevel) {
+      ctx.onToggle(name, e);
+      e.stopPropagation();
+    }
   };
 
   return (
