@@ -115,6 +115,32 @@ describe('Collapse', () => {
     expect(wrapper.find(`${prefixCls}-item-active`)).toHaveLength(data.length);
   });
 
+  it('onChange should be called only once on expanded or collapsed', () => {
+    jest.useFakeTimers();
+    const changeCollapse = jest.fn();
+    const activeKeys = ['2'];
+    const wrapper = render(
+      <Collapse defaultActiveKey={activeKeys} onChange={changeCollapse}>
+        {data.map((item, index) => (
+          <CollapseItem key={index} header={item.header} name={index.toString()}>
+            {item.content}
+          </CollapseItem>
+        ))}
+      </Collapse>
+    );
+
+    // Click icon -> one onChange call
+    fireEvent.click(
+      wrapper.find(`${prefixCls}-item`).item(0).querySelector(`${prefixCls}-item-header-icon`)!
+    );
+    expect(changeCollapse.mock.calls).toHaveLength(1);
+    // Click header -> another one onChange call
+    fireEvent.click(
+      wrapper.find(`${prefixCls}-item`).item(0).querySelector(`${prefixCls}-item-header-title`)!
+    );
+    expect(changeCollapse.mock.calls).toHaveLength(2);
+  });
+
   it('render correctly when content empty', () => {
     const wrapper = render(
       <Collapse>
