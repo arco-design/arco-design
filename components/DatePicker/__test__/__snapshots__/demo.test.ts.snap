@@ -253,7 +253,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
         class="arco-picker-start-time"
         placeholder="请选择日期"
         readonly=""
-        value="2019-06-03"
+        value="custom format: 2019-06-03"
       />
     </div>
     <div

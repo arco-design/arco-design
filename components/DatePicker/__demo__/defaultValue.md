@@ -38,7 +38,7 @@ const App = () => {
       <DatePicker defaultValue="2019-06-03" onSelect={onSelect} onChange={onChange} style={style} />
       <DatePicker
         defaultValue="2019-06-03"
-        format={"YYYY-MM-DD"}
+        format={(value) => `custom format: ${value.format('YYYY-MM-DD')}`}
         onSelect={onSelect}
         onChange={onChange}
         style={{ ...style, width: 240 }}
