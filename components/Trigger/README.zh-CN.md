@@ -21,11 +21,11 @@
 |autoFixPosition|当内容发生变化导致内容区域尺寸发生变化，自动进行重新定位。|boolean |`true`|-|
 |blurToHide|是否在触发节点失去焦点的时候关闭弹出框，仅在 `trigger` 中含有 `focus` 时生效|boolean |`true`|-|
 |clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。|boolean |`true`|-|
-|clickToClose|是否能通过点击触发节点来关闭弹出框|boolean |`true`|-|
-|containerScrollToClose|是否在容器滚动时关闭弹出框|boolean |`false`|2.34.0|
+|clickToClose|是否能通过点击触发节点来关闭弹出框。trigger 包含 click, contextMenu 时，默认为 true。否则为 false|boolean |`-`|-|
+|containerScrollToClose|是否在容器滚动时关闭弹出框|boolean |`-`|2.34.0|
 |defaultPopupVisible|默认弹出框开启或关闭|boolean |`-`|-|
 |disabled|是否禁用|boolean |`-`|-|
-|escToClose|是否允许按 `ESC` 键关闭弹出框。|boolean |`false`|-|
+|escToClose|是否允许按 `ESC` 键关闭弹出框。|boolean |`-`|-|
 |mouseLeaveToClose|是否在鼠标移出触发节点和弹出层的时候关闭弹出层|boolean |`true`|2.22.0|
 |popupHoverStay|是否在鼠标移出触发节点，移入弹出框时保留弹出框。|boolean |`true`|-|
 |popupVisible|设置弹出框开启或关闭|boolean |`-`|-|

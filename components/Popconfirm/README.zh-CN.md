@@ -24,6 +24,7 @@
 |position|弹出框的方位，有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|触发方式|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
 |cancelText|取消按钮文字|ReactNode |`-`|-|
+|content|内容|ReactNode |`-`|2.44.0|
 |icon|标题前的图标|ReactNode |`<IconExclamationCircleFill />`|-|
 |okText|确认按钮文字|ReactNode |`-`|-|
 |title|标题|ReactNode |`-`|-|

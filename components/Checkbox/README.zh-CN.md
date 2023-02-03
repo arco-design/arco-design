@@ -35,7 +35,7 @@
 |direction|方向|'horizontal' \| 'vertical' |`horizontal`|
 |className|节点类名|string \| string[] |`-`|
 |defaultValue|默认选中的选项|T[] |`-`|
-|options|可选项|(T \| { label: ReactNode; value: T; disabled?: boolean })[] |`-`|
+|options|可选项|(T \| { label: ReactNode; value: T; disabled?: boolean; icon?: ReactNode })[] |`-`|
 |style|节点样式|CSSProperties |`-`|
 |value|选中的选项（受控模式）|T[] |`-`|
 |onChange|变化时的回调函数|(value: T[], e: Event) => void |`-`|

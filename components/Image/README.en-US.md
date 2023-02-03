@@ -85,7 +85,7 @@ Detailed parameters of type `ImagePreviewActionProps` in `<Image.Preview>`.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|disabled|Whether disabled|boolean |`false`|
+|disabled|Whether disabled|boolean |`-`|
 |key|Unique identifier|string  **(Required)**|`-`|
 |name|name|string |`-`|
 |content|content|ReactNode  **(Required)**|`-`|

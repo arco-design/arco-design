@@ -146,9 +146,8 @@ export interface TriggerProps {
    */
   mouseLeaveToClose?: boolean;
   /**
-   * @zh 是否能通过点击触发节点来关闭弹出框
-   * @en Whether to allow close the popup by clicking the child node.
-   * @defaultValue true
+   * @zh 是否能通过点击触发节点来关闭弹出框。trigger 包含 click, contextMenu 时，默认为 true。否则为 false
+   * @en Whether to allow close the popup by clicking the child node.When trigger contains click, contextMenu, the default is true. otherwise false
    */
   clickToClose?: boolean;
   /**

@@ -85,7 +85,7 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|disabled|是否禁用|boolean |`false`|
+|disabled|是否禁用|boolean |`-`|
 |key|唯一标识|string  **(必填)**|`-`|
 |name|名称|string |`-`|
 |content|内容|ReactNode  **(必填)**|`-`|

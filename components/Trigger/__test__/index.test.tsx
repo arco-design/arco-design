@@ -31,13 +31,13 @@ describe('Trigger', () => {
     expect(wrapper.find('a')).toHaveLength(1);
     expect(wrapper.find('#test')).toHaveLength(0);
     act(() => {
-      fireEvent.click(wrapper.querySelector('a'));
+      fireEvent.click(wrapper.querySelector('a') as HTMLElement);
     });
 
     expect(wrapper.find('#test')).toHaveLength(1);
 
     act(() => {
-      fireEvent.click(wrapper.querySelector('a'));
+      fireEvent.click(wrapper.querySelector('a') as HTMLElement);
     });
 
     jest.runAllTimers();
@@ -58,12 +58,12 @@ describe('Trigger', () => {
 
     expect(wrapper.find('#test')).toHaveLength(0);
     act(() => {
-      fireEvent.focus(wrapper.querySelector('input'));
+      fireEvent.focus(wrapper.querySelector('input') as HTMLElement);
     });
     expect(wrapper.find('#test')).toHaveLength(1);
 
     act(() => {
-      fireEvent.blur(wrapper.querySelector('input'));
+      fireEvent.blur(wrapper.querySelector('input') as HTMLElement);
     });
 
     jest.runAllTimers();
@@ -85,27 +85,83 @@ describe('Trigger', () => {
     expect(wrapper.find('a')).toHaveLength(1);
     expect(wrapper.find('#test')).toHaveLength(0);
     act(() => {
-      fireEvent.mouseEnter(wrapper.querySelector('a'));
+      fireEvent.mouseEnter(wrapper.querySelector('a') as HTMLElement);
     });
     jest.runAllTimers();
     expect(wrapper.find('#test')).toHaveLength(1);
 
     act(() => {
-      fireEvent.mouseLeave(wrapper.querySelector('a'));
+      fireEvent.mouseLeave(wrapper.querySelector('a') as HTMLElement);
     });
 
     act(() => {
-      fireEvent.mouseEnter(wrapper.querySelector('#test'));
+      fireEvent.mouseEnter(wrapper.querySelector('#test') as HTMLElement);
     });
 
     expect(wrapper.find('#test')).toHaveLength(1);
 
     act(() => {
-      fireEvent.mouseLeave(wrapper.querySelector('#test'));
+      fireEvent.mouseLeave(wrapper.querySelector('#test') as HTMLElement);
     });
 
     jest.runAllTimers();
     expect(wrapper.find('#test')).toHaveLength(0);
+  });
+
+  it('trigger hover & clickToClose=true', async () => {
+    const wrapper = render(
+      <Trigger
+        clickToClose
+        popup={() => {
+          return <div id="test">123123</div>;
+        }}
+      >
+        <a>hover</a>
+      </Trigger>
+    );
+
+    expect(wrapper.find('a')).toHaveLength(1);
+    expect(wrapper.find('#test')).toHaveLength(0);
+    act(() => {
+      fireEvent.mouseEnter(wrapper.querySelector('a') as HTMLElement);
+    });
+    jest.runAllTimers();
+    expect(wrapper.find('#test')).toHaveLength(1);
+
+    act(() => {
+      fireEvent.click(wrapper.querySelector('a') as HTMLElement);
+    });
+
+    jest.runAllTimers();
+    expect(wrapper.find('#test')).toHaveLength(0);
+  });
+
+  it('trigger hover & clickToClose=false', async () => {
+    const wrapper = render(
+      <Trigger
+        clickToClose={false}
+        popup={() => {
+          return <div id="test">123123</div>;
+        }}
+      >
+        <a>hover</a>
+      </Trigger>
+    );
+
+    expect(wrapper.find('a')).toHaveLength(1);
+    expect(wrapper.find('#test')).toHaveLength(0);
+    act(() => {
+      fireEvent.mouseEnter(wrapper.querySelector('a') as HTMLElement);
+    });
+    jest.runAllTimers();
+    expect(wrapper.find('#test')).toHaveLength(1);
+
+    act(() => {
+      fireEvent.click(wrapper.querySelector('a') as HTMLElement);
+    });
+
+    jest.runAllTimers();
+    expect(wrapper.find('#test')).toHaveLength(1);
   });
 
   it('trigger hover & mouseLeaveToClose=false', async () => {
@@ -124,23 +180,23 @@ describe('Trigger', () => {
     expect(wrapper.find('a')).toHaveLength(1);
     expect(wrapper.find('#test')).toHaveLength(0);
     act(() => {
-      fireEvent.mouseEnter(wrapper.querySelector('a'));
+      fireEvent.mouseEnter(wrapper.querySelector('a') as HTMLElement);
     });
     jest.runAllTimers();
     expect(wrapper.find('#test')).toHaveLength(1);
 
     act(() => {
-      fireEvent.mouseLeave(wrapper.querySelector('a'));
+      fireEvent.mouseLeave(wrapper.querySelector('a') as HTMLElement);
     });
 
     act(() => {
-      fireEvent.mouseEnter(wrapper.querySelector('#test'));
+      fireEvent.mouseEnter(wrapper.querySelector('#test') as HTMLElement);
     });
 
     expect(wrapper.find('#test')).toHaveLength(1);
 
     act(() => {
-      fireEvent.mouseLeave(wrapper.querySelector('#test'));
+      fireEvent.mouseLeave(wrapper.querySelector('#test') as HTMLElement);
     });
 
     jest.runAllTimers();
@@ -162,7 +218,7 @@ describe('Trigger', () => {
     expect(wrapper.find('a')).toHaveLength(1);
     expect(wrapper.find('#test')).toHaveLength(0);
     act(() => {
-      fireEvent.contextMenu(wrapper.querySelector('a'));
+      fireEvent.contextMenu(wrapper.querySelector('a') as HTMLElement);
     });
     expect(wrapper.find('#test')).toHaveLength(1);
   });
@@ -190,7 +246,7 @@ describe('nest', () => {
     );
 
     act(() => {
-      fireEvent.click(wrapper.querySelector('a'));
+      fireEvent.click(wrapper.querySelector('a') as HTMLElement);
     });
     expect(wrapper.find('#test1')).toHaveLength(1);
     expect(wrapper.find('#test2')).toHaveLength(0);

@@ -21,11 +21,11 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |autoFixPosition|Whether to automatically reposition when the popup's size changes.|boolean |`true`|-|
 |blurToHide|Whether close the popup when the child node losing focus. Only work when the `trigger` containers `focus`|boolean |`true`|-|
 |clickOutsideToClose|Whether to allow close the popup by clicking the area outside the child node and the popup box.|boolean |`true`|-|
-|clickToClose|Whether to allow close the popup by clicking the child node.|boolean |`true`|-|
-|containerScrollToClose|Whether to close the popup when the container is scrolled|boolean |`false`|2.34.0|
+|clickToClose|Whether to allow close the popup by clicking the child node.When trigger contains click, contextMenu, the default is true. otherwise false|boolean |`-`|-|
+|containerScrollToClose|Whether to close the popup when the container is scrolled|boolean |`-`|2.34.0|
 |defaultPopupVisible|Whether the popup is visible by default|boolean |`-`|-|
 |disabled|Whether to disable|boolean |`-`|-|
-|escToClose|Whether to allow close the popup by pressing `ESC`.|boolean |`false`|-|
+|escToClose|Whether to allow close the popup by pressing `ESC`.|boolean |`-`|-|
 |mouseLeaveToClose|Whether to allow close the popup by clicking the child node.|boolean |`true`|2.22.0|
 |popupHoverStay|Whether the popup is visible when the mouse hovers over the popup.|boolean |`true`|-|
 |popupVisible|Whether the popup is visible|boolean |`-`|-|
