@@ -892,6 +892,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       childrenPrefix,
       showArrow,
       popupStyle: dropdownPopupStyle,
+      __onExit,
+      __onExited,
     } = this.getMergedProps();
     const isExistChildren = children || children === 0;
     const { getPrefixCls, zIndex, rtl } = this.context;
@@ -1012,6 +1014,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         onExit={(e) => {
           // 避免消失动画时对元素的快速点击触发意外的操作
           e.style.pointerEvents = 'none';
+          __onExit?.(e);
         }}
         onExited={(e) => {
           e.style.display = 'none';
@@ -1021,6 +1024,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             this.triggerRef = null;
           }
           this.setState({ popupStyle: {} });
+          __onExited?.(e);
         }}
       >
         <ResizeObserver

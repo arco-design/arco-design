@@ -42,7 +42,6 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { SelectOptionProps } from '../index';
-import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import useId from '../_util/hooks/useId';
 
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
@@ -171,7 +170,8 @@ function Select(baseProps: SelectProps, ref) {
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
   // 上次成功触发自动分词的时间
   const refTSLastSeparateTriggered = useRef(0);
-  const refIsFirstRender = useIsFirstRender();
+  // Whether in the hidden animation of drop-down
+  const refPopupExiting = useRef(false);
   // Unique ID of this select instance
   const instancePopupID = useId(`${prefixCls}-popup-`);
 
@@ -230,8 +230,6 @@ function Select(baseProps: SelectProps, ref) {
       setValueActive(nextValueActive);
       // 在弹出框动画结束之后再执行scrollIntoView，否则会有不必要的滚动产生
       setTimeout(() => scrollIntoView(nextValueActive));
-    } else if (!refIsFirstRender) {
-      tryUpdateInputValue('', 'optionListHide');
     }
   }, [popupVisible]);
 
@@ -607,8 +605,8 @@ function Select(baseProps: SelectProps, ref) {
     onFocus,
     onBlur: (event) => {
       onBlur?.(event);
-      // 兼容：下拉列表隐藏时，失焦需要清空已输入内容
-      !popupVisible && tryUpdateInputValue('', 'optionListHide');
+      // when drop-down is always hidden, input-text needs to be cleared after blur
+      !popupVisible && !refPopupExiting.current && tryUpdateInputValue('', 'optionListHide');
     },
     onKeyDown: (event) => {
       // 处理特殊功能键的自动分词
@@ -709,6 +707,13 @@ function Select(baseProps: SelectProps, ref) {
         popupVisible={popupVisible}
         unmountOnExit={unmountOnExit}
         onVisibleChange={tryUpdatePopupVisible}
+        __onExit={() => {
+          refPopupExiting.current = true;
+        }}
+        __onExited={() => {
+          refPopupExiting.current = false;
+          tryUpdateInputValue('', 'optionListHide');
+        }}
         {...omit(triggerProps, ['popupVisible', 'onVisibleChange'])}
       >
         {eleView}
