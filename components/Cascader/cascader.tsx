@@ -337,6 +337,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 renderOption={
                   (isObject(props.showSearch) && props.showSearch.renderOption) || undefined
                 }
+                // TODO 组件重构，解耦面板选择和输入框，面板可独立使用
+                getTriggerElement={() => selectRef.current?.dom}
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
                 defaultActiveFirstOption={props.defaultActiveFirstOption}
@@ -358,6 +360,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 loadMore={props.loadMore}
                 prefixCls={prefixCls}
                 rtl={rtl}
+                getTriggerElement={() => selectRef.current?.dom}
                 renderEmpty={renderEmptyEle}
                 popupVisible={popupVisible}
                 value={mergeValue}
