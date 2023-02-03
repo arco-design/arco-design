@@ -68,8 +68,9 @@ exports.site = (config, env) => {
 
   config.resolve.alias['@arco-design/web-react'] = path.resolve(__dirname, '..');
   // config.resolve.alias['dayjs$'] = 'moment-timezone';
-  config.resolve.alias['react/jsx-runtime'] = require.resolve('react/jsx-runtime');
-  config.resolve.alias['react$'] = require.resolve('react/index');
+  // update the react-dnd, with issue: https://github.com/facebook/react/issues/20235
+  config.resolve.alias['react/jsx-runtime'] = require.resolve('react/jsx-runtime.js');
+  config.resolve.alias['react/jsx-dev-runtime'] = require.resolve('react/jsx-dev-runtime.js');
   delete config.resolve.alias['react'];
 
   if (env === 'dev') {
