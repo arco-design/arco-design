@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.44.1
+
+2023-02-03
+
+### 💎 Enhancement
+
+- Optimize `Select` drop-down box jittering due to out-of-focus after searching/creating options.([#1747](https://github.com/arco-design/arco-design/pull/1747))
+- `Menu.SubMenu` allows passing in native HTML attributes.([#1746](https://github.com/arco-design/arco-design/pull/1746))
+- Optimize the problem of unnecessary vertical scrollbars in certain cases when virtual scrolling is enabled for the `Tree` component([#1739](https://github.com/arco-design/arco-design/pull/1739))
+
+### 🐛 BugFix
+
+- Fix the bug that the keyboard event listener of the `Cascader` component will still be triggered when other elements are Focused.([#1751](https://github.com/arco-design/arco-design/pull/1751))
+- Fix the bug that `props.style` of `Trigger` component does not take effect.([#1750](https://github.com/arco-design/arco-design/pull/1750))
+- Fix the bug that `clickToClose` of `Trigger` component does not work when trigger="hover".([#1750](https://github.com/arco-design/arco-design/pull/1750))
+- `Collapse` onChange is called twice when header icon or title is clicked due to bubbling([#1728](https://github.com/arco-design/arco-design/pull/1728))
+
+### 💅 Style
+
+- Adjust the Checkbox icon color for `disabled` and `checked` states.([#1748](https://github.com/arco-design/arco-design/pull/1748))
+- Optimized the default spacing between icon and text within horizontal menu items.([#1746](https://github.com/arco-design/arco-design/pull/1746))
+
 ## 2.44.0
 
 2023-01-13

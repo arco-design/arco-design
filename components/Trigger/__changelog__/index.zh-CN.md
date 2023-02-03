@@ -1,3 +1,12 @@
+## 2.44.1
+
+2023-02-03
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件的 `props.style` 不生效的 bug。([#1750](https://github.com/arco-design/arco-design/pull/1750))
+- 修复 `Trigger` 组件的 `clickToClose` 在 trigger="hover"  时不生效的 bug。([#1750](https://github.com/arco-design/arco-design/pull/1750))
+
 ## 2.43.0
 
 2022-12-23

@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 🐛 BugFix
+
+- Collapse onChange is called twice when header icon or title is clicked due to bubbling([#1728](https://github.com/arco-design/arco-design/pull/1728))
+
 ## 2.43.0
 
 2022-12-23

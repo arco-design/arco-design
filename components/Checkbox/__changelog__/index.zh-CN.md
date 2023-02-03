@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 💅 样式更新
+
+- 调整 `disabled` 且 `checked` 状态的 Checkbox 图标颜色。([#1748](https://github.com/arco-design/arco-design/pull/1748))
+
 ## 2.43.0
 
 2022-12-23

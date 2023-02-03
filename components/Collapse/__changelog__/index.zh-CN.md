@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 🐛 问题修复
+
+- 修复 Collapse 点击 header icon 或者 header title 进行展开/折叠时会触发2次 onChange 的 bug。([#1728](https://github.com/arco-design/arco-design/pull/1728))
+
 ## 2.43.0
 
 2022-12-23

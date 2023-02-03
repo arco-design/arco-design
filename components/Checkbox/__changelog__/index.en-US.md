@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 💅 Style
+
+- Adjust the Checkbox icon color for `disabled` and `checked` states.([#1748](https://github.com/arco-design/arco-design/pull/1748))
+
 ## 2.43.0
 
 2022-12-23

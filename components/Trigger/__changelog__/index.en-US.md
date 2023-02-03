@@ -1,3 +1,12 @@
+## 2.44.1
+
+2023-02-03
+
+### 🐛 BugFix
+
+- Fix the bug that `props.style` of `Trigger` component does not take effect.([#1750](https://github.com/arco-design/arco-design/pull/1750))
+- Fix the bug that `clickToClose` of `Trigger` component does not work when trigger="hover".([#1750](https://github.com/arco-design/arco-design/pull/1750))
+
 ## 2.43.0
 
 2022-12-23

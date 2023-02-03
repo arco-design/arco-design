@@ -1,3 +1,12 @@
+## 2.44.1
+
+2023-02-03
+
+### 💎 Enhancement
+
+- `Menu.SubMenu` allows passing in native HTML attributes.([#1746](https://github.com/arco-design/arco-design/pull/1746))
+- Optimized the default spacing between icon and text within horizontal menu items.([#1746](https://github.com/arco-design/arco-design/pull/1746))
+
 ## 2.44.0
 
 2023-01-13

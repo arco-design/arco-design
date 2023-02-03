@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 💎 Enhancement
+
+- Optimize the problem of unnecessary vertical scrollbars in certain cases when virtual scrolling is enabled for the `Tree` component([#1739](https://github.com/arco-design/arco-design/pull/1739))
+
 ## 2.30.0
 
 2022-03-04

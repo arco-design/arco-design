@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 💎 Enhancement
+
+- Optimize `Select` drop-down box jittering due to out-of-focus after searching/creating options.([#1747](https://github.com/arco-design/arco-design/pull/1747))
+
 ## 2.43.2
 
 2023-01-06

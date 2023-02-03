@@ -1,3 +1,11 @@
+## 2.44.1
+
+2023-02-03
+
+### 🐛 BugFix
+
+- Fix the bug that the keyboard event listener of the `Cascader` component will still be triggered when other elements are Focused.([#1751](https://github.com/arco-design/arco-design/pull/1751))
+
 ## 2.42.2
 
 2022-12-09

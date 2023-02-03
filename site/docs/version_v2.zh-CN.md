@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.44.1
+
+2023-02-03
+
+### 💎 功能优化
+
+- 优化 `Select` 组件搜索/创建选项后，失焦导致的下拉框抖动问题。([#1747](https://github.com/arco-design/arco-design/pull/1747))
+- `Menu.SubMenu` 允许传入 HTML 原生属性。([#1746](https://github.com/arco-design/arco-design/pull/1746))
+- 优化 `Tree` 组件开启虚拟滚动时，特定情况下会出现不必要的纵向滚动条的问题([#1739](https://github.com/arco-design/arco-design/pull/1739))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件的键盘事件监听在其他元素被 Focus 时仍会被触发的 bug。([#1751](https://github.com/arco-design/arco-design/pull/1751))
+- 修复 `Trigger` 组件的 `props.style` 不生效的 bug。([#1750](https://github.com/arco-design/arco-design/pull/1750))
+- 修复 `Trigger` 组件的 `clickToClose` 在 trigger="hover"  时不生效的 bug。([#1750](https://github.com/arco-design/arco-design/pull/1750))
+- 修复 `Collapse` 点击 header icon 或者 header title 进行展开/折叠时会触发2次 onChange 的 bug。([#1728](https://github.com/arco-design/arco-design/pull/1728))
+
+### 💅 样式更新
+
+- 调整 `disabled` 且 `checked` 状态的 Checkbox 图标颜色。([#1748](https://github.com/arco-design/arco-design/pull/1748))
+- 优化 `Menu` 组件水平菜单项内图标与文本之间的默认间距。([#1746](https://github.com/arco-design/arco-design/pull/1746))
+
 ## 2.44.0
 
 2023-01-13
