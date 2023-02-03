@@ -13,6 +13,7 @@ import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
 import { isString, isObject, isFunction } from '../../_util/is';
 import { getMultipleCheckValue } from '../util';
 import VirtualList from '../../_class/VirtualList';
+import { on, off } from '../../_util/dom';
 
 export const getLegalIndex = (currentIndex, maxIndex) => {
   if (currentIndex < 0) {
@@ -38,6 +39,7 @@ export type SearchPanelProps<T> = {
   virtualListProps?: CascaderProps<T>['virtualListProps'];
   defaultActiveFirstOption: boolean;
   renderOption?: (inputValue: string, node: NodeProps<T>) => ReactNode;
+  getTriggerElement: () => HTMLElement;
 };
 
 const formatLabel = (inputValue, label, prefixCls): ReactNode => {
@@ -110,6 +112,10 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   }, [options]);
 
   useEffect(() => {
+    const target = props.getTriggerElement();
+    if (!target) {
+      return;
+    }
     const handleKeyDown = (e) => {
       e.stopPropagation();
       // 使用keycode，避免中文输入法输入时，触发enter,space等事件。
@@ -154,9 +160,9 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
           break;
       }
     };
-    document.addEventListener('keydown', handleKeyDown);
+    on(target, 'keydown', handleKeyDown);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      off(target, 'keydown', handleKeyDown);
     };
   }, [options, currentHoverIndex, value]);
 

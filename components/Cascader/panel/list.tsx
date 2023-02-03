@@ -12,6 +12,7 @@ import useUpdate from '../../_util/hooks/useUpdate';
 import Node from '../base/node';
 import { getMultipleCheckValue } from '../util';
 import VirtualList, { VirtualListHandle } from '../../_class/VirtualList';
+import { on, off } from '../../_util/dom';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -231,13 +232,18 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
   }, [props.popupVisible]);
 
   useEffect(() => {
+    const target = props.getTriggerElement();
+    if (!target) {
+      return;
+    }
+
     if (props.popupVisible) {
-      document.addEventListener('keydown', handleKeyDown);
+      on(target, 'keydown', handleKeyDown);
     } else {
-      document.removeEventListener('keydown', handleKeyDown);
+      off(target, 'keydown', handleKeyDown);
     }
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      off(target, 'keydown', handleKeyDown);
     };
   }, [props.popupVisible, handleKeyDown]);
 

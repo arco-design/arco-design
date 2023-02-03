@@ -301,4 +301,5 @@ export interface CascaderPanelProps<T> {
   onEsc?: () => void;
   dropdownColumnRender?: CascaderProps<T>['dropdownColumnRender'];
   dropdownMenuColumnStyle?: CascaderProps<T>['dropdownMenuColumnStyle'];
+  getTriggerElement: () => HTMLElement;
 }
