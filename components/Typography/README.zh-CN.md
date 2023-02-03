@@ -75,8 +75,8 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|cssEllipsis|自动溢出省略（只支持字符串），在大量使用情况下建议开启提高性能。|boolean |`false`|`2.36.0` 将默认值改为 `false` 并支持多行CSS省略。|
-|defaultExpanded|默认展开|boolean |`false`|`2.33.0`|
+|cssEllipsis|自动溢出省略（只支持字符串），在大量使用情况下建议开启提高性能。|boolean |`-`|`2.36.0` 将默认值改为 `false` 并支持多行CSS省略。|
+|defaultExpanded|默认展开|boolean |`-`|`2.33.0`|
 |expandable|显示展开/折叠按钮|boolean |`-`|-|
 |expanded|是否展开|boolean |`-`|`2.33.0`|
 |rows|显示省略的行数|number |`1`|-|

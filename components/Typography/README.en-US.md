@@ -75,8 +75,8 @@ Used to display titles, paragraphs, and text content.
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|cssEllipsis|Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.|boolean |`false`|`2.36.0` 将默认值改为 `false` 并支持多行CSS省略。|
-|defaultExpanded|Default expanded state|boolean |`false`|`2.33.0`|
+|cssEllipsis|Automatic overflow omission (only strings are supported). In the case of simple single-line, css will be used by default to handle ellipsis to avoid complicated calculations.|boolean |`-`|`2.36.0` 将默认值改为 `false` 并支持多行CSS省略。|
+|defaultExpanded|Default expanded state|boolean |`-`|`2.33.0`|
 |expandable|Whether to support expand|boolean |`-`|-|
 |expanded|whether to expand|boolean |`-`|`2.33.0`|
 |rows|The number of omitted rows|number |`1`|-|

@@ -24,6 +24,7 @@ A simple confirmation box of an action.
 |position|The position of the confirmation box relative to the target.|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|Trigger mode|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
 |cancelText|The text of the cancel button|ReactNode |`-`|-|
+|content|Content of Popconfirm|ReactNode |`-`|2.44.0|
 |icon|Customize icon of the confirmation box|ReactNode |`<IconExclamationCircleFill />`|-|
 |okText|The text of the ok button|ReactNode |`-`|-|
 |title|Title of Popconfirm|ReactNode |`-`|-|

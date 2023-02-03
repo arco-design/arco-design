@@ -107,6 +107,7 @@ export type FormInstance<
   | "clearFields"
   | "submit"
   | "validate"
+  | "getFieldsState"
 > & {
   scrollToField: (field: FieldKey, options?: ScrollIntoViewOptions) => void;
   getInnerMethods: (
@@ -125,12 +126,14 @@ export type InnerMethodsReturnType<
 > = Pick<
   Store<FormData, FieldValue, FieldKey>,
   | "registerField"
+  | "registerStateWatcher"
   | "registerWatcher"
   | "innerSetInitialValues"
   | "innerSetInitialValue"
   | "innerSetCallbacks"
   | "innerSetFieldValue"
   | "innerGetStore"
+  | "innerCollectFormState"
 >;
 ```
 

@@ -73,7 +73,7 @@ function splitChildrenStyle(
 
 const defaultProps = {
   blurToHide: true,
-  clickToClose: true,
+  // clickToClose: true,
   classNames: 'fadeIn',
   trigger: 'hover' as const,
   position: 'bottom' as const,
@@ -360,9 +360,14 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   isClickToHide = () => {
-    return (
-      (this.isClickTrigger() || this.isContextMenuTrigger()) && this.getMergedProps().clickToClose
-    );
+    if (this.isClickTrigger() || this.isContextMenuTrigger()) {
+      const { clickToClose = true } = this.getMergedProps();
+      return clickToClose;
+    }
+    // 2.44.0 及之前版本 clickToClose 对 hover触发不生效。
+    // 2.44.1 之后只有在props直接传入clickToClose 时才生效于 hover 触发方式，避免如以下用法前后表现不一致
+    // <Trigger><Trigger trigger="click"><button>sss</button></a></Trigger></Trigger>
+    return this.isHoverTrigger() && this.props.clickToClose;
   };
 
   isBlurToHide = () => {
@@ -690,11 +695,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
   };
 
-  hideContextMenu = (e) => {
+  clickToHidePopup = (e) => {
     const { popupVisible } = this.state;
     if (popupVisible) {
       this.mousedownToHide = true;
     }
+
     this.triggerPropsEvent('onClick', e);
 
     if (this.isClickToHide() && popupVisible) {
@@ -911,6 +917,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     if (this.isHoverTrigger() && !disabled) {
       mergeProps.onMouseEnter = this.onMouseEnter;
       mergeProps.onMouseLeave = this.onMouseLeave;
+      mergeProps.onClick = this.clickToHidePopup;
 
       if (alignPoint) {
         mergeProps.onMouseMove = this.onMouseMove;
@@ -926,7 +933,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
     if (this.isContextMenuTrigger() && !disabled) {
       mergeProps.onContextMenu = this.onContextMenu;
-      mergeProps.onClick = this.hideContextMenu;
+      mergeProps.onClick = this.clickToHidePopup;
     } else {
       mergeProps.onContextMenu = this.triggerOriginEvent('onContextMenu');
     }
@@ -1034,8 +1041,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
               // Avoid the flickering problem caused by the size change and positioning not being recalculated in time.
               // TODO: Consider changing the popup style directly  in the next major version
               const popupStyle = this.getPopupStyle();
-              target.style.top = `${popupStyle.top}px`;
-              target.style.left = `${popupStyle.left}px`;
+              const style = this.props.style || {};
+              target.style.top = String(style.top || `${popupStyle.top}px`);
+              target.style.left = String(style.left || `${popupStyle.left}px`);
             }
             this.onResize();
           }}
