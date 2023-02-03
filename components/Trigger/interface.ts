@@ -230,6 +230,8 @@ export interface TriggerProps {
    */
   updateOnScroll?: boolean;
   children?: ReactNode;
+  __onExit?: (event) => void;
+  __onExited?: (event) => void;
 }
 
 export type MouseLocationType = { clientX: number; clientY: number };
