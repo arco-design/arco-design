@@ -8,6 +8,7 @@ const BASE_JEST_CONFIG = {
     '^@arco-design/web-react$': '<rootDir>',
     '^test-utils$': '<rootDir>/tests/util',
   },
+  transformIgnorePatterns: ['node_modules/(?!@?react-dnd|dnd-core)'],
 };
 
 exports.node = (config) => {
@@ -34,6 +35,4 @@ exports.client = (config) => {
     '/components/index.tsx',
     '/components/locale/',
   ];
-
-  config.transformIgnorePatterns = ['node_modules/(?!@?react-dnd|dnd-core)'];
 };
