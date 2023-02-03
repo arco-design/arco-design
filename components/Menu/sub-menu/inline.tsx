@@ -8,6 +8,7 @@ import { processChildren, isChildrenSelected, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU
 import MenuContext from '../context';
 import MenuIndent from '../indent';
 import pick from '../../_util/pick';
+import omit from '../../_util/omit';
 import { Enter } from '../../_util/keycode';
 import useId from '../../_util/hooks/useId';
 
@@ -84,7 +85,12 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
   );
 
   return (
-    <div ref={forwardedRef} className={cs(baseClassName, className)} style={style}>
+    <div
+      ref={forwardedRef}
+      className={cs(baseClassName, className)}
+      style={style}
+      {...omit(rest, ['key', 'popup', 'triggerProps'])}
+    >
       {header}
       <CSSTransition
         in={isOpen}

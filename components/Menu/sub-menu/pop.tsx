@@ -26,6 +26,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     selectable,
     forwardedRef,
     triggerProps: propTriggerProps,
+    ...rest
   } = props;
   const {
     id: menuId,
@@ -125,6 +126,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
             setPopupVisible(true);
           }
         }}
+        {...omit(rest, ['key', 'popup'])}
       >
         <MenuIndent prefixCls={prefixCls} levelIndent={levelIndent} level={level} />
         {title}
