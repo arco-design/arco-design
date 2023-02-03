@@ -93,7 +93,6 @@ const OverflowWrap = (props: OverflowWrapProps) => {
         title={<span>{ellipsisText}</span>}
         key={`arco-menu-overflow-sub-menu${isMirror ? '-mirror' : ''}`}
         className={isMirror ? overflowSubMenuMirrorClass : overflowSubMenuClass}
-        {...props}
         children={children}
       />
     );

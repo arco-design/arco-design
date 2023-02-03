@@ -145,7 +145,7 @@ export interface MenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
 /**
  * @title Menu.SubMenu
  */
-export interface MenuSubMenuProps {
+export interface MenuSubMenuProps extends Omit<HTMLAttributes<HTMLElement>, 'title' | 'className'> {
   children?: ReactNode;
   style?: CSSProperties;
   className?: string | string[];
