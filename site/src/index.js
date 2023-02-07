@@ -14,7 +14,7 @@ import './style/index.less';
 import { isProduction } from './utils/env';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 
-const requestDomain = isProduction ? `//${location.hostname}/` : '//localhost:3000';
+const requestDomain = isProduction ? `//${location.hostname}` : '//localhost:3000';
 
 function Index() {
   const arcoDirection = localStorage.getItem('arco-direction');
@@ -24,7 +24,7 @@ function Index() {
 
   async function getUser() {
     try {
-      const { data } = await axios.get(`${requestDomain}/api/auth/userInfo`, {
+      const { data } = await axios.get(`${requestDomain}/common/api/auth/userInfo`, {
         withCredentials: true,
       });
       setUser(data.result);
