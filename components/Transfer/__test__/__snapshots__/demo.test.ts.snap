@@ -1013,28 +1013,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
@@ -1076,28 +1072,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               class="arco-checkbox arco-transfer-view-item-content"
             >
@@ -1137,28 +1129,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
@@ -1200,28 +1188,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               checked=""
               class="arco-checkbox arco-checkbox-checked arco-transfer-view-item-content"
@@ -1263,28 +1247,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               class="arco-checkbox arco-transfer-view-item-content"
             >
@@ -1432,28 +1412,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               class="arco-checkbox arco-transfer-view-item-content"
             >
@@ -1493,28 +1469,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               class="arco-checkbox arco-transfer-view-item-content"
             >
@@ -1554,28 +1526,24 @@ exports[`renders Transfer/demo/drag-sort.md correctly 1`] = `
             class="arco-transfer-view-item arco-transfer-view-item-draggable"
             draggable="true"
           >
-            <span
-              class="arco-icon-hover arco-transfer-view-item-icon-drag"
+            <svg
+              aria-hidden="true"
+              class="arco-transfer-view-item-icon-drag arco-icon arco-icon-drag-dot-vertical"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
             >
-              <svg
-                aria-hidden="true"
-                class="arco-icon arco-icon-drag-dot-vertical"
-                fill="none"
-                focusable="false"
-                stroke="currentColor"
-                stroke-width="4"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <path
-                  d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+                fill="currentColor"
+                stroke="none"
+              />
+              <path
+                d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              />
+            </svg>
             <label
               class="arco-checkbox arco-transfer-view-item-content"
             >
