@@ -122,11 +122,7 @@ function TransferItem(props: TransferItemProps) {
         }
       }}
     >
-      {draggable ? (
-        <IconHover className={`${baseClassName}-icon-drag`}>
-          <IconDragDotVertical />
-        </IconHover>
-      ) : null}
+      {draggable ? <IconDragDotVertical className={`${baseClassName}-icon-drag`} /> : null}
 
       {allowClear ? (
         <>
