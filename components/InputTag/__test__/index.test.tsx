@@ -36,6 +36,7 @@ describe('InputTag', () => {
     expect(eleRoot).toHaveClass('arco-input-tag-focus');
 
     fireEvent.change(eleInput, { target: { value: 'b' } });
+    await sleep(10);
     fireEvent.keyDown(eleInput, { keyCode: Enter.code });
     await sleep(10);
     expect(JSON.stringify(mockOnChange.mock.calls[0][0])).toBe(JSON.stringify(['a', 'b']));
@@ -51,9 +52,10 @@ describe('InputTag', () => {
     const eleInput = wrapper.querySelector('input') as HTMLElement;
 
     fireEvent.change(eleInput, { target: { value: inputValue } });
-    fireEvent.blur(eleInput);
-
     await sleep(10);
+    fireEvent.blur(eleInput);
+    await sleep(10);
+
     expect(JSON.stringify(mockOnChange.mock.calls[0][0])).toBe(JSON.stringify([inputValue]));
   });
 
@@ -89,8 +91,8 @@ describe('InputTag', () => {
     fireEvent.change(wrapper.querySelector('input') as HTMLElement, {
       target: { value: inputValue },
     });
+    await sleep(10);
     fireEvent.keyDown(wrapper.querySelector('input') as HTMLElement, { keyCode: Enter.code });
-
     await sleep(10);
 
     expect(JSON.stringify(mockOnChange.mock.calls[0][0])).toBe(
@@ -100,10 +102,20 @@ describe('InputTag', () => {
 
   it('tokenSeparators', async () => {
     const onChange = jest.fn();
-    const wrapper = render(<InputTag tokenSeparators={[',', ';', '\n']} onChange={onChange} />);
+    const wrapper = render(
+      <InputTag
+        tokenSeparators={[',', ';', '\n']}
+        validate={async (text) => {
+          // only allow number less than 10
+          return isNaN(+text) ? false : +text > 10 ? '10' : text;
+        }}
+        onChange={onChange}
+      />
+    );
     const eleInput = wrapper.querySelector('input');
 
-    fireEvent.change(eleInput, { target: { value: 'a,b' } });
-    expect(onChange.mock.calls[0][0]).toEqual(['a', 'b']);
+    fireEvent.change(eleInput, { target: { value: 'a,b,1,2,12' } });
+    await sleep(10);
+    expect(onChange.mock.calls[0][0]).toEqual(['1', '2', '10']);
   });
 });
