@@ -94,6 +94,13 @@ const TreeSelect: ForwardRefRenderFunction<
   // Unique ID of this select instance
   const instancePopupID = useId(`${prefixCls}-popup-`);
 
+  const tryUpdatePopupVisible = (visible) => {
+    if (visible !== popupVisible) {
+      setPopupVisible(visible);
+      props.onVisibleChange?.(visible);
+    }
+  };
+
   // 尝试更新 inputValue，并触发 onInputValueChange
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
     if (
@@ -162,10 +169,10 @@ const TreeSelect: ForwardRefRenderFunction<
       setValue(newValue, extra);
       resetInputValue();
       if (!multiple) {
-        setPopupVisible(false);
+        tryUpdatePopupVisible(false);
       }
     },
-    [setValue, resetInputValue]
+    [setValue, resetInputValue, popupVisible]
   );
 
   const handleRemoveCheckedItem = (item, index, e) => {
@@ -309,8 +316,8 @@ const TreeSelect: ForwardRefRenderFunction<
         }}
         disabled={props.disabled}
         onVisibleChange={(visible: boolean) => {
-          setPopupVisible(visible);
-          props.onVisibleChange && props.onVisibleChange(visible);
+          tryUpdatePopupVisible(visible);
+          // props.onVisibleChange && props.onVisibleChange(visible);
         }}
         popupVisible={popupVisible}
       >
