@@ -321,7 +321,7 @@ export interface UploaderProps extends UploadProps {
   prefixCls?: string;
   limit?: number;
   hide?: boolean;
-  onFileStatusChange?: (file: UploadItem) => void;
+  onFileStatusChange?: (fileList: UploadItem[], file: UploadItem) => void;
 }
 
 export type TriggerProps = {

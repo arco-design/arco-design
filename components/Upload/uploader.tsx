@@ -66,9 +66,17 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
   // 删除上传（手动上传时，文件会出现在上传列表，但属于init状态）
   delete = this.deleteReq;
 
-  updateFileStatus = (file: UploadItem) => {
+  updateFileStatus = (file: UploadItem, fileList = this.props.fileList) => {
     const { onFileStatusChange } = this.props;
-    onFileStatusChange && onFileStatusChange(file);
+    const key = 'uid' in file ? 'uid' : 'name';
+
+    onFileStatusChange &&
+      onFileStatusChange(
+        fileList.map((item) => {
+          return item[key] === file[key] ? file : item;
+        }),
+        file
+      );
   };
 
   getTargetFile = (file: UploadItem) => {
@@ -145,6 +153,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
     if (isNumber(limit) && limit < fileList.length + files.length) {
       return onExceedLimit && onExceedLimit(files, fileList);
     }
+    const list = this.props.fileList || [];
     const asyncUpload = (file: File, index: number) => {
       const upload: UploadItem = {
         uid: `${String(+new Date())}${index}`,
@@ -154,8 +163,10 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
         name: file.name,
       };
 
+      list.push(upload);
+
       // 更新上传状态为 init
-      this.updateFileStatus(upload);
+      this.updateFileStatus(upload, list);
 
       if (autoUpload) {
         /**
