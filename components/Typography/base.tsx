@@ -1,4 +1,4 @@
-import React, { useState, useContext, PropsWithChildren } from 'react';
+import React, { useState, useContext, PropsWithChildren, useRef } from 'react';
 import { ConfigContext } from '../ConfigProvider';
 import ResizeObserverComponent from '../_util/resizeObserver';
 import {
@@ -84,6 +84,7 @@ function Base(props: BaseProps) {
 
   const [editing, setEditing] = useState<boolean>(false);
   const [width, setWidth] = useState(0);
+  const resizeTime = useRef(0);
   const editableConfig = isObject(editable) ? editable : {};
   const mergedEditing = 'editing' in editableConfig ? editableConfig.editing : editing;
 
@@ -124,14 +125,17 @@ function Base(props: BaseProps) {
 
   const handleResize = (entry) => {
     const { contentRect } = entry?.[0];
+    const currentTime = +new Date();
+    const diffTime = currentTime - resizeTime.current;
     if (contentRect) {
       const currentWidth = component.includes('code') ? contentRect.width - 18 : contentRect.width;
-      const resizeStatus =
-        simpleEllipsis && ellipsisConfig.rows === 1
-          ? // CSS single-line ellipsis may expand infinitely in the table，
-            [MEASURE_STATUS.NO_NEED_ELLIPSIS]
-          : [MEASURE_STATUS.NO_NEED_ELLIPSIS, MEASURE_STATUS.MEASURE_END];
-      if (resizeStatus.includes(measureStatus)) {
+
+      const resizeStatus = [MEASURE_STATUS.NO_NEED_ELLIPSIS, MEASURE_STATUS.MEASURE_END];
+      // 在 table 中，使用了 cssEllipsis 因为 white-space: "nowrap"，宽度会突然变很大
+      // 导致再次触发 resize 计算，进入循环。
+      // diffTime 应对短时间内多次触发
+      if (resizeStatus.includes(measureStatus) && diffTime > 100) {
+        resizeTime.current = currentTime;
         setWidth(currentWidth);
       }
     }

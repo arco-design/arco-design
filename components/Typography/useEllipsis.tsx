@@ -4,7 +4,6 @@ import throttleByRaf from '../_util/throttleByRaf';
 import { isNumber, isString } from '../_util/is';
 import { EllipsisConfig } from './interface';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
-import useCssEllipsis from './useCssEllipsis';
 
 interface IEllipsis extends EllipsisConfig {
   width: number;
@@ -48,7 +47,6 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
 
   const nodeList = useMemo(() => React.Children.toArray(children), [children]);
   const closedLoc = useRef(0);
-  const { ellipsisStyle } = useCssEllipsis({ rows, cssEllipsis: true });
   useUpdate(() => {
     onEllipsis && onEllipsis(isEllipsis);
   }, [isEllipsis]);
@@ -211,8 +209,12 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
     );
     ellipsisNode = ellipsisNode.props.children;
   } else if (status === MEASURE_STATUS.MEASURING) {
-    // 计算过程中的展示，不抖动
-    const showStyle = { height: lineHeight * rows, width, ...ellipsisStyle };
+    // 计算过程中的占位展示，避免计算造成的抖动
+    // 不能设置 width 否则在 table 中会再次造成 resize
+    const showStyle = {
+      height: lineHeight * rows,
+      overflow: 'hidden',
+    };
     ellipsisNode = (
       <div>
         <div ref={mirrorNode} style={{ width, ...mirrorNodeStyle }}>
