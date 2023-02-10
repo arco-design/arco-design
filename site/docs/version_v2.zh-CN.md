@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.44.2
+
+2023-02-10
+
+### 🐛 问题修复
+
+- 修复 `Upload` 组件 react 18 下严格模式中批量上传文件不生效 bug。([#1767](https://github.com/arco-design/arco-design/pull/1767))
+- 修复 `Typography` 在 `cssEllipsis` 下无法进行自适应省略的 bug([#1766](https://github.com/arco-design/arco-design/pull/1766))
+- 修复 `InputTag` 组件 `validate` 回调未对 `tokenSeparators` 触发的值更新生效的问题。([#1764](https://github.com/arco-design/arco-design/pull/1764))
+- 修复 `TreeSelect` 单选模式下，选中某一项下拉面板收起后没有触发 `onVisibleChange` 的 bug。([#1763](https://github.com/arco-design/arco-design/pull/1763))
+
+### 💅 样式更新
+
+- 移除 `Transfer` 允许拖拽时拖拽图标的交互样式。([#1765](https://github.com/arco-design/arco-design/pull/1765))
+
 ## 2.44.1
 
 2023-02-03

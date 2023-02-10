@@ -1,3 +1,11 @@
+## 2.44.2
+
+2023-02-10
+
+### 🐛 问题修复
+
+- 修复 `Typography` 在 `cssEllipsis` 下无法进行自适应省略的 bug([#1766](https://github.com/arco-design/arco-design/pull/1766))
+
 ## 2.41.1
 
 2022-11-04

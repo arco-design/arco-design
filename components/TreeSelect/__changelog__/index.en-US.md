@@ -1,3 +1,11 @@
+## 2.44.2
+
+2023-02-10
+
+### 🐛 BugFix
+
+- Fix the bug that `onVisibleChange` is not triggered after the selected node triggers the drop-down panel to collapse in `TreeSelect` single-selection mode.([#1763](https://github.com/arco-design/arco-design/pull/1763))
+
 ## 2.41.0
 
 2022-10-28

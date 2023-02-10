@@ -1,3 +1,11 @@
+## 2.44.2
+
+2023-02-10
+
+### 🐛 BugFix
+
+- Fix the issue that `validate` callback of `InputTag` does not take effect for value updates triggered by `tokenSeparators`.([#1764](https://github.com/arco-design/arco-design/pull/1764))
+
 ## 2.44.0
 
 2023-01-13

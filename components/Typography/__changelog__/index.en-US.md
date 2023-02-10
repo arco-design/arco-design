@@ -1,3 +1,11 @@
+## 2.44.2
+
+2023-02-10
+
+### 🐛 BugFix
+
+- Fix the bug that `Typography` cannot be adaptively omitted under `cssEllipsis`([#1766](https://github.com/arco-design/arco-design/pull/1766))
+
 ## 2.41.1
 
 2022-11-04

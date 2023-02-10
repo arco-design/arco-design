@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.44.2
+
+2023-02-10
+
+### 🐛 BugFix
+
+- Fix the bug that uploading files in batches does not take effect in the strict mode of `Upload` component react 18.([#1767](https://github.com/arco-design/arco-design/pull/1767))
+- Fix the bug that `Typography` cannot be adaptively omitted under `cssEllipsis`([#1766](https://github.com/arco-design/arco-design/pull/1766))
+- Fix the issue that `validate` callback of `InputTag` does not take effect for value updates triggered by `tokenSeparators`.([#1764](https://github.com/arco-design/arco-design/pull/1764))
+- Fix the bug that `onVisibleChange` is not triggered after the selected node triggers the drop-down panel to collapse in `TreeSelect` single-selection mode.([#1763](https://github.com/arco-design/arco-design/pull/1763))
+
+### 💅 Style
+
+- Removed `Transfer` interaction style of icon-drag.([#1765](https://github.com/arco-design/arco-design/pull/1765))
+
 ## 2.44.1
 
 2023-02-03

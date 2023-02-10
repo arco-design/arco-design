@@ -1,3 +1,11 @@
+## 2.44.2
+
+2023-02-10
+
+### 💅 Style
+
+- Removed `Transfer` interaction style of icon-drag.([#1765](https://github.com/arco-design/arco-design/pull/1765))
+
 ## 2.42.0
 
 2022-11-25

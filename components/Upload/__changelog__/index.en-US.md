@@ -1,3 +1,11 @@
+## 2.44.2
+
+2023-02-10
+
+### 🐛 BugFix
+
+- Fix the bug that uploading files in batches does not take effect in the strict mode of `Upload` component react 18.([#1767](https://github.com/arco-design/arco-design/pull/1767))
+
 ## 2.43.0
 
 2022-12-23
