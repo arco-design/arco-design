@@ -1,7 +1,7 @@
 import React from 'react';
 import TreeSelect from '..';
 import { normalizeValueToArray } from '../utils';
-import { cleanup, fireEvent, render } from '../../../tests/util';
+import { $, cleanup, fireEvent, render } from '../../../tests/util';
 
 const treeData = [
   {
@@ -97,7 +97,22 @@ describe('TreeSelect', () => {
     expect(mockVisibleChange).toHaveBeenCalledTimes(2);
     expect(mockVisibleChange.mock.calls[1]).toEqual([false]);
     // todo
-    // expect(wrapper.find('Tree')).toHaveLength(0);
+    expect(wrapper.find('Tree')).toHaveLength(0);
+    clickInput();
+
+    jest.runAllTimers();
+    expect(mockVisibleChange).toHaveBeenCalledTimes(3);
+    expect(mockVisibleChange.mock.calls[2]).toEqual([true]);
+
+    const text = $('.arco-tree-node-title-text').item(0).innerHTML;
+    fireEvent.click($('.arco-tree-node-title').item(0) as HTMLDivElement);
+
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-tree')).toHaveLength(0);
+    expect($('.arco-tree-select-view-value').item(0).innerHTML).toBe(text);
+
+    expect(mockVisibleChange).toHaveBeenCalledTimes(4);
+    expect(mockVisibleChange.mock.calls[3]).toEqual([false]);
   });
 
   it('select correctly', () => {
@@ -683,8 +698,8 @@ describe('TreeSelect', () => {
 
   it('onKeyDown is called', () => {
     const onKeyDown = jest.fn();
-    const wrapper = render(<TreeSelect onKeyDown={onKeyDown} />);
-    fireEvent.keyDown(wrapper.querySelector('input'));
+    render(<TreeSelect onKeyDown={onKeyDown} />);
+    fireEvent.keyDown($('input').item(0));
     expect(onKeyDown).toHaveBeenCalled();
   });
 });

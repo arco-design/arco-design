@@ -252,7 +252,7 @@ export interface BaseDatePickerProps {
   /**
    * @zh 展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)。使用 `string` 时，可以手动键入和编辑日期。使用 `(value: Dayjs) => string` 时，只能在 Picker 中选取日期。
    * @en Date format, refer to [dayjs](https://github.com/iamkun/dayjs). When using a `string`, manual editing is allowed. When using `(value: Dayjs) => string`, value must be picked from Picker.
-   * @defaultValue YYYY-MM-DD 
+   * @defaultValue YYYY-MM-DD
    */
   format?: string | ((value: Dayjs) => string);
   /**
