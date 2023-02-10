@@ -246,18 +246,32 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     );
   };
 
-  const handleTokenSeparators = (str: string): boolean => {
+  const handleTokenSeparators = async (str: string): Promise<boolean> => {
     let hasSeparator = false;
 
     if (isArray(tokenSeparators) && tokenSeparators.length) {
-      const rawSplitText = str.split(new RegExp(`[${tokenSeparators.join('')}]`));
-      if (rawSplitText.length > 1) {
-        // remove empty string
-        const splitText = rawSplitText.filter((str) => str);
-        if (splitText.length) {
+      const splitTextList = str.split(new RegExp(`[${tokenSeparators.join('')}]`));
+      if (splitTextList.length > 1) {
+        const validatedTextList: string[] = [];
+
+        await Promise.all(
+          splitTextList.map(async (text) => {
+            // filter empty string and validate it
+            const validateResult = text
+              ? typeof validate === 'function'
+                ? await validate(text, value)
+                : true
+              : false;
+            if (validateResult) {
+              validatedTextList.push(validateResult === true ? text : validateResult);
+            }
+          })
+        );
+
+        if (validatedTextList.length) {
           valueChangeHandler(
             value.concat(
-              splitText.map((text) => ({
+              validatedTextList.map((text) => ({
                 value: text,
                 label: text,
                 closable: true,
@@ -353,30 +367,35 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             setInputValue('');
           }}
           value={inputValue}
-          onChange={(value, event) => {
+          onChange={async (value, event) => {
+            // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
+            onInputChange?.(value, event);
+
             const inputType = event.nativeEvent.inputType;
-            if (
-              (inputType === 'insertFromPaste' &&
-                Date.now() - refTSLastSeparateTriggered.current <
-                  THRESHOLD_TOKEN_SEPARATOR_TRIGGER) ||
-              handleTokenSeparators(value)
-            ) {
+            const hasTriggeredTokenSeparatorJustNow =
+              inputType === 'insertFromPaste' &&
+              Date.now() - refTSLastSeparateTriggered.current < THRESHOLD_TOKEN_SEPARATOR_TRIGGER;
+
+            let hasTokenSeparator = false;
+            if (!hasTriggeredTokenSeparatorJustNow) {
+              hasTokenSeparator = await handleTokenSeparators(value);
+            }
+
+            if (hasTriggeredTokenSeparatorJustNow || hasTokenSeparator) {
               setInputValue('');
             } else {
               setInputValue(value);
             }
-            // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
-            onInputChange?.(value, event);
           }}
           onKeyDown={(event) => {
             hotkeyHandler(event as any);
             onKeyDown?.(event);
           }}
-          onPaste={(event) => {
-            if (handleTokenSeparators(event.clipboardData.getData('text'))) {
+          onPaste={async (event) => {
+            onPaste?.(event);
+            if (await handleTokenSeparators(event.clipboardData.getData('text'))) {
               refTSLastSeparateTriggered.current = Date.now();
             }
-            onPaste?.(event);
           }}
         />
       </CSSTransition>
