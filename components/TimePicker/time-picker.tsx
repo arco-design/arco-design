@@ -29,7 +29,7 @@ interface InnerTimePickerProps extends TimePickerProps {
 const AMPM = ['am', 'pm'];
 
 function isUse12Hours(props: InnerTimePickerProps) {
-  return props.use12Hours || getColumnsFromFormat(props.format).use12Hours;
+  return props.use12Hours ?? getColumnsFromFormat(props.format).use12Hours;
 }
 
 function TimePicker(props: InnerTimePickerProps) {
