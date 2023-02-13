@@ -83,18 +83,41 @@ describe('TimePicker', () => {
     expect(getCells(component, 1)).toHaveLength(60);
   });
 
-  it('use12hours', () => {
-    const component = render(
-      <TimePicker
-        use12Hours
-        format="hh:mm:ss A"
-        defaultValue={dayjs('12:20:20 AM', 'hh:mm:ss A')}
-      />
-    );
+  describe('use12hours', () => {
+    it('use12Hours === true', () => {
+      const component = render(
+        <TimePicker
+          use12Hours
+          format="hh:mm:ss A"
+          defaultValue={dayjs('12:20:20 AM', 'hh:mm:ss A')}
+        />
+      );
 
-    fireEvent.click(component.find('.arco-picker')[0]);
+      fireEvent.click(component.find('.arco-picker')[0]);
 
-    expect(getCells(component, 3)).toHaveLength(2);
+      const time = document.querySelectorAll(
+        '.arco-timepicker .arco-timepicker-list:first-child .arco-timepicker-cell:last-child .arco-timepicker-cell-inner'
+      )[0].textContent;
+
+      expect(time).toBe('11');
+    });
+
+    it('use12Hours === false', () => {
+      const component = render(
+        <TimePicker
+          use12Hours={false}
+          format="hh:mm:ss A"
+          defaultValue={dayjs('12:20:20 AM', 'hh:mm:ss A')}
+        />
+      );
+      fireEvent.click(component.find('.arco-picker')[0]);
+
+      const time = document.querySelectorAll(
+        '.arco-timepicker .arco-timepicker-list:first-child .arco-timepicker-cell:last-child .arco-timepicker-cell-inner'
+      )[0].textContent;
+
+      expect(time).toBe('23');
+    });
   });
 
   it('step', () => {
