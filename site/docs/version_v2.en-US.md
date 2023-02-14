@@ -2,6 +2,14 @@
 changelog: true
 ---
 
+## 2.44.3
+
+2023-02-14
+
+### 🐛 BugFix
+
+- Fix `value.label` value in `onChange` callback is not user input text when `validate` callback of `InputTag` returns non-boolean value.([#1774](https://github.com/arco-design/arco-design/pull/1774))
+
 ## 2.44.2
 
 2023-02-10
