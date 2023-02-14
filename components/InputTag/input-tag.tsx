@@ -252,7 +252,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     if (isArray(tokenSeparators) && tokenSeparators.length) {
       const splitTextList = str.split(new RegExp(`[${tokenSeparators.join('')}]`));
       if (splitTextList.length > 1) {
-        const validatedTextList: string[] = [];
+        const validatedValueList: ObjectValueType[] = [];
 
         await Promise.all(
           splitTextList.map(async (text) => {
@@ -263,22 +263,16 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
                 : true
               : false;
             if (validateResult) {
-              validatedTextList.push(validateResult === true ? text : validateResult);
+              validatedValueList.push({
+                value: validateResult === true ? text : validateResult,
+                label: text,
+              });
             }
           })
         );
 
-        if (validatedTextList.length) {
-          valueChangeHandler(
-            value.concat(
-              validatedTextList.map((text) => ({
-                value: text,
-                label: text,
-                closable: true,
-              }))
-            ),
-            'add'
-          );
+        if (validatedValueList.length) {
+          valueChangeHandler(value.concat(validatedValueList), 'add');
           hasSeparator = true;
         }
       }
