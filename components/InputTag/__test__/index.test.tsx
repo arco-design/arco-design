@@ -105,9 +105,10 @@ describe('InputTag', () => {
     const wrapper = render(
       <InputTag
         tokenSeparators={[',', ';', '\n']}
+        labelInValue
         validate={async (text) => {
           // only allow number less than 10
-          return isNaN(+text) ? false : +text > 10 ? '10' : text;
+          return isNaN(+text) ? false : +text > 10 ? `+${text}` : text;
         }}
         onChange={onChange}
       />
@@ -116,6 +117,10 @@ describe('InputTag', () => {
 
     fireEvent.change(eleInput, { target: { value: 'a,b,1,2,12' } });
     await sleep(10);
-    expect(onChange.mock.calls[0][0]).toEqual(['1', '2', '10']);
+    expect(onChange.mock.calls[0][0]).toEqual([
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '12', value: '+12' },
+    ]);
   });
 });
