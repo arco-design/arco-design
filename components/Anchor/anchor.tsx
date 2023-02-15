@@ -1,11 +1,4 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useContext,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-} from 'react';
+import React, { forwardRef, useContext, useEffect, useImperativeHandle, useRef } from 'react';
 import throttle from 'lodash/throttle';
 import compute from 'compute-scroll-into-view';
 import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed';
@@ -21,6 +14,7 @@ import { findNode, slide, getContainer, getContainerElement } from './utils';
 import useStateWithPromise from '../_util/hooks/useStateWithPromise';
 import Link from './link';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import useHandler from '../_util/hooks/useHandler';
 
 type AnchorPropsWithChildren = React.PropsWithChildren<AnchorProps>;
 
@@ -75,9 +69,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     scrollContainer.current = container;
   }, [propScrollContainer]);
 
-  const getAffixTarget = useCallback(() => {
-    return getContainer(propScrollContainer);
-  }, [propScrollContainer]);
+  const getAffixTarget = useHandler(() => getContainer(propScrollContainer));
 
   useImperativeHandle(
     ref,
@@ -97,36 +89,33 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     linkMap.current.delete(hash);
   }
 
-  const setActiveLink = useCallback(
-    (hash: string) => {
-      if (hash === '#a') {
-      }
-      if (!hash || !wrapperRef.current) return;
-      // Try to add when there is no corresponding link
-      if (!linkMap.current.has(hash)) {
-        const node = findNode(wrapperRef.current, `a[data-href='${hash}']`);
-        node && addLink(hash, node);
-      }
+  const setActiveLink = useHandler((hash: string) => {
+    if (hash === '#a') {
+    }
+    if (!hash || !wrapperRef.current) return;
+    // Try to add when there is no corresponding link
+    if (!linkMap.current.has(hash)) {
+      const node = findNode(wrapperRef.current, `a[data-href='${hash}']`);
+      node && addLink(hash, node);
+    }
 
-      const node = linkMap.current.get(hash);
+    const node = linkMap.current.get(hash);
 
-      if (node && hash !== currentLink) {
-        scrollIntoViewIfNeeded(node, {
-          behavior: 'instant',
-          block: 'nearest',
-          scrollMode: 'if-needed',
-          boundary: wrapperRef.current,
-        });
+    if (node && hash !== currentLink) {
+      scrollIntoViewIfNeeded(node, {
+        behavior: 'instant',
+        block: 'nearest',
+        scrollMode: 'if-needed',
+        boundary: wrapperRef.current,
+      });
 
-        setCurrentLink(hash).then(() => {
-          isFunction(onChange) && onChange(hash, currentLink);
-        });
-      }
-    },
-    [currentLink, onChange]
-  );
+      setCurrentLink(hash).then(() => {
+        isFunction(onChange) && onChange(hash, currentLink);
+      });
+    }
+  });
 
-  const getEleInViewport = useCallback(() => {
+  const getEleInViewport = useHandler(() => {
     let result;
     const startTop = isNumber(boundary) ? boundary : 0;
     const container = scrollContainer.current;
@@ -157,9 +146,9 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       return inView;
     });
     return result;
-  }, [boundary, targetOffset]);
+  });
 
-  const onScroll = useCallback(
+  const onScroll = useHandler(
     throttle(
       () => {
         if (isScrolling.current) return;
@@ -172,8 +161,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       },
       30,
       { trailing: true }
-    ),
-    [getEleInViewport, setActiveLink]
+    )
   );
 
   function scrollIntoView(hash: string) {
