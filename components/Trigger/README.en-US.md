@@ -48,7 +48,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |style|The additional css class|CSSProperties |`-`|-|
 |getDocument|Return a element which will be attached click event to close trigger|() => Element |`() => window.document`|-|
 |getPopupContainer|Set the parent node which the popup will be rendered to.|(node: HTMLElement) => Element |`-`|-|
-|onClick|Callback when click the child node. (Only work when `trigger` contains `click`)|(popupVisible: boolean) => void |`-`|-|
+|onClick|Callback when click the child node. (Only work when `trigger` contains `click`)|(e) => void |`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|(visible: boolean) => void |`-`|-|
 |popup|The content of the popup|() => ReactNode |`-`|-|
 

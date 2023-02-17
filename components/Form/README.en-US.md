@@ -74,8 +74,10 @@ A form with data collection, verification and submission functions, including ch
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
+|noStyle|FormItemProps['noStyle'].Defaults to `false` when `rules` exists (requires rendering validation information), otherwise defaults to `true`|[FormItemProps](form#formitem)['noStyle'] |`-`|2.46.0|
 |field|Field name|FieldKey  **(Required)**|`-`|-|
 |initialValue|Default value|SubFieldValue[] |`-`|2.22.0|
+|rules|Validation rules in controlled component, [RulesProps](#rules)|RulesProps&lt;SubFieldValue[]&gt;[] |`-`|2.46.0|
 |children|Function type children|(fields: { key: number; field: SubFieldKey }[],operation: {add: (defaultValue?: SubFieldValue, index?: number) => void;remove: (index: number) => void;move: (fromIndex: number, toIndex: number) => void;}) => React.ReactNode |`-`|-|
 
 ### Form.Provider(`2.30.0`)
@@ -134,6 +136,7 @@ export type InnerMethodsReturnType<
   | "innerSetFieldValue"
   | "innerGetStore"
   | "innerCollectFormState"
+  | "innerGetFieldValue"
 >;
 ```
 

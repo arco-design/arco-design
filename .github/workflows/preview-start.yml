@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: update status comment
-        uses: actions-cool/maintain-one-comment@v3
+        uses: mshick/add-pr-comment@v2
+        env:
+          PR_NUMBER: ${{ github.event.number }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |

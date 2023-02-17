@@ -15,7 +15,6 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |allowClear|允许清除值。|boolean |`-`|-|
-|allowCreate|是否允许通过输入创建新的选项。|boolean |`-`|2.13.0|
 |animation|是否为内部标签变化添加动画。|boolean |`true`|2.15.0|
 |bordered|是否显示边框|boolean |`true`|-|
 |disabled|是否为禁用状态。|boolean |`-`|-|

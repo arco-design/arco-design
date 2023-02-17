@@ -48,7 +48,7 @@
 |style|弹出框（外部）的样式|CSSProperties |`-`|-|
 |getDocument|在该元素上执行 clickOutside，触发弹出框关闭|() => Element |`() => window.document`|-|
 |getPopupContainer|设置弹出内容所插入的父元素|(node: HTMLElement) => Element |`-`|-|
-|onClick|按钮点击事件（`trigger` 包含 `click` 时生效）|(popupVisible: boolean) => void |`-`|-|
+|onClick|按钮点击事件（`trigger` 包含 `click` 时生效）|(e) => void |`-`|-|
 |onVisibleChange|显示或隐藏时触发的回调|(visible: boolean) => void |`-`|-|
 |popup|弹出框的内容|() => ReactNode |`-`|-|
 

@@ -37,6 +37,7 @@ export function getFormInstance<
           'innerSetCallbacks',
           'innerSetFieldValue',
           'innerGetStore',
+          'innerGetFieldValue',
           'innerCollectFormState',
         ].map((key) => {
           methods[key] = store[key];

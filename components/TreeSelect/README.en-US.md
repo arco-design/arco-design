@@ -15,7 +15,6 @@ Can choose tree structure data.Only Single choice is supports.
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |allowClear|Whether allow to clear selected options|boolean |`-`|-|
-|allowCreate|Whether to allow new options to be created by input.|boolean |`-`|2.13.0|
 |animation|Whether to add animation for internal label changes|boolean |`true`|2.15.0|
 |bordered|Whether show border|boolean |`true`|-|
 |disabled|Whether is disabled|boolean |`-`|-|

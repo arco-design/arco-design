@@ -9,7 +9,7 @@ export type LabelValue = { label: ReactNode; value: string; disabled?: boolean }
 /**
  * @title TreeSelect
  */
-export interface TreeSelectProps extends SelectViewCommonProps {
+export interface TreeSelectProps extends Omit<SelectViewCommonProps, 'allowCreate'> {
   /**
    * @zh 是否多选
    * @en Whether to select multiple

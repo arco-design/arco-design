@@ -122,6 +122,14 @@ this.form.setFields({
 ```
 
 ## 常见问题
+
+### `Switch` 、 `Checkbox` 的选中状态不受 `Form.Item` 的控制？
+
+在 `FormItem` 上设置 `triggerPropName` 为 `checked`。
+其他表单控件受控属性不是 `value` 时，可类似方式处理。
+如 `<Form.Item field="upload" triggerPropName="fileList"><Upload/></Form.Item>`
+
+
 ### 如何设置表单控件的默认值？（为什么给控件例如 Input ，直接设置defaultValue 不生效）
 
 在被FormItem包裹，并且Form.Item设置了field属性的控件上，不要再设置defaultValue和value 属性。 可以在Form.Item 上通过initialValue或Form的initialValues属性来设置默认值。

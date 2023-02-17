@@ -20,6 +20,9 @@ import { NotifyType, StoreChangeInfo } from './store';
 import classNames from '../_util/classNames';
 import { isSyntheticEvent, schemaValidate, isFieldMatch, ID_SUFFIX } from './utils';
 
+/**
+ * 👀 👀 👀：不要在业务中直接调用，下个大版本将不会对外导出
+ */
 export default class Control<
   FormData = any,
   FieldValue = FormData[keyof FormData],
@@ -98,7 +101,7 @@ export default class Control<
   }
 
   // 触发 store 进行状态收集
-  // TODO: error, validateStatys ,touched 状态和 UI 组件解耦，统一维护在 store 内部
+  // TODO: error, validateStatus ,touched 状态和 UI 组件解耦，统一维护在 store 内部
   private triggerStateCollect = () => {
     const { innerCollectFormState } = this.context.store.getInnerMethods(true);
     innerCollectFormState();
@@ -164,6 +167,12 @@ export default class Control<
         errors: this.errors,
         warnings: this.warnings,
       });
+  };
+
+  private getFieldValue = () => {
+    const field = this.props.field;
+    const store = this.context.store;
+    return field ? store.getInnerMethods(true).innerGetFieldValue(field) : undefined;
   };
 
   public onStoreChange = (type: NotifyType, info: StoreChangeInfo<FieldKey> & { current: any }) => {
@@ -280,9 +289,9 @@ export default class Control<
     value: FieldValue;
     field: FieldKey;
   }> => {
-    const { store, validateTrigger: ctxValidateTrigger, validateMessages } = this.context;
+    const { validateTrigger: ctxValidateTrigger, validateMessages } = this.context;
     const { field, rules, validateTrigger } = this.props;
-    const value = store.getFieldValue(field);
+    const value = this.getFieldValue();
 
     // 进入到校验中的状态
     const gotoValidatingStatus = () => {
@@ -383,7 +392,7 @@ export default class Control<
     this.getValidateTrigger().forEach((vt) => {
       childProps[vt] = (e) => {
         this.validateField(vt);
-        child.props[vt] && child.props[vt](e);
+        child.props?.[vt] && child.props?.[vt](e);
       };
     });
 
@@ -412,9 +421,16 @@ export default class Control<
     const { store } = this.context;
     let child = children;
     if (isFunction(children)) {
-      child = children(store.getFields(), {
-        ...store,
-      });
+      child = children(
+        store.getFields(),
+        {
+          ...store,
+        },
+        this.props.isFormList && {
+          value: this.getFieldValue(),
+          onChange: this.handleTrigger,
+        }
+      );
     }
     this.childrenElement = child;
     return child;
