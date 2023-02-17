@@ -46,8 +46,8 @@ export interface InputProps
    */
   error?: boolean;
   /**
-   * @zh 是否是错误状态
-   * @en Whether the input is error
+   * @zh 状态
+   * @en Status
    * @version 2.45.0
    */
   status?: 'error' | 'warning';
@@ -168,8 +168,8 @@ export interface TextAreaProps
    */
   error?: boolean;
   /**
-   * @zh 是否是错误状态
-   * @en Whether the textarea is error
+   * @zh 状态
+   * @en Status
    * @version 2.45.0
    */
   status?: 'error' | 'warning';

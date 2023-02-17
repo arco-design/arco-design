@@ -166,6 +166,14 @@
   .status-color(default);
   .status-tag-color();
 
+  &-warning {
+    .status-color(warning);
+  }
+
+  &-error {
+    .status-color(error);
+  }
+
   &-disabled {
     .status-color(disabled);
 
@@ -174,10 +182,6 @@
     .@{input-tag-prefix-cls}-input::placeholder {
       color: @input-tag-color-text_disabled;
     }
-  }
-
-  &-error {
-    .status-color(error);
   }
 
   &-readonly {

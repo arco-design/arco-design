@@ -395,16 +395,17 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       </CSSTransition>
     );
 
+  const status = props.status || (error ? 'error' : undefined);
   return (
     <div
-      {...omit(rest, ['size', 'defaultValue', 'value', 'inputValue'])}
+      {...omit(rest, ['status', 'size', 'defaultValue', 'value', 'inputValue'])}
       style={style}
       className={cs(
         prefixCls,
         {
           [`${prefixCls}-size-${size}`]: size,
           [`${prefixCls}-disabled`]: disabled,
-          [`${prefixCls}-error`]: error,
+          [`${prefixCls}-${status}`]: status,
           [`${prefixCls}-focus`]: focused,
           [`${prefixCls}-readonly`]: readOnly,
           [`${prefixCls}-has-suffix`]: hasSuffix,
