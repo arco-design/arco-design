@@ -22,7 +22,7 @@ const processFile = function (fileList?: UploadItem[]): UploadItem[] {
   return files.reduce((total, file, index) => {
     if (file.uid) {
       const repeatUidIndex = files.findIndex((item) => file.uid === item.uid && file !== item);
-      warning(repeatUidIndex, '[Upload]: duplicate uid');
+      warning(repeatUidIndex !== -1, '[Upload]: duplicate uid');
       const item = {
         status: STATUS.success,
         percent: 100,
