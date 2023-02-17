@@ -1,0 +1,20 @@
+.picker-status(@status) {
+  &-@{status}:not(&-disabled) {
+    border-color: ~'@{picker-color-border_@{status}}';
+    background-color: ~'@{picker-color-bg_@{status}}';
+
+    &:hover {
+      border-color: ~'@{picker-color-border_@{status}_hover}';
+      background-color: ~'@{picker-color-bg_@{status}_hover}';
+    }
+  }
+
+  &-@{status}&-focused:not(&-disabled) {
+    &,
+    &:hover {
+      border-color: ~'@{picker-color-border_@{status}_focus}';
+      background-color: ~'@{picker-color-bg_@{status}_focus}';
+      box-shadow: 0 0 0 ~'@{picker-size-shadow_@{status}_focus}' ~'@{picker-color-shadow_@{status}_focus}';
+    }
+  }
+}

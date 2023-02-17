@@ -1,5 +1,6 @@
 @import '../../../style/mixin.less';
 @import './token.less';
+@import './status.less';
 
 .@{prefix}-picker {
   position: relative;
@@ -77,16 +78,6 @@
     display: none;
   }
 
-  &-error {
-    background-color: @picker-color-bg_error;
-    border-color: @picker-color-border_error;
-
-    &:hover {
-      background-color: @picker-color-bg_error_hover;
-      border-color: @picker-color-border_error_hover;
-    }
-  }
-
   &-focused {
     box-shadow: 0 0 0 @picker-size-shadow_focus @picker-color-shadow_focus;
   }
@@ -95,11 +86,6 @@
   &-focused:hover {
     background-color: @picker-color-bg_focus;
     border-color: @picker-color-border_focus;
-  }
-
-  &-focused&-error {
-    border-color: @picker-color-border_error_focus;
-    box-shadow: 0 0 0 @picker-size-shadow_error_focus @picker-color-shadow_error_focus;
   }
 
   &-focused &-input-active input,
@@ -118,6 +104,9 @@
       }
     }
   }
+
+  .picker-status(error);
+  .picker-status(warning);
 
   .disabledInput();
 

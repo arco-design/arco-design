@@ -17,12 +17,13 @@ Mentions is used to mention someone or something in the input.
 |alignTextarea|Whether the popup is aligned with the input|boolean |`true`|-|
 |allowClear|Whether allow clear the content|boolean |`-`|2.2.0|
 |disabled|Whether the textarea is disabled|boolean |`-`|-|
-|error|Whether the textarea is error|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |defaultValue|To set default value|string |`-`|-|
 |placeholder|textarea placeholder|string |`-`|-|
 |split|Set split string before and after selected mention|string |`-`|-|
 |value|To set value|string |`-`|-|
 |position|Position of dropdown|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |notFoundContent|The content displayed when there is no data|ReactNode |`-`|-|
 |autoSize|Height autoSize feature|boolean \| { minRows?: number; maxRows?: number } |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|

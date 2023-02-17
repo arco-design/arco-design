@@ -76,7 +76,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       hasParent ? undefined : className
     );
     const inputProps = {
-      'aria-invalid': props.status === 'error',
+      'aria-invalid': props.status === 'error' || undefined,
       ...otherProps,
       readOnly,
       maxLength,

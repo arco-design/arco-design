@@ -20,7 +20,7 @@
 |disableConfirm|禁用确认步骤，开启后直接点选时间不需要点击确认按钮。|boolean |`-`|2.12.0|
 |disabled|是否禁用|boolean |`-`|-|
 |editable|是否可手动输入|boolean |`true`|-|
-|error|报错样式|boolean |`-`|-|
+|error|是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |hideDisabledOptions|隐藏禁止选择的选项|boolean |`-`|-|
 |popupVisible|控制弹出框打开或者关闭|boolean |`-`|-|
 |scrollSticky|时间列在滚动的时候自动吸附和选中|boolean |`true`|2.23.0|
@@ -31,6 +31,7 @@
 |timezone|设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。|string |`-`|-|
 |position|弹出的框的位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
 |size|输入框尺寸|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |extra|底部附加内容|ReactNode |`-`|-|
 |prefix|前缀|ReactNode |`-`|2.43.0|
 |triggerElement|触发元素。|ReactNode |`-`|2.38.0|

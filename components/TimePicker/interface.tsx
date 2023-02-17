@@ -18,10 +18,17 @@ export interface PickerProps {
    */
   disabled?: boolean;
   /**
-   * @zh 报错样式
-   * @en Error style
+   * @zh 是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)
+   * @en Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)
+   * @deprecated
    */
   error?: boolean;
+  /**
+   * @zh 状态
+   * @en Status
+   * @version 2.45.0
+   */
+  status?: 'error' | 'warning';
   /**
    * @zh 前缀
    * @en prefix

@@ -19,6 +19,7 @@ export interface DateInputProps {
   style?: CSSProperties;
   className?: string | string[];
   error?: boolean;
+  status?: 'warning' | 'error';
   disabled?: boolean;
   placeholder?: string;
   value?: Dayjs;
@@ -48,6 +49,7 @@ function DateInput(
     className,
     prefixCls: propPrefixCls,
     allowClear,
+    status,
     error,
     disabled,
     placeholder,
@@ -100,6 +102,8 @@ function DateInput(
   const readOnlyProps = editable ? {} : { readOnly: true };
 
   const prefixCls = propPrefixCls || getPrefixCls('picker');
+
+  const inputStatus = status || (error ? 'error' : undefined);
   const classNames = cs(
     prefixCls,
     `${prefixCls}-size-${size}`,
@@ -107,7 +111,7 @@ function DateInput(
       [`${prefixCls}-focused`]: !!popupVisible,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-has-prefix`]: prefix,
-      [`${prefixCls}-error`]: error,
+      [`${prefixCls}-${inputStatus}`]: inputStatus,
       [`${prefixCls}-rtl`]: rtl,
     },
     className

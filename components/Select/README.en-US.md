@@ -22,7 +22,7 @@ When users need to select one or more from a group of similar data, they can use
 |defaultPopupVisible|Whether to show dropdown by default.|boolean |`-`|2.14.0|
 |disabled|Whether is disabled|boolean |`-`|-|
 |dragToSort|Weather it is possible to sort tags by drag|boolean |`-`|2.27.0|
-|error|Error Style|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |labelInValue|Whether to embed label in value, turn the format of value from string to `{ value: string, label: ReactNode }`|boolean |`-`|-|
 |loading|Whether is in loading|boolean |`-`|-|
 |popupVisible|Whether to show dropdown.|boolean |`-`|2.6.0|
@@ -31,6 +31,7 @@ When users need to select one or more from a group of similar data, they can use
 |placeholder|Placeholder of element|string |`-`|-|
 |mode|Set mode of Select(**`tags` recommends using `mode: multiple; allowCreate: true` instead, this mode will be removed in the next major version**)|'multiple' \| 'tags' |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |trigger|The trigger mode which executes the dropdown action.|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
 |addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|

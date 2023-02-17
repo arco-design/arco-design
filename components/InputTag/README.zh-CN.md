@@ -19,13 +19,14 @@
 |autoFocus|自动聚焦|boolean |`-`|-|
 |disabled|是否禁用|boolean |`-`|-|
 |dragToSort|是否可以通过拖拽为 Tag 排序|boolean |`-`|2.27.0|
-|error|是否是错误状态|boolean |`-`|-|
+|error|是否是错误状态.(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |labelInValue|设置传入和回调出的值均为 `{ label: '', value: ''}` 格式。|boolean |`-`|-|
 |readOnly|是否只读|boolean |`-`|-|
 |saveOnBlur|是否在失焦时自动存储正在输入的文本|boolean |`-`|2.25.0|
 |inputValue|控件的输入框内的值|string |`-`|-|
 |placeholder|预设文案|string |`-`|-|
 |size|不同尺寸|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |suffix|后缀|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |defaultValue|默认值|T[] |`-`|-|

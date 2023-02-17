@@ -20,7 +20,7 @@
 |bordered|是否显示边框|boolean |`true`|-|
 |disabled|是否为禁用状态。|boolean |`-`|-|
 |dragToSort|是否可以通过拖拽为 Tag 排序|boolean |`-`|2.27.0|
-|error|是否为错误状态。|boolean |`-`|-|
+|error|是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |labelInValue|设置 value 格式。默认是 `string`，设置为 `true` 时候，value 格式为： `{ label: string, value: string }`|boolean |`-`|-|
 |loading|是否为加载状态。|boolean |`-`|-|
 |multiple|是否多选|boolean |`-`|-|
@@ -32,6 +32,7 @@
 |placeholder|选择框默认文字。|string |`-`|-|
 |fieldNames|指定 key，title，isLeaf，disabled，children 对应的字段|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |treeCheckedStrategy|定制回显方式|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
 |addBefore|选择框前添加元素|ReactNode |`-`|2.41.0|
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|

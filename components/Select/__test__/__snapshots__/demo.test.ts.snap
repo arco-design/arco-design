@@ -393,124 +393,250 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
 `;
 
 exports[`renders Select/demo/basic.md correctly 1`] = `
-<div
-  class="arco-space arco-space-horizontal arco-space-align-center"
->
+<div>
   <div
-    class="arco-space-item"
-    style="margin-right:24px"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
-      aria-autocomplete="list"
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      class="arco-select arco-select-single arco-select-size-default"
-      role="combobox"
-      style="width:154px"
-      tabindex="0"
+      class="arco-space-item"
+      style="margin-right:24px"
     >
       <div
-        class="arco-select-view"
-        title=""
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-size-default"
+        role="combobox"
+        style="width:154px"
+        tabindex="0"
       >
-        <span
-          class="arco-select-view-selector"
-        >
-          <input
-            autocomplete="off"
-            class="arco-select-view-input"
-            placeholder="Please select"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
-          <span
-            class="arco-select-view-value arco-select-view-value-mirror"
-          >
-            Please select
-          </span>
-        </span>
         <div
-          aria-hidden="true"
-          class="arco-select-suffix"
+          class="arco-select-view"
+          title=""
         >
-          <div
-            class="arco-select-arrow-icon"
+          <span
+            class="arco-select-view-selector"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-down"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              viewBox="0 0 48 48"
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              placeholder="Please select"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-select-view-value arco-select-view-value-mirror"
             >
-              <path
-                d="M39.6 17.443 24.043 33 8.487 17.443"
-              />
-            </svg>
+              Please select
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        aria-autocomplete="list"
+        aria-disabled="true"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
+        role="combobox"
+        style="width:154px"
+        tabindex="-1"
+      >
+        <div
+          class="arco-select-view"
+          title="Beijing"
+        >
+          <span
+            class="arco-select-view-selector"
+          >
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              disabled=""
+              placeholder="Select city"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="Beijing"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              Beijing
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <br />
+  <br />
   <div
-    class="arco-space-item"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
-      aria-autocomplete="list"
-      aria-disabled="true"
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
-      role="combobox"
-      style="width:154px"
-      tabindex="-1"
+      class="arco-space-item"
+      style="margin-right:24px"
     >
       <div
-        class="arco-select-view"
-        title="Beijing"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-size-default arco-select-error"
+        role="combobox"
+        style="width:154px"
+        tabindex="0"
       >
-        <span
-          class="arco-select-view-selector"
-        >
-          <input
-            aria-hidden="true"
-            autocomplete="off"
-            class="arco-select-view-input arco-select-hidden"
-            disabled=""
-            placeholder="Select city"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value="Beijing"
-          />
-          <span
-            class="arco-select-view-value"
-          >
-            Beijing
-          </span>
-        </span>
         <div
-          aria-hidden="true"
-          class="arco-select-suffix"
+          class="arco-select-view"
+          title=""
         >
-          <div
-            class="arco-select-arrow-icon"
+          <span
+            class="arco-select-view-selector"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-down"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              viewBox="0 0 48 48"
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              placeholder="Please select"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-select-view-value arco-select-view-value-mirror"
             >
-              <path
-                d="M39.6 17.443 24.043 33 8.487 17.443"
-              />
-            </svg>
+              Please select
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-size-default arco-select-warning"
+        role="combobox"
+        style="width:154px"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title="Beijing"
+        >
+          <span
+            class="arco-select-view-selector"
+          >
+            <input
+              aria-hidden="true"
+              autocomplete="off"
+              class="arco-select-view-input arco-select-hidden"
+              placeholder="Select city"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value="Beijing"
+            />
+            <span
+              class="arco-select-view-value"
+            >
+              Beijing
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

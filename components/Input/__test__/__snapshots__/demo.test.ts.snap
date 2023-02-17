@@ -627,7 +627,8 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
               class="arco-input-inner-wrapper arco-input-inner-wrapper-error arco-input-inner-wrapper-default"
             >
               <input
-                class="arco-input arco-input-size-default"
+                aria-invalid="true"
+                class="arco-input arco-input-size-default arco-input-error"
                 value="More than 10 letters will be error"
               />
               <span
@@ -1719,6 +1720,17 @@ exports[`renders Input/demo/status.md correctly 1`] = `
       aria-invalid="true"
       class="arco-input arco-input-size-default arco-input-error"
       placeholder="error status"
+      style="width:350px"
+      value=""
+    />
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-right:8px;margin-bottom:8px"
+  >
+    <input
+      class="arco-input arco-input-size-default arco-input-warning"
+      placeholder="warning status"
       style="width:350px"
       value=""
     />

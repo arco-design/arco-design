@@ -17,12 +17,13 @@
 |alignTextarea|弹出框是否与输入框对齐|boolean |`true`|-|
 |allowClear|允许清空输入框|boolean |`-`|2.2.0|
 |disabled|是否禁用|boolean |`-`|-|
-|error|是否是错误状态|boolean |`-`|-|
+|error|是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |defaultValue|输入框默认值|string |`-`|-|
 |placeholder|输入框提示文字|string |`-`|-|
 |split|选中项前后分隔符|string |`-`|-|
 |value|输入框的值|string |`-`|-|
 |position|下拉框的弹出位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |notFoundContent|下拉列表没有数据时显示的内容|ReactNode |`-`|-|
 |autoSize|是否自动调整输入框的高度|boolean \| { minRows?: number; maxRows?: number } |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|

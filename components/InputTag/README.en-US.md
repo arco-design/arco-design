@@ -19,13 +19,14 @@ An input box which will display your input as tags.
 |autoFocus|Whether the input is focused by default|boolean |`-`|-|
 |disabled|Whether the input is disabled|boolean |`-`|-|
 |dragToSort|Weather it is possible to sort tags by drag|boolean |`-`|2.27.0|
-|error|Error style|boolean |`-`|-|
+|error|Whether the input is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |labelInValue|If true, the incoming and callback values will be `{label: '', value: '')` format|boolean |`-`|-|
 |readOnly|Whether the input is read only|boolean |`-`|-|
 |saveOnBlur|Whether to automatically store the text entering when blur InputTag|boolean |`-`|2.25.0|
 |inputValue|To set input value|string |`-`|-|
 |placeholder|Placeholder of input element|string |`-`|-|
 |size|Different sizes|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |suffix|The suffix for the InputTag|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |defaultValue|To set default value|T[] |`-`|-|

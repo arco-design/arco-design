@@ -22,7 +22,7 @@ Display options in a multi-level cascading dropdown component.
 |defaultPopupVisible|Whether the popup is visible by default|boolean |`-`|-|
 |disabled|Whether is disabled|boolean |`-`|-|
 |dragToSort|Weather it is possible to sort tags by drag|boolean |`-`|2.27.0|
-|error|Error Style|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |loading|Whether is in loading|boolean |`-`|-|
 |popupVisible|Whether the popup is visible|boolean |`-`|-|
 |showEmptyChildren|Whether to render the next level node when the children of the selected option is an empty array|boolean |`-`|-|
@@ -34,6 +34,7 @@ Display options in a multi-level cascading dropdown component.
 |mode|Set mode|'multiple' |`-`|-|
 |showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string, option: NodeProps&lt;T&gt;) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |virtualListProps|virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
 |addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|

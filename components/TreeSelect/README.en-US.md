@@ -20,7 +20,7 @@ Can choose tree structure data.Only Single choice is supports.
 |bordered|Whether show border|boolean |`true`|-|
 |disabled|Whether is disabled|boolean |`-`|-|
 |dragToSort|Weather it is possible to sort tags by drag|boolean |`-`|2.27.0|
-|error|Error Style|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |labelInValue|Setting value format.The default is `string`, when set to `true`, the value format will turn to: `{ label: string, value: string }`|boolean |`-`|-|
 |loading|Whether is in loading|boolean |`-`|-|
 |multiple|Whether to select multiple|boolean |`-`|-|
@@ -32,6 +32,7 @@ Can choose tree structure data.Only Single choice is supports.
 |placeholder|Placeholder of element|string |`-`|-|
 |fieldNames|Custom field name for key, title, isLeaf, disabled and children|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |treeCheckedStrategy|Customize the return value|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
 |addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
