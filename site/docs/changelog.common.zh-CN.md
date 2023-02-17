@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 🆕 功能升级
+
+- `Input` 、`Select`、 `DatePicker`、 `TimePicker`、`Cascader` 、`TreeSelect`、`AutoComplete ` 支持通过 `status` 属性设置 `warning` 状态([#1786](https://github.com/arco-design/arco-design/pull/1786))
+
 ## 2.43.1
 
 2022-12-30

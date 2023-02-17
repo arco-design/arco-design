@@ -1,7 +1,6 @@
-
 .input-status(@status) {
   // 禁用优先级u高于status
-  &-@{status}  {
+  &-@{status} {
     border-color: ~'@{input-color-border_@{status}}';
     background-color: ~'@{input-color-bg_@{status}}';
 
@@ -32,7 +31,7 @@
   }
 
   // 单独input ，没有前后缀
-  &-@{status}{
+  &-@{status} {
     &:focus,
     &:focus:hover {
       border-color: ~'@{input-color-border_@{status}_focus}';
@@ -41,4 +40,3 @@
     }
   }
 }
-

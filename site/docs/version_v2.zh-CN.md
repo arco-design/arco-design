@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.45.0
+
+2023-02-17
+
+### 💎 功能优化
+
+- 优化 `Select` 允许创建选项时，如果搜索结果返回同样 `option.value` 的选项，此选项未更新的问题。([#1788](https://github.com/arco-design/arco-design/pull/1788))
+
+### 🆕 功能升级
+
+- `Input` 、`Select`、 `DatePicker`、 `TimePicker`、`Cascader` 、`TreeSelect`、`AutoComplete ` 支持通过 `status` 属性设置 `warning` 状态([#1786](https://github.com/arco-design/arco-design/pull/1786))
+
+### 🐛 问题修复
+
+- 修复 `Calendar` 组件 `panelTodayBtn` 按钮点击无效的问题。([#1789](https://github.com/arco-design/arco-design/pull/1789))
+- 修复 `Table` 组件 `data` 动态加载时固定列事件没触发的 bug。([#1787](https://github.com/arco-design/arco-design/pull/1787))
+- 修复 `InputTag` 粘贴文本自动分词的校验结果全部不通过时 `validate` 函数会连续触发两轮的问题。([#1784](https://github.com/arco-design/arco-design/pull/1784))
+- 修复 `Upload` 组件校验重复 `uid` 警告逻辑异常([#1783](https://github.com/arco-design/arco-design/pull/1783))
+
 ## 2.44.3
 
 2023-02-14

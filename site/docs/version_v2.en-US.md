@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.45.0
+
+2023-02-17
+
+### 💎 Enhancement
+
+- Optimize the issue that `Select` user-created option not updated if the search result returns an option with the same `option.value`([#1788](https://github.com/arco-design/arco-design/pull/1788))
+
+### 🆕 Feature
+
+- `Input`, `Select`, `DatePicker`, `TimePicker`, `Cascader`, `TreeSelect`, `AutoComplete` support setting `warning` status through `status` property([#1786](https://github.com/arco-design/arco-design/pull/1786))
+
+### 🐛 BugFix
+
+- Fix `Calendar` component `panelTodayBtn` click invalid issue.([#1789](https://github.com/arco-design/arco-design/pull/1789))
+- Fix the bug that the fixed column event is not triggered when the `Table` component `data` is dynamically loaded.([#1787](https://github.com/arco-design/arco-design/pull/1787))
+- Fix the issue that `validate` function will trigger two consecutive rounds when all the verification results of the automatic word segmentation of the pasted text of `InputTag` fail.([#1784](https://github.com/arco-design/arco-design/pull/1784))
+- Fix `Upload` component verification duplicate `uid` warning logic exception([#1783](https://github.com/arco-design/arco-design/pull/1783))
+
 ## 2.44.3
 
 2023-02-14

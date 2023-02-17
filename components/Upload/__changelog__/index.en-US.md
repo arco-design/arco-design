@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 🐛 BugFix
+
+- Fix `Upload` component verification duplicate `uid` warning logic exception([#1783](https://github.com/arco-design/arco-design/pull/1783))
+
 ## 2.44.2
 
 2023-02-10

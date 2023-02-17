@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 🐛 BugFix
+
+- Fix `Calendar` component `panelTodayBtn` click invalid issue.([#1789](https://github.com/arco-design/arco-design/pull/1789))
+
 ## 2.36.1
 
 2022-07-01

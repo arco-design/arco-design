@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 🆕 Feature
+
+- `Input`, `Select`, `DatePicker`, `TimePicker`, `Cascader`, `TreeSelect`, `AutoComplete` support setting `warning` status through `status` property([#1786](https://github.com/arco-design/arco-design/pull/1786))
+
 ## 2.43.1
 
 2022-12-30

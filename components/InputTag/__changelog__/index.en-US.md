@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 🐛 BugFix
+
+- Fix the issue that `validate` function will trigger two consecutive rounds when all the verification results of the automatic word segmentation of the pasted text of `InputTag` fail.([#1784](https://github.com/arco-design/arco-design/pull/1784))
+
 ## 2.44.3
 
 2023-02-14

@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 🐛 BugFix
+
+- Fix the bug that the fixed column event is not triggered when the `Table` component `data` is dynamically loaded.([#1787](https://github.com/arco-design/arco-design/pull/1787))
+
 ## 2.44.0
 
 2023-01-13

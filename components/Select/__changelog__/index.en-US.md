@@ -1,3 +1,11 @@
+## 2.45.0
+
+2023-02-17
+
+### 💎 Enhancement
+
+- Optimize the issue that `Select` user-created option not updated if the search result returns an option with the same `option.value`([#1788](https://github.com/arco-design/arco-design/pull/1788))
+
 ## 2.44.1
 
 2023-02-03
