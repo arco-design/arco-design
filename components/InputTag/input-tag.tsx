@@ -246,12 +246,26 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     );
   };
 
-  const handleTokenSeparators = async (str: string): Promise<boolean> => {
-    let hasSeparator = false;
+  const handleTokenSeparators = async (str: string, isPaste = false) => {
+    // won't handle token separators in a short time
+    if (
+      isPaste &&
+      Date.now() - refTSLastSeparateTriggered.current < THRESHOLD_TOKEN_SEPARATOR_TRIGGER
+    ) {
+      return;
+    }
+
+    // clear the timestamp, and then we can judge whether tokenSeparators has been triggered
+    // according to timestamp value
+    refTSLastSeparateTriggered.current = null;
 
     if (isArray(tokenSeparators) && tokenSeparators.length) {
       const splitTextList = str.split(new RegExp(`[${tokenSeparators.join('')}]`));
+
       if (splitTextList.length > 1) {
+        // record the timestamp of tokenSeparators triggered
+        refTSLastSeparateTriggered.current = Date.now();
+
         const validatedValueList: ObjectValueType[] = [];
 
         await Promise.all(
@@ -273,12 +287,9 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
         if (validatedValueList.length) {
           valueChangeHandler(value.concat(validatedValueList), 'add');
-          hasSeparator = true;
         }
       }
     }
-
-    return hasSeparator;
   };
 
   const clearIcon =
@@ -361,21 +372,15 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             setInputValue('');
           }}
           value={inputValue}
-          onChange={async (value, event) => {
+          onChange={(value, event) => {
             // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
             onInputChange?.(value, event);
 
             const inputType = event.nativeEvent.inputType;
-            const hasTriggeredTokenSeparatorJustNow =
-              inputType === 'insertFromPaste' &&
-              Date.now() - refTSLastSeparateTriggered.current < THRESHOLD_TOKEN_SEPARATOR_TRIGGER;
+            // do NOT use await, need to update input value right away
+            handleTokenSeparators(value, inputType === 'insertFromPaste');
 
-            let hasTokenSeparator = false;
-            if (!hasTriggeredTokenSeparatorJustNow) {
-              hasTokenSeparator = await handleTokenSeparators(value);
-            }
-
-            if (hasTriggeredTokenSeparatorJustNow || hasTokenSeparator) {
+            if (refTSLastSeparateTriggered.current) {
               setInputValue('');
             } else {
               setInputValue(value);
@@ -385,11 +390,9 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             hotkeyHandler(event as any);
             onKeyDown?.(event);
           }}
-          onPaste={async (event) => {
+          onPaste={(event) => {
             onPaste?.(event);
-            if (await handleTokenSeparators(event.clipboardData.getData('text'))) {
-              refTSLastSeparateTriggered.current = Date.now();
-            }
+            handleTokenSeparators(event.clipboardData.getData('text'));
           }}
         />
       </CSSTransition>
