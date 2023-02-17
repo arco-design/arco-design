@@ -25,6 +25,8 @@ class App extends React.Component {
   state = {
     size: 'default',
     height: 0,
+    status: 'error',
+    disabled: false
   };
   handleHeightChange = (height) => {
     this.setState({
@@ -39,9 +41,10 @@ class App extends React.Component {
   };
 
   render() {
-    const { size, height } = this.state;
+    const { size, height, status, disabled } = this.state;
     const props = {
       size,
+      status, disabled
     };
 
     if (height) {
@@ -66,6 +69,34 @@ class App extends React.Component {
             );
           })}
         </RadioGroup>
+        <RadioGroup
+          type="button"
+          mode="fill"
+          name="size"
+          value={this.state.size}
+          onChange={(status) => {
+            this.setState({
+              ...this.state,
+              status
+            })
+          }}
+          style={{ marginBottom: 24 }}
+        >
+          {['error', 'warning', undefined].map((x) => {
+            return (
+              <Radio key={x} value={x}>
+                {`${x}`}
+              </Radio>
+            );
+          })}
+        </RadioGroup>
+                <Typography.Text onClick={() => {
+                   this.setState({
+              ...this.state,
+              disabled: !this.state.disabled
+            })
+                }}>disabled</Typography.Text>
+
         <br />
         <Typography.Text>Custom height</Typography.Text>
         <Slider
