@@ -120,7 +120,14 @@ function flatChildren(
       isValidOption = !inputValue || filterOption(inputValue, child);
     }
 
-    if (!optionInfoMap.get(optionValue)) {
+    const existOption = optionInfoMap.get(optionValue);
+    const needOverwriteUserCreatedOption =
+      existOption?._origin === 'userCreatedOptions' ||
+      existOption?._origin === 'userCreatingOption';
+
+    // we don't allow two options with same value
+    // however option created by user-inputting can be replaced by option from option property or children
+    if (!existOption || needOverwriteUserCreatedOption) {
       if (!('_key' in child.props)) {
         child = React.cloneElement(child, {
           _key: getChildKey(child.props, child.key),
@@ -138,13 +145,23 @@ function flatChildren(
       };
 
       optionInfoMap.set(optionValue, option);
-      optionValueList.push(optionValue);
 
-      if (isValidOption) {
-        childrenList.push(child);
+      if (needOverwriteUserCreatedOption) {
+        const indexToUpdate = childrenList.findIndex((c) => c?.props?.value === optionValue);
+        if (indexToUpdate > -1) {
+          isValidOption
+            ? (childrenList[indexToUpdate] = child)
+            : childrenList.splice(indexToUpdate, 1);
+        }
+      } else {
+        optionValueList.push(optionValue);
 
-        if (!option.disabled) {
-          optionIndexListForArrowKey.push(index);
+        if (isValidOption) {
+          childrenList.push(child);
+
+          if (!option.disabled) {
+            optionIndexListForArrowKey.push(index);
+          }
         }
       }
     }
