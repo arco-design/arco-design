@@ -1,11 +1,9 @@
 import React, { useRef } from 'react';
-import isEqualWith from 'lodash/isEqualWith';
 import get from 'lodash/get';
 import FormItem from './form-item';
 import { FormListProps, KeyType } from './interface';
 import { isFunction, isUndefined } from '../_util/is';
-import { FormInstance } from '.';
-import { isSyntheticEvent, isFieldMatch, set } from './utils';
+import { isFieldMatch, isSyntheticEvent } from './utils';
 import warning from '../_util/warning';
 import { FormListContext } from './context';
 
@@ -42,37 +40,26 @@ const List = <
         },
       }}
     >
-      <FormItem
+      <FormItem<any, SubFieldValue[], FieldKey>
         field={field}
         {...extra}
         isFormList
-        noStyle
+        rules={props.rules}
+        wrapperCol={{ span: 24 }}
+        noStyle={'noStyle' in props ? props.noStyle : !props.rules}
         shouldUpdate={(prev, current, info) => {
-          if (info && info.isInner && !info.isFormList && info.field !== field) {
-            // 如果是内部控件触发的 value 更新，那么不需要重新渲染整个formList。
-            // info.field !== field 判断是因为如果内部修改了整个formList所绑定field的值的时候， 需要rerender，常见于formList嵌套formList
-
-            return false;
-          }
-
-          if (info && !info.isInner && info.field !== field && !Array.isArray(info.field)) {
-            // 通过 setFieldValue 更新 field 对应的值.setFieldValue('field.100', 'xxx')
-            if (isFieldMatch(info.field, [field])) {
-              const length = get(set({} as any, info.field, undefined), field)?.length;
-
-              // 找到当前修改的字段在数组中的位置，如果大于当前数组的长度，说明新增，整体渲染。否则交由 FormItem 渲染即可
-              if (length <= get(prev, field).length) {
-                return false;
-              }
+          if (info && !info.isInner && isFieldMatch(info.field, [field])) {
+            if (get(prev, field)?.length !== get(current, field)?.length) {
+              // 长度不一致才需要整体渲染，如 form.setfieldsValue('a.100', 'xx')
+              // 修改了某一项的话直接叫给对应的 FormItem 渲染即可
+              return true;
             }
           }
-          return !isEqualWith(get(prev, field), get(current, field));
+          return false;
         }}
       >
-        {(_, methods: FormInstance) => {
-          const { getFieldValue, getInnerMethods } = methods;
-          const { innerSetFieldValue } = getInnerMethods(true);
-          const values = getFieldValue(field) || [];
+        {(_, __, { value: _value, onChange }) => {
+          const value = _value || [];
 
           const add = function (defaultValue?: any, index?: number) {
             if (isSyntheticEvent(defaultValue)) {
@@ -85,7 +72,7 @@ const List = <
             const key = keysRef.current.id;
 
             keysRef.current.id += 1;
-            const oldValue = getFieldValue(field) || [];
+            const oldValue = value || [];
             let newValue = oldValue;
             if (index !== undefined && index >= 0 && index <= oldValue.length) {
               currentKeys.splice(index, 0, key);
@@ -96,21 +83,19 @@ const List = <
             }
 
             // defaultValue = undefined 时，认为当前字段未被操作过
-            innerSetFieldValue(field, newValue, {
+            onChange(newValue, {
               isFormList: true,
               ignore: defaultValue === undefined,
             });
           };
 
           const remove = function (index: number) {
-            const value = getFieldValue(field) || [];
             const newValue = value.filter((_, i) => i !== index);
             currentKeys.splice(index, 1);
-            innerSetFieldValue(field, [...newValue], { isFormList: true });
+            onChange([...newValue], { isFormList: true });
           };
 
           const move = function (fromIndex: number, toIndex: number) {
-            const value = getFieldValue(field) || [];
             if (
               fromIndex === toIndex ||
               !isIndexLegal(fromIndex, value) ||
@@ -128,13 +113,13 @@ const List = <
             newValue.splice(fromIndex, 1);
             newValue.splice(toIndex, 0, fromItem);
 
-            innerSetFieldValue(field, newValue, { isFormList: true });
+            onChange(newValue, { isFormList: true });
           };
 
           return (
             isFunction(children) &&
             children(
-              values.map((_, index) => {
+              value.map((_, index) => {
                 let key = currentKeys[index];
                 if (key === undefined) {
                   key = keysRef.current.id;

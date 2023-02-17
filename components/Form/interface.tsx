@@ -446,6 +446,18 @@ export interface FormListProps<
    */
   initialValue?: SubFieldValue[];
   /**
+   * @zh FormItemProps['noStyle'].  `rules` 存在时默认为 `false`(需要渲染校验信息)，否则默认为 `true`
+   * @en FormItemProps['noStyle'].Defaults to `false` when `rules` exists (requires rendering validation information), otherwise defaults to `true`
+   * @version 2.46.0
+   */
+  noStyle?: FormItemProps['noStyle'];
+  /**
+   * @zh 受控模式下的验证规则，[RulesProps](#rules)
+   * @en Validation rules in controlled component, [RulesProps](#rules)
+   * @version 2.46.0
+   */
+  rules?: RulesProps<SubFieldValue[]>[];
+  /**
    * @zh 函数类型的 children
    * @en Function type children
    */
@@ -532,6 +544,7 @@ export type InnerMethodsReturnType<
   | 'innerSetFieldValue'
   | 'innerGetStore'
   | 'innerCollectFormState'
+  | 'innerGetFieldValue'
 >;
 
 export interface FormValidateFn<

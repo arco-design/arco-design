@@ -171,7 +171,7 @@ export interface TriggerProps {
    * @zh 按钮点击事件（`trigger` 包含 `click` 时生效）
    * @en Callback when click the child node. (Only work when `trigger` contains `click`)
    */
-  onClick?: (popupVisible: boolean) => void;
+  onClick?: (e) => void;
   /**
    * @zh 点击触发节点和弹出框以外的区域的回调。
    * @en Callback when click the area outside the child and the popup

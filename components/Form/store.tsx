@@ -143,10 +143,16 @@ class Store<
   };
 
   // hasField为true时，只返回传入field属性的control实例
-  private getRegisteredFields = (hasField?: boolean): Control<FormData, FieldValue, FieldKey>[] => {
+  // isFormList 目前只在校验时需要包含
+  // TODO formlist 实现缺陷，待优化
+  private getRegisteredFields = (
+    hasField?: boolean,
+    options?: { containFormList?: boolean }
+  ): Control<FormData, FieldValue, FieldKey>[] => {
     if (hasField) {
       return this.registerFields.filter(
-        (control) => control.hasFieldProps() && !control.props?.isFormList
+        (control) =>
+          control.hasFieldProps() && (options?.containFormList || !control.props?.isFormList)
       );
     }
     return this.registerFields;
@@ -257,6 +263,11 @@ class Store<
     return this.store;
   };
 
+  // 内部使用，返回原始对象，注入到组件的 value 都从这里获取值，cloneDeep 后的值每次引用地址是不同的
+  public innerGetFieldValue = (field: FieldKey) => {
+    return get(this.store, field);
+  };
+
   // 获取所有被操作过的字段
   public getTouchedFields = (): FieldKey[] => {
     return this.getRegisteredFields(true)
@@ -355,7 +366,7 @@ class Store<
         }
       });
     } else {
-      this.getRegisteredFields(true).forEach((item) => {
+      this.getRegisteredFields(true, { containFormList: true }).forEach((item) => {
         if (item.getErrors()) {
           errors[item.props.field] = item.getErrors();
         }
@@ -429,7 +440,9 @@ class Store<
         errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
         values?: Partial<FormData>
       ) => void = () => {};
-      let controlItems = this.getRegisteredFields(true);
+      let controlItems = this.getRegisteredFields(true, {
+        containFormList: true,
+      });
 
       if (isArray(fieldsOrCallback) && fieldsOrCallback.length > 0) {
         controlItems = controlItems.filter((x) => fieldsOrCallback.indexOf(x.props.field) > -1);
@@ -447,7 +460,11 @@ class Store<
           if (x.error) {
             errors = { ...errors, ...x.error };
           }
-          set(values, x.field, x.value);
+          const item = this.getRegisteredField(x.field);
+          if (!item.props.isFormList) {
+            // 保持和 2.46.0 之前版本行为一致，避免 {users: []}
+            set(values, x.field, x.value);
+          }
         });
 
         if (Object.keys(errors).length) {
@@ -491,6 +508,10 @@ class Store<
     });
   };
 
+  /**
+   * @deprecated
+   * todo: 移至 innerMethod,内部 API，用户请勿调用
+   */
   public getFieldsState = (fields?: FieldKey[]): { [key in FieldKey]?: FieldState<FieldValue> } => {
     const result = {} as { [key in FieldKey]?: FieldState<FieldValue> };
 

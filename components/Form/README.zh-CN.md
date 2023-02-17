@@ -74,8 +74,10 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
+|noStyle|FormItemProps['noStyle'].`rules` 存在时默认为 `false`(需要渲染校验信息)，否则默认为 `true`|[FormItemProps](form#formitem)['noStyle'] |`-`|2.46.0|
 |field|字段名|FieldKey  **(必填)**|`-`|-|
 |initialValue|初始值|SubFieldValue[] |`-`|2.22.0|
+|rules|受控模式下的验证规则，[RulesProps](#rules)|RulesProps&lt;SubFieldValue[]&gt;[] |`-`|2.46.0|
 |children|函数类型的 children|(fields: { key: number; field: SubFieldKey }[],operation: {add: (defaultValue?: SubFieldValue, index?: number) => void;remove: (index: number) => void;move: (fromIndex: number, toIndex: number) => void;}) => React.ReactNode |`-`|-|
 
 ### Form.Provider(`2.30.0`)
@@ -134,6 +136,7 @@ export type InnerMethodsReturnType<
   | "innerSetFieldValue"
   | "innerGetStore"
   | "innerCollectFormState"
+  | "innerGetFieldValue"
 >;
 ```
 
@@ -270,6 +273,14 @@ this.form.setFields({
 ```
 
 ## 常见问题
+
+### `Switch` 、 `Checkbox` 的选中状态不受 `Form.Item` 的控制？
+
+在 `FormItem` 上设置 `triggerPropName` 为 `checked`。
+其他表单控件受控属性不是 `value` 时，可类似方式处理。
+如 `<Form.Item field="upload" triggerPropName="fileList"><Upload/></Form.Item>`
+
+
 ### 如何设置表单控件的默认值？（为什么给控件例如 Input ，直接设置defaultValue 不生效）
 
 在被FormItem包裹，并且Form.Item设置了field属性的控件上，不要再设置defaultValue和value 属性。 可以在Form.Item 上通过initialValue或Form的initialValues属性来设置默认值。
