@@ -87,6 +87,7 @@ function DemoVirtualList() {
       title: 'Salary',
       dataIndex: 'salary',
       width: 100,
+      fixed: 'left' as const,
     },
     {
       title: 'Address',
@@ -100,7 +101,7 @@ function DemoVirtualList() {
     },
   ];
 
-  const data = Array(100000)
+  const originData = Array(100000)
     .fill('')
     .map((_, index) => ({
       key: `${index}`,
@@ -109,6 +110,13 @@ function DemoVirtualList() {
       address: `${index} Park Road, London`,
       email: `kevin.sandra_${index}@example.com`,
     }));
+
+  const [data, setData] = useState<any>([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setData(originData);
+    }, 2000);
+  }, []);
 
   return (
     <Table
