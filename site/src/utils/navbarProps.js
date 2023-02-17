@@ -18,5 +18,5 @@ export default {
     { version: arcoVersion, link: 'https://arco.design' },
   ],
   defaultVersion: version,
-  loginHref: `/login?redirectUrl=${location.href}`,
+  loginHref: `/common/login?redirectUrl=${location.href}`,
 };
