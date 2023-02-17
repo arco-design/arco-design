@@ -6,7 +6,7 @@ import componentConfigTest from '../../../tests/componentConfigTest';
 import Button from '../../Button';
 import Select from '../select';
 import { Enter, Tab } from '../../_util/keycode';
-import { LabeledValue } from '../interface';
+import { LabeledValue, SelectProps } from '../interface';
 
 mountTest(Select);
 componentConfigTest(Select, 'Select');
@@ -424,5 +424,28 @@ describe('Select', () => {
     await sleep(100);
     expect(wrapper.querySelector('.arco-select-view-value').innerHTML).toBe(transformedLabel);
     expect(wrapper.querySelector('.arco-select-option').innerHTML).toBe(transformedLabel);
+  });
+
+  it('update option created by user if search result contains same value option', async () => {
+    const Demo = () => {
+      const [options, setOptions] = useState<SelectProps['options']>([]);
+      return (
+        <Select
+          allowCreate
+          popupVisible
+          options={options}
+          filterOption={false}
+          onSearch={(text) => setOptions([{ label: text.toUpperCase(), value: text }])}
+        />
+      );
+    };
+
+    wrapper = render(<Demo />);
+
+    const inputText = 'hello';
+    const eleInput = wrapper.querySelector('input');
+    fireEvent.change(eleInput, { target: { value: inputText } });
+    await sleep(100);
+    expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent(inputText.toUpperCase());
   });
 });
