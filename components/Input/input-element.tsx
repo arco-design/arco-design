@@ -34,6 +34,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     } = props;
 
     const otherProps = omit(rest, [
+      'error',
       'status',
       'showWordLimit',
       'className',
