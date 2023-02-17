@@ -20,6 +20,7 @@ const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'];
 
 const App = () => {
   return (
+    <div>
     <Space size="large">
       <Select
         placeholder="Please select"
@@ -45,6 +46,35 @@ const App = () => {
         ))}
       </Select>
     </Space>
+    <br/>
+    <br/>
+    <Space size="large">
+      <Select
+        status="error"
+        placeholder="Please select"
+        style={{ width: 154 }}
+        onChange={(value) =>
+          Message.info({
+            content: `You select ${value}.`,
+            showIcon: true,
+          })
+        }
+      >
+        {options.map((option, index) => (
+          <Option key={option} disabled={index === 3} value={option}>
+            {option}
+          </Option>
+        ))}
+      </Select>
+      <Select status="warning" placeholder="Select city" style={{ width: 154 }} defaultValue="Beijing" >
+        {options.map((option, index) => (
+          <Option key={option} disabled={index === 4} value={option}>
+            {option}
+          </Option>
+        ))}
+      </Select>
+    </Space>
+    </div>
   );
 };
 
