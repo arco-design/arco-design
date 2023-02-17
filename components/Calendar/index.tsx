@@ -203,7 +203,9 @@ function Calendar(baseProps: CalendarProps) {
         </div>
       )}
       {panelTodayBtn && panel && (
-        <div className={`${prefixCls}-footer-btn-wrapper`}>{CALENDAR_LOCALE.today}</div>
+        <div className={`${prefixCls}-footer-btn-wrapper`} onClick={() => move(getNow())}>
+          {CALENDAR_LOCALE.today}
+        </div>
       )}
     </div>
   );
