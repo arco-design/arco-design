@@ -123,4 +123,34 @@ describe('InputTag', () => {
       { label: '12', value: '+12' },
     ]);
   });
+
+  it('tokenSeparators validate failed', async () => {
+    const onValidate = jest.fn();
+    const value = [];
+    const wrapper = render(
+      <InputTag
+        tokenSeparators={[',']}
+        validate={(text) => {
+          const exist = value.indexOf(text) > -1;
+          onValidate(text);
+          return !exist;
+        }}
+      />
+    );
+
+    const simulatePaste = () => {
+      const eleInput = wrapper.querySelector('input');
+      fireEvent.paste(eleInput, { clipboardData: { getData: () => 'a,b,c' } });
+      fireEvent.change(eleInput, {
+        target: { value: 'a,b,c' },
+      });
+    };
+
+    simulatePaste();
+    await sleep(10);
+
+    expect(onValidate).toBeCalledTimes(6);
+    expect(wrapper.querySelectorAll('.arco-tag')).toHaveLength(3);
+    expect(wrapper.querySelector('input').getAttribute('value')).toBe('');
+  });
 });
