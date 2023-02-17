@@ -62,19 +62,39 @@ const options = [
 
 const App = () => {
   return (
-    <Space size="large">
-      <Cascader
-        placeholder="Please select ..."
-        style={{ width: 300, marginBottom: 20 }}
-        options={options}
-      />
-      <Cascader
-        placeholder="Hover to expand"
-        expandTrigger="hover"
-        style={{ width: 300, marginBottom: 20 }}
-        options={options}
-      />
-    </Space>
+    <div>
+      <Space size="large">
+        <Cascader
+          placeholder="Please select ..."
+          style={{ width: 300, marginBottom: 20 }}
+          options={options}
+        />
+        <Cascader
+          placeholder="Hover to expand"
+          expandTrigger="hover"
+          style={{ width: 300, marginBottom: 20 }}
+          options={options}
+        />
+      </Space>
+      <br/>
+      <Space size="large">
+        <Cascader
+          status="error"
+          allowClear
+          placeholder="Please select ..."
+          style={{ width: 300, marginBottom: 20 }}
+          options={options}
+        />
+        <Cascader
+          status="warning"
+          allowClear
+          placeholder="Hover to expand"
+          expandTrigger="hover"
+          style={{ width: 300, marginBottom: 20 }}
+          options={options}
+        />
+      </Space>
+    </div>
   );
 };
 

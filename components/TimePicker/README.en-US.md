@@ -20,7 +20,7 @@ Common properties of `TimePicker` and `RangePicker`
 |disableConfirm|Disable the confirm step, click to select time directly without click the confirm button.|boolean |`-`|2.12.0|
 |disabled|Whether to disable|boolean |`-`|-|
 |editable|Whether input box can be entered|boolean |`true`|-|
-|error|Error style|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |hideDisabledOptions|Hide the disabled options|boolean |`-`|-|
 |popupVisible|Whether the popup is visible or not|boolean |`-`|-|
 |scrollSticky|The time column is automatically adsorbed and selected when scrolling|boolean |`true`|2.23.0|
@@ -31,6 +31,7 @@ Common properties of `TimePicker` and `RangePicker`
 |timezone|timezone name, if `utcOffset` is set, `utcOffset` takes effect.|string |`-`|-|
 |position|The position of the popup box|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
 |size|Input box size|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |extra|Additional content at the bottom|ReactNode |`-`|-|
 |prefix|prefix|ReactNode |`-`|2.43.0|
 |triggerElement|Trigger element.|ReactNode |`-`|2.38.0|

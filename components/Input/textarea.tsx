@@ -34,6 +34,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     onClear,
     onKeyDown,
     onPressEnter,
+    status,
     ...rest
   } = props;
 
@@ -132,10 +133,13 @@ const TextArea = (props: TextAreaProps, ref) => {
     return false;
   }, [valueLength, wordLimitMaxLength, maxLength]);
 
+  const inputStatus = status || (error || lengthError ? 'error' : undefined);
+
   const classNames = cs(
     prefixCls,
     {
-      [`${prefixCls}-error`]: error || lengthError,
+      [`${prefixCls}-${inputStatus}`]: inputStatus,
+      // [`${prefixCls}-error`]: error || lengthError || status === 'error',
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-rtl`]: rtl,
     },

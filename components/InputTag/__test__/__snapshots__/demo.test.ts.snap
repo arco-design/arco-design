@@ -67,6 +67,7 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
+    style="margin-bottom:20px"
   >
     <div
       class="arco-space-item"
@@ -124,6 +125,30 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
             </span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-input-tag arco-input-tag-size-default arco-input-tag-warning arco-input-tag-has-placeholder"
+    style="width:350px"
+  >
+    <div
+      class="arco-input-tag-view"
+    >
+      <div
+        class="arco-input-tag-inner"
+      >
+        <input
+          autocomplete="off"
+          class="arco-input-tag-input arco-input-tag-input-size-default"
+          placeholder="Warning"
+          value=""
+        />
+        <span
+          class="arco-input-tag-input-mirror"
+        >
+          Warning
+        </span>
       </div>
     </div>
   </div>

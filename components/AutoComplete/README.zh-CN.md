@@ -17,12 +17,13 @@
 |allowClear|是否允许一键清除|boolean |`-`|-|
 |defaultActiveFirstOption|是否默认高亮第一个选项|boolean |`true`|-|
 |disabled|是否禁用|boolean |`-`|-|
-|error|报错状态|boolean |`-`|-|
+|error|是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |loading|是否处于加载状态。|boolean |`-`|2.10.0|
 |strict|`strict: true` 的时候大小写敏感|boolean |`-`|-|
 |defaultValue|自动补全组件的默认值|string |`-`|-|
 |placeholder|输入框提示|string |`-`|-|
 |value|自动补全组件的值（受控模式）|string |`-`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |children|自定义输入框/数据源|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |data|自动完成的数据源|(string \| { value: string; name: string; [key: string]: any } \| ReactNode)[] |`-`|-|

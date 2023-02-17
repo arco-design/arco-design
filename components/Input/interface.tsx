@@ -40,10 +40,18 @@ export interface InputProps
    */
   placeholder?: string;
   /**
-   * @zh 是否是错误状态
-   * @en Whether the input is error
+   * @zh 是否是错误状态.(废弃，下个大版本移除，使用 status='error' 替代)
+   * @en Whether the input is error.(Deprecated, removed in the next major version, use status='error' instead)
+   * @deprecated status="error"
    */
   error?: boolean;
+  /**
+   * @zh 状态
+   * @en Status
+   * @version 2.45.0
+   */
+  status?: 'error' | 'warning';
+  /**
   /**
    * @zh 输入时的回调
    * @en Callback when user input
@@ -154,10 +162,17 @@ export interface TextAreaProps
    */
   autoSize?: boolean | { minRows?: number; maxRows?: number };
   /**
-   * @zh 是否是错误状态
-   * @en Whether the textarea is error
+   * @zh 是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)
+   * @en Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)
+   * @deprecated
    */
   error?: boolean;
+  /**
+   * @zh 状态
+   * @en Status
+   * @version 2.45.0
+   */
+  status?: 'error' | 'warning';
   /**
    * @zh 输入框提示文字
    * @en textarea placeholder

@@ -1,0 +1,44 @@
+
+.input-status(@status) {
+  // 禁用优先级u高于status
+  &-@{status}  {
+    border-color: ~'@{input-color-border_@{status}}';
+    background-color: ~'@{input-color-bg_@{status}}';
+
+    &:hover {
+      border-color: ~'@{input-color-border_@{status}_hover}';
+      background-color: ~'@{input-color-bg_@{status}_hover}';
+    }
+  }
+
+  // 前后缀或者清楚图标时，input不设置背景色
+  &-@{status} .@{prefix}-input {
+    background: none;
+    box-shadow: none;
+
+    &:hover {
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  &-@{status}&-focus {
+    &,
+    &:hover {
+      border-color: ~'@{input-color-border_@{status}_focus}';
+      background-color: ~'@{input-color-bg_@{status}_focus}';
+      box-shadow: 0 0 0 ~'@{input-size-shadow_@{status}_focus}' ~'@{input-color-shadow_@{status}_focus}';
+    }
+  }
+
+  // 单独input ，没有前后缀
+  &-@{status}{
+    &:focus,
+    &:focus:hover {
+      border-color: ~'@{input-color-border_@{status}_focus}';
+      background-color: ~'@{input-color-bg_@{status}_focus}';
+      box-shadow: 0 0 0 ~'@{input-size-shadow_@{status}_focus}' ~'@{input-color-shadow_@{status}_focus}';
+    }
+  }
+}
+

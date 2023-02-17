@@ -149,121 +149,245 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
 `;
 
 exports[`renders Cascader/demo/basic.md correctly 1`] = `
-<div
-  class="arco-space arco-space-horizontal arco-space-align-center"
->
+<div>
   <div
-    class="arco-space-item"
-    style="margin-right:24px"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
-      aria-autocomplete="list"
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      class="arco-cascader arco-cascader-single arco-cascader-size-default"
-      role="combobox"
-      style="width:300px;margin-bottom:20px"
-      tabindex="0"
+      class="arco-space-item"
+      style="margin-right:24px"
     >
       <div
-        class="arco-cascader-view"
-        title=""
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-cascader arco-cascader-single arco-cascader-size-default"
+        role="combobox"
+        style="width:300px;margin-bottom:20px"
+        tabindex="0"
       >
-        <span
-          class="arco-cascader-view-selector"
-        >
-          <input
-            autocomplete="off"
-            class="arco-cascader-view-input"
-            placeholder="Please select ..."
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
-          <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
-          >
-            Please select ...
-          </span>
-        </span>
         <div
-          aria-hidden="true"
-          class="arco-cascader-suffix"
+          class="arco-cascader-view"
+          title=""
         >
-          <div
-            class="arco-cascader-arrow-icon"
+          <span
+            class="arco-cascader-view-selector"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-down"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              viewBox="0 0 48 48"
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Please select ..."
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
             >
-              <path
-                d="M39.6 17.443 24.043 33 8.487 17.443"
-              />
-            </svg>
+              Please select ...
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-cascader-suffix"
+          >
+            <div
+              class="arco-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-cascader arco-cascader-single arco-cascader-size-default"
+        role="combobox"
+        style="width:300px;margin-bottom:20px"
+        tabindex="0"
+      >
+        <div
+          class="arco-cascader-view"
+          title=""
+        >
+          <span
+            class="arco-cascader-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Hover to expand"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            >
+              Hover to expand
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-cascader-suffix"
+          >
+            <div
+              class="arco-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <br />
   <div
-    class="arco-space-item"
+    class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
-      aria-autocomplete="list"
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      class="arco-cascader arco-cascader-single arco-cascader-size-default"
-      role="combobox"
-      style="width:300px;margin-bottom:20px"
-      tabindex="0"
+      class="arco-space-item"
+      style="margin-right:24px"
     >
       <div
-        class="arco-cascader-view"
-        title=""
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-cascader arco-cascader-single arco-cascader-size-default arco-cascader-error"
+        role="combobox"
+        style="width:300px;margin-bottom:20px"
+        tabindex="0"
       >
-        <span
-          class="arco-cascader-view-selector"
-        >
-          <input
-            autocomplete="off"
-            class="arco-cascader-view-input"
-            placeholder="Hover to expand"
-            style="width:100%;pointer-events:none"
-            tabindex="-1"
-            value=""
-          />
-          <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
-          >
-            Hover to expand
-          </span>
-        </span>
         <div
-          aria-hidden="true"
-          class="arco-cascader-suffix"
+          class="arco-cascader-view"
+          title=""
         >
-          <div
-            class="arco-cascader-arrow-icon"
+          <span
+            class="arco-cascader-view-selector"
           >
-            <svg
-              aria-hidden="true"
-              class="arco-icon arco-icon-down"
-              fill="none"
-              focusable="false"
-              stroke="currentColor"
-              stroke-width="4"
-              viewBox="0 0 48 48"
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Please select ..."
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
             >
-              <path
-                d="M39.6 17.443 24.043 33 8.487 17.443"
-              />
-            </svg>
+              Please select ...
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-cascader-suffix"
+          >
+            <div
+              class="arco-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-cascader arco-cascader-single arco-cascader-size-default arco-cascader-warning"
+        role="combobox"
+        style="width:300px;margin-bottom:20px"
+        tabindex="0"
+      >
+        <div
+          class="arco-cascader-view"
+          title=""
+        >
+          <span
+            class="arco-cascader-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-cascader-view-input"
+              placeholder="Hover to expand"
+              style="width:100%;pointer-events:none"
+              tabindex="-1"
+              value=""
+            />
+            <span
+              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            >
+              Hover to expand
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-cascader-suffix"
+          >
+            <div
+              class="arco-cascader-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

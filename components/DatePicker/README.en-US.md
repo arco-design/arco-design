@@ -18,7 +18,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |---|---|---|---|---|
 |allowClear|Allow Clear|boolean |`true`|-|
 |editable|Whether input box can be entered.|boolean |`true`|-|
-|error|error style|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |hideNotInViewDates|The panel hides gray dates that are not in the current time range|boolean |`-`|2.20.0|
 |popupVisible|Whether the popup is visible or not|boolean |`-`|-|
 |shortcutsPlacementLeft|The preset range selection is placed on the left side of the panel for a large number of scenes with preset time.|boolean |`-`|-|
@@ -27,6 +27,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |timezone|timezone name, if `utcOffset` is set, `utcOffset` takes effect.|string |`-`|-|
 |position|The position of the popup|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`-`|-|
 |size|The size of input box|'mini' \| 'small' \| 'default' \| 'large' |`true`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |extra|Extra footer|ReactNode |`-`|-|
 |prefix|prefix|ReactNode |`-`|2.43.0|
 |separator|Separator symbol in the range selector input box|ReactNode |`-`|-|
@@ -66,7 +67,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |timepickerProps|Parameters of TimePicker, refer to [TimePickerProps](/react/components/time-picker), which has the same function as `showTime`.|[TimePickerProps](#timepickerprops) |`-`|
 |value|To set date|[CalendarValue](#calendarvalue) |`-`|
 |disabledTime|Specify the time that cannot be selected|(current?: Dayjs) => [DisabledTimeProps](#disabledtimeprops) |`-`|
-|format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string \| ((value: Dayjs) => string) |`YYYY-MM-DD`|
+|format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs). When using a `string`, manual editing is allowed. When using `(value: Dayjs) => string`, value must be picked from Picker.|string \| ((value: Dayjs) => string) |`YYYY-MM-DD`|
 
 ### WeekPicker
 

@@ -14,7 +14,6 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
     const {
       allowClear,
-      error,
       disabled,
       placeholder,
       className,
@@ -35,6 +34,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     } = props;
 
     const otherProps = omit(rest, [
+      'status',
       'showWordLimit',
       'className',
       'defaultValue',
@@ -70,13 +70,13 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       prefixCls,
       prefixCls && {
         [`${prefixCls}-size-${size}`]: size,
-        [`${prefixCls}-error`]: error,
+        [`${prefixCls}-${props.status}`]: props.status,
         [`${prefixCls}-disabled`]: disabled,
       },
       hasParent ? undefined : className
     );
     const inputProps = {
-      'aria-invalid': error,
+      'aria-invalid': props.status === 'error' || undefined,
       ...otherProps,
       readOnly,
       maxLength,

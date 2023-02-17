@@ -1,5 +1,6 @@
 @import '../../style/mixin.less';
 @import './token.less';
+@import './status.less';
 
 @input-prefix-cls: ~'@{prefix}-input';
 
@@ -65,22 +66,8 @@
     box-shadow: 0 0 0 @input-size-shadow_focus @input-color-shadow_focus;
   }
 
-  &-error {
-    border-color: @input-color-border_error;
-    background-color: @input-color-bg_error;
-
-    &:hover {
-      border-color: @input-color-border_error_hover;
-      background-color: @input-color-bg_error_hover;
-    }
-  }
-
-  &-error:focus,
-  &-error&-focus {
-    border-color: @input-color-border_error_focus;
-    background-color: @input-color-bg_error_focus;
-    box-shadow: 0 0 0 @input-size-shadow_error_focus @input-color-shadow_error_focus;
-  }
+  .input-status(error);
+  .input-status(warning);
 }
 
 .@{input-prefix-cls} {

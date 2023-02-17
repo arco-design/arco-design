@@ -18,7 +18,7 @@
 |---|---|---|---|---|
 |allowClear|允许清除|boolean |`true`|-|
 |editable|是否可输入。|boolean |`true`|-|
-|error|是否为报错状态|boolean |`-`|-|
+|error|是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |hideNotInViewDates|面板隐藏不在当前时间范围的灰色日期|boolean |`-`|2.20.0|
 |popupVisible|指定弹框打开或者关闭状态。|boolean |`-`|-|
 |shortcutsPlacementLeft|预设范围选择放在面板左侧，用于大量预设时间的场景。|boolean |`-`|-|
@@ -27,6 +27,7 @@
 |timezone|设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。|string |`-`|-|
 |position|弹出的框的位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`-`|-|
 |size|日期选择器的尺寸|'mini' \| 'small' \| 'default' \| 'large' |`true`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |extra|额外的页脚|ReactNode |`-`|-|
 |prefix|前缀|ReactNode |`-`|2.43.0|
 |separator|范围选择器输入框内的分割符号|ReactNode |`-`|-|
@@ -66,7 +67,7 @@
 |timepickerProps|时间显示的参数，参考 [TimePickerProps](/react/components/time-picker)，作用同 `showTime`。|[TimePickerProps](#timepickerprops) |`-`|
 |value|日历组件的值|[CalendarValue](#calendarvalue) |`-`|
 |disabledTime|不可选取的时间|(current?: Dayjs) => [DisabledTimeProps](#disabledtimeprops) |`-`|
-|format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string \| ((value: Dayjs) => string) |`YYYY-MM-DD`|
+|format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)。使用 `string` 时，可以手动键入和编辑日期。使用 `(value: Dayjs) => string` 时，只能在 Picker 中选取日期。|string \| ((value: Dayjs) => string) |`YYYY-MM-DD`|
 
 ### WeekPicker
 

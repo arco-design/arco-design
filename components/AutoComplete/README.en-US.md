@@ -17,12 +17,13 @@ An input box or custom input control, with enhanced automatic completion functio
 |allowClear|Whether to allow clear the content|boolean |`-`|-|
 |defaultActiveFirstOption|Whether to highlight the first option by default|boolean |`true`|-|
 |disabled|Whether to disable the autocomplete|boolean |`-`|-|
-|error|Error style|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |loading|Whether the component is loading data.|boolean |`-`|2.10.0|
 |strict|Case sensitive when set `strict: true`|boolean |`-`|-|
 |defaultValue|The default value of the autocomplete.|string |`-`|-|
 |placeholder|Placeholder of input|string |`-`|-|
 |value|The value of the autocomplete.|string |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |children|Custom input/source data|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |data|Data source|(string \| { value: string; name: string; [key: string]: any } \| ReactNode)[] |`-`|-|

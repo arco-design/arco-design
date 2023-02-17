@@ -4193,6 +4193,204 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders DatePicker/demo/status.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px;margin-bottom:8px"
+    >
+      <div
+        class="arco-picker arco-picker-size-default arco-picker-error"
+        style="width:200px"
+      >
+        <div
+          class="arco-picker-input"
+        >
+          <input
+            class="arco-picker-start-time"
+            placeholder="error status"
+            value=""
+          />
+        </div>
+        <div
+          class="arco-picker-suffix"
+        >
+          <span
+            class="arco-picker-suffix-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-calendar"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-bottom:8px"
+    >
+      <div
+        class="arco-picker arco-picker-range arco-picker-size-default arco-picker-error"
+        style="width:250px"
+      >
+        <div
+          class="arco-picker-input arco-picker-input-active"
+        >
+          <input
+            placeholder="开始日期"
+            value=""
+          />
+        </div>
+        <span
+          class="arco-picker-separator"
+        >
+          -
+        </span>
+        <div
+          class="arco-picker-input"
+        >
+          <input
+            placeholder="结束日期"
+            value=""
+          />
+        </div>
+        <div
+          class="arco-picker-suffix"
+        >
+          <span
+            class="arco-picker-suffix-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-calendar"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px;margin-bottom:8px"
+    >
+      <div
+        class="arco-picker arco-picker-size-default arco-picker-warning"
+        style="width:200px"
+      >
+        <div
+          class="arco-picker-input"
+        >
+          <input
+            class="arco-picker-start-time"
+            placeholder="warning status"
+            value=""
+          />
+        </div>
+        <div
+          class="arco-picker-suffix"
+        >
+          <span
+            class="arco-picker-suffix-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-calendar"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-bottom:8px"
+    >
+      <div
+        class="arco-picker arco-picker-range arco-picker-size-default arco-picker-warning"
+        style="width:250px"
+      >
+        <div
+          class="arco-picker-input arco-picker-input-active"
+        >
+          <input
+            placeholder="开始日期"
+            value=""
+          />
+        </div>
+        <span
+          class="arco-picker-separator"
+        >
+          -
+        </span>
+        <div
+          class="arco-picker-input"
+        >
+          <input
+            placeholder="结束日期"
+            value=""
+          />
+        </div>
+        <div
+          class="arco-picker-suffix"
+        >
+          <span
+            class="arco-picker-suffix-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-calendar"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
 <div
   class="arco-space arco-space-vertical"

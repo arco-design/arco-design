@@ -122,12 +122,13 @@ function Input(baseProps: InputProps, ref) {
     },
     className
   );
-
+  const status = props.status || (props.error || lengthError ? 'error' : undefined);
   const needWrapper = addBefore || addAfter || suffixElement || prefix;
   const inputElement = (
     <InputComponent
       ref={inputRef}
       {...props}
+      status={status}
       onFocus={(e) => {
         setFocus(true);
         props.onFocus && props.onFocus(e);
@@ -145,7 +146,7 @@ function Input(baseProps: InputProps, ref) {
   );
 
   const innerWrapperClassnames = cs(`${prefixCls}-inner-wrapper`, {
-    [`${prefixCls}-inner-wrapper-error`]: props.error || lengthError,
+    [`${prefixCls}-inner-wrapper-${status}`]: status,
     [`${prefixCls}-inner-wrapper-disabled`]: disabled,
     [`${prefixCls}-inner-wrapper-focus`]: focus,
     [`${prefixCls}-inner-wrapper-has-prefix`]: prefix,

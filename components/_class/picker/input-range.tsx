@@ -19,6 +19,7 @@ export interface DateInputRangeProps {
   style?: CSSProperties;
   className?: string | string[];
   error?: boolean;
+  status?: 'error' | 'warning';
   disabled?: boolean | boolean[];
   placeholder?: string[];
   value?: Dayjs[];
@@ -49,6 +50,7 @@ function DateInput(
   {
     allowClear,
     error,
+    status,
     style,
     className,
     disabled,
@@ -122,6 +124,7 @@ function DateInput(
   const prefixCls = getPrefixCls('picker');
   const size = propSize || ctxSize;
 
+  const inputStatus = status || (error ? 'error' : undefined);
   const inputClassNames = cs(
     prefixCls,
     `${prefixCls}-range`,
@@ -129,7 +132,7 @@ function DateInput(
     {
       [`${prefixCls}-focused`]: !!popupVisible,
       [`${prefixCls}-disabled`]: disabled1 && disabled2,
-      [`${prefixCls}-error`]: error,
+      [`${prefixCls}-${inputStatus}`]: inputStatus,
       [`${prefixCls}-rtl`]: rtl,
       [`${prefixCls}-has-prefix`]: prefix,
     },

@@ -124,6 +124,7 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
     value,
     placeholder,
     error,
+    status: props.status,
     disabled,
     allowClear,
     ...inputProps,

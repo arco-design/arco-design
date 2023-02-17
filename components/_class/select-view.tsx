@@ -63,10 +63,17 @@ export interface SelectViewCommonProps
    */
   disabled?: boolean;
   /**
-   * @zh 是否为错误状态。
-   * @en Error Style
+   * @zh 是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)
+   * @en Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)
+   * @deprecated
    */
   error?: boolean;
+  /**
+   * @zh 状态
+   * @en Status
+   * @version 2.45.0
+   */
+  status?: 'error' | 'warning';
   /**
    * @zh 是否为加载状态。
    * @en Whether is in loading
@@ -188,7 +195,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
     bordered,
     allowClear,
     allowCreate,
-    error,
+    status,
     loading,
     disabled,
     animation,
@@ -498,12 +505,13 @@ export const SelectView = (props: SelectViewProps, ref) => {
   // const needAddAfter = addAfter !== null && addAfter !== undefined;
   const needAddAfter = false;
   const needWrapper = needAddBefore || needAddAfter;
+  const selectStatus = status || (props.error ? 'error' : undefined);
   const innerClassNames = cs(prefixCls, `${prefixCls}-${isMultiple ? 'multiple' : 'single'}`, {
     [`${prefixCls}-show-search`]: showSearch,
     [`${prefixCls}-open`]: popupVisible,
     [`${prefixCls}-size-${mergedSize}`]: mergedSize,
     [`${prefixCls}-focused`]: mergedFocused,
-    [`${prefixCls}-error`]: error,
+    [`${prefixCls}-${selectStatus}`]: selectStatus,
     [`${prefixCls}-disabled`]: disabled,
     [`${prefixCls}-no-border`]: !bordered,
     [`${prefixCls}-rtl`]: rtl,

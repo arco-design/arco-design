@@ -55,10 +55,17 @@ export interface AutoCompleteProps extends PartialSelectProps {
    */
   value?: string;
   /**
-   * @zh 报错状态
-   * @en Error style
+   * @zh 是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)
+   * @en Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)
+   * @deprecated use status="error"
    */
   error?: boolean;
+  /**
+   * @zh 状态
+   * @en Status
+   * @version 2.45.0
+   */
+  status?: 'error' | 'warning';
   /**
    * @zh `strict: true` 的时候大小写敏感
    * @en Case sensitive when set `strict: true`

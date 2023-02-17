@@ -18,13 +18,14 @@ The basic form components have been expanded on the basis of native controls and
 |---|---|---|---|---|
 |allowClear|Whether allow clear value|boolean |`-`|-|
 |disabled|Whether the input is disabled|boolean |`-`|-|
-|error|Whether the input is error|boolean |`-`|-|
+|error|Whether the input is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |readOnly|Whether the input is readOnly|boolean |`-`|-|
 |showWordLimit|With `maxLength`, Show word count.|boolean |`-`|-|
 |defaultValue|The initial input content|string |`-`|-|
 |placeholder|Input box prompt text|string |`-`|-|
 |value|The input content value|string |`-`|-|
 |size|The size of the input box|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|The label text displayed after (on the right side of) the input field|ReactNode |`-`|-|
 |addBefore|The label text displayed before (on the left side of) the input field|ReactNode |`-`|-|
 |prefix|The prefix icon or text for the Input|ReactNode |`-`|-|
@@ -45,10 +46,11 @@ The basic form components have been expanded on the basis of native controls and
 |---|---|---|---|---|
 |allowClear|Whether allow clear the content|boolean |`-`|2.2.0|
 |disabled|Whether the textarea is disabled|boolean |`-`|-|
-|error|Whether the textarea is error|boolean |`-`|-|
+|error|Whether the textarea is error.(Deprecated, removed in the next major version, use status='error' instead)|boolean |`-`|-|
 |defaultValue|To set default value|string |`-`|-|
 |placeholder|textarea placeholder|string |`-`|-|
 |value|To set value|string |`-`|-|
+|status|Status|'error' \| 'warning' |`-`|2.45.0|
 |autoSize|Height autoSize feature|boolean \| { minRows?: number; maxRows?: number } |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |maxLength|The max content length；After setting `errorOnly` to `true`, if `maxLength` is exceeded, the `error` status will be displayed, and user input will not be restricted.|number \| { length: number; errorOnly?: boolean } |`-`|`errorOnly` in 2.23.0|

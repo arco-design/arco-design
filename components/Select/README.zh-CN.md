@@ -22,7 +22,7 @@
 |defaultPopupVisible|下拉框是否默认打开。|boolean |`-`|2.14.0|
 |disabled|是否为禁用状态。|boolean |`-`|-|
 |dragToSort|是否可以通过拖拽为 Tag 排序|boolean |`-`|2.27.0|
-|error|是否为错误状态。|boolean |`-`|-|
+|error|是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)|boolean |`-`|-|
 |labelInValue|设置 `onChange` 回调中 `value` 的格式。默认是string，设置为true时候，value格式为： { label: string, value: string }|boolean |`-`|-|
 |loading|是否为加载状态。|boolean |`-`|-|
 |popupVisible|控制下拉框是否打开。|boolean |`-`|2.6.0|
@@ -31,6 +31,7 @@
 |placeholder|选择框默认文字。|string |`-`|-|
 |mode|是否开启多选模式或标签模式 (**`tags` 推荐使用 `mode: multiple; allowCreate: true` 替代，下一大版本将移除此模式**)|'multiple' \| 'tags' |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
+|status|状态|'error' \| 'warning' |`-`|2.45.0|
 |trigger|触发方式。|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
 |addBefore|选择框前添加元素|ReactNode |`-`|2.41.0|
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|
