@@ -317,18 +317,18 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@arco-materials/site-footer@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.5.0.tgz#68ba49a4b0fd68fad7fd210311265c5467d56eed"
-  integrity sha512-HJpHtmCtKBSikMInk6Uw+I97xs85CqJII5WXAYBRmOedui39QF+jnHk7prJvUXjxQvKNzEsbvwPp5gIZPc66cQ==
+"@arco-materials/site-footer@^1.5.1":
+  version "1.5.1"
+  resolved "http://bnpm.byted.org/@arco-materials/site-footer/-/site-footer-1.5.1.tgz#d3e5edc83d1f9a1ca195cb77355e15a9500935fa"
+  integrity sha512-IUeMx+Rs8CAI+r9AyKvFTRYYNCSnVTc2T3fIz5t+T/1v1qCH4Kaex/ttCoD6srJ6JNh3dkjoATu7PDbCAhJz2A==
   dependencies:
     axios "^1.1.3"
     classnames "^2.2.6"
 
-"@arco-materials/site-navbar-new@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar-new/-/site-navbar-new-1.2.5.tgz#e8bd05f1abd979c8696d84dce68b24be64a30a26"
-  integrity sha512-+G3ArHm2A2k1dm9UujzWbE8wOQsOSjmYb62x+el9jX7FLscec5D5j08i3HPxft0tm9brfMsYuTlGL6uGY5ZEVg==
+"@arco-materials/site-navbar-new@^1.2.7":
+  version "1.2.7"
+  resolved "http://bnpm.byted.org/@arco-materials/site-navbar-new/-/site-navbar-new-1.2.7.tgz#1bfa78305b068e3b4c6c53dac71184780fb408f4"
+  integrity sha512-JxjrStF4n8K45EpwimogxlBU783dUWwGy1klqXze8jKsg4k/vCquIkV2RaVeznYQDMCVKgQW3DOWD343pQJS/Q==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.2.0"

@@ -1,6 +1,10 @@
 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="4" y="17.9998" width="19.9996" height="5.55545" fill="#165DFF"/>
-<rect x="9.55566" y="13.5559" width="9.99981" height="5.55545" transform="rotate(90 9.55566 13.5559)" fill="#165DFF"/>
-<rect x="24" y="13.5559" width="9.99981" height="5.55545" transform="rotate(90 24 13.5559)" fill="#165DFF"/>
-<path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" d="M17.5449 12.0618L23.1321 6.47468L19.2038 2.54639L13.6166 8.13355L10.9224 5.43939L6.99414 9.36768L13.6182 15.9917L17.5465 12.0634L17.5449 12.0618Z" fill="#165DFF"/>
+<mask id="mask0_426_22795" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+<path d="M28 0H0V28H28V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_426_22795)">
+<path d="M4.57324 6.77637H23.4325V25.6356H4.57324V6.77637Z" fill="#165DFF"/>
+<path d="M16.2254 2.3335L4.57422 6.70396V23.9649L16.2254 18.7866V2.3335Z" fill="#165DFF"/>
+<path d="M16.2242 6.80762H4.57324V25.6668L16.2242 21.1929V6.80762Z" fill="#739EFF"/>
+</g>
 </svg>
