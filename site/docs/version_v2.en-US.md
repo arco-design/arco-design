@@ -154,6 +154,10 @@ changelog: true
 
 - Fix `Switch` component switching animation jitter issue.([#1641](https://github.com/arco-design/arco-design/pull/1641))
 
+### 🚨 Important attention
+
+- **In order to fix the jitter problem when switching between `Switch`, the style under the `arco-switch-dot` class name has been modified, and the `margin-left` and `transform` properties have been deleted and changed to `left` to achieve the switching position adjustment, please see ([#1641](https://github.com/arco-design/arco-design/pull/1641)) for details, students who use the theme package, please pay attention!**
+
 ## 2.42.1
 
 2022-12-02

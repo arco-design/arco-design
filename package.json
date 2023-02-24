@@ -124,8 +124,6 @@
   },
   "dependencies": {
     "@arco-design/color": "^0.4.0",
-    "@arco-materials/site-footer": "^1.5.1",
-    "@arco-materials/site-navbar-new": "^1.2.6",
     "@babel/runtime": "^7.5.5",
     "b-tween": "^0.3.3",
     "b-validate": "^1.4.2",
