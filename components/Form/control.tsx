@@ -392,7 +392,8 @@ export default class Control<
     if (disabled !== undefined) {
       childProps.disabled = disabled;
     }
-    let _value = store.getFieldValue(field);
+    // 保持引用地址不变，fix https://github.com/arco-design/arco-design/issues/1800
+    let _value = get(store.getInnerMethods(true).innerGetStore(), field);
 
     if (isFunction(formatter)) {
       _value = formatter(_value);
