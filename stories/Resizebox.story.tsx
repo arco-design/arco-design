@@ -1,76 +1,38 @@
 /* eslint-disable no-console */
-import React from 'react';
-import { ResizeBox } from '@self';
+import React, { useState } from 'react';
+import { ResizeBox, Tag, Space, Radio } from '@self';
 
 function Demo1() {
+  const [direction, setDirection] = useState('horizontal');
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <div
+    <Space direction="vertical" size={20}>
+      <Radio.Group
+        type="button"
+        value={direction}
+        onChange={setDirection}
+        options={['horizontal', 'vertical', 'horizontal-reverse', 'vertical-reverse']}
+      />
+      <ResizeBox.Split
+        direction={direction as any}
         style={{
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'red',
-          height: 70,
+          height: 400,
+          width: 400,
+          border: '1px solid var(--color-border)',
         }}
-      >
-        header
-      </div>
-      <ResizeBox.SplitGroup
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'relative',
-        }}
-        direction="vertical"
-        onMoving={(_, params) => console.log(params)}
+        size={'200px'}
+        min={0.1}
+        max={'250px'}
+        onMoving={(e, size) => console.log(size)}
         panes={[
-          {
-            content: (
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: 'yellow',
-                }}
-              >
-                Panel 1
-              </div>
-            ),
-            trigger: () => (
-              <div
-                style={{
-                  width: '100%',
-                  height: 5,
-                  position: 'absolute',
-                  backgroundColor: 'black',
-                }}
-              />
-            ),
-          },
-          {
-            content: (
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: 'green',
-                }}
-              >
-                Panel 2
-              </div>
-            ),
-          },
+          <Tag key="first" color="arcoblue">
+            Fist
+          </Tag>,
+          <Tag key="second" color="green">
+            Second
+          </Tag>,
         ]}
       />
-    </div>
+    </Space>
   );
 }
 
