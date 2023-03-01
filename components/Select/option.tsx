@@ -40,7 +40,9 @@ function Option(props: OptionProps, ref) {
         [`${prefixCls}-option-selected`]: isChecked,
         [`${prefixCls}-option-disabled`]: disabled,
         [`${prefixCls}-option-hover`]: value === _valueActive,
-        [`${prefixCls}-option-empty`]: !childNode && childNode !== 0,
+        [`${prefixCls}-option-empty`]:
+          (!childNode && childNode !== 0) ||
+          (typeof childNode === 'string' && /^\s*$/.test(childNode)),
         [`${prefixCls}-option-rtl`]: rtl,
       },
       className
