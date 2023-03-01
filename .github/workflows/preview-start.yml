@@ -1,0 +1,23 @@
+name: Preview Start
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  preview-start:
+    permissions:
+      issues: write
+      pull-requests: write
+    name: start preview info
+    runs-on: ubuntu-latest
+    steps:
+      - name: update status comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Prepare preview
