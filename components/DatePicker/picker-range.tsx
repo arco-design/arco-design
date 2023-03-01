@@ -551,7 +551,6 @@ const Picker = (baseProps: RangePickerProps) => {
     const sortedValueShow = getSortedDayjsArray(newValueShow);
 
     onSelectValueShow(sortedValueShow);
-    setFixedPageShowDates(sortedValueShow);
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
 
