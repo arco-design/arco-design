@@ -18,19 +18,9 @@ import { useRef, useState, useEffect } from 'react';
 import { Form, Input, Select, Typography } from '@arco-design/web-react';
 
 function CustomInput(props) {
-  const [stateValue, setValue] = useState(props.value);
-  const value = props.value || stateValue || {};
-  useEffect(() => {
-    if (props.value !== stateValue && props.value === undefined) {
-      setValue(props.value);
-    }
-  }, [props.value]);
+  const value = props.value || {};
 
   const handleChange = (newValue) => {
-    if (!('value' in props)) {
-      setValue(newValue);
-    } // onChange is passed in by Form.Item and will update the fields bound to the form when triggered.
-
     props.onChange && props.onChange(newValue);
   };
 

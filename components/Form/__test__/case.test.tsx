@@ -233,7 +233,7 @@ describe('form usewatch ', () => {
     expect(wrapper.querySelector('#text')?.textContent).toBe('123');
   });
 
-  describe('form reset & shouldupdate', () => {
+  it('form reset & shouldupdate', () => {
     let form;
     let renderCount = 0;
     let render2Count = 0;
@@ -266,5 +266,59 @@ describe('form usewatch ', () => {
 
     expect(renderCount).toBe(1);
     expect(render2Count).toBeGreaterThan(1); // 保持原有行为不变，避免 breaking change
+  });
+
+  it('value should keep equal', () => {
+    const changeMockFn = jest.fn();
+
+    const CustomInput = (props) => {
+      React.useEffect(() => {
+        changeMockFn(props.value);
+      }, [props.value]);
+
+      return (
+        <Input
+          value={props.value?.name}
+          onChange={(v) => props.onChange?.({ ...props.value, name: v })}
+        />
+      );
+    };
+
+    const wrapper = render(
+      <Form>
+        <Form.Item label="name" field="input">
+          <CustomInput />
+        </Form.Item>
+      </Form>
+    );
+
+    expect(changeMockFn).toBeCalledTimes(1);
+    expect(changeMockFn).toBeCalledWith(undefined);
+    fireEvent.change(wrapper.find('input')[0], {
+      target: {
+        value: 'aaa',
+      },
+    });
+
+    expect(changeMockFn).toBeCalledTimes(2);
+    wrapper.rerender(
+      <Form>
+        <Form.Item label="name" field="input">
+          <CustomInput />
+        </Form.Item>
+      </Form>
+    );
+    expect(changeMockFn).toBeCalledWith({ name: 'aaa' });
+
+    wrapper.rerender(
+      <Form>
+        <Form.Item label="name" field="input">
+          <CustomInput />
+        </Form.Item>
+      </Form>
+    );
+
+    // 引用地址不变，不出发 useEffect
+    expect(changeMockFn).toBeCalledTimes(2);
   });
 });

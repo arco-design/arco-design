@@ -31,6 +31,7 @@ export const FormContext = createContext<FormContextProps>({
     scrollToField: NOOP,
     getInnerMethods: () => ({
       registerField: NOOP,
+      innerGetStore: NOOP,
     }),
   } as any,
 });
