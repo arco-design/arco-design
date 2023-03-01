@@ -917,7 +917,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     if (this.isHoverTrigger() && !disabled) {
       mergeProps.onMouseEnter = this.onMouseEnter;
       mergeProps.onMouseLeave = this.onMouseLeave;
-      mergeProps.onClick = this.clickToHidePopup;
+      // https://github.com/arco-design/arco-design/issues/1804
+      // TODO: remove login in next major version
+      if (this.isClickToHide()) {
+        mergeProps.onClick = this.clickToHidePopup;
+      }
 
       if (alignPoint) {
         mergeProps.onMouseMove = this.onMouseMove;
