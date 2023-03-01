@@ -21,7 +21,7 @@ import { InputNumberProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
 import useSelectionRange from './useSelectionRange';
-import { Decimal } from './Decimal';
+import { getDecimal, Decimal } from './Decimal';
 
 // Value's auto change speed when user holds on plus or minus
 const AUTO_CHANGE_INTERVAL = 200;
@@ -86,7 +86,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   })();
 
   const [innerValue, setInnerValue] = useState<Decimal>(() => {
-    return Decimal.from(
+    return getDecimal(
       'value' in props ? props.value : 'defaultValue' in props ? defaultValue : undefined
     );
   });
@@ -100,11 +100,11 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   const refHasOperateSincePropValueChanged = useRef(false);
 
   const value = useMemo<Decimal>(() => {
-    return 'value' in props ? Decimal.from(props.value) : innerValue;
+    return 'value' in props ? getDecimal(props.value) : innerValue;
   }, [props.value, innerValue]);
 
   const [maxDecimal, minDecimal] = useMemo<Decimal[]>(() => {
-    return [Decimal.from(max), Decimal.from(min)];
+    return [getDecimal(max), getDecimal(min)];
   }, [max, min]);
 
   useImperativeHandle(ref, () => refInput.current, []);
@@ -174,7 +174,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     }
 
     const finalValue = value.isInvalid
-      ? Decimal.from(min === -Infinity ? 0 : min)
+      ? getDecimal(min === -Infinity ? 0 : min)
       : value.add(method === 'plus' ? step : -step);
 
     setValue(getLegalValue(finalValue));
@@ -219,7 +219,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
       if (isNumber(+parsedValue) || parsedValue === '-' || !parsedValue || parsedValue === '.') {
         setInputValue(rawText);
-        setValue(getLegalValue(Decimal.from(parsedValue)));
+        setValue(getLegalValue(getDecimal(parsedValue)));
         updateSelectionRangePosition(event);
       }
     },

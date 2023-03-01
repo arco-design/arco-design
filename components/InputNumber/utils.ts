@@ -6,6 +6,13 @@ export function isE(number: string | number) {
 }
 
 /**
+ * Judge whether BigInt is supported by current env
+ */
+export function supportBigInt() {
+  return typeof BigInt === 'function';
+}
+
+/**
  * Get precision of a number, include scientific notation like 1e-10
  */
 export function getNumberPrecision(number: string | number) {
@@ -32,8 +39,12 @@ export function toSafeString(number: number | string): string {
   let nativeNumberStr: string = String(number);
 
   if (isE(number)) {
-    if (number < Number.MIN_SAFE_INTEGER || number > Number.MAX_SAFE_INTEGER) {
-      return BigInt(number).toString();
+    if (number < Number.MIN_SAFE_INTEGER) {
+      return supportBigInt() ? BigInt(number).toString() : Number.MIN_SAFE_INTEGER.toString();
+    }
+
+    if (number > Number.MAX_SAFE_INTEGER) {
+      return supportBigInt() ? BigInt(number).toString() : Number.MAX_SAFE_INTEGER.toString();
     }
 
     // This may lose precision, but foFixed must accept argument in the range 0-100
