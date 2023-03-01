@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 🐛 BugFix
+
+- Fix the bug that the `value` reference address of the `Form.Item` component injected into the custom form control changes when `rerender`.([#1815](https://github.com/arco-design/arco-design/pull/1815))
+
 ## 2.44.0
 
 2023-01-13

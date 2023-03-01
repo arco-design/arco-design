@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 💅 Style
+
+- Fix the style problem caused by the transparency of the fixed column background color of the `Table` component in dark mode([#1816](https://github.com/arco-design/arco-design/pull/1816))
+
 ## 2.45.0
 
 2023-02-17

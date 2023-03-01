@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 💎 Enhancement
+
+- Compatible with older browsers that don't support `BigInt`.([#1810](https://github.com/arco-design/arco-design/pull/1810))
+
 ## 2.43.1
 
 2022-12-30

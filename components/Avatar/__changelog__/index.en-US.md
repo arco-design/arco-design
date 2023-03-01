@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 💎 Enhancement
+
+- Optimize `Avatar` child node type judgment logic([#1813](https://github.com/arco-design/arco-design/pull/1813))
+
 ## 2.25.1
 
 2021-11-26

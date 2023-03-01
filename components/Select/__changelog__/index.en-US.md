@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 🐛 BugFix
+
+- Fix the problem that the option is not displayed in the drop-down list when the content of the `Select` option is an empty string.([#1807](https://github.com/arco-design/arco-design/pull/1807))
+
 ## 2.45.0
 
 2023-02-17

@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.45.1
+
+2023-03-01
+
+### 💎 Enhancement
+
+- `DatePicker` component no longer sorts the panel when selecting a date.([#1814](https://github.com/arco-design/arco-design/pull/1814))
+- Optimize `Avatar` child node type judgment logic([#1813](https://github.com/arco-design/arco-design/pull/1813))
+- Compatible with older browsers that don't support `BigInt`.([#1810](https://github.com/arco-design/arco-design/pull/1810))
+
+### 🐛 BugFix
+
+- Fix the bug that the `value` reference address of the `Form.Item` component injected into the custom form control changes when `rerender`.([#1815](https://github.com/arco-design/arco-design/pull/1815))
+- Fix the bug of stretching error after `ResizeBox.Split` sets `min` attribute to pixel value([#1809](https://github.com/arco-design/arco-design/pull/1809))
+- Fix the bug that the `onClick` injected by the `Trigger` component when `trigger=hover` causes the default `onClick` of the component to not take effect.([#1808](https://github.com/arco-design/arco-design/pull/1808))
+- Fix the problem that the option is not displayed in the drop-down list when the content of the `Select` option is an empty string.([#1807](https://github.com/arco-design/arco-design/pull/1807))
+
+### 💅 Style
+
+- Fix the style problem caused by the transparency of the fixed column background color of the `Table` component in dark mode([#1816](https://github.com/arco-design/arco-design/pull/1816))
+- Adjust the text size of the `Badge` component from `12px` to `14px`, aligning with the design specification([#1816](https://github.com/arco-design/arco-design/pull/1816))
+
 ## 2.45.0
 
 2023-02-17

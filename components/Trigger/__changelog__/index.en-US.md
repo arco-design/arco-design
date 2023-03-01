@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 🐛 BugFix
+
+- Fix the bug that the `onClick` injected by the `Trigger` component when `trigger=hover` causes the default `onClick` of the component to not take effect.([#1808](https://github.com/arco-design/arco-design/pull/1808))
+
 ## 2.44.1
 
 2023-02-03

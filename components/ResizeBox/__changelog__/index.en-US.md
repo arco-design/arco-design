@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 🐛 BugFix
+
+- Fix the bug of stretching error after `ResizeBox.Split` sets `min` attribute to pixel value([#1809](https://github.com/arco-design/arco-design/pull/1809))
+
 ## 2.35.0
 
 2022-06-10

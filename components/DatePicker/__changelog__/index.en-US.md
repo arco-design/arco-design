@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 💎 Enhancement
+
+- `DatePicker` component no longer sorts the panel when selecting a date.([#1814](https://github.com/arco-design/arco-design/pull/1814))
+
 ## 2.43.0
 
 2022-12-23

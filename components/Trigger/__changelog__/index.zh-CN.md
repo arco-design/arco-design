@@ -1,3 +1,11 @@
+## 2.45.1
+
+2023-03-01
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件在 `trigger=hover`时注入的 `onClick` 导致组件默认 `onClick` 不生效的 bug。([#1808](https://github.com/arco-design/arco-design/pull/1808))
+
 ## 2.44.1
 
 2023-02-03

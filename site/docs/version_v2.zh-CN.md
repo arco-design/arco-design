@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.45.1
+
+2023-03-01
+
+### 💎 功能优化
+
+- `DatePicker` 组件在选择日期时，面板不再排序切换。([#1814](https://github.com/arco-design/arco-design/pull/1814))
+- 优化 `Avatar` 子节点类型判断逻辑([#1813](https://github.com/arco-design/arco-design/pull/1813))
+- 兼容不支持 `BigInt` 的旧时代浏览器。([#1810](https://github.com/arco-design/arco-design/pull/1810))
+
+### 🐛 问题修复
+
+- 修复 `Form.Item` 组件在 `rerender` 时注入到自定义表单控件的 `value` 引用地址改变的 bug。([#1815](https://github.com/arco-design/arco-design/pull/1815))
+- 修复 `ResizeBox.Split` 设置 `min`的属性为像素值后，伸缩出错的 bug([#1809](https://github.com/arco-design/arco-design/pull/1809))
+- 修复 `Trigger` 组件在 `trigger=hover`时注入的 `onClick` 导致组件默认 `onClick` 不生效的 bug。([#1808](https://github.com/arco-design/arco-design/pull/1808))
+- 修复 `Select` 选项内容为空字符串时，选项在下拉列表中不展示的问题。([#1807](https://github.com/arco-design/arco-design/pull/1807))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件在暗黑模式下固定列背景色存在透明度导致的样式问题([#1816](https://github.com/arco-design/arco-design/pull/1816))
+- 调整 `Badge` 组件文本大小从 `12px` 到 `14px`，对齐设计规范([#1816](https://github.com/arco-design/arco-design/pull/1816))
+
 ## 2.45.0
 
 2023-02-17
