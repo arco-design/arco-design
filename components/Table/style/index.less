@@ -927,4 +927,14 @@
       }
     }
   }
+
+  @{arco-theme-tag}[arco-theme='dark'] &-stripe {
+    .@{table-cls-tr}:nth-child(even) .@{table-cls-td} {
+      background-color: @table-color-bg-body-stripe-row_dark;
+    }
+
+    // .@{table-cls-tr}:not(.@{table-prefix-cls}-empty-row):hover .@{table-cls-td}:not(.@{table-prefix-cls}-col-fixed-left):not(.@{table-prefix-cls}-col-fixed-right) {
+    //   background-color: @table-color-bg-body-stripe-row_dark;
+    // }
+  }
 }
