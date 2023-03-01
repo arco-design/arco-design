@@ -70,15 +70,25 @@ function Split(props: SplitProps, ref) {
     return parseFloat(numerator) / parseFloat(denominator);
   }
 
+  // startSize:  size of the total ResizeBox
+  // startOffset: size of the first Panel
+  // startPosition: position at the end of last moving
+  // currentPosition: position at the end of current moving
   function getOffset(startSize, startOffset, startPosition, currentPosition) {
-    const minOffset = min ? parseFloat(min as string) : 0;
-    const maxOffset = max ? parseFloat(max as string) : isPxSize ? startSize : 1;
+    //  0 < minOffsetRatio, maxOffsetRatio <1
+    const minOffsetRatio =
+      typeof min === 'string' ? px2percent(parseFloat(min), startSize) : min || 0;
+    const maxOffsetRatio =
+      typeof max === 'string' ? px2percent(parseFloat(max), startSize) : max || 1;
     let ratio = isReverse ? -1 : 1;
     const rtlRatio = rtlReverse ? -1 : 1;
     ratio *= rtlRatio;
     let moveOffset = isPxSize
       ? startOffset + (currentPosition - startPosition) * ratio
       : px2percent(startSize * startOffset + (currentPosition - startPosition) * ratio, startSize);
+
+    const minOffset = isPxSize ? minOffsetRatio * startSize : minOffsetRatio;
+    const maxOffset = isPxSize ? maxOffsetRatio * startSize : maxOffsetRatio;
     moveOffset = Math.max(moveOffset, minOffset);
     moveOffset = Math.min(moveOffset, maxOffset);
     return moveOffset;

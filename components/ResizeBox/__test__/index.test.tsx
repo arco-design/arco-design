@@ -194,6 +194,76 @@ describe('ResizeBox', () => {
     });
   });
 
+  it('handle mouse event correctly in number&string mode', () => {
+    const mockMoving = jest.fn();
+    const wrapper = render(
+      <ResizeBox.Split
+        style={{ height: 400, width: 400 }}
+        onMoving={mockMoving}
+        size="200px"
+        min={0.1}
+        max="250px"
+        panes={[
+          <Typography.Paragraph key="1">Right</Typography.Paragraph>,
+          <Typography.Paragraph key="2">Left</Typography.Paragraph>,
+        ]}
+      />
+    );
+
+    const map: any = {};
+    window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+      map[event] = cb;
+    });
+    // -------------- First Moving ------------------
+    //  [min: 0.1; total: 400] movingPosition: from 200 to 20;
+    act(() => {
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 200, pageY: 100 })
+      );
+    });
+    act(() => {
+      map.mousemove({
+        pageX: 20,
+        pageY: 100,
+      });
+    });
+    expect(mockMoving).toHaveBeenCalledTimes(1);
+    // minSize: 40px;
+    expect(mockMoving.mock.calls[0][1]).toEqual(`40px`);
+    // -------------- Second Moving ------------------
+    // [max: 250px] movingPosition: from 20 to 300;
+    act(() => {
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 40, pageY: 100 })
+      );
+    });
+    act(() => {
+      map.mousemove({
+        pageX: 300,
+        pageY: 100,
+      });
+    });
+    expect(mockMoving).toHaveBeenCalledTimes(2);
+    // maxSize: 250px;
+    expect(mockMoving.mock.calls[1][1]).toEqual(`250px`);
+    // -------------- Third Moving -----------------
+    act(() => {
+      fireEvent(
+        wrapper.find('.arco-resizebox-trigger')[0],
+        mockMouseEvent('mousedown', { pageX: 250, pageY: 100 })
+      );
+    });
+    act(() => {
+      map.mousemove({
+        pageX: 120,
+        pageY: 100,
+      });
+    });
+    expect(mockMoving.mock.calls[2][1]).toEqual(`120px`);
+  });
+
   it('use in Layout correctly', () => {
     const wrapper = render(
       <Layout>
