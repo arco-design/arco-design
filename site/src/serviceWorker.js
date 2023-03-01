@@ -28,7 +28,7 @@ const handlers = [
     dest: '/react-en.html',
   },
   {
-    regexp: /^(\/(react|docs|showcase))(?!\/en\-US)/,
+    regexp: /^(\/(react|docs|showcase))(?!\/(en\-US|1.x))/,
     dest: '/index.html',
   },
 ];
