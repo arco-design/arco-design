@@ -74,11 +74,11 @@ const Avatar = forwardRef<HTMLElement, PropsWithChildren<AvatarProps>>(
       },
       className
     );
-
+    const childrenList = React.Children.toArray(children);
     const isImage =
-      children &&
-      React.isValidElement(children) &&
-      (children.type === 'img' || children.type === 'picture');
+      childrenList.length === 1 &&
+      React.isValidElement(childrenList[0]) &&
+      (childrenList[0].type === 'img' || childrenList[0].type === 'picture');
 
     const _triggerIconStyle: CSSProperties = triggerIconStyle || {};
     if (
