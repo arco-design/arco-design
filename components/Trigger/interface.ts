@@ -33,7 +33,7 @@ export interface TriggerProps {
   /**
    * @zh 动画类名
    * @en Animation class name
-   * @defaultValue fadeId
+   * @defaultValue fadeIn
    */
   classNames?: string;
   /**
