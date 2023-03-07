@@ -36,7 +36,7 @@
 |mouseEnterDelay|mouseenter 触发延时的毫秒数|number |`100`|-|
 |mouseLeaveDelay|mouseleave 触发延时的毫秒数|number |`100`|-|
 |childrenPrefix|设置这个参数后，打开弹出后，children 上会添加一个名为 `${childrenPrefix}-open` 的类。|string |`-`|-|
-|classNames|动画类名|string |`fadeId`|-|
+|classNames|动画类名|string |`fadeIn`|-|
 |position|弹出位置，一共有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`bottom`|-|
 |trigger|触发方式|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
 |arrowProps|箭头元素的所有 html 参数|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
