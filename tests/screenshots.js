@@ -34,6 +34,9 @@ const mockRoute = async (page) => {
 const mockInterfaces = async (page) => {
   await page.addInitScript(() => {
     window.setInterval = () => {};
+    if (location.pathname.split('/').pop() === 'statistic') {
+      window.requestAnimationFrame = () => {}; // statistic using it
+    }
   });
 };
 
@@ -56,6 +59,7 @@ const mockInterfaces = async (page) => {
 
   await mockRoute(page);
   await mockInterfaces(page);
+
   const genComponentScreenshots = async (componentName) => {
     // eslint-disable-next-line
     const name = componentName
