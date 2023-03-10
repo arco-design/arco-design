@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.45.2
+
+2023-03-10
+
+### 💎 功能优化
+
+- 优化 `Image` 预览图片时，可通过鼠标滚轮进行缩放。([#1829](https://github.com/arco-design/arco-design/pull/1829))
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件 `dragToSort` 和 `maxTagCount` 配合使用时，拖拽排序结果异常的问题。([#1830](https://github.com/arco-design/arco-design/pull/1830))
+
 ## 2.45.1
 
 2023-03-01

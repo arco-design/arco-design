@@ -1,3 +1,11 @@
+## 2.45.2
+
+2023-03-10
+
+### 💎 Enhancement
+
+- Optimize `Image` to zoom in and out with the mouse wheel when previewing images.([#1829](https://github.com/arco-design/arco-design/pull/1829))
+
 ## 2.43.2
 
 2023-01-06

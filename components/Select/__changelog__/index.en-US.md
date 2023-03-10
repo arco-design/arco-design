@@ -1,3 +1,11 @@
+## 2.45.2
+
+2023-03-10
+
+### 🐛 BugFix
+
+- Fix the problem that when the `Select` component `dragToSort` and `maxTagCount` are used together, the drag sorting result is abnormal.([#1830](https://github.com/arco-design/arco-design/pull/1830))
+
 ## 2.45.1
 
 2023-03-01
