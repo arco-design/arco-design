@@ -7,6 +7,7 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
+  WheelEvent,
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { findDOMNode } from 'react-dom';
@@ -212,6 +213,19 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   function onZoomOut() {
     const newScale = previewScales.getNextScale(scale, 'zoomOut');
     onScaleChange(newScale);
+  }
+
+  function onWheelZoom(e: WheelEvent<HTMLImageElement>) {
+    if (e.deltaY > 0) {
+      // 缩小
+      if (scale >= previewScales.minScale) {
+        // e.preventDefault();
+        onZoomOut();
+      }
+    } else if (scale <= previewScales.maxScale) {
+      // e.preventDefault();
+      onZoomIn();
+    }
   }
 
   function onResetScale() {
@@ -456,6 +470,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                   onClick={onOutsideImgClick}
                 >
                   <img
+                    onWheel={onWheelZoom}
                     ref={refImage}
                     className={cs(imgClassName, `${previewPrefixCls}-img`, {
                       [`${previewPrefixCls}-img-moving`]: moving,
