@@ -180,6 +180,8 @@ const SearchStatus = {
   NONE: 2,
 };
 
+const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
+
 export type SelectViewHandle = {
   dom: HTMLDivElement;
   focus: () => void;
@@ -451,7 +453,7 @@ export const SelectView = (props: SelectViewProps, ref) => {
         label: maxTagCountRender(invisibleTagCount),
         closable: false,
         // InputTag needs to extract value as key
-        value: '__arco_value_tag_placeholder',
+        value: MAX_TAG_COUNT_VALUE_PLACEHOLDER,
       });
     }
 
@@ -491,9 +493,18 @@ export const SelectView = (props: SelectViewProps, ref) => {
         tagClassName={`${prefixCls}-tag`}
         renderTag={renderTag}
         icon={{ removeIcon }}
-        onChange={(value, reason) => {
+        onChange={(newValue, reason) => {
           if (onSort && reason === 'sort') {
-            onSort(value);
+            const indexOfMaxTagCount = newValue.indexOf(MAX_TAG_COUNT_VALUE_PLACEHOLDER);
+            // inject the invisible values tags to middle after dragging the "+x" tag
+            if (indexOfMaxTagCount > -1) {
+              const headArr = newValue.slice(0, indexOfMaxTagCount);
+              const tailArr = newValue.slice(indexOfMaxTagCount + 1);
+              const midArr = usedValue.slice(-invisibleTagCount);
+              onSort(headArr.concat(midArr, tailArr));
+            } else {
+              onSort(newValue);
+            }
           }
         }}
         {...eventHandlers}
