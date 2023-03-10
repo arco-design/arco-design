@@ -1,0 +1,6 @@
+{
+  "installCommand": "init",
+  "buildCommand": "build",
+  "sandboxes": ["arco-react-pr-template-jyk795"],
+  "node": "16"
+}

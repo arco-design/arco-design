@@ -36,7 +36,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |mouseEnterDelay|Delay time to show when mouse enter. unit: ms.|number |`100`|-|
 |mouseLeaveDelay|Delay time to show when mouse leave. unit: ms.|number |`100`|-|
 |childrenPrefix|Set an additional class name(`${childrenPrefix}-open`) for the container of the popup.|string |`-`|-|
-|classNames|Animation class name|string |`fadeId`|-|
+|classNames|Animation class name|string |`fadeIn`|-|
 |position|The position of the popup relative to the child node.|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`bottom`|-|
 |trigger|Types of events that cause the popup to show|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
 |arrowProps|The html attributes of the arrow node|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
