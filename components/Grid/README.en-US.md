@@ -41,6 +41,39 @@ Grid can effectively ensure the consistency and logic of the page, strengthen te
 |xxl|`screen >= 1600px`|number \| { [key: string]: any } |`-`|-|
 |xxxl|`screen >= 2000px`|number \| { [key: string]: any } |`-`|2.40.0|
 
+### Grid
+
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|collapsed|Whether to collapsed|boolean |`false`|
+|collapsedRows|Number of rows displayed when collapsed|number |`1`|
+|className|Additional css class|string \| string[] |`-`|
+|colGap|The space in column-to-column|number \| [ResponsiveValue](grid#responsivevalue) |`0`|
+|cols|Number of columns displayed in each row|number \| [ResponsiveValue](grid#responsivevalue) |`24`|
+|rowGap|The space in row-to-row|number \| [ResponsiveValue](grid#responsivevalue) |`0`|
+|style|Additional style|CSSProperties |`-`|
+
+### GridItem
+
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|suffix|Is it a suffix element|boolean |`false`|
+|className|Additional css class|string \| string[] |`-`|
+|offset|Number of grids on the left|number \| [ResponsiveValue](grid#responsivevalue) |`0`|
+|span|Number of grids spanned|number \| [ResponsiveValue](grid#responsivevalue) |`1`|
+|style|Additional style|CSSProperties |`-`|
+
+### ResponsiveValue
+
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|lg|>= 992px responsive configuration|number |`-`|
+|md|>= 768px responsive configuration|number |`-`|
+|sm|>= 576px responsive configuration|number |`-`|
+|xl|>= 1200px responsive configuration|number |`-`|
+|xs|< 576px responsive configuration|number |`-`|
+|xxl|>= 1600px responsive configuration|number |`-`|
+
 ### GridRowGutter
 
 ```js

@@ -41,6 +41,39 @@
 |xxl|>= 1600px 响应式栅格|number \| { [key: string]: any } |`-`|-|
 |xxxl|>= 2000px 响应式栅格|number \| { [key: string]: any } |`-`|2.40.0|
 
+### Grid
+
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|collapsed|是否折叠|boolean |`false`|
+|collapsedRows|折叠时显示的行数|number |`1`|
+|className|节点类名|string \| string[] |`-`|
+|colGap|列与列之间的间距|number \| [ResponsiveValue](grid#responsivevalue) |`0`|
+|cols|每一行展示的列数|number \| [ResponsiveValue](grid#responsivevalue) |`24`|
+|rowGap|行与行之间的间距|number \| [ResponsiveValue](grid#responsivevalue) |`0`|
+|style|节点样式|CSSProperties |`-`|
+
+### GridItem
+
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|suffix|是否是后缀元素|boolean |`false`|
+|className|节点类名|string \| string[] |`-`|
+|offset|左侧的间隔格数|number \| [ResponsiveValue](grid#responsivevalue) |`0`|
+|span|跨越的格数|number \| [ResponsiveValue](grid#responsivevalue) |`1`|
+|style|节点样式|CSSProperties |`-`|
+
+### ResponsiveValue
+
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|lg|>= 992px 响应式配置|number |`-`|
+|md|>= 768px 响应式配置|number |`-`|
+|sm|>= 576px 响应式配置|number |`-`|
+|xl|>= 1200px 响应式配置|number |`-`|
+|xs|< 576px 响应式配置|number |`-`|
+|xxl|>= 1600px 响应式配置|number |`-`|
+
 ### GridRowGutter
 
 ```js
