@@ -69,6 +69,8 @@ export type ComponentConfig = {
   Form?: FormProps;
   "Grid.Row"?: RowProps;
   "Grid.Col"?: ColProps;
+  Grid?: GridProps;
+  "Grid.GridItem"?: GridItemProps;
   Image?: ImageProps;
   Input?: InputProps;
   InputNumber?: InputNumberProps;

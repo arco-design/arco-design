@@ -25,7 +25,7 @@ import { DrawerProps } from '../Drawer/interface';
 import { DropdownProps, DropdownButtonProps } from '../Dropdown/interface';
 import { EmptyProps } from '../Empty/interface';
 import { FormProps } from '../Form/interface';
-import { RowProps, ColProps } from '../Grid/interface';
+import { RowProps, ColProps, GridProps, GridItemProps } from '../Grid/interface';
 import { ImageProps } from '../Image/interface';
 import { InputProps } from '../Input/interface';
 import { InputNumberProps } from '../InputNumber/interface';
@@ -105,6 +105,8 @@ export type ComponentConfig = {
   Form?: FormProps;
   'Grid.Row'?: RowProps;
   'Grid.Col'?: ColProps;
+  Grid?: GridProps;
+  'Grid.GridItem'?: GridItemProps;
   Image?: ImageProps;
   Input?: InputProps;
   InputNumber?: InputNumberProps;
