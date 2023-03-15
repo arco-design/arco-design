@@ -11,7 +11,7 @@ function useStickyClassNames(
 ): [string[][], string[]] {
   const colFixed = columns.map((c) => c.fixed);
 
-  function getClassNameFromColumn(column, index) {
+  function getClassNameFromColumn(column: InternalColumnProps, index: number) {
     return cs({
       [`${prefixCls}-col-fixed-left`]: column.fixed === 'left',
       [`${prefixCls}-col-fixed-right`]: column.fixed === 'right',
@@ -31,7 +31,16 @@ function useStickyClassNames(
   const groupStickyClassNames = useMemo(
     () =>
       groupColumns.map((gc) => {
-        return gc.map((column, index) => getClassNameFromColumn(column, index));
+        return gc.map((column, i) => {
+          let index = i;
+          const columnIndex = column.$$columnIndex;
+          if (Array.isArray(columnIndex) && columnIndex.length === 2) {
+            index = column.fixed === 'right' ? columnIndex[0] : columnIndex[1];
+          } else if (typeof columnIndex === 'number') {
+            index = columnIndex;
+          }
+          return getClassNameFromColumn(column, index);
+        });
       }),
     [groupColumns.map((c) => `|${c.map((a) => a.fixed || 'undefined').join('-')}|`).join('_')]
   );

@@ -544,6 +544,7 @@ export interface ColumnProps<T = any> {
 export type InternalColumnProps<T = any> = ColumnProps<T> & {
   $$isOperation?: boolean;
   $$isFirstColumn?: boolean;
+  $$columnIndex?: number | number[];
   node?: ReactNode;
 };
 
