@@ -306,4 +306,10 @@ export type SelectHandle = {
    * @en Get the option info by its value
    */
   getOptionInfoByValue: (value: OptionProps['value']) => OptionInfo;
+  /**
+   * @zh 将下拉列表滚动至指定选项
+   * @en Scroll the drop-down list to the specified option
+   * @version 2.46.0
+   */
+  scrollIntoView: (value: OptionProps['value'], options?: ScrollIntoViewOptions) => void;
 };
