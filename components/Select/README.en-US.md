@@ -91,15 +91,16 @@ When users need to select one or more from a group of similar data, they can use
 
 ### Select Reference Type
 
-|Property|Description|Type|DefaultValue|
-|---|---|---|---|
-|activeOptionValue|The value of active option|[OptionProps](select#selectoption)['value']  **(Required)**|`-`|
-|getOptionInfoByValue|Get the option info by its value|(value: [OptionProps](select#selectoption)['value']) => [OptionInfo](#optioninfo)  **(Required)**|`-`|
-|dom|DOM|HTMLDivElement  **(Required)**|`-`|
-|blur|Blur Select|() => void  **(Required)**|`-`|
-|focus|Focus Select|() => void  **(Required)**|`-`|
-|getOptionInfoList|Get the list of option info|() => [OptionInfo](#optioninfo)[]  **(Required)**|`-`|
-|hotkeyHandler|Processor of mouse shortcut operation|(event: KeyboardEvent) => void  **(Required)**|`-`|
+|Property|Description|Type|DefaultValue|Version|
+|---|---|---|---|---|
+|activeOptionValue|The value of active option|[OptionProps](select#selectoption)['value']  **(Required)**|`-`|-|
+|getOptionInfoByValue|Get the option info by its value|(value: [OptionProps](select#selectoption)['value']) => [OptionInfo](#optioninfo)  **(Required)**|`-`|-|
+|scrollIntoView|Scroll the drop-down list to the specified option|(value: [OptionProps](select#selectoption)['value'], options?: ScrollIntoViewOptions) => void  **(Required)**|`-`|2.46.0|
+|dom|DOM|HTMLDivElement  **(Required)**|`-`|-|
+|blur|Blur Select|() => void  **(Required)**|`-`|-|
+|focus|Focus Select|() => void  **(Required)**|`-`|-|
+|getOptionInfoList|Get the list of option info|() => [OptionInfo](#optioninfo)[]  **(Required)**|`-`|-|
+|hotkeyHandler|Processor of mouse shortcut operation|(event: KeyboardEvent) => void  **(Required)**|`-`|-|
 
 ### LabeledValue
 

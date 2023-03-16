@@ -2,6 +2,7 @@ import React, {
   ReactElement,
   ReactNode,
   ReactText,
+  useCallback,
   useContext,
   useEffect,
   useImperativeHandle,
@@ -28,7 +29,7 @@ import {
   LabeledValue,
 } from './interface';
 import SelectView, { SelectViewHandle } from '../_class/select-view';
-import VirtualList from '../_class/VirtualList';
+import VirtualList, { VirtualListHandle } from '../_class/VirtualList';
 import {
   preventDefaultEvent,
   isEmptyValue,
@@ -157,7 +158,7 @@ function Select(baseProps: SelectProps, ref) {
   }, [children, options, filterOption, inputValue, userCreatingOption, userCreatedOptions]);
 
   // ref
-  const refWrapper = useRef(null);
+  const refWrapper = useRef<VirtualListHandle>(null);
   const refTrigger = useRef(null);
   const refSelectView = useRef<SelectViewHandle>(null);
   // 用来保存 value 和选中项的映射
@@ -180,12 +181,15 @@ function Select(baseProps: SelectProps, ref) {
     ? optionValueList[optionIndexListForArrowKey[0]]
     : undefined;
 
-  const scrollIntoView = (optionValue) => {
-    const activeOption = optionInfoMap.get(optionValue);
-    if (refWrapper.current && activeOption?.child?.props) {
-      refWrapper.current.scrollTo({ key: activeOption.child.props._key });
-    }
-  };
+  const scrollIntoView = useCallback(
+    (optionValue: OptionProps['value'], options?: ScrollIntoViewOptions) => {
+      const activeOption = optionInfoMap.get(optionValue);
+      if (refWrapper.current && activeOption?.child?.props) {
+        refWrapper.current.scrollTo({ key: activeOption.child.props._key, options });
+      }
+    },
+    [optionInfoMap]
+  );
 
   // Try to update inputValue and trigger onInputValueChange callback
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
@@ -293,21 +297,24 @@ function Select(baseProps: SelectProps, ref) {
     }
   }, [inputValue]);
 
-  const getOptionInfoByValue = (value: OptionProps['value']): OptionInfo => {
-    const option = optionInfoMap.get(value);
-    if (option) {
-      const index = refValueMap.current.findIndex((item) => item.value === value);
-      if (index > -1) {
-        refValueMap.current.splice(index, 1, { value, option });
-      } else {
-        refValueMap.current.push({ value, option });
+  const getOptionInfoByValue = useCallback(
+    (value: OptionProps['value']): OptionInfo => {
+      const option = optionInfoMap.get(value);
+      if (option) {
+        const index = refValueMap.current.findIndex((item) => item.value === value);
+        if (index > -1) {
+          refValueMap.current.splice(index, 1, { value, option });
+        } else {
+          refValueMap.current.push({ value, option });
+        }
+        return option;
       }
-      return option;
-    }
 
-    const item = refValueMap.current.find((x) => x.value === value);
-    return item && item.option;
-  };
+      const item = refValueMap.current.find((x) => x.value === value);
+      return item && item.option;
+    },
+    [optionInfoMap]
+  );
 
   // 使用方向键选择时，获取下一个 active option 的值
   const getValueActive = (direction: 'up' | 'down') => {
@@ -689,8 +696,9 @@ function Select(baseProps: SelectProps, ref) {
       activeOptionValue: valueActive,
       getOptionInfoByValue,
       getOptionInfoList: () => [...optionInfoMap.values()].filter((info) => info._valid),
+      scrollIntoView,
     }),
-    [hotkeyHandler, optionInfoMap, valueActive]
+    [hotkeyHandler, optionInfoMap, valueActive, getOptionInfoByValue, scrollIntoView]
   );
 
   const renderView = (eleView: ReactElement | ReactNode) => {
