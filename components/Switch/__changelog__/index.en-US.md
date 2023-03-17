@@ -1,3 +1,11 @@
+## 2.46.0
+
+2023-03-17
+
+### 🐛 BugFix
+
+- Fix the bug that some style variables of the `Switch` component do not use the css variable prefix.([#1845](https://github.com/arco-design/arco-design/pull/1845))
+
 ## 2.42.2
 
 2022-12-09

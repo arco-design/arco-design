@@ -1,3 +1,15 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 功能升级
+
+- `TreeSelect` 组件支持通过 `renderFormat` 自定义选中节点的回填展示([#1847](https://github.com/arco-design/arco-design/pull/1847))
+
+### 🐛 问题修复
+
+- 修复 `TreeSelect` 组件在设置 `treeCheckedStrategy=all` 时，点击关闭图标不生效的 bug。([#1849](https://github.com/arco-design/arco-design/pull/1849))
+
 ## 2.44.2
 
 2023-02-10

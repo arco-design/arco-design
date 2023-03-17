@@ -2,6 +2,29 @@
 changelog: true
 ---
 
+## 2.46.0
+
+2023-03-17
+
+### 🆕 Feature
+
+- The `Table` component add parameter `virtualListProps`.([#1848](https://github.com/arco-design/arco-design/pull/1848))
+- The `TreeSelect` component supports customizing the backfill display of selected nodes through `renderFormat`([#1847](https://github.com/arco-design/arco-design/pull/1847))
+- `Select` component `ref` add new `scrollIntoView` method to support scrolling the list to the specified option.([#1843](https://github.com/arco-design/arco-design/pull/1843))
+- `Grid` supports `css grid` for layout([#1801](https://github.com/arco-design/arco-design/pull/1801))
+- `Form.List` supports validation rules([#1790](https://github.com/arco-design/arco-design/pull/1790))
+
+### 🐛 BugFix
+
+- Fix the problem of misaligned table header and content when scrolling in the `Table` component under the scenario of multiple headers and fixed columns.([#1852](https://github.com/arco-design/arco-design/pull/1852))
+- Fix the bug that clicking the close icon does not take effect when the `TreeSelect` component is set to `treeCheckedStrategy=all`.([#1849](https://github.com/arco-design/arco-design/pull/1849))
+- Fix the bug that some style variables of the `Switch` component do not use the css variable prefix.([#1845](https://github.com/arco-design/arco-design/pull/1845))
+- Fix the problem of misaligned table header and content when scrolling in the Table component under the scenario of multiple headers and fixed columns.([#1840](https://github.com/arco-design/arco-design/pull/1840))
+
+### 💅 Style
+
+- Fix `Tabs` in `card` mode, the bug that `TabsHeader` border style is wrong([#1853](https://github.com/arco-design/arco-design/pull/1853))
+
 ## 2.45.2
 
 2023-03-10

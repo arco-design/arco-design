@@ -1,3 +1,11 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 Feature
+
+- `Select` component `ref` add new `scrollIntoView` method to support scrolling the list to the specified option.([#1843](https://github.com/arco-design/arco-design/pull/1843))
+
 ## 2.45.2
 
 2023-03-10

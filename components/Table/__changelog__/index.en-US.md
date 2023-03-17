@@ -1,3 +1,16 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 Feature
+
+- The `Table` component add parameter `virtualListProps`.([#1848](https://github.com/arco-design/arco-design/pull/1848))
+
+### 🐛 BugFix
+
+- Fix the problem of misaligned table header and content when scrolling in the `Table` component under the scenario of multiple headers and fixed columns.([#1852](https://github.com/arco-design/arco-design/pull/1852))
+- Fix the problem of misaligned table header and content when scrolling in the Table component under the scenario of multiple headers and fixed columns.([#1840](https://github.com/arco-design/arco-design/pull/1840))
+
 ## 2.45.1
 
 2023-03-01

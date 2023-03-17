@@ -2,6 +2,29 @@
 changelog: true
 ---
 
+## 2.46.0
+
+2023-03-17
+
+### 🆕 功能升级
+
+- `Table` 组件新增参数 `virtualListProps`。([#1848](https://github.com/arco-design/arco-design/pull/1848))
+- `TreeSelect` 组件支持通过 `renderFormat` 自定义选中节点的回填展示([#1847](https://github.com/arco-design/arco-design/pull/1847))
+- `Select` 组件 `ref` 引用新增 `scrollIntoView` 方法以支持滚动列表至指定选项。([#1843](https://github.com/arco-design/arco-design/pull/1843))
+- `Grid` 支持 `css grid` 进行布局([#1801](https://github.com/arco-design/arco-design/pull/1801))
+- `Form.List` 支持校验规则([#1790](https://github.com/arco-design/arco-design/pull/1790))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件在多表头多列 fixed 场景下滚动时出现表头和内容无法对齐的问题。([#1852](https://github.com/arco-design/arco-design/pull/1852))
+- 修复 `TreeSelect` 组件在设置 `treeCheckedStrategy=all` 时，点击关闭图标不生效的 bug。([#1849](https://github.com/arco-design/arco-design/pull/1849))
+- 修复`Switch` 组件部分样式变量未使用 css 变量前缀的 bug。([#1845](https://github.com/arco-design/arco-design/pull/1845))
+- 修复 `Table` 组件在多表头多列 `fixed` 场景下 `scroll` 时出现表头和内容无法对齐的问题([#1840](https://github.com/arco-design/arco-design/pull/1840))
+
+### 💅 样式更新
+
+- 修复 `Tabs` 在 `card` 模式下，`TabsHeader` 边框样式错误的 bug([#1853](https://github.com/arco-design/arco-design/pull/1853))
+
 ## 2.45.2
 
 2023-03-10

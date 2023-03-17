@@ -1,3 +1,11 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 Feature
+
+- `Grid` supports `css grid` for layout([#1801](https://github.com/arco-design/arco-design/pull/1801))
+
 ## 2.40.0
 
 2022-09-16

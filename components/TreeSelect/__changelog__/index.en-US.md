@@ -1,3 +1,15 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 Feature
+
+- The `TreeSelect` component supports customizing the backfill display of selected nodes through `renderFormat`([#1847](https://github.com/arco-design/arco-design/pull/1847))
+
+### 🐛 BugFix
+
+- Fix the bug that clicking the close icon does not take effect when the `TreeSelect` component is set to `treeCheckedStrategy=all`.([#1849](https://github.com/arco-design/arco-design/pull/1849))
+
 ## 2.44.2
 
 2023-02-10

@@ -1,3 +1,16 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 功能升级
+
+- `Table` 组件新增参数 `virtualListProps`。([#1848](https://github.com/arco-design/arco-design/pull/1848))
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件在多表头多列 fixed 场景下滚动时出现表头和内容无法对齐的问题。([#1852](https://github.com/arco-design/arco-design/pull/1852))
+- 修复Table 组件在多表头多列fixed场景下scroll 时出现表头和内容无法对齐的问题([#1840](https://github.com/arco-design/arco-design/pull/1840))
+
 ## 2.45.1
 
 2023-03-01

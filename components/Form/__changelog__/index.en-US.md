@@ -1,3 +1,11 @@
+## 2.46.0
+
+2023-03-17
+
+### 🆕 Feature
+
+- `Form.List` supports validation rules([#1790](https://github.com/arco-design/arco-design/pull/1790))
+
 ## 2.45.1
 
 2023-03-01

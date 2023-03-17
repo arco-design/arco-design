@@ -1,3 +1,11 @@
+## 2.46.0
+
+2023-03-17
+
+### 💅 Style
+
+- Fix `Tabs` in `card` mode, the bug that `TabsHeader` border style is wrong([#1853](https://github.com/arco-design/arco-design/pull/1853))
+
 ## 2.42.0
 
 2022-11-25
