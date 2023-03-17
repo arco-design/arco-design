@@ -35,6 +35,64 @@ const treeData = [
   },
 ];
 
+const TrunkTreeData = [
+  {
+    title: 'Trunk 0-0',
+    value: 'Trunk 0-0',
+    key: '0-0',
+    children: [
+      {
+        title: 'Leaf 0-0-1',
+        value: 'Leaf 0-0-1',
+        key: '0-0-1',
+      },
+      {
+        title: 'Branch 0-0-2',
+        value: 'Branch 0-0-2',
+        key: '0-0-2',
+        children: [
+          {
+            title: 'Leaf 0-0-2-1',
+            value: 'Leaf 0-0-2-1',
+            key: '0-0-2-1',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Trunk 0-1',
+    value: 'Trunk 0-1',
+    key: '0-1',
+    children: [
+      {
+        title: 'Branch 0-1-1',
+        value: 'Branch 0-1-1',
+        key: '0-1-1',
+        checkable: false,
+        children: [
+          {
+            title: 'Leaf 0-1-1-1',
+            value: 'Leaf 0-1-1-1',
+            key: '0-1-1-1',
+          },
+          {
+            title: 'Leaf 0-1-1-2',
+            value: 'Leaf 0-1-1-2',
+            key: '0-1-1-2',
+            disabled: true,
+          },
+        ],
+      },
+      {
+        title: 'Leaf 0-1-2',
+        value: 'Leaf 0-1-2',
+        key: '0-1-2',
+      },
+    ],
+  },
+];
+
 const prefixCls = '.arco-tree';
 
 const clickInput = () => {
@@ -313,6 +371,28 @@ describe('TreeSelect', () => {
           .querySelector(`${prefixCls}-node-title`) as Element
       );
       expect(stateValue).toHaveLength(3);
+    });
+
+    it('treeCheckStrategy=all correctly', async () => {
+      let stateValue = ['0-0'];
+      const wrapper = render(
+        <TreeSelect
+          treeCheckable
+          treeCheckedStrategy="all"
+          defaultValue={stateValue}
+          treeData={TrunkTreeData}
+          onChange={(v) => (stateValue = v)}
+          animation={false}
+        />
+      );
+
+      expect(wrapper.find('.arco-tree-select-view .arco-tag')).toHaveLength(4);
+
+      fireEvent.click(document.querySelectorAll('.arco-tag .arco-icon-close')[0]);
+
+      expect(stateValue).toEqual([]);
+
+      expect(wrapper.find('.arco-tree-select-view .arco-tag')).toHaveLength(0);
     });
 
     it('checkable correctly when checkStrictly', () => {
