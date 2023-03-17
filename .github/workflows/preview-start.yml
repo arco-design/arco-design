@@ -20,6 +20,4 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.number }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            Prepare preview
+          message: Prepare preview
