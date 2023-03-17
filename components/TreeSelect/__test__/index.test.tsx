@@ -782,4 +782,24 @@ describe('TreeSelect', () => {
     fireEvent.keyDown($('input').item(0));
     expect(onKeyDown).toHaveBeenCalled();
   });
+
+  it('renderFormat correctly', () => {
+    const wrapper = render(
+      <TreeSelect
+        defaultValue="node1"
+        treeData={treeData}
+        renderFormat={(option) => `-- ${option?.title}`}
+      />
+    );
+    expect(wrapper.find('.arco-tree-select-view-value').item(0).textContent).toBe(
+      `-- ${treeData[0].title}`
+    );
+    fireEvent.click(wrapper.querySelector('.arco-tree-select-view') as HTMLElement);
+
+    fireEvent.click(wrapper.find('.arco-tree-node-title').item(2) as HTMLElement);
+
+    expect(wrapper.find('.arco-tree-select-view-value').item(0).textContent).toBe(
+      `-- ${treeData[1].title}`
+    );
+  });
 });
