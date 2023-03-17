@@ -47,7 +47,7 @@ function THead<T>(props: TheadProps<T>) {
   const selectionRowSpanProps = groupColumns.length > 1 ? { rowSpan: groupColumns.length } : {};
 
   const operationClassName = cs(`${prefixCls}-th`, `${prefixCls}-operation`);
-
+  // console.log(groupColumns)
   return (
     <ComponentThead>
       {groupColumns.map((row, index) => {
