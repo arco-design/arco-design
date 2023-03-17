@@ -1,7 +1,7 @@
 name: deploy-site-preview
 on:
-  # pull_request:
-  #   types: [opened, synchronize, reopened]
+  pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
   workflow_run:
     workflows: ['Preview Start']
