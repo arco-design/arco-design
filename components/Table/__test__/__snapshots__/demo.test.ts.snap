@@ -6637,7 +6637,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-th-item-title"
                       >
-                        Sex
+                        Gender
                       </span>
                     </div>
                   </th>
