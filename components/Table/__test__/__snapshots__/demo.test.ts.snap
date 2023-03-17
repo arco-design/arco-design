@@ -6637,7 +6637,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-th-item-title"
                       >
-                        Sex
+                        Test
                       </span>
                     </div>
                   </th>
@@ -6866,7 +6866,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-cell-wrap-value"
                       >
-                        female
+                        test
                       </span>
                     </div>
                   </td>
@@ -6990,7 +6990,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-cell-wrap-value"
                       >
-                        female
+                        test
                       </span>
                     </div>
                   </td>
@@ -7114,7 +7114,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-cell-wrap-value"
                       >
-                        male
+                        test
                       </span>
                     </div>
                   </td>
@@ -7238,7 +7238,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-cell-wrap-value"
                       >
-                        female
+                        test
                       </span>
                     </div>
                   </td>
@@ -7362,7 +7362,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                       <span
                         class="arco-table-cell-wrap-value"
                       >
-                        male
+                        test
                       </span>
                     </div>
                   </td>
