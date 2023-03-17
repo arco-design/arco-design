@@ -256,10 +256,17 @@ const TreeSelect: ForwardRefRenderFunction<
     [isFilterNode, searchKeys]
   );
 
-  const renderText = useCallback((val) => {
-    const { label = '', disabled } = val || {};
-    return { text: label, disabled };
-  }, []);
+  const renderText = useCallback(
+    (val: LabelValue) => {
+      const { disabled, value } = val || {};
+      let label = val?.label;
+      if (isFunction(props.renderFormat)) {
+        label = props.renderFormat(key2nodeProps[value] || null, props.labelInValue ? val : value);
+      }
+      return { text: label || value || '', disabled };
+    },
+    [props.renderFormat, props.labelInValue]
+  );
 
   const tryUpdateSelectValue = (value: LabelValue[]) => {
     setValue(value, {});

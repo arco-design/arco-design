@@ -34,6 +34,15 @@ export interface TreeSelectProps extends Omit<SelectViewCommonProps, 'allowCreat
     | { label: ReactNode; value: string; disabled?: boolean }
     | { label: ReactNode; value: string; disabled?: boolean }[];
   /**
+   * @zh
+   * 定制回显内容。返回值将会显示在下拉框内。若 `value` 对应的 `Option` 不存在，则第一个参数是 null
+   * @en
+   * Customize the content that will be displayed in the Select.
+   * If the `Option` corresponding to `value` does not exist, the first parameter will be `null`
+   * @version 2.46.0
+   */
+  renderFormat?: (option: NodeProps | null, value: string | LabelValue) => ReactNode;
+  /**
    * @zh 输入框搜索文本的受控值
    * @en To set input search value
    * @version 2.39.0
