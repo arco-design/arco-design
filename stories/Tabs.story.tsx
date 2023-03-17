@@ -1,54 +1,54 @@
 import React, { useState } from 'react';
-import { Tabs, Typography, Button } from '@self';
+import { Tabs, Typography, Radio } from '@self';
 
 const TabPane = Tabs.TabPane;
 let count = 5;
 
-const style = {
+const style: any = {
   textAlign: 'center',
   marginTop: 20,
 };
-const initTabs = [...new Array(count)].map((x, i) => ({
-  title: `Tab ${i + 1}`,
-  key: `key${i + 1}`,
-  content: `${i + 1}`,
-}));
 
 function DemoTabs() {
-  const [tabs, setTabs] = useState(initTabs);
-  const [activeTab, setActiveTab] = useState('key2');
-  const [bool, setBool] = useState(true);
-
-  const handleAddTab = () => {
-    const newTab = {
-      title: `New Tab${++count}`,
-      key: `new key${count}`,
-      content: `${count}`,
-    };
-    setTabs([...tabs, newTab]);
-    if (tabs.length >= 10) {
-      setBool(false);
-    }
-    setActiveTab(newTab.key);
-  };
-
+  const [type, setType] = useState('line');
+  const [position, setPosition] = useState('top');
   return (
-    <Tabs
-      editable={bool}
-      addButton={<Button onClick={handleAddTab}>{tabs.length} +</Button>}
-      showAddButton
-      activeTab={activeTab}
-      onChange={setActiveTab}
-      extra={<Button>a</Button>}
-    >
-      {tabs.map((x, i) => (
-        <TabPane destroyOnHide key={x.key} title={x.title}>
-          <Typography.Paragraph
-            style={style}
-          >{`Content of Tab Panel ${x.content}`}</Typography.Paragraph>
+    <div>
+      <span style={{ marginRight: 20 }}>Size:</span>
+      <Radio.Group
+        type="button"
+        name="position"
+        value={position}
+        onChange={setPosition}
+        style={{ marginBottom: 40 }}
+        options={['left', 'top', 'bottom', 'right']}
+      ></Radio.Group>
+      <br />
+      <span style={{ marginRight: 20 }}>Type:</span>
+      <Radio.Group name="type" value={type} onChange={setType} style={{ marginBottom: 40 }}>
+        <Radio value="line">line</Radio>
+        <Radio value="card">card</Radio>
+        <Radio value="card-gutter">card-gutter</Radio>
+        <Radio value="text">text</Radio>
+        <Radio value="rounded">rounded</Radio>
+        <Radio value="capsule">capsule</Radio>
+      </Radio.Group>
+
+      <Tabs tabPosition={position as any} type={type as any}>
+        <TabPane key="1" title="Tab 1">
+          <Typography.Paragraph style={style}>Content of Tab Panel 1</Typography.Paragraph>
         </TabPane>
-      ))}
-    </Tabs>
+        <TabPane key="2" title="Tab 2" disabled>
+          <Typography.Paragraph style={style}>Content of Tab Panel 2</Typography.Paragraph>
+        </TabPane>
+        <TabPane key="3" title="Tab 3">
+          <Typography.Paragraph style={style}>Content of Tab Panel 3</Typography.Paragraph>
+        </TabPane>
+        <TabPane key="4" title="Tab 4">
+          <Typography.Paragraph style={style}>Content of Tab Panel 4</Typography.Paragraph>
+        </TabPane>
+      </Tabs>
+    </div>
   );
 }
 
