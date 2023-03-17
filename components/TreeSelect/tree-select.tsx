@@ -180,17 +180,19 @@ const TreeSelect: ForwardRefRenderFunction<
     if (item.disabled) {
       return;
     }
-    if (!props.treeCheckable || props.treeCheckStrictly || !key2nodeProps[item.value]) {
+    const itemValue = isObject(item.value) ? item.value.value : item.value;
+    if (!props.treeCheckable || props.treeCheckStrictly || !key2nodeProps[itemValue]) {
       const newValue = value.filter((_, i) => i !== index);
+
       triggerChange(newValue, {
-        trigger: key2nodeProps[item.value] || item,
+        trigger: key2nodeProps[itemValue] || item,
         checked: false,
         selected: false,
       });
       return;
     }
     const result = getAllCheckedKeysByCheck(
-      item.value,
+      itemValue,
       false,
       normalizeValueToArray(value),
       key2nodeProps,
@@ -198,7 +200,7 @@ const TreeSelect: ForwardRefRenderFunction<
     );
     indeterminateKeys.current = result.indeterminateKeys;
     triggerChange(parseValue(result.checkedKeys, key2nodeProps, value), {
-      trigger: key2nodeProps[item.value],
+      trigger: key2nodeProps[itemValue],
       checked: false,
       selected: false,
     });
