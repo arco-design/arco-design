@@ -43,6 +43,7 @@
 |scroll|设置x轴或y轴的滚动。`x` 设置为 `true`，会给 table 添加 `table-layout: fixed` 以及给父元素添加 `overflow: auto`。`y` 设置为 `true`，表头和表身会分离，放在两个 table 中|{ x?: number \| string \| boolean; y?: number \| string \| boolean } |`-`|-|
 |showSorterTooltip|表头是否显示下一次排序的 tooltip 提示。可以设置对象，可以传 `Tooltip` 组件的所有参数。|boolean \| [TooltipProps](tooltip#tooltip) |`true`|2.19.0|
 |style|节点样式|CSSProperties |`-`|-|
+|virtualListProps|用于配置虚拟滚动。|[AvailableVirtualListProps](#availablevirtuallistprops) |`-`|2.46.0|
 |expandedRowRender|点击展开额外的行，渲染函数。返回值为 `null` 时，不会渲染展开按钮|(record: T, index: number) => ReactNode |`-`|-|
 |footer|表格尾部|(currentPageDate) => ReactNode |`-`|-|
 |onExpand|点击展开的回调|(record: T, expanded: boolean) => void |`-`|-|
@@ -186,6 +187,15 @@ export type RowCallbackProps = {
   onHandleSave?: (row) => void;
   [name: string]: any;
 };
+```
+
+### AvailableVirtualListProps
+
+```js
+export type AvailableVirtualListProps = Pick<
+  VirtualListProps<any>,
+  "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
+>;
 ```
 
 ### 隐藏分页

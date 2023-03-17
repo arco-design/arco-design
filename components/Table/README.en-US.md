@@ -43,6 +43,7 @@ Used for data collection, display, analysis, and processing.
 |scroll|Set the scroll of x-axis or y-axis. Setting `x` to `true` will add `table-layout: fixed` to the table and `overflow: auto` to the parent element.If `y` is set to `true`, the header and body will be separated and placed in two tables|{ x?: number \| string \| boolean; y?: number \| string \| boolean } |`-`|-|
 |showSorterTooltip|Whether the header shows the tooltip for the next sorting. The object can be set,and all the parameters of the `Tooltip` component can be passed.|boolean \| [TooltipProps](tooltip#tooltip) |`true`|2.19.0|
 |style|Additional style|CSSProperties |`-`|-|
+|virtualListProps|Used to configure `VirtualList`.|[AvailableVirtualListProps](#availablevirtuallistprops) |`-`|2.46.0|
 |expandedRowRender|Click to expand additional rows, rendering functions. When the return value is `null`, the expand button will not be rendered|(record: T, index: number) => ReactNode |`-`|-|
 |footer|The footer of the table|(currentPageDate) => ReactNode |`-`|-|
 |onExpand|Callback when click to expand|(record: T, expanded: boolean) => void |`-`|-|
@@ -186,6 +187,15 @@ export type RowCallbackProps = {
   onHandleSave?: (row) => void;
   [name: string]: any;
 };
+```
+
+### AvailableVirtualListProps
+
+```js
+export type AvailableVirtualListProps = Pick<
+  VirtualListProps<any>,
+  "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
+>;
 ```
 
 ### Hide Pagination
