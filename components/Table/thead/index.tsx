@@ -47,7 +47,7 @@ function THead<T>(props: TheadProps<T>) {
   const selectionRowSpanProps = groupColumns.length > 1 ? { rowSpan: groupColumns.length } : {};
 
   const operationClassName = cs(`${prefixCls}-th`, `${prefixCls}-operation`);
-  // console.log(groupColumns)
+
   return (
     <ComponentThead>
       {groupColumns.map((row, index) => {
@@ -89,16 +89,7 @@ function THead<T>(props: TheadProps<T>) {
         return (
           <ComponentHeaderRow {...headerRowProps} key={index} className={`${prefixCls}-tr`}>
             {row.map((column, colIndex) => {
-              const columnIndex = column.$$columnIndex;
-              let stickyOffset = 0;
-              if (Array.isArray(columnIndex) && columnIndex.length === 2) {
-                stickyOffset =
-                  column.fixed === 'right'
-                    ? stickyOffsets[columnIndex[1]]
-                    : stickyOffsets[columnIndex[0]];
-              } else if (typeof columnIndex === 'number') {
-                stickyOffset = stickyOffsets[columnIndex] || 0;
-              }
+              const stickyOffset = stickyOffsets[colIndex];
               const stickyClassName = stickyClassNames[colIndex];
 
               if (column.$$isOperation) {

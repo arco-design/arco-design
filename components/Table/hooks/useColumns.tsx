@@ -117,21 +117,12 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
         operationFixedProps.fixed = 'left';
       }
       if (typeof index !== 'number' || index === 0) {
-        [...operations].reverse().forEach((operation, i) => {
+        [...operations].reverse().forEach((operation) => {
           if (operation.node) {
-            const columnIndex = headerOperations.filter((opt) => opt.node).length - i - 1;
             if (operation.name === 'expandNode') {
-              _rows.unshift({
-                ...expandColumn,
-                ...operationFixedProps,
-                $$columnIndex: columnIndex,
-              });
+              _rows.unshift({ ...expandColumn, ...operationFixedProps });
             } else if (operation.name === 'selectionNode') {
-              _rows.unshift({
-                ...selectionColumn,
-                ...operationFixedProps,
-                $$columnIndex: columnIndex,
-              });
+              _rows.unshift({ ...selectionColumn, ...operationFixedProps });
             } else {
               _rows.unshift({
                 ...operation,
@@ -140,7 +131,6 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
                 key: operation.name,
                 $$isOperation: true,
                 width: operation.width || 40,
-                $$columnIndex: columnIndex,
               });
             }
           }
@@ -171,17 +161,9 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
 
   // 分行之后的rows
   const groupColumns = useMemo(() => {
-    const prefixIndex = Array.isArray(headerOperations)
-      ? headerOperations.filter((opt) => opt.node).length
-      : 0;
     if (rowCount === 1) {
-      const rows = columns.map((col, index) => ({
-        ...col,
-        $$columnIndex: index + prefixIndex,
-      }));
-      return [getInternalColumns(rows, headerOperations, 0)];
+      return [getInternalColumns(columns, headerOperations, 0)];
     }
-    let columnIndex = prefixIndex;
     const rows: InternalColumnProps[][] = [];
     const travel = (columns, current = 0) => {
       rows[current] = rows[current] || [];
@@ -190,14 +172,11 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
         if (column[childrenColumnName]) {
           column.colSpan = getFlattenColumns(col[childrenColumnName], childrenColumnName).length;
           column.rowSpan = 1;
-          column.$$columnIndex = [columnIndex];
           rows[current].push(column);
           travel(column[childrenColumnName], current + 1);
-          column.$$columnIndex.push(columnIndex - 1);
         } else {
           column.colSpan = 1;
           column.rowSpan = rowCount - current;
-          column.$$columnIndex = columnIndex++;
           rows[current].push(column);
         }
       });
