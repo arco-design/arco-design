@@ -68,8 +68,8 @@ const columns = [
     width: 120,
   },
   {
-    title: 'Sex',
-    dataIndex: 'sex',
+    title: 'Test',
+    dataIndex: 'test',
     fixed: 'right',
     width: 110,
   },
@@ -85,7 +85,7 @@ const data = [
     no: '34',
     phone: '12345678',
     email: 'jane.doe@example.com',
-    sex: 'female',
+    test: 'test',
   },
   {
     key: '2',
@@ -97,7 +97,7 @@ const data = [
     no: '37',
     phone: '12345678',
     email: 'alisa.ross@example.com',
-    sex: 'female',
+    test: 'test',
   },
   {
     key: '3',
@@ -109,7 +109,7 @@ const data = [
     no: '67',
     phone: '12345678',
     email: 'kevin.sandra@example.com',
-    sex: 'male',
+    test: 'test',
   },
   {
     key: '4',
@@ -121,7 +121,7 @@ const data = [
     no: '317',
     phone: '12345678',
     email: 'ed.hellen@example.com',
-    sex: 'female',
+    test: 'test',
   },
   {
     key: '5',
@@ -133,7 +133,7 @@ const data = [
     no: '114',
     phone: '12345678',
     email: 'william.smith@example.com',
-    sex: 'male',
+    test: 'test',
   },
 ];
 
