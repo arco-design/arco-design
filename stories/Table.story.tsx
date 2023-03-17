@@ -349,6 +349,159 @@ const DemoDataClass = () => {
 
 export const DataClass = () => <DemoDataClass />;
 
+export const FixedTable = () => {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      fixed: 'left',
+      width: 140,
+    },
+    {
+      title: 'Test2',
+      dataIndex: 'test2',
+      width: 100,
+    },
+    {
+      title: 'Test3',
+      dataIndex: 'test3',
+      width: 100,
+    },
+    {
+      title: 'Test4',
+      dataIndex: 'test4',
+      width: 100,
+    },
+    {
+      title: 'Information',
+      children: [
+        {
+          title: 'Email',
+          dataIndex: 'email',
+        },
+        {
+          title: 'Phone',
+          dataIndex: 'phone',
+        },
+      ],
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+      // fixed: 'right',
+      width: 120,
+    },
+    {
+      title: 'User Info',
+      fixed: 'right',
+      children: [
+        {
+          title: 'Birthday',
+          dataIndex: 'birthday',
+          fixed: 'right',
+          width: 120,
+        },
+        {
+          title: 'Address',
+          fixed: 'right',
+          children: [
+            {
+              title: 'City',
+              dataIndex: 'city',
+              fixed: 'right',
+              width: 120,
+            },
+            {
+              title: 'Road',
+              dataIndex: 'road',
+              fixed: 'right',
+              width: 120,
+            },
+            {
+              title: 'No.',
+              dataIndex: 'no',
+              fixed: 'right',
+              width: 120,
+            },
+          ],
+        },
+      ],
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'Jane Doe',
+      salary: 23000,
+      birthday: '1994-04-21',
+      city: 'London',
+      road: 'Park',
+      no: '34',
+      phone: '12345678',
+      email: 'jane.doe@example.com',
+    },
+    {
+      key: '2',
+      name: 'Alisa Ross',
+      salary: 25000,
+      birthday: '1994-05-21',
+      city: 'London',
+      road: 'Park',
+      no: '37',
+      phone: '12345678',
+      email: 'alisa.ross@example.com',
+    },
+    {
+      key: '3',
+      name: 'Kevin Sandra',
+      salary: 22000,
+      birthday: '1992-02-11',
+      city: 'Paris',
+      road: 'Arco',
+      no: '67',
+      phone: '12345678',
+      email: 'kevin.sandra@example.com',
+    },
+    {
+      key: '4',
+      name: 'Ed Hellen',
+      salary: 17000,
+      birthday: '1991-06-21',
+      city: 'London',
+      road: 'Park',
+      no: '317',
+      phone: '12345678',
+      email: 'ed.hellen@example.com',
+    },
+    {
+      key: '5',
+      name: 'William Smith',
+      salary: 27000,
+      birthday: '1996-08-21',
+      city: 'Paris',
+      road: 'Park',
+      no: '114',
+      phone: '12345678',
+      email: 'william.smith@example.com',
+    },
+  ];
+  return (
+    <Table
+      scroll={{
+        x: 1200,
+      }}
+      // expandedRowRender={(record) => `${record.name}'s address is ${record.address}`}
+      // rowSelection={{}}
+      border={{
+        wrapper: true,
+        cell: true,
+      }}
+      columns={columns}
+      data={data}
+    />
+  );
+};
+
 export default {
   title: 'Table',
 };

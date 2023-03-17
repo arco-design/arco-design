@@ -67,6 +67,12 @@ const columns = [
     fixed: 'right',
     width: 120,
   },
+  {
+    title: 'Gender',
+    dataIndex: 'gender',
+    fixed: 'right',
+    width: 110,
+  },
 ];
 const data = [
   {
@@ -79,6 +85,7 @@ const data = [
     no: '34',
     phone: '12345678',
     email: 'jane.doe@example.com',
+    gender: 'female',
   },
   {
     key: '2',
@@ -90,6 +97,7 @@ const data = [
     no: '37',
     phone: '12345678',
     email: 'alisa.ross@example.com',
+    gender: 'female',
   },
   {
     key: '3',
@@ -101,6 +109,7 @@ const data = [
     no: '67',
     phone: '12345678',
     email: 'kevin.sandra@example.com',
+    gender: 'male',
   },
   {
     key: '4',
@@ -112,6 +121,7 @@ const data = [
     no: '317',
     phone: '12345678',
     email: 'ed.hellen@example.com',
+    gender: 'female',
   },
   {
     key: '5',
@@ -123,6 +133,7 @@ const data = [
     no: '114',
     phone: '12345678',
     email: 'william.smith@example.com',
+    gender: 'male',
   },
 ];
 

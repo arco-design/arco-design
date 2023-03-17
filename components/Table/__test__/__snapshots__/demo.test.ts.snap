@@ -6560,6 +6560,9 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                 <col
                   style="width:120px"
                 />
+                <col
+                  style="width:110px"
+                />
               </colgroup>
               <thead>
                 <tr
@@ -6611,7 +6614,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   <th
                     class="arco-table-th arco-table-col-fixed-right arco-table-col-fixed-right-first"
                     rowspan="3"
-                    style="right:0"
+                    style="right:110px"
                   >
                     <div
                       class="arco-table-th-item"
@@ -6620,6 +6623,21 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                         class="arco-table-th-item-title"
                       >
                         Salary
+                      </span>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th arco-table-col-fixed-right"
+                    rowspan="3"
+                    style="right:0"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      >
+                        Gender
                       </span>
                     </div>
                   </th>
@@ -6826,7 +6844,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right:110px"
                   >
                     <div
                       class="arco-table-cell"
@@ -6835,6 +6853,20 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                         class="arco-table-cell-wrap-value"
                       >
                         23000
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-fixed-right"
+                    style="right:0"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        female
                       </span>
                     </div>
                   </td>
@@ -6936,7 +6968,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right:110px"
                   >
                     <div
                       class="arco-table-cell"
@@ -6945,6 +6977,20 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                         class="arco-table-cell-wrap-value"
                       >
                         25000
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-fixed-right"
+                    style="right:0"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        female
                       </span>
                     </div>
                   </td>
@@ -7046,7 +7092,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right:110px"
                   >
                     <div
                       class="arco-table-cell"
@@ -7055,6 +7101,20 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                         class="arco-table-cell-wrap-value"
                       >
                         22000
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-fixed-right"
+                    style="right:0"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        male
                       </span>
                     </div>
                   </td>
@@ -7156,7 +7216,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right:110px"
                   >
                     <div
                       class="arco-table-cell"
@@ -7165,6 +7225,20 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                         class="arco-table-cell-wrap-value"
                       >
                         17000
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-fixed-right"
+                    style="right:0"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        female
                       </span>
                     </div>
                   </td>
@@ -7266,7 +7340,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   </td>
                   <td
                     class="arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first"
-                    style="right:0"
+                    style="right:110px"
                   >
                     <div
                       class="arco-table-cell"
@@ -7275,6 +7349,20 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                         class="arco-table-cell-wrap-value"
                       >
                         27000
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-fixed-right"
+                    style="right:0"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        male
                       </span>
                     </div>
                   </td>
