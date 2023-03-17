@@ -3,6 +3,7 @@ import { PaginationProps } from '../Pagination/pagination';
 import { SpinProps } from '../Spin';
 import { TriggerProps } from '../Trigger';
 import { TooltipProps } from '../Tooltip';
+import { AvailableVirtualListProps } from '../_class/VirtualList';
 
 export type RowCallbackProps = {
   onClick?: (event) => void;
@@ -225,6 +226,14 @@ export interface TableProps<T = any> {
    * (Note: Virtual scrolling will automatically turn off support for tree data)
    */
   virtualized?: boolean;
+  /**
+   * @zh
+   * 用于配置虚拟滚动。
+   * @en
+   * Used to configure `VirtualList`.
+   * @version 2.46.0
+   */
+  virtualListProps?: AvailableVirtualListProps;
   /**
    * @zh 总结栏
    * @en Table Summary
@@ -638,6 +647,7 @@ export interface TbodyProps<T = any> {
   tableViewWidth?: number;
   currentSorter?: SorterResult;
   virtualized?: boolean;
+  virtualListProps?: AvailableVirtualListProps;
   stickyOffsets?: number[];
   stickyClassNames?: string[];
   getRowKey?: GetRowKeyType<T>;

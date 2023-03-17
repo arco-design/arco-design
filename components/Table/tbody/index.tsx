@@ -24,6 +24,7 @@ function TBody<T>(props: TbodyProps<T>) {
     hasFixedColumn,
     tableViewWidth,
     virtualized,
+    virtualListProps,
     getRowKey,
     saveVirtualWrapperRef,
   } = props;
@@ -134,6 +135,7 @@ function TBody<T>(props: TbodyProps<T>) {
         outerStyle={{ ...scrollStyleX, minWidth: '100%', overflow: 'visible' }}
         className={`${prefixCls}-body`}
         ref={(ref) => saveVirtualWrapperRef(ref?.dom as HTMLDivElement)}
+        {...virtualListProps}
       >
         {(child, index) => (
           <Tr<T> {...trProps} key={getRowKey(child)} record={child} index={index} level={0} />
