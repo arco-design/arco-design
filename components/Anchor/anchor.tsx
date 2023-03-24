@@ -99,8 +99,6 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
 
   const setActiveLink = useCallback(
     (hash: string) => {
-      if (hash === '#a') {
-      }
       if (!hash || !wrapperRef.current) return;
       // Try to add when there is no corresponding link
       if (!linkMap.current.has(hash)) {
