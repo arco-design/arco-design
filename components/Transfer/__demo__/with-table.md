@@ -34,11 +34,11 @@ const TableTransfer = ({ sourceColumns, targetColumns, ...restProps }) => (
             pointerEvents: listDisabled ? 'none' : null,
             borderRadius: 0,
           }}
-          checkCrossPage
           pagination={false}
           data={filteredItems}
           columns={columns}
           rowSelection={{
+            checkCrossPage: true,
             selectedRowKeys: listSelectedKeys,
             checkboxProps: (item) => {
               return {

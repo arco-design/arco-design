@@ -1,4 +1,4 @@
-import React, { useRef, useImperativeHandle, useEffect, useState } from 'react';
+import React, { useRef, useImperativeHandle, useEffect } from 'react';
 import { InputComponentProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
@@ -51,7 +51,6 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
     const refInput = useRef<HTMLInputElement>();
     const refInputMirror = useRef<HTMLSpanElement>();
     const refPrevInputWidth = useRef<number>(null);
-    const [inputElementWidth, setInputElementWidth] = useState<number>(null);
 
     const maxLength = isObject(propMaxLength)
       ? propMaxLength.errorOnly
@@ -110,13 +109,8 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     const updateInputWidth = () => {
       if (refInputMirror.current && refInput.current) {
-        // Unset width when need to show placeholder
-        if (!inputProps.value && placeholder) {
-          setInputElementWidth(null);
-        } else {
-          const width = refInputMirror.current.offsetWidth;
-          setInputElementWidth(width + (width ? 8 : 4));
-        }
+        const width = refInputMirror.current.offsetWidth;
+        refInput.current.style.width = `${width + (width ? 8 : 4)}px`;
       }
     };
 
@@ -168,7 +162,6 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
                 : {
                     ...style,
                     ...('height' in props ? { height } : {}),
-                    ...(typeof inputElementWidth === 'number' ? { width: inputElementWidth } : {}),
                   }
             }
           />
