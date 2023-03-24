@@ -58,8 +58,12 @@ const List = <
           return false;
         }}
       >
-        {(_, __, { value: _value, onChange }) => {
+        {(_, store, { value: _value, onChange }) => {
           const value = _value || [];
+
+          // 为啥 add，move，remove 里不直接用 value，而是又 getFieldValue？
+          // 因为用户可能把 add，remove，move 给 memo 了，导致 remove 直接读取的 value 不是最新的
+          // 保持和 2.46.0 以前的版本一致
 
           const add = function (defaultValue?: any, index?: number) {
             if (isSyntheticEvent(defaultValue)) {
@@ -69,6 +73,7 @@ const List = <
               );
               return;
             }
+            const value = store.getInnerMethods(true)?.innerGetFieldValue(field) || [];
             const key = keysRef.current.id;
 
             keysRef.current.id += 1;
@@ -90,12 +95,14 @@ const List = <
           };
 
           const remove = function (index: number) {
+            const value = store.getInnerMethods(true)?.innerGetFieldValue(field) || [];
             const newValue = value.filter((_, i) => i !== index);
             currentKeys.splice(index, 1);
             onChange([...newValue], { isFormList: true });
           };
 
           const move = function (fromIndex: number, toIndex: number) {
+            const value = store.getInnerMethods(true)?.innerGetFieldValue(field) || [];
             if (
               fromIndex === toIndex ||
               !isIndexLegal(fromIndex, value) ||
@@ -108,7 +115,6 @@ const List = <
             currentKeys.splice(toIndex, 0, fromId);
 
             const fromItem = value[fromIndex];
-
             const newValue = [...value];
             newValue.splice(fromIndex, 1);
             newValue.splice(toIndex, 0, fromItem);
