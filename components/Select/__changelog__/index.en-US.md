@@ -1,3 +1,11 @@
+## 2.46.1
+
+2023-03-24
+
+### 🐛 BugFix
+
+- Fix `Select` multi-selection mode, when the first option is selected, the drop-down box shakes.([#1863](https://github.com/arco-design/arco-design/pull/1863))
+
 ## 2.46.0
 
 2023-03-17

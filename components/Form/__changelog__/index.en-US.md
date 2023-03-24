@@ -1,3 +1,11 @@
+## 2.46.1
+
+2023-03-24
+
+### 🐛 BugFix
+
+- Fix the bug that the `Form.List` component behaves abnormally when the user executes the `add/remove/move` method `memo`([#1868](https://github.com/arco-design/arco-design/pull/1868))
+
 ## 2.46.0
 
 2023-03-17

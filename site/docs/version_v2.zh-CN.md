@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.46.1
+
+2023-03-24
+
+### 🐛 问题修复
+
+- 修复 `Form.List` 组件在用户对 `add/remove/move` 方法 `memo` 时，执行表现异常的 bug([#1868](https://github.com/arco-design/arco-design/pull/1868))
+- 修复 `Table` 组件组合表头和 colSpan 一起使用时，colSpan 被覆盖的 bug。([#1865](https://github.com/arco-design/arco-design/pull/1865))
+- 修复 `Select` 多选模式下，选择第一个选项时下拉框抖动问题。([#1863](https://github.com/arco-design/arco-design/pull/1863))
+
+### 💅 样式更新
+
+- 修复 `Tabs` 组件滚动图标在禁用时，禁用文本色未生效的 bug。([#1867](https://github.com/arco-design/arco-design/pull/1867))
+
 ## 2.46.0
 
 2023-03-17

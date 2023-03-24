@@ -1,3 +1,11 @@
+## 2.46.1
+
+2023-03-24
+
+### 🐛 BugFix
+
+- Fix the bug that colSpan is overwritten when the group columns of the `Table` component is used together with colSpan.([#1865](https://github.com/arco-design/arco-design/pull/1865))
+
 ## 2.46.0
 
 2023-03-17

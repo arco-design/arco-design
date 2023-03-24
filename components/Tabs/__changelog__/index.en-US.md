@@ -1,3 +1,11 @@
+## 2.46.1
+
+2023-03-24
+
+### 💅 Style
+
+- Fix the bug that the disabled text color does not take effect when the scroll icon of the `Tabs` component is disabled.([#1867](https://github.com/arco-design/arco-design/pull/1867))
+
 ## 2.46.0
 
 2023-03-17

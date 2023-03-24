@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.46.1
+
+2023-03-24
+
+### 🐛 BugFix
+
+- Fix the bug that the `Form.List` component behaves abnormally when the user executes the `add/remove/move` method `memo`([#1868](https://github.com/arco-design/arco-design/pull/1868))
+- Fix the bug that colSpan is overwritten when the group columns of the `Table` component is used together with colSpan.([#1865](https://github.com/arco-design/arco-design/pull/1865))
+- Fix `Select` multi-selection mode, when the first option is selected, the drop-down box shakes.([#1863](https://github.com/arco-design/arco-design/pull/1863))
+
+### 💅 Style
+
+- Fix the bug that the disabled text color does not take effect when the scroll icon of the `Tabs` component is disabled.([#1867](https://github.com/arco-design/arco-design/pull/1867))
+
 ## 2.46.0
 
 2023-03-17
