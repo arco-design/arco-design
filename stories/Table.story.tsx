@@ -356,11 +356,13 @@ export const FixedTable = () => {
       dataIndex: 'name',
       fixed: 'left',
       width: 140,
+      colSpan: 2,
     },
     {
       title: 'Test2',
       dataIndex: 'test2',
       width: 100,
+      colSpan: 0,
     },
     {
       title: 'Test3',

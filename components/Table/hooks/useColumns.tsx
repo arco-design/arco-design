@@ -189,13 +189,11 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
         const column: InternalColumnProps = { ...col };
         if (column[childrenColumnName]) {
           column.colSpan = getFlattenColumns(col[childrenColumnName], childrenColumnName).length;
-          column.rowSpan = 1;
           column.$$columnIndex = [columnIndex];
           rows[current].push(column);
           travel(column[childrenColumnName], current + 1);
           column.$$columnIndex.push(columnIndex - 1);
         } else {
-          column.colSpan = 1;
           column.rowSpan = rowCount - current;
           column.$$columnIndex = columnIndex++;
           rows[current].push(column);
