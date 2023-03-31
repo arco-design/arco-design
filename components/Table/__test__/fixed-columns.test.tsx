@@ -174,7 +174,7 @@ describe('Table fixed columns', () => {
   });
 
   // issue: https://github.com/arco-design/arco-design/issues/1875
-  it('basic fixed columns', () => {
+  it('fixed columns with string width', () => {
     const columnsWidthStringWidth = (function () {
       return columns.map((d) => {
         if (d.title === 'Age') {
