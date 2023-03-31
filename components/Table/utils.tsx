@@ -1,4 +1,14 @@
-import { isArray, isObject, isUndefined, isNull } from '../_util/is';
+import { isArray, isObject, isUndefined, isNull, isNumber, isString } from '../_util/is';
+
+export function px2Number(width: number | string): number | string {
+  if (isNumber(width)) {
+    return width;
+  }
+  if (isString(width) && width.includes('px')) {
+    return +width.replace('px', '');
+  }
+  return width;
+}
 
 export function getScrollBarHeight(ele: HTMLElement | null) {
   return ele ? ele.offsetHeight - ele.clientHeight : 0;
