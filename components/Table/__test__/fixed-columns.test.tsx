@@ -172,4 +172,58 @@ describe('Table fixed columns', () => {
     );
     expect(getBodyCell(component, 1).getAttribute('style')).toEqual('left: 100px;');
   });
+
+  // issue: https://github.com/arco-design/arco-design/issues/1875
+  it('fixed columns with string width', () => {
+    const columnsWidthStringWidth = (function () {
+      return columns.map((d) => {
+        if (d.title === 'Age') {
+          return {
+            ...d,
+            fixed: 'right' as const,
+            width: '100px',
+          };
+        }
+        if (d.title === 'Email') {
+          return {
+            ...d,
+            fixed: 'right' as const,
+            width: '120px',
+          };
+        }
+        return d;
+      });
+    })();
+
+    const component = render(
+      <Table rowKey="name" scroll={{ x: 600 }} columns={columnsWidthStringWidth} data={data} />
+    );
+
+    const headTr = component.find('thead tr').item(0);
+    const bodyTr = component.find('tbody tr').item(0);
+
+    function getHeadCell(i) {
+      return headTr.querySelectorAll('th').item(i);
+    }
+
+    function getBodyCell(i) {
+      return bodyTr.querySelectorAll('td').item(i);
+    }
+
+    expect(getHeadCell(3).className).toBe(
+      'arco-table-th arco-table-col-fixed-right arco-table-col-fixed-right-first'
+    );
+    expect(getHeadCell(3).getAttribute('style')).toEqual('right: 120px;');
+
+    expect(getBodyCell(3).className).toBe(
+      'arco-table-td arco-table-col-fixed-right arco-table-col-fixed-right-first'
+    );
+    expect(getBodyCell(3).getAttribute('style')).toEqual('right: 120px;');
+
+    expect(getHeadCell(4).className).toBe('arco-table-th arco-table-col-fixed-right');
+    expect(getHeadCell(4).getAttribute('style')).toEqual('right: 0px;');
+
+    expect(getBodyCell(4).className).toBe('arco-table-td arco-table-col-fixed-right');
+    expect(getBodyCell(4).getAttribute('style')).toEqual('right: 0px;');
+  });
 });

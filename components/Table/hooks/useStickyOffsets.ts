@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 import { InternalColumnProps } from '../interface';
+import { px2Number } from '../utils';
 
 // get sticky cell's left and right
 function useStickyOffsets(columns: InternalColumnProps[]): number[] {
-  const colWidths = columns.map((c) => c.width);
+  const colWidths = columns.map((c) => px2Number(c.width));
   const colFixed = columns.map((c) => c.fixed);
 
   const stickyOffsets = useMemo(() => {
@@ -15,7 +16,7 @@ function useStickyOffsets(columns: InternalColumnProps[]): number[] {
             if (col.key === column.key) {
               return true;
             }
-            const colWidth = col.$$isOperation ? col.width || 40 : col.width;
+            const colWidth = col.$$isOperation ? px2Number(col.width) || 40 : px2Number(col.width);
             offset += colWidth as number;
             return false;
           }
@@ -29,7 +30,7 @@ function useStickyOffsets(columns: InternalColumnProps[]): number[] {
             if (col.key === column.key) {
               return true;
             }
-            const colWidth = col.$$isOperation ? col.width || 40 : col.width;
+            const colWidth = col.$$isOperation ? px2Number(col.width) || 40 : px2Number(col.width);
             offset += colWidth as number;
             return false;
           }
