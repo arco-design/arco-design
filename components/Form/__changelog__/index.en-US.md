@@ -1,3 +1,11 @@
+## 2.46.2
+
+2023-03-31
+
+### 💎 Enhancement
+
+- Optimize the problem that when `Form.useFormContext` is not used in `<Form>`, there will be a page error and cause a white screen.([#1884](https://github.com/arco-design/arco-design/pull/1884))
+
 ## 2.46.1
 
 2023-03-24

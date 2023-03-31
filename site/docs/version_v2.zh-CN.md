@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.46.2
+
+2023-03-31
+
+### 💎 功能优化
+
+- 优化 `Form.useFormContext`  未在 `<Form>` 内使用时出现页面报错导致白屏的问题。([#1884](https://github.com/arco-design/arco-design/pull/1884))
+- `Table` 在固定列时，`column.width` 可以设置为带像素的字符串。([#1883](https://github.com/arco-design/arco-design/pull/1883))
+
+### 🐛 问题修复
+
+- 修复 `Drawer` 组件在弹出层完全退出前就重置了挂载节点的 `overflow`  属性导致的消失动画问题。([#1882](https://github.com/arco-design/arco-design/pull/1882))
+
 ## 2.46.1
 
 2023-03-24

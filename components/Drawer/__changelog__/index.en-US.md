@@ -1,3 +1,11 @@
+## 2.46.2
+
+2023-03-31
+
+### 🐛 BugFix
+
+- Fix the disappearing animation problem caused by the `Drawer` component resetting the `overflow` property of the mounted node before the popup layer completely exits.([#1882](https://github.com/arco-design/arco-design/pull/1882))
+
 ## 2.42.0
 
 2022-11-25

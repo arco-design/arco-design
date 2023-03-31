@@ -1,3 +1,11 @@
+## 2.46.2
+
+2023-03-31
+
+### 💎 Enhancement
+
+- When `Table` is fixed columns, `column.width` can be set to a string with pixels.([#1883](https://github.com/arco-design/arco-design/pull/1883))
+
 ## 2.46.1
 
 2023-03-24

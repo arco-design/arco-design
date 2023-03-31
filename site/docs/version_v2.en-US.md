@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.46.2
+
+2023-03-31
+
+### 💎 Enhancement
+
+- Optimize the problem that when `Form.useFormContext` is not used in `<Form>`, there will be a page error and cause a white screen.([#1884](https://github.com/arco-design/arco-design/pull/1884))
+- When `Table` is fixed columns, `column.width` can be set to a string with pixels.([#1883](https://github.com/arco-design/arco-design/pull/1883))
+
+### 🐛 BugFix
+
+- Fix the disappearing animation problem caused by the `Drawer` component resetting the `overflow` property of the mounted node before the popup layer completely exits.([#1882](https://github.com/arco-design/arco-design/pull/1882))
+
 ## 2.46.1
 
 2023-03-24
