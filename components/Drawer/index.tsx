@@ -81,7 +81,7 @@ function Drawer(baseProps: DrawerProps, ref) {
   const [popupZIndex, setPopupZIndex] = useState<number>();
   const prefixCls = getPrefixCls('drawer');
   // Record whether is exiting, to prevent `onCancel` being unnecessarily triggered when mask is clicked during the period.
-  const inExit = useRef(false);
+  const [inExit, setInExit] = useState(false);
   // Record whether it's opened to avoid element shaking during animation caused by focus lock.
   const [isOpened, setIsOpened] = useState(false);
 
@@ -94,7 +94,8 @@ function Drawer(baseProps: DrawerProps, ref) {
     return !isServerRendering && getContainer() === document.body;
   }, [shouldReComputeFixed, getContainer]);
 
-  useOverflowHidden(getContainer, { hidden: visible && mask });
+  // visible || inExit: 完全退出后在重置 overflow
+  useOverflowHidden(getContainer, { hidden: (visible || inExit) && mask });
 
   useImperativeHandle(ref, () => drawerWrapperRef.current);
 
@@ -230,7 +231,7 @@ function Drawer(baseProps: DrawerProps, ref) {
               className={`${prefixCls}-mask`}
               style={maskStyle}
               onClick={(e) => {
-                if (!inExit.current && maskClosable) {
+                if (!inExit && maskClosable) {
                   props.onCancel && props.onCancel(e);
                 }
               }}
@@ -254,7 +255,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           unmountOnExit={unmountOnExit}
           onEnter={(e) => {
             e.parentNode.style.display = 'block';
-            inExit.current = false;
+            setInExit(false);
           }}
           onEntered={() => {
             setIsOpened(true);
@@ -262,10 +263,10 @@ function Drawer(baseProps: DrawerProps, ref) {
           }}
           onExit={() => {
             setIsOpened(false);
-            inExit.current = true;
+            setInExit(true);
           }}
           onExited={(e) => {
-            inExit.current = false;
+            setInExit(false);
             e.parentNode.style.display = ''; // don't set display='none'
             afterClose && afterClose();
           }}
