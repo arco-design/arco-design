@@ -508,10 +508,6 @@ class Store<
     });
   };
 
-  /**
-   * @deprecated
-   * todo: 移至 innerMethod,内部 API，用户请勿调用
-   */
   public getFieldsState = (fields?: FieldKey[]): { [key in FieldKey]?: FieldState<FieldValue> } => {
     const result = {} as { [key in FieldKey]?: FieldState<FieldValue> };
 

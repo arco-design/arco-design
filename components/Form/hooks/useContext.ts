@@ -10,7 +10,7 @@ const useFormContext = (): { form: FormInstance; disabled: boolean; isSubmitting
 
   const setSubmitting = useCallback(() => {
     const state = formInstance?.getFieldsState();
-    const newValue = state[Object.keys(state)[0]]?.isSubmitting;
+    const newValue = state?.[Object.keys(state)[0]]?.isSubmitting;
     setIsSubmitting(newValue);
   }, []);
 
