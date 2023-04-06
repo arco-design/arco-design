@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactElement, PropsWithChildren, CSSProperties } from 'react';
+import React, { PureComponent, ReactElement, PropsWithChildren, CSSProperties, memo } from 'react';
 import { findDOMNode } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
@@ -92,7 +92,7 @@ const defaultProps = {
   autoFitPosition: true,
 };
 
-class Trigger extends PureComponent<TriggerProps, TriggerState> {
+class OriginalTrigger extends PureComponent<TriggerProps, TriggerState> {
   static displayName = 'Trigger';
 
   static contextType = ConfigContext;
@@ -1117,5 +1117,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     );
   }
 }
+
+export { OriginalTrigger };
+
+const Trigger = memo(OriginalTrigger);
 
 export default Trigger;

@@ -16,7 +16,7 @@ import debounce from 'lodash/debounce';
 import useStateValue, { parseValue } from './hook/useStateValue';
 import { normalizeValueToArray } from './utils';
 import { isArray, isFunction, isNullOrUndefined, isObject } from '../_util/is';
-import Trigger from '../Trigger';
+import Trigger, { OriginalTrigger } from '../Trigger';
 import Tree from '../Tree';
 import { ConfigContext } from '../ConfigProvider';
 import { getAllCheckedKeysByCheck } from '../Tree/util';
@@ -63,7 +63,7 @@ const TreeSelect: ForwardRefRenderFunction<
     componentConfig?.TreeSelect
   );
   const refIsFirstRender = useIsFirstRender();
-  const triggerRef = useRef<Trigger>();
+  const triggerRef = useRef<OriginalTrigger>();
   const treeRef = useRef(null);
   const refSelectView = useRef(null);
   const indeterminateKeys = useRef<string[]>([]);
