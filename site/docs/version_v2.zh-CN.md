@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.46.3
+
+2023-04-07
+
+### 🐛 问题修复
+
+- 修复同时存在多层 `Drawer` 时，按键`ESC`所有抽屉被关闭的 bug。([#1902](https://github.com/arco-design/arco-design/pull/1902))
+- 修复 `Form.List` 在动态增减表单项时， 直接包裹的子组件的 `onChange` 被错误触发的 bug。([#1898](https://github.com/arco-design/arco-design/pull/1898))
+- 修复 `Select` 组件多选模式下点击 `Tag` 的关闭按钮删除选项时，`Select` 会变为 Focus 状态的问题。([#1894](https://github.com/arco-design/arco-design/pull/1894))
+
+### 🆎 类型修正
+
+- 完善 `Input.Textarea` TS 定义([#1899](https://github.com/arco-design/arco-design/pull/1899))
+
 ## 2.46.2
 
 2023-03-31

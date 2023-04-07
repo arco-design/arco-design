@@ -1,3 +1,11 @@
+## 2.46.3
+
+2023-04-07
+
+### 🐛 BugFix
+
+- Fix the bug that all drawers are closed by pressing `ESC` when there are multiple layers of `Drawer` at the same time.([#1902](https://github.com/arco-design/arco-design/pull/1902))
+
 ## 2.46.2
 
 2023-03-31
