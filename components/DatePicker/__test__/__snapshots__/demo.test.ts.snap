@@ -1080,50 +1080,117 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
 
 exports[`renders DatePicker/demo/disabled-date-advance.md correctly 1`] = `
 <div
-  class="arco-picker arco-picker-range arco-picker-size-default"
-  style="width:300px"
+  class="arco-space arco-space-vertical"
 >
   <div
-    class="arco-picker-input arco-picker-input-active"
+    class="arco-space-item"
+    style="margin-bottom:24px"
   >
-    <input
-      placeholder="开始日期"
-      value=""
-    />
-  </div>
-  <span
-    class="arco-picker-separator"
-  >
-    -
-  </span>
-  <div
-    class="arco-picker-input"
-  >
-    <input
-      placeholder="结束日期"
-      value=""
-    />
-  </div>
-  <div
-    class="arco-picker-suffix"
-  >
-    <span
-      class="arco-picker-suffix-icon"
+    <div
+      class="arco-picker arco-picker-range arco-picker-size-default"
+      style="width:300px"
     >
-      <svg
-        aria-hidden="true"
-        class="arco-icon arco-icon-calendar"
-        fill="none"
-        focusable="false"
-        stroke="currentColor"
-        stroke-width="4"
-        viewBox="0 0 48 48"
+      <div
+        class="arco-picker-input arco-picker-input-active"
       >
-        <path
-          d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+        <input
+          placeholder="开始日期"
+          value=""
         />
-      </svg>
-    </span>
+      </div>
+      <span
+        class="arco-picker-separator"
+      >
+        -
+      </span>
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          placeholder="结束日期"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-calendar"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M7 22h34M14 5v8m20-8v8M8 41h32a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1Z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-picker arco-picker-range arco-picker-size-default"
+      style="width:400px"
+    >
+      <div
+        class="arco-picker-input arco-picker-input-active"
+      >
+        <input
+          placeholder="开始日期"
+          value=""
+        />
+      </div>
+      <span
+        class="arco-picker-separator"
+      >
+        -
+      </span>
+      <div
+        class="arco-picker-input"
+      >
+        <input
+          placeholder="结束日期"
+          value=""
+        />
+      </div>
+      <div
+        class="arco-picker-suffix"
+      >
+        <span
+          class="arco-picker-suffix-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-calendar-clock"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M7 22h34V10a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h18M34 5v8M14 5v8"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M36 44a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm1.5-9.75V29h-3v8.25H42v-3h-4.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              stroke="none"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
