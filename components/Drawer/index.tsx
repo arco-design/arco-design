@@ -15,14 +15,14 @@ import cs from '../_util/classNames';
 import Button from '../Button';
 import Portal from '../Portal';
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
-import { isServerRendering, off, on } from '../_util/dom';
 import IconHover from '../_class/icon-hover';
-import { Esc } from '../_util/keycode';
 import { isObject } from '../_util/is';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
 import { DrawerProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
+import { Esc } from '../_util/keycode';
+import { isServerRendering, contains } from '../_util/dom';
 
 const defaultProps: DrawerProps = {
   placement: 'right',
@@ -120,19 +120,13 @@ function Drawer(baseProps: DrawerProps, ref) {
   }, [visible, popupZIndex]);
 
   useEffect(() => {
-    const onKeyDown = (e) => {
-      if (escToExit && e && e.key === Esc.key && props.onCancel) {
-        props.onCancel(e);
+    if (autoFocus && visible) {
+      // https://github.com/arco-design/arco-design/pull/1439
+      if (contains(document.body, drawerWrapperRef.current)) {
+        drawerWrapperRef.current?.focus();
       }
-    };
-
-    if (visible) {
-      on(document, 'keydown', onKeyDown);
     }
-    return () => {
-      off(document, 'keydown', onKeyDown);
-    };
-  }, [visible, escToExit]);
+  }, [visible, autoFocus]);
 
   const element = (
     <div className={`${prefixCls}-scroll`}>
@@ -204,6 +198,14 @@ function Drawer(baseProps: DrawerProps, ref) {
       <div
         {...omit(rest, ['onCancel', 'onOk'])}
         ref={drawerWrapperRef}
+        onKeyDown={(e) => {
+          const keyCode = e.keyCode || e.which;
+          if (keyCode === Esc.code) {
+            if (escToExit && visible) {
+              props.onCancel?.(e as any);
+            }
+          }
+        }}
         className={cs(
           `${prefixCls}-wrapper`,
           {
