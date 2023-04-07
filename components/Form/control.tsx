@@ -368,8 +368,12 @@ export default class Control<
     this.innerSetFieldValue(field, normalizeValue);
 
     this.validateField(trigger);
+
     if (isValidElement(children) && children.props && children.props[trigger as string]) {
-      children.props[trigger as string](normalizeValue, ...args);
+      if (!this.props.isFormList) {
+        // https://github.com/arco-design/arco-design/issues/1886
+        children.props[trigger as string](normalizeValue, ...args);
+      }
     }
   };
 
