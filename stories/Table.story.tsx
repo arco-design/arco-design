@@ -349,6 +349,114 @@ const DemoDataClass = () => {
 
 export const DataClass = () => <DemoDataClass />;
 
+export const SortTable = () => {
+  const [englishSortOrder, setEnglishSortOrder] = useState('descend');
+  // console.log(englishSortOrder);
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      // defaultSortOrder: 'descend',
+      sorter: (a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      },
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      // defaultSortOrder: 'descend',
+      sorter: (a, b) => a.age - b.age,
+    },
+    {
+      title: 'Chinese Score',
+      dataIndex: 'chinese',
+      defaultSortOrder: 'descend',
+      sorter: {
+        compare: (a, b) => a.chinese - b.chinese,
+        multiple: 3,
+      },
+    },
+    {
+      title: 'Math Score',
+      dataIndex: 'math',
+      defaultSortOrder: 'ascend',
+      sorter: {
+        compare: (a, b) => a.math - b.math,
+        multiple: 2,
+      },
+    },
+    {
+      title: 'English Score',
+      dataIndex: 'english',
+      sortOrder: englishSortOrder,
+      sorter: {
+        compare: (a, b) => a.english - b.english,
+        multiple: 1,
+      },
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'Aohn Brown',
+      age: 18,
+      chinese: 100,
+      math: 60,
+      english: 70,
+    },
+    {
+      key: '2',
+      name: 'Bim Green',
+      age: 17,
+      chinese: 100,
+      math: 90,
+      english: 80,
+    },
+    {
+      key: '3',
+      name: 'Coe Black',
+      age: 19,
+      chinese: 100,
+      math: 70,
+      english: 60,
+    },
+    {
+      key: '4',
+      name: 'Dim Red',
+      age: 15,
+      chinese: 80,
+      math: 70,
+      english: 100,
+    },
+    {
+      key: '5',
+      name: 'Eim Blue',
+      age: 20,
+      chinese: 80,
+      math: 70,
+      english: 90,
+    },
+  ];
+  return (
+    <Table
+      data={data}
+      columns={columns}
+      onChange={(a, b, c, d) => {
+        // console.log(b, d);
+        if (b.field === 'english') {
+          setEnglishSortOrder(b.direction);
+        }
+      }}
+    />
+  );
+};
+
 export const FixedTable = () => {
   const columns = [
     {

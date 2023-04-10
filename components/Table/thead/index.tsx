@@ -9,7 +9,7 @@ import { ConfigContext } from '../../ConfigProvider';
 
 function THead<T>(props: TheadProps<T>) {
   const {
-    sorter,
+    activeSorters,
     expandedRowRender,
     expandProps = {},
     onSort,
@@ -160,7 +160,7 @@ function THead<T>(props: TheadProps<T>) {
                   onSort={onSort}
                   onHandleFilter={onHandleFilter}
                   onHandleFilterReset={onHandleFilterReset}
-                  currentSorter={sorter}
+                  currentSorter={activeSorters.find((item) => item.field === column.dataIndex)}
                   currentFilters={currentFilters}
                   _key={column.key || column.dataIndex || colIndex}
                   {...column}
