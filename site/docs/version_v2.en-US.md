@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.46.3
+
+2023-04-07
+
+### 🐛 BugFix
+
+- Fix the bug that all drawers are closed by pressing `ESC` when there are multiple layers of `Drawer` at the same time.([#1902](https://github.com/arco-design/arco-design/pull/1902))
+- Fixed a bug where 'form.list' 'onChange' of directly wrapped child components was incorrectly triggered when dynamically adding or subtracting Form items.([#1898](https://github.com/arco-design/arco-design/pull/1898))
+- Fix the problem that `Select` will be focused when clicking the close button of `Tag` to delete the option in the multi-select mode.([#1894](https://github.com/arco-design/arco-design/pull/1894))
+
+### 🆎 TypeScript
+
+- Improve the definition of 'Input.Textarea' TS([#1899](https://github.com/arco-design/arco-design/pull/1899))
+
 ## 2.46.2
 
 2023-03-31

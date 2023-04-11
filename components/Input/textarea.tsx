@@ -205,7 +205,16 @@ const TextArea = (props: TextAreaProps, ref) => {
   return TextAreaElement;
 };
 
-const TextAreaRef = React.forwardRef<unknown, TextAreaProps>(TextArea);
+export type RefTextAreaType = {
+  /** 使输入框失去焦点 */
+  blur: () => void;
+  /** 使输入框获取焦点 */
+  focus: () => void;
+  /** textarea dom元素 */
+  dom: HTMLTextAreaElement;
+};
+
+const TextAreaRef = React.forwardRef<RefTextAreaType, TextAreaProps>(TextArea);
 
 TextAreaRef.displayName = 'TextArea';
 

@@ -1,3 +1,11 @@
+## 2.46.3
+
+2023-04-07
+
+### 🆎 类型修正
+
+- 完善 `Input.Textarea` TS 定义([#1899](https://github.com/arco-design/arco-design/pull/1899))
+
 ## 2.36.1
 
 2022-07-01

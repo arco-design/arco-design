@@ -181,6 +181,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     let timer = null;
     if (escToExit) {
       timer = setTimeout(() => {
+        // https://github.com/arco-design/arco-design/pull/1439
         if (contains(document.body, modalWrapperRef.current)) {
           modalWrapperRef.current?.focus();
         }

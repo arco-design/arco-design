@@ -1,3 +1,11 @@
+## 2.46.3
+
+2023-04-07
+
+### 🐛 BugFix
+
+- Fixed a bug where 'form.list' 'onChange' of directly wrapped child components was incorrectly triggered when dynamically adding or subtracting Form items.([#1898](https://github.com/arco-design/arco-design/pull/1898))
+
 ## 2.46.2
 
 2023-03-31

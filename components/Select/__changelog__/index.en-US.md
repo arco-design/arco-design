@@ -1,3 +1,11 @@
+## 2.46.3
+
+2023-04-07
+
+### 🐛 BugFix
+
+- Fix the problem that `Select` will be focused when clicking the close button of `Tag` to delete the option in the multi-select mode.([#1894](https://github.com/arco-design/arco-design/pull/1894))
+
 ## 2.46.1
 
 2023-03-24
