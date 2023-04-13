@@ -6,7 +6,7 @@ import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
 import { getOriginData } from '../utils';
 import { ConfigContext } from '../../ConfigProvider';
-import { ComponentsProps, InternalColumnProps, SorterResult } from '../interface';
+import { ComponentsProps, InternalColumnProps, SorterInfo } from '../interface';
 
 type TdType = {
   prefixCls?: string;
@@ -17,7 +17,7 @@ type TdType = {
   InnerComponentTd?: any;
   column?: InternalColumnProps;
   columnIndex?: number;
-  currentSorter?: SorterResult;
+  currentSorter?: SorterInfo;
   placeholder?: ReactNode;
   indentSize?: number;
   record?: any;

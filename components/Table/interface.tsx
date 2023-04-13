@@ -146,7 +146,7 @@ export interface TableProps<T = any> {
    */
   onChange?: (
     pagination: PaginationProps,
-    sorter: SorterResult,
+    sorter: SorterInfo,
     filters: Partial<Record<keyof T, string[]>>,
     extra: { currentData: T[]; action: 'paginate' | 'sort' | 'filter' }
   ) => void;
@@ -452,7 +452,7 @@ export interface ColumnProps<T = any> {
    * @zh 排序函数，如果想要服务端排序或者添加更多自定义操作，设置为true，利用`onChange`函数进行自定义排序
    * @en Sorting function, if you want server-side sorting or adding more custom operations, set to true and use the `onChange` function for custom sorting
    */
-  sorter?: SorterFn | boolean | { compare: SorterFn; multiple?: number };
+  sorter?: SorterFn | boolean | { compare?: SorterFn; multiple?: number };
   /**
    * @zh 筛选项，需要配合 `onFilter` 或者 `onChange` 使用
    * @en Filter items, need to be used with `onFilter` or `onChange`
@@ -563,7 +563,7 @@ export interface ColumnComponentProps<T = any> extends ColumnProps<T> {
   onSort: (direction: string | undefined, field: string | number) => void;
   onHandleFilter: (column: Record<string, any>, filter: Record<string, any>) => void;
   onHandleFilterReset: (column: { [key: string]: any }) => void;
-  currentSorter?: SorterResult;
+  currentSorter?: SorterInfo;
   currentFilter?: { [key: string]: any };
   _key?: string | number;
   showSorterTooltip?: boolean | TooltipProps;
@@ -648,7 +648,8 @@ export interface TbodyProps<T = any> {
   indentSize?: number;
   hasFixedColumn?: boolean;
   tableViewWidth?: number;
-  currentSorter?: SorterResult;
+  currentSorter?: SorterInfo;
+  activeSorters?: SorterInfo[];
   virtualized?: boolean;
   virtualListProps?: AvailableVirtualListProps;
   stickyOffsets?: number[];
@@ -676,7 +677,7 @@ export interface SorterResult {
 
 export interface SorterInfo {
   direction?: SortDirection;
-  field?: string;
+  field?: string | number;
   sorterFn?: SorterFn;
   priority?: number;
 }

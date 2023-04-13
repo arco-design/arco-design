@@ -7889,6 +7889,748 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
+<div
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover"
+>
+  <div
+    class="arco-spin"
+  >
+    <div
+      class="arco-spin-children"
+    >
+      <div
+        class="arco-table-container"
+      >
+        <div
+          class="arco-table-content-scroll"
+        >
+          <div
+            class="arco-table-content-inner"
+          >
+            <table>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item arco-table-col-has-sorter"
+                    >
+                      <div
+                        class="arco-table-cell-with-sorter"
+                      >
+                        <span
+                          class="arco-table-th-item-title"
+                        >
+                          Name
+                        </span>
+                        <div
+                          class="arco-table-sorter"
+                        >
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-up"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-down"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item arco-table-col-has-sorter"
+                    >
+                      <div
+                        class="arco-table-cell-with-sorter"
+                      >
+                        <span
+                          class="arco-table-th-item-title"
+                        >
+                          Age
+                        </span>
+                        <div
+                          class="arco-table-sorter"
+                        >
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-up"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-down"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-th-item arco-table-col-has-sorter"
+                    >
+                      <div
+                        class="arco-table-cell-with-sorter"
+                      >
+                        <span
+                          class="arco-table-th-item-title"
+                        >
+                          Score A
+                        </span>
+                        <div
+                          class="arco-table-sorter"
+                        >
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-up"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-table-sorter-icon arco-table-sorter-icon-active"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-down"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-th-item arco-table-col-has-sorter"
+                    >
+                      <div
+                        class="arco-table-cell-with-sorter"
+                      >
+                        <span
+                          class="arco-table-th-item-title"
+                        >
+                          Score B
+                        </span>
+                        <div
+                          class="arco-table-sorter"
+                        >
+                          <div
+                            class="arco-table-sorter-icon arco-table-sorter-icon-active"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-up"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-down"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item arco-table-col-has-sorter"
+                    >
+                      <div
+                        class="arco-table-cell-with-sorter"
+                      >
+                        <span
+                          class="arco-table-th-item-title"
+                        >
+                          Score C
+                        </span>
+                        <div
+                          class="arco-table-sorter"
+                        >
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-up"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M23.063 13.171a1.2 1.2 0 0 1 1.875 0l13.503 16.88c.628.785.069 1.949-.937 1.949H10.497c-1.006 0-1.565-1.164-.937-1.95l13.503-16.879Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            class="arco-table-sorter-icon"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="arco-icon arco-icon-caret-down"
+                              fill="none"
+                              focusable="false"
+                              stroke="currentColor"
+                              stroke-width="4"
+                              viewBox="0 0 48 48"
+                            >
+                              <path
+                                d="M24.938 34.829a1.2 1.2 0 0 1-1.875 0L9.56 17.949c-.628-.785-.069-1.949.937-1.949h27.007c1.006 0 1.565 1.164.937 1.95L24.937 34.829Z"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        18
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        100
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        60
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        70
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        C
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        19
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        100
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        70
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        60
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        B
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        17
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        100
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        90
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        80
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        D
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        15
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        80
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        70
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        100
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        E
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        20
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        80
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td arco-table-col-sorted"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        70
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="arco-table-td"
+                  >
+                    <div
+                      class="arco-table-cell"
+                    >
+                      <span
+                        class="arco-table-cell-wrap-value"
+                      >
+                        90
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="arco-table-pagination"
+      >
+        <div
+          class="arco-pagination arco-pagination-size-default"
+        >
+          <ul
+            class="arco-pagination-list"
+          >
+            <li
+              aria-label="上一页"
+              class="arco-pagination-item arco-pagination-item-prev arco-pagination-item-disabled"
+              tabindex="-1"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-left"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M32 8.4 16.444 23.956 32 39.513"
+                />
+              </svg>
+            </li>
+            <li
+              aria-current="true"
+              aria-label="第 1 页"
+              class="arco-pagination-item arco-pagination-item-active"
+              tabindex="0"
+            >
+              1
+            </li>
+            <li
+              aria-label="下一页"
+              class="arco-pagination-item arco-pagination-item-next arco-pagination-item-disabled"
+              tabindex="-1"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-right"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="m16 39.513 15.556-15.557L16 8.4"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Table/demo/operations.md correctly 1`] = `
 <div
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column"

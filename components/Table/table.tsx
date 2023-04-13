@@ -11,7 +11,7 @@ import React, {
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import BTween from 'b-tween';
-import { isObject, isArray } from '../_util/is';
+import { isObject, isArray, isNumber } from '../_util/is';
 import cs from '../_util/classNames';
 import Spin, { SpinProps } from '../Spin';
 import {
@@ -49,6 +49,7 @@ import ResizeObserver from '../_util/resizeObserver';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 import { pickDataAttributes } from '../_util/pick';
+import useSorter from './hooks/useSorter';
 
 export interface TableInstance {
   getRootDomElement: () => HTMLDivElement;
@@ -131,26 +132,25 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const lastScrollLeft = useRef<number>(0);
 
   const scrollbarChanged = useRef<boolean>(false);
+  const [groupColumns, flattenColumns] = useColumns<T>(props);
 
-  const { currentFilters, defaultSorters } = getDefaultFiltersAndSorters(columns);
+  const { currentFilters, defaultSorters } = getDefaultFiltersAndSorters();
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [innerPageSize, setInnerPageSize] = useState<number>(
     mergePagination.pageSize || mergePagination.defaultPageSize || 10
   );
   const [filters, setFilters] = useState<FilterType<T>>(currentFilters);
-  const [activeSorters, setActiveSorters] = useState<SorterInfo[]>(defaultSorters);
-  // console.log(activeSorters)
-  // TODO sortOrder受控
-  const [currentSorter, setCurrentSorter] = useState<SorterInfo>({});
   const [tableViewWidth, setTableViewWidth] = useState<number>(0);
-
-  const [groupColumns, flattenColumns] = useColumns<T>(props);
   const stickyOffsets: number[] = useStickyOffsets(flattenColumns);
   const [groupStickyClassNames, stickyClassNames] = useStickyClassNames(
     groupColumns,
     flattenColumns,
     prefixCls
+  );
+  const { currentSorter, activeSorters, getNextActiveSorters, updateStateSorters } = useSorter(
+    flattenColumns,
+    defaultSorters
   );
 
   const { ComponentTable, ComponentBodyWrapper, ComponentHeaderWrapper } = useComponent(components);
@@ -163,44 +163,39 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return (record) => record[rowKey];
   }, [rowKey]);
 
-  function getDefaultFiltersAndSorters(columns) {
+  function getDefaultFiltersAndSorters() {
     const currentFilters = {} as Partial<Record<keyof T, string[]>>;
     let defaultSorters: SorterInfo[] = [];
-    function travel(columns) {
-      if (columns && columns.length > 0) {
-        columns.forEach((column, index) => {
-          const innerDataIndex = column.dataIndex === undefined ? index : column.dataIndex;
-          if (!column[childrenColumnName]) {
-            if (column.defaultFilters) {
-              currentFilters[innerDataIndex] = column.defaultFilters;
-            }
-            if (column.filteredValue) {
-              currentFilters[innerDataIndex] = column.filteredValue;
-            }
-            if (column.defaultSortOrder || column.sortOrder) {
-              const priority = getSorterPriority(column.sorter);
-              const sorter: SorterInfo = {
-                field: innerDataIndex,
-                direction: column.sortOrder ? column.sortOrder : column.defaultSortOrder,
-                sorterFn: getSorterFn(column.sorter),
-                priority,
-              };
-              if (priority) {
-                if (!~defaultSorters.findIndex((item) => typeof item.priority !== 'number')) {
-                  defaultSorters.push(sorter);
-                }
-              } else {
-                defaultSorters = [sorter];
-              }
-            }
-          } else {
-            travel(column[childrenColumnName]);
-          }
-        });
+    flattenColumns.forEach((column) => {
+      const innerDataIndex = column.key;
+      if (column.defaultFilters) {
+        currentFilters[innerDataIndex] = column.defaultFilters;
       }
-    }
-
-    travel(columns);
+      if (column.filteredValue) {
+        currentFilters[innerDataIndex] = column.filteredValue;
+      }
+      if ('defaultSortOrder' in column || 'sortOrder' in column) {
+        const priority = getSorterPriority(column.sorter);
+        const direction = 'sortOrder' in column ? column.sortOrder : column.defaultSortOrder;
+        const sorter: SorterInfo = {
+          field: innerDataIndex,
+          direction,
+          sorterFn: getSorterFn(column.sorter),
+          priority,
+        };
+        if (!direction) {
+          defaultSorters.push(sorter);
+        } else if (isNumber(priority)) {
+          if (defaultSorters.every((item) => isNumber(item.priority) || !item.direction)) {
+            defaultSorters.push(sorter);
+          }
+        } else if (defaultSorters.every((item) => !item.direction)) {
+          defaultSorters.push(sorter);
+        } else {
+          defaultSorters = [sorter];
+        }
+      }
+    });
 
     return { currentFilters, defaultSorters };
   }
@@ -223,57 +218,11 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return newFilters;
   }, [flattenColumns]);
 
-  // 受控的sorters
-  const controlledSorters = useMemo((): SorterInfo[] => {
-    // 允许 sorter 设置为 null，表示不排序
-    const controlledColumns = flattenColumns.filter((column) => 'sortOrder' in column);
-    let sorters: SorterInfo[] = [];
-    controlledColumns.forEach((column) => {
-      const priority = getSorterPriority(column.sorter);
-      const sorter: SorterInfo = {
-        field: column.dataIndex,
-        direction: column.sortOrder ? column.sortOrder : column.defaultSortOrder,
-        sorterFn: getSorterFn(column.sorter),
-        priority,
-      };
-      if (priority) {
-        if (!~sorters.findIndex((item) => typeof item.priority !== 'number')) {
-          sorters.push(sorter);
-        }
-      } else {
-        sorters = [sorter];
-      }
-    });
-    return sorters;
-  }, [flattenColumns]);
   const innerFilters = useMemo<FilterType<T>>(() => {
     return Object.keys(controlledFilter).length ? controlledFilter : filters;
   }, [filters, controlledFilter]);
 
   /** ----------- Sorter ----------- */
-
-  const getNextActiveSorters = useCallback(
-    (sorter: SorterInfo) => {
-      const { field, direction } = sorter;
-      if (activeSorters.find((item) => item.field === field)) {
-        if (!direction) {
-          // 取消排序，将当前sorter从activeSorter中移除
-          return activeSorters.filter((item) => item.field !== field);
-        }
-        // 仅改变了排序
-        return activeSorters.map((item) => (item.field === field ? sorter : item));
-      }
-      if (
-        typeof sorter.priority !== 'number' ||
-        activeSorters.find((item) => typeof item.priority !== 'number')
-      ) {
-        return [sorter];
-      }
-      // 新增
-      return [...activeSorters, sorter];
-    },
-    [activeSorters]
-  );
 
   function onSort(direction, field) {
     const column = getColumnByDataIndex(field);
@@ -287,18 +236,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       priority: getSorterPriority(column.sorter),
     };
     const nextActiveSorters = getNextActiveSorters(sorter);
-    // 以下情况可触发state变更
-    if (
-      !controlledSorters.find((item) => item.field === field) &&
-      (!controlledSorters.length ||
-        (typeof sorter.priority === 'number' &&
-          !controlledSorters.find((item) => typeof item.priority !== 'number')))
-    ) {
-      setCurrentSorter(sorter);
-      setActiveSorters(nextActiveSorters);
-    }
+    updateStateSorters(sorter, nextActiveSorters);
     const newProcessedData = getProcessedData(sorter, nextActiveSorters, innerFilters);
     const currentData = getPageData(newProcessedData);
+
     onChange &&
       onChange(getPaginationProps(newProcessedData), sorter, innerFilters, {
         currentData: getOriginData(currentData),
@@ -317,7 +258,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     sorters.sort((a, b) => b.priority - a.priority);
     return (a, b) => {
       for (let i = 0, l = sorters.length; i < l; i++) {
-        // TODO 假设一定存在sorterFn
         const { sorterFn, direction } = sorters[i];
         if (typeof sorterFn !== 'function') {
           continue;
@@ -410,7 +350,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         });
     };
 
-    if ((currentSorter.direction && currentSorter.sorterFn) || activeSorters.length) {
+    if (
+      (currentSorter.direction && typeof currentSorter.sorterFn === 'function') ||
+      activeSorters.length
+    ) {
       return getSortData(_data);
     }
 
@@ -791,9 +734,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     });
   }
 
-  // console.log('activeSorters', activeSorters);
-  // console.log('currentSorter', currentSorter);
-
   const theadNode = (
     <Thead<T>
       {...props}
@@ -855,6 +795,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       tableViewWidth={tableViewWidth}
       indentSize={indentSize}
       noDataElement={noDataElement || renderEmpty('Table')}
+      activeSorters={activeSorters}
       currentSorter={currentSorter}
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}

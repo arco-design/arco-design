@@ -113,6 +113,7 @@
 |filters|筛选项，需要配合 `onFilter` 或者 `onChange` 使用|{text?: ReactNode;value?: any;[key: string]: any;}[] |`[]`|-|
 |headerCellStyle|表头单元格自定义样式|CSSProperties |`-`|-|
 |key|React的 key值，如果不指定，默认取 `dataIndex` 的值|string \| number |`-`|-|
+|sorter|排序函数，如果想要服务端排序或者添加更多自定义操作，设置为true，利用`onChange`函数进行自定义排序|[SorterFn](#sorterfn) \| boolean \| { compare: [SorterFn](#sorterfn); multiple?: number } |`-`|-|
 |width|列宽度|number \| string |`-`|-|
 |filterDropdown|自定义筛选框。|(props: {filterKeys?: string[];setFilterKeys?: (filterKeys: string[], callback?: Function) => void;confirm?: Function;}) => ReactNode |`-`|-|
 |onCell|设置表身单元格的各项事件回调|(record, index) => [RowCallbackProps](#rowcallbackprops) |`-`|-|
@@ -120,7 +121,6 @@
 |onFilterDropdownVisibleChange|筛选框打开关闭的回调|(visible: boolean) => void |`-`|-|
 |onHeaderCell|设置头部单元格的各项事件回调|(column, index) => [RowCallbackProps](#rowcallbackprops) |`-`|-|
 |render|自定义单元格显示的内容|(col, item: T, index: number) => any |`-`|-|
-|sorter|排序函数，如果想要服务端排序或者添加更多自定义操作，设置为true，利用`onChange`函数进行自定义排序|((a, b) => any) \| boolean |`-`|-|
 
 ### ComponentsProps
 
@@ -196,6 +196,12 @@ export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
   "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
 >;
+```
+
+### SorterFn
+
+```js
+export type SorterFn = (a: any, b: any) => number;
 ```
 
 ### 隐藏分页

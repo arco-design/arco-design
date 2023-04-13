@@ -113,6 +113,7 @@ The column describes the data object and is an item in `columns`.
 |filters|Filter items, need to be used with `onFilter` or `onChange`|{text?: ReactNode;value?: any;[key: string]: any;}[] |`[]`|-|
 |headerCellStyle|Table header cell style|CSSProperties |`-`|-|
 |key|React key value, if not specified, the default value of `dataIndex` is taken|string \| number |`-`|-|
+|sorter|Sorting function, if you want server-side sorting or adding more custom operations, set to true and use the `onChange` function for custom sorting|[SorterFn](#sorterfn) \| boolean \| { compare: [SorterFn](#sorterfn); multiple?: number } |`-`|-|
 |width|Column width|number \| string |`-`|-|
 |filterDropdown|Custom filter popup box.|(props: {filterKeys?: string[];setFilterKeys?: (filterKeys: string[], callback?: Function) => void;confirm?: Function;}) => ReactNode |`-`|-|
 |onCell|Set the event callback of the table body cell|(record, index) => [RowCallbackProps](#rowcallbackprops) |`-`|-|
@@ -120,7 +121,6 @@ The column describes the data object and is an item in `columns`.
 |onFilterDropdownVisibleChange|Callback when the visible of filter popup changes|(visible: boolean) => void |`-`|-|
 |onHeaderCell|Set the event callback of the table head cell|(column, index) => [RowCallbackProps](#rowcallbackprops) |`-`|-|
 |render|Customize the content displayed in the cell|(col, item: T, index: number) => any |`-`|-|
-|sorter|Sorting function, if you want server-side sorting or adding more custom operations, set to true and use the `onChange` function for custom sorting|((a, b) => any) \| boolean |`-`|-|
 
 ### ComponentsProps
 
@@ -196,6 +196,12 @@ export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
   "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
 >;
+```
+
+### SorterFn
+
+```js
+export type SorterFn = (a: any, b: any) => number;
 ```
 
 ### Hide Pagination

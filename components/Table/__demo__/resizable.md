@@ -1,5 +1,5 @@
 ---
-order: 17
+order: 18
 title:
   zh-CN: 可伸缩列
   en-US: Resizable

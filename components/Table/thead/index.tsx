@@ -160,7 +160,7 @@ function THead<T>(props: TheadProps<T>) {
                   onSort={onSort}
                   onHandleFilter={onHandleFilter}
                   onHandleFilterReset={onHandleFilterReset}
-                  currentSorter={activeSorters.find((item) => item.field === column.dataIndex)}
+                  currentSorter={activeSorters.find((item) => item.field === column.key)}
                   currentFilters={currentFilters}
                   _key={column.key || column.dataIndex || colIndex}
                   {...column}
