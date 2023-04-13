@@ -308,9 +308,18 @@
     word-break: break-all;
     width: 100%;
 
+    &:has(> &-indent)::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
     &-indent {
       height: 1px;
       float: left;
+      + .@{table-prefix-cls}-cell-wrap-value {
+        float: left;
+      }
     }
   }
 

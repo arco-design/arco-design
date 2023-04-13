@@ -1,6 +1,6 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
 import React, { useState, useEffect } from 'react';
-import { Table, Button, PaginationProps, Space, Switch, TableColumnProps } from '@self';
+import { Table, Button, PaginationProps, Space, Switch, TableColumnProps, Input } from '@self';
 
 const columns = [
   {
@@ -142,7 +142,12 @@ function DemoTreeData() {
       dataIndex: 'name',
       render: (col: any, item: any) => {
         console.log('column.render', col, item);
-        return col;
+        if (col === 'Tom Jerry') {
+          return <Input defaultValue={col} />;
+        } else {
+          return col;
+        }
+        // return col;
       },
       sorter: (a: any, b: any) => a - b,
     },
