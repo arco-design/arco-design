@@ -255,7 +255,7 @@ const Picker = (baseProps: RangePickerProps) => {
 
   // panel open and change mode
   useUpdate(() => {
-    setPageShowDates(getShowDatesFromFocused(mergedPageShowDate));
+    setPageShowDates(getShowDatesFromFocused(defaultPageShowDates));
   }, [mode]);
 
   useEffect(() => {
