@@ -10,6 +10,7 @@ export const RowContext = createContext<RowContextType>({});
 
 type GridContextType = {
   overflow?: boolean;
+  collapsed?: boolean;
   displayIndexList?: number[];
   cols?: number;
   colGap?: number;

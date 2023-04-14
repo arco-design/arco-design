@@ -88,6 +88,7 @@ function Grid(baseProps: GridProps, ref) {
           value={{
             cols,
             colGap,
+            collapsed,
             overflow: displayInfo.overflow,
             displayIndexList: displayInfo.displayIndexList,
           }}
