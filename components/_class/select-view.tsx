@@ -554,7 +554,6 @@ export const SelectView = (props: SelectViewProps, ref) => {
       {...include(rest, ['onClick', 'onMouseEnter', 'onMouseLeave'])}
       ref={refWrapper}
       tabIndex={disabled ? -1 : 0}
-      style={needWrapper ? undefined : style}
       {...(needWrapper ? {} : propsAppendToRoot)}
       className={needWrapper ? innerClassNames : cs(innerClassNames, propsAppendToRoot.className)}
       // When there is an input box, the keyboard events are handled inside the input box to avoid triggering redundant events in the Chinese input method

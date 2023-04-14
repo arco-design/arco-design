@@ -97,10 +97,28 @@ export interface InputTagProps<T = any> {
    */
   dragToSort?: boolean;
   /**
+   * @zh 添加前缀文字或者图标
+   * @en The prefix icon or text for the input-tag
+   * @version 2.47.0
+   */
+  prefix?: ReactNode;
+  /**
    * @zh 后缀
    * @en The suffix for the InputTag
    */
   suffix?: ReactNode;
+  /**
+   * @zh 输入框前添加元素
+   * @en The label text displayed before (on the left side of) the input-tag field
+   * @version 2.47.0
+   */
+  addBefore?: ReactNode;
+  /**
+   * @zh 输入框后添加元素
+   * @en The label text displayed after (on the right side of) the input-tag field
+   * @version 2.47.0
+   */
+  addAfter?: ReactNode;
   /**
    * @zh 自定义图标
    * @en Custom icons

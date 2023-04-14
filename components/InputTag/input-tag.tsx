@@ -6,6 +6,7 @@ import React, {
   ElementRef,
   useEffect,
   PropsWithChildren,
+  ReactNode,
 } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ConfigContext } from '../ConfigProvider';
@@ -31,6 +32,10 @@ const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
 // 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
 // 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
 const THRESHOLD_TOKEN_SEPARATOR_TRIGGER = 100;
+
+const isEmptyNode = (node: ReactNode): boolean => {
+  return node === null || node === undefined;
+};
 
 const keepFocus = (e) => {
   e.target.tagName !== 'INPUT' && e.preventDefault();
@@ -111,7 +116,10 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     saveOnBlur,
     dragToSort,
     icon,
+    prefix,
     suffix,
+    addBefore,
+    addAfter,
     tokenSeparators,
     validate,
     renderTag,
@@ -312,7 +320,6 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       </IconHover>
     ) : null;
 
-  const hasSuffix = !!(clearIcon || suffix);
   const disableInputComponent = disabled || disableInput;
 
   // CSSTransition needs to be a direct child of TransitionGroup, otherwise the animation will NOT work
@@ -398,25 +405,30 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       </CSSTransition>
     );
 
+  const hasPrefix = !isEmptyNode(prefix);
+  const hasSuffix = !isEmptyNode(suffix) || !isEmptyNode(clearIcon);
+  const needAddBefore = !isEmptyNode(addBefore);
+  const needAddAfter = !isEmptyNode(addAfter);
+  const needWrapper = needAddBefore || needAddAfter;
+
   const status = props.status || (error ? 'error' : undefined);
-  return (
+  const innerClassNames = cs(prefixCls, {
+    [`${prefixCls}-size-${size}`]: size,
+    [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-${status}`]: status,
+    [`${prefixCls}-focus`]: focused,
+    [`${prefixCls}-readonly`]: readOnly,
+    [`${prefixCls}-has-suffix`]: hasSuffix,
+    [`${prefixCls}-has-placeholder`]: !value.length,
+    [`${prefixCls}-rtl`]: rtl,
+  });
+  const propsAppliedToRoot = { style, className };
+
+  const eleInputTagCore = (
     <div
       {...omit(rest, ['status', 'size', 'defaultValue', 'value', 'inputValue'])}
-      style={style}
-      className={cs(
-        prefixCls,
-        {
-          [`${prefixCls}-size-${size}`]: size,
-          [`${prefixCls}-disabled`]: disabled,
-          [`${prefixCls}-${status}`]: status,
-          [`${prefixCls}-focus`]: focused,
-          [`${prefixCls}-readonly`]: readOnly,
-          [`${prefixCls}-has-suffix`]: hasSuffix,
-          [`${prefixCls}-has-placeholder`]: !value.length,
-          [`${prefixCls}-rtl`]: rtl,
-        },
-        className
-      )}
+      {...(needWrapper ? {} : propsAppliedToRoot)}
+      className={needWrapper ? innerClassNames : cs(innerClassNames, propsAppliedToRoot.className)}
       onMouseDown={(event) => {
         focused && keepFocus(event);
       }}
@@ -428,6 +440,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       }}
     >
       <div className={`${prefixCls}-view`}>
+        {hasPrefix && (
+          <div className={`${prefixCls}-prefix`} onMouseDown={keepFocus}>
+            {prefix}
+          </div>
+        )}
+
         {draggable ? (
           <UsedTransitionGroup
             key="transitionGroupWithDrag"
@@ -464,6 +482,27 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           </div>
         )}
       </div>
+    </div>
+  );
+
+  if (!needWrapper) {
+    return eleInputTagCore;
+  }
+
+  return (
+    <div
+      {...propsAppliedToRoot}
+      className={cs(
+        `${prefixCls}-wrapper`,
+        {
+          [`${prefixCls}-wrapper-rtl`]: rtl,
+        },
+        propsAppliedToRoot.className
+      )}
+    >
+      {needAddBefore && <div className={`${prefixCls}-addbefore`}>{addBefore}</div>}
+      {eleInputTagCore}
+      {needAddAfter && <div className={`${prefixCls}-addafter`}>{addAfter}</div>}
     </div>
   );
 }
