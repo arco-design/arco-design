@@ -28,6 +28,7 @@ Display statistic number.
 |title|The title|string \| ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
+|styleDecimal|The style of the decimal part of the value|CSSProperties |`-`|2.47.0|
 |styleValue|The css style of statistic's value|CSSProperties |`-`|-|
 |value|Display value|string \| number \| Dayjs |`-`|-|
 

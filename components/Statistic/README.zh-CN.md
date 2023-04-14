@@ -27,6 +27,7 @@
 |title|数值的标题|string \| ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
+|styleDecimal|数值小数部分的样式|CSSProperties |`-`|2.47.0|
 |styleValue|数值的样式|CSSProperties |`-`|-|
 |value|数值|string \| number \| Dayjs |`-`|-|
 

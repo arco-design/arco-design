@@ -13,6 +13,12 @@ export interface StatisticProps {
    */
   styleValue?: CSSProperties;
   /**
+   * @zh 数值小数部分的样式
+   * @en The style of the decimal part of the value
+   * @version 2.47.0
+   */
+  styleDecimal?: CSSProperties;
+  /**
    * @zh 数值的标题
    * @en The title
    */

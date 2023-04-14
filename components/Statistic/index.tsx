@@ -42,6 +42,7 @@ function Statistic(baseProps: StatisticProps, ref) {
     format,
     renderFormat,
     styleValue,
+    styleDecimal,
     loading,
     ...rest
   } = props;
@@ -144,7 +145,7 @@ function Statistic(baseProps: StatisticProps, ref) {
             )}
 
             {decimal !== undefined || suffix ? (
-              <span className={`${prefixCls}-value-decimal`}>
+              <span className={`${prefixCls}-value-decimal`} style={styleDecimal}>
                 {isNumber(Number(value)) && decimal !== undefined && `.${decimal}`}
                 {suffix !== null && suffix !== undefined ? (
                   <span className={`${prefixCls}-value-suffix`}>{suffix}</span>
