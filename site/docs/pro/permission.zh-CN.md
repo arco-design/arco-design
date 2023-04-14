@@ -11,15 +11,13 @@ Arco Pro
 
 1. 菜单权限控制，针对**某个菜单/页面**进行权限管理，有则能看到此页面，否则将展示无权限。
 
-![](http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/116622141d7b228ad2259c81cd32d095.gif~tplv-uwbnlip3yd-3.awebp)
-
 2. **针对某页面中的某触发器**进行权限管理，例如对列表页的某一条数据进行删除操作。有权限情况下则展示删除按钮。
-
-![](http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/7b410fa5dad6e47665c264fae910c0c8.gif~tplv-uwbnlip3yd-3.awebp)
 
 3. **针对某页面、某对象的某触发器**进行权限管理，例如列表页且内容体裁为图文的数据的删除操作。在有权限情况下对这条数据展示删除按钮。
 
-Arco Design Pro 在尽力满足以上场景。
+Arco Design Pro 在尽力满足以上场景。具体效果可前往 [Arco Design Pro](https://react-pro.arco.design/) 体验。
+
+![权限控制](http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/20230414-182335.gif~tplv-uwbnlip3yd-3.awebp)
 
 ## 实现
 
