@@ -79,6 +79,12 @@ export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'c
    * @version 2.23.0
    */
   index?: number;
+  /**
+   * @zh 开启懒加载 [Intersection_Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+   * @en lazyload loading [Intersection_Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+   * @version 2.47.0
+   */
+  lazyload?: boolean | IntersectionObserverInit;
 }
 
 /**

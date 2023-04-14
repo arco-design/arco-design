@@ -11,11 +11,12 @@ import useShowFooter from './utils/hooks/useShowFooter';
 import useImageStatus from './utils/hooks/useImageStatus';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
-import { isNumber, isUndefined } from '../_util/is';
+import { isObject, isNumber, isUndefined } from '../_util/is';
 import { PreviewGroupContext } from './previewGroupContext';
 import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
+import useInView from '../_util/hooks/useInView';
 
 type ImagePropsType = ImageProps & { _index?: number };
 
@@ -51,6 +52,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     _index,
     onError,
     onLoad,
+    lazyload,
     ...restProps
   } = props;
 
@@ -63,7 +65,6 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
   const previewSrc = previewProps.src || src;
-
   const id = useMemo(() => {
     if (isNumber(index) || isNumber(_index)) {
       uuid = isNumber(index) ? index : _index;
@@ -73,7 +74,9 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   }, []);
 
   const [showFooter] = useShowFooter({ title, description, actions });
-  const { isLoading, isError, isLoaded, setStatus } = useImageStatus('beforeLoad');
+  const _lazyload = lazyload && !isServerRendering;
+  const { isLoading, isError, isLoaded, setStatus, isLazyLoad } = useImageStatus('beforeLoad');
+  const lazyLoadProps = _lazyload ? { src: undefined } : {};
   const [previewVisible, setPreviewVisible] = useMergeValue(false, {
     defaultValue: previewProps.defaultVisible,
     value: previewProps.visible,
@@ -130,11 +133,25 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     setPreviewVisible(newVisible);
   }
 
+  const intersectionInitOptions = useMemo(() => {
+    return isObject(lazyload) ? lazyload : {};
+  }, [lazyload]);
+
+  const { inView } = useInView({
+    target: refImg.current,
+    hasInView: !_lazyload,
+    ...intersectionInitOptions,
+  });
+
   useEffect(() => {
     if (isServerRendering || !refImg.current) return;
-    refImg.current.src = src;
-    setStatus('loading');
-  }, [src]);
+    const startLoading = !_lazyload || inView;
+    // 不是懒加载或者已经在视口。
+    if (startLoading) {
+      refImg.current.src = src;
+    }
+    setStatus(startLoading ? 'loading' : 'lazyload');
+  }, [src, _lazyload, inView]);
 
   useEffect(() => {
     if (!previewGroup) return;
@@ -161,7 +178,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   );
 
   const defaultLoader = (
-    <div className={`${prefixCls}-loader`}>
+    <div className={cs(`${prefixCls}-loader`, loaderClassName)}>
       <div className={`${prefixCls}-loader-spin`}>
         <IconLoading />
         <div className={`${prefixCls}-loader-spin-text`}>Loading</div>
@@ -170,9 +187,12 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   );
 
   const renderLoader = () => {
-    if (loader === true) return defaultLoader;
-    if (loaderClassName) return <div className={cs(`${prefixCls}-loader`, loaderClassName)} />;
-    return loader || null;
+    const loadElem: React.ReactNode = loader || defaultLoader;
+    // 懒加载展示占位。
+    if (_lazyload || loader) {
+      return loadElem;
+    }
+    return null;
   };
 
   return (
@@ -185,6 +205,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
           onPressEnter: onImgClick,
         })}
         {...restProps}
+        {...lazyLoadProps}
         title={title}
         width={width}
         height={height}
@@ -196,7 +217,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       {!isLoaded && (
         <div className={`${prefixCls}-overlay`}>
           {isError && (error || defaultError)}
-          {isLoading && renderLoader()}
+          {(isLoading || isLazyLoad) && renderLoader()}
         </div>
       )}
       {isLoaded && showFooter && (
