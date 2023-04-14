@@ -1,3 +1,11 @@
+## 2.47.0
+
+2023-04-14
+
+### 🐛 BugFix
+
+- Fix the bug that setting the trigger mode of `Select` popup window to `focus` does not take effect.([#1915](https://github.com/arco-design/arco-design/pull/1915))
+
 ## 2.46.3
 
 2023-04-07

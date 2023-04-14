@@ -1,3 +1,11 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 Feature
+
+- The `Statistic` component adds `styleDecimal` property to set the style of the decimal part.([#1900](https://github.com/arco-design/arco-design/pull/1900))
+
 ## 2.40.0
 
 2022-09-16

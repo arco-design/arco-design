@@ -1,3 +1,15 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 Feature
+
+- Added the multiple sorter function for Table component.([#1910](https://github.com/arco-design/arco-design/pull/1910))
+
+### 🐛 BugFix
+
+- Fixed indentation issue when tree data presentation is non-text.([#1913](https://github.com/arco-design/arco-design/pull/1913))
+
 ## 2.46.2
 
 2023-03-31

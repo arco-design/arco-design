@@ -1,3 +1,11 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 Feature
+
+- The `InputTag` component has added `prefix/addBefore/addAfter` props (same as `Input`).([#1918](https://github.com/arco-design/arco-design/pull/1918))
+
 ## 2.45.0
 
 2023-02-17

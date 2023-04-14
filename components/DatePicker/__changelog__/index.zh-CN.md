@@ -1,3 +1,12 @@
+## 2.47.0
+
+2023-04-14
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 在重新打开时，面板日期改变但是没有触发 `onPickerValueChange` 的 bug。([#1920](https://github.com/arco-design/arco-design/pull/1920))
+- 修复 `DatePicker.RangePicker` 组件打开状态下切换 `mode` 时，日期会不断增加的 bug。([#1919](https://github.com/arco-design/arco-design/pull/1919))
+
 ## 2.45.1
 
 2023-03-01

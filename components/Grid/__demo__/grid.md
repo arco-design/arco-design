@@ -21,7 +21,6 @@ const { GridItem } = Grid;
 
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const OverflowInfo = ({ overflow }) => `suffix | overflow: ${overflow}`;
   return (
     <div style={{ width: '100%' }}>
         <div style={{ marginBottom: '20px' }}>
@@ -37,7 +36,9 @@ const App = () => {
             <GridItem className="demo-item" span={3}>item | span - 3</GridItem>
             <GridItem className="demo-item">item</GridItem>
             <GridItem className="demo-item">item</GridItem>
-            <GridItem className="demo-item" suffix><OverflowInfo /></GridItem>
+            <GridItem className="demo-item" suffix>{
+              ({ overflow }) => `suffix | overflow: ${!!overflow}`
+            }</GridItem>
         </Grid>
     </div>
   );

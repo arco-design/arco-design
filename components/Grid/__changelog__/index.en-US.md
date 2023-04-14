@@ -1,3 +1,16 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 Feature
+
+- Adjust the 'Grid.GridItem' ts definition([#1897](https://github.com/arco-design/arco-design/pull/1897))
+- `Grid.Grid` supports `children` of function type([#1897](https://github.com/arco-design/arco-design/pull/1897))
+
+### 🐛 BugFix
+
+- Fixed `Grid.GridItem` transparently passing `overflow` attribute to native DOM tags and causing console warnings([#1922](https://github.com/arco-design/arco-design/pull/1922))
+
 ## 2.46.0
 
 2023-03-17

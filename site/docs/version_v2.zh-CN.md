@@ -2,6 +2,37 @@
 changelog: true
 ---
 
+## 2.47.0
+
+2023-04-14
+
+
+### 🚨 重点注意
+
+- **`Select`/`Cascader`/`TreeSelect` 组件在设置了 `addbefore`/`prefix` 属性时，默认宽度调整为 100%（ `addbefore`/`prefix` 功能在 `2.41.0` 支持，且未设置默认宽度）**
+
+
+### 🆕 功能升级
+
+- `InputTag` 组件新增 `prefix/addBefore/addAfter` 属性（同 `Input`）。([#1918](https://github.com/arco-design/arco-design/pull/1918))
+- `Tabs` 组件的 `icons` 属性支持自定义选项卡头部的滚动操作图标。([#1917](https://github.com/arco-design/arco-design/pull/1917))
+- `Table` 组件新增多列排序功能([#1910](https://github.com/arco-design/arco-design/pull/1910))
+- `Statistic` 组件新增 `styleDecimal` 属性设置小数部分样式。([#1900](https://github.com/arco-design/arco-design/pull/1900))
+- `Grid.GridItem` 支持函数类型的 `children`([#1897](https://github.com/arco-design/arco-design/pull/1897))
+- `Image` 组件添加 `lazyload` 属性，支持懒加载([#1850](https://github.com/arco-design/arco-design/pull/1850))
+
+### 🐛 问题修复
+
+- 修复 `Grid.GridItem` 透传 `overflow` 属性到原生 DOM 标签导致控制台警告([#1922](https://github.com/arco-design/arco-design/pull/1922))
+- 修复 `DatePicker.RangePicker` 在重新打开时，面板日期改变但是没有触发 `onPickerValueChange` 的 bug。([#1920](https://github.com/arco-design/arco-design/pull/1920))
+- 修复 `DatePicker.RangePicker` 组件打开状态下切换 `mode` 时，日期会不断增加的 bug。([#1919](https://github.com/arco-design/arco-design/pull/1919))
+- 修复 `Select` 组件弹窗触发方式设置为 `focus` 不生效的 bug。([#1915](https://github.com/arco-design/arco-design/pull/1915))
+- 修复 `Table` 组件树形数据展示且内容为非文本时的缩进问题。([#1913](https://github.com/arco-design/arco-design/pull/1913))
+
+### 🆎 类型修正
+
+- 调整 `Grid.GridItem` ts 定义([#1897](https://github.com/arco-design/arco-design/pull/1897))
+
 ## 2.46.3
 
 2023-04-07

@@ -1,3 +1,11 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 功能升级
+
+- `InputTag` 组件新增 `prefix/addBefore/addAfter` 属性（同 `Input`）。([#1918](https://github.com/arco-design/arco-design/pull/1918))
+
 ## 2.45.0
 
 2023-02-17

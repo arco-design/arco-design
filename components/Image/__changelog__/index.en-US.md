@@ -1,3 +1,11 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 Feature
+
+- `Image` component adds `lazyload` attribute to support lazy loading([#1850](https://github.com/arco-design/arco-design/pull/1850))
+
 ## 2.45.2
 
 2023-03-10

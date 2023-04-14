@@ -2,6 +2,35 @@
 changelog: true
 ---
 
+## 2.47.0
+
+2023-04-14
+
+### 🚨 Important attention
+
+- **`Select`/`Cascader`/`TreeSelect` components, when the `addbefore` / `prefix` property is set, the default width is adjusted to '100%' ( `addbefore` / `prefix` function is supported in `2.41.0`, and it is not set default width) **
+
+### 🆕 Feature
+
+- Added `prefix/addBefore/addAfter` props to `InputTag` component (same as `Input`). ([#1918](https://github.com/arco-design/arco-design/pull/1918))
+- The `icons` property of the `Tabs` component supports customizing the scrolling icon in the header of the tab. ([#1917](https://github.com/arco-design/arco-design/pull/1917))
+- The `Table` component adds multi-column sorting function ([#1910](https://github.com/arco-design/arco-design/pull/1910))
+- The `Statistic` component has added a `styleDecimal` property to set the style of the decimal part. ([#1900](https://github.com/arco-design/arco-design/pull/1900))
+- `Grid.GridItem` supports `children` of function type ([#1897](https://github.com/arco-design/arco-design/pull/1897))
+- Add `lazyload` attribute to `Image` component to support lazy loading ([#1850](https://github.com/arco-design/arco-design/pull/1850))
+
+### 🐛 BugFix
+
+- Fixed `Grid.GridItem` transparently passing `overflow` attribute to native DOM tags and causing console warnings([#1922](https://github.com/arco-design/arco-design/pull/1922))
+- Fix `DatePicker.RangePicker` when reopening, panel date changes but does not trigger `onPickerValueChange` bug.([#1920](https://github.com/arco-design/arco-design/pull/1920))
+- Fix the bug that when the `DatePicker.RangePicker` component is opened and the `mode` is switched, the date will keep increasing.([#1919](https://github.com/arco-design/arco-design/pull/1919))
+- Fix the bug that setting the trigger mode of `Select` popup window to `focus` does not take effect.([#1915](https://github.com/arco-design/arco-design/pull/1915))
+- Fix the indentation problem when the `Table` component tree data display and the content is non-text. ([#1913](https://github.com/arco-design/arco-design/pull/1913))
+
+### 🆎 TypeScript
+
+- Adjust `Grid.GridItem` ts definition ([#1897](https://github.com/arco-design/arco-design/pull/1897))
+
 ## 2.46.3
 
 2023-04-07

@@ -1,3 +1,16 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 功能升级
+
+- 调整 `Grid.GridItem` ts 定义([#1897](https://github.com/arco-design/arco-design/pull/1897))
+- `Grid.GridItem` 支持函数类型的 `children`([#1897](https://github.com/arco-design/arco-design/pull/1897))
+
+### 🐛 问题修复
+
+- 修复 `Grid.GridItem` 透传 `overflow` 属性到原生 DOM 标签导致控制台警告([#1922](https://github.com/arco-design/arco-design/pull/1922))
+
 ## 2.46.0
 
 2023-03-17

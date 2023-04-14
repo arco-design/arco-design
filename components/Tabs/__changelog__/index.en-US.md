@@ -1,3 +1,11 @@
+## 2.47.0
+
+2023-04-14
+
+### 🆕 Feature
+
+- The `icons` attribute of the `Tabs` component supports customizing the scrolling operation icons in the tab header([#1917](https://github.com/arco-design/arco-design/pull/1917))
+
 ## 2.46.1
 
 2023-03-24

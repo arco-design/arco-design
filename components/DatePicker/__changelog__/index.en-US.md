@@ -1,3 +1,12 @@
+## 2.47.0
+
+2023-04-14
+
+### 🐛 BugFix
+
+- Fix `DatePicker.RangePicker` when reopening, panel date changes but does not trigger `onPickerValueChange` bug.([#1920](https://github.com/arco-design/arco-design/pull/1920))
+- Fix the bug that when the `DatePicker.RangePicker` component is opened and the `mode` is switched, the date will keep increasing.([#1919](https://github.com/arco-design/arco-design/pull/1919))
+
 ## 2.45.1
 
 2023-03-01
