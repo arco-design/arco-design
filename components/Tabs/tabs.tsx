@@ -143,6 +143,7 @@ function Tabs(baseProps: TabsProps, ref) {
         'onAddTab',
         'activeTab',
         'overflow',
+        'overflowIcons',
         'editable',
         'renderTabTitle',
         'addButton',

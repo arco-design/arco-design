@@ -59,6 +59,16 @@ export interface TabsProps {
    */
   overflow?: 'scroll' | 'dropdown';
   /**
+   * @zh 标签页头部 滚动/下拉 图标配置。对于不想展示的图标可以将其设置为`null`
+   * @en Tab header scroll/dropdown icon configuration. You can set it to `null` for icons you don't want to display
+   * @version 2.47.0
+   */
+  overflowIcons?: {
+    prev?: ReactNode;
+    next?: ReactNode;
+    dropdown?: ReactNode;
+  };
+  /**
    * @zh 是否允许增减标签。只在 `type` 为 `card` 或 `card-gutter` 时候生效。
    * @en Whether to allow adding or subtracting tabs. It only effect when `type` is `card` or `card-gutter`.
    */

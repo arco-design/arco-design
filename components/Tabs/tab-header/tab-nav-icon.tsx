@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import IconLeft from '../../../icon/react-icon/IconLeft';
 import IconRight from '../../../icon/react-icon/IconRight';
 import IconUp from '../../../icon/react-icon/IconUp';
 import IconDown from '../../../icon/react-icon/IconDown';
 import IconHover from '../../_class/icon-hover';
 import cs from '../../_util/classNames';
+import { TabsProps } from '../tabs';
+import { ReturnType } from '../hook/useDomSize';
+import { isNull } from '../../_util/is';
 
-const TabNavIcon = (props) => {
+interface TabNavIconProps {
+  direction: TabsProps['direction'];
+  align: 'left' | 'right';
+  headerSize: ReturnType;
+  headerWrapperSize: ReturnType;
+  currentOffset: number;
+  prefixCls?: string;
+  icon?: React.ReactNode;
+  iconPos?: 'prev' | 'next';
+  rtl?: boolean;
+  onChange?: (offset: number) => void;
+}
+
+const horizontalMap: Record<TabNavIconProps['iconPos'], 'left' | 'right'> = {
+  prev: 'left',
+  next: 'right',
+};
+const vertialMap: Record<TabNavIconProps['iconPos'], 'up' | 'down'> = { prev: 'up', next: 'down' };
+
+const TabNavIcon = (props: TabNavIconProps) => {
   const {
     direction,
     headerSize,
@@ -16,12 +38,19 @@ const TabNavIcon = (props) => {
     currentOffset: curOffset,
     align,
     rtl,
+    icon,
   } = props;
-
   const { height: wrapHeight, width: wrapWidth } = headerWrapperSize;
   const { height: headerHeight, width: headerWidth } = headerSize;
   const maxHeightOffset = headerHeight - wrapHeight;
   const maxWidthOffset = headerWidth - wrapWidth;
+
+  const defaultIcon = {
+    up: <IconUp />,
+    down: <IconDown />,
+    left: rtl ? <IconRight /> : <IconLeft />,
+    right: rtl ? <IconLeft /> : <IconRight />,
+  };
 
   const onChange = (offset) => {
     if (offset !== props.currentOffset) {
@@ -31,20 +60,17 @@ const TabNavIcon = (props) => {
 
   const handleHozClick = (e, pos) => {
     e.preventDefault();
-
     let nextOffset;
     if (align === 'left') {
       nextOffset = pos === 'left' ? curOffset - wrapWidth : curOffset + wrapWidth;
     } else {
       nextOffset = pos === 'left' ? curOffset + wrapWidth : curOffset - wrapWidth;
     }
-
     onChange(nextOffset);
   };
 
   const handleVerticalClick = (e, pos) => {
     e.preventDefault();
-
     let nextOffset;
     if (pos === 'up') {
       nextOffset = curOffset - wrapHeight;
@@ -55,72 +81,39 @@ const TabNavIcon = (props) => {
     onChange(nextOffset);
   };
 
-  let disabledPrev = false;
-  let disabledNext = false;
+  const disabledPrev = useMemo(() => {
+    if (align === 'left') {
+      return curOffset <= 0;
+    }
+    return direction === 'vertical' ? curOffset >= maxHeightOffset : curOffset >= maxWidthOffset;
+  }, [align, direction, curOffset, maxWidthOffset, curOffset]);
 
-  if (align === 'left') {
-    disabledPrev = curOffset <= 0;
-    disabledNext =
-      direction === 'vertical' ? curOffset >= maxHeightOffset : curOffset >= maxWidthOffset;
-  } else {
-    disabledPrev =
-      direction === 'vertical' ? curOffset >= maxHeightOffset : curOffset >= maxWidthOffset;
-    disabledNext = curOffset <= 0;
+  const disabledNext = useMemo(() => {
+    if (align === 'left') {
+      return direction === 'vertical' ? curOffset >= maxHeightOffset : curOffset >= maxWidthOffset;
+    }
+    return curOffset <= 0;
+  }, [align, direction, maxHeightOffset, maxWidthOffset, curOffset]);
+
+  if (isNull(icon)) {
+    return null;
   }
 
-  return direction === 'vertical' ? (
-    iconPos === 'prev' ? (
-      <IconHover
-        disabled={disabledPrev}
-        prefix={prefixCls}
-        className={cs(`${prefixCls}-up-icon`, {
-          [`${prefixCls}-nav-icon-disabled`]: disabledPrev,
-        })}
-        onClick={(e) => {
-          handleVerticalClick(e, 'up');
-        }}
-      >
-        <IconUp />
-      </IconHover>
-    ) : (
-      <IconHover
-        prefix={prefixCls}
-        className={cs(`${prefixCls}-down-icon`, {
-          [`${prefixCls}-nav-icon-disabled`]: disabledNext,
-        })}
-        disabled={disabledNext}
-        onClick={(e) => {
-          handleVerticalClick(e, 'down');
-        }}
-      >
-        <IconDown />
-      </IconHover>
-    )
-  ) : iconPos === 'prev' ? (
+  const iconDirection = direction === 'horizontal' ? horizontalMap[iconPos] : vertialMap[iconPos];
+  const disabled = iconPos === 'prev' ? disabledPrev : disabledNext;
+  const className = cs(`${prefixCls}-${iconDirection}-icon`, {
+    [`${prefixCls}-nav-icon-disabled`]: disabled,
+  });
+
+  const handleClick = direction === 'vertical' ? handleVerticalClick : handleHozClick;
+  return (
     <IconHover
+      disabled={disabled}
+      className={className}
       prefix={prefixCls}
-      disabled={disabledPrev}
-      className={cs(`${prefixCls}-left-icon`, {
-        [`${prefixCls}-nav-icon-disabled`]: disabledPrev,
-      })}
-      onClick={(e) => {
-        handleHozClick(e, 'left');
-      }}
+      onClick={(e) => handleClick(e, iconDirection)}
     >
-      {rtl ? <IconRight /> : <IconLeft />}
-    </IconHover>
-  ) : (
-    <IconHover
-      prefix={prefixCls}
-      className={cs(`${prefixCls}-right-icon`, {
-        [`${prefixCls}-nav-icon-disabled`]: disabledNext,
-      })}
-      disabled={disabledNext}
-      onClick={(e) => {
-        handleHozClick(e, 'right');
-      }}
-    >
-      {rtl ? <IconLeft /> : <IconRight />}
+      {icon || defaultIcon[iconDirection]}
     </IconHover>
   );
 };
