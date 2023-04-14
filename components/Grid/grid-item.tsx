@@ -105,16 +105,19 @@ function GridItem(baseProps: GridItemProps, ref) {
       {isFunction(children)
         ? children({ overflow })
         : React.Children.map(children, (child: ReactNode) => {
-            if (child) {
+            if (
+              child &&
+              gridContext.collapsed &&
+              React.isValidElement(child) &&
+              !isString(child.type)
+            ) {
               // 排除原生 dom 标签，避免 overflow 属性透传到 dom 标签上
-              return React.isValidElement(child) && !isString(child.type)
-                ? React.cloneElement(child, {
-                    overflow,
-                    ...child.props,
-                  })
-                : child;
+              return React.cloneElement(child, {
+                overflow,
+                ...child.props,
+              });
             }
-            return null;
+            return child;
           })}
     </div>
   );
