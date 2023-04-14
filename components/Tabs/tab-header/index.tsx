@@ -352,6 +352,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           <TabNavIcon
             iconPos="prev"
             rtl={rtl}
+            icon={icons?.prev}
             prefixCls={prefixCls}
             currentOffset={headerOffset}
             headerSize={headerSize}
@@ -422,6 +423,8 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           <TabNavIcon
             prefixCls={prefixCls}
             rtl={rtl}
+            iconPos="next"
+            icon={icons?.next}
             currentOffset={headerOffset}
             headerSize={headerSize}
             headerWrapperSize={headerWrapperSize}
@@ -437,6 +440,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
             prefixCls={prefixCls}
             currentOffset={headerOffset}
             headerSize={headerSize}
+            icon={icons?.dropdown}
             headerWrapperSize={headerWrapperSize}
             getTitleRef={(key) => titleRef.current[key]}
             direction={direction}

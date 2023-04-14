@@ -70,13 +70,16 @@ export interface TabsProps {
    */
   showAddButton?: boolean;
   /**
-   * @zh 图标配置
-   * @en Icon configuration
-   * @version 2.15.0
+   * @zh 标签页头部 编辑/滚动/下拉 图标配置。对于不想展示的图标可以将其设置为`null`
+   * @en Tab header edit/scroll/dropdown icon configuration. You can set it to `null` for icons you don't want to display
+   * @version 2.15.0, `prev`,`next`,`dropdown` in `2.47.0`
    */
   icons?: {
     add?: ReactNode;
     delete?: ReactNode;
+    prev?: ReactNode;
+    next?: ReactNode;
+    dropdown?: ReactNode;
   };
   /**
    * @zh 是否在标签增减后，自动进行滚动调整(`editable`为`true`时生效）

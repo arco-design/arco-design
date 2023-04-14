@@ -33,7 +33,7 @@ Organize content in the same view, and view content one view at a time. You can 
 |extra|Additional on the right side of the tab|ReactNode |`-`|-|
 |animation|Whether to turn on the transition animation|boolean \| { tabPane?: boolean; inkBar?: boolean } |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|icons|Icon configuration|{add?: ReactNode;delete?: ReactNode;} |`-`|2.15.0|
+|icons|Tab header edit/scroll/dropdown icon configuration. You can set it to `null` for icons you don't want to display|{add?: ReactNode;delete?: ReactNode;prev?: ReactNode;next?: ReactNode;dropdown?: ReactNode;} |`-`|2.15.0, `prev`,`next`,`dropdown` in `2.47.0`|
 |scrollAfterEdit|Whether to automatically scroll to the selected label after the label is dynamically increased or decreased (only effective when `editable` is `true`)|{delete?: boolean;add?: boolean;} |`{ add: true, delete: true }`|2.25.0|
 |style|Additional style|CSSProperties |`-`|-|
 |onAddTab|Callback when click Add Button|() => void |`-`|-|

@@ -3,6 +3,7 @@ import IconDown from '../../../icon/react-icon/IconDown';
 import Dropdown from '../../Dropdown';
 import Menu from '../../Menu';
 import IconHover from '../../_class/icon-hover';
+import { isNull } from '../../_util/is';
 
 export default function DropdownIcon(props) {
   const {
@@ -13,6 +14,7 @@ export default function DropdownIcon(props) {
     getTitleRef,
     paneChildren,
     direction,
+    icon,
   } = props;
   const paneKeys = paneChildren.map((child) => child.key);
   const size = direction === 'vertical' ? headerSize.height : headerSize.width;
@@ -56,6 +58,10 @@ export default function DropdownIcon(props) {
     return [start, end];
   }, [tabSizes, paneKeys.join(','), currentOffset]);
 
+  if (isNull(icon)) {
+    return null;
+  }
+
   return (
     <Dropdown
       trigger="click"
@@ -79,7 +85,7 @@ export default function DropdownIcon(props) {
         prefix={`${prefixCls}-dropdown`}
         className={`${prefixCls}-dropdown-icon`}
       >
-        <IconDown />
+        {icon || <IconDown />}
       </IconHover>
     </Dropdown>
   );

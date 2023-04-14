@@ -1,6 +1,6 @@
 import { useRef, useState, MutableRefObject, useEffect } from 'react';
 
-type ReturnType = {
+export type ReturnType = {
   height: number;
   width: number;
   domRect?: DOMRect;
