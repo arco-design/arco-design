@@ -56,7 +56,7 @@ describe('Tabs Header Scroll', () => {
     const wrapper = render(
       createDemo({
         overflow: 'dropdown',
-        overflowIcons: { dropdown: dropdownStr },
+        icons: { dropdown: dropdownStr },
       })
     );
     expect(
@@ -71,7 +71,7 @@ describe('Tabs Header Scroll', () => {
   it('Tabs Header replace scroll icon', () => {
     const wrapper = render(
       createDemo({
-        overflowIcons: { prev: <IconEdit /> },
+        icons: { prev: <IconEdit /> },
       })
     );
     expect(
@@ -87,7 +87,7 @@ describe('Tabs Header Scroll', () => {
   it('Tabs Header without scrollIcon', () => {
     const wrapper = render(
       createDemo({
-        overflowIcons: { prev: null, next: null },
+        icons: { prev: null, next: null },
       })
     );
     expect(

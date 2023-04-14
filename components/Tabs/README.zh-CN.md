@@ -33,8 +33,7 @@
 |extra|显示在标签页右侧的附加|ReactNode |`-`|-|
 |animation|是否开启过渡效果|boolean \| { tabPane?: boolean; inkBar?: boolean } |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|icons|图标配置|{add?: ReactNode;delete?: ReactNode;} |`-`|2.15.0|
-|overflowIcons|标签页头部 滚动/下拉 图标配置。对于不想展示的图标可以将其设置为`null`|{prev?: ReactNode;next?: ReactNode;dropdown?: ReactNode;} |`-`|2.47.0|
+|icons|标签页头部 编辑/滚动/下拉 图标配置。对于不想展示的图标可以将其设置为`null`|{add?: ReactNode;delete?: ReactNode;prev?: ReactNode;next?: ReactNode;dropdown?: ReactNode;} |`-`|2.15.0, `prev`,`next`,`dropdown` in `2.47.0`|
 |scrollAfterEdit|是否在标签增减后，自动进行滚动调整(`editable`为`true`时生效）|{delete?: boolean;add?: boolean;} |`{ add: true, delete: true }`|2.25.0|
 |style|节点样式|CSSProperties |`-`|-|
 |onAddTab|点击新增 tab 按钮的回调|() => void |`-`|-|
