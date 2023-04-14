@@ -11,10 +11,17 @@ import React, {
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import BTween from 'b-tween';
-import { isObject, isArray } from '../_util/is';
+import { isObject, isArray, isNumber } from '../_util/is';
 import cs from '../_util/classNames';
 import Spin, { SpinProps } from '../Spin';
-import { TableProps, ColumnProps, SorterResult, GetRowKeyType } from './interface';
+import {
+  TableProps,
+  ColumnProps,
+  GetRowKeyType,
+  SorterInfo,
+  SortDirection,
+  SorterFn,
+} from './interface';
 import Thead from './thead/index';
 import Tbody from './tbody/index';
 import Tfoot from './tfoot/index';
@@ -22,7 +29,14 @@ import Pagination from '../Pagination';
 import { on, off } from '../_util/dom';
 import { ConfigContext } from '../ConfigProvider';
 import { PaginationProps } from '../Pagination/pagination';
-import { getScrollBarHeight, getScrollBarWidth, deepCloneData, getOriginData } from './utils';
+import {
+  getScrollBarHeight,
+  getScrollBarWidth,
+  deepCloneData,
+  getOriginData,
+  getSorterFn,
+  getSorterPriority,
+} from './utils';
 import ColGroup from './colgroup';
 import useExpand from './hooks/useExpand';
 import useRowSelection from './hooks/useRowSelection';
@@ -35,6 +49,7 @@ import ResizeObserver from '../_util/resizeObserver';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 import { pickDataAttributes } from '../_util/pick';
+import useSorter from './hooks/useSorter';
 
 export interface TableInstance {
   getRootDomElement: () => HTMLDivElement;
@@ -117,22 +132,25 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const lastScrollLeft = useRef<number>(0);
 
   const scrollbarChanged = useRef<boolean>(false);
+  const [groupColumns, flattenColumns] = useColumns<T>(props);
 
-  const { currentFilters, currentSorter } = getDefaultFiltersAndSorter(columns);
+  const { currentFilters, defaultSorters } = getDefaultFiltersAndSorters();
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [innerPageSize, setInnerPageSize] = useState<number>(
     mergePagination.pageSize || mergePagination.defaultPageSize || 10
   );
   const [filters, setFilters] = useState<FilterType<T>>(currentFilters);
-  const [sorter, setSorter] = useState<SorterResult>(currentSorter);
   const [tableViewWidth, setTableViewWidth] = useState<number>(0);
-
-  const [groupColumns, flattenColumns] = useColumns<T>(props);
   const stickyOffsets: number[] = useStickyOffsets(flattenColumns);
   const [groupStickyClassNames, stickyClassNames] = useStickyClassNames(
     groupColumns,
     flattenColumns,
     prefixCls
+  );
+  const { currentSorter, activeSorters, getNextActiveSorters, updateStateSorters } = useSorter(
+    flattenColumns,
+    defaultSorters
   );
 
   const { ComponentTable, ComponentBodyWrapper, ComponentHeaderWrapper } = useComponent(components);
@@ -145,38 +163,41 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return (record) => record[rowKey];
   }, [rowKey]);
 
-  function getDefaultFiltersAndSorter(columns) {
+  function getDefaultFiltersAndSorters() {
     const currentFilters = {} as Partial<Record<keyof T, string[]>>;
-    const currentSorter = {} as SorterResult;
-    function travel(columns) {
-      if (columns && columns.length > 0) {
-        columns.forEach((column, index) => {
-          const innerDataIndex = column.dataIndex === undefined ? index : column.dataIndex;
-          if (!column[childrenColumnName]) {
-            if (column.defaultFilters) {
-              currentFilters[innerDataIndex] = column.defaultFilters;
-            }
-            if (column.filteredValue) {
-              currentFilters[innerDataIndex] = column.filteredValue;
-            }
-            if (column.defaultSortOrder) {
-              currentSorter.field = innerDataIndex;
-              currentSorter.direction = column.defaultSortOrder;
-            }
-            if (column.sortOrder) {
-              currentSorter.field = innerDataIndex;
-              currentSorter.direction = column.sortOrder;
-            }
-          } else {
-            travel(column[childrenColumnName]);
-          }
-        });
+    let defaultSorters: SorterInfo[] = [];
+    flattenColumns.forEach((column) => {
+      const innerDataIndex = column.key;
+      if (column.defaultFilters) {
+        currentFilters[innerDataIndex] = column.defaultFilters;
       }
-    }
+      if (column.filteredValue) {
+        currentFilters[innerDataIndex] = column.filteredValue;
+      }
+      if ('defaultSortOrder' in column || 'sortOrder' in column) {
+        const priority = getSorterPriority(column.sorter);
+        const direction = 'sortOrder' in column ? column.sortOrder : column.defaultSortOrder;
+        const sorter: SorterInfo = {
+          field: innerDataIndex,
+          direction,
+          sorterFn: getSorterFn(column.sorter),
+          priority,
+        };
+        if (!direction) {
+          defaultSorters.push(sorter);
+        } else if (isNumber(priority)) {
+          if (defaultSorters.every((item) => isNumber(item.priority) || !item.direction)) {
+            defaultSorters.push(sorter);
+          }
+        } else if (defaultSorters.every((item) => !item.direction)) {
+          defaultSorters.push(sorter);
+        } else {
+          defaultSorters = [sorter];
+        }
+      }
+    });
 
-    travel(columns);
-
-    return { currentFilters, currentSorter };
+    return { currentFilters, defaultSorters };
   }
 
   const controlledFilter = useMemo(() => {
@@ -194,24 +215,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         }
       });
     }
-
     return newFilters;
   }, [flattenColumns]);
 
-  const controlledSorter = useMemo(() => {
-    // 允许 sorter 设置为 null，表示不排序
-    const flattenSortOrderColumns = flattenColumns.filter((column) => 'sortOrder' in column);
-    let length = flattenSortOrderColumns.length;
-    while (length--) {
-      const column = flattenSortOrderColumns[length];
-      if (column.sortOrder || length === 0) {
-        return { field: column.dataIndex, direction: column.sortOrder };
-      }
-    }
-    return null;
-  }, [flattenColumns]);
-
-  const innerSorter = controlledSorter || sorter || {};
   const innerFilters = useMemo<FilterType<T>>(() => {
     return Object.keys(controlledFilter).length ? controlledFilter : filters;
   }, [filters, controlledFilter]);
@@ -219,27 +225,49 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   /** ----------- Sorter ----------- */
 
   function onSort(direction, field) {
-    const newSorter: SorterResult = {
-      field,
+    const column = getColumnByDataIndex(field);
+    if (!column) {
+      return;
+    }
+    const sorter: SorterInfo = {
       direction,
+      field,
+      sorterFn: getSorterFn(column.sorter),
+      priority: getSorterPriority(column.sorter),
     };
-    !controlledSorter && setSorter(newSorter);
-    const newProcessedData = getProcessedData(newSorter, innerFilters);
+    const nextActiveSorters = getNextActiveSorters(sorter);
+    updateStateSorters(sorter, nextActiveSorters);
+    const newProcessedData = getProcessedData(sorter, nextActiveSorters, innerFilters);
     const currentData = getPageData(newProcessedData);
+
     onChange &&
-      onChange(getPaginationProps(newProcessedData), newSorter, innerFilters, {
+      onChange(getPaginationProps(newProcessedData), sorter, innerFilters, {
         currentData: getOriginData(currentData),
         action: 'sort',
       });
   }
 
-  function sorterFn(sorter, direction) {
-    if (typeof sorter !== 'function') {
-      return;
-    }
+  function compareFn(activeSorters: SorterInfo[]) {
+    const compare = function (fn: SorterFn, direction: SortDirection) {
+      return (a, b) => {
+        const result = fn(a, b);
+        return direction === 'descend' ? -result : result;
+      };
+    };
+    const sorters = [...activeSorters];
+    sorters.sort((a, b) => b.priority - a.priority);
     return (a, b) => {
-      const result = sorter(a, b);
-      return direction === 'descend' ? -result : result;
+      for (let i = 0, l = sorters.length; i < l; i++) {
+        const { sorterFn, direction } = sorters[i];
+        if (typeof sorterFn !== 'function') {
+          continue;
+        }
+        const result = compare(sorterFn, direction)(a, b);
+        if (result !== 0) {
+          return result;
+        }
+      }
+      return 0;
     };
   }
 
@@ -257,10 +285,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     };
     if (isArray(filter) && filter.length) {
       setFilters(mergedFilters);
-      const newProcessedData = getProcessedData(innerSorter, newFilters);
+      const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
       const currentData = getPageData(newProcessedData);
       onChange &&
-        onChange(getPaginationProps(newProcessedData), innerSorter, newFilters, {
+        onChange(getPaginationProps(newProcessedData), currentSorter, newFilters, {
           currentData: getOriginData(currentData),
           action: 'filter',
         });
@@ -275,10 +303,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     };
     delete newFilters[dataIndex];
     setFilters(newFilters);
-    const newProcessedData = getProcessedData(innerSorter, newFilters);
+    const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
     const currentData = getPageData(newProcessedData);
     onChange &&
-      onChange(getPaginationProps(newProcessedData), innerSorter, newFilters, {
+      onChange(getPaginationProps(newProcessedData), currentSorter, newFilters, {
         currentData: getOriginData(currentData),
         action: 'filter',
       });
@@ -290,7 +318,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const hasFixedColumnRight = !!flattenColumns.find((c) => c.fixed === 'right');
   const hasFixedColumn = hasFixedColumnLeft || hasFixedColumnRight;
 
-  function getProcessedData(sorter, filters) {
+  function getProcessedData(currentSorter: SorterInfo, activeSorters: SorterInfo[], filters) {
     let _data = (clonedData || []).slice();
 
     Object.keys(filters).forEach((field) => {
@@ -307,12 +335,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       }
     });
 
-    const column = getColumnByDataIndex(sorter.field) as ColumnProps<T>;
-
     const getSortData = (d) => {
       return d
         .slice()
-        .sort(sorterFn(column.sorter, sorter.direction))
+        .sort(compareFn(activeSorters))
         .map((item) => {
           if (isArray(item[childrenColumnName])) {
             return {
@@ -324,7 +350,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         });
     };
 
-    if (sorter.direction && column && typeof column.sorter === 'function') {
+    if (
+      (currentSorter.direction && typeof currentSorter.sorterFn === 'function') ||
+      activeSorters.length
+    ) {
       return getSortData(_data);
     }
 
@@ -332,7 +361,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   }
 
   // 获得经过 sorter 和 filters 筛选之后的 data
-  const processedData = getProcessedData(innerSorter, innerFilters);
+  const processedData = getProcessedData(currentSorter, activeSorters, innerFilters);
 
   function getPaginationProps(_processedData = processedData) {
     const pageSize = mergePagination.pageSize || innerPageSize || 10;
@@ -593,7 +622,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     }
     const newPaginationProps = { ...getPaginationProps(), current, pageSize };
     onChange &&
-      onChange(newPaginationProps, innerSorter, innerFilters, {
+      onChange(newPaginationProps, currentSorter, innerFilters, {
         currentData: getPageData(processedData, newPaginationProps),
         action: 'paginate',
       });
@@ -708,7 +737,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const theadNode = (
     <Thead<T>
       {...props}
-      sorter={innerSorter}
+      activeSorters={activeSorters}
+      currentSorter={currentSorter}
       selectedRowKeys={selectedRowKeys}
       currentFilters={innerFilters}
       onCheckAll={onCheckAll}
@@ -765,7 +795,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       tableViewWidth={tableViewWidth}
       indentSize={indentSize}
       noDataElement={noDataElement || renderEmpty('Table')}
-      currentSorter={innerSorter}
+      activeSorters={activeSorters}
+      currentSorter={currentSorter}
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}
       getRowKey={getRowKey}

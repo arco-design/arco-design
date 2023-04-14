@@ -1,5 +1,5 @@
 ---
-order: 19
+order: 20
 title:
   zh-CN: 定制前置操作列
   en-US: Custom operation column

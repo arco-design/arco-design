@@ -7,6 +7,15 @@ export interface TestData {
   email: string;
 }
 
+export interface MultipleSorterTestData {
+  key: string;
+  name: string;
+  age: number;
+  scoreA: number;
+  scoreB: number;
+  scoreC: number;
+}
+
 export const data: TestData[] = [
   {
     key: '1',
@@ -107,5 +116,48 @@ export const treeData: TestTreeData[] = [
     age: 20,
     email: 'email2@123.com',
     children: [],
+  },
+];
+
+export const multipleSorterData = [
+  {
+    key: '1',
+    name: 'A',
+    age: 18,
+    scoreA: 100,
+    scoreB: 60,
+    scoreC: 70,
+  },
+  {
+    key: '2',
+    name: 'B',
+    age: 17,
+    scoreA: 100,
+    scoreB: 90,
+    scoreC: 80,
+  },
+  {
+    key: '3',
+    name: 'C',
+    age: 19,
+    scoreA: 100,
+    scoreB: 70,
+    scoreC: 60,
+  },
+  {
+    key: '4',
+    name: 'D',
+    age: 15,
+    scoreA: 80,
+    scoreB: 70,
+    scoreC: 100,
+  },
+  {
+    key: '5',
+    name: 'E',
+    age: 20,
+    scoreA: 80,
+    scoreB: 70,
+    scoreC: 90,
   },
 ];

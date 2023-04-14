@@ -1,5 +1,5 @@
 ---
-order: 15
+order: 16
 title:
   zh-CN: 单元格合并
   en-US: Cell merge

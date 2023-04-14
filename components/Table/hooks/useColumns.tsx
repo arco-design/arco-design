@@ -86,7 +86,7 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
       const _rows: InternalColumnProps[] = [];
       rows.forEach((r, i) => {
         const _r = { ...r };
-        if (!('key' in r)) {
+        if (!('key' in r) || typeof r.key === 'undefined') {
           _r.key = _r.dataIndex || i;
         }
         if (i === 0) {

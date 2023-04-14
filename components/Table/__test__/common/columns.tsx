@@ -3,7 +3,7 @@ import Button from '../../../Button';
 import Tag from '../../../Tag';
 import { IconSearch } from '../../../../icon';
 import { ColumnProps } from '../../interface';
-import { TestData } from './data';
+import { TestData, MultipleSorterTestData } from './data';
 import { NOOP } from '../../../_util/constant';
 
 export const columns: ColumnProps<TestData>[] = [
@@ -184,5 +184,53 @@ export const columnsGroupColumns: ColumnProps<TestData>[] = [
   {
     title: 'Email',
     dataIndex: 'email',
+  },
+];
+
+export const multipleSorterColumns: ColumnProps<MultipleSorterTestData>[] = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    sorter: (a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    },
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    sorter: (a, b) => a.age - b.age,
+  },
+  {
+    title: 'Score A',
+    dataIndex: 'scoreA',
+    defaultSortOrder: 'descend',
+    sorter: {
+      compare: (a, b) => a.scoreA - b.scoreA,
+      multiple: 3,
+    },
+  },
+  {
+    title: 'Score B',
+    dataIndex: 'scoreB',
+    defaultSortOrder: 'ascend',
+    sorter: {
+      compare: (a, b) => a.scoreB - b.scoreB,
+      multiple: 2,
+    },
+  },
+  {
+    title: 'Score C',
+    dataIndex: 'scoreC',
+    defaultSortOrder: 'descend',
+    sorter: {
+      compare: (a, b) => a.scoreC - b.scoreC,
+      multiple: 1,
+    },
   },
 ];

@@ -1,5 +1,5 @@
 ---
-order: 21
+order: 22
 title:
   zh-CN: 拖拽锚点排序
   en-US: Drag Anchor

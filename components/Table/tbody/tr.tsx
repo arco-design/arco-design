@@ -35,7 +35,7 @@ function Tr<T>(props: TrType<T>, ref) {
     onRow,
     rowSelection,
     indentSize = 16,
-    currentSorter,
+    activeSorters,
     virtualized,
     stickyOffsets,
     stickyClassNames,
@@ -232,7 +232,7 @@ function Tr<T>(props: TrType<T>, ref) {
             prefixCls={prefixCls}
             virtualized={virtualized}
             components={components}
-            currentSorter={currentSorter}
+            currentSorter={activeSorters.find((item) => item.field === col.key)}
             placeholder={placeholder}
             indentSize={indentSize}
             stickyClassName={stickyClassName}

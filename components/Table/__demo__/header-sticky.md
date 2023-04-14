@@ -1,5 +1,5 @@
 ---
-order: 18
+order: 19
 title:
   zh-CN: 表头吸顶
   en-US: Header Sticky

@@ -1,4 +1,5 @@
 import { isArray, isObject, isUndefined, isNull, isNumber, isString } from '../_util/is';
+import type { ColumnProps, SorterFn } from './interface';
 
 export function px2Number(width: number | string): number | string {
   if (isNumber(width)) {
@@ -196,5 +197,21 @@ function updateParent(
       getRowKey,
       childrenColumnName
     );
+  }
+}
+
+export function getSorterFn(sorter: ColumnProps['sorter']): SorterFn | null {
+  if (typeof sorter === 'function') {
+    return sorter;
+  }
+  if (typeof sorter === 'object' && typeof sorter.compare === 'function') {
+    return sorter.compare;
+  }
+  return null;
+}
+
+export function getSorterPriority(sorter: ColumnProps['sorter']): number | undefined {
+  if (typeof sorter === 'object' && typeof sorter.multiple === 'number') {
+    return sorter.multiple;
   }
 }
