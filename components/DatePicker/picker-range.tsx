@@ -267,9 +267,11 @@ const Picker = (baseProps: RangePickerProps) => {
     setInputValue(undefined);
 
     if (mergedPopupVisible) {
+      const resetPageShowDates = getShowDatesFromFocused(defaultPageShowDates);
       setIsTimePanel(false);
       setPanelModes([mode, mode]);
-      setPageShowDates(getShowDatesFromFocused(defaultPageShowDates));
+      setPageShowDates(resetPageShowDates);
+      handlePickerValueChange(resetPageShowDates);
       setValueShow(mergedValue);
       if (shortcutsPlacementLeft) {
         refShortcuts.current.style.maxHeight = `${refPanel.current.clientHeight}px`;
