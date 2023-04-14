@@ -28,6 +28,7 @@
 |actions|额外操作|ReactNode[] |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |height|图片显示高度|string \| number |`-`|-|
+|lazyload|开启懒加载 [Intersection_Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)|boolean \| IntersectionObserverInit |`-`|2.47.0|
 |loaderClassName|loader 的样式，将覆盖默认过渡效果|string \| string[] |`-`|-|
 |previewProps|预览的配置项 （所有选项都是可选的）[ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|

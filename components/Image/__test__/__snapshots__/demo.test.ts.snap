@@ -244,6 +244,96 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Image/demo/lazyload.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical image-demo-wrapper"
+>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:50px"
+  >
+    <div
+      class="arco-image"
+      style="width:380px;height:150px"
+    >
+      <img
+        alt="lamp"
+        class="arco-image-img"
+        height="150"
+        lazyload="[object Object]"
+        tabindex="0"
+        width="380"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:50px"
+  >
+    <div
+      class="arco-image"
+      style="width:380px;height:150px"
+    >
+      <img
+        alt="lamp"
+        class="arco-image-img"
+        height="150"
+        lazyload="[object Object]"
+        tabindex="0"
+        width="380"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:50px"
+  >
+    <div
+      class="arco-image"
+      style="width:380px;height:150px"
+    >
+      <img
+        alt="lamp"
+        class="arco-image-img"
+        height="150"
+        lazyload="[object Object]"
+        tabindex="0"
+        width="380"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-image"
+      style="width:380px;height:150px"
+    >
+      <img
+        alt="lamp"
+        class="arco-image-img"
+        height="150"
+        lazyload="[object Object]"
+        tabindex="0"
+        width="380"
+      />
+      <div
+        class="arco-image-overlay"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Image/demo/loader.md correctly 1`] = `
 <div>
   <div>

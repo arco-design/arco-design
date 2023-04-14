@@ -28,6 +28,7 @@ Show and preview pictures.
 |actions|Extra operations|ReactNode[] |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |height|Image height|string \| number |`-`|-|
+|lazyload|lazyload loading [Intersection_Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)|boolean \| IntersectionObserverInit |`-`|2.47.0|
 |loaderClassName|The style of the loader, will override the default transition effect|string \| string[] |`-`|-|
 |previewProps|Preview options (all options are optional) [ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
