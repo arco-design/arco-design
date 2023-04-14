@@ -27,6 +27,9 @@ An input box which will display your input as tags.
 |placeholder|Placeholder of input element|string |`-`|-|
 |size|Different sizes|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
+|addAfter|The label text displayed after (on the right side of) the input-tag field|ReactNode |`-`|2.47.0|
+|addBefore|The label text displayed before (on the left side of) the input-tag field|ReactNode |`-`|2.47.0|
+|prefix|The prefix icon or text for the input-tag|ReactNode |`-`|2.47.0|
 |suffix|The suffix for the InputTag|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |defaultValue|To set default value|T[] |`-`|-|

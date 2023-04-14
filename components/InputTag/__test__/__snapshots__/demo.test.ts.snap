@@ -431,6 +431,122 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders InputTag/demo/prefix.md correctly 1`] = `
+<div>
+  <div
+    class="arco-grid"
+    style="gap:12px 12px;grid-template-columns:repeat(2, minmax(0px, 1fr));max-width:600px"
+  >
+    <div
+      class="arco-grid-item"
+      style="grid-column:span 1 / span 1;display:none"
+    >
+      <div
+        class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+        prefix="¥"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <input
+              autocomplete="off"
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-grid-item"
+      style="grid-column:span 1 / span 1;display:none"
+    >
+      <div
+        addbefore="[object Object]"
+        class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <input
+              autocomplete="off"
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-grid-item"
+      style="grid-column:span 1 / span 1;display:none"
+    >
+      <div
+        addbefore="[object Object]"
+        class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+        prefix="¥"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <input
+              autocomplete="off"
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-grid-item"
+      style="grid-column:span 1 / span 1;display:none"
+    >
+      <div
+        addafter=".com"
+        addbefore="www."
+        class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <input
+              autocomplete="off"
+              class="arco-input-tag-input arco-input-tag-input-size-default"
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders InputTag/demo/render-tag.md correctly 1`] = `
 <div
   class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-suffix"

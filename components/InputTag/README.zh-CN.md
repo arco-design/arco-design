@@ -27,6 +27,9 @@
 |placeholder|预设文案|string |`-`|-|
 |size|不同尺寸|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
+|addAfter|输入框后添加元素|ReactNode |`-`|2.47.0|
+|addBefore|输入框前添加元素|ReactNode |`-`|2.47.0|
+|prefix|添加前缀文字或者图标|ReactNode |`-`|2.47.0|
 |suffix|后缀|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |defaultValue|默认值|T[] |`-`|-|
