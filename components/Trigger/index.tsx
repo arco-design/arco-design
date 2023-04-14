@@ -793,7 +793,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       ]);
       child = (
         <span
-          className={element.props.className}
+          className={element.props?.className}
           style={{ display: 'inline-block', ...picked, cursor: 'not-allowed' }}
         >
           {React.cloneElement(element, {

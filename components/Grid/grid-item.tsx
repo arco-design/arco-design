@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement, useContext, useEffect, useMemo } from 'react';
+import React, { forwardRef, ReactNode, useContext, useEffect, useMemo } from 'react';
 import { GridItemProps } from './interface';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -6,6 +6,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import { useResponsiveState } from './hooks/useResponsiveState';
 import { GridContext, GridDataCollectorContext } from './context';
 import { resolveItemData } from './utils';
+import { isFunction, isString } from '../_util/is';
 
 const defaultProps: GridItemProps = {
   suffix: false,
@@ -13,13 +14,9 @@ const defaultProps: GridItemProps = {
   span: 1,
 };
 
-type OtherType = {
-  index: number;
-};
-
-function GridItem(baseProps: GridItemProps & OtherType, ref) {
+function GridItem(baseProps: GridItemProps, ref) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
-  const props = useMergeProps<GridItemProps & OtherType>(
+  const props = useMergeProps<GridItemProps>(
     baseProps,
     defaultProps,
     componentConfig?.['Grid.GridItem']
@@ -31,7 +28,7 @@ function GridItem(baseProps: GridItemProps & OtherType, ref) {
     style,
     offset: propOffset,
     span: propSpan,
-    index: computedIndex,
+    __index__: computedIndex,
   } = props;
   const gridContext = useContext(GridContext);
 
@@ -63,6 +60,7 @@ function GridItem(baseProps: GridItemProps & OtherType, ref) {
 
   useEffect(() => {
     collectItemData(computedIndex, itemData);
+
     return () => {
       removeItemData(computedIndex);
     };
@@ -94,6 +92,7 @@ function GridItem(baseProps: GridItemProps & OtherType, ref) {
     ...offsetStyle,
     ...visibleStyle,
   };
+
   return (
     <div
       ref={ref}
@@ -103,16 +102,20 @@ function GridItem(baseProps: GridItemProps & OtherType, ref) {
         ...style,
       }}
     >
-      {React.Children.map(children, (child: ReactElement) => {
-        if (child) {
-          const childProps = {
-            overflow,
-            ...child.props,
-          };
-          return child.type ? React.cloneElement(child, childProps) : child;
-        }
-        return null;
-      })}
+      {isFunction(children)
+        ? children({ overflow })
+        : React.Children.map(children, (child: ReactNode) => {
+            if (child) {
+              // 排除原生 dom 标签，避免 overflow 属性透传到 dom 标签上
+              return React.isValidElement(child) && !isString(child.type)
+                ? React.cloneElement(child, {
+                    overflow,
+                    ...child.props,
+                  })
+                : child;
+            }
+            return null;
+          })}
     </div>
   );
 }

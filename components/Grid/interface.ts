@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes } from 'react';
+import { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
 export type GridResponsiveBreakpoint = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 
@@ -179,6 +179,8 @@ export interface GridItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cla
    * @defaultValue false
    */
   suffix?: boolean;
+  __index__?: number;
+  children?: ReactNode | ((info: { overflow: boolean }) => ReactNode);
 }
 
 export interface GridItemData extends GridItemProps {

@@ -95,7 +95,7 @@ function Grid(baseProps: GridProps, ref) {
           {React.Children.map(children, (child: ReactElement, index) => {
             if (child) {
               const childProps = {
-                index,
+                __index__: index,
                 ...child.props,
               };
 
