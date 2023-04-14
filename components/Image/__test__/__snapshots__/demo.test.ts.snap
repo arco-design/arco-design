@@ -260,7 +260,6 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
         alt="lamp"
         class="arco-image-img"
         height="150"
-        lazyload="[object Object]"
         tabindex="0"
         width="380"
       />
@@ -281,7 +280,6 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
         alt="lamp"
         class="arco-image-img"
         height="150"
-        lazyload="[object Object]"
         tabindex="0"
         width="380"
       />
@@ -302,7 +300,6 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
         alt="lamp"
         class="arco-image-img"
         height="150"
-        lazyload="[object Object]"
         tabindex="0"
         width="380"
       />
@@ -322,7 +319,6 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
         alt="lamp"
         class="arco-image-img"
         height="150"
-        lazyload="[object Object]"
         tabindex="0"
         width="380"
       />
