@@ -6,8 +6,7 @@
 @input-tag-prefix-cls: ~'@{prefix}-input-tag';
 
 .@{input-tag-prefix-cls} {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   box-sizing: border-box;
   width: 100%;
   padding-left: @input-tag-padding-horizontal;
@@ -201,6 +200,7 @@
   &-wrapper {
     display: inline-flex;
     align-items: stretch;
+    width: 100%;
 
     .@{input-tag-prefix-cls} {
       min-width: 0; // 避免 .arco-input-tag 宽度超出 .arco-input-tag-wrapper
