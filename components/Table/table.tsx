@@ -952,9 +952,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   return (
     <div ref={refTable} style={style} className={classNames} {...pickDataAttributes(props)}>
       <Spin element={loadingElement || <Spin />} {...loading}>
-        {pagination !== false && pageData.length !== 0 && isPaginationTop && paginationEle}
+        {pagination !== false && processedData.length !== 0 && isPaginationTop && paginationEle}
         {renderTable()}
-        {pagination !== false && pageData.length !== 0 && !isPaginationTop && paginationEle}
+        {pagination !== false && processedData.length !== 0 && !isPaginationTop && paginationEle}
       </Spin>
     </div>
   );
