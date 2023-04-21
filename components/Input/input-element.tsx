@@ -109,8 +109,14 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     const updateInputWidth = () => {
       if (refInputMirror.current && refInput.current) {
-        const width = refInputMirror.current.offsetWidth;
-        refInput.current.style.width = `${width + (width ? 8 : 4)}px`;
+        const needToShowPlaceholder = !inputProps.value && placeholder;
+        // use default width of input when placeholder is visible
+        if (needToShowPlaceholder) {
+          refInput.current.style.width = null;
+        } else {
+          const width = refInputMirror.current.offsetWidth;
+          refInput.current.style.width = `${width + (width ? 8 : 4)}px`;
+        }
       }
     };
 

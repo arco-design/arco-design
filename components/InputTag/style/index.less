@@ -80,7 +80,7 @@
   }
 
   &-input {
-    width: 100%;
+    width: 4px;
     // width might be overwrite by inline-style, max-width make text-ellipsis work
     max-width: 100%;
     padding: 0;
@@ -91,6 +91,13 @@
     cursor: inherit;
     color: inherit;
     .text-ellipsis();
+
+    // input is the first child means that input-tag has an empty value
+    // we set width of input to 4px by default, and 100% when input-tag is empty to avoid wrap
+    // see https://github.com/arco-design/arco-design/pull/1863
+    &:first-child {
+      width: 100%;
+    }
 
     .@{prefix}-tag + &[disabled] {
       width: 0 !important;
