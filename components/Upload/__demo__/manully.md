@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-设置 `autoUpload` 为 `false`时候，可以通过调用 `submit`方法进行手动上传。
+设置 `autoUpload` 为 `false`时候，可以通过调用 `submit`方法进行手动上传。`submit` 只会上传处于 `fileList` 中的文件。
 
 ## en-US
 
-If `autoUpload` equals `false`, files will not be uploaded automatically after being selected. You can submit them by `uploadRef.submit` method.
+If `autoUpload` equals `false`, files will not be uploaded automatically after being selected. You can submit them by `uploadRef.submit` method.`submit` will only upload files that are in `fileList`.
 
 ```js
 import React from 'react';

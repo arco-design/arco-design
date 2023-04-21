@@ -33,6 +33,10 @@ const mockRoute = async (page) => {
 
 const mockInterfaces = async (page) => {
   await page.addInitScript(() => {
+    // 隐藏下悬浮按钮，避免截图干扰
+    document.querySelectorAll('.ac-backtop-btn').forEach((element) => {
+      element.style.display = 'none';
+    });
     window.setInterval = () => {};
     if (location.pathname.split('/').pop() === 'statistic') {
       window.requestAnimationFrame = () => {}; // statistic using it
