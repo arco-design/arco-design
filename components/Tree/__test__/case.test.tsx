@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '../../../tests/util';
+import { cleanup } from '@testing-library/react';
+import { render, fireEvent, $ } from '../../../tests/util';
 import Tree from '..';
 
 const TreeData = [
@@ -44,6 +45,7 @@ describe('Tree case', () => {
 
   afterEach(() => {
     jest.runAllTimers();
+    cleanup();
   });
 
   it('icons correctly', async () => {
@@ -65,5 +67,53 @@ describe('Tree case', () => {
     fireEvent.click(firstNode);
     // 收起节点
     expect(firstNode.textContent).toBe('+');
+  });
+
+  it('show child correctly', async () => {
+    const data = [
+      {
+        key: 'Trunk 0-0',
+        title: '0-0',
+        children: [
+          {
+            key: 'Branch 0-0-2',
+            title: '0-0-2',
+            disableCheckbox: true,
+            children: [
+              {
+                key: 'Leaf',
+                title: '0-0-2-1',
+              },
+            ],
+          },
+        ],
+      },
+    ];
+
+    let currentKeys;
+    render(
+      <Tree
+        onCheck={(keys) => {
+          currentKeys = keys;
+        }}
+        checkable
+        treeData={data}
+        checkedStrategy="child"
+      />
+    );
+
+    fireEvent.click($('.arco-checkbox').item(0));
+
+    // 默认是展开的
+    expect(currentKeys).toEqual([data[0].key]);
+
+    fireEvent.click($('.arco-checkbox').item(2));
+
+    expect(currentKeys).toEqual([data[0].key, data[0].children[0].children[0].key]);
+
+    // 取消节点选中
+    fireEvent.click($('.arco-checkbox').item(2));
+
+    expect(currentKeys).toEqual([data[0].key]);
   });
 });
