@@ -1,3 +1,12 @@
+## 2.47.1
+
+2023-04-21
+
+### 🐛 问题修复
+
+- 修复 `Tree` 组件在回显方式设置为 `child`时，选中禁用节点的子节点后，禁用节点的父节点无法被选中的 bug。([#1938](https://github.com/arco-design/arco-design/pull/1938))
+- 修复 `Tree` 组件在选中了复选框禁用节点的子节点，然后取消选中，禁用节点的父节点的选中状态错误更新了的 bug。([#1938](https://github.com/arco-design/arco-design/pull/1938))
+
 ## 2.44.1
 
 2023-02-03

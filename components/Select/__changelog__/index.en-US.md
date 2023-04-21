@@ -1,3 +1,11 @@
+## 2.47.1
+
+2023-04-21
+
+### 🐛 BugFix
+
+- Fix the problem that the width of `Select` is slowly restored after the value is cleared in multi-selection mode.([#1935](https://github.com/arco-design/arco-design/pull/1935))
+
 ## 2.47.0
 
 2023-04-14

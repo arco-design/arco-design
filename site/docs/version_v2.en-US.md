@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.47.1
+
+2023-04-21
+
+### 🐛 BugFix
+
+- Fix the bug that the parent node of the disabled node cannot be selected after the child node of the disabled node is selected when the echo mode of the `Tree` component is set to `child`.([#1938](https://github.com/arco-design/arco-design/pull/1938))
+- Fix the bug that `Tree` component was updated wrongly when the child node of the disabled node was checked, and then unchecked, the checked state of the parent node of the disabled node was incorrectly updated.([#1938](https://github.com/arco-design/arco-design/pull/1938))
+- Fix `Table` component pagination hiding logic.([#1937](https://github.com/arco-design/arco-design/pull/1937))
+- Fix the issue that `dragToSort` of `InputTag` not work.([#1936](https://github.com/arco-design/arco-design/pull/1936))
+- Fix the problem that the width of `Select` is slowly restored after the value is cleared in multi-selection mode.([#1935](https://github.com/arco-design/arco-design/pull/1935))
+
 ## 2.47.0
 
 2023-04-14

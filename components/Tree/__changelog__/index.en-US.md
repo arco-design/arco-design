@@ -1,3 +1,12 @@
+## 2.47.1
+
+2023-04-21
+
+### 🐛 BugFix
+
+- Fix the bug that the parent node of the disabled node cannot be selected after the child node of the disabled node is selected when the echo mode of the `Tree` component is set to `child`.([#1938](https://github.com/arco-design/arco-design/pull/1938))
+- Fix the bug that `Tree` component was updated wrongly when the child node of the disabled node was checked, and then unchecked, the checked state of the parent node of the disabled node was incorrectly updated.([#1938](https://github.com/arco-design/arco-design/pull/1938))
+
 ## 2.44.1
 
 2023-02-03

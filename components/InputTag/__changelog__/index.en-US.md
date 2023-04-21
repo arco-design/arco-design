@@ -1,3 +1,11 @@
+## 2.47.1
+
+2023-04-21
+
+### 🐛 BugFix
+
+- Fix the issue that `dragToSort` of `InputTag` not work.([#1936](https://github.com/arco-design/arco-design/pull/1936))
+
 ## 2.47.0
 
 2023-04-14

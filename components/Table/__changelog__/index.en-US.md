@@ -1,3 +1,11 @@
+## 2.47.1
+
+2023-04-21
+
+### 🐛 BugFix
+
+- Fix `Table` component pagination hiding logic.([#1937](https://github.com/arco-design/arco-design/pull/1937))
+
 ## 2.47.0
 
 2023-04-14
