@@ -3,7 +3,7 @@ import { InputTag } from '@self';
 
 export const Demo = () => {
   const placeholder = 'Please input';
-  return <InputTag disabled readOnly error placeholder={placeholder} />;
+  return <InputTag defaultValue={['1', '2', '3']} dragToSort placeholder={placeholder} />;
 };
 
 export default {

@@ -69,4 +69,5 @@ export interface TagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNam
    */
   onCheck?: (checked: boolean) => void;
   fill?: boolean; // 防止 1.0 用法报错，无实际作用
+  __closeIconProps?: HTMLAttributes<any>;
 }
