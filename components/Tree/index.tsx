@@ -455,6 +455,7 @@ class Tree extends Component<TreeProps, TreeState> {
         this.key2nodeProps,
         halfCheckedKeys
       );
+
       checkedKeys = newCheckedKeys;
       halfCheckedKeys = indeterminateKeys;
 
@@ -473,7 +474,11 @@ class Tree extends Component<TreeProps, TreeState> {
       } else if (checkedStrategy === Tree.SHOW_CHILD) {
         checkedKeys = checkedKeys.filter((x) => {
           const item = this.key2nodeProps[x];
-          if (!item || !item.children || !item.children.length) {
+          if (
+            !item ||
+            !item.children?.length ||
+            item.children?.every((x) => checkedKeys.indexOf(x._key) === -1)
+          ) {
             return true;
           }
         });

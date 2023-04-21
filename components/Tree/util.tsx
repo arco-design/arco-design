@@ -46,7 +46,7 @@ const updateParent = (key, key2nodeProps, allKeys, indeterminateKeysSet) => {
   const pathParentKeys = [...key2nodeProps[key].pathParentKeys];
 
   // 逐级更新父节点的状态
-  pathParentKeys.reverse().forEach((itemKey) => {
+  pathParentKeys.reverse().some((itemKey) => {
     const parent = key2nodeProps[itemKey];
     if (parent && !parent.disabled && !parent.disableCheckbox && parent.checkable !== false) {
       let total = 0;
@@ -78,6 +78,9 @@ const updateParent = (key, key2nodeProps, allKeys, indeterminateKeysSet) => {
       } else {
         allKeys.delete(itemKey);
       }
+    } else {
+      // 断开链接
+      return true;
     }
   });
 };
