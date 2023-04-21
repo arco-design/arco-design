@@ -246,9 +246,11 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         })}
         closable={closable}
         closeIcon={icon && icon.removeIcon}
+        __closeIconProps={{
+          onMouseDown: keepFocus,
+        }}
         title={typeof label === 'string' ? label : undefined}
         onClose={onClose}
-        onMouseDown={keepFocus}
       >
         {fillNBSP(label)}
       </Tag>

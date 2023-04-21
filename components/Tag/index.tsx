@@ -48,6 +48,7 @@ function Tag(baseProps: TagProps, ref) {
     icon,
     closeIcon,
     bordered,
+    __closeIconProps,
     ...rest
   } = props;
 
@@ -135,6 +136,7 @@ function Tag(baseProps: TagProps, ref) {
           tabIndex={0}
           {...getKeyboardEvents({ onPressEnter: onHandleClose })}
           aria-label="Close"
+          {...__closeIconProps}
         >
           {closeIcon !== undefined ? closeIcon : <IconClose />}
         </IconHover>
