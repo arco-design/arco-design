@@ -37,7 +37,7 @@
 
 1. 正常输入项报错时，使用输入项本身的报错样式，或者使用 **全局提示** ，而不要使用 **警告提示** 。
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/1819bf6f24c04b3f89472d61d179e7ad~tplv-uwbnlip3yd-image.image)
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/unpzlK_vjyH/ljhwZthlaukjlkulzlp/site/alert.png)
 
 2. 用于呈现普通提示信息时，建议使用 **卡片** 或 **气泡卡片** ，而不要使用 **警告提示**。
 

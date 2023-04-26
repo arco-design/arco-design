@@ -39,7 +39,7 @@ There are four styles: normal, success, warning, and error, which can be configu
 
 1. When a normal input item reports an error, use the error report style of the input item itself, or use **global prompt** instead of **warning prompt**.
 
-![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/1819bf6f24c04b3f89472d61d179e7ad~tplv-uwbnlip3yd-image.image)
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/unpzlK_vjyH/ljhwZthlaukjlkulzlp/site/alert.png)
 
 2. It is recommended to use **Card** or **Bubble Card** instead of **Warning Tips** when it is used to present general reminder information.
 
