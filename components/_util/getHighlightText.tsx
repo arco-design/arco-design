@@ -45,6 +45,11 @@ function HighlightText({
 }) {
   if (!keyword) return <>{text}</>;
 
+  // limit keyword length to avoid Regular expression too large error
+  if (keyword.length > 1000) {
+    keyword = keyword.slice(0, 1000);
+  }
+
   // 注意这里的括号，这里使用了带capture group功能的正则，来split字符串
   // 从而在strArr中可以保留匹配文本
   const re = new RegExp(`(${escapeRegExp(keyword)})`, 'i');
