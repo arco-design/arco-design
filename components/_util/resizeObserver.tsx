@@ -1,6 +1,7 @@
 import React from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import { findDOMNode } from 'react-dom';
+import debounce from 'lodash/debounce';
 
 export interface ResizeProps {
   onResize?: (entry: ResizeObserverEntry[]) => void;
@@ -31,10 +32,12 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   };
 
   createResizeObserver = () => {
-    this.resizeObserver = new ResizeObserver((entry) => {
-      const { onResize } = this.props;
-      onResize && onResize(entry);
-    });
+    this.resizeObserver = new ResizeObserver(
+      debounce((entry) => {
+        const { onResize } = this.props;
+        onResize && onResize(entry);
+      }, 16)
+    );
     this.resizeObserver.observe(findDOMNode(this) as Element);
   };
 
