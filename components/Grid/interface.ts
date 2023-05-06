@@ -193,6 +193,11 @@ export interface GridItemData extends GridItemProps {
  */
 export interface ResponsiveValue {
   /**
+   * @zh >= 2000px 响应式栅格
+   * @en `screen >= 2000px`
+   */
+  xxxl?: number;
+  /**
    * @zh >= 1600px 响应式配置
    * @en >= 1600px responsive configuration
    */

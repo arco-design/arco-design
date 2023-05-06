@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-Grid 组件的响应式配置格式为 `{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5, xxl: 6 }`。
+Grid 组件的响应式配置格式为 `{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5, xxl: 6, xxl: 7 }`。
 
 ## en-US
 
-The responsive configuration format of the Grid component is `{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5, xxl: 6 }`.
+The responsive configuration format of the Grid component is `{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5, xxl: 6, xxl: 7 }`.
 
 ```js
 import { useState } from 'react';
