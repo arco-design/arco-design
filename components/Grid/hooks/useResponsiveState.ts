@@ -20,6 +20,7 @@ export const useResponsiveState = (
     lg: true,
     xl: true,
     xxl: true,
+    xxxl: true,
   });
   useEffect(() => {
     token.current = ResponsiveObserve.subscribe((screens) => {
