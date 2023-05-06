@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.47.2
+
+2023-05-06
+
+### 🐛 BugFix
+
+- Fix the bug of `Grid` that `xxxl` property in responsive layout  does not work.([#1955](https://github.com/arco-design/arco-design/pull/1955))
+- Fix the bug that the `Notification` component is called repeatedly in `useEffect`.([#1954](https://github.com/arco-design/arco-design/pull/1954))
+- Fix the bug that the `Message` component is called repeatedly in `useEffect`.([#1954](https://github.com/arco-design/arco-design/pull/1954))
+- Fix the problem that the `defaultExpandAllRows` attribute of the `Table` component does not take effect.([#1953](https://github.com/arco-design/arco-design/pull/1953))
+- Fix the error caused by inputing long text when `Select` is allowed to be created.([#1948](https://github.com/arco-design/arco-design/pull/1948))
+
 ## 2.47.1
 
 2023-04-21

@@ -1,3 +1,11 @@
+## 2.47.2
+
+2023-05-06
+
+### 🐛 BugFix
+
+- Fix the problem that the `defaultExpandAllRows` attribute of the `Table` component does not take effect.([#1953](https://github.com/arco-design/arco-design/pull/1953))
+
 ## 2.47.1
 
 2023-04-21

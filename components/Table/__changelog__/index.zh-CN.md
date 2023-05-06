@@ -1,3 +1,11 @@
+## 2.47.2
+
+2023-05-06
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `defaultExpandAllRows` 属性不生效的问题。([#1953](https://github.com/arco-design/arco-design/pull/1953))
+
 ## 2.47.1
 
 2023-04-21

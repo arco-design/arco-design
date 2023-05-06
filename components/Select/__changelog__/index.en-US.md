@@ -1,3 +1,11 @@
+## 2.47.2
+
+2023-05-06
+
+### 🐛 BugFix
+
+- Fix the error caused by inputing long text when `Select` is allowed to be created.([#1948](https://github.com/arco-design/arco-design/pull/1948))
+
 ## 2.47.1
 
 2023-04-21

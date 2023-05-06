@@ -1,3 +1,11 @@
+## 2.47.2
+
+2023-05-06
+
+### 🐛 BugFix
+
+- Fix the bug of `Grid` that `xxxl` property in responsive layout  does not work.([#1955](https://github.com/arco-design/arco-design/pull/1955))
+
 ## 2.47.0
 
 2023-04-14

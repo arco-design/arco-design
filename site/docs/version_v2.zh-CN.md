@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.47.2
+
+2023-05-06
+
+### 🐛 问题修复
+
+- 修复 `Grid` 组件响应式布局 `xxxl` 属性不生效的 bug。([#1955](https://github.com/arco-design/arco-design/pull/1955))
+- 修复 `Notification` 组件在 `useEffect` 里连续调用出现重叠的 bug。([#1954](https://github.com/arco-design/arco-design/pull/1954))
+- 修复 `Message` 组件在 `useEffect` 里连续调用出现重叠的 bug。([#1954](https://github.com/arco-design/arco-design/pull/1954))
+- 修复 `Table` 组件 `defaultExpandAllRows` 属性不生效的问题。([#1953](https://github.com/arco-design/arco-design/pull/1953))
+- 修复 `Select` 组件允许创建时输入文本内容过长导致的页面报错。([#1948](https://github.com/arco-design/arco-design/pull/1948))
+
 ## 2.47.1
 
 2023-04-21

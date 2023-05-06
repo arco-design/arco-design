@@ -1,3 +1,11 @@
+## 2.47.2
+
+2023-05-06
+
+### 🐛 BugFix
+
+- Fix the bug that the `Message` component is called repeatedly in `useEffect`.([#1954](https://github.com/arco-design/arco-design/pull/1954))
+
 ## 2.43.0
 
 2022-12-23

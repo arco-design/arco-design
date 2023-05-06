@@ -1,3 +1,11 @@
+## 2.47.2
+
+2023-05-06
+
+### 🐛 BugFix
+
+- Fix the bug that the `Notification` component is called repeatedly in `useEffect`.([#1954](https://github.com/arco-design/arco-design/pull/1954))
+
 ## 2.44.0
 
 2023-01-13
