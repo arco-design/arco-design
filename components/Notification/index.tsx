@@ -60,20 +60,20 @@ class Notification extends BaseNotification {
     }
     if (options.getContainer && options.getContainer() !== container) {
       container = options.getContainer();
-      Object.keys(notificationInstance).forEach((notice) => notificationInstance[notice].clear());
+      Object.values(notificationInstance).forEach(({ instance: notice }) => notice?.clear());
       notificationInstance = {};
     }
   };
 
   static clear: () => void = () => {
-    Object.keys(notificationInstance).forEach((ins) => {
-      notificationInstance[ins].clear();
+    Object.values(notificationInstance).forEach(({ instance }) => {
+      instance?.clear();
     });
   };
 
   static remove: (id: string) => void = (id: string) => {
-    Object.keys(notificationInstance).forEach((ins) => {
-      notificationInstance[ins].remove(id);
+    Object.values(notificationInstance).forEach(({ instance }) => {
+      instance?.remove(id);
     });
   };
 
@@ -105,32 +105,35 @@ class Notification extends BaseNotification {
         }
         return instance;
       };
-      if (pending?.then) {
-        pending.then(add);
-      } else {
+
+      if (instance) {
         add();
+      } else if (pending?.then) {
+        pending.then(() => {
+          add();
+          notificationInstance[position].pending = null;
+        });
       }
       return instance;
     }
     const div = document.createElement('div');
 
     (container || document.body).appendChild(div);
-    notificationInstance[position] = {
-      pending: new Promise((resolve) => {
-        ReactDOMRender(
-          <Notification
-            ref={(ref) => {
-              notificationInstance[position] = { instance: ref };
-              notificationInstance[position].instance?.add(_noticeProps);
-              resolve(null);
-              return notificationInstance[position].instance;
-            }}
-          />,
-          div
-        );
-      }),
-    };
-    return instance;
+    notificationInstance[position] = {};
+    notificationInstance[position].pending = new Promise((resolve) => {
+      ReactDOMRender(
+        <Notification
+          ref={(instance) => {
+            notificationInstance[position].instance = instance;
+            instance.add(_noticeProps);
+            resolve(null);
+            return instance;
+          }}
+        />,
+        div
+      );
+    });
+    return notificationInstance[position].instance;
   };
 
   remove = (id: string) => {
