@@ -17,6 +17,7 @@ The simplest usage.
 import { Message, Button } from '@arco-design/web-react';
 
 const App = () => {
+
   return (
     <Button
       onClick={() => {

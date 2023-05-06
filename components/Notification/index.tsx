@@ -9,7 +9,13 @@ import { NotificationProps } from './interface';
 import useNotification, { notificationFuncType } from './useNotification';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
-let notificationInstance: object = {};
+
+let notificationInstance: {
+  [key in NotificationProps['position']]?: {
+    instance?: Notification;
+    pending?: Promise<null>;
+  };
+} = {};
 
 export type ConfigProps = {
   maxCount?: number;
@@ -82,34 +88,49 @@ class Notification extends BaseNotification {
       duration,
       ...noticeProps,
     };
-    if (notificationInstance[position]) {
-      const notices = notificationInstance[position].state.notices;
-      if (notices.length >= maxCount) {
-        const updated = notices[0];
-        notices.shift();
-        notificationInstance[position].add({
-          ..._noticeProps,
-          id: updated.id,
-        });
+    const { instance, pending } = notificationInstance[position] || {};
+    if (instance || pending) {
+      const add = () => {
+        const { instance } = notificationInstance[position] || {};
+        const notices = instance.state.notices;
+        if (notices.length >= maxCount) {
+          const updated = notices[0];
+          notices.shift();
+          instance.add({
+            ..._noticeProps,
+            id: updated.id,
+          });
+        } else {
+          instance.add(_noticeProps);
+        }
+        return instance;
+      };
+      if (pending?.then) {
+        pending.then(add);
       } else {
-        notificationInstance[position].add(_noticeProps);
+        add();
       }
-      return notificationInstance[position];
+      return instance;
     }
     const div = document.createElement('div');
-    let instance = null;
+
     (container || document.body).appendChild(div);
-    ReactDOMRender(
-      <Notification
-        ref={(ref) => {
-          notificationInstance[position] = ref;
-          notificationInstance[position].add(_noticeProps);
-          instance = notificationInstance[position];
-          return instance;
-        }}
-      />,
-      div
-    );
+    notificationInstance[position] = {
+      pending: new Promise((resolve) => {
+        ReactDOMRender(
+          <Notification
+            ref={(ref) => {
+              notificationInstance[position] = { instance: ref };
+              notificationInstance[position].instance?.add(_noticeProps);
+              resolve(null);
+              return notificationInstance[position].instance;
+            }}
+          />,
+          div
+        );
+      }),
+    };
+    return instance;
   };
 
   remove = (id: string) => {
