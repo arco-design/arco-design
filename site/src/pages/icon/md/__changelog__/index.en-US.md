@@ -24,6 +24,13 @@
 - Add `peerDependencies` to package.json of `Icon` directory to prevent webpack5 from building warnings.
 - `IconSync` icon adjustment.
 
+## 2.14.0
+
+2021-04-09
+
+### 🆕 Feature
+
+- Refactored the icon packaging script and logic, the global configuration of the icon no longer uses global variables, and switched to context, paving the way for the subsequent richer global configuration.
 
 ## 2.13.0
 

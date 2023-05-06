@@ -9,7 +9,12 @@ import { isUndefined, isNumber } from '../_util/is';
 import useMessage, { messageFuncType } from './useMessage';
 
 const messageTypes = ['info', 'success', 'error', 'warning', 'loading', 'normal'];
-let messageInstance: object = {};
+let messageInstance: {
+  [key in MessageProps['position']]?: {
+    instance?: Message;
+    pending?: Promise<null>;
+  };
+} = {};
 
 export type ConfigProps = {
   maxCount?: number;
@@ -30,47 +35,62 @@ export interface MessageType {
 }
 
 function addInstance(noticeProps: MessageProps) {
-  const _noticeProps = {
+  const _noticeProps: MessageProps = {
     position: 'top',
     duration,
     ...noticeProps,
   };
   const { position, transitionClassNames, transitionTimeout } = _noticeProps;
   let id;
-  if (messageInstance[position]) {
-    const notices = messageInstance[position].state.notices;
-    if (notices.length >= maxCount) {
-      const updated = notices[0];
-      id = updated.id;
-      notices.shift();
-      messageInstance[position].add({
-        ..._noticeProps,
-        id,
+
+  const { instance, pending } = messageInstance[position] || {};
+  if (instance || pending) {
+    const add = () => {
+      const { instance } = messageInstance[position] || {};
+      const notices = instance.state.notices;
+
+      if (notices.length >= maxCount) {
+        const updated = notices[0];
+        id = updated.id;
+        notices.shift();
+        instance.add({ ..._noticeProps, id });
+      } else {
+        id = instance.add(_noticeProps);
+      }
+    };
+
+    if (instance) {
+      add();
+    } else if (pending?.then) {
+      pending.then(() => {
+        add();
+        messageInstance[position].pending = null;
       });
-    } else {
-      id = messageInstance[position].add(_noticeProps);
     }
   } else {
     const div = document.createElement('div');
     (container || document.body).appendChild(div);
 
-    render(
-      <Message
-        transitionClassNames={transitionClassNames}
-        transitionTimeout={transitionTimeout}
-        ref={(instance) => {
-          messageInstance[position] = instance;
-          id = messageInstance[position].add(_noticeProps);
-        }}
-      />,
-      div
-    );
+    messageInstance[position] = {};
+
+    messageInstance[position].pending = new Promise((resolve) => {
+      render(
+        <Message
+          transitionClassNames={transitionClassNames}
+          transitionTimeout={transitionTimeout}
+          ref={(instance) => {
+            messageInstance[position].instance = instance;
+            id = instance.add(_noticeProps);
+            resolve(null);
+          }}
+        />,
+        div
+      );
+    });
   }
 
   const result = () => {
-    if (messageInstance[position]) {
-      messageInstance[position].remove(id);
-    }
+    messageInstance[position]?.instance?.remove(id);
   };
 
   return result;
@@ -106,14 +126,14 @@ class Message extends BaseNotification {
     }
     if (options.getContainer && options.getContainer() !== container) {
       container = options.getContainer();
-      Object.keys(messageInstance).forEach((notice) => messageInstance[notice].clear());
+      Object.values(messageInstance).forEach(({ instance }) => instance?.clear());
       messageInstance = {};
     }
   };
 
   static clear: () => void = () => {
-    Object.keys(messageInstance).forEach((ins) => {
-      messageInstance[ins].clear();
+    Object.values(messageInstance).forEach(({ instance }) => {
+      instance?.clear();
     });
   };
 

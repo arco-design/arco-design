@@ -23,6 +23,13 @@
 - `Icon` 目录的 package.json 添加 `peerDependencies`，防止 webpack5 构建 warning。
 - `IconSync` 图标调整。
 
+## 2.14.0
+
+2021-04-09
+
+### 🆕 Feature
+
+- 重构图标打包脚本和逻辑，图标的全局配置不再使用全局变量，切换为 context，为后续更丰富的全局配置做铺垫。
 
 ## 2.13.0
 
