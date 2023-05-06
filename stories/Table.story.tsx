@@ -272,6 +272,162 @@ function DemoTreeData() {
 
 export const TreeData = () => <DemoTreeData />;
 
+export const DefaultExpand = () => {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'Jane Doe',
+      salary: 23000,
+      address: '32 Park Road, London',
+      email: 'jane.doe@example.com',
+    },
+    {
+      key: '2',
+      name: 'Alisa Ross',
+      salary: 25000,
+      address: '35 Park Road, London',
+      email: 'alisa.ross@example.com',
+    },
+    {
+      key: '3',
+      name: 'Kevin Sandra',
+      salary: 22000,
+      address: '31 Park Road, London',
+      email: 'kevin.sandra@example.com',
+    },
+    {
+      key: '4',
+      name: 'Ed Hellen',
+      salary: 17000,
+      address: '42 Park Road, London',
+      email: 'ed.hellen@example.com',
+    },
+    {
+      key: '5',
+      name: 'William Smith',
+      salary: 27000,
+      address: '62 Park Road, London',
+      email: 'william.smith@example.com',
+    },
+  ];
+
+  const data2 = [
+    {
+      key: '1',
+      name: 'Jane Doe',
+      salary: 23000,
+      address: '32 Park Road, London',
+      email: 'jane.doe@example.com',
+      children: [
+        {
+          key: '2',
+          name: 'Alisa Ross',
+          salary: 25000,
+          address: '35 Park Road, London',
+          email: 'alisa.ross@example.com',
+        },
+      ],
+    },
+    {
+      key: '3',
+      name: 'Kevin Sandra',
+      salary: 22000,
+      address: '31 Park Road, London',
+      email: 'kevin.sandra@example.com',
+      children: [
+        {
+          key: '4',
+          name: 'Alisa Ross',
+          salary: 25000,
+          address: '35 Park Road, London',
+          email: 'alisa.ross@example.com',
+        },
+      ],
+    },
+    {
+      key: '5',
+      name: 'William Smith',
+      salary: 27000,
+      address: '62 Park Road, London',
+      email: 'william.smith@example.com',
+      children: [
+        {
+          key: '6',
+          name: 'Alisa Ross',
+          salary: 25000,
+          address: '35 Park Road, London',
+          email: 'alisa.ross@example.com',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      <Table
+        pagination={{
+          sizeCanChange: true,
+          showTotal: true,
+        }}
+        border={false}
+        columns={columns}
+        data={data}
+        expandedRowRender={(record) => {
+          return `This is No.${record.key} description.`;
+        }}
+        onExpand={(detail, expanded) => {
+          console.log(detail, expanded);
+        }}
+        onExpandedRowsChange={(expandedRows) => {
+          console.log(expandedRows);
+        }}
+        rowKey="key"
+        defaultExpandAllRows
+        rowSelection={{
+          type: 'checkbox',
+          selectedRowKeys: [],
+        }}
+        expandProps={{
+          expandRowByClick: true,
+          rowExpandable: (record) => record.key !== '4',
+        }}
+      />
+      <Table
+        pagination={false}
+        border={false}
+        columns={columns}
+        data={data2}
+        rowKey="key"
+        expandProps={{
+          expandRowByClick: true,
+        }}
+        rowSelection={{
+          type: 'checkbox',
+          selectedRowKeys: [],
+        }}
+      />
+    </>
+  );
+};
+
 const DemoDataClass = () => {
   class Klass {
     key: string;
@@ -371,7 +527,7 @@ export const SortTable = () => {
     {
       title: 'Age',
       // dataIndex: 'age',
-      render: (_, record) => record.age,
+      render: (_: any, record: any) => record.age,
     },
     {
       title: 'Email',
@@ -385,7 +541,7 @@ export const SortTable = () => {
         return {
           ...d,
           defaultSortOrder: 'ascend' as const,
-          sorter: (a, b) => a.age - b.age,
+          sorter: (a: any, b: any) => a.age - b.age,
         };
       }
       return d;
@@ -685,7 +841,7 @@ export const FixedTable = () => {
         wrapper: true,
         cell: true,
       }}
-      columns={columns}
+      columns={columns as any}
       data={data}
     />
   );

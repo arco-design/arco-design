@@ -34,7 +34,7 @@ export default function useExpand<T>(
             'rowExpandable' in expandProps &&
             typeof expandProps.rowExpandable === 'function'
           ) {
-            return expandProps.rowExpandable(originItem);
+            return expandProps.rowExpandable(originItem) && getRowKey(item);
           }
           if (typeof expandedRowRender === 'function') {
             return expandedRowRender(originItem, index) && getRowKey(item);
