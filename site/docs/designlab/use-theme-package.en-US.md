@@ -10,7 +10,7 @@ After the theme is configured and published by the style configuration platform,
 
 ## Install
 
-```
+```bash
 npm i @arco-design/theme-line
 ```
 
@@ -26,7 +26,7 @@ Confirm whether the project needs to use **load on demand** for the style
 
 #### Need to load styles on demand
 
-Introduce the theme package through the [ArcoWebpack plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) or [Arco Vite plugin](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md)
+Introduce the theme package through the [Arco plugins](https://github.com/arco-design/arco-plugins/blob/main/README.md).
 
 Introduce the `@arco-plugins/webpack-react` plugin in the webpack configuration. Specify the theme package name through the `theme` field.
 

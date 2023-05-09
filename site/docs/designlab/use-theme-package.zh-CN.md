@@ -8,7 +8,7 @@
 
 ## 安装
 
-```
+```bash
 npm i @arco-design/theme-line
 ```
 
@@ -24,7 +24,7 @@ npm i @arco-design/theme-line
 
 #### 需要按需加载样式
 
-通过 [Arco Webpack 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) 或 [Arco Vite 插件](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md)
+通过 [Arco 构建插件](https://github.com/arco-design/arco-plugins/blob/main/README.zh-CN.md) 实现。
 
 以 webpack 配置为例，引入 `@arco-plugins/webpack-react` 插件。通过 `theme` 字段指定主题包名。
 
