@@ -86,6 +86,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 * [主题配置](https://arco.design/react/docs/theme)
 * [Figma 设计资源](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
 * [Awesome Arco](https://github.com/arco-design/awesome-arco)
+* [构建插件](https://github.com/arco-design/arco-plugins)
 
 # 生态
 

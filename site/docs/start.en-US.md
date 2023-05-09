@@ -86,6 +86,7 @@ The plugin functions provided by `Arco`'s [official plugin library](https://gith
 
 > For specific usage, please click the plugin link to view the details page
 
+  - [@arco-plugins/unplugin-react 🚧](https://github.com/arco-design/arco-plugins/blob/main/packages/unplugin-react/README.zh-CN.md) Unplugin for Arco react components
   - [@arco-plugins/webpack-react](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-webpack-react/README.md) webpack plugin for Arco react components
   - [@arco-plugins/vite-react](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-react/README.md) vite plugin for Arco react component library
   - [@arco-plugins/vite-vue](https://github.com/arco-design/arco-plugins/blob/main/packages/plugin-vite-vue/README.md) vite plugin for Arco vue component library
