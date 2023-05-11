@@ -70,7 +70,7 @@ export { default as Empty } from './Empty';
 export type { FormProps, FormItemProps, FormListProps, FormInstance, RulesProps } from './Form/interface';
 export { default as Form } from './Form';
 
-export type { RowProps, ColProps } from './Grid/interface';
+export type { RowProps, ColProps, GridProps, GridItemProps } from './Grid/interface';
 export { default as Grid } from './Grid';
 
 export { default as Icon } from './Icon';
