@@ -49,7 +49,7 @@ const App = () => {
     <div>
       <DatePicker
         style={{ width: 200, marginRight: 24, marginBottom: 24 }}
-        disabledDate={(current) => current.isBefore(dayjs())}
+        disabledDate={(current) => current.isBefore(dayjs()) || current.isAfter(dayjs().add(7, 'day'))}
       />
       <RangePicker
         style={{ width: 300, marginRight: 24, marginBottom: 24 }}

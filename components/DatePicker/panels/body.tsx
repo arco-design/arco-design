@@ -29,7 +29,6 @@ export interface PanelBodyProps {
   value?: CalendarValue;
   isSameTime?: (current: Dayjs, target: Dayjs) => boolean;
   mode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
-  originMode?: 'date' | 'week' | 'month' | 'year' | 'quarter';
   format?: string;
   hideNotInViewDates?: boolean;
   valueShowHover?: Dayjs[];
@@ -50,7 +49,6 @@ function Body(props: PanelBodyProps) {
     isSameTime,
     format,
     mode,
-    originMode,
   } = props;
 
   const { utcOffset, timezone, weekStart } = useContext(PickerContext);
@@ -63,7 +61,7 @@ function Body(props: PanelBodyProps) {
   function renderRow(row: RowType[]) {
     return row.map((col, index) => {
       if (col.time) {
-        const disabled = isDisabledDate(col.time, disabledDate, mode, originMode);
+        const disabled = isDisabledDate(col.time, disabledDate, mode);
         const onClickHandler = () => !disabled && onSelectDate(col.time.format(format), col.time);
 
         return (
