@@ -28,6 +28,7 @@ import fillNBSP from '../_util/fillNBSP';
 
 export interface SelectViewCommonProps
   extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
+  id?: string;
   style?: CSSProperties;
   className?: string | string[];
   children?: ReactNode;
@@ -192,6 +193,7 @@ export type SelectViewHandle = {
 const CoreSelectView = React.forwardRef(
   (props: SelectViewProps & { htmlDataAttributes: Record<string, string> }, ref) => {
     const {
+      id,
       style,
       className,
       size,
@@ -553,6 +555,7 @@ const CoreSelectView = React.forwardRef(
         {...htmlDataAttributes}
         ref={refWrapper}
         tabIndex={disabled ? -1 : 0}
+        id={id}
         style={style}
         className={classNameStr}
         // When there is an input box, the keyboard events are handled inside the input box to avoid triggering redundant events in the Chinese input method
@@ -603,7 +606,7 @@ const CoreSelectView = React.forwardRef(
 );
 
 const SelectView = (props: SelectViewProps, ref) => {
-  const { prefixCls, style, className, addBefore, rtl, renderView, ...rest } = props;
+  const { prefixCls, id, style, className, addBefore, rtl, renderView, ...rest } = props;
 
   const refCoreSelectView = useRef<SelectViewHandle>(null);
 
@@ -611,7 +614,7 @@ const SelectView = (props: SelectViewProps, ref) => {
   // const needAddAfter = addAfter !== null && addAfter !== undefined;
   const needAddAfter = false;
   const needWrapper = needAddBefore || needAddAfter;
-  const propsAppliedToRoot = { style, className };
+  const propsAppliedToRoot = { id, style, className };
   const htmlDataAttributes = pickDataAttributes(rest);
 
   useImperativeHandle<any, SelectViewHandle>(ref, () => refCoreSelectView.current);
@@ -620,6 +623,7 @@ const SelectView = (props: SelectViewProps, ref) => {
     <CoreSelectView
       {...props}
       ref={refCoreSelectView}
+      id={needWrapper ? undefined : propsAppliedToRoot.id}
       style={needWrapper ? undefined : propsAppliedToRoot.style}
       className={needWrapper ? undefined : propsAppliedToRoot.className}
       htmlDataAttributes={needWrapper ? {} : htmlDataAttributes}
