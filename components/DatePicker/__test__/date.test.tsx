@@ -102,6 +102,7 @@ describe('DatePicker', () => {
   });
 
   it('showTime', async () => {
+    jest.useRealTimers();
     const component = render(<DatePicker showTime />);
 
     fireEvent.click(component.container.firstChild!);
@@ -135,7 +136,7 @@ describe('DatePicker', () => {
 
     // click now btn
     fireEvent.click(component.find('.arco-picker')[0]);
-    jest.useRealTimers();
+
     await sleep(1000);
     fireEvent.click(component.queryByText('选择时间')!);
 
@@ -167,6 +168,7 @@ describe('DatePicker', () => {
   });
 
   it('hover placeholder', async () => {
+    jest.useRealTimers();
     const component = render(<DatePicker popupVisible />);
 
     function checkPlaceholder(isPlaceholder: boolean) {
@@ -177,7 +179,6 @@ describe('DatePicker', () => {
 
     expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe('');
 
-    jest.useRealTimers();
     await sleep(10);
     // 2020-04-06: mouseenter
     fireEvent.mouseEnter(getDateCell(component, 0, 7));
@@ -212,6 +213,7 @@ describe('DatePicker', () => {
   });
 
   it('shortcuts', async () => {
+    jest.useRealTimers();
     const component = render(
       <DatePicker
         shortcuts={[
@@ -226,7 +228,7 @@ describe('DatePicker', () => {
 
     expect(getInput(component, 0).getAttribute('value')).toBe('');
     expect(component.find('.arco-picker-cell-selected')).toHaveLength(0);
-    jest.useRealTimers();
+
     await sleep(1000);
     // 2020-04-11: shortcuts mouseenter
     fireEvent.mouseEnter(await component.findByText('tomorrow'));
@@ -259,8 +261,9 @@ describe('DatePicker', () => {
   it('onSelect & onChange', async () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
-    const component = render(<DatePicker onSelect={onSelect} onChange={onChange} popupVisible />);
     jest.useRealTimers();
+    const component = render(<DatePicker onSelect={onSelect} onChange={onChange} popupVisible />);
+
     await sleep(10);
     // 2020-04-06
     fireEvent.click(getDateCell(component, 0, 7).querySelector('.arco-picker-date')!);
@@ -274,6 +277,7 @@ describe('DatePicker', () => {
   it('onSelect & onChange (showTime)', async () => {
     const onSelect = jest.fn();
     const onChange = jest.fn();
+    jest.useRealTimers();
     const component = render(
       <DatePicker
         onSelect={onSelect}
@@ -283,7 +287,7 @@ describe('DatePicker', () => {
         popupVisible
       />
     );
-    jest.useRealTimers();
+
     await sleep(10);
     // 2020-04-05
     fireEvent.click(getDateCell(component, 0, 7).querySelector('.arco-picker-date')!);
@@ -317,6 +321,7 @@ describe('DatePicker', () => {
       />
     );
     fireEvent.mouseEnter(component.container.firstChild!);
+
     jest.runAllTimers();
     expect(screen.getAllByText('Custom content').length).toBe(1);
   });
