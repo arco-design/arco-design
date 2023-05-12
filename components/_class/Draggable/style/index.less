@@ -1,6 +1,6 @@
 @import '../../../style/theme/default.less';
 
-@arco-draggable-prefix-cls: ~'arco-draggable';
+@arco-draggable-prefix-cls: ~'@{prefix}-draggable';
 
 .@{arco-draggable-prefix-cls} {
   @keyframes ~'@{prefix}-draggable-item-blink' {
@@ -28,19 +28,19 @@
 
     &-dragover {
       &.@{arco-draggable-prefix-cls}-item-gap-left {
-        box-shadow: -1px 0  rgb(var(~'@{arco-cssvars-prefix}-primary-6'));;
+        box-shadow: -1px 0 rgb(var(~'@{arco-cssvars-prefix}-primary-6'));
       }
 
       &.@{arco-draggable-prefix-cls}-item-gap-right {
-        box-shadow: 1px 0  rgb(var(~'@{arco-cssvars-prefix}-primary-6'));;
+        box-shadow: 1px 0 rgb(var(~'@{arco-cssvars-prefix}-primary-6'));
       }
 
       &.@{arco-draggable-prefix-cls}-item-gap-top {
-        box-shadow: 0 -1px  rgb(var(~'@{arco-cssvars-prefix}-primary-6'));;
+        box-shadow: 0 -1px rgb(var(~'@{arco-cssvars-prefix}-primary-6'));
       }
 
       &.@{arco-draggable-prefix-cls}-item-gap-bottom {
-        box-shadow: 0 1px  rgb(var(~'@{arco-cssvars-prefix}-primary-6'));;
+        box-shadow: 0 1px rgb(var(~'@{arco-cssvars-prefix}-primary-6'));
       }
     }
 
