@@ -546,6 +546,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
+                id="province_input"
                 role="combobox"
                 tabindex="0"
               >
@@ -709,6 +710,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
+                id="post_input"
                 role="combobox"
                 tabindex="0"
               >
@@ -806,6 +808,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+                id="a_b_0_c_input"
                 role="combobox"
                 tabindex="0"
               >
@@ -937,6 +940,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
+                id="treenode_input"
                 role="combobox"
                 tabindex="0"
               >
@@ -2425,6 +2429,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default arco-cascader-disabled"
+                id="province_input"
                 role="combobox"
                 tabindex="-1"
               >
@@ -2591,6 +2596,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default arco-select-disabled"
+                id="post_input"
                 role="combobox"
                 tabindex="-1"
               >
@@ -2690,6 +2696,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default arco-select-disabled"
+                id="a_b_0_c_input"
                 role="combobox"
                 tabindex="-1"
               >
@@ -3902,6 +3909,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     class="arco-select arco-select-single arco-select-size-default"
+                    id="searchForm-gender_input"
                     role="combobox"
                     tabindex="0"
                   >
@@ -5985,6 +5993,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   class="arco-select arco-select-single arco-select-size-default"
+                  id="gender_input"
                   role="combobox"
                   style="flex:1"
                   tabindex="0"
@@ -6098,6 +6107,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
+                id="province_input"
                 role="combobox"
                 tabindex="0"
               >
