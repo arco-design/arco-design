@@ -232,7 +232,6 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
           setPageShowDate(date);
         }}
         disabledDate={disabledDate}
-        originMode="date"
       />
     );
   }
@@ -250,7 +249,6 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
           setPageShowDate(date);
         }}
         disabledDate={disabledDate}
-        originMode="date"
         setPanelMode={setPanelMode}
       />
     );

@@ -102,7 +102,6 @@ function QuarterPicker(props: InnerQuarterPickerProps & PrivateCType) {
           setPageShowDate(date);
         }}
         disabledDate={disabledDate}
-        originMode="quarter"
       />
     );
   }
