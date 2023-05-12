@@ -73,6 +73,7 @@
 |xl|>= 1200px 响应式配置|number |`-`|
 |xs|< 576px 响应式配置|number |`-`|
 |xxl|>= 1600px 响应式配置|number |`-`|
+|xxxl|>= 2000px 响应式栅格|number |`-`|
 
 ### GridRowGutter
 

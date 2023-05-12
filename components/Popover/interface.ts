@@ -8,10 +8,10 @@ export interface PopoverProps extends Omit<TooltipProps, 'mini'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
-   * @zh 标题
-   * @en Title of the popup card
+   * @zh 标题.  函数类型在 `2.48.0` 支持
+   * @en Title of the popup card. Function types are supported in `2.48.0`
    */
-  title?: ReactNode;
+  title?: ReactNode | (() => ReactNode);
   /**
    * @zh 是否禁用
    * @en Whether to disabled

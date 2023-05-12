@@ -8,7 +8,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import { PopconfirmProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import { isNullOrUndefined } from '../_util/is';
+import { isFunction, isNullOrUndefined } from '../_util/is';
 
 const defaultProps: PopconfirmProps = {
   position: 'top',
@@ -124,9 +124,13 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
       <div className={`${prefixCls}-wrapper`}>
         <div className={`${prefixCls}-title`}>
           {icon && <span className={`${prefixCls}-title-icon`}>{icon}</span>}
-          <div className={`${prefixCls}-title-text`}>{title}</div>
+          <div className={`${prefixCls}-title-text`}>{isFunction(title) ? title() : title}</div>
         </div>
-        {hasContent && <div className={`${prefixCls}-inner-content`}>{content}</div>}
+        {hasContent && (
+          <div className={`${prefixCls}-inner-content`}>
+            {isFunction(content) ? content() : content}
+          </div>
+        )}
 
         {focusLock ? (
           <FocusLock
@@ -173,7 +177,7 @@ function Popconfirm(baseProps: PropsWithChildren<PopconfirmProps>, ref) {
       trigger={trigger}
       escToClose={escToClose}
       popupVisible={popupVisible}
-      content={renderPopconfirmContent()}
+      content={renderPopconfirmContent}
       unmountOnExit={unmountOnExit}
       blurToHide={blurToHide}
       popupHoverStay

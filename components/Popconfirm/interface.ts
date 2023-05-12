@@ -32,16 +32,16 @@ export interface PopconfirmProps {
     | 'rt'
     | 'rb';
   /**
-   * @zh 标题
-   * @en Title of Popconfirm
+   * @zh 标题。 函数类型在 `2.48.0` 支持
+   * @en Title of Popconfirm. Function types are supported in `2.48.0`
    */
-  title?: ReactNode;
+  title?: ReactNode | (() => ReactNode);
   /**
-   * @zh 内容
-   * @en Content of Popconfirm
+   * @zh 内容.函数类型在 `2.48.0` 支持
+   * @en Content of Popconfirm   Function types are supported in `2.48.0`
    * @version 2.44.0
    */
-  content?: ReactNode;
+  content?: ReactNode | (() => ReactNode);
   /**
    * @zh 是否禁用
    * @en whether to disabled

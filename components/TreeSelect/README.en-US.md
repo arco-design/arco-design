@@ -61,8 +61,19 @@ Can choose tree structure data.Only Single choice is supports.
 |onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onSearch|Callback when searching data. When undefined, it will search in the data already|(inputValue: string) => void |`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|(visible: boolean) => void |`-`|-|
+|renderFormat|Customize the content that will be displayed in the Select.If the `Option` corresponding to `value` does not exist, the first parameter will be `null`|(option: [NodeProps](tree#treenode) \| null, value: string \| [LabelValue](#labelvalue)) => ReactNode |`-`|2.46.0|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
 |triggerElement|Customize the trigger element|ReactNode \| ((params: { value: any }) => ReactNode) |`-`|`() => ReactNode` in 2.31.0|
+
+### LabelValue
+
+```js
+export type LabelValue = {
+  label: ReactNode;
+  value: string;
+  disabled?: boolean;
+};
+```
 
 ### FieldNamesType
 
