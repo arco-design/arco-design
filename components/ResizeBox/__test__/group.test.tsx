@@ -36,6 +36,7 @@ jest.mock('resize-observer-polyfill', () => ({
 }));
 
 beforeEach(() => {
+  jest.useFakeTimers();
   Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { value: wrapperRef.offsetWidth });
   Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
     value: wrapperRef.offsetHeight,
@@ -43,6 +44,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  jest.runAllTimers();
   Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
     value: HTMLElement.prototype.offsetWidth,
   });
@@ -80,6 +82,8 @@ describe('ResizeBox Split Group', () => {
         })}
       />
     );
+
+    jest.runAllTimers();
 
     expect(wrapper.find('.arco-typography')).toHaveLength(2);
     expect(wrapper.find(`.${triggerPrefixCls}`)).toHaveLength(1);
@@ -184,20 +188,23 @@ describe('ResizeBox Split Group', () => {
         })}
       />
     );
+
+    jest.runAllTimers();
+
     const panesEl = wrapper.find(`.${groupPrefixCls}-pane`);
     const offsetWidth = wrapperRef.offsetWidth;
     const triggerWidth = triggerContentRect.width;
 
     const averageWidth = (offsetWidth - offsetWidth * 0.3 - 80) / 2;
 
-    expect(panesEl[0].style.flexBasis).toEqual(`calc(10% - 0px)`);
+    expect(panesEl[0].style.flexBasis).toEqual(`calc(10% - ${triggerWidth / 2}px)`);
 
-    expect(panesEl[1].style.flexBasis).toEqual(`calc(10% - 0px)`);
+    expect(panesEl[1].style.flexBasis).toEqual(`calc(10% - ${triggerWidth}px)`);
 
-    expect(panesEl[2].style.flexBasis).toEqual(`calc(20% - 0px)`);
+    expect(panesEl[2].style.flexBasis).toEqual(`calc(20% - ${triggerWidth}px)`);
 
     expect(panesEl[3].style.flexBasis).toEqual(
-      `calc(${(averageWidth / offsetWidth) * 100}% - ${triggerWidth / 2}px)`
+      `calc(${(averageWidth / offsetWidth) * 100}% - ${triggerWidth}px)`
     );
 
     expect(panesEl[4].style.flexBasis).toEqual(

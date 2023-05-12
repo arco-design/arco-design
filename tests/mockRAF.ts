@@ -1,3 +1,6 @@
+const originRequestAnimationFrame = window.requestAnimationFrame;
+const originCancelAnimationFrame = window.cancelAnimationFrame;
+
 class RequestAnimationFrameMockSession {
   handleCounter = 0;
 
@@ -27,9 +30,14 @@ class RequestAnimationFrameMockSession {
     while (this.queue.size > 0) this.triggerNextAnimationFrame(time);
   }
 
-  reset() {
+  resetQueue() {
     this.queue.clear();
     this.handleCounter = 0;
+  }
+
+  reset() {
+    window.requestAnimationFrame = originRequestAnimationFrame;
+    window.cancelAnimationFrame = originCancelAnimationFrame;
   }
 }
 

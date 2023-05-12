@@ -11,6 +11,10 @@ function getData(size: number) {
 
 describe('VirtualList', () => {
   beforeEach(() => {
+    requestAnimationFrameMock.resetQueue();
+  });
+
+  afterAll(() => {
     requestAnimationFrameMock.reset();
   });
 

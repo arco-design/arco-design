@@ -42,6 +42,13 @@ function getDataSourceAndRender(count = 100): Pick<ListProps, 'dataSource' | 're
 
 describe('List', () => {
   beforeEach(() => {
+    jest.useFakeTimers();
+    requestAnimationFrameMock.resetQueue();
+  });
+  afterEach(() => {
+    jest.runAllTimers();
+  });
+  afterAll(() => {
     requestAnimationFrameMock.reset();
   });
 
@@ -131,6 +138,8 @@ describe('List', () => {
 
     fireEvent.scroll(wrapper.find('.arco-list')[0], { target: { scrollY: 100 } });
 
+    jest.runAllTimers();
+
     expect(onReachBottom).toBeCalled();
   });
 
@@ -142,6 +151,8 @@ describe('List', () => {
     );
 
     fireEvent.scroll(wrapper.find('.arco-list')[0], { target: { scrollY: 100 } });
+
+    jest.runAllTimers();
 
     expect(onListScroll).toBeCalled();
   });
