@@ -1,3 +1,11 @@
+## 2.48.0
+
+2023-05-12
+
+### 🐛 BugFix
+
+- Adjust the drag style class name of `InputTag` component `arco-draggable` => `@{prefix}-draggable`([#1963](https://github.com/arco-design/arco-design/pull/1963))
+
 ## 2.47.1
 
 2023-04-21

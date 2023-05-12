@@ -1,3 +1,11 @@
+## 2.48.0
+
+2023-05-12
+
+### 💎 功能优化
+
+- 导出 `Grid` 组件的 `GridProps`, `GridItemProps` 类型定义。([#1957](https://github.com/arco-design/arco-design/pull/1957))
+
 ## 2.47.2
 
 2023-05-06

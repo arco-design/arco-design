@@ -1,3 +1,15 @@
+## 2.48.0
+
+2023-05-12
+
+### 💎 Enhancement
+
+- Optimize `ResizeObserver` monitoring logic to avoid `ResizeObserver loop limit exceeded` error reporting in some scenarios([#1962](https://github.com/arco-design/arco-design/pull/1962))
+
+### 🆕 Feature
+
+- Add Turkish language([#1942](https://github.com/arco-design/arco-design/pull/1942))
+
 ## 2.45.0
 
 2023-02-17

@@ -1,3 +1,11 @@
+## 2.48.0
+
+2023-05-12
+
+### 🆕 Feature
+
+- `Popover` component supports `title`, `content` properties of function type([#1964](https://github.com/arco-design/arco-design/pull/1964))
+
 ## 2.23.5
 
 2021-10-29

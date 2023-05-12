@@ -1,3 +1,15 @@
+## 2.48.0
+
+2023-05-12
+
+### 💎 功能优化
+
+- 优化 `ResizeObserver` 监听逻辑，避免某些场景下出现 `ResizeObserver loop limit exceeded` 报错([#1962](https://github.com/arco-design/arco-design/pull/1962))
+
+### 🆕 功能升级
+
+- 支持土耳其语([#1942](https://github.com/arco-design/arco-design/pull/1942))
+
 ## 2.45.0
 
 2023-02-17

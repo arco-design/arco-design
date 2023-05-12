@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.48.0
+
+2023-05-12
+
+### 💎 功能优化
+
+- 优化 `ResizeObserver` 监听逻辑，避免某些场景下出现 `ResizeObserver loop limit exceeded` 报错([#1962](https://github.com/arco-design/arco-design/pull/1962))
+- 导出 `Grid` 组件的 `GridProps`, `GridItemProps` 类型定义。([#1957](https://github.com/arco-design/arco-design/pull/1957))
+
+### 🆕 功能升级
+
+- `Popover` 组件支持函数类型的 `title` , `content` 属性([#1964](https://github.com/arco-design/arco-design/pull/1964))
+- `Popconfirm` 组件支持函数类型的 `title` , `content` 属性([#1964](https://github.com/arco-design/arco-design/pull/1964))
+- 支持土耳其语([#1942](https://github.com/arco-design/arco-design/pull/1942))
+
+### 🐛 问题修复
+
+- 调整 `InputTag` 组件的拖拽样式类名 `arco-draggable` => `@{prefix}-draggable`([#1963](https://github.com/arco-design/arco-design/pull/1963))
+- 修复 `DatePicker` 组件 `disabledDate` 在快捷选择面板内，禁用掉不应该禁用日期的问题。([#1961](https://github.com/arco-design/arco-design/pull/1961))
+
 ## 2.47.2
 
 2023-05-06

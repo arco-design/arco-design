@@ -1,3 +1,11 @@
+## 2.48.0
+
+2023-05-12
+
+### 💎 Enhancement
+
+- Export the `GridProps`, `GridItemProps` typedefs for the `Grid` component.([#1957](https://github.com/arco-design/arco-design/pull/1957))
+
 ## 2.47.2
 
 2023-05-06

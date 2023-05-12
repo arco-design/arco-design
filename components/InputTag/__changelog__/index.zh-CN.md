@@ -1,3 +1,11 @@
+## 2.48.0
+
+2023-05-12
+
+### 🐛 问题修复
+
+- 调整 `InputTag` 组件的拖拽样式类名 `arco-draggable` => `@{prefix}-draggable`([#1963](https://github.com/arco-design/arco-design/pull/1963))
+
 ## 2.47.1
 
 2023-04-21

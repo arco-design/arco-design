@@ -46,7 +46,7 @@ function App() {
       >
         <Element />
       </Trigger>
-      <Trigger style={{top: 200}} popup={() => <Popup />} trigger="click" position="bottom" classNames="zoomInTop">
+      <Trigger  popup={() => <Popup />} trigger="click" position="bottom" classNames="zoomInTop">
         <Button>Click me</Button>
       </Trigger>
       <Trigger popup={() => <Popup />} trigger="focus" position="top" classNames="zoomInBottom">

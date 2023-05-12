@@ -1,3 +1,11 @@
+## 2.48.0
+
+2023-05-12
+
+### 🐛 BugFix
+
+- Fix `DatePicker` component `disabledDate` in the shortcut selection panel, disabling the date should not be disabled.([#1961](https://github.com/arco-design/arco-design/pull/1961))
+
 ## 2.47.0
 
 2023-04-14

@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.48.0
+
+2023-05-12
+
+### 💎 Enhancement
+
+- Optimize `ResizeObserver` monitoring logic to avoid `ResizeObserver loop limit exceeded` error reporting in some scenarios([#1962](https://github.com/arco-design/arco-design/pull/1962))
+- Export the `GridProps`, `GridItemProps` typedefs for the `Grid` component.([#1957](https://github.com/arco-design/arco-design/pull/1957))
+
+### 🆕 Feature
+
+- `Popover` component supports `title`, `content` properties of function type([#1964](https://github.com/arco-design/arco-design/pull/1964))
+- `Popconfirm` component supports `title`, `content` properties of function type([#1964](https://github.com/arco-design/arco-design/pull/1964))
+- Add Turkish language([#1942](https://github.com/arco-design/arco-design/pull/1942))
+
+### 🐛 BugFix
+
+- Adjust the drag style class name of `InputTag` component `arco-draggable` => `@{prefix}-draggable`([#1963](https://github.com/arco-design/arco-design/pull/1963))
+- Fix `DatePicker` component `disabledDate` in the shortcut selection panel, disabling the date should not be disabled.([#1961](https://github.com/arco-design/arco-design/pull/1961))
+
 ## 2.47.2
 
 2023-05-06

@@ -81,7 +81,7 @@ export default {
     placeholders: {
       date: ['Başlangıç tarihi', 'Bitiş tarihi'],
       week: ['Başlangıç haftası', 'Bitiş haftası'],
-      month: [  'Başlangıç ayı', 'Bitiş ayı'],
+      month: ['Başlangıç ayı', 'Bitiş ayı'],
       year: ['Başlangıç yılı', 'Bitiş yılı'],
       quarter: ['Başlangıç çeyrek', 'Bitiş çeyrek'],
     },
