@@ -23,7 +23,7 @@
 |virtualized|表格开启虚拟滚动，用于处理大数据场景。( 注意：虚拟滚动会自动关闭对树形数据的支持 )|boolean |`-`|-|
 |indentSize|树形数据每个层级向左偏移的像素|number |`15`|-|
 |childrenColumnName|树形数据在 `data` 中的字段名，默认是 `children`|string |`children`|-|
-|onChange|分页、排序、筛选时的回调|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterResult](#sorterresult),filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`|
+|onChange|分页、排序、筛选时的回调|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterInfo](#sorterinfo),filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`|
 |pagePosition|设置分页器的位置，有四个方位 `右下` `左下` `右上` `左上` `上中` `下中`|'br' \| 'bl' \| 'tr' \| 'tl' \| 'topCenter' \| 'bottomCenter' |`br`|-|
 |size|表格尺寸，分为 默认，`默认` `中` `小` `迷你` 四个尺寸|'default' \| 'middle' \| 'small' \| 'mini' |`-`|-|
 |noDataElement|没有数据的时候显示的元素|string \| ReactNode |`-`|-|
@@ -113,7 +113,7 @@
 |filters|筛选项，需要配合 `onFilter` 或者 `onChange` 使用|{text?: ReactNode;value?: any;[key: string]: any;}[] |`[]`|-|
 |headerCellStyle|表头单元格自定义样式|CSSProperties |`-`|-|
 |key|React的 key值，如果不指定，默认取 `dataIndex` 的值|string \| number |`-`|-|
-|sorter|排序函数，如果想要服务端排序或者添加更多自定义操作，设置为true，利用`onChange`函数进行自定义排序|[SorterFn](#sorterfn) \| boolean \| { compare: [SorterFn](#sorterfn); multiple?: number } |`-`|-|
+|sorter|排序函数，如果想要服务端排序或者添加更多自定义操作，设置为true，利用`onChange`函数进行自定义排序|[SorterFn](#sorterfn) \| boolean \| { compare?: [SorterFn](#sorterfn); multiple?: number } |`-`|-|
 |width|列宽度|number \| string |`-`|-|
 |filterDropdown|自定义筛选框。|(props: {filterKeys?: string[];setFilterKeys?: (filterKeys: string[], callback?: Function) => void;confirm?: Function;}) => ReactNode |`-`|-|
 |onCell|设置表身单元格的各项事件回调|(record, index) => [RowCallbackProps](#rowcallbackprops) |`-`|-|
@@ -160,12 +160,14 @@ export type ComponentsProps = {
 };
 ```
 
-### SorterResult
+### SorterInfo
 
 ```js
-export interface SorterResult {
+export interface SorterInfo {
   direction?: SortDirection;
-  field?: string;
+  field?: string | number;
+  sorterFn?: SorterFn;
+  priority?: number;
 }
 ```
 
@@ -173,6 +175,12 @@ export interface SorterResult {
 
 ```js
 export declare type SortDirection = "descend" | "ascend";
+```
+
+### SorterFn
+
+```js
+export type SorterFn = (a: any, b: any) => number;
 ```
 
 ### RowCallbackProps
@@ -196,12 +204,6 @@ export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
   "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
 >;
-```
-
-### SorterFn
-
-```js
-export type SorterFn = (a: any, b: any) => number;
 ```
 
 ### 隐藏分页

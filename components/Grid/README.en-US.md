@@ -73,6 +73,7 @@ Grid can effectively ensure the consistency and logic of the page, strengthen te
 |xl|>= 1200px responsive configuration|number |`-`|
 |xs|< 576px responsive configuration|number |`-`|
 |xxl|>= 1600px responsive configuration|number |`-`|
+|xxxl|`screen >= 2000px`|number |`-`|
 
 ### GridRowGutter
 

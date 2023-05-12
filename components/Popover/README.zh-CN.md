@@ -25,9 +25,9 @@
 |position|弹出框的方位，有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|触发方式|[TriggerProps](trigger#trigger)['trigger'] |`hover`|-|
 |content|弹出的内容|ReactNode |`-`|-|
-|title|标题|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |triggerProps|可以接受所有 `Trigger` 组件的参数|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |getPopupContainer|弹出框挂载的节点|(node: HTMLElement) => Element |`-`|-|
 |onVisibleChange|显示或隐藏时触发的回调|(visible: boolean) => void |`-`|-|
+|title|标题.函数类型在 `2.48.0` 支持|ReactNode \| (() => ReactNode) |`-`|-|

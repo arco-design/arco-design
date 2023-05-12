@@ -23,7 +23,7 @@ Used for data collection, display, analysis, and processing.
 |virtualized|The table enables virtual scrolling for processing big data scenarios.(Note: Virtual scrolling will automatically turn off support for tree data)|boolean |`-`|-|
 |indentSize|The pixel offset to the left of each level of the tree data|number |`15`|-|
 |childrenColumnName|The field name of the tree data in `data`, default is `children`|string |`children`|-|
-|onChange|Callback when pagination, sorting, and filtering changes|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterResult](#sorterresult),filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`|
+|onChange|Callback when pagination, sorting, and filtering changes|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterInfo](#sorterinfo),filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`|
 |pagePosition|Set the position of the pagination, there are six positions `bottom right` `bottom left` `top right` `top left` `top center` `bottom center`|'br' \| 'bl' \| 'tr' \| 'tl' \| 'topCenter' \| 'bottomCenter' |`br`|-|
 |size|The table size is divided into four sizes, `default` `medium` `small` `mini`|'default' \| 'middle' \| 'small' \| 'mini' |`-`|-|
 |noDataElement|Element to be displayed when there is no data|string \| ReactNode |`-`|-|
@@ -113,7 +113,7 @@ The column describes the data object and is an item in `columns`.
 |filters|Filter items, need to be used with `onFilter` or `onChange`|{text?: ReactNode;value?: any;[key: string]: any;}[] |`[]`|-|
 |headerCellStyle|Table header cell style|CSSProperties |`-`|-|
 |key|React key value, if not specified, the default value of `dataIndex` is taken|string \| number |`-`|-|
-|sorter|Sorting function, if you want server-side sorting or adding more custom operations, set to true and use the `onChange` function for custom sorting|[SorterFn](#sorterfn) \| boolean \| { compare: [SorterFn](#sorterfn); multiple?: number } |`-`|-|
+|sorter|Sorting function, if you want server-side sorting or adding more custom operations, set to true and use the `onChange` function for custom sorting|[SorterFn](#sorterfn) \| boolean \| { compare?: [SorterFn](#sorterfn); multiple?: number } |`-`|-|
 |width|Column width|number \| string |`-`|-|
 |filterDropdown|Custom filter popup box.|(props: {filterKeys?: string[];setFilterKeys?: (filterKeys: string[], callback?: Function) => void;confirm?: Function;}) => ReactNode |`-`|-|
 |onCell|Set the event callback of the table body cell|(record, index) => [RowCallbackProps](#rowcallbackprops) |`-`|-|
@@ -160,12 +160,14 @@ export type ComponentsProps = {
 };
 ```
 
-### SorterResult
+### SorterInfo
 
 ```js
-export interface SorterResult {
+export interface SorterInfo {
   direction?: SortDirection;
-  field?: string;
+  field?: string | number;
+  sorterFn?: SorterFn;
+  priority?: number;
 }
 ```
 
@@ -173,6 +175,12 @@ export interface SorterResult {
 
 ```js
 export declare type SortDirection = "descend" | "ascend";
+```
+
+### SorterFn
+
+```js
+export type SorterFn = (a: any, b: any) => number;
 ```
 
 ### RowCallbackProps
@@ -196,12 +204,6 @@ export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
   "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
 >;
-```
-
-### SorterFn
-
-```js
-export type SorterFn = (a: any, b: any) => number;
 ```
 
 ### Hide Pagination

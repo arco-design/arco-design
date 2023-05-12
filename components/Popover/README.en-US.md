@@ -25,9 +25,9 @@ A floating card popped by hovering, focusing, or clicking on a element.
 |position|The position of the popup relative to the target.|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|Trigger mode|[TriggerProps](trigger#trigger)['trigger'] |`hover`|-|
 |content|The content shown in popup|ReactNode |`-`|-|
-|title|Title of the popup card|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |triggerProps|The Props of the `Trigger` component|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |getPopupContainer|The parent node which the popup will be rendered to.|(node: HTMLElement) => Element |`-`|-|
 |onVisibleChange|Callback when the visibility of the popup is changed|(visible: boolean) => void |`-`|-|
+|title|Title of the popup card. Function types are supported in `2.48.0`|ReactNode \| (() => ReactNode) |`-`|-|

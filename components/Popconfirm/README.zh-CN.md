@@ -24,16 +24,16 @@
 |position|弹出框的方位，有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`top`|-|
 |trigger|触发方式|[TriggerProps](trigger#trigger)['trigger'] |`click`|-|
 |cancelText|取消按钮文字|ReactNode |`-`|-|
-|content|内容|ReactNode |`-`|2.44.0|
 |icon|标题前的图标|ReactNode |`<IconExclamationCircleFill />`|-|
 |okText|确认按钮文字|ReactNode |`-`|-|
-|title|标题|ReactNode |`-`|-|
 |cancelButtonProps|取消按钮的参数，可接受 `Button` 组件的所有参数|ButtonProps |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |okButtonProps|确定按钮的参数，可接受 `Button` 组件的所有参数|ButtonProps |`-`|-|
 |onOk|点击确认按钮的回调函数。回调函数 `event` 参数在 `2.29.0` 支持|(e: React.MouseEvent) =&gt; Promise&lt;any&gt; \| void |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |triggerProps|可以接受所有 Trigger 的参数|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
+|content|内容.函数类型在 `2.48.0` 支持|ReactNode \| (() => ReactNode) |`-`|2.44.0|
 |getPopupContainer|弹出挂载的节点|(node: HTMLElement) => Element |`-`|-|
 |onCancel|点击取消按钮的回调函数。 回调函数 `event` 参数在 `2.29.0` 支持|(e: React.MouseEvent) => void |`-`|-|
 |onVisibleChange|弹出打开和关闭触发的回调|(visible: boolean) => void |`-`|-|
+|title|标题。 函数类型在 `2.48.0` 支持|ReactNode \| (() => ReactNode) |`-`|-|

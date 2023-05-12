@@ -4,6 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import { PopoverProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import cs from '../_util/classNames';
+import { isFunction } from '../_util/is';
 
 const defaultProps: PopoverProps = {
   position: 'top',
@@ -49,12 +50,16 @@ function Popover(baseProps: PropsWithChildren<PopoverProps>, ref) {
       getPopupContainer={getPopupContainer}
       position={position}
       trigger={trigger}
-      content={
+      content={() => (
         <div className={cs(`${prefixCls}-inner`, { [`${prefixCls}-inner-rtl`]: rtl })}>
-          {title ? <div className={`${prefixCls}-title`}>{title}</div> : null}
-          <div className={`${prefixCls}-inner-content`}>{content}</div>
+          {title ? (
+            <div className={`${prefixCls}-title`}>{isFunction(title) ? title() : title}</div>
+          ) : null}
+          <div className={`${prefixCls}-inner-content`}>
+            {isFunction(content) ? content() : content}
+          </div>
         </div>
-      }
+      )}
       popupHoverStay
       unmountOnExit={unmountOnExit}
       triggerProps={triggerProps}
