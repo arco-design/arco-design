@@ -56,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arco-design/arco-design.git"
+    "url": "https://github.com/arco-design/arco-design.git"
   },
   "author": "ArcoDesign Team",
   "license": "MIT",
