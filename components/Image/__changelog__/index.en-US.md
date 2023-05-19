@@ -1,3 +1,11 @@
+## 2.48.1
+
+2023-05-19
+
+### 🐛 BugFix
+
+- Fix the bug that the component UI is not actually updated after the `Image.previewProps` field is updated.([#1976](https://github.com/arco-design/arco-design/pull/1976))
+
 ## 2.47.0
 
 2023-04-14

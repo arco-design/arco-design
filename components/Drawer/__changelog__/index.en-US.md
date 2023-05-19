@@ -1,3 +1,11 @@
+## 2.48.1
+
+2023-05-19
+
+### 🐛 BugFix
+
+- Fix the bug that internal popup component `zIndex` is calculated incorrectly when `Drawer` is mounted for the first time.([#1977](https://github.com/arco-design/arco-design/pull/1977))
+
 ## 2.46.3
 
 2023-04-07

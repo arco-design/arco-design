@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.48.1
+
+2023-05-19
+
+### 🐛 问题修复
+
+- 修复 `Drawer` 第一次挂载时，内部弹出型组件 `zIndex` 计算错误的 bug。([#1977](https://github.com/arco-design/arco-design/pull/1977))
+- 修复 `Modal` 第一次挂载时，内部弹出型组件 `Modal` 计算错误的 bug。([#1977](https://github.com/arco-design/arco-design/pull/1977))
+- 修复 `Image.previewProps` 字段更新后组件 UI 实际未更新的 bug。([#1976](https://github.com/arco-design/arco-design/pull/1976))
+
 ## 2.48.0
 
 2023-05-12

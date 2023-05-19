@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.48.1
+
+2023-05-19
+
+### 🐛 BugFix
+
+- Fix the bug that internal popup component `zIndex` is calculated incorrectly when `Drawer` is mounted for the first time.([#1977](https://github.com/arco-design/arco-design/pull/1977))
+- Fix the bug that internal popup component `zIndex` is calculated incorrectly when `Modal` is mounted for the first time.([#1977](https://github.com/arco-design/arco-design/pull/1977))
+- Fix the bug that the component UI is not actually updated after the `Image.previewProps` field is updated.([#1976](https://github.com/arco-design/arco-design/pull/1976))
+
 ## 2.48.0
 
 2023-05-12
