@@ -192,7 +192,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     };
   }, [visible, escToExit]);
 
-  useEffect(() => {
+  const initPopupZIndex = () => {
     if (visible && popupZIndex === undefined) {
       if (modalWrapperRef.current) {
         // 根据wrapper的zindex，设置内部所有弹出型组件的zindex。
@@ -202,7 +202,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         }
       }
     }
-  }, [visible, popupZIndex]);
+  };
 
   const renderFooter = () => {
     if (footer === null) return;
@@ -360,7 +360,10 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             'prefixCls',
           ])}
           tabIndex={!innerFocusLock || !innerAutoFocus ? -1 : null}
-          ref={modalWrapperRef}
+          ref={(node) => {
+            modalWrapperRef.current = node;
+            initPopupZIndex();
+          }}
           className={cs(
             `${prefixCls}-wrapper`,
             {
