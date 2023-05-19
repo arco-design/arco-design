@@ -83,12 +83,9 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   });
 
   // Props passed directly into Preview component
-  const availablePreviewProps = omit(previewProps, [
-    'visible',
-    'defaultVisible',
-    'src',
-    'onVisibleChange',
-  ]);
+  const availablePreviewProps = useMemo(() => {
+    return omit(previewProps, ['visible', 'defaultVisible', 'src', 'onVisibleChange']);
+  }, [previewProps]);
 
   const prefixCls = getPrefixCls('image');
   const isControlled = !isUndefined(previewProps.visible);
@@ -155,18 +152,15 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   useEffect(() => {
     if (!previewGroup) return;
-    const unRegister = registerPreviewUrl(id, previewSrc, preview);
-    const unRegisterPreviewProps = registerPreviewProps(id, availablePreviewProps);
-    return () => {
-      unRegister(id);
-      unRegisterPreviewProps(id);
-    };
-  }, [previewGroup]);
+    const unRegister = registerPreviewProps(id, availablePreviewProps);
+    return () => unRegister(id);
+  }, [id, previewGroup, availablePreviewProps]);
 
   useEffect(() => {
     if (!previewGroup) return;
-    registerPreviewUrl(id, previewSrc, preview);
-  }, [previewSrc, preview, previewGroup]);
+    const unRegister = registerPreviewUrl(id, previewSrc, preview);
+    return () => unRegister(id);
+  }, [id, previewGroup, previewSrc, preview]);
 
   const defaultError = (
     <div className={`${prefixCls}-error`}>
