@@ -36,7 +36,11 @@ describe('Modal popup test', () => {
     jest.runAllTimers();
 
     expect($('.arco-select-popup').length).toBe(1);
-    expect($('.arco-select-popup')[0].parentNode.style['z-index']).toBe('1050');
+    const zIndex = +window.getComputedStyle(
+      document.querySelector('.arco-modal-wrapper') as HTMLElement,
+      null
+    )?.zIndex;
+    expect(Number($('.arco-select-popup')[0].parentNode.style['z-index'])).toBe(zIndex + 1);
     // dom插入在 content下。
     expect($('.arco-modal-content .arco-select-popup').length).toBe(1);
   });

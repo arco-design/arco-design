@@ -108,6 +108,15 @@ function Drawer(baseProps: DrawerProps, ref) {
   }, []);
 
   useEffect(() => {
+    if (autoFocus && visible) {
+      // https://github.com/arco-design/arco-design/pull/1439
+      if (contains(document.body, drawerWrapperRef.current)) {
+        drawerWrapperRef.current?.focus();
+      }
+    }
+  }, [visible, autoFocus]);
+
+  const initPopupZIndex = () => {
     if (visible && popupZIndex === undefined) {
       if (drawerWrapperRef.current) {
         // Set zIndex for nested drawer components based on zIndex of wrapper
@@ -117,16 +126,7 @@ function Drawer(baseProps: DrawerProps, ref) {
         }
       }
     }
-  }, [visible, popupZIndex]);
-
-  useEffect(() => {
-    if (autoFocus && visible) {
-      // https://github.com/arco-design/arco-design/pull/1439
-      if (contains(document.body, drawerWrapperRef.current)) {
-        drawerWrapperRef.current?.focus();
-      }
-    }
-  }, [visible, autoFocus]);
+  };
 
   const element = (
     <div className={`${prefixCls}-scroll`}>
@@ -142,7 +142,10 @@ function Drawer(baseProps: DrawerProps, ref) {
       )}
 
       <div
-        ref={contentWrapperRef}
+        ref={(node) => {
+          contentWrapperRef.current = node;
+          initPopupZIndex();
+        }}
         style={bodyStyle}
         className={cs(`${prefixCls}-content`, {
           [`${prefixCls}-content-nofooter`]: footer === null,
