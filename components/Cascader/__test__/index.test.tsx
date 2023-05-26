@@ -89,7 +89,7 @@ describe('Cascader basic test', () => {
       'shanghaishi',
     ]);
 
-    expect(wrapper.find('input')[0].getAttribute('value')).toBe('上海 / 上海市');
+    expect(wrapper.querySelector('.arco-cascader-view-value')).toHaveTextContent('上海 / 上海市');
     // 消失有动画的延时
     jest.runAllTimers();
     expect(mockFn).toHaveBeenCalledWith(false); // 传入参数false
@@ -103,7 +103,7 @@ describe('Cascader basic test', () => {
     fireEvent.click(
       list1.querySelector(`${prefixCls}-list-item ${prefixCls}-list-item-label`) as Element
     );
-    expect(wrapper.querySelector('input').getAttribute('value')).toBe('上海');
+    expect(wrapper.querySelector('.arco-cascader-view-value')).toHaveTextContent('上海');
   });
 });
 
@@ -121,7 +121,7 @@ describe('support clear correctly', () => {
 
   // 默认选中值正确
   it('set defaultValue correctly', () => {
-    expect(wrapper.querySelector('input').getAttribute('value')).toBe('上海 / 上海市');
+    expect(wrapper.querySelector('.arco-cascader-view-value')).toHaveTextContent('上海 / 上海市');
     fireEvent.click(wrapper.find(prefixCls)[0]);
 
     expect(wrapper.find('.arco-cascader-list-column')).toHaveLength(2);

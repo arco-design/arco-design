@@ -484,7 +484,7 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
               placeholder="Select city"
               style="width:100%;pointer-events:none"
               tabindex="-1"
-              value="Beijing"
+              value=""
             />
             <span
               class="arco-select-view-value"
@@ -608,7 +608,7 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
               placeholder="Select city"
               style="width:100%;pointer-events:none"
               tabindex="-1"
-              value="Beijing"
+              value=""
             />
             <span
               class="arco-select-view-value"
@@ -1822,7 +1822,7 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
             placeholder="Please select"
             style="width:100%;pointer-events:none"
             tabindex="-1"
-            value="Beijing"
+            value=""
           />
           <span
             class="arco-select-view-value"
@@ -1952,7 +1952,7 @@ exports[`renders Select/demo/options.md correctly 1`] = `
             placeholder="Select city"
             style="width:100%;pointer-events:none"
             tabindex="-1"
-            value="Beijing"
+            value=""
           />
           <span
             class="arco-select-view-value"
@@ -2141,7 +2141,7 @@ exports[`renders Select/demo/relative.md correctly 1`] = `
             placeholder="Select Province"
             style="width:100%;pointer-events:none"
             tabindex="-1"
-            value="Beijing"
+            value=""
           />
           <span
             class="arco-select-view-value"

@@ -94,15 +94,15 @@ describe('Select', () => {
       </Select>
     );
 
-    const eleInput = wrapper.querySelector('input');
-    expect(eleInput.getAttribute('value')).toBe('Option 1');
+    const eleValueSpan = wrapper.querySelector('.arco-select-view-value');
+    expect(eleValueSpan).toHaveTextContent('Option 1');
 
     fireEvent.click(wrapper.querySelector('.arco-select'));
     await sleep(100);
     expect(wrapper.querySelectorAll('.arco-select-popup')).toHaveLength(1);
 
     fireEvent.click(wrapper.querySelectorAll('.arco-select-option')[2]);
-    expect(eleInput.getAttribute('value')).toBe('Option 3');
+    expect(eleValueSpan).toHaveTextContent('Option 3');
     expect(onChange.mock.calls.length).toBe(1);
   });
 
@@ -201,10 +201,9 @@ describe('Select', () => {
         renderFormat={(option) => `${option.value} - ${option.children}`}
       />
     );
-    const eleInput = wrapper.querySelector('input');
-    expect(eleInput.getAttribute('value')).toBe(`1 - ${OPTIONS[1]}`);
+    expect(wrapper.querySelector('.arco-select-view-value')).toHaveTextContent(`1 - ${OPTIONS[1]}`);
     fireEvent.click(wrapper.querySelector('.arco-select-view'));
-    expect(eleInput.getAttribute('placeholder')).toBe(`1 - ${OPTIONS[1]}`);
+    expect(wrapper.querySelector('input').getAttribute('placeholder')).toBe(`1 - ${OPTIONS[1]}`);
   });
 
   it('dropdownRender', async () => {

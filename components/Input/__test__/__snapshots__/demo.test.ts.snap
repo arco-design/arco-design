@@ -125,7 +125,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
                       class="arco-select-view-input arco-select-hidden"
                       placeholder=".com"
                       style="width:100%"
-                      value=".com"
+                      value=""
                     />
                     <span
                       class="arco-select-view-value"
@@ -245,7 +245,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 placeholder="Beijing"
                 style="width:100%"
-                value="Beijing"
+                value=""
               />
               <span
                 class="arco-select-view-value"
@@ -313,7 +313,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 placeholder="Beijing"
                 style="width:100%"
-                value="Beijing"
+                value=""
               />
               <span
                 class="arco-select-view-value"
@@ -410,7 +410,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 placeholder="Beijing"
                 style="width:100%"
-                value="Beijing"
+                value=""
               />
               <span
                 class="arco-select-view-value"

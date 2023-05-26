@@ -194,11 +194,10 @@ describe('TreeSelect', () => {
   it('be controlled', () => {
     const wrapper = render(<TreeSelect treeData={treeData} value="node1-1" />);
     expect(wrapper.querySelector('.arco-tree-select-view-value')?.textContent).toBe('小恶魔');
-    expect(wrapper.querySelector('input')?.getAttribute('value')).toBe('小恶魔');
 
     wrapper.rerender(<TreeSelect treeData={treeData} value="node2" />);
 
-    expect(wrapper.querySelector('input')?.getAttribute('value')).toBe('史塔克家族');
+    expect(wrapper.querySelector('.arco-tree-select-view-value')).toHaveTextContent('史塔克家族');
   });
 
   it('options loadMore', () => {

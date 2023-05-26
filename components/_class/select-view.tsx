@@ -367,10 +367,12 @@ const CoreSelectView = React.forwardRef(
           break;
       }
 
+      // <input> is used to input and display placeholder, in other cases use <span> to display value to support displaying rich text
+      const needShowInput = !!((mergedFocused && canFocusInput) || isEmptyValue);
       const inputProps: InputComponentProps = {
         style: { width: '100%' },
         // _inputValue after renderText(value) may be rich text, but the value of <input> cannot be object
-        value: typeof _inputValue !== 'object' ? _inputValue : '',
+        value: needShowInput && typeof _inputValue !== 'object' ? _inputValue : '',
         // Allow placeholder to display the selected value first when searching
         placeholder:
           canFocusInput && renderedValue && typeof renderedValue !== 'object'
@@ -391,9 +393,6 @@ const CoreSelectView = React.forwardRef(
         inputProps.tabIndex = -1;
         inputProps.style.pointerEvents = 'none';
       }
-
-      // <input> is used to input and display placeholder, in other cases use <span> to display value to support displaying rich text
-      const needShowInput = !!((mergedFocused && canFocusInput) || isEmptyValue);
 
       return (
         <span className={`${prefixCls}-view-selector`}>

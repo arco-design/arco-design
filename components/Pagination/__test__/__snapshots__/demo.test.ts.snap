@@ -144,7 +144,7 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
               class="arco-select-view-input arco-select-hidden"
               style="width:100%;pointer-events:none"
               tabindex="-1"
-              value="10 条/页"
+              value=""
             />
             <span
               class="arco-select-view-value"
@@ -335,7 +335,7 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
               disabled=""
               style="width:100%;pointer-events:none"
               tabindex="-1"
-              value="10 条/页"
+              value=""
             />
             <span
               class="arco-select-view-value"
@@ -638,7 +638,7 @@ exports[`renders Pagination/demo/change-size.md correctly 1`] = `
             class="arco-select-view-input arco-select-hidden"
             style="width:100%;pointer-events:none"
             tabindex="-1"
-            value="10 条/页"
+            value=""
           />
           <span
             class="arco-select-view-value"
@@ -825,7 +825,7 @@ exports[`renders Pagination/demo/count-more.md correctly 1`] = `
             class="arco-select-view-input arco-select-hidden"
             style="width:100%;pointer-events:none"
             tabindex="-1"
-            value="10 条/页"
+            value=""
           />
           <span
             class="arco-select-view-value"
@@ -1235,7 +1235,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
                   class="arco-select-view-input arco-select-hidden"
                   style="width:100%;pointer-events:none"
                   tabindex="-1"
-                  value="10 条/页"
+                  value=""
                 />
                 <span
                   class="arco-select-view-value"
@@ -1426,7 +1426,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
                   class="arco-select-view-input arco-select-hidden"
                   style="width:100%;pointer-events:none"
                   tabindex="-1"
-                  value="10 条/页"
+                  value=""
                 />
                 <span
                   class="arco-select-view-value"
@@ -1630,7 +1630,7 @@ exports[`renders Pagination/demo/more-buffer.md correctly 1`] = `
                   class="arco-select-view-input arco-select-hidden"
                   style="width:100%;pointer-events:none"
                   tabindex="-1"
-                  value="10 条/页"
+                  value=""
                 />
                 <span
                   class="arco-select-view-value"
@@ -2209,7 +2209,7 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
               class="arco-select-view-input arco-select-hidden"
               style="width:100%;pointer-events:none"
               tabindex="-1"
-              value="10 条/页"
+              value=""
             />
             <span
               class="arco-select-view-value"

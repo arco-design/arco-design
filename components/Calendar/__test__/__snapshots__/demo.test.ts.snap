@@ -3185,7 +3185,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 style="width:100%;pointer-events:none"
                 tabindex="-1"
-                value="2020"
+                value=""
               />
               <span
                 class="arco-select-view-value"
@@ -3237,7 +3237,7 @@ exports[`renders Calendar/demo/select-header.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 style="width:100%;pointer-events:none"
                 tabindex="-1"
-                value="4"
+                value=""
               />
               <span
                 class="arco-select-view-value"
