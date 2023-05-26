@@ -549,7 +549,7 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
         placeholder="Please select ..."
         style="width:100%;pointer-events:none"
         tabindex="-1"
-        value="Shanghai / Shanghai / Huangpu"
+        value=""
       />
       <span
         class="arco-cascader-view-value"
@@ -776,7 +776,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Beijing / Beijing / Dongcheng / Chaoyangmen"
             style="width:100%"
-            value="Beijing / Beijing / Dongcheng / Chaoyangmen"
+            value=""
           />
           <span
             class="arco-cascader-view-value"
@@ -1313,7 +1313,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
             style="width:100%"
-            value="Shanghai / Shanghai / Huangpu"
+            value=""
           />
           <span
             class="arco-cascader-view-value"
@@ -1505,7 +1505,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
             style="width:100%"
-            value="Shanghai / Shanghai / Huangpu"
+            value=""
           />
           <span
             class="arco-cascader-view-value"
@@ -1691,7 +1691,7 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
         placeholder="Please select ..."
         style="width:100%;pointer-events:none"
         tabindex="-1"
-        value="Shanghai > Shanghai > Huangpu"
+        value=""
       />
       <span
         class="arco-cascader-view-value"
@@ -2234,7 +2234,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
             style="width:100%"
-            value="Shanghai / Shanghai / Huangpu"
+            value=""
           />
           <span
             class="arco-cascader-view-value"
@@ -2392,7 +2392,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
             style="width:100%"
-            value="Shanghai / Shanghai / Huangpu"
+            value=""
           />
           <span
             class="arco-cascader-view-value"

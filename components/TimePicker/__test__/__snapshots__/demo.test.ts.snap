@@ -1125,7 +1125,7 @@ exports[`renders TimePicker/demo/timezone.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 style="width:100%;pointer-events:none"
                 tabindex="-1"
-                value="Asia/Shanghai"
+                value=""
               />
               <span
                 class="arco-select-view-value"
@@ -1544,7 +1544,7 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
                 class="arco-select-view-input arco-select-hidden"
                 style="width:100%;pointer-events:none"
                 tabindex="-1"
-                value="UTC "
+                value=""
               />
               <span
                 class="arco-select-view-value"

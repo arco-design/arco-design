@@ -165,7 +165,7 @@ exports[`renders TreeSelect/demo/basic.md correctly 1`] = `
         class="arco-tree-select-view-input arco-tree-select-hidden"
         style="width:100%;pointer-events:none"
         tabindex="-1"
-        value="Trunk"
+        value=""
       />
       <span
         class="arco-tree-select-view-value"
@@ -576,7 +576,7 @@ exports[`renders TreeSelect/demo/controled.md correctly 1`] = `
         class="arco-tree-select-view-input arco-tree-select-hidden"
         style="width:100%;pointer-events:none"
         tabindex="-1"
-        value="Leaf"
+        value=""
       />
       <span
         class="arco-tree-select-view-value"
@@ -890,7 +890,7 @@ exports[`renders TreeSelect/demo/loadmore.md correctly 1`] = `
         class="arco-tree-select-view-input arco-tree-select-hidden"
         placeholder="node2"
         style="width:100%"
-        value="node2"
+        value=""
       />
       <span
         class="arco-tree-select-view-value"
@@ -1475,7 +1475,7 @@ exports[`renders TreeSelect/demo/size.md correctly 1`] = `
             class="arco-tree-select-view-input arco-tree-select-hidden"
             style="width:100%;pointer-events:none"
             tabindex="-1"
-            value="Trunk"
+            value=""
           />
           <span
             class="arco-tree-select-view-value"
