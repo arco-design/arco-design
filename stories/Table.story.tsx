@@ -1,6 +1,6 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
 import React, { useState, useEffect } from 'react';
-import { Table, Button, PaginationProps, Space, Switch, TableColumnProps, Input } from '@self';
+import { Table, Button, Space, Switch, TableColumnProps, Input } from '@self';
 
 const columns = [
   {
@@ -60,7 +60,7 @@ function DemoTable() {
   return (
     <Table
       loading={loading}
-      columns={columns}
+      columns={columns as any}
       data={data}
       pagination={pagination}
       onChange={onChangeTable}
@@ -72,10 +72,6 @@ function DemoTable() {
           setSelectedRowKeys(selectedRowKeys as any);
         },
       }}
-      // onChange={(pagination, sorters) => {
-      //   console.log("pagination", pagination);
-      //   console.log("sorters", sorters);
-      // }}
       renderPagination={(paginationNode) => (
         <div
           style={{
