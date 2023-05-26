@@ -19,7 +19,7 @@ export interface PaginationState {
 const _defaultCurrent = 1;
 const _defaultPageSize = 10;
 
-function getAllPages(pageSize, total) {
+function getAllPages(pageSize = _defaultPageSize, total) {
   return Math.ceil(total / pageSize);
 }
 

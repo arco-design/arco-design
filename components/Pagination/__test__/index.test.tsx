@@ -231,4 +231,29 @@ describe('Pagination', () => {
         .innerHTML.startsWith(sizeOptions2[nextIndex].toString())
     ).toBe(true);
   });
+
+  it('illegal props are behaving normally', () => {
+    const Demo = () => {
+      const [props, setProps] = useState<any>({ total: 30, pageSize: 5 });
+      return (
+        <div>
+          <button
+            onClick={() => {
+              setProps({});
+            }}
+          >
+            update
+          </button>
+          <Pagination {...props} />
+        </div>
+      );
+    };
+    const wrapper = render(<Demo />);
+    expect(wrapper.find('.arco-pagination-item')).toHaveLength(2 + 30 / 5);
+    act(() => {
+      fireEvent.click(wrapper.find('button')[0]);
+    });
+
+    expect(wrapper.find('.arco-pagination-item')).toHaveLength(2);
+  });
 });
