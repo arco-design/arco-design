@@ -335,7 +335,8 @@ const Picker = (baseProps: InnerPickerProps) => {
       setOpen(true);
     }
     if (isValid(niv)) {
-      const newValue = getDayjsValue(niv, format, utcOffset, timezone) as Dayjs;
+      // https://github.com/arco-design/arco-design/issues/1986
+      const newValue = getDayjsValue(niv, format) as Dayjs;
       setValueShow(newValue);
       setPageShowDate(newValue);
       setInputValue(undefined);
