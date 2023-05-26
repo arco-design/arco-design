@@ -108,7 +108,7 @@ describe('Test Search', () => {
       />
     );
     expect(component.querySelector('button svg')).toHaveClass('arco-icon-search');
-    fireEvent.click(component.querySelector('button'));
+    fireEvent.click(component.querySelector('button') as HTMLElement);
     expect(onSearch.mock.calls[0][0]).toBe('search text');
   });
 
@@ -122,11 +122,36 @@ describe('Test Search', () => {
         defaultValue="custom value"
       />
     );
-    fireEvent.change(component.querySelector('input'));
+    fireEvent.change(component.querySelector('input') as HTMLElement);
     const iconButton = component.find('.arco-icon-search');
     fireEvent.click(iconButton[0]);
 
     expect(onSearch.mock.calls[0][0]).toBe('custom value');
+  });
+
+  it('input search (pressenter)', () => {
+    const onSearch = jest.fn();
+    const onPressEnter = jest.fn();
+    const component = mountInputSearch(
+      <Input.Search
+        placeholder="please enter search text"
+        style={{ marginTop: 10, maxWidth: 400 }}
+        onSearch={onSearch}
+        onPressEnter={onPressEnter}
+        defaultValue="custom value"
+      />
+    );
+
+    fireEvent.keyDown(component.querySelector('input') as HTMLElement, { keyCode: Enter.code });
+
+    expect(onSearch.mock.calls[0][0]).toBe('custom value');
+    expect(onPressEnter.mock.calls).toHaveLength(1);
+
+    const iconButton = component.find('.arco-icon-search');
+    fireEvent.click(iconButton[0]);
+
+    expect(onSearch.mock.calls).toHaveLength(2);
+    expect(onPressEnter.mock.calls).toHaveLength(1);
   });
 });
 

@@ -29,9 +29,8 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
     className
   );
 
-  const onSearch = (e) => {
+  const onSearch = () => {
     !disabled && props.onSearch && props.onSearch(value);
-    props.onPressEnter && props.onPressEnter(e);
   };
 
   return (
@@ -64,7 +63,10 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
         props.onChange && props.onChange(value, e);
       }}
       defaultValue={defaultValue}
-      onPressEnter={onSearch}
+      onPressEnter={(e) => {
+        onSearch();
+        props.onPressEnter && props.onPressEnter(e);
+      }}
     />
   );
 });
