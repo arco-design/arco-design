@@ -146,7 +146,7 @@ export interface TableProps<T = any> {
    */
   onChange?: (
     pagination: PaginationProps,
-    sorter: SorterInfo,
+    sorter: SorterInfo | SorterInfo[],
     filters: Partial<Record<keyof T, string[]>>,
     extra: { currentData: T[]; action: 'paginate' | 'sort' | 'filter' }
   ) => void;

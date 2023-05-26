@@ -239,7 +239,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     updateStateSorters(sorter, nextActiveSorters);
     const newProcessedData = getProcessedData(sorter, nextActiveSorters, innerFilters);
     const currentData = getPageData(newProcessedData);
-
     onChange &&
       onChange(getPaginationProps(newProcessedData), sorter, innerFilters, {
         currentData: getOriginData(currentData),
@@ -288,10 +287,15 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
       const currentData = getPageData(newProcessedData);
       onChange &&
-        onChange(getPaginationProps(newProcessedData), currentSorter, newFilters, {
-          currentData: getOriginData(currentData),
-          action: 'filter',
-        });
+        onChange(
+          getPaginationProps(newProcessedData),
+          activeSorters.length === 1 ? activeSorters[0] : activeSorters,
+          newFilters,
+          {
+            currentData: getOriginData(currentData),
+            action: 'filter',
+          }
+        );
     } else if (isArray(filter) && !filter.length) {
       onHandleFilterReset(column);
     }
@@ -306,10 +310,15 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
     const currentData = getPageData(newProcessedData);
     onChange &&
-      onChange(getPaginationProps(newProcessedData), currentSorter, newFilters, {
-        currentData: getOriginData(currentData),
-        action: 'filter',
-      });
+      onChange(
+        getPaginationProps(newProcessedData),
+        activeSorters.length === 1 ? activeSorters[0] : activeSorters,
+        newFilters,
+        {
+          currentData: getOriginData(currentData),
+          action: 'filter',
+        }
+      );
   }
 
   /** ----------- Filters End ----------- */
@@ -414,7 +423,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         ...mergePagination,
       };
     }
-
     paginationProps.onChange = onPaginationChange;
     return paginationProps;
   }
@@ -622,11 +630,15 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     }
     const newPaginationProps = { ...getPaginationProps(), current, pageSize };
     onChange &&
-      onChange(newPaginationProps, currentSorter, innerFilters, {
-        currentData: getPageData(processedData, newPaginationProps),
-        action: 'paginate',
-      });
-
+      onChange(
+        newPaginationProps,
+        activeSorters.length === 1 ? activeSorters[0] : activeSorters,
+        innerFilters,
+        {
+          currentData: getPageData(processedData, newPaginationProps),
+          action: 'paginate',
+        }
+      );
     mergePagination.onChange && mergePagination.onChange(current, pageSize);
   }
 

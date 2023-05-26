@@ -10,6 +10,8 @@ const columns = [
   {
     title: 'Salary',
     dataIndex: 'salary',
+    sorter: (a: any, b: any) => a.salary - b.salary,
+    defaultSortOrder: 'ascend',
   },
   {
     title: 'Address',
@@ -26,50 +28,71 @@ const allData = Array(200)
   .map((_, index) => ({
     key: `${index}`,
     name: `Kevin Sandra ${index}`,
-    salary: 22000,
+    salary: `${1 + index}`,
     address: `${index} Park Road, London`,
     email: `kevin.sandra_${index}@example.com`,
   }));
 
 function DemoTable() {
   const [data, setData] = useState(allData);
-  const [pagination, setPagination] = useState<PaginationProps>({
-    total: allData.length,
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [pagination, setPagination] = useState({
+    sizeCanChange: true,
+    showTotal: true,
+    total: 96,
+    pageSize: 10,
     current: 1,
+    pageSizeChangeResetCurrent: true,
   });
+  const [loading, setLoading] = useState(false);
 
-  const changeData = () => {
-    setData((data) => {
-      return data.map((item) => ({
-        ...item,
-        name: `!!!${item.name}`,
-      }));
-    });
-  };
-
-  const deleteData = () => {
-    const newData = data.length > 10 ? data.slice(10) : allData;
-    const total = newData.length;
-    setPagination({
-      ...pagination,
-      total,
-    });
-    setData(newData);
-  };
+  function onChangeTable(pagination: any, sorder: any) {
+    const { current, pageSize } = pagination;
+    console.log(sorder);
+    setLoading(true);
+    setTimeout(() => {
+      setData(allData.slice((current - 1) * pageSize, current * pageSize));
+      setPagination((pagination) => ({ ...pagination, current, pageSize }));
+      setLoading(false);
+    }, 1000);
+  }
 
   return (
-    <>
-      <Button onClick={changeData}>改变数据</Button>
-      <Button onClick={deleteData}>减少数据</Button>
-      <Table
-        columns={columns}
-        data={data}
-        pagination={pagination}
-        onChange={(pagination) => {
-          setPagination(pagination);
-        }}
-      />
-    </>
+    <Table
+      loading={loading}
+      columns={columns}
+      data={data}
+      pagination={pagination}
+      onChange={onChangeTable}
+      rowSelection={{
+        selectedRowKeys,
+        onChange: (selectedRowKeys, selectedRows) => {
+          console.log('selectedRowKeys', selectedRowKeys);
+          console.log('selectedRows', selectedRows);
+          setSelectedRowKeys(selectedRowKeys as any);
+        },
+      }}
+      // onChange={(pagination, sorters) => {
+      //   console.log("pagination", pagination);
+      //   console.log("sorters", sorters);
+      // }}
+      renderPagination={(paginationNode) => (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: 10,
+          }}
+        >
+          <Space>
+            <span>Selected {selectedRowKeys.length}</span>
+            <Button size="mini">Save</Button>
+            <Button size="mini">Delete</Button>
+          </Space>
+          {paginationNode}
+        </div>
+      )}
+    />
   );
 }
 
@@ -144,10 +167,8 @@ function DemoTreeData() {
         console.log('column.render', col, item);
         if (col === 'Tom Jerry') {
           return <Input defaultValue={col} />;
-        } else {
-          return col;
         }
-        // return col;
+        return col;
       },
       sorter: (a: any, b: any) => a - b,
     },
