@@ -73,6 +73,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     },
   });
 
+  const textareaDisplayedText = compositionValue || value || '';
   const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('textarea');
   if (disabled) {
@@ -107,7 +108,7 @@ const TextArea = (props: TextAreaProps, ref) => {
 
   useIsomorphicLayoutEffect(() => {
     resizeTextAreaHeight();
-  }, [value]);
+  }, [textareaDisplayedText]);
 
   useImperativeHandle(
     ref,
@@ -155,7 +156,7 @@ const TextArea = (props: TextAreaProps, ref) => {
       className={classNames}
       placeholder={placeholder}
       disabled={disabled}
-      value={compositionValue || value || ''}
+      value={textareaDisplayedText}
       onChange={valueChangeHandler}
       onKeyDown={keyDownHandler}
       onCompositionStart={compositionHandler}
