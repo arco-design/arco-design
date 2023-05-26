@@ -1,3 +1,12 @@
+## 2.48.2
+
+2023-05-26
+
+### 🐛 问题修复
+
+- 修复 `Input.Search` 组件点击搜索图标或搜索按钮时错误触发 `onPressEnter` 回调的 bug。([#1990](https://github.com/arco-design/arco-design/pull/1990))
+- 修复 `Input.TextArea` 组件 `autoSize` 属性在非英文输入法时可能不生效的问题。([#1988](https://github.com/arco-design/arco-design/pull/1988))
+
 ## 2.46.3
 
 2023-04-07

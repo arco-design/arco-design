@@ -1,3 +1,11 @@
+## 2.48.2
+
+2023-05-26
+
+### 🐛 BugFix
+
+- Fix `DatePicker` component, after setting the timezone, the input time is not converted correctly.([#1992](https://github.com/arco-design/arco-design/pull/1992))
+
 ## 2.48.0
 
 2023-05-12

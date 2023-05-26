@@ -1,3 +1,11 @@
+## 2.48.2
+
+2023-05-26
+
+### 💎 Enhancement
+
+- When `Select` / `Cascader` / `TreeSelect` internal `<input />` node is hidden, remove its `value` attribute to avoid redundant text in the user’s copy operation([#1993](https://github.com/arco-design/arco-design/pull/1993))
+
 ## 2.48.0
 
 2023-05-12

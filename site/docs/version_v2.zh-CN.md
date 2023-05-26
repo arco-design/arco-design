@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.48.2
+
+2023-05-26
+
+### 💎 功能优化
+
+- `Select` / `Cascader` / `TreeSelect` 内部 `<input />` 节点处于隐藏状态时，移除其 `value` 属性，避免用户复制操作出现多余文本。([#1993](https://github.com/arco-design/arco-design/pull/1993))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件在设置时区之后，输入时间没有正确转换的问题。([#1992](https://github.com/arco-design/arco-design/pull/1992))
+- 修复 `Input.Search` 组件点击搜索图标或搜索按钮时错误触发 `onPressEnter` 回调的 bug。([#1990](https://github.com/arco-design/arco-design/pull/1990))
+- 修复 `Pagination` 组件在 `props` 更新为空的时候，报错的 bug([#1989](https://github.com/arco-design/arco-design/pull/1989))
+- 修复 `Input.TextArea` 组件 `autoSize` 属性在非英文输入法时可能不生效的问题。([#1988](https://github.com/arco-design/arco-design/pull/1988))
+
+### 💅 样式更新
+
+- 优化 `Menu` 折叠之后，菜单项图标未水平居中的问题。([#1991](https://github.com/arco-design/arco-design/pull/1991))
+
 ## 2.48.1
 
 2023-05-19

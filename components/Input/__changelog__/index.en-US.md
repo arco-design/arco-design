@@ -1,3 +1,12 @@
+## 2.48.2
+
+2023-05-26
+
+### 🐛 BugFix
+
+- Fix the bug that the `onPressEnter` callback is incorrectly triggered when the `Input.Search` component clicks the search icon or search button.([#1990](https://github.com/arco-design/arco-design/pull/1990))
+- Fix the issue that the `autoSize` of the `Input.TextArea` may not take effect while typing non-English texts.([#1988](https://github.com/arco-design/arco-design/pull/1988))
+
 ## 2.46.3
 
 2023-04-07

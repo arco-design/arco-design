@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.48.2
+
+2023-05-26
+
+### 💎 Enhancement
+
+- When `Select` / `Cascader` / `TreeSelect` internal `<input />` node is hidden, remove its `value` attribute to avoid redundant text in the user’s copy operation([#1993](https://github.com/arco-design/arco-design/pull/1993))
+
+### 🐛 BugFix
+
+- Fix `DatePicker` component, after setting the timezone, the input time is not converted correctly.([#1992](https://github.com/arco-design/arco-design/pull/1992))
+- Fix the bug that the `onPressEnter` callback is incorrectly triggered when the `Input.Search` component clicks the search icon or search button.([#1990](https://github.com/arco-design/arco-design/pull/1990))
+- Fix the bug that `Pagination` reports an error when the `props` update is empty([#1989](https://github.com/arco-design/arco-design/pull/1989))
+- Fix the issue that the `autoSize` of the `Input.TextArea` may not take effect while typing non-English texts.([#1988](https://github.com/arco-design/arco-design/pull/1988))
+
+### 💅 Style
+
+- 优化 `Menu` 折叠之后，菜单项图标未水平居中的问题。([#1991](https://github.com/arco-design/arco-design/pull/1991))
+
 ## 2.48.1
 
 2023-05-19

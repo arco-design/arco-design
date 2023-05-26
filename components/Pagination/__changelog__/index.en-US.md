@@ -1,3 +1,11 @@
+## 2.48.2
+
+2023-05-26
+
+### 🐛 BugFix
+
+- Fix the bug that `Pagination` reports an error when the `props` update is empty([#1989](https://github.com/arco-design/arco-design/pull/1989))
+
 ## 2.42.1
 
 2022-12-02
