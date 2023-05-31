@@ -115,7 +115,7 @@ export interface PickerProps {
   /**
    * @zh 日期选择器的尺寸
    * @en The size of input box
-   * @defaultValue true
+   * @defaultValue default
    */
   size?: 'mini' | 'small' | 'default' | 'large';
   /**
