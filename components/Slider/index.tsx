@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useContext, CSSProperties, useRef, useMemo } from 'react';
-import { plus, times, divide } from 'number-precision';
+import NP, { plus, times, divide } from 'number-precision';
 import omit from '../_util/omit';
 import SliderButton from './button';
 import Marks from './marks';
@@ -17,6 +17,8 @@ import useLegalValue from './hooks/useLegalValue';
 import useInterval from './hooks/useInterval';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useUpdate from '../_util/hooks/useUpdate';
+
+NP.enableBoundaryChecking(false);
 
 const defaultProps: SliderProps = {
   max: 100,
