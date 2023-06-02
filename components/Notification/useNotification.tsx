@@ -15,7 +15,7 @@ export type notificationFuncType = {
 };
 
 function useNotification(commonConfig: ConfigProps = {}): [notificationFuncType, JSX.Element] {
-  const { maxCount, duration = 3000, prefixCls: _prefixCls } = commonConfig;
+  const { maxCount, duration = 3000, prefixCls: _prefixCls, getContainer } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
   const notificationInstance = {};
@@ -59,6 +59,7 @@ function useNotification(commonConfig: ConfigProps = {}): [notificationFuncType,
           }}
           prefixCls={mergedPrefixCls}
           rtl={rtl}
+          getContainer={getContainer}
         />
       );
       contextHolderRef.current.addInstance(notice);
