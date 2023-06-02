@@ -26,7 +26,7 @@
 |utcOffset|设置时区偏移，如果需要 utc 时间则设置为 0。|number |`-`|-|
 |timezone|设置时区, 如果设置了 `utcOffset`，则以 `utcOffset` 为准。|string |`-`|-|
 |position|弹出的框的位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`-`|-|
-|size|日期选择器的尺寸|'mini' \| 'small' \| 'default' \| 'large' |`true`|-|
+|size|日期选择器的尺寸|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
 |extra|额外的页脚|ReactNode |`-`|-|
 |prefix|前缀|ReactNode |`-`|2.43.0|

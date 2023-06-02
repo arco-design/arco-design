@@ -26,7 +26,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |utcOffset|Set the timezone offset, set to 0 if utc time is required.|number |`-`|-|
 |timezone|timezone name, if `utcOffset` is set, `utcOffset` takes effect.|string |`-`|-|
 |position|The position of the popup|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`-`|-|
-|size|The size of input box|'mini' \| 'small' \| 'default' \| 'large' |`true`|-|
+|size|The size of input box|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |extra|Extra footer|ReactNode |`-`|-|
 |prefix|prefix|ReactNode |`-`|2.43.0|
