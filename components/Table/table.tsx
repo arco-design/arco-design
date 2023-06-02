@@ -961,12 +961,15 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     </div>
   );
 
+  const showPagination =
+    pagination !== false && (processedData.length !== 0 || paginationProps.total > 0);
+
   return (
     <div ref={refTable} style={style} className={classNames} {...pickDataAttributes(props)}>
       <Spin element={loadingElement || <Spin />} {...loading}>
-        {pagination !== false && processedData.length !== 0 && isPaginationTop && paginationEle}
+        {showPagination && isPaginationTop && paginationEle}
         {renderTable()}
-        {pagination !== false && processedData.length !== 0 && !isPaginationTop && paginationEle}
+        {showPagination && !isPaginationTop && paginationEle}
       </Spin>
     </div>
   );
