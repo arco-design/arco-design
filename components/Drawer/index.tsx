@@ -72,6 +72,7 @@ function Drawer(baseProps: DrawerProps, ref) {
     okButtonProps,
     cancelButtonProps,
     zIndex,
+    closeIcon,
     ...rest
   } = props;
 
@@ -135,11 +136,16 @@ function Drawer(baseProps: DrawerProps, ref) {
           <div className={`${prefixCls}-header-title`}>{title}</div>
         </div>
       )}
-      {closable && (
-        <IconHover onClick={props.onCancel} className={`${prefixCls}-close-icon`}>
-          <IconClose />
-        </IconHover>
-      )}
+      {closable &&
+        (closeIcon !== undefined ? (
+          <span onClick={props.onCancel} className={`${prefixCls}-close-icon`}>
+            {closeIcon}
+          </span>
+        ) : (
+          <IconHover onClick={props.onCancel} className={`${prefixCls}-close-icon`}>
+            <IconClose />
+          </IconHover>
+        ))}
 
       <div
         ref={(node) => {

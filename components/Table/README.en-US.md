@@ -23,7 +23,7 @@ Used for data collection, display, analysis, and processing.
 |virtualized|The table enables virtual scrolling for processing big data scenarios.(Note: Virtual scrolling will automatically turn off support for tree data)|boolean |`-`|-|
 |indentSize|The pixel offset to the left of each level of the tree data|number |`15`|-|
 |childrenColumnName|The field name of the tree data in `data`, default is `children`|string |`children`|-|
-|onChange|Callback when pagination, sorting, and filtering changes|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterInfo](#sorterinfo),filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`|
+|onChange|Callback when pagination, sorting, and filtering changes|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterInfo](#sorterinfo) \| [SorterInfo](#sorterinfo)[],filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`|
 |pagePosition|Set the position of the pagination, there are six positions `bottom right` `bottom left` `top right` `top left` `top center` `bottom center`|'br' \| 'bl' \| 'tr' \| 'tl' \| 'topCenter' \| 'bottomCenter' |`br`|-|
 |size|The table size is divided into four sizes, `default` `medium` `small` `mini`|'default' \| 'middle' \| 'small' \| 'mini' |`-`|-|
 |noDataElement|Element to be displayed when there is no data|string \| ReactNode |`-`|-|

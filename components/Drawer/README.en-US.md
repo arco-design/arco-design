@@ -27,6 +27,7 @@ A floating layer that slides in from the edge of the screen.
 |zIndex|Set the zIndex of the drawer|number |`-`|2.42.0|
 |placement|The placement of the drawer: `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
 |cancelText|Text of the Cancel button|ReactNode |`-`|-|
+|closeIcon|Custom the close button on top-right of the drawer dialog|ReactNode |`-`|2.49.0|
 |footer|The footer element. Drawer will not render the footer element when `footer` is `null`|ReactNode |`-`|-|
 |okText|Text of the OK button|ReactNode |`-`|-|
 |title|The title element. Drawer will not render the title element when `title` is `null`|ReactNode |`-`|-|
