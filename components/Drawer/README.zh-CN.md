@@ -26,6 +26,7 @@
 |zIndex|设置抽屉的 zIndex|number |`-`|2.42.0|
 |placement|抽屉的方向 `top` `right` `bottom` `left`|'top' \| 'right' \| 'bottom' \| 'left' |`right`|-|
 |cancelText|取消按钮文案|ReactNode |`-`|-|
+|closeIcon|自定义右上角关闭按钮|ReactNode |`-`|2.49.0|
 |footer|自定义按钮确认和取消按钮，为 null 的话没有按钮组|ReactNode |`-`|-|
 |okText|确认按钮文案|ReactNode |`-`|-|
 |title|弹出框的标题（设置为 null 时，不显示标题栏）|ReactNode |`-`|-|

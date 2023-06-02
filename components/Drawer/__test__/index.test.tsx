@@ -1,7 +1,7 @@
 import React from 'react';
 import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
-import Drawer from '..';
+import Drawer, { DrawerProps } from '..';
 import Button from '../../Button';
 import { render, fireEvent } from '../../../tests/util';
 
@@ -11,7 +11,7 @@ interface DemoTestState {
   visible: boolean;
 }
 
-class DemoTest extends React.Component<{}, DemoTestState> {
+class DemoTest extends React.Component<DrawerProps, DemoTestState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,6 +56,7 @@ class DemoTest extends React.Component<{}, DemoTestState> {
           onCancel={this.onCancel}
           afterOpen={this.afterOpen}
           afterClose={this.afterClose}
+          {...this.props}
         >
           内容
         </Drawer>
@@ -91,6 +92,16 @@ describe('Drawer', () => {
 
     expect(wrapper.find('.arco-drawer')).toHaveLength(1);
     expect(wrapper.find('.arco-drawer-mask').length).toBe(1);
+
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-drawer-close-icon').item(0));
+
+      jest.runAllTimers();
+    });
+
+    expect(
+      wrapper.find('.arco-drawer-wrapper')[0].classList.contains('arco-drawer-wrapper-hide')
+    ).toBe(true);
     wrapper.unmount();
   });
 
@@ -137,6 +148,50 @@ describe('Drawer', () => {
     expect(
       wrapper.find('.arco-drawer-wrapper')[0].classList.contains('arco-drawer-wrapper-hide')
     ).toBe(true);
+    wrapper.unmount();
+  });
+
+  it('closable=false', () => {
+    const wrapper = render(<DemoTest closable={false} />);
+    expect(wrapper.find('.arco-drawer')).toHaveLength(0);
+    // drawer mask correctly
+    expect(wrapper.find('.arco-drawer-mask').length).toBe(0);
+
+    act(() => {
+      openDrawer(wrapper);
+      jest.runAllTimers();
+    });
+
+    expect(wrapper.find('.arco-drawer')).toHaveLength(1);
+    expect(wrapper.find('.arco-drawer-close-icon').length).toBe(0);
+    wrapper.unmount();
+  });
+
+  it('closeicon=xxx', () => {
+    const wrapper = render(<DemoTest closeIcon="xxx" />);
+    expect(wrapper.find('.arco-drawer')).toHaveLength(0);
+    // drawer mask correctly
+    expect(wrapper.find('.arco-drawer-mask').length).toBe(0);
+
+    act(() => {
+      openDrawer(wrapper);
+      jest.runAllTimers();
+    });
+
+    expect(wrapper.find('.arco-drawer')).toHaveLength(1);
+    expect(wrapper.find('.arco-drawer-close-icon').length).toBe(1);
+    expect(wrapper.find('.arco-drawer-close-icon').item(0).textContent).toBe('xxx');
+
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-drawer-close-icon').item(0));
+
+      jest.runAllTimers();
+    });
+
+    expect(
+      wrapper.find('.arco-drawer-wrapper')[0].classList.contains('arco-drawer-wrapper-hide')
+    ).toBe(true);
+
     wrapper.unmount();
   });
 });
