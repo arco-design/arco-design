@@ -317,10 +317,10 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@arco-materials/site-footer@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.5.1.tgz#d3e5edc83d1f9a1ca195cb77355e15a9500935fa"
-  integrity sha512-IUeMx+Rs8CAI+r9AyKvFTRYYNCSnVTc2T3fIz5t+T/1v1qCH4Kaex/ttCoD6srJ6JNh3dkjoATu7PDbCAhJz2A==
+"@arco-materials/site-footer@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.npmjs.org/@arco-materials/site-footer/-/site-footer-1.5.3.tgz#9f9049055578b1b79b90dc22813d9711f5fb129d"
+  integrity sha512-AmtE67lOMrCWRrVzkE+BCUyXw0uWxy6y1rhQQT+XE8YQENuKL8dvMBYL9tFYpE06ZKmt6Hk54juW20L4reevlw==
   dependencies:
     axios "^1.1.3"
     classnames "^2.2.6"
