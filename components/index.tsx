@@ -200,4 +200,4 @@ export { default as Mentions } from './Mentions';
 export type { ImageProps, ImagePreviewProps, ImagePreviewActionProps, ImagePreviewGroupProps } from './Image/interface';
 export { default as Image } from './Image';
 
-export const version = '2.48.2';
+export const version = '2.49.0';

@@ -1,3 +1,12 @@
+## 2.49.0
+
+2023-06-02
+
+### 💅 样式更新
+
+- `Pagination` 组件调整默认文案：前往 => 前往 x 页([#2004](https://github.com/arco-design/arco-design/pull/2004))
+- `Pagination` 组件调整快速跳转字体颜色为 `color-text-2`([#2004](https://github.com/arco-design/arco-design/pull/2004))
+
 ## 2.48.2
 
 2023-05-26

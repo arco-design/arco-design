@@ -1,3 +1,11 @@
+## 2.49.0
+
+2023-06-02
+
+### 🆕 Feature
+
+- `Notification.useNotification` supports setting elements to mount nodes via `getContainer`.([#2008](https://github.com/arco-design/arco-design/pull/2008))
+
 ## 2.47.2
 
 2023-05-06

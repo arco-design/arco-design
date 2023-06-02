@@ -1,3 +1,11 @@
+## 2.49.0
+
+2023-06-02
+
+### 🆕 Feature
+
+- The `Drawer` component supports customizing the close button via the `closeIcon` property.([#2006](https://github.com/arco-design/arco-design/pull/2006))
+
 ## 2.48.1
 
 2023-05-19

@@ -1,3 +1,12 @@
+## 2.49.0
+
+2023-06-02
+
+### 💅 Style
+
+- The `Pagination` component adjusts the default text: Goto => Goto x pages([#2004](https://github.com/arco-design/arco-design/pull/2004))
+- The `Pagination` component adjusts the quick jump font color to `color-text-2`([#2004](https://github.com/arco-design/arco-design/pull/2004))
+
 ## 2.48.2
 
 2023-05-26

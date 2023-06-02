@@ -1,3 +1,11 @@
+## 2.49.0
+
+2023-06-02
+
+### 🆕 功能升级
+
+- `Notification.useNotification` 支持通过 `getContainer` 设置元素挂载节点。([#2008](https://github.com/arco-design/arco-design/pull/2008))
+
 ## 2.47.2
 
 2023-05-06

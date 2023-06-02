@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.49.0
+
+2023-06-02
+
+### 🆕 Feature
+
+- `Notification.useNotification` supports setting elements to mount nodes via `getContainer`.([#2008](https://github.com/arco-design/arco-design/pull/2008))
+- The `Drawer` component supports customizing the close button via the `closeIcon` property.([#2006](https://github.com/arco-design/arco-design/pull/2006))
+
+### 🐛 BugFix
+
+- When `Table` component has no data but `pagination.total > 0`, pagination should be shown.([#2005](https://github.com/arco-design/arco-design/pull/2005))
+
+### 💅 Style
+
+- The `Pagination` component adjusts the default text: Goto => Goto x pages([#2004](https://github.com/arco-design/arco-design/pull/2004))
+- The `Pagination` component adjusts the quick jump font color to `color-text-2`([#2004](https://github.com/arco-design/arco-design/pull/2004))
+
 ## 2.48.2
 
 2023-05-26

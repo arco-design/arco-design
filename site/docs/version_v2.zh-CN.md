@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.49.0
+
+2023-06-02
+
+### 🆕 功能升级
+
+- `Notification.useNotification` 支持通过 `getContainer` 设置元素挂载节点。([#2008](https://github.com/arco-design/arco-design/pull/2008))
+- `Drawer` 组件支持通过 `closeIcon` 属性自定义关闭按钮。([#2006](https://github.com/arco-design/arco-design/pull/2006))
+
+### 🐛 问题修复
+
+- 当 `Table` 组件没有数据但是 `pagination.total > 0` 时，应该显示分页。([#2005](https://github.com/arco-design/arco-design/pull/2005))
+
+### 💅 样式更新
+
+- `Pagination` 组件调整默认文案：前往 => 前往 x 页([#2004](https://github.com/arco-design/arco-design/pull/2004))
+- `Pagination` 组件调整快速跳转字体颜色为 `color-text-2`([#2004](https://github.com/arco-design/arco-design/pull/2004))
+
 ## 2.48.2
 
 2023-05-26

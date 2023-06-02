@@ -1,3 +1,11 @@
+## 2.49.0
+
+2023-06-02
+
+### 🐛 BugFix
+
+- When `Table` component has no data but `pagination.total > 0`, pagination should be shown.([#2005](https://github.com/arco-design/arco-design/pull/2005))
+
 ## 2.47.2
 
 2023-05-06
