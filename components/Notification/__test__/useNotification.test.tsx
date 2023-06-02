@@ -61,4 +61,22 @@ describe('useNotification Test', () => {
     });
     expect(wrapper.find('.arco-notification-content')[0].innerHTML).toBe('YYH');
   });
+
+  it('useNotification getcontainer', async () => {
+    const [notification, contextHolder] = Notification.useNotification({
+      getContainer: () => document.getElementById('root') as HTMLElement,
+    });
+
+    const wrapper = render(
+      <div>
+        {contextHolder}
+        <div id="root" />
+      </div>
+    );
+
+    notification.info?.({
+      content: 'hahahah',
+    });
+    expect(wrapper.find('#root .arco-notification')).toHaveLength(1);
+  });
 });

@@ -18,9 +18,10 @@ You can use `useNotification` to create a dialog that can read the context.
 import React, { createContext } from 'react';
 import { Notification, Button, Space, ConfigProvider } from '@arco-design/web-react';
 
+const ConfigContext = createContext({});
+
 const App = () => {
   const [notification, contextHolder] = Notification.useNotification();
-  const ConfigContext = createContext({});
 
   const config = {
     title: 'Profile',

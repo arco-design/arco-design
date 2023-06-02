@@ -1,5 +1,6 @@
 import React, { ReactInstance } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { createPortal } from 'react-dom';
 import { render as ReactDOMRender } from '../_util/react-dom';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
@@ -150,7 +151,7 @@ class Notification extends BaseNotification {
 
   render() {
     const { notices } = this.state;
-    const { prefixCls: _prefixCls, rtl: _rtl } = this.props;
+    const { prefixCls: _prefixCls, rtl: _rtl, getContainer } = this.props;
     let position = this.state.position;
     const mergedRtl = !isUndefined(_rtl) ? _rtl : rtl;
     if (isUndefined(position)) {
@@ -172,7 +173,9 @@ class Notification extends BaseNotification {
       { [`${prefixClsNotification}-wrapper-rtl`]: rtl }
     );
 
-    return (
+    const container = getContainer?.();
+
+    const dom = (
       <div className={classNames}>
         <TransitionGroup component={null}>
           {notices.map((notice) => (
@@ -207,6 +210,8 @@ class Notification extends BaseNotification {
         </TransitionGroup>
       </div>
     );
+
+    return container ? createPortal(dom, container) : dom;
   }
 }
 
