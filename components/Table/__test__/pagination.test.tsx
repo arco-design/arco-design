@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '../../../tests/util';
 import Table from '..';
 import { ConfigProvider } from '../..';
-import { columnsFilterCustom } from './common/columns';
+import { columns, columnsFilterCustom } from './common/columns';
 import { data } from './common/data';
 
 describe('Table test', () => {
@@ -81,5 +81,12 @@ describe('Table test', () => {
     expect(
       component.find('.table-4')[0].querySelectorAll('tbody')[0].querySelectorAll('tr')
     ).toHaveLength(5);
+  });
+
+  it('when no data, but pagination.total > 0, should show pagination list', () => {
+    const component = render(<Table columns={columns} data={[]} pagination={{ total: 20 }} />);
+
+    expect(component.find('.arco-table-no-data')).toHaveLength(1);
+    expect(component.find('.arco-table-pagination')).toHaveLength(1);
   });
 });
