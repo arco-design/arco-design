@@ -189,6 +189,11 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         class="arco-input arco-input-size-default arco-pagination-jumper-input"
         value=""
       />
+      <span
+        class="arco-pagination-jumper-text-goto-suffix"
+      >
+        页
+      </span>
     </div>
   </div>
   <div
@@ -381,6 +386,11 @@ exports[`renders Pagination/demo/all-options.md correctly 1`] = `
         disabled=""
         value=""
       />
+      <span
+        class="arco-pagination-jumper-text-goto-suffix"
+      >
+        页
+      </span>
     </div>
   </div>
 </div>
@@ -1084,6 +1094,11 @@ exports[`renders Pagination/demo/jumper.md correctly 1`] = `
       class="arco-input arco-input-size-default arco-pagination-jumper-input"
       value=""
     />
+    <span
+      class="arco-pagination-jumper-text-goto-suffix"
+    >
+      页
+    </span>
   </div>
 </div>
 `;
@@ -2254,6 +2269,11 @@ exports[`renders Pagination/demo/size.md correctly 1`] = `
         class="arco-input arco-input-size-default arco-pagination-jumper-input"
         value=""
       />
+      <span
+        class="arco-pagination-jumper-text-goto-suffix"
+      >
+        页
+      </span>
     </div>
   </div>
 </div>

@@ -84,6 +84,7 @@ function PageJumper(props: PageJumperProps) {
       ) : (
         <span>{inputText}</span>
       )}
+      {!simple && <span className={`${prefixCls}-text-goto-suffix`}>{locale.Pagination.page}</span>}
       {simple && (
         <>
           <span className={`${prefixCls}-separator`}>/</span>
