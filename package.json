@@ -8,8 +8,8 @@
   "types": "./es/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn generate-version && yarn icon && yarn build",
-    "init": "./scripts/init.sh",
-    "dependencies": "./scripts/dependencies.sh",
+    "init": "node ./scripts/init.js",
+    "dependencies": "node ./scripts/dependencies.js",
     "git": "git add .",
     "start": "concurrently npm:dev npm:dev:site",
     "build:dist": "arco-scripts build:component:dist",
