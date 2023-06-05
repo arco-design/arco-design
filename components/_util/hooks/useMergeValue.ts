@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { isUndefined } from '../is';
 import usePrevious from './usePrevious';
 
+const noop = function(){};
+
 export default function useMergeValue<T>(
   defaultStateValue: T,
   props?: {
@@ -37,6 +39,7 @@ export default function useMergeValue<T>(
   }, [value]);
 
   const mergedValue = isUndefined(value) ? stateValue : value;
+  const mergedSetStateValue = isUndefined(value) ? setStateValue : noop;
 
-  return [mergedValue, setStateValue, stateValue];
+  return [mergedValue, mergedSetStateValue, stateValue];
 }
