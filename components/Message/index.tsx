@@ -79,6 +79,11 @@ function addInstance(noticeProps: MessageProps) {
           transitionClassNames={transitionClassNames}
           transitionTimeout={transitionTimeout}
           ref={(instance) => {
+            if (!messageInstance[position]) {
+              // getContainer 变化时，会重置 messageInstance
+              // pending 中的逻辑执行晚于重置逻辑时，这里需判空
+              messageInstance[position] = {};
+            }
             messageInstance[position].instance = instance;
             id = instance.add(_noticeProps);
             resolve(null);
