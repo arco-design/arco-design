@@ -1,3 +1,11 @@
+## 2.49.1
+
+2023-06-09
+
+### 🐛 BugFix
+
+- Fix the bug that the `Cascader` component cannot delete selected items through keyboard events.([#2024](https://github.com/arco-design/arco-design/pull/2024))
+
 ## 2.44.1
 
 2023-02-03

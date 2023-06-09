@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.49.1
+
+2023-06-09
+
+### 🐛 BugFix
+
+- Fix the bug that the `Cascader` component cannot delete selected items through keyboard events.([#2024](https://github.com/arco-design/arco-design/pull/2024))
+- Fix the bug that the warning appears in the console when the `TimePicker` component is set to `scrollSticky={false}`.([#2023](https://github.com/arco-design/arco-design/pull/2023) [@bestlyg](https://github.com/bestlyg))
+- Fix the bug that the `Message` component will report an error when `getContainer` changes in a special scenario.([#2018](https://github.com/arco-design/arco-design/pull/2018))
+- Fix the bug that the `Notification` component will report an error when `getContainer` changes in a special scenario.([#2018](https://github.com/arco-design/arco-design/pull/2018))
+
 ## 2.49.0
 
 2023-06-02

@@ -1,3 +1,11 @@
+## 2.49.1
+
+2023-06-09
+
+### 🐛 BugFix
+
+- Fix the bug that the warning appears in the console when the `TimePicker` component is set to `scrollSticky={false}`.([#2023](https://github.com/arco-design/arco-design/pull/2023) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.44.0
 
 2023-01-13

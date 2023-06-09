@@ -1,3 +1,11 @@
+## 2.49.1
+
+2023-06-09
+
+### 🐛 问题修复
+
+- 修复 `TimePicker` 组件在 `scrollSticky={false}` 时控制台出现 warning 的 bug。([#2023](https://github.com/arco-design/arco-design/pull/2023) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.44.0
 
 2023-01-13

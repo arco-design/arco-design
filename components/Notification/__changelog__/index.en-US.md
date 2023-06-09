@@ -1,3 +1,11 @@
+## 2.49.1
+
+2023-06-09
+
+### 🐛 BugFix
+
+- Fix the bug that the `Notification` component will report an error when `getContainer` changes in a special scenario.([#2018](https://github.com/arco-design/arco-design/pull/2018))
+
 ## 2.49.0
 
 2023-06-02

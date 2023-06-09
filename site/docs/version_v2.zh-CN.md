@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.49.1
+
+2023-06-09
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件无法通过键盘事件删除已选项的 bug。([#2024](https://github.com/arco-design/arco-design/pull/2024))
+- 修复 `TimePicker` 组件在 `scrollSticky={false}` 时控制台出现 warning 的 bug。([#2023](https://github.com/arco-design/arco-design/pull/2023) [@bestlyg](https://github.com/bestlyg))
+- 修复 `Message` 组件在特殊场景下 `getContainer` 变化导致组件报错的bug。([#2018](https://github.com/arco-design/arco-design/pull/2018))
+- 修复 `Notification` 组件在特殊场景下 `getContainer` 变化导致组件报错的bug。([#2018](https://github.com/arco-design/arco-design/pull/2018))
+
 ## 2.49.0
 
 2023-06-02
