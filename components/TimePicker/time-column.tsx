@@ -73,7 +73,11 @@ export default function TimeColumn(props: TimeColumnProps) {
   );
 
   return (
-    <div className={cs(`${prefixCls}-list`)} ref={wrapper} onWheel={scrollSticky && onScrollList}>
+    <div
+      className={cs(`${prefixCls}-list`)}
+      ref={wrapper}
+      onWheel={scrollSticky ? onScrollList : undefined}
+    >
       <ul ref={ul}>
         {list.map((item) => {
           return (
