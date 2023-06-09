@@ -106,7 +106,16 @@ function TimePicker(props: InnerTimePickerProps) {
   const selectedSecond = valueShow && valueShow.second();
 
   const getDefaultStr = useCallback(
-    (type: 'hour' | 'minute' | 'second') => {
+    (
+      type: 'hour' | 'minute' | 'second',
+      {
+        hour,
+        minute,
+      }: {
+        hour?: number;
+        minute?: number;
+      } = {}
+    ) => {
       switch (type) {
         case 'hour':
           return typeof disabledHours === 'function'
@@ -115,7 +124,7 @@ function TimePicker(props: InnerTimePickerProps) {
         case 'minute':
           return typeof disabledMinutes === 'function'
             ? padStart(
-                MINUTES.find((m) => disabledMinutes(selectedHour).indexOf(m) === -1) || 0,
+                MINUTES.find((m) => disabledMinutes(hour ?? selectedHour).indexOf(m) === -1) || 0,
                 2,
                 '0'
               )
@@ -124,7 +133,9 @@ function TimePicker(props: InnerTimePickerProps) {
           return typeof disabledSeconds === 'function'
             ? padStart(
                 SECONDS.find(
-                  (s) => disabledSeconds(selectedHour, selectedMinute).indexOf(s) === -1
+                  (s) =>
+                    disabledSeconds(hour ?? selectedHour, minute ?? selectedMinute).indexOf(s) ===
+                    -1
                 ) || 0,
                 2,
                 '0'
@@ -149,10 +160,17 @@ function TimePicker(props: InnerTimePickerProps) {
 
   function onHandleSelect(selectedValue: number | string, unit: string) {
     const isUpperCase = getColumnsFromFormat(format).list.indexOf('A') !== -1;
+    const defaultConfig = {
+      hour: unit === 'hour' ? Number(selectedValue) : undefined,
+      minute: unit === 'minute' ? Number(selectedValue) : undefined,
+    };
     const _valueShow =
       valueShow ||
       dayjs(
-        `${getDefaultStr('hour')}:${getDefaultStr('minute')}:${getDefaultStr('second')}`,
+        `${getDefaultStr('hour')}:${getDefaultStr('minute', defaultConfig)}:${getDefaultStr(
+          'second',
+          defaultConfig
+        )}`,
         'HH:mm:ss'
       );
     let hour = _valueShow.hour();
