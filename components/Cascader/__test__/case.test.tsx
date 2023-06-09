@@ -1,6 +1,7 @@
 import React from 'react';
 import Cascader from '../cascader';
 import { fireEvent, render } from '../../../tests/util';
+import { Backspace } from '../../_util/keycode';
 
 const options = [
   {
@@ -212,5 +213,29 @@ describe('Cascader basic test', () => {
     fireEvent.click(wrapper.find('.arco-checkbox')[0]);
 
     expect(wrapper.find('.arco-tag')).toHaveLength(2);
+  });
+
+  it('delete by Del ', () => {
+    const wrapper = render(
+      <Cascader
+        options={options}
+        defaultValue={[
+          ['beijing', 'dongcheng', 'chaoyangmen'],
+          ['beijing', 'dongcheng', 'jianguo'],
+        ]}
+        mode="multiple"
+        showSearch
+      />
+    );
+
+    fireEvent.click(wrapper.find('.arco-cascader')[0]);
+
+    fireEvent.keyDown(wrapper.find('input')[0], {
+      keyCode: Backspace.code,
+    });
+
+    jest.runAllTimers();
+
+    expect(wrapper.find('.arco-tag')).toHaveLength(1);
   });
 });
