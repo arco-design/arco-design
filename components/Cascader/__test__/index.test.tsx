@@ -56,7 +56,7 @@ describe('Cascader basic test', () => {
   it('onKeyDown is called', () => {
     const onKeyDown = jest.fn();
     const wrapper = mountCascader(<Cascader onKeyDown={onKeyDown} />);
-    fireEvent.keyDown(wrapper.querySelector('input'));
+    fireEvent.keyDown(wrapper.querySelector('input') as HTMLElement);
     expect(onKeyDown).toHaveBeenCalled();
   });
 

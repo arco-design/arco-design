@@ -133,7 +133,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      e.stopPropagation();
+      // e.stopPropagation();
       // 使用keycode，避免中文输入法输入时，触发enter,space等事件。
       // p.s 中文输入时，keycode 都是229
       const keyCode = e.keyCode || e.which;
