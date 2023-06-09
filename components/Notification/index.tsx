@@ -125,6 +125,11 @@ class Notification extends BaseNotification {
       ReactDOMRender(
         <Notification
           ref={(instance) => {
+            if (!notificationInstance[position]) {
+              // getContainer 变化时，会重置 notificationInstance
+              // pending 中的逻辑执行晚于重置逻辑时，这里需判空
+              notificationInstance[position] = {};
+            }
             notificationInstance[position].instance = instance;
             instance.add(_noticeProps);
             resolve(null);
