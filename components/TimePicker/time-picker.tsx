@@ -207,8 +207,6 @@ function TimePicker(props: InnerTimePickerProps) {
         'en'
       );
     }
-    console.log('--2', hour, minute, second);
-
     newValue = dayjs(newValue, valueFormat).locale(dayjs.locale());
 
     onSelect &&
