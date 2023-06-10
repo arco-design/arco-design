@@ -106,16 +106,7 @@ function TimePicker(props: InnerTimePickerProps) {
   const selectedSecond = valueShow && valueShow.second();
 
   const getDefaultStr = useCallback(
-    (
-      type: 'hour' | 'minute' | 'second',
-      {
-        hour,
-        minute,
-      }: {
-        hour?: number;
-        minute?: number;
-      } = {}
-    ) => {
+    (type: 'hour' | 'minute' | 'second') => {
       switch (type) {
         case 'hour':
           return typeof disabledHours === 'function'
@@ -124,7 +115,7 @@ function TimePicker(props: InnerTimePickerProps) {
         case 'minute':
           return typeof disabledMinutes === 'function'
             ? padStart(
-                MINUTES.find((m) => disabledMinutes(hour ?? selectedHour).indexOf(m) === -1) || 0,
+                MINUTES.find((m) => disabledMinutes(selectedHour).indexOf(m) === -1) || 0,
                 2,
                 '0'
               )
@@ -133,9 +124,7 @@ function TimePicker(props: InnerTimePickerProps) {
           return typeof disabledSeconds === 'function'
             ? padStart(
                 SECONDS.find(
-                  (s) =>
-                    disabledSeconds(hour ?? selectedHour, minute ?? selectedMinute).indexOf(s) ===
-                    -1
+                  (s) => disabledSeconds(selectedHour, selectedMinute).indexOf(s) === -1
                 ) || 0,
                 2,
                 '0'
@@ -160,22 +149,15 @@ function TimePicker(props: InnerTimePickerProps) {
 
   function onHandleSelect(selectedValue: number | string, unit: string) {
     const isUpperCase = getColumnsFromFormat(format).list.indexOf('A') !== -1;
-    const defaultConfig = {
-      hour: unit === 'hour' ? Number(selectedValue) : undefined,
-      minute: unit === 'minute' ? Number(selectedValue) : undefined,
-    };
     const _valueShow =
       valueShow ||
       dayjs(
-        `${getDefaultStr('hour')}:${getDefaultStr('minute', defaultConfig)}:${getDefaultStr(
-          'second',
-          defaultConfig
-        )}`,
+        `${getDefaultStr('hour')}:${getDefaultStr('minute')}:${getDefaultStr('second')}`,
         'HH:mm:ss'
       );
     let hour = _valueShow.hour();
-    const minute = _valueShow.minute();
-    const second = _valueShow.second();
+    let minute = _valueShow.minute();
+    let second = _valueShow.second();
     const selectedAmpm = isUpperCase ? ampm.toUpperCase() : ampm;
     let valueFormat = 'HH:mm:ss';
     let newValue;
@@ -190,9 +172,27 @@ function TimePicker(props: InnerTimePickerProps) {
       hour = hour > 12 ? hour - 12 : hour;
     }
     if (unit === 'hour') {
+      if (
+        typeof disabledMinutes === 'function' &&
+        disabledMinutes(selectedValue).includes(minute)
+      ) {
+        minute = MINUTES.find((m) => disabledMinutes(selectedValue).indexOf(m) === -1) ?? 0;
+      }
+      if (
+        typeof disabledSeconds === 'function' &&
+        disabledSeconds(selectedValue, minute).includes(second)
+      ) {
+        second = SECONDS.find((s) => disabledSeconds(selectedValue, minute).indexOf(s) === -1) ?? 0;
+      }
       newValue = dayjs(`${selectedValue}:${minute}:${second} ${selectedAmpm}`, valueFormat, 'en');
     }
     if (unit === 'minute') {
+      if (
+        typeof disabledSeconds === 'function' &&
+        disabledSeconds(hour, selectedValue).includes(second)
+      ) {
+        second = SECONDS.find((s) => disabledSeconds(hour, selectedValue).indexOf(s) === -1) ?? 0;
+      }
       newValue = dayjs(`${hour}:${selectedValue}:${second} ${selectedAmpm}`, valueFormat, 'en');
     }
     if (unit === 'second') {
@@ -207,6 +207,7 @@ function TimePicker(props: InnerTimePickerProps) {
         'en'
       );
     }
+    console.log('--2', hour, minute, second);
 
     newValue = dayjs(newValue, valueFormat).locale(dayjs.locale());
 
