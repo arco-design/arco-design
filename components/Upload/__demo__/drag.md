@@ -35,11 +35,12 @@ const isAcceptFile = (file, accept) => {
         // 所以优先对比input的accept类型和文件对象的type值
         return true;
       }
-      if (/\/\*/.test(text)) {
+      if (new RegExp('\\/\\*').test(text)) {
         // image/* 这种通配的形式处理
-        return fileType.replace(/\/.*$/, '') === text.replace(/\/.*$/, '');
+        const regExp = new RegExp('\\/.*$')
+        return fileType.replace(regExp, '') === text.replace(regExp, '');
       }
-      if (/\..*/.test(text)) {
+      if (new RegExp('\\..*').test(text)) {
         // .jpg 等后缀名
         return text === `.${fileExtension && fileExtension.toLowerCase()}`;
       }
