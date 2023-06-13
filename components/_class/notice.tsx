@@ -28,6 +28,7 @@ export interface NoticeProps {
   update?: boolean;
   closable?: boolean;
   rtl?: boolean;
+  closeIcon?: ReactNode;
 }
 
 class Notice extends Component<NoticeProps, {}> {
@@ -139,6 +140,7 @@ class Notice extends Component<NoticeProps, {}> {
       noticeType,
       iconPrefix,
       rtl,
+      closeIcon,
     } = this.props;
     const classNames = cs(
       prefixCls,
@@ -192,17 +194,22 @@ class Notice extends Component<NoticeProps, {}> {
               <div className={`${prefixCls}-content`}>{content}</div>
               {btn && <div className={`${prefixCls}-btn-wrapper`}>{btn}</div>}
             </div>
-            {_closable && (
-              <IconHover
-                prefix={prefixCls}
-                className={`${prefixCls}-close-btn`}
-                onClick={this.onClose}
-              >
-                <IconContext.Provider value={iconPrefix ? { prefixCls: iconPrefix } : {}}>
-                  <IconClose />
-                </IconContext.Provider>
-              </IconHover>
-            )}
+            {closable &&
+              (closeIcon !== undefined ? (
+                <span onClick={this.onClose} className={`${prefixCls}-close-icon`}>
+                  {closeIcon}
+                </span>
+              ) : (
+                <IconHover
+                  prefix={prefixCls}
+                  className={`${prefixCls}-close-btn`}
+                  onClick={this.onClose}
+                >
+                  <IconContext.Provider value={iconPrefix ? { prefixCls: iconPrefix } : {}}>
+                    <IconClose />
+                  </IconContext.Provider>
+                </IconHover>
+              ))}
           </div>
         </div>
       );
