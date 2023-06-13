@@ -113,4 +113,26 @@ describe('open message', () => {
       prefixCls: 'arco',
     });
   });
+
+  it('closable=false', () => {
+    Notification.info({
+      content: 'closable=false',
+      id: 'update',
+      closable: false,
+      closeIcon: 'xxx',
+    });
+    expect($('.arco-notification-close-icon').length).toBe(0);
+  });
+
+  it('closeicon=xxx', () => {
+    Notification.info({
+      content: 'closeicon=xxx',
+      id: 'update',
+      closable: true,
+      closeIcon: 'xxx',
+    });
+
+    expect($('.arco-notification-close-icon').length).toBe(1);
+    expect($('.arco-notification-close-icon').item(0).textContent).toBe('xxx');
+  });
 });
