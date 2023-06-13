@@ -121,7 +121,7 @@ describe('open message', () => {
       closable: false,
       closeIcon: 'xxx',
     });
-    expect($('.arco-notification-close-icon').length).toBe(0);
+    expect($('.arco-notification-close-btn').length).toBe(0);
   });
 
   it('closeicon=xxx', () => {
@@ -132,7 +132,7 @@ describe('open message', () => {
       closeIcon: 'xxx',
     });
 
-    expect($('.arco-notification-close-icon').length).toBe(1);
-    expect($('.arco-notification-close-icon').item(0).textContent).toBe('xxx');
+    expect($('.arco-notification-close-btn').length).toBe(1);
+    expect($('.arco-notification-close-btn').item(0).textContent).toBe('xxx');
   });
 });

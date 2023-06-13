@@ -199,9 +199,9 @@ class Notice extends Component<NoticeProps, {}> {
               <div className={`${prefixCls}-content`}>{content}</div>
               {btn && <div className={`${prefixCls}-btn-wrapper`}>{btn}</div>}
             </div>
-            {closable &&
+            {_closable &&
               (closeIcon !== undefined ? (
-                <span onClick={this.onClose} className={`${prefixCls}-close-icon`}>
+                <span onClick={this.onClose} className={`${prefixCls}-close-btn`}>
                   {closeIcon}
                 </span>
               ) : (
