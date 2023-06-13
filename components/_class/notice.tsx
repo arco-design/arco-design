@@ -28,6 +28,7 @@ export interface NoticeProps {
   update?: boolean;
   closable?: boolean;
   rtl?: boolean;
+  closeIcon?: ReactNode;
 }
 
 class Notice extends Component<NoticeProps, {}> {
@@ -139,6 +140,7 @@ class Notice extends Component<NoticeProps, {}> {
       noticeType,
       iconPrefix,
       rtl,
+      closeIcon,
     } = this.props;
     const classNames = cs(
       prefixCls,
@@ -168,15 +170,20 @@ class Notice extends Component<NoticeProps, {}> {
           <div className={classNames} style={style} role="alert">
             {shouldRenderIcon && this.renderIcon()}
             <span className={`${prefixCls}-content`}>{content}</span>
-            {_closable && (
-              <IconHover
-                prefix={prefixCls}
-                className={`${prefixCls}-close-btn`}
-                onClick={this.onClose}
-              >
-                <IconClose />
-              </IconHover>
-            )}
+            {_closable &&
+              (closeIcon !== undefined ? (
+                <span onClick={this.onClose} className={`${prefixCls}-close-btn`}>
+                  {closeIcon}
+                </span>
+              ) : (
+                <IconHover
+                  prefix={prefixCls}
+                  className={`${prefixCls}-close-btn`}
+                  onClick={this.onClose}
+                >
+                  <IconClose />
+                </IconHover>
+              ))}
           </div>
         </div>
       );

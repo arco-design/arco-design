@@ -20,6 +20,7 @@
 |id|当前消息的唯一标识，可以用来更新消息|string |`-`|-|
 |transitionClassNames|消息弹出动画的类名，见 react-transition-group 的 `classNames`|string |`-`|-|
 |position|消息的位置，分为 `top` 上方和 `bottom` 下方|'top' \| 'bottom' |`-`|-|
+|closeIcon|自定义右上角关闭按钮|ReactNode |`-`|2.50.0|
 |icon|自定义图标|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |content|消息内容|ReactNode \| string  **(必填)**|`-`|-|
