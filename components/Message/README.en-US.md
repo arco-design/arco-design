@@ -20,6 +20,7 @@ Lightweight global feedback triggered by user actions.
 |id|The unique identifier of the current message, which can be used to update the message|string |`-`|-|
 |transitionClassNames|ClassNames of react-transition-group of the message pop-up animation, see `classNames`|string |`-`|-|
 |position|The position of the message|'top' \| 'bottom' |`-`|-|
+|closeIcon|Custom the close button on top-right of the drawer dialog|ReactNode |`-`|2.50.0|
 |icon|Custom icon|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |content|Message content|ReactNode \| string  **(Required)**|`-`|-|

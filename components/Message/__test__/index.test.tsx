@@ -80,4 +80,24 @@ describe('open message', () => {
       prefixCls: 'arco',
     });
   });
+
+  it('closable=false', () => {
+    Message.info({
+      content: 'closable=false',
+      closable: false,
+      closeIcon: 'xxx',
+    });
+    expect($('.arco-message-close-btn').length).toBe(0);
+  });
+
+  it('closeicon=xxx', () => {
+    Message.info({
+      content: 'closeicon=xxx',
+      closable: true,
+      closeIcon: 'xxx',
+    });
+
+    expect($('.arco-message-close-btn').length).toBe(1);
+    expect($('.arco-message-close-btn').item(0).textContent).toBe('xxx');
+  });
 });
