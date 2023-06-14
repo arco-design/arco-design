@@ -168,7 +168,7 @@ export interface ModalProps {
   /**
    * @zh 自定义渲染对话框
    * @en Custom the render of Modal
-   * @defaultValue 2.2.0
+   * @version 2.2.0
    */
   modalRender?: (modalNode: ReactNode) => ReactNode;
   prefixCls?: string;
