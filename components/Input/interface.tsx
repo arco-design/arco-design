@@ -124,6 +124,12 @@ export interface InputProps
    * @en With `maxLength`, Show word count.
    */
   showWordLimit?: boolean;
+  /**
+   * @zh `allowClear` 时配置清除按钮的图标。
+   * @en Configure the icon of the clear button when `allowClear`.
+   * @version 2.50.0
+   */
+  clearIcon?: ReactNode;
 }
 
 /**
@@ -207,6 +213,12 @@ export interface TextAreaProps
    * @version 2.2.0
    */
   onClear?: () => void;
+  /**
+   * @zh `allowClear` 时配置清除按钮的图标。
+   * @en Configure the icon of the clear button when `allowClear`.
+   * @version 2.50.0
+   */
+  clearIcon?: ReactNode;
 }
 
 /**

@@ -30,6 +30,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       onKeyDown,
       onPressEnter,
       maxLength: propMaxLength,
+      clearIcon,
       ...rest
     } = props;
 
@@ -140,22 +141,39 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
           <>
             <input ref={refInput} {...inputProps} />
             {!readOnly && !disabled && allowClear && value ? (
-              <IconHover
-                tabIndex={0}
-                className={`${prefixCls}-clear-icon`}
-                {...getKeyboardEvents({ onPressEnter: handleClear })}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleClear(e);
-                }}
-              >
-                <IconClose
-                  // keep focus status
+              clearIcon !== undefined ? (
+                <span
+                  tabIndex={0}
+                  className={`${prefixCls}-clear-icon`}
+                  {...getKeyboardEvents({ onPressEnter: handleClear })}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleClear(e);
+                  }}
                   onMouseDown={(e) => {
                     e.preventDefault();
                   }}
-                />
-              </IconHover>
+                >
+                  {clearIcon}
+                </span>
+              ) : (
+                <IconHover
+                  tabIndex={0}
+                  className={`${prefixCls}-clear-icon`}
+                  {...getKeyboardEvents({ onPressEnter: handleClear })}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleClear(e);
+                  }}
+                >
+                  <IconClose
+                    // keep focus status
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                    }}
+                  />
+                </IconHover>
+              )
             ) : null}
           </>
         ) : (

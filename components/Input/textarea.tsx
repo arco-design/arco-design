@@ -35,6 +35,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     onKeyDown,
     onPressEnter,
     status,
+    clearIcon,
     ...rest
   } = props;
 
@@ -180,15 +181,27 @@ const TextArea = (props: TextAreaProps, ref) => {
       >
         {TextAreaElement}
         {showClearIcon ? (
-          <IconHover className={`${prefixCls}-clear-icon`}>
-            <IconClose
+          clearIcon !== undefined ? (
+            <span
+              className={`${prefixCls}-clear-icon`}
               onClick={handleClearClick}
-              // keep focus status
               onMouseDown={(e) => {
                 e.preventDefault();
               }}
-            />
-          </IconHover>
+            >
+              {clearIcon}
+            </span>
+          ) : (
+            <IconHover className={`${prefixCls}-clear-icon`}>
+              <IconClose
+                onClick={handleClearClick}
+                // keep focus status
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                }}
+              />
+            </IconHover>
+          )
         ) : null}
         {wordLimitMaxLength && showWordLimit && (
           <span

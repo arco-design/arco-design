@@ -28,6 +28,7 @@ The basic form components have been expanded on the basis of native controls and
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|The label text displayed after (on the right side of) the input field|ReactNode |`-`|-|
 |addBefore|The label text displayed before (on the left side of) the input field|ReactNode |`-`|-|
+|clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.50.0|
 |prefix|The prefix icon or text for the Input|ReactNode |`-`|-|
 |suffix|The suffix icon or text for the Input|ReactNode |`-`|-|
 |afterStyle|The additional css style of the `addAfter` element|object |`-`|-|
@@ -51,6 +52,7 @@ The basic form components have been expanded on the basis of native controls and
 |placeholder|textarea placeholder|string |`-`|-|
 |value|To set value|string |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
+|clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.50.0|
 |autoSize|Height autoSize feature|boolean \| { minRows?: number; maxRows?: number } |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |maxLength|The max content length；After setting `errorOnly` to `true`, if `maxLength` is exceeded, the `error` status will be displayed, and user input will not be restricted.|number \| { length: number; errorOnly?: boolean } |`-`|`errorOnly` in 2.23.0|
