@@ -287,4 +287,14 @@ describe('Test Textarea', () => {
     expect(textareaLimitElement()?.textContent).toEqual('100/50');
     expect(textareaLimitElement()).toHaveClass('arco-textarea-word-limit-error');
   });
+
+  it('test Input clearIcon=xxx', () => {
+    const component = mountInput(<Input allowClear clearIcon="xxx" defaultValue="123" />);
+    expect(component.find('.arco-input-clear-icon').item(0).textContent).toBe('xxx');
+  });
+
+  it('test TextArea clearIcon=xxx', () => {
+    const component = mountInput(<Input.TextArea allowClear clearIcon="xxx" defaultValue="123" />);
+    expect(component.find('.arco-textarea-clear-icon').item(0).textContent).toBe('xxx');
+  });
 });
