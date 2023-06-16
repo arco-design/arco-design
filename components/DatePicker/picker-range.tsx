@@ -191,7 +191,7 @@ const Picker = (baseProps: RangePickerProps) => {
     const timeValues: Dayjs[] = [];
     const defaultTimeValue =
       isObject(showTime) && showTime.defaultValue
-        ? getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss', utcOffset, timezone)
+        ? getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss')
         : [];
     timeValues[0] = panelValue[0] || defaultTimeValue[0] || zoneNow;
     timeValues[1] = panelValue[1] || defaultTimeValue[1] || zoneNow;

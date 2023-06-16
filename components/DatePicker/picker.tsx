@@ -185,12 +185,7 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   const defaultTimeValue =
     (isObject(showTime) &&
-      (getDayjsValue(
-        showTime.defaultValue,
-        showTime.format || 'HH:mm:ss',
-        utcOffset,
-        timezone
-      ) as Dayjs)) ||
+      (getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss') as Dayjs)) ||
     getNow(utcOffset, timezone);
   const timeValue = panelValue || defaultTimeValue;
 
