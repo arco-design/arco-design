@@ -1,3 +1,11 @@
+## 2.49.2
+
+2023-06-16
+
+### 💎 Enhancement
+
+- Optimize the `onChange` callback parameters of the `Transfer` to ensure that the array order of `targetKeys` is consistent with the actual rendering order of the target list.([#2035](https://github.com/arco-design/arco-design/pull/2035))
+
 ## 2.44.2
 
 2023-02-10

@@ -1,3 +1,11 @@
+## 2.49.2
+
+2023-06-16
+
+### 🐛 BugFix
+
+- Fix the problem that `prefix` passed in is not rendered when `value` of `Statistic` is not a number.([#2037](https://github.com/arco-design/arco-design/pull/2037))
+
 ## 2.47.0
 
 2023-04-14

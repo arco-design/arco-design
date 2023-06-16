@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.49.2
+
+2023-06-16
+
+### 💎 功能优化
+
+- 优化 `Transfer` 组件 `onChange` 回调参数，保证回调返回的 `targetKeys` 数组顺序与目标列表实际渲染顺序一致。([#2035](https://github.com/arco-design/arco-design/pull/2035))
+
+### 🐛 问题修复
+
+- 修复 `Statistic` 组件 `value` 不为数字时，传入的 `prefix` 未被渲染的问题。([#2037](https://github.com/arco-design/arco-design/pull/2037))
+- 修复 `DatePicker` 组件 `showTime.defaultValue` 在设置时区之后显示不准确的 bug。([#2036](https://github.com/arco-design/arco-design/pull/2036))
+
 ## 2.49.1
 
 2023-06-09

@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.49.2
+
+2023-06-16
+
+### 💎 Enhancement
+
+- Optimize the `onChange` callback parameters of the `Transfer` to ensure that the array order of `targetKeys` is consistent with the actual rendering order of the target list.([#2035](https://github.com/arco-design/arco-design/pull/2035))
+
+### 🐛 BugFix
+
+- Fix the problem that `prefix` passed in is not rendered when `value` of `Statistic` is not a number.([#2037](https://github.com/arco-design/arco-design/pull/2037))
+- Fix `showTime.defaultValue` of `DatePicker` component shows inaccurate bug after setting timezone.([#2036](https://github.com/arco-design/arco-design/pull/2036))
+
 ## 2.49.1
 
 2023-06-09

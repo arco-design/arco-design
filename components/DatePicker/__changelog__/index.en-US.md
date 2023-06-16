@@ -1,3 +1,11 @@
+## 2.49.2
+
+2023-06-16
+
+### 🐛 BugFix
+
+- Fix `showTime.defaultValue` of `DatePicker` component shows inaccurate bug after setting timezone.([#2036](https://github.com/arco-design/arco-design/pull/2036))
+
 ## 2.48.2
 
 2023-05-26

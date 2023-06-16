@@ -1,3 +1,11 @@
+## 2.49.2
+
+2023-06-16
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件 `showTime.defaultValue` 在设置时区之后显示不准确的 bug。([#2036](https://github.com/arco-design/arco-design/pull/2036))
+
 ## 2.48.2
 
 2023-05-26
