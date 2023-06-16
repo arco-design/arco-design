@@ -123,6 +123,17 @@ function Statistic(baseProps: StatisticProps, ref) {
   const valueFormatted = isFunction(renderFormat)
     ? renderFormat
     : (_, formattedValue) => formattedValue;
+
+  const isNumberValue = isNumber(Number(value));
+  const eleValueWithPrefix = (
+    <>
+      {prefix !== null && prefix !== undefined ? (
+        <span className={`${prefixCls}-value-prefix`}>{prefix}</span>
+      ) : null}
+      {valueFormatted(value, isNumberValue ? int : value)}
+    </>
+  );
+
   return (
     <div
       className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, className)}
@@ -133,15 +144,10 @@ function Statistic(baseProps: StatisticProps, ref) {
       <div className={`${prefixCls}-content`}>
         <Skeleton animation loading={!!loading} text={{ rows: 1, width: '100%' }}>
           <div className={`${prefixCls}-value`} style={styleValue}>
-            {!isNumber(Number(value)) ? (
-              valueFormatted(value, value)
+            {isNumberValue ? (
+              <span className={`${prefixCls}-value-int`}>{eleValueWithPrefix}</span>
             ) : (
-              <span className={`${prefixCls}-value-int`}>
-                {prefix !== null && prefix !== undefined ? (
-                  <span className={`${prefixCls}-value-prefix`}>{prefix}</span>
-                ) : null}
-                {valueFormatted(value, int)}
-              </span>
+              eleValueWithPrefix
             )}
 
             {decimal !== undefined || suffix ? (
