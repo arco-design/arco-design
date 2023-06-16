@@ -133,12 +133,17 @@ function Transfer(baseProps: TransferProps, ref) {
       moveKeys || (to === 'target' ? sourceInfo.selectedValidKeys : targetInfo.selectedValidKeys);
     const newTargetKeys =
       to === 'target'
-        ? targetKeys.concat(moveKeys)
+        ? targetKeys.concat(moveKeys).sort((keyA, keyB) => {
+            return (
+              dataSource.findIndex(({ key }) => key === keyA) -
+              dataSource.findIndex(({ key }) => key === keyB)
+            );
+          })
         : targetKeys.filter((key) => moveKeys.indexOf(key) === -1);
     // 移动之后取消所有非禁用选项的选中状态
     setSelectedKeys(sourceInfo.selectedDisabledKeys.concat(targetInfo.selectedDisabledKeys));
     setTargetKeys(newTargetKeys);
-    onChange && onChange(newTargetKeys, to, moveKeys);
+    onChange?.(newTargetKeys, to, moveKeys);
   };
 
   // 单选 或者 全选
