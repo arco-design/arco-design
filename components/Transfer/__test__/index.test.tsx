@@ -96,7 +96,7 @@ describe('Transfer', () => {
     const wrapper = render(<Transfer {...listCommonProps} onChange={handleChange} />);
     // move selected keys to target list
     fireEvent.click(wrapper.querySelector('.arco-transfer-operations button'));
-    expect(handleChange).toHaveBeenCalledWith(['b', 'a'], 'target', ['a']);
+    expect(handleChange).toHaveBeenCalledWith(['a', 'b'], 'target', ['a']);
   });
 
   it('should move selected keys expected disabled to corresponding list', () => {
@@ -254,6 +254,10 @@ describe('Transfer', () => {
     // 取消选中 a
     checkTransferItem('source', 0);
     expect(onChange).toBeCalledWith(['b'], 'source', ['a']);
+
+    // re-select item [a]
+    checkTransferItem('source', 0);
+    expect(onChange).toBeCalledWith(['a', 'b'], 'target', ['a']);
   });
 
   it('callback of draggable item', () => {
