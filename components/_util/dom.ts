@@ -13,9 +13,9 @@ export const on = (function () {
     return NOOP;
   }
   return function (
-    element: any,
+    element: EventTarget | null,
     event: string,
-    handler: EventListener | EventListenerObject | Function,
+    handler: EventListenerOrEventListenerObject,
     options?: boolean | AddEventListenerOptions
   ) {
     element && element.addEventListener(event, handler, options || false);
@@ -27,9 +27,9 @@ export const off = (function () {
     return NOOP;
   }
   return function (
-    element: any,
+    element: EventTarget | null,
     event: string,
-    handler: EventListener | EventListenerObject | Function,
+    handler: EventListenerOrEventListenerObject,
     options?: boolean | AddEventListenerOptions
   ) {
     element && element.removeEventListener(event, handler, options || false);
