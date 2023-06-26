@@ -216,6 +216,17 @@ export interface CascaderProps<T = any>
    * @en Callback when click clear icon.
    */
   onClear?: (visible: boolean) => void;
+  /**
+   * @zh 图标配置。
+   * @en Icon configuration.
+   * @version 2.50.0
+   */
+  icons?: {
+    loading?: ReactNode;
+    checked?: ReactNode;
+    next?: ReactNode;
+    rtlNext?: ReactNode;
+  };
 }
 
 export interface OptionProps {
@@ -302,4 +313,10 @@ export interface CascaderPanelProps<T> {
   dropdownColumnRender?: CascaderProps<T>['dropdownColumnRender'];
   dropdownMenuColumnStyle?: CascaderProps<T>['dropdownMenuColumnStyle'];
   getTriggerElement: () => HTMLElement;
+  icons?: {
+    loading?: ReactNode;
+    checked?: ReactNode;
+    next?: ReactNode;
+    rtlNext?: ReactNode;
+  };
 }

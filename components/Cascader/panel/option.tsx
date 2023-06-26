@@ -1,9 +1,5 @@
 import React, { ReactNode } from 'react';
 import Checkbox from '../../Checkbox';
-import IconRight from '../../../icon/react-icon/IconRight';
-import IconLeft from '../../../icon/react-icon/IconLeft';
-import IconLoading from '../../../icon/react-icon/IconLoading';
-import IconCheck from '../../../icon/react-icon/IconCheck';
 import Node from '../base/node';
 import { OptionProps } from '../interface';
 
@@ -14,6 +10,12 @@ export interface CascaderOptionProps<T> {
   selected?: boolean;
   isLeaf?: boolean;
   option: Node<T>;
+  icons?: {
+    loading?: ReactNode;
+    checked?: ReactNode;
+    next?: ReactNode;
+    rtlNext?: ReactNode;
+  };
   renderOption?: () => ReactNode;
   onClickOption?: () => void;
   onDoubleClickOption?: () => void;
@@ -22,7 +24,7 @@ export interface CascaderOptionProps<T> {
 }
 
 const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
-  const { prefixCls, multiple, option, renderOption, selected, rtl } = props;
+  const { prefixCls, multiple, option, renderOption, selected, rtl, icons } = props;
 
   const checkboxDisabled = option.disabled || (multiple && option.disableCheckbox);
 
@@ -46,15 +48,13 @@ const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
         onDoubleClick={checkboxDisabled ? undefined : props.onDoubleClickOption}
       >
         {renderOption ? renderOption() : option.label}
-        {option.isLeaf ? (
-          selected && <IconCheck />
-        ) : option.loading ? (
-          <IconLoading />
-        ) : rtl ? (
-          <IconLeft />
-        ) : (
-          <IconRight />
-        )}
+        {option.isLeaf
+          ? selected && icons.checked
+          : option.loading
+          ? icons.loading
+          : rtl
+          ? icons.rtlNext
+          : icons.next}
       </div>
     </>
   );

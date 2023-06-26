@@ -504,5 +504,81 @@ describe('fieldNames Cascader', () => {
       );
       expect(mockfn.mock.calls).toHaveLength(1);
     });
+
+    it('render next && loading icon', async () => {
+      const options = [
+        {
+          value: 'beijing',
+          label: 'Beijing',
+        },
+        {
+          value: 'shanghai',
+          label: 'Shanghai',
+          children: [
+            {
+              value: 'shanghaishi',
+              label: 'Shanghai',
+            },
+          ],
+        },
+      ];
+      const loadMore: any = (pathValue, level) =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            const nodes = pathValue.map((_x, i) => ({
+              label: `Option ${i + 1}`,
+              value: i,
+              isLeaf: level >= 2,
+            }));
+            resolve(nodes);
+          }, 5000);
+        });
+      const wrapper = mountCascader(
+        <Cascader
+          style={{ maxWidth: 300 }}
+          options={options}
+          defaultValue={['beijing']}
+          loadMore={loadMore}
+          icons={{
+            next: <span>next</span>,
+            loading: <span>loading</span>,
+          }}
+        />
+      );
+
+      fireEvent.click(wrapper.find(prefixCls)[0]);
+      expect(
+        wrapper.find(`${prefixCls}-list-item ${prefixCls}-list-item-label span`).item(0).textContent
+      ).toBe('next');
+
+      fireEvent.click(wrapper.find(prefixCls)[0]);
+      fireEvent.click(wrapper.find(`${prefixCls}-list-item-label`)[0]);
+
+      expect(
+        wrapper.find(`${prefixCls}-list-item ${prefixCls}-list-item-label span`).item(0).textContent
+      ).toBe('loading');
+    });
+    it('render checked icon', async () => {
+      const wrapper = mountCascader(
+        <Cascader
+          fieldNames={{ label: 'name', isLeaf: 'is-leaf', value: 'id' }}
+          style={{ maxWidth: 300 }}
+          options={options}
+          defaultValue={['beijing']}
+          showSearch
+          icons={{
+            checked: <span>checked</span>,
+          }}
+        />
+      );
+      fireEvent.click(wrapper.find(prefixCls)[0]);
+      const input = wrapper.find(`${prefixCls}-view-input`).item(0) as HTMLInputElement;
+      fireEvent.change(input, { target: { value: '北京' } });
+      expect(
+        wrapper
+          .find(`${prefixCls}-list ${prefixCls}-list-search-item ${prefixCls}-check-icon span`)
+          .item(0).textContent
+      ).toBe('checked');
+    });
   });
 });

@@ -61,6 +61,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     loadMore,
     renderEmpty,
     rtl,
+    icons,
   } = props;
 
   const [activeNode, setActiveNode] = useState(
@@ -347,6 +348,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                                 option.isLeaf &&
                                 isEqualWith(props.value, option.pathValue)
                               }
+                              icons={icons}
                               onMouseEnter={() => {
                                 if (option.disabled) {
                                   return;
