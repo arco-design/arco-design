@@ -431,7 +431,7 @@ export interface ColumnProps<T = any> {
    * The `key` corresponding to the column data in the data item is used to display the value.
    * It supports the nested writing of `a[0].bc[1]`, see [lodash.get](https:// www.npmjs.com/package/lodash.get).
    */
-  dataIndex?: string;
+  dataIndex?: keyof T;
   /**
    * @zh React的 key值，如果不指定，默认取 `dataIndex` 的值
    * @en React key value, if not specified, the default value of `dataIndex` is taken
