@@ -673,15 +673,17 @@ const VirtualList: React.ForwardRefExoticComponent<
           <>
             <Filler
               height={itemTotalHeight}
-              offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
               outerStyle={outerStyle}
+              offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
             >
               {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
             </Filler>
             {renderLongestItem()}
           </>
         ) : needFiller ? (
-          <Filler height={viewportHeight}>{renderChildren(data, 0)}</Filler>
+          <Filler height={viewportHeight} outerStyle={outerStyle}>
+            {renderChildren(data, 0)}
+          </Filler>
         ) : (
           renderChildren(data, 0)
         )}
