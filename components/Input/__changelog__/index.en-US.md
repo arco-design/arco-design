@@ -1,3 +1,12 @@
+## 2.50.0
+
+2023-06-30
+
+### 🆕 Feature
+
+- `Input` supports `normalize` to format the input value at the specified time.([#2065](https://github.com/arco-design/arco-design/pull/2065))
+- `Input` supports clearIcon property([#2059](https://github.com/arco-design/arco-design/pull/2059))
+
 ## 2.48.2
 
 2023-05-26

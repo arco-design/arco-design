@@ -1,3 +1,12 @@
+## 2.50.0
+
+2023-06-30
+
+### 🆕 功能升级
+
+- `Input` 支持通过 `normalize` 在指定时机对输入值进行格式化。([#2065](https://github.com/arco-design/arco-design/pull/2065))
+- `Input` 支持配置清除按钮([#2059](https://github.com/arco-design/arco-design/pull/2059))
+
 ## 2.48.2
 
 2023-05-26

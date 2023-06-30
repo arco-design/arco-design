@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.50.0
+
+2023-06-30
+
+### 🆕 Feature
+
+- `Input` supports `normalize` to format the input value at the specified time.([#2065](https://github.com/arco-design/arco-design/pull/2065))
+- `Notification`  supports closeIcon([#2061](https://github.com/arco-design/arco-design/pull/2061))
+- `Message` supports closeIcon([#2060](https://github.com/arco-design/arco-design/pull/2060))
+- `Input` supports clearIcon property([#2059](https://github.com/arco-design/arco-design/pull/2059))
+
+### 🐛 BugFix
+
+- Fix `Select` component being affected by default properties set by `ConfigProvider.componentConfig.InputTag`.([#2064](https://github.com/arco-design/arco-design/pull/2064))
+- Fix the problem that the page switch is abnormal when the `trigger` of the `Carousel` is set to `hover`.([#2063](https://github.com/arco-design/arco-design/pull/2063))
+- Fix the bug of `scrollIntoView` method execution error caused by the boundary condition of `Tree` component.([#2057](https://github.com/arco-design/arco-design/pull/2057))
+- Fix the header alignment problem that may occur when virtual scrolling is enabled for `Table` and the amount of data is small.([#2056](https://github.com/arco-design/arco-design/pull/2056))
+
 ## 2.49.2
 
 2023-06-16

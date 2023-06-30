@@ -1,3 +1,11 @@
+## 2.50.0
+
+2023-06-30
+
+### 🆕 Feature
+
+- `Notification`  supports closeIcon([#2061](https://github.com/arco-design/arco-design/pull/2061))
+
 ## 2.49.1
 
 2023-06-09

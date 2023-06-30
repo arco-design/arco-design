@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.50.0
+
+2023-06-30
+
+### 🆕 功能升级
+
+- `Input` 支持通过 `normalize` 在指定时机对输入值进行格式化。([#2065](https://github.com/arco-design/arco-design/pull/2065))
+- `Notification` 支持配置关闭按钮([#2061](https://github.com/arco-design/arco-design/pull/2061))
+- `Message` 支持配置关闭按钮([#2060](https://github.com/arco-design/arco-design/pull/2060))
+- `Input` 支持配置清除按钮([#2059](https://github.com/arco-design/arco-design/pull/2059))
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件被 `ConfigProvider.componentConfig.InputTag` 设置的默认属性影响的问题。([#2064](https://github.com/arco-design/arco-design/pull/2064))
+- 修复 `Carousel` 组件 `trigger` 设置为 `hover` 时页面切换异常的问题。([#2063](https://github.com/arco-design/arco-design/pull/2063))
+- 修复 `Tree` 组件边界条件下导致的 `scrollIntoView` 方法执行报错的 bug。([#2057](https://github.com/arco-design/arco-design/pull/2057))
+- 修复 `Table` 开启虚拟滚动且数据量较小时可能出现的表头对齐问题。([#2056](https://github.com/arco-design/arco-design/pull/2056))
+
 ## 2.49.2
 
 2023-06-16

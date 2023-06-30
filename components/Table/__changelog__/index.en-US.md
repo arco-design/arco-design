@@ -1,3 +1,11 @@
+## 2.50.0
+
+2023-06-30
+
+### 🐛 BugFix
+
+- Fix the header alignment problem that may occur when virtual scrolling is enabled for `Table` and the amount of data is small.([#2056](https://github.com/arco-design/arco-design/pull/2056))
+
 ## 2.49.0
 
 2023-06-02

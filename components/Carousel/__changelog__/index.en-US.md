@@ -1,3 +1,11 @@
+## 2.50.0
+
+2023-06-30
+
+### 🐛 BugFix
+
+- Fix the problem that the page switch is abnormal when the `trigger` of the `Carousel` is set to `hover`.([#2063](https://github.com/arco-design/arco-design/pull/2063))
+
 ## 2.38.0
 
 2022-07-29

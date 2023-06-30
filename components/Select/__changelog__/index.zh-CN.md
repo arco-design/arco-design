@@ -1,3 +1,11 @@
+## 2.50.0
+
+2023-06-30
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件被 `ConfigProvider.componentConfig.InputTag` 设置的默认属性影响的问题。([#2064](https://github.com/arco-design/arco-design/pull/2064))
+
 ## 2.47.2
 
 2023-05-06

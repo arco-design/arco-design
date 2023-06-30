@@ -1,3 +1,11 @@
+## 2.50.0
+
+2023-06-30
+
+### 🐛 BugFix
+
+- Fix the bug of `scrollIntoView` method execution error caused by the boundary condition of `Tree` component.([#2057](https://github.com/arco-design/arco-design/pull/2057))
+
 ## 2.47.1
 
 2023-04-21

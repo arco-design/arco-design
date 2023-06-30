@@ -1,3 +1,11 @@
+## 2.50.0
+
+2023-06-30
+
+### 🐛 BugFix
+
+- Fix `Select` component being affected by default properties set by `ConfigProvider.componentConfig.InputTag`.([#2064](https://github.com/arco-design/arco-design/pull/2064))
+
 ## 2.47.2
 
 2023-05-06
