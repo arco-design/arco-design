@@ -33,7 +33,15 @@ export interface DescriptionsProps {
    */
   column?:
     | number
-    | { xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number };
+    | {
+        xs?: number;
+        sm?: number;
+        md?: number;
+        lg?: number;
+        xl?: number;
+        xxl?: number;
+        xxxl?: number;
+      };
   /**
    * @zh 标题
    * @en Title of the description
