@@ -24,6 +24,7 @@ The basic form components have been expanded on the basis of native controls and
 |defaultValue|The initial input content|string |`-`|-|
 |placeholder|Input box prompt text|string |`-`|-|
 |value|The input content value|string |`-`|-|
+|normalizeTrigger|Specify the timing of normalize execution|('onBlur' \| 'onPressEnter')[] |`['onBlur']`|2.50.0|
 |size|The size of the input box|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|The label text displayed after (on the right side of) the input field|ReactNode |`-`|-|
@@ -40,6 +41,7 @@ The basic form components have been expanded on the basis of native controls and
 |onChange|Callback when user input|(value: string, e) => void |`-`|-|
 |onClear|Callback when click clear button|() => void |`-`|-|
 |onPressEnter|Callback when press enter key|(e) => void |`-`|-|
+|normalize|Format the value entered by the user at the specified time, and when the previous and subsequent values are inconsistent, onChange will be triggered|(value: string) => string |`-`|2.50.0|
 
 ### Input.TextArea
 

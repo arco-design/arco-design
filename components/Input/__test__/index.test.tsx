@@ -297,4 +297,36 @@ describe('Test Textarea', () => {
     const component = mountInput(<Input.TextArea allowClear clearIcon="xxx" defaultValue="123" />);
     expect(component.find('.arco-textarea-clear-icon').item(0).textContent).toBe('xxx');
   });
+
+  it('test normalize', () => {
+    const component = mountInput(<Input normalize={(v) => `${v}__`} />);
+    const input = component.container.querySelector('input') as HTMLElement;
+
+    input &&
+      fireEvent.change(input, {
+        target: {
+          value: 'Hello',
+        },
+      });
+
+    fireEvent.blur(input);
+    expect(input.getAttribute('value')).toBe('Hello__');
+  });
+
+  it('test normalize onPressEnter', () => {
+    const component = mountInput(
+      <Input normalize={(v) => `${v}__`} normalizeTrigger={['onPressEnter']} />
+    );
+    const input = component.container.querySelector('input') as HTMLElement;
+
+    input &&
+      fireEvent.change(input, {
+        target: {
+          value: 'Hello',
+        },
+      });
+
+    fireEvent.keyDown(input, { keyCode: Enter.code });
+    expect(input.getAttribute('value')).toBe('Hello__');
+  });
 });

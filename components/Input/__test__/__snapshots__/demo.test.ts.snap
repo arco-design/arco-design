@@ -667,6 +667,47 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Input/demo/normalize.md correctly 1`] = `
+<div
+  class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
+>
+  <div
+    class="arco-space-item"
+    style="margin-right:20px;margin-bottom:20px"
+  >
+    <div>
+      <div
+        class="arco-typography"
+      >
+        trim whitespace when out of focus：
+      </div>
+      <input
+        class="arco-input arco-input-size-default"
+        style="width:350px"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+    style="margin-bottom:20px"
+  >
+    <div>
+      <div
+        class="arco-typography"
+      >
+        trim whitespace when press enter：
+      </div>
+      <input
+        class="arco-input arco-input-size-default"
+        style="width:350px"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Input/demo/password.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"

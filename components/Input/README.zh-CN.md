@@ -24,6 +24,7 @@
 |defaultValue|默认值|string |`-`|-|
 |placeholder|输入框提示文字|string |`-`|-|
 |value|输入框的值，受控模式|string |`-`|-|
+|normalizeTrigger|指定 normalize 执行的时机|('onBlur' \| 'onPressEnter')[] |`['onBlur']`|2.50.0|
 |size|输入框的尺寸|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|输入框后添加元素|ReactNode |`-`|-|
@@ -40,6 +41,7 @@
 |onChange|输入时的回调|(value: string, e) => void |`-`|-|
 |onClear|点击清除按钮的回调|() => void |`-`|-|
 |onPressEnter|按下回车键的回调|(e) => void |`-`|-|
+|normalize|在指定时机对用户输入的值进行格式化处理。前后值不一致时，会触发 onChange|(value: string) => string |`-`|2.50.0|
 
 ### Input.TextArea
 

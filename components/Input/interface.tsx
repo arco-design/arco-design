@@ -68,6 +68,19 @@ export interface InputProps
    */
   onPressEnter?: (e) => void;
   /**
+   * @zh 指定 normalize 执行的时机
+   * @en Specify the timing of normalize execution
+   * @version 2.50.0
+   * @defaultValue ['onBlur']
+   */
+  normalizeTrigger?: ('onBlur' | 'onPressEnter')[];
+  /**
+   * @zh 在指定时机对用户输入的值进行格式化处理。前后值不一致时，会触发 onChange
+   * @en Format the value entered by the user at the specified time, and when the previous and subsequent values are inconsistent, onChange will be triggered
+   * @version 2.50.0
+   */
+  normalize?: (value: string) => string;
+  /**
    * @zh 输入框前添加元素
    * @en The label text displayed before (on the left side of) the input field
    */
