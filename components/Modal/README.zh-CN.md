@@ -43,7 +43,7 @@
 |footer|自定义页脚，传入 null 则不显示|ReactNode \| ((cancelButtonNode: ReactNode, okButtonNode: ReactNode) => ReactNode) |`-`|2.12.0|
 |getChildrenPopupContainer|对话框里的弹出框 `Select` `Tooltip` 等挂载的容器，默认挂载在对话框内。|(node: HTMLElement) => Element |`-`|-|
 |getPopupContainer|指定弹出框挂载的父节点|() => Element |`() => document.body`|-|
-|modalRender|自定义渲染对话框|(modalNode: ReactNode) => ReactNode |`2.2.0`|-|
+|modalRender|自定义渲染对话框|(modalNode: ReactNode) => ReactNode |`-`|2.2.0|
 |onCancel|关闭弹出框的回调|() => void |`-`|-|
 
 ### Modal.method(config)

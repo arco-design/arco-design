@@ -43,7 +43,7 @@ Open a floating layer on the current page to carry related operations.
 |footer|Custom `footer`. if it is null, the footer will not be displayed.|ReactNode \| ((cancelButtonNode: ReactNode, okButtonNode: ReactNode) => ReactNode) |`-`|2.12.0|
 |getChildrenPopupContainer|The Popup in Modal. Such as `Select` and `Tooltip` are mounted in the Modal|(node: HTMLElement) => Element |`-`|-|
 |getPopupContainer|Specify the parent node of the Modal|() => Element |`() => document.body`|-|
-|modalRender|Custom the render of Modal|(modalNode: ReactNode) => ReactNode |`2.2.0`|-|
+|modalRender|Custom the render of Modal|(modalNode: ReactNode) => ReactNode |`-`|2.2.0|
 |onCancel|Callback when click cancel button|() => void |`-`|-|
 
 ### Modal.method(config)

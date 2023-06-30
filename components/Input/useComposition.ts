@@ -16,6 +16,7 @@ export default function useComposition({
   onKeyDown,
   onPressEnter,
   beforeTriggerValueChangeCallback,
+  normalizeHandler,
 }: {
   value: string;
   maxLength: number;
@@ -23,6 +24,7 @@ export default function useComposition({
   onKeyDown: InputProps['onKeyDown'] | TextAreaProps['onKeyDown'];
   onPressEnter: InputProps['onPressEnter'];
   beforeTriggerValueChangeCallback?: (newValue: string) => void;
+  normalizeHandler?: (type: InputProps['normalizeTrigger'][number]) => InputProps['normalize'];
 }): {
   compositionValue: string;
   triggerValueChangeCallback: typeof onChange;
@@ -79,6 +81,8 @@ export default function useComposition({
         onKeyDown && onKeyDown(e);
         if (keyCode === Enter.code) {
           onPressEnter && onPressEnter(e);
+          normalizeHandler &&
+            triggerValueChangeCallback(normalizeHandler('onPressEnter')(e.target.value), e);
         }
       }
     },

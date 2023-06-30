@@ -1,11 +1,11 @@
 import React, { useRef, useImperativeHandle, useEffect } from 'react';
-import { InputComponentProps, RefInputType } from './interface';
+import { InputComponentProps, InputProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
 import ResizeObserver from '../_util/resizeObserver';
 import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
-import { isObject } from '../_util/is';
+import { isFunction, isObject } from '../_util/is';
 import useComposition from './useComposition';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 import fillNBSP from '../_util/fillNBSP';
@@ -46,6 +46,8 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       'beforeStyle',
       'prefix',
       'suffix',
+      'normalize',
+      'normalizeTrigger',
     ]);
 
     const getKeyboardEvents = useKeyboardEvent();
@@ -59,13 +61,33 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
         : propMaxLength.length
       : propMaxLength;
 
+    const normalizeHandler = (type: InputProps['normalizeTrigger'][number]) => {
+      let handler = (v) => v;
+      const normalizeTrigger = props.normalizeTrigger || ['onBlur'];
+      if (
+        Array.isArray(normalizeTrigger) &&
+        normalizeTrigger.indexOf(type) > -1 &&
+        isFunction(props.normalize)
+      ) {
+        handler = props.normalize;
+      }
+      return handler;
+    };
+
     const {
       compositionValue,
       valueChangeHandler,
       compositionHandler,
       keyDownHandler,
       triggerValueChangeCallback,
-    } = useComposition({ value, maxLength, onChange, onKeyDown, onPressEnter });
+    } = useComposition({
+      value,
+      maxLength,
+      onChange,
+      onKeyDown,
+      onPressEnter,
+      normalizeHandler,
+    });
 
     const inputClassNames = cs(
       prefixCls,
@@ -90,6 +112,10 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       onCompositionStart: compositionHandler,
       onCompositionUpdate: compositionHandler,
       onCompositionEnd: compositionHandler,
+      onBlur: (e) => {
+        props.onBlur?.(e);
+        triggerValueChangeCallback(normalizeHandler('onBlur')(e.target.value), e);
+      },
     };
 
     useImperativeHandle(
