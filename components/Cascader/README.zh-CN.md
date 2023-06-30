@@ -48,6 +48,7 @@
 |dropdownMenuColumnStyle|菜单列样式|CSSProperties |`-`|2.35.0|
 |fieldNames|指定label，value，isLeaf，disabled，children 对应的字段|[FieldNamesType](#fieldnamestype) |`DefaultFieldNames`|-|
 |filterOption|默认搜索从 `label` 属性中进行关键字搜索。通过该方法可以自定义搜索逻辑|(inputValue: string, option: NodeProps&lt;T&gt;) =&gt; boolean |`-`|-|
+|icons|图标配置。|{loading?: ReactNode;checked?: ReactNode;next?: ReactNode;rtlNext?: ReactNode;} |`-`|2.50.0|
 |loadMore|动态加载数据。pathValue: 当前选中项的路径 value； level: 选中项层级。|(pathValue: string[], level: number) =&gt; Promise&lt;T[]&gt; |`-`|-|
 |options|级联数据|T[] |`[]`|-|
 |removeIcon|多选时配置选中项的删除图标。当传入`null`，不显示删除图标。|ReactNode \| null |`-`|-|
