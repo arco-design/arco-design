@@ -477,8 +477,19 @@ const CoreSelectView = React.forwardRef(
         },
       };
 
+      // Avoid properties from configProvider affecting here
+      const inputPropsOverrideConfigProvider: Partial<InputTagProps> = {
+        suffix: null,
+        prefix: null,
+        addBefore: null,
+        addAfter: null,
+        allowClear: false,
+        labelInValue: false,
+      };
+
       return (
         <InputTag
+          {...inputPropsOverrideConfigProvider}
           // Avoid when clicking outside the browser window, InputTag out of focus
           className={mergedFocused ? `${getPrefixCls('input-tag')}-focus` : ''}
           ref={refInput}
