@@ -2456,7 +2456,7 @@ changelog: true
 
 ## 2.10.0 🏮
 
-2020-02-26
+2021-02-26
 
 ### 🆕 Function upgrade
 
