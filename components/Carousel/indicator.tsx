@@ -44,14 +44,14 @@ function CarouselIndicator(props: CarouselIndicatorProps, ref) {
   const wrapperProps = {
     ref,
     className: cs(prefixCls, `${prefixCls}-${type}`, `${prefixCls}-${position}`, className),
-    [trigger === 'click' ? 'onClick' : 'onMouseEnter']: (event) => {
+    [trigger === 'click' ? 'onClick' : 'onMouseMove']: (event) => {
       event.preventDefault();
       if (type === 'slider') {
-        const x = event.nativeEvent.offsetX;
-        const width = event.currentTarget.clientWidth;
         // clear up effect from event bubbling
         if (event.target === event.currentTarget) {
-          const index = ~~((x / width) * count);
+          const { x: startX, width } = event.currentTarget.getBoundingClientRect();
+          const offsetX = event.nativeEvent.clientX - startX;
+          const index = ~~((offsetX / width) * count);
           index !== activeIndex && onSelectIndex(index);
         }
       } else {
