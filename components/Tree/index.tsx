@@ -138,9 +138,9 @@ class Tree extends Component<TreeProps, TreeState> {
   // nodeProps 参数似乎咩有什么用。。。但是不知道外部有没有调用，就当key用吧。。
   scrollIntoView = (_index: number | string, nodeProps?: NodeProps) => {
     let index = _index;
-    if (typeof _index === 'string' || nodeProps) {
+    if (nodeProps) {
       // 作为key
-      index = _index || nodeProps._key;
+      index = nodeProps._key;
     }
 
     if (this.nodeListRef) {
