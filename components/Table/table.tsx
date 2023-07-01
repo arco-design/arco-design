@@ -482,7 +482,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       const ele =
         root.querySelector(`.${prefixCls}-body`) ||
         root.querySelector(`.${prefixCls}-content-inner`);
-      const tableViewWidth = ele.clientWidth;
+      const tableViewWidth = ele.getBoundingClientRect().width;
       setTableViewWidth(tableViewWidth);
     }
   }
