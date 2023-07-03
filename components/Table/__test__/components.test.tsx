@@ -146,4 +146,24 @@ describe('Table components', () => {
       'arco-table-td arco-table-operation arco-table-checkbox arco-tooltip-open'
     );
   });
+
+  it('Table custom cell', () => {
+    const Cell = jest.fn(({ children }) => children);
+    render(
+      <Table
+        components={{
+          body: {
+            cell: Cell,
+          },
+        }}
+        columns={columns}
+        data={data}
+      />
+    );
+
+    const { rowData } = Cell.mock.calls[0][0];
+
+    expect(Object.keys(rowData).includes('__ORIGIN_DATA')).toBe(false);
+    expect('__ORIGIN_DATA' in { ...rowData }).toBe(false);
+  });
 });
