@@ -78,7 +78,7 @@ export default function useSorter(flattenColumns, defaultSorters) {
       )
     );
     if (changedSorters && changedSorters.length) {
-      setActiveSorters(changedSorters);
+      setActiveSorters(controlledSorters);
       setCurrentSorter({});
     }
     // update prevFlattenColumns
