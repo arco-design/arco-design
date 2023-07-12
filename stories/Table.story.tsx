@@ -1,5 +1,5 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Table, Button, Space, Switch, TableColumnProps, Input } from '@self';
 
 const columns = [
@@ -861,6 +861,139 @@ export const FixedTable = () => {
       columns={columns as any}
       data={data}
     />
+  );
+};
+
+export const SortDemoTable = () => {
+  const [sorters, setSorters] = useState([
+    { by: 'scoreA', desc: false },
+    { by: 'scoreB', desc: true },
+  ]);
+
+  const columns = useMemo(() => {
+    const sorterMap = new Map(sorters.map((s) => [s.by, s.desc]));
+
+    const list = [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        sorter: (a: any, b: any) => {
+          if (a.name > b.name) {
+            return 1;
+          }
+          if (a.name < b.name) {
+            return -1;
+          }
+          return 0;
+        },
+      },
+      {
+        title: 'Age',
+        dataIndex: 'age',
+        sorter: (a: any, b: any) => a.age - b.age,
+      },
+      {
+        title: 'Score A',
+        dataIndex: 'scoreA',
+        defaultSortOrder: 'descend',
+        sorter: {
+          compare: (a: any, b: any) => a.scoreA - b.scoreA,
+          multiple: 3,
+        },
+      },
+      {
+        title: 'Score B',
+        dataIndex: 'scoreB',
+        defaultSortOrder: 'ascend',
+        sorter: {
+          compare: (a: any, b: any) => a.scoreB - b.scoreB,
+          multiple: 2,
+        },
+      },
+      {
+        title: 'Score C',
+        dataIndex: 'scoreC',
+        sorter: {
+          compare: (a: any, b: any) => a.scoreC - b.scoreC,
+          multiple: 1,
+        },
+      },
+    ];
+    list.forEach((c: any) => {
+      if (sorterMap.has(c.dataIndex)) {
+        c.sortOrder = sorterMap.get(c.dataIndex) ? 'ascend' : 'descend';
+      } else if (c.sorter) {
+        c.sortOrder = undefined;
+      }
+    });
+    return list;
+  }, [sorters]);
+
+  const data = [
+    {
+      key: '1',
+      name: 'A',
+      age: 18,
+      scoreA: 100,
+      scoreB: 60,
+      scoreC: 70,
+    },
+    {
+      key: '2',
+      name: 'B',
+      age: 17,
+      scoreA: 100,
+      scoreB: 90,
+      scoreC: 80,
+    },
+    {
+      key: '3',
+      name: 'C',
+      age: 19,
+      scoreA: 100,
+      scoreB: 70,
+      scoreC: 60,
+    },
+    {
+      key: '4',
+      name: 'D',
+      age: 15,
+      scoreA: 80,
+      scoreB: 70,
+      scoreC: 100,
+    },
+    {
+      key: '5',
+      name: 'E',
+      age: 20,
+      scoreA: 80,
+      scoreB: 70,
+      scoreC: 90,
+    },
+  ];
+  return (
+    <div>
+      <Button
+        onClick={() => {
+          setSorters([
+            { by: 'scoreA', desc: false },
+            { by: 'scoreB', desc: true },
+            { by: 'scoreC', desc: false },
+          ]);
+        }}
+      >
+        切换排序
+      </Button>
+      {JSON.stringify(sorters)}
+      <Table
+        data={data}
+        columns={columns as any}
+        // onChange={(pagination, changedSorter) => {
+        //   console.log(pagination);
+        //   console.log(changedSorter);
+        // }}
+      />
+    </div>
   );
 };
 
