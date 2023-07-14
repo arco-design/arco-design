@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `stringMode` 开启严格模式以支持更高精度，`onChange` 此时将会返回字符串。
+通过 `strictMode` 开启严格模式以支持更高精度，`onChange` 此时将会返回字符串。
 
 ## en-US
 
-Enable strict mode with `stringMode` to support higher precision, `onChange` will return a string at this time.
+Enable strict mode with `strictMode` to support higher precision, `onChange` will return a string at this time.
 
 ```js
 import { useState } from 'react';
