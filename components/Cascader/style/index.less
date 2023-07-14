@@ -128,6 +128,11 @@
       color: @cascader-color-item-text_hover;
       background-color: @cascader-color-item-bg_hover;
 
+      .@{prefix}-checkbox input {
+        // 避免选中checkbox时，select-view 的焦点被抢占
+        display: none;
+      }
+
       .@{prefix}-checkbox:not(.@{prefix}-checkbox-disabled):not(.@{prefix}-checkbox-checked):hover
         .@{prefix}-checkbox-icon-hover::before {
         background-color: @cascader-color-checkbox-bg_hover;
