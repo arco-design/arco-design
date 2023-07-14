@@ -11,7 +11,7 @@ export default function useMergeValue<T>(
 ): [T, React.Dispatch<React.SetStateAction<T>>, T] {
   const { defaultValue, value } = props || {};
   const firstRenderRef = useRef(true);
-  const prevPropsValue = usePrevious(props.value);
+  const prevPropsValue = usePrevious(value);
 
   const [stateValue, setStateValue] = useState<T>(
     !isUndefined(value) ? value : !isUndefined(defaultValue) ? defaultValue : defaultStateValue
