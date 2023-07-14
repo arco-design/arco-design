@@ -100,13 +100,6 @@
   .size-height();
 }
 
-// 存在清除图标
-.@{input-prefix-cls}-clear-wrapper {
-  .@{input-prefix-cls} {
-    padding-right: @input-size-icon-clear + @input-padding-horizontal;
-  }
-}
-
 // 清除icon
 .@{input-prefix-cls}-clear-icon {
   font-size: @input-size-icon-clear;
@@ -151,18 +144,6 @@
     padding-left: @input-padding-horizontal;
   }
 
-  > .@{input-prefix-cls}-clear-wrapper {
-    height: 100%;
-
-    .@{input-prefix-cls} {
-      padding-right: @input-size-icon-clear;
-    }
-
-    .@{input-prefix-cls}-clear-icon {
-      right: @input-spacing-clear-icon-right;
-    }
-  }
-
   .@{input-prefix-cls}-group-prefix,
   .@{input-prefix-cls}-group-suffix {
     user-select: none;
@@ -195,12 +176,12 @@
   }
 
   .@{input-prefix-cls}-clear-icon {
-    display: none;
+    visibility: hidden;
   }
 
   &:hover {
     .@{input-prefix-cls}-clear-icon {
-      display: inline-block;
+      visibility: visible;
 
       & ~ .@{input-prefix-cls}-group-suffix {
         margin-left: 4px;
