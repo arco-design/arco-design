@@ -1,3 +1,11 @@
+## 2.50.1
+
+2023-07-14
+
+### 🐛 BugFix
+
+- Fix the bug that the onBlur will be triggered when the node is selected when the `Cascader` component is multi-selected.([#2083](https://github.com/arco-design/arco-design/pull/2083))
+
 ## 2.49.1
 
 2023-06-09

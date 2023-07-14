@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.50.1
+
+2023-07-14
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件多选时选中节点会触发 onBlur 的 bug。([#2083](https://github.com/arco-design/arco-design/pull/2083))
+- 修复 `Table` 组件的 `sortOrder` 属性受控时，组件内部状态同步不正确问题([#2079](https://github.com/arco-design/arco-design/pull/2079))
+
+### 💅 样式更新
+
+- 修复 `Input` 组件设置 `allowClear` 且宽度不固定时 hover 前后出现的宽度抖动问题。([#2084](https://github.com/arco-design/arco-design/pull/2084))
+
 ## 2.50.0
 
 2023-06-30

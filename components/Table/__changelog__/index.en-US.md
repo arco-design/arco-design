@@ -1,3 +1,11 @@
+## 2.50.1
+
+2023-07-14
+
+### 🐛 BugFix
+
+- Fixed incorrect state synchronization within the component when the sortOrder property  of `Table` was controlled([#2079](https://github.com/arco-design/arco-design/pull/2079))
+
 ## 2.50.0
 
 2023-06-30

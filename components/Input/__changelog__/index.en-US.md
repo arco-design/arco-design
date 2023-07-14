@@ -1,3 +1,11 @@
+## 2.50.1
+
+2023-07-14
+
+### 💅 Style
+
+- Fix the width jitter problem before and after hover when `Input` is set to `allowClear` and the width is not fixed.([#2084](https://github.com/arco-design/arco-design/pull/2084))
+
 ## 2.50.0
 
 2023-06-30

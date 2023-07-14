@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.50.1
+
+2023-07-14
+
+### 🐛 BugFix
+
+- Fix the bug that the onBlur will be triggered when the node is selected when the `Cascader` component is multi-selected.([#2083](https://github.com/arco-design/arco-design/pull/2083))
+- Fixed incorrect state synchronization within the component when the sortOrder property  of `Table` was controlled([#2079](https://github.com/arco-design/arco-design/pull/2079))
+
+### 💅 Style
+
+- Fix the width jitter problem before and after hover when `Input` is set to `allowClear` and the width is not fixed.([#2084](https://github.com/arco-design/arco-design/pull/2084))
+
 ## 2.50.0
 
 2023-06-30
