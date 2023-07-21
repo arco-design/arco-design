@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import throttle from 'lodash/throttle';
 import { isNumber, isObject } from '../../_util/is';
 import ResizeObserver from '../../_util/resizeObserver';
 import DropdownIcon from './dropdown-icon';
@@ -13,7 +14,6 @@ import { TabsProps } from '..';
 import TabInk from './tab-ink';
 import IconHover from '../../_class/icon-hover';
 import useDomSize from '../hook/useDomSize';
-import throttleByRaf from '../../_util/throttleByRaf';
 import useHeaderScroll from '../hook/useHeaderScroll';
 import { ConfigContext } from '../../ConfigProvider';
 
@@ -138,7 +138,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       | typeof setExtraSize
       | typeof setAddenBtnSize
   ) =>
-    throttleByRaf((entry) => {
+    throttle((entry) => {
       updateScrollWrapperSize();
       const dom = entry[0] && entry[0].target;
       if (dom) {
@@ -148,7 +148,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           domRect: dom.getBoundingClientRect(),
         });
       }
-    });
+    }, 200);
 
   const onWrapperResize = resizeCallback(setHeaderWrapperSize);
   const onHeaderResize = resizeCallback(setHeaderSize);
