@@ -180,4 +180,25 @@ describe('Modal', () => {
     expect(onCancel).toHaveBeenCalledTimes(0);
     jest.useRealTimers();
   });
+
+  it('clear Modal dom ', () => {
+    jest.useFakeTimers();
+    const wrapper = render(
+      <Modal visible unmountOnExit>
+        haha
+      </Modal>
+    );
+
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(1);
+
+    wrapper.rerender(
+      <Modal visible={false} unmountOnExit>
+        haha
+      </Modal>
+    );
+
+    jest.runAllTimers();
+    expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(0);
+    jest.useRealTimers();
+  });
 });
