@@ -1,3 +1,11 @@
+## 2.50.2
+
+2023-07-21
+
+### 💎 Enhancement
+
+- `Select` still maintains its ability to open a virtual list when the option `label` is rich text but the width of the popup is set by `triggerProps.style`.([#2092](https://github.com/arco-design/arco-design/pull/2092))
+
 ## 2.50.0
 
 2023-06-30

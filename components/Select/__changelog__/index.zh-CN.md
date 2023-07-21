@@ -1,3 +1,11 @@
+## 2.50.2
+
+2023-07-21
+
+### 💎 功能优化
+
+- `Select` 在选项 `label` 为富文本但通过 `triggerProps.style` 设置了弹出框宽度时，仍然保持其开启虚拟列表的能力。([#2092](https://github.com/arco-design/arco-design/pull/2092))
+
 ## 2.50.0
 
 2023-06-30

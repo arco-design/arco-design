@@ -1,3 +1,11 @@
+## 2.50.2
+
+2023-07-21
+
+### 🐛 BugFix
+
+- Fix the problem that the `Tabs` component will vibrate continuously under boundary conditions when the width changes dynamically.([#2093](https://github.com/arco-design/arco-design/pull/2093))
+
 ## 2.47.0
 
 2023-04-14

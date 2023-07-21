@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.50.2
+
+2023-07-21
+
+### 💎 Enhancement
+
+- Optimize the experience of `DatePicker` when jumping quickly in the panel.([#2094](https://github.com/arco-design/arco-design/pull/2094))
+- `Select` still maintains its ability to open a virtual list when the option `label` is rich text but the width of the popup is set by `triggerProps.style`.([#2092](https://github.com/arco-design/arco-design/pull/2092))
+
+### 🐛 BugFix
+
+- Fix the problem that the `Tabs` component will vibrate continuously under boundary conditions when the width changes dynamically.([#2093](https://github.com/arco-design/arco-design/pull/2093) [@yinkaihui](https://github.com/yinkaihui))
+
 ## 2.50.1
 
 2023-07-14

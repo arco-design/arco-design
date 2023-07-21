@@ -1,3 +1,11 @@
+## 2.50.2
+
+2023-07-21
+
+### 💎 Enhancement
+
+- Optimize the experience of `DatePicker` when jumping quickly in the panel.([#2094](https://github.com/arco-design/arco-design/pull/2094))
+
 ## 2.49.2
 
 2023-06-16
