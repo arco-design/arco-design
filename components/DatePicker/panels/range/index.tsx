@@ -14,7 +14,7 @@ import {
   DisabledTimeProps,
 } from '../../interface';
 import { ConfigContext } from '../../../ConfigProvider';
-import { getNow, getDayjsValue } from '../../../_util/dayjs';
+import { getNow, getDayjsValue, methods } from '../../../_util/dayjs';
 import { TimePickerProps } from '../../../TimePicker/interface';
 import { isObject } from '../../../_util/is';
 import PickerContext from '../../context';
@@ -152,7 +152,7 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
             {...startPickerProps}
           />
           <WeekPickerPanel
-            setPageShowDate={(d) => setRangePageShowDates([d, d], 1)}
+            setPageShowDate={(d) => setRangePageShowDates([methods.subtract(d, 1, 'month'), d], 1)}
             {...endOperations}
             {...pickerProps}
             {...endPickerProps}
@@ -208,7 +208,7 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
             onSelectTime(1, timeString, time);
           }}
           index={1}
-          setPageShowDate={(d) => setRangePageShowDates([d, d], 1)}
+          setPageShowDate={(d) => setRangePageShowDates([methods.subtract(d, 1, 'month'), d], 1)}
           timeValue={timeValues[1]}
           {...endPickerProps}
         />
@@ -235,7 +235,7 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
           {...startPickerProps}
         />
         <MonthPickerPanel
-          setPageShowDate={(d) => setRangePageShowDates([d, d], 1)}
+          setPageShowDate={(d) => setRangePageShowDates([methods.subtract(d, 1, 'year'), d], 1)}
           {...endOperations}
           {...pickerProps}
           {...endPickerProps}
@@ -281,7 +281,7 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
           {...startPickerProps}
         />
         <QuarterPickerPanel
-          setPageShowDate={(d) => setRangePageShowDates([d, d], 1)}
+          setPageShowDate={(d) => setRangePageShowDates([methods.subtract(d, 1, 'year'), d], 1)}
           {...endOperations}
           {...pickerProps}
           {...endPickerProps}
