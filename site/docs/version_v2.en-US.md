@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.51.0-beta.0
+
+2023-07-21
+
+### 🆕 Feature
+
+- `Dropdown.Button` support all `DropdownProps`.([#2091](https://github.com/arco-design/arco-design/pull/2091))
+
+### 🐛 BugFix
+
+- Fix the bug that when the `Modal` component sets `unmountOnExit=true` and closes the pop-up window, the outer node of the pop-up window is not `unmount` bug.([#2096](https://github.com/arco-design/arco-design/pull/2096))
+
 ## 2.50.1
 
 2023-07-14

@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.51.0-beta.0
+
+2023-07-21
+
+### 🆕 功能升级
+
+- `Dropdown.Button` 允许传入所有的 `DropdownProps`。([#2091](https://github.com/arco-design/arco-design/pull/2091))
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件设置 `unmountOnExit=true` 并关闭弹窗后，弹窗外层节点未被 `unmount` 的 bug。([#2096](https://github.com/arco-design/arco-design/pull/2096))
+
 ## 2.50.1
 
 2023-07-14
