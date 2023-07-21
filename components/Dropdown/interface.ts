@@ -121,6 +121,24 @@ export interface DropdownButtonProps {
    */
   unmountOnExit?: boolean;
   /**
+   * @zh 控制下拉框是否默认打开
+   * @en Whether the dropdown list is visible by default
+   * @version 2.51.0
+   */
+  defaultPopupVisible?: boolean;
+  /**
+   * @zh 控制下拉框是否打开（受控模式）
+   * @en Whether the dropdown list is visible (Controlled)
+   * @version 2.51.0
+   */
+  popupVisible?: boolean;
+  /**
+   * @zh 弹出框挂在的父级节点
+   * @en To set the container of the dropdown menu
+   * @version 2.51.0
+   */
+  getPopupContainer?: (node: HTMLElement) => Element;
+  /**
    * @zh 自定义两个按钮的渲染
    * @en Custom buttons inside Dropdown.Button
    */

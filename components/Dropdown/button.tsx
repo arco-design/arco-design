@@ -38,6 +38,9 @@ function Button(baseProps: DropdownButtonProps, ref) {
     onVisibleChange,
     buttonProps,
     buttonsRender,
+    getPopupContainer,
+    defaultPopupVisible,
+    popupVisible,
   } = props;
 
   let leftButton: ReactNode = (
@@ -65,8 +68,11 @@ function Button(baseProps: DropdownButtonProps, ref) {
         disabled={disabled}
         droplist={droplist}
         position={position}
+        defaultPopupVisible={defaultPopupVisible}
+        popupVisible={popupVisible}
         trigger={trigger}
         unmountOnExit={unmountOnExit}
+        getPopupContainer={getPopupContainer}
         onVisibleChange={onVisibleChange}
         triggerProps={{
           disabled: disableTrigger,
