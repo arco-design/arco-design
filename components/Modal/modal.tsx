@@ -12,6 +12,7 @@ import React, {
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
+import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
 import { isServerRendering, contains } from '../_util/dom';
@@ -103,11 +104,14 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
 
   const modalWrapperRef = useRef<HTMLDivElement>(null);
   const contentWrapper = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
   const [wrapperVisible, setWrapperVisible] = useState<boolean>();
   const [popupZIndex, setPopupZIndex] = useState<number>();
   const cursorPositionRef = useRef<CursorPositionType>(null);
   const haveOriginTransformOrigin = useRef<boolean>(false);
   const maskClickRef = useRef(false);
+
+  const isFirstRender = useIsFirstRender();
 
   const dialogIndex = useRef<number>();
 
@@ -294,6 +298,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         className
       )}
       style={style}
+      ref={modalRef}
     >
       {innerFocusLock ? (
         <FocusLock
@@ -325,8 +330,9 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     e.style.transformOrigin = transformOrigin;
   };
 
-  return (
-    <Portal visible={visible} forceRender={!mountOnEnter} getContainer={getPopupContainer}>
+  const forceRender = isFirstRender ? !mountOnEnter : !!modalRef.current;
+  return visible || forceRender ? (
+    <Portal visible={visible} forceRender={forceRender} getContainer={getPopupContainer}>
       <div ref={ref}>
         {mask ? (
           <CSSTransition
@@ -398,6 +404,8 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               cursorPositionRef.current = cursorPosition;
               haveOriginTransformOrigin.current = !!e.style.transformOrigin;
               setTransformOrigin(e);
+
+              modalRef.current = e;
             }}
             onEntered={(e: HTMLDivElement) => {
               setTransformOrigin(e);
@@ -412,6 +420,9 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               setTransformOrigin(e);
               afterClose && afterClose();
               inExit.current = false;
+              if (unmountOnExit) {
+                modalRef.current = null;
+              }
             }}
           >
             {React.cloneElement(
@@ -429,7 +440,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
         </div>
       </div>
     </Portal>
-  );
+  ) : null;
 }
 
 export interface ModalComponent extends ForwardRefExoticComponent<PropsWithChildren<ModalProps>> {
