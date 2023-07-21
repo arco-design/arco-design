@@ -29,20 +29,21 @@ When there are too many commands, the alternative commands can be stored in the 
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|defaultPopupVisible|Whether the dropdown list is visible by default|boolean |`-`|2.51.0|
-|disabled|Whether the dropdown menu is disabled|boolean |`-`|2.6.0|
-|popupVisible|Whether the dropdown list is visible (Controlled)|boolean |`-`|2.51.0|
+|defaultPopupVisible|Whether the dropdown list is visible by default|boolean |`-`|-|
+|disabled|Whether to disable popup|boolean |`-`|2.16.0|
+|popupVisible|Whether the dropdown list is visible (Controlled)|boolean |`-`|-|
 |unmountOnExit|Whether to umount the node on hiding|boolean |`true`|-|
 |position|Position of the dropdown list|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`br`|-|
 |size|Same as `size` of ButtonProps|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |trigger|Types of events that cause the popup to show|[TriggerProps](trigger#trigger)['trigger'] |`hover`|-|
 |type|Same as `type` of ButtonProps|'default' \| 'primary' \| 'secondary' \| 'dashed' \| 'outline' \| 'text' |`default`|-|
-|droplist|Content of the dropdown list|ReactNode |`-`|-|
+|droplist|Content of dropdown list|ReactNode |`-`|-|
 |icon|Custom icon on the right|ReactNode |`<IconMore />`|-|
 |buttonProps|Pass Button's properties to the button on the left|ButtonProps |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
+|triggerProps|Pass all `Trigger` component properties|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |buttonsRender|Custom buttons inside Dropdown.Button|(buttons: ReactNode[]) => ReactNode[] |`-`|-|
-|getPopupContainer|To set the container of the dropdown menu|(node: HTMLElement) => Element |`-`|2.51.0|
+|getPopupContainer|To set the container of the dropdown menu|(node: HTMLElement) => Element |`-`|-|
 |onClick|Callback when button on the left is clicked|(e: Event) => void |`-`|-|
 |onVisibleChange|Callback when visibility changes|(visible: boolean) => void |`-`|-|

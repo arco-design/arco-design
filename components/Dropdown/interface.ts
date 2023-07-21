@@ -66,15 +66,15 @@ export interface DropdownProps {
 /**
  * @title Dropdown.Button
  */
-export interface DropdownButtonProps {
+export interface DropdownButtonProps extends Omit<DropdownProps, 'position'> {
   style?: CSSProperties;
   className?: string | string[];
   /**
-   * @zh 禁用。
-   * @en Whether the dropdown menu is disabled
-   * @version 2.6.0
+   * @zh 下拉框的弹出位置
+   * @en Position of the dropdown list
+   * @defaultValue br
    */
-  disabled?: boolean;
+  position?: 'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br';
   /**
    * @zh 等同于 `Button` 的 size
    * @en Same as `size` of ButtonProps
@@ -92,52 +92,11 @@ export interface DropdownButtonProps {
    */
   buttonProps?: ButtonProps;
   /**
-   * @zh 下拉框的内容
-   * @en Content of the dropdown list
-   */
-  droplist?: ReactNode;
-  /**
-   * @zh 下拉框的弹出位置
-   * @en Position of the dropdown list
-   * @defaultValue br
-   */
-  position?: 'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br';
-  /**
-   * @zh 触发下拉框弹出的方式
-   * @en Types of events that cause the popup to show
-   * @defaultValue hover
-   */
-  trigger?: TriggerProps['trigger'];
-  /**
    * @zh 右侧显示内容，可以是 icon 或者任意 dom 元素
    * @en Custom icon on the right
    * @defaultValue <IconMore />
    */
   icon?: ReactNode;
-  /**
-   * @zh 隐藏后是否销毁 DOM 结构
-   * @en Whether to umount the node on hiding
-   * @defaultValue true
-   */
-  unmountOnExit?: boolean;
-  /**
-   * @zh 控制下拉框是否默认打开
-   * @en Whether the dropdown list is visible by default
-   * @version 2.51.0
-   */
-  defaultPopupVisible?: boolean;
-  /**
-   * @zh 控制下拉框是否打开（受控模式）
-   * @en Whether the dropdown list is visible (Controlled)
-   * @version 2.51.0
-   */
-  popupVisible?: boolean;
-  /**
-   * @zh 弹出框挂在的父级节点
-   * @en To set the container of the dropdown menu
-   * @version 2.51.0
-   */
-  getPopupContainer?: (node: HTMLElement) => Element;
   /**
    * @zh 自定义两个按钮的渲染
    * @en Custom buttons inside Dropdown.Button
@@ -148,10 +107,5 @@ export interface DropdownButtonProps {
    * @en Callback when button on the left is clicked
    */
   onClick?: (e: Event) => void;
-  /**
-   * @zh 弹出框打开/关闭时会触发
-   * @en Callback when visibility changes
-   */
-  onVisibleChange?: (visible: boolean) => void;
   children?: ReactNode;
 }
