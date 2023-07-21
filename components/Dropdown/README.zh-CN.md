@@ -29,7 +29,9 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
+|defaultPopupVisible|控制下拉框是否默认打开|boolean |`-`|2.51.0|
 |disabled|禁用。|boolean |`-`|2.6.0|
+|popupVisible|控制下拉框是否打开（受控模式）|boolean |`-`|2.51.0|
 |unmountOnExit|隐藏后是否销毁 DOM 结构|boolean |`true`|-|
 |position|下拉框的弹出位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`br`|-|
 |size|等同于 `Button` 的 size|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -41,5 +43,6 @@
 |className|节点类名|string \| string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |buttonsRender|自定义两个按钮的渲染|(buttons: ReactNode[]) => ReactNode[] |`-`|-|
+|getPopupContainer|弹出框挂在的父级节点|(node: HTMLElement) => Element |`-`|2.51.0|
 |onClick|左侧按钮的点击事件|(e: Event) => void |`-`|-|
 |onVisibleChange|弹出框打开/关闭时会触发|(visible: boolean) => void |`-`|-|

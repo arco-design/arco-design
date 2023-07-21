@@ -29,7 +29,9 @@ When there are too many commands, the alternative commands can be stored in the 
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
+|defaultPopupVisible|Whether the dropdown list is visible by default|boolean |`-`|2.51.0|
 |disabled|Whether the dropdown menu is disabled|boolean |`-`|2.6.0|
+|popupVisible|Whether the dropdown list is visible (Controlled)|boolean |`-`|2.51.0|
 |unmountOnExit|Whether to umount the node on hiding|boolean |`true`|-|
 |position|Position of the dropdown list|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`br`|-|
 |size|Same as `size` of ButtonProps|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -41,5 +43,6 @@ When there are too many commands, the alternative commands can be stored in the 
 |className|Additional css class|string \| string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |buttonsRender|Custom buttons inside Dropdown.Button|(buttons: ReactNode[]) => ReactNode[] |`-`|-|
+|getPopupContainer|To set the container of the dropdown menu|(node: HTMLElement) => Element |`-`|2.51.0|
 |onClick|Callback when button on the left is clicked|(e: Event) => void |`-`|-|
 |onVisibleChange|Callback when visibility changes|(visible: boolean) => void |`-`|-|
