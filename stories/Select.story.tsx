@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
-
-import React from 'react';
-import { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import debounce from 'lodash/debounce';
 import { Select, Spin, Avatar } from '@self';
 
