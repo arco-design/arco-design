@@ -9,7 +9,7 @@ import Hover from '../_class/icon-hover';
 import IconCheck from './icon-check';
 import { CheckboxProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import { isFunction } from '../_util/is';
+import { isFunction, isNullOrUndefined } from '../_util/is';
 
 function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -122,7 +122,7 @@ function Checkbox<T extends React.ReactText>(baseProps: CheckboxProps<T>, ref) {
           >
             <div className={`${prefixCls}-mask`}>{icon}</div>
           </Hover>
-          {children && <span className={`${prefixCls}-text`}>{children}</span>}
+          {!isNullOrUndefined(children) && <span className={`${prefixCls}-text`}>{children}</span>}
         </>
       )}
     </label>

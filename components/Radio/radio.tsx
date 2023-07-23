@@ -7,7 +7,7 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import IconHover from '../_class/icon-hover';
 import { RadioProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import { isFunction } from '../_util/is';
+import { isFunction, isNullOrUndefined } from '../_util/is';
 
 function Radio(baseProps: RadioProps) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -100,7 +100,7 @@ function Radio(baseProps: RadioProps) {
           >
             <div className={`${prefixCls}-mask`} />
           </IconHover>
-          {children && <span className={`${prefixCls}-text`}>{children}</span>}
+          {!isNullOrUndefined(children) && <span className={`${prefixCls}-text`}>{children}</span>}
         </>
       ) : (
         context.type === 'button' && <span className={`${prefixCls}-button-inner`}>{children}</span>
