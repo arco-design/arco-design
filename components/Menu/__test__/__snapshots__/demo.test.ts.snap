@@ -383,6 +383,27 @@ exports[`renders Menu/demo/collapse-control.md correctly 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="arco-menu-item"
+        role="menuitem"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="arco-icon arco-icon-book"
+          fill="none"
+          focusable="false"
+          stroke="currentColor"
+          stroke-width="4"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M24 13 7 7v28l17 6 17-6V7l-17 6Zm0 0v27.5M29 18l7-2.5M29 25l7-2.5M29 32l7-2.5M19 18l-7-2.5m7 9.5-7-2.5m7 9.5-7-2.5"
+            stroke-linejoin="round"
+          />
+        </svg>
+         Navigation 4
+      </div>
     </div>
   </div>
 </div>

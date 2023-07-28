@@ -67,3 +67,4 @@
 |className|节点类名|string \| string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |wrapper|配置最外层标签，可以是 html 标签或是组件|string \| React.FC&lt;any&gt; \| React.ComponentClass&lt;any&gt; |`div`|2.16.0|
+|renderItemInTooltip|菜单折叠时，指定在 Tooltip 中展示的菜单项节点|() => ReactNode |`-`|2.51.0|
