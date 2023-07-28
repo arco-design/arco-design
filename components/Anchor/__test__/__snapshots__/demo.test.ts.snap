@@ -358,8 +358,7 @@ exports[`renders Anchor/demo/horizontal.md correctly 1`] = `
     Default
   </div>
   <div
-    class="arco-anchor"
-    direction="horizontal"
+    class="arco-anchor arco-anchor-horizontal"
   >
     <div
       class="arco-anchor-list"
@@ -445,8 +444,7 @@ exports[`renders Anchor/demo/horizontal.md correctly 1`] = `
     Lineless mode
   </div>
   <div
-    class="arco-anchor arco-anchor-lineless"
-    direction="horizontal"
+    class="arco-anchor arco-anchor-lineless arco-anchor-horizontal"
   >
     <div
       class="arco-anchor-list"

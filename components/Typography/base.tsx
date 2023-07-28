@@ -214,13 +214,7 @@ function Base(props: BaseProps) {
     const node = (
       <ResizeObserverComponent onResize={handleResize}>
         <TextComponent
-          className={cs(
-            prefixCls,
-            componentClassName,
-            { [`${prefixCls}-rtl`]: rtl },
-            `${prefixCls}-${TextComponent}`,
-            className
-          )}
+          className={cs(prefixCls, componentClassName, { [`${prefixCls}-rtl`]: rtl }, className)}
           {...baseProps}
           {...omit(rest, [
             'spacing',
