@@ -36,7 +36,7 @@ function Link(baseProps: AnchorLinkPropsWithChildren, ref) {
       componentConfig?.['Anchor.Link']
     );
   const anchorContext = useContext(AnchorContext);
-  const { currentLink, addLink, removeLink, onLinkClick } = anchorContext;
+  const { currentLink, addLink, removeLink, onLinkClick, direction } = anchorContext;
   const prefixCls = getPrefixCls('anchor-link');
   const classNames = cs(
     prefixCls,
@@ -72,6 +72,7 @@ function Link(baseProps: AnchorLinkPropsWithChildren, ref) {
         </a>
       )}
       {children &&
+        direction !== 'horizontal' &&
         React.Children.map(children, (item) => {
           return (
             isValidElement(item) &&

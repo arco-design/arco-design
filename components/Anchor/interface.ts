@@ -13,6 +13,13 @@ export interface AnchorProps {
    */
   animation?: boolean;
   /**
+   * @zh 方向
+   * @en Direction
+   * @defaultValue vertical
+   * @version 2.51.0
+   */
+  direction?: 'vertical' | 'horizontal';
+  /**
    * @zh 滚动容器。传入选择器或者dom元素。
    * @en Scrolling container. Pass in selector or DOM Element
    */
