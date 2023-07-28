@@ -1,0 +1,66 @@
+@import './token.less';
+
+@anchor-prefix-cls: ~'@{prefix}-anchor';
+
+.@{anchor-prefix-cls} {
+  &&-horizontal {
+    width: 100%;
+  }
+
+  &-horizontal &-list {
+    display: flex;
+    width: 100%;
+    margin: 0;
+
+    &::before {
+      left: 0;
+      right: 0;
+      width: 100%;
+      bottom: 0;
+      height: 2px;
+    }
+  }
+
+  &-horizontal &-link-title:hover {
+    font-weight: @anchor-font-weight-title_horizontal_hover;
+  }
+
+  &-horizontal &-link-active &-link-title:hover {
+    font-weight: @anchor-font-weight-title_active;
+  }
+
+  &-horizontal &-link:not(:first-of-type) {
+    margin-left: @anchor-title-margin-left_horizontal;
+  }
+
+  &-rtl&-horizontal &-link:not(:first-of-type) {
+    margin-right: @anchor-title-margin-left_horizontal;
+    margin-left: unset;
+  }
+
+  &-horizontal &-line-slider {
+    height: @anchor-line-width;
+    width: 0;
+    margin: 0;
+    top: unset;
+    bottom: 0;
+    background-color: transparent;
+    right: unset;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: @anchor-title-padding-horizontal;
+      right: @anchor-title-padding-horizontal;
+      height: 100%;
+      background-color: @anchor-color-bg-line_active;
+    }
+  }
+
+  // 横向无轴线模式
+  &&-lineless &-link,
+  &&-lineless &-link-title {
+    margin-bottom: 0;
+  }
+}

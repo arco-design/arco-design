@@ -7,38 +7,23 @@ export default {
   title: 'Anchor',
 };
 
-export const Demo = () => (
-  <div>
-    <div
-      className="scroll"
-      style={{
-        height: 150,
-        width: 50,
-        overflow: 'auto',
-        border: '1px solid',
-      }}
-    >
-      <div>
-        {[...new Array(20)].map((_, i) => (
-          <div key={i} id={`anchor${i}`}>
-            <a href={`#anchor${i}`}>{i}</a>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-            <p>{i}</p>
-          </div>
-        ))}
+export const Demo = () => {
+  return (
+    <div>
+      <Anchor direction="horizontal">
+        <AnchorLink href="#content1" title="content 1" />
+        <AnchorLink href="#content2" title="contentcontent 2" />
+        <AnchorLink href="#content3" title="content 3" />
+      </Anchor>
+      <div id="content1" style={{ height: '100vh', background: 'var(--color-primary-light-1)' }}>
+        {' '}
+      </div>
+      <div id="content2" style={{ height: '100vh', background: 'var(--color-danger-light-1)' }}>
+        {' '}
+      </div>
+      <div id="content3" style={{ height: '100vh', background: 'var(--color-warning-light-1)' }}>
+        {' '}
       </div>
     </div>
-    <Anchor scrollContainer=".scroll" animation={false} hash={false}>
-      {[...new Array(20)].map((_, i) => (
-        <AnchorLink key={i} href={`#anchor${i}`} title={i} />
-      ))}
-    </Anchor>
-  </div>
-);
+  );
+};

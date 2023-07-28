@@ -52,6 +52,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     boundary = 'start',
     targetOffset,
     children,
+    direction = 'vertical',
     onSelect,
     onChange,
     ...rest
@@ -60,6 +61,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   const classNames = cs(prefixCls, className, {
     [`${prefixCls}-lineless`]: lineless,
     [`${prefixCls}-rtl`]: rtl,
+    [`${prefixCls}-horizontal`]: direction === 'horizontal',
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
   const sliderLineRef = useRef<HTMLDivElement>(null);
@@ -249,9 +251,18 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   useEffect(() => {
     const link = linkMap.current.get(currentLink);
     if (link && !lineless && sliderLineRef.current) {
-      sliderLineRef.current.style.top = `${link.offsetTop}px`;
+      if (direction === 'horizontal') {
+        // if (rtl) {
+        //   sliderLineRef.current.style.right = `${link.offsetLeft}px`;
+        // } else {
+        // }
+        sliderLineRef.current.style.left = `${link.offsetLeft}px`;
+        sliderLineRef.current.style.width = `${link.clientWidth}px`;
+      } else {
+        sliderLineRef.current.style.top = `${link.offsetTop}px`;
+      }
     }
-  }, [currentLink, lineless]);
+  }, [currentLink, lineless, direction, rtl]);
 
   const content = (
     <div className={classNames} style={style} ref={wrapperRef} {...rest}>
@@ -260,6 +271,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
       )}
       <AnchorContext.Provider
         value={{
+          direction,
           currentLink,
           addLink,
           removeLink,

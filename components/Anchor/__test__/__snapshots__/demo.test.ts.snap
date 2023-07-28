@@ -350,6 +350,184 @@ exports[`renders Anchor/demo/hash.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Anchor/demo/horizontal.md correctly 1`] = `
+<div>
+  <div
+    class="arco-typography"
+  >
+    Default
+  </div>
+  <div
+    class="arco-anchor"
+    direction="horizontal"
+  >
+    <div
+      class="arco-anchor-list"
+    >
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Basic"
+          href="#Basic"
+          title="Basic"
+        >
+          Basic
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Static"
+          href="#Static"
+          title="Static"
+        >
+          Static
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Lineless-mode"
+          href="#Lineless-mode"
+          title="Lineless mode"
+        >
+          Lineless mode
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Affix"
+          href="#Affix"
+          title="Affix"
+        >
+          Affix
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Scroll-boundary"
+          href="#Scroll-boundary"
+          title="Scroll boundary"
+        >
+          Scroll boundary
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Hash-mode"
+          href="#Hash-mode"
+          title="Hash mode"
+        >
+          Hash mode
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-typography"
+    style="margin-top:32px"
+  >
+    Lineless mode
+  </div>
+  <div
+    class="arco-anchor arco-anchor-lineless"
+    direction="horizontal"
+  >
+    <div
+      class="arco-anchor-list"
+    >
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Basic"
+          href="#Basic"
+          title="Basic"
+        >
+          Basic
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Static"
+          href="#Static"
+          title="Static"
+        >
+          Static
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Lineless-mode"
+          href="#Lineless-mode"
+          title="Lineless mode"
+        >
+          Lineless mode
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Affix"
+          href="#Affix"
+          title="Affix"
+        >
+          Affix
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Scroll-boundary"
+          href="#Scroll-boundary"
+          title="Scroll boundary"
+        >
+          Scroll boundary
+        </a>
+      </div>
+      <div
+        class="arco-anchor-link"
+      >
+        <a
+          class="arco-anchor-link-title"
+          data-href="#Hash-mode"
+          href="#Hash-mode"
+          title="Hash mode"
+        >
+          Hash mode
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Anchor/demo/lineless.md correctly 1`] = `
 <div
   class="arco-anchor arco-anchor-lineless"

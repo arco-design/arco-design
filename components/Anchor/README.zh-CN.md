@@ -22,6 +22,7 @@
 |offsetTop|距离窗口顶部达到指定偏移量后触发。即 `Affix` 固钉组件的 `offsetTop` 属性|number |`-`|-|
 |targetOffset|容器中基准线的位置相对容器顶部的偏移量，在没有设置的时候，取值为滚动容器高度的一半。当锚点到达或离开基准线的时候会更新锚点的状态。|number |`-`|2.22.0|
 |boundary|滚动边界值，设置该值为数字后，将会在距离滚动容器 boundary 距离时停止滚动。设置为 end, start, center，目标元素将会对应滚动到底部，顶部，中间位置。|number \| 'end' \| 'start' \| 'center' \| 'nearest' |`start`|-|
+|direction|方向|'vertical' \| 'horizontal' |`vertical`|2.51.0|
 |affixStyle|通过该属性可以设置 `Affix` 组件的样式|CSSProperties |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |scrollContainer|滚动容器。传入选择器或者dom元素。|string \| HTMLElement \| Window |`-`|-|
