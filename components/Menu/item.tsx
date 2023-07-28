@@ -20,6 +20,7 @@ function Item(props: MenuItemProps, ref) {
     style,
     wrapper: WrapperTagName = 'div',
     onClick,
+    renderItemInTooltip,
     ...rest
   } = props;
   const {
@@ -121,8 +122,10 @@ function Item(props: MenuItemProps, ref) {
   return needTooltip ? (
     <Tooltip
       trigger="hover"
-      content={<span>{children}</span>}
       position="right"
+      content={
+        typeof renderItemInTooltip === 'function' ? renderItemInTooltip() : <span>{children}</span>
+      }
       triggerProps={{
         className: `${prefixCls}-item-tooltip`,
         ...(tooltipProps?.triggerProps || {}),

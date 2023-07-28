@@ -221,9 +221,15 @@ export interface MenuItemProps extends Omit<HTMLAttributes<HTMLElement>, 'classN
   disabled?: boolean;
   /**
    * @zh 配置最外层标签，可以是 html 标签或是组件
-   * @en Configure the outermost label, which can be an html label or a component
+   * @en Configure the outermost label, which can be a html label or a component
    * @defaultValue div
    * @version 2.16.0
    */
   wrapper?: string | React.FC<any> | React.ComponentClass<any>;
+  /**
+   * @zh 菜单折叠时，指定在 Tooltip 中展示的菜单项节点
+   * @en Set the menu item displayed in Tooltip when menu is collapsed
+   * @version 2.51.0
+   */
+  renderItemInTooltip?: () => ReactNode;
 }
