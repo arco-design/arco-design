@@ -66,4 +66,5 @@ A component to organize, arrange, and display a list of options.
 |key|Unique ID of the menu item|string  **(Required)**|`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|wrapper|Configure the outermost label, which can be an html label or a component|string \| React.FC&lt;any&gt; \| React.ComponentClass&lt;any&gt; |`div`|2.16.0|
+|wrapper|Configure the outermost label, which can be a html label or a component|string \| React.FC&lt;any&gt; \| React.ComponentClass&lt;any&gt; |`div`|2.16.0|
+|renderItemInTooltip|Set the menu item displayed in Tooltip when menu is collapsed|() => ReactNode |`-`|2.51.0|
