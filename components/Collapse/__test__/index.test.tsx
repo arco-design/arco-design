@@ -141,6 +141,29 @@ describe('Collapse', () => {
     expect(changeCollapse.mock.calls).toHaveLength(2);
   });
 
+  it('onClick should propagate to parent nodes', () => {
+    jest.useFakeTimers();
+    const onClickHandler = jest.fn();
+    const activeKeys = ['2'];
+    const wrapper = render(
+      <div onClick={onClickHandler}>
+        <Collapse defaultActiveKey={activeKeys}>
+          {data.map((item, index) => (
+            <CollapseItem key={index} header={item.header} name={index.toString()}>
+              {item.content}
+            </CollapseItem>
+          ))}
+        </Collapse>
+      </div>
+    );
+
+    // Click icon -> one onChange call
+    fireEvent.click(
+      wrapper.find(`${prefixCls}-item`).item(0).querySelector(`${prefixCls}-item-header-icon`)!
+    );
+    expect(onClickHandler.mock.calls).toHaveLength(1);
+  });
+
   it('render correctly when content empty', () => {
     const wrapper = render(
       <Collapse>

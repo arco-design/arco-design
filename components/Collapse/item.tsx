@@ -34,9 +34,12 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
     if (disabled) return;
     const { triggerRegion } = ctx;
     const triggerRegionLevel = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
-    if (regionLevel <= triggerRegionLevel) {
+    if (
+      regionLevel === triggerRegionLevel ||
+      // When triggerRegion is set to header, clicking icon should trigger onChange as well
+      (triggerRegion === 'header' && [0, 1].includes(regionLevel))
+    ) {
       ctx.onToggle(name, e);
-      e.stopPropagation();
     }
   };
 
