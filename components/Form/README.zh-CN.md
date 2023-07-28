@@ -29,7 +29,7 @@
 |onValuesChange|任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
 |scrollToFirstError|验证失败后滚动到第一个错误字段。(`ScrollIntoViewOptions` 类型在 `2.19.0` 开始支持)|boolean \| ScrollIntoViewOptions |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|validateMessages|校验提示信息模板 [demo](/react/components/form#表单校验信息模板)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;;}&gt; |`-`|2.32.0|
+|validateMessages|校验提示信息模板 [demo](/react/components/form#表单校验信息模板)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Partial&lt;Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;&gt;;}&gt; |`-`|2.32.0|
 |validateTrigger|触发验证的时机。|string \| string[] |`onChange`|2.28.0|
 |wrapper|配置最外层标签，可以是 html 标签或是组件|[ComponentType](#componenttype) |`form`|-|
 |wrapperCol|控件布局，同`labelCol`的设置方法一致，会覆盖全局的`wrapperCol`设置，[ColProps](/react/components/grid)|[ColProps](grid#col) |`{ span: 19, offset: 0 }`|-|

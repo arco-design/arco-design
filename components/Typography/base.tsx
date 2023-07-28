@@ -180,6 +180,15 @@ function Base(props: BaseProps) {
     return currentContent;
   }
 
+  let TextComponent;
+  if (componentType === 'Paragraph') {
+    TextComponent = blockquote ? 'blockquote' : 'div';
+  } else if (componentType === 'Title') {
+    TextComponent = `h${heading}`;
+  } else if (componentType === 'Text') {
+    TextComponent = ellipsis ? 'div' : 'span';
+  }
+
   function renderContent() {
     const fullText = mergedToString(React.Children.toArray(children));
     const showTooltip = ellipsisConfig.showTooltip;
@@ -201,19 +210,17 @@ function Base(props: BaseProps) {
     };
 
     const addTooltip = isEllipsis && showTooltip && !expanding;
-    let TextComponent;
-    if (componentType === 'Paragraph') {
-      TextComponent = blockquote ? 'blockquote' : 'div';
-    } else if (componentType === 'Title') {
-      TextComponent = `h${heading}`;
-    } else if (componentType === 'Text') {
-      TextComponent = ellipsis ? 'div' : 'span';
-    }
 
     const node = (
       <ResizeObserverComponent onResize={handleResize}>
         <TextComponent
-          className={cs(prefixCls, componentClassName, { [`${prefixCls}-rtl`]: rtl }, className)}
+          className={cs(
+            prefixCls,
+            componentClassName,
+            { [`${prefixCls}-rtl`]: rtl },
+            `${prefixCls}-${TextComponent}`,
+            className
+          )}
           {...baseProps}
           {...omit(rest, [
             'spacing',
@@ -264,6 +271,13 @@ function Base(props: BaseProps) {
   return mergedEditing ? (
     <EditContent
       {...props}
+      className={cs(
+        prefixCls,
+        componentClassName,
+        { [`${prefixCls}-rtl`]: rtl },
+        `${prefixCls}-${TextComponent}`,
+        className
+      )}
       prefixCls={prefixCls}
       setEditing={setEditing}
       editableConfig={editableConfig}

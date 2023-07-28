@@ -24,6 +24,7 @@
 |value|输入框的值|string |`-`|-|
 |position|下拉框的弹出位置|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
+|clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.50.0|
 |notFoundContent|下拉列表没有数据时显示的内容|ReactNode |`-`|-|
 |autoSize|是否自动调整输入框的高度|boolean \| { minRows?: number; maxRows?: number } |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|

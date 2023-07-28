@@ -124,6 +124,8 @@ export interface TypographyParagraphProps extends CommonProps {
 
 export interface EditContentProps {
   prefixCls?: string;
+  style?: CSSProperties;
+  className?: string | string[];
   children?: ReactNode;
   setEditing?: (editing: boolean) => void;
   editableConfig?: {
