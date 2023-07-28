@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🆕 功能升级
+
+- `Dropdown.Button` 允许传入所有的 `DropdownProps`。([#2091](https://github.com/arco-design/arco-design/pull/2091))
+
 ## 2.39.3
 
 2022-09-02

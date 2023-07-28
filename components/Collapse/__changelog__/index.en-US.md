@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 BugFix
+
+- Fix parents of `Collapse` can't trigger `onClick` due to bubbling issue([#2100](https://github.com/arco-design/arco-design/pull/2100)  )
+
 ## 2.44.1
 
 2023-02-03

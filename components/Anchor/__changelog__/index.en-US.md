@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🆕 Feature
+
+- Support horizontal `Anchor`([#2108](https://github.com/arco-design/arco-design/pull/2108) '')
+
 ## 2.43.1
 
 2022-12-30

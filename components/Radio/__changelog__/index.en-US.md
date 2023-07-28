@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 BugFix
+
+- Fix the bug that the text color of `Radio` component is abnormal when `children` is 0.([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+
 ## 2.34.0
 
 2022-05-27

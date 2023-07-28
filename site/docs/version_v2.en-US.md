@@ -2,6 +2,33 @@
 changelog: true
 ---
 
+## 2.51.0
+
+2023-07-28
+
+### 💎 Enhancement
+
+- Optimize the width of the table and the problem of unnecessary scroll bars in certain scenarios.([#2066](https://github.com/arco-design/arco-design/pull/2066) [@hkhere](https://github.com/hkhere))
+
+### 🆕 Feature
+
+- Support horizontal `Anchor`([#2108](https://github.com/arco-design/arco-design/pull/2108) '')
+- The `Menu.Item` adds `renderItemInTooltip` property, which is used to specify the menu item node displayed in `Tooltip` when `Menu` is collapsed.([#2106](https://github.com/arco-design/arco-design/pull/2106))
+- `Dropdown.Button` support all `DropdownProps`.([#2091](https://github.com/arco-design/arco-design/pull/2091))
+
+### 🐛 BugFix
+
+- Fix the bug that the font style does not inherit the Title style when `Typography.Title` is switched to the edit state.([#2109](https://github.com/arco-design/arco-design/pull/2109) '')
+- Fix the bug that the `className` and `style` attributes passed in by the user are lost when `Typography` is switched to the editing state.([#2109](https://github.com/arco-design/arco-design/pull/2109) '')
+- Fix parents of `Collapse` can't trigger `onClick` due to bubbling issue([#2100](https://github.com/arco-design/arco-design/pull/2100)  )
+- Fix the bug that the text color of `Radio` component is abnormal when `children` is 0.([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+- Fix the bug that the text color of `Checkbox` component is abnormal when `children` is 0.([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+- Fix the bug that when the `Modal` component sets `unmountOnExit=true` and closes the pop-up window, the outer node of the pop-up window is not `unmount` bug.([#2096](https://github.com/arco-design/arco-design/pull/2096) '')
+
+### 🆎 TypeScript
+
+- Export the `Ref` type definition of the `<Input />` component([#2105](https://github.com/arco-design/arco-design/pull/2105) [@WindrunnerMax](https://github.com/WindrunnerMax))
+
 ## 2.50.2
 
 2023-07-21
@@ -13,7 +40,7 @@ changelog: true
 
 ### 🐛 BugFix
 
-- Fix the problem that the `Tabs` component will vibrate continuously under boundary conditions when the width changes dynamically.([#2093](https://github.com/arco-design/arco-design/pull/2093) [@yinkaihui](https://github.com/yinkaihui))
+- Fix the problem that the `Tabs` component will vibrate continuously under boundary conditions when the width changes dynamically.([#2093](https://github.com/arco-design/arco-design/pull/2093) '')
 
 ## 2.50.1
 

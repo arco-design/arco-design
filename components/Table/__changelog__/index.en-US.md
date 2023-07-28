@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 💎 Enhancement
+
+- Optimize the width of the table and the problem of unnecessary scroll bars in certain scenarios.([#2066](https://github.com/arco-design/arco-design/pull/2066) [@hkhere](https://github.com/hkhere))
+
 ## 2.50.1
 
 2023-07-14

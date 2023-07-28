@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🆎 类型修正
+
+- 导出 `<Input />` 组件的 `Ref` 类型定义([#2105](https://github.com/arco-design/arco-design/pull/2105) [@WindrunnerMax](https://github.com/WindrunnerMax))
+
 ## 2.50.1
 
 2023-07-14

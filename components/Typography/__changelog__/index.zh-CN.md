@@ -1,3 +1,12 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 问题修复
+
+- 修复 `Typography.Title` 切换为编辑状态时字体样式未继承 Title 样式的 bug。([#2109](https://github.com/arco-design/arco-design/pull/2109) '')
+- 修复 `Typography` 切换为编辑状态时用户传入的 `className` 和 `style` 属性丢失的 bug。([#2109](https://github.com/arco-design/arco-design/pull/2109) '')
+
 ## 2.44.2
 
 2023-02-10

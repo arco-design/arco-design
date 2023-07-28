@@ -1,3 +1,12 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 BugFix
+
+- Fix the bug that the font style does not inherit the Title style when `Typography.Title` is switched to the edit state.([#2109](https://github.com/arco-design/arco-design/pull/2109) '')
+- Fix the bug that the `className` and `style` attributes passed in by the user are lost when `Typography` is switched to the editing state.([#2109](https://github.com/arco-design/arco-design/pull/2109) '')
+
 ## 2.44.2
 
 2023-02-10

@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🆎 TypeScript
+
+- Export the `Ref` type definition of the `<Input />` component([#2105](https://github.com/arco-design/arco-design/pull/2105) [@WindrunnerMax](https://github.com/WindrunnerMax))
+
 ## 2.50.1
 
 2023-07-14

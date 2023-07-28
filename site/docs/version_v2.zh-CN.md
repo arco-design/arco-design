@@ -2,6 +2,33 @@
 changelog: true
 ---
 
+## 2.51.0
+
+2023-07-28
+
+### 💎 功能优化
+
+- 优化表格宽度在特定场景下出现不必要滚动条的问题。([#2066](https://github.com/arco-design/arco-design/pull/2066) [@hkhere](https://github.com/hkhere))
+
+### 🆕 功能升级
+
+- 支持横向 `Anchor`([#2108](https://github.com/arco-design/arco-design/pull/2108)  )
+- `Menu.Item` 组件新增 `renderItemInTooltip` 属性，用以指定 `Menu` 收起时 `Tooltip` 中展示的菜单项节点。([#2106](https://github.com/arco-design/arco-design/pull/2106))
+- `Dropdown.Button` 允许传入所有的 `DropdownProps`。([#2091](https://github.com/arco-design/arco-design/pull/2091))
+
+### 🐛 问题修复
+
+- 修复 `Typography.Title` 切换为编辑状态时字体样式未继承 Title 样式的 bug。([#2109](https://github.com/arco-design/arco-design/pull/2109)  )
+- 修复 `Typography` 切换为编辑状态时用户传入的 `className` 和 `style` 属性丢失的 bug。([#2109](https://github.com/arco-design/arco-design/pull/2109)  )
+- 修复 `Collapse` 组件父级节点 onClick 不冒泡触发([#2100](https://github.com/arco-design/arco-design/pull/2100)  )
+- 修复 `Radio` 组件在 `children` 为 0 时文本色异常的 bug。([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+- 修复 `Checkbox` 组件在 `children` 为 0 时文本色异常的 bug。([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+- 修复 `Modal` 组件设置 `unmountOnExit=true` 并关闭弹窗后，弹窗外层节点未被 `unmount` 的 bug。([#2096](https://github.com/arco-design/arco-design/pull/2096)  )
+
+### 🆎 类型修正
+
+- 导出 `<Input />` 组件的 `Ref` 类型定义([#2105](https://github.com/arco-design/arco-design/pull/2105) [@WindrunnerMax](https://github.com/WindrunnerMax))
+
 ## 2.50.2
 
 2023-07-21

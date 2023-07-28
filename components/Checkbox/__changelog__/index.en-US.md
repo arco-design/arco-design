@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 BugFix
+
+- Fix the bug that the text color of `Checkbox` component is abnormal when `children` is 0.([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+
 ## 2.44.1
 
 2023-02-03

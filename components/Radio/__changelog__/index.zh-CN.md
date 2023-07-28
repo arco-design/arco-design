@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 问题修复
+
+- 修复 `Radio` 组件在 `children` 为 0 时文本色异常的 bug。([#2098](https://github.com/arco-design/arco-design/pull/2098) [@lightersss](https://github.com/lightersss))
+
 ## 2.34.0
 
 2022-05-27

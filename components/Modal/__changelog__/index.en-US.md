@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🐛 BugFix
+
+- Fix the bug that when the `Modal` component sets `unmountOnExit=true` and closes the pop-up window, the outer node of the pop-up window is not `unmount` bug.([#2096](https://github.com/arco-design/arco-design/pull/2096) '')
+
 ## 2.48.1
 
 2023-05-19

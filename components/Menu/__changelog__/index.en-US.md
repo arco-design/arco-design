@@ -1,3 +1,11 @@
+## 2.51.0
+
+2023-07-28
+
+### 🆕 Feature
+
+- The `Menu.Item` adds `renderItemInTooltip` property, which is used to specify the menu item node displayed in `Tooltip` when `Menu` is collapsed.([#2106](https://github.com/arco-design/arco-design/pull/2106))
+
 ## 2.48.2
 
 2023-05-26
