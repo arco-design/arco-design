@@ -21,7 +21,7 @@ Generally used to display information on the detail page.
 |colon|The content displayed after the label text, generally configured as `:`|ReactNode |`-`|-|
 |title|Title of the description|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|column|Number of data columns in a row, with one data counted as one column. Can be set with a number or object.Use object format such as `{ xs: 1, md: 2, lg: 3 }` for responsive arrangement|\| number\| { xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number } |`3`|-|
+|column|Number of data columns in a row, with one data counted as one column. Can be set with a number or object.Use object format such as `{ xs: 1, md: 2, lg: 3 }` for responsive arrangement|\| number\| {xs?: number;sm?: number;md?: number;lg?: number;xl?: number;xxl?: number;xxxl?: number;} |`3`|-|
 |data|Data of the description|[DataType](#datatype) |`-`|-|
 |labelStyle|Style of label|CSSProperties |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|

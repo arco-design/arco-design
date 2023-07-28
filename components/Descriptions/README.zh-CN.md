@@ -21,7 +21,7 @@
 |colon|标签文字后显示的内容，一般配置为 ` :`|ReactNode |`-`|-|
 |title|标题|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|column|一行放置几列数据，一个数据为一列。支持配置 `column` 为数字或者对象，配置对象格式时，支持配置为 `{ xs: 1, md: 2, lg: 3 }` 这种形式来支持响应式排列|\| number\| { xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number } |`3`|-|
+|column|一行放置几列数据，一个数据为一列。支持配置 `column` 为数字或者对象，配置对象格式时，支持配置为 `{ xs: 1, md: 2, lg: 3 }` 这种形式来支持响应式排列|\| number\| {xs?: number;sm?: number;md?: number;lg?: number;xl?: number;xxl?: number;xxxl?: number;} |`3`|-|
 |data|描述列表的数据|[DataType](#datatype) |`-`|-|
 |labelStyle|显示标签的单元格的样式|CSSProperties |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|

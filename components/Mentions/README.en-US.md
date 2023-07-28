@@ -24,6 +24,7 @@ Mentions is used to mention someone or something in the input.
 |value|To set value|string |`-`|-|
 |position|Position of dropdown|'top' \| 'tl' \| 'tr' \| 'bottom' \| 'bl' \| 'br' |`bl`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
+|clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.50.0|
 |notFoundContent|The content displayed when there is no data|ReactNode |`-`|-|
 |autoSize|Height autoSize feature|boolean \| { minRows?: number; maxRows?: number } |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|

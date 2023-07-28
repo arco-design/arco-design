@@ -11,42 +11,54 @@
   white-space: normal;
 
   h1&,
+  &-h1,
   h2&,
+  &-h2,
   h3&,
+  &-h3,
   h4&,
+  &-h4,
   h5&,
-  h6& {
+  &-h5,
+  h6&,
+  &-h6 {
     font-weight: @typography-heading-font-weight;
     margin-top: @typography-heading-margin-top;
     margin-bottom: @typography-heading-margin-bottom;
   }
 
-  h1& {
+  h1&,
+  &-h1 {
     font-size: @typography-font-size-h1;
     line-height: 1.23;
   }
 
-  h2& {
+  h2&,
+  &-h2 {
     font-size: @typography-font-size-h2;
     line-height: 1.25;
   }
 
-  h3& {
+  h3&,
+  &-h3 {
     font-size: @typography-font-size-h3;
     line-height: 1.29;
   }
 
-  h4& {
+  h4&,
+  &-h4 {
     font-size: @typography-font-size-h4;
     line-height: 1.33;
   }
 
-  h5& {
+  h5&,
+  &-h5 {
     font-size: @typography-font-size-h5;
     line-height: 1.4;
   }
 
-  h6& {
+  h6&,
+  &-h6 {
     font-size: @typography-font-size-h6;
     line-height: 1.5;
   }
@@ -212,6 +224,12 @@
     margin-right: -(@textarea-padding-horizontal + @input-border-width);
     margin-top: -(@textarea-padding-vertical + @input-border-width);
     margin-bottom: calc(1em - @textarea-padding-vertical - @input-border-width);
+  }
+
+  &-edit-content-textarea {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
   }
 }
 

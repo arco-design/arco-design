@@ -29,6 +29,17 @@ function App() {
       >
         {str}
       </Typography.Paragraph>
+      {
+        [...new Array(6)].map((_, index) => {
+          return <Typography.Title
+            editable
+            heading={index + 1}
+            style={{margin: 0}}
+          >
+            H{index+1}. The Pragmatic Romanticism
+          </Typography.Title>
+        })
+      }
     </Typography>
   );
 }

@@ -538,6 +538,162 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
       </svg>
     </span>
   </div>
+  <h1
+    class="arco-typography"
+    style="margin:0"
+  >
+    H1. The Pragmatic Romanticism
+    <span
+      aria-label="编辑"
+      class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </h1>
+  <h2
+    class="arco-typography"
+    style="margin:0"
+  >
+    H2. The Pragmatic Romanticism
+    <span
+      aria-label="编辑"
+      class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </h2>
+  <h3
+    class="arco-typography"
+    style="margin:0"
+  >
+    H3. The Pragmatic Romanticism
+    <span
+      aria-label="编辑"
+      class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </h3>
+  <h4
+    class="arco-typography"
+    style="margin:0"
+  >
+    H4. The Pragmatic Romanticism
+    <span
+      aria-label="编辑"
+      class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </h4>
+  <h5
+    class="arco-typography"
+    style="margin:0"
+  >
+    H5. The Pragmatic Romanticism
+    <span
+      aria-label="编辑"
+      class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </h5>
+  <h6
+    class="arco-typography"
+    style="margin:0"
+  >
+    H6. The Pragmatic Romanticism
+    <span
+      aria-label="编辑"
+      class="arco-typography-operation-edit"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="arco-icon arco-icon-edit"
+        fill="none"
+        focusable="false"
+        stroke="currentColor"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+      >
+        <path
+          d="m30.48 19.038 5.733-5.734a1 1 0 0 0 0-1.414l-5.586-5.586a1 1 0 0 0-1.414 0l-5.734 5.734m7 7L15.763 33.754a1 1 0 0 1-.59.286l-6.048.708a1 1 0 0 1-1.113-1.069l.477-6.31a1 1 0 0 1 .29-.631l14.7-14.7m7 7-7-7M6 42h36"
+        />
+      </svg>
+    </span>
+  </h6>
 </article>
 `;
 

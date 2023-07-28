@@ -29,7 +29,7 @@ A form with data collection, verification and submission functions, including ch
 |onValuesChange|Callback when any form item value changes.The first is the changed value, and the second is the value of all items|(value: Partial&lt;FormData&gt;, values: Partial&lt;FormData&gt;) =&gt; void |`-`|-|
 |scrollToFirstError|Whether scroll to first error item after validation fails. (`ScrollIntoViewOptions` is supported at `2.19.0`)|boolean \| ScrollIntoViewOptions |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|validateMessages|validation prompt template [demo](/react/en-US/components/form#validate%20messages)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;;}&gt; |`-`|2.32.0|
+|validateMessages|validation prompt template [demo](/react/en-US/components/form#validate%20messages)|Partial&lt;{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] \| ((data, { label }) =&gt; any): Partial&lt;Record&lt;keyof ValidateMessagesTemplateType[key], string \| ((data, { label }) =&gt; any)&gt;&gt;;}&gt; |`-`|2.32.0|
 |validateTrigger|When to trigger verification.|string \| string[] |`onChange`|2.28.0|
 |wrapper|Custom outer tag. Can be html tags or React components|[ComponentType](#componenttype) |`form`|-|
 |wrapperCol|The global control layout, which is the same as the setting method of `labelCol`,will be overwritten by the `wrapperCol` set by `Form.Item`|[ColProps](grid#col) |`{ span: 19, offset: 0 }`|-|

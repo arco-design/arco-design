@@ -5,8 +5,8 @@ import Input from '../Input';
 import mergedToString from '../_util/mergedToString';
 
 export default function EditContent(props: EditContentProps) {
-  const { prefixCls, children, setEditing, editableConfig } = props;
-  const className = cs(`${prefixCls}-typography`, `${prefixCls}-edit-content`);
+  const { prefixCls, children, setEditing, editableConfig, style } = props;
+  const className = cs(`${prefixCls}-typography`, `${prefixCls}-edit-content`, props.className);
 
   const str = mergedToString(children);
 
@@ -34,8 +34,9 @@ export default function EditContent(props: EditContentProps) {
   }
 
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       <Input.TextArea
+        className={`${prefixCls}-edit-content-textarea`}
         onBlur={onBlur}
         ref={input}
         value={str}
