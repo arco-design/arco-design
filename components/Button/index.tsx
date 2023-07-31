@@ -104,7 +104,7 @@ function Button(baseProps: ButtonProps, ref) {
   );
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (event: any): void => {
-    if (loading) {
+    if (loading || disabled) {
       typeof event?.preventDefault === 'function' && event.preventDefault();
       return;
     }
