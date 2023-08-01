@@ -155,5 +155,9 @@
     "icon/icons.json",
     "icon/package.json"
   ],
-  "_unpkg": true
+  "_unpkg": true,
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <17.0.0"
+  }
 }
