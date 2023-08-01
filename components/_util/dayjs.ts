@@ -221,7 +221,7 @@ export function getDayjsValue(time, format: string, utcOffset?: number, timezone
   }
   const formatValue = (value) => {
     if (isDayjs(value)) {
-      return dayjs(value.valueOf());
+      return value;
     }
     if (typeof value === 'string') {
       const dv = dayjs(value, format);
