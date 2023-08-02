@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, DependencyList } from 'react';
 
-export default function useUpdate(fn, deps = []) {
+export default function useUpdate(fn: () => void, deps: DependencyList = []) {
   const isDidMount = useRef(false);
 
   useEffect(() => {
@@ -9,5 +9,5 @@ export default function useUpdate(fn, deps = []) {
     } else {
       isDidMount.current = true;
     }
-  }, [...deps]);
+  }, deps);
 }
