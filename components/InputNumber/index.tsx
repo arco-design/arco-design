@@ -36,7 +36,7 @@ const defaultProps: InputNumberProps = {
   min: -Infinity,
   step: 1,
   mode: 'embed',
-  parser: (input) => input.replace(/[^\w\.-]+/g, ''),
+  parser: (input) => input?.replace(/[^\w\.-]+/g, '') || '',
 };
 
 function InputNumber(baseProps: InputNumberProps, ref) {
