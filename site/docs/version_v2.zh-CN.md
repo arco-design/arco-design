@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.51.1
+
+2023-08-04
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件宽度为 `auto` 且存在选中值时，聚焦后宽度丢失的问题。([#2122](https://github.com/arco-design/arco-design/pull/2122))
+- 修复 `InputNumber` 初始 `value` 设置为 `undefined` 时可能导致的报错问题。([#2120](https://github.com/arco-design/arco-design/pull/2120))
+- 优化 `Carousel` 双击箭头底部文字避免被选中([#2119](https://github.com/arco-design/arco-design/pull/2119) [@notbucai](https://github.com/notbucai))
+- 修复 `TimePicker` 组件选中默认值没有兼容 `disabledHours` `disabledMinites` `DisabledSeconds` 的 bug。([#2025](https://github.com/arco-design/arco-design/pull/2025) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.51.0
 
 2023-07-28

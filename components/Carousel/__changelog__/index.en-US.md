@@ -1,3 +1,11 @@
+## 2.51.1
+
+2023-08-04
+
+### 🐛 BugFix
+
+- Optimize `Carousel` double-click the text at the bottom of the arrow to avoid being selected([#2119](https://github.com/arco-design/arco-design/pull/2119) [@notbucai](https://github.com/notbucai))
+
 ## 2.50.0
 
 2023-06-30

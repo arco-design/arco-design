@@ -1,3 +1,11 @@
+## 2.51.1
+
+2023-08-04
+
+### 🐛 问题修复
+
+- 修复 `TimePicker` 组件选中默认值没有兼容 `disabledHours` `disabledMinites` `DisabledSeconds` 的 bug。([#2025](https://github.com/arco-design/arco-design/pull/2025) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.49.1
 
 2023-06-09

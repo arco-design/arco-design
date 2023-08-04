@@ -1,3 +1,11 @@
+## 2.51.1
+
+2023-08-04
+
+### 🐛 问题修复
+
+- 优化 `Carousel` 双击箭头底部文字避免被选中([#2119](https://github.com/arco-design/arco-design/pull/2119) [@notbucai](https://github.com/notbucai))
+
 ## 2.50.0
 
 2023-06-30

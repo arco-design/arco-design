@@ -1,3 +1,11 @@
+## 2.51.1
+
+2023-08-04
+
+### 🐛 BugFix
+
+- Fix the error that may be reported when the initial `value` of `InputNumber` is set to `undefined`.([#2120](https://github.com/arco-design/arco-design/pull/2120))
+
 ## 2.45.1
 
 2023-03-01

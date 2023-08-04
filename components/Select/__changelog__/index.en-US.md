@@ -1,3 +1,11 @@
+## 2.51.1
+
+2023-08-04
+
+### 🐛 BugFix
+
+- Fix the issue that `Select` lost width after focusing if its width is `auto` and has a selected value.([#2122](https://github.com/arco-design/arco-design/pull/2122))
+
 ## 2.50.2
 
 2023-07-21

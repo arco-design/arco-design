@@ -1,3 +1,11 @@
+## 2.51.1
+
+2023-08-04
+
+### 🐛 BugFix
+
+- Fix the bug that the default value of `TimePicker` component is not compatible with `disabledHours` `disabledMinites` `DisabledSeconds`.([#2025](https://github.com/arco-design/arco-design/pull/2025) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.49.1
 
 2023-06-09

@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.51.1
+
+2023-08-04
+
+### 🐛 BugFix
+
+- Fix the issue that `Select` lost width after focusing if its width is `auto` and has a selected value.([#2122](https://github.com/arco-design/arco-design/pull/2122))
+- Fix the error that may be reported when the initial `value` of `InputNumber` is set to `undefined`.([#2120](https://github.com/arco-design/arco-design/pull/2120))
+- Optimize `Carousel` double-click the text at the bottom of the arrow to avoid being selected([#2119](https://github.com/arco-design/arco-design/pull/2119) [@notbucai](https://github.com/notbucai))
+- Fix the bug that the default value of `TimePicker` component is not compatible with `disabledHours` `disabledMinites` `DisabledSeconds`.([#2025](https://github.com/arco-design/arco-design/pull/2025) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.51.0
 
 2023-07-28
