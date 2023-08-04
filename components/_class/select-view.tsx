@@ -394,6 +394,11 @@ const CoreSelectView = React.forwardRef(
         inputProps.style.pointerEvents = 'none';
       }
 
+      // mirror should provide select-width if there is only placeholder in input
+      const valueMirrorText = fillNBSP(
+        needShowInput && !inputProps.value ? inputProps.placeholder : _inputValue
+      );
+
       return (
         <span className={`${prefixCls}-view-selector`}>
           <InputComponent
@@ -412,7 +417,7 @@ const CoreSelectView = React.forwardRef(
               [`${prefixCls}-view-value-mirror`]: needShowInput,
             })}
           >
-            {fillNBSP(isEmptyValue ? inputProps.placeholder : _inputValue)}
+            {valueMirrorText}
           </span>
         </span>
       );
