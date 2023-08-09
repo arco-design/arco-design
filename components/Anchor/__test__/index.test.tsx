@@ -3,7 +3,6 @@ import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
 import Anchor, { AnchorProps } from '..';
 import { isString } from '../../_util/is';
-import { findNode } from '../utils';
 import * as utilModal from '../utils';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import { render, sleep, fireEvent, cleanup } from '../../../tests/util';
@@ -42,7 +41,7 @@ class TestAnchor extends React.Component<TestAnchorProps, TestAnchorState> {
   getContainer() {
     return (
       (isString(this.props.scrollContainer)
-        ? findNode(document, this.props.scrollContainer)
+        ? utilModal.findNode(document, this.props.scrollContainer)
         : this.props.scrollContainer) || window
     );
   }
