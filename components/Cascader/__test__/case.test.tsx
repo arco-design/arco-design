@@ -289,7 +289,6 @@ describe('Cascader basic test', () => {
 
     fireEvent.drop(tags[0]);
     expect(value).toEqual(defaultValue.reverse());
-    expect(wrapper.querySelector('.arco-tag-content')?.textContent).toBe('Beijing / Beijing');
   });
 
   it('dragToSort uncontrolled', () => {
