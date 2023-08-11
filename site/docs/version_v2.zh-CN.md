@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.51.2
+
+2023-08-11
+
+### 💎 功能优化
+
+- 优化 `Trigger` 组件在内容高度存在小数时会出现定位误差导致出现不必要滚动条的问题。([#2141](https://github.com/arco-design/arco-design/pull/2141))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件受控时 `dragToSort` 属性不生效的 bug([#2140](https://github.com/arco-design/arco-design/pull/2140))
+- 修复 `Popover` 作为 `Menu` 直接子节点报错的问题。([#2138](https://github.com/arco-design/arco-design/pull/2138))
+- 修复 `Transfer` 在列表项移动时，可能出现的高度抖动。([#2136](https://github.com/arco-design/arco-design/pull/2136))
+
 ## 2.51.1
 
 2023-08-04

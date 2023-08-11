@@ -1,3 +1,11 @@
+## 2.51.2
+
+2023-08-11
+
+### 🐛 BugFix
+
+- Fix possible height jitter in `Transfer` when moving list items.([#2136](https://github.com/arco-design/arco-design/pull/2136))
+
 ## 2.49.2
 
 2023-06-16
