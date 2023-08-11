@@ -1,3 +1,11 @@
+## 2.51.2
+
+2023-08-11
+
+### 🐛 BugFix
+
+- Fix the problem that `Popover` is reported as a direct child node of `Menu`.([#2138](https://github.com/arco-design/arco-design/pull/2138))
+
 ## 2.51.0
 
 2023-07-28

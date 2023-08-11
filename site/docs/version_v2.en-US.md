@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.51.2
+
+2023-08-11
+
+### 💎 Enhancement
+
+- Optimize the `Trigger` component when there is a decimal in the content height, there will be a positioning error, which will cause unnecessary scroll bars.([#2141](https://github.com/arco-design/arco-design/pull/2141))
+
+### 🐛 BugFix
+
+- Fix the bug that the `dragToSort` attribute does not take effect when the `Cascader` component is controlled([#2140](https://github.com/arco-design/arco-design/pull/2140))
+- Fix the problem that `Popover` is reported as a direct child node of `Menu`.([#2138](https://github.com/arco-design/arco-design/pull/2138))
+- Fix possible height jitter in `Transfer` when moving list items.([#2136](https://github.com/arco-design/arco-design/pull/2136))
+
 ## 2.51.1
 
 2023-08-04

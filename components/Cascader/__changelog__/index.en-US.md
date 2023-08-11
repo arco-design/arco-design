@@ -1,3 +1,11 @@
+## 2.51.2
+
+2023-08-11
+
+### 🐛 BugFix
+
+- Fix the bug that the `dragToSort` attribute does not take effect when the `Cascader` component is controlled([#2140](https://github.com/arco-design/arco-design/pull/2140))
+
 ## 2.50.1
 
 2023-07-14
