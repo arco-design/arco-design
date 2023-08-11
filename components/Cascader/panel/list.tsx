@@ -323,6 +323,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                           isActive = activeNode.pathValue[level] === option.value;
                         }
                         return (
+                          // eslint-disable-next-line jsx-a11y/role-supports-aria-props
                           <li
                             tabIndex={0}
                             role="menuitem"

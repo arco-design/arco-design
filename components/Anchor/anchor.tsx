@@ -226,6 +226,31 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     isFunction(onSelect) && onSelect(hash, currentLink);
   }
 
+  function sliderLineHandle() {
+    const link = linkMap.current.get(currentLink);
+    if (link && !lineless && sliderLineRef.current) {
+      if (direction === 'horizontal') {
+        // if (rtl) {
+        //   sliderLineRef.current.style.right = `${link.offsetLeft}px`;
+        // } else {
+        // }
+        sliderLineRef.current.style.left = `${link.offsetLeft}px`;
+        sliderLineRef.current.style.width = `${link.clientWidth}px`;
+      } else {
+        sliderLineRef.current.style.top = `${link.offsetTop}px`;
+      }
+    }
+  }
+
+  function sliderLineObserveHandle(handler?: () => void) {
+    const callback: MutationCallback = function (mutationsList) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') handler?.();
+      }
+    };
+    const observer = new MutationObserver(callback);
+    return observer;
+  }
   useEffect(() => {
     const hash = decodeURIComponent(location.hash);
     if (hash) {
@@ -249,19 +274,15 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   }, [propScrollContainer, onScroll]);
 
   useEffect(() => {
-    const link = linkMap.current.get(currentLink);
-    if (link && !lineless && sliderLineRef.current) {
-      if (direction === 'horizontal') {
-        // if (rtl) {
-        //   sliderLineRef.current.style.right = `${link.offsetLeft}px`;
-        // } else {
-        // }
-        sliderLineRef.current.style.left = `${link.offsetLeft}px`;
-        sliderLineRef.current.style.width = `${link.clientWidth}px`;
-      } else {
-        sliderLineRef.current.style.top = `${link.offsetTop}px`;
-      }
+    const observer = sliderLineObserveHandle(sliderLineHandle);
+    const wrap = wrapperRef.current;
+    if (wrap) {
+      observer.observe(wrap, { subtree: true, childList: true });
     }
+    sliderLineHandle();
+    return () => {
+      observer.disconnect();
+    };
   }, [currentLink, lineless, direction, rtl]);
 
   const content = (
