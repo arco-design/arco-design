@@ -492,7 +492,7 @@ function Select(baseProps: SelectProps, ref) {
     // 没有设置弹出框的 width 时，需要在虚拟列表渲染的瞬间获得子元素的最大宽度
     const needMeasureLongestItem =
       triggerProps?.autoAlignPopupWidth === false &&
-      (!triggerProps?.style || triggerProps?.style === 'auto');
+      (!triggerProps?.style?.width || triggerProps?.style?.width === 'auto');
     // Option 存在复杂子元素时，让获得最长子元素变得困难，此时直接禁用虚拟滚动
     const needForbidVirtual = needMeasureLongestItem && hasComplexLabelInOptions;
 
