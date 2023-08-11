@@ -114,6 +114,15 @@ const getChildRect = (child, mouseLocation): ChildRect => {
     : child.getBoundingClientRect();
 };
 
+// popup 弹出层的尺寸。 https://github.com/arco-design/arco-design/issues/2132
+const getContentSize = (content) => {
+  const width = content.offsetWidth;
+  const height = content.offsetHeight;
+  return {
+    width,
+    height,
+  };
+};
 export default (
   props: TriggerProps,
   content: HTMLElement,
@@ -147,6 +156,8 @@ export default (
     content.style.minWidth = `${child.offsetWidth}px`;
   }
 
+  const contentSize = getContentSize(content);
+
   let realPosition = props.position;
   const arrowStyle: { left?: number; top?: number } = {};
 
@@ -170,15 +181,15 @@ export default (
     if (direction === 'top' || direction === 'bottom') {
       if (boundary.left > styleLeft && childRect.right > 12) {
         // 左边被遮挡
-        style.left = Math.max(boundary.left, left - content.clientWidth);
-        style.left = Math.max(style.left as number, left - content.clientWidth + 24);
+        style.left = Math.max(boundary.left, left - contentSize.width);
+        style.left = Math.max(style.left as number, left - contentSize.width + 24);
       } else if (
-        styleLeft - boundary.left + content.clientWidth > windowWidth &&
+        styleLeft - boundary.left + contentSize.width > windowWidth &&
         windowWidth - childRect.left > 12
       ) {
         // 右侧被遮挡，右侧贴边。如果child在可视区内的宽度小于12，不进行位置调整
-        style.left = Math.max(boundary.left, boundary.left + windowWidth - content.clientWidth);
-        style.left = Math.max(style.left as number, left - content.clientWidth + 24);
+        style.left = Math.max(boundary.left, boundary.left + windowWidth - contentSize.width);
+        style.left = Math.max(style.left as number, left - contentSize.width + 24);
       }
     }
     // 垂直方向微调
@@ -186,20 +197,14 @@ export default (
       if (boundary.top > styleTop && childRect.bottom > 12) {
         // 上面
         style.top = boundary.top;
-        style.top = Math.max(
-          style.top as number,
-          top - content.clientHeight + childRect.height / 2
-        );
+        style.top = Math.max(style.top as number, top - contentSize.height + childRect.height / 2);
       } else if (
-        styleTop - boundary.top + content.clientHeight > windowHeight &&
+        styleTop - boundary.top + contentSize.height > windowHeight &&
         windowHeight - childRect.top > 12
       ) {
         // 向上微调位置，如果child在可视区内的高度小于12，不进行位置调整
-        style.top = Math.max(boundary.top, boundary.top + windowHeight - content.clientHeight);
-        style.top = Math.max(
-          style.top as number,
-          top - content.clientHeight + childRect.height / 2
-        );
+        style.top = Math.max(boundary.top, boundary.top + windowHeight - contentSize.height);
+        style.top = Math.max(style.top as number, top - contentSize.height + childRect.height / 2);
       }
     }
     if (direction === 'top' && boundary.top > styleTop) {
@@ -208,7 +213,7 @@ export default (
         // 放到下面
         style.top = Math.min(
           top + height + (alignTop || 0),
-          boundary.top + windowHeight - content.clientHeight
+          boundary.top + windowHeight - contentSize.height
         );
         result = true;
       } else {
@@ -216,16 +221,16 @@ export default (
         style.top = boundary.top;
       }
     }
-    if (direction === 'bottom' && styleTop - boundary.top + content.clientHeight > windowHeight) {
+    if (direction === 'bottom' && styleTop - boundary.top + contentSize.height > windowHeight) {
       // 下部分被遮挡
       if (windowHeight - childRect.bottom < childRect.top) {
         // 放到上面
-        style.top = Math.max(top - content.clientHeight - (alignBottom || 0), boundary.top);
+        style.top = Math.max(top - contentSize.height - (alignBottom || 0), boundary.top);
 
         result = true;
       } else {
         // 贴底边界
-        style.top = boundary.top + windowHeight - content.clientHeight;
+        style.top = boundary.top + windowHeight - contentSize.height;
       }
     }
     if (direction === 'left' && boundary.left > styleLeft) {
@@ -234,22 +239,22 @@ export default (
         // 放到右边
         style.left = Math.min(
           width + left + alignRight,
-          boundary.left + windowWidth - content.clientWidth
+          boundary.left + windowWidth - contentSize.width
         );
         result = true;
       } else {
         style.left = boundary.left;
       }
     }
-    if (direction === 'right' && styleLeft - boundary.left + content.clientWidth > windowWidth) {
+    if (direction === 'right' && styleLeft - boundary.left + contentSize.width > windowWidth) {
       // 右边被遮挡
       if (windowWidth - childRect.right < childRect.left) {
         // 放到左边
-        style.left = Math.max(left - content.clientWidth - alignLeft, boundary.left);
+        style.left = Math.max(left - contentSize.width - alignLeft, boundary.left);
         result = true;
       } else {
         // 贴左边界
-        style.left = boundary.left + windowWidth - content.clientWidth;
+        style.left = boundary.left + windowWidth - contentSize.width;
       }
     }
 
@@ -257,8 +262,8 @@ export default (
     if (style.left < 0) {
       style.left = 0;
     } else {
-      // 限制在popupContainer中，左侧最大为 mountContainer.scrollWidth - content.clientWidth，保证弹出层在container内部
-      const maxLeft = mountContainer.scrollWidth - content.clientWidth;
+      // 限制在popupContainer中，左侧最大为 mountContainer.scrollWidth - contentSize.width，保证弹出层在container内部
+      const maxLeft = mountContainer.scrollWidth - contentSize.width;
       style.left = Math.min(maxLeft, style.left);
     }
 
@@ -267,41 +272,42 @@ export default (
 
   const horizontalOffset = popupAlign.horizontalOffset || 0;
   const verticalOffset = popupAlign.verticalOffset || 0;
+
   switch (props.position) {
     case 'top': {
-      style.top = top - content.clientHeight - alignTop;
-      style.left = left + width / 2 - content.clientWidth / 2;
+      style.top = top - contentSize.height - alignTop;
+      style.left = left + width / 2 - contentSize.width / 2;
       autoPosition('top') && (realPosition = 'bottom');
       style.left += horizontalOffset;
 
       const arrowLeft = left - Number(style.left) + width / 2;
-      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
+      arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
     }
     case 'tl':
-      style.top = top - content.clientHeight - alignTop;
+      style.top = top - contentSize.height - alignTop;
       style.left = left;
       autoPosition('top') && (realPosition = 'bl');
       style.left += horizontalOffset;
       let arrowLeft = left - Number(style.left) + Math.min(width / 2, 50);
-      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
+      arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
     case 'tr':
       style.top = -content.clientHeight + top - alignTop;
-      style.left = left + width - content.clientWidth;
+      style.left = left + width - contentSize.width;
       autoPosition('top') && (realPosition = 'br');
       style.left += horizontalOffset;
       arrowLeft = left - Number(style.left) + Math.max(width / 2, width - 50);
-      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
+      arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
     case 'bottom': {
       style.top = height + top + alignBottom;
-      style.left = left + width / 2 - content.clientWidth / 2;
+      style.left = left + width / 2 - contentSize.width / 2;
       autoPosition('bottom') && (realPosition = 'top');
       style.left += horizontalOffset;
 
       const arrowLeft = left - Number(style.left) + width / 2;
-      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
+      arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
     }
     case 'bl':
@@ -310,51 +316,51 @@ export default (
       autoPosition('bottom') && (realPosition = 'tl');
       style.left += horizontalOffset;
       arrowLeft = left - Number(style.left) + Math.min(width / 2, 50);
-      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
+      arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
     case 'br':
       style.top = height + top + alignBottom;
-      style.left = left + width - content.clientWidth;
+      style.left = left + width - contentSize.width;
       autoPosition('bottom') && (realPosition = 'tr');
       style.left += horizontalOffset;
       arrowLeft = left - Number(style.left) + Math.max(width / 2, width - 50);
-      arrowStyle.left = getInsideValue(12, content.clientWidth - 12, arrowLeft);
+      arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
     case 'left': {
-      style.top = top + height / 2 - content.clientHeight / 2;
-      style.left = left - content.clientWidth - alignLeft;
+      style.top = top + height / 2 - contentSize.height / 2;
+      style.left = left - contentSize.width - alignLeft;
       autoPosition('left') && (realPosition = 'right');
       style.top += verticalOffset;
       const arrowTop = top - Number(style.top) + height / 2;
-      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
+      arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
     }
 
     case 'lt':
       style.top = top;
-      style.left = left - content.clientWidth - alignLeft;
+      style.left = left - contentSize.width - alignLeft;
       autoPosition('left') && (realPosition = 'rt');
       style.top += verticalOffset;
       let arrowTop = top - Number(style.top) + Math.min(height / 2, 50);
-      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
+      arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
     case 'lb':
-      style.top = top + height - content.clientHeight;
-      style.left = left - content.clientWidth - alignLeft;
+      style.top = top + height - contentSize.height;
+      style.left = left - contentSize.width - alignLeft;
       autoPosition('left') && (realPosition = 'rb');
       style.top += verticalOffset;
 
       arrowTop = top - Number(style.top) + Math.max(height / 2, height - 50);
-      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
+      arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
     case 'right': {
-      style.top = top + height / 2 - content.clientHeight / 2;
+      style.top = top + height / 2 - contentSize.height / 2;
       style.left = width + left + alignRight;
       autoPosition('right') && (realPosition = 'left');
       style.top += verticalOffset;
 
       const arrowTop = top - Number(style.top) + height / 2;
-      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
+      arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
     }
     case 'rt':
@@ -364,16 +370,16 @@ export default (
       style.top += verticalOffset;
 
       arrowTop = top - Number(style.top) + Math.min(height / 2, 50);
-      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
+      arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
     case 'rb':
-      style.top = top + height - content.clientHeight;
+      style.top = top + height - contentSize.height;
       style.left = width + left + alignRight;
       autoPosition('right') && (realPosition = 'lb');
       style.top += verticalOffset;
 
       arrowTop = top - Number(style.top) + Math.max(height / 2, height - 50);
-      arrowStyle.top = getInsideValue(12, content.clientHeight - 12, arrowTop);
+      arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
     default:
       break;
