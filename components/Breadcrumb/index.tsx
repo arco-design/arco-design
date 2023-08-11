@@ -1,4 +1,5 @@
 import React, { ReactNode, useContext, PropsWithChildren, forwardRef } from 'react';
+import { isArray } from 'lodash';
 import cs from '../_util/classNames';
 import Item from './item';
 import { ConfigContext } from '../ConfigProvider';
@@ -27,7 +28,7 @@ function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
     componentConfig?.Breadcrumb
   );
   const { className, children, style, routes, maxCount, separator, ...rest } = props;
-
+  const trulyChildren = isArray(children) ? children.filter(Boolean) : children;
   const prefixCls = getPrefixCls('breadcrumb');
   const itemRender = 'itemRender' in props ? props.itemRender : defaultItemRender;
 
@@ -91,8 +92,8 @@ function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
   };
 
   const getItemsByChildren = () => {
-    const delta = React.Children.toArray(children).length - maxCount;
-    return React.Children.map(children, (child: React.ReactElement, index) => {
+    const delta = React.Children.toArray(trulyChildren).length - maxCount;
+    return React.Children.map(trulyChildren, (child: React.ReactElement, index) => {
       return (
         child &&
         getValidChild(
