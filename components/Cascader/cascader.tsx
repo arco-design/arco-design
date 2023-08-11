@@ -382,7 +382,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   };
 
   const updateSelectedValues = (value: string[][]) => {
-    setValue(value);
+    handleChange(value);
   };
 
   const renderView = (eleView: ReactElement | ReactNode) => {

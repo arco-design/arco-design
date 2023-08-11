@@ -238,4 +238,108 @@ describe('Cascader basic test', () => {
 
     expect(wrapper.find('.arco-tag')).toHaveLength(1);
   });
+
+  it('dragToSort controlled', () => {
+    const defaultValue = [
+      ['shanghai', 'shanghai'],
+      ['beijing', 'beijing'],
+    ];
+    let value: string[][] = defaultValue;
+    const wrapper = render(
+      <Cascader
+        dragToSort
+        value={value}
+        onChange={(v) => (value = v as string[][])}
+        options={[
+          {
+            value: 'shanghai',
+            label: 'Shanghai',
+            children: [
+              {
+                value: 'shanghai',
+                label: 'Shanghai',
+              },
+            ],
+          },
+          {
+            value: 'beijing',
+            label: 'Beijing',
+            children: [
+              {
+                value: 'beijing',
+                label: 'Beijing',
+              },
+            ],
+          },
+        ]}
+        mode="multiple"
+      />
+    );
+
+    expect(wrapper.querySelectorAll('.arco-tag')).toHaveLength(2);
+    expect(wrapper.querySelector('.arco-tag-content')?.textContent).toBe('Shanghai / Shanghai');
+
+    const tags = wrapper.querySelectorAll('.arco-draggable-item');
+
+    fireEvent.drag(tags[1]);
+    fireEvent.dragStart(tags[1]);
+    fireEvent.dragOver(tags[0], {
+      pageX: 0,
+    });
+
+    fireEvent.drop(tags[0]);
+    expect(value).toEqual(defaultValue.reverse());
+    expect(wrapper.querySelector('.arco-tag-content')?.textContent).toBe('Beijing / Beijing');
+  });
+
+  it('dragToSort uncontrolled', () => {
+    let value: string[][] = [];
+    const defaultValue = [
+      ['shanghai', 'shanghai'],
+      ['beijing', 'beijing'],
+    ];
+    const wrapper = render(
+      <Cascader
+        dragToSort
+        defaultValue={defaultValue}
+        onChange={(v) => (value = v as string[][])}
+        options={[
+          {
+            value: 'shanghai',
+            label: 'Shanghai',
+            children: [
+              {
+                value: 'shanghai',
+                label: 'Shanghai',
+              },
+            ],
+          },
+          {
+            value: 'beijing',
+            label: 'Beijing',
+            children: [
+              {
+                value: 'beijing',
+                label: 'Beijing',
+              },
+            ],
+          },
+        ]}
+        mode="multiple"
+      />
+    );
+
+    expect(wrapper.querySelectorAll('.arco-tag')).toHaveLength(2);
+    const tags = wrapper.querySelectorAll('.arco-draggable-item');
+
+    fireEvent.drag(tags[1]);
+    fireEvent.dragStart(tags[1]);
+    fireEvent.dragOver(tags[0], {
+      pageX: 0,
+    });
+
+    fireEvent.drop(tags[0]);
+    expect(value).toEqual(defaultValue.reverse());
+    expect(wrapper.querySelector('.arco-tag-content')?.textContent).toBe('Beijing / Beijing');
+  });
 });
