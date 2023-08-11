@@ -96,10 +96,11 @@ export const processChildren = (
     // 处理 <div> 包裹 MenuItem 之类的情况
     if (!isMenuSubComponent && item.props.children) {
       const _props = isHTMLElement ? {} : props;
+      const itemChildrenList = processChildren(item.props.children, props);
       return React.cloneElement(item, {
         ..._props,
         _key: item.key,
-        children: processChildren(item.props.children, props),
+        children: itemChildrenList.length === 1 ? itemChildrenList[0] : itemChildrenList,
       });
     }
 

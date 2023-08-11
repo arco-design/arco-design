@@ -5,6 +5,7 @@ import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import { MenuProps } from '../interface';
 import { render, sleep } from '../../../tests/util';
+import Popover from '../../Popover';
 
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
@@ -260,6 +261,9 @@ describe('Menu', () => {
   it('SubMenu selectable', () => {
     const wrapper = render(
       <Menu mode="vertical" defaultSelectedKeys={['submenu']}>
+        <Popover content="test">
+          <span>test</span>
+        </Popover>
         <SubMenu selectable title="submenu" key="submenu">
           <Menu.Item key="1">1</Menu.Item>
         </SubMenu>
