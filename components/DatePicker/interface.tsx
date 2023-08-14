@@ -504,14 +504,12 @@ export interface BaseRangePickerProps {
    */
   clearRangeOnReselect?: boolean;
 }
-type RequiredAllOrNone<T, K extends keyof T> = Omit<T, K> &
-  (Required<Pick<T, K>> | Partial<Record<K, never>>);
+
 export type RangePickerProps = BaseRangePickerProps &
   Omit<
     PickerProps,
     'onChange' | 'onSelect' | 'onOk' | 'defaultPickerValue' | 'pickerValue' | 'onPickerValueChange'
-  > &
-  RequiredAllOrNone<BaseRangePickerProps, 'allowEmpty' | 'referenceInterval'>;
+  >;
 
 export interface ShortcutsProps {
   prefixCls?: string;
