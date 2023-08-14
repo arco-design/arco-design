@@ -1,5 +1,6 @@
 import { Dayjs } from 'dayjs';
 import { CSSProperties, ReactNode } from 'react';
+import { Partial } from 'lodash';
 import { TimePickerProps } from '../TimePicker/interface';
 import { TriggerProps } from '../Trigger/index';
 import { Omit } from '../_util/type';
@@ -402,6 +403,16 @@ export type TimePickerRangeProps = Omit<TimePickerProps, 'defaultValue'> & {
  */
 export interface BaseRangePickerProps {
   /**
+   * @zh 是否允许留空
+   * @en Whether to allow input empty
+   */
+  allowEmpty?: boolean;
+  /**
+   * @zh 允许留空时的参考区间
+   * @en Reference interval when blank is allowed
+   */
+  referenceInterval?: [string | Dayjs, string | Dayjs];
+  /**
    * @zh 是否禁用
    * @en Whether to disable input box
    */
@@ -494,12 +505,15 @@ export interface BaseRangePickerProps {
    */
   clearRangeOnReselect?: boolean;
 }
-
+type PartialAchieve<T> = { [K in keyof T]?: T[K] };
+type RequiredAllOrNone<T, K extends keyof T> = Omit<T, K> &
+  (Required<Pick<T, K>> | PartialAchieve<Record<K, never>>);
 export type RangePickerProps = BaseRangePickerProps &
   Omit<
     PickerProps,
     'onChange' | 'onSelect' | 'onOk' | 'defaultPickerValue' | 'pickerValue' | 'onPickerValueChange'
-  >;
+  > &
+  RequiredAllOrNone<BaseRangePickerProps, 'allowEmpty' | 'referenceInterval'>;
 
 export interface ShortcutsProps {
   prefixCls?: string;
