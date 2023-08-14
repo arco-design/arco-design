@@ -503,7 +503,7 @@ const Picker = (baseProps: RangePickerProps) => {
           : 1
         : focusedInputIndex;
       onSelectPanel(
-        referenceInterval[focusedIndex],
+        '',
         getDayjsValue(referenceInterval, format, utcOffset, timezone)[focusedIndex]
       );
     }
