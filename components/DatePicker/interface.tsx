@@ -1,6 +1,5 @@
 import { Dayjs } from 'dayjs';
 import { CSSProperties, ReactNode } from 'react';
-import { Partial } from 'lodash';
 import { TimePickerProps } from '../TimePicker/interface';
 import { TriggerProps } from '../Trigger/index';
 import { Omit } from '../_util/type';
@@ -505,9 +504,8 @@ export interface BaseRangePickerProps {
    */
   clearRangeOnReselect?: boolean;
 }
-type PartialAchieve<T> = { [K in keyof T]?: T[K] };
 type RequiredAllOrNone<T, K extends keyof T> = Omit<T, K> &
-  (Required<Pick<T, K>> | PartialAchieve<Record<K, never>>);
+  (Required<Pick<T, K>> | Partial<Record<K, never>>);
 export type RangePickerProps = BaseRangePickerProps &
   Omit<
     PickerProps,
