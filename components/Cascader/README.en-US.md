@@ -48,7 +48,7 @@ Display options in a multi-level cascading dropdown component.
 |dropdownMenuColumnStyle|dropdown menu column style|CSSProperties |`-`|2.35.0|
 |fieldNames|Custom field name for label, value, isLeaf, disabled and children|[FieldNamesType](#fieldnamestype) |`DefaultFieldNames`|-|
 |filterOption|Customize the search logic.|(inputValue: string, option: NodeProps&lt;T&gt;) =&gt; boolean |`-`|-|
-|icons|Icon configuration.|{loading?: ReactNode;checked?: ReactNode;next?: ReactNode;rtlNext?: ReactNode;} |`-`|2.50.0|
+|icons|Icon configuration.|{loading?: ReactNode;checked?: ReactNode;next?: ReactNode;} |`-`|2.50.0|
 |loadMore|To load option lazily|(pathValue: string[], level: number) =&gt; Promise&lt;T[]&gt; |`-`|-|
 |options|The data of options|T[] |`[]`|-|
 |removeIcon|Customize the delete icon of tags selected in `multiple` and `label` mode.|ReactNode \| null |`-`|-|

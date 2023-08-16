@@ -225,7 +225,6 @@ export interface CascaderProps<T = any>
     loading?: ReactNode;
     checked?: ReactNode;
     next?: ReactNode;
-    rtlNext?: ReactNode;
   };
 }
 
@@ -317,6 +316,5 @@ export interface CascaderPanelProps<T> {
     loading?: ReactNode;
     checked?: ReactNode;
     next?: ReactNode;
-    rtlNext?: ReactNode;
   };
 }

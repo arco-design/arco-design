@@ -14,7 +14,6 @@ export interface CascaderOptionProps<T> {
     loading?: ReactNode;
     checked?: ReactNode;
     next?: ReactNode;
-    rtlNext?: ReactNode;
   };
   renderOption?: () => ReactNode;
   onClickOption?: () => void;
@@ -24,7 +23,7 @@ export interface CascaderOptionProps<T> {
 }
 
 const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
-  const { prefixCls, multiple, option, renderOption, selected, rtl, icons } = props;
+  const { prefixCls, multiple, option, renderOption, selected, icons } = props;
 
   const checkboxDisabled = option.disabled || (multiple && option.disableCheckbox);
 
@@ -48,13 +47,7 @@ const Option = <T extends OptionProps>(props: CascaderOptionProps<T>) => {
         onDoubleClick={checkboxDisabled ? undefined : props.onDoubleClickOption}
       >
         {renderOption ? renderOption() : option.label}
-        {option.isLeaf
-          ? selected && icons.checked
-          : option.loading
-          ? icons.loading
-          : rtl
-          ? icons.rtlNext
-          : icons.next}
+        {option.isLeaf ? selected && icons.checked : option.loading ? icons.loading : icons.next}
       </div>
     </>
   );

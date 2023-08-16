@@ -43,7 +43,6 @@ export type SearchPanelProps<T> = {
     loading?: ReactNode;
     checked?: ReactNode;
     next?: ReactNode;
-    rtlNext?: ReactNode;
   };
 };
 
