@@ -1,8 +1,10 @@
 import { CSSProperties, ReactNode, ReactElement, DragEvent, PropsWithChildren } from 'react';
 import TreeNode from './node';
 import { AvailableVirtualListProps } from '../_class/VirtualList';
+import { TreeNodeProps } from '.';
 
 export type NodeInstance = ReactElement<PropsWithChildren<NodeProps>, typeof TreeNode>;
+export type FakeNodeInstance = { key: string; props: TreeNodeProps };
 
 export type SHOW_ALL = 'all';
 export type SHOW_PARENT = 'parent';
@@ -278,6 +280,8 @@ export interface TreeProps {
   filterNode?: (node: NodeProps) => boolean; // 仅提供给tree-select使用
   children?: ReactNode;
   onMouseDown?: (e) => void;
+  // 伪造结点数据类型，提升性能
+  __ArcoFakeNode__?: boolean;
 }
 
 /**

@@ -160,13 +160,16 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
     [treeContext.onNodeDragOver]
   );
 
-  const handleCheck = (checked, e) => {
-    const { disableCheckbox, disabled } = props;
-    if (disableCheckbox || disabled) {
-      return;
-    }
-    treeContext.onCheck && treeContext.onCheck(checked, _key, e);
-  };
+  const handleCheck = useCallback(
+    (checked, e) => {
+      const { disableCheckbox, disabled } = props;
+      if (disableCheckbox || disabled) {
+        return;
+      }
+      treeContext.onCheck && treeContext.onCheck(checked, _key, e);
+    },
+    [props.disabled, props.disableCheckbox]
+  );
 
   return (
     <>

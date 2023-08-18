@@ -55,7 +55,7 @@ function NodeList(props, ref) {
         return true;
       }
       // 过滤掉的也缓存一下，避免被收起的节点在onSelect回调中，selectedNodes出现undefined
-      saveCacheNode(<Node {...item} {...getNodeProps(item)} key={item.key} />);
+      saveCacheNode(item);
       return false;
     });
   }, [nodeList, filterNode, visibleKeys]);
@@ -108,7 +108,7 @@ function NodeList(props, ref) {
       className={className}
       style={style}
       ref={virtualListRef}
-      data={childrenList}
+      data={getNodeProps(childrenList)}
       isStaticItemHeight={false}
       itemKey={getKey}
       onMouseDown={props.onMouseDown}
@@ -116,8 +116,8 @@ function NodeList(props, ref) {
       {...virtualListProps}
     >
       {(item) => {
-        const node = <Node {...item} {...getNodeProps(item, expandedKeysSet)} key={item.key} />;
-        saveCacheNode(node);
+        const node = <Node {...item} key={item.key} />;
+        saveCacheNode(item);
         return node;
       }}
     </VirtualList>
@@ -132,8 +132,9 @@ function NodeList(props, ref) {
       onMouseDown={props.onMouseDown}
     >
       {childrenList.map((item) => {
-        const node = <Node {...item} {...getNodeProps(item, expandedKeysSet)} key={item.key} />;
-        saveCacheNode(node);
+        const nodeProps = getNodeProps(item);
+        const node = <Node {...nodeProps} key={item.key} />;
+        saveCacheNode(item);
         return node;
       })}
     </div>
