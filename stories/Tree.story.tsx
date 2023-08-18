@@ -63,7 +63,7 @@ export const Demo = () => {
       virtualListProps={{
         height: 394,
       }}
-      // __ArcoFakeNode__
+      // __ArcoAdapterMode__
     />
   );
 };

@@ -280,8 +280,8 @@ export interface TreeProps {
   filterNode?: (node: NodeProps) => boolean; // 仅提供给tree-select使用
   children?: ReactNode;
   onMouseDown?: (e) => void;
-  // 伪造结点数据类型，提升性能
-  __ArcoFakeNode__?: boolean;
+  // 提升性能
+  __ArcoAdapterMode__?: boolean;
 }
 
 /**

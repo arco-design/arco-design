@@ -648,9 +648,9 @@ class Tree extends Component<TreeProps, TreeState> {
   };
 
   getCacheNode = (key: string[]): NodeInstance[] => {
-    // __ArcoFakeNode__ ，在大数据下获取选中结点信息时，构建 Node 会导致性能消耗过大，
-    // 通过 __ArcoFakeNode__ 开启构建数据一个类似 node 的数据结构，提升性能，大版本升级时调整所有回调类型的 NodeInstance 的参数
-    const { __ArcoFakeNode__ } = this.props;
+    // __ArcoAdapterMode__ ，在大数据下获取选中结点信息时，构建 Node 会导致性能消耗过大，
+    // 通过 __ArcoAdapterMode__ 开启构建数据一个类似 node 的数据结构，提升性能，大版本升级时调整所有回调类型的 NodeInstance 的参数
+    const { __ArcoAdapterMode__ } = this.props;
     const originData = [];
     [].concat(key).forEach((_key) => {
       const data = this.cacheNodes[_key];
@@ -661,7 +661,7 @@ class Tree extends Component<TreeProps, TreeState> {
     const nodeProps = this.getNodeProps(originData);
 
     return nodeProps.map((_props) => {
-      return __ArcoFakeNode__ ? (
+      return __ArcoAdapterMode__ ? (
         {
           props: _props,
           key,
