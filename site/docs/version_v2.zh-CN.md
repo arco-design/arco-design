@@ -8,7 +8,7 @@ changelog: true
 
 ### 💎 功能优化
 
-- 优化 Tree 组件在大数据下交互卡顿的问题。（手动开启 `__ArcoAdapterMode__ `  后会有更显著的提升，但是开启后回调参数类型为 NodeInstance 的参数会变为 `FakeNodeInstance` 类型）([#2158](https://github.com/arco-design/arco-design/pull/2158))
+- 优化 `Tree` 组件在大数据下交互卡顿的问题。（除优化了默认表现，手动开启 `__ArcoAdapterMode__ `  后会有更显著的提升，但是开启后回调参数类型为 NodeInstance 的参数会变为 `FakeNodeInstance` 类型）([#2158](https://github.com/arco-design/arco-design/pull/2158))
 
 ### 🆕 功能升级
 
@@ -26,7 +26,7 @@ changelog: true
 ### 💅 样式更新
 
 - 修复 `Tabs`  组件 rtl 视图下，竖直方向选项卡样式表现异常的 bug。([#2162](https://github.com/arco-design/arco-design/pull/2162))
-- 修复 `Tabs` 竖直方向选项卡高度未和内容区域保持一致的 bug（此修复调整了 `tabPosition` 为 left / right 的选项卡的布局方式为 flex 布局） 。([#2162](https://github.com/arco-design/arco-design/pull/2162))
+- 修复 `Tabs` 竖直方向选项卡高度未和内容区域保持一致的 bug（**此修复调整了 `tabPosition` 为 left / right 的选项卡的布局方式为 flex 布局**） 。([#2162](https://github.com/arco-design/arco-design/pull/2162))
 
 ## 2.51.2
 
