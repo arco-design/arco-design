@@ -45,7 +45,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     loaderClassName,
     error,
     preview,
-    previewProps = {} as ImagePreviewProps,
+    previewProps: _propsPreviewProps,
     alt,
     onClick,
     index,
@@ -64,6 +64,9 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     registerPreviewProps,
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
+  const previewProps = useMemo(() => {
+    return isObject(_propsPreviewProps) ? _propsPreviewProps : ({} as ImagePreviewProps);
+  }, [_propsPreviewProps]);
   const previewSrc = previewProps.src || src;
   const id = useMemo(() => {
     if (isNumber(index) || isNumber(_index)) {
@@ -154,7 +157,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     if (!previewGroup) return;
     const unRegister = registerPreviewProps(id, availablePreviewProps);
     return () => unRegister(id);
-  }, [id, previewGroup, JSON.stringify(availablePreviewProps)]);
+  }, [id, previewGroup, availablePreviewProps]);
 
   useEffect(() => {
     if (!previewGroup) return;
