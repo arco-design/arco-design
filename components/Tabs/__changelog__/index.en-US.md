@@ -1,3 +1,12 @@
+## 2.52.0
+
+2023-08-18
+
+### 💅 Style
+
+- Fix the bug that the vertical tab style behaves abnormally in the rtl view of the `Tabs` component.([#2162](https://github.com/arco-design/arco-design/pull/2162))
+- Fix the bug that the vertical tab height of `Tabs` is not consistent with the content area (this fix adjusts the layout method of tabs whose `tabPosition` is left / right to flex layout).([#2162](https://github.com/arco-design/arco-design/pull/2162))
+
 ## 2.50.2
 
 2023-07-21

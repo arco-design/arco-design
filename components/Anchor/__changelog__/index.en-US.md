@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 🐛 BugFix
+
+- Fix the problem that the blue-line position of the active anchor is not updated after the sub-anchor of the `Anchor` component is removed.([#2161](https://github.com/arco-design/arco-design/pull/2161))
+
 ## 2.51.0
 
 2023-07-28

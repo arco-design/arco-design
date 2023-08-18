@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 🐛 问题修复
+
+- 修复 `Button` 组件设置了 `disabled` 之后，在按钮是链接的情况下还是会触发 `onClick` 事件的 bug。([#2111](https://github.com/arco-design/arco-design/pull/2111) [@lio-mengxiang](https://github.com/lio-mengxiang))
+
 ## 2.41.0
 
 2022-10-28

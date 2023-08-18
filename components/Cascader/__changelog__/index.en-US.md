@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 🆕 Feature
+
+- The `Cascader` component supports the `icons` parameter to set icons.([#2062](https://github.com/arco-design/arco-design/pull/2062))
+
 ## 2.51.2
 
 2023-08-11

@@ -1,3 +1,16 @@
+## 2.52.0
+
+2023-08-18
+
+### 🆕 功能升级
+
+- `Select` 新增 `onSelect` 回调（仅对多选模式生效）。([#2157](https://github.com/arco-design/arco-design/pull/2157))
+- `Select` 调整 `defaultActiveFirstOption` 对于选中的选项亦生效。([#2157](https://github.com/arco-design/arco-design/pull/2157))
+
+### 🐛 问题修复
+
+- 修复多选 `Select` 在 Chrome 116+ 设置 `showSearch=false` 时点击 `<input>` 区域下拉框无法展开的问题。([#2156](https://github.com/arco-design/arco-design/pull/2156))
+
 ## 2.51.1
 
 2023-08-04

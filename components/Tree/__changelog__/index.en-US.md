@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 💎 Enhancement
+
+- Optimize the problem that the Tree component is stuck interactively under large data. (There will be a more significant improvement after manually enabling `__ArcoAdapterMode__ `, but after enabling it, the parameter whose callback parameter type is NodeInstance will become `FakeNodeInstance` type([#2158](https://github.com/arco-design/arco-design/pull/2158))
+
 ## 2.50.0
 
 2023-06-30

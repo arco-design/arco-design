@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 💎 功能优化
+
+- 优化 Tree 组件在大数据下交互卡顿的问题。（手动开启 `__ArcoAdapterMode__ `  后会有更显著的提升，但是开启后回调参数类型为 NodeInstance 的参数会变为 `FakeNodeInstance` 类型）([#2158](https://github.com/arco-design/arco-design/pull/2158))
+
 ## 2.50.0
 
 2023-06-30

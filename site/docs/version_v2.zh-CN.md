@@ -2,6 +2,32 @@
 changelog: true
 ---
 
+## 2.52.0
+
+2023-08-18
+
+### 💎 功能优化
+
+- 优化 Tree 组件在大数据下交互卡顿的问题。（手动开启 `__ArcoAdapterMode__ `  后会有更显著的提升，但是开启后回调参数类型为 NodeInstance 的参数会变为 `FakeNodeInstance` 类型）([#2158](https://github.com/arco-design/arco-design/pull/2158))
+
+### 🆕 功能升级
+
+- `Select` 新增 `onSelect` 回调（仅对多选模式生效）。([#2157](https://github.com/arco-design/arco-design/pull/2157))
+- `Select` 调整 `defaultActiveFirstOption` 对于选中的选项亦生效。([#2157](https://github.com/arco-design/arco-design/pull/2157))
+- `Cascader` 组件支持 `icons` 参数设置图标。([#2062](https://github.com/arco-design/arco-design/pull/2062))
+
+### 🐛 问题修复
+
+- 修复 `Anchor` 组件子锚点被移除后，激活态锚点的蓝色标识位置未更新的问题。([#2161](https://github.com/arco-design/arco-design/pull/2161))
+- 修复多选 `Select` 在 Chrome 116+ 设置 `showSearch=false` 时点击 `<input>` 区域下拉框无法展开的问题。([#2156](https://github.com/arco-design/arco-design/pull/2156))
+- 修复 `Image` 配合 `previewProps.actions` 使用报错的问题。([#2137](https://github.com/arco-design/arco-design/pull/2137))
+- 修复 `Button` 组件设置了 `disabled` 之后，在按钮是链接的情况下还是会触发 `onClick` 事件的 bug。([#2111](https://github.com/arco-design/arco-design/pull/2111) [@lio-mengxiang](https://github.com/lio-mengxiang))
+
+### 💅 样式更新
+
+- 修复 `Tabs`  组件 rtl 视图下，竖直方向选项卡样式表现异常的 bug。([#2162](https://github.com/arco-design/arco-design/pull/2162))
+- 修复 `Tabs` 竖直方向选项卡高度未和内容区域保持一致的 bug（此修复调整了 `tabPosition` 为 left / right 的选项卡的布局方式为 flex 布局） 。([#2162](https://github.com/arco-design/arco-design/pull/2162))
+
 ## 2.51.2
 
 2023-08-11

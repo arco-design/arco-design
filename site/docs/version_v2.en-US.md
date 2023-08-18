@@ -2,6 +2,32 @@
 changelog: true
 ---
 
+## 2.52.0
+
+2023-08-18
+
+### 💎 Enhancement
+
+- Optimize the problem that the Tree component is stuck interactively under large data. (There will be a more significant improvement after manually enabling `__ArcoAdapterMode__ `, but after enabling it, the parameter whose callback parameter type is NodeInstance will become `FakeNodeInstance` type([#2158](https://github.com/arco-design/arco-design/pull/2158))
+
+### 🆕 Feature
+
+- `Select` adds `onSelect` callback (only valid for multi-select mode).([#2157](https://github.com/arco-design/arco-design/pull/2157))
+- `Select` adjusts `defaultActiveFirstOption` to also take effect for the selected option.([#2157](https://github.com/arco-design/arco-design/pull/2157))
+- The `Cascader` component supports the `icons` parameter to set icons.([#2062](https://github.com/arco-design/arco-design/pull/2062))
+
+### 🐛 BugFix
+
+- Fix the problem that the blue-line position of the active anchor is not updated after the sub-anchor of the `Anchor` component is removed.([#2161](https://github.com/arco-design/arco-design/pull/2161))
+- Fix the problem that the drop-down box in the `<input>` area cannot be expanded when the multi-selection `Select` is set to `showSearch=false` in Chrome 116+.([#2156](https://github.com/arco-design/arco-design/pull/2156))
+- Fix `Image` error caused by `previewProps.actions` usage.([#2137](https://github.com/arco-design/arco-design/pull/2137))
+- Fix bug that after the `Button` component is set to `disabled`, the `onClick` event will still be triggered when the button is a link.([#2111](https://github.com/arco-design/arco-design/pull/2111) [@lio-mengxiang](https://github.com/lio-mengxiang))
+
+### 💅 Style
+
+- Fix the bug that the vertical tab style behaves abnormally in the rtl view of the `Tabs` component.([#2162](https://github.com/arco-design/arco-design/pull/2162))
+- Fix the bug that the vertical tab height of `Tabs` is not consistent with the content area (this fix adjusts the layout method of tabs whose `tabPosition` is left / right to flex layout).([#2162](https://github.com/arco-design/arco-design/pull/2162))
+
 ## 2.51.2
 
 2023-08-11

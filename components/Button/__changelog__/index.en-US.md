@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 🐛 BugFix
+
+- Fix bug that after the `Button` component is set to `disabled`, the `onClick` event will still be triggered when the button is a link.([#2111](https://github.com/arco-design/arco-design/pull/2111) [@lio-mengxiang](https://github.com/lio-mengxiang))
+
 ## 2.41.0
 
 2022-10-28

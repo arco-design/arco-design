@@ -1,3 +1,16 @@
+## 2.52.0
+
+2023-08-18
+
+### 🆕 Feature
+
+- `Select` adds `onSelect` callback (only valid for multi-select mode).([#2157](https://github.com/arco-design/arco-design/pull/2157))
+- `Select` adjusts `defaultActiveFirstOption` to also take effect for the selected option.([#2157](https://github.com/arco-design/arco-design/pull/2157))
+
+### 🐛 BugFix
+
+- Fix the problem that the drop-down box in the `<input>` area cannot be expanded when the multi-selection `Select` is set to `showSearch=false` in Chrome 116+.([#2156](https://github.com/arco-design/arco-design/pull/2156))
+
 ## 2.51.1
 
 2023-08-04

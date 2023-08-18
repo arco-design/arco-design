@@ -1,3 +1,11 @@
+## 2.52.0
+
+2023-08-18
+
+### 🐛 BugFix
+
+- Fix `Image` error caused by `previewProps.actions` usage.([#2137](https://github.com/arco-design/arco-design/pull/2137))
+
 ## 2.48.1
 
 2023-05-19
