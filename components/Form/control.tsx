@@ -58,13 +58,10 @@ export default class Control<
 
   private removeRegisterField: () => void;
 
-  constructor(
-    props: FormControlProps<FormData, FieldValue, FieldKey>,
-    context: FormItemContextProps<FormData, FieldValue, FieldKey>
-  ) {
+  constructor(props: FormControlProps<FormData, FieldValue, FieldKey>) {
     super(props);
     if ('initialValue' in props && this.hasFieldProps()) {
-      const innerMethods = context.store.getInnerMethods(true);
+      const innerMethods = this.context.store.getInnerMethods(true);
       innerMethods.innerSetInitialValue(props.field, props.initialValue);
     }
   }
