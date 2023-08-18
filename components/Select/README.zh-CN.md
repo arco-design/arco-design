@@ -66,6 +66,7 @@
 |onPaste|输入框文本粘贴的回调。|(e) => void |`-`|2.9.0|
 |onPopupScroll|下拉框的滚动监听函数，参数为滚动元素。|(elem) => void |`-`|-|
 |onSearch|搜索时的回调|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|-|
+|onSelect|选中选项时触发的回调，(只在 `multiple` 模式下触发)。|(value: string \| number \| [LabeledValue](#labeledvalue), option: [OptionInfo](#optioninfo)) => void |`-`|2.52.0|
 |onVisibleChange|下拉框收起展开时触发|(visible: boolean) => void |`-`|-|
 |renderFormat|定制回显内容。返回值将会显示在下拉框内。若 `value` 对应的 `Option` 不存在，则第一个参数是 null|(option: [OptionInfo](#optioninfo) \| null, value: string \| number \| [LabeledValue](#labeledvalue)) => ReactNode |`-`|-|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
