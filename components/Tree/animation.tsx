@@ -2,7 +2,7 @@
  * 该组件用来切换tree 展开收起时的动画
  */
 
-import React, { PropsWithChildren, useMemo, useContext, useEffect } from 'react';
+import React, { PropsWithChildren, useMemo, useContext, useEffect, useRef } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 import { TreeContext } from './context';
@@ -22,6 +22,8 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
   const prefixCls = getPrefixCls('tree-node');
   const { expandedKeys, currentExpandKeys } = treeContext.getTreeState();
   const expanded = props.expanded;
+  const propsChildrenDataRef = useRef(props.childrenData);
+  propsChildrenDataRef.current = props.childrenData;
 
   useEffect(() => {
     return () => {
@@ -41,9 +43,9 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
       });
     };
 
-    loop(props.childrenData || []);
+    loop(propsChildrenDataRef.current || []);
     return result;
-  }, [props.childrenData]);
+  }, [expanded]);
 
   const filtedData = useMemo(() => {
     const result = [];
@@ -72,13 +74,13 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
         if (isShow) {
           result.push({
             ...itemProps,
-            ...treeContext.getNodeProps(itemProps, expandedKeysSet),
+
             key: data.key,
           });
         }
       });
     }
-    return result;
+    return treeContext.getNodeProps(result);
   }, [childrenPropsList, props._key, expanded]);
 
   let realHeight = treeContext.virtualListProps?.height;
