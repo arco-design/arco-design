@@ -4,13 +4,18 @@
 
 /* Vertical */
 .@{tabs-prefix-cls} {
+  &-right {
+    flex-direction: row-reverse;
+  }
+
   &-vertical {
-    // overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
   }
 
   &-header-nav-vertical {
-    float: left;
-    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
 
     &::before {
       position: absolute;
@@ -29,10 +34,6 @@
       padding: 0 @tabs-card-padding-title-horizontal;
       height: auto;
     }
-  }
-
-  &-header-nav-right {
-    float: right;
   }
 
   &-header-nav-vertical &-header {
@@ -159,6 +160,7 @@
     width: auto;
     height: 100%;
     padding: 0;
+    flex: auto;
   }
 
   &-right &-content-vertical {
