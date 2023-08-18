@@ -141,6 +141,12 @@
         &::placeholder {
           color: @select-color-placeholder_default;
         }
+
+        // since Chrome 116 <input disabled /> won't trigger onClick callback
+        // remove all events of disabled <input /> to make sure Trigger works correctly
+        &[disabled] {
+          pointer-events: none;
+        }
       }
     }
 
