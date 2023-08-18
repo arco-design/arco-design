@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
+  useState,
 } from 'react';
 import throttle from 'lodash/throttle';
 import compute from 'compute-scroll-into-view';
@@ -67,10 +68,12 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   const sliderLineRef = useRef<HTMLDivElement>(null);
   const linkMap = useRef<Map<string, HTMLElement>>(new Map());
   const isScrolling = useRef(false);
+  const scrollContainer = useRef<HTMLElement | Window>(null);
+
+  // use this flag to trigger re-computing position of active link slider line
+  const [flagUpdateSliderLine, setFlagUpdateSliderLine] = useState(0);
   const [currentLink, setCurrentLink] = useStateWithPromise('');
   const isFirstRender = useIsFirstRender();
-
-  const scrollContainer = useRef<HTMLElement | Window>(null);
 
   useEffect(() => {
     const container = getContainer(propScrollContainer);
@@ -92,11 +95,13 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
   function addLink(hash: string, element: HTMLElement) {
     if (hash) {
       linkMap.current.set(hash, element);
+      setFlagUpdateSliderLine(Math.random());
     }
   }
 
   function removeLink(hash: string) {
     linkMap.current.delete(hash);
+    setFlagUpdateSliderLine(Math.random());
   }
 
   const setActiveLink = useCallback(
@@ -262,7 +267,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
         sliderLineRef.current.style.top = `${link.offsetTop}px`;
       }
     }
-  }, [currentLink, lineless, direction, rtl]);
+  }, [currentLink, lineless, direction, rtl, flagUpdateSliderLine]);
 
   const content = (
     <div className={classNames} style={style} ref={wrapperRef} {...rest}>
