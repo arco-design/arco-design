@@ -112,12 +112,12 @@ class Tree extends Component<TreeProps, TreeState> {
     }, {});
   };
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.state = {};
     const treeData = this.getTreeData();
-    const nodeList = this.getNodeList(treeData, context.getPrefixCls('tree'));
+    const nodeList = this.getNodeList(treeData, this.context.getPrefixCls('tree'));
     const { checkedKeys, halfCheckedKeys } = this.getInitCheckedKeys(
       props.checkedKeys || props.defaultCheckedKeys || []
     );
