@@ -178,9 +178,22 @@ function Select(baseProps: SelectProps, ref) {
   const instancePopupID = useId(`${prefixCls}-popup-`);
 
   const isNoOptionSelected = isEmptyValue(value, isMultipleMode);
-  const valueActiveDefault = defaultActiveFirstOption
-    ? optionValueList[optionIndexListForArrowKey[0]]
-    : undefined;
+
+  const valueActiveDefault = useMemo<string | number | undefined>(() => {
+    if (defaultActiveFirstOption) {
+      const firstValue = isArray(value) ? value[0] : value;
+      return !isNoOptionSelected && optionValueList.indexOf(firstValue) > -1
+        ? firstValue
+        : optionValueList[optionIndexListForArrowKey[0]];
+    }
+    return undefined;
+  }, [
+    value,
+    optionValueList,
+    optionIndexListForArrowKey,
+    defaultActiveFirstOption,
+    isNoOptionSelected,
+  ]);
 
   const scrollIntoView = useCallback(
     (optionValue: OptionProps['value'], options?: ScrollIntoViewOptions) => {
@@ -229,12 +242,13 @@ function Select(baseProps: SelectProps, ref) {
   useEffect(() => {
     if (popupVisible) {
       // 重新设置 hover 态的 Option
-      const firstValue = isArray(value) ? value[0] : value;
-      const nextValueActive =
-        !isNoOptionSelected && optionInfoMap.has(firstValue) ? firstValue : valueActiveDefault;
-      setValueActive(nextValueActive);
+      setValueActive(valueActiveDefault);
+
       // 在弹出框动画结束之后再执行scrollIntoView，否则会有不必要的滚动产生
-      setTimeout(() => scrollIntoView(nextValueActive));
+      const firstValue = isArray(value) ? value[0] : value;
+      if (!isNoOptionSelected && optionInfoMap.has(firstValue)) {
+        setTimeout(() => scrollIntoView(firstValue));
+      }
     }
   }, [popupVisible]);
 
