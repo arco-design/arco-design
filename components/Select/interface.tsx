@@ -164,8 +164,14 @@ export interface SelectProps extends SelectViewCommonProps {
    */
   onChange?: (value, option: OptionInfo | OptionInfo[]) => void;
   /**
+   * @zh 选中选项时触发的回调，(只在 `multiple` 模式下触发)。
+   * @en Called when an option is selected. Only called for `multiple` mode.
+   * @version 2.52.0
+   */
+  onSelect?: (value: string | number | LabeledValue, option: OptionInfo) => void;
+  /**
    * @zh 取消选中的时候触发的回调，(只在 `multiple` 模式下触发)。
-   * @en Called when a option is deselected.Only called for `multiple` mode.
+   * @en Called when an option is deselected. Only called for `multiple` mode.
    */
   onDeselect?: (value: string | number | LabeledValue, option: OptionInfo) => void;
   /**

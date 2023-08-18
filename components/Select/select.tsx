@@ -84,6 +84,7 @@ function Select(baseProps: SelectProps, ref) {
 
     // events
     onChange,
+    onSelect,
     onDeselect,
     onClear,
     onSearch,
@@ -397,27 +398,25 @@ function Select(baseProps: SelectProps, ref) {
     }
   };
 
-  // 多选时，选择一个选项
-  const checkOption = (valueToAdd) => {
-    const option = optionInfoMap.get(valueToAdd);
-    if (option) {
-      const newValue = (value as string[]).concat(valueToAdd);
-      tryUpdateSelectValue(newValue);
-    }
-  };
-
-  // 多选时，取消一个选项
-  const uncheckOption = (valueToRemove) => {
+  // 多选时，选择/取消选择一个选项
+  const checkOption = (optionValue, operation: 'add' | 'remove') => {
     // 取消选中时不需要检查option是否存在，因为可能已被外部剔除了此选项
-    const newValue = (value as string[]).filter((v) => v !== valueToRemove);
-    tryUpdateSelectValue(newValue);
+    if (operation === 'remove' || (operation === 'add' && optionInfoMap.get(optionValue))) {
+      const newValue =
+        operation === 'add'
+          ? (value as string[]).concat(optionValue)
+          : (value as string[]).filter((v) => v !== optionValue);
+      const callbackToTrigger = operation === 'add' ? onSelect : onDeselect;
 
-    if (onDeselect) {
-      const paramsForCallback = getValueAndOptionForCallback(valueToRemove, false);
-      onDeselect(
-        paramsForCallback.value as ReactText | LabeledValue,
-        paramsForCallback.option as OptionInfo
-      );
+      tryUpdateSelectValue(newValue);
+
+      if (typeof callbackToTrigger === 'function') {
+        const paramsForCallback = getValueAndOptionForCallback(optionValue, false);
+        callbackToTrigger(
+          paramsForCallback.value as ReactText | LabeledValue,
+          paramsForCallback.option as OptionInfo
+        );
+      }
     }
   };
 
@@ -427,9 +426,10 @@ function Select(baseProps: SelectProps, ref) {
     }
 
     if (isMultipleMode) {
-      (value as Array<OptionProps['value']>).indexOf(optionValue) === -1
-        ? checkOption(optionValue)
-        : uncheckOption(optionValue);
+      checkOption(
+        optionValue,
+        (value as Array<OptionProps['value']>).indexOf(optionValue) === -1 ? 'add' : 'remove'
+      );
 
       // 点击一个选项时，清空输入框内容
       if (!isObject(showSearch) || !showSearch.retainInputValueWhileSelect) {
@@ -664,7 +664,7 @@ function Select(baseProps: SelectProps, ref) {
     // Option Items
     onRemoveCheckedItem: (_, index, event) => {
       event.stopPropagation();
-      uncheckOption(value[index]);
+      checkOption(value[index], 'remove');
     },
 
     onClear: (event) => {

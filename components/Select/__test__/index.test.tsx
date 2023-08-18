@@ -114,7 +114,6 @@ describe('Select', () => {
         popupVisible
         mode="multiple"
         defaultValue={['Option 2', 'Option 3', 'Option 5']}
-        onChange={onChange}
       >
         {OPTIONS.map((option, index) => (
           <Option key={option} value={option} disabled={index === 2}>
@@ -446,5 +445,25 @@ describe('Select', () => {
     fireEvent.change(eleInput, { target: { value: inputText } });
     await sleep(100);
     expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent(inputText.toUpperCase());
+  });
+
+  it('multiply mode onSelect/onDeselect is called correctly', async () => {
+    const onSelect = jest.fn();
+    const onDeselect = jest.fn();
+    wrapper = render(
+      <Select allowClear popupVisible mode="multiple" onSelect={onSelect} onDeselect={onDeselect}>
+        <Option key="1" value="1">
+          1
+        </Option>
+      </Select>
+    );
+
+    await sleep(100);
+
+    const eleOption = wrapper.querySelector('.arco-select-option');
+    fireEvent.click(eleOption);
+    expect(onSelect.mock.calls[0][0]).toEqual('1');
+    fireEvent.click(eleOption);
+    expect(onSelect.mock.calls[0][0]).toEqual('1');
   });
 });

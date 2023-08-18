@@ -59,13 +59,14 @@ When users need to select one or more from a group of similar data, they can use
 |onChange|Callback when select an option or input value change.|(value, option: [OptionInfo](#optioninfo) \| [OptionInfo](#optioninfo)[]) => void |`-`|-|
 |onClear|Called when clear|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
-|onDeselect|Called when a option is deselected.Only called for `multiple` mode.|(value: string \| number \| [LabeledValue](#labeledvalue), option: [OptionInfo](#optioninfo)) => void |`-`|-|
+|onDeselect|Called when an option is deselected. Only called for `multiple` mode.|(value: string \| number \| [LabeledValue](#labeledvalue), option: [OptionInfo](#optioninfo)) => void |`-`|-|
 |onFocus|Callback when get focus|(e) => void |`-`|-|
 |onInputValueChange|Callback when the value of input is changed.|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.3.0|
 |onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onPaste|Callback when the you paste text in input box.|(e) => void |`-`|2.9.0|
 |onPopupScroll|Callback when dropdown scrolls.|(elem) => void |`-`|-|
 |onSearch|Callback when input changed|(value: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|-|
+|onSelect|Called when an option is selected. Only called for `multiple` mode.|(value: string \| number \| [LabeledValue](#labeledvalue), option: [OptionInfo](#optioninfo)) => void |`-`|2.52.0|
 |onVisibleChange|Callback when visibility of dropdown is changed.|(visible: boolean) => void |`-`|-|
 |renderFormat|Customize the content that will be displayed in the Select.If the `Option` corresponding to `value` does not exist, the first parameter will be `null`|(option: [OptionInfo](#optioninfo) \| null, value: string \| number \| [LabeledValue](#labeledvalue)) => ReactNode |`-`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
