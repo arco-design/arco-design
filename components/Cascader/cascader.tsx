@@ -37,6 +37,9 @@ import {
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import useId from '../_util/hooks/useId';
+import IconRight from '../../icon/react-icon/IconRight';
+import IconLoading from '../../icon/react-icon/IconLoading';
+import IconCheck from '../../icon/react-icon/IconCheck';
 
 export const DefaultFieldNames = {
   label: 'label',
@@ -59,9 +62,20 @@ const defaultProps: CascaderProps = {
 function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CascaderProps>(baseProps, defaultProps, componentConfig?.Cascader);
-  const { disabled, renderFormat, getPopupContainer, children, triggerProps, expandTrigger } =
-    props;
-
+  const {
+    disabled,
+    renderFormat,
+    getPopupContainer,
+    children,
+    triggerProps,
+    expandTrigger,
+    icons,
+  } = props;
+  const iconsMap = {
+    loading: icons?.loading || <IconLoading />,
+    checked: icons?.checked || <IconCheck />,
+    next: icons?.next || <IconRight />,
+  };
   const prefixCls = getPrefixCls('cascader');
   const isMultiple = props.mode === 'multiple';
   const timerRef = useRef(null);
@@ -342,6 +356,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
                 defaultActiveFirstOption={props.defaultActiveFirstOption}
+                icons={iconsMap}
               />
             ) : (
               <CascaderPanel
@@ -365,6 +380,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 popupVisible={popupVisible}
                 value={mergeValue}
                 renderFooter={props.renderFooter}
+                icons={iconsMap}
                 onEsc={() => {
                   handleVisibleChange(false);
                 }}

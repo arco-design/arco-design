@@ -2,7 +2,6 @@ import React, { useEffect, useState, CSSProperties, ReactNode, useRef } from 're
 import isEqualWith from 'lodash/isEqualWith';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import cs from '../../_util/classNames';
-import IconCheck from '../../../icon/react-icon/IconCheck';
 import { OptionProps, CascaderProps } from '../interface';
 import Node, { NodeProps } from '../base/node';
 import Checkbox from '../../Checkbox';
@@ -40,6 +39,11 @@ export type SearchPanelProps<T> = {
   defaultActiveFirstOption: boolean;
   renderOption?: (inputValue: string, node: NodeProps<T>) => ReactNode;
   getTriggerElement: () => HTMLElement;
+  icons?: {
+    loading?: ReactNode;
+    checked?: ReactNode;
+    next?: ReactNode;
+  };
 };
 
 const formatLabel = (inputValue, label, prefixCls): ReactNode => {
@@ -72,6 +76,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
     style,
     defaultActiveFirstOption,
     rtl,
+    icons,
   } = props;
   const value = props.value || [];
 
@@ -253,9 +258,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
                   <>
                     {label}
                     {isChecked && (
-                      <span className={`${prefixCls}-check-icon`}>
-                        <IconCheck />
-                      </span>
+                      <span className={`${prefixCls}-check-icon`}>{icons.checked}</span>
                     )}
                   </>
                 )}
