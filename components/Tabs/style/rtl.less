@@ -1,6 +1,14 @@
 .@{tabs-prefix-cls}-rtl {
   direction: rtl;
 
+  &.@{tabs-prefix-cls}-left {
+    flex-direction: row-reverse;
+  }
+
+  &.@{tabs-prefix-cls}-right {
+    flex-direction: row;
+  }
+
   .@{tabs-prefix-cls} {
     &-close-icon {
       margin-left: 0;
@@ -43,7 +51,7 @@
   .@{tabs-prefix-cls}-header-nav-card-gutter {
     .@{tabs-prefix-cls}-header-title-editable {
       padding-left: @tabs-card-padding-title-right_editable;
-      padding-right: 0;
+      padding-right: @tabs-card-padding-title-horizontal;
     }
   }
 
