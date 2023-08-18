@@ -14,7 +14,7 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|closable|是否显示关闭按钮|boolean |`-`|-|
+|closable|是否显示关闭按钮|boolean |`true`|-|
 |showIcon|是否显示图标|boolean |`true`|-|
 |duration|自动关闭的时间，单位为 `ms`|number |`3000`|-|
 |id|当前通知的唯一标识，可以用来更新消息|string |`-`|-|
