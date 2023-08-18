@@ -14,7 +14,7 @@ Lightweight global feedback triggered by user actions.
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|closable|Whether to show the close button|boolean |`-`|-|
+|closable|Whether to show the close button|boolean |`true`|-|
 |showIcon|Whether to show the icon|boolean |`true`|-|
 |duration|Automatic shutdown time, the unit is `ms`|number |`3000`|-|
 |id|The unique identifier of the current message, which can be used to update the message|string |`-`|-|
