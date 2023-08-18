@@ -114,6 +114,7 @@ describe('Select', () => {
         popupVisible
         mode="multiple"
         defaultValue={['Option 2', 'Option 3', 'Option 5']}
+        onChange={onChange}
       >
         {OPTIONS.map((option, index) => (
           <Option key={option} value={option} disabled={index === 2}>
@@ -465,5 +466,20 @@ describe('Select', () => {
     expect(onSelect.mock.calls[0][0]).toEqual('1');
     fireEvent.click(eleOption);
     expect(onSelect.mock.calls[0][0]).toEqual('1');
+  });
+
+  it('defaultActiveFirstOption works correctly', async () => {
+    wrapper = render(
+      <Select popupVisible mode="multiple" defaultActiveFirstOption={false}>
+        <Option key="1" value="1">
+          1
+        </Option>
+      </Select>
+    );
+
+    await sleep(100);
+
+    const eleOption = wrapper.querySelector('.arco-select-option');
+    expect(eleOption.className.indexOf('arco-select-option-hover')).toBe(-1);
   });
 });
