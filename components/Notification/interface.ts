@@ -56,6 +56,7 @@ export interface NotificationProps {
   /**
    * @zh 是否显示关闭按钮
    * @en Whether to show the close button
+   * @defaultValue true
    */
   closable?: boolean;
   /**
