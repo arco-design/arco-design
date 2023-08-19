@@ -174,8 +174,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     return props;
   };
 
-  constructor(props) {
-    super(props);
+  constructor(props, context?) {
+    super(props, context);
 
     const mergedProps = this.getMergedProps(props);
 
