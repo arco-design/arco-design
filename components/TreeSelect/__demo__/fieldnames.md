@@ -71,7 +71,7 @@ function App() {
     <div>
       <TreeSelect
         style={{ width: 300 }}
-        defaultSelectedKeys={['0-0-1']}
+        defaultValue={['0-1-1']}
         treeData={treeData}
         fieldNames={{
           key: 'value',
