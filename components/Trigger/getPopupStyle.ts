@@ -165,9 +165,12 @@ export default (
     if (!props.autoFitPosition) {
       return;
     }
+
+    const bodyZoom = Number(document.body.computedStyleMap().get('zoom'));
+
     // document.documentElement?.clientHeight 是为了排除横向滚动条的高度影响。
-    const windowHeight = document.documentElement?.clientHeight || window.innerHeight;
-    const windowWidth = document.documentElement?.clientWidth || window.innerWidth;
+    const windowHeight = document.documentElement?.clientHeight / bodyZoom || window.innerHeight;
+    const windowWidth = document.documentElement?.clientWidth / bodyZoom || window.innerWidth;
 
     let result = false; // 是否进行了位置调整
     // 视口左侧/顶部到 popupContainer 的距离
