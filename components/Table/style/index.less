@@ -95,7 +95,7 @@
 
   // expand row in fixed
   .@{table-prefix-cls}-expand-fixed-row {
-    margin: ~'-@{table-size-@{size}-padding-vertical}' ~'-@{table-size-@{size}-padding-horizontal}';
+    margin: ~'-@{table-size-@{size}-padding-vertical}' ~'calc(-@{table-size-@{size}-padding-horizontal} - @{table-border-width})';
     padding: ~'@{table-size-@{size}-padding-vertical}' ~'@{table-size-@{size}-padding-horizontal}';
   }
 
