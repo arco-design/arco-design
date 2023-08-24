@@ -17,7 +17,7 @@ import { isProduction } from './utils/env';
 
 const requestDomain = isProduction ? `//${location.hostname}` : '//localhost:3000';
 
-function Index() {
+export function Index() {
   const arcoDirection = localStorage.getItem('arco-direction');
   const [user, setUser] = useState();
   const [noticeHeight, setNoticeHeight] = useState(0);
@@ -75,6 +75,10 @@ if (isProduction) {
     cancelText: 'Cancel',
   });
 }
-ReactDOM.render(<Index />, document.getElementById('root'));
+
+// Don't render itself if flag is set under which case it will be rendered by its host app
+if (typeof process === 'undefined' || process?.env?.RENDER_BY_HOST !== 'true') {
+  ReactDOM.render(<Index />, document.getElementById('root'));
+}
 
 tea({ name: 'site_components_en' });
