@@ -22,7 +22,7 @@ function App() {
   const [current, setCurrent] = useState(1);
   return (
     <div>
-      <Steps arrow current={current} onChange={setCurrent} style={{ marginBottom: 20 }}>
+      <Steps type="arrow" current={current} onChange={setCurrent} style={{ marginBottom: 20 }}>
         <Step title="Succeeded" description="This is a description" />
         <Step title="Processing" description="This is a description" />
         <Step title="Pending" description="This is a description" />
