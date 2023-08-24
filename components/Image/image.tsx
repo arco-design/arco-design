@@ -147,7 +147,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     if (isServerRendering || !refImg.current) return;
     const startLoading = !_lazyload || inView;
     // 不是懒加载或者已经在视口。
-    if (startLoading) {
+    if (startLoading && src) {
       refImg.current.src = src;
     }
     setStatus(startLoading ? 'loading' : 'lazyload');
