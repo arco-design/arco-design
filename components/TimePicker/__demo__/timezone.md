@@ -39,7 +39,6 @@ function App() {
           }}
         />
         <TimePicker
-          showTime
           timezone={timezone}
           defaultValue={defaultValue}
           onChange={(v, vd) => setValue(vd && vd.toDate())}
