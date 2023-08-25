@@ -41,7 +41,13 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-select-view-value arco-select-view-value-mirror"
+              class="arco-select-view-value-mirror"
+            >
+              Please select
+            </span>
+            <span
+              class="arco-select-view-value"
+              style="display:none"
             >
               Please select
             </span>
@@ -177,7 +183,13 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Create an item
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Create an item
           </span>
@@ -426,7 +438,13 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-select-view-value arco-select-view-value-mirror"
+              class="arco-select-view-value-mirror"
+            >
+              Please select
+            </span>
+            <span
+              class="arco-select-view-value"
+              style="display:none"
             >
               Please select
             </span>
@@ -552,7 +570,13 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-select-view-value arco-select-view-value-mirror"
+              class="arco-select-view-value-mirror"
+            >
+              Please select
+            </span>
+            <span
+              class="arco-select-view-value"
+              style="display:none"
             >
               Please select
             </span>
@@ -671,7 +695,13 @@ exports[`renders Select/demo/clear.md correctly 1`] = `
         value=""
       />
       <span
-        class="arco-select-view-value arco-select-view-value-mirror"
+        class="arco-select-view-value-mirror"
+      >
+        Please select
+      </span>
+      <span
+        class="arco-select-view-value"
+        style="display:none"
       >
         Please select
       </span>
@@ -735,7 +765,13 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Please select
           </span>
@@ -793,7 +829,13 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Please select
           </span>
@@ -1048,7 +1090,13 @@ exports[`renders Select/demo/dropdown-render.md correctly 1`] = `
         value=""
       />
       <span
-        class="arco-select-view-value arco-select-view-value-mirror"
+        class="arco-select-view-value-mirror"
+      >
+        Select city
+      </span>
+      <span
+        class="arco-select-view-value"
+        style="display:none"
       >
         Select city
       </span>
@@ -1105,7 +1153,13 @@ exports[`renders Select/demo/group.md correctly 1`] = `
           value=""
         />
         <span
-          class="arco-select-view-value arco-select-view-value-mirror"
+          class="arco-select-view-value-mirror"
+        >
+          Select drink
+        </span>
+        <span
+          class="arco-select-view-value"
+          style="display:none"
         >
           Select drink
         </span>
@@ -1764,7 +1818,13 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Please select
           </span>
@@ -2267,7 +2327,13 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Select city
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Select city
           </span>
@@ -2628,7 +2694,13 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Select city
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Select city
           </span>
@@ -2686,7 +2758,13 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Filter option
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Filter option
           </span>
@@ -2743,7 +2821,13 @@ exports[`renders Select/demo/show-search.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Retain input value
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Retain input value
           </span>
@@ -2866,7 +2950,13 @@ exports[`renders Select/demo/size.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-select-view-value arco-select-view-value-mirror"
+            class="arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
           >
             Please select
           </span>

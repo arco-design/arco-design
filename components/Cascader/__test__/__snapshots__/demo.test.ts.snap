@@ -41,7 +41,13 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Please select ...
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Please select ...
             </span>
@@ -182,7 +188,13 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Please select ...
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Please select ...
             </span>
@@ -240,7 +252,13 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Hover to expand
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Hover to expand
             </span>
@@ -304,7 +322,13 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Please select ...
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Please select ...
             </span>
@@ -362,7 +386,13 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Hover to expand
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Hover to expand
             </span>
@@ -428,7 +458,13 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            class="arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-cascader-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -632,7 +668,13 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            class="arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-cascader-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -1085,7 +1127,13 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            class="arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-cascader-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -1142,7 +1190,11 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            class="arco-cascader-view-value-mirror"
+          />
+          <span
+            class="arco-cascader-view-value"
+            style="display:none"
           />
         </span>
         <div
@@ -1774,7 +1826,13 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            class="arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-cascader-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -2106,7 +2164,13 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Please enter ...
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Please enter ...
             </span>
@@ -2618,7 +2682,13 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
           value=""
         />
         <span
-          class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          class="arco-cascader-view-value-mirror"
+        >
+          Please select ...
+        </span>
+        <span
+          class="arco-cascader-view-value"
+          style="display:none"
         >
           Please select ...
         </span>
@@ -2741,7 +2811,13 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-cascader-view-value arco-cascader-view-value-mirror"
+            class="arco-cascader-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-cascader-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -2873,7 +2949,13 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
           value=""
         />
         <span
-          class="arco-cascader-view-value arco-cascader-view-value-mirror"
+          class="arco-cascader-view-value-mirror"
+        >
+          Please select ...
+        </span>
+        <span
+          class="arco-cascader-view-value"
+          style="display:none"
         >
           Please select ...
         </span>

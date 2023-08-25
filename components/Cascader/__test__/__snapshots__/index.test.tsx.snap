@@ -24,7 +24,11 @@ exports[`ConfigProvider componentConfig.Cascader default 1`] = `
         value=""
       />
       <span
-        class="arco-cascader-view-value arco-cascader-view-value-mirror"
+        class="arco-cascader-view-value-mirror"
+      />
+      <span
+        class="arco-cascader-view-value"
+        style="display:none"
       />
     </span>
     <div
@@ -77,7 +81,11 @@ exports[`ConfigProvider componentConfig.Cascader set className globally 1`] = `
         value=""
       />
       <span
-        class="arco-cascader-view-value arco-cascader-view-value-mirror"
+        class="arco-cascader-view-value-mirror"
+      />
+      <span
+        class="arco-cascader-view-value"
+        style="display:none"
       />
     </span>
     <div
@@ -130,7 +138,11 @@ exports[`ConfigProvider componentConfig.Cascader set className globally and comp
         value=""
       />
       <span
-        class="arco-cascader-view-value arco-cascader-view-value-mirror"
+        class="arco-cascader-view-value-mirror"
+      />
+      <span
+        class="arco-cascader-view-value"
+        style="display:none"
       />
     </span>
     <div
@@ -184,7 +196,11 @@ exports[`ConfigProvider componentConfig.Cascader set data-* property 1`] = `
         value=""
       />
       <span
-        class="arco-cascader-view-value arco-cascader-view-value-mirror"
+        class="arco-cascader-view-value-mirror"
+      />
+      <span
+        class="arco-cascader-view-value"
+        style="display:none"
       />
     </span>
     <div
