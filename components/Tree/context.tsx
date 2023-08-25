@@ -6,7 +6,7 @@ import { NodeProps, TreeDataType, TreeProps, TreeState } from './interface';
 export const TreeContext = createContext<{
   icons?: NodeProps['icons'];
   loadMore?: (node: NodeProps) => void;
-  renderExtra?: (node: NodeProps) => void;
+  renderExtra?: TreeProps['renderExtra'];
   renderTitle?: TreeProps['renderTitle'];
   virtualListProps?: AvailableVirtualListProps;
   onSelect?: (_key: string, e) => void;
