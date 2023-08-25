@@ -89,7 +89,7 @@ function App() {
             placeholder={['Start Time', 'End Time']}
           />
         </FormItem>
-        <FormItem help="Please select date" validateStatus={status}>
+        <FormItem help="Please select date" validateStatus={status} hasFeedback>
           <Input.Group>
             <DatePicker style={{ width: '48%' }} placeholder="Select date" />
             <span
@@ -101,7 +101,7 @@ function App() {
             >
               -
             </span>
-            <TimePicker placeholder="Select time" style={{ width: '48%' }} hasFeedback />
+            <TimePicker placeholder="Select time" style={{ width: '48%' }}  />
           </Input.Group>
         </FormItem>
         <FormItem hasFeedback validateStatus={status} help="Choose at least one">
