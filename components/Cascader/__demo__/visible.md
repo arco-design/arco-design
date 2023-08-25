@@ -123,7 +123,7 @@ function App() {
         </Button>
       </p>
       <Cascader
-        style={{ width: 250, marginTop: 20 }}
+        style={{ width: 300, marginTop: 20 }}
         placeholder="Please select ..."
         popupVisible={visible}
         trigger={[]} // 具体触发时机可查看Trigger组件文档
@@ -131,7 +131,6 @@ function App() {
         triggerProps={{
           clickOutsideToClose: false,
         }}
-        style={{ width: 300 }}
         allowClear
         options={options}
         renderFooter={() => {
