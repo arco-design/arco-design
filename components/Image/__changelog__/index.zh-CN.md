@@ -1,3 +1,15 @@
+## 2.52.1
+
+2023-08-25
+
+### 💎 功能优化
+
+- 避免 `Image` 未传入 `src` 时浏览器控制台的 404 报错。([#2187](https://github.com/arco-design/arco-design/pull/2187))
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件 `loader = true` 时加载状态未展示的问题。([#2173](https://github.com/arco-design/arco-design/pull/2173) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.52.0
 
 2023-08-18

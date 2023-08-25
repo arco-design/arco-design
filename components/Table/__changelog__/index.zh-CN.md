@@ -1,3 +1,15 @@
+## 2.52.1
+
+2023-08-25
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件的 render 属性第二个参数可能为 `undefined` 的 bug (该问题在 `2.50.2` 移除了对外回调参数附带了的内部属性 __ORIGIN_DATA__ 引入)([#2188](https://github.com/arco-design/arco-design/pull/2188) [@Ryuurock](https://github.com/Ryuurock))
+
+### 💅 样式更新
+
+- 修复 `Table` 组件设置 scrollX 时空白状态可能会出现滚动条样式的问题。([#2171](https://github.com/arco-design/arco-design/pull/2171) [@whyour](https://github.com/whyour))
+
 ## 2.51.0
 
 2023-07-28

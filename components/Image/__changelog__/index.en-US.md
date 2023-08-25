@@ -1,3 +1,15 @@
+## 2.52.1
+
+2023-08-25
+
+### 💎 Enhancement
+
+- Avoid 404 error in the browser console when `src` is not passed to `Image`.([#2187](https://github.com/arco-design/arco-design/pull/2187))
+
+### 🐛 BugFix
+
+- Fix the problem that the loading status of `Image` is not displayed when `loader = true`.([#2173](https://github.com/arco-design/arco-design/pull/2173) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.52.0
 
 2023-08-18

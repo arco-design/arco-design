@@ -1,3 +1,15 @@
+## 2.52.1
+
+2023-08-25
+
+### 🐛 BugFix
+
+- Fix the bug that the second parameter of the render attribute of the `Table` component may be `undefined` (this problem was introduced in `2.50.2` by removing the internal attribute __ORIGIN_DATA__ attached to the external callback parameter)([#2188](https://github.com/arco-design/arco-design/pull/2188) [@Ryuurock](https://github.com/Ryuurock))
+
+### 💅 Style
+
+- Fix the problem that the scrollbar style may appear in the blank state when the `Table` component is setting scrollX.([#2171](https://github.com/arco-design/arco-design/pull/2171) [@whyour](https://github.com/whyour))
+
 ## 2.51.0
 
 2023-07-28
