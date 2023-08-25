@@ -893,7 +893,7 @@ exports[`renders TimePicker/demo/status.md correctly 1`] = `
           class="arco-picker-input arco-picker-input-active"
         >
           <input
-            placeholder="开始时间"
+            placeholder="error status"
             value=""
           />
         </div>
@@ -906,7 +906,7 @@ exports[`renders TimePicker/demo/status.md correctly 1`] = `
           class="arco-picker-input"
         >
           <input
-            placeholder="结束时间"
+            placeholder="error status"
             value=""
           />
         </div>
@@ -990,7 +990,7 @@ exports[`renders TimePicker/demo/status.md correctly 1`] = `
           class="arco-picker-input arco-picker-input-active"
         >
           <input
-            placeholder="开始时间"
+            placeholder="warning status"
             value=""
           />
         </div>
@@ -1003,7 +1003,7 @@ exports[`renders TimePicker/demo/status.md correctly 1`] = `
           class="arco-picker-input"
         >
           <input
-            placeholder="结束时间"
+            placeholder="warning status"
             value=""
           />
         </div>

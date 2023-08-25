@@ -1572,21 +1572,12 @@ exports[`renders Steps/demo/navigation.md correctly 1`] = `
 exports[`renders Steps/demo/onchange.md correctly 1`] = `
 <div>
   <div
-    class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-change-onclick"
+    class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-change-onclick arco-steps-mode-arrow"
     style="margin-bottom:20px"
   >
     <div
       class="arco-steps-item arco-steps-item-process arco-steps-item-active"
     >
-      <div
-        class="arco-steps-item-icon"
-      >
-        <div
-          class="arco-steps-icon"
-        >
-          1
-        </div>
-      </div>
       <div
         class="arco-steps-item-content"
       >
@@ -1606,15 +1597,6 @@ exports[`renders Steps/demo/onchange.md correctly 1`] = `
       class="arco-steps-item arco-steps-item-wait"
     >
       <div
-        class="arco-steps-item-icon"
-      >
-        <div
-          class="arco-steps-icon"
-        >
-          2
-        </div>
-      </div>
-      <div
         class="arco-steps-item-content"
       >
         <div
@@ -1632,15 +1614,6 @@ exports[`renders Steps/demo/onchange.md correctly 1`] = `
     <div
       class="arco-steps-item arco-steps-item-wait"
     >
-      <div
-        class="arco-steps-item-icon"
-      >
-        <div
-          class="arco-steps-icon"
-        >
-          3
-        </div>
-      </div>
       <div
         class="arco-steps-item-content"
       >

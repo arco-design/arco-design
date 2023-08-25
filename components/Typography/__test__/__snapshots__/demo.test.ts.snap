@@ -349,7 +349,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
                   >
                     <div
                       class="arco-space-item"
-                      style="margin-right:8px"
+                      style="margin-right:16px"
                     >
                       <button
                         class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"

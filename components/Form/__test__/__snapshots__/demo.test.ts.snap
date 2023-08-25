@@ -9150,7 +9150,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
       </div>
     </div>
     <div
-      class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-item-error arco-form-item-status-error arco-form-item-has-help arco-form-layout-horizontal"
+      class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-item-error arco-form-item-status-error arco-form-item-has-help arco-form-item-has-feedback arco-form-layout-horizontal"
     >
       <div
         class="arco-col arco-col-16 arco-form-item-wrapper"
@@ -9242,6 +9242,27 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     </span>
                   </div>
                 </div>
+              </div>
+              <div
+                class="arco-form-item-feedback"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close-circle-fill"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Zm4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    stroke="none"
+                  />
+                </svg>
               </div>
             </div>
           </div>

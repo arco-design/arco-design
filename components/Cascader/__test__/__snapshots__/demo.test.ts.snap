@@ -2854,7 +2854,7 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-size-default"
     role="combobox"
-    style="width:300px"
+    style="width:300px;margin-top:20px"
     tabindex="0"
   >
     <div
