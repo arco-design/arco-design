@@ -70,7 +70,7 @@ function App() {
         <TimelineItem label="2018-05-12" dotColor="#F5222D" labelPosition="same">
           The second milestone
         </TimelineItem>
-        <TimelineItem label="2020-09-30" position="bottom">
+        <TimelineItem label="2020-09-30">
           The third milestone
         </TimelineItem>
       </Timeline>

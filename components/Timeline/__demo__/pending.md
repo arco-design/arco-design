@@ -33,7 +33,7 @@ function App() {
           onChange={(v) => {
             setPendingProps({
               ...pendingProps,
-              direction: v ? 'horizontal' : '',
+              direction: v ? 'horizontal' : 'vertical',
             });
           }}
         >

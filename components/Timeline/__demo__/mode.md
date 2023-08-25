@@ -22,7 +22,7 @@ function Demo({ mode }) {
     <Timeline mode={mode} style={{ flex: 1 }}>
       <TimelineItem label="2017-03-10">The first milestone</TimelineItem>
       <TimelineItem label="2018-05-12">The second milestone</TimelineItem>
-      <TimelineItem label="2020-09-30" position="bottom">
+      <TimelineItem label="2020-09-30">
         The third milestone
       </TimelineItem>
     </Timeline>
