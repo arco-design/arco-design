@@ -228,6 +228,12 @@ export interface UploadProps {
    * @version 2.41.0
    */
   onDragLeave?: (e: React.DragEvent) => void;
+  /**
+   * @zh 判断文件是否是一个允许的文件。
+   * @en Determines if the file is an allowed file
+   * @version 2.52.1
+   */
+  isAcceptFile?: (file: File, accept?: string | string[]) => boolean;
 }
 
 /**

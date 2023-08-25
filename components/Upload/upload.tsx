@@ -211,6 +211,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         'onDrop',
         'onDragOver',
         'onDragLeave',
+        'isAcceptFile',
       ])}
       className={cs(
         prefixCls,

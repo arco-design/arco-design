@@ -183,7 +183,10 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
     };
 
     files.forEach((file, index) => {
-      if (isAcceptFile(file, this.props.accept)) {
+      if (
+        isAcceptFile(file, this.props.accept) ||
+        this.props.isAcceptFile?.(file, this.props.accept)
+      ) {
         // windows can upload file type not in accept bug
         if (isFunction(this.props.beforeUpload)) {
           // 只有在beforeUpload返回值 === false 时，取消上传操作
