@@ -58,7 +58,7 @@ const App = () => {
             <Input />
           </Form.Item>
           <Form.Item label="省略展示">
-            <Space size="middle">
+            <Space size="medium">
               <Button onClick={() => setRows(Math.max(1, rows - 1))}> row- </Button>
               <Button onClick={() => setRows(rows + 1)}> row+ </Button>
             </Space>
