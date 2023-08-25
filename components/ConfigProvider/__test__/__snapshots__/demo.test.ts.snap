@@ -1180,7 +1180,13 @@ Array [
               value=""
             />
             <span
-              class="arco-cascader-view-value arco-cascader-view-value-mirror"
+              class="arco-cascader-view-value-mirror"
+            >
+              Cascader
+            </span>
+            <span
+              class="arco-cascader-view-value"
+              style="display:none"
             >
               Cascader
             </span>
@@ -1239,7 +1245,13 @@ Array [
               value=""
             />
             <span
-              class="arco-select-view-value arco-select-view-value-mirror"
+              class="arco-select-view-value-mirror"
+            >
+              Select
+            </span>
+            <span
+              class="arco-select-view-value"
+              style="display:none"
             >
               Select
             </span>
@@ -1297,7 +1309,13 @@ Array [
               value=""
             />
             <span
-              class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+              class="arco-tree-select-view-value-mirror"
+            >
+              TreeSelect
+            </span>
+            <span
+              class="arco-tree-select-view-value"
+              style="display:none"
             >
               TreeSelect
             </span>

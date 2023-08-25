@@ -1694,7 +1694,13 @@ exports[`renders Input/demo/size.md correctly 1`] = `
                   value=""
                 />
                 <span
-                  class="arco-select-view-value arco-select-view-value-mirror"
+                  class="arco-select-view-value-mirror"
+                >
+                  Please select
+                </span>
+                <span
+                  class="arco-select-view-value"
+                  style="display:none"
                 >
                   Please select
                 </span>

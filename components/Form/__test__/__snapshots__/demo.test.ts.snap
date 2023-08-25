@@ -565,7 +565,13 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                      class="arco-cascader-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-cascader-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -730,7 +736,13 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-select-view-value arco-select-view-value-mirror"
+                      class="arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-select-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -960,7 +972,13 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+                      class="arco-tree-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-tree-select-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -2069,7 +2087,13 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                             value=""
                           />
                           <span
-                            class="arco-select-view-value arco-select-view-value-mirror"
+                            class="arco-select-view-value-mirror"
+                          >
+                            Please select ...
+                          </span>
+                          <span
+                            class="arco-select-view-value"
+                            style="display:none"
                           >
                             Please select ...
                           </span>
@@ -2449,7 +2473,13 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                      class="arco-cascader-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-cascader-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -2617,7 +2647,13 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-select-view-value arco-select-view-value-mirror"
+                      class="arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-select-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -3929,7 +3965,13 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                           value=""
                         />
                         <span
-                          class="arco-select-view-value arco-select-view-value-mirror"
+                          class="arco-select-view-value-mirror"
+                        >
+                          select gender
+                        </span>
+                        <span
+                          class="arco-select-view-value"
+                          style="display:none"
                         >
                           select gender
                         </span>
@@ -6014,7 +6056,13 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                         value=""
                       />
                       <span
-                        class="arco-select-view-value arco-select-view-value-mirror"
+                        class="arco-select-view-value-mirror"
+                      >
+                        please enter you gender
+                      </span>
+                      <span
+                        class="arco-select-view-value"
+                        style="display:none"
                       >
                         please enter you gender
                       </span>
@@ -6127,7 +6175,13 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-select-view-value arco-select-view-value-mirror"
+                      class="arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-select-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -7400,7 +7454,13 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                      class="arco-cascader-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-cascader-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -7530,7 +7590,13 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-select-view-value arco-select-view-value-mirror"
+                      class="arco-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-select-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -7696,7 +7762,13 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+                      class="arco-tree-select-view-value-mirror"
+                    >
+                      please select
+                    </span>
+                    <span
+                      class="arco-tree-select-view-value"
+                      style="display:none"
                     >
                       please select
                     </span>
@@ -9313,7 +9385,13 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-cascader-view-value arco-cascader-view-value-mirror"
+                      class="arco-cascader-view-value-mirror"
+                    >
+                      Cascader...
+                    </span>
+                    <span
+                      class="arco-cascader-view-value"
+                      style="display:none"
                     >
                       Cascader...
                     </span>
@@ -9620,7 +9698,13 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                       value=""
                     />
                     <span
-                      class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+                      class="arco-tree-select-view-value-mirror"
+                    >
+                      TreeSelect...
+                    </span>
+                    <span
+                      class="arco-tree-select-view-value"
+                      style="display:none"
                     >
                       TreeSelect...
                     </span>

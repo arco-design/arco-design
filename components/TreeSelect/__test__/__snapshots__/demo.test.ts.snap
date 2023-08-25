@@ -40,7 +40,11 @@ exports[`renders TreeSelect/demo/addon.md correctly 1`] = `
               value=""
             />
             <span
-              class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+              class="arco-tree-select-view-value-mirror"
+            />
+            <span
+              class="arco-tree-select-view-value"
+              style="display:none"
             />
           </span>
           <div
@@ -709,7 +713,13 @@ exports[`renders TreeSelect/demo/dropdownRender.md correctly 1`] = `
         value=""
       />
       <span
-        class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+        class="arco-tree-select-view-value-mirror"
+      >
+        Please select ...
+      </span>
+      <span
+        class="arco-tree-select-view-value"
+        style="display:none"
       >
         Please select ...
       </span>
@@ -1152,7 +1162,13 @@ exports[`renders TreeSelect/demo/popupVisible.md correctly 1`] = `
         value=""
       />
       <span
-        class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+        class="arco-tree-select-view-value-mirror"
+      >
+        hover to show options
+      </span>
+      <span
+        class="arco-tree-select-view-value"
+        style="display:none"
       >
         hover to show options
       </span>
@@ -1286,7 +1302,13 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+            class="arco-tree-select-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-tree-select-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -1343,7 +1365,13 @@ exports[`renders TreeSelect/demo/search.md correctly 1`] = `
             value=""
           />
           <span
-            class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+            class="arco-tree-select-view-value-mirror"
+          >
+            Please select ...
+          </span>
+          <span
+            class="arco-tree-select-view-value"
+            style="display:none"
           >
             Please select ...
           </span>
@@ -1540,7 +1568,13 @@ exports[`renders TreeSelect/demo/treeData.md correctly 1`] = `
         value=""
       />
       <span
-        class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+        class="arco-tree-select-view-value-mirror"
+      >
+        请选择...
+      </span>
+      <span
+        class="arco-tree-select-view-value"
+        style="display:none"
       >
         请选择...
       </span>
@@ -1596,7 +1630,11 @@ exports[`renders TreeSelect/demo/virtual.md correctly 1`] = `
           value=""
         />
         <span
-          class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
+          class="arco-tree-select-view-value-mirror"
+        />
+        <span
+          class="arco-tree-select-view-value"
+          style="display:none"
         />
       </span>
       <div

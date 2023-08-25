@@ -394,11 +394,6 @@ const CoreSelectView = React.forwardRef(
         inputProps.style.pointerEvents = 'none';
       }
 
-      // mirror should provide select-width if there is only placeholder in input
-      const valueMirrorText = fillNBSP(
-        needShowInput && !inputProps.value ? inputProps.placeholder : _inputValue
-      );
-
       return (
         <span className={`${prefixCls}-view-selector`}>
           <InputComponent
@@ -412,12 +407,19 @@ const CoreSelectView = React.forwardRef(
             {...inputProps}
           />
 
+          {/* mirror should provide select-width if there is only placeholder in input */}
+          {needShowInput ? (
+            <span className={`${prefixCls}-view-value-mirror`}>
+              {fillNBSP(inputProps.value ? _inputValue : inputProps.placeholder)}
+            </span>
+          ) : null}
+
+          {/* this node should NOT unmount, otherwise its click event won't bubble and dropdown-list won't show */}
           <span
-            className={cs(`${prefixCls}-view-value`, {
-              [`${prefixCls}-view-value-mirror`]: needShowInput,
-            })}
+            style={needShowInput ? { display: 'none' } : {}}
+            className={`${prefixCls}-view-value`}
           >
-            {valueMirrorText}
+            {fillNBSP(isEmptyValue ? inputProps.placeholder : _inputValue)}
           </span>
         </span>
       );
