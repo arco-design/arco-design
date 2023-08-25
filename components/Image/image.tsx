@@ -144,7 +144,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   });
 
   useEffect(() => {
-    if (isServerRendering || !refImg.current) return;
+    if (isServerRendering || !refImg.current || !src) return;
     const startLoading = !_lazyload || inView;
     // 不是懒加载或者已经在视口。
     if (startLoading) {
