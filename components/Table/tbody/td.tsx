@@ -161,7 +161,7 @@ function Td(props: TdType) {
         </ComponentBodyCell>
       ) : (
         <ComponentBodyCell
-          rowData={record}
+          rowData={getOriginData(record)}
           className={`${prefixCls}-cell-wrap-value`}
           column={column}
           onHandleSave={onHandleSave}
