@@ -75,7 +75,6 @@ export interface PaginationProps {
   /**
    * @zh 是否可以改变每页条数
    * @en Is it possible to change page size
-   * @defaultValue true
    */
   sizeCanChange?: boolean;
   /**

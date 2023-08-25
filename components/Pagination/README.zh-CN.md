@@ -20,7 +20,7 @@
 |showJumper|是否显示快速跳转到某页，在 `simple` 模式下默认为 true|boolean |`-`|-|
 |showMore|是否显示更多页码提示（当尚无法计算数据总数时可以使用）|boolean |`-`|-|
 |simple|是否应用精简分页模式|boolean |`-`|-|
-|sizeCanChange|是否可以改变每页条数|boolean |`true`|-|
+|sizeCanChange|是否可以改变每页条数|boolean |`-`|-|
 |bufferSize|`current` 页与 `...` 之间的页码个数|number |`2`|2.32.0|
 |current|当前页|number |`-`|-|
 |defaultCurrent|当前页默认值|number |`-`|-|

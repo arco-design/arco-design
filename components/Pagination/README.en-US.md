@@ -20,7 +20,7 @@ Use pagination to control the amount of information in a single page.
 |showJumper|Whether to display quick jump. Defaults to true in `simple` mode|boolean |`-`|-|
 |showMore|Whether to show more page number tips (can be used when the total number of data cannot be calculated yet)|boolean |`-`|-|
 |simple|Whether to use simplified pagination mode|boolean |`-`|-|
-|sizeCanChange|Is it possible to change page size|boolean |`true`|-|
+|sizeCanChange|Is it possible to change page size|boolean |`-`|-|
 |bufferSize|the number of pages between the `current` page and `...`|number |`2`|2.32.0|
 |current|Current page|number |`-`|-|
 |defaultCurrent|To set default current page|number |`-`|-|
