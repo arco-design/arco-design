@@ -83,15 +83,15 @@ function App() {
         expandedKeys={expandedKeys}
         onSelect={(keys, extra) => {
           console.log(keys, extra);
-          setSelectedKeys(keys, extra);
+          setSelectedKeys(keys);
         }}
         onCheck={(keys, extra) => {
           console.log(keys, extra);
-          setCheckedKeys(keys, extra);
+          setCheckedKeys(keys);
         }}
         onExpand={(keys, extra) => {
           console.log(keys, extra);
-          setExpandedKeys(keys, extra);
+          setExpandedKeys(keys);
         }}
         treeData={TreeData}
       ></Tree>
