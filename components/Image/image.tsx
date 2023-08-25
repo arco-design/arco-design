@@ -184,6 +184,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   );
 
   const renderLoader = () => {
+    if (loader === true) return defaultLoader;
     const loadElem: React.ReactNode = loader || defaultLoader;
     // 懒加载展示占位。
     if (_lazyload || loader) {
