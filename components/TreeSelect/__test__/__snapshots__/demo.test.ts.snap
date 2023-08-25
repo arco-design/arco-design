@@ -753,21 +753,24 @@ exports[`renders TreeSelect/demo/fieldnames.md correctly 1`] = `
   >
     <div
       class="arco-tree-select-view"
-      title=""
+      title="Branch 0-1-1"
     >
       <span
         class="arco-tree-select-view-selector"
       >
         <input
+          aria-hidden="true"
           autocomplete="off"
-          class="arco-tree-select-view-input"
+          class="arco-tree-select-view-input arco-tree-select-hidden"
           style="width:100%;pointer-events:none"
           tabindex="-1"
           value=""
         />
         <span
-          class="arco-tree-select-view-value arco-tree-select-view-value-mirror"
-        />
+          class="arco-tree-select-view-value"
+        >
+          Branch 0-1-1
+        </span>
       </span>
       <div
         aria-hidden="true"
