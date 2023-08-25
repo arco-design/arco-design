@@ -13,8 +13,12 @@
   color: @list-color-text;
   overflow-y: auto;
 
-  &-wrapper {
-    overflow: hidden;
+  // clear float caused by Pagination in list wrapper
+  &-wrapper::after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both;
   }
 
   .size(@size) {
