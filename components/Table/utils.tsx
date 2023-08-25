@@ -37,10 +37,7 @@ export function deepCloneData(data, childrenColumnName) {
         newData.push(d);
       } else {
         const _d = { ...d };
-        Object.defineProperty(_d, '__ORIGIN_DATA', {
-          enumerable: false,
-          value: d,
-        });
+        _d.__ORIGIN_DATA = d;
         const children = _d[childrenColumnName];
         if (isObject(_d) && children && isArray(children)) {
           _d[childrenColumnName] = travel(children);

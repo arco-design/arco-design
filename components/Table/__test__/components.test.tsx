@@ -164,6 +164,6 @@ describe('Table components', () => {
     const { rowData } = Cell.mock.calls[0][0];
 
     expect(Object.keys(rowData).includes('__ORIGIN_DATA')).toBe(false);
-    expect('__ORIGIN_DATA' in { ...rowData }).toBe(false);
+    expect('__ORIGIN_DATA' in rowData).toBe(false);
   });
 });
