@@ -47,7 +47,6 @@ function App() {
           }}
         />
         <TimePicker
-          showTime
           utcOffset={utcOffset}
           value={value}
           onChange={(v, vd) => setValue(vd && vd.toDate())}

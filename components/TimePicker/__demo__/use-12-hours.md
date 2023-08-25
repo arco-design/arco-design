@@ -49,7 +49,6 @@ const App = () => {
         use12Hours
         format="hh:mm:ss A"
         defaultValue={[dayjs('12:20:20 AM', 'hh:mm:ss A'), dayjs('08:30:30 PM', 'hh:mm:ss A')]}
-        placeholder="请选择时间"
         style={{ ...style, width: 300 }}
       />
     </div>
