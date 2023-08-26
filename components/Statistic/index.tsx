@@ -15,7 +15,7 @@ import Countdown from './countdown';
 import { isNumber, isFunction } from '../_util/is';
 import { ConfigContext } from '../ConfigProvider';
 import Skeleton from '../Skeleton';
-import { StatisticProps } from './interface';
+import { StatisticInstance, StatisticProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 type StatisticHandle = {
@@ -27,7 +27,7 @@ const defaultProps: StatisticProps = {
   countDuration: 2000,
 };
 
-function Statistic(baseProps: StatisticProps, ref) {
+function Statistic(baseProps: StatisticProps, ref: React.Ref<StatisticInstance>) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<StatisticProps>(baseProps, defaultProps, componentConfig?.Statistic);
   const {

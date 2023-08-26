@@ -139,3 +139,7 @@ export interface CountdownProps {
    */
   now?: number | string | Date | Dayjs;
 }
+
+export type StatisticInstance = {
+  countUp: (from?: number, to?: number) => void;
+};
