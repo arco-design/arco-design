@@ -37,6 +37,7 @@ import {
 } from './util';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
 import useId from '../_util/hooks/useId';
+import IconLeft from '../../icon/react-icon/IconLeft';
 import IconRight from '../../icon/react-icon/IconRight';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import IconCheck from '../../icon/react-icon/IconCheck';
@@ -74,7 +75,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const iconsMap = {
     loading: icons?.loading || <IconLoading />,
     checked: icons?.checked || <IconCheck />,
-    next: icons?.next || <IconRight />,
+    next: icons?.next || (rtl ? <IconLeft /> : <IconRight />),
   };
   const prefixCls = getPrefixCls('cascader');
   const isMultiple = props.mode === 'multiple';
