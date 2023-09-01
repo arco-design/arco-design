@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.52.2
+
+2023-09-01
+
+### 🐛 问题修复
+
+- 修复  `Form.Item` 组件的 `disabled` 属性覆盖了子节点的 `disabled` 属性的 bug。([#2204](https://github.com/arco-design/arco-design/pull/2204))
+- 修复 `Cascader` 组件 `rtl` 模式下面板选项箭头位置异常的问题。([#2201](https://github.com/arco-design/arco-design/pull/2201))
+- 修复 `Menu` 组件 `rtl` 模式下折叠按钮的位置问题。([#2201](https://github.com/arco-design/arco-design/pull/2201))
+- 修复 `Select` 单选模式配合 `renderFormat` 和 `showSearch` 使用时，下拉框需要点击两次才能弹出的问题。([#2190](https://github.com/arco-design/arco-design/pull/2190))
+
+### 💅 样式更新
+
+- 修复 `Transfer` 列表项溢出的问题。([#2198](https://github.com/arco-design/arco-design/pull/2198))
+
 ## 2.52.1
 
 2023-08-25

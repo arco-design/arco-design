@@ -1,3 +1,11 @@
+## 2.52.2
+
+2023-09-01
+
+### 🐛 BugFix
+
+- Fixed the issue of abnormal position of panel option arrow in `Cascader` component `rtl` mode.([#2201](https://github.com/arco-design/arco-design/pull/2201))
+
 ## 2.52.0
 
 2023-08-18

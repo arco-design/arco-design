@@ -1,3 +1,11 @@
+## 2.52.2
+
+2023-09-01
+
+### 🐛 BugFix
+
+- Fix the issue that when the `Select` is used with `renderFormat` and `showSearch`, the drop-down box needs to be clicked twice to pop up.([#2190](https://github.com/arco-design/arco-design/pull/2190))
+
 ## 2.52.0
 
 2023-08-18

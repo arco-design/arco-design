@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.52.2
+
+2023-09-01
+
+### 🐛 BugFix
+
+- Fix the bug that `Form.Item` component's `disabled` property overrides the child node's `disabled` property.([#2204](https://github.com/arco-design/arco-design/pull/2204))
+- Fixed the issue of abnormal position of panel option arrow in `Cascader` component `rtl` mode.([#2201](https://github.com/arco-design/arco-design/pull/2201))
+- Fix the location of the collapse button in the `rtl` mode of the `Menu` component([#2201](https://github.com/arco-design/arco-design/pull/2201))
+- Fix the issue that when the `Select` is used with `renderFormat` and `showSearch`, the drop-down box needs to be clicked twice to pop up.([#2190](https://github.com/arco-design/arco-design/pull/2190))
+
+### 💅 Style
+
+- Fix the issue  about `Transfer` list items overflow.([#2198](https://github.com/arco-design/arco-design/pull/2198))
+
 ## 2.52.1
 
 2023-08-25

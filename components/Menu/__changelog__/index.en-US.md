@@ -1,3 +1,11 @@
+## 2.52.2
+
+2023-09-01
+
+### 🐛 BugFix
+
+- Fix the location of the collapse button in the `rtl` mode of the `Menu` component([#2201](https://github.com/arco-design/arco-design/pull/2201))
+
 ## 2.51.2
 
 2023-08-11

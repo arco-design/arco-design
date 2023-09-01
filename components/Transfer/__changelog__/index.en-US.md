@@ -1,3 +1,11 @@
+## 2.52.2
+
+2023-09-01
+
+### 💅 Style
+
+- Fix the issue  about `Transfer` list items overflow.([#2198](https://github.com/arco-design/arco-design/pull/2198))
+
 ## 2.51.2
 
 2023-08-11

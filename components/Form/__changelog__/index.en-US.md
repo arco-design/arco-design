@@ -1,3 +1,11 @@
+## 2.52.2
+
+2023-09-01
+
+### 🐛 BugFix
+
+- Fix the bug that `Form.Item` component's `disabled` property overrides the child node's `disabled` property.([#2204](https://github.com/arco-design/arco-design/pull/2204))
+
 ## 2.46.3
 
 2023-04-07
