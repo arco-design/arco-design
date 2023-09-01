@@ -56,7 +56,7 @@ const mockInterfaces = async (page) => {
   const componentCount = componentNames.length;
   const page = await browser.newPage({
     viewport: {
-      width: 1440,
+      width: 1600,
       height: 1340,
     },
   });

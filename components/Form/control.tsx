@@ -402,7 +402,7 @@ export default class Control<
 
     childProps[trigger] = this.handleTrigger;
 
-    if (disabled !== undefined) {
+    if (disabled !== undefined && !('disabled' in child.props)) {
       childProps.disabled = disabled;
     }
     // 保持引用地址不变，fix https://github.com/arco-design/arco-design/issues/1800

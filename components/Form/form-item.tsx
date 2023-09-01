@@ -237,7 +237,9 @@ const Item = <
     if (isArray(children)) {
       const childrenDom = React.Children.map(children, (child, i) => {
         const key = (isObject(child) && (child as ReactElement).key) || i;
-        const childProps = !isUndefined(disabled) ? { key, disabled } : { key };
+        const existChildDisabled = isObject(child) && 'disabled' in (child as ReactElement).props;
+        const childProps =
+          !isUndefined(disabled) && !existChildDisabled ? { key, disabled } : { key };
         return isObject(child) ? cloneElement(child as ReactElement, childProps) : child;
       });
       return (
@@ -260,10 +262,12 @@ const Item = <
         if ((children as any).type?.isFormControl) {
           return children;
         }
-        const childProps = isUndefined(disabled) ? {} : { disabled };
+        const existChildDisabled = 'disabled' in (children as ReactElement).props;
+        const childProps = !existChildDisabled && !isUndefined(disabled) ? { disabled } : null;
+
         return (
           <Control {...(props as any)} field={undefined}>
-            {cloneElement(children as ReactElement, childProps)}
+            {!childProps ? children : cloneElement(children as ReactElement, childProps)}
           </Control>
         );
       }
