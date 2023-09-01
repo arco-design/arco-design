@@ -321,4 +321,25 @@ describe('form usewatch ', () => {
     // 引用地址不变，不出发 useEffect
     expect(changeMockFn).toBeCalledTimes(2);
   });
+
+  it('form item disabled', () => {
+    const wrapper = render(
+      <Form style={{ width: 600 }}>
+        <Form.Item disabled field="aaa">
+          <Input disabled={false} />
+        </Form.Item>
+        <Form.Item disabled>
+          <Input disabled={false} />
+        </Form.Item>
+
+        <Form.Item disabled>
+          <Input disabled={false} />
+          <Input disabled={false} />
+        </Form.Item>
+      </Form>
+    );
+
+    expect(wrapper.find('.arco-input-disabled')).toHaveLength(0);
+    expect(wrapper.find('.arco-input')).toHaveLength(4);
+  });
 });
