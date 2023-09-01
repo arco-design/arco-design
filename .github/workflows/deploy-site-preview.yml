@@ -93,37 +93,38 @@ jobs:
           message: |
             [📚 📚 Site Preview: https://pr-preview-${{ env.PR_NUMBER }}--arco-design.netlify.app](https://pr-preview-${{ env.PR_NUMBER }}--arco-design.netlify.app/react/docs/start)
 
-  # image-test:
-  #   runs-on: ubuntu-latest
-  #   needs: deploy-preview
-  #   steps:
-  #     - name: checkout
-  #       uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 2
+  image-test:
+    runs-on: ubuntu-latest
+    needs: deploy-preview
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
-  #     - name: install
-  #       run: yarn
+      - name: install
+        run: yarn
 
-  #     - name: setup node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16
-  #         cache: 'yarn'
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
 
-  #     - name: build:cjs
-  #       run: yarn icon && yarn build:cjs
+      - name: build:cjs
+        run: yarn icon && yarn build:cjs
 
-  #     - name: get PreviewID
-  #       run: |
-  #         if ${{ github.event_name == 'pull_request' }}; then
-  #           echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
-  #         else
-  #           echo "PreviewID=main" >> $GITHUB_ENV
-  #         fi
+      - name: get PreviewID
+        run: |
+          if ${{ github.event_name == 'pull_request' }}; then
+            echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
+          else
+            echo "PreviewID=main" >> $GITHUB_ENV
+          fi
 
-  #     - name: gen screenshots
-  #       run: yarn run test:screenshots --domain=https://pr-preview-${{ env.PreviewID }}--arco-design.netlify.app
+      - name: gen screenshots
+        run: yarn run test:screenshots --domain=https://pr-preview-${{ env.PreviewID }}--arco-design.netlify.app
 
-  #     - name: upload screenshots to argos-cli
-  #       run: npx @argos-ci/cli upload ./tests/__screenshots__
+      - name: upload screenshots to argos-cli
+        # run: npx @argos-ci/cli upload ./tests/__screenshots__
+        run: yarn add @argos-ci/cli -D  && yarn run argos upload ./tests/__screenshots__
