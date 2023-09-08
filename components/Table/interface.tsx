@@ -142,13 +142,13 @@ export interface TableProps<T = any> {
   /**
    * @zh 分页、排序、筛选时的回调
    * @en Callback when pagination, sorting, and filtering changes
-   * @version extra in `2.19.0`
+   * @version extra in `2.19.0`, currentAllData in 2.53.0
    */
   onChange?: (
     pagination: PaginationProps,
     sorter: SorterInfo | SorterInfo[],
     filters: Partial<Record<keyof T, string[]>>,
-    extra: { currentData: T[]; action: 'paginate' | 'sort' | 'filter' }
+    extra: { currentData: T[]; currentAllData: T[]; action: 'paginate' | 'sort' | 'filter' }
   ) => void;
   /**
    * @zh 分页器设置，参考[Pagination组件](/react/components/pagination)，设置 `false` 不展示分页
