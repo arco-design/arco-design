@@ -267,7 +267,7 @@ const TreeSelect: ForwardRefRenderFunction<
       }
       return { text: label || value || '', disabled };
     },
-    [props.renderFormat, props.labelInValue]
+    [props.renderFormat, props.labelInValue, key2nodeProps]
   );
 
   const tryUpdateSelectValue = (value: LabelValue[]) => {

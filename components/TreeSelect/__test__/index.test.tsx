@@ -801,4 +801,34 @@ describe('TreeSelect', () => {
       `-- ${treeData[1].title}`
     );
   });
+
+  it('renderFormat correctly async', async () => {
+    const wrapper = render(
+      <TreeSelect
+        id="async-data"
+        value={TrunkTreeData[0].key}
+        treeData={[]}
+        renderFormat={(option, value) => (
+          <span id="render-text">{`aaa-${option?.title || value}`}</span>
+        )}
+      />
+    );
+
+    expect(document.querySelector('#render-text')?.textContent).toBe(`aaa-${TrunkTreeData[0].key}`);
+
+    wrapper.rerender(
+      <TreeSelect
+        id="async-data"
+        value={TrunkTreeData[0].key}
+        treeData={TrunkTreeData}
+        renderFormat={(option, value) => (
+          <span id="render-text">{`aaa-${option?.title || value}`}</span>
+        )}
+      />
+    );
+
+    expect(document.querySelector('#render-text')?.textContent).toBe(
+      `aaa-${TrunkTreeData[0].title}`
+    );
+  });
 });
