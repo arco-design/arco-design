@@ -2,7 +2,7 @@ import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import uploadRequest from './request';
 import { UploaderProps, STATUS, UploadItem, UploadRequestReturn } from './interface';
-import { isNumber, isFunction, isFile } from '../_util/is';
+import { isNumber, isFunction, isFile, isObject } from '../_util/is';
 import TriggerNode from './trigger-node';
 import { isAcceptFile } from './util';
 
@@ -228,7 +228,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
           ref={(node) => (this.inputRef = node)}
           style={{ display: 'none' }}
           type="file"
-          accept={accept}
+          accept={isObject(accept) ? accept?.type : accept}
           multiple={multiple}
           {...(directory ? { webkitdirectory: 'true' } : {})}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {

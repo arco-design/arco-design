@@ -1,7 +1,11 @@
-import { isArray } from '../_util/is';
+import { isArray, isObject } from '../_util/is';
+import { UploadProps } from './interface';
 
-export const isAcceptFile = (file: File, accept?: string | string[]): boolean => {
-  if (accept && file) {
+export const isAcceptFile = (file: File, propsAccept?: UploadProps['accept']): boolean => {
+  const accept = isObject(propsAccept) ? propsAccept?.type : propsAccept;
+  // 显示设置 strict=false，才是非严格模式，不走过滤逻辑
+  const strict = !(isObject(propsAccept) && propsAccept.strict === false);
+  if (strict && accept && file) {
     const accepts = isArray(accept)
       ? accept
       : accept

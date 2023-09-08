@@ -231,4 +231,50 @@ describe('Upload api callbacks', function () {
     expect(wrapper.find('.arco-upload-trigger')).toHaveLength(1);
     expect(wrapper.find('.arco-upload-trigger .arco-btn-disabled')).toHaveLength(1);
   });
+
+  it('accept xxx/* strict=true', async function () {
+    const mockFn = jest.fn();
+    const wrapper = render(<Upload multiple accept=".txt" action="/sss" onChange={mockFn} />);
+    const triggerNode = wrapper.find('.arco-btn');
+    expect(triggerNode).toHaveLength(1);
+    const files = [
+      new File([new Blob(['aaa'], { type: 'text/plain' })], 'a.txt', { type: 'text/plain' }),
+      new File([new Blob(['bbb'], { type: 'text/csv' })], 'b.csv', { type: 'text/csv' }),
+    ];
+
+    await act(() => {
+      fireEvent.drop(triggerNode.item(0), {
+        dataTransfer: {
+          files,
+        },
+      });
+    });
+    await sleep(100);
+
+    expect(wrapper.find('.arco-upload-list-item')).toHaveLength(1);
+  });
+
+  it('accept xxx/* strict=false', async function () {
+    const mockFn = jest.fn();
+    const wrapper = render(
+      <Upload multiple accept={{ type: '.txt', strict: false }} action="/sss" onChange={mockFn} />
+    );
+    const triggerNode = wrapper.find('.arco-btn');
+    expect(triggerNode).toHaveLength(1);
+    const files = [
+      new File([new Blob(['aaa'], { type: 'text/plain' })], 'a.txt', { type: 'text/plain' }),
+      new File([new Blob(['bbb'], { type: 'text/csv' })], 'b.csv', { type: 'text/csv' }),
+    ];
+
+    await act(() => {
+      fireEvent.drop(triggerNode.item(0), {
+        dataTransfer: {
+          files,
+        },
+      });
+    });
+    await sleep(100);
+
+    expect(wrapper.find('.arco-upload-list-item')).toHaveLength(2);
+  });
 });

@@ -354,8 +354,8 @@ export interface FormItemProps<
    */
   formatter?: (value: FieldValue | undefined) => any;
   /**
-   * @zh 依赖的字段。
-   * @en the dependency fields
+   * @zh 设置依赖字段。当依赖的字段值改变时，触发自身的校验。如果是想动态渲染某个表单控件/表单区域，使用 shouldUpdate
+   * @en the dependency fields. When the value of the dependent field changes, trigger its own validation.If you want to dynamically render a form control/form area, use shouldUpdate
    * @version 2.40.0
    */
   dependencies?: string[];

@@ -21,16 +21,17 @@
 |imagePreview|启用内置的图片预览，仅在 listType='picture-card' 时生效。(`v2.41.0`)|boolean |`-`|-|
 |multiple|文件多选|boolean |`-`|-|
 |withCredentials|上传请求是否携带 cookie|boolean |`-`|-|
-|accept|接受上传的类型 [详细请参考](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)|string |`-`|-|
-|action|action|string |`-`|-|
+|action|上传接口地址|string |`-`|-|
 |listType|展示类型|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
 |tip|提示文字，listType 不同，展示会有区别|string \| React.ReactNode |`-`|-|
+|accept|接受上传的类型 [详细请参考](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)。（`strict` in `2.53.0`，默认为 true。设置为 false 时，accept 表现和原生一致。设置为 true 时，会严格匹配文件后缀名，过滤掉不符合 accept 规则的文件。)|string \| { type: string; strict?: boolean } |`-`|-|
 |beforeUpload|上传文件之前的回调。返回 false 或者 promise抛出异常的时候会取消上传。|(file: File, filesList: File[]) =&gt; boolean \| Promise&lt;any&gt; |`() => true`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |defaultFileList|默认已上传的文件列表|[UploadItem](upload#uploaditem)[] |`-`|-|
 |fileList|已上传的文件列表|[UploadItem](upload#uploaditem)[] |`-`|-|
 |headers|上传时使用的 headers|object |`-`|-|
 |limit|限制上传数量。默认超出后会隐藏上传节点。对象类型在 `2.28.0` 支持|number \| { maxCount: number; hideOnExceedLimit?: boolean } |`-`|-|
+|onRemove|点击删除文件时的回调。返回 `false` 或者 `Promise.reject` 的时候不会执行删除。|(file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) =&gt; void \| boolean \| Promise&lt;void \| boolean&gt; |`-`|-|
 |progressProps|进度条属性，接收所有进度条的 props。|Partial&lt;[ProgressProps](progress#progress)&gt; |`-`|-|
 |showUploadList|是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。|boolean \| [CustomIconType](#customicontype) |`true`|-|
 |style|节点样式|CSSProperties |`-`|-|
@@ -44,7 +45,6 @@
 |onExceedLimit|超出上传数量限制时触发|(files: File[], fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
 |onPreview|点击预览时候的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
 |onProgress|文件上传进度的回调|(file: [UploadItem](upload#uploaditem), e?: ProgressEvent) => void |`-`|-|
-|onRemove|点击删除文件时的回调。返回 `false` 或者 `Promise.reject` 的时候不会执行删除。|(file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => void |`-`|-|
 |onReupload|文件重新上传时触发的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|-|
 |renderUploadItem|自定义上传列表项|(originNode: ReactNode, file: [UploadItem](upload#uploaditem), fileList: [UploadItem](upload#uploaditem)[]) => ReactNode |`-`|-|
 |renderUploadList|自定义展示上传文件列表|(fileList: [UploadItem](upload#uploaditem)[], uploadListProps: [UploadListProps](upload#uploadlistprops)) => ReactNode |`-`|-|
@@ -56,9 +56,9 @@
 |参数名|描述|类型|默认值|
 |---|---|---|---|
 |disabled|禁用|boolean |`-`|
+|onRemove|点击删除文件时的回调。返回 false 或者 Promise.reject 的时候不会执行删除|(file: [UploadItem](upload#uploaditem)) =&gt; void \| boolean \| Promise&lt;void \| boolean&gt; |`-`|
 |onAbort|中止文件上传的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 |onPreview|点击预览时候的回调。|(file: [UploadItem](upload#uploaditem)) => void |`-`|
-|onRemove|点击删除文件时的回调。返回 false 或者 Promise.reject 的时候不会执行删除|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 |onReupload|重新上传的回调|(file: [UploadItem](upload#uploaditem)) => void |`-`|
 
 ### UploadItem
