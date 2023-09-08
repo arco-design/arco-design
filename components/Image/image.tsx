@@ -13,7 +13,6 @@ import useMergeValue from '../_util/hooks/useMergeValue';
 import omit from '../_util/omit';
 import { isObject, isNumber, isUndefined } from '../_util/is';
 import { PreviewGroupContext } from './previewGroupContext';
-import { isServerRendering } from '../_util/dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 import useInView from '../_util/hooks/useInView';
@@ -57,6 +56,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   } = props;
 
   const getKeyboardEvents = useKeyboardEvent();
+
   const {
     previewGroup,
     handleVisibleChange: handleGroupVisibleChange,
@@ -64,10 +64,15 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     registerPreviewProps,
     setCurrentIndex,
   } = useContext(PreviewGroupContext);
+
   const previewProps = useMemo(() => {
     return isObject(_propsPreviewProps) ? _propsPreviewProps : ({} as ImagePreviewProps);
   }, [_propsPreviewProps]);
-  const previewSrc = previewProps.src || src;
+
+  const intersectionInitOptions = useMemo(() => {
+    return isObject(lazyload) ? lazyload : {};
+  }, [lazyload]);
+
   const id = useMemo(() => {
     if (isNumber(index) || isNumber(_index)) {
       uuid = isNumber(index) ? index : _index;
@@ -76,10 +81,9 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     return uuid++;
   }, []);
 
+  const previewSrc = previewProps.src || src;
   const [showFooter] = useShowFooter({ title, description, actions });
-  const _lazyload = lazyload && !isServerRendering;
   const { isLoading, isError, isLoaded, setStatus, isLazyLoad } = useImageStatus('beforeLoad');
-  const lazyLoadProps = _lazyload ? { src: undefined } : {};
   const [previewVisible, setPreviewVisible] = useMergeValue(false, {
     defaultValue: previewProps.defaultVisible,
     value: previewProps.visible,
@@ -133,25 +137,25 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     setPreviewVisible(newVisible);
   }
 
-  const intersectionInitOptions = useMemo(() => {
-    return isObject(lazyload) ? lazyload : {};
-  }, [lazyload]);
-
   const { inView } = useInView({
     target: refImg.current,
-    hasInView: !_lazyload,
+    defaultInView: !lazyload,
     ...intersectionInitOptions,
   });
 
   useEffect(() => {
-    if (isServerRendering || !refImg.current || !src) return;
-    const startLoading = !_lazyload || inView;
-    // 不是懒加载或者已经在视口。
-    if (startLoading) {
-      refImg.current.src = src;
+    if (refImg.current) {
+      if (inView) {
+        // avoid set img.src to undefined when its doesn't have [src] attribute
+        if ((refImg.current.src || src) && refImg.current.src !== src) {
+          refImg.current.src = src;
+          setStatus('loading');
+        }
+      } else {
+        setStatus('lazyload');
+      }
     }
-    setStatus(startLoading ? 'loading' : 'lazyload');
-  }, [src, _lazyload, inView]);
+  }, [src, inView]);
 
   useEffect(() => {
     if (!previewGroup) return;
@@ -187,7 +191,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     if (loader === true) return defaultLoader;
     const loadElem: React.ReactNode = loader || defaultLoader;
     // 懒加载展示占位。
-    if (_lazyload || loader) {
+    if (lazyload || loader) {
       return loadElem;
     }
     return null;
@@ -203,7 +207,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
           onPressEnter: onImgClick,
         })}
         {...restProps}
-        {...lazyLoadProps}
+        {...(lazyload || src === undefined ? {} : { src })}
         title={title}
         width={width}
         height={height}
