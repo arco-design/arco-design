@@ -38,10 +38,10 @@ The basic form components have been expanded on the basis of native controls and
 |height|Custom input height|number \| string |`-`|-|
 |maxLength|The max content length；After setting `errorOnly` to `true`, if `maxLength` is exceeded, the `error` status will be displayed, and user input will not be restricted.|number \| { length: number; errorOnly?: boolean } |`-`|`errorOnly` in 2.23.0|
 |style|Additional style|CSSProperties |`-`|-|
+|normalize|Format the value entered by the user at the specified time, and when the previous and subsequent values are inconsistent, onChange will be triggered|(value: string) => string |`-`|2.50.0|
 |onChange|Callback when user input|(value: string, e) => void |`-`|-|
 |onClear|Callback when click clear button|() => void |`-`|-|
 |onPressEnter|Callback when press enter key|(e) => void |`-`|-|
-|normalize|Format the value entered by the user at the specified time, and when the previous and subsequent values are inconsistent, onChange will be triggered|(value: string) => string |`-`|2.50.0|
 
 ### Input.TextArea
 

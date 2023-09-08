@@ -38,10 +38,10 @@
 |height|自定义输入框高度|number \| string |`-`|-|
 |maxLength|输入框最大输入的长度；设置 `errorOnly`为 `true` 后，超过 `maxLength` 会展示 `error` 状态，并不限制用户输入。|number \| { length: number; errorOnly?: boolean } |`-`|`errorOnly` in 2.23.0|
 |style|节点样式|CSSProperties |`-`|-|
+|normalize|在指定时机对用户输入的值进行格式化处理。前后值不一致时，会触发 onChange|(value: string) => string |`-`|2.50.0|
 |onChange|输入时的回调|(value: string, e) => void |`-`|-|
 |onClear|点击清除按钮的回调|() => void |`-`|-|
 |onPressEnter|按下回车键的回调|(e) => void |`-`|-|
-|normalize|在指定时机对用户输入的值进行格式化处理。前后值不一致时，会触发 onChange|(value: string) => string |`-`|2.50.0|
 
 ### Input.TextArea
 
