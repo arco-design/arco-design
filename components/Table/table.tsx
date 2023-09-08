@@ -22,6 +22,7 @@ import {
   SortDirection,
   SorterFn,
 } from './interface';
+import { VirtualListHandle } from '../_class/VirtualList';
 import Thead from './thead/index';
 import Tbody from './tbody/index';
 import Tfoot from './tfoot/index';
@@ -53,6 +54,7 @@ import useSorter from './hooks/useSorter';
 
 export interface TableInstance {
   getRootDomElement: () => HTMLDivElement;
+  scrollIntoView: (dataIndex: React.Key) => void;
 }
 
 type FilterType<T> = Partial<Record<keyof T, string[]>>;
@@ -127,6 +129,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const refTableBody = useRef<HTMLElement | null>(null);
   const refTableFoot = useRef<HTMLDivElement | null>(null);
   const refTable = useRef<HTMLDivElement | null>(null);
+  const refVirtualList = useRef<VirtualListHandle | null>(null);
   // Not fixed header
   const refTableNF = useRef<HTMLTableElement | null>(null);
   const lastScrollLeft = useRef<number>(0);
@@ -508,6 +511,11 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   useImperativeHandle(ref, () => ({
     getRootDomElement,
+    scrollIntoView: (dataIndex) => {
+      if (refVirtualList.current) {
+        refVirtualList.current.scrollTo({ key: dataIndex });
+      }
+    },
   }));
 
   function getRootDomElement() {
@@ -812,9 +820,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}
       getRowKey={getRowKey}
-      saveVirtualWrapperRef={(ref: HTMLDivElement) => {
+      saveVirtualListRef={(ref) => {
         if (virtualized) {
-          refTableBody.current = ref;
+          refVirtualList.current = ref;
+          refTableBody.current = ref?.dom;
         }
       }}
     />
