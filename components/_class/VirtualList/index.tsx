@@ -191,7 +191,7 @@ const VirtualList: React.ForwardRefExoticComponent<
   const isVirtual =
     threshold !== null && itemCount >= threshold && itemTotalHeight > viewportHeight;
 
-  const refList = useRef(null);
+  const refList = useRef<HTMLElement>(null);
   const refRafId = useRef(null);
   const refLockScroll = useRef(false);
   const refIsVirtual = useRef(isVirtual);
@@ -407,6 +407,8 @@ const VirtualList: React.ForwardRefExoticComponent<
 
   // Handle additions and deletions of list items or switching the virtual state
   useEffect(() => {
+    if (!refList.current) return;
+
     let changedItemIndex: number = null;
     const switchTo = refIsVirtual.current !== isVirtual ? (isVirtual ? 'virtual' : 'raw') : '';
 
@@ -452,7 +454,7 @@ const VirtualList: React.ForwardRefExoticComponent<
   }, [data, isVirtual]);
 
   useIsomorphicLayoutEffect(() => {
-    if (state.status === 'MEASURE_START') {
+    if (state.status === 'MEASURE_START' && refList.current) {
       const { scrollTop, scrollHeight, clientHeight } = refList.current;
       const scrollPtg = getScrollPercentage({
         scrollTop,
@@ -488,6 +490,8 @@ const VirtualList: React.ForwardRefExoticComponent<
       scrollTo: (arg) => {
         refRafId.current && caf(refRafId.current);
         refRafId.current = raf(() => {
+          if (!refList.current) return;
+
           if (typeof arg === 'number') {
             refList.current.scrollTop = arg;
             return;
