@@ -46,6 +46,7 @@
 |breakPoint|触发 toolbar 切换为 simple 模式的宽度|number |`316`|-|
 |src|图片获取地址, 在 Image 中默认是 Image 的 src|string  **(必填)**|`-`|-|
 |imgAttributes|图片属性，透传至预览弹窗中的 `img` 标签上|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|2.39.0|
+|extra|自定义图片预览区域的额外节点|ReactNode |`-`|2.53.0|
 |actions|额外操作，[ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|-|
 |actionsLayout|控制条的布局|string[] |`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |className|节点类名|string \| string[] |`-`|-|
@@ -70,6 +71,7 @@
 |current|当前展示的图片的下标 (受控属性)|number |`-`|-|
 |defaultCurrent|第一张展示的图片的下标|number |`-`|-|
 |imgAttributes|图片属性，透传至预览弹窗中的 `img` 标签上|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|2.39.0|
+|extra|自定义图片预览区域的额外节点|ReactNode |`-`|2.53.0|
 |actions|额外操作，[ImagePreviewActionProps](#imagepreviewactionprops)|[ImagePreviewActionProps](image#imagepreviewactionprops)[] |`-`|-|
 |actionsLayout|控制条的布局|string[] |`['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']`|-|
 |className|节点类名|string \| string[] |`-`|-|

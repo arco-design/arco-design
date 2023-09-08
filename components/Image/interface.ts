@@ -105,6 +105,12 @@ export interface ImagePreviewProps {
    */
   imgAttributes?: Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'>;
   /**
+   * @zh 自定义图片预览区域的额外节点
+   * @en Additional nodes add to the image preview area
+   * @version 2.53.0
+   */
+  extra?: ReactNode;
+  /**
    * @zh 是否可见，受控属性
    * @en Whether is visible
    */

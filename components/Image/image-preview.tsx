@@ -82,6 +82,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     scales,
     escToExit,
     imgAttributes = {},
+    extra: extraNode = null,
   } = mergedProps;
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
   const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
@@ -527,6 +528,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                     onNext={onNext}
                   />
                 )}
+                {extraNode}
               </div>
             </ResizeObserver>
           )}
