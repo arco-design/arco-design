@@ -469,17 +469,31 @@ describe('Select', () => {
   });
 
   it('defaultActiveFirstOption works correctly', async () => {
-    wrapper = render(
+    const wrapper = render(
       <Select popupVisible mode="multiple" defaultActiveFirstOption={false}>
         <Option key="1" value="1">
           1
         </Option>
       </Select>
     );
+    const wrapper2 = render(
+      <Select
+        popupVisible
+        allowCreate
+        mode="multiple"
+        defaultValue={['1']}
+        inputValue="hello"
+        options={['1', '2', '3', '4']}
+      />
+    );
 
     await sleep(100);
 
-    const eleOption = wrapper.querySelector('.arco-select-option');
-    expect(eleOption.className.indexOf('arco-select-option-hover')).toBe(-1);
+    expect(
+      (wrapper.querySelector('.arco-select-option') as any).className?.indexOf(
+        'arco-select-option-hover'
+      )
+    ).toBe(-1);
+    expect(wrapper2.querySelector('.arco-select-option-hover')).toHaveTextContent('hello');
   });
 });
