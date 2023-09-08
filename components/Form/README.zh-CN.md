@@ -55,7 +55,7 @@
 |help|自定义校验文案|ReactNode |`-`|-|
 |label|标签的文本|ReactNode |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|dependencies|依赖的字段。|string[] |`-`|2.40.0|
+|dependencies|设置依赖字段。当依赖的字段值改变时，触发自身的校验。如果是想动态渲染某个表单控件/表单区域，使用 shouldUpdate|string[] |`-`|2.40.0|
 |field|受控组件的唯一标示|FieldKey |`-`|-|
 |initialValue|设置控件初始值.(初始值，请不要使用受控组件的defaultValue了)|FieldValue |`-`|-|
 |labelCol|`<label>`标签布局，同[<Grid.Col>](/react/components/grid)组件接收的参数相同，可以配置`span`和`offset`值，会覆盖全局的`labelCol`设置|[ColProps](grid#col) |`-`|-|

@@ -111,7 +111,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
   const removeFile = (file: UploadItem) => {
     if (file) {
       const { onRemove } = props;
-      Promise.resolve(isFunction(onRemove) ? onRemove(file) : onRemove)
+      Promise.resolve(isFunction(onRemove) ? onRemove(file, mergeFileList) : onRemove)
         .then((val) => {
           if (val !== false) {
             uploaderRef.current && uploaderRef.current.abort(file);

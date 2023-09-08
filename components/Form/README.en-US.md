@@ -55,7 +55,7 @@ A form with data collection, verification and submission functions, including ch
 |help|Custom help text|ReactNode |`-`|-|
 |label|Label text|ReactNode |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|dependencies|the dependency fields|string[] |`-`|2.40.0|
+|dependencies|the dependency fields. When the value of the dependent field changes, trigger its own validation.If you want to dynamically render a form control/form area, use shouldUpdate|string[] |`-`|2.40.0|
 |field|Unique identification of controlled components|FieldKey |`-`|-|
 |initialValue|Default value|FieldValue |`-`|-|
 |labelCol|The layout of `<label>`, the same as the props received by the `<Grid.Col>`.The values of `span` and `offset` can be configured, which will override the global `labelCol` setting|[ColProps](grid#col) |`-`|-|
