@@ -1,3 +1,11 @@
+## 2.53.0
+
+2023-09-08
+
+### 🐛 BugFix
+
+- Fix the bug that after the `Select` search text is changed, pressing Enter will uncheck the previously selected option.([#2217](https://github.com/arco-design/arco-design/pull/2217))
+
 ## 2.52.2
 
 2023-09-01

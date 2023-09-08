@@ -1,3 +1,11 @@
+## 2.53.0
+
+2023-09-08
+
+### 🐛 BugFix
+
+- Fixed the problem of console error reporting in boundary scenarios of internal component `VirtualList`([#2216](https://github.com/arco-design/arco-design/pull/2216))
+
 ## 2.48.2
 
 2023-05-26

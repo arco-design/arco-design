@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.53.0
+
+2023-09-08
+
+### 🆕 功能升级
+
+- `Table` 组件支持在虚拟列表的场景下通过 `ref.scrollIntoView` 滚动到指定区域。([#2226](https://github.com/arco-design/arco-design/pull/2226))
+- `Image.Preview` 组件新增 `extra` 属性，用于指定在预览区域的额外节点。([#2224](https://github.com/arco-design/arco-design/pull/2224))
+- `Table` 组件 `onChange` 回调增加参数 `extra.currentAllData`。([#2220](https://github.com/arco-design/arco-design/pull/2220))
+- `Upload` 支持通过 `accept.strict` 设置 `accept` 属性遵循浏览器原生表现，不对文件后缀名进行严格匹配过滤([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+- `Upload`  组件 `onRemove` 方法支持回调参数传入当前文件列表([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+
+### 🐛 问题修复
+
+- 修复 `Image` 首次渲染会展示图片加载错误图标的 bug。([#2223](https://github.com/arco-design/arco-design/pull/2223))
+- 修复 `Drawer` 组件在点击文本内容后，escToExit 不生效的 bug。([#2222](https://github.com/arco-design/arco-design/pull/2222) )
+- 修复 `TreeSelect` 组件的 `TreeData` 改变，未触发 `renderFormat` 重渲染的 bug。([#2219](https://github.com/arco-design/arco-design/pull/2219) )
+- 修复 `Select` 搜索文本改变后，回车会将之前选中的选项取消选中的 bug。([#2217](https://github.com/arco-design/arco-design/pull/2217))
+- 修复内部组件 `VirtualList `  边界场景下控制台报错问题([#2216](https://github.com/arco-design/arco-design/pull/2216))
+- `Upload`  组件 `onRemove` 方法返回值的 TS 类型修正，`void` 调整为 `void | boolean | Promise<void|boolean>`([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+
+
 ## 2.52.2
 
 2023-09-01

@@ -1,3 +1,11 @@
+## 2.53.0
+
+2023-09-08
+
+### 🐛 问题修复
+
+- 修复 `TreeSelect` 组件的 `TreeData` 改变，未触发 `renderFormat` 重渲染的 bug。([#2219](https://github.com/arco-design/arco-design/pull/2219) )
+
 ## 2.46.0
 
 2023-03-17

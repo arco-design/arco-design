@@ -1,3 +1,13 @@
+## 2.53.0
+
+2023-09-08
+
+### 🆕 功能升级
+
+- `Upload` 支持通过 `accept.strict` 设置 `accept` 属性遵循浏览器原生表现，不对文件后缀名进行严格匹配过滤([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+- `Upload`  组件 `onRemove` 方法支持回调参数传入当前文件列表([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+- `Upload`  组件 `onRemove` 方法返回值的 TS 类型修正，`void` 调整为 `void \([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+
 ## 2.45.0
 
 2023-02-17

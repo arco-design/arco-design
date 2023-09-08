@@ -1,3 +1,12 @@
+## 2.53.0
+
+2023-09-08
+
+### 🆕 Feature
+
+- The `Table` component supports scrolling to the specified area through `ref.scrollIntoView` in the virtual list scenario.([#2226](https://github.com/arco-design/arco-design/pull/2226))
+- `Table` component `onChange` callback adds parameter `extra.currentAllData`.([#2220](https://github.com/arco-design/arco-design/pull/2220))
+
 ## 2.52.1
 
 2023-08-25

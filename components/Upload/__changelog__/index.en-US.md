@@ -1,3 +1,13 @@
+## 2.53.0
+
+2023-09-08
+
+### 🆕 Feature
+
+- `Upload` supports setting the `accept` attribute through `accept.strict` to follow the browser's native behavior and does not strictly match and filter file extensions.([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+- The `onRemove` method of the `Upload` component supports passing the callback parameter into the current file list([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+- boolean \([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+
 ## 2.45.0
 
 2023-02-17

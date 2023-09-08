@@ -1,3 +1,12 @@
+## 2.53.0
+
+2023-09-08
+
+### 🆕 功能升级
+
+- `Table` 组件支持在虚拟列表的场景下通过 `ref.scrollIntoView` 滚动到指定区域。([#2226](https://github.com/arco-design/arco-design/pull/2226))
+- `Table` 组件 `onChange` 回调增加参数 `extra.currentAllData`。([#2220](https://github.com/arco-design/arco-design/pull/2220))
+
 ## 2.52.1
 
 2023-08-25

@@ -1,3 +1,11 @@
+## 2.53.0
+
+2023-09-08
+
+### 🐛 BugFix
+
+- Fixed the bug that the `renderFormat` re-rendering was not triggered when the `TreeData` of the `TreeSelect` component was changed.([#2219](https://github.com/arco-design/arco-design/pull/2219) )
+
 ## 2.46.0
 
 2023-03-17

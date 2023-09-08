@@ -1,3 +1,11 @@
+## 2.53.0
+
+2023-09-08
+
+### 🐛 BugFix
+
+- Fix the bug that escToExit does not take effect after clicking on the text content of the `Drawer` component.([#2222](https://github.com/arco-design/arco-design/pull/2222) )
+
 ## 2.49.0
 
 2023-06-02

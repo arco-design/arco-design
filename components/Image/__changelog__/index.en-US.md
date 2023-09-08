@@ -1,3 +1,15 @@
+## 2.53.0
+
+2023-09-08
+
+### 🆕 Feature
+
+- `Image.Preview` add a new `extra` property, which is used to specify extra nodes in the preview area.([#2224](https://github.com/arco-design/arco-design/pull/2224))
+
+### 🐛 BugFix
+
+- Fixed the bug that the first rendering of `Image` would display the load-failed icon.([#2223](https://github.com/arco-design/arco-design/pull/2223))
+
 ## 2.52.1
 
 2023-08-25

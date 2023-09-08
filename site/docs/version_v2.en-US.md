@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.53.0
+
+2023-09-08
+
+### 🆕 Feature
+
+- The `Table` component supports scrolling to the specified area through `ref.scrollIntoView` in the virtual list scenario.([#2226](https://github.com/arco-design/arco-design/pull/2226))
+- `Image.Preview` add a new `extra` property, which is used to specify extra nodes in the preview area.([#2224](https://github.com/arco-design/arco-design/pull/2224))
+- `Table` component `onChange` callback adds parameter `extra.currentAllData`.([#2220](https://github.com/arco-design/arco-design/pull/2220))
+- `Upload` supports setting the `accept` attribute through `accept.strict` to follow the browser's native behavior and does not strictly match and filter file extensions.([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+- The `onRemove` method of the `Upload` component supports passing the callback parameter into the current file list([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+
+
+### 🐛 BugFix
+
+- Fixed the bug that the first rendering of `Image` would display the load-failed icon.([#2223](https://github.com/arco-design/arco-design/pull/2223))
+- Fix the bug that escToExit does not take effect after clicking on the text content of the `Drawer` component.([#2222](https://github.com/arco-design/arco-design/pull/2222) )
+- Fixed the bug that the `renderFormat` re-rendering was not triggered when the `TreeData` of the `TreeSelect` component was changed.([#2219](https://github.com/arco-design/arco-design/pull/2219) )
+- Fix the bug that after the `Select` search text is changed, pressing Enter will uncheck the previously selected option.([#2217](https://github.com/arco-design/arco-design/pull/2217))
+- Fixed the problem of console error reporting in boundary scenarios of internal component `VirtualList`([#2216](https://github.com/arco-design/arco-design/pull/2216))
+- The TS type correction of the return value of onRemove method of Upload component, void is adjusted to `void | boolean | Promise<void | boolean>`([#2218](https://github.com/arco-design/arco-design/pull/2218) )
+
 ## 2.52.2
 
 2023-09-01
