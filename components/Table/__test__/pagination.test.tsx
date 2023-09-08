@@ -31,6 +31,13 @@ describe('Table test', () => {
     expect(getFirstName()).toBe('Name3');
     expect(onChange.mock.calls[0][3].action).toBe('paginate');
     expect(onChange.mock.calls[0][3].currentData.map((a) => a.name)).toEqual(['Name3', 'Name4']);
+    expect(onChange.mock.calls[0][3].currentAllData.map((a) => a.name)).toEqual([
+      'Name1',
+      'Name2',
+      'Name3',
+      'Name4',
+      'Name5',
+    ]);
 
     component.rerender(
       <Table columns={columnsFilterCustom} data={data} onChange={onChange} pagination={false} />

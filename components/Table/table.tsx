@@ -242,6 +242,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     onChange &&
       onChange(getPaginationProps(newProcessedData), sorter, innerFilters, {
         currentData: getOriginData(currentData),
+        currentAllData: getOriginData(newProcessedData),
         action: 'sort',
       });
   }
@@ -293,6 +294,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
           newFilters,
           {
             currentData: getOriginData(currentData),
+            currentAllData: getOriginData(newProcessedData),
             action: 'filter',
           }
         );
@@ -316,6 +318,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         newFilters,
         {
           currentData: getOriginData(currentData),
+          currentAllData: getOriginData(newProcessedData),
           action: 'filter',
         }
       );
@@ -635,7 +638,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         activeSorters.length === 1 ? activeSorters[0] : activeSorters,
         innerFilters,
         {
-          currentData: getPageData(processedData, newPaginationProps),
+          currentData: getOriginData(getPageData(processedData, newPaginationProps)),
+          currentAllData: getOriginData(processedData),
           action: 'paginate',
         }
       );
