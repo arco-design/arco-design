@@ -3,7 +3,7 @@ import { PaginationProps } from '../Pagination/pagination';
 import { SpinProps } from '../Spin';
 import { TriggerProps } from '../Trigger';
 import { TooltipProps } from '../Tooltip';
-import { AvailableVirtualListProps } from '../_class/VirtualList';
+import { AvailableVirtualListProps, VirtualListHandle } from '../_class/VirtualList';
 
 export type RowCallbackProps = {
   onClick?: (event) => void;
@@ -656,7 +656,7 @@ export interface TbodyProps<T = any> {
   stickyClassNames?: string[];
   getRowKey?: GetRowKeyType<T>;
   placeholder?: ReactNode;
-  saveVirtualWrapperRef?: (ref: HTMLDivElement) => void;
+  saveVirtualListRef?: (ref: VirtualListHandle) => void;
 }
 
 export interface TfootProps<T = any> {

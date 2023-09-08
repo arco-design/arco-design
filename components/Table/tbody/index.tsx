@@ -26,7 +26,7 @@ function TBody<T>(props: TbodyProps<T>) {
     virtualized,
     virtualListProps,
     getRowKey,
-    saveVirtualWrapperRef,
+    saveVirtualListRef,
   } = props;
 
   const er = expandedRowRender
@@ -134,7 +134,8 @@ function TBody<T>(props: TbodyProps<T>) {
         // position sticky works
         outerStyle={{ ...scrollStyleX, minWidth: '100%', overflow: 'visible' }}
         className={`${prefixCls}-body`}
-        ref={(ref) => saveVirtualWrapperRef(ref?.dom as HTMLDivElement)}
+        ref={(ref) => saveVirtualListRef(ref)}
+        itemKey={getRowKey}
         {...virtualListProps}
       >
         {(child, index) => (

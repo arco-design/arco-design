@@ -1,6 +1,6 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
-import React, { useState, useEffect, useMemo } from 'react';
-import { Table, Button, Space, Switch, TableColumnProps, Input } from '@self';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { Table, Button, Space, Switch, TableColumnProps, Input, TableInstance } from '@self';
 
 const columns = [
   {
@@ -996,6 +996,69 @@ export const SortDemoTable = () => {
     </div>
   );
 };
+
+function DemoScrollIntoView() {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      width: 140,
+      fixed: 'left' as const,
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+      width: 100,
+      fixed: 'left' as const,
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      width: 200,
+      fixed: 'right' as const,
+    },
+  ];
+
+  const originData = Array(100000)
+    .fill('')
+    .map((_, index) => ({
+      key: `${index}`,
+      name: `Kevin ${index}`,
+      salary: 22000,
+      address: `${index} Park Road, London`,
+      email: `kevin.sandra_${index}@example.com`,
+    }));
+
+  const table = useRef<TableInstance>(null);
+  const [data, setData] = useState<any>([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setData(originData);
+    }, 2000);
+  }, []);
+
+  return (
+    <div>
+      <Button onClick={() => table.current?.scrollIntoView('200')}>滚动到200</Button>
+      <Table
+        ref={table}
+        virtualized
+        scroll={{ x: 1600, y: 500 }}
+        border
+        columns={columns}
+        data={data}
+        pagination={false}
+        rowSelection={{}}
+      />
+    </div>
+  );
+}
+
+export const ScrollIntoView = () => <DemoScrollIntoView />;
 
 export default {
   title: 'Table',

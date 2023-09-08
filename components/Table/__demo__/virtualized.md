@@ -21,14 +21,15 @@ At present, the virtual scrolling table is more limited. After the virtual scrol
 
 **Note:** After enabling virtual scrolling, do not set the width for each column. Make sure that one column is adaptive, otherwise there may be misalignment between the header and the body.
 
-```js
-import { Table } from '@arco-design/web-react';
+```tsx
+import React, { useRef } from 'react';
+import { Table, Button, TableInstance } from '@arco-design/web-react';
 const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
     width: 140,
-    fixed: 'left',
+    fixed: 'left' as const,
   },
   {
     title: 'Salary',
@@ -55,19 +56,30 @@ const data = Array(100000)
   }));
 
 const App = () => {
+  const table = useRef<TableInstance>(null);
   return (
-    <Table
-      virtualized
-      scroll={{
-        y: 500,
-        x: 1000,
-      }}
-      border
-      columns={columns}
-      data={data}
-      pagination={false}
-      rowSelection={{}}
-    />
+    <div>
+      <Button
+        type="primary"
+        onClick={() => table.current.scrollIntoView('500')}
+        style={{ marginBottom: 10 }}
+      >
+        滚动到第 500 条
+      </Button>
+      <Table
+        ref={table}
+        virtualized
+        scroll={{
+          y: 500,
+          x: 1000,
+        }}
+        border
+        columns={columns}
+        data={data}
+        pagination={false}
+        rowSelection={{}}
+      />
+    </div>
   );
 };
 

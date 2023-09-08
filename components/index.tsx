@@ -159,6 +159,7 @@ export type { SwitchProps } from './Switch/interface';
 export { default as Switch } from './Switch';
 
 export type { TableProps, RowSelectionProps as TableRowSelectionProps, ColumnProps as TableColumnProps } from './Table/interface';
+export type { TableInstance } from './Table/table';
 export { default as Table } from './Table';
 
 export type { TabsProps } from './Tabs/interface';
