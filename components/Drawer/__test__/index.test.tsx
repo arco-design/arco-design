@@ -4,6 +4,7 @@ import mountTest from '../../../tests/mountTest';
 import Drawer, { DrawerProps } from '..';
 import Button from '../../Button';
 import { render, fireEvent } from '../../../tests/util';
+import { Esc } from '../../_util/keycode';
 
 mountTest(Drawer);
 
@@ -58,7 +59,7 @@ class DemoTest extends React.Component<DrawerProps, DemoTestState> {
           afterClose={this.afterClose}
           {...this.props}
         >
-          内容
+          <p id="test-content">内容</p>
         </Drawer>
       </>
     );
@@ -184,6 +185,34 @@ describe('Drawer', () => {
 
     act(() => {
       fireEvent.click(wrapper.find('.arco-drawer-close-icon').item(0));
+
+      jest.runAllTimers();
+    });
+
+    expect(
+      wrapper.find('.arco-drawer-wrapper')[0].classList.contains('arco-drawer-wrapper-hide')
+    ).toBe(true);
+
+    wrapper.unmount();
+  });
+
+  it('esc', () => {
+    const wrapper = render(<DemoTest />);
+    expect(wrapper.find('.arco-drawer')).toHaveLength(0);
+    // drawer mask correctly
+    expect(wrapper.find('.arco-drawer-mask').length).toBe(0);
+
+    act(() => {
+      openDrawer(wrapper);
+      jest.runAllTimers();
+    });
+
+    expect(wrapper.find('.arco-drawer')).toHaveLength(1);
+
+    act(() => {
+      fireEvent.keyDown(document.querySelector('#test-content') as HTMLElement, {
+        keyCode: Esc.code,
+      });
 
       jest.runAllTimers();
     });
