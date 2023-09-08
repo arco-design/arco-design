@@ -33,11 +33,8 @@ const mockRoute = async (page) => {
 
 const mockInterfaces = async (page) => {
   await page.addInitScript(() => {
-    // 隐藏下悬浮按钮，避免截图干扰
-    document.querySelector('#arco-page + div').forEach((element) => {
-      element.style.display = 'none';
-    });
     window.setInterval = () => {};
+
     if (location.pathname.split('/').pop() === 'statistic') {
       window.requestAnimationFrame = () => {}; // statistic using it
     }
@@ -72,6 +69,10 @@ const mockInterfaces = async (page) => {
       .replace('-', '');
 
     await page.goto(`${baseURL}/components/${name}`);
+    await page.evaluate(() => {
+      // 隐藏下悬浮按钮，避免截图干扰
+      document.querySelector('.arco-page + div').style.display = 'none';
+    });
 
     const demos = page.locator('.codebox-wrapper');
     const totalElements = await demos.count();
