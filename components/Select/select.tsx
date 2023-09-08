@@ -182,13 +182,18 @@ function Select(baseProps: SelectProps, ref) {
   const valueActiveDefault = useMemo<string | number | undefined>(() => {
     if (defaultActiveFirstOption) {
       const firstValue = isArray(value) ? value[0] : value;
-      return !isNoOptionSelected && optionValueList.indexOf(firstValue) > -1
+      // only valid option will render in option list
+      // if it's not rendered (e.g. filtered by user-search), ignore it
+      const isFirstValueOptionSelectable =
+        !isNoOptionSelected && optionInfoMap.get(firstValue)?._valid;
+      return isFirstValueOptionSelectable
         ? firstValue
         : optionValueList[optionIndexListForArrowKey[0]];
     }
     return undefined;
   }, [
     value,
+    optionInfoMap,
     optionValueList,
     optionIndexListForArrowKey,
     defaultActiveFirstOption,
