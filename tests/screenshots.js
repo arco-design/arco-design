@@ -34,7 +34,7 @@ const mockRoute = async (page) => {
 const mockInterfaces = async (page) => {
   await page.addInitScript(() => {
     // 隐藏下悬浮按钮，避免截图干扰
-    document.querySelectorAll('.ac-backtop-btn').forEach((element) => {
+    document.querySelector('#arco-page + div').forEach((element) => {
       element.style.display = 'none';
     });
     window.setInterval = () => {};
@@ -56,7 +56,7 @@ const mockInterfaces = async (page) => {
   const componentCount = componentNames.length;
   const page = await browser.newPage({
     viewport: {
-      width: 1600,
+      width: 1440,
       height: 1340,
     },
   });

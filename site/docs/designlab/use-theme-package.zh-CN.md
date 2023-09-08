@@ -57,6 +57,6 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 
 1. #### 使用开发者模式配置的样式未生效？
 
-如果使用了样式的按需加载，请升级ArcoWebpack插件至少`1.5.0`版本。
+如果使用了样式的按需加载，请升级 ArcoWebpack 插件到最新版本
 
 如果未使用样式按需加载，请查看是否在项目中引入了主题包的 `index.less`.

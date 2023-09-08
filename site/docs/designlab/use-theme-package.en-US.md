@@ -59,6 +59,6 @@ When directly importing the css file, you need to check whether it is consistent
 
 1. #### The style configured using the developer mode does not take effect?
 
-If you use the on-demand loading of styles, please upgrade the ArcoWebpack plugin to at least version `1.5.0`.
+If you use the on-demand loading of styles, please upgrade the ArcoWebpack plugin to the latest version.
 
 If you don’t use styles to load on demand, please check if you have introduced the theme package `index.less` in your project.
