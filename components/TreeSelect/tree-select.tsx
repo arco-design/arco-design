@@ -52,6 +52,8 @@ const defaultProps: TreeSelectProps = {
   fieldNames: DefaultFieldNames,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 const TreeSelect: ForwardRefRenderFunction<
   RefTreeSelectType,
   PropsWithChildren<TreeSelectProps>
@@ -284,7 +286,7 @@ const TreeSelect: ForwardRefRenderFunction<
         trigger="click"
         position="bl"
         getPopupContainer={props.getPopupContainer}
-        popupAlign={{ bottom: 4 }}
+        popupAlign={triggerPopupAlign}
         unmountOnExit={props.unmountOnExit}
         {...props.triggerProps}
         className={cs(`${prefixCls}-trigger`, props.triggerProps && props.triggerProps.className)}
@@ -338,16 +340,16 @@ const TreeSelect: ForwardRefRenderFunction<
   const customTriggerElement =
     typeof props.triggerElement === 'function'
       ? (() => {
-          let valueForCallback;
-          if (multiple) {
-            valueForCallback = value.map((x) =>
-              props.labelInValue ? { label: x.label, value: x.value } : x.value
-            );
-          } else {
-            valueForCallback = props.labelInValue ? value[0] : value[0]?.value;
-          }
-          return props.triggerElement({ value: valueForCallback });
-        })()
+        let valueForCallback;
+        if (multiple) {
+          valueForCallback = value.map((x) =>
+            props.labelInValue ? { label: x.label, value: x.value } : x.value
+          );
+        } else {
+          valueForCallback = props.labelInValue ? value[0] : value[0]?.value;
+        }
+        return props.triggerElement({ value: valueForCallback });
+      })()
       : props.triggerElement;
 
   return !isNullOrUndefined(customTriggerElement) ? (

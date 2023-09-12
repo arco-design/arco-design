@@ -26,6 +26,8 @@ function getTooltipContent(nextSorterDirection: 'ascend' | 'descend', locale: Lo
   return locale.Table.cancelSort;
 }
 
+const triggerPopupAlign = { bottom: 0 };
+
 function Column<T>({
   onSort,
   onFilter,
@@ -296,7 +298,7 @@ function Column<T>({
           trigger="click"
           classNames="slideDynamicOrigin"
           position={rtl ? 'bl' : 'br'}
-          popupAlign={{ bottom: 0 }}
+          popupAlign={triggerPopupAlign}
           popupVisible={filterVisible}
           onVisibleChange={onVisibleChange}
           {...filterDropdownTriggerProps}

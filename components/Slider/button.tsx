@@ -36,6 +36,20 @@ interface SliderButtonProps {
   onArrowEvent?: (type: 'addition' | 'subtraction') => void;
 }
 
+const triggerStyle = { maxWidth: 350 };
+
+const triggerDuration = {
+  enter: 300,
+  exit: 100,
+};
+
+const triggerPopupAlign = {
+  left: 12,
+  right: 12,
+  top: 12,
+  bottom: 12,
+};
+
 const SliderButton = function (props: SliderButtonProps) {
   // props
   const {
@@ -187,19 +201,11 @@ const SliderButton = function (props: SliderButtonProps) {
 
   return (
     <Trigger
-      style={{ maxWidth: 350 }}
+      style={triggerStyle}
       classNames="zoomInFadeOut"
-      duration={{
-        enter: 300,
-        exit: 100,
-      }}
+      duration={triggerDuration}
       showArrow
-      popupAlign={{
-        left: 12,
-        right: 12,
-        top: 12,
-        bottom: 12,
-      }}
+      popupAlign={triggerPopupAlign}
       ref={tooltip}
       popup={() => renderTooltipContent(position)}
       popupVisible={popupVisible}

@@ -57,6 +57,8 @@ const defaultProps: SelectProps = {
   defaultActiveFirstOption: true,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 function Select(baseProps: SelectProps, ref) {
   const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SelectProps>(baseProps, defaultProps, componentConfig?.Select);
@@ -126,8 +128,8 @@ function Select(baseProps: SelectProps, ref) {
       'popupVisible' in props
         ? props.popupVisible
         : triggerProps && 'popupVisible' in triggerProps
-        ? triggerProps.popupVisible
-        : undefined,
+          ? triggerProps.popupVisible
+          : undefined,
   });
   // allowCreate 时，用户正在创建的选项值
   const [userCreatingOption, setUserCreatingOption] = useState<string>(null);
@@ -353,7 +355,7 @@ function Select(baseProps: SelectProps, ref) {
 
     return optionValueList[
       optionIndexListForArrowKey[
-        ((direction === 'up' ? _index - 1 : _index + 1) + _length) % _length
+      ((direction === 'up' ? _index - 1 : _index + 1) + _length) % _length
       ]
     ];
   };
@@ -368,8 +370,8 @@ function Select(baseProps: SelectProps, ref) {
       stateValue === undefined
         ? undefined
         : Array.isArray(stateValue)
-        ? stateValue.map(getOptionInfoByValue)
-        : getOptionInfoByValue(stateValue);
+          ? stateValue.map(getOptionInfoByValue)
+          : getOptionInfoByValue(stateValue);
 
     if (labelInValue && !isEmpty) {
       const getOptionLabel = (optionValue: OptionProps['value'], optionInfo: OptionInfo) => {
@@ -732,7 +734,7 @@ function Select(baseProps: SelectProps, ref) {
         getPopupContainer={getPopupContainer}
         classNames="slideDynamicOrigin"
         autoAlignPopupWidth
-        popupAlign={{ bottom: 4 }}
+        popupAlign={triggerPopupAlign}
         popupVisible={popupVisible}
         unmountOnExit={unmountOnExit}
         onVisibleChange={tryUpdatePopupVisible}

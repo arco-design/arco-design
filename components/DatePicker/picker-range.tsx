@@ -66,6 +66,8 @@ const defaultProps: RangePickerProps = {
   mode: 'date',
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 const Picker = (baseProps: RangePickerProps) => {
   const { getPrefixCls, locale, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   if (rtl) {
@@ -202,9 +204,9 @@ const Picker = (baseProps: RangePickerProps) => {
 
   const selectedDisabledDate = isHalfAvailable
     ? (current: Dayjs) =>
-        availableInputIndex === 0
-          ? current.isAfter(panelValue[1], mode as QUnitType)
-          : current.isBefore(panelValue[0], mode as QUnitType)
+      availableInputIndex === 0
+        ? current.isAfter(panelValue[1], mode as QUnitType)
+        : current.isBefore(panelValue[0], mode as QUnitType)
     : undefined;
 
   // if triggerElement !== undefined, we should activate clearRangeOnReselect by default
@@ -451,8 +453,8 @@ const Picker = (baseProps: RangePickerProps) => {
     if (isDayjsArrayChange(mergedValue, newValue)) {
       const localValue = isArray(newValue)
         ? newValue.map((v) =>
-            getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
-          )
+          getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
+        )
         : undefined;
       onChange &&
         onChange(
@@ -851,7 +853,7 @@ const Picker = (baseProps: RangePickerProps) => {
           clickToClose={false}
           position={position}
           disabled={triggerDisabled}
-          popupAlign={{ bottom: 4 }}
+          popupAlign={triggerPopupAlign}
           getPopupContainer={getPopupContainer}
           onVisibleChange={visibleChange}
           popupVisible={mergedPopupVisible}
