@@ -48,6 +48,8 @@ const defaultProps: InnerPickerProps = {
   scrollSticky: true,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 const Picker = (baseProps: InnerPickerProps) => {
   const { locale, getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   if (rtl) {
@@ -307,7 +309,7 @@ const Picker = (baseProps: InnerPickerProps) => {
           clickToClose={false}
           position={position}
           disabled={disabled}
-          popupAlign={{ bottom: 4 }}
+          popupAlign={triggerPopupAlign}
           getPopupContainer={getPopupContainer}
           onVisibleChange={onVisibleChange}
           popupVisible={mergedPopupVisible}
