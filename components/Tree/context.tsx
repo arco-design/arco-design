@@ -19,7 +19,7 @@ export const TreeContext = createContext<{
   ) => void;
   key2nodeProps?: { [key: string]: NodeProps };
   actionOnClick?: TreeProps['actionOnClick'];
-  getNodeProps?: <T extends NodeProps | NodeProps[]>(nodes: T) => T;
+  getNodeProps?: <T extends NodeProps | NodeProps[]>(nodes: T, dataSet?) => T;
   getTreeState?: () => TreeState;
   onExpandEnd?: (key: string) => void;
   onNodeDragStart?: (e: DragEvent<HTMLSpanElement>, nodeProps: NodeProps) => void;

@@ -34,7 +34,7 @@ import useIsomorphicLayoutEffect from '../../_util/hooks/useIsomorphicLayoutEffe
 export type RenderFunc<T> = (
   item: T,
   index: number,
-  props: { style: React.CSSProperties }
+  props: { style: React.CSSProperties; itemIndex: number }
 ) => ReactNode;
 
 type Status = 'NONE' | 'MEASURE_START' | 'MEASURE_DONE';
@@ -598,6 +598,7 @@ const VirtualList: React.ForwardRefExoticComponent<
       const originIndex = startIndex + index;
       const node = renderChild(item, originIndex, {
         style: {},
+        itemIndex: index,
       }) as React.ReactElement;
       const key = getItemKey(item, originIndex);
       return React.cloneElement(node, {
