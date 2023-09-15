@@ -314,7 +314,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
 
   // Record position data on move start
   const onMoveStart = (e) => {
-    e.preventDefault && e.preventDefault();
+    e.preventDefault?.();
     setMoving(true);
 
     const ev = e.type === 'touchstart' ? e.touches[0] : e;
@@ -322,7 +322,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     refMoveData.current.pageY = ev.pageY;
     refMoveData.current.originX = translate.x;
     refMoveData.current.originY = translate.y;
-    onMouseDown && onMouseDown(e);
+    onMouseDown?.(e);
   };
 
   useEffect(() => {
@@ -483,7 +483,10 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                     {...restImgAttributes}
                     onLoad={onImgLoaded}
                     onError={onImgLoadError}
-                    onMouseDown={onMoveStart}
+                    onMouseDown={(event) => {
+                      // only trigger onMoveStart when press mouse left button
+                      event.button === 0 && onMoveStart(event);
+                    }}
                     key={previewImgSrc}
                     src={previewImgSrc}
                   />
