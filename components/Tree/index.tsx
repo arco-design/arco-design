@@ -672,8 +672,18 @@ class Tree extends Component<TreeProps, TreeState> {
     }) as NodeInstance[];
   };
 
+  // 转换为 set 类型，便于查找。主要是传递给node-list使用
+  getDataSet = (dataSet?) => {
+    return {
+      expandedKeysSet: dataSet?.expandedKeysSet || new Set(this.state?.expandedKeys || []),
+      checkedKeysSet: dataSet?.checkedKeysSet || new Set(this.state?.checkedKeys || []),
+      selectedKeysSet: dataSet?.selectedKeysSet || new Set(this.state?.selectedKeys || []),
+      halfCheckedKeysSet: dataSet?.halfCheckedKeysSet || new Set(this.state?.halfCheckedKeys || []),
+    };
+  };
+
   // dataSet:传入构建好的expandedKeysSet,, checkedKeysSet, halfCheckedKeysSet ，性能优化
-  getNodeProps = <T extends NodeProps | NodeProps[]>(nodes: T): T => {
+  getNodeProps = <T extends NodeProps | NodeProps[]>(nodes: T, dataSet?): T => {
     const { autoExpandParent } = this.getMergedProps();
     const { loadMore } = this.props;
 
@@ -681,15 +691,12 @@ class Tree extends Component<TreeProps, TreeState> {
       selectedKeys,
       expandedKeys,
       checkedKeys,
-      halfCheckedKeys,
       loadingKeys = [],
       loadedKeys = [],
     } = this.state;
 
-    const expandedKeysSet = new Set(expandedKeys || []);
-    const checkedKeysSet = new Set(checkedKeys || []);
-    const selectedKeysSet = new Set(selectedKeys || []);
-    const halfCheckedKeysSet = new Set(halfCheckedKeys || []);
+    const { expandedKeysSet, checkedKeysSet, selectedKeysSet, halfCheckedKeysSet } =
+      this.getDataSet(dataSet);
 
     const processNodeProps = (nodeProps) => {
       const hasChildren = nodeProps.children && nodeProps.children.length;
@@ -819,6 +826,7 @@ class Tree extends Component<TreeProps, TreeState> {
           expandedKeys={this.state.expandedKeys}
           currentExpandKeys={this.state.currentExpandKeys}
           getNodeProps={this.getNodeProps}
+          getDataSet={this.getDataSet}
           nodeList={this.state.nodeList}
           onMouseDown={this.props.onMouseDown}
           saveCacheNode={(node) => {

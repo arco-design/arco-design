@@ -26,11 +26,14 @@ function NodeList(props, ref) {
     saveCacheNode,
     nodeList,
     getNodeProps,
+    getDataSet,
   } = props;
   const isVirtual = virtualListProps?.threshold !== null;
   const virtualListRef = useRef<VirtualListHandle>();
   const treeWrapperRef = useRef<HTMLDivElement>();
+  const dataSetRef = useRef<HTMLDivElement>();
   const expandedKeysSet = useMemo(() => new Set(expandedKeys), [expandedKeys]);
+
   const visibleKeys: Set<string> = useMemo(() => {
     const newKeys = new Set<string>();
     const currentExpandKeysSet = new Set(currentExpandKeys);
@@ -108,15 +111,19 @@ function NodeList(props, ref) {
       className={className}
       style={style}
       ref={virtualListRef}
-      data={getNodeProps(childrenList)}
+      data={childrenList}
       isStaticItemHeight={false}
       itemKey={getKey}
       onMouseDown={props.onMouseDown}
       {...props.ariaProps}
       {...virtualListProps}
     >
-      {(item) => {
-        const node = <Node {...item} key={item.key} />;
+      {(item, _, { itemIndex }) => {
+        if (itemIndex === 0) {
+          dataSetRef.current = getDataSet();
+        }
+        const nodeProps = getNodeProps(item, dataSetRef.current);
+        const node = <Node {...item} key={item.key} {...nodeProps} />;
         saveCacheNode(item);
         return node;
       }}
