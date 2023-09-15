@@ -1,20 +1,13 @@
 import React, { createRef } from 'react';
 import ContextHolderElement, { HolderRef } from '../_util/contextHolder';
-import Message, { ConfigProps, MessageType } from '.';
-import { MessageProps } from './interface';
+import Message, { ConfigProps } from '.';
+import { MessageProps, MessageHookReturnType } from './interface';
 import { isString } from '../_util/is';
 
-type hookMessageFunc = (config: MessageProps | string) => MessageType;
+// @deprecated
+export type messageFuncType = MessageHookReturnType;
 
-export type messageFuncType = {
-  info?: hookMessageFunc;
-  success?: hookMessageFunc;
-  warning?: hookMessageFunc;
-  error?: hookMessageFunc;
-  normal?: hookMessageFunc;
-};
-
-function useMessage(commonConfig: ConfigProps = {}): [messageFuncType, JSX.Element] {
+function useMessage(commonConfig: ConfigProps = {}): [MessageHookReturnType, JSX.Element] {
   const { maxCount, duration = 3000, prefixCls: _prefixCls } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
@@ -72,7 +65,7 @@ function useMessage(commonConfig: ConfigProps = {}): [messageFuncType, JSX.Eleme
     return close;
   }
 
-  const messageFuncs: messageFuncType = {};
+  const messageFuncs: MessageHookReturnType = {};
 
   ['info', 'success', 'warning', 'error', 'normal'].forEach((type) => {
     messageFuncs[type] = (config: MessageProps | string) => {

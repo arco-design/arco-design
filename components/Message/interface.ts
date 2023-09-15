@@ -1,4 +1,5 @@
 import { ReactNode, CSSProperties } from 'react';
+import { MessageType } from '.';
 
 /**
  * @title Message
@@ -72,3 +73,13 @@ export interface MessageProps {
   closeIcon?: ReactNode;
   type?: string;
 }
+
+type messageHookFunction = (config: MessageProps | string) => MessageType;
+
+export type MessageHookReturnType = {
+  info?: messageHookFunction;
+  success?: messageHookFunction;
+  warning?: messageHookFunction;
+  error?: messageHookFunction;
+  normal?: messageHookFunction;
+};

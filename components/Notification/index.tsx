@@ -6,8 +6,8 @@ import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
 import { isNumber, isUndefined } from '../_util/is';
-import { NotificationProps } from './interface';
-import useNotification, { notificationFuncType } from './useNotification';
+import { NotificationProps, NotificationHookReturnType } from './interface';
+import useNotification from './useNotification';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
 
@@ -34,7 +34,7 @@ let container;
 let rtl;
 
 class Notification extends BaseNotification {
-  static useNotification: (config?: ConfigProps) => [notificationFuncType, JSX.Element];
+  static useNotification: (config?: ConfigProps) => [NotificationHookReturnType, JSX.Element];
 
   static success: (config: NotificationProps) => ReactInstance;
 

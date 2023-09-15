@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, ReactInstance } from 'react';
 
 /**
  * @title Notification
@@ -67,3 +67,13 @@ export interface NotificationProps {
   closeIcon?: ReactNode;
   type?: string;
 }
+
+type notificationHookFunction = (config: NotificationProps) => ReactInstance;
+
+export type NotificationHookReturnType = {
+  info?: notificationHookFunction;
+  success?: notificationHookFunction;
+  warning?: notificationHookFunction;
+  error?: notificationHookFunction;
+  normal?: notificationHookFunction;
+};

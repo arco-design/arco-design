@@ -1,5 +1,6 @@
 import { ReactNode, CSSProperties } from 'react';
 import { ButtonProps } from '../Button';
+import { ConfirmProps } from './confirm';
 
 /**
  * @title Modal
@@ -175,3 +176,16 @@ export interface ModalProps {
 }
 
 export type ModalReturnProps = { update: Function; close: Function };
+
+type modalHookFunction = (config: ConfirmProps) => {
+  close: () => void;
+  update: (config: ConfirmProps) => void;
+};
+
+export type ModalHookReturnType = {
+  confirm?: modalHookFunction;
+  info?: modalHookFunction;
+  success?: modalHookFunction;
+  warning?: modalHookFunction;
+  error?: modalHookFunction;
+};

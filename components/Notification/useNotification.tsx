@@ -1,20 +1,15 @@
-import React, { createRef, ReactInstance } from 'react';
+import React, { createRef } from 'react';
 import ContextHolderElement, { HolderRef } from '../_util/contextHolder';
 import Notification, { ConfigProps } from '.';
-import { NotificationProps } from './interface';
+import { NotificationProps, NotificationHookReturnType } from './interface';
 import { isUndefined } from '../_util/is';
 
-type hookNotificationFunc = (config: NotificationProps) => ReactInstance;
+// @deprecated
+export type notificationFuncType = NotificationHookReturnType;
 
-export type notificationFuncType = {
-  info?: hookNotificationFunc;
-  success?: hookNotificationFunc;
-  warning?: hookNotificationFunc;
-  error?: hookNotificationFunc;
-  normal?: hookNotificationFunc;
-};
-
-function useNotification(commonConfig: ConfigProps = {}): [notificationFuncType, JSX.Element] {
+function useNotification(
+  commonConfig: ConfigProps = {}
+): [NotificationHookReturnType, JSX.Element] {
   const { maxCount, duration = 3000, prefixCls: _prefixCls, getContainer } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
@@ -67,7 +62,7 @@ function useNotification(commonConfig: ConfigProps = {}): [notificationFuncType,
     return notificationInstance[position];
   }
 
-  const notificationFuncs: notificationFuncType = {};
+  const notificationFuncs: NotificationHookReturnType = {};
 
   ['info', 'success', 'warning', 'error', 'normal'].forEach((type) => {
     notificationFuncs[type] = (config: NotificationProps) => {
