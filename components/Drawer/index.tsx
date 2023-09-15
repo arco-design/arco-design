@@ -130,7 +130,11 @@ function Drawer(baseProps: DrawerProps, ref) {
   };
 
   const element = (
-    <div className={`${prefixCls}-scroll`}>
+    <div
+      className={`${prefixCls}-scroll`}
+      // tabIndex => https://github.com/arco-design/arco-design/issues/2121
+      tabIndex={0}
+    >
       {title !== null && (
         <div className={`${prefixCls}-header`} style={headerStyle}>
           <div className={`${prefixCls}-header-title`}>{title}</div>
@@ -241,7 +245,6 @@ function Drawer(baseProps: DrawerProps, ref) {
             <div
               className={`${prefixCls}-mask`}
               style={maskStyle}
-              tabIndex={0}
               onClick={(e) => {
                 if (!inExit && maskClosable) {
                   props.onCancel && props.onCancel(e);
@@ -284,8 +287,6 @@ function Drawer(baseProps: DrawerProps, ref) {
           }}
         >
           <div
-            // https://github.com/arco-design/arco-design/issues/2121
-            tabIndex={0}
             className={cs(prefixCls, className, { [`${prefixCls}-rtl`]: rtl })}
             style={Object.assign(
               placement === 'left' || placement === 'right' ? { width } : { height },
