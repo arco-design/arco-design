@@ -1,3 +1,11 @@
+## 2.53.1
+
+2023-09-15
+
+### 💎 Enhancement
+
+- Optimize the performance of `TreeSelect` under big data([#2236](https://github.com/arco-design/arco-design/pull/2236) )
+
 ## 2.53.0
 
 2023-09-08

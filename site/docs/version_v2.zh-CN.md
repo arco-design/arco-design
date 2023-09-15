@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.53.1
+
+2023-09-15
+
+### 💎 功能优化
+
+- 优化 `TreeSelect` 大数据下的性能表现([#2236](https://github.com/arco-design/arco-design/pull/2236) )
+- 导出 `ModalHookReturnType` 类型。([#2235](https://github.com/arco-design/arco-design/pull/2235))
+- 导出 `MessageHookReturnType` 类型。([#2235](https://github.com/arco-design/arco-design/pull/2235))
+- 导出 `NotificationHookReturnType` 类型。([#2235](https://github.com/arco-design/arco-design/pull/2235))
+- 避免鼠标右键按下时错误触发的图片拖拽。([#2234](https://github.com/arco-design/arco-design/pull/2234))
+- 优化 Image 在 SSR 且开启 `lazyload` 时首次渲染出现裂图的问题。([#2234](https://github.com/arco-design/arco-design/pull/2234))
+
+### 🐛 问题修复
+
+- 修复 Firefox 浏览器中 `Select` 需要点击两次才能出现下拉框的问题。([#2233](https://github.com/arco-design/arco-design/pull/2233))
+- 修复 `Drawer` 组件的内容区域文本无法被选中复制的 bug。（该 bug 在 `2.53.0` 引入 ）([#2232](https://github.com/arco-design/arco-design/pull/2232))
+
 ## 2.53.0
 
 2023-09-08

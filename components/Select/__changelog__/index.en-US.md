@@ -1,3 +1,11 @@
+## 2.53.1
+
+2023-09-15
+
+### 🐛 BugFix
+
+- Fixed the issue that `Select` needs to be clicked twice to display the drop-down box in Firefox.([#2233](https://github.com/arco-design/arco-design/pull/2233))
+
 ## 2.53.0
 
 2023-09-08

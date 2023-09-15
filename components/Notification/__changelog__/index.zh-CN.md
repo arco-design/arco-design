@@ -1,3 +1,11 @@
+## 2.53.1
+
+2023-09-15
+
+### 💎 功能优化
+
+- 导出 `NotificationHookReturnType` 类型。([#2235](https://github.com/arco-design/arco-design/pull/2235))
+
 ## 2.50.0
 
 2023-06-30

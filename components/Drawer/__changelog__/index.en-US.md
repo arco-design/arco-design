@@ -1,3 +1,11 @@
+## 2.53.1
+
+2023-09-15
+
+### 🐛 BugFix
+
+- Fixed a bug where text in the content area of the `Drawer` component could not be selected and copied. (This bug was introduced in `2.53.0`)([#2232](https://github.com/arco-design/arco-design/pull/2232) )
+
 ## 2.53.0
 
 2023-09-08

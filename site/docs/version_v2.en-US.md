@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.53.1
+
+2023-09-15
+
+### 💎 Enhancement
+
+- Optimize the performance of `TreeSelect` under big data([#2236](https://github.com/arco-design/arco-design/pull/2236) )
+- Export `ModalHookReturnType` type.([#2235](https://github.com/arco-design/arco-design/pull/2235))
+- Export `MessageHookReturnType` type.([#2235](https://github.com/arco-design/arco-design/pull/2235))
+- Export `NotificationHookReturnType` type.([#2235](https://github.com/arco-design/arco-design/pull/2235))
+- Avoid image dragging that is triggered incorrectly when the right mouse button is pressed.([#2234](https://github.com/arco-design/arco-design/pull/2234))
+- Optimize the problem of cracked image in the first rendering of Image in SSR and `lazyload` is enabled.([#2234](https://github.com/arco-design/arco-design/pull/2234))
+
+### 🐛 BugFix
+
+- Fixed the issue that `Select` needs to be clicked twice to display the drop-down box in Firefox.([#2233](https://github.com/arco-design/arco-design/pull/2233))
+- Fixed a bug where text in the content area of the `Drawer` component could not be selected and copied. (This bug was introduced in `2.53.0`)([#2232](https://github.com/arco-design/arco-design/pull/2232) )
+
 ## 2.53.0
 
 2023-09-08

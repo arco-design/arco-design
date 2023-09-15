@@ -1,3 +1,12 @@
+## 2.53.1
+
+2023-09-15
+
+### 💎 Enhancement
+
+- Avoid image dragging that is triggered incorrectly when the right mouse button is pressed.([#2234](https://github.com/arco-design/arco-design/pull/2234))
+- Optimize the problem of cracked image in the first rendering of Image in SSR and `lazyload` is enabled.([#2234](https://github.com/arco-design/arco-design/pull/2234))
+
 ## 2.53.0
 
 2023-09-08
