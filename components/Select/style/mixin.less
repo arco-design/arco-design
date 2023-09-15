@@ -157,7 +157,10 @@
       // https://github.com/arco-design/arco-design/issues/1232
       opacity: 0;
       position: absolute;
-      pointer-events: none;
+      // 避免绝对定位的元素位于所有同级节点的最上层，遮挡其他元素的鼠标操作（例如被 Tooltip 包裹的 value 文本）
+      // 不要使用 pointer-events: none，会导致火狐浏览器下下拉弹窗需要点击两次才可弹出
+      // https://github.com/arco-design/arco-design/issues/2127
+      z-index: -1;
     }
 
     &-multiple,
