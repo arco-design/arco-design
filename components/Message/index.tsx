@@ -4,9 +4,9 @@ import { render } from '../_util/react-dom';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
 import cs from '../_util/classNames';
-import { MessageProps } from './interface';
+import { MessageProps, MessageHookReturnType } from './interface';
 import { isUndefined, isNumber } from '../_util/is';
-import useMessage, { messageFuncType } from './useMessage';
+import useMessage from './useMessage';
 
 const messageTypes = ['info', 'success', 'error', 'warning', 'loading', 'normal'];
 let messageInstance: {
@@ -102,7 +102,7 @@ function addInstance(noticeProps: MessageProps) {
 }
 
 class Message extends BaseNotification {
-  static useMessage: (config?: ConfigProps) => [messageFuncType, JSX.Element];
+  static useMessage: (config?: ConfigProps) => [MessageHookReturnType, JSX.Element];
 
   static success: (config: MessageProps | string) => MessageType;
 

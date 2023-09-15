@@ -2,22 +2,10 @@ import React, { createRef, useRef, ReactElement } from 'react';
 import ContextHolderElement, { HolderRef } from '../../_util/contextHolder';
 import HookModal, { HookModalRef } from './hookModal';
 import { normalizeConfig, ConfirmProps } from '../confirm';
+import { ModalHookReturnType } from '../interface';
 import { destroyList } from '../config';
 
-type hookNodalFunction = (config: ConfirmProps) => {
-  close: () => void;
-  update: (config: ConfirmProps) => void;
-};
-
-type modalFunctionsType = {
-  confirm?: hookNodalFunction;
-  info?: hookNodalFunction;
-  success?: hookNodalFunction;
-  warning?: hookNodalFunction;
-  error?: hookNodalFunction;
-};
-
-function useModal(): [modalFunctionsType, ReactElement] {
+function useModal(): [ModalHookReturnType, ReactElement] {
   const contextHolderRef = useRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
 
@@ -68,7 +56,7 @@ function useModal(): [modalFunctionsType, ReactElement] {
     };
   }
 
-  const modalFuncs: modalFunctionsType = {
+  const modalFuncs: ModalHookReturnType = {
     confirm: (config: ConfirmProps) => {
       return addNewModal({
         ...config,

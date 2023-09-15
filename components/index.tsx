@@ -93,16 +93,16 @@ export { default as Link } from './Link';
 export type { ListProps, ListItemProps, ListItemMetaProps } from './List/interface';
 export { default as List } from './List';
 
-export type { MessageProps } from './Message/interface';
+export type { MessageProps, MessageHookReturnType } from './Message/interface';
 export { default as Message } from './Message';
 
 export type { MenuProps, MenuSubMenuProps, MenuItemProps, MenuItemGroupProps } from './Menu/interface';
 export { default as Menu } from './Menu';
 
-export type { ModalProps } from './Modal/interface';
+export type { ModalProps, ModalHookReturnType } from './Modal/interface';
 export { default as Modal } from './Modal';
 
-export type { NotificationProps } from './Notification/interface';
+export type { NotificationProps, NotificationHookReturnType } from './Notification/interface';
 export { default as Notification } from './Notification';
 
 export type { PageHeaderProps } from './PageHeader/interface';
