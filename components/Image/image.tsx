@@ -83,7 +83,8 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const previewSrc = previewProps.src || src;
   const [showFooter] = useShowFooter({ title, description, actions });
-  const { isLoading, isError, isLoaded, setStatus, isLazyLoad } = useImageStatus('beforeLoad');
+  const { isLoading, isError, isLoaded, isLazyLoad, isBeforeLoad, setStatus } =
+    useImageStatus('beforeLoad');
   const [previewVisible, setPreviewVisible] = useMergeValue(false, {
     defaultValue: previewProps.defaultVisible,
     value: previewProps.visible,
@@ -101,6 +102,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     {
       [`${prefixCls}-rtl`]: rtl,
       [`${prefixCls}-simple`]: simple,
+      [`${prefixCls}-before-load`]: isBeforeLoad,
       [`${prefixCls}-loading`]: isLoading,
       [`${prefixCls}-loading-error`]: isError,
       [`${prefixCls}-with-footer-inner`]: isLoaded && showFooter && footerPosition === 'inner',

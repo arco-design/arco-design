@@ -2,7 +2,7 @@
 
 exports[`renders Image/demo/basic.md correctly 1`] = `
 <div
-  class="arco-image"
+  class="arco-image arco-image-before-load"
   style="width:200px"
 >
   <img
@@ -27,7 +27,7 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
     style="margin-right:60px"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:200px"
     >
       <img
@@ -47,7 +47,7 @@ exports[`renders Image/demo/caption.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:200px"
     >
       <img
@@ -94,7 +94,7 @@ exports[`renders Image/demo/component-preview-group.md correctly 1`] = `
 
 exports[`renders Image/demo/custom-preview-actions.md correctly 1`] = `
 <div
-  class="arco-image"
+  class="arco-image arco-image-before-load"
   style="width:200px"
 >
   <img
@@ -119,7 +119,7 @@ exports[`renders Image/demo/error.md correctly 1`] = `
     style="margin-right:20px"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:400px;height:300px"
     >
       <img
@@ -139,7 +139,7 @@ exports[`renders Image/demo/error.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:400px;height:300px"
     >
       <img
@@ -168,7 +168,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       style="margin-right:20px"
     >
       <div
-        class="arco-image"
+        class="arco-image arco-image-before-load"
         style="width:300px"
       >
         <img
@@ -188,7 +188,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-image arco-image-simple"
+        class="arco-image arco-image-simple arco-image-before-load"
         style="width:200px;vertical-align:top"
       >
         <img
@@ -214,7 +214,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       style="margin-right:20px"
     >
       <div
-        class="arco-image"
+        class="arco-image arco-image-before-load"
         style="width:300px"
       >
         <img
@@ -234,7 +234,7 @@ exports[`renders Image/demo/extra-actions.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-image arco-image-simple"
+        class="arco-image arco-image-simple arco-image-before-load"
         style="width:200px;vertical-align:top"
       >
         <img
@@ -263,7 +263,7 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
     style="margin-bottom:50px"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:380px;height:150px"
     >
       <img
@@ -283,7 +283,7 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
     style="margin-bottom:50px"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:380px;height:150px"
     >
       <img
@@ -303,7 +303,7 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
     style="margin-bottom:50px"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:380px;height:150px"
     >
       <img
@@ -322,7 +322,7 @@ exports[`renders Image/demo/lazyload.md correctly 1`] = `
     class="arco-space-item"
   >
     <div
-      class="arco-image"
+      class="arco-image arco-image-before-load"
       style="width:380px;height:150px"
     >
       <img
@@ -361,7 +361,7 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
       style="margin-right:20px"
     >
       <div
-        class="arco-image"
+        class="arco-image arco-image-before-load"
         style="width:200px;height:200px"
       >
         <img
@@ -381,7 +381,7 @@ exports[`renders Image/demo/loader.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-image"
+        class="arco-image arco-image-before-load"
         style="width:200px;height:200px;margin-left:67px"
       >
         <img
@@ -406,7 +406,7 @@ exports[`renders Image/demo/preview-get-popup-container.md correctly 1`] = `
   style="width:100%;height:400px;background-color:var(--color-fill-2);position:relative;overflow:hidden;line-height:400px;text-align:center"
 >
   <div
-    class="arco-image"
+    class="arco-image arco-image-before-load"
     style="width:200px"
   >
     <img
@@ -439,7 +439,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           style="margin-right:8px"
         >
           <div
-            class="arco-image"
+            class="arco-image arco-image-before-load"
             style="width:200px"
           >
             <img
@@ -459,7 +459,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           style="margin-right:8px"
         >
           <div
-            class="arco-image"
+            class="arco-image arco-image-before-load"
             style="width:200px"
           >
             <img
@@ -479,7 +479,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           style="margin-right:8px"
         >
           <div
-            class="arco-image"
+            class="arco-image arco-image-before-load"
             style="width:200px"
           >
             <img
@@ -498,7 +498,7 @@ exports[`renders Image/demo/preview-group.md correctly 1`] = `
           class="arco-space-item"
         >
           <div
-            class="arco-image"
+            class="arco-image arco-image-before-load"
             style="width:200px"
           >
             <img
@@ -533,7 +533,7 @@ exports[`renders Image/demo/progressive-loader.md correctly 1`] = `
     </button>
   </div>
   <div
-    class="arco-image"
+    class="arco-image arco-image-before-load"
     style="width:200px"
   >
     <img
