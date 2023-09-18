@@ -8,18 +8,23 @@ import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import IconLoading from '../../icon/react-icon/IconLoading';
+import { isObject } from '../_util/is';
 
 const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSearchProps, ref) => {
   const { getPrefixCls } = useContext(ConfigContext);
 
-  const [value, setValue] = useMergeValue('', {
-    defaultValue:
-      'defaultValue' in props ? formatValue(props.defaultValue, props.maxLength) : undefined,
-    value: 'value' in props ? formatValue(props.value, props.maxLength) : undefined,
-  });
-
   const { className, style, placeholder, disabled, searchButton, loading, defaultValue, ...rest } =
     props;
+  
+  const trueMaxLength = isObject(props.maxLength) ? props.maxLength.length : props.maxLength;
+  const mergedMaxLength = isObject(props.maxLength) && props.maxLength.errorOnly ? undefined : trueMaxLength;
+
+  const [value, setValue] = useMergeValue('', {
+    defaultValue:
+      'defaultValue' in props ? formatValue(props.defaultValue, mergedMaxLength) : undefined,
+    value: 'value' in props ? formatValue(props.value, mergedMaxLength) : undefined,
+  });
+
   const prefixCls = getPrefixCls('input-search');
   const classNames = cs(
     prefixCls,
