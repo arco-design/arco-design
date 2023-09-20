@@ -14,7 +14,7 @@ export default {
     },
   ],
   versions: [
-    { version: '1.x', link: 'https://arco.bytedance.net/react/1.x/docs/start' },
+    { version: '1.x', link: `https://${window.arcoConfig?.internalHostName}/react/1.x/docs/start` },
     { version: arcoVersion, link: 'https://arco.design' },
   ],
   defaultVersion: version,
