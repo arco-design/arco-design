@@ -15,9 +15,10 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
 
   const { className, style, placeholder, disabled, searchButton, loading, defaultValue, ...rest } =
     props;
-  
+
   const trueMaxLength = isObject(props.maxLength) ? props.maxLength.length : props.maxLength;
-  const mergedMaxLength = isObject(props.maxLength) && props.maxLength.errorOnly ? undefined : trueMaxLength;
+  const mergedMaxLength =
+    isObject(props.maxLength) && props.maxLength.errorOnly ? undefined : trueMaxLength;
 
   const [value, setValue] = useMergeValue('', {
     defaultValue:

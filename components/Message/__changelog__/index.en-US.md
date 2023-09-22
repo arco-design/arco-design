@@ -1,3 +1,11 @@
+## 2.53.2
+
+2023-09-22
+
+### 🐛 BugFix
+
+- Fixed the issue that `Message` could not disable RTL mode after it was enabled.([#2250](https://github.com/arco-design/arco-design/pull/2250))
+
 ## 2.53.1
 
 2023-09-15

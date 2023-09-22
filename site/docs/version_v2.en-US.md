@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.53.2
+
+2023-09-22
+
+### 🐛 BugFix
+
+- Fixed a bug where re-rendering the component may trigger the loss of sub-component ref when the `Modal` component is hidden.([#2251](https://github.com/arco-design/arco-design/pull/2251))
+- Fixed the issue that `Message` could not disable RTL mode after it was enabled.([#2250](https://github.com/arco-design/arco-design/pull/2250))
+- Fixed the bug of incorrect callback parameters in the `Input.Search` component when `value` is controlled and `maxLength` of the object type is passed in and `onSearch` is triggered directly.([#2239](https://github.com/arco-design/arco-design/pull/2239))
+
 ## 2.53.1
 
 2023-09-15

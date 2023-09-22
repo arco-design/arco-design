@@ -1,3 +1,11 @@
+## 2.53.2
+
+2023-09-22
+
+### 🐛 BugFix
+
+- Fixed the bug of incorrect callback parameters in the `Input.Search` component when `value` is controlled and `maxLength` of the object type is passed in and `onSearch` is triggered directly.([#2239](https://github.com/arco-design/arco-design/pull/2239))
+
 ## 2.51.0
 
 2023-07-28

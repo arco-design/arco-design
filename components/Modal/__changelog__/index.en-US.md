@@ -1,3 +1,11 @@
+## 2.53.2
+
+2023-09-22
+
+### 🐛 BugFix
+
+- Fixed a bug where re-rendering the component may trigger the loss of sub-component ref when the `Modal` component is hidden.([#2251](https://github.com/arco-design/arco-design/pull/2251))
+
 ## 2.53.1
 
 2023-09-15

@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.53.2
+
+2023-09-22
+
+### 🐛 问题修复
+
+- 修复 `Modal` 组件隐藏时重渲染组件可能触发子组件 ref 丢失的 bug。([#2251](https://github.com/arco-design/arco-design/pull/2251))
+- 修复 `Message` 在 RTL 模式开启后无法关闭的问题。([#2250](https://github.com/arco-design/arco-design/pull/2250))
+- 修复 `Input.Search` 组件在 `value` 受控且传入了对象类型的 `maxLength`并直接触发 `onSearch`时， 回调参数错误的 bug([#2239](https://github.com/arco-design/arco-design/pull/2239))
+
 ## 2.53.1
 
 2023-09-15
