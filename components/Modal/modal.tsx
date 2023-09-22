@@ -12,7 +12,6 @@ import React, {
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
-import useIsFirstRender from '../_util/hooks/useIsFirstRender';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
 import { isServerRendering, contains } from '../_util/dom';
@@ -111,7 +110,12 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   const haveOriginTransformOrigin = useRef<boolean>(false);
   const maskClickRef = useRef(false);
 
-  const isFirstRender = useIsFirstRender();
+  // 标识是否是处于第一次 visible 之前
+  const beforeFirstVisible = useRef<boolean>(true);
+
+  if (visible && beforeFirstVisible.current) {
+    beforeFirstVisible.current = false;
+  }
 
   const dialogIndex = useRef<number>();
 
@@ -330,7 +334,10 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     e.style.transformOrigin = transformOrigin;
   };
 
-  const forceRender = isFirstRender ? !mountOnEnter : !!modalRef.current;
+  // mountOnEnter 只在第一次visible=true之前生效。
+  // 使用 modalRef.current 而不是 mountOnExit 是因为动画结束后，modalRef.current 会变成 null，此时再去销毁dom结点，避免动画问题
+  const forceRender = beforeFirstVisible.current ? !mountOnEnter : !!modalRef.current;
+
   return visible || forceRender ? (
     <Portal visible={visible} forceRender={forceRender} getContainer={getPopupContainer}>
       <div ref={ref}>
