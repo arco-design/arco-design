@@ -117,16 +117,16 @@ class Message extends BaseNotification {
   static normal: (config: MessageProps | string) => MessageType;
 
   static config = (options: ConfigProps = {}): void => {
-    if (options.maxCount) {
+    if (isNumber(options.maxCount)) {
       maxCount = options.maxCount;
     }
     if (options.prefixCls) {
       prefixCls = options.prefixCls;
     }
-    if (options.duration) {
+    if (isNumber(options.duration)) {
       duration = options.duration;
     }
-    if (options.rtl) {
+    if (typeof options.rtl === 'boolean') {
       rtl = options.rtl;
     }
     if (options.getContainer && options.getContainer() !== container) {

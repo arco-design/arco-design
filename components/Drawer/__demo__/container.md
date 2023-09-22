@@ -27,7 +27,7 @@ const wrapperStyle = {
 };
 
 function App() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const refWrapper = useRef(null);
   return (
     <div ref={refWrapper} style={wrapperStyle}>

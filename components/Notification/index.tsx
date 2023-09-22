@@ -47,7 +47,7 @@ class Notification extends BaseNotification {
   static normal: (config: NotificationProps) => ReactInstance;
 
   static config = (options: ConfigProps = {}): void => {
-    if (options.maxCount) {
+    if (isNumber(options.maxCount)) {
       maxCount = options.maxCount;
     }
     if (options.prefixCls) {
@@ -56,7 +56,7 @@ class Notification extends BaseNotification {
     if (isNumber(options.duration)) {
       duration = options.duration;
     }
-    if (options.rtl) {
+    if (typeof options.rtl === 'boolean') {
       rtl = options.rtl;
     }
     if (options.getContainer && options.getContainer() !== container) {
