@@ -19,6 +19,8 @@ type UploaderState = {
 class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, UploaderState> {
   inputRef: HTMLInputElement | null;
 
+  uploadList: UploadItem[] | null;
+
   constructor(props) {
     super(props);
 
@@ -69,7 +71,13 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
   updateFileStatus = (file: UploadItem, fileList = this.props.fileList) => {
     const { onFileStatusChange } = this.props;
     const key = 'uid' in file ? 'uid' : 'name';
-
+    if (this.uploadList) {
+      const index = this.uploadList.findIndex((item) => item[key] === file[key]);
+      if (index !== -1) {
+        // 更新 uploadList 的状态，避免 asyncUpload 执行时重置了 this.props.fileList 内的状态。
+        this.uploadList[index] = file;
+      }
+    }
     onFileStatusChange &&
       onFileStatusChange(
         fileList.map((item) => {
@@ -153,7 +161,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
     if (isNumber(limit) && limit < fileList.length + files.length) {
       return onExceedLimit && onExceedLimit(files, fileList);
     }
-    const list = this.props.fileList || [];
+    this.uploadList = this.props.fileList || [];
     const asyncUpload = (file: File, index: number) => {
       const upload: UploadItem = {
         uid: `${String(+new Date())}${index}`,
@@ -163,10 +171,10 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
         name: file.name,
       };
 
-      list.push(upload);
+      this.uploadList.push(upload);
 
       // 更新上传状态为 init
-      this.updateFileStatus(upload, list);
+      this.updateFileStatus(upload, this.uploadList);
 
       if (autoUpload) {
         /**
