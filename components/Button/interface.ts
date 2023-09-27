@@ -4,6 +4,7 @@ import {
   ReactNode,
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
+  MouseEventHandler,
 } from 'react';
 
 export interface BaseButtonProps {
@@ -86,7 +87,7 @@ export interface BaseButtonProps {
    * @zh 点击按钮的回调
    * @en Callback fired when the button is clicked
    */
-  onClick?: (e: Event) => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export type AnchorButtonProps = {
