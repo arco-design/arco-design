@@ -130,9 +130,10 @@ function Select(baseProps: SelectProps, ref) {
         : undefined,
   });
   // allowCreate 时，用户正在创建的选项值
-  const [userCreatingOption, setUserCreatingOption] = useState<string>(null);
+  const [userCreatingOption, setUserCreatingOption] =
+    useState<SelectProps['options'][number]>(null);
   // allowCreate 时，由用户输入而扩展到选项中的值
-  const [userCreatedOptions, setUserCreatedOptions] = useState<string[]>([]);
+  const [userCreatedOptions, setUserCreatedOptions] = useState<SelectProps['options']>([]);
   // 具有选中态或者 hover 态的 option 的 value
   const [valueActive, setValueActive] = useState<OptionProps['value']>(
     isArray(value) ? value[0] : value
@@ -210,6 +211,15 @@ function Select(baseProps: SelectProps, ref) {
     [optionInfoMap]
   );
 
+  const userCreatedOptionFormatter = useCallback(
+    (inputValue: string, creating: boolean = false) => {
+      return isObject(allowCreate) && typeof allowCreate?.formatter === 'function'
+        ? allowCreate.formatter(inputValue, creating)
+        : inputValue;
+    },
+    [allowCreate]
+  );
+
   // Try to update inputValue and trigger onInputValueChange callback
   const tryUpdateInputValue = (value: string, reason: InputValueChangeReason) => {
     if (
@@ -284,30 +294,46 @@ function Select(baseProps: SelectProps, ref) {
 
   // allowCreate 时，value 改变时更新下拉框选项
   useEffect(() => {
-    // 将无对应下拉框选项的 value 当作自定义 tag，将 value 中不存在的 valueTag 移除
     if (allowCreate && Array.isArray(value)) {
-      const newUserCreatedOptions = (value as any[]).filter((v) => {
-        const option =
-          optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
-        return !option || option._origin === 'userCreatingOption';
+      // 将无对应下拉框选项的 value 当作用户创建的选项
+      const newUserCreatedOptions = (value as Array<string | number>)
+        .filter((v) => {
+          const option =
+            optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
+          return !option || option._origin === 'userCreatingOption';
+        })
+        .map((op) => userCreatedOptionFormatter(op as string));
+      // 将 value 中不存在的 valueTag 移除
+      const validUserCreatedOptions = userCreatedOptions.filter((op) => {
+        const opValue = isObject(op) ? op.value : op;
+        return (value as Array<string | number>).indexOf(opValue) !== -1;
       });
-      const validUserCreatedOptions = userCreatedOptions.filter(
-        (tag) => (value as any[]).indexOf(tag) !== -1
-      );
-      const _userCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
-      if (_userCreatedOptions.toString() !== userCreatedOptions.toString()) {
-        setUserCreatedOptions(_userCreatedOptions);
+      const nextUserCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
+
+      const getOptionsValueString = (options: SelectProps['options']) => {
+        return options.map((option) => (isObject(option) ? option.value : option)).toString();
+      };
+
+      // only update state when user-created options changed
+      if (
+        getOptionsValueString(nextUserCreatedOptions) !== getOptionsValueString(userCreatedOptions)
+      ) {
+        setUserCreatedOptions(nextUserCreatedOptions);
       }
     }
-  }, [value]);
+  }, [value, userCreatedOptionFormatter]);
 
   // allowCreate 时，根据输入内容动态修改下拉框选项
   useEffect(() => {
     if (allowCreate) {
       // 避免正在输入的内容覆盖已有的选项
-      setUserCreatingOption(optionInfoMap.has(inputValue) ? null : inputValue);
+      setUserCreatingOption(
+        inputValue && !optionInfoMap.has(inputValue)
+          ? userCreatedOptionFormatter(inputValue, true)
+          : null
+      );
     }
-  }, [inputValue]);
+  }, [inputValue, userCreatedOptionFormatter]);
 
   // 在 inputValue 变化时，适时触发 onSearch
   useEffect(() => {
@@ -546,14 +572,21 @@ function Select(baseProps: SelectProps, ref) {
 
           if (isSelectOption(child)) {
             const optionValue = child.props?.value;
+            const userCreatingOptionValue = isObject(userCreatingOption)
+              ? userCreatingOption.value
+              : userCreatingOption;
+            const userCreatedOptionValues = userCreatedOptions.map((op) =>
+              isObject(op) ? op.value : op
+            );
             const optionProps: Partial<SelectOptionProps> = {
               prefixCls,
               rtl,
               _valueActive: valueActive,
               _valueSelect: value,
               _isMultipleMode: isMultipleMode,
-              _isUserCreatingOption: allowCreate && userCreatingOption === optionValue,
-              _isUserCreatedOption: allowCreate && userCreatedOptions.indexOf(optionValue) > -1,
+              _isUserCreatingOption: allowCreate && userCreatingOptionValue === optionValue,
+              _isUserCreatedOption:
+                allowCreate && userCreatedOptionValues.indexOf(optionValue) > -1,
               _onClick: handleOptionClick,
               _onMouseEnter: (value) => {
                 refKeyboardArrowDirection.current === null && setValueActive(value);
@@ -770,6 +803,7 @@ function Select(baseProps: SelectProps, ref) {
           // other
           rtl={rtl}
           prefixCls={prefixCls}
+          allowCreate={!!allowCreate}
           ariaControls={instancePopupID}
           isEmptyValue={isNoOptionSelected}
           isMultiple={isMultipleMode}

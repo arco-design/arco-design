@@ -86,12 +86,6 @@ export interface SelectViewCommonProps
    */
   allowClear?: boolean;
   /**
-   * @zh 是否允许通过输入创建新的选项。
-   * @en Whether to allow new options to be created by input.
-   * @version 2.13.0
-   */
-  allowCreate?: boolean;
-  /**
    * @zh 最多显示多少个 `tag`，仅在多选或标签模式有效。
    * @en The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.
    * @version Object type in 2.37.0
@@ -159,6 +153,7 @@ export interface SelectViewProps extends SelectViewCommonProps {
   value?: any;
   popupVisible?: boolean;
   // other ⬇️
+  allowCreate?: boolean;
   isEmptyValue: boolean;
   isMultiple?: boolean;
   prefixCls: string;

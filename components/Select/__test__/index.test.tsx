@@ -496,4 +496,25 @@ describe('Select', () => {
     ).toBe(-1);
     expect(wrapper2.querySelector('.arco-select-option-hover')).toHaveTextContent('hello');
   });
+
+  it('allowCreate with custom formatter', async () => {
+    const wrapper = render(
+      <Select
+        popupVisible
+        allowCreate={{
+          formatter: (inputValue, creating) => {
+            return {
+              label: `${creating ? 'Enter to create' : 'Created'} ${inputValue}`,
+              value: inputValue,
+            };
+          },
+        }}
+        mode="multiple"
+        inputValue="hello"
+      />
+    );
+
+    await sleep(100);
+    expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent('Enter to create hello');
+  });
 });
