@@ -86,6 +86,16 @@ export interface SelectProps extends SelectViewCommonProps {
    */
   defaultActiveFirstOption?: boolean;
   /**
+   * @zh 是否允许通过输入创建新的选项。
+   * @en Whether to allow new options to be created by input.
+   * @version 2.13.0, `{ formatter }` in 2.54.0
+   */
+  allowCreate?:
+    | boolean
+    | {
+        formatter: (inputValue: string, creating: boolean) => SelectProps['options'][number];
+      };
+  /**
    * @zh 是否在隐藏的时候销毁 DOM 结构
    * @en Whether to destroy the DOM when hiding
    * @defaultValue true
