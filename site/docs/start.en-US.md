@@ -37,6 +37,7 @@ In addition to installing through npm, you can also directly use CDN resources. 
 * Development: https://unpkg.com/@arco-design/web-react@latest/dist/arco.development.js
 * Production: https://unpkg.com/@arco-design/web-react@latest/dist/arco.min.js
    * Icon: https://unpkg.com/@arco-design/web-react@latest/dist/arco-icon.min.js
+   * Style: https://unpkg.com/@arco-design/web-react@latest/dist/css/arco.min.css
 
 However, we do not recommend using CDN, because CDN will download the entire library, which will affect the page loading speed.
 
