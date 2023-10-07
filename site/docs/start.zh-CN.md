@@ -37,6 +37,7 @@ yarn add @arco-design/web-react
 * 开发环境: https://unpkg.com/@arco-design/web-react@latest/dist/arco.development.js
 * 生产环境: https://unpkg.com/@arco-design/web-react@latest/dist/arco.min.js
   * 图标: https://unpkg.com/@arco-design/web-react@latest/dist/arco-icon.min.js
+  * 样式: https://unpkg.com/@arco-design/web-react@latest/dist/css/arco.min.css
 
 不过，我们不建议通过 CDN 使用，因为 CDN 会引入全量的组件代码，这样会影响页面加载速度。
 
