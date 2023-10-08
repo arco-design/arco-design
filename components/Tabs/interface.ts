@@ -46,6 +46,12 @@ export interface TabsProps {
    */
   type?: 'line' | 'card' | 'card-gutter' | 'text' | 'rounded' | 'capsule';
   /**
+   * @zh 定制下划线尺寸
+   * @en custom the size of underline
+   * @version 2.54.0
+   */
+  inkBarSize?: { width?: CSSProperties['width']; height?: CSSProperties['height'] };
+  /**
    * @zh 选项卡头部是否存在水平边距。仅对 `type`等于 `line`、`text`类型的选项卡生效
    * @en Whether there is a horizontal margin on the tab. It only effect when `type` is `line` or `text`
    * @defaultValue true
