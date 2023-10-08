@@ -1533,7 +1533,7 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
         >
           <div
             class="arco-select-view"
-            title="UTC "
+            title="UTC "
           >
             <span
               class="arco-select-view-selector"
@@ -1549,7 +1549,7 @@ exports[`renders TimePicker/demo/utcOffset.md correctly 1`] = `
               <span
                 class="arco-select-view-value"
               >
-                UTC 
+                UTC 
               </span>
             </span>
             <div

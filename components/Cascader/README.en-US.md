@@ -29,6 +29,7 @@ Display options in a multi-level cascading dropdown component.
 |unmountOnExit|Whether destroy popup when hidden.|boolean |`-`|-|
 |inputValue|Input Value|string |`-`|2.34.0|
 |placeholder|Placeholder of element|string |`-`|-|
+|autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |checkedStrategy|Customize the return value<br/> parent:Only return the parent node when all child nodes are selected <br/> child: Return child nodes|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|Set the way to display the next level menu. One of hover and click|'click' \| 'hover' |`click`|-|
 |mode|Set mode|'multiple' |`-`|-|

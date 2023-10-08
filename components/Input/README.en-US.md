@@ -24,6 +24,7 @@ The basic form components have been expanded on the basis of native controls and
 |defaultValue|The initial input content|string |`-`|-|
 |placeholder|Input box prompt text|string |`-`|-|
 |value|The input content value|string |`-`|-|
+|autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |normalizeTrigger|Specify the timing of normalize execution|('onBlur' \| 'onPressEnter')[] |`['onBlur']`|2.50.0|
 |size|The size of the input box|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
