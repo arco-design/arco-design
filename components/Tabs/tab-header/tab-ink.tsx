@@ -36,6 +36,7 @@ const TabInk = ({
   getTitleRef,
   activeTab,
   getHeaderRef,
+  inkBarSize,
 }) => {
   const inkRef = useRef<HTMLDivElement>();
   const inkStyleRef = useRef<CSSProperties>();
@@ -68,9 +69,12 @@ const TabInk = ({
       className={cs(`${prefixCls}-header-ink`, {
         [`${prefixCls}-header-ink-no-animation`]: !animation,
         [`${prefixCls}-header-ink-disabled`]: disabled,
+        [`${prefixCls}-header-ink-custom`]: inkBarSize,
       })}
       ref={inkRef}
-    />
+    >
+      {inkBarSize && <div style={inkBarSize} className={`${prefixCls}-header-ink-inner`} />}
+    </div>
   );
 };
 
