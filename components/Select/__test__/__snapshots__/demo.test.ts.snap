@@ -113,7 +113,8 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
               >
                 <input
                   autocomplete="off"
-                  class="arco-input-tag-input arco-input-tag-input-size-default"
+                  class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                  style="min-width:100%"
                   value=""
                 />
                 <span
@@ -286,7 +287,7 @@ exports[`renders Select/demo/allow-create.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -366,8 +367,9 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
         >
           <input
             autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Search by name"
+            style="min-width:100%"
             value=""
           />
           <span
@@ -398,6 +400,452 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
             d="M39.6 17.443 24.043 33 8.487 17.443"
           />
         </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Select/demo/autoWidth.md correctly 1`] = `
+<div>
+  <div
+    style="margin-bottom:32px"
+  >
+    <div
+      class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
+    >
+      <span
+        class="arco-divider-text arco-divider-text-center"
+      >
+        <span
+          class="arco-typography"
+        >
+          <code>
+            {"minWidth":200,"maxWidth":500}
+          </code>
+        </span>
+      </span>
+    </div>
+    <div
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+      role="combobox"
+      style="min-width:200px;max-width:500px;width:auto"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <span
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value-mirror"
+          />
+          <span
+            class="arco-select-view-value"
+            style="display:none"
+          />
+        </span>
+        <div
+          aria-hidden="true"
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-down"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div
+      class="arco-select-wrapper"
+      style="min-width:200px;max-width:500px;width:auto"
+    >
+      <div
+        class="arco-select-addbefore"
+      >
+        Select
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title=""
+        >
+          <span
+            class="arco-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              style="width:100%"
+              value=""
+            />
+            <span
+              class="arco-select-view-value-mirror"
+            />
+            <span
+              class="arco-select-view-value"
+              style="display:none"
+            />
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin-bottom:32px"
+  >
+    <div
+      class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
+    >
+      <span
+        class="arco-divider-text arco-divider-text-center"
+      >
+        <span
+          class="arco-typography"
+        >
+          <code>
+            {"minWidth":0,"maxWidth":500}
+          </code>
+        </span>
+      </span>
+    </div>
+    <div
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+      role="combobox"
+      style="min-width:0;max-width:500px;width:auto"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <span
+          class="arco-select-view-selector"
+        >
+          <input
+            autocomplete="off"
+            class="arco-select-view-input"
+            placeholder="Please select"
+            style="width:100%"
+            value=""
+          />
+          <span
+            class="arco-select-view-value-mirror"
+          >
+            Please select
+          </span>
+          <span
+            class="arco-select-view-value"
+            style="display:none"
+          >
+            Please select
+          </span>
+        </span>
+        <div
+          aria-hidden="true"
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-down"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div
+      class="arco-select-wrapper"
+      style="min-width:0;max-width:500px;width:auto"
+    >
+      <div
+        class="arco-select-addbefore"
+      >
+        Select
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-single arco-select-show-search arco-select-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title=""
+        >
+          <span
+            class="arco-select-view-selector"
+          >
+            <input
+              autocomplete="off"
+              class="arco-select-view-input"
+              placeholder="Please select"
+              style="width:100%"
+              value=""
+            />
+            <span
+              class="arco-select-view-value-mirror"
+            >
+              Please select
+            </span>
+            <span
+              class="arco-select-view-value"
+              style="display:none"
+            >
+              Please select
+            </span>
+          </span>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin-bottom:32px"
+  >
+    <div
+      class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+      role="separator"
+    >
+      <span
+        class="arco-divider-text arco-divider-text-center"
+      >
+        <span
+          class="arco-typography"
+        >
+          <code>
+            {"minWidth":300,"maxWidth":"100%"}
+          </code>
+        </span>
+      </span>
+    </div>
+    <div
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+      role="combobox"
+      style="min-width:300px;max-width:100%;width:auto"
+      tabindex="0"
+    >
+      <div
+        class="arco-select-view"
+        title=""
+      >
+        <div
+          class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+        >
+          <div
+            class="arco-input-tag-view"
+          >
+            <div
+              class="arco-input-tag-inner"
+            >
+              <input
+                autocomplete="off"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                placeholder="Please select"
+                style="min-width:100%"
+                value=""
+              />
+              <span
+                class="arco-input-tag-input-mirror"
+              >
+                Please select
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="arco-select-suffix"
+        >
+          <div
+            class="arco-select-arrow-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="arco-icon arco-icon-down"
+              fill="none"
+              focusable="false"
+              stroke="currentColor"
+              stroke-width="4"
+              viewBox="0 0 48 48"
+            >
+              <path
+                d="M39.6 17.443 24.043 33 8.487 17.443"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div
+      class="arco-select-wrapper"
+      style="min-width:300px;max-width:100%;width:auto"
+    >
+      <div
+        class="arco-select-addbefore"
+      >
+        Select
+      </div>
+      <div
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
+        role="combobox"
+        tabindex="0"
+      >
+        <div
+          class="arco-select-view"
+          title=""
+        >
+          <div
+            class="arco-input-tag arco-input-tag-size-default arco-input-tag-has-placeholder"
+          >
+            <div
+              class="arco-input-tag-view"
+            >
+              <div
+                class="arco-input-tag-inner"
+              >
+                <input
+                  autocomplete="off"
+                  class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                  placeholder="Please select"
+                  style="min-width:100%"
+                  value=""
+                />
+                <span
+                  class="arco-input-tag-input-mirror"
+                >
+                  Please select
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="arco-select-suffix"
+          >
+            <div
+              class="arco-select-arrow-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="arco-icon arco-icon-down"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-width="4"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M39.6 17.443 24.043 33 8.487 17.443"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1026,7 +1474,7 @@ exports[`renders Select/demo/darggable.md correctly 1`] = `
             >
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -1216,8 +1664,9 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
         >
           <input
             autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Please select"
+            style="min-width:100%"
             value=""
           />
           <span
@@ -1346,7 +1795,7 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -1496,7 +1945,7 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -1646,7 +2095,7 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -1730,7 +2179,7 @@ exports[`renders Select/demo/multiple.md correctly 1`] = `
               </span>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -1943,8 +2392,9 @@ exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
         >
           <input
             autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Search by name"
+            style="min-width:100%"
             value=""
           />
           <span
@@ -2132,7 +2582,7 @@ exports[`renders Select/demo/options.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -2480,7 +2930,7 @@ exports[`renders Select/demo/render-format.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -2607,7 +3057,7 @@ exports[`renders Select/demo/render-tag.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />
@@ -3010,8 +3460,9 @@ exports[`renders Select/demo/size.md correctly 1`] = `
             >
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select"
+                style="min-width:100%"
                 value=""
               />
               <span
@@ -3075,8 +3526,9 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
         >
           <input
             autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Please select"
+            style="min-width:100%"
             value=""
           />
           <span
@@ -3144,8 +3596,9 @@ Array [
           >
             <input
               autocomplete="off"
-              class="arco-input-tag-input arco-input-tag-input-size-default"
+              class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Select a tag"
+              style="min-width:100%"
               value=""
             />
             <span

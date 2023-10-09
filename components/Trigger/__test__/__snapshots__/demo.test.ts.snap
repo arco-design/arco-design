@@ -65,7 +65,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
               </div>
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
                 value=""
               />

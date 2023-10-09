@@ -6224,7 +6224,7 @@ exports[`renders Tree/demo/search.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-search"
-    style="margin-bottom:8px;max-width:240px"
+    style="max-width:240px;margin-bottom:8px"
   >
     <span
       class="arco-input-group"

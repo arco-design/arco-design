@@ -199,6 +199,123 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Input/demo/autoWidth.md correctly 1`] = `
+<div>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+    role="separator"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-center"
+    >
+      <span
+        class="arco-typography"
+      >
+        <code>
+          {"minWidth":0,"maxWidth":500}
+        </code>
+      </span>
+    </span>
+  </div>
+  <input
+    class="arco-input arco-input-size-default arco-input-autowidth"
+    placeholder="Please Enter"
+    style="min-width:0;max-width:500px;width:auto"
+    value=""
+  />
+  <span
+    class="arco-input-mirror"
+    style="min-width:0;max-width:500px;width:auto"
+  >
+    Please Enter
+  </span>
+  <div
+    class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
+    role="separator"
+  >
+    <span
+      class="arco-divider-text arco-divider-text-center"
+    >
+      <span
+        class="arco-typography"
+      >
+        <code>
+          {"minWidth":300,"maxWidth":500}
+        </code>
+      </span>
+    </span>
+  </div>
+  <input
+    class="arco-input arco-input-size-default arco-input-autowidth"
+    style="min-width:300px;max-width:500px;width:auto"
+    value=""
+  />
+  <span
+    class="arco-input-mirror"
+    style="min-width:300px;max-width:500px;width:auto"
+  />
+  <br />
+  <br />
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-group-wrapper-autowidth"
+    style="min-width:300px;max-width:500px;width:auto"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-has-prefix arco-input-inner-wrapper-default"
+      >
+        <span
+          class="arco-input-group-prefix"
+        >
+          Prefix
+        </span>
+        <input
+          class="arco-input arco-input-size-default arco-input-autowidth"
+          value=""
+        />
+        <span
+          class="arco-input-mirror"
+        />
+      </span>
+    </span>
+  </div>
+  <br />
+  <br />
+  <div
+    class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-group-wrapper-autowidth"
+    style="min-width:300px;max-width:500px;width:auto"
+  >
+    <span
+      class="arco-input-group"
+    >
+      <span
+        class="arco-input-group-addbefore"
+      >
+        Before
+      </span>
+      <span
+        class="arco-input-inner-wrapper arco-input-inner-wrapper-has-prefix arco-input-inner-wrapper-default"
+      >
+        <span
+          class="arco-input-group-prefix"
+        >
+          Prefix
+        </span>
+        <input
+          class="arco-input arco-input-size-default arco-input-autowidth"
+          value=""
+        />
+        <span
+          class="arco-input-mirror"
+        />
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
 exports[`renders Input/demo/basic.md correctly 1`] = `
 <span
   class="arco-input-inner-wrapper arco-input-inner-wrapper-default arco-input-clear-wrapper"

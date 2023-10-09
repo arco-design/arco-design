@@ -29,6 +29,7 @@
 |unmountOnExit|是否在隐藏之后销毁 DOM 结构|boolean |`-`|-|
 |inputValue|输入框搜索文本的受控值|string |`-`|2.39.0|
 |placeholder|选择框默认文字。|string |`-`|-|
+|autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |fieldNames|指定 key，title，isLeaf，disabled，children 对应的字段|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|

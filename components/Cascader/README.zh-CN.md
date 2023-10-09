@@ -29,6 +29,7 @@
 |unmountOnExit|是否在隐藏之后销毁DOM结构，默认为 `true`。如果是动态加载时，默认为`false`。|boolean |`-`|-|
 |inputValue|输入框的值|string |`-`|2.34.0|
 |placeholder|选择框默认文字。|string |`-`|-|
+|autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |checkedStrategy|定制回填方式 <br/> parent: 子节点都被选中时候返回父节点 <br/> child: 返回子节点|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|展开下一级方式|'click' \| 'hover' |`click`|-|
 |mode|是否开启多选|'multiple' |`-`|-|

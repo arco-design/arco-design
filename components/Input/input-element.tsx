@@ -1,4 +1,4 @@
-import React, { useRef, useImperativeHandle, useEffect } from 'react';
+import React, { useRef, useImperativeHandle, useEffect, CSSProperties, useState } from 'react';
 import { InputComponentProps, InputProps, RefInputType } from './interface';
 import cs from '../_util/classNames';
 import omit from '../_util/omit';
@@ -9,6 +9,42 @@ import { isFunction, isObject } from '../_util/is';
 import useComposition from './useComposition';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 import fillNBSP from '../_util/fillNBSP';
+
+// 设置 input 元素缓冲宽度，避免 autoWidth.minWidth < padding + border 时，content 区域宽度为0，光标会看不到
+// 后续可考虑是否作为 autoWidth 的一个配置项暴露
+const inputContentWidth = 2;
+
+// 从 input 标签获取影响到宽度计算的"文本样式属性"和“布局”属性 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_text
+// 为什么不是直接把 input 标签的类名设置给 mirror 元素？避免用户对 input 类名自定义样式会影响到 mirror
+// 仅在 mounted 的时候执行一次
+const getStyleFromInput = (input: HTMLElement): CSSProperties => {
+  if (!input) {
+    return {};
+  }
+  const computeStyle = window.getComputedStyle(input);
+
+  const cssKeys = [
+    'font',
+    'letterSpacing',
+    'overflow',
+    'tabSize',
+    'textIndent',
+    'textTransform',
+    'whiteSpace',
+    'wordBreak',
+    'wordSpacing',
+    'paddingLeft',
+    'paddingRight',
+    'borderLeft',
+    'borderRight',
+    'boxSizing',
+  ];
+
+  return cssKeys.reduce((t, n) => {
+    t[n] = computeStyle[n];
+    return t;
+  }, {});
+};
 
 const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
   (props: InputComponentProps, ref) => {
@@ -48,7 +84,10 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       'suffix',
       'normalize',
       'normalizeTrigger',
+      'autoWidth',
     ]);
+
+    const [inputComputeStyle, setInputComputeStyle] = useState<CSSProperties>();
 
     const getKeyboardEvents = useKeyboardEvent();
     const refInput = useRef<HTMLInputElement>();
@@ -95,6 +134,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
         [`${prefixCls}-size-${size}`]: size,
         [`${prefixCls}-${props.status}`]: props.status,
         [`${prefixCls}-disabled`]: disabled,
+        [`${prefixCls}-autowidth`]: autoFitWidth,
       },
       hasParent ? undefined : className
     );
@@ -136,19 +176,21 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
 
     const updateInputWidth = () => {
       if (refInputMirror.current && refInput.current) {
-        const needToShowPlaceholder = !inputProps.value && placeholder;
-        // use default width of input when placeholder is visible
-        if (needToShowPlaceholder) {
-          refInput.current.style.width = null;
-        } else {
-          const width = refInputMirror.current.offsetWidth;
-          refInput.current.style.width = `${width + (width ? 8 : 4)}px`;
-        }
+        const width = refInputMirror.current.offsetWidth;
+
+        refInput.current.style.width = `${width + inputContentWidth}px`;
       }
     };
 
     // Set the initial width of <input>, and subsequent updates are triggered by ResizeObserver
-    useEffect(() => autoFitWidth && updateInputWidth(), []);
+    useEffect(() => {
+      if (autoFitWidth) {
+        if (!isObject(autoFitWidth) || !autoFitWidth.pure) {
+          setInputComputeStyle(getStyleFromInput(refInput?.current));
+        }
+        updateInputWidth();
+      }
+    }, [autoFitWidth]);
 
     // Here also need placeholder to trigger updateInputWidth after user-input is cleared
     const mirrorValue = inputProps.value || placeholder;
@@ -210,6 +252,8 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
               hasParent
                 ? {}
                 : {
+                    minWidth: isObject(autoFitWidth) ? autoFitWidth.minWidth : undefined,
+                    maxWidth: isObject(autoFitWidth) ? autoFitWidth.maxWidth : undefined,
                     ...style,
                     ...('height' in props ? { height } : {}),
                   }
@@ -232,7 +276,19 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
               refPrevInputWidth.current = inputWidth;
             }}
           >
-            <span className={`${prefixCls}-mirror`} ref={refInputMirror}>
+            <span
+              className={cs(`${prefixCls}-mirror`)}
+              style={
+                hasParent
+                  ? inputComputeStyle
+                  : {
+                      ...inputComputeStyle,
+                      ...style,
+                      ...('height' in props ? { height } : {}),
+                    }
+              }
+              ref={refInputMirror}
+            >
               {fillNBSP(mirrorValue)}
             </span>
           </ResizeObserver>

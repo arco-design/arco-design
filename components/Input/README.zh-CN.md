@@ -24,6 +24,7 @@
 |defaultValue|默认值|string |`-`|-|
 |placeholder|输入框提示文字|string |`-`|-|
 |value|输入框的值，受控模式|string |`-`|-|
+|autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |normalizeTrigger|指定 normalize 执行的时机|('onBlur' \| 'onPressEnter')[] |`['onBlur']`|2.50.0|
 |size|输入框的尺寸|'mini' \| 'small' \| 'default' \| 'large' |`default`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
