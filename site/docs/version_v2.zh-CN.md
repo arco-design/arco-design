@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.54.0
+
+2023-10-09
+
+### 💎 功能优化
+
+- 优化 `Divider` 组件的内联样式 borderStyle 能作用在分割线。([#2277](https://github.com/arco-design/arco-design/pull/2277))
+
+### 🆕 功能升级
+
+- `Tabs` 支持定制下划线尺寸([#2278](https://github.com/arco-design/arco-design/pull/2278))
+- `Select` 组件支持通过 `autoWidth` 属性设置宽度自适应。([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- `Cascader` 组件支持通过 `autoWidth` 属性设置宽度自适应。([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- `TreeSelect` 组件支持通过 `autoWidth` 属性设置宽度自适应。([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- `Input` 组件支持通过 `autoWidth` 属性设置宽度自适应。([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- `Select` 组件 `allowCreate` 属性允许传入 `formatter` 以格式化用户创建的选项。([#2259](https://github.com/arco-design/arco-design/pull/2259))
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` 长按按钮时，因按钮事件抖动引起的增减异常。([#2255](https://github.com/arco-design/arco-design/pull/2255) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.53.2
 
 2023-09-22

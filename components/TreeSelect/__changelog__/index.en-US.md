@@ -1,3 +1,11 @@
+## 2.54.0
+
+2023-10-09
+
+### 🆕 Feature
+
+- The `TreeSelect` component supports setting width adaptation through the `autoWidth` property.([#2274](https://github.com/arco-design/arco-design/pull/2274))
+
 ## 2.53.1
 
 2023-09-15

@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.54.0
+
+2023-10-09
+
+### 💎 Enhancement
+
+- Optimize the inline style borderStyle of the `Divider` component to work on the dividing line.([#2277](https://github.com/arco-design/arco-design/pull/2277))
+
+### 🆕 Feature
+
+- `Tabs` supports custom underline size([#2278](https://github.com/arco-design/arco-design/pull/2278))
+- The `Select` component supports setting width adaptation through the `autoWidth` property.([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- The `Cascader` component supports setting width adaptation through the `autoWidth` property.([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- The `TreeSelect` component supports setting width adaptation through the `autoWidth` property.([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- The `Input` component supports setting width adaptation through the `autoWidth` property.([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- The `allowCreate` property of `Select` allows passing in a `formatter` to format user-created options.([#2259](https://github.com/arco-design/arco-design/pull/2259))
+
+### 🐛 BugFix
+
+- Fixed the abnormal increase and decrease of `InputNumber` caused by the jitter of the button event when the button is long pressed.([#2255](https://github.com/arco-design/arco-design/pull/2255) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.53.2
 
 2023-09-22
