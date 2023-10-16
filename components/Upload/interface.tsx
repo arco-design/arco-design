@@ -32,7 +32,7 @@ export type CustomIconType = {
 
 export type RequestOptions = Pick<
   UploadProps,
-  'headers' | 'name' | 'data' | 'withCredentials' | 'action'
+  'headers' | 'name' | 'data' | 'withCredentials' | 'action' | 'method'
 > & {
   /** 更新当前文件的上传进度 。percent: 当前上传进度百分比 */
   onProgress: (percent: number, event?: ProgressEvent) => void;
@@ -114,6 +114,13 @@ export interface UploadProps {
    * @en Uploading URL
    */
   action?: string;
+  /**
+   * @zh 上传请求的 http method
+   * @en The http method of upload request
+   * @defaultValue post
+   * @version 2.55.0
+   */
+  method?: string;
   /**
    * @zh 限制上传数量。默认超出后会隐藏上传节点。对象类型在 `2.28.0` 支持
    * @en maximum number of uploads allowed. Object type is supported in `2.28.0`

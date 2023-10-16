@@ -20,6 +20,7 @@ const uploadRequest: UploadRequest = function (options: RequestOptions) {
     onError = NOOP,
     onSuccess = NOOP,
     action,
+    method,
     headers = {},
     name: originName,
     file,
@@ -60,7 +61,7 @@ const uploadRequest: UploadRequest = function (options: RequestOptions) {
   }
   formData.append(name || 'file', file);
 
-  xhr.open('post', action, true);
+  xhr.open(method, action, true);
   if (withCredentials && 'withCredentials' in xhr) {
     xhr.withCredentials = true;
   }
