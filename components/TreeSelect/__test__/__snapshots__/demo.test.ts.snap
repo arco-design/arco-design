@@ -108,7 +108,8 @@ exports[`renders TreeSelect/demo/addon.md correctly 1`] = `
               >
                 <input
                   autocomplete="off"
-                  class="arco-input-tag-input arco-input-tag-input-size-default"
+                  class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                  style="min-width:100%"
                   value=""
                 />
                 <span
@@ -314,7 +315,7 @@ exports[`renders TreeSelect/demo/checkable.md correctly 1`] = `
             </div>
             <input
               autocomplete="off"
-              class="arco-input-tag-input arco-input-tag-input-size-default"
+              class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder=""
               value=""
             />
@@ -503,7 +504,7 @@ exports[`renders TreeSelect/demo/checkedStrategy.md correctly 1`] = `
             </div>
             <input
               autocomplete="off"
-              class="arco-input-tag-input arco-input-tag-input-size-default"
+              class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder=""
               value=""
             />
@@ -647,8 +648,9 @@ exports[`renders TreeSelect/demo/draggable.md correctly 1`] = `
             >
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="请选择..."
+                style="min-width:100%"
                 value=""
               />
               <span
@@ -969,8 +971,9 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
             >
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="min-width:100%"
                 value=""
               />
               <span
@@ -1033,8 +1036,9 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
             >
               <input
                 autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default"
+                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Max display 2 tags"
+                style="min-width:100%"
                 value=""
               />
               <span
@@ -1098,8 +1102,9 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
         >
           <input
             autocomplete="off"
-            class="arco-input-tag-input arco-input-tag-input-size-default"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="please select..."
+            style="min-width:100%"
             value=""
           />
           <span

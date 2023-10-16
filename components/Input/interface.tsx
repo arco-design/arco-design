@@ -52,6 +52,14 @@ export interface InputProps
    */
   status?: 'error' | 'warning';
   /**
+   * @zh 设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%
+   * @en auto width. minWidth defaults to 0, maxWidth defaults to 100%
+   * @version 2.54.0
+   */
+  autoWidth?:
+    | boolean
+    | { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] };
+  /**
   /**
    * @zh 输入时的回调
    * @en Callback when user input
@@ -306,7 +314,14 @@ export interface InputComponentProps extends InputProps {
   prefixCls?: string;
   hasParent?: boolean;
   // input 随输入文本的宽度变化
-  autoFitWidth?: boolean | { delay: number | ((width: number, prevWidth: number) => number) };
+  autoFitWidth?:
+    | boolean
+    | {
+        minWidth?: CSSProperties['minWidth'];
+        maxWidth?: CSSProperties['maxWidth'];
+        pure?: boolean; // 是否只测量内容宽度，排除 padding ，border 等因素
+        delay: number | ((width: number, prevWidth: number) => number);
+      };
 }
 
 export type RefInputType = {

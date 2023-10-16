@@ -50,7 +50,7 @@ function Input(baseProps: InputProps, ref) {
   const props = useMergeProps<InputProps>(baseProps, {}, componentConfig?.Input);
   const {
     className,
-    style,
+    style: propsStyle,
     addBefore,
     addAfter,
     suffix,
@@ -62,7 +62,19 @@ function Input(baseProps: InputProps, ref) {
     maxLength,
     showWordLimit,
     allowClear,
+    autoWidth: propsAutoWidth,
   } = props;
+
+  const autoWidth = propsAutoWidth
+    ? { minWidth: 0, maxWidth: '100%', ...(isObject(propsAutoWidth) ? propsAutoWidth : {}) }
+    : null;
+
+  const style = {
+    minWidth: autoWidth?.minWidth,
+    maxWidth: autoWidth?.maxWidth,
+    width: autoWidth && 'auto',
+    ...propsStyle,
+  };
 
   const trueMaxLength = isObject(maxLength) ? maxLength.length : maxLength;
   const mergedMaxLength = isObject(maxLength) && maxLength.errorOnly ? undefined : trueMaxLength;
@@ -119,6 +131,7 @@ function Input(baseProps: InputProps, ref) {
       [`${prefixCls}-has-suffix`]: suffixElement,
       [`${prefixCls}-group-wrapper-disabled`]: disabled,
       [`${prefixCls}-group-wrapper-rtl`]: rtl,
+      [`${prefixCls}-group-wrapper-autowidth`]: autoWidth,
     },
     className
   );
@@ -128,6 +141,8 @@ function Input(baseProps: InputProps, ref) {
     <InputComponent
       ref={inputRef}
       {...props}
+      autoFitWidth={!!autoWidth}
+      style={style}
       status={status}
       onFocus={(e) => {
         setFocus(true);

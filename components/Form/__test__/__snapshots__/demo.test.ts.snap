@@ -869,7 +869,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                         </div>
                         <input
                           autocomplete="off"
-                          class="arco-input-tag-input arco-input-tag-input-size-default"
+                          class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder=""
                           value=""
                         />
@@ -2761,7 +2761,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                         </div>
                         <input
                           autocomplete="off"
-                          class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled"
+                          class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled arco-input-tag-input-autowidth"
                           disabled=""
                           placeholder=""
                           value=""
@@ -7675,8 +7675,9 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       >
                         <input
                           autocomplete="off"
-                          class="arco-input-tag-input arco-input-tag-input-size-default"
+                          class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="please select"
+                          style="min-width:100%"
                           value=""
                         />
                         <span
@@ -9489,8 +9490,9 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                       >
                         <input
                           autocomplete="off"
-                          class="arco-input-tag-input arco-input-tag-input-size-default"
+                          class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="Select..."
+                          style="min-width:100%"
                           value=""
                         />
                         <span

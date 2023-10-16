@@ -1,3 +1,11 @@
+## 2.54.0
+
+2023-10-09
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` 长按按钮时，因按钮事件抖动引起的增减异常。([#2255](https://github.com/arco-design/arco-design/pull/2255) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.51.1
 
 2023-08-04

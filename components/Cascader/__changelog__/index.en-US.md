@@ -1,3 +1,11 @@
+## 2.54.0
+
+2023-10-09
+
+### 🆕 Feature
+
+- The `Cascader` component supports setting width adaptation through the `autoWidth` property.([#2274](https://github.com/arco-design/arco-design/pull/2274))
+
 ## 2.52.2
 
 2023-09-01

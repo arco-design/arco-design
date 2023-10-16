@@ -60,6 +60,14 @@
       width: @tabs-line-size-ink-stroke;
       transition: top @transition-duration-2 @transition-timing-function-standard,
         height @transition-duration-2 @transition-timing-function-standard;
+
+      &.@{tabs-prefix-cls}-header-ink-custom .@{tabs-prefix-cls}-header-ink-inner {
+        left: unset;
+        bottom: unset;
+        right: 0;
+        transform: translateY(-50%);
+        top: 50%;
+      }
     }
   }
 
@@ -82,6 +90,11 @@
   &-header-nav-right &-header-ink {
     left: 0;
     right: unset;
+
+    .@{tabs-prefix-cls}-header-ink-inner {
+      left: 0;
+      right: unset;
+    }
   }
 
   &-header-nav-vertical &-header-scroll {

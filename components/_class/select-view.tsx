@@ -86,12 +86,6 @@ export interface SelectViewCommonProps
    */
   allowClear?: boolean;
   /**
-   * @zh 是否允许通过输入创建新的选项。
-   * @en Whether to allow new options to be created by input.
-   * @version 2.13.0
-   */
-  allowCreate?: boolean;
-  /**
    * @zh 最多显示多少个 `tag`，仅在多选或标签模式有效。
    * @en The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.
    * @version Object type in 2.37.0
@@ -130,6 +124,14 @@ export interface SelectViewCommonProps
    */
   clearIcon?: ReactNode;
   /**
+   * @zh 设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%
+   * @en auto width. minWidth defaults to 0, maxWidth defaults to 100%
+   * @version 2.54.0
+   */
+  autoWidth?:
+    | boolean
+    | { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] };
+  /**
    * @zh 选择框前添加元素
    * @en The label text displayed before (on the left side of) the select field
    * @version 2.41.0
@@ -159,6 +161,7 @@ export interface SelectViewProps extends SelectViewCommonProps {
   value?: any;
   popupVisible?: boolean;
   // other ⬇️
+  allowCreate?: boolean;
   isEmptyValue: boolean;
   isMultiple?: boolean;
   prefixCls: string;
@@ -623,7 +626,21 @@ const CoreSelectView = React.forwardRef(
 );
 
 const SelectView = (props: SelectViewProps, ref) => {
-  const { prefixCls, id, style, className, addBefore, rtl, renderView, ...rest } = props;
+  const {
+    prefixCls,
+    id,
+    style,
+    className,
+    addBefore,
+    rtl,
+    renderView,
+    autoWidth: propsAutoWidth,
+    ...rest
+  } = props;
+
+  const autoWidth = propsAutoWidth
+    ? { minWidth: 0, maxWidth: '100%', ...(isObject(propsAutoWidth) ? propsAutoWidth : {}) }
+    : null;
 
   const refCoreSelectView = useRef<SelectViewHandle>(null);
 
@@ -631,7 +648,11 @@ const SelectView = (props: SelectViewProps, ref) => {
   // const needAddAfter = addAfter !== null && addAfter !== undefined;
   const needAddAfter = false;
   const needWrapper = needAddBefore || needAddAfter;
-  const propsAppliedToRoot = { id, style, className };
+  const propsAppliedToRoot = {
+    id,
+    style: { ...autoWidth, width: autoWidth ? 'auto' : undefined, ...style },
+    className,
+  };
   const htmlDataAttributes = pickDataAttributes(rest);
 
   useImperativeHandle<any, SelectViewHandle>(ref, () => refCoreSelectView.current);

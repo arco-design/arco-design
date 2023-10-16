@@ -15,7 +15,6 @@ When users need to select one or more from a group of similar data, they can use
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |allowClear|Whether allow to clear selected options|boolean |`-`|-|
-|allowCreate|Whether to allow new options to be created by input.|boolean |`-`|2.13.0|
 |animation|Whether to add animation for internal label changes|boolean |`true`|2.15.0|
 |bordered|Whether to render border|boolean |`true`|-|
 |defaultActiveFirstOption|Whether to highlight the first option by default|boolean |`true`|-|
@@ -29,6 +28,8 @@ When users need to select one or more from a group of similar data, they can use
 |unmountOnExit|Whether to destroy the DOM when hiding|boolean |`true`|-|
 |inputValue|To set input value|string |`-`|-|
 |placeholder|Placeholder of element|string |`-`|-|
+|autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
+|allowCreate|Whether to allow new options to be created by input.|\| boolean\| {formatter: (inputValue: string, creating: boolean) => [SelectProps](select#select)['options'][number];} |`-`|2.13.0, `{ formatter }` in 2.54.0|
 |mode|Set mode of Select(**`tags` recommends using `mode: multiple; allowCreate: true` instead, this mode will be removed in the next major version**)|'multiple' \| 'tags' |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|

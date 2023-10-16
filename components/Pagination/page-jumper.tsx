@@ -38,8 +38,10 @@ function PageJumper(props: PageJumperProps) {
       return;
     }
 
-    if (inputText === current && !simple) {
-      setInputText(undefined);
+    if (inputText === current) {
+      if (!simple) {
+        setInputText(undefined);
+      }
       return;
     }
 

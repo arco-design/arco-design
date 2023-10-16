@@ -111,6 +111,11 @@
       .@{tabs-prefix-cls}-header {
         &-ink {
           top: 0;
+
+          .@{tabs-prefix-cls}-header-ink-inner {
+            bottom: unset;
+            top: 0;
+          }
         }
       }
     }
@@ -194,6 +199,21 @@
 
       &.@{tabs-prefix-cls}-header-ink-no-animation {
         transition: none;
+      }
+
+      // 自定义 ink
+      &.@{tabs-prefix-cls}-header-ink-custom {
+        background-color: transparent;
+
+        .@{tabs-prefix-cls}-header-ink-inner {
+          background-color: @tabs-line-color-ink-bg;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          transform: translateX(-50%);
+        }
       }
 
       &-disabled {

@@ -76,6 +76,11 @@
   line-height: @line-height-base;
   .input-style();
 
+  &-autowidth {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   // 禁用样式
   &-disabled {
     .disabled-style();
@@ -191,6 +196,33 @@
 
   &:not(&-focus) .@{input-prefix-cls}-clear-icon:hover::before {
     background-color: @input-color-icon-clear-bg_hover;
+  }
+}
+
+.@{input-prefix-cls}-group-wrapper-autowidth {
+  .@{input-prefix-cls}-group {
+    display: flex;
+    align-items: stretch;
+
+    &-addbefore,
+    &-after {
+      display: inline-flex;
+      height: unset;
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: auto;
+      align-items: center;
+    }
+  }
+
+  .@{input-prefix-cls}-inner-wrapper {
+    overflow: hidden;
+  }
+
+  .@{input-prefix-cls} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
   }
 }
 

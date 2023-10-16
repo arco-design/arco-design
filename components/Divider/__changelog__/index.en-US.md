@@ -1,3 +1,11 @@
+## 2.54.0
+
+2023-10-09
+
+### 💎 Enhancement
+
+- Optimize the inline style borderStyle of the `Divider` component to work on the dividing line.([#2277](https://github.com/arco-design/arco-design/pull/2277))
+
 ## 2.28.0
 
 2022-01-07

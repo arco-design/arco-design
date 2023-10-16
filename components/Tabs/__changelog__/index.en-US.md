@@ -1,3 +1,11 @@
+## 2.54.0
+
+2023-10-09
+
+### 🆕 Feature
+
+- `Tabs` supports custom underline size([#2278](https://github.com/arco-design/arco-design/pull/2278))
+
 ## 2.52.0
 
 2023-08-18

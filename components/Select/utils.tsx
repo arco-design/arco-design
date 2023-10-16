@@ -61,8 +61,8 @@ function flatChildren(
     prefixCls,
   }: {
     inputValue: string;
-    userCreatedOptions?: string[];
-    userCreatingOption?: string;
+    userCreatedOptions?: SelectProps['options'];
+    userCreatingOption?: SelectProps['options'][number];
     prefixCls: string;
   },
   // 递归过程中需要持续传递的数据
@@ -174,13 +174,13 @@ function flatChildren(
   const extendChildren = (arr, origin: OptionInfo['_origin']) => {
     if (origin && isArray(arr) && arr.length) {
       (arr as OptionsType).forEach((option) => {
-        option =
-          isString(option) || isNumber(option)
-            ? {
-                label: option,
-                value: option,
-              }
-            : option;
+        if (isString(option) || isNumber(option)) {
+          option = {
+            label: option,
+            value: option,
+          };
+        }
+
         const child = (
           <Option
             _key={getChildKey(option)}

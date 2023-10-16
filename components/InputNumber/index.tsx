@@ -254,8 +254,6 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       ? {}
       : {
           onMouseDown: (e) => handleArrowKey(e, method, true),
-          onMouseLeave: stop,
-          onMouseUp: stop,
         };
   };
 
@@ -274,6 +272,8 @@ function InputNumber(baseProps: InputNumberProps, ref) {
         className={cs(`${prefixCls}-step-button`, {
           [`${prefixCls}-step-button-disabled`]: !isStepButtonValid,
         })}
+        onMouseLeave={stop}
+        onMouseUp={stop}
         {...(isStepButtonValid ? getControlButtonEventsHandlers(method) : {})}
       >
         {icon}

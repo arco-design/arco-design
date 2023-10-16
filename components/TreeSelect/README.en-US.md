@@ -29,6 +29,7 @@ Can choose tree structure data.Only Single choice is supports.
 |unmountOnExit|Whether to destroy the DOM after hiding|boolean |`-`|-|
 |inputValue|To set input search value|string |`-`|2.39.0|
 |placeholder|Placeholder of element|string |`-`|-|
+|autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |fieldNames|Custom field name for key, title, isLeaf, disabled and children|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|

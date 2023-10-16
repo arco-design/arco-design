@@ -1,3 +1,11 @@
+## 2.54.0
+
+2023-10-09
+
+### 🐛 BugFix
+
+- Fixed the abnormal increase and decrease of `InputNumber` caused by the jitter of the button event when the button is long pressed.([#2255](https://github.com/arco-design/arco-design/pull/2255) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.51.1
 
 2023-08-04

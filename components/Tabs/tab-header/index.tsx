@@ -100,6 +100,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     renderTabTitle,
     scrollAfterEdit,
     scrollPosition = 'auto',
+    inkBarSize,
   } = mergeProps;
 
   const scrollConfig = isObject(scrollAfterEdit)
@@ -412,6 +413,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
                     getTitleRef={(key) => titleRef.current[key]}
                     activeTab={activeTab}
                     getHeaderRef={() => headerRef}
+                    inkBarSize={inkBarSize}
                   />
                 )}
               </div>

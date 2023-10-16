@@ -17,13 +17,15 @@
       display: flex;
       align-items: center;
       border-bottom-width: 0;
+      border-bottom-style: @divider-line-style;
 
       &::before,
       &::after {
         content: '';
         height: 0;
         flex: 1;
-        border-bottom: @divider-size @divider-line-style;
+        border-bottom: @divider-size;
+        border-bottom-style: inherit;
         border-bottom-color: inherit;
       }
     }

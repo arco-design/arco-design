@@ -1,3 +1,12 @@
+## 2.54.0
+
+2023-10-09
+
+### 🆕 功能升级
+
+- `Select` 组件支持通过 `autoWidth` 属性设置宽度自适应。([#2274](https://github.com/arco-design/arco-design/pull/2274))
+- `Select` 组件 `allowCreate` 属性允许传入 `formatter` 以格式化用户创建的选项。([#2259](https://github.com/arco-design/arco-design/pull/2259))
+
 ## 2.53.1
 
 2023-09-15
