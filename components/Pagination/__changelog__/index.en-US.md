@@ -1,3 +1,11 @@
+## 2.54.1
+
+2023-10-16
+
+### 💎 Enhancement
+
+- In `simple` mode of Pagination, the update event is no longer triggered when the value of the jumper remains unchanged.([#2287](https://github.com/arco-design/arco-design/pull/2287))
+
 ## 2.49.0
 
 2023-06-02
