@@ -166,4 +166,21 @@ describe('Upload', function () {
 
     expect(fileList[2].status).toBe(STATUS.uploading);
   });
+
+  it('custom upload method', async function () {
+    const wrapper = render(<Upload action="/sss" method="put" />);
+    const input = wrapper.find('input');
+    const files = [getFile('file1')];
+
+    await act(() => {
+      fireEvent.change(input.item(0), {
+        target: {
+          files,
+        },
+      });
+    });
+
+    await sleep(100);
+    expect(requests[4].method).toEqual('put');
+  });
 });

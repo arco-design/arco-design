@@ -22,6 +22,7 @@ Upload file by selecting or dragging.
 |multiple|Whether to allow multiple files to be selected|boolean |`-`|-|
 |withCredentials|Whether to carry cookies when uploading requests|boolean |`-`|-|
 |action|Uploading URL|string |`-`|-|
+|method|The http method of upload request|string |`post`|2.55.0|
 |listType|Upload list Style|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
 |tip|The tip text|string \| React.ReactNode |`-`|-|
 |accept|Accepted [file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)（`strict` in `2.53.0`, defaultValue is true. When set to false, accept behaves the same as native. When set to true, file extensions will be strictly matched and files that do not meet the accept rules will be filtered out. )|string \| { type: string; strict?: boolean } |`-`|-|
@@ -78,7 +79,7 @@ File upload list display
 ```js
 export type RequestOptions = Pick<
   UploadProps,
-  "headers" | "name" | "data" | "withCredentials" | "action"
+  "headers" | "name" | "data" | "withCredentials" | "action" | "method"
 > & {
   /** 更新当前文件的上传进度 。percent: 当前上传进度百分比 */
   onProgress: (percent: number, event?: ProgressEvent) => void;
