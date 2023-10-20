@@ -145,6 +145,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   );
   const [filters, setFilters] = useState<FilterType<T>>(currentFilters);
   const [tableViewWidth, setTableViewWidth] = useState<number>(0);
+
+  const [columnWidths, setColumnWidths] = useState<number[]>([]);
+
   const stickyOffsets: number[] = useStickyOffsets(flattenColumns);
   const [groupStickyClassNames, stickyClassNames] = useStickyClassNames(
     groupColumns,
@@ -783,7 +786,12 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return fixedHeader || virtualized ? (
       <ComponentHeaderWrapper className={`${prefixCls}-header`}>
         <ComponentTable ref={refTableHead} style={maxContentWidth ? {} : scrollStyleX}>
-          <ColGroup columns={flattenColumns} prefixCls={prefixCls} />
+          <ColGroup
+            columns={flattenColumns}
+            prefixCls={prefixCls}
+            producer={false}
+            columnWidths={maxContentWidth ? columnWidths : null}
+          />
           {theadNode}
         </ComponentTable>
       </ComponentHeaderWrapper>
@@ -844,6 +852,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     );
 
   function renderTbody() {
+    const maxContentWidth = isObject(scroll) && scroll.x === 'max-content';
     return (
       <ResizeObserver onResize={setScrollBarStyle}>
         {fixedHeader && !virtualized ? (
@@ -853,7 +862,13 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
             style={scrollStyleY}
           >
             <ComponentTable style={scrollStyleX}>
-              <ColGroup columns={flattenColumns} prefixCls={prefixCls} />
+              <ColGroup
+                columns={flattenColumns}
+                prefixCls={prefixCls}
+                producer={maxContentWidth}
+                onSetColumnWidths={setColumnWidths}
+                expandedRowKeys={expandedRowKeys}
+              />
               {tbody}
             </ComponentTable>
           </ComponentBodyWrapper>
