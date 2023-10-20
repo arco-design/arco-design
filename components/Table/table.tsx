@@ -790,7 +790,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
             columns={flattenColumns}
             prefixCls={prefixCls}
             producer={false}
-            columnWidths={maxContentWidth ? columnWidths : null}
+            columnWidths={maxContentWidth && scroll.y ? columnWidths : null}
           />
           {theadNode}
         </ComponentTable>
@@ -852,7 +852,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     );
 
   function renderTbody() {
-    const maxContentWidth = isObject(scroll) && scroll.x === 'max-content';
+    const producer = isObject(scroll) && scroll.x === 'max-content' && !!scroll.y;
     return (
       <ResizeObserver onResize={setScrollBarStyle}>
         {fixedHeader && !virtualized ? (
@@ -865,7 +865,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
               <ColGroup
                 columns={flattenColumns}
                 prefixCls={prefixCls}
-                producer={maxContentWidth}
+                producer={producer}
                 onSetColumnWidths={setColumnWidths}
                 expandedRowKeys={expandedRowKeys}
               />
