@@ -502,7 +502,11 @@ export type FormItemContextProps<
   validateMessages?: FormProps['validateMessages'];
   updateFormItem?: (
     field: string,
-    params: { errors?: FieldError<FieldValue>; warnings?: ReactNode[] }
+    params: {
+      errors?: FieldError<FieldValue>;
+      warnings?: ReactNode[];
+      validateStatus?: FormItemProps['validateStatus'];
+    }
   ) => void;
 };
 
