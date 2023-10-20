@@ -54,7 +54,7 @@ function App() {
           },
         ]}
       >
-        <Input placeholder="please enter your username" allowClear />
+        <Input placeholder="please enter your username"  />
       </FormItem>
       <FormItem wrapperCol={{ offset: 5 }}>
         <Button

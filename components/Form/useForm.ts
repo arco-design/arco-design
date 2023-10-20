@@ -25,6 +25,7 @@ export function getFormInstance<
     validate: store.validate,
     scrollToField: () => {},
     getFieldsState: store.getFieldsState,
+    // arco 内部使用，业务万不可调用
     getInnerMethods: (inner?: boolean): InnerMethodsReturnType<FormData, FieldValue, FieldKey> => {
       const methods = {} as InnerMethodsReturnType<FormData, FieldValue, FieldKey>;
       if (inner) {
@@ -32,11 +33,13 @@ export function getFormInstance<
           'registerField',
           'registerWatcher',
           'registerStateWatcher',
+          'registerFormWatcher',
           'innerSetInitialValues',
           'innerSetInitialValue',
           'innerSetCallbacks',
           'innerSetFieldValue',
           'innerGetStore',
+          'innerGetStoreStatus',
           'innerGetFieldValue',
           'innerCollectFormState',
         ].map((key) => {
