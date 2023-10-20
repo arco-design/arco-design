@@ -1,3 +1,11 @@
+## 2.54.2
+
+2023-10-20
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 设置 `shortcuts={[]}` 意外显示 0 的 bug。([#2302](https://github.com/arco-design/arco-design/pull/2302))
+
 ## 2.50.2
 
 2023-07-21

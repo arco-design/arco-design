@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.54.2
+
+2023-10-20
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件在 `scroll={x: 'max-content', y: true}` 时，表头和内容无法对齐的问题([#2303](https://github.com/arco-design/arco-design/pull/2303))
+- 修复 `DatePicker.RangePicker` 设置 `shortcuts={[]}` 意外显示 0 的 bug。([#2302](https://github.com/arco-design/arco-design/pull/2302))
+- 修复 `Spin` 组件传入 Children 为 `0` 时，其子节点未渲染的问题。([#2301](https://github.com/arco-design/arco-design/pull/2301))
+- 修复 `Form` 组件在 `validating` 状态样式丢失的 bug。([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+- 修复 `Form.useFormContext` 状态更新导致组件卡顿的问题。([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+
+### 💅 样式更新
+
+- 修复 `Button.Group` 在单个按钮下的圆角样式问题。([#2294](https://github.com/arco-design/arco-design/pull/2294) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.54.1
 
 2023-10-16

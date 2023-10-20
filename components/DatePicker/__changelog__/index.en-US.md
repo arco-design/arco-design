@@ -1,3 +1,11 @@
+## 2.54.2
+
+2023-10-20
+
+### 🐛 BugFix
+
+- Fixed `DatePicker.RangePicker` setting `shortcuts={[]}` unexpectedly displayed 0.([#2302](https://github.com/arco-design/arco-design/pull/2302))
+
 ## 2.50.2
 
 2023-07-21

@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.54.2
+
+2023-10-20
+
+### 🐛 BugFix
+
+- Fixed an issue where the `Table` component would not align with the table header when `scroll={x: 'max-content', y: true}`([#2303](https://github.com/arco-design/arco-design/pull/2303))
+- Fixed `DatePicker.RangePicker` setting `shortcuts={[]}` unexpectedly displayed 0.([#2302](https://github.com/arco-design/arco-design/pull/2302))
+- Fixed the issue that the child node of `Spin` is not rendered when the child passed in was `0`.([#2301](https://github.com/arco-design/arco-design/pull/2301))
+- Fixed the bug where the `Form` component's style was lost in the `validating` state.([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+- Fixed the issue where `Form.useFormContext` status update caused component lag.([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+
+### 💅 Style
+
+- Fix `Button.Group` border-radius style under single button.([#2294](https://github.com/arco-design/arco-design/pull/2294) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.54.1
 
 2023-10-16

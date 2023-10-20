@@ -1,3 +1,11 @@
+## 2.54.2
+
+2023-10-20
+
+### 🐛 BugFix
+
+- Fixed an issue where the `Table` component would not align with the table header when `scroll={x: 'max-content', y: true}`([#2303](https://github.com/arco-design/arco-design/pull/2303))
+
 ## 2.53.0
 
 2023-09-08

@@ -1,3 +1,12 @@
+## 2.54.2
+
+2023-10-20
+
+### 🐛 问题修复
+
+- 修复 `Form` 组件在 `validating` 状态样式丢失的 bug。([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+- 修复 `Form.useFormContext` 状态更新导致组件卡顿的问题。([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+
 ## 2.52.2
 
 2023-09-01
