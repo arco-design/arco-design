@@ -17,11 +17,13 @@ type ColGroupType = {
   producer?: boolean;
   onSetColumnWidths?: (widths: number[]) => void;
   expandedRowKeys?: React.Key[];
+  data?: any[];
 };
 
 function ColGroup(props: ColGroupType) {
   const colgroupRef = useRef<HTMLTableColElement>();
-  const { prefixCls, columns, columnWidths, producer, expandedRowKeys, onSetColumnWidths } = props;
+  const { prefixCls, columns, columnWidths, producer, expandedRowKeys, data, onSetColumnWidths } =
+    props;
 
   useEffect(() => {
     if (producer && colgroupRef.current) {
@@ -37,7 +39,7 @@ function ColGroup(props: ColGroupType) {
       });
       onSetColumnWidths(widths);
     }
-  }, [producer, onSetColumnWidths, prefixCls, expandedRowKeys]);
+  }, [producer, onSetColumnWidths, prefixCls, expandedRowKeys, data, columns]);
 
   let mainColIndex = 0;
 

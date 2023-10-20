@@ -868,6 +868,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
                 producer={producer}
                 onSetColumnWidths={setColumnWidths}
                 expandedRowKeys={expandedRowKeys}
+                data={data}
               />
               {tbody}
             </ComponentTable>
