@@ -777,7 +777,7 @@ const Picker = (baseProps: RangePickerProps) => {
           panelModes={panelModes}
           setPanelModes={setPanelModes}
         />
-        {shouldShowFooter && (
+        {!!shouldShowFooter && (
           <Footer
             {...shortcutsProps}
             DATEPICKER_LOCALE={locale.DatePicker}

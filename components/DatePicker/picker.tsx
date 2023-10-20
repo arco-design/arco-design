@@ -488,7 +488,7 @@ const Picker = (baseProps: InnerPickerProps) => {
           onMouseEnterCell,
           onMouseLeaveCell,
         })}
-        {shouldShowFooter && (
+        {!!shouldShowFooter && (
           <Footer
             {...shortcutsProps}
             DATEPICKER_LOCALE={DATEPICKER_LOCALE}
