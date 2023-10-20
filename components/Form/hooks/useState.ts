@@ -4,6 +4,7 @@ import { FormInstance, FieldState, KeyType } from '../interface';
 import { FormContext } from '../context';
 import warn from '../../_util/warning';
 
+// 获取指定 field 的内部状态，参数必填！！
 const useFormState = <
   FormData = any,
   FieldValue = FormData[keyof FormData],
