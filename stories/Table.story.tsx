@@ -1,11 +1,21 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Table, Button, Space, Switch, TableColumnProps, Input, TableInstance } from '@self';
+import {
+  Table,
+  Button,
+  Space,
+  Switch,
+  TableColumnProps,
+  Input,
+  TableInstance,
+  Typography,
+} from '@self';
 
 const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
+    width: 100,
   },
   {
     title: 'Salary',
@@ -63,6 +73,14 @@ function DemoTable() {
       columns={columns as any}
       data={data}
       pagination={pagination}
+      scroll={{
+        x: 'max-content',
+        y: 300,
+      }}
+      border={{
+        wrapper: true,
+        cell: true,
+      }}
       onChange={onChangeTable}
       rowSelection={{
         selectedRowKeys,
@@ -267,6 +285,10 @@ function DemoTreeData() {
         onExpand={(r) => {
           console.log('rrrr', r);
         }}
+        // scroll={{
+        //   x: 'max-content',
+        //   y: 300,
+        // }}
         rowSelection={{
           type: 'checkbox',
           onChange: (_, selectedRows) => {
@@ -421,6 +443,10 @@ export const DefaultExpand = () => {
         rowSelection={{
           type: 'checkbox',
           selectedRowKeys: [],
+        }}
+        scroll={{
+          x: 'max-content',
+          y: 300,
         }}
         expandProps={{
           expandRowByClick: true,
@@ -850,7 +876,8 @@ export const FixedTable = () => {
   return (
     <Table
       scroll={{
-        x: 1200,
+        x: 'max-content',
+        y: 200,
       }}
       // expandedRowRender={(record) => `${record.name}'s address is ${record.address}`}
       // rowSelection={{}}
@@ -997,19 +1024,114 @@ export const SortDemoTable = () => {
   );
 };
 
+export function SummaryTable() {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      fixed: 'left',
+      width: 200,
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+    },
+    {
+      title: 'Count',
+      dataIndex: 'count',
+    },
+    {
+      title: 'Stars',
+      dataIndex: 'stars',
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'Jane Doe Jane DoeJane DoeJane Doe',
+      salary: 23000,
+      count: 66,
+      stars: 5,
+    },
+    {
+      key: '2',
+      name: 'Alisa Ross',
+      salary: 25000,
+      count: 55,
+      stars: 8,
+    },
+    {
+      key: '3',
+      name: 'Kevin Sandra',
+      salary: 22000,
+      count: 100,
+      stars: 2,
+    },
+    {
+      key: '4',
+      name: 'Ed Hellen',
+      salary: 17000,
+      count: 88,
+      stars: 10,
+    },
+    {
+      key: '5',
+      name: 'William Smith',
+      salary: 27000,
+      count: 120,
+      stars: 4,
+    },
+  ];
+
+  function summary(currentData: any) {
+    return (
+      <Table.Summary.Row>
+        <Table.Summary.Cell>Total</Table.Summary.Cell>
+        <Table.Summary.Cell
+          style={{
+            backgroundColor: 'rgb(var(--success-1))',
+          }}
+        >
+          <Typography.Text type="success" bold>
+            {currentData.reduce((prev: any, next: any) => prev + next.salary, 0)}
+          </Typography.Text>
+        </Table.Summary.Cell>
+        <Table.Summary.Cell>
+          {currentData.reduce((prev: any, next: any) => prev + next.count, 0)}
+        </Table.Summary.Cell>
+        <Table.Summary.Cell>
+          {currentData.reduce((prev: any, next: any) => prev + next.stars, 0)}
+        </Table.Summary.Cell>
+      </Table.Summary.Row>
+    );
+  }
+
+  return (
+    <Table
+      columns={columns as any}
+      data={data}
+      scroll={{ x: 'max-content', y: 200 }}
+      border={{
+        wrapper: true,
+        cell: true,
+      }}
+      summary={summary}
+    />
+  );
+}
 function DemoScrollIntoView() {
   const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
       width: 140,
-      fixed: 'left' as const,
+      // fixed: 'left' as const,
     },
     {
       title: 'Salary',
       dataIndex: 'salary',
-      width: 100,
-      fixed: 'left' as const,
+      // width: 100,
+      // fixed: 'left' as const,
     },
     {
       title: 'Address',
@@ -1018,8 +1140,8 @@ function DemoScrollIntoView() {
     {
       title: 'Email',
       dataIndex: 'email',
-      width: 200,
-      fixed: 'right' as const,
+      // width: 200,
+      // fixed: 'right' as const,
     },
   ];
 
