@@ -215,7 +215,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     // 受控的筛选，当columns中的筛选发生改变时，更新state
     if (flattenFilteredValueColumns.length) {
       flattenFilteredValueColumns.forEach((column, index) => {
-        const innerDataIndex = column.dataIndex === undefined ? index : column.dataIndex;
+        const innerDataIndex = column.key || column.dataIndex || index;
         if (innerDataIndex !== undefined) {
           newFilters[innerDataIndex] = column.filteredValue;
         }
@@ -231,7 +231,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   /** ----------- Sorter ----------- */
 
   function onSort(direction, field) {
-    const column = getColumnByDataIndex(field);
+    const column = getColumnByUniqueKey(field);
     if (!column) {
       return;
     }
@@ -341,7 +341,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
     Object.keys(filters).forEach((field) => {
       if (filters[field] && filters[field].length) {
-        const column = getColumnByDataIndex(field) as ColumnProps<T>;
+        const column = getColumnByUniqueKey(field) as ColumnProps<T>;
         if (column && typeof column.onFilter === 'function') {
           _data = _data.filter((row) => {
             return filters[field].reduce(
@@ -623,12 +623,20 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     flattenData,
   } = useRowSelection<T>(props, pageData, clonedData, getRowKey);
 
-  function getColumnByDataIndex(dataIndex) {
+  // flattenColumns 在构造时优先使用了 column.key 作为主键，在查询时使用 getColumnByDataIndex 方法可能会导致bug。
+  function getColumnByUniqueKey(key: string | number) {
     return flattenColumns.find((column, index) => {
-      if (column.dataIndex !== undefined) {
-        return column.dataIndex === dataIndex;
+      if (typeof column.key !== 'undefined') {
+        return column.key === key;
       }
-      return Number(dataIndex) === index;
+      // unnecessary
+      if (typeof column.dataIndex !== 'undefined') {
+        return column.dataIndex === key;
+      }
+      if (typeof key === 'number') {
+        return index === key;
+      }
+      return false;
     });
   }
 

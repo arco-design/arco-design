@@ -184,11 +184,26 @@ function DemoTreeData() {
         }
         return col;
       },
-      sorter: (a: any, b: any) => a - b,
+      sorter: (a: any, b: any) => (a.name > b.name ? 1 : -1),
     },
     {
       title: 'Salary',
       dataIndex: 'salary',
+      sorter: (a: any, b: any) => a.salary - b.salary,
+      filters: [
+        {
+          text: '> 20000',
+          value: '20000',
+        },
+        {
+          text: '> 30000',
+          value: '30000',
+        },
+      ],
+      defaultFilters: ['20000'],
+      onFilter: (value: any, row: any) => row.salary > value,
+      sortDirections: ['ascend'],
+      defaultSortOrder: 'ascend',
     },
     {
       title: 'Address',
@@ -270,10 +285,6 @@ function DemoTreeData() {
       email: 'kevin.sandra@example.com',
     },
   ];
-
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <div>
@@ -558,6 +569,8 @@ export const SortTable = () => {
     {
       title: 'Name',
       dataIndex: 'name',
+      key: 'n',
+      sorter: (a: any, b: any) => (a.name > b.name ? 1 : -1),
     },
     {
       title: 'Address',
@@ -569,7 +582,22 @@ export const SortTable = () => {
     },
     {
       title: 'Age',
-      // dataIndex: 'age',
+      dataIndex: 'age',
+      key: 'a',
+      filters: [
+        {
+          text: '> 20',
+          value: 20,
+        },
+        {
+          text: '> 30',
+          value: 30,
+        },
+      ],
+      defaultFilters: [20],
+      onFilter: (value: any, row: any) => row.age > value,
+      defaultSortOrder: 'ascend' as const,
+      sorter: (a: any, b: any) => a.age - b.age,
       render: (_: any, record: any) => record.age,
     },
     {
@@ -578,18 +606,18 @@ export const SortTable = () => {
     },
   ];
 
-  const columnsSorter = (function () {
-    return columns.map((d) => {
-      if (d.title === 'Age') {
-        return {
-          ...d,
-          defaultSortOrder: 'ascend' as const,
-          sorter: (a: any, b: any) => a.age - b.age,
-        };
-      }
-      return d;
-    });
-  })();
+  // const columnsSorter = (function () {
+  //   return columns.map((d) => {
+  //     if (d.title === 'Age') {
+  //       return {
+  //         ...d,
+  //         defaultSortOrder: 'ascend' as const,
+  //         sorter: (a: any, b: any) => a.age - b.age,
+  //       };
+  //     }
+  //     return d;
+  //   });
+  // })();
 
   const data = [
     {
@@ -613,7 +641,7 @@ export const SortTable = () => {
       name: 'Name3',
       address: 'Address3',
       sex: 'female',
-      age: 19,
+      age: 18,
       email: 'email3@123.com',
     },
     {
@@ -621,7 +649,7 @@ export const SortTable = () => {
       name: 'Name4',
       address: 'Address4',
       sex: 'male',
-      age: 30,
+      age: 32,
       email: 'email4@123.com',
     },
     {
@@ -634,106 +662,8 @@ export const SortTable = () => {
     },
   ];
 
-  return <Table columns={columnsSorter} data={data} />;
+  return <Table columns={columns} data={data} />;
 };
-
-// export const SortTable = () => {
-//   const columns = [
-//     {
-//       title: 'Name',
-//       dataIndex: 'name',
-//       // sortOrder: 'descend',
-//       sorter: (a, b) => {
-//         if (a.name > b.name) {
-//           return 1;
-//         }
-//         if (a.name < b.name) {
-//           return -1;
-//         }
-//         return 0;
-//       },
-//     },
-//     {
-//       title: 'Age',
-//       dataIndex: 'age',
-//       sorter: (a, b) => a.age - b.age,
-//     },
-//     {
-//       title: 'Chinese Score',
-//       dataIndex: 'chinese',
-//       // defaultSortOrder: 'descend',
-//       sorter: {
-//         compare: (a, b) => a.chinese - b.chinese,
-//         multiple: 3,
-//       },
-//     },
-//     {
-//       title: 'Math Score',
-//       dataIndex: 'math',
-//       // defaultSortOrder: 'ascend',
-//       sorter: {
-//         compare: (a, b) => a.math - b.math,
-//         multiple: 2,
-//       },
-//     },
-//     {
-//       title: 'English Score',
-//       dataIndex: 'english',
-//       sorter: {
-//         compare: (a, b) => a.english - b.english,
-//         multiple: 1,
-//       },
-//     },
-//   ];
-//   const data = [
-//     {
-//       key: '1',
-//       name: 'Aohn Brown',
-//       age: 18,
-//       chinese: 100,
-//       math: 60,
-//       english: 70,
-//     },
-//     {
-//       key: '2',
-//       name: 'Bim Green',
-//       age: 17,
-//       chinese: 100,
-//       math: 90,
-//       english: 80,
-//     },
-//     {
-//       key: '3',
-//       name: 'Coe Black',
-//       age: 19,
-//       chinese: 100,
-//       math: 70,
-//       english: 60,
-//     },
-//     {
-//       key: '4',
-//       name: 'Dim Red',
-//       age: 15,
-//       chinese: 80,
-//       math: 70,
-//       english: 100,
-//     },
-//     {
-//       key: '5',
-//       name: 'Eim Blue',
-//       age: 20,
-//       chinese: 80,
-//       math: 70,
-//       english: 90,
-//     },
-//   ];
-//   return (
-//     <Table
-//       columns={columns}
-//       data={data}
-//     />
-//   );
-// };
 
 export const FixedTable = () => {
   const columns = [
@@ -892,69 +822,52 @@ export const FixedTable = () => {
 };
 
 export const SortDemoTable = () => {
-  const [sorters, setSorters] = useState([
-    { by: 'scoreA', desc: false },
-    { by: 'scoreB', desc: true },
-  ]);
-
-  const columns = useMemo(() => {
-    const sorterMap = new Map(sorters.map((s) => [s.by, s.desc]));
-
-    const list = [
-      {
-        title: 'Name',
-        dataIndex: 'name',
-        sorter: (a: any, b: any) => {
-          if (a.name > b.name) {
-            return 1;
-          }
-          if (a.name < b.name) {
-            return -1;
-          }
-          return 0;
-        },
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      sorter: (a: any, b: any) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
       },
-      {
-        title: 'Age',
-        dataIndex: 'age',
-        sorter: (a: any, b: any) => a.age - b.age,
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      sorter: (a: any, b: any) => a.age - b.age,
+    },
+    {
+      title: 'Score A',
+      dataIndex: 'scoreA',
+      defaultSortOrder: 'descend',
+      sorter: {
+        compare: (a: any, b: any) => a.scoreA - b.scoreA,
+        multiple: 3,
       },
-      {
-        title: 'Score A',
-        dataIndex: 'scoreA',
-        defaultSortOrder: 'descend',
-        sorter: {
-          compare: (a: any, b: any) => a.scoreA - b.scoreA,
-          multiple: 3,
-        },
+    },
+    {
+      title: 'Score B',
+      dataIndex: 'scoreB',
+      defaultSortOrder: 'ascend',
+      sorter: {
+        compare: (a: any, b: any) => a.scoreB - b.scoreB,
+        multiple: 2,
       },
-      {
-        title: 'Score B',
-        dataIndex: 'scoreB',
-        defaultSortOrder: 'ascend',
-        sorter: {
-          compare: (a: any, b: any) => a.scoreB - b.scoreB,
-          multiple: 2,
-        },
+    },
+    {
+      title: 'Score C',
+      dataIndex: 'scoreC',
+      sorter: {
+        compare: (a: any, b: any) => a.scoreC - b.scoreC,
+        multiple: 1,
       },
-      {
-        title: 'Score C',
-        dataIndex: 'scoreC',
-        sorter: {
-          compare: (a: any, b: any) => a.scoreC - b.scoreC,
-          multiple: 1,
-        },
-      },
-    ];
-    list.forEach((c: any) => {
-      if (sorterMap.has(c.dataIndex)) {
-        c.sortOrder = sorterMap.get(c.dataIndex) ? 'ascend' : 'descend';
-      } else if (c.sorter) {
-        c.sortOrder = undefined;
-      }
-    });
-    return list;
-  }, [sorters]);
+    },
+  ];
 
   const data = [
     {
@@ -1000,26 +913,7 @@ export const SortDemoTable = () => {
   ];
   return (
     <div>
-      <Button
-        onClick={() => {
-          setSorters([
-            { by: 'scoreA', desc: false },
-            { by: 'scoreB', desc: true },
-            { by: 'scoreC', desc: false },
-          ]);
-        }}
-      >
-        切换排序
-      </Button>
-      {JSON.stringify(sorters)}
-      <Table
-        data={data}
-        columns={columns as any}
-        // onChange={(pagination, changedSorter) => {
-        //   console.log(pagination);
-        //   console.log(changedSorter);
-        // }}
-      />
+      <Table data={data} columns={columns as any} />
     </div>
   );
 };
