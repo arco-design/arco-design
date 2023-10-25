@@ -502,11 +502,7 @@ export type FormItemContextProps<
   validateMessages?: FormProps['validateMessages'];
   updateFormItem?: (
     field: string,
-    params: {
-      errors?: FieldError<FieldValue>;
-      warnings?: ReactNode[];
-      validateStatus?: FormItemProps['validateStatus'];
-    }
+    params: { errors?: FieldError<FieldValue>; warnings?: ReactNode[] }
   ) => void;
 };
 
@@ -646,7 +642,6 @@ export type FieldState<FieldValue = any> = {
   isSubmitting: boolean;
   isTouched: boolean;
 };
-
 
 export enum SubmitStatus {
   init = 'init',

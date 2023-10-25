@@ -45,7 +45,7 @@ function App() {
                   setTimeout(() => {
                     callback('Name must be admin');
                     resolve();
-                  }, 3000);
+                  }, 1000);
                 } else {
                   resolve();
                 }

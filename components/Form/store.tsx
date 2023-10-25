@@ -17,7 +17,6 @@ import {
 } from './interface';
 import promisify from './promisify';
 
-
 export type DeepPartial<T> = T extends object
   ? {
       [P in keyof T]?: DeepPartial<T[P]>;
@@ -128,7 +127,6 @@ class Store<
   ) => {
     this.callbacks = values;
   };
-
 
   public registerFormWatcher = (item) => {
     this.registerFormWatchers.push(item);
@@ -512,7 +510,7 @@ class Store<
     this.submitStatus = submitStatus;
     this.innerCollectFormState();
 
-    this.notifyFormWatcher()
+    this.notifyFormWatcher();
   };
 
   public submit = () => {
@@ -554,7 +552,7 @@ class Store<
         validateStatus: item.getValidateStatus(),
         isSubmitting: this.submitStatus === SubmitStatus.submitting,
         isTouched: item.isTouched(),
-        value: this.getFieldValue(item.props.field)
+        value: this.getFieldValue(item.props.field),
       };
     };
 

@@ -110,7 +110,6 @@ export default class Control<
   // 切换校验状态
   private toggleValidateStatus = (status: FormItemProps['validateStatus'] | undefined) => {
     this.validateStatus = status;
-
     this.triggerStateCollect();
   };
 
@@ -159,7 +158,6 @@ export default class Control<
     updateFormItem && updateFormItem(field as string, { errors: null, warnings: null });
   };
 
-  // TODO: 把内部的状态同步到上层 FormItem. 还是需要把状态抽离到 store 里呀，目前先缝缝补补 T_T
   private updateFormItem = () => {
     if (this.isDestroyed) return;
     this.forceUpdate();
@@ -168,7 +166,6 @@ export default class Control<
       updateFormItem(this.props.field as string, {
         errors: this.errors,
         warnings: this.warnings,
-        validateStatus: this.validateStatus,
       });
   };
 
@@ -298,10 +295,11 @@ export default class Control<
 
     // 进入到校验中的状态
     const gotoValidatingStatus = () => {
+      const needUpdateItem = this.errors || this.warnings?.length;
       this.toggleValidateStatus('validating');
       this.setErrors(null);
       this.setWarnings(null);
-      this.updateFormItem();
+      needUpdateItem && this.updateFormItem();
     };
 
     const _rules = !triggerType
@@ -445,7 +443,6 @@ export default class Control<
   render() {
     const { noStyle, field, isFormList, hasFeedback } = this.props;
     const validateStatus = this.getValidateStatus();
-
     const { prefixCls, getFormElementId } = this.context;
     let child = this.getChild();
     const id = this.hasFieldProps() ? getFormElementId(field) : undefined;
@@ -463,7 +460,9 @@ export default class Control<
             {child}
 
             {validateStatus && hasFeedback && (
-              <div className={`${prefixCls}-item-feedback`}>
+              <div
+                className={`${prefixCls}-item-feedback ${prefixCls}-item-feedback-${validateStatus}`}
+              >
                 {validateStatus === 'warning' && <IconExclamationCircleFill />}
                 {validateStatus === 'success' && <IconCheckCircleFill />}
                 {validateStatus === 'error' && <IconCloseCircleFill />}
