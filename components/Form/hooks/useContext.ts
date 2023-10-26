@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, useCallback } from 'react';
-import { FormInstance, SubmitStatus} from '../interface';
+import { FormInstance, SubmitStatus } from '../interface';
 import { FormContext } from '../context';
 import warn from '../../_util/warning';
 

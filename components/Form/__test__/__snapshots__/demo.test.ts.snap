@@ -8960,7 +8960,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 value=""
               />
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9022,7 +9022,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </span>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9097,7 +9097,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </span>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9197,7 +9197,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </div>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9317,7 +9317,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </div>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9422,7 +9422,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </div>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9528,7 +9528,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </div>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9631,7 +9631,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </span>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"
@@ -9736,7 +9736,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                 </div>
               </div>
               <div
-                class="arco-form-item-feedback"
+                class="arco-form-item-feedback arco-form-item-feedback-error"
               >
                 <svg
                   aria-hidden="true"

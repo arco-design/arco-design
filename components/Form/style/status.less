@@ -140,10 +140,10 @@
         color: @form-color-tip-text_warning;
       }
     }
+  }
 
-    .@{form-prefix-cls}-item-feedback {
-      color: ~'@{form-color-tip-icon-text_@{status}}';
-    }
+  .@{form-prefix-cls}-item-feedback-@{status} {
+    color: ~'@{form-color-tip-icon-text_@{status}}';
   }
 }
 .validate-status(validating);

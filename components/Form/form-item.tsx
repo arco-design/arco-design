@@ -13,7 +13,6 @@ import React, {
 import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { isArray, isFunction, isUndefined, isObject } from '../_util/is';
-import useMergeValue from '../_util/hooks/useMergeValue';
 import Grid from '../Grid';
 import {
   FormItemProps,
@@ -109,11 +108,6 @@ const Item = <
   const [warnings, setWarnings] = useState<{
     [key: string]: ReactNode[];
   }>(null);
-
-  const [validateStatus, setValidateStatus] = useMergeValue<FormItemProps['validateStatus']>(
-    props.validateStatus,
-    'validateStatus' in props ? { value: props.validateStatus } : {}
-  );
   const formContext = useContext(FormContext);
   const prefixCls = formContext.prefixCls || getPrefixCls('form');
   const formLayout = props.layout || formContext.layout;
@@ -126,13 +120,12 @@ const Item = <
     params: {
       errors?: FieldError<FieldValue>;
       warnings?: ReactNode[];
-      validateStatus?: FormItemProps['validateStatus'];
     } = {}
   ) => {
     if (isDestroyed.current) {
       return;
     }
-    const { errors, warnings, validateStatus: newValidateStatus } = params || {};
+    const { errors, warnings } = params || {};
 
     setErrors((innerErrors) => {
       const newErrors = { ...(innerErrors || {}) };
@@ -153,10 +146,6 @@ const Item = <
       }
       return newVal;
     });
-
-    if (!('validateStatus' in props)) {
-      setValidateStatus(newValidateStatus);
-    }
   };
 
   const updateFormItem =
@@ -186,7 +175,7 @@ const Item = <
     disabled: 'disabled' in props ? props.disabled : formContext.disabled,
   };
 
-  const { label, extra, className, style, hidden, ...rest } = props;
+  const { label, extra, className, style, validateStatus, hidden, ...rest } = props;
   const labelClassNames = cs(`${prefixCls}-label-item`, {
     [`${prefixCls}-label-item-left`]: labelAlign === 'left',
   });
@@ -325,7 +314,6 @@ const Item = <
               'triggerPropName',
               'validateTrigger',
               'noStyle',
-              'validateStatus',
               'required',
               'hasFeedback',
               'help',
