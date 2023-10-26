@@ -1,3 +1,11 @@
+## 2.54.3
+
+2023-10-26
+
+### 🐛 BugFix
+
+- Fixed the UI problem of displaying the verification success style when the `Form` component is verified (this bug was introduced in `2.54.2`).([#2312](https://github.com/arco-design/arco-design/pull/2312) )
+
 ## 2.54.2
 
 2023-10-20

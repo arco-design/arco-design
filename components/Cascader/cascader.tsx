@@ -95,8 +95,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
     return 'value' in props
       ? formatValue(props.value, isMultiple, store)
       : 'defaultValue' in props
-        ? formatValue(props.defaultValue, isMultiple, store)
-        : [];
+      ? formatValue(props.defaultValue, isMultiple, store)
+      : [];
   });
 
   const mergeValue = 'value' in props ? formatValue(props.value, isMultiple, store) : stateValue;
@@ -322,8 +322,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
       panelMode === PANEL_MODE.select
         ? true
         : panelMode === PANEL_MODE.cascader
-          ? false
-          : !isFunction(props.onSearch) && !!inputValue;
+        ? false
+        : !isFunction(props.onSearch) && !!inputValue;
     const width = selectRef.current && selectRef.current.getWidth();
     const dropdownRender = isFunction(props.dropdownRender) ? props.dropdownRender : (menu) => menu;
 

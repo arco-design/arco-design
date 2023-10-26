@@ -131,15 +131,15 @@ function Dropdown(baseProps: DropdownProps, _) {
     >
       {React.isValidElement(children)
         ? React.cloneElement(children, {
-          ...(typeof disabled === 'boolean' ? { disabled } : {}),
-          className: cs(
-            {
-              [`${prefixCls}-popup-visible`]: popupVisible,
-              [`${[prefixCls]}-rtl`]: rtl,
-            },
-            children.props.className
-          ),
-        })
+            ...(typeof disabled === 'boolean' ? { disabled } : {}),
+            className: cs(
+              {
+                [`${prefixCls}-popup-visible`]: popupVisible,
+                [`${[prefixCls]}-rtl`]: rtl,
+              },
+              children.props.className
+            ),
+          })
         : children}
     </Trigger>
   );
