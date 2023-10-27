@@ -3,6 +3,8 @@ import 'dayjs/locale/zh-cn';
 const Calendar = {
   formatYear: 'YYYY 年',
   formatMonth: 'YYYY 年 MM 月',
+  // 月份在前
+  monthBeforeYear: false,
   today: '今天',
   view: {
     month: '月',

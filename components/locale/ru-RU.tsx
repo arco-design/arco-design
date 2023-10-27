@@ -3,6 +3,7 @@ import 'dayjs/locale/ru';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MM/YYYY',
+  monthBeforeYear: true,
   today: 'Cегодня',
   view: {
     month: 'месяц',

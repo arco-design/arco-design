@@ -3,6 +3,7 @@ import 'dayjs/locale/th';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
+  monthBeforeYear: true,
   today: 'วันนี้',
   view: {
     month: 'เดือน',

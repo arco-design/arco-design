@@ -131,6 +131,7 @@ function MonthPicker(props: InnerMonthPickerProps & PrivateCType) {
     <div className={classNames} style={style}>
       <Header
         {...headerOperations}
+        DATEPICKER_LOCALE={DATEPICKER_LOCALE}
         icons={icons}
         prefixCls={getPrefixCls('picker')}
         value={pageShowDate}

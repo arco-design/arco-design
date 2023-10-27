@@ -3,6 +3,7 @@ import 'dayjs/locale/pt';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MM/YYYY',
+  monthBeforeYear: true,
   today: 'Hoje',
   view: {
     month: 'Mês',
