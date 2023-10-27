@@ -62,7 +62,7 @@ export function getOriginData(data) {
   }
 
   return data.map((d) => {
-    if (!isObject(d)) {
+    if (!isObject(d) || !('__ORIGIN_DATA' in d)) {
       return d;
     }
     return d.__ORIGIN_DATA;
