@@ -76,7 +76,7 @@ function Header(props: HeaderProps) {
         </>
       ) : (
         <>
-          {yearNode} - {monthNode}
+          {yearNode}-{monthNode}
         </>
       );
     }
