@@ -2,7 +2,7 @@
 @import './token.less';
 
 @verification-code-prefix-cls: ~'@{prefix}-verification-code';
-@input-prefix-cls:  ~'@{prefix}-input';
+@input-prefix-cls: ~'@{prefix}-input';
 
 .@{verification-code-prefix-cls} {
   display: flex;
@@ -29,4 +29,8 @@
   .@{input-prefix-cls}-size-large {
     width: @input-size-large-height;
   }
+}
+
+.@{verification-code-prefix-cls}-rtl {
+  direction: rtl;
 }
