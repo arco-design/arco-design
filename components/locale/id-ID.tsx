@@ -3,6 +3,7 @@ import 'dayjs/locale/id';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
+  monthBeforeYear: true,
   today: 'Hari ini',
   view: {
     month: 'Bulan',

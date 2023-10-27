@@ -3,6 +3,7 @@ import 'dayjs/locale/ko';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
+  monthBeforeYear: true,
   today: '요즘',
   view: {
     month: '달',

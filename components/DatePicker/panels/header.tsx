@@ -6,6 +6,7 @@ import IconDoubleLeft from '../../../icon/react-icon/IconDoubleLeft';
 import IconDoubleRight from '../../../icon/react-icon/IconDoubleRight';
 import cs from '../../_util/classNames';
 import { ModeType, IconsType } from '../interface';
+import { Locale } from '../../locale/interface';
 
 export interface HeaderProps {
   prefixCls?: string;
@@ -19,6 +20,7 @@ export interface HeaderProps {
   onChangePanel?: (mode?: ModeType) => void;
   icons?: IconsType;
   rtl?: boolean;
+  DATEPICKER_LOCALE?: Locale['DatePicker'];
 }
 
 function Header(props: HeaderProps) {
@@ -34,6 +36,7 @@ function Header(props: HeaderProps) {
     onChangePanel,
     icons = {},
     rtl,
+    DATEPICKER_LOCALE,
   } = props;
 
   const showPrev = typeof onPrev === 'function';
@@ -49,16 +52,31 @@ function Header(props: HeaderProps) {
     if (title) {
       return title;
     }
+
     if (mode === 'date' || mode === 'week') {
-      return (
+      const { monthBeforeYear, formatMonth, formatYear } = DATEPICKER_LOCALE?.Calendar || {};
+
+      const yearNode = (
+        <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('year')}>
+          {value.format('YYYY')}
+        </span>
+      );
+
+      const monthNode = (
+        <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('month')}>
+          {monthBeforeYear && formatMonth && formatYear
+            ? value.format(formatMonth)?.replace(value.format(formatYear), '')
+            : value.format('MM')}
+        </span>
+      );
+
+      return monthBeforeYear ? (
         <>
-          <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('year')}>
-            {value.format('YYYY')}
-          </span>
-          -
-          <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('month')}>
-            {value.format('MM')}
-          </span>
+          {monthNode} {yearNode}
+        </>
+      ) : (
+        <>
+          {yearNode} - {monthNode}
         </>
       );
     }
