@@ -272,6 +272,13 @@ export default function getRoutes(lang = 'zh', t) {
               component: lazyLoad(() => import(`../../components/InputNumber/README${suffix}.md`)),
             },
             {
+              name: t['routes.verification-code'],
+              path: 'components/verification-code',
+              component: lazyLoad(() =>
+                import(`../../components/VerificationCode/README${suffix}.md`)
+              ),
+            },
+            {
               name: t['routes.mentions'],
               path: 'components/mentions',
               component: lazyLoad(() => import(`../../components/Mentions/README${suffix}.md`)),

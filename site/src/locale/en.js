@@ -40,6 +40,7 @@ export default {
   'routes.input': 'Input',
   'routes.input-tag': 'InputTag',
   'routes.input-number': 'InputNumber',
+  'routes.verification-code': 'VerificationCode',
   'routes.auto-complete': 'AutoComplete',
   'routes.checkbox': 'Checkbox',
   'routes.radio': 'Radio',

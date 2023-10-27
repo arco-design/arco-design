@@ -84,6 +84,10 @@ export { default as InputTag } from './InputTag';
 export type { InputNumberProps } from './InputNumber/interface';
 export { default as InputNumber } from './InputNumber';
 
+
+export type { VerificationCodeProps } from './VerificationCode/interface';
+export { default as VerificationCode } from './VerificationCode';
+
 export type { LayoutProps, HeaderProps, FooterProps, SiderProps, ContentProps } from './Layout/interface';
 export { default as Layout } from './Layout';
 

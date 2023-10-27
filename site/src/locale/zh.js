@@ -40,6 +40,7 @@ export default {
   'routes.input': '输入框 Input',
   'routes.input-tag': '标签输入框 InputTag',
   'routes.input-number': '数字输入框 InputNumber',
+  'routes.verification-code': '验证码输入框 VerificationCode',
   'routes.auto-complete': '自动补全 AutoComplete',
   'routes.checkbox': '复选框 Checkbox',
   'routes.radio': '单选框 Radio',

@@ -28,8 +28,8 @@
 |unmountOnExit|是否在隐藏的时候销毁 DOM 结构|boolean |`true`|-|
 |inputValue|输入框的值（受控模式）|string |`-`|-|
 |placeholder|选择框默认文字。|string |`-`|-|
-|autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |allowCreate|是否允许通过输入创建新的选项。|\| boolean\| {formatter: (inputValue: string, creating: boolean) => [SelectProps](select#select)['options'][number];} |`-`|2.13.0, `{ formatter }` in 2.54.0|
+|autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |mode|是否开启多选模式或标签模式 (**`tags` 推荐使用 `mode: multiple; allowCreate: true` 替代，下一大版本将移除此模式**)|'multiple' \| 'tags' |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|

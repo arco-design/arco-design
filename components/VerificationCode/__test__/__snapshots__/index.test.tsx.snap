@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.VerificationCode default 1`] = `
+<div
+  class="arco-verification-code"
+>
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.VerificationCode set className globally 1`] = `
+<div
+  class="arco-verification-code global-default-class"
+>
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.VerificationCode set className globally and component set className itself. 1`] = `
+<div
+  class="arco-verification-code component-class"
+>
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.VerificationCode set data-* property 1`] = `
+<div
+  class="arco-verification-code"
+>
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+</div>
+`;

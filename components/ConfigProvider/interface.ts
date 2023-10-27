@@ -64,6 +64,7 @@ import { TreeSelectProps } from '../TreeSelect/interface';
 import { TriggerProps } from '../Trigger/interface';
 // import { TypographyProps } from '../Typography/interface';
 import { UploadProps } from '../Upload/interface';
+import { VerificationCodeProps } from '../VerificationCode/interface';
 
 export type ThemeConfig = Record<string, any>;
 
@@ -110,6 +111,7 @@ export type ComponentConfig = {
   Image?: ImageProps;
   Input?: InputProps;
   InputNumber?: InputNumberProps;
+  VerificationCode?: VerificationCodeProps;
   InputTag?: InputTagProps;
   Layout?: LayoutProps;
   Link?: LinkProps;

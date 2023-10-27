@@ -23,6 +23,7 @@ Organize content in the same view, and view content one view at a time. You can 
 |activeTab|The key of the currently selected tab|string |`-`|-|
 |defaultActiveTab|The Tab selected by default. If not specified, the first one is selected|string |`-`|-|
 |direction|The Direction of tabs. ** Warn: Please use `tabPosition` instead.**|'horizontal' \| 'vertical' |`-`|-|
+|inkBarSize|custom the size of underline|{ width?: CSSProperties['width']; height?: CSSProperties['height'] } |`-`|2.54.0|
 |overflow|When there are too many tabs, select scroll or drop-down to display tabs|'scroll' \| 'dropdown' |`scroll`|-|
 |scrollPosition|The scroll position of the selected tab, the default auto will scroll the activeTab to the visible area, but will not adjust the position intentionally|'start' \| 'end' \| 'center' \| 'auto' \| number |`auto`|2.25.0|
 |size|Size of tabs|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
