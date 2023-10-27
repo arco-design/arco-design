@@ -1119,6 +1119,107 @@ export function SummaryTable() {
     />
   );
 }
+
+export function ArrayDataTable() {
+  const data = [
+    [
+      {
+        value: '2020',
+      },
+      {
+        value: '0',
+        proportion_ratio: 0,
+        formula_desc: '',
+        interactive_name: '2020',
+      },
+      {
+        value: '653',
+        proportion_ratio: 0.4385,
+        formula_desc: '',
+        interactive_name: '2020',
+      },
+    ],
+    [
+      {
+        value: '2021',
+      },
+      {
+        value: '0',
+        proportion_ratio: 0,
+        formula_desc: '',
+        interactive_name: '2021',
+      },
+      {
+        value: '502',
+        proportion_ratio: 0.3371,
+        formula_desc: '',
+        interactive_name: '2021',
+      },
+    ],
+    [
+      {
+        value: '2022',
+      },
+      {
+        value: '735339258',
+        proportion_ratio: 0.5002,
+        formula_desc: '',
+        interactive_name: '2022',
+      },
+      {
+        value: '237',
+        proportion_ratio: 0.1592,
+        formula_desc: '',
+        interactive_name: '2022',
+      },
+    ],
+    [
+      {
+        value: '2023',
+      },
+      {
+        value: '734677338',
+        proportion_ratio: 0.4998,
+        formula_desc: '',
+        interactive_name: '2023',
+      },
+      {
+        value: '97',
+        proportion_ratio: 0.0651,
+        formula_desc: '',
+        interactive_name: '2023',
+      },
+    ],
+  ];
+
+  const columns = [
+    {
+      title: '测试',
+      dataIndex: '0',
+      children: [
+        {
+          title: 'Name',
+          dataIndex: '0.value',
+          render: (col: any, row: any, index: number) => {
+            console.log('col===>', col);
+            console.log('row===>', row);
+            console.log('data[index]===>', data[index]);
+            console.log('index===>', index);
+            return col;
+          },
+        },
+      ],
+    },
+  ];
+
+  function expandedRowRender() {
+    return <Table columns={columns} data={data} pagination={false} />;
+  }
+
+  return (
+    <Table indentSize={60} expandedRowRender={expandedRowRender} columns={columns} data={data} />
+  );
+}
 function DemoScrollIntoView() {
   const columns = [
     {
