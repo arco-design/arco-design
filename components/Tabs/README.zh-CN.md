@@ -23,6 +23,7 @@
 |activeTab|当前选中的 tab 的 key|string |`-`|-|
 |defaultActiveTab|默认选中的标签选项卡，如不指定默认选择第一个|string |`-`|-|
 |direction|标签选项卡的方向是水平还是竖直，分别对应 `horizontal `和 `vertical`。** 注意： 已废弃，使用 tabPosition 替代。**|'horizontal' \| 'vertical' |`-`|-|
+|inkBarSize|定制下划线尺寸|{ width?: CSSProperties['width']; height?: CSSProperties['height'] } |`-`|2.54.0|
 |overflow|标签页较多时候，选择滚动/下拉菜单形式展示 tab|'scroll' \| 'dropdown' |`scroll`|-|
 |scrollPosition|被选中 tab 的滚动位置，默认 auto 即会将 activeTab 滚动到可见区域，但不会特意做位置调整|'start' \| 'end' \| 'center' \| 'auto' \| number |`auto`|2.25.0|
 |size|有四个尺寸供选择，分别为`mini`, `small`, `default`, `large`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
