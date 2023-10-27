@@ -107,3 +107,7 @@ export function getLocaleDayjsValue(
 ): Dayjs | undefined {
   return date ? date.locale(dayjsLocale) : date;
 }
+
+export function getFormatByIndex(format: string | string[], index: number) {
+  return isArray(format) ? format[index] : format;
+}

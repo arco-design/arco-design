@@ -23,7 +23,12 @@ import IconCalendarClock from '../../icon/react-icon/IconCalendarClock';
 import RangePickerPanel from './panels/range';
 import Footer from './panels/footer';
 import Shortcuts from './panels/shortcuts';
-import { getAvailableDayjsLength, getDefaultWeekStart, getLocaleDayjsValue } from './util';
+import {
+  getAvailableDayjsLength,
+  getDefaultWeekStart,
+  getLocaleDayjsValue,
+  getFormatByIndex,
+} from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
@@ -287,8 +292,8 @@ const Picker = (baseProps: RangePickerProps) => {
     firstRange.current = mergedPopupVisible;
   }, [mergedPopupVisible]);
 
-  const startStr = propsValueDayjs?.[0]?.format(format);
-  const endStr = propsValueDayjs?.[1]?.format(format);
+  const startStr = propsValueDayjs?.[0]?.format(getFormatByIndex(format, 0));
+  const endStr = propsValueDayjs?.[1]?.format(getFormatByIndex(format, 1));
 
   useEffect(() => {
     setValueShow(undefined);
@@ -304,7 +309,10 @@ const Picker = (baseProps: RangePickerProps) => {
   function handlePickerValueChange(v: Dayjs[]) {
     if (!isSamePanel([v[0], pageShowDates[0]], mode)) {
       onPickerValueChange &&
-        onPickerValueChange(isArray(v) ? v.map((v) => v && v.format(format)) : undefined, v);
+        onPickerValueChange(
+          isArray(v) ? v.map((v, i) => v && v.format(getFormatByIndex(format, i))) : undefined,
+          v
+        );
     }
   }
 
@@ -424,7 +432,8 @@ const Picker = (baseProps: RangePickerProps) => {
   // Determine whether the input date is in the correct format
   function isValid(time): boolean {
     return (
-      isValidTimeString(time, format) && !isDisabledDate(getDayjsValue(time, format) as Dayjs)
+      isValidTimeString(time, format, focusedInputIndex) &&
+      !isDisabledDate(getDayjsValue(time, format) as Dayjs)
       // (panelValue[nextFocusedInputIndex]
       //   ? nextFocusedInputIndex === 0
       //     ? panelValue[nextFocusedInputIndex].isBefore(dayjs(time, format))
@@ -458,7 +467,9 @@ const Picker = (baseProps: RangePickerProps) => {
         : undefined;
       onChange &&
         onChange(
-          isArray(localValue) ? localValue.map((v) => v && v.format(format)) : undefined,
+          isArray(localValue)
+            ? localValue.map((v, i) => v && v.format(getFormatByIndex(format, i)))
+            : undefined,
           localValue
         );
     }
@@ -498,7 +509,7 @@ const Picker = (baseProps: RangePickerProps) => {
     const localePanelValue = panelValue.map((v) => getLocaleDayjsValue(v, locale.dayjsLocale));
     onOk &&
       onOk(
-        localePanelValue.map((v) => v && v.format(format)),
+        localePanelValue.map((v, i) => v && v.format(getFormatByIndex(format, i))),
         localePanelValue
       );
   }
@@ -599,7 +610,7 @@ const Picker = (baseProps: RangePickerProps) => {
     );
     onSelect &&
       onSelect(
-        zoneValues.map((v) => v && v.format(format)),
+        zoneValues.map((v, i) => v && v.format(getFormatByIndex(format, i))),
         zoneValues,
         { type: focusedInputIndex === 1 ? 'end' : 'start' }
       );
@@ -624,7 +635,11 @@ const Picker = (baseProps: RangePickerProps) => {
       const placeHolderValue = showTime
         ? getValueWithTime(date, timeValues[focusedInputIndex])
         : date;
-      setHoverPlaceholderValue(placeHolderValue.locale(locale.dayjsLocale).format(format));
+      setHoverPlaceholderValue(
+        placeHolderValue
+          .locale(locale.dayjsLocale)
+          .format(getFormatByIndex(format, focusedInputIndex))
+      );
     }
   }
 

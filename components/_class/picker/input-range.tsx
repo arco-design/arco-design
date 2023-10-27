@@ -24,7 +24,7 @@ export interface DateInputRangeProps {
   placeholder?: string[];
   value?: Dayjs[];
   popupVisible?: boolean;
-  format?: string;
+  format?: string | string[];
   size?: 'mini' | 'small' | 'default' | 'large';
   allowClear?: boolean;
   onClear?: (e) => void;
@@ -140,7 +140,9 @@ function DateInput(
     className
   );
   const getInputValue = (index: number) => {
-    const valueText = value[index] ? value[index].locale(locale.dayjsLocale).format(format) : '';
+    const valueText = value[index]
+      ? value[index].locale(locale.dayjsLocale).format(isArray(format) ? format[index] : format)
+      : '';
     if (inputValue) {
       return index === focusedInputIndex ? inputValue : valueText;
     }
