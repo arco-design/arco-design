@@ -17,6 +17,7 @@ import { ConfigContext } from '../../../ConfigProvider';
 import { getNow, getDayjsValue, methods } from '../../../_util/dayjs';
 import { TimePickerProps } from '../../../TimePicker/interface';
 import { isObject } from '../../../_util/is';
+import { getFormatByIndex } from '../../util';
 import PickerContext from '../../context';
 
 interface InnerRangePickerProps extends RangePickerProps {
@@ -101,7 +102,6 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
     rangeValues: value,
     onMouseEnterCell,
     onMouseLeaveCell,
-    format,
     locale,
     disabledDate,
     onSelect: onSelectPanel,
@@ -115,11 +115,13 @@ function RangePicker(props: InnerRangePickerProps & PrivateCType) {
     pageShowDate: startShowDate,
     panelMode: panelModes[0],
     setPanelMode: (m) => setPanelModes([m, panelModes[1]]),
+    format: getFormatByIndex(format, 0),
   };
   const endPickerProps = {
     pageShowDate: endShowDate,
     panelMode: panelModes[1],
     setPanelMode: (m) => setPanelModes([panelModes[0], m]),
+    format: getFormatByIndex(format, 1),
   };
 
   function renderDate() {

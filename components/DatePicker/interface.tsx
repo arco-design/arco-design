@@ -410,8 +410,9 @@ export interface BaseRangePickerProps {
    * @zh 展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)
    * @en Date format, refer to [dayjs](https://github.com/iamkun/dayjs)
    * @defaultValue YYYY-MM-DD
+   * @version string[] in 2.55.0
    */
-  format?: string;
+  format?: string | string[];
   /**
    * @zh 日历组件值发生改变时的回调
    * @en Callback when the selected value changes
