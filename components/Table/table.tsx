@@ -627,6 +627,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   function getColumnByUniqueKey(key: string | number) {
     return flattenColumns.find((column, index) => {
       if (typeof column.key !== 'undefined') {
+        if (typeof column.key === 'number' && typeof key === 'string') {
+          return column.key.toString() === key;
+        }
         return column.key === key;
       }
       // unnecessary
