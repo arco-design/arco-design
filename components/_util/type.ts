@@ -4,17 +4,17 @@ export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export type Tag = string | typeof React.Component;
 export type ValueOrFunc<T> = T | ((any) => T);
 
-// for array
-// | `${Key}`
-// | `${Key}[${number}]`
-// | `${Key}.${number}`
-// | `${Key}[${number}].${NestedKeyOf<NonNullable<ObjectType[Key]>[0]>}`
-// | `${Key}.${number}.${NestedKeyOf<NonNullable<ObjectType[Key]>[0]>}`
-
-export type NestedKeyOf<ObjectType extends object> = {
-  [Key in keyof ObjectType & (string | number)]: NonNullable<ObjectType[Key]> extends object
-    ? NonNullable<ObjectType[Key]> extends any[]
-      ? `${Key}`
-      : `${Key}` | `${Key}.${NestedKeyOf<NonNullable<ObjectType[Key]>>}`
-    : `${Key}`;
-}[keyof ObjectType & (string | number)];
+export type NestedKeyOf<T> = T extends object
+  ? {
+      [Key in keyof T & (string | number)]: NonNullable<T[Key]> extends object
+        ? T[Key] extends Array<infer U>
+          ?
+              | `${Key}`
+              | `${Key}[${number}]`
+              | `${Key}.${number}`
+              | `${Key}[${number}].${NestedKeyOf<U>}`
+              | `${Key}.${number}.${NestedKeyOf<U>}`
+          : `${Key}` | `${Key}.${NestedKeyOf<T[Key]>}`
+        : `${Key}`;
+    }[keyof T & (string | number)]
+  : never;

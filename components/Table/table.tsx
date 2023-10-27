@@ -214,7 +214,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const flattenFilteredValueColumns = flattenColumns.filter(
       (column) => 'filteredValue' in column
     );
-    const newFilters = {};
+    const newFilters: any = {};
     // 受控的筛选，当columns中的筛选发生改变时，更新state
     if (flattenFilteredValueColumns.length) {
       flattenFilteredValueColumns.forEach((column, index) => {
