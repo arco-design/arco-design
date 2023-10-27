@@ -106,7 +106,7 @@ Time is a very commonly used data format in the interface. Arco recommends using
 
 ### Universal punctuation
 
-Use half-width "..." as an ellipsis.
+Use  "..." as an ellipsis.
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/7146fda6cf3c4c148a47877e2f88c54e~tplv-uwbnlip3yd-image.image)
 

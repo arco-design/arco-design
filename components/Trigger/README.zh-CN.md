@@ -20,7 +20,6 @@
 |autoFitPosition|是否根据空间自动调整弹出框的位置|boolean |`true`|-|
 |autoFixPosition|当内容发生变化导致内容区域尺寸发生变化，自动进行重新定位。|boolean |`true`|-|
 |blurToHide|是否在触发节点失去焦点的时候关闭弹出框，仅在 `trigger` 中含有 `focus` 时生效|boolean |`true`|-|
-|clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。|boolean |`true`|-|
 |clickToClose|是否能通过点击触发节点来关闭弹出框。trigger 包含 click, contextMenu 时，默认为 true。否则为 false|boolean |`-`|-|
 |containerScrollToClose|是否在容器滚动时关闭弹出框|boolean |`-`|2.34.0|
 |defaultPopupVisible|默认弹出框开启或关闭|boolean |`-`|-|
@@ -41,6 +40,7 @@
 |trigger|触发方式|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
 |arrowProps|箭头元素的所有 html 参数|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
+|clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。默认是在冒泡阶段触发该逻辑，可设置 `{ capture: true }` 指定捕获阶段触发|boolean \| { capture: boolean } |`true`|`{ capture: boolean }` in `2.55.0`|
 |duration|动画过渡时间|number \| { exit?: number; enter?: number; appear?: number } |`200`|-|
 |onClickOutside|点击触发节点和弹出框以外的区域的回调。|Function |`-`|-|
 |popupAlign|调整弹出框的位置，有四个属性值，`left`, `right`, `top`, `bottom`，分别表示向该方向移动几个像素。具体可查看 [示例](/react/components/trigger#设置弹窗位置偏移量)|{left?: number \| [number, number];right?: number \| [number, number];top?: number \| [number, number];bottom?: number \| [number, number];} |`{}`|-|
