@@ -107,7 +107,7 @@ ArcoDesign
 
 ### 通用标点符号
 
-使用半角的「…」作为省略号。
+使用「…」作为省略号。
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/7146fda6cf3c4c148a47877e2f88c54e~tplv-uwbnlip3yd-image.image)
 

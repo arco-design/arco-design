@@ -20,7 +20,6 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |autoFitPosition|Whether to automatically adjust the position of the popup according to the viewport|boolean |`true`|-|
 |autoFixPosition|Whether to automatically reposition when the popup's size changes.|boolean |`true`|-|
 |blurToHide|Whether close the popup when the child node losing focus. Only work when the `trigger` containers `focus`|boolean |`true`|-|
-|clickOutsideToClose|Whether to allow close the popup by clicking the area outside the child node and the popup box.|boolean |`true`|-|
 |clickToClose|Whether to allow close the popup by clicking the child node.When trigger contains click, contextMenu, the default is true. otherwise false|boolean |`-`|-|
 |containerScrollToClose|Whether to close the popup when the container is scrolled|boolean |`-`|2.34.0|
 |defaultPopupVisible|Whether the popup is visible by default|boolean |`-`|-|
@@ -41,6 +40,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |trigger|Types of events that cause the popup to show|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
 |arrowProps|The html attributes of the arrow node|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
+|clickOutsideToClose|Whether to allow close the popup by clicking the area outside the child node and the popup box.By default, this logic is triggered in the bubbling phase. You can set `{ capture: true }` to specify the triggering phase in the capture phase.|boolean \| { capture: boolean } |`true`|`{ capture: boolean }` in `2.55.0`|
 |duration|Animation transition time|number \| { exit?: number; enter?: number; appear?: number } |`200`|-|
 |onClickOutside|Callback when click the area outside the child and the popup|Function |`-`|-|
 |popupAlign|Adjust the position of the popup. Indicates moving a few pixels in one direction. [example](/react/en-US/components/trigger#popupAlign)|{left?: number \| [number, number];right?: number \| [number, number];top?: number \| [number, number];bottom?: number \| [number, number];} |`{}`|-|

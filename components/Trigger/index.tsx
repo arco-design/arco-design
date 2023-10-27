@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
-import { isFunction } from '../_util/is';
+import { isFunction, isObject } from '../_util/is';
 import { pickDataAttributes } from '../_util/pick';
 import { Esc } from '../_util/keycode';
 import Portal from './portal';
@@ -244,7 +244,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         // clickOutside 必须监听mousedown。
         // 1. 如果事件目标元素在click后被移除，document.onclick被触发时已经没有该元素，会错误触发clickOutside逻辑，隐藏popup。
         // 2. 点击label标签，会触发对应input元素的点击事件，导致触发clickOutside，隐藏popup。
-        on(root, 'mousedown', this.onClickOutside);
+        on(root, 'mousedown', this.onClickOutside, {
+          capture: isObject(currentProps.clickOutsideToClose)
+            ? currentProps.clickOutsideToClose.capture
+            : false,
+        });
         this.handleClickOutside = true;
       }
     }
