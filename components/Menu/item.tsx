@@ -49,13 +49,14 @@ function Item(props: MenuItemProps, ref) {
       // 首次渲染需要等待展开动画结束之后滚动
       setTimeout(
         () => {
-          scrollIntoView(refElement.current, {
-            behavior: 'smooth',
-            block: 'start',
-            scrollMode: 'if-needed',
-            boundary: document.body,
-            ...scrollConfig,
-          });
+          refElement.current &&
+            scrollIntoView(refElement.current, {
+              behavior: 'smooth',
+              block: 'start',
+              scrollMode: 'if-needed',
+              boundary: document.body,
+              ...scrollConfig,
+            });
         },
         isFirstRender ? 500 : 0
       );
