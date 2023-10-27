@@ -30,7 +30,12 @@ export function VerificationCodeComponent(baseProps: VerificationCodeProps, _) {
   const prefixInput = ctx.getPrefixCls('input');
 
   return (
-    <div className={cs(`${prefix}`, props.className)} style={props.style}>
+    <div
+      className={cs(`${prefix}`, props.className, {
+        [`${prefix}-rtl`]: ctx.rtl,
+      })}
+      style={props.style}
+    >
       {filledValue.map((v, index) => {
         const { onChange, onClick, onPaste, onKeyDown, ...restInputProps } = getInputProps(index);
         return (
@@ -42,6 +47,7 @@ export function VerificationCodeComponent(baseProps: VerificationCodeProps, _) {
                 [`${prefixInput}-size-${size}`]: size,
                 [`${prefixInput}-${status}`]: status,
                 [`${prefixInput}-disabled`]: disabled,
+                [`${prefixInput}-rtl`]: ctx.rtl,
               })}
               ref={(node) => {
                 focusEleRefList.current[index] = node?.dom;
