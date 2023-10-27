@@ -34,7 +34,7 @@ import Portal from '../Portal';
 import { PreviewGroupContext } from './previewGroupContext';
 import ImagePreviewArrow from './image-preview-arrow';
 import useOverflowHidden from '../_util/hooks/useOverflowHidden';
-import { Esc } from '../_util/keycode';
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Esc } from '../_util/keycode';
 import useUpdate from '../_util/hooks/useUpdate';
 import { isUndefined } from '../_util/is';
 
@@ -370,8 +370,27 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   // Close when pressing esc
   useEffect(() => {
     const onKeyDown = (e) => {
-      if (escToExit && e && e.key === Esc.key) {
-        close();
+      if (e) {
+        switch (e.key) {
+          case Esc.key:
+            if (escToExit) {
+              close();
+            }
+            break;
+          case ArrowRight.key:
+            onNext();
+            break;
+          case ArrowLeft.key:
+            onPrev();
+            break;
+          case ArrowUp.key:
+            onZoomIn();
+            break;
+          case ArrowDown.key:
+            onZoomOut();
+            break;
+          default:
+        }
       }
     };
 
@@ -384,7 +403,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
       keyboardEventOn.current = false;
       off(document, 'keydown', onKeyDown);
     };
-  }, [visible, escToExit, moving]);
+  }, [visible, escToExit, moving, currentIndex, scale]);
 
   const defaultActions = [
     {
