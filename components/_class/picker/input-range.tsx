@@ -112,6 +112,7 @@ function DateInput(
       onPressEnter && onPressEnter();
     }
     if (keyCode === Tab.code) {
+      e.preventDefault();
       onPressTab && onPressTab(e);
     }
   }
