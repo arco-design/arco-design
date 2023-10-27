@@ -1,3 +1,11 @@
+## 2.55.0
+
+2023-10-27
+
+### 🐛 BugFix
+
+- Fix the `cannot read properties of null (reading 'scrollTop')` error that occasionally occurs when the `List` component is scrolling.([#2316](https://github.com/arco-design/arco-design/pull/2316))
+
 ## 2.52.1
 
 2023-08-25

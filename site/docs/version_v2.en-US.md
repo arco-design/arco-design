@@ -2,6 +2,32 @@
 changelog: true
 ---
 
+## 2.55.0
+
+2023-10-27
+
+### 💎 Enhancement
+
+- `Image.PreviewGroup` component adds shortcut key support for arrow keys([#2320](https://github.com/arco-design/arco-design/pull/2320))
+
+### 🆕 Feature
+
+- The format parameter of the `DatePicker.RangePicker` component supports array.([#2327](https://github.com/arco-design/arco-design/pull/2327))
+- `Trigger` supports configuring `clickOutside` logic to be triggered during the capture phase.([#2324](https://github.com/arco-design/arco-design/pull/2324))
+- Add `VerificationCode` component([#2308](https://github.com/arco-design/arco-design/pull/2308))
+- `Upload` supports custom upload method([#2297](https://github.com/arco-design/arco-design/pull/2297))
+
+### 🐛 BugFix
+
+- Fixed the bug that the Tab key switching focus of the `DatePicker.RangePicker` component was misaligned.([#2323](https://github.com/arco-design/arco-design/pull/2323))
+- Fixed an issue where the `render` parameter might be empty when the `Table` component's `data` attribute is a two-dimensional array.([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- Fix the `cannot read properties of null (reading 'scrollTop')` error that occasionally occurs when the `List` component is scrolling.([#2316](https://github.com/arco-design/arco-design/pull/2316))
+- Fixed an issue where the sorting and filtering functions failed when the `Table` component had both `dataIndex` and `key` attributes in columns.([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
+### 💅 Style
+
+- Fixed the issue that clear text of `Input` with prefix/suffix in Safari caused vertical jitter.([#2315](https://github.com/arco-design/arco-design/pull/2315))
+
 ## 2.54.3
 
 2023-10-26

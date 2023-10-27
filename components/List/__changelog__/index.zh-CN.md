@@ -1,3 +1,11 @@
+## 2.55.0
+
+2023-10-27
+
+### 🐛 问题修复
+
+- 修复 `List` 组件滚动时偶现的 `cannot read properties of null (reading 'scrollTop')` 错误。([#2316](https://github.com/arco-design/arco-design/pull/2316))
+
 ## 2.52.1
 
 2023-08-25

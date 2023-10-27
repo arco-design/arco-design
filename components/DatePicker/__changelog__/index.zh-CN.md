@@ -1,3 +1,15 @@
+## 2.55.0
+
+2023-10-27
+
+### 🆕 功能升级
+
+- `DatePicker.RangePicker` 组件 format 参数支持数组。([#2327](https://github.com/arco-design/arco-design/pull/2327))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件 Tab 键切换焦点错位的 bug。([#2323](https://github.com/arco-design/arco-design/pull/2323))
+
 ## 2.54.2
 
 2023-10-20

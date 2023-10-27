@@ -1,3 +1,15 @@
+## 2.55.0
+
+2023-10-27
+
+### 🆕 Feature
+
+- The format parameter of the `DatePicker.RangePicker` component supports array.([#2327](https://github.com/arco-design/arco-design/pull/2327))
+
+### 🐛 BugFix
+
+- Fixed the bug that the Tab key switching focus of the `DatePicker.RangePicker` component was misaligned.([#2323](https://github.com/arco-design/arco-design/pull/2323))
+
 ## 2.54.2
 
 2023-10-20

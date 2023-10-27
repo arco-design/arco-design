@@ -1,3 +1,12 @@
+## 2.55.0
+
+2023-10-27
+
+### 🐛 BugFix
+
+- Fixed an issue where the `render` parameter might be empty when the `Table` component's `data` attribute is a two-dimensional array.([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- Fixed an issue where the sorting and filtering functions failed when the `Table` component had both `dataIndex` and `key` attributes in columns.([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
 ## 2.54.2
 
 2023-10-20

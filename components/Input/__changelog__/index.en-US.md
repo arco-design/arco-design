@@ -1,3 +1,11 @@
+## 2.55.0
+
+2023-10-27
+
+### 💅 Style
+
+- Fixed the issue that clear text of `Input` with prefix/suffix in Safari caused vertical jitter.([#2315](https://github.com/arco-design/arco-design/pull/2315))
+
 ## 2.54.0
 
 2023-10-09

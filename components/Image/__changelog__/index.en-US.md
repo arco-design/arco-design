@@ -1,3 +1,11 @@
+## 2.55.0
+
+2023-10-27
+
+### 💎 Enhancement
+
+- `Image.PreviewGroup` component adds shortcut key support for arrow keys([#2320](https://github.com/arco-design/arco-design/pull/2320))
+
 ## 2.53.1
 
 2023-09-15

@@ -2,6 +2,32 @@
 changelog: true
 ---
 
+## 2.55.0
+
+2023-10-27
+
+### 💎 功能优化
+
+- `Image.PreviewGroup` 组件增加方向键的快捷键支持([#2320](https://github.com/arco-design/arco-design/pull/2320))
+
+### 🆕 功能升级
+
+- `DatePicker.RangePicker` 组件 format 参数支持数组。([#2327](https://github.com/arco-design/arco-design/pull/2327))
+- `Trigger` 支持配置在捕获阶段触发 `clickOutside` 逻辑。([#2324](https://github.com/arco-design/arco-design/pull/2324))
+- 新增 `VerificationCode` 验证码输入组件([#2308](https://github.com/arco-design/arco-design/pull/2308))
+- `Upload` 支持自定义上传 method([#2297](https://github.com/arco-design/arco-design/pull/2297))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件 Tab 键切换焦点错位的 bug。([#2323](https://github.com/arco-design/arco-design/pull/2323))
+- 修复 `Table` 组件 `data` 属性为二维数组时，`render` 参数可能为空的问题。([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- 修复 `List` 组件滚动时偶现的 `cannot read properties of null (reading 'scrollTop')` 错误。([#2316](https://github.com/arco-design/arco-design/pull/2316))
+- 修复 `Table` 组件在`columns`中同时存在`dataIndex`和`key`属性时，排序和筛选功能失效的问题。([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
+### 💅 样式更新
+
+- 修复 `Input` 组件具有前后缀时在 Safari 中清空文本导致垂直方向高度抖动的问题。([#2315](https://github.com/arco-design/arco-design/pull/2315))
+
 ## 2.54.3
 
 2023-10-26

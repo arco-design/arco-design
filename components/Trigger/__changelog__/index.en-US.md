@@ -1,3 +1,11 @@
+## 2.55.0
+
+2023-10-27
+
+### 🆕 Feature
+
+- `Trigger` supports configuring `clickOutside` logic to be triggered during the capture phase.([#2324](https://github.com/arco-design/arco-design/pull/2324))
+
 ## 2.51.2
 
 2023-08-11
