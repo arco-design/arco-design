@@ -501,7 +501,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         off(tableFoot, 'scroll', tableScrollHandler);
       }
     };
-  }, [hasFixedColumnLeft, hasFixedColumnRight, scroll?.x, flattenColumns.length, data]);
+  }, [hasFixedColumnLeft, hasFixedColumnRight, scroll?.x, scroll?.y, flattenColumns.length, data]);
 
   useUpdate(() => {
     const { total, pageSize } = getPaginationProps(data);
