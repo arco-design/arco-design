@@ -81,8 +81,8 @@ export default function useComposition({
         onKeyDown && onKeyDown(e);
         if (keyCode === Enter.code) {
           onPressEnter && onPressEnter(e);
-          normalizeHandler &&
-            triggerValueChangeCallback(normalizeHandler('onPressEnter')(e.target.value), e);
+          const normalize = normalizeHandler?.('onPressEnter');
+          normalize && triggerValueChangeCallback(normalize(e.target.value), e);
         }
       }
     },

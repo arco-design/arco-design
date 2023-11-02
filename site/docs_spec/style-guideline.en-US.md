@@ -52,6 +52,12 @@ Users understand content and complete work through words, and a scientific font 
 | **Number Font** | Regular Numbers | Nunito |
 | Special Number | Byte Number | |
 
+|  | Mac OS-system   | Window-system |
+| ------------- | --------------- | ----------- |
+|  **Chinese Fonts**       | PingFang SC | Microsoft Yahei |
+| **English Font**      | Nunito      | Nunito          |
+| **Number Font**      | Regular: Nunito . Special Number: Byte Number           | Regular: Nunito . Special Number: Byte Number      |
+
 At the same time, considering the actual use of the business and the stability of different platforms, a set of alternate fonts is provided.
 
 ```
