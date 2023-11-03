@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.55.1
+
+2023-11-03
+
+### 🐛 BugFix
+
+- Fixed the problem of horizontal scrolling failure of table header when dynamically updating `scrollY` in `Table`.([#2330](https://github.com/arco-design/arco-design/pull/2330))
+- Fixed a bug where `onChange` would be triggered once during blur when the `Input` component passed in a string containing a newline character by default without changing the value.([#2335](https://github.com/arco-design/arco-design/pull/2335))
+
 ## 2.55.0
 
 2023-10-27

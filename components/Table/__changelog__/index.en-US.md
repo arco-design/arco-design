@@ -1,3 +1,11 @@
+## 2.55.1
+
+2023-11-03
+
+### 🐛 BugFix
+
+- Fixed the problem of horizontal scrolling failure of table header when dynamically updating `scrollY` in `Table`.([#2330](https://github.com/arco-design/arco-design/pull/2330))
+
 ## 2.55.0
 
 2023-10-27
