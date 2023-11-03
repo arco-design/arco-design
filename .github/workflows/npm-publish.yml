@@ -6,9 +6,14 @@ name: npm-publish
 on:
   workflow_dispatch:
     inputs:
-      dist-tag:
-        description: 'latest | beta | aplha'
+      dist_tag:
+        description: 'npm dist-tag'
         required: true
+        type: choice
+        options:
+          - latest
+          - beta
+          - aplha
 
 jobs:
   build:
@@ -30,6 +35,6 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm publish --access=public
+      - run: npm publish --access=public --tag=${{ github.event.inputs.dist_tag }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.ARCO_BOT_NPM_TOKEN}}
