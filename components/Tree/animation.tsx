@@ -119,19 +119,19 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
         e.style.display = 'none';
       }}
     >
-      <VirtualList
-        itemKey={getKey}
-        className={`${prefixCls}-list`}
-        isStaticItemHeight={false}
-        {...treeContext.virtualListProps}
-        data={filtedData}
-        aria-hidden
-        style={{ overflow: 'hidden' }}
-      >
-        {(child) => {
-          return <Node {...child} />;
-        }}
-      </VirtualList>
+      <div style={{ overflow: 'hidden' }} className={`${prefixCls}-list`}>
+        <VirtualList
+          itemKey={getKey}
+          isStaticItemHeight={false}
+          {...treeContext.virtualListProps}
+          data={filtedData}
+          aria-hidden
+        >
+          {(child) => {
+            return <Node {...child} />;
+          }}
+        </VirtualList>
+      </div>
     </CSSTransition>
   );
 };
