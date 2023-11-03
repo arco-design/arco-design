@@ -2,6 +2,11 @@ name: deploy-site-preview
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: [npm-publish]
+    types:
+      - completed
+
   workflow_dispatch:
 
 jobs:
