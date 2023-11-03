@@ -59,7 +59,7 @@ jobs:
           path: dist/
 
       - name: netlify install
-        run: yarn add netlify-cli -D
+        run: yarn add netlify-cli@16 -D
 
       - name: get PreviewID
         run: |

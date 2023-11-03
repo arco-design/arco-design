@@ -45,13 +45,13 @@ ArcoDesign
 
 用户通过文字来理解内容和完成工作，科学的字体系统应该具有良好的可读性。无衬线体更加亲和，现代，清晰便于阅读，为网页中常用的字体类型，因此arco优先使用各个系统中默认的无衬线字体。
 
-| **中文字体**      | Mac OS-system   | PingFang SC |
+
+|  | Mac OS-system   | Window-system |
 | ------------- | --------------- | ----------- |
-| Window-system | Microsoft Yahei |             |
-| **英文字体**      | Mac OS-system   | Nunito      |
-| Window-system | Nunito          |             |
-| **数字字体**      | 常规数字            | Nunito      |
-| 特殊数字          | Byte Number     |             |
+| **中文字体**      | PingFang SC | Microsoft Yahei |
+| **英文字体**      | Nunito      | Nunito          |
+| **数字字体**      | 常规数字： Nunito 特殊数字: Byte Number           | 常规数字： Nunito 特殊数字: Byte Number       |
+
 
 同时考虑业务实际使用情况和不同平台稳定性，提供了一套备用字体。
 

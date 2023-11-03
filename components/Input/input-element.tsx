@@ -101,7 +101,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       : propMaxLength;
 
     const normalizeHandler = (type: InputProps['normalizeTrigger'][number]) => {
-      let handler = (v) => v;
+      let handler;
       const normalizeTrigger = props.normalizeTrigger || ['onBlur'];
       if (
         Array.isArray(normalizeTrigger) &&
@@ -154,7 +154,8 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       onCompositionEnd: compositionHandler,
       onBlur: (e) => {
         props.onBlur?.(e);
-        triggerValueChangeCallback(normalizeHandler('onBlur')(e.target.value), e);
+        const normalize = normalizeHandler('onBlur');
+        normalize && triggerValueChangeCallback(normalize(e.target.value), e);
       },
     };
 

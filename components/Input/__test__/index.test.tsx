@@ -314,8 +314,13 @@ describe('Test Textarea', () => {
   });
 
   it('test normalize onPressEnter', () => {
+    const mockChange = jest.fn();
     const component = mountInput(
-      <Input normalize={(v) => `${v}__`} normalizeTrigger={['onPressEnter']} />
+      <Input
+        normalize={(v) => `${v}__`}
+        normalizeTrigger={['onPressEnter']}
+        onChange={mockChange}
+      />
     );
     const input = component.container.querySelector('input') as HTMLElement;
 
@@ -325,8 +330,25 @@ describe('Test Textarea', () => {
           value: 'Hello',
         },
       });
+    expect(mockChange.mock.calls.length).toBe(1);
+    expect(mockChange.mock.calls[0][0]).toBe('Hello');
 
     fireEvent.keyDown(input, { keyCode: Enter.code });
     expect(input.getAttribute('value')).toBe('Hello__');
+    expect(mockChange.mock.calls.length).toBe(2);
+    expect(mockChange.mock.calls[1][0]).toBe(input.getAttribute('value'));
+  });
+
+  it('test onChange', () => {
+    const mockChange = jest.fn();
+    const component = mountInput(
+      <Input normalize={(v) => v} defaultValue="123" onChange={mockChange} />
+    );
+    const input = component.container.querySelector('input') as HTMLElement;
+
+    input && fireEvent.focus(input);
+    input && fireEvent.blur(input);
+
+    expect(mockChange.mock.calls.length).toBe(0);
   });
 });
