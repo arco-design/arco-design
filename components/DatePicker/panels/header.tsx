@@ -54,7 +54,7 @@ function Header(props: HeaderProps) {
     }
 
     if (mode === 'date' || mode === 'week') {
-      const { monthBeforeYear, formatMonth, formatYear } = DATEPICKER_LOCALE?.Calendar || {};
+      const { monthBeforeYear } = DATEPICKER_LOCALE?.Calendar || {};
 
       const yearNode = (
         <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('year')}>
@@ -64,15 +64,13 @@ function Header(props: HeaderProps) {
 
       const monthNode = (
         <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('month')}>
-          {monthBeforeYear && formatMonth && formatYear
-            ? value.format(formatMonth)?.replace(value.format(formatYear), '')
-            : value.format('MM')}
+          {value.format('MM')}
         </span>
       );
 
       return monthBeforeYear ? (
         <>
-          {monthNode} {yearNode}
+          {monthNode}/{yearNode}
         </>
       ) : (
         <>
