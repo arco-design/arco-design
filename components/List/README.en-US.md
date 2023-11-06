@@ -15,7 +15,7 @@ The most basic list display, which can carry text/pictures/paragraphs, and is of
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |bordered|Whether to render border|boolean |`true`|-|
-|hoverable|Whether list items have hover style|boolean |`2.9.0`|-|
+|hoverable|Whether list items have hover style|boolean|`-`|`2.9.0`|-|
 |loading|Whether to show a loading indicator while the contents of the list are being fetched|boolean |`-`|-|
 |split|Whether to render the split under the list item|boolean |`true`|-|
 |defaultCurrent|To set default current page|number |`1`|-|
