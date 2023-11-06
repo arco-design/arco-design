@@ -1,5 +1,5 @@
 import React, { ReactNode, CSSProperties } from 'react';
-import { NestedKeyOf } from 'components/_util/type';
+import { NestedKeyOf } from '../_util/type';
 import { PaginationProps } from '../Pagination/pagination';
 import { SpinProps } from '../Spin';
 import { TriggerProps } from '../Trigger';
@@ -39,7 +39,7 @@ export interface TableProps<T = any> {
    * @zh 列描述数据对象的数组
    * @en An array of column objects
    */
-  columns?: ColumnProps<T>[];
+  columns?: ColumnProps<T>[] | ColumnProps<any>[];
   /**
    * @zh 覆盖原生表格标签
    * @en Override native table tag
