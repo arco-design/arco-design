@@ -14,11 +14,11 @@ A button is a command component to trigger an operation.
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
-|disabled|Whether to disable the button|boolean |`-`|
+|disabled|Whether to disable the button|boolean |`false`|
 |iconOnly|Whether to show icon only, in which case the button width and height are equal. If `icon` is specified and there are no children, `iconOnly` defaults to `true`|boolean |`-`|
-|loading|Whether the button is in the loading state|boolean |`-`|
+|loading|Whether the button is in the loading state|boolean |`false`|
 |loadingFixedWidth|The width of the button remains unchanged on loading|boolean |`-`|
-|long|Whether the width of the button should adapt to the container.|boolean |`-`|
+|long|Whether the width of the button should adapt to the container.|boolean |`false`|
 |href|The button behaves like `<a>` with href as target url.|string |`-`|
 |target|The target attribute of the link, which takes effect when href exists.|string |`-`|
 |htmlType|html button type|'button' \| 'submit' \| 'reset' |`button`|

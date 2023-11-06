@@ -14,11 +14,11 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
-|disabled|是否禁用|boolean |`-`|
+|disabled|是否禁用|boolean |`false`|
 |iconOnly|只有图标，按钮宽高相等。如果指定 `icon` 且没有 children，`iconOnly` 默认为 true|boolean |`-`|
-|loading|按钮是否是加载状态|boolean |`-`|
+|loading|按钮是否是加载状态|boolean |`false`|
 |loadingFixedWidth|当 loading 的时候，不改变按钮的宽度。|boolean |`-`|
-|long|按钮宽度随容器自适应。|boolean |`-`|
+|long|按钮宽度随容器自适应。|boolean |`false`|
 |href|添加跳转链接，设置此属性，button表现跟a标签一致|string |`-`|
 |target|a 链接的 target 属性，href 存在时生效|string |`-`|
 |htmlType|按钮原生的 html type 类型|'button' \| 'submit' \| 'reset' |`button`|
