@@ -226,7 +226,7 @@ class Tree extends Component<TreeProps, TreeState> {
       const currentExpandKeys = newState.currentExpandKeys || this.state.currentExpandKeys;
       if (newState.treeData && currentExpandKeys) {
         newState.currentExpandKeys = currentExpandKeys.filter((key) => {
-          const item = newState.treeData.find((node) => node._key === key);
+          const item = newState.treeData.find((node) => node.key === key);
           return item && item.children && item.children.length;
         });
       }
