@@ -102,6 +102,8 @@ describe('ResizeBox', () => {
       map.mouseup();
       expect(mockMovingEnd).toHaveBeenCalledTimes(1);
     });
+
+    expect(document.body.style.cursor).toBe('');
   });
 
   it('handle bottom change correctly', () => {
