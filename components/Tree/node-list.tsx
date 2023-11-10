@@ -50,7 +50,7 @@ function NodeList(props, ref) {
     return newKeys;
   }, [expandedKeysSet, currentExpandKeys, nodeList]);
 
-  const calcChildrenList = useCallback(() => {
+  const calcChildrenList = () => {
     return nodeList.filter((item) => {
       const pass = !filterNode || (filterNode && filterNode(item));
 
@@ -61,16 +61,12 @@ function NodeList(props, ref) {
       saveCacheNode(item);
       return false;
     });
-  }, [nodeList, filterNode, visibleKeys]);
+  };
 
   // 默认值不能为nodeList，防止在设置defaultExpandedKeys时，应该被隐藏的节点初始化的时候展示了。
-  const [childrenList, setChildrenList] = useState(() => {
+  const childrenList = useMemo(() => {
     return calcChildrenList();
-  });
-
-  useUpdate(() => {
-    setChildrenList(calcChildrenList());
-  }, [calcChildrenList]);
+  }, [nodeList, filterNode, visibleKeys]);
 
   useImperativeHandle(ref, () => {
     return {
