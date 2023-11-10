@@ -118,6 +118,22 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
     return res <= 0 ? 0 : res;
   }
 
+  //
+  function setOrResetBodyCursor(cursor?: string) {
+    const attrKey = 'data-arco-origin-cursor';
+    if (cursor) {
+      // 因为只会覆盖内联样式的 cursor，所以只需要记录下原本内联的 cursor 值即可。
+      document.body.setAttribute(attrKey, document.body.style.cursor);
+      document.body.style.cursor = cursor;
+    } else {
+      // reset to origin cursor
+      const originCursor = document.body.getAttribute(attrKey);
+      document.body.style.cursor = originCursor || '';
+
+      document.body.removeAttribute(attrKey);
+    }
+  }
+
   function onTriggerMouseDown(direction, e) {
     props.onMovingStart && props.onMovingStart();
 
@@ -137,7 +153,7 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
     on(window, 'touchend', moveEnd);
     on(window, 'contextmenu', moveEnd);
 
-    document.body.style.cursor = getIsHorizontal(direction) ? 'row-resize' : 'col-resize';
+    setOrResetBodyCursor(getIsHorizontal(direction) ? 'row-resize' : 'col-resize');
   }
 
   function moving(e: MouseEvent) {
@@ -183,7 +199,7 @@ function ResizeBox(baseProps: PropsWithChildren<ResizeBoxProps>, ref) {
   function moveEnd() {
     recordRef.current.moving = false;
     offEvents();
-    document.body.style.cursor = 'default';
+    setOrResetBodyCursor();
     props.onMovingEnd && props.onMovingEnd();
   }
 
