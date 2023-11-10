@@ -154,7 +154,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     flattenColumns,
     prefixCls
   );
-  const { currentSorter, activeSorters, getNextActiveSorters, updateStateSorters } = useSorter(
+  const { activeSorters, getNextActiveSorters, updateStateSorters } = useSorter(
     flattenColumns,
     defaultSorters
   );
@@ -242,8 +242,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       priority: getSorterPriority(column.sorter),
     };
     const nextActiveSorters = getNextActiveSorters(sorter);
-    updateStateSorters(sorter, nextActiveSorters);
-    const newProcessedData = getProcessedData(sorter, nextActiveSorters, innerFilters);
+    updateStateSorters(nextActiveSorters);
+    const newProcessedData = getProcessedData(nextActiveSorters, innerFilters);
     const currentData = getPageData(newProcessedData);
     onChange &&
       onChange(getPaginationProps(newProcessedData), sorter, innerFilters, {
@@ -291,7 +291,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     };
     if (isArray(filter) && filter.length) {
       setFilters(mergedFilters);
-      const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
+      const newProcessedData = getProcessedData(activeSorters, newFilters);
       const currentData = getPageData(newProcessedData);
       onChange &&
         onChange(
@@ -315,7 +315,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     };
     delete newFilters[dataIndex];
     setFilters(newFilters);
-    const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
+    const newProcessedData = getProcessedData(activeSorters, newFilters);
     const currentData = getPageData(newProcessedData);
     onChange &&
       onChange(
@@ -336,7 +336,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const hasFixedColumnRight = !!flattenColumns.find((c) => c.fixed === 'right');
   const hasFixedColumn = hasFixedColumnLeft || hasFixedColumnRight;
 
-  function getProcessedData(currentSorter: SorterInfo, activeSorters: SorterInfo[], filters) {
+  function getProcessedData(activeSorters: SorterInfo[], filters) {
     let _data = (clonedData || []).slice();
 
     Object.keys(filters).forEach((field) => {
@@ -368,10 +368,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         });
     };
 
-    if (
-      (currentSorter.direction && typeof currentSorter.sorterFn === 'function') ||
-      activeSorters.length
-    ) {
+    if (activeSorters.length) {
       return getSortData(_data);
     }
 
@@ -379,7 +376,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   }
 
   // 获得经过 sorter 和 filters 筛选之后的 data
-  const processedData = getProcessedData(currentSorter, activeSorters, innerFilters);
+  const processedData = getProcessedData(activeSorters, innerFilters);
 
   function getPaginationProps(_processedData = processedData) {
     const pageSize = mergePagination.pageSize || innerPageSize || 10;
@@ -776,7 +773,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     <Thead<T>
       {...props}
       activeSorters={activeSorters}
-      currentSorter={currentSorter}
       selectedRowKeys={selectedRowKeys}
       currentFilters={innerFilters}
       onCheckAll={onCheckAll}
@@ -839,7 +835,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       indentSize={indentSize}
       noDataElement={noDataElement || renderEmpty('Table')}
       activeSorters={activeSorters}
-      currentSorter={currentSorter}
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}
       getRowKey={getRowKey}

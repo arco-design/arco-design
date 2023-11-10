@@ -6,7 +6,6 @@ import { isNumber } from '../../_util/is';
 
 export default function useSorter(flattenColumns, defaultSorters) {
   const [activeSorters, setActiveSorters] = useState<SorterInfo[]>(defaultSorters);
-  const [currentSorter, setCurrentSorter] = useState<SorterInfo>({});
   const prevFlattenColumnsRef = useRef(flattenColumns);
 
   const getNextActiveSorters = useCallback(
@@ -58,14 +57,13 @@ export default function useSorter(flattenColumns, defaultSorters) {
   }, []);
 
   const updateStateSorters = useCallback(
-    (sorter: SorterInfo, nextActiveSorters: SorterInfo[]) => {
+    (nextActiveSorters: SorterInfo[]) => {
       const controlledSorters = getControlledSorters(flattenColumns);
       if (!controlledSorters.length) {
         setActiveSorters(nextActiveSorters);
-        setCurrentSorter(sorter);
       }
     },
-    [flattenColumns, getControlledSorters, setActiveSorters, setCurrentSorter]
+    [flattenColumns, getControlledSorters, setActiveSorters]
   );
 
   useUpdate(() => {
@@ -79,20 +77,12 @@ export default function useSorter(flattenColumns, defaultSorters) {
     );
     if (changedSorters && changedSorters.length) {
       setActiveSorters(controlledSorters);
-      setCurrentSorter({});
     }
     // update prevFlattenColumns
     prevFlattenColumnsRef.current = flattenColumns;
-  }, [
-    flattenColumns,
-    getControlledSorters,
-    getNextActiveSorters,
-    setCurrentSorter,
-    setActiveSorters,
-  ]);
+  }, [flattenColumns, getControlledSorters, getNextActiveSorters, setActiveSorters]);
 
   return {
-    currentSorter,
     activeSorters,
     getNextActiveSorters,
     updateStateSorters,
