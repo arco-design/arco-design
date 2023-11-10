@@ -1114,6 +1114,67 @@ export function ArrayDataTable() {
     <Table indentSize={60} expandedRowRender={expandedRowRender} columns={columns} data={data} />
   );
 }
+
+export function NoKeyTableDemo() {
+  return (
+    <Table
+      rowSelection={{}}
+      columns={[{ title: <></> }, { title: <></> }, { title: <></> }]}
+      data={[{ key: 1 }, { key: 2 }, { key: 3 }]}
+    />
+  );
+}
+
+export function NoDataDemo() {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name1',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name2',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name3',
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+    },
+  ];
+  const data: any[] = [];
+  return (
+    <div>
+      <Table
+        scroll={{
+          x: 'max-content',
+          y: 300,
+        }}
+        border={{
+          wrapper: true,
+          cell: true,
+        }}
+        columns={columns}
+        data={data}
+      />
+    </div>
+  );
+}
+
 function DemoScrollIntoView() {
   const columns = [
     {

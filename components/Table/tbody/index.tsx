@@ -133,6 +133,7 @@ function TBody<T>(props: TbodyProps<T>) {
         isStaticItemHeight={false}
         // position sticky works
         outerStyle={{ ...scrollStyleX, minWidth: '100%', overflow: 'visible' }}
+        innerStyle={{ right: 'auto', minWidth: '100%' }}
         className={`${prefixCls}-body`}
         ref={(ref) => saveVirtualListRef(ref)}
         itemKey={getRowKey}

@@ -71,7 +71,7 @@ function ColGroup(props: ColGroupType) {
           width = columnWidths[mainColIndex];
         }
         mainColIndex++;
-        return <col key={col.key || index} style={fixedWidth(width)} />;
+        return <col key={col.key ?? index} style={fixedWidth(width)} />;
       })}
     </colgroup>
   );

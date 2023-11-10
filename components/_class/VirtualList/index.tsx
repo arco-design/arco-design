@@ -61,6 +61,7 @@ export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'ch
   needFiller?: boolean;
   /** Custom filler outer style */
   outerStyle?: CSSProperties;
+  innerStyle?: CSSProperties;
   onScroll?: React.UIEventHandler<HTMLElement>;
 }
 
@@ -168,6 +169,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     onScroll,
     needFiller = true,
     outerStyle,
+    innerStyle,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
@@ -679,6 +681,7 @@ const VirtualList: React.ForwardRefExoticComponent<
             <Filler
               height={itemTotalHeight}
               outerStyle={outerStyle}
+              innerStyle={innerStyle}
               offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
             >
               {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
@@ -686,7 +689,7 @@ const VirtualList: React.ForwardRefExoticComponent<
             {renderLongestItem()}
           </>
         ) : needFiller ? (
-          <Filler height={viewportHeight} outerStyle={outerStyle}>
+          <Filler height={viewportHeight} outerStyle={outerStyle} innerStyle={innerStyle}>
             {renderChildren(data, 0)}
           </Filler>
         ) : (
