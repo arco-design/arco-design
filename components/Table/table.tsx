@@ -863,7 +863,13 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     );
 
   function renderTbody() {
-    const producer = isObject(scroll) && scroll.x === 'max-content' && !!scroll.y;
+    const producer =
+      isObject(scroll) &&
+      scroll.x === 'max-content' &&
+      !!scroll.y &&
+      isArray(data) &&
+      data.length > 0;
+
     return (
       <ResizeObserver onResize={setScrollBarStyle}>
         {fixedHeader && !virtualized ? (
