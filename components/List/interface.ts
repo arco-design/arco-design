@@ -94,7 +94,7 @@ export interface ListProps<T = any> {
   /**
    * @zh 列表项是否可悬浮
    * @en Whether list items have hover style
-   * @defaultValue 2.9.0
+   * @version 2.9.0
    */
   hoverable?: boolean;
   /**

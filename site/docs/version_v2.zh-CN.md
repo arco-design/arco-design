@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.55.2
+
+2023-11-10
+
+### 🐛 问题修复
+
+- 修复 `Table` 的 `columns` 中未指定 `dataIndex` 也未指定`key`时， `col key` 可能会重复的问题。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复`Table`开启虚拟滚动后，横向滚动样式问题 。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复`Table` 的 `scroll.x={max-content}`，`scroll.y={true}`且数据为空时，表头样式错乱的问题 。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复 `ResizeBox` 拖动后覆盖了 body 内联 cursor 样式的 bug。([#2352](https://github.com/arco-design/arco-design/pull/2352))
+- 修复 `Tree` 在 react 18 下展开收起出现闪烁的 bug。([#2338](https://github.com/arco-design/arco-design/pull/2338))
+- 修复 `Tree` 在受控时展开收起动画未生效的 bug。([#2338](https://github.com/arco-design/arco-design/pull/2338))
+
 ## 2.55.1
 
 2023-11-03

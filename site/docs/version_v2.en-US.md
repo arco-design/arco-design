@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.55.2
+
+2023-11-10
+
+### 🐛 BugFix
+
+- Fixed an issue where `col key` could be repeated when neither `dataIndex` nor `key` was specified in columns of `Table`.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed horizontal scrolling style issue in `Table` after virtual scrolling is enabled.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed `Table` `scroll.x={max-content}`, `scroll.y={true}` and the data is empty, the table header style is confused.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed the bug where `ResizeBox` covered the body inline cursor style after dragging.([#2352](https://github.com/arco-design/arco-design/pull/2352))
+- Fixed the bug where `Tree` would flicker when expanded or collapsed under react 18.([#2338](https://github.com/arco-design/arco-design/pull/2338))
+- Fixed the bug that the expansion and collapse animation of `Tree` did not take effect when controlled.([#2338](https://github.com/arco-design/arco-design/pull/2338))
+
 ## 2.55.1
 
 2023-11-03

@@ -1,3 +1,12 @@
+## 2.55.2
+
+2023-11-10
+
+### 🐛 问题修复
+
+- 修复 `Tree` 在 react 18 下展开收起出现闪烁的 bug。([#2338](https://github.com/arco-design/arco-design/pull/2338))
+- 修复 `Tree` 在受控时展开收起动画未生效的 bug。([#2338](https://github.com/arco-design/arco-design/pull/2338))
+
 ## 2.52.0
 
 2023-08-18

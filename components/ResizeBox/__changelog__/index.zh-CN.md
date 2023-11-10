@@ -1,3 +1,11 @@
+## 2.55.2
+
+2023-11-10
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox` 拖动后覆盖了 body 内联 cursor 样式的 bug。([#2352](https://github.com/arco-design/arco-design/pull/2352))
+
 ## 2.45.1
 
 2023-03-01
