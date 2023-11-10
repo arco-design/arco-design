@@ -16,18 +16,39 @@ on:
           - aplha
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: yarn && yarn icon
-      - run: yarn test
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@master
+
+  #     - name: install
+  #       run: yarn run dependencies
+
+  #     - name: setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #         cache: 'yarn'
+
+  #     - name: run-icon
+  #       run: yarn icon
+
+  #     - name: mock-time
+  #       uses: szenius/set-timezone@v1.0
+  #       with:
+  #         timezoneLinux: 'Asia/Singapore'
+  #         timezoneMacos: 'Asia/Singapore'
+  #         timezoneWindows: 'Singapore Standard Time'
+
+  #     - name: test:client
+  #       run: yarn test:client
+
+  #     - name: test:node
+  #       run: yarn test:node
 
   publish-npm:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -35,6 +56,19 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+
+      - name: install
+        run: yarn run dependencies
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: run-icon
+        run: yarn icon
+
       - run: npm publish --access=public --tag=${{ github.event.inputs.dist_tag }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.ARCO_BOT_NPM_TOKEN}}
