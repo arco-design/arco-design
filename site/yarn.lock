@@ -325,10 +325,10 @@
     axios "^1.1.3"
     classnames "^2.2.6"
 
-"@arco-materials/site-navbar-new@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.npmjs.org/@arco-materials/site-navbar-new/-/site-navbar-new-1.2.7.tgz#1bfa78305b068e3b4c6c53dac71184780fb408f4"
-  integrity sha512-JxjrStF4n8K45EpwimogxlBU783dUWwGy1klqXze8jKsg4k/vCquIkV2RaVeznYQDMCVKgQW3DOWD343pQJS/Q==
+"@arco-materials/site-navbar-new@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.npmjs.org/@arco-materials/site-navbar-new/-/site-navbar-new-1.2.10.tgz#e15d68d5d30c4db7487ae0240f4d424a34f39a8f"
+  integrity sha512-t6easbqbDHsBAiesp/O/Bi1epommE5pX2aXYmqaAsyIx7Q8vOPEPafVzhWiJQeI/ta3hnrmzF6hYowwGaOzQDw==
   dependencies:
     "@antv/g2" "^4.1.12"
     "@arco-materials/site-utils" "^1.2.0"
