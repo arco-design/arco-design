@@ -15,7 +15,7 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |bordered|是否显示边框|boolean |`true`|-|
-|hoverable|列表项是否可悬浮|boolean |`-`|`2.9.0`|-|
+|hoverable|列表项是否可悬浮|boolean |`-`|2.9.0|
 |loading|是否加载中|boolean |`-`|-|
 |split|是否显示分割线|boolean |`true`|-|
 |defaultCurrent|滚动加载数据当前页码|number |`1`|-|

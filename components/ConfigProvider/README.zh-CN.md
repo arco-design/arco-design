@@ -74,6 +74,8 @@ export type ComponentConfig = {
   Image?: ImageProps;
   Input?: InputProps;
   InputNumber?: InputNumberProps;
+  VerificationCode?: VerificationCodeProps;
+  Watermark?: WatermarkProps;
   InputTag?: InputTagProps;
   Layout?: LayoutProps;
   Link?: LinkProps;
@@ -158,6 +160,9 @@ type CalendarType = {
     short: Record<string, any>;
     long: Record<string, any>;
   };
+  formatYear?: string;
+  formatMonth?: string;
+  monthBeforeYear?: boolean;
 };
 ```
 

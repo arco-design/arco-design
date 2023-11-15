@@ -106,7 +106,6 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |clearRangeOnReselect|当重新选择范围的时候，会清空之前的范围重新进行选择|boolean |`-`|2.23.0|
-|format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-MM-DD`|-|
 |disabledTime|不可选取的时间|(current: Dayjs, type: 'start' \| 'end') => [DisabledTimeProps](#disabledtimeprops) |`-`|-|
 |mode|范围选择器的类型，可以是日期、月份。|'date' \| 'month' \| 'week' \| 'year' \| 'quarter' |`date`|-|
 |onSelect|选中日期发生改变但组件值未改变时的回调|(dateString: string[], value: Dayjs[], extra: { type: 'start' \| 'end' }) => void |`-`|`extra` in `2.23.0`|
@@ -114,6 +113,7 @@
 |defaultPickerValue|默认面板显示的日期|[CalendarValue](#calendarvalue)[] |`-`|-|
 |defaultValue|默认日期|[CalendarValue](#calendarvalue)[] |`-`|-|
 |disabled|是否禁用|boolean \| boolean[] |`-`|-|
+|format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string \| string[] |`YYYY-MM-DD`|string[] in 2.55.0|
 |pickerValue|面板显示的日期。|[CalendarValue](#calendarvalue)[] |`-`|2.9.0|
 |placeholder|提示文案|string[] |`-`|-|
 |showTime|是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。|boolean \| [TimePickerRangeProps](#timepickerrangeprops) |`-`|-|

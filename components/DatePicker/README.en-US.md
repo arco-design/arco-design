@@ -106,7 +106,6 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |clearRangeOnReselect|When reselect the range, the previous range will be cleared for next selection|boolean |`-`|2.23.0|
-|format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string |`YYYY-MM-DD`|-|
 |disabledTime|Specify the time that cannot be selected|(current: Dayjs, type: 'start' \| 'end') => [DisabledTimeProps](#disabledtimeprops) |`-`|-|
 |mode|The type of RangePicker|'date' \| 'month' \| 'week' \| 'year' \| 'quarter' |`date`|-|
 |onSelect|Callback when the show value changes but the selected value does not change|(dateString: string[], value: Dayjs[], extra: { type: 'start' \| 'end' }) => void |`-`|`extra` in `2.23.0`|
@@ -114,6 +113,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |defaultPickerValue|Default displayed date of panel.|[CalendarValue](#calendarvalue)[] |`-`|-|
 |defaultValue|To set default date|[CalendarValue](#calendarvalue)[] |`-`|-|
 |disabled|Whether to disable input box|boolean \| boolean[] |`-`|-|
+|format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string \| string[] |`YYYY-MM-DD`|string[] in 2.55.0|
 |pickerValue|Displayed date of panel.|[CalendarValue](#calendarvalue)[] |`-`|2.9.0|
 |placeholder|The placeholder of input|string[] |`-`|-|
 |showTime|Whether to show time selection, if an object is passed in, the parameters will be passed to the built-in TimePicker.|boolean \| [TimePickerRangeProps](#timepickerrangeprops) |`-`|-|

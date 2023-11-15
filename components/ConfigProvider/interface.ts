@@ -65,6 +65,7 @@ import { TriggerProps } from '../Trigger/interface';
 // import { TypographyProps } from '../Typography/interface';
 import { UploadProps } from '../Upload/interface';
 import { VerificationCodeProps } from '../VerificationCode/interface';
+import { WatermarkProps } from '../Watermark/interface';
 
 export type ThemeConfig = Record<string, any>;
 
@@ -112,6 +113,7 @@ export type ComponentConfig = {
   Input?: InputProps;
   InputNumber?: InputNumberProps;
   VerificationCode?: VerificationCodeProps;
+  Watermark?: WatermarkProps;
   InputTag?: InputTagProps;
   Layout?: LayoutProps;
   Link?: LinkProps;

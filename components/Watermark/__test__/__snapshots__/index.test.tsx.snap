@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Watermark default 1`] = `null`;
+
+exports[`ConfigProvider componentConfig.Watermark set className globally 1`] = `null`;
+
+exports[`ConfigProvider componentConfig.Watermark set className globally and component set className itself. 1`] = `null`;
+
+exports[`ConfigProvider componentConfig.Watermark set data-* property 1`] = `null`;
