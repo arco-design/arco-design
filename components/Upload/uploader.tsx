@@ -153,8 +153,8 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
     if (isNumber(limit) && limit < fileList.length + files.length) {
       return onExceedLimit && onExceedLimit(files, fileList);
     }
-    const list = this.props.fileList || [];
     const asyncUpload = (file: File, index: number) => {
+      const list = this.props.fileList || [];
       const upload: UploadItem = {
         uid: `${String(+new Date())}${index}`,
         originFile: file,
