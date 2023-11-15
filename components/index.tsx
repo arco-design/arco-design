@@ -202,6 +202,10 @@ export { default as Upload } from './Upload';
 export type { MentionsProps } from './Mentions/interface';
 export { default as Mentions } from './Mentions';
 
+
+export type { WatermarkProps } from './Watermark/interface';
+export { default as Watermark } from './Watermark';
+
 export type { ImageProps, ImagePreviewProps, ImagePreviewActionProps, ImagePreviewGroupProps } from './Image/interface';
 export { default as Image } from './Image';
 

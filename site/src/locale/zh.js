@@ -41,6 +41,7 @@ export default {
   'routes.input-tag': '标签输入框 InputTag',
   'routes.input-number': '数字输入框 InputNumber',
   'routes.verification-code': '验证码输入框 VerificationCode',
+  'routes.watermark': '水印 Watermark',
   'routes.auto-complete': '自动补全 AutoComplete',
   'routes.checkbox': '复选框 Checkbox',
   'routes.radio': '单选框 Radio',

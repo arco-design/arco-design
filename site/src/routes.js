@@ -277,6 +277,7 @@ export default function getRoutes(lang = 'zh', t) {
               component: lazyLoad(() =>
                 import(`../../components/VerificationCode/README${suffix}.md`)
               ),
+              new: true,
             },
             {
               name: t['routes.mentions'],
@@ -383,6 +384,12 @@ export default function getRoutes(lang = 'zh', t) {
               name: t['routes.skeleton'],
               path: 'components/skeleton',
               component: lazyLoad(() => import(`../../components/Skeleton/README${suffix}.md`)),
+            },
+            {
+              name: t['routes.watermark'],
+              path: 'components/watermark',
+              component: lazyLoad(() => import(`../../components/Watermark/README${suffix}.md`)),
+              new: true,
             },
           ],
         },

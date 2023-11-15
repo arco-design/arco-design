@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import { Menu, Badge } from '@arco-design/web-react';
+import { Menu, Grid, Tag } from '@arco-design/web-react';
 import { useHistory } from 'react-router-dom';
 import NProgress from 'nprogress';
 import cs from 'classnames';
@@ -112,13 +112,14 @@ function ACMenu(props) {
                                     // Menuitem and Link will repeat TAB
                                     tabIndex={-1}
                                     onClick={onClickPrevent}
+                                    className="menu-link"
                                   >
-                                    {item.new ? (
-                                      <Badge style={{ display: 'inline' }} count={1} dot>
-                                        <span>{item.name}</span>
-                                      </Badge>
-                                    ) : (
-                                      item.name
+                                    <span>{item.name}</span>
+
+                                    {item.new && (
+                                      <Tag color="green" size="small" style={{ marginLeft: 12 }}>
+                                        new
+                                      </Tag>
                                     )}
                                   </a>
                                 </MenuItem>
@@ -134,13 +135,14 @@ function ACMenu(props) {
                               href={getPath(group.module, child.path, lang)}
                               onClick={onClickPrevent}
                               tabIndex={-1}
+                              className="menu-link"
                             >
-                              {child.new ? (
-                                <Badge style={{ display: 'inline' }} count={1} dot>
-                                  <span>{child.name}</span>
-                                </Badge>
-                              ) : (
-                                child.name
+                              <span>{child.name}</span>
+
+                              {child.new && (
+                                <Tag color="green" size="small" style={{ marginLeft: 12 }}>
+                                  new
+                                </Tag>
                               )}
                             </a>
                           </MenuItem>
@@ -156,13 +158,14 @@ function ACMenu(props) {
                     href={getPath(group.module, child.path, lang)}
                     onClick={onClickPrevent}
                     tabIndex={-1}
+                    className="menu-link"
                   >
-                    {group.new ? (
-                      <Badge style={{ display: 'inline' }} count={1} dot>
-                        <span>{group.name}</span>
-                      </Badge>
-                    ) : (
-                      group.name
+                    <span>{group.name}</span>
+
+                    {group.new && (
+                      <Tag color="green" size="small" style={{ marginLeft: 12 }}>
+                        new
+                      </Tag>
                     )}
                   </a>
                 </MenuItem>

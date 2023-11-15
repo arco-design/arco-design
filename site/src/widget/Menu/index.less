@@ -56,6 +56,17 @@
     .arco-menu-item {
       color: var(--color-text-1);
 
+      .menu-link {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        > span {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
       a {
         color: var(--color-text-1);
       }
