@@ -52,6 +52,8 @@ const defaultProps: TreeSelectProps = {
   fieldNames: DefaultFieldNames,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 const TreeSelect: ForwardRefRenderFunction<
   RefTreeSelectType,
   PropsWithChildren<TreeSelectProps>
@@ -284,7 +286,7 @@ const TreeSelect: ForwardRefRenderFunction<
         trigger="click"
         position="bl"
         getPopupContainer={props.getPopupContainer}
-        popupAlign={{ bottom: 4 }}
+        popupAlign={triggerPopupAlign}
         unmountOnExit={props.unmountOnExit}
         {...props.triggerProps}
         className={cs(`${prefixCls}-trigger`, props.triggerProps && props.triggerProps.className)}

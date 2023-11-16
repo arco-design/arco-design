@@ -146,6 +146,8 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
         return;
       }
 
+      if (!refScrollElement.current) return;
+
       const { scrollTop, scrollHeight, clientHeight } = refScrollElement.current;
       const scrollBottom = scrollHeight - (scrollTop + clientHeight);
 

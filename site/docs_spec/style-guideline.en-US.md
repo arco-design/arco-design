@@ -52,6 +52,12 @@ Users understand content and complete work through words, and a scientific font 
 | **Number Font** | Regular Numbers | Nunito |
 | Special Number | Byte Number | |
 
+|  | Mac OS-system   | Window-system |
+| ------------- | --------------- | ----------- |
+|  **Chinese Fonts**       | PingFang SC | Microsoft Yahei |
+| **English Font**      | Nunito      | Nunito          |
+| **Number Font**      | Regular: Nunito . Special Number: Byte Number           | Regular: Nunito . Special Number: Byte Number      |
+
 At the same time, considering the actual use of the business and the stability of different platforms, a set of alternate fonts is provided.
 
 ```
@@ -106,7 +112,7 @@ Time is a very commonly used data format in the interface. Arco recommends using
 
 ### Universal punctuation
 
-Use half-width "..." as an ellipsis.
+Use  "..." as an ellipsis.
 
 ![](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/7146fda6cf3c4c148a47877e2f88c54e~tplv-uwbnlip3yd-image.image)
 

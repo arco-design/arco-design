@@ -1,3 +1,11 @@
+## 2.55.2
+
+2023-11-10
+
+### 🐛 BugFix
+
+- Fixed the bug where `ResizeBox` covered the body inline cursor style after dragging.([#2352](https://github.com/arco-design/arco-design/pull/2352))
+
 ## 2.45.1
 
 2023-03-01

@@ -1,3 +1,12 @@
+## 2.55.2
+
+2023-11-10
+
+### 🐛 BugFix
+
+- Fixed the bug where `Tree` would flicker when expanded or collapsed under react 18.([#2338](https://github.com/arco-design/arco-design/pull/2338))
+- Fixed the bug that the expansion and collapse animation of `Tree` did not take effect when controlled.([#2338](https://github.com/arco-design/arco-design/pull/2338))
+
 ## 2.52.0
 
 2023-08-18

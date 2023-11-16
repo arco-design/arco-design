@@ -5,6 +5,7 @@ import 'dayjs/locale/ar';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMMM YYYY',
+  monthBeforeYear: true,
   today: 'اليوم',
   view: {
     month: 'شهر',

@@ -1,3 +1,19 @@
+## 2.55.1
+
+2023-11-03
+
+### 🐛 BugFix
+
+- Fixed a bug where `onChange` would be triggered once during blur when the `Input` component passed in a string containing a newline character by default without changing the value.([#2335](https://github.com/arco-design/arco-design/pull/2335))
+
+## 2.55.0
+
+2023-10-27
+
+### 💅 Style
+
+- Fixed the issue that clear text of `Input` with prefix/suffix in Safari caused vertical jitter.([#2315](https://github.com/arco-design/arco-design/pull/2315))
+
 ## 2.54.0
 
 2023-10-09

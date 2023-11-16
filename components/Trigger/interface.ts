@@ -151,11 +151,12 @@ export interface TriggerProps {
    */
   clickToClose?: boolean;
   /**
-   * @zh 是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。
-   * @en Whether to allow close the popup by clicking the area outside the child node and the popup box.
+   * @zh 是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。默认是在冒泡阶段触发该逻辑，可设置 `{ capture: true }` 指定捕获阶段触发
+   * @en Whether to allow close the popup by clicking the area outside the child node and the popup box.By default, this logic is triggered in the bubbling phase. You can set `{ capture: true }` to specify the triggering phase in the capture phase.
    * @defaultValue true
+   * @version `{ capture: boolean }` in `2.55.0`
    */
-  clickOutsideToClose?: boolean;
+  clickOutsideToClose?: boolean | { capture: boolean };
   /**
    * @zh 是否允许按 `ESC` 键关闭弹出框。
    * @en Whether to allow close the popup by pressing `ESC`.

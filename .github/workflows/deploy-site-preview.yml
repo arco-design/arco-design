@@ -2,6 +2,11 @@ name: deploy-site-preview
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: [npm-publish]
+    types:
+      - completed
+
   workflow_dispatch:
 
 jobs:
@@ -54,7 +59,7 @@ jobs:
           path: dist/
 
       - name: netlify install
-        run: yarn add netlify-cli -D
+        run: yarn add netlify-cli@16 -D
 
       - name: get PreviewID
         run: |

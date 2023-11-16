@@ -60,4 +60,9 @@ describe('Spin', () => {
 
     expect(wrapper.find('.arco-spin-block').length).toBe(1);
   });
+
+  it('render children while it is 0/NaN', () => {
+    const wrapper0 = render(<Spin>{0}</Spin>);
+    expect(wrapper0.find('div')[0]).toHaveTextContent('0');
+  });
 });

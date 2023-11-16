@@ -27,6 +27,18 @@ const defaultProps: TooltipProps = {
   popupHoverStay: true,
 };
 
+const triggerDuration = {
+  enter: 300,
+  exit: 100,
+};
+
+const triggerPopupAlign = {
+  left: 12,
+  right: 12,
+  top: 12,
+  bottom: 12,
+};
+
 function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<TooltipProps>>(
@@ -119,10 +131,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
       className={className}
       ref={refTrigger}
       classNames="zoomInFadeOut"
-      duration={{
-        enter: 300,
-        exit: 100,
-      }}
+      duration={triggerDuration}
       popup={() => {
         return (
           <div
@@ -141,12 +150,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
       trigger={trigger}
       escToClose={escToClose}
       showArrow
-      popupAlign={{
-        left: 12,
-        right: 12,
-        top: 12,
-        bottom: 12,
-      }}
+      popupAlign={triggerPopupAlign}
       mouseEnterDelay={200}
       mouseLeaveDelay={200}
       unmountOnExit={unmountOnExit}

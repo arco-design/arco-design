@@ -460,7 +460,9 @@ export default class Control<
             {child}
 
             {validateStatus && hasFeedback && (
-              <div className={`${prefixCls}-item-feedback`}>
+              <div
+                className={`${prefixCls}-item-feedback ${prefixCls}-item-feedback-${validateStatus}`}
+              >
                 {validateStatus === 'warning' && <IconExclamationCircleFill />}
                 {validateStatus === 'success' && <IconCheckCircleFill />}
                 {validateStatus === 'error' && <IconCloseCircleFill />}

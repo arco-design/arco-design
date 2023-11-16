@@ -1,3 +1,11 @@
+## 2.54.2
+
+2023-10-20
+
+### 💅 样式更新
+
+- 修复 `Button.Group` 在单个按钮下的圆角样式问题。([#2294](https://github.com/arco-design/arco-design/pull/2294) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.52.0
 
 2023-08-18

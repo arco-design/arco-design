@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { InternalColumnProps } from './interface';
 import { INTERNAL_EXPAND_KEY, INTERNAL_SELECTION_KEY } from './constant';
 
@@ -13,13 +13,38 @@ function fixedWidth(width?: number | string) {
 type ColGroupType = {
   prefixCls?: string;
   columns?: InternalColumnProps[];
+  columnWidths?: number[];
+  producer?: boolean;
+  onSetColumnWidths?: (widths: number[]) => void;
+  expandedRowKeys?: React.Key[];
+  data?: any[];
 };
 
 function ColGroup(props: ColGroupType) {
-  const { prefixCls, columns } = props;
+  const colgroupRef = useRef<HTMLTableColElement>();
+  const { prefixCls, columns, columnWidths, producer, expandedRowKeys, data, onSetColumnWidths } =
+    props;
+
+  useEffect(() => {
+    if (producer && colgroupRef.current) {
+      const cols = Array.from(colgroupRef.current.querySelectorAll('col') || []).filter(
+        (col) =>
+          !col.classList.contains(`${prefixCls}-expand-icon-col`) &&
+          !col.classList.contains(`${prefixCls}-selection-col`)
+      );
+
+      const widths = cols.map((col) => {
+        const { width } = col.getBoundingClientRect();
+        return width;
+      });
+      onSetColumnWidths(widths);
+    }
+  }, [producer, onSetColumnWidths, prefixCls, expandedRowKeys, data, columns]);
+
+  let mainColIndex = 0;
 
   return (
-    <colgroup>
+    <colgroup ref={colgroupRef}>
       {columns.map((col, index) => {
         if (col.title === INTERNAL_EXPAND_KEY) {
           return (
@@ -39,8 +64,14 @@ function ColGroup(props: ColGroupType) {
             />
           );
         }
-
-        return <col key={col.key || index} style={fixedWidth(col.width)} />;
+        let width: number | string;
+        if (col.width) {
+          width = col.width;
+        } else if (!producer && columnWidths) {
+          width = columnWidths[mainColIndex];
+        }
+        mainColIndex++;
+        return <col key={col.key ?? index} style={fixedWidth(width)} />;
       })}
     </colgroup>
   );

@@ -1,0 +1,36 @@
+@import '../../Input/style/token.less';
+@import './token.less';
+
+@verification-code-prefix-cls: ~'@{prefix}-verification-code';
+@input-prefix-cls: ~'@{prefix}-input';
+
+.@{verification-code-prefix-cls} {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  column-gap: 4px;
+
+  .@{input-prefix-cls} {
+    width: @input-size-default-height;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .@{input-prefix-cls}-size-small {
+    width: @input-size-small-height;
+  }
+
+  .@{input-prefix-cls}-size-mini {
+    width: @input-size-mini-height;
+  }
+
+  .@{input-prefix-cls}-size-large {
+    width: @input-size-large-height;
+  }
+}
+
+.@{verification-code-prefix-cls}-rtl {
+  direction: rtl;
+}

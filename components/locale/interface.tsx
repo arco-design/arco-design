@@ -9,6 +9,9 @@ type CalendarType = {
     short: Record<string, any>;
     long: Record<string, any>;
   };
+  formatYear?: string;
+  formatMonth?: string;
+  monthBeforeYear?: boolean;
 };
 
 export interface Locale {

@@ -145,6 +145,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   );
   const [filters, setFilters] = useState<FilterType<T>>(currentFilters);
   const [tableViewWidth, setTableViewWidth] = useState<number>(0);
+
+  const [columnWidths, setColumnWidths] = useState<number[]>([]);
+
   const stickyOffsets: number[] = useStickyOffsets(flattenColumns);
   const [groupStickyClassNames, stickyClassNames] = useStickyClassNames(
     groupColumns,
@@ -212,7 +215,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     // 受控的筛选，当columns中的筛选发生改变时，更新state
     if (flattenFilteredValueColumns.length) {
       flattenFilteredValueColumns.forEach((column, index) => {
-        const innerDataIndex = column.dataIndex === undefined ? index : column.dataIndex;
+        const innerDataIndex = column.key || column.dataIndex || index;
         if (innerDataIndex !== undefined) {
           newFilters[innerDataIndex] = column.filteredValue;
         }
@@ -228,7 +231,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   /** ----------- Sorter ----------- */
 
   function onSort(direction, field) {
-    const column = getColumnByDataIndex(field);
+    const column = getColumnByUniqueKey(field);
     if (!column) {
       return;
     }
@@ -338,7 +341,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
     Object.keys(filters).forEach((field) => {
       if (filters[field] && filters[field].length) {
-        const column = getColumnByDataIndex(field) as ColumnProps<T>;
+        const column = getColumnByUniqueKey(field) as ColumnProps<T>;
         if (column && typeof column.onFilter === 'function') {
           _data = _data.filter((row) => {
             return filters[field].reduce(
@@ -498,7 +501,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         off(tableFoot, 'scroll', tableScrollHandler);
       }
     };
-  }, [hasFixedColumnLeft, hasFixedColumnRight, scroll?.x, flattenColumns.length, data]);
+  }, [hasFixedColumnLeft, hasFixedColumnRight, scroll?.x, scroll?.y, flattenColumns.length, data]);
 
   useUpdate(() => {
     const { total, pageSize } = getPaginationProps(data);
@@ -620,12 +623,23 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     flattenData,
   } = useRowSelection<T>(props, pageData, clonedData, getRowKey);
 
-  function getColumnByDataIndex(dataIndex) {
+  // flattenColumns 在构造时优先使用了 column.key 作为主键，在查询时使用 getColumnByDataIndex 方法可能会导致bug。
+  function getColumnByUniqueKey(key: string | number) {
     return flattenColumns.find((column, index) => {
-      if (column.dataIndex !== undefined) {
-        return column.dataIndex === dataIndex;
+      if (typeof column.key !== 'undefined') {
+        if (typeof column.key === 'number' && typeof key === 'string') {
+          return column.key.toString() === key;
+        }
+        return column.key === key;
       }
-      return Number(dataIndex) === index;
+      // unnecessary
+      if (typeof column.dataIndex !== 'undefined') {
+        return column.dataIndex === key;
+      }
+      if (typeof key === 'number') {
+        return index === key;
+      }
+      return false;
     });
   }
 
@@ -783,7 +797,12 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return fixedHeader || virtualized ? (
       <ComponentHeaderWrapper className={`${prefixCls}-header`}>
         <ComponentTable ref={refTableHead} style={maxContentWidth ? {} : scrollStyleX}>
-          <ColGroup columns={flattenColumns} prefixCls={prefixCls} />
+          <ColGroup
+            columns={flattenColumns}
+            prefixCls={prefixCls}
+            producer={false}
+            columnWidths={maxContentWidth && scroll.y ? columnWidths : null}
+          />
           {theadNode}
         </ComponentTable>
       </ComponentHeaderWrapper>
@@ -844,6 +863,13 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     );
 
   function renderTbody() {
+    const producer =
+      isObject(scroll) &&
+      scroll.x === 'max-content' &&
+      !!scroll.y &&
+      isArray(data) &&
+      data.length > 0;
+
     return (
       <ResizeObserver onResize={setScrollBarStyle}>
         {fixedHeader && !virtualized ? (
@@ -853,7 +879,14 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
             style={scrollStyleY}
           >
             <ComponentTable style={scrollStyleX}>
-              <ColGroup columns={flattenColumns} prefixCls={prefixCls} />
+              <ColGroup
+                columns={flattenColumns}
+                prefixCls={prefixCls}
+                producer={producer}
+                onSetColumnWidths={setColumnWidths}
+                expandedRowKeys={expandedRowKeys}
+                data={data}
+              />
               {tbody}
             </ComponentTable>
           </ComponentBodyWrapper>

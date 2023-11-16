@@ -3,6 +3,7 @@ import 'dayjs/locale/zh-tw';
 const Calendar = {
   formatYear: 'YYYY 年',
   formatMonth: 'YYYY 年 MM 月',
+  monthBeforeYear: false,
   today: '今天',
   view: {
     month: '月',

@@ -84,6 +84,10 @@ export { default as InputTag } from './InputTag';
 export type { InputNumberProps } from './InputNumber/interface';
 export { default as InputNumber } from './InputNumber';
 
+
+export type { VerificationCodeProps } from './VerificationCode/interface';
+export { default as VerificationCode } from './VerificationCode';
+
 export type { LayoutProps, HeaderProps, FooterProps, SiderProps, ContentProps } from './Layout/interface';
 export { default as Layout } from './Layout';
 
@@ -201,4 +205,4 @@ export { default as Mentions } from './Mentions';
 export type { ImageProps, ImagePreviewProps, ImagePreviewActionProps, ImagePreviewGroupProps } from './Image/interface';
 export { default as Image } from './Image';
 
-export const version = '2.54.1';
+export const version = '2.55.2';

@@ -79,6 +79,8 @@ const defaultProps: Partial<InnerPickerProps> = {
   showNowBtn: true,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 const Picker = (baseProps: InnerPickerProps) => {
   const { getPrefixCls, locale, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   if (rtl) {
@@ -488,7 +490,7 @@ const Picker = (baseProps: InnerPickerProps) => {
           onMouseEnterCell,
           onMouseLeaveCell,
         })}
-        {shouldShowFooter && (
+        {!!shouldShowFooter && (
           <Footer
             {...shortcutsProps}
             DATEPICKER_LOCALE={DATEPICKER_LOCALE}
@@ -566,7 +568,7 @@ const Picker = (baseProps: InnerPickerProps) => {
           clickToClose={false}
           position={position}
           disabled={disabled as boolean}
-          popupAlign={{ bottom: 4 }}
+          popupAlign={triggerPopupAlign}
           getPopupContainer={getPopupContainer}
           onVisibleChange={visibleChange}
           popupVisible={mergedPopupVisible}

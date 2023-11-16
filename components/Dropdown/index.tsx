@@ -16,6 +16,13 @@ const defaultProps: DropdownProps = {
   unmountOnExit: true,
 };
 
+const trigerPopupAlign = {
+  left: 4,
+  right: 4,
+  top: 4,
+  bottom: 4,
+};
+
 function Dropdown(baseProps: DropdownProps, _) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<DropdownProps>(baseProps, defaultProps, componentConfig?.Button);
@@ -114,12 +121,7 @@ function Dropdown(baseProps: DropdownProps, _) {
       unmountOnExit={unmountOnExit}
       position={position}
       popupVisible={popupVisible}
-      popupAlign={{
-        left: 4,
-        right: 4,
-        top: 4,
-        bottom: 4,
-      }}
+      popupAlign={trigerPopupAlign}
       getPopupContainer={getPopupContainer}
       alignPoint={trigger === 'contextMenu'}
       {...pick(rest, EventsByTriggerNeed)}

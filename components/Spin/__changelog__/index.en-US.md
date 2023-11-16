@@ -1,3 +1,11 @@
+## 2.54.2
+
+2023-10-20
+
+### 🐛 BugFix
+
+- Fixed the issue that the child node of `Spin` is not rendered when the child passed in was `0`.([#2301](https://github.com/arco-design/arco-design/pull/2301))
+
 ## 2.29.0
 
 2022-02-11

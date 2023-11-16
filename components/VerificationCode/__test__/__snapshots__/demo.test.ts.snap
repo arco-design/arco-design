@@ -1,0 +1,501 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders VerificationCode/demo/basic.md correctly 1`] = `
+<div
+  class="arco-verification-code"
+  style="width:300px"
+>
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`renders VerificationCode/demo/mask.md correctly 1`] = `
+<div>
+  <div
+    class="arco-verification-code"
+    style="width:300px"
+  >
+    <input
+      class="arco-input arco-verification-code-input"
+      type="password"
+      value="1"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="password"
+      value="2"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="password"
+      value="3"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="password"
+      value=""
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="password"
+      value=""
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="password"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`renders VerificationCode/demo/seperator.md correctly 1`] = `
+<div
+  class="arco-verification-code"
+  style="width:400px"
+>
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  -
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  -
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+  <input
+    class="arco-input arco-verification-code-input"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`renders VerificationCode/demo/status.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <div
+        style="width:80px"
+      >
+        <span
+          class="arco-typography"
+        >
+          Disabled
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-verification-code"
+        style="width:300px"
+      >
+        <input
+          class="arco-input arco-verification-code-input arco-input-disabled"
+          disabled=""
+          type="text"
+          value="1"
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-disabled"
+          disabled=""
+          type="text"
+          value="2"
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-disabled"
+          disabled=""
+          type="text"
+          value="3"
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-disabled"
+          disabled=""
+          type="text"
+          value="4"
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-disabled"
+          disabled=""
+          type="text"
+          value="5"
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-disabled"
+          disabled=""
+          type="text"
+          value="6"
+        />
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <div
+        style="width:80px"
+      >
+        <span
+          class="arco-typography"
+        >
+          ReadOnly
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-verification-code"
+        style="width:300px"
+      >
+        <input
+          class="arco-input arco-verification-code-input"
+          readonly=""
+          type="text"
+          value="1"
+        />
+        <input
+          class="arco-input arco-verification-code-input"
+          readonly=""
+          type="text"
+          value="2"
+        />
+        <input
+          class="arco-input arco-verification-code-input"
+          readonly=""
+          type="text"
+          value="3"
+        />
+        <input
+          class="arco-input arco-verification-code-input"
+          readonly=""
+          type="text"
+          value="4"
+        />
+        <input
+          class="arco-input arco-verification-code-input"
+          readonly=""
+          type="text"
+          value="5"
+        />
+        <input
+          class="arco-input arco-verification-code-input"
+          readonly=""
+          type="text"
+          value="6"
+        />
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <div
+        style="width:80px"
+      >
+        <span
+          class="arco-typography"
+        >
+          Error
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-verification-code"
+        style="width:300px"
+      >
+        <input
+          class="arco-input arco-verification-code-input arco-input-error"
+          type="text"
+          value=""
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-error"
+          type="text"
+          value=""
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-error"
+          type="text"
+          value=""
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-error"
+          type="text"
+          value=""
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-error"
+          type="text"
+          value=""
+        />
+        <input
+          class="arco-input arco-verification-code-input arco-input-error"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders VerificationCode/demo/validate.md correctly 1`] = `
+<div>
+  <div
+    style="width:200px"
+  >
+    <div
+      class="arco-typography"
+    >
+      Only numbers can be entered: 
+    </div>
+  </div>
+  <div
+    class="arco-verification-code"
+    style="width:300px"
+  >
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="1"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="2"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="3"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="4"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="5"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="6"
+    />
+  </div>
+  <br />
+  <br />
+  <div
+    style="width:200px"
+  >
+    <div
+      class="arco-typography"
+    >
+      Only \`a-z\` can be entered: 
+    </div>
+  </div>
+  <div
+    class="arco-verification-code"
+    style="width:300px"
+  >
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="a"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="b"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="c"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="d"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="e"
+    />
+    <input
+      class="arco-input arco-verification-code-input"
+      type="text"
+      value="f"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders VerificationCode/demo/with-form.md correctly 1`] = `
+<div
+  class="demo-verify-code-wrapper"
+>
+  <h5
+    class="arco-typography"
+  >
+    Verification Code
+  </h5>
+  <form
+    class="arco-form arco-form-horizontal arco-form-size-default"
+  >
+    <div
+      class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+    >
+      <div
+        class="arco-col arco-col-24 arco-form-item-wrapper"
+      >
+        <div
+          class="arco-form-item-control-wrapper"
+        >
+          <div
+            class="arco-form-item-control"
+            id="code"
+          >
+            <div
+              class="arco-form-item-control-children"
+            >
+              <div
+                class="arco-verification-code"
+              >
+                <input
+                  class="arco-input arco-verification-code-input arco-input-size-large"
+                  type="text"
+                  value=""
+                />
+                <input
+                  class="arco-input arco-verification-code-input arco-input-size-large"
+                  type="text"
+                  value=""
+                />
+                <input
+                  class="arco-input arco-verification-code-input arco-input-size-large"
+                  type="text"
+                  value=""
+                />
+                <input
+                  class="arco-input arco-verification-code-input arco-input-size-large"
+                  type="text"
+                  value=""
+                />
+                <input
+                  class="arco-input arco-verification-code-input arco-input-size-large"
+                  type="text"
+                  value=""
+                />
+                <input
+                  class="arco-input arco-verification-code-input arco-input-size-large"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="arco-btn arco-btn-primary arco-btn-size-large arco-btn-shape-square"
+      style="margin-top:20px"
+      type="submit"
+    >
+      <span>
+        Submit
+      </span>
+    </button>
+  </form>
+</div>
+`;

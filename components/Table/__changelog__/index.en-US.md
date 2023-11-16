@@ -1,3 +1,38 @@
+## 2.55.2
+
+2023-11-10
+
+### 🐛 BugFix
+
+- Fixed an issue where `col key` could be repeated when neither `dataIndex` nor `key` was specified in columns of `Table`.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed horizontal scrolling style issue in `Table` after virtual scrolling is enabled.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed `Table` `scroll.x={max-content}`, `scroll.y={true}` and the data is empty, the table header style is confused.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+
+## 2.55.1
+
+2023-11-03
+
+### 🐛 BugFix
+
+- Fixed the problem of horizontal scrolling failure of table header when dynamically updating `scrollY` in `Table`.([#2330](https://github.com/arco-design/arco-design/pull/2330))
+
+## 2.55.0
+
+2023-10-27
+
+### 🐛 BugFix
+
+- Fixed an issue where the `render` parameter might be empty when the `Table` component's `data` attribute is a two-dimensional array.([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- Fixed an issue where the sorting and filtering functions failed when the `Table` component had both `dataIndex` and `key` attributes in columns.([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
+## 2.54.2
+
+2023-10-20
+
+### 🐛 BugFix
+
+- Fixed an issue where the `Table` component would not align with the table header when `scroll={x: 'max-content', y: true}`([#2303](https://github.com/arco-design/arco-design/pull/2303))
+
 ## 2.53.0
 
 2023-09-08

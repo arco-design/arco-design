@@ -110,4 +110,21 @@ describe('Picker Format', () => {
       '2020-02-01 00:00:00'
     );
   });
+
+  it('RangePicker format array', () => {
+    const component = render(
+      <RangePicker
+        mode="date"
+        format={['[White Friday] MM-DD', '[Black Friday] MM-DD']}
+        defaultValue={['2020-02-01', '2020-03-01']}
+      />
+    );
+
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe(
+      'White Friday 02-01'
+    );
+    expect(component.find('.arco-picker-input input')[1].getAttribute('value')).toBe(
+      'Black Friday 03-01'
+    );
+  });
 });

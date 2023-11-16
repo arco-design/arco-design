@@ -125,12 +125,20 @@
       border-radius: 0 ~'@{btn-size-@{size}-radius}' ~'@{btn-size-@{size}-radius}' 0;
     }
 
+    .@{btn-prefix-cls}-size-@{size}:first-child:last-child {
+      border-radius: ~'@{btn-size-@{size}-radius}';
+    }
+
     .@{btn-prefix-cls}-size-@{size}.@{btn-prefix-cls}-shape-round:first-child {
       border-radius: calc(~'@{size-@{size}}' * 0.5) 0 0 calc(~'@{size-@{size}}' * 0.5);
     }
 
     .@{btn-prefix-cls}-size-@{size}.@{btn-prefix-cls}-shape-round:last-child {
       border-radius: 0 calc(~'@{size-@{size}}' * 0.5) calc(~'@{size-@{size}}' * 0.5) 0;
+    }
+
+    .@{btn-prefix-cls}-size-@{size}.@{btn-prefix-cls}-shape-round:first-child:last-child {
+      border-radius: calc(~'@{size-@{size}}' * 0.5);
     }
 
     .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-size-@{size}:first-child {
@@ -141,12 +149,20 @@
       border-radius: ~'@{btn-size-@{size}-radius}' 0 0 ~'@{btn-size-@{size}-radius}';
     }
 
+    .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-size-@{size}:first-child:last-child {
+      border-radius: ~'@{btn-size-@{size}-radius}';
+    }
+
     .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-size-@{size}.@{btn-prefix-cls}-shape-round:first-child {
       border-radius: 0 calc(~'@{size-@{size}}' * 0.5) calc(~'@{size-@{size}}' * 0.5) 0;
     }
 
     .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-size-@{size}.@{btn-prefix-cls}-shape-round:last-child {
       border-radius: calc(~'@{size-@{size}}' * 0.5) 0 0 calc(~'@{size-@{size}}' * 0.5);
+    }
+
+    .@{btn-prefix-cls}-rtl.@{btn-prefix-cls}-size-@{size}.@{btn-prefix-cls}-shape-round:first-child:last-child {
+      border-radius: calc(~'@{size-@{size}}' * 0.5);
     }
   }
 }

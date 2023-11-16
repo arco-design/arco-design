@@ -60,6 +60,7 @@ const defaultProps: UploadProps = {
   autoUpload: true,
   showUploadList: true,
   beforeUpload: () => true,
+  method: 'post',
 };
 
 const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<UploadProps>> = (
@@ -190,6 +191,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         'autoUpload',
         'error',
         'action',
+        'method',
         'multiple',
         'name',
         'accept',

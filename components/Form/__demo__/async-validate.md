@@ -30,11 +30,13 @@ function App() {
       style={{
         width: 600,
       }}
+
     >
       <FormItem
         label="Username"
         field="name"
         required
+        hasFeedback
         rules={[
           {
             validator: async (value, callback) => {
@@ -43,7 +45,7 @@ function App() {
                   setTimeout(() => {
                     callback('Name must be admin');
                     resolve();
-                  }, 3000);
+                  }, 1000);
                 } else {
                   resolve();
                 }
@@ -52,7 +54,7 @@ function App() {
           },
         ]}
       >
-        <Input placeholder="please enter your username" />
+        <Input placeholder="please enter your username"  />
       </FormItem>
       <FormItem wrapperCol={{ offset: 5 }}>
         <Button

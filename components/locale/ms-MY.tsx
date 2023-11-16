@@ -3,6 +3,7 @@ import 'dayjs/locale/ms-my';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
+  monthBeforeYear: true,
   today: 'hari ini',
   view: {
     month: 'bulan',

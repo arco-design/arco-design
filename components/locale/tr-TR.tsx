@@ -4,6 +4,7 @@ import { DefaultValidateMessage } from 'b-validate';
 const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MMM YYYY',
+  monthBeforeYear: true,
   today: 'Bugün',
   view: {
     month: 'Ay',

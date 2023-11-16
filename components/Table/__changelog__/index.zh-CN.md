@@ -1,3 +1,38 @@
+## 2.55.2
+
+2023-11-10
+
+### 🐛 问题修复
+
+- 修复 `Table` 的 `columns` 中未指定 `dataIndex` 也未指定`key`时， `col key` 可能会重复的问题。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复`Table`开启虚拟滚动后，横向滚动样式问题 。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复`Table` 的 `scroll.x={max-content}`，`scroll.y={true}`且数据为空时，表头样式错乱的问题 。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+
+## 2.55.1
+
+2023-11-03
+
+### 🐛 问题修复
+
+- 修复 `Table` 在动态更新 `scrollY`  时表头横向滚动失效的问题。([#2330](https://github.com/arco-design/arco-design/pull/2330))
+
+## 2.55.0
+
+2023-10-27
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件 `data` 属性为二维数组时，`render` 参数可能为空的问题。([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- 修复 `Table` 组件在`columns`中同时存在`dataIndex`和`key`属性时，排序和筛选功能失效的问题。([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
+## 2.54.2
+
+2023-10-20
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件在 `scroll={x: 'max-content', y: true}` 时，表头和内容无法对齐的问题([#2303](https://github.com/arco-design/arco-design/pull/2303))
+
 ## 2.53.0
 
 2023-09-08

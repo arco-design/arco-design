@@ -88,7 +88,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
 
   // 执行上传
   doUpload = async (file: UploadItem) => {
-    const { action, headers, name, data, withCredentials, customRequest } = this.props;
+    const { action, headers, name, data, withCredentials, customRequest, method } = this.props;
     const onProgress = (percent: number, event?: ProgressEvent) => {
       const targetFile = this.getTargetFile(file);
       if (targetFile) {
@@ -135,7 +135,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
 
     let request;
     if (action) {
-      request = uploadRequest({ ...options, action });
+      request = uploadRequest({ ...options, action, method });
     } else if (customRequest) {
       request = await customRequest(options);
     }

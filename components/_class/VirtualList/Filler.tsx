@@ -6,6 +6,7 @@ interface FillerProps {
   /** offset value of the first element of the viewport */
   offset?: number;
   outerStyle?: React.CSSProperties;
+  innerStyle?: React.CSSProperties;
   children: React.ReactNode;
 }
 
@@ -17,6 +18,7 @@ const Filler: React.FC<FillerProps> = ({
   offset,
   children,
   outerStyle: propsOuterStyle,
+  innerStyle: propsInnerStyle,
 }): React.ReactElement => {
   let outerStyle: React.CSSProperties = {};
 
@@ -41,6 +43,7 @@ const Filler: React.FC<FillerProps> = ({
       left: 0,
       right: 0,
       top: 0,
+      ...propsInnerStyle,
     };
   }
 

@@ -216,7 +216,7 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
     );
   }
 
-  const headerOperations = { onPrev, onSuperPrev, onNext, onSuperNext };
+  const headerOperations = { onPrev, onSuperPrev, onNext, onSuperNext, DATEPICKER_LOCALE };
 
   function onChangePanel(mode) {
     setPanelMode(mode);

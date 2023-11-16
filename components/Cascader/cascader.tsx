@@ -60,6 +60,8 @@ const defaultProps: CascaderProps = {
   defaultActiveFirstOption: true,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<CascaderProps>(baseProps, defaultProps, componentConfig?.Cascader);
@@ -411,7 +413,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
         getPopupContainer={getPopupContainer}
         position={rtl ? 'br' : 'bl'}
         classNames="slideDynamicOrigin"
-        popupAlign={{ bottom: 4 }}
+        popupAlign={triggerPopupAlign}
         // 动态加载时，unmountOnExit 默认为false。
         unmountOnExit={'unmountOnExit' in props ? props.unmountOnExit : !isFunction(props.loadMore)}
         popupVisible={popupVisible}

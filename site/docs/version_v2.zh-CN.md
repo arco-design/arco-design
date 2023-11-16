@@ -2,6 +2,78 @@
 changelog: true
 ---
 
+## 2.55.2
+
+2023-11-10
+
+### 🐛 问题修复
+
+- 修复 `Table` 的 `columns` 中未指定 `dataIndex` 也未指定`key`时， `col key` 可能会重复的问题。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复`Table`开启虚拟滚动后，横向滚动样式问题 。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复`Table` 的 `scroll.x={max-content}`，`scroll.y={true}`且数据为空时，表头样式错乱的问题 。([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- 修复 `ResizeBox` 拖动后覆盖了 body 内联 cursor 样式的 bug。([#2352](https://github.com/arco-design/arco-design/pull/2352))
+- 修复 `Tree` 在 react 18 下展开收起出现闪烁的 bug。([#2338](https://github.com/arco-design/arco-design/pull/2338))
+- 修复 `Tree` 在受控时展开收起动画未生效的 bug。([#2338](https://github.com/arco-design/arco-design/pull/2338))
+
+## 2.55.1
+
+2023-11-03
+
+### 🐛 问题修复
+
+- 修复 `Table` 在动态更新 `scrollY`  时表头横向滚动失效的问题。([#2330](https://github.com/arco-design/arco-design/pull/2330))
+- 修复 `Input` 组件默认传入包含换行符的字符串且未做值的改动时， `onChange` 会在 blur 时触发一次的 bug。([#2335](https://github.com/arco-design/arco-design/pull/2335))
+
+## 2.55.0
+
+2023-10-27
+
+### 💎 功能优化
+
+- `Image.PreviewGroup` 组件增加方向键的快捷键支持([#2320](https://github.com/arco-design/arco-design/pull/2320))
+
+### 🆕 功能升级
+
+- `DatePicker.RangePicker` 组件 format 参数支持数组。([#2327](https://github.com/arco-design/arco-design/pull/2327))
+- `Trigger` 支持配置在捕获阶段触发 `clickOutside` 逻辑。([#2324](https://github.com/arco-design/arco-design/pull/2324))
+- 新增 `VerificationCode` 验证码输入组件([#2308](https://github.com/arco-design/arco-design/pull/2308))
+- `Upload` 支持自定义上传 method([#2297](https://github.com/arco-design/arco-design/pull/2297))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker.RangePicker` 组件 Tab 键切换焦点错位的 bug。([#2323](https://github.com/arco-design/arco-design/pull/2323))
+- 修复 `Table` 组件 `data` 属性为二维数组时，`render` 参数可能为空的问题。([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- 修复 `List` 组件滚动时偶现的 `cannot read properties of null (reading 'scrollTop')` 错误。([#2316](https://github.com/arco-design/arco-design/pull/2316))
+- 修复 `Table` 组件在`columns`中同时存在`dataIndex`和`key`属性时，排序和筛选功能失效的问题。([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
+### 💅 样式更新
+
+- 修复 `Input` 组件具有前后缀时在 Safari 中清空文本导致垂直方向高度抖动的问题。([#2315](https://github.com/arco-design/arco-design/pull/2315))
+
+## 2.54.3
+
+2023-10-26
+
+### 🐛 问题修复
+
+- 修复 `Form` 组件校验通过时表现了校验成功样式的 UI 问题（该 bug 在 `2.54.2` 引入）。([#2312](https://github.com/arco-design/arco-design/pull/2312) )
+
+## 2.54.2
+
+2023-10-20
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件在 `scroll={x: 'max-content', y: true}` 时，表头和内容无法对齐的问题([#2303](https://github.com/arco-design/arco-design/pull/2303))
+- 修复 `DatePicker.RangePicker` 设置 `shortcuts={[]}` 意外显示 0 的 bug。([#2302](https://github.com/arco-design/arco-design/pull/2302))
+- 修复 `Spin` 组件传入 Children 为 `0` 时，其子节点未渲染的问题。([#2301](https://github.com/arco-design/arco-design/pull/2301))
+- 修复 `Form` 组件在 `validating` 状态样式丢失的 bug。([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+- 修复 `Form.useFormContext` 状态更新导致组件卡顿的问题。([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+
+### 💅 样式更新
+
+- 修复 `Button.Group` 在单个按钮下的圆角样式问题。([#2294](https://github.com/arco-design/arco-design/pull/2294) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.54.1
 
 2023-10-16

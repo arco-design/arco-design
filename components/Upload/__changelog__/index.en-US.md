@@ -1,3 +1,11 @@
+## 2.55.0
+
+2023-10-27
+
+### 🆕 Feature
+
+- `Upload` supports custom upload method([#2297](https://github.com/arco-design/arco-design/pull/2297))
+
 ## 2.53.0
 
 2023-09-08

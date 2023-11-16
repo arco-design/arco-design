@@ -26,6 +26,8 @@ function getTooltipContent(nextSorterDirection: 'ascend' | 'descend', locale: Lo
   return locale.Table.cancelSort;
 }
 
+const triggerPopupAlign = { bottom: 0 };
+
 function Column<T>({
   onSort,
   onFilter,
@@ -61,7 +63,8 @@ function Column<T>({
 }: ColumnComponentProps<T>) {
   const { locale, rtl } = useContext(ConfigContext);
 
-  const innerDataIndex = dataIndex === undefined ? index : dataIndex;
+  // const innerDataIndex = dataIndex === undefined ? index : dataIndex;
+  const innerDataIndex = _key || dataIndex || index;
 
   // stateCurrentFilter 标记了下拉框中选中的 filter 项目，在受控模式下它与 currentFilter 可以不同
   const [currentFilter, setCurrentFilter, stateCurrentFilter] = useMergeValue<string[]>([], {
@@ -296,7 +299,7 @@ function Column<T>({
           trigger="click"
           classNames="slideDynamicOrigin"
           position={rtl ? 'bl' : 'br'}
-          popupAlign={{ bottom: 0 }}
+          popupAlign={triggerPopupAlign}
           popupVisible={filterVisible}
           onVisibleChange={onVisibleChange}
           {...filterDropdownTriggerProps}

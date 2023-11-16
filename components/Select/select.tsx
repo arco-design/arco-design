@@ -57,6 +57,8 @@ const defaultProps: SelectProps = {
   defaultActiveFirstOption: true,
 };
 
+const triggerPopupAlign = { bottom: 4 };
+
 function Select(baseProps: SelectProps, ref) {
   const { getPrefixCls, renderEmpty, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SelectProps>(baseProps, defaultProps, componentConfig?.Select);
@@ -765,7 +767,7 @@ function Select(baseProps: SelectProps, ref) {
         getPopupContainer={getPopupContainer}
         classNames="slideDynamicOrigin"
         autoAlignPopupWidth
-        popupAlign={{ bottom: 4 }}
+        popupAlign={triggerPopupAlign}
         popupVisible={popupVisible}
         unmountOnExit={unmountOnExit}
         onVisibleChange={tryUpdatePopupVisible}

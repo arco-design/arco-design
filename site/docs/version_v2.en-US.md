@@ -2,6 +2,78 @@
 changelog: true
 ---
 
+## 2.55.2
+
+2023-11-10
+
+### 🐛 BugFix
+
+- Fixed an issue where `col key` could be repeated when neither `dataIndex` nor `key` was specified in columns of `Table`.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed horizontal scrolling style issue in `Table` after virtual scrolling is enabled.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed `Table` `scroll.x={max-content}`, `scroll.y={true}` and the data is empty, the table header style is confused.([#2353](https://github.com/arco-design/arco-design/pull/2353))
+- Fixed the bug where `ResizeBox` covered the body inline cursor style after dragging.([#2352](https://github.com/arco-design/arco-design/pull/2352))
+- Fixed the bug where `Tree` would flicker when expanded or collapsed under react 18.([#2338](https://github.com/arco-design/arco-design/pull/2338))
+- Fixed the bug that the expansion and collapse animation of `Tree` did not take effect when controlled.([#2338](https://github.com/arco-design/arco-design/pull/2338))
+
+## 2.55.1
+
+2023-11-03
+
+### 🐛 BugFix
+
+- Fixed the problem of horizontal scrolling failure of table header when dynamically updating `scrollY` in `Table`.([#2330](https://github.com/arco-design/arco-design/pull/2330))
+- Fixed a bug where `onChange` would be triggered once during blur when the `Input` component passed in a string containing a newline character by default without changing the value.([#2335](https://github.com/arco-design/arco-design/pull/2335))
+
+## 2.55.0
+
+2023-10-27
+
+### 💎 Enhancement
+
+- `Image.PreviewGroup` component adds shortcut key support for arrow keys([#2320](https://github.com/arco-design/arco-design/pull/2320))
+
+### 🆕 Feature
+
+- The format parameter of the `DatePicker.RangePicker` component supports array.([#2327](https://github.com/arco-design/arco-design/pull/2327))
+- `Trigger` supports configuring `clickOutside` logic to be triggered during the capture phase.([#2324](https://github.com/arco-design/arco-design/pull/2324))
+- Add `VerificationCode` component([#2308](https://github.com/arco-design/arco-design/pull/2308))
+- `Upload` supports custom upload method([#2297](https://github.com/arco-design/arco-design/pull/2297))
+
+### 🐛 BugFix
+
+- Fixed the bug that the Tab key switching focus of the `DatePicker.RangePicker` component was misaligned.([#2323](https://github.com/arco-design/arco-design/pull/2323))
+- Fixed an issue where the `render` parameter might be empty when the `Table` component's `data` attribute is a two-dimensional array.([#2319](https://github.com/arco-design/arco-design/pull/2319))
+- Fix the `cannot read properties of null (reading 'scrollTop')` error that occasionally occurs when the `List` component is scrolling.([#2316](https://github.com/arco-design/arco-design/pull/2316))
+- Fixed an issue where the sorting and filtering functions failed when the `Table` component had both `dataIndex` and `key` attributes in columns.([#2311](https://github.com/arco-design/arco-design/pull/2311))
+
+### 💅 Style
+
+- Fixed the issue that clear text of `Input` with prefix/suffix in Safari caused vertical jitter.([#2315](https://github.com/arco-design/arco-design/pull/2315))
+
+## 2.54.3
+
+2023-10-26
+
+### 🐛 BugFix
+
+- Fixed the UI problem of displaying the verification success style when the `Form` component is verified (this bug was introduced in `2.54.2`).([#2312](https://github.com/arco-design/arco-design/pull/2312) )
+
+## 2.54.2
+
+2023-10-20
+
+### 🐛 BugFix
+
+- Fixed an issue where the `Table` component would not align with the table header when `scroll={x: 'max-content', y: true}`([#2303](https://github.com/arco-design/arco-design/pull/2303))
+- Fixed `DatePicker.RangePicker` setting `shortcuts={[]}` unexpectedly displayed 0.([#2302](https://github.com/arco-design/arco-design/pull/2302))
+- Fixed the issue that the child node of `Spin` is not rendered when the child passed in was `0`.([#2301](https://github.com/arco-design/arco-design/pull/2301))
+- Fixed the bug where the `Form` component's style was lost in the `validating` state.([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+- Fixed the issue where `Form.useFormContext` status update caused component lag.([#2299](https://github.com/arco-design/arco-design/pull/2299) )
+
+### 💅 Style
+
+- Fix `Button.Group` border-radius style under single button.([#2294](https://github.com/arco-design/arco-design/pull/2294) [@bestlyg](https://github.com/bestlyg))
+
 ## 2.54.1
 
 2023-10-16

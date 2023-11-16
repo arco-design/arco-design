@@ -22,6 +22,7 @@
 |multiple|文件多选|boolean |`-`|-|
 |withCredentials|上传请求是否携带 cookie|boolean |`-`|-|
 |action|上传接口地址|string |`-`|-|
+|method|上传请求的 http method|string |`post`|2.55.0|
 |listType|展示类型|'text' \| 'picture-list' \| 'picture-card' |`text`|-|
 |tip|提示文字，listType 不同，展示会有区别|string \| React.ReactNode |`-`|-|
 |accept|接受上传的类型 [详细请参考](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)。（`strict` in `2.53.0`，默认为 true。设置为 false 时，accept 表现和原生一致。设置为 true 时，会严格匹配文件后缀名，过滤掉不符合 accept 规则的文件。)|string \| { type: string; strict?: boolean } |`-`|-|
@@ -78,7 +79,7 @@
 ```js
 export type RequestOptions = Pick<
   UploadProps,
-  "headers" | "name" | "data" | "withCredentials" | "action"
+  "headers" | "name" | "data" | "withCredentials" | "action" | "method"
 > & {
   /** 更新当前文件的上传进度 。percent: 当前上传进度百分比 */
   onProgress: (percent: number, event?: ProgressEvent) => void;

@@ -12,6 +12,7 @@ import {
   ValidateFieldsErrors,
   FieldState,
   KeyType,
+  SubmitStatus,
   FormValidateFn,
 } from './interface';
 import promisify from './promisify';
@@ -51,8 +52,9 @@ class Store<
   FieldValue = FormData[keyof FormData],
   FieldKey extends KeyType = keyof FormData
 > {
-  // 是否正在提交
-  private isSubmitting: boolean = false;
+  // 表示的 Form 的提交状态而非单个字段的提交状态。
+  // 只有在触发表单 reset（原生 reset，而非当前的 resetFields） 时，才会回到  init 状态（目前没有支持 form.reset，所以没有这块逻辑）
+  private submitStatus: SubmitStatus = SubmitStatus.init;
 
   private registerFields: Control<FormData, FieldValue, FieldKey>[] = [];
 
@@ -60,7 +62,11 @@ class Store<
   private registerWatchers: (() => void)[] = [];
 
   // 所有 form item 内部 errors, validating, touched 状态的变化，都会通知这里注册到的 watcher
+  // TODO: 合并 registerWatchers
   private registerStateWatchers: (() => void)[] = [];
+
+  // 所有 form 整体 的变动，都会通知这里注册到的 watcher
+  private registerFormWatchers: (() => void)[] = [];
 
   // 和formControl 的 touched属性不一样。 只要被改过的字段，这里就会存储。并且不会跟随formControl被卸载而清除。
   // reset 的时候清除
@@ -76,6 +82,13 @@ class Store<
 
   private notifyWatchers() {
     this.registerWatchers.forEach((item) => {
+      item();
+    });
+  }
+
+  // 注册监听全局状态的 watcher
+  private notifyFormWatcher() {
+    this.registerFormWatchers.forEach((item) => {
       item();
     });
   }
@@ -113,6 +126,14 @@ class Store<
     }
   ) => {
     this.callbacks = values;
+  };
+
+  public registerFormWatcher = (item) => {
+    this.registerFormWatchers.push(item);
+
+    return () => {
+      this.registerFormWatchers = this.registerFormWatchers.filter((x) => x !== item);
+    };
   };
 
   public registerStateWatcher = (item) => {
@@ -261,6 +282,13 @@ class Store<
   // 内部使用
   public innerGetStore = () => {
     return this.store;
+  };
+
+  // 目前返回提交状态，后续统一维护 errors,warnings 后，这里可进行拓展
+  public innerGetStoreStatus = () => {
+    return {
+      submitStatus: this.submitStatus,
+    };
   };
 
   // 内部使用，返回原始对象，注入到组件的 value 都从这里获取值，cloneDeep 后的值每次引用地址是不同的
@@ -478,13 +506,16 @@ class Store<
     }
   );
 
-  private toggleSubmitting = () => {
-    this.isSubmitting = !this.isSubmitting;
+  private toggleSubmitStatus = (submitStatus: SubmitStatus) => {
+    this.submitStatus = submitStatus;
     this.innerCollectFormState();
+
+    this.notifyFormWatcher();
   };
 
   public submit = () => {
-    this.toggleSubmitting();
+    this.toggleSubmitStatus(SubmitStatus.submitting);
+
     this.validate((errors, values) => {
       let result;
       const { onSubmit, onSubmitFailed } = this.callbacks;
@@ -495,15 +526,14 @@ class Store<
         result = onSubmitFailed(errors);
       }
 
+      this.toggleSubmitStatus(errors ? SubmitStatus.error : SubmitStatus.success);
+
       if (result && result.then) {
         // resolve 或者 reject， 都需要更新 submitting 的提交状态
-        result.then(this.toggleSubmitting, (error) => {
-          this.toggleSubmitting();
+        result.catch((error) => {
           // 保持以前的逻辑
           return Promise.reject(error);
         });
-      } else {
-        this.toggleSubmitting();
       }
     });
   };
@@ -520,8 +550,9 @@ class Store<
         errors: error ? [error] : [],
         warnings: item.getWarnings(),
         validateStatus: item.getValidateStatus(),
-        isSubmitting: this.isSubmitting,
+        isSubmitting: this.submitStatus === SubmitStatus.submitting,
         isTouched: item.isTouched(),
+        value: this.getFieldValue(item.props.field),
       };
     };
 
