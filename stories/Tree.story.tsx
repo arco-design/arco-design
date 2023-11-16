@@ -44,11 +44,11 @@ const getAllDataDemo = (options?: { instanceNum?: number; dbNum?: number; tableN
 };
 
 export const Demo = () => {
-  const [treeData, setTreeData] = useState(getAllDataDemo());
+  const [treeData] = useState(getAllDataDemo());
 
   const [checkedKeys, setCheckedKeys] = useState<string[]>([]);
 
-  const handleCheck = (keys: string[], a) => {
+  const handleCheck = (keys: string[]) => {
     setCheckedKeys(keys);
     console.log(keys.length);
   };
@@ -57,7 +57,9 @@ export const Demo = () => {
     <Tree
       onCheck={handleCheck}
       checkedKeys={checkedKeys}
+      size="small"
       treeData={treeData}
+      showLine
       checkable
       autoExpandParent={false}
       virtualListProps={{

@@ -312,12 +312,12 @@
   }
 
   .@{tree-prefix-cls}-node-indent-block::before {
-    .getLinePos(@tree-size-mini-line-height);
+    .getIndentLinePos(@tree-size-mini-line-height);
   }
 
   .@{tree-prefix-cls}-node-is-leaf:not(.@{tree-prefix-cls}-node-is-tail)
     .@{tree-prefix-cls}-node-indent::after {
-    .getIndentLinePos(@tree-size-mini-line-height);
+    .getLinePos(@tree-size-mini-line-height);
   }
 }
 
@@ -337,12 +337,12 @@
   }
 
   .@{tree-prefix-cls}-node-indent-block::before {
-    .getLinePos(@tree-size-small-line-height);
+    .getIndentLinePos(@tree-size-small-line-height);
   }
 
   .@{tree-prefix-cls}-node-is-leaf:not(.@{tree-prefix-cls}-node-is-tail)
     .@{tree-prefix-cls}-node-indent::after {
-    .getIndentLinePos(@tree-size-small-line-height);
+    .getLinePos(@tree-size-small-line-height);
   }
 }
 
@@ -362,12 +362,12 @@
   }
 
   .@{tree-prefix-cls}-node-indent-block::before {
-    .getLinePos(@tree-size-large-line-height);
+    .getIndentLinePos(@tree-size-large-line-height);
   }
 
   .@{tree-prefix-cls}-node-is-leaf:not(.@{tree-prefix-cls}-node-is-tail)
     .@{tree-prefix-cls}-node-indent::after {
-    .getIndentLinePos(@tree-size-large-line-height);
+    .getLinePos(@tree-size-large-line-height);
   }
 }
 
