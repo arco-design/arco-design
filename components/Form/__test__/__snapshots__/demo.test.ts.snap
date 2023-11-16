@@ -5619,6 +5619,14 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
                 Fill Form
               </span>
             </button>
+            <button
+              class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
+              type="button"
+            >
+              <span>
+                validateOnly
+              </span>
+            </button>
           </div>
         </div>
       </div>

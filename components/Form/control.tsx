@@ -277,6 +277,20 @@ export default class Control<
       });
   };
 
+  // 仅仅校验下值，不做任何状态变更
+  validateFieldOnly = (): Promise<{
+    error: FieldError<FieldValue> | null;
+    value: FieldValue;
+    field: FieldKey;
+  }> => {
+    const { validateMessages } = this.context;
+    const { field, rules } = this.props;
+    const value = this.getFieldValue();
+    return schemaValidate(field, value, rules, validateMessages).then(({ error, warning }) => {
+      return Promise.resolve({ error, value, warning, field });
+    });
+  };
+
   /**
    *
    * @param triggerType the value of validateTrigger.
@@ -311,6 +325,7 @@ export default class Control<
 
     if (_rules && _rules.length && field) {
       gotoValidatingStatus();
+
       return schemaValidate(field, value, _rules, validateMessages).then(({ error, warning }) => {
         this.setErrors(error ? error[field] : null);
         this.setWarnings(warning || null);

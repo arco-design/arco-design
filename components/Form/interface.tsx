@@ -552,6 +552,10 @@ export type InnerMethodsReturnType<
   | 'innerGetFieldValue'
 >;
 
+export interface ValidateOptions {
+  validateOnly?: boolean;
+}
+
 export interface FormValidateFn<
   FormData = any,
   FieldValue = FormData[keyof FormData],
@@ -569,6 +573,12 @@ export interface FormValidateFn<
   (fields: FieldKey[]): Promise<Partial<FormData>>;
 
   /**
+   * 校验配置
+   * @param options
+   */
+  (options: ValidateOptions): Promise<Partial<FormData>>;
+
+  /**
    * 验证所有表单的值，并且返回报错和表单数据
    * @param callback 校验完成后的回调函数
    */
@@ -583,6 +593,25 @@ export interface FormValidateFn<
    */
   (
     fields: FieldKey[],
+    callback: (
+      errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
+      values?: Partial<FormData>
+    ) => void
+  ): void;
+
+  (fields: FieldKey[], options: ValidateOptions): Promise<Partial<FormData>>;
+
+  (
+    options: ValidateOptions,
+    callback: (
+      errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
+      values?: Partial<FormData>
+    ) => void
+  ): void;
+
+  (
+    fields: FieldKey[],
+    options: ValidateOptions,
     callback: (
       errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
       values?: Partial<FormData>

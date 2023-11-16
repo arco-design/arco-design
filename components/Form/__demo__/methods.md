@@ -66,6 +66,23 @@ function App() {
         >
           Fill Form
         </Button>
+
+
+        <Button
+          type="text"
+          onClick={() => {
+            // 仅校验值，不会有 UI 表现
+            form.validate({validateOnly: true}).then(() => {
+              console.log('pass');
+            }).catch(e => {
+
+              console.log(e.errors)
+            });
+
+          }}
+        >
+          validateOnly
+        </Button>
       </FormItem>
     </Form>
   );
