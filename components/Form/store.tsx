@@ -4,7 +4,7 @@ import setWith from 'lodash/setWith';
 import has from 'lodash/has';
 import omit from 'lodash/omit';
 import { cloneDeep, set, iterativelyGetKeys } from './utils';
-import { isArray, isObject, isString } from '../_util/is';
+import { isArray, isFunction, isObject, isString } from '../_util/is';
 import Control from './control';
 import {
   FieldError,
@@ -14,6 +14,7 @@ import {
   KeyType,
   SubmitStatus,
   FormValidateFn,
+  ValidateOptions,
 } from './interface';
 import promisify from './promisify';
 
@@ -457,29 +458,52 @@ class Store<
     }
   };
 
+  // 这坨代码好烂啊。。有时间一定重构 。。 一定。。 一定！！！
   public validate: FormValidateFn<FormData, FieldValue, FieldKey> = promisify<FormData>(
     (
-      fieldsOrCallback?:
+      fieldsOrCallbackOrConfig?:
         | FieldKey[]
+        | ((errors?: ValidateFieldsErrors<FieldValue, FieldKey>, values?: FormData) => void)
+        | ValidateOptions,
+      cbOrConfig?:
+        | ValidateOptions
         | ((errors?: ValidateFieldsErrors<FieldValue, FieldKey>, values?: FormData) => void),
       cb?: (errors?: ValidateFieldsErrors<FieldValue, FieldKey>, values?: FormData) => void
     ) => {
-      let callback: (
-        errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
-        values?: Partial<FormData>
-      ) => void = () => {};
-      let controlItems = this.getRegisteredFields(true, {
+      const allItems = this.getRegisteredFields(true, {
         containFormList: true,
       });
+      const controlItems =
+        isArray(fieldsOrCallbackOrConfig) && fieldsOrCallbackOrConfig.length
+          ? allItems.filter((x) => fieldsOrCallbackOrConfig.indexOf(x.props.field) > -1)
+          : allItems;
 
-      if (isArray(fieldsOrCallback) && fieldsOrCallback.length > 0) {
-        controlItems = controlItems.filter((x) => fieldsOrCallback.indexOf(x.props.field) > -1);
-        callback = cb || callback;
-      } else if (typeof fieldsOrCallback === 'function') {
-        callback = fieldsOrCallback;
-      }
+      const options = isObject(fieldsOrCallbackOrConfig)
+        ? (fieldsOrCallbackOrConfig as ValidateOptions)
+        : isObject(cbOrConfig)
+        ? (cbOrConfig as ValidateOptions)
+        : {};
 
-      const promises = controlItems.map((x) => x.validateField());
+      const callback: (
+        errors?: ValidateFieldsErrors<FieldValue, FieldKey>,
+        values?: Partial<FormData>
+      ) => void = isFunction(fieldsOrCallbackOrConfig)
+        ? fieldsOrCallbackOrConfig
+        : isFunction(cbOrConfig)
+        ? cbOrConfig
+        : cb || (() => {});
+
+      const promises = controlItems.map((x) =>
+        options?.validateOnly ? x.validateFieldOnly() : x.validateField()
+      );
+
+      const onValidateFail = (errors) => {
+        if (!options?.validateOnly) {
+          const { onValidateFail } = this.callbacks;
+          onValidateFail && onValidateFail(errors);
+        }
+      };
+
       Promise.all(promises).then((result) => {
         let errors = {} as ValidateFieldsErrors<FieldValue, FieldKey>;
         const values = {} as Partial<FormData>;
@@ -496,8 +520,7 @@ class Store<
         });
 
         if (Object.keys(errors).length) {
-          const { onValidateFail } = this.callbacks;
-          onValidateFail && onValidateFail(errors);
+          onValidateFail(errors);
           callback && callback(errors, cloneDeep(values));
         } else {
           callback && callback(null, cloneDeep(values));

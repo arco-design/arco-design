@@ -275,4 +275,41 @@ describe('validate form', () => {
 
     expect(wrapper.find('.arco-form-message')[0].children[0].textContent).toBe('不匹配正则 /abc/');
   });
+
+  it('validateonly', async () => {
+    let form;
+    const wrapper = render(
+      <Form ref={(node) => (form = node)}>
+        <Form.Item
+          label="Username"
+          field="name"
+          required
+          rules={[
+            {
+              type: 'string',
+              required: true,
+            },
+          ]}
+        >
+          <Input placeholder="please enter your username" />
+        </Form.Item>
+      </Form>
+    );
+
+    try {
+      await form.validate({ validateOnly: true });
+    } catch (_) {
+      //
+    }
+
+    expect(wrapper.find('.arco-form-message')).toHaveLength(0);
+
+    try {
+      await form.validate();
+    } catch (_) {
+      //
+    }
+
+    expect(wrapper.find('.arco-form-message')).toHaveLength(1);
+  });
 });
