@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.56.0
+
+2023-11-17
+
+### 🆕 功能升级
+
+- 新增水印组件。([#2363](https://github.com/arco-design/arco-design/pull/2363))
+- `Form` 组件支持设置 `validateOnly` 进行静默校验，不做 UI 表现。([#2366](https://github.com/arco-design/arco-design/pull/2366))
+
+### 🐛 问题修复
+
+- 优化 `Table` 组件 `data` 和 `columns` 空数据的定义方式，避免无限重绘。([#2370](https://github.com/arco-design/arco-design/pull/2370))
+- 修复 `Slider` 组件可能因读取 `undefined` 属性导致的报错问题。([#2369](https://github.com/arco-design/arco-design/pull/2369))
+- 修复 `Tree` 组件 `size` 不为 `default` 时，连接线样式不正确的问题。([#2365](https://github.com/arco-design/arco-design/pull/2365))
+- 修复 `Upload` 批量上传时已上传文件状态被覆盖成 init([#2362](https://github.com/arco-design/arco-design/pull/2362))
+
 ## 2.55.2
 
 2023-11-10

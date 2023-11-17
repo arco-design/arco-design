@@ -1,3 +1,11 @@
+## 2.56.0
+
+2023-11-17
+
+### 🐛 BugFix
+
+- Optimize the definition of empty `data` and `columns` for the `Table` component to avoid infinite re-renders.([#2370](https://github.com/arco-design/arco-design/pull/2370))
+
 ## 2.55.2
 
 2023-11-10

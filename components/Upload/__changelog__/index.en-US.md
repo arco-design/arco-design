@@ -1,3 +1,11 @@
+## 2.56.0
+
+2023-11-17
+
+### 🐛 BugFix
+
+- Fixed the issue that the uploaded file status was overwritten to init during batch upload([#2362](https://github.com/arco-design/arco-design/pull/2362))
+
 ## 2.55.0
 
 2023-10-27

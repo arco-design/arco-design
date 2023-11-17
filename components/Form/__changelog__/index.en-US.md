@@ -1,3 +1,11 @@
+## 2.56.0
+
+2023-11-17
+
+### 🆕 Feature
+
+- The `Form` component supports setting `validateOnly` for silent verification without UI performance.([#2366](https://github.com/arco-design/arco-design/pull/2366))
+
 ## 2.54.3
 
 2023-10-26

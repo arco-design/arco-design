@@ -1,3 +1,11 @@
+## 2.56.0
+
+2023-11-17
+
+### 🐛 BugFix
+
+- Fixed an issue where the connection line style was incorrect when the `size` of the `Tree` component was not `default`.([#2365](https://github.com/arco-design/arco-design/pull/2365))
+
 ## 2.55.2
 
 2023-11-10

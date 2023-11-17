@@ -1,3 +1,11 @@
+## 2.56.0
+
+2023-11-17
+
+### 🐛 BugFix
+
+- Fixed the issue that `Slider` component may report an error due to reading property from `undefined`.([#2369](https://github.com/arco-design/arco-design/pull/2369))
+
 ## 2.41.0
 
 2022-10-28

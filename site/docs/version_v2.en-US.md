@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.56.0
+
+2023-11-17
+
+### 🆕 Feature
+
+- Add `Watermark` component.([#2363](https://github.com/arco-design/arco-design/pull/2363))
+- The `Form` component supports setting `validateOnly` for silent verification without UI performance.([#2366](https://github.com/arco-design/arco-design/pull/2366))
+
+### 🐛 BugFix
+
+- Optimize the definition of empty `data` and `columns` for the `Table` component to avoid infinite re-renders.([#2370](https://github.com/arco-design/arco-design/pull/2370))
+- Fixed the issue that `Slider` component may report an error due to reading property from `undefined`.([#2369](https://github.com/arco-design/arco-design/pull/2369))
+- Fixed an issue where the connection line style was incorrect when the `size` of the `Tree` component was not `default`.([#2365](https://github.com/arco-design/arco-design/pull/2365))
+- Fixed the issue that the uploaded file status was overwritten to init during batch upload([#2362](https://github.com/arco-design/arco-design/pull/2362))
+
 ## 2.55.2
 
 2023-11-10
