@@ -74,3 +74,5 @@ dist/
 
 package-lock.json
 __screenshots__
+
+.vscode/

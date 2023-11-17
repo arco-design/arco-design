@@ -59,6 +59,9 @@ export interface TableInstance {
 
 type FilterType<T> = Partial<Record<keyof T, string[]>>;
 
+const EMPTY_DATA = [];
+const EMPTY_COLUMNS = [];
+
 const defaultProps: TableProps = {
   showHeader: true,
   border: true,
@@ -94,8 +97,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     components,
     border,
     borderCell,
-    columns = [],
-    data = [],
+    columns = EMPTY_COLUMNS,
+    data = EMPTY_DATA,
     scroll,
     noDataElement,
     showHeader,

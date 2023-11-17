@@ -1,5 +1,5 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Table,
   Button,
@@ -1130,47 +1130,29 @@ export function NoDataDemo() {
     {
       title: 'Name',
       dataIndex: 'name',
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name1',
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name2',
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name3',
+      fixed: 'left' as const,
+      width: 500,
     },
     {
       title: 'Salary',
       dataIndex: 'salary',
+      width: 500,
     },
     {
       title: 'Address',
       dataIndex: 'address',
+      width: 500,
     },
     {
       title: 'Email',
       dataIndex: 'email',
+      width: 500,
     },
   ];
-  const data: any[] = [];
+
   return (
-    <div>
-      <Table
-        scroll={{
-          x: 'max-content',
-          y: 300,
-        }}
-        border={{
-          wrapper: true,
-          cell: true,
-        }}
-        columns={columns}
-        data={data}
-      />
+    <div style={{ display: 'flex' }}>
+      <Table columns={columns} data={undefined} />
     </div>
   );
 }

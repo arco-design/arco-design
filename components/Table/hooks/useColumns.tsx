@@ -39,13 +39,15 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
     rowSelection,
     expandedRowRender,
     expandProps = {},
-    columns = [],
+    columns,
     childrenColumnName,
   } = props;
 
+  const baseColumns = useMemo(() => columns || [], [columns]);
+
   const rows: InternalColumnProps[] = useMemo(
-    () => getFlattenColumns(columns, childrenColumnName),
-    [columns, childrenColumnName]
+    () => getFlattenColumns(baseColumns, childrenColumnName),
+    [baseColumns, childrenColumnName]
   );
 
   const isCheckbox =
@@ -155,6 +157,7 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
       shouldRenderSelectionCol,
       selectionColumnWidth,
       selectionFixedLeft,
+      headerOperations,
     ]
   );
 
@@ -165,8 +168,8 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
 
   // 把表头分组的 columns 分成 n 行，并且加上 colSpan 和 rowSpan，没有表头分组的话是 1 行。
   const rowCount = useMemo(
-    () => getAllHeaderRowsCount(columns, childrenColumnName),
-    [columns, childrenColumnName]
+    () => getAllHeaderRowsCount(baseColumns, childrenColumnName),
+    [baseColumns, childrenColumnName]
   );
 
   // 分行之后的rows
@@ -175,7 +178,7 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
       ? headerOperations.filter((opt) => opt.node).length
       : 0;
     if (rowCount === 1) {
-      const rows = columns.map((col, index) => ({
+      const rows = baseColumns.map((col, index) => ({
         ...col,
         $$columnIndex: index + prefixIndex,
       }));
@@ -183,9 +186,9 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
     }
     let columnIndex = prefixIndex;
     const rows: InternalColumnProps[][] = [];
-    const travel = (columns, current = 0) => {
+    const travel = (baseColumns, current = 0) => {
       rows[current] = rows[current] || [];
-      columns.forEach((col) => {
+      baseColumns.forEach((col) => {
         const column: InternalColumnProps = { ...col };
         if (column[childrenColumnName]) {
           column.colSpan = getFlattenColumns(col[childrenColumnName], childrenColumnName).length;
@@ -201,9 +204,9 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
       });
       rows[current] = getInternalColumns(rows[current], headerOperations, current);
     };
-    travel(columns);
+    travel(baseColumns);
     return rows;
-  }, [columns, childrenColumnName, rowCount, getInternalColumns, headerOperations]);
+  }, [baseColumns, childrenColumnName, rowCount, getInternalColumns, headerOperations]);
 
   return [groupColumns, flattenColumns];
 }
