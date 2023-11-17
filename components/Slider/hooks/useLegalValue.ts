@@ -16,15 +16,20 @@ export default function useLegalValue(props: {
   const { isRange, min, max, onlyMarkValue, intervalConfigs, marks } = props;
   const getPrecisionValue = useCallback(
     (val: number) => {
-      const { begin, step } = intervalConfigs.find((config) => {
+      const interval = intervalConfigs.find((config) => {
         return val >= config.begin && val <= config.end;
       });
 
-      const offsetVal = val - begin;
-      const stepNum = Math.round(offsetVal / step);
-      const precision = getPrecision(step);
-      const currentIntervalPrecision = parseFloat(times(step, stepNum).toFixed(precision));
-      return plus(begin, currentIntervalPrecision);
+      if (interval) {
+        const { begin, step } = interval;
+        const offsetVal = val - begin;
+        const stepNum = Math.round(offsetVal / step);
+        const precision = getPrecision(step);
+        const currentIntervalPrecision = parseFloat(times(step, stepNum).toFixed(precision));
+        return plus(begin, currentIntervalPrecision);
+      }
+
+      return val;
     },
     [intervalConfigs]
   );
