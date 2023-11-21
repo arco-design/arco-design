@@ -5,7 +5,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 import { VerificationCodeProps } from './interface';
-import useVerificationCode from './hooks/useVerificationCode';
+import useVerificationCode from '../_hooks/useVerificationCode';
 
 const defaultProps = {
   length: 6,

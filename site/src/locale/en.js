@@ -12,6 +12,7 @@ export default {
   'routes._layout': 'Layout',
   'routes.grid': 'Grid',
   'routes.divider': 'Divider',
+  'routes.hooks': 'Hooks',
   'routes.layout': 'Layout',
   'routes.space': 'Space',
   'routes.data-show': 'Data Display',

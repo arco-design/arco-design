@@ -98,7 +98,7 @@ function ACMenu(props) {
           >
             {routes.map((group) => {
               if (group.children) {
-                return (
+                return group.hide ? null : (
                   <SubMenu key={group.key} title={group.name} className="title-1">
                     {group.children.map((child) => {
                       if (child.items) {

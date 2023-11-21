@@ -2,7 +2,7 @@
 // 需要对图片进行缩放保证可读性
 
 // polyfill 提供了这个方法用来获取设备的 pixel ratio
-export default function (context: any) {
+export function getPixelRatio(context: any) {
   if (!context) return 1;
 
   const backingStore =

@@ -10,6 +10,7 @@ export default {
   'routes.link': '链接 Link',
   'routes.typography': '排版 Typography',
   'routes._layout': '布局',
+  'routes.hooks': 'Hooks',
   'routes.grid': '栅格 Grid',
   'routes.divider': '分割线 Divider',
   'routes.layout': '布局 Layout',

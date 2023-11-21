@@ -25,9 +25,11 @@ module.exports = {
   stories: ['../stories/**/*.story.tsx', '../stories/**/*.story.jsx'],
   webpackFinal: (config) => {
     const dirIcon = path.resolve(__dirname, '../icon');
+    const dirHooks = path.resolve(__dirname, '../hooks');
     const dirComponent = path.resolve(__dirname, '../es');
 
     config.resolve.alias['@self/icon'] = dirIcon;
+    config.resolve.alias['@self/hooks'] = dirHooks;
     config.resolve.alias['@self'] = dirComponent;
     config.resolve.alias['@arco-design/web-react/icon'] = dirIcon;
     config.resolve.alias['@arco-design/web-react'] = dirComponent;
