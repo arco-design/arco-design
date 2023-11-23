@@ -72,11 +72,18 @@ export default function useSorter(flattenColumns, defaultSorters) {
     const prevFlattenColumns = prevFlattenColumnsRef.current;
     const prevControlledSorters = getControlledSorters(prevFlattenColumns);
     const controlledSorters = getControlledSorters(flattenColumns);
-    const changedSorters = controlledSorters.filter((item) =>
-      prevControlledSorters.find(
+    const prevControlledFields = prevControlledSorters.map((item) => item.field);
+
+    const changedSorters = controlledSorters.filter((item) => {
+      const changed = prevControlledSorters.find(
         ({ field, direction }) => item.field === field && item.direction !== direction
-      )
-    );
+      );
+      if (changed) {
+        return true;
+      }
+      // 新增的sorter，用于处理开始不受控，之后又受控了的情况
+      return !prevControlledFields.includes(item.field);
+    });
     if (changedSorters && changedSorters.length) {
       setActiveSorters(controlledSorters);
       setCurrentSorter({});
