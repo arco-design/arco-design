@@ -20,9 +20,9 @@
     z-index: -1;
   }
 
-  &[trigger-placement='top'] &-arrow,
-  &[trigger-placement='tl'] &-arrow,
-  &[trigger-placement='tr'] &-arrow {
+  &[trigger-placement='top'] > &-arrow-container &-arrow,
+  &[trigger-placement='tl'] > &-arrow-container &-arrow,
+  &[trigger-placement='tr'] > &-arrow-container &-arrow {
     bottom: -(@trigger-size-arrow-width / 2);
     margin-left: -(@trigger-size-arrow-width / 2);
     border-top: none;
@@ -30,9 +30,9 @@
     border-bottom-right-radius: @trigger-border-arrow-radius;
   }
 
-  &[trigger-placement='bottom'] &-arrow,
-  &[trigger-placement='bl'] &-arrow,
-  &[trigger-placement='br'] &-arrow {
+  &[trigger-placement='bottom'] > &-arrow-container &-arrow,
+  &[trigger-placement='bl'] > &-arrow-container &-arrow,
+  &[trigger-placement='br'] > &-arrow-container &-arrow {
     top: -(@trigger-size-arrow-width / 2);
     margin-left: -(@trigger-size-arrow-width / 2);
     border-bottom: none;
@@ -40,9 +40,9 @@
     border-top-left-radius: @trigger-border-arrow-radius;
   }
 
-  &[trigger-placement='left'] &-arrow,
-  &[trigger-placement='lt'] &-arrow,
-  &[trigger-placement='lb'] &-arrow {
+  &[trigger-placement='left'] > &-arrow-container &-arrow,
+  &[trigger-placement='lt'] > &-arrow-container &-arrow,
+  &[trigger-placement='lb'] > &-arrow-container &-arrow {
     right: -(@trigger-size-arrow-width / 2);
     margin-top: -(@trigger-size-arrow-width / 2);
     border-left: none;
@@ -50,9 +50,9 @@
     border-top-right-radius: @trigger-border-arrow-radius;
   }
 
-  &[trigger-placement='right'] &-arrow,
-  &[trigger-placement='rt'] &-arrow,
-  &[trigger-placement='rb'] &-arrow {
+  &[trigger-placement='right'] > &-arrow-container &-arrow,
+  &[trigger-placement='rt'] > &-arrow-container &-arrow,
+  &[trigger-placement='rb'] > &-arrow-container &-arrow {
     left: -(@trigger-size-arrow-width / 2);
     margin-top: -(@trigger-size-arrow-width / 2);
     border-top: none;
