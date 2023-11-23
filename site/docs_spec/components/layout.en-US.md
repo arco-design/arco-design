@@ -16,7 +16,7 @@ The basic layout framework of the page is often nested with components to form t
 
 ### Component composition
 
-1. **Top navigation** **(optional)**: Components and elements can be nested, often used with lego/label/input box/button/avatar, etc.
+1. **Top navigation** **(optional)**: Components and elements can be nested, often used with logo/label/input box/button/avatar, etc.
 2. **Sidebar (optional)**: Components and elements can be nested. Tree selectors/input boxes are often used with them.
 3. **Content part (required)**: Components and elements can be nested, and are often used in conjunction with cards/folding panels/empty status/lists/numerical displays/tabs, etc.
 4. **Bottom of the page (optional)**: Components and elements can be nested, often used in conjunction with a dividing line, etc.
