@@ -81,7 +81,11 @@ export interface CascaderProps<T = any> extends Omit<SelectViewCommonProps, 'sho
     | boolean
     | {
         panelMode?: 'cascader' | 'select';
-        renderOption?: (inputValue: string, option: NodeProps<T>) => ReactNode;
+        renderOption?: (
+          inputValue: string,
+          option: NodeProps<T>,
+          options: extraOptions
+        ) => ReactNode;
         retainInputValue?: boolean;
         retainInputValueWhileSelect?: boolean;
       };
@@ -260,6 +264,7 @@ export interface OptionProps {
    * @version 2.21.0
    */
   disableCheckbox?: boolean;
+
   /**
    * @zh 其他字段
    * @en other fields
@@ -316,4 +321,8 @@ export interface CascaderPanelProps<T> {
     checked?: ReactNode;
     next?: ReactNode;
   };
+}
+
+export interface extraOptions {
+  checked: boolean;
 }
