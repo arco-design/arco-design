@@ -2,7 +2,7 @@ import React, { useEffect, useState, CSSProperties, ReactNode, useRef } from 're
 import isEqualWith from 'lodash/isEqualWith';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import cs from '../../_util/classNames';
-import { OptionProps, CascaderProps } from '../interface';
+import { OptionProps, CascaderProps, extraOptions } from '../interface';
 import Node, { NodeProps } from '../base/node';
 import Checkbox from '../../Checkbox';
 import Store from '../base/store';
@@ -37,7 +37,7 @@ export type SearchPanelProps<T> = {
   renderEmpty?: () => ReactNode;
   virtualListProps?: CascaderProps<T>['virtualListProps'];
   defaultActiveFirstOption: boolean;
-  renderOption?: (inputValue: string, node: NodeProps<T>) => ReactNode;
+  renderOption?: (inputValue: string, node: NodeProps<T>, options: extraOptions) => ReactNode;
   getTriggerElement: () => HTMLElement;
   icons?: {
     loading?: ReactNode;
@@ -208,11 +208,11 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
         {(item, i) => {
           const pathNodes = item.getPathNodes();
           const pathLabel = pathNodes.map((x) => x.label).join(' / ');
-          const label = isFunction(props.renderOption)
-            ? props.renderOption(inputValue, item._data)
-            : formatLabel(inputValue, pathLabel, prefixCls);
-
           const isChecked = item._checked;
+          const options = { checked: isChecked };
+          const label = isFunction(props.renderOption)
+            ? props.renderOption(inputValue, item._data, options)
+            : formatLabel(inputValue, pathLabel, prefixCls);
 
           return (
             <li
