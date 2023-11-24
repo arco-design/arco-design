@@ -29,10 +29,6 @@ import fillNBSP from '../_util/fillNBSP';
 const CSS_TRANSITION_DURATION = 300;
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
 
-// 输入框粘贴会先触发 onPaste 后触发 onChange，但 onChange 的 value 中不包含换行符
-// 如果刚刚因为粘贴触发过分词，则 onChange 不再进行分词尝试
-const THRESHOLD_TOKEN_SEPARATOR_TRIGGER = 100;
-
 const isEmptyNode = (node: ReactNode): boolean => {
   return node === null || node === undefined;
 };
@@ -257,15 +253,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     );
   };
 
-  const handleTokenSeparators = async (str: string, isPaste = false) => {
-    // won't handle token separators in a short time
-    if (
-      isPaste &&
-      Date.now() - refTSLastSeparateTriggered.current < THRESHOLD_TOKEN_SEPARATOR_TRIGGER
-    ) {
-      return;
-    }
-
+  const handleTokenSeparators = async (str: string) => {
     // clear the timestamp, and then we can judge whether tokenSeparators has been triggered
     // according to timestamp value
     refTSLastSeparateTriggered.current = null;
@@ -387,9 +375,10 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
             onInputChange?.(value, event);
 
-            const inputType = event.nativeEvent.inputType;
-            // do NOT use await, need to update input value right away
-            handleTokenSeparators(value, inputType === 'insertFromPaste');
+            // Pasting in the input box will trigger onPaste first and then onChange, but the value of onChange does not contain a newline character.
+            // If word segmentation has just been triggered due to pasting, onChange will no longer attempt word segmentation.
+            // Do NOT use await, need to update input value right away.
+            event.nativeEvent.inputType !== 'insertFromPaste' && handleTokenSeparators(value);
 
             if (refTSLastSeparateTriggered.current) {
               setInputValue('');
