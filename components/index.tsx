@@ -43,6 +43,9 @@ export { default as Checkbox } from './Checkbox';
 export type { CollapseProps, CollapseItemProps } from './Collapse/interface';
 export { default as Collapse } from './Collapse';
 
+export type { ColorPickerProps } from './ColorPicker/interface';
+export { default as ColorPicker } from './ColorPicker';
+
 export type { CommentProps } from './Comment/interface';
 export { default as Comment } from './Comment';
 
