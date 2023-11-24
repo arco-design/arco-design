@@ -50,10 +50,16 @@ function addInstance(noticeProps: MessageProps) {
       const notices = instance.state.notices;
 
       if (notices.length >= maxCount) {
-        const updated = notices[0];
-        id = updated.id;
-        notices.shift();
-        instance.add({ ..._noticeProps, id });
+        const updated = notices.find((notice) => notice.id === noticeProps.id);
+        if (updated) {
+          instance.add({
+            ..._noticeProps,
+            id: updated.id,
+          });
+        } else {
+          notices.shift();
+          instance.add(_noticeProps);
+        }
       } else {
         id = instance.add(_noticeProps);
       }

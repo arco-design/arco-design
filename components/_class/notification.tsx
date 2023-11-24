@@ -27,48 +27,33 @@ class BaseNotice extends Component<any, BaseNoticeState> {
   add = (noticeProps) => {
     const id: string = getId(noticeProps);
 
-    this.setState((prevState) => {
-      const oldNotices = prevState.notices;
+    const oldNotices = this.state.notices;
 
-      // update notice
-      if (noticeProps.id && ~oldNotices.findIndex((notice) => notice.id === noticeProps.id)) {
-        this.update(noticeProps);
-        return prevState;
-      }
+    // update notice
+    if (noticeProps.id && ~oldNotices.findIndex((notice) => notice.id === noticeProps.id)) {
+      this.update(noticeProps);
+    } else {
+      this.setState((prevState) => {
+        return {
+          notices: prevState.notices.concat({
+            ...noticeProps,
+            id,
+          }),
+          position: noticeProps.position,
+        };
+      });
+    }
 
-      return {
-        notices: oldNotices.concat({
-          ...noticeProps,
-          id,
-        }),
-        position: noticeProps.position,
-      };
-    });
     return id;
   };
 
   update = (newNotice) => {
-    const updatedNotices = this.state.notices.map((oldNotice) => {
-      if (newNotice.id === oldNotice.id) {
-        newNotice.update = true;
-        return newNotice;
-      }
-      return oldNotice;
-    });
-    this.setState(
-      {
-        notices: updatedNotices,
-      },
-      () => {
-        const notices = this.state.notices.map((oldNotice) => {
-          if (newNotice.id === oldNotice.id && oldNotice.update) {
-            delete oldNotice.update;
-          }
-          return oldNotice;
-        });
-        this.setState({ notices });
-      }
+    const updatedNotices = this.state.notices.map((oldNotice) =>
+      newNotice.id === oldNotice.id ? newNotice : oldNotice
     );
+    this.setState({
+      notices: updatedNotices,
+    });
   };
 
   remove(id: string) {

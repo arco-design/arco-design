@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, $ } from '../../../tests/util';
+import { render, $, sleep } from '../../../tests/util';
 import Message from '..';
 import Notice from '../../_class/notice';
 import { IconMessage } from '../../../icon';
@@ -99,5 +99,35 @@ describe('open message', () => {
 
     expect($('.arco-message-close-btn').length).toBe(1);
     expect($('.arco-message-close-btn').item(0).textContent).toBe('xxx');
+  });
+
+  it('update when maxCount', async () => {
+    jest.useRealTimers();
+
+    Message.config({ maxCount: 2, duration: 0 });
+
+    Message.info('content1');
+
+    Message.info({ id: 'update', content: 'content update 1' });
+
+    Message.info({ id: 'update', content: 'content update 2' });
+
+    expect($('.arco-message').length).toBe(2);
+    expect($('.arco-message .arco-message-content')[0].innerHTML).toBe('content1');
+    expect($('.arco-message .arco-message-content')[1].innerHTML).toBe('content update 2');
+
+    Message.info('content 2');
+
+    await sleep(1000);
+
+    expect($('.arco-message').length).toBe(2);
+    expect($('.arco-message .arco-message-content')[0].innerHTML).toBe('content update 2');
+    expect($('.arco-message .arco-message-content')[1].innerHTML).toBe('content 2');
+
+    Message.info({ id: 'update', content: 'content update 3' });
+
+    expect($('.arco-message').length).toBe(2);
+    expect($('.arco-message .arco-message-content')[0].innerHTML).toBe('content update 3');
+    expect($('.arco-message .arco-message-content')[1].innerHTML).toBe('content 2');
   });
 });
