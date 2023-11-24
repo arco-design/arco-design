@@ -1,3 +1,11 @@
+## 2.56.1
+
+2023-11-24
+
+### 🐛 BugFix
+
+- Fix logic for `Notification` component to update after setting `maxCount`.([#2385](https://github.com/arco-design/arco-design/pull/2385))
+
 ## 2.53.1
 
 2023-09-15

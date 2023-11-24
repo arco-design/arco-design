@@ -1,3 +1,11 @@
+## 2.56.1
+
+2023-11-24
+
+### 🐛 BugFix
+
+- Compatible cases in which the `sortOrder` in `column` is initially uncontrolled and then controlled within the same life cycle of the `Table` component.([#2379](https://github.com/arco-design/arco-design/pull/2379))
+
 ## 2.56.0
 
 2023-11-17

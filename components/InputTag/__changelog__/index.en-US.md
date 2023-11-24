@@ -1,3 +1,11 @@
+## 2.56.1
+
+2023-11-24
+
+### 🐛 BugFix
+
+- Fixed the bug that automatic word segmentation would be triggered twice in a row when the `onChange` callback of the `InputTag` took a long time.([#2381](https://github.com/arco-design/arco-design/pull/2381))
+
 ## 2.48.0
 
 2023-05-12

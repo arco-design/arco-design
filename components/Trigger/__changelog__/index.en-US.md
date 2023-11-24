@@ -1,3 +1,11 @@
+## 2.56.1
+
+2023-11-24
+
+### 🐛 BugFix
+
+- Fixed a bug where the arrow styles would overwrite each other when `Trigger` components with different pop-up directions are used in nests.([#2378](https://github.com/arco-design/arco-design/pull/2378))
+
 ## 2.55.0
 
 2023-10-27

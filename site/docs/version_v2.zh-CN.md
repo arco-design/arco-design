@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.56.1
+
+2023-11-24
+
+### 🐛 问题修复
+
+- 修复 `Notification` 组件在设置 `maxCount` 之后更新的逻辑。([#2385](https://github.com/arco-design/arco-design/pull/2385))
+- 修复 `Message` 组件在设置 `maxCount` 之后更新的逻辑。([#2385](https://github.com/arco-design/arco-design/pull/2385))
+- 修复 `InputTag` 组件 `onChange` 回调用时较长时自动分词将会连续触发两次的问题。([#2381](https://github.com/arco-design/arco-design/pull/2381))
+- 兼容`Table`组件在同一个生命周期内 `column` 中的 `sortOrder` 开始不受控，之后又受控的情况。([#2379](https://github.com/arco-design/arco-design/pull/2379))
+- 修复不同弹出方向的 `Trigger` 组件在嵌套使用时，箭头样式被相互覆盖的 bug。([#2378](https://github.com/arco-design/arco-design/pull/2378))
+
 ## 2.56.0
 
 2023-11-17
