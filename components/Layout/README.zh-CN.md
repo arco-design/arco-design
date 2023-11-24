@@ -47,7 +47,7 @@
 |collapsible|是否可收起|boolean |`-`|-|
 |defaultCollapsed|是否默认收起|boolean |`-`|-|
 |reverseArrow|翻转折叠提示箭头的方向，当 Sider 在右边时可以使用|boolean |`-`|-|
-|collapsedWidth|收缩宽度|number |`48`|-|
+|collapsedWidth|收缩宽度，设置为 0 会出现特殊 trigger|number |`48`|-|
 |onCollapse|展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发|(collapse: boolean, type: 'clickTrigger' \| 'responsive') => void |`-`|-|
 |theme|主题颜色|'dark' \| 'light' |`light`|-|
 |trigger|自定义底部折叠触发器，设置为 null 时隐藏 trigger|string \| ReactNode |`-`|-|
