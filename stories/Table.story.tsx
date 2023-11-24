@@ -596,7 +596,7 @@ export const SortTable = () => {
       ],
       defaultFilters: [20],
       onFilter: (value: any, row: any) => row.age > value,
-      defaultSortOrder: 'ascend' as const,
+      // defaultSortOrder: 'ascend' as const,
       sorter: (a: any, b: any) => a.age - b.age,
       render: (_: any, record: any) => record.age,
     },
@@ -605,6 +605,20 @@ export const SortTable = () => {
       dataIndex: 'email',
     },
   ];
+
+  const [innerColumns, setInnerColumns] = useState(columns);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setInnerColumns((columns: any) => {
+        return [
+          ...columns.map((item: any) =>
+            item.dataIndex === 'age' ? { ...item, sortOrder: 'ascend' } : item
+          ),
+        ];
+      });
+    }, 1000);
+  }, []);
 
   // const columnsSorter = (function () {
   //   return columns.map((d) => {
@@ -662,7 +676,22 @@ export const SortTable = () => {
     },
   ];
 
-  return <Table columns={columns} data={data} />;
+  return (
+    <Table
+      columns={innerColumns as any}
+      data={data}
+      onChange={(_, sorder) => {
+        console.log(sorder);
+        if (sorder && !Array.isArray(sorder)) {
+          setInnerColumns((columns) => {
+            return columns.map((item) =>
+              item.key === sorder.field ? { ...item, sortOrder: sorder.direction } : item
+            );
+          });
+        }
+      }}
+    />
+  );
 };
 
 export const FixedTable = () => {

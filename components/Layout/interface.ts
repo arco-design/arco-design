@@ -69,7 +69,7 @@ export interface SiderProps {
    */
   collapsible?: boolean;
   /**
-   * @zh 收缩宽度，设置为 0 会出现特殊 trigger
+   * @zh 收缩宽度
    * @en Width of collapsed sider
    * @defaultValue 48
    */
