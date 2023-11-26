@@ -85,7 +85,7 @@ function DateInput(
   function onKeyDown(e) {
     const keyCode = e.keyCode || e.which;
     if (keyCode === Enter.code) {
-      onPressEnter && onPressEnter();
+      onPressEnter?.();
     }
   }
 

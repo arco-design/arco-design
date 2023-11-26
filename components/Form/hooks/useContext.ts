@@ -33,7 +33,7 @@ const useFormContext = (): { form: FormInstance; disabled: boolean; isSubmitting
     const cancelWatch = registerFormWatcher && registerFormWatcher(update);
 
     return () => {
-      cancelWatch && cancelWatch();
+      cancelWatch?.();
     };
   }, []);
 

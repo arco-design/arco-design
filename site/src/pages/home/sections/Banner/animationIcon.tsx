@@ -74,7 +74,7 @@ export default function AnimationIcon(props: AnimationIconProps) {
           setUpdateKey((pre) => pre + 1);
         },
       });
-      onStart && onStart();
+      onStart?.();
     } else {
       setIcon(icon);
     }
@@ -87,7 +87,7 @@ export default function AnimationIcon(props: AnimationIconProps) {
       refAnimationInstance.current = animationIn(paths, {
         complete() {
           refAnimationInstance.current = null;
-          onComplete && onComplete();
+          onComplete?.();
         },
       });
     }

@@ -156,7 +156,7 @@ function Column<T>({
         filterKeys: stateCurrentFilter,
         setFilterKeys: (filterKeys: string[], callback?: Function) => {
           setCurrentFilter(filterKeys);
-          callback && callback();
+          callback?.();
         },
         confirm,
       })

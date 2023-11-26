@@ -303,7 +303,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           if (!focused) {
             refInput.current?.focus();
           }
-          onClear && onClear();
+          onClear?.();
         }}
       >
         {(icon && icon.clearIcon) || <IconClose />}

@@ -520,7 +520,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         popupStyle,
       },
       () => {
-        callback && callback();
+        callback?.();
       }
     );
   });
@@ -542,7 +542,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
           popupStyle,
         },
         () => {
-          callback && callback();
+          callback?.();
         }
       );
     }, delay);
@@ -572,16 +572,16 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
                 popupVisible: false,
               },
               () => {
-                callback && callback();
+                callback?.();
               }
             );
           }
         } else {
-          callback && callback();
+          callback?.();
         }
       });
     } else {
-      callback && callback();
+      callback?.();
     }
   };
 
@@ -615,7 +615,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       !contains(childrenDom, e.target) &&
       !this.hasPopupMouseDown
     ) {
-      onClickOutside && onClickOutside();
+      onClickOutside?.();
       if (clickOutsideToClose) {
         // 以下判断条件避免onVisibleChange触发两次
         // blurToHide 为true时不需要执行，因为onBlur里会执行setPopupVisible
@@ -736,7 +736,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     this.clearDelayTimer();
     if (!this.mousedownToHide) {
       if (this.state.popupVisible) {
-        onFocus && onFocus();
+        onFocus?.();
       } else {
         this.setPopupVisible(true, focusDelay || 0, onFocus);
       }

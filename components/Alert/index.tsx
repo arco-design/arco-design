@@ -59,7 +59,7 @@ function Alert(baseProps: AlertProps, ref) {
 
   function onHandleClose(e) {
     setVisible(false);
-    onClose && onClose(e);
+    onClose?.(e);
   }
 
   const classNames = cs(
@@ -81,7 +81,7 @@ function Alert(baseProps: AlertProps, ref) {
       classNames="zoomInTop"
       unmountOnExit
       onExited={() => {
-        afterClose && afterClose();
+        afterClose?.();
       }}
     >
       <div ref={ref} style={style} className={classNames} role="alert" {...rest}>

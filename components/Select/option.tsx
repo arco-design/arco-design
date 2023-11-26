@@ -52,7 +52,7 @@ function Option(props: OptionProps, ref) {
       rest.onMouseEnter && rest.onMouseEnter(event);
     },
     onMouseLeave: (event) => {
-      _onMouseLeave && _onMouseLeave();
+      _onMouseLeave?.();
       rest.onMouseLeave && rest.onMouseLeave(event);
     },
     onClick: (event) => {

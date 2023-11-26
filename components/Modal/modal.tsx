@@ -417,7 +417,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             onEntered={(e: HTMLDivElement) => {
               setTransformOrigin(e);
               cursorPositionRef.current = null;
-              afterOpen && afterOpen();
+              afterOpen?.();
             }}
             onExit={() => {
               inExit.current = true;
@@ -425,7 +425,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             onExited={(e) => {
               setWrapperVisible(false);
               setTransformOrigin(e);
-              afterClose && afterClose();
+              afterClose?.();
               inExit.current = false;
               if (unmountOnExit) {
                 modalRef.current = null;

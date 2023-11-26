@@ -41,7 +41,7 @@ function Countdown(props: CountdownProps, ref) {
       const _value = dayjsValue.diff(getNow(), 'millisecond');
       if (_value <= 0) {
         stopTimer();
-        onFinish && onFinish();
+        onFinish?.();
       }
       const valueShow = getDateString(Math.max(_value, 0), format as string);
       setValueShow(valueShow);

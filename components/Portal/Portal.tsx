@@ -16,7 +16,7 @@ class Portal extends Component<PortalProps> {
   //   super(props);
 
   //   const { getContainer } = this.props;
-  //   this.container = getContainer && getContainer();
+  //   this.container = getContainer?.()
   // }
 
   componentDidMount() {
@@ -36,7 +36,7 @@ class Portal extends Component<PortalProps> {
 
   createContainer() {
     const { getContainer } = this.props;
-    this.container = getContainer && getContainer();
+    this.container = getContainer?.();
     this.forceUpdate();
   }
 

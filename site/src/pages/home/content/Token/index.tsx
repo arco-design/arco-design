@@ -94,7 +94,7 @@ export default function Token(props: TokenProps) {
   }, [fontWeight, borderSize, borderRadius]);
 
   useEffect(() => {
-    onMounted && onMounted();
+    onMounted?.();
   }, []);
 
   return (
