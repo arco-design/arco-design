@@ -90,7 +90,7 @@ export default function Component(props: ComponentProps) {
   const duration = 700;
 
   useEffect(() => {
-    onMounted && onMounted();
+    onMounted?.();
     if (!isFirstRender) {
       animating && setAnimating(false);
       return;

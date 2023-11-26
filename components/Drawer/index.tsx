@@ -87,7 +87,7 @@ function Drawer(baseProps: DrawerProps, ref) {
   const [isOpened, setIsOpened] = useState(false);
 
   const getContainer = useCallback((): HTMLElement => {
-    const container = getPopupContainer && getPopupContainer();
+    const container = getPopupContainer?.();
     return (findDOMNode(container) || document.body) as HTMLElement;
   }, [getPopupContainer]);
 
@@ -275,7 +275,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           }}
           onEntered={() => {
             setIsOpened(true);
-            afterOpen && afterOpen();
+            afterOpen?.();
           }}
           onExit={() => {
             setIsOpened(false);
@@ -284,7 +284,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           onExited={(e) => {
             setInExit(false);
             e.parentNode.style.display = ''; // don't set display='none'
-            afterClose && afterClose();
+            afterClose?.();
           }}
         >
           <div

@@ -53,7 +53,7 @@ const useFormState = <
     const cancelWatch = registerStateWatcher && registerStateWatcher(updateState);
 
     return () => {
-      cancelWatch && cancelWatch();
+      cancelWatch?.();
     };
   }, []);
 

@@ -201,7 +201,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
         refInput.current.focus();
       }
       triggerValueChangeCallback('', e);
-      onClear && onClear();
+      onClear?.();
     };
 
     return (

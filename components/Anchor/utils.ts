@@ -28,7 +28,7 @@ export function slide(el: HTMLElement, top: number, cb: Function) {
       el.scrollTop = keys.scrollTop;
     },
     onFinish: () => {
-      cb && cb();
+      cb?.();
     },
   });
   tween.start();

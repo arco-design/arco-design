@@ -151,7 +151,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   const [container, setContainer] = useState<HTMLElement>();
   const getContainer = useCallback(() => container, [container]);
   useEffect(() => {
-    const container = getPopupContainer && getPopupContainer();
+    const container = getPopupContainer?.();
     const containerDom = (findDOMNode(container) || document.body) as HTMLElement;
     setContainer(containerDom);
   }, [getPopupContainer]);

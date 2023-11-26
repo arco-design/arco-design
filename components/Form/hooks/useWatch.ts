@@ -51,7 +51,7 @@ const useWatch = (field: string | string[], form?: FormInstance) => {
     const cancelWatch = registerWatcher && registerWatcher(updateValue);
 
     return () => {
-      cancelWatch && cancelWatch();
+      cancelWatch?.();
     };
   }, []);
 

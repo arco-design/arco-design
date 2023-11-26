@@ -104,7 +104,7 @@ const TextArea = (props: TextAreaProps, ref) => {
     e.stopPropagation();
     onFocus();
     triggerValueChangeCallback('', e);
-    onClear && onClear();
+    onClear?.();
   };
 
   useIsomorphicLayoutEffect(() => {

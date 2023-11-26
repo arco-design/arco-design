@@ -29,7 +29,7 @@ function ImagePreviewArrow(props: ImagePreviewArrowProps) {
         })}
         onClick={(e) => {
           e.preventDefault();
-          !disableLeft && onPrev && onPrev();
+          !disableLeft && onPrev?.();
         }}
       >
         <IconLeft />
@@ -40,7 +40,7 @@ function ImagePreviewArrow(props: ImagePreviewArrowProps) {
         })}
         onClick={(e) => {
           e.preventDefault();
-          !disableRight && onNext && onNext();
+          !disableRight && onNext?.();
         }}
       >
         <IconRight />

@@ -151,7 +151,7 @@ const Picker = (baseProps: InnerPickerProps) => {
   function setOpen(visible, callback?: () => void) {
     setPopupVisible(visible);
     setInputValue(undefined);
-    callback && callback();
+    callback?.();
     if (!visible) {
       setValueShow(undefined);
     }

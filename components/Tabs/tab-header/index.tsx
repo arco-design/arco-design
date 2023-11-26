@@ -289,7 +289,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   };
 
   const handleAdd = () => {
-    onAddTab && onAddTab();
+    onAddTab?.();
     setShouldScroll(scrollConfig.add);
   };
 
