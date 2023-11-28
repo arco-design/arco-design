@@ -48,9 +48,9 @@ export const Demo = () => {
 
   const [checkedKeys, setCheckedKeys] = useState<string[]>([]);
 
-  const handleCheck = (keys: string[]) => {
+  const handleCheck = (keys: string[], extra: any) => {
     setCheckedKeys(keys);
-    console.log(keys.length);
+    console.log(extra.checkedNodes);
   };
 
   return (

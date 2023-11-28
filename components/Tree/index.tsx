@@ -86,9 +86,6 @@ class Tree extends Component<TreeProps, TreeState> {
     return null;
   }
 
-  // 依旧使用NodeInstance 是为了兼容1.x的一些用法，改动较大
-  cacheNodes: { [key: string]: NodeInstance } = {};
-
   key2nodeProps: key2nodePropsType = {};
 
   dragNode: null | NodeInstance;
@@ -653,7 +650,7 @@ class Tree extends Component<TreeProps, TreeState> {
     const { __ArcoAdapterMode__ } = this.props;
     const originData = [];
     [].concat(key).forEach((_key) => {
-      const data = this.cacheNodes[_key];
+      const data = this.key2nodeProps[_key];
       if (data) {
         originData.push(data);
       }
@@ -753,8 +750,6 @@ class Tree extends Component<TreeProps, TreeState> {
   };
 
   render() {
-    // render 之前重置掉，在NodeList里会进行赋值。
-    this.cacheNodes = {};
     const {
       className,
       showLine,
@@ -829,9 +824,6 @@ class Tree extends Component<TreeProps, TreeState> {
           getDataSet={this.getDataSet}
           nodeList={this.state.nodeList}
           onMouseDown={this.props.onMouseDown}
-          saveCacheNode={(node) => {
-            this.cacheNodes[node.key] = node;
-          }}
           ariaProps={{
             role: 'tree',
             'aria-multiselectable': this.props.multiple,
