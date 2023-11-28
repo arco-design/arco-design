@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { ReactNode, useContext, useState } from 'react';
 import { ControlBar } from './control-bar';
 import { ConfigContext } from '../ConfigProvider';
 import { Palette } from './palette';
@@ -11,19 +11,33 @@ import { hexToRgb, rgbToHsv } from '../_util/color';
 interface PanelProps {
   value: Color;
   current: string;
-  colors: string[];
+  showHistory?: boolean;
+  historyColors?: string[];
+  showPreset?: boolean;
+  presetColors?: string[];
+  renderHistory?: () => ReactNode;
+  renderPreset?: () => ReactNode;
+  renderPickSection?: () => ReactNode;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
 }
 
-export const Panel: React.FC<PanelProps> = ({
-  value,
-  current,
-  colors,
-  onHsvChange,
-  onAlphaChange,
-}) => {
-  const { getPrefixCls } = useContext(ConfigContext);
+export const Panel: React.FC<PanelProps> = (
+  {
+    value,
+    current,
+    historyColors,
+    presetColors,
+    showHistory,
+    showPreset,
+    renderPreset,
+    renderHistory,
+    renderPickSection,
+    onHsvChange,
+    onAlphaChange,
+  },
+) => {
+  const { getPrefixCls, locale } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
   const [format, setFormat] = useState<'hex' | 'rgb'>('hex');
 
@@ -56,6 +70,57 @@ export const Panel: React.FC<PanelProps> = ({
     );
   };
 
+  const renderColorSec = () => {
+    if (renderPickSection) {
+      return renderPickSection();
+    } else if (showHistory || showPreset) {
+      return (
+        <div className={`${prefixCls}-panel-colors`}>
+          {renderHistorySec()}
+          {renderPresetSec()}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const renderHistorySec = () => {
+    if (renderHistory) {
+      return renderHistory();
+    } else if (showHistory) {
+      return (
+        <>
+          <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.history}</div>
+          <div className={`${prefixCls}-colors-wrapper`}>
+            {Boolean(historyColors?.length) ?
+              <div className={`${prefixCls}-colors-list`}>{historyColors.map(renderColorBlock)}</div>
+              :
+              <span className={`${prefixCls}-colors-empty`}>{locale.ColorPicker.empty}</span>}
+          </div>
+        </>
+      );
+    }
+    return null;
+  };
+
+  const renderPresetSec = () => {
+    if (renderPreset) {
+      return renderPreset();
+    } else if (showPreset) {
+      return (
+        <>
+          <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.preset}</div>
+          <div className={`${prefixCls}-colors-wrapper`}>
+            <div className={`${prefixCls}-colors-list`}>
+              {presetColors?.map(renderColorBlock)}
+            </div>
+          </div>
+        </>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className={`${prefixCls}-panel`}>
       <Palette
@@ -68,14 +133,14 @@ export const Panel: React.FC<PanelProps> = ({
         <div className={`${prefixCls}-control-wrapper`}>
           <div>
             <ControlBar
-              type="hue"
+              type='hue'
               x={value.hsv.h}
               current={current}
               onChange={(h) => onHsvChange({ ...value.hsv, h })}
             />
             <ControlBar
               style={{ marginTop: 16 }}
-              type="alpha"
+              type='alpha'
               x={value.alpha}
               color={value.rgb}
               current={current}
@@ -103,12 +168,7 @@ export const Panel: React.FC<PanelProps> = ({
           <div className={`${prefixCls}-group-wrapper`}>{renderInput()}</div>
         </div>
       </div>
-      <div className={`${prefixCls}-panel-colors`}>
-        <div className={`${prefixCls}-colors-text`}>最近使用颜色</div>
-        <div className={`${prefixCls}-colors-wrapper`}>暂无</div>
-        <div className={`${prefixCls}-colors-text`}>系统预设颜色</div>
-        <div className={`${prefixCls}-colors-wrapper`}>{colors?.map(renderColorBlock)}</div>
-      </div>
+      {renderColorSec()}
     </div>
   );
 };

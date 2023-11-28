@@ -1,9 +1,9 @@
 `````
-组件 / Input
+组件 / 数据输入
 
 # 颜色选择器 ColorPicker
 
-用于页面和区块的加载中状态 - 页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。
+用于选择和展示颜色
 `````
 
 %%Content%%
@@ -11,15 +11,18 @@
 ## API
 ### ColorPicker
 
-|参数名|描述|类型|默认值|版本|
-|---|---|---|---|---|
-|block|是否为块级元素|boolean |`-`|2.29.0|
-|dot|是否使用点类型的动画|boolean |`-`|-|
-|loading|是否为加载状态（仅在 `Spin` 有子节点时生效）|boolean |`-`|-|
-|delay|延迟显示加载的时间 (ms)|number |`-`|-|
-|size|加载动画的尺寸|number |`-`|-|
-|element|自定义元素，非图标，不附带旋转效果。可用于设置为 gif 图片等。|ReactNode |`-`|-|
-|icon|自定义图标，会自动旋转。|ReactNode |`-`|-|
-|tip|加载的文案|string \| ReactNode |`-`|-|
-|className|节点类名|string \| string[] |`-`|-|
-|style|节点样式|CSSProperties |`-`|-|
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|defaultPopupVisible|默认弹出框是打开还是关闭|boolean |`-`|
+|disabled|禁用|boolean |`-`|
+|disabledAlpha|禁用透明通道|boolean |`-`|
+|popupVisible|弹出框是打开还是关闭。(受控)|boolean |`-`|
+|readOnly|只读|boolean |`-`|
+|defaultValue|默认值|string |`-`|
+|value|颜色值，受控模式|string |`-`|
+|format|颜色值的格式|'hex' \| 'rgb' |`-`|
+|size|输入框的尺寸|[InputProps](input#input)['size'] |`default`|
+|className|节点类名|string \| string[] |`-`|
+|style|节点样式|CSSProperties |`-`|
+|triggerProps|可以接受所有 Trigger 组件的 Props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|
+|onVisibleChange|下拉框收起展开时触发。|(visible: boolean) => void |`-`|

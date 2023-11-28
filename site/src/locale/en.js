@@ -54,6 +54,7 @@ export default {
   'routes.slider': 'Slider',
   'routes.form': 'Form',
   'routes.upload': 'Upload',
+  'routes.color-picker': 'ColorPicker',
   'routes.transfer': 'Transfer',
   'routes.mentions': 'Mentions',
   'routes.feedback': 'Feedback',

@@ -1,25 +1,29 @@
 `````
-Component / Input
+Component / Data Entry
 
 # ColorPicker
 
-Used for the loading state of pages. When part of the page is waiting for asynchronous data or is in the rendering process, appropriate loading amimation will effectively alleviate user anxiety.
+Used for select and display colors
 `````
 
 %%Content%%
 
 ## API
+
 ### ColorPicker
 
-|Property|Description|Type|DefaultValue|Version|
-|---|---|---|---|---|
-|block|Whether it is a block-level element|boolean |`-`|2.29.0|
-|dot|Whether to use dot type animation|boolean |`-`|-|
-|loading|Whether is loading status (Only works when `Spin` has children))|boolean |`-`|-|
-|delay|Specifies a delay(ms) for loading state|number |`-`|-|
-|size|The size of loading icon|number |`-`|-|
-|element|Customize element which won't be rotated automatically, such as image/gif.|ReactNode |`-`|-|
-|icon|Customize icon which will be rotated automatically.|ReactNode |`-`|-|
-|tip|Customize description content when Spin has children|string \| ReactNode |`-`|-|
-|className|Additional css class|string \| string[] |`-`|-|
-|style|Additional style|CSSProperties |`-`|-|
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|defaultPopupVisible|Whether the confirmation box is visible by default|boolean |`-`|
+|disabled|disabled|boolean |`-`|
+|disabledAlpha|Disable transparency channel|boolean |`-`|
+|popupVisible|Whether the confirmation box is visible|boolean |`-`|
+|readOnly|readOnly|boolean |`-`|
+|defaultValue|The initial input content|string |`-`|
+|value|The input content value|string |`-`|
+|format|Color value format|'hex' \| 'rgb' |`-`|
+|size|The size of the input box|[InputProps](input#input)['size'] |`default`|
+|className|Additional css class|string \| string[] |`-`|
+|style|Additional style|CSSProperties |`-`|
+|triggerProps|All `Trigger` component props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|
+|onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|
