@@ -52,16 +52,18 @@ export function iterativelyGetKeys(_obj, _prefix = '') {
     }
     processed.add(obj);
 
-    return Object.keys(obj).reduce((res, el) => {
-      if (
-        (isObject(obj[el]) || isArray(obj[el])) &&
-        Object.keys(obj[el]).length &&
-        !React.isValidElement(obj[el])
-      ) {
-        return [...res, ...getKeys(obj[el], `${prefix + el}.`)];
-      }
-      return [...res, prefix + el];
-    }, []);
+    return Object.keys(obj)
+      .map((el) => {
+        if (
+          (isObject(obj[el]) || isArray(obj[el])) &&
+          Object.keys(obj[el]).length &&
+          !React.isValidElement(obj[el])
+        ) {
+          return getKeys(obj[el], `${prefix + el}.`);
+        }
+        return prefix + el;
+      })
+      .flat();
   };
   return getKeys(_obj, _prefix);
 }
