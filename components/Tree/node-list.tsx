@@ -15,7 +15,6 @@ function NodeList(props, ref) {
     virtualListProps,
     expandedKeys,
     currentExpandKeys,
-    saveCacheNode,
     nodeList,
     getNodeProps,
     getDataSet,
@@ -49,13 +48,11 @@ function NodeList(props, ref) {
       if (pass && visibleKeys.has(item.key)) {
         return true;
       }
-      // 过滤掉的也缓存一下，避免被收起的节点在onSelect回调中，selectedNodes出现undefined
-      saveCacheNode(item);
       return false;
     });
   };
 
-  // 默认值不能为nodeList，防止在设置defaultExpandedKeys时，应该被隐藏的节点初始化的时候展示了。
+  // 默认值不能为nodeList，防止在设置defaultExpandedKeys 时，应该被隐藏的节点初始化的时候展示了。
   const childrenList = useMemo(() => {
     return calcChildrenList();
   }, [nodeList, filterNode, visibleKeys]);
@@ -112,7 +109,6 @@ function NodeList(props, ref) {
         }
         const nodeProps = getNodeProps(item, dataSetRef.current);
         const node = <Node {...item} key={item.key} {...nodeProps} />;
-        saveCacheNode(item);
         return node;
       }}
     </VirtualList>
@@ -129,7 +125,6 @@ function NodeList(props, ref) {
       {childrenList.map((item) => {
         const nodeProps = getNodeProps(item);
         const node = <Node {...nodeProps} key={item.key} />;
-        saveCacheNode(item);
         return node;
       })}
     </div>
