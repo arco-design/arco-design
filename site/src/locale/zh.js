@@ -54,6 +54,7 @@ export default {
   'routes.slider': '滑动输入条 Slider',
   'routes.form': '表单 Form',
   'routes.upload': '上传 Upload',
+  'routes.color-picker': '颜色选择器 ColorPicker',
   'routes.transfer': '数据穿梭框 Transfer',
   'routes.mentions': '提及 Mentions',
   'routes.feedback': '反馈',

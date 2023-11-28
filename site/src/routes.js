@@ -247,6 +247,11 @@ export default function getRoutes(lang = 'zh', t) {
               component: lazyLoad(() => import(`../../components/Checkbox/README${suffix}.md`)),
             },
             {
+              name: t['routes.color-picker'],
+              path: 'components/color-picker',
+              component: lazyLoad(() => import(`../../components/ColorPicker/README${suffix}.md`)),
+            },
+            {
               name: t['routes.date-picker'],
               path: 'components/date-picker',
               component: lazyLoad(() => import(`../../components/DatePicker/README${suffix}.md`)),

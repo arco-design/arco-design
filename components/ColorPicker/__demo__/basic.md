@@ -13,11 +13,17 @@ title:
 
 Basic usage.
 
-```js
+```jsx
 import { ColorPicker } from '@arco-design/web-react';
 
 const App = () => {
-  return <ColorPicker />;
+  return (
+    <div>
+      <ColorPicker />
+      <div style={{ marginTop: 10 }}/>
+      <ColorPicker showText />
+    </div>
+  );
 };
 
 export default App;

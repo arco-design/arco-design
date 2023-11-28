@@ -7,6 +7,12 @@ export default {
 
 export const Demo = () => (
   <div style={{ marginTop: 150 }}>
-    <ColorPicker />
+    <ColorPicker size={'mini'} />
+    <br/>
+    <ColorPicker size={'small'} />
+    <br/>
+    <ColorPicker size={'default'} />
+    <br/>
+    <ColorPicker size={'large'} />
   </div>
 );
