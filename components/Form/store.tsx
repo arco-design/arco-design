@@ -513,7 +513,7 @@ class Store<
             errors = { ...errors, ...x.error };
           }
           const item = this.getRegisteredField(x.field);
-          if (!item.props?.isFormList) {
+          if (!item?.props?.isFormList) {
             // 保持和 2.46.0 之前版本行为一致，避免 {users: []}
             set(values, x.field, x.value);
           }
