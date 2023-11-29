@@ -605,7 +605,7 @@ export interface TheadProps<T = any> {
   data: T[];
   onHandleFilter: (column, filter) => void;
   onHandleFilterReset: (filter) => void;
-  currentSorter: SorterInfo;
+  currentSorter?: SorterInfo;
   activeSorters: SorterInfo[];
   selectedRowKeys: (string | number)[];
   onHeaderRow?: (columns, index: number) => RowCallbackProps;

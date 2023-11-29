@@ -779,7 +779,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     <Thead<T>
       {...props}
       activeSorters={activeSorters}
-      currentSorter={currentSorter}
       selectedRowKeys={selectedRowKeys}
       currentFilters={innerFilters}
       onCheckAll={onCheckAll}
@@ -841,8 +840,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       tableViewWidth={tableViewWidth}
       indentSize={indentSize}
       noDataElement={noDataElement || renderEmpty('Table')}
-      activeSorters={activeSorters}
-      currentSorter={currentSorter}
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}
       getRowKey={getRowKey}
