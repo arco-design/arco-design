@@ -42,28 +42,28 @@ export function set<T extends IndexedObject>(target: T, field: PropertyPath, val
 // reference https://stackoverflow.com/a/47063174
 export function iterativelyGetKeys(_obj, _prefix = '') {
   const processed = new Set();
+  const result = [];
   const getKeys = (obj, prefix = '') => {
-    if (!obj) {
-      return [];
+    if (!obj || processed.has(obj)) {
+      return;
     }
-    // Avoid circular dependencies
-    if (processed.has(obj)) {
-      return [];
-    }
+
     processed.add(obj);
 
-    return Object.keys(obj).reduce((res, el) => {
+    Object.keys(obj).forEach((el) => {
       if (
         (isObject(obj[el]) || isArray(obj[el])) &&
         Object.keys(obj[el]).length &&
         !React.isValidElement(obj[el])
       ) {
-        return [...res, ...getKeys(obj[el], `${prefix + el}.`)];
+        return getKeys(obj[el], `${prefix + el}.`);
       }
-      return [...res, prefix + el];
+
+      result.push(prefix + el);
     }, []);
   };
-  return getKeys(_obj, _prefix);
+  getKeys(_obj, _prefix);
+  return result;
 }
 
 // 判断是否是个事件对象 e?.constructor?.name 可能不是 SyntheticEvent，跟业务项目的打包方式有关系
