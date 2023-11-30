@@ -1,9 +1,9 @@
-import { ReactNode, CSSProperties } from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 import Store from './base/store';
-import { TriggerProps } from '../Trigger';
-import { SelectViewCommonProps } from '../_class/select-view';
-import { NodeProps } from './base/node';
-import { VirtualListProps } from '../_class/VirtualList';
+import type { NodeProps } from './base/node';
+import type { TriggerProps } from '../Trigger';
+import type { SelectViewCommonProps, SelectViewHandle } from '../_class/select-view';
+import type { VirtualListProps } from '../_class/VirtualList';
 
 /**
  * @title Cascader
@@ -316,4 +316,15 @@ export interface CascaderPanelProps<T> {
     checked?: ReactNode;
     next?: ReactNode;
   };
+}
+
+export interface CascaderType
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<CascaderProps> & React.RefAttributes<SelectViewHandle>
+  > {
+  <T = any>(
+    props: React.PropsWithChildren<CascaderProps<T>> & {
+      ref?: React.Ref<SelectViewHandle>;
+    }
+  ): React.ReactElement;
 }

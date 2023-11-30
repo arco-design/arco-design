@@ -17,7 +17,7 @@ import SearchPanel from './panel/search-panel';
 import { ConfigContext } from '../ConfigProvider';
 import Store from './base/store';
 import SelectView, { SelectViewHandle } from '../_class/select-view';
-import { CascaderProps, OptionProps, InputValueChangeReason } from './interface';
+import { CascaderProps, OptionProps, InputValueChangeReason, CascaderType } from './interface';
 import cs from '../_util/classNames';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import useUpdate from '../_util/hooks/useUpdate';
@@ -485,20 +485,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   );
 }
 
-interface ForwardRefCascaderType
-  extends React.ForwardRefExoticComponent<
-    React.PropsWithoutRef<CascaderProps> & React.RefAttributes<SelectViewHandle>
-  > {
-  <T = any>(
-    props: React.PropsWithChildren<CascaderProps<T>> & {
-      ref?: React.Ref<SelectViewHandle>;
-    }
-  ): React.ReactElement;
-}
-
 const CascaderComponent = forwardRef<SelectViewHandle, CascaderProps<any>>(
   Cascader
-) as ForwardRefCascaderType;
+) as CascaderType;
 
 CascaderComponent.displayName = 'Cascader';
 

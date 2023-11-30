@@ -34,7 +34,7 @@ export { default as Card } from './Card';
 export type { CarouselProps } from './Carousel/interface';
 export { default as Carousel } from './Carousel';
 
-export type { CascaderProps } from './Cascader/interface';
+export type { CascaderProps, CascaderType } from './Cascader/interface';
 export { default as Cascader } from './Cascader';
 
 export type { CheckboxProps, CheckboxGroupProps } from './Checkbox/interface';
