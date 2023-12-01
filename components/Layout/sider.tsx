@@ -11,7 +11,7 @@ import cs from '../_util/classNames';
 import IconLeft from '../../icon/react-icon/IconLeft';
 import IconRight from '../../icon/react-icon/IconRight';
 import { ConfigContext } from '../ConfigProvider';
-import ResizeBox from '../ResizeBox';
+import ResizeBox, { ResizeBoxProps } from '../ResizeBox';
 import { isArray, isNumber } from '../_util/is';
 import ResponsiveObserve, { responsiveMap } from '../_util/responsiveObserve';
 import useMergeValue from '../_util/hooks/useMergeValue';
@@ -151,16 +151,17 @@ function Sider(props: SiderProps, ref) {
     ) : null;
   };
 
-  const resizeProps = useMemo(() => {
+  const resizeProps = useMemo<ResizeBoxProps>(() => {
     if (resizable) {
       return {
         component: 'aside',
-        onMoving: (_, { width: currentWidth }) => {
-          setSiderWidth(currentWidth);
-        },
         ...resizeBoxProps,
         width: siderWidth,
         directions: resizeDirections,
+        onMoving: (event, size) => {
+          setSiderWidth(`${size.width}px`);
+          resizeBoxProps?.onMoving?.(event, size);
+        },
       };
     }
     return {};
