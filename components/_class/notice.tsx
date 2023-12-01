@@ -8,6 +8,8 @@ import IconLoading from '../../icon/react-icon/IconLoading';
 import cs from '../_util/classNames';
 import IconHover from '../_class/icon-hover';
 import { IconContext } from '../../icon/react-icon/context';
+import ConfigProvider from '../ConfigProvider';
+import { ConfigContext } from '../ConfigProvider/context';
 
 export interface NoticeProps {
   style?: CSSProperties;
@@ -23,6 +25,7 @@ export interface NoticeProps {
   type?: string;
   btn?: ReactNode;
   prefixCls?: string;
+  classPrefixCls?: string; // 类名前缀
   iconPrefix?: string;
   noticeType?: 'message' | 'notification';
   update?: boolean;
@@ -38,6 +41,10 @@ class Notice extends Component<NoticeProps, {}> {
     noticeType: 'message',
     duration: 3000,
   };
+
+  static contextType = ConfigContext;
+
+  context: React.ContextType<typeof ConfigContext>;
 
   wrapper: Element;
 
@@ -141,7 +148,9 @@ class Notice extends Component<NoticeProps, {}> {
       iconPrefix,
       rtl,
       closeIcon,
+      classPrefixCls,
     } = this.props;
+
     const classNames = cs(
       prefixCls,
       `${prefixCls}-${type}`,
@@ -159,64 +168,73 @@ class Notice extends Component<NoticeProps, {}> {
       shouldRenderIcon = false;
     }
 
+    const configContext = this.context;
+    if (classPrefixCls) {
+      configContext.prefixCls = classPrefixCls;
+    }
+
     if (noticeType === 'message') {
       _closable = closable;
       return (
-        <div
-          style={{ textAlign: 'center' }}
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-        >
-          <div className={classNames} style={style} role="alert">
-            {shouldRenderIcon && this.renderIcon()}
-            <span className={`${prefixCls}-content`}>{content}</span>
-            {_closable &&
-              (closeIcon !== undefined ? (
-                <span onClick={this.onClose} className={`${prefixCls}-close-btn`}>
-                  {closeIcon}
-                </span>
-              ) : (
-                <IconHover
-                  prefix={prefixCls}
-                  className={`${prefixCls}-close-btn`}
-                  onClick={this.onClose}
-                >
-                  <IconClose />
-                </IconHover>
-              ))}
+        <ConfigProvider {...configContext}>
+          <div
+            style={{ textAlign: 'center' }}
+            onMouseEnter={this.onMouseEnter}
+            onMouseLeave={this.onMouseLeave}
+          >
+            <div className={classNames} style={style} role="alert">
+              {shouldRenderIcon && this.renderIcon()}
+              <span className={`${prefixCls}-content`}>{content}</span>
+              {_closable &&
+                (closeIcon !== undefined ? (
+                  <span onClick={this.onClose} className={`${prefixCls}-close-btn`}>
+                    {closeIcon}
+                  </span>
+                ) : (
+                  <IconHover
+                    prefix={prefixCls}
+                    className={`${prefixCls}-close-btn`}
+                    onClick={this.onClose}
+                  >
+                    <IconClose />
+                  </IconHover>
+                ))}
+            </div>
           </div>
-        </div>
+        </ConfigProvider>
       );
     }
 
     if (noticeType === 'notification') {
       return (
-        <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-          <div className={classNames} style={style} role="alert">
-            {shouldRenderIcon && <div className={`${prefixCls}-left`}>{this.renderIcon()}</div>}
-            <div className={`${prefixCls}-right`}>
-              {title && <div className={`${prefixCls}-title`}>{title}</div>}
-              <div className={`${prefixCls}-content`}>{content}</div>
-              {btn && <div className={`${prefixCls}-btn-wrapper`}>{btn}</div>}
+        <ConfigProvider {...configContext}>
+          <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+            <div className={classNames} style={style} role="alert">
+              {shouldRenderIcon && <div className={`${prefixCls}-left`}>{this.renderIcon()}</div>}
+              <div className={`${prefixCls}-right`}>
+                {title && <div className={`${prefixCls}-title`}>{title}</div>}
+                <div className={`${prefixCls}-content`}>{content}</div>
+                {btn && <div className={`${prefixCls}-btn-wrapper`}>{btn}</div>}
+              </div>
+              {_closable &&
+                (closeIcon !== undefined ? (
+                  <span onClick={this.onClose} className={`${prefixCls}-close-btn`}>
+                    {closeIcon}
+                  </span>
+                ) : (
+                  <IconHover
+                    prefix={prefixCls}
+                    className={`${prefixCls}-close-btn`}
+                    onClick={this.onClose}
+                  >
+                    <IconContext.Provider value={iconPrefix ? { prefixCls: iconPrefix } : {}}>
+                      <IconClose />
+                    </IconContext.Provider>
+                  </IconHover>
+                ))}
             </div>
-            {_closable &&
-              (closeIcon !== undefined ? (
-                <span onClick={this.onClose} className={`${prefixCls}-close-btn`}>
-                  {closeIcon}
-                </span>
-              ) : (
-                <IconHover
-                  prefix={prefixCls}
-                  className={`${prefixCls}-close-btn`}
-                  onClick={this.onClose}
-                >
-                  <IconContext.Provider value={iconPrefix ? { prefixCls: iconPrefix } : {}}>
-                    <IconClose />
-                  </IconContext.Provider>
-                </IconHover>
-              ))}
           </div>
-        </div>
+        </ConfigProvider>
       );
     }
   }

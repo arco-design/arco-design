@@ -13,11 +13,11 @@
 
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
-|autoFocus|是否默认聚焦第一个可聚焦元素，只在 `focusLock` 开启时生效。|boolean |`-`|2.13.0|
+|autoFocus|是否默认聚焦第一个可聚焦元素，只在 `focusLock` 开启时生效。|boolean |`true`|2.13.0|
 |closable|是否显示右上角关闭按钮|boolean |`true`|-|
 |confirmLoading|确认按钮是否为加载中状态|boolean |`-`|-|
 |escToExit|按 `ESC` 键关闭|boolean |`true`|2.10.0|
-|focusLock|是否将焦点锁定在弹出框内。|boolean |`-`|2.13.0|
+|focusLock|是否将焦点锁定在弹出框内。|boolean |`true`|2.13.0|
 |mask|是否显示遮罩|boolean |`true`|-|
 |maskClosable|点击蒙层是否可以关闭|boolean |`true`|-|
 |mountOnEnter|是否在初次打开对话框时才渲染 dom。|boolean |`true`|-|

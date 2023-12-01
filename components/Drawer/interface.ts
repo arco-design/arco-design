@@ -171,12 +171,14 @@ export interface DrawerProps {
   /**
    * @zh 是否默认聚焦第一个可聚焦元素，只在 `focusLock` 开启时生效。
    * @en Whether to focus on the first focusable element by default. Only works when `focusLock` is turned on.
+   * @defaultValue true
    * @version 2.13.0
    */
   autoFocus?: boolean;
   /**
    * @zh 是否将焦点锁定在弹出框内。
    * @en Whether to lock the focus in the drawer box.
+   * @defaultValue true
    * @version 2.13.0
    */
   focusLock?: boolean;
