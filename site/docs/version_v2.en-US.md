@@ -16,6 +16,7 @@ changelog: true
 - Fixed the bug that the `Notification` component class name prefix did not take effect for user-defined content.([#2409](https://github.com/arco-design/arco-design/pull/2409))
 - Fix the problem that `Layout.Sider` cannot be dragged to change the size when `resizeBoxProps.onMoving` is passed in.([#2408](https://github.com/arco-design/arco-design/pull/2408))
 - Fixed a bug where some nodes would never disappear when `Message[method]` was triggered quickly.([#2407](https://github.com/arco-design/arco-design/pull/2407))
+- Fixed an issue where the `Tree` component onCheck callback parameter extra.checkedNodes failed to return information about all selected nodes in virtual scrolling scenarios.
 
 ## 2.56.1
 

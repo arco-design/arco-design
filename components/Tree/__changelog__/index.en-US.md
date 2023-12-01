@@ -1,3 +1,11 @@
+## 2.56.2
+
+2023-12-01
+
+### 🐛 BugFix
+
+- Fixed an issue where the `Tree` component onCheck callback parameter extra.checkedNodes failed to return information about all selected nodes in virtual scrolling scenarios.
+
 ## 2.56.0
 
 2023-11-17
