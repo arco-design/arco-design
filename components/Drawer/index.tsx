@@ -133,7 +133,8 @@ function Drawer(baseProps: DrawerProps, ref) {
     <div
       className={`${prefixCls}-scroll`}
       // tabIndex => https://github.com/arco-design/arco-design/issues/2121
-      tabIndex={0}
+      // use -1 => https://github.com/arco-design/arco-design/issues/2404
+      tabIndex={-1}
     >
       {title !== null && (
         <div className={`${prefixCls}-header`} style={headerStyle}>
