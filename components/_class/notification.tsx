@@ -57,9 +57,12 @@ class BaseNotice extends Component<any, BaseNoticeState> {
   };
 
   remove(id: string) {
-    const newNotices = this.state.notices.filter((notice) => notice.id !== id);
-    this.setState({
-      notices: newNotices,
+    this.setState((state) => {
+      const newNotices = state.notices.filter((notice) => notice.id !== id);
+
+      return {
+        notices: newNotices,
+      };
     });
   }
 
