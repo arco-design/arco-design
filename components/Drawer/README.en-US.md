@@ -14,11 +14,11 @@ A floating layer that slides in from the edge of the screen.
 
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
-|autoFocus|Whether to focus on the first focusable element by default. Only works when `focusLock` is turned on.|boolean |`-`|2.13.0|
+|autoFocus|Whether to focus on the first focusable element by default. Only works when `focusLock` is turned on.|boolean |`true`|2.13.0|
 |closable|Whether to show the close button on top-right of the drawer dialog|boolean |`true`|-|
 |confirmLoading|Whether the OK button is in loading state|boolean |`-`|-|
 |escToExit|Whether to enable pressing `ESC` to close the drawer.|boolean |`true`|2.10.0|
-|focusLock|Whether to lock the focus in the drawer box.|boolean |`-`|2.13.0|
+|focusLock|Whether to lock the focus in the drawer box.|boolean |`true`|2.13.0|
 |mask|Whether to show mask|boolean |`true`|-|
 |maskClosable|Whether to close the drawer when the mask is clicked|boolean |`true`|-|
 |mountOnEnter|Whether to render the drawer component only when it is opened initially.|boolean |`true`|-|

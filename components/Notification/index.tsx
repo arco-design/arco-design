@@ -211,6 +211,7 @@ class Notification extends BaseNotification {
                 onClose={this.remove}
                 prefixCls={prefixClsNotification}
                 iconPrefix={mergedPrefixCls}
+                classPrefixCls={mergedPrefixCls}
                 noticeType="notification"
                 rtl={mergedRtl}
               />
