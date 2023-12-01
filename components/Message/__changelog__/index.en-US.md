@@ -1,3 +1,11 @@
+## 2.56.2
+
+2023-12-01
+
+### 🐛 BugFix
+
+- Fixed a bug where some nodes would never disappear when `Message[method]` was triggered quickly.([#2407](https://github.com/arco-design/arco-design/pull/2407))
+
 ## 2.56.1
 
 2023-11-24

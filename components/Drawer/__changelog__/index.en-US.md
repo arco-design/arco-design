@@ -1,3 +1,11 @@
+## 2.56.2
+
+2023-12-01
+
+### 🐛 BugFix
+
+- Fix the problem of `Drawer` component `autoFocus` failure([#2412](https://github.com/arco-design/arco-design/pull/2412))
+
 ## 2.53.1
 
 2023-09-15

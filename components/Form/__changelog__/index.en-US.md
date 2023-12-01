@@ -1,3 +1,11 @@
+## 2.56.2
+
+2023-12-01
+
+### 💎 Enhancement
+
+- Optimize performance when field value is a large data array in a Form([#2397](https://github.com/arco-design/arco-design/pull/2397))
+
 ## 2.56.0
 
 2023-11-17

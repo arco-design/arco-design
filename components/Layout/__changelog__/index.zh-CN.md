@@ -1,3 +1,11 @@
+## 2.56.2
+
+2023-12-01
+
+### 🐛 问题修复
+
+- 修复 `Layout.Sider` 在传入 `resizeBoxProps.onMoving` 时无法拖拽改变尺寸的问题。([#2408](https://github.com/arco-design/arco-design/pull/2408))
+
 ## 2.41.2
 
 2022-11-11

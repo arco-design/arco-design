@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.56.2
+
+2023-12-01
+
+### 💎 Enhancement
+
+- Optimize performance when field value is a large data array in a Form([#2397](https://github.com/arco-design/arco-design/pull/2397))
+
+### 🐛 BugFix
+
+- Fix the problem of `Drawer` component `autoFocus` failure([#2412](https://github.com/arco-design/arco-design/pull/2412))
+- Fixed the bug that the `Notification` component class name prefix did not take effect for user-defined content.([#2409](https://github.com/arco-design/arco-design/pull/2409))
+- Fix the problem that `Layout.Sider` cannot be dragged to change the size when `resizeBoxProps.onMoving` is passed in.([#2408](https://github.com/arco-design/arco-design/pull/2408))
+- Fixed a bug where some nodes would never disappear when `Message[method]` was triggered quickly.([#2407](https://github.com/arco-design/arco-design/pull/2407))
+
 ## 2.56.1
 
 2023-11-24

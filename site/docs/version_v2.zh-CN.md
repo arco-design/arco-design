@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.56.2
+
+2023-12-01
+
+### 💎 功能优化
+
+- 优化 `Form` 中 value 为大数据数组时的性能([#2397](https://github.com/arco-design/arco-design/pull/2397))
+
+### 🐛 问题修复
+
+- 修复 `Drawer` 组件 `autoFocus` 失效的问题([#2412](https://github.com/arco-design/arco-design/pull/2412))
+- 修复 `Notification` 组件类名前缀未生效于用户自定义内容的 bug。([#2409](https://github.com/arco-design/arco-design/pull/2409))
+- 修复 `Layout.Sider` 在传入 `resizeBoxProps.onMoving` 时无法拖拽改变尺寸的问题。([#2408](https://github.com/arco-design/arco-design/pull/2408))
+- 修复 `Message[method]` 快速触发时，部分节点一直不会消失的 bug.([#2407](https://github.com/arco-design/arco-design/pull/2407))
+
 ## 2.56.1
 
 2023-11-24

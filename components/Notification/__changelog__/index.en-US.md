@@ -1,3 +1,11 @@
+## 2.56.2
+
+2023-12-01
+
+### 🐛 BugFix
+
+- Fixed the bug that the `Notification` component class name prefix did not take effect for user-defined content.([#2409](https://github.com/arco-design/arco-design/pull/2409))
+
 ## 2.56.1
 
 2023-11-24
