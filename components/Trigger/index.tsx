@@ -165,11 +165,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   childrenDomSize: ReturnType<typeof getDOMPos> = {};
 
   getMergedProps = (baseProps?): PropsWithChildren<TriggerProps> => {
-    const { componentConfig } = this.context;
+    // const { componentConfig } = this.context;
     const props = mergeProps<PropsWithChildren<TriggerProps>>(
       baseProps || this.props,
       defaultProps,
-      componentConfig?.Trigger
+      {} // componentConfig?.Trigger
     );
     return props;
   };
