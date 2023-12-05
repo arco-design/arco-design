@@ -60,7 +60,7 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
   const shouldRenderExpandCol = !!expandedRowRender;
   const shouldRenderSelectionCol = isCheckbox || isRadio;
 
-  const { getHeaderComponentOperations, getBodyComponentOperations } = useComponent(components);
+  const { getHeaderComponentOperations } = useComponent(components);
 
   const headerOperations = useMemo(
     () =>
@@ -69,14 +69,6 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
         expandNode: shouldRenderExpandCol ? 'holder_node' : '',
       }),
     [shouldRenderSelectionCol, shouldRenderExpandCol, getHeaderComponentOperations]
-  );
-  const bodyOperations = useMemo(
-    () =>
-      getBodyComponentOperations({
-        selectionNode: shouldRenderSelectionCol ? 'holder_node' : '',
-        expandNode: shouldRenderExpandCol ? 'holder_node' : '',
-      }),
-    [shouldRenderSelectionCol, shouldRenderExpandCol, getBodyComponentOperations]
   );
 
   const selectionFixedLeft = rowSelection && rowSelection.fixed;
@@ -162,8 +154,8 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
   );
 
   const flattenColumns = useMemo(
-    () => getInternalColumns(rows, bodyOperations),
-    [rows, getInternalColumns, bodyOperations]
+    () => getInternalColumns(rows, headerOperations),
+    [rows, getInternalColumns, headerOperations]
   );
 
   // 把表头分组的 columns 分成 n 行，并且加上 colSpan 和 rowSpan，没有表头分组的话是 1 行。
