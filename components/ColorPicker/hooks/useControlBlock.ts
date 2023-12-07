@@ -47,13 +47,14 @@ export const useControlBlock = ({ value, onChange }: ControlBlockParams) => {
     window.addEventListener('contextmenu', removeListener);
   };
 
-  const onMouseMove = (ev: MouseEvent) => {
+  function onMouseMove(ev: MouseEvent) {
+    ev.preventDefault();
     if (ev.buttons > 0) {
       setCurrentPosition(ev);
     } else {
       removeListener();
     }
-  };
+  }
 
   return {
     active,

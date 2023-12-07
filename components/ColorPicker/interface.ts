@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties } from 'react';
 import { TriggerProps } from '../Trigger';
 import { InputProps } from '../Input';
 
@@ -85,9 +85,6 @@ export interface ColorPickerProps {
    * @en Color array of preset colors
    */
   presetColors?: string[];
-  renderHistory?: () => ReactNode;
-  renderPreset?: () => ReactNode;
-  renderPickSection?: () => ReactNode;
   /**
    * @zh 颜色值改变时触发
    * @en Callback when the color value changes
@@ -113,8 +110,7 @@ export interface HSV {
 }
 
 export interface Color {
-  rgb: RGB;
   hsv: HSV;
+  rgb: RGB;
   hex: string;
-  alpha: number;
 }
