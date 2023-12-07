@@ -252,9 +252,6 @@ function Pagination(baseProps: PaginationProps, ref) {
         left = Math.min(endFoldPage, current - bufferSize);
       }
 
-      for (let i = left; i <= right; i++) {
-        pageList.push(<PageItem key={i} pageNum={i} {...pagerProps} />);
-      }
       const JumpPre = (
         <JumpPager
           {...pagerProps}
@@ -263,6 +260,23 @@ function Pagination(baseProps: PaginationProps, ref) {
           jumpPage={-(bufferSize * 2 + 1)}
         />
       );
+
+      const FirstPager = <PageItem key={1} pageNum={1} {...pagerProps} />;
+      if (hasJumpPre) {
+        pageList.push(FirstPager);
+        pageList.push(JumpPre);
+        console.warn('11111111');
+      }
+
+      for (let i = left; i <= right; i++) {
+        pageList.push(<PageItem key={i} pageNum={i} {...pagerProps} />);
+        if (i === left && hasJumpPre) {
+          pageList[0] = React.cloneElement(pageList[0], {
+            className: `${prefixCls}-item-after-pre`,
+          });
+        }
+      }
+
       const JumpNext = (
         <JumpPager
           {...pagerProps}
@@ -271,16 +285,7 @@ function Pagination(baseProps: PaginationProps, ref) {
           jumpPage={bufferSize * 2 + 1}
         />
       );
-      const FirstPager = <PageItem key={1} pageNum={1} {...pagerProps} />;
       const LastPager = <PageItem {...pagerProps} key={allPages} pageNum={allPages} />;
-      if (hasJumpPre) {
-        pageList[0] = React.cloneElement(pageList[0], {
-          className: `${prefixCls}-item-after-pre`,
-        });
-        // TODO:
-        pageList.unshift(JumpPre);
-        pageList.unshift(FirstPager);
-      }
 
       if (hasJumpNext) {
         pageList[pageList.length - 1] = React.cloneElement(pageList[pageList.length - 1], {
