@@ -9,8 +9,9 @@ import { Color, HSV } from './interface';
 import { hexToRgb, rgbToHsv } from '../_util/color';
 
 interface PanelProps {
-  value: Color;
-  current: string;
+  color: Color;
+  alpha: number;
+  colorString: string;
   showHistory?: boolean;
   historyColors?: string[];
   showPreset?: boolean;
@@ -22,24 +23,24 @@ interface PanelProps {
   onAlphaChange: (value: number) => void;
 }
 
-export const Panel: React.FC<PanelProps> = (
-  {
-    value,
-    current,
-    historyColors,
-    presetColors,
-    showHistory,
-    showPreset,
-    renderPreset,
-    renderHistory,
-    renderPickSection,
-    onHsvChange,
-    onAlphaChange,
-  },
-) => {
+export const Panel: React.FC<PanelProps> = ({
+  color,
+  alpha,
+  colorString,
+  historyColors,
+  presetColors,
+  showHistory,
+  showPreset,
+  renderPreset,
+  renderHistory,
+  renderPickSection,
+  onHsvChange,
+  onAlphaChange,
+}) => {
   const { getPrefixCls, locale } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
   const [format, setFormat] = useState<'hex' | 'rgb'>('hex');
+  const { h, s, v } = color.hsv;
 
   const onHexInputChange = (_value: string) => {
     const _rgb = hexToRgb(_value) || {
@@ -53,27 +54,84 @@ export const Panel: React.FC<PanelProps> = (
 
   const renderInput = () => {
     if (format === 'rgb') {
-      return <InputRgb value={value} onHsvChange={onHsvChange} onAlphaChange={onAlphaChange} />;
+      return (
+        <InputRgb
+          color={color}
+          alpha={alpha}
+          onHsvChange={onHsvChange}
+          onAlphaChange={onAlphaChange}
+        />
+      );
     }
-    return <InputHex value={value} onHsvChange={onHsvChange} onAlphaChange={onAlphaChange} />;
+    return (
+      <InputHex
+        color={color}
+        alpha={alpha}
+        onHsvChange={onHsvChange}
+        onAlphaChange={onAlphaChange}
+      />
+    );
   };
 
   const renderColorBlock = (color: string) => {
     return (
       <div
+        key={color}
         className={`${prefixCls}-color-block`}
-        style={{ backgroundColor: color }}
         onClick={() => {
           onHexInputChange(color);
         }}
-      />
+      >
+        <div className={`${prefixCls}-block`} style={{ backgroundColor: color }} />
+      </div>
     );
+  };
+
+  const renderHistorySec = () => {
+    if (renderHistory) {
+      return renderHistory();
+    }
+    if (showHistory) {
+      return (
+        <div className={`${prefixCls}-colors-section`}>
+          <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.history}</div>
+          <div className={`${prefixCls}-colors-wrapper`}>
+            {historyColors?.length ? (
+              <div className={`${prefixCls}-colors-list`}>
+                {historyColors.map(renderColorBlock)}
+              </div>
+            ) : (
+              <span className={`${prefixCls}-colors-empty`}>{locale.ColorPicker.empty}</span>
+            )}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const renderPresetSec = () => {
+    if (renderPreset) {
+      return renderPreset();
+    }
+    if (showPreset) {
+      return (
+        <div className={`${prefixCls}-colors-section`}>
+          <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.preset}</div>
+          <div className={`${prefixCls}-colors-wrapper`}>
+            <div className={`${prefixCls}-colors-list`}>{presetColors?.map(renderColorBlock)}</div>
+          </div>
+        </div>
+      );
+    }
+    return null;
   };
 
   const renderColorSec = () => {
     if (renderPickSection) {
       return renderPickSection();
-    } else if (showHistory || showPreset) {
+    }
+    if (showHistory || showPreset) {
       return (
         <div className={`${prefixCls}-panel-colors`}>
           {renderHistorySec()}
@@ -84,70 +142,29 @@ export const Panel: React.FC<PanelProps> = (
     return null;
   };
 
-  const renderHistorySec = () => {
-    if (renderHistory) {
-      return renderHistory();
-    } else if (showHistory) {
-      return (
-        <>
-          <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.history}</div>
-          <div className={`${prefixCls}-colors-wrapper`}>
-            {Boolean(historyColors?.length) ?
-              <div className={`${prefixCls}-colors-list`}>{historyColors.map(renderColorBlock)}</div>
-              :
-              <span className={`${prefixCls}-colors-empty`}>{locale.ColorPicker.empty}</span>}
-          </div>
-        </>
-      );
-    }
-    return null;
-  };
-
-  const renderPresetSec = () => {
-    if (renderPreset) {
-      return renderPreset();
-    } else if (showPreset) {
-      return (
-        <>
-          <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.preset}</div>
-          <div className={`${prefixCls}-colors-wrapper`}>
-            <div className={`${prefixCls}-colors-list`}>
-              {presetColors?.map(renderColorBlock)}
-            </div>
-          </div>
-        </>
-      );
-    }
-    return null;
-  };
-
   return (
     <div className={`${prefixCls}-panel`}>
-      <Palette
-        h={value.hsv.h}
-        s={value.hsv.s}
-        v={value.hsv.v}
-        onChange={(s, v) => onHsvChange({ ...value.hsv, s, v })}
-      />
+      <Palette color={color} onChange={(s, v) => onHsvChange({ h, s, v })} />
       <div className={`${prefixCls}-panel-control`}>
         <div className={`${prefixCls}-control-wrapper`}>
           <div>
             <ControlBar
-              type='hue'
-              x={value.hsv.h}
-              current={current}
-              onChange={(h) => onHsvChange({ ...value.hsv, h })}
+              type="hue"
+              x={h}
+              color={color}
+              colorString={colorString}
+              onChange={(h) => onHsvChange({ h, s, v })}
             />
             <ControlBar
               style={{ marginTop: 16 }}
-              type='alpha'
-              x={value.alpha}
-              color={value.rgb}
-              current={current}
+              type="alpha"
+              x={alpha}
+              color={color}
+              colorString={colorString}
               onChange={onAlphaChange}
             />
           </div>
-          <div className={`${prefixCls}-preview`} style={{ backgroundColor: current }} />
+          <div className={`${prefixCls}-preview`} style={{ backgroundColor: colorString }} />
         </div>
         <div className={`${prefixCls}-input-wrapper`}>
           <Select

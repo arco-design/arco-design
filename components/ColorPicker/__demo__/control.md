@@ -27,7 +27,7 @@ const App = () => {
         <Button onClick={() => setValue('#FF00FF88')}>#FF00FF88</Button>
       </div>
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker value={value} onChange={setValue} showText />
+      <ColorPicker value={value} onChange={(value)=>setValue(value)} showText />
     </div>
   );
 };

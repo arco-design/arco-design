@@ -7,22 +7,35 @@ title:
 
 ## zh-CN
 
-颜色选择器定义了四种尺寸（`mini`,`small`, `default`, `large`），分别为 24px，28px，32px，36px。
+可以通过 `showPreset` 和 `showHistory` 开启预设颜色和历史颜色区域。历史颜色需要用户自行控制展示内容。
 
 ## en-US
 
-ColorPicker defines four sizes (`mini`, `small`, `default`, `large`), which are 24px, 28px, 32px, and 36px.
-
+The preset color and history color areas can be opened through `showPreset` and `showHistory`. Historical colors require users to control the display content themselves.
 
 ```jsx
+import { useState } from 'react';
 import { ColorPicker } from '@arco-design/web-react';
 
 const App = () => {
+  const [color, setColor] = useState('#FFFF00')
+  const [history, setHistory] = useState([]);
+
+  const addHistory = (visible) => {
+    if (!visible) {
+      const newHistory = [...history.slice(-10), color];
+      setHistory(newHistory)
+    }
+  }
+
   return (
     <div>
-      <ColorPicker showPreset showHistory />
-      <div style={{ marginTop: 10 }}/>
-      <ColorPicker showPreset showHistory />
+      <div>Preset: </div>
+      <ColorPicker showPreset showText />
+      <div style={{ marginTop: 10 }} />
+      <div>History & Preset: </div>
+      <ColorPicker value={color} historyColors={history} showPreset showHistory showText onChange={setColor}
+                   onVisibleChange={addHistory} />
     </div>
   );
 };

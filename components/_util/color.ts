@@ -68,23 +68,25 @@ const PERMISSIVE_MATCH3 = `[\\s|\\(]+(${CSS_UNIT})[,|\\s]+(${CSS_UNIT})[,|\\s]+(
 const PERMISSIVE_MATCH4 = `[\\s|\\(]+(${CSS_UNIT})[,|\\s]+(${CSS_UNIT})[,|\\s]+(${CSS_UNIT})[,|\\s]+(${CSS_UNIT})\\s*\\)?`;
 
 const matchers = {
-  rgb: new RegExp('rgb' + PERMISSIVE_MATCH3),
-  rgba: new RegExp('rgba' + PERMISSIVE_MATCH4),
+  rgb: new RegExp(`rgb${PERMISSIVE_MATCH3}`),
+  rgba: new RegExp(`rgba${PERMISSIVE_MATCH4}`),
   hex3: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
   hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
   hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
   hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
 };
 
-export function parseIntFromHex(val: string): number {
+export const parseIntFromHex = (val: string): number => {
   return parseInt(val, 16);
-}
+};
 
-export function convertHexToDecimal(h: string): number {
+export const convertHexToDecimal = (h: string): number => {
   return parseIntFromHex(h) / 255;
-}
+};
 
-export function formatInputToRgb(color: string): { r: number, g: number, b: number, a?: number } | false {
+export const formatInputToRgb = (
+  color: string
+): { r: number; g: number; b: number; a?: number } | false => {
   let match = matchers.rgb.exec(color);
   if (match) {
     return { r: parseInt(match[1]), g: parseInt(match[2]), b: parseInt(match[3]) };
@@ -92,7 +94,12 @@ export function formatInputToRgb(color: string): { r: number, g: number, b: numb
 
   match = matchers.rgba.exec(color);
   if (match) {
-    return { r: parseInt(match[1]), g: parseInt(match[2]), b: parseInt(match[3]), a: parseFloat(match[4]) };
+    return {
+      r: parseInt(match[1]),
+      g: parseInt(match[2]),
+      b: parseInt(match[3]),
+      a: parseFloat(match[4]),
+    };
   }
 
   match = matchers.hex8.exec(color);
@@ -134,9 +141,26 @@ export function formatInputToRgb(color: string): { r: number, g: number, b: numb
   }
 
   return false;
-}
+};
 
-export function hexToRgb(color: string): any {
+export const formatInputToHSVA = (color: string) => {
+  const rgba = formatInputToRgb(color);
+  if (rgba) {
+    const hsv = rgbToHsv(rgba.r, rgba.g, rgba.b);
+    return {
+      ...hsv,
+      a: rgba.a ?? 1,
+    };
+  }
+  return {
+    h: 0,
+    s: 1,
+    v: 1,
+    a: 1,
+  };
+};
+
+export const hexToRgb = (color: string): any => {
   color = color.trim().toLowerCase();
   if (color.length === 0) {
     return false;
@@ -161,7 +185,7 @@ export function hexToRgb(color: string): any {
   }
 
   return false;
-}
+};
 
 export const rgbToHex = (r: number, g: number, b: number) => {
   const hex = [
@@ -178,7 +202,9 @@ export const rgbaToHex = (r: number, g: number, b: number, a: number) => {
     Math.round(r).toString(16).padStart(2, '0'),
     Math.round(g).toString(16).padStart(2, '0'),
     Math.round(b).toString(16).padStart(2, '0'),
-    Math.round(a * 255).toString(16).padStart(2, '0'),
+    Math.round(a * 255)
+      .toString(16)
+      .padStart(2, '0'),
   ];
 
   return hex.join('').toUpperCase();

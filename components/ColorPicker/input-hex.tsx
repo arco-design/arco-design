@@ -6,21 +6,22 @@ import { hexToRgb, rgbToHsv } from '../_util/color';
 import { ConfigContext } from '../ConfigProvider';
 
 interface InputHexProps {
-  value: Color;
+  color: Color;
+  alpha: number;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
 }
 
-export const InputHex: React.FC<InputHexProps> = ({ value, onHsvChange, onAlphaChange }) => {
+export const InputHex: React.FC<InputHexProps> = ({ color, alpha, onHsvChange, onAlphaChange }) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
-  const [hex, setHex] = useState(value.hex);
+  const [hex, setHex] = useState(color.hex);
 
   useEffect(() => {
-    if (value.hex !== hex) {
-      setHex(value.hex);
+    if (color.hex !== hex) {
+      setHex(color.hex);
     }
-  }, [value]);
+  }, [color]);
 
   const onInputChange = (value: string) => {
     const matchValue = value.match(/[a-zA-Z0-9]*/g)?.join('') ?? '';
@@ -49,7 +50,7 @@ export const InputHex: React.FC<InputHexProps> = ({ value, onHsvChange, onAlphaC
         onBlur={onBlur}
         onPressEnter={onBlur}
       />
-      <InputAlpha value={value.alpha} onChange={onAlphaChange} />
+      <InputAlpha value={alpha} onChange={onAlphaChange} />
     </Input.Group>
   );
 };

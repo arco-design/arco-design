@@ -2,17 +2,17 @@ import React, { useContext, useMemo } from 'react';
 import { ConfigContext } from '../ConfigProvider';
 import { useControlBlock } from './hooks/useControlBlock';
 import { hsvToRgb } from '../_util/color';
+import { Color } from './interface';
 
 interface PaletteProps {
-  h: number;
-  s: number;
-  v: number;
+  color: Color;
   onChange: (s: number, v: number) => void;
 }
 
-export const Palette = ({ h, s, v, onChange }: PaletteProps) => {
+export const Palette = ({ color, onChange }: PaletteProps) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
+  const { h, s, v } = color.hsv;
 
   const { blockRef, handlerRef, onMouseDown } = useControlBlock({
     value: [s, 1 - v],
@@ -42,7 +42,7 @@ export const Palette = ({ h, s, v, onChange }: PaletteProps) => {
       ref={blockRef}
       className={`${prefixCls}-palette`}
       style={{ backgroundColor: hueColor }}
-      onMouseDown={onMouseDown}
+      onMouseDown={onMouseDown as any}
     >
       {renderHandler()}
     </div>

@@ -7,12 +7,13 @@ import { InputAlpha } from './input-alpha';
 import { rgbToHsv } from '../_util/color';
 
 interface InputRgbProps {
-  value: Color;
+  color: Color;
+  alpha: number;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
 }
 
-export const InputRgb = ({ value, onHsvChange, onAlphaChange }: InputRgbProps) => {
+export const InputRgb = ({ color, alpha, onHsvChange, onAlphaChange }: InputRgbProps) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
 
@@ -21,27 +22,14 @@ export const InputRgb = ({ value, onHsvChange, onAlphaChange }: InputRgbProps) =
     onHsvChange(hsv);
   };
 
+  const { r, g, b } = color.rgb;
+
   return (
     <Input.Group className={`${prefixCls}-input-group`} compact>
-      <InputNumber
-        min={0}
-        max={255}
-        value={value.rgb.r}
-        onChange={(r) => onInputChange({ ...value.rgb, r })}
-      />
-      <InputNumber
-        min={0}
-        max={255}
-        value={value.rgb.g}
-        onChange={(g) => onInputChange({ ...value.rgb, g })}
-      />
-      <InputNumber
-        min={0}
-        max={255}
-        value={value.rgb.b}
-        onChange={(b) => onInputChange({ ...value.rgb, b })}
-      />
-      <InputAlpha value={value.alpha} onChange={onAlphaChange} />
+      <InputNumber min={0} max={255} value={r} onChange={(r) => onInputChange({ r, g, b })} />
+      <InputNumber min={0} max={255} value={g} onChange={(g) => onInputChange({ r, g, b })} />
+      <InputNumber min={0} max={255} value={b} onChange={(b) => onInputChange({ r, g, b })} />
+      <InputAlpha value={alpha} onChange={onAlphaChange} />
     </Input.Group>
   );
 };
