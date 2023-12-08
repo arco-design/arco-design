@@ -864,13 +864,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const child: any = this.getChild();
     const childHandler = child && child.props && child.props[eventName];
 
-    const props = this.getMergedProps();
+    const handlerFn = this.getMergedProps([eventName])[eventName];
 
     if (isFunction(childHandler)) {
       childHandler(e);
     }
-    if (isFunction(props[eventName])) {
-      props[eventName](e);
+    if (isFunction(handlerFn)) {
+      handlerFn(e);
     }
   };
 
@@ -918,73 +918,73 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       return null;
     }
 
-    const mergedProps: any = {};
+    const mergeProps: any = {};
     const popupEventProps: any = {
       onMouseDown: this.onPopupMouseDown,
     };
 
     if (this.isHoverTrigger() && !disabled) {
-      mergedProps.onMouseEnter = this.onMouseEnter;
-      mergedProps.onMouseLeave = this.onMouseLeave;
+      mergeProps.onMouseEnter = this.onMouseEnter;
+      mergeProps.onMouseLeave = this.onMouseLeave;
       // https://github.com/arco-design/arco-design/issues/1804
       // TODO: remove login in next major version
       if (this.isClickToHide()) {
-        mergedProps.onClick = this.clickToHidePopup;
+        mergeProps.onClick = this.clickToHidePopup;
       }
 
       if (alignPoint) {
-        mergedProps.onMouseMove = this.onMouseMove;
+        mergeProps.onMouseMove = this.onMouseMove;
       }
       if (!this.isPopupHoverHide()) {
         popupEventProps.onMouseEnter = this.onPopupMouseEnter;
         popupEventProps.onMouseLeave = this.onPopupMouseLeave;
       }
     } else {
-      mergedProps.onMouseEnter = this.triggerOriginEvent('onMouseEnter');
-      mergedProps.onMouseLeave = this.triggerOriginEvent('onMouseLeave');
+      mergeProps.onMouseEnter = this.triggerOriginEvent('onMouseEnter');
+      mergeProps.onMouseLeave = this.triggerOriginEvent('onMouseLeave');
     }
 
     if (this.isContextMenuTrigger() && !disabled) {
-      mergedProps.onContextMenu = this.onContextMenu;
-      mergedProps.onClick = this.clickToHidePopup;
+      mergeProps.onContextMenu = this.onContextMenu;
+      mergeProps.onClick = this.clickToHidePopup;
     } else {
-      mergedProps.onContextMenu = this.triggerOriginEvent('onContextMenu');
+      mergeProps.onContextMenu = this.triggerOriginEvent('onContextMenu');
     }
     if (this.isClickTrigger() && !disabled) {
-      mergedProps.onClick = this.onClick;
+      mergeProps.onClick = this.onClick;
     } else {
-      mergedProps.onClick = mergedProps.onClick || this.triggerOriginEvent('onClick');
+      mergeProps.onClick = mergeProps.onClick || this.triggerOriginEvent('onClick');
     }
     if (this.isFocusTrigger() && !disabled) {
-      mergedProps.onFocus = this.onFocus;
+      mergeProps.onFocus = this.onFocus;
       if (this.isBlurToHide()) {
-        mergedProps.onBlur = this.onBlur;
+        mergeProps.onBlur = this.onBlur;
       }
     } else {
-      mergedProps.onFocus = this.triggerOriginEvent('onFocus');
-      mergedProps.onBlur = this.triggerOriginEvent('onBlur');
+      mergeProps.onFocus = this.triggerOriginEvent('onFocus');
+      mergeProps.onBlur = this.triggerOriginEvent('onBlur');
     }
 
     if (!disabled) {
-      mergedProps.onKeyDown = this.onKeyDown;
+      mergeProps.onKeyDown = this.onKeyDown;
     } else {
-      mergedProps.onKeyDown = this.triggerOriginEvent('onKeyDown');
+      mergeProps.onKeyDown = this.triggerOriginEvent('onKeyDown');
     }
 
     const child: any = this.getChild();
     const popupChildren: any = React.Children.only(popup());
 
     if (child.props.className) {
-      mergedProps.className = child.props.className;
+      mergeProps.className = child.props.className;
     }
     if (childrenPrefix && popupVisible) {
-      mergedProps.className = mergedProps.className
-        ? `${mergedProps.className} ${childrenPrefix}-open`
+      mergeProps.className = mergeProps.className
+        ? `${mergeProps.className} ${childrenPrefix}-open`
         : `${childrenPrefix}-open`;
     }
     // 只有在focus触发时，设置tabIndex，点击tab键，能触发focus事件，展示弹出框
     if (this.isFocusTrigger()) {
-      mergedProps.tabIndex = disabled ? -1 : 0;
+      mergeProps.tabIndex = disabled ? -1 : 0;
     }
 
     const prefixCls = getPrefixCls('trigger');
@@ -1000,7 +1000,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const childrenComponent = isExistChildren && (
       <ResizeObserver onResize={this.onResize}>
         {React.cloneElement(child, {
-          ...mergedProps,
+          ...mergeProps,
         })}
       </ResizeObserver>
     );

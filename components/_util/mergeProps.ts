@@ -8,8 +8,6 @@ export default function mergeProps<PropsType>(
   const globalComponentConfig = _globalComponentConfig || {};
   const componentProps = _componentProps || {};
 
-  // return { ...defaultProps, ...globalComponentConfig, ...componentProps };
-
   const propNameSet = propsNameList
     ? new Set(propsNameList)
     : new Set(
