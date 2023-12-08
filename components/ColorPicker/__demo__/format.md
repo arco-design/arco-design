@@ -13,7 +13,7 @@ title:
 
 Set the format of the color value through `format`, supporting `hex` and `rgb`.
 
-```jsx
+```js
 import { ColorPicker, Radio } from '@arco-design/web-react';
 import { useState } from 'react';
 

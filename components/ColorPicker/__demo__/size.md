@@ -14,7 +14,7 @@ title:
 ColorPicker defines four sizes (`mini`, `small`, `default`, `large`), which are 24px, 28px, 32px, and 36px.
 
 
-```jsx
+```js
 import { ColorPicker, Radio } from '@arco-design/web-react';
 
 const RadioGroup = Radio.Group;
