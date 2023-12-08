@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
-import { isFunction, isObject } from '../_util/is';
+import { isFunction, isObject, isArray } from '../_util/is';
 import { pickDataAttributes } from '../_util/pick';
 import { Esc } from '../_util/keycode';
 import Portal from './portal';
@@ -164,12 +164,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   // 保存children节点的尺寸。 主要用于在弹出层动画前和动画完成后比较尺寸是否有变化。
   childrenDomSize: ReturnType<typeof getDOMPos> = {};
 
-  getMergedProps = (baseProps?): PropsWithChildren<TriggerProps> => {
+  getMergedProps = (basePropsOrKeys?): PropsWithChildren<TriggerProps> => {
     const { componentConfig } = this.context;
     const props = mergeProps<PropsWithChildren<TriggerProps>>(
-      baseProps || this.props,
+      basePropsOrKeys && isObject(basePropsOrKeys) ? basePropsOrKeys : this.props,
       defaultProps,
-      componentConfig?.Trigger
+      componentConfig?.Trigger,
+      basePropsOrKeys && isArray(basePropsOrKeys) ? basePropsOrKeys : undefined
     );
     return props;
   };
@@ -284,7 +285,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   handleScroll = () => {
-    const currentProps = this.getMergedProps();
+    const currentProps = this.getMergedProps(['containerScrollToClose', 'updateOnScroll']);
 
     if (currentProps.containerScrollToClose) {
       this.setPopupVisible(false);
@@ -334,38 +335,38 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   });
 
   isClickTrigger = () => {
-    const { trigger } = this.getMergedProps();
+    const { trigger } = this.getMergedProps(['trigger']);
     return [].concat(trigger).indexOf('click') > -1;
   };
 
   isFocusTrigger = () => {
-    const { trigger } = this.getMergedProps();
+    const { trigger } = this.getMergedProps(['trigger']);
     return [].concat(trigger).indexOf('focus') > -1;
   };
 
   isHoverTrigger = () => {
-    const { trigger } = this.getMergedProps();
+    const { trigger } = this.getMergedProps(['trigger']);
     return [].concat(trigger).indexOf('hover') > -1;
   };
 
   isContextMenuTrigger = () => {
-    const { trigger } = this.getMergedProps();
+    const { trigger } = this.getMergedProps(['trigger']);
     return [].concat(trigger).indexOf('contextMenu') > -1;
   };
 
   // 是否在鼠标移出触发节点和popup的时候隐藏弹出层
   isMouseLeaveToClose = () => {
-    return this.isHoverTrigger() && this.getMergedProps().mouseLeaveToClose;
+    return this.isHoverTrigger() && this.getMergedProps(['mouseLeaveToClose']).mouseLeaveToClose;
   };
 
   // 是否在悬浮到popup的时候隐藏弹出层
   isPopupHoverHide = () => {
-    return this.isHoverTrigger() && !this.getMergedProps().popupHoverStay;
+    return this.isHoverTrigger() && !this.getMergedProps(['popupHoverStay']).popupHoverStay;
   };
 
   isClickToHide = () => {
     if (this.isClickTrigger() || this.isContextMenuTrigger()) {
-      const { clickToClose = true } = this.getMergedProps();
+      const { clickToClose = true } = this.getMergedProps(['clickToClose']);
       return clickToClose;
     }
     // 2.44.0 及之前版本 clickToClose 对 hover触发不生效。
@@ -375,7 +376,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   isBlurToHide = () => {
-    return this.isFocusTrigger() && this.getMergedProps().blurToHide;
+    return this.isFocusTrigger() && this.getMergedProps(['blurToHide']).blurToHide;
   };
 
   clearTimer = () => {
@@ -399,7 +400,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   offClickOutside = () => {
     if (this.handleClickOutside) {
-      const { getDocument } = this.getMergedProps();
+      const { getDocument } = this.getMergedProps(['getDocument']);
       const root = isFunction(getDocument) && (getDocument as Function)();
 
       off(root, 'mousedown', this.onClickOutside);
@@ -411,7 +412,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const content = this.triggerRef as HTMLElement;
     if (!content) return {};
 
-    const { showArrow, classNames } = this.getMergedProps();
+    const { showArrow, classNames } = this.getMergedProps(['showArrow', 'classNames']);
     let top = (showArrow && this.arrowStyle?.top) || 0;
     let left = (showArrow && this.arrowStyle?.left) || 0;
     top = top ? `${top}px` : '';
@@ -452,7 +453,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   // 下拉框存在初始translateY/translateX，需要根据真实的弹出位置确定
   getTransformTranslate = () => {
-    if (this.getMergedProps().classNames !== 'slideDynamicOrigin') {
+    if (this.getMergedProps(['classNames']).classNames !== 'slideDynamicOrigin') {
       return '';
     }
     switch (this.realPosition) {
@@ -482,14 +483,15 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     if (!child.offsetParent && !child.getClientRects().length) {
       return this.state.popupStyle;
     }
+    const mergedProps = this.getMergedProps();
     const { style, arrowStyle, realPosition } = getStyle(
-      this.getMergedProps(),
+      mergedProps,
       content,
       child,
       mountContainer,
       this.mouseLocation
     );
-    this.realPosition = realPosition || (this.getMergedProps().position as string);
+    this.realPosition = realPosition || (mergedProps.position as string);
     this.arrowStyle = arrowStyle || {};
 
     return {
@@ -549,7 +551,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   setPopupVisible = (visible: boolean, delay = 0, callback?: () => void) => {
-    const mergedProps = this.getMergedProps();
+    const mergedProps = this.getMergedProps(['onVisibleChange', 'popupVisible']);
     const { onVisibleChange } = mergedProps;
     const currentVisible = this.state.popupVisible;
 
@@ -606,7 +608,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   // 点击非popup内部，非children内部的节点，触发clickoutside 逻辑
   onClickOutside = (e) => {
-    const { onClickOutside, clickOutsideToClose } = this.getMergedProps();
+    const { onClickOutside, clickOutsideToClose } = this.getMergedProps([
+      'onClickOutside',
+      'clickOutsideToClose',
+    ]);
     const triggerNode = this.triggerRef;
     const childrenDom = this.getRootElement();
 
@@ -636,14 +641,14 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   onPressEsc = (e) => {
-    const { escToClose } = this.getMergedProps();
+    const { escToClose } = this.getMergedProps(['escToClose']);
     if (escToClose && e && e.key === Esc.key && this.state.popupVisible) {
       this.setPopupVisible(false);
     }
   };
 
   onMouseEnter = (e) => {
-    const { mouseEnterDelay } = this.getMergedProps();
+    const { mouseEnterDelay } = this.getMergedProps(['mouseEnterDelay']);
     this.triggerPropsEvent('onMouseEnter', e);
     this.clearDelayTimer();
     this.setPopupVisible(true, mouseEnterDelay || 0);
@@ -658,7 +663,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   onMouseLeave = (e) => {
-    const { mouseLeaveDelay } = this.getMergedProps();
+    const { mouseLeaveDelay } = this.getMergedProps(['mouseLeaveDelay']);
     this.clearDelayTimer();
     this.triggerPropsEvent('onMouseLeave', e);
 
@@ -678,7 +683,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   setMouseLocation = (e) => {
-    if (this.getMergedProps().alignPoint) {
+    if (this.getMergedProps(['alignPoint']).alignPoint) {
       this.mouseLocation = {
         clientX: e.clientX,
         clientY: e.clientY,
@@ -695,7 +700,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       this.setPopupVisible(true, 0);
     } else {
       // 更新位置
-      this.getMergedProps().alignPoint && this.update();
+      this.getMergedProps(['alignPoint']).alignPoint && this.update();
     }
   };
 
@@ -728,7 +733,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   onFocus = (e) => {
-    const { focusDelay } = this.getMergedProps();
+    const { focusDelay } = this.getMergedProps(['focusDelay']);
     const onFocus = () => {
       this.triggerPropsEvent('onFocus', e);
     };
@@ -749,7 +754,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   onResize = () => {
-    if (this.getMergedProps().autoFixPosition && this.state.popupVisible) {
+    if (this.getMergedProps(['autoFixPosition']).autoFixPosition && this.state.popupVisible) {
       this.updatePopupPosition();
     }
   };
@@ -822,7 +827,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     caf(this.rafId);
     if (this.isDidMount) {
       const { getPopupContainer: getGlobalPopupContainer } = this.context;
-      const { getPopupContainer } = this.getMergedProps();
+      const { getPopupContainer } = this.getMergedProps(['getPopupContainer']);
       const gpc = getPopupContainer || getGlobalPopupContainer;
 
       const rootElement = this.getRootElement();
@@ -859,13 +864,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const child: any = this.getChild();
     const childHandler = child && child.props && child.props[eventName];
 
-    const props = this.getMergedProps();
+    const handlerFn = this.getMergedProps([eventName])[eventName];
 
     if (isFunction(childHandler)) {
       childHandler(e);
     }
-    if (isFunction(props[eventName])) {
-      props[eventName](e);
+    if (isFunction(handlerFn)) {
+      handlerFn(e);
     }
   };
 
@@ -874,7 +879,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const child: any = this.getChild();
 
     const childHandler = child && child.props && child.props[eventName];
-    const propsHandler = this.getMergedProps()[eventName];
+    const propsHandler = this.getMergedProps([eventName])[eventName];
 
     if (isFunction(propsHandler) && isFunction(childHandler)) {
       return (e) => {

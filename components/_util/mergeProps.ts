@@ -1,17 +1,31 @@
 export default function mergeProps<PropsType>(
-  componentProps: PropsType,
-  defaultProps: Partial<PropsType>,
-  globalComponentConfig: PropsType
-): PropsType {
-  const _defaultProps = { ...defaultProps, ...globalComponentConfig };
-  const props = { ...componentProps };
+  _componentProps: PropsType,
+  _defaultProps: Partial<PropsType>,
+  _globalComponentConfig: PropsType,
+  propsNameList?: string[]
+): Partial<PropsType> {
+  const defaultProps = _defaultProps || {};
+  const globalComponentConfig = _globalComponentConfig || {};
+  const componentProps = _componentProps || {};
 
-  // https://github.com/facebook/react/blob/cae635054e17a6f107a39d328649137b83f25972/packages/react/src/ReactElement.js#L312
-  for (const propName in _defaultProps) {
-    if (props[propName] === undefined) {
-      props[propName] = _defaultProps[propName];
+  const propNameSet = propsNameList
+    ? new Set(propsNameList)
+    : new Set(
+        Object.keys(componentProps)
+          .concat(Object.keys(defaultProps))
+          .concat(Object.keys(globalComponentConfig))
+      );
+  const props: Partial<PropsType> = {};
+
+  propNameSet.forEach((propName) => {
+    if (componentProps[propName] !== undefined) {
+      props[propName] = componentProps[propName];
+    } else if (propName in globalComponentConfig) {
+      props[propName] = globalComponentConfig[propName];
+    } else if (propName in defaultProps) {
+      props[propName] = defaultProps[propName];
     }
-  }
+  });
 
   return props;
 }
