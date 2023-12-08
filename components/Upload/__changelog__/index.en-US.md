@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🐛 BugFix
+
+- Fixed the issue  that `Upload` would add the folder to the list as a file when `directory = false`([#2425](https://github.com/arco-design/arco-design/pull/2425))
+
 ## 2.56.0
 
 2023-11-17

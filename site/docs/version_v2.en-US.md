@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.57.0
+
+2023-12-08
+
+### 💎 Enhancement
+
+- Optimize the time-consuming problem of `Trigger` part of the logic([#2427](https://github.com/arco-design/arco-design/pull/2427))
+
+### 🆕 Feature
+
+- Support `pt-br` locale([#2429](https://github.com/arco-design/arco-design/pull/2429))
+- The `Typography` component supports `tooltip` configuration for copy and edit buttons.([#2428](https://github.com/arco-design/arco-design/pull/2428))
+- `Menu` component adds a `onEllipsisChange` callback to notify the horizontal menu ellipsis status changed.([#2426](https://github.com/arco-design/arco-design/pull/2426))
+- Additional parameters `options` are added to the `showSearch.renderOption` function of the `Cascader` component([#2384](https://github.com/arco-design/arco-design/pull/2384))
+
+### 🐛 BugFix
+
+- Fixed the issue  that `Upload` would add the folder to the list as a file when `directory = false`([#2425](https://github.com/arco-design/arco-design/pull/2425))
+
 ## 2.56.2
 
 2023-12-01

@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🆕 Feature
+
+- Support `pt-br` locale([#2429](https://github.com/arco-design/arco-design/pull/2429))
+
 ## 2.53.0
 
 2023-09-08

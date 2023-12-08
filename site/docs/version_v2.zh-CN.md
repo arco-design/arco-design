@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.57.0
+
+2023-12-08
+
+### 💎 功能优化
+
+- 优化 `Trigger` 部分逻辑耗时问题([#2427](https://github.com/arco-design/arco-design/pull/2427))
+
+### 🆕 功能升级
+
+- 支持 `pt-br` 语言。([#2429](https://github.com/arco-design/arco-design/pull/2429))
+- `Typography` 组件支持配置 copy 和 编辑按钮的 `tooltip` 配置([#2428](https://github.com/arco-design/arco-design/pull/2428))
+- `Menu` 组件新增 `onEllipsisChange` 回调以通知水平菜单内容自动省略状态发生改变。([#2426](https://github.com/arco-design/arco-design/pull/2426))
+- `Cascader` 组件 `showSearch.renderOption`  函数中增加额外参数  `options`([#2384](https://github.com/arco-design/arco-design/pull/2384))
+
+### 🐛 问题修复
+
+- 修复 `Upload` 组件在 directory = false 场景下，手动拖拽文件夹到上传区域时会将文件夹作为文件加入列表的问题([#2425](https://github.com/arco-design/arco-design/pull/2425))
+
 ## 2.56.2
 
 2023-12-01

@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🆕 Feature
+
+- The `Typography` component supports `tooltip` configuration for copy and edit buttons.([#2428](https://github.com/arco-design/arco-design/pull/2428))
+
 ## 2.51.0
 
 2023-07-28

@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 💎 Enhancement
+
+- Optimize the time-consuming problem of `Trigger` part of the logic([#2427](https://github.com/arco-design/arco-design/pull/2427))
+
 ## 2.56.1
 
 2023-11-24
