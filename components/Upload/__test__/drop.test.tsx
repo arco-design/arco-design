@@ -187,4 +187,23 @@ describe('Upload drop', function () {
 
     expect(wrapper.find('.arco-upload-list-item')).toHaveLength(2);
   });
+
+  it('directory false should filter out directory', async function () {
+    const wrapper = render(<Upload action="/sss" multiple />);
+    const triggerNode = wrapper.find('.arco-btn');
+    expect(triggerNode).toHaveLength(1);
+
+    await act(() => {
+      fireEvent.drop(triggerNode.item(0), {
+        dataTransfer: {
+          items: mockDirectoryItems(),
+          files: [getFile('a'), new File([new Blob(['b'], { type: '' })], 'b')],
+        },
+      });
+    });
+
+    await sleep(100);
+
+    expect(wrapper.find('.arco-upload-list-item')).toHaveLength(1);
+  });
 });
