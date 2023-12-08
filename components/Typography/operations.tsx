@@ -66,7 +66,7 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
 
   const tooltips = copyConfig.tooltips || [locale.Typography.copy, locale.Typography.copied];
   const copyElement = copyable && (
-    <Tooltip content={isCopied ? tooltips[1] : tooltips[0]}>
+    <Tooltip content={isCopied ? tooltips[1] : tooltips[0]} {...copyConfig.tooltipProps}>
       <span
         className={isCopied ? `${prefixCls}-operation-copied` : `${prefixCls}-operation-copy`}
         onClick={onClickCopy}
@@ -83,7 +83,7 @@ export default function Operations(props: PropsWithChildren<OperationsProps>) {
   );
 
   const editElement = editable && (
-    <Tooltip content={locale.Typography.edit}>
+    <Tooltip content={locale.Typography.edit} {...editableConfig.tooltipProps}>
       <span
         tabIndex={0}
         aria-label={locale.Typography.edit}

@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
+import { TooltipProps } from '../Tooltip';
 
 /**
  * @title Typography
@@ -22,6 +23,7 @@ export interface OperationsProps extends Omit<React.HTMLAttributes<HTMLElement>,
         onCopy?: (text: string, e) => void;
         icon?: ReactNode;
         tooltips?: [ReactNode, ReactNode];
+        tooltipProps?: TooltipProps;
       };
   /**
    * @zh 开启可编辑功能
@@ -32,6 +34,7 @@ export interface OperationsProps extends Omit<React.HTMLAttributes<HTMLElement>,
     | boolean
     | {
         editing?: boolean;
+        tooltipProps?: TooltipProps;
         onStart?: (text, e) => void;
         onChange?: (text) => void;
         onEnd?: (text) => void;
