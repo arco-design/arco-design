@@ -13,7 +13,7 @@ title:
 
 The preset color and history color areas can be opened through `showPreset` and `showHistory`. Historical colors require users to control the display content themselves.
 
-```jsx
+```js
 import { useState } from 'react';
 import { ColorPicker } from '@arco-design/web-react';
 

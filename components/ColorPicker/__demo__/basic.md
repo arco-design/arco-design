@@ -13,7 +13,7 @@ title:
 
 Basic usage.
 
-```jsx
+```js
 import { ColorPicker } from '@arco-design/web-react';
 
 const App = () => {

@@ -13,7 +13,7 @@ title:
 
 The color picker panel synchronizes the values in the input boxes when opened.
 
-```jsx
+```js
 import { Button, ColorPicker } from '@arco-design/web-react';
 import { useState } from 'react';
 

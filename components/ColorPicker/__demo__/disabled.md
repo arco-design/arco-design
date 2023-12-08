@@ -13,7 +13,7 @@ title:
 
 Set `disabled` to disable the selector.
 
-```jsx
+```js
 import { ColorPicker, Radio } from '@arco-design/web-react';
 
 const RadioGroup = Radio.Group;
