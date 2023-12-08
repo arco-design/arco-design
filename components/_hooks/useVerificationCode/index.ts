@@ -1,34 +1,12 @@
-import { useMemo, ClipboardEvent, MouseEvent, KeyboardEvent, useEffect } from 'react';
+import { useMemo, ClipboardEvent, useEffect } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import { isExist } from '../../_util/is';
 import { Backspace } from '../../_util/keycode';
 import useMergeValue from '../../_util/hooks/useMergeValue';
+import { VerificationCodeReturnType, VerificationCodeOptions } from './interface';
 
 // 默认长度
 const defaultLength = 6;
-
-export interface VerificationCodeOptions {
-  length?: number;
-  defaultValue?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  onFinish?: (value: string) => void;
-  getInputRefList?: () => (HTMLInputElement | HTMLTextAreaElement)[];
-}
-
-type VerificationCodeReturnType = {
-  value: VerificationCodeOptions['value'];
-  setValue: (v: VerificationCodeOptions['value']) => void;
-  filledValue: VerificationCodeOptions['value'][];
-  getInputProps: (index: number) => {
-    key: string | number;
-    value: string;
-    onClick: (e: MouseEvent) => void;
-    onKeyDown: (e: KeyboardEvent) => void;
-    onChange: (v: string) => void;
-    onPaste: (e: ClipboardEvent) => void;
-  };
-};
 
 export default function useVerificationCode(
   props: VerificationCodeOptions

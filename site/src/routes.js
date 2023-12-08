@@ -470,6 +470,28 @@ export default function getRoutes(lang = 'zh', t) {
       ],
     },
     {
+      name: t['routes.hooks'],
+      key: 'hooks',
+      module: 'react',
+      hide: true,
+      children: [
+        {
+          name: 'useVerificationCode',
+          path: 'hooks/useVerificationCode',
+          component: lazyLoad(() =>
+            import(`../../components/_hooks/useVerificationCode/README${suffix}.md`)
+          ),
+        },
+        {
+          name: 'useWatermark',
+          path: 'hooks/useWatermark',
+          component: lazyLoad(() =>
+            import(`../../components/_hooks/useWatermark/README${suffix}.md`)
+          ),
+        },
+      ],
+    },
+    {
       name: t['routes.design-language'],
       key: 'design-language',
       module: 'docs',

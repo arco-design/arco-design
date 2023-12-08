@@ -1,4 +1,5 @@
 module.exports = (config) => {
+  config.entry = process.env.DOC_ENTRY || config.entry;
   config.languages = ['zh-CN', 'en-US'];
   config.template = '__template__/index.[language].md';
   config.outputFileName = 'README.[language].md';

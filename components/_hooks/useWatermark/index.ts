@@ -1,31 +1,9 @@
 import merge from 'lodash/merge';
-import { CSSProperties, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { isServerRendering } from '../../_util/dom';
-import getPixelRatio from '../utils';
+import { getPixelRatio } from './utils';
 import { isNumber } from '../../_util/is';
-
-export interface WatermarkOptions {
-  zIndex?: CSSProperties['zIndex'];
-  width?: number;
-  height?: number;
-  rotate?: number;
-  image?: string;
-  content?: string | string[];
-  fontStyle?: {
-    color?: string;
-    fontFamily?: string;
-    fontSize?: number | string;
-    fontWeight?: number | string;
-  };
-  gap?: [number, number];
-  offset?: [number, number];
-  getContainer?: () => HTMLElement;
-}
-
-type WatermarkReturnType = {
-  destroy: () => void;
-  setWatermark: (options: WatermarkOptions) => void;
-};
+import { WatermarkOptions, WatermarkReturnType } from './interface';
 
 const toNumber = (value: string | number, defaultValue: number) => {
   if (isNumber(value)) {
@@ -88,10 +66,10 @@ const measureTextSize = (
 
 // 画布绘制转为base64url
 const getCanvasData = async (
-  options: Pick<
-    WatermarkOptions,
-    'offset' | 'rotate' | 'image' | 'content' | 'fontStyle' | 'width' | 'height'
-  >
+  options: Pick<WatermarkOptions, 'offset' | 'rotate' | 'image' | 'content' | 'fontStyle'> & {
+    width: number;
+    height: number;
+  }
 ): Promise<{ width: number; height: number; base64Url: string }> => {
   const { offset, rotate, image, content, fontStyle } = options;
   const canvas = document.createElement('canvas');

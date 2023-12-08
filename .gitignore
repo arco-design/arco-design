@@ -68,6 +68,8 @@ storybook-static/
 icon/react-icon/
 icon/react-icon-cjs/
 dist/
+hooks/es/
+hooks/lib/
 
 # typescript cache
 .rpt2_cache/

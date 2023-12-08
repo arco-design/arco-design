@@ -1,0 +1,20 @@
+{
+  "name": "@arco-design/web-react-hooks",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "scripts": {
+    "build:es": "rm -rf ./es && npx tsc -p tsconfig.json",
+    "build:cjs": "rm -rf ./lib && npx tsc -p tsconfig.cjs.json",
+    "build:dist": "cd ../ && BUILD_TYPE=hooks ./node_modules/.bin/arco-scripts build:component:dist",
+    "generate": "rm -rf src-es/* && rm -rf src-lib/* &&  node ./scripts/generate.js ",
+    "build": "yarn generate && yarn build:cjs && yarn build:es"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "devDependencies": {},
+  "sideEffects": false
+}

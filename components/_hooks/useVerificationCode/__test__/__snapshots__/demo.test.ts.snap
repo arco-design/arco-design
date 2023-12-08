@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders _hooks/useVerificationCode/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:24px"
+    >
+      <input
+        class="custom-code-input"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:24px"
+    >
+      <input
+        class="custom-code-input"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:24px"
+    >
+      <input
+        class="custom-code-input"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:24px"
+    >
+      <input
+        class="custom-code-input"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-space-item"
+      style="margin-right:24px"
+    >
+      <input
+        class="custom-code-input"
+        value=""
+      />
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <input
+        class="custom-code-input"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
