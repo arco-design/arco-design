@@ -121,6 +121,12 @@ export interface MenuProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
    * @en Callback when menu collapse status changed
    */
   onCollapseChange?: (collapse: boolean) => void;
+  /**
+   * @zh 水平菜单自动超出省略发生变化时的回调
+   * @en Callback when horizontal-menu ellipsis status changed
+   * @version 2.57.0
+   */
+  onEllipsisChange?: (status: { lastVisibleIndex: number; overflowNodes: ReactNode[] }) => void;
 
   /**
    * @zh

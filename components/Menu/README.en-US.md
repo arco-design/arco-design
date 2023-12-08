@@ -37,6 +37,7 @@ A component to organize, arrange, and display a list of options.
 |onClickMenuItem|Click menu item callback|(key: string, event, keyPath: string[]) => any |`-`|`event` in 2.15.0, `keyPath` in 2.19.0|
 |onClickSubMenu|Callback when click sub menu|(key: string, openKeys: string[], keyPath: string[]) => void |`-`|`keyPath` in 2.19.0|
 |onCollapseChange|Callback when menu collapse status changed|(collapse: boolean) => void |`-`|-|
+|onEllipsisChange|Callback when horizontal-menu ellipsis status changed|(lastVisibleIndex: number, ellipsisChildren: ReactNode[]) => void |`-`|2.57.0|
 
 ### Menu.SubMenu
 

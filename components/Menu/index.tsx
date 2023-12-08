@@ -57,6 +57,7 @@ function Menu(baseProps: MenuProps, ref) {
     onClickSubMenu,
     onClickMenuItem,
     onCollapseChange,
+    onEllipsisChange,
     ...rest
   } = props;
 
@@ -124,7 +125,10 @@ function Menu(baseProps: MenuProps, ref) {
       <>
         <div className={`${prefixCls}-inner`}>
           {mode === 'horizontal' && ellipsis !== false ? (
-            <OverflowWrap ellipsisText={isObject(ellipsis) ? ellipsis.text : '···'}>
+            <OverflowWrap
+              ellipsisText={isObject(ellipsis) ? ellipsis.text : '···'}
+              onEllipsisChange={onEllipsisChange}
+            >
               {childrenList}
             </OverflowWrap>
           ) : (
