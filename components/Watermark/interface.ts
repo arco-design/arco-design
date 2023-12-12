@@ -39,7 +39,7 @@ export interface WatermarkProps {
    * @zh 水印的文字内容
    * @en The text content of the watermark
    */
-  content?: string;
+  content?: string | string[];
   /**
    * @zh 水印文字样式
    * @en Watermark text style
