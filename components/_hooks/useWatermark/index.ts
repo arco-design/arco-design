@@ -118,7 +118,12 @@ const getCanvasData = async (
       const xStartPoint = -lineWidth / 2;
       const yStartPoint = -(options.height || measureSize.originHeight) / 2 + lineHeight * index;
 
-      ctx.fillText(content as string, xStartPoint, yStartPoint, width);
+      ctx.fillText(
+        content as string,
+        xStartPoint,
+        yStartPoint,
+        options.width || measureSize.originWidth
+      );
     });
     return { base64Url: canvas.toDataURL(), height, width };
   };
