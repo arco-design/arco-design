@@ -2,6 +2,22 @@
 changelog: true
 ---
 
+## 2.57.1
+
+2023-12-15
+
+### 💎 功能优化
+
+- 优化 `Typography` 组件节点长度计算逻辑([#2435](https://github.com/arco-design/arco-design/pull/2435))
+
+### 🐛 问题修复
+
+- 修复 `Watermark` 旋转后文字形变的 bug。([#2437](https://github.com/arco-design/arco-design/pull/2437))
+
+### 🆎 类型修正
+
+- 调整 Watermark 组件 `content` 属性 ts 定义([#2430](https://github.com/arco-design/arco-design/pull/2430))
+
 ## 2.57.0
 
 2023-12-08

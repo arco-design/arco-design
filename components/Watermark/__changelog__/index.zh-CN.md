@@ -1,3 +1,15 @@
+## 2.57.1
+
+2023-12-15
+
+### 🐛 问题修复
+
+- 修复 `Watermark` 旋转后文字形变的 bug。([#2437](https://github.com/arco-design/arco-design/pull/2437))
+
+### 🆎 类型修正
+
+- 调整 Watermark 组件 `content` 属性 ts 定义([#2430](https://github.com/arco-design/arco-design/pull/2430))
+
 ## 2.56.0
 
 2023-11-17

@@ -1,3 +1,11 @@
+## 2.57.1
+
+2023-12-15
+
+### 💎 Enhancement
+
+- Optimize `Typography` component node length calculation logic([#2435](https://github.com/arco-design/arco-design/pull/2435))
+
 ## 2.57.0
 
 2023-12-08
