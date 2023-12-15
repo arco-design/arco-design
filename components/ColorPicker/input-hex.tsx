@@ -24,7 +24,7 @@ export const InputHex: React.FC<InputHexProps> = ({ color, alpha, onHsvChange, o
   }, [color]);
 
   const onInputChange = (value: string) => {
-    const matchValue = value.match(/[a-zA-Z0-9]*/g)?.join('') ?? '';
+    const matchValue = value.match(/[a-fA-F0-9]*/g)?.join('') ?? '';
     if (matchValue !== hex) {
       setHex(matchValue.toUpperCase());
     }
@@ -40,15 +40,27 @@ export const InputHex: React.FC<InputHexProps> = ({ color, alpha, onHsvChange, o
     onHsvChange(_hsv);
   };
 
+  const onPaste = (ev: ClipboardEvent) => {
+    let text = ev.clipboardData.getData('Text');
+    if (text.startsWith('#')) {
+      text = text.slice(1);
+    }
+    onInputChange(text);
+    ev.preventDefault();
+  };
+
   return (
     <Input.Group className={`${prefixCls}-input-group`} compact>
       <Input
+        className={`${prefixCls}-input-hex`}
         prefix="#"
+        size="mini"
         maxLength={6}
         value={hex}
         onChange={onInputChange}
         onBlur={onBlur}
         onPressEnter={onBlur}
+        onPaste={onPaste as any}
       />
       <InputAlpha value={alpha} onChange={onAlphaChange} />
     </Input.Group>

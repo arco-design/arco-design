@@ -14,6 +14,7 @@ export const InputAlpha: React.FC<InputAlphaProps> = ({ value, onChange }) => {
   return (
     <InputNumber
       className={`${prefixCls}-input-alpha`}
+      size="mini"
       min={0}
       max={100}
       value={Math.round(value * 100)}

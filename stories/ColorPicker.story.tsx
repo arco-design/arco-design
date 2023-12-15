@@ -11,7 +11,7 @@ export const Demo = () => (
     <br/>
     <ColorPicker size={'small'} />
     <br/>
-    <ColorPicker size={'default'} />
+    <ColorPicker size={'default'} showPreset showHistory />
     <br/>
     <ColorPicker size={'large'} />
   </div>

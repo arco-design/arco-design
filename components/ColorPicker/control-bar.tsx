@@ -51,7 +51,11 @@ export const ControlBar: React.FC<ControlBarProps> = ({
       <div className={`${prefixCls}-control-bar-bg`}>
         <div
           ref={blockRef}
-          className={cs(`${prefixCls}-control-bar`, `${prefixCls}-control-bar-alpha`)}
+          className={cs(
+            `${prefixCls}-control-bar`,
+            `${prefixCls}-control-bar-alpha`,
+            `${prefixCls}-control-bar-alpha`
+          )}
           style={{
             background: `linear-gradient(to right, rgba(0, 0, 0, 0), rgb(${r}, ${g}, ${b}))`,
             ...style,
