@@ -58,7 +58,7 @@ function useEllipsis(props: React.PropsWithChildren<IEllipsis>) {
   const getTotalLen = (list: typeof nodeList) => {
     let total = 0;
     list.forEach((node) => {
-      if (isSimpleNode) {
+      if (isSimpleNode(node)) {
         total += String(node).length;
       } else {
         total += 1;

@@ -198,7 +198,7 @@ export interface TableProps<T = any> {
    */
   placeholder?: ReactNode;
   /**
-   * @zh 设置分页器的位置，有四个方位 `右下` `左下` `右上` `左上` `上中` `下中`
+   * @zh 设置分页器的位置，有六个方位 `右下` `左下` `右上` `左上` `上中` `下中`
    * @en Set the position of the pagination, there are six positions `bottom right` `bottom left` `top right` `top left` `top center` `bottom center`
    * @defaultValue br
    */

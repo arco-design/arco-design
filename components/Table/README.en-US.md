@@ -25,7 +25,7 @@ Used for data collection, display, analysis, and processing.
 |childrenColumnName|The field name of the tree data in `data`, default is `children`|string |`children`|-|
 |onChange|Callback when pagination, sorting, and filtering changes|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterInfo](#sorterinfo) \| [SorterInfo](#sorterinfo)[],filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; currentAllData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`, currentAllData in 2.53.0|
 |pagePosition|Set the position of the pagination, there are six positions `bottom right` `bottom left` `top right` `top left` `top center` `bottom center`|'br' \| 'bl' \| 'tr' \| 'tl' \| 'topCenter' \| 'bottomCenter' |`br`|-|
-|size|The table size is divided into four sizes, `default` `medium` `small` `mini`|'default' \| 'middle' \| 'small' \| 'mini' |`-`|-|
+|size|The table size is divided into six sizes, `default` `medium` `small` `mini`|'default' \| 'middle' \| 'small' \| 'mini' |`-`|-|
 |noDataElement|Element to be displayed when there is no data|string \| ReactNode |`-`|-|
 |placeholder|When the cell content is empty, a placeholder is displayed, and the priority is lower than `column.placeholder`.|ReactNode |`-`|2.23.0|
 |border|Configure border|\| boolean\| { wrapper?: boolean; headerCell?: boolean; bodyCell?: boolean; cell?: boolean } |`true`|-|
