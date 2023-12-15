@@ -26,9 +26,30 @@ export const InputRgb = ({ color, alpha, onHsvChange, onAlphaChange }: InputRgbP
 
   return (
     <Input.Group className={`${prefixCls}-input-group`} compact>
-      <InputNumber min={0} max={255} value={r} onChange={(r) => onInputChange({ r, g, b })} />
-      <InputNumber min={0} max={255} value={g} onChange={(g) => onInputChange({ r, g, b })} />
-      <InputNumber min={0} max={255} value={b} onChange={(b) => onInputChange({ r, g, b })} />
+      <InputNumber
+        size="mini"
+        min={0}
+        max={255}
+        hideControl
+        value={r}
+        onChange={(r) => onInputChange({ r, g, b })}
+      />
+      <InputNumber
+        size="mini"
+        min={0}
+        max={255}
+        hideControl
+        value={g}
+        onChange={(g) => onInputChange({ r, g, b })}
+      />
+      <InputNumber
+        size="mini"
+        min={0}
+        max={255}
+        hideControl
+        value={b}
+        onChange={(b) => onInputChange({ r, g, b })}
+      />
       <InputAlpha value={alpha} onChange={onAlphaChange} />
     </Input.Group>
   );

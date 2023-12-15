@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from 'react';
+import React, { ReactNode, useContext, useMemo, useState } from 'react';
 import { ControlBar } from './control-bar';
 import { ConfigContext } from '../ConfigProvider';
 import { Palette } from './palette';
@@ -41,6 +41,10 @@ export const Panel: React.FC<PanelProps> = ({
   const prefixCls = getPrefixCls('color-picker');
   const [format, setFormat] = useState<'hex' | 'rgb'>('hex');
   const { h, s, v } = color.hsv;
+  const history = useMemo(() => {
+    const set = new Set(historyColors ?? []);
+    return Array.from(set);
+  }, [historyColors]);
 
   const onHexInputChange = (_value: string) => {
     const _rgb = hexToRgb(_value) || {
@@ -96,10 +100,8 @@ export const Panel: React.FC<PanelProps> = ({
         <div className={`${prefixCls}-colors-section`}>
           <div className={`${prefixCls}-colors-text`}>{locale.ColorPicker.history}</div>
           <div className={`${prefixCls}-colors-wrapper`}>
-            {historyColors?.length ? (
-              <div className={`${prefixCls}-colors-list`}>
-                {historyColors.map(renderColorBlock)}
-              </div>
+            {history?.length ? (
+              <div className={`${prefixCls}-colors-list`}>{history.map(renderColorBlock)}</div>
             ) : (
               <span className={`${prefixCls}-colors-empty`}>{locale.ColorPicker.empty}</span>
             )}
@@ -156,7 +158,6 @@ export const Panel: React.FC<PanelProps> = ({
               onChange={(h) => onHsvChange({ h, s, v })}
             />
             <ControlBar
-              style={{ marginTop: 16 }}
               type="alpha"
               x={alpha}
               color={color}
@@ -169,6 +170,7 @@ export const Panel: React.FC<PanelProps> = ({
         <div className={`${prefixCls}-input-wrapper`}>
           <Select
             className={`${prefixCls}-select-type`}
+            size="mini"
             options={[
               {
                 value: 'hex',
