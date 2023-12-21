@@ -15,7 +15,7 @@ export type RowCallbackProps = {
   [name: string]: any;
 };
 
-export type SorterFn = (a: any, b: any) => number;
+export type SorterFn<T = any> = (a: T, b: T) => number;
 
 /**
  * @title Table
@@ -452,7 +452,7 @@ export interface ColumnProps<T = any> {
    * @zh 排序函数，如果想要服务端排序或者添加更多自定义操作，设置为true，利用`onChange`函数进行自定义排序
    * @en Sorting function, if you want server-side sorting or adding more custom operations, set to true and use the `onChange` function for custom sorting
    */
-  sorter?: SorterFn | boolean | { compare?: SorterFn; multiple?: number };
+  sorter?: SorterFn<T> | boolean | { compare?: SorterFn<T>; multiple?: number };
   /**
    * @zh 筛选项，需要配合 `onFilter` 或者 `onChange` 使用
    * @en Filter items, need to be used with `onFilter` or `onChange`
@@ -523,7 +523,7 @@ export interface ColumnProps<T = any> {
    * @zh 筛选函数，配合`filters`
    * @en Callback when filter changes
    */
-  onFilter?: (value, row) => any;
+  onFilter?: (value, row: T) => any;
   /**
    * @zh 固定头和列到左边或者右边
    * @en Fixed header and column to the left or right
