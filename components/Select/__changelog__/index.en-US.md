@@ -1,3 +1,11 @@
+## 2.57.2
+
+2023-12-22
+
+### 🐛 BugFix
+
+- Fixed the issue where the `creating` parameter of the `allowCreate.formatter` property of the `Select` is always `true` in single-select mode.([#2447](https://github.com/arco-design/arco-design/pull/2447))
+
 ## 2.54.0
 
 2023-10-09

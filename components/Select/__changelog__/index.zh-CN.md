@@ -1,3 +1,11 @@
+## 2.57.2
+
+2023-12-22
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件 `allowCreate.formatter` 属性在单选模式下 `creating` 参数始终为 `true` 的问题。([#2447](https://github.com/arco-design/arco-design/pull/2447))
+
 ## 2.54.0
 
 2023-10-09
