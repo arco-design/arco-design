@@ -516,5 +516,24 @@ describe('Select', () => {
 
     await sleep(100);
     expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent('Enter to create hello');
+
+    const wrapperSingle = render(
+      <Select
+        value="hello"
+        allowCreate={{
+          formatter: (inputValue, creating) => {
+            return {
+              label: `${creating ? 'Enter to create' : 'Created'} ${inputValue}`,
+              value: inputValue,
+            };
+          },
+        }}
+      />
+    );
+
+    await sleep(100);
+    expect(wrapperSingle.querySelector('.arco-select-view-value')).toHaveTextContent(
+      'Created hello'
+    );
   });
 });

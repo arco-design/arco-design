@@ -292,19 +292,21 @@ function Select(baseProps: SelectProps, ref) {
 
   // allowCreate 时，value 改变时更新下拉框选项
   useEffect(() => {
-    if (allowCreate && Array.isArray(value)) {
+    if (allowCreate) {
+      // 将单选和多选的情况统一处理
+      const currentValueList: Array<string | number> = Array.isArray(value) ? value : [value];
       // 将无对应下拉框选项的 value 当作用户创建的选项
-      const newUserCreatedOptions = (value as Array<string | number>)
+      const newUserCreatedOptions = currentValueList
         .filter((v) => {
           const option =
             optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
           return !option || option._origin === 'userCreatingOption';
         })
         .map((op) => userCreatedOptionFormatter(op as string));
-      // 将 value 中不存在的 valueTag 移除
+      // 将 value 中不存在的 Option 移除
       const validUserCreatedOptions = userCreatedOptions.filter((op) => {
         const opValue = isObject(op) ? op.value : op;
-        return (value as Array<string | number>).indexOf(opValue) !== -1;
+        return currentValueList.indexOf(opValue) !== -1;
       });
       const nextUserCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
 
