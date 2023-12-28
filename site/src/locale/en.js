@@ -9,6 +9,7 @@ export default {
   'routes.button': 'Button',
   'routes.link': 'Link',
   'routes.typography': 'Typography',
+  'routes.ellipsis': 'Ellipsis',
   'routes._layout': 'Layout',
   'routes.grid': 'Grid',
   'routes.divider': 'Divider',

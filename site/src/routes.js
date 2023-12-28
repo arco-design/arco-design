@@ -98,6 +98,11 @@ export default function getRoutes(lang = 'zh', t) {
               path: 'components/typography',
               component: lazyLoad(() => import(`../../components/Typography/README${suffix}.md`)),
             },
+            {
+              name: t['routes.ellipsis'],
+              path: 'components/ellipsis',
+              component: lazyLoad(() => import(`../../components/Ellipsis/README${suffix}.md`)),
+            },
           ],
         },
         {
