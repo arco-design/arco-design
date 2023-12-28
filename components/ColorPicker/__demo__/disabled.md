@@ -21,9 +21,9 @@ const RadioGroup = Radio.Group;
 const App = () => {
   return (
     <div>
-      <ColorPicker disabled />
+      <ColorPicker defaultValue={'#165DFF'} disabled />
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker showText disabled />
+      <ColorPicker defaultValue={'#165DFF'} showText disabled />
     </div>
   ) ;
 };

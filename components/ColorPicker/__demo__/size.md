@@ -22,13 +22,13 @@ const RadioGroup = Radio.Group;
 const App = () => {
   return (
     <div>
-      <ColorPicker size={'mini'} />
+      <ColorPicker defaultValue={'#165DFF'} size={'mini'} />
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker size={'small'} />
+      <ColorPicker defaultValue={'#165DFF'} size={'small'} />
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker size={'default'} />
+      <ColorPicker defaultValue={'#165DFF'} size={'default'} />
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker size={'large'} />
+      <ColorPicker defaultValue={'#165DFF'} size={'large'} />
     </div>
   );
 };

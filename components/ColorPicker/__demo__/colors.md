@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { ColorPicker } from '@arco-design/web-react';
 
 const App = () => {
-  const [color, setColor] = useState('#FFFF00')
+  const [color, setColor] = useState('#165DFF')
   const [history, setHistory] = useState([]);
 
   const addHistory = (visible) => {
@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div>
       <div>Preset: </div>
-      <ColorPicker showPreset showText />
+      <ColorPicker defaultValue={'#165DFF'} showPreset showText />
       <div style={{ marginTop: 10 }} />
       <div>History & Preset: </div>
       <ColorPicker value={color} historyColors={history} showPreset showHistory showText onChange={setColor}

@@ -121,7 +121,7 @@
     .@{color-picker-prefix-cls}-handler {
       width: @color-palette-handle-size;
       height: @color-palette-handle-size;
-      border-radius: 50%;
+      border-radius: @border-radius-circle;
       position: absolute;
       background-color: transparent;
       transform: translate(-50%, -50%);
@@ -140,7 +140,7 @@
         margin-left: auto;
         width: @color-panel-preview-size;
         height: @color-panel-preview-size;
-        border-radius: 4px;
+        border-radius: @border-radius-medium;
         border: 1px solid @color-panel-border-color;
         box-sizing: border-box;
       }
@@ -162,7 +162,7 @@
 
       .@{prefix}-select-view,
       .@{prefix}-input-inner-wrapper {
-        padding: 0 6px;
+        padding: 0 @spacing-3;
       }
     }
   }
@@ -172,23 +172,23 @@
     border-top: 1px solid var(--color-fill-3);
 
     .@{color-picker-prefix-cls}-colors-section:not(:first-child) {
-      margin-top: 12px;
+      margin-top: @spacing-6;
     }
 
     .@{color-picker-prefix-cls}-colors-text {
       font-size: @color-panel-section-title-font-size;
-      font-weight: 400;
+      font-weight: @font-weight-400;
       color: var(--color-text-1);
     }
 
     .@{color-picker-prefix-cls}-colors-empty {
-      margin: 12px 0;
+      margin: @spacing-6 0;
       font-size: @color-panel-empty-font-size;
       color: var(--color-text-3);
     }
 
     .@{color-picker-prefix-cls}-colors-wrapper {
-      margin-top: 8px;
+      margin-top: @spacing-4;
     }
 
     .@{color-picker-prefix-cls}-colors-list {
@@ -246,7 +246,7 @@
     .@{color-picker-prefix-cls}-handler {
       width: @color-control-bar-handle-size;
       height: @color-control-bar-handle-size;
-      border-radius: 50%;
+      border-radius: @border-radius-circle;
       position: absolute;
       top: -2px;
       background-color: var(--color-bg-white);
@@ -258,7 +258,7 @@
         position: absolute;
         width: @color-control-bar-handle-size - 8;
         height: @color-control-bar-handle-size - 8;
-        border-radius: 50%;
+        border-radius: @border-radius-circle;
         transform: translate(3px, 3px);
       }
     }
@@ -296,7 +296,14 @@
 
   .@{color-picker-prefix-cls}-input-hex {
     .@{prefix}-input {
-      padding-left: 4px;
+      padding-left: @spacing-2;
     }
+  }
+}
+
+.@{color-picker-prefix-cls}-type-dropdown {
+  & .@{prefix}-select-option {
+    font-size: @font-size-body-1 !important;
+    line-height: @size-mini !important;
   }
 }
