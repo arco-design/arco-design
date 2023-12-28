@@ -18,13 +18,13 @@ import { Button, ColorPicker } from '@arco-design/web-react';
 import { useState } from 'react';
 
 const App = () => {
-  const [value, setValue] = useState('#FF0000');
+  const [value, setValue] = useState('#165DFF');
 
   return (
     <div>
       <div>
-        <Button onClick={() => setValue('#FF00FF')}>#FF00FF</Button>
-        <Button onClick={() => setValue('#FF00FF88')}>#FF00FF88</Button>
+        <Button onClick={() => setValue('#165DFF')}>#165DFF</Button>
+        <Button onClick={() => setValue('#165DFF88')}>#165DFF88</Button>
       </div>
       <div style={{ marginTop: 10 }}/>
       <ColorPicker value={value} onChange={(value)=>setValue(value)} showText />

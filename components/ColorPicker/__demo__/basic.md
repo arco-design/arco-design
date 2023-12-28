@@ -19,9 +19,9 @@ import { ColorPicker } from '@arco-design/web-react';
 const App = () => {
   return (
     <div>
-      <ColorPicker />
+      <ColorPicker defaultValue={'#165DFF'} />
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker showText />
+      <ColorPicker defaultValue={'#165DFF'} showText />
     </div>
   );
 };

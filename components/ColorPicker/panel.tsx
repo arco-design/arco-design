@@ -182,6 +182,9 @@ export const Panel: React.FC<PanelProps> = ({
               },
             ]}
             value={format}
+            triggerProps={{
+              className: `${prefixCls}-type-dropdown`,
+            }}
             onChange={setFormat}
           />
           <div className={`${prefixCls}-group-wrapper`}>{renderInput()}</div>

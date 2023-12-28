@@ -41,7 +41,7 @@ const App = () => {
         })}
       </RadioGroup>
       <div style={{ marginTop: 10 }}/>
-      <ColorPicker showText format={format} />
+      <ColorPicker defaultValue={'#165DFF'} showText format={format} />
     </div>
   );
 };
