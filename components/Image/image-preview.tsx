@@ -499,6 +499,8 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                       ...imgStyle,
                       transform: `translate(${translate.x}px, ${translate.y}px) rotate(${rotate}deg)`,
                     }}
+                    key={previewImgSrc}
+                    src={previewImgSrc}
                     {...restImgAttributes}
                     onLoad={onImgLoaded}
                     onError={onImgLoadError}
@@ -506,8 +508,6 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                       // only trigger onMoveStart when press mouse left button
                       event.button === 0 && onMoveStart(event);
                     }}
-                    key={previewImgSrc}
-                    src={previewImgSrc}
                   />
                   {isLoading && (
                     <div className={`${previewPrefixCls}-loading`}>
