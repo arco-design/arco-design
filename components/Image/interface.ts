@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes, ReactElement } from 'react';
 
 /**
  * @title Image
@@ -176,6 +176,12 @@ export interface ImagePreviewProps {
    * @version 2.24.0
    */
   escToExit?: boolean;
+  /**
+   * @zh 自定义 IMG 元素的渲染
+   * @en Rendering of custom IMG elements
+   * @version 2.57.0
+   */
+  imageRender?: (originalNode: ReactElement) => ReactNode;
 }
 
 export type PartialImagePreviewProps = Partial<ImagePreviewProps>;
