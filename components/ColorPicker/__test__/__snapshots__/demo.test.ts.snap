@@ -7,12 +7,12 @@ exports[`renders ColorPicker/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
   <div
@@ -23,15 +23,17 @@ exports[`renders ColorPicker/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <div
       class="arco-color-picker-value"
-    />
+    >
+      #165DFF
+    </div>
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
 </div>
@@ -47,15 +49,17 @@ exports[`renders ColorPicker/demo/colors.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <div
       class="arco-color-picker-value"
-    />
+    >
+      #165DFF
+    </div>
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
   <div
@@ -69,17 +73,17 @@ exports[`renders ColorPicker/demo/colors.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#FFFF00"
+      style="background-color:#165DFF"
     />
     <div
       class="arco-color-picker-value"
     >
-      #FFFF00
+      #165DFF
     </div>
     <input
       class="arco-color-picker-input"
       readonly=""
-      value="#FFFF00"
+      value="#165DFF"
     />
   </div>
 </div>
@@ -93,7 +97,7 @@ exports[`renders ColorPicker/demo/control.md correctly 1`] = `
       type="button"
     >
       <span>
-        #FF00FF
+        #165DFF
       </span>
     </button>
     <button
@@ -101,7 +105,7 @@ exports[`renders ColorPicker/demo/control.md correctly 1`] = `
       type="button"
     >
       <span>
-        #FF00FF88
+        #165DFF88
       </span>
     </button>
   </div>
@@ -113,17 +117,17 @@ exports[`renders ColorPicker/demo/control.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#FF0000"
+      style="background-color:#165DFF"
     />
     <div
       class="arco-color-picker-value"
     >
-      #FF0000
+      #165DFF
     </div>
     <input
       class="arco-color-picker-input"
       readonly=""
-      value="#FF0000"
+      value="#165DFF"
     />
   </div>
 </div>
@@ -136,13 +140,13 @@ exports[`renders ColorPicker/demo/disabled.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <input
       class="arco-color-picker-input"
       disabled=""
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
   <div
@@ -153,16 +157,18 @@ exports[`renders ColorPicker/demo/disabled.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <div
       class="arco-color-picker-value"
-    />
+    >
+      #165DFF
+    </div>
     <input
       class="arco-color-picker-input"
       disabled=""
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
 </div>
@@ -213,15 +219,17 @@ exports[`renders ColorPicker/demo/format.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <div
       class="arco-color-picker-value"
-    />
+    >
+      #165DFF
+    </div>
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
 </div>
@@ -234,12 +242,12 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
   <div
@@ -250,12 +258,12 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
   <div
@@ -266,12 +274,12 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
   <div
@@ -282,12 +290,12 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:"
+      style="background-color:#165DFF"
     />
     <input
       class="arco-color-picker-input"
       readonly=""
-      value=""
+      value="#165DFF"
     />
   </div>
 </div>
