@@ -48,20 +48,23 @@ function addInstance(noticeProps: MessageProps) {
     const add = () => {
       const { instance } = messageInstance[position] || {};
       const notices = instance.state.notices;
-
+      const updated = notices.find((notice) => notice.id === noticeProps.id);
+      const _mergerProps = {
+        ..._noticeProps,
+        update: updated,
+      };
       if (notices.length >= maxCount) {
-        const updated = notices.find((notice) => notice.id === noticeProps.id);
         if (updated) {
           instance.add({
-            ..._noticeProps,
+            ..._mergerProps,
             id: updated.id,
           });
         } else {
           notices.shift();
-          instance.add(_noticeProps);
+          instance.add(_mergerProps);
         }
       } else {
-        id = instance.add(_noticeProps);
+        id = instance.add(_mergerProps);
       }
     };
 
