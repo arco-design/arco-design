@@ -32,8 +32,8 @@ Used to display titles, paragraphs, and text content.
 |heading|Heading level, equivalent to `h1` `h2` `h3` `h4` `h5` `h6`|1 \| 2 \| 3 \| 4 \| 5 \| 6 |`1`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Paragraph
 
@@ -51,8 +51,8 @@ Used to display titles, paragraphs, and text content.
 |ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Text
 
@@ -68,8 +68,8 @@ Used to display titles, paragraphs, and text content.
 |ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### EllipsisConfig
 
