@@ -32,8 +32,8 @@
 |heading|标题级别，相当于 `h1` `h2` `h3` `h4` `h5` `h6`|1 \| 2 \| 3 \| 4 \| 5 \| 6 |`1`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|开启可编辑功能|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Paragraph
 
@@ -51,8 +51,8 @@
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|开启可编辑功能|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Text
 
@@ -68,8 +68,8 @@
 |ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|开启可编辑功能|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### EllipsisConfig
 

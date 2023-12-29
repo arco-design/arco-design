@@ -30,6 +30,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     onChange,
     visible: propVisible,
     defaultVisible,
+    forceRender,
     onVisibleChange,
     ...restProps
   } = props;
@@ -148,6 +149,20 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     return loop(children);
   };
 
+  const renderList = () => {
+    const array = Array.from(canPreviewUrlMap.values());
+    if (array.length > 0) {
+      return (
+        <div style={{ display: 'none' }}>
+          {array.map((src) => (
+            <img key={src} src={src} />
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <PreviewGroupContext.Provider
       value={{
@@ -172,6 +187,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
         onVisibleChange={handleVisibleChange}
         {...restProps}
       />
+      {forceRender && renderList()}
     </PreviewGroupContext.Provider>
   );
 }
