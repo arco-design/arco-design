@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.58.0
+
+2023-12-29
+
+### 💎 Enhancement
+
+- Optimize the issue of vertical jitter when clearing all tags in `InputTag`.([#2455](https://github.com/arco-design/arco-design/pull/2455))
+
+### 🆕 Feature
+
+- The `Image.Preview` component adds the `imageRender` attribute to allow custom image rendering, and the `imgAttributes` attribute customizes src content.([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- The `Image.PreviewGroup` component adds the `renderImages` attribute for loading images in advance([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- Add  `ColorPicker` component([#2383](https://github.com/arco-design/arco-design/pull/2383))
+
+### 🐛 BugFix
+
+- Fix the problem that `Message` is called with the same id and is not updated during([#2459](https://github.com/arco-design/arco-design/pull/2459))
+- Fix the problem that `Notification` is called with the same id and is not updated during([#2456](https://github.com/arco-design/arco-design/pull/2456))
+
 ## 2.57.2
 
 2023-12-22

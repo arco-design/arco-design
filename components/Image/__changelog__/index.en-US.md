@@ -1,3 +1,12 @@
+## 2.58.0
+
+2023-12-29
+
+### 🆕 Feature
+
+- The `Image.Preview` component adds the `imageRender` attribute to allow custom image rendering, and the `imgAttributes` attribute customizes src content.([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- The `Image.PreviewGroup` component adds the `renderImages` attribute for loading images in advance([#2458](https://github.com/arco-design/arco-design/pull/2458))
+
 ## 2.55.0
 
 2023-10-27

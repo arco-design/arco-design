@@ -24,7 +24,6 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Input and press Enter"
-              style="min-width:100%"
               value=""
             />
             <span
@@ -54,7 +53,6 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled arco-input-tag-input-autowidth"
               disabled=""
               placeholder="Disabled"
-              style="min-width:100%"
               value=""
             />
             <span
@@ -90,7 +88,6 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Readonly"
               readonly=""
-              style="min-width:100%"
               value=""
             />
             <span
@@ -119,7 +116,6 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Error"
-              style="min-width:100%"
               value=""
             />
             <span
@@ -146,7 +142,6 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
           autocomplete="off"
           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
           placeholder="Warning"
-          style="min-width:100%"
           value=""
         />
         <span
@@ -463,7 +458,6 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-              style="min-width:100%"
               value=""
             />
             <span
@@ -514,7 +508,6 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -571,7 +564,6 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -606,7 +598,6 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -777,7 +768,6 @@ exports[`renders InputTag/demo/save-on-blur.md correctly 1`] = `
         autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
         placeholder="Input and blur directly"
-        style="min-width:100%"
         value=""
       />
       <span
@@ -1003,7 +993,6 @@ exports[`renders InputTag/demo/tokenSeparator.md correctly 1`] = `
           autocomplete="off"
           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
           placeholder="Paste text here"
-          style="min-width:100%"
           value=""
         />
         <span
@@ -1039,7 +1028,6 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Please input"
-            style="min-width:100%"
             value=""
           />
           <span
@@ -1068,7 +1056,6 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Format user input"
-            style="min-width:100%"
             value=""
           />
           <span

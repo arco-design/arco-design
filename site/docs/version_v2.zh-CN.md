@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.58.0
+
+2023-12-29
+
+### 💎 功能优化
+
+- 优化 `InputTag` 清除所有标签时高度抖动的问题。([#2455](https://github.com/arco-design/arco-design/pull/2455))
+
+### 🆕 功能升级
+
+- `Image.Preview` 组件增加 `imageRender` 属性允许自定义图片渲染，`imgAttributes` 属性自定义 src 内容([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- `Image.PreviewGroup` 组件增加 `forceRender` 属性，用于提前加载图片([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- 新增 `ColorPicker` 组件([#2383](https://github.com/arco-design/arco-design/pull/2383))
+
+### 🐛 问题修复
+
+- 修复 `Message` 相同 id 调用，during 不更新问题([#2459](https://github.com/arco-design/arco-design/pull/2459))
+- 修复 `Notification` 相同 id 调用，during 不更新问题([#2456](https://github.com/arco-design/arco-design/pull/2456))
+
 ## 2.57.2
 
 2023-12-22

@@ -1,3 +1,11 @@
+## 2.58.0
+
+2023-12-29
+
+### 💎 Enhancement
+
+- Optimize the issue of vertical jitter when clearing all tags in `InputTag`.([#2455](https://github.com/arco-design/arco-design/pull/2455))
+
 ## 2.56.1
 
 2023-11-24
