@@ -349,7 +349,8 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           autoFitWidth={{
             delay: () => refDelay.current,
             pure: true,
-            minWidth: value.length ? undefined : '100%',
+            // @yinkaihui: No idea about this option. But it will cause unnecessary jitter while clearing all tags.
+            // minWidth: value.length ? undefined : '100%',
           }}
           onPressEnter={async (e) => {
             inputValue && e.preventDefault();
