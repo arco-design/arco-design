@@ -2,6 +2,7 @@ import React, { useContext, Fragment, forwardRef, ReactElement } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { isArray, isNumber } from '../_util/is';
+import toArray from '../_util/toArray';
 import { SpaceSize, SpaceProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
@@ -48,7 +49,7 @@ function Space(baseProps: SpaceProps, ref) {
     }
   }
 
-  const childrenList = React.Children.toArray(children);
+  const childrenList = toArray(children);
 
   function getMarginStyle(index) {
     // const isLastOne =
