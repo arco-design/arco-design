@@ -93,6 +93,13 @@ export default function App() {
         rtl={rtl}
         hideRtl={false}
         {...navbarProps}
+        onChangeTheme={(theme) => {
+          if (theme === 'dark') {
+            document.documentElement.style['color-scheme'] = 'dark';
+          } else {
+            document.documentElement.style['color-scheme'] = '';
+          }
+        }}
       />
       <Navbar.GlobalNotice onHeightChange={setNoticeHeight} lang={lang} />
       <Switch>
