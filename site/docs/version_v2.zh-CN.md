@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.58.1
+
+2024-01-05
+
+### 🐛 问题修复
+
+- 修复 `Space` 组件包裹 Fragment 不能正确解析的问题。([#2480](https://github.com/arco-design/arco-design/pull/2480))
+- 调整 `InputNumber` 组件仅阻止特定键盘事件的冒泡。([#2479](https://github.com/arco-design/arco-design/pull/2479))
+- 修复 `Breadcrumb.Item` 存在条件渲染时，出现多余分隔符的 bug。([#2477](https://github.com/arco-design/arco-design/pull/2477))
+- 修复`Table`组件`loading`配置不生效的问题([#2474](https://github.com/arco-design/arco-design/pull/2474))
+- 修复 `Select` 单选模式开启 `allowCreate` 时，将值更新为 `undefined` 后导致的页面报错。([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
 ## 2.58.0
 
 2023-12-29

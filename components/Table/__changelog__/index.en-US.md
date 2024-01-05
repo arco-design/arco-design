@@ -1,3 +1,11 @@
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixes `Table` component `loading` configuration not being effective.([#2474](https://github.com/arco-design/arco-design/pull/2474))
+
 ## 2.56.1
 
 2023-11-24

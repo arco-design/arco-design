@@ -1,3 +1,11 @@
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed page error caused by updating the value to `undefined` when `allowCreate` is enabled `Select` single-mode.([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
 ## 2.57.2
 
 2023-12-22

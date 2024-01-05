@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed the issue where the `Space` component wrapping Fragment could not be parsed correctly.([#2480](https://github.com/arco-design/arco-design/pull/2480))
+- Adjust the `InputNumber` component to only prevent specific keyboard events from bubbling up([#2479](https://github.com/arco-design/arco-design/pull/2479))
+- Fixed the bug of extra delimiters appearing when conditional rendering exists in `Breadcrumb.Item`.([#2477](https://github.com/arco-design/arco-design/pull/2477))
+- Fixes `Table` component `loading` configuration not being effective.([#2474](https://github.com/arco-design/arco-design/pull/2474))
+- Fixed page error caused by updating the value to `undefined` when `allowCreate` is enabled `Select` single-mode.([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
 ## 2.58.0
 
 2023-12-29
