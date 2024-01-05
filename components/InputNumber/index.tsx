@@ -224,12 +224,14 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       }
     },
     onKeyDown: (e) => {
-      e.stopPropagation();
+
 
       const key = e.key;
       if (key === ArrowDown.key) {
+        e.stopPropagation();
         handleArrowKey(e, 'minus');
       } else if (key === ArrowUp.key) {
+        e.stopPropagation();
         handleArrowKey(e, 'plus');
       }
 
