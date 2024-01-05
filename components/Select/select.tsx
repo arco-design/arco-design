@@ -293,6 +293,11 @@ function Select(baseProps: SelectProps, ref) {
   // allowCreate 时，value 改变时更新下拉框选项
   useEffect(() => {
     if (allowCreate) {
+      if (isEmptyValue(value, isMultipleMode)) {
+        setUserCreatedOptions([]);
+        return;
+      }
+
       // 将单选和多选的情况统一处理
       const currentValueList: Array<string | number> = Array.isArray(value) ? value : [value];
       // 将无对应下拉框选项的 value 当作用户创建的选项
@@ -321,7 +326,7 @@ function Select(baseProps: SelectProps, ref) {
         setUserCreatedOptions(nextUserCreatedOptions);
       }
     }
-  }, [value, userCreatedOptionFormatter]);
+  }, [value, allowCreate, isMultipleMode, userCreatedOptionFormatter]);
 
   // allowCreate 时，根据输入内容动态修改下拉框选项
   useEffect(() => {
