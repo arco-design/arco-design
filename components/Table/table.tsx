@@ -1015,7 +1015,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   return (
     <div ref={refTable} style={style} className={classNames} {...pickDataAttributes(props)}>
-      <Spin element={loadingElement || <Spin />} {...loading}>
+      <Spin element={loadingElement} {...loading}>
         {showPagination && isPaginationTop && paginationEle}
         {renderTable()}
         {showPagination && !isPaginationTop && paginationEle}

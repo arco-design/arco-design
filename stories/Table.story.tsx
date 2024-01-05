@@ -313,7 +313,7 @@ function DemoTreeData() {
         onChange={(p, s, f, extra) => {
           console.log(extra.currentData);
         }}
-        columns={columns}
+        columns={columns as any}
         data={data}
       />
     </div>
@@ -942,7 +942,7 @@ export const SortDemoTable = () => {
   ];
   return (
     <div>
-      <Table data={data} columns={columns as any} />
+      <Table data={data} columns={columns as any} loading />
     </div>
   );
 };
