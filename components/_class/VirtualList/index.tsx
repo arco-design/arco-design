@@ -177,7 +177,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     needFiller = true,
     outerStyle,
     innerStyle,
-    wrapperChild: WrapperChildTagName = 'div',
+    wrapperChild: WrapperChildTagName = React.Fragment,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
