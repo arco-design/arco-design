@@ -2,6 +2,14 @@
 changelog: true
 ---
 
+## 2.58.2
+
+2024-01-08
+
+### 🐛 BugFix
+
+- Fix the `effect` infinite loop that may occur in edge cases in `Select` after turning on `allowCreate`.([#2484](https://github.com/arco-design/arco-design/pull/2484))
+
 ## 2.58.1
 
 2024-01-05

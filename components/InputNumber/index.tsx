@@ -224,8 +224,6 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       }
     },
     onKeyDown: (e) => {
-
-
       const key = e.key;
       if (key === ArrowDown.key) {
         e.stopPropagation();
