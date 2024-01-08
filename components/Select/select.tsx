@@ -293,27 +293,28 @@ function Select(baseProps: SelectProps, ref) {
   // allowCreate 时，value 改变时更新下拉框选项
   useEffect(() => {
     if (allowCreate) {
-      if (isEmptyValue(value, isMultipleMode)) {
-        setUserCreatedOptions([]);
-        return;
-      }
+      let nextUserCreatedOptions: typeof userCreatedOptions;
 
-      // 将单选和多选的情况统一处理
-      const currentValueList: Array<string | number> = Array.isArray(value) ? value : [value];
-      // 将无对应下拉框选项的 value 当作用户创建的选项
-      const newUserCreatedOptions = currentValueList
-        .filter((v) => {
-          const option =
-            optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
-          return !option || option._origin === 'userCreatingOption';
-        })
-        .map((op) => userCreatedOptionFormatter(op as string));
-      // 将 value 中不存在的 Option 移除
-      const validUserCreatedOptions = userCreatedOptions.filter((op) => {
-        const opValue = isObject(op) ? op.value : op;
-        return currentValueList.indexOf(opValue) !== -1;
-      });
-      const nextUserCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
+      if (isEmptyValue(value, isMultipleMode)) {
+        nextUserCreatedOptions = [];
+      } else {
+        // 将单选和多选的情况统一处理
+        const currentValueList: Array<string | number> = Array.isArray(value) ? value : [value];
+        // 将无对应下拉框选项的 value 当作用户创建的选项
+        const newUserCreatedOptions = currentValueList
+          .filter((v) => {
+            const option =
+              optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
+            return !option || option._origin === 'userCreatingOption';
+          })
+          .map((op) => userCreatedOptionFormatter(op as string));
+        // 将 value 中不存在的 Option 移除
+        const validUserCreatedOptions = userCreatedOptions.filter((op) => {
+          const opValue = isObject(op) ? op.value : op;
+          return currentValueList.indexOf(opValue) !== -1;
+        });
+        nextUserCreatedOptions = validUserCreatedOptions.concat(newUserCreatedOptions);
+      }
 
       const getOptionsValueString = (options: SelectProps['options']) => {
         return options.map((option) => (isObject(option) ? option.value : option)).toString();
