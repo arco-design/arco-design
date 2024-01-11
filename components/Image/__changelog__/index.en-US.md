@@ -1,3 +1,15 @@
+## 2.58.3
+
+2024-01-11
+
+### 💎 Enhancement
+
+- Optimize that when the `Image` component is in `lazyload`, elements outside the viewport do not display placeholder loading to avoid page reflow.([#2492](https://github.com/arco-design/arco-design/pull/2492))
+
+### 🐛 BugFix
+
+- Fixed the bug causing white screen due to loop rendering in `Image` component boundary scene.([#2489](https://github.com/arco-design/arco-design/pull/2489))
+
 ## 2.58.0
 
 2023-12-29
