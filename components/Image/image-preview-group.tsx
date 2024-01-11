@@ -48,9 +48,15 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
   const isFirstRender = useIsFirstRender();
   const getPreviewUrlMap = () => (propPreviewUrlMap ? new Map(propPreviewUrlMap) : new Map());
   const [previewUrlMap, setPreviewUrlMap] = useState<PreviewUrlMap>(getPreviewUrlMap());
-  const [previewPropsMap, setPreviewPropsMap] = useState<Map<number, Partial<ImagePreviewProps>>>(
-    new Map()
-  );
+
+  const previewPropsMapRef = useRef<Map<number, Partial<ImagePreviewProps>>>();
+  const previewPropsMap = previewPropsMapRef.current || new Map();
+
+  const setPreviewPropsMap = (
+    cb: (prev: Map<number, Partial<ImagePreviewProps>>) => Map<number, Partial<ImagePreviewProps>>
+  ) => {
+    previewPropsMapRef.current = cb(previewPropsMapRef.current);
+  };
 
   useEffect(() => {
     if (isFirstRender) return;
