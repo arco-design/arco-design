@@ -83,8 +83,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const previewSrc = previewProps.src || src;
   const [showFooter] = useShowFooter({ title, description, actions });
-  const { isLoading, isError, isLoaded, isLazyLoad, isBeforeLoad, setStatus } =
-    useImageStatus('beforeLoad');
+  const { isLoading, isError, isLoaded, isBeforeLoad, setStatus } = useImageStatus('beforeLoad');
   const [previewVisible, setPreviewVisible] = useMergeValue(false, {
     defaultValue: previewProps.defaultVisible,
     value: previewProps.visible,
@@ -221,7 +220,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       {!isLoaded && (
         <div className={`${prefixCls}-overlay`}>
           {isError && (error || defaultError)}
-          {(isLoading || isLazyLoad) && renderLoader()}
+          {isLoading && renderLoader()}
         </div>
       )}
       {isLoaded && showFooter && (
