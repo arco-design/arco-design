@@ -58,7 +58,13 @@ export interface OptionInfo extends PropsWithChildren<OptionProps> {
 ```js
 export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
-  "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
+  | "height"
+  | "itemHeight"
+  | "threshold"
+  | "isStaticItemHeight"
+  | "scrollOptions"
+  | "onScroll"
+  | "wrapperChild"
 >;
 ```
 
