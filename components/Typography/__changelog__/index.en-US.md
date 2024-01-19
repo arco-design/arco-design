@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 🐛 BugFix
+
+- Fix `Typography` component `resize` throttling issue([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
 ## 2.57.1
 
 2023-12-15

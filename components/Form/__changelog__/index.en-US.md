@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 🐛 BugFix
+
+- Fixed a bug that caused all form items to be reset when the `resetFields` method of the `Form` component passed in non-string/array type parameters.([#2505](https://github.com/arco-design/arco-design/pull/2505))
+
 ## 2.56.2
 
 2023-12-01

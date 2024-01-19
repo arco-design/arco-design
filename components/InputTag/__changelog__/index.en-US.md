@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 🆕 Feature
+
+- `InputTag` adds a `maxTagCount` property to support customizing the maximum number of displayed tags.([#2503](https://github.com/arco-design/arco-design/pull/2503))
+
 ## 2.58.0
 
 2023-12-29

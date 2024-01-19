@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 🐛 BugFix
+
+- Fixed the bug of incomplete display of `Watermark` content in boundary scenes.([#2507](https://github.com/arco-design/arco-design/pull/2507))
+
 ## 2.57.1
 
 2023-12-15

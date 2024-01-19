@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.59.0
+
+2024-01-19
+
+### 💎 Enhancement
+
+- The `Popover` component does not display the popup box when the content is empty.([#2504](https://github.com/arco-design/arco-design/pull/2504))
+
+### 🆕 Feature
+
+- `InputTag` adds a `maxTagCount` property to support customizing the maximum number of displayed tags.([#2503](https://github.com/arco-design/arco-design/pull/2503))
+- `Trigger` supports setting the viewport offset when automatically adjusting the position according to the viewport.([#2502](https://github.com/arco-design/arco-design/pull/2502))
+- 新增数据色色彩序列([#2494](https://github.com/arco-design/arco-design/pull/2494))
+- VirtualList add new `wrapperChild` and `onScroll` properties.([#2483](https://github.com/arco-design/arco-design/pull/2483))
+- The `card` mode of the `Carousel` component adds vertical arrangement support([#2462](https://github.com/arco-design/arco-design/pull/2462))
+
+### 🐛 BugFix
+
+- Fixed the bug of incomplete display of `Watermark` content in boundary scenes.([#2507](https://github.com/arco-design/arco-design/pull/2507))
+- Fixed a bug that caused all form items to be reset when the `resetFields` method of the `Form` component passed in non-string/array type parameters.([#2505](https://github.com/arco-design/arco-design/pull/2505))
+- Fix `Typography` component `resize` throttling issue([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
 ## 2.58.3
 
 2024-01-11
