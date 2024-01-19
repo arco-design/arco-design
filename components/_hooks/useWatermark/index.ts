@@ -253,6 +253,7 @@ export default function useWatermark(params: WatermarkOptions): WatermarkReturnT
   right:0;
   pointer-events: none;
   z-index:${zIndex};
+  background-position: 0 0;
   background-size:${gap[0] + width}px ${gap[1] + height}px;
   background-repeat: repeat;
   background-image:url(${base64Url})`;
