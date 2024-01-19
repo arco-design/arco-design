@@ -431,6 +431,259 @@ exports[`renders InputTag/demo/labelInValue.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders InputTag/demo/max-tag-count.md correctly 1`] = `
+<div>
+  <div
+    class="arco-space arco-space-horizontal arco-space-align-center"
+    style="margin-bottom:20px"
+  >
+    <div
+      class="arco-space-item"
+      style="margin-right:8px"
+    >
+      <div
+        class="arco-input-tag arco-input-tag-size-default"
+        style="width:350px"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+              title="1"
+            >
+              <span
+                class="arco-tag-content"
+              >
+                1
+              </span>
+              <span
+                aria-label="Close"
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+              title="2"
+            >
+              <span
+                class="arco-tag-content"
+              >
+                2
+              </span>
+              <span
+                aria-label="Close"
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+              title="3"
+            >
+              <span
+                class="arco-tag-content"
+              >
+                3
+              </span>
+              <span
+                aria-label="Close"
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <span
+              class="arco-input-tag-tag-ellipsis"
+            >
+              +2
+            </span>
+            <input
+              autocomplete="off"
+              class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+              placeholder=""
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space-item"
+    >
+      <div
+        class="arco-input-tag arco-input-tag-size-default"
+        style="width:350px"
+      >
+        <div
+          class="arco-input-tag-view"
+        >
+          <div
+            class="arco-input-tag-inner"
+          >
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+              title="1"
+            >
+              <span
+                class="arco-tag-content"
+              >
+                1
+              </span>
+              <span
+                aria-label="Close"
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+              title="2"
+            >
+              <span
+                class="arco-tag-content"
+              >
+                2
+              </span>
+              <span
+                aria-label="Close"
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
+              title="3"
+            >
+              <span
+                class="arco-tag-content"
+              >
+                3
+              </span>
+              <span
+                aria-label="Close"
+                class="arco-icon-hover arco-tag-icon-hover arco-tag-close-btn"
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="arco-icon arco-icon-close"
+                  fill="none"
+                  focusable="false"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+                  />
+                </svg>
+              </span>
+            </div>
+            <span
+              style="margin-left:4px;font-size:12px"
+            >
+              2 More
+            </span>
+            <input
+              autocomplete="off"
+              class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+              placeholder=""
+              value=""
+            />
+            <span
+              class="arco-input-tag-input-mirror"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders InputTag/demo/prefix.md correctly 1`] = `
 <div>
   <div
