@@ -39,6 +39,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |position|The position of the popup relative to the child node.|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`bottom`|-|
 |trigger|Types of events that cause the popup to show|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
 |arrowProps|The html attributes of the arrow node|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
+|boundaryDistance|The default pop-up layer position will be positioned and fine-tuned according to the viewport boundary. This parameter can be set to adjust the positioning when it is a certain distance from the viewport boundary. Only takes effect when autoFitPosition=true and alignPoint=false.|\| { left?: number; bottom?: number }\| { left?: number; top?: number }\| { right?: number; bottom?: number }\| { right?: number; top?: number } |`-`|2.59.0|
 |className|Additional css class|string \| string[] |`-`|-|
 |clickOutsideToClose|Whether to allow close the popup by clicking the area outside the child node and the popup box.By default, this logic is triggered in the bubbling phase. You can set `{ capture: true }` to specify the triggering phase in the capture phase.|boolean \| { capture: boolean } |`true`|`{ capture: boolean }` in `2.55.0`|
 |duration|Animation transition time|number \| { exit?: number; enter?: number; appear?: number } |`200`|-|

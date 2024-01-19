@@ -3,8 +3,66 @@ import { isServerRendering } from '../_util/dom';
 import { isArray } from '../_util/is';
 import { TriggerProps, MouseLocationType } from './interface';
 
+const defaultBoundaryDistanceValue = 0;
+
+export const getBoundingClientRect = (
+  dom,
+  options: {
+    boundaryDistance?: TriggerProps['boundaryDistance'];
+    position: TriggerProps['position'];
+  }
+) => {
+  const { position } = options;
+  const { width, height, left, right, top, bottom } = dom.getBoundingClientRect();
+  const boundaryDistance = options.boundaryDistance || {};
+
+  const boundaryDistanceLeft =
+    ('left' in boundaryDistance && boundaryDistance.left) || defaultBoundaryDistanceValue;
+
+  const boundaryDistanceTop =
+    ('top' in boundaryDistance && boundaryDistance.top) || defaultBoundaryDistanceValue;
+
+  let _left;
+  let _right;
+  let _top;
+  let _bottom;
+
+  if (['bottom', 'bl', 'br'].indexOf(position) > -1) {
+    _top = top;
+    _bottom = bottom; // y 的偏移量会体现在windowHeight 上
+  } else {
+    _top = top - boundaryDistanceTop;
+    _bottom = bottom - boundaryDistanceTop;
+  }
+
+  if (['right', 'rt', 'rb'].indexOf(position) > -1) {
+    _left = left; // x 偏移量会体现在windowWidth 上
+    _right = right;
+  } else {
+    _left = left - boundaryDistanceLeft;
+    _right = right - boundaryDistanceLeft;
+  }
+
+  return {
+    width,
+    height,
+    left: _left,
+    right: _right,
+    top: _top,
+    bottom: _bottom,
+  };
+};
+
 // get element's position relative to root element
-function getElementPosition(element: HTMLElement, elementRect: ChildRect, root?: Element) {
+function getElementPosition(
+  element: HTMLElement,
+  elementRect: ChildRect,
+  root?: Element,
+  options?: {
+    boundaryDistance?: TriggerProps['boundaryDistance'];
+    position: TriggerProps['position'];
+  }
+) {
   if (!root || !element || isServerRendering) {
     return { left: 0, width: 0, height: 0, top: 0 };
   }
@@ -16,8 +74,9 @@ function getElementPosition(element: HTMLElement, elementRect: ChildRect, root?:
     root === document.body ? bodyScroll('scrollLeft') : (root as Element).scrollLeft;
   const { left, top, width, height } = elementRect;
   // custom container
-  const rootLeft = root === document.body ? 0 : (root as Element).getBoundingClientRect().left;
-  const rootTop = root === document.body ? 0 : (root as Element).getBoundingClientRect().top;
+  const rootLeft =
+    root === document.body ? 0 : getBoundingClientRect(root as Element, options).left;
+  const rootTop = root === document.body ? 0 : getBoundingClientRect(root as Element, options).top;
 
   const pTop = top + pageScrollTop - rootTop;
   const pLeft = left + pageScrollLeft - rootLeft;
@@ -101,7 +160,7 @@ type ChildRect = {
   right: number;
   bottom: number;
 };
-const getChildRect = (child, mouseLocation): ChildRect => {
+const getChildRect = (child, mouseLocation, { boundaryDistance, position }): ChildRect => {
   return mouseLocation
     ? {
         left: mouseLocation.clientX,
@@ -111,7 +170,7 @@ const getChildRect = (child, mouseLocation): ChildRect => {
         right: mouseLocation.clientX,
         bottom: mouseLocation.clientY,
       }
-    : child.getBoundingClientRect();
+    : getBoundingClientRect(child, { boundaryDistance, position });
 };
 
 // popup 弹出层的尺寸。 https://github.com/arco-design/arco-design/issues/2132
@@ -123,6 +182,37 @@ const getContentSize = (content) => {
     height,
   };
 };
+
+// 获取视口的宽度和高度
+const getViewportSize = (_boundaryDistance: TriggerProps['boundaryDistance']) => {
+  const boundaryDistance = _boundaryDistance || {};
+  const xboundaryDistance =
+    'left' in boundaryDistance
+      ? boundaryDistance.left
+      : 'right' in boundaryDistance
+      ? boundaryDistance.right
+      : defaultBoundaryDistanceValue;
+
+  const yboundaryDistance =
+    'top' in boundaryDistance
+      ? boundaryDistance.top
+      : 'bottom' in boundaryDistance
+      ? boundaryDistance.bottom
+      : defaultBoundaryDistanceValue;
+  // document.documentElement?.clientHeight 是为了排除横向滚动条的高度影响。
+  const windowHeight =
+    (document.documentElement?.clientHeight || window.innerHeight) -
+    (yboundaryDistance || defaultBoundaryDistanceValue);
+  const windowWidth =
+    (document.documentElement?.clientWidth || window.innerWidth) -
+    (xboundaryDistance || defaultBoundaryDistanceValue);
+
+  return {
+    windowHeight,
+    windowWidth,
+  };
+};
+
 export default (
   props: TriggerProps,
   content: HTMLElement,
@@ -137,10 +227,18 @@ export default (
   }
   const style: { left?: number; top?: number } = {};
 
-  // 如果跟随鼠标，相当于鼠标位置作为 child
-  const childRect = getChildRect(child, alignPoint && mouseLocation);
+  const boundaryDistance = (!props.alignPoint && props.boundaryDistance) || {};
 
-  const { left, top, width, height } = getElementPosition(child, childRect, mountContainer);
+  // 如果跟随鼠标，相当于鼠标位置作为 child
+  const childRect = getChildRect(child, alignPoint && mouseLocation, {
+    boundaryDistance,
+    position: props.position,
+  });
+
+  const { left, top, width, height } = getElementPosition(child, childRect, mountContainer, {
+    boundaryDistance,
+    position: props.position,
+  });
   const popupAlign = getPopupAlign(props.popupAlign, props.showArrow);
   const alignLeft = popupAlign.left || 0;
   const alignRight = popupAlign.right || 0;
@@ -166,8 +264,7 @@ export default (
       return;
     }
     // document.documentElement?.clientHeight 是为了排除横向滚动条的高度影响。
-    const windowHeight = document.documentElement?.clientHeight || window.innerHeight;
-    const windowWidth = document.documentElement?.clientWidth || window.innerWidth;
+    const { windowHeight, windowWidth } = getViewportSize(boundaryDistance);
 
     let result = false; // 是否进行了位置调整
     // 视口左侧/顶部到 popupContainer 的距离

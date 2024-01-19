@@ -65,9 +65,9 @@ Start from `v2.14.0`
 |closable|Whether display close button|boolean |`true`|2.16.0|
 |defaultVisible|Whether visible by default|boolean |`-`|-|
 |escToExit|Whether to enable pressing `ESC` to close the preview.|boolean |`true`|2.24.0|
+|forceRender|Whether to render the image list for loading images in advance|boolean |`-`|2.58.0|
 |infinite|Whether to loop infinitely|boolean |`-`|-|
 |maskClosable|Whether click mask to close|boolean |`true`|-|
-|renderImages|Whether to render the image list for loading images in advance|boolean |`-`|2.58.0|
 |visible|Whether is visible|boolean |`-`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |current|The index of current image (controlled prop)|number |`-`|-|

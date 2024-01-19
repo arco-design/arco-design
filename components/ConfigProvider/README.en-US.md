@@ -50,6 +50,7 @@ export type ComponentConfig = {
   Checkbox?: CheckboxProps;
   Collapse?: CollapseProps;
   Comment?: CommentProps;
+  ColorPicker?: ColorPickerProps;
   DatePicker?: Omit<
     DatePickerCommonProps,
     | "placeholder"
@@ -143,6 +144,7 @@ export interface Locale {
   Transfer: Record<string, any>;
   ImagePreview: Record<string, any>;
   Form?: Record<string, any>;
+  ColorPicker: Record<string, any>;
 }
 ```
 
