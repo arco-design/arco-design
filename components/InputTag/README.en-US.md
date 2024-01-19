@@ -38,6 +38,7 @@ An input box which will display your input as tags.
 |tokenSeparators|Separator used to tokenize|string[] |`-`|2.44.0|
 |validate|Function to check user's input, which is triggered when `Enter` is pressed|(inputValue: string, values: T[]) =&gt; boolean \| Promise&lt;boolean&gt; \| T \| Promise&lt;T&gt; |`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|return type T and `Promise<T>` in 2.37.0|
 |value|To set value|T[] |`-`|-|
+|maxTagCount|The maximum number of `tags` is displayed|\| number\| {count: number;render?: (invisibleTagCount: number, value: T[]) => ReactNode;} |`-`|2.59.0|
 |onBlur|Callback when input is blurred|(e) => void |`-`|-|
 |onChange|Callback when value changes|(value: T[], reason: [ValueChangeReason](#valuechangereason)) => void |`-`|`reason` in 2.27.0|
 |onClear|Callback when clear button is clicked|() => void |`-`|2.20.0|

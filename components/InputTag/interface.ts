@@ -97,6 +97,17 @@ export interface InputTagProps<T = any> {
    */
   dragToSort?: boolean;
   /**
+   * @zh 最多显示多少个 `tag`
+   * @en The maximum number of `tags` is displayed
+   * @version 2.59.0
+   */
+  maxTagCount?:
+    | number
+    | {
+        count: number;
+        render?: (invisibleTagCount: number, value: T[]) => ReactNode;
+      };
+  /**
    * @zh 添加前缀文字或者图标
    * @en The prefix icon or text for the input-tag
    * @version 2.47.0
