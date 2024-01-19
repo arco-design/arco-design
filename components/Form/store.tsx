@@ -4,7 +4,7 @@ import setWith from 'lodash/setWith';
 import has from 'lodash/has';
 import omit from 'lodash/omit';
 import { cloneDeep, set, iterativelyGetKeys } from './utils';
-import { isArray, isFunction, isObject, isString } from '../_util/is';
+import { isArray, isFunction, isObject, isExist } from '../_util/is';
 import Control from './control';
 import {
   FieldError,
@@ -426,7 +426,7 @@ class Store<
 
   public resetFields = (fieldKeys?: FieldKey | FieldKey[]) => {
     const prev = cloneDeep(this.store);
-    const fields = isString(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
+    const fields = isExist(fieldKeys) && !isArray(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
     if (fields && isArray(fields)) {
       const changeValues = {} as any;
       fields.forEach((field) => {
@@ -593,7 +593,7 @@ class Store<
 
   public clearFields = (fieldKeys?: FieldKey | FieldKey[]) => {
     const prev = cloneDeep(this.store);
-    const fields = isString(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
+    const fields = isExist(fieldKeys) && !isArray(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
     if (fields && isArray(fields)) {
       const changeValues = {} as any;
       fields.forEach((field) => {
