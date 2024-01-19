@@ -37,15 +37,14 @@ function Popover(baseProps: PropsWithChildren<PopoverProps>, ref) {
   } = props;
   const prefixCls = getPrefixCls('popover');
 
+  const usedTitle = isFunction(title) ? title() : title;
+  const usedContent = isFunction(content) ? content() : content;
+
   const renderContent =
-    isEmptyReactNode(title, true) && isEmptyReactNode(content, true) ? null : (
+    isEmptyReactNode(usedTitle, true) && isEmptyReactNode(usedContent, true) ? null : (
       <div className={cs(`${prefixCls}-inner`, { [`${prefixCls}-inner-rtl`]: rtl })}>
-        {title ? (
-          <div className={`${prefixCls}-title`}>{isFunction(title) ? title() : title}</div>
-        ) : null}
-        <div className={`${prefixCls}-inner-content`}>
-          {isFunction(content) ? content() : content}
-        </div>
+        {usedTitle ? <div className={`${prefixCls}-title`}>{usedTitle}</div> : null}
+        <div className={`${prefixCls}-inner-content`}>{usedContent}</div>
       </div>
     );
 
