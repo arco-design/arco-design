@@ -208,7 +208,7 @@ export default (
       }
     }
     if (direction === 'top' && boundary.top > styleTop) {
-      // 上面被遮挡
+      // 上面被遮挡，判断是否下方空间可容纳弹出层。只需要满足比上方空间大，即使小于弹出层高度，也进行位置调整。
       if (childRect.top < windowHeight - childRect.bottom) {
         // 放到下面
         style.top = Math.min(
