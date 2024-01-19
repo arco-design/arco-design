@@ -4,7 +4,7 @@
   "dependencies": {
     "@antv/g2": "^4.1.12",
     "@arco-materials/site-footer": "^1.5.3",
-    "@arco-materials/site-navbar-new": "^1.2.10",
+    "@arco-materials/site-navbar-new": "^1.2.11",
     "@arco-materials/site-utils": "^1.2.0",
     "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/runtime": "^7.6.0",
