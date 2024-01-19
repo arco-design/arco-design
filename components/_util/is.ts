@@ -64,8 +64,14 @@ export function isEmptyObject(obj: any): boolean {
   return isObject(obj) && Object.keys(obj).length === 0;
 }
 
-export function isEmptyReactNode(node: any): boolean {
-  return !node && (node === null || node === undefined || node === '' || node === false);
+export function isEmptyReactNode(content: any, trim?: boolean): boolean {
+  if (content === null || content === undefined || content === false) {
+    return true;
+  }
+  if (typeof content === 'string' && (trim ? content.trim() === '' : content === '')) {
+    return true;
+  }
+  return false;
 }
 
 export function isExist(obj: any): boolean {
