@@ -168,7 +168,7 @@ class Notice extends Component<NoticeProps, {}> {
       shouldRenderIcon = false;
     }
 
-    const configContext = this.context;
+    const configContext = { ...this.context };
     if (classPrefixCls) {
       configContext.prefixCls = classPrefixCls;
     }
