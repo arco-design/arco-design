@@ -27,48 +27,60 @@
 
 **本项目使用 [Yarn](https://yarnpkg.com/) 进行包管理，请在开发前准备你的 Yarn 环境。**
 
-1. Fork [此仓库](https://github.com/arco-design/arco-design)，从 `main` 创建分支。新功能实现请发 pull request 到 `feature` 分支。其他更改发到 `main` 分支。
-1. 在仓库根目录下执行 `yarn run init`。
-1. 执行 `yarn start` 启动和预览站点.
-1. 对代码库进行更改。如果适用的话，请确保写了相应的测试。
-1. 确认执行 `yarn test` 后所有的测试都是通过的。开发过程中可以用 `yarn test:watch TestName` (例如 `yarn test:watch Alert`) 来运行指定的测试以节省时间。
+### 开发前准备
+1. 克隆代码仓库
+```bash
+$ git clone git@github.com:arco-design/arco-design.git
+```
+2. 开发环境初始化
+```bash
+$  cd arco-design && yarn init
+# init 命令到底干了什么？
+# 执行 yarn install 安装依赖
+# 执行 yarn icon，将 svg 打包成 React 组件，以供 Icon 组件使用
+# 执行 yarn build， 打包组件库源代码
+# 进入到 site 目录，执行 yarn install
+```
 
-    注意: 在个人电脑运行 `yarn test` 可能导致资源高占用、甚至系统卡死。另一种测试方法是：
-    1. 在你的 fork 中启用 Github Action
-    2. 在你的 fork 内创建一个**内部 PR** 以触发 CI
-    3. 在你的 fork 中查看测试结果
-
-
-1. 如果进行了任何 `props` 更改（即 `interface.ts` 文件），请不要手动更新组件下的 `README` 文件。运行 `yarn docgen` 会自动生成 `README` 文件。
-1. 提交 git commit, 请同时遵守 [Commit 规范](#commit-指南)。
-1. 提交 pull request, 如果有对应的 issue，请进行[关联](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)。
+3. 启动项目
+```bash
+# 编译组件库 es 产物，本地调试时必须启动，因为官网/storybook 都是从 es 目录下引用的组件
+$ yarn dev  
+# 启动官网
+$ yarn dev:site
+# 启动 storybook 。 这里启动不启动都可以，官网也可以调试
+$ yarn demo 
+```
 
 ### 常用的命令
 
 ```bash
-# 本地启动和预览站点
-$ yarn dev:site
 
-# 检查 javascript 代码规范
-$ yarn eslint
+# 开发模式自动监听 js 文件和 css 文件的变动，自动重新编译代码
+$ yarn dev
 
-# 检查 样式 代码规范
-$ yarn stylelint
-
-# 自动化生成文档
-$ yarn docgen
-
-# 格式化代码
-$ yarn format
-
-# 组件构建
+# 生产模式，压缩打包组件代码
 $ yarn build
 
-# 运行完整的单元测试
+# 开发模式下，启动官网预览，可访问 http://localhost:9000 进行组件调试
+$ yarn dev:site
+
+# 启动 stroybook 预览，速度相对较快，不用在官网调试组件
+$ yarn demo
+
+# 把 icon/_svgs 里的 svg 图片生成 React 组件，并且生成 demo.js，用于组件官网中的图标示例。
+$ # 这个命令一般只在项目初始化的时候走一遍，只有在图标有改动的时候才需要再次执行
+$ yarn icon
+
+# 执行测试用例，包括客户端和服务端渲染测试
 $ yarn test
 
-# 启动 Storybook 以预览或调试组件 （无热加载，需要先 `yarn build` 才能使用变更后代码）
-$ yarn demo
+# 更新快照：组件有类名/dom变动时需要执行
+$ yarn test:client -- -u
+
+# 组件 API 文档生成：组件新增功能或修改类型定义时，需要执行
+$ yarn docgen
+
 ```
 
 ### 组件 demo
@@ -107,27 +119,27 @@ Commit messages 请遵循[conventional-changelog 标准](https://www.conventiona
 > components/componentName
 
 ```
-├── README.zh-CN.md (注意：不要编辑这个文件，它是由脚本自动生成的)
-├── README.en-US.md (注意：不要编辑这个文件，它是由脚本自动生成的)
-├── __template__ （用于生成 README 文件的模板）
-│   ├── index.en-US.md (英文模版)
-│   └── index.zh-CN.md （中文模版）
-├── __changelog__
-│   ├── index.en-US.md (注意：不要手动编辑这个文件，它是在发版时由脚本自动生成的)
-│   └── index.zh-CN.md (注意：不要手动编辑这个文件，它是在发版时由脚本自动生成的)
+├── README.zh-CN.md (最终用来生成中文文档的入口，注意：不要编辑这个文件，这个文件是自动生成 的。)
+├── README.en-US.md (最终用来生成英文文档的入口，手动维护)
+├── TEMPLATE.md （用来生成 README.md 的模版，这个文件是用来编辑的。）
 ├── __test__
 │   ├── __snapshots__
-│   │   └── demo.test.js.snap
-│   ├── demo.test.ts (快照测试)
-│   └── index.test.ts （单元测试）
-├── __demo__ （组件演示）
+│   │   └── demo.test.js.snap （快照测试的信息）
+│   ├── demo.test.js （提取demo文件夹中的代码，进行自动快照测试）
+│   └── xxx.test.js （单元测试的代码）
+├── demo （这个目录存放该组件的demo代码和介绍，也是用来生成组件文档的一部分，注意：每个文件只写一个代码块，也就是一个demo）
 │   ├── basic.md
-│   └── advanced.md
-├── index.tsx（组件导出）
+│   └── custom_icon.md
+├── index.tsx （组件代码）
 └── style
-    └── index.less（组件样式）
-    └── index.ts (组件样式导出)
+    ├── token.less （组件 less 变量）
+    └── index.less （组件样式，类名的命名空间为 arco-{组件名}）
 ```
+### 辅助函数
+components/_utils 文件夹中存放着一些辅助函数，按需使用。
+
+### 通用组件
+components/_class 文件夹中存放着一些通用的类，像虚拟滚动组件等。
 
 ### 模版
 
