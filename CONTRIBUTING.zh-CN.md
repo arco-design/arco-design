@@ -27,6 +27,15 @@
 
 **本项目使用 [Yarn](https://yarnpkg.com/) 进行包管理，请在开发前准备你的 Yarn 环境。**
 
+### 共建流程
+- 认领 issue： 在 github 建立 issue 并认领（或直接认领已有 issue），告知大家自己正在修复，避免重复工作。
+- 项目开发：在完成开发前准备后，进行 bug 修复或功能开发。
+- 添加单测：针对代码变动添加单元测试，执行 yarn test -- ./components/xxx/，确认测试用例通过，尽量保证一定的测试覆盖率。
+- 更新快照：如果涉及到组件 dom 层级变动，类名增删或新增/删除了 Demo，快照可能需要重新生成一下。执行 yarn build:cjs && yarn test:client -u 
+- 文档生成：组件 API 存在调整时针对当前组件 yarn docgen ./components/xxx重新生成文档。
+- 提交 PR
+  
+
 ### 开发前准备
 1. 克隆代码仓库
 ```bash
@@ -82,10 +91,6 @@ $ yarn test:client -- -u
 $ yarn docgen
 
 ```
-
-### 组件 demo
-
-组件 demo 为一个完整的代码片段，建议使用 `tsx` 标记代码块语言，并安装[TS in Markdown](https://marketplace.visualstudio.com/items?itemName=amour1688.ts-in-markdown)，以便在编辑器中获得语法提示。代码块里的「默认导出」就是 demo 的渲染内容。
 
 ## Commit 指南
 
