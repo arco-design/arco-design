@@ -1,3 +1,11 @@
+## 2.59.1
+
+2024-01-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the default value of `ConfigProvider` was mistakenly changed when Notice was called.([#2511](https://github.com/arco-design/arco-design/pull/2511))
+
 ## 2.41.0
 
 2022-10-28
