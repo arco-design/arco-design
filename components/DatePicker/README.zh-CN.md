@@ -114,6 +114,7 @@
 |defaultValue|默认日期|[CalendarValue](#calendarvalue)[] |`-`|-|
 |disabled|是否禁用|boolean \| boolean[] |`-`|-|
 |format|展示日期的格式，参考[dayjs](https://github.com/iamkun/dayjs)|string \| string[] |`YYYY-MM-DD`|string[] in 2.55.0|
+|inputProps|原生输入框属性|React.InputHTMLAttributes&lt;HTMLInputElement&gt;[] |`-`|2.60.0|
 |pickerValue|面板显示的日期。|[CalendarValue](#calendarvalue)[] |`-`|2.9.0|
 |placeholder|提示文案|string[] |`-`|-|
 |showTime|是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。|boolean \| [TimePickerRangeProps](#timepickerrangeprops) |`-`|-|
