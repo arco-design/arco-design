@@ -213,6 +213,46 @@ const TimePickerZoneDemo = () => {
 
 export const TimePickerZone = () => <TimePickerZoneDemo />;
 
+const RangePickerInputPropsDemo = () => {
+  const [value, setValue] = useState<Dayjs[]>([]);
+
+  function onBlur(e: React.FocusEvent<HTMLInputElement>, index: number) {
+    const inputValue = e.target.value;
+    const newValue = [...value];
+    if (dayjs(inputValue, 'YYYY-MM-DD HH:mm:ss', true).isValid()) {
+      newValue[index] = dayjs(inputValue, 'YYYY-MM-DD HH:mm:ss');
+      console.log(inputValue, newValue);
+      setValue(newValue);
+    }
+  }
+
+  return (
+    <DatePicker.RangePicker
+      inputProps={[
+        {
+          onBlur: (e) => {
+            onBlur(e, 0);
+          },
+        },
+        {
+          onBlur: (e) => {
+            onBlur(e, 1);
+          },
+        },
+      ]}
+      format="YYYY-MM-DD HH:mm:ss.SSS"
+      showTime
+      value={value}
+      onChange={(_, dv) => {
+        setValue(dv);
+      }}
+      style={{ width: 450 }}
+    />
+  );
+};
+
+export const RangePickerInputProps = () => <RangePickerInputPropsDemo />;
+
 export default {
   title: 'DatePicker',
 };

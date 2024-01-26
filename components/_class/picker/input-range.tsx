@@ -39,6 +39,7 @@ export interface DateInputRangeProps {
   focusedInputIndex?: number;
   isPlaceholder?: boolean;
   prefix?: ReactNode;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>[];
 }
 
 type DateInputHandle = {
@@ -71,6 +72,7 @@ function DateInput(
     focusedInputIndex,
     isPlaceholder,
     prefix,
+    inputProps = [],
     ...rest
   }: DateInputRangeProps,
   ref
@@ -163,6 +165,7 @@ function DateInput(
       <div className={getFocusInputClassName(0)}>
         <input
           ref={input0}
+          {...inputProps[0]}
           disabled={disabled1}
           placeholder={placeholder[0]}
           value={getInputValue(0)}
@@ -176,6 +179,7 @@ function DateInput(
       <div className={getFocusInputClassName(1)}>
         <input
           ref={input1}
+          {...inputProps[1]}
           disabled={disabled2}
           placeholder={placeholder[1]}
           value={getInputValue(1)}

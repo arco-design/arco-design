@@ -119,6 +119,7 @@ const Picker = (baseProps: RangePickerProps) => {
     separator,
     utcOffset,
     timezone,
+    inputProps,
   } = props;
 
   const prefixCls = getPrefixCls('picker-range');
@@ -880,6 +881,7 @@ const Picker = (baseProps: RangePickerProps) => {
             <DateInputRange
               {...pickDataAttributes(props)}
               {...baseInputProps}
+              inputProps={inputProps}
               ref={refInput}
               placeholder={placeholders}
               value={valueShow || mergedValue}
