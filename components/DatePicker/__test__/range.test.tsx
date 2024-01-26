@@ -350,4 +350,29 @@ describe('RangePicker', () => {
       'arco-picker-cell arco-picker-cell-in-view arco-picker-cell-selected arco-picker-cell-range-start'
     );
   });
+
+  it('inputProps work correctly', () => {
+    const onBlur1 = jest.fn();
+    const onBlur2 = jest.fn();
+    const component = render(
+      <RangePicker
+        inputProps={[
+          {
+            onBlur: onBlur1,
+          },
+          {
+            onBlur: onBlur2,
+          },
+        ]}
+      />
+    );
+
+    fireEvent.blur(getInput(component, 0));
+
+    expect(onBlur1).toBeCalled();
+
+    fireEvent.blur(getInput(component, 1));
+
+    expect(onBlur2).toBeCalled();
+  });
 });
