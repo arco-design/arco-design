@@ -31,10 +31,10 @@
 - 认领 issue： 在 github 建立 issue 并认领（或直接认领已有 issue），告知大家自己正在修复，避免重复工作。
 - 项目开发：在完成开发前准备后，进行 bug 修复或功能开发。
 - 添加单测：针对代码变动添加单元测试，执行 yarn test -- ./components/xxx/，确认测试用例通过，尽量保证一定的测试覆盖率。
-- 更新快照：如果涉及到组件 dom 层级变动，类名增删或新增/删除了 Demo，快照可能需要重新生成一下。执行 yarn build:cjs && yarn test:client -u 
+- 更新快照：如果涉及到组件 dom 层级变动，类名增删或新增/删除了 Demo，快照可能需要重新生成一下。执行 yarn build:cjs && yarn test:client -u
 - 文档生成：组件 API 存在调整时针对当前组件 yarn docgen ./components/xxx重新生成文档。
 - 提交 PR
-  
+
 
 ### 开发前准备
 1. 克隆代码仓库
@@ -43,7 +43,7 @@ $ git clone git@github.com:arco-design/arco-design.git
 ```
 2. 开发环境初始化
 ```bash
-$  cd arco-design && yarn init
+$  cd arco-design && yarn run init
 # init 命令到底干了什么？
 # 执行 yarn install 安装依赖
 # 执行 yarn icon，将 svg 打包成 React 组件，以供 Icon 组件使用
@@ -54,11 +54,11 @@ $  cd arco-design && yarn init
 3. 启动项目
 ```bash
 # 编译组件库 es 产物，本地调试时必须启动，因为官网/storybook 都是从 es 目录下引用的组件
-$ yarn dev  
+$ yarn dev
 # 启动官网
 $ yarn dev:site
 # 启动 storybook 。 这里启动不启动都可以，官网也可以调试
-$ yarn demo 
+$ yarn demo
 ```
 
 ### 常用的命令
