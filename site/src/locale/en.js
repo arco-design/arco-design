@@ -10,6 +10,7 @@ export default {
   'routes.link': 'Link',
   'routes.typography': 'Typography',
   'routes._layout': 'Layout',
+  'routes.vchart': 'VChart',
   'routes.grid': 'Grid',
   'routes.divider': 'Divider',
   'routes.hooks': 'Hooks',

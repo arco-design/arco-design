@@ -63,6 +63,11 @@ export default function getRoutes(lang = 'zh', t) {
           hide: true,
         },
         {
+          name: t['routes.vchart'],
+          path: 'docs/vchart',
+          component: lazyLoad(() => import(`./pages/vchart`)),
+        },
+        {
           name: t['routes.overview'],
           path: 'docs/overview',
           component: OverView,

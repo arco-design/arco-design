@@ -91,6 +91,7 @@ export default {
   'routes.question': '常见问题',
   'routes.changelog': '更新日志',
   'routes.token': '设计变量',
+  'routes.vchart': 'VChart 图表',
   'routes.migrate_to_v2': '从 v1 到 v2',
   'routes.design-language': '设计指南',
   'routes.component-usage': '组件用法',
