@@ -165,6 +165,5 @@
     "hooks/lib",
     "hooks/package.json"
   ],
-  "_unpkg": true,
-  "packageManager": "yarn@1.22.19"
+  "_unpkg": true
 }
