@@ -11,9 +11,16 @@ interface InputRgbProps {
   alpha: number;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
+  disabledAlpha: boolean;
 }
 
-export const InputRgb = ({ color, alpha, onHsvChange, onAlphaChange }: InputRgbProps) => {
+export const InputRgb = ({
+  color,
+  alpha,
+  onHsvChange,
+  onAlphaChange,
+  disabledAlpha,
+}: InputRgbProps) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
 
@@ -50,7 +57,7 @@ export const InputRgb = ({ color, alpha, onHsvChange, onAlphaChange }: InputRgbP
         value={b}
         onChange={(b) => onInputChange({ r, g, b })}
       />
-      <InputAlpha value={alpha} onChange={onAlphaChange} />
+      <InputAlpha value={alpha} onChange={onAlphaChange} disabled={disabledAlpha} />
     </Input.Group>
   );
 };

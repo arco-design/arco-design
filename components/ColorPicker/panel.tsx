@@ -11,6 +11,7 @@ import { hexToRgb, rgbToHsv } from '../_util/color';
 interface PanelProps {
   color: Color;
   alpha: number;
+  disabledAlpha: boolean;
   colorString: string;
   showHistory?: boolean;
   historyColors?: string[];
@@ -26,6 +27,7 @@ interface PanelProps {
 export const Panel: React.FC<PanelProps> = ({
   color,
   alpha,
+  disabledAlpha,
   colorString,
   historyColors,
   presetColors,
@@ -64,6 +66,7 @@ export const Panel: React.FC<PanelProps> = ({
           alpha={alpha}
           onHsvChange={onHsvChange}
           onAlphaChange={onAlphaChange}
+          disabledAlpha={disabledAlpha}
         />
       );
     }
@@ -73,6 +76,7 @@ export const Panel: React.FC<PanelProps> = ({
         alpha={alpha}
         onHsvChange={onHsvChange}
         onAlphaChange={onAlphaChange}
+        disabledAlpha={disabledAlpha}
       />
     );
   };

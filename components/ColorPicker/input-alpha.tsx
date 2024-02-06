@@ -5,9 +5,10 @@ import { ConfigContext } from '../ConfigProvider';
 interface InputAlphaProps {
   value: number;
   onChange: (value: number) => void;
+  disabled: boolean;
 }
 
-export const InputAlpha: React.FC<InputAlphaProps> = ({ value, onChange }) => {
+export const InputAlpha: React.FC<InputAlphaProps> = ({ value, onChange, disabled }) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
 
@@ -20,6 +21,7 @@ export const InputAlpha: React.FC<InputAlphaProps> = ({ value, onChange }) => {
       value={Math.round(value * 100)}
       suffix="%"
       onChange={(a) => onChange(a / 100)}
+      disabled={disabled}
     />
   );
 };
