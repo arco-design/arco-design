@@ -10,7 +10,7 @@ interface InputHexProps {
   alpha: number;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
-  disabledAlpha: boolean;
+  disabledAlpha?: boolean;
 }
 
 export const InputHex: React.FC<InputHexProps> = ({

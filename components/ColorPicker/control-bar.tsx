@@ -7,7 +7,6 @@ import { Color } from './interface';
 interface ControlBarProps {
   x: number;
   type?: 'hue' | 'alpha';
-
   colorString: string;
   // for alpha bar use
   color?: Color;

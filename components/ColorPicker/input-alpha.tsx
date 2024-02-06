@@ -5,7 +5,7 @@ import { ConfigContext } from '../ConfigProvider';
 interface InputAlphaProps {
   value: number;
   onChange: (value: number) => void;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export const InputAlpha: React.FC<InputAlphaProps> = ({ value, onChange, disabled }) => {

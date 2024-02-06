@@ -161,13 +161,13 @@ export const Panel: React.FC<PanelProps> = ({
               colorString={colorString}
               onChange={(h) => onHsvChange({ h, s, v })}
             />
-            <ControlBar
+            {/* {!disabledAlpha && <ControlBar
               type="alpha"
               x={alpha}
               color={color}
               colorString={colorString}
               onChange={onAlphaChange}
-            />
+            />} */}
           </div>
           <div className={`${prefixCls}-preview`} style={{ backgroundColor: colorString }} />
         </div>
