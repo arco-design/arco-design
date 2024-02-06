@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-通过 `hideAction` 隐藏操控按钮，或者 `renderAction` 自定义操控按钮
+通过 `actionRender` 自定义操控按钮。
 
 ## en-US
 
-Set the basic usage of internationalized languages.
+Customize action buttons through `actionRender`.
 
 ```js
 import { Ellipsis } from '@arco-design/web-react';
@@ -22,9 +22,9 @@ const text = 'A design is a plan or specification for the construction of an obj
 function App() {
   const actionRender = (expanded) => {
     if (!expanded) {
-      return <IconDoubleDown/>;
+      return <IconDoubleDown className="action-btn"/>;
     }
-    return <IconDoubleUp/>
+    return <IconDoubleUp className="action-btn"/>
   }
 
   return (
@@ -35,4 +35,16 @@ function App() {
 }
 
 export default App;
+```
+
+```css
+.action-btn {
+    margin: 0 8px;
+    color: rgb(var(--primary-6));
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    color: rgb(var(--primary-5));
+}
 ```

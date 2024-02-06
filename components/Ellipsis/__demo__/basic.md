@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-当文字内容超出容器后会自动显示省略号
+当文字内容超出容器后会自动显示省略号。
 
 ## en-US
 
-Set the basic usage of internationalized languages.
+When the text content exceeds the container, an ellipsis will be automatically displayed.
 
 ```js
 import { Ellipsis } from '@arco-design/web-react';
@@ -21,7 +21,7 @@ const text = 'A design is a plan or specification for the construction of an obj
 function App() {
   return (
     <div>
-      <Ellipsis>{text}</Ellipsis>
+      <Ellipsis rows='2'>{text}</Ellipsis>
     </div>
   );
 }

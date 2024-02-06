@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Ellipsis/demo/action.md correctly 1`] = `
+<div>
+  <div
+    class="arco-ellipsis"
+  >
+    <div
+      class="arco-ellipsis-content-mirror"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
+    >
+      <span
+        class="arco-ellipsis-text"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+      </span>
+    </div>
+    <div
+      class="arco-ellipsis-content arco-ellipsis-collapsed"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
+    >
+      <span
+        class="arco-ellipsis-text"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Ellipsis/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    class="arco-ellipsis"
+  >
+    <div
+      class="arco-ellipsis-content-mirror"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:2"
+    >
+      <span
+        class="arco-ellipsis-text"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+      </span>
+    </div>
+    <div
+      class="arco-ellipsis-content arco-ellipsis-collapsed"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:2"
+    >
+      <span
+        class="arco-ellipsis-text"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders Ellipsis/demo/tooltip.md correctly 1`] = `
+<div>
+  <div
+    class="arco-ellipsis"
+  >
+    <div
+      class="arco-ellipsis-content-mirror"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
+    >
+      <span
+        class="arco-ellipsis-text"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+      </span>
+    </div>
+    <div
+      class="arco-ellipsis-content arco-ellipsis-collapsed"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
+    >
+      <span
+        class="arco-ellipsis-text"
+      >
+        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+      </span>
+    </div>
+  </div>
+</div>
+`;

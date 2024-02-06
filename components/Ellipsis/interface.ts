@@ -13,15 +13,15 @@ export interface EllipsisProps {
    */
   rows?: number;
   /**
-   * @zh 配置省略弹出框
-   * @en Show Tooltip when ellipsis
+   * @zh 是否显示弹出提示
+   * @en Whether to display pop-up prompts
    */
   tooltip?: boolean;
   /**
-   * @zh 是否显示操控按钮
-   * @en Whether to display control button
+   * @zh 是否隐藏操控按钮
+   * @en Whether to hide control button
    */
-  action?: boolean;
+  hideAction?: boolean;
   /**
    * @zh 自定义渲染操控按钮
    * @en Custom rendering control buttons

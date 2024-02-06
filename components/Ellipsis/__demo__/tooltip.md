@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-当文字内容超出容器后会自动显示省略号
+文本收起状态时可以弹出自动提示
 
 ## en-US
 
-Set the basic usage of internationalized languages.
+Automatic prompts can pop up when the text is collapsed
 
 ```js
 import { Ellipsis } from '@arco-design/web-react';

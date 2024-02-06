@@ -107,6 +107,7 @@ export default function getRoutes(lang = 'zh', t) {
               name: t['routes.ellipsis'],
               path: 'components/ellipsis',
               component: lazyLoad(() => import(`../../components/Ellipsis/README${suffix}.md`)),
+              new: true,
             },
           ],
         },

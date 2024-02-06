@@ -17,7 +17,6 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 
 const defaultProps: EllipsisProps = {
   rows: 1,
-  action: true,
 };
 
 const EllipsisComponent: React.ForwardRefRenderFunction<
@@ -26,7 +25,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
 > = (baseProps, _) => {
   const ctx = useContext(ConfigContext);
   const props = useMergeProps(baseProps, defaultProps, ctx.componentConfig?.Ellipsis);
-  const { className, style, rows, tooltip, children, action, actionRender } = props;
+  const { className, style, rows, tooltip, children, hideAction, actionRender } = props;
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
@@ -72,7 +71,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   };
 
   const renderAction = () => {
-    if (action && overflow) {
+    if (!hideAction && overflow) {
       return (
         <div
           className={cs(`${prefix}-action`, {
@@ -133,6 +132,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
           [`${prefix}-collapsed`]: !expanded,
         })}
         style={computedStyle}
+        title={!tooltip && overflow && !expanded ? text : undefined}
       >
         {!expanded && renderAction()}
         <span ref={textRef} className={`${prefix}-text`}>
