@@ -8,11 +8,13 @@ export default {
 export const Demo = () => (
   <div style={{ marginTop: 150 }}>
     <ColorPicker size={'mini'} />
-    <br/>
+    <br />
     <ColorPicker size={'small'} />
-    <br/>
+    <br />
     <ColorPicker size={'default'} showPreset showHistory />
-    <br/>
+    <br />
     <ColorPicker size={'large'} />
+    <br />
+    <ColorPicker size={'large'} disabledAlpha />
   </div>
 );

@@ -10,9 +10,16 @@ interface InputHexProps {
   alpha: number;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
+  disabledAlpha?: boolean;
 }
 
-export const InputHex: React.FC<InputHexProps> = ({ color, alpha, onHsvChange, onAlphaChange }) => {
+export const InputHex: React.FC<InputHexProps> = ({
+  color,
+  alpha,
+  onHsvChange,
+  onAlphaChange,
+  disabledAlpha,
+}) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
   const [hex, setHex] = useState(color.hex);
@@ -62,7 +69,9 @@ export const InputHex: React.FC<InputHexProps> = ({ color, alpha, onHsvChange, o
         onPressEnter={onBlur}
         onPaste={onPaste as any}
       />
-      <InputAlpha value={alpha} onChange={onAlphaChange} />
+      {!disabledAlpha && (
+        <InputAlpha value={alpha} onChange={onAlphaChange} disabled={disabledAlpha} />
+      )}
     </Input.Group>
   );
 };
