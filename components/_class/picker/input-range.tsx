@@ -40,6 +40,7 @@ export interface DateInputRangeProps {
   isPlaceholder?: boolean;
   prefix?: ReactNode;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>[];
+  onBlur?: (e) => void;
 }
 
 type DateInputHandle = {
@@ -73,6 +74,7 @@ function DateInput(
     isPlaceholder,
     prefix,
     inputProps = [],
+    onBlur,
     ...rest
   }: DateInputRangeProps,
   ref
@@ -124,6 +126,11 @@ function DateInput(
     onChange && onChange(e);
   }
 
+  function onBlurInput(e, index) {
+    onBlur?.(e);
+    inputProps?.[index]?.onBlur(e);
+  }
+
   const prefixCls = getPrefixCls('picker');
   const size = propSize || ctxSize;
 
@@ -172,6 +179,7 @@ function DateInput(
           onChange={onChangeInput}
           onKeyDown={onKeyDown}
           onClick={() => changeFocusedInput(0)}
+          onBlur={(e) => onBlurInput(e, 0)}
           {...readOnlyProps}
         />
       </div>
@@ -186,6 +194,7 @@ function DateInput(
           onChange={onChangeInput}
           onKeyDown={onKeyDown}
           onClick={() => changeFocusedInput(1)}
+          onBlur={(e) => onBlurInput(e, 1)}
           {...readOnlyProps}
         />
       </div>
