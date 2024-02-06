@@ -25,7 +25,7 @@ function ColorPicker(baseProps: ColorPickerProps, ref) {
     className,
     size,
     disabled,
-    disabledAlpha,
+    disabledAlpha = false,
     triggerProps = {},
     unmountOnExit,
     showText,
